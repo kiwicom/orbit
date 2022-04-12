@@ -52,6 +52,7 @@
     "@types/react-scrollspy": "^3.3.3",
     "@types/resize-observer-browser": "^0.1.7",
     "@types/styled-components": "^5.1.15",
+    "@types/resize-observer-browser": "^0.1.7",
     "@types/uuid": "^8.3.1",
     "axios": "^0.21.1",
     "babel-plugin-inline-react-svg": "^1.1.2",

@@ -18,7 +18,7 @@ const Grid = styled.div<{ isTablet?: boolean | null; hasAdditional: boolean }>`
 `;
 
 interface PaletteProps {
-  colors: string[];
+  colors: tokenString[];
   allowAdditional: boolean;
 }
 
@@ -48,7 +48,7 @@ const Palette = ({ colors, allowAdditional }: PaletteProps) => {
   };
 
   const colorsWithToken = colors
-    .map(color => {
+    .map((color: tokenString) => {
       if (!defaultTokens[color]) return undefined;
 
       const hover = getToken(`${color}Hover` as tokenString) && {

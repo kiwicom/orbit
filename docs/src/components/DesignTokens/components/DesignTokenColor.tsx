@@ -16,7 +16,7 @@ interface SizeProps {
 }
 
 interface ColorProps extends SizeProps {
-  color?: string | number;
+  $color?: string | number;
 }
 
 function getDimensions(size: ColorProps["size"]) {
@@ -62,8 +62,8 @@ const StyledDesignTokenCircleShape = styled(StyledDesignTokenBase)<ColorProps>`
 `;
 
 export const StyledDesignTokenColor = styled(StyledDesignTokenBase)<ColorProps>`
-  ${({ color, theme, size }) => css`
-    background: ${color};
+  ${({ $color, theme, size }) => css`
+    background: ${$color};
     border-radius: ${theme.orbit.borderRadiusCircle};
     box-shadow: 0 0 0 1px ${theme.orbit.paletteCloudLight};
     ${size !== "small" &&

@@ -6,23 +6,28 @@ import { TokenSchema } from "./typings";
 const findTokenAttributes = (
   name: string,
 ): {
-  type: string | null;
-  value: string | null;
+  type: string;
+  value: string;
   schema: TokenSchema;
 } => {
   const tokenValue = name in tokensList ? tokensList[name] : "";
-  if (!tokenValue)
+
+  if (!tokenValue) {
     return {
-      value: null,
-      type: null,
-      schema: { namespace: null, object: null, variant: null, subVariant: null },
+      value: "",
+      type: "",
+      schema: { namespace: "", object: "", variant: "", subVariant: "" },
     };
+  }
+
   warning(!!tokenValue, "%s wasn't found in the tokens.", name);
+
   const {
     type,
     schema,
     javascript: { value },
   } = tokenValue;
+
   return { type, value, schema };
 };
 

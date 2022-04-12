@@ -18,6 +18,15 @@ import camelCase from "../../../utils/camelCase";
 import OptionsFilter from "../OptionsFilter";
 import { GlobalCategories, Platforms, Token } from "../typings";
 
+interface Props {
+  tokens: Token[];
+  filter: string;
+  platform: keyof typeof Platforms;
+  showDeprecated?: boolean;
+  tableName: string;
+  showVariantColumn?: boolean;
+}
+
 const StyledDesignTokensTable = styled.div`
   ${mq.desktop(css`
     table {
@@ -26,7 +35,7 @@ const StyledDesignTokensTable = styled.div`
   `)}
 `;
 
-const StyledCol = styled.col`
+const StyledCol = styled.col<{ $width: string | number }>`
   ${({ $width }) =>
     css`
       width: ${$width};
@@ -41,14 +50,7 @@ const DesignTokensTable = ({
   showDeprecated,
   tableName,
   showVariantColumn,
-}: {
-  tokens: Token[];
-  filter: string;
-  platform: keyof typeof Platforms;
-  showDeprecated?: boolean;
-  tableName: string;
-  showVariantColumn?: boolean;
-}) => {
+}: Props) => {
   const [variantFilterValue, setVariantFilterValue] = React.useState<string[]>([]);
 
   const handleVariantSelection = name => {
@@ -72,104 +74,103 @@ const DesignTokensTable = ({
       return !value.deprecated;
     })
     .filter(({ value }) => {
-      if (showVariantColumn && variantFilterValue.length > 0) {
+      if (showVariantColumn && variantFilterValue.length > 0 && value.schema.variant) {
         return variantFilterValue.includes(value.schema.variant);
       }
       return true;
     });
 
-  if (filteredTokens.length > 0) {
-    return (
-      <>
-        <H3>{tableName}</H3>
-        {showVariantColumn && (
-          <OptionsFilter
-            value={variantFilterValue}
-            options={variants}
-            onChange={handleVariantSelection}
-            label="Selected variants"
-          />
-        )}
-        <StyledDesignTokensTable>
-          <Table striped={false} compact>
-            <colgroup>
-              <StyledCol $width={showVariantColumn ? "40%" : "60%"} />
-              {showVariantColumn && <StyledCol $width="30%" />}
-              <StyledCol $width={showVariantColumn ? "30%" : "40%"} />
-            </colgroup>
-            <TableHead>
-              <TableRow>
+  if (filteredTokens.length === 0) return null;
+
+  return (
+    <>
+      <H3>{tableName}</H3>
+      {showVariantColumn && (
+        <OptionsFilter
+          value={variantFilterValue}
+          options={variants}
+          onChange={handleVariantSelection}
+          label="Selected variants"
+        />
+      )}
+      <StyledDesignTokensTable>
+        <Table striped={false} compact>
+          <colgroup>
+            <StyledCol $width={showVariantColumn ? "40%" : "60%"} />
+            {showVariantColumn && <StyledCol $width="30%" />}
+            <StyledCol $width={showVariantColumn ? "30%" : "40%"} />
+          </colgroup>
+          <TableHead>
+            <TableRow>
+              <TableCell as="th" scope="col">
+                <Stack direction="row" spacing="XSmall" align="center">
+                  <StyledDesignTokenBase size="medium" />
+                  <span>Name</span>
+                </Stack>
+              </TableCell>
+              {showVariantColumn && (
                 <TableCell as="th" scope="col">
-                  <Stack direction="row" spacing="XSmall" align="center">
-                    <StyledDesignTokenBase size="medium" />
-                    <span>Name</span>
-                  </Stack>
+                  Variant
                 </TableCell>
-                {showVariantColumn && (
-                  <TableCell as="th" scope="col">
-                    Variant
+              )}
+              <TableCell as="th" scope="col">
+                Value
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {filteredTokens.map(({ name, value }) => {
+              const {
+                type,
+                category,
+                deprecated,
+                schema: { object, variant },
+              } = value;
+              const { value: tokenValue } = value[platform];
+
+              const showedTyped = object in GlobalCategories ? object : category || type;
+
+              return (
+                <TableRow>
+                  <TableCell verticalAlign="middle">
+                    <Stack direction="row" spacing="XSmall" align="center">
+                      <DesignTokenIcon
+                        value={platform === "foundation" ? value.javascript.value : tokenValue}
+                        type={showedTyped}
+                        size="medium"
+                      />
+                      <DesignTokenValue
+                        value={name}
+                        deprecated={!!deprecated}
+                        hasStrikeThrough
+                        width="280px"
+                        showCopyButton
+                      />
+                    </Stack>
                   </TableCell>
-                )}
-                <TableCell as="th" scope="col">
-                  Value
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {filteredTokens.map(({ name, value }) => {
-                const {
-                  type,
-                  category,
-                  deprecated,
-                  schema: { object, variant },
-                } = value;
-                const { value: tokenValue } = value[platform];
-
-                const showedTyped = object in GlobalCategories ? object : category || type;
-
-                return (
-                  <TableRow>
-                    <TableCell verticalAlign="middle">
-                      <Stack direction="row" spacing="XSmall" align="center">
-                        <DesignTokenIcon
-                          value={platform === "foundation" ? value.javascript.value : tokenValue}
-                          type={showedTyped}
-                          size="medium"
-                        />
-                        <DesignTokenValue
-                          value={name}
-                          deprecated={!!deprecated}
-                          hasStrikeThrough
-                          width="280px"
-                          showCopyButton
-                        />
-                      </Stack>
-                    </TableCell>
-                    {showVariantColumn && (
-                      <TableCell verticalAlign="middle" align="left">
-                        <DesignTokenValue width="120px" value={camelCase(variant)} />
-                      </TableCell>
-                    )}
+                  {showVariantColumn && (
                     <TableCell verticalAlign="middle" align="left">
-                      <Stack direction="row" spacing="none" align="center">
-                        <DesignTokenValue
-                          value={tokenValue}
-                          deprecated={!!deprecated}
-                          width="200px"
-                          showCopyButton
-                        />
-                      </Stack>
+                      <DesignTokenValue width="120px" value={String(camelCase(variant))} />
                     </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </StyledDesignTokensTable>
-      </>
-    );
-  }
-  return null;
+                  )}
+                  <TableCell verticalAlign="middle" align="left">
+                    <Stack direction="row" spacing="none" align="center">
+                      <DesignTokenValue
+                        value={tokenValue}
+                        deprecated={!!deprecated}
+                        width="200px"
+                        showCopyButton
+                      />
+                    </Stack>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </StyledDesignTokensTable>
+    </>
+  );
 };
 
 export default DesignTokensTable;

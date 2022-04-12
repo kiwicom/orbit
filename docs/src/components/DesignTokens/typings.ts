@@ -1,8 +1,8 @@
 export interface TokenSchema {
-  namespace: string | null;
-  object: string | null;
-  variant: string | null;
-  subVariant: string | null;
+  namespace: string;
+  object: string;
+  variant: string;
+  subVariant: string;
 }
 
 export enum GlobalCategories {
@@ -38,6 +38,7 @@ type PlatformValue = {
 export type TokenValue = {
   value: {
     type: string;
+    category: string;
     deprecated?: boolean;
     javascript: PlatformValue;
     foundation: PlatformValue;

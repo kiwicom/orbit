@@ -38,7 +38,7 @@ const isColor = type => {
 const DesignTokenIcon = ({ size = "small", value, type }: Props) => {
   if (isTypographyToken(type)) return <StyledDesignTokenTypography size={size} />;
 
-  if (isColor(type)) return <StyledDesignTokenColor size={size} color={value} />;
+  if (isColor(type)) return <StyledDesignTokenColor size={size} $color={value} />;
 
   if (type === "size") return <StyledDesignTokenSize size={size} />;
 

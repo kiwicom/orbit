@@ -1,20 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Truncate, Tooltip } from "@kiwicom/orbit-components";
 import { Check } from "@kiwicom/orbit-components/icons";
 
 import CopyIcon from "../../../images/icons/CopyIcon.svg";
 import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
 
-const StyledCopyButton = styled.button`
-  height: 24px;
-  width: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-
-  ${({ $isCopied }) => $isCopied && "opacity: 1"};
+const StyledCopyButton = styled.button<{ $isCopied: boolean }>`
+  ${({ $isCopied }) => css`
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: ${$isCopied ? "1" : "0"};
+  `}
 `;
 
 const StyledTokenValue = styled.span`
@@ -28,9 +28,11 @@ const StyledTokenValue = styled.span`
   }
 `;
 
-const StyledStrikeThrough = styled.span`
-  ${({ $hasStrikeThrough }) => $hasStrikeThrough && "text-decoration: line-through;"};
-  opacity: 0.5;
+const StyledStrikeThrough = styled.span<{ $hasStrikeThrough?: boolean }>`
+  ${({ $hasStrikeThrough }) => css`
+    ${$hasStrikeThrough && "text-decoration: line-through"};
+    opacity: 0.5;
+  `}
 `;
 
 const DesignTokenValue = ({
@@ -53,7 +55,7 @@ const DesignTokenValue = ({
   const renderValue = () => {
     if (deprecated) {
       return (
-        <Tooltip content="Token is deprecated" preferredAlign="center" preferredPosition="bottom">
+        <Tooltip content="Token is deprecated">
           <StyledStrikeThrough $hasStrikeThrough={hasStrikeThrough}>
             {wrapValue()}
           </StyledStrikeThrough>
@@ -63,7 +65,7 @@ const DesignTokenValue = ({
     return wrapValue();
   };
   return (
-    <StyledTokenValue title={value}>
+    <StyledTokenValue title={String(value)}>
       {renderValue()}
       {showCopyButton && (
         <StyledCopyButton

@@ -7,7 +7,7 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { isLight } from "./helpers";
 
 interface CopyButtonProps {
-  buttonText: string;
+  buttonText?: string;
   colorValue?: string;
   textToCopy?: string;
 }

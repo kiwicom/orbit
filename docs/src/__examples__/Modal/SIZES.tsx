@@ -1,5 +1,4 @@
 import React from "react";
-import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { Button, Stack, ModalSection, Modal } from "@kiwicom/orbit-components";
 
 export default {

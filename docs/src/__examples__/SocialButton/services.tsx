@@ -1,5 +1,5 @@
 import React from "react";
-import { SocialButton, Stack } from "@kiwicom/orbit-components";
+import { SocialButton } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => <SocialButton type="apple">Sign in with Apple </SocialButton>,

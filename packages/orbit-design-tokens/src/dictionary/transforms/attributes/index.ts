@@ -3,7 +3,6 @@ import { Attributes, Property } from "style-dictionary";
 
 import { errorTransform, spacingError, spacingErrorDefinition } from "../../utils/errorMessage";
 import { nameNOVCamel } from "../names";
-import { valueJavascript } from "../values";
 import {
   isZIndex,
   isBreakpoint,

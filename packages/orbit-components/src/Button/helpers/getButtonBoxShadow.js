@@ -1,5 +1,5 @@
 // @flow
-import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
+import { transparentColor } from "@kiwicom/orbit-design-tokens";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";

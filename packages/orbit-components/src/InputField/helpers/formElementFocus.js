@@ -1,6 +1,6 @@
 // @flow
 import { css } from "styled-components";
-import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
+import { transparentColor } from "@kiwicom/orbit-design-tokens";
 
 // TODO: adopt new design tokens `formElementFocus` and `formElementErrorFocus`
 const formElementFocus = (): any => css`

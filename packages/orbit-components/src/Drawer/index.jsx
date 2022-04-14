@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import transparentColor from "@kiwicom/orbit-design-tokens/lib/js/transparentColor";
+import { transparentColor } from "@kiwicom/orbit-design-tokens";
 
 import KEY_CODE_MAP from "../common/keyMaps";
 import useFocusTrap from "../hooks/useFocusTrap";

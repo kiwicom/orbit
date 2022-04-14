@@ -1,6 +1,8 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
+    "module": "esnext",
+    "resolveJsonModule": false,
     "types": ["cypress", "@testing-library/cypress"]
   },
   "include": ["**/*.test.*"],

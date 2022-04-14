@@ -10,8 +10,8 @@ export interface CreateTheme {
 }
 
 const createTheme: CreateTheme = (foundation = {}, overrides = {}) => {
-  const theme = _.merge(foundation, defaultFoundation);
-  return _.merge(overrides, createTokens(theme));
+  const theme = _.merge(defaultFoundation, foundation);
+  return _.merge(createTokens(theme), overrides);
 };
 
 export default createTheme;

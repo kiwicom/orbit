@@ -1,6 +1,6 @@
-import { defaultTheme } from "../../..";
+import { defaultTheme } from "@kiwicom/orbit-design-tokens";
 
-const breakpoint = defaultTheme.orbit.widthBreakpointLargeMobile;
+const breakpoint = defaultTheme.widthBreakpointLargeMobile;
 
 describe("useLockScrolling", () => {
   it("should listen for viewport resize", () => {

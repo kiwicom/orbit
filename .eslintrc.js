@@ -180,6 +180,7 @@ module.exports = {
       rules: {
         // we're not using Flow in orbit-design-tokens
         "flowtype/require-valid-file-annotation": "off",
+        "import/no-extraneous-dependencies": "off",
         // if we stick to pure functions readonly is not needed
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
       },

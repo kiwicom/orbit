@@ -2,7 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import { createRouter } from "@nanostores/router";
 import { useStore } from "nanostores/react";
-import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
+import { ThemeProvider } from "@kiwicom/orbit-components";
+import { defaultTheme } from "@kiwicom/orbit-design-tokens";
 
 import LockScrolling from "./pages/lock-scrolling";
 import MediaQueries from "./pages/media-queries";
@@ -36,8 +37,12 @@ function App() {
       return (
         <ThemeProvider
           theme={{
+<<<<<<< HEAD
             ...defaultTheme,
             lockScrollingBarGap: true,
+=======
+            orbit: defaultTheme,
+>>>>>>> bf2816770 (chore: fix cypress)
             // eslint-disable-next-line no-restricted-globals
             lockScrolling: location.search === "?disabled" ? false : undefined,
           }}
@@ -47,13 +52,13 @@ function App() {
       );
     case "mediaQueries":
       return (
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={{ orbit: defaultTheme }}>
           <MediaQueries />
         </ThemeProvider>
       );
     case "modalFooter":
       return (
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={{ orbit: defaultTheme }}>
           <ModalFooter />
         </ThemeProvider>
       );

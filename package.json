@@ -10,7 +10,7 @@
     "check-links:dist": "ts-node -p docs/tsconfig.json docs/services/checkLinks.ts",
     "check-links:src": "remark -e '.mdx' -q -u validate-links docs/src/documentation --no-config",
     "check-links": "yarn check-links:src && yarn check-links:dist",
-    "check-types": "tsc && tsc --project docs && tsc --project packages/orbit-components/cypress",
+    "check-types": "tsc && tsc --p docs && tsc --p packages/orbit-components/cypress",
     "components": "yarn workspace @kiwicom/orbit-components",
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "dev": "yarn components storybook",

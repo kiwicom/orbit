@@ -1,8 +1,8 @@
 // @flow
-import { defaultTheme } from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 export default {
-  orbit: defaultTheme,
+  orbit: defaultTokens,
   transitions: true,
   lockScrolling: true,
   lockScrollingBarGap: false,

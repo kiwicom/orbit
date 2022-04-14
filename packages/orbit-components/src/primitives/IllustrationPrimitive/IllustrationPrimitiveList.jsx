@@ -8,10 +8,12 @@ import mq from "../../utils/mediaQuery";
 import IllustrationPrimitive from ".";
 
 const List = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
+  ${({ theme }) => css`
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border-radius: ${theme.orbit.borderRadiusLarge};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -20,22 +22,24 @@ List.defaultProps = {
 };
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  width: 100%;
-  min-height: 80px;
-  background-color: white;
-  margin-bottom: ${({ theme }) => theme.orbit.spaceLarge};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
-  border: ${({ theme }) => theme.orbit.borderWidthCard}
-    ${({ theme }) => theme.orbit.borderStyleCard} ${({ theme }) => theme.orbit.paletteCloudNormal};
-  padding: ${({ theme }) => theme.orbit.spaceLarge};
-  ${mq.largeMobile(css`
-    flex-direction: row;
-  `)};
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    min-height: 80px;
+    background-color: white;
+    margin-bottom: ${theme.orbit.spaceLarge};
+    border-radius: ${theme.orbit.borderRadiusLarge};
+    border: ${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard}
+      ${theme.orbit.paletteCloudNormal};
+    padding: ${theme.orbit.spaceLarge};
+    ${mq.largeMobile(css`
+      flex-direction: row;
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -44,18 +48,20 @@ Container.defaultProps = {
 };
 
 const IllustrationJSX = styled.div`
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
-  background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
-  border: ${({ theme }) => theme.orbit.borderWidthCard}
-    ${({ theme }) => theme.orbit.borderStyleCard} ${({ theme }) => theme.orbit.paletteCloudNormal};
-  margin-top: ${({ theme }) => theme.orbit.spaceMedium};
-  padding: ${({ theme }) => theme.orbit.spaceXXSmall} ${({ theme }) => theme.orbit.spaceXSmall};
-  ${mq.largeMobile(css`
-    margin: 0;
-  `)};
+  ${({ theme }) => css`
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 12px;
+    line-height: ${theme.orbit.lineHeightTextSmall};
+    color: ${theme.orbit.paletteInkNormal};
+    background-color: ${theme.orbit.paletteCloudLight};
+    border: ${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard}
+      ${theme.orbit.paletteCloudNormal};
+    margin-top: ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.spaceXXSmall} ${theme.orbit.spaceXSmall};
+    ${mq.largeMobile(css`
+      margin: 0;
+    `)};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

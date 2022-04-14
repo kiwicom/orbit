@@ -17,16 +17,17 @@ const StyledDiv = styled.div`
   width: 100%;
   box-sizing: border-box;
   background: ${({ theme }) => theme.orbit.someDeprecatedToken};
-`
+`;
 ```
 
 ```jsx
 const mixin = css`
-  color: ${({ theme: { orbit }, active }) => active ? orbit.someDeprecatedToken : orbit.anotherDeprecatedToken};
-`
+  color: ${({ theme: { orbit }, active }) =>
+    active ? orbit.someDeprecatedToken : orbit.anotherDeprecatedToken};
+`;
 ```
 
-As an error is **not** considered usage of a design token that is not marked as deprecated. 
+As an error is **not** considered usage of a design token that is not marked as deprecated.
 
 ## Rule options
 

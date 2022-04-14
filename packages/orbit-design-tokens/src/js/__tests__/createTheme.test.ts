@@ -5,6 +5,7 @@ describe("createTheme", () => {
   it("should match defaultTheme without any parameters", () => {
     expect(createTheme()).toEqual(defaultTheme);
   });
+
   const customFoundation = {
     palette: {
       blue: {

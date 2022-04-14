@@ -21,7 +21,7 @@
     "build:dictionary": "ts-node ./src/dictionary/build.ts",
     "build:lib": "tsc -p lib.json",
     "build:es": "tsc -p es.json",
-    "build": "yarn build:dictionary && yarn build:lib && yarn copy:lib",
+    "build": "yarn build:dictionary && yarn build:lib && yarn build:es && yarn copy:lib && yarn copy:es",
     "size:build": "yarn build:dictionary && yarn build:lib",
     "copy:lib": "copyfiles -u 1 'src/**/*.md' lib && copyfiles -u 1 'src/**/*.js.flow' lib",
     "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es",
@@ -39,7 +39,6 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/lodash": "^4.14.181",
-    "@types/ramda": "^0.27.1",
     "@types/xml": "^1.0.5",
     "copyfiles": "^2.4.1",
     "lodash": "^4.17.14",
@@ -48,7 +47,6 @@
     "xml": "^1.0.1"
   },
   "dependencies": {
-    "color2k": "^2.0.0",
-    "ramda": "^0.27.1"
+    "color2k": "^2.0.0"
   }
 }

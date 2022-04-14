@@ -1,4 +1,4 @@
-import mergeDeepRight from "ramda/src/mergeDeepRight";
+import _ from "lodash";
 
 import defaultFoundation, { CustomFoundation } from "./defaultFoundation";
 import createTokens, { Tokens } from "./createTokens";
@@ -10,8 +10,8 @@ export interface CreateTheme {
 }
 
 const createTheme: CreateTheme = (foundation = {}, overrides = {}) => {
-  const theme = mergeDeepRight(defaultFoundation, foundation);
-  return mergeDeepRight(createTokens(theme), overrides);
+  const theme = _.merge(foundation, defaultFoundation);
+  return _.merge(overrides, createTokens(theme));
 };
 
 export default createTheme;

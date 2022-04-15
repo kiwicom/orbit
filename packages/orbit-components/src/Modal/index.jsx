@@ -54,7 +54,7 @@ const ModalBody = styled.div`
     -webkit-overflow-scrolling: auto;
     ${media.largeMobile(css`
       overflow-y: auto;
-      padding: ${theme.orbit.spaceXXLarge};
+      padding: ${theme.orbit.spaceTenX};
     `)};
     ${onlyIE(css`
       position: -ms-page;
@@ -136,8 +136,8 @@ const CloseContainer = styled.div`
     height: 52px;
     width: 100%;
     max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken};
-    box-shadow: ${scrolled && theme.orbit.boxShadowFixed};
-    background-color: ${scrolled && theme.orbit.paletteWhite};
+    box-shadow: ${scrolled && theme.orbit.elevationFixedBoxShadow};
+    background-color: ${scrolled && theme.orbit.paletteWhiteNormal};
     border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
     border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
     transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
@@ -158,7 +158,7 @@ const CloseContainer = styled.div`
 
     ${StyledButtonPrimitive} {
       pointer-events: auto;
-      margin-${right}: ${theme.orbit.spaceXXSmall};
+      margin-${right}: ${theme.orbit.spaceOneX};
 
       & svg {
         transition: ${transition(["color"], "fast", "ease-in-out")};
@@ -166,11 +166,11 @@ const CloseContainer = styled.div`
       }
 
       &:hover svg {
-        color: ${theme.orbit.paletteInkLightHover};
+        color: ${theme.orbit.paletteInkLightSecondary};
       }
 
       &:active svg {
-        color: ${theme.orbit.paletteInkLightActive};
+        color: ${theme.orbit.paletteInkLightTertiary};
       }
     }
 `}
@@ -196,7 +196,7 @@ const ModalWrapperContent = styled.div`
     box-sizing: border-box;
     border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
     border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
-    background-color: ${theme.orbit.backgroundModal};
+    background-color: ${theme.orbit.elevationFlatBackground};
     font-family: ${theme.orbit.fontFamily};
     width: 100%;
     ${isMobileFullPage
@@ -206,15 +206,15 @@ const ModalWrapperContent = styled.div`
         `
       : css`
           max-height: calc(
-            100% - ${theme.orbit.spaceXLarge} -
+            100% - ${theme.orbit.spaceEightX} -
               ${`${fixedFooter && Boolean(footerHeight) ? footerHeight : 0}px`}
           );
         `};
     bottom: ${`${
-      (!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
+      (!isMobileFullPage ? parseInt(theme.orbit.spaceEightX, 10) : 0) +
       (fixedFooter && Boolean(footerHeight) ? footerHeight : 0)
     }px`};
-    box-shadow: ${theme.orbit.boxShadowOverlay};
+    box-shadow: ${theme.orbit.elevationOverlayBoxShadow};
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -223,21 +223,21 @@ const ModalWrapperContent = styled.div`
     css`
       ${StyledModalFooter} {
         bottom: 0;
-        padding: ${theme.orbit.spaceMedium};
+        padding: ${theme.orbit.spaceFourX};
         box-shadow: ${fullyScrolled
-          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, ${theme.orbit.boxShadowFixedReverse}`
-          : `inset 0 0 0 transparent, ${theme.orbit.boxShadowFixedReverse}`};
+          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, ${theme.orbit.elevationFixedReverseBoxShadow}`
+          : `inset 0 0 0 transparent, ${theme.orbit.elevationFixedReverseBoxShadow}`};
         position: fixed;
         transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
       }
       ${StyledModalSection}:last-of-type {
-        padding-bottom: ${theme.orbit.spaceLarge};
+        padding-bottom: ${theme.orbit.spaceSixX};
         margin-bottom: 0;
       }
     `};
 
     ${MobileHeader} {
-      top: ${!isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
+      top: ${!isMobileFullPage && scrolled && theme.orbit.spaceEightX};
       opacity: ${scrolled && "1"};
       visibility: ${scrolled && "visible"};
       transition: ${scrolled &&
@@ -255,7 +255,7 @@ const ModalWrapperContent = styled.div`
     }
 
     ${StyledModalHeader} {
-      margin-bottom: ${!hasModalSection && theme.orbit.spaceXLarge};
+      margin-bottom: ${!hasModalSection && theme.orbit.spaceEightX};
     }
 
     ${media.largeMobile(css`
@@ -267,7 +267,7 @@ const ModalWrapperContent = styled.div`
       overflow: visible;
       max-height: 100%;
       ${StyledModalSection}:last-of-type {
-        padding-bottom: ${theme.orbit.spaceXXLarge};
+        padding-bottom: ${theme.orbit.spaceTenX};
         margin-bottom: ${fixedFooter ? `${footerHeight}px` : "0"};
         &::after {
           content: none;
@@ -278,15 +278,15 @@ const ModalWrapperContent = styled.div`
       }
       ${StyledModalFooter} {
         padding: ${fixedFooter
-          ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXLarge}!important`
-          : theme.orbit.spaceXLarge};
+          ? `${theme.orbit.spaceEightX} ${theme.orbit.spaceEightX}!important`
+          : theme.orbit.spaceEightX};
         max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken};
         position: ${fixedFooter && fullyScrolled && "absolute"};
         box-shadow: ${fullyScrolled && "none"};
       }
       ${MobileHeader} {
-        top: ${scrolled ? "0" : `-${theme.orbit.spaceXXLarge}`};
-        width: ${`calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
+        top: ${scrolled ? "0" : `-${theme.orbit.spaceTenX}`};
+        width: ${`calc(${modalWidth}px - 48px - ${theme.orbit.spaceTenX})`};
       }
     `)};
 

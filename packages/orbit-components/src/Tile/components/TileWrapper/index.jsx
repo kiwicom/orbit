@@ -16,17 +16,17 @@ export const StyledTileWrapper: any = styled.div`
     font-family: ${theme.orbit.fontFamily};
     color: ${theme.orbit.paletteInkNormal};
     text-decoration: none;
-    background: ${theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
+    background: ${theme.orbit.paletteWhiteNormal}; //TODO Create token backgroundColorTile
     border-radius: ${theme.orbit.borderRadiusLarge};
-    box-shadow: ${theme.orbit.boxShadowAction};
+    box-shadow: ${theme.orbit.elevationActionBoxShadow};
     transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
 
     :hover,
     :focus {
       outline: none;
-      box-shadow: ${theme.orbit.boxShadowActionActive};
+      box-shadow: ${theme.orbit.elevationActionActiveBoxShadow};
       ${StyledIconRight} {
-        color: ${theme.orbit.paletteInkLightHover};
+        color: ${theme.orbit.paletteInkLightSecondary};
       }
     }
   `}
@@ -47,15 +47,15 @@ const StyledTileAnchor = styled.a`
     color: ${theme.orbit.paletteInkNormal};
     &:focus {
       outline: none;
-      box-shadow: ${theme.orbit.boxShadowActionActive};
+      box-shadow: ${theme.orbit.elevationActionActiveBoxShadow};
       ${StyledIconRight} {
-        color: ${theme.orbit.paletteInkLightHover};
+        color: ${theme.orbit.paletteInkLightSecondary};
       }
     }
     &:link,
     &:visited {
       color: ${theme.orbit.paletteInkNormal};
-      font-weight: ${theme.orbit.fontWeightLinks};
+      font-weight: ${theme.orbit.textLinkFontWeight};
     }
   `}
 `;

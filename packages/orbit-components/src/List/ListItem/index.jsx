@@ -14,18 +14,18 @@ import type { GetLineHeightToken, Props } from ".";
 
 export const getLineHeightToken: GetLineHeightToken = ({ theme, size }) => {
   const lineHeightTokens = {
-    [SIZES.SMALL]: theme.orbit.lineHeightTextSmall,
-    [SIZES.NORMAL]: theme.orbit.lineHeightTextNormal,
-    [SIZES.LARGE]: theme.orbit.lineHeightTextLarge,
+    [SIZES.SMALL]: theme.orbit.lineHeightSmall,
+    [SIZES.NORMAL]: theme.orbit.lineHeightNormal,
+    [SIZES.LARGE]: theme.orbit.lineHeightLarge,
   };
   return lineHeightTokens[size];
 };
 
 const getSizeTokenLabel = ({ theme, size }) => {
   const sizeTokens = {
-    [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
-    [SIZES.NORMAL]: theme.orbit.fontSizeTextSmall,
-    [SIZES.LARGE]: theme.orbit.fontSizeTextNormal,
+    [SIZES.SMALL]: theme.orbit.fontSizeSmall,
+    [SIZES.NORMAL]: theme.orbit.fontSizeSmall,
+    [SIZES.LARGE]: theme.orbit.fontSizeNormal,
   };
   return sizeTokens[size];
 };
@@ -33,12 +33,12 @@ const getSizeTokenLabel = ({ theme, size }) => {
 const getIconSizeFromType = ({ theme, type }) => {
   const tokens = {
     [TYPES.PRIMARY]: css`
-      height: ${theme.orbit.heightIconSmall};
-      width: ${theme.orbit.widthIconSmall};
+      height: ${theme.orbit.iconExtraSmallSize};
+      width: ${theme.orbit.iconExtraSmallSize};
     `,
     [TYPES.SECONDARY]: css`
-      height: ${theme.orbit.heightIconSmall};
-      width: ${theme.orbit.widthIconSmall};
+      height: ${theme.orbit.iconExtraSmallSize};
+      width: ${theme.orbit.iconExtraSmallSize};
     `,
   };
   return tokens[type];
@@ -49,7 +49,7 @@ export const Item: any = styled(({ type, theme, ...props }) => <li {...props} />
     font-family: ${theme.orbit.fontFamily};
     display: flex;
     flex-direction: row;
-    margin-bottom: ${theme.orbit.spaceXXSmall};
+    margin-bottom: ${theme.orbit.spaceOneX};
 
     &:last-child,
     &:last-of-type {
@@ -72,7 +72,7 @@ export const IconContainer: any = styled.div`
   ${({ theme, size }) => css`
     display: flex;
     align-items: center;
-    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+    margin: ${rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
     flex: 0 0 auto;
     height: ${getLineHeightToken({ theme, size })};
 
@@ -98,7 +98,7 @@ const StyledLabel = styled.div`
   ${({ theme }) => css`
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${theme.orbit.fontWeightNormal};
-    color: ${theme.orbit.colorTextSecondary};
+    color: ${theme.orbit.textSecondaryForeground};
     font-size: ${getSizeTokenLabel};
   `}
 `;

@@ -28,7 +28,7 @@ const StyledDialog = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
-    padding: ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.spaceFourX};
     z-index: ${theme.orbit.zIndexModalOverlay};
     box-sizing: border-box;
     outline: none;
@@ -60,11 +60,11 @@ const StyledDialogContent = styled.div`
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
-    background: ${theme.orbit.paletteWhite};
+    padding: ${`${theme.orbit.spaceSixX} ${theme.orbit.spaceFourX} ${theme.orbit.spaceFourX}`};
+    background: ${theme.orbit.paletteWhiteNormal};
     border-radius: 12px;
     bottom: ${({ shown }) => (shown ? "0" : "-100%")};
-    box-shadow: ${theme.orbit.boxShadowOverlay};
+    box-shadow: ${theme.orbit.elevationOverlayBoxShadow};
     text-align: center;
     ${StyledText} {
       text-align: center;
@@ -72,7 +72,7 @@ const StyledDialogContent = styled.div`
     ${mq.largeMobile(css`
       min-width: ${theme.orbit.modalWidthSmall};
       border-radius: 9px;
-      padding: ${theme.orbit.spaceLarge};
+      padding: ${theme.orbit.spaceSixX};
       text-align: ${left};
       ${StyledText} {
         text-align: ${left};

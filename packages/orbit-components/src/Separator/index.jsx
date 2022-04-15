@@ -45,8 +45,8 @@ const StyledContainer = styled.div`
 
 const StyledSeparator = styled.hr`
   ${({ theme }) => css`
-    height: ${theme.orbit.heightSeparator};
-    background: ${theme.orbit.backgroundSeparator};
+    height: 1px;
+    background: ${theme.orbit.elevationFlatBorderColor};
     box-sizing: border-box;
     border-style: none;
     margin-top: 0;

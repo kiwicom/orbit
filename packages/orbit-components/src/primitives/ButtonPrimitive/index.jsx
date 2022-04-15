@@ -130,7 +130,8 @@ export const StyledButtonPrimitive: any = styled(
     font-size: ${fontSize};
     cursor: ${disabled ? "not-allowed" : "pointer"};
     transition: all ${theme.orbit.durationFast} ease-in-out !important;
-    opacity: ${disabled && theme.orbit.opacityButtonDisabled};
+    outline: 0;
+    opacity: ${disabled && theme.orbit.buttonDisabledOpacity};
     margin-bottom: ${getSpacingToken};
     width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};
     box-shadow: ${boxShadow};

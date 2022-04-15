@@ -13,8 +13,10 @@ import type { Props } from ".";
 export const StyledModalSection: any = styled.section`
   ${({ theme, suppressed, closable, isMobileFullPage }) => css`
     width: 100%;
-    padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`};
-    background-color: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
+    padding: ${`${theme.orbit.spaceSixX} ${theme.orbit.spaceFourX}`};
+    background-color: ${suppressed
+      ? theme.orbit.paletteCloudLight
+      : theme.orbit.paletteWhiteNormal};
     border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
     box-sizing: border-box;
 
@@ -22,7 +24,7 @@ export const StyledModalSection: any = styled.section`
       border-top: ${suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
       border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
       border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
-      margin-top: ${suppressed && closable && theme.orbit.spaceLarge};
+      margin-top: ${suppressed && closable && theme.orbit.spaceSixX};
     }
 
     &:last-of-type {
@@ -30,7 +32,7 @@ export const StyledModalSection: any = styled.section`
       border-bottom-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
       border-bottom-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
       & ~ ${StyledModalFooter} {
-        margin-top: ${suppressed && theme.orbit.spaceMedium};
+        margin-top: ${suppressed && theme.orbit.spaceFourX};
       }
       &:not(:last-child) {
         border-bottom-left-radius: 0;
@@ -39,10 +41,10 @@ export const StyledModalSection: any = styled.section`
     }
 
     ${media.largeMobile(css`
-      padding: ${theme.orbit.spaceXLarge};
+      padding: ${theme.orbit.spaceEightX};
 
       &:first-of-type {
-        margin-top: ${((suppressed && closable) || suppressed) && theme.orbit.spaceXXLarge};
+        margin-top: ${((suppressed && closable) || suppressed) && theme.orbit.spaceTenX};
         border-top-left-radius: ${!isMobileFullPage && "9px"}; // TODO: create token
         border-top-right-radius: ${!isMobileFullPage && "9px"}; // TODO: create token
       }

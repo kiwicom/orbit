@@ -21,14 +21,14 @@ export const StyledBadge: any = styled(({ className, children, dataTest, ariaLab
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    min-height: ${theme.orbit.heightBadge};
+    min-height: ${theme.orbit.iconMediumSize};
     line-height: 14px;
-    font-size: ${theme.orbit.fontSizeTextSmall};
+    font-size: ${theme.orbit.fontSizeSmall};
     font-weight: ${theme.orbit.fontWeightMedium};
     background: ${background};
     color: ${foregroundColor};
-    border-radius: ${theme.orbit.borderRadiusBadge};
-    padding: ${theme.orbit.paddingBadge};
+    border-radius: 12px;
+    padding: 0 8px;
     border: ${borderColor && `1px solid ${borderColor}`};
     ${StyledCarrierLogo} {
       position: absolute;
@@ -48,11 +48,11 @@ const IconContainer = styled(({ className, children }) => (
   ${({ theme, hasContent }) => css`
     display: flex;
     flex-shrink: 0;
-    margin: ${hasContent && rtlSpacing(theme.orbit.marginBadgeIcon)};
+    margin: ${hasContent && rtlSpacing("0 4px 0 0")};
 
     svg {
-      height: ${theme.orbit.widthIconSmall};
-      width: ${theme.orbit.heightIconSmall};
+      height: ${theme.orbit.iconExtraSmallSize};
+      width: ${theme.orbit.iconExtraSmallSize};
     }
   `}
 `;
@@ -67,7 +67,7 @@ const StyledBadgeContent = styled.div`
     padding: 5px 0;
     line-height: 1;
     margin-${left}: ${
-    $isCarrier && parseInt(theme.orbit.widthIconMedium, 10) - parseInt(theme.orbit.spaceXXSmall, 10)
+    $isCarrier && parseInt(theme.orbit.iconMediumSize, 10) - parseInt(theme.orbit.spaceOneX, 10)
   }px;
   `}
 `;

@@ -51,19 +51,20 @@ export const StyledLoading: any = styled(({ children, className, dataTest }) => 
     {children}
   </div>
 ))`
-  position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
-  top: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
-  ${left}: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
-  width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
-  ${getHeight};
-  padding: ${({ theme, type }) =>
-    type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.paddingLoading};
-  display: ${({ type }) => (type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex")};
-  flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row")};
-  justify-content: ${getAlign};
-  align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
+  ${({ type }) => css`
+    position: ${type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
+    top: ${type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
+    ${left}: ${type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
+    width: ${type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
+    ${getHeight};
+    padding: ${type !== TYPE_OPTIONS.INLINE_LOADER && "12px"};
+    display: ${type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex"};
+    flex-direction: ${type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row"};
+    justify-content: ${getAlign};
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -72,13 +73,14 @@ StyledLoading.defaultProps = {
 };
 
 const StyledLoadingText = styled.div`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextLoading};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  margin-top: ${({ theme, type }) => type === TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceMedium};
-  margin-${left}: ${({ theme, type }) =>
-  type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceSmall};
+  ${({ theme, type }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeNormal};
+    color: ${theme.orbit.paletteCloudDarker};
+    line-height: ${theme.orbit.lineHeightNormal};
+    margin-top: ${type === TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceFourX};
+    margin-${left}: ${type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceThreeX};
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

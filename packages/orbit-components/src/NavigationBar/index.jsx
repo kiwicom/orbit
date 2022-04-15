@@ -19,7 +19,7 @@ const StyledNavigationBarContent = styled.div`
   ${({ theme }) => css`
     display: block;
     width: 100%;
-    margin-${right}: ${theme.orbit.spaceXSmall};
+    margin-${right}: ${theme.orbit.spaceTwoX};
   `}
 `;
 
@@ -38,9 +38,9 @@ const StyledNavigationBar = styled.nav`
     width: 100%;
     display: flex;
     align-items: center;
-    background: ${theme.orbit.paletteWhite};
-    box-shadow: ${theme.orbit.boxShadowFixed};
-    padding: ${theme.orbit.spaceSmall};
+    background: ${theme.orbit.paletteWhiteNormal};
+    box-shadow: ${theme.orbit.elevationFixedBoxShadow};
+    padding: ${theme.orbit.spaceThreeX};
     box-sizing: border-box;
     z-index: 700;
     transition: ${transition(["transform"], "normal", "ease-in-out")};

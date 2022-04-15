@@ -15,7 +15,7 @@ import type { Props } from ".";
 const StyledBreadcrumbs = styled.nav`
   ${({ theme }) => css`
     font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextSmall};
+    font-size: ${theme.orbit.fontSizeSmall};
     margin-bottom: ${getSpacingToken};
   `}
 `;
@@ -35,7 +35,7 @@ const StyledBreadcrumbsList = styled.ol`
 
 const StyledBackButtonWrapper = styled.span`
   ${({ theme }) => css`
-    margin-${right}: ${theme.orbit.spaceSmall};
+    margin-${right}: ${theme.orbit.spaceThreeX};
 `};
 `;
 

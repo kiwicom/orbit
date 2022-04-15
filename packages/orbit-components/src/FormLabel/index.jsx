@@ -12,8 +12,8 @@ import type { Props } from ".";
 const StyledAsterisk = styled.span`
   ${({ theme, filled }) => css`
     font-weight: ${theme.orbit.fontWeightBold};
-    color: ${!filled ? theme.orbit.colorTextError : theme.orbit.colorFormLabelFilled};
-    font-size: ${theme.orbit.fontSizeFormLabel};
+    color: ${!filled ? theme.orbit.textCriticalForeground : theme.orbit.formElementLabelFilled};
+    font-size: 14px;
     vertical-align: top;
   `}
 `;
@@ -24,7 +24,7 @@ StyledAsterisk.defaultProps = {
 };
 
 const StyledInputErrorIcWrapper = styled.span`
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0 0`)};
+  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceOneX} 0 0`)};
   display: inline-flex;
   align-items: center;
 `;
@@ -74,11 +74,13 @@ const FormLabel: any = styled(
   ${({ theme, filled, disabled }) => css`
     display: flex;
     font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeFormLabel};
+    font-size: 14px;
     font-weight: ${theme.orbit.fontWeightMedium};
-    color: ${!filled || disabled ? theme.orbit.colorFormLabel : theme.orbit.colorFormLabelFilled};
-    line-height: ${theme.orbit.lineHeightTextSmall};
-    margin-bottom: ${theme.orbit.spaceXXSmall};
+    color: ${!filled || disabled
+      ? theme.orbit.formElementLabelForeground
+      : theme.orbit.formElementLabelFilled};
+    line-height: ${theme.orbit.lineHeightSmall};
+    margin-bottom: ${theme.orbit.spaceOneX};
   `}
 `;
 

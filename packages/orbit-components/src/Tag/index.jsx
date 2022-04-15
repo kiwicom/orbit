@@ -14,8 +14,8 @@ import type { Props } from ".";
 
 const getFontSize = ({ theme, size }) => {
   const tokens = {
-    [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
-    [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
+    [SIZES.SMALL]: theme.orbit.fontSizeSmall,
+    [SIZES.NORMAL]: theme.orbit.fontSizeNormal,
   };
 
   return tokens[size];
@@ -64,7 +64,7 @@ const getBackgroundColor = state => ({ type, dateTag }) => {
 const CloseContainer = styled.div`
   ${({ theme, actionable, type, selected }) => css`
     display: flex;
-    margin-${left}: ${theme.orbit.spaceXSmall};
+    margin-${left}: ${theme.orbit.spaceTwoX};
     opacity: ${selected ? "1" : "0.5"};
     color: ${resolveColor({
       selected: "paletteWhite",
@@ -101,7 +101,7 @@ export const StyledTag: any = styled.div`
     font-size: ${getFontSize};
     font-weight: ${theme.orbit.fontWeightMedium};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    padding: ${theme.orbit.spaceXSmall};
+    padding: ${theme.orbit.spaceTwoX};
     transition: color ${theme.orbit.durationFast} ease-in-out,
       box-shadow ${theme.orbit.durationFast} ease-in-out,
       background ${theme.orbit.durationFast} ease-in-out;

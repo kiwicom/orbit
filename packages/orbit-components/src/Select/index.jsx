@@ -19,8 +19,8 @@ import type { Props } from ".";
 
 const getSelectSize = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.formBoxSmallHeight,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.formBoxNormalHeight,
   };
   return tokens[size];
 };
@@ -88,95 +88,92 @@ const StyledSelect: any = styled(
     ),
   ),
 )`
-  appearance: none;
-  background: ${({ theme }) => theme.orbit.backgroundInput};
-  cursor: pointer;
-  color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
-  height: ${getSelectSize};
-  padding: ${({ theme, size, prefix }) =>
-    rtlSpacing(
+  ${({ theme, size, filled, prefix, customValueText, error }) => css`
+    appearance: none;
+    background: ${theme.orbit.formElementBackground};
+    cursor: pointer;
+    color: ${filled ? theme.orbit.formElementFilledForeground : theme.orbit.formElementForeground};
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${size === SIZE_OPTIONS.SMALL
+      ? theme.orbit.formElementSmallFontSize
+      : theme.orbit.formElementNormalFontSize};
+    height: ${getSelectSize};
+    padding: ${rtlSpacing(
       (size === SIZE_OPTIONS.SMALL &&
         !prefix &&
-        `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceSmall}`) ||
-        (size === SIZE_OPTIONS.SMALL &&
-          prefix &&
-          `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
-        (prefix && `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
-        `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceSmall}`,
+        `0 ${theme.orbit.spaceEightX} 0 ${theme.orbit.spaceThreeX}`) ||
+        (size === SIZE_OPTIONS.SMALL && prefix && `0 ${theme.orbit.spaceEightX} 0 48px`) ||
+        (prefix && `0 ${theme.orbit.spaceTenX} 0 48px`) ||
+        `0 ${theme.orbit.spaceTenX} 0 ${theme.orbit.spaceThreeX}`,
     )};
-  outline: none;
-  width: 100%;
-  color: ${({ customValueText }) => customValueText && "transparent !important"};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  z-index: 2;
+    outline: none;
+    width: 100%;
+    color: ${customValueText && "transparent !important"};
+    transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+    z-index: 2;
 
-  border-radius: 6px;
-  ${mq.tablet(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)};
+    border-radius: 6px;
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)};
 
-  > option {
-    color: ${({ theme }) => theme.orbit.colorTextInput};
-  }
+    > option {
+      color: ${theme.orbit.formElementFilledForeground};
+    }
 
-  &::-ms-expand {
-    display: none;
-  }
+    &::-ms-expand {
+      display: none;
+    }
 
-  // IE Bug fix: highlighted background color and color of text
-  &::-ms-value {
-    background: transparent;
-    color: ${({ theme, filled }) =>
-      filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
-    // needs to rgba, transparent is not allow in IE
-    color: ${({ customValueText }) => customValueText && "rgba(255, 255, 255, 0)"};
-  }
+    // IE Bug fix: highlighted background color and color of text
+    &::-ms-value {
+      background: transparent;
+      color: ${filled
+        ? theme.orbit.formElementFilledForeground
+        : theme.orbit.formElementForeground};
+      // needs to rgba, transparent is not allow in IE
+      color: ${customValueText && "rgba(255, 255, 255, 0)"};
+    }
 
-  /* Based on state of select */
-  border: 0;
-  box-shadow: inset 0 0 0
-    ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+    /* Based on state of select */
+    border: 0;
+    box-shadow: inset 0 0 0
+      ${`1px ${
+        error ? theme.orbit.formElementBorderColorError : theme.orbit.formElementBorderColor
       }`};
 
-  &:hover {
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
-        }`};
-  }
-
-  &:focus {
-    ${formElementFocus}
-  }
-
-  &:disabled {
-    color: ${({ theme }) => theme.orbit.colorTextInputDisabled};
-    background: ${({ theme }) => theme.orbit.backgroundInputDisabled};
-    cursor: not-allowed;
-
     &:hover {
-      box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};
+      box-shadow: inset 0 0 0
+        ${`1px ${
+          error ? theme.orbit.paletteRedNormalSecondary : theme.orbit.formElementBorderColorHover
+        }`};
     }
-  }
 
-  /*
-    This fix is needed for case where Select has customValueText and it's autofilled by webkit based browser.
-    In that case autofilled value would be displayed, overflowing customValueText.
-  */
-  ${({ customValueText }) =>
-    customValueText &&
-    `
-    &:-webkit-autofill,
-    &:-internal-autofill-selected {
-      -webkit-text-fill-color: transparent;
+    &:focus {
+      ${formElementFocus}
     }
+
+    &:disabled {
+      color: ${theme.orbit.formElementDisabledForeground};
+      background: ${theme.orbit.formElementDisabledBackground};
+      cursor: not-allowed;
+
+      &:hover {
+        box-shadow: inset 0 0 0 1px ${theme.orbit.formElementBorderColor};
+      }
+    }
+
+    /*
+  This fix is needed for case where Select has customValueText and it's autofilled by webkit based browser.
+  In that case autofilled value would be displayed, overflowing customValueText.
+*/
+    ${customValueText &&
+    `
+  &:-webkit-autofill,
+  &:-internal-autofill-selected {
+    -webkit-text-fill-color: transparent;
+  }
+`}
   `}
 `;
 
@@ -189,7 +186,7 @@ export const SelectContainer: React.AbstractComponent<any, HTMLDivElement> = sty
   position: relative;
   display: flex;
   align-items: center;
-  background: ${({ theme }) => theme.orbit.backgroundInput};
+  background: ${({ theme }) => theme.orbit.formElementBackground};
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
@@ -201,14 +198,16 @@ SelectContainer.defaultProps = {
 };
 
 const SelectPrefix = styled.div`
-  display: flex;
-  align-items: center;
-  position: absolute;
-  padding: ${({ theme }) => `0 ${theme.orbit.spaceSmall}`};
-  pointer-events: none;
-  z-index: 3;
-  top: 0;
-  height: ${getSelectSize};
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: ${`0 ${theme.orbit.spaceThreeX}`};
+    pointer-events: none;
+    z-index: 3;
+    top: 0;
+    height: ${getSelectSize};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -217,23 +216,26 @@ SelectPrefix.defaultProps = {
 };
 
 const SelectSuffix = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  ${right}: ${({ theme }) => theme.orbit.spaceXSmall};
-  color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-  pointer-events: none;
-  z-index: 3;
-  height: 100%;
+  ${({ theme, disabled, size }) => css`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    ${right}: ${theme.orbit.spaceTwoX};
+    color: ${disabled
+      ? theme.orbit.formElementDisabledForeground
+      : theme.orbit.formElementFilledForeground};
+    pointer-events: none;
+    z-index: 3;
+    height: 100%;
 
-  & > * {
-    width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};
-    height: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.heightIconSmall};
-    margin-bottom: ${({ size, theme }) => size === SIZE_OPTIONS.SMALL && theme.orbit.spaceXXXSmall};
-  }
+    & > * {
+      width: ${size === SIZE_OPTIONS.SMALL && theme.orbit.iconExtraSmallSize};
+      height: ${size === SIZE_OPTIONS.SMALL && theme.orbit.iconExtraSmallSize};
+      margin-bottom: ${size === SIZE_OPTIONS.SMALL && theme.orbit.spaceHalfX};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -244,21 +246,23 @@ SelectSuffix.defaultProps = {
 const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...props }) => (
   <div {...props} />
 ))`
-  color: ${({ theme, filled, disabled }) =>
-    (disabled && theme.orbit.paletteInkLighter) ||
-    (filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
+  ${({ theme, filled, disabled, size, prefix }) => css`
+    color: ${(disabled && theme.orbit.paletteInkLighter) ||
+    (filled ? theme.orbit.formElementFilledForeground : theme.orbit.formElementForeground)};
 
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
-  z-index: 3;
-  position: absolute;
-  height: 100%;
-  line-height: ${getSelectSize};
-  top: 0;
-  ${left}: ${({ prefix, theme }) => (prefix ? "48px" : theme.orbit.spaceSmall)};
-  bottom: 0;
-  pointer-events: none;
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${size === SIZE_OPTIONS.SMALL
+      ? theme.orbit.formElementSmallFontSize
+      : theme.orbit.formElementNormalFontSize};
+    z-index: 3;
+    position: absolute;
+    height: 100%;
+    line-height: ${getSelectSize};
+    top: 0;
+    ${left}: ${prefix ? "48px" : theme.orbit.spaceThreeX};
+    bottom: 0;
+    pointer-events: none;
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

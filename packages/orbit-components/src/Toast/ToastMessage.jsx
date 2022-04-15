@@ -39,7 +39,7 @@ const StyledInnerWrapper = styled.div`
     position: relative;
     border-radius: ${theme.orbit.borderRadiusLarge};
     background: ${theme.orbit.paletteInkNormal};
-    padding: ${theme.orbit.spaceXSmall};
+    padding: ${theme.orbit.spaceTwoX};
     width: 100%;
     overflow: hidden;
     will-change: transform;
@@ -54,7 +54,7 @@ const StyledInnerWrapper = styled.div`
     ${mq.largeMobile(css`
       max-width: 360px;
       width: initial;
-      padding: ${theme.orbit.spaceSmall};
+      padding: ${theme.orbit.spaceThreeX};
     `)}
     }
 
@@ -69,7 +69,7 @@ const StyledInnerWrapper = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background: ${theme.orbit.paletteWhite};
+        background: ${theme.orbit.paletteWhiteNormal};
         opacity: 0.1;
         animation: ${lightAnimation} ${duration}ms linear;
         animation-play-state: ${isPaused ? "paused" : "running"};
@@ -140,7 +140,10 @@ const ToastMessage = ({
         <Stack flex shrink spacing="XSmall">
           {icon &&
             React.isValidElement(icon) &&
-            React.cloneElement(icon, { size: "small", customColor: theme.orbit.paletteWhite })}
+            React.cloneElement(icon, {
+              size: "small",
+              customColor: theme.orbit.paletteWhiteNormal,
+            })}
           <Text type="white">{children}</Text>
         </Stack>
       </StyledInnerWrapper>

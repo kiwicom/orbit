@@ -34,10 +34,10 @@ const StyledBreadcrumbsItemAnchor = styled(
         text-decoration: none;
       }
       &:hover {
-        color: ${theme.orbit.paletteProductNormalHover};
+        color: ${theme.orbit.paletteProductNormalSecondary};
       }
       :focus {
-        color: ${theme.orbit.paletteProductNormalActive};
+        color: ${theme.orbit.paletteProductNormalTertiary};
       }
     `};
   `}
@@ -50,7 +50,7 @@ StyledBreadcrumbsItemAnchor.defaultProps = {
 
 const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
   ${({ theme }) => css`
-    margin: 0 ${theme.orbit.spaceXXSmall};
+    margin: 0 ${theme.orbit.spaceOneX};
   `}
 `;
 

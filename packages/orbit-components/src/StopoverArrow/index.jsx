@@ -9,16 +9,17 @@ import STOPS from "./consts";
 import type { Props } from ".";
 
 const StyledArrow = styled.svg`
-  vertical-align: middle;
-  fill: currentColor;
-  color: ${({ theme }) => theme.orbit.colorStopoverArrow};
-  width: ${({ theme }) => theme.orbit.widthStopoverArrow};
-  height: ${({ theme }) => theme.orbit.heightStopoverArrow};
-  ${({ theme }) =>
-    theme.rtl &&
+  ${({ theme }) => css`
+    vertical-align: middle;
+    fill: currentColor;
+    color: ${theme.orbit.iconSecondaryForeground};
+    width: 36px;
+    height: 7px;
+    ${theme.rtl &&
     css`
       transform: scale(-1, 1);
     `};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

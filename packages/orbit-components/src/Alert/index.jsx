@@ -39,44 +39,44 @@ const getTypeToken = name => ({ theme, type, suppressed }) => {
     [TOKENS.backgroundAlert]: {
       [TYPE_OPTIONS.INFO]: suppressed
         ? theme.orbit.paletteCloudLight
-        : theme.orbit.backgroundAlertInfo,
+        : theme.orbit.paletteBlueLight,
       [TYPE_OPTIONS.SUCCESS]: suppressed
         ? theme.orbit.paletteCloudLight
-        : theme.orbit.backgroundAlertSuccess,
+        : theme.orbit.paletteGreenLight,
       [TYPE_OPTIONS.WARNING]: suppressed
         ? theme.orbit.paletteCloudLight
-        : theme.orbit.backgroundAlertWarning,
+        : theme.orbit.paletteOrangeLight,
       [TYPE_OPTIONS.CRITICAL]: suppressed
         ? theme.orbit.paletteCloudLight
-        : theme.orbit.backgroundAlertCritical,
+        : theme.orbit.paletteRedLight,
     },
     // TODO: create token
     [TOKENS.colorTextLinkAlertHover]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkActive,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkSecondary,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkSecondary,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkSecondary,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkTertiary,
     },
     // TODO: create token
     [TOKENS.colorTextLinkAlertFocus]: {
-      [TYPE_OPTIONS.INFO]: transparentColor(theme.orbit.paletteBlueDarkHover, 10),
-      [TYPE_OPTIONS.SUCCESS]: transparentColor(theme.orbit.paletteGreenDarkHover, 10),
-      [TYPE_OPTIONS.WARNING]: transparentColor(theme.orbit.paletteOrangeDarkHover, 10),
-      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedDarkActive, 10),
+      [TYPE_OPTIONS.INFO]: transparentColor(theme.orbit.paletteBlueDarkSecondary, 10),
+      [TYPE_OPTIONS.SUCCESS]: transparentColor(theme.orbit.paletteGreenDarkSecondary, 10),
+      [TYPE_OPTIONS.WARNING]: transparentColor(theme.orbit.paletteOrangeDarkSecondary, 10),
+      [TYPE_OPTIONS.CRITICAL]: transparentColor(theme.orbit.paletteRedDarkTertiary, 10),
     },
     [TOKENS.colorBorderAlert]: {
       [TYPE_OPTIONS.INFO]: suppressed
         ? theme.orbit.paletteCloudDark
-        : theme.orbit.paletteBlueLightHover,
+        : theme.orbit.paletteBlueLightSecondary,
       [TYPE_OPTIONS.SUCCESS]: suppressed
         ? theme.orbit.paletteCloudDark
-        : theme.orbit.paletteGreenLightHover,
+        : theme.orbit.paletteGreenLightSecondary,
       [TYPE_OPTIONS.WARNING]: suppressed
         ? theme.orbit.paletteCloudDark
-        : theme.orbit.paletteOrangeLightHover,
+        : theme.orbit.paletteOrangeLightSecondary,
       [TYPE_OPTIONS.CRITICAL]: suppressed
         ? theme.orbit.paletteCloudDark
-        : theme.orbit.paletteRedLightHover,
+        : theme.orbit.paletteRedLightSecondary,
     },
     [TOKENS.colorAccentBorder]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
@@ -135,16 +135,16 @@ const StyledAlert = styled(StyledDiv)`
     background: ${getTypeToken(TOKENS.backgroundAlert)};
     color: ${theme.orbit.paletteInkNormal};
     font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextNormal};
+    font-size: ${theme.orbit.fontSizeNormal};
     box-sizing: border-box;
     margin-bottom: ${getSpacingToken};
     border-top: 3px solid ${getTypeToken(TOKENS.colorAccentBorder)};
 
     padding: ${closable
       ? rtlSpacing(
-          `${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceSmall} ${theme.orbit.spaceSmall}`,
+          `${theme.orbit.spaceThreeX} ${theme.orbit.spaceSixX} ${theme.orbit.spaceThreeX} ${theme.orbit.spaceThreeX}`,
         )
-      : theme.orbit.spaceSmall};
+      : theme.orbit.spaceThreeX};
 
     ${media.largeMobile(css`
       border-top: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
@@ -165,13 +165,13 @@ StyledAlert.defaultProps = {
 const StyledIconContainer = styled(StyledDiv)`
   ${({ theme, inlineActions }) => css`
     flex-shrink: 0;
-    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+    margin: ${rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
     color: ${getTypeToken(TOKENS.colorIconAlert)};
     display: ${inlineActions && "flex"};
     align-items: ${inlineActions && "center"};
 
     ${media.tablet(css`
-      margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+      margin: ${rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
 
       ${StyledIcon} {
         width: 20px;
@@ -202,7 +202,7 @@ const StyledTitle = styled(StyledDiv)`
     display: flex;
     align-items: center;
     min-height: 20px;
-    margin-bottom: ${hasChildren && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
+    margin-bottom: ${hasChildren && (inlineActions ? "0" : theme.orbit.spaceOneX)};
     font-weight: ${theme.orbit.fontWeightBold};
   `}
 `;
@@ -239,9 +239,9 @@ const CloseContainer = styled(StyledDiv)`
   ${({ theme, hasChildren }) => css`
     position: absolute;
     top: ${hasChildren ? 0 : "50%"};
-    margin-top: ${!hasChildren && `-${theme.orbit.widthIconSmall}`};
+    margin-top: ${!hasChildren && `-${theme.orbit.iconExtraSmallSize}`};
     ${right}: 0;
-    margin-${right}: ${!hasChildren && theme.orbit.spaceXSmall};
+    margin-${right}: ${!hasChildren && theme.orbit.spaceTwoX};
   `}
 `;
 

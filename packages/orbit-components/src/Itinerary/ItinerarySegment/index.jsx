@@ -14,14 +14,14 @@ const StyledWrapper = styled.div`
   ${({ theme, noElevation, actionable }) => css`
     cursor: ${actionable && "pointer"};
     margin-bottom: ${getSpacingToken};
-    box-shadow: ${!noElevation && theme.orbit.boxShadowFixed};
+    box-shadow: ${!noElevation && theme.orbit.elevationFixedBoxShadow};
     border-radius: ${theme.orbit.borderRadiusLarge};
-    padding: ${theme.orbit.spaceSmall} 0;
+    padding: ${theme.orbit.spaceThreeX} 0;
     ${actionable &&
     css`
       &:hover,
       &:focus {
-        box-shadow: ${!noElevation && theme.orbit.boxShadowActionActive};
+        box-shadow: ${!noElevation && theme.orbit.elevationActionActiveBoxShadow};
         outline: none;
       }
     `}

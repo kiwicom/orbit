@@ -10,13 +10,13 @@ import type { Props, GetLinkStyleProps } from ".";
 
 const getColor = ({ type }) => ({ theme }) => {
   const tokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
+    [TYPE_OPTIONS.PRIMARY]: theme.orbit.textLinkPrimaryForeground,
+    [TYPE_OPTIONS.SECONDARY]: theme.orbit.textLinkSecondaryForeground,
     [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDark,
     [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
     [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
     [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
-    [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite,
+    [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhiteNormal,
   };
 
   return tokens[type];
@@ -24,12 +24,12 @@ const getColor = ({ type }) => ({ theme }) => {
 
 const getHoverColor = ({ type }) => ({ theme }) => {
   const tokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarkHover,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarkHover,
-    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
-    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
-    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
-    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkHover,
+    [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarkSecondary,
+    [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarkSecondary,
+    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkSecondary,
+    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkSecondary,
+    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkSecondary,
+    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkSecondary,
     [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
   };
   return tokens[type];
@@ -50,9 +50,9 @@ const getActiveColor = ({ type }) => ({ theme }) => {
 
 const getSizeToken = () => ({ theme, size }) => {
   const sizeTokens = {
-    [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
-    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
+    [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeLarge,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeSmall,
   };
   return size && sizeTokens[size];
 };
@@ -65,8 +65,8 @@ const StyledIconContainer = styled(({ children, className }) => (
     align-items: center;
 
     svg {
-      width: ${theme.orbit.widthIconSmall};
-      height: ${theme.orbit.heightIconSmall};
+      width: ${theme.orbit.iconExtraSmallSize};
+      height: ${theme.orbit.iconExtraSmallSize};
     }
   `}
 `;
@@ -79,8 +79,8 @@ StyledIconContainer.defaultProps = {
 const resolveUnderline = ({ type, theme, noUnderline }) => {
   if (noUnderline) return "none";
   return type === TYPE_OPTIONS.SECONDARY
-    ? theme.orbit.textDecorationTextLinkSecondary
-    : theme.orbit.textDecorationTextLinkPrimary;
+    ? theme.orbit.textLinkTextDecoration
+    : theme.orbit.textLinkTextDecoration;
 };
 
 export const getLinkStyle = ({ theme }: GetLinkStyleProps): any => css`
@@ -91,7 +91,7 @@ export const getLinkStyle = ({ theme }: GetLinkStyleProps): any => css`
   &:visited {
     color: ${getColor};
     text-decoration: ${resolveUnderline};
-    font-weight: ${theme.orbit.fontWeightLinks};
+    font-weight: ${theme.orbit.textLinkFontWeight};
   }
 
   &:hover {
@@ -115,13 +115,13 @@ export const StyledTextLink: any = styled(
 )`
   ${({ theme, standAlone }) => css`
     font-family: ${theme.orbit.fontFamily};
-    font-weight: ${theme.orbit.fontWeightLinks};
+    font-weight: ${theme.orbit.textLinkFontWeight};
     font-size: ${getSizeToken};
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     transition: color ${theme.orbit.durationFast} ease-in-out;
-    height: ${standAlone && theme.orbit.heightButtonNormal};
+    height: ${standAlone && theme.orbit.formBoxNormalHeight};
     ${getLinkStyle};
   `}
 `;

@@ -52,7 +52,7 @@ const StyledCardWrapper = styled.div`
     roundedBottom,
     onClick,
   }) => css`
-    padding: ${!noPadding && theme.orbit.spaceMedium};
+    padding: ${!noPadding && theme.orbit.spaceFourX};
     cursor: ${onClick && `pointer`};
     ${CardElement};
     ${bottomBorder && bottomBorderRadius};
@@ -67,7 +67,7 @@ const StyledCardWrapper = styled.div`
 
     ${expanded &&
     `
-      margin: ${theme.orbit.spaceXSmall} 0;
+      margin: ${theme.orbit.spaceTwoX} 0;
       border: 1px solid transparent;
     `};
 
@@ -90,16 +90,16 @@ const StyledCardWrapper = styled.div`
         ${bottomBorderRadius};
       }
 
-      padding: ${!noPadding && theme.orbit.spaceLarge};
+      padding: ${!noPadding && theme.orbit.spaceSixX};
     `)}
 
     &:focus {
       outline: 0;
-      background: ${theme.orbit.paletteWhiteHover};
+      background: ${theme.orbit.paletteWhiteNormalSecondary};
     }
 
     &:hover {
-      background: ${onClick && theme.orbit.paletteWhiteHover};
+      background: ${onClick && theme.orbit.paletteWhiteNormalSecondary};
     }
   `};
 `;

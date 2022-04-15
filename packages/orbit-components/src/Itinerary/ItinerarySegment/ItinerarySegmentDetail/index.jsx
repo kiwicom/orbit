@@ -30,7 +30,7 @@ const StyledWrapper = styled.div`
     &:hover {
       background: ${isContent ? theme.orbit.paletteCloudLight : "none"};
       ${StyledBadge} {
-        background: ${theme.orbit.paletteWhite};
+        background: ${theme.orbit.paletteWhiteNormal};
       }
     }
   `}
@@ -48,7 +48,7 @@ const StyledDetailsIcon = styled.div`
 
 const StyledInnerWrapper = styled.div`
   ${({ theme }) => css`
-    padding: ${rtlSpacing(`0 ${theme.orbit.spaceSmall}`)};
+    padding: ${rtlSpacing(`0 ${theme.orbit.spaceThreeX}`)};
   `}
 `;
 
@@ -61,11 +61,11 @@ export const StyledSummary: any = styled.div`
   ${({ theme, opened, isContent }) => css`
     display: flex;
     align-items: center;
-    border-radius: ${theme.orbit.borderRadiusBadge};
+    border-radius: 12px;
     width: 100%;
     overflow: hidden;
     ${StyledBadge} {
-      background: ${isContent ? opened && theme.orbit.paletteWhite : "none"};
+      background: ${isContent ? opened && theme.orbit.paletteWhiteNormal : "none"};
     }
   `}
 `;
@@ -85,7 +85,7 @@ const StyledDuration = styled.div`
 
 const StyledExpandable = styled.div`
   ${({ theme }) => css`
-    padding-top: ${theme.orbit.spaceSmall};
+    padding-top: ${theme.orbit.spaceThreeX};
   `}
 `;
 
@@ -96,16 +96,16 @@ StyledExpandable.defaultProps = {
 
 const StyledExpandableContent = styled.div`
   ${({ $offset, theme }) => css`
-    padding: 0 ${theme.orbit.spaceSmall};
+    padding: 0 ${theme.orbit.spaceThreeX};
     position: relative;
     z-index: 1;
-    margin-${left}: ${parseInt(theme.orbit.spaceXSmall, 10) + $offset}px;
+    margin-${left}: ${parseInt(theme.orbit.spaceTwoX, 10) + $offset}px;
   `}
 `;
 
 const StyledHeadingOffset = styled.div`
   ${({ theme }) => css`
-    margin-${left}: ${theme.orbit.spaceXLarge};
+    margin-${left}: ${theme.orbit.spaceEightX};
   `}
 `;
 
@@ -114,7 +114,7 @@ const StyledIcon = styled.div`
     display: flex;
     align-items: center;
     position: relative;
-    padding: ${theme.orbit.spaceXXSmall};
+    padding: ${theme.orbit.spaceOneX};
     z-index: 3;
     &:after {
       content: "";
@@ -123,14 +123,14 @@ const StyledIcon = styled.div`
       height: 100%;
       left: 0;
       z-index: -1;
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
       ${isFirst &&
       css`
-        border-radius: ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge} 0 0;
+        border-radius: ${theme.orbit.spaceSixX} ${theme.orbit.spaceSixX} 0 0;
       `}
       ${isLast &&
       css`
-        border-radius: 0 0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge};
+        border-radius: 0 0 ${theme.orbit.spaceSixX} ${theme.orbit.spaceSixX};
       `}
     }
   `}

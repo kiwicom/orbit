@@ -17,8 +17,8 @@ const StyledListChoiceIcon = styled.div`
     display: flex;
     align-self: flex-start;
     flex: 0 0 auto;
-    margin-${right}: ${theme.orbit.spaceXSmall};
-    height: ${theme.orbit.lineHeightTextNormal};
+    margin-${right}: ${theme.orbit.spaceTwoX};
+    height: ${theme.orbit.lineHeightNormal};
 
     svg {
       align-self: center;
@@ -41,9 +41,9 @@ const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...prop
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    padding: ${`${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium}`};
+    padding: ${`${theme.orbit.spaceThreeX} ${theme.orbit.spaceFourX}`};
     border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
-    background-color: ${theme.orbit.paletteWhite};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     transition: background-color 0.15s ease-in-out;
     cursor: ${disabled ? "not-allowed" : "pointer"};
 
@@ -83,7 +83,7 @@ const StyledListChoiceContent = styled.div`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding-${right}: ${theme.orbit.spaceSmall};
+    padding-${right}: ${theme.orbit.spaceThreeX};
 `}
 `;
 

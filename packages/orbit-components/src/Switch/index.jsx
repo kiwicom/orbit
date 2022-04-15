@@ -49,17 +49,17 @@ const StyledSwitchButton = styled.div`
     width: 24px;
     height: 24px;
     border-radius: ${theme.orbit.borderRadiusCircle};
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     transition: ${theme.orbit.durationFast};
-    box-shadow: inset 0 0 1px 0 rgba(7, 64, 92, 0.1), ${theme.orbit.boxShadowAction};
+    box-shadow: inset 0 0 1px 0 rgba(7, 64, 92, 0.1), ${theme.orbit.elevationActionBoxShadow};
 
     &:active {
-      box-shadow: ${!disabled && theme.orbit.boxShadowActionActive};
+      box-shadow: ${!disabled && theme.orbit.elevationActionActiveBoxShadow};
     }
 
     svg {
-      height: ${theme.orbit.heightIconSmall};
-      width: ${theme.orbit.heightIconSmall};
+      height: ${theme.orbit.iconExtraSmallSize};
+      width: ${theme.orbit.iconExtraSmallSize};
       color: ${hasCustomIcon ? theme.orbit.paletteInkLight : theme.orbit.paletteCloudDarker};
     }
 

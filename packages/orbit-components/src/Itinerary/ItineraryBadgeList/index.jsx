@@ -14,7 +14,7 @@ const StyledWrapper = styled.div`
   ${({ theme, offset }) => css`
     margin-bottom: ${getSpacingToken};
     margin-${left}: ${
-    parseInt(theme.orbit.spaceSmall, 10) + parseInt(theme.orbit.spaceSmall, 10) + offset
+    parseInt(theme.orbit.spaceThreeX, 10) + parseInt(theme.orbit.spaceThreeX, 10) + offset
   }px`};
 `;
 

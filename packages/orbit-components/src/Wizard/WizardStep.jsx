@@ -7,7 +7,6 @@ import mq from "../utils/mediaQuery";
 import ButtonLink from "../ButtonLink";
 import Stack from "../Stack";
 import Text from "../Text";
-import useTheme from "../hooks/useTheme";
 import WizardStepIcon, { StyledStepIconContainer } from "./WizardStepIcon";
 import { WizardStepContext } from "./WizardContext";
 import defaultTheme from "../defaultTheme";
@@ -101,20 +100,20 @@ const StyledProgressBar = styled.div`
       content: "";
       display: block;
       position: absolute;
-      top: ${parseFloat(theme.orbit.heightIconSmall) / 2 - 1}px;
+      top: ${parseFloat(theme.orbit.iconExtraSmallSize) / 2 - 1}px;
       width: 50%;
       height: 2px;
     }
     &:before {
       ${left}: 0;
       background: ${status === "disabled"
-        ? theme.orbit.paletteCloudNormalHover
+        ? theme.orbit.paletteCloudNormalSecondary
         : theme.orbit.paletteProductNormal};
     }
     &:after {
       ${right}: 0;
       background: ${status === "disabled" || nextStepStatus === "disabled"
-        ? theme.orbit.paletteCloudNormalHover
+        ? theme.orbit.paletteCloudNormalSecondary
         : theme.orbit.paletteProductNormal};
     }
   `}
@@ -129,13 +128,13 @@ const StyledLabel = styled.div`
     display: block;
     span {
       display: block;
-      color: ${theme.orbit.colorTextSecondary};
+      color: ${theme.orbit.textSecondaryForeground};
     }
     ${active &&
     css`
       span {
         font-weight: ${theme.orbit.fontWeightMedium};
-        color: ${theme.orbit.colorTextPrimary};
+        color: ${theme.orbit.textPrimaryForeground};
       }
     `}
   `};
@@ -148,7 +147,7 @@ StyledLabel.defaultProps = {
 const StyledButtonWrapper = styled.div`
   ${({ theme, active }) => css`
     cursor: pointer;
-    padding: 0 ${theme.orbit.spaceXSmall};
+    padding: 0 ${theme.orbit.spaceTwoX};
 
     ${!active &&
     css`
@@ -157,7 +156,7 @@ const StyledButtonWrapper = styled.div`
         ${StyledLabel} {
           span {
             text-decoration: underline;
-            color: ${theme.orbit.colorTextPrimary};
+            color: ${theme.orbit.textPrimaryForeground};
           }
         }
       }
@@ -170,7 +169,6 @@ StyledButtonWrapper.defaultProps = {
 };
 
 const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
-  const theme = useTheme();
   const {
     index,
     status,
@@ -217,7 +215,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
       <WizardStepIcon />
       <div
         css={css`
-          padding: ${theme.orbit.paddingBadge};
+          padding: 0 8px;
         `}
       >
         {status === "disabled" ? (

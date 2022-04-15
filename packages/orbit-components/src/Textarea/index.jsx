@@ -16,15 +16,17 @@ import mq from "../utils/mediaQuery";
 import type { Props } from ".";
 
 const Field = styled.label`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: flex;
-  width: 100%;
-  position: relative;
-  height: ${({ fullHeight }) => fullHeight && "100%"};
-  flex-direction: column;
-  // for usage with Stack
-  flex: ${({ fullHeight }) => fullHeight && "1"};
-  margin-bottom: ${getSpacingToken};
+  ${({ theme, fullHeight }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    display: flex;
+    width: 100%;
+    position: relative;
+    height: ${fullHeight && "100%"};
+    flex-direction: column;
+    // for usage with Stack
+    flex: ${fullHeight && "1"};
+    margin-bottom: ${getSpacingToken};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -34,8 +36,8 @@ Field.defaultProps = {
 
 const getFontSize = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.formElementSmallFontSize,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.formElementNormalFontSize,
   };
 
   return tokens[size];
@@ -43,75 +45,77 @@ const getFontSize = ({ theme, size }) => {
 
 const getLineHeight = ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightSmall,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightNormal,
   };
   return tokens[size];
 };
 
-const getPadding = ({ theme, size }) => {
+const getPadding = ({ size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
+    [SIZE_OPTIONS.SMALL]: "8px 12px",
+    [SIZE_OPTIONS.NORMAL]: "12px",
   };
   return rtlSpacing(tokens[size]);
 };
 
 const StyledTextArea = styled.textarea`
-  appearance: none;
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  height: ${({ fullHeight }) => fullHeight && "100%"};
-  padding: ${getPadding};
-  box-shadow: inset 0 0 0
-    ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+  ${({ theme, error, disabled, resize, fullHeight }) => css`
+    appearance: none;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: ${fullHeight && "100%"};
+    padding: ${getPadding};
+    box-shadow: inset 0 0 0
+      ${`1px ${
+        error ? theme.orbit.formElementBorderColorError : theme.orbit.formElementBorderColor
       }`};
-  background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
-  color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-  font-size: ${getFontSize};
-  line-height: ${getLineHeight};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  resize: ${({ resize }) => resize};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  min-height: 44px; // TODO: create token
+    background-color: ${disabled
+      ? theme.orbit.formElementDisabledBackground
+      : theme.orbit.formElementBackground};
+    color: ${disabled
+      ? theme.orbit.formElementDisabledForeground
+      : theme.orbit.formElementFilledForeground};
+    font-size: ${getFontSize};
+    line-height: ${getLineHeight};
+    cursor: ${disabled ? "not-allowed" : "text"};
+    font-family: ${theme.orbit.fontFamily};
+    resize: ${resize};
+    transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+    min-height: 44px; // TODO: create token
 
-  /* for usage with Stack */
-  border-radius: 6px;
-  ${mq.tablet(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)};
+    /* for usage with Stack */
+    border-radius: 6px;
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)};
 
-  // for usage with Stack
-  flex: ${({ fullHeight }) => fullHeight && "1"};
+    // for usage with Stack
+    flex: ${fullHeight && "1"};
 
-  /* IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden */
-  border: 1px solid transparent;
+    /* IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden */
+    border: 1px solid transparent;
 
-  /* IE 11 bug fix, hide scrollbar by default (shown only when scrollable) */
-  overflow: auto;
+    /* IE 11 bug fix, hide scrollbar by default (shown only when scrollable) */
+    overflow: auto;
 
-  &::placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
-  }
+    &::placeholder {
+      color: ${theme.orbit.formElementForeground};
+    }
 
-  &:hover {
-    box-shadow: ${({ disabled, theme, error }) =>
-      !disabled &&
-      `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
+    &:hover {
+      box-shadow: ${!disabled &&
+      `inset 0 0 0 1px ${
+        error ? theme.orbit.paletteRedNormalSecondary : theme.orbit.formElementBorderColorHover
       }`};
-  }
+    }
 
-  &:focus {
-    ${formElementFocus}
-    outline: none;
-  }
+    &:focus {
+      ${formElementFocus}
+      outline: none;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

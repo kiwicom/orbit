@@ -16,7 +16,7 @@ const StyledWrapper = styled.div`
     position: relative;
     box-sizing: border-box;
     opacity: ${$hidden ? `0.8` : `1`};
-    padding: 0 ${theme.orbit.spaceSmall};
+    padding: 0 ${theme.orbit.spaceThreeX};
   `}
 `;
 

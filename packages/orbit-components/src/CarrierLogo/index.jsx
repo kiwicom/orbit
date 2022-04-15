@@ -9,9 +9,9 @@ import type { Props } from ".";
 
 const getRenderSize = ({ theme, size }) => {
   const renderSizes = {
-    [SIZE_OPTIONS.SMALL]: parseInt(theme.orbit.heightIconSmall, 10),
-    [SIZE_OPTIONS.MEDIUM]: parseInt(theme.orbit.heightIconMedium, 10),
-    [SIZE_OPTIONS.LARGE]: parseInt(theme.orbit.heightIconLarge, 10),
+    [SIZE_OPTIONS.SMALL]: parseInt(theme.orbit.iconExtraSmallSize, 10),
+    [SIZE_OPTIONS.MEDIUM]: parseInt(theme.orbit.iconMediumSize, 10),
+    [SIZE_OPTIONS.LARGE]: parseInt(theme.orbit.iconLargeSize, 10),
   };
   return renderSizes[size];
 };
@@ -53,7 +53,7 @@ const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength,
   };
 })`
   ${({ theme, rounded }) => css`
-    background-color: ${theme.orbit.backgroundCarrierLogo};
+    background: transparent;
     border-radius: ${rounded ? theme.orbit.borderRadiusCircle : theme.orbit.borderRadiusNormal};
     height: ${getCarrierLogoSize};
     width: ${getCarrierLogoSize};
@@ -70,12 +70,12 @@ StyledImage.defaultProps = {
 
 export const StyledCarrierLogo: any = styled.div`
   ${({ theme, carriers, size }) => css`
-    background-color: ${theme.orbit.backgroundCarrierLogo};
+    background: transparent;
     height: ${carriers.length > 1
-      ? theme.orbit.heightIconLarge
+      ? theme.orbit.iconLargeSize
       : `${getRenderSize({ theme, size })}px`};
     width: ${carriers.length > 1
-      ? theme.orbit.widthIconLarge
+      ? theme.orbit.iconLargeSize
       : `${getRenderSize({ theme, size })}px`};
     display: flex;
     flex-direction: ${carriers.length > 1 ? "column" : "row"};

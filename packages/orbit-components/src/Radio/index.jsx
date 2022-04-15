@@ -15,26 +15,27 @@ import type { Props } from ".";
 const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
   if (disabled) return theme.orbit.paletteCloudDarker;
   if (checked) return theme.orbit.paletteBlueNormal;
-  if (hasError && !disabled && !checked) return theme.orbit.borderColorCheckboxRadioError;
+  if (hasError && !disabled && !checked) return theme.orbit.formElementBorderColorError;
 
-  return theme.orbit.borderColorCheckboxRadio;
+  return theme.orbit.formElementBorderColor;
 };
 
 const getBackground = () => ({ theme, disabled, checked }) => {
   if (disabled && checked) return theme.orbit.paletteCloudDarker;
   if (disabled && !checked) return theme.orbit.paletteCloudNormal;
 
-  return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
+  return checked ? theme.orbit.paletteBlueNormal : theme.orbit.formElementBackground;
 };
 
 const Glyph = styled.span`
-  visibility: hidden;
-  width: 8px;
-  height: 8px;
-  background-color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.paletteCloudNormal : theme.orbit.paletteWhite};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusCircle};
-  flex-shrink: 0;
+  ${({ theme, disabled }) => css`
+    visibility: hidden;
+    width: 8px;
+    height: 8px;
+    background-color: ${disabled ? theme.orbit.paletteCloudNormal : theme.orbit.paletteWhiteNormal};
+    border-radius: ${theme.orbit.borderRadiusCircle};
+    flex-shrink: 0;
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -51,8 +52,8 @@ const IconContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: ${getBackground};
-    height: ${theme.orbit.heightCheckbox};
-    width: ${theme.orbit.widthCheckbox};
+    height: ${theme.orbit.iconSmallSize};
+    width: ${theme.orbit.iconSmallSize};
     border-radius: ${theme.orbit.borderRadiusCircle};
     transform: scale(1);
     transition: all ${theme.orbit.durationFast} ease-in-out;
@@ -67,7 +68,7 @@ IconContainer.defaultProps = {
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceTwoX}`)};
   flex: 1; // IE wrapping fix
 `;
 
@@ -77,9 +78,11 @@ TextContainer.defaultProps = {
 };
 
 const Info = styled.span`
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
-  color: ${({ theme }) => theme.orbit.colorInfoCheckBoxRadio};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
+  ${({ theme }) => css`
+    font-size: 12px;
+    color: ${theme.orbit.textSecondaryForeground};
+    line-height: ${theme.orbit.lineHeightSmall};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -90,15 +93,15 @@ Info.defaultProps = {
 const LabelText = styled.span`
   ${({ theme }) => css`
     font-weight: ${theme.orbit.fontWeightNormal};
-    font-size: ${theme.orbit.fontSizeFormLabel};
-    color: ${theme.orbit.colorFormLabel};
-    line-height: ${theme.orbit.heightCheckbox};
+    font-size: 14px;
+    color: ${theme.orbit.formElementLabelForeground};
+    line-height: ${theme.orbit.iconSmallSize};
 
     ${StyledText} {
       font-weight: ${theme.orbit.fontWeightNormal};
-      font-size: ${theme.orbit.fontSizeFormLabel};
-      color: ${theme.orbit.colorFormLabel};
-      line-height: ${theme.orbit.heightCheckbox};
+      font-size: 14px;
+      color: ${theme.orbit.formElementLabelForeground};
+      line-height: ${theme.orbit.iconSmallSize};
     }
   `}
 `;
@@ -109,37 +112,37 @@ LabelText.defaultProps = {
 };
 
 const Input = styled.input`
-  position: absolute;
-  opacity: 0;
+  ${({ theme, hasError }) => css`
+    position: absolute;
+    opacity: 0;
 
-  &:checked ~ ${TextContainer} > ${LabelText} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    & > ${StyledText} {
-      font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+    &:checked ~ ${TextContainer} > ${LabelText} {
+      font-weight: ${theme.orbit.fontWeightMedium};
+      & > ${StyledText} {
+        font-weight: ${theme.orbit.fontWeightMedium};
+      }
     }
-  }
 
-  &:checked + ${IconContainer} > ${Glyph} {
-    visibility: visible;
-  }
+    &:checked + ${IconContainer} > ${Glyph} {
+      visibility: visible;
+    }
 
-  &:focus + ${IconContainer} {
-    outline: 0;
-    border: ${({ theme, hasError }) =>
-      `2px ${theme.orbit.borderStyleInput} ${
-        hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
+    &:focus + ${IconContainer} {
+      outline: 0;
+      border: ${`2px solid ${
+        hasError ? theme.orbit.paletteRedNormal : theme.orbit.formElementBorderColorFocus
       }`};
-    box-shadow: 0 0 0 2px
-      ${({ theme, hasError }) =>
-        transparentColor(
-          hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
+      box-shadow: 0 0 0 2px
+        ${transparentColor(
+          hasError ? theme.orbit.paletteRedNormal : theme.orbit.formElementBorderColorFocus,
           15,
         )};
 
-    ${media.largeMobile(css`
-      border-width: 1px;
-    `)}
-  }
+      ${media.largeMobile(css`
+        border-width: 1px;
+      `)}
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -156,7 +159,7 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
     width: 100%;
     flex-direction: row;
     align-items: self-start;
-    opacity: ${disabled ? theme.orbit.opacityCheckboxDisabled : "1"};
+    opacity: ${disabled ? theme.orbit.formElementDisabledOpacity : "1"};
     cursor: ${disabled ? "default" : "pointer"};
     position: relative;
 
@@ -165,13 +168,13 @@ const Label = styled(({ disabled, theme, type, hasError, ...props }) => (
     }
 
     &:hover ${IconContainer} {
-      border-color: ${!disabled && theme.orbit.paletteBlueLightActive};
+      border-color: ${!disabled && theme.orbit.paletteBlueLightTertiary};
     }
 
     &:active ${IconContainer} {
       border-color: ${disabled ? getBorderColor : theme.orbit.paletteBlueNormal};
       // TODO: we can get rid of it completely, there won't be token replacement
-      transform: ${!disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
+      transform: ${!disabled && `scale(0.95)`};
     }
 
     ${media.largeMobile(css`

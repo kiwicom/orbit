@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { warning } from "@adeira/js";
 import { transparentColor } from "@kiwicom/orbit-design-tokens";
 
@@ -13,7 +13,7 @@ const getSizeToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.WIDTH]: {
       [SIZES.SMALL]: "16px",
-      [SIZES.MEDIUM]: theme.orbit.widthCountryFlag,
+      [SIZES.MEDIUM]: theme.orbit.iconMediumSize,
     },
     [TOKENS.HEIGHT]: {
       [SIZES.SMALL]: "9px",
@@ -24,13 +24,15 @@ const getSizeToken = name => ({ theme, size }) => {
 };
 
 const StyledCountryFlag = styled.div`
-  position: relative;
-  height: ${getSizeToken(TOKENS.HEIGHT)};
-  width: ${getSizeToken(TOKENS.WIDTH)};
-  background-color: ${({ theme }) => theme.orbit.backgroundCountryFlag};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
-  overflow: hidden;
-  flex-shrink: 0;
+  ${({ theme }) => css`
+    position: relative;
+    height: ${getSizeToken(TOKENS.HEIGHT)};
+    width: ${getSizeToken(TOKENS.WIDTH)};
+    background: transparent;
+    border-radius: ${theme.orbit.borderRadiusSmall};
+    overflow: hidden;
+    flex-shrink: 0;
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

@@ -10,7 +10,7 @@ import type { Props } from ".";
 
 const StyledNotificationBadge = styled.div`
   ${StyledBadge} {
-    width: ${({ theme }) => theme.orbit.widthBadgeCircled};
+    width: ${({ theme }) => theme.orbit.iconMediumSize};
     padding: 0;
   }
 `;

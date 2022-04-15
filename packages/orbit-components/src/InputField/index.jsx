@@ -25,16 +25,16 @@ import type { Props } from ".";
 const getToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.heightInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.formBoxSmallHeight,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.formBoxNormalHeight,
     },
     [TOKENS.fontSizeInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.formElementSmallFontSize,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.formElementNormalFontSize,
     },
     [TOKENS.iconSize]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.iconExtraSmallSize,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.iconMediumSize,
     },
   };
 
@@ -43,8 +43,8 @@ const getToken = name => ({ theme, size }) => {
 
 const getPadding = () => ({ theme, size }) => {
   const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputNormal,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.formElementSmallPadding,
+    [SIZE_OPTIONS.NORMAL]: theme.orbit.formElementNormalPadding,
   };
   return rtlSpacing(tokens[size]);
 };
@@ -94,12 +94,12 @@ export const FakeInput: any = styled(({ children, className }) => (
     box-sizing: border-box;
     height: ${getToken(TOKENS.heightInput)};
     box-shadow: inset 0 0 0
-      ${`${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
+      ${`1px  ${
+        error ? theme.orbit.formElementBorderColorError : theme.orbit.formElementBorderColor
       }`};
     background-color: ${disabled
-      ? theme.orbit.backgroundInputDisabled
-      : theme.orbit.backgroundInput};
+      ? theme.orbit.formElementDisabledBackground
+      : theme.orbit.formElementBackground};
     font-size: ${getToken(TOKENS.fontSizeInput)};
     transition: all ${theme.orbit.durationFast} ease-in-out;
     border-radius: 6px;
@@ -128,14 +128,16 @@ export const InputContainer: any = styled(({ children, className, labelRef }) =>
     box-sizing: border-box;
     height: ${getToken(TOKENS.heightInput)};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    color: ${disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    color: ${disabled
+      ? theme.orbit.formElementDisabledForeground
+      : theme.orbit.formElementFilledForeground};
     font-size: ${getToken(TOKENS.fontSizeInput)};
     cursor: ${disabled ? "not-allowed" : "text"};
 
     &:hover > ${FakeInput} {
       ${!disabled &&
-      `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
+      `box-shadow: inset 0 0 0 1px ${
+        error ? theme.orbit.paletteRedNormalSecondary : theme.orbit.formElementBorderColorHover
       }`};
     }
   `}
@@ -154,13 +156,13 @@ const StyledInlineLabel = styled.div`
     pointer-events: none;
     justify-content: center;
     padding: ${rtlSpacing(
-      `0 0 0 ${!hasTags && hasFeedback ? theme.orbit.spaceXXSmall : theme.orbit.spaceSmall}`,
+      `0 0 0 ${!hasTags && hasFeedback ? theme.orbit.spaceOneX : theme.orbit.spaceThreeX}`,
     )};
 
     ${FormLabel} {
       margin-bottom: 0;
       font-size: ${getToken(TOKENS.fontSizeInput)};
-      line-height: ${theme.orbit.lineHeightTextNormal};
+      line-height: ${theme.orbit.lineHeightNormal};
       z-index: 3;
       white-space: nowrap;
     }
@@ -179,16 +181,16 @@ export const Prefix: any = styled(({ children, className, iconRef }) => (
 ))`
   ${({ theme }) => css`
     height: 100%;
-    color: ${theme.orbit.colorTextInputPrefix};
+    color: ${theme.orbit.formElementPrefixForeground};
     display: flex;
     align-items: center;
     pointer-events: none;
     justify-content: center;
-    padding: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+    padding: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceThreeX}`)};
     z-index: 3;
 
     & > svg {
-      color: ${theme.orbit.colorIconInput};
+      color: ${theme.orbit.iconTertiaryForeground};
     }
 
     & * svg,
@@ -211,7 +213,7 @@ Prefix.defaultProps = {
 const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
   ${({ theme }) => css`
     height: ${getToken(TOKENS.heightInput)};
-    color: ${theme.orbit.colorTextInputPrefix};
+    color: ${theme.orbit.formElementPrefixForeground};
     display: flex;
     flex-shrink: 0;
     align-items: center;
@@ -225,7 +227,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
 
     ${StyledServiceLogo} {
       height: 16px;
-      padding: ${rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
+      padding: ${rtlSpacing(`0 ${theme.orbit.spaceThreeX} 0 0`)};
     }
   `}
 `;
@@ -270,7 +272,7 @@ export const Input: any = styled(
 )`
   ${({ theme, disabled, inlineLabel, type }) => css`
     appearance: none;
-    -webkit-text-fill-color: ${disabled && theme.orbit.colorTextInputDisabled};
+    -webkit-text-fill-color: ${disabled && theme.orbit.formElementDisabledForeground};
     font-family: ${theme.orbit.fontFamily};
     border: none;
     padding: ${getPadding()};
@@ -313,19 +315,19 @@ export const Input: any = styled(
     }
 
     &::placeholder {
-      color: ${theme.orbit.colorPlaceholderInput};
+      color: ${theme.orbit.formElementForeground};
       /* Firefox */
       opacity: 1;
     }
 
     /* Internet Explorer 10-11 */
     &:-ms-input-placeholder {
-      color: ${theme.orbit.colorPlaceholderInput};
+      color: ${theme.orbit.formElementForeground};
     }
 
     /* Microsoft Edge */
     &::-ms-input-placeholder {
-      color: ${theme.orbit.colorPlaceholderInput};
+      color: ${theme.orbit.formElementForeground};
     }
 
     &::-ms-clear,

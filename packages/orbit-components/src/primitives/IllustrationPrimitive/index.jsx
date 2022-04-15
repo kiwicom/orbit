@@ -34,7 +34,7 @@ export const StyledImage: any = styled.img.attrs(({ theme, size, illustrationNam
   margin: auto 0;
   max-height: ${getHeightToken};
   max-width: 100%;
-  background-color: ${({ theme }) => theme.orbit.backgroundIllustration};
+  background-color: transparent;
   margin-bottom: ${getSpacingToken};
   flex-shrink: 0;
 `;

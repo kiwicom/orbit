@@ -11,9 +11,9 @@ const getIconSpacing = (onlyIcon, size, theme) => {
   }
   const tokens = {
     [TOKENS.marginRightIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.marginButtonIconLarge,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.marginButtonIconNormal,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.marginButtonIconSmall,
+      [SIZE_OPTIONS.LARGE]: "12px",
+      [SIZE_OPTIONS.NORMAL]: "8px",
+      [SIZE_OPTIONS.SMALL]: "8px",
     },
   };
   return {

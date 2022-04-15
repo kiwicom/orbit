@@ -31,11 +31,10 @@ const Container = styled.div`
     width: 100%;
     min-height: 80px;
     background-color: white;
-    margin-bottom: ${theme.orbit.spaceLarge};
+    margin-bottom: ${theme.orbit.spaceSixX};
     border-radius: ${theme.orbit.borderRadiusLarge};
-    border: ${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard}
-      ${theme.orbit.paletteCloudNormal};
-    padding: ${theme.orbit.spaceLarge};
+    border: ${theme.orbit.elevationFlatBorderSize} solid ${theme.orbit.paletteCloudNormal};
+    padding: ${theme.orbit.spaceSixX};
     ${mq.largeMobile(css`
       flex-direction: row;
     `)};
@@ -51,13 +50,12 @@ const IllustrationJSX = styled.div`
   ${({ theme }) => css`
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 12px;
-    line-height: ${theme.orbit.lineHeightTextSmall};
+    line-height: ${theme.orbit.lineHeightSmall};
     color: ${theme.orbit.paletteInkNormal};
     background-color: ${theme.orbit.paletteCloudLight};
-    border: ${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard}
-      ${theme.orbit.paletteCloudNormal};
-    margin-top: ${theme.orbit.spaceMedium};
-    padding: ${theme.orbit.spaceXXSmall} ${theme.orbit.spaceXSmall};
+    border: ${theme.orbit.elevationFlatBorderSize} solid ${theme.orbit.paletteCloudNormal};
+    margin-top: ${theme.orbit.spaceFourX};
+    padding: ${theme.orbit.spaceOneX} ${theme.orbit.spaceTwoX};
     ${mq.largeMobile(css`
       margin: 0;
     `)};

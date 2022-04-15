@@ -11,32 +11,34 @@ import defaultTheme from "../defaultTheme";
 import type { Props } from ".";
 
 const StyledTableOuter = styled.div`
-  max-width: 100%;
-  width: 100%;
-  position: relative;
+  ${({ theme, showShadows, showRight, showLeft }) => css`
+    max-width: 100%;
+    width: 100%;
+    position: relative;
 
-  &::after,
-  &::before {
-    content: " ";
-    display: ${({ showShadows }) => (showShadows ? "block" : "none")};
-    position: absolute;
-    width: 16px;
-    height: 100%;
-    top: 0;
-    transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
-  }
+    &::after,
+    &::before {
+      content: " ";
+      display: ${showShadows ? "block" : "none"};
+      position: absolute;
+      width: 16px;
+      height: 100%;
+      top: 0;
+      transition: opacity ${theme.orbit.durationNormal} ease-in-out;
+    }
 
-  &::after {
-    opacity: ${({ showRight }) => (showRight ? "1" : "0")};
-    background-image: ${({ theme }) => theme.orbit.backgroundTableShadowRight};
-    right: 0;
-  }
+    &::after {
+      opacity: ${showRight ? "1" : "0"};
+      background-image: linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23));
+      right: 0;
+    }
 
-  &::before {
-    opacity: ${({ showLeft }) => (showLeft ? "1" : "0")};
-    left: 0;
-    background-image: ${({ theme }) => theme.orbit.backgroundTableShadowLeft};
-  }
+    &::before {
+      opacity: ${showLeft ? "1" : "0"};
+      left: 0;
+      background-image: linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23));
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -55,42 +57,41 @@ const StyledTableInner = styled.div`
 `;
 
 const StyledTable = styled.table`
-  display: table;
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  white-space: nowrap;
+  ${({ theme, striped, compact, type }) => css`
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    white-space: nowrap;
 
-  & ${StyledTableBody} > ${StyledTableRow} {
-    background-color: ${({ theme }) => theme.orbit.backgroundTable};
-    border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
-    transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    & ${StyledTableBody} > ${StyledTableRow} {
+      background-color: ${theme.orbit.paletteWhiteNormal};
+      border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
+      transition: background-color ${theme.orbit.durationFast} ease-in-out;
 
-    ${({ striped, theme }) =>
-      striped &&
+      ${striped &&
       css`
         &:nth-of-type(even) {
-          background-color: ${theme.orbit.backgroundTableEven};
+          background-color: ${theme.orbit.paletteCloudLight};
         }
       `}
 
-    &:last-child {
-      border: 0;
+      &:last-child {
+        border: 0;
+      }
+      &:hover {
+        background-color: ${theme.orbit.paletteCloudNormal};
+      }
     }
-    &:hover {
-      background-color: ${({ theme }) => theme.orbit.backgroundTableHover};
+    & ${StyledTableCell} {
+      height: ${compact ? theme.orbit.spaceEightX : theme.orbit.spaceTenX};
+      padding: ${compact
+        ? `6px ${theme.orbit.spaceThreeX}`
+        : `10px ${theme.orbit.spaceThreeX}`}; /* TODO: remove 10px and 6px with new tokens */
+      line-height: ${theme.orbit.lineHeightNormal};
+      color: ${type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkLight};
     }
-  }
-  & ${StyledTableCell} {
-    height: ${({ compact, theme }) =>
-      compact ? theme.orbit.spaceXLarge : theme.orbit.spaceXXLarge};
-    padding: ${({ theme, compact }) =>
-      compact
-        ? `6px ${theme.orbit.spaceSmall}`
-        : `10px ${theme.orbit.spaceSmall}`}; /* TODO: remove 10px and 6px with new tokens */
-    line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-    color: ${({ type, theme }) => type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkLight};
-  }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

@@ -51,7 +51,7 @@ const StyledTooltipWrapper = styled.div`
     padding: ${tooltipPadding};
     border-radius: ${theme.orbit.borderRadiusNormal};
     background: ${resolveBackgroundColor};
-    box-shadow: ${theme.orbit.boxShadowRaised};
+    box-shadow: ${theme.orbit.elevationRaisedBoxShadow};
     visibility: ${shown ? "visible" : "hidden"};
     opacity: ${shown ? "1" : "0"};
     transition: ${transition(["opacity", "visibility"], "fast", "ease-in-out")};
@@ -73,20 +73,20 @@ StyledTooltipWrapper.defaultProps = {
 const StyledTooltipContent = styled.div`
   ${({ theme }) => css`
     font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextSmall};
+    font-size: ${theme.orbit.fontSizeSmall};
     font-weight: ${theme.orbit.fontWeightMedium};
-    line-height: ${theme.orbit.lineHeightTextNormal};
-    color: ${theme.orbit.paletteWhite};
+    line-height: ${theme.orbit.lineHeightNormal};
+    color: ${theme.orbit.paletteWhiteNormal};
     margin-bottom: 0;
 
     & ${StyledText}, ${Item} {
-      font-size: ${theme.orbit.fontSizeTextSmall};
+      font-size: ${theme.orbit.fontSizeSmall};
       font-weight: ${theme.orbit.fontWeightMedium};
-      color: ${theme.orbit.paletteWhite};
+      color: ${theme.orbit.paletteWhiteNormal};
     }
 
     & ${StyledTextLink} {
-      color: ${theme.orbit.paletteWhite};
+      color: ${theme.orbit.paletteWhiteNormal};
     }
   `}
 `;

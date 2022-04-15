@@ -33,8 +33,8 @@ const StyledCollapse = styled.div`
     width: 100%;
     display: block;
     border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
-    padding-bottom: ${theme.orbit.spaceSmall};
-    margin-bottom: ${theme.orbit.spaceMedium};
+    padding-bottom: ${theme.orbit.spaceThreeX};
+    margin-bottom: ${theme.orbit.spaceFourX};
     :last-child,
     :only-child {
       border: 0;
@@ -61,7 +61,7 @@ StyledCollapseLabel.defaultProps = {
 
 const StyledCollapseChildren = styled.div`
   ${({ theme }) => css`
-    margin: ${theme.orbit.spaceSmall} 0;
+    margin: ${theme.orbit.spaceThreeX} 0;
   `}
 `;
 

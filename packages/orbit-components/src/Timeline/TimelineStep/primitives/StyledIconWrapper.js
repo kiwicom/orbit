@@ -1,14 +1,16 @@
 // @flow
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 
 const StyledIconWrapper: any = styled.div`
-  min-width: ${({ theme, mobile }) => mobile && theme.orbit.spaceLarge};
-  min-height: ${({ theme }) => theme.orbit.spaceLarge};
-  z-index: 1;
-  text-align: center;
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  ${({ theme, mobile }) => css`
+    min-width: ${mobile && theme.orbit.spaceSixX};
+    min-height: ${theme.orbit.spaceSixX};
+    z-index: 1;
+    text-align: center;
+    line-height: 1.4;
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

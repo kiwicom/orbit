@@ -28,7 +28,7 @@ const StyledChoiceGroup = styled.div`
 
   ${StyledFormFeedback} {
     position: relative;
-    margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
+    margin-top: ${({ theme }) => theme.orbit.spaceTwoX};
     top: initial;
   }
 `;
@@ -94,7 +94,7 @@ const ChoiceGroup: React.AbstractComponent<Props, HTMLDivElement> = React.forwar
                 </FilterWrapper>
               );
             },
-            spacing: filter ? "0px" : theme.orbit.spaceXSmall,
+            spacing: filter ? "0px" : theme.orbit.spaceTwoX,
           })
         ) : (
           <Stack direction="column" spacing={filter ? "none" : "XSmall"}>

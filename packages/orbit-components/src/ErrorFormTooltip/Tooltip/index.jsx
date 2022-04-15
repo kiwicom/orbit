@@ -50,10 +50,10 @@ const StyledFormFeedbackTooltip = styled.div`
     box-sizing: border-box;
     border-radius: ${theme.orbit.borderRadiusNormal};
     box-shadow: ${theme.orbit.boxShadowElevatedLevel1};
-    padding: ${theme.orbit.spaceXSmall} ${
-    inputSize === "small" ? theme.orbit.spaceXSmall : theme.orbit.spaceSmall
+    padding: ${theme.orbit.spaceTwoX} ${
+    inputSize === "small" ? theme.orbit.spaceTwoX : theme.orbit.spaceThreeX
   };
-    padding-${right}: ${isHelp && theme.orbit.spaceSmall};
+    padding-${right}: ${isHelp && theme.orbit.spaceThreeX};
     z-index: 10;
     max-height: none;
     overflow: visible;
@@ -97,28 +97,28 @@ const StyledTooltipContent = styled.div`
     align-items: center;
     height: 100%;
     font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextNormal};
+    font-size: ${theme.orbit.fontSizeNormal};
     font-weight: ${theme.orbit.fontWeightNormal};
-    line-height: ${theme.orbit.lineHeightText};
-    color: ${theme.orbit.paletteWhite};
+    line-height: 1.4;
+    color: ${theme.orbit.paletteWhiteNormal};
 
     & ${StyledText}, ${Item}, a {
-      color: ${theme.orbit.paletteWhite};
-      font-size: ${theme.orbit.fontSizeTextNormal};
+      color: ${theme.orbit.paletteWhiteNormal};
+      font-size: ${theme.orbit.fontSizeNormal};
       font-weight: ${theme.orbit.fontWeightNormal};
       &:hover,
       &:focus {
-        color: ${theme.orbit.paletteWhite};
+        color: ${theme.orbit.paletteWhiteNormal};
       }
     }
 
     ${media.largeMobile(css`
-      font-size: ${theme.orbit.fontSizeTextSmall};
+      font-size: ${theme.orbit.fontSizeSmall};
       font-weight: ${theme.orbit.fontWeightMedium};
 
       ${StyledText}, ${Item}, a {
         font-weight: ${theme.orbit.fontWeightMedium};
-        font-size: ${theme.orbit.fontSizeTextSmall};
+        font-size: ${theme.orbit.fontSizeSmall};
       }
     `)};
   `}
@@ -131,9 +131,9 @@ StyledTooltipContent.defaultProps = {
 
 const StyledCloseButton = styled.a`
   ${({ theme }) => css`
-    color: ${theme.orbit.paletteWhite};
+    color: ${theme.orbit.paletteWhiteNormal};
     cursor: pointer;
-    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceThreeX}`)};
     display: flex;
   `}
 `;

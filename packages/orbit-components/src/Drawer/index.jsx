@@ -26,10 +26,10 @@ const getPadding = ({ noPadding, theme, hasTopPadding }) => {
   return (
     !noPadding &&
     css`
-      padding: ${padding(theme.orbit.spaceMedium)};
+      padding: ${padding(theme.orbit.spaceFourX)};
       ${mq.largeMobile(css`
-        padding: ${padding(theme.orbit.spaceXLarge)}};
-      `)};
+      padding: ${padding(theme.orbit.spaceEightX)}};
+    `)};
     `
   );
 };
@@ -70,10 +70,10 @@ const StyledDrawerSide = styled(
     height: 100%;
     font-family: ${theme.orbit.fontFamily};
     overflow-y: auto;
-    box-shadow: ${theme.orbit.boxShadowRaised};
+    box-shadow: ${theme.orbit.elevationRaisedBoxShadow};
     background: ${suppressed
       ? theme.orbit.paletteCloudLight
-      : theme.orbit.paletteWhite}; // TODO: create token backgroundDrawer
+      : theme.orbit.paletteWhiteNormal}; // TODO: create token backgroundDrawer
     transition: ${transition(["transform"], "normal", "ease-in-out")};
     width: 100%;
     ${mq.largeMobile(css`
@@ -94,8 +94,8 @@ const StyledDrawerContent = styled(
 )`
   ${({ theme, noPadding, hasClose }) => css`
     ${getPadding};
-    margin-bottom: ${noPadding && theme.orbit.spaceLarge};
-    margin-top: ${!hasClose && noPadding && theme.orbit.spaceLarge};
+    margin-bottom: ${noPadding && theme.orbit.spaceSixX};
+    margin-top: ${!hasClose && noPadding && theme.orbit.spaceSixX};
   `}
 `;
 
@@ -117,15 +117,15 @@ const StyledDrawerHeader = styled.div`
     align-items: center;
     background: ${suppressed && !bordered
       ? theme.orbit.paletteCloudLight
-      : theme.orbit.paletteWhite};
+      : theme.orbit.paletteWhiteNormal};
     height: 64px;
     box-sizing: border-box;
     border-bottom: ${bordered && `1px solid ${theme.orbit.paletteCloudNormal}`};
     ${!noPadding &&
     css`
-      padding: 0 ${theme.orbit.spaceMedium};
+      padding: 0 ${theme.orbit.spaceFourX};
       ${mq.largeMobile(css`
-        padding: ${rtlSpacing(`0 ${theme.orbit.spaceLarge} 0 ${theme.orbit.spaceXLarge}`)};
+        padding: ${rtlSpacing(`0 ${theme.orbit.spaceSixX} 0 ${theme.orbit.spaceEightX}`)};
       `)};
     `};
   `}

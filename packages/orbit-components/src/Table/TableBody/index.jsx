@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 
@@ -11,9 +11,11 @@ export const StyledTableBody: any = styled(({ children, className, dataTest }) =
     {children}
   </tbody>
 ))`
-  width: 100%;
-  white-space: nowrap;
-  border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTable};
+  ${({ theme }) => css`
+    width: 100%;
+    white-space: nowrap;
+    border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

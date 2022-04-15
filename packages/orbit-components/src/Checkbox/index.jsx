@@ -23,10 +23,10 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
       return theme.orbit.paletteBlueNormal;
     }
     if (hasError && !disabled && !checked) {
-      return theme.orbit.borderColorCheckboxRadioError;
+      return theme.orbit.formElementBorderColorError;
     }
 
-    return theme.orbit.borderColorCheckboxRadio;
+    return theme.orbit.formElementBorderColor;
   };
 
   const getBackground = () => {
@@ -36,7 +36,7 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
     if (disabled && !checked) {
       return theme.orbit.paletteCloudNormal;
     }
-    return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
+    return checked ? theme.orbit.paletteBlueNormal : theme.orbit.formElementBackground;
   };
 
   const tokens = {
@@ -48,36 +48,39 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
 };
 
 const IconContainer = styled.div`
-  position: relative;
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${getToken(TOKENS.background)};
-  height: ${({ theme }) => theme.orbit.heightCheckbox};
-  width: ${({ theme }) => theme.orbit.widthCheckbox};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
-  transform: scale(1);
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
-  & > svg {
-    visibility: hidden;
+  ${({ theme, checked }) => css`
+    position: relative;
+    box-sizing: border-box;
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
-  }
+    background-color: ${getToken(TOKENS.background)};
+    height: ${theme.orbit.iconSmallSize};
+    width: ${theme.orbit.iconSmallSize};
+    border-radius: ${theme.orbit.borderRadiusLarge};
+    transform: scale(1);
+    transition: all ${theme.orbit.durationFast} ease-in-out;
 
-  &:hover {
-    background-color: ${({ theme, checked }) =>
-      checked ? theme.orbit.paletteBlueDark : theme.orbit.backgroundInput};
-  }
+    & > svg {
+      visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+    }
 
-  ${media.desktop(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)}
+    &:hover {
+      background-color: ${checked
+        ? theme.orbit.paletteBlueDark
+        : theme.orbit.formElementBackground};
+    }
+
+    ${media.desktop(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)}
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -86,10 +89,12 @@ IconContainer.defaultProps = {
 };
 
 const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-  flex: 1; // IE wrapping fix
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceTwoX}`)};
+    flex: 1; // IE wrapping fix
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -98,9 +103,11 @@ TextContainer.defaultProps = {
 };
 
 const Info = styled.span`
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
-  color: ${({ theme }) => theme.orbit.colorInfoCheckBoxRadio};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
+  ${({ theme }) => css`
+    font-size: 12px;
+    color: ${theme.orbit.textSecondaryForeground};
+    line-height: ${theme.orbit.lineHeightSmall};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -109,18 +116,20 @@ Info.defaultProps = {
 };
 
 const LabelText = styled.span`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
-  color: ${({ theme }) => theme.orbit.colorFormLabel};
-  line-height: ${({ theme }) => theme.orbit.heightCheckbox};
+  ${({ theme }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-weight: ${theme.orbit.fontWeightNormal};
+    font-size: 14px;
+    color: ${theme.orbit.formElementLabelForeground};
+    line-height: ${theme.orbit.iconSmallSize};
 
-  ${StyledText} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-    font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
-    color: ${({ theme }) => theme.orbit.colorFormLabel};
-    line-height: ${({ theme }) => theme.orbit.heightCheckbox};
-  }
+    ${StyledText} {
+      font-weight: ${theme.orbit.fontWeightNormal};
+      font-size: 14px;
+      color: ${theme.orbit.formElementLabelForeground};
+      line-height: ${theme.orbit.iconSmallSize};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -129,33 +138,33 @@ LabelText.defaultProps = {
 };
 
 const Input = styled.input`
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
+  ${({ theme, error }) => css`
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
 
-  &:checked ~ ${TextContainer} > ${LabelText} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    & > ${StyledText} {
-      font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
+    &:checked ~ ${TextContainer} > ${LabelText} {
+      font-weight: ${theme.orbit.fontWeightMedium};
+      & > ${StyledText} {
+        font-weight: ${theme.orbit.fontWeightMedium};
+      }
     }
-  }
 
-  &:checked + ${IconContainer} > svg {
-    visibility: visible;
-  }
+    &:checked + ${IconContainer} > svg {
+      visibility: visible;
+    }
 
-  &:focus + ${IconContainer} {
-    border: ${({ theme, error }) =>
-      `1px ${theme.orbit.borderStyleInput} ${
-        error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
+    &:focus + ${IconContainer} {
+      border: ${`1px solid ${
+        error ? theme.orbit.paletteRedNormal : theme.orbit.formElementBorderColorFocus
       }`};
-    box-shadow: 0 0 0 3px
-      ${({ theme, error }) =>
-        transparentColor(
-          error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
+      box-shadow: 0 0 0 3px
+        ${transparentColor(
+          error ? theme.orbit.paletteRedNormal : theme.orbit.formElementBorderColorFocus,
           15,
         )};
-  }
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -168,32 +177,33 @@ export const Label: any = styled(({ className, children, dataTest }) => (
     {children}
   </label>
 ))`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: self-start;
-  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : "1")};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  position: relative;
+  ${({ theme, disabled, checked }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: self-start;
+    opacity: ${disabled ? theme.orbit.formElementDisabledOpacity : "1"};
+    cursor: ${disabled ? "not-allowed" : "pointer"};
+    position: relative;
 
-  ${IconContainer} {
-    border: 1px solid ${getToken(TOKENS.borderColor)};
-  }
+    ${IconContainer} {
+      border: 1px solid ${getToken(TOKENS.borderColor)};
+    }
 
-  &:hover ${IconContainer} {
-    border-color: ${({ disabled, theme, checked }) =>
-      !disabled && checked ? theme.orbit.paletteBlueDark : theme.orbit.paletteBlueLightActive};
-    box-shadow: none;
-  }
+    &:hover ${IconContainer} {
+      border-color: ${!disabled && checked
+        ? theme.orbit.paletteBlueDark
+        : theme.orbit.paletteBlueLightTertiary};
+      box-shadow: none;
+    }
 
-  &:active ${IconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
-    // TODO: we can get rid of it completely, there won't be token replacement
-    transform: ${({ disabled, theme }) =>
-      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
-  }
+    &:active ${IconContainer} {
+      border-color: ${disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
+      // TODO: we can get rid of it completely, there won't be token replacement
+      transform: ${!disabled && `scale(0.95)`};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

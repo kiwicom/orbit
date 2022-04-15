@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { StyledTableCell } from "../TableCell";
@@ -12,12 +12,14 @@ const StyledTableHead = styled(({ children, className, dataTest }) => (
     {children}
   </thead>
 ))`
-  border-bottom: 1px solid ${({ theme }) => theme.orbit.borderColorTableHead};
-  width: 100%;
-  white-space: nowrap;
-  ${StyledTableCell} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightTableHead};
-  }
+  ${({ theme }) => css`
+    border-bottom: 1px solid ${theme.orbit.paletteCloudDarker};
+    width: 100%;
+    white-space: nowrap;
+    ${StyledTableCell} {
+      font-weight: 700;
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

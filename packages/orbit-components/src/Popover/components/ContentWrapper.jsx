@@ -18,18 +18,18 @@ import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import { PLACEMENTS } from "../../common/consts";
 import boundingClientRect from "../../utils/boundingClientRect";
 
-const mobileTop = ({ theme }) => theme.orbit.spaceXLarge;
-const popoverPadding = ({ theme }) => theme.orbit.spaceMedium;
+const mobileTop = ({ theme }) => theme.orbit.spaceEightX;
+const popoverPadding = ({ theme }) => theme.orbit.spaceFourX;
 
 const StyledContentWrapper = styled.div`
   ${({ theme, windowHeight, actionsHeight }) => css`
     overflow: auto;
-    border-top-left-radius: ${theme.orbit.spaceSmall};
-    border-top-right-radius: ${theme.orbit.spaceSmall};
+    border-top-left-radius: ${theme.orbit.spaceThreeX};
+    border-top-right-radius: ${theme.orbit.spaceThreeX};
     position: absolute;
     left: 0;
     width: 100%;
-    background-color: ${theme.orbit.paletteWhite};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     max-height: ${windowHeight - actionsHeight - 32}px;
     bottom: ${actionsHeight || 0}px;
 
@@ -56,8 +56,8 @@ const StyledActions = styled.div`
     width: 100%;
     box-sizing: border-box;
     padding: ${popoverPadding};
-    padding-top: ${theme.orbit.spaceSmall};
-    background-color: ${theme.orbit.paletteWhite};
+    padding-top: ${theme.orbit.spaceThreeX};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     ${StyledButtonPrimitive} {
       width: 100%;
       flex: 1 1 auto;
@@ -91,8 +91,8 @@ const StyledPopoverParent = styled.div`
     width: 100%;
     z-index: 1000;
     box-sizing: border-box;
-    box-shadow: ${theme.orbit.boxShadowRaisedReverse};
-    background-color: ${theme.orbit.backgroundModal};
+    box-shadow: ${theme.orbit.elevationRaisedReverseBoxShadow};
+    background-color: ${theme.orbit.elevationFlatBackground};
     max-height: calc(100% - ${mobileTop});
     &:focus {
       outline: 0;
@@ -109,7 +109,7 @@ const StyledPopoverParent = styled.div`
       z-index: ${isInsideModal ? "1000" : "600"};
       width: ${width ? `${width}` : "auto"};
       border-radius: ${theme.orbit.borderRadiusNormal};
-      box-shadow: ${theme.orbit.boxShadowRaised};
+      box-shadow: ${theme.orbit.elevationRaisedBoxShadow};
       opacity: ${shown ? "1" : "0"};
       max-height: none;
     `)}

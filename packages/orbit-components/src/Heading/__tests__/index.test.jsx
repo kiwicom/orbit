@@ -58,31 +58,31 @@ describe("Heading with every media query", () => {
 
     expect(screen.getByTestId(dataTest)).toHaveStyleRule(
       "font-size",
-      theme.orbit.fontSizeHeadingTitle4,
+      theme.orbit.headingTitle4FontSize,
       { media: getBreakpointWidth("mediumMobile", theme) },
     );
 
     expect(screen.getByTestId(dataTest)).toHaveStyleRule(
       "font-size",
-      theme.orbit.fontSizeHeadingTitle3,
+      theme.orbit.headingTitle3FontSize,
       { media: getBreakpointWidth("largeMobile", theme) },
     );
 
     expect(screen.getByTestId(dataTest)).toHaveStyleRule(
       "font-size",
-      theme.orbit.fontSizeHeadingTitle2,
+      theme.orbit.headingTitle2FontSize,
       { media: getBreakpointWidth("tablet", theme) },
     );
 
     expect(screen.getByTestId(dataTest)).toHaveStyleRule(
       "font-size",
-      theme.orbit.fontSizeHeadingTitle1,
+      theme.orbit.headingTitle1FontSize,
       { media: getBreakpointWidth("desktop", theme) },
     );
 
     expect(screen.getByTestId(dataTest)).toHaveStyleRule(
       "font-size",
-      theme.orbit.fontSizeHeadingDisplay,
+      theme.orbit.headingDisplayFontSize,
       { media: getBreakpointWidth("largeDesktop", theme) },
     );
   });

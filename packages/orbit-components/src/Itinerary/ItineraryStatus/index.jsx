@@ -45,12 +45,12 @@ const StyledWrapper = styled.div`
     width: 100%;
     border-radius: ${theme.orbit.borderRadiusLarge};
     border-${left}: ${theme.orbit.borderRadiusNormal} solid ${$type && resolveColor($type)};
-    box-shadow: ${theme.orbit.boxShadowFixed};
+    box-shadow: ${theme.orbit.elevationFixedBoxShadow};
     margin-bottom: ${getSpacingToken};
     &:hover,
     &:focus {
       outline: none;
-      box-shadow: ${theme.orbit.boxShadowActionActive};
+      box-shadow: ${theme.orbit.elevationActionActiveBoxShadow};
     }
   `}
 `;
@@ -64,8 +64,8 @@ const StyledStatusHeader = styled.div`
   ${({ theme, $type }) => css`
     display: flex;
     align-items: center;
-    padding: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall}`)};
-    height: ${theme.orbit.spaceXLarge};
+    padding: ${rtlSpacing(`0 ${theme.orbit.spaceTwoX}`)};
+    height: ${theme.orbit.spaceEightX};
     border-radius: ${theme.orbit.borderRadiusNormal} ${theme.orbit.borderRadiusLarge} 0 0;
     background: ${$type && resolveColor($type, true)};
   `}
@@ -80,7 +80,7 @@ StyledStatusHeader.defaultProps = {
 const StyledStatusText = styled.div`
   ${({ theme, $offset }) => css`
     z-index: 2;
-    margin-${left}: ${parseInt(theme.orbit.spaceSmall, 10) + $offset}px;
+    margin-${left}: ${parseInt(theme.orbit.spaceThreeX, 10) + $offset}px;
   `};
 `;
 

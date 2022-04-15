@@ -20,8 +20,8 @@ const StyledColumn = styled.div`
 
     @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
       ${StyledCard} {
-        margin-right: -${theme.orbit.spaceMedium};
-        margin-left: -${theme.orbit.spaceMedium};
+        margin-right: -${theme.orbit.spaceFourX};
+        margin-left: -${theme.orbit.spaceFourX};
         width: auto;
       }
     }

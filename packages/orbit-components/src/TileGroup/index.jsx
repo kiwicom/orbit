@@ -13,10 +13,10 @@ const StyledTileGroup = styled.div`
     width: 100%;
     padding: 0;
     margin: 0;
-    box-shadow: ${theme.orbit.boxShadowAction};
+    box-shadow: ${theme.orbit.elevationActionBoxShadow};
     border-radius: ${theme.orbit.borderRadiusNormal};
     ${StyledSlide} {
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
     }
     ${StyledTileWrapper} {
       border-radius: 0;

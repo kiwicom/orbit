@@ -20,8 +20,8 @@ import type { Props } from ".";
 const getToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.height]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+      [SIZE_OPTIONS.SMALL]: theme.orbit.formBoxSmallHeight,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.formBoxNormalHeight,
     },
     [TOKENS.heightLine]: {
       [SIZE_OPTIONS.SMALL]: "16px",
@@ -34,13 +34,13 @@ const getToken = name => ({ theme, size }) => {
 
 const getFakeGroupMarginTop = ({ label, theme }) => {
   if (!label) return false;
-  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
+  return `calc(${theme.orbit.lineHeightSmall} + ${theme.orbit.spaceOneX})`;
 };
 
 const FakeGroup = styled(({ children, className }) => (
   <span className={className}>{children}</span>
 ))`
-  ${({ theme, error, disabled }) => css`
+  ${({ theme, error, disabled, active }) => css`
     width: 100%;
     display: block;
     position: absolute;
@@ -49,14 +49,14 @@ const FakeGroup = styled(({ children, className }) => (
     z-index: 1;
     box-sizing: border-box;
     height: ${getToken(TOKENS.height)};
-    box-shadow: ${`inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
+    box-shadow: ${`inset 0 0 0 1px ${theme.orbit.formElementBorderColor}`}; // Normal state
     box-shadow: ${error &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state
-    ${({ active }) => active && formElementFocus}; // Active state
+    `inset 0 0 0 1px ${theme.orbit.formElementBorderColorError}`}; // Error state
+    ${active && formElementFocus}; // Active state
     background-color: ${disabled
-      ? theme.orbit.backgroundInputDisabled
-      : theme.orbit.backgroundInput};
-    font-size: ${theme.orbit.fontSizeInputNormal};
+      ? theme.orbit.formElementDisabledBackground
+      : theme.orbit.formElementBackground};
+    font-size: ${theme.orbit.formElementNormalFontSize};
     transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
     margin-top: ${getFakeGroupMarginTop};
 
@@ -67,8 +67,8 @@ const FakeGroup = styled(({ children, className }) => (
 
     &:hover {
       box-shadow: inset 0 0 0
-        ${`${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
+        ${`1px ${
+          error ? theme.orbit.paletteRedNormalSecondary : theme.orbit.formElementBorderColorHover
         }`};
     }
   `}
@@ -85,11 +85,13 @@ const StyledChildren = styled.div`
 `;
 
 const StyledChild = styled.div`
-  flex: ${({ flex }) => flex};
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-  :last-child {
-    padding: 0;
-  }
+  ${({ theme, flex }) => css`
+    flex: ${flex};
+    padding: ${rtlSpacing(`0 ${theme.orbit.spaceTwoX} 0 0`)};
+    :last-child {
+      padding: 0;
+    }
+  `}
 `;
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChild.defaultProps = {
@@ -110,61 +112,64 @@ const StyledInputGroup = styled(
     </div>
   ),
 )`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  position: relative;
-  margin-bottom: ${getSpacingToken};
+  ${({ theme, error, active }) => css`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: ${getSpacingToken};
 
-  ${StyledChild} {
-    ${FakeInput} {
-      box-shadow: none;
-      background-color: transparent;
-      display: none;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    ${SelectContainer} {
-      background-color: transparent;
-      > select {
+    ${StyledChild} {
+      ${FakeInput} {
         box-shadow: none;
         background-color: transparent;
-        &:focus {
+        display: none;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      ${SelectContainer} {
+        background-color: transparent;
+        > select {
           box-shadow: none;
+          background-color: transparent;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+
+      ${InputContainer}:after, ${SelectContainer}:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        ${right}: 0;
+        height: ${getToken(TOKENS.heightLine)};
+        width: 1px;
+        background-color: ${error && !active
+          ? theme.orbit.formElementBorderColorError
+          : theme.orbit.formElementBorderColor};
+        transition: background-color ${theme.orbit.durationFast} ease-in-out;
+        display: block;
+        z-index: 2;
+      }
+
+      &:last-of-type {
+        ${InputContainer}:after, ${SelectContainer}:after {
+          content: none;
         }
       }
     }
 
-    ${InputContainer}:after, ${SelectContainer}:after {
-      content: " ";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      ${right}: 0;
-      height: ${getToken(TOKENS.heightLine)};
-      width: 1px;
-      background-color: ${({ theme, error, active }) =>
-        error && !active ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
-      transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-      display: block;
-      z-index: 2;
+    ${StyledChild} ${FormLabel} {
+      display: ${({ label }) => label && "none"};
     }
 
-    &:last-of-type {
-      ${InputContainer}:after, ${SelectContainer}:after {
-        content: none;
-      }
+    ${Input}:focus ~ ${FakeInput} {
+      box-shadow: none;
     }
-  }
-
-  ${StyledChild} ${FormLabel} {
-    display: ${({ label }) => label && "none"};
-  }
-
-  ${Input}:focus ~ ${FakeInput} {
-    box-shadow: none;
-  }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

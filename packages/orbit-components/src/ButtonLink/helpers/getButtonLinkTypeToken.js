@@ -10,29 +10,29 @@ const getButtonLinkTypeToken: GetButtonLinkTypeToken = (name, type, theme) => {
       [TYPES.CRITICAL]: "transparent",
     },
     [TOKENS.backgroundHover]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductLightHover,
-      [TYPES.SECONDARY]: theme.orbit.paletteCloudLightHover,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedLightHover,
+      [TYPES.PRIMARY]: theme.orbit.paletteProductLightSecondary,
+      [TYPES.SECONDARY]: theme.orbit.paletteCloudLightSecondary,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedLightSecondary,
     },
     [TOKENS.backgroundActive]: {
-      [TYPES.PRIMARY]: theme.orbit.paletteProductLightActive,
-      [TYPES.SECONDARY]: theme.orbit.paletteCloudLightActive,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedLightActive,
+      [TYPES.PRIMARY]: theme.orbit.paletteProductLightTertiary,
+      [TYPES.SECONDARY]: theme.orbit.paletteCloudLightTertiary,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedLightTertiary,
     },
     [TOKENS.foreground]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimary,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondary,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryForeground,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryForeground,
       [TYPES.CRITICAL]: theme.orbit.paletteRedNormal,
     },
     [TOKENS.foregroundHover]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryHover,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedDarkHover,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryForegroundHover,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryForegroundHover,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedDarkSecondary,
     },
     [TOKENS.foregroundActive]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryActive,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
-      [TYPES.CRITICAL]: theme.orbit.paletteRedDarkActive,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryForegroundActive,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryForegroundActive,
+      [TYPES.CRITICAL]: theme.orbit.paletteRedDarkTertiary,
     },
   };
   return tokens[name][type];

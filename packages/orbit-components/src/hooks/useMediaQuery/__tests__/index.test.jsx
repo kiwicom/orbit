@@ -16,7 +16,7 @@ import useMediaQuery from "..";
 
 const theme = { ...defaultTheme };
 
-const mediumMobileQuery = `(min-width: ${theme.orbit.widthBreakpointMediumMobile}px)`;
+const mediumMobileQuery = `(min-width: ${theme.orbit.breakpointMediumMobile}px)`;
 
 function MediaQuery({ onChange }) {
   const query = useMediaQuery();
@@ -103,7 +103,7 @@ describe("useMediaQuery", () => {
   it("should support custom breakpoint", () => {
     let result;
 
-    const widthBreakpointMediumMobile = theme.orbit.widthBreakpointMediumMobile - 100;
+    const widthBreakpointMediumMobile = theme.orbit.breakpointMediumMobile - 100;
 
     const matchMedia = new MatchMediaMock();
 
@@ -213,7 +213,7 @@ describe("useMediaQuery", () => {
             ...theme,
             orbit: {
               ...theme.orbit,
-              widthBreakpointMediumMobile: theme.orbit.widthBreakpointMediumMobile + 1,
+              widthBreakpointMediumMobile: theme.orbit.breakpointMediumMobile + 1,
             },
           }}
         >

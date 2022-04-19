@@ -1,8 +1,6 @@
 // @noflow
 import styled from "styled-components";
 
-// eslint-disable
-
 const getToken = name => ({ theme }) => {
   const tokens = {
     a: theme.orbit.paletteBlueLightHover,

@@ -262,6 +262,12 @@ module.exports = {
       },
     },
     {
+      files: ["packages/orbit-components/transforms/**/*"],
+      rules: {
+        "orbit-components/no-deprecated-token": "off",
+      },
+    },
+    {
       files: ["packages/orbit-tracking/src/**/*"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",

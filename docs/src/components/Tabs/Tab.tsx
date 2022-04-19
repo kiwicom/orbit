@@ -15,10 +15,10 @@ export interface TabObject {
 
 const commonStyle = css`
   ${({ theme }) => css`
-    font-size: ${theme.orbit.fontSizeTextNormal};
+    font-size: ${theme.orbit.fontSizeNormal};
     font-weight: ${theme.orbit.fontWeightMedium};
-    padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
-      ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.spaceThreeX} ${theme.orbit.spaceFourX} ${theme.orbit.spaceTwoX}
+      ${theme.orbit.spaceFourX};
   `}
 `;
 
@@ -42,7 +42,7 @@ export const commonTabStyle = css`
     border-top-left-radius: ${BORDER_RADIUS};
     border-top-right-radius: ${BORDER_RADIUS};
     ${boxShadowDefault};
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
   `};
 `;
 
@@ -66,7 +66,7 @@ const StyledTab = styled.span<{ fullWidth?: boolean }>`
     }
 
     > * + * {
-      margin-left: ${theme.orbit.spaceSmall};
+      margin-left: ${theme.orbit.spaceThreeX};
     }
   `}
 `;

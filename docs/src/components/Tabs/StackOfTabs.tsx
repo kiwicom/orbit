@@ -6,7 +6,7 @@ import { commonTabStyle } from "./Tab";
 
 type ThemeShape = React.ComponentProps<typeof ThemeProvider>["theme"];
 
-export const getStackOffset = (theme: ThemeShape) => theme.orbit.spaceMedium;
+export const getStackOffset = (theme: ThemeShape) => theme.orbit.spaceFourX;
 
 export const StyledWrapper = styled.button.attrs({ type: "button" })`
   ${({ theme }) => css`
@@ -34,11 +34,11 @@ const StyledStack = styled.span`
       position: absolute;
     }
     &::after {
-      top: ${theme.orbit.spaceXSmall};
+      top: ${theme.orbit.spaceTwoX};
       left: ${getStackOffset(theme)};
     }
     &::before {
-      top: calc(${theme.orbit.spaceXSmall} * 2);
+      top: calc(${theme.orbit.spaceTwoX} * 2);
       left: calc(${getStackOffset(theme)} * 2);
     }
   `};

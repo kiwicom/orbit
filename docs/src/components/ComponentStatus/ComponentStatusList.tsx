@@ -52,7 +52,7 @@ const StyledComponentHead = styled.th<{ $width?: number }>`
     left: 0;
     width: ${$width}px;
     height: calc(${HEADER_HEIGHT} + 1px);
-    padding: 0 ${theme.orbit.spaceLarge};
+    padding: 0 ${theme.orbit.spaceSixX};
     display: grid;
     place-content: center start;
     background: ${theme.orbit.paletteCloudLight};
@@ -82,14 +82,14 @@ const StyledComponentName = styled.th<{ $width?: number }>`
       border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
     }
     a {
-      padding: 0 ${theme.orbit.spaceLarge};
+      padding: 0 ${theme.orbit.spaceSixX};
     }
   `};
 `;
 
 const StyledComponentText = styled.div`
   ${({ theme }) => css`
-    padding: 0 ${theme.orbit.spaceLarge};
+    padding: 0 ${theme.orbit.spaceSixX};
     font-weight: ${theme.orbit.fontWeightMedium};
   `};
 `;

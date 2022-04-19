@@ -35,20 +35,20 @@ const StyledComponent = styled.div<GuidelineComponent>`
   ${({ theme }) => css`
     background: ${theme.orbit.paletteCloudLight};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    padding: ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.spaceFourX};
     ${resolveBorders};
     p + & {
-      margin-top: ${theme.orbit.spaceLarge};
+      margin-top: ${theme.orbit.spaceSixX};
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge};
+      margin-top: ${theme.orbit.spaceEightX};
     }
   `}
 `;
 
 const StyledImageContainer = styled.div<ImageContainerProps>`
   ${({ theme, type }) => css`
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     border-radius: ${theme.orbit.borderRadiusNormal};
     border-top: 3px solid
       ${type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal};
@@ -57,7 +57,7 @@ const StyledImageContainer = styled.div<ImageContainerProps>`
     padding: 20px;
     height: 100%;
     ${mq.desktop(css`
-      padding: ${theme.orbit.spaceMedium};
+      padding: ${theme.orbit.spaceFourX};
     `)};
   `}
 `;
@@ -100,7 +100,7 @@ export default function Guideline({ type = "do", title, svgs = [], children }: P
       <Grid
         columns="1fr"
         desktop={{ columns: `repeat(${allImages.length + 1}, 1fr)` }}
-        gap={theme.orbit.spaceXLarge}
+        gap={theme.orbit.spaceEightX}
       >
         <Stack flex shrink direction="column">
           <Stack

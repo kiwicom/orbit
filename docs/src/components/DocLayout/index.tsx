@@ -60,11 +60,11 @@ const StyledTopWrapper = styled.div<{ $hasTabs: boolean }>`
     width: 100%;
     justify-content: space-between;
     align-items: end;
-    padding: 0 ${theme.orbit.spaceXLarge};
+    padding: 0 ${theme.orbit.spaceEightX};
     ${$hasTabs &&
     // maintain alignment of tabs with the content
     css`
-      padding-left: calc(${theme.orbit.spaceXLarge} - ${getTabShadowReachLeft});
+      padding-left: calc(${theme.orbit.spaceEightX} - ${getTabShadowReachLeft});
     `};
   `}
 `;

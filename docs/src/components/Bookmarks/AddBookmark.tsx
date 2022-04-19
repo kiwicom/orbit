@@ -17,7 +17,7 @@ const StyledButton = styled.button.attrs(() => ({
     background: ${$filled ? theme.orbit.paletteOrangeLight : "none"};
     &:focus,
     &:hover {
-      background: ${$filled ? theme.orbit.paletteOrangeLightHover : "none"};
+      background: ${$filled ? theme.orbit.paletteOrangeLightSecondary : "none"};
       svg {
         fill: ${theme.orbit.paletteOrangeNormal};
       }

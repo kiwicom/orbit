@@ -17,13 +17,13 @@ const StyledIframe = styled.iframe<Props>`
     border: ${border || `1px solid rgba(0, 0, 0, 0.1)`};
 
     *:not(${StyledAnchor}) + & {
-      margin-top: ${theme.orbit.spaceLarge} !important;
+      margin-top: ${theme.orbit.spaceSixX} !important;
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge} !important;
+      margin-top: ${theme.orbit.spaceEightX} !important;
     }
     & + :not(${StyledAnchor}) {
-      margin-top: ${theme.orbit.spaceLarge} !important;
+      margin-top: ${theme.orbit.spaceSixX} !important;
     }
   `}
 `;

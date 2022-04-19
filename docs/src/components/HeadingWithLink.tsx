@@ -28,12 +28,12 @@ export const StyledAnchor = styled.a<{ $level: number }>`
       margin-top: 0;
     }
     & + & {
-      margin-top: ${theme.orbit.spaceSmall} !important;
+      margin-top: ${theme.orbit.spaceThreeX} !important;
     }
     ${$level === 1 &&
     css`
       p + & {
-        margin-top: ${theme.orbit.spaceXLarge};
+        margin-top: ${theme.orbit.spaceEightX};
       }
     `};
   `}

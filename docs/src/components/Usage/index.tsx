@@ -19,16 +19,16 @@ interface Props {
 const StyledContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: ${theme.orbit.spaceLarge};
+    gap: ${theme.orbit.spaceSixX};
     flex-direction: column;
     ${mq.desktop(css`
       flex-direction: row;
     `)};
     ${StyledAnchor} + & {
-      margin-top: ${theme.orbit.spaceXSmall} !important;
+      margin-top: ${theme.orbit.spaceTwoX} !important;
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge} !important;
+      margin-top: ${theme.orbit.spaceEightX} !important;
     }
   `};
 `;
@@ -55,7 +55,7 @@ const StyledSection = styled.div`
     }
 
     li + li {
-      margin-top: ${theme.orbit.spaceXXSmall};
+      margin-top: ${theme.orbit.spaceOneX};
     }
   `};
 `;
@@ -64,8 +64,8 @@ const StyledHeadingIcon = styled.div<{ $color: string }>`
   ${({ theme, $color }) => css`
     display: grid;
     place-content: center;
-    width: ${theme.orbit.widthIconMedium};
-    height: ${theme.orbit.heightIconMedium};
+    width: ${theme.orbit.iconMediumSize};
+    height: ${theme.orbit.iconMediumSize};
     background-color: ${$color};
     border-radius: ${theme.orbit.borderRadiusCircle};
     padding: 2px;

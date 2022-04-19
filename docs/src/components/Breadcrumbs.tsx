@@ -6,8 +6,8 @@ const StyledList = styled.ul`
   ${({ theme }) => css`
     display: flex;
     flex-wrap: wrap;
-    font-size: ${theme.orbit.fontSizeTextNormal};
-    margin-bottom: ${theme.orbit.spaceMedium};
+    font-size: ${theme.orbit.fontSizeNormal};
+    margin-bottom: ${theme.orbit.spaceFourX};
   `}
 `;
 
@@ -15,8 +15,10 @@ const StyledListItem = styled.li<{ current: boolean }>`
   ${({ theme, current }) => css`
     a,
     span {
-      color: ${current ? theme.orbit.colorTextLinkPrimary : theme.orbit.colorTextSecondary};
-      margin-right: ${theme.orbit.spaceXSmall};
+      color: ${current
+        ? theme.orbit.textLinkPrimaryForeground
+        : theme.orbit.textSecondaryForeground};
+      margin-right: ${theme.orbit.spaceTwoX};
     }
   `}
 `;

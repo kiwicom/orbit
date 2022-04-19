@@ -22,7 +22,7 @@ const StyledInner = styled.div<{ thick?: boolean }>`
     box-sizing: content-box;
     max-width: ${MAX_CONTENT_WIDTH};
     margin: 0 auto;
-    padding: ${thick ? `28px 2rem` : `${theme.orbit.spaceSmall} ${CONTENT_PADDING}`};
+    padding: ${thick ? `28px 2rem` : `${theme.orbit.spaceThreeX} ${CONTENT_PADDING}`};
   `}
 `;
 
@@ -32,18 +32,18 @@ const StyledIconLink = styled.a.attrs(() => ({
 }))`
   ${({ theme }) => css`
     display: block;
-    padding: ${theme.orbit.spaceXSmall};
-    margin-right: -${theme.orbit.spaceXSmall};
+    padding: ${theme.orbit.spaceTwoX};
+    margin-right: -${theme.orbit.spaceTwoX};
     border-radius: ${theme.orbit.borderRadiusCircle};
     color: ${theme.orbit.paletteInkNormal};
     &:hover,
     &:focus {
-      color: ${theme.orbit.paletteProductNormalHover};
+      color: ${theme.orbit.paletteProductNormalSecondary};
     }
     ${mediaQueries.tablet(css`
       margin-right: 0;
       &:last-child {
-        margin-right: -${theme.orbit.spaceXSmall};
+        margin-right: -${theme.orbit.spaceTwoX};
       }
     `)}
   `}
@@ -52,10 +52,10 @@ const StyledIconLink = styled.a.attrs(() => ({
 const StyledFooterLink = styled(Link)`
   ${({ theme }) => css`
     display: block;
-    padding: ${theme.orbit.spaceMedium} 0;
+    padding: ${theme.orbit.spaceFourX} 0;
     &:hover,
     &:focus {
-      color: ${theme.orbit.paletteProductNormalHover};
+      color: ${theme.orbit.paletteProductNormalSecondary};
     }
   `}
 `;

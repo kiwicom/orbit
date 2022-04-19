@@ -8,7 +8,7 @@ import { DoDontHeader, GuidelineType } from ".";
 
 const GuidelineContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean }>`
   ${({ theme }) => css`
-    padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.spaceFourX} ${theme.orbit.spaceEightX};
     width: 100%;
     ${resolveBorders};
     background: ${theme.orbit.paletteCloudLight};
@@ -23,9 +23,9 @@ interface ImageContainerProps {
 const ImageContainer = styled.div<ImageContainerProps>`
   ${({ theme }) => css`
     width: 100%;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    padding: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.spaceEightX};
   `}
 `;
 

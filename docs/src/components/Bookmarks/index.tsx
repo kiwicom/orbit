@@ -28,11 +28,11 @@ const tileMixin = css`
     cursor: pointer;
     border-radius: 16px;
     box-sizing: border-box;
-    padding: ${theme.orbit.spaceXLarge};
-    box-shadow: ${theme.orbit.boxShadowAction};
+    padding: ${theme.orbit.spaceEightX};
+    box-shadow: ${theme.orbit.elevationActionBoxShadow};
     > div {
       height: 100%;
-      margin-right: ${theme.orbit.spaceXSmall};
+      margin-right: ${theme.orbit.spaceTwoX};
     }
 
     label {

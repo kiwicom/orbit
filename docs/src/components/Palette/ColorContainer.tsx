@@ -39,9 +39,9 @@ export const StyledColorContainerWrapper = styled(({ className, children }) => (
     flex-direction: column;
     background: ${colorValue};
     color: ${colorValue && isLight(colorValue)
-      ? theme.orbit.colorTextPrimary
-      : theme.orbit.paletteWhite};
-    padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
+      ? theme.orbit.textPrimaryForeground
+      : theme.orbit.paletteWhiteNormal};
+    padding: ${theme.orbit.spaceFourX} ${theme.orbit.spaceSixX};
     transition: transform ${theme.orbit.durationFast} ease-in;
     position: relative;
     min-width: 0;
@@ -76,8 +76,8 @@ const StyledColorNameHolder = styled.div<{ isMain?: boolean }>`
   ${({ isMain, theme }) => css`
     font-weight: ${theme.orbit.fontWeightBold};
     height: 100%;
-    font-size: ${theme.orbit.fontSizeTextLarge};
-    padding-bottom: ${isMain ? theme.orbit.spaceLarge : theme.orbit.spaceXSmall};
+    font-size: ${theme.orbit.fontSizeLarge};
+    padding-bottom: ${isMain ? theme.orbit.spaceSixX : theme.orbit.spaceTwoX};
   `}
 `;
 
@@ -89,7 +89,7 @@ const StyledColorHexHolder = styled.div`
 `;
 
 const StyledColorOtherTextHolder = styled.div`
-  padding-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
+  padding-bottom: ${({ theme }) => theme.orbit.spaceOneX};
 `;
 
 const ColorContainer = ({ color, ...props }: Props) => {

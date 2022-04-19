@@ -12,10 +12,10 @@ import docsTheme from "../../theme";
 const StyledContainer = styled.div`
   ${({ theme }) => css`
     ${StyledAnchor} + & {
-      margin-top: ${theme.orbit.spaceXSmall} !important;
+      margin-top: ${theme.orbit.spaceTwoX} !important;
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge} !important;
+      margin-top: ${theme.orbit.spaceEightX} !important;
     }
   `}
 `;
@@ -29,7 +29,7 @@ const StyledTabList = styled.div`
 
 const StyledTab = styled.button<{ active: boolean }>`
   ${({ theme, active }) => css`
-    padding: 14px ${theme.orbit.spaceMedium};
+    padding: 14px ${theme.orbit.spaceFourX};
     margin-bottom: -1px;
     border-top-left-radius: ${theme.orbit.borderRadiusLarge};
     border-top-right-radius: ${theme.orbit.borderRadiusLarge};
@@ -37,7 +37,7 @@ const StyledTab = styled.button<{ active: boolean }>`
     border-bottom: none;
     ${active &&
     css`
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
       border-color: ${theme.orbit.paletteCloudDark};
     `};
   `};
@@ -56,7 +56,7 @@ const StyledImageContainer = styled.div`
   ${({ theme }) => css`
     display: grid;
     place-content: center;
-    padding: ${theme.orbit.spaceXXLarge};
+    padding: ${theme.orbit.spaceTenX};
   `};
 `;
 StyledImageContainer.defaultProps = { theme: docsTheme };
@@ -65,7 +65,7 @@ const StyledComponentParts = styled.div`
   ${({ theme }) => css`
     display: grid;
     align-content: center;
-    padding: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.spaceEightX};
     border-top: 1px solid ${theme.orbit.paletteCloudDark};
 
     ${mq.largeDesktop(css`
@@ -78,12 +78,12 @@ const StyledComponentParts = styled.div`
       counter-reset: component-parts;
       display: flex;
       flex-direction: column;
-      gap: ${theme.orbit.spaceXSmall};
+      gap: ${theme.orbit.spaceTwoX};
 
       li {
         counter-increment: component-parts;
         display: flex;
-        gap: ${theme.orbit.spaceSmall};
+        gap: ${theme.orbit.spaceThreeX};
 
         &::before {
           flex-shrink: 0;
@@ -94,8 +94,8 @@ const StyledComponentParts = styled.div`
           height: 24px;
           background: #ec5192;
           border-radius: 100%;
-          color: ${theme.orbit.paletteWhite};
-          font-size: ${theme.orbit.fontSizeTextSmall};
+          color: ${theme.orbit.paletteWhiteNormal};
+          font-size: ${theme.orbit.fontSizeSmall};
           font-weight: bold;
         }
 

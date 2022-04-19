@@ -18,7 +18,7 @@ const StyledButton = styled.button<CopyButtonProps>`
       ? theme.orbit.paletteInkNormal
       : theme.orbit.paletteWhiteNormal};
     padding: 0 ${theme.orbit.spaceTwoX};
-    border-radius: ${theme.orbit.borderRadiusBadge};
+    border-radius: 12px;
     text-transform: uppercase;
     transition: transform ${theme.orbit.durationFast} ease-in;
 

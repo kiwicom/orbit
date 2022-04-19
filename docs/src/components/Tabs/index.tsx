@@ -31,7 +31,7 @@ const StyledContainer = styled.div<{ collapsed: boolean }>`
     overflow: hidden;
 
     > * + * {
-      margin-left: ${theme.orbit.spaceMedium};
+      margin-left: ${theme.orbit.spaceFourX};
     }
 
     ${collapsed &&
@@ -51,7 +51,7 @@ const StyledContainer = styled.div<{ collapsed: boolean }>`
 const StyledPopoverContent = styled.div`
   ${({ theme }) => css`
     /* close gap between content and Close button on mobile */
-    margin-bottom: -${theme.orbit.spaceMedium};
+    margin-bottom: -${theme.orbit.spaceFourX};
     ${mediaQueries.largeMobile(css`
       margin-bottom: 0;
     `)};
@@ -66,7 +66,7 @@ const StyledPopoverTab = styled(Link)<{ $active: boolean }>`
     align-items: center;
     justify-content: space-between;
     padding: 9px 0;
-    font-size: ${theme.orbit.fontSizeTextLarge};
+    font-size: ${theme.orbit.fontSizeLarge};
     font-weight: ${theme.orbit.fontWeightMedium};
     &:hover {
       color: ${theme.orbit.paletteProductNormal};
@@ -79,7 +79,7 @@ const StyledPopoverTab = styled(Link)<{ $active: boolean }>`
     };
 
     > * + * {
-      margin-left: ${theme.orbit.spaceMedium};
+      margin-left: ${theme.orbit.spaceFourX};
     }
   `};
 `;

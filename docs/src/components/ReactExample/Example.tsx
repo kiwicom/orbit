@@ -24,13 +24,13 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     overflow-y: auto;
 
     ${StyledAnchor} + & {
-      margin-top: ${theme.orbit.spaceMedium} !important;
+      margin-top: ${theme.orbit.spaceFourX} !important;
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge} !important;
+      margin-top: ${theme.orbit.spaceEightX} !important;
     }
     & + :not(${StyledAnchor}) {
-      margin-top: ${theme.orbit.spaceLarge} !important;
+      margin-top: ${theme.orbit.spaceSixX} !important;
     }
 
     &[style*="height"] ${StyledFrame} {

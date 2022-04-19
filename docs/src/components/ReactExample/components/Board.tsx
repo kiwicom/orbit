@@ -22,7 +22,7 @@ const StyledBoard = styled.div<{ isOpened: boolean }>`
   ${({ theme, isOpened }) => css`
     margin-top: 0;
     border-radius: ${!isOpened && `0 0 12px 12px`};
-    padding: ${theme.orbit.spaceXSmall};
+    padding: ${theme.orbit.spaceTwoX};
     border-top: 1px solid ${theme.orbit.paletteCloudDark};
     background: ${theme.orbit.paletteCloudLight};
     overflow-x: auto;

@@ -24,7 +24,7 @@ const StyledWrapper = styled.div`
   ${({ theme, opened, isContent }) => css`
     width: 100%;
     position: relative;
-    padding: ${theme.orbit.spaceSmall} 0;
+    padding: 10px 0;
     box-sizing: border-box;
     background: ${isContent ? opened && theme.orbit.paletteCloudLight : "none"};
     &:hover {

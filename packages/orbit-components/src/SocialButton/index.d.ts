@@ -5,7 +5,7 @@ import * as React from "react";
 
 import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
-export type Type = "apple" | "facebook" | "google" | "twitter";
+export type Type = "apple" | "facebook" | "google" | "twitter" | "email";
 
 type OmittedButtonCommonProps = Omit<ButtonCommonProps, "iconLeft" | "iconRight" | "circled">;
 

@@ -11,6 +11,7 @@ const opacity = {
   [TYPE_OPTIONS.FACEBOOK]: 8,
   [TYPE_OPTIONS.GOOGLE]: 8,
   [TYPE_OPTIONS.TWITTER]: 8,
+  [TYPE_OPTIONS.EMAIL]: 8,
 };
 
 const getButtonBoxShadow: GetSocialButtonBoxShadow = (state, disabled, theme, type) => {

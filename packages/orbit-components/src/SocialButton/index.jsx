@@ -35,7 +35,9 @@ const SocialButton: React.AbstractComponent<Props, HTMLButtonElement> = React.fo
       {...icons}
       disabled={disabled}
       iconLeft={iconLeft}
-      iconRight={<ChevronRightIcon color="primary" />}
+      iconRight={
+        <ChevronRightIcon customColor={type === TYPE_OPTIONS.APPLE ? "#FFF" : ""} color="primary" />
+      }
       circled={false}
     />
   );

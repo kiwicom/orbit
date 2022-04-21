@@ -6,7 +6,7 @@ import * as React from "react";
 
 import type { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
-export type Type = "apple" | "facebook" | "google" | "twitter";
+export type Type = "apple" | "facebook" | "google" | "twitter" | "email";
 
 export type Props = {|
   +type?: Type,

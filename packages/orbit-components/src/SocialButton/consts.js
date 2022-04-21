@@ -4,6 +4,7 @@ export const TYPE_OPTIONS = {
   FACEBOOK: "facebook",
   GOOGLE: "google",
   TWITTER: "twitter",
+  EMAIL: "email",
 };
 
 export const TOKENS = {

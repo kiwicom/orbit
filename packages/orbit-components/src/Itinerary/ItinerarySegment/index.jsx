@@ -45,7 +45,7 @@ const ItinerarySegment = ({
   const [opened, setOpened] = React.useState(false);
 
   const parts = (
-    <Stack direction="column" spacing="small">
+    <Stack direction="column" spacing="none">
       {React.Children.map(children, (el, i) => {
         return (
           <ItinerarySegmentContext.Provider

@@ -75,7 +75,7 @@ ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two loc
 | icon     | `React.Node`        |                    |         | ItinerarySegmentStop custom icon                         |
 | canceled | `boolean`           |                    |         | Shows segment stop as canceled with striked through Text |
 | type     | [`Status`](#status) |                    |         | The color of `ItinerarySegmentStop` icon                 |
-| minWidth | `number`            |                    |         | sets min-width for first column with date and time       |
+| minWidth | `number`            |                    | `70`    | sets min-width for first column with date and time       |
 
 ## ItineraryStatus
 

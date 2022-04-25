@@ -23238,10 +23238,10 @@ nanospinner@^0.3.0:
   dependencies:
     picocolors "^1.0.0"
 
-nanostores@^0.5.10:
-  version "0.5.10"
-  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-0.5.10.tgz#16488776f01fa288b09c026400ff535da55c3583"
-  integrity sha512-8Y7C8sF8PsHGpLVJochWT+ytEY34XrNRDA30hDqgvLcl5Ih4d/IFb7gUSFIwmgFAaht1pLwKZHTeFoJrNz88RQ==
+nanostores@^0.5.12:
+  version "0.5.12"
+  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-0.5.12.tgz#52559ddbaddf1da7d45e2221287178f9480c5e5d"
+  integrity sha512-5BccS7nNInTc7Noz2gv19gyx5h5y6m72nj6ZnCTV98GdFdwvcFJf2MMl+7VsX76E1toV1YrLqlDn+R+OF73PVg==
 
 napi-build-utils@^1.0.1:
   version "1.0.2"

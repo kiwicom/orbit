@@ -41,21 +41,24 @@ const IconImport = styled.div`
 
 const IconList = (): React.Node => (
   <List>
-    {Object.keys(Icons).map(icon => {
-      const Icon = styled(Icons[icon])`
-        padding: 0 ${defaultTokens.spaceLarge};
-        flex-shrink: 0;
-      `;
-      const iconName = `${icon}`;
-      return (
-        <Container key={icon}>
-          <Icon size="large" color="primary" />
-          <IconImport>
-            {`import ${iconName} from "@kiwicom/orbit-components/lib/icons/${iconName}"`}
-          </IconImport>
-        </Container>
-      );
-    })}
+    {Object.keys(Icons)
+      .filter(n => n !== "__namedExportsOrder")
+      .map(icon => {
+        const Icon = styled(Icons[icon])`
+          padding: 0 ${defaultTokens.spaceLarge};
+          flex-shrink: 0;
+        `;
+
+        const iconName = `${icon}`;
+        return (
+          <Container key={icon}>
+            <Icon size="large" color="primary" />
+            <IconImport>
+              {`import ${iconName} from "@kiwicom/orbit-components/lib/icons/${iconName}"`}
+            </IconImport>
+          </Container>
+        );
+      })}
   </List>
 );
 

@@ -20,7 +20,7 @@
   "dependencies": {
     "@adeira/js": "^2.1.1",
     "@babel/core": "^7.17.5",
-    "@babel/generator": "^7.17.3",
+    "@babel/generator": "^7.17.9",
     "@babel/parser": "^7.17.3",
     "@babel/preset-typescript": "^7.16.7",
     "@babel/standalone": "^7.17.6",

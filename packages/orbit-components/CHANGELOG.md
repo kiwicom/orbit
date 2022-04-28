@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.17.2...@kiwicom/orbit-components@2.18.0) (2022-04-28)
+
+
+### Bug Fixes
+
+* **Icon:** fix storybook iconList ([#3342](https://github.com/kiwicom/orbit/issues/3342)) ([3009190](https://github.com/kiwicom/orbit/commit/3009190647c2a5091cd70aa1220c2d5ae99aec31))
+* **ItinerarySegment:** change line color to paletteCloudNormalActive ([#3345](https://github.com/kiwicom/orbit/issues/3345)) ([3dcf147](https://github.com/kiwicom/orbit/commit/3dcf1479bf73486e6da13cda3f409ac2223f1f05))
+* **ItinerarySegmentStop:** fix paddings and minWidth ([#3339](https://github.com/kiwicom/orbit/issues/3339)) ([ead0cf6](https://github.com/kiwicom/orbit/commit/ead0cf65dde59dbe85389137a09b867d92a034eb))
+* **Skeleton:** make pulse animation more visible ([#3335](https://github.com/kiwicom/orbit/issues/3335)) ([a02c435](https://github.com/kiwicom/orbit/commit/a02c4350ae416fd1dbf43146220596beb60c64d7))
+
+
+### Features
+
+* **Collapse:** add customLabel prop ([#3331](https://github.com/kiwicom/orbit/issues/3331)) ([436442b](https://github.com/kiwicom/orbit/commit/436442bad4de751b861772572b20624934b2059a))
+* **SocialButton:** add type email and change layout ([#3337](https://github.com/kiwicom/orbit/issues/3337)) ([c460b52](https://github.com/kiwicom/orbit/commit/c460b52b5e85212686b9a520cef7e4373e6c85b3))
+
+
+
+
+
 ## [2.17.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.17.1...@kiwicom/orbit-components@2.17.2) (2022-04-05)
 
 

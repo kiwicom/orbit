@@ -5,6 +5,7 @@ const boundingClientRect: BoundingClientRect = ref => {
   if (
     ref &&
     ref.current &&
+    // $FlowFixMe: TODO
     typeof ref.current.getBoundingClientRect === "function" &&
     typeof window !== "undefined"
   ) {

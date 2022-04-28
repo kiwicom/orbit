@@ -107,10 +107,12 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       | SyntheticMouseEvent<HTMLDivElement>
       | SyntheticTouchEvent<HTMLDivElement>,
   ) => {
+    // $FlowFixMe[method-unbinding]
     if (typeof event.stopPropagation === "function") {
       event.stopPropagation();
     }
     if (
+      // $FlowFixMe[method-unbinding]
       typeof event.preventDefault === "function" &&
       (typeof event.cancelable !== "boolean" || event.cancelable)
     ) {
@@ -121,6 +123,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   stopPropagation: (event: SyntheticTouchEvent<HTMLDivElement>) => void = (
     event: SyntheticTouchEvent<HTMLDivElement>,
   ) => {
+    // $FlowFixMe[method-unbinding]
     if (typeof event.stopPropagation === "function") event.stopPropagation();
   };
 
@@ -422,7 +425,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   ) => {
     const { value } = this.state;
     if (index == null || !Array.isArray(value)) return newValue;
-    return value.map<number>((item, key) => (key === index ? newValue : item));
+    return value.map((item, key) => (key === index ? newValue : item));
   };
 
   renderHandle: (valueNow: number, i: ?number) => React.Node = (valueNow: number, i: ?number) => {
@@ -460,7 +463,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
   renderHandles: () => React.Node | Array<React.Node> = () => {
     const { value } = this.state;
     return Array.isArray(value)
-      ? value.map<React.Node>((valueNow, i) => this.renderHandle(valueNow, i))
+      ? value.map((valueNow, i) => this.renderHandle(valueNow, i))
       : this.renderHandle(value);
   };
 

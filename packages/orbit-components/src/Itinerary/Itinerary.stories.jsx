@@ -35,7 +35,7 @@ const BadgeGroup = () => {
   const carriers = [{ code: "REGIOJETT", name: "Regiojet" }];
 
   return (
-    <Stack flex align="center" spacing="XXSmall">
+    <Stack flex align="center" spacing="XSmall">
       <Badge carriers={carriers} border={false}>
         Regiojet
       </Badge>

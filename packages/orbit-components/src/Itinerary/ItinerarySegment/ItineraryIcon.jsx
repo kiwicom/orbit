@@ -34,7 +34,7 @@ const IconStyled = styled.div`
     css`
       &:before {
         top: -9px;
-        border: 1px solid ${theme.orbit.paletteCloudNormalHover};
+        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
         ${lineMixin};
       }
     `};
@@ -45,7 +45,7 @@ const IconStyled = styled.div`
       &:after {
         bottom: -7px;
         opacity: ${isNextHidden ? `0.5` : `1`};
-        border: 1px solid ${theme.orbit.paletteCloudNormalHover};
+        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
         ${lineMixin};
       }
     `};

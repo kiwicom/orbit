@@ -46,10 +46,7 @@ type StyledSelectType = Props & {|
   ...DataAttrs,
 |};
 
-const StyledSelect: React.AbstractComponent<
-  any,
-  React.AbstractComponent<StyledSelectType, HTMLSelectElement>,
-> = styled(
+const StyledSelect: any = styled(
   React.forwardRef(
     (
       {

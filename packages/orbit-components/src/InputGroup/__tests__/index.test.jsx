@@ -41,6 +41,7 @@ describe("InputGroup", () => {
 
     userEvent.tab();
     expect(screen.getByText("help message")).toBeInTheDocument();
+    // $FlowFixMe:TODO
     await act(async () => {});
   });
   it("should render error message", async () => {
@@ -52,6 +53,7 @@ describe("InputGroup", () => {
 
     userEvent.tab();
     expect(screen.getByText("error message")).toBeInTheDocument();
+    // $FlowFixMe:TODO
     await act(async () => {});
   });
 

@@ -84,6 +84,7 @@ describe("InputFile", () => {
     userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
 
+    // $FlowFixMe:TODO
     await act(async () => {});
   });
 });

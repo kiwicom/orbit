@@ -68,6 +68,7 @@ describe("Textarea", () => {
     userEvent.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
+    // $FlowFixMe: jest
     await act(async () => {});
   });
 });

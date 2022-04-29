@@ -190,8 +190,8 @@
 - component: EmptyState
   figma: Released
   react: Planned
-  ios: Planned
-  android: N/A
+  ios: Released
+  android: Released
   docs: Released
   group: Progress indicators
 - component: FeatureIcon
@@ -428,7 +428,7 @@
 - component: Skeleton
   figma: N/A
   react: Released
-  ios: Planned
+  ios: Released
   android: N/A
   docs: Released
   group: Progress indicators
@@ -526,7 +526,7 @@
 - component: Tabs
   figma: Released
   react: Planned
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Structure
@@ -622,3 +622,5 @@
   android: N/A
   docs: Released
   group: Progress indicators
+- component: KeyValue
+  ios: Planned

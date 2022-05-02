@@ -180,6 +180,10 @@ const ErrorFormTooltip = ({
           },
         },
         {
+          name: "flip",
+          enabled: false,
+        },
+        {
           name: "arrow",
           options: {
             element: arrowRef,

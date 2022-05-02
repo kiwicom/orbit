@@ -84,7 +84,7 @@
     "lerna": "4.0.0",
     "lint-staged": "^12.3.2",
     "markdown-chalk": "^2.1.0",
-    "markdown-magic": "^2.5.2",
+    "markdown-magic": "^2.6.0",
     "merge-stream": "^2.0.0",
     "prettier": "^2.1.2",
     "raf": "^3.4.1",

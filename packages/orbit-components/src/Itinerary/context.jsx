@@ -6,12 +6,11 @@ import typeof { ItineraryProvider as ItineraryProviderType } from "./context";
 
 export const ItineraryContext: React.Context<Context> = React.createContext({
   setWidths: () => {},
-  setCalculatedWidth: () => {},
   calculatedWidth: 0,
 });
 
 export const ItineraryProvider: ItineraryProviderType = ({ children }): React.Node => {
-  const [widths, setWidths] = React.useState([]);
+  const [widths, setWidths] = React.useState([70]);
   const [calculatedWidth, setCalculatedWidth] = React.useState(0);
 
   React.useEffect(() => {
@@ -22,7 +21,6 @@ export const ItineraryProvider: ItineraryProviderType = ({ children }): React.No
     <ItineraryContext.Provider
       value={{
         calculatedWidth,
-        setCalculatedWidth,
         setWidths,
       }}
     >

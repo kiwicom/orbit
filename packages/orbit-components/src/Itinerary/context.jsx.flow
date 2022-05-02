@@ -6,7 +6,6 @@ type Dispatch<A> = (value: A) => void;
 
 export type Context = {|
   +setWidths: Dispatch<SetStateAction<number[]>>,
-  +setCalculatedWidth: Dispatch<SetStateAction<number>>,
   +calculatedWidth: number,
 |};
 

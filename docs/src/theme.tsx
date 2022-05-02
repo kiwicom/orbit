@@ -27,5 +27,6 @@ export default {
   },
   transitions: true,
   lockScrolling: true,
+  lockScrollingBarGap: true,
   rtl: false,
 };

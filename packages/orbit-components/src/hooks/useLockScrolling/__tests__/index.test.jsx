@@ -48,6 +48,8 @@ describe("useLockScrolling", () => {
   });
 
   it("should survive stress testing 😈", () => {
+    Object.defineProperty(window.HTMLHtmlElement.prototype, "clientWidth", { value: 24 });
+
     function LockFoo({ children }: {| children?: React.Node |}) {
       const ref = React.useRef(null);
       useLockScrolling(ref);
@@ -105,13 +107,17 @@ describe("useLockScrolling", () => {
         </>
       </ThemeProvider>,
     );
+
     expect(document.body).not.toHaveStyle({ overflow: "hidden" });
 
     rerender(
-      <ThemeProvider theme={{ ...defaultTheme, lockScrolling: true }}>
+      <ThemeProvider theme={{ ...defaultTheme, lockScrolling: true, lockScrollingBarGap: true }}>
         <LockBaz switchRefs />
       </ThemeProvider>,
     );
+
+    // default globals.window is 1024 - 24
+    expect(document.body).toHaveStyle({ paddingRight: "1000px" });
     expect(document.body).toHaveStyle({ overflow: "hidden" });
 
     unmount();

@@ -78,7 +78,7 @@ const setOverflowHidden = (options?: BodyScrollOptions) => {
 
       if (document.body) {
         previousBodyPaddingRight = document.body.style.paddingRight;
-        document.body.style.paddingRight = `${computedBodyPaddingRight + scrollBarGap}px`;
+        document.body.style.paddingRight = `${computedBodyPaddingRight || 0 + scrollBarGap}px`;
       }
     }
   }

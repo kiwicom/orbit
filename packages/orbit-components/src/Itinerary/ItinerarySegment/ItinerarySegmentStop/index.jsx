@@ -46,14 +46,14 @@ const ItinerarySegmentStop = ({
   const { calculatedWidth, setWidths } = useWidth();
   const [dateWidth, setDateWidth] = React.useState<HTMLDivElement | null>(null);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     setWidths(prev => (dateWidth?.clientWidth ? [...prev, minWidth, dateWidth.clientWidth] : prev));
-  }, [setWidths, dateWidth]);
+  }, [setWidths, dateWidth, minWidth]);
 
   return (
     <StyledWrapper $hidden={hidden}>
       <Stack flex align="center" spacing="small">
-        <StyledDate minWidth={calculatedWidth} ref={setDateWidth}>
+        <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
           <Stack flex direction="column" spacing="none" align="end">
             <Text strikeThrough={canceled} weight="medium" type={canceled ? "critical" : "primary"}>
               {time}

@@ -16,12 +16,11 @@ const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, compact }) => {
 
   if (compact) {
     if (type === TYPES.SECONDARY) {
-      const wrappedPrimaryType = name => getButtonLinkTypeToken(name, TYPES.PRIMARY, theme);
       return {
         ...commonStyles,
-        foregroundHover: wrappedPrimaryType(TOKENS.foregroundHover),
-        foregroundActive: wrappedPrimaryType(TOKENS.foregroundActive),
-        foregroundFocus: wrappedPrimaryType(TOKENS.foregroundActive),
+        foregroundHover: theme.orbit.colorTextButtonLinkSecondaryCompactHover,
+        foregroundActive: theme.orbit.colorTextButtonLinkSecondaryCompactHover,
+        foregroundFocus: theme.orbit.colorTextButtonLinkSecondaryCompactActive,
       };
     }
     return commonStyles;

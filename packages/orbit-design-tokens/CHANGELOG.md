@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.3.2...@kiwicom/orbit-design-tokens@1.4.0) (2022-05-03)
+
+
+### Features
+
+* **tokens:** add colorTextButtonLinkSecondaryCompact active and hover tokens ([5ddcf2e](https://github.com/kiwicom/orbit/commit/5ddcf2e39a07fc2740ed32500ffe20dd92a2de09))
+
+
+
+
+
 ## [1.3.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.3.1...@kiwicom/orbit-design-tokens@1.3.2) (2022-04-28)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

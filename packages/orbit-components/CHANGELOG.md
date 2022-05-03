@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.19.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.18.0...@kiwicom/orbit-components@2.19.0) (2022-05-03)
+
+
+### Bug Fixes
+
+* Button and ButtonLink changes ([#3351](https://github.com/kiwicom/orbit/issues/3351)) ([598ac28](https://github.com/kiwicom/orbit/commit/598ac2846d94177f3d2a3594d3c9a1caa5ddf69a))
+* button and buttonLink to have default browser outline for tab nav ([bf8eca2](https://github.com/kiwicom/orbit/commit/bf8eca28308884aadf48e4efbe9bb442a9ad6299))
+* **ButtonLink:** set productNormalHover and productNormalActive colors for compact secondary ([4cb3cf9](https://github.com/kiwicom/orbit/commit/4cb3cf954de142c983e00ac7eb5aeeebff5d0ecc))
+* **ErrorFormsTooltip:** turn off flip ([#3347](https://github.com/kiwicom/orbit/issues/3347)) ([e581554](https://github.com/kiwicom/orbit/commit/e5815544e5c654fcdccb03bfb6d8ea4f62f67735))
+* **ItinerarySegmentStop:** fix SSR issue ([#3350](https://github.com/kiwicom/orbit/issues/3350)) ([56b1bc7](https://github.com/kiwicom/orbit/commit/56b1bc7f4fa75132dc484813b6e605af024a0f17))
+* **useLockScrolling:** lockScrollingBarGap bug ([#3346](https://github.com/kiwicom/orbit/issues/3346)) ([f3a552d](https://github.com/kiwicom/orbit/commit/f3a552d960de772ad20a8dc8f3fdb35e18c5b81e))
+
+
+### Features
+
+* **tokens:** add colorTextButtonLinkSecondaryCompact active and hover tokens ([5ddcf2e](https://github.com/kiwicom/orbit/commit/5ddcf2e39a07fc2740ed32500ffe20dd92a2de09))
+
+
+
+
+
 # [2.18.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.17.2...@kiwicom/orbit-components@2.18.0) (2022-04-28)
 
 

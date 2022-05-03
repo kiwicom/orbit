@@ -214,6 +214,8 @@ export type Tokens = {
   colorTextButtonLinkSecondary: string;
   colorTextButtonLinkSecondaryHover: string;
   colorTextButtonLinkSecondaryActive: string;
+  colorTextButtonLinkSecondaryCompactHover: string;
+  colorTextButtonLinkSecondaryCompactActive: string;
   colorTextInput: string;
   colorTextInputPrefix: string;
   colorTextInputDisabled: string;

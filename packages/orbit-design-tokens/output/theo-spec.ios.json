@@ -1690,6 +1690,12 @@
       "name": "colorIconRadioButton"
     },
     {
+      "value": "rgb(0, 152, 130)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonLinkSecondaryCompactHover"
+    },
+    {
       "value": "rgb(50, 66, 86)",
       "type": "color",
       "category": "Color palette",
@@ -1706,6 +1712,12 @@
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLightHover"
+    },
+    {
+      "value": "rgb(0, 143, 123)",
+      "type": "color",
+      "category": "Colors",
+      "name": "colorTextButtonLinkSecondaryCompactActive"
     },
     {
       "value": "rgb(40, 161, 56)",

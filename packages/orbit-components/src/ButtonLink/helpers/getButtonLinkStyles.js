@@ -13,6 +13,7 @@ const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, compact }) => {
     foregroundActive: wrappedTypeToken(TOKENS.foregroundActive),
     foregroundFocus: wrappedTypeToken(TOKENS.foregroundActive),
   };
+
   if (compact) {
     if (type === TYPES.SECONDARY) {
       const wrappedPrimaryType = name => getButtonLinkTypeToken(name, TYPES.PRIMARY, theme);
@@ -25,6 +26,7 @@ const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, compact }) => {
     }
     return commonStyles;
   }
+
   return {
     backgroundHover: wrappedTypeToken(TOKENS.backgroundHover),
     backgroundActive: wrappedTypeToken(TOKENS.backgroundActive),

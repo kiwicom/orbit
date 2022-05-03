@@ -8,7 +8,7 @@ import { disableBodyScroll, enableBodyScroll } from "./lock-scrolling";
 import typeof UseLockScrolling from ".";
 
 const useLockScrolling: UseLockScrolling = (ref, lock = true, dependencies = []) => {
-  const { lockScrolling: themeLockScrolling = true, lockScrollingBarGap } = useTheme();
+  const { lockScrolling: themeLockScrolling = true, lockScrollingBarGap = true } = useTheme();
   const isMounted = useIsMounted();
 
   useEffect(() => {

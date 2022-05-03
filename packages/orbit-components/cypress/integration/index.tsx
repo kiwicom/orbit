@@ -37,6 +37,7 @@ function App() {
         <ThemeProvider
           theme={{
             ...defaultTheme,
+            lockScrollingBarGap: true,
             // eslint-disable-next-line no-restricted-globals
             lockScrolling: location.search === "?disabled" ? false : undefined,
           }}

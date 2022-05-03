@@ -122,6 +122,7 @@ export const StyledButtonPrimitive: any = styled(
     background: ${background};
     color: ${foreground}!important;
     border: 0;
+    outline: ${boxShadowFocus && "0"};
     padding: ${padding};
     border-radius: ${circled ? height : "6px"};
     font-family: ${theme.orbit.fontFamily};
@@ -129,7 +130,6 @@ export const StyledButtonPrimitive: any = styled(
     font-size: ${fontSize};
     cursor: ${disabled ? "not-allowed" : "pointer"};
     transition: all ${theme.orbit.durationFast} ease-in-out !important;
-    outline: 0;
     opacity: ${disabled && theme.orbit.opacityButtonDisabled};
     margin-bottom: ${getSpacingToken};
     width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};

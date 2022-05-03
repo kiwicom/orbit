@@ -12,7 +12,6 @@ const getButtonStyles: GetButtonStyles = ({ disabled, theme, type }) => {
     boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
     boxShadowHover: wrappedBoxShadow(BUTTON_STATES.HOVER),
     boxShadowActive: wrappedBoxShadow(BUTTON_STATES.ACTIVE),
-    boxShadowFocus: wrappedBoxShadow(BUTTON_STATES.FOCUS),
   };
   return {
     background: wrappedTypeToken(TOKENS.backgroundButton),

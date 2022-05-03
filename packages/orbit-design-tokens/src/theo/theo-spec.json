@@ -744,6 +744,22 @@
         "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
+    "colorTextButtonLinkSecondaryCompactHover": {
+      "value": "#009882",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
+    "colorTextButtonLinkSecondaryCompactActive": {
+      "value": "#008F7B",
+      "type": "color",
+      "category": "Colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
+      }
+    },
     "colorTextInput": {
       "value": "#252A31",
       "type": "color",

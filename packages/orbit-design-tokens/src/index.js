@@ -107,6 +107,8 @@ export const getTokens: GetTokens = customFoundation => {
     colorTextButtonLinkSecondary: theme.palette.ink.normal,
     colorTextButtonLinkSecondaryHover: theme.palette.ink.normalHover,
     colorTextButtonLinkSecondaryActive: theme.palette.ink.normalActive,
+    colorTextButtonLinkSecondaryCompactHover: theme.palette.product.normalHover,
+    colorTextButtonLinkSecondaryCompactActive: theme.palette.product.normalActive,
     colorTextInput: theme.palette.ink.normal,
     colorTextInputPrefix: theme.palette.ink.light,
     colorTextInputDisabled: theme.palette.ink.lighter,

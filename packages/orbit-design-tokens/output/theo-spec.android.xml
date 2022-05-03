@@ -281,9 +281,11 @@
   <color name="COLORTEXTBUTTONPRIMARYBORDEREDACTIVE" category="Colors">#ff008f7b</color>
   <color name="BACKGROUNDBUTTONBORDEREDACTIVE" category="Background colors">#fff5f7f9</color>
   <color name="COLORICONRADIOBUTTON" category="Colors">#ff00a991</color>
+  <color name="COLORTEXTBUTTONLINKSECONDARYCOMPACTHOVER" category="Colors">#ff009882</color>
   <color name="PALETTEINKLIGHTACTIVE" category="Color palette">#ff324256</color>
   <color name="PALETTEBUNDLEBASIC" category="Color palette">#ffd7331c</color>
   <color name="PALETTEINKLIGHTHOVER" category="Color palette">#ff3e4e63</color>
+  <color name="COLORTEXTBUTTONLINKSECONDARYCOMPACTACTIVE" category="Colors">#ff008f7b</color>
   <color name="COLORALERTICONSUCCESS" category="Colors">#ff28a138</color>
   <color name="PALETTEINKNORMAL" category="Color palette">#ff252a31</color>
   <string name="FONTWEIGHTLINKS" category="Font weight">500</string>

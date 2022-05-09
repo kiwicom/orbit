@@ -37,12 +37,9 @@ function App() {
       return (
         <ThemeProvider
           theme={{
-<<<<<<< HEAD
             ...defaultTheme,
             lockScrollingBarGap: true,
-=======
             orbit: defaultTheme,
->>>>>>> bf2816770 (chore: fix cypress)
             // eslint-disable-next-line no-restricted-globals
             lockScrolling: location.search === "?disabled" ? false : undefined,
           }}

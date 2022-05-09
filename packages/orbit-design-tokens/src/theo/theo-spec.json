@@ -1601,12 +1601,12 @@
       "category": "Colors"
     },
     "buttonLinkPrimaryForegroundHover": {
-      "value": "#009882",
+      "value": "#007060",
       "type": "string",
       "category": "Colors"
     },
     "buttonLinkPrimaryForegroundActive": {
-      "value": "#008F7B",
+      "value": "#006657",
       "type": "string",
       "category": "Colors"
     },

@@ -26,13 +26,13 @@
         "foreground-hover": {
           "type": "color",
           "category": "foreground",
-          "value": "{foundation.palette.product.normal-secondary}",
+          "value": "{foundation.palette.product.dark-secondary}",
           "comment": "Used for the text of primary ButtonLink in the hover state."
         },
         "foreground-active": {
           "type": "color",
           "category": "foreground",
-          "value": "{foundation.palette.product.normal-tertiary}",
+          "value": "{foundation.palette.product.dark-tertiary}",
           "comment": "Used for the text of primary ButtonLink in the active and the focus state."
         }
       }

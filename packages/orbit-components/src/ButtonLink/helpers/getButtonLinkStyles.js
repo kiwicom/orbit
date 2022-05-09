@@ -18,9 +18,9 @@ const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, compact }) => {
     if (type === TYPES.SECONDARY) {
       return {
         ...commonStyles,
-        foregroundHover: theme.orbit.colorTextButtonLinkSecondaryCompactHover,
-        foregroundActive: theme.orbit.colorTextButtonLinkSecondaryCompactHover,
-        foregroundFocus: theme.orbit.colorTextButtonLinkSecondaryCompactActive,
+        foregroundHover: theme.orbit.paletteProductNormalSecondary,
+        foregroundActive: theme.orbit.paletteProductNormalTertiary,
+        foregroundFocus: theme.orbit.paletteProductNormalTertiary,
       };
     }
     return commonStyles;

@@ -1,0 +1,51 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/select/
+*/
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+import type {
+  Globals,
+  Translation,
+  TranslationString,
+  DataAttrs,
+} from "../../common/common.js.flow";
+import type { spaceAfter } from "../../common/getSpacingToken";
+
+type Option = {|
+  +key?: string,
+  +value: string | number,
+  +label?: string,
+  +disabled?: boolean,
+|};
+
+type Size = "small" | "normal";
+
+export type Props = {|
+  ...Globals,
+  ...spaceAfter,
+  ...DataAttrs,
+  +id?: string,
+  +required?: boolean,
+  +size?: Size,
+  +label?: Translation,
+  +placeholder?: TranslationString,
+  +value?: string | number,
+  +disabled?: boolean,
+  +name?: string,
+  +error?: React.Node,
+  +help?: React.Node,
+  +tabIndex?: string | number,
+  +onChange?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +onFocus?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
+  +readOnly?: boolean,
+  +options: Option[],
+  +prefix?: React.Node,
+  +customValueText?: Translation,
+|};
+
+declare export var SelectContainer: StyledComponent<any, any, HTMLElement>;
+
+declare export default React.AbstractComponent<Props, HTMLElement>;

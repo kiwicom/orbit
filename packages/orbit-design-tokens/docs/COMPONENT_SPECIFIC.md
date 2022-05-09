@@ -1,6 +1,6 @@
 # Component specific design tokens
 
-# Categories
+## Categories
 
 - alert (deprecated)
 - alert-button

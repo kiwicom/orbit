@@ -4,8 +4,9 @@ import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/icons";
+import { graphql } from "gatsby";
 
-import useSandbox from "./useSandbox";
+import useSandbox from "../../hooks/useSandbox";
 import { getModules } from "../../components/ReactExample/helpers";
 import { PREVIEW_ID } from "../../components/ReactExample/consts";
 
@@ -19,8 +20,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const PureSandbox = ({ pageContext }) => {
-  const { example, example_id, scope } = pageContext;
+const PureSandbox = ({ data }) => {
+  const { example, example_id, scope } = data.allExample.nodes[0];
   const { code } = useSandbox(example_id);
   const modules = getModules(scope);
 
@@ -45,5 +46,22 @@ const PureSandbox = ({ pageContext }) => {
     </ThemeProvider>
   );
 };
+
+export const pageQuery = graphql`
+  query ExamplePurePageQuery($id: String!) {
+    allExample(filter: { id: { eq: $id } }) {
+      nodes {
+        id
+        example
+        example_id
+        scope {
+          name
+          path
+          default
+        }
+      }
+    }
+  }
+`;
 
 export default PureSandbox;

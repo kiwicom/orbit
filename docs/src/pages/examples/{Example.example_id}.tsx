@@ -3,9 +3,10 @@ import { LiveProvider, LiveError } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
+import { graphql } from "gatsby";
 
 import { getModules, copyImports } from "../../components/ReactExample/helpers";
-import useSandbox from "./useSandbox";
+import useSandbox from "../../hooks/useSandbox";
 import Example from "../../components/ReactExample/Example";
 
 const GlobalStyle = createGlobalStyle`
@@ -18,8 +19,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Sandbox = ({ pageContext }) => {
-  const { example, id, example_id, scope, exampleKnobs, exampleVariants } = pageContext;
+const Sandbox = ({ data }) => {
+  const {
+    id,
+    example,
+    exampleKnobs,
+    example_id,
+    scope,
+    exampleVariants,
+  } = data.allExample.nodes[0];
   const { code, origin, setCode } = useSandbox(example_id);
 
   const modules = getModules(scope);
@@ -52,5 +60,35 @@ const Sandbox = ({ pageContext }) => {
     </ThemeProvider>
   );
 };
+
+export const pageQuery = graphql`
+  query ExamplePageQuery($example_id: String!) {
+    allExample(filter: { example_id: { eq: $example_id } }) {
+      nodes {
+        id
+        example
+        example_id
+        scope {
+          name
+          path
+          default
+        }
+        exampleKnobs {
+          component
+          knobs {
+            defaultValue
+            options
+            name
+            type
+          }
+        }
+        exampleVariants {
+          name
+          code
+        }
+      }
+    }
+  }
+`;
 
 export default Sandbox;

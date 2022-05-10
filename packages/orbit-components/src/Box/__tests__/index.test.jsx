@@ -151,6 +151,16 @@ describe("#Box", () => {
     expect(screen.getByTestId(dataTest)).toHaveStyle({ right: "0px" });
   });
 
+  it("should have z-index", () => {
+    render(
+      <Box dataTest={dataTest} position="absolute" zIndex={3}>
+        kek
+      </Box>,
+    );
+
+    expect(screen.getByTestId(dataTest)).toHaveStyle({ zIndex: 3 });
+  });
+
   it("should have padding and margin object props", () => {
     render(
       <Box

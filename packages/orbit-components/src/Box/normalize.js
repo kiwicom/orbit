@@ -60,6 +60,7 @@ const norm = ({ val, key, theme }): string | void => {
     minWidth: formatCSS("min-width", val),
     maxWidth: formatCSS("max-width", val),
     maxHeight: formatCSS("max-height", val),
+    zIndex: formatCSS("z-index", val),
   };
 
   if (!all[key]) return formatCSS(key, val);

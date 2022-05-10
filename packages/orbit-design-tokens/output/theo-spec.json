@@ -785,10 +785,6 @@
   "lineHeightLarge": "22px",
   "lineHeightText": "1.4",
   "lineHeightTextSmall": "16px",
-<<<<<<< HEAD
-  "marginButtonGroup": "0 1px 0 0"
-}
-=======
   "lineHeightTextNormal": "20px",
   "lineHeightTextLarge": "22px",
   "fontWeightNormal": 400,
@@ -800,9 +796,4 @@
   "zIndexDrawer": 815,
   "zIndexModal": 825,
   "zIndexOnTheTop": 900
-<<<<<<< HEAD
 }
->>>>>>> deaac6965 (feat: initial implementation of style-dictionary (#2523))
-=======
-}
->>>>>>> 0360accbe (chore(tokens): add zIndexDrawer token)

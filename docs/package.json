@@ -17,8 +17,10 @@
       "current node"
     ]
   },
+  "resolutions": {
+    "@babel/runtime": "^7.17.2"
+  },
   "dependencies": {
-    "@adeira/js": "^2.1.1",
     "@babel/core": "^7.17.5",
     "@babel/generator": "^7.17.9",
     "@babel/standalone": "^7.17.6",
@@ -52,7 +54,6 @@
     "@types/react-scrollspy": "^3.3.3",
     "@types/resize-observer-browser": "^0.1.7",
     "@types/styled-components": "^5.1.15",
-    "@types/resize-observer-browser": "^0.1.7",
     "@types/uuid": "^8.3.1",
     "axios": "^0.21.1",
     "babel-plugin-inline-react-svg": "^1.1.2",

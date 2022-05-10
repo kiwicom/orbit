@@ -1,4 +1,3 @@
-import { warning } from "@adeira/js";
 import tokensList from "@kiwicom/orbit-design-tokens/lib/docs-tokens.json";
 
 import { TokenSchema } from "./typings";
@@ -19,8 +18,6 @@ const findTokenAttributes = (
       schema: { namespace: "", object: "", variant: "", subVariant: "" },
     };
   }
-
-  warning(!!tokenValue, "%s wasn't found in the tokens.", name);
 
   const {
     type,

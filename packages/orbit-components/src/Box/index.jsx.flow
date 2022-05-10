@@ -124,6 +124,7 @@ export type Props = {|
   +maxHeight?: string,
   +position?: "absolute" | "relative" | "fixed",
   +left?: string,
+  +zIndex?: number,
   +top?: string,
   +right?: string,
   +bottom?: string,

@@ -130,6 +130,7 @@ export interface Props extends Common.Global {
   readonly grow?: number;
   readonly direction?: "row" | "column" | "row-reverse" | "column-reverse";
   readonly width?: string;
+  readonly zIndex?: number;
   readonly minWidth?: string;
   readonly maxWidth?: string;
   readonly height?: string;

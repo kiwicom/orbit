@@ -38,6 +38,7 @@ Table below contains all types of the props available in the Box component.
 | maxHeight    | `string`                                                             |         | The `max-height` of the Box                                     |
 | position     | [`position`](#position)                                              |         | The `position` of the Box                                       |
 | left         | `string`                                                             |         | The `left` of the Box                                           |
+| zIndex       | `number`                                                             |         | The `z-index` of the Box                                        |
 | top          | `string`                                                             |         | The `top` of the Box                                            |
 | right        | `string`                                                             |         | The `right` of the Box                                          |
 | bottom       | `string`                                                             |         | The `bottom` of the Box                                         |

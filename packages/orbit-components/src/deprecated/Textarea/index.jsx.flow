@@ -1,0 +1,33 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/textarea/
+*/
+import * as React from "react";
+
+import type { Globals, Translation, TranslationString } from "../../common/common.js.flow";
+import type { spaceAfter } from "../../common/getSpacingToken";
+
+export type Props = {|
+  ...Globals,
+  ...spaceAfter,
+  +size?: "small" | "normal",
+  +name?: string,
+  +rows?: number,
+  +readOnly?: boolean,
+  +required?: boolean,
+  +label?: Translation,
+  +value?: string,
+  +fullHeight?: boolean,
+  +placeholder?: TranslationString,
+  +help?: React.Node,
+  +error?: React.Node,
+  +resize?: "vertical" | "none",
+  +disabled?: boolean,
+  +maxLength?: number,
+  +tabIndex?: string | number,
+  +onChange?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
+  +onFocus?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
+|};
+
+declare export default React.ComponentType<Props>;

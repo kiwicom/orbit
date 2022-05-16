@@ -40,7 +40,7 @@ jobs:
 
       - name: Get DOMAIN
         if: github.ref != 'refs/heads/master'
-        run: echo "DOMAIN=https://orbit-silvenon-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
+        run: echo "DOMAIN=https://orbit-mainframev-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
 
       - name: Deploy to staging
         if: github.ref != 'refs/heads/master'

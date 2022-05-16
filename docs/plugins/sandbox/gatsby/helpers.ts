@@ -1,5 +1,4 @@
-import { types as t, traverse } from "@babel/core";
-import { parse } from "@babel/parser";
+import { types as t, traverse, parseSync } from "@babel/core";
 import generate from "@babel/generator";
 
 interface Scope {
@@ -8,38 +7,45 @@ interface Scope {
   default: boolean;
 }
 
-export const getAst = str =>
-  parse(str, {
+export const getAst = (str, filename) =>
+  parseSync(str, {
+    filename,
     sourceType: "module",
-    plugins: ["typescript", "jsx"],
+    presets: ["@babel/preset-typescript", "@babel/preset-react"],
   });
 
-export const getScope = example => {
+export const getScope = (example, file) => {
   const scope: Scope[] = [];
+  const ast = getAst(example, file);
 
-  getAst(example).program.body.forEach(n => {
-    if (t.isImportDeclaration(n)) {
-      const p = n.source.value;
-      if (n.source.value.match(/@kiwicom\/orbit-components|styled-components/)) {
-        n.specifiers.forEach(s => {
-          if (t.isImportDefaultSpecifier(s)) {
-            if (t.isIdentifier(s.local)) scope.push({ name: s.local.name, path: p, default: true });
-          }
+  if (!ast) return null;
 
-          if (t.isImportSpecifier(s)) {
-            if (t.isIdentifier(s.imported))
-              scope.push({ name: s.imported.name, path: p, default: false });
-          }
-        });
+  if (t.isFile(ast)) {
+    ast.program.body.forEach(n => {
+      if (t.isImportDeclaration(n)) {
+        const p = n.source.value;
+        if (n.source.value.match(/@kiwicom\/orbit-components|styled-components/)) {
+          n.specifiers.forEach(s => {
+            if (t.isImportDefaultSpecifier(s)) {
+              if (t.isIdentifier(s.local))
+                scope.push({ name: s.local.name, path: p, default: true });
+            }
+
+            if (t.isImportSpecifier(s)) {
+              if (t.isIdentifier(s.imported))
+                scope.push({ name: s.imported.name, path: p, default: false });
+            }
+          });
+        }
       }
-    }
-  });
+    });
+  }
 
   return scope;
 };
 
 export const getByName = (ast, name) => {
-  let output;
+  let output = "";
 
   traverse(ast, {
     TSTypeAnnotation: path => {
@@ -49,19 +55,21 @@ export const getByName = (ast, name) => {
     TSTypeParameterInstantiation: path => {
       path.remove();
     },
-  });
 
-  ast.program.body.forEach(n => {
-    if (t.isExportDefaultDeclaration(n)) {
-      // @ts-expect-error TODO
-      n.declaration.properties.forEach(prop => {
-        if (t.isObjectProperty(prop)) {
-          if (t.isIdentifier(prop.key) && prop.key.name === name) {
-            output = generate(prop.value).code;
+    ExportDefaultDeclaration: path => {
+      if (t.isExportDefaultDeclaration(path.node)) {
+        // @ts-expect-error TODO
+        path.node.declaration.properties.forEach(prop => {
+          if (t.isObjectProperty(prop)) {
+            if (t.isIdentifier(prop.key) && prop.key.name === name) {
+              if (prop.value) {
+                output = generate(prop.value).code;
+              }
+            }
           }
-        }
-      });
-    }
+        });
+      }
+    },
   });
 
   return output;

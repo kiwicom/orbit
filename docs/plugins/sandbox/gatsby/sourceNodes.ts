@@ -16,12 +16,12 @@ export default async (
 
     files.forEach(file => {
       const { name } = path.parse(file);
-      const getProperty = (content, prop) => getByName(getAst(content), prop);
+      const getProperty = (content, prop) => getByName(getAst(content, file), prop);
 
       const exampleFolder = path.dirname(file).split("/").slice(-1).join("").toLowerCase();
       const content = fs.readFileSync(file, "utf-8");
       const id = [exampleFolder, "-", name.toLowerCase()].join("");
-      const scope = getScope(content);
+      const scope = getScope(content, file);
       const example = getProperty(content, "Example");
       const knobCode = getProperty(content, "exampleKnobs");
       const variants = getProperty(content, "exampleVariants");

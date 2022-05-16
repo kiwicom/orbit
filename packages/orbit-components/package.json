@@ -128,7 +128,7 @@
     "@testing-library/user-event": "^13.1.1",
     "@types/react": "^17.0.26",
     "@types/styled-components": "^5.1.15",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^8.2.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.13.2",
     "camelcase": "^6.1.0",

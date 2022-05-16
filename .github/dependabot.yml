@@ -13,3 +13,11 @@ updates:
       # updating @babel/types breaks the ESLint rule orbit-components/button-has-title
       # https://github.com/kiwicom/orbit/pull/2675
       - dependency-name: "@babel/types"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule: 
+      interval: weekly
+    labels: 
+     - "dependency"
+    commit-message: 
+      prefix: chore

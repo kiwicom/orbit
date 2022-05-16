@@ -82,7 +82,7 @@
     "@popperjs/core": "^2.9.2",
     "react-hot-toast": "^2.1.1",
     "react-popper": "^2.2.5",
-    "react-uid": "^2.3.1"
+    "react-uid": "^2.3.2"
   },
   "devDependencies": {
     "@adeira/babel-preset-adeira": "^4.0.0",

@@ -4,10 +4,10 @@ import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 export default {
   Example: () => {
-    const divStyle: React.CSSProperties = {
-      backgroundColor: `${defaultTheme.orbit.paletteCloudDark}`,
+    const divStyle = {
+      background: `${defaultTheme.orbit.paletteCloudDark}`,
       border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,
-      boxSizing: "border-box",
+      "box-sizing": "border-box",
       padding: `${defaultTheme.orbit.paddingButtonSmall}`,
     };
 

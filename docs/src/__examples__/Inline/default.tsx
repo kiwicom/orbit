@@ -4,7 +4,7 @@ import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 export default {
   Example: () => {
-    const height: React.CSSProperties = {
+    const height = {
       height: "40px",
     };
 

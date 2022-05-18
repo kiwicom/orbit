@@ -4151,11 +4151,6 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
   integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
 
-"@kiwicom/browserslist-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-1.0.0.tgz#4abe67d42fd037f87e5abc20eb9e392a14639a30"
-  integrity sha512-PoLLgols9+D58y58m5dbFCSxe6SqT7v+80zPqvDY/qfb/ZYbZ8dcCDrceMgdu2z0oP0D7ZtGK+7lpPXsIqRDYw==
-
 "@kiwicom/browserslist-config@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-2.1.0.tgz#87590935ca268f9ede19fd792c8e1270685c2912"
@@ -10111,6 +10106,16 @@ babel-loader@^8.0.0, babel-loader@^8.2.3:
   dependencies:
     find-cache-dir "^3.3.1"
     loader-utils "^1.4.0"
+    make-dir "^3.1.0"
+    schema-utils "^2.6.5"
+
+babel-loader@^8.2.5:
+  version "8.2.5"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.5.tgz#d45f585e654d5a5d90f5350a779d7647c5ed512e"
+  integrity sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ==
+  dependencies:
+    find-cache-dir "^3.3.1"
+    loader-utils "^2.0.0"
     make-dir "^3.1.0"
     schema-utils "^2.6.5"
 

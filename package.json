@@ -45,10 +45,6 @@
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4",
-    "@kiwicom/browserslist-config": "^2.1.0",
-    "@lerna/project": "^3.21.0",
-    "@size-limit/file": "^6.0.3",
     "@size-limit/webpack": "^6.0.3",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.33.0",

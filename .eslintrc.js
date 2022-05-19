@@ -1,4 +1,6 @@
 // @noflow
+const { DEV_DEPENDENCIES } = require("./utils/eslint");
+
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
@@ -14,31 +16,6 @@ module.exports = {
     "no-unused-expressions": "off",
     "babel/no-unused-expressions": "error",
     "import/no-useless-path-segments": ["error", { noUselessIndex: true }],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        devDependencies: [
-          "**/*.test.*",
-          "**/__tests__/**",
-          "**/__testfixtures__/**",
-          "**/__examples__/**",
-          "**/cypress/**",
-          "**/*.stories.*",
-          "**/*.config.*",
-          "**/stories/**",
-          "**/tasks/**",
-          "docs/**",
-          "packages/eslint-plugin-orbit-components/**",
-          "packages/orbit-design-tokens/src/theo/**",
-          "packages/*/.storybook/**",
-          "**/config/**",
-          "**/scripts/**",
-          "publish.mjs",
-          "**/.remarkrc.js",
-          "**/.size-limit.js",
-        ],
-      },
-    ],
     "import/order": [
       "error",
       {
@@ -71,8 +48,24 @@ module.exports = {
     "react/no-access-state-in-setstate": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "no-await-in-loop": "off",
+    // to improve performance locally
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#my-linting-feels-really-slow
+    ...(!process.env.CI
+      ? {
+          "import/no-named-as-default": "off",
+          "import/no-cycle": "off",
+          "import/no-unused-modules": "off",
+          "import/no-deprecated": "off",
+        }
+      : null),
   },
   overrides: [
+    {
+      files: DEV_DEPENDENCIES,
+      rules: {
+        "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+      },
+    },
     {
       files: ["*.js?(x)", "*.js?(x).flow"],
       extends: ["plugin:flowtype/recommended", "prettier"],
@@ -84,7 +77,7 @@ module.exports = {
       },
     },
     {
-      files: "*.ts?(x)",
+      files: ["*.ts?(x)", "*.d.ts"],
       extends: [
         // disables core ESLint rules which are handled by TypeScript
         "plugin:@typescript-eslint/eslint-recommended",
@@ -92,9 +85,11 @@ module.exports = {
         "prettier",
       ],
       parserOptions: {
+        tsconfigRootDir: __dirname,
         project: [
           "./tsconfig.json",
-          "./packages/orbit-tracking/tsconfig.json",
+          "./packages/*/tsconfig.json",
+          "./packages/*/scripts/tsconfig.json",
           "./docs/tsconfig.json",
           "./packages/orbit-components/cypress/tsconfig.json",
         ],
@@ -110,7 +105,6 @@ module.exports = {
       },
       rules: {
         "@typescript-eslint/no-empty-interface": "off",
-        "@typescript-eslint/prefer-readonly-parameter-types": "error",
         "@typescript-eslint/no-empty-function": "off",
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": "error",
@@ -129,6 +123,10 @@ module.exports = {
           },
         ],
         "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
+        "import/named": "off",
+        "import/namespace": "off",
+        "import/default": "off",
+        "import/no-named-as-default-member": "off",
       },
     },
     {
@@ -249,6 +247,24 @@ module.exports = {
       files: ["packages/orbit-components/src/utils/**/*"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
+      },
+    },
+    {
+      files: ["packages/orbit-components/scripts/*"],
+      rules: {
+        "no-console": "off",
+        "no-restricted-syntax": "off",
+      },
+    },
+    {
+      files: ["packages/orbit-tracking/src/**/*"],
+      rules: {
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "no-restricted-syntax": "off",
+        "guard-for-in": "off",
+        "no-console": "off",
       },
     },
     {

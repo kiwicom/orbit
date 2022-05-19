@@ -21,7 +21,7 @@ module.exports = {
     config.resolve.extensions = config.resolve.extensions.filter(ext => ext !== ".mjs");
 
     config.module.rules.push({
-      test: /\.jsx?$/,
+      test: [/\.jsx?$/, /\.tsx?$/],
       use: [
         {
           options: { envName: "esm" },

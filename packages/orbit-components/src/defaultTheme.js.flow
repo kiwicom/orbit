@@ -10,7 +10,8 @@ export type Theme = {|
 |};
 
 export type ThemeProps = {|
-  theme: Theme,
+  +theme: Theme,
 |};
 
-declare export default Theme;
+declare var defaultTheme: Theme;
+export default defaultTheme;

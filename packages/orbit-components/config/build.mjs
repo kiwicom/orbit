@@ -1,11 +1,31 @@
-import { $, chalk, globby, fs } from "zx";
+import { $, chalk, globby, fs, argv } from "zx";
 import * as babel from "@babel/core";
-import ora from "ora";
+import flowgen from "flowgen";
 import dedent from "dedent";
+import ora from "ora";
 
-const logStep = msg => {
-  console.log(`\n${chalk.yellow.underline(msg)}`);
-};
+const OUTPUT_PATTERNS = [
+  "lib",
+  "es",
+  "umd",
+  ".out",
+  "src/icons/*.{js?(x),js?(x).flow,d.ts}",
+  "orbit-icons-font",
+  "orbit-icons-font.zip",
+  "orbit-svgs.zip",
+];
+
+const COMPILE_IGNORE_PATTERNS = [
+  "**/*.d.ts",
+  "**/*.stories.*",
+  "**/*.test.*",
+  "**/__tests__/**/*",
+  "**/__typetests__/**/*",
+  "**/__examples__/*.*",
+  "**/examples.*",
+];
+
+const logStep = msg => console.log(`\n${chalk.yellow.underline(msg)}`);
 
 (async () => {
   if (argv.size) {
@@ -18,7 +38,7 @@ const logStep = msg => {
 
   logStep("Cleanup");
 
-  await $`rimraf lib es umd "src/icons/*.{js?(x),js?(x).flow,d.ts}" orbit-icons-font orbit-icons-font.zip orbit-svgs.zip .out`;
+  await $`del ${OUTPUT_PATTERNS}`;
 
   logStep("Building icons");
 
@@ -33,26 +53,23 @@ const logStep = msg => {
 
   logStep("Compiling source");
 
-  const files = await globby("**/*.js?(x)", {
+  const files = await globby("**/*.{js,jsx,ts,tsx}", {
     cwd: "src",
-    ignore: [
-      "**/__tests__/**",
-      "**/*.test.*",
-      "**/__typetests__/**",
-      "**/examples.*",
-      "**/*.stories.*",
-    ],
+    ignore: COMPILE_IGNORE_PATTERNS,
   });
 
   const commonJs = ["CommonJS", "lib", await babel.loadOptions()];
   const esModules = ["ES Modules", "es", await babel.loadOptions({ envName: "esm" })];
 
   for (const [name, dir, options] of [commonJs, esModules]) {
+    console.log(chalk.greenBright(`Compiling files for ${name}`));
     const spinner = ora(name).start();
+
     for (const file of files) {
       const result = await babel.transformFileAsync(`src/${file}`, options);
-      await fs.outputFile(`${dir}/${file.replace(/\.jsx$/, ".js")}`, result.code);
+      await fs.outputFile(`${dir}/${file.replace(/\.[jt]sx?$/, ".js")}`, result.code);
     }
+
     spinner.succeed(`${name} → ${dir}`);
   }
 
@@ -79,12 +96,47 @@ const logStep = msg => {
     logStep("Type declarations");
 
     await $`babel-node config/typeFiles.js`;
+
     await $`cpy "**/*.{js?(x).flow,d.ts}" ../lib --cwd src --parents`;
     await $`cpy "**/*.{js?(x).flow,d.ts}" ../es --cwd src --parents`;
+    await $`del tsconfig.tsbuildinfo`; // reset potential incremental compilation information
+    await $`tsc`;
 
     for (const file of await globby("{lib,es}/**/*.jsx.flow")) {
       await fs.rename(file, file.replace(/\.jsx\.flow$/, ".js.flow"));
     }
+
+    console.log(chalk.greenBright("Generating Flow declarations..."));
+    const tsDeclarations = await globby("lib/**/*.d.ts");
+    await Promise.all(
+      tsDeclarations.map(async tsDeclPath => {
+        try {
+          const flowDeclPath = tsDeclPath.replace(".d.ts", ".js.flow");
+          if (await fs.pathExists(flowDeclPath)) return;
+          const flowDecl = await flowgen.compiler.compileDefinitionFile(tsDeclPath, {
+            interfaceRecords: true,
+          });
+          const content = dedent`
+            // @flow
+            ${flowgen.beautify(
+              flowDecl
+                .replace("import React from", "import * as React from")
+                .replace("React.FC", "React.StatelessFunctionalComponent"),
+            )}
+          `;
+          await fs.writeFile(flowDeclPath, content);
+        } catch (err) {
+          if (err instanceof Error) {
+            err.message = dedent`
+              Failed to create a Flow libdef
+              ${__dirname}/${tsDeclPath}
+              ${err.message}
+            `;
+            throw err;
+          }
+        }
+      }),
+    );
   }
 
   if (argv.size) {

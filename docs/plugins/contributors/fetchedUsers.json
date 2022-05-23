@@ -56,20 +56,6 @@
     "github": "https://github.com/sampi"
   },
   {
-    "id": "a3419013-0744-5e75-b26e-0c18e8cc9728",
-    "name": "Dino Trojak",
-    "username": "dinodsaurus",
-    "error": "",
-    "twitter": null,
-    "website": "https://dinodsaur.us",
-    "info": "Previously a young buck @twobucks, now @reactor-studio & @kiwicom , also @jszgb community leader and @nodeschool Zagreb organizer",
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/1530952?v=4",
-    "position": "",
-    "github": "https://github.com/dinodsaurus"
-  },
-  {
     "id": "40218937-d084-51d0-9b99-0e5bd6b2c74d",
     "name": "Filip Danisko",
     "username": "filipdanisko",
@@ -124,6 +110,20 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/179061?v=4",
     "position": "",
     "github": "https://github.com/janpanschab"
+  },
+  {
+    "id": "20144406-22c5-5ad4-9dca-75055e2f0cde",
+    "name": "Jan Škrášek",
+    "username": "hrach",
+    "error": "",
+    "twitter": "hrachcz",
+    "website": "https://hrach.dev",
+    "info": "Android Software Engineer in Kiwi.com • Nextras Orm Developer • JetPack Compose explorer",
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/284263?v=4",
+    "position": "",
+    "github": "https://github.com/hrach"
   },
   {
     "id": "2822a889-1a82-5303-9f12-edbd1e51b6a1",

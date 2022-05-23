@@ -131,7 +131,7 @@
     "babel-loader": "^8.2.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.13.2",
-    "camelcase": "^6.1.0",
+    "camelcase": "^6.3.0",
     "capitalize": "^2.0.3",
     "cpy-cli": "^3.1.1",
     "cypress": "^8.3.0",

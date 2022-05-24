@@ -1,20 +1,14 @@
 import React from "react";
 import { render } from "react-dom";
 import { createRouter } from "@nanostores/router";
-import { useStore } from "nanostores/react";
+import { useStore } from "@nanostores/react";
 import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 import LockScrolling from "./pages/lock-scrolling";
 import MediaQueries from "./pages/media-queries";
 import ModalFooter from "./pages/modal-footer";
 
-interface Routes {
-  lockScrolling: void;
-  mediaQueries: void;
-  modalFooter: void;
-}
-
-const router = createRouter<Routes>({
+const router = createRouter({
   lockScrolling: "/lock-scrolling",
   mediaQueries: "/media-queries",
   modalFooter: "/modal-footer",

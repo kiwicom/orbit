@@ -33,14 +33,8 @@ jobs:
           yarn components build
           yarn tracking build
 
-      - name: Check icons
-        run: yarn components check:icons
-
-      - name: Flow
-        run: yarn flow:check
-
-      - name: TypeScript
-        run: yarn check-types
+      - name: Type checks
+        run: yarn check:types
 
       - name: Lint
         run: |
@@ -82,7 +76,7 @@ jobs:
       - name: Check links
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: yarn check-links
+        run: yarn check:links
 
   cypress:
     runs-on: ubuntu-latest

@@ -70,4 +70,6 @@ const updateStatuses = async () => {
   }
 };
 
+updateStatuses();
+
 export default updateStatuses;

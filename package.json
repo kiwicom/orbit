@@ -7,17 +7,16 @@
   ],
   "scripts": {
     "build-ci": "yarn size:build",
-    "check-links:dist": "ts-node -p docs/tsconfig.json docs/services/checkLinks.ts",
-    "check-links:src": "remark -e '.mdx' -q -u validate-links docs/src/documentation --no-config",
-    "check-links": "yarn check-links:src && yarn check-links:dist",
-    "check-types": "tsc && tsc --project docs && tsc --project packages/orbit-components/cypress",
     "components": "yarn workspace @kiwicom/orbit-components",
+    "checks": "zx scripts/checks.mjs",
+    "check:types": "yarn checks --types",
+    "check:links": "yarn checks --links",
+    "check:statuses": "yarn checks --statuses",
     "dev:test": "cross-env NODE_ENV=loki yarn dev",
     "dev": "yarn components storybook",
     "docs": "yarn workspace @kiwicom/orbit.kiwi",
     "eslint:ci": "eslint-config-prettier index.js index.ts && eslint . --report-unused-disable-directives",
     "eslint:docs": "eslint --fix docs/src/documentation --report-unused-disable-directives",
-    "flow:check": "flow check",
     "loki:approve": "yarn components loki approve",
     "loki:test": "yarn components loki test",
     "orbit-kiwi:build": "yarn && yarn tokens build && yarn components build && yarn docs build",
@@ -103,6 +102,7 @@
     "styled-components": "^5.3.1",
     "through2": "^4.0.2",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "zx": "^4.2.0"
   }
 }

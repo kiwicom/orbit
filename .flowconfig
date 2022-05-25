@@ -20,9 +20,6 @@
 
 [include]
 
-[libs]
-types/
-
 [lints]
 unnecessary-optional-chain=error
 

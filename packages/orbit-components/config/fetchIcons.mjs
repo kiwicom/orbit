@@ -35,7 +35,7 @@ const api = url =>
   });
 
 const isCorrectSize = name => {
-  const size = argv.size || "normal";
+  const size = argv.size || "normal" || "medium";
   return name === `size=${size}`;
 };
 
@@ -61,41 +61,64 @@ const parseNodes = nodes => {
   return result;
 };
 
+// just to avoid unnecessary breaking change
+const parseName = name => {
+  if (name === "no-guarantee") return "kiwicom-no-guarantee";
+  if (name === "guarantee") return "kiwicom-guarantee";
+
+  return name;
+};
+
+async function saveOrbitIcons(data) {
+  for (const { id, name, svg } of data) {
+    const parsedName = parseName(name);
+    const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
+    const content = dedent`
+    <!-- character:${id} -->
+      ${svg.replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")}
+    `;
+
+    if (!fs.existsSync(filePath)) {
+      await fs.writeFile(filePath, content, "utf-8").then(() => {
+        console.log(chalk.green.bold(`saved ${parsedName}`));
+      });
+    }
+  }
+}
+
 const fetchOrbitIcons = async () => {
   try {
-    const spinnerApi = ora(chalk.bold.underline.magenta("Fetching file ids")).start();
+    const filesSpinner = ora(chalk.bold.underline.magenta("Fetching file ids...")).start();
     const { data } = await api(FIGMA_FILE_URI);
-    spinnerApi.succeed(chalk.bold.green("done"));
+    filesSpinner.succeed(chalk.bold.green("done"));
 
     const nodes = data.document.children
       .find(node => node.type === "CANVAS" && node.name === "Icons")
       .children.filter(node => !EXCLUDE_COMPONENTS.includes(node.name));
 
     const icons = parseNodes(nodes);
-
     const params = new URLSearchParams([
       ["ids", decodeURIComponent(Object.keys(icons).join(","))],
       ["format", "svg"],
     ]);
 
-    const svgsSpinner = ora(chalk.bold.underline.magenta("Fetching svgs")).start();
+    const imagesSpinner = ora(chalk.bold.underline.magenta("Fetching and savings svgs...")).start();
     const { data: imagesData } = await api(`${FIGMA_IMAGE_URI}?${params.toString()}`);
+
     const svgs = await axios.all(
       Object.entries(icons).map(([id, name]) =>
-        axios
-          .get(imagesData.images[id])
-          .then(res => ({ id, name: name.toLowerCase().replace(/\s+/, "-"), svg: res.data })),
+        axios.get(imagesData.images[id]).then(res => {
+          return {
+            id,
+            name: name.toLowerCase().replace(/\+kg/, "").replace(/\s+/g, "-"),
+            svg: res.data,
+          };
+        }),
       ),
     );
-    svgsSpinner.succeed(chalk.bold.green("done"));
 
-    for (const { id, name, svg } of svgs) {
-      const content = dedent`
-        ${svg}
-      `;
-
-      await fs.writeFile(path.join(SVG_FOLDER, `${name}.svg`), svg, "utf-8");
-    }
+    await saveOrbitIcons(svgs);
+    imagesSpinner.succeed(chalk.bold.green("done"));
   } catch (err) {
     console.error(err);
   }

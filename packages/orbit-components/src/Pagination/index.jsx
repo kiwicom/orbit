@@ -46,7 +46,10 @@ const Pagination = ({
             disabled={selectedPage <= 1}
           />
           <ActiveButton transparent size={size}>
-            {selectedPage} of {pageCount}
+            {translate("pagination_progress", {
+              number: selectedPage,
+              total: pageCount,
+            })}
           </ActiveButton>
           <ButtonLink
             onClick={() => pageChanged(selectedPage + 1)}

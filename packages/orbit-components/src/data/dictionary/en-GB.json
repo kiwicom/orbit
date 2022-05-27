@@ -13,6 +13,7 @@
   "navigationbar_open_menu": "Open navigation menu",
   "pagination_label_next": "Next",
   "pagination_label_prev": "Previous",
+  "pagination_progress": "__number__ of __total__",
   "ratingstar_description": "Rating __number__ out of __total__",
   "wizard_progress": "__number__ of __total__"
 }

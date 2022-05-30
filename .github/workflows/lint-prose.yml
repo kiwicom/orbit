@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
       # https://github.com/errata-ai/vale-action/issues/39
       - name: Touch markdown file
         run: touch docs/src/snippets/more-than-color.mdx

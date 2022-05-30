@@ -31,11 +31,6 @@ const getToken = name => ({ theme, size }) => {
   return tokens[name][size];
 };
 
-const getFakeGroupMarginTop = ({ label, theme }) => {
-  if (!label) return false;
-  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
-};
-
 const FakeGroup = styled(({ children, className }) => (
   <span className={className}>{children}</span>
 ))`
@@ -57,7 +52,6 @@ const FakeGroup = styled(({ children, className }) => (
       : theme.orbit.backgroundInput};
     font-size: ${theme.orbit.fontSizeInputNormal};
     transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
-    margin-top: ${getFakeGroupMarginTop};
 
     border-radius: 6px;
     ${mq.tablet(css`
@@ -188,7 +182,7 @@ const InputGroup = ({
   help,
   error,
   dataTest,
-  spaceAfter,
+  spaceAfter = "medium",
   onFocus,
   onBlur,
   onChange,

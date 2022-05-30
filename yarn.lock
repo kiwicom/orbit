@@ -16838,10 +16838,10 @@ gatsby-react-router-scroll@^5.11.0:
     "@babel/runtime" "^7.15.4"
     prop-types "^15.7.2"
 
-gatsby-redirect-from@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/gatsby-redirect-from/-/gatsby-redirect-from-0.4.4.tgz#56077e882fcc83caca3e1a641aa8b244f1a9579d"
-  integrity sha512-2WUumX5UUq84agIq1fK29oj6FRyCKtTutoPYKN70pk4j15wJzoaZkkk3Qo4Z0D9boXUpOtTG1YYpyrVHQMerAw==
+gatsby-redirect-from@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-redirect-from/-/gatsby-redirect-from-0.5.0.tgz#007380b29795bd9eb89fd2db6004d6e3d169a599"
+  integrity sha512-OOGFdfDJPPdaWHgD5OA6JGanaAfCzij0wJ4XffxnemcFJsVZoOfKhLXxwFSXQ/+YW9S0NchGfpM4ycZ4Z517pw==
 
 gatsby-remark-copy-linked-files@^5.11.0:
   version "5.11.0"

@@ -7,7 +7,7 @@ import VisualList from "./VisualList";
 
 export interface IconObjectShape {
   category?: string;
-  character: string;
+  character?: string;
   description?: string;
   svg: string;
   url: string;

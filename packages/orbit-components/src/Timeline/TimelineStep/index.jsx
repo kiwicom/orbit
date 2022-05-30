@@ -21,7 +21,7 @@ const TypeIcon = ({ type }) => {
 };
 
 const TimelineStep = ({ children, label, subLabel, type }: Props): React.Node => {
-  const { types, setTypes } = useStatuses();
+  const { types, setTypes, isColumnOnDesktop } = useStatuses();
   const { index, last } = useStep();
   const { isDesktop } = useMediaQuery();
 
@@ -31,18 +31,35 @@ const TimelineStep = ({ children, label, subLabel, type }: Props): React.Node =>
     setTypes(prev => ({ ...prev, [index]: type }));
   }, [setTypes, type, index]);
 
-  return isDesktop ? (
-    <TimelineStepDesktop
-      typeIcon={<TypeIcon type={type} />}
-      nextType={nextType}
-      label={label}
-      type={type}
-      subLabel={subLabel}
-      last={last}
-    >
-      {children}
-    </TimelineStepDesktop>
-  ) : (
+  if (isColumnOnDesktop)
+    return (
+      <TimelineStepMobile
+        typeIcon={<TypeIcon type={type} />}
+        nextType={nextType}
+        label={label}
+        type={type}
+        subLabel={subLabel}
+        last={last}
+      >
+        {children}
+      </TimelineStepMobile>
+    );
+
+  if (isDesktop)
+    return (
+      <TimelineStepDesktop
+        typeIcon={<TypeIcon type={type} />}
+        nextType={nextType}
+        label={label}
+        type={type}
+        subLabel={subLabel}
+        last={last}
+      >
+        {children}
+      </TimelineStepDesktop>
+    );
+
+  return (
     <TimelineStepMobile
       typeIcon={<TypeIcon type={type} />}
       nextType={nextType}

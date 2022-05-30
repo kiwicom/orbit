@@ -21,14 +21,19 @@ WrapperStyled.defaultProps = {
   theme: themeDefault,
 };
 
-const Timeline = ({ children, spaceAfter, dataTest }: Props): null | React.Node => {
+const Timeline = ({ children, spaceAfter, direction, dataTest }: Props): null | React.Node => {
   const childrenArr = React.Children.toArray(children);
   const { isDesktop } = useMediaQuery();
 
+  const getDirection = () => {
+    if (direction) return direction;
+    return isDesktop ? "row" : "column";
+  };
+
   return childrenArr && childrenArr.length > 0 ? (
     <WrapperStyled spaceAfter={spaceAfter} data-test={dataTest}>
-      <Stack flex shrink direction={isDesktop ? "row" : "column"}>
-        <TimelineStatusProvider>
+      <Stack flex shrink direction={getDirection()}>
+        <TimelineStatusProvider direction={direction}>
           {React.Children.map(childrenArr, (child, i) => {
             if (React.isValidElement(child)) {
               return (

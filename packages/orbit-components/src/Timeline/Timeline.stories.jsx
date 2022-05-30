@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { text } from "@storybook/addon-knobs";
+import { text, select } from "@storybook/addon-knobs";
 
 import Modal, { ModalSection } from "../Modal";
 import TimelineStep from "./TimelineStep";
@@ -18,13 +18,14 @@ export const Default = (): React.Node => {
   const type = text("type", "success");
   const label = text("label", "In progress");
   const time = text("time", "4th May 10:25");
+  const direction = select("direction", ["row", "column", null], undefined);
   const children = text(
     "children",
     "We’ll review your request and apply for any available refund from the carrier(s)",
   );
 
   return (
-    <Timeline dataTest={dataTest}>
+    <Timeline dataTest={dataTest} direction={direction}>
       <TimelineStep label="Requested" subLabel="3rd May 14:04" type="success">
         We’ve received your request and will assign it to one of our agents.
       </TimelineStep>

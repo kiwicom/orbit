@@ -80,7 +80,7 @@
     "@adeira/js": "^2.1.1",
     "@kiwicom/orbit-design-tokens": "^1.4.1",
     "@popperjs/core": "^2.9.2",
-    "react-hot-toast": "^2.1.1",
+    "react-hot-toast": "^2.2.0",
     "react-popper": "^2.2.5",
     "react-uid": "^2.3.2"
   },

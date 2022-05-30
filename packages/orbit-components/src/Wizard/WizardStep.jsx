@@ -13,6 +13,7 @@ import { WizardStepContext } from "./WizardContext";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
 import type { Props } from "./WizardStep";
+import { resolveStepBorder } from "./helpers";
 
 const StyledBorder = styled.div`
   ${({ theme }) => css`
@@ -94,30 +95,8 @@ StyledActiveMarker.defaultProps = {
 };
 
 const StyledProgressBar = styled.div`
-  ${({ theme, status, nextStepStatus }) => css`
-    position: relative;
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: ${parseFloat(theme.orbit.heightIconSmall) / 2 - 1}px;
-      width: 50%;
-      height: 2px;
-    }
-    &:before {
-      ${left}: 0;
-      background: ${status === "disabled"
-        ? theme.orbit.paletteCloudNormalHover
-        : theme.orbit.paletteProductNormal};
-    }
-    &:after {
-      ${right}: 0;
-      background: ${status === "disabled" || nextStepStatus === "disabled"
-        ? theme.orbit.paletteCloudNormalHover
-        : theme.orbit.paletteProductNormal};
-    }
-  `}
+  position: relative;
+  ${resolveStepBorder};
 `;
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledProgressBar.defaultProps = {
@@ -174,11 +153,13 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
   const {
     index,
     status,
+    isColumnOnDesktop,
     nextStepStatus,
     isCompact,
     isActive,
     onChangeStep,
     onClose,
+    isLastStep,
   } = React.useContext(WizardStepContext);
 
   const handleClick = (event: SyntheticEvent<HTMLElement>) => {
@@ -213,7 +194,13 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
   }
 
   const step = (
-    <Stack flex direction="column" align="center" spacing="XSmall">
+    <Stack
+      flex
+      direction={isColumnOnDesktop ? "row" : "column"}
+      align={isColumnOnDesktop ? "start" : "center"}
+      spacing="XSmall"
+      spaceAfter={isColumnOnDesktop ? "large" : "none"}
+    >
       <WizardStepIcon />
       <div
         css={css`
@@ -237,11 +224,23 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
 
   return (
     <StyledContainer data-test={dataTest} isCompact={isCompact} status={status}>
-      <StyledProgressBar status={status} nextStepStatus={nextStepStatus} />
+      <StyledProgressBar
+        status={status}
+        index={index}
+        isLastStep={isLastStep}
+        nextStepStatus={nextStepStatus}
+        isColumnOnDesktop={isColumnOnDesktop}
+      />
       <StyledContent>
-        <Stack flex direction="column" align="center">
+        <Stack flex direction="column" align={isColumnOnDesktop ? "start" : "center"}>
           {status === "disabled" ? (
-            step
+            <span
+              css={css`
+                padding: 0 ${theme.orbit.spaceXSmall};
+              `}
+            >
+              {step}
+            </span>
           ) : (
             <StyledButtonWrapper
               active={isActive}

@@ -7,6 +7,7 @@ import typeof WizardStepComponent from "./WizardStep";
 export type Props = {|
   ...Globals,
   +id: string,
+  +direction?: "row" | "column",
   +lockScrolling?: boolean,
   +completedSteps: number,
   +activeStep: number,

@@ -73,6 +73,12 @@ export default {
       component: "Wizard",
       knobs: [
         {
+          name: "direction",
+          type: "select",
+          options: ["row", "column"],
+          defaultValue: "row",
+        },
+        {
           name: "activeStep",
           type: "number",
           defaultValue: "",

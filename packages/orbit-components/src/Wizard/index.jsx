@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 
 import WizardStep from "./WizardStep";
 import { WizardStepContext } from "./WizardContext";
@@ -13,6 +13,8 @@ import Modal from "../Modal";
 import { CardSection } from "../Card";
 import useMediaQuery from "../hooks/useMediaQuery";
 import useTranslate from "../hooks/useTranslate";
+import defaultTheme from "../defaultTheme";
+import mq from "../utils/mediaQuery";
 
 import type { Props } from ".";
 
@@ -22,9 +24,30 @@ const unstyledListMixin = css`
   padding: 0;
 `;
 
+const StyledList = styled.ul`
+  ${({ $direction }) => css`
+    display: flex;
+    ${unstyledListMixin};
+    ${mq.largeMobile(css`
+      // support column layout on desktop
+      // https://github.com/kiwicom/orbit/issues/3308
+      flex-direction: ${$direction};
+      li {
+        flex: 1 1 0%;
+      }
+    `)}
+  `}
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledList.defaultProps = {
+  theme: defaultTheme,
+};
+
 const Wizard = ({
   dataTest,
   lockScrolling = true,
+  direction,
   id,
   completedSteps,
   activeStep,
@@ -52,6 +75,8 @@ const Wizard = ({
       value={{
         index,
         status: stepStatuses[index],
+        isLastStep: index === stepsCount - 1,
+        isColumnOnDesktop: direction === "column",
         nextStepStatus: stepStatuses[index + 1],
         isCompact,
         isActive: activeStep === index,
@@ -84,7 +109,7 @@ const Wizard = ({
                 number: activeStep + 1,
                 total: stepsCount,
               })}
-            </b>{" "}
+            </b>
             <span
               css={css`
                 font-weight: normal;
@@ -141,17 +166,7 @@ const Wizard = ({
 
   return (
     <nav>
-      <ul
-        css={css`
-          ${unstyledListMixin};
-          display: flex;
-          li {
-            flex: 1 1 0%;
-          }
-        `}
-      >
-        {steps}
-      </ul>
+      <StyledList $direction={direction}>{steps}</StyledList>
     </nav>
   );
 };

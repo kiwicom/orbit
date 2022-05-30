@@ -35,7 +35,7 @@ const api = url =>
   });
 
 const isCorrectSize = name => {
-  const size = argv.size || "normal" || "medium";
+  const size = argv.size || "large";
   return name === `size=${size}`;
 };
 
@@ -70,11 +70,13 @@ const parseName = name => {
 };
 
 async function saveOrbitIcons(data) {
+  let idx = 0;
   for (const { id, name, svg } of data) {
+    idx += 1;
     const parsedName = parseName(name);
     const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
     const content = dedent`
-    <!--character:${id}-->
+    <!--character:${idx}:${id}-->
       ${svg.replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")}
     `;
 

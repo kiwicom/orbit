@@ -2,7 +2,7 @@ name: Tracking update
 
 on:
   schedule:
-    - cron: "0 0 * * THU"
+    - cron: "0 15 * * *"
 
 jobs:
   track:
@@ -26,19 +26,23 @@ jobs:
       - name: Update component statuses
         run: yarn check:statuses
 
+      - name: Update svgs
+        run: yarn components fetch:icons
+
       - name: Create PR
         uses: peter-evans/create-pull-request@v3
         with:
           base: master
           branch: chore/update-tracking-data
           token: ${{ secrets.PAT }}
-          commit-message: Update component statuses
+          commit-message: Orbit-components updates
           delete-branch: true
           title: "docs: update component statuses"
           body: |
             - Automatically generated PR.
-            - Update component statuses
+            - Check component statuses updates and new svgs in figma
           labels: |
+            Icons
             Documentation
           assignees: mainframev
           reviewers: mainframev

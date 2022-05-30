@@ -74,7 +74,7 @@ async function saveOrbitIcons(data) {
     const parsedName = parseName(name);
     const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
     const content = dedent`
-    <!-- character:${id} -->
+    <!--character:${id}-->
       ${svg.replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")}
     `;
 

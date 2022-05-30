@@ -29,6 +29,12 @@ export default {
           options: ["success", "warning", "critical"],
         },
         {
+          name: "direction",
+          type: "select",
+          defaultValue: null,
+          options: ["row", "column"],
+        },
+        {
           name: "label",
           type: "text",
           defaultValue: "Booked",

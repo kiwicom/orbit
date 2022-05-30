@@ -5,6 +5,7 @@ import WizardStep from "./WizardStep";
 
 export interface Props extends Common.Global {
   readonly id: string;
+  readonly direction?: "row" | "column";
   readonly completedSteps: number;
   readonly activeStep: number;
   readonly lockScrolling?: boolean;

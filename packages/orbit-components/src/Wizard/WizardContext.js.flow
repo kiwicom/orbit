@@ -6,8 +6,10 @@ export type Status = "available" | "completed" | "disabled";
 export type WizardStepContextValue = {|
   +index: number,
   +status: Status,
+  +isColumnOnDesktop: boolean,
   +nextStepStatus: Status,
   +isCompact: boolean,
+  +isLastStep: boolean,
   +isActive: boolean,
   +onChangeStep?: (stepIndex: number) => void | Promise<any>,
   +onClose: () => void,

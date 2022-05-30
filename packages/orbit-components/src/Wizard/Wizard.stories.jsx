@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { number, array } from "@storybook/addon-knobs";
+import { number, array, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -13,8 +13,16 @@ export default {
 };
 
 export const Default = (): React.Node => {
+  const direction = select("direction", ["row", "column"], "row");
+
   return (
-    <Wizard id="wizard" completedSteps={3} activeStep={3} onChangeStep={action("onChangeStep")}>
+    <Wizard
+      id="wizard"
+      direction={direction}
+      completedSteps={3}
+      activeStep={3}
+      onChangeStep={action("onChangeStep")}
+    >
       <WizardStep title="Search" />
       <WizardStep title="Passenger details" />
       <WizardStep title="Ticket fare" />

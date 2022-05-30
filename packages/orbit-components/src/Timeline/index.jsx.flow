@@ -8,6 +8,7 @@ import typeof TimelineStepType from "./TimelineStep";
 export type Props = {|
   ...Globals,
   ...spaceAfter,
+  +direction?: "row" | "column",
   +children: React.Node,
 |};
 

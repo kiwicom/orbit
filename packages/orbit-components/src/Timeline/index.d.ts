@@ -7,6 +7,7 @@ import * as Common from "../common/common";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children: React.ReactNode;
+  readonly direction?: "row" | "column";
 }
 
 declare const Timeline: React.FC<Props>;

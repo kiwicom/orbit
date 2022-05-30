@@ -20,11 +20,12 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the **Timeline** component.
 
-| Name         | Type         | Default | Description                                                                                                                                                    |
-| :----------- | :----------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **children** | `React.Node` |         | List of [`TimelineStep`](#TimelineStep) components                                                                                                             |
-| dataTest     | `string`     |         | Optional prop for testing purposes.                                                                                                                            |
-| spaceAfter   | `enum`       |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| Name         | Type                | Default | Description                                                                                                                                                    |
+| :----------- | :------------------ | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **children** | `React.Node`        |         | List of [`TimelineStep`](#TimelineStep) components                                                                                                             |
+| dataTest     | `string`            |         | Optional prop for testing purposes.                                                                                                                            |
+| spaceAfter   | `enum`              |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| direction    | `"column" \| "row"` |         | Allows to set direction, by default on desktop is `row` and on mobile is set to `column`                                                                       |
 
 ## Subcomponents
 

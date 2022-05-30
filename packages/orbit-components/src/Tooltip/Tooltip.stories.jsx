@@ -30,29 +30,31 @@ export const TooltipOnInlineElement = (): React.Node => {
 
   return (
     <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate eget
-      mollis sed, tempor sed magna.
-      <Tooltip
-        content={
-          <div>
-            <div>Write your text here.</div>
-            <TextLink>Clickable element.</TextLink>
-          </div>
-        }
-        placement="left"
-      >
-        <TextLink>Cras elementum.</TextLink>
-      </Tooltip>{" "}
-      Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-      officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue. Sed
-      vel lectus.{" "}
-      <Tooltip content={content} removeUnderlinedText={removeUnderlinedText}>
-        <Text>
-          Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
-          Sed vel lectus.
-        </Text>
-      </Tooltip>
+      <Stack spacing="none">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
+        eget mollis sed, tempor sed magna.
+        <Tooltip
+          content={
+            <div>
+              <div>Write your text here.</div>
+              <TextLink>Clickable element.</TextLink>
+            </div>
+          }
+          placement="left"
+        >
+          <TextLink>Cras elementum.</TextLink>
+        </Tooltip>
+        Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
+        Sed vel lectus.
+        <Tooltip content={content} removeUnderlinedText={removeUnderlinedText}>
+          <Text>
+            Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada
+            congue. Sed vel lectus.
+          </Text>
+        </Tooltip>
+      </Stack>
     </Alert>
   );
 };

@@ -1,4 +1,4 @@
-name: Tracking update
+name: Update tasks
 
 on:
   schedule:
@@ -25,6 +25,8 @@ jobs:
 
       - name: Update component statuses
         run: yarn check:statuses
+        with:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Update svgs
         run: yarn components fetch:icons

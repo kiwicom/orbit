@@ -69,6 +69,8 @@ const parseName = name => {
   return name;
 };
 
+const removeCommentId = str => str.replace(/<!--.*-->/g, "");
+
 async function saveOrbitIcons(data) {
   let idx = 0;
   for (const { id, name, svg } of data) {
@@ -83,6 +85,10 @@ async function saveOrbitIcons(data) {
     if (!fs.existsSync(filePath)) {
       await fs.writeFile(filePath, content, "utf-8").then(() => {
         console.log(chalk.green.bold(`saved ${parsedName}`));
+      });
+    } else if (removeCommentId(content) !== removeCommentId(fs.readFileSync(filePath, "utf-8"))) {
+      await fs.writeFile(filePath, content, "utf-8").then(() => {
+        console.log(chalk.yellow.bold(`file was changed, updated the content for: ${parsedName}`));
       });
     }
   }

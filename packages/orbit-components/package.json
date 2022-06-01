@@ -160,7 +160,7 @@
     "react-element-to-jsx-string": "^14.3.2",
     "react-window": "^1.8.6",
     "rimraf": "^3.0.2",
-    "sharp": "^0.30.4",
+    "sharp": "^0.30.5",
     "start-server-and-test": "^1.13.1",
     "styled-components": "^5.3.1",
     "surge": "^0.23.0",

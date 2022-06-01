@@ -19,4 +19,7 @@ jobs:
         uses: creyD/prettier_action@v4.2
         with:
           prettier_options: --write **/*.{md,mdx}
+          commit_message: "chore(docs): prettify md and mdx files"
+          commit_description: "Automatically changed via github action"
           only_changed: True
+          github_token: ${{ secrets.GITHUB_TOKEN }}

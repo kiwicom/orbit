@@ -88,7 +88,7 @@
   "devDependencies": {
     "@adeira/babel-preset-adeira": "^4.0.0",
     "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.10",
+    "@babel/core": "^7.18.2",
     "@babel/generator": "^7.17.9",
     "@babel/node": "^7.14.2",
     "@babel/plugin-proposal-class-properties": "^7.14.5",

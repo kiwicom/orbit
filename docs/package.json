@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@adeira/js": "^2.1.1",
-    "@babel/core": "^7.17.5",
+    "@babel/core": "^7.18.2",
     "@babel/generator": "^7.17.9",
     "@babel/standalone": "^7.17.6",
     "@csstools/convert-colors": "^2.0.0",
@@ -40,7 +40,7 @@
     "@testing-library/react-hooks": "^7.0.0",
     "@testing-library/user-event": "^13.1.1",
     "@types/adeira__js": "^1.2.0",
-    "@types/babel__core": "^7.1.18",
+    "@types/babel__core": "^7.1.19",
     "@types/babel__standalone": "^7.1.4",
     "@types/debounce": "^1.2.0",
     "@types/fontfaceobserver": "^0.0.6",

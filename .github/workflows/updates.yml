@@ -25,11 +25,11 @@ jobs:
 
       - name: Update component statuses
         run: yarn check:statuses
-        with:
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Update svgs
         run: yarn components fetch:icons
+        with:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Create PR
         uses: peter-evans/create-pull-request@v3

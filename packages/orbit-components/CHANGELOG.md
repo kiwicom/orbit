@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.20.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.19.1...@kiwicom/orbit-components@2.20.0) (2022-06-01)
+
+
+### Bug Fixes
+
+* **deprecated:** inputGroup margin ([#3375](https://github.com/kiwicom/orbit/issues/3375)) ([420c61b](https://github.com/kiwicom/orbit/commit/420c61b983b825a6299b14091b8580a49c83814d))
+* **Pagination:** add missing translation for responsive variant ([#3374](https://github.com/kiwicom/orbit/issues/3374)) ([761bc7c](https://github.com/kiwicom/orbit/commit/761bc7c82def72b09596b91a144a393cec052cd3))
+
+
+### Features
+
+* **icons:** add radar icon ([e88a3f5](https://github.com/kiwicom/orbit/commit/e88a3f5248d0ec6f393b359198f6884ef16c42d1))
+* **Timeline:** add direction prop ([55192c0](https://github.com/kiwicom/orbit/commit/55192c02d8c0e1e5521348ccd043a5c6f3987f18))
+* **Wizard:** allow column on desktop ([e375ba4](https://github.com/kiwicom/orbit/commit/e375ba4971e29ade55ce41cd5742a6a38fddaa1d))
+
+
+
+
+
 ## [2.19.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.19.0...@kiwicom/orbit-components@2.19.1) (2022-05-13)
 
 **Note:** Version bump only for package @kiwicom/orbit-components

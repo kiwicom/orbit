@@ -3,12 +3,12 @@ description: "Installs and caches Node dependencies and Cypress"
 runs:
   using: "composite"
   steps:
-    - uses: actions/setup-node@v2
+    - uses: actions/setup-node@v3
       with:
         node-version: "16"
 
     - name: Restore cache
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: |
           **/node_modules

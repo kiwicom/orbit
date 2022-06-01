@@ -28,7 +28,7 @@ jobs:
 
       - name: Update svgs
         run: yarn components fetch:icons
-        with:
+        env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Create PR

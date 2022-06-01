@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.10",
+    "@babel/core": "^7.18.2",
     "@kiwicom/orbit-components": "^2.20.0",
     "prettier": "^2.1.2",
     "react": "^17.0.2",

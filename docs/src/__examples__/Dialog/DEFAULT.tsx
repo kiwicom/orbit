@@ -50,6 +50,11 @@ export default {
       component: "Dialog",
       knobs: [
         {
+          name: "maxWidth",
+          type: "number",
+          defaultValue: "",
+        },
+        {
           name: "description",
           type: "text",
           defaultValue: "Stay up to date with all travel possibilities",

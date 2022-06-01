@@ -56,9 +56,10 @@ const StyledDialogCenterWrapper = styled.div`
 `;
 
 const StyledDialogContent = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, $maxWidth }) => css`
     display: block;
     width: 100%;
+    max-width: ${$maxWidth}px;
     box-sizing: border-box;
     padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
     background: ${theme.orbit.paletteWhite};
@@ -119,6 +120,7 @@ const Dialog = ({
   primaryAction,
   secondaryAction,
   onClose,
+  maxWidth,
   renderInPortal = true,
   illustration,
   lockScrolling = true,
@@ -174,7 +176,7 @@ const Dialog = ({
       aria-labelledby={dialogID}
     >
       <StyledDialogCenterWrapper>
-        <StyledDialogContent shown={shown} ref={ref} id={dialogID}>
+        <StyledDialogContent shown={shown} ref={ref} id={dialogID} $maxWidth={maxWidth}>
           {illustration && <IllustrationContainer>{illustration}</IllustrationContainer>}
           <Stack spacing="XSmall" spaceAfter="medium">
             {title && (

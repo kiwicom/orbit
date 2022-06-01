@@ -30,3 +30,4 @@ Table below contains all types of the props available in Dialog component.
 | lockScrolling     | `boolean`               | `true`  | Whether to prevent scrolling of the rest of the page while Dialog is open. This is on by default to provide a better user experience. |
 | onClose           | `() => void \| Promise` |         | The title of the Dialog - preferably the purpose of the main action.                                                                  |
 | **title**         | `React.Node`            |         | The title of the Dialog - preferably the purpose of the main action.                                                                  |
+| maxWidth          | `number`                |         | Set `max-width` for Dialog                                                                                                            |

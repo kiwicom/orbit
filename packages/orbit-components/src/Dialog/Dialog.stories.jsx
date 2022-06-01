@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from "react";
-import { text, select } from "@storybook/addon-knobs";
+import { text, select, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Button from "../Button";
@@ -40,9 +40,12 @@ export const Playground = (): React.Node => {
   const description = text("description", "Are you sure you want to log out now?");
   const illustration = select("illustration", NAMES, "NoNotification");
   const dataTest = text("dataTest", "test");
+  const maxWidth = number("maxWidth", undefined);
+
   return (
     <Dialog
       title={title}
+      maxWidth={maxWidth}
       description={description}
       illustration={<Illustration name={illustration} size="small" />}
       dataTest={dataTest}

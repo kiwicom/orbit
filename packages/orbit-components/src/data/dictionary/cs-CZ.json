@@ -9,6 +9,7 @@
   "loading": "Načítá se",
   "pagination_label_next": "Další",
   "pagination_label_prev": "Předchozí",
+  "pagination_progress": "__number__ z __total__",
   "ratingstar_description": "Hodnocení __number__ z __total__",
   "wizard_progress": "__number__ z __total__"
 }

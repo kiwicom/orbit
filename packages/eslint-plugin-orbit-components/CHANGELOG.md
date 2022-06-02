@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.5.5...eslint-plugin-orbit-components@0.5.6) (2022-06-02)
+
+**Note:** Version bump only for package eslint-plugin-orbit-components
+
+
+
+
+
 ## [0.5.5](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.5.4...eslint-plugin-orbit-components@0.5.5) (2022-04-05)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.21.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.20.0...@kiwicom/orbit-components@2.21.0) (2022-06-02)
+
+
+### Bug Fixes
+
+* **icons:** fix icons names ([#3390](https://github.com/kiwicom/orbit/issues/3390)) ([dea0ed0](https://github.com/kiwicom/orbit/commit/dea0ed0de991e094f56252baf77b74855c2d6b1a))
+
+
+### Features
+
+* **Dialog:** add maxWidth prop ([#3386](https://github.com/kiwicom/orbit/issues/3386)) ([8b266dd](https://github.com/kiwicom/orbit/commit/8b266dd1675fdbd5598e1652e49ea883868dfb66))
+
+
+
+
+
 # [2.20.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.19.1...@kiwicom/orbit-components@2.20.0) (2022-06-01)
 
 

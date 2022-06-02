@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-orbit-components",
   "description": "Collection of ESLint rules to enforce the best usage practices of @kiwicom/orbit-components",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "author": "Kiwi.com",
   "main": "dist/index.js",
   "license": "MIT",

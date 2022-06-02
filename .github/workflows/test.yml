@@ -93,7 +93,7 @@ jobs:
           yarn components build
 
       - name: Cypress
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           install: false
           working-directory: packages/orbit-components

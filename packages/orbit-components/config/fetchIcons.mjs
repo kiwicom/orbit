@@ -65,6 +65,9 @@ const parseNodes = nodes => {
 const parseName = name => {
   if (name === "no-guarantee") return "kiwicom-no-guarantee";
   if (name === "guarantee") return "kiwicom-guarantee";
+  if (name === "care-kiwi.com") return "kiwicom-care";
+  if (name === "kiwi.com") return "kiwicom";
+  if (name === "notificiation-add") return "notification-add";
 
   return name;
 };

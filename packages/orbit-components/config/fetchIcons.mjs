@@ -10,6 +10,14 @@ const FIGMA_FILE_URI = `https://api.figma.com/v1/files/${ICONS_ID}`;
 const FIGMA_IMAGE_URI = `https://api.figma.com/v1/images/${ICONS_ID}`;
 const SVG_FOLDER = path.resolve(process.cwd(), "src/icons/svg");
 
+// helper functions
+const isCorrectSize = name => {
+  const size = argv.size || "large";
+  return name === `size=${size}`;
+};
+
+const removeCommentId = str => str.replace(/<!--.*-->/g, "");
+
 try {
   dotenv.config({
     example: `${process.cwd()}/../../.env.example`,
@@ -34,11 +42,6 @@ const api = url =>
     headers: { "Content-Type": "application/", "X-FIGMA-TOKEN": process.env.FIGMA_TOKEN },
   });
 
-const isCorrectSize = name => {
-  const size = argv.size || "large";
-  return name === `size=${size}`;
-};
-
 const parseNodes = nodes => {
   const result = {};
   let name = "";
@@ -46,7 +49,7 @@ const parseNodes = nodes => {
   const fn = data => {
     // for of is slightly faster
     for (const node of data) {
-      if (node.type === "COMPONENT_SET") {
+      if (node.type === "COMPONENT_SET" || node.type === "FRAME") {
         name = node.name;
         fn(node.children);
       }
@@ -68,11 +71,24 @@ const parseName = name => {
   if (name === "care-kiwi.com") return "kiwicom-care";
   if (name === "kiwi.com") return "kiwicom";
   if (name === "notificiation-add") return "notification-add";
+  if (/-colored/g.test(name)) return name.split("-").reverse().join("-");
 
   return name;
 };
 
-const removeCommentId = str => str.replace(/<!--.*-->/g, "");
+const setSvgContent = (name, content, idx, id) => {
+  if (/colored-/g.test(name)) {
+    return dedent`
+    <!--character:${idx}:${id}-->
+    <!--customColor:true-->
+    ${content}`;
+  }
+
+  return dedent`
+    <!--character:${idx}:${id}-->
+      ${content.replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")}
+  `;
+};
 
 async function saveOrbitIcons(data) {
   let idx = 0;
@@ -80,10 +96,8 @@ async function saveOrbitIcons(data) {
     idx += 1;
     const parsedName = parseName(name);
     const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
-    const content = dedent`
-    <!--character:${idx}:${id}-->
-      ${svg.replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")}
-    `;
+
+    const content = setSvgContent(parsedName, svg, idx, id);
 
     if (!fs.existsSync(filePath)) {
       await fs.writeFile(filePath, content, "utf-8").then(() => {

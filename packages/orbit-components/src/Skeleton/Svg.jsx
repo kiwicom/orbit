@@ -57,6 +57,7 @@ const Svg = ({
   rowHeight = 21,
   rowOffset = 20,
   rows,
+  color = "paletteCloudDark",
   title = "loading",
   viewBox,
   height,
@@ -99,7 +100,7 @@ const Svg = ({
         width="100%"
         height="100%"
         clipPath={`url(#${idClip})`}
-        style={{ fill: orbit.paletteCloudDark }}
+        style={{ fill: orbit[color] }}
       />
       <defs>
         <clipPath id={idClip}>

@@ -62,6 +62,8 @@ export interface Props extends Common.SpaceAfter, Common.Global {
   readonly width?: number | string;
   /** Set height for Svg element */
   readonly height?: number | string;
+  /** Allow you to set color from orbit palette  */
+  readonly color?: string;
   /** Set max-height for Svg element */
   readonly maxHeight?: number | string;
 }

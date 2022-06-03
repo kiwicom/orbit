@@ -2,6 +2,7 @@
 import * as React from "react";
 import { select, number, text, boolean } from "@storybook/addon-knobs";
 
+import defaultTheme from "../defaultTheme";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
@@ -42,10 +43,16 @@ export const Playground = (): React.Node => {
   const viewBox = text("viewBox", undefined);
   const width = text("width", undefined);
   const title = text("title", "Loading");
+  const color = select(
+    "color",
+    Object.keys(defaultTheme.orbit).filter(t => t.startsWith("palette")),
+    undefined,
+  );
 
   return (
     <Skeleton
       animate={animate}
+      color={color}
       height={height}
       maxHeight={maxHeight}
       title={title}

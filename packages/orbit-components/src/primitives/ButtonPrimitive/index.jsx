@@ -114,7 +114,7 @@ export const StyledButtonPrimitive: any = styled(
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    appearance: none;
+    appearance: none !important;
     text-align: center;
     text-decoration: ${underlined ? "underline" : "none"};
     flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};

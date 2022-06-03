@@ -10,18 +10,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-known_hosts: ${{ secrets.SSH_HOST }}
 
       - name: Node
         uses: ./.github/actions/node
 
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: ${{ secrets.SSH_HOST }}
-
       - name: Setup git identity
-        uses: fregante/setup-git-user@v1
+        run: |
+          git config --global user.name "Github Actions Bot"
+          git config --global user.email "vgenaev@gmail.com"
 
       - name: Update component statuses
         run: yarn check:statuses
@@ -39,7 +38,7 @@ jobs:
           token: ${{ secrets.PAT }}
           commit-message: Orbit-components updates
           delete-branch: true
-          title: "docs: update component statuses"
+          title: "docs: documentation updates"
           body: |
             - Automatically generated PR.
             - Check component statuses updates and new svgs in figma

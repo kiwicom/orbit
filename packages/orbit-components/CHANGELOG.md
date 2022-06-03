@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.21.0...@kiwicom/orbit-components@2.22.0) (2022-06-03)
+
+
+### Features
+
+* **icons:** add support for colored icons frame ([#3392](https://github.com/kiwicom/orbit/issues/3392)) ([b1ab819](https://github.com/kiwicom/orbit/commit/b1ab819451a72f3541520670327f51fc3b8ff1f9))
+* **Skeleton:** add color prop ([#3393](https://github.com/kiwicom/orbit/issues/3393)) ([c73eed1](https://github.com/kiwicom/orbit/commit/c73eed113a36f0e61fa433d403db7570c19917cc))
+
+
+
+
+
 # [2.21.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.20.0...@kiwicom/orbit-components@2.21.0) (2022-06-02)
 
 

@@ -30,8 +30,6 @@
     "test": "jest",
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "tracking": "yarn workspace @kiwicom/orbit-tracking",
-    "tracking:fetch": "yarn tracking track -o '../../docs/data/tracking'",
-    "tracking:clean": "yarn rimraf docs/data/tracking/*",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md"
   },
   "engines": {

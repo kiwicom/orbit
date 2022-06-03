@@ -78,39 +78,41 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
         }
 
         for (const prop in instance.props) {
-          const propValue = instance.props[prop];
+          if (prop) {
+            const propValue = instance.props[prop];
 
-          if (result[name].props[prop] === undefined) {
-            result[name].props[prop] = {
-              used: 0,
-              values: {},
-            };
+            if (result[name].props[prop] === undefined) {
+              result[name].props[prop] = {
+                used: 0,
+                values: {},
+              };
+            }
+
+            if (result[name].props[prop].used === undefined) {
+              result[name].props[prop].used = 0;
+            } else {
+              result[name].props[prop].used += 1;
+            }
+
+            if (result[name].props[prop].values[propValue] === undefined) {
+              result[name].props[prop].values[propValue] = {
+                value: propValue,
+                used: 1,
+              };
+            } else {
+              result[name].props[prop].values[propValue].used += 1;
+            }
+
+            result[name].props = sortObjectKeysByValue(
+              result[name].props,
+              (property: Prop) => property.used,
+            );
+
+            result[name].props[prop].values = sortObjectKeysByValue(
+              result[name].props[prop].values,
+              (value: PropValue) => value.used,
+            );
           }
-
-          if (result[name].props[prop].used === undefined) {
-            result[name].props[prop].used = 0;
-          } else {
-            result[name].props[prop].used += 1;
-          }
-
-          if (result[name].props[prop].values[propValue] === undefined) {
-            result[name].props[prop].values[propValue] = {
-              value: propValue,
-              used: 1,
-            };
-          } else {
-            result[name].props[prop].values[propValue].used += 1;
-          }
-
-          result[name].props = sortObjectKeysByValue(
-            result[name].props,
-            (property: Prop) => property.used,
-          );
-
-          result[name].props[prop].values = sortObjectKeysByValue(
-            result[name].props[prop].values,
-            (value: PropValue) => value.used,
-          );
         }
       }
     },
@@ -126,9 +128,8 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
     for (const [key, used] of Object.entries(value.props)) {
       const values: PropValue[] = [];
 
-      for (const [propName, propValue] of Object.entries(used.values)) {
-        // @ts-expect-error TODO
-        values.push({ name: propName, used: propValue.used });
+      for (const propName of Object.keys(used.values)) {
+        values.push({ name: propName, used: used.values[propName] });
       }
 
       properties.push({

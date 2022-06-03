@@ -1,6 +1,8 @@
 import path from "path";
 import fg from "fast-glob";
 import fs from "fs-extra";
+import { fileURLToPath } from "url";
+import chalk from "chalk";
 
 import { ProjectMember, User } from "./interfaces";
 import { CATEGORIES } from "./consts";
@@ -71,3 +73,9 @@ export const timestamp = () => {
 
   return `${date}-${month}-${year}`;
 };
+
+const __filename = fileURLToPath(import.meta.url);
+export const __dirname = path.dirname(__filename);
+
+export const errorMessage = (str: string) => console.error(chalk.red.bold.underline(str));
+export const infoMessage = (str: string) => console.info(chalk.magenta.bold(str));

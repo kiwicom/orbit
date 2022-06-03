@@ -28,6 +28,7 @@
     "@kiwicom/babel-plugin-orbit-components": "*",
     "@kiwicom/browserslist-config": "^2.1.0",
     "@kiwicom/orbit-components": "*",
+    "@kiwicom/orbit-tracking": "*",
     "@kiwicom/orbit-design-tokens": "*",
     "@loadable/component": "^5.15.0",
     "@mapbox/rehype-prism": "^0.8.0",

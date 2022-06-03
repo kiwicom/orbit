@@ -3,12 +3,21 @@ import { config as dotEnvConfig } from "dotenv-safe";
 import path from "path";
 import chalk from "chalk";
 import fs from "fs-extra";
-import { command } from "execa";
+import { execaCommand } from "execa";
+import ora from "ora";
 
-import { filterMembers, getOutputPath, getVersions, timestamp } from "./helpers";
+import {
+  filterMembers,
+  getOutputPath,
+  getVersions,
+  timestamp,
+  __dirname,
+  errorMessage,
+  infoMessage,
+} from "./helpers";
 import { ProjectsQuery, Scope } from "./interfaces";
-import { PROJECTS, BASE_URL, TMP_FOLDER } from "./consts";
-import queries from "./queries";
+import { PROJECTS, TMP_FOLDER, BASE_URL } from "./consts";
+import queries from "./api";
 
 interface BaseArgs {
   outputPath: string;
@@ -68,20 +77,22 @@ export const gitlabApiCall = async ({ ids, folder, outputPath, config }: ApiCall
 
     await Promise.all(
       commands.map(({ id, name, cmd, url, ...data }) => {
-        return command(cmd)
-          .then(() => console.log(chalk.bold.blue(`fetched: ${name}`)))
+        const spinnerFetch = ora(name).start();
+        return execaCommand(cmd)
+          .then(() => console.log(chalk.bold.blue(spinnerFetch.succeed(`fetched: ${name}`))))
           .then(async () => {
             const projectId = `${name}-${id}`;
             const projectFolder = path.resolve(TMP_FOLDER, projectId);
             const orbitVersion = await getVersions(projectFolder);
+            const spinnerParsed = ora(name).start();
 
-            return command(
+            return execaCommand(
               `yarn react-scanner-orbit -c ${
                 config || path.resolve(__dirname, "../", "dist", "react-scanner.config.js")
               } -p ${projectFolder}`,
               { env: { REPO_URL: url, OUTPUT_DIR: projectFolder } },
             ).then(({ stdout }) => {
-              console.info(chalk.bold.green(`parsed: ${name}`));
+              console.info(chalk.bold.green(spinnerParsed.succeed(`parsed: ${name}`)));
               return {
                 name,
                 ...data,
@@ -94,9 +105,7 @@ export const gitlabApiCall = async ({ ids, folder, outputPath, config }: ApiCall
       }),
     ).then(result => {
       fs.writeFile(getOutputPath(outputPath, timestamp()), JSON.stringify(result, null, 2), "utf8");
-      console.info(
-        chalk.bold.magenta(`Successfully created ${timestamp()}.json file in the ${outputPath}`),
-      );
+      infoMessage(`Successfully created ${timestamp()}.json file in the ${outputPath}`);
     });
   }
 
@@ -108,14 +117,14 @@ async function fetcher({ scope, outputPath, config }: Args) {
     const ids = scope.map(n => `gid://gitlab/Project/${PROJECTS[n]}`);
     await gitlabApiCall({ ids, folder: TMP_FOLDER, outputPath, config });
   } catch (err) {
-    console.error(chalk.redBright(err));
+    errorMessage(err);
   } finally {
     try {
       if (path.resolve(TMP_FOLDER)) {
         fs.rmSync(TMP_FOLDER, { recursive: true });
       }
     } catch (e) {
-      console.error(
+      errorMessage(
         `An error has occurred while removing the temp folder at ${TMP_FOLDER}. Please remove it manually. Error: ${e}`,
       );
     }

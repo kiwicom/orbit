@@ -5,30 +5,36 @@
   "author": "Kiwi.com",
   "license": "MIT",
   "private": true,
-  "main": "dist/index.js",
-  "bin": "./bin/tracking.js",
+  "main": "dist/cli.js",
+  "module": "dist/index.js",
+  "bin": "./bin/tracking.mjs",
+  "type": "module",
   "files": [
     "bin",
     "dist",
     "src/**/!(*.test).@(ts|json)"
   ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kiwicom/orbit",
     "directory": "packages/orbit-tracking"
   },
   "scripts": {
-    "dev": "tsc --w -p tsconfig.build.json",
-    "build": "yarn clean && tsc -p tsconfig.build.json",
-    "track": "yarn build && ts-node src/index.ts",
+    "dev": "tsc --w",
+    "build": "yarn clean && tsc && yarn patch",
+    "patch": "npx tsc-esm-fix --target='dist' --ext='.js' --dirnameVar=false --filenameVar=false",
     "clean": "npx rimraf dist",
     "types": "tsc --noEmit",
     "test": "jest",
     "eslint": "eslint 'src/**/*.ts'",
     "eslint:fix": "eslint --fix 'src/**/*.ts'",
-    "prepublishOnly": "yarn build"
+    "postinstall": "yarn build"
   },
   "keywords": [
+    "cli",
     "orbit",
     "tracking",
     "design-system",
@@ -37,20 +43,19 @@
   "devDependencies": {
     "@types/dotenv-safe": "^8.1.2",
     "@types/fs-extra": "^9.0.13",
-    "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.2",
+    "@types/node": "^17.0.38",
     "@types/sade": "^1.7.4",
-    "ts-jest": "^27.1.3"
+    "typescript": "^4.7.3"
   },
   "dependencies": {
-    "react-scanner-orbit": "^1.3.3",
-    "ts-node": "^10.4.0",
-    "axios": "^0.24.0",
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1",
     "dotenv-safe": "^8.2.0",
-    "chalk": "^4.1.2",
-    "execa": "^5.1.1",
-    "fast-glob": "^3.2.7",
-    "fs-extra": "^10.0.0",
-    "sade": "^1.7.4"
+    "execa": "^6.1.0",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.1.0",
+    "ora": "^6.1.0",
+    "react-scanner-orbit": "^1.3.3",
+    "sade": "^1.8.1"
   }
 }

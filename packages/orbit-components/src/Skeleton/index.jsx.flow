@@ -14,6 +14,7 @@ export type Props = {|
   +children?: React.Node,
   +preset?: Preset,
   +rowBorderRadius?: number,
+  +color?: string,
   +rowHeight?: number,
   +rowOffset?: number,
   +rows?: number,

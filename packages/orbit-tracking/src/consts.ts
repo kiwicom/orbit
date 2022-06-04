@@ -3,6 +3,8 @@ import os from "os";
 
 import { Scope } from "./interfaces";
 
+export const ORBIT_STORAGE = "gid://gitlab/Project/4548";
+
 export const PROJECTS: Record<Scope, string> = {
   booking: "3993",
   frontend: "104",

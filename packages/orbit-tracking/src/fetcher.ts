@@ -17,7 +17,7 @@ import {
 } from "./helpers";
 import { ProjectsQuery, Scope } from "./interfaces";
 import { PROJECTS, TMP_FOLDER, BASE_URL } from "./consts";
-import queries from "./api";
+import { queries } from "./api";
 
 interface BaseArgs {
   outputPath: string;

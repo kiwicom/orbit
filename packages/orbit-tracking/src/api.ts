@@ -42,8 +42,34 @@ const projectsQuery = `
   }
 `;
 
+const createBranchMutation = `
+  mutation OrbitBranchMutation($id: ID!, $name: String!) {
+    createBranch(input: { projectPath: $id, name: $name, ref: "master" }) {
+      branch {
+        name
+      }
+    }
+  }
+`;
+
+const createMergeRequestMutation = `
+    mutation OrbitMergeRequestMutation($id: ID!, $title: String!, $source: String!) {
+      mergeRequestCreate(input: {projectPath: $id, title: $title, targetBranch: "master", description: "Automatically created", sourceBranch: $source }) {
+        mergeRequest {
+          id
+        }
+      }
+    }
+  }
+`;
+
 const queries = {
   projectsQuery,
 };
 
-export default queries;
+const mutations = {
+  createMergeRequestMutation,
+  createBranchMutation,
+};
+
+export { queries, mutations };

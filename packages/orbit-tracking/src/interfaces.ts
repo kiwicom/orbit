@@ -40,7 +40,7 @@ export interface ProjectMember {
   user: User;
 }
 
-interface ProjectNode {
+export interface ProjectNode {
   id: string;
   name: string;
   description: string;
@@ -112,3 +112,18 @@ export interface OutputComponentInfo {
   isDeprecated: boolean;
   icon: boolean;
 }
+
+interface Source {
+  url: string;
+  props: Array<{ name: string | null; value: string | number | null }>;
+}
+interface OutputInstance {
+  instances: number;
+  sources: Source[];
+  category: string;
+  icon: boolean;
+  props: Prop;
+  isDeprecated: boolean;
+}
+
+export type TrackedDataType = Record<string, OutputInstance>;

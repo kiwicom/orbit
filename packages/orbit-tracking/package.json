@@ -7,7 +7,7 @@
   "private": true,
   "main": "dist/cli.js",
   "module": "dist/index.js",
-  "bin": "./bin/tracking.mjs",
+  "bin": "./bin/tracking.js",
   "type": "module",
   "files": [
     "bin",
@@ -28,7 +28,6 @@
     "patch": "npx tsc-esm-fix --target='dist' --ext='.js' --dirnameVar=false --filenameVar=false",
     "clean": "npx rimraf dist",
     "types": "tsc --noEmit",
-    "test": "jest",
     "eslint": "eslint 'src/**/*.ts'",
     "eslint:fix": "eslint --fix 'src/**/*.ts'",
     "postinstall": "yarn build"

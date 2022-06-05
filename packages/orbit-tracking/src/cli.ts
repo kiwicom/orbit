@@ -3,7 +3,7 @@ import { config as dotEnvConfig } from "dotenv-safe";
 import path from "path";
 import fs from "fs-extra";
 
-import { __dirname, errorMessage, infoMessage } from "./helpers";
+import { errorMessage, infoMessage } from "./helpers";
 import { SCOPE } from "./consts";
 import fetcher from "./fetcher";
 import { Scope } from "./interfaces";
@@ -12,7 +12,7 @@ const packageJson = fs.readJsonSync(`${process.cwd()}/package.json`);
 
 dotEnvConfig({
   allowEmptyValues: true,
-  example: path.resolve(__dirname, "../.env.example"),
+  example: path.resolve(process.cwd(), "../.env.example"),
 });
 
 export default async function cli(args) {

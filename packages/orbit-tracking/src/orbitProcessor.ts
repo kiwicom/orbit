@@ -8,29 +8,14 @@ import {
   Prop,
   PropValue,
   OutputComponentInfo,
+  TrackedDataType,
 } from "./interfaces";
-
-interface Source {
-  url: string;
-  props: Array<{ name: string | null; value: string | number | null }>;
-}
-
-export interface OutputInstance {
-  instances: number;
-  sources: Source[];
-  category: string;
-  icon: boolean;
-  props: Prop;
-  isDeprecated: boolean;
-}
-
-export type Result = Record<string, OutputInstance>;
 
 const isIcon = (instance: Instance): boolean => instance.importInfo.moduleName.includes("/icons");
 
 // TODO: refactor a bit, performance matters, but we can use something like .set, .get, .has analogues from lodash
 export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output }) => {
-  let result: Result = {};
+  let result: TrackedDataType = {};
 
   forEachComponent(
     ({ componentName: name, component }: { componentName: string; component: Component }) => {

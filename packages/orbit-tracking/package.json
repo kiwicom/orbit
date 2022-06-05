@@ -51,10 +51,8 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "axios": "^0.27.2",
     "dotenv-safe": "^8.2.0",
     "execa": "^6.1.0",
-    "ora": "^6.1.0",
     "react-scanner-orbit": "^2.0.0",
     "sade": "^1.8.1",
     "zx": "^6.2.3"

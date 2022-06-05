@@ -1,3 +1,5 @@
+import { path } from "zx";
+
 import { ProjectMember, User, ProjectNode } from "../interfaces";
 
 const mapMembers = (members: ProjectMember[]) =>
@@ -23,7 +25,10 @@ export const mapProjects = (data: ProjectNode[], folderName: string) =>
       // retrieve name from url, because repository name can be the same twice (balkan has just `Frontend`)
       const name = url.split("/").slice(-1)[0].replace(".git", "");
       return {
-        cmd: `git clone -b master ${ssh} --depth=1 --single-branch ${folderName}/${name}-${projectId}`,
+        cmd: `git clone -b master ${ssh} --depth=1 --single-branch ${path.join(
+          folderName,
+          `${name}-${projectId}`,
+        )}`,
         name,
         url,
         id: projectId,

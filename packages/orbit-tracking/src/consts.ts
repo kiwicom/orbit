@@ -17,7 +17,7 @@ export const PROJECTS: Record<Scope, string> = {
 
 export const SCOPE = Object.keys(PROJECTS) as Scope[];
 
-export const TMP_FOLDER = path.join(os.tmpdir(), "orbit-tracking-temp", "temp");
+export const TMP_FOLDER = path.resolve(os.tmpdir(), "orbit-tracking-temp", "temp");
 
 export const BASE_URL = `https://gitlab.skypicker.com/api/graphql/`;
 

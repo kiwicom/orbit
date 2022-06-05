@@ -1,6 +1,5 @@
-import axios, { AxiosResponse } from "axios";
 import { config as dotEnvConfig } from "dotenv-safe";
-import { fs, path } from "zx";
+import { fs, path, fetch, $ } from "zx";
 
 import {
   mapProjects,
@@ -36,23 +35,28 @@ dotEnvConfig({
 export const request = <T>(
   query: string,
   vars?: Record<string, string | number | string[]>,
-): Promise<AxiosResponse<T>> =>
-  axios.post(
-    BASE_URL,
-    { query, variables: vars },
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.GITLAB_TOKEN}`,
-      },
+): Promise<T> => {
+  $.verbose = false;
+  return fetch(BASE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.GITLAB_TOKEN}`,
     },
-  );
+    body: JSON.stringify({
+      query,
+      variables: vars,
+    }),
+  })
+    .then(res => res.json())
+    .then(data => data as T);
+};
 
 export const gitlabApiCall = async ({ ids, folder = "./", outputPath, config }: ApiCallArgs) => {
-  const { data: response } = await request<ProjectsQuery>(queries.projectsQuery, { ids });
+  const { data } = await request<ProjectsQuery>(queries.projectsQuery, { ids });
 
-  if (response) {
-    const commands = mapProjects(response.data.projects.nodes, folder);
+  if (data) {
+    const commands = mapProjects(data.projects.nodes, folder);
 
     await Promise.all(commands.map(p => projectCmd(config, p))).then(result => {
       fs.writeFile(getOutputPath(outputPath, timestamp()), JSON.stringify(result, null, 2), "utf8");

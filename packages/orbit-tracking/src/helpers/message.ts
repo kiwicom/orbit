@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import { chalk } from "zx";
 
-export const errorMessage = (str: string) => console.error(chalk.red.bold.underline(str));
+export const errorMessage = (str: string) => console.error(chalk.red(str));
 export const infoMessage = (str: string) => console.info(chalk.magenta.bold(str));

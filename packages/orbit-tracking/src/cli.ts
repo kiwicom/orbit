@@ -1,7 +1,6 @@
 import sade from "sade";
 import { config as dotEnvConfig } from "dotenv-safe";
-import path from "path";
-import fs from "fs-extra";
+import { fs, path } from "zx";
 
 import { errorMessage, infoMessage } from "./helpers";
 import { SCOPE } from "./consts";

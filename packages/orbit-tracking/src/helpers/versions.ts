@@ -1,8 +1,7 @@
-import fg from "fast-glob";
-import fs from "fs-extra";
+import { fs, globby } from "zx";
 
 export const getVersions = async (pathToFolder: string) => {
-  const lockFiles = await fg(`${pathToFolder}/**/@(yarn.lock|package-lock.json)`);
+  const lockFiles = await globby(`${pathToFolder}/**/@(yarn.lock|package-lock.json)`);
   let version = "";
 
   for (const lock of lockFiles) {

@@ -1,8 +1,7 @@
-import { TMP_FOLDER } from "./consts";
-import processor from "./orbitProcessor";
+const { consts, orbitProcessor } = require("@kiwicom/orbit-tracking");
 
-export default {
-  crawlFrom: TMP_FOLDER,
+module.exports = {
+  crawlFrom: consts.TMP_FOLDER,
   includeSubComponents: true,
   deprecated: [],
   importedFrom: /@kiwicom\/orbit-components/,
@@ -19,5 +18,5 @@ export default {
     "dist",
     "types",
   ],
-  processors: [processor],
+  processors: [orbitProcessor],
 };

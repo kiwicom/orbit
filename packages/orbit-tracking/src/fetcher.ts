@@ -1,7 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { config as dotEnvConfig } from "dotenv-safe";
-import path from "path";
-import fs from "fs-extra";
+import { fs, path } from "zx";
 
 import {
   mapProjects,
@@ -69,7 +68,7 @@ async function fetcher({ scope, outputPath, config }: Args) {
     const ids = scope.map(n => `gid://gitlab/Project/${PROJECTS[n]}`);
     await gitlabApiCall({ ids, folder: TMP_FOLDER, outputPath, config });
   } catch (err) {
-    errorMessage(err);
+    errorMessage(`\n ${err}`);
   } finally {
     try {
       if (path.resolve(TMP_FOLDER)) {

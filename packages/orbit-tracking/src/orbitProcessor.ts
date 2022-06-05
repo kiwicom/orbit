@@ -1,4 +1,4 @@
-import path from "path";
+import { path } from "zx";
 
 import { getCategory } from "./helpers";
 import {

@@ -1,7 +1,7 @@
 import { TMP_FOLDER } from "./consts";
 import processor from "./orbitProcessor";
 
-module.exports = {
+export default {
   crawlFrom: TMP_FOLDER,
   includeSubComponents: true,
   deprecated: [],

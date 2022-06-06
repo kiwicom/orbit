@@ -94,9 +94,9 @@ module.exports = {
       parserOptions: {
         project: [
           "./tsconfig.json",
+          "./packages/orbit-tracking/tsconfig.json",
           "./docs/tsconfig.json",
           "./packages/orbit-components/cypress/tsconfig.json",
-          "./packages/orbit-tracking/tsconfig.json",
         ],
         ecmaVersion: 2018,
         sourceType: "module",
@@ -249,17 +249,6 @@ module.exports = {
       files: ["packages/orbit-components/src/utils/**/*"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
-      },
-    },
-    {
-      files: ["packages/orbit-tracking/src/**/*"],
-      rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "no-restricted-syntax": "off",
-        "guard-for-in": "off",
-        "no-console": "off",
       },
     },
     {

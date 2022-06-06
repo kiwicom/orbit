@@ -1,0 +1,20 @@
+{
+  "extends": "../../.eslintrc.js",
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+      },
+      "rules": {
+        "import/extensions": "off",
+        "no-restricted-syntax": "off",
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "no-console": "off",
+        "no-underscore-dangle": "off"
+      }
+    }
+  ]
+}

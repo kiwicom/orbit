@@ -1,4 +1,4 @@
-import path from "path";
+import { path } from "zx";
 
 import { getCategory } from "./helpers";
 import {
@@ -8,29 +8,14 @@ import {
   Prop,
   PropValue,
   OutputComponentInfo,
+  TrackedDataType,
 } from "./interfaces";
-
-interface Source {
-  url: string;
-  props: Array<{ name: string | null; value: string | number | null }>;
-}
-
-export interface OutputInstance {
-  instances: number;
-  sources: Source[];
-  category: string;
-  icon: boolean;
-  props: Prop;
-  isDeprecated: boolean;
-}
-
-export type Result = Record<string, OutputInstance>;
 
 const isIcon = (instance: Instance): boolean => instance.importInfo.moduleName.includes("/icons");
 
 // TODO: refactor a bit, performance matters, but we can use something like .set, .get, .has analogues from lodash
 export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output }) => {
-  let result: Result = {};
+  let result: TrackedDataType = {};
 
   forEachComponent(
     ({ componentName: name, component }: { componentName: string; component: Component }) => {
@@ -78,39 +63,41 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
         }
 
         for (const prop in instance.props) {
-          const propValue = instance.props[prop];
+          if (prop) {
+            const propValue = instance.props[prop];
 
-          if (result[name].props[prop] === undefined) {
-            result[name].props[prop] = {
-              used: 0,
-              values: {},
-            };
+            if (result[name].props[prop] === undefined) {
+              result[name].props[prop] = {
+                used: 0,
+                values: {},
+              };
+            }
+
+            if (result[name].props[prop].used === undefined) {
+              result[name].props[prop].used = 0;
+            } else {
+              result[name].props[prop].used += 1;
+            }
+
+            if (result[name].props[prop].values[propValue] === undefined) {
+              result[name].props[prop].values[propValue] = {
+                value: propValue,
+                used: 1,
+              };
+            } else {
+              result[name].props[prop].values[propValue].used += 1;
+            }
+
+            result[name].props = sortObjectKeysByValue(
+              result[name].props,
+              (property: Prop) => property.used,
+            );
+
+            result[name].props[prop].values = sortObjectKeysByValue(
+              result[name].props[prop].values,
+              (value: PropValue) => value.used,
+            );
           }
-
-          if (result[name].props[prop].used === undefined) {
-            result[name].props[prop].used = 0;
-          } else {
-            result[name].props[prop].used += 1;
-          }
-
-          if (result[name].props[prop].values[propValue] === undefined) {
-            result[name].props[prop].values[propValue] = {
-              value: propValue,
-              used: 1,
-            };
-          } else {
-            result[name].props[prop].values[propValue].used += 1;
-          }
-
-          result[name].props = sortObjectKeysByValue(
-            result[name].props,
-            (property: Prop) => property.used,
-          );
-
-          result[name].props[prop].values = sortObjectKeysByValue(
-            result[name].props[prop].values,
-            (value: PropValue) => value.used,
-          );
         }
       }
     },
@@ -126,9 +113,8 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
     for (const [key, used] of Object.entries(value.props)) {
       const values: PropValue[] = [];
 
-      for (const [propName, propValue] of Object.entries(used.values)) {
-        // @ts-expect-error TODO
-        values.push({ name: propName, used: propValue.used });
+      for (const propName of Object.keys(used.values)) {
+        values.push({ name: propName, used: used.values[propName] });
       }
 
       properties.push({

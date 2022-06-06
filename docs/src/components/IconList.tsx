@@ -14,7 +14,14 @@ export interface IconObjectShape {
 }
 
 const IconList = () => {
-  const getImgSource = (iconObject: IconObjectShape) => `data:image/svg+xml;utf8,${iconObject.svg}`;
+  const getImgSource = (iconObject: IconObjectShape) => {
+    const content = iconObject.svg.includes("fill")
+      ? iconObject.svg.replace(/#/g, "%23")
+      : iconObject.svg.replace(/<svg /, `<svg xmlns="http://www.w3.org/2000/svg" `);
+
+    return `data:image/svg+xml;utf8,${content}`;
+  };
+
   const actions = (iconObject: IconObjectShape, copied, copy) => (
     <Stack direction="row" justify="between">
       <Button size="small" type="secondary" href={iconObject.url} external>

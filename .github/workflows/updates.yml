@@ -36,7 +36,6 @@ jobs:
           base: master
           branch: chore/update-tracking-data
           token: ${{ secrets.PAT }}
-          commit-message: Orbit-components updates
           delete-branch: true
           title: "docs: documentation updates"
           body: |

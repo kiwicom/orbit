@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.22.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.22.0...@kiwicom/orbit-components@2.22.1) (2022-06-06)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** prevent appearance css specifity issue ([#3394](https://github.com/kiwicom/orbit/issues/3394)) ([e9c2376](https://github.com/kiwicom/orbit/commit/e9c237668b791aa61b7c8af50d75068f3de410e5))
+* **icons:** fix baggage icons ([a7844aa](https://github.com/kiwicom/orbit/commit/a7844aa422e10c13ee383bbad46cd4149c6b4928))
+* **icons:** fix google icon ([03bff2b](https://github.com/kiwicom/orbit/commit/03bff2b927de6646941283b038b9a039b9799399))
+* **icons:** fix icons content after figma update ([#3403](https://github.com/kiwicom/orbit/issues/3403)) ([f2822f9](https://github.com/kiwicom/orbit/commit/f2822f9ac6fff57b565969801a25489ef9a23624))
+
+
+
+
+
 # [2.22.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.21.0...@kiwicom/orbit-components@2.22.0) (2022-06-03)
 
 

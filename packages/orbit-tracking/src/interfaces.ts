@@ -68,6 +68,31 @@ export interface ProjectsQuery {
   };
 }
 
+export interface ProjectMutations {
+  data: {
+    createBranch: { branch: { name: string }; errors: string[] };
+    mergeRequestCreate: {
+      mergeRequest: {
+        webUrl: string;
+        title: string;
+      };
+      errors: string[];
+    };
+    commitCreate: {
+      commit: {
+        author: string;
+        id: string;
+      };
+      description: string;
+      fullTitle: string;
+      message: string;
+      sha: string;
+      webUrl: string;
+      errors: string[];
+    };
+  };
+}
+
 export interface Instance {
   importInfo: {
     imported: string;

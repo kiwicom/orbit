@@ -1,17 +1,19 @@
 import { config as dotEnvConfig } from "dotenv-safe";
-import { fs, path, fetch, $ } from "zx";
+import { fs, path, chalk } from "zx";
 
 import {
   mapProjects,
   getOutputPath,
   projectCmd,
   timestamp,
+  apiRequest,
   errorMessage,
   infoMessage,
 } from "./helpers";
 import { ProjectsQuery, Scope } from "./interfaces";
-import { PROJECTS, TMP_FOLDER, BASE_URL } from "./consts";
+import { PROJECTS, TMP_FOLDER } from "./consts";
 import { queries } from "./api";
+import saveData from "./saver";
 
 interface BaseArgs {
   outputPath: string;
@@ -32,35 +34,29 @@ dotEnvConfig({
   example: path.resolve(process.cwd(), "../.env.example"),
 });
 
-export const request = <T>(
-  query: string,
-  vars?: Record<string, string | number | string[]>,
-): Promise<T> => {
-  $.verbose = false;
-  return fetch(BASE_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.GITLAB_TOKEN}`,
-    },
-    body: JSON.stringify({
-      query,
-      variables: vars,
-    }),
-  })
-    .then(res => res.json())
-    .then(data => data as T);
-};
-
 export const gitlabApiCall = async ({ ids, folder = "./", outputPath, config }: ApiCallArgs) => {
-  const { data } = await request<ProjectsQuery>(queries.projectsQuery, { ids });
+  const res = await apiRequest<ProjectsQuery>(queries.projectsQuery, { ids });
 
-  if (data) {
-    const commands = mapProjects(data.projects.nodes, folder);
+  if (res?.data) {
+    const commands = mapProjects(res.data.projects.nodes, folder);
 
     await Promise.all(commands.map(p => projectCmd(config, p))).then(result => {
-      fs.writeFile(getOutputPath(outputPath, timestamp()), JSON.stringify(result, null, 2), "utf8");
-      infoMessage(`Successfully created ${timestamp()}.json file in the ${outputPath}`);
+      if (outputPath) {
+        fs.writeFile(
+          getOutputPath(outputPath, timestamp()),
+          JSON.stringify(result, null, 2),
+          "utf8",
+        ).then(() => {
+          infoMessage(`Successfully created ${timestamp()}.json file in the ${outputPath}`);
+        });
+      } else {
+        saveData(JSON.stringify(result, null, 2)).then(data => {
+          infoMessage(`Successfully created MR: ${data?.mergeRequestCreate.mergeRequest.title}`);
+          console.info(
+            chalk.underline.bold.green(`url: ${data?.mergeRequestCreate.mergeRequest.webUrl} 🔗`),
+          );
+        });
+      }
     });
   }
 

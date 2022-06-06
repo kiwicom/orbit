@@ -53,7 +53,7 @@ const getTrackedData = async ({ config, id, name, url, data }) => {
 export const projectCmd: projectCmdType = (config, { id, name, cmd, url, ...data }) => {
   return execaCommand(cmd)
     .then(() => {
-      infoMessage(`fetched: ${name}`);
+      infoMessage(`fetched: ${name} ✅`);
     })
     .then(() => getTrackedData({ config, id, name, url, data }));
 };

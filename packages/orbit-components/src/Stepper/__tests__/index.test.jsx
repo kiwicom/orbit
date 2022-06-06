@@ -3,6 +3,7 @@ import * as React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import defaultTheme from "../../defaultTheme";
 import StepperStateless from "../StepperStateless";
 
 describe("Stepper", () => {
@@ -47,12 +48,28 @@ describe("Stepper", () => {
     userEvent.click(screen.getByLabelText(IncrementLabel));
     expect(onIncrement).toHaveBeenCalled();
     userEvent.click(screen.getByLabelText(DecrementLabel));
+    expect(screen.getByLabelText("Decrement")).toHaveStyle({ background: "transparent" });
+    expect(screen.getByLabelText("Increment")).toHaveStyle({ background: "transparent" });
     expect(onDecrement).toHaveBeenCalled();
 
     userEvent.tab();
     expect(onFocus).toHaveBeenCalled();
     userEvent.tab();
     expect(onBlur).toHaveBeenCalled();
+  });
+
+  it("should have active state", () => {
+    render(<StepperStateless value="kek" active />);
+
+    expect(document.querySelector("svg")).toHaveStyle({
+      background: defaultTheme.orbit.paletteBlueNormal,
+    });
+  });
+
+  it("should have maxWidth", () => {
+    render(<StepperStateless value="kek" dataTest="kek" maxWidth={200} />);
+
+    expect(screen.getByTestId("kek")).toHaveStyle({ maxWidth: "200px" });
   });
 
   it("should have increment button disabled, if value is equal to maxValue", () => {

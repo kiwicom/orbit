@@ -45,21 +45,23 @@ const Stepper = ({ onChange, defaultValue = 0, ...props }: Props): React.Node =>
     maxValue,
     titleIncrement,
     titleDecrement,
+    active,
   } = props;
   return (
     <StepperStateless
+      onKeyDown={handleKeyDown}
+      onIncrement={incrementCounter}
+      onDecrement={decrementCounter}
+      minValue={minValue}
+      maxValue={maxValue}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      active={active}
       disabled={disabled}
       dataTest={dataTest}
       value={value}
       name={name}
       size={size}
-      minValue={minValue}
-      maxValue={maxValue}
-      onKeyDown={handleKeyDown}
-      onBlur={onBlur}
-      onFocus={onFocus}
-      onIncrement={incrementCounter}
-      onDecrement={decrementCounter}
       titleIncrement={titleIncrement}
       titleDecrement={titleDecrement}
     />

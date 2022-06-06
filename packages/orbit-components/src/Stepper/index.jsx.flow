@@ -11,6 +11,8 @@ export type SharedProps = {|
   ...Globals,
   +name?: string,
   +disabled?: boolean,
+  +active?: boolean,
+  +maxWidth?: string | number,
   +maxValue?: number,
   +size?: "small" | "normal",
   +minValue?: number,

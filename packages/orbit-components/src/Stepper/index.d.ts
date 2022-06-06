@@ -11,7 +11,9 @@ export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
 export interface SharedProps extends Common.Global {
   readonly name?: string;
+  readonly active?: boolean;
   readonly disabled?: boolean;
+  readonly maxWidth?: string | number;
   readonly maxValue?: number;
   readonly minValue?: number;
   readonly size?: "small" | "normal";

@@ -42,11 +42,13 @@ export const Stateless = (): React.Node => {
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
   const size = select("size", ["small", "normal"], "small");
+  const active = boolean("active", false);
 
   return (
     <StatelessStepper
       dataTest={dataTest}
       value={value}
+      active={active}
       name={name}
       maxValue={max}
       size={size}
@@ -83,12 +85,14 @@ export const Playground = (): React.Node => {
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
   const size = select("size", ["small", "normal"], "small");
+  const active = boolean("active", false);
 
   return (
     <Stepper
       defaultValue={defaultValue}
       step={step}
       size={size}
+      active={active}
       name={name}
       maxValue={max}
       minValue={min}

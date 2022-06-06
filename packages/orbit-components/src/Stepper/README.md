@@ -19,6 +19,8 @@ Table below contains all types of the props available in Stepper component.
 | Name           | Type                        | Default   | Description                                                                   |
 | :------------- | :-------------------------- | :-------- | :---------------------------------------------------------------------------- |
 | dataTest       | `string`                    |           | Optional prop for testing purposes.                                           |
+| maxWidth       | `boolean`                   | `120px`   | Set `max-width`for `Stepper` wrapper                                          |
+| active         | `boolean`                   |           | Changes the color of the `Stepper`                                            |
 | defaultValue   | `number`                    | `0`       | Specifies the value of the Stepper. [See Functional specs](#functional-specs) |
 | disabled       | `boolean`                   | `false`   | If `true`, the Stepper will be disabled.                                      |
 | maxValue       | `number`                    | `∞`       | Specifies the maximum value for the Stepper.                                  |

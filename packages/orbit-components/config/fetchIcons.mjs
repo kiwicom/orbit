@@ -71,6 +71,8 @@ const parseName = name => {
   if (name === "care-kiwi.com") return "kiwicom-care";
   if (name === "kiwi.com") return "kiwicom";
   if (name === "notificiation-add") return "notification-add";
+  if (name === "google-colored") return "google";
+
   if (/-colored/g.test(name)) return name.split("-").reverse().join("-");
 
   return name;

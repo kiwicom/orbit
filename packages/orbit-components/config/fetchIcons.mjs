@@ -79,7 +79,7 @@ const parseName = name => {
 };
 
 const setSvgContent = (name, content, idx, id) => {
-  if (/colored-/g.test(name)) {
+  if (/colored-/g.test(name) || name === "google") {
     return dedent`
     <!--character:${idx}:${id}-->
     <!--customColor:true-->

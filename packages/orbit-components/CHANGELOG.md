@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.22.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.22.1...@kiwicom/orbit-components@2.22.2) (2022-06-07)
+
+
+### Bug Fixes
+
+* **icons:** colored signal and google ([6925af9](https://github.com/kiwicom/orbit/commit/6925af9d8072bc5c86fed6a98834dad11373cb49))
+
+
+
+
+
 ## [2.22.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.22.0...@kiwicom/orbit-components@2.22.1) (2022-06-06)
 
 

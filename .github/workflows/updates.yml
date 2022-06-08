@@ -5,7 +5,7 @@ on:
     - cron: "0 15 * * *"
 
 jobs:
-  track:
+  updates:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,10 +23,16 @@ jobs:
           git config --global user.email "vgenaev@gmail.com"
 
       - name: Update component statuses
-        run: yarn check:statuses
+        run: |
+          yarn check:statuses
+          git add --all
+          git commit -m "chore: update component statuses"
 
       - name: Update svgs
-        run: yarn components fetch:icons
+        run: |
+          yarn components fetch:icons
+          git add --all
+          git commit -m "feat(icons): update icons from figma"
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 

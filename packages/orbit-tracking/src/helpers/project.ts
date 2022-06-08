@@ -35,7 +35,7 @@ const getTrackedData = async ({ config, id, name, url, data }) => {
 
   return execaCommand(
     `yarn react-scanner-orbit -c ${
-      config || path.resolve(__dirname, "../../dist", "react-scanner.config.js")
+      config || path.resolve(__dirname, "../react-scanner.config.js")
     } -p ${projectFolder}`,
     { env: { REPO_URL: url, OUTPUT_DIR: projectFolder } },
   ).then(({ stdout }) => {

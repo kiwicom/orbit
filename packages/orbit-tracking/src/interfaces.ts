@@ -68,6 +68,24 @@ export interface ProjectsQuery {
   };
 }
 
+interface Blob {
+  path: string;
+}
+
+export interface ProjectPathsQuery {
+  data: {
+    project: {
+      repository: {
+        tree: {
+          blobs: {
+            nodes: Blob[];
+          };
+        };
+      };
+    };
+  };
+}
+
 export interface ProjectMutations {
   data: {
     createBranch: { branch: { name: string }; errors: string[] };

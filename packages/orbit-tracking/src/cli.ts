@@ -1,18 +1,13 @@
 import sade from "sade";
-import { config as dotEnvConfig } from "dotenv-safe";
 import { fs, path } from "zx";
 
-import { errorMessage, infoMessage } from "./helpers";
+import "dotenv/config";
+import { errorMessage, infoMessage, __dirname } from "./helpers";
 import { SCOPE } from "./consts";
 import fetcher from "./fetcher";
 import { Scope } from "./interfaces";
 
-const packageJson = fs.readJsonSync(`${process.cwd()}/package.json`);
-
-dotEnvConfig({
-  allowEmptyValues: true,
-  example: path.resolve(process.cwd(), "../.env.example"),
-});
+const packageJson = fs.readJsonSync(path.resolve(__dirname, "../../package.json"));
 
 export default async function cli(args) {
   sade("orbit-tracking", true)

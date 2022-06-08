@@ -1,4 +1,3 @@
-import { config as dotEnvConfig } from "dotenv-safe";
 import { fs, path, chalk } from "zx";
 
 import {
@@ -14,6 +13,7 @@ import { ProjectsQuery, Scope } from "./interfaces";
 import { PROJECTS, TMP_FOLDER } from "./consts";
 import { queries } from "./api";
 import saveData from "./saver";
+import "dotenv/config";
 
 interface BaseArgs {
   outputPath: string;
@@ -28,11 +28,6 @@ interface Args extends BaseArgs {
 interface ApiCallArgs extends BaseArgs {
   ids: string[];
 }
-
-dotEnvConfig({
-  allowEmptyValues: true,
-  example: path.resolve(process.cwd(), "../.env.example"),
-});
 
 export const gitlabApiCall = async ({ ids, folder = "./", outputPath, config }: ApiCallArgs) => {
   const res = await apiRequest<ProjectsQuery>(queries.projectsQuery, { ids });

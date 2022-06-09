@@ -20,9 +20,12 @@ const innerPlugins = [
   },
   {
     resolve: path.resolve("./plugins/dashboard"),
+<<<<<<< HEAD
     options: {
       path: "src/__examples__",
     },
+=======
+>>>>>>> 88c282aca (chore(tracking): change export)
   },
 ];
 

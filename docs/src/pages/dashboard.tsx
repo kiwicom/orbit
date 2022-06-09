@@ -1,8 +1,8 @@
 import { Router } from "@reach/router";
 import { navigate, PageRendererProps } from "gatsby";
 import React from "react";
-import { helpers, queries } from "@kiwicom/orbit-tracking";
-import type { ProjectPathsQuery, ProjectBlobsQuery } from "@kiwicom/orbit-tracking/dist/interfaces";
+// import { helpers, queries } from "@kiwicom/orbit-tracking";
+// import type { ProjectPathsQuery, ProjectBlobsQuery } from "@kiwicom/orbit-tracking/dist/interfaces";
 import { Loading } from "@kiwicom/orbit-components";
 
 import Dashboard, {
@@ -32,6 +32,8 @@ const PrivateRoute = ({ component: Component, location, ...rest }) => {
 };
 
 export default ({ location, serverData }: Props) => {
+  if (!serverData) return null;
+
   const { data } = serverData;
 
   if (!data) return <Loading>Loading...</Loading>;
@@ -77,31 +79,31 @@ export default ({ location, serverData }: Props) => {
   );
 };
 
-export async function getServerData() {
-  if (process.env.GATSBY_ORBIT_STORAGE_PATH) {
-    const pathsRes = await helpers.apiRequest<ProjectPathsQuery>(queries.projectPathQuery, {
-      path: process.env.GATSBY_ORBIT_STORAGE_PATH,
-    });
+// export async function getServerData() {
+//   if (process.env.GATSBY_ORBIT_STORAGE_PATH) {
+//     const pathsRes = await helpers.apiRequest<ProjectPathsQuery>(queries.projectPathQuery, {
+//       path: process.env.GATSBY_ORBIT_STORAGE_PATH,
+//     });
 
-    if (pathsRes) {
-      const paths = pathsRes.data.project.repository.tree.blobs.nodes
-        .map(b => b.path)
-        .filter(n => n.includes(".json"));
+//     if (pathsRes) {
+//       const paths = pathsRes.data.project.repository.tree.blobs.nodes
+//         .map(b => b.path)
+//         .filter(n => n.includes(".json"));
 
-      const resBlob = await helpers.apiRequest<ProjectBlobsQuery>(queries.projectRawBlobQuery, {
-        path: process.env.GATSBY_ORBIT_STORAGE_PATH,
-        paths,
-        last: 1,
-      });
+//       const resBlob = await helpers.apiRequest<ProjectBlobsQuery>(queries.projectRawBlobQuery, {
+//         path: process.env.GATSBY_ORBIT_STORAGE_PATH,
+//         paths,
+//         last: 1,
+//       });
 
-      if (resBlob) {
-        const data = resBlob.data.project.repository.blobs.nodes.map(({ rawBlob }) => rawBlob);
-        return { props: { data }, status: 200 };
-      }
-    }
+//       if (resBlob) {
+//         const data = resBlob.data.project.repository.blobs.nodes.map(({ rawBlob }) => rawBlob);
+//         return { props: { data }, status: 200 };
+//       }
+//     }
 
-    return { props: { data: null }, status: 404 };
-  }
+//     return { props: { data: null }, status: 404 };
+//   }
 
-  return { props: { data: null }, status: 500 };
-}
+//   return { props: { data: null }, status: 500 };
+// }

@@ -17,6 +17,9 @@
       "current node"
     ]
   },
+  "peerDependencies": {
+    "zx": "4.2.0"
+  },
   "dependencies": {
     "@adeira/js": "^2.1.1",
     "@babel/core": "^7.18.2",

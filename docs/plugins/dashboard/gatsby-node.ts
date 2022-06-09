@@ -1,4 +1,4 @@
 import createSchemaCustomization from "./gatsby/createSchemeCustomization";
-import createPages from "./gatsby/createPages";
+import sourceNodes from "./gatsby/sourceNodes";
 
-export { createSchemaCustomization, createPages };
+export { sourceNodes, createSchemaCustomization };

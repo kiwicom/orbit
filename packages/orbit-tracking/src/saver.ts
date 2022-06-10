@@ -12,7 +12,7 @@ export default async function saveToApi(content: string) {
         mergeRequestTitle: `chore: tracking data update for ${month}`,
         commitMessage: `Tracking data update for ${month}`,
         commitContent: content,
-        filePath: `${timestamp()}-tracking-update.json`,
+        filePath: `${timestamp()}.json`,
       });
 
       if (res?.data) return res.data;

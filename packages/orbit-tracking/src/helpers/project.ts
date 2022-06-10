@@ -35,7 +35,7 @@ const getTrackedData = async ({ config, id, name, url, data }) => {
 
   return execaCommand(
     `yarn react-scanner-orbit -c ${
-      config || path.resolve(__dirname, "../react-scanner.config.js")
+      config || path.resolve(__dirname, "react-scanner.config.js")
     } -p ${projectFolder}`,
     { env: { REPO_URL: url, OUTPUT_DIR: projectFolder } },
   ).then(({ stdout }) => {
@@ -53,7 +53,7 @@ const getTrackedData = async ({ config, id, name, url, data }) => {
 export const projectCmd: projectCmdType = (config, { id, name, cmd, url, ...data }) => {
   return execaCommand(cmd)
     .then(() => {
-      infoMessage(`fetched: ${name} ✅`);
+      infoMessage(`fetched: ${name} ✔️`);
     })
     .then(() => getTrackedData({ config, id, name, url, data }));
 };

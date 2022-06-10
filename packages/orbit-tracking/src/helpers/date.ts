@@ -3,7 +3,7 @@ export const timestamp = () => {
   const year = new Date().getFullYear();
   const hour = new Date().getHours();
 
-  return `$${month}-${year}-${hour}`;
+  return `${month}-${year}-${hour}`;
 };
 
 export const month = new Date().toLocaleString("en-US", { month: "long" });

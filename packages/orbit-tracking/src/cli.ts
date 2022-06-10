@@ -53,5 +53,3 @@ export default async function cli(args) {
     })
     .parse(args);
 }
-
-cli(process.argv);

@@ -7,7 +7,7 @@ import { SCOPE } from "./consts";
 import fetcher from "./fetcher";
 import { Scope } from "./interfaces";
 
-const packageJson = fs.readJsonSync(path.resolve(__dirname, "../../package.json"));
+const packageJson = fs.readJsonSync(path.resolve(__dirname, "../package.json"));
 
 export default async function cli(args) {
   sade("orbit-tracking", true)

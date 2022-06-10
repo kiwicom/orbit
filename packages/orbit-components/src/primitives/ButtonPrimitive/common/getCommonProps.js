@@ -9,20 +9,21 @@ const getCommonProps: GetCommonProps = ({
   size = SIZE_OPTIONS.NORMAL,
   theme,
   iconRight,
+  contentAlign,
+  contentWidth,
   iconLeft,
   children,
 }) => {
-  const onlyIcon = Boolean(iconLeft && !children);
-  const hasCenteredContent = Boolean(
-    (iconLeft && !children) || (children && !(iconLeft || iconRight)),
-  );
+  const onlyIcon = Boolean((iconLeft || iconRight) && !children);
+  const hasCenteredContent = Boolean(onlyIcon || (children && !(iconLeft || iconRight)));
+
   return {
     ...getSizeToken(size, theme),
     width,
     padding: getPadding(onlyIcon, iconRight, iconLeft, size, theme),
     fontWeight: theme.orbit.fontWeightMedium,
-    contentAlign: onlyIcon || hasCenteredContent ? "center" : "space-between",
-    contentWidth: "100%",
+    contentAlign: contentAlign || (onlyIcon || hasCenteredContent ? "center" : "space-between"),
+    contentWidth: contentWidth || "100%",
   };
 };
 

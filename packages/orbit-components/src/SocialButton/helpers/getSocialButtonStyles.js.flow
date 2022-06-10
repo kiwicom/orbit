@@ -8,7 +8,7 @@ export type GetSocialButtonStyles = ({| type: Type, disabled: boolean, ...ThemeP
   ...Foreground,
   ...BoxShadow,
   contentAlign: string,
-  contentWidth: ?string,
+  contentWidth: string,
 |};
 
 declare export default GetSocialButtonStyles;

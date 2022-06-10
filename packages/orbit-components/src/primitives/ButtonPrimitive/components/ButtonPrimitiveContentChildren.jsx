@@ -1,15 +1,17 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { left } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 import type { Props } from "./ButtonPrimitiveContentChildren";
 
 const StyledButtonPrimitiveContentChildren = styled.div`
-  display: inline-block;
-  width: ${({ contentWidth }) => contentWidth};
-  text-align: ${({ hasIcon }) => hasIcon && left};
+  ${({ hasIcon, contentWidth }) => css`
+    display: inline-block;
+    width: ${contentWidth};
+    text-align: ${hasIcon && left};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

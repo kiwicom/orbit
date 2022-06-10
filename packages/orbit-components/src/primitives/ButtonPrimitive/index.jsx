@@ -226,6 +226,7 @@ const ButtonPrimitive: React.AbstractComponent<Props, HTMLButtonElement> = React
   const { width, height, leftMargin, rightMargin } = icons;
   const isDisabled = loading || disabled;
   const onlyIcon = Boolean(iconLeft && !children);
+
   return (
     <StyledButtonPrimitive
       ref={ref}

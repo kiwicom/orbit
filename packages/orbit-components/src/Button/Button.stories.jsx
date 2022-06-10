@@ -215,12 +215,20 @@ export const Playground = (): React.Node => {
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
   const title = text("Title", "Additional information for accessibility");
   const rel = text("Rel", "nofollow");
+  const contentAlign = select(
+    "contentAlign",
+    ["start", "center", "end", "space-between"],
+    "center",
+  );
+  const contentWidth = text("contentWidth", "100%");
 
   return (
     <Button
       onClick={action("clicked")}
       asComponent={asComponent}
       href={href}
+      contentAlign={contentAlign}
+      contentWidth={contentWidth}
       external={external}
       disabled={disabled}
       circled={circled}

@@ -43,9 +43,7 @@ const ComponentPage = ({ location }) => {
               used
               values {
                 name
-                used {
-                  used
-                }
+                used
               }
             }
             sources {

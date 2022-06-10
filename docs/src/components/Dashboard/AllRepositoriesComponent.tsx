@@ -56,9 +56,7 @@ const AllRepositoriesComponent = ({ location }: PageRendererProps) => {
               used
               values {
                 name
-                used {
-                  used
-                }
+                used
               }
             }
             sources {

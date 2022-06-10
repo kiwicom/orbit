@@ -1,13 +1,9 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
     "rootDir": "./src",
     "moduleResolution": "node",
     "baseUrl": "./",
-    "outDir": "./dist",
-    "removeComments": true,
-    "noEmitOnError": true,
+    "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -15,7 +11,6 @@
     "alwaysStrict": true,
     "noImplicitReturns": true,
     "esModuleInterop": true,
-    "declaration": true,
     "skipLibCheck": true
   },
   "include": ["src/**/*.ts"]

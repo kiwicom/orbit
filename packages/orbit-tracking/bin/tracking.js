@@ -1,2 +1,4 @@
 #!/usr/bin/env node
-import("../dist/cli.js");
+import { cli } from "../dist/index.js";
+
+cli(process.argv);

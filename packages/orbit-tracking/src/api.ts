@@ -96,8 +96,42 @@ const createCommitMutation = `
   }
 `;
 
+const projectPathQuery = `
+  query ProjectPathQuery($path: ID!) {
+    project(fullPath: $path) {
+      repository {
+        tree(ref: "master", recursive: true) {
+          blobs {
+            nodes {
+              path
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const projectRawBlobQuery = `
+  query ProjectRawBlobQuery($path: ID!, $paths: [String!]!) {
+    project(fullPath: $path) {
+      repository {
+        blobs(ref: "master", paths: $paths) {
+          nodes {
+            rawBlob
+            rawTextBlob
+            fileType
+          }
+        }
+      }
+    }
+  }
+`;
+
 const queries = {
   projectsQuery,
+  projectPathQuery,
+  projectRawBlobQuery,
 };
 
 const mutations = {

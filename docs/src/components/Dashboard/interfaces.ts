@@ -34,9 +34,9 @@ export interface TrackedData {
   sources: Array<{ url: string; props: string[] }>;
 }
 export interface TrackingNode {
-  id: string;
   name: string;
   url: string;
+  createdAt: string;
   description: string;
   orbitVersion: string;
   lastCommit: {

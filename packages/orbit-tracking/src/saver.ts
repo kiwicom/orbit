@@ -1,14 +1,7 @@
-import { config as dotEnvConfig } from "dotenv-safe";
-import { path } from "zx";
-
 import { errorMessage, apiRequest, timestamp, month } from "./helpers";
 import { mutations } from "./api";
 import { ProjectMutations } from "./interfaces";
-
-dotEnvConfig({
-  allowEmptyValues: true,
-  example: path.resolve(process.cwd(), "../.env.example"),
-});
+import "dotenv/config";
 
 export default async function saveToApi(content: string) {
   try {
@@ -19,7 +12,7 @@ export default async function saveToApi(content: string) {
         mergeRequestTitle: `chore: tracking data update for ${month}`,
         commitMessage: `Tracking data update for ${month}`,
         commitContent: content,
-        filePath: `${timestamp()}-tracking-update.json`,
+        filePath: `${timestamp()}.json`,
       });
 
       if (res?.data) return res.data;

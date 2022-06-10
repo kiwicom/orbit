@@ -20,9 +20,6 @@ const innerPlugins = [
   },
   {
     resolve: path.resolve("./plugins/dashboard"),
-    options: {
-      path: "src/__examples__",
-    },
   },
 ];
 

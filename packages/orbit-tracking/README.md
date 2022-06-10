@@ -32,7 +32,7 @@ You can fetch and parse only specific repositories from the [scope](###scope) wi
   orbit-tracking --scope frontend booking
 ```
 
-By default the output will be saved in the root, but you can specify the path with `--output` argument:
+By default the output will be saved to gitlab repo, but you can specify the path with `--output` argument:
 
 ```sh
   orbit-tracking --output path/to/folder

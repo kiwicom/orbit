@@ -1,9 +1,10 @@
-import { mapDiff } from "../compare";
+import { mapDiff } from "../compare.ts";
 import data from "./__mocks__/data.json";
 import diff from "./__mocks__/diff.json";
+
 describe("test tracking diff", () => {
-    it("should return mapped structure for diff data", () => {
-        expect(mapDiff(data, diff)).toMatchInlineSnapshot(`
+  it("should return mapped structure for diff data", () => {
+    expect(mapDiff(data, diff)).toMatchInlineSnapshot(`
       Object {
         "AirplaneDown": Object {
           "instances": Object {
@@ -160,5 +161,5 @@ describe("test tracking diff", () => {
         },
       }
     `);
-    });
+  });
 });

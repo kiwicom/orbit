@@ -1,11 +1,38 @@
 import axios from "axios";
 
 import { projectPathQuery, projectRawBlobQuery } from "./queries";
+import { TrackingNode } from "../../../src/components/Dashboard/interfaces";
 
 const BASE_URL = `https://gitlab.skypicker.com/api/graphql/`;
 
-async function request(query: string, vars?: Record<string, string | number | string[]>) {
-  const { data } = await axios.post(
+interface PathResponse {
+  data: {
+    project: {
+      repository: {
+        tree: {
+          blobs: {
+            nodes: Array<{ path: string }>;
+          };
+        };
+      };
+    };
+  };
+}
+
+interface BlobResponse {
+  data: {
+    project: {
+      repository: {
+        blobs: {
+          nodes: Array<{ rawBlob: string; fileType: string | null }>;
+        };
+      };
+    };
+  };
+}
+
+async function request<T>(query: string, vars?: Record<string, string | number | string[]>) {
+  const { data } = await axios.post<T>(
     BASE_URL,
     {
       query,
@@ -27,7 +54,7 @@ export default async ({ actions, createNodeId, createContentDigest, reporter }) 
     const { createNode } = actions;
 
     if (process.env.GATSBY_ORBIT_STORAGE_PATH) {
-      const pathsRes = await request(projectPathQuery, {
+      const pathsRes = await request<PathResponse>(projectPathQuery, {
         path: process.env.GATSBY_ORBIT_STORAGE_PATH,
       });
 
@@ -36,18 +63,16 @@ export default async ({ actions, createNodeId, createContentDigest, reporter }) 
           .map(b => b.path)
           .filter(n => n.includes(".json"));
 
-        const resBlob = await request(projectRawBlobQuery, {
+        request<BlobResponse>(projectRawBlobQuery, {
           path: process.env.GATSBY_ORBIT_STORAGE_PATH,
           paths,
           last: 1,
-        });
-
-        if (resBlob) {
-          const data = resBlob.data.project.repository.blobs.nodes.map(({ rawBlob }) => rawBlob);
-          JSON.parse(data).forEach(repo => {
+        }).then(({ data }) => {
+          const { nodes } = data.project.repository.blobs;
+          JSON.parse(nodes[0].rawBlob).forEach((repo: TrackingNode) => {
             createNode({
               ...repo,
-              id: createNodeId(`tracking-${repo.id}`),
+              id: createNodeId(`tracking-${repo.name}`),
               parent: null,
               children: [],
               internal: {
@@ -57,7 +82,7 @@ export default async ({ actions, createNodeId, createContentDigest, reporter }) 
               },
             });
           });
-        }
+        });
       }
     }
   } catch (err) {

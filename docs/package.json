@@ -17,9 +17,6 @@
       "current node"
     ]
   },
-  "peerDependencies": {
-    "zx": "4.2.0"
-  },
   "dependencies": {
     "@adeira/js": "^2.1.1",
     "@babel/core": "^7.18.2",
@@ -31,9 +28,7 @@
     "@kiwicom/babel-plugin-orbit-components": "*",
     "@kiwicom/browserslist-config": "^2.1.0",
     "@kiwicom/orbit-components": "*",
-    "@kiwicom/orbit-tracking": "*",
     "@kiwicom/orbit-design-tokens": "*",
-    "@loadable/component": "^5.15.0",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.21",

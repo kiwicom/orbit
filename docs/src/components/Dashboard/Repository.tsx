@@ -1,22 +1,74 @@
 import React from "react";
 import { Heading, TextLink, Stack, Text } from "@kiwicom/orbit-components";
 import { upperFirst } from "lodash";
-import { PageRendererProps } from "gatsby";
+import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
 import fp from "lodash/fp";
 
 import DocLayout from "../DocLayout";
 import Members from "./components/Members";
 import ComponentList from "./components/ComponentList";
 import UsageByCategory from "./components/UsageByCategory";
+import { SchemeTrackingNode } from "./interfaces";
 
-export default function Tracking({ location, pages }: PageRendererProps) {
+export default function Tracking({ location }: PageRendererProps) {
+  const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
+    query TrackingDataQuery {
+      allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
+        nodes {
+          id
+          name
+          lastCommit {
+            title
+            webUrl
+          }
+          members {
+            maintainers {
+              avatarUrl
+              name
+              id
+              bot
+              state
+              publicEmail
+              status {
+                availability
+                message
+              }
+              webUrl
+              webPath
+            }
+          }
+          trackedData {
+            icon
+            sources {
+              url
+              props {
+                name
+                value
+              }
+            }
+            instances
+            category
+            isDeprecated
+            name
+            props {
+              used
+              name
+            }
+          }
+          orbitVersion
+          url
+        }
+      }
+    }
+  `);
+
   const { pathname } = location;
   const pageName = pathname.split("/").filter(Boolean).slice(-1)[0];
 
   const { url, members, orbitVersion, trackedData, lastCommit } = fp.compose(
     fp.head,
     fp.filter(({ name }) => name === pageName),
-  )(pages);
+  )(allTracking.nodes);
 
   const components = trackedData
     .filter(({ icon }) => !icon)

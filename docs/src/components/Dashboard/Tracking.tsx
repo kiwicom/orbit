@@ -1,16 +1,32 @@
 import React from "react";
-import { PageRendererProps } from "gatsby";
+import { PageRendererProps, graphql, useStaticQuery } from "gatsby";
 import { Grid } from "@kiwicom/orbit-components";
 import { sortBy, upperFirst } from "lodash";
 
 import DocLayout from "../DocLayout";
 import Tile from "../Tile";
 import useDevMode from "../../hooks/useDevMode";
+import { SchemeTrackingNode } from "./interfaces";
 
-const Tracking = ({ location, pages }: PageRendererProps) => {
+const Tracking = ({ location }: PageRendererProps) => {
   const [devMode] = useDevMode();
+  const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
+    query TrackingPageQuery {
+      allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
+        nodes {
+          name
+          createdAt
+          description
+          trackedData {
+            icon
+            name
+          }
+        }
+      }
+    }
+  `);
 
-  const allPages = pages.map(({ name, description }) => {
+  const pages = allTracking.nodes.map(({ name, description }) => {
     const url = `/dashboard/tracking/${name.toLowerCase()}`;
 
     return {
@@ -21,14 +37,14 @@ const Tracking = ({ location, pages }: PageRendererProps) => {
     };
   });
 
-  allPages.push({
+  pages.push({
     slug: "/dashboard/tracking/allrepositories/",
     title: "All Repositories",
     description: "Combined data from all repositories on single page",
     hasReactTab: false,
   });
 
-  allPages.push({
+  pages.push({
     slug: "/dashboard/difference/",
     title: "Tracking difference",
     description: "Shows difference between the first and last tracked data",
@@ -44,7 +60,7 @@ const Tracking = ({ location, pages }: PageRendererProps) => {
         desktop={{ columns: "repeat(3, 1fr)" }}
         largeDesktop={{ columns: "repeat(2, 1fr)" }}
       >
-        {sortBy(allPages, ["title"]).map(
+        {sortBy(pages, ["title"]).map(
           ({ title: pageTitle, slug: pageSlug, description, hasReactTab }) => {
             return (
               <Tile

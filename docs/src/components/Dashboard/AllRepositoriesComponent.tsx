@@ -1,5 +1,5 @@
 import React from "react";
-import { PageRendererProps } from "gatsby";
+import { PageRendererProps, graphql, useStaticQuery } from "gatsby";
 import { sortBy, upperFirst } from "lodash";
 import fp from "lodash/fp";
 import {
@@ -18,7 +18,7 @@ import { ChevronDown, ChevronUp } from "@kiwicom/orbit-components/icons";
 
 import DocLayout from "../DocLayout";
 import { sumProperties } from "./helpers";
-import { TrackedData, TrackingProp } from "./interfaces";
+import { TrackedData, TrackingProp, SchemeTrackingNode } from "./interfaces";
 
 const Sort = ({ children, onClick, isSorted }) => (
   <TextLink
@@ -30,7 +30,7 @@ const Sort = ({ children, onClick, isSorted }) => (
   </TextLink>
 );
 
-const AllRepositoriesComponent = ({ location, pages }: PageRendererProps) => {
+const AllRepositoriesComponent = ({ location }: PageRendererProps) => {
   const [isOpenModal, setOpenModal] = React.useState(false);
   const [propsInstances, setPropsInstances] = React.useState<string[]>([]);
   const [isSortedByName, setSortedByName] = React.useState(false);
@@ -39,10 +39,45 @@ const AllRepositoriesComponent = ({ location, pages }: PageRendererProps) => {
   const { pathname } = location;
   const title = pathname.split("/").filter(Boolean).slice(-1)[0];
 
+  const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
+    query AllTrackingComponentQuery {
+      allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
+        nodes {
+          createdAt
+          name
+          trackedData {
+            icon
+            instances
+            category
+            isDeprecated
+            name
+            props {
+              name
+              used
+              values {
+                name
+                used {
+                  used
+                }
+              }
+            }
+            sources {
+              url
+              props {
+                name
+                value
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
   const component = fp.compose(
     fp.map((n: TrackedData[]) => n.find(c => c.name.toLowerCase() === title)),
     fp.map(fp.get(["trackedData"])),
-  )(pages);
+  )(allTracking.nodes);
 
   const props = fp.compose(
     sumProperties,

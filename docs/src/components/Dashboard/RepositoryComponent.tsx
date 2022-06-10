@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import { upperFirst } from "lodash";
 import fp from "lodash/fp";
 import {
@@ -17,12 +18,48 @@ import {
 } from "@kiwicom/orbit-components";
 import Slide from "@kiwicom/orbit-components/lib/utils/Slide";
 
+import { SchemeTrackingNode } from "./interfaces";
 import DocLayout from "../DocLayout";
 
-const ComponentPage = ({ location, pages }) => {
+const ComponentPage = ({ location }) => {
   const [allSources, setAllSources] = React.useState<string[]>([]);
   const [height, setHeight] = React.useState(0);
   const [expanded, setExpanded] = React.useState(false);
+
+  const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
+    query TrackingComponentQuery {
+      allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
+        nodes {
+          createdAt
+          name
+          trackedData {
+            icon
+            instances
+            category
+            isDeprecated
+            name
+            props {
+              name
+              used
+              values {
+                name
+                used {
+                  used
+                }
+              }
+            }
+            sources {
+              url
+              props {
+                name
+                value
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
 
   const { pathname } = location;
   const [repo, title] = pathname.split("/").filter(Boolean).slice(-2);
@@ -33,7 +70,7 @@ const ComponentPage = ({ location, pages }) => {
     fp.get("trackedData"),
     fp.head,
     fp.filter(({ name }) => name.toLowerCase() === repo),
-  )(pages);
+  )(allTracking.nodes);
 
   const sourceLinks = sources && sources.map(({ url }) => url);
 

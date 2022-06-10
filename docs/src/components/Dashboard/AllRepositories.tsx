@@ -1,11 +1,30 @@
 import React from "react";
-import { PageRendererProps } from "gatsby";
+import { PageRendererProps, graphql, useStaticQuery } from "gatsby";
 
 import ComponentsList from "./components/ComponentList";
 import DocLayout from "../DocLayout";
+import { SchemeTrackingNode } from "./interfaces";
 
-const AllRepositories = ({ location, pages }: PageRendererProps) => {
-  const components = pages.reduce((acc, cur) => {
+const AllRepositories = ({ location }: PageRendererProps) => {
+  const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
+    query AllRepositoriesTracking {
+      # get only the latest
+      allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
+        nodes {
+          createdAt
+          trackedData {
+            instances
+            category
+            icon
+            isDeprecated
+            name
+          }
+        }
+      }
+    }
+  `);
+
+  const components = allTracking.nodes.reduce((acc, cur) => {
     cur.trackedData
       .filter(source => !source.icon)
       .forEach(({ name, instances, category, isDeprecated }) => {

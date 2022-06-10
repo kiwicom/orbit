@@ -1,7 +1,0 @@
-// @flow
-
-import type { CSSRules } from "styled-components";
-
-export type OnlyIE = (style: CSSRules, breakpoint?: string) => CSSRules;
-
-declare export default OnlyIE;

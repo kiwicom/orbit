@@ -114,7 +114,7 @@ export default ({ forEachComponent, deprecated, sortObjectKeysByValue, output })
       const values: PropValue[] = [];
 
       for (const propName of Object.keys(used.values)) {
-        values.push({ name: propName, used: used.values[propName] });
+        values.push({ name: propName, used: used.values[propName].used });
       }
 
       properties.push({

@@ -11,12 +11,10 @@ import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import defaultTheme from "../defaultTheme";
 import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
-import media, { getBreakpointWidth } from "../utils/mediaQuery";
-import { QUERIES } from "../utils/mediaQuery/consts";
+import media from "../utils/mediaQuery";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
 import useRandomId from "../hooks/useRandomId";
-import onlyIE from "../utils/onlyIE";
 import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import usePrevious from "../hooks/usePrevious";
@@ -56,9 +54,6 @@ const ModalBody = styled.div`
       overflow-y: auto;
       padding: ${theme.orbit.spaceXXLarge};
     `)};
-    ${onlyIE(css`
-      position: -ms-page;
-    `)};
   `}
 `;
 
@@ -86,11 +81,6 @@ const ModalWrapper = styled.div`
           transition: ${transition(["top"], "normal", "ease-in-out")};
           top: ${loaded ? !isMobileFullPage && "32px" : "100%"};
         `}
-    ${onlyIE(css`
-      /* IE flex bug, the content won't be centered if there is not 'height' property
-  https://github.com/philipwalton/flexbugs/issues/231 */
-      height: 1px;
-    `)};
 
     ${media.largeMobile(css`
       position: relative;
@@ -114,12 +104,6 @@ const CloseContainer = styled.div`
       fixedClose || scrolled
         ? css`
             position: fixed;
-            ${onlyIE(
-              css`
-                position: -ms-page;
-              `,
-              `(max-width:${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px)`,
-            )};
           `
         : css`
             position: absolute;
@@ -245,13 +229,6 @@ const ModalWrapperContent = styled.div`
         ${transition(["top"], "normal", "ease-in-out")},
         ${transition(["opacity", "visibility"], "fast", "ease-in-out")}
       `};
-
-      ${scrolled &&
-      onlyIE(css`
-        ${MobileHeader} {
-          position: -ms-page;
-        }
-      `)}
     }
 
     ${StyledModalHeader} {
@@ -289,15 +266,6 @@ const ModalWrapperContent = styled.div`
         width: ${`calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
       }
     `)};
-
-    ${onlyIE(
-      css`
-        ${StyledModalFooter} {
-          // -ms-page must be used for mobile devices
-          position: ${fixedFooter && "-ms-page"};
-        }
-      `,
-    )};
   `}
 `;
 

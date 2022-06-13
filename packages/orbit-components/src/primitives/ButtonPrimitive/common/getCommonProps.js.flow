@@ -18,6 +18,8 @@ export type GetCommonPropsReturn = {|
 export type GetCommonProps = ({
   width?: string,
   size?: Size,
+  contentAlign?: string,
+  contentWidth?: string,
   iconRight?: React.Node,
   iconLeft?: React.Node,
   children?: React.Node,

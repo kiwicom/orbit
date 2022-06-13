@@ -111,10 +111,18 @@ export const ButtonPrimitive = (): React.Node => {
   const title = text("title", null);
   const tabIndex = text("tabIndex", null);
   const width = text("width", null);
+  const contentAlign = select(
+    "contentAlign",
+    ["start", "center", "end", "space-between"],
+    "center",
+  );
+  const contentWidth = text("contentWidth", "100%");
 
   return (
     <ButtonPrimitiveComponent
       asComponent={asComponent}
+      contentAlign={contentAlign}
+      contentWidth={contentWidth}
       ariaControls={ariaControls}
       ariaExpanded={ariaExpanded}
       background={background}

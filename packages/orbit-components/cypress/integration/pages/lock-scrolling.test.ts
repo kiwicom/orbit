@@ -7,8 +7,8 @@ describe("useLockScrolling", () => {
     cy.viewport(breakpoint - 1, 600);
     cy.visit("/lock-scrolling");
     cy.findByRole("button", { name: "Open" }).click();
+    cy.get("body").should("have.css", "padding-right", "15px");
     cy.get("body").should("have.css", "overflow-y", "hidden");
-    // cy.get("body").should("have.css", "padding-right", "15px");
     cy.viewport(breakpoint, 600);
     cy.get("body").should("not.have.css", "overflow-y", "hidden");
     cy.viewport(breakpoint - 1, 600);

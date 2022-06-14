@@ -2,12 +2,12 @@
 import * as React from "react";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
-import KEY_CODE_MAP from "../common/keyMaps";
+import KEY_CODE_MAP from "../../common/keyMaps";
 import InputStepperStateless from "./InputStepperStateless";
-import validateIncrement from "../utils/validateIncrement";
-import validateDecrement from "../utils/validateDecrement";
-import useStateWithCallback from "../hooks/useStateWithCallback";
-import useTranslate from "../hooks/useTranslate";
+import validateIncrement from "../../utils/validateIncrement";
+import validateDecrement from "../../utils/validateDecrement";
+import useStateWithCallback from "../../hooks/useStateWithCallback";
+import useTranslate from "../../hooks/useTranslate";
 
 import type { Props } from ".";
 

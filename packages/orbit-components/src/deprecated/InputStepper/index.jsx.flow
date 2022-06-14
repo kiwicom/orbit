@@ -4,9 +4,9 @@
 */
 import * as React from "react";
 
-import type { Globals, Translation } from "../common/common.js.flow";
-import type { Size } from "../InputField";
-import type { spaceAfter } from "../common/getSpacingToken";
+import type { Globals, Translation } from "../../common/common.js.flow";
+import type { Size } from "../../InputField";
+import type { spaceAfter } from "../../common/getSpacingToken";
 
 export type SharedProps = {|
   ...Globals,

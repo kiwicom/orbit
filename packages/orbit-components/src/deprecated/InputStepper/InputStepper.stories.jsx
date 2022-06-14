@@ -4,8 +4,8 @@ import { action } from "@storybook/addon-actions";
 import { text, number, select, boolean } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS } from "../InputField/consts";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
+import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import InputStepperStateless from "./InputStepperStateless";
 
 import InputStepper from ".";

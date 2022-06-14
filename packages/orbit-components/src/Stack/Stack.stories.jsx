@@ -7,7 +7,6 @@ import { DIRECTIONS, ALIGNS, SPACINGS, JUSTIFY } from "../utils/layout/consts";
 import Edit from "../icons/Edit";
 import Button from "../Button";
 import InputField from "../InputField";
-import InputStepper from "../InputStepper";
 import Text from "../Text";
 import TextLink from "../TextLink";
 import Airplane from "../icons/Airplane";
@@ -540,14 +539,6 @@ export const ComponentsPreview = (): React.Node => (
     <Stack direction="row" align="center">
       <Illustration name="Accommodation" size="extraSmall" />
       <Text>Hola Amigo</Text>
-    </Stack>
-    <Stack direction="row">
-      <InputStepper label="My label" />
-      <InputField label="My label" />
-    </Stack>
-    <Stack direction="column">
-      <InputStepper label="My label" />
-      <InputField label="My label" />
     </Stack>
     <Stack direction="row">
       <InputField label="My label" />

@@ -16,28 +16,28 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Information
 - component: Badge
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Information
 - component: BadgeList
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Planned
   docs: Released
   group: Information
 - component: BadgePrimitive
   figma: N/A
   react: Released
   ios: N/A
-  android: N/A
+  android: Planned
   docs: Released
   group: Primitives
 - component: Box
@@ -65,7 +65,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Action
 - component: ButtonMobileStore
@@ -79,14 +79,14 @@
   figma: N/A
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Primitives
 - component: Button
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Action
 - component: CallOutBanner
@@ -100,7 +100,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Partially
   docs: Released
   group: Structure
 - component: CarrierLogo
@@ -114,7 +114,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: ChoiceGroup
@@ -128,7 +128,7 @@
   figma: Designing
   react: Planned
   ios: Released
-  android: N/A
+  android: Released
   docs: Waiting
   group: Structure
 - component: Collapse
@@ -142,7 +142,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Visuals
 - component: Coupon
@@ -191,7 +191,7 @@
   figma: Released
   react: Planned
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Progress indicators
 - component: FeatureIcon
@@ -212,7 +212,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Text
 - component: Hide
@@ -233,7 +233,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Visuals
 - component: IllustrationPrimitive
@@ -247,7 +247,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Visuals
 - component: Inline
@@ -261,7 +261,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: InputFile
@@ -310,7 +310,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: List
@@ -345,7 +345,7 @@
   figma: Released
   react: Released
   ios: Planned
-  android: N/A
+  android: Released
   docs: Released
   group: Navigation
 - component: NavigationList
@@ -358,7 +358,7 @@
 - component: NotificationBadge
   figma: Designing
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Information
@@ -401,7 +401,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: RatingStars
@@ -415,14 +415,14 @@
   figma: Designing
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Visuals
 - component: Select
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: Skeleton
@@ -436,7 +436,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Structure
 - component: ServiceLogo
@@ -485,7 +485,7 @@
   figma: Released
   react: Released
   ios: Planned
-  android: N/A
+  android: Released
   docs: Released
   group: Interaction
 - component: Sticky
@@ -506,7 +506,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Writing
   group: Interaction
 - component: TabBar
@@ -534,7 +534,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Interaction
 - component: TextLink
@@ -548,14 +548,14 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Text
 - component: Textarea
   figma: Planned
   react: Released
   ios: N/A
-  android: N/A
+  android: Released
   docs: Released
   group: Input
 - component: TileGroup
@@ -624,3 +624,4 @@
   group: Progress indicators
 - component: KeyValue
   ios: Planned
+  android: Released

@@ -14,7 +14,6 @@ export type SharedProps = {|
   +active?: boolean,
   +maxWidth?: string | number,
   +maxValue?: number,
-  +size?: "small" | "normal",
   +minValue?: number,
   +titleIncrement?: string | (any => string),
   +titleDecrement?: string | (any => string),

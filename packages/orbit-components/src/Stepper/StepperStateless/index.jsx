@@ -107,7 +107,6 @@ const StepperStateless = ({
   value,
   active,
   name,
-  size = "small",
   minValue,
   maxValue,
   onKeyDown,
@@ -154,7 +153,6 @@ const StepperStateless = ({
         name={name}
         disabled={disabled}
         type="text"
-        size={size}
         value={value || 0}
         min={minValue}
         max={maxValue}

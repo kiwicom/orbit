@@ -16,6 +16,7 @@ import {
 import { css } from "styled-components";
 import { ChevronDown, ChevronUp } from "@kiwicom/orbit-components/icons";
 
+import useIsMounted from "../../hooks/useIsMounted";
 import DocLayout from "../DocLayout";
 import { sumProperties } from "./helpers";
 import { TrackedData, TrackingProp, SchemeTrackingNode } from "./interfaces";
@@ -32,6 +33,7 @@ const Sort = ({ children, onClick, isSorted }) => (
 
 const AllRepositoriesComponent = ({ location }: PageRendererProps) => {
   const [isOpenModal, setOpenModal] = React.useState(false);
+  const isMounted = useIsMounted();
   const [propsInstances, setPropsInstances] = React.useState<string[]>([]);
   const [isSortedByName, setSortedByName] = React.useState(false);
   const [isSortedByInstances, setSortedByInstances] = React.useState(false);
@@ -104,94 +106,96 @@ const AllRepositoriesComponent = ({ location }: PageRendererProps) => {
   if (!allData) return null;
 
   return (
-    <DocLayout location={location} path={location.pathname} title={upperFirst(title)}>
-      {isOpenModal && (
-        <Modal onClose={() => setOpenModal(false)}>
-          <ModalSection>
-            <ol
-              css={css`
-                list-style-type: decimal;
-                & > * {
-                  margin-bottom: 0.5rem;
-                }
-              `}
-            >
-              {propsInstances.map(instance => (
-                <li key={instance}>
-                  <TextLink key={instance} title={instance} href={instance}>
-                    {instance.split("/").slice(-4).join("/")}
-                  </TextLink>
-                </li>
-              ))}
-            </ol>
-          </ModalSection>
-        </Modal>
-      )}
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>
-              <Sort
-                isSorted={isSortedByName}
-                onClick={() => {
-                  if (isSortedByName) {
-                    setAllData(prev => sortBy(prev, ["name"]).reverse());
-                    setSortedByName(false);
-                  } else {
-                    setSortedByName(true);
-                    setAllData(prev => sortBy(prev, ["name"]));
+    isMounted() && (
+      <DocLayout location={location} path={location.pathname} title={upperFirst(title)}>
+        {isOpenModal && (
+          <Modal onClose={() => setOpenModal(false)}>
+            <ModalSection>
+              <ol
+                css={css`
+                  list-style-type: decimal;
+                  & > * {
+                    margin-bottom: 0.5rem;
                   }
-                }}
+                `}
               >
-                Property name
-              </Sort>
-            </TableCell>
-            <TableCell>
-              <Sort
-                isSorted={isSortedByInstances}
-                onClick={() => {
-                  if (isSortedByInstances) {
-                    setAllData(prev => sortBy(prev, ["used"]).reverse());
-                    setSortedByInstances(false);
-                  } else {
-                    setSortedByInstances(true);
-                    setAllData(prev => sortBy(prev, ["used"]));
-                  }
-                }}
-              >
-                Instances
-              </Sort>
-            </TableCell>
-            <TableCell>Properties</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {allData.map(({ name: propName, used, values }, idx) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <TableRow key={idx}>
-              <TableCell>{propName}</TableCell>
-              <TableCell>{used}</TableCell>
+                {propsInstances.map(instance => (
+                  <li key={instance}>
+                    <TextLink key={instance} title={instance} href={instance}>
+                      {instance.split("/").slice(-4).join("/")}
+                    </TextLink>
+                  </li>
+                ))}
+              </ol>
+            </ModalSection>
+          </Modal>
+        )}
+        <Table>
+          <TableHead>
+            <TableRow>
               <TableCell>
-                <Stack direction="column" spacing="XXSmall">
-                  {sortBy(values, ["used"])
-                    .reverse()
-                    .map(({ name: valueName, used: valueInstances }, id) => (
-                      <TextLink
-                        // eslint-disable-next-line react/no-array-index-key
-                        key={id}
-                        size="small"
-                        onClick={() => handleInstances(sources, propName, valueName)}
-                      >
-                        {valueName}: <b>{valueInstances}</b>
-                      </TextLink>
-                    ))}
-                </Stack>
+                <Sort
+                  isSorted={isSortedByName}
+                  onClick={() => {
+                    if (isSortedByName) {
+                      setAllData(prev => sortBy(prev, ["name"]).reverse());
+                      setSortedByName(false);
+                    } else {
+                      setSortedByName(true);
+                      setAllData(prev => sortBy(prev, ["name"]));
+                    }
+                  }}
+                >
+                  Property name
+                </Sort>
               </TableCell>
+              <TableCell>
+                <Sort
+                  isSorted={isSortedByInstances}
+                  onClick={() => {
+                    if (isSortedByInstances) {
+                      setAllData(prev => sortBy(prev, ["used"]).reverse());
+                      setSortedByInstances(false);
+                    } else {
+                      setSortedByInstances(true);
+                      setAllData(prev => sortBy(prev, ["used"]));
+                    }
+                  }}
+                >
+                  Instances
+                </Sort>
+              </TableCell>
+              <TableCell>Properties</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </DocLayout>
+          </TableHead>
+          <TableBody>
+            {allData.map(({ name: propName, used, values }, idx) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <TableRow key={idx}>
+                <TableCell>{propName}</TableCell>
+                <TableCell>{used}</TableCell>
+                <TableCell>
+                  <Stack direction="column" spacing="XXSmall">
+                    {sortBy(values, ["used"])
+                      .reverse()
+                      .map(({ name: valueName, used: valueInstances }, id) => (
+                        <TextLink
+                          // eslint-disable-next-line react/no-array-index-key
+                          key={id}
+                          size="small"
+                          onClick={() => handleInstances(sources, propName, valueName)}
+                        >
+                          {valueName}: <b>{valueInstances}</b>
+                        </TextLink>
+                      ))}
+                  </Stack>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </DocLayout>
+    )
   );
 };
 

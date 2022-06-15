@@ -9,6 +9,7 @@ import Members from "./components/Members";
 import ComponentList from "./components/ComponentList";
 import UsageByCategory from "./components/UsageByCategory";
 import { SchemeTrackingNode } from "./interfaces";
+import useIsMounted from "../../hooks/useIsMounted";
 
 export default function Tracking({ location }: PageRendererProps) {
   const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
@@ -62,6 +63,7 @@ export default function Tracking({ location }: PageRendererProps) {
     }
   `);
 
+  const isMounted = useIsMounted();
   const { pathname } = location;
   const pageName = pathname.split("/").filter(Boolean).slice(-1)[0];
 
@@ -81,20 +83,22 @@ export default function Tracking({ location }: PageRendererProps) {
     }));
 
   return (
-    <DocLayout location={location} path={location.pathname} title={upperFirst(pageName)}>
-      <Stack flex direction="column">
-        <TextLink href={url}>Gitlab repository</TextLink>
-        <Heading type="title3">Orbit version: {orbitVersion}</Heading>
-      </Stack>
+    isMounted() && (
+      <DocLayout location={location} path={location.pathname} title={upperFirst(pageName)}>
+        <Stack flex direction="column">
+          <TextLink href={url}>Gitlab repository</TextLink>
+          <Heading type="title3">Orbit version: {orbitVersion}</Heading>
+        </Stack>
 
-      <Stack inline spacing="XSmall">
-        <Text>Last commit:</Text>
-        <TextLink href={lastCommit.webUrl}>{lastCommit.title}</TextLink>
-      </Stack>
+        <Stack inline spacing="XSmall">
+          <Text>Last commit:</Text>
+          <TextLink href={lastCommit.webUrl}>{lastCommit.title}</TextLink>
+        </Stack>
 
-      <Members members={members} />
-      <ComponentList components={components} />
-      <UsageByCategory components={components} />
-    </DocLayout>
+        <Members members={members} />
+        <ComponentList components={components} />
+        <UsageByCategory components={components} />
+      </DocLayout>
+    )
   );
 }

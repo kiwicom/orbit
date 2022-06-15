@@ -1,6 +1,7 @@
 import React from "react";
 import { PageRendererProps, graphql, useStaticQuery } from "gatsby";
 
+import useIsMounted from "../../hooks/useIsMounted";
 import ComponentsList from "./components/ComponentList";
 import DocLayout from "../DocLayout";
 import { SchemeTrackingNode } from "./interfaces";
@@ -23,6 +24,8 @@ const AllRepositories = ({ location }: PageRendererProps) => {
       }
     }
   `);
+
+  const isMounted = useIsMounted();
 
   const components = allTracking.nodes.reduce((acc, cur) => {
     cur.trackedData
@@ -50,14 +53,16 @@ const AllRepositories = ({ location }: PageRendererProps) => {
   }, []);
 
   return (
-    <DocLayout
-      location={location}
-      path="/dashboard/tracking/allrepositories/"
-      title="All Repositories"
-      noElevation
-    >
-      <ComponentsList components={Object.values(components)} />
-    </DocLayout>
+    isMounted() && (
+      <DocLayout
+        location={location}
+        path="/dashboard/tracking/allrepositories/"
+        title="All Repositories"
+        noElevation
+      >
+        <ComponentsList components={Object.values(components)} />
+      </DocLayout>
+    )
   );
 };
 

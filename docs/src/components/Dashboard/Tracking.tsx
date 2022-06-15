@@ -6,10 +6,13 @@ import { sortBy, upperFirst } from "lodash";
 import DocLayout from "../DocLayout";
 import Tile from "../Tile";
 import useDevMode from "../../hooks/useDevMode";
+import useIsMounted from "../../hooks/useIsMounted";
 import { SchemeTrackingNode } from "./interfaces";
 
 const Tracking = ({ location }: PageRendererProps) => {
   const [devMode] = useDevMode();
+  const isMounted = useIsMounted();
+
   const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
     query TrackingPageQuery {
       allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
@@ -51,7 +54,7 @@ const Tracking = ({ location }: PageRendererProps) => {
     hasReactTab: false,
   });
 
-  return (
+  return isMounted() ? (
     <DocLayout location={location} path="dashboard/tracking" title="Tracking" noElevation>
       <Grid
         columns="1fr"
@@ -75,7 +78,7 @@ const Tracking = ({ location }: PageRendererProps) => {
         )}
       </Grid>
     </DocLayout>
-  );
+  ) : null;
 };
 
 export default Tracking;

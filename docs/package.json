@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
     "repl": "gatsby repl"

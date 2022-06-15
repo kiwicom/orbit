@@ -45,7 +45,7 @@
   ],
   "peerDependencies": {
     "@types/readable-stream": "2.3.13",
-    "zx": ">= 6.0.0"
+    "zx": ">= 7.0.0"
   },
   "devDependencies": {
     "@types/dotenv-safe": "^8.1.2",
@@ -61,6 +61,6 @@
     "filedirname": "^2.7.0",
     "react-scanner-orbit": "^2.0.0",
     "sade": "^1.8.1",
-    "zx": "^6.2.3"
+    "zx": "^7.0.0"
   }
 }

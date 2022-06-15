@@ -33,7 +33,7 @@ module.exports = {
           "packages/*/.storybook/**",
           "**/config/**",
           "**/scripts/**",
-          "gulpfile.js",
+          "publish.mjs",
           "**/.remarkrc.js",
           "**/.size-limit.js",
         ],

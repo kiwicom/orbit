@@ -5,6 +5,7 @@ import { getPackages } from "@lerna/project";
 import { obj as transform } from "through2";
 import mergeStreams from "merge-stream";
 import markdownChalk from "markdown-chalk";
+import slackify from "slackify-markdown";
 
 const SLACK_API = `https://skypicker.slack.com/api/chat.postMessage`;
 const TITLE = `New orbit release 🚀`;
@@ -25,7 +26,7 @@ function publishPackages() {
 
 function adjustChangelog(str) {
   const output = str
-    .replace("Bug fixes", "Bug Fixes 🐛")
+    .replace("Bug Fixes", "Bug Fixes 🐛")
     .replace("Features", "Features 🆕")
     .replace("BREAKING CHANGES", "BREAKING CHANGES 🚨");
   return output;
@@ -33,14 +34,15 @@ function adjustChangelog(str) {
 
 async function postSlackNotification(changelog) {
   try {
-    const req = await fetch(SLACK_API, {
+    $.verbose = false;
+    const res = await fetch(SLACK_API, {
       method: "POST",
       body: JSON.stringify({
         channel: CHANNEL,
         attachments: [
           {
             title: TITLE,
-            text: adjustChangelog(changelog),
+            text: slackify(adjustChangelog(changelog)),
             color: COLOR,
           },
         ],
@@ -52,7 +54,6 @@ async function postSlackNotification(changelog) {
       },
     });
 
-    const res = req.json();
     if (!res.ok) return res.error;
   } catch (err) {
     console.error(err);
@@ -100,7 +101,7 @@ async function previewChangelog() {
           if (changelog.trim().includes("\n")) {
             // eslint-disable-next-line no-console
             console.log(markdownChalk(changelog));
-            callback(null, markdownChalk(changelog));
+            callback(null, changelog);
           }
         }),
       );
@@ -120,8 +121,7 @@ async function previewChangelog() {
 (async () => {
   await configureGitHubToken();
   await installDependencies();
-  await previewChangelog()
-    .then(postSlackNotification)
-    .catch(err => console.error(err));
+  const changelog = await previewChangelog();
   await publishPackages();
+  await postSlackNotification(changelog);
 })();

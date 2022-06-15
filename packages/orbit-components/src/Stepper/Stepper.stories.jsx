@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, number, boolean, select } from "@storybook/addon-knobs";
+import { text, number, boolean } from "@storybook/addon-knobs";
 
 import StatelessStepper from "./StepperStateless";
 
@@ -41,15 +41,15 @@ export const Stateless = (): React.Node => {
   const disabledDecrement = boolean("Disabled Decrement", false);
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
-  const size = select("size", ["small", "normal"], "small");
+  const active = boolean("active", false);
 
   return (
     <StatelessStepper
       dataTest={dataTest}
       value={value}
+      active={active}
       name={name}
       maxValue={max}
-      size={size}
       minValue={min}
       disabled={disabled}
       disabledIncrement={disabledIncrement}
@@ -82,13 +82,13 @@ export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
-  const size = select("size", ["small", "normal"], "small");
+  const active = boolean("active", false);
 
   return (
     <Stepper
       defaultValue={defaultValue}
       step={step}
-      size={size}
+      active={active}
       name={name}
       maxValue={max}
       minValue={min}

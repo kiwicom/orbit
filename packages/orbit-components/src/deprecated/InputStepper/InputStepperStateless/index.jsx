@@ -3,12 +3,12 @@ import * as React from "react";
 import styled from "styled-components";
 
 import { SIZE_OPTIONS } from "../../InputField/consts";
-import PlusCircle from "../../icons/PlusCircle";
-import MinusCircle from "../../icons/MinusCircle";
-import ButtonLink from "../../ButtonLink";
-import InputField, { Input, Prefix } from "../../InputField";
-import defaultTheme from "../../defaultTheme";
-import getSpacingToken from "../../common/getSpacingToken";
+import PlusCircle from "../../../icons/PlusCircle";
+import MinusCircle from "../../../icons/MinusCircle";
+import ButtonLink from "../../../ButtonLink";
+import InputField, { Input, Prefix } from "../../../InputField";
+import defaultTheme from "../../../defaultTheme";
+import getSpacingToken from "../../../common/getSpacingToken";
 
 import type { StateLessProps } from ".";
 

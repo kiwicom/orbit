@@ -2,29 +2,81 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import Button from "../../Button";
+import mq from "../../utils/mediaQuery";
 import Minus from "../../icons/Minus";
 import Plus from "../../icons/Plus";
 import defaultTheme from "../../defaultTheme";
+import Button from "../../primitives/ButtonPrimitive";
+import useTheme from "../../hooks/useTheme";
 
 import type { StateLessProps } from ".";
+
+const getMaxWidth = ({ maxWidth }) => {
+  if (typeof maxWidth === "string") return maxWidth;
+  return `${parseInt(maxWidth, 10)}px`;
+};
 
 const StyledStepper = styled.div`
   display: flex;
   width: 100%;
+  max-width: ${getMaxWidth};
   flex: 1 1 auto;
 `;
 
+const iconMixin = css`
+  ${({ theme, isActive, isDisabled }) => css`
+    padding: 2px;
+    opacity: ${isDisabled ? ".3" : "1"};
+    background: ${isActive ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudDark};
+    border-radius: ${theme.orbit.borderRadiusCircle};
+    ${mq.desktop(css`
+      height: 20px;
+      width: 20px;
+    `)};
+
+    ${!isDisabled &&
+    css`
+      &:hover {
+        background: ${isActive
+          ? theme.orbit.paletteBlueNormalHover
+          : theme.orbit.paletteCloudNormalHover};
+      }
+
+      &:focus,
+      &:active {
+        box-shadow: 0 0 0 2px
+          ${isActive ? theme.orbit.paletteBlueLightActive : theme.orbit.paletteCloudNormalActive};
+      }
+    `};
+  `}
+`;
+
+const StyledMinusIcon = styled(Minus)`
+  ${iconMixin};
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledMinusIcon.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledPlusIcon = styled(Plus)`
+  ${iconMixin};
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledPlusIcon.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledStepperInput = styled.input`
-  ${({ theme, size, disabled }) => css`
+  ${({ theme, disabled }) => css`
     width: 100%;
-    height: ${size === "small" ? "32px" : "44px"};
+    height: 44px;
     padding: 0;
     border: 0;
-    font-size: ${size === "small"
-      ? theme.orbit.fontSizeInputNormal
-      : theme.orbit.fontSizeTextLarge};
-    font-weight: ${theme.orbit.fontWeightBold};
+    font-size: ${theme.orbit.fontSizeTextLarge};
+    font-weight: ${theme.orbit.fontWeightMedium};
     color: ${theme.orbit.paletteInkNormal};
     text-align: center;
     min-width: 0;
@@ -49,11 +101,12 @@ StyledStepperInput.defaultProps = {
 };
 
 const StepperStateless = ({
+  maxWidth = "120px",
   disabled,
   dataTest,
   value,
+  active,
   name,
-  size = "small",
   minValue,
   maxValue,
   onKeyDown,
@@ -66,27 +119,40 @@ const StepperStateless = ({
   disabledIncrement,
   disabledDecrement,
 }: StateLessProps): React.Node => {
+  const theme = useTheme();
+
+  const commonButtonStyles = {
+    background: "transparent",
+    width: "44px",
+  };
+
+  const iconStyles = {
+    foreground: active ? theme.orbit.paletteWhite : theme.orbit.paletteInkNormal,
+  };
+
+  const isMinusDisabled =
+    disabled || disabledDecrement || (typeof value === "number" && value <= +minValue);
+  const isPlusDisabled =
+    disabled || disabledIncrement || (typeof value === "number" && value >= +maxValue);
+
   return (
-    <StyledStepper data-test={dataTest}>
+    <StyledStepper data-test={dataTest} maxWidth={maxWidth}>
       <Button
-        disabled={
-          disabled || disabledDecrement || (typeof value === "number" && value <= +minValue)
-        }
-        iconLeft={<Minus />}
-        type="secondary"
-        size={size}
+        disabled={isMinusDisabled}
+        iconLeft={<StyledMinusIcon size="small" isActive={active} isDisabled={isMinusDisabled} />}
         onClick={ev => {
           if (onDecrement && !disabled) {
             onDecrement(ev);
           }
         }}
         title={titleDecrement}
+        icons={iconStyles}
+        {...commonButtonStyles}
       />
       <StyledStepperInput
         name={name}
         disabled={disabled}
         type="text"
-        size={size}
         value={value || 0}
         min={minValue}
         max={maxValue}
@@ -100,18 +166,16 @@ const StepperStateless = ({
         readOnly
       />
       <Button
-        disabled={
-          disabled || disabledIncrement || (typeof value === "number" && value >= +maxValue)
-        }
-        iconLeft={<Plus />}
-        size={size}
-        type="secondary"
+        disabled={isPlusDisabled}
+        iconLeft={<StyledPlusIcon size="small" isActive={active} isDisabled={isPlusDisabled} />}
         onClick={ev => {
           if (onIncrement && !disabled) {
             onIncrement(ev);
           }
         }}
         title={titleIncrement}
+        icons={iconStyles}
+        {...commonButtonStyles}
       />
     </StyledStepper>
   );

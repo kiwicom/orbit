@@ -30,7 +30,7 @@ export { Hide } from "./Hide";
 export { HorizontalScroll } from "./HorizontalScroll";
 export { InputField } from "./InputField";
 export { InputGroup } from "./InputGroup";
-export { InputStepper, InputStepperStateless } from "./InputStepper";
+export { InputStepper, InputStepperStateless } from "./deprecated/InputStepper";
 export { Illustration } from "./Illustration";
 export { List, ListItem } from "./List";
 export { ListChoice } from "./ListChoice";

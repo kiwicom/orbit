@@ -29,6 +29,7 @@ const pathOverwrites = {
   Icons: "icons",
   IllustrationPrimitive: "primitives/IllustrationPrimitive",
   InputStepperStateless: "deprecated/InputStepper/InputStepperStateless",
+  InputStepper: "deprecated/InputStepper",
   ItinerarySegment: "Itinerary/ItinerarySegment",
   ItineraryStatus: "Itinerary/ItineraryStatus",
   ItineraryBadgeList: "Itinerary/ItineraryBadgeList",

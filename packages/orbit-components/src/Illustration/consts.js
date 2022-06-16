@@ -1,6 +1,7 @@
 // @flow
 
 export const NAMES = [
+  "AppKiwi",
   "Accommodation",
   "AirHelp",
   "AirportShuttle",

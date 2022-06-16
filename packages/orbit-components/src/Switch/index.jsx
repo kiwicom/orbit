@@ -12,11 +12,6 @@ const StyledSwitch = styled.label`
   display: inline-block;
 `;
 
-const StyledCircle = styled(Circle)`
-  height: 8px !important;
-  width: 8px !important;
-`;
-
 const StyledSwitchBase = styled.div`
   ${({ theme, checked, disabled }) => css`
     display: flex;
@@ -58,8 +53,8 @@ const StyledSwitchButton = styled.div`
     }
 
     svg {
-      height: ${theme.orbit.heightIconSmall};
-      width: ${theme.orbit.heightIconSmall};
+      height: 12px;
+      width: 12px;
       color: ${hasCustomIcon ? theme.orbit.paletteInkLight : theme.orbit.paletteCloudDarker};
     }
 
@@ -128,7 +123,7 @@ const Switch: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRe
           data-test={dataTest}
         />
         <StyledSwitchButton checked={checked} disabled={disabled} hasCustomIcon={!!icon}>
-          {icon || <StyledCircle />}
+          {icon || <Circle />}
         </StyledSwitchButton>
       </StyledSwitchBase>
     </StyledSwitch>

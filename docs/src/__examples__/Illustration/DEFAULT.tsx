@@ -11,6 +11,7 @@ export default {
           name: "name",
           type: "select",
           options: [
+            "AppKiwi",
             "Accommodation",
             "AirHelp",
             "AirportTransport",

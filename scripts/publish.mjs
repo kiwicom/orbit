@@ -13,14 +13,22 @@ const CHANNEL = `orbit-react`;
 const COLOR = `#00A58E`;
 
 function installDependencies() {
-  return $.spawn("yarn", ["install"], { stdio: "inherit" });
+  return new Promise((resolve, reject) =>
+    $.spawn("yarn", ["install"], { stdio: "inherit" })
+      .on("close", c => resolve(c))
+      .on("error", err => reject(err)),
+  );
 }
 
 function publishPackages() {
-  return $.spawn(
-    "yarn",
-    ["lerna", "publish", "--no-private", "--conventional-commits", "--create-release", "github"],
-    { stdio: "inherit" },
+  return new Promise((resolve, reject) =>
+    $.spawn(
+      "yarn",
+      ["lerna", "publish", "--no-private", "--conventional-commits", "--create-release", "github"],
+      { stdio: "inherit" },
+    )
+      .on("close", c => resolve(c))
+      .on("error", err => reject(err)),
   );
 }
 
@@ -53,7 +61,6 @@ async function postSlackNotification(changelog) {
         Accept: "application/json",
       },
     });
-
     if (!res.ok) return res.error;
   } catch (err) {
     console.error(err);
@@ -91,17 +98,19 @@ async function previewChangelog() {
           host: "https://github.com",
           owner: "kiwicom",
           repository: "orbit",
+          linkCompare: false,
+          version: pkg.version,
         },
         {
           path: path.join("packages", pkg.name.replace("@kiwicom/", "")),
         },
       ).pipe(
-        transform((chunk, _, callback) => {
+        transform((chunk, _, cb) => {
           const changelog = chunk.toString();
           if (changelog.trim().includes("\n")) {
             // eslint-disable-next-line no-console
             console.log(markdownChalk(changelog));
-            callback(null, changelog);
+            cb(null, changelog);
           }
         }),
       );

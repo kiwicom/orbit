@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.27](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.26...@kiwicom/babel-plugin-orbit-components@3.4.27) (2022-06-20)
+
+
+### Bug Fixes
+
+* add deprecated InputStepper to babel-plugin ([8108a4a](https://github.com/kiwicom/orbit/commit/8108a4a4ce2a7f5426c9dd21f5bd0e3269f4c578))
+
+
+
+
+
 ## [3.4.26](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.25...@kiwicom/babel-plugin-orbit-components@3.4.26) (2022-06-07)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

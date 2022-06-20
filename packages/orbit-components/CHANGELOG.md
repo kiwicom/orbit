@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.22.2...@kiwicom/orbit-components@3.0.0) (2022-06-20)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** contentAlign prop fix ([#3405](https://github.com/kiwicom/orbit/issues/3405)) ([936f860](https://github.com/kiwicom/orbit/commit/936f860f820d585037690345bdbc6866840fa5c7))
+* **Stepper:** fix Stepper width on responsive ([#3418](https://github.com/kiwicom/orbit/issues/3418)) ([eb1b663](https://github.com/kiwicom/orbit/commit/eb1b6637b94927de3dcd339beb0875c9b4e555ac))
+* **Switch:** make circle icon to be 8px ([#3415](https://github.com/kiwicom/orbit/issues/3415)) ([a0ed184](https://github.com/kiwicom/orbit/commit/a0ed18496349254fa258076319f5351c19b3cb82))
+* **useLockScroll:** add webkit-scrollbar to prevent layout shift ([#3408](https://github.com/kiwicom/orbit/issues/3408)) ([c9ff813](https://github.com/kiwicom/orbit/commit/c9ff813412dd5ea45bdfa39b0a6951bad3bea906))
+
+
+### Features
+
+* **components:** stepper visual updates ([df86a44](https://github.com/kiwicom/orbit/commit/df86a448afa5a4f98a6dd4bf5da32ff6d06c5074))
+* **deprecate:** deprecate InputStepper component ([f6d2da9](https://github.com/kiwicom/orbit/commit/f6d2da9ad5f394d7fcc21d2594a07f2cd478bf87))
+* **icons:** update icons from figma ([32c0f24](https://github.com/kiwicom/orbit/commit/32c0f2482babb1d69a3c5f74f07396b136f07f38))
+* **illustration:** add AppKiwi illustration ([#3416](https://github.com/kiwicom/orbit/issues/3416)) ([6be7363](https://github.com/kiwicom/orbit/commit/6be7363c2212ae55611669b2d0b9ca3379533124))
+* **Stepper:** remove size prop ([49f31ce](https://github.com/kiwicom/orbit/commit/49f31cec3628f60d40e22fdf94955d31952fd394))
+
+
+### BREAKING CHANGES
+
+* **Stepper:** size prop was removed
+
+
+
+
+
 ## [2.22.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.22.1...@kiwicom/orbit-components@2.22.2) (2022-06-07)
 
 

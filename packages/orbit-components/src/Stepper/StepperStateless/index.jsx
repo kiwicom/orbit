@@ -16,6 +16,15 @@ const getMaxWidth = ({ maxWidth }) => {
   return `${parseInt(maxWidth, 10)}px`;
 };
 
+const getOpacity = ({ isDisabled, isActive }) => {
+  if (isDisabled) {
+    if (isActive) return "0.3";
+    return "0.5";
+  }
+
+  return "1";
+};
+
 const StyledStepper = styled.div`
   display: flex;
   width: 100%;
@@ -26,12 +35,14 @@ const StyledStepper = styled.div`
 const iconMixin = css`
   ${({ theme, isActive, isDisabled }) => css`
     padding: 2px;
-    opacity: ${isDisabled ? ".3" : "1"};
+    height: 20px;
+    width: 20px;
+    opacity: ${getOpacity};
     background: ${isActive ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudDark};
     border-radius: ${theme.orbit.borderRadiusCircle};
     ${mq.desktop(css`
-      height: 20px;
-      width: 20px;
+      height: 16px;
+      width: 16px;
     `)};
 
     ${!isDisabled &&

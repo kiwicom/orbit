@@ -30,18 +30,6 @@ if (typeof window !== "undefined") {
   window.removeEventListener("testPassive", null, passiveTestOptions);
 }
 
-function hideScrollbar() {
-  const style = document.createElement("style");
-  style.setAttribute("id", "lockScrolling-style");
-  style.innerHTML = `body::-webkit-scrollbar {display: none;}`;
-  document.head?.appendChild(style);
-}
-
-function unhideScrollbar() {
-  const el = document.getElementById("lockScrolling-style");
-  el?.remove();
-}
-
 const isIosDevice =
   typeof window !== "undefined" &&
   window.navigator &&
@@ -99,9 +87,6 @@ const setOverflowHidden = (options?: BodyScrollOptions) => {
   if (previousBodyOverflowSetting === undefined && document.body) {
     previousBodyOverflowSetting = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    // $FlowFixMe
-    document.body.style["scrollbar-gutter"] = "stable";
-    hideScrollbar();
   }
 };
 
@@ -283,8 +268,6 @@ export const clearAllBodyScrollLocks = (): void => {
     restoreOverflowSetting();
   }
 
-  unhideScrollbar();
-
   locks = [];
 };
 
@@ -304,8 +287,6 @@ export const enableBodyScroll = (targetElement: any): void => {
       documentListenerAdded = false;
     }
   }
-
-  unhideScrollbar();
 
   if (locks.length === 0) {
     if (isIosDevice) {

@@ -130,7 +130,7 @@ async function previewChangelog() {
 (async () => {
   await configureGitHubToken();
   await installDependencies();
-  const changelog = await previewChangelog();
   await publishPackages();
+  const changelog = await previewChangelog();
   await postSlackNotification(changelog);
 })();

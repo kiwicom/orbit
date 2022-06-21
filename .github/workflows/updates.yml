@@ -26,13 +26,13 @@ jobs:
         run: |
           yarn check:statuses
           git add --all
-          git commit -m "chore: update component statuses"
+          git diff-index --quiet HEAD || git commit -m "chore: update component statuses"
 
       - name: Update svgs
         run: |
           yarn components fetch:icons
           git add --all
-          git commit -m "feat(icons): update icons from figma"
+          git diff-index --quiet HEAD || git commit -m "feat(icons): update icons from figma"
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 

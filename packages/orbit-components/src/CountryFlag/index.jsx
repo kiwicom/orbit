@@ -85,7 +85,7 @@ function getCountryProps(code?: string, name?: string): {| code: string, name?: 
   return { code: countryCode, name: countryName };
 }
 
-const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, ...props }: Props): React.Node => {
+const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props): React.Node => {
   const { code, name } = getCountryProps(props.code, props.name);
   return (
     <StyledCountryFlag size={size}>
@@ -94,6 +94,7 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, ...props }: Props): React.
         alt={name}
         title={name}
         code={code}
+        id={id}
         data-test={dataTest}
         size={size}
       />

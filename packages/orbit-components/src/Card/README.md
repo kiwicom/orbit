@@ -23,6 +23,7 @@ Table below contains all types of the props available in the Card component.
 | actions     | `React.Node`            |         | Optional prop for Action components in header of Card                                                                                                          |
 | children    | `React.Node`            |         | The content of the Card. You can use only [CardSection](#cardsection)                                                                                          |
 | dataTest    | `string`                |         | Optional prop for testing purposes                                                                                                                             |
+| id          | `string`                |         | Set `id` for `Card`                                                                                                                                            |
 | description | `React.Node`            |         | The description of the Card                                                                                                                                    |
 | header      | `React.Node`            |         | The header of the Card. Useful when you need different layout then combination of eg `title` and `description`                                                 |
 | icon        | `React.Node`            |         | Display icon on the left                                                                                                                                       |

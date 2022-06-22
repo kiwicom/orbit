@@ -20,6 +20,7 @@ Table below contains all types of the props available in RatingStars component.
 | :--------- | :-------------- | :---------- | :---------------------------------- |
 | color      | [`enum`](#enum) | `"primary"` | The color of stars.                 |
 | dataTest   | `string`        |             | Optional prop for testing purposes. |
+| id         | `string`        |             | Set `id` for `RatingStars`          |
 | size       | [`enum`](#enum) | `"small"`   | The size of stars.                  |
 | showEmpty  | `boolean`       | `false`     | Show empty stars.                   |
 | **rating** | `number`        |             | The rating number to display.       |

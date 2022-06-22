@@ -21,7 +21,7 @@ WrapperStyled.defaultProps = {
   theme: themeDefault,
 };
 
-const Timeline = ({ children, spaceAfter, direction, dataTest }: Props): null | React.Node => {
+const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props): null | React.Node => {
   const childrenArr = React.Children.toArray(children);
   const { isDesktop } = useMediaQuery();
 
@@ -31,7 +31,7 @@ const Timeline = ({ children, spaceAfter, direction, dataTest }: Props): null | 
   };
 
   return childrenArr && childrenArr.length > 0 ? (
-    <WrapperStyled spaceAfter={spaceAfter} data-test={dataTest}>
+    <WrapperStyled spaceAfter={spaceAfter} data-test={dataTest} id={id}>
       <Stack flex shrink direction={getDirection()}>
         <TimelineStatusProvider direction={direction}>
           {React.Children.map(childrenArr, (child, i) => {

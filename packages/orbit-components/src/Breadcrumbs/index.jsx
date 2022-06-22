@@ -53,11 +53,17 @@ const Breadcrumbs = (props: Props): React.Node => {
     goBackTitle = translate("breadcrumbs_back"),
     spaceAfter,
     backHref,
+    id,
   } = props;
   return (
     <>
       <Hide on={["smallMobile", "mediumMobile"]}>
-        <StyledBreadcrumbs aria-label="Breadcrumb" data-test={dataTest} spaceAfter={spaceAfter}>
+        <StyledBreadcrumbs
+          aria-label="Breadcrumb"
+          id={id}
+          data-test={dataTest}
+          spaceAfter={spaceAfter}
+        >
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
             {React.Children.map(children, (item, key) => {
               if (React.isValidElement(item)) {
@@ -76,6 +82,7 @@ const Breadcrumbs = (props: Props): React.Node => {
           <TextLink
             standAlone
             type="secondary"
+            id={id}
             iconLeft={<ChevronLeft reverseOnRtl />}
             dataTest="BreadcrumbsBack"
             onClick={onGoBack}

@@ -27,3 +27,4 @@ Table below contains all types of the props available in ButtonLink component.
 | children | `React.Node` |         | The content of the FloatingCard.    |
 | offset   | `number`     | `10`    | Sets offset from top during scroll  |
 | dataTest | `string`     |         | Optional prop for testing purposes. |
+| id       | `string`     |         | Set `id` for `Sticky`               |

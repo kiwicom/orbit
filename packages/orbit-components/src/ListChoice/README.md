@@ -19,6 +19,7 @@ Table below contains all types of the props available in the ListChoice componen
 | Name        | Type                       | Default | Description                                                                                                                                     |
 | :---------- | :------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
 | dataTest    | `string`                   |         | Optional prop for testing purposes.                                                                                                             |
+| id          | `string`                   |         | Set `id` for `ListChoice`                                                                                                                       |
 | description | `Translation`              |         | The additional info about the ListChoice.                                                                                                       |
 | disabled    | `boolean`                  | `false` | If `true`, the ListChoice won't perform any `onClick` action and if `selectable` is set to `true`, the check box glyph will use disabled state. |
 | icon        | `React.Node`               |         | The icon on the left of the ListChoice.                                                                                                         |

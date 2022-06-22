@@ -22,6 +22,7 @@ Table below contains all types of the props available in TextLink component.
 | asComponent     | `string \| () => React.Element` | `"a"`       | The component used for the root node. Either a string to use a DOM element or a component.                                   |
 | children        | `React.Node`                    |             | The content of the TextLink.                                                                                                 |
 | dataTest        | `string`                        |             | Optional prop for testing purposes.                                                                                          |
+| id              | `string`                        |             | Set `id` for `TextLink`                                                                                                      |
 | external        | `boolean`                       | `false`     | If `true`, the TextLink opens link in a new tab.                                                                             |
 | href            | `string`                        |             | The URL to link when the TextLink is clicked.                                                                                |
 | iconLeft        | `React.Node`                    |             | The displayed icon.                                                                                                          |

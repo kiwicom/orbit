@@ -22,6 +22,7 @@ Table below contains all types of the props available in the Collapse component.
 | :-------------- | :---------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------- |
 | actions         | `React.Node`                        |         | Actions which will be render next to arrow.                                                                                                |
 | **children**    | `React.Node`                        |         | The children that should be collapsed.                                                                                                     |
+| id              | `string`                            |         | Set `id` for `Collapse`                                                                                                                    |
 | dataTest        | `string`                            |         | Optional prop for testing purposes.                                                                                                        |
 | expanded        | `boolean`                           |         | If you pass either `true` or `false` the Collapse component will controlled component and you will have to manage the state via `onClick`. |
 | initialExpanded | `boolean`                           | `false` | If `true` the Collapse component will be expanded on the initial render.                                                                   |

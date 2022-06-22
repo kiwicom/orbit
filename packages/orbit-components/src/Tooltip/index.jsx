@@ -15,6 +15,7 @@ const Tooltip = ({
   dataTest,
   size = SIZE_OPTIONS.SMALL,
   content,
+  id,
   placement,
   lockScrolling,
   renderInPortal = true,
@@ -26,6 +27,7 @@ const Tooltip = ({
   return isLargeMobile ? (
     <TooltipPrimitive
       dataTest={dataTest}
+      id={id}
       tabIndex={tabIndex}
       enabled={enabled}
       content={content}
@@ -42,6 +44,7 @@ const Tooltip = ({
     <MobileDialog
       dataTest={dataTest}
       tabIndex={tabIndex}
+      id={id}
       enabled={enabled}
       lockScrolling={lockScrolling}
       content={content}

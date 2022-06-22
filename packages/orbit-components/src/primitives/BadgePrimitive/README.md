@@ -23,6 +23,7 @@ Table below contains all types of the props available in BadgePrimitive componen
 | foregroundColor | `string`                |         | Foreground color, controling color of a text and icon.               |
 | children        | `React.Node`            |         | The content of the BadgePrimitive.                                   |
 | dataTest        | `string`                |         | Optional prop for testing purposes.                                  |
+| id              | `string`                |         | Set `id` for `BadgePrimitive`                                        |
 | icon            | `React.Node`            |         | The displayed icon on the left.                                      |
 | ariaLabel       | `string`                |         | Adds prop adds `aria-label` to an element, useful for screenreaders. |
 | **carriers**    | [`Carrier[]`](#carrier) |         | The content of the CarrierLogo, passed as array of objects.          |

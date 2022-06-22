@@ -145,6 +145,7 @@ const Drawer = ({
   width = "320px",
   position = POSITIONS.RIGHT,
   dataTest,
+  id,
   noPadding,
   suppressed,
   title,
@@ -203,6 +204,7 @@ const Drawer = ({
       shown={shown}
       onClick={handleOnClose}
       data-test={dataTest}
+      id={id}
       aria-hidden={!shown}
       ref={overlayRef}
     >

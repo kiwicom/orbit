@@ -215,6 +215,7 @@ const Checkbox: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<P
       name,
       onChange,
       dataTest,
+      id,
       info,
       readOnly,
       tabIndex,
@@ -228,6 +229,7 @@ const Checkbox: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<P
       <Label disabled={disabled} hasError={hasError} checked={checked}>
         <Input
           data-test={dataTest}
+          id={id}
           data-state={getFieldDataState(!!hasError)}
           value={value}
           type="checkbox"

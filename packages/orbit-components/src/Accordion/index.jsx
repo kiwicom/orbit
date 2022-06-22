@@ -24,22 +24,23 @@ StyledAccordion.defaultProps = {
 const Accordion = ({
   children,
   dataTest,
+  id,
   spaceAfter,
   expandedSection,
   loading,
   onExpand,
 }: Props): React.Node => (
-  <StyledAccordion spaceAfter={spaceAfter} data-test={dataTest}>
+  <StyledAccordion spaceAfter={spaceAfter} id={id} data-test={dataTest}>
     {children
       ? React.Children.map(children, item => {
           if (!item) return null;
 
-          const { id } = item.props;
+          const { id: innerId } = item.props;
           // Determine if section is expanded
           const isExpanded = expandedSection === id;
           // Callback with section id
           // onExpand is not required prop to have easier loading use case
-          const handleExpand = () => onExpand && onExpand(id);
+          const handleExpand = () => onExpand && onExpand(innerId);
 
           return (
             <SectionProvider value={{ expanded: isExpanded, onExpand: handleExpand, loading }}>

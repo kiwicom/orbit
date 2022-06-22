@@ -22,6 +22,7 @@ Table below contains all types of the props available in Dialog component.
 | Name              | Type                    | Default | Description                                                                                                                           |
 | :---------------- | :---------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------ |
 | dataTest          | `string`                |         | Optional prop for testing purposes.                                                                                                   |
+| id                | `string`                |         | Set `id` for `Dialog`                                                                                                                 |
 | renderInPortal    | `boolean`               |         | Optional prop, set it to `false` if you're rendering Dialog inside a custom portal, defaults to `true`                                |
 | description       | `React.Node`            |         | Optional description of the main action that Dialog performs.                                                                         |
 | illustration      | `React.Node`            |         | Optional illustration of the Dialog.                                                                                                  |

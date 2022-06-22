@@ -5,6 +5,7 @@ import theme from "../../../defaultTheme";
 describe("#getSpacing", () => {
   it("should return spacings", () => {
     expect(getSpacing({ theme })).toEqual({
+      none: "unset",
       large: "24px",
       medium: "16px",
       small: "12px",

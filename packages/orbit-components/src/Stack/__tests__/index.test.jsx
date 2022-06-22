@@ -152,7 +152,7 @@ describe("Stack with every media query", () => {
     };
 
     render(
-      <Stack dataTest={dataTest} direction={DIRECTIONS.ROW} spacing={input[query]}>
+      <Stack flex dataTest={dataTest} direction={DIRECTIONS.ROW} spacing={input[query]}>
         <InputField type="password" label="Password" help="You need some help!" />
         <Button>Sign In</Button>
       </Stack>,

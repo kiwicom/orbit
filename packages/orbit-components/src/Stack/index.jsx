@@ -9,6 +9,7 @@ import { DEVICES } from "../utils/mediaQuery/consts";
 import { isDefined } from "../utils/layout";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
 import getGap from "./helpers/getGap";
+import shouldUseFlex from "./helpers/shouldUseFlex";
 
 import type { Props } from ".";
 
@@ -41,7 +42,6 @@ StyledStack.defaultProps = {
 
 const Stack = (props: Props): React.Node => {
   const {
-    flex = true,
     dataTest,
     inline = false,
     spacing = SPACINGS.MEDIUM,
@@ -61,7 +61,8 @@ const Stack = (props: Props): React.Node => {
     as = "div",
   } = props;
 
-  const direction = props.direction || (flex ? DIRECTIONS.ROW : DIRECTIONS.COLUMN);
+  const isFlex = shouldUseFlex(props);
+  const direction = props.direction || (isFlex ? DIRECTIONS.ROW : DIRECTIONS.COLUMN);
 
   const smallMobile = {
     direction,
@@ -79,7 +80,7 @@ const Stack = (props: Props): React.Node => {
   return (
     <StyledStack
       dataTest={dataTest}
-      flex={flex}
+      flex={isFlex}
       smallMobile={smallMobile}
       mediumMobile={mediumMobile}
       largeMobile={largeMobile}

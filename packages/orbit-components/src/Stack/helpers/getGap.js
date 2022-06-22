@@ -12,12 +12,14 @@ const getGap: GetGap = ({ viewport, index, devices }) => props => {
     const direction = getProperty("direction", { index, devices }, props);
     const gap = spacing && direction && getSpacing(props)[spacing];
 
-    return css`
-      gap: ${gap};
-    `;
+    if (props.flex) {
+      return css`
+        gap: ${gap};
+      `;
+    }
   }
 
-  return false;
+  return null;
 };
 
 export default getGap;

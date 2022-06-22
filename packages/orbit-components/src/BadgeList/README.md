@@ -22,8 +22,9 @@ Table below contains all types of the props available in BadgeList component.
 | :------- | :----------- | :------ | :---------------------------------- |
 | children | `React.Node` |         | The content of the BadgeList.       |
 | dataTest | `string`     |         | Optional prop for testing purposes. |
+| id       | `string`     |         | Set `id` for `BadgeList`            |
 
-# BadgeListItem
+### BadgeListItem
 
 | Name | Type | Default | Description |
 | children | `React.Node` | | The content of the BadgeListItem. |

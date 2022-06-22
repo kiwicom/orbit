@@ -27,6 +27,7 @@ export const StyledButtonPrimitive: any = styled(
     (
       {
         asComponent = "button",
+        id,
         dataTest,
         submit,
         disabled,
@@ -57,6 +58,7 @@ export const StyledButtonPrimitive: any = styled(
       return (
         <Component
           ref={ref}
+          id={id}
           data-test={dataTest}
           aria-controls={ariaControls}
           aria-current={ariaCurrent}
@@ -228,13 +230,7 @@ const ButtonPrimitive: React.AbstractComponent<Props, HTMLButtonElement> = React
   const onlyIcon = Boolean(iconLeft && !children);
 
   return (
-    <StyledButtonPrimitive
-      ref={ref}
-      onlyIcon={onlyIcon}
-      {...props}
-      disabled={isDisabled}
-      className={undefined}
-    >
+    <StyledButtonPrimitive ref={ref} onlyIcon={onlyIcon} {...props} disabled={isDisabled}>
       {loading && <Loading type="buttonLoader" />}
       <ButtonPrimitiveContent loading={loading} contentAlign={contentAlign}>
         {iconLeft && (

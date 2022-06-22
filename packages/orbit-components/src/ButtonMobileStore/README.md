@@ -20,6 +20,7 @@ Table below contains all types of the props available in the ButtonMobileStore c
 | :-------------- | :------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------- |
 | alt             | `string`                   |         | Optional property for passing own `alt` attribute to the DOM image element.                                     |
 | dataTest        | `string`                   |         | Optional prop for testing purposes.                                                                             |
+| id              | `string`                   |         | Set `id` for `ButtonMobileStore`                                                                                |
 | href            | `string`                   |         | The URL to link when the ButtonMobileStore is clicked.                                                          |
 | onClick         | `event => void \| Promise` |         | Function for handling onClick event.                                                                            |
 | stopPropagation | `boolean`                  |         | If `true` the click event won't bubble. Useful when you use ButtonMobileStore inside another clickable element. |

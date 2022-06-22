@@ -198,6 +198,7 @@ const Radio: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Prop
       name,
       info,
       readOnly,
+      id,
       tabIndex,
       dataTest,
       tooltip,
@@ -211,6 +212,7 @@ const Radio: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Prop
           type="radio"
           disabled={disabled}
           checked={checked}
+          id={id}
           onChange={onChange}
           name={name}
           tabIndex={tabIndex}

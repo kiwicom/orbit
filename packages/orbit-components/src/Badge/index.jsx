@@ -68,6 +68,7 @@ const Badge = ({
   children,
   ariaLabel,
   dataTest,
+  id,
   carriers,
 }: Props): React.Node => {
   const theme = useTheme();
@@ -79,6 +80,7 @@ const Badge = ({
       foregroundColor={getTypeToken({ name: TOKENS.color, theme, type })}
       borderColor={border ? getTypeToken({ name: TOKENS.border, theme, type }) : "transparent"}
       icon={icon}
+      id={id}
       ariaLabel={ariaLabel}
       dataTest={dataTest}
     >

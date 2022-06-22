@@ -31,6 +31,7 @@ const ButtonMobileStore = ({
   href,
   onClick,
   dataTest,
+  id,
   alt = "",
   stopPropagation = false,
 }: Props): React.Node => {
@@ -49,6 +50,7 @@ const ButtonMobileStore = ({
       rel="noopener"
       onClick={onClickHandler}
       data-test={dataTest}
+      id={id}
     >
       <img srcSet={getSrc(type, lang)} height={HEIGHT} alt={alt} />
     </StyledButtonMobileStore>

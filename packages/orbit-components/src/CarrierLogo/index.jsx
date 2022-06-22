@@ -94,9 +94,10 @@ const CarrierLogo = ({
   size = SIZE_OPTIONS.LARGE,
   carriers,
   dataTest,
+  id,
   rounded,
 }: Props): React.Node => (
-  <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest}>
+  <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest} id={id}>
     {carriers.slice(0, 4).map(carrierImage => (
       <StyledImage
         key={carrierImage.code}

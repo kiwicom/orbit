@@ -21,6 +21,7 @@ Table below contains all types of the props available in the Drawer component.
 | actions       | `React.Node`            |           | Actions - especially Buttons, that will be rendered on in the Drawer's header.                                                        |
 | **children**  | `React.Node`            |           | The content of the Drawer.                                                                                                            |
 | dataTest      | `string`                |           | Optional prop for testing purposes.                                                                                                   |
+| id            | `string`                |           | Set `id` for `Drawer`                                                                                                                 |
 | noPadding     | `boolean`               | `false`   | If `true` the wrapper won't have any inner padding.                                                                                   |
 | onClose       | `() => void \| Promise` |           | Function for handling onClose event.                                                                                                  |
 | position      | [`enum`](#enum)         | `"right"` | The position on which side the Drawer should appear.                                                                                  |

@@ -42,6 +42,7 @@ const ChoiceGroup: React.AbstractComponent<Props, HTMLDivElement> = React.forwar
   (
     {
       dataTest,
+      id,
       label,
       labelSize = LABEL_SIZES.NORMAL,
       labelAs = LABEL_ELEMENTS.H4,
@@ -70,7 +71,13 @@ const ChoiceGroup: React.AbstractComponent<Props, HTMLDivElement> = React.forwar
     };
 
     return (
-      <StyledChoiceGroup ref={ref} data-test={dataTest} role="group" aria-labelledby={groupID}>
+      <StyledChoiceGroup
+        ref={ref}
+        data-test={dataTest}
+        role="group"
+        aria-labelledby={groupID}
+        id={id}
+      >
         {label && (
           <Heading id={groupID} type={getHeadingSize(labelSize)} as={labelAs} spaceAfter="medium">
             {label}

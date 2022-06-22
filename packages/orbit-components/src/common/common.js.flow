@@ -5,6 +5,7 @@ import * as React from "react";
 
 export type Globals = {|
   +dataTest?: string,
+  +id?: string,
 |};
 
 export type DataAttrs = {|

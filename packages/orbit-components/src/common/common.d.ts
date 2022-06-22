@@ -34,6 +34,7 @@ export type Translations = {
 
 export interface Global {
   readonly dataTest?: string;
+  readonly id?: string;
 }
 
 export interface Ref {

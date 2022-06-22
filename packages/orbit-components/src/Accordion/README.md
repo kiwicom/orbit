@@ -23,6 +23,7 @@ After adding import into your project you can use it simply like:
 | loading         | `boolean`                                                                         |          |         | If true it will render the Loading component                                |
 | onExpand        | `(sectionId: string \| number) => void \| Promise<any>`                           |          |         | Callback (along with sectionId) that is triggered when section is expanding |
 | dataTest        | `string`                                                                          |          |         |                                                                             |
+| id              | `string`                                                                          |          |         | Set `id` for `Accordion`                                                    |
 | spaceAfter      | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |          |         |                                                                             |
 
 # AccordionSection

@@ -21,6 +21,7 @@ const Popover = ({
   opened,
   content,
   onClose,
+  id,
   onOpen,
   offset,
   placement = PLACEMENTS.BOTTOM_START,
@@ -134,6 +135,7 @@ const Popover = ({
   const popover = (
     <PopoverContent
       shown={shown}
+      id={id}
       dataTest={dataTest}
       overlapped={overlapped}
       fixed={fixed}

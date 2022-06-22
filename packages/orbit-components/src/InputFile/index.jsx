@@ -117,6 +117,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
     required,
     onRemoveFile,
     dataTest,
+    id,
     helpClosable = true,
     spaceAfter,
     width = "100%",
@@ -149,6 +150,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
     <Field spaceAfter={spaceAfter} ref={label ? null : labelRef} $width={width}>
       <Input
         data-test={dataTest}
+        id={id}
         aria-required={required}
         data-state={
           insideInputGroup && typeof error === "undefined"

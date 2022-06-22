@@ -2,13 +2,12 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { left, rtlSpacing } from "../utils/rtl";
+import { left } from "../utils/rtl";
 import mq from "../utils/mediaQuery";
 import { StyledTextLink } from "../TextLink";
 import defaultTheme from "../defaultTheme";
 import { SPACINGS } from "../utils/layout/consts";
 import getSpacing from "../Stack/helpers/getSpacing";
-import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
 
 import type { Props } from ".";
 
@@ -29,19 +28,9 @@ StyledLinkList.defaultProps = {
 };
 
 const resolveSpacings = ({ spacing, direction, ...props }) => {
-  const margin =
-    spacing &&
-    direction &&
-    String(getDirectionSpacingTemplate(direction)).replace(
-      "__spacing__",
-      getSpacing(props)[spacing],
-    );
-
+  const gap = getSpacing(props)[spacing];
   return css`
-    margin: ${margin && rtlSpacing(margin)};
-    &:last-child {
-      margin: 0;
-    }
+    gap: ${gap};
   `;
 };
 

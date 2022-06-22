@@ -21,6 +21,7 @@ Table below contains all types of the props available in the CallOutBanner compo
 | actions      | `React.Node`                         |         | Actions - especially Buttons of the CallOutBanner that will be rendered on the bottom. |
 | children     | `React.Node`                         |         | The children of the CallOutBanner.                                                     |
 | dataTest     | `string`                             |         | Optional prop for testing purposes.                                                    |
+| id           | `string`                             |         | Set `id` for `CallOutBanner`                                                           |
 | description  | `Translation`                        |         | The displayed description of the CallOutBanner.                                        |
 | illustration | `React.Element<typeof Illustration>` |         | The displayed Illustration of the CallOutBanner.                                       |
 | onClick      | `() => void \| Promise`              |         | Function for handling onClick callback. See [functional specs](#functional-specs).     |

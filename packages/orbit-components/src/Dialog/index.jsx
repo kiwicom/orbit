@@ -115,6 +115,7 @@ const IllustrationContainer = styled.div`
 
 const Dialog = ({
   dataTest,
+  id,
   title,
   description,
   primaryAction,
@@ -168,6 +169,7 @@ const Dialog = ({
     <StyledDialog
       ref={wrapperRef}
       data-test={dataTest}
+      id={id}
       shown={shown}
       onClick={handleClose}
       tabIndex="0"

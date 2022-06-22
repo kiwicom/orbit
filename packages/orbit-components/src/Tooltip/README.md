@@ -23,6 +23,7 @@ Table below contains all types of the props available in the Tooltip component.
 | **children**         | `React.Node`              |          | The reference element where the Tooltip will appear.                                                                                             |
 | **content**          | `React.Node`              |          | The content to display in the Tooltip.                                                                                                           |
 | dataTest             | `string`                  |          | Optional prop for testing purposes.                                                                                                              |
+| id                   | `string`                  |          | Set `id` for `Tooltip`                                                                                                                           |
 | enabled              | `boolean`                 | `true`   | Enable render of tooltip                                                                                                                         |
 | block                | `boolean`                 | `false`  | Whether the children wrapper is inline or block. Useful when children need to take up the entire container width.                                |
 | removeUnderlinedText | `boolean`                 |          | Removes underline on child component, when underline is not desired.                                                                             |

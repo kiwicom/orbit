@@ -5,7 +5,6 @@ import type { StyledComponent } from "styled-components";
 import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
-  +id?: string | number,
   +children?: React.Node,
   +actions?: React.Node,
   +expanded?: boolean,

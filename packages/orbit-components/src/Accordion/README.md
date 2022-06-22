@@ -26,7 +26,7 @@ After adding import into your project you can use it simply like:
 | id              | `string`                                                                          |          |         | Set `id` for `Accordion`                                                    |
 | spaceAfter      | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |          |         |                                                                             |
 
-# AccordionSection
+## AccordionSection
 
 ## Props
 

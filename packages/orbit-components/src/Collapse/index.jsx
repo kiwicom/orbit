@@ -82,6 +82,7 @@ const Collapse = ({
   label,
   children,
   dataTest,
+  id,
   onClick,
   actions,
 }: Props): React.Node => {
@@ -112,7 +113,7 @@ const Collapse = ({
   );
 
   return (
-    <StyledCollapse data-test={dataTest}>
+    <StyledCollapse data-test={dataTest} id={id}>
       <StyledCollapseLabel onClick={handleClick} role="button" id={labelID}>
         <Stack justify="between" align="center">
           {label && !customLabel && <Heading type="title4">{label}</Heading>}

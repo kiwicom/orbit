@@ -43,6 +43,7 @@ Table below contains all types of the props available in the Table component.
 | **children** | `React.Node`    |             | The content of the Table, normally [`TableHead`](#tablehead) or [`TableHead`](#TableHead). |
 | compact      | `boolean`       | `false`     | If `true`, the Table will have more compact styles.                                        |
 | dataTest     | `string`        |             | Optional prop for testing purposes.                                                        |
+| id           | `string`        |             | Set `id` for `Table`                                                                       |
 | striped      | `boolean`       | `true`      | Functionality of table where every second line is grey                                     |
 | type         | [`enum`](#enum) | `"primary"` | The type of Table.                                                                         |
 

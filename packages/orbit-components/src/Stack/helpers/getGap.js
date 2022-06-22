@@ -2,16 +2,15 @@
 import { css } from "styled-components";
 
 import getSpacing from "./getSpacing";
-import { SPACINGS } from "../../utils/layout/consts";
 import getProperty from "./getProperty";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import type { GetGap } from "./getGap";
 
-const getChildrenMargin: GetGap = ({ viewport, index, devices }) => props => {
+const getGap: GetGap = ({ viewport, index, devices }) => props => {
   if (props[viewport] || viewport === QUERIES.DESKTOP) {
     const spacing = getProperty("spacing", { index, devices }, props);
-    if (spacing === SPACINGS.NONE) return false;
-    const gap = spacing && getSpacing(props)[spacing];
+    const direction = getProperty("direction", { index, devices }, props);
+    const gap = spacing && direction && getSpacing(props)[spacing];
 
     return css`
       gap: ${gap};
@@ -21,4 +20,4 @@ const getChildrenMargin: GetGap = ({ viewport, index, devices }) => props => {
   return false;
 };
 
-export default getChildrenMargin;
+export default getGap;

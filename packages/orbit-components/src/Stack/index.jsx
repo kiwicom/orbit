@@ -61,7 +61,7 @@ const Stack = (props: Props): React.Node => {
     as = "div",
   } = props;
 
-  const direction = props.direction || DIRECTIONS.ROW;
+  const direction = props.direction || (flex ? DIRECTIONS.ROW : DIRECTIONS.COLUMN);
 
   const smallMobile = {
     direction,

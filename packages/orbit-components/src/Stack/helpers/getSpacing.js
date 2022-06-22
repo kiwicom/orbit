@@ -3,6 +3,7 @@ import { SPACINGS } from "../../utils/layout/consts";
 import type { GetSpacing } from "./getSpacing";
 
 const getSpacing: GetSpacing = ({ theme }) => ({
+  none: "unset",
   [SPACINGS.XXXSMALL]: theme.orbit.spaceXXXSmall,
   [SPACINGS.XXSMALL]: theme.orbit.spaceXXSmall,
   [SPACINGS.XSMALL]: theme.orbit.spaceXSmall,

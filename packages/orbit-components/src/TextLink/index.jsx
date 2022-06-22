@@ -151,6 +151,7 @@ const TextLink = ({
   iconRight,
   onClick,
   dataTest,
+  id,
   tabIndex,
   asComponent = DefaultComponent,
   stopPropagation = false,
@@ -168,6 +169,7 @@ const TextLink = ({
   return (
     <StyledTextLink
       aria-current={ariaCurrent}
+      id={id}
       type={type}
       size={size}
       href={href}

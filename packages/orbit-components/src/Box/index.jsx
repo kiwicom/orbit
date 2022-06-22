@@ -9,8 +9,8 @@ import normalize from "./normalize";
 
 import type { Props } from ".";
 
-const StyledBox = styled(({ className, asComponent: Element, children, dataTest }) => (
-  <Element className={className} data-test={dataTest}>
+const StyledBox = styled(({ className, asComponent: Element, children, dataTest, id }) => (
+  <Element className={className} data-test={dataTest} id={id}>
     {children}
   </Element>
 ))`
@@ -35,6 +35,7 @@ StyledBox.defaultProps = {
 
 const Box = ({
   as = "div",
+  id,
   mediumMobile,
   largeMobile,
   tablet,
@@ -48,7 +49,13 @@ const Box = ({
   const viewports = { smallMobile, mediumMobile, largeMobile, tablet, desktop, largeDesktop };
 
   return (
-    <StyledBox asComponent={as} dataTest={dataTest} className={className} viewports={viewports}>
+    <StyledBox
+      asComponent={as}
+      id={id}
+      dataTest={dataTest}
+      className={className}
+      viewports={viewports}
+    >
       {children}
     </StyledBox>
   );

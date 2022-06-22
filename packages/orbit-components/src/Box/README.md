@@ -22,6 +22,7 @@ Table below contains all types of the props available in the Box component.
 | className    | `string`                                                             |         | The optional className of Box.                                  |
 | children     | `React.Node`                                                         |         | The children of the Box.                                        |
 | dataTest     | `string`                                                             |         | Optional prop for testing purposes.                             |
+| id           | `string`                                                             |         | Set `id` for `Box`                                              |
 | display      | [`enum`](#enum)                                                      |         | The `display` of the Box                                        |
 | padding      | [`spacingObject`](#spacingobject) \| [`spacingToken`](#spacingtoken) |         | The `padding` of the Box                                        |
 | margin       | [`spacingObject`](#spacingobject) \| [`spacingToken`](#spacingtoken) |         | The `margin` of the Box                                         |

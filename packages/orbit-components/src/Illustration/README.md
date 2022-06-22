@@ -20,6 +20,7 @@ Table below contains all types of the props available in Illustration component.
 | :--------- | :-------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | alt        | `string`        |            | Optional property for passing own `alt` attribute to the DOM image element. Bby default, the `name` of illustration is used.                                   |
 | dataTest   | `string`        |            | Optional prop for testing purposes.                                                                                                                            |
+| id         | `string`        |            | Set `id` for `Illustration`                                                                                                                                    |
 | **name**   | [`enum`](#enum) |            | Name for the displayed illustration.                                                                                                                           |
 | size       | [`enum`](#enum) | `"medium"` | The size of the Illustration.                                                                                                                                  |
 | spaceAfter | `enum`          |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |

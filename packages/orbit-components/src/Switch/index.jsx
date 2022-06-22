@@ -103,7 +103,7 @@ StyledSwitchButton.defaultProps = {
 const Switch: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
   Props,
   HTMLInputElement,
->(({ onChange, checked, dataTest, icon, onBlur, onFocus, disabled, ariaLabelledby }, ref) => {
+>(({ onChange, checked, dataTest, id, icon, onBlur, onFocus, disabled, ariaLabelledby }, ref) => {
   return (
     <StyledSwitch>
       <StyledSwitchBase checked={checked} disabled={disabled}>
@@ -121,6 +121,7 @@ const Switch: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRe
           onFocus={!disabled ? onFocus : undefined}
           type="checkbox"
           data-test={dataTest}
+          id={id}
         />
         <StyledSwitchButton checked={checked} disabled={disabled} hasCustomIcon={!!icon}>
           {icon || <Circle />}

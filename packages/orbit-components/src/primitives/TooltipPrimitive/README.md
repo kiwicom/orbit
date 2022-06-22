@@ -23,6 +23,7 @@ Table below contains all types of the props available in the TooltipPrimitive co
 | **children**         | `React.Node`              |          | The reference element where the TooltipPrimitive will appear.                                                              |
 | **content**          | `React.Node`              |          | The content to display in the TooltipPrimitive.                                                                            |
 | dataTest             | `string`                  |          | Optional prop for testing purposes.                                                                                        |
+| id                   | `string`                  |          | Set id for `TooltipPrimitive`                                                                                              |
 | enabled              | `boolean`                 | `true`   | Enable render of tooltipPrimitive                                                                                          |
 | renderInPortal       | `boolean`                 | `true`   | Optional prop, set it to `false` if you're rendering TooltipPrimitive inside a custom portal, defaults to `true`           |
 | block                | `boolean`                 | `false`  | Whether the children wrapper is inline or block. Useful when children need to take up the entire container width.          |

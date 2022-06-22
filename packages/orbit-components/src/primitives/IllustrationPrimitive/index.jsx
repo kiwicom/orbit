@@ -47,6 +47,7 @@ const IllustrationPrimitive = ({
   alt,
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
+  id,
   spaceAfter,
 }: Props): React.Node => {
   return (
@@ -54,6 +55,7 @@ const IllustrationPrimitive = ({
       illustrationName={name}
       alt={typeof alt === "string" ? alt : name}
       size={size}
+      id={id}
       data-test={dataTest}
       spaceAfter={spaceAfter}
     />

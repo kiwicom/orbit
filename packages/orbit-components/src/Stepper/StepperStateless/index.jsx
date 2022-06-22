@@ -115,6 +115,7 @@ const StepperStateless = ({
   maxWidth = "120px",
   disabled,
   dataTest,
+  id,
   value,
   active,
   name,
@@ -147,7 +148,7 @@ const StepperStateless = ({
     disabled || disabledIncrement || (typeof value === "number" && value >= +maxValue);
 
   return (
-    <StyledStepper data-test={dataTest} maxWidth={maxWidth}>
+    <StyledStepper data-test={dataTest} id={id} maxWidth={maxWidth}>
       <Button
         disabled={isMinusDisabled}
         iconLeft={<StyledMinusIcon size="small" isActive={active} isDisabled={isMinusDisabled} />}

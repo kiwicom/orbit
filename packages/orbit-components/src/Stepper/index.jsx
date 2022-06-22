@@ -40,6 +40,7 @@ const Stepper = ({ onChange, defaultValue = 0, ...props }: Props): React.Node =>
     disabled,
     name,
     dataTest,
+    id,
     minValue,
     maxValue,
     titleIncrement,
@@ -58,6 +59,7 @@ const Stepper = ({ onChange, defaultValue = 0, ...props }: Props): React.Node =>
       active={active}
       disabled={disabled}
       dataTest={dataTest}
+      id={id}
       value={value}
       name={name}
       titleIncrement={titleIncrement}

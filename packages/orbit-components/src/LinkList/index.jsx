@@ -77,9 +77,10 @@ const LinkList = ({
   indent,
   spacing = SPACINGS.MEDIUM,
   children,
+  id,
   dataTest,
 }: Props): React.Node => (
-  <StyledLinkList indent={indent} direction={direction} data-test={dataTest}>
+  <StyledLinkList indent={indent} direction={direction} data-test={dataTest} id={id}>
     {React.Children.map(children, item => {
       if (React.isValidElement(item)) {
         return (

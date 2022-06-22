@@ -24,6 +24,7 @@ Table below contains all types of the props available in the **Timeline** compon
 | :----------- | :------------------ | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **children** | `React.Node`        |         | List of [`TimelineStep`](#TimelineStep) components                                                                                                             |
 | dataTest     | `string`            |         | Optional prop for testing purposes.                                                                                                                            |
+| id           | `string`            |         | Set `id` for `Timeline`                                                                                                                                        |
 | spaceAfter   | `enum`              |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | direction    | `"column" \| "row"` |         | Allows to set direction, by default on desktop is `row` and on mobile is set to `column`                                                                       |
 

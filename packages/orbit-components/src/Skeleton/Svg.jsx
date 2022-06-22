@@ -10,10 +10,11 @@ import getSpacingToken from "../common/getSpacingToken";
 
 import type { Props } from ".";
 
-const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, viewBox }) => (
+const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, id, viewBox }) => (
   <svg
     aria-labelledby={ariaLabelledby}
     data-test={dataTest}
+    id={id}
     className={className}
     role="img"
     viewBox={viewBox}

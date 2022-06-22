@@ -61,6 +61,7 @@ const NavigationBar = ({
   onMenuOpen,
   children,
   dataTest,
+  id,
   onShow,
   onHide,
   hideOnScroll = true,
@@ -105,7 +106,7 @@ const NavigationBar = ({
   });
 
   return (
-    <StyledNavigationBar data-test={dataTest} shown={shown}>
+    <StyledNavigationBar data-test={dataTest} id={id} shown={shown}>
       <StyledNavigationBarContent>{children}</StyledNavigationBarContent>
       {onMenuOpen && (
         <ButtonLink

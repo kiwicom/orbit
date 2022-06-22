@@ -291,6 +291,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       mobileHeader = true,
       disableAnimation = false,
       dataTest,
+      id,
       lockScrolling = true,
     }: Props,
     ref,
@@ -589,6 +590,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
         onScroll={handleScroll}
         onClick={handleClickOutside}
         data-test={dataTest}
+        id={id}
         ref={modalBodyRef}
         role="dialog"
         autoFocus={autoFocus}

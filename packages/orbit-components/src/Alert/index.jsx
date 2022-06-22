@@ -115,12 +115,14 @@ const StyledDiv = ({
   className,
   children,
   dataTest,
+  id,
 }: {|
   className: string,
+  id: string,
   children: React.Node,
   dataTest: string,
 |}) => (
-  <div className={className} data-test={dataTest}>
+  <div className={className} id={id} data-test={dataTest}>
     {children}
   </div>
 );
@@ -275,6 +277,7 @@ const Alert = (props: Props): React.Node => {
     onClose,
     children,
     dataTest,
+    id,
     spaceAfter,
     suppressed,
     inlineActions,
@@ -283,6 +286,7 @@ const Alert = (props: Props): React.Node => {
     <StyledAlert
       type={type}
       icon={icon}
+      id={id}
       suppressed={suppressed}
       closable={closable}
       dataTest={dataTest}

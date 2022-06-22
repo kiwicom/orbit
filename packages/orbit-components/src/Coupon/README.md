@@ -19,4 +19,5 @@ Table below contains all types of the props available in the Coupon component.
 | Name         | Type         | Default | Description                         |
 | :----------- | :----------- | :------ | :---------------------------------- |
 | dataTest     | `string`     |         | Optional prop for testing purposes. |
+| id           | `string`     |         | Set `id` for `Coupon`               |
 | **children** | `React.Node` |         | The content of the Coupon.          |

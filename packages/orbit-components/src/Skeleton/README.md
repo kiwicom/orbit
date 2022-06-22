@@ -55,6 +55,7 @@ or you can pick one from our predefined presets:
 | width           | `number \| string`                                                                |          | `100%`             | Width of Svg element                                                                                                                                           |
 | spaceAfter      | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |          |                    | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | dataTest        | `string`                                                                          |          |                    | Optional prop for testing purposes                                                                                                                             |
+| id              | `string`                                                                          |          |                    | Set `id` for `Skeleton`                                                                                                                                        |
 | color           | `string`                                                                          |          | `paletteCloudDark` | Set color for svg rect element from orbit tokens                                                                                                               |
 
 ### Preset

@@ -1,42 +1,16 @@
-import axios from "axios";
 import yaml from "js-yaml";
 import path from "path";
 import fs from "fs-extra";
 import chalk from "chalk";
 import _ from "lodash";
 
+import { mergeConfigs } from "./helpers";
+import fetchConfigs from "./fetchConfigs";
+
 export const IOS_URL = `https://raw.githubusercontent.com/kiwicom/orbit-swiftui/main/component-status.yaml`;
 export const ANDROID_URL = `https://raw.githubusercontent.com/kiwicom/orbit-compose/main/component-status.yaml`;
 
 const CURRENT_STATUSES = path.resolve(__dirname, "../src/data/component-status.yaml");
-
-export const fetchConfigs = async (android: string, ios: string) => {
-  const iosReq = axios.get(ios);
-  const androidReq = axios.get(android);
-
-  const data = await axios.all([androidReq, iosReq]).then(
-    axios.spread((...responses) => {
-      const { data: androidData } = responses[0];
-      const { data: iosData } = responses[1];
-      return androidData.concat(iosData);
-    }),
-  );
-
-  return data;
-};
-
-export const mergeConfigs = (current: string, fetched: string) => {
-  return yaml.load(current.concat(fetched)).reduce((acc, cur) => {
-    const { component, ...released } = cur;
-    if (!acc[component]) {
-      acc[component] = cur;
-    } else {
-      acc[component] = { ...acc[component], ...released };
-    }
-
-    return acc;
-  }, {});
-};
 
 const getData = async () => {
   const currentStatuses = fs.readFileSync(CURRENT_STATUSES, "utf-8");

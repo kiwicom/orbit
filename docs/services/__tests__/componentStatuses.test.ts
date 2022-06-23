@@ -1,8 +1,12 @@
 import axios from "axios";
 
-import { fetchConfigs, IOS_URL, ANDROID_URL, mergeConfigs } from "../componentStatuses";
+import fetchConfigs from "../fetchConfigs";
+import { mergeConfigs } from "../helpers";
+import { IOS_URL, ANDROID_URL } from "../componentStatuses";
 
 jest.mock("axios");
+jest.mock("fs");
+jest.mock("fs/promises");
 
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 

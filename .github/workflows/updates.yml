@@ -1,11 +1,11 @@
-name: Update tasks
+name: Documentation updates
 
 on:
   schedule:
     - cron: "0 15 * * *"
 
 jobs:
-  updates:
+  doc-updates:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

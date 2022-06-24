@@ -1,0 +1,26 @@
+name: Save tracking data
+
+on:
+  schedule:
+    # every month at 08:00:00
+    - cron: "0 8 1 * *"
+
+jobs:
+  doc-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-known-hosts: ${{ secrets.SSH_HOST }}
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Update tracking
+        run: |
+          yarn tracking build
+          yarn tracking orbit-tracking
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}

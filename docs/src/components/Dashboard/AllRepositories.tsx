@@ -1,5 +1,6 @@
 import React from "react";
 import { PageRendererProps, graphql, useStaticQuery } from "gatsby";
+import { sortBy } from "lodash";
 
 import ComponentsList from "./components/ComponentList";
 import DocLayout from "../DocLayout";
@@ -11,6 +12,9 @@ const AllRepositories = ({ location }: PageRendererProps) => {
       # get only the latest
       allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
         nodes {
+          fields {
+            currentComponents
+          }
           createdAt
           trackedData {
             instances
@@ -49,6 +53,14 @@ const AllRepositories = ({ location }: PageRendererProps) => {
     return acc;
   }, []);
 
+  const currentComponents = allTracking.nodes
+    .map(n => n.fields.currentComponents)[0]
+    .concat(["ToastRoot"]);
+
+  const unusedComponents = currentComponents.filter(
+    comp => !Object.keys(components).includes(comp),
+  );
+
   return (
     <DocLayout
       location={location}
@@ -56,7 +68,10 @@ const AllRepositories = ({ location }: PageRendererProps) => {
       title="All Repositories"
       noElevation
     >
-      <ComponentsList components={Object.values(components)} />
+      <ComponentsList
+        components={sortBy(Object.values(components), ["instances"]).reverse()}
+        unused={unusedComponents}
+      />
     </DocLayout>
   );
 };

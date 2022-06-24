@@ -88,7 +88,7 @@ const AllRepositoriesComponent = ({ location }: PageRendererProps) => {
 
   React.useEffect(() => {
     setAllData(Object.values<TrackingProp>(props));
-  }, [setAllData]);
+  }, []);
 
   const handleInstances = (instances, propName, valueName) => {
     const filteredProps = instances

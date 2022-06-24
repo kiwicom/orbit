@@ -28,6 +28,7 @@ export interface TrackedData {
   name: string;
   icon: boolean;
   instances: number;
+  slug: string;
   category: string;
   isDeprecated: boolean;
   props: TrackingProp[];
@@ -39,6 +40,9 @@ export interface TrackingNode {
   createdAt: string;
   description: string;
   orbitVersion: string;
+  fields: {
+    currentComponents: string[];
+  };
   lastCommit: {
     sha: string;
     title: string;

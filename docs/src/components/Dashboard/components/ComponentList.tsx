@@ -13,8 +13,16 @@ import {
 } from "@kiwicom/orbit-components";
 import { ChevronDown, ChevronUp } from "@kiwicom/orbit-components/icons";
 
-const ComponentList = ({ components }) => {
-  const [data, setData] = React.useState([]);
+import { TrackedData } from "../interfaces";
+
+type ComponentData = Pick<TrackedData, "name" | "instances" | "category" | "isDeprecated" | "slug">;
+interface Props {
+  components: TrackedData[];
+  unused?: string[];
+}
+
+const ComponentList = ({ components, unused }: Props) => {
+  const [data, setData] = React.useState<ComponentData[]>([]);
   const [isSorted, setSorted] = React.useState(false);
 
   React.useEffect(() => {
@@ -30,6 +38,16 @@ const ComponentList = ({ components }) => {
       {children}
     </TextLink>
   );
+
+  const mappedUnused = unused
+    ? unused.map(name => ({
+        name,
+        slug: name,
+        instances: 0,
+        category: "UNUSED",
+        isDeprecated: "",
+      }))
+    : [];
 
   return (
     <Stack flex direction="column">
@@ -72,11 +90,13 @@ const ComponentList = ({ components }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map(({ slug, name, instances, isDeprecated, category }) => (
+          {[...data, ...mappedUnused].map(({ slug, name, instances, isDeprecated, category }) => (
             <TableRow key={name}>
               <TableCell>
                 <Link to={slug} aria-label={name}>
-                  <TextLink asComponent="p">{name}</TextLink>
+                  <TextLink asComponent="p" type={category === "UNUSED" ? "critical" : "success"}>
+                    {name}
+                  </TextLink>
                 </Link>
               </TableCell>
               <TableCell>{instances}</TableCell>

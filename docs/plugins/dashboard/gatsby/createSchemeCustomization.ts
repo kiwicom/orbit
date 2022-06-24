@@ -78,6 +78,14 @@ export default function scheme({ actions, schema }) {
       }),
 
       schema.buildObjectType({
+        name: "CurrentComponents",
+        fields: {
+          currentComponents: ["String"],
+        },
+        extensions: { infer: false },
+      }),
+
+      schema.buildObjectType({
         name: "TrackedDataSource",
         fields: {
           url: "String",
@@ -118,6 +126,9 @@ export default function scheme({ actions, schema }) {
           name: "String",
           url: "String",
           orbitVersion: "String",
+          fields: {
+            type: "CurrentComponents",
+          },
           createdAt: "String",
           id: "String",
           description: "String",

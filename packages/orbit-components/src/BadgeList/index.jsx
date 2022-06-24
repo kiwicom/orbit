@@ -11,8 +11,12 @@ const StyledBadgeList = styled.ul`
   flex-direction: column;
 `;
 
-const BadgeList = ({ children, dataTest }: Props): React.Node => {
-  return <StyledBadgeList data-test={dataTest}>{children}</StyledBadgeList>;
+const BadgeList = ({ children, dataTest, id }: Props): React.Node => {
+  return (
+    <StyledBadgeList data-test={dataTest} id={id}>
+      {children}
+    </StyledBadgeList>
+  );
 };
 
 export { default as BadgeListItem } from "./BadgeListItem";

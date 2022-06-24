@@ -44,6 +44,7 @@ Table below contains all types of the props available for `ToastRoot` component
 | Name           | Type                      | Default | Description                           |
 | :------------- | :------------------------ | :------ | :------------------------------------ |
 | dataTest       | `string`                  |         | optional prop for testing purposes.   |
+| id             | `string`                  |         | Set `id` for `Toast` wrapper          |
 | topOffset      | `number`                  | `8`     | top offset for toast container        |
 | leftOffset     | `number`                  | `8`     | left offset for toast container       |
 | rightOffset    | `number`                  | `8`     | right offset for toast container      |

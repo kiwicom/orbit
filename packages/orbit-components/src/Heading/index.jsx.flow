@@ -28,7 +28,6 @@ export type Props = {|
   +children: React.Node,
   +inverted?: boolean,
   +dataA11ySection?: string,
-  +id?: string,
   +mediumMobile?: MediaQuery,
   +largeMobile?: MediaQuery,
   +tablet?: MediaQuery,

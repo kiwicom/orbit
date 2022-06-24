@@ -22,8 +22,8 @@ const generateURL = name => {
   return { src: urlWithName(), srcSet: [urlWithName(2), urlWithName(3)].join(",") };
 };
 
-export const StyledFeatureIcon: any = styled(({ className, name, alt, dataTest }) => (
-  <img className={className} alt={alt} data-test={dataTest} {...generateURL(name)} />
+export const StyledFeatureIcon: any = styled(({ className, name, alt, dataTest, id }) => (
+  <img className={className} alt={alt} data-test={dataTest} id={id} {...generateURL(name)} />
 ))`
   height: ${baseSize}px;
   width: auto;
@@ -35,8 +35,8 @@ StyledFeatureIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const FeatureIcon = ({ alt = "", name, dataTest }: Props): React.Node => (
-  <StyledFeatureIcon alt={alt} name={name} dataTest={dataTest} />
+const FeatureIcon = ({ alt = "", name, dataTest, id }: Props): React.Node => (
+  <StyledFeatureIcon alt={alt} name={name} dataTest={dataTest} id={id} />
 );
 
 export default FeatureIcon;

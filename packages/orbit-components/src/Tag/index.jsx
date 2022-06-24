@@ -179,6 +179,7 @@ const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Pro
       size = SIZES.NORMAL,
       onClick,
       onRemove,
+      id,
       dataTest,
       type = TYPES.NEUTRAL,
       dateTag,
@@ -189,6 +190,7 @@ const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Pro
       <StyledTag
         actionable={onClick || onRemove}
         data-test={dataTest}
+        id={id}
         dateTag={dateTag}
         size={size}
         ref={ref}

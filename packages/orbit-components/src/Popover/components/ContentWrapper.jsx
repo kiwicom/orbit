@@ -194,6 +194,7 @@ const PopoverContentWrapper = ({
   offset = { top: 4, left: 0 },
   referenceElement,
   dataTest,
+  id,
   placement = PLACEMENTS.BOTTOM_START,
   noPadding,
   overlapped,
@@ -270,6 +271,7 @@ const PopoverContentWrapper = ({
         ref={popoverRef}
         tabIndex="0"
         data-test={dataTest}
+        id={id}
         noPadding={noPadding}
         overlapped={overlapped}
         role="tooltip"

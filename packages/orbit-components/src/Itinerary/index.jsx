@@ -22,9 +22,9 @@ StyledItineraryWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const Itinerary = ({ children, dataTest, spaceAfter }: Props): React.Node => {
+const Itinerary = ({ children, dataTest, spaceAfter, id }: Props): React.Node => {
   return (
-    <StyledItineraryWrapper data-test={dataTest} spaceAfter={spaceAfter}>
+    <StyledItineraryWrapper data-test={dataTest} id={id} spaceAfter={spaceAfter}>
       <ItineraryProvider>{children}</ItineraryProvider>
     </StyledItineraryWrapper>
   );

@@ -512,6 +512,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
       histogramLoading = false,
       histogramLoadingText,
       dataTest,
+      id,
       step = DEFAULT_VALUES.STEP,
     } = this.props;
     if (histogramData) {
@@ -525,7 +526,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     const sortedValue = this.sortArray(value);
     const hasHistogram = histogramLoading || !!histogramData;
     return (
-      <StyledSlider data-test={dataTest}>
+      <StyledSlider data-test={dataTest} id={id}>
         {this.renderHeading(hasHistogram)}
         {hasHistogram && (
           <StyledSliderContent focused={focused}>

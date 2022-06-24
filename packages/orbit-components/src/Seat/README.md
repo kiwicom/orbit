@@ -19,6 +19,7 @@ Table below contains all types of the props available in Seat component.
 | Name        | Type                    | Default                        | Description                                  |
 | :---------- | :---------------------- | :----------------------------- | :------------------------------------------- |
 | dataTest    | `string`                |                                | Optional prop for testing purposes.          |
+| id          | `string`                |                                | Set `id` for `Seat`                          |
 | size        | [`enum`](#modal-enum)   | `medium`                       | Size of Seat component.                      |
 | type        | [`enum`](#modal-enum)   | `default`                      | Visual type of Seat                          |
 | price       | `string`                |                                | Price of Seat                                |

@@ -8,8 +8,8 @@ import { rtlSpacing, left } from "../../utils/rtl";
 
 import type { Props } from ".";
 
-export const StyledBadge: any = styled(({ className, children, dataTest, ariaLabel }) => (
-  <div className={className} data-test={dataTest} aria-label={ariaLabel}>
+export const StyledBadge: any = styled(({ className, children, dataTest, ariaLabel, id }) => (
+  <div className={className} id={id} data-test={dataTest} aria-label={ariaLabel}>
     {children}
   </div>
 ))`
@@ -82,6 +82,7 @@ const BadgePrimitive = ({
   children,
   ariaLabel,
   dataTest,
+  id,
   background,
   foregroundColor,
   borderColor,
@@ -91,6 +92,7 @@ const BadgePrimitive = ({
     <StyledBadge
       background={background}
       foregroundColor={foregroundColor}
+      id={id}
       dataTest={dataTest}
       ariaLabel={ariaLabel}
       borderColor={borderColor}

@@ -21,11 +21,11 @@ StyledNotificationBadge.defaultProps = {
 };
 
 const NotificationBadge = (props: Props): React.Node => {
-  const { type, children, icon, ariaLabel, dataTest } = props;
+  const { type, children, icon, ariaLabel, dataTest, id } = props;
 
   return (
     <StyledNotificationBadge>
-      <Badge type={type} dataTest={dataTest} icon={icon} ariaLabel={ariaLabel}>
+      <Badge type={type} dataTest={dataTest} id={id} icon={icon} ariaLabel={ariaLabel}>
         {!icon && children}
       </Badge>
     </StyledNotificationBadge>

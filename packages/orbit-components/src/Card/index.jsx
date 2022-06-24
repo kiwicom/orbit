@@ -33,6 +33,7 @@ const Card = ({
   description,
   children,
   dataTest,
+  id,
   onClose,
   loading,
   header,
@@ -70,7 +71,7 @@ const Card = ({
   };
 
   return (
-    <StyledCard spaceAfter={spaceAfter} data-test={dataTest}>
+    <StyledCard spaceAfter={spaceAfter} data-test={dataTest} id={id}>
       {(title || header) && !loading && (
         <CardWrapper bottomBorder={!children || expandedSections.some(val => val === 0)}>
           <Header

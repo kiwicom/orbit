@@ -20,6 +20,7 @@ Table below contains all types of the props available in NotificationBadge compo
 | :-------- | :-------------- | :---------- | :--------------------------------------------------------------------------------------------- |
 | children  | `React.Node`    |             | The content of the NotificationBadge.                                                          |
 | dataTest  | `string`        |             | Optional prop for testing purposes.                                                            |
+| id        | `string`        |             | Set `id` for `Badge` inside NotificationBadge                                                  |
 | icon      | `React.Node`    |             | This property has higher priority than children. If `icon` is passed the children wont appear. |
 | type      | [`enum`](#enum) | `"neutral"` | The color type of the NotificationBadge.                                                       |
 | ariaLabel | `string`        |             | Adds prop adds `aria-label` to an element, useful for screenreaders.                           |

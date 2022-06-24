@@ -23,6 +23,7 @@ After adding import into your project you can use it simply like:
 | ----------------- | --------------------------- | ------------------ | -------------------- | -------------------------------------------------- |
 | minHeight         | `number`                    |                    |                      | set minimal height                                 |
 | dataTest          | `string`                    |                    |                      | prop for testing purposes                          |
+| id                | `string`                    |                    |                      | Set `id` for `HorizontalScroll`                    |
 | spacing           | [`Spacing`](#Spacing)       |                    | "small"              | the spacing between children elements              |
 | children          | `React.ReactNode`           | :heavy_check_mark: |                      | content of HorizontalScroll                        |
 | scrollSnap        | [`ScrollSnap`](#ScrollSnap) |                    | "none"               | set value for `scroll-snap-type` property          |

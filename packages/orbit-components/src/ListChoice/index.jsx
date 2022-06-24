@@ -94,6 +94,7 @@ StyledListChoiceContent.defaultProps = {
 
 const ListChoice = ({
   dataTest,
+  id,
   icon,
   action,
   title,
@@ -111,6 +112,7 @@ const ListChoice = ({
     <StyledListChoice
       onClick={!disabled ? onClick : null}
       data-test={dataTest}
+      id={id}
       onKeyDown={!disabled ? handleKeyDown(onClick) : null}
       tabIndex={disabled ? "-1" : "0"}
       disabled={disabled}

@@ -19,6 +19,7 @@ Table below contains all types of the props available in StopoverArrow component
 | Name     | Type            | Default | Description                                         |
 | :------- | :-------------- | :------ | :-------------------------------------------------- |
 | dataTest | `string`        |         | Optional prop for testing purposes.                 |
+| id       | `string`        |         | Set `id` for `StopoverArrow`                        |
 | stops    | [`enum`](#enum) | `"0"`   | Specify how many stops should the component render. |
 
 ### enum

@@ -39,6 +39,7 @@ const BaggageStepper = ({ onChange, defaultValue = 0, ...props }: Props): React.
     onFocus,
     disabled,
     name,
+    id,
     selected,
     dataTest,
     minValue,
@@ -48,6 +49,7 @@ const BaggageStepper = ({ onChange, defaultValue = 0, ...props }: Props): React.
   } = props;
   return (
     <Stepper
+      id={id}
       disabled={disabled}
       dataTest={dataTest}
       value={value}

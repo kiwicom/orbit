@@ -128,6 +128,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
     disabled,
     resize = RESIZE_OPTIONS.VERTICAL,
     dataTest,
+    id,
     spaceAfter,
     fullHeight,
     value,
@@ -177,6 +178,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
       <StyledTextArea
         data-state={getFieldDataState(!!error)}
         data-test={dataTest}
+        id={id}
         name={name}
         value={value}
         size={size}

@@ -19,6 +19,7 @@ Table below contains all types of the props available in BaggageStepper componen
 | Name           | Type                        | Default | Description                                                                          |
 | :------------- | :-------------------------- | :------ | :----------------------------------------------------------------------------------- |
 | dataTest       | `string`                    |         | Optional prop for testing purposes.                                                  |
+| id             | `string`                    |         | Set `id` for `BaggageStepper`                                                        |
 | defaultValue   | `number`                    | `0`     | Specifies the value of the BaggageStepper. [See Functional specs](#functional-specs) |
 | disabled       | `boolean`                   | `false` | If `true`, the BaggageStepper will be disabled.                                      |
 | maxValue       | `number`                    | `∞`     | Specifies the maximum value for the BaggageStepper.                                  |

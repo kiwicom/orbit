@@ -19,6 +19,7 @@ Table below contains all types of the props available in StopoverArrow component
 | Name           | Type                    | Default      | Description                             |
 | :------------- | :---------------------- | :----------- | :-------------------------------------- |
 | dataTest       | `string`                |              | Optional prop for testing purposes.     |
+| id             | `string`                |              | Set `id` for `Switch` input             |
 | **onChange**   | `() => void \| Promise` |              | Function for handling onChange event.   |
 | onFocus        | `() => void \| Promise` |              | Function for handling onFocus event.    |
 | onBlur         | `() => void \| Promise` |              | Function for handling onBlur event.     |

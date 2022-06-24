@@ -28,6 +28,7 @@ StyledWrapper.defaultProps = {
 
 const ToastRoot = ({
   dataTest,
+  id: wrapperId,
   topOffset = 8,
   leftOffset = 8,
   rightOffset = 8,
@@ -47,6 +48,7 @@ const ToastRoot = ({
   return (
     <StyledWrapper
       data-test={dataTest}
+      id={wrapperId}
       $top={topOffset}
       $bottom={bottomOffset}
       $left={leftOffset}

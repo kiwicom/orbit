@@ -20,6 +20,7 @@ Table below contains all types of the props available in CountryFlag component.
 | :------- | :-------------- | :------------ | :----------------------------------- |
 | code     | [`enum`](#enum) | `"undefined"` | Code for the displayed country flag. |
 | dataTest | `string`        |               | Optional prop for testing purposes.  |
+| id       | `string`        |               | Set `id` for `CountryFlag`           |
 | name     | `string`        |               | The name for the flag.               |
 | size     | [`enum`](#enum) | `"medium"`    | The size of the CountryFlag.         |
 

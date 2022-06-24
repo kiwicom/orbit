@@ -31,6 +31,7 @@ const RatingStars = ({
   rating,
   size = ICON_SIZES.SMALL,
   dataTest,
+  id,
   color = ICON_COLORS.PRIMARY,
   showEmpty = false,
 }: Props): React.Node => {
@@ -40,6 +41,7 @@ const RatingStars = ({
   return (
     <StyledRatingStars
       data-test={dataTest}
+      id={id}
       size={size}
       aria-label={translate("ratingstar_description", {
         number: ratingRounded,

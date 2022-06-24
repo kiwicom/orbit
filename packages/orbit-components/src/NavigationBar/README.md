@@ -28,6 +28,7 @@ Table below contains all types of the props available in the NavigationBar compo
 | :----------- | :---------------------- | :------ | :---------------------------------------------------------------------------------------------------- |
 | **children** | `React.Node`            |         | The content of the NavigationBar.                                                                     |
 | dataTest     | `string`                |         | Optional prop for testing purposes.                                                                   |
+| id           | `string`                |         | Set `id` for `NavigationBar`                                                                          |
 | onMenuOpen   | `() => void \| Promise` |         | Function for handling onClick event on HamburgerMenu icon. If `null`, the HamburgerMenu won't appear. |
 | onHide       | `() => void \| Promise` |         | Function for handling event when the NavigationBar disappears.                                        |
 | onShow       | `() => void \| Promise` |         | Function for handling event when the NavigationBar appears.                                           |

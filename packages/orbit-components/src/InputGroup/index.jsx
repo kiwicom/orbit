@@ -97,10 +97,11 @@ StyledChild.defaultProps = {
 };
 
 const StyledInputGroup = styled(
-  ({ children, className, dataTest, role, ariaLabelledby, forwardRef, dataState }) => (
+  ({ children, className, dataTest, id, role, ariaLabelledby, forwardRef, dataState }) => (
     <div
       data-state={dataState}
       ref={forwardRef}
+      id={id}
       className={className}
       data-test={dataTest}
       role={role}
@@ -187,6 +188,7 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
       flex,
       size = SIZE_OPTIONS.NORMAL,
       help,
+      id,
       error,
       disabled,
       dataTest,
@@ -267,6 +269,7 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
         size={size}
         forwardRef={ref}
         dataTest={dataTest}
+        id={id}
         dataState={getFieldDataState(!!errorReal)}
         spaceAfter={spaceAfter}
         role="group"

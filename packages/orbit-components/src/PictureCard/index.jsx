@@ -216,6 +216,7 @@ const PictureCard = ({
   external,
   actions,
   label,
+  id,
   height = "300px",
   width,
   dataTest,
@@ -245,6 +246,7 @@ const PictureCard = ({
   return (
     <StyledPictureCard
       data-test={dataTest}
+      id={id}
       onClick={onClick}
       onKeyDown={handleKeyDown(onClick)}
       height={

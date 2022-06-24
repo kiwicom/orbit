@@ -97,6 +97,7 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
       overflowElevation,
       scrollPadding,
       dataTest,
+      id,
       minHeight,
       ...props
     },
@@ -134,6 +135,7 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
         $minHeight={minHeight}
         overflowElevation={overflowElevation}
         data-test={dataTest}
+        id={id}
         isDragging={isDragging}
         isStart={reachedStart}
         isOverflowing={isOverflowing}

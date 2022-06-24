@@ -47,7 +47,7 @@ const Stops = ({ stops }: Props) => {
   );
 };
 
-const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props): React.Node => {
+const StopoverArrow = ({ stops = STOPS.ZERO, dataTest, id }: Props): React.Node => {
   const randomId = useRandomIdSeed();
   const titleId = randomId("title");
   const descrId = randomId("descr");
@@ -58,6 +58,7 @@ const StopoverArrow = ({ stops = STOPS.ZERO, dataTest }: Props): React.Node => {
       viewBox="0 0 28 8"
       aria-labelledby={`${titleId} ${descrId}`}
       data-test={dataTest}
+      id={id}
       role="img"
     >
       <title id={titleId}>Stopover arrow, {stops} stops</title>

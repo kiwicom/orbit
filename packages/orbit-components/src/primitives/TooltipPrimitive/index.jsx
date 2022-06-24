@@ -42,6 +42,7 @@ const TooltipPrimitive = ({
   tooltipShown,
   tabIndex = "0",
   dataTest,
+  id,
   renderInPortal = true,
   size = SIZE_OPTIONS.SMALL,
   content,
@@ -100,11 +101,12 @@ const TooltipPrimitive = ({
     <TooltipContent
       parent={children}
       dataTest={dataTest}
+      id={id}
       shown={shown}
       size={size}
       error={error}
       help={help}
-      tooltipId={tooltipId}
+      tooltipId={id || tooltipId}
       onClose={handleOut}
       onCloseMobile={handleOutMobile}
       onEnter={handleIn}
@@ -125,7 +127,7 @@ const TooltipPrimitive = ({
         onFocus={handleIn}
         onBlur={handleOut}
         ref={setReferenceElement}
-        aria-describedby={enabled ? tooltipId : undefined}
+        aria-describedby={enabled ? id || tooltipId : undefined}
         tabIndex={enabled ? tabIndex : undefined}
         enabled={enabled}
         removeUnderlinedText={removeUnderlinedText}

@@ -100,6 +100,7 @@ const Seat = ({
   onClick,
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
+  id,
   price,
   label,
   title = "Seat",
@@ -114,6 +115,7 @@ const Seat = ({
     <Stack inline grow={false} spacing="XXXSmall" direction="column" align="center">
       <StyledSeatWrapper
         data-test={dataTest}
+        id={id}
         onClick={clickable ? onClick : undefined}
         tabIndex={clickable ? "0" : "-1"}
         type={type}

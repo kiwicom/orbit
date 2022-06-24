@@ -103,6 +103,7 @@ const Table = ({
   striped = true,
   compact = false,
   dataTest,
+  id,
   type = TYPE_OPTIONS.PRIMARY,
 }: Props): React.Node => {
   const [shadows, setShadows] = React.useState(false);
@@ -146,6 +147,7 @@ const Table = ({
       showLeft={left}
       showRight={right}
       data-test={dataTest}
+      id={id}
     >
       <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
         <StyledTable striped={striped} compact={compact} type={type} ref={table}>

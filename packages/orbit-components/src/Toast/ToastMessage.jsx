@@ -13,8 +13,8 @@ import mergeRefs from "../utils/mergeRefs";
 
 import type { Toast as Props } from ".";
 
-const StyledWrapper: any = styled(({ className, children, dataTest, ariaLive }) => (
-  <div className={className} data-test={dataTest} aria-live={ariaLive} role="status">
+const StyledWrapper: any = styled(({ className, children, ariaLive }) => (
+  <div className={className} aria-live={ariaLive} role="status">
     {children}
   </div>
 ))`

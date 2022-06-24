@@ -135,12 +135,12 @@ StyledLoaderCircle.defaultProps = {
 };
 
 const Loading = (props: Props): React.Node => {
-  const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest } = props;
+  const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest, id } = props;
 
   return children && !loading ? (
     children
   ) : (
-    <StyledLoading type={type} dataTest={dataTest}>
+    <StyledLoading type={type} dataTest={dataTest} id={id}>
       {type === TYPE_OPTIONS.BOX_LOADER ||
       type === TYPE_OPTIONS.SEARCH_LOADER ||
       type === TYPE_OPTIONS.INLINE_LOADER ? (

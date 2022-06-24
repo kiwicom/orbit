@@ -13,6 +13,7 @@ const Tile = ({
   href,
   external = false,
   dataTest,
+  id,
   icon,
   title,
   description,
@@ -30,6 +31,7 @@ const Tile = ({
     return (
       <TileExpandable
         dataTest={dataTest}
+        id={id}
         icon={icon}
         title={title}
         description={description}
@@ -50,6 +52,7 @@ const Tile = ({
       href={href}
       external={external}
       dataTest={dataTest}
+      id={id}
       onClick={onClick}
       onKeyDown={handleKeyDown(onClick)}
       as={as}

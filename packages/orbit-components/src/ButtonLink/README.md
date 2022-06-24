@@ -26,6 +26,7 @@ Table below contains all types of the props available in ButtonLink component.
 | compact      | `boolean`                       | `false`     | If `true`, the ButtonLink will not have horizontal paddings.                                                                                                   |
 | disabled     | `boolean`                       | `false`     | If `true`, the ButtonLink will be disabled.                                                                                                                    |
 | dataTest     | `string`                        |             | Optional prop for testing purposes.                                                                                                                            |
+| id           | `string`                        |             | Set `id` for `ButtonLink`                                                                                                                                      |
 | external     | `boolean`                       | `false`     | If `true`, the ButtonLink opens link in a new tab. [See Functional specs](#functional-specs)                                                                   |
 | fullWidth    | `boolean`                       | `false`     | If `true`, the ButtonLink will grow up to the full width of its container.                                                                                     |
 | href         | `string`                        |             | The URL of link to open when ButtonLink is clicked. [See Functional specs](#functional-specs)                                                                  |
@@ -59,7 +60,7 @@ Table below contains all types of the props available in ButtonLink component.
 
 - If you want to render **Icon only ButtonLink**, you just need to let `children` prop empty and set up any `icon` you want to use.
 
-* If you want to use the `asComponent` prop then **YourComponent** should accept at least `className`. Otherwise it won't be rendered with proper styling, e.g.:
+- If you want to use the `asComponent` prop then **YourComponent** should accept at least `className`. Otherwise it won't be rendered with proper styling, e.g.:
 
 ```jsx
 const YourComponent = props => <div {...props} />
@@ -89,4 +90,4 @@ If you use `ButtonLink` without `href` so it's rendered as a `<button>` HTML ele
 
 - Use `role` and `tabIndex` when you are rendering `ButtonLink` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
 
-* Use `title` to add `aria-label` when you need to add extra informations to screen readers or there is no `children` presented to be used as label.
+- Use `title` to add `aria-label` when you need to add extra informations to screen readers or there is no `children` presented to be used as label.

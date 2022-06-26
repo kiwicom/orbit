@@ -9,6 +9,7 @@
     "noImplicitAny": false
   },
   "include": [
+    "packages/orbit-docs/**/*",
     "packages/orbit-components/**/*",
     "packages/orbit-design-tokens/**/*",
     "packages/eslint-plugin-orbit-components/**/*"

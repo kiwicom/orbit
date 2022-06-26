@@ -1,0 +1,25 @@
+{
+  "extends": "@nrwl/workspace/presets/npm.json",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "@kiwicom",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default"
+    }
+  },
+  "targetDependencies": {
+    "build": [{ "target": "build", "projects": "dependencies" }],
+    "test": [{ "target": "build", "projects": "self" }]
+  },
+  "implicitDependencies": {
+    "pnpm-workspace.yaml": "*",
+    "pnpm-lock.yaml": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "nx.json": "*"
+  }
+}

@@ -25,7 +25,10 @@
   "scripts": {
     "test:file": "node scripts/generateImports.js",
     "test:compile": "babel __fixtures__/index.js --out-file dist/index.js",
-    "test": "yarn test:file && yarn test:compile && node scripts/testRequire.js"
+    "test": "pnpm test:file && pnpm test:compile && node scripts/testRequire.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.18.2"
   },
   "devDependencies": {
     "@kiwicom/orbit-components": "workspace:*"

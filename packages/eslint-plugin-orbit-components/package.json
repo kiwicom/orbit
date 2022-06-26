@@ -25,10 +25,11 @@
     "kiwicom"
   ],
   "scripts": {
-    "build": "yarn clean && babel ./src --extensions '.ts' --out-dir ./dist",
+    "build": "pnpm clean && babel ./src --extensions '.ts' --out-dir ./dist",
     "clean": "rimraf dist",
-    "postinstall": "yarn build",
-    "prepublishOnly": "yarn build && pinst --disable",
+    "test": "jest",
+    "postinstall": "pnpm build",
+    "prepublishOnly": "pnpm build && pinst --disable",
     "postpublish": "pinst --enable"
   },
   "dependencies": {

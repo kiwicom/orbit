@@ -5,6 +5,6 @@ module.exports = {
   "*.{md,json,yaml,yml}": "prettier --write",
   "*.mdx": "eslint --fix --report-unused-disable-directives",
   "**/!(snippets)/*.mdx": "remark -q -u validate-links --no-config",
-  "packages/orbit-components/**/*.svg": "pnpm nx check:icons components",
-  ".browserslistrc": () => ["pnpm run update-supported-browsers"],
+  "packages/orbit-components/**/*.svg": "pnpm nx check:icons @kiwicom/orbit-components",
+  ".browserslistrc": () => ["pnpm update-supported-browsers"],
 };

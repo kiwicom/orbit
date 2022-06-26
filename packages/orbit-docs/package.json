@@ -7,7 +7,8 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
-    "repl": "gatsby repl"
+    "repl": "gatsby repl",
+    "test": "jest"
   },
   "browserslist": {
     "production": [
@@ -16,6 +17,12 @@
     "test": [
       "current node"
     ]
+  },
+  "peerDependencies": {
+    "@babel/core": ">=7.0.0",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "styled-components": "^4 || ^5"
   },
   "dependencies": {
     "@csstools/convert-colors": "^2.0.0",

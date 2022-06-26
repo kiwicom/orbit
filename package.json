@@ -43,6 +43,7 @@
     "@types/react-dom": "^17.0.9"
   },
   "devDependencies": {
+    "@babel/parser": "^7.13.13",
     "@adeira/babel-preset-adeira": "^4.0.0",
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.18.2",
@@ -131,6 +132,7 @@
     "sharp": "^0.30.5",
     "zx": "^7.0.0",
     "dedent": "^0.7.0",
-    "@octokit/rest": "^18.0.14"
+    "@octokit/rest": "^18.0.14",
+    "memfs": "^3.2.0"
   }
 }

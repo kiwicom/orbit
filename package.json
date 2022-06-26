@@ -1,10 +1,6 @@
 {
   "name": "@kiwicom/orbit",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "docs"
-  ],
   "scripts": {
     "build-ci": "yarn size:build",
     "components": "yarn workspace @kiwicom/orbit-components",

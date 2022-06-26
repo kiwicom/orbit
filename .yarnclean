@@ -1,3 +1,0 @@
-# prevent type clashing between react-native and dom types
-# https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33311#issuecomment-494477593
-@types/react-native

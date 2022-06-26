@@ -30,7 +30,8 @@
     "test": "jest",
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "tracking": "yarn workspace @kiwicom/orbit-tracking",
-    "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md"
+    "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
+    "preinstall": "npx only-allow pnpm"
   },
   "engines": {
     "yarn": ">=1.19.1"

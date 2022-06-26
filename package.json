@@ -31,7 +31,7 @@
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "tracking": "yarn workspace @kiwicom/orbit-tracking",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
-    "preinstall": "npx only-allow pnpm"
+    "preinstallq": "npx only-allow pnpm"
   },
   "engines": {
     "yarn": ">=1.19.1"
@@ -44,6 +44,7 @@
     "@types/react-dom": "^17.0.9"
   },
   "devDependencies": {
+    "@adeira/js": "^2.1.1",
     "@babel/parser": "^7.13.13",
     "@adeira/babel-preset-adeira": "^4.0.0",
     "@babel/cli": "^7.12.8",
@@ -71,6 +72,7 @@
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@types/dotenv-safe": "^8.1.2",
+    "@types/lodash": "^4.14.170",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^17.0.38",
     "axios": "^0.27.2",
@@ -133,6 +135,8 @@
     "fs-extra": "^9.0.1",
     "rimraf": "^3.0.2",
     "sharp": "^0.30.5",
+    "uuid": "^8.3.2",
+    "@types/uuid": "^8.3.1",
     "zx": "^7.0.0",
     "dedent": "^0.7.0",
     "@octokit/rest": "^18.0.14",

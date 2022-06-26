@@ -26,10 +26,10 @@ jobs:
         uses: ./.github/actions/node
 
       - name: Compile design tokens
-        run: yarn tokens build:lib
+        run: pnpm tokens build:lib
 
       - name: Build Storybook
-        run: yarn components build:storybook
+        run: pnpm components build:storybook
 
       # TODO: find an alternative to using "if" statements for so many steps
 
@@ -46,14 +46,14 @@ jobs:
         if: github.ref != 'refs/heads/master'
         # we're adding to the domain name the username of the current owner of SURGE_TOKEN
         run: |
-          yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
-          yarn components deploy:updateURL ${PR_NUMBER} ${DOMAIN} ${{ secrets.OCTO_TOKEN }} Storybook
+          pnpm components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
+          pnpm components deploy:updateURL ${PR_NUMBER} ${DOMAIN} ${{ secrets.OCTO_TOKEN }} Storybook
         env:
           PR_NUMBER: ${{ github.event.number }}
 
       - name: Deploy to production
         # run on master branch
         if: github.ref == 'refs/heads/master'
-        run: yarn components deploy:storybook --ci
+        run: pnpm components deploy:storybook --ci
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

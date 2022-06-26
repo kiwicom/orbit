@@ -13,11 +13,11 @@ runs:
         path: |
           **/node_modules
           ~/.cache/Cypress
-        key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
+        key: node-modules-${{ github.ref}}-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           node-modules-${{ github.ref}}-
           node-modules-
 
     - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      run: pnpm install
       shell: bash

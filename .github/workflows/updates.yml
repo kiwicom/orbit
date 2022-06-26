@@ -24,13 +24,13 @@ jobs:
 
       - name: Update component statuses
         run: |
-          yarn check:statuses
+          pnpm check:statuses
           git add --all
           git diff-index --quiet HEAD || git commit -m "chore: update component statuses"
 
       - name: Update svgs
         run: |
-          yarn components fetch:icons
+          pnpm fetch:icons components
           git add --all
           git diff-index --quiet HEAD || git commit -m "feat(icons): update icons from figma"
         env:

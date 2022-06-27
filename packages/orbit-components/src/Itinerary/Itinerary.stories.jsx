@@ -19,11 +19,13 @@ import {
 } from "../icons";
 import Stack from "../Stack";
 import Badge from "../Badge";
+import Text from "../Text";
 import Heading from "../Heading";
 import { BadgeListItem } from "../BadgeList";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Itinerary, {
+  ItinerarySeparator,
   ItinerarySegment,
   ItineraryBadgeList,
   ItinerarySegmentDetail,
@@ -286,6 +288,17 @@ export const Status = (): React.Node => {
   );
 };
 
+export const Separator = (): React.Node => {
+  return (
+    <Stack direction="column">
+      <ItinerarySeparator>
+        <Text weight="bold">8 nights in Barcelona</Text>
+      </ItinerarySeparator>
+      <ItinerarySeparator />
+    </Stack>
+  );
+};
+
 export const Stop = (): React.Node => {
   const date = text("date", "Fr, 19.10");
   const time = text("time", "14:05");
@@ -448,13 +461,14 @@ export default {
   title: "Itinerary",
   component: Itinerary,
   includeStories: [
-    "Default",
-    "Status",
-    "Segment",
-    "Stop",
-    "Detail",
-    "RTL",
     "BadgeList",
     "CarrierBadge",
+    "Default",
+    "Detail",
+    "RTL",
+    "Segment",
+    "Separator",
+    "Status",
+    "Stop",
   ],
 };

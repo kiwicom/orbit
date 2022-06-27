@@ -31,6 +31,7 @@ const pathOverwrites = {
   InputStepperStateless: "deprecated/InputStepper/InputStepperStateless",
   InputStepper: "deprecated/InputStepper",
   ItinerarySegment: "Itinerary/ItinerarySegment",
+  ItinerarySeparator: "Itinerary/ItinerarySeparator",
   ItineraryStatus: "Itinerary/ItineraryStatus",
   ItineraryBadgeList: "Itinerary/ItineraryBadgeList",
   ItinerarySegmentDetail: "Itinerary/ItinerarySegment/ItinerarySegmentDetail",

@@ -2,6 +2,7 @@ import React from "react";
 
 import ItinerarySegment from "./ItinerarySegment";
 import ItineraryStatus from "./ItineraryStatus";
+import ItinerarySeparator from "./ItinerarySeparator";
 import ItineraryBadgeList from "./ItineraryBadgeList";
 import ItinerarySegmentStop from "./ItinerarySegment/ItinerarySegmentStop";
 import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
@@ -52,6 +53,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 
 export {
   ItinerarySegment,
+  ItinerarySeparator,
   ItinerarySegmentStop,
   ItinerarySegmentDetail,
   ItineraryStatus,

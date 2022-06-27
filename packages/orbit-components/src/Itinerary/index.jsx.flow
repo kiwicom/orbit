@@ -7,6 +7,7 @@
 import * as React from "react";
 
 import typeof ItinerarySegmentComponent from "./ItinerarySegment";
+import typeof ItinerarySeparatorComponent from "./ItinerarySeparator";
 import typeof ItineraryBadgeListComponent from "./ItineraryBadgeList";
 import typeof ItineraryStatusComponent from "./ItineraryStatus";
 import typeof ItinerarySegmentPlaceComponent from "./ItinerarySegment/ItinerarySegmentStop";
@@ -22,6 +23,7 @@ export type Props = {|
 |};
 
 declare export var ItinerarySegment: ItinerarySegmentComponent;
+declare export var ItinerarySeparator: ItinerarySeparatorComponent;
 declare export var ItineraryBadgeList: ItineraryBadgeListComponent;
 declare export var ItineraryStatus: ItineraryStatusComponent;
 declare export var ItinerarySegmentStop: ItinerarySegmentPlaceComponent;

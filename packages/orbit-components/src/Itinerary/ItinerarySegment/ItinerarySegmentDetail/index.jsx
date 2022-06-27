@@ -21,25 +21,11 @@ import ItineraryIcon from "../ItineraryIcon";
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ theme, opened, isContent }) => css`
-    width: 100%;
-    position: relative;
-    padding: 10px 0;
-    box-sizing: border-box;
-    background: ${isContent ? opened && theme.orbit.paletteCloudLight : "none"};
-    &:hover {
-      background: ${isContent ? theme.orbit.paletteCloudLight : "none"};
-      ${StyledBadge} {
-        background: ${theme.orbit.paletteWhite};
-      }
-    }
-  `}
+  width: 100%;
+  position: relative;
+  padding: 10px 0;
+  box-sizing: border-box;
 `;
-
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledWrapper.defaultProps = {
-  theme: themeDefault,
-};
 
 const StyledDetailsIcon = styled.div`
   background: transparent;
@@ -58,15 +44,12 @@ StyledInnerWrapper.defaultProps = {
 };
 
 export const StyledSummary: any = styled.div`
-  ${({ theme, opened, isContent }) => css`
+  ${({ theme }) => css`
     display: flex;
     align-items: center;
     border-radius: ${theme.orbit.borderRadiusBadge};
     width: 100%;
     overflow: hidden;
-    ${StyledBadge} {
-      background: ${isContent ? opened && theme.orbit.paletteWhite : "none"};
-    }
   `}
 `;
 
@@ -151,10 +134,9 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
   const { calculatedWidth } = useWidth();
   const [{ height: slideHeight }, slideRef] = useBoundingRect({ height: opened ? null : 0 });
   const randomId = useRandomIdSeed();
-  const [isOverflowed, setOverflowed] = React.useState(false);
 
   return (
-    <StyledWrapper opened={opened} isContent={content}>
+    <StyledWrapper opened={opened}>
       <StyledInnerWrapper>
         <Stack align="center" spacing="small">
           <StyledDuration $minWidth={calculatedWidth || 60}>
@@ -165,13 +147,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
           <StyledDetailsIcon>
             <ItineraryIcon isDetails>{icon}</ItineraryIcon>
           </StyledDetailsIcon>
-          <StyledSummary
-            opened={opened}
-            isContent={content}
-            onClick={ev => {
-              if (isOverflowed && opened) ev.stopPropagation();
-            }}
-          >
+          <StyledSummary>
             <HorizontalScroll
               overflowElevation
               onOverflow={() => setOverflowed(true)}

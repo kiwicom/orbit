@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 
 import HorizontalScroll from "../../../HorizontalScroll";
 import Truncate from "../../../Truncate";
-import { StyledBadge } from "../../../primitives/BadgePrimitive";
 import { left, rtlSpacing } from "../../../utils/rtl";
 import ChevronUp from "../../../icons/ChevronUp";
 import ChevronDown from "../../../icons/ChevronDown";
@@ -97,22 +96,35 @@ const StyledIcon = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
     padding: ${theme.orbit.spaceXXSmall};
     z-index: 3;
+    svg {
+      padding-top: ${isFirst && theme.orbit.spaceXXSmall};
+      padding-bottom: ${isLast && theme.orbit.spaceXXSmall};
+    }
     &:after {
       content: "";
+      box-sizing: border-box;
       position: absolute;
       width: 100%;
       height: 100%;
       left: 0;
+
+      border-left: 1px solid ${theme.orbit.paletteCloudNormalActive};
+      border-right: 1px solid ${theme.orbit.paletteCloudNormalActive};
       z-index: -1;
       background: ${theme.orbit.paletteWhite};
       ${isFirst &&
       css`
+        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
+        border-bottom: transparent;
         border-radius: ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge} 0 0;
       `}
       ${isLast &&
       css`
+        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
+        border-top: transparent;
         border-radius: 0 0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge};
       `}
     }
@@ -134,6 +146,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
   const { calculatedWidth } = useWidth();
   const [{ height: slideHeight }, slideRef] = useBoundingRect({ height: opened ? null : 0 });
   const randomId = useRandomIdSeed();
+  const [isOverflowed, setOverflowed] = React.useState(false);
 
   return (
     <StyledWrapper opened={opened}>
@@ -147,7 +160,11 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
           <StyledDetailsIcon>
             <ItineraryIcon isDetails>{icon}</ItineraryIcon>
           </StyledDetailsIcon>
-          <StyledSummary>
+          <StyledSummary
+            onClick={ev => {
+              if (isOverflowed && opened) ev.stopPropagation();
+            }}
+          >
             <HorizontalScroll
               overflowElevation
               onOverflow={() => setOverflowed(true)}

@@ -28,6 +28,18 @@ const IconStyled = styled.div`
     display: flex;
     justify-content: center;
     z-index: 1;
+    ${index > 0 &&
+    !last &&
+    css`
+      padding: ${theme.orbit.spaceXXSmall} 0;
+      background: radial-gradient(
+        farthest-side,
+        ${theme.orbit.paletteWhite},
+        ${theme.orbit.paletteWhite},
+        ${theme.orbit.paletteWhite},
+        transparent
+      );
+    `}
 
     ${index > 0 &&
     count > 0 &&

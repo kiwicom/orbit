@@ -21,6 +21,8 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   /** Removes the box-shadow  */
   readonly noElevation?: boolean;
   readonly actionable?: boolean;
+  /** Additional information to ItinerarySegment */
+  readonly info?: React.ReactNode;
 }
 
 declare const ItinerarySegment: React.FunctionComponent<Props>;

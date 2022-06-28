@@ -10,6 +10,7 @@ import {
   Clock,
   SelfTransfer,
   PowerPlug,
+  StarFull,
   BaggageSet,
   Wifi,
   Seat,
@@ -321,7 +322,20 @@ export const Stop = (): React.Node => {
       />
       <Heading type="title2">Hidden city example</Heading>
       <Itinerary>
-        <ItinerarySegment>
+        <ItinerarySegment
+          info={
+            <Stack inline align="stretch">
+              <StarFull color="warning" />
+              <Text>
+                <Text as="span" type="warning" weight="bold">
+                  Hidden city hack:
+                </Text>{" "}
+                This itinerary finishes in New York (United States), but you’ll get off during the
+                layover
+              </Text>
+            </Stack>
+          }
+        >
           <ItinerarySegmentStop
             city={city}
             canceled={canceled}

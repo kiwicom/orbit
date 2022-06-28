@@ -13,13 +13,13 @@ import { usePart } from "../context";
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ theme, $hidden, isLast, isFirst }) => css`
+  ${({ theme, $hidden, isLast, isFirst, isInfo }) => css`
     display: flex;
     position: relative;
     box-sizing: border-box;
     opacity: ${$hidden ? `0.8` : `1`};
     padding: 0 ${theme.orbit.spaceSmall};
-    margin-bottom: ${!isLast && !isFirst && theme.orbit.spaceSmall};
+    margin-bottom: ${((!isLast && !isFirst) || isInfo) && theme.orbit.spaceSmall};
   `}
 `;
 
@@ -66,7 +66,7 @@ const ItinerarySegmentStop = ({
   type,
 }: Props): React.Node => {
   const { calculatedWidth, setWidths } = useWidth();
-  const { isPrevHidden, last, index } = usePart();
+  const { isPrevHidden, last, isInfo, index } = usePart();
   const [dateWidth, setDateWidth] = React.useState<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
@@ -74,7 +74,7 @@ const ItinerarySegmentStop = ({
   }, [setWidths, dateWidth, minWidth]);
 
   return (
-    <StyledWrapper $hidden={hidden} isLast={last} isFirst={index === 0}>
+    <StyledWrapper $hidden={hidden} isLast={last} isFirst={index === 0} isInfo={isInfo}>
       <Stack flex align="center" spacing="small">
         <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
           <Stack flex direction="column" spacing="none" align="end">

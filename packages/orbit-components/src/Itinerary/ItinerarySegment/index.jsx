@@ -7,6 +7,7 @@ import Stack from "../../Stack";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
+import Separator from "../../Separator";
 
 import type { Props } from ".";
 
@@ -28,6 +29,12 @@ const StyledWrapper = styled.div`
   `}
 `;
 
+const StyledInfoWrapper = styled.div`
+  ${({ theme }) => css`
+    padding: 0 ${theme.orbit.spaceMedium};
+  `}
+`;
+
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
@@ -40,6 +47,7 @@ const ItinerarySegment = ({
   noElevation,
   actionable = true,
   onClick,
+  info,
 }: Props): React.Node => {
   const content = React.Children.toArray(children);
   const [opened, setOpened] = React.useState(false);
@@ -56,6 +64,7 @@ const ItinerarySegment = ({
               last: i === React.Children.count(children) - 1,
               isNextHidden: content[i + 1] && content[i + 1].props.hidden,
               isPrevHidden: content[i - 1] && content[i - 1].props.hidden,
+              isInfo: !!info,
               count: React.Children.count(children),
               isHidden: el.props.hidden,
               noElevation: !!noElevation,
@@ -84,6 +93,8 @@ const ItinerarySegment = ({
       noElevation={noElevation}
     >
       {parts}
+      {info && <Separator spaceAfter="small" />}
+      {info && <StyledInfoWrapper>{info}</StyledInfoWrapper>}
     </StyledWrapper>
   );
 };

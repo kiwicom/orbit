@@ -22,7 +22,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly noElevation?: boolean;
   readonly actionable?: boolean;
   /** Additional information to ItinerarySegment */
-  readonly info?: React.ReactNode;
+  readonly banner?: React.ReactNode;
 }
 
 declare const ItinerarySegment: React.FunctionComponent<Props>;

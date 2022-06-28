@@ -29,7 +29,7 @@ const StyledWrapper = styled.div`
   `}
 `;
 
-const StyledInfoWrapper = styled.div`
+const StyledBannerWrapper = styled.div`
   ${({ theme }) => css`
     padding: 0 ${theme.orbit.spaceMedium};
   `}
@@ -47,7 +47,7 @@ const ItinerarySegment = ({
   noElevation,
   actionable = true,
   onClick,
-  info,
+  banner,
 }: Props): React.Node => {
   const content = React.Children.toArray(children);
   const [opened, setOpened] = React.useState(false);
@@ -64,7 +64,7 @@ const ItinerarySegment = ({
               last: i === React.Children.count(children) - 1,
               isNextHidden: content[i + 1] && content[i + 1].props.hidden,
               isPrevHidden: content[i - 1] && content[i - 1].props.hidden,
-              isInfo: !!info,
+              isBanner: !!banner,
               count: React.Children.count(children),
               isHidden: el.props.hidden,
               noElevation: !!noElevation,
@@ -93,8 +93,8 @@ const ItinerarySegment = ({
       noElevation={noElevation}
     >
       {parts}
-      {info && <Separator spaceAfter="small" />}
-      {info && <StyledInfoWrapper>{info}</StyledInfoWrapper>}
+      {banner && <Separator spaceAfter="small" />}
+      {banner && <StyledBannerWrapper>{banner}</StyledBannerWrapper>}
     </StyledWrapper>
   );
 };

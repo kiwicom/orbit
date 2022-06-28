@@ -7,12 +7,14 @@ import {
   KiwicomGuarantee as Guarantee,
   Airplane,
   AlertCircle,
+  BaggageCheckedNone,
   Clock,
   SelfTransfer,
   PowerPlug,
   StarFull,
   BaggageSet,
   Wifi,
+  Visa,
   Seat,
   Entertainment,
   InformationCircle as Info,
@@ -323,16 +325,24 @@ export const Stop = (): React.Node => {
       <Heading type="title2">Hidden city example</Heading>
       <Itinerary>
         <ItinerarySegment
-          info={
+          banner={
             <Stack inline align="stretch">
-              <StarFull color="warning" />
-              <Text>
-                <Text as="span" type="warning" weight="bold">
-                  Hidden city hack:
-                </Text>{" "}
-                This itinerary finishes in New York (United States), but you’ll get off during the
-                layover
-              </Text>
+              <ItineraryBadgeList>
+                <BadgeListItem type="warning" icon={<StarFull color="warning" />}>
+                  <Text as="span" type="warning" weight="bold">
+                    Hidden city hack:{" "}
+                  </Text>{" "}
+                  This itinerary finishes in New York (United States), but you’ll get off during the
+                  layover
+                </BadgeListItem>
+                <BadgeListItem icon={<Visa />}>
+                  Check travel document requirements for all destinations, including passport, visa
+                  and COVID-19 documents.
+                </BadgeListItem>
+                <BadgeListItem icon={<BaggageCheckedNone />}>
+                  You can’t bring checked or cabin baggage.
+                </BadgeListItem>
+              </ItineraryBadgeList>
             </Stack>
           }
         >

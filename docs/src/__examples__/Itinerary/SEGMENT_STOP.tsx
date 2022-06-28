@@ -28,6 +28,7 @@ export default {
         { name: "station", type: "text", defaultValue: "Sheremetyevo International Airport (SVO)" },
         { name: "city", type: "text", defaultValue: "Moscow" },
         { name: "canceled", type: "boolean", defaultValue: false },
+        { name: "hiddenCityText", type: "string", defaultValue: "" },
         { name: "minWidth", type: "number", defaultValue: 60 },
         {
           name: "type",

@@ -24,10 +24,13 @@ const lineMixin = css`
 
 // TODO: Improve
 const IconStyled = styled.div`
-  ${({ theme, index, last, count, isNextHidden }) => css`
+  ${({ theme, index, last, count, isPrevHidden, isHidden }) => css`
     display: flex;
     justify-content: center;
     z-index: 1;
+    svg {
+      background: ${theme.orbit.paletteWhite};
+    }
     ${index > 0 &&
     !last &&
     css`
@@ -46,7 +49,7 @@ const IconStyled = styled.div`
     css`
       &:before {
         top: -9px;
-        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
+        border: 1px ${isPrevHidden ? "dashed" : "solid"} ${theme.orbit.paletteCloudNormalActive};
         ${lineMixin};
       }
     `};
@@ -56,8 +59,7 @@ const IconStyled = styled.div`
     css`
       &:after {
         bottom: -7px;
-        opacity: ${isNextHidden ? `0.5` : `1`};
-        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
+        border: 1px ${isHidden ? "dashed" : "solid"} ${theme.orbit.paletteCloudNormalActive};
         ${lineMixin};
       }
     `};
@@ -78,14 +80,15 @@ const Icon = ({ type, isDetails, icon }) => {
 };
 
 const ItineraryIcon = ({ isDetails, type, children }: Props): React.Node => {
-  const { index, last, isNextHidden, count } = usePart();
+  const { index, last, isPrevHidden, isHidden, count } = usePart();
 
   return (
     <IconStyled
       index={index}
       last={last}
       isDetails={isDetails}
-      isNextHidden={isNextHidden}
+      isPrevHidden={isPrevHidden}
+      isHidden={isHidden}
       count={count}
     >
       <Icon type={type} isDetails={isDetails} icon={children} />

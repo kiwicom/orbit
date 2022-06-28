@@ -2,21 +2,24 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import { StarFull, CircleEmpty, Circle } from "../../../icons";
 import { useWidth } from "../../context";
 import defaultTheme from "../../../defaultTheme";
 import Stack from "../../../Stack";
 import Text from "../../../Text";
 import ItineraryIcon from "../ItineraryIcon";
+import { usePart } from "../context";
 
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ theme, $hidden }) => css`
+  ${({ theme, $hidden, isLast, isFirst }) => css`
     display: flex;
     position: relative;
     box-sizing: border-box;
     opacity: ${$hidden ? `0.8` : `1`};
     padding: 0 ${theme.orbit.spaceSmall};
+    margin-bottom: ${!isLast && !isFirst && theme.orbit.spaceSmall};
   `}
 `;
 
@@ -32,6 +35,24 @@ const StyledDate = styled.div`
   `}
 `;
 
+const ItinerarySegmentStopIcon = ({
+  isPrevHidden,
+  isLast,
+  isHidden,
+  icon,
+}: {|
+  isHidden?: boolean,
+  isPrevHidden: boolean,
+  isLast: boolean,
+  icon?: React.Node,
+|}) => {
+  if (icon) return icon;
+  if (isHidden) return <StarFull color="warning" size="small" />;
+  if (isPrevHidden && isLast) return <CircleEmpty size="small" color="secondary" />;
+
+  return <Circle size="small" color="secondary" />;
+};
+
 const ItinerarySegmentStop = ({
   date,
   icon,
@@ -39,11 +60,13 @@ const ItinerarySegmentStop = ({
   city,
   station,
   hidden,
+  hiddenCityText = "Hidden city",
   canceled,
   minWidth = 70,
   type,
 }: Props): React.Node => {
   const { calculatedWidth, setWidths } = useWidth();
+  const { isPrevHidden, last, index } = usePart();
   const [dateWidth, setDateWidth] = React.useState<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
@@ -51,20 +74,40 @@ const ItinerarySegmentStop = ({
   }, [setWidths, dateWidth, minWidth]);
 
   return (
-    <StyledWrapper $hidden={hidden}>
+    <StyledWrapper $hidden={hidden} isLast={last} isFirst={index === 0}>
       <Stack flex align="center" spacing="small">
         <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
           <Stack flex direction="column" spacing="none" align="end">
-            <Text strikeThrough={canceled} weight="medium" type={canceled ? "critical" : "primary"}>
-              {time}
-            </Text>
-            <Text type="secondary" size="small" align="right">
-              {date}
-            </Text>
+            {time && (
+              <Text
+                strikeThrough={canceled}
+                weight="medium"
+                type={canceled ? "critical" : "primary"}
+              >
+                {time}
+              </Text>
+            )}
+            {date && (
+              <Text type="secondary" size="small" align="right">
+                {date}
+              </Text>
+            )}
           </Stack>
         </StyledDate>
-        <ItineraryIcon type={type}>{icon}</ItineraryIcon>
+        <ItineraryIcon type={type}>
+          <ItinerarySegmentStopIcon
+            isLast={last}
+            isHidden={hidden}
+            isPrevHidden={isPrevHidden}
+            icon={icon}
+          />
+        </ItineraryIcon>
         <Stack spacing="none">
+          {hidden && hiddenCityText && (
+            <Text type="warning" weight="bold" size="small">
+              {hiddenCityText}
+            </Text>
+          )}
           <Text weight="medium">{city}</Text>
           <Text type="secondary" size="small">
             {station}

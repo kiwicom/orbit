@@ -3,6 +3,7 @@ import * as React from "react";
 
 export type Context = {|
   +isNextHidden: boolean,
+  +isPrevHidden: boolean,
   +noElevation: boolean,
   +isHidden: boolean,
   +index: number,
@@ -16,6 +17,7 @@ export type ProviderProps = {|
   +children: React.Node,
   +noElevation: boolean,
   +isNextHidden: boolean,
+  +isPrevHidden: boolean,
   +isHidden: boolean,
   +index: number,
   +opened: boolean,

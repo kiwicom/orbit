@@ -55,6 +55,7 @@ const ItinerarySegment = ({
               toggleOpened: () => setOpened(prev => !prev),
               last: i === React.Children.count(children) - 1,
               isNextHidden: content[i + 1] && content[i + 1].props.hidden,
+              isPrevHidden: content[i - 1] && content[i - 1].props.hidden,
               count: React.Children.count(children),
               isHidden: el.props.hidden,
               noElevation: !!noElevation,

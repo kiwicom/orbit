@@ -8,7 +8,7 @@ import useStateWithCallback from "../hooks/useStateWithCallback";
 
 import type { Props } from ".";
 
-const Stepper = ({ onChange, defaultValue = 0, ...props }: Props): React.Node => {
+const Stepper = ({ onChange, defaultValue = 0, maxWidth = 108, ...props }: Props): React.Node => {
   const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);
 
   const incrementCounter = () => {
@@ -50,6 +50,7 @@ const Stepper = ({ onChange, defaultValue = 0, ...props }: Props): React.Node =>
   return (
     <StepperStateless
       onKeyDown={handleKeyDown}
+      maxWidth={maxWidth}
       onIncrement={incrementCounter}
       onDecrement={decrementCounter}
       minValue={minValue}

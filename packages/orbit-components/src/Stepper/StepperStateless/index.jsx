@@ -16,15 +16,6 @@ const getMaxWidth = ({ maxWidth }) => {
   return `${parseInt(maxWidth, 10)}px`;
 };
 
-const getOpacity = ({ isDisabled, isActive }) => {
-  if (isDisabled) {
-    if (isActive) return "0.3";
-    return "0.5";
-  }
-
-  return "1";
-};
-
 const StyledStepper = styled.div`
   display: flex;
   width: 100%;
@@ -37,7 +28,6 @@ const iconMixin = css`
     padding: 2px;
     height: 20px;
     width: 20px;
-    opacity: ${getOpacity};
     background: ${isActive ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudDark};
     border-radius: ${theme.orbit.borderRadiusCircle};
     ${mq.desktop(css`

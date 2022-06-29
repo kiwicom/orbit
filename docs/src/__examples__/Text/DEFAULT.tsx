@@ -32,6 +32,16 @@ export default {
           defaultValue: "left",
         },
         {
+          name: "strikeThrough",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
+          name: "withBackground",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
           name: "uppercase",
           type: "boolean",
           defaultValue: false,

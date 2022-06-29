@@ -3173,7 +3173,7 @@
       }
     },
     "lineHeightTextLarge": {
-      "value": "22px",
+      "value": "24px",
       "type": "size",
       "category": "Line height",
       "meta": {

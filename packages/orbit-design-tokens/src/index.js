@@ -449,7 +449,7 @@ export const getTokens: GetTokens = customFoundation => {
     lineHeightText: theme.base.lineHeight,
     lineHeightTextSmall: "16px",
     lineHeightTextNormal: "20px",
-    lineHeightTextLarge: "22px",
+    lineHeightTextLarge: "24px",
     lineHeightHeading: "1.2",
     lineHeightHeadingDisplay: "44px",
     lineHeightHeadingDisplaySubtitle: "28px",

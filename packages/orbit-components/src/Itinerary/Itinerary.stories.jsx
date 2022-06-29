@@ -203,14 +203,18 @@ export const Status = (): React.Node => {
               city="Prague"
               station="Václav Havel Airport Prague (PRG)"
               date="Fri, 19.10"
+              type="critical"
               time="14:05"
+              cancelledTime="12:50"
             />
             <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
             <ItinerarySegmentStop
               city="Vienna"
+              type="critical"
               station="Vienna International Airport"
               date="Fri, 19.10"
               time="15:35"
+              cancelledTime="14:00"
             />
           </ItinerarySegment>
         </ItineraryStatus>
@@ -308,7 +312,6 @@ export const Stop = (): React.Node => {
   const time = text("time", "14:05");
   const station = text("station", "Václav Havel Airport Prague (PRG)");
   const city = text("city", "Prague");
-  const canceled = boolean("canceled", false);
   const type = select("type", ["warning", "critical", "success", "info"], "warning");
   const hidden = boolean("hidden", false);
 
@@ -317,7 +320,6 @@ export const Stop = (): React.Node => {
       <Heading type="title2">Regular stop</Heading>
       <ItinerarySegmentStop
         city={city}
-        canceled={canceled}
         station={station}
         hidden={hidden}
         date={date}
@@ -384,7 +386,7 @@ export const Stop = (): React.Node => {
           />
         </ItinerarySegment>
       </Itinerary>
-      <Heading>Throwaway ticketing</Heading>
+      <Heading type="title2">Throwaway ticketing</Heading>
       <Itinerary>
         <ItinerarySegment
           onBannerClick={action("onBannerClick")}

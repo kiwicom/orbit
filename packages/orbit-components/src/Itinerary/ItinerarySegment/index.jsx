@@ -108,8 +108,8 @@ const ItinerarySegment = ({
       noElevation={noElevation}
     >
       {parts}
-      {banner && <Separator spaceAfter="small" />}
-      {banner && (
+      {Boolean(banner) && <Separator spaceAfter="small" />}
+      {Boolean(banner) && (
         <StyledBannerWrapper onClick={handleBannerClick}>
           {banner}
           <ChevronRight color="secondary" />

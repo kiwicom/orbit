@@ -12,6 +12,8 @@ export interface Props {
   readonly date?: string;
   /** The time of ItinerarySegmentStop */
   readonly time?: React.ReactNode;
+  /** Render time with strikeThrough property */
+  readonly cancelledTime?: React.ReactNode;
   /** The city of ItinerarySegmentStop */
   readonly city: React.ReactNode;
   /** The place of ItinerarySegmentStop */
@@ -26,8 +28,6 @@ export interface Props {
   readonly minWidth?: number;
   /** sets custom icon */
   readonly icon?: React.ReactNode;
-  /** shows segment stop as canceled with striked through Text */
-  readonly canceled?: React.ReactNode;
 }
 
 declare const ItinerarySegmentStop: React.FunctionComponent<Props>;

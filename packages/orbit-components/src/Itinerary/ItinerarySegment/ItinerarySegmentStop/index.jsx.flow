@@ -6,12 +6,12 @@ import type { Status } from "../..";
 export type Props = {|
   +date?: string,
   +time?: React.Node,
+  +cancelledTime?: React.Node,
   +city: React.Node,
   +station: React.Node,
   +hidden?: boolean,
   +hiddenCityText?: React.Node,
   +type?: Status,
-  +canceled?: boolean,
   +minWidth?: number,
   +icon?: React.Node,
 |};

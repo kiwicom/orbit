@@ -57,11 +57,11 @@ const ItinerarySegmentStop = ({
   date,
   icon,
   time,
+  cancelledTime,
   city,
   station,
   hidden,
   hiddenCityText = "Hidden city",
-  canceled,
   minWidth = 70,
   type,
 }: Props): React.Node => {
@@ -79,17 +79,18 @@ const ItinerarySegmentStop = ({
         <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
           <Stack flex direction="column" spacing="none" align="end">
             {time && (
-              <Text
-                strikeThrough={canceled}
-                weight="medium"
-                type={canceled ? "critical" : "primary"}
-              >
+              <Text weight="medium" type={type} withBackground={!!cancelledTime}>
                 {time}
               </Text>
             )}
             {date && (
               <Text type="secondary" size="small" align="right">
                 {date}
+              </Text>
+            )}
+            {cancelledTime && (
+              <Text type="secondary" weight="medium" strikeThrough={!!cancelledTime}>
+                {cancelledTime}
               </Text>
             )}
           </Stack>

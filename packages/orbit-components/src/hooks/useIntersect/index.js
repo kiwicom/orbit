@@ -10,6 +10,7 @@ const useIntersect: UseIntersect = ({ root = null, rootMargin, threshold = 0 } =
   const ref = useCallback((el: Element | null) => {
     setNode(el);
   }, []);
+
   const observer = useRef<null | IntersectionObserver>(null);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const useIntersect: UseIntersect = ({ root = null, rootMargin, threshold = 0 } =
     return () => currentObs?.disconnect();
   }, [node, root, rootMargin, threshold]);
 
-  return { ref, entry };
+  return { ref, entry, observer: observer.current };
 };
 
 export default useIntersect;

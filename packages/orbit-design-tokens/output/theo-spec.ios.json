@@ -1894,7 +1894,7 @@
       "name": "borderColorButtonGoogleBorderedActive"
     },
     {
-      "value": "22px",
+      "value": "24px",
       "type": "size",
       "category": "Line height",
       "name": "lineHeightTextLarge"

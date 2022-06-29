@@ -315,7 +315,7 @@
   <color name="BORDERCOLORBUTTONCRITICALBORDERED" category="Border color">#ffd21c1c</color>
   <color name="COLORTEXTBUTTONFACEBOOKBORDERED" category="Colors">#ff3b5998</color>
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDACTIVE" category="Border color">#ff0b0c0f</color>
-  <dimen name="LINEHEIGHTTEXTLARGE" category="Line height">22dp</dimen>
+  <dimen name="LINEHEIGHTTEXTLARGE" category="Line height">24dp</dimen>
   <color name="COLORTEXTSUCCESS" category="Colors">#ff28a138</color>
   <string name="BACKGROUNDBUTTONBUNDLETOP" category="Background colors">linear-gradient(to top right, #2D2D2E 0, #696E73 1)</string>
   <color name="BORDERCOLORINPUT" category="Border color">#ffbac7d5</color>

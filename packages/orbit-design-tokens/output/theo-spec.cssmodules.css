@@ -317,7 +317,7 @@
 @value border-color-button-critical-bordered: rgb(210, 28, 28);
 @value color-text-button-facebook-bordered: rgb(59, 89, 152);
 @value border-color-button-google-bordered-active: rgb(11, 12, 15);
-@value line-height-text-large: 22px;
+@value line-height-text-large: 24px;
 @value color-text-success: rgb(40, 161, 56);
 @value background-button-bundle-top: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)";
 @value border-color-input: rgb(186, 199, 213);

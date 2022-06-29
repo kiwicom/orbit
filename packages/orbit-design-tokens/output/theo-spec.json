@@ -314,7 +314,7 @@
   "borderColorButtonCriticalBordered": "rgb(210, 28, 28)",
   "colorTextButtonFacebookBordered": "rgb(59, 89, 152)",
   "borderColorButtonGoogleBorderedActive": "rgb(11, 12, 15)",
-  "lineHeightTextLarge": "22px",
+  "lineHeightTextLarge": "24px",
   "colorTextSuccess": "rgb(40, 161, 56)",
   "backgroundButtonBundleTop": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
   "borderColorInput": "rgb(186, 199, 213)",

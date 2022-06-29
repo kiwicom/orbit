@@ -20,6 +20,7 @@ export type Props = {|
   +weight?: Weight,
   +align?: Align,
   +strikeThrough?: boolean,
+  +withBackground?: boolean,
   +italic?: boolean,
   +uppercase?: boolean,
   +as?: As,

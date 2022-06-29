@@ -120,12 +120,14 @@ export const Playground = (): React.Node => {
   const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
   const dataTest = text("dataTest", "test");
   const id = text("id", "ID");
+  const withBackground = boolean("withBackground", false);
 
   return (
     <Text
       id={id}
       type={type}
       as={as}
+      withBackground={withBackground}
       size={size}
       strikeThrough={strikeThrough}
       weight={weight}

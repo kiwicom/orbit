@@ -14,6 +14,8 @@ export type Props = {|
   +onClick?: (ev: SyntheticEvent<HTMLDivElement>) => void | Promise<any>,
   +children: React.Node,
   +actionable?: boolean,
+  +banner?: React.Node,
+  +onBannerClick?: () => void | Promise<void>,
   ...Globals,
   ...spaceAfter,
 |};

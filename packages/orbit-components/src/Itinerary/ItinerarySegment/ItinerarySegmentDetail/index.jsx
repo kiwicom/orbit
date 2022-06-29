@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 
 import HorizontalScroll from "../../../HorizontalScroll";
 import Truncate from "../../../Truncate";
-import { StyledBadge } from "../../../primitives/BadgePrimitive";
 import { left, rtlSpacing } from "../../../utils/rtl";
 import ChevronUp from "../../../icons/ChevronUp";
 import ChevronDown from "../../../icons/ChevronDown";
@@ -21,25 +20,11 @@ import ItineraryIcon from "../ItineraryIcon";
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ theme, opened, isContent }) => css`
-    width: 100%;
-    position: relative;
-    padding: 10px 0;
-    box-sizing: border-box;
-    background: ${isContent ? opened && theme.orbit.paletteCloudLight : "none"};
-    &:hover {
-      background: ${isContent ? theme.orbit.paletteCloudLight : "none"};
-      ${StyledBadge} {
-        background: ${theme.orbit.paletteWhite};
-      }
-    }
-  `}
+  width: 100%;
+  position: relative;
+  padding: 10px 0;
+  box-sizing: border-box;
 `;
-
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledWrapper.defaultProps = {
-  theme: themeDefault,
-};
 
 const StyledDetailsIcon = styled.div`
   background: transparent;
@@ -58,15 +43,12 @@ StyledInnerWrapper.defaultProps = {
 };
 
 export const StyledSummary: any = styled.div`
-  ${({ theme, opened, isContent }) => css`
+  ${({ theme }) => css`
     display: flex;
     align-items: center;
     border-radius: ${theme.orbit.borderRadiusBadge};
     width: 100%;
     overflow: hidden;
-    ${StyledBadge} {
-      background: ${isContent ? opened && theme.orbit.paletteWhite : "none"};
-    }
   `}
 `;
 
@@ -114,22 +96,35 @@ const StyledIcon = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
     padding: ${theme.orbit.spaceXXSmall};
     z-index: 3;
+    svg {
+      padding-top: ${isFirst && theme.orbit.spaceXXSmall};
+      padding-bottom: ${isLast && theme.orbit.spaceXXSmall};
+    }
     &:after {
       content: "";
+      box-sizing: border-box;
       position: absolute;
       width: 100%;
       height: 100%;
       left: 0;
+
+      border-left: 1px solid ${theme.orbit.paletteCloudNormalActive};
+      border-right: 1px solid ${theme.orbit.paletteCloudNormalActive};
       z-index: -1;
       background: ${theme.orbit.paletteWhite};
       ${isFirst &&
       css`
+        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
+        border-bottom: transparent;
         border-radius: ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge} 0 0;
       `}
       ${isLast &&
       css`
+        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
+        border-top: transparent;
         border-radius: 0 0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge};
       `}
     }
@@ -154,7 +149,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
   const [isOverflowed, setOverflowed] = React.useState(false);
 
   return (
-    <StyledWrapper opened={opened} isContent={content}>
+    <StyledWrapper opened={opened}>
       <StyledInnerWrapper>
         <Stack align="center" spacing="small">
           <StyledDuration $minWidth={calculatedWidth || 60}>
@@ -166,8 +161,6 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
             <ItineraryIcon isDetails>{icon}</ItineraryIcon>
           </StyledDetailsIcon>
           <StyledSummary
-            opened={opened}
-            isContent={content}
             onClick={ev => {
               if (isOverflowed && opened) ev.stopPropagation();
             }}

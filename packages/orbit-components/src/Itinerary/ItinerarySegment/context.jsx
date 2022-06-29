@@ -5,6 +5,8 @@ import type { Context } from "./context";
 
 export const ItinerarySegmentContext: React.Context<Context> = React.createContext({
   isNextHidden: false,
+  isPrevHidden: false,
+  isBanner: false,
   isHidden: false,
   noElevation: false,
   opened: false,

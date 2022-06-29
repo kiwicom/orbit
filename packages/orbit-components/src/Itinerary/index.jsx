@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import ItineraryBadgeList from "./ItineraryBadgeList";
 import ItinerarySegment from "./ItinerarySegment";
+import ItinerarySeparator from "./ItinerarySeparator";
 import ItineraryStatus from "./ItineraryStatus";
 import ItinerarySegmentStop from "./ItinerarySegment/ItinerarySegmentStop";
 import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
@@ -34,6 +35,7 @@ export {
   ItinerarySegment,
   ItinerarySegmentDetail,
   ItinerarySegmentStop,
+  ItinerarySeparator,
   ItineraryBadgeList,
   ItineraryStatus,
 };

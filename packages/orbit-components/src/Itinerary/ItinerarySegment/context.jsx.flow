@@ -3,8 +3,10 @@ import * as React from "react";
 
 export type Context = {|
   +isNextHidden: boolean,
+  +isPrevHidden: boolean,
   +noElevation: boolean,
   +isHidden: boolean,
+  +isBanner: boolean,
   +index: number,
   +opened: boolean,
   +toggleOpened: () => void,
@@ -16,6 +18,8 @@ export type ProviderProps = {|
   +children: React.Node,
   +noElevation: boolean,
   +isNextHidden: boolean,
+  +isPrevHidden: boolean,
+  +isBanner: boolean,
   +isHidden: boolean,
   +index: number,
   +opened: boolean,

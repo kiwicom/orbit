@@ -1,29 +1,35 @@
 // @flow
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 
 import * as Icons from "../icons";
 import {
   KiwicomGuarantee as Guarantee,
   Airplane,
-  Train,
   AlertCircle,
+  BaggageCheckedNone,
   Clock,
   SelfTransfer,
   PowerPlug,
+  StarFull,
   BaggageSet,
   Wifi,
+  Visa,
   Seat,
   Entertainment,
   InformationCircle as Info,
 } from "../icons";
 import Stack from "../Stack";
 import Badge from "../Badge";
+import Text from "../Text";
+import CountryFlag from "../CountryFlag";
 import Heading from "../Heading";
 import { BadgeListItem } from "../BadgeList";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Itinerary, {
+  ItinerarySeparator,
   ItinerarySegment,
   ItineraryBadgeList,
   ItinerarySegmentDetail,
@@ -197,14 +203,18 @@ export const Status = (): React.Node => {
               city="Prague"
               station="Václav Havel Airport Prague (PRG)"
               date="Fri, 19.10"
+              type="critical"
               time="14:05"
+              cancelledTime="12:50"
             />
             <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
             <ItinerarySegmentStop
               city="Vienna"
+              type="critical"
               station="Vienna International Airport"
               date="Fri, 19.10"
               time="15:35"
+              cancelledTime="14:00"
             />
           </ItinerarySegment>
         </ItineraryStatus>
@@ -286,48 +296,136 @@ export const Status = (): React.Node => {
   );
 };
 
+export const Separator = (): React.Node => {
+  return (
+    <Stack direction="column">
+      <ItinerarySeparator>
+        <Text weight="bold">8 nights in Barcelona</Text>
+      </ItinerarySeparator>
+      <ItinerarySeparator />
+    </Stack>
+  );
+};
+
 export const Stop = (): React.Node => {
   const date = text("date", "Fr, 19.10");
   const time = text("time", "14:05");
-  const station = text("place", "Václav Havel Airport Prague (PRG)");
+  const station = text("station", "Václav Havel Airport Prague (PRG)");
   const city = text("city", "Prague");
-  const canceled = boolean("canceled", false);
   const type = select("type", ["warning", "critical", "success", "info"], "warning");
+  const hidden = boolean("hidden", false);
 
   return (
-    <Stack direction="column" spacing="large">
+    <Stack spacing="large">
+      <Heading type="title2">Regular stop</Heading>
       <ItinerarySegmentStop
         city={city}
-        canceled={canceled}
         station={station}
+        hidden={hidden}
         date={date}
         time={time}
         type={type}
       />
-      <ItinerarySegmentStop
-        city={city}
-        canceled={canceled}
-        station={station}
-        date={date}
-        time={time}
-        type={type}
-      />
-      <ItinerarySegmentStop
-        city={city}
-        canceled={canceled}
-        station={station}
-        date={date}
-        time={time}
-        icon={<Train size="small" />}
-      />
-      <ItinerarySegmentStop
-        city={city}
-        canceled={canceled}
-        station={station}
-        date={date}
-        time={time}
-        icon={<Train size="small" />}
-      />
+      <Heading type="title2">Hidden city example</Heading>
+      <Itinerary>
+        <ItinerarySegment
+          onBannerClick={action("onBannerClick")}
+          banner={
+            <Stack inline align="stretch">
+              <ItineraryBadgeList>
+                <BadgeListItem type="warning" icon={<StarFull color="warning" />}>
+                  <Text as="span" type="warning" weight="bold">
+                    Hidden city hack:{" "}
+                  </Text>{" "}
+                  This itinerary finishes in New York (United States), but you’ll get off during the
+                  layover
+                </BadgeListItem>
+                <BadgeListItem icon={<Visa />}>
+                  Check travel document requirements for all destinations, including passport, visa
+                  and COVID-19 documents.
+                </BadgeListItem>
+                <BadgeListItem icon={<BaggageCheckedNone />}>
+                  You can’t bring checked or cabin baggage.
+                </BadgeListItem>
+              </ItineraryBadgeList>
+            </Stack>
+          }
+        >
+          <ItinerarySegmentStop
+            city="Brno BRQ"
+            station="Brno-Tuřany"
+            date="Mon, 30.1"
+            time="17:30"
+          />
+          <ItinerarySegmentDetail
+            duration="1h 35m"
+            summary={
+              <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                Ryanair
+              </Badge>
+            }
+            content={content}
+          />
+          <ItinerarySegmentStop
+            city="Barcelona BCN"
+            station="El Prat de LIobregat"
+            hidden
+            date="Mon, 30.1"
+            time="20:00"
+          />
+          <ItinerarySegmentStop
+            city={<Text type="secondary">New York JFK</Text>}
+            station={
+              <Stack flex align="center" spacing="XSmall">
+                <CountryFlag code="US" size="small" />
+                <Text type="secondary" size="small">
+                  United states
+                </Text>
+              </Stack>
+            }
+          />
+        </ItinerarySegment>
+      </Itinerary>
+      <Heading type="title2">Throwaway ticketing</Heading>
+      <Itinerary>
+        <ItinerarySegment
+          onBannerClick={action("onBannerClick")}
+          banner={
+            <Stack inline align="stretch">
+              <ItineraryBadgeList>
+                <BadgeListItem type="info" icon={<StarFull color="info" />}>
+                  <Text as="span" type="info" weight="bold">
+                    Throwaway ticketing hack:{" "}
+                  </Text>{" "}
+                  You are saving money with this travel hack.
+                </BadgeListItem>
+              </ItineraryBadgeList>
+            </Stack>
+          }
+        >
+          <ItinerarySegmentStop
+            city="Barcelona BCN"
+            station="Brno-Tuřany"
+            date="Mon, 30.1"
+            time="17:30"
+          />
+          <ItinerarySegmentDetail
+            duration="2h 30m"
+            summary={
+              <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                Ryanair
+              </Badge>
+            }
+            content={content}
+          />
+          <ItinerarySegmentStop
+            city="London LHR"
+            station="London Heathrow"
+            date="Mon, 30.1"
+            time="20:00"
+          />
+        </ItinerarySegment>
+      </Itinerary>
     </Stack>
   );
 };
@@ -448,13 +546,14 @@ export default {
   title: "Itinerary",
   component: Itinerary,
   includeStories: [
-    "Default",
-    "Status",
-    "Segment",
-    "Stop",
-    "Detail",
-    "RTL",
     "BadgeList",
     "CarrierBadge",
+    "Default",
+    "Detail",
+    "RTL",
+    "Segment",
+    "Separator",
+    "Status",
+    "Stop",
   ],
 };

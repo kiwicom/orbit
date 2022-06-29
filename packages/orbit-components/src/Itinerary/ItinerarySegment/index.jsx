@@ -7,6 +7,8 @@ import Stack from "../../Stack";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
+import Separator from "../../Separator";
+import ChevronRight from "../../icons/ChevronRight";
 
 import type { Props } from ".";
 
@@ -28,6 +30,18 @@ const StyledWrapper = styled.div`
   `}
 `;
 
+const StyledBannerWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 ${theme.orbit.spaceMedium};
+    & > div {
+      max-width: calc(100% - 50px);
+    }
+  `}
+`;
+
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
@@ -40,6 +54,8 @@ const ItinerarySegment = ({
   noElevation,
   actionable = true,
   onClick,
+  banner,
+  onBannerClick,
 }: Props): React.Node => {
   const content = React.Children.toArray(children);
   const [opened, setOpened] = React.useState(false);
@@ -55,6 +71,8 @@ const ItinerarySegment = ({
               toggleOpened: () => setOpened(prev => !prev),
               last: i === React.Children.count(children) - 1,
               isNextHidden: content[i + 1] && content[i + 1].props.hidden,
+              isPrevHidden: content[i - 1] && content[i - 1].props.hidden,
+              isBanner: !!banner,
               count: React.Children.count(children),
               isHidden: el.props.hidden,
               noElevation: !!noElevation,
@@ -72,6 +90,13 @@ const ItinerarySegment = ({
     setOpened(prev => !prev);
   };
 
+  const handleBannerClick = (ev: SyntheticEvent<HTMLDivElement>) => {
+    ev.stopPropagation();
+    if (onBannerClick) {
+      onBannerClick();
+    }
+  };
+
   return (
     <StyledWrapper
       actionable={actionable}
@@ -83,6 +108,13 @@ const ItinerarySegment = ({
       noElevation={noElevation}
     >
       {parts}
+      {Boolean(banner) && <Separator spaceAfter="small" />}
+      {Boolean(banner) && (
+        <StyledBannerWrapper onClick={handleBannerClick}>
+          {banner}
+          <ChevronRight color="secondary" />
+        </StyledBannerWrapper>
+      )}
     </StyledWrapper>
   );
 };

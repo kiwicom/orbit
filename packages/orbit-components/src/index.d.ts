@@ -38,6 +38,7 @@ export { InputFile } from "./InputFile";
 export {
   default as Itinerary,
   ItinerarySegment,
+  ItinerarySeparator,
   ItineraryStatus,
   ItineraryBadgeList,
   ItinerarySegmentDetail,

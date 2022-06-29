@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import defaultTheme from "../defaultTheme";
 import {
@@ -63,8 +64,9 @@ export const StyledText: any = styled(
     </TextElement>
   ),
 )`
-  ${({ theme, align, uppercase, strikeThrough, type, italic }) => css`
+  ${({ theme, align, uppercase, strikeThrough, type, italic, withBackground }) => css`
     font-family: ${theme.orbit.fontFamily};
+    background: ${withBackground && convertHexToRgba(getTypeToken({ theme, type }), 10)};
     font-size: ${getSizeToken};
     font-weight: ${getWeightToken};
     color: ${getTypeToken};
@@ -100,6 +102,7 @@ const Text = ({
   dataTest,
   spaceAfter,
   children,
+  withBackground,
   id,
 }: Props): React.Node => {
   return (
@@ -108,6 +111,7 @@ const Text = ({
       type={type}
       size={size}
       strikeThrough={strikeThrough}
+      withBackground={withBackground}
       weight={weight}
       align={align}
       element={as}

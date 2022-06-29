@@ -36,7 +36,9 @@ function adjustChangelog(str) {
   const output = str
     .replace("Bug Fixes", "Bug Fixes 🐛")
     .replace("Features", "Features 🆕")
-    .replace("BREAKING CHANGES", "BREAKING CHANGES 🚨");
+    .replace("BREAKING CHANGES", "BREAKING CHANGES 🚨")
+    .replace("Reverts", "Reverts 🔄");
+
   return output;
 }
 

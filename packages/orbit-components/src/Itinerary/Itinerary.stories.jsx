@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 
 import * as Icons from "../icons";
 import {
@@ -325,6 +326,7 @@ export const Stop = (): React.Node => {
       <Heading type="title2">Hidden city example</Heading>
       <Itinerary>
         <ItinerarySegment
+          onBannerClick={action("onBannerClick")}
           banner={
             <Stack inline align="stretch">
               <ItineraryBadgeList>

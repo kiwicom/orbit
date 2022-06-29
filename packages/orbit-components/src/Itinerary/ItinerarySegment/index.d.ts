@@ -23,6 +23,8 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly actionable?: boolean;
   /** Additional information to ItinerarySegment */
   readonly banner?: React.ReactNode;
+  /** Action which fires after click on banner  */
+  readonly onBannerClick?: () => void | Promise<void>;
 }
 
 declare const ItinerarySegment: React.FunctionComponent<Props>;

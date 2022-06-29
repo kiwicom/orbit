@@ -8,6 +8,7 @@ import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
 import Separator from "../../Separator";
+import ChevronRight from "../../icons/ChevronRight";
 
 import type { Props } from ".";
 
@@ -31,7 +32,13 @@ const StyledWrapper = styled.div`
 
 const StyledBannerWrapper = styled.div`
   ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    width: 100%;
     padding: 0 ${theme.orbit.spaceMedium};
+    & > div {
+      max-width: calc(100% - 50px);
+    }
   `}
 `;
 
@@ -48,6 +55,7 @@ const ItinerarySegment = ({
   actionable = true,
   onClick,
   banner,
+  onBannerClick,
 }: Props): React.Node => {
   const content = React.Children.toArray(children);
   const [opened, setOpened] = React.useState(false);
@@ -82,6 +90,13 @@ const ItinerarySegment = ({
     setOpened(prev => !prev);
   };
 
+  const handleBannerClick = (ev: SyntheticEvent<HTMLDivElement>) => {
+    ev.stopPropagation();
+    if (onBannerClick) {
+      onBannerClick();
+    }
+  };
+
   return (
     <StyledWrapper
       actionable={actionable}
@@ -94,7 +109,12 @@ const ItinerarySegment = ({
     >
       {parts}
       {banner && <Separator spaceAfter="small" />}
-      {banner && <StyledBannerWrapper>{banner}</StyledBannerWrapper>}
+      {banner && (
+        <StyledBannerWrapper onClick={handleBannerClick}>
+          {banner}
+          <ChevronRight color="secondary" />
+        </StyledBannerWrapper>
+      )}
     </StyledWrapper>
   );
 };

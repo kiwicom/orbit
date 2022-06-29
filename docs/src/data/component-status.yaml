@@ -625,3 +625,5 @@
 - component: KeyValue
   ios: Planned
   android: Released
+  react: Released
+  docs: Planned

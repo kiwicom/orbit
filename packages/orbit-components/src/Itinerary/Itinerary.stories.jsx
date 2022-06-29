@@ -319,6 +319,7 @@ export const Stop = (): React.Node => {
         city={city}
         canceled={canceled}
         station={station}
+        hidden={hidden}
         date={date}
         time={time}
         type={type}
@@ -349,21 +350,26 @@ export const Stop = (): React.Node => {
           }
         >
           <ItinerarySegmentStop
-            city={city}
-            canceled={canceled}
-            station={station}
-            date={date}
-            time={time}
-            type={type}
+            city="Brno BRQ"
+            station="Brno-Tuřany"
+            date="Mon, 30.1"
+            time="17:30"
           />
-          <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
+          <ItinerarySegmentDetail
+            duration="1h 35m"
+            summary={
+              <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                Ryanair
+              </Badge>
+            }
+            content={content}
+          />
           <ItinerarySegmentStop
-            city={city}
-            canceled={canceled}
-            station={station}
-            hidden={hidden}
-            date={date}
-            time={time}
+            city="Barcelona BCN"
+            station="El Prat de LIobregat"
+            hidden
+            date="Mon, 30.1"
+            time="20:00"
           />
           <ItinerarySegmentStop
             city={<Text type="secondary">New York JFK</Text>}
@@ -375,6 +381,46 @@ export const Stop = (): React.Node => {
                 </Text>
               </Stack>
             }
+          />
+        </ItinerarySegment>
+      </Itinerary>
+      <Heading>Throwaway ticketing</Heading>
+      <Itinerary>
+        <ItinerarySegment
+          onBannerClick={action("onBannerClick")}
+          banner={
+            <Stack inline align="stretch">
+              <ItineraryBadgeList>
+                <BadgeListItem type="info" icon={<StarFull color="info" />}>
+                  <Text as="span" type="info" weight="bold">
+                    Throwaway ticketing hack:{" "}
+                  </Text>{" "}
+                  You are saving money with this travel hack.
+                </BadgeListItem>
+              </ItineraryBadgeList>
+            </Stack>
+          }
+        >
+          <ItinerarySegmentStop
+            city="Barcelona BCN"
+            station="Brno-Tuřany"
+            date="Mon, 30.1"
+            time="17:30"
+          />
+          <ItinerarySegmentDetail
+            duration="2h 30m"
+            summary={
+              <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                Ryanair
+              </Badge>
+            }
+            content={content}
+          />
+          <ItinerarySegmentStop
+            city="London LHR"
+            station="London Heathrow"
+            date="Mon, 30.1"
+            time="20:00"
           />
         </ItinerarySegment>
       </Itinerary>

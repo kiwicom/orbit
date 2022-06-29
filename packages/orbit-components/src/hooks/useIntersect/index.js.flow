@@ -2,6 +2,10 @@
 
 export type useIntersect = (
   intersect?: IntersectionObserverOptions,
-) => {| ref: (Element | null) => void, entry: IntersectionObserverEntry | null |};
+) => {|
+  ref: (Element | null) => void,
+  entry: IntersectionObserverEntry | null,
+  observer: IntersectionObserver | null,
+|};
 
 declare export default useIntersect;

@@ -15,7 +15,7 @@ const LazyLoaded = ({ alt, src, placeholder, ...props }: Props) => {
   const [source, setSource] = React.useState(placeholder);
   const [loaded, setLoaded] = React.useState(false);
 
-  const { ref, entry } = useIntersect({
+  const { ref, entry, observer } = useIntersect({
     threshold: 0.01,
     rootMargin: "150px",
   });

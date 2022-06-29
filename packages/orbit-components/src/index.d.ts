@@ -43,6 +43,7 @@ export {
   ItinerarySegmentDetail,
   ItinerarySegmentStop,
 } from "./Itinerary";
+export { KeyValue } from "./KeyValue";
 export { Inline } from "./Inline";
 export { Loading } from "./Loading";
 export { Popover } from "./Popover";

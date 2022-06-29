@@ -74,6 +74,7 @@ export {
   ItinerarySegmentStop,
   ItinerarySegmentDetail,
 } from "./Itinerary";
+export { default as KeyValue } from "./KeyValue";
 export { default as List, ListItem } from "./List";
 export { default as ListChoice } from "./ListChoice";
 export { default as Loading } from "./Loading";

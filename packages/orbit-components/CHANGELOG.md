@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.0.0...@kiwicom/orbit-components@3.1.0) (2022-06-30)
+
+
+### Bug Fixes
+
+* **Itinerary:** add radial-gradient to ItineraryIcon ([69b11ca](https://github.com/kiwicom/orbit/commit/69b11caff5c17a18c9845d4777870841bfa77381))
+* **Itinerary:** remove hover background color ([313f533](https://github.com/kiwicom/orbit/commit/313f53396133014cc8be1b3a4b77d33ba8729b69))
+* **Stepper:** minor stepper fixes ([#3431](https://github.com/kiwicom/orbit/issues/3431)) ([fe4a4fb](https://github.com/kiwicom/orbit/commit/fe4a4fbbcbe394c8c29d513f7386386081c7fcde))
+
+
+### Features
+
+* add ids to components ([#3422](https://github.com/kiwicom/orbit/issues/3422)) ([5036dbf](https://github.com/kiwicom/orbit/commit/5036dbf3fc2669c01e1ec1d8d355305f754d860d))
+* **icons:** update icons from figma ([#3421](https://github.com/kiwicom/orbit/issues/3421)) ([d90f7dd](https://github.com/kiwicom/orbit/commit/d90f7ddb75c68340415c20f477bfa13ddaeb5522))
+* **Itinerary:** add ItinerarySeparator component ([d4c804d](https://github.com/kiwicom/orbit/commit/d4c804de2deceaac344061eba574875ef3db8963))
+* **ItinerarySegment:** add info prop ([13a1a20](https://github.com/kiwicom/orbit/commit/13a1a20ccceadad7f759245a7df276374b9c23a2))
+* **ItinerarySegment:** make banner clickable ([202de24](https://github.com/kiwicom/orbit/commit/202de24d79a457b0a2f94baeee5427c724650161))
+* **ItinerarySegmentStop:** add support for new HiddenCities ([4cac115](https://github.com/kiwicom/orbit/commit/4cac1159e3a9d7286e4b5b0bdd2690089fd8b99d))
+* **ItinerarySegmentStop:** add support of cancelled time ([92c8b64](https://github.com/kiwicom/orbit/commit/92c8b643da16804467d282832218a28cbe79f100))
+* **KeyValue:** add KeyValue component ([#3430](https://github.com/kiwicom/orbit/issues/3430)) ([a9358a9](https://github.com/kiwicom/orbit/commit/a9358a927b34007838db2b68f8998c2e3452f0b1))
+* **Text:** add withBackground property ([1852f0b](https://github.com/kiwicom/orbit/commit/1852f0b5ded7a7897b0db78d15620d4106218e1b))
+* **useIntersect:** export observer ([#3432](https://github.com/kiwicom/orbit/issues/3432)) ([547b41e](https://github.com/kiwicom/orbit/commit/547b41eed005ec8684816ee3574ef09f34397d18))
+
+
+### Reverts
+
+* Revert "fix(useLockScroll): add webkit-scrollbar to prevent layout shift (#3408)" (#3420) ([9a72307](https://github.com/kiwicom/orbit/commit/9a72307ebb43d46742436ec1ba8a3c206d38d316)), closes [#3408](https://github.com/kiwicom/orbit/issues/3408) [#3420](https://github.com/kiwicom/orbit/issues/3420)
+
+
+
+
+
 # [3.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.22.2...@kiwicom/orbit-components@3.0.0) (2022-06-20)
 
 

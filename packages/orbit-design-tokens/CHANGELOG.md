@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.4.2...@kiwicom/orbit-design-tokens@1.4.3) (2022-06-30)
+
+
+### Bug Fixes
+
+* **tokens:** lineHeightTextLarge set to 24px ([#3433](https://github.com/kiwicom/orbit/issues/3433)) ([037c9a6](https://github.com/kiwicom/orbit/commit/037c9a62dc32133638fcdb9d7bf7fe8cc1f9131d))
+
+
+
+
+
 ## [1.4.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.4.1...@kiwicom/orbit-design-tokens@1.4.2) (2022-06-02)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

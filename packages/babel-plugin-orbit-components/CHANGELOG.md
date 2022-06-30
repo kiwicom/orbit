@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.27...@kiwicom/babel-plugin-orbit-components@3.5.0) (2022-06-30)
+
+
+### Features
+
+* **Itinerary:** add ItinerarySeparator component ([d4c804d](https://github.com/kiwicom/orbit/commit/d4c804de2deceaac344061eba574875ef3db8963))
+
+
+
+
+
 ## [3.4.27](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.26...@kiwicom/babel-plugin-orbit-components@3.4.27) (2022-06-20)
 
 

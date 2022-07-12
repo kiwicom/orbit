@@ -135,7 +135,7 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^2.0.7",
     "camelcase": "^6.3.0",
-    "capitalize": "^2.0.3",
+    "capitalize": "^2.0.4",
     "cpy-cli": "^3.1.1",
     "cypress": "^8.3.0",
     "dedent": "^0.7.0",

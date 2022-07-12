@@ -1,16 +1,18 @@
 import React from "react";
-import { ItinerarySegmentStop, ItinerarySegment } from "@kiwicom/orbit-components";
+import { Itinerary, ItinerarySegmentStop, ItinerarySegment } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <ItinerarySegment>
-      <ItinerarySegmentStop
-        city="Moscow"
-        station="Sheremetyevo International Airport (SVO)"
-        date="Fri, 19.10"
-        time="14:05"
-      />
-    </ItinerarySegment>
+    <Itinerary>
+      <ItinerarySegment>
+        <ItinerarySegmentStop
+          city="Moscow"
+          station="Sheremetyevo International Airport (SVO)"
+          date="Fri, 19.10"
+          time="14:05"
+        />
+      </ItinerarySegment>
+    </Itinerary>
   ),
   exampleKnobs: [
     {
@@ -27,8 +29,11 @@ export default {
         { name: "time", type: "text", defaultValue: "14:05" },
         { name: "station", type: "text", defaultValue: "Sheremetyevo International Airport (SVO)" },
         { name: "city", type: "text", defaultValue: "Moscow" },
-        { name: "canceled", type: "boolean", defaultValue: false },
-        { name: "hiddenCityText", type: "string", defaultValue: "" },
+        { name: "cancelledCity", type: "text", defaultValue: "" },
+        { name: "cancelledStation", type: "text", defaultValue: "" },
+        { name: "cancelledDate", type: "text", defaultValue: "" },
+        { name: "cancelledTime", type: "text", defaultValue: "" },
+        { name: "hiddenCityText", type: "text", defaultValue: "" },
         { name: "minWidth", type: "number", defaultValue: 60 },
         {
           name: "type",

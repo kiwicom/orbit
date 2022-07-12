@@ -6,6 +6,9 @@ import type { Status } from "../..";
 export type Props = {|
   +date?: string,
   +time?: React.Node,
+  +cancelledDate?: React.Node,
+  +cancelledStation?: React.Node,
+  +cancelledCity?: React.Node,
   +cancelledTime?: React.Node,
   +city: React.Node,
   +station: React.Node,

@@ -57,6 +57,9 @@ const ItinerarySegmentStop = ({
   date,
   icon,
   time,
+  cancelledDate,
+  cancelledCity,
+  cancelledStation,
   cancelledTime,
   city,
   station,
@@ -79,17 +82,22 @@ const ItinerarySegmentStop = ({
         <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
           <Stack flex direction="column" spacing="none" align="end">
             {time && (
-              <Text weight="medium" type={type} withBackground={!!cancelledTime}>
+              <Text weight="medium" strikeThrough type={type} withBackground={!!cancelledTime}>
                 {time}
               </Text>
             )}
             {date && (
-              <Text type="secondary" size="small" align="right">
+              <Text type={type} size="small" align="right" withBackground={!!cancelledDate}>
                 {date}
               </Text>
             )}
+            {cancelledDate && (
+              <Text type="secondary" size="small" align="right" strikeThrough>
+                {cancelledDate}
+              </Text>
+            )}
             {cancelledTime && (
-              <Text type="secondary" weight="medium" strikeThrough={!!cancelledTime}>
+              <Text type="secondary" weight="medium" strikeThrough>
                 {cancelledTime}
               </Text>
             )}
@@ -109,10 +117,22 @@ const ItinerarySegmentStop = ({
               {hiddenCityText}
             </Text>
           )}
-          <Text weight="medium">{city}</Text>
-          <Text type="secondary" size="small">
+          <Text weight="medium" withBackground={!!cancelledCity} type={type}>
+            {city}
+          </Text>
+          {cancelledCity && (
+            <Text weight="medium" strikeThrough>
+              {cancelledCity}
+            </Text>
+          )}
+          <Text size="small" type={type} withBackground={!!cancelledStation}>
             {station}
           </Text>
+          {cancelledStation && (
+            <Text type="secondary" size="small" strikeThrough>
+              {cancelledStation}
+            </Text>
+          )}
         </Stack>
       </Stack>
     </StyledWrapper>

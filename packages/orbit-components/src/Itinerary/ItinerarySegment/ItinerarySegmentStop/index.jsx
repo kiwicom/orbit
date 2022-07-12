@@ -82,12 +82,22 @@ const ItinerarySegmentStop = ({
         <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
           <Stack flex direction="column" spacing="none" align="end">
             {time && (
-              <Text weight="medium" strikeThrough type={type} withBackground={!!cancelledTime}>
+              <Text
+                weight="medium"
+                strikeThrough={!!cancelledTime}
+                type={cancelledTime ? type : "secondary"}
+                withBackground={!!cancelledTime}
+              >
                 {time}
               </Text>
             )}
             {date && (
-              <Text type={type} size="small" align="right" withBackground={!!cancelledDate}>
+              <Text
+                type={cancelledDate ? type : "secondary"}
+                size="small"
+                align="right"
+                withBackground={!!cancelledDate}
+              >
                 {date}
               </Text>
             )}
@@ -117,7 +127,11 @@ const ItinerarySegmentStop = ({
               {hiddenCityText}
             </Text>
           )}
-          <Text weight="medium" withBackground={!!cancelledCity} type={type}>
+          <Text
+            weight="medium"
+            withBackground={!!cancelledCity}
+            type={cancelledCity ? type : "primary"}
+          >
             {city}
           </Text>
           {cancelledCity && (
@@ -125,7 +139,11 @@ const ItinerarySegmentStop = ({
               {cancelledCity}
             </Text>
           )}
-          <Text size="small" type={type} withBackground={!!cancelledStation}>
+          <Text
+            size="small"
+            type={cancelledStation ? type : "secondary"}
+            withBackground={!!cancelledStation}
+          >
             {station}
           </Text>
           {cancelledStation && (

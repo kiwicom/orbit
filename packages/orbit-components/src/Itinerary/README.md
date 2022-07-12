@@ -68,19 +68,22 @@ ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two loc
 
 ## Props
 
-| Name           | Type                | Required           | Default       | Description                                              |
-| -------------- | ------------------- | ------------------ | ------------- | -------------------------------------------------------- |
-| date           | `string`            | :heavy_check_mark: |               | The date of `ItinerarySegmentStop`                       |
-| time           | `React.Node`        | :heavy_check_mark: |               | The time of `ItinerarySegmentStop`                       |
-| cancelledTime  | `React.Node`        |                    |               | The cancelled time of `ItinerarySegmentStop`             |
-| city           | `React.Node`        | :heavy_check_mark: |               | The city of `ItinerarySegmentStop`                       |
-| station        | `React.Node`        | :heavy_check_mark: |               | The station of `ItinerarySegmentStop`                    |
-| hidden         | `boolean`           |                    |               | `ItinerarySegmentStop` which status is hidden            |
-| hiddenCityText | `React.Node`        |                    | `Hidden city` | Text which appears above city                            |
-| icon           | `React.Node`        |                    |               | `ItinerarySegmentStop` custom icon                       |
-| canceled       | `boolean`           |                    |               | Shows segment stop as canceled with striked through Text |
-| type           | [`Status`](#status) |                    |               | The color of `ItinerarySegmentStop` icon                 |
-| minWidth       | `number`            |                    | `70`          | sets min-width for first column with date and time       |
+| Name             | Type                | Required           | Default       | Description                                              |
+| ---------------- | ------------------- | ------------------ | ------------- | -------------------------------------------------------- |
+| date             | `string`            | :heavy_check_mark: |               | The date of `ItinerarySegmentStop`                       |
+| time             | `React.Node`        | :heavy_check_mark: |               | The time of `ItinerarySegmentStop`                       |
+| cancelledTime    | `React.Node`        |                    |               | The cancelled time of `ItinerarySegmentStop`             |
+| cancelledDate    | `React.Node`        |                    |               | The cancelled date of `ItinerarySegmentStop`             |
+| cancelledStation | `React.Node`        |                    |               | The cancelled station of `ItinerarySegmentStop`          |
+| cancelledCity    | `React.Node`        |                    |               | The cancelled city of `ItinerarySegmentStop`             |
+| city             | `React.Node`        | :heavy_check_mark: |               | The city of `ItinerarySegmentStop`                       |
+| station          | `React.Node`        | :heavy_check_mark: |               | The station of `ItinerarySegmentStop`                    |
+| hidden           | `boolean`           |                    |               | `ItinerarySegmentStop` which status is hidden            |
+| hiddenCityText   | `React.Node`        |                    | `Hidden city` | Text which appears above city                            |
+| icon             | `React.Node`        |                    |               | `ItinerarySegmentStop` custom icon                       |
+| canceled         | `boolean`           |                    |               | Shows segment stop as canceled with striked through Text |
+| type             | [`Status`](#status) |                    |               | The color of `ItinerarySegmentStop` icon                 |
+| minWidth         | `number`            |                    | `70`          | sets min-width for first column with date and time       |
 
 ## ItineraryStatus
 

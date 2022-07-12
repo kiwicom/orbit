@@ -189,6 +189,28 @@ export const Segment = (): React.Node => {
           />
         </ItinerarySegment>
       </Itinerary>
+      <Itinerary>
+        <ItinerarySegment actionable={false}>
+          <ItinerarySegmentStop
+            city="Madrid"
+            cancelledCity="Barcelona"
+            cancelledStation="Girona Airport"
+            type="critical"
+            station="Adolfo Suarez Madrid - Barajas Airport"
+            date="Mon, 31.1"
+            cancelledDate="Mon, 30.1"
+            time="17:55"
+            cancelledTime="17:45"
+          />
+          <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} />
+          <ItinerarySegmentStop
+            city="Milan"
+            station="Milan Bergamo International Airport (BGY)"
+            date="Wed, 02.02"
+            time="16:35"
+          />
+        </ItinerarySegment>
+      </Itinerary>
     </Stack>
   );
 };

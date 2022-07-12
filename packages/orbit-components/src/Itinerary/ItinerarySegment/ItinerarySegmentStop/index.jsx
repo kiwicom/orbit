@@ -101,14 +101,14 @@ const ItinerarySegmentStop = ({
                 {date}
               </Text>
             )}
-            {cancelledDate && (
-              <Text type="secondary" size="small" align="right" strikeThrough>
-                {cancelledDate}
-              </Text>
-            )}
             {cancelledTime && (
               <Text type="secondary" weight="medium" strikeThrough>
                 {cancelledTime}
+              </Text>
+            )}
+            {cancelledDate && (
+              <Text type="secondary" size="small" align="right" strikeThrough>
+                {cancelledDate}
               </Text>
             )}
           </Stack>
@@ -134,11 +134,6 @@ const ItinerarySegmentStop = ({
           >
             {city}
           </Text>
-          {cancelledCity && (
-            <Text weight="medium" strikeThrough>
-              {cancelledCity}
-            </Text>
-          )}
           <Text
             size="small"
             type={cancelledStation ? type : "secondary"}
@@ -146,6 +141,11 @@ const ItinerarySegmentStop = ({
           >
             {station}
           </Text>
+          {cancelledCity && (
+            <Text weight="medium" strikeThrough>
+              {cancelledCity}
+            </Text>
+          )}
           {cancelledStation && (
             <Text type="secondary" size="small" strikeThrough>
               {cancelledStation}

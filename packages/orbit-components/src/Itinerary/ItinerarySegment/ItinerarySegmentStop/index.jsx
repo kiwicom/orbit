@@ -35,6 +35,21 @@ const StyledDate = styled.div`
   `}
 `;
 
+const StyledHiddenCity = styled.p`
+  ${({ theme }) => css`
+    margin: 0;
+    font-family: ${theme.orbit.fontFamily};
+    font-weight: ${theme.orbit.fontWeightBold};
+    font-size: ${theme.orbit.fontSizeTextSmall};
+    color: ${theme.orbit.paletteOrangeNormal};
+  `};
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledHiddenCity.defaultProps = {
+  theme: defaultTheme,
+};
+
 const ItinerarySegmentStopIcon = ({
   isPrevHidden,
   isLast,
@@ -121,11 +136,7 @@ const ItinerarySegmentStop = ({
           />
         </ItineraryIcon>
         <Stack spacing="none">
-          {hidden && hiddenCityText && (
-            <Text type="warning" weight="bold" size="small">
-              {hiddenCityText}
-            </Text>
-          )}
+          {hidden && hiddenCityText && <StyledHiddenCity>{hiddenCityText}</StyledHiddenCity>}
           <Text
             weight="medium"
             withBackground={!!cancelledCity}

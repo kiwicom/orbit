@@ -115,7 +115,11 @@ const ItineraryStatus = ({
         <StyledStatusText $offset={offset}>
           <Stack inline spacing="XSmall" align="center">
             <StatusIcon type={type} />
-            {label && <Text type={type}>{label}</Text>}
+            {label && (
+              <Text type={type} weight="medium">
+                {label}
+              </Text>
+            )}
           </Stack>
         </StyledStatusText>
       </StyledStatusHeader>

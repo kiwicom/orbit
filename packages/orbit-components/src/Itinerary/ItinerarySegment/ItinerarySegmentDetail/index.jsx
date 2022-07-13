@@ -43,13 +43,10 @@ StyledInnerWrapper.defaultProps = {
 };
 
 export const StyledSummary: any = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    border-radius: ${theme.orbit.borderRadiusBadge};
-    width: 100%;
-    overflow: hidden;
-  `}
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -167,7 +164,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
             <HorizontalScroll
               overflowElevation
               onOverflow={() => setOverflowed(true)}
-              elevationColor="paletteCloudLight"
+              elevationColor="paletteWhite"
               scrollSnap="mandatory"
             >
               {summary}

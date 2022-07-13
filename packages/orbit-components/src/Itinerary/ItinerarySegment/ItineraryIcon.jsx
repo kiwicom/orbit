@@ -29,7 +29,10 @@ const IconStyled = styled.div`
     justify-content: center;
     z-index: 1;
     svg {
-      background: ${last || index === 0 ? "transparent" : theme.orbit.paletteWhite};
+      background: ${(last || index === 0) && !isPrevHidden
+        ? "transparent"
+        : theme.orbit.paletteWhite};
+      overflow: hidden;
     }
     ${index > 0 &&
     !last &&

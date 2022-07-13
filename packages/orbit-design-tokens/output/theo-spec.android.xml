@@ -193,7 +193,7 @@
   <color name="COLORTEXTBUTTONCRITICALBORDERED" category="Colors">#ffd21c1c</color>
   <color name="COLORTEXTINPUTPREFIX" category="Colors">#ff4f5e71</color>
   <string name="BACKGROUNDBADGEBUNDLEMEDIUM" category="Background colors">linear-gradient(to top right, #3719AB 0, #8539DB 1)</string>
-  <color name="COLORTEXTWARNING" category="Colors">#ffe98305</color>
+  <color name="COLORTEXTWARNING" category="Colors">#ffae5700</color>
   <dimen name="HEIGHTILLUSTRATIONMEDIUM" category="Size (width, height)">200dp</dimen>
   <dimen name="FONTSIZEHEADINGTITLE2" category="Font size">22dp</dimen>
   <string name="BACKGROUNDBUTTONBUNDLEBASIC" category="Background colors">linear-gradient(to top right, #E13E3B 0, #E87E09 1)</string>
@@ -246,7 +246,7 @@
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDHOVER" category="Border color">#ff181b20</color>
   <dimen name="FONTSIZEHEADINGTITLE5" category="Font size">12dp</dimen>
   <color name="BACKGROUNDBUTTONWHITEACTIVE" category="Background colors">#ffe5eaef</color>
-  <color name="COLORTEXTCRITICAL" category="Colors">#ffd21c1c</color>
+  <color name="COLORTEXTCRITICAL" category="Colors">#ff970c0c</color>
   <color name="PALETTEORANGELIGHTHOVER" category="Color palette">#fffae2c7</color>
   <string name="DURATIONFAST" category="Duration">0.15s</string>
   <color name="COLORTEXTBUTTONSUCCESSBORDEREDHOVER" category="Colors">#ff238b31</color>
@@ -316,7 +316,7 @@
   <color name="COLORTEXTBUTTONFACEBOOKBORDERED" category="Colors">#ff3b5998</color>
   <color name="BORDERCOLORBUTTONGOOGLEBORDEREDACTIVE" category="Border color">#ff0b0c0f</color>
   <dimen name="LINEHEIGHTTEXTLARGE" category="Line height">24dp</dimen>
-  <color name="COLORTEXTSUCCESS" category="Colors">#ff28a138</color>
+  <color name="COLORTEXTSUCCESS" category="Colors">#ff2b7336</color>
   <string name="BACKGROUNDBUTTONBUNDLETOP" category="Background colors">linear-gradient(to top right, #2D2D2E 0, #696E73 1)</string>
   <color name="BORDERCOLORINPUT" category="Border color">#ffbac7d5</color>
   <color name="PALETTEORANGELIGHTACTIVE" category="Color palette">#fff8d3ab</color>
@@ -381,7 +381,7 @@
   <color name="BORDERCOLORTABLE" category="Border color">#ffeff2f5</color>
   <integer name="WIDTHBREAKPOINTLARGEDESKTOP" category="Breakpoints">1200</integer>
   <color name="PALETTEBLUEDARKER" category="Color palette">#ff004680</color>
-  <color name="COLORTEXTERROR" category="Colors">#ffd21c1c</color>
+  <color name="COLORTEXTERROR" category="Colors">#ff970c0c</color>
   <string name="FONTWEIGHTHEADINGTITLE5" category="Font weight">700</string>
   <color name="COLORTEXTBUTTONFILLEDHOVER" category="Colors">#ffffffff</color>
   <color name="BORDERCOLORBUTTONPRIMARYBORDEREDHOVER" category="Border color">#ff009882</color>
@@ -481,7 +481,7 @@
   <color name="PALETTEGREENDARKHOVER" category="Color palette">#ff25642f</color>
   <dimen name="FONTSIZETEXTLARGE" category="Font size">16dp</dimen>
   <color name="PALETTEINKLIGHTERACTIVE" category="Color palette">#ff4a617c</color>
-  <color name="COLORTEXTINFO" category="Colors">#ff0172cb</color>
+  <color name="COLORTEXTINFO" category="Colors">#ff005aa3</color>
   <color name="BACKGROUNDBUTTONGOOGLEACTIVE" category="Background colors">#ffd6dee6</color>
   <dimen name="BOXSHADOWRAISEDREVERSE" category="Box shadow">0px -4px 8px 0px rgba(37, 42, 49, 0.16), 0px -8px 24px 0px rgba(37, 42, 49, 0.24)</dimen>
   <string name="FONTWEIGHTHEADINGDISPLAYSUBTITLE" category="Font weight">400</string>

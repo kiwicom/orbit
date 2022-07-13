@@ -2,6 +2,7 @@
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
+import styled, { css } from "styled-components";
 
 import * as Icons from "../icons";
 import {
@@ -27,6 +28,7 @@ import CountryFlag from "../CountryFlag";
 import Heading from "../Heading";
 import { BadgeListItem } from "../BadgeList";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import defaultTheme from "../defaultTheme";
 
 import Itinerary, {
   ItinerarySeparator,
@@ -36,6 +38,20 @@ import Itinerary, {
   ItinerarySegmentStop,
   ItineraryStatus,
 } from ".";
+
+const StyledText = styled.p`
+  ${({ theme, type }) => css`
+    font-weight: ${theme.orbit.fontWeightBold};
+    font-size: ${theme.orbit.fontSizeTextSmall};
+    font-family: ${theme.orbit.fontFamily};
+    color: ${type === "warning" ? theme.orbit.paletteOrangeNormal : theme.orbit.paletteBlueNormal};
+  `}
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledText.defaultProps = {
+  theme: defaultTheme,
+};
 
 const BadgeGroup = () => {
   const carriers = [{ code: "REGIOJETT", name: "Regiojet" }];
@@ -189,6 +205,28 @@ export const Segment = (): React.Node => {
           />
         </ItinerarySegment>
       </Itinerary>
+      <Itinerary>
+        <ItinerarySegment actionable={false}>
+          <ItinerarySegmentStop
+            city="Madrid"
+            cancelledCity="Barcelona"
+            cancelledStation="Girona Airport"
+            type="critical"
+            station="Adolfo Suarez Madrid - Barajas Airport"
+            date="Mon, 31.1"
+            cancelledDate="Mon, 30.1"
+            time="17:55"
+            cancelledTime="17:45"
+          />
+          <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} />
+          <ItinerarySegmentStop
+            city="Milan"
+            station="Milan Bergamo International Airport (BGY)"
+            date="Wed, 02.02"
+            time="16:35"
+          />
+        </ItinerarySegment>
+      </Itinerary>
     </Stack>
   );
 };
@@ -334,9 +372,9 @@ export const Stop = (): React.Node => {
             <Stack inline align="stretch">
               <ItineraryBadgeList>
                 <BadgeListItem type="warning" icon={<StarFull color="warning" />}>
-                  <Text as="span" type="warning" weight="bold">
+                  <StyledText as="span" type="warning">
                     Hidden city hack:{" "}
-                  </Text>{" "}
+                  </StyledText>{" "}
                   This itinerary finishes in New York (United States), but you’ll get off during the
                   layover
                 </BadgeListItem>
@@ -394,9 +432,9 @@ export const Stop = (): React.Node => {
             <Stack inline align="stretch">
               <ItineraryBadgeList>
                 <BadgeListItem type="info" icon={<StarFull color="info" />}>
-                  <Text as="span" type="info" weight="bold">
+                  <StyledText as="span" type="info" weight="bold">
                     Throwaway ticketing hack:{" "}
-                  </Text>{" "}
+                  </StyledText>{" "}
                   You are saving money with this travel hack.
                 </BadgeListItem>
               </ItineraryBadgeList>

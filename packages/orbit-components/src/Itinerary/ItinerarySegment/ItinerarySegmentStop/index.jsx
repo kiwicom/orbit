@@ -35,6 +35,21 @@ const StyledDate = styled.div`
   `}
 `;
 
+const StyledHiddenCity = styled.p`
+  ${({ theme }) => css`
+    margin: 0;
+    font-family: ${theme.orbit.fontFamily};
+    font-weight: ${theme.orbit.fontWeightBold};
+    font-size: ${theme.orbit.fontSizeTextSmall};
+    color: ${theme.orbit.paletteOrangeNormal};
+  `};
+`;
+
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledHiddenCity.defaultProps = {
+  theme: defaultTheme,
+};
+
 const ItinerarySegmentStopIcon = ({
   isPrevHidden,
   isLast,
@@ -57,6 +72,9 @@ const ItinerarySegmentStop = ({
   date,
   icon,
   time,
+  cancelledDate,
+  cancelledCity,
+  cancelledStation,
   cancelledTime,
   city,
   station,
@@ -79,18 +97,32 @@ const ItinerarySegmentStop = ({
         <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
           <Stack flex direction="column" spacing="none" align="end">
             {time && (
-              <Text weight="medium" type={type} withBackground={!!cancelledTime}>
+              <Text
+                weight="medium"
+                type={cancelledTime ? type : "secondary"}
+                withBackground={!!cancelledTime}
+              >
                 {time}
               </Text>
             )}
             {date && (
-              <Text type="secondary" size="small" align="right">
+              <Text
+                type={cancelledDate ? type : "secondary"}
+                size="small"
+                align="right"
+                withBackground={!!cancelledDate}
+              >
                 {date}
               </Text>
             )}
             {cancelledTime && (
-              <Text type="secondary" weight="medium" strikeThrough={!!cancelledTime}>
+              <Text type="secondary" weight="medium" strikeThrough>
                 {cancelledTime}
+              </Text>
+            )}
+            {cancelledDate && (
+              <Text type="secondary" size="small" align="right" strikeThrough>
+                {cancelledDate}
               </Text>
             )}
           </Stack>
@@ -104,15 +136,31 @@ const ItinerarySegmentStop = ({
           />
         </ItineraryIcon>
         <Stack spacing="none">
-          {hidden && hiddenCityText && (
-            <Text type="warning" weight="bold" size="small">
-              {hiddenCityText}
-            </Text>
-          )}
-          <Text weight="medium">{city}</Text>
-          <Text type="secondary" size="small">
+          {hidden && hiddenCityText && <StyledHiddenCity>{hiddenCityText}</StyledHiddenCity>}
+          <Text
+            weight="medium"
+            withBackground={!!cancelledCity}
+            type={cancelledCity ? type : "primary"}
+          >
+            {city}
+          </Text>
+          <Text
+            size="small"
+            type={cancelledStation ? type : "secondary"}
+            withBackground={!!cancelledStation}
+          >
             {station}
           </Text>
+          {cancelledCity && (
+            <Text weight="medium" strikeThrough>
+              {cancelledCity}
+            </Text>
+          )}
+          {cancelledStation && (
+            <Text type="secondary" size="small" strikeThrough>
+              {cancelledStation}
+            </Text>
+          )}
         </Stack>
       </Stack>
     </StyledWrapper>

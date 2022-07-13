@@ -14,6 +14,12 @@ export interface Props {
   readonly time?: React.ReactNode;
   /** Render time with strikeThrough property */
   readonly cancelledTime?: React.ReactNode;
+  /** Render city with strikeThrough property */
+  readonly cancelledCity?: React.ReactNode;
+  /** Render date with strikeThrough property */
+  readonly cancelledDate?: React.ReactNode;
+  /** Render station with strikeThrough property */
+  readonly cancelledStation?: React.ReactNode;
   /** The city of ItinerarySegmentStop */
   readonly city: React.ReactNode;
   /** The place of ItinerarySegmentStop */

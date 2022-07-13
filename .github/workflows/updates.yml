@@ -40,7 +40,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           base: master
-          branch: chore/update-tracking-data
+          branch: chore/update-icons-and-svgs
           token: ${{ secrets.PAT }}
           delete-branch: true
           title: "docs: documentation updates"

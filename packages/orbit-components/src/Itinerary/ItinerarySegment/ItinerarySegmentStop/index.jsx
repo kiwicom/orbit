@@ -84,7 +84,6 @@ const ItinerarySegmentStop = ({
             {time && (
               <Text
                 weight="medium"
-                strikeThrough={!!cancelledTime}
                 type={cancelledTime ? type : "secondary"}
                 withBackground={!!cancelledTime}
               >

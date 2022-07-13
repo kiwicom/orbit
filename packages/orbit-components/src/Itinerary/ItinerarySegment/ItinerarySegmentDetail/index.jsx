@@ -110,7 +110,6 @@ const StyledIcon = styled.div`
       width: 100%;
       height: 100%;
       left: 0;
-
       border-left: 1px solid ${theme.orbit.paletteCloudNormalActive};
       border-right: 1px solid ${theme.orbit.paletteCloudNormalActive};
       z-index: -1;

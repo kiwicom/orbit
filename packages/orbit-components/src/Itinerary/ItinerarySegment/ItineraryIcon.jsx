@@ -29,7 +29,7 @@ const IconStyled = styled.div`
     justify-content: center;
     z-index: 1;
     svg {
-      background: ${theme.orbit.paletteWhite};
+      background: ${last || index === 0 ? "transparent" : theme.orbit.paletteWhite};
     }
     ${index > 0 &&
     !last &&

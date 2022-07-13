@@ -45,7 +45,7 @@ const iconMixin = css`
 
       &:focus,
       &:active {
-        box-shadow: 0 0 0 2px
+        box-shadow: inset 0 0 0 2px
           ${isActive ? theme.orbit.paletteBlueLightActive : theme.orbit.paletteCloudNormalActive};
       }
     `};

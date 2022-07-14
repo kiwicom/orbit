@@ -1,9 +1,7 @@
 // @flow
-import fetch from "isomorphic-unfetch";
-import path from "path";
-import dotenv from "dotenv-safe";
-import fs from "fs-extra";
+import { fetch, path, fs } from "zx";
 import dedent from "dedent";
+import dotenv from "dotenv-safe";
 
 try {
   dotenv.config({
@@ -97,7 +95,6 @@ const flatten = (obj = {}, keyPrefix = "") =>
 (async () => {
   try {
     const allLocales = await fetchJSON(LOCALES_URL);
-
     // PhraseApp has limits on parallel requests
     // that's why we process requests in sequence
     for (const locale of allLocales) {

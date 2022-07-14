@@ -28,6 +28,26 @@ type Props = {|
   nextType: Type,
 |};
 
+const Label = ({ asText, type, label }) => {
+  if (asText) {
+    return (
+      <Text type={type} weight="bold">
+        {label}
+      </Text>
+    );
+  }
+
+  return !type ? (
+    <CustomBadge>
+      <StyledAligned>{label}</StyledAligned>
+    </CustomBadge>
+  ) : (
+    <Badge type={type}>
+      <StyledAligned>{label}</StyledAligned>
+    </Badge>
+  );
+};
+
 const TimelineStepDesktop = ({
   type,
   last,
@@ -35,6 +55,7 @@ const TimelineStepDesktop = ({
   children,
   label,
   subLabel,
+  asText,
   typeIcon,
 }: Props): React.Node => {
   return (
@@ -50,15 +71,7 @@ const TimelineStepDesktop = ({
         <StyledProgressLine data-test="progressLine" desktop status={nextType || (last && type)} />
       </StyledRelative>
       <Stack flex align="center" spacing="XSmall" direction="column">
-        {!type ? (
-          <CustomBadge>
-            <StyledAligned>{label}</StyledAligned>
-          </CustomBadge>
-        ) : (
-          <Badge type={type}>
-            <StyledAligned>{label}</StyledAligned>
-          </Badge>
-        )}
+        <Label asText={asText} type={type} label={label} />
         <StyledDescription>
           <Text align="center" type={type ? "primary" : "secondary"}>
             {children}

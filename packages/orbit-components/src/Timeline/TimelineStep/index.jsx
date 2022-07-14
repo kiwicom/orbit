@@ -20,7 +20,7 @@ const TypeIcon = ({ type }) => {
   return <Circle color="tertiary" size="small" />;
 };
 
-const TimelineStep = ({ children, label, subLabel, type }: Props): React.Node => {
+const TimelineStep = ({ children, label, subLabel, type, asText }: Props): React.Node => {
   const { types, setTypes, isColumnOnDesktop } = useStatuses();
   const { index, last } = useStep();
   const { isDesktop } = useMediaQuery();
@@ -51,6 +51,7 @@ const TimelineStep = ({ children, label, subLabel, type }: Props): React.Node =>
         typeIcon={<TypeIcon type={type} />}
         nextType={nextType}
         label={label}
+        asText={asText}
         type={type}
         subLabel={subLabel}
         last={last}
@@ -64,6 +65,7 @@ const TimelineStep = ({ children, label, subLabel, type }: Props): React.Node =>
       typeIcon={<TypeIcon type={type} />}
       nextType={nextType}
       label={label}
+      asText={asText}
       type={type}
       subLabel={subLabel}
       last={last}

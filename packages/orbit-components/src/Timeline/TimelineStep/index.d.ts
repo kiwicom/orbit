@@ -9,6 +9,7 @@ export type Type = "success" | "warning" | "critical";
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly children: React.ReactNode;
   readonly label: string;
+  readonly asText?: boolean;
   readonly subLabel?: string;
   readonly type?: Type;
 }

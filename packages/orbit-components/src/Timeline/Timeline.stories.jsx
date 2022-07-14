@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { text, select } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 
 import Modal, { ModalSection } from "../Modal";
 import TimelineStep from "./TimelineStep";
@@ -15,6 +15,7 @@ export default {
 };
 
 export const Default = (): React.Node => {
+  const asText = boolean("asText", false);
   const type = text("type", "success");
   const label = text("label", "In progress");
   const time = text("time", "4th May 10:25");
@@ -26,19 +27,19 @@ export const Default = (): React.Node => {
 
   return (
     <Timeline dataTest={dataTest} direction={direction}>
-      <TimelineStep label="Requested" subLabel="3rd May 14:04" type="success">
+      <TimelineStep asText={asText} label="Requested" subLabel="3rd May 14:04" type="success">
         We’ve received your request and will assign it to one of our agents.
       </TimelineStep>
-      <TimelineStep label={label} subLabel={time} type={type}>
+      <TimelineStep asText={asText} label={label} subLabel={time} type={type}>
         {children}
       </TimelineStep>
-      <TimelineStep label="Waiting for the carrier" subLabel="5th May 15:03">
+      <TimelineStep asText={asText} label="Waiting for the carrier" subLabel="5th May 15:03">
         We’ll wait for the carrier(s) to send us the refund and contact them again if necessary.
       </TimelineStep>
-      <TimelineStep label="Carrier is refunding" subLabel="6th May 20:50">
+      <TimelineStep asText={asText} label="Carrier is refunding" subLabel="6th May 20:50">
         The carrier has sent us a refund. There might be more depending on their policy.
       </TimelineStep>
-      <TimelineStep label="Refunded" subLabel="7th May 10:30">
+      <TimelineStep asText={asText} label="Refunded" subLabel="7th May 10:30">
         We’ll forward you all refunds from the carrier(s) after we receive it.
       </TimelineStep>
     </Timeline>

@@ -40,6 +40,11 @@ export default {
           defaultValue: "Booked",
         },
         {
+          name: "asText",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
           name: "subLabel",
           type: "text",
           defaultValue: "January 3, 10:43",

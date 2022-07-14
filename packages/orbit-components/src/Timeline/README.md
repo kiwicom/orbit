@@ -46,6 +46,7 @@ Table below contains all types of the props in **TimelineStep** component.
 | label        | `string`        |         | Text for [`Badge`](https://orbit.kiwi/components/badge/) component inside |
 | type         | [`enum`](#enum) |         | Type of current process step                                              |
 | subLabel     | `string`        |         | SubLabel text of current process step                                     |
+| asText       | `boolean`       |         | Label is rendered as `Text` instead of `Badge`                            |
 
 ### enum
 

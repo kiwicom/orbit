@@ -29,12 +29,25 @@ type Props = {|
   nextType: Type,
 |};
 
+const Label = ({ asText, type, label }) => {
+  if (asText) {
+    return (
+      <Text type={type} weight="medium">
+        {label}
+      </Text>
+    );
+  }
+
+  return !type ? <CustomBadge>{label}</CustomBadge> : <Badge type={type}>{label}</Badge>;
+};
+
 const TimelineStepMobile = ({
   type,
   subLabel,
   label,
   nextType,
   typeIcon,
+  asText,
   children,
   last,
 }: Props): React.Node => {
@@ -45,7 +58,7 @@ const TimelineStepMobile = ({
         {!last && <StyledProgressLine status={nextType} data-test="progressLine" />}
         <Stack flex shrink direction="column" spacing="XSmall">
           <Stack flex spacing="XSmall" align="center">
-            {!type ? <CustomBadge>{label}</CustomBadge> : <Badge type={type}>{label}</Badge>}
+            <Label label={label} asText={asText} type={type} />
             {subLabel && (
               <StyledText>
                 <Text size="small">{subLabel}</Text>

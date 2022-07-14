@@ -13,11 +13,10 @@ import { usePart } from "../context";
 import type { Props } from ".";
 
 const StyledWrapper = styled.div`
-  ${({ theme, $hidden, isLast, isFirst, isBanner }) => css`
+  ${({ theme, isLast, isFirst, isBanner }) => css`
     display: flex;
     position: relative;
     box-sizing: border-box;
-    opacity: ${$hidden ? `0.8` : `1`};
     padding: 0 ${theme.orbit.spaceSmall};
     margin-bottom: ${((!isLast && !isFirst) || (!isFirst && isBanner)) && theme.orbit.spaceSmall};
   `}
@@ -92,14 +91,14 @@ const ItinerarySegmentStop = ({
   }, [setWidths, dateWidth, minWidth]);
 
   return (
-    <StyledWrapper $hidden={hidden} isLast={last} isFirst={index === 0} isBanner={isBanner}>
+    <StyledWrapper isLast={last} isFirst={index === 0} isBanner={isBanner}>
       <Stack flex align="center" spacing="small">
         <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
           <Stack flex direction="column" spacing="none" align="end">
             {time && (
               <Text
                 weight="medium"
-                type={cancelledTime ? type : "secondary"}
+                type={cancelledTime ? type : "primary"}
                 withBackground={!!cancelledTime}
               >
                 {time}

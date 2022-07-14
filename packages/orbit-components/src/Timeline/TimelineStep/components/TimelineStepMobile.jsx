@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import StyledRelative from "../primitives/StyledRelative";
 import defaultTheme from "../../../defaultTheme";
@@ -14,7 +14,7 @@ import StyledText from "../primitives/StyledText";
 import type { Props as StepProps, Type } from "..";
 
 const StyledIndent = styled.div`
-  padding-left: ${({ theme }) => theme.orbit.spaceXSmall};
+  padding-left: ${({ theme, isText }) => !isText && theme.orbit.spaceXSmall};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -32,9 +32,15 @@ type Props = {|
 const Label = ({ asText, type, label }) => {
   if (asText) {
     return (
-      <Text type={type} weight="medium">
-        {label}
-      </Text>
+      <div
+        css={css`
+          padding-top: 2px;
+        `}
+      >
+        <Text type={type} weight="medium">
+          {label}
+        </Text>
+      </div>
     );
   }
 
@@ -56,8 +62,13 @@ const TimelineStepMobile = ({
       <Stack flex spaceAfter="large" align="stretch" desktop={{ align: "start" }}>
         <StyledIconWrapper mobile>{typeIcon}</StyledIconWrapper>
         {!last && <StyledProgressLine status={nextType} data-test="progressLine" />}
-        <Stack flex shrink direction="column" spacing="XSmall">
-          <Stack flex spacing="XSmall" align="center">
+        <Stack flex shrink direction="column" spacing="XXSmall">
+          <Stack
+            flex
+            direction={asText ? "column" : "row"}
+            align={asText ? "start" : "center"}
+            spacing="XXSmall"
+          >
             <Label label={label} asText={asText} type={type} />
             {subLabel && (
               <StyledText>
@@ -65,7 +76,7 @@ const TimelineStepMobile = ({
               </StyledText>
             )}
           </Stack>
-          <StyledIndent>
+          <StyledIndent isText={asText}>
             <Text type={type ? "primary" : "secondary"}>{children}</Text>
           </StyledIndent>
         </Stack>

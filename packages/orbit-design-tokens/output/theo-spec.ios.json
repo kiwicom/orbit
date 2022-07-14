@@ -1161,7 +1161,7 @@
       "name": "backgroundBadgeBundleMedium"
     },
     {
-      "value": "rgb(174, 87, 0)",
+      "value": "rgb(233, 131, 5)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextWarning"
@@ -1480,7 +1480,7 @@
       "name": "backgroundButtonWhiteActive"
     },
     {
-      "value": "rgb(151, 12, 12)",
+      "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextCritical"
@@ -1900,7 +1900,7 @@
       "name": "lineHeightTextLarge"
     },
     {
-      "value": "rgb(43, 115, 54)",
+      "value": "rgb(40, 161, 56)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextSuccess"
@@ -2290,7 +2290,7 @@
       "name": "paletteBlueDarker"
     },
     {
-      "value": "rgb(151, 12, 12)",
+      "value": "rgb(210, 28, 28)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextError"
@@ -2891,7 +2891,7 @@
       "name": "paletteInkLighterActive"
     },
     {
-      "value": "rgb(0, 90, 163)",
+      "value": "rgb(1, 114, 203)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextInfo"

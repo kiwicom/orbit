@@ -1,11 +1,13 @@
 // @flow
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 
 const StyledText: any = styled.div`
-  height: ${({ theme }) => theme.orbit.spaceMedium};
-  text-align: center;
+  ${({ theme }) => css`
+    height: ${theme.orbit.spaceMedium};
+    text-align: center;
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

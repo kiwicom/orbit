@@ -24685,10 +24685,10 @@ react-live@^2.2.3:
     react-simple-code-editor "^0.10.0"
     unescape "^1.0.1"
 
-react-polymorphic-types@^1.0.3:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-polymorphic-types/-/react-polymorphic-types-1.1.0.tgz#5d7062e2991d12187c67a3e8001492c5c1b39018"
-  integrity sha512-RMHYMdiukpyNFeiWEay10e4kiwIlk1VSiIfvVzrimSJ9KVg9B2iNsd6lw2QPG31S2335YuAPnWPalE2w2eh64w==
+react-polymorphic-types@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-polymorphic-types/-/react-polymorphic-types-2.0.0.tgz#0c0230ec8d1af9c57f92e3c2c033928669b1184c"
+  integrity sha512-Xfz5qfEzLAvB2ijL9hZfHRa9bsQG6te262KHjnbezZ2XyubnSDzh3TV6OgvBsQsz7FCRHjbDbqA5UTkNEziTlw==
 
 react-popper-tooltip@^2.8.3:
   version "2.11.1"

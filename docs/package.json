@@ -103,7 +103,7 @@
     "react-google-login": "^5.2.2",
     "react-helmet": "^6.1.0",
     "react-live": "^2.2.3",
-    "react-polymorphic-types": "^1.0.3",
+    "react-polymorphic-types": "^2.0.0",
     "react-scrollspy": "^3.4.3",
     "recharts": "^2.1.6",
     "rehype-parse": "^7.0.1",

@@ -2331,12 +2331,10 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@icons-pack/react-simple-icons@^4.0.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-4.2.0.tgz#9218a0f5509bc064da0a6574717e470ec32407a3"
-  integrity sha512-ZWswvsfhwu+fevgO4Cv3j/21J/X7LQJ1sV6gRNyiCx3JpcDlq56NkrWUBVZe/szmES8kOGhYe1L4OmslJgBpSQ==
-  dependencies:
-    prop-types "^15.7.2"
+"@icons-pack/react-simple-icons@^5.0.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-5.2.0.tgz#c6bf9bc4b60d76c9155644ac1c35170d31c31300"
+  integrity sha512-98jGZQu3u0opACGlrb2UmS2jODh8ahgdws6f4KLfLqBiWAZG2y+oLDfVxZXxbOF1taQap6OUw4Ao8u0EzJFHZA==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"

@@ -119,7 +119,7 @@
     "@storybook/react": "^6.4.19",
     "@storybook/storybook-deployer": "^2.8.10",
     "@storybook/theming": "^6.4.19",
-    "@svgr/core": "^5.5.0",
+    "@svgr/core": "^6.0.0",
     "@svgr/plugin-jsx": "^5.5.0",
     "@svgr/plugin-prettier": "^5.5.0",
     "@svgr/plugin-svgo": "^5.5.0",

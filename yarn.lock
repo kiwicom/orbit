@@ -2952,10 +2952,10 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
   integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
 
-"@kiwicom/browserslist-config@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-2.1.0.tgz#87590935ca268f9ede19fd792c8e1270685c2912"
-  integrity sha512-uj2Ix8OdvdEJvhHV/KZ9YEmpH6aYxcKek4V1zNDdsQrjxmGhxyJZVF93XqlHrd8P+PtsgrisOQU7eMQcykging==
+"@kiwicom/browserslist-config@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-3.0.0.tgz#5710f4c94c4165ad9b9e7c0f43feee3dfb0d989b"
+  integrity sha512-g0TZoOEEiFmtQncFDiabku44p/AFRP3ZeRjhl+z15Cx+1OcNFqI0O84Alj7YKfcjF7SFwWuDkZJ7ERt+rlE1Hg==
 
 "@lerna/add@4.0.0":
   version "4.0.0"

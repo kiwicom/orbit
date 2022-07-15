@@ -26,7 +26,7 @@
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "*",
-    "@kiwicom/browserslist-config": "^2.1.0",
+    "@kiwicom/browserslist-config": "^3.0.0",
     "@kiwicom/orbit-components": "*",
     "@kiwicom/orbit-design-tokens": "*",
     "@mapbox/rehype-prism": "^0.8.0",

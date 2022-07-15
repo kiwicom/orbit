@@ -57,7 +57,7 @@
     "babel-plugin-styled-components": "^2.0.7",
     "babel-preset-gatsby": "^2.17.0",
     "browser-sync": "^2.27.9",
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "check-links": "^1.1.8",
     "copy-to-clipboard": "^3.3.1",
     "dedent": "^0.7.0",

@@ -86,7 +86,7 @@
     "gatsby-remark-smartypants": "^5.9.0",
     "gatsby-source-filesystem": "^4.11.1",
     "gatsby-transformer-sharp": "^4.11.0",
-    "globby": "^11.0.2",
+    "globby": "^13.0.0",
     "gray-matter": "^4.0.2",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",

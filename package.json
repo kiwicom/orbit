@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
-    "@commitlint/cli": "^16.2.4",
+    "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^16.2.4",
     "@kiwicom/browserslist-config": "^2.1.0",
     "@lerna/project": "^3.21.0",

@@ -1672,6 +1672,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.16.0":
+  version "7.18.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.6.tgz#6a1ef59f838debd670421f8c7f2cbb8da9751580"
+  integrity sha512-t9wi7/AW6XtKahAe20Yw0/mMljKq0B1r2fPdvaAdV/KPDZewFXdaaa6K7lxmZBZ8FBNpCiAT6iHPmd6QO9bKfQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.17.6":
   version "7.17.6"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.17.6.tgz#cb105f20916ab7e516074b44b71270c615f44499"
@@ -13759,12 +13766,12 @@ eslint-module-utils@^2.7.2:
     debug "^3.2.7"
     find-up "^2.1.0"
 
-eslint-plugin-adeira@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-adeira/-/eslint-plugin-adeira-0.11.0.tgz#0a3491e74ab3f4929118ec4fc184b66530c0418b"
-  integrity sha512-IyyLjiXLpP/xlM8ER+J+Nc06HuVjjb52Q3sUwbI+QN5ZQjch2NMnvGziv7bwC7zsp+qAkwU6UAtoU4UI61i2CQ==
+eslint-plugin-adeira@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-adeira/-/eslint-plugin-adeira-0.15.0.tgz#539532ace7eff1e38f358636d27a909a4821013d"
+  integrity sha512-qclDnGtvRT/bTOevr455y58Ze2VxOLvDcUjaUyuPBwZzc2VbTErKEt8w2q6mr5eWUPzW52+H1PrReCWhyUKk3w==
   dependencies:
-    "@babel/runtime" "^7.12.5"
+    "@babel/runtime" "^7.16.0"
     fast-levenshtein "^3.0.0"
 
 eslint-plugin-babel@^5.3.1:

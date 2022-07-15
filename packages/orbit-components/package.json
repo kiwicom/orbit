@@ -166,7 +166,7 @@
     "svg2ttf": "^6.0.0",
     "svgicons2svgfont": "^9.0.4",
     "ttf2woff2": "^4.0.1",
-    "vite": "^2.5.1",
+    "vite": "^3.0.0",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2",
     "zx": "^4.2.0"

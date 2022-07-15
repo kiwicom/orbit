@@ -39,7 +39,7 @@
   "license": "MIT",
   "resolutions": {
     "@types/eslint": "^7.28.2",
-    "@types/react": "^17.0.26",
+    "@types/react": "^18.0.0",
     "@types/react-dom": "^17.0.9"
   },
   "devDependencies": {
@@ -85,7 +85,7 @@
     "merge-stream": "^2.0.0",
     "prettier": "^2.1.2",
     "raf": "^3.4.1",
-    "react": "^17.0.2",
+    "react": "^18.0.0",
     "react-dom": "^17.0.2",
     "remark-cli": "^9.0.0",
     "remark-frontmatter": "^2.0.0",

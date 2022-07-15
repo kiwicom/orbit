@@ -78,7 +78,7 @@
     "husky": "^6.0.0",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
-    "lerna": "4.0.0",
+    "lerna": "5.1.8",
     "lint-staged": "^12.3.2",
     "markdown-chalk": "^2.1.0",
     "markdown-magic": "^2.6.0",

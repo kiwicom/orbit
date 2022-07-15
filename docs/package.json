@@ -114,7 +114,7 @@
     "tinykeys": "^1.2.0",
     "to-vfile": "^6.1.0",
     "unified": "^9.2.0",
-    "unist-util-visit": "^2.0.3",
+    "unist-util-visit": "^4.0.0",
     "use-resize-observer": "^8.0.0",
     "uuid": "^8.3.2",
     "vfile-reporter": "^7.0.4"

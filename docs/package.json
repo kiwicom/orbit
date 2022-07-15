@@ -112,7 +112,7 @@
     "styled-components": "^5.3.1",
     "tailwindcss": "^2.1.1",
     "tinykeys": "^1.2.0",
-    "to-vfile": "^6.1.0",
+    "to-vfile": "^7.0.0",
     "unified": "^9.2.0",
     "unist-util-visit": "^2.0.3",
     "use-resize-observer": "^8.0.0",

@@ -89,7 +89,7 @@
     "react-dom": "^17.0.2",
     "remark-cli": "^9.0.0",
     "remark-frontmatter": "^2.0.0",
-    "remark-lint": "^8.0.0",
+    "remark-lint": "^9.0.0",
     "remark-lint-first-heading-level": "^2.0.1",
     "remark-mdx": "^1.6.22",
     "remark-preset-lint-markdown-style-guide": "^4.0.0",

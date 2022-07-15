@@ -63,7 +63,7 @@
   "license": "MIT",
   "resolutions": {
     "webpack": "^5.69.1",
-    "css-loader": "^5.0.0",
+    "css-loader": "^6.0.0",
     "dotenv-webpack": "^6.0.0",
     "html-webpack-plugin": "^5.0.0",
     "style-loader": "^2.0.0",

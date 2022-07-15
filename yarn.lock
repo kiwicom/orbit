@@ -26156,10 +26156,10 @@ remark-preset-lint-recommended@^5.0.0:
     remark-lint-no-unused-definitions "^2.0.0"
     remark-lint-ordered-list-marker-style "^2.0.0"
 
-remark-preset-prettier@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/remark-preset-prettier/-/remark-preset-prettier-0.4.1.tgz#9b55d2a71d16931eeea365724b5b1a09c9a0f6ef"
-  integrity sha512-m+yzI9LN/dkVq/HUYR3aEAjvDBO4hZMwgq245RBYUzSKXZPboMTlxBTgBuK7Tcw5CKJphjoL31slQQcDu1KGZQ==
+remark-preset-prettier@^0.5.0:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/remark-preset-prettier/-/remark-preset-prettier-0.5.1.tgz#80ead8d4e8818333c32dd2be9f8f9141c3821e0a"
+  integrity sha512-cJx49HCHwA/3EWjIDiRTWPBBpGSkJlXOpcjdqcT6rGFFE+gjCrGSbNdgBQiLbBqXippZFD0OrI4bOWsWhulKrw==
 
 remark-retext@^3.1.3:
   version "3.1.3"

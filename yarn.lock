@@ -3915,10 +3915,10 @@
   resolved "https://registry.yarnpkg.com/@nanostores/react/-/react-0.2.0.tgz#592e68672a4c7fd4abbdae79713a677dd1e89740"
   integrity sha512-8kR6Ke8KAacAuBvodGrMNtLof8xF44WkfqtWWMZffP0TZsXEePdIWEQ6MDmCvVzbFAwOKvF71YjVAJ660NYCAw==
 
-"@nanostores/router@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@nanostores/router/-/router-0.3.1.tgz#1124825c2cdf9029b4b69e34473bea93c3ec241c"
-  integrity sha512-aFFbdiJh1ClLPHkaNugqBQEzOntWqTGE3c1c+WLXBskeSkYhhhmylBhSenZm9yUtyM+zKT2am+Kbp5ZcU2jdHg==
+"@nanostores/router@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@nanostores/router/-/router-0.5.0.tgz#dc71dffa00e48f333eb71683752af49ffd22bdec"
+  integrity sha512-s432x/x6tO2Wz6p2idEzWMCsOcQxm9JI76oSO5bCIkvUngQlfSrDPhgcx3f4pWbnjcBBNKSoV+9s/Dyr5w8JTA==
 
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents":
   version "2.1.8-no-fsevents"

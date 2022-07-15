@@ -106,7 +106,7 @@
     "@emotion/core": "^11.0.0",
     "@kiwicom/browserslist-config": "^2.1.0",
     "@nanostores/react": "^0.2.0",
-    "@nanostores/router": "^0.3.1",
+    "@nanostores/router": "^0.5.0",
     "@octokit/rest": "^18.0.14",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-backgrounds": "^6.5.9",

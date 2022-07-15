@@ -38,7 +38,7 @@
   "author": "kiwi.com",
   "license": "MIT",
   "resolutions": {
-    "@types/eslint": "^7.28.2",
+    "@types/eslint": "^8.0.0",
     "@types/react": "^17.0.26",
     "@types/react-dom": "^17.0.9"
   },
@@ -58,7 +58,7 @@
     "conventional-changelog": "^3.1.24",
     "cross-env": "^7.0.2",
     "dotenv-safe": "^8.2.0",
-    "eslint": "^7.28.0",
+    "eslint": "^8.0.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.4.0",
     "eslint-import-resolver-alias": "^1.1.2",

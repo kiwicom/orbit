@@ -40,9 +40,9 @@
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/types": "^7.13.0",
-    "@types/eslint": "^7.28.2",
+    "@types/eslint": "^8.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.14.0",
+    "eslint": "^8.0.0",
     "pinst": "^2.1.4",
     "rimraf": "^3.0.2"
   }

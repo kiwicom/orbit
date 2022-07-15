@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.1.0...@kiwicom/orbit-components@3.2.0) (2022-07-15)
+
+
+### Bug Fixes
+
+* **ItineraryIcon:** remove background color for first and last icon ([6e47687](https://github.com/kiwicom/orbit/commit/6e47687cb2847de97a6545a085f5258b9640f4d6))
+* **Itinerary:** remove opacity on Hidden ([ec53d4c](https://github.com/kiwicom/orbit/commit/ec53d4cde4df2a2305799ffe746460e2da465c10))
+* **ItinerarySegmentDetail:** remove border-radius on summary ([69d6cde](https://github.com/kiwicom/orbit/commit/69d6cde36caca7af410b5c47bcd514d65bdb68cf))
+* **Popover:** change zIndex value to 705 because of NavigationBar ([#3523](https://github.com/kiwicom/orbit/issues/3523)) ([9a40b57](https://github.com/kiwicom/orbit/commit/9a40b579de48300289052b986e7be3e6677625dc))
+* **Stepper:** change box-shadow to inset ([#3438](https://github.com/kiwicom/orbit/issues/3438)) ([8b3bf51](https://github.com/kiwicom/orbit/commit/8b3bf51b87c414e60c000707e949a5ee3d7bd344))
+* **Timeline:** render subLabel under label on mobile ([44d84bc](https://github.com/kiwicom/orbit/commit/44d84bce53321e26ededa5dc7396f15575fd1aec))
+
+
+### Features
+
+* **ItinerarySegmentStop:** add cancelledDate, cancelledCity, cancelledStation props ([69cc839](https://github.com/kiwicom/orbit/commit/69cc8397e6f96e31337efacf869cafef71b1bb88))
+* **Timeline:** add asText property ([ca6bd42](https://github.com/kiwicom/orbit/commit/ca6bd42abd33584039e8cc0439e92be25ecb6a09))
+
+
+
+
+
 # [3.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.0.0...@kiwicom/orbit-components@3.1.0) (2022-06-30)
 
 

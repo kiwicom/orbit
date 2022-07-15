@@ -106,7 +106,8 @@ const StyledPopoverParent = styled.div`
       transform: ${transform};
       transition: ${transition(["opacity"], "fast", "ease-in-out")};
       position: ${position};
-      z-index: ${isInsideModal ? "1000" : "600"};
+      // NavigationBar has 700
+      z-index: ${isInsideModal ? "1000" : "710"};
       width: ${width ? `${width}` : "auto"};
       border-radius: ${theme.orbit.borderRadiusNormal};
       box-shadow: ${theme.orbit.boxShadowRaised};

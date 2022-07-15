@@ -59,7 +59,7 @@
     "cross-env": "^7.0.2",
     "dotenv-safe": "^8.2.0",
     "eslint": "^7.28.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb": "^19.0.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-node": "^0.3.6",

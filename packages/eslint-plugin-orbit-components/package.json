@@ -32,7 +32,7 @@
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "@babel/types": "=7.12.10"
+    "@babel/types": "=7.18.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",

@@ -37,7 +37,7 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.7",
     "@testing-library/react-hooks": "^7.0.0",
-    "@testing-library/user-event": "^13.1.1",
+    "@testing-library/user-event": "^14.0.0",
     "@types/adeira__js": "^2.1.0",
     "@types/babel__core": "^7.1.19",
     "@types/babel__standalone": "^7.1.4",

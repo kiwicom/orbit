@@ -127,7 +127,7 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.7",
     "@testing-library/react-hooks": "^7.0.0",
-    "@testing-library/user-event": "^13.1.1",
+    "@testing-library/user-event": "^14.0.0",
     "@types/react": "^17.0.26",
     "@types/styled-components": "^5.1.15",
     "axios": "^0.27.2",

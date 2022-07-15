@@ -110,7 +110,7 @@
     "rehype-stringify": "^8.0.0",
     "remark-deflist": "^0.3.0",
     "styled-components": "^5.3.1",
-    "tailwindcss": "^2.1.1",
+    "tailwindcss": "^3.0.0",
     "tinykeys": "^1.2.0",
     "to-vfile": "^6.1.0",
     "unified": "^9.2.0",

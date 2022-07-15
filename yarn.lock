@@ -6338,14 +6338,14 @@
     deepmerge "^4.2.2"
     prettier "^2.1.2"
 
-"@svgr/plugin-svgo@^5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@svgr/plugin-svgo/-/plugin-svgo-5.5.0.tgz#02da55d85320549324e201c7b2e53bf431fcc246"
-  integrity sha512-r5swKk46GuQl4RrVejVwpeeJaydoxkdwkM1mBKOgJLBUJPGaLci6ylg/IjhrRsREKDkr4kbMWdgOtbXEh0fyLQ==
+"@svgr/plugin-svgo@^6.0.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@svgr/plugin-svgo/-/plugin-svgo-6.2.0.tgz#4cbe6a33ccccdcae4e3b63ded64cc1cbe1faf48c"
+  integrity sha512-oDdMQONKOJEbuKwuy4Np6VdV6qoaLLvoY86hjvQEgU82Vx1MSWRyYms6Sl0f+NtqxLI/rDVufATbP/ev996k3Q==
   dependencies:
-    cosmiconfig "^7.0.0"
+    cosmiconfig "^7.0.1"
     deepmerge "^4.2.2"
-    svgo "^1.2.2"
+    svgo "^2.5.0"
 
 "@swc/helpers@^0.3.6":
   version "0.3.8"
@@ -28357,7 +28357,7 @@ svgicons2svgfont@^9.0.4:
     string.prototype.codepointat "^0.2.1"
     svg-pathdata "^5.0.2"
 
-svgo@1.3.2, svgo@^1.2.2:
+svgo@1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-1.3.2.tgz#b6dc511c063346c9e415b81e43401145b96d4167"
   integrity sha512-yhy/sQYxR5BkC98CY7o31VGsg014AKLEPxdfhora76l36hD9Rdy5NZA/Ocn6yayNPgSamYdtX2rFJdcv07AYVw==
@@ -28402,7 +28402,7 @@ svgo@^2.3.0:
     nanocolors "^0.1.12"
     stable "^0.1.8"
 
-svgo@^2.7.0:
+svgo@^2.5.0, svgo@^2.7.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-2.8.0.tgz#4ff80cce6710dc2795f0c7c74101e6764cfccd24"
   integrity sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==

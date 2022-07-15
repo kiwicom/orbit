@@ -132,7 +132,16 @@ async function previewChangelog() {
 (async () => {
   await configureGitHubToken();
   await installDependencies();
-  await publishPackages();
-  const changelog = await previewChangelog();
-  await postSlackNotification(changelog);
+  publishPackages().then(() => {
+    previewChangelog()
+      .then(changelog => {
+        postSlackNotification(changelog);
+      })
+      .catch(err => {
+        console.error(err);
+      })
+      .finally(() => {
+        process.exit(0);
+      });
+  });
 })();

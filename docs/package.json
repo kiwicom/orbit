@@ -107,7 +107,7 @@
     "react-scrollspy": "^3.4.3",
     "recharts": "^2.1.6",
     "rehype-parse": "^7.0.1",
-    "rehype-stringify": "^8.0.0",
+    "rehype-stringify": "^9.0.0",
     "remark-deflist": "^0.3.0",
     "styled-components": "^5.3.1",
     "tailwindcss": "^2.1.1",

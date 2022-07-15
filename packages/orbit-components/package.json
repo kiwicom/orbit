@@ -107,7 +107,7 @@
     "@kiwicom/browserslist-config": "^2.1.0",
     "@nanostores/react": "^0.2.0",
     "@nanostores/router": "^0.3.1",
-    "@octokit/rest": "^18.0.14",
+    "@octokit/rest": "^19.0.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-backgrounds": "^6.5.9",
     "@storybook/addon-info": "^6.0.0-alpha.2",

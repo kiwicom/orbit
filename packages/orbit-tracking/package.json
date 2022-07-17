@@ -45,7 +45,7 @@
     "react-scanner"
   ],
   "peerDependencies": {
-    "@types/readable-stream": "2.3.13",
+    "@types/readable-stream": "2.3.14",
     "zx": ">= 7.0.0"
   },
   "devDependencies": {

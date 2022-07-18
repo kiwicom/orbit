@@ -1,0 +1,4 @@
+// @flow
+import type { Palette } from "./foundation";
+
+declare export default Palette;

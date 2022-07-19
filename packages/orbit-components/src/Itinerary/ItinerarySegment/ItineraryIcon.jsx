@@ -29,9 +29,7 @@ const IconStyled = styled.div`
     justify-content: center;
     z-index: 1;
     svg {
-      background: ${(last || index === 0) && !isPrevHidden
-        ? "transparent"
-        : theme.orbit.paletteWhite};
+      background: ${last || index === 0 ? "transparent" : theme.orbit.paletteWhite};
       overflow: hidden;
     }
     ${index > 0 &&
@@ -51,7 +49,7 @@ const IconStyled = styled.div`
     count > 0 &&
     css`
       &:before {
-        top: -9px;
+        top: ${last && isPrevHidden ? "-14px" : "-9px"};
         border: 1px ${isPrevHidden ? "dashed" : "solid"} ${theme.orbit.paletteCloudNormalActive};
         ${lineMixin};
       }
@@ -61,7 +59,7 @@ const IconStyled = styled.div`
     count > 0 &&
     css`
       &:after {
-        bottom: -7px;
+        bottom: ${isHidden ? "4px" : "-9px"};
         border: 1px ${isHidden ? "dashed" : "solid"} ${theme.orbit.paletteCloudNormalActive};
         ${lineMixin};
       }

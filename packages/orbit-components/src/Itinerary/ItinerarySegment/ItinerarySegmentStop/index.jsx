@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { StarFull, CircleEmpty, Circle } from "../../../icons";
+import { StarFull, CircleSmallEmpty as CircleEmpty, CircleSmall as Circle } from "../../../icons";
 import { useWidth } from "../../context";
 import defaultTheme from "../../../defaultTheme";
 import Stack from "../../../Stack";
@@ -62,7 +62,7 @@ const ItinerarySegmentStopIcon = ({
 |}) => {
   if (icon) return icon;
   if (isHidden) return <StarFull color="warning" size="small" />;
-  if (isPrevHidden && isLast) return <CircleEmpty size="small" color="secondary" />;
+  if (isPrevHidden && isLast) return <CircleEmpty size="small" color="tertiary" />;
 
   return <Circle size="small" color="secondary" />;
 };

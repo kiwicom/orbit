@@ -1,5 +1,5 @@
 // @flow
-export default {
+const palette = {
   product: {
     dark: "#007F6D",
     normal: "#00A58E",
@@ -89,3 +89,5 @@ export default {
     darker: "#803F00",
   },
 };
+
+export default palette;

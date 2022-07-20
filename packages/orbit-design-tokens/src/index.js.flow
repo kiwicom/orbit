@@ -1,6 +1,7 @@
 // @flow
+import type { ConvertHexToRgba } from "./convertHexToRgba";
 import type {
-  Base,
+  Palette,
   CloudColor,
   InkColor,
   ProductColor,
@@ -8,8 +9,8 @@ import type {
   StatusColor,
   WhiteColor,
   BundleColor,
-} from "./foundation";
-import type { ConvertHexToRgba } from "./convertHexToRgba";
+} from "./palette";
+import type { Base } from "./foundation";
 
 declare export var convertHexToRgba: ConvertHexToRgba;
 
@@ -549,3 +550,4 @@ export type GetTokens = (customFoundation?: CustomFoundation) => Tokens;
 declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 declare export var defaultTokens: Tokens;
+declare export var palette: Palette;

@@ -2,11 +2,12 @@
 import mergeDeepRight from "ramda/src/mergeDeepRight";
 
 import foundation from "./foundation";
+import palette from "./palette";
 import convertHexToRgba from "./convertHexToRgba";
 
 import type { GetTokens, FromPlainObject, Tokens } from ".";
 
-export { foundation, convertHexToRgba };
+export { foundation, convertHexToRgba, palette };
 
 export const getTokens: GetTokens = customFoundation => {
   // By default it takes base foundation config

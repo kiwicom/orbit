@@ -36,6 +36,15 @@ jobs:
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
+      - name: Update palette
+        run: |
+          yarn tokens fetch:colors
+          yarn tokens jest -u
+          git add --all 
+          git diff-index --quiet HEAD || git commit -m "feat(tokens): update palette"
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+
       - name: Create PR
         uses: peter-evans/create-pull-request@v4
         with:

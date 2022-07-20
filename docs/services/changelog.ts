@@ -16,15 +16,13 @@ const headings = () => tree => {
 
 export default async () => {
   try {
-    const file = await read(
-      path.resolve(__dirname, "../../../packages/orbit-components/CHANGELOG.md"),
-    );
+    const file = await read(path.resolve(process.cwd(), "packages/orbit-components/CHANGELOG.md"));
 
     const { contents } = await remark().use(mdx).use(headings).process(file);
     const output = contents.toString().replace("## Change Log", "");
 
     await write({
-      path: path.resolve(__dirname, "../../src/data", "CHANGELOG.md"),
+      path: path.resolve(process.cwd(), "docs/src/data", "log.md"),
       contents: output,
     });
   } catch (err) {

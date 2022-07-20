@@ -22,6 +22,7 @@
     "@babel/core": "^7.18.2",
     "@babel/generator": "^7.17.9",
     "@babel/standalone": "^7.17.6",
+    "@babel/runtime": "^7.18.2",
     "@csstools/convert-colors": "^2.0.0",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",

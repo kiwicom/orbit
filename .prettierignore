@@ -4,3 +4,4 @@ packages/*/umd
 flow-typed
 **/package.json
 CHANGELOG.md
+log.md

@@ -7,8 +7,11 @@ const prettier = require("prettier");
 
 const fileContent = `// @flow
 
-import { ${Object.keys(orbits).join(",")} } from "@kiwicom/orbit-components";
+import { ${Object.keys(orbits)
+  .filter(n => n !== "__esModule")
+  .join(",")} } from "@kiwicom/orbit-components";
 import { ${Object.keys(icons)
+  .filter(n => n !== "__esModule")
   .map(name => `${name} as ${name}Icon`)
   .join(",")} } from "@kiwicom/orbit-components/icons";
 `;

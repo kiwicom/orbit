@@ -89,7 +89,12 @@ async function configureGitHubToken() {
 async function previewChangelog() {
   const packages = await getPackages();
   const streams = packages
-    .filter(pkg => !/orbit.kiwi|orbit-tracking|babel-plugin-orbit-components/gm.test(pkg.name))
+    .filter(
+      pkg =>
+        !/orbit.kiwi|orbit-tracking|(babel|eslint)-plugin-orbit-components|orbit-design-tokens/gm.test(
+          pkg.name,
+        ),
+    )
     .map(pkg => {
       return conventionalChangelog(
         {
@@ -132,16 +137,7 @@ async function previewChangelog() {
 (async () => {
   await configureGitHubToken();
   await installDependencies();
-  publishPackages().then(() => {
-    previewChangelog()
-      .then(changelog => {
-        postSlackNotification(changelog);
-      })
-      .catch(err => {
-        console.error(err);
-      })
-      .finally(() => {
-        process.exit(0);
-      });
-  });
+  await publishPackages();
+  const changelog = await previewChangelog();
+  await postSlackNotification(changelog);
 })();

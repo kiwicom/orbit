@@ -34,7 +34,6 @@ const StyledPricingTableItem = styled.div`
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
-  max-width: 33%;
   position: relative;
   background: ${({ theme }) => theme.orbit.paletteWhite};
   box-shadow: ${getBoxShadow()};

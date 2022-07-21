@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.4.3...@kiwicom/orbit-design-tokens@1.4.4) (2022-07-21)
+
+
+### Bug Fixes
+
+* **design-tokens:** text status colors change from normal to dark ([#3439](https://github.com/kiwicom/orbit/issues/3439)) ([f8b91f2](https://github.com/kiwicom/orbit/commit/f8b91f2a59069e62d7d7c1589d19c97965552151))
+
+
+### Reverts
+
+* Revert "fix(design-tokens): text status colors change from normal to dark (#3439)" (#3442) ([d2fb775](https://github.com/kiwicom/orbit/commit/d2fb7752c7a779e7068c52584f404c0f4149a006)), closes [#3439](https://github.com/kiwicom/orbit/issues/3439) [#3442](https://github.com/kiwicom/orbit/issues/3442)
+
+
+
+
+
 ## [1.4.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.4.2...@kiwicom/orbit-design-tokens@1.4.3) (2022-06-30)
 
 

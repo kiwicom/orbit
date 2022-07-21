@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.2.0...@kiwicom/orbit-components@3.3.0) (2022-07-21)
+
+
+### Bug Fixes
+
+* **ItineraryIcon:** add new icon from figma ([#3529](https://github.com/kiwicom/orbit/issues/3529)) ([233e2b7](https://github.com/kiwicom/orbit/commit/233e2b7293ee429d230f390b29bf765da63c2ae7))
+* **PricingTable:** remove max-width ([#3533](https://github.com/kiwicom/orbit/issues/3533)) ([6a4c40b](https://github.com/kiwicom/orbit/commit/6a4c40bf564c397d86a717ec65b19d870aaac548))
+
+
+### Features
+
+* **icons:** update icons from figma ([#3528](https://github.com/kiwicom/orbit/issues/3528)) ([a86268a](https://github.com/kiwicom/orbit/commit/a86268a5a24aa141b724887217d6ac3bb8bdfe7d))
+
+
+
+
+
 # [3.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.1.0...@kiwicom/orbit-components@3.2.0) (2022-07-15)
 
 

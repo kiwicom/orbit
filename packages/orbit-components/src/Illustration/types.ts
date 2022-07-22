@@ -1,0 +1,100 @@
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/illustration/
+*/
+
+import * as React from "react";
+
+import * as Common from "../common/types";
+
+export type Name =
+  | "AppKiwi"
+  | "Accommodation"
+  | "AirHelp"
+  | "AirportShuttle"
+  | "AirportTransport"
+  | "AirportTransportTaxi"
+  | "AppQRCode"
+  | "BaggageDrop"
+  | "Boarding"
+  | "BoardingPass"
+  | "BusinessTravel"
+  | "CabinBaggage"
+  | "Chatbot"
+  | "CompassCollectPoints"
+  | "CompassDemoted"
+  | "CompassEmailAdventurer"
+  | "CompassEmailCaptain"
+  | "CompassEmailPromoted"
+  | "CompassEmailPromotedCaptain"
+  | "CompassEmailScout"
+  | "CompassPoints"
+  | "CompassSaveOnBooking"
+  | "CompassTravelPlan"
+  | "DesktopSearch"
+  | "EnjoyApp"
+  | "Error"
+  | "Error404"
+  | "EVisa"
+  | "FastTrack"
+  | "FastTrackMan"
+  | "FareLock"
+  | "FareLockSuccess"
+  | "Feedback"
+  | "GroundTransport404"
+  | "Help"
+  | "Improve"
+  | "Insurance"
+  | "InviteAFriend"
+  | "Login"
+  | "Lounge"
+  | "Mailbox"
+  | "Meal"
+  | "MobileApp"
+  | "Money"
+  | "MusicalInstruments"
+  | "NetVerify"
+  | "NoBookings"
+  | "NoFavoriteFlights"
+  | "Nomad"
+  | "NomadNeutral"
+  | "NoNotification"
+  | "NoResults"
+  | "Offline"
+  | "OnlineCheckIn"
+  | "OpenSearch"
+  | "Parking"
+  | "Pets"
+  | "PlaceholderAirport"
+  | "PlaceholderDestination"
+  | "PlaceholderHotel"
+  | "PlaceholderTours"
+  | "PlaneAndMoney"
+  | "PlaneDelayed"
+  | "PriorityBoarding"
+  | "Rating"
+  | "ReferAFriend"
+  | "RentalCar"
+  | "Seating"
+  | "SpecialAssistance"
+  | "SportsEquipment"
+  | "Success"
+  | "TicketFlexi"
+  | "Time"
+  | "TimelineBoarding"
+  | "TimelineDropBaggage"
+  | "TimelineLeave"
+  | "TimelinePick"
+  | "Tours"
+  | "Train"
+  | "TransportBus"
+  | "TransportTaxi"
+  | "WomanWithPhone";
+
+export interface Props extends Common.Globals, Common.SpaceAfter {
+  readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
+  readonly name: Name;
+  readonly alt?: string;
+}
+
+declare const Illustration: React.FunctionComponent<Props>;
+export { Illustration, Illustration as default };

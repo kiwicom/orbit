@@ -1,0 +1,33 @@
+// @flow
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+import type { TileOnClick } from "../../index.js.flow";
+
+export type Props = {|
+  icon?: React.Node,
+  title?: React.Node,
+  description?: React.Node,
+  expandable?: boolean,
+  expanded?: boolean,
+  external?: boolean,
+  onClick?: TileOnClick,
+  onKeyDown?: TileOnClick,
+  header?: React.Node,
+  role?: string,
+  ariaExpanded?: boolean,
+  ariaControls?: string,
+  id?: string,
+  tabIndex?: string | number,
+  noHeaderIcon?: boolean,
+|};
+
+type IconProps = {|
+  external: boolean,
+  expandable: boolean,
+  expanded: boolean,
+|};
+
+declare export var StyledIconRight: StyledComponent<IconProps, any, HTMLElement>;
+
+declare export default React.ComponentType<Props>;

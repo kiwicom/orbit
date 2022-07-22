@@ -1,4 +1,0 @@
-// @flow
-import { fromPlainObject } from "@kiwicom/orbit-design-tokens";
-
-declare export default typeof fromPlainObject;

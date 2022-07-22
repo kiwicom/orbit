@@ -1,5 +1,5 @@
 // @flow
-import type { ThemeProps } from "../../defaultTheme";
+import type { ThemeProps } from "../../defaultTheme.js.flow";
 
 export type TransitionDuration = "slow" | "normal" | "fast";
 

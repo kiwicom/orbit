@@ -319,7 +319,7 @@ const PropsTable = ({ children }) => {
   return (
     <StyledTableOuter ref={outer} showShadows={shadows} showLeft={left} showRight={right}>
       <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
-        <Table ref={table}>
+        <Table ref={table} type="primary">
           <PropsTableHead
             tableHeaders={tableHeaders}
             handleSortingChange={handleSortingChange}

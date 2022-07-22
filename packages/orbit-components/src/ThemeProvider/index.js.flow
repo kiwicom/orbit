@@ -1,0 +1,16 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/themeprovider/
+*/
+import * as React from "react";
+
+import type { Translations } from "../Dictionary/index.js.flow";
+import type { Theme } from "../defaultTheme.js.flow";
+
+export type Props = {|
+  +theme: {| ...Theme |}, // allow other sub objects with spread
+  +dictionary?: Translations,
+  +children: React.Node,
+|};
+
+declare export default React.ComponentType<Props>;

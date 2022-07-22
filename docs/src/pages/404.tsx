@@ -21,7 +21,6 @@ export default function PageNotFound({ location }: PageProps) {
           </Stack>
           <Illustration name="Error404" size="large" />
           <Stack flex spacing="XSmall">
-            {/* @ts-expect-error ts-missing-module */}
             <Button circled type="primary" iconRight={<TripIcon />} asComponent={Link} href="/">
               Return home
             </Button>

@@ -1,0 +1,32 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/tooltip/
+*/
+import * as React from "react";
+
+import type { Popper } from "../primitives/TooltipPrimitive/index.js.flow";
+import type { Globals } from "../common/common.js.flow";
+
+export type Sizes = "small" | "medium";
+
+export type Size = {|
+  size: Sizes,
+|};
+
+export type Props = {|
+  ...Globals,
+  +children?: React.Node,
+  +content: React.Node,
+  +size?: Sizes,
+  +onShow?: () => void | Promise<void>,
+  +enabled?: boolean,
+  +renderInPortal?: boolean,
+  +stopPropagation?: boolean,
+  +tabIndex?: string | number,
+  +removeUnderlinedText?: boolean,
+  +block?: boolean,
+  +lockScrolling?: boolean,
+  ...Popper,
+|};
+
+declare export default React.ComponentType<Props>;

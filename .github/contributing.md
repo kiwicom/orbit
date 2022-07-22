@@ -2,9 +2,15 @@
 
 ## Table of Contents
 
-- [Commit message & history](#commit-message-history)
-- [Repository structure](#repository-structure)
-- [Environment requirements](#environment-requirements)
+- [Contribution guide](#contribution-guide)
+  - [Table of Contents](#table-of-contents)
+- [Commit message & history](#commit-message--history)
+- [Repository Structure](#repository-structure)
+  - [`@kiwicom/orbit-components`](#kiwicomorbit-components)
+  - [`@kiwicom/babel-plugin-orbit-components`](#kiwicombabel-plugin-orbit-components)
+  - [Root](#root)
+- [Environment Requirements](#environment-requirements)
+- [How to develop](#how-to-develop)
 - [Testing](#testing)
 
 ---
@@ -81,7 +87,6 @@ This is a shortcut for `yalc publish --push`, which "publishes" the package agai
 
 Run `yarn test-ci` to perform the same automatic checks as the CI server. You can also run some of these checks separately:
 
-- `yarn flow` - Flow check
 - `yarn tsc` - TypeScript check
 - `yarn eslint .` - ESLint check
 - `yarn test` - run all Jest tests

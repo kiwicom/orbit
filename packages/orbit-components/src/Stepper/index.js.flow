@@ -1,0 +1,33 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/stepper/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+import type { StepperStatelessType } from "./StepperStateless/index.js.flow";
+
+export type SharedProps = {|
+  ...Globals,
+  +name?: string,
+  +disabled?: boolean,
+  +active?: boolean,
+  +maxWidth?: string | number,
+  +maxValue?: number,
+  +minValue?: number,
+  +titleIncrement?: string | (any => string),
+  +titleDecrement?: string | (any => string),
+  +onChange?: (value: number) => void | Promise<any>,
+  +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+|};
+
+export type Props = {|
+  ...SharedProps,
+  +defaultValue?: number,
+  +step?: number,
+|};
+
+declare export var StepperStateless: StepperStatelessType;
+
+declare export default React.ComponentType<Props>;

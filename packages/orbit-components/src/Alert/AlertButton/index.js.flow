@@ -1,0 +1,21 @@
+// @flow
+import * as React from "react";
+
+import type { ButtonCommonProps } from "../../primitives/ButtonPrimitive/index.js.flow";
+
+export type Type =
+  | "info"
+  | "success"
+  | "warning"
+  | "critical"
+  | "infoSubtle"
+  | "successSubtle"
+  | "warningSubtle"
+  | "criticalSubtle";
+
+export type Props = {|
+  +type?: Type,
+  ...$Diff<ButtonCommonProps, {| +size?: string |}>,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLButtonElement>;

@@ -1,15 +1,14 @@
-// @flow
 /*
   DOCUMENTATION: https://orbit.kiwi/components/illustration/
 */
 
 import * as React from "react";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 
-type Name =%NAMES%
+export type Name =%NAMES%
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: Name;
   readonly alt?: string;

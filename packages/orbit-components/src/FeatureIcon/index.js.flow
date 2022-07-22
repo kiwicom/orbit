@@ -1,0 +1,17 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/featureicon/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+
+export type Name = "TicketFlexi" | "TicketSaver" | "TicketStandard";
+
+export type Props = {|
+  +name: Name,
+  +alt?: string,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;

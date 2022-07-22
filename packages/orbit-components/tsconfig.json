@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+    "declaration": true,
+    "moduleResolution": "node",
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__tests__/**/*",
+    "**/__typetests__/**/*",
+    "**/__examples__/*.*",
+    "**/examples.*"
+  ]
+}

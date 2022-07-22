@@ -1,0 +1,31 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/segmentedswitch/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
+
+export type Option = {|
+  +label: React.Node,
+  +value: string | number,
+  +disabled?: boolean,
+  +defaultChecked?: boolean,
+  +name?: string,
+|};
+
+export type Props = {|
+  +label?: React.Node,
+  +options: Option[],
+  +showTooltip?: boolean,
+  +onChange: (SyntheticInputEvent<HTMLInputElement>) => void,
+  +onFocus?: (SyntheticInputEvent<HTMLInputElement>) => void,
+  +maxWidth?: string,
+  +help?: React.Node,
+  +error?: React.Node,
+  ...spaceAfter,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;

@@ -11,8 +11,8 @@ import {
   TableCell,
 } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
-import type { SpaceAfter } from "@kiwicom/orbit-components/lib/common/common";
-import type { Type } from "@kiwicom/orbit-components/lib/Heading";
+import { SpaceAfter } from "@kiwicom/orbit-components/lib/common/types";
+import { Type } from "@kiwicom/orbit-components/lib/Heading/types";
 import { Link } from "gatsby";
 import { css } from "styled-components";
 
@@ -171,7 +171,6 @@ export const a = function Anchor({
   const useExternalIcon = isExternal && typeof children === "string";
   return (
     <TextLink
-      // @ts-expect-error type declaration is not permissive enough
       asComponent={isExternal ? "a" : LinkForOrbitTextLink}
       type={orbitType}
       href={href}

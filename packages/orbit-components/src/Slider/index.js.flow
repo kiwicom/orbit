@@ -1,0 +1,40 @@
+// @flow
+import * as React from "react";
+
+import type { Translation, Globals } from "../common/common.js.flow";
+import type { Data } from "./components/Histogram/index.js.flow";
+
+export type Value = number | number[];
+
+export type SliderCallback = (value: Value) => void | Promise<any>;
+
+export type AriaLabel = string | string[];
+
+export type Props = {|
+  ...Globals,
+  minValue?: number,
+  maxValue?: number,
+  step?: number,
+  defaultValue?: Value,
+  onChange?: SliderCallback,
+  onChangeBefore?: SliderCallback,
+  onChangeAfter?: SliderCallback,
+  label?: Translation,
+  valueDescription?: Translation,
+  ariaLabel?: AriaLabel,
+  ariaValueText?: string,
+  histogramData?: Data,
+  histogramDescription?: Translation,
+  histogramLoading?: boolean,
+  histogramLoadingText?: Translation,
+|};
+
+export type State = {|
+  value: Value,
+  handleIndex: ?number,
+  focused: boolean,
+|};
+
+declare export default React.ComponentType<Props>;
+
+declare export var PureSlider: React.ComponentType<Props>;

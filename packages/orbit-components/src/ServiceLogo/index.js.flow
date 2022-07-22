@@ -1,0 +1,54 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/servicelogo/
+*/
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+import type { Globals } from "../common/common.js.flow";
+
+export type Name =
+  | "AirHelp"
+  | "Alipay"
+  | "Amex"
+  | "Axa"
+  | "AxaAssistance"
+  | "Booking"
+  | "BusinessInsider"
+  | "ChinaUnionPay"
+  | "DailyExpress"
+  | "DinersClub"
+  | "Discover"
+  | "IATA"
+  | "JCB"
+  | "MailOnline"
+  | "Maestro"
+  | "MaestroShort"
+  | "MasterCard"
+  | "MasterCardShort"
+  | "MIR"
+  | "Mirror"
+  | "NewYorkTimes"
+  | "NortonSecured"
+  | "PayPal"
+  | "RentalCars"
+  | "Sofort"
+  | "TravelPulse"
+  | "Trustly"
+  | "UsaToday"
+  | "Visa"
+  | "VisaHQ"
+  | "Zooz"
+  | "Elo";
+
+export type Size = "small" | "medium" | "large";
+
+export type Props = {|
+  +name: Name,
+  +size?: Size,
+  +grayScale?: boolean,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;
+declare export var StyledServiceLogo: StyledComponent<any, any, HTMLElement>;

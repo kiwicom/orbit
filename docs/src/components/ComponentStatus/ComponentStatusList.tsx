@@ -159,7 +159,6 @@ const ComponentStatusList = () => {
                             {item.docs === "Released" ? (
                               <TextLink
                                 standAlone
-                                // @ts-expect-error "asComponent" is not correctly typed
                                 asComponent={OrbitGatsbyLink}
                                 href={`/components/${group
                                   .toLowerCase()

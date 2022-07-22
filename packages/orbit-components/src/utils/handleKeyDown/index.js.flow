@@ -1,5 +1,4 @@
 // @flow
-
 export type HandleKeyDown = (
   onClick?: (
     e: SyntheticEvent<HTMLDivElement> | SyntheticKeyboardEvent<HTMLElement>,

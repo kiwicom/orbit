@@ -1,0 +1,10 @@
+// @flow
+import * as React from "react";
+
+import type { QueryMap } from "../../hooks/useMediaQuery/index.js.flow";
+
+declare export var initialValue: QueryMap<null>;
+
+declare var QueryContext: React.Context<QueryMap<boolean | null>>;
+
+export default QueryContext;

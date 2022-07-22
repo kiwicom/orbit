@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Stack, Button, Grid, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Heading, Stack, Button, mediaQueries as mq } from "@kiwicom/orbit-components";
 import { StyledButtonPrimitive } from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";

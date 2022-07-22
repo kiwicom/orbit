@@ -1,0 +1,24 @@
+// @flow
+import * as React from "react";
+
+import type { Popper, Sizes } from "../index.js.flow";
+import type { Globals } from "../../../common/common.js.flow";
+
+export type Props = {|
+  shown: boolean,
+  size: Sizes,
+  tooltipId: ?string,
+  children: React.Node,
+  parent: ?React.Node,
+  error?: boolean,
+  help?: boolean,
+  onClick: (ev: SyntheticEvent<HTMLDivElement>) => void,
+  onClose: () => void,
+  onCloseMobile: () => void,
+  onEnter: () => void,
+  referenceElement: HTMLElement | null,
+  ...Globals,
+  ...Popper,
+|};
+
+declare export default React.ComponentType<Props>;

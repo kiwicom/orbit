@@ -1,0 +1,37 @@
+// @flow
+
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/itinerary/
+*/
+
+import * as React from "react";
+
+import typeof ItinerarySegmentComponent from "./ItinerarySegment/index.js.flow";
+import typeof ItinerarySeparatorComponent from "./ItinerarySeparator/index.js.flow";
+import typeof ItineraryBadgeListComponent from "./ItineraryBadgeList/index.js.flow";
+import typeof ItineraryBadgeListItemComponent from "./ItineraryBadgeList/ItineraryBadgeListItem.js.flow";
+import typeof ItineraryStatusComponent from "./ItineraryStatus/index.js.flow";
+import typeof ItinerarySegmentStopComponent from "./ItinerarySegment/ItinerarySegmentStop/index.js.flow";
+import typeof ItinerarySegmentDetailComponent from "./ItinerarySegment/ItinerarySegmentDetail/index.js.flow";
+import typeof ItinerarySegmentBannerComponent from "./ItinerarySegment/ItinerarySegmentBanner/index.js.flow";
+import type { Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
+
+export type Status = "warning" | "critical" | "info" | "success" | "neutral";
+
+export type Props = {|
+  ...Globals,
+  ...spaceAfter,
+  +children: React.Node,
+|};
+
+declare export var ItinerarySegment: ItinerarySegmentComponent;
+declare export var ItinerarySeparator: ItinerarySeparatorComponent;
+declare export var ItineraryBadgeList: ItineraryBadgeListComponent;
+declare export var ItineraryBadgeListItem: ItineraryBadgeListItemComponent;
+declare export var ItineraryStatus: ItineraryStatusComponent;
+declare export var ItinerarySegmentStop: ItinerarySegmentStopComponent;
+declare export var ItinerarySegmentDetail: ItinerarySegmentDetailComponent;
+declare export var ItinerarySegmentBanner: ItinerarySegmentBannerComponent;
+
+declare export default React.ComponentType<Props>;

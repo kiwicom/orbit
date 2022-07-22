@@ -10,21 +10,17 @@ packages/babel-plugin-orbit-components/__fixtures__/
 packages/eslint-plugin-orbit-components/dist
 !.storybook
 !.remarkrc.js
+!.size-limit.cjs
 !.size-limit.js
 
 # from gitignore
 packages/orbit-components/src/icons/*
-packages/orbit-components/src/Illustration/index.*.flow
-packages/orbit-components/src/AirportIllustration/index.*.flow
-packages/orbit-components/src/ServiceLogo/index.*.flow
-packages/orbit-components/src/FeatureIcon/index.*.flow
-packages/orbit-components/src/Illustration/index.d.ts
-packages/orbit-components/src/AirportIllustration/index.d.ts
-packages/orbit-components/src/ServiceLogo/index.d.ts
-packages/orbit-components/src/FeatureIcon/index.d.ts
 
 docs/.cache
 docs/public
 
 # orbit design tokens
 packages/orbit-design-tokens/output/
+
+# transforms
+packages/orbit-components/transforms/__testfixtures__/*

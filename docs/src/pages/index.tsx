@@ -1,13 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import {
-  Heading,
-  Inline,
-  Stack,
-  Grid,
-  Button,
-  mediaQueries as mq,
-} from "@kiwicom/orbit-components";
+import { Heading, Inline, Stack, Grid, Button } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
@@ -68,7 +61,6 @@ export default function Home({ location, path }: Props) {
       >
         <HeaderBox>
           <RocketImage />
-
           <Heading type="display">
             <div
               css={css`
@@ -95,7 +87,6 @@ export default function Home({ location, path }: Props) {
                 type="primary"
                 circled
                 iconRight={<ArrowRight />}
-                // @ts-expect-error asComponent has wrong type declaration
                 asComponent={GatsbyLinkToButton}
                 href="/getting-started/"
               >

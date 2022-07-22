@@ -1,0 +1,28 @@
+// @flow
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+import type { Globals } from "../../common/common.js.flow";
+import type { As } from "../../Heading/index.js.flow";
+
+export type Props = {|
+  +title?: React.Node,
+  +titleAs?: As,
+  +icon?: React.Node,
+  +description?: React.Node,
+  +children?: React.Node,
+  +expandable?: boolean,
+  +initialExpanded?: boolean,
+  +actions?: React.Node,
+  +expanded?: boolean,
+  +noSeparator?: boolean,
+  +onClick?: () => void | Promise<any>,
+  +onClose?: () => void | Promise<any>,
+  +onExpand?: () => void | Promise<any>,
+  +header?: React.Node,
+  ...Globals,
+|};
+
+declare export var StyledCardSection: StyledComponent<any, any, HTMLElement>;
+
+declare export default React.ComponentType<Props>;

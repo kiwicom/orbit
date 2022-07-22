@@ -5,7 +5,6 @@ exports.DEV_DEPENDENCIES = [
   "**/__tests__/**",
   "**/.remarkrc.js",
   "**/.size-limit.js",
-  "**/.size-limit.cjs",
   "**/*.stories.*",
   "**/*.test.js",
   "**/config/**",

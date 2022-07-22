@@ -148,7 +148,10 @@
     "cypress": "^8.3.0",
     "dedent": "^0.7.0",
     "dotenv-safe": "^8.2.0",
+<<<<<<< HEAD
     "filedirname": "^2.7.0",
+=======
+>>>>>>> ae1f02194 (improve: setup writing components in ts (#3364))
     "flowgen": "^1.19.0",
     "fs-extra": "^9.0.1",
     "glob": "^7.1.2",

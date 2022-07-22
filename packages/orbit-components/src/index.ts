@@ -1,6 +1,7 @@
-// @flow
 // Icons use a special export method
-export * as Icons from "./icons";
+import * as Icons from "./icons";
+
+export { Icons };
 
 export { default as AirportIllustration } from "./AirportIllustration";
 export { default as Alert, AlertButton } from "./Alert";
@@ -118,11 +119,11 @@ export { default as Truncate } from "./Truncate";
 
 // tokens
 export { default as defaultTheme } from "./defaultTheme";
+export type { Theme } from "./defaultTheme";
 export { fromPlainObject, getTokens } from "@kiwicom/orbit-design-tokens";
 
 // utilities
 export { default as mediaQueries } from "./utils/mediaQuery";
-export * as rtl from "./utils/rtl";
 export { default as useMediaQuery } from "./hooks/useMediaQuery";
 export { default as useTheme } from "./hooks/useTheme";
 export { default as useLockScrolling } from "./hooks/useLockScrolling";
@@ -134,3 +135,4 @@ export { default as useInterval } from "./hooks/useInterval";
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";
 export { default as IllustrationPrimitive } from "./primitives/IllustrationPrimitive";
 export { default as ButtonPrimitive } from "./primitives/ButtonPrimitive";
+export * as rtl from "./utils/rtl";

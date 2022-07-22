@@ -11,21 +11,22 @@ const FIGMA_IMAGE_URI = `https://api.figma.com/v1/images/${ICONS_ID}`;
 const SVG_FOLDER = path.resolve(process.cwd(), "src/icons/svg");
 
 // helper functions
-const isCorrectSize = name => {
+const isCorrectSize = (name: string) => {
   const size = argv.size || "large";
   return name === `size=${size}`;
 };
 
-const range = (start, end) => Array.from({ length: end - start + 1 }, (_, i) => start + i);
+const range = (start: number, end: number): number[] =>
+  Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
-const sampleSize = (arr, size) => {
+const sampleSize = (arr: number[], size: number) => {
   return arr
     .slice(0)
     .sort(() => Math.random() - 0.5)
     .slice(0, size);
 };
 
-const removeCommentId = str => str.replace(/<!--.*-->/g, "");
+const removeCommentId = (str: string) => str.replace(/<!--.*-->/g, "");
 
 try {
   dotenv.config({
@@ -44,11 +45,11 @@ try {
   }
 }
 
-const api = url =>
+const api = (url: string) =>
   axios({
     method: "GET",
     url,
-    headers: { "Content-Type": "application/", "X-FIGMA-TOKEN": process.env.FIGMA_TOKEN },
+    headers: { "Content-Type": "application/", "X-FIGMA-TOKEN": process.env.FIGMA_TOKEN || "" },
   });
 
 const parseNodes = nodes => {
@@ -74,7 +75,7 @@ const parseNodes = nodes => {
 };
 
 // just to avoid unnecessary breaking change
-const parseName = name => {
+const parseName = (name: string) => {
   if (name === "no-guarantee") return "kiwicom-no-guarantee";
   if (name === "guarantee") return "kiwicom-guarantee";
   if (name === "care-kiwi.com") return "kiwicom-care";
@@ -87,7 +88,7 @@ const parseName = name => {
   return name;
 };
 
-const setSvgContent = (name, content, id) => {
+const setSvgContent = (name: string, content: string, id: number) => {
   if (/colored-/g.test(name) || name === "google") {
     return dedent`
     <!--character:${id}-->
@@ -147,6 +148,7 @@ const fetchOrbitIcons = async () => {
         axios.get(imagesData.images[id]).then(res => {
           return {
             id,
+            // @ts-expect-error TODO
             name: name.toLowerCase().replace(/\+kg/, "").replace(/\s+/g, "-"),
             svg: res.data,
           };

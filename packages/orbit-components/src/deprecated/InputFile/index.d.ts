@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../../common/common";
 
-declare module "@kiwicom/orbit-components/lib/InputFile";
-
 // InputEvent
 type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 

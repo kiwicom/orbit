@@ -63,7 +63,7 @@ async function postSlackNotification(changelog) {
         Accept: "application/json",
       },
     });
-    if (!res.ok) return res.error;
+    return res;
   } catch (err) {
     console.error(err);
   }

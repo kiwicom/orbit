@@ -4,15 +4,11 @@ import React from "react";
 import useTheme from "../../src/hooks/useTheme";
 import defaultTheme from "../../src/defaultTheme";
 
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
 const StyledComponent = styled.div`
   color: ${({ theme }) => theme.orbit.paletteCloudDarker};
 `;
 
 StyledComponent.defaultProps = {
-  // @ts-ignore
   theme: defaultTheme,
 };
 
@@ -23,7 +19,6 @@ const StyledComponentSecond = styled.div`
 `;
 
 StyledComponentSecond.defaultProps = {
-  // @ts-ignore
   theme: defaultTheme,
 };
 

@@ -2,7 +2,9 @@ import SVGIcons2SVGFontStream from "svgicons2svgfont";
 import { path, fs } from "zx";
 import svg2ttf from "svg2ttf";
 import ttf2woff2 from "ttf2woff2";
+import filedirname from "filedirname";
 
+const [, __dirname] = filedirname();
 const ORBIT_ICONS_DIR = path.join(__dirname, "../orbit-icons-font");
 
 const createSVG = () =>
@@ -15,26 +17,27 @@ const createSVG = () =>
       fontName: "orbit-icons",
       fontHeight: 1000,
       normalize: true,
-      verbose: false,
     });
 
     fontStream
       .pipe(fs.createWriteStream(path.join(ORBIT_ICONS_DIR, "orbit-icons.svg")))
       .on("finish", () => {
-        resolve();
+        resolve(undefined);
       })
-      .on("error", err => {
+      .on("error", (err: Error) => {
         reject(err);
       });
 
-    const iconList = JSON.parse(fs.readFileSync(path.join(__dirname, "../src/data/icons.json")));
+    const iconList = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "/../src/data/icons.json"), "utf8"),
+    );
 
     Object.keys(iconList).forEach(iconName => {
       const iconPath =
         iconList[iconName].iconFont === "false" ? "../src/icons/svg/mobile/" : "../src/icons/svg/";
       const icon = fs.createReadStream(path.join(__dirname, iconPath, `${iconName}.svg`));
 
-      // $FlowFixMe
+      // @ts-expect-error TODO
       icon.metadata = {
         unicode: [String.fromCharCode(Number(`0x${iconList[iconName].character}`))],
         name: iconName,

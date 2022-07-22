@@ -1,19 +1,18 @@
-// @flow
-// const { resolve } = require("path");
-const { Octokit } = require("@octokit/rest");
+import { Octokit } from "@octokit/rest";
+import "make-runnable";
 
 const repo = "orbit";
 
-const parseDescription = (body, str) => {
-  if (body.match(str)) return body;
-  return body.concat(`\n ${str}`);
+const parseDescription = (body: string | null, str: string) => {
+  if (body && body.match(str)) return body;
+  return (body && body.concat(`\n ${str}`)) || "";
 };
 
 export const updateLiveURL = async (
   pr: number,
   lastUrl: string,
   token: string,
-  urlName: string = "LiveURL",
+  urlName = "LiveURL",
 ) => {
   if (!pr) throw new Error("Missing PR number");
 
@@ -32,5 +31,3 @@ export const updateLiveURL = async (
     body: parseDescription(data.body, `${urlName}: ${lastUrl}`),
   });
 };
-
-require("make-runnable");

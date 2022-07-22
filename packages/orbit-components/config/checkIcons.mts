@@ -6,16 +6,20 @@ This script checks the validity of a given set of icons. They need to:
 - Have an standard size (can be specified on the checkIcons function, in pixels)
 */
 
-import path from "path";
+import { path, globby } from "zx";
 import { JSDOM } from "jsdom";
-import glob from "glob";
 import dedent from "dedent";
 
 // Default icon size to enforce in px
 const DEFAULT_ICON_SIZE = "24";
 const DEFAULT_ICON_PATH = "src/icons/svg/*.svg";
 
-export function getHTMLComments(content) {
+interface Attr {
+  name: string;
+  value: string;
+}
+
+export function getHTMLComments(content: string) {
   const rawComments = content.match(/<!--([\s\S]*?)-->/gm);
   if (rawComments) {
     return Object.assign(
@@ -29,10 +33,11 @@ export function getHTMLComments(content) {
       }),
     );
   }
+
   return null;
 }
 
-export function getProperty(attributes, name, defaultValue = null) {
+export function getProperty(attributes: Attr[], name: string, defaultValue: null | string = null) {
   for (let i = attributes.length - 1; i >= 0; i -= 1) {
     if (attributes[i].name === name) {
       return attributes[i].value;
@@ -103,7 +108,7 @@ export default async function checkIcons(
   iconPaths = DEFAULT_ICON_PATH,
   iconSize = DEFAULT_ICON_SIZE,
 ) {
-  const files = glob.sync(iconPaths || DEFAULT_ICON_PATH);
+  const files = await globby(iconPaths || DEFAULT_ICON_PATH);
 
   if (!files || !files.length) {
     console.error("There are no icons on the specified path");

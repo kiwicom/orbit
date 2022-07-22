@@ -1,9 +1,10 @@
 // @flow
-const sharp = require("sharp");
-const fs = require("fs");
-const path = require("path");
-const { defaultTokens } = require("@kiwicom/orbit-design-tokens");
+import sharp from "sharp";
+import { fs, path } from "zx";
+import filedirname from "filedirname";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
+const [, __dirname] = filedirname();
 const DIR = path.join(__dirname, "../orbit-email-icons");
 const sizesToGenerate = [32, 48];
 const colors = [
@@ -48,6 +49,7 @@ async function generateIcon(pathToFile, size, color, extraDir) {
 
   if (file) {
     const updateBuffer = Buffer.from(
+      // @ts-expect-error TODO
       file.toString().replace(`<svg `, `<svg fill="${color}" `),
       "utf8",
     );
@@ -61,7 +63,7 @@ async function generateIcon(pathToFile, size, color, extraDir) {
   return false;
 }
 
-function generatePath(targetDir) {
+function generatePath(targetDir: string) {
   const { sep } = path;
   const initDir = path.isAbsolute(targetDir) ? sep : "";
   targetDir.split(sep).reduce((parentDir, childDir) => {
@@ -85,9 +87,10 @@ function generatePath(targetDir) {
     // Find all icons
     const files = await readDir("./src/icons/svg/");
 
-    const promises = [];
+    const promises: Promise<string | boolean>[] = [];
 
     // Generate every variant
+    // @ts-expect-error TODO
     files.forEach(file => {
       colors.forEach(color => {
         sizesToGenerate.forEach(size => {

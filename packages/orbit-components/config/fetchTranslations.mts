@@ -39,7 +39,7 @@ const LOCALES_DATA = path.join(__dirname, "..", "src", "data", "dictionary");
 
 const INDEX_TEMPLATE = `// @flow\n__IMPORTS__\n\nexport default {\n__DECLARATIONS__\n};\n`;
 
-const fetchJSON = async url => {
+const fetchJSON = async (url: string) => {
   const options = {
     method: "GET",
     headers: {
@@ -47,6 +47,7 @@ const fetchJSON = async url => {
       Authorization: `token ${PHRASE_APP_ACCESS_TOKEN}`,
     },
   };
+
   return (await fetch(url, options)).json();
 };
 
@@ -59,7 +60,7 @@ const writeFile = (filename, content) =>
         reject(err);
       }
 
-      resolve();
+      Promise.resolve();
     });
   });
 
@@ -97,15 +98,18 @@ const flatten = (obj = {}, keyPrefix = "") =>
     const allLocales = await fetchJSON(LOCALES_URL);
     // PhraseApp has limits on parallel requests
     // that's why we process requests in sequence
+    // @ts-expect-error TODO
     for (const locale of allLocales) {
       const translation = await fetchJSON(
         `${SINGLE_LOCAL_URL}/${locale.id}/download?file_format=${FILE_FORMAT}&tags=orbit&encoding=UTF-8`,
       );
       await writeFile(
         path.join(LOCALES_DATA, `${locale.code}.json`),
+        // @ts-expect-error TODO
         JSON.stringify(flatten(translation.orbit), null, 2),
       );
     }
+    // @ts-expect-error TODO
     await writeIndexFile(Object.keys(allLocales).map(l => allLocales[l].code));
   } catch (error) {
     console.error(error);

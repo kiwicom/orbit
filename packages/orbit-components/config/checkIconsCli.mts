@@ -1,4 +1,5 @@
-import checkIcons from "./checkIcons";
+// @ts-expect-error TODO
+import checkIcons from "./checkIcons.mts";
 
 /*
  Paths are provided as arguments as for example in lint staged,

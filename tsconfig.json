@@ -1,17 +1,12 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "noEmit": true,
-    "lib": ["esnext", "dom"],
-    "esModuleInterop": true,
-    "jsx": "react",
-    "strict": true,
-    "resolveJsonModule": true,
-    "noImplicitAny": false
+    "noEmit": true
   },
   "include": [
     "packages/orbit-components/**/*",
     "packages/orbit-design-tokens/**/*",
     "packages/eslint-plugin-orbit-components/**/*"
   ],
-  "exclude": ["packages/orbit-components/cypress/**/*.test.*"]
+  "exclude": ["**/scripts/**/*", "packages/orbit-components/cypress/**/*.test.*"]
 }

@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-const { fs } = require("zx");
+const fs = require("fs");
 
 const { peerDependencies } = require("./package.json");
 
@@ -12,7 +12,7 @@ const sortBy = key => {
 };
 
 const exportMatches = fs
-  .readFileSync(`${__dirname}/src/index.js`)
+  .readFileSync(`${__dirname}/src/index.ts`)
   .toString()
   .matchAll(
     /export (\{ (default as )?(?<importedModules>.*) \}|\* as (?<importNamespace>.*)) from "(?<modulePath>.*)"/g,
@@ -35,16 +35,10 @@ for (const {
 
 module.exports = [
   {
-    name: "Orbit ESM",
+    name: "esm",
     path: `${__dirname}/es/size-measurer.js`,
     import: "{ Orbit }",
     limit: "190 kB",
-  },
-  {
-    name: "Orbit CJS",
-    path: `${__dirname}/lib/index.js`,
-    import: "{ Orbit }",
-    limit: "210 kB",
   },
   ...entries.sort(sortBy("name")),
 ].map(entry => ({

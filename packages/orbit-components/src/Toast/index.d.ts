@@ -36,10 +36,6 @@ declare function createToast(
   options?: { readonly icon?: React.ReactElement<unknown> },
 ): void;
 
-declare function createToastPromise(
-  // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
-  promise: Promise<unknown>,
-  options?: Options,
-): Promise<void>;
+declare function createToastPromise(promise: Promise<unknown>, options?: Options): Promise<void>;
 
 export { ToastRoot, createToast, createToastPromise };

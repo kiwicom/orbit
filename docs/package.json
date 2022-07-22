@@ -19,10 +19,9 @@
   },
   "dependencies": {
     "@adeira/js": "^2.1.1",
-    "@babel/core": "^7.18.2",
-    "@babel/generator": "^7.17.9",
-    "@babel/standalone": "^7.17.6",
-    "@babel/runtime": "^7.18.2",
+    "@babel/core": "^7.18.9",
+    "@babel/generator": "^7.18.9",
+    "@babel/standalone": "^7.18.9",
     "@csstools/convert-colors": "^2.0.0",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
@@ -96,7 +95,6 @@
     "jsondiffpatch": "^0.4.1",
     "lodash": "^4.17.21",
     "memfs": "^3.2.0",
-    "prettier": "^2.1.2",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -118,6 +116,7 @@
     "unist-util-visit": "^2.0.3",
     "use-resize-observer": "^8.0.0",
     "uuid": "^8.3.2",
-    "vfile-reporter": "^7.0.4"
+    "vfile-reporter": "^7.0.4",
+    "zx": "7.0.7"
   }
 }

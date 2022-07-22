@@ -35,4 +35,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 
 declare const Accordion: React.FunctionComponent<Props>;
 declare const StyledAccordion: React.ComponentType<Props>;
+
 export { Accordion, Accordion as default, AccordionSection, StyledAccordion };

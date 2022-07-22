@@ -6,9 +6,9 @@ import defaultTheme from "../defaultTheme";
 import { Provider as SectionProvider } from "./AccordionContext";
 import getSpacingToken from "../common/getSpacingToken";
 
-import type { Props } from ".";
+import { Props } from ".";
 
-export const StyledAccordion: any = styled.div`
+export const StyledAccordion = styled.div`
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -29,7 +29,7 @@ const Accordion = ({
   expandedSection,
   loading,
   onExpand,
-}: Props): React.Node => (
+}: Props): React.ReactNode => (
   <StyledAccordion spaceAfter={spaceAfter} id={id} data-test={dataTest}>
     {children
       ? React.Children.map(children, item => {

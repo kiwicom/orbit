@@ -2,7 +2,7 @@
 
 module.exports = {
   presets: [
-    [require.resolve("@babel/preset-env"), { bugfixes: true }],
+    [require.resolve("@babel/preset-env"), { bugfixes: true, loose: true }],
     [require.resolve("@babel/preset-react"), { runtime: "classic" }],
     require.resolve("@babel/preset-flow"),
   ],
@@ -31,7 +31,9 @@ module.exports = {
   ],
   env: {
     esm: {
-      presets: [[require.resolve("@babel/preset-env"), { modules: false, bugfixes: true }]],
+      presets: [
+        [require.resolve("@babel/preset-env"), { modules: false, bugfixes: true, loose: true }],
+      ],
       plugins: [
         require.resolve("babel-plugin-styled-components"),
         [

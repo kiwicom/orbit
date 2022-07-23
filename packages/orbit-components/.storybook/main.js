@@ -3,7 +3,12 @@
 const path = require("path");
 
 module.exports = {
-  core: { builder: "webpack5" },
+  core: {
+    builder: "webpack5",
+    options: {
+      lazyCompilation: true,
+    },
+  },
   staticDirs: [path.resolve(__dirname, "../static")],
   stories: ["../src/**/*.stories.*"],
   addons: [

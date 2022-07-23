@@ -31,7 +31,9 @@ try {
 async function saveColorTokens(output) {
   const content = dedent`
     // @flow
-    export default ${JSON.stringify(output, null, 2)};
+    const palette = ${JSON.stringify(output, null, 2)};
+
+    export default palette;
   `;
 
   fs.writeFile(OUTPUT_PATH, content, "utf-8")

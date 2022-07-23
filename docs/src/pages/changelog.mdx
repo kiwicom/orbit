@@ -1,12 +1,10 @@
-<!-- eslint-disable import/no-unresolved -->
-
-import Changelog from "../data/CHANGELOG.md";
+import ChangelogMd from "../data/log.md";
 import DocLayout from "../components/DocLayout";
 
 export default ({ location }) => {
   return (
-    <DocLayout title="Changelog" location={location} noElevation path="/changelog/">
-      <Changelog />
+    <DocLayout title="Changelog" location={location} noElevation path="/changelog">
+      <ChangelogMd />
     </DocLayout>
   );
 };

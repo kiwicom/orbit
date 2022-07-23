@@ -5,6 +5,7 @@ module.exports = {
   transform: {
     "\\.[jt]sx?$": ["babel-jest", { root: __dirname }],
   },
+  transformIgnorePatterns: ["/node_modules/(?!(@babel/runtime|gatsby))"],
   setupFilesAfterEnv: ["./config/jest-setup"],
   extensionsToTreatAsEsm: [".ts", ".tsx"],
   moduleNameMapper: {

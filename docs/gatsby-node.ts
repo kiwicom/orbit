@@ -192,7 +192,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
   `);
 
   const overviewPages = await getOverviewPages();
-  await parseChangelog();
 
   await Promise.all(
     overviewPages.map(async page => {
@@ -220,6 +219,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
       context: { id, tabs: fields.tabCollection },
     });
   });
+};
+
+export const onPreBuild = async () => {
+  await parseChangelog();
 };
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {

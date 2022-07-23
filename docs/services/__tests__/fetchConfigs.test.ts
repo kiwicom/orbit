@@ -2,7 +2,9 @@ import axios from "axios";
 
 import fetchConfigs from "../fetchConfigs";
 import { mergeConfigs } from "../helpers";
-import { IOS_URL, ANDROID_URL } from "../componentStatuses";
+
+const IOS_URL = `https://raw.githubusercontent.com/kiwicom/orbit-swiftui/main/component-status.yaml`;
+const ANDROID_URL = `https://raw.githubusercontent.com/kiwicom/orbit-compose/main/component-status.yaml`;
 
 jest.mock("axios");
 jest.mock("fs");
@@ -51,6 +53,7 @@ describe("componentStatuses", () => {
   });
 
   it("should call correct api", async () => {
+    mockedAxios.all.mockResolvedValue([]);
     await fetchConfigs(ANDROID_URL, IOS_URL);
 
     expect(spreadResult).toHaveBeenCalled();

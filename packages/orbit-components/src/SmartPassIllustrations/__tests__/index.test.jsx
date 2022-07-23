@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 import * as SmartPassIllustrations from "..";
 
 describe("SmartPassIllustration", () => {
-  it.each(Object.entries(SmartPassIllustrations))(
+  it.each(Object.entries(SmartPassIllustrations).filter(([n]) => n !== "__esModule"))(
     "should have expected DOM output %s",
     (name, Illustration) => {
       const title = "SmartPass title";

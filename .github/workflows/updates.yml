@@ -40,7 +40,8 @@ jobs:
         run: |
           yarn tokens fetch:colors
           yarn tokens jest -u
-          git add --all 
+          yarn tokens build
+          git add --all
           git diff-index --quiet HEAD || git commit -m "feat(tokens): update palette"
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}

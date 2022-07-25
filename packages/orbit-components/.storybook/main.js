@@ -11,6 +11,7 @@ module.exports = {
   },
   staticDirs: [path.resolve(__dirname, "../static")],
   stories: ["../src/**/*.stories.*"],
+  framework: "@storybook/react",
   addons: [
     "@storybook/addon-knobs",
     "@storybook/addon-actions",

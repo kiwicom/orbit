@@ -24,6 +24,41 @@ module.exports = {
     // resolve to .js rather than .mjs to avoid webpack failing because of ambiguous imports
     config.resolve.alias["@adeira/js"] = require.resolve("@adeira/js/src/index.js");
     config.resolve.extensions = config.resolve.extensions.filter(ext => ext !== ".mjs");
-    return config;
+
+    config.module.rules.push({
+      test: /\.jsx?$/,
+      use: [
+        {
+          options: { envName: "esm" },
+          loader: require.resolve("babel-loader"),
+        },
+      ],
+      exclude: /node_modules\/(?!(loki)\/).*/, // Loki is not transpilled, throws error in IE 11
+    });
+
+    const rules = [
+      {
+        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: {
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                modules: "commonjs",
+              },
+            ],
+          ],
+        },
+      },
+    ];
+
+    return {
+      ...config,
+      module: {
+        rules: [...rules, ...config.module.rules],
+      },
+    };
   },
 };

@@ -37,6 +37,29 @@ module.exports = {
       exclude: /node_modules\/(?!(loki)\/).*/, // Loki is not transpilled, throws error in IE 11
     });
 
-    return config;
+    const rules = [
+      {
+        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: {
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                modules: "commonjs",
+              },
+            ],
+          ],
+        },
+      },
+    ];
+
+    return {
+      ...config,
+      module: {
+        rules: [...rules, ...config.module.rules],
+      },
+    };
   },
 };

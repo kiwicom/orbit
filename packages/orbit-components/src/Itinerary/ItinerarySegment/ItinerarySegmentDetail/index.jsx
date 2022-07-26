@@ -149,7 +149,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
       <StyledInnerWrapper>
         <Stack align="center" spacing="small">
           <StyledDuration $minWidth={calculatedWidth || 60}>
-            <Text size="small" weight="medium">
+            <Text as="div" size="small" weight="medium">
               {duration}
             </Text>
           </StyledDuration>
@@ -188,7 +188,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
                   // eslint-disable-next-line react/no-array-index-key
                   <React.Fragment key={idx}>
                     <StyledHeadingOffset>
-                      <Text size="small" weight="medium" spaceAfter="small">
+                      <Text as="div" size="small" weight="medium" spaceAfter="small">
                         {title}
                       </Text>
                     </StyledHeadingOffset>
@@ -208,7 +208,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
                               <Text size="small">{name}</Text>
                             </Truncate>
                             <Truncate>
-                              <Text size="small" weight="medium" align="right">
+                              <Text as="div" size="small" weight="medium" align="right">
                                 {value}
                               </Text>
                             </Truncate>

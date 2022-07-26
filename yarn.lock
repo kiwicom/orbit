@@ -32506,3 +32506,22 @@ zx@^7.0.0:
     ps-tree "^1.2.0"
     which "^2.0.2"
     yaml "^2.1.1"
+
+zx@^7.0.7:
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/zx/-/zx-7.0.7.tgz#e812b3bfecd49304fd6a415deeae16335edf7d5e"
+  integrity sha512-cWF5cWqqrTVxgEPmQ8w/LvUXOK3rJTdgC+Tt1nz113+YncNIO0X6UXgCY72UfE8Az/lwOubbEJARXpQ+7RiM9g==
+  dependencies:
+    "@types/fs-extra" "^9.0.13"
+    "@types/minimist" "^1.2.2"
+    "@types/node" "^17.0"
+    "@types/ps-tree" "^1.1.2"
+    "@types/which" "^2.0.1"
+    chalk "^5.0.1"
+    fs-extra "^10.1.0"
+    globby "^13.1.2"
+    minimist "^1.2.6"
+    node-fetch "^3.2.6"
+    ps-tree "^1.2.0"
+    which "^2.0.2"
+    yaml "^2.1.1"

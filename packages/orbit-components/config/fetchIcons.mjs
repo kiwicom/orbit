@@ -81,14 +81,13 @@ const parseName = name => {
 const setSvgContent = (name, content, idx, id) => {
   if (/colored-/g.test(name) || name === "google") {
     return dedent`
-    <!--character:${idx}:${id}-->
+    <!--character:${id}-->
     <!--customColor:true-->
-    <!--iconFont:false-->
     ${content}`;
   }
 
   return dedent`
-    <!--character:${idx}:${id}-->
+    <!--character:$${id}-->
       ${content.replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")}
   `;
 };
@@ -99,9 +98,7 @@ async function saveOrbitIcons(data) {
     idx += 1;
     const parsedName = parseName(name);
     const content = setSvgContent(parsedName, svg, idx, id);
-    const isAvailableForFont = !content.includes("<!--iconFont:false-->");
-    const storePath = isAvailableForFont ? SVG_FOLDER : `${SVG_FOLDER}/mobile`;
-    const filePath = path.join(storePath, `${parsedName}.svg`);
+    const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
 
     if (!fs.existsSync(filePath)) {
       await fs.writeFile(filePath, content, "utf-8").then(() => {

@@ -23,6 +23,7 @@ const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemePr
     [STATUS.CRITICAL]: theme.orbit.paletteRedNormal,
     [STATUS.INFO]: theme.orbit.paletteBlueNormal,
     [STATUS.SUCCESS]: theme.orbit.paletteGreenNormal,
+    [STATUS.NEUTRAL]: theme.orbit.paletteInkNormal,
   };
 
   const header = {
@@ -30,6 +31,7 @@ const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemePr
     [STATUS.INFO]: theme.orbit.paletteBlueLight,
     [STATUS.CRITICAL]: theme.orbit.paletteRedLight,
     [STATUS.SUCCESS]: theme.orbit.paletteGreenLight,
+    [STATUS.NEUTRAL]: theme.orbit.paletteCloudNormal,
   };
 
   if (isHeader) return header[status];
@@ -97,6 +99,8 @@ const StatusIcon = ({ type }: {| type: Status |}) => {
       return <AlertOctagon size="small" color={type} />;
     case "success":
       return <Check size="small" color={type} />;
+    case "neutral":
+      return <Info size="small" color="primary" />;
     default:
       return <Warning size="small" color={type} />;
   }
@@ -116,7 +120,7 @@ const ItineraryStatus = ({
           <Stack inline spacing="XSmall" align="center">
             <StatusIcon type={type} />
             {label && (
-              <Text type={type} weight="medium">
+              <Text type={type === "neutral" ? "primary" : type} weight="medium">
                 {label}
               </Text>
             )}

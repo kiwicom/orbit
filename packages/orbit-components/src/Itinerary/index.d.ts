@@ -44,7 +44,7 @@ import Common from "../common/common";
   ```
 */
 
-export type Status = "warning" | "critical" | "info" | "success";
+export type Status = "warning" | "critical" | "info" | "success" | "neutral";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   /** The content of Itinerary component */

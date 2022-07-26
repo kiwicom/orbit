@@ -86,6 +86,8 @@ const ItinerarySegmentStop = ({
   const { isPrevHidden, last, isBanner, index } = usePart();
   const [dateWidth, setDateWidth] = React.useState<HTMLDivElement | null>(null);
 
+  const textType = type === "neutral" ? "primary" : type;
+
   React.useEffect(() => {
     setWidths(prev => (dateWidth?.clientWidth ? [...prev, minWidth, dateWidth.clientWidth] : prev));
   }, [setWidths, dateWidth, minWidth]);
@@ -98,7 +100,7 @@ const ItinerarySegmentStop = ({
             {time && (
               <Text
                 weight="medium"
-                type={cancelledTime ? type : "primary"}
+                type={cancelledTime ? textType : "primary"}
                 withBackground={!!cancelledTime}
               >
                 {time}
@@ -106,7 +108,7 @@ const ItinerarySegmentStop = ({
             )}
             {date && (
               <Text
-                type={cancelledDate ? type : "secondary"}
+                type={cancelledDate ? textType : "secondary"}
                 size="small"
                 align="right"
                 withBackground={!!cancelledDate}
@@ -139,13 +141,13 @@ const ItinerarySegmentStop = ({
           <Text
             weight="medium"
             withBackground={!!cancelledCity}
-            type={cancelledCity ? type : "primary"}
+            type={cancelledCity ? textType : "primary"}
           >
             {city}
           </Text>
           <Text
             size="small"
-            type={cancelledStation ? type : "secondary"}
+            type={cancelledStation ? textType : "secondary"}
             withBackground={!!cancelledStation}
           >
             {station}

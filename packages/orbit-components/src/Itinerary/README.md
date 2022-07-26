@@ -119,3 +119,4 @@ ItinerarySegmentDetail serves as connection between two ItinerarySegmentStop com
 | `"critical"` |
 | `"info"`     |
 | `"success"`  |
+| `"neutral"`  |

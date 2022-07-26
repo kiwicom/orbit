@@ -4,4 +4,5 @@ export const STATUS = {
   CRITICAL: "critical",
   INFO: "info",
   SUCCESS: "success",
+  NEUTRAL: "neutral",
 };

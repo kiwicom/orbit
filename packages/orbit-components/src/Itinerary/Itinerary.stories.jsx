@@ -330,6 +330,25 @@ export const Status = (): React.Node => {
           </ItinerarySegment>
         </ItineraryStatus>
       </Itinerary>
+      <Itinerary>
+        <ItineraryStatus type="neutral" label="Your new alternative" spaceAfter="medium">
+          <ItinerarySegment noElevation>
+            <ItinerarySegmentStop
+              city="Prague"
+              station="Václav Havel Airport Prague (PRG)"
+              date="Fri, 19.10"
+              time="14:05"
+            />
+            <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
+            <ItinerarySegmentStop
+              city="Vienna"
+              station="Vienna International Airport"
+              date="Fri, 19.10"
+              time="15:35"
+            />
+          </ItinerarySegment>
+        </ItineraryStatus>
+      </Itinerary>
     </>
   );
 };

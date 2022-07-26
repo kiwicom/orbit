@@ -1,10 +1,7 @@
 import SVGIcons2SVGFontStream from "svgicons2svgfont";
-import path from "path";
-import fs from "fs";
+import { path, fs } from "zx";
 import svg2ttf from "svg2ttf";
 import ttf2woff2 from "ttf2woff2";
-
-import iconList from "../src/data/icons.json";
 
 const ORBIT_ICONS_DIR = path.join(__dirname, "../orbit-icons-font");
 
@@ -18,6 +15,7 @@ const createSVG = () =>
       fontName: "orbit-icons",
       fontHeight: 1000,
       normalize: true,
+      verbose: false,
     });
 
     fontStream
@@ -28,6 +26,8 @@ const createSVG = () =>
       .on("error", err => {
         reject(err);
       });
+
+    const iconList = JSON.parse(fs.readFileSync(path.join(__dirname, "../src/data/icons.json")));
 
     Object.keys(iconList).forEach(iconName => {
       const iconPath =

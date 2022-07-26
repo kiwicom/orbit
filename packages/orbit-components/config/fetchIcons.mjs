@@ -16,6 +16,15 @@ const isCorrectSize = name => {
   return name === `size=${size}`;
 };
 
+const range = (start, end) => Array.from({ length: end - start + 1 }, (_, i) => start + i);
+
+const sampleSize = (arr, size) => {
+  return arr
+    .slice(0)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, size);
+};
+
 const removeCommentId = str => str.replace(/<!--.*-->/g, "");
 
 try {
@@ -78,28 +87,29 @@ const parseName = name => {
   return name;
 };
 
-const setSvgContent = (name, content, idx, id) => {
+const setSvgContent = (name, content, id) => {
   if (/colored-/g.test(name) || name === "google") {
     return dedent`
-    <!--character:${idx}:${id}-->
+    <!--character:${id}-->
     <!--customColor:true-->
     ${content}`;
   }
 
   return dedent`
-    <!--character:${idx}:${id}-->
+    <!--character:${id}-->
       ${content.replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")}
   `;
 };
 
 async function saveOrbitIcons(data) {
+  const uniqueIds = sampleSize(range(1000, 9000), data.length + 1);
+
   let idx = 0;
-  for (const { id, name, svg } of data) {
+  for (const { name, svg } of data) {
     idx += 1;
     const parsedName = parseName(name);
+    const content = setSvgContent(parsedName, svg, uniqueIds[idx]);
     const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
-
-    const content = setSvgContent(parsedName, svg, idx, id);
 
     if (!fs.existsSync(filePath)) {
       await fs.writeFile(filePath, content, "utf-8").then(() => {

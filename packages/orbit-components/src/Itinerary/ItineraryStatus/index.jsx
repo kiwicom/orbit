@@ -120,7 +120,7 @@ const ItineraryStatus = ({
           <Stack inline spacing="XSmall" align="center">
             <StatusIcon type={type} />
             {label && (
-              <Text type={type === "neutral" ? "primary" : type} weight="medium">
+              <Text as="div" type={type === "neutral" ? "primary" : type} weight="medium">
                 {label}
               </Text>
             )}

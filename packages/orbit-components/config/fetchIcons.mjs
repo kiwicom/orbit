@@ -83,6 +83,7 @@ const setSvgContent = (name, content, idx, id) => {
     return dedent`
     <!--character:${idx}:${id}-->
     <!--customColor:true-->
+    <!--iconFont:false-->
     ${content}`;
   }
 

@@ -164,7 +164,7 @@
     "styled-components": "^5.3.1",
     "surge": "^0.23.0",
     "svg2ttf": "^6.0.0",
-    "svgicons2svgfont": "^9.0.4",
+    "svgicons2svgfont": "^10.0.0",
     "ttf2woff2": "^4.0.1",
     "vite": "^2.5.1",
     "webpack": "^5.69.1",

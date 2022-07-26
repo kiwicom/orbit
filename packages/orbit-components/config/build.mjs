@@ -25,7 +25,7 @@ const logStep = msg => {
   await $`babel-node config/buildIcons.js`;
 
   if (!argv.size) {
-    await $`babel-node config/createSVGFont.js`;
+    await $`zx config/createSVGFont.mjs`;
     await $`cd src/icons; zip -r ../../orbit-svgs.zip ./svg; cd -`;
     await $`zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg`;
     await $`zip -r orbit-icons-font.zip orbit-icons-font`;

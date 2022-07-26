@@ -34,6 +34,7 @@ const createSVG = () =>
         iconList[iconName].iconFont === "false" ? "../src/icons/svg/mobile/" : "../src/icons/svg/";
       const icon = fs.createReadStream(path.join(__dirname, iconPath, `${iconName}.svg`));
 
+      // $FlowFixMe
       icon.metadata = {
         unicode: [String.fromCharCode(Number(`0x${iconList[iconName].character}`))],
         name: iconName,

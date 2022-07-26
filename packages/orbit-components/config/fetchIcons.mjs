@@ -98,9 +98,10 @@ async function saveOrbitIcons(data) {
   for (const { id, name, svg } of data) {
     idx += 1;
     const parsedName = parseName(name);
-    const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
-
     const content = setSvgContent(parsedName, svg, idx, id);
+    const isAvailableForFont = !content.includes("<!--iconFont:false-->");
+    const storePath = isAvailableForFont ? SVG_FOLDER : `${SVG_FOLDER}/mobile`;
+    const filePath = path.join(storePath, `${parsedName}.svg`);
 
     if (!fs.existsSync(filePath)) {
       await fs.writeFile(filePath, content, "utf-8").then(() => {

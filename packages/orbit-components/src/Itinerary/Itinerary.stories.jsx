@@ -15,6 +15,8 @@ import {
   PowerPlug,
   StarFull,
   BaggageSet,
+  Accommodation,
+  Location,
   Wifi,
   Visa,
   Seat,
@@ -543,6 +545,67 @@ export const Default = (): React.Node => {
         />
       </ItinerarySegment>
     </Itinerary>
+  );
+};
+
+export const MultipleBanners = () => {
+  return (
+    <>
+      <Heading type="title2">Throwaway ticketing</Heading>
+      <Itinerary>
+        <ItinerarySegment
+          onBannerClick={action("onBannerClick")}
+          banner={
+            <Stack inline align="stretch">
+              <ItineraryBadgeList>
+                <BadgeListItem type="info" icon={<StarFull color="info" />}>
+                  <Text as="span" type="info" weight="bold">
+                    Throwaway ticketing hack:{" "}
+                  </Text>{" "}
+                  You are saving money with this travel hack.
+                </BadgeListItem>
+              </ItineraryBadgeList>
+              <Separator />
+              <ItineraryBadgeList>
+                <BadgeListItem icon={<Location color="secondary" />}>
+                  You’ll depart from a different place in New York: John F. Kennedy International.
+                </BadgeListItem>
+                <BadgeListItem icon={<Location color="secondary" />}>
+                  You’ll depart from a different place in New York: John F. Kennedy International.
+                </BadgeListItem>
+                <BadgeListItem icon={<Accommodation color="secondary" />}>
+                  We won’t cover your overnight stay. Hotel coverage is only available if the
+                  disruption happens during the trip. If you want to avoid extra hotel costs please
+                  choose a different alternative or a refund.
+                </BadgeListItem>
+              </ItineraryBadgeList>
+            </Stack>
+          }
+        >
+          <ItinerarySegmentStop
+            city="Barcelona BCN"
+            station="Brno-Tuřany"
+            date="Mon, 30.1"
+            time="17:30"
+          />
+          <ItinerarySegmentDetail
+            duration="2h 30m"
+            summary={
+              <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                Ryanair
+              </Badge>
+            }
+            content={content}
+          />
+          <ItinerarySegmentStop
+            city="London LHR"
+            station="London Heathrow"
+            date="Mon, 30.1"
+            time="20:00"
+          />
+        </ItinerarySegment>
+      </Itinerary>
+    </>
   );
 };
 

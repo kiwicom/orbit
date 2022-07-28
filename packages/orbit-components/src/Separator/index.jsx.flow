@@ -3,6 +3,7 @@
   DOCUMENTATION: https://orbit.kiwi/components/separator/
 */
 import * as React from "react";
+import type { CSSRules } from "styled-components";
 
 import type { spaceAfter } from "../common/getSpacingToken";
 
@@ -15,3 +16,4 @@ export type Props = {|
 |};
 
 declare export default React.ComponentType<Props>;
+declare export var StyledSeparator: CSSRules;

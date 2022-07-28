@@ -7,7 +7,7 @@ import Stack from "../../Stack";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
-import Separator from "../../Separator";
+import Separator, { StyledSeparator } from "../../Separator";
 import ChevronRight from "../../icons/ChevronRight";
 
 import type { Props } from ".";
@@ -35,9 +35,16 @@ const StyledBannerWrapper = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
     padding: 0 ${theme.orbit.spaceMedium};
+    ${StyledSeparator} {
+      width: 150% !important;
+      margin-left: -${theme.orbit.spaceMedium};
+    }
+
     & > div {
-      max-width: calc(100% - 50px);
+      max-width: calc(100% - 20px);
     }
   `}
 `;

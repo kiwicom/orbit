@@ -31,6 +31,7 @@ import Heading from "../Heading";
 import { BadgeListItem } from "../BadgeList";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import defaultTheme from "../defaultTheme";
+import Separator from "../Separator";
 
 import Itinerary, {
   ItinerarySeparator,
@@ -355,7 +356,7 @@ export const Status = (): React.Node => {
   );
 };
 
-export const Separator = (): React.Node => {
+export const ItnerarySeparatorComponent = (): React.Node => {
   return (
     <Stack direction="column">
       <ItinerarySeparator>
@@ -548,62 +549,130 @@ export const Default = (): React.Node => {
   );
 };
 
-export const MultipleBanners = () => {
+export const MultipleBanners = (): React.Node => {
   return (
     <>
       <Heading type="title2">Throwaway ticketing</Heading>
       <Itinerary>
-        <ItinerarySegment
-          onBannerClick={action("onBannerClick")}
-          banner={
-            <Stack inline align="stretch">
-              <ItineraryBadgeList>
-                <BadgeListItem type="info" icon={<StarFull color="info" />}>
-                  <Text as="span" type="info" weight="bold">
-                    Throwaway ticketing hack:{" "}
-                  </Text>{" "}
-                  You are saving money with this travel hack.
-                </BadgeListItem>
-              </ItineraryBadgeList>
-              <Separator />
-              <ItineraryBadgeList>
-                <BadgeListItem icon={<Location color="secondary" />}>
-                  You’ll depart from a different place in New York: John F. Kennedy International.
-                </BadgeListItem>
-                <BadgeListItem icon={<Location color="secondary" />}>
-                  You’ll depart from a different place in New York: John F. Kennedy International.
-                </BadgeListItem>
-                <BadgeListItem icon={<Accommodation color="secondary" />}>
-                  We won’t cover your overnight stay. Hotel coverage is only available if the
-                  disruption happens during the trip. If you want to avoid extra hotel costs please
-                  choose a different alternative or a refund.
-                </BadgeListItem>
-              </ItineraryBadgeList>
-            </Stack>
-          }
-        >
-          <ItinerarySegmentStop
-            city="Barcelona BCN"
-            station="Brno-Tuřany"
-            date="Mon, 30.1"
-            time="17:30"
-          />
-          <ItinerarySegmentDetail
-            duration="2h 30m"
-            summary={
-              <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                Ryanair
-              </Badge>
+        <ItineraryStatus type="success" label="This part is new">
+          <ItinerarySegment
+            onBannerClick={action("onBannerClick")}
+            banner={
+              <Stack direction="column" align="stretch" spacing="XSmall">
+                <ItineraryBadgeList>
+                  <BadgeListItem type="info" icon={<StarFull color="info" />}>
+                    <Text as="span" type="info" weight="bold">
+                      Throwaway ticketing hack:{" "}
+                    </Text>{" "}
+                    You are saving money with this travel hack.
+                  </BadgeListItem>
+                </ItineraryBadgeList>
+                <Separator />
+                <ItineraryBadgeList>
+                  <Stack spacing="XSmall">
+                    <BadgeListItem icon={<Location color="secondary" />}>
+                      You’ll depart from a different place in New York: John F. Kennedy
+                      International.
+                    </BadgeListItem>
+                    <BadgeListItem icon={<Location color="secondary" />}>
+                      You’ll depart from a different place in New York: John F. Kennedy
+                      International.
+                    </BadgeListItem>
+                    <BadgeListItem icon={<Accommodation color="secondary" />}>
+                      We won’t cover your overnight stay. Hotel coverage is only available if the
+                      disruption happens during the trip. If you want to avoid extra hotel costs
+                      please choose a different alternative or a refund.
+                    </BadgeListItem>
+                  </Stack>
+                </ItineraryBadgeList>
+              </Stack>
             }
-            content={content}
-          />
-          <ItinerarySegmentStop
-            city="London LHR"
-            station="London Heathrow"
-            date="Mon, 30.1"
-            time="20:00"
-          />
-        </ItinerarySegment>
+          >
+            <ItinerarySegmentStop
+              city="Barcelona BCN"
+              station="Brno-Tuřany"
+              date="Mon, 30.1"
+              time="17:30"
+            />
+            <ItinerarySegmentDetail
+              duration="2h 30m"
+              summary={
+                <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                  Ryanair
+                </Badge>
+              }
+              content={content}
+            />
+            <ItinerarySegmentStop
+              city="London LHR"
+              station="London Heathrow"
+              date="Mon, 30.1"
+              time="20:00"
+            />
+          </ItinerarySegment>
+        </ItineraryStatus>
+        <ItineraryBadgeList>
+          <BadgeListItem type="warning" icon={<Info color="warning" />}>
+            Changing stations is your responsibility.
+          </BadgeListItem>
+          <BadgeListItem type="warning" icon={<Clock />}>
+            10h 20m layover
+          </BadgeListItem>
+          <BadgeListItem type="warning" icon={<SelfTransfer color="warning" />}>
+            You need to do a self-transfer in Prague.
+          </BadgeListItem>
+        </ItineraryBadgeList>
+        <ItineraryStatus type="success" label="This part is new">
+          <ItinerarySegment
+            banner={
+              <Stack>
+                <ItineraryBadgeList>
+                  <BadgeListItem icon={<StarFull />} type="warning">
+                    Hidden city hack: This itinerary finishes in New York (United States), but
+                    you’ll get off during the layover.
+                  </BadgeListItem>
+                  <BadgeListItem icon={<Visa />}>
+                    Check travel document requirements for all destinations, including passport,
+                    visa and COVID-19 documents.
+                  </BadgeListItem>
+                  <BadgeListItem icon={<BaggageCheckedNone />}>
+                    You can’t bring checked or cabin baggage.
+                  </BadgeListItem>
+                </ItineraryBadgeList>
+                <Separator />
+                <ItineraryBadgeList>
+                  <BadgeListItem icon={<Location />} type="warning">
+                    You’ll depart from a different place in Prague: Václav Havel Airport Prague
+                  </BadgeListItem>
+                </ItineraryBadgeList>
+              </Stack>
+            }
+          >
+            <ItinerarySegmentStop
+              city="Prague"
+              station="Václav Haivel Airport Prague (PRG)"
+              time="16:20"
+              date="Wed, 15.6"
+            />
+            <ItinerarySegmentDetail
+              duration="2h 10m"
+              summary={
+                <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                  Ryanair
+                </Badge>
+              }
+              content={content}
+            />
+            <ItinerarySegmentStop
+              hidden
+              city="Frankfurt"
+              time="18:30"
+              date="Wed, 15.6"
+              station="Frankfurt International Airport "
+            />
+            <ItinerarySegmentStop city="New York JFK" station="United States" />
+          </ItinerarySegment>
+        </ItineraryStatus>
       </Itinerary>
     </>
   );
@@ -673,6 +742,7 @@ export default {
     "RTL",
     "Segment",
     "Separator",
+    "MultipleBanners",
     "Status",
     "Stop",
   ],

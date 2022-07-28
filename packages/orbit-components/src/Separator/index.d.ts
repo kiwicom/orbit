@@ -2,6 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import { StyledComponent } from "styled-components";
 
 import * as Common from "../common/common";
 
@@ -11,4 +12,6 @@ interface Props extends Common.SpaceAfter {
 }
 
 declare const Separator: React.FunctionComponent<Props>;
-export { Separator, Separator as default };
+declare const StyledSeparator: StyledComponent<any, HTMLHRElement>;
+
+export { Separator, StyledSeparator, Separator as default };

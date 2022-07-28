@@ -43,7 +43,7 @@ const StyledContainer = styled.div`
   `};
 `;
 
-const StyledSeparator = styled.hr`
+export const StyledSeparator: any = styled.hr`
   ${({ theme }) => css`
     height: ${theme.orbit.heightSeparator};
     background: ${theme.orbit.backgroundSeparator};

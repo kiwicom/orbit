@@ -12,7 +12,7 @@ export const KeyboardContextProvider = ({ children }) => {
 
   React.useEffect(() => {
     const unsubscribe = tinykeys(window, {
-      "$mod+KeyK": () => {
+      "$mod+Shift+KeyK": () => {
         setSearchOpen(prev => !prev);
       },
     });

@@ -19,7 +19,7 @@ export interface Props extends Common.Global, Common.Ref {
   // Should be InputEvent type
   // There is missing support for this event type in Typescript ATM
   // @see https://fettblog.eu/typescript-react/events/#wheres-inputevent
-  readonly onChange?: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
+  readonly onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 declare const Checkbox: React.FunctionComponent<Props>;

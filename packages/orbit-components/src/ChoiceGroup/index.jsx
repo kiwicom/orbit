@@ -59,7 +59,6 @@ const ChoiceGroup: React.AbstractComponent<Props, HTMLDivElement> = React.forwar
     const theme = useTheme();
 
     const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
-      ev.persist();
       if (onChange) {
         onChange(ev);
       }

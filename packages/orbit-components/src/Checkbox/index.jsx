@@ -222,9 +222,8 @@ const Checkbox: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<P
       tooltip,
     } = props;
 
-    const preventOnClick = React.useCallback(ev => {
-      ev.preventDefault();
-    }, []);
+    const preventOnClick = ev => ev.preventDefault();
+
     return (
       <Label disabled={disabled} hasError={hasError} checked={checked}>
         <Input

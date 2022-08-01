@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.3.0...@kiwicom/orbit-components@3.4.0) (2022-08-01)
+
+
+### Bug Fixes
+
+* **Checkbox:** issue with need to click twice on iOS ([#3546](https://github.com/kiwicom/orbit/issues/3546)) ([1bdfa36](https://github.com/kiwicom/orbit/commit/1bdfa36f331145a776454ea8f256870c48f4efa0))
+* **Checkbox:** use ts type for onChange ([#3544](https://github.com/kiwicom/orbit/issues/3544)) ([31997be](https://github.com/kiwicom/orbit/commit/31997befbfddc4304f48ce6312bf5a035b868442))
+* **icons:** add iconFont false to colored icons ([989e5b1](https://github.com/kiwicom/orbit/commit/989e5b10e89a4293112e8fc6e79880814bcf8085))
+* **icons:** fix svg fonts unicodes ([262ee6c](https://github.com/kiwicom/orbit/commit/262ee6cff5e2880ce903cc464a7c3097b7931e5a))
+* **icons:** move colored icons to mobile folder ([93169b3](https://github.com/kiwicom/orbit/commit/93169b368f088c70e0cdd2d519b7f3dd2bf22c1e))
+* **Itinerary:** render Texts as div ([#3541](https://github.com/kiwicom/orbit/issues/3541)) ([3679d91](https://github.com/kiwicom/orbit/commit/3679d91d8dd307090aed4ed549ca3bff6bce6211))
+* storybook ([#3537](https://github.com/kiwicom/orbit/issues/3537)) ([e7680e4](https://github.com/kiwicom/orbit/commit/e7680e407c612d16245fce669e72a80146843800))
+
+
+### Features
+
+* **icons:** add google-play icon ([cf20e42](https://github.com/kiwicom/orbit/commit/cf20e4255eb926e026253b6cc1ec0ee62194d31d))
+* **ItineraryStatus:** add type neutral ([#3539](https://github.com/kiwicom/orbit/issues/3539)) ([bc73ba5](https://github.com/kiwicom/orbit/commit/bc73ba513c2a04f0db9aed6165ebc2895ff1855a))
+* **Itinerary:** support multiple banners ([#3543](https://github.com/kiwicom/orbit/issues/3543)) ([4994e9e](https://github.com/kiwicom/orbit/commit/4994e9eb65e81715fa198539cf03d3d7694a2266))
+
+
+
+
+
 # [3.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.2.0...@kiwicom/orbit-components@3.3.0) (2022-07-21)
 
 

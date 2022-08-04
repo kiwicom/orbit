@@ -51,36 +51,37 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
 };
 
 const IconContainer = styled.div`
-  position: relative;
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${getToken(TOKENS.background)};
-  height: ${({ theme }) => theme.orbit.heightCheckbox};
-  width: ${({ theme }) => theme.orbit.widthCheckbox};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusLarge};
-  transform: scale(1);
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-
-  & > svg {
-    visibility: hidden;
+  ${({ theme, checked }) => css`
+    position: relative;
+    box-sizing: border-box;
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
-  }
+    background-color: ${getToken(TOKENS.background)};
+    height: ${theme.orbit.heightCheckbox};
+    width: ${theme.orbit.widthCheckbox};
+    border-radius: ${theme.orbit.borderRadiusLarge};
+    transform: scale(1);
+    transition: all ${theme.orbit.durationFast} ease-in-out;
 
-  &:hover {
-    background-color: ${({ theme, checked }) =>
-      checked ? theme.orbit.paletteBlueDark : theme.orbit.backgroundInput};
-  }
+    & > svg {
+      visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+    }
 
-  ${media.desktop(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)}
+    &:hover {
+      background-color: ${checked ? theme.orbit.paletteBlueDark : theme.orbit.backgroundInput};
+    }
+
+    ${media.desktop(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)}
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -101,9 +102,11 @@ TextContainer.defaultProps = {
 };
 
 const Info = styled.span`
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
-  color: ${({ theme }) => theme.orbit.colorInfoCheckBoxRadio};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
+  ${({ theme }) => css`
+    font-size: ${theme.orbit.fontSizeFormFeedback};
+    color: ${theme.orbit.colorInfoCheckBoxRadio};
+    line-height: ${theme.orbit.lineHeightTextSmall};
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -112,18 +115,20 @@ Info.defaultProps = {
 };
 
 const LabelText = styled.span`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
-  color: ${({ theme }) => theme.orbit.colorFormLabel};
-  line-height: ${({ theme }) => theme.orbit.heightCheckbox};
+  ${({ theme }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-weight: ${theme.orbit.fontWeightMedium};
+    font-size: ${theme.orbit.fontSizeFormLabel};
+    color: ${theme.orbit.colorFormLabel};
+    line-height: ${theme.orbit.heightCheckbox};
 
-  ${StyledText} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-    font-size: ${({ theme }) => theme.orbit.fontSizeFormLabel};
-    color: ${({ theme }) => theme.orbit.colorFormLabel};
-    line-height: ${({ theme }) => theme.orbit.heightCheckbox};
-  }
+    ${StyledText} {
+      font-weight: ${theme.orbit.fontWeightMedium};
+      font-size: ${theme.orbit.fontSizeFormLabel};
+      color: ${theme.orbit.colorFormLabel};
+      line-height: ${theme.orbit.heightCheckbox};
+    }
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -135,14 +140,6 @@ const Input = styled.input`
   opacity: 0;
   z-index: -1;
   position: absolute;
-
-  &:checked ~ ${TextContainer} > ${LabelText} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    & > ${StyledText} {
-      font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    }
-  }
-
   &:checked + ${IconContainer} > svg {
     visibility: visible;
   }

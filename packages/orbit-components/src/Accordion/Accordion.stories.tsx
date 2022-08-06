@@ -1,5 +1,4 @@
-// @flow
-import * as React from "react";
+import React from "react";
 
 import Text from "../Text";
 import Button from "../Button";
@@ -28,11 +27,11 @@ export default {
   title: "Accordion",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const [expandedSection, setExpandedSection] = React.useState("0X1");
 
   return (
-    <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
+    <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
       <AccordionSection
         id="0X0"
         header={
@@ -70,11 +69,11 @@ export const Default = (): React.Node => {
   );
 };
 
-export const AccordionWithDisabledSections = (): React.Node => {
+export const AccordionWithDisabledSections = () => {
   const [expandedSection, setExpandedSection] = React.useState("0X1");
 
   return (
-    <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
+    <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
       <AccordionSection
         id="0X0"
         expandable={false}
@@ -129,11 +128,11 @@ AccordionWithDisabledSections.story = {
   name: "Accordion with disabled sections",
 };
 
-export const AccordionWithCustomActions = (): React.Node => {
+export const AccordionWithCustomActions = () => {
   const [expandedSection, setExpandedSection] = React.useState("0X1");
 
   return (
-    <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
+    <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
       <AccordionSection
         id="0X0"
         header={
@@ -183,11 +182,11 @@ AccordionWithCustomActions.story = {
   name: "Accordion with custom actions",
 };
 
-export const AccordionWithStickyFooter = (): React.Node => {
+export const AccordionWithStickyFooter = () => {
   const [expandedSection, setExpandedSection] = React.useState("0X1");
 
   return (
-    <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(id)}>
+    <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
       <AccordionSection
         id="0X0"
         header={
@@ -249,7 +248,7 @@ AccordionWithStickyFooter.story = {
   name: "Accordion with sticky footer",
 };
 
-export const LoadingAccordion = (): React.Node => {
+export const LoadingAccordion = () => {
   return (
     <Accordion loading>
       <AccordionSection>This is a section content</AccordionSection>

@@ -1,7 +1,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import React from "react";
 
 import AccordionSection from "./AccordionSection";
 import * as Common from "../common/common";
@@ -30,9 +30,9 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   /** If true it will render the Loading component */
   readonly loading?: boolean;
   /** Callback (along with sectionId) that is triggered when section is expanding */
-  readonly onExpand?: (sectionId: string | number) => void | Promise<any>;
+  readonly onExpand?: (sectionId: string | number) => void | Promise<void>;
 }
 
 declare const Accordion: React.FunctionComponent<Props>;
-declare const StyledAccordion: React.ComponentType<Props>;
+// declare const StyledAccordion: React.ComponentType<Props>;
 export { Accordion, Accordion as default, AccordionSection, StyledAccordion };

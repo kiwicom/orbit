@@ -1,7 +1,6 @@
-// @flow
-import * as React from "react";
+import React from "react";
 
-import type { Context } from "./AccordionContext";
+import type { Context } from "./AccordionContext.d";
 
 export const accordionDefault: Context = {
   onExpand: () => {},

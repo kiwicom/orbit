@@ -1,5 +1,4 @@
-// @flow
-import * as React from "react";
+import React from "react";
 
 import { useAccordion } from "../AccordionContext";
 import useRandomId from "../../hooks/useRandomId";
@@ -10,8 +9,7 @@ import AccordionWrapper from "../components/AccordionWrapper";
 import SectionHeader from "./components/SectionHeader";
 import SectionFooter from "./components/SectionFooter";
 import SectionContent from "./components/SectionContent";
-
-import type { Props } from ".";
+import type { Props } from "./index.d";
 
 const AccordionSection = ({
   children,
@@ -20,13 +18,13 @@ const AccordionSection = ({
   actions,
   dataTest,
   expandable = true,
-}: Props): React.Node => {
+}: Props) => {
   const { expanded, onExpand, loading } = useAccordion();
 
   const slideId = useRandomId();
   const isExpanded = expandable && expanded;
 
-  const [{ height }, ref] = useBoundingRect({ height: isExpanded ? null : 0 });
+  const [{ height }, ref] = useBoundingRect<HTMLDivElement>({ height: isExpanded ? null : 0 });
 
   return (
     <AccordionWrapper dataTest={dataTest}>

@@ -13,20 +13,22 @@ export default async function generateTypeDeclarations() {
   await $`del tsconfig.tsbuildinfo`; // reset potential incremental compilation information
   await $`tsc`;
 
-  // generate flow declarations out of typescript definitions
-  if (argv.flowgen) {
-    console.log(chalk.greenBright("Generating Flow declarations..."));
-    const tsDeclarations = await globby("{lib,es}/**/*.d.ts");
-    await Promise.all(
-      tsDeclarations.map(async tsDeclPath => {
-        try {
-          const flowDeclPath = tsDeclPath.replace(".d.ts", ".js.flow");
+  await $`cpy "**/*.{js,jsx}.flow" ../lib --cwd src --parents`;
+  await $`cpy "**/*.{js,jsx}.flow" ../es --cwd src --parents`;
 
-          if (await fs.pathExists(flowDeclPath)) return;
-          const flowDecl = flowgen.compiler.compileDefinitionFile(tsDeclPath, {
-            interfaceRecords: true,
-          });
-          const content = dedent`
+  // generate flow declarations out of typescript definitions
+  console.log(chalk.greenBright("Generating Flow declarations..."));
+  const tsDeclarations = await globby("{lib,es}/**/*.d.ts");
+  await Promise.all(
+    tsDeclarations.map(async tsDeclPath => {
+      try {
+        const flowDeclPath = tsDeclPath.replace(".d.ts", ".jsx.flow");
+
+        if (await fs.pathExists(flowDeclPath)) return;
+        const flowDecl = flowgen.compiler.compileDefinitionFile(tsDeclPath, {
+          interfaceRecords: true,
+        });
+        const content = dedent`
               // @flow
               ${flowgen.beautify(
                 flowDecl
@@ -34,23 +36,17 @@ export default async function generateTypeDeclarations() {
                   .replace("React.FC", "React.StatelessFunctionalComponent"),
               )}
             `;
-          await fs.writeFile(flowDeclPath, content);
-        } catch (err) {
-          if (err instanceof Error) {
-            err.message = dedent`
+        await fs.writeFile(flowDeclPath, content);
+      } catch (err) {
+        if (err instanceof Error) {
+          err.message = dedent`
                 Failed to create a Flow libdef
                 ${__dirname}/${tsDeclPath}
                 ${err.message}
               `;
-            throw err;
-          }
+          throw err;
         }
-      }),
-    );
-  } else {
-    console.log(chalk.greenBright("Copying existing flow declarations..."));
-
-    await $`cpy "**/*.{js,jsx}.flow" ../lib --cwd src --parents`;
-    await $`cpy "**/*.{js,jsx}.flow" ../es --cwd src --parents`;
-  }
+      }
+    }),
+  );
 }

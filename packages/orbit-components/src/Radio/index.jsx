@@ -65,10 +65,13 @@ IconContainer.defaultProps = {
 };
 
 const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-  flex: 1; // IE wrapping fix
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    font-weight: ${theme.orbit.fontWeightMedium};
+    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
+    flex: 1; // IE wrapping fix
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -77,9 +80,11 @@ TextContainer.defaultProps = {
 };
 
 const Info = styled.span`
-  font-size: ${({ theme }) => theme.orbit.fontSizeFormFeedback};
-  color: ${({ theme }) => theme.orbit.colorInfoCheckBoxRadio};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
+  ${({ theme }) => css`
+    font-size: ${theme.orbit.fontSizeFormFeedback};
+    color: ${theme.orbit.colorInfoCheckBoxRadio};
+    line-height: ${theme.orbit.lineHeightTextSmall};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -89,13 +94,13 @@ Info.defaultProps = {
 
 const LabelText = styled.span`
   ${({ theme }) => css`
-    font-weight: ${theme.orbit.fontWeightNormal};
+    font-weight: ${theme.orbit.fontWeightMedium};
     font-size: ${theme.orbit.fontSizeFormLabel};
     color: ${theme.orbit.colorFormLabel};
     line-height: ${theme.orbit.heightCheckbox};
 
     ${StyledText} {
-      font-weight: ${theme.orbit.fontWeightNormal};
+      font-weight: ${theme.orbit.fontWeightMedium};
       font-size: ${theme.orbit.fontSizeFormLabel};
       color: ${theme.orbit.colorFormLabel};
       line-height: ${theme.orbit.heightCheckbox};
@@ -111,13 +116,6 @@ LabelText.defaultProps = {
 const Input = styled.input`
   position: absolute;
   opacity: 0;
-
-  &:checked ~ ${TextContainer} > ${LabelText} {
-    font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    & > ${StyledText} {
-      font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
-    }
-  }
 
   &:checked + ${IconContainer} > ${Glyph} {
     visibility: visible;

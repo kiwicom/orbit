@@ -31,6 +31,7 @@ Table below contains all types of the props available in Radio component.
 | tabIndex | `string \| number`         |         | Specifies the tab order of an element                                                                     |
 | tooltip  | `Element<Tooltip>`         |         | Optional property when you need to attach Tooltip to the Radio. [See Functional specs](#functional-specs) |
 | value    | `string`                   |         | The value of the Radio.                                                                                   |
+| readOnly | `boolean`                  |         | If `true`, the Radio will be set up as readOnly.                                                          |
 
 ## Functional specs
 

@@ -2,17 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "lib",
-    "declaration": true,
-    "emitDeclarationOnly": true
+    "noEmit": true
   },
-  "include": ["src/**/*"],
-  "exclude": [
-    "**/*.stories.*",
-    "**/*.test.*",
-    "**/__tests__/**/*",
-    "**/__typetests__/**/*",
-    "**/__examples__/*.*",
-    "**/examples.*"
-  ]
+  "include": ["src/**/*"]
 }

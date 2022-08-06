@@ -1,5 +1,6 @@
-// @flow
-export const TYPE_OPTIONS = {
+import { Type } from "./index.d";
+
+export const TYPE_OPTIONS: Record<string, Type> = {
   NEUTRAL: "neutral",
   INFO: "info",
   SUCCESS: "success",

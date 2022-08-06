@@ -1,11 +1,9 @@
-// @flow
-import * as React from "react";
+import React from "react";
 
 import BadgePrimitive from "../primitives/BadgePrimitive";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
 import useTheme from "../hooks/useTheme";
-
-import type { Props } from ".";
+import type { Props } from "./index.d";
 
 const getTypeToken = ({ name, theme, type }) => {
   const tokens = {
@@ -70,7 +68,7 @@ const Badge = ({
   dataTest,
   id,
   carriers,
-}: Props): React.Node => {
+}: Props) => {
   const theme = useTheme();
 
   return (

@@ -7,7 +7,7 @@ import CardSection from "./CardSection";
 import * as Common from "../common/common";
 import { As } from "../Heading";
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly children?: React.ReactNode;
   readonly title?: React.ReactNode;
   readonly titleAs?: As;

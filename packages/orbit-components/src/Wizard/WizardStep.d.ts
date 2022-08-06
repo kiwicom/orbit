@@ -3,7 +3,7 @@ import { StyledComponent } from "styled-components";
 
 import * as Common from "../common/common";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly title: string;
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLElement>>;
 }

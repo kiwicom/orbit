@@ -1,13 +1,14 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import React from "react";
 
 /*
 Common types used in @kiwicom/orbit-component declarations
 */
-
 export type Translation = React.ReactNode;
+// TODO: remove after switch to typescript
+export type TranslationString = React.ReactNode;
 export type Callback = () => void | Promise<void>;
 // Parameter event is not optional
 // @see https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#optional-parameters-in-callbacks
@@ -32,10 +33,12 @@ export type Translations = {
   [key: string]: string;
 };
 
-export interface Global {
+export interface Globals {
   readonly dataTest?: string;
   readonly id?: string;
 }
+
+export type RefType = React.LegacyRef<HTMLElement>;
 
 export interface Ref {
   readonly ref?: { current: HTMLElement | null } | ((instance: HTMLElement | null) => void);

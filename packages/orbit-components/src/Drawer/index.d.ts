@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 type Position = "left" | "right";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly actions?: React.ReactNode;
   readonly children: React.ReactNode;
   readonly lockScrolling?: boolean;

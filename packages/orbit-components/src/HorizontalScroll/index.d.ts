@@ -27,7 +27,7 @@ import * as Common from "../common/common";
 
 type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   /** set minimal height */
   readonly minHeight?: number;
   /** prop for testing purposes */

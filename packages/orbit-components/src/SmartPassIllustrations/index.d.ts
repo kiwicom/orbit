@@ -6,7 +6,7 @@ import * as Common from "../common/common";
 
 type Sizes = "extraSmall" | "small" | "medium" | "large" | "display";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly size?: Sizes;
   readonly title?: string;
   readonly desciption?: string;

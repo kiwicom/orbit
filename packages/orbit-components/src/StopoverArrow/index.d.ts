@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 type Stops = "0" | "1" | "2" | "3";
 
-interface Props extends Common.Global {
+interface Props extends Common.Globals {
   readonly stops: Stops;
 }
 

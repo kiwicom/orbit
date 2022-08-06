@@ -8,7 +8,7 @@ import * as Common from "../../common/common";
 type Size = "small" | "medium" | "large";
 type Color = "primary" | "secondary";
 
-interface Props extends Common.Global {
+interface Props extends Common.Globals {
   readonly rating: number;
   readonly size?: Size;
   readonly color?: Color;

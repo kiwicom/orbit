@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 type Size = "extraSmall" | "small" | "normal" | "large" | "extraLarge";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly size?: Size;
   readonly children: React.ReactNode;
   readonly lockScrolling?: boolean;

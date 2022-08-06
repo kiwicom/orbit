@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly title: Common.Translation;
   readonly description?: Common.Translation;
   readonly selectable?: boolean;

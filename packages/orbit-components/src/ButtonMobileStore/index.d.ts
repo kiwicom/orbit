@@ -7,7 +7,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 
 type Type = "appStore" | "googlePlay";
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly type?: Type;
   readonly stopPropagation?: boolean;
   readonly href?: string;

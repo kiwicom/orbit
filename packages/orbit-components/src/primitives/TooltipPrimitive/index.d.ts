@@ -13,7 +13,7 @@ export interface Popper {
   readonly noFlip?: boolean;
   readonly offset?: [number, number];
 }
-interface Props extends Common.Global, Popper {
+interface Props extends Common.Globals, Popper {
   readonly children?: React.ReactNode;
   readonly content: React.ReactNode;
   readonly size?: Size;

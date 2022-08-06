@@ -8,7 +8,7 @@ import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
 type Type = "primary" | "secondary" | "critical";
 
-export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, ButtonCommonProps {
+export interface Props extends Common.Globals, Common.Ref, Common.SpaceAfter, ButtonCommonProps {
   readonly compact?: boolean;
   readonly type?: Type;
   readonly size?: Size;

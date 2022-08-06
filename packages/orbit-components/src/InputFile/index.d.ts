@@ -8,7 +8,7 @@ import * as Common from "../common/common";
 // InputEvent
 type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
-export interface Props extends Common.Global, Common.SpaceAfter, Common.Ref {
+export interface Props extends Common.Globals, Common.SpaceAfter, Common.Ref {
   readonly label?: Common.Translation;
   readonly buttonLabel?: React.ReactNode;
   readonly name?: string;

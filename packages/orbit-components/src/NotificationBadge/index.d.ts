@@ -6,7 +6,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 import { Type } from "../Badge";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly children?: React.ReactNode;
   readonly type?: Type;
   readonly icon?: React.ReactNode;

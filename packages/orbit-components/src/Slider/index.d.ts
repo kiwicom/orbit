@@ -10,7 +10,7 @@ export type Value = number | number[];
 export type Data = number[];
 export type Callback = (value: Value) => void | Promise<void>;
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly minValue?: number;
   readonly maxValue?: number;
   readonly step?: number;

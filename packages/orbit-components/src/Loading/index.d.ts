@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader" | "inlineLoader";
 
-interface Props extends Common.Global {
+interface Props extends Common.Globals {
   readonly children?: React.ReactNode;
   readonly loading?: boolean;
   readonly type?: Type;

@@ -17,7 +17,7 @@ type ImageCustom = {
   readonly src: string;
 };
 
-interface Props extends Common.Global {
+interface Props extends Common.Globals {
   readonly actions?: React.ReactNode;
   readonly children?: React.ReactNode;
   readonly label?: React.ReactNode;

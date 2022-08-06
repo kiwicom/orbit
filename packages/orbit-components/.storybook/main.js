@@ -30,7 +30,7 @@ module.exports = {
       test: [/\.jsx?$/, /\.tsx?$/],
       use: [
         {
-          options: { envName: "esm" },
+          options: { envName: "esm", presets: ["@babel/preset-typescript"] },
           loader: require.resolve("babel-loader"),
         },
       ],

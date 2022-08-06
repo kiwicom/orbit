@@ -11,19 +11,22 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".mts"],
   },
 
   module: {
     rules: [
       {
-        test: [/\.jsx?$/, /\.tsx?$/, /\.m?js$/],
+        test: [/\.jsx?$/, /\.tsx?$/, /\.m?js$/, /\.mts$/],
         resolve: {
           fullySpecified: false,
         },
         exclude: /node_modules/,
         use: {
           loader: require.resolve("babel-loader"),
+          options: {
+            presets: ["@babel/preset-typescript"],
+          },
         },
       },
     ],

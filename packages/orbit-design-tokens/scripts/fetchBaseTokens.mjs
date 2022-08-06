@@ -5,6 +5,8 @@ import dotenv from "dotenv-safe";
 import dedent from "dedent";
 import { solidPaintToWebRgb, toHex } from "figx";
 import _ from "lodash";
+// eslint-disable-next-line import/extensions
+import fp from "lodash/fp.js";
 
 const FILE_ID = "2rTHlBKKR6IWGeP6Dw6qbP";
 const ROOT_API = `https://api.figma.com/v1/files`;
@@ -28,10 +30,29 @@ try {
   }
 }
 
+const sortObj = obj =>
+  Object.keys(obj)
+    .sort()
+    .reduce((acc, key) => {
+      acc[key] = obj[key];
+      return acc;
+    }, {});
+
+const sortTokens = tokenObj =>
+  Object.entries(tokenObj).reduce((acc, [name, tokens]) => {
+    const sortedTokens = sortObj(tokens);
+    acc[name] = sortedTokens;
+    return acc;
+  }, {});
+
 async function saveColorTokens(output) {
+  const sorted = fp.compose(sortTokens, sortObj)(output);
+
+  console.log(sorted);
+
   const content = dedent`
     // @flow
-    const palette = ${JSON.stringify(output, null, 2)};
+    const palette = ${JSON.stringify(sorted, null, 2)};
 
     export default palette;
   `;

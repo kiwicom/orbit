@@ -9,7 +9,7 @@ import SeatLegend from "./components/SeatLegend";
 type Size = "small" | "medium";
 type Type = "default" | "legroom" | "unavailable";
 
-interface Props extends Common.Global {
+interface Props extends Common.Globals {
   readonly type?: Type;
   readonly size?: Size;
   readonly title?: string;

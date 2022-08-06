@@ -8,7 +8,7 @@ import * as Common from "../common/common";
 
 type Type = "primary" | "secondary" | "separated";
 
-interface Props extends Common.Global, Common.SpaceAfter {
+interface Props extends Common.Globals, Common.SpaceAfter {
   readonly children: React.ReactNode;
   readonly size?: Common.Size;
   readonly type?: Type;

@@ -12,7 +12,7 @@ type Placement =
   | "bottom-center"
   | "bottom-right";
 
-interface Props extends Common.Global {
+interface Props extends Common.Globals {
   readonly topOffset?: number;
   readonly leftOffset?: number;
   readonly rightOffset?: number;

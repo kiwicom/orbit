@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 type Type = "Search" | "Booking" | "MMB";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly type: Type;
   readonly children: React.ReactNode;
 }

@@ -8,7 +8,7 @@ import AlertButton from "./AlertButton";
 
 type Type = "info" | "success" | "warning" | "critical";
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly type?: Type;
   readonly children?: React.ReactNode;
   readonly title?: Common.Translation;

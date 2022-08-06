@@ -6,7 +6,7 @@ import * as Common from "../common/common";
 
 type Name = "TicketFlexi" | "TicketSaver" | "TicketStandard";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly name: Name;
   readonly alt?: string;
 }

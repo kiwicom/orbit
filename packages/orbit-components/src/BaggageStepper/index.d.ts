@@ -9,7 +9,7 @@ type Title = string | ((param?: any) => string);
 // InputEvent
 export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
-export interface SharedProps extends Common.Global {
+export interface SharedProps extends Common.Globals {
   readonly name?: string;
   readonly disabled?: boolean;
   readonly maxValue?: number;

@@ -11,7 +11,7 @@ type Offset = {
   left?: number;
 };
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
   readonly content: React.ReactNode;
   readonly placement?: Placement;

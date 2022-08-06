@@ -1,4 +1,4 @@
-import { $, fs, chalk, argv, globby } from "zx";
+import { $, fs, chalk, globby } from "zx";
 import flowgen from "flowgen";
 import dedent from "dedent";
 import filedirname from "filedirname";
@@ -18,13 +18,17 @@ export default async function generateTypeDeclarations() {
 
   // generate flow declarations out of typescript definitions
   console.log(chalk.greenBright("Generating Flow declarations..."));
-  const tsDeclarations = await globby("{lib,es}/**/*.d.ts");
+  const tsDeclarations = await globby("{lib,es}/**/*.d ts", { ignore: ["deprecated/**"] });
   await Promise.all(
     tsDeclarations.map(async tsDeclPath => {
       try {
         const flowDeclPath = tsDeclPath.replace(".d.ts", ".jsx.flow");
 
-        if (await fs.pathExists(flowDeclPath)) return;
+        if (
+          (await fs.pathExists(flowDeclPath)) ||
+          (await fs.pathExists(tsDeclPath.replace(".d.ts", ".js.flow")))
+        )
+          return;
         const flowDecl = flowgen.compiler.compileDefinitionFile(tsDeclPath, {
           interfaceRecords: true,
         });

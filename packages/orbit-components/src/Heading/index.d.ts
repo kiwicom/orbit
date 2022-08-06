@@ -26,7 +26,7 @@ interface MediaQuery extends Common.SpaceAfter {
   readonly align?: Align;
 }
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly as?: As;
   readonly type?: Type;
   readonly align?: Align;

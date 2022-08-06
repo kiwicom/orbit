@@ -3,7 +3,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 import WizardStep from "./WizardStep";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly id: string;
   readonly direction?: "row" | "column";
   readonly completedSteps: number;

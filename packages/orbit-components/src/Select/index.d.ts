@@ -14,7 +14,7 @@ interface Option {
   readonly disabled?: boolean;
 }
 
-export interface Props extends Common.Global, Common.Ref, Common.SpaceAfter, Common.DataAttrs {
+export interface Props extends Common.Globals, Common.Ref, Common.SpaceAfter, Common.DataAttrs {
   readonly id?: string;
   readonly required?: boolean;
   readonly size?: Common.InputSize;

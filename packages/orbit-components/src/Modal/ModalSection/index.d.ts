@@ -5,7 +5,7 @@ import * as React from "react";
 import * as Common from "../../common/common";
 import { Props as ModalContextProps } from "../ModalContext";
 
-export interface Props extends Common.Global, ModalContextProps {
+export interface Props extends Common.Globals, ModalContextProps {
   readonly children: React.ReactNode;
   readonly suppressed?: boolean;
 }

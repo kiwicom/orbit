@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 export type Type = "primary" | "secondary" | "info" | "success" | "warning" | "critical" | "white";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly ariaCurrent?: string;
   readonly asComponent?: Common.Component;
   readonly children: React.ReactNode;

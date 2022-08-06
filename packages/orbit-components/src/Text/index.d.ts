@@ -18,7 +18,7 @@ type Type =
   | "white";
 type Weight = "normal" | "medium" | "bold";
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly type?: Type;
   readonly size?: Common.Size;
   readonly weight?: Weight;

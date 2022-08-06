@@ -22,7 +22,7 @@ export type Type =
   | "bundleMedium"
   | "bundleTop";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly children?: React.ReactNode;
   readonly type?: Type;
   readonly border?: boolean;

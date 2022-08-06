@@ -6,7 +6,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 import { Props as BreadcrumbsItemProps } from "./BreadcrumbsItem";
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly children: React.ReactNode;
   readonly goBackTitle?: Common.Translation;
   readonly onGoBack?: Common.Event<React.SyntheticEvent<HTMLAnchorElement>>;

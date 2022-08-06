@@ -26,7 +26,7 @@ interface MediaQuery {
   readonly justify?: Justify;
 }
 
-export interface Props extends Common.Global, MediaQuery {
+export interface Props extends Common.Globals, MediaQuery {
   readonly as?: string;
   readonly mediumMobile?: MediaQuery;
   readonly largeMobile?: MediaQuery;

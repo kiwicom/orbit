@@ -6,7 +6,7 @@ import * as React from "react";
 import * as Common from "../../common/common";
 
 export type Type = "success" | "warning" | "critical";
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly children: React.ReactNode;
   readonly label: string;
   readonly asText?: boolean;

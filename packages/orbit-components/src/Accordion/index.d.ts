@@ -22,7 +22,7 @@ import * as Common from "../common/common";
   ```
 */
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   /** The content of the Accordion. You can use only AccordionSection */
   readonly children?: React.ReactNode;
   /** Optional prop to control which AccordionSection (by id) is expanded */

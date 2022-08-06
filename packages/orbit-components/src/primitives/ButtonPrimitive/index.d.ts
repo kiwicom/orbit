@@ -7,7 +7,7 @@ type functionReturningString = () => string;
 
 export type Size = "small" | "normal" | "large";
 
-export interface ButtonCommonProps extends Common.Global, Common.Ref, Common.SpaceAfter {
+export interface ButtonCommonProps extends Common.Globals, Common.Ref, Common.SpaceAfter {
   readonly asComponent?: Common.Component;
   readonly ariaControls?: string;
   readonly ariaCurrent?: string;

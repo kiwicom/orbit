@@ -13,7 +13,7 @@ export interface Carrier {
   type?: "airline" | "bus" | "train" | "ferry" | "private_transfer" | "kiwicom";
 }
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly size?: Size;
   readonly rounded?: boolean;
   readonly carriers: Common.Carrier[];

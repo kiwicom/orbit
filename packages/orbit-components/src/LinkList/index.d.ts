@@ -6,7 +6,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 import { Spacing } from "../Stack";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly direction?: "column" | "row";
   readonly indent?: boolean;
   readonly spacing?: Spacing;

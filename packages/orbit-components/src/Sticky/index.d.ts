@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-interface Props extends Common.Global {
+interface Props extends Common.Globals {
   readonly offset?: number;
   readonly children: React.ReactNode;
 }

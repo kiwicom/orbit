@@ -13,7 +13,7 @@ export type Status = "warning" | "critical" | "info" | "success";
   has status prop for showing important information about the connection between two segments of journey.
 */
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   /** The content of ItinerarySegment */
   readonly children: React.ReactNode;
   /** onClick callback that is triggered when Segment is clicked */

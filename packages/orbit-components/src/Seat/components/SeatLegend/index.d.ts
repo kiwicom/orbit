@@ -7,7 +7,7 @@ import * as Common from "../../../common/common";
 
 type Type = "default" | "legroom" | "unavailable";
 
-interface Props extends Common.Global {
+interface Props extends Common.Globals {
   readonly type: Type;
   readonly label?: React.ReactNode;
 }

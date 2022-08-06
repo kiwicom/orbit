@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-export interface Props extends Common.Global, Common.Ref {
+export interface Props extends Common.Globals, Common.Ref {
   readonly icon?: React.ReactNode;
   readonly checked: boolean;
   readonly ariaLabelledby?: string;

@@ -4,7 +4,7 @@ import React from "react";
 
 import * as Common from "../common/common";
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly id?: string;
   readonly error?: React.ReactNode;
   readonly shown: boolean;

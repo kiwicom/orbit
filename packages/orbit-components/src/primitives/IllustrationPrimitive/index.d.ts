@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../../common/common";
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: string;
   readonly alt?: string;

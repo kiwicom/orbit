@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-interface Props extends Common.Global, Common.Ref {
+interface Props extends Common.Globals, Common.Ref {
   readonly children: React.ReactNode;
   readonly type?: "colored" | "neutral";
   readonly selected?: boolean;

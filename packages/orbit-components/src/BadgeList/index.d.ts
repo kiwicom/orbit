@@ -6,7 +6,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 import BadgeListItem from "./BadgeListItem";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
 }
 

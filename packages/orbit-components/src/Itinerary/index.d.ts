@@ -46,7 +46,7 @@ import Common from "../common/common";
 
 export type Status = "warning" | "critical" | "info" | "success" | "neutral";
 
-export interface Props extends Common.Global, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   /** The content of Itinerary component */
   readonly children: React.ReactNode;
 }

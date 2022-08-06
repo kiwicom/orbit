@@ -44,6 +44,7 @@ module.exports = {
         loader: "babel-loader",
         options: {
           presets: [
+            "@babel/preset-typescript",
             [
               "@babel/preset-env",
               {

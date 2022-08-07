@@ -1,12 +1,10 @@
-// @flow
-import * as React from "react";
-import styled from "styled-components";
+import React from "react";
+import styled, { StyledComponent } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
-
-import type { Props } from ".";
+import { Props, Size } from "./index.d";
 
 const getHeightToken = ({ theme, size }) => {
   const tokens = {
@@ -19,16 +17,22 @@ const getHeightToken = ({ theme, size }) => {
   return tokens[size];
 };
 
-export const StyledImage: any = styled.img.attrs(({ theme, size, illustrationName }) => {
-  const height = parseInt(getHeightToken({ theme, size }), 10);
-  const illustrationPath = `${illustrationName}-Q85.png`;
-  return {
-    src: `${baseURL}/illustrations/0x${height}/${illustrationPath}`,
-    srcSet: `${baseURL}/illustrations/0x${
-      height * 2
-    }/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`,
-  };
-})`
+export const StyledImage: StyledComponent<
+  any,
+  any,
+  { size: Size; illustrationName: string }
+> = styled.img.attrs<{ size: Size; illustrationName: string }>(
+  ({ theme, size, illustrationName }) => {
+    const height = parseInt(getHeightToken({ theme, size }), 10);
+    const illustrationPath = `${illustrationName}-Q85.png`;
+    return {
+      src: `${baseURL}/illustrations/0x${height}/${illustrationPath}`,
+      srcSet: `${baseURL}/illustrations/0x${
+        height * 2
+      }/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`,
+    };
+  },
+)`
   display: inline-block;
   margin: auto 0;
   max-height: ${getHeightToken};
@@ -49,7 +53,7 @@ const IllustrationPrimitive = ({
   dataTest,
   id,
   spaceAfter,
-}: Props): React.Node => {
+}: Props) => {
   return (
     <StyledImage
       illustrationName={name}

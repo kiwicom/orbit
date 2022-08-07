@@ -44,6 +44,15 @@ export interface Ref {
   readonly ref?: { current: HTMLElement | null } | ((instance: HTMLElement | null) => void);
 }
 
+export type SpaceAfterSizes =
+  | "none"
+  | "smallest"
+  | "small"
+  | "normal"
+  | "medium"
+  | "large"
+  | "largest";
+
 export interface SpaceAfter {
-  readonly spaceAfter?: "none" | "smallest" | "small" | "normal" | "medium" | "large" | "largest";
+  readonly spaceAfter?: SpaceAfterSizes;
 }

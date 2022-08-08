@@ -1,8 +1,18 @@
-// @flow
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
-import type { GetAlertButtonTypeToken } from "./getAlertButtonTypeToken";
+import { Type } from "../index.d";
+import { Theme } from "../../../defaultTheme";
+
+export type TokenName =
+  | "backgroundButton"
+  | "backgroundButtonHover"
+  | "backgroundButtonActive"
+  | "backgroundButtonFocus"
+  | "colorTextButton"
+  | "borderColorButtonFocus";
+
+type GetAlertButtonTypeToken = (name: TokenName, type: Type, theme: Theme) => string;
 
 const getAlertButtonTypeToken: GetAlertButtonTypeToken = (name, type, theme) => {
   const tokens = {

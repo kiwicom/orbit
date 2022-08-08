@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -21,7 +20,7 @@ describe("Alert", () => {
   });
   it("should have margin-bottom", () => {
     const { container } = render(<Alert spaceAfter={SPACINGS_AFTER.NORMAL}>{message}</Alert>);
-    // $FlowFixMe
+    // @ts-expect-error TODO
     expect(getComputedStyle(container.firstChild)).toHaveProperty(
       "margin-bottom",
       defaultTheme.orbit.spaceSmall,

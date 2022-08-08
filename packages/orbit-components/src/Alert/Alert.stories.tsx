@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
@@ -17,14 +16,16 @@ import CountryFlag from "../CountryFlag";
 
 import Alert, { AlertButton } from ".";
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
+const getIcons = (defaultIcon: string) =>
+  select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+
+const getIcon = (source: string): React.ReactNode => Icons[source];
 
 export default {
   title: "Alert",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const message = "The quick, brown fox jumps over a lazy dog.";
   return <Alert icon title={message} />;
 };
@@ -36,18 +37,18 @@ Default.story = {
   },
 };
 
-export const Content = (): React.Node => {
+export const Content = () => {
   const message = "The quick, brown fox jumps over a lazy dog.";
   return <Alert icon>{message}</Alert>;
 };
 
-export const Button = (): React.Node => {
+export const Button = () => {
   const type = select("type", Object.values(BUTTON_TYPE_OPTIONS), BUTTON_TYPE_OPTIONS.INFO);
 
   return <AlertButton type={type}>AlertButton</AlertButton>;
 };
 
-export const InfoAlert = (): React.Node => {
+export const InfoAlert = () => {
   const title = text("Title", "Some additional information");
   const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
   return (
@@ -66,7 +67,7 @@ InfoAlert.story = {
   },
 };
 
-export const SuccessAlert = (): React.Node => {
+export const SuccessAlert = () => {
   const title = text("Title", "You did it!");
   const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
   return (
@@ -85,7 +86,7 @@ SuccessAlert.story = {
   },
 };
 
-export const WarningAlert = (): React.Node => {
+export const WarningAlert = () => {
   const title = text("Title", "Be careful!");
   const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
   return (
@@ -104,7 +105,7 @@ WarningAlert.story = {
   },
 };
 
-export const CriticalAlert = (): React.Node => {
+export const CriticalAlert = () => {
   const title = text("Title", "Something has gone horribly wrong");
   const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
   return (
@@ -123,7 +124,7 @@ CriticalAlert.story = {
   },
 };
 
-export const OnlyTitle = (): React.Node => {
+export const OnlyTitle = () => {
   const title = text("Title", "The quick, brown fox jumps over a lazy dog.");
   return <Alert title={title} closable />;
 };
@@ -137,7 +138,7 @@ OnlyTitle.story = {
   },
 };
 
-export const InlineActions = (): React.Node => {
+export const InlineActions = () => {
   const type = select("Type", Object.values(TYPE_OPTIONS), "info");
   const title = text("Title", "You can change the title by changing the Title knob");
   const button = text("Button", "I am a link");
@@ -167,7 +168,7 @@ InlineActions.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const type = select("Type", Object.values(TYPE_OPTIONS), "info");
   const title = text("Title", "You can change the title by changing the Title knob");
   const message = text("Message", "Also you can change the message by changing the Message knob");
@@ -175,7 +176,7 @@ export const Playground = (): React.Node => {
   const button = text("Button", "I am a link");
   const closable = boolean("Closable", false);
   const Icon = getIcon(getIcons("Airplane"));
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
   const suppressed = boolean("suppressed", false);
 
   return (
@@ -220,7 +221,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Alert
       type="info"

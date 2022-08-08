@@ -1,9 +1,10 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import defaultTheme from "../defaultTheme";
+import * as Common from "../common/common";
+import { Type, Props } from "./index.d";
+import defaultTheme, { Theme } from "../defaultTheme";
 import InformationCircle from "../icons/InformationCircle";
 import Check from "../icons/Check";
 import AlertTriangle from "../icons/Alert";
@@ -20,15 +21,15 @@ import useTranslate from "../hooks/useTranslate";
 import { StyledHeading } from "../Heading";
 import media from "../utils/mediaQuery";
 
-import type { Props } from ".";
-
-type IconProps = {|
-  icon: any,
-  type: string,
-  className: string,
-|};
-
-const getTypeToken = name => ({ theme, type, suppressed }) => {
+const getTypeToken = (name: string) => ({
+  theme,
+  type,
+  suppressed,
+}: {
+  theme: Theme;
+  type: Type;
+  suppressed?: boolean;
+}) => {
   const tokens = {
     [TOKENS.colorIconAlert]: {
       [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
@@ -88,7 +89,7 @@ const getTypeToken = name => ({ theme, type, suppressed }) => {
   return tokens[name][type];
 };
 
-const StyledIcon = styled(({ icon, type, className }: IconProps) => {
+const StyledIcon: any = styled(({ icon, type, className }) => {
   // Icon should be boolean and TRUE
   if (typeof icon === "boolean" && icon) {
     if (type === TYPE_OPTIONS.INFO) {
@@ -104,30 +105,21 @@ const StyledIcon = styled(({ icon, type, className }: IconProps) => {
       return <AlertCircle className={className} size="small" />;
     }
   }
+
   if (React.isValidElement(icon)) {
-    return React.cloneElement(icon, { className, size: "small" });
+    return React.cloneElement<any>(icon, { size: "small" });
   }
 
   return icon;
-})``;
+});
 
-const StyledDiv = ({
-  className,
-  children,
-  dataTest,
-  id,
-}: {|
-  className: string,
-  id: string,
-  children: React.Node,
-  dataTest: string,
-|}) => (
-  <div className={className} id={id} data-test={dataTest}>
-    {children}
-  </div>
-);
-
-const StyledAlert = styled(StyledDiv)`
+const StyledAlert = styled.div<{
+  closable?: boolean;
+  spaceAfter?: Common.SpaceAfterSizes;
+  icon?: React.ReactNode;
+  suppressed?: boolean;
+  type: Type;
+}>`
   ${({ theme, closable }) => css`
     position: relative;
     display: flex;
@@ -159,12 +151,11 @@ const StyledAlert = styled(StyledDiv)`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledAlert.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledIconContainer = styled(StyledDiv)`
+const StyledIconContainer = styled.div<{ inlineActions: boolean; type: Type }>`
   ${({ theme, inlineActions }) => css`
     flex-shrink: 0;
     margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
@@ -174,7 +165,6 @@ const StyledIconContainer = styled(StyledDiv)`
 
     ${media.tablet(css`
       margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-
       ${StyledIcon} {
         width: 20px;
         height: 20px;
@@ -183,22 +173,24 @@ const StyledIconContainer = styled(StyledDiv)`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledContentWrapper = styled(StyledDiv)`
-  ${({ title, inlineActions }) => css`
+const StyledContentWrapper = styled.div<{
+  hasTitle: boolean;
+  inlineActions: boolean;
+}>`
+  ${({ hasTitle, inlineActions }) => css`
     flex: 1; // IE wrapping fix
     display: flex;
-    flex-direction: ${title && inlineActions ? "row" : "column"};
-    align-items: ${!title && "center"};
+    flex-direction: ${hasTitle && inlineActions ? "row" : "column"};
+    align-items: ${!hasTitle && "center"};
     justify-content: ${inlineActions && "space-between"};
   `}
 `;
 
-const StyledTitle = styled(StyledDiv)`
+const StyledTitle = styled.div<{ inlineActions?: boolean; hasChildren: boolean }>`
   ${({ theme, hasChildren, inlineActions }) => css`
     color: ${theme.orbit.paletteInkNormal};
     display: flex;
@@ -209,12 +201,11 @@ const StyledTitle = styled(StyledDiv)`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTitle.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledContent = styled(StyledDiv)`
+const StyledContent = styled.div<{ inlineActions?: boolean; type: Type }>`
   ${({ inlineActions, theme }) => css`
     display: flex;
     align-items: center;
@@ -232,12 +223,13 @@ const StyledContent = styled(StyledDiv)`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const CloseContainer = styled(StyledDiv)`
+const CloseContainer = styled.div<{
+  hasChildren: boolean;
+}>`
   ${({ theme, hasChildren }) => css`
     position: absolute;
     top: ${hasChildren ? 0 : "50%"};
@@ -247,12 +239,21 @@ const CloseContainer = styled(StyledDiv)`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
+const AlertCloseButton = ({
+  hasChildren,
+  dataTest,
+  onClick,
+  icon,
+}: {
+  hasChildren: boolean;
+  dataTest: string;
+  onClick?: Common.Callback;
+  icon: React.ReactNode;
+}) => {
   const translate = useTranslate();
   return (
     <CloseContainer hasChildren={hasChildren}>
@@ -268,7 +269,7 @@ const AlertCloseButton = ({ hasChildren, dataTest, onClick, icon }) => {
   );
 };
 
-const Alert = (props: Props): React.Node => {
+const Alert = (props: Props) => {
   const {
     type = TYPE_OPTIONS.INFO,
     title,
@@ -289,34 +290,30 @@ const Alert = (props: Props): React.Node => {
       id={id}
       suppressed={suppressed}
       closable={closable}
-      dataTest={dataTest}
+      data-test={dataTest}
       spaceAfter={spaceAfter}
     >
       {icon && (
-        <StyledIconContainer type={type} inlineActions={inlineActions}>
+        <StyledIconContainer type={type} inlineActions={!!inlineActions}>
           <StyledIcon type={type} icon={icon} />
         </StyledIconContainer>
       )}
-      <StyledContentWrapper title={title} inlineActions={inlineActions}>
+      <StyledContentWrapper hasTitle={!!title} inlineActions={!!inlineActions}>
         {title && (
-          <StyledTitle hasChildren={children} inlineActions={inlineActions}>
+          <StyledTitle hasChildren={!!children} inlineActions={!!inlineActions}>
             {title}
           </StyledTitle>
         )}
-        {children && !inlineActions && (
-          <StyledContent title={title} type={type}>
-            {children}
-          </StyledContent>
-        )}
+        {children && !inlineActions && <StyledContent type={type}>{children}</StyledContent>}
         {inlineActions && (
-          <StyledContent title={title} type={type} inlineActions={inlineActions}>
+          <StyledContent type={type} inlineActions={!!inlineActions}>
             {inlineActions}
           </StyledContent>
         )}
       </StyledContentWrapper>
       {closable && (
         <AlertCloseButton
-          hasChildren={children}
+          hasChildren={!!children}
           dataTest={CLOSE_BUTTON_DATA_TEST}
           onClick={onClose}
           icon={<Close size="small" color={type} />}

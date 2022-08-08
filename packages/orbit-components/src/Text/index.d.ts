@@ -2,6 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import { StyledComponent } from "styled-components";
 
 import * as Common from "../common/common";
 

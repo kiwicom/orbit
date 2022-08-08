@@ -1,13 +1,21 @@
-// @flow
 import { BUTTON_STATES } from "../../../primitives/ButtonPrimitive/common/consts";
-import getAlertButtonTypeToken from "./getAlertButtonTypeToken";
+import getAlertButtonTypeToken, { TokenName } from "./getAlertButtonTypeToken";
 import { TOKENS } from "../consts";
-import getAlertButtonBoxShadow from "./getAlertButtonBoxShadow";
-import type { GetAlertButtonStyles } from "./getAlertButtonStyles";
+import getAlertButtonBoxShadow, { State } from "./getAlertButtonBoxShadow";
+import { Theme } from "../../../defaultTheme";
+import { Type } from "../index.d";
 
-const getAlertButtonStyles: GetAlertButtonStyles = ({ disabled, theme, type }) => {
-  const wrappedBoxShadow = state => getAlertButtonBoxShadow(state, disabled, theme, type);
-  const wrappedTypeToken = name => getAlertButtonTypeToken(name, type, theme);
+const getAlertButtonStyles = ({
+  disabled,
+  theme,
+  type,
+}: {
+  disabled: boolean;
+  theme: Theme;
+  type: Type;
+}): Record<string, string | null> => {
+  const wrappedBoxShadow = (state: State) => getAlertButtonBoxShadow(state, disabled, theme, type);
+  const wrappedTypeToken = (name: TokenName) => getAlertButtonTypeToken(name, type, theme);
   const boxShadow = {
     boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
     boxShadowHover: wrappedBoxShadow(BUTTON_STATES.HOVER),

@@ -1,14 +1,19 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import Common from "../common/common";
+import defaultTheme, { Theme } from "../defaultTheme";
+import { Props, Type } from "./index.d";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import createRel from "../primitives/ButtonPrimitive/common/createRel";
 
-import type { Props, GetLinkStyleProps } from ".";
+type GetTextLinkTokensType = ({
+  type,
+}: {
+  type?: Type;
+}) => ({ theme }: { theme: Theme }) => string | null;
 
-const getColor = ({ type }) => ({ theme }) => {
+const getColor: GetTextLinkTokensType = ({ type }) => ({ theme }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
@@ -19,10 +24,12 @@ const getColor = ({ type }) => ({ theme }) => {
     [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite,
   };
 
+  if (!type) return null;
+
   return tokens[type];
 };
 
-const getHoverColor = ({ type }) => ({ theme }) => {
+const getHoverColor: GetTextLinkTokensType = ({ type }) => ({ theme }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarkHover,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarkHover,
@@ -32,10 +39,13 @@ const getHoverColor = ({ type }) => ({ theme }) => {
     [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkHover,
     [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
   };
+
+  if (!type) return null;
+
   return tokens[type];
 };
 
-const getActiveColor = ({ type }) => ({ theme }) => {
+const getActiveColor: GetTextLinkTokensType = ({ type }) => ({ theme }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarker,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarker,
@@ -45,22 +55,26 @@ const getActiveColor = ({ type }) => ({ theme }) => {
     [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarker,
     [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
   };
+
+  if (!type) return null;
+
   return tokens[type];
 };
 
-const getSizeToken = () => ({ theme, size }) => {
+const getSizeToken = ({ theme, size }: { theme: Theme; size: Common.Size }): string => {
   const sizeTokens = {
     [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
     [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
   };
-  return size && sizeTokens[size];
+
+  return sizeTokens[size];
 };
 
 const StyledIconContainer = styled(({ children, className }) => (
   <span className={className}>{children}</span>
 ))`
-  ${({ theme }) => css`
+  ${({ theme }: { theme: Theme }) => css`
     display: flex;
     align-items: center;
 
@@ -71,19 +85,26 @@ const StyledIconContainer = styled(({ children, className }) => (
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const resolveUnderline = ({ type, theme, noUnderline }) => {
+const resolveUnderline = ({
+  type,
+  theme,
+  noUnderline,
+}: {
+  type: Type;
+  theme: Theme;
+  noUnderline: boolean;
+}) => {
   if (noUnderline) return "none";
   return type === TYPE_OPTIONS.SECONDARY
     ? theme.orbit.textDecorationTextLinkSecondary
     : theme.orbit.textDecorationTextLinkPrimary;
 };
 
-export const getLinkStyle = ({ theme }: GetLinkStyleProps): any => css`
+export const getLinkStyle = ({ theme }: { theme: Theme }) => css`
   // Common styles for TextLink and "a" in Text
 
   &,
@@ -108,15 +129,13 @@ export const getLinkStyle = ({ theme }: GetLinkStyleProps): any => css`
   }
 `;
 
-export const StyledTextLink: any = styled(
-  ({ theme, type, standAlone, noUnderline, asComponent: Component, ...props }) => (
-    <Component {...props}>{props.children}</Component>
-  ),
-)`
-  ${({ theme, standAlone }) => css`
+export const StyledTextLink = styled(({ asComponent: Component, ...props }) => (
+  <Component {...props}>{props.children}</Component>
+))`
+  ${({ theme, standAlone, size }) => css`
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${theme.orbit.fontWeightLinks};
-    font-size: ${getSizeToken};
+    font-size: ${getSizeToken({ theme, size })};
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -126,7 +145,6 @@ export const StyledTextLink: any = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTextLink.defaultProps = {
   theme: defaultTheme,
 };
@@ -158,8 +176,8 @@ const TextLink = ({
   title,
   standAlone,
   noUnderline,
-}: Props): React.Node => {
-  const onClickHandler = ev => {
+}: Props) => {
+  const onClickHandler = (ev: React.SyntheticEvent<HTMLLinkElement>) => {
     if (stopPropagation) {
       ev.stopPropagation();
     }
@@ -184,9 +202,9 @@ const TextLink = ({
       noUnderline={noUnderline}
       standAlone={standAlone}
     >
-      {<IconContainer>{iconLeft}</IconContainer>}
+      <IconContainer>{iconLeft}</IconContainer>
       {children}
-      {<IconContainer>{iconRight}</IconContainer>}
+      <IconContainer>{iconRight}</IconContainer>
     </StyledTextLink>
   );
 };

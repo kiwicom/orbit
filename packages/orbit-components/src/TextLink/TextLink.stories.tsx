@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
@@ -13,16 +11,18 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import TextLink from ".";
 
-const validate = rel => (rel !== undefined && rel !== "" ? rel : undefined);
+const validate = (rel: string) => (rel !== undefined && rel !== "" ? rel : undefined);
 
-const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
+const getIcons = (name: string, defaultIcon: string) =>
+  select(name, [null, ...Object.keys(Icons)], defaultIcon);
+
+const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "TextLink",
 };
 
-export const PrimaryLink = (): React.Node => {
+export const PrimaryLink = () => {
   const href = text("Href", "https://kiwi.com");
   const external = boolean("External", false);
   const children = text("children", "Primary link");
@@ -43,7 +43,7 @@ PrimaryLink.story = {
   },
 };
 
-export const SecondaryLink = (): React.Node => {
+export const SecondaryLink = () => {
   const href = text("Href", "https://kiwi.com");
   const external = boolean("External", false);
   const children = text("children", "Secondary link");
@@ -64,7 +64,7 @@ SecondaryLink.story = {
   },
 };
 
-export const LinkWithLeftIcon = (): React.Node => {
+export const LinkWithLeftIcon = () => {
   const href = text("Href", "https://kiwi.com");
   const children = text("children", "TextLink with icon");
   const Icon = getIcon(getIcons("iconLeft", "ChevronLeft"));
@@ -85,7 +85,7 @@ LinkWithLeftIcon.story = {
   },
 };
 
-export const LinkWithRightIcon = (): React.Node => {
+export const LinkWithRightIcon = () => {
   const href = text("Href", "https://kiwi.com");
   const children = text("children", "TextLink with icon");
   const Icon = getIcon(getIcons("iconRight", "ChevronRight"));
@@ -106,15 +106,15 @@ LinkWithRightIcon.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const href = text("Href", "https://kiwi.com");
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.SECONDARY);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const external = boolean("External", true);
   const children = text("Text", "Custom link");
-  const rel = text("Rel", undefined);
+  const rel = text("Rel", "");
   const IconRight = getIcon(getIcons("iconRight", "ChevronRight"));
-  const IconLeft = getIcon(getIcons("iconLeft", null));
+  const IconLeft = getIcon(getIcons("iconLeft", ""));
   const dataTest = text("dataTest", "test");
   const tabIndex = text("tabIndex", "");
   const stopPropagation = boolean("stopPropagation", false);
@@ -147,7 +147,7 @@ export const Playground = (): React.Node => {
   );
 };
 
-export const TextLinkInText = (): React.Node => {
+export const TextLinkInText = () => {
   const type = select("type", Object.values(TEXT_TYPES), TEXT_TYPES.CRITICAL);
   return (
     <Text type={type}>
@@ -178,7 +178,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = (): React.Node => {
+export const Accessibility = () => {
   const children = text("children", "Primary link");
   const title = text("title", "Clarify purpose of a link for screen readers");
 
@@ -196,7 +196,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <TextLink onClick={action("clicked")} href="#" iconRight={<Icons.ChevronRight />}>
       Link

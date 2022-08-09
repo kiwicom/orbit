@@ -1,7 +1,7 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import Common from "../common/common";
 import defaultTheme from "../defaultTheme";
 import ChevronLeft from "../icons/ChevronLeft";
 import getSpacingToken from "../common/getSpacingToken";
@@ -9,10 +9,9 @@ import useTranslate from "../hooks/useTranslate";
 import { right } from "../utils/rtl";
 import TextLink from "../TextLink";
 import Hide from "../Hide";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledBreadcrumbs = styled.nav`
+const StyledBreadcrumbs = styled.nav<{ spaceAfter?: Common.SpaceAfterSizes }>`
   ${({ theme }) => css`
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeTextSmall};
@@ -20,7 +19,6 @@ const StyledBreadcrumbs = styled.nav`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBreadcrumbs.defaultProps = {
   theme: defaultTheme,
 };
@@ -39,12 +37,11 @@ const StyledBackButtonWrapper = styled.span`
 `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBackButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const Breadcrumbs = (props: Props): React.Node => {
+const Breadcrumbs = (props: Props) => {
   const translate = useTranslate();
   const {
     children,

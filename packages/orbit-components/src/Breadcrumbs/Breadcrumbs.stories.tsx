@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { select, text, boolean } from "@storybook/addon-knobs";
@@ -13,7 +11,7 @@ export default {
   title: "Breadcrumbs",
 };
 
-export const Default = (): React.Node => (
+export const Default = () => (
   <Breadcrumbs onGoBack={action("onGoBack")}>
     <BreadcrumbsItem href="https://kiwi.com" onClick={action("clicked")}>
       Kiwi.com
@@ -33,11 +31,11 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Node => {
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+export const Playground = () => {
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), "small");
   const href = text("href", "https://kiwi.com");
   const withGoBack = boolean("onGoBack", true);
-  const backHref = text("backHref", null);
+  const backHref = text("backHref", "");
   return (
     <Breadcrumbs
       backHref={backHref}
@@ -69,7 +67,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   const href = text("href", "https://kiwi.com");
   return (
     <RenderInRtl>
@@ -98,9 +96,7 @@ Rtl.story = {
   name: "RTL",
 };
 
-export const BackLink = (): React.Node => (
-  <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>
-);
+export const BackLink = () => <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>;
 
 BackLink.story = {
   name: "Back link",

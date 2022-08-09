@@ -1,23 +1,19 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import ChevronRight from "../../icons/ChevronRight";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledBreadcrumbsItem = styled.li`
   display: flex;
   align-items: center;
 `;
 
-const StyledBreadcrumbsItemAnchor = styled(
-  ({ active, component, children, isClickable, theme, ...props }) => {
-    const Component = isClickable ? component : "div";
-    return <Component {...props}>{children}</Component>;
-  },
-)`
+const StyledBreadcrumbsItemAnchor = styled(({ component, children, isClickable, ...props }) => {
+  const Component = isClickable ? component : "div";
+  return <Component {...props}>{children}</Component>;
+})`
   ${({ theme, active, isClickable }) => css`
     font-weight: ${active ? theme.orbit.fontWeightBold : theme.orbit.fontWeightMedium};
     color: ${theme.orbit.paletteInkNormal};
@@ -43,7 +39,6 @@ const StyledBreadcrumbsItemAnchor = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBreadcrumbsItemAnchor.defaultProps = {
   theme: defaultTheme,
 };
@@ -54,7 +49,6 @@ const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBreadcrumbsItemIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -72,7 +66,7 @@ const BreadcrumbsItem = ({
   component = DefaultComponent,
   id,
   ...props
-}: Props): React.Node => {
+}: Props) => {
   return (
     <StyledBreadcrumbsItem
       data-test={dataTest}
@@ -95,7 +89,7 @@ const BreadcrumbsItem = ({
       >
         <span itemProp="name">{children}</span>
       </StyledBreadcrumbsItemAnchor>
-      <meta itemProp="position" content={contentKey} />
+      <meta itemProp="position" content={String(contentKey)} />
       {!active && (
         <StyledBreadcrumbsItemIcon ariaHidden reverseOnRtl size="small" color="tertiary" />
       )}

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select } from "@storybook/addon-knobs";
@@ -6,7 +5,7 @@ import { text, select } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import Tooltip from "../Tooltip";
 import TextLink from "../TextLink";
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS } from "./consts";
 import Text from "../Text";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
@@ -16,7 +15,7 @@ export default {
   title: "BadgeList",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   return (
     <BadgeList>
       <BadgeListItem icon={<Icons.AlertCircle />}>
@@ -29,7 +28,7 @@ export const Default = (): React.Node => {
   );
 };
 
-export const Types = (): React.Node => {
+export const Types = () => {
   const component = type => (
     <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type}>
       <TextLink onClick={action("link clicked")} type="secondary">
@@ -49,7 +48,7 @@ export const Types = (): React.Node => {
   );
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.NEUTRAL);
   return (
@@ -79,7 +78,7 @@ Playground.story = {
   },
 };
 
-export const RTL = (): React.Node => {
+export const RTL = () => {
   return (
     <RenderInRtl>
       <BadgeList>

@@ -1,17 +1,15 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Text, { StyledText } from "../../Text";
-import TYPE_OPTIONS from "../consts";
-import defaultTheme from "../../defaultTheme";
+import { TYPE_OPTIONS } from "../consts";
+import defaultTheme, { Theme } from "../../defaultTheme";
 import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
 import { right } from "../../utils/rtl";
+import { Props, Type } from "./index.d";
 
-import type { Props } from ".";
-
-const getBackground = ({ theme, $type }) => {
+const getBackground = ({ theme, $type }: { theme: Theme; $type: Type }) => {
   const tokens = {
     [TYPE_OPTIONS.NEUTRAL]: theme.orbit.paletteCloudLight,
     [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLight,
@@ -22,7 +20,7 @@ const getBackground = ({ theme, $type }) => {
   return tokens[$type];
 };
 
-const getIconColor = type => {
+const getIconColor = (type: Type) => {
   if (type === TYPE_OPTIONS.NEUTRAL) return ICON_COLORS.SECONDARY;
   return type;
 };
@@ -38,7 +36,6 @@ const StyledBadgeListItem = styled.li`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBadgeListItem.defaultProps = {
   theme: defaultTheme,
 };
@@ -61,7 +58,6 @@ const StyledVerticalBadge = styled.div`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledVerticalBadge.defaultProps = {
   theme: defaultTheme,
 };
@@ -82,17 +78,11 @@ const StyledVerticalBadgeContent = styled.div`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledVerticalBadgeContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const BadgeListItem = ({
-  icon,
-  type = TYPE_OPTIONS.NEUTRAL,
-  dataTest,
-  children,
-}: Props): React.Node => {
+const BadgeListItem = ({ icon, type = TYPE_OPTIONS.NEUTRAL, dataTest, children }: Props) => {
   return (
     <StyledBadgeListItem data-test={dataTest}>
       <StyledVerticalBadge $type={type} aria-hidden>

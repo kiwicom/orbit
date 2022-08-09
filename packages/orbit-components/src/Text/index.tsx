@@ -1,9 +1,9 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import defaultTheme from "../defaultTheme";
+import Common from "../common/common";
+import defaultTheme, { Theme } from "../defaultTheme";
 import {
   TYPE_OPTIONS,
   WEIGHT_OPTIONS,
@@ -14,10 +14,9 @@ import {
 import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
 import { getLinkStyle, StyledTextLink } from "../TextLink";
+import { Props, Type, Weight } from "./index.d";
 
-import type { Props } from ".";
-
-const getTypeToken = ({ theme, type }) => {
+const getTypeToken = ({ theme, type }: { theme: Theme; type: Type }): string => {
   const typeTokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextSecondary,
@@ -27,50 +26,64 @@ const getTypeToken = ({ theme, type }) => {
     [TYPE_OPTIONS.CRITICAL]: theme.orbit.colorTextCritical,
     [TYPE_OPTIONS.WHITE]: theme.orbit.colorTextWhite,
   };
+
   return typeTokens[type];
 };
 
-const getWeightToken = ({ theme, weight }) => {
+const getWeightToken = ({ theme, weight }: { theme: Theme; weight: Weight }): string | null => {
   const weightTokens = {
     [WEIGHT_OPTIONS.NORMAL]: theme.orbit.fontWeightNormal,
     [WEIGHT_OPTIONS.MEDIUM]: theme.orbit.fontWeightMedium,
     [WEIGHT_OPTIONS.BOLD]: theme.orbit.fontWeightBold,
   };
+
+  if (!weight) return null;
+
   return weightTokens[weight];
 };
 
-const getSizeToken = ({ theme, size }) => {
+const getSizeToken = ({ theme, size }: { theme: Theme; size: Common.Size }): string | null => {
   const sizeTokens = {
     [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
     [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
   };
+
+  if (!size) return null;
+
   return sizeTokens[size];
 };
 
-const getLineHeightToken = ({ theme, size }) => {
+const getLineHeightToken = ({
+  theme,
+  size,
+}: {
+  theme: Theme;
+  size?: Common.Size | null;
+}): string | null => {
   const lineHeightTokens = {
     [SIZE_OPTIONS.LARGE]: theme.orbit.lineHeightTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
     [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,
   };
+
+  if (!size) return null;
+
   return lineHeightTokens[size];
 };
 
-export const StyledText: any = styled(
-  ({ element: TextElement, children, className, dataTest, id }) => (
-    <TextElement className={className} data-test={dataTest} id={id}>
-      {children}
-    </TextElement>
-  ),
-)`
-  ${({ theme, align, uppercase, strikeThrough, type, italic, withBackground }) => css`
+export const StyledText = styled(({ element: TextElement, children, className, dataTest, id }) => (
+  <TextElement className={className} data-test={dataTest} id={id}>
+    {children}
+  </TextElement>
+))`
+  ${({ theme, align, uppercase, size, weight, strikeThrough, type, italic, withBackground }) => css`
     font-family: ${theme.orbit.fontFamily};
     background: ${withBackground && convertHexToRgba(getTypeToken({ theme, type }), 10)};
-    font-size: ${getSizeToken};
-    font-weight: ${getWeightToken};
-    color: ${getTypeToken};
-    line-height: ${getLineHeightToken};
+    font-size: ${getSizeToken({ theme, size })};
+    font-weight: ${getWeightToken({ theme, weight })};
+    color: ${getTypeToken({ theme, type })};
+    line-height: ${getLineHeightToken({ theme, size })};
     text-align: ${textAlign(align)};
     text-transform: ${uppercase && `uppercase`};
     text-decoration: ${strikeThrough && `line-through`};
@@ -85,7 +98,6 @@ export const StyledText: any = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledText.defaultProps = {
   theme: defaultTheme,
 };
@@ -104,7 +116,7 @@ const Text = ({
   children,
   withBackground,
   id,
-}: Props): React.Node => {
+}: Props) => {
   return (
     <StyledText
       id={id}

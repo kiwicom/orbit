@@ -1,5 +1,4 @@
-// @flow
-import * as React from "react";
+import React from "react";
 import { render, screen } from "@testing-library/react";
 
 import List from "..";
@@ -8,7 +7,7 @@ import Check from "../../icons/Check";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("List", () => {
-  it("should have expteced DOM output", () => {
+  it("should have expected DOM output", () => {
     const size = "small";
     const type = "secondary";
     const dataTest = "test";

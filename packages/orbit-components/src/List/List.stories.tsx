@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { text, select } from "@storybook/addon-knobs";
 
@@ -13,14 +11,16 @@ import TextLink from "../TextLink";
 
 import List, { ListItem } from ".";
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
+const getIcons = (defaultIcon: string) =>
+  select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+
+const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "List",
 };
 
-export const Default = (): React.Node => (
+export const Default = () => (
   <List>
     <ListItem>
       24,000 locations <TextLink href="#">around</TextLink> the globe
@@ -38,7 +38,7 @@ Default.story = {
   },
 };
 
-export const DifferentTypeAndSize = (): React.Node => {
+export const DifferentTypeAndSize = () => {
   const size = select("Size", Object.values(SIZES), SIZES.SMALL);
   const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
 
@@ -61,13 +61,13 @@ DifferentTypeAndSize.story = {
   },
 };
 
-export const WithLabels = (): React.Node => {
+export const WithLabels = () => {
   const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const Icon = getIcon(getIcons("Check"));
   const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
   const content = text("Content", "24,000 locations around the globe");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)], undefined);
   const dataTest = text("dataTest", "test");
 
   return (
@@ -91,7 +91,7 @@ WithLabels.story = {
   },
 };
 
-export const WithCarrier = (): React.Node => {
+export const WithCarrier = () => {
   const size = select("Size", Object.values(SIZES), SIZES.SMALL);
   const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
 
@@ -115,13 +115,13 @@ WithCarrier.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
   const Icon = getIcon(getIcons("Check"));
   const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
   const content = text("Content", "24,000 locations around the globe");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)], undefined);
   const dataTest = text("dataTest", "test");
 
   return (
@@ -140,7 +140,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <List size="small" type="secondary">
       <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>

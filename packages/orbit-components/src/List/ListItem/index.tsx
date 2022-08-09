@@ -1,23 +1,30 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
+import { Type } from "../index.d";
+import * as Common from "../../common/common";
+import defaultTheme, { Theme } from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
 import ListContext from "../ListContext";
+import { Props } from "./index.d";
 
-import type { GetLineHeightToken, Props } from ".";
-
-export const getLineHeightToken: GetLineHeightToken = ({ theme, size }) => {
+export const getLineHeightToken = ({
+  theme,
+  size,
+}: {
+  theme: Theme;
+  size?: Common.Size | null;
+}): string | null => {
   const lineHeightTokens = {
     [SIZES.SMALL]: theme.orbit.lineHeightTextSmall,
     [SIZES.NORMAL]: theme.orbit.lineHeightTextNormal,
     [SIZES.LARGE]: theme.orbit.lineHeightTextLarge,
   };
+  if (!size) return null;
   return lineHeightTokens[size];
 };
 
@@ -30,7 +37,13 @@ const getSizeTokenLabel = ({ theme, size }) => {
   return sizeTokens[size];
 };
 
-const getIconSizeFromType = ({ theme, type }) => {
+const getIconSizeFromType = ({
+  theme,
+  type,
+}: {
+  theme: Theme;
+  type?: Type | null;
+}): string | null => {
   const tokens = {
     [TYPES.PRIMARY]: css`
       height: ${theme.orbit.heightIconSmall};
@@ -41,10 +54,12 @@ const getIconSizeFromType = ({ theme, type }) => {
       width: ${theme.orbit.widthIconSmall};
     `,
   };
+
+  if (!type) return null;
   return tokens[type];
 };
 
-export const Item: any = styled(({ type, theme, ...props }) => <li {...props} />)`
+export const Item = styled(({ ...props }) => <li {...props} />)`
   ${({ theme }) => css`
     font-family: ${theme.orbit.fontFamily};
     display: flex;
@@ -63,12 +78,11 @@ export const Item: any = styled(({ type, theme, ...props }) => <li {...props} />
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Item.defaultProps = {
   theme: defaultTheme,
 };
 
-export const IconContainer: any = styled.div`
+export const IconContainer = styled.div<{ size?: Common.Size | null; type?: Type | null }>`
   ${({ theme, size }) => css`
     display: flex;
     align-items: center;
@@ -89,7 +103,6 @@ export const IconContainer: any = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -107,12 +120,11 @@ const StyledSpan = styled.span`
   width: 100%;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props): React.Node => {
+const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) => {
   const { size, type } = React.useContext(ListContext);
   return (
     <Item data-test={dataTest} type={type}>

@@ -1,38 +1,42 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import * as Common from "../common/common.d";
+import defaultTheme, { Theme } from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import { getLineHeightToken } from "./ListItem";
 import ListContext from "./ListContext";
+import { Props, Type } from "./index.d";
 
-import type { Props } from ".";
-
-const getSizeToken = ({ theme, size }) => {
+const getSizeToken = ({ theme, size }: { theme: Theme; size?: Common.Size }): string | null => {
   const sizeTokens = {
     [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
     [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
     [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
   };
+
+  if (!size) return null;
+
   return sizeTokens[size];
 };
 
-const getTypeToken = ({ theme, type }) => {
+const getTypeToken = ({ theme, type }: { theme: Theme; type?: Type }): string | null => {
   const typeTokens = {
     [TYPES.PRIMARY]: theme.orbit.colorTextPrimary,
     [TYPES.SECONDARY]: theme.orbit.colorTextSecondary,
   };
 
+  if (!type) return null;
+
   return typeTokens[type];
 };
 
-const StyledList = styled(({ className, children, dataTest }) => (
-  <ul className={className} data-test={dataTest}>
-    {children}
-  </ul>
-))`
+const StyledList = styled.ul<{
+  size?: Common.Size | null;
+  type?: Type | null;
+  spaceAfter?: Common.SpaceAfterSizes;
+}>`
   ${({ theme }) => css`
     display: flex;
     width: 100%;
@@ -45,10 +49,9 @@ const StyledList = styled(({ className, children, dataTest }) => (
     padding: 0;
     margin: 0;
     margin-bottom: ${getSpacingToken};
-  `}
+  `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledList.defaultProps = {
   theme: defaultTheme,
 };
@@ -60,8 +63,8 @@ const List = ({
   dataTest,
   id,
   spaceAfter,
-}: Props): React.Node => (
-  <StyledList type={type} size={size} dataTest={dataTest} id={id} spaceAfter={spaceAfter}>
+}: Props) => (
+  <StyledList type={type} size={size} data-test={dataTest} id={id} spaceAfter={spaceAfter}>
     <ListContext.Provider value={{ size, type }}>{children}</ListContext.Provider>
   </StyledList>
 );

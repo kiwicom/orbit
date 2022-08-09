@@ -177,7 +177,7 @@ const TextLink = ({
   standAlone,
   noUnderline,
 }: Props) => {
-  const onClickHandler = (ev: React.SyntheticEvent<HTMLLinkElement>) => {
+  const onClickHandler = (ev: React.SyntheticEvent<HTMLAnchorElement>) => {
     if (stopPropagation) {
       ev.stopPropagation();
     }

@@ -1,5 +1,4 @@
-// @flow
-import * as React from "react";
+import React from "react";
 import { select, text } from "@storybook/addon-knobs";
 
 import Text from "../Text";
@@ -12,7 +11,7 @@ export default {
   title: "Coupon",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const content = text("content", "PROMOTIONCODE");
   const size = select("Size", Object.values(SIZES), SIZES.SMALL);
   return (
@@ -34,7 +33,7 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const content = text("content", "CODE");
 

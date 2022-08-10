@@ -1,15 +1,14 @@
-// @flow
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import type { Theme } from "../../../defaultTheme";
 import { BUTTON_STATES } from "../../../primitives/ButtonPrimitive/common/consts";
 
-type Args = {|
-  state: string,
-  disabled?: boolean,
-  theme: Theme,
-  selected?: boolean,
-|};
+interface Args {
+  readonly state: string;
+  readonly disabled?: boolean;
+  readonly theme: Theme;
+  readonly selected?: boolean;
+}
 
 const getButtonBoxShadow = ({ state, disabled, theme, selected }: Args): string | null => {
   if (disabled) return null;

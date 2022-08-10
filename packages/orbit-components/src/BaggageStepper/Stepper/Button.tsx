@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
@@ -9,10 +8,9 @@ import type { Props as PrimitiveProps } from "../../primitives/ButtonPrimitive";
 import ButtonPrimitive from "../../primitives/ButtonPrimitive";
 import { ICON_SIZE, BUTTON_SIZE } from "./consts";
 
-type Props = {|
-  +selected?: boolean,
-  ...PrimitiveProps,
-|};
+interface Props extends PrimitiveProps {
+  readonly selected?: boolean;
+}
 
 const Button = ({
   selected,
@@ -23,7 +21,7 @@ const Button = ({
   width = BUTTON_SIZE,
   children,
   ...props
-}: Props): React.Node => {
+}: Props) => {
   const theme = useTheme();
   const onlyIcon = Boolean(iconLeft && !children);
   const padding = getPadding(onlyIcon, iconRight, iconLeft, "small", theme);

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -6,8 +5,7 @@ import Button from "./Button";
 import Minus from "../../icons/Minus";
 import Plus from "../../icons/Plus";
 import defaultTheme from "../../defaultTheme";
-
-import type { StateLessProps } from ".";
+import { Props } from "./index.d";
 
 const StyledStepper = styled.div`
   display: flex;
@@ -43,7 +41,6 @@ const StyledStepperInput = styled.input`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStepperInput.defaultProps = {
   theme: defaultTheme,
 };
@@ -54,8 +51,8 @@ const StepperStateless = ({
   dataTest,
   value,
   name,
-  minValue,
-  maxValue,
+  minValue = Number.NEGATIVE_INFINITY,
+  maxValue = Number.POSITIVE_INFINITY,
   onKeyDown,
   onBlur,
   onFocus,
@@ -65,7 +62,7 @@ const StepperStateless = ({
   titleDecrement,
   disabledIncrement,
   disabledDecrement,
-}: StateLessProps): React.Node => {
+}: Props) => {
   return (
     <StyledStepper data-test={dataTest}>
       <Button
@@ -74,7 +71,7 @@ const StepperStateless = ({
           disabled || disabledDecrement || (typeof value === "number" && value <= +minValue)
         }
         iconLeft={<Minus />}
-        onClick={ev => {
+        onClick={(ev: React.SyntheticEvent<HTMLButtonElement>) => {
           if (onDecrement && !disabled) {
             onDecrement(ev);
           }

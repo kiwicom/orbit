@@ -1,14 +1,12 @@
-// @flow
 import * as React from "react";
 
 import Stepper from "./Stepper";
 import validateIncrement from "../utils/validateIncrement";
 import validateDecrement from "../utils/validateDecrement";
 import useStateWithCallback from "../hooks/useStateWithCallback";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const BaggageStepper = ({ onChange, defaultValue = 0, ...props }: Props): React.Node => {
+const BaggageStepper = ({ onChange, defaultValue = 0, ...props }: Props) => {
   const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);
 
   const incrementCounter = () => {
@@ -23,7 +21,7 @@ const BaggageStepper = ({ onChange, defaultValue = 0, ...props }: Props): React.
     setValue(validateDecrement({ value, minValue, step }));
   };
 
-  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (ev: React.KeyboardEvent<HTMLInputElement>) => {
     if (ev.keyCode === 40) {
       ev.preventDefault();
       decrementCounter();

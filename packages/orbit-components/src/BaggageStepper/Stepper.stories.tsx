@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, number, boolean } from "@storybook/addon-knobs";
@@ -9,7 +8,7 @@ export default {
   title: "BaggageStepper",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
 
@@ -28,7 +27,7 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const min = number("minValue", 1);
   const max = number("maxValue", 10);
   const step = number("step", 2);

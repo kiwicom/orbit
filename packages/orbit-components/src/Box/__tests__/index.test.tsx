@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { screen, render } from "@testing-library/react";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
@@ -10,28 +9,46 @@ import Box from "..";
 
 const dataTest = "test";
 
-const DIRECTIONS = {
-  ROW: "row",
-  COLUMN: "column",
-  "ROW-REVERSE": "row-reverse",
-  "COLUMN-REVERSE": "column-reverse",
-};
+enum DIRECTIONS {
+  ROW = "row",
+  COLUMN = "column",
+  "ROW-REVERSE" = "row-reverse",
+  "COLUMN-REVERSE" = "column-reverse",
+}
 
-const ALIGN = { START: "start", END: "end", CENTER: "center", STRETCH: "stretch" };
+enum ALIGN {
+  START = "start",
+  END = "end",
+  CENTER = "center",
+  STRETCH = "stretch",
+}
 
-const POSITIONS = { ABSOLUTE: "absolute", RELATIVE: "relative", FIXED: "fixed" };
+enum POSITIONS {
+  ABSOLUTE = "absolute",
+  RELATIVE = "relative",
+  FIXED = "fixed",
+}
 
-const JUSTIFY = {
-  CENTER: "center",
-  START: "start",
-  END: "end",
-  BETWEEN: "between",
-  AROUND: "around",
-};
+enum JUSTIFY {
+  CENTER = "center",
+  START = "start",
+  END = "end",
+  BETWEEN = "between",
+  AROUND = "around",
+}
 
-const TEXT_ALIGN = { LEFT: "left", RIGHT: "right", CENTER: "center" };
+enum TEXT_ALIGN {
+  LEFT = "left",
+  RIGHT = "right",
+  CENTER = "center",
+}
 
-const ELEVATION = { ACTION: "action", FIXED: "fixed", RAISED: "raised", OVERLAY: "overlay" };
+enum ELEVATION {
+  ACTION = "action",
+  FIXED = "fixed",
+  RAISED = "raised",
+  OVERLAY = "overlay",
+}
 
 describe("#Box", () => {
   it("should have basic props", () => {

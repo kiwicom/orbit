@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -10,24 +9,22 @@ import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import useBoundingRect from "../hooks/useBoundingRect";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const AnimatedIcon = styled(ChevronDown)`
-  ${({ theme }) => css`
+const AnimatedIcon = styled(ChevronDown)<{ expanded?: boolean }>`
+  ${({ theme, expanded }) => css`
     transition: transform ${theme.orbit.durationFast} ease-in-out;
-    ${({ expanded }) =>
-      expanded &&
-      css`
-        transform: rotate(180deg);
-      `};
+    ${expanded &&
+    css`
+      transform: rotate(180deg);
+    `};
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 AnimatedIcon.defaultProps = {
   theme: defaultTheme,
 };
+
 const StyledCollapse = styled.div`
   ${({ theme }) => css`
     width: 100%;
@@ -43,7 +40,6 @@ const StyledCollapse = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCollapse.defaultProps = {
   theme: defaultTheme,
 };
@@ -54,18 +50,16 @@ const StyledCollapseLabel = styled.div`
   cursor: pointer;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCollapseLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCollapseChildren = styled.div`
+const StyledCollapseChildren: any = styled.div`
   ${({ theme }) => css`
     margin: ${theme.orbit.spaceSmall} 0;
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCollapseChildren.defaultProps = {
   theme: defaultTheme,
 };
@@ -85,13 +79,13 @@ const Collapse = ({
   id,
   onClick,
   actions,
-}: Props): React.Node => {
+}: Props) => {
   const isControlledComponent = React.useMemo(() => expandedProp != null, [expandedProp]);
   const [expandedState, setExpandedState] = React.useState(
     isControlledComponent ? expandedProp : initialExpanded,
   );
   const expanded = isControlledComponent ? expandedProp : expandedState;
-  const [{ height }, node] = useBoundingRect({ height: expanded ? null : 0 });
+  const [{ height }, node] = useBoundingRect<HTMLDivElement>({ height: expanded ? null : 0 });
 
   const randomId = useRandomIdSeed();
   const slideID = randomId("slideID");
@@ -118,7 +112,6 @@ const Collapse = ({
         <Stack justify="between" align="center">
           {label && !customLabel && <Heading type="title4">{label}</Heading>}
           {customLabel}
-          {/* TODO: dictionary for title */}
           <Stack inline grow={false} align="center" spacing="small">
             <StyledActionsWrapper
               onClick={ev => {

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean } from "@storybook/addon-knobs";
@@ -17,7 +16,7 @@ export default {
   title: "Collapse",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const label = text("label", "Duration");
   return (
     <Collapse label={label}>
@@ -65,7 +64,7 @@ Default.story = {
   },
 };
 
-export const WithCustomLabel = (): React.Node => {
+export const WithCustomLabel = () => {
   return (
     <Collapse
       customLabel={
@@ -114,7 +113,7 @@ export const WithCustomLabel = (): React.Node => {
   );
 };
 
-export const OpenedByDefault = (): React.Node => {
+export const OpenedByDefault = () => {
   const label = text("label", "Duration");
   return (
     <Collapse label={label} initialExpanded>
@@ -164,7 +163,7 @@ OpenedByDefault.story = {
   },
 };
 
-export const WithActions = (): React.Node => {
+export const WithActions = () => {
   const label = text("label", "Transportation");
   return (
     <Collapse
@@ -193,7 +192,7 @@ WithActions.story = {
   },
 };
 
-export const MultipleCollapses = (): React.Node => {
+export const MultipleCollapses = () => {
   const label = text("label", "Transportation");
   return (
     <Stack spacing="none">
@@ -241,7 +240,7 @@ MultipleCollapses.story = {
   },
 };
 
-export const Uncontrolled = (): React.Node => {
+export const Uncontrolled = () => {
   const label = text("label", "Duration");
   const expanded = boolean("expanded", true);
   return (
@@ -264,7 +263,7 @@ Uncontrolled.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   const label = text("label", "Transportation");
   return (
     <RenderInRtl>

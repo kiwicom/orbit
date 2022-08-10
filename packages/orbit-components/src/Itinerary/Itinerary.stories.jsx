@@ -553,68 +553,89 @@ export const Default = (): React.Node => {
 };
 
 export const InsideModal = (): React.Node => {
+  const [isOpenedModal, setIsOpenedModal] = React.useState(false);
+
   return (
-    <Modal>
-      <ModalSection>
-        <Itinerary>
-          <ItineraryStatus type="success" label="This part is new">
-            <ItinerarySegment
-              banner={
-                <Stack>
-                  <ItinerarySegmentBanner>
-                    <ItineraryBadgeList>
-                      <BadgeListItem icon={<StarFull />} type="warning">
-                        Hidden city hack: This itinerary finishes in New York (United States), but
-                        you’ll get off during the layover.
-                      </BadgeListItem>
-                      <BadgeListItem icon={<Visa />}>
-                        Check travel document requirements for all destinations, including passport,
-                        visa and COVID-19 documents.
-                      </BadgeListItem>
-                      <BadgeListItem icon={<BaggageCheckedNone />}>
-                        You can’t bring checked or cabin baggage.
-                      </BadgeListItem>
-                    </ItineraryBadgeList>
-                  </ItinerarySegmentBanner>
-                  <Separator />
-                  <ItinerarySegmentBanner>
-                    <ItineraryBadgeList>
-                      <BadgeListItem icon={<Location />} type="warning">
-                        You’ll depart from a different place in Prague: Václav Havel Airport Prague
-                      </BadgeListItem>
-                    </ItineraryBadgeList>
-                  </ItinerarySegmentBanner>
-                </Stack>
-              }
-            >
-              <ItinerarySegmentStop
-                city="Prague"
-                station="Václav Haivel Airport Prague (PRG)"
-                time="16:20"
-                date="Wed, 15.6"
-              />
-              <ItinerarySegmentDetail
-                duration="2h 10m"
-                summary={
-                  <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                    Ryanair
-                  </Badge>
+    <>
+      <Modal>
+        <ModalSection>
+          <Itinerary>
+            <ItineraryStatus type="success" label="This part is new">
+              <ItinerarySegment
+                banner={
+                  <Stack>
+                    <ItinerarySegmentBanner
+                      onClick={ev => {
+                        ev.stopPropagation();
+                        setIsOpenedModal(true);
+                      }}
+                    >
+                      <ItineraryBadgeList>
+                        <BadgeListItem icon={<StarFull />} type="warning">
+                          Hidden city hack: This itinerary finishes in New York (United States), but
+                          you’ll get off during the layover.
+                        </BadgeListItem>
+                        <BadgeListItem icon={<Visa />}>
+                          Check travel document requirements for all destinations, including
+                          passport, visa and COVID-19 documents.
+                        </BadgeListItem>
+                        <BadgeListItem icon={<BaggageCheckedNone />}>
+                          You can’t bring checked or cabin baggage.
+                        </BadgeListItem>
+                      </ItineraryBadgeList>
+                    </ItinerarySegmentBanner>
+                    <Separator />
+                    <ItinerarySegmentBanner>
+                      <ItineraryBadgeList>
+                        <BadgeListItem icon={<Location />} type="warning">
+                          You’ll depart from a different place in Prague: Václav Havel Airport
+                          Prague
+                        </BadgeListItem>
+                      </ItineraryBadgeList>
+                    </ItinerarySegmentBanner>
+                  </Stack>
                 }
-                content={content}
-              />
-              <ItinerarySegmentStop
-                hidden
-                city="Frankfurt"
-                time="18:30"
-                date="Wed, 15.6"
-                station="Frankfurt International Airport "
-              />
-              <ItinerarySegmentStop city="New York JFK" station="United States" />
-            </ItinerarySegment>
-          </ItineraryStatus>
-        </Itinerary>
-      </ModalSection>
-    </Modal>
+              >
+                <ItinerarySegmentStop
+                  city="Prague"
+                  station="Václav Haivel Airport Prague (PRG)"
+                  time="16:20"
+                  date="Wed, 15.6"
+                />
+                <ItinerarySegmentDetail
+                  duration="2h 10m"
+                  summary={
+                    <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                      Ryanair
+                    </Badge>
+                  }
+                  content={content}
+                />
+                <ItinerarySegmentStop
+                  hidden
+                  city="Frankfurt"
+                  time="18:30"
+                  date="Wed, 15.6"
+                  station="Frankfurt International Airport "
+                />
+                <ItinerarySegmentStop city="New York JFK" station="United States" />
+              </ItinerarySegment>
+            </ItineraryStatus>
+          </Itinerary>
+        </ModalSection>
+      </Modal>
+      {isOpenedModal && (
+        <Modal
+          hasCloseButton
+          onClose={ev => {
+            ev.stopPropagation();
+            setIsOpenedModal(false);
+          }}
+        >
+          <ModalSection>Hidden city info</ModalSection>
+        </Modal>
+      )}
+    </>
   );
 };
 

@@ -69,6 +69,7 @@ export { default as InputStepper, InputStepperStateless } from "./deprecated/Inp
 export {
   default as Itinerary,
   ItinerarySegment,
+  ItinerarySegmentBanner,
   ItinerarySeparator,
   ItineraryStatus,
   ItineraryBadgeList,

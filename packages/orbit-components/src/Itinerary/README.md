@@ -111,6 +111,15 @@ ItinerarySegmentDetail serves as connection between two ItinerarySegmentStop com
 | children | `React.ReactNode` | :heavy_check_mark: |                | The content of ItineraryDetail component, shown when it's expanded |
 | icon     | `React.ReactNode` |                    | `<Airplane />` | The icon of ItineraryDetail component                              |
 
+## ItinerarySegmentBanner
+
+| Name     | Type              | Required           | Default | Description                                                        |
+| -------- | ----------------- | ------------------ | ------- | ------------------------------------------------------------------ |
+| children | `React.ReactNode` | :heavy_check_mark: |         | The content of ItineraryDetail component, shown when it's expanded |
+| onClick  | `React.ReactNode` |                    |         | for handling `onClick` callback in`ItinerarySegmentBanner`         |
+
+### Props
+
 ### Status
 
 | Status       |

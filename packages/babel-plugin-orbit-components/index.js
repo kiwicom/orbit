@@ -36,6 +36,7 @@ const pathOverwrites = {
   ItineraryBadgeList: "Itinerary/ItineraryBadgeList",
   ItinerarySegmentDetail: "Itinerary/ItinerarySegment/ItinerarySegmentDetail",
   ItinerarySegmentStop: "Itinerary/ItinerarySegment/ItinerarySegmentStop",
+  ItinerarySegmentBanner: "Itinerary/ItinerarySegment/ItinerarySegmentBanner",
   LayoutColumn: "Layout/LayoutColumn",
   ListItem: "List/ListItem",
   mediaQueries: "utils/mediaQuery",

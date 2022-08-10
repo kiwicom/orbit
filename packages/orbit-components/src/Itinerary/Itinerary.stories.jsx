@@ -4,6 +4,7 @@ import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import styled, { css } from "styled-components";
 
+import Modal, { ModalSection } from "../Modal";
 import * as Icons from "../icons";
 import {
   KiwicomGuarantee as Guarantee,
@@ -549,6 +550,42 @@ export const Default = (): React.Node => {
   );
 };
 
+export const InsideModal = (): React.Node => {
+  return (
+    <Modal>
+      <ModalSection>
+        <Itinerary>
+          <ItineraryStatus type="critical" label="Rescheduled · 4h later" spaceAfter="medium">
+            <ItinerarySegment noElevation>
+              <ItinerarySegmentStop
+                city="Prague"
+                station="Václav Havel Airport Prague (PRG)"
+                date="Fri, 19.10"
+                type="critical"
+                time="14:05"
+                cancelledTime="12:50"
+              />
+              <ItinerarySegmentDetail
+                duration="2h 30m"
+                summary={<BadgeGroup />}
+                content={content}
+              />
+              <ItinerarySegmentStop
+                city="Vienna"
+                type="critical"
+                station="Vienna International Airport"
+                date="Fri, 19.10"
+                time="15:35"
+                cancelledTime="14:00"
+              />
+            </ItinerarySegment>
+          </ItineraryStatus>
+        </Itinerary>
+      </ModalSection>
+    </Modal>
+  );
+};
+
 export const MultipleBanners = (): React.Node => {
   return (
     <>
@@ -745,5 +782,6 @@ export default {
     "MultipleBanners",
     "Status",
     "Stop",
+    "InsideModal",
   ],
 };

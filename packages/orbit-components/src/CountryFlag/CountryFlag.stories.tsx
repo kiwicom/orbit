@@ -1,6 +1,4 @@
-// @flow
-
-import * as React from "react";
+import React from "react";
 import { text, select } from "@storybook/addon-knobs";
 
 import { CODES, SIZES } from "./consts";
@@ -11,7 +9,7 @@ export default {
   title: "CountryFlag",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const code = text("Code", CODES.ANYWHERE);
 
   return <CountryFlag code={code} />;
@@ -24,7 +22,7 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const code = text("Code", CODES.ANYWHERE);
   const name = text("Name", "Country");
   const size = select("Size", Object.values(SIZES), SIZES.SMALL);

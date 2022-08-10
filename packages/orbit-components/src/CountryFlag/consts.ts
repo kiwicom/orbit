@@ -1,4 +1,3 @@
-// @flow
 export const baseURL = "//images.kiwi.com";
 
 export const CODES = {
@@ -262,12 +261,12 @@ export const CODES = {
   ZW: "zw",
 };
 
-export const SIZES = {
-  SMALL: "small",
-  MEDIUM: "medium",
-};
+export enum SIZES {
+  SMALL = "small",
+  MEDIUM = "medium",
+}
 
-export const TOKENS = {
-  WIDTH: "width",
-  HEIGHT: "height",
-};
+export enum TOKENS {
+  WIDTH = "width",
+  HEIGHT = "height",
+}

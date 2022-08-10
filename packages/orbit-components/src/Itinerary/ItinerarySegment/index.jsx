@@ -7,8 +7,7 @@ import Stack from "../../Stack";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
-import Separator, { StyledSeparator } from "../../Separator";
-import ChevronRight from "../../icons/ChevronRight";
+import Separator from "../../Separator";
 
 import type { Props } from ".";
 
@@ -30,25 +29,6 @@ const StyledWrapper = styled.div`
   `}
 `;
 
-const StyledBannerWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    padding: 0 ${theme.orbit.spaceMedium};
-    ${StyledSeparator} {
-      width: 150% !important;
-      margin-left: -${theme.orbit.spaceMedium};
-    }
-
-    & > div {
-      max-width: calc(100% - 20px);
-    }
-  `}
-`;
-
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
@@ -62,7 +42,6 @@ const ItinerarySegment = ({
   actionable = true,
   onClick,
   banner,
-  onBannerClick,
 }: Props): React.Node => {
   const content = React.Children.toArray(children);
   const [opened, setOpened] = React.useState(false);
@@ -97,13 +76,6 @@ const ItinerarySegment = ({
     setOpened(prev => !prev);
   };
 
-  const handleBannerClick = (ev: SyntheticEvent<HTMLDivElement>) => {
-    ev.stopPropagation();
-    if (onBannerClick) {
-      onBannerClick();
-    }
-  };
-
   return (
     <StyledWrapper
       actionable={actionable}
@@ -116,12 +88,7 @@ const ItinerarySegment = ({
     >
       {parts}
       {Boolean(banner) && <Separator spaceAfter="small" />}
-      {Boolean(banner) && (
-        <StyledBannerWrapper onClick={handleBannerClick}>
-          {banner}
-          <ChevronRight color="secondary" />
-        </StyledBannerWrapper>
-      )}
+      {banner}
     </StyledWrapper>
   );
 };

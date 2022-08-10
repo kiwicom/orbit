@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import ItinerarySegmentBanner from "./ItinerarySegment/ItinerarySegmentBanner";
 import ItineraryBadgeList from "./ItineraryBadgeList";
 import ItinerarySegment from "./ItinerarySegment";
 import ItinerarySeparator from "./ItinerarySeparator";
@@ -33,6 +34,7 @@ const Itinerary = ({ children, dataTest, spaceAfter, id }: Props): React.Node =>
 
 export {
   ItinerarySegment,
+  ItinerarySegmentBanner,
   ItinerarySegmentDetail,
   ItinerarySegmentStop,
   ItinerarySeparator,

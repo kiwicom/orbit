@@ -48,6 +48,7 @@ import typeof InputStepperStatelessType from "./deprecated/InputStepper/InputSte
 import typeof InputStepperType from "./deprecated/InputStepper";
 import typeof ItinerarySegmentType from "./Itinerary/ItinerarySegment";
 import typeof ItinerarySeparatorType from "./Itinerary/ItinerarySeparator";
+import typeof ItinerarySegmentBannerType from "./Itinerary/ItinerarySegment/ItinerarySegmentBanner";
 import typeof ItineraryType from "./Itinerary";
 import typeof ItineraryStatusType from "./Itinerary/ItineraryStatus";
 import typeof ItineraryBadgeListType from "./Itinerary/ItineraryBadgeList";
@@ -222,6 +223,7 @@ declare export var Itinerary: ItineraryType;
 declare export var ItineraryStatus: ItineraryStatusType;
 declare export var ItineraryBadgeList: ItineraryBadgeListType;
 declare export var ItinerarySegment: ItinerarySegmentType;
+declare export var ItinerarySegmentBanner: ItinerarySegmentBannerType;
 declare export var ItinerarySegmentStop: ItinerarySegmentStopType;
 declare export var ItinerarySegmentDetail: ItinerarySegmentDetailType;
 declare export var KeyValue: KeyValueType;

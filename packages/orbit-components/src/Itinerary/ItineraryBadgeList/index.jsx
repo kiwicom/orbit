@@ -10,7 +10,7 @@ import { useWidth } from "../context";
 
 import type { Props } from ".";
 
-const StyledWrapper = styled.div`
+export const StyledWrapper: any = styled.div`
   ${({ theme, offset }) => css`
     margin-bottom: ${getSpacingToken};
     margin-${left}: ${

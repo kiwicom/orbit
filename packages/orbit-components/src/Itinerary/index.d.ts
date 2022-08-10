@@ -6,6 +6,7 @@ import ItinerarySeparator from "./ItinerarySeparator";
 import ItineraryBadgeList from "./ItineraryBadgeList";
 import ItinerarySegmentStop from "./ItinerarySegment/ItinerarySegmentStop";
 import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
+import ItinerarySegmentBanner from "./ItinerarySegment/ItinerarySegmentBanner";
 import Common from "../common/common";
 
 /** DOCS:
@@ -55,6 +56,7 @@ export {
   ItinerarySegment,
   ItinerarySeparator,
   ItinerarySegmentStop,
+  ItinerarySegmentBanner,
   ItinerarySegmentDetail,
   ItineraryStatus,
   ItineraryBadgeList,

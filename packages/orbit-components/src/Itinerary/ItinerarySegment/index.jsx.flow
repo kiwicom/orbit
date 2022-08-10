@@ -15,7 +15,6 @@ export type Props = {|
   +children: React.Node,
   +actionable?: boolean,
   +banner?: React.Node,
-  +onBannerClick?: () => void | Promise<void>,
   ...Globals,
   ...spaceAfter,
 |};

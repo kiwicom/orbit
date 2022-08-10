@@ -1,0 +1,9 @@
+// @flow
+import * as React from "react";
+
+export type Props = {|
+  +children: React.Node,
+  +onClick?: (ev: SyntheticEvent<HTMLDivElement>) => void | Promise<any>,
+|};
+
+declare export default React.ComponentType<Props>;

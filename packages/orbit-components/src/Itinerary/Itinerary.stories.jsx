@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
-import { action } from "@storybook/addon-actions";
 import styled, { css } from "styled-components";
 
 import Modal, { ModalSection } from "../Modal";
@@ -36,6 +35,7 @@ import Separator from "../Separator";
 
 import Itinerary, {
   ItinerarySeparator,
+  ItinerarySegmentBanner,
   ItinerarySegment,
   ItineraryBadgeList,
   ItinerarySegmentDetail,
@@ -357,7 +357,7 @@ export const Status = (): React.Node => {
   );
 };
 
-export const ItnerarySeparatorComponent = (): React.Node => {
+export const ItinerarySeparatorComponent = (): React.Node => {
   return (
     <Stack direction="column">
       <ItinerarySeparator>
@@ -390,25 +390,26 @@ export const Stop = (): React.Node => {
       <Heading type="title2">Hidden city example</Heading>
       <Itinerary>
         <ItinerarySegment
-          onBannerClick={action("onBannerClick")}
           banner={
             <Stack inline align="stretch">
-              <ItineraryBadgeList>
-                <BadgeListItem type="warning" icon={<StarFull color="warning" />}>
-                  <StyledText as="span" type="warning">
-                    Hidden city hack:{" "}
-                  </StyledText>{" "}
-                  This itinerary finishes in New York (United States), but you’ll get off during the
-                  layover
-                </BadgeListItem>
-                <BadgeListItem icon={<Visa />}>
-                  Check travel document requirements for all destinations, including passport, visa
-                  and COVID-19 documents.
-                </BadgeListItem>
-                <BadgeListItem icon={<BaggageCheckedNone />}>
-                  You can’t bring checked or cabin baggage.
-                </BadgeListItem>
-              </ItineraryBadgeList>
+              <ItinerarySegmentBanner>
+                <ItineraryBadgeList>
+                  <BadgeListItem type="warning" icon={<StarFull color="warning" />}>
+                    <StyledText as="span" type="warning">
+                      Hidden city hack:{" "}
+                    </StyledText>{" "}
+                    This itinerary finishes in New York (United States), but you’ll get off during
+                    the layover
+                  </BadgeListItem>
+                  <BadgeListItem icon={<Visa />}>
+                    Check travel document requirements for all destinations, including passport,
+                    visa and COVID-19 documents.
+                  </BadgeListItem>
+                  <BadgeListItem icon={<BaggageCheckedNone />}>
+                    You can’t bring checked or cabin baggage.
+                  </BadgeListItem>
+                </ItineraryBadgeList>
+              </ItinerarySegmentBanner>
             </Stack>
           }
         >
@@ -450,17 +451,18 @@ export const Stop = (): React.Node => {
       <Heading type="title2">Throwaway ticketing</Heading>
       <Itinerary>
         <ItinerarySegment
-          onBannerClick={action("onBannerClick")}
           banner={
             <Stack inline align="stretch">
-              <ItineraryBadgeList>
-                <BadgeListItem type="info" icon={<StarFull color="info" />}>
-                  <StyledText as="span" type="info" weight="bold">
-                    Throwaway ticketing hack:{" "}
-                  </StyledText>{" "}
-                  You are saving money with this travel hack.
-                </BadgeListItem>
-              </ItineraryBadgeList>
+              <ItinerarySegmentBanner>
+                <ItineraryBadgeList>
+                  <BadgeListItem type="info" icon={<StarFull color="info" />}>
+                    <StyledText as="span" type="info" weight="bold">
+                      Throwaway ticketing hack:{" "}
+                    </StyledText>{" "}
+                    You are saving money with this travel hack.
+                  </BadgeListItem>
+                </ItineraryBadgeList>
+              </ItinerarySegmentBanner>
             </Stack>
           }
         >
@@ -555,29 +557,59 @@ export const InsideModal = (): React.Node => {
     <Modal>
       <ModalSection>
         <Itinerary>
-          <ItineraryStatus type="critical" label="Rescheduled · 4h later" spaceAfter="medium">
-            <ItinerarySegment noElevation>
+          <ItineraryStatus type="success" label="This part is new">
+            <ItinerarySegment
+              banner={
+                <Stack>
+                  <ItinerarySegmentBanner>
+                    <ItineraryBadgeList>
+                      <BadgeListItem icon={<StarFull />} type="warning">
+                        Hidden city hack: This itinerary finishes in New York (United States), but
+                        you’ll get off during the layover.
+                      </BadgeListItem>
+                      <BadgeListItem icon={<Visa />}>
+                        Check travel document requirements for all destinations, including passport,
+                        visa and COVID-19 documents.
+                      </BadgeListItem>
+                      <BadgeListItem icon={<BaggageCheckedNone />}>
+                        You can’t bring checked or cabin baggage.
+                      </BadgeListItem>
+                    </ItineraryBadgeList>
+                  </ItinerarySegmentBanner>
+                  <Separator />
+                  <ItinerarySegmentBanner>
+                    <ItineraryBadgeList>
+                      <BadgeListItem icon={<Location />} type="warning">
+                        You’ll depart from a different place in Prague: Václav Havel Airport Prague
+                      </BadgeListItem>
+                    </ItineraryBadgeList>
+                  </ItinerarySegmentBanner>
+                </Stack>
+              }
+            >
               <ItinerarySegmentStop
                 city="Prague"
-                station="Václav Havel Airport Prague (PRG)"
-                date="Fri, 19.10"
-                type="critical"
-                time="14:05"
-                cancelledTime="12:50"
+                station="Václav Haivel Airport Prague (PRG)"
+                time="16:20"
+                date="Wed, 15.6"
               />
               <ItinerarySegmentDetail
-                duration="2h 30m"
-                summary={<BadgeGroup />}
+                duration="2h 10m"
+                summary={
+                  <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                    Ryanair
+                  </Badge>
+                }
                 content={content}
               />
               <ItinerarySegmentStop
-                city="Vienna"
-                type="critical"
-                station="Vienna International Airport"
-                date="Fri, 19.10"
-                time="15:35"
-                cancelledTime="14:00"
+                hidden
+                city="Frankfurt"
+                time="18:30"
+                date="Wed, 15.6"
+                station="Frankfurt International Airport "
               />
+              <ItinerarySegmentStop city="New York JFK" station="United States" />
             </ItinerarySegment>
           </ItineraryStatus>
         </Itinerary>
@@ -593,35 +625,38 @@ export const MultipleBanners = (): React.Node => {
       <Itinerary>
         <ItineraryStatus type="success" label="This part is new">
           <ItinerarySegment
-            onBannerClick={action("onBannerClick")}
             banner={
               <Stack direction="column" align="stretch" spacing="XSmall">
-                <ItineraryBadgeList>
-                  <BadgeListItem type="info" icon={<StarFull color="info" />}>
-                    <Text as="span" type="info" weight="bold">
-                      Throwaway ticketing hack:{" "}
-                    </Text>{" "}
-                    You are saving money with this travel hack.
-                  </BadgeListItem>
-                </ItineraryBadgeList>
+                <ItinerarySegmentBanner>
+                  <ItineraryBadgeList>
+                    <BadgeListItem type="info" icon={<StarFull color="info" />}>
+                      <Text as="span" type="info" weight="bold">
+                        Throwaway ticketing hack:{" "}
+                      </Text>{" "}
+                      You are saving money with this travel hack.
+                    </BadgeListItem>
+                  </ItineraryBadgeList>
+                </ItinerarySegmentBanner>
                 <Separator />
-                <ItineraryBadgeList>
-                  <Stack spacing="XSmall">
-                    <BadgeListItem icon={<Location color="secondary" />}>
-                      You’ll depart from a different place in New York: John F. Kennedy
-                      International.
-                    </BadgeListItem>
-                    <BadgeListItem icon={<Location color="secondary" />}>
-                      You’ll depart from a different place in New York: John F. Kennedy
-                      International.
-                    </BadgeListItem>
-                    <BadgeListItem icon={<Accommodation color="secondary" />}>
-                      We won’t cover your overnight stay. Hotel coverage is only available if the
-                      disruption happens during the trip. If you want to avoid extra hotel costs
-                      please choose a different alternative or a refund.
-                    </BadgeListItem>
-                  </Stack>
-                </ItineraryBadgeList>
+                <ItinerarySegmentBanner>
+                  <ItineraryBadgeList>
+                    <Stack spacing="XSmall">
+                      <BadgeListItem icon={<Location color="secondary" />}>
+                        You’ll depart from a different place in New York: John F. Kennedy
+                        International.
+                      </BadgeListItem>
+                      <BadgeListItem icon={<Location color="secondary" />}>
+                        You’ll depart from a different place in New York: John F. Kennedy
+                        International.
+                      </BadgeListItem>
+                      <BadgeListItem icon={<Accommodation color="secondary" />}>
+                        We won’t cover your overnight stay. Hotel coverage is only available if the
+                        disruption happens during the trip. If you want to avoid extra hotel costs
+                        please choose a different alternative or a refund.
+                      </BadgeListItem>
+                    </Stack>
+                  </ItineraryBadgeList>
+                </ItinerarySegmentBanner>
               </Stack>
             }
           >
@@ -663,31 +698,35 @@ export const MultipleBanners = (): React.Node => {
           <ItinerarySegment
             banner={
               <Stack>
-                <ItineraryBadgeList>
-                  <BadgeListItem icon={<StarFull />} type="warning">
-                    Hidden city hack: This itinerary finishes in New York (United States), but
-                    you’ll get off during the layover.
-                  </BadgeListItem>
-                  <BadgeListItem icon={<Visa />}>
-                    Check travel document requirements for all destinations, including passport,
-                    visa and COVID-19 documents.
-                  </BadgeListItem>
-                  <BadgeListItem icon={<BaggageCheckedNone />}>
-                    You can’t bring checked or cabin baggage.
-                  </BadgeListItem>
-                </ItineraryBadgeList>
+                <ItinerarySegmentBanner>
+                  <ItineraryBadgeList>
+                    <BadgeListItem icon={<StarFull />} type="warning">
+                      Hidden city hack: This itinerary finishes in New York (United States), but
+                      you’ll get off during the layover.
+                    </BadgeListItem>
+                    <BadgeListItem icon={<Visa />}>
+                      Check travel document requirements for all destinations, including passport,
+                      visa and COVID-19 documents.
+                    </BadgeListItem>
+                    <BadgeListItem icon={<BaggageCheckedNone />}>
+                      You can’t bring checked or cabin baggage.
+                    </BadgeListItem>
+                  </ItineraryBadgeList>
+                </ItinerarySegmentBanner>
                 <Separator />
-                <ItineraryBadgeList>
-                  <BadgeListItem icon={<Location />} type="warning">
-                    You’ll depart from a different place in Prague: Václav Havel Airport Prague
-                  </BadgeListItem>
-                </ItineraryBadgeList>
+                <ItinerarySegmentBanner>
+                  <ItineraryBadgeList>
+                    <BadgeListItem icon={<Location />} type="warning">
+                      You’ll depart from a different place in Prague: Václav Havel Airport Prague
+                    </BadgeListItem>
+                  </ItineraryBadgeList>
+                </ItinerarySegmentBanner>
               </Stack>
             }
           >
             <ItinerarySegmentStop
               city="Prague"
-              station="Václav Haivel Airport Prague (PRG)"
+              station="Václav Havel Airport Prague (PRG)"
               time="16:20"
               date="Wed, 15.6"
             />

@@ -1,12 +1,20 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import type { FilterWrapperType } from "./FilterWrapper";
 import defaultTheme from "../../defaultTheme";
 import ButtonLink from "../../ButtonLink";
 
 const StyledOnlyButton = styled.div``;
+
+interface Props {
+  readonly child: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  readonly children: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  readonly onlySelectionText: React.ReactNode;
+  readonly onOnlySelection?: (
+    ev: React.SyntheticEvent<HTMLButtonElement>,
+    obj: Record<"label" | "value", string>,
+  ) => void | Promise<void>;
+}
 
 const hoverAndFocus = () => css`
   background-color: ${({ theme }) => theme.orbit.paletteBlueLight};
@@ -17,7 +25,7 @@ const hoverAndFocus = () => css`
   }
 `;
 
-const StyledContentWrapper = styled.div`
+const StyledContentWrapper = styled.div<{ disabled: boolean }>`
   ${({ disabled }) => css`
     box-sizing: border-box;
     width: 100%;
@@ -58,17 +66,11 @@ const StyledContentWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContentWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const FilterWrapper: FilterWrapperType = ({
-  child,
-  children,
-  onOnlySelection,
-  onlySelectionText,
-}) => {
+const FilterWrapper = ({ child, children, onOnlySelection, onlySelectionText }: Props) => {
   const { value, label, disabled } = child.props;
 
   return (

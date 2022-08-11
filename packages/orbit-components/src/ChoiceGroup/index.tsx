@@ -1,8 +1,7 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
-import Heading from "../Heading";
+import Heading, { Type } from "../Heading";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import Feedback, { StyledFormFeedback } from "./components/Feedback";
@@ -10,14 +9,14 @@ import defaultTheme from "../defaultTheme";
 import FilterWrapper from "./components/FilterWrapper";
 import useRandomId from "../hooks/useRandomId";
 import useTheme from "../hooks/useTheme";
+import { Props, Size } from "./index.d";
 
-import type { Props } from ".";
-
-const getHeadingSize = size => {
-  const SIZES = {
+const getHeadingSize = (size: Size): Type => {
+  const SIZES: Record<Size, Type> = {
     [LABEL_SIZES.NORMAL]: "title3",
     [LABEL_SIZES.LARGE]: "title2",
   };
+
   return SIZES[size];
 };
 
@@ -33,12 +32,11 @@ const StyledChoiceGroup = styled.div`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChoiceGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const ChoiceGroup: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
+const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
   (
     {
       dataTest,
@@ -54,11 +52,11 @@ const ChoiceGroup: React.AbstractComponent<Props, HTMLDivElement> = React.forwar
       onChange,
     },
     ref,
-  ): React.Node => {
+  ) => {
     const groupID = useRandomId();
     const theme = useTheme();
 
-    const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>) => {
+    const handleChange = (ev: React.SyntheticEvent<HTMLInputElement>) => {
       if (onChange) {
         onChange(ev);
       }
@@ -89,13 +87,16 @@ const ChoiceGroup: React.AbstractComponent<Props, HTMLDivElement> = React.forwar
             Container: "div",
             Item: ({ children: itemChildren }) => {
               return !filter ? (
+                // @ts-expect-error TODO
                 React.cloneElement(React.Children.only(itemChildren), itemProps)
               ) : (
                 <FilterWrapper
+                  // @ts-expect-error TODO
                   child={React.Children.only(itemChildren)}
                   onOnlySelection={onOnlySelection}
                   onlySelectionText={onlySelectionText}
                 >
+                  {/* @ts-expect-error TODO */}
                   {React.cloneElement(React.Children.only(itemChildren), itemProps)}
                 </FilterWrapper>
               );
@@ -106,13 +107,16 @@ const ChoiceGroup: React.AbstractComponent<Props, HTMLDivElement> = React.forwar
           <Stack direction="column" spacing={filter ? "none" : "XSmall"}>
             {React.Children.map(children, child => {
               return !filter ? (
+                // @ts-expect-error TODO
                 React.cloneElement(child, itemProps)
               ) : (
                 <FilterWrapper
+                  // @ts-expect-error TODO
                   child={child}
                   onOnlySelection={onOnlySelection}
                   onlySelectionText={onlySelectionText}
                 >
+                  {/* @ts-expect-error TODO */}
                   {React.cloneElement(child, itemProps)}
                 </FilterWrapper>
               );

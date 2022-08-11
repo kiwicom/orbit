@@ -1,9 +1,17 @@
 // @flow
 import { css } from "styled-components";
 
-import { QUERIES, type Devices } from "./consts";
+import { QUERIES } from "./consts";
 
 import typeof MediaQueries, { getBreakpointWidth as GetBreakpointWidth } from ".";
+
+export type Devices =
+  | "largeDesktop"
+  | "desktop"
+  | "tablet"
+  | "largeMobile"
+  | "mediumMobile"
+  | "smallMobile";
 
 type BreakpointToken =
   | "widthBreakpointMediumMobile"

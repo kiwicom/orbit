@@ -1,9 +1,8 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import defaultTheme from "../defaultTheme";
+import defaultTheme, { Theme } from "../defaultTheme";
 import TOKENS from "./consts";
 import Check from "../icons/Check";
 import { StyledText } from "../Text";
@@ -11,17 +10,26 @@ import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
 import media from "../utils/mediaQuery";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
+interface StyledInputProps extends Props {
+  error: boolean;
+}
 
-const getToken = name => ({ theme, hasError, disabled, checked }) => {
+const getToken = (name: keyof typeof TOKENS) => ({
+  theme,
+  hasError,
+  disabled,
+  checked,
+}: {
+  theme: Theme;
+  hasError?: boolean;
+  disabled?: boolean;
+  checked?: boolean;
+}): string => {
   const resolveBorderColor = () => {
-    if (disabled) {
-      return theme.orbit.paletteCloudDarker;
-    }
-    if (checked) {
-      return theme.orbit.paletteBlueNormal;
-    }
+    if (disabled) return theme.orbit.paletteCloudDarker;
+    if (checked) return theme.orbit.paletteBlueNormal;
     if (hasError && !disabled && !checked) {
       return theme.orbit.borderColorCheckboxRadioError;
     }
@@ -30,12 +38,8 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
   };
 
   const getBackground = () => {
-    if (disabled && checked) {
-      return theme.orbit.paletteCloudDarker;
-    }
-    if (disabled && !checked) {
-      return theme.orbit.paletteCloudNormal;
-    }
+    if (disabled && checked) return theme.orbit.paletteCloudDarker;
+    if (disabled && !checked) return theme.orbit.paletteCloudNormal;
     return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
   };
 
@@ -50,7 +54,7 @@ const getToken = name => ({ theme, hasError, disabled, checked }) => {
   return tokens[name];
 };
 
-const IconContainer = styled.div`
+const StyledIconContainer = styled.div<{ checked: boolean; disabled: boolean }>`
   ${({ theme, checked }) => css`
     position: relative;
     box-sizing: border-box;
@@ -84,20 +88,18 @@ const IconContainer = styled.div`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-IconContainer.defaultProps = {
+StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const TextContainer = styled.div`
+const StyledTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
   flex: 1; // IE wrapping fix
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-TextContainer.defaultProps = {
+StyledTextContainer.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -109,12 +111,11 @@ const Info = styled.span`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Info.defaultProps = {
   theme: defaultTheme,
 };
 
-const LabelText = styled.span`
+const StyledLabelText = styled.span`
   ${({ theme }) => css`
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${theme.orbit.fontWeightMedium};
@@ -131,39 +132,37 @@ const LabelText = styled.span`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-LabelText.defaultProps = {
+StyledLabelText.defaultProps = {
   theme: defaultTheme,
 };
 
-const Input = styled.input`
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-  &:checked + ${IconContainer} > svg {
-    visibility: visible;
-  }
+const StyledInput = styled.input<StyledInputProps>`
+  ${({ theme, error }) => css`
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    &:checked + ${StyledIconContainer} > svg {
+      visibility: visible;
+    }
 
-  &:focus + ${IconContainer} {
-    border: ${({ theme, error }) =>
-      `1px ${theme.orbit.borderStyleInput} ${
+    &:focus + ${StyledIconContainer} {
+      border: ${`1px ${theme.orbit.borderStyleInput} ${
         error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
       }`};
-    box-shadow: 0 0 0 3px
-      ${({ theme, error }) =>
-        convertHexToRgba(
+      box-shadow: 0 0 0 3px
+        ${convertHexToRgba(
           error ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
           15,
         )};
-  }
+    }
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-Input.defaultProps = {
+StyledInput.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Label: any = styled(({ className, children, dataTest }) => (
+export const StyledLabel = styled(({ className, children, dataTest }) => (
   <label className={className} data-test={dataTest}>
     {children}
   </label>
@@ -177,18 +176,18 @@ export const Label: any = styled(({ className, children, dataTest }) => (
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   position: relative;
 
-  ${IconContainer} {
+  ${StyledIconContainer} {
     color: ${getToken(TOKENS.iconColor)};
     border: 1px solid ${getToken(TOKENS.borderColor)};
   }
 
-  &:hover ${IconContainer} {
+  &:hover ${StyledIconContainer} {
     border-color: ${({ disabled, theme, checked }) =>
       !disabled && checked ? theme.orbit.paletteBlueDark : theme.orbit.paletteBlueLightActive};
     box-shadow: none;
   }
 
-  &:active ${IconContainer} {
+  &:active ${StyledIconContainer} {
     border-color: ${({ disabled, theme }) =>
       disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
     transform: ${({ disabled, theme }) =>
@@ -196,68 +195,65 @@ export const Label: any = styled(({ className, children, dataTest }) => (
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-Label.defaultProps = {
+StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-const Checkbox: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>(
-  (props, ref) => {
-    const {
-      label,
-      value,
-      hasError = false,
-      disabled = false,
-      checked = false,
-      name,
-      onChange,
-      dataTest,
-      id,
-      info,
-      readOnly,
-      tabIndex,
-      tooltip,
-    } = props;
+const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+  const {
+    label,
+    value,
+    hasError = false,
+    disabled = false,
+    checked = false,
+    name,
+    onChange,
+    dataTest,
+    id,
+    info,
+    readOnly,
+    tabIndex,
+    tooltip,
+  } = props;
 
-    const preventOnClick = ev => ev.preventDefault();
+  const preventOnClick: React.MouseEventHandler<HTMLDivElement> = ev => ev.preventDefault();
 
-    return (
-      <Label disabled={disabled} hasError={hasError} checked={checked}>
-        <Input
-          data-test={dataTest}
-          id={id}
-          data-state={getFieldDataState(!!hasError)}
-          value={value}
-          type="checkbox"
+  return (
+    <StyledLabel disabled={disabled} hasError={hasError} checked={checked}>
+      <StyledInput
+        data-test={dataTest}
+        id={id}
+        data-state={getFieldDataState(!!hasError)}
+        value={value}
+        type="checkbox"
+        disabled={disabled}
+        name={name}
+        tabIndex={tabIndex}
+        checked={checked}
+        onChange={onChange}
+        ref={ref}
+        readOnly={readOnly}
+        error={hasError}
+      />
+      {cloneWithTooltip(
+        tooltip,
+        <StyledIconContainer
           disabled={disabled}
-          name={name}
-          tabIndex={tabIndex}
           checked={checked}
-          onChange={onChange}
-          ref={ref}
-          readOnly={readOnly}
-          error={hasError}
-        />
-        {cloneWithTooltip(
-          tooltip,
-          <IconContainer
-            disabled={disabled}
-            checked={checked}
-            onClick={readOnly ? preventOnClick : null}
-          >
-            <Check customColor="white" />
-          </IconContainer>,
-        )}
-        {(label || info) && (
-          <TextContainer>
-            {label && <LabelText>{label}</LabelText>}
-            {info && <Info>{info}</Info>}
-          </TextContainer>
-        )}
-      </Label>
-    );
-  },
-);
+          onClick={readOnly ? preventOnClick : undefined}
+        >
+          <Check customColor="white" />
+        </StyledIconContainer>,
+      )}
+      {(label || info) && (
+        <StyledTextContainer>
+          {label && <StyledLabelText>{label}</StyledLabelText>}
+          {info && <Info>{info}</Info>}
+        </StyledTextContainer>
+      )}
+    </StyledLabel>
+  );
+});
 
 Checkbox.displayName = "Checkbox";
 

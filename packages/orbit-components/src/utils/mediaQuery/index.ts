@@ -2,6 +2,7 @@ import { Interpolation, css, ThemeProps } from "styled-components";
 
 import { Theme } from "../../defaultTheme";
 import { QUERIES } from "./consts";
+import { MediaQueries } from "./index.d";
 
 enum TOKEN {
   mediumMobile = "widthBreakpointMediumMobile",
@@ -19,16 +20,17 @@ export const getBreakpointWidth = (
   return pure ? theme.orbit[TOKEN[name]] : `(min-width: ${theme.orbit[TOKEN[name]]}px)`;
 };
 
-const devices = [...Object.values(QUERIES)];
+const mediaQueries = Object.values(QUERIES).reduce<MediaQueries>(
+  (acc: MediaQueries, device: keyof typeof QUERIES) => {
+    acc[device] = style => css`
+      @media ${({ theme }) => getBreakpointWidth(device, theme)} {
+        ${style};
+      }
+    `;
 
-const mediaQueries = devices.reduce((acc, device) => {
-  acc[device] = (style: Interpolation<ThemeProps<any>>) => css`
-    @media ${({ theme }) => getBreakpointWidth(device, theme)} {
-      ${style};
-    }
-  `;
-
-  return acc;
-}, {});
+    return acc;
+  },
+  { mediumMobile: {}, largeMobile: {}, tablet: {}, desktop: {}, largeDesktop: {} } as MediaQueries,
+);
 
 export default mediaQueries;

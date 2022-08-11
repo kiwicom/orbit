@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
@@ -14,7 +13,7 @@ export default {
   title: "ChoiceGroup",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const label = text("Label", "What was the reason for your cancellation?");
   return (
     <ChoiceGroup label={label} onChange={action("onChange")}>
@@ -31,7 +30,7 @@ Default.story = {
   },
 };
 
-export const Multiple = (): React.Node => {
+export const Multiple = () => {
   const label = text("Label", "What was the reason for your cancellation?");
   return (
     <ChoiceGroup label={label} onChange={action("onChange")}>
@@ -48,7 +47,7 @@ Multiple.story = {
   },
 };
 
-export const Filter = (): React.Node => {
+export const Filter = () => {
   const label = text("Label", "What was the reason for your cancellation?");
   const onlySelectionText = text("onlySelectionText", "Only");
   return (
@@ -72,7 +71,7 @@ Filter.story = {
   },
 };
 
-export const WithError = (): React.Node => {
+export const WithError = () => {
   const label = text("Label", "Label");
   const error = text("Error", "Error message (explain how to solve it)");
 
@@ -94,7 +93,7 @@ WithError.story = {
   },
 };
 
-export const RenderProp = (): React.Node => {
+export const RenderProp = () => {
   const boxShadowSize = "3px";
   return (
     <ChoiceGroup label="What was the reason for your cancellation?" onChange={action("onChange")}>
@@ -126,6 +125,7 @@ export const RenderProp = (): React.Node => {
                 ...style,
               }}
             >
+              {/* @ts-expect-error TODO */}
               <Item>
                 <Radio label={`Option ${index}`} value={index} />
               </Item>
@@ -144,7 +144,7 @@ RenderProp.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const label = text("Label", "What was the reason for your cancellation?");
   const labelSize = select("labelSize", Object.values(LABEL_SIZES), LABEL_SIZES.NORMAL);

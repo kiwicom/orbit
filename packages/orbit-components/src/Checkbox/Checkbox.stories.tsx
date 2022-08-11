@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean } from "@storybook/addon-knobs";
@@ -15,7 +13,7 @@ export default {
   title: "CheckBox",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const label = text("Label", "Label");
   const checked = boolean("Checked", false);
   return <Checkbox label={label} checked={checked} onChange={action("changed")} />;
@@ -27,7 +25,7 @@ Default.story = {
   },
 };
 
-export const WithHelp = (): React.Node => {
+export const WithHelp = () => {
   const label = text("Label", "Label");
   const value = text("Value", "value");
   const info = text("Info", "Additional information about this choice");
@@ -42,7 +40,7 @@ WithHelp.story = {
   },
 };
 
-export const WithError = (): React.Node => {
+export const WithError = () => {
   const label = text("Label", "Label");
   const hasError = boolean("hasError", true);
   const checked = boolean("checked", false);
@@ -60,7 +58,7 @@ WithError.story = {
   },
 };
 
-export const WithTextLinkInLabel = (): React.Node => {
+export const WithTextLinkInLabel = () => {
   const checked = boolean("checked", true);
   return (
     <Checkbox
@@ -89,7 +87,7 @@ WithTextLinkInLabel.story = {
   },
 };
 
-export const WithTooltip = (): React.Node => {
+export const WithTooltip = () => {
   return (
     <Checkbox
       label="Direct"
@@ -108,7 +106,7 @@ WithTooltip.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const label = text("Label", "Label");
   const value = text("Value", "value");
   const checked = boolean("Checked", true);
@@ -140,7 +138,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Checkbox
       label={

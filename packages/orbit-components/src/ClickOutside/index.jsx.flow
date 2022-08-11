@@ -1,9 +1,0 @@
-// @flow
-import * as React from "react";
-
-export type Props = {|
-  +onClickOutside?: (ev: MouseEvent) => void | Promise<any>,
-  +children: React.Node | React.Node[],
-|};
-
-declare export default React.ComponentType<Props>;

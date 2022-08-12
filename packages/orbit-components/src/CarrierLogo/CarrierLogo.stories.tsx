@@ -1,10 +1,9 @@
-// @flow
-
 import * as React from "react";
 import { object, select, text } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import { Carrier } from "./index.d";
 
 import CarrierLogo from ".";
 
@@ -14,8 +13,8 @@ export default {
   title: "CarrierLogo",
 };
 
-export const OneCarrier = (): React.Node => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), "large");
+export const OneCarrier = () => {
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
   const dataTest = text("dataTest", "test");
 
   const carrier = [{ code: "FR", name: "Ryanair" }];
@@ -34,8 +33,8 @@ OneCarrier.story = {
   },
 };
 
-export const TwoCarriers = (): React.Node => {
-  const carrier = [
+export const TwoCarriers = () => {
+  const carrier: Carrier[] = [
     { code: "FR", name: "Ryanair" },
     { code: "TO", name: "Transavia France" },
   ];
@@ -54,7 +53,7 @@ TwoCarriers.story = {
   },
 };
 
-export const FourCarriers = (): React.Node => {
+export const FourCarriers = () => {
   const carrier = [
     { code: "FR", name: "Ryanair" },
     { code: "TO", name: "Transavia France" },
@@ -76,8 +75,8 @@ FourCarriers.story = {
   },
 };
 
-export const NonExistingCarriers = (): React.Node => {
-  const carrier = [
+export const NonExistingCarriers = () => {
+  const carrier: Carrier[] = [
     { code: "LOL", name: "Lorem ipsum", type: "airline" },
     { code: "KEK", name: "Lorem ipsum", type: "bus" },
     { code: "BUR", name: "Lorem ipsum", type: "train" },
@@ -97,9 +96,13 @@ NonExistingCarriers.story = {
   },
 };
 
-export const NonExistingCarrier = (): React.Node => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), "large");
-  const carrierType = select("Type", Object.values(CARRIER_TYPE_OPTIONS), "airline");
+export const NonExistingCarrier = () => {
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
+  const carrierType = select(
+    "Type",
+    Object.values(CARRIER_TYPE_OPTIONS),
+    CARRIER_TYPE_OPTIONS.AIRLINE,
+  );
   const carrier = [{ code: "LAL", name: "Lorem ipsum", type: carrierType }];
   const carriersObject = object(carriersLabel, carrier);
 
@@ -115,7 +118,7 @@ NonExistingCarrier.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <CarrierLogo
       size="large"

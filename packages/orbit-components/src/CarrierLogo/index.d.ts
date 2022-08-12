@@ -5,12 +5,13 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-type Size = "small" | "medium" | "large";
+export type Size = "small" | "medium" | "large";
+export type CarrierType = "airline" | "bus" | "train" | "ferry" | "private_transfer" | "kiwicom";
 
 export interface Carrier {
   code: string;
   name: string;
-  type?: "airline" | "bus" | "train" | "ferry" | "private_transfer" | "kiwicom";
+  type?: CarrierType;
 }
 
 export interface Props extends Common.Globals {

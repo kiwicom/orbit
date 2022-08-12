@@ -1,11 +1,18 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import defaultTheme, { Theme } from "../defaultTheme";
 import { SIZE_OPTIONS, BASE_URL } from "./consts";
+import { Props, CarrierType, Size, Carrier } from "./index.d";
 
-import type { Props } from ".";
+interface StyledProps {
+  rounded?: boolean;
+  carrierType?: CarrierType;
+  carriersLength: number;
+  size: Size;
+  theme: Theme;
+  code: string;
+}
 
 const getRenderSize = ({ theme, size }) => {
   const renderSizes = {
@@ -44,15 +51,17 @@ const getURLSizes = ({ size }) => {
   };
 };
 
-const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength, size, code }) => {
-  const urlSizes =
-    carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
-  return {
-    src: `${BASE_URL}/airlines/${urlSizes.base}x${urlSizes.base}/${code}.png?default=${carrierType}.png`,
-    srcSet: `${BASE_URL}/airlines/${urlSizes.retina}x${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
-  };
-})`
-  ${({ theme, rounded }) => css`
+const StyledImage = styled.img.attrs<StyledProps>(
+  ({ carrierType = "airline", carriersLength, size, code }) => {
+    const urlSizes =
+      carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
+    return {
+      src: `${BASE_URL}/airlines/${urlSizes.base}x${urlSizes.base}/${code}.png?default=${carrierType}.png`,
+      srcSet: `${BASE_URL}/airlines/${urlSizes.retina}x${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
+    };
+  },
+)`
+  ${({ theme, rounded }: StyledProps) => css`
     background-color: ${theme.orbit.backgroundCarrierLogo};
     border-radius: ${rounded ? theme.orbit.borderRadiusCircle : theme.orbit.borderRadiusNormal};
     height: ${getCarrierLogoSize};
@@ -63,12 +72,11 @@ const StyledImage = styled.img.attrs(({ carrierType = "airline", carriersLength,
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledImage.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledCarrierLogo: any = styled.div`
+export const StyledCarrierLogo = styled.div<{ theme: Theme; carriers: Carrier[]; size: Size }>`
   ${({ theme, carriers, size }) => css`
     background-color: ${theme.orbit.backgroundCarrierLogo};
     height: ${carriers.length > 1
@@ -85,18 +93,11 @@ export const StyledCarrierLogo: any = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCarrierLogo.defaultProps = {
   theme: defaultTheme,
 };
 
-const CarrierLogo = ({
-  size = SIZE_OPTIONS.LARGE,
-  carriers,
-  dataTest,
-  id,
-  rounded,
-}: Props): React.Node => (
+const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest, id, rounded }: Props) => (
   <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest} id={id}>
     {carriers.slice(0, 4).map(carrierImage => (
       <StyledImage

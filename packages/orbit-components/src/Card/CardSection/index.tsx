@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 
 import KEY_CODE_MAP from "../../common/keyMaps";
@@ -8,8 +7,7 @@ import SectionHeader from "./components/SectionHeader";
 import SectionContent from "./components/SectionContent";
 import useRandomId from "../../hooks/useRandomId";
 import { ELEMENT_OPTIONS } from "../../Heading/consts";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const CardSection = ({
   title,
@@ -27,7 +25,7 @@ const CardSection = ({
   dataTest,
   actions,
   noSeparator,
-}: Props): React.Node => {
+}: Props) => {
   const { addSection, removeSection, index, roundedBorders, noBorderTop, isOpened } = useCard();
   const [opened, setOpened] = React.useState(isOpened || initialExpanded);
 
@@ -74,7 +72,7 @@ const CardSection = ({
     }
   };
 
-  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (ev: React.KeyboardEvent<HTMLDivElement>) => {
     if (ev.keyCode === KEY_CODE_MAP.SPACE) {
       ev.preventDefault();
     }

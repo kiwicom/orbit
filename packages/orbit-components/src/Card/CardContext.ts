@@ -1,10 +1,15 @@
-// @flow
 import * as React from "react";
 
-import type { Context } from "./CardContext";
+interface Context {
+  addSection: (arg: number) => void;
+  isOpened: boolean;
+  removeSection: (arg: number) => void;
+  roundedBorders: Record<"top" | "bottom", boolean>;
+  index: number;
+  noBorderTop: boolean;
+}
 
 export const cardDefault: Context = {
-  setExpandedSections: () => {},
   addSection: () => {},
   isOpened: false,
   removeSection: () => {},
@@ -16,7 +21,7 @@ export const cardDefault: Context = {
   noBorderTop: false,
 };
 
-const context: React.Context<Context> = React.createContext(cardDefault);
+const context = React.createContext<Context>(cardDefault);
 context.displayName = "CardOrbitContext";
 
 export const useCard = (): Context => React.useContext(context);

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -8,38 +7,38 @@ import Slide from "../../../utils/Slide";
 import mq from "../../../utils/mediaQuery";
 import useBoundingRect from "../../../hooks/useBoundingRect";
 
-const StyledCardSectionContent = styled.div`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
-  width: 100%;
-  border-top: ${({ theme, expanded, noSeparator }) =>
-    expanded && !noSeparator
+interface Props {
+  expandable: boolean;
+  expanded?: boolean;
+  children?: React.ReactNode;
+  noSeparator?: boolean;
+  hasPaddingTop: boolean;
+  slideID: string;
+  labelID: string;
+}
+
+const StyledCardSectionContent = styled.div<Partial<Props>>`
+  ${({ theme, expanded, noSeparator, hasPaddingTop }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeTextNormal};
+    line-height: ${theme.orbit.lineHeightTextNormal};
+    color: ${theme.orbit.colorTextPrimary};
+    width: 100%;
+    border-top: ${expanded && !noSeparator
       ? `1px solid ${theme.orbit.paletteCloudNormal}`
       : `0px solid ${theme.orbit.paletteCloudNormal}`};
-  padding-top: ${({ hasPaddingTop, theme }) => hasPaddingTop && theme.orbit.spaceMedium};
-  transition: ${transition(["padding", "border-top"], "fast", "linear")};
+    padding-top: ${hasPaddingTop && theme.orbit.spaceMedium};
+    transition: ${transition(["padding", "border-top"], "fast", "linear")};
 
-  ${mq.largeMobile(css`
-    padding-top: ${({ theme, hasPaddingTop }) => hasPaddingTop && theme.orbit.spaceLarge};
-  `)}
+    ${mq.largeMobile(css`
+      padding-top: ${theme.orbit.spaceLarge};
+    `)}
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardSectionContent.defaultProps = {
   theme: defaultTheme,
 };
-
-type Props = {|
-  expandable: boolean,
-  expanded?: boolean,
-  children?: React.Node,
-  noSeparator?: boolean,
-  hasPaddingTop: boolean,
-  slideID: string,
-  labelID: string,
-|};
 
 const SectionContent = ({
   expandable,
@@ -49,8 +48,8 @@ const SectionContent = ({
   hasPaddingTop,
   slideID,
   labelID,
-}: Props): React.Node => {
-  const [{ height }, ref] = useBoundingRect({ height: expanded ? null : 0 });
+}: Props) => {
+  const [{ height }, ref] = useBoundingRect<HTMLDivElement>({ height: expanded ? null : 0 });
 
   return (
     <>
@@ -58,6 +57,7 @@ const SectionContent = ({
         <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
           <StyledCardSectionContent
             noSeparator={noSeparator}
+            // @ts-expect-error TODO
             ref={ref}
             expanded={expanded}
             hasPaddingTop={hasPaddingTop}
@@ -67,6 +67,7 @@ const SectionContent = ({
           </StyledCardSectionContent>
         </Slide>
       ) : (
+        // @ts-expect-error TODO
         <StyledCardSectionContent ref={ref} hasPaddingTop={hasPaddingTop}>
           {children}
         </StyledCardSectionContent>

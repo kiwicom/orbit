@@ -4,9 +4,11 @@
 import * as React from "react";
 
 import * as Common from "../../common/common";
+import { As } from "../../Heading";
 
 export interface Props extends Common.Globals {
   readonly title?: React.ReactNode;
+  readonly titleAs?: As;
   readonly icon?: React.ReactNode;
   readonly description?: React.ReactNode;
   readonly children?: React.ReactNode;

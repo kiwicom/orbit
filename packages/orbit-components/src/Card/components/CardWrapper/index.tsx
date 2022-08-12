@@ -1,4 +1,3 @@
-// @flow
 import styled, { css } from "styled-components";
 import * as React from "react";
 
@@ -7,12 +6,13 @@ import mq from "../../../utils/mediaQuery";
 import { CardElement } from "../../helpers/mixins";
 import defaultTheme from "../../../defaultTheme";
 import { getBorder, getBorderRadius, getBorderRadiusMobile } from "../../helpers/borders";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const topBorderRadius = css`
-  border-top-left-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
-  border-top-right-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
+  border-top-left-radius: ${({ expanded }: { expanded?: boolean }) =>
+    expanded && getBorderRadiusMobile};
+  border-top-right-radius: ${({ expanded }: { expanded?: boolean }) =>
+    expanded && getBorderRadiusMobile};
 
   ${mq.largeMobile(css`
     border-top-left-radius: ${getBorderRadius};
@@ -20,27 +20,18 @@ const topBorderRadius = css`
   `)}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-topBorderRadius.defaultTheme = {
-  theme: defaultTheme,
-};
-
 const bottomBorderRadius = css`
-  border-bottom-left-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
-  border-bottom-right-radius: ${({ expanded }) => expanded && getBorderRadiusMobile};
-
-  ${mq.largeMobile(css`
-    border-bottom-left-radius: ${getBorderRadius};
-    border-bottom-right-radius: ${getBorderRadius};
-  `)}
+  ${({ expanded }: { expanded?: boolean }) => css`
+    border-bottom-left-radius: ${expanded && getBorderRadiusMobile};
+    border-bottom-right-radius: ${expanded && getBorderRadiusMobile};
+    ${mq.largeMobile(css`
+      border-bottom-left-radius: ${getBorderRadius};
+      border-bottom-right-radius: ${getBorderRadius};
+    `)}
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-bottomBorderRadius.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledCardWrapper = styled.div`
+const StyledCardWrapper = styled.div<Props>`
   ${({
     theme,
     expandable,
@@ -104,7 +95,6 @@ const StyledCardWrapper = styled.div`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCardWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -121,12 +111,12 @@ const CardWrapper = ({
   noPadding,
   expandable,
   initialExpanded,
-}: Props): React.Node => (
+}: Props) => (
   <StyledCardWrapper
     bottomBorder={bottomBorder}
     expanded={expanded || initialExpanded}
     onClick={onClick}
-    tabIndex={onClick ? "0" : undefined}
+    tabIndex={onClick ? 0 : undefined}
     data-test={dataTest}
     noBorderTop={noBorderTop}
     expandable={expandable}

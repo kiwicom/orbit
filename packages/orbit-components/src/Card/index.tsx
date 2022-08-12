@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
@@ -9,10 +8,10 @@ import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import Header from "./components/Header";
 import { ELEMENT_OPTIONS } from "../Heading/consts";
+import { Props } from "./index.d";
+import * as Common from "../common/common";
 
-import type { Props } from ".";
-
-export const StyledCard: any = styled.div`
+export const StyledCard = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -20,7 +19,6 @@ export const StyledCard: any = styled.div`
   margin-bottom: ${getSpacingToken};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCard.defaultProps = {
   theme: defaultTheme,
 };
@@ -39,8 +37,8 @@ const Card = ({
   header,
   spaceAfter,
   dataA11ySection,
-}: Props): React.Node => {
-  const [expandedSections, setExpandedSections] = React.useState([]);
+}: Props) => {
+  const [expandedSections, setExpandedSections] = React.useState<number[]>([]);
 
   // handles array of expanded sections
   const addSection = React.useCallback((index: number) => {
@@ -97,6 +95,7 @@ const Card = ({
 
             // This is used for the case when user wants to map sections and change their order
             // related issue: #1005
+            // @ts-expect-error TODO
             const index = Number(item.key) || key;
 
             return (

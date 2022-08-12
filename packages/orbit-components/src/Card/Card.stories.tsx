@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -20,13 +19,13 @@ export default {
   title: "Card",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const title = text("Title", "Card with title");
   const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
   return <Card icon={<Icons.Airplane />} title={title} titleAs={titleAs} />;
 };
 
-export const CardWithDescription = (): React.Node => {
+export const CardWithDescription = () => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
   return (
@@ -43,7 +42,7 @@ CardWithDescription.story = {
   name: "Card with description",
 };
 
-export const CardWithActions = (): React.Node => {
+export const CardWithActions = () => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
   return (
@@ -60,7 +59,7 @@ CardWithActions.story = {
   name: "Card with actions",
 };
 
-export const CardWithOnlySection = (): React.Node => {
+export const CardWithOnlySection = () => {
   return (
     <Card>
       <CardSection>This is content of card</CardSection>
@@ -72,7 +71,7 @@ CardWithOnlySection.story = {
   name: "Card with only section",
 };
 
-export const CardWithSections = (): React.Node => {
+export const CardWithSections = () => {
   const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
   const sectionTitle = text("SectionTitle", "Section Title");
   const sectionDescription = text("SectionDescription", "Section Description");
@@ -105,7 +104,7 @@ CardWithSections.story = {
   name: "Card with sections",
 };
 
-export const CardWithExpandableSections = (): React.Node => {
+export const CardWithExpandableSections = () => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
   const sectionTitle = text("SectionTitle", "Section Title");
@@ -133,7 +132,7 @@ CardWithExpandableSections.story = {
   },
 };
 
-export const CardWithControlledAndUncontrolled = (): React.Node => {
+export const CardWithControlledAndUncontrolled = () => {
   const expanded = boolean("expanded", true);
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
@@ -170,7 +169,7 @@ CardWithControlledAndUncontrolled.story = {
   },
 };
 
-export const CardWithControlledWithKnobe = (): React.Node => {
+export const CardWithControlledWithKnobe = () => {
   const expanded = boolean("expanded", false);
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
@@ -193,7 +192,7 @@ CardWithControlledWithKnobe.story = {
   },
 };
 
-export const CardWithDefaultExpanded = (): React.Node => {
+export const CardWithDefaultExpanded = () => {
   const initialExpanded = boolean("initialExpended", true);
   return (
     <Card>
@@ -246,7 +245,7 @@ CardWithDefaultExpanded.story = {
   },
 };
 
-export const CardWithMixedSections = (): React.Node => {
+export const CardWithMixedSections = () => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
   const sectionTitle = text("SectionTitle", "Section Title");
@@ -285,7 +284,7 @@ CardWithMixedSections.story = {
   },
 };
 
-export const LoadingCard = (): React.Node => {
+export const LoadingCard = () => {
   const title = text("Title", "Card with title");
   return (
     <Card title={title} loading>
@@ -301,7 +300,7 @@ LoadingCard.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Card
       title="Title of the CardHeader"
@@ -339,7 +338,7 @@ Rtl.story = {
   },
 };
 
-export const Accessibility = (): React.Node => {
+export const Accessibility = () => {
   const title = text("Title", "Card with title");
   const dataA11ySection = text("dataA11ySection", "ID-OF-CARD");
   return <Card title={title} dataA11ySection={dataA11ySection} />;

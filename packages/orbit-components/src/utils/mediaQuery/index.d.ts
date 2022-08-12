@@ -1,13 +1,11 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-import type { Interpolation, ThemeProps } from "styled-components";
+import type { Interpolation } from "styled-components";
 
 import { Theme } from "../../defaultTheme";
 import { DEVICES, QUERIES } from "./consts";
 
-export type QueryFunction = (
-  style: Interpolation<ThemeProps<any>>,
-) => Interpolation<ThemeProps<any>>;
+export type QueryFunction = (style: Interpolation<any>) => Interpolation<any>;
 
 export type MediaQueries = Record<keyof typeof QUERIES, QueryFunction>;
 

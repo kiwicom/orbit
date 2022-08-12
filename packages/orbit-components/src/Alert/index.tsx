@@ -86,6 +86,7 @@ const getTypeToken = (name: string) => ({
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
     },
   };
+
   return tokens[name][type];
 };
 
@@ -205,7 +206,7 @@ StyledTitle.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledContent = styled.div<{ inlineActions?: boolean; type: Type }>`
+const StyledContent = styled.div<{ inlineActions?: boolean; type: Type; noUnderline: boolean }>`
   ${({ inlineActions, theme }) => css`
     display: flex;
     align-items: center;
@@ -304,9 +305,13 @@ const Alert = (props: Props) => {
             {title}
           </StyledTitle>
         )}
-        {children && !inlineActions && <StyledContent type={type}>{children}</StyledContent>}
+        {children && !inlineActions && (
+          <StyledContent type={type} noUnderline>
+            {children}
+          </StyledContent>
+        )}
         {inlineActions && (
-          <StyledContent type={type} inlineActions={!!inlineActions}>
+          <StyledContent type={type} inlineActions={!!inlineActions} noUnderline>
             {inlineActions}
           </StyledContent>
         )}

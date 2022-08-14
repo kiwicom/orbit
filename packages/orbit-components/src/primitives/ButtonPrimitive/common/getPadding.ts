@@ -1,10 +1,18 @@
-// @flow
+import * as React from "react";
+
 import { rtlSpacing } from "../../../utils/rtl";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
-import type { GetPadding } from "./getPadding";
+import { Size } from "../index.d";
+import { Theme } from "../../../defaultTheme";
 
-const getSpacing: GetPadding = (onlyIcon, iconRight, iconLeft, size, theme) => {
-  const wrappedRtl = value => rtlSpacing(value)({ theme });
+const getSpacing = (
+  onlyIcon: boolean,
+  iconRight: React.ReactNode,
+  iconLeft: React.ReactNode,
+  size: Size,
+  theme: Theme,
+): string => {
+  const wrappedRtl = (value: string) => rtlSpacing(value)({ theme });
   if (onlyIcon) return wrappedRtl(theme.orbit.paddingButtonWithoutText);
   const tokens = {
     [TOKENS.paddingButton]: {
@@ -31,6 +39,7 @@ const getSpacing: GetPadding = (onlyIcon, iconRight, iconLeft, size, theme) => {
   if (iconLeft && iconRight) return wrappedRtl(tokens[TOKENS.paddingButtonWithIcons][size]);
   if (iconLeft && !iconRight) return wrappedRtl(tokens[TOKENS.paddingButtonWithLeftIcon][size]);
   if (!iconLeft && iconRight) return wrappedRtl(tokens[TOKENS.paddingButtonWithRightIcon][size]);
+
   return wrappedRtl(tokens[TOKENS.paddingButton][size]);
 };
 

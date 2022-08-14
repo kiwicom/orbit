@@ -1,10 +1,29 @@
-// @flow
 import getSizeToken from "./getSizeToken";
 import getPadding from "./getPadding";
-import type { GetCommonProps } from "./getCommonProps";
 import { SIZE_OPTIONS } from "./consts";
+import { Size, HeightProps } from "../index.d";
+import { Theme } from "../../../defaultTheme";
 
-const getCommonProps: GetCommonProps = ({
+interface Params {
+  width?: string;
+  size?: Size;
+  theme: Theme;
+  iconRight?: boolean;
+  contentAlign?: "left" | "center" | "right";
+  contentWidth?: string;
+  iconLeft?: boolean;
+  children?: React.ReactNode;
+}
+
+interface Output extends HeightProps {
+  width?: string;
+  fontWeight: string;
+  padding: string;
+  contentAlign: "left" | "center" | "right" | "space-between";
+  contentWidth: string;
+}
+
+const getCommonProps = ({
   width,
   size = SIZE_OPTIONS.NORMAL,
   theme,
@@ -13,7 +32,7 @@ const getCommonProps: GetCommonProps = ({
   contentWidth,
   iconLeft,
   children,
-}) => {
+}: Params): Output => {
   const onlyIcon = Boolean((iconLeft || iconRight) && !children);
   const hasCenteredContent = Boolean(onlyIcon || (children && !(iconLeft || iconRight)));
 

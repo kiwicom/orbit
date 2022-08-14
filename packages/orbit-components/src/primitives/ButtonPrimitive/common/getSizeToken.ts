@@ -1,8 +1,14 @@
-// @flow
 import { SIZE_OPTIONS, TOKENS } from "./consts";
-import type { GetSizeToken } from "./getSizeToken";
+import { Size } from "../index.d";
+import { Theme } from "../../../defaultTheme";
 
-const getSizeToken: GetSizeToken = (size, theme) => {
+const getSizeToken = (
+  size: Size,
+  theme: Theme,
+): {
+  height: string;
+  fontSize: string;
+} => {
   const tokens = {
     [TOKENS.heightButton]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightButtonLarge,

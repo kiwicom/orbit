@@ -1,4 +1,3 @@
-// @flow
 import getPadding from "../getPadding";
 import { SIZE_OPTIONS } from "../consts";
 import theme from "../../../../defaultTheme";

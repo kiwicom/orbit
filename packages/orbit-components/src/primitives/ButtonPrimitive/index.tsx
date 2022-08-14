@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -13,17 +12,21 @@ import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentC
 import mq from "../../utils/mediaQuery";
 import createRel from "./common/createRel";
 import onKeyDown from "../../utils/handleKeyDown";
+import { Props, inexactString } from "./index.d";
 
-import type { Props } from ".";
-
-const iconContainerColor = (color: ?string, important = true) => css`
+const iconContainerColor = (color: inexactString, important = true) => css`
   ${StyledButtonPrimitiveIconContainer} {
     color: ${color} ${important && "!important"};
   }
 `;
 
-export const StyledButtonPrimitive: any = styled(
-  React.forwardRef(
+interface StyleProps extends Props {
+  onlyIcon: boolean;
+  className?: string;
+}
+
+export const StyledButtonPrimitive = styled(
+  React.forwardRef<HTMLButtonElement | HTMLAnchorElement, StyleProps>(
     (
       {
         asComponent = "button",
@@ -39,7 +42,6 @@ export const StyledButtonPrimitive: any = styled(
         className,
         rel,
         href,
-        target,
         external,
         tabIndex,
         onClick,
@@ -52,7 +54,7 @@ export const StyledButtonPrimitive: any = styled(
       const Component = isButtonWithHref ? "a" : asComponent;
       const buttonType = submit ? "submit" : "button";
 
-      const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) =>
+      const handleKeyDown = (ev: React.KeyboardEvent<HTMLElement>) =>
         asComponent === "div" ? onKeyDown(onClick)(ev) : undefined;
 
       return (
@@ -205,56 +207,54 @@ export const StyledButtonPrimitive: any = styled(
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitive.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitive: React.AbstractComponent<Props, HTMLButtonElement> = React.forwardRef<
-  Props,
-  HTMLButtonElement,
->((props, ref) => {
-  const {
-    loading,
-    disabled,
-    children,
-    iconLeft,
-    iconRight,
-    // Need to setup null values so the object exits by default
-    icons = { width: null, height: null, leftMargin: null, rightMargin: null },
-    contentAlign = "center",
-    contentWidth,
-  } = props;
-  const { width, height, leftMargin, rightMargin } = icons;
-  const isDisabled = loading || disabled;
-  const onlyIcon = Boolean(iconLeft && !children);
+const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
+  (props, ref) => {
+    const {
+      loading,
+      disabled,
+      children,
+      iconLeft,
+      iconRight,
+      // Need to setup null values so the object exits by default
+      icons = { width: null, height: null, leftMargin: null, rightMargin: null },
+      contentAlign = "center",
+      contentWidth,
+    } = props;
+    const { width, height, leftMargin, rightMargin } = icons;
+    const isDisabled = loading || disabled;
+    const onlyIcon = Boolean(iconLeft && !children);
 
-  return (
-    <StyledButtonPrimitive ref={ref} onlyIcon={onlyIcon} {...props} disabled={isDisabled}>
-      {loading && <Loading type="buttonLoader" />}
-      <ButtonPrimitiveContent loading={loading} contentAlign={contentAlign}>
-        {iconLeft && (
-          <ButtonPrimitiveIconContainer width={width} height={height} margin={leftMargin}>
-            {iconLeft}
-          </ButtonPrimitiveIconContainer>
-        )}
-        {children && (
-          <ButtonPrimitiveContentChildren
-            hasIcon={Boolean(iconLeft || iconRight)}
-            contentWidth={contentWidth}
-          >
-            {children}
-          </ButtonPrimitiveContentChildren>
-        )}
-        {iconRight && (
-          <ButtonPrimitiveIconContainer width={width} height={height} margin={rightMargin}>
-            {iconRight}
-          </ButtonPrimitiveIconContainer>
-        )}
-      </ButtonPrimitiveContent>
-    </StyledButtonPrimitive>
-  );
-});
+    return (
+      <StyledButtonPrimitive ref={ref} onlyIcon={onlyIcon} {...props} disabled={isDisabled}>
+        {loading && <Loading type="buttonLoader" />}
+        <ButtonPrimitiveContent loading={loading} contentAlign={contentAlign}>
+          {iconLeft && (
+            <ButtonPrimitiveIconContainer width={width} height={height} margin={leftMargin}>
+              {iconLeft}
+            </ButtonPrimitiveIconContainer>
+          )}
+          {children && (
+            <ButtonPrimitiveContentChildren
+              hasIcon={Boolean(iconLeft || iconRight)}
+              contentWidth={contentWidth}
+            >
+              {children}
+            </ButtonPrimitiveContentChildren>
+          )}
+          {iconRight && (
+            <ButtonPrimitiveIconContainer width={width} height={height} margin={rightMargin}>
+              {iconRight}
+            </ButtonPrimitiveIconContainer>
+          )}
+        </ButtonPrimitiveContent>
+      </StyledButtonPrimitive>
+    );
+  },
+);
 
 ButtonPrimitive.displayName = "ButtonPrimitive";
 

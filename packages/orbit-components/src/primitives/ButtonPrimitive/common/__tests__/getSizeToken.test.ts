@@ -1,4 +1,3 @@
-// @flow
 import getSizeToken from "../getSizeToken";
 import { SIZE_OPTIONS } from "../consts";
 import theme from "../../../../defaultTheme";

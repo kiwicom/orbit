@@ -1,14 +1,29 @@
-// @flow
+import * as React from "react";
+
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { rtlSpacing } from "../../../utils/rtl";
 import { getSize } from "../../../Icon";
-import type { GetIconContainer } from "./getIconContainer";
 import { ICON_SIZES } from "../../../Icon/consts";
+import { Size, IconForeground, IconProps } from "../index.d";
+import { Theme } from "../../../defaultTheme";
 
-const getIconSpacing = (onlyIcon, size, theme) => {
-  if (onlyIcon) {
-    return null;
-  }
+type getIconContainerType = ({
+  iconLeft,
+  children,
+  theme,
+  size,
+  iconForeground,
+}: {
+  iconLeft?: React.ReactNode;
+  children?: React.ReactNode;
+  theme: Theme;
+  size?: Size;
+  iconForeground: IconForeground;
+}) => { icons: IconProps };
+
+const getIconSpacing = (onlyIcon: boolean, size: Size, theme: Theme) => {
+  if (onlyIcon) return null;
+
   const tokens = {
     [TOKENS.marginRightIcon]: {
       [SIZE_OPTIONS.LARGE]: theme.orbit.marginButtonIconLarge,
@@ -16,13 +31,14 @@ const getIconSpacing = (onlyIcon, size, theme) => {
       [SIZE_OPTIONS.SMALL]: theme.orbit.marginButtonIconSmall,
     },
   };
+
   return {
     leftMargin: rtlSpacing(`0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`)({ theme }),
     rightMargin: rtlSpacing(`0 0 0 ${tokens[TOKENS.marginRightIcon][size]}`)({ theme }),
   };
 };
 
-const getIconContainer: GetIconContainer = ({
+const getIconContainer: getIconContainerType = ({
   iconLeft,
   children,
   theme,

@@ -1,7 +1,12 @@
-// @flow
-import type { CreateRel } from "./createRel";
-
-const createRel: CreateRel = ({ rel, href, external }) => {
+const createRel = ({
+  rel,
+  href,
+  external,
+}: {
+  rel?: string;
+  href?: string;
+  external?: boolean;
+}): string | undefined => {
   const relValues = rel ? rel.split(" ") : [];
   // add noopener  whenever external
   if (external && href) {

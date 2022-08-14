@@ -1,4 +1,3 @@
-// @flow
 import getIconContainer from "../getIconContainer";
 import theme from "../../../../defaultTheme";
 import { SIZE_OPTIONS } from "../consts";

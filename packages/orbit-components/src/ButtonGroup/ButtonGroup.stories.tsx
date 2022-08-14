@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { text } from "@storybook/addon-knobs";
 
@@ -14,7 +12,7 @@ export default {
   title: "ButtonGroup",
 };
 
-export const WithButtons = (): React.Node => {
+export const WithButtons = () => {
   const dataTest = text("dataTest", "test");
   return (
     <ButtonGroup dataTest={dataTest}>
@@ -31,7 +29,7 @@ WithButtons.story = {
   },
 };
 
-export const WithButtonLinks = (): React.Node => {
+export const WithButtonLinks = () => {
   const dataTest = text("dataTest", "test");
   return (
     <ButtonGroup dataTest={dataTest}>
@@ -52,7 +50,7 @@ WithButtonLinks.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <ButtonGroup>
       <Button iconLeft={<Icons.Airplane />}>Button</Button>

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -6,8 +5,7 @@ import defaultTheme from "../defaultTheme";
 import { borderRadius, rtlSpacing } from "../utils/rtl";
 import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import mq from "../utils/mediaQuery";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledButtonGroup = styled.div`
   display: flex;
@@ -39,12 +37,11 @@ const StyledButtonGroup = styled.div`
   `)};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonGroup = ({ children, dataTest }: Props): React.Node => (
+const ButtonGroup = ({ children, dataTest }: Props) => (
   <StyledButtonGroup data-test={dataTest}>{children}</StyledButtonGroup>
 );
 

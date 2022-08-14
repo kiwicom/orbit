@@ -1,25 +1,20 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { HEIGHT, TYPE_OPTIONS, LANGUAGE } from "./consts";
+import { Props, Type } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledButtonMobileStore = styled(({ theme, type, ...props }) => (
-  <a {...props}>{props.children}</a>
-))`
+const StyledButtonMobileStore = styled.a`
   display: inline-block;
   height: ${HEIGHT};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonMobileStore.defaultProps = {
   theme: defaultTheme,
 };
 
-const getSrc = (type, lang) => {
+const getSrc = (type: Type, lang: string) => {
   if (type === "appStore")
     return `https://images.kiwi.com/common/AppStoreButton${lang}.png, https://images.kiwi.com/common/AppStoreButton${lang}@2x.png 2x`;
   return `https://images.kiwi.com/common/GooglePlayButton${lang}.png, https://images.kiwi.com/common/GooglePlayButton${lang}@2x.png 2x`;
@@ -34,13 +29,13 @@ const ButtonMobileStore = ({
   id,
   alt = "",
   stopPropagation = false,
-}: Props): React.Node => {
-  const onClickHandler = ev => {
+}: Props) => {
+  const onClickHandler = (ev: React.MouseEvent<HTMLAnchorElement>) => {
     if (stopPropagation) {
       ev.stopPropagation();
-      if (onClick) onClick();
+      if (onClick) onClick(ev);
     }
-    if (onClick) onClick();
+    if (onClick) onClick(ev);
   };
 
   return (

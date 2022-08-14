@@ -1,10 +1,21 @@
-// @flow
 import { TOKENS } from "../consts";
 import getButtonTypeToken from "./getButtonTypeToken";
-import type { GetButtonIconForeground } from "./getButtonIconForeground";
+import { Theme } from "../../defaultTheme";
+import { Type } from "../index.d";
 
-const getButtonIconForeground: GetButtonIconForeground = ({ theme, type }) => {
-  const wrappedTypeToken = name => getButtonTypeToken({ name, type, theme });
+const getButtonIconForeground = ({
+  theme,
+  type,
+}: {
+  theme: Theme;
+  type: Type;
+}): {
+  foreground: string;
+  foregroundHover: string;
+  foregroundActive: string;
+  foregroundFocus: string;
+} => {
+  const wrappedTypeToken = (name: string) => getButtonTypeToken({ name, type, theme });
   return {
     foreground: wrappedTypeToken(TOKENS.colorTextButton),
     foregroundHover: wrappedTypeToken(TOKENS.colorTextButtonHover),

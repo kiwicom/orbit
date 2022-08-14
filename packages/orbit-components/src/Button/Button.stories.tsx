@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, number, boolean, select } from "@storybook/addon-knobs";
@@ -11,14 +10,16 @@ import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import Button from ".";
 
-const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
+const getIcons = (name: string, defaultIcon: string) =>
+  select(name, [null, ...Object.keys(Icons)], defaultIcon);
+
+const getIcon = (source: string | null) => (source ? Icons[source] : null);
 
 export default {
   title: "Button",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const children = text("Children", "Default button");
   return <Button onClick={action("clicked")}>{children}</Button>;
 };
@@ -30,11 +31,11 @@ Default.story = {
   },
 };
 
-export const BasicButtons = (): React.Node => {
+export const BasicButtons = () => {
   const children = text("Children", "Button");
   const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
-  const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+  const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], TYPE_OPTIONS.PRIMARY);
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
 
   return (
     <Button onClick={action("clicked")} fullWidth={fullWidth} type={type} size={size}>
@@ -52,11 +53,11 @@ BasicButtons.story = {
   },
 };
 
-export const ButtonWithIcons = (): React.Node => {
+export const ButtonWithIcons = () => {
   const children = text("Children", "Button");
   const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], "primary");
-  const size = select("Size", Object.values(SIZE_OPTIONS), "small");
+  const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], TYPE_OPTIONS.PRIMARY);
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
   const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
   return (
@@ -82,7 +83,7 @@ ButtonWithIcons.story = {
   },
 };
 
-export const SubtleButtons = (): React.Node => {
+export const SubtleButtons = () => {
   const children = text("Children", "Button");
   const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
 
@@ -117,7 +118,7 @@ SubtleButtons.story = {
   },
 };
 
-export const CircledButton = (): React.Node => {
+export const CircledButton = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], TYPE_OPTIONS.PRIMARY);
   const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
@@ -143,9 +144,9 @@ CircledButton.story = {
   },
 };
 
-export const DestructiveButtons = (): React.Node => {
+export const DestructiveButtons = () => {
   const children = text("Children", "Destructive button");
-  const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
 
   return (
     <Button onClick={action("clicked")} type="critical" size={size} iconLeft={<Icons.Remove />}>
@@ -163,12 +164,12 @@ DestructiveButtons.story = {
   },
 };
 
-export const ButtonAsALink = (): React.Node => {
+export const ButtonAsALink = () => {
   const children = text("Children", "I am a link");
   const href = text("Href", "https://kiwi.com");
   const external = boolean("External", false);
   const disabled = boolean("Disabled", false);
-  const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
 
   return (
     <Button
@@ -193,15 +194,15 @@ ButtonAsALink.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const children = text("Children", "Button");
-  const href = text("Href", undefined);
+  const href = text("Href", "");
   const external = boolean("External", false);
   const asComponent = text("asComponent", "button");
   const disabled = boolean("Disabled", false);
   const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", Object.values(TYPE_OPTIONS), "primary");
-  const size = select("Size", Object.values(SIZE_OPTIONS), "normal");
+  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const width = number("Width", 0);
   const circled = boolean("Circled", false);
   const loading = boolean("Loading", false);
@@ -212,7 +213,7 @@ export const Playground = (): React.Node => {
   const ariaExpanded = boolean("Aria expanded", false);
   const ariaControls = text("Aria controls", "element ID");
   const tabIndex = text("tabIndex", "0");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), "small");
   const title = text("Title", "Additional information for accessibility");
   const rel = text("Rel", "nofollow");
   const contentAlign = select(
@@ -240,7 +241,7 @@ export const Playground = (): React.Node => {
       iconLeft={IconLeft && <IconLeft />}
       iconRight={IconRight && <IconRight />}
       submit={submit}
-      width={width}
+      width={String(width)}
       ariaControls={ariaControls}
       ariaExpanded={ariaExpanded}
       tabIndex={tabIndex}
@@ -259,7 +260,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = (): React.Node => {
+export const Accessibility = () => {
   const children = text("Children", "Button");
   const ariaExpanded = boolean("Aria expanded", false);
   const ariaControls = text("Aria controls", "element ID");
@@ -283,7 +284,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Button type="primary" iconLeft={<Icons.Airplane />}>
       Button

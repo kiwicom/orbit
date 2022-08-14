@@ -1,13 +1,30 @@
-// @flow
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import getButtonTypeToken from "./getButtonTypeToken";
 import { TOKENS } from "../consts";
 import getButtonBoxShadow from "./getButtonBoxShadow";
-import type { GetButtonStyles } from "./getButtonStyles";
+import { Theme } from "../../defaultTheme";
+import { Type, ButtonStates } from "../index.d";
 
-const getButtonStyles: GetButtonStyles = ({ disabled, theme, type }) => {
-  const wrappedBoxShadow = state => getButtonBoxShadow({ state, disabled, theme, type });
-  const wrappedTypeToken = name => getButtonTypeToken({ name, type, theme });
+const getButtonStyles = ({
+  disabled,
+  theme,
+  type,
+}: {
+  disabled: boolean;
+  theme: Theme;
+  type: Type;
+}): {
+  background: string;
+  backgroundHover: string;
+  backgroundActive: string;
+  backgroundFocus: string | null;
+  foreground: string;
+  foregroundHover: string;
+  foregroundActive: string;
+} => {
+  const wrappedBoxShadow = (state: ButtonStatesType) =>
+    getButtonBoxShadow({ state, disabled, theme, type });
+  const wrappedTypeToken = (name: string) => getButtonTypeToken({ name, type, theme });
   const boxShadow = {
     boxShadow: wrappedBoxShadow(BUTTON_STATES.DEFAULT),
     boxShadowHover: wrappedBoxShadow(BUTTON_STATES.HOVER),

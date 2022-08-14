@@ -16,7 +16,7 @@ export interface Props extends Common.Globals {
   readonly iconLeft?: React.ReactNode;
   readonly iconRight?: React.ReactNode;
   readonly noUnderline?: boolean;
-  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLLinkElement>>;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLAnchorElement>>;
   readonly rel?: string;
   readonly size?: Common.Size;
   readonly standAlone?: boolean;

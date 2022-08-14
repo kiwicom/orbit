@@ -4,11 +4,11 @@
 import * as React from "react";
 
 import * as Common from "../../common/common";
-import { SharedProps, Event } from "..";
+import { SharedProps, Event } from "../index.d";
 
 type InputEvent = Common.Event<React.KeyboardEvent<HTMLInputElement>>;
 export interface Props extends SharedProps {
-  readonly value?: number | string | (() => string);
+  readonly value?: number | string;
   readonly disabledIncrement?: boolean;
   readonly disabledDecrement?: boolean;
   readonly onKeyDown?: InputEvent;

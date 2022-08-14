@@ -5,7 +5,7 @@ import * as React from "react";
 
 import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
-type Type =
+export type Type =
   | "primary"
   | "secondary"
   | "critical"
@@ -15,6 +15,8 @@ type Type =
   | "bundleBasic"
   | "bundleMedium"
   | "bundleTop";
+
+export type ButtonStates = "default" | "hover" | "active" | "focus";
 
 export interface Props extends ButtonCommonProps {
   readonly type?: Type;

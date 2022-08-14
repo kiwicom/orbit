@@ -5,10 +5,12 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
+export type Size = "small" | "medium";
+
 export interface Props extends Common.Globals {
   readonly code?: string;
   readonly name?: string;
-  readonly size?: "small" | "medium";
+  readonly size?: Size;
 }
 
 declare const CountryFlag: React.FunctionComponent<Props>;

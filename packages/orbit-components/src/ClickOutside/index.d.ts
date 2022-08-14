@@ -6,7 +6,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 
 export interface Props {
-  readonly onClickOutside?: Common.Event<React.MouseEvent>;
+  readonly onClickOutside?: Common.Event<MouseEvent<HTMLDivElement>>;
   readonly children: React.ReactNode | React.ReactNode[];
 }
 

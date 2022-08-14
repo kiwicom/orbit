@@ -8,7 +8,7 @@ import * as Common from "../common/common";
 
 type Size = "small" | "medium";
 export interface Props extends Common.Globals, Popper {
-  readonly children: React.ReactNode;
+  readonly children?: React.ReactNode;
   readonly content: React.ReactNode;
   readonly size?: Size;
   readonly renderInPortal?: boolean;

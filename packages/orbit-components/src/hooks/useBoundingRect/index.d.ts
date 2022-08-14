@@ -15,6 +15,6 @@ type Dimensions = {
 
 declare function UseBoundingRect<T extends HTMLElement>(
   initialValue: Partial<Dimensions> | undefined | null,
-): [Dimensions, React.RefObject<T>];
+): [Dimensions, React.LegacyRef<T> | undefined];
 
 export { UseBoundingRect, UseBoundingRect as default };

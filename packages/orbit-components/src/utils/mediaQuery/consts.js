@@ -1,5 +1,4 @@
 // @flow
-// needs to be from lowest to highest viewport, used for Hide component
 export const DEVICES = [
   "smallMobile",
   "mediumMobile",

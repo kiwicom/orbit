@@ -6,14 +6,14 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-type Type = "appStore" | "googlePlay";
+export type Type = "appStore" | "googlePlay";
 export interface Props extends Common.Globals {
   readonly type?: Type;
   readonly stopPropagation?: boolean;
   readonly href?: string;
   readonly alt?: string;
   readonly lang?: string;
-  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLLinkElement>>;
+  readonly onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 declare const ButtonMobileStore: React.FunctionComponent<Props>;

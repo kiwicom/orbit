@@ -1,10 +1,17 @@
 // @flow
 import type { CSSRules } from "styled-components";
 
-import type { Devices } from "./consts";
 import type { Theme } from "../../defaultTheme";
 
 type QueryFunction = (style: CSSRules) => CSSRules;
+
+export type Devices =
+  | "largeDesktop"
+  | "desktop"
+  | "tablet"
+  | "largeMobile"
+  | "mediumMobile"
+  | "smallMobile";
 
 declare function getBreakpointWidth(name: Devices, theme: Theme, pure?: false): string;
 // https://flow.org/en/docs/types/intersections/#declaring-overloaded-functions

@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-export interface Props extends Common.Globals, Common.Ref {
+export interface Props extends Common.Globals {
   readonly label?: React.ReactNode;
   readonly value?: string;
   readonly hasError?: boolean;
@@ -13,7 +13,7 @@ export interface Props extends Common.Globals, Common.Ref {
   readonly checked?: boolean;
   readonly name?: string;
   readonly info?: React.ReactNode;
-  readonly tabIndex?: string | number;
+  readonly tabIndex?: number;
   readonly readOnly?: boolean;
   readonly tooltip?: React.ReactNode | null;
   // Should be InputEvent type
@@ -22,5 +22,5 @@ export interface Props extends Common.Globals, Common.Ref {
   readonly onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-declare const Checkbox: React.FunctionComponent<Props>;
+declare const Checkbox: React.ForwardRefExoticComponent<Props>;
 export { Checkbox, Checkbox as default };

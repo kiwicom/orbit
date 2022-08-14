@@ -6,9 +6,9 @@ import * as React from "react";
 import ListItem from "./ListItem";
 import * as Common from "../common/common";
 
-type Type = "primary" | "secondary" | "separated";
+export type Type = "primary" | "secondary" | "separated";
 
-interface Props extends Common.Globals, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly children: React.ReactNode;
   readonly size?: Common.Size;
   readonly type?: Type;

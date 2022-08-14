@@ -1,7 +1,6 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-
-import * as React from "react";
+import React from "react";
 
 import { Carrier } from "../CarrierLogo";
 import * as Common from "../common/common";

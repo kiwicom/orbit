@@ -5,8 +5,9 @@ import * as React from "react";
 
 import { ButtonCommonProps } from "../../primitives/ButtonPrimitive";
 
-type Type =
+export type Type =
   | "info"
+  | "secondary"
   | "success"
   | "warning"
   | "critical"
@@ -17,7 +18,7 @@ type Type =
 
 type OmittedButtonCommonProps = Omit<ButtonCommonProps, "size">;
 
-type Props = {
+export type Props = {
   readonly type?: Type;
 } & OmittedButtonCommonProps;
 

@@ -7,7 +7,7 @@ import * as Common from "../common/common";
 
 type Title = string | ((param?: any) => string);
 // InputEvent
-export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
+export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement | HTMLButtonElement>>;
 
 export interface SharedProps extends Common.Globals {
   readonly name?: string;

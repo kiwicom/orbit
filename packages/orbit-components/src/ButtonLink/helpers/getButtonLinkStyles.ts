@@ -1,12 +1,32 @@
-// @flow
-
 import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
-import type { GetButtonLinkStyles } from "./getButtonLinkStyles";
+import { Type } from "../index.d";
+import { Theme } from "../../defaultTheme";
 
-const getButtonLinkStyles: GetButtonLinkStyles = ({ type, theme, compact }) => {
-  const wrappedTypeToken = name => getButtonLinkTypeToken(name, type, theme);
-  const commonStyles = {
+interface ButtonLinkStyles {
+  background?: string;
+  backgroundHover?: string;
+  backgroundActive?: string;
+  backgroundFocus?: string;
+  foreground?: string;
+  foregroundHover?: string;
+  foregroundActive?: string;
+  foregroundFocus?: string;
+}
+
+type GetButtonLinkStylesType = ({
+  type,
+  theme,
+  compact,
+}: {
+  type: Type;
+  theme: Theme;
+  compact: boolean;
+}) => ButtonLinkStyles;
+
+const getButtonLinkStyles: GetButtonLinkStylesType = ({ type, theme, compact }) => {
+  const wrappedTypeToken = (name: string) => getButtonLinkTypeToken(name, type, theme);
+  const commonStyles: Partial<ButtonLinkStyles> = {
     background: wrappedTypeToken(TOKENS.background),
     foreground: wrappedTypeToken(TOKENS.foreground),
     foregroundHover: wrappedTypeToken(TOKENS.foregroundHover),

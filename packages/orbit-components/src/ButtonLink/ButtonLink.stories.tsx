@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, number, boolean, select } from "@storybook/addon-knobs";
@@ -12,16 +10,16 @@ import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import ButtonLink from ".";
 
-const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
+const getIcons = (name: string, defaultIcon: string) =>
+  select(name, [null, ...Object.keys(Icons)], defaultIcon);
+
+const getIcon = (source: string | null) => (source ? Icons[source] : null);
 
 export default {
   title: "ButtonLink",
 };
 
-export const Default = (): React.Node => (
-  <ButtonLink href="https://kiwi.com">ButtonLink</ButtonLink>
-);
+export const Default = () => <ButtonLink href="https://kiwi.com">ButtonLink</ButtonLink>;
 
 Default.story = {
   parameters: {
@@ -30,7 +28,7 @@ Default.story = {
   },
 };
 
-export const Secondary = (): React.Node => (
+export const Secondary = () => (
   <ButtonLink href="https://kiwi.com" type="secondary">
     ButtonLink
   </ButtonLink>
@@ -43,7 +41,7 @@ Secondary.story = {
   },
 };
 
-export const Critical = (): React.Node => (
+export const Critical = () => (
   <ButtonLink onClick={action("onClick")} type="critical">
     ButtonLink
   </ButtonLink>
@@ -56,7 +54,7 @@ Critical.story = {
   },
 };
 
-export const Circled = (): React.Node => {
+export const Circled = () => {
   const circled = boolean("circled", true);
   const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
@@ -81,7 +79,7 @@ Circled.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const children = text("Children", "ButtonLink");
   const disabled = boolean("Disabled", false);
   const fullWidth = boolean("fullWidth", false);
@@ -98,7 +96,7 @@ export const Playground = (): React.Node => {
   const ariaExpanded = boolean("Aria expanded", false);
   const ariaControls = text("Aria controls", "element ID");
   const tabIndex = text("tabIndex", "0");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)], undefined);
   const title = text("Title", "Additional information for accessibility");
   const rel = text("Rel", "nofollow");
 
@@ -112,7 +110,7 @@ export const Playground = (): React.Node => {
       dataTest={dataTest}
       iconLeft={IconLeft && <IconLeft />}
       iconRight={IconRight && <IconRight />}
-      width={width}
+      width={String(width)}
       external={external}
       onClick={action("clicked")}
       compact={compact}
@@ -136,7 +134,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = (): React.Node => {
+export const Accessibility = () => {
   const children = text("Children", "ButtonLink");
   const ariaExpanded = boolean("Aria expanded", false);
   const ariaControls = text("Aria controls", "element ID");
@@ -155,7 +153,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <ButtonLink iconLeft={<Icons.Airplane />}>ButtonLink</ButtonLink>
   </RenderInRtl>

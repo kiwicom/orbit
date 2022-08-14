@@ -6,7 +6,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
-type Type = "primary" | "secondary" | "critical";
+export type Type = "primary" | "secondary" | "critical";
 
 export interface Props extends Common.Globals, Common.Ref, Common.SpaceAfter, ButtonCommonProps {
   readonly compact?: boolean;

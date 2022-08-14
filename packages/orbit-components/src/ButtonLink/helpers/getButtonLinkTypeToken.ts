@@ -1,8 +1,8 @@
-// @flow
 import { TOKENS, TYPES } from "../consts";
-import type { GetButtonLinkTypeToken } from "./getButtonLinkTypeToken";
+import { Type } from "../index.d";
+import { Theme } from "../../defaultTheme";
 
-const getButtonLinkTypeToken: GetButtonLinkTypeToken = (name, type, theme) => {
+const getButtonLinkTypeToken = (name: string, type: Type, theme: Theme): string => {
   const tokens = {
     [TOKENS.background]: {
       [TYPES.PRIMARY]: "transparent",

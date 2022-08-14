@@ -1,8 +1,7 @@
-// @flow
 import getCommonProps from "../../primitives/ButtonPrimitive/common/getCommonProps";
-import type { GetButtonLinkCommonProps } from "./getButtonLinkCommonProps";
+import { Props } from "../index.d";
 
-const getButtonLinkCommonProps: GetButtonLinkCommonProps = props => {
+const getButtonLinkCommonProps = (props: Props) => {
   if (!props.compact) return getCommonProps(props);
   return { ...getCommonProps(props), padding: "0" };
 };

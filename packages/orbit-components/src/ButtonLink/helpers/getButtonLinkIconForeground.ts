@@ -1,10 +1,27 @@
-// @flow
 import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
-import type { GetButtonLinkIconForeground } from "./getButtonLinkIconForeground";
+import { Type } from "../index.d";
+import { Theme } from "../../defaultTheme";
 
-const getButtonLinkIconForeground: GetButtonLinkIconForeground = ({ type, theme, compact }) => {
-  const wrappedTypeReturn = usedType => ({
+interface Foreground {
+  foreground: string | typeof getButtonLinkTypeToken;
+  foregroundHover: string | typeof getButtonLinkTypeToken;
+  foregroundActive: string | typeof getButtonLinkTypeToken;
+  foregroundFocus: string | typeof getButtonLinkTypeToken;
+}
+
+type getButtonLinkIconForegroundType = ({
+  type,
+  theme,
+  compact,
+}: {
+  type: Type;
+  theme: Theme;
+  compact: boolean;
+}) => Foreground | ((type: Type) => Foreground);
+
+const getButtonLinkIconForeground: getButtonLinkIconForegroundType = ({ type, theme, compact }) => {
+  const wrappedTypeReturn = (usedType: Type) => ({
     foreground: getButtonLinkTypeToken(TOKENS.foreground, type, theme),
     foregroundHover: getButtonLinkTypeToken(TOKENS.foregroundHover, usedType, theme),
     foregroundActive: getButtonLinkTypeToken(TOKENS.foregroundActive, usedType, theme),

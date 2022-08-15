@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -15,8 +14,7 @@ import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import KEY_CODE_MAP from "../common/keyMaps";
 import useRandomId from "../hooks/useRandomId";
 import { left } from "../utils/rtl";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledDialog = styled.div`
   ${({ theme }) => css`
@@ -44,7 +42,6 @@ const StyledDialog = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialog.defaultProps = {
   theme: defaultTheme,
 };
@@ -55,8 +52,8 @@ const StyledDialogCenterWrapper = styled.div`
   min-height: 100%;
 `;
 
-const StyledDialogContent = styled.div`
-  ${({ theme, $maxWidth }) => css`
+const StyledDialogContent = styled.div<{ $maxWidth?: number; shown?: boolean }>`
+  ${({ theme, $maxWidth, shown }) => css`
     display: block;
     width: 100%;
     max-width: ${$maxWidth}px;
@@ -64,7 +61,7 @@ const StyledDialogContent = styled.div`
     padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
     background: ${theme.orbit.paletteWhite};
     border-radius: 12px;
-    bottom: ${({ shown }) => (shown ? "0" : "-100%")};
+    bottom: ${shown ? "0" : "-100%"};
     box-shadow: ${theme.orbit.boxShadowOverlay};
     text-align: center;
     ${StyledText} {
@@ -82,17 +79,18 @@ const StyledDialogContent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialogContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledAction = styled(({ width, theme, ...props }) => <div {...props} />)`
+const StyledAction = styled.div`
   width: 100%;
+
   ${StyledButtonPrimitive} {
     width: 100%;
     flex: 1 1 auto;
   }
+
   ${mq.largeMobile(
     css`
       width: auto;
@@ -104,7 +102,6 @@ const StyledAction = styled(({ width, theme, ...props }) => <div {...props} />)`
   )};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledAction.defaultProps = {
   theme: defaultTheme,
 };
@@ -125,10 +122,10 @@ const Dialog = ({
   renderInPortal = true,
   illustration,
   lockScrolling = true,
-}: Props): React.Node => {
-  const wrapperRef = React.useRef<HTMLElement | null>(null);
+}: Props) => {
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null);
   useLockScrolling(wrapperRef, lockScrolling);
-  const ref = React.useRef(null);
+  const ref = React.useRef<HTMLDivElement | null>(null);
   const theme = useTheme();
   const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
     theme.orbit.durationFast,
@@ -147,9 +144,9 @@ const Dialog = ({
     return () => clearTimeout(timer);
   }, [transitionLength]);
 
-  const handleClose = ev => {
+  const handleClose = (ev: React.MouseEvent<HTMLDivElement>) => {
     if (ref.current && onClose) {
-      if (ref.current && !ref.current.contains(ev.target)) onClose();
+      if (ref.current && !ref.current.contains(ev.currentTarget)) onClose();
     }
   };
 
@@ -170,9 +167,8 @@ const Dialog = ({
       ref={wrapperRef}
       data-test={dataTest}
       id={id}
-      shown={shown}
       onClick={handleClose}
-      tabIndex="0"
+      tabIndex={0}
       role="dialog"
       aria-modal="true"
       aria-labelledby={dialogID}

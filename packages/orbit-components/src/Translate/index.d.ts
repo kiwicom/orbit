@@ -3,13 +3,17 @@
 
 import * as React from "react";
 
-type Values = {
-  [key: string]: string | number;
-};
+import { Translations } from "../Dictionary/index.d";
 
-interface Props {
+export type PureTranslate = (
+  dictionary: Translations,
+  key: string,
+  values?: Record<string, string | number>,
+) => string;
+
+export interface Props {
   readonly tKey: string;
-  readonly values?: Values;
+  readonly values?: Record<string, string | number>;
 }
 
 declare const Translate: React.FunctionComponent<Props>;

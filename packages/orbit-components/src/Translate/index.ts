@@ -1,14 +1,10 @@
-// @flow
 import useDictionary from "../hooks/useDictionary";
 import DEFAULT_DICTIONARY from "../data/dictionary/en-GB.json";
-
-import type { Props, PureTranslate } from ".";
+import { Props, PureTranslate } from "./index.d";
 
 export const pureTranslate: PureTranslate = (translations, key, values = {}) => {
-  const translation = translations[key] || DEFAULT_DICTIONARY[key];
-  if (!translation) {
-    return key;
-  }
+  const translation: string = translations[key] || DEFAULT_DICTIONARY[key];
+  if (!translation) return key;
 
   return Object.keys(values).reduce(
     (acc, placeholder) =>

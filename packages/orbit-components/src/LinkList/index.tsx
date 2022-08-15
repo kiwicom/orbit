@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -9,32 +8,40 @@ import defaultTheme from "../defaultTheme";
 import { SPACINGS } from "../utils/layout/consts";
 import getSpacing from "../Stack/helpers/getSpacing";
 import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
+import { Props } from "./index.d";
+import { Spacing } from "../Stack";
 
-import type { Props } from ".";
-
-const StyledLinkList = styled.ul`
-  display: flex;
-  flex-direction: ${({ direction }) => direction};
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  padding-${left}: ${({ indent, theme }) => indent && theme.orbit.spaceXXSmall};
-  list-style: none;
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
+const StyledLinkList = styled.ul<{ $direction?: "column" | "row"; $indent?: boolean }>`
+  ${({ $direction, $indent, theme }) => css`
+    display: flex;
+    flex-direction: ${$direction};
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-${left}: ${$indent && theme.orbit.spaceXXSmall};
+    list-style: none;
+    font-size: ${theme.orbit.fontSizeTextNormal};
+  `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLinkList.defaultProps = {
   theme: defaultTheme,
 };
 
-const resolveSpacings = ({ spacing, direction, ...props }) => {
+const resolveSpacings = ({
+  $spacing,
+  $direction,
+  ...props
+}: {
+  $spacing?: Spacing;
+  $direction?: "column" | "row";
+}) => {
   const margin =
-    spacing &&
-    direction &&
-    String(getDirectionSpacingTemplate(direction)).replace(
+    $spacing &&
+    $direction &&
+    String(getDirectionSpacingTemplate($direction)).replace(
       "__spacing__",
-      getSpacing(props)[spacing],
+      getSpacing(props)[$spacing],
     );
 
   return css`
@@ -45,15 +52,19 @@ const resolveSpacings = ({ spacing, direction, ...props }) => {
   `;
 };
 
-const StyledNavigationLinkListChild = styled(({ theme, direction, ...props }) => <li {...props} />)`
+const StyledNavigationLinkListChild = styled.li<{
+  $direction?: "column" | "row";
+  $indent?: boolean;
+  $spacing: Spacing;
+}>`
   ${StyledTextLink} {
     text-decoration: none;
   }
 
   ${resolveSpacings};
 
-  ${({ direction }) =>
-    direction === "column" &&
+  ${({ $direction }) =>
+    $direction === "column" &&
     css`
       width: 100%;
       ${StyledTextLink} {
@@ -67,7 +78,6 @@ const StyledNavigationLinkListChild = styled(({ theme, direction, ...props }) =>
     `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigationLinkListChild.defaultProps = {
   theme: defaultTheme,
 };
@@ -79,12 +89,12 @@ const LinkList = ({
   children,
   id,
   dataTest,
-}: Props): React.Node => (
-  <StyledLinkList indent={indent} direction={direction} data-test={dataTest} id={id}>
+}: Props) => (
+  <StyledLinkList $indent={indent} $direction={direction} data-test={dataTest} id={id}>
     {React.Children.map(children, item => {
       if (React.isValidElement(item)) {
         return (
-          <StyledNavigationLinkListChild direction={direction} spacing={spacing}>
+          <StyledNavigationLinkListChild $direction={direction} $spacing={spacing}>
             {item}
           </StyledNavigationLinkListChild>
         );

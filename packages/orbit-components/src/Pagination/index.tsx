@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -12,8 +11,7 @@ import CompactPages from "./components/CompactPages";
 import ActiveButton from "./components/ActiveButton";
 import Translate from "../Translate";
 import useTranslate from "../hooks/useTranslate";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
   if (onPageChange && nextPageIndex <= pageCount && nextPageIndex >= 0) {
@@ -28,7 +26,7 @@ const Pagination = ({
   dataTest,
   hideLabels = true,
   size = SIZES.NORMAL,
-}: Props): React.Node => {
+}: Props) => {
   const pageChanged = handlePageChange(onPageChange, pageCount);
   const { isTablet } = useMediaQuery();
   const translate = useTranslate();

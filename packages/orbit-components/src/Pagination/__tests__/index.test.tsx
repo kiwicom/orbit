@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -8,7 +7,7 @@ import Pagination from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => jest.fn());
 
-const useMediaQueryMock: JestMockFn<[], $Shape<$Call<typeof useMediaQuery>>> = useMediaQuery;
+const useMediaQueryMock = useMediaQuery;
 
 const breakpoints = {
   normal: { isTablet: true },

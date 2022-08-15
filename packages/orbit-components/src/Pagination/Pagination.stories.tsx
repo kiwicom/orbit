@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { number, text, boolean, select } from "@storybook/addon-knobs";
@@ -12,13 +10,13 @@ export default {
   title: "Pagination",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const pageCount = number("pageCount", 6);
 
   return <Pagination pageCount={pageCount} onPageChange={action("onPageChange")} />;
 };
 
-export const WithALotOfPages = (): React.Node => {
+export const WithALotOfPages = () => {
   const selectedPage = number("selectedPage", 44);
   const pageCount = number("pageCount", 100);
 
@@ -35,7 +33,7 @@ WithALotOfPages.story = {
   name: "With a lot of pages",
 };
 
-export const SmallSize = (): React.Node => {
+export const SmallSize = () => {
   const size = select("size", Object.values(SIZES), SIZES.SMALL);
   const pageCount = number("pageCount", 100);
 
@@ -46,7 +44,7 @@ SmallSize.story = {
   name: "Small size",
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const pageCount = number("pageCount", 6);
   const selectedPage = number("selectedPage", 2);

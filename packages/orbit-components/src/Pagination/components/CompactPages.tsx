@@ -1,14 +1,21 @@
-// @flow
 import * as React from "react";
 
+import * as Common from "../../common/common";
 import Pages from "./Pages";
 import PageButtonLink from "./PageButtonLink";
 import MenuMeatballs from "../../icons/MenuMeatballs";
-import type { Props } from "./CompactPages";
+import { OnPageChange } from "../index.d";
+
+interface Props {
+  pageCount: number;
+  selectedPage: number;
+  onPageChange: OnPageChange;
+  size: Common.InputSize;
+}
 
 const MeatBalls = () => <MenuMeatballs size="small" color="primary" />;
 
-const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props): React.Node => {
+const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props) => {
   if (selectedPage > pageCount - 4) {
     return (
       <>

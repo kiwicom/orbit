@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
@@ -10,14 +8,16 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import ListChoice from ".";
 
-const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
+const getIcons = (name: string, defaultIcon: string) =>
+  select(name, [null, ...Object.keys(Icons)], defaultIcon);
+
+const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "ListChoice",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const title = text("title", "Choice Title");
   const description = text("description", "Further description");
   const Icon = getIcon(getIcons("icon", "Accommodation"));
@@ -38,7 +38,7 @@ Default.story = {
   },
 };
 
-export const MultipleChoices = (): React.Node => (
+export const MultipleChoices = () => (
   <>
     <ListChoice
       title="Choice Title"
@@ -74,7 +74,7 @@ MultipleChoices.story = {
   },
 };
 
-export const WithAction = (): React.Node => {
+export const WithAction = () => {
   const title = text("title", "Choice Title");
   const description = text("description", "Further description");
   const disabled = boolean("disabled", false);
@@ -101,7 +101,7 @@ export const WithAction = (): React.Node => {
   );
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const title = text("title", "Choice Title");
   const description = text("description", "Further description");
   const selectable = boolean("selectable", true);
@@ -130,7 +130,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <>
       <ListChoice

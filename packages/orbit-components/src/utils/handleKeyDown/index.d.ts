@@ -1,6 +1,6 @@
 declare const HandleKeyDown: (
-  onClick?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>,
+  onAction?: React.MouseEventHandler<HTMLElement> | React.KeyboardEventHandler<HTMLElement>,
   action?: () => void,
-) => (ev: React.KeyboardEvent<HTMLElement>) => void;
+) => React.KeyboardEventHandler<HTMLElement>;
 
 export { HandleKeyDown, HandleKeyDown as default };

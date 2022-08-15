@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -9,8 +8,7 @@ import defaultTheme from "../defaultTheme";
 import { getSize } from "../Icon";
 import { right } from "../utils/rtl";
 import handleKeyDown from "../utils/handleKeyDown";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledListChoiceIcon = styled.div`
   ${({ theme }) => css`
@@ -30,12 +28,11 @@ const StyledListChoiceIcon = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledListChoiceIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...props} />)`
+const StyledListChoice = styled.div<Partial<Props>>`
   ${({ theme, disabled }) => css`
     display: flex;
     align-items: center;
@@ -72,7 +69,6 @@ const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...prop
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledListChoice.defaultProps = {
   theme: defaultTheme,
 };
@@ -87,7 +83,6 @@ const StyledListChoiceContent = styled.div`
 `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledListChoiceContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -103,18 +98,18 @@ const ListChoice = ({
   onClick,
   selected,
   disabled,
-}: Props): React.Node => {
+}: Props) => {
   const conditionalProps = {
     ...(selectable ? { "aria-checked": selected } : null),
   };
 
   return (
     <StyledListChoice
-      onClick={!disabled ? onClick : null}
+      onClick={!disabled ? onClick : undefined}
       data-test={dataTest}
       id={id}
-      onKeyDown={!disabled ? handleKeyDown(onClick) : null}
-      tabIndex={disabled ? "-1" : "0"}
+      onKeyDown={!disabled ? handleKeyDown(onClick) : undefined}
+      tabIndex={disabled ? -1 : 0}
       disabled={disabled}
       aria-disabled={disabled}
       role={selectable ? "checkbox" : "button"}

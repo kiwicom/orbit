@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean } from "@storybook/addon-knobs";
@@ -19,7 +18,7 @@ export default {
   title: "NavigationBar",
 };
 
-export const NavBarUpToTablet = (): React.Element<"div"> => {
+export const NavBarUpToTablet = () => {
   const dataTest = text("dataTest", "test");
   const hideOnScroll = boolean("hideOnScroll", true);
 
@@ -55,7 +54,7 @@ NavBarUpToTablet.story = {
   },
 };
 
-export const NavBarDesktop = (): React.Element<"div"> => {
+export const NavBarDesktop = () => {
   const dataTest = text("dataTest", "test");
   const hideOnScroll = boolean("hideOnScroll", true);
 
@@ -86,7 +85,7 @@ export const NavBarDesktop = (): React.Element<"div"> => {
   );
 };
 
-export const RTL = (): React.Node => {
+export const RTL = () => {
   const hideOnScroll = boolean("hideOnScroll", true);
 
   return (

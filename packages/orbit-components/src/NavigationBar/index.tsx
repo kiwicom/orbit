@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -10,8 +9,7 @@ import ButtonLink from "../ButtonLink";
 import useStateWithCallback from "../hooks/useStateWithCallback";
 import useTranslate from "../hooks/useTranslate";
 import mq from "../utils/mediaQuery";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const NAVBAR_HEIGHT = { MOBILE: 52, DESKTOP: 64 };
 
@@ -23,12 +21,11 @@ const StyledNavigationBarContent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigationBarContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledNavigationBar = styled.nav`
+const StyledNavigationBar = styled.nav<{ shown: boolean }>`
   ${({ theme, shown }) => css`
     position: fixed;
     top: 0;
@@ -52,7 +49,6 @@ const StyledNavigationBar = styled.nav`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigationBar.defaultProps = {
   theme: defaultTheme,
 };
@@ -65,7 +61,7 @@ const NavigationBar = ({
   onShow,
   onHide,
   hideOnScroll = true,
-}: Props): React.Node => {
+}: Props) => {
   const translate = useTranslate();
   const resolveCallback = React.useCallback(
     state => {

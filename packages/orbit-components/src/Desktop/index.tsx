@@ -1,11 +1,9 @@
-// @flow
 import * as React from "react";
 
 import Hide from "../Hide";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const Desktop = ({ children }: Props): React.Node => (
+const Desktop = ({ children }: Props) => (
   <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>{children}</Hide>
 );
 

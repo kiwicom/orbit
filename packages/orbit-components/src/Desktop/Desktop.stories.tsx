@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import styled from "styled-components";
 
@@ -20,7 +18,7 @@ export default {
   title: "Desktop",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   return (
     <Desktop>
       <Component>Desktop</Component>

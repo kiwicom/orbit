@@ -627,3 +627,5 @@
   android: Released
   react: Released
   docs: Planned
+- component: SegmentedSwitch
+  android: Released

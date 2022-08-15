@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, select } from "@storybook/addon-knobs";
 
@@ -8,14 +7,16 @@ import * as Icons from "../icons";
 
 import NotificationBadge from ".";
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
+const getIcons = (defaultIcon: string | null) =>
+  select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+
+const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "NotificationBadge",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const content = text("Content", "10");
   const Icon = getIcon(getIcons(null));
   return <NotificationBadge icon={Icon && <Icon />}>{content}</NotificationBadge>;
@@ -27,7 +28,7 @@ Default.story = {
   },
 };
 
-export const Neutral = (): React.Node => {
+export const Neutral = () => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.NEUTRAL}>{content}</NotificationBadge>;
 };
@@ -38,7 +39,7 @@ Neutral.story = {
   },
 };
 
-export const Info = (): React.Node => {
+export const Info = () => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.INFO}>{content}</NotificationBadge>;
 };
@@ -49,7 +50,7 @@ Info.story = {
   },
 };
 
-export const InfoInverted = (): React.Node => {
+export const InfoInverted = () => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.INFO_INVERTED}>{content}</NotificationBadge>;
 };
@@ -60,7 +61,7 @@ InfoInverted.story = {
   },
 };
 
-export const Success = (): React.Node => {
+export const Success = () => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.SUCCESS}>{content}</NotificationBadge>;
 };
@@ -71,7 +72,7 @@ Success.story = {
   },
 };
 
-export const Warning = (): React.Node => {
+export const Warning = () => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.WARNING}>{content}</NotificationBadge>;
 };
@@ -82,7 +83,7 @@ Warning.story = {
   },
 };
 
-export const Critical = (): React.Node => {
+export const Critical = () => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.CRITICAL}>{content}</NotificationBadge>;
 };
@@ -93,7 +94,7 @@ Critical.story = {
   },
 };
 
-export const CriticalInverted = (): React.Node => {
+export const CriticalInverted = () => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.CRITICAL_INVERTED}>{content}</NotificationBadge>;
 };
@@ -104,7 +105,7 @@ CriticalInverted.story = {
   },
 };
 
-export const Dark = (): React.Node => {
+export const Dark = () => {
   const content = text("Content", "10");
   return <NotificationBadge type={TYPE_OPTIONS.DARK}>{content}</NotificationBadge>;
 };
@@ -115,7 +116,7 @@ Dark.story = {
   },
 };
 
-export const White = (): React.Element<"div"> => {
+export const White = () => {
   const content = text("Content", "10");
   return (
     <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
@@ -130,7 +131,7 @@ White.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const content = text("Content", "10");
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
   const dataTest = text("dataTest", "test");
@@ -156,7 +157,7 @@ Playground.story = {
   },
 };
 
-export const Accessibility = (): React.Node => {
+export const Accessibility = () => {
   const content = text("Content", "10");
   const ariaLabel = text("ariaLabel", "additional information for screen readers");
 
@@ -173,7 +174,7 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <NotificationBadge type="info">10</NotificationBadge>
   </RenderInRtl>

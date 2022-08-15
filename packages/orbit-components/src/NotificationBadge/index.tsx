@@ -1,12 +1,10 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
 import Badge from "../Badge";
 import { StyledBadge } from "../primitives/BadgePrimitive";
 import defaultTheme from "../defaultTheme";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledNotificationBadge = styled.div`
   ${StyledBadge} {
@@ -15,14 +13,11 @@ const StyledNotificationBadge = styled.div`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNotificationBadge.defaultProps = {
   theme: defaultTheme,
 };
 
-const NotificationBadge = (props: Props): React.Node => {
-  const { type, children, icon, ariaLabel, dataTest, id } = props;
-
+const NotificationBadge = ({ type, children, icon, ariaLabel, dataTest, id }: Props) => {
   return (
     <StyledNotificationBadge>
       <Badge type={type} dataTest={dataTest} id={id} icon={icon} ariaLabel={ariaLabel}>

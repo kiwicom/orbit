@@ -1,23 +1,22 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import type { DataAttrs } from "../common/common.js.flow";
-import defaultTheme from "../defaultTheme";
+import * as Common from "../common/common";
+import { DataAttrs } from "../common/common";
+import defaultTheme, { Theme } from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
 import ErrorFormTooltip from "../ErrorFormTooltip";
-import SIZE_OPTIONS from "./consts";
+import { SIZE_OPTIONS } from "./consts";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const getSelectSize = ({ theme, size }) => {
+const getSelectSize = ({ theme, size }: { theme: Theme; size: Common.Size }) => {
   const tokens = {
     [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
@@ -25,7 +24,7 @@ const getSelectSize = ({ theme, size }) => {
   return tokens[size];
 };
 
-const Label = styled.label`
+const StyledLabel = styled.label<{ $width: string; spaceAfter?: Common.SpaceAfterSizes }>`
   ${({ $width }) => css`
     position: relative;
     display: block;
@@ -34,20 +33,19 @@ const Label = styled.label`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-Label.defaultProps = {
+StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-type StyledSelectType = Props & {|
-  className: string,
-  children: React.Node,
-  error: boolean,
-  ...DataAttrs,
-|};
+interface StyledSelectType extends Partial<Props>, DataAttrs {
+  className?: string;
+  children: React.ReactNode;
+  error?: React.ReactNode;
+  filled: boolean;
+}
 
-const StyledSelect: any = styled(
-  React.forwardRef(
+const StyledSelect = styled(
+  React.forwardRef<HTMLSelectElement, StyledSelectType>(
     (
       {
         className,
@@ -75,11 +73,12 @@ const StyledSelect: any = styled(
         className={className}
         onChange={onChange}
         onFocus={onFocus}
+        // @ts-expect-error TODO
         readOnly={readOnly}
         onBlur={onBlur}
         disabled={disabled}
         name={name}
-        tabIndex={tabIndex}
+        tabIndex={Number(tabIndex)}
         ref={ref}
         {...dataAttrs}
       >
@@ -180,63 +179,64 @@ const StyledSelect: any = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
 
-export const SelectContainer: React.AbstractComponent<any, HTMLDivElement> = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: ${({ theme }) => theme.orbit.backgroundInput};
-  width: 100%;
-  box-sizing: border-box;
-  cursor: pointer;
+export const SelectContainer = styled.div`
+  ${({ theme }) => css`
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: ${theme.orbit.backgroundInput};
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+  `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectPrefix = styled.div`
-  display: flex;
-  align-items: center;
-  position: absolute;
-  padding: ${({ theme }) => `0 ${theme.orbit.spaceSmall}`};
-  pointer-events: none;
-  z-index: 3;
-  top: 0;
-  height: ${getSelectSize};
+const SelectPrefix = styled.div<{ size: Common.Size }>`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 0 ${theme.orbit.spaceSmall};
+    pointer-events: none;
+    z-index: 3;
+    top: 0;
+    height: ${getSelectSize};
+  `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectPrefix.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectSuffix = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  ${right}: ${({ theme }) => theme.orbit.spaceXSmall};
-  color: ${({ theme, disabled }) =>
-    disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-  pointer-events: none;
-  z-index: 3;
-  height: 100%;
+const SelectSuffix = styled.div<{ disabled?: boolean; size: Common.Size }>`
+  ${({ theme, size, disabled }) => css`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    ${right}: ${theme.orbit.spaceXSmall};
+    color: ${disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    pointer-events: none;
+    z-index: 3;
+    height: 100%;
 
-  & > * {
-    width: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};
-    height: ${({ theme, size }) => size === SIZE_OPTIONS.SMALL && theme.orbit.heightIconSmall};
-    margin-bottom: ${({ size, theme }) => size === SIZE_OPTIONS.SMALL && theme.orbit.spaceXXXSmall};
-  }
+    & > * {
+      width: ${size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};
+      height: ${size === SIZE_OPTIONS.SMALL && theme.orbit.heightIconSmall};
+      margin-bottom: ${size === SIZE_OPTIONS.SMALL && theme.orbit.spaceXXXSmall};
+    }
+  `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
@@ -261,15 +261,11 @@ const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...pr
   pointer-events: none;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCustomValue.defaultProps = {
   theme: defaultTheme,
 };
 
-const Select: React.AbstractComponent<
-  Props,
-  React.AbstractComponent<StyledSelectType, HTMLSelectElement>,
-> = React.forwardRef((props, ref) => {
+const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     label,
@@ -308,12 +304,13 @@ const Select: React.AbstractComponent<
     handleFocus,
   } = useErrorTooltip({ onFocus });
 
-  const inputRef = React.useRef(null);
+  const inputRef = React.useRef<HTMLElement | null>(null);
 
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Label spaceAfter={spaceAfter} ref={inputRef} $width={width}>
+    // @ts-expect-error TODO
+    <StyledLabel spaceAfter={spaceAfter} ref={inputRef} $width={width}>
       {label && (
         <FormLabel
           filled={!!filled}
@@ -330,11 +327,7 @@ const Select: React.AbstractComponent<
         </FormLabel>
       )}
       <SelectContainer ref={label ? null : labelRef}>
-        {prefix && (
-          <SelectPrefix prefix={prefix} size={size}>
-            {prefix}
-          </SelectPrefix>
-        )}
+        {prefix && <SelectPrefix size={size}>{prefix}</SelectPrefix>}
         {customValueText && (
           <StyledCustomValue disabled={disabled} filled={filled} size={size} prefix={prefix}>
             {customValueText}
@@ -361,7 +354,7 @@ const Select: React.AbstractComponent<
           dataAttrs={dataAttrs}
         >
           {placeholder && (
-            <option label={placeholder} value="">
+            <option label={placeholder.toString()} value="">
               {placeholder}
             </option>
           )}
@@ -390,7 +383,7 @@ const Select: React.AbstractComponent<
           referenceElement={inputRef}
         />
       )}
-    </Label>
+    </StyledLabel>
   );
 });
 

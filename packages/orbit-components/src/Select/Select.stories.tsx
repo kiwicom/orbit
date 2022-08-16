@@ -1,10 +1,9 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { object, select, text, boolean } from "@storybook/addon-knobs";
 
 import Airplane from "../icons/Airplane";
-import SIZE_OPTIONS from "./consts";
+import { SIZE_OPTIONS } from "./consts";
 import CountryFlag from "../CountryFlag";
 import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -23,9 +22,7 @@ export default {
   title: "Select",
 };
 
-export const Default = (): React.Node => (
-  <Select options={objectOptions} onChange={action("onChange")} />
-);
+export const Default = () => <Select options={objectOptions} onChange={action("onChange")} />;
 
 Default.story = {
   parameters: {
@@ -34,7 +31,7 @@ Default.story = {
   },
 };
 
-export const WithPrefix = (): React.Node => (
+export const WithPrefix = () => (
   <Select
     label="Select box (with prefix)"
     options={objectOptions}
@@ -52,7 +49,7 @@ WithPrefix.story = {
   },
 };
 
-export const WithCountryFlagPrefix = (): React.Node => {
+export const WithCountryFlagPrefix = () => {
   const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
   return (
     <Select
@@ -73,7 +70,7 @@ WithCountryFlagPrefix.story = {
   },
 };
 
-export const WithPlaceholder = (): React.Node => {
+export const WithPlaceholder = () => {
   const placeholder = text("Placeholder", "Select value from list");
   return (
     <Select
@@ -94,7 +91,7 @@ WithPlaceholder.story = {
   },
 };
 
-export const WithSmallSize = (): React.Node => (
+export const WithSmallSize = () => (
   <Select
     label="Select box (small size)"
     size="small"
@@ -112,7 +109,7 @@ WithSmallSize.story = {
   },
 };
 
-export const WithHelpMessage = (): React.Node => (
+export const WithHelpMessage = () => (
   <Select
     label="Select box (with help text)"
     options={objectOptions}
@@ -130,7 +127,7 @@ WithHelpMessage.story = {
   },
 };
 
-export const WithErrorMessage = (): React.Node => (
+export const WithErrorMessage = () => (
   <Select
     label="Select box (with error text)"
     options={objectOptions}
@@ -148,16 +145,20 @@ WithErrorMessage.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const placeholder = text("Placeholder", "Select value from list");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const disabled = boolean("Disabled", false);
   const name = text("Name", "name");
-  const customValueText = text("customValueText", null);
+  const customValueText = text("customValueText", "");
   const option = object("Options", objectOptions);
-  const value = select("Value", [undefined].concat(...objectOptions.map(opt => opt.value)));
+  const value = select(
+    "Value",
+    objectOptions.map(opt => opt.value),
+    undefined,
+  );
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const id = text("ID", "select-id");
   const required = boolean("Required", false);
   const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
@@ -173,7 +174,7 @@ export const Playground = (): React.Node => {
       options={option}
       disabled={disabled}
       name={name}
-      label={text("Label")}
+      label={text("Label", "Label")}
       onChange={action("onChange")}
       onBlur={action("onBlur")}
       onFocus={action("onFocus")}
@@ -193,7 +194,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Select placeholder="My placeholder" options={objectOptions} label="My label" />
   </RenderInRtl>

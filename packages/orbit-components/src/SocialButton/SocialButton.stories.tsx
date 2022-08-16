@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 
@@ -12,7 +11,7 @@ export default {
   title: "SocialButton",
 };
 
-export const Apple = (): React.Node => {
+export const Apple = () => {
   return (
     <SocialButton type={TYPE_OPTIONS.APPLE} onClick={action("clicked")} fullWidth>
       Sign in with Apple{" "}
@@ -20,7 +19,7 @@ export const Apple = (): React.Node => {
   );
 };
 
-export const Facebook = (): React.Node => {
+export const Facebook = () => {
   return (
     <SocialButton type={TYPE_OPTIONS.FACEBOOK} onClick={action("clicked")} fullWidth>
       Sign in with Facebook{" "}
@@ -28,7 +27,7 @@ export const Facebook = (): React.Node => {
   );
 };
 
-export const Google = (): React.Node => {
+export const Google = () => {
   return (
     <SocialButton type={TYPE_OPTIONS.GOOGLE} onClick={action("clicked")}>
       Sign in with Google
@@ -36,7 +35,7 @@ export const Google = (): React.Node => {
   );
 };
 
-export const Twitter = (): React.Node => {
+export const Twitter = () => {
   return (
     <SocialButton type={TYPE_OPTIONS.TWITTER} onClick={action("clicked")}>
       Sign in with Twitter{" "}
@@ -44,7 +43,7 @@ export const Twitter = (): React.Node => {
   );
 };
 
-export const Email = (): React.Node => {
+export const Email = () => {
   return (
     <SocialButton type={TYPE_OPTIONS.EMAIL} onClick={action("clicked")}>
       Sign in with Email
@@ -52,7 +51,7 @@ export const Email = (): React.Node => {
   );
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <SocialButton type={TYPE_OPTIONS.APPLE} iconRight={<Icons.Airplane />}>
       Button

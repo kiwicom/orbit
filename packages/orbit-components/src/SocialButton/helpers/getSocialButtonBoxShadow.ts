@@ -1,10 +1,10 @@
-// @flow
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import { TOKENS, TYPE_OPTIONS } from "../consts";
-import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import getSocialButtonTypeToken from "./getSocialButtonTypeToken";
-import type { GetSocialButtonBoxShadow } from "./getSocialButtonBoxShadow";
+import { TOKENS, TYPE_OPTIONS } from "../consts";
+import { Theme } from "../../defaultTheme";
+import { Type } from "../index.d";
+import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 
 const opacity = {
   [TYPE_OPTIONS.APPLE]: 15,
@@ -14,7 +14,14 @@ const opacity = {
   [TYPE_OPTIONS.EMAIL]: 8,
 };
 
-const getButtonBoxShadow: GetSocialButtonBoxShadow = (state, disabled, theme, type) => {
+type State = "default" | "focus" | "active" | "hover";
+
+const getButtonBoxShadow = (
+  state: State,
+  disabled: boolean,
+  theme: Theme,
+  type: Type,
+): string | null => {
   const wrappedButtonTypeToken = name => getSocialButtonTypeToken(name, type, theme);
   if (disabled) {
     return null;

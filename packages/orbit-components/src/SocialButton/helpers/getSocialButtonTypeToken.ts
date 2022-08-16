@@ -1,10 +1,10 @@
-// @flow
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
-import type { GetSocialButtonTypeToken } from "./getSocialButtonTypeToken";
+import { Theme } from "../../defaultTheme";
+import { Type } from "../index.d";
 
-const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) => {
+const getSocialButtonTypeToken = (name: string, type: Type, theme: Theme): string => {
   const tokens = {
     [TOKENS.backgroundButton]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkNormal,

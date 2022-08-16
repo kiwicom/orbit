@@ -1,12 +1,35 @@
-// @flow
 import getSocialButtonTypeToken from "./getSocialButtonTypeToken";
 import getSocialButtonBoxShadow from "./getSocialButtonBoxShadow";
 import { TOKENS } from "../consts";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
-import type { GetSocialButtonStyles } from "./getSocialButtonStyles";
+import { Theme } from "../../defaultTheme";
+import { Type } from "../index.d";
 
-const getButtonStyles: GetSocialButtonStyles = ({ theme, disabled, type }) => {
-  const wrappedTypeToken = name => getSocialButtonTypeToken(name, type, theme);
+interface Output {
+  background: string;
+  backgroundHover: string;
+  backgroundActive: string;
+  backgroundFocus: string | null;
+  foreground: string;
+  foregroundHover: string;
+  foregroundActive: string;
+  boxShadow: string | null;
+  boxShadowActive: string | null;
+  boxShadowFocus: string | null;
+  contentAlign: "start" | "center" | "end";
+  contentWidth: string;
+}
+
+const getButtonStyles = ({
+  theme,
+  disabled,
+  type,
+}: {
+  theme: Theme;
+  disabled: boolean;
+  type: Type;
+}): Output => {
+  const wrappedTypeToken = (name: string) => getSocialButtonTypeToken(name, type, theme);
   return {
     background: wrappedTypeToken(TOKENS.backgroundButton),
     backgroundHover: wrappedTypeToken(TOKENS.backgroundButtonHover),

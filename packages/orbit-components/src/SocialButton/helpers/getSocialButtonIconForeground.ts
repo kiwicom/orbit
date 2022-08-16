@@ -1,9 +1,15 @@
-// @flow
 import { TOKENS } from "../consts";
 import getSocialButtonTypeToken from "./getSocialButtonTypeToken";
-import type { GetSocialButtonIconForeground } from "./getSocialButtonIconForeground";
+import { Theme } from "../../defaultTheme";
+import { Type } from "../index.d";
 
-const getSocialButtonIconForeground: GetSocialButtonIconForeground = ({ theme, type }) => ({
+const getSocialButtonIconForeground = ({
+  theme,
+  type,
+}: {
+  theme: Theme;
+  type: Type;
+}): { foreground: string } => ({
   foreground: getSocialButtonTypeToken(TOKENS.iconColor, type, theme),
 });
 

@@ -4,8 +4,7 @@ import styled from "styled-components";
 import StarEmpty from "../icons/StarEmpty";
 import StarFull from "../icons/StarFull";
 import defaultTheme from "../defaultTheme";
-import MAX_STARS from "./consts";
-import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
+import { MAX_STARS, ICON_COLORS, ICON_SIZES } from "./consts";
 import useTranslate from "../hooks/useTranslate";
 import { Props } from "./index.d";
 

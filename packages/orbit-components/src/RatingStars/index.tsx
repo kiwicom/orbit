@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
@@ -8,8 +7,7 @@ import defaultTheme from "../defaultTheme";
 import MAX_STARS from "./consts";
 import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
 import useTranslate from "../hooks/useTranslate";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledRatingStars = styled.div`
   display: flex;
@@ -22,7 +20,6 @@ const StyledRatingStars = styled.div`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledRatingStars.defaultProps = {
   theme: defaultTheme,
 };
@@ -34,7 +31,7 @@ const RatingStars = ({
   id,
   color = ICON_COLORS.PRIMARY,
   showEmpty = false,
-}: Props): React.Node => {
+}: Props) => {
   const translate = useTranslate();
   const ratingRounded = Math.round(rating);
   const starsCount = showEmpty ? MAX_STARS : ratingRounded;
@@ -42,7 +39,6 @@ const RatingStars = ({
     <StyledRatingStars
       data-test={dataTest}
       id={id}
-      size={size}
       aria-label={translate("ratingstar_description", {
         number: ratingRounded,
         total: starsCount,

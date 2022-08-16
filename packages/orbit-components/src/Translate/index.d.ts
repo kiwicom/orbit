@@ -5,15 +5,17 @@ import * as React from "react";
 
 import { Translations } from "../Dictionary/index.d";
 
+export type Values = Record<string, string | number>;
+
 export type PureTranslate = (
   dictionary: Translations,
   key: string,
-  values?: Record<string, string | number>,
+  values?: Values,
 ) => React.Element<string>;
 
 export interface Props {
   readonly tKey: string;
-  readonly values?: Record<string, string | number>;
+  readonly values?: Values;
 }
 
 declare const Translate: React.FunctionComponent<Props>;

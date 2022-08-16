@@ -1,7 +1,6 @@
-// @flow
 import { TYPES } from "../../consts";
 
-import type { Params } from ".";
+import { Params } from ".";
 
 const resolveFocusColor = ({ type, theme, selected }: Params): string => {
   if (!selected) return "";

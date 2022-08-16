@@ -1,4 +1,3 @@
-// @flow
 import styled, { css } from "styled-components";
 import * as React from "react";
 
@@ -24,10 +23,9 @@ import {
 } from "./components/helpers";
 import SeatCircle, { StyledCirclePath } from "./components/SeatCircle";
 import { SIZE_OPTIONS, TYPES } from "./consts";
+import { Props, Type, Size } from "./index.d";
 
-import type { Props } from ".";
-
-const getSize = ({ size }) => {
+const getSize = ({ size }: { size: Size }) => {
   const height = {
     [SIZE_OPTIONS.SMALL]: "36px",
     [SIZE_OPTIONS.MEDIUM]: "46px",
@@ -41,7 +39,7 @@ const getSize = ({ size }) => {
   return `width: ${width[size]}; height: ${height[size]};`;
 };
 
-const StyledSeatWrapper = styled.div`
+const StyledSeatWrapper = styled.div<{ type: Type; selected?: boolean; size: Size }>`
   ${({ type, selected, theme }) => css`
     position: relative;
     cursor: ${type !== TYPES.UNAVAILABLE && "pointer"};
@@ -82,14 +80,12 @@ const StyledSeatWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSeatWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
 const StyledSeat = styled.svg``;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSeat.defaultProps = {
   theme: defaultTheme,
 };
@@ -105,7 +101,7 @@ const Seat = ({
   label,
   title = "Seat",
   description = "Presents options for seating",
-}: Props): React.Node => {
+}: Props) => {
   const randomId = useRandomIdSeed();
   const titleId = randomId("title");
   const descrId = randomId("descr");
@@ -117,7 +113,7 @@ const Seat = ({
         data-test={dataTest}
         id={id}
         onClick={clickable ? onClick : undefined}
-        tabIndex={clickable ? "0" : "-1"}
+        tabIndex={clickable ? 0 : -1}
         type={type}
         size={size}
         selected={selected}

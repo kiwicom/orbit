@@ -1,4 +1,3 @@
-// @flow
 import { TYPES } from "../../consts";
 
 import type { Params } from ".";

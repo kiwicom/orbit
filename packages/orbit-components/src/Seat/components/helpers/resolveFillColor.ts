@@ -1,11 +1,15 @@
-// @flow
 import resolveFocusColor from "./resolveFocusColor";
 import resolveAccentColor from "./resolveAccentColor";
 import { TYPES } from "../../consts";
 
 import type { Params } from ".";
 
-const resolveFillColor = ({ type, theme, selected, focus }: Params): string | (Params => any) => {
+const resolveFillColor = ({
+  type,
+  theme,
+  selected,
+  focus,
+}: Params): string | typeof resolveAccentColor | typeof resolveFocusColor => {
   if (focus) {
     if (type === TYPES.UNAVAILABLE) return "";
 

@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { select, text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -10,11 +8,11 @@ import SeatLegend from "./components/SeatLegend";
 
 import Seat from ".";
 
-export const Default = (): React.Node => <Seat type="default" />;
+export const Default = () => <Seat type="default" />;
 
-export const Mixed = (): React.Node => {
+export const Mixed = () => {
   const label = text("label", "XY");
-  const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
 
   return (
     <Stack direction="column">
@@ -76,8 +74,8 @@ export const Mixed = (): React.Node => {
   );
 };
 
-export const Selected = (): React.Node => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
+export const Selected = () => {
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const dataTest = text("dataTest", "test");
   const label = text("label", "XY");
 
@@ -97,9 +95,9 @@ export const Selected = (): React.Node => {
   );
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const dataTest = text("dataTest", "test");
-  const size = select("Size", Object.values(SIZE_OPTIONS), "medium");
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const label = text("label", "XY");
   const price = text("price", "$12");
   const selected = boolean("selected", false);
@@ -129,7 +127,7 @@ export const Playground = (): React.Node => {
   );
 };
 
-export const Legend = (): React.Node => {
+export const Legend = () => {
   return (
     <Stack direction="column">
       <SeatLegend label="Extra legroom ($ 5.99 – $ 12.98)" />

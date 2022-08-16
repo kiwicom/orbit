@@ -1,6 +1,5 @@
-// @flow
-import type { Theme } from "../../../defaultTheme";
-import type { Type } from "../..";
+import { Theme } from "../../../defaultTheme";
+import { Type } from "../../index.d";
 import resolveAccentColor from "./resolveAccentColor";
 import resolveFocusColor from "./resolveFocusColor";
 import resolveFillColor from "./resolveFillColor";
@@ -8,13 +7,13 @@ import resolveHoverColor from "./resolveHoverColor";
 import resolveTextColor from "./resolveTextColor";
 import resolveCloseIconColor from "./resolveCloseIconColor";
 
-export type Params = {|
-  +theme: Theme,
-  +type?: Type,
-  +selected?: boolean,
-  +hover?: boolean,
-  +focus?: boolean,
-|};
+export interface Params {
+  theme: Theme;
+  type?: Type;
+  selected?: boolean;
+  hover?: boolean;
+  focus?: boolean;
+}
 
 export {
   resolveAccentColor,

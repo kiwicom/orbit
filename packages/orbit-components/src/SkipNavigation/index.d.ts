@@ -3,18 +3,22 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common";
-
 interface Action {
   readonly name?: string;
   readonly link?: string;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  readonly onClick?: {} | Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
+  readonly onClick?: (ev?: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-interface Props {
+export interface Props {
   readonly actions?: Action[];
   readonly feedbackUrl?: string;
+}
+
+export interface MappedOptions {
+  readonly key?: string;
+  readonly value: string | number;
+  readonly label?: string;
+  readonly disabled?: boolean;
 }
 
 declare const SkipNavigation: React.FunctionComponent<Props>;

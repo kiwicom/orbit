@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 
@@ -60,7 +59,7 @@ export default {
   title: "SkipNavigation",
 };
 
-export const Default = (): React.Element<"div"> => {
+export const Default = () => {
   return (
     <div>
       <SkipNavigation />
@@ -76,7 +75,7 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Element<"div"> => {
+export const Playground = () => {
   return (
     <div>
       <SkipNavigation

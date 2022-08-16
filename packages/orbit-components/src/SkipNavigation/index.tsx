@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -7,10 +6,9 @@ import Stack from "../Stack";
 import ButtonLink from "../Button";
 import defaultTheme from "../defaultTheme";
 import Translate from "../Translate";
+import { Props, MappedOptions } from "./index.d";
 
-import type { Props, MappedOptions } from ".";
-
-const StyledNavigation = styled.div`
+const StyledNavigation = styled.div<{ show?: boolean }>`
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight}; /* TODO: Token */
   padding: ${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Token */
   width: 100%;
@@ -35,7 +33,6 @@ const StyledNavigation = styled.div`
     `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledNavigation.defaultProps = {
   theme: defaultTheme,
 };
@@ -44,14 +41,14 @@ const StyledSelectWrapper = styled.div`
   max-width: 800px;
 `;
 
-const SkipNavigation = ({ actions, feedbackUrl }: Props): React.Node => {
-  const [links, setLinks] = React.useState([]);
+const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
+  const [links, setLinks] = React.useState<HTMLAnchorElement[]>([]);
   const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
-  const [innerPages, setPages] = React.useState([]);
+  const [innerPages, setPages] = React.useState<{ value: number; label?: string }[]>([]);
   const [show, setShow] = React.useState(false);
 
-  const handleLinksClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
-    const index = Number(ev.target.value);
+  const handleLinksClick = (ev: React.SyntheticEvent<HTMLSelectElement>) => {
+    const index = Number(ev.currentTarget.value);
     const selected = links[index - 1];
 
     if (selected) {
@@ -60,9 +57,9 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props): React.Node => {
     }
   };
 
-  const handlePageClick = (ev: SyntheticInputEvent<HTMLSelectElement>) => {
+  const handlePageClick = (ev: React.SyntheticEvent<HTMLSelectElement>) => {
     if (actions) {
-      const index = Number(ev.target.value);
+      const index = Number(ev.currentTarget.value);
       const selected = actions[index - 1];
 
       if (selected.onClick) {
@@ -75,7 +72,8 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props): React.Node => {
 
   const handleFocus = () => {
     if (links.length === 0) {
-      const selectedLinks = document.querySelectorAll("[data-a11y-section]");
+      // @ts-expect-error TODO
+      const selectedLinks = document.querySelectorAll("[data-a11y-section]") as HTMLAnchorElement[];
       const mappedSections = [
         {
           value: 0,
@@ -111,7 +109,7 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props): React.Node => {
   };
 
   return (
-    <StyledNavigation tabIndex="-1" onFocus={handleFocus} onBlur={() => setShow(false)} show={show}>
+    <StyledNavigation tabIndex={-1} onFocus={handleFocus} onBlur={() => setShow(false)} show={show}>
       <Stack justify="between">
         <StyledSelectWrapper>
           <Stack align="center">

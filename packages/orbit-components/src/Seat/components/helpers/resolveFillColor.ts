@@ -4,20 +4,15 @@ import { TYPES } from "../../consts";
 
 import type { Params } from ".";
 
-const resolveFillColor = ({
-  type,
-  theme,
-  selected,
-  focus,
-}: Params): string | typeof resolveAccentColor | typeof resolveFocusColor => {
+const resolveFillColor = ({ type, theme, selected, focus }: Params): string => {
   if (focus) {
     if (type === TYPES.UNAVAILABLE) return "";
 
     if (!selected) {
-      return resolveAccentColor;
+      return resolveAccentColor({ type, theme, selected });
     }
 
-    return resolveFocusColor;
+    return resolveFocusColor({ type, theme, selected });
   }
 
   if (type === TYPES.LEGROOM)

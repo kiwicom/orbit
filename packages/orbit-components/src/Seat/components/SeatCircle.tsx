@@ -1,17 +1,16 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
 import { useRandomIdSeed } from "../../hooks/useRandomId";
 import useTheme from "../../hooks/useTheme";
 import { SIZE_OPTIONS } from "../consts";
-import type { Type, Size } from "..";
+import { Type, Size } from "../index.d";
 import { resolveCloseIconColor } from "./helpers";
 
-type Props = {|
-  type?: Type,
-  size?: Size,
-|};
+interface Props {
+  type?: Type;
+  size?: Size;
+}
 
 const StyledCircleWrapper = styled.div`
   position: absolute;
@@ -19,16 +18,16 @@ const StyledCircleWrapper = styled.div`
   right: -10px;
 `;
 
-export const StyledCirclePath: any = styled.path``;
+export const StyledCirclePath = styled.path``;
 
-const SeatCircle = ({ size, type }: Props): React.Node => {
+const SeatCircle = ({ size, type }: Props) => {
   const theme = useTheme();
   const randomId = useRandomIdSeed();
   const circleSmallId = randomId("circleSmallId");
   const circleNormalId = randomId("circleNormalId");
 
   return (
-    <StyledCircleWrapper size={size}>
+    <StyledCircleWrapper>
       {size === SIZE_OPTIONS.SMALL ? (
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
           <mask

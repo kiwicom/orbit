@@ -1,13 +1,11 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import defaultTheme, { Theme } from "../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
+import { Props, Size } from "./index.d";
 
-import type { Props } from ".";
-
-const getHeight = (theme, size) => {
+const getHeight = (theme: Theme, size: Size) => {
   const tokens = {
     height: {
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightServiceLogoSmall,
@@ -20,7 +18,7 @@ const getHeight = (theme, size) => {
 
 const getColor = greyScale => (greyScale ? "logos-grayscale" : "logos");
 
-export const StyledServiceLogo: any = styled(
+export const StyledServiceLogo = styled(
   ({ className, name, size, grayScale, theme, dataTest, id }) => (
     <img
       className={className}
@@ -42,7 +40,6 @@ export const StyledServiceLogo: any = styled(
   background-color: transparent; // TODO: create token backgroundServiceLogo
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledServiceLogo.defaultProps = {
   theme: defaultTheme,
 };
@@ -53,7 +50,7 @@ const ServiceLogo = ({
   grayScale = false,
   dataTest,
   id,
-}: Props): React.Node => (
+}: Props) => (
   <StyledServiceLogo name={name} size={size} grayScale={grayScale} dataTest={dataTest} id={id} />
 );
 

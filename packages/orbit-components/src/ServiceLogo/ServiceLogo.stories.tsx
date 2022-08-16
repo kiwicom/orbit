@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { select, boolean, text } from "@storybook/addon-knobs";
 
@@ -11,7 +9,7 @@ export default {
   title: "ServiceLogo",
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const grayScale = boolean("GrayScale", false);

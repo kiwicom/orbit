@@ -1,10 +1,9 @@
-// @flow
 import * as React from "react";
 import ReactDOM from "react-dom";
 
-import type { Props } from ".";
+import { Props } from "./index.d";
 
-const Portal = ({ renderInto, children }: Props): React.Portal | null => {
+const Portal = ({ renderInto, children }: Props) => {
   const [el] = React.useState(() => {
     if (typeof window !== "undefined") {
       return document.createElement("div");

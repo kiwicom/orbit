@@ -1,3 +1,5 @@
+import React from "react";
+
 import useDictionary from "../hooks/useDictionary";
 import DEFAULT_DICTIONARY from "../data/dictionary/en-GB.json";
 import { Props, PureTranslate } from "./index.d";
@@ -13,9 +15,9 @@ export const pureTranslate: PureTranslate = (translations, key, values = {}) => 
   );
 };
 
-const Translate = ({ tKey, values }: Props): string => {
+const Translate = ({ tKey, values }: Props): JSX.Element => {
   const dictionary = useDictionary();
-  return pureTranslate(dictionary, tKey, values);
+  return <>{pureTranslate(dictionary, tKey, values)}</>;
 };
 
 export default Translate;

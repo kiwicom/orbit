@@ -9,7 +9,7 @@ export type PureTranslate = (
   dictionary: Translations,
   key: string,
   values?: Record<string, string | number>,
-) => string;
+) => React.Element<string>;
 
 export interface Props {
   readonly tKey: string;

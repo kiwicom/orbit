@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
@@ -8,8 +7,7 @@ import { PLACEMENTS } from "../common/consts";
 import PopoverContent from "./components/ContentWrapper";
 import Portal from "../Portal";
 import handleKeyDown from "../utils/handleKeyDown";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledPopoverChild = styled.div`
   position: relative;
@@ -34,8 +32,8 @@ const Popover = ({
   actions,
   overlapped,
   dataTest,
-}: Props): React.Node => {
-  const ref = React.useRef<HTMLElement | null>(null);
+}: Props) => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
 
   const theme = useTheme();
 
@@ -64,10 +62,10 @@ const Popover = ({
   );
 
   const handleOut = React.useCallback(
-    (ev: SyntheticEvent<HTMLElement>) => {
+    (ev: React.SyntheticEvent<HTMLElement>) => {
       // If open prop is present ignore custom handler
       // $FlowFixMe: TODO
-      if (ref.current && !ref.current.contains(ev.target)) {
+      if (ref.current && !ref.current.contains(ev.currentTarget)) {
         if (typeof opened === "undefined") {
           setShown(false);
           clearShownTimeout();

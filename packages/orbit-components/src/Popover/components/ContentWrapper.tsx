@@ -1,13 +1,13 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 import { usePopper } from "react-popper";
+import type { Placement } from "@popperjs/core/lib/enums";
 
+import * as Common from "../../common/common";
 import defaultTheme from "../../defaultTheme";
 import mq from "../../utils/mediaQuery";
 import Button from "../../Button";
-import type { Props } from "./ContentWrapper";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import Translate from "../../Translate";
 import transition from "../../utils/transition";
@@ -17,11 +17,33 @@ import { ModalContext } from "../../Modal/ModalContext";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import { PLACEMENTS } from "../../common/consts";
 import boundingClientRect from "../../utils/boundingClientRect";
+import { Offset } from "../index.d";
 
 const mobileTop = ({ theme }) => theme.orbit.spaceXLarge;
 const popoverPadding = ({ theme }) => theme.orbit.spaceMedium;
 
-const StyledContentWrapper = styled.div`
+export interface Props extends Common.Globals {
+  children: React.ReactNode;
+  closeText?: React.ReactNode;
+  referenceElement: HTMLElement | null;
+  placement: Placement;
+  width?: string;
+  noFlip?: boolean;
+  allowOverflow?: boolean;
+  noPadding?: boolean;
+  overlapped?: boolean;
+  shown: boolean;
+  fixed?: boolean;
+  lockScrolling?: boolean;
+  actions?: React.ReactNode;
+  offset?: Offset;
+  onClose: (ev: React.SyntheticEvent<HTMLElement>) => void;
+}
+
+const StyledContentWrapper = styled.div<{
+  windowHeight?: number | null;
+  actionsHeight?: number | null;
+}>`
   ${({ theme, windowHeight, actionsHeight }) => css`
     overflow: auto;
     border-top-left-radius: ${theme.orbit.spaceSmall};
@@ -30,7 +52,7 @@ const StyledContentWrapper = styled.div`
     left: 0;
     width: 100%;
     background-color: ${theme.orbit.paletteWhite};
-    max-height: ${windowHeight - actionsHeight - 32}px;
+    max-height: ${windowHeight && actionsHeight && windowHeight - actionsHeight - 32}px;
     bottom: ${actionsHeight || 0}px;
 
     ${mq.largeMobile(css`
@@ -43,7 +65,6 @@ const StyledContentWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContentWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -76,12 +97,24 @@ const StyledActions = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledActions.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledPopoverParent = styled.div`
+const StyledPopoverParent = styled.div<{
+  isInsideModal?: boolean;
+  width?: string | number;
+  shown?: boolean;
+  fixed?: boolean;
+  transform?: string;
+  overlapped?: boolean;
+  noPadding?: boolean;
+  top?: string | number;
+  left?: string | number;
+  bottom?: string | number;
+  right?: string | number;
+  position?: string;
+}>`
   ${({ isInsideModal, width, shown, theme, transform, top, left, bottom, right, position }) => css`
     position: fixed;
     bottom: 0;
@@ -117,21 +150,19 @@ const StyledPopoverParent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverParent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledPopoverPadding = styled.div`
+const StyledPopoverPadding = styled.div<{ noPadding?: boolean }>`
   padding: ${({ noPadding }) => (noPadding ? 0 : popoverPadding)};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverPadding.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledPopoverContent = styled.div`
+const StyledPopoverContent = styled.div<{ shownMobile?: boolean }>`
   ${({ shownMobile }) => css`
     transform: translateY(${shownMobile ? "0%" : "100%"});
     will-change: transform;
@@ -144,12 +175,11 @@ const StyledPopoverContent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledOverlay = styled.div`
+const StyledOverlay = styled.div<{ shown?: boolean }>`
   ${({ theme, shown }) => css`
     display: block;
     position: fixed;
@@ -168,7 +198,7 @@ const StyledOverlay = styled.div`
     `)};
   `}
 `;
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+
 StyledOverlay.defaultProps = {
   theme: defaultTheme,
 };
@@ -182,7 +212,6 @@ const StyledPopoverClose = styled.div`
   `)}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPopoverClose.defaultProps = {
   theme: defaultTheme,
 };
@@ -204,16 +233,16 @@ const PopoverContentWrapper = ({
   allowOverflow,
   lockScrolling = true,
   actions,
-}: Props): React.Node => {
-  const [actionsHeight, setActionsHeight] = React.useState(null);
+}: Props) => {
+  const [actionsHeight, setActionsHeight] = React.useState<number | null>(null);
   const { isInsideModal } = React.useContext(ModalContext);
   const { isLargeMobile } = useMediaQuery();
-  const actionsRef = React.useRef<HTMLElement | null>(null);
-  const content = React.useRef<?HTMLElement | null>(null);
-  const scrollingElementRef = React.useRef<HTMLElement | null>(null);
+  const actionsRef = React.useRef<HTMLDivElement | null>(null);
+  const content = React.useRef<HTMLDivElement | null>(null);
+  const scrollingElementRef = React.useRef<HTMLDivElement | null>(null);
   useLockScrolling(scrollingElementRef, lockScrolling && !isLargeMobile);
 
-  const popoverRef = React.useRef<HTMLElement | null>(null);
+  const popoverRef = React.useRef<HTMLDivElement | null>(null);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
   const { styles, update } = usePopper(referenceElement, popoverRef.current, {
@@ -247,7 +276,8 @@ const PopoverContentWrapper = ({
     if (update) update();
 
     if (actionsRef.current) {
-      setActionsHeight(boundingClientRect({ current: actionsRef.current })?.height);
+      const { height } = boundingClientRect({ current: actionsRef.current });
+      setActionsHeight(height);
     }
 
     return () => {
@@ -255,22 +285,22 @@ const PopoverContentWrapper = ({
     };
   }, [update, actions, setActionsHeight]);
 
-  useClickOutside(content, ev => {
+  useClickOutside(content, (ev: React.SyntheticEvent<HTMLElement>) => {
     if (isLargeMobile) onClose(ev);
   });
 
-  const handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (ev: React.KeyboardEvent<HTMLDivElement>) => {
     if (ev.keyCode === 27 && onClose) onClose(ev);
   };
 
   return (
     <>
-      <StyledOverlay shown={shown} isInsideModal={isInsideModal} onMouseDown={onClose} />
-      {/* $FlowFixMe: https://github.com/popperjs/react-popper/issues/318 */}
+      <StyledOverlay shown={shown} onMouseDown={onClose} />
+      {/* @ts-expect-error popper */}
       <StyledPopoverParent
         width={width}
         ref={popoverRef}
-        tabIndex="0"
+        tabIndex={0}
         data-test={dataTest}
         id={id}
         noPadding={noPadding}

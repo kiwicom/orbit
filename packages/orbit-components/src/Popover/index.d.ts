@@ -6,10 +6,10 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-type Offset = {
+export interface Offset {
   top?: number;
   left?: number;
-};
+}
 
 export interface Props extends Common.Globals {
   readonly children: React.ReactNode;

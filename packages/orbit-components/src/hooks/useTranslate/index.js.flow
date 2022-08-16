@@ -1,8 +1,0 @@
-// @flow
-import type { Values, Key } from "../../Translate";
-
-type TranslateFunction = (key: Key, values?: Values) => string;
-
-export type UseTranslate = () => TranslateFunction;
-
-declare export default UseTranslate;

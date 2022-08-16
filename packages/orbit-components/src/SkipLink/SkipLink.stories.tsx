@@ -1,7 +1,6 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { array, text } from "@storybook/addon-knobs";
+import { text } from "@storybook/addon-knobs";
 
 import Heading from "../Heading";
 import Text from "../Text";
@@ -42,8 +41,8 @@ export default {
   title: "SkipLink",
 };
 
-export const Playground = (): React.Element<"div"> => {
-  const links = array("links", [
+export const Playground = () => {
+  const links = [
     {
       href: "#guarantee",
       name: "Go to kiwi guarantee information",
@@ -56,7 +55,8 @@ export const Playground = (): React.Element<"div"> => {
       name: "Reguest a refund",
       onClick: action("Reguest a refund"),
     },
-  ]);
+  ];
+
   const buttonLabel = text(
     "buttonLabel",
     "Description for screen readers about where the user currently is or describing a more complex component.",
@@ -77,7 +77,7 @@ Playground.story = {
   },
 };
 
-export const WithinModal = (): React.Node => (
+export const WithinModal = () => (
   <Modal onClose={action("onClose")} fixedFooter>
     <SkipLink
       links={[

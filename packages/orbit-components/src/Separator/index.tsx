@@ -1,12 +1,11 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import * as Common from "../common/common";
+import defaultTheme, { Theme } from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import { left, right } from "../utils/rtl";
-
-import type { Props, Indent } from ".";
+import { Props, Indent, Align } from "./index.d";
 
 function capitalize(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -16,15 +15,14 @@ function getIndentAmount({
   theme,
   indent,
 }: // StyledContainer takes more props, so this shouldn't be exact
-// eslint-disable-next-line flowtype/require-exact-type
 {
-  theme: typeof defaultTheme,
-  indent: Indent,
+  theme: Theme;
+  indent: Indent;
 }) {
   return indent === "none" ? 0 : theme.orbit[`space${capitalize(indent)}`];
 }
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div<{ align: Align; indent: Indent }>`
   ${({ align }) => css`
     box-sizing: border-box;
     width: 100%;
@@ -43,7 +41,7 @@ const StyledContainer = styled.div`
   `};
 `;
 
-export const StyledSeparator: any = styled.hr`
+export const StyledSeparator = styled.hr<{ spaceAfter?: Common.SpaceAfterSizes }>`
   ${({ theme }) => css`
     height: ${theme.orbit.heightSeparator};
     background: ${theme.orbit.backgroundSeparator};
@@ -54,12 +52,11 @@ export const StyledSeparator: any = styled.hr`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSeparator.defaultProps = {
   theme: defaultTheme,
 };
 
-const Separator = ({ align = "left", indent = "none", spaceAfter }: Props): React.Node => (
+const Separator = ({ align = "left", indent = "none", spaceAfter }: Props) => (
   <StyledContainer align={align} indent={indent}>
     <StyledSeparator spaceAfter={spaceAfter} />
   </StyledContainer>

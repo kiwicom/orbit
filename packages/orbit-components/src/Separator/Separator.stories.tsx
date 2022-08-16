@@ -1,17 +1,17 @@
-// @flow
 import * as React from "react";
 import { select } from "@storybook/addon-knobs";
 
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import { Indent } from "./index.d";
 
-import Separator, { type Indent } from ".";
+import Separator from ".";
 
 export default {
   title: "Separator",
 };
 
-export const Default = (): React.Node => <Separator />;
+export const Default = () => <Separator />;
 
 Default.story = {
   parameters: {
@@ -20,12 +20,8 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Node => {
-  const spaceAfter = select(
-    "spaceAfter",
-    [null, ...Object.values(SPACINGS_AFTER)],
-    SPACINGS_AFTER.LARGEST,
-  );
+export const Playground = () => {
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.LARGEST);
   const align = select("align", ["left", "right", "center"], "left");
   const indentOptions: Indent[] = ["none", "small", "medium", "large", "XLarge", "XXLarge"];
   const indent = select("indent", indentOptions, "none");
@@ -39,7 +35,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Playground />
   </RenderInRtl>

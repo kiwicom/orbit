@@ -1,18 +1,4 @@
-// @flow
-import { keyframes, css } from "styled-components";
-import type { CSSRules } from "styled-components";
-
-type ResolveAnimation = ({|
-  duration: string,
-  interval: string,
-  animate: boolean,
-  color?: string,
-|}) => CSSRules | null;
-
-type ResolveHeight = ({|
-  calculatedHeight: number,
-  height: number | string,
-|}) => string;
+import { keyframes, css, FlattenSimpleInterpolation } from "styled-components";
 
 export const resolveValue = (value: string | number): string => {
   if (typeof value === "string") return value;
@@ -21,7 +7,13 @@ export const resolveValue = (value: string | number): string => {
   return "100%";
 };
 
-export const resolveHeight: ResolveHeight = ({ calculatedHeight, height }): string => {
+export const resolveHeight = ({
+  calculatedHeight,
+  height,
+}: {
+  calculatedHeight: number;
+  height: number | string;
+}): string => {
   if (calculatedHeight) return `${calculatedHeight}px`;
   if (height) return resolveValue(height);
 
@@ -40,7 +32,15 @@ const pulseAnimation = keyframes`
   }
 `;
 
-export const resolvePulseAnimation: ResolveAnimation = ({ animate, duration, interval }) => {
+export const resolvePulseAnimation = ({
+  animate,
+  duration,
+  interval,
+}: {
+  animate?: boolean;
+  duration?: string;
+  interval?: string;
+}): FlattenSimpleInterpolation | null => {
   if (animate) {
     return css`
       animation: ${pulseAnimation} ${duration} ease-in-out ${interval} infinite;

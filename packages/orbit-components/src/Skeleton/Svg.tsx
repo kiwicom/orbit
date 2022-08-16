@@ -1,14 +1,13 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import * as Common from "../common/common";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import { resolveHeight, resolveValue, resolvePulseAnimation } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, id, viewBox }) => (
   <svg
@@ -22,33 +21,53 @@ const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, id, v
     {children}
   </svg>
 ))`
-  ${({ rtl, width, maxHeight }) => css`
+  ${({
+    rtl,
+    width,
+    duration,
+    animate,
+    interval,
+    maxHeight,
+  }: {
+    calculatedHeight: number;
+    width: string | number;
+    height: string | number;
+    maxHeight: number;
+    rtl: boolean;
+    duration?: string;
+    interval?: string;
+    animate?: boolean;
+    spaceAfter?: Common.SpaceAfterSizes;
+  }) => css`
     height: ${resolveHeight};
     max-height: ${resolveValue(maxHeight)};
     width: ${resolveValue(width)};
     transform: ${rtl && `scaleX(-1)`};
     margin-bottom: ${getSpacingToken};
-    ${resolvePulseAnimation}
+    ${resolvePulseAnimation({ duration, interval, animate })};
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSvg.defaultProps = {
   theme: defaultTheme,
 };
 
 const Rows = ({ count, height, offset, rowBorderRadius }) => {
-  return [...Array(count).keys()].map(el => (
-    <rect
-      key={el}
-      y={`${el * offset}px`}
-      x="0"
-      rx={rowBorderRadius}
-      ry={rowBorderRadius}
-      width="100%"
-      height={height}
-    />
-  ));
+  return (
+    <>
+      {Array.from(Array(count).keys()).map(el => (
+        <rect
+          key={el}
+          y={`${el * offset}px`}
+          x="0"
+          rx={rowBorderRadius}
+          ry={rowBorderRadius}
+          width="100%"
+          height={height}
+        />
+      ))}
+    </>
+  );
 };
 
 const Svg = ({
@@ -65,7 +84,7 @@ const Svg = ({
   maxHeight,
   width = "100%",
   ...props
-}: Props): React.Node => {
+}: Props) => {
   const [calculatedHeight, setCalculatedHeight] = React.useState(0);
   const { rtl, orbit } = useTheme();
   const duration = `${2}s`;

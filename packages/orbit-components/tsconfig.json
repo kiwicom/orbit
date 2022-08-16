@@ -4,6 +4,7 @@
     "rootDir": "src",
     "outDir": "lib",
     "declaration": true,
+    "moduleResolution": "node",
     "emitDeclarationOnly": true
   },
   "include": ["src/**/*"],

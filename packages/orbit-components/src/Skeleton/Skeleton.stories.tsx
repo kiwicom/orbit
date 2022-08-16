@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { select, number, text, boolean } from "@storybook/addon-knobs";
 
@@ -12,15 +11,15 @@ export default {
   title: "Skeleton",
 };
 
-const PRESETS = {
-  List: "List",
-  Image: "Image",
-  Card: "Card",
-  Button: "Button",
-  Text: "Text",
-};
+enum PRESETS {
+  List = "List",
+  Image = "Image",
+  Card = "Card",
+  Button = "Button",
+  Text = "Text",
+}
 
-export const Default = (): React.Node => {
+export const Default = () => {
   return <Skeleton height="150px" width="500px" />;
 };
 
@@ -31,22 +30,22 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const animate = boolean("animate", true);
-  const height = text("height", undefined);
-  const maxHeight = text("maxHeight", undefined);
+  const height = text("height", "");
+  const maxHeight = text("maxHeight", "");
   const rowBorderRadius = number("rowBorderRadius", 3);
   const rowHeight = number("rowHeight", 21);
   const rowOffset = number("rowOffset", 30);
   const rows = number("rows", 10);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NONE);
-  const viewBox = text("viewBox", undefined);
-  const width = text("width", undefined);
+  const viewBox = text("viewBox", "");
+  const width = text("width", "");
   const title = text("title", "Loading");
   const color = select(
     "color",
     Object.keys(defaultTheme.orbit).filter(t => t.startsWith("palette")),
-    undefined,
+    "",
   );
 
   return (
@@ -67,13 +66,13 @@ export const Playground = (): React.Node => {
   );
 };
 
-export const RTL = (): React.Node => (
+export const RTL = () => (
   <RenderInRtl>
     <Skeleton rows={5} rowOffset={30} />
   </RenderInRtl>
 );
 
-export const Custom = (): React.Node => {
+export const Custom = () => {
   const height = text("height", `100px`);
   const viewBox = text("viewBox", "0 0 500 100");
   const width = text("width", `500px`);
@@ -90,7 +89,7 @@ export const Custom = (): React.Node => {
   );
 };
 
-export const Presets = (): React.Node => {
+export const Presets = () => {
   const presets = select("preset", PRESETS, PRESETS.List);
   return <Skeleton preset={presets} />;
 };

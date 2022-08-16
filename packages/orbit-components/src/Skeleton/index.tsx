@@ -1,12 +1,10 @@
-// @flow
 import * as React from "react";
 
 import Svg from "./Svg";
 import * as Presets from "./presets";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const Skeleton = ({ preset, ...props }: Props): React.Node => {
+const Skeleton = ({ preset, ...props }: Props) => {
   const Component = preset ? Presets[preset] : Svg;
 
   return <Component {...props} />;

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -11,42 +10,45 @@ import LazyImage, { StyledLazyImage } from "../LazyImage";
 import { left } from "../utils/rtl";
 import useRandomId from "../hooks/useRandomId";
 import handleKeyDown from "../utils/handleKeyDown";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const Shown = styled.div`
-  position: absolute;
-  opacity: 0;
-  z-index: 5;
-  padding: ${({ theme }) => `0 0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
-  ${({ contentHeight }) => (contentHeight > 0 ? `bottom: -${contentHeight}px` : `top: 100%`)};
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+const Shown = styled.div<{ contentHeight: number }>`
+  ${({ theme, contentHeight }) => css`
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+    padding: ${`0 0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
+    ${contentHeight > 0 ? `bottom: -${contentHeight}px` : `top: 100%`};
+    transition: all ${theme.orbit.durationFast} ease-in-out;
+  `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Shown.defaultProps = {
   theme: defaultTheme,
 };
 
 const overlayCss = css`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  transition: opacity ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+  ${({ theme }) => css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    transition: opacity ${theme.orbit.durationNormal} ease-in-out;
+  `}
 `;
 
 const StyledLabel = styled.div`
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
+  ${({ theme }) => css`
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    padding: ${theme.orbit.spaceMedium};
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
@@ -63,7 +65,6 @@ const StyledOverlay = styled.div`
   );
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlay.defaultProps = {
   theme: defaultTheme,
 };
@@ -80,17 +81,32 @@ const StyledOverlayHover = styled.div`
   );
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledOverlayHover.defaultProps = {
   theme: defaultTheme,
 };
 
-type Content = {|
-  title?: React.Node,
-  subTitle?: React.Node,
-  children?: React.Node,
-  cardID: string,
-|};
+interface Content {
+  title?: React.ReactNode;
+  subTitle?: React.ReactNode;
+  children?: React.ReactNode;
+  cardID: string;
+}
+
+const StyledPictureCardContent = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-grow: 1;
+    padding: ${theme.orbit.spaceMedium};
+    transition: all ${theme.orbit.durationFast} ease-in-out;
+    bottom: 0;
+  `};
+`;
+
+StyledPictureCardContent.defaultProps = {
+  theme: defaultTheme,
+};
 
 const PictureCardContent = ({ title, subTitle, children, cardID }: Content) => {
   return (
@@ -122,21 +138,6 @@ const PictureCardContent = ({ title, subTitle, children, cardID }: Content) => {
   );
 };
 
-const StyledPictureCardContent = styled.div`
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-grow: 1;
-  padding: ${({ theme }) => theme.orbit.spaceMedium};
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  bottom: 0;
-`;
-
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledPictureCardContent.defaultProps = {
-  theme: defaultTheme,
-};
-
 const StyledPictureCard = styled(
   ({ height, href, theme, shadows, contentHeight, isPlain, width, isClickable, ...props }) => {
     const Component = href ? "a" : "div";
@@ -147,26 +148,25 @@ const StyledPictureCard = styled(
     );
   },
 )`
-  height: ${({ height }) => (height ? `${height}` : "100%")};
-  width: ${({ width }) => (width ? `${width}` : `100%`)};
-  max-width: 100%;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  overflow: hidden;
+  ${({ theme, shadows, height, width, isClickable, contentHeight, isPlain }) => css`
+    height: ${height ? `${height}` : "100%"};
+    width: ${width ? `${width}` : `100%`};
+    max-width: 100%;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    overflow: hidden;
 
-  box-shadow: ${({ theme, shadows }) => shadows && theme.orbit.boxShadowAction};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
+    box-shadow: ${shadows && theme.orbit.boxShadowAction};
+    transition: box-shadow ${theme.orbit.durationNormal} ease-in-out;
 
-  ${StyledLazyImage} {
-    transition: transform ${({ theme }) => theme.orbit.durationNormal} ease-in-out;
-  }
-  cursor: ${({ isClickable }) => isClickable && "pointer"};
+    ${StyledLazyImage} {
+      transition: transform ${theme.orbit.durationNormal} ease-in-out;
+    }
+    cursor: ${isClickable && "pointer"};
 
-  ${({ isPlain, theme, shadows }) =>
-    !isPlain &&
-    css`
+    ${css`
       &:hover,
       &:focus {
         outline: none;
@@ -181,7 +181,7 @@ const StyledPictureCard = styled(
         }
 
         ${StyledPictureCardContent} {
-          bottom: ${({ contentHeight }) => contentHeight && `${contentHeight}px`};
+          bottom: ${contentHeight && `${contentHeight}px`};
         }
 
         ${Shown} {
@@ -191,16 +191,15 @@ const StyledPictureCard = styled(
       }
     `}
 
-  ${({ isPlain }) =>
-    isPlain &&
+    ${isPlain &&
     css`
       &:focus {
         outline: none;
       }
     `}
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPictureCard.defaultProps = {
   theme: defaultTheme,
 };
@@ -220,8 +219,8 @@ const PictureCard = ({
   height = "300px",
   width,
   dataTest,
-}: Props): React.Node => {
-  const ref: {| current: any | HTMLDivElement |} = React.useRef(null);
+}: Props) => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
   const [contentHeight, setContentHeight] = React.useState(0);
 
   React.useEffect(() => {
@@ -239,6 +238,7 @@ const PictureCard = ({
     code = undefined,
     src = undefined,
   } = image;
+
   const isPlain = !(title || subTitle || children || actions);
   const isClickable = href || onClick;
   const isFocus = isPlain ? undefined : 0;

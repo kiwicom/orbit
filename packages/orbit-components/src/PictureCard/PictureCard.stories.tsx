@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { text, object, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -31,7 +29,7 @@ export default {
   title: "PictureCard",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const title = text("title", "Moscow");
   const subTitle = text("title", "Prague");
   const label = text("title", "Family fun");
@@ -57,7 +55,7 @@ Default.story = {
   },
 };
 
-export const WithActions = (): React.Node => {
+export const WithActions = () => {
   const tabIndex = text("TabIndex", "0");
   const title = text("title", "Moscow");
   const subTitle = text("title", "Prague");
@@ -89,7 +87,7 @@ WithActions.story = {
   },
 };
 
-export const Plain = (): React.Node => {
+export const Plain = () => {
   const width = text("title", "100%");
   const height = text("height", "150px");
 
@@ -103,7 +101,7 @@ Plain.story = {
   },
 };
 
-export const PlainWithoutPlaceHolderForSsr = (): React.Node => {
+export const PlainWithoutPlaceHolderForSsr = () => {
   return <PictureCard image={imageWithoutPlaceholder} />;
 };
 
@@ -116,7 +114,7 @@ PlainWithoutPlaceHolderForSsr.story = {
   },
 };
 
-export const PlainWithAnSrcDefinedInsteadOfACode = (): React.Node => {
+export const PlainWithAnSrcDefinedInsteadOfACode = () => {
   return <PictureCard image={imageWithSrc} />;
 };
 
@@ -129,7 +127,7 @@ PlainWithAnSrcDefinedInsteadOfACode.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const title = text("title", "Moscow");
   const dataTest = text("dataTest", "test");
   const height = text("height", "300px");
@@ -169,7 +167,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   const title = text("title", "Paris");
   const dataTest = text("dataTest", "test");
   const height = text("height", "300px");

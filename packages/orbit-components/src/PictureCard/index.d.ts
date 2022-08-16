@@ -6,24 +6,20 @@ import * as React from "react";
 import * as Common from "../common/common";
 
 type Image = {
-  readonly original: string;
+  readonly original?: string;
   readonly placeholder?: string;
   readonly name: string;
-  readonly code: string;
+  readonly src?: string;
+  readonly code?: string;
 };
 
-type ImageCustom = {
-  readonly name: string;
-  readonly src: string;
-};
-
-interface Props extends Common.Globals {
+export interface Props extends Common.Globals {
   readonly actions?: React.ReactNode;
   readonly children?: React.ReactNode;
   readonly label?: React.ReactNode;
   readonly title?: React.ReactNode;
   readonly subTitle?: React.ReactNode;
-  readonly image: Image | ImageCustom;
+  readonly image: Image;
   readonly height?: string;
   readonly width?: string;
   readonly href?: string;

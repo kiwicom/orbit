@@ -1,18 +1,16 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import Circle from "../icons/Circle";
 import handleKeyDown from "../utils/handleKeyDown";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledSwitch = styled.label`
   display: inline-block;
 `;
 
-const StyledSwitchBase = styled.div`
+const StyledSwitchBase = styled.div<{ checked?: boolean; disabled?: boolean }>`
   ${({ theme, checked, disabled }) => css`
     display: flex;
     align-items: center;
@@ -33,7 +31,11 @@ const StyledSwitchBase = styled.div`
   `};
 `;
 
-const StyledSwitchButton = styled.div`
+const StyledSwitchButton = styled.div<{
+  checked?: boolean;
+  hasCustomIcon?: boolean;
+  disabled?: boolean;
+}>`
   ${({ theme, checked, hasCustomIcon, disabled }) => css`
     box-sizing: border-box;
     display: inline-flex;
@@ -85,51 +87,46 @@ const StyledSwitchInput = styled.input`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSwitchInput.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSwitchBase.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSwitchButton.defaultProps = {
   theme: defaultTheme,
 };
 
-const Switch: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
-  Props,
-  HTMLInputElement,
->(({ onChange, checked, dataTest, id, icon, onBlur, onFocus, disabled, ariaLabelledby }, ref) => {
-  return (
-    <StyledSwitch>
-      <StyledSwitchBase checked={checked} disabled={disabled}>
-        <StyledSwitchInput
-          ref={ref}
-          checked={checked}
-          disabled={disabled}
-          aria-checked={checked}
-          role="switch"
-          aria-labelledby={ariaLabelledby}
-          // $FlowFixMe: fix the type of handleKeyDown
-          onKeyDown={!disabled ? handleKeyDown(onChange) : undefined}
-          onBlur={!disabled ? onBlur : undefined}
-          onChange={!disabled ? onChange : undefined}
-          onFocus={!disabled ? onFocus : undefined}
-          type="checkbox"
-          data-test={dataTest}
-          id={id}
-        />
-        <StyledSwitchButton checked={checked} disabled={disabled} hasCustomIcon={!!icon}>
-          {icon || <Circle />}
-        </StyledSwitchButton>
-      </StyledSwitchBase>
-    </StyledSwitch>
-  );
-});
+const Switch = React.forwardRef<HTMLInputElement, Props>(
+  ({ onChange, checked, dataTest, id, icon, onBlur, onFocus, disabled, ariaLabelledby }, ref) => {
+    return (
+      <StyledSwitch>
+        <StyledSwitchBase checked={checked} disabled={disabled}>
+          <StyledSwitchInput
+            ref={ref}
+            checked={checked}
+            disabled={disabled}
+            aria-checked={checked}
+            role="switch"
+            aria-labelledby={ariaLabelledby}
+            onKeyDown={!disabled ? handleKeyDown(onChange) : undefined}
+            onBlur={!disabled ? onBlur : undefined}
+            onChange={!disabled ? onChange : undefined}
+            onFocus={!disabled ? onFocus : undefined}
+            type="checkbox"
+            data-test={dataTest}
+            id={id}
+          />
+          <StyledSwitchButton checked={checked} disabled={disabled} hasCustomIcon={!!icon}>
+            {icon || <Circle />}
+          </StyledSwitchButton>
+        </StyledSwitchBase>
+      </StyledSwitch>
+    );
+  },
+);
 
 Switch.displayName = "Switch";
 

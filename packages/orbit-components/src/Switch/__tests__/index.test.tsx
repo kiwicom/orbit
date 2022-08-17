@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { screen, render, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";

@@ -1,4 +1,3 @@
-// @flow
 import shouldUseFlex from "../shouldUseFlex";
 
 describe("#shouldUseFlex", () => {
@@ -14,7 +13,6 @@ describe("#shouldUseFlex", () => {
   it("should return false", () => {
     const props = {
       children: "kek",
-      spaceAfter: "large",
     };
 
     expect(shouldUseFlex(props)).toBe(false);

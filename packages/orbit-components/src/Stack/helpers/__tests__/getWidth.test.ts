@@ -1,4 +1,3 @@
-// @flow
 import getWidth from "../getWidth";
 
 describe("#getWidth", () => {

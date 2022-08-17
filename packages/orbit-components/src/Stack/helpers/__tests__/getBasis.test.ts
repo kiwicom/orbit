@@ -1,4 +1,3 @@
-// @flow
 import getBasis from "../getBasis";
 import theme from "../../../defaultTheme";
 

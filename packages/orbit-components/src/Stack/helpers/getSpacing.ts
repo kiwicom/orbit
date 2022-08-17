@@ -1,8 +1,7 @@
-// @flow
 import { SPACINGS } from "../../utils/layout/consts";
-import type { GetSpacing } from "./getSpacing";
+import { Theme } from "../../defaultTheme";
 
-const getSpacing: GetSpacing = ({ theme }) => ({
+const getSpacing = (theme: Theme): Record<string, string> => ({
   [SPACINGS.XXXSMALL]: theme.orbit.spaceXXXSmall,
   [SPACINGS.XXSMALL]: theme.orbit.spaceXXSmall,
   [SPACINGS.XSMALL]: theme.orbit.spaceXSmall,

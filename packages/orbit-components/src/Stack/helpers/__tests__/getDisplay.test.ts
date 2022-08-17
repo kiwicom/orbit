@@ -1,4 +1,3 @@
-// @flow
 import getDisplay from "../getDisplay";
 
 describe("#getDisplay", () => {

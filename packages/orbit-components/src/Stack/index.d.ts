@@ -8,6 +8,7 @@ import * as Common from "../common/common";
 export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
 export type Align = "start" | "end" | "center" | "stretch" | "baseline";
 export type Justify = "start" | "end" | "center" | "between" | "around";
+export type Basis = string | ((theme: Theme) => string);
 export type Spacing =
   | "none"
   | "XXXSmall"
@@ -25,7 +26,7 @@ interface MediaQuery extends Common.SpaceAfter {
   readonly wrap?: boolean;
   readonly grow?: boolean;
   readonly shrink?: boolean;
-  readonly basis?: string;
+  readonly basis?: Basis;
   readonly align?: Align;
   readonly justify?: Justify;
   readonly spacing?: Spacing;
@@ -38,7 +39,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly wrap?: boolean;
   readonly grow?: boolean;
   readonly shrink?: boolean;
-  readonly basis?: string;
+  readonly basis?: Basis;
   readonly align?: Align;
   readonly justify?: Justify;
   readonly spacing?: Spacing;

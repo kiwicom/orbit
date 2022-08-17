@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, object, text } from "@storybook/addon-knobs";
@@ -44,7 +43,7 @@ export default {
   title: "Stack",
 };
 
-export const Default = (): React.Node => (
+export const Default = () => (
   <Stack>
     <Button type="primary" iconLeft={<Airplane />}>
       Button
@@ -60,17 +59,17 @@ Default.story = {
   },
 };
 
-export const MobileProperties = (): React.Node => {
+export const MobileProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
+  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", [null, ...Object.values(ALIGNS)]);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)]);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const align = select("Align", [null, ...Object.values(ALIGNS)], null);
+  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
+  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], null);
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
 
   return (
     <Stack
@@ -102,17 +101,17 @@ MobileProperties.story = {
   },
 };
 
-export const MediumMobileProperties = (): React.Node => {
+export const MediumMobileProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
+  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
   const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
+  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
   const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
   const mediumMobile = {
     inline,
     direction,
@@ -143,17 +142,17 @@ MediumMobileProperties.story = {
   },
 };
 
-export const LargeMobileProperties = (): React.Node => {
+export const LargeMobileProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
+  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
   const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
+  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
   const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
   const largeMobile = {
     inline,
     direction,
@@ -184,17 +183,17 @@ LargeMobileProperties.story = {
   },
 };
 
-export const TabletProperties = (): React.Node => {
+export const TabletProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
+  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
   const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
+  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
   const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
   const tablet = {
     inline,
     direction,
@@ -225,17 +224,17 @@ TabletProperties.story = {
   },
 };
 
-export const DesktopProperties = (): React.Node => {
+export const DesktopProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
+  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
   const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
+  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
   const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
   const desktop = {
     inline,
     direction,
@@ -266,17 +265,17 @@ DesktopProperties.story = {
   },
 };
 
-export const LargeDesktopProperties = (): React.Node => {
+export const LargeDesktopProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)]);
+  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
   const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
+  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
   const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
   const largeDesktop = {
     inline,
     direction,
@@ -307,7 +306,7 @@ LargeDesktopProperties.story = {
   },
 };
 
-export const NestedExample = (): React.Node => (
+export const NestedExample = () => (
   <Stack spacing="large" direction="column" align="start">
     <Stack spacing="XSmall" direction="row" inline>
       <Text weight="bold">email@gmail.com</Text>
@@ -332,7 +331,7 @@ NestedExample.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const flex = boolean("flex", false);
   const inline = boolean("Inline", false);
@@ -340,11 +339,11 @@ export const Playground = (): React.Node => {
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
-  const basis = text("Basis", undefined);
-  const align = select("Align", [null, ...Object.values(ALIGNS)]);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)]);
+  const basis = text("Basis", "");
+  const align = select("Align", [null, ...Object.values(ALIGNS)], null);
+  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
   const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.XXXSMALL);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
   const mediumMobile = object("mediumMobile", {
     direction: DIRECTIONS.COLUMN,
   });
@@ -396,7 +395,7 @@ Playground.story = {
   },
 };
 
-export const ComponentsPreview = (): React.Node => (
+export const ComponentsPreview = () => (
   <Stack direction="column">
     <Stack direction="row" align="center">
       <Alert title="hola amigo" icon>
@@ -816,7 +815,7 @@ ComponentsPreview.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Stack spacing="large" direction="column" align="start">
       <Stack spacing="XSmall" direction="row" inline>

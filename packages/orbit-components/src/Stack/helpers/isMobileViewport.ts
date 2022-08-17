@@ -1,7 +1,6 @@
-// @flow
-import type { IsMobileViewport } from "./isMobileViewport";
+import { Devices } from "../../utils/mediaQuery/index.d";
 
-const isMobileViewport: IsMobileViewport = viewport =>
+const isMobileViewport = (viewport: Devices): boolean =>
   viewport === "smallMobile" || viewport === "mediumMobile" || viewport === "largeMobile";
 
 export default isMobileViewport;

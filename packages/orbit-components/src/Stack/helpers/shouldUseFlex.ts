@@ -1,7 +1,6 @@
-// @flow
-import type { ShouldUseFlex } from "./shouldUseFlex";
+import { Props } from "../index.d";
 
-const shouldUseFlex: ShouldUseFlex = props =>
+const shouldUseFlex = (props: Props): boolean =>
   props.flex ||
   Object.keys(props)
     .map(

@@ -1,8 +1,7 @@
-// @flow
 import { DIRECTIONS } from "../../utils/layout/consts";
-import type { GetDirectionSpacingTemplate } from "./getDirectionSpacingTemplate";
+import { Direction } from "../index.d";
 
-const getDirectionSpacingTemplate: GetDirectionSpacingTemplate = direction => {
+const getDirectionSpacingTemplate = (direction: Direction): string => {
   switch (direction) {
     case DIRECTIONS.COLUMN:
       return "0 0 __spacing__ 0";

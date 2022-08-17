@@ -1,10 +1,10 @@
-// @flow
 import getProperty from "../getProperty";
 import theme from "../../../defaultTheme";
+import { Devices } from "../../../utils/mediaQuery/index.d";
 
 const params = {
   index: 0,
-  devices: ["smallMobile"],
+  devices: ["smallMobile"] as Devices[],
 };
 
 const props = {

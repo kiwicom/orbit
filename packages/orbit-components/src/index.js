@@ -22,13 +22,13 @@ export { default as Desktop } from "./Desktop";
 export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
 export { default as NotificationBadge } from "./NotificationBadge";
-export { default as PictureCard } from "./PictureCard";
+export { default as PictureCard } from "./deprecated/PictureCard";
 export { default as Wizard, WizardStep } from "./Wizard";
 
 // Card
 export { default as Card, CardSection } from "./Card";
 export { default as Coupon } from "./Coupon";
-export { default as Sticky } from "./Sticky";
+export { default as Sticky } from "./deprecated/Sticky";
 
 // Accordion
 export { default as Accordion, AccordionSection } from "./Accordion";
@@ -50,7 +50,7 @@ export { default as LinkList } from "./LinkList";
 // Table
 export { default as Table, TableBody, TableCell, TableRow, TableHead, TableFooter } from "./Table";
 
-export { default as PricingTable, PricingTableItem } from "./PricingTable";
+export { default as PricingTable, PricingTableItem } from "./deprecated/PricingTable";
 
 // Layout & Grid
 export { default as Layout, LayoutColumn } from "./Layout";
@@ -84,7 +84,7 @@ export { default as Mobile } from "./Mobile";
 export { default as Pagination } from "./Pagination";
 export { default as Popover } from "./Popover";
 export { default as Radio } from "./Radio";
-export { default as RatingStars } from "./RatingStars";
+export { default as RatingStars } from "./deprecated/RatingStars";
 export { default as Seat, SeatLegend } from "./Seat";
 export { default as Select } from "./Select";
 export { default as Skeleton } from "./Skeleton";

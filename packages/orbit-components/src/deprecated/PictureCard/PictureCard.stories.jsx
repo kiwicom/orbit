@@ -4,8 +4,8 @@ import * as React from "react";
 import { text, object, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
-import Button from "../Button";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import Button from "../../Button";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
 
 import PictureCard from ".";
 

@@ -10,7 +10,7 @@ import Badge from "../../../Badge";
 import PricingTableItem from "../PricingTableItem";
 import PricingTable from "..";
 
-jest.mock("../../hooks/useMediaQuery", () => jest.fn());
+jest.mock("../../../hooks/useMediaQuery", () => jest.fn());
 const useMediaQueryMock: JestMockFn<[], $Shape<$Call<typeof useMediaQuery>>> = useMediaQuery;
 
 afterEach(() => {

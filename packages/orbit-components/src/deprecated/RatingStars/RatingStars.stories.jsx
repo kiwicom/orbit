@@ -3,8 +3,8 @@ import * as React from "react";
 import { number, text, select, boolean } from "@storybook/addon-knobs";
 
 import MAX_STARS from "./consts";
-import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
-import RenderInRtl from "../utils/rtl/RenderInRtl";
+import { ICON_COLORS, ICON_SIZES } from "../../Icon/consts";
+import RenderInRtl from "../../utils/rtl/RenderInRtl";
 
 import RatingStars from ".";
 

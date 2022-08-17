@@ -4,8 +4,8 @@
 */
 import * as React from "react";
 
-import type { Globals } from "../common/common.js.flow";
-import type { Size } from "../Icon";
+import type { Globals } from "../../common/common.js.flow";
+import type { Size } from "../../Icon";
 
 export type Props = {|
   +rating: number,

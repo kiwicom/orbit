@@ -2,12 +2,12 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import StarEmpty from "../icons/StarEmpty";
-import StarFull from "../icons/StarFull";
-import defaultTheme from "../defaultTheme";
+import StarEmpty from "../../icons/StarEmpty";
+import StarFull from "../../icons/StarFull";
+import defaultTheme from "../../defaultTheme";
 import MAX_STARS from "./consts";
-import { ICON_COLORS, ICON_SIZES } from "../Icon/consts";
-import useTranslate from "../hooks/useTranslate";
+import { ICON_COLORS, ICON_SIZES } from "../../Icon/consts";
+import useTranslate from "../../hooks/useTranslate";
 
 import type { Props } from ".";
 

@@ -1,27 +1,35 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import * as Common from "../common/common";
+import defaultTheme, { Theme } from "../defaultTheme";
 import { left } from "../utils/rtl";
 import CloseCircle from "../icons/CloseCircle";
 import { SIZES, STATES, TYPES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import resolveColor from "./helpers/resolveColor";
 import resolveCircleColor from "./helpers/resolveCircleColor";
+import { Props, Type } from "./index.d";
 
-import type { Props } from ".";
-
-const getFontSize = ({ theme, size }) => {
+const getFontSize = ({ theme, size }: { theme: Theme; size: Props["size"] }): string | null => {
   const tokens = {
     [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
     [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
   };
 
+  if (!size) return null;
+
   return tokens[size];
 };
 
-const getBackgroundColor = state => ({ type, dateTag }) => {
+const getBackgroundColor = (state: string) => ({
+  type,
+  dateTag,
+}: {
+  type: Type;
+  size: Props["size"];
+  dateTag?: boolean;
+}): string => {
   const states = {
     [TYPES.COLORED]: {
       [STATES.DEFAULT]: resolveColor({
@@ -61,7 +69,12 @@ const getBackgroundColor = state => ({ type, dateTag }) => {
   return states[type][state];
 };
 
-const CloseContainer = styled.div`
+const CloseContainer = styled.div<{
+  actionable?: boolean;
+  type: Type;
+  selected?: boolean;
+  removable?: boolean;
+}>`
   ${({ theme, actionable, type, selected }) => css`
     display: flex;
     margin-${left}: ${theme.orbit.spaceXSmall};
@@ -80,12 +93,18 @@ const CloseContainer = styled.div`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledTag: any = styled.div`
+export const StyledTag = styled.div<{
+  selected?: boolean;
+  actionable?: boolean;
+  type: Type;
+  size: Props["size"];
+  dateTag?: boolean;
+  removable?: boolean;
+}>`
   ${({ theme, actionable, type }) => css`
     font-family: ${theme.orbit.fontFamily};
     color: ${resolveColor({
@@ -139,7 +158,6 @@ export const StyledTag: any = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTag.defaultProps = {
   theme: defaultTheme,
 };
@@ -157,12 +175,13 @@ const StyledClose = styled.div`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledClose.defaultProps = {
   theme: defaultTheme,
 };
 
-const buttonClickEmulation = callback => (ev?: SyntheticKeyboardEvent<HTMLButtonElement>) => {
+const buttonClickEmulation = (callback?: Common.Callback) => (
+  ev?: React.KeyboardEvent<HTMLDivElement>,
+) => {
   if (ev && ev.keyCode === KEY_CODE_MAP.SPACE) {
     ev.preventDefault();
     if (callback) callback();
@@ -171,7 +190,7 @@ const buttonClickEmulation = callback => (ev?: SyntheticKeyboardEvent<HTMLButton
   }
 };
 
-const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Props, HTMLDivElement>(
+const Tag = React.forwardRef<HTMLDivElement, Props>(
   (
     {
       selected,
@@ -188,7 +207,7 @@ const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Pro
   ) => {
     return (
       <StyledTag
-        actionable={onClick || onRemove}
+        actionable={!!(onClick || onRemove)}
         data-test={dataTest}
         id={id}
         dateTag={dateTag}
@@ -198,7 +217,7 @@ const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Pro
         onClick={onClick}
         removable={!!onRemove}
         selected={selected}
-        tabIndex={(onClick || onRemove) && "0"}
+        tabIndex={(onClick || onRemove) && 0}
         role="button"
         onKeyDown={buttonClickEmulation(onClick)}
       >
@@ -214,8 +233,7 @@ const Tag: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Pro
             }}
           >
             <StyledClose
-              tabIndex="0"
-              selected={selected}
+              tabIndex={0}
               aria-label="close"
               role="button"
               onKeyDown={ev => {

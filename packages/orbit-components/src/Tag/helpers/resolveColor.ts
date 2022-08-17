@@ -1,11 +1,22 @@
-// @flow
-import type { ResolveColor } from "./resolveColor";
+import { Theme } from "../../defaultTheme";
 
-const resolveColor: ResolveColor = ({
+const resolveColor = ({
   removable: removableColor,
   selected: selectedColor,
   normal: normalColor,
-}) => ({ theme, selected, removable }) => {
+}: {
+  removable: string;
+  selected: string;
+  normal: string;
+}) => ({
+  theme,
+  selected,
+  removable,
+}: {
+  theme: Theme;
+  selected?: boolean;
+  removable?: boolean;
+}): string => {
   if (removable && !selected) return theme.orbit[removableColor];
   if (selected) return theme.orbit[selectedColor];
 

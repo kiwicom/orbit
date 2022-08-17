@@ -1,8 +1,16 @@
-// @flow
-import type { ResolveCircleColor } from "./resolveCircleColor";
 import { TYPES } from "../consts";
+import { Type } from "../index.d";
+import { Theme } from "../../defaultTheme";
 
-const resolveColor: ResolveCircleColor = () => ({ theme, selected, type }) => {
+const resolveColor = () => ({
+  theme,
+  selected,
+  type,
+}: {
+  theme: Theme;
+  selected?: boolean;
+  type?: Type;
+}): string => {
   if (selected) return theme.orbit.paletteWhite;
   return type === TYPES.NEUTRAL ? theme.orbit.paletteInkNormal : theme.orbit.paletteBlueDarker;
 };

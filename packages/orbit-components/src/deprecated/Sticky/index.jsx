@@ -2,8 +2,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { addScrollHandler, removeScrollHandler, getScrollingElement } from "../utils/scroll";
-import defaultTheme from "../defaultTheme";
+import { addScrollHandler, removeScrollHandler, getScrollingElement } from "../../utils/scroll";
+import defaultTheme from "../../defaultTheme";
 
 import type { Props, State } from ".";
 

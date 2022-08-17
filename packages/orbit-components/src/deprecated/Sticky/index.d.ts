@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common";
+import * as Common from "../../common/common";
 
 interface Props extends Common.Global {
   readonly offset?: number;

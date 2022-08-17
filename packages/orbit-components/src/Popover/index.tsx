@@ -154,7 +154,11 @@ const Popover = ({
 
   return (
     <>
-      <StyledPopoverChild ref={ref} onClick={handleClick} onKeyDown={handleKeyDown(handleClick)}>
+      <StyledPopoverChild
+        ref={ref}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown<HTMLDivElement>(handleClick)}
+      >
         {children}
       </StyledPopoverChild>
       {render && (renderInPortal ? <Portal renderInto="popovers">{popover}</Portal> : popover)}

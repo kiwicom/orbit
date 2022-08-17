@@ -2,18 +2,18 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../../defaultTheme";
-import Stack from "../../Stack";
-import Text, { StyledText } from "../../Text";
-import Radio from "../../Radio";
-import Badge from "../../Badge";
-import { StyledBadge } from "../../primitives/BadgePrimitive";
-import media from "../../utils/mediaQuery";
+import defaultTheme from "../../../defaultTheme";
+import Stack from "../../../Stack";
+import Text, { StyledText } from "../../../Text";
+import Radio from "../../../Radio";
+import Badge from "../../../Badge";
+import { StyledBadge } from "../../../primitives/BadgePrimitive";
+import media from "../../../utils/mediaQuery";
 import STATES from "./consts";
-import { IconContainer, Item as ListItem } from "../../List/ListItem";
-import { rtlSpacing } from "../../utils/rtl";
+import { IconContainer, Item as ListItem } from "../../../List/ListItem";
+import { rtlSpacing } from "../../../utils/rtl";
 import PricingTableContext from "../PricingTableContext";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 import type { Props } from ".";
 

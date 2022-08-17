@@ -3,15 +3,15 @@ import * as React from "react";
 import { withKnobs, number, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
-import Badge from "../Badge";
-import Button from "../Button";
-import List, { ListItem } from "../List";
-import Tooltip from "../Tooltip";
-import Text from "../Text";
-import Check from "../icons/Check";
-import FeatureIcon from "../FeatureIcon";
-import Layout, { LayoutColumn } from "../Layout";
-import Card, { CardSection } from "../Card";
+import Badge from "../../Badge";
+import Button from "../../Button";
+import List, { ListItem } from "../../List";
+import Tooltip from "../../Tooltip";
+import Text from "../../Text";
+import Check from "../../icons/Check";
+import FeatureIcon from "../../FeatureIcon";
+import Layout, { LayoutColumn } from "../../Layout";
+import Card, { CardSection } from "../../Card";
 
 import PricingTable, { PricingTableItem } from ".";
 

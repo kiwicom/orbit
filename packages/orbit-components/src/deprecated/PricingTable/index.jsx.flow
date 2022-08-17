@@ -6,7 +6,7 @@
 import * as React from "react";
 
 import typeof PricingTableItemType from "./PricingTableItem";
-import type { Globals } from "../common/common.js.flow";
+import type { Globals } from "../../common/common.js.flow";
 
 export type Props = {|
   ...Globals,

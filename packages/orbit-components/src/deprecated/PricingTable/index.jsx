@@ -2,8 +2,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import Stack from "../Stack";
-import useMediaQuery from "../hooks/useMediaQuery";
+import Stack from "../../Stack";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import { StyledListWrapper } from "./PricingTableItem";
 import PricingTableContext from "./PricingTableContext";
 

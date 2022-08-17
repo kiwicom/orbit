@@ -4,9 +4,9 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import useMediaQuery from "../../hooks/useMediaQuery";
-import Button from "../../Button";
-import Badge from "../../Badge";
+import useMediaQuery from "../../../hooks/useMediaQuery";
+import Button from "../../../Button";
+import Badge from "../../../Badge";
 import PricingTableItem from "../PricingTableItem";
 import PricingTable from "..";
 

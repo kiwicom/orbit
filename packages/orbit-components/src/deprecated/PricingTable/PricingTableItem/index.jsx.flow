@@ -2,7 +2,7 @@
 import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
-import type { Globals, Translation } from "../../common/common.js.flow";
+import type { Globals, Translation } from "../../../common/common.js.flow";
 
 export type Props = {|
   ...Globals,

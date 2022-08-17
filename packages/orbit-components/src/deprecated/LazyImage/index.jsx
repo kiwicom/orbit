@@ -2,7 +2,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import defaultTheme from "../../defaultTheme";
 
 import type { Props, PictureProps } from ".";
 

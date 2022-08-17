@@ -1,10 +1,10 @@
-// @flow
 import * as React from "react";
 import { boolean, text, select } from "@storybook/addon-knobs";
 
 import { ALIGN_OPTIONS, ALIGN_V_OPTIONS, WHITE_SPACE } from "./TableCell/consts";
-import TYPE_OPTIONS from "./consts";
+import { TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import { VerticalAlign } from "./TableCell/index.d";
 
 import Table, { TableFooter, TableHead, TableBody, TableRow, TableCell } from ".";
 
@@ -12,7 +12,7 @@ export default {
   title: "Table",
 };
 
-export const DefaultTable = (): React.Node => (
+export const DefaultTable = () => (
   <Table>
     <TableHead>
       <TableRow>
@@ -58,7 +58,7 @@ DefaultTable.story = {
   },
 };
 
-export const CompactTable = (): React.Node => (
+export const CompactTable = () => (
   <Table compact>
     <TableHead>
       <TableRow>
@@ -92,7 +92,7 @@ CompactTable.story = {
   },
 };
 
-export const SecondaryType = (): React.Node => (
+export const SecondaryType = () => (
   <Table type="secondary">
     <TableHead>
       <TableRow>
@@ -128,7 +128,7 @@ SecondaryType.story = {
   },
 };
 
-export const WithoutStripes = (): React.Node => (
+export const WithoutStripes = () => (
   <Table type="secondary" striped={false}>
     <TableHead>
       <TableRow>
@@ -164,7 +164,7 @@ WithoutStripes.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const compact = boolean("compact", false);
   const striped = boolean("striped", true);
   const children = text("children", "Lorem ipsum dolor sit amet");
@@ -172,9 +172,12 @@ export const Playground = (): React.Node => {
   const align = select("align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.CENTER);
   const verticalAlign = select(
     "vertical align",
-    Object.values(ALIGN_V_OPTIONS),
+    Object.values(ALIGN_V_OPTIONS).filter(val =>
+      ["top", "bottom", "baseline", "middle"].includes(val),
+    ),
     ALIGN_V_OPTIONS.BASELINE,
-  );
+  ) as VerticalAlign;
+
   const whiteSpace = select("white space", Object.values(WHITE_SPACE), WHITE_SPACE.NOWRAP);
   const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
   return (
@@ -266,7 +269,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Table>
       <TableHead>

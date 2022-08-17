@@ -1,11 +1,9 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { StyledTableCell } from "../TableCell";
-
-import type { Props } from ".";
+import { TableHead as TableHeadType } from "./index.d";
 
 const StyledTableHead = styled(({ children, className, dataTest }) => (
   <thead className={className} data-test={dataTest}>
@@ -20,11 +18,11 @@ const StyledTableHead = styled(({ children, className, dataTest }) => (
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTableHead.defaultProps = {
   theme: defaultTheme,
 };
-const TableHead = ({ children, dataTest }: Props): React.Node => (
+
+const TableHead: typeof TableHeadType = ({ children, dataTest }) => (
   <StyledTableHead dataTest={dataTest}>{children}</StyledTableHead>
 );
 

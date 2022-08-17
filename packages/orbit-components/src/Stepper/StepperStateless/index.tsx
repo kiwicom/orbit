@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -8,8 +7,7 @@ import Plus from "../../icons/Plus";
 import defaultTheme from "../../defaultTheme";
 import Button from "../../primitives/ButtonPrimitive";
 import useTheme from "../../hooks/useTheme";
-
-import type { StateLessProps } from ".";
+import { Props } from "./index.d";
 
 const getMaxWidth = ({ maxWidth }) => {
   if (typeof maxWidth === "string") return maxWidth;
@@ -23,7 +21,7 @@ const StyledStepper = styled.div`
   flex: 1 1 auto;
 `;
 
-const iconMixin = css`
+const iconMixin = css<{ isActive?: boolean; isDisabled?: boolean }>`
   ${({ theme, isActive, isDisabled }) => css`
     padding: 2px;
     height: 20px;
@@ -56,7 +54,6 @@ const StyledMinusIcon = styled(Minus)`
   ${iconMixin};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledMinusIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -65,7 +62,6 @@ const StyledPlusIcon = styled(Plus)`
   ${iconMixin};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledPlusIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -96,7 +92,6 @@ const StyledStepperInput = styled.input`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStepperInput.defaultProps = {
   theme: defaultTheme,
 };
@@ -109,8 +104,8 @@ const StepperStateless = ({
   value,
   active,
   name,
-  minValue,
-  maxValue,
+  minValue = -Infinity,
+  maxValue = Infinity,
   onKeyDown,
   onBlur,
   onFocus,
@@ -120,7 +115,7 @@ const StepperStateless = ({
   titleDecrement,
   disabledIncrement,
   disabledDecrement,
-}: StateLessProps): React.Node => {
+}: Props) => {
   const theme = useTheme();
 
   const commonButtonStyles = {

@@ -1,12 +1,10 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledArrow = styled.svg`
   vertical-align: middle;
@@ -21,7 +19,6 @@ const StyledArrow = styled.svg`
     `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledArrow.defaultProps = {
   theme: defaultTheme,
 };
@@ -47,7 +44,7 @@ const Stops = ({ stops }: Props) => {
   );
 };
 
-const StopoverArrow = ({ stops = STOPS.ZERO, dataTest, id }: Props): React.Node => {
+const StopoverArrow = ({ stops = STOPS.ZERO, dataTest, id }: Props) => {
   const randomId = useRandomIdSeed();
   const titleId = randomId("title");
   const descrId = randomId("descr");

@@ -1,6 +1,6 @@
 import React from "react";
 
-export declare function useTransition(options: {
+declare function useTransition(options: {
   readonly show: boolean;
   readonly appear?: boolean;
 }): {
@@ -9,3 +9,5 @@ export declare function useTransition(options: {
   state: "enter" | "leave";
   done: boolean;
 };
+
+export { useTransition, useTransition as default };

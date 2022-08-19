@@ -8,7 +8,7 @@ import { left, right } from "../utils/rtl";
 
 import type { Props } from ".";
 
-const getHeight = ({ type }) => {
+const getHeight = ({ type, customSize }) => {
   const tokens = {
     [TYPE_OPTIONS.BUTTON_LOADER]: "100%",
     [TYPE_OPTIONS.SEARCH_LOADER]: "40px",
@@ -16,6 +16,8 @@ const getHeight = ({ type }) => {
     [TYPE_OPTIONS.PAGE_LOADER]: "120px",
     [TYPE_OPTIONS.INLINE_LOADER]: "19px",
   };
+
+  if (customSize) return `height: ${customSize}px`;
 
   return css`
     ${type === TYPE_OPTIONS.INLINE_LOADER ? "min-height" : "height"}: ${tokens[type]}
@@ -51,19 +53,20 @@ export const StyledLoading: any = styled(({ children, className, dataTest }) => 
     {children}
   </div>
 ))`
-  position: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
-  top: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
-  ${left}: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
-  width: ${({ type }) => type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
-  ${getHeight};
-  padding: ${({ theme, type }) =>
-    type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.paddingLoading};
-  display: ${({ type }) => (type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex")};
-  flex-direction: ${({ type }) => (type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row")};
-  justify-content: ${getAlign};
-  align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
+  ${({ type, theme }) => css`
+    position: ${type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
+    top: ${type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
+    ${left}: ${type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
+    width: ${type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
+    ${getHeight};
+    padding: ${type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.paddingLoading};
+    display: ${type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex"};
+    flex-direction: ${type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row"};
+    justify-content: ${getAlign};
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -87,19 +90,29 @@ StyledLoadingText.defaultProps = {
 };
 
 export const StyledSpinner: any = styled.svg`
-  width: 40px;
-  height: 40px;
-  animation: ${SpinnerAnimation} 0.75s linear infinite;
+  ${({ customSize }) => css`
+    width: ${customSize ? `${customSize}px` : "40px"};
+    height: ${customSize ? `${customSize}px` : "40px"};
+    animation: ${SpinnerAnimation} 0.75s linear infinite;
+  `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledSpinner.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledSpinnerCircle = styled.circle`
-  fill: transparent;
-  stroke: ${({ theme, type }) =>
-    type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteCloudDarker};
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-dasharray: 128px;
-  stroke-dashoffset: 64px;
+  ${({ type, theme, customSize }) => css`
+    fill: transparent;
+    stroke: ${type === TYPE_OPTIONS.BUTTON_LOADER
+      ? "currentColor"
+      : theme.orbit.paletteCloudDarker};
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-dasharray: ${customSize ? `${customSize * 3 + 8}px` : "128px"};
+    stroke-dashoffset: ${customSize ? `${customSize + 24}px` : "64px"};
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -134,26 +147,55 @@ StyledLoaderCircle.defaultProps = {
   theme: defaultTheme,
 };
 
-const Loading = (props: Props): React.Node => {
-  const { loading = false, type = TYPE_OPTIONS.PAGE_LOADER, text, children, dataTest, id } = props;
+const Loader = ({ type, customSize }) => {
+  const isCircledIcon =
+    type === TYPE_OPTIONS.BOX_LOADER ||
+    type === TYPE_OPTIONS.SEARCH_LOADER ||
+    type === TYPE_OPTIONS.INLINE_LOADER;
 
+  if (customSize) {
+    return (
+      <StyledSpinner viewBox={`0 0 ${customSize} ${customSize}`} customSize={customSize}>
+        <StyledSpinnerCircle
+          cx="50%"
+          cy="50%"
+          r={customSize ? customSize / 2 - 2 : 18}
+          customSize={customSize}
+        />
+      </StyledSpinner>
+    );
+  }
+
+  if (isCircledIcon)
+    return (
+      <StyledLoader>
+        <StyledLoaderCircle />
+        <StyledLoaderCircle />
+        <StyledLoaderCircle />
+      </StyledLoader>
+    );
+
+  return (
+    <StyledSpinner viewBox="0 0 40 40">
+      <StyledSpinnerCircle cx="50%" cy="50%" r="18" type={type} />
+    </StyledSpinner>
+  );
+};
+
+const Loading = ({
+  loading = false,
+  customSize,
+  type = TYPE_OPTIONS.PAGE_LOADER,
+  text,
+  children,
+  dataTest,
+  id,
+}: Props): React.Node => {
   return children && !loading ? (
     children
   ) : (
-    <StyledLoading type={type} dataTest={dataTest} id={id}>
-      {type === TYPE_OPTIONS.BOX_LOADER ||
-      type === TYPE_OPTIONS.SEARCH_LOADER ||
-      type === TYPE_OPTIONS.INLINE_LOADER ? (
-        <StyledLoader>
-          <StyledLoaderCircle />
-          <StyledLoaderCircle />
-          <StyledLoaderCircle />
-        </StyledLoader>
-      ) : (
-        <StyledSpinner viewBox="0 0 40 40">
-          <StyledSpinnerCircle cx="50%" cy="50%" r="18" type={type} />
-        </StyledSpinner>
-      )}
+    <StyledLoading type={type} dataTest={dataTest} id={id} customSize={customSize}>
+      <Loader type={type} customSize={customSize} />
       {type !== TYPE_OPTIONS.BUTTON_LOADER && (
         <StyledLoadingText type={type}>{text}</StyledLoadingText>
       )}

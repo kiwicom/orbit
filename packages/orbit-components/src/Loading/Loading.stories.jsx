@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean, number } from "@storybook/addon-knobs";
 
 import TYPE_OPTIONS from "./consts";
 import * as Icons from "../icons";
@@ -73,6 +73,12 @@ InlineLoader.story = {
     info:
       "This configuration of this component is without any height, width or paddings. Visit Orbit.Kiwi for more detailed guidelines.",
   },
+};
+
+export const CustomLoader = (): React.Node => {
+  const customSize = number("customSize", 50);
+
+  return <Loading customSize={customSize} />;
 };
 
 export const Playground = (): React.Node => {

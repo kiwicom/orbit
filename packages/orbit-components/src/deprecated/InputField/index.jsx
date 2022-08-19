@@ -19,6 +19,20 @@ import mq from "../../utils/mediaQuery";
 
 import type { Props } from ".";
 
+const FormLabel = ({
+  label,
+  isFilled,
+  required,
+}: {|
+  label: Translation,
+  isFilled: boolean,
+  required?: boolean,
+|}) => (
+  <DefaultFormLabel filled={isFilled} required={required}>
+    {label}
+  </DefaultFormLabel>
+);
+
 const getToken = name => ({ theme, size }) => {
   const tokens = {
     [TOKENS.heightInput]: {
@@ -153,6 +167,14 @@ const StyledInlineLabel = styled.div`
     padding: ${rtlSpacing(
       `0 0 0 ${!hasTags && hasFeedback ? theme.orbit.spaceXXSmall : theme.orbit.spaceSmall}`,
     )};
+
+    ${DefaultFormLabel} {
+      margin-bottom: 0;
+      font-size: ${getToken(TOKENS.fontSizeInput)};
+      line-height: ${theme.orbit.lineHeightTextNormal};
+      z-index: 3;
+      white-space: nowrap;
+    }
   `}
 `;
 
@@ -296,20 +318,6 @@ export const Input: any = styled(
 Input.defaultProps = {
   theme: defaultTheme,
 };
-
-const FormLabel = ({
-  label,
-  isFilled,
-  required,
-}: {|
-  label: Translation,
-  isFilled: boolean,
-  required?: boolean,
-|}) => (
-  <DefaultFormLabel filled={isFilled} required={required}>
-    {label}
-  </DefaultFormLabel>
-);
 
 const InputField: React.AbstractComponent<Props, HTMLInputElement> = React.forwardRef<
   Props,

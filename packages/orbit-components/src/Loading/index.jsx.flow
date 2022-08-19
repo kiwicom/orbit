@@ -13,6 +13,7 @@ export type Props = {|
   +children?: React.Node,
   +loading?: boolean,
   +type?: Type,
+  +customSize?: number,
   +text?: Translation,
   ...Globals,
 |};

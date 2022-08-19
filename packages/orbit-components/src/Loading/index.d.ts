@@ -11,6 +11,7 @@ interface Props extends Common.Global {
   readonly children?: React.ReactNode;
   readonly loading?: boolean;
   readonly type?: Type;
+  readonly customSize?: number;
   readonly text?: Common.Translation;
 }
 

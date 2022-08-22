@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.5.3...@kiwicom/babel-plugin-orbit-components@3.6.0) (2022-08-22)
+
+
+### Features
+
+* **Itinerary:** add ItinerarySegmentBanner ([#3553](https://github.com/kiwicom/orbit/issues/3553)) ([911fc2a](https://github.com/kiwicom/orbit/commit/911fc2addfc3ab12aa11c74849a383dc255bc966))
+
+
+
+
+
 ## [3.5.3](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.5.2...@kiwicom/babel-plugin-orbit-components@3.5.3) (2022-08-01)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

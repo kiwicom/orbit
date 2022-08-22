@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.4.0...@kiwicom/orbit-components@3.5.0) (2022-08-22)
+
+
+### Bug Fixes
+
+* **Checkbox:** change font-weight to medium for label ([9202eb7](https://github.com/kiwicom/orbit/commit/9202eb73dd4b1f0047956c65667331a1f7ea0d99))
+* deprecated InputField label z-index ([#3559](https://github.com/kiwicom/orbit/issues/3559)) ([f9b67ad](https://github.com/kiwicom/orbit/commit/f9b67ad922189f6c8799bd07d5013faf4dda7a86))
+* **Radio:** change font-size to medium for label ([5fc7bd6](https://github.com/kiwicom/orbit/commit/5fc7bd6e04d5afb81a2340f5b34344d74d5d6c87))
+* **useTransition:** fix type export ([#3560](https://github.com/kiwicom/orbit/issues/3560)) ([fda99a8](https://github.com/kiwicom/orbit/commit/fda99a883e2264907867f5a9dc6f744d79148208))
+
+
+### Features
+
+* **icons:** update icons from figma ([c16079a](https://github.com/kiwicom/orbit/commit/c16079a3bd6e03268e5ef7264f9f912e54b42b56))
+* **Itinerary:** add ItinerarySegmentBanner ([#3553](https://github.com/kiwicom/orbit/issues/3553)) ([911fc2a](https://github.com/kiwicom/orbit/commit/911fc2addfc3ab12aa11c74849a383dc255bc966))
+* **Loading:** new customSize prop ([#3558](https://github.com/kiwicom/orbit/issues/3558)) ([297f684](https://github.com/kiwicom/orbit/commit/297f684fb8571b50d6e7a4cc5900f6befaa6ef0f))
+
+
+
+
+
 # [3.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.3.0...@kiwicom/orbit-components@3.4.0) (2022-08-01)
 
 

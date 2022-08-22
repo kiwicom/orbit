@@ -1,4 +1,3 @@
-// @flow
 import getPosition from "../getPosition";
 import POSITIONS from "../../consts";
 import theme from "../../../defaultTheme";

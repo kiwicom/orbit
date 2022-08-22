@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, select } from "@storybook/addon-knobs";
@@ -25,7 +24,7 @@ export default {
   title: "Drawer",
 };
 
-export const SideNavigation = (): React.Node => {
+export const SideNavigation = () => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const width = text("width", "320px");
@@ -85,7 +84,7 @@ SideNavigation.story = {
   },
 };
 
-export const SmartFaq = (): React.Node => {
+export const SmartFaq = () => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
@@ -126,7 +125,7 @@ SmartFaq.story = {
   },
 };
 
-export const Suppressed = (): React.Node => {
+export const Suppressed = () => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
@@ -180,7 +179,7 @@ Suppressed.story = {
   },
 };
 
-export const WithTitle = (): React.Node => {
+export const WithTitle = () => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const title = text("Title", "Title");
@@ -235,7 +234,7 @@ WithTitle.story = {
   },
 };
 
-export const SmartFaqSearch = (): React.Node => {
+export const SmartFaqSearch = () => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
@@ -298,7 +297,7 @@ SmartFaqSearch.story = {
   },
 };
 
-export const SideNavigationInRtl = (): React.Node => {
+export const SideNavigationInRtl = () => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const width = text("width", "320px");
@@ -362,7 +361,7 @@ SideNavigationInRtl.story = {
   },
 };
 
-export const SmartFaqInRtl = (): React.Node => {
+export const SmartFaqInRtl = () => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
@@ -405,7 +404,7 @@ SmartFaqInRtl.story = {
   },
 };
 
-export const SmartFaqSearchInRtl = (): React.Node => {
+export const SmartFaqSearchInRtl = () => {
   const shown = boolean("shown", true);
   const dataTest = text("dataTest", "test");
   const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);

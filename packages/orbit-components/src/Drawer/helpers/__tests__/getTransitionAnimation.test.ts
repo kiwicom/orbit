@@ -1,4 +1,3 @@
-// @flow
 import getTransitionAnimation from "../getTransitionAnimation";
 import theme from "../../../defaultTheme";
 import POSITIONS from "../../consts";

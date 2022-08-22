@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
@@ -8,7 +7,7 @@ import useFocusTrap from "../hooks/useFocusTrap";
 import useLockScrolling from "../hooks/useLockScrolling";
 import transition from "../utils/transition";
 import mq from "../utils/mediaQuery";
-import defaultTheme from "../defaultTheme";
+import defaultTheme, { Theme } from "../defaultTheme";
 import DrawerClose from "./components/DrawerClose";
 import POSITIONS from "./consts";
 import getPosition from "./helpers/getPosition";
@@ -18,11 +17,18 @@ import Stack from "../Stack";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import Heading from "../Heading";
 import { rtlSpacing } from "../utils/rtl";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const getPadding = ({ noPadding, theme, hasTopPadding }) => {
-  const padding = space => (!hasTopPadding ? rtlSpacing(`0 ${space} ${space}`) : space);
+const getPadding = ({
+  noPadding,
+  theme,
+  hasTopPadding,
+}: {
+  noPadding?: boolean;
+  theme: Theme;
+  hasTopPadding?: boolean;
+}) => {
+  const padding = (space: string) => (!hasTopPadding ? rtlSpacing(`0 ${space} ${space}`) : space);
   return (
     !noPadding &&
     css`
@@ -34,7 +40,7 @@ const getPadding = ({ noPadding, theme, hasTopPadding }) => {
   );
 };
 
-const StyledDrawer = styled.div`
+const StyledDrawer = styled.div<{ overlayShown?: boolean; shown?: boolean }>`
   ${({ theme, overlayShown, shown }) => css`
     display: flex;
     visibility: ${overlayShown ? "visible" : "hidden"};
@@ -51,17 +57,22 @@ const StyledDrawer = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerSide = styled(
-  React.forwardRef(({ theme, width, position, shown, suppressed, ...props }, ref) => (
-    <aside ref={ref} {...props} />
-  )),
-)`
-  ${({ theme, suppressed, width }) => css`
+const StyledDrawerSide = styled.aside`
+  ${({
+    theme,
+    suppressed,
+    width,
+  }: {
+    theme: Theme;
+    suppressed?: boolean;
+    width: string;
+    position: "right" | "left";
+    shown?: boolean;
+  }) => css`
     display: block;
     position: absolute;
     box-sizing: border-box;
@@ -84,27 +95,33 @@ const StyledDrawerSide = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawerSide.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerContent = styled(
-  ({ theme, type, hasTopPadding, noPadding, hasClose, ...props }) => <div {...props} />,
-)`
-  ${({ theme, noPadding, hasClose }) => css`
-    ${getPadding};
+const StyledDrawerContent = styled.div<{
+  hasClose?: boolean;
+  noPadding?: boolean;
+  hasTopPadding?: boolean;
+}>`
+  ${({ theme, noPadding, hasClose, hasTopPadding }) => css`
+    ${getPadding({ noPadding, hasTopPadding, theme })};
     margin-bottom: ${noPadding && theme.orbit.spaceLarge};
     margin-top: ${!hasClose && noPadding && theme.orbit.spaceLarge};
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawerContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDrawerHeader = styled.div`
+const StyledDrawerHeader = styled.div<{
+  fixedHeader?: boolean;
+  suppressed?: boolean;
+  bordered?: boolean;
+  noPadding?: boolean;
+  onlyIcon?: boolean;
+}>`
   ${({ theme, fixedHeader, suppressed, bordered, noPadding, onlyIcon }) => css`
     display: flex;
     ${fixedHeader &&
@@ -131,7 +148,6 @@ const StyledDrawerHeader = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDrawerHeader.defaultProps = {
   theme: defaultTheme,
 };
@@ -150,7 +166,7 @@ const Drawer = ({
   suppressed,
   title,
   actions,
-}: Props): React.Node => {
+}: Props) => {
   const theme = useTheme();
   const overlayRef = React.useRef(null);
   const closeButtonRef = React.useRef<HTMLElement | null>(null);
@@ -208,7 +224,6 @@ const Drawer = ({
       aria-hidden={!shown}
       ref={overlayRef}
     >
-      {/* $FlowFixMe: problem with ref object */}
       <StyledDrawerSide
         ref={scrollableRef}
         shown={shown}
@@ -220,9 +235,9 @@ const Drawer = ({
         {(title || actions || onClose) && (
           <StyledDrawerHeader
             onlyIcon={!title && !actions}
-            bordered={title || actions}
-            suppressed={suppressed}
-            fixedHeader={fixedHeader}
+            bordered={!!(title || actions)}
+            suppressed={!!suppressed}
+            fixedHeader={!!fixedHeader}
           >
             {title && <Heading type="title2">{title}</Heading>}
             {actions && (
@@ -236,7 +251,7 @@ const Drawer = ({
         <StyledDrawerContent
           noPadding={noPadding}
           hasClose={!!onClose}
-          hasTopPadding={title || actions}
+          hasTopPadding={!!(title || actions)}
         >
           {children}
         </StyledDrawerContent>

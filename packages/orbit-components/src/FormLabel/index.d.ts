@@ -14,8 +14,8 @@ export interface Props extends Common.Globals {
   readonly id?: string;
   readonly error?: boolean;
   readonly help?: boolean;
-  readonly iconRef?: Common.Ref;
-  readonly labelRef?: Common.Ref;
+  readonly iconRef?: Common.RefType<HTMLSpanElement>;
+  readonly labelRef?: Common.RefType<HTMLSpanElement>;
   readonly inlineLabel?: boolean;
   readonly onMouseEnter?: Common.Event<React.SyntheticEvent<HTMLElement>>;
   readonly onMouseLeave?: Common.Event<React.SyntheticEvent<HTMLElement>>;

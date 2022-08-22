@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -6,10 +5,9 @@ import defaultTheme from "../defaultTheme";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import { rtlSpacing } from "../utils/rtl";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledAsterisk = styled.span`
+const StyledAsterisk = styled.span<{ filled?: boolean }>`
   ${({ theme, filled }) => css`
     font-weight: ${theme.orbit.fontWeightBold};
     color: ${!filled ? theme.orbit.colorTextError : theme.orbit.colorFormLabelFilled};
@@ -18,7 +16,6 @@ const StyledAsterisk = styled.span`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledAsterisk.defaultProps = {
   theme: defaultTheme,
 };
@@ -29,12 +26,11 @@ const StyledInputErrorIcWrapper = styled.span`
   align-items: center;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputErrorIcWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const FormLabel: any = styled(
+const FormLabel = styled(
   ({
     className,
     children,
@@ -82,7 +78,6 @@ const FormLabel: any = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FormLabel.defaultProps = {
   theme: defaultTheme,
 };

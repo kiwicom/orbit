@@ -41,10 +41,10 @@ export interface Globals {
   readonly id?: string;
 }
 
-export type RefType = React.LegacyRef<HTMLElement>;
+export type RefType<T = HTMLElement> = { current: T | null } | ((instance: T | null) => void);
 
 export interface Ref {
-  readonly ref?: { current: HTMLElement | null } | ((instance: HTMLElement | null) => void);
+  readonly ref?: RefType;
 }
 
 export type SpaceAfterSizes =

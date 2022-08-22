@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
@@ -29,7 +28,7 @@ describe("Heading", () => {
   it("should ignore unsupported props", () => {
     render(
       // className has to be undefined to reproduce the error
-      // $FlowExpectedError
+      // @ts-expect-error className is not defined
       <Heading as="h1" type="display" className={undefined}>
         My lovely heading
       </Heading>,

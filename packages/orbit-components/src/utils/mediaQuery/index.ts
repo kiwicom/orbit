@@ -1,4 +1,4 @@
-import { Interpolation, css, ThemeProps } from "styled-components";
+import { css } from "styled-components";
 
 import { Theme } from "../../defaultTheme";
 import { QUERIES } from "./consts";
@@ -16,7 +16,7 @@ export const getBreakpointWidth = (
   name: keyof typeof TOKEN,
   theme: Theme,
   pure?: boolean,
-): Interpolation<ThemeProps<keyof typeof TOKEN>> => {
+): string => {
   return pure ? theme.orbit[TOKEN[name]] : `(min-width: ${theme.orbit[TOKEN[name]]}px)`;
 };
 

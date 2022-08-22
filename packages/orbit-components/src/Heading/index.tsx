@@ -1,17 +1,15 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { textAlign } from "../utils/rtl";
-import defaultTheme from "../defaultTheme";
+import defaultTheme, { Theme } from "../defaultTheme";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
 import { DEVICES } from "../utils/mediaQuery/consts";
+import { Props, Type } from "./index.d";
 
-import type { GetHeadingToken, Props } from ".";
-
-export const getHeadingToken: GetHeadingToken = (name, type) => ({ theme }) => {
+export const getHeadingToken = (name: string, type: Type) => ({ theme }: { theme: Theme }) => {
   const tokens = {
     [TOKENS.weightHeading]: {
       [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontWeightHeadingDisplay,
@@ -45,7 +43,7 @@ export const getHeadingToken: GetHeadingToken = (name, type) => ({ theme }) => {
   return tokens[name][type];
 };
 
-export const StyledHeading: any = styled(
+export const StyledHeading = styled(
   ({ element: Component, className, children, dataTest, dataA11ySection, id }) => (
     <Component
       className={className}
@@ -67,9 +65,9 @@ export const StyledHeading: any = styled(
     font-weight: ${getHeadingToken(TOKENS.weightHeading, type)};
     line-height: ${getHeadingToken(TOKENS.lineHeight, type)};
     margin-bottom: ${getSpacingToken};
-    ${
-      // temporary fix until we figure out how come `viewports` ended up being `undefined`
-      DEVICES.filter(viewport => viewports && viewports[viewport]).map(viewport => {
+    ${Object.values(DEVICES)
+      .filter(viewport => viewports && viewports[viewport])
+      .map(viewport => {
         const { type: value, spaceAfter, align: txtAlign } = viewports[viewport];
         return mediaQueries[viewport](css`
           font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
@@ -78,12 +76,10 @@ export const StyledHeading: any = styled(
           line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
           margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
         `);
-      })
-    }
+      })}
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHeading.defaultProps = {
   theme: defaultTheme,
 };
@@ -103,7 +99,7 @@ const Heading = ({
   tablet,
   desktop,
   largeDesktop,
-}: Props): React.Node => {
+}: Props) => {
   const viewports = { mediumMobile, largeMobile, tablet, desktop, largeDesktop };
   return (
     <StyledHeading

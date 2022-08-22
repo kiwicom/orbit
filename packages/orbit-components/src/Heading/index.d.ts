@@ -6,7 +6,7 @@ import { StyledComponent } from "styled-components";
 
 import * as Common from "../common/common";
 import DefaultTheme from "../defaultTheme";
-import { Devices } from "../utils/mediaQuery/consts";
+import { Devices } from "../utils/mediaQuery/index.d";
 
 export type Type =
   | "display"

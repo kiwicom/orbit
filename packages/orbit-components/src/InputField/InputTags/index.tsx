@@ -1,12 +1,9 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
 import { rtlSpacing } from "../../utils/rtl";
 import defaultTheme from "../../defaultTheme";
 import { StyledTag } from "../../Tag";
-
-import type { Props } from ".";
 
 const StyledInputTags = styled.div`
   position: relative;
@@ -20,12 +17,11 @@ const StyledInputTags = styled.div`
   overflow: hidden;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputTags.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledInputTagsInner: any = styled.div`
+const StyledInputTagsInner = styled.div`
   overflow-x: scroll;
   white-space: nowrap;
   -ms-overflow-style: none; /* IE 11 */
@@ -42,17 +38,17 @@ const StyledInputTagsInner: any = styled.div`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputTagsInner.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputTags = ({ children }: Props): React.Node => {
-  const tagsRef = React.createRef();
+const InputTags = ({ children }: { children: React.ReactNode }) => {
+  const tagsRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
-    const handleMouseMove = event => {
+    const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = event => {
       if (tagsRef && tagsRef.current) {
+        // @ts-expect-error TODO
         const { isDragging } = tagsRef.current;
         if (isDragging && event.movementX) {
           tagsRef.current.scrollLeft -= event.movementX;
@@ -60,22 +56,27 @@ const InputTags = ({ children }: Props): React.Node => {
       }
     };
 
-    const handleMouseUp = () => {
+    const handleMouseUp: React.MouseEventHandler<HTMLDivElement> = () => {
       if (tagsRef && tagsRef.current) {
+        // @ts-expect-error TODO
         tagsRef.current.isDragging = false;
       }
     };
 
-    const tags = tagsRef.current;
+    const tags = tagsRef.current as HTMLElement;
 
     if (tags) {
+      // @ts-expect-error TODO
       tags.addEventListener("mousemove", handleMouseMove);
+      // @ts-expect-error TODO
       tags.addEventListener("mouseup", handleMouseUp);
     }
 
     return () => {
       if (tags) {
+        // @ts-expect-error TODO
         tags.removeEventListener("mousemove", handleMouseMove);
+        // @ts-expect-error TODO
         tags.removeEventListener("mouseup", handleMouseUp);
       }
     };
@@ -87,6 +88,7 @@ const InputTags = ({ children }: Props): React.Node => {
         ref={tagsRef}
         onMouseDown={() => {
           if (tagsRef && tagsRef.current) {
+            // @ts-expect-error TODO
             tagsRef.current.isDragging = true;
           }
         }}

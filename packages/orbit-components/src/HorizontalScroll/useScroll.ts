@@ -1,4 +1,3 @@
-// @flow
 import { useState, useEffect, useCallback } from "react";
 
 import { throttle } from "./helpers";
@@ -7,20 +6,22 @@ const timing = (1 / 60) * 1000;
 // eslint-disable-next-line no-bitwise
 const decay = (v: number) => -0.1 * ((1 / timing) ^ 4) + v;
 
-type UseScroll = (ref: {| current: HTMLElement | null |}) => {|
-  isDragging: boolean,
-  clickStartX: ?number,
-  scrollStartX: ?number,
-  direction: number,
-  momentum: number,
-  speed: number,
-  lastScrollX: number,
-  reachedStart: boolean,
-|};
+type UseScroll = (
+  ref: React.RefObject<HTMLElement>,
+) => {
+  isDragging: boolean;
+  clickStartX?: number;
+  scrollStartX?: number;
+  direction: number;
+  momentum: number;
+  speed: number;
+  lastScrollX: number;
+  reachedStart: boolean;
+};
 
 const useScroll: UseScroll = ref => {
-  const [clickStartX, setClickStartX] = useState();
-  const [scrollStartX, setScrollStartX] = useState();
+  const [clickStartX, setClickStartX] = useState<number | undefined>(undefined);
+  const [scrollStartX, setScrollStartX] = useState<number | undefined>(undefined);
   const [isDragging, setIsDragging] = useState(false);
   const [direction, setDirection] = useState(0);
   const [momentum, setMomentum] = useState(0);
@@ -90,7 +91,6 @@ const useScroll: UseScroll = ref => {
         }
       };
 
-      // $FlowFixMe: on mobile browser is null, on desktop is undefined
       if (ref.current && ref.current.ontouchstart === undefined) {
         // eslint-disable-next-line no-param-reassign
         ref.current.onmousedown = handleDragStart;

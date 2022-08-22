@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -7,8 +6,7 @@ import mergeRefs from "../utils/mergeRefs";
 import defaultTheme from "../defaultTheme";
 import useTheme from "../hooks/useTheme";
 import useScrollBox from "./useScroll";
-
-import type { Props, ScrollSnap } from ".";
+import { Props, ScrollSnap } from "./index.d";
 
 const shadowMixin = css`
   content: "";
@@ -18,7 +16,14 @@ const shadowMixin = css`
   height: 100%;
 `;
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{
+  isDragging?: boolean;
+  $minHeight?: number;
+  elevationColor?: string;
+  overflowElevation?: boolean;
+  isStart?: boolean;
+  isOverflowing?: boolean;
+}>`
   ${({ isDragging, $minHeight, elevationColor, overflowElevation, isStart, isOverflowing }) => css`
     position: relative;
     width: 100%;
@@ -47,19 +52,22 @@ const StyledWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const getSnap = ({ $scrollSnap }: {| $scrollSnap: ScrollSnap |}) => {
+const getSnap = ({ $scrollSnap }: { $scrollSnap: ScrollSnap }) => {
   if ($scrollSnap === "mandatory") return "x mandatory";
   if ($scrollSnap === "proximity") return "x proximity";
 
   return $scrollSnap;
 };
 
-const StyledOverflow = styled.div`
+const StyledOverflow = styled.div<{
+  isDragging?: boolean;
+  scrollPadding?: number;
+  $scrollSnap: ScrollSnap;
+}>`
   ${({ isDragging, scrollPadding }) => css`
     width: 100%;
     height: 100%;
@@ -77,7 +85,7 @@ const StyledOverflow = styled.div`
   `}
 `;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div<{ isDragging?: boolean }>`
   ${({ isDragging }) => css`
     height: 100%;
     width: 100%;
@@ -86,7 +94,7 @@ const StyledContainer = styled.div`
   `}
 `;
 
-const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
+const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
   (
     {
       children,
@@ -102,9 +110,9 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
       ...props
     },
     ref,
-  ): React.Node => {
-    const scrollWrapperRef = React.useRef<HTMLElement | null>(null);
-    const containerRef = React.useRef<HTMLElement | null>(null);
+  ) => {
+    const scrollWrapperRef = React.useRef<HTMLDivElement | null>(null);
+    const containerRef = React.useRef<HTMLDivElement | null>(null);
     const { isDragging, reachedStart } = useScrollBox(scrollWrapperRef);
     const theme = useTheme();
     const [isOverflowing, setOverflowing] = React.useState(false);
@@ -139,7 +147,7 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
         isDragging={isDragging}
         isStart={reachedStart}
         isOverflowing={isOverflowing}
-        ref={mergeRefs([ref, containerRef])}
+        ref={mergeRefs<HTMLDivElement>([ref, containerRef])}
         elevationColor={theme.orbit[elevationColor]}
       >
         <StyledOverflow

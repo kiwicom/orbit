@@ -3,6 +3,7 @@
 
 import * as React from "react";
 
+import { Theme } from "../defaultTheme";
 import * as Common from "../common/common";
 
 export type Direction = "row" | "column" | "row-reverse" | "column-reverse";

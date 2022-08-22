@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import { Spacing } from "../Stack";
+import { Spacing } from "../Stack/index.d";
 import * as Common from "../common/common";
 
 /** DOCS:
@@ -25,7 +25,7 @@ import * as Common from "../common/common";
   ```
 */
 
-type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
+export type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
 
 export interface Props extends Common.Globals {
   /** set minimal height */

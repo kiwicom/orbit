@@ -33,7 +33,6 @@ import TableBody from "../Table/TableBody";
 import Textarea from "../Textarea";
 import Tile from "../Tile";
 import CardSection from "../Card/CardSection";
-import RatingStars from "../RatingStars";
 import StopoverArrow from "../StopoverArrow";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import ChoiceGroup from "../ChoiceGroup";
@@ -797,7 +796,6 @@ export const ComponentsPreview = (): React.Node => (
     </Stack>
     <Stack direction="row" align="center">
       <Heading>Orbit Design System</Heading>
-      <RatingStars rating={4} />
     </Stack>
     <Stack direction="row" align="center">
       <Text>Prague</Text>

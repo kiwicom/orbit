@@ -1,0 +1,20 @@
+// @flow
+import * as React from "react";
+
+import type { Globals } from "../../common/common.js.flow";
+
+export type Props = {|
+  +offset?: number,
+  +children: React.Node,
+  ...Globals,
+|};
+
+export type State = {|
+  sticky: boolean,
+  height: number,
+  width: number,
+  initialTop: number,
+  initialWidth: boolean,
+|};
+
+declare export default React.ComponentType<Props>;

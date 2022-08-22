@@ -14,7 +14,7 @@ import ListChoice from "../ListChoice";
 import Text from "../Text";
 import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
-import Sticky from "../Sticky";
+import Sticky from "../deprecated/Sticky";
 import Card from "../Card";
 import Loading from "../Loading";
 

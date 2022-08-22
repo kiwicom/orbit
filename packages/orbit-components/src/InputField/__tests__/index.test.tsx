@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -14,7 +13,7 @@ import defaultTheme from "../../defaultTheme";
 
 describe("InputField", () => {
   it("should have expected DOM output", async () => {
-    const ref = React.createRef();
+    const ref = React.createRef<HTMLInputElement>();
     const { container } = render(
       <InputField
         ref={ref}
@@ -28,7 +27,7 @@ describe("InputField", () => {
         minLength={1}
         maxLength={10}
         dataTest="test"
-        tabIndex="-1"
+        tabIndex={-1}
         readOnly
         autoComplete="off"
         spaceAfter={SPACINGS_AFTER.NORMAL}

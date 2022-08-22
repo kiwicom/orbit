@@ -1,8 +1,8 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import * as Common from "../common/common";
+import defaultTheme, { Theme } from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
@@ -18,11 +18,9 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
+import { Props } from "./index.d";
 
-import typeof InputFieldType from ".";
-import type { Props } from ".";
-
-const getToken = name => ({ theme, size }) => {
+const getToken = (name: string) => ({ theme, size }: { theme: Theme; size: Props["size"] }) => {
   const tokens = {
     [TOKENS.heightInput]: {
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
@@ -56,10 +54,22 @@ const getDOMType = type => {
   return type;
 };
 
-const Field: any = styled(
-  React.forwardRef(
+interface StyledFieldProps extends React.PropsWithChildren<Partial<Props>> {
+  component: string;
+  className?: string;
+  spaceAfter?: Common.SpaceAfterSizes;
+  theme: Theme;
+  htmlFor?: string;
+  $width?: string;
+  onMouseEnter?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  onMouseLeave?: (e: React.MouseEvent<HTMLInputElement>) => void;
+}
+
+const Field = styled(
+  React.forwardRef<HTMLElement, StyledFieldProps>(
     ({ component: Component, className, children, spaceAfter, theme, $width, ...props }, ref) => {
       return (
+        // @ts-expect-error TODO
         <Component className={className} ref={ref} {...props}>
           {children}
         </Component>
@@ -77,12 +87,11 @@ const Field: any = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Field.defaultProps = {
   theme: defaultTheme,
 };
 
-export const FakeInput: any = styled(({ children, className }) => (
+export const FakeInput = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
   ${({ theme, error, disabled }) => css`
@@ -109,12 +118,11 @@ export const FakeInput: any = styled(({ children, className }) => (
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FakeInput.defaultProps = {
   theme: defaultTheme,
 };
 
-export const InputContainer: any = styled(({ children, className, labelRef }) => (
+export const InputContainer = styled(({ children, className, labelRef }) => (
   <div ref={labelRef} className={className}>
     {children}
   </div>
@@ -141,13 +149,21 @@ export const InputContainer: any = styled(({ children, className, labelRef }) =>
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 InputContainer.defaultProps = {
   theme: defaultTheme,
 };
 
 const StyledInlineLabel = styled.div`
-  ${({ theme, hasTags, hasFeedback }) => css`
+  ${({
+    theme,
+    hasTags,
+    hasFeedback,
+  }: {
+    theme: Theme;
+    hasTags?: boolean;
+    hasFeedback?: boolean;
+    size: Props["size"];
+  }) => css`
     height: 100%;
     display: flex;
     align-items: center;
@@ -167,12 +183,11 @@ const StyledInlineLabel = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInlineLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Prefix: any = styled(({ children, className, iconRef }) => (
+export const Prefix = styled(({ children, className, iconRef }) => (
   <div className={className} ref={iconRef}>
     {children}
   </div>
@@ -203,20 +218,19 @@ export const Prefix: any = styled(({ children, className, iconRef }) => (
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Prefix.defaultProps = {
   theme: defaultTheme,
 };
 
 const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
-  ${({ theme }) => css`
+  ${({ theme, disabled }) => css`
     height: ${getToken(TOKENS.heightInput)};
     color: ${theme.orbit.colorTextInputPrefix};
     display: flex;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    pointer-events: ${({ disabled }) => disabled && "none"};
+    pointer-events: ${disabled && "none"};
     z-index: 3;
 
     ${StyledButtonPrimitiveIconContainer} {
@@ -230,29 +244,24 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Suffix.defaultProps = {
   theme: defaultTheme,
 };
 
-export const Input: any = styled(
-  React.forwardRef(
+interface StyledInputProps extends Partial<Props> {
+  min: number;
+  max: number;
+  ariaLabelledby?: string;
+}
+
+export const Input = styled(
+  React.forwardRef<HTMLInputElement, StyledInputProps>(
     (
-      {
-        type,
-        size,
-        theme,
-        error,
-        help,
-        inlineLabel,
-        dataAttrs,
-        required,
-        ariaLabelledby,
-        ...props
-      },
+      { type, size, error, help, inlineLabel, dataAttrs, required, ariaLabelledby, ...props },
       ref,
     ) => {
       return (
+        // @ts-expect-error TODO
         <input
           type={getDOMType(type)}
           {...props}
@@ -335,7 +344,6 @@ export const Input: any = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Input.defaultProps = {
   theme: defaultTheme,
 };
@@ -344,7 +352,7 @@ const StyledIconWrapper = styled.span`
   display: flex;
 `;
 
-const InputField: InputFieldType = React.forwardRef((props, ref) => {
+const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const {
     disabled,
     size = SIZE_OPTIONS.NORMAL,
@@ -365,8 +373,8 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
     onKeyUp,
     onKeyDown,
     placeholder,
-    minValue,
-    maxValue,
+    minValue = -Infinity,
+    maxValue = Infinity,
     minLength,
     maxLength,
     suffix,
@@ -499,7 +507,7 @@ const InputField: InputFieldType = React.forwardRef((props, ref) => {
             error={insideInputGroup ? undefined : error}
             ref={ref}
             tabIndex={tabIndex}
-            ariaLabelledby={!label ? inputId : null}
+            ariaLabelledby={!label ? inputId : undefined}
             inlineLabel={inlineLabel}
             readOnly={readOnly}
             autoComplete={autoComplete}

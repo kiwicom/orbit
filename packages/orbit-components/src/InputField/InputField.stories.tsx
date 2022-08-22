@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select, number, object } from "@storybook/addon-knobs";
@@ -16,14 +14,15 @@ import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
 import InputField from ".";
 
-const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
-const getIcon = source => Icons[source];
+const getIcons = (name: string, defaultIcon: string) =>
+  select(name, [null, ...Object.keys(Icons)], defaultIcon);
+const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "InputField",
 };
 
-export const DefaultInput = (): React.Node => {
+export const DefaultInput = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -41,7 +40,7 @@ DefaultInput.story = {
   },
 };
 
-export const SmallInput = (): React.Node => {
+export const SmallInput = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -65,9 +64,9 @@ SmallInput.story = {
   },
 };
 
-export const NumberInput = (): React.Node => {
+export const NumberInput = () => {
   const label = text("Label", "Number");
-  const value = text("Value", 2);
+  const value = text("Value", "2");
   const placeholder = text("Placeholder", "Number");
   const maxValue = number("maxValue", 3);
   const minValue = number("minValue", 1);
@@ -93,7 +92,7 @@ NumberInput.story = {
   },
 };
 
-export const PasswordInput = (): React.Node => {
+export const PasswordInput = () => {
   const label = text("Label", "Password");
   const value = text("Value", "p422W0rd");
   const placeholder = text("Placeholder", "Password");
@@ -117,7 +116,7 @@ PasswordInput.story = {
   },
 };
 
-export const PassportOrIdInput = (): React.Node => {
+export const PassportOrIdInput = () => {
   const label = text("Label", "Passport or ID number");
   const placeholder = text("Placeholder", "588539238");
 
@@ -139,7 +138,7 @@ PassportOrIdInput.story = {
   },
 };
 
-export const EmailInput = (): React.Node => {
+export const EmailInput = () => {
   const label = text("Label", "Email");
   const value = text("Value", "name@example.co");
   const placeholder = text("Placeholder", "Email");
@@ -169,7 +168,7 @@ EmailInput.story = {
   },
 };
 
-export const WithTextPrefix = (): React.Node => {
+export const WithTextPrefix = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -194,7 +193,7 @@ WithTextPrefix.story = {
   },
 };
 
-export const WithTextSuffix = (): React.Node => {
+export const WithTextSuffix = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -219,12 +218,12 @@ WithTextSuffix.story = {
   },
 };
 
-export const CompactInput = (): React.Node => {
+export const CompactInput = () => {
   const value = text("Value", "");
   const label = text("Label", "Label");
   const placeholder = text("Placeholder", "Placeholder");
   const required = boolean("required", false);
-  const error = text("Error", undefined);
+  const error = text("Error", "");
 
   return (
     <InputField
@@ -247,12 +246,12 @@ CompactInput.story = {
   },
 };
 
-export const CompactInputWithTags = (): React.Node => {
+export const CompactInputWithTags = () => {
   const value = text("Value", "");
   const label = text("Label", "Label");
   const placeholder = text("Placeholder", "Placeholder");
   const required = boolean("required", false);
-  const error = text("Error", undefined);
+  const error = text("Error", "");
 
   return (
     <InputField
@@ -301,7 +300,7 @@ CompactInputWithTags.story = {
   },
 };
 
-export const RequiredField = (): React.Node => {
+export const RequiredField = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const required = boolean("required", true);
@@ -326,7 +325,7 @@ RequiredField.story = {
   },
 };
 
-export const WithIconPrefix = (): React.Node => {
+export const WithIconPrefix = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -351,7 +350,7 @@ WithIconPrefix.story = {
   },
 };
 
-export const WithButtonLinkSuffix = (): React.Node => {
+export const WithButtonLinkSuffix = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -380,7 +379,7 @@ WithButtonLinkSuffix.story = {
   },
 };
 
-export const WithServiceLogoPrefix = (): React.Node => {
+export const WithServiceLogoPrefix = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -406,7 +405,7 @@ WithServiceLogoPrefix.story = {
   },
 };
 
-export const WithError = (): React.Node => {
+export const WithError = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
   const name = text("Name", "input");
@@ -416,18 +415,18 @@ export const WithError = (): React.Node => {
   const placeholder = text("Placeholder", "Placeholder");
   const Prefix = getIcon(getIcons("Prefix", "Search"));
   const Suffix = getIcon(getIcons("Suffix", "Visibility"));
-  const help = text("Help", undefined);
+  const help = text("Help", "");
   const error = text("Error", "Please fill out as you have on your passport");
   const disabled = boolean("Disabled", false);
-  const maxValue = number("maxValue", undefined);
-  const minValue = number("minValue", undefined);
+  const maxValue = number("maxValue", NaN);
+  const minValue = number("minValue", NaN);
   const required = boolean("required", false);
-  const maxLength = number("maxLength", undefined);
-  const minLength = number("minLength", undefined);
+  const maxLength = number("maxLength", NaN);
+  const minLength = number("minLength", NaN);
   const readOnly = boolean("readOnly", false);
   const autoComplete = text("autoComplete", "off");
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", SPACINGS_AFTER, SPACINGS_AFTER.MEDIUM);
   const id = text("id", "ID");
 
   return (
@@ -479,7 +478,7 @@ WithError.story = {
   },
 };
 
-export const WithHelp = (): React.Node => {
+export const WithHelp = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
   const name = text("Name", "input");
@@ -490,17 +489,17 @@ export const WithHelp = (): React.Node => {
   const Prefix = getIcon(getIcons("Prefix", "Search"));
   const Suffix = getIcon(getIcons("Suffix", "Visibility"));
   const help = text("Help", "Please fill out as you have on your passport");
-  const error = text("Error", undefined);
+  const error = text("Error", "");
   const disabled = boolean("Disabled", false);
-  const maxValue = number("maxValue", undefined);
-  const minValue = number("minValue", undefined);
+  const maxValue = number("maxValue", NaN);
+  const minValue = number("minValue", NaN);
   const required = boolean("required", false);
-  const maxLength = number("maxLength", undefined);
-  const minLength = number("minLength", undefined);
+  const maxLength = number("maxLength", NaN);
+  const minLength = number("minLength", NaN);
   const readOnly = boolean("readOnly", false);
   const autoComplete = text("autoComplete", "off");
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.MEDIUM);
   const id = text("id", "ID");
 
   return (
@@ -552,7 +551,7 @@ WithHelp.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
   const name = text("Name", "input");
@@ -562,21 +561,21 @@ export const Playground = (): React.Node => {
   const placeholder = text("Placeholder", "Placeholder");
   const Prefix = getIcon(getIcons("Prefix", "Search"));
   const Suffix = getIcon(getIcons("Suffix", "Visibility"));
-  const help = text("Help", undefined);
-  const error = text("Error", undefined);
+  const help = text("Help", "");
+  const error = text("Error", "");
   const disabled = boolean("Disabled", false);
   const width = text("width", "");
-  const maxValue = number("maxValue", undefined);
-  const minValue = number("minValue", undefined);
+  const maxValue = number("maxValue", NaN);
+  const minValue = number("minValue", NaN);
   const required = boolean("required", false);
-  const maxLength = number("maxLength", undefined);
-  const minLength = number("minLength", undefined);
+  const maxLength = number("maxLength", NaN);
+  const minLength = number("minLength", NaN);
   const readOnly = boolean("readOnly", false);
   const autoComplete = text("autoComplete", "off");
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const id = text("id", "ID");
-  const inputMode = select("inputMode", [null, ...Object.values(INPUTMODE)]);
+  const inputMode = select("inputMode", Object.values(INPUTMODE), INPUTMODE.TEXT);
   const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
 
   return (
@@ -634,11 +633,11 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   const help = text("Help", "Please fill out as you have on your passport");
-  const error = text("Error", undefined);
+  const error = text("Error", "");
   const inlineLabel = boolean("inline label", false);
-  const label = text("Label", null);
+  const label = text("Label", "");
 
   return (
     <RenderInRtl>

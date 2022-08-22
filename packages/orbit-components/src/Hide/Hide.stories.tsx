@@ -1,9 +1,9 @@
-// @flow
 import * as React from "react";
 import { boolean } from "@storybook/addon-knobs";
 
 import Separator from "../Separator";
 import ChevronLeft from "../icons/ChevronLeft";
+import { Devices } from "../utils/mediaQuery/index.d";
 
 import Hide from ".";
 
@@ -11,7 +11,7 @@ export default {
   title: "Hide",
 };
 
-export const WithSeparator = (): React.Node => {
+export const WithSeparator = () => {
   const block = boolean("block", true);
   return (
     <Hide on={["largeMobile"]} block={block}>
@@ -27,7 +27,7 @@ WithSeparator.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const largeDesktop = boolean("largeDesktop", false);
   const desktop = boolean("desktop", false);
   const tablet = boolean("tablet", false);
@@ -43,7 +43,7 @@ export const Playground = (): React.Node => {
     largeMobile && "largeMobile",
     mediumMobile && "mediumMobile",
     smallMobile && "smallMobile",
-  ].filter(item => typeof item === "string");
+  ].filter(item => typeof item === "string") as Devices[];
 
   return (
     <Hide on={on} block={block}>

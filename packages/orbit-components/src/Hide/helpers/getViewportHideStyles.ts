@@ -1,12 +1,15 @@
-// @flow
-import { css } from "styled-components";
+import { css, FlattenSimpleInterpolation } from "styled-components";
 
 import mediaQueries from "../../utils/mediaQuery";
 import { DEVICES } from "../../utils/mediaQuery/consts";
-import type { GetViewportHideStyles } from "./getViewportHideStyles";
+import { Devices } from "../../utils/mediaQuery/index.d";
+import getDisplay from "./getDisplay";
 
-const getViewportHideStyles: GetViewportHideStyles = (on, resolveDisplayProp = () => "block") =>
-  DEVICES.map(viewport =>
+const getViewportHideStyles = (
+  on: Devices[],
+  resolveDisplayProp: typeof getDisplay,
+): (false | FlattenSimpleInterpolation)[] =>
+  Object.values(DEVICES).map(viewport =>
     viewport in mediaQueries
       ? css`
           ${mediaQueries[viewport](css`

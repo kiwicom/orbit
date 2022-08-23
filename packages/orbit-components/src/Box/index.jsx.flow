@@ -7,7 +7,7 @@ import * as React from "react";
 import type { Globals } from "../common/common.js.flow";
 
 // TODO: extend to suppressed and flat
-export type Elevation = "action" | "fixed" | "raised" | "overlay";
+export type Elevation = "action" | "fixed" | "raised" | "overlay" | "fixedReverse" | "raisedReverse";
 
 export type ColorTokens =
   | "productLight"

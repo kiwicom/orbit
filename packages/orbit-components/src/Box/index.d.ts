@@ -6,7 +6,13 @@ import * as React from "react";
 import * as Common from "../common/common";
 
 // TODO: extend to suppressed and flat
-export type Elevation = "action" | "fixed" | "raised" | "overlay";
+export type Elevation =
+  | "action"
+  | "fixed"
+  | "raised"
+  | "overlay"
+  | "fixedReverse"
+  | "raisedReverse";
 
 export type ColorTokens =
   | "productLight"

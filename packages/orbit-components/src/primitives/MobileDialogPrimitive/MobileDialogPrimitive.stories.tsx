@@ -1,6 +1,5 @@
-// @flow
 import * as React from "react";
-import { text, boolean } from "@storybook/addon-knobs";
+import { text, boolean, number } from "@storybook/addon-knobs";
 
 import Button from "../../Button";
 
@@ -10,10 +9,10 @@ export default {
   title: "MobileDialogPrimtive",
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const content = text("content", "Write your text here.");
   const dataTest = text("dataTest", "test");
-  const tabIndex = text("TabIndex", "0");
+  const tabIndex = number("TabIndex", 0);
   const enabled = boolean("enabled", true);
   const stopPropagation = boolean("enabled", true);
   const removeUnderlinedText = boolean("removeUnderlinedText", false);

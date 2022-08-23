@@ -1,7 +1,7 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import * as Common from "../../../common/common";
 import { StyledText } from "../../../Text";
 import { Item } from "../../../List/ListItem";
 import defaultTheme from "../../../defaultTheme";
@@ -10,14 +10,21 @@ import Translate from "../../../Translate";
 import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
-import type { Props } from "./DialogContent.flow";
 import useLockScrolling from "../../../hooks/useLockScrolling";
+
+interface Props extends Common.Globals {
+  shown: boolean;
+  lockScrolling?: boolean;
+  dialogId: string;
+  children: React.ReactNode;
+  onClose: (ev: React.SyntheticEvent<HTMLElement>) => void;
+}
 
 const StyledDialog = styled.div`
   width: 100%;
 `;
 
-const StyledDialogWrapper = styled.div`
+const StyledDialogWrapper = styled.div<{ shown?: boolean }>`
   position: fixed;
   width: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
   box-sizing: border-box;
@@ -47,7 +54,6 @@ const StyledDialogWrapper = styled.div`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialogWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -71,12 +77,11 @@ const StyledTooltipContent = styled.div`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDialogOverlay = styled.div`
+const StyledDialogOverlay = styled.div<{ shown?: boolean }>`
   position: fixed;
   visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
   width: 100%;
@@ -95,7 +100,6 @@ const StyledDialogOverlay = styled.div`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledDialogOverlay.defaultProps = {
   theme: defaultTheme,
 };
@@ -107,9 +111,9 @@ const DialogContent = ({
   dialogId,
   children,
   onClose,
-}: Props): React.Node => {
+}: Props) => {
   const overlay = React.useRef(null);
-  const dialog = React.useRef<HTMLElement | null>(null);
+  const dialog = React.useRef<HTMLDivElement | null>(null);
   useLockScrolling(dialog, lockScrolling);
   const handleClickOutside = React.useCallback(
     ev => {

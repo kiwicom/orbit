@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -20,7 +19,7 @@ describe("MobileDialogPrimitive", () => {
   it("should have expected DOM output", () => {
     render(
       // eslint-disable-next-line jsx-a11y/tabindex-no-positive
-      <MobileDialog tabIndex="1" dataTest="test" content="My text link">
+      <MobileDialog tabIndex={1} dataTest="test" content="My text link">
         children
       </MobileDialog>,
     );

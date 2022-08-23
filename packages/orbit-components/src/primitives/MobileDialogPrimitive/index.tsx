@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 
 import useRandomId from "../../hooks/useRandomId";
@@ -6,21 +5,20 @@ import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import Portal from "../../Portal";
 import { StyledTooltipChildren } from "../TooltipPrimitive";
 import DialogContent from "./components/DialogContent";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const MobileDialog = ({
   children,
   enabled = true,
   renderInPortal = true,
-  tabIndex = "0",
+  tabIndex = 0,
   dataTest,
   content,
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
   lockScrolling,
-}: Props): void | React.Node | React.Node => {
+}: Props) => {
   const [
     render,
     setRender,
@@ -55,7 +53,7 @@ const MobileDialog = ({
     [setRenderWithTimeout, setshown, stopPropagation],
   );
 
-  if (!enabled) return children;
+  if (!enabled && children) return <>{children}</>;
 
   const dialog = (
     <DialogContent
@@ -74,7 +72,7 @@ const MobileDialog = ({
       <StyledTooltipChildren
         onClick={handleInMobile}
         aria-describedby={enabled ? mobileDialogID : undefined}
-        tabIndex={enabled ? tabIndex : undefined}
+        tabIndex={enabled ? Number(tabIndex) : undefined}
         enabled={enabled}
         removeUnderlinedText={removeUnderlinedText}
         block={block}

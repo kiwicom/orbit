@@ -1,12 +1,10 @@
-// @flow
 import * as React from "react";
 
 import { SIZE_OPTIONS } from "./consts";
 import TooltipPrimitive from "../primitives/TooltipPrimitive";
 import useMediaQuery from "../hooks/useMediaQuery";
 import MobileDialog from "../primitives/MobileDialogPrimitive";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const Tooltip = ({
   children,
@@ -22,7 +20,7 @@ const Tooltip = ({
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
-}: Props): React.Node => {
+}: Props) => {
   const { isLargeMobile } = useMediaQuery();
   return isLargeMobile ? (
     <TooltipPrimitive

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
@@ -24,7 +23,7 @@ export default {
   title: "Tooltip",
 };
 
-export const TooltipOnInlineElement = (): React.Node => {
+export const TooltipOnInlineElement = () => {
   const content = text("content", "Write your text here.");
   const removeUnderlinedText = boolean("removeUnderlinedText", false);
 
@@ -68,7 +67,7 @@ TooltipOnInlineElement.story = {
   },
 };
 
-export const TooltipOnBlockElement = (): React.Node => {
+export const TooltipOnBlockElement = () => {
   const content = text(
     "content",
     "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
@@ -89,7 +88,7 @@ TooltipOnBlockElement.story = {
   },
 };
 
-export const TooltipOnDisabledElement = (): React.Node => {
+export const TooltipOnDisabledElement = () => {
   const content = text("content", "Write your text here.");
   return (
     <Tooltip content={content}>
@@ -107,7 +106,7 @@ TooltipOnDisabledElement.story = {
   },
 };
 
-export const Block = (): React.Node => {
+export const Block = () => {
   const content = text("content", "Write your text here.");
   return (
     <Tooltip block content={content}>
@@ -116,7 +115,7 @@ export const Block = (): React.Node => {
   );
 };
 
-export const Placement = (): React.Node => {
+export const Placement = () => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
   const content = text("content", "Write your text here.");
@@ -138,7 +137,7 @@ Placement.story = {
   },
 };
 
-export const WithImageInside = (): React.Node => {
+export const WithImageInside = () => {
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
   return (
@@ -182,7 +181,7 @@ WithImageInside.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const content = text("content", "Write your text here.");
   const dataTest = text("dataTest", "test");
   const Icon = getIcon(getIcons("Airplane"));
@@ -214,7 +213,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   return (
     <RenderInRtl>
       <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">

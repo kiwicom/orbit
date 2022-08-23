@@ -9,11 +9,13 @@ import normalize from "./normalize";
 
 import type { Props } from ".";
 
-const StyledBox = styled(({ className, asComponent: Element, children, dataTest, id }) => (
-  <Element className={className} data-test={dataTest} id={id}>
-    {children}
-  </Element>
-))`
+const StyledBox: any = styled(
+  ({ className, asComponent: Element, children, dataTest, id, ref }) => (
+    <Element className={className} data-test={dataTest} id={id} ref={ref}>
+      {children}
+    </Element>
+  ),
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   box-sizing: border-box;
   ${({ viewports }) => {
@@ -33,31 +35,38 @@ StyledBox.defaultProps = {
   theme: defaultTheme,
 };
 
-const Box = ({
-  as = "div",
-  id,
-  mediumMobile,
-  largeMobile,
-  tablet,
-  desktop,
-  largeDesktop,
-  children,
-  dataTest,
-  className,
-  ...smallMobile
-}: Props): React.Node => {
-  const viewports = { smallMobile, mediumMobile, largeMobile, tablet, desktop, largeDesktop };
+const Box: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Props, HTMLDivElement>(
+  (
+    {
+      as = "div",
+      id,
+      mediumMobile,
+      largeMobile,
+      tablet,
+      desktop,
+      largeDesktop,
+      children,
+      dataTest,
+      className,
+      ...smallMobile
+    },
+    ref,
+  ): React.Node => {
+    const viewports = { smallMobile, mediumMobile, largeMobile, tablet, desktop, largeDesktop };
 
-  return (
-    <StyledBox
-      asComponent={as}
-      id={id}
-      dataTest={dataTest}
-      className={className}
-      viewports={viewports}
-    >
-      {children}
-    </StyledBox>
-  );
-};
+    return (
+      <StyledBox
+        ref={ref}
+        asComponent={as}
+        id={id}
+        dataTest={dataTest}
+        className={className}
+        viewports={viewports}
+      >
+        {children}
+      </StyledBox>
+    );
+  },
+);
+
 export default Box;

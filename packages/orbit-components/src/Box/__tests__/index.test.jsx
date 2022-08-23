@@ -138,6 +138,18 @@ describe("#Box", () => {
     });
   });
 
+  it("should have ref", () => {
+    const ref = React.createRef();
+
+    render(
+      <Box dataTest={dataTest} ref={ref} top="10px" left="5px" right="0" bottom="0">
+        kek
+      </Box>,
+    );
+
+    expect(ref).toBeDefined();
+  });
+
   it("should have left, right, top, bottom", () => {
     render(
       <Box dataTest={dataTest} top="10px" left="5px" right="0" bottom="0">

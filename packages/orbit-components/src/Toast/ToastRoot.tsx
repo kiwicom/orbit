@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { useToaster, toast as notify } from "react-hot-toast";
 import styled, { css } from "styled-components";
@@ -6,10 +5,9 @@ import styled, { css } from "styled-components";
 import ToastMessage from "./ToastMessage";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $top: number; $left: number; $right: number; $bottom: number }>`
   ${({ theme, $top, $left, $right, $bottom }) => css`
     position: fixed;
     z-index: ${theme.orbit.zIndexOnTheTop};
@@ -21,7 +19,6 @@ const StyledWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -36,7 +33,7 @@ const ToastRoot = ({
   gutter = 8,
   dismissTimeout = 5000,
   placement = "top-center",
-}: Props): React.Node => {
+}: Props) => {
   const { toasts, handlers } = useToaster({
     duration: dismissTimeout,
   });

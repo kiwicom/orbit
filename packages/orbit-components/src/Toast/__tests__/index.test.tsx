@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -59,6 +58,7 @@ describe("Toast", () => {
     fireEvent.mouseDown(toast, { screenX: 10 });
     fireEvent.mouseMove(toast, { screenX: 300 });
     fireEvent.mouseUp(toast);
+    // @ts-expect-error TODO
     act(() => jest.advanceTimersByTime(SWIPE_DISMISS_DELAY));
     expect(onDismiss).toHaveBeenCalled();
 
@@ -105,6 +105,7 @@ describe("Toast", () => {
     render(<ToastRoot dismissTimeout={dismissTimeout} />);
     act(() => createToast("kek", { icon: <Airplane /> }));
     // TODO: find out why it needs an additional millisecond
+    // @ts-expect-error TODO
     act(() => jest.advanceTimersByTime(dismissTimeout + EXPIRE_DISMISS_DELAY + 1));
     expect(screen.queryByRole("status")).not.toBeInTheDocument();
   });

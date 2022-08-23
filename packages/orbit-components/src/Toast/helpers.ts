@@ -1,13 +1,10 @@
-// @flow
-import { keyframes, css } from "styled-components";
-import type { InterpolationBase, CSSRules } from "styled-components";
+import { keyframes, css, FlattenSimpleInterpolation, Keyframes } from "styled-components";
 
-import type { ThemeProps } from "../defaultTheme";
+import { Theme } from "../defaultTheme";
 import { translate3d } from "../utils/rtl";
+import { Placement } from "./index.d";
 
-import type { Placement } from ".";
-
-export const lightAnimation = ({ theme }: ThemeProps): InterpolationBase => keyframes`
+export const lightAnimation = ({ theme }: Theme): Keyframes => keyframes`
   0% {
     transform: ${translate3d("-100%, 0, 0")({ theme })};
   }
@@ -16,7 +13,7 @@ export const lightAnimation = ({ theme }: ThemeProps): InterpolationBase => keyf
   }
 `;
 
-export const fadeIn: InterpolationBase = keyframes`
+export const fadeIn = keyframes`
   0% {
     opacity: 0;
     transform: translateY(-20px);
@@ -27,7 +24,7 @@ export const fadeIn: InterpolationBase = keyframes`
   }
 `;
 
-export const fadeOut: InterpolationBase = keyframes`
+export const fadeOut = keyframes`
   0% {
     opacity: 1;
     transform: translateY(0px);
@@ -45,7 +42,7 @@ const resolveHorizontal = (placement: Placement) => {
   return "flex-start";
 };
 
-export const getPositionStyle = (placement: Placement): CSSRules => {
+export const getPositionStyle = (placement: Placement): FlattenSimpleInterpolation => {
   return css`
     left: 0;
     right: 0;

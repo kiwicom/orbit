@@ -1,17 +1,16 @@
-// @flow
 import { useCallback, useEffect, useState } from "react";
 
 import { SWIPE_DISMISS_DELAY } from "../consts";
 
 export default function useSwipeToDismiss(
-  ref: {| current: HTMLElement | null |},
+  ref: React.RefObject<HTMLElement>,
   onDismiss: () => void,
   distanceBeforeDismiss: number,
   direction: "left" | "right",
-): {| swipeOffset: number, swipeOpacity: number |} {
+): { swipeOffset: number; swipeOpacity: number } {
   const node = ref.current;
   const [removing, setRemoving] = useState(false);
-  const [pressedPosition, setPressedPosition] = useState(false);
+  const [pressedPosition, setPressedPosition] = useState(0);
   const [positionLeft, setPositionLeft] = useState(0);
   const [opacity, setOpacity] = useState(1);
 
@@ -23,7 +22,7 @@ export default function useSwipeToDismiss(
 
   const onMouseUp = useCallback(() => {
     if (!removing) {
-      setPressedPosition(false);
+      setPressedPosition(0);
       setPositionLeft(0);
       setOpacity(1);
     }
@@ -58,14 +57,17 @@ export default function useSwipeToDismiss(
     [removing, pressedPosition, direction, distanceBeforeDismiss, node, remove],
   );
 
-  const onMouseDown = useCallback((ev: MouseEvent) => setPressedPosition(ev.screenX), [
-    setPressedPosition,
-  ]);
+  const onMouseDown = useCallback(
+    (ev: React.MouseEvent<HTMLElement>) => setPressedPosition(ev.screenX),
+    [setPressedPosition],
+  );
 
   useEffect(() => {
     if (!node) setOpacity(1.1);
+    // @ts-expect-error TODO
     else node.addEventListener("mousedown", onMouseDown);
     return () => {
+      // @ts-expect-error TODO
       if (node) node.removeEventListener("mousedown", onMouseDown);
     };
   }, [node, onMouseDown, setOpacity]);

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, select, number } from "@storybook/addon-knobs";
 
@@ -12,20 +11,20 @@ export default {
   title: "Toast",
 };
 
-const PLACEMENTS = [
-  "top-left",
-  "top-center",
-  "top-right",
-  "bottom-left",
-  "bottom-center",
-  "bottom-right",
-];
+enum PLACEMENTS {
+  TOP_LEFT = "top-left",
+  TOP_CENTER = "top-center",
+  TOP_RIGHT = "top-right",
+  BOTTOM_LEFT = "bottom-left",
+  BOTTOM_CENTER = "bottom-center",
+  BOTTOM_RIGHT = "bottom-right",
+}
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const toast = () =>
     createToast(text("message", "Thank you for feedback"), { icon: <Notification /> });
 
-  const placement = select("placement", PLACEMENTS, "top-center");
+  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.TOP_CENTER);
   const topOffset = number("topOffset", 8);
   const bottomOffset = number("bottomOffset", 8);
   const leftOffset = number("leftOffset", 8);
@@ -49,7 +48,7 @@ export const Default = (): React.Node => {
   );
 };
 
-export const WithPromise = (): React.Node => {
+export const WithPromise = () => {
   const notify = () => {
     const promise = new Promise((res, rej) => {
       setTimeout(Math.random() > 0.5 ? res : rej, 3000);
@@ -71,7 +70,7 @@ export const WithPromise = (): React.Node => {
   );
 };
 
-export const RTL = (): React.Node => {
+export const RTL = () => {
   const toast = () =>
     createToast(
       text(

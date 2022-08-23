@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.5.0...@kiwicom/orbit-components@3.5.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* **Loading:** remove padding with customSize ([303ed7d](https://github.com/kiwicom/orbit/commit/303ed7d2c55502287ddb4bdba5f88097f209fc41))
+
+
+
+
+
 # [3.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.4.0...@kiwicom/orbit-components@3.5.0) (2022-08-22)
 
 

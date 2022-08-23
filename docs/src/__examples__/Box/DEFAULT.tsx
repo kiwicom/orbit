@@ -111,7 +111,7 @@ export default {
         {
           name: "elevation",
           type: "select",
-          options: ["action", "fixed", "overlay", "raised"],
+          options: ["action", "fixed", "overlay", "raised", "fixedReverse", "raisedReverse"],
           defaultValue: "",
         },
         {

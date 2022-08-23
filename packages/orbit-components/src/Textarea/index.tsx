@@ -1,8 +1,8 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
+import * as Common from "../common/common";
+import defaultTheme, { Theme } from "../defaultTheme";
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import FormLabel from "../FormLabel";
 import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
@@ -12,10 +12,9 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const Field = styled.label`
+const Field = styled.label<{ fullHeight?: boolean; spaceAfter?: Common.SpaceAfterSizes }>`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   display: flex;
   width: 100%;
@@ -27,37 +26,48 @@ const Field = styled.label`
   margin-bottom: ${getSpacingToken};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Field.defaultProps = {
   theme: defaultTheme,
 };
 
-const getFontSize = ({ theme, size }) => {
+const getFontSize = ({ theme, size }: { theme: Theme; size?: Props["size"] }) => {
   const tokens = {
     [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
   };
 
+  if (!size) return null;
+
   return tokens[size];
 };
 
-const getLineHeight = ({ theme, size }) => {
+const getLineHeight = ({ theme, size }: { theme: Theme; size?: Props["size"] }) => {
   const tokens = {
     [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
   };
+
+  if (!size) return null;
+
   return tokens[size];
 };
 
-const getPadding = ({ theme, size }) => {
+const getPadding = ({ theme, size }: { theme: Theme; size?: Props["size"] }) => {
   const tokens = {
     [SIZE_OPTIONS.SMALL]: theme.orbit.paddingTextareaSmall,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingTextareaNormal,
   };
+
+  if (!size) return null;
+
   return rtlSpacing(tokens[size]);
 };
 
-const StyledTextArea = styled.textarea`
+interface StyledTextAreaProps extends Partial<Props> {
+  fullHeight?: boolean;
+}
+
+const StyledTextArea = styled.textarea<StyledTextAreaProps>`
   appearance: none;
   box-sizing: border-box;
   display: block;
@@ -114,15 +124,11 @@ const StyledTextArea = styled.textarea`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTextArea.defaultProps = {
   theme: defaultTheme,
 };
 
-const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
-  Props,
-  HTMLTextAreaElement,
->((props, ref) => {
+const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
   const {
     size = SIZE_OPTIONS.NORMAL,
     disabled,
@@ -185,14 +191,14 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
         fullHeight={fullHeight}
         disabled={disabled}
         error={error}
-        placeholder={placeholder}
+        placeholder={String(placeholder)}
         maxLength={maxLength}
         onChange={onChange}
         rows={rows}
         onFocus={handleFocus}
         onBlur={onBlur}
         resize={resize}
-        tabIndex={tabIndex}
+        tabIndex={Number(tabIndex)}
         readOnly={readOnly}
         ref={ref}
       />

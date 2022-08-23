@@ -43,8 +43,8 @@ export interface Globals {
 
 export type RefType<T = HTMLElement> = { current: T | null } | ((instance: T | null) => void);
 
-export interface Ref {
-  readonly ref?: RefType;
+export interface Ref<T = HTMLElement> {
+  readonly ref?: RefType<T>;
 }
 
 export type SpaceAfterSizes =

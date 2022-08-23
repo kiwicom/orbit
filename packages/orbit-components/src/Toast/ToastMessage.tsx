@@ -101,7 +101,10 @@ const ToastMessage = ({
     [onUpdateHeight, id, children],
   );
   const innerRef = React.useRef(null);
-  const mergedRef = React.useMemo(() => mergeRefs([measurerRef, innerRef]), [measurerRef]);
+  const mergedRef = React.useMemo(
+    () => mergeRefs<HTMLDivElement>([measurerRef, innerRef]),
+    [measurerRef],
+  );
   const [isPaused, setPaused] = React.useState(false);
   const { swipeOffset, swipeOpacity } = useSwipe(
     innerRef,

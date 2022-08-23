@@ -1,12 +1,10 @@
-// @flow
 import * as React from "react";
 
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
 import IllustrationPrimitive from "../primitives/IllustrationPrimitive";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const Illustration = ({ size = SIZE_OPTIONS.MEDIUM, ...props }: Props): React.Node => (
+const Illustration = ({ size = SIZE_OPTIONS.MEDIUM, ...props }: Props) => (
   <IllustrationPrimitive {...props} size={size} />
 );
 

@@ -53,13 +53,13 @@ export const StyledLoading: any = styled(({ children, className, dataTest }) => 
     {children}
   </div>
 ))`
-  ${({ type, theme }) => css`
+  ${({ type, theme, customSize }) => css`
     position: ${type === TYPE_OPTIONS.BUTTON_LOADER && "absolute"};
     top: ${type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
     ${left}: ${type === TYPE_OPTIONS.BUTTON_LOADER && "0"};
     width: ${type === TYPE_OPTIONS.BUTTON_LOADER && "100%"};
     ${getHeight};
-    padding: ${type !== TYPE_OPTIONS.INLINE_LOADER && theme.orbit.paddingLoading};
+    padding: ${type !== TYPE_OPTIONS.INLINE_LOADER && !customSize && theme.orbit.paddingLoading};
     display: ${type === TYPE_OPTIONS.INLINE_LOADER ? "inline-flex" : "flex"};
     flex-direction: ${type === TYPE_OPTIONS.PAGE_LOADER ? "column" : "row"};
     justify-content: ${getAlign};
@@ -196,7 +196,7 @@ const Loading = ({
   ) : (
     <StyledLoading type={type} dataTest={dataTest} id={id} customSize={customSize}>
       <Loader type={type} customSize={customSize} />
-      {type !== TYPE_OPTIONS.BUTTON_LOADER && (
+      {type !== TYPE_OPTIONS.BUTTON_LOADER && text && (
         <StyledLoadingText type={type}>{text}</StyledLoadingText>
       )}
     </StyledLoading>

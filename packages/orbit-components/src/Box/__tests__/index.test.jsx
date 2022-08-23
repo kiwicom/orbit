@@ -31,7 +31,13 @@ const JUSTIFY = {
 
 const TEXT_ALIGN = { LEFT: "left", RIGHT: "right", CENTER: "center" };
 
-const ELEVATION = { ACTION: "action", FIXED: "fixed", RAISED: "raised", OVERLAY: "overlay" };
+const ELEVATION = {
+  ACTION: "action",
+  FIXED: "fixed",
+  RAISED: "raised",
+  OVERLAY: "overlay",
+  FIXEDREVERSE: "fixedReverse",
+};
 
 describe("#Box", () => {
   it("should have basic props", () => {
@@ -136,6 +142,18 @@ describe("#Box", () => {
     expect(screen.getByTestId(`${dataTest}-${key}`)).toHaveStyle({
       textAlign: TEXT_ALIGN[key],
     });
+  });
+
+  it("should have ref", () => {
+    const ref = React.createRef();
+
+    render(
+      <Box dataTest={dataTest} ref={ref} top="10px" left="5px" right="0" bottom="0">
+        kek
+      </Box>,
+    );
+
+    expect(ref).toBeDefined();
   });
 
   it("should have left, right, top, bottom", () => {

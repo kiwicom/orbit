@@ -41,7 +41,14 @@ const JUSTIFY = {
 
 const TEXT_ALIGN = { LEFT: "left", RIGHT: "right", CENTER: "center" };
 
-const ELEVATION = { ACTION: "action", FIXED: "fixed", RAISED: "raised", OVERLAY: "overlay" };
+const ELEVATION = {
+  ACTION: "action",
+  FIXED: "fixed",
+  RAISED: "raised",
+  OVERLAY: "overlay",
+  FIXEDREVERSE: "fixedReverse",
+  RAISEDREVERSE: "raisedReverse",
+};
 
 const BORDER_RADIUS = {
   SMALL: "small",

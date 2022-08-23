@@ -1,7 +1,7 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { usePopper } from "react-popper";
+import { Placement } from "@popperjs/core/lib/enums";
 
 import { PLACEMENTS } from "../../../common/consts";
 import tooltipSize from "../helpers/tooltipSize";
@@ -14,13 +14,21 @@ import defaultTheme from "../../../defaultTheme";
 import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
-import type { Props } from "./TooltipContent";
+import { Props } from "./TooltipContent.d";
+import { Size } from "../index.d";
 
 const StyledTooltip = styled.div`
   width: 100%;
 `;
 
-const StyledTooltipArrow = styled.div`
+const StyledTooltipArrow = styled.div<{
+  transform?: string;
+  position?: string;
+  error?: boolean;
+  contentHeight: number;
+  help?: boolean;
+  placement?: Placement;
+}>`
   ${({ transform, position }) => css`
     position: ${position};
     transform: ${transform};
@@ -36,12 +44,18 @@ const StyledTooltipArrow = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipArrow.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledTooltipWrapper = styled.div`
+const StyledTooltipWrapper = styled.div<{
+  shown?: boolean;
+  popper: React.CSSProperties;
+  contentHeight: number;
+  error?: boolean;
+  help?: boolean;
+  size?: Size;
+}>`
   ${({ theme, shown, popper }) => css`
     display: block;
     ${popper};
@@ -65,7 +79,6 @@ const StyledTooltipWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -91,7 +104,6 @@ const StyledTooltipContent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -111,9 +123,9 @@ const TooltipContent = ({
   noFlip,
   offset = [0, 5],
   referenceElement,
-}: Props): React.Node => {
-  const [tooltip, setTooltipRef] = React.useState(null);
-  const [arrowRef, setArrowRef] = React.useState(null);
+}: Props) => {
+  const [tooltip, setTooltipRef] = React.useState<HTMLDivElement | null>(null);
+  const [arrowRef, setArrowRef] = React.useState<HTMLDivElement | null>(null);
   const [contentHeight, setContentHeight] = React.useState(0);
   const content = React.useRef<HTMLDivElement | null>(null);
 
@@ -181,7 +193,7 @@ const TooltipContent = ({
           position={arrow.position}
           transform={arrow.transform}
           contentHeight={contentHeight}
-          placement={attrs.popper && attrs.popper["data-popper-placement"]}
+          placement={attrs.popper && (attrs.popper["data-popper-placement"] as Placement)}
         />
       </StyledTooltipWrapper>
     </StyledTooltip>

@@ -1,34 +1,31 @@
-// @flow
-import { css } from "styled-components";
-import type { Placement } from "@popperjs/core/lib/enums";
-import type { CSSRules } from "styled-components";
+import { css, FlattenSimpleInterpolation } from "styled-components";
+import { Placement } from "@popperjs/core/lib/enums";
 
-import type { Theme, ThemeProps } from "../../../defaultTheme";
+import { Theme } from "../../../defaultTheme";
 
-export type ResolveColor = ({| error?: boolean, help?: boolean, ...ThemeProps |}) => string;
+const BORDER_SIZE = 6;
 
-export const resolveColor: ResolveColor = ({ error, help, theme }) => {
+export const resolveColor = ({
+  error,
+  help,
+  theme,
+}: {
+  error?: boolean;
+  help?: boolean;
+  theme: Theme;
+}): string => {
   if (error) return theme.orbit.paletteRedNormal;
   if (help) return theme.orbit.paletteBlueNormal;
   return theme.orbit.paletteInkNormal;
 };
 
-export type Props = {|
-  error?: boolean,
-  help?: boolean,
-  placement: Placement,
-  ...ThemeProps,
-|};
-
-const BORDER_SIZE = 6;
-
 export const resolveArrowPlacement = ({
   placement,
   theme,
-}: {|
-  placement: Placement,
-  theme: Theme,
-|}): CSSRules | null => {
+}: {
+  placement?: Placement;
+  theme: Theme;
+}): FlattenSimpleInterpolation | null => {
   const horizontalPlacement = theme.rtl ? `${BORDER_SIZE}px` : `-${BORDER_SIZE}px`;
 
   if (placement) {
@@ -62,7 +59,17 @@ export const resolveArrowPlacement = ({
   return null;
 };
 
-export const resolveArrowStyle = ({ placement, theme, error, help }: Props): CSSRules | null => {
+export const resolveArrowStyle = ({
+  placement,
+  theme,
+  error,
+  help,
+}: {
+  placement?: Placement;
+  theme: Theme;
+  error?: boolean;
+  help?: boolean;
+}): FlattenSimpleInterpolation | null => {
   if (placement) {
     if (placement.includes("top")) {
       return css`

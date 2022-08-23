@@ -6,14 +6,14 @@ import type { Placement } from "@popperjs/core/lib/enums";
 
 import * as Common from "../../common/common";
 
-type Size = "small" | "medium";
+export type Size = "small" | "medium";
 
 export interface Popper {
   readonly placement?: Placement;
   readonly noFlip?: boolean;
   readonly offset?: [number, number];
 }
-interface Props extends Common.Globals, Popper {
+export interface Props extends Common.Globals, Popper {
   readonly children?: React.ReactNode;
   readonly content: React.ReactNode;
   readonly size?: Size;

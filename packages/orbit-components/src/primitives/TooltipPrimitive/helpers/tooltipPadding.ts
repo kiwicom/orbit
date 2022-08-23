@@ -1,12 +1,12 @@
-// @flow
-import type { ThemeProps } from "../../../defaultTheme";
+import { Theme } from "../../../defaultTheme";
 
-export type Props = {|
-  contentHeight: number,
-  ...ThemeProps,
-|};
-
-const tooltipPadding = ({ contentHeight, theme }: Props): string => {
+const tooltipPadding = ({
+  contentHeight,
+  theme,
+}: {
+  contentHeight: number;
+  theme: Theme;
+}): string => {
   // one-line text should have smaller top/bottom padding
   if (contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightTextNormal))) {
     return `${theme.orbit.spaceXSmall} ${theme.orbit.spaceSmall}`;

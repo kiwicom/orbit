@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -8,10 +7,13 @@ import Portal from "../../Portal";
 import useRandomId from "../../hooks/useRandomId";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-export const StyledTooltipChildren: any = styled.span`
+export const StyledTooltipChildren = styled.span<{
+  block?: boolean;
+  enabled?: boolean;
+  removeUnderlinedText?: boolean;
+}>`
   ${({ block }) =>
     !block &&
     css`
@@ -52,9 +54,9 @@ const TooltipPrimitive = ({
   removeUnderlinedText,
   block = false,
   ...popper
-}: Props): void | React.Node => {
+}: Props) => {
   const [shown, setShown] = React.useState(false);
-  const [referenceElement, setReferenceElement] = React.useState(null);
+  const [referenceElement, setReferenceElement] = React.useState<HTMLSpanElement | null>(null);
 
   const [
     render,
@@ -95,7 +97,7 @@ const TooltipPrimitive = ({
     setRenderWithTimeout(false);
   }, [setRenderWithTimeout]);
 
-  if (!enabled) return children;
+  if (!enabled) return <>{children}</>;
 
   const tooltip = (
     <TooltipContent
@@ -128,7 +130,7 @@ const TooltipPrimitive = ({
         onBlur={handleOut}
         ref={setReferenceElement}
         aria-describedby={enabled ? id || tooltipId : undefined}
-        tabIndex={enabled ? tabIndex : undefined}
+        tabIndex={enabled ? Number(tabIndex) : undefined}
         enabled={enabled}
         removeUnderlinedText={removeUnderlinedText}
         block={block}

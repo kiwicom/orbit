@@ -1,4 +1,3 @@
-// @flow
 import tooltipSize from "../tooltipSize";
 import { SIZE_OPTIONS } from "../../consts";
 

@@ -1,18 +1,10 @@
 import { keyframes, css, FlattenSimpleInterpolation, Keyframes } from "styled-components";
 
-<<<<<<< HEAD:packages/orbit-components/src/Toast/helpers.ts
-import { Theme } from "../defaultTheme";
-import { translate3d } from "../utils/rtl";
-import { Placement } from "./index.d";
-
-export const lightAnimation = ({ theme }: Theme): Keyframes => keyframes`
-=======
 import { ThemeProps } from "../defaultTheme";
 import { translate3d } from "../utils/rtl";
 import { Placement } from "./index.d";
 
 export const lightAnimation = ({ theme }: ThemeProps): Keyframes => keyframes`
->>>>>>> 9c37394bf (refactor(Toast): refactor to ts):packages/orbit-components/src/Toast/helpers.js
   0% {
     transform: ${translate3d("-100%, 0, 0")({ theme })};
   }

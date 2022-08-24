@@ -1,9 +1,7 @@
-// @flow
 import * as React from "react";
 
 import Tooltip from "./Tooltip";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const ErrorFormTooltip = ({
   shown,
@@ -12,7 +10,7 @@ const ErrorFormTooltip = ({
   help,
   helpClosable = true,
   ...props
-}: Props): React.Node => {
+}: Props) => {
   return (
     <>
       {shown && help && !error && (

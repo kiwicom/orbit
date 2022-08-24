@@ -4,7 +4,6 @@ import { HandleKeyDown } from "./index.d";
 const handleKeyDown: typeof HandleKeyDown = (onAction, action) => ev => {
   if (ev.keyCode === KEY_CODE_MAP.ENTER) {
     if (onAction) {
-      // @ts-expect-error TODO
       onAction(ev);
     }
 
@@ -14,7 +13,6 @@ const handleKeyDown: typeof HandleKeyDown = (onAction, action) => ev => {
   } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
     ev.preventDefault();
     if (onAction) {
-      // @ts-expect-error TODO
       onAction(ev);
     }
 

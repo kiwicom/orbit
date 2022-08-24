@@ -1,13 +1,10 @@
-// @flow
 import { useRef, useState, useCallback } from "react";
 
-import type { UseErrorTooltip } from "./useErrorTooltip";
-
-const useErrorTooltip: UseErrorTooltip = ({ onFocus }) => {
+const useErrorTooltip = ({ onFocus }: { onFocus: React.FocusEventHandler<HTMLElement> }) => {
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
   const labelRef = useRef(null);
-  const iconRef: {| current: HTMLElement | null |} = useRef(null);
+  const iconRef = useRef(null);
 
   const handleFocus = useCallback(
     ev => {

@@ -1,8 +1,8 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { usePopper } from "react-popper";
 
+import * as Common from "../../common/common";
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
@@ -16,10 +16,14 @@ import resolveColor from "./helpers/resolveColor";
 import resolvePlacement from "./helpers/resolvePlacement";
 import { SIDE_NUDGE } from "./consts";
 import useTheme from "../../hooks/useTheme";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledArrow = styled.div`
+const StyledArrow = styled.div<{
+  inlineLabel?: boolean;
+  isHelp?: boolean;
+  inputSize?: Common.InputSize;
+  placement?: string;
+}>`
   position: absolute;
   ${resolvePlacement};
   &:before {
@@ -32,7 +36,19 @@ const StyledArrow = styled.div`
   }
 `;
 
-const StyledFormFeedbackTooltip = styled.div`
+const StyledFormFeedbackTooltip = styled.div<{
+  isHelp?: boolean;
+  shown?: boolean;
+  inlineLabel?: boolean;
+  inputSize?: Common.InputSize;
+  placement?: string;
+  top?: string | number;
+  left?: string | number;
+  position?: string | number;
+  bottom?: string | number;
+  right?: string | number;
+  transform?: string;
+}>`
   ${({
     theme,
     isHelp,
@@ -81,12 +97,10 @@ const StyledFormFeedbackTooltip = styled.div`
 `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledArrow.defaultProps = {
   theme: defaultTheme,
 };
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledFormFeedbackTooltip.defaultProps = {
   theme: defaultTheme,
 };
@@ -124,7 +138,6 @@ const StyledTooltipContent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTooltipContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -138,7 +151,6 @@ const StyledCloseButton = styled.a`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledCloseButton.defaultProps = {
   theme: defaultTheme,
 };
@@ -154,11 +166,11 @@ const ErrorFormTooltip = ({
   inlineLabel,
   isHelp = false,
   id,
-}: Props): React.Node => {
-  const contentRef = React.useRef(null);
+}: Props) => {
+  const contentRef = React.useRef<HTMLDivElement | null>(null);
+  const tooltipRef = React.useRef<HTMLDivElement | null>(null);
+  const [arrowRef, setArrowRef] = React.useState<HTMLDivElement | null>(null);
   const { rtl } = useTheme();
-  const tooltipRef = React.useRef(null);
-  const [arrowRef, setArrowRef] = React.useState(null);
 
   const resolveOffset = React.useCallback(() => {
     if (inlineLabel) {
@@ -176,6 +188,7 @@ const ErrorFormTooltip = ({
         {
           name: "offset",
           options: {
+            // @ts-expect-error TODO
             offset: resolveOffset,
           },
         },
@@ -258,8 +271,8 @@ const ErrorFormTooltip = ({
       {isHelp && helpClosable && (
         <StyledCloseButton
           tabIndex={0}
-          // $FlowFixMe: TODO
-          onKeyDown={handleKeyDown(onShown)}
+          // @ts-expect-error TODO
+          onKeyDown={handleKeyDown<HTMLAnchorElement>(onShown)}
           onClick={ev => {
             ev.preventDefault();
             if (shown) onShown(false);

@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
@@ -36,7 +34,7 @@ export default {
   title: "ErrorForms Kitchensink",
 };
 
-export const Error = (): React.Node => {
+export const Error = () => {
   const label = text("Label", "Label");
   const error = text("Error", "Something went wrong.");
   const value = text("Value", "");
@@ -162,7 +160,7 @@ Error.story = {
   },
 };
 
-export const Help = (): React.Node => {
+export const Help = () => {
   const label = text("Label", "Label");
   const help = text("Help", "Is the spelling correct?");
   const value = text("Value", "");
@@ -302,7 +300,7 @@ Help.story = {
   },
 };
 
-export const RtlError = (): React.Node => {
+export const RtlError = () => {
   const label = text("Label", "Label");
   const error = text("Error", "Something is not quite right");
   const value = text("Value", "");
@@ -412,7 +410,7 @@ RtlError.story = {
   },
 };
 
-export const withModal = (): React.Node => {
+export const withModal = () => {
   const label = text("Label", "Label");
   const error = text("Error", "Something is not quite right");
   const showMore = boolean("required", true);
@@ -464,7 +462,7 @@ export const withModal = (): React.Node => {
   );
 };
 
-export const AdvancedErrorExample = (): React.Node => {
+export const AdvancedErrorExample = () => {
   const defaultValues = {
     name: "",
     surname: "",
@@ -540,6 +538,7 @@ export const AdvancedErrorExample = (): React.Node => {
     <>
       <form
         onSubmit={handleSubmit}
+        // @ts-expect-error CSS prop
         css={css`
           max-width: 600px;
           padding: 20px 0;
@@ -652,7 +651,7 @@ export const AdvancedErrorExample = (): React.Node => {
   );
 };
 
-export const AdvancedHelpExample = (): React.Node => {
+export const AdvancedHelpExample = () => {
   const defaultValues = {
     name: "",
     iban: "",
@@ -747,6 +746,7 @@ export const AdvancedHelpExample = (): React.Node => {
     <>
       <form
         onSubmit={handleSubmit}
+        // @ts-expect-error CSS prop
         css={css`
           max-width: 600px;
           padding: 20px 0;

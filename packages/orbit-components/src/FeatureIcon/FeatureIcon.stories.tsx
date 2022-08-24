@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { select, text } from "@storybook/addon-knobs";
 
@@ -11,7 +9,7 @@ export default {
   title: "FeatureIcon",
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.TICKETFLEXI);
   const dataTest = text("dataTest", "test");
   return <FeatureIcon name={name} dataTest={dataTest} />;

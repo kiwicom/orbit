@@ -1,15 +1,13 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { baseURL } from "./consts";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const baseSize = 52;
 
-const getURL = name => (size = 1) => {
+const getURL = (name: string) => (size = 1) => {
   const url = `${baseURL}/feature-icons/${baseSize * size}x${baseSize * size}/${name}.png`;
   if (size > 1) {
     return `${url} ${size}x`;
@@ -17,12 +15,12 @@ const getURL = name => (size = 1) => {
   return url;
 };
 
-const generateURL = name => {
+const generateURL = (name: string) => {
   const urlWithName = getURL(name);
   return { src: urlWithName(), srcSet: [urlWithName(2), urlWithName(3)].join(",") };
 };
 
-export const StyledFeatureIcon: any = styled(({ className, name, alt, dataTest, id }) => (
+export const StyledFeatureIcon = styled(({ className, name, alt, dataTest, id }) => (
   <img className={className} alt={alt} data-test={dataTest} id={id} {...generateURL(name)} />
 ))`
   height: ${baseSize}px;
@@ -30,12 +28,11 @@ export const StyledFeatureIcon: any = styled(({ className, name, alt, dataTest, 
   background-color: transparent;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledFeatureIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const FeatureIcon = ({ alt = "", name, dataTest, id }: Props): React.Node => (
+const FeatureIcon = ({ alt = "", name, dataTest, id }: Props) => (
   <StyledFeatureIcon alt={alt} name={name} dataTest={dataTest} id={id} />
 );
 

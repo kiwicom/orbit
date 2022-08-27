@@ -14,7 +14,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.Ref {
   readonly name?: string;
   readonly placeholder?: Common.Translation;
   readonly fileName?: string;
-  readonly allowedFileTypes?: string | string[];
+  readonly allowedFileTypes?: string;
   readonly help?: React.ReactNode;
   readonly error?: React.ReactNode;
   readonly width?: string;
@@ -24,6 +24,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.Ref {
   readonly onChange?: Event;
   readonly onFocus?: Event;
   readonly onBlur?: Event;
+  readonly insideInputGroup?: boolean;
   readonly onRemoveFile?: Common.Callback;
 }
 

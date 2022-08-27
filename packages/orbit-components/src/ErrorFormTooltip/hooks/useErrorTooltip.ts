@@ -1,13 +1,27 @@
-import { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback } from "react";
 
-const useErrorTooltip = ({ onFocus }: { onFocus: React.FocusEventHandler<HTMLElement> }) => {
+import { Event } from "../../common/common";
+
+const useErrorTooltip = ({
+  onFocus,
+}: {
+  onFocus?: Event<React.SyntheticEvent<HTMLInputElement>>;
+}): {
+  tooltipShown: boolean;
+  tooltipShownHover: boolean;
+  setTooltipShown: React.Dispatch<React.SetStateAction<boolean>>;
+  setTooltipShownHover: React.Dispatch<React.SetStateAction<boolean>>;
+  labelRef: React.MutableRefObject<HTMLLabelElement | null>;
+  iconRef: React.MutableRefObject<HTMLDivElement | null>;
+  handleFocus: Event<React.SyntheticEvent<HTMLInputElement>>;
+} => {
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
-  const labelRef = useRef(null);
-  const iconRef = useRef(null);
+  const labelRef = useRef<HTMLLabelElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
 
   const handleFocus = useCallback(
-    ev => {
+    (ev: React.SyntheticEvent<HTMLInputElement>) => {
       if (onFocus) onFocus(ev);
       setTooltipShown(true);
     },

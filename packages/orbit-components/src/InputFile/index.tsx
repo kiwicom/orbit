@@ -1,7 +1,7 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import * as Common from "../common/common";
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
@@ -15,10 +15,9 @@ import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const Field = styled.label`
+const Field = styled.label<{ $width: Props["width"]; spaceAfter?: Common.SpaceAfterSizes }>`
   ${({ theme, $width }) => css`
     font-family: ${theme.orbit.fontFamily};
     display: block;
@@ -28,7 +27,6 @@ const Field = styled.label`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Field.defaultProps = {
   theme: defaultTheme,
 };
@@ -61,12 +59,11 @@ const FakeInput = styled(({ children, className }) => <div className={className}
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FakeInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const Input = styled.input`
+const Input = styled.input<{ error?: Props["error"] }>`
   // we need to hide the input, but not with display or visibility so we can trigger the focus
   opacity: 0;
   position: absolute;
@@ -77,7 +74,6 @@ const Input = styled.input`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 Input.defaultProps = {
   theme: defaultTheme,
 };
@@ -92,7 +88,7 @@ const getFileInputColor = ({ error, fileName }, theme) => {
   return theme.orbit.paletteInkLight;
 };
 
-const StyledFileInput = styled.div`
+const StyledFileInput = styled.div<Pick<Props, "error" | "fileName">>`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   color: ${({ error, fileName, theme }) => getFileInputColor({ error, fileName }, theme)};
   width: 100%;
@@ -102,15 +98,11 @@ const StyledFileInput = styled.div`
   padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledFileInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<
-  Props,
-  HTMLDivElement,
->((props, ref) => {
+const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     placeholder = "No file selected",
     buttonLabel = "Select file",
@@ -147,7 +139,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Field spaceAfter={spaceAfter} ref={label ? null : labelRef} $width={width}>
+    <Field spaceAfter={spaceAfter} ref={label ? undefined : labelRef} $width={width}>
       <Input
         data-test={dataTest}
         id={id}
@@ -164,7 +156,7 @@ const InputFile: React.AbstractComponent<Props, HTMLDivElement> = React.forwardR
         onFocus={handleFocus}
         onBlur={onBlur}
         accept={allowedFileTypes}
-        tabIndex={tabIndex}
+        tabIndex={Number(tabIndex)}
       />
       {label && (
         <FormLabel

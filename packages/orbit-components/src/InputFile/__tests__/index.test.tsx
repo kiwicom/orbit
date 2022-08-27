@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -13,7 +12,7 @@ describe("InputFile", () => {
     const name = "name";
     const placeholder = "Not file has been selected";
     const dataTest = "test";
-    const allowedFileTypes = [".png", ".jpg", ".pdf"];
+    const allowedFileTypes = [".png", ".jpg", ".pdf"].join(",");
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const tabIndex = "-1";

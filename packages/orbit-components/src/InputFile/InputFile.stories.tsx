@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, array, select, boolean } from "@storybook/addon-knobs";
@@ -12,7 +11,7 @@ export default {
   title: "InputFile",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const label = text("Label", "Label");
   return (
     <InputFile
@@ -32,7 +31,7 @@ Default.story = {
   },
 };
 
-export const FilledWithFile = (): React.Node => {
+export const FilledWithFile = () => {
   const label = text("Label", "Label");
   const fileName = text("fileName", "file.png");
 
@@ -57,7 +56,7 @@ FilledWithFile.story = {
   },
 };
 
-export const WithHelp = (): React.Node => {
+export const WithHelp = () => {
   const label = text("Label", "Label");
 
   return (
@@ -85,7 +84,7 @@ WithHelp.story = {
   },
 };
 
-export const WithError = (): React.Node => {
+export const WithError = () => {
   const label = text("Label", "Label");
   const error = text("Error", "Error message (explain how to solve it)");
 
@@ -110,17 +109,17 @@ WithError.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const label = text("Label", "Label");
   const buttonLabel = text("buttonLabel", "Please select file");
   const name = text("Name", "fileInput");
   const placeholder = text("Placeholder", "No file has been selected yet");
-  const fileName = text("fileName", undefined);
+  const fileName = text("fileName", "");
   const error = text("Error", "No file has been selected yet");
-  const help = text("Help", undefined);
-  const allowedFileTypes = array("allowedFileTypes", ["media/*", "image/*"]);
+  const help = text("Help", "");
+  const allowedFileTypes = array("allowedFileTypes", ["media/*", "image/*"]).join(",");
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const required = boolean("required", false);
   const width = text("width", "");
 
@@ -153,10 +152,10 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   const label = text("Label", "Label");
   const error = text("Error", "Error message (explain how to solve it)");
-  const help = text("Help", undefined);
+  const help = text("Help", "");
 
   return (
     <RenderInRtl>

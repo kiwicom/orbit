@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -41,7 +40,6 @@ describe("InputGroup", () => {
 
     userEvent.tab();
     expect(screen.getByText("help message")).toBeInTheDocument();
-    // $FlowFixMe:TODO
     await act(async () => {});
   });
   it("should render error message", async () => {
@@ -53,7 +51,6 @@ describe("InputGroup", () => {
 
     userEvent.tab();
     expect(screen.getByText("error message")).toBeInTheDocument();
-    // $FlowFixMe:TODO
     await act(async () => {});
   });
 
@@ -84,7 +81,7 @@ describe("InputGroup", () => {
   });
 
   it("should have ref", () => {
-    const ref = React.createRef();
+    const ref = React.createRef<HTMLDivElement>();
 
     render(
       <InputGroup ref={ref}>

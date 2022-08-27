@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, array, select, boolean } from "@storybook/addon-knobs";
@@ -18,11 +16,11 @@ export default {
   title: "InputGroup",
 };
 
-export const DateOfBirth = (): React.Node => {
+export const DateOfBirth = () => {
   const label = text("Label", "Date of birth");
   const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
-  const error = text("Error", undefined);
-  const help = text("Help", undefined);
+  const error = text("Error", "");
+  const help = text("Help", "");
 
   const selectOptions = [
     { value: "January", label: "January" },
@@ -38,7 +36,12 @@ export const DateOfBirth = (): React.Node => {
     { value: "November", label: "November" },
     { value: "December", label: "December" },
   ];
-  const selectValue = select("Select Value", [null].concat(...selectOptions.map(opt => opt.value)));
+
+  const selectValue = select(
+    "Select Value",
+    selectOptions.map(opt => opt.value),
+    selectOptions[0].value,
+  );
 
   return (
     <InputGroup
@@ -71,23 +74,25 @@ DateOfBirth.story = {
   },
 };
 
-export const PhoneNumber = (): React.Node => {
+export const PhoneNumber = () => {
   const flex = array("Flex", ["0 0 110px", "1 1 100%"]);
-  const error = text("Error", undefined);
-  const help = text("Help", undefined);
+  const error = text("Error", "");
+  const help = text("Help", "");
   const selectOptions = [
     { value: 0, label: "Czech Republic (+420)" },
     { value: 1, label: "Slovak Republic (+421)" },
     { value: 2, label: "United States (+1)" },
   ];
+
   const selectValue = select(
     "Select Value",
-    [null].concat(...selectOptions.map(opt => opt.value)),
+    selectOptions.map(opt => opt.value),
     selectOptions[0].value,
   );
+
   const customValueText = text("customValueText", "+420");
   const placeholder = text("Input Placeholder", "e.g. 123 456 789");
-  const inputValue = text("Input Value", undefined);
+  const inputValue = text("Input Value", "");
 
   return (
     <InputGroup
@@ -117,11 +122,11 @@ PhoneNumber.story = {
   },
 };
 
-export const Error = (): React.Node => {
+export const Error = () => {
   const label = text("Label", "Label");
   const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
   const error = text("Error", "Something went wrong on day field");
-  const help = text("Help", undefined);
+  const help = text("Help", "");
 
   const selectOptions = [
     { value: "January", label: "January" },
@@ -137,7 +142,12 @@ export const Error = (): React.Node => {
     { value: "November", label: "November" },
     { value: "December", label: "December" },
   ];
-  const selectValue = select("Select Value", [null].concat(...selectOptions.map(opt => opt.value)));
+
+  const selectValue = select(
+    "Select Value",
+    selectOptions.map(opt => opt.value),
+    selectOptions[0].value,
+  );
 
   return (
     <InputGroup
@@ -160,12 +170,12 @@ export const Error = (): React.Node => {
   );
 };
 
-export const ValidationApproches = (): React.Node => {
-  const inputValue = text("Input Value", undefined);
+export const ValidationApproaches = () => {
+  const inputValue = text("Input Value", "");
   const errorGroup = text("Error on group", "Something went wrong on day field");
-  const helpGroup = text("Help", undefined);
+  const helpGroup = text("Help", "");
   const errorSingleField = text("Error inside element", "Something went wrong on day field");
-  const helpSingleField = text("Help inside element", undefined);
+  const helpSingleField = text("Help inside element", "");
 
   return (
     <Stack direction="column">
@@ -207,7 +217,7 @@ export const ValidationApproches = (): React.Node => {
   );
 };
 
-ValidationApproches.story = {
+ValidationApproaches.story = {
   name: "Validation approches",
 
   parameters: {
@@ -215,8 +225,8 @@ ValidationApproches.story = {
   },
 };
 
-export const OnChangeBehaviour = (): React.Node => {
-  const inputValue = text("Input Value", undefined);
+export const OnChangeBehavior = () => {
+  const inputValue = text("Input Value", "");
 
   return (
     <Stack direction="column">
@@ -243,7 +253,7 @@ export const OnChangeBehaviour = (): React.Node => {
   );
 };
 
-OnChangeBehaviour.story = {
+OnChangeBehavior.story = {
   name: "onChange behaviour",
 
   parameters: {
@@ -251,7 +261,7 @@ OnChangeBehaviour.story = {
   },
 };
 
-export const Disabled = (): React.Node => {
+export const Disabled = () => {
   const disabled = boolean("Disabled", true);
   return (
     <InputGroup disabled={disabled} label="Disabled">
@@ -265,22 +275,29 @@ Disabled.story = {
   name: "Disabled",
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const label = text("Label", "Phone number");
   const flex = array("Flex", ["1 0 200px", "1 1 100%", "1 0 150px", "0 1 50%"]);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const error = text("Error", undefined);
-  const help = text("Help", undefined);
+  const error = text("Error", "");
+  const help = text("Help", "");
 
   const selectOptions = [
     { value: 1, label: "First item" },
     { value: 2, label: "Second item" },
   ];
-  const selectValue = select("Select Value", [null].concat(...selectOptions.map(opt => opt.value)));
+
+  const selectValue = select(
+    "Select Value",
+    selectOptions.map(opt => opt.value),
+    selectOptions[0].value,
+  );
+
   const placeholder = text("Input Placeholder", "Placeholder");
-  const inputValue = text("Input Value", undefined);
+  const inputValue = text("Input Value", "");
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.MEDIUM);
 
   return (
     <InputGroup
@@ -307,7 +324,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
   const selectOptions = [
     { value: "January", label: "January" },
@@ -323,9 +340,15 @@ export const Rtl = (): React.Node => {
     { value: "November", label: "November" },
     { value: "December", label: "December" },
   ];
-  const selectValue = select("Select Value", [null].concat(...selectOptions.map(opt => opt.value)));
-  const error = text("Error", undefined);
-  const help = text("Help", undefined);
+
+  const selectValue = select(
+    "Select Value",
+    selectOptions.map(opt => opt.value),
+    selectOptions[0].value,
+  );
+
+  const error = text("Error", "");
+  const help = text("Help", "");
   const label = text("Label", "Phone number");
 
   return (

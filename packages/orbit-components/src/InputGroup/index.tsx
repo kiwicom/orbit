@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -14,10 +13,15 @@ import useRandomId, { useRandomIdSeed } from "../hooks/useRandomId";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const getToken = name => ({ theme, size }) => {
+const getToken = (name: string) => ({
+  theme,
+  size,
+}: {
+  theme: typeof defaultTheme;
+  size?: Props["size"];
+}): string | null => {
   const tokens = {
     [TOKENS.height]: {
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
@@ -29,18 +33,30 @@ const getToken = name => ({ theme, size }) => {
     },
   };
 
+  if (!size) return null;
+
   return tokens[name][size];
 };
 
-const getFakeGroupMarginTop = ({ label, theme }) => {
+const getFakeGroupMarginTop = ({
+  label,
+  theme,
+}: {
+  label?: string;
+  theme: typeof defaultTheme;
+}) => {
   if (!label) return false;
   return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
 };
 
-const FakeGroup = styled(({ children, className }) => (
-  <span className={className}>{children}</span>
-))`
-  ${({ theme, error, disabled }) => css`
+const FakeGroup = styled.span<{
+  error?: Props["error"];
+  label?: Props["label"];
+  disabled?: Props["disabled"];
+  size?: Props["size"];
+  active: boolean;
+}>`
+  ${({ theme, error, disabled, active }) => css`
     width: 100%;
     display: block;
     position: absolute;
@@ -52,7 +68,7 @@ const FakeGroup = styled(({ children, className }) => (
     box-shadow: ${`inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
     box-shadow: ${error &&
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state
-    ${({ active }) => active && formElementFocus}; // Active state
+    ${active && formElementFocus}; // Active state
     background-color: ${disabled
       ? theme.orbit.backgroundInputDisabled
       : theme.orbit.backgroundInput};
@@ -74,7 +90,6 @@ const FakeGroup = styled(({ children, className }) => (
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 FakeGroup.defaultProps = {
   theme: defaultTheme,
 };
@@ -84,14 +99,14 @@ const StyledChildren = styled.div`
   position: relative;
 `;
 
-const StyledChild = styled.div`
+const StyledChild = styled.div<{ flex: Props["flex"] }>`
   flex: ${({ flex }) => flex};
   padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
   :last-child {
     padding: 0;
   }
 `;
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+
 StyledChild.defaultProps = {
   theme: defaultTheme,
 };
@@ -168,19 +183,17 @@ const StyledInputGroup = styled(
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const findPropInChild = (propToFind, children): any =>
+const findPropInChild = (propToFind, children) =>
   React.Children.map(children, el => {
     if (el.props && el.props[propToFind]) return el.props[propToFind];
     return null;
   }).filter(el => el != null);
 
-// TODO: styled component type
-const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
+const InputGroup = React.forwardRef<HTMLDivElement, Props>(
   (
     {
       children,
@@ -200,7 +213,7 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
       onBlurGroup,
     },
     ref,
-  ): React.Node => {
+  ) => {
     const [active, setActive] = React.useState(false);
     const [filled, setFilled] = React.useState(false);
     const inputID = useRandomId();
@@ -225,25 +238,29 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
       isFilled();
     }, [isFilled, label]);
 
-    const handleFocus = (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
+    const handleFocus = callBack => (
+      ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
+    ) => {
       setActive(true);
       setTooltipShown(true);
       if (onFocus) onFocus(ev);
       if (callBack) callBack(ev);
     };
 
-    const handleBlur = (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
+    const handleBlur = callBack => (
+      ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
+    ) => {
       isFilled();
       setActive(false);
       if (onBlur) onBlur(ev);
       if (callBack) callBack(ev);
     };
 
-    const handleChange = (ev: SyntheticInputEvent<HTMLInputElement>, callBack) => {
+    const handleChange = callBack => (
+      ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
+    ) => {
       isFilled();
-      if (onChange) {
-        onChange(ev);
-      }
+      if (onChange) onChange(ev);
       if (callBack) callBack(ev);
     };
 
@@ -291,18 +308,20 @@ const InputGroup: React.AbstractComponent<Props, any> = React.forwardRef(
         )}
 
         <StyledChildren onBlur={handleBlurGroup}>
-          {React.Children.toArray(children).map((item, key) => {
+          {React.Children.toArray(children).map((child, key) => {
             const childFlex =
               Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
+            const item = child as React.ReactElement<Props>;
             return (
               <StyledChild flex={childFlex || "0 1 auto"} key={randomId(String(key))}>
                 {React.cloneElement(item, {
                   disabled: item.props.disabled || disabled,
                   size,
                   label: undefined,
-                  onChange: ev => handleChange(ev, item.props.onChange),
-                  onBlur: ev => handleBlur(ev, item.props.onBlur),
-                  onFocus: ev => handleFocus(ev, item.props.onFocus),
+                  onChange: handleChange(item.props.onChange),
+                  onBlur: handleBlur(item.props.onBlur),
+                  onFocus: handleFocus(item.props.onFocus),
+                  // @ts-expect-error custom prop
                   insideInputGroup: true,
                 })}
               </StyledChild>

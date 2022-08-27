@@ -8,7 +8,7 @@ import * as Common from "../common/common";
 // InputEvent
 type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
-export interface Props extends Common.Globals, Common.SpaceAfter, Common.Ref {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly label?: Common.Translation;
   readonly buttonLabel?: React.ReactNode;
   readonly name?: string;
@@ -24,9 +24,8 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.Ref {
   readonly onChange?: Event;
   readonly onFocus?: Event;
   readonly onBlur?: Event;
-  readonly insideInputGroup?: boolean;
   readonly onRemoveFile?: Common.Callback;
 }
 
-declare const InputFile: React.RefForwardingComponent<HTMLInputElement, Props>;
+declare const InputFile: React.ForwardRefRenderFunction<HTMLInputElement, Props>;
 export { InputFile, InputFile as default };

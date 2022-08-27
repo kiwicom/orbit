@@ -7,7 +7,7 @@ import getDisplay from "./getDisplay";
 
 const getViewportHideStyles = (
   on: Devices[],
-  resolveDisplayProp: typeof getDisplay,
+  resolveDisplayProp?: typeof getDisplay,
 ): (false | FlattenSimpleInterpolation)[] =>
   Object.values(DEVICES).map(viewport =>
     viewport in mediaQueries

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -6,13 +5,14 @@ import defaultTheme from "../defaultTheme";
 import Grid from "../utils/Grid";
 import { LAYOUT_SETTINGS } from "./consts";
 import mq from "../utils/mediaQuery";
+import { Props, Type } from "./index.d";
+import { Props as LayoutColumnProps } from "./LayoutColumn/index.d";
 
-import type { Props } from ".";
-
-const getChildrenProps = (type, key) => {
+const getChildrenProps = (type: Type, key: string) => {
   if (LAYOUT_SETTINGS[type].layoutColumns && LAYOUT_SETTINGS[type].layoutColumns[key]) {
     return LAYOUT_SETTINGS[type].layoutColumns[key];
   }
+
   return null;
 };
 
@@ -27,16 +27,15 @@ const StyledLayout = styled(Grid)`
   `)};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledLayout.defaultProps = {
   theme: defaultTheme,
 };
 
-const Layout = ({ children, type, dataTest }: Props): React.Node => (
+const Layout = ({ children, type, dataTest }: Props) => (
   <StyledLayout {...LAYOUT_SETTINGS[type]} dataTest={dataTest}>
-    {React.Children.map(children, (item, key) => {
+    {React.Children.map(children as React.ReactElement<LayoutColumnProps>, (item, key) => {
       return React.cloneElement(item, {
-        ...getChildrenProps(type, key),
+        ...getChildrenProps(type, key.toString()),
         ...item.props,
       });
     })}

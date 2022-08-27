@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
@@ -17,7 +16,7 @@ export default {
   title: "Layout",
 };
 
-export const Search = (): React.Node => (
+export const Search = () => (
   <Layout type="Search">
     <LayoutColumn>
       <Card>
@@ -43,7 +42,7 @@ export const Search = (): React.Node => (
   </Layout>
 );
 
-export const Booking = (): React.Node => {
+export const Booking = () => {
   return (
     <Layout type="Booking">
       <LayoutColumn>
@@ -73,7 +72,7 @@ export const Booking = (): React.Node => {
   );
 };
 
-export const Mmb = (): React.Node => {
+export const Mmb = () => {
   return (
     <Layout type="MMB">
       <LayoutColumn>
@@ -91,7 +90,7 @@ Mmb.story = {
   name: "MMB",
 };
 
-export const Customized = (): React.Node => (
+export const Customized = () => (
   <Layout type="Search">
     <LayoutColumn dataTest="test" as="span">
       <Card>
@@ -117,7 +116,7 @@ export const Customized = (): React.Node => (
   </Layout>
 );
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Layout type="Search">
       <LayoutColumn>

@@ -1,5 +1,4 @@
 /**
- * @flow
  * @jest-environment node
  */
 import * as React from "react";

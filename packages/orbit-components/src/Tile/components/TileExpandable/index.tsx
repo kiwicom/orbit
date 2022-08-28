@@ -1,6 +1,6 @@
-// @flow
 import * as React from "react";
 
+import * as Common from "../../../common/common";
 import Slide from "../../../utils/Slide";
 import { useRandomIdSeed } from "../../../hooks/useRandomId";
 import TileContent from "../TileContent";
@@ -9,7 +9,18 @@ import TileHeader from "../TileHeader";
 import handleKeyDown from "../../../utils/handleKeyDown";
 import useBoundingRect from "../../../hooks/useBoundingRect";
 
-import type { Props } from ".";
+interface Props extends Common.Globals {
+  initialExpanded: boolean;
+  noPadding: boolean;
+  onClick?: Common.Event<
+    React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>
+  >;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  header?: React.ReactNode;
+  icon?: React.ReactNode;
+  htmlTitle?: string;
+}
 
 const TileExpandable = ({
   initialExpanded,
@@ -22,11 +33,13 @@ const TileExpandable = ({
   icon,
   dataTest,
   htmlTitle,
-}: Props): React.Node => {
+}: React.PropsWithChildren<Props>) => {
   const [expanded, setExpanded] = React.useState(initialExpanded);
-  const [{ height }, node] = useBoundingRect({ height: initialExpanded ? null : 0 });
+  const [{ height }, node] = useBoundingRect<HTMLDivElement>({
+    height: initialExpanded ? null : 0,
+  });
 
-  const handleClick = ev => {
+  const handleClick = (ev: React.SyntheticEvent<HTMLDivElement>) => {
     if (onClick) onClick(ev);
     setExpanded(prevExpanded => !prevExpanded);
   };
@@ -43,7 +56,7 @@ const TileExpandable = ({
       role="button"
       ariaExpanded={expanded}
       ariaControls={slideID}
-      tabIndex="0"
+      tabIndex={0}
       id={labelID}
       dataTest={dataTest}
       htmlTitle={htmlTitle}

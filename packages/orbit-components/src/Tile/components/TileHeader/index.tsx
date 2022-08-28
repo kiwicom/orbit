@@ -1,7 +1,7 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import * as Common from "../../../common/common";
 import defaultTheme from "../../../defaultTheme";
 import { rtlSpacing } from "../../../utils/rtl";
 import Stack from "../../../Stack";
@@ -12,40 +12,60 @@ import ChevronRight from "../../../icons/ChevronRight";
 import transition from "../../../utils/transition";
 import mq from "../../../utils/mediaQuery";
 
-import type { Props } from ".";
+interface Props {
+  icon?: React.ReactNode;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  expandable?: boolean;
+  expanded?: boolean;
+  external?: boolean;
+  onClick?: Common.Event<
+    React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>
+  >;
+  onKeyDown?: Common.Event<React.KeyboardEvent<HTMLDivElement>>;
+  header?: React.ReactNode;
+  role?: string;
+  ariaExpanded?: boolean;
+  ariaControls?: string;
+  id?: string;
+  tabIndex?: string | number;
+  noHeaderIcon?: boolean;
+}
 
 const StyledTileHeader = styled.div`
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  cursor: pointer;
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  transition: ${transition(["background-color"], "fast", "ease-in-out")};
-  :focus {
-    outline: none;
-  }
+  ${({ theme }) => css`
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: ${theme.orbit.spaceMedium}; //TODO Create token paddingTile
+    font-size: ${theme.orbit.fontSizeTextNormal};
+    line-height: ${theme.orbit.lineHeightTextNormal};
+    transition: ${transition(["background-color"], "fast", "ease-in-out")};
+    :focus {
+      outline: none;
+    }
 
-  ${mq.largeMobile(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
-  `)}
+    ${mq.largeMobile(css`
+      padding: ${theme.orbit.spaceLarge};
+    `)}
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileHeader.defaultProps = {
   theme: defaultTheme,
 };
 
 const StyledTileIcon = styled.div`
-  color: ${({ theme }) => theme.orbit.colorIconPrimary};
-  flex-shrink: 0;
-  align-items: center;
-  align-self: flex-start;
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  ${({ theme }) => css`
+    color: ${theme.orbit.colorIconPrimary};
+    flex-shrink: 0;
+    align-items: center;
+    align-self: flex-start;
+    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -56,49 +76,65 @@ const StyledTileTitle = styled.div`
   width: 100%;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileTitle.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledTileDescription = styled.div`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  ${({ hasTitle, theme }) =>
-    hasTitle &&
+const StyledTileDescription = styled.div<{ hasTitle?: boolean }>`
+  ${({ hasTitle, theme }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeTextNormal};
+    color: ${theme.orbit.colorTextPrimary};
+    line-height: ${theme.orbit.lineHeightTextNormal};
+    -webkit-text-size-adjust: 100%;
+    width: 100%;
+    ${hasTitle &&
     css`
       margin-top: ${theme.orbit.spaceXXSmall};
     `};
+  `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileDescription.defaultProps = {
   theme: defaultTheme,
 };
 
-const IconRight = ({ external, expandable, className }) => {
+const IconRight = ({
+  external,
+  expandable,
+  className,
+}: {
+  external?: Props["external"];
+  // eslint-disable-next-line react/no-unused-prop-types
+  expanded?: Props["expanded"];
+  expandable?: Props["expandable"];
+  className?: string;
+}) => {
   if (expandable) return <ChevronDown color="secondary" className={className} />;
   if (external) return <NewWindow className={className} />;
 
   return <ChevronRight color="secondary" className={className} reverseOnRtl />;
 };
 
-export const StyledIconRight: any = styled(IconRight)`
-  color: ${({ theme }) => theme.orbit.colorIconSecondary};
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
-  transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
-  ${({ expanded }) =>
-    expanded &&
+export const StyledIconRight = styled(IconRight)`
+  ${({
+    theme,
+    expanded,
+  }: {
+    theme: typeof defaultTheme;
+    expanded?: Props["expanded"];
+    expandable?: Props["expandable"];
+  }) => css`
+    color: ${theme.orbit.colorIconSecondary};
+    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
+    transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
+    ${expanded &&
     css`
       transform: rotate(-180deg);
     `};
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconRight.defaultProps = {
   theme: defaultTheme,
 };
@@ -119,7 +155,7 @@ const TileHeader = ({
   tabIndex,
   onKeyDown,
   noHeaderIcon,
-}: Props): React.Node => (
+}: React.PropsWithChildren<Props>) => (
   <StyledTileHeader
     onClick={onClick}
     onKeyDown={onKeyDown}
@@ -127,7 +163,7 @@ const TileHeader = ({
     aria-expanded={ariaExpanded}
     aria-controls={ariaControls}
     id={id}
-    tabIndex={tabIndex}
+    tabIndex={Number(tabIndex)}
   >
     <Stack align="center" justify="between" shrink spacing="none">
       {icon && <StyledTileIcon>{icon}</StyledTileIcon>}

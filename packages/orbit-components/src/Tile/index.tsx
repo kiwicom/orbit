@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 
 import TileHeader from "./components/TileHeader";
@@ -6,8 +5,7 @@ import TileContent from "./components/TileContent";
 import TileExpandable from "./components/TileExpandable";
 import TileWrapper from "./components/TileWrapper";
 import handleKeyDown from "../utils/handleKeyDown";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const Tile = ({
   href,
@@ -26,7 +24,7 @@ const Tile = ({
   htmlTitle,
   onClick,
   as,
-}: Props): React.Node => {
+}: Props) => {
   if (expandable) {
     return (
       <TileExpandable

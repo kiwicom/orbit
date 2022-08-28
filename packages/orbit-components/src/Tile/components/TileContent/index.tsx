@@ -1,13 +1,25 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import mq from "../../../utils/mediaQuery";
 import defaultTheme from "../../../defaultTheme";
 
-import type { Props } from ".";
+interface Props {
+  noPadding: boolean;
+  withPointer?: boolean;
+  withBorder?: boolean;
+  useMargins?: boolean;
+}
 
-const getPadding = ({ noPadding, useMargins, theme }) => {
+const getPadding = ({
+  noPadding,
+  useMargins,
+  theme,
+}: {
+  noPadding?: Props["noPadding"];
+  useMargins?: Props["useMargins"];
+  theme: typeof defaultTheme;
+}) => {
   if (noPadding) return null;
 
   if (!useMargins) {
@@ -30,7 +42,8 @@ const getPadding = ({ noPadding, useMargins, theme }) => {
     `)}
   `;
 };
-const StyledTileContent = styled.div`
+
+const StyledTileContent = styled.div<Props>`
   ${({ theme, withBorder, withPointer }) => css`
     font-size: ${theme.orbit.fontSizeTextNormal};
     line-height: ${theme.orbit.lineHeightTextNormal};
@@ -46,19 +59,12 @@ const StyledTileContent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const TileContent: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
-  Props,
-  HTMLElement,
->(
-  (
-    { children, noPadding, withPointer = false, withBorder = false, useMargins = true }: Props,
-    ref,
-  ) => {
+const TileContent = React.forwardRef<HTMLDivElement, React.PropsWithChildren<Props>>(
+  ({ children, noPadding, withPointer, withBorder, useMargins = true }, ref) => {
     return (
       <StyledTileContent
         noPadding={noPadding}

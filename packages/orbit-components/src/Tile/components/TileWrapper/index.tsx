@@ -1,12 +1,26 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import * as Common from "../../../common/common";
 import transition from "../../../utils/transition";
 import { StyledIconRight } from "../TileHeader";
 import defaultTheme from "../../../defaultTheme";
 
-import type { Props } from ".";
+interface Props extends Common.Globals {
+  href?: string;
+  external?: boolean;
+  onClick?: Common.Event<
+    React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>
+  >;
+  onKeyDown?: Common.Event<React.KeyboardEvent<HTMLDivElement>>;
+  as?: string;
+  tabIndex?: string | number;
+  role?: string;
+  ariaExpanded?: boolean;
+  ariaControls?: string;
+  htmlTitle?: string;
+  id?: string;
+}
 
 export const StyledTileWrapper: any = styled.div`
   ${({ theme }) => css`
@@ -32,7 +46,6 @@ export const StyledTileWrapper: any = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -60,7 +73,6 @@ const StyledTileAnchor = styled.a`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileAnchor.defaultProps = {
   theme: defaultTheme,
 };
@@ -79,13 +91,13 @@ const TileWrapper = ({
   ariaControls,
   id,
   htmlTitle,
-}: Props): React.Node => (
+}: React.PropsWithChildren<Props>) => (
   <StyledTileWrapper
     data-test={dataTest}
     onClick={onClick}
     onKeyDown={onKeyDown}
     as={as}
-    tabIndex={tabIndex}
+    tabIndex={Number(tabIndex)}
     role={role}
     aria-expanded={ariaExpanded}
     aria-controls={ariaControls}

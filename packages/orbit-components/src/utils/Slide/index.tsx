@@ -1,11 +1,9 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
-import transition from "../transition";
+import transition, { TransitionDuration } from "../transition";
 import defaultTheme from "../../defaultTheme";
-
-import type { Props, State } from ".";
+import { Props, State } from "./index.d";
 
 const getMaxHeight = ({ maxHeight }) => {
   if (maxHeight === 0) return `0px`;
@@ -13,17 +11,22 @@ const getMaxHeight = ({ maxHeight }) => {
   return `${maxHeight}px`;
 };
 
-export const StyledSlide: any = styled.div`
+export const StyledSlide = styled.div<{
+  transitionDuration?: TransitionDuration;
+  transitionFinished?: boolean;
+  visible?: boolean;
+  expanded?: boolean;
+  maxHeight: number | null;
+}>`
   position: relative;
   width: 100%;
   transition: ${({ transitionDuration }) =>
-    transition(["max-height"], transitionDuration, "linear")};
+    transitionDuration && transition(["max-height"], transitionDuration, "linear")};
   max-height: ${getMaxHeight};
   overflow: ${({ transitionFinished }) => !transitionFinished && "hidden"};
   visibility: ${({ visible }) => !visible && "hidden"};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSlide.defaultProps = {
   theme: defaultTheme,
 };
@@ -35,17 +38,17 @@ class Slide extends React.Component<Props, State> {
     visible: false,
   };
 
-  expandTimeout: null | TimeoutID = null;
-
-  collapseTimeout: null | TimeoutID = null;
-
-  transitionFinishedTimeout: null | TimeoutID = null;
-
-  visibleTimeout: null | TimeoutID = null;
-
-  static defaultProps: {| transitionDuration: string |} = {
+  static defaultProps = {
     transitionDuration: "fast",
   };
+
+  expandTimeout: NodeJS.Timeout | null = null;
+
+  collapseTimeout: NodeJS.Timeout | null = null;
+
+  transitionFinishedTimeout: NodeJS.Timeout | null = null;
+
+  visibleTimeout: NodeJS.Timeout | null = null;
 
   componentDidMount() {
     if (this.props.expanded) {
@@ -139,7 +142,7 @@ class Slide extends React.Component<Props, State> {
     this.setState({ transitionFinished });
   };
 
-  render(): React.Node {
+  render() {
     const { children, expanded = false, id, ariaLabelledBy, transitionDuration } = this.props;
     const { transitionFinished, maxHeight, visible } = this.state;
     return (

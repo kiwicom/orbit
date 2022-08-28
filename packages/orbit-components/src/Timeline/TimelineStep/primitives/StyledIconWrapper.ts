@@ -1,9 +1,8 @@
-// @flow
 import styled from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 
-const StyledIconWrapper: any = styled.div`
+const StyledIconWrapper = styled.div<{ mobile?: boolean }>`
   min-width: ${({ theme, mobile }) => mobile && theme.orbit.spaceLarge};
   min-height: ${({ theme }) => theme.orbit.spaceLarge};
   z-index: 1;
@@ -11,7 +10,6 @@ const StyledIconWrapper: any = styled.div`
   line-height: ${({ theme }) => theme.orbit.lineHeightText};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIconWrapper.defaultProps = {
   theme: defaultTheme,
 };

@@ -1,7 +1,7 @@
-// @flow
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
+import { Type as Types } from "./TimelineStep/consts";
 import Modal, { ModalSection } from "../Modal";
 import TimelineStep from "./TimelineStep";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -14,12 +14,12 @@ export default {
   title: "Timeline",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const asText = boolean("asText", false);
-  const type = text("type", "success");
+  const type = select("type", Object.values(Types), Types.Success);
   const label = text("label", "In progress");
   const time = text("time", "4th May 10:25");
-  const direction = select("direction", ["row", "column", null], undefined);
+  const direction = select("direction", ["row", "column"], undefined);
   const children = text(
     "children",
     "We’ll review your request and apply for any available refund from the carrier(s)",
@@ -52,10 +52,10 @@ Default.story = {
   },
 };
 
-export const WithWarning = (): React.Node => {
+export const WithWarning = () => {
   const label = text("label", "Action required");
   const time = text("time", "5th May 15:03");
-  const type = text("type", "warning");
+  const type = select("type", Object.values(Types), Types.Success);
   const children = text(
     "children",
     "The carrier has sent us a refund. There might be more depending on their policy",
@@ -87,9 +87,9 @@ WithWarning.story = {
   parameters: { info: "This is example of Timeline with warning type" },
 };
 
-export const WithCritical = (): React.Node => {
+export const WithCritical = () => {
   const label = text("label", "Non refundable");
-  const type = text("type", "critical");
+  const type = select("type", Object.values(Types), Types.Success);
   const time = text("time", "7th May 10:30");
   const children = text("children", "The carrier rejected the refund");
 
@@ -119,7 +119,7 @@ WithCritical.story = {
   parameters: { info: "This is example of Timeline with critical type" },
 };
 
-export const InsideModal = (): React.Node => {
+export const InsideModal = () => {
   return (
     <Modal>
       <ModalSection>
@@ -149,7 +149,7 @@ InsideModal.story = {
   name: "inside Modal",
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   return (
     <RenderInRtl>
       <Timeline dataTest={dataTest}>

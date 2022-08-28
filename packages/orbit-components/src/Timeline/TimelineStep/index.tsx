@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 
 import CheckCircle from "../../icons/CheckCircle";
@@ -9,18 +8,18 @@ import { useStatuses, useStep } from "../TimelineContext";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import TimelineStepDesktop from "./components/TimelineStepDesktop";
 import TimelineStepMobile from "./components/TimelineStepMobile";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
+import { Type } from "./consts";
 
 const TypeIcon = ({ type }) => {
-  if (type === "success") return <CheckCircle color="success" />;
-  if (type === "warning") return <AlertCircle color="warning" />;
-  if (type === "critical") return <CloseCircle color="critical" />;
+  if (type === Type.Success) return <CheckCircle color="success" />;
+  if (type === Type.Warning) return <AlertCircle color="warning" />;
+  if (type === Type.Critical) return <CloseCircle color="critical" />;
 
   return <Circle color="tertiary" size="small" />;
 };
 
-const TimelineStep = ({ children, label, subLabel, type, asText }: Props): React.Node => {
+const TimelineStep = ({ children, label, subLabel, type, asText }: Props) => {
   const { types, setTypes, isColumnOnDesktop } = useStatuses();
   const { index, last } = useStep();
   const { isDesktop } = useMediaQuery();

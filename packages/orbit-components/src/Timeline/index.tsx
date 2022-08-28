@@ -1,27 +1,25 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
+import * as Common from "../common/common";
 import Stack from "../Stack";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { TimelineStatusProvider, TimelineStepContext } from "./TimelineContext";
 import getSpacingToken from "../common/getSpacingToken";
 import themeDefault from "../defaultTheme";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const WrapperStyled = styled.div`
+const WrapperStyled = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
   position: relative;
   overflow: hidden;
   margin-bottom: ${getSpacingToken};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 WrapperStyled.defaultProps = {
   theme: themeDefault,
 };
 
-const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props): null | React.Node => {
+const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
   const childrenArr = React.Children.toArray(children);
   const { isDesktop } = useMediaQuery();
 

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
@@ -10,7 +9,7 @@ import CustomBadge from "./CustomBadge";
 import Badge from "../../../Badge";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
-import type { Props as StepProps, Type } from "..";
+import { Props as StepProps, Type } from "../index.d";
 
 const StyledDescription = styled.div`
   max-width: 250px;
@@ -21,12 +20,11 @@ const StyledAligned = styled.div`
   text-align: center;
 `;
 
-type Props = {|
-  ...StepProps,
-  last: boolean,
-  typeIcon: React.Node,
-  nextType: Type,
-|};
+interface Props extends StepProps {
+  last: boolean;
+  typeIcon: React.ReactNode;
+  nextType: Type;
+}
 
 const Label = ({ asText, type, label }) => {
   if (asText) {
@@ -57,7 +55,7 @@ const TimelineStepDesktop = ({
   subLabel,
   asText,
   typeIcon,
-}: Props): React.Node => {
+}: Props) => {
   return (
     <Stack inline shrink direction="column" align="center" spaceAfter="large">
       {subLabel && (

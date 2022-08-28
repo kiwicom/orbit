@@ -4,13 +4,11 @@ import { pureTranslate } from "../Translate";
 import DictionaryContext from "./DictionaryContext";
 import { Props } from "./index.d";
 
-const Dictionary = ({ values, children }: Props): React.ReactNode => (
+const Dictionary = ({ values, children }: Props) => (
   <DictionaryContext.Provider value={values}>{children}</DictionaryContext.Provider>
 );
 
-export function withDictionary(
-  Component: React.ComponentType<any>,
-): (props: any) => React.ReactNode {
+export function withDictionary(Component: React.ComponentType<any>) {
   return function DictionaryComponent(props: any) {
     return (
       <DictionaryContext.Consumer>

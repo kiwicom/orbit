@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { select, boolean, object } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -14,15 +13,15 @@ import ThemeProvider from ".";
 
 const ButtonWithTranslation = () => {
   const translate = useTranslate();
-  return <Button>{translate("button_close")}</Button>;
+  return <Button>{translate("button_close", "")}</Button>;
 };
 
 export default {
   title: "ThemeProvider",
 };
 
-export const DictionaryContext = (): React.Node => {
-  const dictionary = select("dictionary", Object.keys(languages));
+export const DictionaryContext = () => {
+  const dictionary = select("dictionary", Object.keys(languages), "en");
   return (
     <ThemeProvider theme={{ orbit: getTokens() }} dictionary={languages[dictionary]}>
       <ButtonWithTranslation />
@@ -39,7 +38,7 @@ DictionaryContext.story = {
   },
 };
 
-export const WithoutTransitions = (): React.Node => {
+export const WithoutTransitions = () => {
   const transitions = boolean("transitions", false);
   return (
     <ThemeProvider theme={{ orbit: getTokens(), transitions }}>
@@ -59,7 +58,7 @@ WithoutTransitions.story = {
   },
 };
 
-export const OwnTheme = (): React.Node => {
+export const OwnTheme = () => {
   const orbitTheme = object("orbitTheme", {
     palette: {
       product: {

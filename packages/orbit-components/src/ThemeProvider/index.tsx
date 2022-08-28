@@ -1,14 +1,12 @@
-// @flow
 import * as React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { UIDReset, UIDFork } from "react-uid";
 
 import Dictionary from "../Dictionary";
 import QueryContextProvider from "./QueryContext/Provider";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const ThemeProvider = ({ theme, dictionary, children }: Props): React.Node => {
+const ThemeProvider = ({ theme, dictionary, children }: Props) => {
   return (
     <UIDReset>
       <UIDFork>

@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-interface Props extends Common.Globals {
+export interface Props extends Common.Globals {
   readonly as?: string;
   readonly children: React.ReactNode;
 }

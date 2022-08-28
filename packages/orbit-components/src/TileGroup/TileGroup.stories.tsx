@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select } from "@storybook/addon-knobs";
@@ -21,7 +20,7 @@ export default {
   title: "TileGroup",
 };
 
-export const DefaultJustWrapper = (): React.Node => {
+export const DefaultJustWrapper = () => {
   const dataTest = text("dataTest", "test");
   const as = text("as", "");
 
@@ -44,7 +43,7 @@ DefaultJustWrapper.story = {
   },
 };
 
-export const DefaultWithHeaderProps = (): React.Node => {
+export const DefaultWithHeaderProps = () => {
   const title = text("Title", "Expandable");
   const description = text(
     "Description",
@@ -89,7 +88,7 @@ DefaultWithHeaderProps.story = {
   },
 };
 
-export const ExpandableWithCustomDescription = (): React.Node => {
+export const ExpandableWithCustomDescription = () => {
   const Icon = getIcon(getIcons("GenderMan"));
 
   return (
@@ -198,7 +197,7 @@ ExpandableWithCustomDescription.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <TileGroup>
       <Tile

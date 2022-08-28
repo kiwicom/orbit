@@ -1,12 +1,10 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { StyledTileWrapper } from "../Tile/components/TileWrapper";
 import defaultTheme from "../defaultTheme";
 import { StyledSlide } from "../utils/Slide";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledTileGroup = styled.div`
   ${({ theme }) => css`
@@ -43,13 +41,13 @@ const StyledTileGroup = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledTileGroup.defaultProps = {
   theme: defaultTheme,
 };
 
-const TileGroup = ({ children, dataTest, id, as }: Props): React.Node => {
+const TileGroup = ({ children, dataTest, id, as }: Props) => {
   return (
+    // @ts-expect-error FIXME: ts-migrate
     <StyledTileGroup data-test={dataTest} as={as} id={id}>
       {children}
     </StyledTileGroup>

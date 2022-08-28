@@ -1,9 +1,8 @@
-// @flow
 import * as React from "react";
 import { screen, render } from "@testing-library/react";
 
 import theme from "../../defaultTheme";
-import Inline from "..";
+import Inline, { SpacingToken } from "../index.d";
 
 const tokens = {
   none: "",
@@ -46,7 +45,7 @@ describe("#Inline", () => {
     'should have expected spacing for token "%s"',
     (token, spacing) => {
       render(
-        <Inline align="start" justify="center" spacing={token}>
+        <Inline align="start" justify="center" spacing={token as SpacingToken}>
           <div data-test={token}>kek</div>
           <div>bur</div>
         </Inline>,

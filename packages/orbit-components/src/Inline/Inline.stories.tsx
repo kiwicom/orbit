@@ -1,9 +1,9 @@
-// @flow
 import * as React from "react";
 import { text, select } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { ALIGNS as ALIGN, JUSTIFY, SPACINGS as SPACING } from "../utils/layout/consts";
+import { ALIGNS as ALIGN, JUSTIFY } from "./consts";
+import { SPACINGS as SPACING } from "../utils/layout/consts";
 
 import Inline from ".";
 
@@ -30,7 +30,7 @@ export default {
   title: "Inline",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
   return (
     <Inline spacing={spacing} dataTest={dataTest}>
@@ -46,7 +46,7 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const as = text("As", "div");
   const align = select("align", Object.values(ALIGN), ALIGN.START);
   const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.START);
@@ -66,7 +66,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
   return (
     <RenderInRtl>

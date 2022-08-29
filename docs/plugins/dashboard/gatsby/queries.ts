@@ -15,10 +15,10 @@ export const projectPathQuery = `
 `;
 
 export const projectRawBlobQuery = `
-  query ProjectRawBlobQuery($path: ID!, $paths: [String!]!) {
+  query ProjectRawBlobQuery($path: ID!, $paths: [String!]!, $last: Int) {
     project(fullPath: $path) {
       repository {
-        blobs(ref: "master", paths: $paths) {
+        blobs(ref: "master", paths: $paths, last: $last) {
           nodes {
             rawBlob
             rawTextBlob

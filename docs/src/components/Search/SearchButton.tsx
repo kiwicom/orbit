@@ -36,9 +36,11 @@ export const KeyboardShortcuts = ({ type = "primary" }: { type: Type }) => {
   return (
     <StyledWrapper type={type}>
       <Stack inline spacing="XXSmall" align="center">
-        <StyledIcon type={type}>{os === "mac" ? <>&#8984;</> : "Alt"}</StyledIcon>
-        <span>+</span>
-        <span>Shift</span>
+        <StyledIcon type={type}>
+          {os === "mac" ? <>&#8984;</> : "Alt"} <span>+</span>
+          <span> Shift</span>
+        </StyledIcon>
+
         <span>+</span>
         <StyledIcon type={type}>&#75;</StyledIcon>
       </Stack>

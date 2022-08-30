@@ -1,11 +1,41 @@
-import axios from "axios";
-
 import { projectPathQuery, projectRawBlobQuery } from "./queries";
 import { TrackingNode } from "../../../src/components/Dashboard/interfaces";
+import { request } from "../helpers";
 
-const BASE_URL = `https://gitlab.skypicker.com/api/graphql/`;
+const getPaths = async () => {
+  const { data } = await request<PathResponse>(projectPathQuery, {
+    path: process.env.GATSBY_ORBIT_STORAGE_PATH || "",
+  });
 
-interface PathResponse {
+  if (data) return data;
+
+  return null;
+};
+
+const getBlobs = async ({
+  paths,
+  first,
+  last,
+}: {
+  paths: string[];
+  first?: number;
+  last?: number;
+}) => {
+  const { data } = await request<BlobResponse>(projectRawBlobQuery, {
+    path: process.env.GATSBY_ORBIT_STORAGE_PATH || "",
+    paths,
+    // @ts-expect-error expected
+    first,
+    // @ts-expect-error expected
+    last,
+  });
+
+  if (data && data.project) return data.project.repository.blobs.nodes;
+
+  return null;
+};
+
+export interface PathResponse {
   data: {
     project: {
       repository: {
@@ -19,7 +49,7 @@ interface PathResponse {
   };
 }
 
-interface BlobResponse {
+export interface BlobResponse {
   data: {
     project: {
       repository: {
@@ -31,58 +61,37 @@ interface BlobResponse {
   };
 }
 
-async function request<T>(query: string, vars?: Record<string, string | number | string[]>) {
-  const { data } = await axios.post<T>(
-    BASE_URL,
-    {
-      query,
-      variables: vars,
-    },
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.GITLAB_TOKEN}`,
-      },
-    },
-  );
-
-  return data;
-}
-
 export default async ({ actions, createNodeId, createContentDigest, reporter }) => {
   try {
     const { createNode } = actions;
+    const pathsRes = await getPaths();
 
     if (process.env.GATSBY_ORBIT_STORAGE_PATH) {
-      const pathsRes = await request<PathResponse>(projectPathQuery, {
-        path: process.env.GATSBY_ORBIT_STORAGE_PATH,
-      });
-
       if (pathsRes) {
-        const paths = pathsRes.data.project.repository.tree.blobs.nodes
+        const paths = pathsRes.project.repository.tree.blobs.nodes
           .map(b => b.path)
           .filter(n => n.includes(".json"));
+        const lastData = await getBlobs({ paths, last: 1 });
+        const firstData = await getBlobs({ paths, first: 1 });
 
-        request<BlobResponse>(projectRawBlobQuery, {
-          path: process.env.GATSBY_ORBIT_STORAGE_PATH,
-          paths,
-          last: 1,
-        }).then(({ data }) => {
-          const { nodes } = data.project.repository.blobs;
-          JSON.parse(nodes[0].rawBlob).forEach((repo: TrackingNode) => {
-            createNode({
-              ...repo,
-              id: createNodeId(`tracking-${repo.name}`),
-              parent: null,
-              children: [],
-              internal: {
-                type: `Tracking`,
-                content: JSON.stringify(repo),
-                contentDigest: createContentDigest(repo),
-              },
-            });
-          });
-        });
+        if (lastData && firstData) {
+          [...JSON.parse(firstData[0].rawBlob), ...JSON.parse(lastData[0].rawBlob)].forEach(
+            (repo: TrackingNode) => {
+              createNode({
+                ...repo,
+                // it will not create the node if it has the same id as the previous one
+                id: createNodeId(`tracking-${repo.createdAt}-${repo.name}`),
+                parent: null,
+                children: [],
+                internal: {
+                  type: `Tracking`,
+                  content: JSON.stringify(repo),
+                  contentDigest: createContentDigest(repo),
+                },
+              });
+            },
+          );
+        }
       }
     }
   } catch (err) {

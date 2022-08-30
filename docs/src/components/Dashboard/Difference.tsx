@@ -1,5 +1,5 @@
 import React from "react";
-import { PageRendererProps } from "gatsby";
+import { PageRendererProps, graphql, useStaticQuery } from "gatsby";
 import {
   Table,
   TableRow,
@@ -11,19 +11,34 @@ import {
 } from "@kiwicom/orbit-components";
 import { ChevronRight } from "@kiwicom/orbit-components/icons";
 
-import { DiffOutputItem } from "../../plugins/dashboard/compare";
-import DocLayout from "../components/DocLayout";
+import DocLayout from "../DocLayout";
+import { SchemeTrackingNode } from "./interfaces";
+import getDataDiff from "./compare";
 
-interface Props extends PageRendererProps {
-  pageContext: {
-    diff: Record<string, DiffOutputItem>;
-    annotated: string;
-  };
-}
+const DataDiffTemplate = ({ location }: PageRendererProps) => {
+  const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
+    query DifferenceTracking {
+      allTracking {
+        nodes {
+          trackedData {
+            instances
+            name
+            props {
+              used
+              name
+            }
+          }
+        }
+      }
+    }
+  `);
 
-const DataDiffTemplate = ({ location, pageContext }: Props) => {
-  const { diff } = pageContext;
-  const { diff: mappedData } = diff;
+  const { nodes } = allTracking;
+  const first = nodes.slice(0, 8);
+  const last = nodes.slice(-8);
+  const difference = getDataDiff(first, last);
+
+  if (!difference) return <Text>No difference was created</Text>;
 
   return (
     <DocLayout
@@ -41,8 +56,9 @@ const DataDiffTemplate = ({ location, pageContext }: Props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {Object.entries(mappedData).map(([name, { instances, props }]) => {
-            const { before, after } = instances;
+          {Object.keys(difference.diff).map(name => {
+            const { before, after } = difference.diff[name].instances;
+            const { props } = difference.diff[name];
             const getStatus = (bef: number, aft: number) => (bef > aft ? "critical" : "success");
 
             return (
@@ -58,7 +74,6 @@ const DataDiffTemplate = ({ location, pageContext }: Props) => {
                 <TableCell>
                   <Stack direction="column" spacing="small">
                     {props &&
-                      // @ts-expect-error TODO
                       Object.entries(props).map(([propName, { instances: propInstances }]) => (
                         <Stack key={propName} direction="column" spacing="none">
                           <Text size="small" weight="bold">

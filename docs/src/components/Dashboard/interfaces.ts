@@ -6,7 +6,7 @@ export interface TrackingProperty {
 export interface TrackingProp {
   used: number;
   name: string;
-  values: TrackingProperty[];
+  values?: TrackingProperty[];
 }
 
 interface Maintainer {

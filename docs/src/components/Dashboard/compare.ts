@@ -1,22 +1,11 @@
 import { formatters, create, Delta } from "jsondiffpatch";
-import _ from "lodash";
-import fp from "lodash/fp";
+// import _, { Dictionary } from "lodash";
 
-import { TrackingNode } from "./interfaces";
+import { TrackingProp } from "./interfaces";
 
-interface Value {
-  name: string;
-  used: number;
-}
-
-interface Prop extends Value {
-  name: string;
-  used: number;
-  values?: Value[];
-}
 interface ComponentData {
   name: string;
-  props: Prop[];
+  props: TrackingProp[];
   instances: number;
 }
 
@@ -31,70 +20,27 @@ export interface DiffOutputItem extends DiffInstance {
   props: Record<string, DiffInstance>;
 }
 
-const collectProps = (props: Prop[]) =>
-  props.reduce((acc, cur) => {
-    const { name, used } = cur;
-    if (!acc[name]) acc[name] = { ...cur };
-    else
-      acc[name] = {
-        name,
-        used: acc[name].used + used,
-      };
-
-    return acc;
-  }, {});
-
-const collectComponents = (components: ComponentData[]) =>
-  components.reduce((acc, { name, props, instances }) => {
-    if (!acc[name]) {
-      acc[name] = {
-        name,
-        instances,
-        props: props ? props.map(obj => _.omit(obj, ["values"])) : [],
-      };
-    } else {
-      acc[name] = {
-        name,
-        instances: acc[name].instances + instances,
-        props: Object.values(
-          collectProps([...acc[name].props, ...props].map((obj: Prop) => _.omit(obj, ["values"]))),
-        ),
-      };
-    }
-
-    return acc;
-  }, {});
-
-const mapData = (data: TrackingNode[]): ComponentData[] =>
-  fp.compose(
-    fp.sortBy("name"),
-    fp.values,
-    collectComponents,
-    fp.map(({ name, props, instances }) => ({ name, props, instances })),
-    fp.flatten,
-    fp.map(fp.get(["trackedData"])),
-  )(data);
-
 export const mapDiff = (
-  data: ComponentData[],
-  diff: Delta,
+  data: Record<string, ComponentData>,
+  delta: Delta,
 ): Record<string, DiffOutputItem> | void => {
-  if (!data || !diff) return undefined;
+  if (!data || !delta) return undefined;
 
-  const keys = Object.keys(diff);
+  const keys = Object.keys(delta);
   const result = {};
 
   keys.forEach(key => {
     if (data[key]) {
       const { name } = data[key];
-      const quantity = diff[key].instances || diff[key].used;
+      const quantity = delta[key].instances || delta[key].used;
 
-      if (diff[key] && quantity) {
+      if (delta[key] && quantity) {
         const [before, after] = quantity;
 
         result[name] = {
           instances: { before, after },
-          props: mapDiff(data[key].props, diff[key].props),
+          // TODO: add support for counting props
+          // props: mapDiff(_.mapValues(_.keyBy(data[key].props, "name"), "used"), delta[key].props),
         };
       }
     }
@@ -104,30 +50,29 @@ export const mapDiff = (
 };
 
 const getDataDiff = (
-  first: TrackingNode[],
-  last: TrackingNode[],
-): { diff: Record<string, DiffOutputItem>; annotated: string } | void => {
-  if (first && last) {
-    const dataFirst = mapData(first);
-    const dataLast = mapData(last);
+  first: Record<string, ComponentData>,
+  last: Record<string, ComponentData>,
+): { diff: Record<string, DiffOutputItem>; annotated: string } => {
+  const diffPatch = create({
+    objectHash: (obj: { name: string }) => obj.name,
+    arrays: {
+      detectMove: false,
+    },
+  });
 
-    const diffPatch = create({
-      objectHash: (obj: { name: string }) => obj.name,
-    });
+  const delta = diffPatch.diff(first, last);
+  const diff = delta && mapDiff(first, delta);
 
-    const delta = diffPatch.diff(dataFirst, dataLast);
-    const diff = delta && mapDiff(dataFirst, delta);
+  if (delta && diff)
+    return {
+      diff,
+      annotated: formatters.annotated.format(delta, {}),
+    };
 
-    if (delta && diff)
-      return {
-        diff,
-        annotated: formatters.annotated.format(delta, {}),
-      };
-
-    return undefined;
-  }
-
-  return undefined;
+  return {
+    diff: {},
+    annotated: "",
+  };
 };
 
 export default getDataDiff;

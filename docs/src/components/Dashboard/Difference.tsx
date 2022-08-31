@@ -1,5 +1,6 @@
 import React from "react";
 import { PageRendererProps, graphql, useStaticQuery } from "gatsby";
+import _ from "lodash";
 import {
   Table,
   TableRow,
@@ -12,8 +13,21 @@ import {
 import { ChevronRight } from "@kiwicom/orbit-components/icons";
 
 import DocLayout from "../DocLayout";
-import { SchemeTrackingNode } from "./interfaces";
+import { SchemeTrackingNode, TrackingNode, TrackingProp } from "./interfaces";
 import getDataDiff from "./compare";
+
+const collectProps = (props: TrackingProp[]) =>
+  props.reduce((acc, cur) => {
+    const { name, used } = cur;
+    if (!acc[name]) acc[name] = { ...cur };
+    else
+      acc[name] = {
+        name,
+        used: Number(acc[name].used) + Number(used),
+      };
+
+    return acc;
+  }, {});
 
 const DataDiffTemplate = ({ location }: PageRendererProps) => {
   const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
@@ -22,6 +36,7 @@ const DataDiffTemplate = ({ location }: PageRendererProps) => {
         nodes {
           trackedData {
             instances
+            icon
             name
             props {
               used
@@ -36,9 +51,41 @@ const DataDiffTemplate = ({ location }: PageRendererProps) => {
   const { nodes } = allTracking;
   const first = nodes.slice(0, 8);
   const last = nodes.slice(-8);
-  const difference = getDataDiff(first, last);
 
-  if (!difference) return <Text>No difference was created</Text>;
+  const getSum = (data: TrackingNode[]) =>
+    data.reduce((acc, cur) => {
+      cur.trackedData
+        .filter(source => !source.icon)
+        .forEach(({ name, instances, props }) => {
+          if (!acc[name]) {
+            acc[name] = {
+              name,
+              instances,
+              props: props.map(obj => _.omit(obj, ["values"])),
+            };
+          } else {
+            const prev = acc[name];
+            acc[name] = {
+              ...acc[name],
+              instances: prev.instances + instances,
+              props: Object.values(
+                collectProps(
+                  [...acc[name].props, ...props].map((obj: TrackingProp) =>
+                    _.omit(obj, ["values"]),
+                  ),
+                ),
+              ),
+            };
+          }
+        });
+
+      return acc;
+    }, {});
+
+  const firstSum = getSum(first);
+  const lastSum = getSum(last);
+
+  const difference = getDataDiff(firstSum, lastSum);
 
   return (
     <DocLayout

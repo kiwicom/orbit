@@ -2,7 +2,9 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { StarFull, CircleSmallEmpty as CircleEmpty, CircleSmall as Circle } from "../../../icons";
+import StarFull from "../../../icons/StarFull";
+import CircleEmpty from "../../../icons/CircleSmallEmpty";
+import Circle from "../../../icons/CircleSmall";
 import { useWidth } from "../../context";
 import defaultTheme from "../../../defaultTheme";
 import Stack from "../../../Stack";

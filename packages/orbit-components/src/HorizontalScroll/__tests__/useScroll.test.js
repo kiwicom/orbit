@@ -12,6 +12,7 @@ const DEFAULT_VALUES = {
   momentum: 0,
   lastScrollX: 0,
   speed: 0,
+  reachedEnd: false,
   reachedStart: false,
 };
 
@@ -51,6 +52,7 @@ describe("useScroll", () => {
       momentum: 0.48,
       scrollStartX: 20,
       speed: 0.48,
+      reachedEnd: false,
       reachedStart: false,
     });
   });

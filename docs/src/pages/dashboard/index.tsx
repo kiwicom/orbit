@@ -6,12 +6,13 @@ import Dashboard, {
   AllRepositories,
   AllRepositoriesComponent,
   Repository,
+  Difference,
   RepositoryComponent,
   Tracking,
-} from "../components/Dashboard";
-import Login from "../components/Login";
-import { isBrowser, isLoggedIn } from "../services/auth";
-import NotFound from "./404";
+} from "../../components/Dashboard";
+import Login from "../../components/Login";
+import { isBrowser, isLoggedIn } from "../../services/auth";
+import NotFound from "../404";
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
   if (!isLoggedIn() && location.pathname !== `/dashboard/login/` && isBrowser) {
@@ -28,6 +29,7 @@ export default ({ location }: PageRendererProps) => {
       {/* @ts-expect-error TODO */}
       <NotFound default />
       <PrivateRoute path="/dashboard/" component={Dashboard} location={location} />
+      <PrivateRoute path="/dashboard/difference/" component={Difference} location={location} />
       <PrivateRoute path="/dashboard/tracking/" component={Tracking} location={location} />
       <PrivateRoute path="/dashboard/tracking/:slug/" component={Repository} location={location} />
       <PrivateRoute

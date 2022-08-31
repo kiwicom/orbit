@@ -1,8 +1,8 @@
 import { formatters, create, Delta } from "jsondiffpatch";
-import fs from "fs-extra";
-import path from "path";
 import _ from "lodash";
 import fp from "lodash/fp";
+
+import { TrackingNode } from "./interfaces";
 
 interface Value {
   name: string;
@@ -31,9 +31,6 @@ export interface DiffOutputItem extends DiffInstance {
   props: Record<string, DiffInstance>;
 }
 
-const DATA_DIR = path.resolve(path.join(__dirname, "../../data/tracking"));
-const readFile = (file: string) => fs.readFileSync(path.join(DATA_DIR, file), "utf-8");
-
 const collectProps = (props: Prop[]) =>
   props.reduce((acc, cur) => {
     const { name, used } = cur;
@@ -50,7 +47,11 @@ const collectProps = (props: Prop[]) =>
 const collectComponents = (components: ComponentData[]) =>
   components.reduce((acc, { name, props, instances }) => {
     if (!acc[name]) {
-      acc[name] = { name, instances, props: props.map(obj => _.omit(obj, ["values"])) };
+      acc[name] = {
+        name,
+        instances,
+        props: props ? props.map(obj => _.omit(obj, ["values"])) : [],
+      };
     } else {
       acc[name] = {
         name,
@@ -64,7 +65,7 @@ const collectComponents = (components: ComponentData[]) =>
     return acc;
   }, {});
 
-const mapData = (file: string) =>
+const mapData = (data: TrackingNode[]): ComponentData[] =>
   fp.compose(
     fp.sortBy("name"),
     fp.values,
@@ -72,14 +73,13 @@ const mapData = (file: string) =>
     fp.map(({ name, props, instances }) => ({ name, props, instances })),
     fp.flatten,
     fp.map(fp.get(["trackedData"])),
-    JSON.parse,
-  )(readFile(file));
+  )(data);
 
 export const mapDiff = (
   data: ComponentData[],
   diff: Delta,
-): Record<string, DiffOutputItem> | null => {
-  if (!data || !diff) return null;
+): Record<string, DiffOutputItem> | void => {
+  if (!data || !diff) return undefined;
 
   const keys = Object.keys(diff);
   const result = {};
@@ -103,34 +103,31 @@ export const mapDiff = (
   return result;
 };
 
-const getDataDiff = async () => {
-  const data = await fs.readdir(DATA_DIR);
+const getDataDiff = (
+  first: TrackingNode[],
+  last: TrackingNode[],
+): { diff: Record<string, DiffOutputItem>; annotated: string } | void => {
+  if (first && last) {
+    const dataFirst = mapData(first);
+    const dataLast = mapData(last);
 
-  if (data.length > 0) {
-    const first = _.head(data);
-    const last = _.last(data);
+    const diffPatch = create({
+      objectHash: (obj: { name: string }) => obj.name,
+    });
 
-    if (first && last) {
-      const dataFirst = mapData(first);
-      const dataLast = mapData(last);
+    const delta = diffPatch.diff(dataFirst, dataLast);
+    const diff = delta && mapDiff(dataFirst, delta);
 
-      const diffPatch = create({
-        objectHash: obj => obj.name,
-      });
+    if (delta && diff)
+      return {
+        diff,
+        annotated: formatters.annotated.format(delta, {}),
+      };
 
-      const delta = diffPatch.diff(dataFirst, dataLast);
-
-      if (delta)
-        return {
-          diff: mapDiff(dataLast, delta),
-          annotated: formatters.annotated.format(delta, {}),
-        };
-
-      return null;
-    }
+    return undefined;
   }
 
-  return null;
+  return undefined;
 };
 
 export default getDataDiff;

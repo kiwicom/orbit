@@ -838,7 +838,7 @@ export default {
     "Detail",
     "RTL",
     "Segment",
-    "Separator",
+    "ItinerarySeparatorComponent",
     "MultipleBanners",
     "Status",
     "Stop",

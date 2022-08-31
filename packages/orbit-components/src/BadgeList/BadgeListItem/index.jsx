@@ -89,6 +89,7 @@ StyledVerticalBadgeContent.defaultProps = {
 
 const BadgeListItem = ({
   icon,
+  strikeThrough,
   type = TYPE_OPTIONS.NEUTRAL,
   dataTest,
   children,
@@ -99,7 +100,7 @@ const BadgeListItem = ({
         {React.isValidElement(icon) && React.cloneElement(icon, { color: getIconColor(type) })}
       </StyledVerticalBadge>
       <StyledVerticalBadgeContent>
-        <Text type="secondary" size="small" as="span">
+        <Text type="secondary" size="small" as="span" strikeThrough={strikeThrough}>
           {children}
         </Text>
       </StyledVerticalBadgeContent>

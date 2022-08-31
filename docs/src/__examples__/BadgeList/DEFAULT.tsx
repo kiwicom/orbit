@@ -20,6 +20,7 @@ export default {
           defaultValue: "neutral",
           options: ["neutral", "info", "success", "warning", "critical"],
         },
+        { name: "strikeThrough", type: "boolean", defaultValue: false },
       ],
     },
   ],

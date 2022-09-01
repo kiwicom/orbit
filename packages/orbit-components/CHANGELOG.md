@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.5.1...@kiwicom/orbit-components@3.6.0) (2022-09-01)
+
+
+### Bug Fixes
+
+* **HorizontalScroll:** remove shadow after it reaches end ([9168bbe](https://github.com/kiwicom/orbit/commit/9168bbedb459a93bb2adce761ba82fbbcca31984))
+* **Itinerary:** fix icons imports ([8373597](https://github.com/kiwicom/orbit/commit/83735974bac0272f070deb4236f9217586fc55cc))
+
+
+### Features
+
+* **BadgeListItem:** add strikeThrough property ([b2cf321](https://github.com/kiwicom/orbit/commit/b2cf321e34c8eecb32d36df11bc0da4632ef458a))
+* **Box:** add forwardRef ([407b244](https://github.com/kiwicom/orbit/commit/407b24412a198f53de753b5570b3f389de2fdb1f))
+* **Box:** extend elevations ([6de92cf](https://github.com/kiwicom/orbit/commit/6de92cf84421033c67aedeeb73283c7adead89f9))
+
+
+
+
+
 ## [3.5.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.5.0...@kiwicom/orbit-components@3.5.1) (2022-08-23)
 
 

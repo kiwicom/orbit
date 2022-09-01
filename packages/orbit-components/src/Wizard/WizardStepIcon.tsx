@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
@@ -9,7 +8,7 @@ import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import { WizardStepContext } from "./WizardContext";
 
-export const StyledStepIconContainer: any = styled.div`
+export const StyledStepIconContainer = styled.div<{ $disabled?: boolean; $glow?: boolean }>`
   ${({ theme, $disabled, $glow }) => css`
     display: flex;
     align-items: center;
@@ -30,12 +29,11 @@ export const StyledStepIconContainer: any = styled.div`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStepIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const WizardStepIcon = (): React.Node => {
+const WizardStepIcon = () => {
   const { index, status, isCompact, isActive } = React.useContext(WizardStepContext);
   const theme = useTheme();
 

@@ -89,5 +89,5 @@ export interface PrimitiveTypes extends HeightProps, Foreground, Background, Box
 export type Props = ButtonCommonProps & PrimitiveTypes;
 
 declare const StyledButtonPrimitive: React.ComponentType<Props>;
-declare const Button: React.RefForwardingComponent<HTMLButtonElement, Props>;
+declare const Button: React.ForwardRefRenderFunction<HTMLButtonElement, Props>;
 export { Button, Button as default, StyledButtonPrimitive };

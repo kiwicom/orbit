@@ -11,7 +11,7 @@ export type PureTranslate = (
   dictionary: Translations,
   key: string,
   values?: Values,
-) => React.Element<string>;
+) => React.ReactElement<string>;
 
 export interface Props {
   readonly tKey: string;

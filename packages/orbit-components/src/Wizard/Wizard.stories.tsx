@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { number, array, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -12,7 +10,7 @@ export default {
   title: "Wizard",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const direction = select("direction", ["row", "column"], "row");
 
   return (
@@ -32,7 +30,7 @@ export const Default = (): React.Node => {
   );
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   return (
     <RenderInRtl>
       <Wizard id="wizard" completedSteps={3} activeStep={3} onChangeStep={action("onChangeStep")}>
@@ -50,7 +48,7 @@ Rtl.story = {
   name: "RTL",
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const steps = array("Steps", [
     "Search",
     "Passenger details",

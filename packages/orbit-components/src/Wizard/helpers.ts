@@ -1,28 +1,22 @@
-// @flow
-import { css } from "styled-components";
-import type { CSSRules } from "styled-components";
+import { css, FlattenInterpolation, ThemeProps, DefaultTheme } from "styled-components";
 
 import { left, right } from "../utils/rtl";
-import type { Status } from "./WizardContext";
-import type { Theme } from "../defaultTheme";
+import { Status } from "./WizardContext";
+import { Theme } from "../defaultTheme";
 
-type ResolveStepBorder = ({|
-  isColumnOnDesktop: boolean,
-  isLastStep: boolean,
-  index: number,
-  status: string,
-  nextStepStatus: Status,
-|}) => ({|
-  theme: Theme,
-|}) => CSSRules;
-
-export const resolveStepBorder: ResolveStepBorder = ({
+export const resolveStepBorder = ({
   isColumnOnDesktop,
   index,
   status,
   isLastStep,
   nextStepStatus,
-}) => ({ theme }) => {
+}: {
+  isColumnOnDesktop: boolean;
+  index: number;
+  status: Status;
+  isLastStep: boolean;
+  nextStepStatus: Status;
+}) => ({ theme }: { theme: Theme }): FlattenInterpolation<ThemeProps<DefaultTheme>> => {
   return css`
     ${isColumnOnDesktop
       ? css`

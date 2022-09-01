@@ -1,11 +1,9 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import WizardStep from "./WizardStep";
 import { WizardStepContext } from "./WizardContext";
 import Button from "../Button";
-import ButtonLink from "../ButtonLink";
 import Stack from "../Stack";
 import ChevronDown from "../icons/ChevronDown";
 import Portal from "../Portal";
@@ -15,8 +13,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import useTranslate from "../hooks/useTranslate";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const unstyledListMixin = css`
   list-style-type: none;
@@ -24,7 +21,7 @@ const unstyledListMixin = css`
   padding: 0;
 `;
 
-const StyledList = styled.ul`
+const StyledList = styled.ul<{ $direction?: "row" | "column" }>`
   ${({ $direction }) => css`
     display: flex;
     ${unstyledListMixin};
@@ -39,7 +36,6 @@ const StyledList = styled.ul`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledList.defaultProps = {
   theme: defaultTheme,
 };
@@ -53,10 +49,10 @@ const Wizard = ({
   activeStep,
   children,
   onChangeStep,
-}: Props): React.Node | React.Element<"nav"> => {
+}: Props) => {
   const { isLargeMobile } = useMediaQuery();
   const [open, setOpen] = React.useState(false);
-  const toggle = React.useRef<React.ElementRef<typeof ButtonLink> | null>(null);
+  const toggle = React.useRef(null);
   const translate = useTranslate();
 
   const isCompact = !isLargeMobile;
@@ -66,7 +62,7 @@ const Wizard = ({
     if (index === completedSteps) return "available";
     return "disabled";
   });
-  // $FlowFixMe: not sure why "props" evaluates to "mixed"
+
   const activeStepTitle = childrenArray.find((step, index) => index === activeStep)?.props.title;
   const stepsCount = React.Children.count(children);
 

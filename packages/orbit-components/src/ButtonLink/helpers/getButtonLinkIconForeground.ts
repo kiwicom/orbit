@@ -2,13 +2,7 @@ import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
 import { Type } from "../index.d";
 import { Theme } from "../../defaultTheme";
-
-interface Foreground {
-  foreground: string | typeof getButtonLinkTypeToken;
-  foregroundHover: string | typeof getButtonLinkTypeToken;
-  foregroundActive: string | typeof getButtonLinkTypeToken;
-  foregroundFocus: string | typeof getButtonLinkTypeToken;
-}
+import { IconForeground } from "../../primitives/ButtonPrimitive/index.d";
 
 type getButtonLinkIconForegroundType = ({
   type,
@@ -18,7 +12,7 @@ type getButtonLinkIconForegroundType = ({
   type: Type;
   theme: Theme;
   compact: boolean;
-}) => Foreground | ((type: Type) => Foreground);
+}) => IconForeground;
 
 const getButtonLinkIconForeground: getButtonLinkIconForegroundType = ({ type, theme, compact }) => {
   const wrappedTypeReturn = (usedType: Type) => ({

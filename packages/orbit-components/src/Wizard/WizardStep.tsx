@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
@@ -9,10 +8,10 @@ import Stack from "../Stack";
 import Text from "../Text";
 import useTheme from "../hooks/useTheme";
 import WizardStepIcon, { StyledStepIconContainer } from "./WizardStepIcon";
-import { WizardStepContext } from "./WizardContext";
+import { WizardStepContext, Status } from "./WizardContext";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
-import type { Props } from "./WizardStep";
+import { Props } from "./WizardStep.d";
 import { resolveStepBorder } from "./helpers";
 
 const StyledBorder = styled.div`
@@ -25,12 +24,11 @@ const StyledBorder = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBorder.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledContainer = styled.li`
+const StyledContainer = styled.li<{ isCompact?: boolean; status: Status }>`
   ${({ theme, isCompact, status }) => css`
     position: relative;
     margin: -1px 0;
@@ -62,7 +60,6 @@ const StyledContainer = styled.li`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledContainer.defaultProps = {
   theme: defaultTheme,
 };
@@ -71,7 +68,7 @@ const StyledContent = styled.div`
   /* place above progress bar */
   position: relative;
 `;
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+
 StyledContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -89,7 +86,7 @@ const StyledActiveMarker = styled.div`
     pointer-events: none;
   `}
 `;
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+
 StyledActiveMarker.defaultProps = {
   theme: defaultTheme,
 };
@@ -98,12 +95,12 @@ const StyledProgressBar = styled.div`
   position: relative;
   ${resolveStepBorder};
 `;
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+
 StyledProgressBar.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledLabel = styled.div`
+const StyledLabel = styled.div<{ active?: boolean }>`
   ${({ theme, active }) => css`
     display: block;
     span {
@@ -119,12 +116,12 @@ const StyledLabel = styled.div`
     `}
   `};
 `;
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+
 StyledLabel.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledButtonWrapper = styled.div`
+const StyledButtonWrapper = styled.div<{ active?: boolean }>`
   ${({ theme, active }) => css`
     cursor: pointer;
     padding: 0 ${theme.orbit.spaceXSmall};
@@ -143,12 +140,12 @@ const StyledButtonWrapper = styled.div`
     `}
   `}
 `;
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+
 StyledButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
+const WizardStep = ({ dataTest, title, onClick }: Props) => {
   const theme = useTheme();
   const {
     index,
@@ -162,7 +159,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props): React.Node => {
     isLastStep,
   } = React.useContext(WizardStepContext);
 
-  const handleClick = (event: SyntheticEvent<HTMLElement>) => {
+  const handleClick = event => {
     if (onClick) onClick(event);
     if (onChangeStep) onChangeStep(index);
     onClose();

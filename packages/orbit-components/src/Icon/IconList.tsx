@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
@@ -39,7 +38,7 @@ const IconImport = styled.div`
   padding: ${defaultTokens.spaceXXSmall} ${defaultTokens.spaceXSmall};
 `;
 
-const IconList = (): React.Node => (
+const IconList = () => (
   <List>
     {Object.keys(Icons)
       .filter(n => n !== "__namedExportsOrder")

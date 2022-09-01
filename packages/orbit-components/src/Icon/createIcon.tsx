@@ -1,12 +1,13 @@
-// @flow
 import * as React from "react";
 
 import whiteListProps from "./helpers/whiteListProps";
-import type { CreateIcon } from "./createIcon";
+import OrbitIcon, { Props } from "./index.d";
 
-import OrbitIcon from ".";
-
-const createIcon: CreateIcon = (def, viewBox, displayName) => {
+const createIcon = (
+  def: React.ReactNode,
+  viewBox: string,
+  displayName: string,
+): React.ComponentType<Props> => {
   const icon = props => (
     <OrbitIcon viewBox={viewBox} {...whiteListProps(props)}>
       {def}

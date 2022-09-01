@@ -1,11 +1,9 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";
-
-import type { GetSize, FactoryProps } from ".";
+import { GetSize, FactoryProps } from "./index.d";
 
 export const getSize: GetSize = size => ({ theme }) => {
   const tokens = {
@@ -58,12 +56,11 @@ const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden,
   ${reverse};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const OrbitIcon = (props: FactoryProps): React.Node => {
+const OrbitIcon = (props: FactoryProps) => {
   const {
     size,
     color,

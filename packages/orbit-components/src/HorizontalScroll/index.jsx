@@ -19,7 +19,15 @@ const shadowMixin = css`
 `;
 
 const StyledWrapper = styled.div`
-  ${({ isDragging, $minHeight, elevationColor, overflowElevation, isStart, isOverflowing }) => css`
+  ${({
+    isDragging,
+    $minHeight,
+    elevationColor,
+    overflowElevation,
+    isStart,
+    isEnd,
+    isOverflowing,
+  }) => css`
     position: relative;
     width: 100%;
     min-height: ${$minHeight && `${$minHeight}px`};
@@ -36,6 +44,7 @@ const StyledWrapper = styled.div`
       }
     `}
     ${isOverflowing &&
+    !isEnd &&
     overflowElevation &&
     css`
       &:after {
@@ -104,10 +113,10 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
     ref,
   ): React.Node => {
     const scrollWrapperRef = React.useRef<HTMLElement | null>(null);
-    const containerRef = React.useRef<HTMLElement | null>(null);
-    const { isDragging, reachedStart } = useScrollBox(scrollWrapperRef);
-    const theme = useTheme();
+    const { isDragging, reachedStart, reachedEnd } = useScrollBox(scrollWrapperRef);
     const [isOverflowing, setOverflowing] = React.useState(false);
+    const containerRef = React.useRef<HTMLElement | null>(null);
+    const theme = useTheme();
 
     const handleOverflow = React.useCallback(() => {
       if (scrollWrapperRef.current?.scrollWidth && containerRef.current?.offsetWidth) {
@@ -137,6 +146,7 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
         data-test={dataTest}
         id={id}
         isDragging={isDragging}
+        isEnd={reachedEnd}
         isStart={reachedStart}
         isOverflowing={isOverflowing}
         ref={mergeRefs([ref, containerRef])}

@@ -10,6 +10,7 @@ type Type = "neutral" | "info" | "success" | "warning" | "critical";
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly type?: Type;
+  readonly strikeThrough?: boolean;
   readonly icon: React.ReactNode;
 }
 

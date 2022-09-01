@@ -7,6 +7,8 @@ const timing = (1 / 60) * 1000;
 // eslint-disable-next-line no-bitwise
 const decay = (v: number) => -0.1 * ((1 / timing) ^ 4) + v;
 
+const TRIGGER_OFFSET = 50;
+
 type UseScroll = (ref: {| current: HTMLElement | null |}) => {|
   isDragging: boolean,
   clickStartX: ?number,
@@ -15,6 +17,7 @@ type UseScroll = (ref: {| current: HTMLElement | null |}) => {|
   momentum: number,
   speed: number,
   lastScrollX: number,
+  reachedEnd: boolean,
   reachedStart: boolean,
 |};
 
@@ -27,6 +30,7 @@ const useScroll: UseScroll = ref => {
   const [lastScrollX, setLastScrollX] = useState(0);
   const [speed, setSpeed] = useState(0);
   const [reachedStart, setReachedStart] = useState(false);
+  const [reachedEnd, setReachedEnd] = useState(false);
 
   const scrollWrapperCurrent = ref.current;
 
@@ -82,11 +86,17 @@ const useScroll: UseScroll = ref => {
           setClickStartX(undefined);
           setScrollStartX(undefined);
           setIsDragging(false);
-          if (ref.current?.scrollLeft === 0) {
-            setReachedStart(true);
-          } else {
-            setReachedStart(false);
+
+          if (scrollStartX !== undefined && ref.current?.scrollLeft) {
+            if (ref.current.scrollLeft <= scrollStartX + TRIGGER_OFFSET) {
+              setReachedEnd(true);
+            } else {
+              setReachedEnd(false);
+            }
           }
+
+          if (ref.current?.scrollLeft === 0) setReachedStart(true);
+          else setReachedStart(false);
         }
       };
 
@@ -112,6 +122,7 @@ const useScroll: UseScroll = ref => {
     momentum,
     lastScrollX,
     speed,
+    reachedEnd,
     reachedStart,
   };
 };

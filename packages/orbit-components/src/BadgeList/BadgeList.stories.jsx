@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Tooltip from "../Tooltip";
@@ -52,18 +52,20 @@ export const Types = (): React.Node => {
 export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
   const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.NEUTRAL);
+  const strikeThrough = boolean("strikeThrough", false);
+
   return (
     <BadgeList dataTest={dataTest}>
-      <BadgeListItem icon={<Icons.AlertCircle />} type={type}>
+      <BadgeListItem icon={<Icons.AlertCircle />} type={type} strikeThrough={strikeThrough}>
         You&apos;re departing from a different place
       </BadgeListItem>
-      <BadgeListItem icon={<Icons.SelfTransfer />} type={type}>
+      <BadgeListItem icon={<Icons.SelfTransfer />} type={type} strikeThrough={strikeThrough}>
         <Tooltip content="Additional information">
           <Text>Self transfer at Vienna</Text>
         </Tooltip>{" "}
         is your responsibility
       </BadgeListItem>
-      <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type}>
+      <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type} strikeThrough={strikeThrough}>
         <TextLink onClick={action("link clicked")} type="secondary">
           Transfer protected
         </TextLink>{" "}

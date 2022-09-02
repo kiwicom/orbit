@@ -7,11 +7,7 @@ import { Translations } from "../Dictionary/index.d";
 
 export type Values = Record<string, string | number>;
 
-export type PureTranslate = (
-  dictionary: Translations,
-  key: string,
-  values?: Values,
-) => React.ReactElement<string>;
+export type PureTranslate = (dictionary: Translations, key: string, values?: Values) => string;
 
 export interface Props {
   readonly tKey: string;

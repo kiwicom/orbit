@@ -30,12 +30,14 @@ const InputStepper = React.forwardRef<HTMLInputElement, Props>(
     };
 
     const handleIncrementCounter = (
-      ev?: React.SyntheticEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>,
+      ev?:
+        | React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>
+        | React.KeyboardEvent<HTMLButtonElement>,
     ) => {
       if (ev && ev.type === "click") {
         incrementCounter();
       }
-      if (ev && ev.type === "keydown") {
+      if (ev && ev instanceof KeyboardEvent) {
         if (ev.keyCode === KEY_CODE_MAP.SPACE) {
           ev.preventDefault();
           incrementCounter();
@@ -46,12 +48,14 @@ const InputStepper = React.forwardRef<HTMLInputElement, Props>(
     };
 
     const handleDecrementCounter = (
-      ev?: React.SyntheticEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>,
+      ev?:
+        | React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>
+        | React.KeyboardEvent<HTMLButtonElement>,
     ) => {
       if (ev && ev.type === "click") {
         decrementCounter();
       }
-      if (ev && ev.type === "keydown") {
+      if (ev && ev instanceof KeyboardEvent) {
         if (ev.keyCode === KEY_CODE_MAP.SPACE) {
           ev.preventDefault();
           decrementCounter();

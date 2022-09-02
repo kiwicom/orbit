@@ -23,9 +23,7 @@ export interface ButtonCommonProps extends Common.Globals, Common.SpaceAfter {
   readonly iconLeft?: React.ReactNode;
   readonly iconRight?: React.ReactNode;
   readonly loading?: boolean;
-  readonly onClick?: Common.Event<
-    React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement | HTMLDivElement>
-  >;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
   readonly rel?: string;
   readonly role?: string;
   readonly submit?: boolean;

@@ -1,9 +1,8 @@
-// @flow
 import * as React from "react";
 
 import theme from "../../defaultTheme";
 import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
-import type { Props } from "..";
+import { Props } from "../index.d";
 
 const tokens = {
   [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.heightIllustrationSmall,
@@ -13,11 +12,10 @@ const tokens = {
   [SIZE_OPTIONS.DISPLAY]: "460px",
 };
 
-type WrapperProps = {|
-  ...Props,
-  viewBox: string,
-  children: React.Node,
-|};
+interface WrapperProps extends Props {
+  viewBox: string;
+  children: React.ReactNode;
+}
 
 const IllustrationWrapper = ({
   size = "medium",
@@ -27,7 +25,7 @@ const IllustrationWrapper = ({
   ariaLabelledby,
   dataTest,
   children,
-}: WrapperProps): React.Element<"svg"> => {
+}: WrapperProps) => {
   const height = tokens[size];
 
   return (

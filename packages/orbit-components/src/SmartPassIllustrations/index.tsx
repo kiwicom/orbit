@@ -1,4 +1,3 @@
-// @flow
 export { default as SmartPassV1 } from "./illustrations/SmartPassV1";
 export { default as SmartPassV2 } from "./illustrations/SmartPassV2";
 export { default as SmartPassV3 } from "./illustrations/SmartPassV3";

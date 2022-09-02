@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, select } from "@storybook/addon-knobs";
 
@@ -12,11 +11,11 @@ const SIZE_OPTIONS = {
   DISPLAY: "display",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   return <SmartPassIllustrations.SmartPassV1 />;
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const size = select("sizes", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const dataTest = text("dataTest", "test");
   const title = text("title", "title");

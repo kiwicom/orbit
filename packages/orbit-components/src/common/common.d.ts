@@ -5,6 +5,7 @@ import React from "react";
 
 /**
 Common types used in @kiwicom/orbit-component declarations
+
 */
 export type Translation = React.ReactNode;
 // TODO: remove after switch to typescript

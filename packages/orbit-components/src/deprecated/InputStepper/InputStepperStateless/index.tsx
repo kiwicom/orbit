@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
@@ -9,8 +8,7 @@ import ButtonLink from "../../../ButtonLink";
 import InputField, { Input, Prefix } from "../../../InputField";
 import defaultTheme from "../../../defaultTheme";
 import getSpacingToken from "../../../common/getSpacingToken";
-
-import type { StateLessProps } from ".";
+import { Props } from "./index.d";
 
 const StyledInputStepper = styled.div`
   width: 100%;
@@ -29,7 +27,6 @@ const StyledInputStepper = styled.div`
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInputStepper.defaultProps = {
   theme: defaultTheme,
 };
@@ -46,8 +43,8 @@ const InputStepperStateless = ({
   name,
   dataTest,
   size = SIZE_OPTIONS.NORMAL,
-  maxValue,
-  minValue,
+  maxValue = Infinity,
+  minValue = -Infinity,
   required,
   readOnly,
   tabIndex,
@@ -61,7 +58,7 @@ const InputStepperStateless = ({
   disabledDecrement,
   titleIncrement,
   titleDecrement,
-}: StateLessProps): React.Node => {
+}: Props) => {
   return (
     <StyledInputStepper spaceAfter={spaceAfter}>
       <InputField
@@ -83,8 +80,8 @@ const InputStepperStateless = ({
         value={value}
         minValue={minValue}
         maxValue={maxValue}
-        tabIndex={tabIndex}
-        ref={forwardedRef}
+        tabIndex={Number(tabIndex)}
+        ref={forwardedRef || undefined}
         prefix={
           <ButtonLink
             type="primary"

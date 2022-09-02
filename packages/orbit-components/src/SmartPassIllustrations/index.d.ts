@@ -9,7 +9,7 @@ type Sizes = "extraSmall" | "small" | "medium" | "large" | "display";
 export interface Props extends Common.Globals {
   readonly size?: Sizes;
   readonly title?: string;
-  readonly desciption?: string;
+  readonly description?: string;
   readonly primary?: string;
   readonly secondary?: string;
   readonly ariaLabelledby?: string;

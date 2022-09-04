@@ -1,9 +1,8 @@
-// @flow
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-import typeof DefaultTheme from "./defaultTheme";
+import DefaultTheme from "./defaultTheme.d";
 
-const defaultTheme: DefaultTheme = {
+const defaultTheme: typeof DefaultTheme = {
   orbit: defaultTokens,
   transitions: true,
   lockScrolling: true,

@@ -70,7 +70,7 @@ describe("#Box", () => {
     );
 
     const el = screen.getByTestId(dataTest);
-    const getOmittedHex = hex =>
+    const getOmittedHex = (hex: string) =>
       convertHexToRgba(hex, NaN).replace(", NaN", "").replace("rgba", "rgb");
 
     expect(el).toBeInTheDocument();
@@ -157,7 +157,7 @@ describe("#Box", () => {
   });
 
   it("should have ref", () => {
-    const ref = React.createRef();
+    const ref = React.createRef<HTMLDivElement>();
 
     render(
       <Box dataTest={dataTest} ref={ref} top="10px" left="5px" right="0" bottom="0">

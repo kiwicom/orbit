@@ -3,9 +3,7 @@
 
 import * as React from "react";
 
-export type Translations = {
-  [key: string]: string;
-};
+export type Translations = Record<string, string>;
 
 export interface Props {
   readonly values: Translations;

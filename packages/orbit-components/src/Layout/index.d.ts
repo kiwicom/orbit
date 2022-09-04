@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-type Type = "Search" | "Booking" | "MMB";
+export type Type = "Search" | "Booking" | "MMB";
 
 export interface Props extends Common.Globals {
   readonly type: Type;

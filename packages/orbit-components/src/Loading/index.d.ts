@@ -5,9 +5,9 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader" | "inlineLoader";
+export type Type = "buttonLoader" | "boxLoader" | "searchLoader" | "pageLoader" | "inlineLoader";
 
-interface Props extends Common.Globals {
+export interface Props extends Common.Globals {
   readonly children?: React.ReactNode;
   readonly loading?: boolean;
   readonly type?: Type;

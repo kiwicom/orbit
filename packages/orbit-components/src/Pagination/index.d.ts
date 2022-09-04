@@ -5,8 +5,9 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-interface Props extends Common.Globals {
-  readonly onPageChange: (page: number) => void;
+export type OnPageChange = (page: number) => void;
+export interface Props extends Common.Globals {
+  readonly onPageChange: OnPageChange;
   readonly pageCount: number;
   readonly selectedPage?: number;
   readonly hideLabels?: boolean;

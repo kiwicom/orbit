@@ -6,9 +6,12 @@ import { StyledComponent } from "styled-components";
 
 import * as Common from "../common/common";
 
-interface Props extends Common.SpaceAfter {
-  indent?: "none" | "small" | "medium" | "large" | "XLarge" | "XXLarge";
-  align?: "left" | "right" | "center";
+export type Indent = "none" | "small" | "medium" | "large" | "XLarge" | "XXLarge";
+export type Align = "left" | "center" | "right";
+
+export interface Props extends Common.SpaceAfter {
+  indent?: Indent;
+  align?: Align;
 }
 
 declare const Separator: React.FunctionComponent<Props>;

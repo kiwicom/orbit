@@ -1,6 +1,6 @@
-import Values from "../../Translate";
+import { Values } from "../../Translate/index.d";
 
-type TranslateFunction = (key: string, values?: typeof Values) => string;
+type TranslateFunction = (key: string, values?: Values) => string;
 
 declare const UseTranslate: () => TranslateFunction;
 

@@ -6,10 +6,10 @@ import * as React from "react";
 import * as Common from "../common/common";
 import SeatLegend from "./components/SeatLegend";
 
-type Size = "small" | "medium";
-type Type = "default" | "legroom" | "unavailable";
+export type Size = "small" | "medium";
+export type Type = "default" | "legroom" | "unavailable";
 
-interface Props extends Common.Globals {
+export interface Props extends Common.Globals {
   readonly type?: Type;
   readonly size?: Size;
   readonly title?: string;

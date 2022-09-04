@@ -9,6 +9,7 @@ import * as Common from "../common/common";
 type Event = Common.Event<React.SyntheticEvent<HTMLSelectElement>>;
 
 interface Option {
+  readonly key?: string;
   readonly value: string | number;
   readonly label?: string;
   readonly disabled?: boolean;

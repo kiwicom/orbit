@@ -4,7 +4,7 @@
 import * as React from "react";
 
 import * as Common from "../common/common";
-import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
+import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index.d";
 
 export type Type = "primary" | "secondary" | "critical";
 

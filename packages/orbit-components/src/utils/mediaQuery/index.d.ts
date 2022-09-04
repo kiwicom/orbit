@@ -5,6 +5,21 @@ import type { Interpolation } from "styled-components";
 import { Theme } from "../../defaultTheme";
 import { DEVICES, QUERIES } from "./consts";
 
+export type Devices =
+  | "largeDesktop"
+  | "desktop"
+  | "tablet"
+  | "largeMobile"
+  | "mediumMobile"
+  | "smallMobile";
+
+type BreakpointToken =
+  | "widthBreakpointMediumMobile"
+  | "widthBreakpointLargeMobile"
+  | "widthBreakpointTablet"
+  | "widthBreakpointDesktop"
+  | "widthBreakpointLargeDesktop";
+
 export type QueryFunction = (style: Interpolation<any>) => Interpolation<any>;
 
 export type MediaQueries = Record<keyof typeof QUERIES, QueryFunction>;

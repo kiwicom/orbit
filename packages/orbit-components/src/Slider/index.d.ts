@@ -28,5 +28,11 @@ export interface Props extends Common.Globals {
   readonly histogramLoadingText?: Common.Translation;
 }
 
+export interface State {
+  value: Value;
+  handleIndex: number | null;
+  focused: boolean;
+}
+
 declare const Slider: React.FunctionComponent<Props>;
 export { Slider, Slider as default };

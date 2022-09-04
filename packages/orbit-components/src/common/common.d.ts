@@ -3,8 +3,9 @@
 
 import React from "react";
 
-/*
+/**
 Common types used in @kiwicom/orbit-component declarations
+
 */
 export type Translation = React.ReactNode;
 // TODO: remove after switch to typescript
@@ -41,10 +42,10 @@ export interface Globals {
   readonly id?: string;
 }
 
-export type RefType = React.LegacyRef<HTMLElement>;
+export type RefType<T = HTMLElement> = { current: T | null } | ((instance: T | null) => void);
 
-export interface Ref {
-  readonly ref?: { current: HTMLElement | null } | ((instance: HTMLElement | null) => void);
+export interface Ref<T = HTMLElement> {
+  readonly ref?: RefType<T>;
 }
 
 export type SpaceAfterSizes =

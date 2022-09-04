@@ -9,7 +9,8 @@ type Resize = "vertical" | "none";
 // InputEvent
 type Event = Common.Event<React.SyntheticEvent<HTMLTextAreaElement>>;
 
-interface Props extends Common.Globals, Common.Ref, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
+  readonly ref?: React.ForwardedRef<HTMLTextAreaElement>;
   readonly size?: Common.InputSize;
   readonly name?: string;
   readonly rows?: number;

@@ -14,7 +14,8 @@ export interface Props extends Common.Globals {
   readonly scrollingElementRef?: React.Ref<HTMLElement>;
   readonly autoFocus?: boolean;
   readonly onClose?: Common.Event<
-    React.KeyboardEvent<HTMLDivElement> | React.SyntheticEvent<HTMLButtonElement> | React.MouseEvent
+    | React.KeyboardEvent<HTMLDivElement>
+    | React.SyntheticEvent<HTMLButtonElement | HTMLDivElement | HTMLAnchorElement>
   >;
   readonly fixedFooter?: boolean;
   readonly mobileHeader?: boolean;
@@ -24,7 +25,7 @@ export interface Props extends Common.Globals {
   readonly disableAnimation?: boolean;
 }
 
-type Instance = {
+export type Instance = {
   getScrollPosition: () => number | null;
   setScrollPosition: (value: number) => void;
   modalBody: React.RefObject<HTMLElement>;

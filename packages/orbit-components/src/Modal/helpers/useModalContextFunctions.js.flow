@@ -1,4 +1,0 @@
-// @flow
-export type UseModalContextFunctions = () => void;
-
-declare export default UseModalContextFunctions;

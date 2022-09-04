@@ -13,9 +13,7 @@ export interface Props extends Common.Globals {
   readonly disabled?: boolean;
   readonly icon?: React.ReactNode;
   readonly action?: React.ReactNode;
-  readonly onClick?: Common.Event<
-    React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>
-  >;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLDivElement>>;
 }
 
 declare const ListChoice: React.FunctionComponent<Props>;

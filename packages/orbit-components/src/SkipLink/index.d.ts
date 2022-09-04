@@ -5,14 +5,13 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-interface Action {
+export interface Action {
   readonly name: string;
   readonly href?: string;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  readonly onClick?: {} | Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLAnchorElement>>;
 }
 
-interface Props {
+export interface Props {
   readonly links: Action[];
   readonly buttonLabel?: string;
 }

@@ -5,7 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-interface Props extends Common.Globals {
+export interface Props extends Common.Globals {
   readonly as?: string;
   readonly title?: React.ReactNode;
   readonly description?: React.ReactNode;
@@ -15,7 +15,7 @@ interface Props extends Common.Globals {
   readonly external?: boolean;
   readonly href?: string;
   readonly onClick?: Common.Event<
-    React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>
+    React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>
   >;
   readonly expandable?: boolean;
   readonly initialExpanded?: boolean;

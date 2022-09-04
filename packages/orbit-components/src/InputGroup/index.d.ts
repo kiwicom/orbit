@@ -6,9 +6,11 @@ import * as React from "react";
 import * as Common from "../common/common";
 
 type Size = "small" | "normal";
-type Event = Common.Event<React.SyntheticEvent<HTMLInputElement | HTMLSelectElement>>;
+export type Event = Common.Event<
+  React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+>;
 
-interface Props extends Common.Globals, Common.SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly label?: Common.Translation;
   readonly flex?: string | string[];
   readonly size?: Size;

@@ -3,11 +3,13 @@
 
 import * as React from "react";
 
-type Values = {
-  [key: string]: string | number;
-};
+import { Translations } from "../Dictionary/index.d";
 
-interface Props {
+export type Values = Record<string, string | number>;
+
+export type PureTranslate = (dictionary: Translations, key: string, values?: Values) => string;
+
+export interface Props {
   readonly tKey: string;
   readonly values?: Values;
 }

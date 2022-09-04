@@ -3,18 +3,23 @@
 
 import * as React from "react";
 
+import defaultTheme from "../defaultTheme";
 import * as Common from "../common/common";
 
+export type Size = "small" | "medium" | "large";
+
+export type Color =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "info"
+  | "success"
+  | "warning"
+  | "critical";
+
 export interface Props extends Common.Globals {
-  readonly size?: "small" | "medium" | "large";
-  readonly color?:
-    | "primary"
-    | "secondary"
-    | "tertiary"
-    | "info"
-    | "success"
-    | "warning"
-    | "critical";
+  readonly size?: Size;
+  readonly color?: Color;
   readonly className?: string;
   readonly customColor?: string;
   readonly reverseOnRtl?: boolean;
@@ -27,5 +32,9 @@ export interface FactoryProps extends Props {
   readonly viewBox: string;
 }
 
+export type GetSize = (size: Size) => ({ theme }: { theme: typeof defaultTheme }) => string;
+
 declare const Icon: React.FunctionComponent<FactoryProps>;
-export { Icon, Icon as default };
+declare const getSize: GetSize;
+
+export { Icon, getSize, Icon as default };

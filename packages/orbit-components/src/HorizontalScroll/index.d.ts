@@ -3,12 +3,12 @@
 
 import * as React from "react";
 
-import { Spacing } from "../Stack";
+import { Spacing } from "../Stack/index.d";
 import * as Common from "../common/common";
 
-/** DOCS:
-  To implement HorizontalScroll component into your project you'll need to add the import:
+/** DOCS:implement HorizontalScroll component into your project you'll need to add the import:
 
+  To
   ```jsx
   import HorizontalScroll from "@kiwicom/orbit-components/lib/HorizontalScroll";
   ```
@@ -23,9 +23,10 @@ import * as Common from "../common/common";
     ...etc
   </HorizontalScroll>
   ```
+
 */
 
-type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
+export type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
 
 export interface Props extends Common.Globals {
   /** set minimal height */

@@ -23,7 +23,7 @@ export interface ButtonCommonProps extends Common.Globals, Common.SpaceAfter {
   readonly iconLeft?: React.ReactNode;
   readonly iconRight?: React.ReactNode;
   readonly loading?: boolean;
-  readonly onClick?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
   readonly rel?: string;
   readonly role?: string;
   readonly submit?: boolean;
@@ -87,5 +87,5 @@ export interface PrimitiveTypes extends HeightProps, Foreground, Background, Box
 export type Props = ButtonCommonProps & PrimitiveTypes;
 
 declare const StyledButtonPrimitive: React.ComponentType<Props>;
-declare const Button: React.RefForwardingComponent<HTMLButtonElement, Props>;
+declare const Button: React.ForwardRefRenderFunction<HTMLButtonElement, Props>;
 export { Button, Button as default, StyledButtonPrimitive };

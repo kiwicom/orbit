@@ -1,26 +1,23 @@
 import getSizeToken from "./getSizeToken";
 import getPadding from "./getPadding";
 import { SIZE_OPTIONS } from "./consts";
-import { Size, HeightProps } from "../index.d";
+import { Size, HeightProps, ButtonCommonProps } from "../index.d";
 import { Theme } from "../../../defaultTheme";
 
-interface Params {
-  width?: string;
+interface Params
+  extends Pick<
+    ButtonCommonProps,
+    "iconRight" | "contentAlign" | "contentWidth" | "iconLeft" | "width" | "iconRight" | "children"
+  > {
   size?: Size;
   theme: Theme;
-  iconRight?: boolean;
-  contentAlign?: "left" | "center" | "right";
-  contentWidth?: string;
-  iconLeft?: boolean;
-  children?: React.ReactNode;
 }
 
-interface Output extends HeightProps {
-  width?: string;
+interface Output
+  extends HeightProps,
+    Pick<ButtonCommonProps, "contentAlign" | "contentWidth" | "width"> {
   fontWeight: string;
   padding: string;
-  contentAlign: "left" | "center" | "right" | "space-between";
-  contentWidth: string;
 }
 
 const getCommonProps = ({

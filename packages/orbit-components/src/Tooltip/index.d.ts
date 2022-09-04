@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import { Popper } from "../primitives/TooltipPrimitive";
+import { Placement } from "@popperjs/core/lib/enums";
 import * as Common from "../common/common";
 
 type Size = "small" | "medium";
@@ -14,6 +14,7 @@ export interface Props extends Common.Globals, Popper {
   readonly renderInPortal?: boolean;
   readonly stopPropagation?: boolean;
   readonly enabled?: boolean;
+  readonly placement?: Placement;
   readonly tabIndex?: string | number;
   readonly removeUnderlinedText?: boolean;
   readonly block?: boolean;

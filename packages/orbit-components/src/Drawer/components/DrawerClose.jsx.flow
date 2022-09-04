@@ -1,8 +1,0 @@
-// @flow
-import * as React from "react";
-
-import type { OnClose } from "..";
-
-export type Props = {| +onClick?: OnClose |};
-
-declare export default React.AbstractComponent<Props, HTMLButtonElement>;

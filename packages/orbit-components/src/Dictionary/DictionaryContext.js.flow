@@ -1,8 +1,0 @@
-// @flow
-import * as React from "react";
-
-import type { Translations } from ".";
-
-export type DictionaryContextType = React.Context<Translations>;
-
-declare export default DictionaryContextType;

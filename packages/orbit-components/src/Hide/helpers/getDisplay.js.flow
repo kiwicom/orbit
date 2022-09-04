@@ -1,6 +1,0 @@
-// @flow
-import type { Props } from "..";
-
-export type GetDisplay = () => Props => string;
-
-declare export default GetDisplay;

@@ -1,14 +1,5 @@
 import { ALIGNS, JUSTIFY, DIRECTIONS } from "./consts";
-
-const DirectionsValues = Object.values(DIRECTIONS);
-const AlignValues = Object.values(ALIGNS);
-const JustifyValues = Object.values(JUSTIFY);
-
-type Property = number | boolean | string | { [key: string]: Property };
-
-type Direction = typeof DirectionsValues[number];
-type Align = typeof AlignValues[number];
-type Justify = typeof JustifyValues[number];
+import { Justify, Property, Align, Direction } from "./index.d";
 
 export const isDefined = (prop: Property): boolean => typeof prop !== "undefined";
 
@@ -44,7 +35,8 @@ export const getJustify = (justify: Justify): string => {
 
 export const getDirection = (direction?: Direction): string => {
   if (!direction) return "";
-  return Object.values(DIRECTIONS).indexOf(direction) !== -1 ? direction : DIRECTIONS.ROW;
+  const directions = Object.values(DIRECTIONS) as Direction[];
+  return directions.indexOf(direction) !== -1 ? direction : DIRECTIONS.ROW;
 };
 
 export const getGrow = (grow: string | boolean): string => evaluateProp(grow, "1", "0");

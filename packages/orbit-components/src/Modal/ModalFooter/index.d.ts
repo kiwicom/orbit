@@ -5,7 +5,7 @@ import * as React from "react";
 import * as Common from "../../common/common";
 
 export interface Props extends Common.Globals {
-  readonly flex?: string | Array<string>;
+  readonly flex?: string | string[];
   readonly children: React.ReactNode;
 }
 declare class ModalFooter extends React.Component<Props> {}

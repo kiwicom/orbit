@@ -5,9 +5,15 @@ import * as React from "react";
 
 import type { TransitionDuration } from "../transition";
 
-interface Props {
+export interface State {
+  maxHeight: number | null;
+  transitionFinished: boolean;
+  visible: boolean;
+}
+
+export interface Props {
   readonly children: React.ReactNode;
-  readonly maxHeight: number | undefined | null;
+  readonly maxHeight: number | null;
   readonly expanded?: boolean;
   readonly ariaLabelledBy?: string;
   readonly id?: string;

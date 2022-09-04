@@ -1,5 +1,3 @@
-// @flow
-
 import { calculateLeftPosition, isFirst } from "..";
 
 describe("Handle in Slider: calculateLeftPosition", () => {

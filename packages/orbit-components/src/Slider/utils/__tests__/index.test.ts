@@ -1,5 +1,3 @@
-// @flow
-
 import calculateCountOf from "../calculateCountOf";
 
 describe("calculateCountOf", () => {

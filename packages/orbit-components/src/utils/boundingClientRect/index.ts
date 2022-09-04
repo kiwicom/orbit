@@ -1,16 +1,16 @@
 import React from "react";
 
 export interface Dimensions {
-  top: number | null;
-  right: number | null;
-  bottom: number | null;
-  left: number | null;
-  height: number | null;
-  width: number | null;
-  pureTop: number | null;
-  pureLeft: number | null;
-  pureRight: number | null;
-  pureBottom: number | null;
+  top: number;
+  right: number;
+  bottom: number;
+  left: number;
+  height: number;
+  width: number;
+  pureTop: number;
+  pureLeft: number;
+  pureRight: number;
+  pureBottom: number;
 }
 
 const boundingClientRect = (ref: React.MutableRefObject<HTMLElement>): Dimensions => {
@@ -36,16 +36,16 @@ const boundingClientRect = (ref: React.MutableRefObject<HTMLElement>): Dimension
   }
 
   return {
-    top: null,
-    right: null,
-    bottom: null,
-    left: null,
-    height: null,
-    width: null,
-    pureTop: null,
-    pureLeft: null,
-    pureRight: null,
-    pureBottom: null,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    height: 0,
+    width: 0,
+    pureTop: 0,
+    pureLeft: 0,
+    pureRight: 0,
+    pureBottom: 0,
   };
 };
 

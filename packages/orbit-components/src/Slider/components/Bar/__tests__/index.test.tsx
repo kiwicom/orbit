@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { render, fireEvent } from "@testing-library/react";
 
@@ -7,7 +5,7 @@ import Bar, { calculateBarPosition } from "..";
 
 describe("Slider/Bar", () => {
   it("should have exptected DOM output", () => {
-    const ref = React.createRef();
+    const ref = React.createRef<HTMLDivElement>();
     const onMouseDown = jest.fn();
     const value = [1, 12];
     const min = 1;
@@ -17,8 +15,7 @@ describe("Slider/Bar", () => {
     );
 
     expect(ref.current).toBeDefined();
-    // $FlowFixMe
-    fireEvent.mouseDown(container.firstChild, { pageX: 100 });
+    fireEvent.mouseDown(container.firstChild as HTMLElement, { pageX: 100 });
     expect(onMouseDown).toHaveBeenCalled();
   });
 });

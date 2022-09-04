@@ -1,11 +1,10 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
+import { Value } from "../../index.d";
+import { Translation } from "../../../common/common";
 import defaultTheme from "../../../defaultTheme";
 import Loading from "../../../Loading";
-
-import type { Props } from ".";
 
 const StyledHistogram = styled.div`
   display: flex;
@@ -56,12 +55,20 @@ const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHistogramColumn.defaultProps = {
   theme: defaultTheme,
 };
 
-const Histogram = ({ data, value, min, loading = false, loadingText, step }: Props): React.Node => {
+interface Props {
+  data?: number[];
+  value: Value;
+  min: number;
+  step: number;
+  loading?: boolean;
+  loadingText?: Translation;
+}
+
+const Histogram = ({ data, value, min, loading = false, loadingText, step }: Props) => {
   const maxValue = !!data && Math.max(...data);
   const highlightFrom = Array.isArray(value) ? value[0] : 0;
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;

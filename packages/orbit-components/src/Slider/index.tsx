@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
 import { warning } from "@adeira/js";
@@ -13,53 +12,50 @@ import Bar from "./components/Bar";
 import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
-import defaultTheme from "../defaultTheme";
+import defaultTheme, { ThemeProps } from "../defaultTheme";
 import mq from "../utils/mediaQuery";
-import type { ThemeProps } from "../defaultTheme";
 import boundingClientRect from "../utils/boundingClientRect";
-
-import type { State, SliderCallback, Props, Value } from ".";
+import { State, Callback as SliderCallback, Props, Value } from "./index.d";
 
 const StyledSlider = styled.div`
   position: relative;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSlider.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledSliderContent = styled.div`
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding-bottom: ${({ theme }) => theme.orbit.spaceXSmall};
+const StyledSliderContent = styled.div<{ focused?: boolean }>`
+  ${({ theme, focused }) => css`
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: ${theme.orbit.spaceXSmall};
 
-  ${mq.tablet(css`
-    width: calc(100% + 48px);
-    position: absolute;
-    bottom: -16px;
-    left: -24px;
-    right: -24px;
-    opacity: 0;
-    visibility: hidden;
-    padding: 12px 24px 48px 24px;
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-    transition: ${transition(["all"], "fast", "ease-in-out")};
+    ${mq.tablet(css`
+      width: calc(100% + 48px);
+      position: absolute;
+      bottom: -16px;
+      left: -24px;
+      right: -24px;
+      opacity: 0;
+      visibility: hidden;
+      padding: 12px 24px 48px 24px;
+      border-radius: ${theme.orbit.borderRadiusNormal};
+      transition: ${transition(["all"], "fast", "ease-in-out")};
 
-    background: transparent;
-    ${({ focused, theme }) =>
-      focused &&
+      background: transparent;
+      ${focused &&
       css`
         visibility: visible;
         opacity: 1;
         background: ${theme.orbit.paletteWhite};
         box-shadow: ${theme.orbit.boxShadowRaised};
       `};
-  `)};
+    `)};
+  `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSliderContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -71,14 +67,16 @@ const StyledSliderInput = styled.div`
   height: 24px;
 `;
 
-export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
-  bar: {| current: HTMLElement | null |} = React.createRef<HTMLElement | null>();
+interface SliderProps extends Props, ThemeProps {}
 
-  static defaultProps: {| theme: typeof defaultTheme |} = {
+export class PureSlider extends React.PureComponent<SliderProps, State> {
+  bar = React.createRef<HTMLElement>();
+
+  static defaultProps = {
     theme: defaultTheme,
   };
 
-  state: State = {
+  state = {
     value: this.props.defaultValue || DEFAULT_VALUES.VALUE,
     handleIndex: null,
     focused: false,
@@ -96,23 +94,17 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   }
 
-  pauseEvent: (
+  pauseEvent = (
     event:
-      | SyntheticKeyboardEvent<HTMLDivElement>
-      | SyntheticMouseEvent<HTMLDivElement>
-      | SyntheticTouchEvent<HTMLDivElement>,
-  ) => void = (
-    event:
-      | SyntheticKeyboardEvent<HTMLDivElement>
-      | SyntheticMouseEvent<HTMLDivElement>
-      | SyntheticTouchEvent<HTMLDivElement>,
+      | React.KeyboardEvent<HTMLDivElement>
+      | React.MouseEvent<HTMLDivElement>
+      | React.TouchEvent<HTMLDivElement>
+      | React.FocusEvent<HTMLDivElement>,
   ) => {
-    // $FlowFixMe[method-unbinding]
     if (typeof event.stopPropagation === "function") {
       event.stopPropagation();
     }
     if (
-      // $FlowFixMe[method-unbinding]
       typeof event.preventDefault === "function" &&
       (typeof event.cancelable !== "boolean" || event.cancelable)
     ) {
@@ -120,35 +112,26 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  stopPropagation: (event: SyntheticTouchEvent<HTMLDivElement>) => void = (
-    event: SyntheticTouchEvent<HTMLDivElement>,
-  ) => {
-    // $FlowFixMe[method-unbinding]
+  stopPropagation = (event: React.TouchEvent<HTMLDivElement>) => {
     if (typeof event.stopPropagation === "function") event.stopPropagation();
   };
 
-  isNotEqual: (a: Value, b: Value) => boolean = (a: Value, b: Value) => {
+  isNotEqual = (a: Value, b: Value) => {
     if (Array.isArray(a) && Array.isArray(b)) {
       return a.toString() !== b.toString();
     }
     return a !== b;
   };
 
-  calculateValue: (ratio: number, addition?: boolean, deduction?: boolean) => number = (
-    ratio: number,
-    addition?: boolean,
-    deduction?: boolean,
-  ) => {
+  calculateValue = (ratio: number, addition?: boolean, deduction?: boolean) => {
     const { maxValue = DEFAULT_VALUES.MAX, minValue = DEFAULT_VALUES.MIN } = this.props;
     return Math.round(
       (maxValue - minValue + (addition ? 1 : 0)) * ratio + minValue - (deduction ? 1 : 0),
     );
   };
 
-  calculateValueFromPosition: (pageX: number, throughClick?: boolean) => null | number = (
-    pageX: number,
-    throughClick?: boolean,
-  ) => {
+  calculateValueFromPosition = (pageX: number, throughClick?: boolean) => {
+    // @ts-expect-error TODO
     const barRect = boundingClientRect(this.bar);
     if (barRect) {
       const {
@@ -157,7 +140,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
         theme: { rtl },
       } = this.props;
       const { handleIndex, value } = this.state;
-      const mousePosition = (rtl ? barRect.right : pageX) - (rtl ? pageX : barRect.left);
+      const mousePosition = (rtl ? barRect?.right : pageX) - (rtl ? pageX : barRect?.left);
       const positionRatio = mousePosition / barRect.width;
       const hasHistogram = histogramLoading || !!histogramData;
       // when range slider
@@ -192,14 +175,14 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return null;
   };
 
-  sortArray: (arr: Value) => Value = (arr: Value): Value => {
+  sortArray = (arr: Value): Value => {
     if (Array.isArray(arr)) {
       return arr.slice().sort((a, b) => a - b);
     }
     return arr;
   };
 
-  findClosestKey: (goal: number, value: Value) => null | number = (goal: number, value: Value) => {
+  findClosestKey = (goal: number, value: Value) => {
     return Array.isArray(value)
       ? value.reduce((acc, curr, index) => {
           return Array.isArray(value) && Math.abs(curr - goal) < Math.abs(value[acc] - goal)
@@ -223,8 +206,8 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return forcedValue || this.alignValue(value + step);
   };
 
-  handleKeyDown: (event: SyntheticKeyboardEvent<HTMLDivElement>) => void = (
-    event: SyntheticKeyboardEvent<HTMLDivElement>,
+  handleKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => void = (
+    event: React.KeyboardEvent<HTMLDivElement>,
   ) => {
     if (event.ctrlKey || event.shiftKey || event.altKey) return;
     const {
@@ -235,53 +218,69 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     } = this.props;
     if (event.keyCode === KEY_CODE_MAP.ARROW_UP) {
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(step));
+      if (this.props.onChange) {
+        this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(step));
+      }
     }
     if (event.keyCode === KEY_CODE_MAP.ARROW_DOWN) {
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(-step));
+      if (this.props.onChange) {
+        this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(-step));
+      }
     }
     if (event.keyCode === KEY_CODE_MAP.ARROW_RIGHT) {
       const switchStep = rtl ? -step : step;
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(switchStep));
+      if (this.props.onChange) {
+        this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(switchStep));
+      }
     }
     if (event.keyCode === KEY_CODE_MAP.ARROW_LEFT) {
       const switchStep = rtl ? step : -step;
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(switchStep));
+      if (this.props.onChange) {
+        this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(switchStep));
+      }
     }
     if (event.keyCode === KEY_CODE_MAP.HOME) {
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, minValue));
+      if (this.props.onChange) {
+        this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, minValue));
+      }
     }
     if (event.keyCode === KEY_CODE_MAP.END) {
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, maxValue));
+      if (this.props.onChange) {
+        this.injectCallbackAndSetState(this.props.onChange, this.moveValueByStep(0, maxValue));
+      }
     }
   };
 
-  handleBlur: () => void = () => {
+  handleBlur = () => {
     this.setState({ focused: false });
     const { value } = this.state;
+    // @ts-expect-error TODO fix this
     window.removeEventListener("keydown", this.handleKeyDown);
     window.removeEventListener("focusout", this.handleBlur);
-    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
+    if (this.props.onChangeAfter) {
+      this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
+    }
   };
 
-  handleOnFocus: (i: ?number) => (event: SyntheticKeyboardEvent<HTMLDivElement>) => void = (
-    i: ?number,
-  ) => (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
+  handleOnFocus = (i: number) => (event: React.FocusEvent<HTMLDivElement>) => {
     if (typeof i === "number") this.setState({ handleIndex: i });
     const { value } = this.state;
     this.setState({ focused: true });
     this.pauseEvent(event);
+    // @ts-expect-error TODO fix this
     window.addEventListener("keydown", this.handleKeyDown);
     window.addEventListener("focusout", this.handleBlur);
-    this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
+    if (this.props.onChangeBefore) {
+      this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
+    }
   };
 
-  handleMove: (newValue: ?number) => null | number | Array<number> = (newValue: ?number) => {
+  handleMove = (newValue: number) => {
     const { value, handleIndex } = this.state;
     if (newValue != null) {
       if (Array.isArray(value)) {
@@ -292,33 +291,32 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return null;
   };
 
-  handleBarMouseDown: (event: SyntheticMouseEvent<HTMLDivElement>) => void = (
-    event: SyntheticMouseEvent<HTMLDivElement>,
-  ) => {
+  handleBarMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
     const { value } = this.state;
     this.setState({ handleIndex: null });
     const newValue = this.calculateValueFromPosition(event.pageX, true);
+    const { onChangeBefore, onChange, onChangeAfter } = this.props;
     if (newValue) {
       if (Array.isArray(value)) {
         const index = this.findClosestKey(newValue, value);
-        const replacedValue = this.replaceValue(this.alignValue(newValue), index);
-        this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
-        this.injectCallbackAndSetState(this.props.onChange, replacedValue);
-        this.injectCallbackAndSetState(this.props.onChangeAfter, replacedValue);
+        const replacedValue = this.replaceValue(this.alignValue(newValue), index || 0);
+        if (onChangeBefore) this.injectCallbackAndSetState(onChangeBefore, value, true);
+        if (onChange) this.injectCallbackAndSetState(onChange, replacedValue);
+        if (onChangeAfter) this.injectCallbackAndSetState(onChangeAfter, replacedValue);
       } else {
         const alignedValue = this.alignValue(newValue);
-        this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
-        this.injectCallbackAndSetState(this.props.onChange, alignedValue);
-        this.injectCallbackAndSetState(this.props.onChangeAfter, alignedValue);
+        if (onChangeBefore) this.injectCallbackAndSetState(onChangeBefore, value, true);
+        if (onChange) this.injectCallbackAndSetState(onChange, alignedValue);
+        if (onChangeAfter) this.injectCallbackAndSetState(onChangeAfter, alignedValue);
       }
     }
   };
 
   injectCallbackAndSetState: (
-    callback: ?SliderCallback,
-    newValue: ?Value,
-    forced?: ?boolean,
-  ) => void = (callback: ?SliderCallback, newValue: ?Value, forced: ?boolean = false) => {
+    callback: SliderCallback,
+    newValue: Value,
+    forced?: boolean,
+  ) => void = (callback: SliderCallback, newValue: Value, forced?: boolean) => {
     const { value } = this.state;
     if (newValue != null) {
       if (this.isNotEqual(newValue, value) || forced) {
@@ -330,71 +328,77 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     }
   };
 
-  handleMouseMove: (event: SyntheticMouseEvent<HTMLDivElement>) => void = (
-    event: SyntheticMouseEvent<HTMLDivElement>,
-  ) => {
+  handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const newValue = this.calculateValueFromPosition(event.pageX);
     this.pauseEvent(event);
+    // @ts-expect-error TODO fix this
     this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
   };
 
-  handleMouseUp: () => void = () => {
+  handleMouseUp = () => {
     const { value } = this.state;
     this.setState({ focused: false });
+    // @ts-expect-error TODO fix this
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
-    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
+    if (this.props.onChangeAfter) {
+      this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
+    }
   };
 
-  handleMouseDown: (i: ?number) => (event: SyntheticMouseEvent<HTMLDivElement>) => void = (
-    i: ?number,
-  ) => (event: SyntheticMouseEvent<HTMLDivElement>) => {
+  handleMouseDown = (i: number) => (event: React.MouseEvent<HTMLDivElement>) => {
     // just allow left-click
     if (event.button === 0 && event.buttons !== 2) {
       const { value } = this.state;
       this.setState({ focused: true });
       if (typeof i === "number") this.setState({ handleIndex: i });
+      // @ts-expect-error TODO fix this
       window.addEventListener("mousemove", this.handleMouseMove);
       window.addEventListener("mouseup", this.handleMouseUp);
       this.pauseEvent(event);
-      this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
+      if (this.props.onChangeBefore) {
+        this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
+      }
     }
   };
 
-  handleOnTouchMove: (event: SyntheticTouchEvent<HTMLDivElement>) => void = (
-    event: SyntheticTouchEvent<HTMLDivElement>,
-  ) => {
+  handleOnTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     if (event.touches.length > 1) return;
     const newValue = this.calculateValueFromPosition(event.touches[0].pageX);
     this.pauseEvent(event);
+    // @ts-expect-error TODO fix this
     this.injectCallbackAndSetState(this.props.onChange, this.handleMove(newValue));
   };
 
-  handleTouchEnd: () => void = () => {
+  handleTouchEnd = () => {
     const { value } = this.state;
     this.setState({ focused: false });
+    // @ts-expect-error TODO fix this
     window.removeEventListener("touchmove", this.handleOnTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
-    this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
+    if (this.props.onChangeAfter) {
+      this.injectCallbackAndSetState(this.props.onChangeAfter, value, true);
+    }
   };
 
-  handleOnTouchStart: (i: ?number) => (event: SyntheticTouchEvent<HTMLDivElement>) => void = (
-    i: ?number,
-  ) => (event: SyntheticTouchEvent<HTMLDivElement>) => {
+  handleOnTouchStart = (i: number) => (event: React.TouchEvent<HTMLDivElement>) => {
     if (event.touches.length <= 1) {
       this.setState({ focused: true });
       const { value } = this.state;
       if (typeof i === "number") this.setState({ handleIndex: i });
+      // @ts-expect-error TODO fix this
       window.addEventListener("touchmove", this.handleOnTouchMove, {
         passive: false,
       });
       window.addEventListener("touchend", this.handleTouchEnd);
       this.stopPropagation(event);
-      this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
+      if (this.props.onChangeBefore) {
+        this.injectCallbackAndSetState(this.props.onChangeBefore, value, true);
+      }
     }
   };
 
-  alignValueToStep: (value: number) => number = (value: number) => {
+  alignValueToStep = (value: number) => {
     const { step = DEFAULT_VALUES.STEP } = this.props;
     if (step === 1) return value;
     const gap = value % step;
@@ -405,7 +409,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return value - gap;
   };
 
-  alignValueToMaxMin: (value: number) => number = (value: number) => {
+  alignValueToMaxMin = (value: number) => {
     const { maxValue = DEFAULT_VALUES.MAX, minValue = DEFAULT_VALUES.MIN } = this.props;
     if (value > maxValue) {
       return maxValue;
@@ -416,19 +420,15 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return value;
   };
 
-  alignValue: (value: number) => number = (value: number) =>
-    this.alignValueToMaxMin(this.alignValueToStep(value));
+  alignValue = (value: number) => this.alignValueToMaxMin(this.alignValueToStep(value));
 
-  replaceValue: (newValue: number, index: ?number) => number | Array<number> = (
-    newValue: number,
-    index: ?number,
-  ) => {
+  replaceValue = (newValue: number, index: number) => {
     const { value } = this.state;
     if (index == null || !Array.isArray(value)) return newValue;
     return value.map((item, key) => (key === index ? newValue : item));
   };
 
-  renderHandle: (valueNow: number, i: ?number) => React.Node = (valueNow: number, i: ?number) => {
+  renderHandle = (valueNow: number, i?: number) => {
     const {
       minValue = DEFAULT_VALUES.MIN,
       maxValue = DEFAULT_VALUES.MAX,
@@ -446,9 +446,9 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
         onTop={handleIndex === i}
         valueMax={maxValue}
         valueMin={minValue}
-        onMouseDown={this.handleMouseDown(i)}
-        onFocus={this.handleOnFocus(i)}
-        onTouchStart={this.handleOnTouchStart(i)}
+        onMouseDown={this.handleMouseDown(index)}
+        onFocus={this.handleOnFocus(index)}
+        onTouchStart={this.handleOnTouchStart(index)}
         value={value}
         ariaValueText={ariaValueText}
         ariaLabel={ariaLabel}
@@ -460,14 +460,14 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     );
   };
 
-  renderHandles: () => React.Node | Array<React.Node> = () => {
+  renderHandles = () => {
     const { value } = this.state;
     return Array.isArray(value)
       ? value.map((valueNow, i) => this.renderHandle(valueNow, i))
       : this.renderHandle(value);
   };
 
-  renderSliderTexts: (biggerSpace: boolean) => null | React.Node = (biggerSpace: boolean) => {
+  renderSliderTexts = (biggerSpace: boolean) => {
     const { label, valueDescription, histogramDescription } = this.props;
     if (!(label || valueDescription || histogramDescription)) return null;
     return (
@@ -493,7 +493,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     );
   };
 
-  renderHeading: (hasHistogram: boolean) => null | React.Node = (hasHistogram: boolean) => {
+  renderHeading = (hasHistogram: boolean) => {
     if (hasHistogram) {
       return (
         <Hide on={["smallMobile", "mediumMobile", "largeMobile"]} block>
@@ -504,7 +504,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
     return this.renderSliderTexts(true);
   };
 
-  render(): React.Node {
+  render() {
     const {
       minValue = DEFAULT_VALUES.MIN,
       maxValue = DEFAULT_VALUES.MAX,
@@ -543,6 +543,7 @@ export class PureSlider extends React.PureComponent<Props & ThemeProps, State> {
         )}
         <StyledSliderInput>
           <Bar
+            // @ts-expect-error todo
             ref={this.bar}
             onMouseDown={this.handleBarMouseDown}
             value={sortedValue}

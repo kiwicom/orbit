@@ -1,6 +1,6 @@
-// @flow
+import { Value, Data } from "../index.d";
 
-import type { CalculateCountOf } from "./calculateCountOf";
+type CalculateCountOf = (data: Data, value: Value, min: number) => [number, number];
 
 const countValues = (data, [from, to], min) =>
   data.reduce(

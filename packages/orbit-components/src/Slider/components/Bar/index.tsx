@@ -1,11 +1,9 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
+import { Value } from "../../index.d";
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
-
-import type { CalculateBarPosition, Props } from ".";
 
 const StyledBar = styled.div`
   display: block;
@@ -18,7 +16,12 @@ const StyledBar = styled.div`
   -webkit-user-select: none;
 `;
 
-export const calculateBarPosition: CalculateBarPosition = (value, max, min, hasHistogram) => {
+export const calculateBarPosition = (
+  value: Value,
+  max: number,
+  min: number,
+  hasHistogram: boolean,
+) => {
   if (Array.isArray(value)) {
     return {
       left: +(((value[0] - min) / (max - min + 1)) * 100).toFixed(1),
@@ -32,7 +35,7 @@ export const calculateBarPosition: CalculateBarPosition = (value, max, min, hasH
   };
 };
 
-export const StyledBarPart: any = styled(({ width, left, theme, active, ...props }) => (
+export const StyledBarPart = styled(({ width, left, theme, active, ...props }) => (
   <div {...props} />
 )).attrs(({ width, left, theme }) => {
   return {
@@ -46,16 +49,23 @@ export const StyledBarPart: any = styled(({ width, left, theme, active, ...props
   height: 4px;
   top: 10px;
   border-radius: 4px;
-  background-color: ${({ theme, active }) =>
+  background-color: ${({ theme, active }: { theme: typeof defaultTheme; active?: boolean }) =>
     active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudDarker};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBarPart.defaultProps = {
   theme: defaultTheme,
 };
 
-const Bar: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<Props, HTMLElement>(
+interface Props {
+  value: Value;
+  max: number;
+  min: number;
+  onMouseDown: React.MouseEventHandler<HTMLDivElement>;
+  hasHistogram: boolean;
+}
+
+const Bar = React.forwardRef<HTMLDivElement, Props>(
   ({ onMouseDown, value, max, min, hasHistogram }, ref) => {
     const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
     return (

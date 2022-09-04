@@ -1,12 +1,20 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
 import transition from "../../../utils/transition";
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
+import { Value } from "../../index.d";
 
-import type { Props, CalculateLeftPosition, IsFirst } from ".";
+type CalculateLeftPosition = (
+  valueNow: number,
+  valueMin: number,
+  valueMax: number,
+  isFirst: boolean,
+  isSimple: boolean,
+) => number;
+
+type IsFirst = (value: Value, valueNow: number, index: number, hasHistogram: boolean) => boolean;
 
 export const calculateLeftPosition: CalculateLeftPosition = (
   valueNow,
@@ -84,10 +92,25 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   }
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHandle.defaultProps = {
   theme: defaultTheme,
 };
+
+interface Props {
+  tabIndex: string | number;
+  onMouseDown: React.MouseEventHandler<HTMLDivElement>;
+  onFocus: React.FocusEventHandler<HTMLDivElement>;
+  onTouchStart: React.TouchEventHandler<HTMLDivElement>;
+  valueMax: number;
+  valueMin: number;
+  onTop: boolean;
+  index: number;
+  hasHistogram: boolean;
+  value: Value;
+  ariaLabel?: string | string[];
+  ariaValueText?: string;
+  dataTest?: string;
+}
 
 const Handle = ({
   tabIndex,
@@ -103,7 +126,7 @@ const Handle = ({
   ariaLabel,
   hasHistogram,
   dataTest,
-}: Props): React.Node => {
+}: Props) => {
   const valueNow = Array.isArray(value) ? value[index] : value;
   const first = isFirst(value, valueNow, index, hasHistogram);
   const isSimple = !hasHistogram && !Array.isArray(value);

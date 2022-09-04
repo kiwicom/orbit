@@ -1,16 +1,15 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import * as Common from "../../common/common";
 import getSpacingToken from "../../common/getSpacingToken";
 import themeDefault from "../../defaultTheme";
 import { left } from "../../utils/rtl";
 import BadgeList from "../../BadgeList";
 import { useWidth } from "../context";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-export const StyledWrapper: any = styled.div`
+export const StyledWrapper = styled.div<{ offset: number; spaceAfter?: Common.SpaceAfterSizes }>`
   ${({ theme, offset }) => css`
     margin-bottom: ${getSpacingToken};
     margin-${left}: ${
@@ -18,12 +17,11 @@ export const StyledWrapper: any = styled.div`
   }px`};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: themeDefault,
 };
 
-const ItineraryBadgeList = ({ children, spaceAfter = "medium", ...props }: Props): React.Node => {
+const ItineraryBadgeList = ({ children, spaceAfter = "medium", ...props }: Props) => {
   const { calculatedWidth: offset } = useWidth();
   return (
     <StyledWrapper offset={offset} spaceAfter={spaceAfter}>

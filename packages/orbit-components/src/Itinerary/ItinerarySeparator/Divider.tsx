@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
@@ -16,7 +15,7 @@ const StyledDivider = styled.div`
   background-repeat: repeat-x;
 `;
 
-const Divider = (): React.Node => {
+const Divider = () => {
   return <StyledDivider />;
 };
 

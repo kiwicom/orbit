@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import styled, { css } from "styled-components";
@@ -43,7 +42,7 @@ import Itinerary, {
   ItineraryStatus,
 } from ".";
 
-const StyledText = styled.p`
+const StyledText = styled.p<{ type: any }>`
   ${({ theme, type }) => css`
     font-weight: ${theme.orbit.fontWeightBold};
     font-size: ${theme.orbit.fontSizeTextSmall};
@@ -52,7 +51,6 @@ const StyledText = styled.p`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledText.defaultProps = {
   theme: defaultTheme,
 };
@@ -91,7 +89,7 @@ const BadgeGroup = () => {
   );
 };
 
-export const BadgeList = (): React.Node => {
+export const BadgeList = () => {
   return (
     <Stack flex direction="column">
       <ItineraryBadgeList>
@@ -171,7 +169,7 @@ const content = [
   },
 ];
 
-export const Segment = (): React.Node => {
+export const Segment = () => {
   return (
     <Stack spacing="large">
       <Itinerary>
@@ -235,7 +233,7 @@ export const Segment = (): React.Node => {
   );
 };
 
-export const Status = (): React.Node => {
+export const Status = () => {
   return (
     <>
       <Itinerary>
@@ -357,7 +355,7 @@ export const Status = (): React.Node => {
   );
 };
 
-export const ItinerarySeparatorComponent = (): React.Node => {
+export const ItinerarySeparatorComponent = () => {
   return (
     <Stack direction="column">
       <ItinerarySeparator>
@@ -368,7 +366,7 @@ export const ItinerarySeparatorComponent = (): React.Node => {
   );
 };
 
-export const Stop = (): React.Node => {
+export const Stop = () => {
   const date = text("date", "Fr, 19.10");
   const time = text("time", "14:05");
   const station = text("station", "Václav Havel Airport Prague (PRG)");
@@ -493,7 +491,7 @@ export const Stop = (): React.Node => {
   );
 };
 
-export const Detail = (): React.Node => {
+export const Detail = () => {
   return (
     <ItinerarySegment noElevation>
       <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
@@ -501,7 +499,7 @@ export const Detail = (): React.Node => {
   );
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const source = select("icon", Object.keys(Icons), "Airplane");
   const Icon = Icons[source];
 
@@ -552,7 +550,7 @@ export const Default = (): React.Node => {
   );
 };
 
-export const InsideModal = (): React.Node => {
+export const InsideModal = () => {
   const [isOpenedModal, setIsOpenedModal] = React.useState(false);
 
   return (
@@ -639,7 +637,7 @@ export const InsideModal = (): React.Node => {
   );
 };
 
-export const MultipleBanners = (): React.Node => {
+export const MultipleBanners = () => {
   return (
     <>
       <Heading type="title2">Throwaway ticketing</Heading>
@@ -775,7 +773,7 @@ export const MultipleBanners = (): React.Node => {
   );
 };
 
-export const RTL = (): React.Node => {
+export const RTL = () => {
   const source = select("icon", Object.keys(Icons), "Airplane");
   const Icon = Icons[source];
 

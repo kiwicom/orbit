@@ -1,21 +1,19 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import * as Common from "../../common/common";
 import { left, rtlSpacing } from "../../utils/rtl";
 import Text from "../../Text";
 import Stack from "../../Stack";
-import defaultTheme from "../../defaultTheme";
-import type { ThemeProps } from "../../defaultTheme";
+import defaultTheme, { ThemeProps } from "../../defaultTheme";
 import { STATUS } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
-import type { Status } from "..";
+import { Status } from "../index.d";
 import AlertOctagon from "../../icons/AlertOctagon";
 import Warning from "../../icons/AlertCircle";
 import Info from "../../icons/InformationCircle";
 import Check from "../../icons/CheckCircle";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemeProps) => {
   const border = {
@@ -39,7 +37,7 @@ const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemePr
   return border[status];
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $type: Status; spaceAfter: Common.SpaceAfterSizes }>`
   ${({ theme, $type }) => css`
     display: flex;
     box-sizing: border-box;
@@ -57,12 +55,11 @@ const StyledWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledStatusHeader = styled.div`
+const StyledStatusHeader = styled.div<{ $type: Status }>`
   ${({ theme, $type }) => css`
     display: flex;
     align-items: center;
@@ -73,25 +70,23 @@ const StyledStatusHeader = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStatusHeader.defaultProps = {
   theme: defaultTheme,
 };
 
 // calculatedOffset + paddings
-const StyledStatusText = styled.div`
+const StyledStatusText = styled.div<{ $offset: number }>`
   ${({ theme, $offset }) => css`
     z-index: 2;
     margin-${left}: ${parseInt(theme.orbit.spaceSmall, 10) + $offset}px;
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledStatusText.defaultProps = {
   theme: defaultTheme,
 };
 
-const StatusIcon = ({ type }: {| type: Status |}) => {
+const StatusIcon = ({ type }: { type: Status }) => {
   switch (type) {
     case "info":
       return <Info size="small" color={type} />;
@@ -106,13 +101,7 @@ const StatusIcon = ({ type }: {| type: Status |}) => {
   }
 };
 
-const ItineraryStatus = ({
-  type,
-  label,
-  spaceAfter = "medium",
-  children,
-  offset = 0,
-}: Props): React.Node => {
+const ItineraryStatus = ({ type, label, spaceAfter = "medium", children, offset = 0 }: Props) => {
   return (
     <StyledWrapper $type={type} spaceAfter={spaceAfter} tabIndex={0}>
       <StyledStatusHeader $type={type}>
@@ -120,6 +109,7 @@ const ItineraryStatus = ({
           <Stack inline spacing="XSmall" align="center">
             <StatusIcon type={type} />
             {label && (
+              // @ts-expect-error expected
               <Text as="div" type={type === "neutral" ? "primary" : type} weight="medium">
                 {label}
               </Text>

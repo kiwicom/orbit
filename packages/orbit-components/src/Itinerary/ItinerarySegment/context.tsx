@@ -1,9 +1,19 @@
-// @flow
 import * as React from "react";
 
-import type { Context } from "./context";
+interface Context {
+  isNextHidden: boolean;
+  isPrevHidden: boolean;
+  noElevation: boolean;
+  isHidden: boolean;
+  isBanner: boolean;
+  index: number;
+  opened: boolean;
+  toggleOpened: () => void;
+  last: boolean;
+  count: number;
+}
 
-export const ItinerarySegmentContext: React.Context<Context> = React.createContext({
+export const ItinerarySegmentContext = React.createContext<Context>({
   isNextHidden: false,
   isPrevHidden: false,
   isBanner: false,

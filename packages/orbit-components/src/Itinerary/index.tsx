@@ -1,7 +1,7 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
+import * as Common from "../common/common";
 import ItinerarySegmentBanner from "./ItinerarySegment/ItinerarySegmentBanner";
 import ItineraryBadgeList from "./ItineraryBadgeList";
 import ItinerarySegment from "./ItinerarySegment";
@@ -12,19 +12,17 @@ import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import { ItineraryProvider } from "./context";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledItineraryWrapper = styled.div`
+const StyledItineraryWrapper = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
   margin-bottom: ${getSpacingToken};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledItineraryWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const Itinerary = ({ children, dataTest, spaceAfter, id }: Props): React.Node => {
+const Itinerary = ({ children, dataTest, spaceAfter, id }: Props) => {
   return (
     <StyledItineraryWrapper data-test={dataTest} id={id} spaceAfter={spaceAfter}>
       <ItineraryProvider>{children}</ItineraryProvider>

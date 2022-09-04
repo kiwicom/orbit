@@ -1,18 +1,18 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { StarFull, CircleSmallEmpty as CircleEmpty, CircleSmall as Circle } from "../../../icons";
+import StarFull from "../../../icons/StarFull";
+import CircleEmpty from "../../../icons/CircleSmallEmpty";
+import Circle from "../../../icons/CircleSmall";
 import { useWidth } from "../../context";
 import defaultTheme from "../../../defaultTheme";
 import Stack from "../../../Stack";
 import Text from "../../../Text";
 import ItineraryIcon from "../ItineraryIcon";
 import { usePart } from "../context";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ isLast?: boolean; isFirst?: boolean; isBanner?: boolean }>`
   ${({ theme, isLast, isFirst, isBanner }) => css`
     display: flex;
     position: relative;
@@ -22,12 +22,11 @@ const StyledWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledDate = styled.div`
+const StyledDate = styled.div<{ minWidth?: number }>`
   ${({ minWidth }) => css`
     white-space: nowrap;
     min-width: ${minWidth}px;
@@ -44,7 +43,6 @@ const StyledHiddenCity = styled.p`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledHiddenCity.defaultProps = {
   theme: defaultTheme,
 };
@@ -54,13 +52,13 @@ const ItinerarySegmentStopIcon = ({
   isLast,
   isHidden,
   icon,
-}: {|
-  isHidden?: boolean,
-  isPrevHidden: boolean,
-  isLast: boolean,
-  icon?: React.Node,
-|}) => {
-  if (icon) return icon;
+}: {
+  isHidden?: boolean;
+  isPrevHidden: boolean;
+  isLast: boolean;
+  icon?: React.ReactNode;
+}): JSX.Element => {
+  if (icon) return <>{icon}</>;
   if (isHidden) return <StarFull color="warning" size="small" />;
   if (isPrevHidden && isLast) return <CircleEmpty size="small" color="tertiary" />;
 
@@ -81,7 +79,7 @@ const ItinerarySegmentStop = ({
   hiddenCityText = "Hidden city",
   minWidth = 70,
   type,
-}: Props): React.Node => {
+}: Props) => {
   const { calculatedWidth, setWidths } = useWidth();
   const { isPrevHidden, last, isBanner, index } = usePart();
   const [dateWidth, setDateWidth] = React.useState<HTMLDivElement | null>(null);

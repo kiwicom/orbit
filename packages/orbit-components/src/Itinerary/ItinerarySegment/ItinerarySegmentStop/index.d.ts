@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Status } from "../..";
+import { Status } from "../../index.d";
 
 /** DOCS:
   ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two locations, date and time,

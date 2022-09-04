@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -6,8 +5,7 @@ import defaultTheme from "../../../defaultTheme";
 import { StyledSeparator } from "../../../Separator";
 import ChevronRight from "../../../icons/ChevronRight";
 import { StyledWrapper as StyledBadgeListWrapper } from "../../ItineraryBadgeList";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledBannerWrapper = styled.div`
   ${({ theme }) => css`
@@ -34,12 +32,11 @@ const StyledBannerWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBannerWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const ItinerarySegmentBanner = ({ onClick, children }: Props): React.Node => {
+const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
   return (
     <StyledBannerWrapper onClick={onClick}>
       <div>{children}</div>

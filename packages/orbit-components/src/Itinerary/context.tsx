@@ -1,15 +1,20 @@
-// @flow
 import * as React from "react";
 
-import type { Context } from "./context";
-import typeof { ItineraryProvider as ItineraryProviderType } from "./context";
+interface Context {
+  setWidths: React.Dispatch<React.SetStateAction<number[]>>;
+  calculatedWidth: number;
+}
 
-export const ItineraryContext: React.Context<Context> = React.createContext({
+export const ItineraryContext = React.createContext({
   setWidths: () => {},
   calculatedWidth: 0,
 });
 
-export const ItineraryProvider: ItineraryProviderType = ({ children }): React.Node => {
+export const ItineraryProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): React.ReactElement<Context> => {
   const [widths, setWidths] = React.useState([70]);
   const [calculatedWidth, setCalculatedWidth] = React.useState(0);
 
@@ -21,6 +26,7 @@ export const ItineraryProvider: ItineraryProviderType = ({ children }): React.No
     <ItineraryContext.Provider
       value={{
         calculatedWidth,
+        // @ts-expect-error FIXME
         setWidths,
       }}
     >

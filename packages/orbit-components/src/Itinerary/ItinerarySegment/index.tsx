@@ -1,17 +1,20 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import * as Common from "../../common/common";
 import { ItinerarySegmentContext } from "./context";
 import Stack from "../../Stack";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
 import Separator from "../../Separator";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{
+  noElevation?: boolean;
+  actionable?: boolean;
+  spaceAfter?: Common.SpaceAfterSizes;
+}>`
   ${({ theme, noElevation, actionable }) => css`
     cursor: ${actionable && "pointer"};
     margin-bottom: ${getSpacingToken};
@@ -29,7 +32,6 @@ const StyledWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -42,8 +44,9 @@ const ItinerarySegment = ({
   actionable = true,
   onClick,
   banner,
-}: Props): React.Node => {
+}: Props) => {
   const content = React.Children.toArray(children);
+
   const [opened, setOpened] = React.useState(false);
 
   const parts = (
@@ -56,10 +59,14 @@ const ItinerarySegment = ({
               opened,
               toggleOpened: () => setOpened(prev => !prev),
               last: i === React.Children.count(children) - 1,
+              // @ts-expect-error expected
               isNextHidden: content[i + 1] && content[i + 1].props.hidden,
+              // @ts-expect-error expected
               isPrevHidden: content[i - 1] && content[i - 1].props.hidden,
               isBanner: !!banner,
               count: React.Children.count(children),
+              // @ts-expect-error expected
+
               isHidden: el.props.hidden,
               noElevation: !!noElevation,
             }}
@@ -71,7 +78,7 @@ const ItinerarySegment = ({
     </Stack>
   );
 
-  const handleClick = (ev: SyntheticEvent<HTMLDivElement>) => {
+  const handleClick = (ev: React.SyntheticEvent<HTMLDivElement>) => {
     if (onClick) onClick(ev);
     setOpened(prev => !prev);
   };

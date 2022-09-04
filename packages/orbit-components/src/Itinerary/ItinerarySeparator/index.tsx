@@ -1,11 +1,9 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Divider from "./Divider";
 import defaultTheme from "../../defaultTheme";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -37,7 +35,6 @@ const StyledInner = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInner.defaultProps = {
   theme: defaultTheme,
 };
@@ -50,12 +47,11 @@ const StyledWord = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWord.defaultProps = {
   theme: defaultTheme,
 };
 
-const ItinerarySeparator = ({ children }: Props): React.Node => {
+const ItinerarySeparator = ({ children }: Props) => {
   if (children)
     return (
       <StyledWrapper>

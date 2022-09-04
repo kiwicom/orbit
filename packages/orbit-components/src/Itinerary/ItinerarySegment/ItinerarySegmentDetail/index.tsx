@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -16,8 +15,7 @@ import { useRandomIdSeed } from "../../../hooks/useRandomId";
 import { usePart } from "../context";
 import { useWidth } from "../../context";
 import ItineraryIcon from "../ItineraryIcon";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -37,24 +35,22 @@ const StyledInnerWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInnerWrapper.defaultProps = {
   theme: themeDefault,
 };
 
-export const StyledSummary: any = styled.div`
+export const StyledSummary = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
   overflow: hidden;
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledSummary.defaultProps = {
   theme: themeDefault,
 };
 
-const StyledDuration = styled.div`
+const StyledDuration = styled.div<{ $minWidth?: number }>`
   ${({ $minWidth }) => css`
     display: flex;
     justify-content: flex-end;
@@ -68,12 +64,11 @@ const StyledExpandable = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledExpandable.defaultProps = {
   theme: themeDefault,
 };
 
-const StyledExpandableContent = styled.div`
+const StyledExpandableContent = styled.div<{ $offset: number }>`
   ${({ $offset, theme }) => css`
     padding: 0 ${theme.orbit.spaceSmall};
     position: relative;
@@ -88,7 +83,7 @@ const StyledHeadingOffset = styled.div`
   `}
 `;
 
-const StyledIcon = styled.div`
+const StyledIcon = styled.div<{ isFirst?: boolean; isLast?: boolean }>`
   ${({ theme, isFirst, isLast }) => css`
     display: flex;
     align-items: center;
@@ -127,25 +122,25 @@ const StyledIcon = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledIcon.defaultProps = {
   theme: themeDefault,
 };
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledExpandableContent.defaultProps = {
   theme: themeDefault,
 };
 
-const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): React.Node => {
+const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props) => {
   const { opened, toggleOpened } = usePart();
   const { calculatedWidth } = useWidth();
-  const [{ height: slideHeight }, slideRef] = useBoundingRect({ height: opened ? null : 0 });
+  const [{ height: slideHeight }, slideRef] = useBoundingRect<HTMLDivElement>({
+    height: opened ? null : 0,
+  });
   const randomId = useRandomIdSeed();
   const [isOverflowed, setOverflowed] = React.useState(false);
 
   return (
-    <StyledWrapper opened={opened}>
+    <StyledWrapper>
       <StyledInnerWrapper>
         <Stack align="center" spacing="small">
           <StyledDuration $minWidth={calculatedWidth || 60}>
@@ -176,7 +171,7 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props): Re
       </StyledInnerWrapper>
       {content && (
         <Slide
-          maxHeight={slideHeight}
+          maxHeight={slideHeight || 0}
           expanded={opened}
           id={randomId("slide")}
           ariaLabelledBy={randomId("slide")}

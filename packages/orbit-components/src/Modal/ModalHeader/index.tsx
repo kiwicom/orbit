@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -12,14 +11,18 @@ import { StyledModalSection } from "../ModalSection";
 import { left, right, rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
+import { Props } from "./index.d";
+import { Type } from "../../Heading/index.d";
 
-import type { Props } from ".";
-
-const getModalHeading = (type, token) => ({ theme }) => {
+const getModalHeading = (type: Type, token: string) => ({
+  theme,
+}: {
+  theme: typeof defaultTheme;
+}) => {
   return getHeadingToken(token, type)({ theme });
 };
 
-export const ModalHeading: any = styled.h2`
+export const ModalHeading = styled.h2`
   ${({ theme }) => css`
     margin: 0;
     font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
@@ -34,12 +37,11 @@ export const ModalHeading: any = styled.h2`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalHeading.defaultProps = {
   theme: defaultTheme,
 };
 
-const ModalTitle = styled.div`
+const ModalTitle = styled.div<{ illustration?: boolean }>`
   // TODO: create token marginModalTitle and marginModalTitleWithIllustration
   ${({ theme, illustration }) => css`
     margin-top: ${illustration && theme.orbit.spaceMedium};
@@ -56,7 +58,6 @@ const ModalTitle = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalTitle.defaultProps = {
   theme: defaultTheme,
 };
@@ -65,7 +66,6 @@ const ModalDescription = styled.div`
   margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalDescription.defaultProps = {
   theme: defaultTheme,
 };
@@ -83,11 +83,15 @@ const getModalHeaderPadding = (desktop = false) => ({ theme, suppressed }) => {
   return `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`;
 };
 
-export const StyledModalHeader: any = styled.div`
+export const StyledModalHeader = styled.div<{
+  suppressed?: Props["suppressed"];
+  isMobileFullPage?: boolean;
+  illustration?: boolean;
+}>`
   ${({ theme, suppressed, isMobileFullPage }) => css`
     width: 100%;
     display: block;
-    padding: ${props => rtlSpacing(getModalHeaderPadding()(props))};
+    padding: ${rtlSpacing(getModalHeaderPadding()({ theme, suppressed }))};
     border-top-left-radius: ${!isMobileFullPage && "12px"};
     border-top-right-radius: ${!isMobileFullPage && "12px"};
     box-sizing: border-box;
@@ -101,7 +105,7 @@ export const StyledModalHeader: any = styled.div`
     }
 
     ${media.largeMobile(css`
-      padding: ${props => rtlSpacing(getModalHeaderPadding(true)(props))};
+      padding: ${rtlSpacing(getModalHeaderPadding(true)({ theme, suppressed }))};
 
       & ~ ${StyledModalSection}:first-of-type {
         border-top-left-radius: 0;
@@ -111,12 +115,11 @@ export const StyledModalHeader: any = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledModalHeader.defaultProps = {
   theme: defaultTheme,
 };
 
-export const MobileHeader: any = styled.div`
+export const MobileHeader = styled.div<{ isMobileFullPage?: boolean }>`
   ${({ theme, isMobileFullPage }) => css`
     display: inline-block;
     position: fixed;
@@ -150,12 +153,11 @@ export const MobileHeader: any = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 MobileHeader.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledModalHeaderContent = styled.div`
+const StyledModalHeaderContent = styled.div<{ description?: boolean }>`
   margin-top: ${({ description }) => (description ? "32px" : "16px")};
 `;
 
@@ -166,7 +168,7 @@ const ModalHeader = ({
   description,
   title,
   dataTest,
-}: Props): React.Node => {
+}: Props) => {
   const { setHasModalTitle, hasMobileHeader, isMobileFullPage, titleID } = React.useContext(
     ModalContext,
   );

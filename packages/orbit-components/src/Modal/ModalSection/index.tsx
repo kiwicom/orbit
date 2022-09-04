@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -7,10 +6,13 @@ import media from "../../utils/mediaQuery";
 import { StyledModalFooter } from "../ModalFooter";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-export const StyledModalSection: any = styled.section`
+export const StyledModalSection = styled.section<{
+  suppressed?: boolean;
+  closable?: boolean;
+  isMobileFullPage?: boolean;
+}>`
   ${({ theme, suppressed, closable, isMobileFullPage }) => css`
     width: 100%;
     padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`};
@@ -59,12 +61,11 @@ export const StyledModalSection: any = styled.section`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledModalSection.defaultProps = {
   theme: defaultTheme,
 };
 
-const ModalSection = ({ children, suppressed, dataTest }: Props): React.Node => {
+const ModalSection = ({ children, suppressed, dataTest }: Props) => {
   const {
     removeHasModalSection,
     setHasModalSection,

@@ -5,7 +5,7 @@ import * as React from "react";
 import * as Common from "../../common/common";
 
 export interface Props extends Common.Globals {
-  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLButtonElement>>;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
 }
 
 declare class ModalCloseButton extends React.Component<Props> {}

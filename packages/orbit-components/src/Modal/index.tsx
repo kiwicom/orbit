@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -19,10 +18,9 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import usePrevious from "../hooks/usePrevious";
 import useLockScrolling from "../hooks/useLockScrolling";
+import { Instance, Props } from "./index.d";
 
-import type { Instance, Props } from ".";
-
-const getSizeToken: any = () => ({ size, theme }) => {
+const getSizeToken = ({ size, theme }: { size: Props["size"]; theme: typeof defaultTheme }) => {
   const tokens = {
     [SIZES.EXTRASMALL]: "360px",
     [SIZES.SMALL]: theme.orbit.widthModalSmall,
@@ -30,6 +28,8 @@ const getSizeToken: any = () => ({ size, theme }) => {
     [SIZES.LARGE]: theme.orbit.widthModalLarge,
     [SIZES.EXTRALARGE]: theme.orbit.widthModalExtraLarge,
   };
+
+  if (!size) return null;
 
   return tokens[size];
 };
@@ -57,12 +57,17 @@ const ModalBody = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalBody.defaultProps = {
   theme: defaultTheme,
 };
 
-const ModalWrapper = styled.div`
+const ModalWrapper = styled.div<{
+  isMobileFullPage: Props["isMobileFullPage"];
+  disableAnimation?: boolean;
+  loaded: boolean;
+  fixedFooter: Props["fixedFooter"];
+  size: Props["size"];
+}>`
   ${({ isMobileFullPage, disableAnimation, loaded }) => css`
     box-sizing: border-box;
     min-height: 100%;
@@ -91,13 +96,18 @@ const ModalWrapper = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const CloseContainer = styled.div`
-  ${({ theme, scrolled, fixedClose, isMobileFullPage, modalWidth }) => css`
+const CloseContainer = styled.div<{
+  scrolled?: boolean;
+  fixedClose?: boolean;
+  size?: Props["size"];
+  isMobileFullPage?: Props["isMobileFullPage"];
+  modalWidth?: number;
+}>`
+  ${({ theme, scrolled, fixedClose, isMobileFullPage, modalWidth, size }) => css`
     display: flex;
     // -ms-page needs to set up for IE on max largeMobile
     ${
@@ -119,7 +129,7 @@ const CloseContainer = styled.div`
     // TODO create tokens
     height: 52px;
     width: 100%;
-    max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken};
+    max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken({ size, theme })};
     box-shadow: ${scrolled && theme.orbit.boxShadowFixed};
     background-color: ${scrolled && theme.orbit.paletteWhite};
     border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
@@ -160,17 +170,27 @@ const CloseContainer = styled.div`
 `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const ModalWrapperContent = styled.div`
+const ModalWrapperContent = styled.div<{
+  isMobileFullPage: Props["isMobileFullPage"];
+  fixedFooter: Props["fixedFooter"];
+  footerHeight: number;
+  fullyScrolled?: boolean;
+  scrolled?: boolean;
+  fixedClose?: boolean;
+  size: Props["size"];
+  modalWidth: number;
+  hasModalSection?: boolean;
+}>`
   ${({
     theme,
     isMobileFullPage,
     fixedFooter,
     footerHeight,
+    size,
     fullyScrolled,
     scrolled,
     modalWidth,
@@ -257,7 +277,7 @@ const ModalWrapperContent = styled.div`
         padding: ${fixedFooter
           ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXLarge}!important`
           : theme.orbit.spaceXLarge};
-        max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken};
+        max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken({ size, theme })};
         position: ${fixedFooter && fullyScrolled && "absolute"};
         box-shadow: ${fullyScrolled && "none"};
       }
@@ -269,14 +289,13 @@ const ModalWrapperContent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ModalWrapperContent.defaultProps = {
   theme: defaultTheme,
 };
 
 const OFFSET = 40;
 
-const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, Instance>(
+const Modal = React.forwardRef<Instance, Props>(
   (
     {
       size = SIZES.NORMAL,
@@ -322,6 +341,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
           if (typeof scrollingElementRef === "function") {
             scrollingElementRef(node);
           } else {
+            // @ts-expect-error TODO
             // eslint-disable-next-line no-param-reassign
             scrollingElementRef.current = node;
           }
@@ -397,7 +417,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       }
     };
 
-    const keyboardHandler = (event: SyntheticKeyboardEvent<HTMLElement>) => {
+    const keyboardHandler = (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (event.keyCode !== KEY_CODE_MAP.TAB) return;
 
       if (!focusTriggered) {
@@ -418,7 +438,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       }
     };
 
-    const handleKeyDown = (event: SyntheticKeyboardEvent<HTMLDivElement>) => {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (onClose && event.key === "Escape") {
         event.stopPropagation();
         onClose(event);
@@ -427,7 +447,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       keyboardHandler(event);
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: React.SyntheticEvent<HTMLDivElement>) => {
       const clickedOutside =
         onClose &&
         preventOverlayClose === false &&
@@ -437,9 +457,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
         !modalContent.current.contains(event.target) &&
         /ModalBody|ModalWrapper/.test(event.target.className);
 
-      if (clickedOutside && onClose) {
-        onClose(event);
-      }
+      if (clickedOutside && onClose) onClose(event);
 
       setClickedModalBody(false);
     };
@@ -448,7 +466,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       target: HTMLElement,
       fullScrollOffset: number,
       fixCloseOffset: number,
-      scrollBegin: ?number,
+      scrollBegin: number | null | boolean,
       mobile?: boolean,
     ) => {
       const content = modalContent.current;
@@ -466,7 +484,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
           ? contentHeight + 80
           : target.scrollHeight;
 
-      // $FlowFixMe
+      // @ts-expect-error TODO
       setScrolled(target.scrollTop >= scrollBegin + (!mobile ? target.scrollTop : 0));
       setFixedClose(target.scrollTop >= fixCloseOffset);
       // set fullyScrolled state sooner than the exact end of the scroll (with fullScrollOffset value)
@@ -480,7 +498,6 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
 
       if (!content) return null;
 
-      // $FlowFixMe
       const headingEl = content.querySelector(`${ModalHeading}`);
 
       if (headingEl) {
@@ -495,13 +512,13 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
       return top;
     };
 
-    const handleScroll = (event: Event) => {
+    const handleScroll: React.UIEventHandler<HTMLDivElement> = event => {
       if (event.target instanceof HTMLDivElement && event.target === modalBody.current) {
         setScrollStates(event.target, OFFSET, OFFSET, getScrollTopPoint());
       }
     };
 
-    const handleMobileScroll = (event: Event) => {
+    const handleMobileScroll: React.UIEventHandler<HTMLDivElement> = event => {
       if (event.target instanceof HTMLDivElement && event.target === modalContent.current) {
         setScrollStates(event.target, 10, 1, getScrollTopPoint(true), true);
       }
@@ -548,7 +565,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
         setDimensions();
         setFirstFocus();
       } else {
-        const timer: TimeoutID = setTimeout(() => {
+        const timer: NodeJS.Timeout = setTimeout(() => {
           setLoaded(true);
           decideFixedFooter();
           setDimensions();
@@ -585,7 +602,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
 
     return (
       <ModalBody
-        tabIndex="0"
+        tabIndex={0}
         onKeyDown={handleKeyDown}
         onScroll={handleScroll}
         onClick={handleClickOutside}
@@ -593,6 +610,7 @@ const Modal: React.AbstractComponent<Props, Instance> = React.forwardRef<Props, 
         id={id}
         ref={modalBodyRef}
         role="dialog"
+        // @ts-expect-error TODO
         autoFocus={autoFocus}
         aria-modal="true"
         aria-labelledby={hasModalTitle ? modalTitleID : null}

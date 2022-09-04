@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -10,10 +9,9 @@ import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const StyledChild = styled.div`
+const StyledChild = styled.div<{ flex?: Props["flex"] }>`
   ${({ theme, flex }) => css`
     flex: ${flex};
     box-sizing: border-box;
@@ -25,13 +23,15 @@ const StyledChild = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledChild.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledModalFooter: any = styled.div`
-  ${({ theme, children, isMobileFullPage }) => css`
+export const StyledModalFooter = styled.div<{
+  isMobileFullPage?: boolean;
+  childrenLength: number;
+}>`
+  ${({ theme, childrenLength, isMobileFullPage }) => css`
     display: flex;
     z-index: 800; // TODO: use z-index framework
     width: 100%;
@@ -39,7 +39,7 @@ export const StyledModalFooter: any = styled.div`
     padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
     box-sizing: border-box;
     transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
-    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
+    @media (max-width: ${+getBreakpointWidth(QUERIES.largeMobile, theme, true) - 1}px) {
       ${StyledButtonPrimitive} {
         font-size: ${theme.orbit.fontSizeButtonNormal};
         height: ${theme.orbit.heightButtonNormal};
@@ -47,7 +47,7 @@ export const StyledModalFooter: any = styled.div`
     }
 
     ${media.largeMobile(css`
-      justify-content: ${children.length > 1 ? "space-between" : "flex-end"};
+      justify-content: ${childrenLength > 1 ? "space-between" : "flex-end"};
       ${!isMobileFullPage &&
       css`
         border-bottom-left-radius: 9px;
@@ -61,28 +61,26 @@ export const StyledModalFooter: any = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledModalFooter.defaultProps = {
   theme: defaultTheme,
 };
 
-const getChildFlex = (flex, key) =>
+const getChildFlex = (flex: Props["flex"], key: number) =>
   Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
 
-/*
-  Until flow-bin@0.104.0 it's impossible to assign default values to union types,
-  therefore, it's bypassed via declaring it in on this component
- */
-const wrappedChildren = (children, flex = "0 1 auto") => {
+const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
   if (!Array.isArray(children)) return children;
   return React.Children.map(children, (child, key) => {
     if (child) {
       return (
         <StyledChild flex={getChildFlex(flex, key)}>
+          {/* @ts-expect-error FIXME */}
           {React.cloneElement(child, {
+            /* @ts-expect-error FIXME */
             ref: child.ref
               ? node => {
                   // Call the original ref, if any
+                  /* @ts-expect-error FIXME */
                   const { ref } = child;
                   if (typeof ref === "function") {
                     ref(node);
@@ -99,7 +97,7 @@ const wrappedChildren = (children, flex = "0 1 auto") => {
   });
 };
 
-const ModalFooter = ({ dataTest, children, flex }: Props): React.Node => {
+const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
   const { isMobileFullPage, setFooterHeight } = React.useContext(ModalContext);
   const containerRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -119,8 +117,13 @@ const ModalFooter = ({ dataTest, children, flex }: Props): React.Node => {
   }, [setFooterHeight]);
 
   return (
-    <StyledModalFooter ref={containerRef} data-test={dataTest} isMobileFullPage={isMobileFullPage}>
-      {wrappedChildren(children, flex)}
+    <StyledModalFooter
+      ref={containerRef}
+      data-test={dataTest}
+      isMobileFullPage={isMobileFullPage}
+      childrenLength={React.Children.count(children)}
+    >
+      {flex && wrappedChildren(children, flex)}
     </StyledModalFooter>
   );
 };

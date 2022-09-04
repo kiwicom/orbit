@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -17,7 +16,7 @@ jest.mock("../../hooks/useMediaQuery", () => {
   return jest.fn(() => ({ isLargeMobile: true }));
 });
 
-const mockUseMediaQuery: JestMockFn<[], $Shape<$Call<typeof useMediaQuery>>> = useMediaQuery;
+const mockUseMediaQuery = useMediaQuery;
 
 beforeEach(() => {
   jest.clearAllTimers();
@@ -87,10 +86,11 @@ describe("Modal", () => {
 
   it("should switch scrolling container based on the breakpoint", () => {
     const modalRef = React.createRef<React.ElementRef<typeof Modal>>();
-    const scrollingElement = React.createRef<HTMLElement>();
+    const scrollingElement = React.createRef<HTMLElement>() as React.MutableRefObject<HTMLElement>;
     function scrollingElementRef(node) {
       scrollingElement.current = node;
     }
+    // @ts-expect-error jest
     mockUseMediaQuery.mockImplementation(() => ({ isLargeMobile: true }));
     const { rerender } = render(
       <Modal ref={modalRef} scrollingElementRef={scrollingElementRef}>
@@ -98,6 +98,7 @@ describe("Modal", () => {
       </Modal>,
     );
     expect(scrollingElement.current).toBe(modalRef.current?.modalBody.current);
+    // @ts-expect-error jest
     mockUseMediaQuery.mockImplementation(() => ({ isLargeMobile: false }));
     rerender(
       <Modal ref={modalRef} scrollingElementRef={scrollingElementRef}>
@@ -106,6 +107,7 @@ describe("Modal", () => {
     );
     expect(scrollingElement.current).toBe(modalRef.current?.modalContent.current);
     // default mocked implementation
+    // @ts-expect-error jest
     mockUseMediaQuery.mockImplementation(() => ({ isLargeMobile: true }));
   });
 

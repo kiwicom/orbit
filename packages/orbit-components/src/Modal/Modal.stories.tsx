@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select, array } from "@storybook/addon-knobs";
@@ -49,7 +48,7 @@ function useModal() {
   };
 }
 
-export const Sizes = (): React.Node => {
+export const Sizes = () => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
   const description = text("Title", "I'm lovely description");
@@ -89,7 +88,7 @@ Sizes.story = {
   },
 };
 
-export const ShortModal = (): React.Node => {
+export const ShortModal = () => {
   const { Container, onClose } = useModal();
   return (
     <Container>
@@ -133,7 +132,7 @@ ShortModal.story = {
   },
 };
 
-export const WithoutSection = (): React.Node => {
+export const WithoutSection = () => {
   const { Container, onClose } = useModal();
   const showMore = boolean("showMore", false);
   return (
@@ -169,9 +168,9 @@ WithoutSection.story = {
   },
 };
 
-export const RemovableSections = (): React.Node => {
+export const RemovableSections = () => {
   const { Container, onClose } = useModal();
-  const showMore = boolean(false);
+  const showMore = boolean("showMore", false);
   return (
     <Container>
       <Modal onClose={onClose} fixedFooter>
@@ -208,9 +207,9 @@ RemovableSections.story = {
   },
 };
 
-export const WithForm = (): React.Node => {
+export const WithForm = () => {
   const { Container, onClose } = useModal();
-  const showMore = boolean(false);
+  const showMore = boolean("showMore", false);
   return (
     <Container>
       <Modal onClose={onClose} fixedFooter autoFocus={false}>
@@ -270,7 +269,7 @@ WithForm.story = {
   },
 };
 
-export const WithFixedFooter = (): React.Node => {
+export const WithFixedFooter = () => {
   const { Container, onClose } = useModal();
   return (
     <Container>
@@ -460,7 +459,7 @@ WithFixedFooter.story = {
   },
 };
 
-export const FullPreview = (): React.Node => {
+export const FullPreview = () => {
   const { Container, onClose } = useModal();
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
@@ -492,6 +491,7 @@ export const FullPreview = (): React.Node => {
       >
         <ModalHeader
           title={title}
+          // @ts-expect-error TODO
           illustration={illustration && <Illustration name={illustration} size="small" />}
           description={description}
           suppressed={suppressed}
@@ -530,7 +530,7 @@ FullPreview.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   const { Container, onClose } = useModal();
   return (
     <Container>

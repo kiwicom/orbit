@@ -1,13 +1,11 @@
-// @flow
 import * as React from "react";
 
 import ButtonLink from "../../ButtonLink";
 import Close from "../../icons/Close";
 import useTranslate from "../../hooks/useTranslate";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-const ModalCloseButton = ({ onClick, dataTest }: Props): React.Node => {
+const ModalCloseButton = ({ onClick, dataTest }: Props) => {
   const translate = useTranslate();
 
   return (

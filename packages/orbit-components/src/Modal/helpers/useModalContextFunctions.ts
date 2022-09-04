@@ -1,10 +1,8 @@
-// @flow
 import { useContext, useEffect } from "react";
 
 import { ModalContext } from "../ModalContext";
-import type { UseModalContextFunctions } from "./useModalContextFunctions";
 
-const useModalContextFunctions: UseModalContextFunctions = () => {
+const useModalContextFunctions = (): void => {
   const { callContextFunctions } = useContext(ModalContext);
   useEffect(() => {
     if (callContextFunctions) callContextFunctions();

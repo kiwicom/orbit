@@ -1,14 +1,12 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import CarrierLogo, { StyledCarrierLogo } from "../../CarrierLogo";
 import defaultTheme from "../../defaultTheme";
 import { rtlSpacing, left } from "../../utils/rtl";
+import { Props } from "./index.d";
 
-import type { Props } from ".";
-
-export const StyledBadge: any = styled(({ className, children, dataTest, ariaLabel, id }) => (
+export const StyledBadge = styled(({ className, children, dataTest, ariaLabel, id }) => (
   <div className={className} id={id} data-test={dataTest} aria-label={ariaLabel}>
     {children}
   </div>
@@ -37,7 +35,6 @@ export const StyledBadge: any = styled(({ className, children, dataTest, ariaLab
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBadge.defaultProps = {
   theme: defaultTheme,
 };
@@ -57,12 +54,11 @@ const IconContainer = styled(({ className, children }) => (
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledBadgeContent = styled.div`
+const StyledBadgeContent = styled.div<{ $isCarrier?: boolean }>`
   ${({ theme, $isCarrier }) => css`
     padding: 5px 0;
     line-height: 1;
@@ -72,7 +68,6 @@ const StyledBadgeContent = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledBadgeContent.defaultProps = {
   theme: defaultTheme,
 };
@@ -87,7 +82,7 @@ const BadgePrimitive = ({
   foregroundColor,
   borderColor,
   carriers,
-}: Props): React.Node => {
+}: Props) => {
   return (
     <StyledBadge
       background={background}

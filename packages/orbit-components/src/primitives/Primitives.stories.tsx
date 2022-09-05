@@ -1,6 +1,5 @@
-// @flow
 import * as React from "react";
-import { text, select, object, boolean } from "@storybook/addon-knobs";
+import { text, number, select, object, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import ButtonPrimitiveComponent from "./ButtonPrimitive";
@@ -17,11 +16,11 @@ export default {
   title: "Primitives",
 };
 
-export const BadgePrimitive = (): React.Node => {
+export const BadgePrimitive = () => {
   const Icon = getIcon(getIcons("icon", "Airplane"));
   const background = text("Background", "linear-gradient(#fd1d1d, #ffae28)");
   const foregroundColor = text("ForegroundColor", "#fff");
-  const borderColor = text("borderColor", null);
+  const borderColor = text("borderColor", "");
 
   return (
     <BadgePrimitiveComponent
@@ -43,11 +42,11 @@ BadgePrimitive.story = {
   },
 };
 
-export const IllustrationPrimitive = (): React.Node => {
+export const IllustrationPrimitive = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const name = "Accommodation";
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   return (
     <IllustrationPrimitiveComponent
       size={size}
@@ -66,9 +65,9 @@ IllustrationPrimitive.story = {
   },
 };
 
-export const ButtonPrimitive = (): React.Node => {
+export const ButtonPrimitive = () => {
   const asComponent = text("asComponent", "button");
-  const ariaControls = text("ariaControls", null);
+  const ariaControls = text("ariaControls", "");
   const ariaExpanded = boolean("ariaExpanded", false);
   const background = text("background", "#d63737");
   const backgroundHover = text("backgroundHover", "#da0a0a");
@@ -91,7 +90,7 @@ export const ButtonPrimitive = (): React.Node => {
   const foregroundFocus = text("foregroundFocus", "#faf333");
   const fullWidth = boolean("fullWidth", false);
   const height = text("height", "46px");
-  const href = text("href", null);
+  const href = text("href", "");
   const IconLeft = getIcon(getIcons("iconLeft", ""));
   const IconRight = getIcon(getIcons("iconRight", "ChevronRight"));
   const icons = object("icons", {
@@ -105,12 +104,12 @@ export const ButtonPrimitive = (): React.Node => {
   });
   const loading = boolean("loading", false);
   const padding = text("padding", "0 10px 0 10px");
-  const role = text("role", null);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const role = text("role", "");
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const submit = boolean("submit", false);
-  const title = text("title", null);
-  const tabIndex = text("tabIndex", null);
-  const width = text("width", null);
+  const title = text("title", "");
+  const tabIndex = number("tabIndex", 0);
+  const width = text("width", "");
   const contentAlign = select(
     "contentAlign",
     ["start", "center", "end", "space-between"],

@@ -1,9 +1,6 @@
 import defaultTheme from "../../defaultTheme";
 
-export interface spaceAfter {
-  readonly spaceAfter?: "none" | "smallest" | "small" | "normal" | "medium" | "large" | "largest";
-}
-
-export interface Props extends spaceAfter {
+import * as Common from "../common";
+export interface Props extends Common.SpaceAfter {
   readonly theme: typeof defaultTheme;
 }

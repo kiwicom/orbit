@@ -17,7 +17,7 @@ export interface BasicProps {
   readonly spaceAfter?: Common.SpaceAfter;
 }
 
-interface Props extends Common.Globals, BasicProps {
+export interface Props extends Common.Globals, BasicProps {
   readonly as?: string;
   readonly mediumMobile?: BasicProps;
   readonly largeMobile?: BasicProps;

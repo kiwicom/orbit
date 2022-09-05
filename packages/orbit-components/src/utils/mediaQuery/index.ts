@@ -1,16 +1,16 @@
 import { css } from "styled-components";
 
-import { Theme } from "../../defaultTheme";
+import { Theme } from "../../defaultTheme.d";
 import { QUERIES } from "./consts";
 import { MediaQueries } from "./index.d";
 
-enum TOKEN {
-  mediumMobile = "widthBreakpointMediumMobile",
-  largeMobile = "widthBreakpointLargeMobile",
-  tablet = "widthBreakpointTablet",
-  desktop = "widthBreakpointDesktop",
-  largeDesktop = "widthBreakpointLargeDesktop",
-}
+const TOKEN = {
+  mediumMobile: "widthBreakpointMediumMobile",
+  largeMobile: "widthBreakpointLargeMobile",
+  tablet: "widthBreakpointTablet",
+  desktop: "widthBreakpointDesktop",
+  largeDesktop: "widthBreakpointLargeDesktop",
+};
 
 export const getBreakpointWidth = (
   name: keyof typeof TOKEN,

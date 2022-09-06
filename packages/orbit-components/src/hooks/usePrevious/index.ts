@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 
 // see https://usehooks.com/usePrevious/

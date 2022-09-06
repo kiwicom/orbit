@@ -1,4 +1,3 @@
-// @noflow
 import * as React from "react";
 import { render, screen, act } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
@@ -27,6 +26,7 @@ describe("useIntersect", () => {
     let callback;
     const entry = { observe: jest.fn(), disconnect: jest.fn() };
     // a regular function fails because it's "not a constructor"
+    // @ts-expect-error expected
     window.IntersectionObserver = jest.fn(cb => {
       callback = cb;
       return entry;
@@ -48,6 +48,7 @@ describe("useIntersect", () => {
     });
     expect(screen.getByRole("img")).toHaveAttribute("src", "source");
 
+    // @ts-expect-error expected
     delete window.IntersectionObserver;
   });
 

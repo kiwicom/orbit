@@ -1,13 +1,12 @@
-// @flow
 import * as React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import useTransition from "..";
 
-function App(props: {| show: boolean, appear: boolean |}) {
+function App(props: { show: boolean; appear: boolean }) {
   const [show, setShow] = React.useState(props.show);
-  const transition = useTransition({ show, appear: props.appear });
+  const transition = useTransition<HTMLDivElement>({ show, appear: props.appear });
   return (
     <>
       <button disabled={!transition.done} type="button" onClick={() => setShow(prev => !prev)}>
@@ -16,6 +15,7 @@ function App(props: {| show: boolean, appear: boolean |}) {
       {transition.mounted && (
         <div
           ref={transition.ref}
+          // @ts-expect-error expected
           css={`
             transition: opacity 0.5s ease-in-out;
             opacity: ${transition.state === "enter" ? 1 : 0};

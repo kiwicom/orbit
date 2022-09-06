@@ -1,15 +1,13 @@
-// @flow
 import * as React from "react";
 
 import FOCUSABLE_ELEMENT_SELECTORS from "./consts";
 import KEY_CODE_MAP from "../../common/keyMaps";
+import UseFocusTrap from "./index.d";
 
-import type { UseFocusTrap } from ".";
-
-type FocusElements = {|
-  first: HTMLElement | null,
-  last: HTMLElement | null,
-|};
+interface FocusElements {
+  first: HTMLElement | null;
+  last: HTMLElement | null;
+}
 
 const manageFocus = (ref, triggered): FocusElements => {
   if (triggered && ref.current) {
@@ -26,7 +24,7 @@ const manageFocus = (ref, triggered): FocusElements => {
   return { first: null, last: null };
 };
 
-const useFocusTrap: UseFocusTrap = ref => {
+const useFocusTrap: typeof UseFocusTrap = ref => {
   const [triggered, setTriggered] = React.useState(false);
 
   React.useEffect(() => {

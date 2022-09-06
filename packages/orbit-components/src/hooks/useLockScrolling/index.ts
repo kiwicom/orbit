@@ -1,13 +1,11 @@
-// @flow
 import { useEffect } from "react";
 
 import useTheme from "../useTheme";
 import useIsMounted from "../useIsMounted";
 import { disableBodyScroll, enableBodyScroll } from "./lock-scrolling";
+import UseLockScrolling from "./index.d";
 
-import typeof UseLockScrolling from ".";
-
-const useLockScrolling: UseLockScrolling = (ref, lock = true, dependencies = []) => {
+const useLockScrolling: typeof UseLockScrolling = (ref, lock = true, dependencies = []) => {
   const { lockScrolling: themeLockScrolling = true, lockScrollingBarGap = true } = useTheme();
   const isMounted = useIsMounted();
 

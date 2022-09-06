@@ -1,14 +1,22 @@
-// @flow
 import * as React from "react";
 
-import typeof UseTransitionType from ".";
-
-const useTransition: UseTransitionType = ({ show, appear = false }) => {
+const useTransition = <T extends HTMLElement>({
+  show,
+  appear = false,
+}: {
+  show: boolean;
+  appear?: boolean;
+}): {
+  ref: React.MutableRefObject<T | null>;
+  mounted: boolean;
+  state: "enter" | "leave";
+  done: boolean;
+} => {
   // if appear is true, we want to start from unmounted state, so that we can transition in
   const [mounted, setMounted] = React.useState(!appear && show);
-  const [state, setState] = React.useState(!appear && show ? "enter" : "leave");
+  const [state, setState] = React.useState<"enter" | "leave">(!appear && show ? "enter" : "leave");
   const [done, setDone] = React.useState(!appear || !show);
-  const ref = React.useRef(null);
+  const ref = React.useRef<T | null>(null);
   const firstRender = React.useRef(true);
 
   // const [, updateState] = React.useState()
@@ -60,7 +68,7 @@ const useTransition: UseTransitionType = ({ show, appear = false }) => {
       if (mounted) {
         // reading from properties like scrollTop forces a repaint, which we need
         // to make transition work immediately after mount
-        // eslint-disable-next-line babel/no-unused-expressions
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         ref.current?.scrollTop;
         setState("enter");
         setDone(false);

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, act } from "@testing-library/react";
 import { renderToString } from "react-dom/server";

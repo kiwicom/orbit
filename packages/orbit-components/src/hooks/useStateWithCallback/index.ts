@@ -1,12 +1,8 @@
-// @flow
 import { useState, useCallback } from "react";
 
-import type { Return } from ".";
+import UseStateWithCallback from "./index.d";
 
-export default function useStateWithCallback<S>(
-  defaultValue: S,
-  callback: S => void | Promise<any>,
-): Return<S> {
+const useStateWithCallback: typeof UseStateWithCallback = (defaultValue, callback) => {
   const [state, setState] = useState(defaultValue);
 
   const setStateWithCallback = useCallback(
@@ -22,4 +18,6 @@ export default function useStateWithCallback<S>(
     [callback],
   );
   return [state, setStateWithCallback];
-}
+};
+
+export default useStateWithCallback;

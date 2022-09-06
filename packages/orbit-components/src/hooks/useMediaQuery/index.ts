@@ -1,14 +1,11 @@
-// @flow
 import * as React from "react";
 
 import useTheme from "../useTheme";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 import QueryContext, { initialValue } from "../../ThemeProvider/QueryContext";
+import UseMediaQuery, { QueryMap } from "./index.d";
 
-import typeof UseMediaQuery from ".";
-import type { QueryMap } from ".";
-
-type Query = $Keys<QueryMap<any>>;
+type Query = keyof QueryMap<any>;
 
 const QUERIES: Query[] = [
   "isMediumMobile",
@@ -19,7 +16,7 @@ const QUERIES: Query[] = [
   "prefersReducedMotion",
 ];
 
-const useMediaQuery: UseMediaQuery = () => {
+const useMediaQuery: typeof UseMediaQuery = () => {
   const theme = useTheme();
 
   const contextValue = React.useContext(QueryContext);

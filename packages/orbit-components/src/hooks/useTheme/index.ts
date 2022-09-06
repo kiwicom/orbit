@@ -1,11 +1,9 @@
-// @flow
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
+import { useTheme as UseTheme } from "./index.d";
 
-import type { UseTheme } from ".";
-
-const useTheme: UseTheme = () => useContext(ThemeContext) || defaultTheme;
+const useTheme: typeof UseTheme = () => useContext(ThemeContext) || defaultTheme;
 
 export default useTheme;

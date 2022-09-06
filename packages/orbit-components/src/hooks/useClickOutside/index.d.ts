@@ -1,6 +1,8 @@
-declare const UseClickOutside: (
-  ref: { readonly current: HTMLElement | null | undefined },
-  handler: (ev: React.SyntheticEvent<HTMLLinkElement>) => void,
+import React from "react";
+
+declare const UseClickOutside: <T extends HTMLElement, K extends HTMLElement>(
+  ref: React.RefObject<T>,
+  handler: (ev: React.SyntheticEvent<K>) => void,
 ) => void;
 
 export { UseClickOutside, UseClickOutside as default };

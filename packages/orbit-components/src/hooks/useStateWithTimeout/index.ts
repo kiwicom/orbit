@@ -1,11 +1,10 @@
-// @flow
 import { useState, useEffect, useCallback, useRef } from "react";
 
-import type { Return } from ".";
+import UseStateWithTimeout from "./index.d";
 
-export default function useStateWithTimeout<S>(defaultValue: S, timeout?: number): Return<S> {
+const useStateWithTimeout: typeof UseStateWithTimeout = (defaultValue, timeout) => {
   const [state, setState] = useState(defaultValue);
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const setStateWithTimeout = useCallback(
     value => {
       if (typeof setTimeout === "function") {
@@ -28,4 +27,6 @@ export default function useStateWithTimeout<S>(defaultValue: S, timeout?: number
     };
   }, [clearStateTimeout]);
   return [state, setState, setStateWithTimeout, clearStateTimeout];
-}
+};
+
+export default useStateWithTimeout;

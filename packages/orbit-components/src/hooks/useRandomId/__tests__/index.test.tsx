@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
@@ -10,10 +9,9 @@ import useRandomId from "..";
 
 const Component = () => {
   const id = useRandomId();
-  return id;
+  return <>{id}</>;
 };
 
-// $FlowFixMe
 let matchMedia: MatchMediaMock;
 
 describe("useRandomId", () => {

@@ -1,9 +1,8 @@
-// @flow
 import { useState, useEffect, useRef, useCallback } from "react";
 
-import typeof UseIntersect from ".";
+import UseIntersect from "./index.d";
 
-const useIntersect: UseIntersect = ({ root = null, rootMargin, threshold = 0 } = {}) => {
+const useIntersect: typeof UseIntersect = ({ root = null, rootMargin, threshold = 0 } = {}) => {
   const [entry, updateEntry] = useState<IntersectionObserverEntry | null>(null);
   const [node, setNode] = useState<Element | null>(null);
 
@@ -14,9 +13,7 @@ const useIntersect: UseIntersect = ({ root = null, rootMargin, threshold = 0 } =
   const observer = useRef<null | IntersectionObserver>(null);
 
   useEffect(() => {
-    if ("IntersectionObserver" in window === false) {
-      return () => {};
-    }
+    if ("IntersectionObserver" in window === false) return () => {};
 
     observer.current = new window.IntersectionObserver(([ent]) => updateEntry(ent), {
       root,

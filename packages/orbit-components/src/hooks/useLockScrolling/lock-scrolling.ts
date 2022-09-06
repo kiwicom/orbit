@@ -1,4 +1,3 @@
-// @flow
 /* eslint-disable no-param-reassign */
 
 /**
@@ -8,25 +7,29 @@
  * https://github.com/willmcpo/body-scroll-lock/issues/235
  */
 
-type BodyScrollOptions = {|
-  reserveScrollBarGap?: boolean,
-|};
+interface BodyScrollOptions {
+  reserveScrollBarGap?: boolean;
+}
 
-type Lock = {|
-  targetElement: HTMLElement,
-  options?: BodyScrollOptions,
-|};
+interface Lock {
+  targetElement: HTMLElement;
+  options?: BodyScrollOptions;
+}
 
 // Older browsers don't support event options, feature detect it.
 let hasPassiveEvents = false;
 if (typeof window !== "undefined") {
   const passiveTestOptions = {
+    // @ts-expect-error TODO
     get passive() {
       hasPassiveEvents = true;
       return undefined;
     },
   };
+
+  // @ts-expect-error TODO
   window.addEventListener("testPassive", null, passiveTestOptions);
+  // @ts-expect-error TODO
   window.removeEventListener("testPassive", null, passiveTestOptions);
 }
 
@@ -39,16 +42,16 @@ const isIosDevice =
 type HandleScrollEvent = TouchEvent;
 
 let locks: Lock[] = [];
-let documentListenerAdded: boolean = false;
-let initialClientY: number = -1;
-let previousBodyOverflowSetting;
-let previousBodyPosition: {|
-  position: string,
-  top: string,
-  left: string,
-  right: string,
-|} | void;
-let previousBodyPaddingRight;
+let documentListenerAdded = false;
+let initialClientY = -1;
+let previousBodyPosition: {
+  position: string;
+  top: string;
+  left: string;
+  right: string;
+} | void;
+let previousBodyOverflowSetting: string | undefined;
+let previousBodyPaddingRight: string | undefined;
 
 const preventDefault = (rawEvent: HandleScrollEvent): boolean => {
   const e = rawEvent || window.event;
@@ -140,7 +143,7 @@ const setPositionFixed = () =>
             const bottomBarHeight = innerHeight - window.innerHeight;
             if (bottomBarHeight && scrollY >= innerHeight) {
               // Move the content further up so that the bottom bar doesn't hide it
-              document.body.style.top = -(scrollY + bottomBarHeight);
+              document.body.style.top = String(-(scrollY + bottomBarHeight));
             }
           }),
         300,
@@ -176,7 +179,7 @@ const isTargetElementTotallyScrolled = (targetElement: HTMLElement): boolean =>
   !!targetElement &&
   targetElement.scrollHeight - targetElement.scrollTop <= targetElement.clientHeight;
 
-const handleScroll = (event: HandleScrollEvent, targetElement: any): boolean => {
+const handleScroll = (event: HandleScrollEvent, targetElement: HTMLElement): boolean => {
   const clientY = event.targetTouches[0].clientY - initialClientY;
 
   if (targetElement && targetElement.scrollTop === 0 && clientY > 0) {
@@ -198,6 +201,7 @@ export const disableBodyScroll = (
   options?: BodyScrollOptions,
 ): void => {
   // disableBodyScroll must not have been called on this targetElement before
+  // @ts-expect-error TODO
   if (locks.some(lock => lock === targetElement)) {
     return;
   }
@@ -243,13 +247,14 @@ export const clearAllBodyScrollLocks = (): void => {
   if (isIosDevice) {
     // Clear all locks ontouchstart/ontouchmove handlers, and the references.
     locks.forEach(lock => {
-      // $FlowExpectedError
+      // @ts-expect-error TODO
       lock.ontouchstart = null;
-      // $FlowExpectedError
+      // @ts-expect-error TODO
       lock.ontouchmove = null;
     });
 
     if (documentListenerAdded) {
+      // @ts-expect-error TODO
       document.removeEventListener(
         "touchmove",
         preventDefault,
@@ -271,7 +276,7 @@ export const clearAllBodyScrollLocks = (): void => {
   locks = [];
 };
 
-export const enableBodyScroll = (targetElement: any): void => {
+export const enableBodyScroll = (targetElement: HTMLElement): void => {
   locks = locks.filter(lock => lock.targetElement !== targetElement);
 
   if (isIosDevice) {
@@ -279,6 +284,7 @@ export const enableBodyScroll = (targetElement: any): void => {
     targetElement.ontouchmove = null;
 
     if (documentListenerAdded && locks.length === 0) {
+      // @ts-expect-error TODO
       document.removeEventListener(
         "touchmove",
         preventDefault,

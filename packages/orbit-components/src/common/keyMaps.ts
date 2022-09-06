@@ -1,7 +1,6 @@
-// @flow
-import typeof KeyCode from "./keyMaps";
+import KeyCode from "./keyMaps.d";
 
-const KEY_CODE: KeyCode = {
+const KEY_CODE: typeof KeyCode = {
   TAB: 9,
   ENTER: 13,
   SPACE: 32,

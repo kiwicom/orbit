@@ -32,7 +32,7 @@ export const StyledBadge: any = styled(({ className, children, dataTest, ariaLab
     border: ${borderColor && `1px solid ${borderColor}`};
     ${StyledCarrierLogo} {
       position: absolute;
-      ${left}: -2px;
+      ${left}: 0px;
     }
   `}
 `;

@@ -2,7 +2,6 @@ import * as React from "react";
 
 import * as Common from "../../common/common";
 
-export type inexactString = string | null | undefined;
 type functionReturningString = () => string;
 
 export type Size = "small" | "normal" | "large";
@@ -37,16 +36,16 @@ export interface ButtonCommonProps extends Common.Globals, Common.SpaceAfter {
   Icon properties used on other getter functions.
  */
 export interface IconForeground {
-  readonly foreground?: inexactString;
-  readonly foregroundHover?: inexactString;
-  readonly foregroundActive?: inexactString;
+  readonly foreground?: string | null;
+  readonly foregroundHover?: string | null;
+  readonly foregroundActive?: string | null;
 }
 
 export interface IconProps extends Foreground {
-  readonly width?: inexactString;
-  readonly height?: inexactString;
-  readonly leftMargin?: inexactString;
-  readonly rightMargin?: inexactString;
+  readonly width?: string | null;
+  readonly height?: string | null;
+  readonly leftMargin?: string | null;
+  readonly rightMargin?: string | null;
 }
 
 /*
@@ -54,33 +53,33 @@ export interface IconProps extends Foreground {
  */
 export interface HeightProps {
   readonly height?: string;
-  readonly fontSize?: inexactString;
+  readonly fontSize?: string | null;
 }
 
 export interface Foreground {
-  readonly foreground?: inexactString;
-  readonly foregroundHover?: inexactString;
-  readonly foregroundActive?: inexactString;
-  readonly foregroundFocus?: inexactString;
+  readonly foreground?: string | null;
+  readonly foregroundHover?: string | null;
+  readonly foregroundActive?: string | null;
+  readonly foregroundFocus?: string | null;
 }
 
 export interface Background {
-  readonly background?: inexactString;
-  readonly backgroundHover?: inexactString;
-  readonly backgroundActive?: inexactString;
-  readonly backgroundFocus?: inexactString;
+  readonly background?: string | null;
+  readonly backgroundHover?: string | null;
+  readonly backgroundActive?: string | null;
+  readonly backgroundFocus?: string | null;
 }
 
 export interface BoxShadow {
-  readonly boxShadow?: inexactString;
-  readonly boxShadowHover?: inexactString;
-  readonly boxShadowActive?: inexactString;
-  readonly boxShadowFocus?: inexactString;
+  readonly boxShadow?: string | null;
+  readonly boxShadowHover?: string | null;
+  readonly boxShadowActive?: string | null;
+  readonly boxShadowFocus?: string | null;
 }
 
 export interface PrimitiveTypes extends HeightProps, Foreground, Background, BoxShadow {
   readonly padding?: string;
-  readonly fontWeight?: inexactString;
+  readonly fontWeight?: string | null;
   readonly icons?: IconProps;
 }
 

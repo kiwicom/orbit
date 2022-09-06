@@ -1,10 +1,9 @@
-// @flow
 import * as React from "react";
 
-import type { Props } from "..";
+import { Props } from "../index.d";
 import Svg from "../Svg";
 
-const List = ({ height = 80, ...props }: Props): React.Node => {
+const List = ({ height = 80, ...props }: Props) => {
   return (
     <Svg {...props} height={height}>
       <rect x="35" y="0" width="100%" height="20" />

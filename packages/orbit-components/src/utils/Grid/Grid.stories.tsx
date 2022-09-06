@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 import { text, boolean, number, object, select } from "@storybook/addon-knobs";
@@ -15,7 +14,7 @@ export default {
   title: "Grid",
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const inline = boolean("inline", false);
   const maxWidth = text("maxWidth", "1440px");
   const width = text("width", "100%");
@@ -47,7 +46,7 @@ export const Playground = (): React.Node => {
     columns: "repeat(8, minmax(10px, 1fr))",
     rows: "40px",
   });
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER));
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NORMAL);
   return (
     <Grid
       inline={inline}

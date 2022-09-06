@@ -12,9 +12,9 @@ import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentC
 import mq from "../../utils/mediaQuery";
 import createRel from "./common/createRel";
 import onKeyDown from "../../utils/handleKeyDown";
-import { Props, inexactString } from "./index.d";
+import { Props } from "./index.d";
 
-const iconContainerColor = (color: inexactString, important = true) => css`
+const iconContainerColor = (color: string, important = true) => css`
   ${StyledButtonPrimitiveIconContainer} {
     color: ${color} ${important && "!important"};
   }
@@ -54,7 +54,7 @@ export const StyledButtonPrimitive = styled(
       const Component = isButtonWithHref ? "a" : asComponent;
       const buttonType = submit ? "submit" : "button";
 
-      const handleKeyDown = (ev: React.KeyboardEvent<HTMLDivElement>) =>
+      const handleKeyDown = (ev: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) =>
         asComponent === "div" ? onKeyDown(onClick)(ev) : undefined;
 
       return (
@@ -146,7 +146,7 @@ export const StyledButtonPrimitive = styled(
       border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
     `)}
 
-    ${iconContainerColor(icons && icons.foreground, false)};
+    ${icons && icons.foreground && iconContainerColor(icons.foreground, false)};
 
     ${StyledSpinner} {
       width: ${icons && icons.width};
@@ -160,7 +160,7 @@ export const StyledButtonPrimitive = styled(
         color: ${foregroundHover}!important;
         box-shadow: ${boxShadowHover};
         text-decoration: none;
-        ${iconContainerColor(icons && icons.foregroundHover)};
+        ${icons && icons.foregroundHover && iconContainerColor(icons.foregroundHover)};
       `};
     }
 
@@ -169,7 +169,7 @@ export const StyledButtonPrimitive = styled(
       background: ${backgroundFocus};
       color: ${foregroundFocus}!important;
       text-decoration: none;
-      ${iconContainerColor(icons && icons.foregroundFocus)};
+      ${icons && icons.foregroundFocus && iconContainerColor(icons.foregroundFocus)};
     }
 
     :focus:not(:focus-visible) {
@@ -177,7 +177,7 @@ export const StyledButtonPrimitive = styled(
       background: ${background};
       color: ${foregroundFocus}!important;
       text-decoration: none;
-      ${iconContainerColor(icons && icons.foregroundFocus)};
+      ${icons && icons.foregroundFocus && iconContainerColor(icons.foregroundFocus)};
     }
     :-moz-focusring,
     :focus-visible {
@@ -185,7 +185,7 @@ export const StyledButtonPrimitive = styled(
       background: ${backgroundFocus};
       color: ${foregroundFocus}!important;
       text-decoration: none;
-      ${iconContainerColor(icons && icons.foregroundFocus)};
+      ${icons && icons.foregroundFocus && iconContainerColor(icons.foregroundFocus)};
     }
 
     // prevent :focus styles from overriding :hover and :active styles
@@ -201,7 +201,7 @@ export const StyledButtonPrimitive = styled(
         box-shadow: ${boxShadowActive};
         color: ${foregroundActive}!important;
         text-decoration: none;
-        ${iconContainerColor(icons && icons.foregroundActive)};
+        ${icons && icons.foregroundActive && iconContainerColor(icons.foregroundActive)};
       `};
     }
   `};

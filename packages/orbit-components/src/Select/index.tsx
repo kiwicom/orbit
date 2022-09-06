@@ -68,7 +68,7 @@ const StyledSelect = styled(
       <select
         id={id}
         data-test={dataTest}
-        data-state={getFieldDataState(error)}
+        data-state={getFieldDataState(!!error)}
         value={value}
         className={className}
         onChange={onChange}
@@ -302,14 +302,13 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     iconRef,
     setTooltipShown,
     handleFocus,
-  } = useErrorTooltip({ onFocus });
+  } = useErrorTooltip<HTMLSelectElement, HTMLDivElement>({ onFocus });
 
-  const inputRef = React.useRef<HTMLElement | null>(null);
+  const inputRef = React.useRef<HTMLLabelElement | null>(null);
 
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    // @ts-expect-error TODO
     <StyledLabel spaceAfter={spaceAfter} ref={inputRef} $width={width}>
       {label && (
         <FormLabel

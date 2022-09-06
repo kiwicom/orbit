@@ -1,15 +1,14 @@
-// @flow
 import { WIDTH_AND_HEIGHT } from "./consts";
 import { TOKENS } from "../utils/layout/consts";
 import type { ThemeProps, Theme } from "../defaultTheme";
 import { firstToUpper } from "../utils/common";
 import { getJustify, getAlign, formatCSS, getDirection, getWrap, isDefined } from "../utils/layout";
-
-import type { MediaQueryObject, Elevation } from ".";
+import { MediaQueryObject, Elevation } from "./index.d";
 
 const normalizeSpacing = (el, property, theme: Theme): string[] => {
   if (typeof el === "object") {
-    return Object.entries(el).map(([key, val]: any) => {
+    return Object.keys(el).map(key => {
+      const val = el[key];
       if (val === "none") return formatCSS(`${property}-${key}`, "0");
       return formatCSS(`${property}-${key}`, TOKENS(theme)[val]);
     });
@@ -68,12 +67,13 @@ const norm = ({ val, key, theme }): string | void => {
   return all[key];
 };
 
-const normalize = (object: MediaQueryObject): any => ({ theme }: ThemeProps) => {
-  if (!object) return null;
+const normalize = (mqObject: MediaQueryObject) => ({ theme }: ThemeProps) => {
+  if (!mqObject) return null;
 
-  return Object.entries(object).reduce((acc, [key, val]: any) => {
+  return Object.keys(mqObject).reduce<string[]>((acc, prop) => {
+    const val = mqObject[prop];
     const accFn = additional => [...acc, ...additional];
-    return accFn([norm({ val, key, theme })]);
+    return accFn([norm({ val, key: prop, theme })]);
   }, []);
 };
 

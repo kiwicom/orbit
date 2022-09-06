@@ -1,6 +1,4 @@
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
-
-import { Tokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTokens, Tokens } from "@kiwicom/orbit-design-tokens";
 
 export interface Theme {
   readonly orbit: Tokens;

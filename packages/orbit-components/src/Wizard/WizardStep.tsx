@@ -200,6 +200,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props) => {
     >
       <WizardStepIcon />
       <div
+        // @ts-expect-error sc issue
         css={css`
           padding: ${theme.orbit.paddingBadge};
         `}
@@ -232,6 +233,7 @@ const WizardStep = ({ dataTest, title, onClick }: Props) => {
         <Stack flex direction="column" align={isColumnOnDesktop ? "start" : "center"}>
           {status === "disabled" ? (
             <span
+              // @ts-expect-error sc issue
               css={css`
                 padding: 0 ${theme.orbit.spaceXSmall};
               `}

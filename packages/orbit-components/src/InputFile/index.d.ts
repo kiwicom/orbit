@@ -24,6 +24,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly onChange?: Event;
   readonly onFocus?: Event;
   readonly onBlur?: Event;
+  readonly insideInputGroup?: boolean;
   readonly onRemoveFile?: Common.Callback;
 }
 

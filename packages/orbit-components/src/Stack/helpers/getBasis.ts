@@ -1,8 +1,8 @@
 import { Basis } from "../index.d";
 import { Theme } from "../../defaultTheme";
 
-const getBasis = (basis: Basis) => ({ theme }: { theme: Theme }): Basis | null => {
-  if (typeof basis === "undefined") return null;
+const getBasis = (basis: Basis) => ({ theme }: { theme: Theme }): Basis => {
+  if (typeof basis === "undefined") return "";
   if (typeof basis === "function") return basis(theme);
 
   return basis;

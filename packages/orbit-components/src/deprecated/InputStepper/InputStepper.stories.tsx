@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, number, select, boolean } from "@storybook/addon-knobs";
@@ -14,7 +13,7 @@ export default {
   title: "InputStepper",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   return <InputStepper onChange={action("onChange")} />;
 };
 
@@ -24,7 +23,7 @@ Default.story = {
   },
 };
 
-export const WithHelp = (): React.Node => {
+export const WithHelp = () => {
   const label = text("Label", "Adults");
   const help = text("help", "You need to enter count of adults");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
@@ -53,7 +52,7 @@ WithHelp.story = {
   },
 };
 
-export const WithDifferentSize = (): React.Node => {
+export const WithDifferentSize = () => {
   const label = text("Label", "Adults");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const titleIncrement = text("Title increment", "Add a passenger");
@@ -79,13 +78,13 @@ WithDifferentSize.story = {
   },
 };
 
-export const Stateless = (): React.Node => {
+export const Stateless = () => {
   const min = number("minValue", 1);
   const max = number("maxValue", 10);
   const step = number("step", 2);
   const label = text("Label", "Label");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const help = text("Help", undefined);
+  const help = text("Help", "");
   const name = text("Name", "name");
   const error = text("Error", "");
   const disabled = boolean("disabled", false);
@@ -95,7 +94,11 @@ export const Stateless = (): React.Node => {
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select(
+    "spaceAfter",
+    [undefined, ...Object.values(SPACINGS_AFTER)],
+    SPACINGS_AFTER.NORMAL,
+  );
   const value = text("Value", "2 Adults");
 
   return (
@@ -133,20 +136,24 @@ Stateless.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const min = number("minValue", 1);
   const max = number("maxValue", 10);
   const step = number("step", 2);
   const defaultValue = number("defaultValue", 4);
   const label = text("Label", "Label");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const help = text("Help", undefined);
+  const help = text("Help", "");
   const name = text("Name", "name");
   const error = text("Error", "Error message (explain how to solve it)");
   const disabled = boolean("disabled", false);
   const required = boolean("required", false);
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select(
+    "spaceAfter",
+    [undefined, ...Object.values(SPACINGS_AFTER)],
+    SPACINGS_AFTER.NORMAL,
+  );
   const titleIncrement = text("Title increment", "Add a passenger");
   const titleDecrement = text("Title decrement", "Remove a passenger");
   const readOnly = boolean("readOnly", false);
@@ -184,7 +191,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => {
+export const Rtl = () => {
   return (
     <RenderInRtl>
       <InputStepper label="My label" />

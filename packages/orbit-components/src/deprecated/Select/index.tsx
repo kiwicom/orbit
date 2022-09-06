@@ -63,7 +63,7 @@ const StyledSelect = styled(
       <select
         id={id}
         data-test={dataTest}
-        data-state={getFieldDataState(error)}
+        data-state={getFieldDataState(!!error)}
         value={value}
         className={className}
         onChange={onChange}

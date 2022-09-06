@@ -7,7 +7,7 @@ const defaultContext = {
   isContent: false,
 };
 
-const PricingTableContext = React.createContext(defaultContext);
+const PricingTableContext = React.createContext<Partial<typeof defaultContext>>(defaultContext);
 PricingTableContext.displayName = "PricingTableOrbitContext";
 
 export default PricingTableContext;

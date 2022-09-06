@@ -7,7 +7,7 @@ import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
 import defaultTheme from "../../../defaultTheme";
 import Header from "../../components/Header";
-import type { As } from "../../../Heading";
+import { As } from "../../../Heading/index.d";
 
 const SpacingMobile = css`
   ${({ theme }) => String(parseInt(theme.orbit.spaceMedium, 10) + 1)}px;

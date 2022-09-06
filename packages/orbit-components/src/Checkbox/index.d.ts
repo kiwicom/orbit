@@ -13,7 +13,7 @@ export interface Props extends Common.Globals {
   readonly checked?: boolean;
   readonly name?: string;
   readonly info?: React.ReactNode;
-  readonly tabIndex?: number;
+  readonly tabIndex?: string | number;
   readonly readOnly?: boolean;
   readonly tooltip?: React.ReactNode | null;
   // Should be InputEvent type

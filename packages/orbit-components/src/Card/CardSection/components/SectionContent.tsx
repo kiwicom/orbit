@@ -57,7 +57,6 @@ const SectionContent = ({
         <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
           <StyledCardSectionContent
             noSeparator={noSeparator}
-            // @ts-expect-error TODO
             ref={ref}
             expanded={expanded}
             hasPaddingTop={hasPaddingTop}
@@ -67,7 +66,6 @@ const SectionContent = ({
           </StyledCardSectionContent>
         </Slide>
       ) : (
-        // @ts-expect-error TODO
         <StyledCardSectionContent ref={ref} hasPaddingTop={hasPaddingTop}>
           {children}
         </StyledCardSectionContent>

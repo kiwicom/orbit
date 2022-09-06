@@ -104,7 +104,7 @@ const resolveUnderline = ({
     : theme.orbit.textDecorationTextLinkPrimary;
 };
 
-export const getLinkStyle = ({ theme }: { theme: Theme }) => css`
+export const getLinkStyle = ({ theme }: { theme: Theme; type: Props["type"] }) => css`
   // Common styles for TextLink and "a" in Text
 
   &,

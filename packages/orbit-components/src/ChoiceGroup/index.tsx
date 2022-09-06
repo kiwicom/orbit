@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import Heading, { Type } from "../Heading";
+import Heading, { Type } from "../Heading/index.d";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import Feedback, { StyledFormFeedback } from "./components/Feedback";

@@ -169,7 +169,7 @@ const Drawer = ({
 }: Props) => {
   const theme = useTheme();
   const overlayRef = React.useRef(null);
-  const closeButtonRef = React.useRef<HTMLElement | null>(null);
+  const closeButtonRef = React.useRef<HTMLButtonElement | null>(null);
   const scrollableRef = React.useRef<HTMLElement | null>(null);
   const timeoutLength = React.useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
     theme.orbit.durationNormal,

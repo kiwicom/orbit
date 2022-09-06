@@ -5,7 +5,7 @@ import * as React from "react";
 import * as Common from "../common/common";
 
 export interface Props extends Common.Globals {
-  readonly onMenuOpen?: React.MouseEventHandler<HTMLAnchorElement>;
+  readonly onMenuOpen?: Common.Event<React.SyntheticEvent<HTMLAnchorElement | HTMLButtonElement>>;
   readonly onShow?: Common.Callback;
   readonly onHide?: Common.Callback;
   readonly children: React.ReactNode;

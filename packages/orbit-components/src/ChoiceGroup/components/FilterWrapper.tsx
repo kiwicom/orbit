@@ -11,7 +11,7 @@ interface Props {
   readonly children: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
   readonly onlySelectionText: React.ReactNode;
   readonly onOnlySelection?: (
-    ev: React.SyntheticEvent<HTMLButtonElement>,
+    ev: React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>,
     obj: Record<"label" | "value", string>,
   ) => void | Promise<void>;
 }

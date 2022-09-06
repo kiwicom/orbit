@@ -1,20 +1,22 @@
-// @flow
 import * as React from "react";
 
-import type { As } from "../../../Heading";
+import * as Common from "../../../common/common";
+import { As } from "../../../Heading/index.d";
 
-export type Props = {|
-  +description?: React.Node,
-  +icon?: React.Node,
-  +actions?: React.Node,
-  +onClose?: () => void | Promise<any>,
-  +title?: React.Node,
-  +titleAs?: As,
-  +isSection?: boolean,
-  +dataA11ySection?: string,
-  +expandable?: boolean,
-  +expanded?: boolean,
-  +header?: React.Node,
-|};
+export interface Props {
+  description?: React.ReactNode;
+  icon?: React.ReactNode;
+  actions?: React.ReactNode;
+  onClose?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
+  title?: React.ReactNode;
+  titleAs?: As;
+  isSection?: boolean;
+  dataA11ySection?: string;
+  expandable?: boolean;
+  expanded?: boolean;
+  header?: React.ReactNode;
+}
 
-declare export default React.ComponentType<Props>;
+declare const Header: React.FunctionComponent<Props>;
+
+export default Header;

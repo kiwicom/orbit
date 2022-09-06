@@ -8,29 +8,20 @@ import getViewportGridStyles from "./helpers/getViewportGridStyles";
 import { isDefined } from "../layout";
 import { Props } from "./index.d";
 
-const StyledGrid = styled(({ className, children, dataTest }) => (
-  <div className={className} data-test={dataTest}>
-    {children}
-  </div>
-))`
-  /*
-    Just apply all mediaQueries (from devices map)
-    smallMobile - default values are not mediaQuery and needs to be rendered differently
-   */
-  ${({ theme, spaceAfter, ...props }) =>
+const StyledGrid = styled.div<Props>`
+  ${({ theme, ...props }) =>
     Object.values(DEVICES).map(viewport =>
       viewport in mediaQueries
         ? mediaQueries[viewport](css`
             ${isDefined(props[viewport]) &&
             getViewportGridStyles({
               viewport,
-              spaceAfter,
               theme,
             })};
           `)
         : viewport === "smallMobile" &&
           css`
-            ${getViewportGridStyles({ viewport, theme, spaceAfter })};
+            ${getViewportGridStyles({ viewport, theme })};
           `,
     )};
 `;
@@ -55,6 +46,7 @@ const Grid = ({
 }: Props) => {
   const smallMobile = { inline, rows, columns, gap, rowGap, columnGap, maxWidth, width };
   return (
+    // @ts-expect-error As prop
     <StyledGrid {...props} smallMobile={smallMobile} data-test={dataTest} as={as}>
       {children}
     </StyledGrid>

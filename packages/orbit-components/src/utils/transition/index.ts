@@ -6,9 +6,11 @@ const DURATIONS = {
   FAST: "fast",
 };
 
+export type TransitionDuration = "slow" | "normal" | "fast";
+
 type Transition = (
   properties: string[],
-  duration: "slow" | "normal" | "fast",
+  duration: TransitionDuration,
   timingFunction: string,
 ) => ({ theme }: { theme: Theme }) => string | null;
 

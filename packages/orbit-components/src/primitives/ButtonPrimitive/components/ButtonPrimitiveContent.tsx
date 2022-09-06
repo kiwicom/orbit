@@ -1,9 +1,12 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
-import type { Props } from "./ButtonPrimitiveContent";
+
+interface Props {
+  loading?: boolean;
+  contentAlign: string | null;
+}
 
 const StyledButtonPrimitiveContent = styled(
   ({ theme, loading, hasCenteredContent, onlyIcon, contentAlign, ...props }) => <div {...props} />,
@@ -18,12 +21,11 @@ const StyledButtonPrimitiveContent = styled(
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitiveContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveContent = ({ children, ...props }: Props): React.Node => (
+const ButtonPrimitiveContent = ({ children, ...props }: React.PropsWithChildren<Props>) => (
   <StyledButtonPrimitiveContent {...props}>{children}</StyledButtonPrimitiveContent>
 );
 

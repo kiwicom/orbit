@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Heading from "../Heading";
-import Checkbox, { Label } from "../Checkbox";
+import Checkbox, { StyledLabel as Label } from "../Checkbox";
 import Text from "../Text";
 import defaultTheme from "../defaultTheme";
 import { getSize } from "../Icon";
@@ -124,7 +124,7 @@ const ListChoice = ({
           </Text>
         )}
       </StyledListChoiceContent>
-      {selectable && <Checkbox checked={selected} readOnly disabled={disabled} tabIndex="-1" />}
+      {selectable && <Checkbox checked={selected} readOnly disabled={disabled} tabIndex={-1} />}
       {!selectable && action}
     </StyledListChoice>
   );

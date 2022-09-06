@@ -4,7 +4,7 @@ import { SIZE_OPTIONS } from "./consts";
 import { Size, HeightProps, ButtonCommonProps } from "../index.d";
 import { Theme } from "../../../defaultTheme";
 
-interface Params
+export interface Params
   extends Pick<
     ButtonCommonProps,
     "iconRight" | "contentAlign" | "contentWidth" | "iconLeft" | "width" | "iconRight" | "children"
@@ -13,7 +13,7 @@ interface Params
   theme: Theme;
 }
 
-interface Output
+export interface Output
   extends HeightProps,
     Pick<ButtonCommonProps, "contentAlign" | "contentWidth" | "width"> {
   fontWeight: string;

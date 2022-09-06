@@ -1,23 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
 
-<<<<<<< HEAD:packages/orbit-components/src/deprecated/RatingStars/index.jsx
 import StarEmpty from "../../icons/StarEmpty";
 import StarFull from "../../icons/StarFull";
 import defaultTheme from "../../defaultTheme";
-import MAX_STARS from "./consts";
-import { ICON_COLORS, ICON_SIZES } from "../../Icon/consts";
-import useTranslate from "../../hooks/useTranslate";
-
-import type { Props } from ".";
-=======
-import StarEmpty from "../icons/StarEmpty";
-import StarFull from "../icons/StarFull";
-import defaultTheme from "../defaultTheme";
 import { MAX_STARS, ICON_COLORS, ICON_SIZES } from "./consts";
-import useTranslate from "../hooks/useTranslate";
+import useTranslate from "../../hooks/useTranslate";
 import { Props } from "./index.d";
->>>>>>> c624db547 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/RatingStars/index.tsx
 
 const StyledRatingStars = styled.div`
   display: flex;

@@ -1,10 +1,9 @@
-// @flow
 import * as React from "react";
 
-import type { Props } from "..";
+import { Props } from "../index.d";
 import Svg from "../Svg";
 
-const Card = ({ height = 98, rowHeight = 98, ...props }: Props): React.Node => {
+const Card = ({ height = 98, rowHeight = 98, ...props }: Props) => {
   return (
     <Svg
       {...props}

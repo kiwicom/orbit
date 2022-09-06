@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+import { Props as WizardStepProps } from "./WizardStep.d";
 import WizardStep from "./WizardStep";
 import { WizardStepContext } from "./WizardContext";
 import Button from "../Button";
@@ -56,7 +57,7 @@ const Wizard = ({
   const translate = useTranslate();
 
   const isCompact = !isLargeMobile;
-  const childrenArray = React.Children.toArray(children);
+  const childrenArray = React.Children.toArray(children) as React.ReactElement<WizardStepProps>[];
   const stepStatuses = childrenArray.map((step, index) => {
     if (index < completedSteps) return "completed";
     if (index === completedSteps) return "available";
@@ -107,6 +108,7 @@ const Wizard = ({
               })}
             </b>
             <span
+              // @ts-expect-error sc issue
               css={css`
                 font-weight: normal;
               `}
@@ -126,12 +128,14 @@ const Wizard = ({
                 }}
               >
                 <nav
+                  // @ts-expect-error sc issue
                   css={css`
                     /* matching this to ModalBody's border-radius */
                     padding-top: 9px;
                   `}
                 >
                   <ul
+                    // @ts-expect-error sc issue
                     css={css`
                       ${unstyledListMixin};
                     `}

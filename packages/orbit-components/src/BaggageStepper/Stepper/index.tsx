@@ -71,7 +71,7 @@ const StepperStateless = ({
           disabled || disabledDecrement || (typeof value === "number" && value <= +minValue)
         }
         iconLeft={<Minus />}
-        onClick={(ev: React.SyntheticEvent<HTMLButtonElement>) => {
+        onClick={(ev: React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>) => {
           if (onDecrement && !disabled) {
             onDecrement(ev);
           }

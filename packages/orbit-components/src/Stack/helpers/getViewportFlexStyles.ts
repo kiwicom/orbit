@@ -35,7 +35,7 @@ const getViewportFlexStyles = (viewport: Devices) => (props: StyledProps): strin
         flex-wrap: ${getWrap(wrap)};
         flex-grow: ${getGrow(grow)};
         flex-shrink: ${getShrink(shrink)};
-        flex-basis: ${getBasis(basis)};
+        flex-basis: ${getBasis(basis)({ theme })};
         justify-content: ${getJustify(justify)};
         align-content: ${getAlign(align)};
         align-items: ${getAlign(align)};

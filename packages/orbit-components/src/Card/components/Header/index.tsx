@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled from "styled-components";
 
@@ -12,15 +11,13 @@ import Text from "../../../Text";
 import Close from "../../../icons/Close";
 import useTranslate from "../../../hooks/useTranslate";
 import ButtonLink from "../../../ButtonLink";
-
-import type { Props } from ".";
+import { Props } from "./index.d";
 
 const ChevronIcon = styled(ChevronDown)`
   transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
   transition: ${transition(["transform"], "fast", "ease-in-out")};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 ChevronIcon.defaultProps = {
   theme: defaultTheme,
 };
@@ -57,7 +54,7 @@ const Header = ({
   header,
   expandable,
   expanded,
-}: Props): React.Node => (
+}: Props) => (
   <Stack align={actions && !header ? "start" : "center"} spacing={header ? "small" : "none"}>
     {(title || description || icon) && !header && (
       <Stack

@@ -1,10 +1,9 @@
-// @flow
 import * as React from "react";
 
-import type { Props } from "..";
+import { Props } from "../index.d";
 import Svg from "../Svg";
 
-const Button = ({ height = 44, rowHeight = 44, width = 150, ...props }: Props): React.Node => {
+const Button = ({ height = 44, rowHeight = 44, width = 150, ...props }: Props) => {
   return (
     <Svg
       rows={1}

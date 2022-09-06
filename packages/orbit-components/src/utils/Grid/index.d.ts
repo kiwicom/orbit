@@ -14,10 +14,9 @@ export interface BasicProps {
   readonly columnGap?: string;
   readonly maxWidth?: string;
   readonly width?: string;
-  readonly spaceAfter?: Common.SpaceAfter;
 }
 
-export interface Props extends Common.Globals, BasicProps {
+export interface Props extends Common.Globals, Common.SpaceAfter, BasicProps {
   readonly as?: string;
   readonly mediumMobile?: BasicProps;
   readonly largeMobile?: BasicProps;

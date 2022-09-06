@@ -1,12 +1,16 @@
-// @flow
 import styled, { css } from "styled-components";
 import * as React from "react";
 
 import defaultTheme from "../../../defaultTheme";
 import transition from "../../../utils/transition";
-import type { Props } from "./ButtonPrimitiveIconContainer";
 
-export const StyledButtonPrimitiveIconContainer: any = styled(({ className, children }) => (
+interface Props {
+  margin?: string | null;
+  width?: string | null;
+  height?: string | null;
+}
+
+export const StyledButtonPrimitiveIconContainer = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   ${({ margin, width, height }) => css`
@@ -24,12 +28,16 @@ export const StyledButtonPrimitiveIconContainer: any = styled(({ className, chil
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledButtonPrimitiveIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const ButtonPrimitiveIconContainer = ({ margin, width, height, children }: Props): React.Node => (
+const ButtonPrimitiveIconContainer = ({
+  margin,
+  width,
+  height,
+  children,
+}: React.PropsWithChildren<Props>) => (
   <StyledButtonPrimitiveIconContainer margin={margin} width={width} height={height}>
     {children}
   </StyledButtonPrimitiveIconContainer>

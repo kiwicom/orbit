@@ -1,6 +1,6 @@
 import React from "react";
 
-type inexactNumber = number | undefined | null;
+type inexactNumber = number | null;
 
 export type Dimensions = {
   x: inexactNumber;

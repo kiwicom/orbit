@@ -13,7 +13,9 @@ const getViewportHideStyles = (
     viewport in mediaQueries
       ? css`
           ${mediaQueries[viewport](css`
-            display: ${on.indexOf(viewport) !== -1 ? "none" : resolveDisplayProp()};
+            display: ${on.indexOf(viewport) !== -1
+              ? "none"
+              : resolveDisplayProp && resolveDisplayProp()};
           `)};
         `
       : // "smallMobile" is not media query so we need to check it explicitly

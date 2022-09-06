@@ -9,7 +9,7 @@ import { SPACINGS } from "../utils/layout/consts";
 import getSpacing from "../Stack/helpers/getSpacing";
 import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
 import { Props } from "./index.d";
-import { Spacing } from "../Stack";
+import { Spacing } from "../Stack/index.d";
 
 const StyledLinkList = styled.ul<{ $direction?: "column" | "row"; $indent?: boolean }>`
   ${({ $direction, $indent, theme }) => css`
@@ -31,9 +31,10 @@ StyledLinkList.defaultProps = {
 const resolveSpacings = ({
   $spacing,
   $direction,
-  ...props
+  theme,
 }: {
   $spacing?: Spacing;
+  theme: typeof defaultTheme;
   $direction?: "column" | "row";
 }) => {
   const margin =
@@ -41,7 +42,7 @@ const resolveSpacings = ({
     $direction &&
     String(getDirectionSpacingTemplate($direction)).replace(
       "__spacing__",
-      getSpacing(props)[$spacing],
+      getSpacing(theme)[$spacing],
     );
 
   return css`

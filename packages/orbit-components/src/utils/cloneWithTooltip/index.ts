@@ -1,9 +1,6 @@
 import { cloneElement } from "react";
 
-const cloneWithTooltip = (
-  tooltip: React.ReactElement<any>,
-  children: React.ReactNode,
-): React.ReactNode => {
+const cloneWithTooltip = (tooltip: any, children: React.ReactNode): React.ReactNode => {
   if (!tooltip) return children;
   return cloneElement(tooltip, {
     children,

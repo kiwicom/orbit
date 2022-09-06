@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -7,13 +6,13 @@ import AirplaneDown from "../../icons/AirplaneDown";
 import AlertCircle from "../../icons/AlertCircle";
 import Circle from "../../icons/Circle";
 import defaultTheme from "../../defaultTheme";
-import type { Status } from "..";
+import { Status } from "../index.d";
 
-type Props = {|
-  isDetails?: boolean,
-  type?: Status,
-  children?: React.Node,
-|};
+interface Props {
+  isDetails?: boolean;
+  type?: Status;
+  children?: React.ReactNode;
+}
 
 const lineMixin = css`
   content: "";
@@ -22,8 +21,13 @@ const lineMixin = css`
   z-index: -1;
 `;
 
-// TODO: Improve
-const IconStyled = styled.div`
+const IconStyled = styled.div<{
+  index: number;
+  last: boolean;
+  count: number;
+  isPrevHidden: boolean;
+  isHidden: boolean;
+}>`
   ${({ theme, index, last, count, isPrevHidden, isHidden }) => css`
     display: flex;
     justify-content: center;
@@ -67,7 +71,6 @@ const IconStyled = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 IconStyled.defaultProps = {
   theme: defaultTheme,
 };
@@ -80,14 +83,13 @@ const Icon = ({ type, isDetails, icon }) => {
   return <Circle size="small" color="secondary" />;
 };
 
-const ItineraryIcon = ({ isDetails, type, children }: Props): React.Node => {
+const ItineraryIcon = ({ isDetails, type, children }: Props) => {
   const { index, last, isPrevHidden, isHidden, count } = usePart();
 
   return (
     <IconStyled
       index={index}
       last={last}
-      isDetails={isDetails}
       isPrevHidden={isPrevHidden}
       isHidden={isHidden}
       count={count}

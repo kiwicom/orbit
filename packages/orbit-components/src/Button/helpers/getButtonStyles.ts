@@ -22,7 +22,7 @@ const getButtonStyles = ({
   foregroundHover: string;
   foregroundActive: string;
 } => {
-  const wrappedBoxShadow = (state: ButtonStatesType) =>
+  const wrappedBoxShadow = (state: ButtonStates) =>
     getButtonBoxShadow({ state, disabled, theme, type });
   const wrappedTypeToken = (name: string) => getButtonTypeToken({ name, type, theme });
   const boxShadow = {

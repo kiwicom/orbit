@@ -54,21 +54,21 @@ const StyledTooltipWrapper = styled.div<{
   contentHeight: number;
   error?: boolean;
   help?: boolean;
-  size?: Size;
+  size: Size;
 }>`
-  ${({ theme, shown, popper }) => css`
+  ${({ theme, shown, popper, contentHeight, error, help, size }) => css`
     display: block;
-    ${popper};
+    ${{ ...popper }};
     width: auto;
-    max-width: ${tooltipSize};
+    max-width: ${tooltipSize({ size })};
     box-sizing: border-box;
-    padding: ${tooltipPadding};
+    transition: ${transition(["opacity", "visibility"], "fast", "ease-in-out")({ theme })};
+    padding: ${tooltipPadding({ theme, contentHeight })};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    background: ${resolveBackgroundColor};
+    background: ${resolveBackgroundColor({ theme, error, help })};
     box-shadow: ${theme.orbit.boxShadowRaised};
     visibility: ${shown ? "visible" : "hidden"};
     opacity: ${shown ? "1" : "0"};
-    transition: ${transition(["opacity", "visibility"], "fast", "ease-in-out")};
     z-index: 10012; // TODO: use some good value
     overflow-y: scroll;
     overflow: visible;
@@ -185,7 +185,7 @@ const TooltipContent = ({
         onMouseLeave={onClose}
         contentHeight={contentHeight}
         onClick={handleInnerClick}
-        popper={{ ...popper }}
+        popper={popper}
       >
         <StyledTooltipContent ref={content}>{children}</StyledTooltipContent>
         <StyledTooltipArrow

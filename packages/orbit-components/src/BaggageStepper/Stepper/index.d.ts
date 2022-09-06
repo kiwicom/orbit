@@ -4,7 +4,7 @@
 import * as React from "react";
 
 import * as Common from "../../common/common";
-import { SharedProps, Event } from "../index.d";
+import { SharedProps } from "../index.d";
 
 type InputEvent = Common.Event<React.KeyboardEvent<HTMLInputElement>>;
 export interface Props extends SharedProps {
@@ -12,8 +12,8 @@ export interface Props extends SharedProps {
   readonly disabledIncrement?: boolean;
   readonly disabledDecrement?: boolean;
   readonly onKeyDown?: InputEvent;
-  readonly onDecrement?: Event;
-  readonly onIncrement?: Event;
+  readonly onDecrement?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
+  readonly onIncrement?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
   readonly onChange?: InputEvent;
   readonly selected?: boolean;
 }

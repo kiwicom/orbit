@@ -10,7 +10,7 @@ import defaultTheme from "../../../defaultTheme";
 import getSpacingToken from "../../../common/getSpacingToken";
 import { Props } from "./index.d";
 
-const StyledInputStepper = styled.div`
+const StyledInputStepper = styled.div<{ spaceAfter: Props["spaceAfter"] }>`
   width: 100%;
   margin-bottom: ${getSpacingToken};
   font-family: ${({ theme }) => theme.orbit.fontFamily};

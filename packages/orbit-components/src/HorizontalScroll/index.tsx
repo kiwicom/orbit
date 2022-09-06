@@ -25,7 +25,15 @@ const StyledWrapper = styled.div<{
   isEnd?: boolean;
   isOverflowing?: boolean;
 }>`
-  ${({ isDragging, $minHeight, elevationColor, overflowElevation, isStart, isOverflowing }) => css`
+  ${({
+    isDragging,
+    $minHeight,
+    elevationColor,
+    overflowElevation,
+    isStart,
+    isOverflowing,
+    isEnd,
+  }) => css`
     position: relative;
     width: 100%;
     min-height: ${$minHeight && `${$minHeight}px`};

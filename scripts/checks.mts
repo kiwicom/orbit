@@ -7,8 +7,6 @@ import { $, argv, globby, path } from "zx";
     for (const configPath of await globby("**/tsconfig.json", { gitignore: true })) {
       await $`tsc --project ${path.dirname(configPath)} --noEmit --emitDeclarationOnly false`;
     }
-
-    await $`flow check`;
   }
   // Check links
   if (argv.links) {

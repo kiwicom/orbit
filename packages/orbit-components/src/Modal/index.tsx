@@ -409,7 +409,9 @@ const Modal = React.forwardRef<Instance, Props>(
     const manageFocus = () => {
       if (!focusTriggered || !modalContent.current) return;
 
-      const focusableElements = modalContent.current.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);
+      const focusableElements = modalContent.current.querySelectorAll<HTMLElement>(
+        FOCUSABLE_ELEMENT_SELECTORS,
+      );
 
       if (focusableElements.length > 0) {
         setFirstFocusableEl(focusableElements[0]);

@@ -1,4 +1,4 @@
-import { Theme } from "../../defaultTheme.d";
+import { Theme } from "../../defaultTheme";
 import { RtlSpacing, BorderRadius, Translate3d } from "./index.d";
 
 const leftToRight = (left: string, right: string) => ({ theme }: { theme: Theme }) =>

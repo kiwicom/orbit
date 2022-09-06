@@ -1,4 +1,4 @@
-import { Theme } from "../../defaultTheme.d";
+import { Theme } from "../../defaultTheme";
 
 export enum DIRECTIONS {
   ROW = "row",

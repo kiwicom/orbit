@@ -1,4 +1,4 @@
-import { Theme } from "../../defaultTheme.d";
+import { Theme } from "../../defaultTheme";
 
 const DURATIONS = {
   SLOW: "slow",

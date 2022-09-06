@@ -16,6 +16,13 @@ export interface Props {
   readonly original: Image;
   readonly name: Common.Translation;
 }
+export interface PictureProps {
+  pictures: Image;
+  name: React.ReactNode;
+  loaded: boolean;
+  onLoad?: () => void;
+  lowRes?: boolean;
+}
 
 declare const LazyImage: React.FunctionComponent<Props>;
 export { LazyImage, LazyImage as default };

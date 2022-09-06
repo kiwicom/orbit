@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-import { Theme } from "../../defaultTheme.d";
+import { Theme } from "../../defaultTheme";
 import { QUERIES } from "./consts";
 import { MediaQueries } from "./index.d";
 

@@ -7,24 +7,9 @@ import Stack from "../../Stack";
 import defaultTheme from "../../defaultTheme";
 import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage, { StyledLazyImage } from "../LazyImage";
-<<<<<<< HEAD:packages/orbit-components/src/deprecated/PictureCard/index.jsx
 import { left } from "../../utils/rtl";
 import useRandomId from "../../hooks/useRandomId";
 import handleKeyDown from "../../utils/handleKeyDown";
-
-import type { Props } from ".";
-
-const Shown = styled.div`
-  position: absolute;
-  opacity: 0;
-  z-index: 5;
-  padding: ${({ theme }) => `0 0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
-  ${({ contentHeight }) => (contentHeight > 0 ? `bottom: -${contentHeight}px` : `top: 100%`)};
-  transition: all ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-=======
-import { left } from "../utils/rtl";
-import useRandomId from "../hooks/useRandomId";
-import handleKeyDown from "../utils/handleKeyDown";
 import { Props } from "./index.d";
 
 const Shown = styled.div<{ contentHeight: number }>`
@@ -36,7 +21,6 @@ const Shown = styled.div<{ contentHeight: number }>`
     ${contentHeight > 0 ? `bottom: -${contentHeight}px` : `top: 100%`};
     transition: all ${theme.orbit.durationFast} ease-in-out;
   `};
->>>>>>> c624db547 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/PictureCard/index.tsx
 `;
 
 Shown.defaultProps = {
@@ -247,13 +231,7 @@ const PictureCard = ({
 
   const cardID = useRandomId();
 
-  const {
-    name,
-    original = undefined,
-    placeholder = undefined,
-    code = undefined,
-    src = undefined,
-  } = image;
+  const { name, original, placeholder, code, src } = image;
 
   const isPlain = !(title || subTitle || children || actions);
   const isClickable = href || onClick;

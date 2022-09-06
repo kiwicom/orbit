@@ -1,10 +1,9 @@
-// @flow
+export enum SIZE_OPTIONS {
+  SMALL = "small",
+  NORMAL = "normal",
+}
 
-export const SIZE_OPTIONS = {
-  SMALL: "small",
-  NORMAL: "normal",
-};
-export const RESIZE_OPTIONS = {
-  VERTICAL: "vertical",
-  NONE: "none",
-};
+export enum RESIZE_OPTIONS {
+  VERTICAL = "vertical",
+  NONE = "none",
+}

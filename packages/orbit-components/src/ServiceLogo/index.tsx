@@ -2,7 +2,8 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme, { Theme } from "../defaultTheme";
-import { SIZE_OPTIONS, baseURL } from "./consts";
+// @ts-expect-error currently it can't resolve mts properly
+import { SIZE_OPTIONS, baseURL } from "./consts.mts";
 import { Props, Size } from "./index.d";
 
 const getHeight = (theme: Theme, size: Size) => {

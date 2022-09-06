@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -53,6 +52,7 @@ describe("ChoiceGroup", () => {
       <ChoiceGroup onChange={onChange}>
         {({ Container, Item, spacing }) => (
           <Container style={{ display: "flex", flexDirection: "column", gap: spacing }}>
+            {/* @ts-expect-error todo */}
             <Item>
               <Radio value="option" label="Option" />
             </Item>
@@ -75,7 +75,7 @@ describe("ChoiceGroup", () => {
   });
 
   it("should have ref", () => {
-    const ref = React.createRef();
+    const ref = React.createRef<HTMLDivElement>();
 
     render(
       <ChoiceGroup ref={ref} onChange={() => {}}>

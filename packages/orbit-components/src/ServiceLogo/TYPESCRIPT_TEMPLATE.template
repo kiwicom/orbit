@@ -1,4 +1,3 @@
-// @flow
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
@@ -6,10 +5,10 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-type Size = "small" | "medium" | "large";
+export type Size = "small" | "medium" | "large";
 type Name =%NAMES%
 
-interface Props extends Common.Globals {
+export interface Props extends Common.Globals {
   readonly name: Name;
   readonly size?: Size;
   readonly grayScale?: boolean;

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { select, text } from "@storybook/addon-knobs";
 
+// @ts-expect-error currently can't resolve properly mts extension
 import { NAME_OPTIONS } from "./consts";
 
 import FeatureIcon from ".";

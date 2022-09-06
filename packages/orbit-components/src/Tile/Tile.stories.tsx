@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
@@ -21,7 +20,7 @@ export default {
   title: "Tile",
 };
 
-export const DefaultJustWrapper = (): React.Node => {
+export const DefaultJustWrapper = () => {
   const content = text("content", "Lorem ipsum dolor sit amet");
   const noPadding = boolean("noPadding", false);
   const as = text("as", "");
@@ -41,7 +40,7 @@ DefaultJustWrapper.story = {
   },
 };
 
-export const DefaultWithHeaderProps = (): React.Node => {
+export const DefaultWithHeaderProps = () => {
   const title = text("Title", "Expandable");
   const description = text(
     "Description",
@@ -68,7 +67,7 @@ DefaultWithHeaderProps.story = {
   },
 };
 
-export const DefaultWithHeaderPropsAsHref = (): React.Node => {
+export const DefaultWithHeaderPropsAsHref = () => {
   const title = text("Title", "Expandable");
   const description = text(
     "Description",
@@ -97,7 +96,7 @@ DefaultWithHeaderPropsAsHref.story = {
   },
 };
 
-export const ExpandableWithCustomDescription = (): React.Node => {
+export const ExpandableWithCustomDescription = () => {
   const showMore = boolean("showMore", false);
   const Icon = getIcon(getIcons("GenderMan"));
 
@@ -145,7 +144,7 @@ ExpandableWithCustomDescription.story = {
   },
 };
 
-export const Group = (): React.Node => {
+export const Group = () => {
   return (
     <TileGroup as="ul">
       <Tile as="li" href="#">
@@ -164,7 +163,7 @@ export const Group = (): React.Node => {
   );
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const href = text("Href", "https://www.kiwi.com/");
   const title = text("Title", "Tile with title");
   const external = boolean("External", false);
@@ -173,12 +172,12 @@ export const Playground = (): React.Node => {
     "Description",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
   );
-  const header = text("header", null);
+  const header = text("header", "");
   const expandable = boolean("expandable", false);
   const initialExpanded = boolean("initialExpanded", false);
   const noPadding = boolean("noPadding", false);
   const dataTest = text("dataTest", "test");
-  const children = text("children", null);
+  const children = text("children", "");
   const htmlTitle = text("htmlTitle", "Title for more info");
   const as = text("as", "");
 
@@ -209,7 +208,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Tile
       onClick={action("clicked")}

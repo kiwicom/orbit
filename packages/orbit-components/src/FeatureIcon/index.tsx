@@ -2,7 +2,8 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import { baseURL } from "./consts";
+// @ts-expect-error currently can't resolve properly mts extension
+import { baseURL } from "./consts.mts";
 import { Props } from "./index.d";
 
 const baseSize = 52;

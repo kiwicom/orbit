@@ -8,6 +8,7 @@ import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
 import { right } from "../../utils/rtl";
 import { Props, Type } from "./index.d";
+import { Props as IconProps } from "../../Icon/index.d";
 
 const getBackground = ({ theme, $type }: { theme: Theme; $type: Type }) => {
   const tokens = {
@@ -92,7 +93,10 @@ const BadgeListItem = ({
   return (
     <StyledBadgeListItem data-test={dataTest}>
       <StyledVerticalBadge $type={type} aria-hidden>
-        {React.isValidElement(icon) && React.cloneElement(icon, { color: getIconColor(type) })}
+        {React.isValidElement(icon) &&
+          React.cloneElement(icon as React.ReactElement<IconProps>, {
+            color: getIconColor(type),
+          })}
       </StyledVerticalBadge>
       <StyledVerticalBadgeContent>
         <Text type="secondary" size="small" as="span" strikeThrough={strikeThrough}>

@@ -1,5 +1,3 @@
-// @flow
-
 import validateIncrement from "..";
 
 describe("ValidateIncrement", () => {

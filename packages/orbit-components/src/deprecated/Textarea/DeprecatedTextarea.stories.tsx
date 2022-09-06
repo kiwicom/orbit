@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select, number } from "@storybook/addon-knobs";
@@ -14,7 +12,7 @@ export default {
   title: "Deprecated Textarea",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -30,7 +28,7 @@ Default.story = {
   },
 };
 
-export const SmallSize = (): React.Node => {
+export const SmallSize = () => {
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
 
@@ -47,7 +45,7 @@ SmallSize.story = {
   },
 };
 
-export const WithLabel = (): React.Node => {
+export const WithLabel = () => {
   const label = text("Label", "Label");
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
@@ -65,7 +63,7 @@ WithLabel.story = {
   },
 };
 
-export const WithHelp = (): React.Node => {
+export const WithHelp = () => {
   const value = text("Value", "Something");
   const placeholder = text("Placeholder", "Placeholder");
   const help = text("Help", "Everything is fine.");
@@ -83,7 +81,7 @@ WithHelp.story = {
   },
 };
 
-export const WithError = (): React.Node => {
+export const WithError = () => {
   const value = text("Value", "Something");
   const placeholder = text("Placeholder", "Placeholder");
   const error = text("Error", "Something went wrong.");
@@ -101,21 +99,21 @@ WithError.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const label = text("Label", "Label");
   const value = text("Value", "");
   const fullHeight = boolean("fullHeight", true);
   const placeholder = text("Placeholder", "Placeholder");
-  const help = text("Help", undefined);
+  const help = text("Help", "");
   const error = text("Error", "Something went wrong.");
   const disabled = boolean("Disabled", false);
   const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
-  const maxLength = number("maxLength", undefined);
+  const maxLength = number("maxLength", NaN);
   const dataTest = text("dataTest", "test");
   const rows = number("rows", 3);
   const required = boolean("required", false);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
 
   return (
     <Textarea
@@ -146,7 +144,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Textarea placeholder="My placeholder" value="Content of the Textarea" />
   </RenderInRtl>

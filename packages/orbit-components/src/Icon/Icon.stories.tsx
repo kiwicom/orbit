@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { select, text, boolean } from "@storybook/addon-knobs";
 
@@ -12,9 +10,9 @@ export default {
   title: "Icon",
 };
 
-export const Default = (): React.Node => {
-  const size = select("Size", [null, ...Object.values(ICON_SIZES)]);
-  const color = select("Color", [null, ...Object.values(ICON_COLORS)]);
+export const Default = () => {
+  const size = select("Size", [null, ...Object.values(ICON_SIZES)], ICON_SIZES.MEDIUM);
+  const color = select("Color", [null, ...Object.values(ICON_COLORS)], ICON_COLORS.PRIMARY);
   const source = select("Icon", Object.keys(Icons), "Airplane");
   const dataTest = text("dataTest", "test");
   const ariaLabel = text("ariaLabel", "label");
@@ -39,7 +37,7 @@ Default.story = {
   },
 };
 
-export const CustomColor = (): React.Node => {
+export const CustomColor = () => {
   const size = select("Size", [null, ...Object.values(ICON_SIZES)], ICON_SIZES.MEDIUM);
   const customColor = text("Custom color", "#ABCDEF");
   const source = select("Icon", Object.keys(Icons), "Airplane");
@@ -56,7 +54,7 @@ CustomColor.story = {
   },
 };
 
-export const ReversedOnRtl = (): React.Node => {
+export const ReversedOnRtl = () => {
   const source = select("Icon", Object.keys(Icons), "ChevronLeft");
   const Icon = Icons[source];
   return (
@@ -74,7 +72,7 @@ ReversedOnRtl.story = {
   },
 };
 
-export const ListOfAllIcons = (): React.Node => <IconList />;
+export const ListOfAllIcons = () => <IconList />;
 
 ListOfAllIcons.story = {
   name: "List of all icons",

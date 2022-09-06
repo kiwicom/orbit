@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -12,9 +11,9 @@ export default {
   title: "ButtonMobileStore",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const href = text("href", "#");
-  const lang = select("lang", Object.values(LANGUAGE), "EN");
+  const lang = select("lang", Object.values(LANGUAGE), LANGUAGE.EN);
 
   return (
     <>

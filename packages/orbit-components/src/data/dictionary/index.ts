@@ -1,4 +1,3 @@
-// @flow
 import arAE from "./ar-AE.json";
 import bgBG from "./bg-BG.json";
 import caES from "./ca-ES.json";

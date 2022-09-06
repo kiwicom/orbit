@@ -10,6 +10,7 @@ import { right } from "../utils/rtl";
 import TextLink from "../TextLink";
 import Hide from "../Hide";
 import { Props } from "./index.d";
+import { Props as BreadcrumbsItemProps } from "./BreadcrumbsItem/index.d";
 
 const StyledBreadcrumbs = styled.nav<{ spaceAfter?: Common.SpaceAfterSizes }>`
   ${({ theme }) => css`
@@ -43,6 +44,10 @@ StyledBackButtonWrapper.defaultProps = {
 
 const Breadcrumbs = (props: Props) => {
   const translate = useTranslate();
+  const childEls = React.Children.toArray(
+    props.children,
+  ) as React.ReactElement<BreadcrumbsItemProps>[];
+
   const {
     children,
     dataTest,
@@ -62,9 +67,9 @@ const Breadcrumbs = (props: Props) => {
           spaceAfter={spaceAfter}
         >
           <StyledBreadcrumbsList itemScope itemType="http://schema.org/BreadcrumbList">
-            {React.Children.map(children, (item, key) => {
+            {React.Children.map(childEls, (item, key) => {
               if (React.isValidElement(item)) {
-                return React.cloneElement(item, {
+                return React.cloneElement<BreadcrumbsItemProps>(item, {
                   active: key === React.Children.count(children) - 1,
                   contentKey: key + 1,
                 });

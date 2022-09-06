@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render } from "@testing-library/react";
 import MatchMediaMock from "jest-matchmedia-mock";
@@ -7,7 +6,6 @@ import ThemeProvider from "../../../ThemeProvider";
 import defaultTheme from "../../../defaultTheme";
 import useLockScrolling from "..";
 
-// $FlowFixMe
 let matchMedia: MatchMediaMock;
 
 beforeAll(() => {
@@ -24,7 +22,7 @@ afterAll(() => {
 
 describe("useLockScrolling", () => {
   it("should maintain locked scrolling when nested component closes", () => {
-    function Lock({ children }: {| children?: React.Node |}) {
+    function Lock({ children }: { children?: React.ReactNode }) {
       const ref = React.useRef(null);
       useLockScrolling(ref);
       return <div ref={ref}>{children}</div>;
@@ -50,19 +48,19 @@ describe("useLockScrolling", () => {
   it("should survive stress testing 😈", () => {
     Object.defineProperty(window.HTMLHtmlElement.prototype, "clientWidth", { value: 24 });
 
-    function LockFoo({ children }: {| children?: React.Node |}) {
+    function LockFoo({ children }: { children?: React.ReactNode }) {
       const ref = React.useRef(null);
       useLockScrolling(ref);
       return <div ref={ref}>{children}</div>;
     }
 
-    function LockBar({ children, lock = true }: {| children?: React.Node, lock?: boolean |}) {
+    function LockBar({ children, lock = true }: { children?: React.ReactNode; lock?: boolean }) {
       const ref = React.useRef(null);
       useLockScrolling(ref, lock);
       return <div ref={ref}>{children}</div>;
     }
 
-    function LockBaz({ switchRefs = false }: {| switchRefs?: boolean |}) {
+    function LockBaz({ switchRefs = false }) {
       const refA = React.useRef(null);
       const refB = React.useRef(null);
       useLockScrolling(switchRefs ? refB : refA, true, [switchRefs]);

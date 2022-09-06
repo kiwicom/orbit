@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, boolean, select } from "@storybook/addon-knobs";
 
@@ -21,7 +20,7 @@ export default {
   title: "Text",
 };
 
-export const PrimaryText = (): React.Node => {
+export const PrimaryText = () => {
   const children = text("Text", customText);
 
   return <Text>{children}</Text>;
@@ -36,7 +35,7 @@ PrimaryText.story = {
   },
 };
 
-export const SecondaryText = (): React.Node => {
+export const SecondaryText = () => {
   const children = text("Text", customText);
 
   return <Text type="secondary">{children}</Text>;
@@ -51,7 +50,7 @@ SecondaryText.story = {
   },
 };
 
-export const StatusText = (): React.Element<"div"> => {
+export const StatusText = () => {
   const children = text("Text", customText);
 
   return (
@@ -73,7 +72,7 @@ StatusText.story = {
   },
 };
 
-export const LinkInText = (): React.Node => (
+export const LinkInText = () => (
   <Text>
     {customText} <a href="http://kiwi.com">Kiwi.com</a>
   </Text>
@@ -88,7 +87,7 @@ LinkInText.story = {
   },
 };
 
-export const WhiteText = (): React.Element<"div"> => {
+export const WhiteText = () => {
   const children = text("Text", customText);
 
   return (
@@ -107,7 +106,7 @@ WhiteText.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
   const as = select("As", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.P);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
@@ -117,7 +116,7 @@ export const Playground = (): React.Node => {
   const strikeThrough = boolean("StrikeThrough", false);
   const italic = boolean("Italic", false);
   const children = text("Text", customText);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const dataTest = text("dataTest", "test");
   const id = text("id", "ID");
   const withBackground = boolean("withBackground", false);
@@ -149,7 +148,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Text align="left">Lorem ipsum dolor sit amet</Text>
   </RenderInRtl>

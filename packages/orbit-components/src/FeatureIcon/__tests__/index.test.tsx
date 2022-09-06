@@ -2,7 +2,8 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
 import FeatureIcon from "..";
-import { NAME_OPTIONS } from "../consts";
+// @ts-expect-error currently can't resolve properly mts extension
+import { NAME_OPTIONS } from "../consts.mts";
 
 const name = NAME_OPTIONS.TICKETSAVER;
 

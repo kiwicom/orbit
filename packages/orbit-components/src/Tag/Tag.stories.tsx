@@ -1,5 +1,3 @@
-// @flow
-
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -15,7 +13,7 @@ export default {
   title: "Tag",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   return (
     <Stack direction="column">
       <Heading type="title2">Neutral</Heading>
@@ -60,7 +58,7 @@ Default.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const content = text("Content", "Transport");
   const size = select("size", Object.values(SIZES), SIZES.NORMAL);
   const selected = boolean("selected", true);
@@ -90,7 +88,7 @@ Playground.story = {
   },
 };
 
-export const Rtl = (): React.Node => (
+export const Rtl = () => (
   <RenderInRtl>
     <Tag onRemove={action("onRemove")}>Transport</Tag>
   </RenderInRtl>

@@ -1,11 +1,11 @@
-// @flow
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Illustration from "../Illustration";
-import { NAMES } from "../Illustration/consts";
+// @ts-expect-error currently can't resolve mts properly
+import { NAMES } from "../Illustration/consts.mts";
 import Button from "../Button";
 import List from "../List";
 import ListItem from "../List/ListItem";
@@ -16,7 +16,7 @@ export default {
   title: "CallOutBanner",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const title = text("title", "Rooms in Warsaw");
   const description = text(
     "description",
@@ -54,7 +54,7 @@ Default.story = {
   },
 };
 
-export const Actionable = (): React.Node => {
+export const Actionable = () => {
   const title = text("title", "Rooms in Warsaw");
   const description = text(
     "description",
@@ -93,7 +93,7 @@ Actionable.story = {
   },
 };
 
-export const Playground = (): React.Node => {
+export const Playground = () => {
   const title = text("title", "Rooms in Warsaw");
   const description = text(
     "description",
@@ -102,7 +102,7 @@ export const Playground = (): React.Node => {
   const onClick = boolean("onClick", false);
   const actions = boolean("actions", false);
   const dataTest = text("dataTest", "test");
-  const illustration = select("illustration", [null, ...Object.values(NAMES)], "Accommodation");
+  const illustration = select("illustration", NAMES, "Accommodation");
   return (
     <CallOutBanner
       title={title}

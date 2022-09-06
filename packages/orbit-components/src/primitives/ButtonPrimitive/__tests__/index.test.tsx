@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -8,7 +7,7 @@ import { Airplane, ChevronDown } from "../../../icons";
 
 describe("ButtonPrimitive", () => {
   it("default", () => {
-    const ref = React.createRef();
+    const ref = React.createRef<HTMLButtonElement>();
     const children = "Lorem ipsum dolor sit amet";
     const onClick = jest.fn();
     render(

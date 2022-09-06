@@ -1,10 +1,11 @@
-// @flow
 import * as React from "react";
 
-import type { UseBoundingRect } from ".";
+import { Dimensions } from "./index.d";
 
-const useBoundingRect: UseBoundingRect = initialValue => {
-  const [state, setState] = React.useState(() => ({
+const useBoundingRect = <T extends HTMLElement>(
+  initialValue: Partial<Dimensions> | undefined | null,
+): [Dimensions, React.RefObject<T>] => {
+  const [state, setState] = React.useState<Dimensions>(() => ({
     x: 0,
     y: 0,
     width: 0,
@@ -16,14 +17,12 @@ const useBoundingRect: UseBoundingRect = initialValue => {
     ...initialValue,
   }));
 
-  const ref = React.useRef<?HTMLElement>(null);
+  const ref = React.useRef<T>(null);
+
   React.useEffect(() => {
     const calculate = () => {
       if (ref && ref.current) {
         const dimensions = ref.current.getBoundingClientRect();
-        /* $FlowFixMe
-        Somehow the Flow is confused and returns type ClientRect instead of DOMRect and therefore it expects that it's a function.
-        */
         setState(dimensions);
       }
     };
@@ -34,7 +33,6 @@ const useBoundingRect: UseBoundingRect = initialValue => {
     };
   }, []);
 
-  // $FlowFixMe
   return [state, ref];
 };
 

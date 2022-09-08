@@ -500,7 +500,6 @@ export const AdvancedErrorExample = () => {
 
     const formValidation = Object.entries(values).reduce(
       (acc, [key, value]) => {
-        // $FlowFixMe: mixed
         const newError = validate(value);
         const newFocused = { [key]: true };
         return {
@@ -707,7 +706,6 @@ export const AdvancedHelpExample = () => {
 
     const formValidation = Object.entries(values).reduce(
       (acc, [key, value]) => {
-        // $FlowFixMe: mixed
         const newError = validate(value);
         const newFocused = { [key]: true };
 

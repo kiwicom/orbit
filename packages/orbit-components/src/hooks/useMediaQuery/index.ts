@@ -78,7 +78,6 @@ const useMediaQuery = () => {
     return () => {
       if (mqListMap) {
         QUERIES.forEach(query => {
-          // $FlowFixMe[method-unbinding]
           if (typeof mqListMap[query].removeEventListener === "function") {
             mqListMap[query].removeEventListener("change", listenerMap[query]);
           } else {

@@ -20,7 +20,6 @@ describe("Wizard", () => {
       );
       expect(
         screen.queryByRole("button", { name: "4 of 5 Customize your trip" }),
-        // $FlowFixMe: install libdef for @testing-library/jest-dom
       ).toBeInTheDocument();
     });
 
@@ -97,7 +96,6 @@ describe("Wizard", () => {
       );
       userEvent.click(screen.getByRole("button"));
       userEvent.click(screen.getByRole("button", { name: "Close" }));
-      // $FlowFixMe: install libdef for @testing-library/jest-dom
       expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     });
   });

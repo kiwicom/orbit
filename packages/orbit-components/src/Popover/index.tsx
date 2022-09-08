@@ -64,7 +64,6 @@ const Popover = ({
   const handleOut = React.useCallback(
     (ev: React.SyntheticEvent<HTMLElement>) => {
       // If open prop is present ignore custom handler
-      // $FlowFixMe: TODO
       if (ref.current && !ref.current.contains(ev.currentTarget)) {
         if (typeof opened === "undefined") {
           setShown(false);

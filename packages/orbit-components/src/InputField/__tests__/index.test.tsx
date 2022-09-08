@@ -143,7 +143,6 @@ describe("InputField", () => {
       userEvent.tab();
       expect(screen.queryByTestId("help")).not.toBeInTheDocument();
       expect(screen.getByTestId("error")).toBeInTheDocument();
-      // $FlowFixMe:TODO
       await act(async () => {});
     });
   });

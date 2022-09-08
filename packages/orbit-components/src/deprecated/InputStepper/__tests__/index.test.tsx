@@ -43,14 +43,12 @@ describe("InputStepper", () => {
     render(<InputStepper label="Label" help="help message" />);
     userEvent.tab();
     expect(screen.getByText("help message")).toBeInTheDocument();
-    // $FlowFixMe:TODO
     await act(async () => {});
   });
   it("should render error message", async () => {
     render(<InputStepper label="Label" error="error message" />);
     userEvent.tab();
     expect(screen.getByText("error message")).toBeInTheDocument();
-    // $FlowFixMe:TODO
     await act(async () => {});
   });
   it("should not be able to change value by typing", () => {

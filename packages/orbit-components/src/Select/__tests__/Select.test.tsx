@@ -85,7 +85,6 @@ describe("Select", () => {
     render(<Select error="error" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
-    // $FlowFixMe: TODO
     await act(async () => {});
   });
 
@@ -93,7 +92,6 @@ describe("Select", () => {
     render(<Select help="help" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();
     expect(screen.getByText("help")).toBeInTheDocument();
-    // $FlowFixMe: TODO
     await act(async () => {});
   });
 

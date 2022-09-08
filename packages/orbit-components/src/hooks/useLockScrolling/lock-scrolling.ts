@@ -59,7 +59,6 @@ const preventDefault = (rawEvent: HandleScrollEvent): boolean => {
   // Do not prevent if the event has more than one touch (usually meaning this is a multi touch gesture like pinch to zoom).
   if (e.touches.length > 1) return true;
 
-  // $FlowFixMe[method-unbinding]
   if (e.preventDefault) e.preventDefault();
 
   return false;

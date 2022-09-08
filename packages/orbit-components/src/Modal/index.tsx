@@ -375,7 +375,6 @@ const Modal = React.forwardRef<Instance, Props>(
       if (!content) return;
 
       // added in 4.0.3, interpolation of styled component return static className
-      // $FlowFixMe
       const footerEl = content.querySelector(`${StyledModalFooter}`);
       const contentDimensions = content.getBoundingClientRect();
 

@@ -24,7 +24,7 @@ import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustrati
   const names = files.map(inputFileName => {
     const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");
     const functionName = capitalize(camelcase(baseName), true);
-    const outputComponentFileName = `${functionName}.jsx`;
+    const outputComponentFileName = `${functionName}.tsx`;
 
     return {
       inputFileName,
@@ -58,16 +58,6 @@ import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustrati
     `;
   };
 
-  const flowTemplate = (functionName: string) => `// @flow
-import * as React from "react";
-
-import type { Props } from "../Icon";
-
-export type ${functionName}Type = React.ComponentType<Props>;
-
-declare export default ${functionName}Type;
-  `;
-
   const typescriptTemplate = (functionName: string) => `
 import * as React from "react";
 
@@ -98,11 +88,6 @@ export { ${functionName}, ${functionName} as default };
         .catch(err => console.error(err));
     }
 
-    // write Flow declaration for every icon
-    fs.writeFileSync(
-      path.join(componentPath, `${outputComponentFileName}.flow`),
-      flowTemplate(functionName),
-    );
     // write TypeScript declaration for every icon
     fs.writeFileSync(
       path.join(componentPath, `${outputComponentFileName.replace(/\.jsx?/, "")}.d.ts`),
@@ -116,23 +101,14 @@ export { ${functionName}, ${functionName} as default };
 } from "./${functionName}"; \n`,
     )
     .join("");
-  fs.writeFileSync(path.join(componentPath, "index.js"), index);
 
-  const flow = `// @flow
-import * as React from "react"; \n\n`;
+  fs.writeFileSync(path.join(componentPath, "index.ts"), index);
 
   const TSHeader = `// Type definitions for @kiwicom/orbit-components
 // Project: https://github.com/kiwicom/orbit/\n`;
 
   const iconMapper = interpolation =>
     names.map(({ functionName }) => interpolation(functionName)).join("");
-
-  fs.writeFileSync(
-    path.join(componentPath, "index.js.flow"),
-    flow +
-      iconMapper((name: string) => `import type { ${name}Type } from "./${name}";\n`) +
-      iconMapper((name: string) => `declare export var ${name}: ${name}Type;\n`),
-  );
 
   fs.writeFileSync(
     path.join(componentPath, "index.d.ts"),

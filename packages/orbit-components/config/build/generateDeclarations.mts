@@ -15,11 +15,12 @@ export default async function generateTypeDeclarations() {
 
   // generate flow declarations out of typescript definitions
   console.log(chalk.greenBright("Generating Flow declarations..."));
-  const tsDeclarations = await globby("{lib,es}/**/*.d ts");
+  const tsDeclarations = await globby("{lib,es}/**/*.d.ts");
   await Promise.all(
     tsDeclarations.map(async tsDeclPath => {
+      const flowDeclPath = tsDeclPath.replace(".d.ts", ".jsx.flow");
       try {
-        if (await fs.pathExists(tsDeclPath.replace(".d.ts", ".js.flow"))) return;
+        if (await fs.pathExists(flowDeclPath)) return;
         const flowDecl = flowgen.compiler.compileDefinitionFile(tsDeclPath, {
           interfaceRecords: true,
         });
@@ -31,12 +32,12 @@ export default async function generateTypeDeclarations() {
                   .replace("React.FC", "React.StatelessFunctionalComponent"),
               )}
             `;
-        await fs.writeFile(tsDeclPath, content);
+        await fs.writeFile(flowDeclPath, content);
       } catch (err) {
         if (err instanceof Error) {
           err.message = dedent`
                 Failed to create a Flow libdef
-                ${__dirname}/${tsDeclPath}
+                ${__dirname}/${flowDeclPath}
                 ${err.message}
               `;
           throw err;

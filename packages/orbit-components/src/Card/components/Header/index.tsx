@@ -13,7 +13,7 @@ import useTranslate from "../../../hooks/useTranslate";
 import ButtonLink from "../../../ButtonLink";
 import { Props } from "./types";
 
-const ChevronIcon = styled(ChevronDown)`
+const ChevronIcon = styled(ChevronDown)<{ expanded?: Props["expanded"] }>`
   transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
   transition: ${transition(["transform"], "fast", "ease-in-out")};
 `;

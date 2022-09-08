@@ -3,7 +3,7 @@ export const OUTPUT_PATTERNS = [
   "es",
   "umd",
   ".out",
-  "src/icons/*.{js?(x),js?(x).flow,d.ts}",
+  "src/icons/*.{ts?(x),d.ts}",
   "orbit-icons-font",
   "orbit-icons-font.zip",
   "orbit-svgs.zip",

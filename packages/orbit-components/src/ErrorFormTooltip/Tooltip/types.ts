@@ -4,7 +4,7 @@ import * as Common from "../../common/types";
 
 export interface Props extends Common.Globals {
   readonly id?: string;
-  readonly children: React.Node;
+  readonly children: React.ReactNode;
   readonly shown?: boolean;
   readonly helpClosable: boolean;
   readonly isHelp?: boolean;
@@ -13,6 +13,3 @@ export interface Props extends Common.Globals {
   readonly inlineLabel?: boolean;
   readonly onShown: (arg: boolean) => void;
 }
-
-declare const Tooltip: React.FC<Props>;
-export { Tooltip, Tooltip as default };

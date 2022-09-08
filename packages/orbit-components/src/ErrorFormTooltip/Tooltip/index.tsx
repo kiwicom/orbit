@@ -16,7 +16,7 @@ import resolveColor from "./helpers/resolveColor";
 import resolvePlacement from "./helpers/resolvePlacement";
 import { SIDE_NUDGE } from "./consts";
 import useTheme from "../../hooks/useTheme";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledArrow = styled.div<{
   inlineLabel?: boolean;

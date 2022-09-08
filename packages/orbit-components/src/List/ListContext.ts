@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import { Size } from "../common/common";
-import { Type } from "./index.d";
+import { Size } from "../common/types";
+import { Type } from "./types";
 
 interface ListContextProps {
   readonly size?: Size | null;

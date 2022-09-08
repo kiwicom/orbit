@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import * as Common from "../../common/types";
 import defaultTheme from "../../defaultTheme";
-import TableBodyComponent from "./index.d";
 
 export const StyledTableBody = styled(({ children, className, dataTest }) => (
   <tbody className={className} data-test={dataTest}>
@@ -18,7 +18,7 @@ StyledTableBody.defaultProps = {
   theme: defaultTheme,
 };
 
-const TableBody: typeof TableBodyComponent = ({ children, dataTest }) => (
+const TableBody: React.FC<React.PropsWithChildren<Common.Globals>> = ({ children, dataTest }) => (
   <StyledTableBody dataTest={dataTest}>{children}</StyledTableBody>
 );
 

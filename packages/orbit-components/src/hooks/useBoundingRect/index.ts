@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Dimensions } from "./index.d";
+import { Dimensions } from "./types";
 
 const useBoundingRect = <T extends HTMLElement>(
   initialValue: Partial<Dimensions> | undefined | null,

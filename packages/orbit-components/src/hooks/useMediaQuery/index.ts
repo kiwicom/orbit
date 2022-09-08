@@ -3,7 +3,7 @@ import * as React from "react";
 import useTheme from "../useTheme";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 import QueryContext, { initialValue } from "../../ThemeProvider/QueryContext";
-import UseMediaQuery, { QueryMap } from "./index.d";
+import { QueryMap } from "./types";
 
 type Query = keyof QueryMap<any>;
 
@@ -16,7 +16,7 @@ const QUERIES: Query[] = [
   "prefersReducedMotion",
 ];
 
-const useMediaQuery: typeof UseMediaQuery = () => {
+const useMediaQuery = () => {
   const theme = useTheme();
 
   const contextValue = React.useContext(QueryContext);

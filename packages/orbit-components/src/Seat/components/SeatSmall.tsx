@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { TYPES } from "../consts";
-import { Props } from "../index.d";
+import { Props } from "../types";
 import useTheme from "../../hooks/useTheme";
 import { resolveFillColor, resolveTextColor, resolveAccentColor } from "./helpers";
 

@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import * as Common from "../../common/common";
+import * as Common from "../../common/types";
 import Pages from "./Pages";
 import PageButtonLink from "./PageButtonLink";
 import MenuMeatballs from "../../icons/MenuMeatballs";
-import { OnPageChange } from "../index.d";
+import { OnPageChange } from "../types";
 
 interface Props {
   pageCount: number;

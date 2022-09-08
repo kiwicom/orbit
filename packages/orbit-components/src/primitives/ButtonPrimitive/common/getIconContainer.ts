@@ -4,7 +4,7 @@ import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { rtlSpacing } from "../../../utils/rtl";
 import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
-import { Size, IconForeground, IconProps } from "../index.d";
+import { Size, IconForeground, IconProps } from "../types";
 import { Theme } from "../../../defaultTheme";
 
 type getIconContainerType = ({

@@ -1,9 +1,9 @@
 import * as React from "react";
 
-import * as Common from "../../common/common";
+import * as Common from "../../common/types";
 import ActiveButton from "./ActiveButton";
 import PageButtonLink from "./PageButtonLink";
-import { OnPageChange } from "../index.d";
+import { OnPageChange } from "../types";
 
 interface Props {
   enlargement?: number;

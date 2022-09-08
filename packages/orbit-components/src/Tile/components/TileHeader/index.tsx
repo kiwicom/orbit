@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../../../common/common";
+import * as Common from "../../../common/types";
 import defaultTheme from "../../../defaultTheme";
 import { rtlSpacing } from "../../../utils/rtl";
 import Stack from "../../../Stack";

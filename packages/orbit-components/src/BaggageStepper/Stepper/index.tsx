@@ -5,7 +5,7 @@ import Button from "./Button";
 import Minus from "../../icons/Minus";
 import Plus from "../../icons/Plus";
 import defaultTheme from "../../defaultTheme";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledStepper = styled.div`
   display: flex;

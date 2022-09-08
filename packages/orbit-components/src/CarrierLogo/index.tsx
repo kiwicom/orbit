@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import defaultTheme, { Theme } from "../defaultTheme";
 import { SIZE_OPTIONS, BASE_URL } from "./consts";
-import { Props, CarrierType, Size, Carrier } from "./index.d";
+import { Props, CarrierType, Size, Carrier } from "./types";
 
 interface StyledProps {
   rounded?: boolean;

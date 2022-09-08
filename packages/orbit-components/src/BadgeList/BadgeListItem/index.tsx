@@ -7,8 +7,8 @@ import defaultTheme, { Theme } from "../../defaultTheme";
 import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
 import { right } from "../../utils/rtl";
-import { Props, Type } from "./index.d";
-import { Props as IconProps } from "../../Icon/index.d";
+import { Props, Type } from "./types";
+import { Props as IconProps } from "../../Icon/types";
 
 const getBackground = ({ theme, $type }: { theme: Theme; $type: Type }) => {
   const tokens = {

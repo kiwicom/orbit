@@ -5,7 +5,7 @@ import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import defaultTheme, { Theme } from "../defaultTheme";
 import { baseURL, CODES, SIZES, TOKENS } from "./consts";
-import { Props, Size } from "./index.d";
+import { Props, Size } from "./types";
 
 const getSizeToken = (name: string) => ({ theme, size }: { theme: Theme; size: Size }) => {
   const tokens = {

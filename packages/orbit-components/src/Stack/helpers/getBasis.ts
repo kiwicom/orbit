@@ -1,4 +1,4 @@
-import { Basis } from "../index.d";
+import { Basis } from "../types";
 import { Theme } from "../../defaultTheme";
 
 const getBasis = (basis: Basis) => ({ theme }: { theme: Theme }): Basis => {

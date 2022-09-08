@@ -1,7 +1,9 @@
 import * as React from "react";
 
 import whiteListProps from "./helpers/whiteListProps";
-import OrbitIcon, { Props } from "./index.d";
+import { Props } from "./types";
+
+import OrbitIcon from ".";
 
 const createIcon = (
   def: React.ReactNode,

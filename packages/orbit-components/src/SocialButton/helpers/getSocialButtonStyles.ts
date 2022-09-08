@@ -3,7 +3,7 @@ import getSocialButtonBoxShadow from "./getSocialButtonBoxShadow";
 import { TOKENS } from "../consts";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import { Theme } from "../../defaultTheme";
-import { Type } from "../index.d";
+import { Type } from "../types";
 
 interface Output {
   background: string;

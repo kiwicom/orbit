@@ -1,5 +1,5 @@
 import { Theme } from "../../../defaultTheme";
-import { Type } from "../../index.d";
+import { Type } from "../../types";
 import resolveAccentColor from "./resolveAccentColor";
 import resolveFocusColor from "./resolveFocusColor";
 import resolveFillColor from "./resolveFillColor";

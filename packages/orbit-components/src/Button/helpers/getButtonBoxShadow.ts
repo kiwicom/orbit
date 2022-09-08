@@ -4,7 +4,7 @@ import { Interpolation } from "styled-components";
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import getButtonTypeToken from "./getButtonTypeToken";
-import { Type, ButtonStates } from "../index.d";
+import { Type, ButtonStates } from "../types";
 import { Theme } from "../../defaultTheme";
 
 const opacity = {

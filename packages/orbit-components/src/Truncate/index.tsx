@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { StyledText } from "../Text";
 import { StyledHeading } from "../Heading";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledTruncate = styled.div<{ maxWidth?: string }>`
   ${({ maxWidth }) => `

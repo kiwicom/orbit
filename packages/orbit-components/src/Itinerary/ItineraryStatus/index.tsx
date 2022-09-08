@@ -1,19 +1,19 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../../common/common";
+import * as Common from "../../common/types";
 import { left, rtlSpacing } from "../../utils/rtl";
 import Text from "../../Text";
 import Stack from "../../Stack";
 import defaultTheme, { ThemeProps } from "../../defaultTheme";
 import { STATUS } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
-import { Status } from "../index.d";
+import { Status } from "../types";
 import AlertOctagon from "../../icons/AlertOctagon";
 import Warning from "../../icons/AlertCircle";
 import Info from "../../icons/InformationCircle";
 import Check from "../../icons/CheckCircle";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemeProps) => {
   const border = {

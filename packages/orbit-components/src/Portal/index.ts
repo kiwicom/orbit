@@ -1,7 +1,7 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
 
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const Portal = ({ renderInto, children }: Props) => {
   const [el] = React.useState(() => {

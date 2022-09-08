@@ -17,7 +17,7 @@ import Stack from "../Stack";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import Heading from "../Heading";
 import { rtlSpacing } from "../utils/rtl";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const getPadding = ({
   noPadding,

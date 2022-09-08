@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Circle from "../icons/Circle";
 import handleKeyDown from "../utils/handleKeyDown";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledSwitch = styled.label`
   display: inline-block;

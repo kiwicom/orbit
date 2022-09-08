@@ -11,7 +11,7 @@ import WizardStepIcon, { StyledStepIconContainer } from "./WizardStepIcon";
 import { WizardStepContext, Status } from "./WizardContext";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
-import { Props } from "./WizardStep.d";
+import { WizardStepProps } from "./types";
 import { resolveStepBorder } from "./helpers";
 
 const StyledBorder = styled.div`
@@ -145,7 +145,7 @@ StyledButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const WizardStep = ({ dataTest, title, onClick }: Props) => {
+const WizardStep = ({ dataTest, title, onClick }: WizardStepProps) => {
   const theme = useTheme();
   const {
     index,

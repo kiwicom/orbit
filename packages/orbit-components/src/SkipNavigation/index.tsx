@@ -6,7 +6,7 @@ import Stack from "../Stack";
 import ButtonLink from "../Button";
 import defaultTheme from "../defaultTheme";
 import Translate from "../Translate";
-import { Props, MappedOptions } from "./index.d";
+import { Props, MappedOptions } from "./types";
 
 const StyledNavigation = styled.div<{ show?: boolean }>`
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight}; /* TODO: Token */

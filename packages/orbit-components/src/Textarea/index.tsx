@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 import defaultTheme, { Theme } from "../defaultTheme";
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import FormLabel from "../FormLabel";
@@ -12,7 +12,7 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const Field = styled.label<{ fullHeight?: boolean; spaceAfter?: Common.SpaceAfterSizes }>`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

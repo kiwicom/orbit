@@ -4,7 +4,8 @@ import { text, boolean, select, number, object } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { SIZE_OPTIONS, TYPE_OPTIONS, INPUTMODE } from "./consts";
-import { NAME_OPTIONS } from "../ServiceLogo/consts";
+// @ts-expect-error currently it can't resolve mts properly
+import { NAME_OPTIONS } from "../ServiceLogo/consts.mts";
 import ButtonLink from "../ButtonLink";
 import TextLink from "../TextLink";
 import ServiceLogo from "../ServiceLogo";

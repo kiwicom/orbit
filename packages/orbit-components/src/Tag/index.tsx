@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 import defaultTheme, { Theme } from "../defaultTheme";
 import { left } from "../utils/rtl";
 import CloseCircle from "../icons/CloseCircle";
@@ -9,7 +9,7 @@ import { SIZES, STATES, TYPES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import resolveColor from "./helpers/resolveColor";
 import resolveCircleColor from "./helpers/resolveCircleColor";
-import { Props, Type } from "./index.d";
+import { Props, Type } from "./types";
 
 const getFontSize = ({ theme, size }: { theme: Theme; size: Props["size"] }): string | null => {
   const tokens = {

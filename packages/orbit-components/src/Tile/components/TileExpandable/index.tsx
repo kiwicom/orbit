@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import * as Common from "../../../common/common";
+import * as Common from "../../../common/types";
 import Slide from "../../../utils/Slide";
 import { useRandomIdSeed } from "../../../hooks/useRandomId";
 import TileContent from "../TileContent";

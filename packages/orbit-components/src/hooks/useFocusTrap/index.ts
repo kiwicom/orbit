@@ -2,7 +2,7 @@ import * as React from "react";
 
 import FOCUSABLE_ELEMENT_SELECTORS from "./consts";
 import KEY_CODE_MAP from "../../common/keyMaps";
-import UseFocusTrap from "./index.d";
+import UseFocusTrap from "./types";
 
 interface FocusElements {
   first: HTMLElement | null;

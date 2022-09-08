@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { QueryMap } from "../../hooks/useMediaQuery/types";
+
 export const initialValue = {
   isLargeDesktop: null,
   isDesktop: null,
@@ -9,7 +11,7 @@ export const initialValue = {
   prefersReducedMotion: null,
 };
 
-const QueryContext = React.createContext(initialValue);
+const QueryContext = React.createContext<QueryMap<null | boolean>>(initialValue);
 QueryContext.displayName = "QueryOrbitContext";
 
 export default QueryContext;

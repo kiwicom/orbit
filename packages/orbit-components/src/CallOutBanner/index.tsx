@@ -6,7 +6,7 @@ import defaultTheme from "../defaultTheme";
 import Heading from "../Heading";
 import Stack from "../Stack";
 import Text from "../Text";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledCallOutBanner = styled.div<Partial<Props>>`
   ${({ theme, onClick }) => css`

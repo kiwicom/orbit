@@ -3,7 +3,7 @@ import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 import getSocialButtonTypeToken from "./getSocialButtonTypeToken";
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import { Theme } from "../../defaultTheme";
-import { Type } from "../index.d";
+import { Type } from "../types";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 
 const opacity = {

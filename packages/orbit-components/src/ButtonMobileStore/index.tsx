@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { HEIGHT, TYPE_OPTIONS, LANGUAGE } from "./consts";
-import { Props, Type } from "./index.d";
+import { Props, Type } from "./types";
 
 const StyledButtonMobileStore = styled.a`
   display: inline-block;

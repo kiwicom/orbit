@@ -1,4 +1,4 @@
-import { Type } from "./index.d";
+import { Type } from "./types";
 
 export const TYPE_OPTIONS: Record<string, Type> = {
   NEUTRAL: "neutral",

@@ -1,5 +1,5 @@
 import { DIRECTIONS } from "../../utils/layout/consts";
-import { Direction } from "../index.d";
+import { Direction } from "../types";
 
 const getDirectionSpacingTemplate = (direction: Direction): string => {
   switch (direction) {

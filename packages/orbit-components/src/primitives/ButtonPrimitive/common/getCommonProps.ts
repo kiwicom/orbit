@@ -1,7 +1,7 @@
 import getSizeToken from "./getSizeToken";
 import getPadding from "./getPadding";
 import { SIZE_OPTIONS } from "./consts";
-import { Size, HeightProps, ButtonCommonProps } from "../index.d";
+import { Size, HeightProps, ButtonCommonProps } from "../types";
 import { Theme } from "../../../defaultTheme";
 
 export interface Params

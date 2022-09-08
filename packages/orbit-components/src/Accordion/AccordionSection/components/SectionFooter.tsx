@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import * as Common from "../../../common/common";
+import * as Common from "../../../common/types";
 
 const Wrapper = styled.div`
   display: flex;

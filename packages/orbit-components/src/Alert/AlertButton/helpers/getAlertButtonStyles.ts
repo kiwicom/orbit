@@ -3,7 +3,7 @@ import getAlertButtonTypeToken, { TokenName } from "./getAlertButtonTypeToken";
 import { TOKENS } from "../consts";
 import getAlertButtonBoxShadow, { State } from "./getAlertButtonBoxShadow";
 import { Theme } from "../../../defaultTheme";
-import { Type } from "../index.d";
+import { Type } from "../types";
 
 const getAlertButtonStyles = ({
   disabled,

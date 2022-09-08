@@ -10,7 +10,7 @@ import Stack from "../../../Stack";
 import StyledIconWrapper from "../primitives/StyledIconWrapper";
 import StyledProgressLine from "../primitives/StyledProgressLine";
 import StyledText from "../primitives/StyledText";
-import { Props as StepProps, Type } from "../index.d";
+import { Props as StepProps, Type } from "../types";
 
 const StyledIndent = styled.div<{ isText?: boolean }>`
   padding-left: ${({ theme, isText }) => !isText && theme.orbit.spaceXSmall};

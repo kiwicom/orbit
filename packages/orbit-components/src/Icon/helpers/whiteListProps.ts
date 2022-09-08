@@ -1,5 +1,5 @@
-import { Globals } from "../../common/common";
-import { Size, Color } from "../index.d";
+import { Globals } from "../../common/types";
+import { Size, Color } from "../types";
 
 const ALLOWED_PROPS = [
   "size",

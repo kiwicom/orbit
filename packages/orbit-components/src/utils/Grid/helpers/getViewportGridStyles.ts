@@ -2,8 +2,8 @@ import { css, FlattenSimpleInterpolation } from "styled-components";
 
 import getSpacingToken from "../../../common/getSpacingToken";
 import getDisplay from "./getDisplay";
-import { Devices } from "../../mediaQuery/index.d";
-import { Props } from "../index.d";
+import { Devices } from "../../mediaQuery/types";
+import { Props } from "../types";
 import defaultTheme from "../../../defaultTheme";
 
 const getViewportGridStyles = ({

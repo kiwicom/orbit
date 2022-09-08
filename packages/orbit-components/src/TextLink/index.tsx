@@ -1,9 +1,9 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import Common from "../common/common";
+import * as Common from "../common/types";
 import defaultTheme, { Theme } from "../defaultTheme";
-import { Props, Type } from "./index.d";
+import { Props, Type } from "./types";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import createRel from "../primitives/ButtonPrimitive/common/createRel";
 

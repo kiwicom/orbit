@@ -1,5 +1,5 @@
 import { SIZE_OPTIONS } from "../consts";
-import { Size } from "../index.d";
+import { Size } from "../types";
 
 const tooltipSize = ({ size }: { size: Size }): string => {
   const sizes = {

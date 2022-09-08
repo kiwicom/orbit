@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { Value } from "../../index.d";
-import { Translation } from "../../../common/common";
+import { Value } from "../../types";
+import { Translation } from "../../../common/types";
 import defaultTheme from "../../../defaultTheme";
 import Loading from "../../../Loading";
 

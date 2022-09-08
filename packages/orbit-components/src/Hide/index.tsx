@@ -4,8 +4,8 @@ import styled from "styled-components";
 import defaultTheme from "../defaultTheme";
 import getViewportHideStyles from "./helpers/getViewportHideStyles";
 import getDisplay from "./helpers/getDisplay";
-import { Props } from "./index.d";
-import { Devices } from "../utils/mediaQuery/index.d";
+import { Props } from "./types";
+import { Devices } from "../utils/mediaQuery/types";
 
 const StyledHide = styled.div<{ on: Devices[]; $block?: boolean }>`
   ${({ on }) => getViewportHideStyles(on, getDisplay)};

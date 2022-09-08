@@ -10,7 +10,7 @@ import LazyImage, { StyledLazyImage } from "../LazyImage";
 import { left } from "../../utils/rtl";
 import useRandomId from "../../hooks/useRandomId";
 import handleKeyDown from "../../utils/handleKeyDown";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const Shown = styled.div<{ contentHeight: number }>`
   ${({ theme, contentHeight }) => css`

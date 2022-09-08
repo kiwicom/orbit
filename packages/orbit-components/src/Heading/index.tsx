@@ -7,7 +7,7 @@ import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
 import { DEVICES } from "../utils/mediaQuery/consts";
-import { Props, Type } from "./index.d";
+import { Props, Type } from "./types";
 
 export const getHeadingToken = (name: string, type: Type) => ({ theme }: { theme: Theme }) => {
   const tokens = {

@@ -1,7 +1,8 @@
 import * as React from "react";
 
 import useMediaQuery from "../../hooks/useMediaQuery";
-import QueryContext from "./index.d";
+
+import QueryContext from ".";
 
 interface Props {
   children?: React.ReactNode;

@@ -3,7 +3,7 @@ import React from "react";
 import BadgePrimitive from "../primitives/BadgePrimitive";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
 import useTheme from "../hooks/useTheme";
-import type { Props } from "./index.d";
+import { Props } from "./types";
 
 const getTypeToken = ({ name, theme, type }) => {
   const tokens = {

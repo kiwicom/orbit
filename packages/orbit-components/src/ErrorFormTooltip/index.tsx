@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Tooltip from "./Tooltip";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const ErrorFormTooltip = ({
   shown,

@@ -6,7 +6,7 @@ import mergeRefs from "../utils/mergeRefs";
 import defaultTheme from "../defaultTheme";
 import useTheme from "../hooks/useTheme";
 import useScrollBox from "./useScroll";
-import { Props, ScrollSnap } from "./index.d";
+import { Props, ScrollSnap } from "./types";
 
 const shadowMixin = css`
   content: "";

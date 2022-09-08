@@ -9,7 +9,7 @@ import ButtonLink from "../ButtonLink";
 import useStateWithCallback from "../hooks/useStateWithCallback";
 import useTranslate from "../hooks/useTranslate";
 import mq from "../utils/mediaQuery";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const NAVBAR_HEIGHT = { MOBILE: 52, DESKTOP: 64 };
 

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import KEY_CODE_MAP from "../common/keyMaps";
 import defaultTheme from "../defaultTheme";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledNavigation = styled.nav``;
 

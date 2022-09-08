@@ -7,7 +7,7 @@ import Plus from "../../icons/Plus";
 import defaultTheme from "../../defaultTheme";
 import Button from "../../primitives/ButtonPrimitive";
 import useTheme from "../../hooks/useTheme";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const getMaxWidth = ({ maxWidth }) => {
   if (typeof maxWidth === "string") return maxWidth;

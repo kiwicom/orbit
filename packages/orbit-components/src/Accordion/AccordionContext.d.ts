@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 
 export interface Context {
   readonly onExpand?: Common.Callback;

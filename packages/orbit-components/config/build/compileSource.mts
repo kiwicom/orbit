@@ -11,13 +11,13 @@ const parseFile = (file: string, options: babel.TransformOptions) => {
   return babel.transformFileAsync(file, options);
 };
 
-// const renameFileExtension = (file: string) => {
-//   if (path.extname(file) === ".ts" || path.extname(file) === ".tsx") {
-//     return file.replace(/\.tsx?$/, ".js");
-//   }
+const renameFileExtension = (file: string) => {
+  if (path.extname(file) === ".ts" || path.extname(file) === ".tsx") {
+    return file.replace(/\.tsx?$/, ".js");
+  }
 
-//   return file;
-// };
+  return file;
+};
 
 export default async function compileSource() {
   const files = await globby("**/*.{mts,ts,tsx}", {
@@ -39,7 +39,7 @@ export default async function compileSource() {
       for (const file of files) {
         const result = await parseFile(path.join("src", file), options);
 
-        await fs.outputFile(path.join(dir, file), result?.code);
+        await fs.outputFile(renameFileExtension(path.join(dir, file)), result?.code);
       }
 
       spinner.succeed(`${name} → ${dir}`);

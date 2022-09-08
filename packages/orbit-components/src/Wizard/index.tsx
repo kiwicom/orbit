@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { Props as WizardStepProps } from "./WizardStep.d";
 import WizardStep from "./WizardStep";
 import { WizardStepContext } from "./WizardContext";
 import Button from "../Button";
@@ -14,7 +13,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import useTranslate from "../hooks/useTranslate";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
-import { Props } from "./index.d";
+import { Props, WizardStepProps } from "./types";
 
 const unstyledListMixin = css`
   list-style-type: none;

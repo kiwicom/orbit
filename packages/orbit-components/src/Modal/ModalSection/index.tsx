@@ -6,7 +6,7 @@ import media from "../../utils/mediaQuery";
 import { StyledModalFooter } from "../ModalFooter";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 export const StyledModalSection = styled.section<{
   suppressed?: boolean;

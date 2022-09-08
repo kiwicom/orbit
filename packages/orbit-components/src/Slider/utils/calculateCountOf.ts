@@ -1,4 +1,4 @@
-import { Value, Data } from "../index.d";
+import { Value, Data } from "../types";
 
 type CalculateCountOf = (data: Data, value: Value, min: number) => [number, number];
 

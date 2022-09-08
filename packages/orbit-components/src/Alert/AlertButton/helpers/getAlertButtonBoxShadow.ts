@@ -4,7 +4,7 @@ import { Theme } from "../../../defaultTheme";
 import getAlertButtonTypeToken, { TokenName } from "./getAlertButtonTypeToken";
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import { BUTTON_STATES } from "../../../primitives/ButtonPrimitive/common/consts";
-import { Type } from "../index.d";
+import { Type } from "../types";
 
 const opacity = {
   [TYPE_OPTIONS.INFO]: 15,

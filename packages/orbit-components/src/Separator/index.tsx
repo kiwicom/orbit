@@ -1,11 +1,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 import defaultTheme, { Theme } from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import { left, right } from "../utils/rtl";
-import { Props, Indent, Align } from "./index.d";
+import { Props, Indent, Align } from "./types";
 
 function capitalize(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);

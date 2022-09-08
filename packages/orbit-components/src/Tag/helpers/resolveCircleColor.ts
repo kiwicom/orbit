@@ -1,5 +1,5 @@
 import { TYPES } from "../consts";
-import { Type } from "../index.d";
+import { Type } from "../types";
 import { Theme } from "../../defaultTheme";
 
 const resolveColor = () => ({

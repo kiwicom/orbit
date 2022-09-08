@@ -1,13 +1,13 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 import Stack from "../Stack";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { TimelineStatusProvider, TimelineStepContext } from "./TimelineContext";
 import getSpacingToken from "../common/getSpacingToken";
 import themeDefault from "../defaultTheme";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const WrapperStyled = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
   position: relative;

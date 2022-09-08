@@ -1,4 +1,4 @@
-import { Props } from "../index.d";
+import { Props } from "../types";
 
 const shouldUseFlex = (props: Props): boolean =>
   props.flex ||

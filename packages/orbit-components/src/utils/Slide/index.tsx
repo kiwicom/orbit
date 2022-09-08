@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import transition, { TransitionDuration } from "../transition";
 import defaultTheme from "../../defaultTheme";
-import { Props, State } from "./index.d";
+import { Props, State } from "./types";
 
 const getMaxHeight = ({ maxHeight }) => {
   if (maxHeight === 0) return `0px`;

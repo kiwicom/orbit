@@ -11,7 +11,7 @@ import Text from "../../../Text";
 import Close from "../../../icons/Close";
 import useTranslate from "../../../hooks/useTranslate";
 import ButtonLink from "../../../ButtonLink";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const ChevronIcon = styled(ChevronDown)`
   transform: ${({ expanded }) => expanded && "rotate(-180deg)"};

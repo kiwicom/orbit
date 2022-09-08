@@ -10,7 +10,7 @@ import Stack from "../../../Stack";
 import Text from "../../../Text";
 import ItineraryIcon from "../ItineraryIcon";
 import { usePart } from "../context";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledWrapper = styled.div<{ isLast?: boolean; isFirst?: boolean; isBanner?: boolean }>`
   ${({ theme, isLast, isFirst, isBanner }) => css`

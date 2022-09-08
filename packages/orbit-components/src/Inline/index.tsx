@@ -5,7 +5,7 @@ import defaultTheme from "../defaultTheme";
 import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
 import media from "../utils/mediaQuery";
 import { normalize } from "./helpers";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledInlineInner = styled.div<{
   viewportSizes: Pick<

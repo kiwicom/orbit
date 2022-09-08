@@ -3,9 +3,14 @@ import { useEffect } from "react";
 import useTheme from "../useTheme";
 import useIsMounted from "../useIsMounted";
 import { disableBodyScroll, enableBodyScroll } from "./lock-scrolling";
-import UseLockScrolling from "./index.d";
 
-const useLockScrolling: typeof UseLockScrolling = (ref, lock = true, dependencies = []) => {
+type UseLockScrolling = (
+  ref: React.MutableRefObject<HTMLElement | null>,
+  lock?: boolean,
+  dependencies?: unknown[],
+) => void;
+
+const useLockScrolling: UseLockScrolling = (ref, lock = true, dependencies = []) => {
   const { lockScrolling: themeLockScrolling = true, lockScrollingBarGap = true } = useTheme();
   const isMounted = useIsMounted();
 

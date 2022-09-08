@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledArrow = styled.svg`
   vertical-align: middle;

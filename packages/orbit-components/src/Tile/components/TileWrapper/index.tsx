@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../../../common/common";
+import * as Common from "../../../common/types";
 import transition from "../../../utils/transition";
 import { StyledIconRight } from "../TileHeader";
 import defaultTheme from "../../../defaultTheme";

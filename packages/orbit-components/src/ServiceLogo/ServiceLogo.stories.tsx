@@ -1,7 +1,8 @@
 import * as React from "react";
 import { select, boolean, text } from "@storybook/addon-knobs";
 
-import { NAME_OPTIONS, SIZE_OPTIONS } from "./consts";
+// @ts-expect-error currently can't resolve mts ext properly
+import { NAME_OPTIONS, SIZE_OPTIONS } from "./consts.mts";
 
 import ServiceLogo from ".";
 

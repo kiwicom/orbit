@@ -1,5 +1,5 @@
 import { ALIGNS, JUSTIFY, DIRECTIONS } from "./consts";
-import { Justify, Property, Align, Direction } from "./index.d";
+import { Justify, Property, Align, Direction } from "./types";
 
 export const isDefined = (prop: Property): boolean => typeof prop !== "undefined";
 

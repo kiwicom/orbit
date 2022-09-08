@@ -1,12 +1,13 @@
 import { useUIDSeed, useUID } from "react-uid";
 
-import UseRandomId, { useRandomIdSeed as UseRandomIdSeed } from "./index.d";
+type UseRandomIdSeed = () => (id: string) => string;
+type UseRandomId = () => string;
 
-export const useRandomIdSeed: typeof UseRandomIdSeed = () => {
+export const useRandomIdSeed: UseRandomIdSeed = () => {
   return useUIDSeed();
 };
 
-const useRandomId: typeof UseRandomId = () => {
+const useRandomId: UseRandomId = () => {
   return useUID();
 };
 

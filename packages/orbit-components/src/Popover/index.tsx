@@ -7,7 +7,7 @@ import { PLACEMENTS } from "../common/consts";
 import PopoverContent from "./components/ContentWrapper";
 import Portal from "../Portal";
 import handleKeyDown from "../utils/handleKeyDown";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledPopoverChild = styled.div`
   position: relative;

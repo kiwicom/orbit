@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import Text from "../Text";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledWrapper = styled.div`
   display: flex;

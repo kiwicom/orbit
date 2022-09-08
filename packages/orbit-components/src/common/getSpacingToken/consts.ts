@@ -1,4 +1,4 @@
-import { SpaceAfterSizes } from "../common.d";
+import { SpaceAfterSizes } from "../types";
 
 const SPACINGS_AFTER: Record<
   "NONE" | "SMALLEST" | "SMALL" | "NORMAL" | "MEDIUM" | "LARGE" | "LARGEST",

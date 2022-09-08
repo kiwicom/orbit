@@ -5,7 +5,7 @@ import defaultTheme from "../defaultTheme";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import { rtlSpacing } from "../utils/rtl";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledAsterisk = styled.span<{ filled?: boolean }>`
   ${({ theme, filled }) => css`

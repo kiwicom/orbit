@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useRandomIdSeed } from "../../hooks/useRandomId";
 import useTheme from "../../hooks/useTheme";
 import { SIZE_OPTIONS } from "../consts";
-import { Type, Size } from "../index.d";
+import { Type, Size } from "../types";
 import { resolveCloseIconColor } from "./helpers";
 
 interface Props {

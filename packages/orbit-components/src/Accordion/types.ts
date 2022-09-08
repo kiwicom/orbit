@@ -3,8 +3,7 @@
 
 import React from "react";
 
-import AccordionSection from "./AccordionSection";
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 
 /*
   DOCS:
@@ -32,7 +31,3 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   /** Callback (along with sectionId) that is triggered when section is expanding */
   readonly onExpand?: (sectionId: string | number) => void | Promise<void>;
 }
-
-declare const Accordion: React.FunctionComponent<Props>;
-// declare const StyledAccordion: React.ComponentType<Props>;
-export { Accordion, Accordion as default, AccordionSection, StyledAccordion };

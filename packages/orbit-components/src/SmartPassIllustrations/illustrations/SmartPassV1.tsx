@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { useRandomIdSeed } from "../../hooks/useRandomId";
-import { Props } from "../index.d";
+import { Props } from "../types";
 import IllustrationWrapper from "./IllustrationWrapper";
 
 const SmartPassV1 = ({ primary = "white", secondary = "black", ...props }: Props) => {

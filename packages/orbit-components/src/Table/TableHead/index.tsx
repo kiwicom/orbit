@@ -1,9 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import * as Common from "../../common/types";
 import defaultTheme from "../../defaultTheme";
 import { StyledTableCell } from "../TableCell";
-import { TableHead as TableHeadType } from "./index.d";
 
 const StyledTableHead = styled(({ children, className, dataTest }) => (
   <thead className={className} data-test={dataTest}>
@@ -22,7 +22,7 @@ StyledTableHead.defaultProps = {
   theme: defaultTheme,
 };
 
-const TableHead: typeof TableHeadType = ({ children, dataTest }) => (
+const TableHead: React.FC<React.PropsWithChildren<Common.Globals>> = ({ children, dataTest }) => (
   <StyledTableHead dataTest={dataTest}>{children}</StyledTableHead>
 );
 

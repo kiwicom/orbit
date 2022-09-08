@@ -5,7 +5,7 @@ import Stack from "../../Stack";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { StyledListWrapper } from "./PricingTableItem";
 import PricingTableContext from "./PricingTableContext";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledPricingTable = styled.div``;
 

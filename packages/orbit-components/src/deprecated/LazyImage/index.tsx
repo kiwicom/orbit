@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import { Props, PictureProps } from "./index.d";
+import { Props, PictureProps } from "./types";
 
 const FORMATS = {
   WEBP: "webp",

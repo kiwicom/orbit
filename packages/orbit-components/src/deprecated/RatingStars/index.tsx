@@ -6,7 +6,7 @@ import StarFull from "../../icons/StarFull";
 import defaultTheme from "../../defaultTheme";
 import { MAX_STARS, ICON_COLORS, ICON_SIZES } from "./consts";
 import useTranslate from "../../hooks/useTranslate";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledRatingStars = styled.div`
   display: flex;

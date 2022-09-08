@@ -5,7 +5,7 @@ import defaultTheme from "../defaultTheme";
 import media from "../utils/mediaQuery";
 import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
 import normalize from "./normalize";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledBox = styled(({ className, asComponent: Element, children, dataTest, id, ref }) => (
   <Element className={className} data-test={dataTest} id={id} ref={ref}>

@@ -1,6 +1,16 @@
-import KeyCode from "./keyMaps.d";
+type Key =
+  | "TAB"
+  | "ENTER"
+  | "SPACE"
+  | "ARROW_UP"
+  | "ARROW_DOWN"
+  | "ARROW_LEFT"
+  | "ARROW_RIGHT"
+  | "HOME"
+  | "END"
+  | "ESC";
 
-const KEY_CODE: typeof KeyCode = {
+const KEY_CODE: Record<Key, number> = {
   TAB: 9,
   ENTER: 13,
   SPACE: 32,

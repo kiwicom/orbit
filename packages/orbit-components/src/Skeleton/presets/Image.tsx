@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Props } from "../index.d";
+import { Props } from "../types";
 import Svg from "../Svg";
 
 const Image = ({ height = 150, width = 300, ...props }: Props) => {

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 import defaultTheme, { Theme } from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import { StyledServiceLogo } from "../ServiceLogo";
@@ -18,7 +18,7 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const getToken = (name: string) => ({ theme, size }: { theme: Theme; size: Props["size"] }) => {
   const tokens = {

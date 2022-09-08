@@ -4,7 +4,7 @@ import styled, { StyledComponent } from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
-import { Props, Size } from "./index.d";
+import { Props, Size } from "./types";
 
 const getHeightToken = ({ theme, size }) => {
   const tokens = {

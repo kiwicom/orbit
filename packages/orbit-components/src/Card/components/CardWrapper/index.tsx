@@ -6,7 +6,7 @@ import mq from "../../../utils/mediaQuery";
 import { CardElement } from "../../helpers/mixins";
 import defaultTheme from "../../../defaultTheme";
 import { getBorder, getBorderRadius, getBorderRadiusMobile } from "../../helpers/borders";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const topBorderRadius = css`
   border-top-left-radius: ${({ expanded }: { expanded?: boolean }) =>

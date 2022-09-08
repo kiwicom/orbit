@@ -9,7 +9,7 @@ import Slide from "../utils/Slide";
 import defaultTheme from "../defaultTheme";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import useBoundingRect from "../hooks/useBoundingRect";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const AnimatedIcon = styled(ChevronDown)<{ expanded?: boolean }>`
   ${({ theme, expanded }) => css`

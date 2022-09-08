@@ -1,6 +1,6 @@
 import * as React from "react";
 
-interface Props {
+export interface Props {
   readonly setDimensions?: () => void;
   readonly decideFixedFooter?: () => void;
   readonly setHasModalTitle?: React.Dispatch<React.SetStateAction<boolean>>;

@@ -6,7 +6,7 @@ import AirplaneDown from "../../icons/AirplaneDown";
 import AlertCircle from "../../icons/AlertCircle";
 import Circle from "../../icons/Circle";
 import defaultTheme from "../../defaultTheme";
-import { Status } from "../index.d";
+import { Status } from "../types";
 
 interface Props {
   isDetails?: boolean;

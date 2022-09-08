@@ -7,7 +7,7 @@ import Portal from "../../Portal";
 import useRandomId from "../../hooks/useRandomId";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 export const StyledTooltipChildren = styled.span<{
   block?: boolean;

@@ -9,7 +9,7 @@ import CustomBadge from "./CustomBadge";
 import Badge from "../../../Badge";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
-import { Props as StepProps, Type } from "../index.d";
+import { Props as StepProps, Type } from "../types";
 
 const StyledDescription = styled.div`
   max-width: 250px;

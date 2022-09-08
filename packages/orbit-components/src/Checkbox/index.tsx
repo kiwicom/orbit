@@ -10,7 +10,7 @@ import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
 import media from "../utils/mediaQuery";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 interface StyledInputProps extends Props {
   error: boolean;

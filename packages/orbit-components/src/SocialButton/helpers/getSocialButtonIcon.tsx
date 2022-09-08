@@ -6,7 +6,7 @@ import Google from "../../icons/Google";
 import Facebook from "../../icons/Facebook";
 import Twitter from "../../icons/Twitter";
 import Email from "../../icons/Email";
-import { Type } from "../index.d";
+import { Type } from "../types";
 
 const getSocialButtonIcon = (type: Type): React.ReactNode | null => {
   if (type === TYPE_OPTIONS.APPLE) return <Apple />;

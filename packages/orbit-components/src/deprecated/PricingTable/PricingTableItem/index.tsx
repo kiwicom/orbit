@@ -13,7 +13,7 @@ import { IconContainer, Item as ListItem } from "../../../List/ListItem";
 import { rtlSpacing } from "../../../utils/rtl";
 import PricingTableContext from "../PricingTableContext";
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const getBoxShadow = ({
   theme,

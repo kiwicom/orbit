@@ -6,8 +6,8 @@ import getViewportHideStyles from "../../Hide/helpers/getViewportHideStyles";
 import { StyledCard } from "../../Card";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 import { QUERIES } from "../../utils/mediaQuery/consts";
-import { Props } from "./index.d";
-import { Devices } from "../../utils/mediaQuery/index.d";
+import { Props } from "./types";
+import { Devices } from "../../utils/mediaQuery/types";
 
 const StyledColumn: any = styled.div<{ spanEntireRow?: boolean; hideOn?: Devices[] }>`
   ${({ theme, spanEntireRow, hideOn }) => css`

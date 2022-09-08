@@ -9,7 +9,7 @@ import { isDefined } from "../utils/layout";
 import shouldUseFlex from "./helpers/shouldUseFlex";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
 import getChildrenMargin from "./helpers/getChildrenMargin";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledStack = styled(({ className, element: Element, children, dataTest }) => (
   <Element className={className} data-test={dataTest}>

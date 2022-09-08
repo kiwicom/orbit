@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";
-import { GetSize, FactoryProps } from "./index.d";
+import { GetSize, FactoryProps } from "./types";
 
 export const getSize: GetSize = size => ({ theme }) => {
   const tokens = {

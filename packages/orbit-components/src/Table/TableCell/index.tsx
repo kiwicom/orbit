@@ -5,7 +5,7 @@ import defaultTheme, { Theme } from "../../defaultTheme";
 import { ALIGN_OPTIONS } from "./consts";
 import { TYPE_AS } from "../consts";
 import { textAlign } from "../../utils/rtl";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 interface StyledProps extends Partial<Props> {
   theme: Theme;

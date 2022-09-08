@@ -1,5 +1,5 @@
 import { TOKENS, TYPES } from "../consts";
-import { Type } from "../index.d";
+import { Type } from "../types";
 import { Theme } from "../../defaultTheme";
 
 const getButtonLinkTypeToken = (name: string, type: Type, theme: Theme): string => {

@@ -1,13 +1,13 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import { resolveHeight, resolveValue, resolvePulseAnimation } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, id, viewBox }) => (
   <svg

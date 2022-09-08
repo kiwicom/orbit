@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { Type } from "../index.d";
-import * as Common from "../../common/common";
+import { Type } from "../types";
+import * as Common from "../../common/types";
 import defaultTheme, { Theme } from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
@@ -10,7 +10,7 @@ import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
 import ListContext from "../ListContext";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 export const getLineHeightToken = ({
   theme,

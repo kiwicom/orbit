@@ -2,7 +2,7 @@ import { keyframes, css, FlattenSimpleInterpolation, Keyframes } from "styled-co
 
 import { ThemeProps } from "../defaultTheme";
 import { translate3d } from "../utils/rtl";
-import { Placement } from "./index.d";
+import { Placement } from "./types";
 
 export const lightAnimation = ({ theme }: ThemeProps): Keyframes => keyframes`
   0% {

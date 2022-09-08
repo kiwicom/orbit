@@ -15,7 +15,7 @@ import { useRandomIdSeed } from "../../../hooks/useRandomId";
 import { usePart } from "../context";
 import { useWidth } from "../../context";
 import ItineraryIcon from "../ItineraryIcon";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledWrapper = styled.div`
   width: 100%;

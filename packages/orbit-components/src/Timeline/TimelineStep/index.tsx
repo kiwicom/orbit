@@ -8,7 +8,7 @@ import { useStatuses, useStep } from "../TimelineContext";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import TimelineStepDesktop from "./components/TimelineStepDesktop";
 import TimelineStepMobile from "./components/TimelineStepMobile";
-import { Props } from "./index.d";
+import { Props } from "./types";
 import { Type } from "./consts";
 
 const TypeIcon = ({ type }) => {

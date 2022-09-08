@@ -5,7 +5,7 @@ import TileContent from "./components/TileContent";
 import TileExpandable from "./components/TileExpandable";
 import TileWrapper from "./components/TileWrapper";
 import handleKeyDown from "../utils/handleKeyDown";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const Tile = ({
   href,

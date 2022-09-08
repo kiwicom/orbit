@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import useDictionary from "../useDictionary";
 import { pureTranslate } from "../../Translate";
-import { Values } from "../../Translate/index.d";
+import { Values } from "../../Translate/types";
 
 const useTranslate = () => {
   const dictionary = useDictionary();

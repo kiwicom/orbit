@@ -1,5 +1,5 @@
-import { Props } from "../index.d";
-import { Devices } from "../../utils/mediaQuery/index.d";
+import { Props } from "../types";
+import { Devices } from "../../utils/mediaQuery/types";
 
 type GetProperty = (
   property: string,

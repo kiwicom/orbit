@@ -9,7 +9,7 @@ import AccordionWrapper from "../components/AccordionWrapper";
 import SectionHeader from "./components/SectionHeader";
 import SectionFooter from "./components/SectionFooter";
 import SectionContent from "./components/SectionContent";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const AccordionSection = ({
   children,

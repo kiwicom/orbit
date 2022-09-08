@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 
 import { Provider as SectionProvider } from "./AccordionContext";
 import getSpacingToken from "../common/getSpacingToken";
-import type { Props } from "./index.d";
-import * as Common from "../common/common.d";
+import type { Props } from "./types";
+import * as Common from "../common/types";
 
 interface StyledProps extends Common.SpaceAfter {}
 

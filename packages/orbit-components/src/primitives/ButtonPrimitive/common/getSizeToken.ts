@@ -1,5 +1,5 @@
 import { SIZE_OPTIONS, TOKENS } from "./consts";
-import { Size } from "../index.d";
+import { Size } from "../types";
 import { Theme } from "../../../defaultTheme";
 
 const getSizeToken = (

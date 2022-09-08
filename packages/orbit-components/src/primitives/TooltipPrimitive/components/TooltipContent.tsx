@@ -14,8 +14,8 @@ import defaultTheme from "../../../defaultTheme";
 import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
-import { Props } from "./TooltipContent.d";
-import { Size } from "../index.d";
+import { Props } from "./types";
+import { Size } from "../types";
 
 const StyledTooltip = styled.div`
   width: 100%;

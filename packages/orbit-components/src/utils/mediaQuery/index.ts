@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 import { Theme } from "../../defaultTheme";
 import { QUERIES } from "./consts";
-import { MediaQueries } from "./index.d";
+import { MediaQueries } from "./types";
 
 const TOKEN = {
   mediumMobile: "widthBreakpointMediumMobile",

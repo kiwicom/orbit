@@ -13,7 +13,7 @@ import getSpacingToken from "../../common/getSpacingToken";
 import getFieldDataState from "../../common/getFieldDataState";
 import formElementFocus from "../../InputField/helpers/formElementFocus";
 import mq from "../../utils/mediaQuery";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const Field = styled.label<{ $width?: string; spaceAfter?: Props["spaceAfter"] }>`
   ${({ theme, $width }) => css`

@@ -4,7 +4,7 @@ import { UIDReset, UIDFork } from "react-uid";
 
 import Dictionary from "../Dictionary";
 import QueryContextProvider from "./QueryContext/Provider";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const ThemeProvider = ({ theme, dictionary, children }: Props) => {
   return (

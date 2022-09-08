@@ -7,7 +7,7 @@ import getCommonProps from "../primitives/ButtonPrimitive/common/getCommonProps"
 import useTheme from "../hooks/useTheme";
 import getButtonStyles from "./helpers/getButtonStyles";
 import getButtonIconForeground from "./helpers/getButtonIconForeground";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const Button = React.forwardRef<HTMLButtonElement, Props>(
   ({ type = TYPE_OPTIONS.PRIMARY, size, disabled = false, ...props }, ref) => {

@@ -3,7 +3,7 @@ import getButtonTypeToken from "./getButtonTypeToken";
 import { TOKENS } from "../consts";
 import getButtonBoxShadow from "./getButtonBoxShadow";
 import { Theme } from "../../defaultTheme";
-import { Type, ButtonStates } from "../index.d";
+import { Type, ButtonStates } from "../types";
 
 const getButtonStyles = ({
   disabled,

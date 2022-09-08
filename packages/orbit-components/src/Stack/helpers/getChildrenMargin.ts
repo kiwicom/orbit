@@ -6,9 +6,9 @@ import { SPACINGS } from "../../utils/layout/consts";
 import isMobileViewport from "./isMobileViewport";
 import getProperty from "./getProperty";
 import { QUERIES } from "../../utils/mediaQuery/consts";
-import { Devices } from "../../utils/mediaQuery/index.d";
+import { Devices } from "../../utils/mediaQuery/types";
 import getDirectionSpacingTemplate from "./getDirectionSpacingTemplate";
-import { Props, Direction } from "../index.d";
+import { Props, Direction } from "../types";
 import { Theme } from "../../defaultTheme";
 
 interface StyledProps extends Props {

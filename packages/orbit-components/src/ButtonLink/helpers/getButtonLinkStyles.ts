@@ -1,6 +1,6 @@
 import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
-import { Type } from "../index.d";
+import { Type } from "../types";
 import { Theme } from "../../defaultTheme";
 
 interface ButtonLinkStyles {

@@ -1,13 +1,13 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/common.d";
+import * as Common from "../common/types";
 import defaultTheme, { Theme } from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import { getLineHeightToken } from "./ListItem";
 import ListContext from "./ListContext";
-import { Props, Type } from "./index.d";
+import { Props, Type } from "./types";
 
 const getSizeToken = ({ theme, size }: { theme: Theme; size?: Common.Size }): string | null => {
   const sizeTokens = {

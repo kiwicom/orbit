@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/common";
-import { DataAttrs } from "../common/common";
+import * as Common from "../common/types";
+import { DataAttrs } from "../common/types";
 import defaultTheme, { Theme } from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
@@ -14,7 +14,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const getSelectSize = ({ theme, size }: { theme: Theme; size: Common.Size }) => {
   const tokens = {

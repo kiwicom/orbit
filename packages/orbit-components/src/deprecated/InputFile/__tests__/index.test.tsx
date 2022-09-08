@@ -72,7 +72,8 @@ describe("InputFile", () => {
       />,
     );
 
-    userEvent.tab((screen.getByTestId("test"): any));
+    // @ts-expect-error TODO
+    userEvent.tab(screen.getByTestId("test"));
     expect(onFocus).toHaveBeenCalled();
     screen.getByText("chuck norris counted to infinity twice");
   });

@@ -1,7 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import Heading, { Type } from "../Heading/index.d";
+import Heading from "../Heading";
+import { Type } from "../Heading/types";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import Feedback, { StyledFormFeedback } from "./components/Feedback";
@@ -9,7 +10,7 @@ import defaultTheme from "../defaultTheme";
 import FilterWrapper from "./components/FilterWrapper";
 import useRandomId from "../hooks/useRandomId";
 import useTheme from "../hooks/useTheme";
-import { Props, Size } from "./index.d";
+import { Props, Size } from "./types";
 
 const getHeadingSize = (size: Size): Type => {
   const SIZES: Record<Size, Type> = {

@@ -65,7 +65,6 @@ describe("InputField", () => {
     fireEvent.focus(input); // userEvent.tab() doesn't work because of tabIndex="-1"
     expect(screen.getByTestId("help")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
-    // $FlowFixMe:TODO
     await act(async () => {});
   });
 
@@ -170,7 +169,6 @@ describe("InputField", () => {
       userEvent.tab();
       expect(screen.queryByText("Second")).not.toBeInTheDocument();
       expect(screen.getByText("Third")).toBeVisible();
-      // $FlowFixMe:TODO
       await act(async () => {});
     });
   });

@@ -1,14 +1,14 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../../common/common";
+import * as Common from "../../common/types";
 import { ItinerarySegmentContext } from "./context";
 import Stack from "../../Stack";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
 import Separator from "../../Separator";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledWrapper = styled.div<{
   noElevation?: boolean;

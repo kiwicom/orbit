@@ -9,7 +9,7 @@ import { fadeIn, fadeOut, lightAnimation, getPositionStyle, createRectRef } from
 import useTheme from "../hooks/useTheme";
 import useSwipe from "./hooks/useSwipe";
 import mergeRefs from "../utils/mergeRefs";
-import { Toast as Props } from "./index.d";
+import { Toast as Props } from "./types";
 
 const StyledWrapper = styled(({ className, children, ariaLive }) => (
   <div className={className} aria-live={ariaLive} role="status">

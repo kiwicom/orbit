@@ -12,8 +12,8 @@ import getWidth from "./getWidth";
 import getDisplay from "./getDisplay";
 import getBasis from "./getBasis";
 import getSpacingToken from "../../common/getSpacingToken";
-import { Devices } from "../../utils/mediaQuery/index.d";
-import { Props } from "../index.d";
+import { Devices } from "../../utils/mediaQuery/types";
+import { Props } from "../types";
 import { Theme } from "../../defaultTheme";
 
 interface StyledProps extends Props {

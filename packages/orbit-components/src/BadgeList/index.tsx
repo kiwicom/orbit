@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledBadgeList = styled.ul`
   margin: 0;

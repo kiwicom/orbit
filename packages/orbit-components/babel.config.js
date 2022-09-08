@@ -1,9 +1,8 @@
-// @noflow
 module.exports = {
   presets: [
     [require.resolve("@babel/preset-env"), { bugfixes: true, loose: true }],
     [require.resolve("@babel/preset-react"), { runtime: "classic" }],
-    require.resolve("@babel/preset-flow"),
+    [require.resolve("@babel/preset-typescript"), { isTSX: true, allExtensions: true }],
   ],
   plugins: [
     require.resolve("babel-plugin-styled-components"),

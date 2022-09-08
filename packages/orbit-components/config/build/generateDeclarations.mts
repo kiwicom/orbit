@@ -13,22 +13,13 @@ export default async function generateTypeDeclarations() {
   await $`del tsconfig.tsbuildinfo`; // reset potential incremental compilation information
   await $`tsc`;
 
-  await $`cpy "**/*.{js,jsx}.flow" ../lib --cwd src --parents`;
-  await $`cpy "**/*.{js,jsx}.flow" ../es --cwd src --parents`;
-
   // generate flow declarations out of typescript definitions
   console.log(chalk.greenBright("Generating Flow declarations..."));
-  const tsDeclarations = await globby("{lib,es}/**/*.d ts", { ignore: ["deprecated/**"] });
+  const tsDeclarations = await globby("{lib,es}/**/*.d ts");
   await Promise.all(
     tsDeclarations.map(async tsDeclPath => {
       try {
-        const flowDeclPath = tsDeclPath.replace(".d.ts", ".jsx.flow");
-
-        if (
-          (await fs.pathExists(flowDeclPath)) ||
-          (await fs.pathExists(tsDeclPath.replace(".d.ts", ".js.flow")))
-        )
-          return;
+        if (await fs.pathExists(tsDeclPath.replace(".d.ts", ".js.flow"))) return;
         const flowDecl = flowgen.compiler.compileDefinitionFile(tsDeclPath, {
           interfaceRecords: true,
         });
@@ -40,7 +31,7 @@ export default async function generateTypeDeclarations() {
                   .replace("React.FC", "React.StatelessFunctionalComponent"),
               )}
             `;
-        await fs.writeFile(flowDeclPath, content);
+        await fs.writeFile(tsDeclPath, content);
       } catch (err) {
         if (err instanceof Error) {
           err.message = dedent`

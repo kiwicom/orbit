@@ -2,35 +2,25 @@ import { path, fs, globby, chalk, $ } from "zx";
 import babel from "@babel/core";
 import ora from "ora";
 
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import { COMPILE_IGNORE_PATTERNS } from "./consts.mts";
 
 type ModuleItem = ["cjs" | "esm", string, babel.TransformOptions | undefined | null];
 
 const parseFile = (file: string, options: babel.TransformOptions) => {
-  if (path.extname(file) === ".ts" || path.extname(file) === ".tsx") {
-    return babel.transformFileAsync(file, {
-      filename: file,
-      presets: ["@babel/preset-typescript"],
-      ...options,
-    });
-  }
-
   return babel.transformFileAsync(file, options);
 };
-const renameFileExtension = (file: string) => {
-  if (path.extname(file) === ".ts" || path.extname(file) === ".tsx") {
-    return file.replace(/\.tsx?$/, ".js");
-  }
 
-  if (path.extname(file) === ".jsx") return file.replace(/\.jsx$/, ".js");
-  if (/\.jsx\.flow/.test(file)) return file.replace(/\.jsx\.flow/, ".js.flow");
+// const renameFileExtension = (file: string) => {
+//   if (path.extname(file) === ".ts" || path.extname(file) === ".tsx") {
+//     return file.replace(/\.tsx?$/, ".js");
+//   }
 
-  return file;
-};
+//   return file;
+// };
 
 export default async function compileSource() {
-  const files = await globby("**/*.{js,jsx,ts,tsx}", {
+  const files = await globby("**/*.{mts,ts,tsx}", {
     cwd: "src",
     ignore: COMPILE_IGNORE_PATTERNS,
   });
@@ -49,7 +39,7 @@ export default async function compileSource() {
       for (const file of files) {
         const result = await parseFile(path.join("src", file), options);
 
-        await fs.outputFile(renameFileExtension(path.join(dir, file)), result?.code);
+        await fs.outputFile(path.join(dir, file), result?.code);
       }
 
       spinner.succeed(`${name} → ${dir}`);

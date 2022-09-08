@@ -10,11 +10,11 @@ import jsxPlugin from "@svgr/plugin-jsx";
 import prettierPlugin from "@svgr/plugin-prettier";
 import filedirname from "filedirname";
 
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import { getProperty, getHTMLComments } from "../checkIcons.mts";
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import { NAMES as ILLUSTRATION_NAMES } from "../../src/Illustration/consts.mts";
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustration/consts.mts";
 
 (async () => {

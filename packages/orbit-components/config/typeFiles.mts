@@ -14,48 +14,29 @@ const [, __dirname] = filedirname();
 
 const generateTypeFile = async (templatePath: string, replacements: Record<string, string>) => {
   const TEMPLATE = fs.readFileSync(templatePath, "utf8");
-  const suffixArray = templatePath.split(".");
-  const suffix = suffixArray[suffixArray.length - 1];
+  // const suffixArray = templatePath.split(".");
+  // const suffix = suffixArray[suffixArray.length - 1];
 
   const replacedTemplate = Object.keys(replacements).reduce(
     (acc, cur) => acc.replace(new RegExp(`%${cur}%`, "g"), replacements[cur]),
     TEMPLATE,
   );
 
-  fs.writeFileSync(
-    path.join(path.dirname(templatePath), suffix === "flow" ? "index.jsx.flow" : "index.d.ts"),
-    replacedTemplate,
-  );
+  fs.writeFileSync(path.join(path.dirname(templatePath), "index.d.ts"), replacedTemplate);
 };
 
 const templateFiles = [
   {
-    path: path.join(__dirname, "..", "src", "AirportIllustration", "FLOW_TEMPLATE.flow"),
-    names: AIRPORT_ILLUSTRATION_NAMES,
-  },
-  {
     path: path.join(__dirname, "..", "src", "AirportIllustration", "TYPESCRIPT_TEMPLATE.template"),
     names: AIRPORT_ILLUSTRATION_NAMES,
-  },
-  {
-    path: path.join(__dirname, "..", "src", "Illustration", "FLOW_TEMPLATE.flow"),
-    names: ILLUSTRATION_NAMES,
   },
   {
     path: path.join(__dirname, "..", "src", "Illustration", "TYPESCRIPT_TEMPLATE.template"),
     names: ILLUSTRATION_NAMES,
   },
   {
-    path: path.join(__dirname, "..", "src", "ServiceLogo", "FLOW_TEMPLATE.flow"),
-    names: Object.values(SERVICE_LOGOS_NAMES),
-  },
-  {
     path: path.join(__dirname, "..", "src", "ServiceLogo", "TYPESCRIPT_TEMPLATE.template"),
     names: Object.values(SERVICE_LOGOS_NAMES),
-  },
-  {
-    path: path.join(__dirname, "..", "src", "FeatureIcon", "FLOW_TEMPLATE.flow"),
-    names: Object.values(FEATURE_ICONS_NAMES),
   },
   {
     path: path.join(__dirname, "..", "src", "FeatureIcon", "TYPESCRIPT_TEMPLATE.template"),

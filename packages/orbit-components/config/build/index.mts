@@ -1,16 +1,14 @@
 import { $, argv, chalk } from "zx";
 
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import compileSource from "./compileSource.mts";
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import { logStep } from "./helpers.mts";
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import { OUTPUT_PATTERNS } from "./consts.mts";
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import generateTypeDeclarations from "./generateDeclarations.mts";
-// @ts-expect-error TODO
-import renameTypeDeclarations from "./renameTypeDeclarations.mts";
-// @ts-expect-error TODO
+// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import buildSize from "./buildSize.mts";
 
 (async () => {
@@ -46,8 +44,6 @@ import buildSize from "./buildSize.mts";
   } else {
     logStep("Type declarations");
     await generateTypeDeclarations();
-    // TODO: remove after complete switch to ts
-    await renameTypeDeclarations();
 
     logStep("Copying dictionaries and documentation");
     await $`cpy "**/*.{md,json}" ../lib --cwd src --parents`;

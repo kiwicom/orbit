@@ -13,6 +13,6 @@ import { $, argv } from "zx";
   }
   // Check component statuses for update
   if (argv.statuses) {
-    await $`node --loader ts-node/esm docs/services/componentStatuses.ts`;
+    await $`zx docs/services/componentStatuses.mjs`;
   }
 })();

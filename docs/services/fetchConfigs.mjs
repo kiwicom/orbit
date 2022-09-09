@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function fetchConfigs(android: string, ios: string) {
+export default async function fetchConfigs(android, ios) {
   const iosReq = axios.get(ios);
   const androidReq = axios.get(android);
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import fetchConfigs from "../fetchConfigs";
-import { mergeConfigs } from "../helpers";
+import fetchConfigs from "../fetchConfigs.mjs";
+import { mergeConfigs } from "../helpers.mjs";
 
 const IOS_URL = `https://raw.githubusercontent.com/kiwicom/orbit-swiftui/main/component-status.yaml`;
 const ANDROID_URL = `https://raw.githubusercontent.com/kiwicom/orbit-compose/main/component-status.yaml`;
@@ -10,7 +10,7 @@ jest.mock("axios");
 jest.mock("fs");
 jest.mock("fs/promises");
 
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockedAxios = axios;
 
 const swiftRaw = `
 - component: Alert

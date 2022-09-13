@@ -1,5 +1,4 @@
-// @noflow
-import fs from "fs";
+import { fs } from "zx";
 
 import generateXMLDesignTokens from "../generateXMLDesignTokens";
 
@@ -11,6 +10,7 @@ jest.mock("../../src", () => ({
   },
 }));
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 jest.mock("fs", () => require("memfs").fs);
 
 describe(generateXMLDesignTokens.name, () => {

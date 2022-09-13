@@ -1,4 +1,3 @@
-// @noflow
 import { defaultTokens, getTokens, fromPlainObject } from "..";
 import foundation from "../foundation";
 import convertHexToRgba from "../convertHexToRgba";

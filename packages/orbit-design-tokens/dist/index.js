@@ -1,20 +1,162 @@
-// @flow
-import mergeDeepRight from "ramda/src/mergeDeepRight";
+import { mergeDeepRight } from 'ramda';
 
-import foundation from "./foundation";
-import palette from "./palette";
-import convertHexToRgba from "./convertHexToRgba";
+// src/index.ts
 
-import type { GetTokens, FromPlainObject, Tokens } from ".";
+// src/palette.ts
+var palette = {
+  blue: {
+    dark: "#005AA3",
+    darkActive: "#003E70",
+    darkHover: "#004F8F",
+    darker: "#004680",
+    light: "#E8F4FD",
+    lightActive: "#B4DBF8",
+    lightHover: "#D0E9FB",
+    normal: "#0172CB",
+    normalActive: "#01508E",
+    normalHover: "#0161AC"
+  },
+  cloud: {
+    dark: "#E8EDF1",
+    darker: "#BAC7D5",
+    darkerActive: "#94A8BE",
+    darkerHover: "#A6B6C8",
+    light: "#F5F7F9",
+    lightActive: "#D6DEE6",
+    lightHover: "#E5EAEF",
+    normal: "#EFF2F5",
+    normalActive: "#CAD4DE",
+    normalHover: "#DCE3E9"
+  },
+  green: {
+    dark: "#2D7738",
+    darkActive: "#1F5126",
+    darkHover: "#276831",
+    darker: "#235C2B",
+    light: "#EBF4EC",
+    lightActive: "#C3DFC7",
+    lightHover: "#D7EAD9",
+    normal: "#28A138",
+    normalActive: "#1D7228",
+    normalHover: "#238B31"
+  },
+  ink: {
+    light: "#4F5E71",
+    lightActive: "#324256",
+    lightHover: "#3E4E63",
+    lighter: "#697D95",
+    lighterActive: "#4A617C",
+    lighterHover: "#5D738E",
+    normal: "#252A31",
+    normalActive: "#0B0C0F",
+    normalHover: "#181B20"
+  },
+  orange: {
+    dark: "#BA5D00",
+    darkActive: "#954A00",
+    darkHover: "#A75400",
+    darker: "#803F00",
+    light: "#FCF2E6",
+    lightActive: "#F5D7B3",
+    lightHover: "#F9E5CC",
+    normal: "#DF7B00",
+    normalActive: "#B26200",
+    normalHover: "#C96F00"
+  },
+  product: {
+    dark: "#007F6D",
+    darkActive: "#006657",
+    darkHover: "#007060",
+    darker: "#005C4E",
+    light: "#E6F6F4",
+    lightActive: "#B3E4DD",
+    lightHover: "#CCEDE8",
+    normal: "#00A58E",
+    normalActive: "#008472",
+    normalHover: "#009580"
+  },
+  red: {
+    dark: "#970C0C",
+    darkActive: "#6D0909",
+    darkHover: "#890B0B",
+    darker: "#760909",
+    light: "#FAEAEA",
+    lightActive: "#EEB9B9",
+    lightHover: "#F4D2D2",
+    normal: "#D21C1C",
+    normalActive: "#9D1515",
+    normalHover: "#B91919"
+  },
+  white: {
+    normal: "#FFFFFF",
+    normalActive: "#E7ECF1",
+    normalHover: "#F1F4F7"
+  }
+};
+var palette_default = palette;
 
-export { foundation, convertHexToRgba, palette };
+// src/convertHexToRgba.ts
+var convertHexToRgba = (color, opacity) => {
+  const removeHash = color.replace("#", "");
+  const hex = removeHash.length === 3 ? removeHash + removeHash : removeHash;
+  const red = parseInt(hex.substring(0, 2), 16);
+  const green = parseInt(hex.substring(2, 4), 16);
+  const blue = parseInt(hex.substring(4, 6), 16);
+  return `rgba(${red}, ${green}, ${blue}, ${opacity / 100})`;
+};
+var convertHexToRgba_default = convertHexToRgba;
 
-export const getTokens: GetTokens = customFoundation => {
-  // By default it takes base foundation config
-  const theme = customFoundation ? mergeDeepRight(foundation, customFoundation) : foundation;
+// src/foundation.ts
+var palette2 = {
+  ...palette_default,
+  social: {
+    facebook: "#3B5998",
+    facebookHover: "#385490",
+    facebookActive: "#354F88"
+  },
+  bundle: {
+    basic: "#D7331C",
+    medium: "#3B1EB0"
+  }
+};
+var base = {
+  fontFamily: "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
+  fontSizeSm: "12px",
+  fontSizeMd: "14px",
+  fontSizeLg: "16px",
+  borderRadius: "3px",
+  sizeSm: "16px",
+  sizeMd: "24px",
+  sizeLg: "32px",
+  sizeXl: "44px",
+  size2xl: "52px",
+  opacitySmall: "0.3",
+  opacityMedium: "0.5",
+  opacityLarge: "0.8",
+  fontWeightNormal: "400",
+  fontWeightMedium: "500",
+  fontWeightBold: "700",
+  space2xs: "4px",
+  spaceXs: "8px",
+  spaceSm: "12px",
+  spaceMd: "16px",
+  spaceLg: "24px",
+  spaceXl: "32px",
+  space2xl: "40px",
+  space3xl: "52px",
+  durationFast: "0.15s",
+  durationNormal: "0.3s",
+  durationSlow: "0.4s",
+  transitionDefault: "ease-in-out",
+  lineHeight: "1.4"
+};
+var foundation = { palette: palette2, base };
+var foundation_default = foundation;
+
+// src/index.ts
+var getTokens = (customFoundation) => {
+  const theme = customFoundation ? mergeDeepRight(foundation_default, customFoundation) : foundation_default;
   return {
-    // category:Colors
-    // description:Use these tokens for text or icon colors. Don't use these for borders and background colors.
     colorTextPrimary: theme.palette.ink.normal,
     colorTextSecondary: theme.palette.ink.light,
     colorTextError: theme.palette.red.normal,
@@ -137,11 +279,7 @@ export const getTokens: GetTokens = customFoundation => {
     colorIconRadioButton: theme.palette.product.normal,
     colorIconRadioButtonDisabled: theme.palette.ink.lighter,
     colorStopoverArrow: theme.palette.ink.light,
-    // category:Font family
-    // description:
     fontFamily: theme.base.fontFamily,
-    // category:Background colors
-    // description:Use these tokens for background colors only. Do not use these for border colors or text theme.palette.
     backgroundBody: theme.palette.cloud.light,
     backgroundModal: theme.palette.white.normal,
     backgroundCard: theme.palette.white.normal,
@@ -187,8 +325,8 @@ export const getTokens: GetTokens = customFoundation => {
     backgroundButtonBorderedHover: theme.palette.cloud.light,
     backgroundButtonBorderedActive: theme.palette.cloud.light,
     backgroundButtonWhiteBordered: "transparent",
-    backgroundButtonWhiteBorderedHover: convertHexToRgba(theme.palette.white.normal, 20),
-    backgroundButtonWhiteBorderedActive: convertHexToRgba(theme.palette.white.normal, 20),
+    backgroundButtonWhiteBorderedHover: convertHexToRgba_default(theme.palette.white.normal, 20),
+    backgroundButtonWhiteBorderedActive: convertHexToRgba_default(theme.palette.white.normal, 20),
     backgroundButtonLinkPrimary: "transparent",
     backgroundButtonLinkPrimaryHover: theme.palette.cloud.lightHover,
     backgroundButtonLinkPrimaryActive: theme.palette.cloud.lightActive,
@@ -214,13 +352,13 @@ export const getTokens: GetTokens = customFoundation => {
     backgroundServiceLogo: "transparent",
     backgroundIllustration: "transparent",
     backgroundSeparator: theme.palette.cloud.normal,
-    backgroundTableShadowLeft: `linear-gradient(to left, transparent, ${convertHexToRgba(
+    backgroundTableShadowLeft: `linear-gradient(to left, transparent, ${convertHexToRgba_default(
       theme.palette.cloud.darker,
-      23,
+      23
     )})`,
-    backgroundTableShadowRight: `linear-gradient(to right, transparent, ${convertHexToRgba(
+    backgroundTableShadowRight: `linear-gradient(to right, transparent, ${convertHexToRgba_default(
       theme.palette.cloud.darker,
-      23,
+      23
     )})`,
     backgroundTable: theme.palette.white.normal,
     backgroundTableEven: theme.palette.cloud.light,
@@ -233,8 +371,6 @@ export const getTokens: GetTokens = customFoundation => {
     backgroundTagSelectedActive: theme.palette.ink.normalActive,
     backgroundTooltip: theme.palette.white.normal,
     backgroundTooltipLargeMobile: theme.palette.blue.dark,
-    // category:Font size
-    // description:Use these sizing tokens for font sizes.
     fontSizeHeadingDisplay: "40px",
     fontSizeHeadingDisplaySubtitle: "22px",
     fontSizeHeadingTitle1: "28px",
@@ -253,27 +389,17 @@ export const getTokens: GetTokens = customFoundation => {
     fontSizeInputSmall: theme.base.fontSizeMd,
     fontSizeFormLabel: theme.base.fontSizeMd,
     fontSizeFormFeedback: theme.base.fontSizeSm,
-    // category:Border radius
-    // description:Use radius tokens to change the border-radius size (rounded corners).
-    /** use only for square */
     borderRadiusCircle: "50%",
-    /** use for all basic elements like buttons, inputs, content containers */
     borderRadiusNormal: theme.base.borderRadius,
-    /** use for big elements like modal and large buttons */
     borderRadiusLarge: "6px",
-    /** use for smaller elements like tags */
     borderRadiusSmall: "2px",
     borderRadiusBadge: "12px",
-    // category:Z Index
-    // description:Use layers to show depth of page.
     zIndexDefault: "1",
     zIndexSticky: "100",
     zIndexDrawer: "815",
     zIndexModalOverlay: "800",
     zIndexModal: "825",
     zIndexOnTheTop: "900",
-    // category:Size (width, height)
-    // description:
     widthIconSmall: theme.base.sizeSm,
     heightIconSmall: theme.base.sizeSm,
     widthIconMedium: theme.base.sizeMd,
@@ -308,14 +434,11 @@ export const getTokens: GetTokens = customFoundation => {
     widthModalExtraLarge: "1280px",
     widthStopoverArrow: "36px",
     heightStopoverArrow: "7px",
-    // category:Breakpoints
     widthBreakpointMediumMobile: 414,
     widthBreakpointLargeMobile: 576,
     widthBreakpointTablet: 768,
     widthBreakpointDesktop: 992,
     widthBreakpointLargeDesktop: 1200,
-    // category:Border color
-    // description:
     borderColorInput: theme.palette.cloud.darker,
     borderColorInputHover: theme.palette.ink.lighterHover,
     borderColorInputActive: theme.palette.ink.lighterActive,
@@ -362,21 +485,15 @@ export const getTokens: GetTokens = customFoundation => {
     borderColorTableHead: theme.palette.cloud.darker,
     borderColorTag: theme.palette.cloud.normal,
     borderColorTagFocus: theme.palette.blue.normal,
-    // category:Border style
-    // description:
     borderStyleCard: "solid",
     borderWidthCard: "1px",
     borderStyleInput: "solid",
     borderWidthInput: "1px",
     borderWidthInputFocus: "2px",
-    // category:Opacity
-    // description:
     opacityOverlay: theme.base.opacityLarge,
     opacityButtonDisabled: theme.base.opacitySmall,
     opacityRadioButtonDisabled: theme.base.opacityMedium,
     opacityCheckboxDisabled: theme.base.opacityMedium,
-    // category:Font weight
-    // description:Use this for setting basic font weights.
     fontWeightNormal: theme.base.fontWeightNormal,
     fontWeightMedium: theme.base.fontWeightMedium,
     fontWeightBold: theme.base.fontWeightBold,
@@ -389,8 +506,6 @@ export const getTokens: GetTokens = customFoundation => {
     fontWeightHeadingTitle4: theme.base.fontWeightMedium,
     fontWeightHeadingTitle5: theme.base.fontWeightBold,
     fontWeightTableHead: theme.base.fontWeightBold,
-    // category:Spacing
-    // description:Use this for setting spacings for elements.
     paddingAlert: theme.base.spaceMd,
     paddingAlertWithIcon: theme.base.spaceSm,
     paddingBadge: `0 ${theme.base.spaceXs}`,
@@ -436,17 +551,11 @@ export const getTokens: GetTokens = customFoundation => {
     spaceXLarge: theme.base.spaceXl,
     spaceXXLarge: theme.base.space2xl,
     spaceXXXLarge: theme.base.space3xl,
-    // category:Duration
-    // description:Use this for setting the speed of animation or transition.
     durationFast: theme.base.durationFast,
     durationNormal: theme.base.durationNormal,
     durationSlow: theme.base.durationSlow,
-    // category:Modifier
-    // description:Use this for values for transform property, etc.
     modifierScaleButtonActive: 0.95,
     modifierScaleCheckboxRadioActive: 0.95,
-    // category:Line height
-    // description:
     lineHeightText: theme.base.lineHeight,
     lineHeightTextSmall: "16px",
     lineHeightTextNormal: "20px",
@@ -459,45 +568,39 @@ export const getTokens: GetTokens = customFoundation => {
     lineHeightHeadingTitle3: "24px",
     lineHeightHeadingTitle4: "20px",
     lineHeightHeadingTitle5: "20px",
-    // category:Text decoration
-    // description:
     textDecorationTextLinkPrimary: "underline",
     textDecorationTextLinkPrimaryHover: "none",
     textDecorationTextLinkSecondary: "underline",
     textDecorationTextLinkSecondaryHover: "none",
-    // category:Box shadow
-    // description:
-    boxShadowButtonFocus: `0 0 4px 1px ${convertHexToRgba(theme.palette.blue.normal, 30)}`,
-    boxShadowAction: `0px 0px 2px 0px ${convertHexToRgba(
+    boxShadowButtonFocus: `0 0 4px 1px ${convertHexToRgba_default(theme.palette.blue.normal, 30)}`,
+    boxShadowAction: `0px 0px 2px 0px ${convertHexToRgba_default(
       theme.palette.ink.normal,
-      16,
-    )}, 0px 1px 4px 0px ${convertHexToRgba(theme.palette.ink.normal, 12)}`,
-    boxShadowActionActive: `0px 1px 4px 0px ${convertHexToRgba(
+      16
+    )}, 0px 1px 4px 0px ${convertHexToRgba_default(theme.palette.ink.normal, 12)}`,
+    boxShadowActionActive: `0px 1px 4px 0px ${convertHexToRgba_default(
       theme.palette.ink.normal,
-      16,
-    )}, 0px 4px 8px 0px ${convertHexToRgba(theme.palette.ink.normal, 12)}`,
-    boxShadowFixed: `0px 0px 2px 0px ${convertHexToRgba(
+      16
+    )}, 0px 4px 8px 0px ${convertHexToRgba_default(theme.palette.ink.normal, 12)}`,
+    boxShadowFixed: `0px 0px 2px 0px ${convertHexToRgba_default(
       theme.palette.ink.normal,
-      16,
-    )}, 0px 2px 4px 0px ${convertHexToRgba(theme.palette.ink.normal, 12)}`,
-    boxShadowFixedReverse: `0px 0px 2px 0px ${convertHexToRgba(
+      16
+    )}, 0px 2px 4px 0px ${convertHexToRgba_default(theme.palette.ink.normal, 12)}`,
+    boxShadowFixedReverse: `0px 0px 2px 0px ${convertHexToRgba_default(
       theme.palette.ink.normal,
-      16,
-    )}, 0px -2px 4px 0px ${convertHexToRgba(theme.palette.ink.normal, 12)}`,
-    boxShadowRaised: `0px 4px 8px 0px ${convertHexToRgba(
+      16
+    )}, 0px -2px 4px 0px ${convertHexToRgba_default(theme.palette.ink.normal, 12)}`,
+    boxShadowRaised: `0px 4px 8px 0px ${convertHexToRgba_default(
       theme.palette.ink.normal,
-      16,
-    )}, 0px 8px 24px 0px ${convertHexToRgba(theme.palette.ink.normal, 24)}`,
-    boxShadowRaisedReverse: `0px -4px 8px 0px ${convertHexToRgba(
+      16
+    )}, 0px 8px 24px 0px ${convertHexToRgba_default(theme.palette.ink.normal, 24)}`,
+    boxShadowRaisedReverse: `0px -4px 8px 0px ${convertHexToRgba_default(
       theme.palette.ink.normal,
-      16,
-    )}, 0px -8px 24px 0px ${convertHexToRgba(theme.palette.ink.normal, 24)}`,
-    boxShadowOverlay: `0px 12px 24px -4px ${convertHexToRgba(
+      16
+    )}, 0px -8px 24px 0px ${convertHexToRgba_default(theme.palette.ink.normal, 24)}`,
+    boxShadowOverlay: `0px 12px 24px -4px ${convertHexToRgba_default(
       theme.palette.ink.normal,
-      24,
-    )}, 0px 8px 60px 0px ${convertHexToRgba(theme.palette.ink.normal, 32)}`,
-    // category:Color palette
-    // description: Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette.
+      24
+    )}, 0px 8px 60px 0px ${convertHexToRgba_default(theme.palette.ink.normal, 32)}`,
     paletteProductLight: theme.palette.product.light,
     paletteProductLightHover: theme.palette.product.lightHover,
     paletteProductLightActive: theme.palette.product.lightActive,
@@ -574,13 +677,11 @@ export const getTokens: GetTokens = customFoundation => {
     paletteBlueDarker: theme.palette.blue.darker,
     paletteSocialFacebook: theme.palette.social.facebook,
     paletteSocialFacebookHover: theme.palette.social.facebookHover,
-    paletteSocialFacebookActive: theme.palette.social.facebookActive,
+    paletteSocialFacebookActive: theme.palette.social.facebookActive
   };
 };
-
-export const defaultTokens: Tokens = getTokens();
-
-export const fromPlainObject: FromPlainObject = themePaletteColors => {
+var defaultTokens = getTokens();
+var fromPlainObject = (themePaletteColors) => {
   const theme = {
     palette: {
       product: {
@@ -591,12 +692,13 @@ export const fromPlainObject: FromPlainObject = themePaletteColors => {
         normalHover: themePaletteColors.productNormalHover,
         normalActive: themePaletteColors.productNormalActive,
         dark: themePaletteColors.productDark,
-        darkHover: themePaletteColors.productDarkHover || foundation.palette.product.darkHover,
-        darkActive: themePaletteColors.productDarkActive || foundation.palette.product.darkActive,
-        darker: themePaletteColors.productDarker || foundation.palette.product.darker,
-      },
-    },
+        darkHover: themePaletteColors.productDarkHover || foundation_default.palette.product.darkHover,
+        darkActive: themePaletteColors.productDarkActive || foundation_default.palette.product.darkActive,
+        darker: themePaletteColors.productDarker || foundation_default.palette.product.darker
+      }
+    }
   };
-
   return getTokens(theme);
 };
+
+export { convertHexToRgba_default as convertHexToRgba, defaultTokens, foundation_default as foundation, fromPlainObject, getTokens, palette_default as palette };

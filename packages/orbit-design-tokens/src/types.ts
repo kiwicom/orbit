@@ -1,4 +1,3 @@
-// @flow
 import type {
   Palette,
   ProductColor,
@@ -10,8 +9,6 @@ import type {
   CloudColor,
 } from "./palette";
 import { Base } from "./foundation";
-
-declare module "@kiwicom/orbit-design-tokens/";
 
 export type Foundation = {
   palette: Palette;
@@ -543,15 +540,7 @@ type CustomPalette = {
 
 type CustomBase = Partial<Base>;
 
-type CustomFoundation = Partial<{
+export type CustomFoundation = Partial<{
   palette: CustomPalette;
   base: CustomBase;
 }>;
-
-export declare const ConvertHexToRgba: (color: string, opacity: number) => string;
-export declare const fromPlainObject: (themePaletteColors: ThemePaletteColors) => Tokens;
-export declare const getTokens: (customFoundation?: CustomFoundation) => Tokens;
-export declare const defaultTokens: Tokens;
-
-export { default as convertHexToRgba } from "./convertHexToRgba";
-export { default as palette } from "./palette";

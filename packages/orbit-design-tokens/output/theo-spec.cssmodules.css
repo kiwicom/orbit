@@ -76,7 +76,6 @@
 @value width-breakpoint-desktop: 992;
 @value border-style-input: "solid";
 @value font-size-button-small: 12px;
-/* use for all basic elements like buttons, inputs, content containers */
 @value border-radius-normal: 3px;
 @value border-radius-badge: 12px;
 @value color-text-button-warning-bordered: rgb(223, 123, 0);
@@ -147,7 +146,6 @@
 @value border-color-button-critical-bordered-hover: rgb(185, 25, 25);
 @value space-xxx-large: 52px;
 @value font-size-button-normal: 14px;
-/* use for smaller elements like tags */
 @value border-radius-small: 2px;
 @value palette-ink-normal-hover: rgb(24, 27, 32);
 @value font-size-text-small: 12px;
@@ -227,7 +225,6 @@
 @value margin-button-icon-small: 8px;
 @value height-service-logo-small: 12px;
 @value padding-input-small: 0 12px;
-/* use only for square */
 @value border-radius-circle: 50%;
 @value palette-white: rgb(255, 255, 255);
 @value font-size-heading-title4: 14px;
@@ -460,7 +457,6 @@
 @value palette-red-normal: rgb(210, 28, 28);
 @value palette-orange-dark-hover: rgb(167, 84, 0);
 @value color-text-button-secondary-bordered: rgb(37, 42, 49);
-/* use for big elements like modal and large buttons */
 @value border-radius-large: 6px;
 @value padding-table: 12px 16px;
 @value background-button-bundle-medium-active: "linear-gradient(to top right, #250F79 0%, #5A3485 100%)";

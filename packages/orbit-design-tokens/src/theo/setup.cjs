@@ -1,5 +1,4 @@
-// @noflow
-const html = require("./kiwi-html");
+const html = require("./kiwi-html.cjs");
 
 module.exports = theo => {
   theo.registerValueTransform(

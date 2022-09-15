@@ -2,9 +2,18 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var ramda = require('ramda');
-
-// src/index.ts
+// src/mergeDeep.ts
+function mergeDeep(first, second) {
+  const result = { ...first };
+  for (const key in second) {
+    if (second[key] instanceof Object && key in first) {
+      result[key] = mergeDeep(first[key], second[key]);
+    } else {
+      result[key] = second[key];
+    }
+  }
+  return result;
+}
 
 // src/palette.ts
 var palette = {
@@ -159,7 +168,7 @@ var foundation_default = foundation;
 
 // src/index.ts
 var getTokens = (customFoundation) => {
-  const theme = customFoundation ? ramda.mergeDeepRight(foundation_default, customFoundation) : foundation_default;
+  const theme = customFoundation ? mergeDeep(foundation_default, customFoundation) : foundation_default;
   return {
     colorTextPrimary: theme.palette.ink.normal,
     colorTextSecondary: theme.palette.ink.light,

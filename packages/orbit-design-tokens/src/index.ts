@@ -1,13 +1,15 @@
-import { mergeDeepRight } from "ramda";
-
+import mergeDeep from "./mergeDeep";
 import palette from "./palette";
 import convertHexToRgba from "./convertHexToRgba";
 import foundation from "./foundation";
-import { Tokens, CustomFoundation, ThemePaletteColors } from "./types";
+import { Tokens, CustomFoundation, ThemePaletteColors, Foundation } from "./types";
 
 export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
   // By default it takes base foundation config
-  const theme = customFoundation ? mergeDeepRight(foundation, customFoundation) : foundation;
+  const theme = (customFoundation
+    ? mergeDeep(foundation, customFoundation)
+    : foundation) as Foundation;
+
   return {
     // category:Colors
     // description:Use these tokens for text or icon colors. Don't use these for borders and background colors.

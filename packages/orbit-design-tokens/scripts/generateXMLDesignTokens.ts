@@ -1,5 +1,5 @@
 import xml from "xml";
-import { fs } from "zx";
+import fs from "fs-extra";
 
 import { defaultTokens } from "../dist/index.js";
 

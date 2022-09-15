@@ -40,7 +40,7 @@
     "build": "yarn clean && tsup && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
     "size:build": "yarn run build",
     "prepublishOnly": "yarn build && yarn fetch:colors",
-    "clean": "del dist pages output"
+    "clean": "rimraf dist pages output"
   },
   "author": "Kiwi.com",
   "license": "MIT",
@@ -50,7 +50,8 @@
     "design"
   ],
   "devDependencies": {
-    "@babel/core": "^7.18.2",
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.1",
     "@babel/preset-typescript": "^7.18.6",
     "cpy-cli": "^4.1.0",
     "figx": "^0.1.0",
@@ -58,15 +59,12 @@
     "lodash": "^4.17.21",
     "memfs": "^3.2.0",
     "optimist": "^0.6.1",
+    "rimraf": "^3.0.2",
     "theo": "^8.1.5",
     "ts-node": "^10.9.1",
     "tsup": "^6.2.3",
     "typescript": "^4.8.3",
     "xml": "^1.0.1",
-    "zx": "^4.2.0"
-  },
-  "dependencies": {
-    "ramda": "^0.27.1",
-    "rimraf": "^3.0.2"
+    "zx": "^7.0.0"
   }
 }

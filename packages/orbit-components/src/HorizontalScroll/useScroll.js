@@ -21,6 +21,11 @@ type UseScroll = (ref: {| current: HTMLElement | null |}) => {|
   reachedStart: boolean,
 |};
 
+const getX = (e: MouseEvent | TouchEvent) => {
+  if (e instanceof MouseEvent) return e.screenX;
+  return e.touches[0].screenX;
+};
+
 const useScroll: UseScroll = ref => {
   const [clickStartX, setClickStartX] = useState();
   const [scrollStartX, setScrollStartX] = useState();
@@ -56,62 +61,70 @@ const useScroll: UseScroll = ref => {
   }, [momentum, isDragging, speed, direction, handleMomentum]);
 
   useEffect(() => {
-    if (ref.current) {
-      const handleDragStart = e => {
-        setClickStartX(e.screenX);
-        setScrollStartX(ref.current?.scrollLeft);
-        setDirection(0);
-      };
+    const currentRef = ref.current;
 
-      const handleDragMove = e => {
-        e.preventDefault();
-        e.stopPropagation();
+    const handleDragStart = (e: MouseEvent | TouchEvent) => {
+      setScrollStartX(currentRef?.scrollLeft);
+      setDirection(0);
+      setClickStartX(getX(e));
+    };
 
-        if (clickStartX !== undefined && scrollStartX !== undefined && ref.current) {
-          const touchDelta = clickStartX - e.screenX;
-          // eslint-disable-next-line no-param-reassign
-          ref.current.scrollLeft = scrollStartX + touchDelta;
+    const handleDragMove = (e: MouseEvent | TouchEvent) => {
+      if (e.type === "mousedown") e.preventDefault();
 
-          if (Math.abs(touchDelta) > 1) {
-            setIsDragging(true);
-            setDirection(touchDelta / Math.abs(touchDelta));
-            setSpeed(Math.abs((lastScrollX - e.screenX) / timing));
-            handleLastScrollX(e.screenX);
-          }
+      e.stopPropagation();
+
+      if (clickStartX !== undefined && scrollStartX !== undefined && currentRef) {
+        const touchDelta = clickStartX - getX(e);
+        currentRef.scrollLeft = scrollStartX + touchDelta;
+
+        if (Math.abs(touchDelta) > 1) {
+          setIsDragging(true);
+          setDirection(touchDelta / Math.abs(touchDelta));
+          setSpeed(Math.abs((lastScrollX - getX(e)) / timing));
+          handleLastScrollX(getX(e));
         }
-      };
-
-      const handleDragEnd = () => {
-        if (isDragging && clickStartX !== undefined) {
-          setClickStartX(undefined);
-          setScrollStartX(undefined);
-          setIsDragging(false);
-
-          if (scrollStartX !== undefined && ref.current?.scrollLeft) {
-            if (ref.current.scrollLeft <= scrollStartX + TRIGGER_OFFSET) {
-              setReachedEnd(true);
-            } else {
-              setReachedEnd(false);
-            }
-          }
-
-          if (ref.current?.scrollLeft === 0) setReachedStart(true);
-          else setReachedStart(false);
-        }
-      };
-
-      // $FlowFixMe: on mobile browser is null, on desktop is undefined
-      if (ref.current && ref.current.ontouchstart === undefined) {
-        // eslint-disable-next-line no-param-reassign
-        ref.current.onmousedown = handleDragStart;
-        // eslint-disable-next-line no-param-reassign
-        ref.current.onmousemove = handleDragMove;
-        // eslint-disable-next-line no-param-reassign
-        ref.current.onmouseup = handleDragEnd;
-        // eslint-disable-next-line no-param-reassign
-        ref.current.onmouseleave = handleDragEnd;
       }
+    };
+
+    const handleDragEnd = () => {
+      if (isDragging && clickStartX !== undefined) {
+        setClickStartX(undefined);
+        setScrollStartX(undefined);
+        setIsDragging(false);
+
+        if (scrollStartX !== undefined && currentRef?.scrollLeft) {
+          if (currentRef.scrollLeft <= scrollStartX + TRIGGER_OFFSET) {
+            setReachedEnd(true);
+          } else {
+            setReachedEnd(false);
+          }
+        }
+
+        if (currentRef?.scrollLeft === 0) setReachedStart(true);
+        else setReachedStart(false);
+      }
+    };
+
+    // $FlowFixMe: on mobile browser is null, on desktop is undefined
+    if (currentRef && currentRef.ontouchstart === undefined) {
+      currentRef.onmousedown = handleDragStart;
+      currentRef.onmousemove = handleDragMove;
+      currentRef.onmouseup = handleDragEnd;
+      currentRef.onmouseleave = handleDragEnd;
     }
+
+    if (currentRef !== null) {
+      currentRef.addEventListener("touchstart", handleDragStart);
+      currentRef.addEventListener("touchmove", handleDragMove);
+      currentRef.addEventListener("touchend", handleDragEnd);
+    }
+
+    return () => {
+      currentRef?.removeEventListener("touchstart", handleDragStart);
+      currentRef?.removeEventListener("touchmove", handleDragMove);
+      currentRef?.removeEventListener("touchend", handleDragEnd);
+    };
   }, [scrollWrapperCurrent, clickStartX, isDragging, scrollStartX, handleLastScrollX, lastScrollX]);
 
   return {

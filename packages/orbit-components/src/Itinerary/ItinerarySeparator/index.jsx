@@ -19,9 +19,9 @@ const StyledInner = styled.div`
     &:before,
     &:after {
       content: "";
-      z-index: -1;
       position: absolute;
       top: 50%;
+      z-index: 10;
       width: 50%;
       height: 1px;
       background: ${theme.orbit.paletteCloudDark};
@@ -43,11 +43,10 @@ StyledInner.defaultProps = {
 };
 
 const StyledWord = styled.div`
-  ${({ theme }) => css`
-    background: ${theme.orbit.paletteWhite};
-    padding: 0 2px;
-    z-index: 2;
-  `}
+  position: relative;
+  padding: 0 2px;
+  background: #fff;
+  z-index: 11;
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

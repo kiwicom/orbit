@@ -527,7 +527,7 @@ export const Default = (): React.Node => {
           time="16:35"
         />
       </ItinerarySegment>
-      <ItineraryBadgeList>
+      <ItineraryBadgeList spaceAfter="medium">
         <BadgeListItem icon={<Guarantee />}>
           Connection protected by the Kiwi.com Guarantee
         </BadgeListItem>

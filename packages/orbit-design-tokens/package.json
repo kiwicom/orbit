@@ -31,13 +31,14 @@
   "scripts": {
     "fetch:colors": "zx ./scripts/fetchBaseTokens.mjs",
     "check:types": "tsc",
-    "generate-json": "ts-node-esm ./src/theo/generate-theo-parser.ts",
+    "generate:json": "ts-node-esm ./src/theo/generate-theo-parser.ts",
+    "generate:flow": "npx flowgen --output-file ./dist/index.js.flow ./dist/index.d.ts --add-flow-header",
     "build-html": "theo --setup ./src/theo/setup.cjs ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
     "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
     "build-ios": "theo ./src/theo/theo-spec.json --transform ios --format ios.json --dest ./output",
     "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
     "build:xml": "NODE_RUN=true ts-node-esm ./scripts/generateXMLDesignTokens.ts",
-    "build": "yarn clean && tsup && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
+    "build": "yarn clean && tsup && yarn run generate:json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml && yarn generate:flow",
     "size:build": "yarn run build",
     "prepublishOnly": "yarn build && yarn fetch:colors",
     "clean": "rimraf dist pages output"

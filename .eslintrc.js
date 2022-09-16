@@ -96,7 +96,6 @@ module.exports = {
           "./tsconfig.json",
           "./packages/orbit-tracking/tsconfig.json",
           "./docs/tsconfig.json",
-          "./packages/orbit-components/.storybook/tsconfig.json",
           "./packages/orbit-components/cypress/tsconfig.json",
         ],
         ecmaVersion: 2018,

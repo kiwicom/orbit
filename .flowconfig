@@ -22,6 +22,7 @@
 
 [lints]
 unnecessary-optional-chain=error
+untyped-type-import=off
 
 [options]
 emoji=true

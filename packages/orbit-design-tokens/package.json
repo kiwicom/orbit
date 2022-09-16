@@ -6,13 +6,6 @@
   "module": "dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./package.json": "./package.json"
-  },
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },

@@ -73,7 +73,8 @@ jobs:
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           NODE_OPTIONS: "--max_old_space_size=4096"
 
-        run: yarn orbit-kiwi:build
+        run: |
+          yarn orbit-kiwi:build
 
       - name: Check links
         env:

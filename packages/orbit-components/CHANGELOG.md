@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.6.0...@kiwicom/orbit-components@3.6.1) (2022-09-16)
+
+
+### Bug Fixes
+
+* **BadgePrimitive:** remove CarrierLogo offset ([7738f88](https://github.com/kiwicom/orbit/commit/7738f886b7183c10653c0f15821b853c9b013028))
+* **HorizontalScroll:** fix useScroll hook to support touchevent ([7207333](https://github.com/kiwicom/orbit/commit/7207333f05ec2860921cf33bbdbcffe582d85667))
+* **ItineraryBadgeList:** remove default spaceAfter medium ([ea7f3be](https://github.com/kiwicom/orbit/commit/ea7f3be511560d933710e5010541b5682203a344))
+* **ItinerarySeparator:** fix z-index issue ([0dc08b1](https://github.com/kiwicom/orbit/commit/0dc08b181cc5a673fc4b1cbd4067cbfaf2392c24))
+
+
+
+
+
 # [3.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.5.1...@kiwicom/orbit-components@3.6.0) (2022-09-01)
 
 

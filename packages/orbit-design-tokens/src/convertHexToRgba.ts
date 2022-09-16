@@ -1,5 +1,4 @@
-// @flow
-import type { ConvertHexToRgba } from "./convertHexToRgba";
+export type ConvertHexToRgba = (color: string, opacity: number) => string;
 
 const convertHexToRgba: ConvertHexToRgba = (color, opacity) => {
   const removeHash = color.replace("#", "");

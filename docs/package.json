@@ -21,8 +21,8 @@
     "@adeira/js": "^2.1.1",
     "@babel/core": "^7.18.2",
     "@babel/generator": "^7.17.9",
-    "@babel/standalone": "^7.17.6",
     "@babel/runtime": "^7.18.2",
+    "@babel/standalone": "^7.17.6",
     "@csstools/convert-colors": "^2.0.0",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
@@ -119,5 +119,8 @@
     "use-resize-observer": "^8.0.0",
     "uuid": "^8.3.2",
     "vfile-reporter": "^7.0.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0"
   }
 }

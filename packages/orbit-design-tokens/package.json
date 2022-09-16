@@ -2,16 +2,20 @@
   "name": "@kiwicom/orbit-design-tokens",
   "version": "1.5.1",
   "description": "Design tokens for Kiwi.com.",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": "^14.13.1 || >=16.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kiwicom/orbit",
     "directory": "packages/orbit-design-tokens"
   },
   "files": [
-    "lib/*",
-    "es/*",
+    "dist",
     "package.json",
     "README.md",
     "output/*",
@@ -19,20 +23,18 @@
   ],
   "scripts": {
     "fetch:colors": "zx ./scripts/fetchBaseTokens.mjs",
-    "generate-json": "node ./src/theo/generate-theo-parser",
-    "build-html": "theo --setup ./src/theo/setup.js ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
+    "check:types": "tsc",
+    "generate:json": "ts-node-esm ./src/theo/generate-theo-parser.ts",
+    "generate:flow": "npx flowgen --output-file ./dist/index.js.flow ./dist/index.d.ts --add-flow-header",
+    "build-html": "theo --setup ./src/theo/setup.cjs ./src/theo/theo-spec.json --format kiwi.html --dest ./pages",
     "build-web": "theo ./src/theo/theo-spec.json --transform web --format json,scss,sass,less,styl,cssmodules.css,common.js --dest ./output",
     "build-ios": "theo ./src/theo/theo-spec.json --transform ios --format ios.json --dest ./output",
     "build-android": "theo ./src/theo/theo-spec.json --transform android --format android.xml --dest ./output",
-    "build:lib": "babel src --out-dir lib --ignore **/*.test.js,src/theo/* && yarn copy:lib",
-    "build:es": "babel src --out-dir es --ignore **/*.test.js,src/theo/* --env-name esm && yarn copy:es",
-    "build:xml": "NODE_RUN=true babel-node ./scripts/generateXMLDesignTokens.js",
-    "build": "yarn clean && yarn run build:lib && yarn run build:es && yarn run generate-json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml",
-    "size:build": "yarn run build:lib",
-    "copy:lib": "copyfiles -u 1 'src/**/*.js.flow' lib && copyfiles -u 1 'src/**/*.d.ts' lib",
-    "copy:es": "copyfiles -u 1 'src/**/*.js.flow' es && copyfiles -u 1 'src/**/*.d.ts' es ",
-    "clean": "rimraf src/js lib es pages output",
-    "prepublishOnly": "yarn build"
+    "build:xml": "NODE_RUN=true ts-node-esm ./scripts/generateXMLDesignTokens.ts",
+    "build": "yarn clean && tsup && yarn run generate:json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml && yarn generate:flow",
+    "size:build": "yarn run build",
+    "prepublishOnly": "yarn build && yarn fetch:colors",
+    "clean": "rimraf dist pages output"
   },
   "author": "Kiwi.com",
   "license": "MIT",
@@ -42,25 +44,21 @@
     "design"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.18.2",
-    "@babel/node": "^7.14.2",
-    "@babel/parser": "^7.13.13",
-    "@babel/preset-env": "^7.14.0",
-    "@babel/preset-flow": "^7.12.13",
-    "babylon": "^6.18.0",
-    "copyfiles": "^2.4.0",
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-typescript": "^7.18.6",
+    "cpy-cli": "^4.1.0",
     "figx": "^0.1.0",
-    "fs-extra": "^9.0.1",
+    "filedirname": "^2.7.0",
     "lodash": "^4.17.21",
     "memfs": "^3.2.0",
     "optimist": "^0.6.1",
+    "rimraf": "^3.0.2",
     "theo": "^8.1.5",
+    "ts-node": "^10.9.1",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.3",
     "xml": "^1.0.1",
-    "zx": "^4.2.0"
-  },
-  "dependencies": {
-    "ramda": "^0.27.1",
-    "rimraf": "^3.0.2"
+    "zx": "^7.0.0"
   }
 }

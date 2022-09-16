@@ -1,10 +1,10 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import { Tokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 export interface ThemeShape {
-  readonly orbit: Tokens;
+  readonly orbit: typeof defaultTokens;
   readonly transitions?: boolean;
   readonly lockScrolling?: boolean;
   readonly lockScrollingBarGap?: boolean;

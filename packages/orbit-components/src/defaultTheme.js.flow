@@ -1,8 +1,8 @@
 // @flow
-import type { Tokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens/dist/index.js.flow";
 
 export type Theme = {|
-  +orbit: Tokens,
+  +orbit: typeof defaultTokens,
   +transitions?: boolean,
   +lockScrolling?: boolean,
   +lockScrollingBarGap?: boolean,

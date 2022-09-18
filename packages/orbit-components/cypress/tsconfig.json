@@ -1,6 +1,7 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
+    "skipLibCheck": true,
     "types": ["cypress", "@testing-library/cypress"]
   },
   "include": ["**/*.test.*"],

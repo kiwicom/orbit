@@ -2,10 +2,14 @@
 import * as React from "react";
 
 import type { Globals } from "../common/common.js.flow";
+import type { Spacing } from "../Stack";
 
 export type Props = {|
-  +label: React.Node,
+  +label?: React.Node,
   +value: React.Node,
+  +icon?: React.Node,
+  +direction?: "row" | "column",
+  +spacing?: Spacing,
   +size?: "normal" | "large",
   ...Globals,
 |};

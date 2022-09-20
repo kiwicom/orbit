@@ -18,6 +18,7 @@ interface Props extends Common.Global {
     React.SyntheticEvent<HTMLDivElement> | React.KeyboardEvent<HTMLElement>
   >;
   readonly expandable?: boolean;
+  readonly expanded?: boolean;
   readonly initialExpanded?: boolean;
   readonly noHeaderIcon?: boolean;
   readonly htmlTitle?: string;

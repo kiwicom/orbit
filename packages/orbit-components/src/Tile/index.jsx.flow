@@ -21,6 +21,7 @@ export type Props = {|
   +href?: string,
   +onClick?: TileOnClick,
   +expandable?: boolean,
+  +expanded?: boolean,
   +initialExpanded?: boolean,
   +noPadding?: boolean,
   +htmlTitle?: string,

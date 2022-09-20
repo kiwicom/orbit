@@ -63,4 +63,9 @@ describe("Tile", () => {
     render(<Tile expandable initialExpanded />);
     expect(screen.getByRole("button")).toHaveAttribute("aria-expanded");
   });
+
+  it("should be expanded", () => {
+    render(<Tile expandable expanded />);
+    expect(screen.getByRole("button")).toHaveAttribute("aria-expanded");
+  });
 });

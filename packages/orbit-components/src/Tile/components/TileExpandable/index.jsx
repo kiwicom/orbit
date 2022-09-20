@@ -17,19 +17,28 @@ const TileExpandable = ({
   children,
   onClick,
   title,
+  expanded,
   description,
   header,
   icon,
   dataTest,
   htmlTitle,
 }: Props): React.Node => {
-  const [expanded, setExpanded] = React.useState(initialExpanded);
+  const [isExpanded, setExpanded] = React.useState(initialExpanded);
   const [{ height }, node] = useBoundingRect({ height: initialExpanded ? null : 0 });
+
+  const isControlled = React.useMemo(() => expanded != null, [expanded]);
 
   const handleClick = ev => {
     if (onClick) onClick(ev);
     setExpanded(prevExpanded => !prevExpanded);
   };
+
+  React.useEffect(() => {
+    if (isControlled) {
+      setExpanded(expanded);
+    }
+  }, [expanded, isControlled]);
 
   const hasHeader = !!(title || description || icon || header);
   const randomId = useRandomIdSeed();
@@ -41,7 +50,7 @@ const TileExpandable = ({
       onClick={handleClick}
       onKeyDown={handleKeyDown(onClick, () => setExpanded(prevExpanded => !prevExpanded))}
       role="button"
-      ariaExpanded={expanded}
+      ariaExpanded={isExpanded}
       ariaControls={slideID}
       tabIndex="0"
       id={labelID}
@@ -54,7 +63,7 @@ const TileExpandable = ({
           description={description}
           icon={icon}
           header={header}
-          expanded={expanded}
+          expanded={isExpanded}
           expandable
         />
       )}

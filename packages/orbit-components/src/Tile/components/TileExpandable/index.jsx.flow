@@ -10,6 +10,7 @@ export type Props = {|
   noPadding: boolean,
   children?: React.Node,
   onClick?: TileOnClick,
+  expanded?: boolean,
   title?: React.Node,
   description?: React.Node,
   header?: React.Node,

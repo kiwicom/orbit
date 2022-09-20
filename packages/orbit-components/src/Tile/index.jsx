@@ -16,6 +16,7 @@ const Tile = ({
   id,
   icon,
   title,
+  expanded,
   description,
   header,
   children,
@@ -33,6 +34,7 @@ const Tile = ({
         dataTest={dataTest}
         id={id}
         icon={icon}
+        expanded={expanded}
         title={title}
         description={description}
         header={header}

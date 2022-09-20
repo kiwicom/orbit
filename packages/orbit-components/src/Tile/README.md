@@ -34,6 +34,7 @@ Table below contains all types of the props available in Tile component.
 | initialExpanded | `boolean`                  | `false` | Initial state of expandable Tile when it mounts.                                                                             |
 | onClick         | `event => void \| Promise` |         | Function for handling onClick event.                                                                                         |
 | title           | `React.Node`               |         | The title of the Tile.                                                                                                       |
+| expanded        | `boolean`                  |         | If `true`, the Tile will be expanded.                                                                                        |
 
 ## Functional specs
 

@@ -181,6 +181,7 @@ export const Playground = (): React.Node => {
   const children = text("children", null);
   const htmlTitle = text("htmlTitle", "Title for more info");
   const as = text("as", "");
+  const expanded = boolean("expanded", false);
 
   return (
     <Tile
@@ -188,6 +189,7 @@ export const Playground = (): React.Node => {
       as={as}
       onClick={action("clicked")}
       icon={Icon && <Icon />}
+      expanded={expanded}
       title={title}
       description={description}
       header={header}

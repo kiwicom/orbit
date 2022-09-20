@@ -35,9 +35,11 @@ const TileExpandable = ({
   };
 
   React.useEffect(() => {
-    if (isControlled) {
-      setExpanded(expanded);
-    }
+    if (initialExpanded) setExpanded(true);
+  }, [initialExpanded]);
+
+  React.useEffect(() => {
+    if (isControlled) setExpanded(expanded);
   }, [expanded, isControlled]);
 
   const hasHeader = !!(title || description || icon || header);
@@ -67,7 +69,7 @@ const TileExpandable = ({
           expandable
         />
       )}
-      <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
+      <Slide maxHeight={height} expanded={isExpanded} id={slideID} ariaLabelledBy={labelID}>
         <TileContent noPadding={noPadding} ref={node} withBorder={hasHeader}>
           {children}
         </TileContent>

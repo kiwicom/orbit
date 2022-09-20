@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.6.1...@kiwicom/orbit-components@3.7.0) (2022-09-20)
+
+
+### Features
+
+* **KeyValue:** new spacing, direction properties ([#3576](https://github.com/kiwicom/orbit/issues/3576)) ([aeeace9](https://github.com/kiwicom/orbit/commit/aeeace9e1d423e25e374f4c0c2d5251c65c40c31))
+* **Tile:** add expanded prop ([#3577](https://github.com/kiwicom/orbit/issues/3577)) ([7f97061](https://github.com/kiwicom/orbit/commit/7f970618eeb68fb451ccd5d279ed9957cee894f1))
+
+
+
+
+
 ## [3.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.6.0...@kiwicom/orbit-components@3.6.1) (2022-09-16)
 
 

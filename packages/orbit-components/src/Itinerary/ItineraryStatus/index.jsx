@@ -67,7 +67,7 @@ const StyledStatusHeader = styled.div`
     display: flex;
     align-items: center;
     padding: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall}`)};
-    height: ${theme.orbit.spaceXLarge};
+    min-height: ${theme.orbit.spaceXLarge};
     border-radius: ${theme.orbit.borderRadiusNormal} ${theme.orbit.borderRadiusLarge} 0 0;
     background: ${$type && resolveColor($type, true)};
   `}
@@ -117,7 +117,7 @@ const ItineraryStatus = ({
     <StyledWrapper $type={type} spaceAfter={spaceAfter} tabIndex={0}>
       <StyledStatusHeader $type={type}>
         <StyledStatusText $offset={offset}>
-          <Stack inline spacing="XSmall" align="center">
+          <Stack flex spacing="XSmall" align="center">
             <StatusIcon type={type} />
             {label && (
               <Text as="div" type={type === "neutral" ? "primary" : type} weight="medium">

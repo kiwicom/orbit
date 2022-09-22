@@ -24,7 +24,7 @@ export const StyledMenuItem = styled.li`
     border-radius: 9px;
     outline: none;
     font-size: 16px;
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
 
     &[aria-selected=true],
     &:hover {

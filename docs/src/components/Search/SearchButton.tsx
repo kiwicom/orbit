@@ -13,7 +13,7 @@ type Type = "primary" | "secondary";
 
 const StyledWrapper = styled.div<{ type: Type }>`
   ${({ theme, type }) => css`
-    color: ${type === "primary" ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkNormal};
+    color: ${type === "primary" ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkDark};
   `}
 `;
 

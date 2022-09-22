@@ -19,7 +19,7 @@ const StyledTrack = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: ${theme.orbit.paletteInkLighter};
+    background-color: ${theme.orbit.paletteInkNormal};
     border-radius: 28px;
     transition: background-color ${theme.orbit.durationFast} ease-in-out;
   `}
@@ -50,7 +50,7 @@ const StyledCircle = styled.div`
     width: 10px;
     height: 10px;
     border-radius: ${theme.orbit.borderRadiusCircle};
-    background-color: ${theme.orbit.paletteInkLighter};
+    background-color: ${theme.orbit.paletteInkNormal};
     transition: background-color ${theme.orbit.durationFast};
   `}
 `;

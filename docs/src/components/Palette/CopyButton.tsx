@@ -15,7 +15,7 @@ interface CopyButtonProps {
 const StyledButton = styled.button<{ colorValue?: string }>`
   ${({ colorValue, theme }) => css`
     background: ${colorValue && isLight(colorValue)
-      ? theme.orbit.paletteInkNormal
+      ? theme.orbit.paletteInkDark
       : theme.orbit.paletteWhite};
     padding: 0 ${theme.orbit.spaceXSmall};
     border-radius: ${theme.orbit.borderRadiusBadge};
@@ -25,7 +25,7 @@ const StyledButton = styled.button<{ colorValue?: string }>`
     svg path {
       fill: ${colorValue && isLight(colorValue)
         ? theme.orbit.paletteWhite
-        : theme.orbit.paletteInkNormal};
+        : theme.orbit.paletteInkDark};
     }
     &:hover {
       transform: translateX(-2px);

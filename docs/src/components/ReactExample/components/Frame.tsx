@@ -24,9 +24,9 @@ const getBackground = (type: BgType) => ({ theme }) => {
       linear-gradient(-90deg, rgba(0, 0, 0, .06) 1px, transparent 1px),
       linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
       linear-gradient(transparent 3px, ${theme.orbit.paletteWhite} 3px, ${theme.orbit.paletteWhite} 78px, transparent 78px),
-      linear-gradient(-90deg, ${theme.orbit.paletteInkNormal} 1px, transparent 1px),
+      linear-gradient(-90deg, ${theme.orbit.paletteInkDark} 1px, transparent 1px),
       linear-gradient(-90deg, transparent 3px, ${theme.orbit.paletteWhite} 3px, ${theme.orbit.paletteWhite} 78px, transparent 78px),
-      linear-gradient(${theme.orbit.paletteInkNormal} 1px, transparent 1px),
+      linear-gradient(${theme.orbit.paletteInkDark} 1px, transparent 1px),
       #f2f2f2;
 
     background-size:
@@ -41,7 +41,7 @@ const getBackground = (type: BgType) => ({ theme }) => {
     `;
   }
 
-  if (type === "dark") return `background: ${theme.orbit.paletteInkNormal}`;
+  if (type === "dark") return `background: ${theme.orbit.paletteInkDark}`;
 
   return `background: ${theme.orbit.paletteWhite}`;
 };

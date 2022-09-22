@@ -29,7 +29,7 @@ const StyledSearchButton = styled.button`
       &:hover {
         background: ${theme.orbit.paletteCloudLightHover};
         ${StyledIcon} {
-          background: ${theme.orbit.paletteCloudDarker};
+          background: ${theme.orbit.paletteCloudDark};
         }
       }
       &:active,

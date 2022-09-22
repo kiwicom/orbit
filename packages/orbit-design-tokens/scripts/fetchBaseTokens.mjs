@@ -1,17 +1,15 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
 import { $, fetch, fs, chalk, path } from "zx";
 import dotenv from "dotenv-safe";
 import dedent from "dedent";
 import { solidPaintToWebRgb, toHex } from "figx";
 import _ from "lodash";
-// eslint-disable-next-line import/extensions
 import fp from "lodash/fp.js";
 
 const FILE_ID = "2rTHlBKKR6IWGeP6Dw6qbP";
 const ROOT_API = `https://api.figma.com/v1/files`;
 const FIGMA_FILE_URI = `${ROOT_API}/${FILE_ID}/styles`;
-const OUTPUT_PATH = path.join(__dirname, "../src/palette.js");
+const OUTPUT_PATH = path.join(__dirname, "../src/basePalette.ts");
 
 try {
   dotenv.config({
@@ -51,7 +49,6 @@ async function saveColorTokens(output) {
   console.log(sorted);
 
   const content = dedent`
-    // @flow
     const palette = ${JSON.stringify(sorted, null, 2)};
 
     export default palette;

@@ -1,17 +1,7 @@
-import type {
-  Palette,
-  ProductColor,
-  WhiteColor,
-  StatusColor,
-  BundleColor,
-  SocialColor,
-  InkColor,
-  CloudColor,
-} from "./palette";
-import { Base } from "./foundation";
+import { Base, palette } from "./foundation";
 
 export type Foundation = {
-  palette: Palette;
+  palette: typeof palette;
   base: Base;
 };
 
@@ -526,16 +516,16 @@ export type ThemePaletteColors = {
 };
 
 type CustomPalette = {
-  product?: Partial<ProductColor>;
-  white?: Partial<WhiteColor>;
-  cloud?: Partial<CloudColor>;
-  ink?: Partial<InkColor>;
-  orange?: Partial<StatusColor>;
-  red?: Partial<StatusColor>;
-  green?: Partial<StatusColor>;
-  blue?: Partial<StatusColor>;
-  social?: Partial<SocialColor>;
-  bundle?: Partial<BundleColor>;
+  product?: typeof palette["product"];
+  white?: typeof palette["white"];
+  cloud?: typeof palette["cloud"];
+  ink?: typeof palette["ink"];
+  orange?: typeof palette["orange"];
+  red?: typeof palette["red"];
+  green?: typeof palette["green"];
+  blue?: typeof palette["blue"];
+  social?: typeof palette["social"];
+  bundle?: typeof palette["bundle"];
 };
 
 type CustomBase = Partial<Base>;

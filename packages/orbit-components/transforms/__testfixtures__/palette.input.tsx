@@ -1,29 +1,40 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import React from "react";
 
 import useTheme from "../../src/hooks/useTheme";
 import defaultTheme from "../../src/defaultTheme";
 
 /* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 
 const StyledComponent = styled.div`
   color: ${({ theme }) => theme.orbit.paletteInkLighter};
 `;
 
 StyledComponent.defaultProps = {
-  // @ts-ignore
   theme: defaultTheme,
 };
 
 const StyledComponentSecond = styled.div`
-  ${({ theme }) => css`
-    color: ${theme.orbit.paletteInkLighter};
-  `}
+  color: ${({ theme }) => theme.orbit.paletteInkLight};
 `;
 
 StyledComponentSecond.defaultProps = {
-  // @ts-ignore
+  theme: defaultTheme,
+};
+
+const StyledComponentThird = styled.div`
+  color: ${({ theme }) => theme.orbit.paletteInkNormal};
+`;
+
+StyledComponentThird.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledComponentFourth = styled.div`
+  color: ${({ theme }) => theme.orbit.paletteCloudDarker};
+`;
+
+StyledComponentFourth.defaultProps = {
   theme: defaultTheme,
 };
 

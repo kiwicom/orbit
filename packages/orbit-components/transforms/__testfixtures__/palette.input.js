@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import * as React from "react";
 
 import useTheme from "../../src/hooks/useTheme";
@@ -13,12 +13,26 @@ StyledComponent.defaultProps = {
 };
 
 const StyledComponentSecond = styled.div`
-  ${({ theme }) => css`
-    color: ${theme.orbit.paletteInkLighter};
-  `}
+  color: ${({ theme }) => theme.orbit.paletteInkLight};
 `;
 
 StyledComponentSecond.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledComponentThird = styled.div`
+  color: ${({ theme }) => theme.orbit.paletteInkNormal};
+`;
+
+StyledComponentThird.defaultProps = {
+  theme: defaultTheme,
+};
+
+const StyledComponentFourth = styled.div`
+  color: ${({ theme }) => theme.orbit.paletteCloudDarker};
+`;
+
+StyledComponentFourth.defaultProps = {
   theme: defaultTheme,
 };
 

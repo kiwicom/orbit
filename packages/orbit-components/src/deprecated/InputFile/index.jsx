@@ -88,7 +88,7 @@ const getFileInputColor = ({ error, fileName }, theme) => {
   if (fileName) {
     return theme.orbit.colorTextInput;
   }
-  return theme.orbit.paletteInkLight;
+  return theme.orbit.paletteInkNormal;
 };
 
 const StyledFileInput = styled.div`

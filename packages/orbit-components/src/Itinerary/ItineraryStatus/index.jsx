@@ -23,7 +23,7 @@ const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemePr
     [STATUS.CRITICAL]: theme.orbit.paletteRedNormal,
     [STATUS.INFO]: theme.orbit.paletteBlueNormal,
     [STATUS.SUCCESS]: theme.orbit.paletteGreenNormal,
-    [STATUS.NEUTRAL]: theme.orbit.paletteInkNormal,
+    [STATUS.NEUTRAL]: theme.orbit.paletteInkDark,
   };
 
   const header = {

@@ -78,7 +78,7 @@ const StyledStepperInput = styled.input`
     border: 0;
     font-size: ${theme.orbit.fontSizeTextLarge};
     font-weight: ${theme.orbit.fontWeightMedium};
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     text-align: center;
     min-width: 0;
     opacity: ${disabled ? "0.5" : "1"};
@@ -129,7 +129,7 @@ const StepperStateless = ({
   };
 
   const iconStyles = {
-    foreground: active ? theme.orbit.paletteWhite : theme.orbit.paletteInkNormal,
+    foreground: active ? theme.orbit.paletteWhite : theme.orbit.paletteInkDark,
   };
 
   const isMinusDisabled =

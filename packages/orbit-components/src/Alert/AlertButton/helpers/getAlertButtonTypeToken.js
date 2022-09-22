@@ -56,7 +56,7 @@ const getAlertButtonTypeToken: GetAlertButtonTypeToken = (name, type, theme) => 
       [TYPE_OPTIONS.SUCCESS_SUBTLE]: theme.orbit.paletteGreenDark,
       [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.paletteOrangeDark,
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.paletteRedDark,
-      [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteInkNormal,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteInkDark,
     },
     [TOKENS.borderColorButtonFocus]: {
       [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueNormal, 50),

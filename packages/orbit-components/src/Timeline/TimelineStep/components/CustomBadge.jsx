@@ -14,7 +14,7 @@ const Badge = ({ children }: Props): React.Node => {
   return (
     <BadgePrimitive
       background={theme.orbit.paletteCloudLight}
-      foregroundColor={theme.orbit.paletteInkLight}
+      foregroundColor={theme.orbit.paletteInkNormal}
       borderColor={theme.orbit.paletteCloudDark}
     >
       {children}

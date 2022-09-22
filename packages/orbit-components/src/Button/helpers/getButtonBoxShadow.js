@@ -24,7 +24,7 @@ const getButtonBoxShadow: GetButtonBoxShadow = ({ state, disabled, theme, type }
     return null;
   }
   if (state === BUTTON_STATES.ACTIVE) {
-    return `inset 0 0 6px 3px ${convertHexToRgba(theme.orbit.paletteInkNormal, opacity[type])};`;
+    return `inset 0 0 6px 3px ${convertHexToRgba(theme.orbit.paletteInkDark, opacity[type])};`;
   }
   if (state === BUTTON_STATES.FOCUS) {
     return `0 0 0 3px ${wrappedButtonTypeToken(TOKENS.borderColorButtonFocus)}`;

@@ -245,7 +245,7 @@ const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...pr
   <div {...props} />
 ))`
   color: ${({ theme, filled, disabled }) =>
-    (disabled && theme.orbit.paletteInkLighter) ||
+    (disabled && theme.orbit.paletteInkLight) ||
     (filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
 
   font-family: ${({ theme }) => theme.orbit.fontFamily};

@@ -159,7 +159,7 @@ const StyledOverlay = styled.div`
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: ${convertHexToRgba(theme.orbit.paletteInkNormal, 60)};
+    background-color: ${convertHexToRgba(theme.orbit.paletteInkDark, 60)};
     transition: ${transition(["opacity", "transform"], "normal", "ease-in-out")};
     z-index: 999;
 

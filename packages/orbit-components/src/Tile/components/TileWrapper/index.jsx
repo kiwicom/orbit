@@ -14,7 +14,7 @@ export const StyledTileWrapper: any = styled.div`
     width: 100%;
     box-sizing: border-box;
     font-family: ${theme.orbit.fontFamily};
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     text-decoration: none;
     background: ${theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
     border-radius: ${theme.orbit.borderRadiusLarge};
@@ -44,7 +44,7 @@ const StyledTileAnchor = styled.a`
     width: 100%;
     outline: none;
     text-decoration: none;
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     &:focus {
       outline: none;
       box-shadow: ${theme.orbit.boxShadowActionActive};
@@ -54,7 +54,7 @@ const StyledTileAnchor = styled.a`
     }
     &:link,
     &:visited {
-      color: ${theme.orbit.paletteInkNormal};
+      color: ${theme.orbit.paletteInkDark};
       font-weight: ${theme.orbit.fontWeightLinks};
     }
   `}

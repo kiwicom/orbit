@@ -146,7 +146,7 @@ const CloseContainer = styled.div`
 
       & svg {
         transition: ${transition(["color"], "fast", "ease-in-out")};
-        color: ${theme.orbit.paletteInkLight};
+        color: ${theme.orbit.paletteInkNormal};
       }
 
       &:hover svg {

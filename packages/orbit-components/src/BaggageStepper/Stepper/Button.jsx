@@ -43,7 +43,7 @@ const Button = ({
       icons={{
         width: ICON_SIZE,
         height: ICON_SIZE,
-        foreground: selected ? theme.orbit.paletteWhite : theme.orbit.paletteInkNormal,
+        foreground: selected ? theme.orbit.paletteWhite : theme.orbit.paletteInkDark,
       }}
       background={selected ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudDark}
       iconLeft={iconLeft}

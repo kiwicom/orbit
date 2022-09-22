@@ -260,7 +260,7 @@ export const Status = (): React.Node => {
             />
           </ItinerarySegment>
         </ItineraryStatus>
-        <ItineraryBadgeList>
+        <ItineraryBadgeList spaceAfter="medium">
           <BadgeListItem icon={<AlertCircle />}>The layover in Vienna is too short</BadgeListItem>
         </ItineraryBadgeList>
         <ItineraryStatus type="warning" label="Affected connection">

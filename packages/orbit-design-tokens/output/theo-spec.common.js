@@ -24,7 +24,7 @@ module.exports = {
   /*  */
   colorTextButtonWarningActive: "rgb(255, 255, 255)",
   /*  */
-  paletteRedLight: "rgb(250, 234, 234)",
+  paletteRedLight: "rgb(252, 243, 243)",
   /*  */
   lineHeightHeadingTitle1: "36px",
   /*  */
@@ -40,25 +40,25 @@ module.exports = {
   /*  */
   borderColorCheckboxRadio: "rgb(186, 199, 213)",
   /*  */
-  paletteBlueLight: "rgb(232, 244, 253)",
+  paletteBlueLight: "rgb(241, 248, 254)",
   /*  */
-  boxShadowAction: "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12)",
+  boxShadowAction: "0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 1px 4px 0px rgba(79, 94, 113, 0.12)",
   /*  */
   colorTextBadgeInfo: "rgb(1, 114, 203)",
   /*  */
   colorTextButtonInfoBorderedHover: "rgb(1, 97, 172)",
   /*  */
-  paletteCloudNormal: "rgb(239, 242, 245)",
+  paletteCloudNormal: "rgb(232, 237, 241)",
   /*  */
   paletteProductNormalHover: "rgb(0, 149, 128)",
   /*  */
   spaceXxSmall: "4px",
   /*  */
-  colorTextButtonGoogleActive: "rgb(11, 12, 15)",
+  colorTextButtonGoogleActive: "rgb(50, 66, 86)",
   /*  */
   fontSizeInputNormal: "14px",
   /*  */
-  colorTextButtonGoogleHover: "rgb(24, 27, 32)",
+  colorTextButtonGoogleHover: "rgb(62, 78, 99)",
   /*  */
   paletteProductNormalActive: "rgb(0, 132, 114)",
   /*  */
@@ -82,7 +82,7 @@ module.exports = {
   /*  */
   lineHeightHeadingTitle3: "24px",
   /*  */
-  paletteProductLight: "rgb(230, 246, 244)",
+  paletteProductLight: "rgb(236, 248, 247)",
   /*  */
   heightButtonLarge: "52px",
   /*  */
@@ -98,19 +98,19 @@ module.exports = {
   /*  */
   backgroundButtonGoogleHover: "rgb(229, 234, 239)",
   /*  */
-  boxShadowRaised: "0px 4px 8px 0px rgba(37, 42, 49, 0.16), 0px 8px 24px 0px rgba(37, 42, 49, 0.24)",
+  boxShadowRaised: "0px 4px 8px 0px rgba(79, 94, 113, 0.16), 0px 8px 24px 0px rgba(79, 94, 113, 0.24)",
   /*  */
   paletteCloudDarkerActive: "rgb(148, 168, 190)",
   /*  */
-  backgroundBadgeInfo: "rgb(232, 244, 253)",
+  backgroundBadgeInfo: "rgb(241, 248, 254)",
   /*  */
-  borderColorTag: "rgb(239, 242, 245)",
+  borderColorTag: "rgb(232, 237, 241)",
   /*  */
   backgroundButtonSuccess: "rgb(40, 161, 56)",
   /*  */
   paletteRedNormalActive: "rgb(157, 21, 21)",
   /*  */
-  colorTextButtonSecondaryBorderedActive: "rgb(11, 12, 15)",
+  colorTextButtonSecondaryBorderedActive: "rgb(50, 66, 86)",
   /*  */
   lineHeightHeadingTitle4: "20px",
   /*  */
@@ -118,11 +118,11 @@ module.exports = {
   /*  */
   paddingButtonSmall: "0 12px",
   /*  */
-  colorTextSecondary: "rgb(79, 94, 113)",
+  colorTextSecondary: "rgb(105, 125, 149)",
   /*  */
   colorTextLinkPrimaryHover: "rgb(0, 165, 142)",
   /*  */
-  colorTextButtonLinkSecondaryHover: "rgb(24, 27, 32)",
+  colorTextButtonLinkSecondaryHover: "rgb(62, 78, 99)",
   /*  */
   fontSizeTextNormal: "14px",
   /*  */
@@ -162,9 +162,9 @@ module.exports = {
   /*  */
   backgroundButtonBundleMediumHover: "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)",
   /*  */
-  boxShadowOverlay: "0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)",
+  boxShadowOverlay: "0px 12px 24px -4px rgba(79, 94, 113, 0.24), 0px 8px 60px 0px rgba(79, 94, 113, 0.32)",
   /*  */
-  colorTextTagSelected: "rgb(239, 242, 245)",
+  colorTextTagSelected: "rgb(232, 237, 241)",
   /*  */
   borderColorButtonSuccessBordered: "rgb(40, 161, 56)",
   /*  */
@@ -178,15 +178,15 @@ module.exports = {
   /*  */
   widthBreakpointLargeMobile: 576,
   /*  */
-  borderColorButtonSecondaryBorderedHover: "rgb(24, 27, 32)",
+  borderColorButtonSecondaryBorderedHover: "rgb(62, 78, 99)",
   /*  */
-  paletteRedLightActive: "rgb(238, 185, 185)",
+  paletteRedLightActive: "rgb(243, 206, 206)",
   /*  */
   paddingTableCompact: "8px 12px",
   /*  */
-  colorTextAlertLink: "rgb(37, 42, 49)",
+  colorTextAlertLink: "rgb(79, 94, 113)",
   /*  */
-  colorTextButtonGoogleBordered: "rgb(37, 42, 49)",
+  colorTextButtonGoogleBordered: "rgb(79, 94, 113)",
   /*  */
   paddingLeftSelectPrefix: "48px",
   /*  */
@@ -194,7 +194,7 @@ module.exports = {
   /*  */
   marginBottomSelectSuffix: "2px",
   /*  */
-  colorIconPrimary: "rgb(37, 42, 49)",
+  colorIconPrimary: "rgb(79, 94, 113)",
   /*  */
   paletteCloudNormalActive: "rgb(202, 212, 222)",
   /*  */
@@ -208,27 +208,27 @@ module.exports = {
   /*  */
   colorIconSuccess: "rgb(40, 161, 56)",
   /*  */
-  backgroundTagSelected: "rgb(37, 42, 49)",
+  backgroundTagSelected: "rgb(79, 94, 113)",
   /*  */
-  borderColorCard: "rgb(239, 242, 245)",
+  borderColorCard: "rgb(232, 237, 241)",
   /*  */
   colorTextButtonCriticalActive: "rgb(255, 255, 255)",
   /*  */
   heightIconSmall: "16px",
   /*  */
-  colorTextButtonWhite: "rgb(37, 42, 49)",
+  colorTextButtonWhite: "rgb(79, 94, 113)",
   /*  */
-  backgroundBadgeWarning: "rgb(252, 242, 230)",
+  backgroundBadgeWarning: "rgb(254, 247, 241)",
   /*  */
-  colorInfoCheckBoxRadio: "rgb(79, 94, 113)",
+  colorInfoCheckBoxRadio: "rgb(105, 125, 149)",
   /*  */
   fontWeightTableHead: "700",
   /*  */
-  paletteBlueLightActive: "rgb(180, 219, 248)",
+  paletteBlueLightActive: "rgb(199, 228, 250)",
   /*  */
-  borderColorCheckboxRadioActive: "rgb(37, 42, 49)",
+  borderColorCheckboxRadioActive: "rgb(79, 94, 113)",
   /*  */
-  boxShadowActionActive: "0px 1px 4px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.12)",
+  boxShadowActionActive: "0px 1px 4px 0px rgba(79, 94, 113, 0.16), 0px 4px 8px 0px rgba(79, 94, 113, 0.12)",
   /*  */
   lineHeightHeading: "1.2",
   /*  */
@@ -238,7 +238,7 @@ module.exports = {
   /*  */
   widthIconSmall: "16px",
   /*  */
-  paletteProductLightActive: "rgb(179, 228, 221)",
+  paletteProductLightActive: "rgb(191, 232, 226)",
   /*  */
   borderColorButtonInfoBorderedActive: "rgb(1, 80, 142)",
   /*  */
@@ -280,7 +280,7 @@ module.exports = {
   /*  */
   backgroundButtonSuccessActive: "rgb(29, 114, 40)",
   /*  */
-  boxShadowFixed: "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 2px 4px 0px rgba(37, 42, 49, 0.12)",
+  boxShadowFixed: "0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 2px 4px 0px rgba(79, 94, 113, 0.12)",
   /*  */
   zIndexDrawer: "815",
   /*  */
@@ -296,11 +296,11 @@ module.exports = {
   /*  */
   borderRadiusSmall: "2px",
   /*  */
-  paletteInkNormalHover: "rgb(24, 27, 32)",
+  paletteInkNormalHover: "rgb(62, 78, 99)",
   /*  */
   fontSizeTextSmall: "12px",
   /*  */
-  colorTextLinkSecondary: "rgb(37, 42, 49)",
+  colorTextLinkSecondary: "rgb(79, 94, 113)",
   /*  */
   colorIconInfo: "rgb(1, 114, 203)",
   /*  */
@@ -316,7 +316,7 @@ module.exports = {
   /*  */
   paddingButtonSmallWithLeftIcon: "0 12px 0 8px",
   /*  */
-  colorTextTag: "rgb(37, 42, 49)",
+  colorTextTag: "rgb(79, 94, 113)",
   /*  */
   colorTextButtonFilledActive: "rgb(255, 255, 255)",
   /*  */
@@ -326,7 +326,7 @@ module.exports = {
   /*  */
   paddingAlertWithIcon: "12px",
   /*  */
-  colorTextButtonSecondaryHover: "rgb(24, 27, 32)",
+  colorTextButtonSecondaryHover: "rgb(62, 78, 99)",
   /*  */
   colorAlertIconWarning: "rgb(223, 123, 0)",
   /*  */
@@ -334,9 +334,9 @@ module.exports = {
   /*  */
   paddingButtonNormalWithIcons: "0 12px",
   /*  */
-  backgroundBadgeDark: "rgb(37, 42, 49)",
+  backgroundBadgeDark: "rgb(79, 94, 113)",
   /*  */
-  paletteInkLight: "rgb(79, 94, 113)",
+  paletteInkLight: "rgb(105, 125, 149)",
   /*  */
   paddingButtonSmallWithRightIcon: "0 8px 0 12px",
   /*  */
@@ -378,11 +378,11 @@ module.exports = {
   /*  */
   textDecorationTextLinkSecondaryHover: "none",
   /*  */
-  colorTextButtonGoogleBorderedActive: "rgb(11, 12, 15)",
+  colorTextButtonGoogleBorderedActive: "rgb(50, 66, 86)",
   /*  */
   colorTextButtonCriticalBordered: "rgb(210, 28, 28)",
   /*  */
-  colorTextInputPrefix: "rgb(79, 94, 113)",
+  colorTextInputPrefix: "rgb(105, 125, 149)",
   /*  */
   backgroundBadgeBundleMedium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
   /*  */
@@ -406,27 +406,27 @@ module.exports = {
   /*  */
   heightStopoverArrow: "7px",
   /*  */
-  borderColorButtonGoogleBordered: "rgb(37, 42, 49)",
+  borderColorButtonGoogleBordered: "rgb(79, 94, 113)",
   /*  */
-  backgroundTagSelectedActive: "rgb(11, 12, 15)",
+  backgroundTagSelectedActive: "rgb(50, 66, 86)",
   /*  */
   fontSizeInputSmall: "14px",
   /*  */
-  colorFormLabel: "rgb(37, 42, 49)",
+  colorFormLabel: "rgb(79, 94, 113)",
   /*  */
   colorIconRadioButtonDisabled: "rgb(105, 125, 149)",
   /*  */
-  colorTextButtonWhiteActive: "rgb(11, 12, 15)",
+  colorTextButtonWhiteActive: "rgb(50, 66, 86)",
   /*  */
   widthStopoverArrow: "36px",
   /*  */
-  paletteOrangeLight: "rgb(252, 242, 230)",
+  paletteOrangeLight: "rgb(254, 247, 241)",
   /*  */
   paletteGreenNormalHover: "rgb(35, 139, 49)",
   /*  */
   fontSizeHeadingTitle3: "16px",
   /*  */
-  backgroundAlertCritical: "rgb(250, 234, 234)",
+  backgroundAlertCritical: "rgb(252, 243, 243)",
   /*  */
   widthModalNormal: "740px",
   /*  */
@@ -434,7 +434,7 @@ module.exports = {
   /*  */
   colorTextButtonFacebookActive: "rgb(255, 255, 255)",
   /*  */
-  paletteGreenLight: "rgb(235, 244, 236)",
+  paletteGreenLight: "rgb(242, 248, 242)",
   /*  */
   paletteSocialFacebook: "rgb(59, 89, 152)",
   /*  */
@@ -442,7 +442,7 @@ module.exports = {
   /*  */
   paletteSocialFacebookHover: "rgb(56, 84, 144)",
   /*  */
-  paletteGreenLightHover: "rgb(215, 234, 217)",
+  paletteGreenLightHover: "rgb(225, 239, 226)",
   /*  */
   heightButtonSmall: "32px",
   /*  */
@@ -464,13 +464,13 @@ module.exports = {
   /*  */
   backgroundButtonInfo: "rgb(1, 114, 203)",
   /*  */
-  backgroundAlertWarning: "rgb(252, 242, 230)",
+  backgroundAlertWarning: "rgb(254, 247, 241)",
   /*  */
   colorIconTertiary: "rgb(186, 199, 213)",
   /*  */
   backgroundButtonInfoHover: "rgb(1, 97, 172)",
   /*  */
-  backgroundBadgeSuccess: "rgb(235, 244, 236)",
+  backgroundBadgeSuccess: "rgb(242, 248, 242)",
   /*  */
   heightServiceLogoMedium: "24px",
   /*  */
@@ -480,13 +480,13 @@ module.exports = {
   /*  */
   backgroundButtonLinkPrimaryActive: "rgb(214, 222, 230)",
   /*  */
-  colorFormLabelFilled: "rgb(79, 94, 113)",
+  colorFormLabelFilled: "rgb(105, 125, 149)",
   /*  */
   paletteGreenNormal: "rgb(40, 161, 56)",
   /*  */
   lineHeightTextNormal: "20px",
   /*  */
-  borderColorButtonGoogleBorderedHover: "rgb(24, 27, 32)",
+  borderColorButtonGoogleBorderedHover: "rgb(62, 78, 99)",
   /*  */
   fontSizeHeadingTitle5: "12px",
   /*  */
@@ -494,7 +494,7 @@ module.exports = {
   /*  */
   colorTextCritical: "rgb(210, 28, 28)",
   /*  */
-  paletteOrangeLightHover: "rgb(249, 229, 204)",
+  paletteOrangeLightHover: "rgb(252, 236, 218)",
   /*  */
   durationFast: "0.15s",
   /*  */
@@ -524,13 +524,13 @@ module.exports = {
   /*  */
   borderWidthInput: "1px",
   /*  */
-  paletteCloudDark: "rgb(232, 237, 241)",
+  paletteCloudDark: "rgb(186, 199, 213)",
   /*  */
   paletteProductDarkActive: "rgb(0, 102, 87)",
   /*  */
   heightIllustrationSmall: "90px",
   /*  */
-  colorStopoverArrow: "rgb(79, 94, 113)",
+  colorStopoverArrow: "rgb(105, 125, 149)",
   /*  */
   heightInputGroupSeparatorNormal: "24px",
   /*  */
@@ -564,21 +564,21 @@ module.exports = {
   /*  */
   colorTextButtonLinkSecondaryCompactHover: "rgb(0, 149, 128)",
   /*  */
-  paletteInkLightActive: "rgb(50, 66, 86)",
+  paletteInkLightActive: "rgb(74, 97, 124)",
   /*  */
   paletteBundleBasic: "rgb(215, 51, 28)",
   /*  */
-  paletteInkLightHover: "rgb(62, 78, 99)",
+  paletteInkLightHover: "rgb(93, 115, 142)",
   /*  */
   colorTextButtonLinkSecondaryCompactActive: "rgb(0, 132, 114)",
   /*  */
   colorAlertIconSuccess: "rgb(40, 161, 56)",
   /*  */
-  paletteInkNormal: "rgb(37, 42, 49)",
+  paletteInkNormal: "rgb(79, 94, 113)",
   /*  */
   fontWeightLinks: "500",
   /*  */
-  colorTextPrimary: "rgb(37, 42, 49)",
+  colorTextPrimary: "rgb(79, 94, 113)",
   /*  */
   paletteBundleMedium: "rgb(59, 30, 176)",
   /*  */
@@ -590,7 +590,7 @@ module.exports = {
   /*  */
   paddingTagRemovable: "6px 6px 6px 8px",
   /*  */
-  colorTextButtonSecondary: "rgb(37, 42, 49)",
+  colorTextButtonSecondary: "rgb(79, 94, 113)",
   /*  */
   colorTextButtonWhiteBordered: "rgb(255, 255, 255)",
   /*  */
@@ -628,7 +628,7 @@ module.exports = {
   /*  */
   colorTextButtonFacebookBordered: "rgb(59, 89, 152)",
   /*  */
-  borderColorButtonGoogleBorderedActive: "rgb(11, 12, 15)",
+  borderColorButtonGoogleBorderedActive: "rgb(50, 66, 86)",
   /*  */
   lineHeightTextLarge: "24px",
   /*  */
@@ -638,17 +638,17 @@ module.exports = {
   /*  */
   borderColorInput: "rgb(186, 199, 213)",
   /*  */
-  paletteOrangeLightActive: "rgb(245, 215, 179)",
+  paletteOrangeLightActive: "rgb(250, 226, 198)",
   /*  */
   fontWeightHeadingTitle1: "700",
   /*  */
   colorHeadingInverted: "rgb(255, 255, 255)",
   /*  */
-  paletteGreenLightActive: "rgb(195, 223, 199)",
+  paletteGreenLightActive: "rgb(205, 228, 207)",
   /*  */
   paletteSocialFacebookActive: "rgb(53, 79, 136)",
   /*  */
-  backgroundBadgeCritical: "rgb(250, 234, 234)",
+  backgroundBadgeCritical: "rgb(252, 243, 243)",
   /*  */
   backgroundBadgeWhite: "rgb(255, 255, 255)",
   /*  */
@@ -662,7 +662,7 @@ module.exports = {
   /*  */
   paletteWhiteActive: "rgb(229, 234, 239)",
   /*  */
-  backgroundButtonSecondary: "rgb(232, 237, 241)",
+  backgroundButtonSecondary: "rgb(186, 199, 213)",
   /*  */
   backgroundButtonInfoActive: "rgb(1, 80, 142)",
   /*  */
@@ -670,7 +670,7 @@ module.exports = {
   /*  */
   widthIconMedium: "24px",
   /*  */
-  colorTextBadgeNeutral: "rgb(37, 42, 49)",
+  colorTextBadgeNeutral: "rgb(79, 94, 113)",
   /*  */
   spaceXSmall: "8px",
   /*  */
@@ -698,33 +698,33 @@ module.exports = {
   /*  */
   backgroundCarrierLogo: "transparent",
   /*  */
-  colorTextButtonWhiteHover: "rgb(24, 27, 32)",
+  colorTextButtonWhiteHover: "rgb(62, 78, 99)",
   /*  */
   backgroundTooltip: "rgb(255, 255, 255)",
   /*  */
-  backgroundTagSelectedHover: "rgb(24, 27, 32)",
+  backgroundTagSelectedHover: "rgb(62, 78, 99)",
   /*  */
-  backgroundAlertSuccess: "rgb(235, 244, 236)",
+  backgroundAlertSuccess: "rgb(242, 248, 242)",
   /*  */
   paddingInputFile: "0 0 0 6px",
   /*  */
   colorTextButtonLinkPrimaryHover: "rgb(0, 112, 96)",
   /*  */
-  colorPlaceholderInputFile: "rgb(79, 94, 113)",
+  colorPlaceholderInputFile: "rgb(105, 125, 149)",
   /*  */
   fontWeightHeadingTitle3: "500",
   /*  */
   colorTextButtonInfoActive: "rgb(255, 255, 255)",
   /*  */
-  colorTextBadgeWhite: "rgb(37, 42, 49)",
+  colorTextBadgeWhite: "rgb(79, 94, 113)",
   /*  */
-  borderColorButtonSecondaryBordered: "rgb(37, 42, 49)",
+  borderColorButtonSecondaryBordered: "rgb(79, 94, 113)",
   /*  */
   paletteOrangeNormalActive: "rgb(178, 98, 0)",
   /*  */
-  borderColorModal: "rgb(239, 242, 245)",
+  borderColorModal: "rgb(232, 237, 241)",
   /*  */
-  colorTextButtonGoogleBorderedHover: "rgb(24, 27, 32)",
+  colorTextButtonGoogleBorderedHover: "rgb(62, 78, 99)",
   /*  */
   colorTextInputDisabled: "rgb(105, 125, 149)",
   /*  */
@@ -742,7 +742,7 @@ module.exports = {
   /*  */
   widthBadgeCircled: "24px",
   /*  */
-  backgroundSeparator: "rgb(239, 242, 245)",
+  backgroundSeparator: "rgb(232, 237, 241)",
   /*  */
   colorTextButtonWarningBorderedHover: "rgb(201, 111, 0)",
   /*  */
@@ -756,7 +756,7 @@ module.exports = {
   /*  */
   paddingButtonLargeWithRightIcon: "0 16px 0 28px",
   /*  */
-  borderColorTable: "rgb(239, 242, 245)",
+  borderColorTable: "rgb(232, 237, 241)",
   /*  */
   widthBreakpointLargeDesktop: 1200,
   /*  */
@@ -770,21 +770,21 @@ module.exports = {
   /*  */
   borderColorButtonPrimaryBorderedHover: "rgb(0, 149, 128)",
   /*  */
-  backgroundInputDisabled: "rgb(239, 242, 245)",
+  backgroundInputDisabled: "rgb(232, 237, 241)",
   /*  */
-  paletteInkNormalActive: "rgb(11, 12, 15)",
+  paletteInkNormalActive: "rgb(50, 66, 86)",
   /*  */
   heightInputLarge: "52px",
   /*  */
   paletteInkLighter: "rgb(105, 125, 149)",
   /*  */
-  colorIconSecondary: "rgb(79, 94, 113)",
+  colorIconSecondary: "rgb(105, 125, 149)",
   /*  */
   paddingButtonLarge: "0 28px",
   /*  */
-  colorTextButtonSecondaryActive: "rgb(11, 12, 15)",
+  colorTextButtonSecondaryActive: "rgb(50, 66, 86)",
   /*  */
-  colorTextButtonLinkSecondary: "rgb(37, 42, 49)",
+  colorTextButtonLinkSecondary: "rgb(79, 94, 113)",
   /*  */
   colorTextLinkPrimary: "rgb(0, 127, 109)",
   /*  */
@@ -816,7 +816,7 @@ module.exports = {
   /*  */
   colorTextWhite: "rgb(255, 255, 255)",
   /*  */
-  boxShadowFixedReverse: "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)",
+  boxShadowFixedReverse: "0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px -2px 4px 0px rgba(79, 94, 113, 0.12)",
   /*  */
   backgroundTableEven: "rgb(245, 247, 249)",
   /*  */
@@ -826,7 +826,7 @@ module.exports = {
   /*  */
   backgroundButtonPrimaryHover: "rgb(0, 149, 128)",
   /*  */
-  colorTextInput: "rgb(37, 42, 49)",
+  colorTextInput: "rgb(79, 94, 113)",
   /*  */
   borderColorButtonInfoBorderedHover: "rgb(1, 97, 172)",
   /*  */
@@ -834,7 +834,7 @@ module.exports = {
   /*  */
   colorTextAlertInfo: "rgb(0, 90, 163)",
   /*  */
-  paletteProductLightHover: "rgb(204, 237, 232)",
+  paletteProductLightHover: "rgb(214, 240, 236)",
   /*  */
   backgroundButtonWhiteBorderedActive: "rgba(255, 255, 255, 0.2)",
   /*  */
@@ -852,9 +852,9 @@ module.exports = {
   /*  */
   boxShadowButtonFocus: "0 0 4px 1px rgba(1, 114, 203, 0.3)",
   /*  */
-  paletteBlueLightHover: "rgb(208, 233, 251)",
+  paletteBlueLightHover: "rgb(222, 240, 252)",
   /*  */
-  borderColorCheckboxRadioHover: "rgb(79, 94, 113)",
+  borderColorCheckboxRadioHover: "rgb(105, 125, 149)",
   /*  */
   colorTextButtonCriticalHover: "rgb(255, 255, 255)",
   /*  */
@@ -866,7 +866,7 @@ module.exports = {
   /*  */
   colorTextButtonSuccessHover: "rgb(255, 255, 255)",
   /*  */
-  colorTextButtonGoogle: "rgb(37, 42, 49)",
+  colorTextButtonGoogle: "rgb(79, 94, 113)",
   /*  */
   lineHeightHeadingDisplay: "44px",
   /*  */
@@ -876,7 +876,7 @@ module.exports = {
   /*  */
   paletteProductNormal: "rgb(0, 165, 142)",
   /*  */
-  borderColorButtonSecondaryBorderedActive: "rgb(11, 12, 15)",
+  borderColorButtonSecondaryBorderedActive: "rgb(50, 66, 86)",
   /*  */
   paletteCloudLight: "rgb(245, 247, 249)",
   /*  */
@@ -888,7 +888,7 @@ module.exports = {
   /*  */
   backgroundButtonWarning: "rgb(223, 123, 0)",
   /*  */
-  backgroundTableHover: "rgb(239, 242, 245)",
+  backgroundTableHover: "rgb(232, 237, 241)",
   /*  */
   fontWeightMedium: "500",
   /*  */
@@ -896,9 +896,9 @@ module.exports = {
   /*  */
   widthCountryFlag: "24px",
   /*  */
-  paletteRedLightHover: "rgb(244, 210, 210)",
+  paletteRedLightHover: "rgb(248, 226, 226)",
   /*  */
-  backgroundAlertInfo: "rgb(232, 244, 253)",
+  backgroundAlertInfo: "rgb(241, 248, 254)",
   /*  */
   paletteBlueNormal: "rgb(1, 114, 203)",
   /*  */
@@ -914,7 +914,7 @@ module.exports = {
   /*  */
   paletteOrangeDarkHover: "rgb(167, 84, 0)",
   /*  */
-  colorTextButtonSecondaryBordered: "rgb(37, 42, 49)",
+  colorTextButtonSecondaryBordered: "rgb(79, 94, 113)",
   /*  */
   borderRadiusLarge: "6px",
   /*  */
@@ -928,7 +928,7 @@ module.exports = {
   /*  */
   paletteCloudDarker: "rgb(186, 199, 213)",
   /*  */
-  colorTextButtonLinkSecondaryActive: "rgb(11, 12, 15)",
+  colorTextButtonLinkSecondaryActive: "rgb(50, 66, 86)",
   /*  */
   paletteGreenDark: "rgb(45, 119, 56)",
   /*  */
@@ -952,7 +952,7 @@ module.exports = {
   /*  */
   paddingButtonLargeWithLeftIcon: "0 28px 0 16px",
   /*  */
-  colorTextTable: "rgb(79, 94, 113)",
+  colorTextTable: "rgb(105, 125, 149)",
   /*  */
   opacityRadioButtonDisabled: "0.5",
   /*  */
@@ -966,17 +966,17 @@ module.exports = {
   /*  */
   backgroundButtonGoogleActive: "rgb(214, 222, 230)",
   /*  */
-  boxShadowRaisedReverse: "0px -4px 8px 0px rgba(37, 42, 49, 0.16), 0px -8px 24px 0px rgba(37, 42, 49, 0.24)",
+  boxShadowRaisedReverse: "0px -4px 8px 0px rgba(79, 94, 113, 0.16), 0px -8px 24px 0px rgba(79, 94, 113, 0.24)",
   /*  */
   fontWeightHeadingDisplaySubtitle: "400",
   /*  */
-  colorHeading: "rgb(37, 42, 49)",
+  colorHeading: "rgb(79, 94, 113)",
   /*  */
   backgroundButtonCritical: "rgb(210, 28, 28)",
   /*  */
   backgroundModal: "rgb(255, 255, 255)",
   /*  */
-  colorTextButtonSecondaryBorderedHover: "rgb(24, 27, 32)",
+  colorTextButtonSecondaryBorderedHover: "rgb(62, 78, 99)",
   /*  */
   paletteRedNormalHover: "rgb(185, 25, 25)",
   /*  */

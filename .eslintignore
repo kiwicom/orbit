@@ -14,7 +14,6 @@ packages/eslint-plugin-orbit-components/dist
 
 # from gitignore
 packages/orbit-components/src/icons/*
-
 packages/orbit-components/src/Illustration/index.*.flow
 packages/orbit-components/src/AirportIllustration/index.*.flow
 packages/orbit-components/src/ServiceLogo/index.*.flow

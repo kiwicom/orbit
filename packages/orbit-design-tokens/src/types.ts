@@ -446,15 +446,15 @@ export type Tokens = {
   paletteCloudDarker: string;
   paletteCloudDarkerHover: string;
   paletteCloudDarkerActive: string;
-  paletteInkLighter: string;
-  paletteInkLighterHover: string;
-  paletteInkLighterActive: string;
   paletteInkLight: string;
   paletteInkLightHover: string;
   paletteInkLightActive: string;
   paletteInkNormal: string;
   paletteInkNormalHover: string;
   paletteInkNormalActive: string;
+  paletteInkDark: string;
+  paletteInkDarkHover: string;
+  paletteInkDarkActive: string;
   paletteOrangeLight: string;
   paletteOrangeLightHover: string;
   paletteOrangeLightActive: string;
@@ -516,16 +516,16 @@ export type ThemePaletteColors = {
 };
 
 type CustomPalette = {
-  product?: typeof palette["product"];
-  white?: typeof palette["white"];
-  cloud?: typeof palette["cloud"];
-  ink?: typeof palette["ink"];
-  orange?: typeof palette["orange"];
-  red?: typeof palette["red"];
-  green?: typeof palette["green"];
-  blue?: typeof palette["blue"];
-  social?: typeof palette["social"];
-  bundle?: typeof palette["bundle"];
+  product?: Partial<typeof palette["product"]>;
+  white?: Partial<typeof palette["white"]>;
+  cloud?: Partial<typeof palette["cloud"]>;
+  ink?: Partial<typeof palette["ink"]>;
+  orange?: Partial<typeof palette["orange"]>;
+  red?: Partial<typeof palette["red"]>;
+  green?: Partial<typeof palette["green"]>;
+  blue?: Partial<typeof palette["blue"]>;
+  social?: Partial<typeof palette["social"]>;
+  bundle?: Partial<typeof palette["bundle"]>;
 };
 
 type CustomBase = Partial<Base>;

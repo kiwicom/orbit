@@ -62,17 +62,19 @@ StyledTileTitle.defaultProps = {
 };
 
 const StyledTileDescription = styled.div`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
-  line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  ${({ hasTitle, theme }) =>
-    hasTitle &&
+  ${({ theme, hasTitle }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeTextNormal};
+    color: ${theme.orbit.colorTextPrimary};
+    line-height: ${theme.orbit.lineHeightTextNormal};
+    font-weight: ${theme.orbit.fontWeightNormal};
+    -webkit-text-size-adjust: 100%;
+    width: 100%;
+    ${hasTitle &&
     css`
       margin-top: ${theme.orbit.spaceXXSmall};
     `};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -88,14 +90,15 @@ const IconRight = ({ external, expandable, className }) => {
 };
 
 export const StyledIconRight: any = styled(IconRight)`
-  color: ${({ theme }) => theme.orbit.colorIconSecondary};
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
-  transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
-  ${({ expanded }) =>
-    expanded &&
+  ${({ theme, expanded }) => css`
+    color: ${theme.orbit.colorIconSecondary};
+    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
+    transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
+    ${expanded &&
     css`
       transform: rotate(-180deg);
     `};
+  `}
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

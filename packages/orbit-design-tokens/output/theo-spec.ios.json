@@ -155,6 +155,13 @@
       "name": "boxShadowAction"
     },
     {
+      "value": "rgb(37, 42, 49)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "paletteInkDark"
+    },
+    {
       "value": "rgb(1, 114, 203)",
       "type": "color",
       "category": "",
@@ -447,13 +454,6 @@
       "category": "",
       "comment": "",
       "name": "paletteGreenDarkActive"
-    },
-    {
-      "value": "rgb(93, 115, 142)",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "name": "paletteInkLighterHover"
     },
     {
       "value": "rgb(0, 165, 142)",
@@ -825,6 +825,13 @@
       "category": "",
       "comment": "",
       "name": "borderColorInputErrorHover"
+    },
+    {
+      "value": "rgb(11, 12, 15)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "paletteInkDarkActive"
     },
     {
       "value": "16px",
@@ -2721,13 +2728,6 @@
       "type": "color",
       "category": "",
       "comment": "",
-      "name": "paletteInkLighter"
-    },
-    {
-      "value": "rgb(105, 125, 149)",
-      "type": "color",
-      "category": "",
-      "comment": "",
       "name": "colorIconSecondary"
     },
     {
@@ -2953,6 +2953,13 @@
       "category": "",
       "comment": "",
       "name": "spaceMedium"
+    },
+    {
+      "value": "rgb(24, 27, 32)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "paletteInkDarkHover"
     },
     {
       "value": "rgb(1, 114, 203)",
@@ -3359,13 +3366,6 @@
       "category": "",
       "comment": "",
       "name": "fontSizeTextLarge"
-    },
-    {
-      "value": "rgb(74, 97, 124)",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "name": "paletteInkLighterActive"
     },
     {
       "value": "rgb(1, 114, 203)",

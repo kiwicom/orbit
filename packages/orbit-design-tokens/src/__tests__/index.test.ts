@@ -12,7 +12,6 @@ describe("getTokens should accept some palette and base foundation", () => {
   const brand = {
     palette: {
       product: {
-        light: "#111",
         lightHover: "#222",
         lightActive: "#333",
         normal: "#444",

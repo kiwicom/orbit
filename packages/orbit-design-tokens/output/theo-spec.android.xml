@@ -22,6 +22,7 @@
   <color name="BORDERCOLORCHECKBOXRADIO" category="">#ffbac7d5</color>
   <color name="PALETTEBLUELIGHT" category="">#fff1f8fe</color>
   <dimen name="BOXSHADOWACTION" category="">0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 1px 4px 0px rgba(79, 94, 113, 0.12)</dimen>
+  <color name="PALETTEINKDARK" category="">#ff252a31</color>
   <color name="COLORTEXTBADGEINFO" category="">#ff0172cb</color>
   <color name="COLORTEXTBUTTONINFOBORDEREDHOVER" category="">#ff0161ac</color>
   <color name="PALETTECLOUDNORMAL" category="">#ffe8edf1</color>
@@ -64,7 +65,6 @@
   <color name="COLORTEXTBUTTONLINKSECONDARYHOVER" category="">#ff3e4e63</color>
   <dimen name="FONTSIZETEXTNORMAL" category="">14dp</dimen>
   <color name="PALETTEGREENDARKACTIVE" category="">#ff1f5126</color>
-  <color name="PALETTEINKLIGHTERHOVER" category="">#ff5d738e</color>
   <color name="BORDERCOLORBUTTONPRIMARYBORDERED" category="">#ff00a58e</color>
   <color name="BORDERCOLORBUTTONWARNINGBORDEREDACTIVE" category="">#ffb26200</color>
   <color name="COLORTEXTBUTTONFILLED" category="">#ffffffff</color>
@@ -118,6 +118,7 @@
   <string name="LINEHEIGHTHEADING" category="">1.2</string>
   <string name="FONTWEIGHTHEADINGDISPLAY" category="">700</string>
   <color name="BORDERCOLORINPUTERRORHOVER" category="">#ffb91919</color>
+  <color name="PALETTEINKDARKACTIVE" category="">#ff0b0c0f</color>
   <dimen name="WIDTHICONSMALL" category="">16dp</dimen>
   <color name="PALETTEPRODUCTLIGHTACTIVE" category="">#ffbfe8e2</color>
   <color name="BORDERCOLORBUTTONINFOBORDEREDACTIVE" category="">#ff01508e</color>
@@ -388,7 +389,6 @@
   <color name="BACKGROUNDINPUTDISABLED" category="">#ffe8edf1</color>
   <color name="PALETTEINKNORMALACTIVE" category="">#ff324256</color>
   <dimen name="HEIGHTINPUTLARGE" category="">52dp</dimen>
-  <color name="PALETTEINKLIGHTER" category="">#ff697d95</color>
   <color name="COLORICONSECONDARY" category="">#ff697d95</color>
   <dimen name="PADDINGBUTTONLARGE" category="">0 28dp</dimen>
   <color name="COLORTEXTBUTTONSECONDARYACTIVE" category="">#ff324256</color>
@@ -422,6 +422,7 @@
   <color name="BACKGROUNDBUTTONSECONDARYACTIVE" category="">#ffcad4de</color>
   <color name="COLORPLACEHOLDERINPUT" category="">#ff697d95</color>
   <dimen name="SPACEMEDIUM" category="">16dp</dimen>
+  <color name="PALETTEINKDARKHOVER" category="">#ff181b20</color>
   <color name="COLORTEXTBUTTONINFOBORDERED" category="">#ff0172cb</color>
   <string name="HEIGHTCOUNTRYFLAG" category="">auto</string>
   <dimen name="HEIGHTICONLARGE" category="">32dp</dimen>
@@ -480,7 +481,6 @@
   <string name="OPACITYRADIOBUTTONDISABLED" category="">0.5</string>
   <color name="PALETTEGREENDARKHOVER" category="">#ff276831</color>
   <dimen name="FONTSIZETEXTLARGE" category="">16dp</dimen>
-  <color name="PALETTEINKLIGHTERACTIVE" category="">#ff4a617c</color>
   <color name="COLORTEXTINFO" category="">#ff0172cb</color>
   <color name="BACKGROUNDBUTTONGOOGLEACTIVE" category="">#ffd6dee6</color>
   <dimen name="BOXSHADOWRAISEDREVERSE" category="">0px -4px 8px 0px rgba(79, 94, 113, 0.16), 0px -8px 24px 0px rgba(79, 94, 113, 0.24)</dimen>

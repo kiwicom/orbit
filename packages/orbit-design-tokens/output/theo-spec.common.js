@@ -44,6 +44,8 @@ module.exports = {
   /*  */
   boxShadowAction: "0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 1px 4px 0px rgba(79, 94, 113, 0.12)",
   /*  */
+  paletteInkDark: "rgb(37, 42, 49)",
+  /*  */
   colorTextBadgeInfo: "rgb(1, 114, 203)",
   /*  */
   colorTextButtonInfoBorderedHover: "rgb(1, 97, 172)",
@@ -127,8 +129,6 @@ module.exports = {
   fontSizeTextNormal: "14px",
   /*  */
   paletteGreenDarkActive: "rgb(31, 81, 38)",
-  /*  */
-  paletteInkLighterHover: "rgb(93, 115, 142)",
   /*  */
   borderColorButtonPrimaryBordered: "rgb(0, 165, 142)",
   /*  */
@@ -235,6 +235,8 @@ module.exports = {
   fontWeightHeadingDisplay: "700",
   /*  */
   borderColorInputErrorHover: "rgb(185, 25, 25)",
+  /*  */
+  paletteInkDarkActive: "rgb(11, 12, 15)",
   /*  */
   widthIconSmall: "16px",
   /*  */
@@ -776,8 +778,6 @@ module.exports = {
   /*  */
   heightInputLarge: "52px",
   /*  */
-  paletteInkLighter: "rgb(105, 125, 149)",
-  /*  */
   colorIconSecondary: "rgb(105, 125, 149)",
   /*  */
   paddingButtonLarge: "0 28px",
@@ -843,6 +843,8 @@ module.exports = {
   colorPlaceholderInput: "rgb(105, 125, 149)",
   /*  */
   spaceMedium: "16px",
+  /*  */
+  paletteInkDarkHover: "rgb(24, 27, 32)",
   /*  */
   colorTextButtonInfoBordered: "rgb(1, 114, 203)",
   /*  */
@@ -959,8 +961,6 @@ module.exports = {
   paletteGreenDarkHover: "rgb(39, 104, 49)",
   /*  */
   fontSizeTextLarge: "16px",
-  /*  */
-  paletteInkLighterActive: "rgb(74, 97, 124)",
   /*  */
   colorTextInfo: "rgb(1, 114, 203)",
   /*  */

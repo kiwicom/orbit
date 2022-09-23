@@ -21,6 +21,7 @@
 @value border-color-checkbox-radio: rgb(186, 199, 213);
 @value palette-blue-light: rgb(241, 248, 254);
 @value box-shadow-action: 0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 1px 4px 0px rgba(79, 94, 113, 0.12);
+@value palette-ink-dark: rgb(37, 42, 49);
 @value color-text-badge-info: rgb(1, 114, 203);
 @value color-text-button-info-bordered-hover: rgb(1, 97, 172);
 @value palette-cloud-normal: rgb(232, 237, 241);
@@ -63,7 +64,6 @@
 @value color-text-button-link-secondary-hover: rgb(62, 78, 99);
 @value font-size-text-normal: 14px;
 @value palette-green-dark-active: rgb(31, 81, 38);
-@value palette-ink-lighter-hover: rgb(93, 115, 142);
 @value border-color-button-primary-bordered: rgb(0, 165, 142);
 @value border-color-button-warning-bordered-active: rgb(178, 98, 0);
 @value color-text-button-filled: rgb(255, 255, 255);
@@ -117,6 +117,7 @@
 @value line-height-heading: "1.2";
 @value font-weight-heading-display: "700";
 @value border-color-input-error-hover: rgb(185, 25, 25);
+@value palette-ink-dark-active: rgb(11, 12, 15);
 @value width-icon-small: 16px;
 @value palette-product-light-active: rgb(191, 232, 226);
 @value border-color-button-info-bordered-active: rgb(1, 80, 142);
@@ -387,7 +388,6 @@
 @value background-input-disabled: rgb(232, 237, 241);
 @value palette-ink-normal-active: rgb(50, 66, 86);
 @value height-input-large: 52px;
-@value palette-ink-lighter: rgb(105, 125, 149);
 @value color-icon-secondary: rgb(105, 125, 149);
 @value padding-button-large: 0 28px;
 @value color-text-button-secondary-active: rgb(50, 66, 86);
@@ -421,6 +421,7 @@
 @value background-button-secondary-active: rgb(202, 212, 222);
 @value color-placeholder-input: rgb(105, 125, 149);
 @value space-medium: 16px;
+@value palette-ink-dark-hover: rgb(24, 27, 32);
 @value color-text-button-info-bordered: rgb(1, 114, 203);
 @value height-country-flag: "auto";
 @value height-icon-large: 32px;
@@ -479,7 +480,6 @@
 @value opacity-radio-button-disabled: "0.5";
 @value palette-green-dark-hover: rgb(39, 104, 49);
 @value font-size-text-large: 16px;
-@value palette-ink-lighter-active: rgb(74, 97, 124);
 @value color-text-info: rgb(1, 114, 203);
 @value background-button-google-active: rgb(214, 222, 230);
 @value box-shadow-raised-reverse: 0px -4px 8px 0px rgba(79, 94, 113, 0.16), 0px -8px 24px 0px rgba(79, 94, 113, 0.24);

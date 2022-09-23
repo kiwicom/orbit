@@ -3960,33 +3960,6 @@
         "categoryDescription": ""
       }
     },
-    "paletteInkLighter": {
-      "value": "#697D95",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
-    "paletteInkLighterHover": {
-      "value": "#5D738E",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
-    "paletteInkLighterActive": {
-      "value": "#4A617C",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
     "paletteInkLight": {
       "value": "#697D95",
       "type": "color",
@@ -4034,6 +4007,33 @@
     },
     "paletteInkNormalActive": {
       "value": "#324256",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "paletteInkDark": {
+      "value": "#252A31",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "paletteInkDarkHover": {
+      "value": "#181B20",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "paletteInkDarkActive": {
+      "value": "#0B0C0F",
       "type": "color",
       "category": "",
       "comment": "",

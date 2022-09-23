@@ -5,7 +5,9 @@ import useTheme from "../../src/hooks/useTheme";
 import defaultTheme from "../../src/defaultTheme";
 
 /* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 
+// @ts-ignore
 const StyledComponent = styled.div`
   color: ${({ theme }) => theme.orbit.paletteInkLight};
 `;
@@ -40,6 +42,7 @@ StyledComponentFourth.defaultProps = {
 
 const Component = () => {
   const theme = useTheme();
+  // @ts-ignore
   return <div>{theme.orbit.paletteInkLight}</div>;
 };
 

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.7.0...@kiwicom/orbit-components@3.7.1) (2022-09-23)
+
+
+### Bug Fixes
+
+* **ItinerarySegmentStop:** fix wider background color ([2663934](https://github.com/kiwicom/orbit/commit/2663934e4ba05ec18d457ee2f87df994cee44f2f))
+* **ItineraryStatus:** fixed height issue and longer translations ([901cf71](https://github.com/kiwicom/orbit/commit/901cf71456bd0b243f8272189ff1c1b8c8971713))
+* **Tile:** fix inherited font-weight ([#3580](https://github.com/kiwicom/orbit/issues/3580)) ([bdc57de](https://github.com/kiwicom/orbit/commit/bdc57deee5bafae511a7d16e9911b12f4ce88f09))
+
+
+
+
+
 # [3.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.6.1...@kiwicom/orbit-components@3.7.0) (2022-09-20)
 
 

@@ -19,7 +19,7 @@ const StyledTrack = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: ${theme.orbit.paletteInkNormal};
+    background-color: ${theme.orbit.paletteInkLight};
     border-radius: 28px;
     transition: background-color ${theme.orbit.durationFast} ease-in-out;
   `}
@@ -50,7 +50,7 @@ const StyledCircle = styled.div`
     width: 10px;
     height: 10px;
     border-radius: ${theme.orbit.borderRadiusCircle};
-    background-color: ${theme.orbit.paletteInkNormal};
+    background-color: ${theme.orbit.paletteInkLight};
     transition: background-color ${theme.orbit.durationFast};
   `}
 `;
@@ -71,12 +71,12 @@ const StyledInput = styled.input`
       box-shadow: rgba(95, 115, 140, 0.3) 0px 0px 0px 2px;
     }
     &:checked + ${StyledTrack} {
-      background: ${theme.orbit.paletteProductNormal};
+      background: ${theme.orbit.paletteBlueNormal};
       ${StyledHandle} {
         transform: translateX(21px);
       }
       ${StyledCircle} {
-        background-color: ${theme.orbit.paletteProductNormal};
+        background-color: ${theme.orbit.paletteBlueNormal};
       }
     }
   `}

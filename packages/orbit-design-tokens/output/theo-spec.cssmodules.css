@@ -166,7 +166,7 @@
 @value palette-product-dark: rgb(0, 127, 109);
 @value padding-button-normal-with-icons: 0 12px;
 @value background-badge-dark: rgb(37, 42, 49);
-@value palette-ink-light: rgb(79, 94, 113);
+@value palette-ink-light: rgb(105, 125, 149);
 @value padding-button-small-with-right-icon: 0 8px 0 12px;
 @value modifier-scale-button-active: 0.95;
 @value color-text-button-warning-bordered-active: rgb(178, 98, 0);
@@ -181,7 +181,7 @@
 @value padding-alert: 16px;
 @value padding-loading: 12px;
 @value background-button-bordered: "transparent";
-@value palette-cloud-dark-hover: rgb(220, 227, 233);
+@value palette-cloud-dark-hover: rgb(166, 182, 200);
 @value color-text-button-success-bordered: rgb(40, 161, 56);
 @value palette-orange-normal-hover: rgb(201, 111, 0);
 @value palette-orange-darker: rgb(128, 63, 0);
@@ -232,7 +232,7 @@
 @value color-icon-input: rgb(232, 237, 241);
 @value background-button-info: rgb(1, 114, 203);
 @value background-alert-warning: rgb(254, 247, 241);
-@value color-icon-tertiary: rgb(232, 237, 241);
+@value color-icon-tertiary: rgb(186, 199, 213);
 @value background-button-info-hover: rgb(1, 97, 172);
 @value background-badge-success: rgb(242, 248, 242);
 @value height-service-logo-medium: 24px;
@@ -261,7 +261,7 @@
 @value margin-top-form-feedback: 2px;
 @value palette-orange-normal: rgb(223, 123, 0);
 @value border-width-input: 1px;
-@value palette-cloud-dark: rgb(232, 237, 241);
+@value palette-cloud-dark: rgb(186, 199, 213);
 @value palette-product-dark-active: rgb(0, 102, 87);
 @value height-illustration-small: 90px;
 @value color-stopover-arrow: rgb(79, 94, 113);
@@ -281,9 +281,9 @@
 @value background-button-bordered-active: rgb(245, 247, 249);
 @value color-icon-radio-button: rgb(0, 165, 142);
 @value color-text-button-link-secondary-compact-hover: rgb(0, 149, 128);
-@value palette-ink-light-active: rgb(50, 66, 86);
+@value palette-ink-light-active: rgb(74, 97, 124);
 @value palette-bundle-basic: rgb(215, 51, 28);
-@value palette-ink-light-hover: rgb(62, 78, 99);
+@value palette-ink-light-hover: rgb(93, 115, 142);
 @value color-text-button-link-secondary-compact-active: rgb(0, 132, 114);
 @value color-alert-icon-success: rgb(40, 161, 56);
 @value palette-ink-normal: rgb(79, 94, 113);
@@ -360,7 +360,7 @@
 @value color-text-badge-white: rgb(37, 42, 49);
 @value border-color-button-secondary-bordered: rgb(37, 42, 49);
 @value palette-orange-normal-active: rgb(178, 98, 0);
-@value palette-cloud-dark-active: rgb(202, 212, 222);
+@value palette-cloud-dark-active: rgb(148, 168, 190);
 @value border-color-modal: rgb(232, 237, 241);
 @value color-text-button-google-bordered-hover: rgb(24, 27, 32);
 @value color-text-input-disabled: rgb(79, 94, 113);

@@ -167,7 +167,7 @@
   <color name="PALETTEPRODUCTDARK" category="">#ff007f6d</color>
   <dimen name="PADDINGBUTTONNORMALWITHICONS" category="">0 12dp</dimen>
   <color name="BACKGROUNDBADGEDARK" category="">#ff252a31</color>
-  <color name="PALETTEINKLIGHT" category="">#ff4f5e71</color>
+  <color name="PALETTEINKLIGHT" category="">#ff697d95</color>
   <dimen name="PADDINGBUTTONSMALLWITHRIGHTICON" category="">0 8 0 12dp</dimen>
   <integer name="MODIFIERSCALEBUTTONACTIVE" category="">0.95</integer>
   <color name="COLORTEXTBUTTONWARNINGBORDEREDACTIVE" category="">#ffb26200</color>
@@ -182,7 +182,7 @@
   <dimen name="PADDINGALERT" category="">16dp</dimen>
   <dimen name="PADDINGLOADING" category="">12dp</dimen>
   <string name="BACKGROUNDBUTTONBORDERED" category="">transparent</string>
-  <color name="PALETTECLOUDDARKHOVER" category="">#ffdce3e9</color>
+  <color name="PALETTECLOUDDARKHOVER" category="">#ffa6b6c8</color>
   <color name="COLORTEXTBUTTONSUCCESSBORDERED" category="">#ff28a138</color>
   <color name="PALETTEORANGENORMALHOVER" category="">#ffc96f00</color>
   <color name="PALETTEORANGEDARKER" category="">#ff803f00</color>
@@ -233,7 +233,7 @@
   <color name="COLORICONINPUT" category="">#ffe8edf1</color>
   <color name="BACKGROUNDBUTTONINFO" category="">#ff0172cb</color>
   <color name="BACKGROUNDALERTWARNING" category="">#fffef7f1</color>
-  <color name="COLORICONTERTIARY" category="">#ffe8edf1</color>
+  <color name="COLORICONTERTIARY" category="">#ffbac7d5</color>
   <color name="BACKGROUNDBUTTONINFOHOVER" category="">#ff0161ac</color>
   <color name="BACKGROUNDBADGESUCCESS" category="">#fff2f8f2</color>
   <dimen name="HEIGHTSERVICELOGOMEDIUM" category="">24dp</dimen>
@@ -262,7 +262,7 @@
   <dimen name="MARGINTOPFORMFEEDBACK" category="">2dp</dimen>
   <color name="PALETTEORANGENORMAL" category="">#ffdf7b00</color>
   <dimen name="BORDERWIDTHINPUT" category="">1dp</dimen>
-  <color name="PALETTECLOUDDARK" category="">#ffe8edf1</color>
+  <color name="PALETTECLOUDDARK" category="">#ffbac7d5</color>
   <color name="PALETTEPRODUCTDARKACTIVE" category="">#ff006657</color>
   <dimen name="HEIGHTILLUSTRATIONSMALL" category="">90dp</dimen>
   <color name="COLORSTOPOVERARROW" category="">#ff4f5e71</color>
@@ -282,9 +282,9 @@
   <color name="BACKGROUNDBUTTONBORDEREDACTIVE" category="">#fff5f7f9</color>
   <color name="COLORICONRADIOBUTTON" category="">#ff00a58e</color>
   <color name="COLORTEXTBUTTONLINKSECONDARYCOMPACTHOVER" category="">#ff009580</color>
-  <color name="PALETTEINKLIGHTACTIVE" category="">#ff324256</color>
+  <color name="PALETTEINKLIGHTACTIVE" category="">#ff4a617c</color>
   <color name="PALETTEBUNDLEBASIC" category="">#ffd7331c</color>
-  <color name="PALETTEINKLIGHTHOVER" category="">#ff3e4e63</color>
+  <color name="PALETTEINKLIGHTHOVER" category="">#ff5d738e</color>
   <color name="COLORTEXTBUTTONLINKSECONDARYCOMPACTACTIVE" category="">#ff008472</color>
   <color name="COLORALERTICONSUCCESS" category="">#ff28a138</color>
   <color name="PALETTEINKNORMAL" category="">#ff4f5e71</color>
@@ -361,7 +361,7 @@
   <color name="COLORTEXTBADGEWHITE" category="">#ff252a31</color>
   <color name="BORDERCOLORBUTTONSECONDARYBORDERED" category="">#ff252a31</color>
   <color name="PALETTEORANGENORMALACTIVE" category="">#ffb26200</color>
-  <color name="PALETTECLOUDDARKACTIVE" category="">#ffcad4de</color>
+  <color name="PALETTECLOUDDARKACTIVE" category="">#ff94a8be</color>
   <color name="BORDERCOLORMODAL" category="">#ffe8edf1</color>
   <color name="COLORTEXTBUTTONGOOGLEBORDEREDHOVER" category="">#ff181b20</color>
   <color name="COLORTEXTINPUTDISABLED" category="">#ff4f5e71</color>

@@ -10,9 +10,7 @@ export default {
 
     return (
       <Stack>
-        <div
-          style={{ ...height, width: "140px", background: defaultTheme.orbit.paletteInkNormal }}
-        />
+        <div style={{ ...height, width: "140px", background: defaultTheme.orbit.paletteInkDark }} />
         <div
           style={{
             ...height,

@@ -334,7 +334,7 @@ module.exports = {
   /*  */
   backgroundBadgeDark: "rgb(37, 42, 49)",
   /*  */
-  paletteInkLight: "rgb(79, 94, 113)",
+  paletteInkLight: "rgb(105, 125, 149)",
   /*  */
   paddingButtonSmallWithRightIcon: "0 8px 0 12px",
   /*  */
@@ -364,7 +364,7 @@ module.exports = {
   /*  */
   backgroundButtonBordered: "transparent",
   /*  */
-  paletteCloudDarkHover: "rgb(220, 227, 233)",
+  paletteCloudDarkHover: "rgb(166, 182, 200)",
   /*  */
   colorTextButtonSuccessBordered: "rgb(40, 161, 56)",
   /*  */
@@ -466,7 +466,7 @@ module.exports = {
   /*  */
   backgroundAlertWarning: "rgb(254, 247, 241)",
   /*  */
-  colorIconTertiary: "rgb(232, 237, 241)",
+  colorIconTertiary: "rgb(186, 199, 213)",
   /*  */
   backgroundButtonInfoHover: "rgb(1, 97, 172)",
   /*  */
@@ -524,7 +524,7 @@ module.exports = {
   /*  */
   borderWidthInput: "1px",
   /*  */
-  paletteCloudDark: "rgb(232, 237, 241)",
+  paletteCloudDark: "rgb(186, 199, 213)",
   /*  */
   paletteProductDarkActive: "rgb(0, 102, 87)",
   /*  */
@@ -564,11 +564,11 @@ module.exports = {
   /*  */
   colorTextButtonLinkSecondaryCompactHover: "rgb(0, 149, 128)",
   /*  */
-  paletteInkLightActive: "rgb(50, 66, 86)",
+  paletteInkLightActive: "rgb(74, 97, 124)",
   /*  */
   paletteBundleBasic: "rgb(215, 51, 28)",
   /*  */
-  paletteInkLightHover: "rgb(62, 78, 99)",
+  paletteInkLightHover: "rgb(93, 115, 142)",
   /*  */
   colorTextButtonLinkSecondaryCompactActive: "rgb(0, 132, 114)",
   /*  */
@@ -722,7 +722,7 @@ module.exports = {
   /*  */
   paletteOrangeNormalActive: "rgb(178, 98, 0)",
   /*  */
-  paletteCloudDarkActive: "rgb(202, 212, 222)",
+  paletteCloudDarkActive: "rgb(148, 168, 190)",
   /*  */
   borderColorModal: "rgb(232, 237, 241)",
   /*  */

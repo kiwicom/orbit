@@ -318,11 +318,6 @@ export const Input: any = styled(
       opacity: 1;
     }
 
-    /* Internet Explorer 10-11 */
-    &:-ms-input-placeholder {
-      color: ${theme.orbit.colorPlaceholderInput};
-    }
-
     /* Microsoft Edge */
     &::-ms-input-placeholder {
       color: ${theme.orbit.colorPlaceholderInput};

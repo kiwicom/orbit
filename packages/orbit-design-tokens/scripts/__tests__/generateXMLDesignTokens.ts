@@ -61,7 +61,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorIconTertiary</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>colorIconInfo</name>
@@ -1761,27 +1761,27 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>paletteCloudDark</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>paletteCloudDarkHover</name>
-          <value>#DCE3E9</value>
+          <value>#A6B6C8</value>
         </token>
         <token>
           <name>paletteCloudDarkActive</name>
-          <value>#CAD4DE</value>
+          <value>#94A8BE</value>
         </token>
         <token>
           <name>paletteInkLight</name>
-          <value>#4F5E71</value>
+          <value>#697D95</value>
         </token>
         <token>
           <name>paletteInkLightHover</name>
-          <value>#3E4E63</value>
+          <value>#5D738E</value>
         </token>
         <token>
           <name>paletteInkLightActive</name>
-          <value>#324256</value>
+          <value>#4A617C</value>
         </token>
         <token>
           <name>paletteInkDark</name>

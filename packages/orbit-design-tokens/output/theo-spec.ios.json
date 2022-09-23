@@ -1170,7 +1170,7 @@
       "name": "backgroundBadgeDark"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1275,7 +1275,7 @@
       "name": "backgroundButtonBordered"
     },
     {
-      "value": "rgb(220, 227, 233)",
+      "value": "rgb(166, 182, 200)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1632,7 +1632,7 @@
       "name": "backgroundAlertWarning"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1835,7 +1835,7 @@
       "name": "borderWidthInput"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1975,7 +1975,7 @@
       "name": "colorTextButtonLinkSecondaryCompactHover"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(74, 97, 124)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1989,7 +1989,7 @@
       "name": "paletteBundleBasic"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(93, 115, 142)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2528,7 +2528,7 @@
       "name": "paletteOrangeNormalActive"
     },
     {
-      "value": "rgb(202, 212, 222)",
+      "value": "rgb(148, 168, 190)",
       "type": "color",
       "category": "",
       "comment": "",

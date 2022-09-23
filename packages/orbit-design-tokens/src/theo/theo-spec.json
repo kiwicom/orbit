@@ -91,7 +91,7 @@
       }
     },
     "colorIconTertiary": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3916,7 +3916,7 @@
       }
     },
     "paletteCloudDark": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3925,7 +3925,7 @@
       }
     },
     "paletteCloudDarkHover": {
-      "value": "#DCE3E9",
+      "value": "#A6B6C8",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3934,7 +3934,7 @@
       }
     },
     "paletteCloudDarkActive": {
-      "value": "#CAD4DE",
+      "value": "#94A8BE",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3943,7 +3943,7 @@
       }
     },
     "paletteInkLight": {
-      "value": "#4F5E71",
+      "value": "#697D95",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3952,7 +3952,7 @@
       }
     },
     "paletteInkLightHover": {
-      "value": "#3E4E63",
+      "value": "#5D738E",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3961,7 +3961,7 @@
       }
     },
     "paletteInkLightActive": {
-      "value": "#324256",
+      "value": "#4A617C",
       "type": "color",
       "category": "",
       "comment": "",

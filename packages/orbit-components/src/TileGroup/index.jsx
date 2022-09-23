@@ -29,7 +29,7 @@ const StyledTileGroup = styled.div`
         border-bottom-right-radius: ${theme.orbit.borderRadiusNormal};
       }
       :not(:last-child) {
-        border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
+        border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
       }
       box-shadow: none;
       transition: background ${theme.orbit.durationFast} ease-in-out,

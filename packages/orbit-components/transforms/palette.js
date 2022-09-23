@@ -9,13 +9,13 @@ function palette(fileInfo, api) {
       const { name } = path.node;
       if (name === "paletteInkLighter") path.node.name = "paletteInkLight";
       if (name === "paletteInkLight") path.node.name = "paletteInkNormal";
-      if (name === "paletteInkNormal") path.node.name = "paletteInkDark";
-      if (name === "paletteCloudDarker") path.node.name = "paletteCloudDark";
-
       if (name === "paletteInkLighterHover") path.node.name = "paletteInkLightHover";
       if (name === "paletteInkLighterActive") path.node.name = "paletteInkLightActive";
+      if (name === "paletteInkNormal") path.node.name = "paletteInkDark";
       if (name === "paletteInkNormalHover") path.node.name = "paletteInkDarkHover";
       if (name === "paletteInkNormalActive") path.node.name = "paletteInkDarkActive";
+      if (name === "paletteCloudDark") path.node.name = "paletteCloudNormal";
+      if (name === "paletteCloudDarker") path.node.name = "paletteCloudDark";
     })
     .toSource();
 }

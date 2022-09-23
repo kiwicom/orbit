@@ -35,7 +35,6 @@ export type Tokens = {
   colorTextAlertWarning: string;
   colorAlertIconCritical: string;
   colorTextAlertCritical: string;
-  colorTextAlertLink: string;
   colorTextButtonFilled: string;
   colorTextButtonFilledHover: string;
   colorTextButtonFilledActive: string;
@@ -443,9 +442,8 @@ export type Tokens = {
   paletteCloudNormalHover: string;
   paletteCloudNormalActive: string;
   paletteCloudDark: string;
-  paletteCloudDarker: string;
-  paletteCloudDarkerHover: string;
-  paletteCloudDarkerActive: string;
+  paletteCloudDarkHover: string;
+  paletteCloudDarkActive: string;
   paletteInkLight: string;
   paletteInkLightHover: string;
   paletteInkLightActive: string;

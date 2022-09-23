@@ -28,7 +28,7 @@ const iconMixin = css`
     padding: 2px;
     height: 20px;
     width: 20px;
-    background: ${isActive ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudDark};
+    background: ${isActive ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudNormal};
     border-radius: ${theme.orbit.borderRadiusCircle};
     ${mq.desktop(css`
       height: 16px;

@@ -25,12 +25,12 @@ const getBackgroundColor = state => ({ type, dateTag }) => {
   const states = {
     [TYPES.COLORED]: {
       [STATES.DEFAULT]: resolveColor({
-        selected: dateTag ? "paletteInkLighterHover" : "paletteBlueNormal",
+        selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormal",
         removable: "paletteBlueLight",
         normal: "paletteBlueLight",
       }),
       [STATES.HOVER]: resolveColor({
-        selected: dateTag ? "paletteInkLighterActive" : "paletteBlueNormalHover",
+        selected: dateTag ? "paletteInkLightActive" : "paletteBlueNormalHover",
         removable: "paletteBlueLightHover",
         normal: "paletteBlueLightHover",
       }),
@@ -42,12 +42,12 @@ const getBackgroundColor = state => ({ type, dateTag }) => {
     },
     [TYPES.NEUTRAL]: {
       [STATES.DEFAULT]: resolveColor({
-        selected: dateTag ? "paletteInkLighterHover" : "paletteBlueNormal",
-        removable: "paletteCloudDark",
-        normal: "paletteCloudDark",
+        selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormal",
+        removable: "paletteCloudNormal",
+        normal: "paletteCloudNormal",
       }),
       [STATES.HOVER]: resolveColor({
-        selected: dateTag ? "paletteInkLighterActive" : "paletteBlueNormalHover",
+        selected: dateTag ? "paletteInkLightActive" : "paletteBlueNormalHover",
         removable: "paletteCloudNormalHover",
         normal: "paletteCloudNormalHover",
       }),
@@ -90,8 +90,8 @@ export const StyledTag: any = styled.div`
     font-family: ${theme.orbit.fontFamily};
     color: ${resolveColor({
       selected: "paletteWhite",
-      removable: type === TYPES.NEUTRAL ? "paletteInkNormal" : "paletteBlueDarker",
-      normal: type === TYPES.NEUTRAL ? "paletteInkNormal" : "paletteBlueDarker",
+      removable: type === TYPES.NEUTRAL ? "paletteInkDark" : "paletteBlueDarker",
+      normal: type === TYPES.NEUTRAL ? "paletteInkDark" : "paletteBlueDarker",
     })};
     background: ${getBackgroundColor(STATES.DEFAULT)};
     display: inline-flex;

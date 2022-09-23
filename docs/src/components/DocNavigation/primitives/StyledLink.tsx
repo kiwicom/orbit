@@ -10,7 +10,7 @@ const StyledLink = styled(Link)<{ $active: boolean }>`
     transition: all ${theme.orbit.durationFast};
     line-height: 1.375;
     border-left: 2px solid
-      ${$active ? theme.orbit.paletteProductNormal : theme.orbit.paletteCloudDark};
+      ${$active ? theme.orbit.paletteProductNormal : theme.orbit.paletteCloudNormal};
     &:hover,
     &:focus {
       color: ${theme.orbit.paletteProductNormal};

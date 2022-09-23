@@ -8,10 +8,10 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
   const tokens = {
     [TOKENS.backgroundButton]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkDark,
-      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudDark,
-      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudDark,
-      [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudDark,
-      [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteCloudDark,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudNormal,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormal,
+      [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudNormal,
+      [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteCloudNormal,
     },
     [TOKENS.backgroundButtonHover]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkDarkHover,
@@ -29,10 +29,10 @@ const getSocialButtonTypeToken: GetSocialButtonTypeToken = (name, type, theme) =
     },
     [TOKENS.backgroundButtonFocus]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteInkDark,
-      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudDark,
-      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudDark,
-      [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudDark,
-      [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteCloudDark,
+      [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteCloudNormal,
+      [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteCloudNormal,
+      [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteCloudNormal,
+      [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteCloudNormal,
     },
     [TOKENS.colorTextButton]: {
       [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,

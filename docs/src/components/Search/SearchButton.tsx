@@ -25,7 +25,7 @@ export const StyledIcon = styled.span<{ type: Type }>`
     transition: background ${theme.orbit.durationFast} ease-in;
     background: ${type === "primary"
       ? theme.orbit.paletteProductLightActive
-      : theme.orbit.paletteCloudDark};
+      : theme.orbit.paletteCloudNormal};
     border-radius: ${theme.orbit.borderRadiusNormal};
   `}
 `;

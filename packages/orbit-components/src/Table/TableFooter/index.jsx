@@ -13,7 +13,7 @@ export const StyledTableFooter: any = styled(({ children, className, dataTest })
 ))`
   width: 100%;
   white-space: nowrap;
-  background: ${({ theme }) => theme.orbit.paletteCloudDark};
+  background: ${({ theme }) => theme.orbit.paletteCloudNormal};
   font-weight: bold;
 `;
 

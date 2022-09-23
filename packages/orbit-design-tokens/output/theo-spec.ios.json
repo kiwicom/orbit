@@ -134,7 +134,7 @@
       "name": "zIndexSticky"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -148,7 +148,7 @@
       "name": "paletteBlueLight"
     },
     {
-      "value": "0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 1px 4px 0px rgba(79, 94, 113, 0.12)",
+      "value": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12)",
       "type": "size",
       "category": "",
       "comment": "",
@@ -197,7 +197,7 @@
       "name": "spaceXxSmall"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -211,7 +211,7 @@
       "name": "fontSizeInputNormal"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -351,18 +351,11 @@
       "name": "backgroundButtonGoogleHover"
     },
     {
-      "value": "0px 4px 8px 0px rgba(79, 94, 113, 0.16), 0px 8px 24px 0px rgba(79, 94, 113, 0.24)",
+      "value": "0px 4px 8px 0px rgba(37, 42, 49, 0.16), 0px 8px 24px 0px rgba(37, 42, 49, 0.24)",
       "type": "size",
       "category": "",
       "comment": "",
       "name": "boxShadowRaised"
-    },
-    {
-      "value": "rgb(148, 168, 190)",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "name": "paletteCloudDarkerActive"
     },
     {
       "value": "rgb(241, 248, 254)",
@@ -393,7 +386,7 @@
       "name": "paletteRedNormalActive"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -421,7 +414,7 @@
       "name": "paddingButtonSmall"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -435,7 +428,7 @@
       "name": "colorTextLinkPrimaryHover"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -568,7 +561,7 @@
       "name": "backgroundButtonBundleMediumHover"
     },
     {
-      "value": "0px 12px 24px -4px rgba(79, 94, 113, 0.24), 0px 8px 60px 0px rgba(79, 94, 113, 0.32)",
+      "value": "0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)",
       "type": "size",
       "category": "",
       "comment": "",
@@ -624,7 +617,7 @@
       "name": "widthBreakpointLargeMobile"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -645,14 +638,7 @@
       "name": "paddingTableCompact"
     },
     {
-      "value": "rgb(79, 94, 113)",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "name": "colorTextAlertLink"
-    },
-    {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -680,7 +666,7 @@
       "name": "marginBottomSelectSuffix"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -694,7 +680,7 @@
       "name": "paletteCloudNormalActive"
     },
     {
-      "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
+      "value": "linear-gradient(to left, transparent, rgba(232, 237, 241, 0.23))",
       "type": "string",
       "category": "",
       "comment": "",
@@ -729,7 +715,7 @@
       "name": "colorIconSuccess"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -757,7 +743,7 @@
       "name": "heightIconSmall"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -771,7 +757,7 @@
       "name": "backgroundBadgeWarning"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -792,14 +778,14 @@
       "name": "paletteBlueLightActive"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
       "name": "borderColorCheckboxRadioActive"
     },
     {
-      "value": "0px 1px 4px 0px rgba(79, 94, 113, 0.16), 0px 4px 8px 0px rgba(79, 94, 113, 0.12)",
+      "value": "0px 1px 4px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.12)",
       "type": "size",
       "category": "",
       "comment": "",
@@ -932,7 +918,7 @@
       "name": "colorTextBadgeDark"
     },
     {
-      "value": "rgb(93, 115, 142)",
+      "value": "rgb(62, 78, 99)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -988,7 +974,7 @@
       "name": "backgroundButtonSuccessActive"
     },
     {
-      "value": "0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 2px 4px 0px rgba(79, 94, 113, 0.12)",
+      "value": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 2px 4px 0px rgba(37, 42, 49, 0.12)",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1058,7 +1044,7 @@
       "name": "fontSizeTextSmall"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1114,7 +1100,7 @@
       "name": "paddingButtonSmallWithLeftIcon"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1149,7 +1135,7 @@
       "name": "paddingAlertWithIcon"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1177,14 +1163,14 @@
       "name": "paddingButtonNormalWithIcons"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
       "name": "backgroundBadgeDark"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1289,6 +1275,13 @@
       "name": "backgroundButtonBordered"
     },
     {
+      "value": "rgb(220, 227, 233)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "paletteCloudDarkHover"
+    },
+    {
       "value": "rgb(40, 161, 56)",
       "type": "color",
       "category": "",
@@ -1331,7 +1324,7 @@
       "name": "textDecorationTextLinkSecondaryHover"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1345,7 +1338,7 @@
       "name": "colorTextButtonCriticalBordered"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1415,7 +1408,7 @@
       "name": "backgroundButtonFacebookActive"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1429,14 +1422,14 @@
       "name": "heightStopoverArrow"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
       "name": "borderColorButtonGoogleBordered"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1450,21 +1443,21 @@
       "name": "fontSizeInputSmall"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
       "name": "colorFormLabel"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
       "name": "colorIconRadioButtonDisabled"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1618,7 +1611,7 @@
       "name": "colorPlaceholderInputError"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1639,7 +1632,7 @@
       "name": "backgroundAlertWarning"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1688,7 +1681,7 @@
       "name": "backgroundButtonLinkPrimaryActive"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1709,7 +1702,7 @@
       "name": "lineHeightTextNormal"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1842,7 +1835,7 @@
       "name": "borderWidthInput"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1863,7 +1856,7 @@
       "name": "heightIllustrationSmall"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1982,7 +1975,7 @@
       "name": "colorTextButtonLinkSecondaryCompactHover"
     },
     {
-      "value": "rgb(74, 97, 124)",
+      "value": "rgb(50, 66, 86)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1996,7 +1989,7 @@
       "name": "paletteBundleBasic"
     },
     {
-      "value": "rgb(93, 115, 142)",
+      "value": "rgb(62, 78, 99)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2031,7 +2024,7 @@
       "name": "fontWeightLinks"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2073,7 +2066,7 @@
       "name": "paddingTagRemovable"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2206,7 +2199,7 @@
       "name": "colorTextButtonFacebookBordered"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2234,7 +2227,7 @@
       "name": "backgroundButtonBundleTop"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2325,7 +2318,7 @@
       "name": "paletteWhiteActive"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2353,7 +2346,7 @@
       "name": "widthIconMedium"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2451,7 +2444,7 @@
       "name": "backgroundCarrierLogo"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2465,7 +2458,7 @@
       "name": "backgroundTooltip"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2493,7 +2486,7 @@
       "name": "colorTextButtonLinkPrimaryHover"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2514,14 +2507,14 @@
       "name": "colorTextButtonInfoActive"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
       "name": "colorTextBadgeWhite"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2535,6 +2528,13 @@
       "name": "paletteOrangeNormalActive"
     },
     {
+      "value": "rgb(202, 212, 222)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "paletteCloudDarkActive"
+    },
+    {
       "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
@@ -2542,14 +2542,14 @@
       "name": "borderColorModal"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
       "name": "colorTextButtonGoogleBorderedHover"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2626,7 +2626,7 @@
       "name": "paletteProductDarker"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2724,7 +2724,7 @@
       "name": "heightInputLarge"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2738,14 +2738,14 @@
       "name": "paddingButtonLarge"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
       "name": "colorTextButtonSecondaryActive"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2766,7 +2766,7 @@
       "name": "colorTextButtonWhiteBorderedActive"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2794,7 +2794,7 @@
       "name": "backgroundButtonGoogle"
     },
     {
-      "value": "rgb(74, 97, 124)",
+      "value": "rgb(50, 66, 86)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2815,7 +2815,7 @@
       "name": "backgroundButtonSuccessHover"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2857,7 +2857,7 @@
       "name": "colorTextWhite"
     },
     {
-      "value": "0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px -2px 4px 0px rgba(79, 94, 113, 0.12)",
+      "value": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2892,7 +2892,7 @@
       "name": "backgroundButtonPrimaryHover"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2941,7 +2941,7 @@
       "name": "backgroundButtonSecondaryActive"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2997,7 +2997,7 @@
       "name": "paletteBlueLightHover"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3039,7 +3039,7 @@
       "name": "colorTextButtonSuccessHover"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3074,7 +3074,7 @@
       "name": "paletteProductNormal"
     },
     {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3102,7 +3102,7 @@
       "name": "paddingTextareaSmall"
     },
     {
-      "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
+      "value": "linear-gradient(to right, transparent, rgba(232, 237, 241, 0.23))",
       "type": "string",
       "category": "",
       "comment": "",
@@ -3207,7 +3207,7 @@
       "name": "paletteOrangeDarkHover"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3249,14 +3249,7 @@
       "name": "widthBreakpointTablet"
     },
     {
-      "value": "rgb(186, 199, 213)",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "name": "paletteCloudDarker"
-    },
-    {
-      "value": "rgb(50, 66, 86)",
+      "value": "rgb(11, 12, 15)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3340,7 +3333,7 @@
       "name": "paddingButtonLargeWithLeftIcon"
     },
     {
-      "value": "rgb(105, 125, 149)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3382,7 +3375,7 @@
       "name": "backgroundButtonGoogleActive"
     },
     {
-      "value": "0px -4px 8px 0px rgba(79, 94, 113, 0.16), 0px -8px 24px 0px rgba(79, 94, 113, 0.24)",
+      "value": "0px -4px 8px 0px rgba(37, 42, 49, 0.16), 0px -8px 24px 0px rgba(37, 42, 49, 0.24)",
       "type": "size",
       "category": "",
       "comment": "",
@@ -3396,7 +3389,7 @@
       "name": "fontWeightHeadingDisplaySubtitle"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(37, 42, 49)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3417,7 +3410,7 @@
       "name": "backgroundModal"
     },
     {
-      "value": "rgb(62, 78, 99)",
+      "value": "rgb(24, 27, 32)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3429,13 +3422,6 @@
       "category": "",
       "comment": "",
       "name": "paletteRedNormalHover"
-    },
-    {
-      "value": "rgb(166, 182, 200)",
-      "type": "color",
-      "category": "",
-      "comment": "",
-      "name": "paletteCloudDarkerHover"
     },
     {
       "value": "rgb(186, 93, 0)",

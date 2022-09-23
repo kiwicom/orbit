@@ -21,11 +21,11 @@ describe(generateXMLDesignTokens.name, () => {
       "<designTokens>
         <token>
           <name>colorTextPrimary</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextSecondary</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorTextError</name>
@@ -53,15 +53,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorIconPrimary</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorIconSecondary</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorIconTertiary</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>colorIconInfo</name>
@@ -81,7 +81,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorHeading</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorHeadingInverted</name>
@@ -97,7 +97,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextLinkSecondary</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextLinkSecondaryHover</name>
@@ -136,10 +136,6 @@ describe(generateXMLDesignTokens.name, () => {
           <value>#970C0C</value>
         </token>
         <token>
-          <name>colorTextAlertLink</name>
-          <value>#4F5E71</value>
-        </token>
-        <token>
           <name>colorTextButtonFilled</name>
           <value>#FFFFFF</value>
         </token>
@@ -165,15 +161,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextButtonSecondary</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextButtonSecondaryHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>colorTextButtonSecondaryActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>colorTextButtonInfo</name>
@@ -237,27 +233,27 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextButtonGoogle</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextButtonGoogleHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>colorTextButtonGoogleActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>colorTextButtonWhite</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextButtonWhiteHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>colorTextButtonWhiteActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>colorTextButtonPrimaryBordered</name>
@@ -273,15 +269,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextButtonSecondaryBordered</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextButtonSecondaryBorderedHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>colorTextButtonSecondaryBorderedActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>colorTextButtonInfoBordered</name>
@@ -345,15 +341,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextButtonGoogleBordered</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextButtonGoogleBorderedHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>colorTextButtonGoogleBorderedActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>colorTextButtonWhiteBordered</name>
@@ -381,15 +377,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextButtonLinkSecondary</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextButtonLinkSecondaryHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>colorTextButtonLinkSecondaryActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>colorTextButtonLinkSecondaryCompactHover</name>
@@ -401,19 +397,19 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextInput</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextInputPrefix</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorTextInputDisabled</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorTextBadgeNeutral</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextBadgeInfo</name>
@@ -437,19 +433,19 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextBadgeWhite</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextLoading</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>colorTextTable</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorTextTag</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorTextTagSelected</name>
@@ -457,11 +453,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorIconInput</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>colorPlaceholderInput</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorPlaceholderInputError</name>
@@ -469,7 +465,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorPlaceholderInputFile</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorPlaceholderInputFileError</name>
@@ -477,15 +473,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorFormLabel</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>colorFormLabelFilled</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorInfoCheckBoxRadio</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorIconCheckboxRadio</name>
@@ -493,7 +489,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorIconCheckboxRadioDisabled</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>colorIconRadioButton</name>
@@ -501,11 +497,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorIconRadioButtonDisabled</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>colorStopoverArrow</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>fontFamily</name>
@@ -545,7 +541,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundButtonSecondary</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>backgroundButtonSecondaryHover</name>
@@ -769,7 +765,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundBadgeDark</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>backgroundBadgeWhite</name>
@@ -801,11 +797,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundTableShadowLeft</name>
-          <value>linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))</value>
+          <value>linear-gradient(to left, transparent, rgba(232, 237, 241, 0.23))</value>
         </token>
         <token>
           <name>backgroundTableShadowRight</name>
-          <value>linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))</value>
+          <value>linear-gradient(to right, transparent, rgba(232, 237, 241, 0.23))</value>
         </token>
         <token>
           <name>backgroundTable</name>
@@ -825,7 +821,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundTagSelected</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>backgroundTagHover</name>
@@ -833,7 +829,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundTagSelectedHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>backgroundTagActive</name>
@@ -841,7 +837,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundTagSelectedActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>backgroundTooltip</name>
@@ -1125,15 +1121,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorInput</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>borderColorInputHover</name>
-          <value>#5D738E</value>
+          <value>#3E4E63</value>
         </token>
         <token>
           <name>borderColorInputActive</name>
-          <value>#4A617C</value>
+          <value>#324256</value>
         </token>
         <token>
           <name>borderColorInputFocus</name>
@@ -1153,7 +1149,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorTableCell</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>borderColorCard</name>
@@ -1177,15 +1173,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorButtonSecondaryBordered</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>borderColorButtonSecondaryBorderedHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>borderColorButtonSecondaryBorderedActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>borderColorButtonFacebookBordered</name>
@@ -1201,15 +1197,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorButtonGoogleBordered</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>borderColorButtonGoogleBorderedHover</name>
-          <value>#3E4E63</value>
+          <value>#181B20</value>
         </token>
         <token>
           <name>borderColorButtonGoogleBorderedActive</name>
-          <value>#324256</value>
+          <value>#0B0C0F</value>
         </token>
         <token>
           <name>borderColorButtonInfoBordered</name>
@@ -1273,7 +1269,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorCheckboxRadio</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>borderColorCheckboxRadioError</name>
@@ -1281,11 +1277,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorCheckboxRadioHover</name>
-          <value>#697D95</value>
+          <value>#4F5E71</value>
         </token>
         <token>
           <name>borderColorCheckboxRadioActive</name>
-          <value>#4F5E71</value>
+          <value>#252A31</value>
         </token>
         <token>
           <name>borderColorCheckboxRadioFocus</name>
@@ -1297,7 +1293,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorTableHead</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>borderColorTag</name>
@@ -1661,31 +1657,31 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>boxShadowAction</name>
-          <value>0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 1px 4px 0px rgba(79, 94, 113, 0.12)</value>
+          <value>0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12)</value>
         </token>
         <token>
           <name>boxShadowActionActive</name>
-          <value>0px 1px 4px 0px rgba(79, 94, 113, 0.16), 0px 4px 8px 0px rgba(79, 94, 113, 0.12)</value>
+          <value>0px 1px 4px 0px rgba(37, 42, 49, 0.16), 0px 4px 8px 0px rgba(37, 42, 49, 0.12)</value>
         </token>
         <token>
           <name>boxShadowFixed</name>
-          <value>0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px 2px 4px 0px rgba(79, 94, 113, 0.12)</value>
+          <value>0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 2px 4px 0px rgba(37, 42, 49, 0.12)</value>
         </token>
         <token>
           <name>boxShadowFixedReverse</name>
-          <value>0px 0px 2px 0px rgba(79, 94, 113, 0.16), 0px -2px 4px 0px rgba(79, 94, 113, 0.12)</value>
+          <value>0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)</value>
         </token>
         <token>
           <name>boxShadowRaised</name>
-          <value>0px 4px 8px 0px rgba(79, 94, 113, 0.16), 0px 8px 24px 0px rgba(79, 94, 113, 0.24)</value>
+          <value>0px 4px 8px 0px rgba(37, 42, 49, 0.16), 0px 8px 24px 0px rgba(37, 42, 49, 0.24)</value>
         </token>
         <token>
           <name>boxShadowRaisedReverse</name>
-          <value>0px -4px 8px 0px rgba(79, 94, 113, 0.16), 0px -8px 24px 0px rgba(79, 94, 113, 0.24)</value>
+          <value>0px -4px 8px 0px rgba(37, 42, 49, 0.16), 0px -8px 24px 0px rgba(37, 42, 49, 0.24)</value>
         </token>
         <token>
           <name>boxShadowOverlay</name>
-          <value>0px 12px 24px -4px rgba(79, 94, 113, 0.24), 0px 8px 60px 0px rgba(79, 94, 113, 0.32)</value>
+          <value>0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)</value>
         </token>
         <token>
           <name>paletteProductLight</name>
@@ -1765,42 +1761,26 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>paletteCloudDark</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
-          <name>paletteCloudDarker</name>
-          <value>#BAC7D5</value>
+          <name>paletteCloudDarkHover</name>
+          <value>#DCE3E9</value>
         </token>
         <token>
-          <name>paletteCloudDarkerHover</name>
-          <value>#A6B6C8</value>
-        </token>
-        <token>
-          <name>paletteCloudDarkerActive</name>
-          <value>#94A8BE</value>
+          <name>paletteCloudDarkActive</name>
+          <value>#CAD4DE</value>
         </token>
         <token>
           <name>paletteInkLight</name>
-          <value>#697D95</value>
-        </token>
-        <token>
-          <name>paletteInkLightHover</name>
-          <value>#5D738E</value>
-        </token>
-        <token>
-          <name>paletteInkLightActive</name>
-          <value>#4A617C</value>
-        </token>
-        <token>
-          <name>paletteInkNormal</name>
           <value>#4F5E71</value>
         </token>
         <token>
-          <name>paletteInkNormalHover</name>
+          <name>paletteInkLightHover</name>
           <value>#3E4E63</value>
         </token>
         <token>
-          <name>paletteInkNormalActive</name>
+          <name>paletteInkLightActive</name>
           <value>#324256</value>
         </token>
         <token>
@@ -1814,6 +1794,18 @@ describe(generateXMLDesignTokens.name, () => {
         <token>
           <name>paletteInkDarkActive</name>
           <value>#0B0C0F</value>
+        </token>
+        <token>
+          <name>paletteInkNormal</name>
+          <value>#4F5E71</value>
+        </token>
+        <token>
+          <name>paletteInkNormalHover</name>
+          <value>#3E4E63</value>
+        </token>
+        <token>
+          <name>paletteInkNormalActive</name>
+          <value>#324256</value>
         </token>
         <token>
           <name>paletteOrangeLight</name>

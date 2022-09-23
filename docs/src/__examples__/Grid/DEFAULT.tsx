@@ -5,7 +5,7 @@ import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 export default {
   Example: () => {
     const divStyle = {
-      background: `${defaultTheme.orbit.paletteCloudDark}`,
+      background: `${defaultTheme.orbit.paletteCloudNormal}`,
       border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,
       "box-sizing": "border-box",
       padding: `${defaultTheme.orbit.paddingButtonSmall}`,

@@ -13,7 +13,7 @@ import componentStatusData from "../../data/component-status.yaml";
 export const StyledContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
-    border: 1px solid ${theme.orbit.paletteCloudDark};
+    border: 1px solid ${theme.orbit.paletteCloudNormal};
     border-radius: ${theme.orbit.borderRadiusLarge};
     overflow: hidden;
   `};
@@ -28,7 +28,7 @@ export const StyledTable = styled.table`
 export const StyledTableHead = styled.thead`
   ${({ theme }) => css`
     background: ${theme.orbit.paletteCloudLight};
-    border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
+    border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
     tr {
       height: ${HEADER_HEIGHT};
     }

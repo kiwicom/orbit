@@ -66,16 +66,16 @@ const getTypeToken = name => ({ theme, type, suppressed }) => {
     },
     [TOKENS.colorBorderAlert]: {
       [TYPE_OPTIONS.INFO]: suppressed
-        ? theme.orbit.paletteCloudDark
+        ? theme.orbit.paletteCloudNormal
         : theme.orbit.paletteBlueLightHover,
       [TYPE_OPTIONS.SUCCESS]: suppressed
-        ? theme.orbit.paletteCloudDark
+        ? theme.orbit.paletteCloudNormal
         : theme.orbit.paletteGreenLightHover,
       [TYPE_OPTIONS.WARNING]: suppressed
-        ? theme.orbit.paletteCloudDark
+        ? theme.orbit.paletteCloudNormal
         : theme.orbit.paletteOrangeLightHover,
       [TYPE_OPTIONS.CRITICAL]: suppressed
-        ? theme.orbit.paletteCloudDark
+        ? theme.orbit.paletteCloudNormal
         : theme.orbit.paletteRedLightHover,
     },
     [TOKENS.colorAccentBorder]: {

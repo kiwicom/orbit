@@ -38,7 +38,7 @@ const StyledTab = styled.button<{ active: boolean }>`
     ${active &&
     css`
       background: ${theme.orbit.paletteWhite};
-      border-color: ${theme.orbit.paletteCloudDark};
+      border-color: ${theme.orbit.paletteCloudNormal};
     `};
   `};
 `;
@@ -46,7 +46,7 @@ StyledTab.defaultProps = { theme: docsTheme };
 
 const StyledPanel = styled.div`
   ${({ theme }) => css`
-    border: 1px solid ${theme.orbit.paletteCloudDark};
+    border: 1px solid ${theme.orbit.paletteCloudNormal};
     border-radius: ${theme.orbit.borderRadiusLarge};
   `};
 `;
@@ -66,11 +66,11 @@ const StyledComponentParts = styled.div`
     display: grid;
     align-content: center;
     padding: ${theme.orbit.spaceXLarge};
-    border-top: 1px solid ${theme.orbit.paletteCloudDark};
+    border-top: 1px solid ${theme.orbit.paletteCloudNormal};
 
     ${mq.largeDesktop(css`
       border-top: 0;
-      border-left: 1px solid ${theme.orbit.paletteCloudDark};
+      border-left: 1px solid ${theme.orbit.paletteCloudNormal};
     `)};
 
     ol {

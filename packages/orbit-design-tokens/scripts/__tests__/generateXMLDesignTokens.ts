@@ -437,7 +437,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextLoading</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>colorTextTable</name>
@@ -449,11 +449,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextTagSelected</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>colorIconInput</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>colorPlaceholderInput</name>
@@ -489,7 +489,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorIconCheckboxRadioDisabled</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>colorIconRadioButton</name>
@@ -797,11 +797,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundTableShadowLeft</name>
-          <value>linear-gradient(to left, transparent, rgba(232, 237, 241, 0.23))</value>
+          <value>linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))</value>
         </token>
         <token>
           <name>backgroundTableShadowRight</name>
-          <value>linear-gradient(to right, transparent, rgba(232, 237, 241, 0.23))</value>
+          <value>linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))</value>
         </token>
         <token>
           <name>backgroundTable</name>
@@ -813,7 +813,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundTableHover</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>backgroundTag</name>
@@ -1121,7 +1121,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorInput</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>borderColorInputHover</name>
@@ -1149,7 +1149,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorTableCell</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>borderColorCard</name>
@@ -1269,7 +1269,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorCheckboxRadio</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>borderColorCheckboxRadioError</name>
@@ -1293,11 +1293,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorTableHead</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>borderColorTag</name>
-          <value>#E8EDF1</value>
+          <value>#BAC7D5</value>
         </token>
         <token>
           <name>borderColorTagFocus</name>

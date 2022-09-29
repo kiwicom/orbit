@@ -36,6 +36,14 @@ StyledComponentFourth.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledComponentFifth = styled.div`
+  color: ${({ theme }) => theme.orbit.paletteCloudNormal};
+`;
+
+StyledComponentFifth.defaultProps = {
+  theme: defaultTheme,
+};
+
 const Component = () => {
   const theme = useTheme();
   return <div>{theme.orbit.paletteInkLight}</div>;

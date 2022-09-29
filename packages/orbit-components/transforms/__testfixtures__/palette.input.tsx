@@ -40,6 +40,14 @@ StyledComponentFourth.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledComponentFifth = styled.div`
+  color: ${({ theme }) => theme.orbit.paletteCloudDark};
+`;
+
+StyledComponentFifth.defaultProps = {
+  theme: defaultTheme,
+};
+
 const Component = () => {
   const theme = useTheme();
   // @ts-ignore

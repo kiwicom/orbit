@@ -38,7 +38,7 @@ module.exports = {
   /*  */
   zIndexSticky: "100",
   /*  */
-  borderColorCheckboxRadio: "rgb(232, 237, 241)",
+  borderColorCheckboxRadio: "rgb(186, 199, 213)",
   /*  */
   paletteBlueLight: "rgb(241, 248, 254)",
   /*  */
@@ -104,7 +104,7 @@ module.exports = {
   /*  */
   backgroundBadgeInfo: "rgb(241, 248, 254)",
   /*  */
-  borderColorTag: "rgb(232, 237, 241)",
+  borderColorTag: "rgb(186, 199, 213)",
   /*  */
   backgroundButtonSuccess: "rgb(40, 161, 56)",
   /*  */
@@ -162,7 +162,7 @@ module.exports = {
   /*  */
   boxShadowOverlay: "0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)",
   /*  */
-  colorTextTagSelected: "rgb(232, 237, 241)",
+  colorTextTagSelected: "rgb(186, 199, 213)",
   /*  */
   borderColorButtonSuccessBordered: "rgb(40, 161, 56)",
   /*  */
@@ -194,7 +194,7 @@ module.exports = {
   /*  */
   paletteCloudNormalActive: "rgb(202, 212, 222)",
   /*  */
-  backgroundTableShadowLeft: "linear-gradient(to left, transparent, rgba(232, 237, 241, 0.23))",
+  backgroundTableShadowLeft: "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
   /*  */
   widthRadioButton: "20px",
   /*  */
@@ -402,7 +402,7 @@ module.exports = {
   /*  */
   backgroundButtonFacebookActive: "rgb(53, 79, 136)",
   /*  */
-  colorTextLoading: "rgb(232, 237, 241)",
+  colorTextLoading: "rgb(186, 199, 213)",
   /*  */
   heightStopoverArrow: "7px",
   /*  */
@@ -460,7 +460,7 @@ module.exports = {
   /*  */
   colorPlaceholderInputError: "rgb(210, 28, 28)",
   /*  */
-  colorIconInput: "rgb(232, 237, 241)",
+  colorIconInput: "rgb(186, 199, 213)",
   /*  */
   backgroundButtonInfo: "rgb(1, 114, 203)",
   /*  */
@@ -636,7 +636,7 @@ module.exports = {
   /*  */
   backgroundButtonBundleTop: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
   /*  */
-  borderColorInput: "rgb(232, 237, 241)",
+  borderColorInput: "rgb(186, 199, 213)",
   /*  */
   paletteOrangeLightActive: "rgb(250, 226, 198)",
   /*  */
@@ -750,7 +750,7 @@ module.exports = {
   /*  */
   paletteProductDarker: "rgb(0, 92, 78)",
   /*  */
-  borderColorTableHead: "rgb(232, 237, 241)",
+  borderColorTableHead: "rgb(186, 199, 213)",
   /*  */
   colorTextAlertSuccess: "rgb(45, 119, 56)",
   /*  */
@@ -790,7 +790,7 @@ module.exports = {
   /*  */
   colorTextButtonWhiteBorderedActive: "rgb(255, 255, 255)",
   /*  */
-  colorIconCheckboxRadioDisabled: "rgb(232, 237, 241)",
+  colorIconCheckboxRadioDisabled: "rgb(186, 199, 213)",
   /*  */
   fontSizeButtonLarge: "16px",
   /*  */
@@ -804,7 +804,7 @@ module.exports = {
   /*  */
   backgroundButtonSuccessHover: "rgb(35, 139, 49)",
   /*  */
-  borderColorTableCell: "rgb(232, 237, 241)",
+  borderColorTableCell: "rgb(186, 199, 213)",
   /*  */
   fontSizeFormFeedback: "12px",
   /*  */
@@ -886,11 +886,11 @@ module.exports = {
   /*  */
   paddingTextareaSmall: "8px 12px",
   /*  */
-  backgroundTableShadowRight: "linear-gradient(to right, transparent, rgba(232, 237, 241, 0.23))",
+  backgroundTableShadowRight: "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
   /*  */
   backgroundButtonWarning: "rgb(223, 123, 0)",
   /*  */
-  backgroundTableHover: "rgb(232, 237, 241)",
+  backgroundTableHover: "rgb(186, 199, 213)",
   /*  */
   fontWeightMedium: "500",
   /*  */

@@ -937,7 +937,7 @@
       }
     },
     "colorTextLoading": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -964,7 +964,7 @@
       }
     },
     "colorTextTagSelected": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -973,7 +973,7 @@
       }
     },
     "colorIconInput": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1054,7 +1054,7 @@
       }
     },
     "colorIconCheckboxRadioDisabled": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1747,7 +1747,7 @@
       }
     },
     "backgroundTableShadowLeft": {
-      "value": "linear-gradient(to left, transparent, rgba(232, 237, 241, 0.23))",
+      "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1756,7 +1756,7 @@
       }
     },
     "backgroundTableShadowRight": {
-      "value": "linear-gradient(to right, transparent, rgba(232, 237, 241, 0.23))",
+      "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1783,7 +1783,7 @@
       }
     },
     "backgroundTableHover": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2476,7 +2476,7 @@
       }
     },
     "borderColorInput": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2539,7 +2539,7 @@
       }
     },
     "borderColorTableCell": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2809,7 +2809,7 @@
       }
     },
     "borderColorCheckboxRadio": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2863,7 +2863,7 @@
       }
     },
     "borderColorTableHead": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2872,7 +2872,7 @@
       }
     },
     "borderColorTag": {
-      "value": "#E8EDF1",
+      "value": "#BAC7D5",
       "type": "color",
       "category": "",
       "comment": "",

@@ -18,7 +18,7 @@
 @value palette-blue-normal-hover: rgb(1, 97, 172);
 @value color-text-button-critical: rgb(255, 255, 255);
 @value z-index-sticky: "100";
-@value border-color-checkbox-radio: rgb(232, 237, 241);
+@value border-color-checkbox-radio: rgb(186, 199, 213);
 @value palette-blue-light: rgb(241, 248, 254);
 @value box-shadow-action: 0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12);
 @value palette-ink-dark: rgb(37, 42, 49);
@@ -51,7 +51,7 @@
 @value background-button-google-hover: rgb(229, 234, 239);
 @value box-shadow-raised: 0px 4px 8px 0px rgba(37, 42, 49, 0.16), 0px 8px 24px 0px rgba(37, 42, 49, 0.24);
 @value background-badge-info: rgb(241, 248, 254);
-@value border-color-tag: rgb(232, 237, 241);
+@value border-color-tag: rgb(186, 199, 213);
 @value background-button-success: rgb(40, 161, 56);
 @value palette-red-normal-active: rgb(157, 21, 21);
 @value color-text-button-secondary-bordered-active: rgb(11, 12, 15);
@@ -80,7 +80,7 @@
 @value color-text-button-warning-bordered: rgb(223, 123, 0);
 @value background-button-bundle-medium-hover: "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)";
 @value box-shadow-overlay: 0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32);
-@value color-text-tag-selected: rgb(232, 237, 241);
+@value color-text-tag-selected: rgb(186, 199, 213);
 @value border-color-button-success-bordered: rgb(40, 161, 56);
 @value palette-orange-dark-active: rgb(149, 74, 0);
 @value color-text-button-primary-active: rgb(255, 255, 255);
@@ -96,7 +96,7 @@
 @value margin-bottom-select-suffix: 2px;
 @value color-icon-primary: rgb(37, 42, 49);
 @value palette-cloud-normal-active: rgb(202, 212, 222);
-@value background-table-shadow-left: "linear-gradient(to left, transparent, rgba(232, 237, 241, 0.23))";
+@value background-table-shadow-left: "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))";
 @value width-radio-button: 20px;
 @value color-text-button-success-active: rgb(255, 255, 255);
 @value border-color-checkbox-radio-error: rgb(210, 28, 28);
@@ -200,7 +200,7 @@
 @value color-text-button-link-primary-active: rgb(0, 102, 87);
 @value background-tag: rgb(245, 247, 249);
 @value background-button-facebook-active: rgb(53, 79, 136);
-@value color-text-loading: rgb(232, 237, 241);
+@value color-text-loading: rgb(186, 199, 213);
 @value height-stopover-arrow: 7px;
 @value border-color-button-google-bordered: rgb(37, 42, 49);
 @value background-tag-selected-active: rgb(11, 12, 15);
@@ -229,7 +229,7 @@
 @value palette-white: rgb(255, 255, 255);
 @value font-size-heading-title4: 14px;
 @value color-placeholder-input-error: rgb(210, 28, 28);
-@value color-icon-input: rgb(232, 237, 241);
+@value color-icon-input: rgb(186, 199, 213);
 @value background-button-info: rgb(1, 114, 203);
 @value background-alert-warning: rgb(254, 247, 241);
 @value color-icon-tertiary: rgb(186, 199, 213);
@@ -317,7 +317,7 @@
 @value line-height-text-large: 24px;
 @value color-text-success: rgb(40, 161, 56);
 @value background-button-bundle-top: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)";
-@value border-color-input: rgb(232, 237, 241);
+@value border-color-input: rgb(186, 199, 213);
 @value palette-orange-light-active: rgb(250, 226, 198);
 @value font-weight-heading-title1: "700";
 @value color-heading-inverted: rgb(255, 255, 255);
@@ -374,7 +374,7 @@
 @value background-separator: rgb(232, 237, 241);
 @value color-text-button-warning-bordered-hover: rgb(201, 111, 0);
 @value palette-product-darker: rgb(0, 92, 78);
-@value border-color-table-head: rgb(232, 237, 241);
+@value border-color-table-head: rgb(186, 199, 213);
 @value color-text-alert-success: rgb(45, 119, 56);
 @value background-badge-bundle-basic: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)";
 @value padding-button-large-with-right-icon: 0 16px 0 28px;
@@ -394,14 +394,14 @@
 @value color-text-button-link-secondary: rgb(37, 42, 49);
 @value color-text-link-primary: rgb(0, 127, 109);
 @value color-text-button-white-bordered-active: rgb(255, 255, 255);
-@value color-icon-checkbox-radio-disabled: rgb(232, 237, 241);
+@value color-icon-checkbox-radio-disabled: rgb(186, 199, 213);
 @value font-size-button-large: 16px;
 @value background-button-bundle-top-active: "linear-gradient(to top right, #101011 0%, #51575C)";
 @value background-button-google: rgb(245, 247, 249);
 @value border-color-input-active: rgb(50, 66, 86);
 @value opacity-button-disabled: "0.3";
 @value background-button-success-hover: rgb(35, 139, 49);
-@value border-color-table-cell: rgb(232, 237, 241);
+@value border-color-table-cell: rgb(186, 199, 213);
 @value font-size-form-feedback: 12px;
 @value border-color-button-critical-bordered-active: rgb(157, 21, 21);
 @value color-text-button-facebook-bordered-active: rgb(53, 79, 136);
@@ -442,9 +442,9 @@
 @value palette-cloud-light: rgb(245, 247, 249);
 @value color-icon-checkbox-radio: rgb(0, 165, 142);
 @value padding-textarea-small: 8px 12px;
-@value background-table-shadow-right: "linear-gradient(to right, transparent, rgba(232, 237, 241, 0.23))";
+@value background-table-shadow-right: "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))";
 @value background-button-warning: rgb(223, 123, 0);
-@value background-table-hover: rgb(232, 237, 241);
+@value background-table-hover: rgb(186, 199, 213);
 @value font-weight-medium: "500";
 @value padding-button-large-with-icons: 0 16px;
 @value width-country-flag: 24px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import * as React from "react";
 
 import useTheme from "../../src/hooks/useTheme";
 import defaultTheme from "../../src/defaultTheme";

@@ -134,7 +134,7 @@
       "name": "zIndexSticky"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -365,7 +365,7 @@
       "name": "backgroundBadgeInfo"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -568,7 +568,7 @@
       "name": "boxShadowOverlay"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -680,7 +680,7 @@
       "name": "paletteCloudNormalActive"
     },
     {
-      "value": "linear-gradient(to left, transparent, rgba(232, 237, 241, 0.23))",
+      "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 0.23))",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1408,7 +1408,7 @@
       "name": "backgroundButtonFacebookActive"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1611,7 +1611,7 @@
       "name": "colorPlaceholderInputError"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2227,7 +2227,7 @@
       "name": "backgroundButtonBundleTop"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2626,7 +2626,7 @@
       "name": "paletteProductDarker"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2766,7 +2766,7 @@
       "name": "colorTextButtonWhiteBorderedActive"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2815,7 +2815,7 @@
       "name": "backgroundButtonSuccessHover"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3102,7 +3102,7 @@
       "name": "paddingTextareaSmall"
     },
     {
-      "value": "linear-gradient(to right, transparent, rgba(232, 237, 241, 0.23))",
+      "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
       "type": "string",
       "category": "",
       "comment": "",
@@ -3116,7 +3116,7 @@
       "name": "backgroundButtonWarning"
     },
     {
-      "value": "rgb(232, 237, 241)",
+      "value": "rgb(186, 199, 213)",
       "type": "color",
       "category": "",
       "comment": "",

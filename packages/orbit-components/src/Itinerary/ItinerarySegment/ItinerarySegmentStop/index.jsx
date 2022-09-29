@@ -138,7 +138,7 @@ const ItinerarySegmentStop = ({
             icon={icon}
           />
         </ItineraryIcon>
-        <Stack direction="column" spacing="none">
+        <Stack direction="column" shrink spacing="none">
           {hidden && hiddenCityText && <StyledHiddenCity>{hiddenCityText}</StyledHiddenCity>}
           <Text
             weight="medium"

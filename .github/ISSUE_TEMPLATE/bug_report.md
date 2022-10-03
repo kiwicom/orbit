@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve orbit-components
 ---
 
-Use this **ONLY** for reporting bugs. For requesting new features check [this link](https://orbit.kiwi/request-an-enhancement/).
+# Use this **ONLY** for reporting bugs. For requesting new features check [this link](https://orbit.kiwi/request-an-enhancement/).
 
 <!--- Provide a general summary of the issue in the Title above -->
 

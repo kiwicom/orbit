@@ -333,7 +333,7 @@ NestedExample.story = {
 
 export const Playground = (): React.Node => {
   const dataTest = text("dataTest", "test");
-  const flex = boolean("flex", false);
+  const flex = boolean("flex", true);
   const inline = boolean("Inline", false);
   const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], DIRECTIONS.ROW);
   const wrap = boolean("Wrap", false);

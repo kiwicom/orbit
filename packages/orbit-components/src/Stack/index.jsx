@@ -7,9 +7,9 @@ import mediaQueries from "../utils/mediaQuery";
 import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "../utils/layout/consts";
 import { DEVICES } from "../utils/mediaQuery/consts";
 import { isDefined } from "../utils/layout";
-import shouldUseFlex from "./helpers/shouldUseFlex";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
-import getChildrenMargin from "./helpers/getChildrenMargin";
+import getGap from "./helpers/getGap";
+import shouldUseFlex from "./helpers/shouldUseFlex";
 
 import type { Props } from ".";
 
@@ -25,12 +25,12 @@ const StyledStack = styled(({ className, element: Element, children, dataTest })
       viewport in mediaQueries
         ? mediaQueries[viewport](css`
             ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
-            ${getChildrenMargin({ viewport, index, devices })}
+            ${getGap({ viewport, index, devices })}
           `)
         : viewport === "smallMobile" &&
           css`
             ${getViewportFlexStyles(viewport)};
-            ${getChildrenMargin({ viewport, index, devices })}
+            ${getGap({ viewport, index, devices })}
           `,
     )};
 `;
@@ -61,11 +61,8 @@ const Stack = (props: Props): React.Node => {
     as = "div",
   } = props;
 
-  // turn on FLEX automatically or manually with prop flex
-  const flex = shouldUseFlex(props);
-
-  // when flex - use direction, otherwise column because it's block element
-  const direction = props.direction || (flex ? DIRECTIONS.ROW : DIRECTIONS.COLUMN);
+  const isFlex = shouldUseFlex(props);
+  const direction = props.direction || (isFlex ? DIRECTIONS.ROW : DIRECTIONS.COLUMN);
 
   const smallMobile = {
     direction,
@@ -83,7 +80,7 @@ const Stack = (props: Props): React.Node => {
   return (
     <StyledStack
       dataTest={dataTest}
-      flex={flex}
+      flex={isFlex}
       smallMobile={smallMobile}
       mediumMobile={mediumMobile}
       largeMobile={largeMobile}

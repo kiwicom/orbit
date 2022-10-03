@@ -24,7 +24,7 @@ describe("Stack", () => {
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Sign In" })).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toHaveStyle({
-      marginRight: "16px!important",
+      gap: "16px",
       width: "100%",
       flexDirection: "row",
       flexWrap: "nowrap",
@@ -32,9 +32,6 @@ describe("Stack", () => {
       flexGrow: "1",
       justifyContent: "flex-start",
       alignItems: "flex-start",
-    });
-    expect(screen.getByTestId(dataTest)).toHaveStyleRule("margin", "0 !important", {
-      modifier: "& > *:last-child",
     });
   });
 
@@ -128,7 +125,7 @@ describe("Stack", () => {
 
       expect(screen.getByTestId("test")).toHaveStyle({
         // $FlowIssue: mixed
-        marginRight: `${getSpacing({ theme })[spacing]}!important`,
+        gap: `${getSpacing({ theme })[spacing]}`,
       });
     });
   });
@@ -138,30 +135,29 @@ describe("Stack with every media query", () => {
   it.each(Object.entries(QUERIES))("should have styles for each mediaquery: %s", (name, query) => {
     const dataTest = `${query}-test`;
 
+    const input = {
+      mediumMobile: `XXSmall`,
+      largeMobile: `XSmall`,
+      tablet: `small`,
+      desktop: `medium`,
+      largeDesktop: `large`,
+    };
+
+    const expected = {
+      mediumMobile: `${theme.orbit.spaceXXSmall}`,
+      largeMobile: `${theme.orbit.spaceXSmall}`,
+      tablet: `${theme.orbit.spaceSmall}`,
+      desktop: `${theme.orbit.spaceMedium}`,
+      largeDesktop: `${theme.orbit.spaceLarge}`,
+    };
+
     render(
-      <Stack
-        dataTest={dataTest}
-        direction={DIRECTIONS.ROW}
-        spacing={SPACINGS.NONE}
-        mediumMobile={{ spacing: SPACINGS.XXSMALL }}
-        largeMobile={{ spacing: SPACINGS.XSMALL }}
-        tablet={{ spacing: SPACINGS.SMALL }}
-        desktop={{ spacing: SPACINGS.MEDIUM }}
-        largeDesktop={{ spacing: SPACINGS.LARGE }}
-      >
+      <Stack flex dataTest={dataTest} direction={DIRECTIONS.ROW} spacing={input[query]}>
         <InputField type="password" label="Password" help="You need some help!" />
         <Button>Sign In</Button>
       </Stack>,
     );
 
-    const expected = {
-      mediumMobile: `${theme.orbit.spaceXXSmall}!important`,
-      largeMobile: `${theme.orbit.spaceXSmall}!important`,
-      tablet: `${theme.orbit.spaceSmall}!important`,
-      desktop: `${theme.orbit.spaceMedium}!important`,
-      largeDesktop: `${theme.orbit.spaceLarge}!important`,
-    };
-
-    expect(screen.getByTestId(dataTest)).toHaveStyle({ marginRight: expected[query] });
+    expect(screen.getByTestId(dataTest)).toHaveStyleRule("gap", expected[query]);
   });
 });

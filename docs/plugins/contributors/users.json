@@ -65,6 +65,19 @@
     "active": true
   },
   {
+    "id": "danielsil",
+    "name": "Daniel Sil",
+    "info": "Daniel is the latest addition to the team and is focused on contributing to the React implementation of Orbit components.",
+    "position": "Software Engineer",
+    "avatar_url": "",
+    "error": "",
+    "github": "https://github.com/dsil",
+    "twitter": "",
+    "dribbble": "",
+    "website": "",
+    "active": true
+  },
+  {
     "id": "silvenon",
     "name": "Matija Marohnić",
     "info": "Matija has extensive knowledge of frontend ecosystems. Besides working on React components, he also focuses on internal and external tooling to improve the overall developer experience with Orbit.",

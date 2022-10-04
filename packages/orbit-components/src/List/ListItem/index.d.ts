@@ -2,6 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import { AnyStyledComponent } from "styled-components";
 
 import * as Common from "../../common/common";
 
@@ -12,4 +13,6 @@ interface Props extends Common.Global {
 }
 
 declare const ListItem: React.FunctionComponent<Props>;
-export { ListItem, ListItem as default };
+declare const IconContainer: AnyStyledComponent;
+declare const Item: AnyStyledComponent;
+export { ListItem, ListItem as default, IconContainer, Item };

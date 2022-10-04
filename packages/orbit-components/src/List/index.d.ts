@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import ListItem from "./ListItem";
+import ListItem, { IconContainer } from "./ListItem";
 import * as Common from "../common/common";
 
 type Type = "primary" | "secondary" | "separated";
@@ -15,4 +15,4 @@ interface Props extends Common.Global, Common.SpaceAfter {
 }
 
 declare const List: React.FunctionComponent<Props>;
-export { List, List as default, ListItem };
+export { List, List as default, ListItem, IconContainer };

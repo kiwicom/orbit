@@ -37,13 +37,13 @@
 
 ### Starting with development
 
-First, you need to build tokens:
+First, you need to build the project:
 
 ```
-yarn tokens build
+yarn build
 ```
 
-You only need to do this once if you don't plan on changing tokens. Next, run Storybook:
+Next, run Storybook:
 
 ```sh
 yarn dev

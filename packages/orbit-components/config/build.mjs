@@ -24,6 +24,10 @@ const logStep = msg => {
 
   await $`babel-node config/buildIcons.js`;
 
+  logStep("Build tokens");
+
+  await $`yarn workspace @kiwicom/orbit-design-tokens build`;
+
   if (!argv.size) {
     await $`zx config/createSVGFont.mjs`;
     await $`cd src/icons; zip -r ../../orbit-svgs.zip ./svg; cd -`;

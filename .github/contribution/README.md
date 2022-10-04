@@ -2,40 +2,48 @@
 
 ## Table of Contents
 
-- [Development Information](#development-information)
-  - [Requirements](#requirements)
-  - [Technologies we use](#technologies-we-use)
-  - [Starting with development](#starting-with-development)
-  - [Testing](#testing)
-- [Contributing to the docs](./docs.md)
-- [Adding a new icon](#adding-a-new-icon)
-- [Props naming convention](#props-naming-convention)
-- [Component design](#component-design)
-- [Commits](#commits)
-- [Versioning](#versioning)
+- [Contribution guide](#contribution-guide)
+  - [Table of Contents](#table-of-contents)
+  - [Development Information](#development-information)
+    - [Requirements](#requirements)
+    - [Technologies we use](#technologies-we-use)
+    - [Starting with development](#starting-with-development)
+    - [Testing](#testing)
+    - [Unit tests](#unit-tests)
+    - [Visual regression test](#visual-regression-test)
+  - [Contributing to the docs](#contributing-to-the-docs)
+  - [Adding a new icon](#adding-a-new-icon)
+  - [Props naming convention](#props-naming-convention)
+  - [Component design](#component-design)
+  - [Commits](#commits)
+  - [Versioning](#versioning)
 
 ## Development Information
 
 ### Requirements
 
-- [Node 8.9+](https://nodejs.org/en/)
+- [Node 14.13+](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/en/)
 
 ### Technologies we use
 
 - [React](https://reactjs.org/docs/getting-started.html) for development
-- [styled-components](https://www.styled-components.com/docs) for styling
+- [Styled-components](https://www.styled-components.com/docs) for styling
 - [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for testing
+- [Cypress](https://www.cypress.io/)
+- [Storybook](https://storybook.js.org/docs/react/get-started/introduction) for development
+- [Typescript](https://www.typescriptlang.org/docs) for types
+- [Gatsby](https://www.gatsbyjs.com/docs/) for docs
 
 ### Starting with development
 
-First, you need to build tokens:
+First, you need to build the project:
 
 ```
-yarn tokens build
+yarn build
 ```
 
-You only need to do this once if you don't plan on changing tokens. Next, run Storybook:
+Next, run Storybook:
 
 ```sh
 yarn dev
@@ -77,7 +85,7 @@ If you need to update tests because of some changes in the code, you can do it b
 
 ### Visual regression test
 
-We are still working on this, we will add documentation as soon as possible.
+See our testing conventions for more information about [visual regression tests](./testing-conventions.md).
 
 ## Contributing to the docs
 

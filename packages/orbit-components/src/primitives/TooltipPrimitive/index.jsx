@@ -41,6 +41,7 @@ const TooltipPrimitive = ({
   enabled = true,
   tooltipShown,
   tabIndex = "0",
+  onShown,
   dataTest,
   id,
   renderInPortal = true,
@@ -64,11 +65,13 @@ const TooltipPrimitive = ({
   ] = useStateWithTimeout<boolean>(false, 200);
 
   const tooltipId = useRandomId();
+
   const handleIn = React.useCallback(() => {
     setRender(true);
     setShown(true);
+    if (onShown) onShown();
     clearRenderTimeout();
-  }, [clearRenderTimeout, setRender]);
+  }, [clearRenderTimeout, setRender, onShown]);
 
   const handleOut = React.useCallback(() => {
     setShown(false);
@@ -85,8 +88,9 @@ const TooltipPrimitive = ({
   );
 
   React.useEffect(() => {
-    if (tooltipShown) handleIn();
-    else {
+    if (tooltipShown) {
+      handleIn();
+    } else {
       handleOut();
     }
   }, [tooltipShown, handleIn, handleOut]);

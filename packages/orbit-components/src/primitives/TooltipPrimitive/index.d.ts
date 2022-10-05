@@ -17,6 +17,7 @@ interface Props extends Common.Global, Popper {
   readonly children?: React.ReactNode;
   readonly content: React.ReactNode;
   readonly size?: Size;
+  readonly onShown?: Common.Callback;
   readonly error?: boolean;
   readonly help?: boolean;
   readonly stopPropagation?: boolean;

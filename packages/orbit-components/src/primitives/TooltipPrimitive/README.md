@@ -34,7 +34,7 @@ Table below contains all types of the props available in the TooltipPrimitive co
 | noFlip               | `boolean`                     | `false`  | Turns off automatic flipping of the Tooltip when there is not enough space                                                 |
 | offset               | `[number, number]`            | `[0, 5]` | Set offset `[vertical, horizontal]` for Tooltip                                                                            |
 | tabIndex             | `string \| number`            | `"0"`    | Specifies the tab order of an element                                                                                      |
-| onShown              | `() => void \| Promise<void>` |          | Callback for Tooltip, which will be fired when it will be shown                                                            |
+| onShow               | `() => void \| Promise<void>` |          | Callback for Tooltip, which will be fired when it is shown                                                                 |
 
 ## size
 

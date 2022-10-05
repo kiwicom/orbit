@@ -41,7 +41,7 @@ const TooltipPrimitive = ({
   enabled = true,
   tooltipShown,
   tabIndex = "0",
-  onShown,
+  onShow,
   dataTest,
   id,
   renderInPortal = true,
@@ -69,9 +69,9 @@ const TooltipPrimitive = ({
   const handleIn = React.useCallback(() => {
     setRender(true);
     setShown(true);
-    if (onShown) onShown();
+    if (onShow) onShow();
     clearRenderTimeout();
-  }, [clearRenderTimeout, setRender, onShown]);
+  }, [clearRenderTimeout, setRender, onShow]);
 
   const handleOut = React.useCallback(() => {
     setShown(false);

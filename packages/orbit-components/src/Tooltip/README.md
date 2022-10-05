@@ -36,6 +36,7 @@ Table below contains all types of the props available in the Tooltip component.
 | offset               | `[number, number]`        | `[0, 5]` | Set offset `[vertical, horizontal]` for Tooltip                                                                                                  |
 
 | tabIndex | `string \| number` | `"0"` | Specifies the tab order of an element |
+| onShow | `() => void \| () => Promise<void>` | | Callback when Tooltip is shown |
 
 ## enum
 

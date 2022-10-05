@@ -11,6 +11,7 @@ import type { Props } from ".";
 const Tooltip = ({
   children,
   enabled = true,
+  onShow,
   tabIndex = "0",
   dataTest,
   size = SIZE_OPTIONS.SMALL,
@@ -29,6 +30,7 @@ const Tooltip = ({
       dataTest={dataTest}
       id={id}
       tabIndex={tabIndex}
+      onShow={onShow}
       enabled={enabled}
       content={content}
       size={size}

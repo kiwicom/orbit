@@ -25,7 +25,7 @@ export type Props = {|
   +children?: React.Node,
   +content: React.Node,
   +size?: Sizes,
-  +onShown?: () => void | Promise<any>,
+  +onShow?: () => void | Promise<any>,
   +error?: boolean,
   +help?: boolean,
   +stopPropagation?: boolean,

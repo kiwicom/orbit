@@ -18,6 +18,7 @@ export type Props = {|
   +children?: React.Node,
   +content: React.Node,
   +size?: Sizes,
+  +onShow?: () => void | Promise<void>,
   +enabled?: boolean,
   +renderInPortal?: boolean,
   +stopPropagation?: boolean,

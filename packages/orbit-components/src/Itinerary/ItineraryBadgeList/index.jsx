@@ -7,6 +7,7 @@ import themeDefault from "../../defaultTheme";
 import { left } from "../../utils/rtl";
 import BadgeList from "../../BadgeList";
 import { useWidth } from "../context";
+import ItineraryBadgeListItem from "./ItineraryBadgeListItem";
 
 import type { Props } from ".";
 
@@ -33,3 +34,4 @@ const ItineraryBadgeList = ({ children, spaceAfter, ...props }: Props): React.No
 };
 
 export default ItineraryBadgeList;
+export { ItineraryBadgeListItem };

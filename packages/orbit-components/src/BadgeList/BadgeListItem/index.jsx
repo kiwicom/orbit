@@ -66,7 +66,7 @@ StyledVerticalBadge.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledVerticalBadgeContent: any = styled.div`
+export const StyledBadgeContent: any = styled.div`
   ${({ theme }) => css`
     display: inline-flex;
     align-items: center;
@@ -83,7 +83,7 @@ export const StyledVerticalBadgeContent: any = styled.div`
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledVerticalBadgeContent.defaultProps = {
+StyledBadgeContent.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -99,11 +99,11 @@ const BadgeListItem = ({
       <StyledVerticalBadge $type={type} aria-hidden>
         {React.isValidElement(icon) && React.cloneElement(icon, { color: getIconColor(type) })}
       </StyledVerticalBadge>
-      <StyledVerticalBadgeContent>
+      <StyledBadgeContent>
         <Text type="secondary" size="small" as="span" strikeThrough={strikeThrough}>
           {children}
         </Text>
-      </StyledVerticalBadgeContent>
+      </StyledBadgeContent>
     </StyledBadgeListItem>
   );
 };

@@ -17,6 +17,6 @@ export type Props = {|
 declare export var getIconColor: (type: Type) => string;
 declare export var StyledBadgeListItem: StyledComponent<any, any, HTMLDivElement>;
 declare export var StyledVerticalBadge: StyledComponent<any, any, HTMLDivElement>;
-declare export var StyledVerticalBadgeContent: StyledComponent<any, any, HTMLDivElement>;
+declare export var StyledBadgeContent: StyledComponent<any, any, HTMLDivElement>;
 
 declare export default React.ComponentType<Props>;

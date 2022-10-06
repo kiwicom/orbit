@@ -19,13 +19,13 @@ declare const getIconColor: (type: Type) => string;
 declare const BadgeListItem: React.FunctionComponent<Props>;
 declare const StyledBadgeListItem: AnyStyledComponent;
 declare const StyledVerticalBadge: AnyStyledComponent;
-declare const StyledVerticalBadgeContent: AnyStyledComponent;
+declare const StyledBadgeContent: AnyStyledComponent;
 
 export {
   BadgeListItem,
   StyledBadgeListItem,
   StyledVerticalBadge,
   getIconColor,
-  StyledVerticalBadgeContent,
+  StyledBadgeContent,
   BadgeListItem as default,
 };

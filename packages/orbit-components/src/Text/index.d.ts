@@ -2,6 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import { AnyStyledComponent } from "styled-components";
 
 import * as Common from "../common/common";
 
@@ -33,4 +34,5 @@ export interface Props extends Common.Global, Common.SpaceAfter {
 }
 
 declare const Text: React.FunctionComponent<Props>;
-export { Text, Text as default };
+declare const StyledText: AnyStyledComponent;
+export { Text, Text as default, StyledText };

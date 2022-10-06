@@ -2,6 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import { AnyStyledComponent } from "styled-components";
 
 import { Carrier } from "../../CarrierLogo";
 import * as Common from "../../common/common";
@@ -17,4 +18,5 @@ export interface Props extends Common.Global {
 }
 
 declare const BadgePrimitive: React.FunctionComponent<Props>;
-export { BadgePrimitive, BadgePrimitive as default };
+declare const StyledBadge: AnyStyledComponent;
+export { BadgePrimitive, BadgePrimitive as default, StyledBadge };

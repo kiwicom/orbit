@@ -42,6 +42,7 @@ export {
   ItinerarySeparator,
   ItineraryStatus,
   ItineraryBadgeList,
+  ItineraryBadgeListItem,
   ItinerarySegmentDetail,
   ItinerarySegmentStop,
 } from "./Itinerary";

@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import type { spaceAfter } from "../../common/getSpacingToken";
-import type { Globals } from "../../common/common";
+import type { Globals } from "../../common/common.js.flow";
 import type { Props as CommonBadgeListItemProps } from "../../BadgeList/BadgeListItem";
 
 export type Props = {|

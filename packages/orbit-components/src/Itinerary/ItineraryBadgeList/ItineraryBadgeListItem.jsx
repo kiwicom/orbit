@@ -34,7 +34,7 @@ const ItineraryBadgeListItem = ({
         <Stack direction="column" spacing="XXSmall">
           <Text
             withBackground={withBackground}
-            type={withBackground ? type : "secondary"}
+            type={withBackground && type !== "neutral" ? type : "secondary"}
             weight={withBackground ? "medium" : "normal"}
             size="small"
             as="span"

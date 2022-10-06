@@ -1,32 +1,19 @@
----
-title: For developers
-description: How to use our components from their npm package.
----
+# Orbit-components
 
-**`Orbit-components` is a React component library to help developers build travel products.**
-
----
-
-## Orbit Mission
-
-Orbit aims to bring order and consistency to all of our products and processes.
-We elevate the user experience and increase the speed and efficiency of how we design and build products.
+Orbit-components is a React component library to help developers build travel products.
+Orbit aims to bring order and consistency to all of our products and processes. We elevate the user experience and increase the speed and efficiency of how we design and build products.
 
 ## Installation
 
 `orbit-components` is served as an [npm package](https://www.npmjs.com/package/@kiwicom/orbit-components).
 
-Add them to your project by running:
+Run [npm](https://www.npmjs.com/) to add the package to your project:
 
-```shell
-// with npm
-npm install @kiwicom/orbit-components
+`npm install --save @kiwicom/orbit-components`
 
-// with yarn
-yarn add @kiwicom/orbit-components
-```
+or do so with [Yarn](https://yarnpkg.com/):
 
-Don't forget to also install [styled-components](https://github.com/styled-components/styled-components/) `^4.0.0`.
+`yarn add @kiwicom/orbit-components`
 
 ## Usage
 
@@ -53,10 +40,6 @@ Don't forget to also install [styled-components](https://github.com/styled-compo
    <Alert>Hello World!</Alert>;
    ```
 
-If you want to use a custom theme or dictionary inside your project,
-it's necessary to wrap your app in `<ThemeProvider>`.
-See [more info about the theme provider](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/ThemeProvider/README.md).
-
 For a live preview, check out our [Storybook](https://kiwicom.github.io/orbit/) or [orbit.kiwi](https://orbit.kiwi).
 
 You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io/s/github/designkiwicom/orbit-sandbox).
@@ -74,14 +57,6 @@ npm install @types/styled-components --save-dev
 yarn add @types/styled-components -D
 ```
 
-## Main Sections
-
-- [Components](/components/action/button/)
-- [Icons](/foundation/icons/)
-- [Right to left languages](/development/utilities/rtl-languages/)
-- [Theming](https://github.com/kiwicom/orbit/blob/master/.github/theming.md)
-- [Dictionary](/development/guides/dictionary/)
-
 ## Contributing
 
 We're working on making this project a fully open source.
@@ -93,17 +68,3 @@ but please use the correct template.
 
 Please check out our [contribution guide](https://github.com/kiwicom/orbit/tree/master/.github/contribution/README.md).
 It includes contribution guidelines and information on how to run and develop the project.
-
-### Feedback
-
-We want to provide only components of the highest quality.
-We can't do that without your feedback.
-If you have any suggestions about what we can do to improve components,
-please report it directly as an [issue](https://github.com/kiwicom/orbit/issues/new/choose).
-Kiwi.com users can also slack us at **\#plz-orbit**.
-
-## More to explore
-
-- [Design tokens](/foundation/design-tokens/)
-- [Icons](/foundation/icons/)
-- [Components contribution guide](https://github.com/kiwicom/orbit-components/blob/master/.github/contributing.md)

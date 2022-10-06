@@ -9,7 +9,7 @@ import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
 import { right } from "../../utils/rtl";
 
-import type { Props } from ".";
+import type { Props, Type } from ".";
 
 const getBackground = ({ theme, $type }) => {
   const tokens = {
@@ -22,12 +22,12 @@ const getBackground = ({ theme, $type }) => {
   return tokens[$type];
 };
 
-const getIconColor = type => {
+export const getIconColor = (type: Type): string => {
   if (type === TYPE_OPTIONS.NEUTRAL) return ICON_COLORS.SECONDARY;
   return type;
 };
 
-const StyledBadgeListItem = styled.li`
+export const StyledBadgeListItem: any = styled.li`
   ${({ theme }) => css`
     display: flex;
     flex-direction: row;
@@ -43,7 +43,7 @@ StyledBadgeListItem.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledVerticalBadge = styled.div`
+export const StyledVerticalBadge: any = styled.div`
   ${({ theme }) => css`
     background: ${getBackground};
     display: flex;
@@ -66,7 +66,7 @@ StyledVerticalBadge.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledVerticalBadgeContent = styled.div`
+export const StyledVerticalBadgeContent: any = styled.div`
   ${({ theme }) => css`
     display: inline-flex;
     align-items: center;

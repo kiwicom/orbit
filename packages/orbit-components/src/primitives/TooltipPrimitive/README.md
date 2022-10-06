@@ -18,22 +18,23 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the TooltipPrimitive component.
 
-| Name                 | Type                      | Default  | Description                                                                                                                |
-| :------------------- | :------------------------ | :------- | :------------------------------------------------------------------------------------------------------------------------- |
-| **children**         | `React.Node`              |          | The reference element where the TooltipPrimitive will appear.                                                              |
-| **content**          | `React.Node`              |          | The content to display in the TooltipPrimitive.                                                                            |
-| dataTest             | `string`                  |          | Optional prop for testing purposes.                                                                                        |
-| id                   | `string`                  |          | Set id for `TooltipPrimitive`                                                                                              |
-| enabled              | `boolean`                 | `true`   | Enable render of tooltipPrimitive                                                                                          |
-| renderInPortal       | `boolean`                 | `true`   | Optional prop, set it to `false` if you're rendering TooltipPrimitive inside a custom portal, defaults to `true`           |
-| block                | `boolean`                 | `false`  | Whether the children wrapper is inline or block. Useful when children need to take up the entire container width.          |
-| removeUnderlinedText | `boolean`                 |          | Removes underline on child component, when underline is not desired.                                                       |
-| size                 | [`size`](#size)           |          | The maximum possible size of the TooltipPrimitive.                                                                         |
-| stopPropagation      | `boolean`                 |          | If `true` the click event on children won't bubble. Useful when you use TooltipPrimitive inside another clickable element. |
-| placement            | [`placement`](#placement) | `auto`   | 12 different placements to choose from                                                                                     |
-| noFlip               | `boolean`                 | `false`  | Turns off automatic flipping of the Tooltip when there is not enough space                                                 |
-| offset               | `[number, number]`        | `[0, 5]` | Set offset `[vertical, horizontal]` for Tooltip                                                                            |
-| tabIndex             | `string \| number`        | `"0"`    | Specifies the tab order of an element                                                                                      |
+| Name                 | Type                          | Default  | Description                                                                                                                |
+| :------------------- | :---------------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------- |
+| **children**         | `React.Node`                  |          | The reference element where the TooltipPrimitive will appear.                                                              |
+| **content**          | `React.Node`                  |          | The content to display in the TooltipPrimitive.                                                                            |
+| dataTest             | `string`                      |          | Optional prop for testing purposes.                                                                                        |
+| id                   | `string`                      |          | Set id for `TooltipPrimitive`                                                                                              |
+| enabled              | `boolean`                     | `true`   | Enable render of tooltipPrimitive                                                                                          |
+| renderInPortal       | `boolean`                     | `true`   | Optional prop, set it to `false` if you're rendering TooltipPrimitive inside a custom portal, defaults to `true`           |
+| block                | `boolean`                     | `false`  | Whether the children wrapper is inline or block. Useful when children need to take up the entire container width.          |
+| removeUnderlinedText | `boolean`                     |          | Removes underline on child component, when underline is not desired.                                                       |
+| size                 | [`size`](#size)               |          | The maximum possible size of the TooltipPrimitive.                                                                         |
+| stopPropagation      | `boolean`                     |          | If `true` the click event on children won't bubble. Useful when you use TooltipPrimitive inside another clickable element. |
+| placement            | [`placement`](#placement)     | `auto`   | 12 different placements to choose from                                                                                     |
+| noFlip               | `boolean`                     | `false`  | Turns off automatic flipping of the Tooltip when there is not enough space                                                 |
+| offset               | `[number, number]`            | `[0, 5]` | Set offset `[vertical, horizontal]` for Tooltip                                                                            |
+| tabIndex             | `string \| number`            | `"0"`    | Specifies the tab order of an element                                                                                      |
+| onShow               | `() => void \| Promise<void>` |          | Callback for Tooltip, which will be fired when it is shown                                                                 |
 
 ## size
 

@@ -93,6 +93,7 @@ export { default as Separator } from "./Separator";
 export { default as ServiceLogo } from "./ServiceLogo";
 export { default as SkipLink } from "./SkipLink";
 export { default as SkipNavigation } from "./SkipNavigation";
+export { default as SegmentedSwitch } from "./SegmentedSwitch";
 export {
   SmartPassV1,
   SmartPassV2,

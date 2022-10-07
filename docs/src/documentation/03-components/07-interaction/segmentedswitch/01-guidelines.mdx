@@ -1,0 +1,44 @@
+---
+title: Guidelines
+---
+
+<ReactExample exampleId="SegmentedSwitch-default" />
+
+## When to use
+
+- To enable users to switch between two views of settings or sort elements.
+
+## When not to use
+
+- With only one single-select segmented button.
+- To present multiple options---use a [choice group](/components/input/choicegroup/).
+
+## Component status
+
+<ComponentStatus component="SegmentedSwitch" />
+
+## Behavior
+
+Currently SegmentedSwitch allows to have 2 segments. Each segment is clearly divided and contains label text.
+It's possible to have one segment as checked by default via `defaultCheck` property.
+It supports `Help` and `Error` states, that could help you to provide more information to the user.
+Tab navigation is similar to radio input elements, first element selected by `Tab`, switching between elements is happening by arrow keys.
+
+<GuidelinesSideBySide>
+
+<Do>
+
+- Keep labels short and consistent in length.
+- Icons can be used in place of labels, but they must clearly communicate their meaning.
+- Avoid mixing icon-only and text-only segments.
+
+</Do>
+
+<Dont>
+
+- Don’t allow segments to wrap onto a new line.
+- Avoid mixing icon-only and text-only segments.
+
+</Dont>
+
+</GuidelinesSideBySide>

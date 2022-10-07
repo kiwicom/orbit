@@ -629,3 +629,8 @@
   docs: Planned
 - component: SegmentedSwitch
   android: Released
+  ios: Planned
+  figma: Released
+  react: Released
+  docs: Released
+  group: Interaction

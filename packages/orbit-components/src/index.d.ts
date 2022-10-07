@@ -67,6 +67,7 @@ export { default as Skeleton } from "./Skeleton";
 export { Sticky } from "./deprecated/Sticky";
 export { Separator } from "./Separator";
 export { SkipNavigation } from "./SkipNavigation";
+export { SegmentedSwitch } from "./SegmentedSwitch";
 export { SkipLink } from "./SkipLink";
 export { ServiceLogo } from "./ServiceLogo";
 export { Textarea } from "./Textarea";

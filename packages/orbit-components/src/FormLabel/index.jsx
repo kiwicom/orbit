@@ -50,13 +50,16 @@ const FormLabel: any = styled(
     inlineLabel,
     labelRef,
   }: Props) => (
-    <span className={className} data-test={dataTest} id={id} ref={labelRef}>
+    <span
+      className={className}
+      data-test={dataTest}
+      id={id}
+      ref={labelRef}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {!inlineLabel && (error || help) && (
-        <StyledInputErrorIcWrapper
-          ref={iconRef}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
+        <StyledInputErrorIcWrapper ref={iconRef}>
           {error && <AlertCircle ariaLabel="error" color="critical" size="small" />}
           {!error && help && <InformationCircle ariaLabel="help" color="info" size="small" />}
         </StyledInputErrorIcWrapper>
@@ -72,7 +75,7 @@ const FormLabel: any = styled(
   ),
 )`
   ${({ theme, filled, disabled }) => css`
-    display: flex;
+    display: inline-flex;
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeFormLabel};
     font-weight: ${theme.orbit.fontWeightMedium};

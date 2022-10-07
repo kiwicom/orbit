@@ -18,6 +18,8 @@ import type { Props } from ".";
 const ChevronIcon = styled(ChevronDown)`
   transform: ${({ expanded }) => expanded && "rotate(-180deg)"};
   transition: ${transition(["transform"], "fast", "ease-in-out")};
+  width: 20px;
+  height: 20px;
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

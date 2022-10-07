@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.7.1...@kiwicom/orbit-components@3.8.0) (2022-10-07)
+
+
+### Bug Fixes
+
+* **FormLabel:** use onMouseEnter and onMouseLeave on wrapper ([8d5acb1](https://github.com/kiwicom/orbit/commit/8d5acb16e72764064de83755d2ef039eed06c7d8))
+* **ItinerarySegmentStop:** add missing flex shrink ([#3581](https://github.com/kiwicom/orbit/issues/3581)) ([75b1f4c](https://github.com/kiwicom/orbit/commit/75b1f4c6de54161f953725c30457350974d94ba6))
+
+
+### Features
+
+* **Badge:** export StyledBadge type ([13fe6d3](https://github.com/kiwicom/orbit/commit/13fe6d3e8690845ced30ad909e579778cdb9592a))
+* **Itinerary:** add ItineraryBadgeListItem ([2972f97](https://github.com/kiwicom/orbit/commit/2972f97ef2bd914a03164c0066d33e0328dd07cd))
+* **List:** export IconContainer and Item subcomponents ([72a904d](https://github.com/kiwicom/orbit/commit/72a904d57c2585e8a36babfe5b4b63e913167fcc))
+* **SegmentedSwitch:** new SegmentedSwitch component ([5d3b538](https://github.com/kiwicom/orbit/commit/5d3b5383b3942711f6dcd19ecc1106852a14e875))
+* **Text:** export StyledText type ([b18f3fb](https://github.com/kiwicom/orbit/commit/b18f3fbe867cb660309d47fcccc0cc4aa59ebf82))
+* **Tooltip:** add onShown prop ([b4f152e](https://github.com/kiwicom/orbit/commit/b4f152e2dd24f348f2079a4c1699637157c9bcee))
+* **TooltipPrimitive:** add onShown prop ([8c21377](https://github.com/kiwicom/orbit/commit/8c2137700e003779ffffc133fbde720041f6c3f0))
+
+
+
+
+
 ## [3.7.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.7.0...@kiwicom/orbit-components@3.7.1) (2022-09-23)
 
 

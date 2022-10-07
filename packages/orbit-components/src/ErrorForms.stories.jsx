@@ -46,7 +46,7 @@ export const Error = (): React.Node => {
   const required = boolean("required", true);
 
   return (
-    <Stack>
+    <Stack direction="column">
       <InputField
         size={size}
         error={<TextLink tabIndex={0}>{error}</TextLink>}

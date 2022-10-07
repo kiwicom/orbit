@@ -15,9 +15,15 @@ export default {
 
 export const Default = (): React.Node => {
   const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.XXXSMALL);
+  const overflowElevation = boolean("overflowElevation", true);
+  const elevationColor = text("elevationColor", "#000");
 
   return (
-    <HorizontalScroll spacing={spacing}>
+    <HorizontalScroll
+      spacing={spacing}
+      overflowElevation={overflowElevation}
+      elevationColor={elevationColor}
+    >
       {Array(...Array(10)).map((_, key) => (
         <Box
           // eslint-disable-next-line react/no-array-index-key

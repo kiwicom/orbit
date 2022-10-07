@@ -10,6 +10,8 @@ import useScrollBox from "./useScroll";
 
 import type { Props, ScrollSnap } from ".";
 
+const TRIGGER_OFFSET = 20;
+
 const shadowMixin = css`
   content: "";
   position: absolute;
@@ -53,7 +55,7 @@ const StyledWrapper = styled.div`
         box-shadow: -5px 0px 20px 20px ${elevationColor};
       }
     `}
-  `}
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
@@ -83,7 +85,7 @@ const StyledOverflow = styled.div`
     ::-webkit-scrollbar {
       display: none;
     }
-  `}
+  `};
 `;
 
 const StyledContainer = styled.div`
@@ -92,7 +94,7 @@ const StyledContainer = styled.div`
     width: 100%;
     display: inline-flex;
     pointer-events: ${isDragging && "none"};
-  `}
+  `};
 `;
 
 const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
@@ -112,11 +114,14 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
     },
     ref,
   ): React.Node => {
-    const scrollWrapperRef = React.useRef<HTMLElement | null>(null);
-    const { isDragging, reachedStart, reachedEnd } = useScrollBox(scrollWrapperRef);
+    const scrollWrapperRef: {| current: HTMLElement | null |} = React.useRef(null);
     const [isOverflowing, setOverflowing] = React.useState(false);
+    const [reachedStart, setReachedStart] = React.useState(true);
+    const [reachedEnd, setReachedEnd] = React.useState(false);
     const containerRef = React.useRef<HTMLElement | null>(null);
+    const { isDragging } = useScrollBox(scrollWrapperRef);
     const theme = useTheme();
+    const scrollEl = scrollWrapperRef.current;
 
     const handleOverflow = React.useCallback(() => {
       if (scrollWrapperRef.current?.scrollWidth && containerRef.current?.offsetWidth) {
@@ -132,11 +137,37 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
       }
     }, [onOverflow]);
 
+    const handleScroll = React.useCallback(() => {
+      if (scrollEl) {
+        const scrollWidth = scrollEl.scrollWidth - scrollEl.clientWidth;
+        const { scrollLeft } = scrollEl;
+        if (scrollLeft - TRIGGER_OFFSET <= 0) {
+          setReachedStart(true);
+        } else {
+          setReachedStart(false);
+        }
+
+        if (scrollLeft + TRIGGER_OFFSET >= scrollWidth) {
+          setReachedEnd(true);
+        } else {
+          setReachedEnd(false);
+        }
+      }
+    }, [scrollEl]);
+
+    const handleResize = React.useCallback(() => {
+      handleOverflow();
+      handleScroll();
+    }, [handleOverflow, handleScroll]);
+
     React.useEffect(() => {
       handleOverflow();
-      window.addEventListener("resize", handleOverflow);
-      return () => window.addEventListener("resize", handleOverflow);
-    }, [handleOverflow]);
+
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, [handleOverflow, handleResize]);
 
     return (
       <StyledWrapper
@@ -156,6 +187,7 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
           $scrollSnap={scrollSnap}
           scrollPadding={scrollPadding}
           isDragging={isDragging}
+          onScroll={handleScroll}
           ref={scrollWrapperRef}
         >
           <StyledContainer isDragging={isDragging}>

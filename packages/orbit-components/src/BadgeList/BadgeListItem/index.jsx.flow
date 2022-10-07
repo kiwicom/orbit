@@ -1,14 +1,22 @@
 // @flow
 import * as React from "react";
+import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
+
+export type Type = "neutral" | "info" | "success" | "warning" | "critical";
 
 export type Props = {|
   +children: React.Node,
   +icon: React.Element<any>,
   +strikeThrough?: boolean,
-  +type?: "neutral" | "info" | "success" | "warning" | "critical",
+  +type?: Type,
   ...Globals,
 |};
+
+declare export var getIconColor: (type: Type) => string;
+declare export var StyledBadgeListItem: StyledComponent<any, any, HTMLDivElement>;
+declare export var StyledVerticalBadge: StyledComponent<any, any, HTMLDivElement>;
+declare export var StyledBadgeContent: StyledComponent<any, any, HTMLDivElement>;
 
 declare export default React.ComponentType<Props>;

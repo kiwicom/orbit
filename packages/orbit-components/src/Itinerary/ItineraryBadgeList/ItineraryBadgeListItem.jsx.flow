@@ -1,0 +1,16 @@
+// @flow
+import * as React from "react";
+
+import type { spaceAfter } from "../../common/getSpacingToken";
+import type { Globals } from "../../common/common.js.flow";
+import type { Props as CommonBadgeListItemProps } from "../../BadgeList/BadgeListItem";
+
+export type Props = {|
+  cancelledValue?: React.Node,
+  withBackground?: boolean,
+  ...CommonBadgeListItemProps,
+  ...Globals,
+  ...spaceAfter,
+|};
+
+declare export default React.ComponentType<Props>;

@@ -70,6 +70,7 @@ export {
   default as Itinerary,
   ItinerarySegment,
   ItinerarySegmentBanner,
+  ItineraryBadgeListItem,
   ItinerarySeparator,
   ItineraryStatus,
   ItineraryBadgeList,

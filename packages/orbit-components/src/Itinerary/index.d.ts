@@ -4,6 +4,7 @@ import ItinerarySegment from "./ItinerarySegment";
 import ItineraryStatus from "./ItineraryStatus";
 import ItinerarySeparator from "./ItinerarySeparator";
 import ItineraryBadgeList from "./ItineraryBadgeList";
+import ItineraryBadgeListItem from "./ItineraryBadgeList/ItineraryBadgeListItem";
 import ItinerarySegmentStop from "./ItinerarySegment/ItinerarySegmentStop";
 import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
 import ItinerarySegmentBanner from "./ItinerarySegment/ItinerarySegmentBanner";
@@ -57,6 +58,7 @@ export {
   ItinerarySeparator,
   ItinerarySegmentStop,
   ItinerarySegmentBanner,
+  ItineraryBadgeListItem,
   ItinerarySegmentDetail,
   ItineraryStatus,
   ItineraryBadgeList,

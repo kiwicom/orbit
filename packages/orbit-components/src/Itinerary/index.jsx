@@ -3,7 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import ItinerarySegmentBanner from "./ItinerarySegment/ItinerarySegmentBanner";
-import ItineraryBadgeList from "./ItineraryBadgeList";
+import ItineraryBadgeList, { ItineraryBadgeListItem } from "./ItineraryBadgeList";
 import ItinerarySegment from "./ItinerarySegment";
 import ItinerarySeparator from "./ItinerarySeparator";
 import ItineraryStatus from "./ItineraryStatus";
@@ -39,6 +39,7 @@ export {
   ItinerarySegmentStop,
   ItinerarySeparator,
   ItineraryBadgeList,
+  ItineraryBadgeListItem,
   ItineraryStatus,
 };
 export default Itinerary;

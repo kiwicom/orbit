@@ -9,7 +9,7 @@ import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
 import { right } from "../../utils/rtl";
 
-import type { Props } from ".";
+import type { Props, Type } from ".";
 
 const getBackground = ({ theme, $type }) => {
   const tokens = {
@@ -22,12 +22,12 @@ const getBackground = ({ theme, $type }) => {
   return tokens[$type];
 };
 
-const getIconColor = type => {
+export const getIconColor = (type: Type): string => {
   if (type === TYPE_OPTIONS.NEUTRAL) return ICON_COLORS.SECONDARY;
   return type;
 };
 
-const StyledBadgeListItem = styled.li`
+export const StyledBadgeListItem: any = styled.li`
   ${({ theme }) => css`
     display: flex;
     flex-direction: row;
@@ -43,7 +43,7 @@ StyledBadgeListItem.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledVerticalBadge = styled.div`
+export const StyledVerticalBadge: any = styled.div`
   ${({ theme }) => css`
     background: ${getBackground};
     display: flex;
@@ -66,7 +66,7 @@ StyledVerticalBadge.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledVerticalBadgeContent = styled.div`
+export const StyledBadgeContent: any = styled.div`
   ${({ theme }) => css`
     display: inline-flex;
     align-items: center;
@@ -83,7 +83,7 @@ const StyledVerticalBadgeContent = styled.div`
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
-StyledVerticalBadgeContent.defaultProps = {
+StyledBadgeContent.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -99,11 +99,11 @@ const BadgeListItem = ({
       <StyledVerticalBadge $type={type} aria-hidden>
         {React.isValidElement(icon) && React.cloneElement(icon, { color: getIconColor(type) })}
       </StyledVerticalBadge>
-      <StyledVerticalBadgeContent>
+      <StyledBadgeContent>
         <Text type="secondary" size="small" as="span" strikeThrough={strikeThrough}>
           {children}
         </Text>
-      </StyledVerticalBadgeContent>
+      </StyledBadgeContent>
     </StyledBadgeListItem>
   );
 };

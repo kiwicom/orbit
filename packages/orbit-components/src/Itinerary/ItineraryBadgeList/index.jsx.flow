@@ -4,6 +4,7 @@ import type { StyledComponent } from "styled-components";
 
 import type { spaceAfter } from "../../common/getSpacingToken";
 import type { Props as BadgeListProps } from "../../BadgeList";
+import type { Props as ItineraryBadgeListItemProps } from "./ItineraryBadgeListItem";
 
 export type Props = {|
   +children: React.Node,
@@ -12,4 +13,5 @@ export type Props = {|
 |};
 
 declare export var StyledWrapper: StyledComponent<any, any, HTMLElement>;
+declare export var ItineraryBadgeListItem: React.ComponentType<ItineraryBadgeListItemProps>;
 declare export default React.ComponentType<Props>;

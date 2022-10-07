@@ -2,10 +2,11 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import { AnyStyledComponent } from "styled-components";
 
 import * as Common from "../../common/common";
 
-type Type = "neutral" | "info" | "success" | "warning" | "critical";
+export type Type = "neutral" | "info" | "success" | "warning" | "critical";
 
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
@@ -14,6 +15,17 @@ export interface Props extends Common.Global {
   readonly icon: React.ReactNode;
 }
 
+declare const getIconColor: (type: Type) => string;
 declare const BadgeListItem: React.FunctionComponent<Props>;
+declare const StyledBadgeListItem: AnyStyledComponent;
+declare const StyledVerticalBadge: AnyStyledComponent;
+declare const StyledBadgeContent: AnyStyledComponent;
 
-export { BadgeListItem, BadgeListItem as default };
+export {
+  BadgeListItem,
+  StyledBadgeListItem,
+  StyledVerticalBadge,
+  getIconColor,
+  StyledBadgeContent,
+  BadgeListItem as default,
+};

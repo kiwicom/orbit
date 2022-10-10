@@ -457,7 +457,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorPlaceholderInput</name>
-          <value>#4F5E71</value>
+          <value>#697D95</value>
         </token>
         <token>
           <name>colorPlaceholderInputError</name>
@@ -465,7 +465,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorPlaceholderInputFile</name>
-          <value>#4F5E71</value>
+          <value>#697D95</value>
         </token>
         <token>
           <name>colorPlaceholderInputFileError</name>
@@ -813,7 +813,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundTableHover</name>
-          <value>#BAC7D5</value>
+          <value>#E8EDF1</value>
         </token>
         <token>
           <name>backgroundTag</name>

@@ -58,7 +58,7 @@ const Svg = ({
   rowHeight = 21,
   rowOffset = 20,
   rows,
-  color = "paletteCloudDark",
+  color = "paletteCloudNormal",
   title = "loading",
   viewBox,
   height,

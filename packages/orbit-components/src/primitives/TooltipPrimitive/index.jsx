@@ -111,6 +111,7 @@ const TooltipPrimitive = ({
       error={error}
       help={help}
       tooltipId={id || tooltipId}
+      onClick={handleClick}
       onClose={handleOut}
       onCloseMobile={handleOutMobile}
       onEnter={handleIn}

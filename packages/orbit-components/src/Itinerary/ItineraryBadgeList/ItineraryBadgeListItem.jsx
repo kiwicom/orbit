@@ -28,7 +28,7 @@ const ItineraryBadgeListItem = ({
       </StyledVerticalBadge>
       <StyledBadgeContent
         css={css`
-          margin-top: 4px;
+          margin-top: ${cancelledValue ? `4px` : ""};
         `}
       >
         <Stack direction="column" spacing="XXSmall">

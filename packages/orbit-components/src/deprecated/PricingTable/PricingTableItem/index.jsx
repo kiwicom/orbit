@@ -136,7 +136,7 @@ export const StyledListWrapper: any = styled.div`
     css`
       width: 100%;
       ${ListItem} {
-        border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
+        border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
         padding: ${theme.orbit.spaceSmall};
         align-items: center;
 

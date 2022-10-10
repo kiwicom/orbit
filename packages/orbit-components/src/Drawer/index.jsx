@@ -45,7 +45,7 @@ const StyledDrawer = styled.div`
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: ${shown ? convertHexToRgba(theme.orbit.paletteInkNormal, 50) : "transparent"};
+    background-color: ${shown ? convertHexToRgba(theme.orbit.paletteInkDark, 50) : "transparent"};
     z-index: ${theme.orbit.zIndexDrawer};
     transition: ${transition(["background-color"], "fast", "ease-in-out")};
   `}

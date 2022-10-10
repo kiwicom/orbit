@@ -17,7 +17,7 @@ import { resolveStepBorder } from "./helpers";
 
 const StyledBorder = styled.div`
   ${({ theme }) => css`
-    border-top: 1px solid ${theme.orbit.paletteCloudDark};
+    border-top: 1px solid ${theme.orbit.paletteCloudNormal};
     position: absolute;
     bottom: 0px;
     width: 100%;

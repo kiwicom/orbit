@@ -1,17 +1,7 @@
-import type {
-  Palette,
-  ProductColor,
-  WhiteColor,
-  StatusColor,
-  BundleColor,
-  SocialColor,
-  InkColor,
-  CloudColor,
-} from "./palette";
-import { Base } from "./foundation";
+import { Base, palette } from "./foundation";
 
 export type Foundation = {
-  palette: Palette;
+  palette: typeof palette;
   base: Base;
 };
 
@@ -45,7 +35,6 @@ export type Tokens = {
   colorTextAlertWarning: string;
   colorAlertIconCritical: string;
   colorTextAlertCritical: string;
-  colorTextAlertLink: string;
   colorTextButtonFilled: string;
   colorTextButtonFilledHover: string;
   colorTextButtonFilledActive: string;
@@ -453,18 +442,17 @@ export type Tokens = {
   paletteCloudNormalHover: string;
   paletteCloudNormalActive: string;
   paletteCloudDark: string;
-  paletteCloudDarker: string;
-  paletteCloudDarkerHover: string;
-  paletteCloudDarkerActive: string;
-  paletteInkLighter: string;
-  paletteInkLighterHover: string;
-  paletteInkLighterActive: string;
+  paletteCloudDarkHover: string;
+  paletteCloudDarkActive: string;
   paletteInkLight: string;
   paletteInkLightHover: string;
   paletteInkLightActive: string;
   paletteInkNormal: string;
   paletteInkNormalHover: string;
   paletteInkNormalActive: string;
+  paletteInkDark: string;
+  paletteInkDarkHover: string;
+  paletteInkDarkActive: string;
   paletteOrangeLight: string;
   paletteOrangeLightHover: string;
   paletteOrangeLightActive: string;
@@ -526,16 +514,16 @@ export type ThemePaletteColors = {
 };
 
 type CustomPalette = {
-  product?: Partial<ProductColor>;
-  white?: Partial<WhiteColor>;
-  cloud?: Partial<CloudColor>;
-  ink?: Partial<InkColor>;
-  orange?: Partial<StatusColor>;
-  red?: Partial<StatusColor>;
-  green?: Partial<StatusColor>;
-  blue?: Partial<StatusColor>;
-  social?: Partial<SocialColor>;
-  bundle?: Partial<BundleColor>;
+  product?: Partial<typeof palette["product"]>;
+  white?: Partial<typeof palette["white"]>;
+  cloud?: Partial<typeof palette["cloud"]>;
+  ink?: Partial<typeof palette["ink"]>;
+  orange?: Partial<typeof palette["orange"]>;
+  red?: Partial<typeof palette["red"]>;
+  green?: Partial<typeof palette["green"]>;
+  blue?: Partial<typeof palette["blue"]>;
+  social?: Partial<typeof palette["social"]>;
+  bundle?: Partial<typeof palette["bundle"]>;
 };
 
 type CustomBase = Partial<Base>;

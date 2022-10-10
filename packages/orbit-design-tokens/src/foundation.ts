@@ -1,4 +1,4 @@
-import basicPaletteTokens from "./palette";
+import basicPaletteTokens from "./basePalette";
 
 export interface Base {
   fontFamily: string;
@@ -32,7 +32,7 @@ export interface Base {
   lineHeight: string;
 }
 
-const palette = {
+export const palette = {
   ...basicPaletteTokens,
   social: {
     facebook: "#3B5998",

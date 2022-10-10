@@ -102,7 +102,7 @@ export const FakeInput: any = styled(({ children, className }) => (
       : theme.orbit.backgroundInput};
     font-size: ${getToken(TOKENS.fontSizeInput)};
     transition: all ${theme.orbit.durationFast} ease-in-out;
-    border-radius: 6px;
+    border-radius: ${theme.orbit.borderRadiusNormal};
     ${mq.tablet(css`
       border-radius: ${theme.orbit.borderRadiusNormal};
     `)};
@@ -316,11 +316,6 @@ export const Input: any = styled(
       color: ${theme.orbit.colorPlaceholderInput};
       /* Firefox */
       opacity: 1;
-    }
-
-    /* Internet Explorer 10-11 */
-    &:-ms-input-placeholder {
-      color: ${theme.orbit.colorPlaceholderInput};
     }
 
     /* Microsoft Edge */

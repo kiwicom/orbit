@@ -24,7 +24,7 @@ const StyledStepperInput = styled.input`
     border: 0;
     font-size: ${theme.orbit.fontSizeTextLarge};
     font-weight: ${theme.orbit.fontWeightBold};
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     text-align: center;
     min-width: 0;
 

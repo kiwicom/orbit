@@ -17,7 +17,7 @@ const StyledInput = styled.input`
     margin: 0;
   }
   &::placeholder {
-    color: ${({ theme }) => theme.orbit.paletteInkLight};
+    color: ${({ theme }) => theme.orbit.paletteInkDark};
     opacity: 0.7;
   }
   &:focus {

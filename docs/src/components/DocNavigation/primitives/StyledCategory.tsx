@@ -13,6 +13,6 @@ export const StyledCategoryName = styled.div`
     padding: 4px 0;
     font-size: 14px;
     font-weight: 500;
-    color: ${theme.orbit.paletteInkLight};
+    color: ${theme.orbit.paletteInkDark};
   `}
 `;

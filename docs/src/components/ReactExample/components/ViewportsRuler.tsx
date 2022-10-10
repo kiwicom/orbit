@@ -15,7 +15,7 @@ const StyledViewports = styled.div`
     position: relative;
     overflow: hidden;
     height: ${CELL_HEIGHT}px;
-    border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
+    border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
     button:first-child {
       border-left: none;
       border-right: none;
@@ -35,12 +35,12 @@ const StyledCell = styled.button.attrs({ type: "button" })<{
     right: 0;
     text-align: center;
     background: ${$active && theme.orbit.paletteCloudLight};
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     cursor: pointer;
     width: ${typeof $width === "number" ? `${$width}px` : $width};
     height: ${CELL_HEIGHT - 1}px;
-    border-right: 1px solid ${theme.orbit.paletteCloudDark};
-    border-left: 1px solid ${theme.orbit.paletteCloudDark};
+    border-right: 1px solid ${theme.orbit.paletteCloudNormal};
+    border-left: 1px solid ${theme.orbit.paletteCloudNormal};
     span {
       visibility: ${$active ? "visible" : "hidden"};
     }

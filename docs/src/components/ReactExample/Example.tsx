@@ -19,7 +19,7 @@ const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
     grid-template-rows: auto 1fr min-content;
     grid-template-columns: 1fr;
     border-radius: ${!isFullPage && `12px`};
-    border: ${!isFullPage && `1px solid ${theme.orbit.paletteCloudDark}`};
+    border: ${!isFullPage && `1px solid ${theme.orbit.paletteCloudNormal}`};
     overflow: hidden;
     overflow-y: auto;
 

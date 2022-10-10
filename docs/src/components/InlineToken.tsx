@@ -65,7 +65,7 @@ const StyledLabel = styled.span<{ size: "medium" | "large" }>`
 const StyledLabelVariant = styled.span<{ size: "medium" | "large" }>`
   ${({ theme, size }) => `
     font-weight: normal;
-    color: ${theme.orbit.paletteInkLight};
+    color: ${theme.orbit.paletteInkDark};
     ${
       size === "large" &&
       `

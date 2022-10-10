@@ -56,15 +56,15 @@ const StyledComponentHead = styled.th<{ $width?: number }>`
     display: grid;
     place-content: center start;
     background: ${theme.orbit.paletteCloudLight};
-    border-right: 1px solid ${theme.orbit.paletteCloudDark};
-    border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
+    border-right: 1px solid ${theme.orbit.paletteCloudNormal};
+    border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
   `};
 `;
 
 const StyledTableRow = styled.tr`
   ${({ theme }) => css`
     &:not(:last-child) {
-      border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
+      border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
     }
   `};
 `;
@@ -77,9 +77,9 @@ const StyledComponentName = styled.th<{ $width?: number }>`
     height: ${ROW_HEIGHT};
     display: grid;
     place-content: center start;
-    border-right: 1px solid ${theme.orbit.paletteCloudDark};
+    border-right: 1px solid ${theme.orbit.paletteCloudNormal};
     &:not(:last-child) {
-      border-bottom: 1px solid ${theme.orbit.paletteCloudDark};
+      border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
     }
     a {
       padding: 0 ${theme.orbit.spaceLarge};

@@ -24,7 +24,7 @@ const StyledInner = styled.div`
       z-index: 10;
       width: 50%;
       height: 1px;
-      background: ${theme.orbit.paletteCloudDark};
+      background: ${theme.orbit.paletteCloudNormal};
     }
 
     &:before {

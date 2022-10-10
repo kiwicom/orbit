@@ -89,7 +89,7 @@ const StyledTable = styled.table`
         ? `6px ${theme.orbit.spaceSmall}`
         : `10px ${theme.orbit.spaceSmall}`}; /* TODO: remove 10px and 6px with new tokens */
     line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-    color: ${({ type, theme }) => type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkLight};
+    color: ${({ type, theme }) => type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkNormal};
   }
 `;
 

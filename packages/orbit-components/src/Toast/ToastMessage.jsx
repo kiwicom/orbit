@@ -38,7 +38,7 @@ const StyledInnerWrapper = styled.div`
   ${({ theme, visible, duration, isPaused }) => css`
     position: relative;
     border-radius: ${theme.orbit.borderRadiusLarge};
-    background: ${theme.orbit.paletteInkNormal};
+    background: ${theme.orbit.paletteInkDark};
     padding: ${theme.orbit.spaceXSmall};
     width: 100%;
     overflow: hidden;

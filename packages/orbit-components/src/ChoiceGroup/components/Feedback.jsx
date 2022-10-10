@@ -31,7 +31,7 @@ export const StyledFormFeedback: any = styled(({ theme, type, ...props }) => <di
     strong,
     b {
       font-weight: ${theme.fontWeightMedium};
-      color: ${theme.paletteInkNormal};
+      color: ${theme.paletteInkDark};
     }
   `}
 `;

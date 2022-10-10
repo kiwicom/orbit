@@ -25,7 +25,7 @@ const setBorder = ({ coloredBorder, type, theme }) => {
     if (type === "dont") return `${theme.orbit.paletteRedNormal}`;
   }
 
-  return theme.orbit.paletteInkLight;
+  return theme.orbit.paletteInkDark;
 };
 
 export const resolveBorders = () => {

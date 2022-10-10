@@ -22,7 +22,7 @@ const StyledDialogWrapper = styled.div`
   width: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
   box-sizing: border-box;
   border-radius: 12px;
-  background-color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  background-color: ${({ theme }) => theme.orbit.paletteInkDark};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
   padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
   visibility: ${({ shown }) => (shown ? "visible" : "hidden")};

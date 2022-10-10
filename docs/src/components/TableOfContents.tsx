@@ -17,8 +17,8 @@ const getWidth = (level: number) => {
 
 const getColor = (active: boolean, level: number, theme) => {
   if (active) return theme.orbit.paletteProductNormal;
-  if (level === 0) return theme.orbit.paletteInkNormal;
-  return theme.orbit.paletteInkLight;
+  if (level === 0) return theme.orbit.paletteInkDark;
+  return theme.orbit.paletteInkDark;
 };
 
 const StyledAnchor = styled.a<StyledAnchorProps>`

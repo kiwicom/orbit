@@ -20,6 +20,7 @@ describe("getTokens should accept some palette and base foundation", () => {
         dark: "#777",
         darkHover: "#888",
         darkActive: "#999",
+        darker: "#005C4E",
       },
     },
     base: {

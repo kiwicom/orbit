@@ -28,10 +28,10 @@ const StyledTabLink = styled(Link)`
     display: flex;
     align-items: center; /* align text so it matches StyledTab */
     height: calc(${TAB_HEIGHT} - ${getTabShadowReachTop});
-    color: ${theme.orbit.paletteInkLight};
+    color: ${theme.orbit.paletteInkDark};
     transition: color ${theme.orbit.durationFast};
     &:hover {
-      color: ${theme.orbit.paletteInkNormal};
+      color: ${theme.orbit.paletteInkDark};
     }
   `};
 `;
@@ -54,7 +54,7 @@ const StyledTab = styled.span<{ fullWidth?: boolean }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     ${fullWidth &&
     css`
       width: 100%;

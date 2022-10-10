@@ -66,16 +66,16 @@ const getTypeToken = name => ({ theme, type, suppressed }) => {
     },
     [TOKENS.colorBorderAlert]: {
       [TYPE_OPTIONS.INFO]: suppressed
-        ? theme.orbit.paletteCloudDark
+        ? theme.orbit.paletteCloudNormal
         : theme.orbit.paletteBlueLightHover,
       [TYPE_OPTIONS.SUCCESS]: suppressed
-        ? theme.orbit.paletteCloudDark
+        ? theme.orbit.paletteCloudNormal
         : theme.orbit.paletteGreenLightHover,
       [TYPE_OPTIONS.WARNING]: suppressed
-        ? theme.orbit.paletteCloudDark
+        ? theme.orbit.paletteCloudNormal
         : theme.orbit.paletteOrangeLightHover,
       [TYPE_OPTIONS.CRITICAL]: suppressed
-        ? theme.orbit.paletteCloudDark
+        ? theme.orbit.paletteCloudNormal
         : theme.orbit.paletteRedLightHover,
     },
     [TOKENS.colorAccentBorder]: {
@@ -135,7 +135,7 @@ const StyledAlert = styled(StyledDiv)`
     border-radius: ${theme.orbit.borderRadiusLarge};
     border: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
     background: ${getTypeToken(TOKENS.backgroundAlert)};
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeTextNormal};
     box-sizing: border-box;
@@ -200,7 +200,7 @@ const StyledContentWrapper = styled(StyledDiv)`
 
 const StyledTitle = styled(StyledDiv)`
   ${({ theme, hasChildren, inlineActions }) => css`
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     display: flex;
     align-items: center;
     min-height: 20px;
@@ -227,7 +227,7 @@ const StyledContent = styled(StyledDiv)`
     }
 
     & ${Item}, ${StyledText}, ${StyledHeading} {
-      color: ${theme.orbit.paletteInkNormal};
+      color: ${theme.orbit.paletteInkDark};
     }
   `}
 `;

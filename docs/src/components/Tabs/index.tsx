@@ -56,7 +56,7 @@ const StyledPopoverContent = styled.div`
       margin-bottom: 0;
     `)};
     > * + * {
-      border-top: 1px solid ${theme.orbit.paletteCloudDark};
+      border-top: 1px solid ${theme.orbit.paletteCloudNormal};
     }
   `};
 `;

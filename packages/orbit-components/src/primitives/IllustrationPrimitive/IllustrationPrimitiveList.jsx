@@ -47,7 +47,7 @@ const IllustrationJSX = styled.div`
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
   line-height: ${({ theme }) => theme.orbit.lineHeightTextSmall};
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  color: ${({ theme }) => theme.orbit.paletteInkDark};
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
   border: ${({ theme }) => theme.orbit.borderWidthCard}
     ${({ theme }) => theme.orbit.borderStyleCard} ${({ theme }) => theme.orbit.paletteCloudNormal};

@@ -107,7 +107,7 @@ const StyledSpinnerCircle = styled.circle`
     fill: transparent;
     stroke: ${type === TYPE_OPTIONS.BUTTON_LOADER
       ? "currentColor"
-      : theme.orbit.paletteCloudDarker};
+      : theme.orbit.paletteCloudNormal};
     stroke-width: 3px;
     stroke-linecap: round;
     stroke-dasharray: ${customSize ? `${customSize * 3 + 8}px` : "128px"};
@@ -131,7 +131,7 @@ const StyledLoaderCircle = styled.div`
   height: 8px;
   border-radius: 50%;
   margin-${right}: 6px;
-  background: ${({ theme }) => theme.orbit.paletteCloudDarker};
+  background: ${({ theme }) => theme.orbit.paletteCloudNormal};
   animation: ${LoaderAnimation} 1.25s infinite ease-in-out;
   &:nth-child(2) {
     animation-delay: 0.1s;

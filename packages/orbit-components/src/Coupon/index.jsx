@@ -12,12 +12,12 @@ const StyledCoupon = styled.mark`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextSmall};
   letter-spacing: 0.75px;
   text-transform: uppercase;
-  border: 1px dashed ${({ theme }) => theme.orbit.paletteCloudDarker};
+  border: 1px dashed ${({ theme }) => theme.orbit.paletteCloudNormal};
   padding: 2px ${({ theme }) => theme.orbit.spaceXXSmall};
   line-height: inherit;
   font-weight: ${({ theme }) => theme.orbit.fontWeightMedium};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  color: ${({ theme }) => theme.orbit.paletteInkDark};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

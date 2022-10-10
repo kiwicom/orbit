@@ -13,7 +13,7 @@ export default {
         style={{
           padding: defaultTheme.orbit.spaceMedium,
           backgroundColor: darkMode
-            ? defaultTheme.orbit.paletteInkNormal
+            ? defaultTheme.orbit.paletteInkDark
             : defaultTheme.orbit.paletteCloudLight,
         }}
       >

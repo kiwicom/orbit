@@ -15,6 +15,9 @@ export default {
           normalHover: "#4c0057",
           normalActive: "#3d0046",
           dark: "#110013",
+          darker: "#0d0010",
+          darkHover: "#0f0011",
+          darkActive: "#0d000f",
         },
       },
     });

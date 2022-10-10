@@ -13,7 +13,7 @@ type Type = "primary" | "secondary";
 
 const StyledWrapper = styled.div<{ type: Type }>`
   ${({ theme, type }) => css`
-    color: ${type === "primary" ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkNormal};
+    color: ${type === "primary" ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkDark};
   `}
 `;
 
@@ -25,7 +25,7 @@ export const StyledIcon = styled.span<{ type: Type }>`
     transition: background ${theme.orbit.durationFast} ease-in;
     background: ${type === "primary"
       ? theme.orbit.paletteProductLightActive
-      : theme.orbit.paletteCloudDark};
+      : theme.orbit.paletteCloudNormal};
     border-radius: ${theme.orbit.borderRadiusNormal};
   `}
 `;

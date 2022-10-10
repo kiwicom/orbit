@@ -10,7 +10,7 @@ export type ResolveColor = ({| error?: boolean, help?: boolean, ...ThemeProps |}
 export const resolveColor: ResolveColor = ({ error, help, theme }) => {
   if (error) return theme.orbit.paletteRedNormal;
   if (help) return theme.orbit.paletteBlueNormal;
-  return theme.orbit.paletteInkNormal;
+  return theme.orbit.paletteInkDark;
 };
 
 export type Props = {|

@@ -18,7 +18,7 @@ const getButtonBoxShadow = ({ state, disabled, theme, selected }: Args): string 
     return `0 0 0 2px ${
       selected
         ? convertHexToRgba(theme.orbit.paletteBlueNormal, 30)
-        : convertHexToRgba(theme.orbit.paletteInkLight, 30)
+        : convertHexToRgba(theme.orbit.paletteInkNormal, 30)
     }}`;
   }
 

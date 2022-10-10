@@ -5,7 +5,7 @@ import { StyledAnchor } from "../HeadingWithLink";
 
 const StyledWrapper = styled.div`
   ${({ theme }) => css`
-    border-left: 3px solid ${theme.orbit.paletteInkLight};
+    border-left: 3px solid ${theme.orbit.paletteInkDark};
     padding: ${theme.orbit.spaceMedium};
     background: ${theme.orbit.paletteCloudLight};
     border-radius: ${theme.orbit.borderRadiusNormal};
@@ -34,7 +34,7 @@ const StyledContent = styled.div`
 
 const StyledAuthor = styled.p`
   ${({ theme }) => css`
-    color: ${theme.orbit.paletteInkLight};
+    color: ${theme.orbit.paletteInkDark};
   `}
 `;
 

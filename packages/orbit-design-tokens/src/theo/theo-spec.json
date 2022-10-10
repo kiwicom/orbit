@@ -982,7 +982,7 @@
       }
     },
     "colorPlaceholderInput": {
-      "value": "#4F5E71",
+      "value": "#697D95",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1000,7 +1000,7 @@
       }
     },
     "colorPlaceholderInputFile": {
-      "value": "#4F5E71",
+      "value": "#697D95",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1783,7 +1783,7 @@
       }
     },
     "backgroundTableHover": {
-      "value": "#BAC7D5",
+      "value": "#E8EDF1",
       "type": "color",
       "category": "",
       "comment": "",

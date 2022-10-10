@@ -355,7 +355,7 @@
   <color name="BACKGROUNDALERTSUCCESS" category="">#fff2f8f2</color>
   <dimen name="PADDINGINPUTFILE" category="">0 0 0 6dp</dimen>
   <color name="COLORTEXTBUTTONLINKPRIMARYHOVER" category="">#ff007060</color>
-  <color name="COLORPLACEHOLDERINPUTFILE" category="">#ff4f5e71</color>
+  <color name="COLORPLACEHOLDERINPUTFILE" category="">#ff697d95</color>
   <string name="FONTWEIGHTHEADINGTITLE3" category="">500</string>
   <color name="COLORTEXTBUTTONINFOACTIVE" category="">#ffffffff</color>
   <color name="COLORTEXTBADGEWHITE" category="">#ff252a31</color>
@@ -420,7 +420,7 @@
   <color name="PALETTEPRODUCTLIGHTHOVER" category="">#ffd6f0ec</color>
   <color name="BACKGROUNDBUTTONWHITEBORDEREDACTIVE" category="">#33ffffff</color>
   <color name="BACKGROUNDBUTTONSECONDARYACTIVE" category="">#ffcad4de</color>
-  <color name="COLORPLACEHOLDERINPUT" category="">#ff4f5e71</color>
+  <color name="COLORPLACEHOLDERINPUT" category="">#ff697d95</color>
   <dimen name="SPACEMEDIUM" category="">16dp</dimen>
   <color name="PALETTEINKDARKHOVER" category="">#ff181b20</color>
   <color name="COLORTEXTBUTTONINFOBORDERED" category="">#ff0172cb</color>
@@ -445,7 +445,7 @@
   <dimen name="PADDINGTEXTAREASMALL" category="">8 12dp</dimen>
   <string name="BACKGROUNDTABLESHADOWRIGHT" category="">linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))</string>
   <color name="BACKGROUNDBUTTONWARNING" category="">#ffdf7b00</color>
-  <color name="BACKGROUNDTABLEHOVER" category="">#ffbac7d5</color>
+  <color name="BACKGROUNDTABLEHOVER" category="">#ffe8edf1</color>
   <string name="FONTWEIGHTMEDIUM" category="">500</string>
   <dimen name="PADDINGBUTTONLARGEWITHICONS" category="">0 16dp</dimen>
   <dimen name="WIDTHCOUNTRYFLAG" category="">24dp</dimen>

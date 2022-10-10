@@ -2486,7 +2486,7 @@
       "name": "colorTextButtonLinkPrimaryHover"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2941,7 +2941,7 @@
       "name": "backgroundButtonSecondaryActive"
     },
     {
-      "value": "rgb(79, 94, 113)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3116,7 +3116,7 @@
       "name": "backgroundButtonWarning"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
       "comment": "",

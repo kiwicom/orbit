@@ -710,7 +710,7 @@ module.exports = {
   /*  */
   colorTextButtonLinkPrimaryHover: "rgb(0, 112, 96)",
   /*  */
-  colorPlaceholderInputFile: "rgb(79, 94, 113)",
+  colorPlaceholderInputFile: "rgb(105, 125, 149)",
   /*  */
   fontWeightHeadingTitle3: "500",
   /*  */
@@ -840,7 +840,7 @@ module.exports = {
   /*  */
   backgroundButtonSecondaryActive: "rgb(202, 212, 222)",
   /*  */
-  colorPlaceholderInput: "rgb(79, 94, 113)",
+  colorPlaceholderInput: "rgb(105, 125, 149)",
   /*  */
   spaceMedium: "16px",
   /*  */
@@ -890,7 +890,7 @@ module.exports = {
   /*  */
   backgroundButtonWarning: "rgb(223, 123, 0)",
   /*  */
-  backgroundTableHover: "rgb(186, 199, 213)",
+  backgroundTableHover: "rgb(232, 237, 241)",
   /*  */
   fontWeightMedium: "500",
   /*  */

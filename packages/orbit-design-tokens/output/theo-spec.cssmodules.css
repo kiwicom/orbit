@@ -354,7 +354,7 @@
 @value background-alert-success: rgb(242, 248, 242);
 @value padding-input-file: 0 0 0 6px;
 @value color-text-button-link-primary-hover: rgb(0, 112, 96);
-@value color-placeholder-input-file: rgb(79, 94, 113);
+@value color-placeholder-input-file: rgb(105, 125, 149);
 @value font-weight-heading-title3: "500";
 @value color-text-button-info-active: rgb(255, 255, 255);
 @value color-text-badge-white: rgb(37, 42, 49);
@@ -419,7 +419,7 @@
 @value palette-product-light-hover: rgb(214, 240, 236);
 @value background-button-white-bordered-active: rgba(255, 255, 255, 0.2);
 @value background-button-secondary-active: rgb(202, 212, 222);
-@value color-placeholder-input: rgb(79, 94, 113);
+@value color-placeholder-input: rgb(105, 125, 149);
 @value space-medium: 16px;
 @value palette-ink-dark-hover: rgb(24, 27, 32);
 @value color-text-button-info-bordered: rgb(1, 114, 203);
@@ -444,7 +444,7 @@
 @value padding-textarea-small: 8px 12px;
 @value background-table-shadow-right: "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))";
 @value background-button-warning: rgb(223, 123, 0);
-@value background-table-hover: rgb(186, 199, 213);
+@value background-table-hover: rgb(232, 237, 241);
 @value font-weight-medium: "500";
 @value padding-button-large-with-icons: 0 16px;
 @value width-country-flag: 24px;

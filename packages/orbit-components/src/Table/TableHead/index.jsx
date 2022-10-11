@@ -7,7 +7,7 @@ import { StyledTableCell } from "../TableCell";
 
 import type { Props } from ".";
 
-const StyledTableHead = styled(({ children, className, dataTest }) => (
+export const StyledTableHead: any = styled(({ children, className, dataTest }) => (
   <thead className={className} data-test={dataTest}>
     {children}
   </thead>

@@ -54,7 +54,7 @@ const StyledTableInner = styled.div`
     `};
 `;
 
-const StyledTable = styled.table`
+export const StyledTable: any = styled.table`
   display: table;
   border-collapse: collapse;
   border-spacing: 0;

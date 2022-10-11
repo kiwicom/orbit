@@ -2,6 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 
 import * as React from "react";
+import { AnyStyledComponent } from "styled-components";
 
 import * as Common from "../common/common";
 
@@ -15,8 +16,9 @@ interface Props extends SharedProps {
   readonly compact?: boolean;
 }
 
+declare const StyledTable: AnyStyledComponent;
 declare const Table: React.FunctionComponent<Props>;
-export { Table, Table as default };
+export { Table, StyledTable, Table as default };
 export { TableBody } from "./TableBody";
 export { TableCell } from "./TableCell";
 export { TableHead } from "./TableHead";

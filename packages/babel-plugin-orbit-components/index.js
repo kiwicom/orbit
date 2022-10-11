@@ -48,8 +48,6 @@ const pathOverwrites = {
   ModalHeader: "Modal/ModalHeader",
   ModalSection: "Modal/ModalSection",
   NavigationDrawer: "Drawer",
-  PricingTable: "deprecated/PricingTable",
-  PricingTableItem: "deprecated/PricingTable/PricingTableItem",
   SmartPassV1: "SmartPassIllustrations/illustrations/SmartPassV1",
   SmartPassV2: "SmartPassIllustrations/illustrations/SmartPassV2",
   SmartPassV3: "SmartPassIllustrations/illustrations/SmartPassV3",

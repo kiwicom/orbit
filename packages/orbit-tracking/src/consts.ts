@@ -40,8 +40,6 @@ export const CATEGORIES = {
     "List",
     "ListItem",
     "OrbitList",
-    "PricingTable",
-    "PricingTableItem",
     "Separator",
     "Table",
     "TableRow",

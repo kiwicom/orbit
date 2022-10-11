@@ -50,8 +50,6 @@ export { default as LinkList } from "./LinkList";
 // Table
 export { default as Table, TableBody, TableCell, TableRow, TableHead, TableFooter } from "./Table";
 
-export { default as PricingTable, PricingTableItem } from "./deprecated/PricingTable";
-
 // Layout & Grid
 export { default as Layout, LayoutColumn } from "./Layout";
 export { default as Grid } from "./utils/Grid";

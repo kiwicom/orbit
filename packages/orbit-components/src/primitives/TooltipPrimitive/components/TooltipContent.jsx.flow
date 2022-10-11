@@ -12,6 +12,7 @@ export type Props = {|
   parent: ?React.Node,
   error?: boolean,
   help?: boolean,
+  onClick: (ev: SyntheticEvent<HTMLDivElement>) => void,
   onClose: () => void,
   onCloseMobile: () => void,
   onEnter: () => void,

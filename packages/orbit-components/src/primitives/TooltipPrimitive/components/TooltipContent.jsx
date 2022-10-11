@@ -104,6 +104,7 @@ const TooltipContent = ({
   error,
   help,
   children,
+  onClick,
   onClose,
   onCloseMobile,
   onEnter,
@@ -160,7 +161,7 @@ const TooltipContent = ({
   );
 
   return (
-    <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>
+    <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest} onClick={onClick}>
       <StyledTooltipWrapper
         shown={shown}
         size={size}

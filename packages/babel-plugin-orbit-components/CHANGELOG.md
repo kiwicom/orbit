@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.6.6...@kiwicom/babel-plugin-orbit-components@4.0.0) (2022-10-12)
+
+
+### Features
+
+* **PricingTable:** remove PricingTable ([0a674e4](https://github.com/kiwicom/orbit/commit/0a674e4fbdcd09d8d9271b6310bf229b53e64029))
+
+
+### BREAKING CHANGES
+
+* **PricingTable:** PricingTable and PricingTableItem were removed.
+Its implementation was moved to repositories using it.
+
+
+
+
+
 ## [3.6.6](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.6.5...@kiwicom/babel-plugin-orbit-components@3.6.6) (2022-10-07)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

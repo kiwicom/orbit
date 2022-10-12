@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.8.0...@kiwicom/orbit-components@4.0.0) (2022-10-12)
+
+
+### Bug Fixes
+
+* **HorizontalScroll:** fix issue with glitching on mobile while scrolling ([#3593](https://github.com/kiwicom/orbit/issues/3593)) ([343d3fc](https://github.com/kiwicom/orbit/commit/343d3fcaa09256738f81c3a7dbf308dfda33267e))
+* **ItineraryBadgeListItem:** add margin-top only if cancelledValue provided ([0e7745a](https://github.com/kiwicom/orbit/commit/0e7745a35915d6155f923ac017db659a5eaff4f2))
+* **Skeleton:** fix default color from paletteCloudDark to paletteCloudNormal ([055d009](https://github.com/kiwicom/orbit/commit/055d00940afa2a3d3931156e236e40de6d9365f4))
+* **Stack:** keep old behavior, enable gap only if flex or spacing is provided ([#3597](https://github.com/kiwicom/orbit/issues/3597)) ([1445684](https://github.com/kiwicom/orbit/commit/1445684dae4a2a92c0a9d7f1f7f9500c43725c74))
+* **Tooltip:** add max-width and render as flex instead of block ([#3595](https://github.com/kiwicom/orbit/issues/3595)) ([7b734b0](https://github.com/kiwicom/orbit/commit/7b734b0b51f7043e5c33c58503713d1adcd398bb))
+* **TooltipPrimitive:** add handleClick to content ([#3594](https://github.com/kiwicom/orbit/issues/3594)) ([b867342](https://github.com/kiwicom/orbit/commit/b867342e3301efdbe0c037fa29eb4498e6867a71))
+
+
+### Features
+
+* **PricingTable:** remove PricingTable ([0a674e4](https://github.com/kiwicom/orbit/commit/0a674e4fbdcd09d8d9271b6310bf229b53e64029))
+* **tokens:** update palette ([#3579](https://github.com/kiwicom/orbit/issues/3579)) ([bf2780b](https://github.com/kiwicom/orbit/commit/bf2780b3a71ef9347e06fca230be032a798053ea)), closes [#E8EDF1](https://github.com/kiwicom/orbit/issues/E8EDF1) [#BAC7D5](https://github.com/kiwicom/orbit/issues/BAC7D5) [#697D95](https://github.com/kiwicom/orbit/issues/697D95) [#4F5E71](https://github.com/kiwicom/orbit/issues/4F5E71) [#252A31](https://github.com/kiwicom/orbit/issues/252A31)
+
+
+### BREAKING CHANGES
+
+* **PricingTable:** PricingTable and PricingTableItem were removed.
+Its implementation was moved to repositories using it.
+* **tokens:** a few design tokens were changed
+
+
+
+
+
 # [3.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.7.1...@kiwicom/orbit-components@3.8.0) (2022-10-07)
 
 

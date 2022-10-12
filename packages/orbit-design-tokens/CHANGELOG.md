@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.5.2...@kiwicom/orbit-design-tokens@2.0.0) (2022-10-12)
+
+
+### Features
+
+* **tokens:** update palette ([#3579](https://github.com/kiwicom/orbit/issues/3579)) ([bf2780b](https://github.com/kiwicom/orbit/commit/bf2780b3a71ef9347e06fca230be032a798053ea)), closes [#E8EDF1](https://github.com/kiwicom/orbit/issues/E8EDF1) [#BAC7D5](https://github.com/kiwicom/orbit/issues/BAC7D5) [#697D95](https://github.com/kiwicom/orbit/issues/697D95) [#4F5E71](https://github.com/kiwicom/orbit/issues/4F5E71) [#252A31](https://github.com/kiwicom/orbit/issues/252A31)
+
+
+### BREAKING CHANGES
+
+* **tokens:** a few design tokens were changed
+
+
+
+
+
 ## [1.5.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.5.1...@kiwicom/orbit-design-tokens@1.5.2) (2022-09-20)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

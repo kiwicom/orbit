@@ -37,6 +37,8 @@ export interface Props extends Common.Global {
   readonly spacing?: Spacing;
   /** content of HorizontalScroll */
   readonly children: React.ReactNode;
+  readonly arrows?: boolean;
+  readonly arrowColor?: string;
   readonly scrollSnap?: ScrollSnap;
   readonly scrollPadding?: number;
   readonly overflowElevation?: boolean;

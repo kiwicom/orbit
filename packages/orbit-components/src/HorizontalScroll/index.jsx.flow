@@ -10,6 +10,8 @@ export type Props = {|
   ...Globals,
   +minHeight?: number,
   +spacing?: Spacing,
+  +arrows?: boolean,
+  +arrowColor?: string,
   +children: React.Node,
   +scrollSnap?: ScrollSnap,
   +scrollPadding?: number,

@@ -79,8 +79,6 @@ import typeof PaginationType from "./Pagination";
 import typeof PictureCardType from "./deprecated/PictureCard";
 import typeof PopoverType from "./Popover";
 import typeof PortalType from "./Portal";
-import typeof PricingTableItemType from "./deprecated/PricingTable/PricingTableItem";
-import typeof PricingTableType from "./deprecated/PricingTable";
 import typeof RadioType from "./Radio";
 import typeof RatingStarsType from "./deprecated/RatingStars";
 import typeof SeatType, { SeatLegend as SeatLegendType } from "./Seat";
@@ -240,8 +238,6 @@ declare export var TextLink: TextLinkType;
 
 declare export var Pagination: PaginationType;
 declare export var Popover: PopoverType;
-declare export var PricingTable: PricingTableType;
-declare export var PricingTableItem: PricingTableItemType;
 declare export var Radio: RadioType;
 declare export var RatingStars: RatingStarsType;
 declare export var Seat: SeatType;

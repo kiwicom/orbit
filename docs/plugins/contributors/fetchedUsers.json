@@ -42,6 +42,20 @@
     "github": "https://github.com/oreqizer"
   },
   {
+    "id": "c0e7d600-d0c4-5f86-ba12-4607a82f97dc",
+    "name": "Daniel Sil",
+    "username": "DSil",
+    "error": "",
+    "twitter": null,
+    "website": "",
+    "info": null,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/6265045?v=4",
+    "position": "",
+    "github": "https://github.com/DSil"
+  },
+  {
     "id": "18573a97-bb12-566e-b82f-fcd1bccdfe0a",
     "name": "Daniel Spitzer",
     "username": "sampi",
@@ -194,20 +208,6 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/978368?v=4",
     "position": "",
     "github": "https://github.com/mrtnzlml"
-  },
-  {
-    "id": "b8afa62a-2bb8-55c4-8fee-f7c35ec6732f",
-    "name": "Matej Kňazík",
-    "username": "D1LL1G4F",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": null,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/26377907?v=4",
-    "position": "",
-    "github": "https://github.com/D1LL1G4F"
   },
   {
     "id": "88757d35-451a-5fcf-b12d-8dc6a23957cb",

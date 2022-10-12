@@ -50,7 +50,6 @@ export { KeyValue } from "./KeyValue";
 export { Inline } from "./Inline";
 export { Loading } from "./Loading";
 export { Popover } from "./Popover";
-export { PricingTable, PricingTableItem } from "./deprecated/PricingTable";
 export { Text } from "./Text";
 export { TextLink } from "./TextLink";
 export { Tile } from "./Tile";

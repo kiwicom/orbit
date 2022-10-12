@@ -390,13 +390,6 @@
   android: N/A
   docs: Released
   group: Utility
-- component: PricingTable
-  figma: N/A
-  react: Released
-  ios: N/A
-  android: N/A
-  docs: N/A
-  group: Structure
 - component: Radio
   figma: Released
   react: Released

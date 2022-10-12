@@ -35,6 +35,17 @@ describe("Stack", () => {
     });
   });
 
+  it("should have spacing with margins, if flex or spacing is not provided", () => {
+    render(
+      <Stack>
+        <div>kek</div>
+        <div>bur</div>
+      </Stack>,
+    );
+
+    expect(screen.getByText("kek")).toHaveStyle({ margin: "0 0 16px 0" });
+  });
+
   it("should be inline", () => {
     render(
       <Stack inline dataTest="test">

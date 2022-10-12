@@ -17,6 +17,7 @@ exports[`Tooltip it should match snapshot 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  max-width: 100%;
 }
 
 .c0:focus:active {

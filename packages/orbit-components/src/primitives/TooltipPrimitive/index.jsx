@@ -12,16 +12,13 @@ import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import type { Props } from ".";
 
 export const StyledTooltipChildren: any = styled.span`
-  ${({ block }) =>
-    !block &&
-    css`
-      display: inline-flex;
-    `};
-  &:focus:active {
-    outline: none;
-  }
-  ${({ enabled, removeUnderlinedText }) =>
-    enabled &&
+  ${({ block, enabled, removeUnderlinedText }) => css`
+    display: ${block ? "flex" : "inline-flex"};
+    max-width: 100%;
+    &:focus:active {
+      outline: none;
+    }
+    ${enabled &&
     !removeUnderlinedText &&
     css`
       ${StyledText} {
@@ -30,10 +27,11 @@ export const StyledTooltipChildren: any = styled.span`
         text-decoration: underline currentColor dotted;
       }
     `};
-  /* enable event bubbling for disabled children, e.g. buttons */
-  [disabled] {
-    pointer-events: none;
-  }
+    /* enable event bubbling for disabled children, e.g. buttons */
+    [disabled] {
+      pointer-events: none;
+    }
+  `}
 `;
 
 const TooltipPrimitive = ({

@@ -66,7 +66,7 @@ const LinkList = ({
   <StyledLinkList
     indent={indent}
     $spacing={spacing}
-    direction={direction}
+    $direction={direction}
     data-test={dataTest}
     id={id}
   >

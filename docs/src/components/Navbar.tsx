@@ -136,12 +136,13 @@ const NavigationLinks = ({ isDesktop }) => {
       </TextLink>
     </>
   );
+
   return isDesktop ? (
     <Stack align="center" inline>
       {links}
     </Stack>
   ) : (
-    <Popover content={<Stack direction="column">{links}</Stack>}>
+    <Popover placement="top-end" content={<Stack direction="column">{links}</Stack>}>
       <ButtonLink type="secondary" iconLeft={<MenuHamburger />} />
     </Popover>
   );

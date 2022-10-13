@@ -39,8 +39,8 @@ jobs:
       - name: Update palette
         run: |
           yarn tokens fetch:colors
-          yarn tokens jest -u
           yarn tokens build
+          yarn tokens jest -u
           git add --all
           git diff-index --quiet HEAD || git commit -m "feat(tokens): update palette"
         env:

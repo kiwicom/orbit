@@ -32,16 +32,16 @@ const ModalExport = ({ onClose }) => {
   const [copied, setCopied] = React.useState(false);
 
   const code = `import getTokens from "@kiwicom/orbit-components/lib/getTokens"; 
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
  
 const customTokens = getTokens({
  palette: ${JSON.stringify(onlyDifferentColors, null, 2)}
 });
  
 const App = () => 
-<ThemeProvider theme={{ orbit: customTokens }}>
+<OrbitProvider theme={{ orbit: customTokens }}>
   <Button type="secondary" size="large">Button</Button>
-</ThemeProvider>;`;
+</OrbitProvider>;`;
 
   const copyToClipboard = React.useCallback(() => {
     copy(code);

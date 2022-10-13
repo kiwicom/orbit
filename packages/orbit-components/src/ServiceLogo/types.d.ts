@@ -5,6 +5,7 @@ import type * as Common from "../common/types";
 export type Size = "small" | "medium" | "large";
 type Name =
   | "AirHelp"
+  | "AirHelpPlus"
   | "Alipay"
   | "Amex"
   | "Axa"

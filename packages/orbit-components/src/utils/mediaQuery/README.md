@@ -26,7 +26,7 @@ To use the component, combine it with your theme:
 ```jsx
 import media from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import styled, { css } from "styled-components";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 const StyledComponent = styled.div`
@@ -38,9 +38,9 @@ const StyledComponent = styled.div`
 `;
 function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <OrbitProvider theme={defaultTheme}>
       <StyledComponent>This div will be styled.</StyledComponent>
-    </ThemeProvider>
+    </OrbitProvider>
   );
 }
 ```

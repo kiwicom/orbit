@@ -3,7 +3,7 @@ import jsxToString from "react-element-to-jsx-string";
 import { Code } from "@storybook/addon-info/dist/components/markdown";
 
 import defaultTheme from "../src/defaultTheme";
-import ThemeProvider from "../src/ThemeProvider";
+import OrbitProvider from "../src/OrbitProvider";
 import Heading from "../src/Heading";
 import Text from "../src/Text";
 
@@ -20,7 +20,7 @@ const orbitDecorator = (storyFn, context) => {
   const inverted = globals.backgrounds ? globals.backgrounds.value === "#333333" : undefined;
 
   return (
-    <ThemeProvider theme={{ ...defaultTheme }}>
+    <OrbitProvider theme={{ ...defaultTheme }}>
       <div style={{ padding: "20px" }}>
         <Heading spaceAfter="medium" inverted={inverted}>
           {context.kind}
@@ -35,7 +35,7 @@ const orbitDecorator = (storyFn, context) => {
           </div>
         ) : null}
       </div>
-    </ThemeProvider>
+    </OrbitProvider>
   );
 };
 

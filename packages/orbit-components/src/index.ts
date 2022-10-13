@@ -107,7 +107,7 @@ export { default as Text } from "./Text";
 export { ToastRoot, createToast, createToastPromise } from "./Toast";
 export { default as Textarea } from "./Textarea";
 export { default as TextLink } from "./TextLink";
-export { default as ThemeProvider } from "./ThemeProvider";
+export { default as OrbitProvider } from "./OrbitProvider";
 export { default as Tile } from "./Tile";
 export { default as TileGroup } from "./TileGroup";
 export { default as Timeline, TimelineStep } from "./Timeline";

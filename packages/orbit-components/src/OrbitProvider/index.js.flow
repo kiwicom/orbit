@@ -1,6 +1,6 @@
 // @flow
 /*
-  DOCUMENTATION: https://orbit.kiwi/components/themeprovider/
+  DOCUMENTATION: https://orbit.kiwi/components/orbitprovider/
 */
 import * as React from "react";
 

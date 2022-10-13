@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
+import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 import MatchMediaMock from "jest-matchmedia-mock";
 
 import TableOfContents from "../TableOfContents";
@@ -26,7 +26,7 @@ afterAll(() => {
 describe(TableOfContents.name, () => {
   it("should generate table of contents from headings", async () => {
     render(
-      <ThemeProvider theme={defaultTheme}>
+      <OrbitProvider theme={defaultTheme}>
         <TableOfContentsProvider>
           <main>
             <H2>General guidelines</H2>
@@ -44,7 +44,7 @@ describe(TableOfContents.name, () => {
             <TableOfContents />
           </aside>
         </TableOfContentsProvider>
-      </ThemeProvider>,
+      </OrbitProvider>,
     );
 
     const sidebar = screen.getByRole("complementary");

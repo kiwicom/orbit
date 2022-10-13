@@ -2,7 +2,7 @@ import * as React from "react";
 
 import useTheme from "../useTheme";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
-import QueryContext, { initialValue } from "../../ThemeProvider/QueryContext";
+import QueryContext, { initialValue } from "../../OrbitProvider/QueryContext";
 import type { QueryMap } from "./types";
 
 type Query = keyof QueryMap<any>;

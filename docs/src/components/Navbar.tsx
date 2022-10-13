@@ -12,6 +12,10 @@ import {
   Badge,
   Modal,
   mediaQueries as mq,
+  TextLink,
+  Popover,
+  ButtonLink,
+  useMediaQuery,
 } from "@kiwicom/orbit-components";
 import { MenuHamburger, StarEmpty, Logout } from "@kiwicom/orbit-components/icons";
 import GitHubButton from "react-github-btn";
@@ -25,6 +29,11 @@ import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 import { useKeyboard } from "../services/KeyboardProvider";
 import SearchNavbarButton from "./Search/SearchNavbarButton";
 import { isLoggedIn, logout } from "../services/auth";
+import PuzzleIcon from "./icons/Puzzle";
+import ColorBrushIcon from "../images/streamline-light/color-brush.svg";
+import ReadArt from "../images/streamline-light/read-art.svg";
+import IrisScanIcon from "../images/streamline-light/iris-scan.svg";
+import ScriptIcon from "../images/streamline-light/script.svg";
 
 const StyledWrapper = styled.header`
   position: relative;
@@ -92,6 +101,51 @@ const StyledTab = styled.button`
     }
   `};
 `;
+const NavigationLinks = ({ isDesktop }) => {
+  const links = (
+    <>
+      <TextLink noUnderline type="secondary" href="/components">
+        <Stack align="center" spacing="XSmall" inline>
+          {!isDesktop && <PuzzleIcon stroke="#252A31" width="20px" height="20px" />}Components
+        </Stack>
+      </TextLink>
+      {isDesktop && <span>&sdot;</span>}
+      <TextLink noUnderline type="secondary" href="/foundation">
+        <Stack align="center" spacing="XSmall" inline>
+          {!isDesktop && <ScriptIcon stroke="#252A31" width="20px" height="20px" />}Foundation
+        </Stack>
+      </TextLink>
+      {isDesktop && <span>&sdot;</span>}
+      <TextLink noUnderline type="secondary" href="/foundation/design-tokens/">
+        <Stack align="center" spacing="XSmall" inline>
+          {!isDesktop && <ColorBrushIcon stroke="#252A31" width="20px" height="20px" />}Design
+          Tokens
+        </Stack>
+      </TextLink>
+      {isDesktop && <span>&sdot;</span>}
+      <TextLink noUnderline type="secondary" href="/kiwi-use/guides/">
+        <Stack align="center" spacing="XSmall" inline>
+          {!isDesktop && <ReadArt stroke="#252A31" width="20px" height="20px" />}Guides
+        </Stack>
+      </TextLink>
+      {isDesktop && <span>&sdot;</span>}
+      <TextLink noUnderline type="secondary" href="/foundation/accessibility">
+        <Stack align="center" spacing="XSmall" inline>
+          {!isDesktop && <IrisScanIcon stroke="#252A31" width="20px" height="20px" />}Accessibility
+        </Stack>
+      </TextLink>
+    </>
+  );
+  return isDesktop ? (
+    <Stack align="center" inline>
+      {links}
+    </Stack>
+  ) : (
+    <Popover content={<Stack direction="column">{links}</Stack>}>
+      <ButtonLink type="secondary" iconLeft={<MenuHamburger />} />
+    </Popover>
+  );
+};
 
 interface Props {
   location: WindowLocation;
@@ -104,6 +158,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
   const [activeTab, setActiveTab] = React.useState<"navigation" | "bookmarks">("navigation");
   const isHome = location && location.pathname === "/";
   const { bookmarks } = useBookmarks();
+  const { isDesktop, isLargeMobile } = useMediaQuery();
 
   return (
     <StyledWrapper>
@@ -113,25 +168,34 @@ const Navbar = ({ location, docNavigation }: Props) => {
             <StyledLogo width={192} height={44} />
             <StyledLogoGlyph width={44} height={44} />
           </Link>
-          <span>&sdot;</span>
-          <div
-            css={css`
-              height: 22px;
-            `}
-          >
-            <GitHubButton
-              href="https://github.com/kiwicom/orbit"
-              data-show-count
-              data-icon="star"
-              title="kiwicom/orbit"
-              aria-label="orbit github"
-            />
-          </div>
+          {isLargeMobile && (
+            <>
+              <span>&sdot;</span>
+              <div
+                css={css`
+                  height: 22px;
+                `}
+              >
+                <GitHubButton
+                  href="https://github.com/kiwicom/orbit"
+                  data-show-count
+                  data-icon="star"
+                  title="kiwicom/orbit"
+                  aria-label="orbit github"
+                />
+              </div>{" "}
+            </>
+          )}
         </Stack>
 
         <StyledRight>
-          <Stack inline spacing="XXSmall">
-            {!isHome && <SearchNavbarButton onClick={() => setSearchOpen(true)} />}
+          <Stack inline spacing="XXSmall" align="center">
+            {isHome ? (
+              <NavigationLinks isDesktop={isDesktop} />
+            ) : (
+              <SearchNavbarButton onClick={() => setSearchOpen(true)} />
+            )}
+
             {isSearchOpen && !isHome && <Search onClose={() => setSearchOpen(false)} />}
             {docNavigation ? (
               <>

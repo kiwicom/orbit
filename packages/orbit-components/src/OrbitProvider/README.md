@@ -18,8 +18,8 @@ After adding import please wrap your application into `OrbitProvider` and you ca
 
 Table below contains all types of the props available in the OrbitProvider component.
 
-| Name         | Type         | Default | Description                                                                                                                         |
-| :----------- | :----------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------- |
-| **children** | `React.Node` |         | Your app                                                                                                                            |
-| theme        | `[Object]`   |         | See [`theming`](https://github.com/kiwicom/orbit/blob/master/.github/theming.md)                                                    |
-| dictionary   | `[Object]`   |         | See [`dictionary`](https://github.com/kiwicom/orbit/blob/master/docs/src/documentation/05-development/01-guides/02-dictionary.mdxd) |
+| Name         | Type         | Default | Description                                                                                                                        |
+| :----------- | :----------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------- |
+| **children** | `React.Node` |         | Your app                                                                                                                           |
+| theme        | `[Object]`   |         | See [`theming`](https://github.com/kiwicom/orbit/blob/master/.github/theming.md)                                                   |
+| dictionary   | `[Object]`   |         | See [`dictionary`](https://github.com/kiwicom/orbit/blob/master/docs/src/documentation/05-development/01-guides/02-dictionary.mdx) |

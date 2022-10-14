@@ -1,0 +1,46 @@
+name: Update palette tokens
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+
+jobs:
+  doc-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Today date
+        run: echo "TODAY=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Setup git identity
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Update palette
+        run: |
+          yarn tokens fetch:colors
+          yarn tokens build
+          yarn tokens jest -u
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "feat(tokens): update palette"
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v4
+        with:
+          base: master
+          branch: feat/update-palette-tokens
+          token: ${{ secrets.PAT }}
+          delete-branch: true
+          title: "feat(tokens): update palette tokens from figma"
+          body: |
+            - Automatically generated PR on ${{ env.TODAY }}.
+            - Updates palette tokens from Figma
+          labels: Tokens
+          assignees: mainframev
+          reviewers: mainframev
+          draft: false

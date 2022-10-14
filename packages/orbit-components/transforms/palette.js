@@ -16,6 +16,8 @@ function palette(fileInfo, api) {
       if (name === "paletteInkNormalActive") path.node.name = "paletteInkDarkActive";
       if (name === "paletteCloudDark") path.node.name = "paletteCloudNormal";
       if (name === "paletteCloudDarker") path.node.name = "paletteCloudDark";
+      if (name === "paletteCloudDarkerActive") path.node.name = "paletteCloudDarkActive";
+      if (name === "paletteCloudDarkerHover") path.node.name = "paletteCloudDarkHover";
     })
     .toSource();
 }

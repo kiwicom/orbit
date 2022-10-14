@@ -5,7 +5,7 @@ on:
     - cron: "0 11 * * *"
 
 jobs:
-  doc-updates:
+  cron-update-contributors:
     runs-on: ubuntu-latest
     steps:
       - name: Node
@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.PAT }}
           delete-branch: true
           title: "chore: update contributors"
-          labels: Icons
+          labels: Documentation
           body: |
             - Automatically generated PR on ${{ env.TODAY }}.
             - Updates contributors for docs

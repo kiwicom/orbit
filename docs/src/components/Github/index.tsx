@@ -1,19 +1,13 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import styled from "styled-components";
-import { Alert, Text, Heading } from "@kiwicom/orbit-components";
+import { Text, Heading } from "@kiwicom/orbit-components";
 
 import OrbitTeam from "./OrbitTeam";
 import Contributor from "./Contributor";
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
-`;
+import AllContributors from "./AllContributors";
 
 export interface Contributor {
-  id: string | number;
+  id: string;
   active: boolean;
   name: string;
   username: string;
@@ -30,43 +24,35 @@ const ContributorsComponent = () => {
   const { allContributor } = useStaticQuery(
     graphql`
       query CollaboratorsQuery {
-        allContributor {
-          nodes {
-            id
-            name
-            username
-            info
-            active
-            position
-            error
-            dribbble
-            avatar_url
-            github
-            twitter
-            website
+        allContributor(filter: { core: { eq: true } }) {
+          group(field: active) {
+            nodes {
+              id
+              name
+              username
+              info
+              active
+              core
+              position
+              error
+              dribbble
+              avatar_url
+              github
+              twitter
+              website
+            }
           }
         }
       }
     `,
   );
 
-  const { core, all, error } = allContributor.nodes.reduce(
-    (acc, cur) => {
-      if (cur.error) acc.error = cur.error;
-      if (cur.id.match("-")) {
-        acc.all.push(cur);
-      } else {
-        acc.core.push(cur);
-      }
-
-      return acc;
-    },
-    { core: [], all: [], error: "" },
-  );
+  const { group } = allContributor;
+  const [previous, current] = group;
 
   return (
     <>
-      <OrbitTeam contributors={core} />
+      <OrbitTeam currentContributors={current.nodes} previousContributors={previous.nodes} />
       <Heading type="title2" as="h2">
         All contributors
       </Heading>
@@ -80,20 +66,7 @@ const ContributorsComponent = () => {
       <Text>
         Thanks to all these folks for caring! Your contributions have helped all Orbit consumers.
       </Text>
-      {error ? (
-        <Alert type="warning">
-          <Text>{error}</Text>
-        </Alert>
-      ) : (
-        <Grid>
-          {all
-            // exclude robots 😅
-            .filter(contributor => !contributor.username?.includes("dependabot"))
-            .map(contributor => (
-              <Contributor key={contributor.username} {...contributor} />
-            ))}
-        </Grid>
-      )}
+      <AllContributors />
     </>
   );
 };

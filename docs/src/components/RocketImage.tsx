@@ -1,6 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import Img, { FluidObject } from "gatsby-image";
+import Img, { FixedObject } from "gatsby-image";
 import styled, { css } from "styled-components";
 import { mediaQueries as mq } from "@kiwicom/orbit-components";
 
@@ -18,21 +18,20 @@ const StyledImageWrapper = styled.div`
 `;
 
 export default function RocketImage() {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
   const data: {
     file: {
       childImageSharp: {
-        fluid: FluidObject;
+        fixed: FixedObject;
       };
     };
   } = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "rocket.jpg" }) {
         childImageSharp {
-          fluid {
-            aspectRatio
-            sizes
-            src
-            srcSet
+          fixed(width: 810, height: 852) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -43,18 +42,26 @@ export default function RocketImage() {
     <StyledImageWrapper>
       <Img
         css={css`
-          top: 0;
+          position: relative;
+          top: 40px;
           right: 0;
           width: 60vw;
           min-width: 400px;
-          max-width: 904px;
-          transform: translate(26%, -6%);
+          max-width: 850px;
+
+          &:after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(0deg, #ffffff 6.03%, rgba(255, 255, 255, 0) 100%);
+          }
         `}
-        style={{ position: "absolute" }} // to override gatsby-image's position
-        fluid={data.file.childImageSharp.fluid}
+        style={{ position: "absolute", display: !isLoaded && "none" }} // to override gatsby-image's position
+        fixed={data.file.childImageSharp.fixed}
+        onLoad={() => setIsLoaded(true)}
       />
     </StyledImageWrapper>
   );
 }
-
-export { FluidObject };

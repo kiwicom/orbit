@@ -50,6 +50,12 @@ export default {
           type: "number",
           defaultValue: "",
         },
+        {
+          name: "arrows",
+          type: "boolean",
+          defaultValue: false,
+        },
+        { name: "arrowColor", type: "text", defaultValue: "" },
         { name: "overflowElevation", type: "boolean", defaultValue: false },
         { name: "elevationColor", type: "string", defaultValue: "paletteCloudDark" },
         {

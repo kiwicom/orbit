@@ -7,6 +7,8 @@ import mergeRefs from "../utils/mergeRefs";
 import defaultTheme from "../defaultTheme";
 import useTheme from "../hooks/useTheme";
 import useScrollBox from "./useScroll";
+import ChevronLeft from "../icons/ChevronLeft";
+import ChevronRight from "../icons/ChevronRight";
 
 import type { Props, ScrollSnap } from ".";
 
@@ -20,10 +22,24 @@ const shadowMixin = css`
   height: 100%;
 `;
 
+const StyledButton = styled.button`
+  ${({ isHidden }) => css`
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    z-index: 10;
+    height: 100%;
+    visibility: ${isHidden ? "hidden" : "visible"};
+  `}
+`;
+
 const StyledWrapper = styled.div`
   ${({
     isDragging,
     $minHeight,
+    theme,
     elevationColor,
     overflowElevation,
     isStart,
@@ -32,6 +48,8 @@ const StyledWrapper = styled.div`
   }) => css`
     position: relative;
     width: 100%;
+    display: inline-flex;
+    align-items: center;
     min-height: ${$minHeight && `${$minHeight}px`};
     cursor: ${isOverflowing && (isDragging ? "grabbing" : "grab")};
     overflow: hidden;
@@ -55,6 +73,18 @@ const StyledWrapper = styled.div`
         box-shadow: -5px 0px 20px 20px ${elevationColor};
       }
     `}
+
+    ${StyledButton} {
+      position: absolute;
+
+      &:first-child {
+        left: ${theme.orbit.spaceXXSmall};
+      }
+
+      &:nth-child(2) {
+        right: ${theme.orbit.spaceXXSmall};
+      }
+    }
   `};
 `;
 
@@ -91,20 +121,28 @@ const StyledOverflow = styled.div`
 const StyledContainer = styled.div`
   ${({ isDragging }) => css`
     height: 100%;
+    position: relative;
     width: 100%;
     display: inline-flex;
     pointer-events: ${isDragging && "none"};
   `};
 `;
 
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledContainer.defaultProps = {
+  theme: defaultTheme,
+};
+
 const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef(
   (
     {
       children,
       spacing = "small",
+      arrows,
       scrollSnap = "none",
       onOverflow,
       elevationColor = "paletteCloudDark",
+      arrowColor,
       overflowElevation,
       scrollPadding,
       dataTest,
@@ -136,6 +174,18 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
         }
       }
     }, [onOverflow]);
+
+    const handleClick = (direction: "left" | "right") => {
+      if (scrollEl) {
+        const { scrollLeft, offsetWidth } = scrollEl;
+        const scrollAmount =
+          scrollLeft + (direction === "left" ? -offsetWidth / 2 : offsetWidth / 2);
+        scrollEl.scrollTo({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    };
 
     const handleScroll = React.useCallback(() => {
       if (scrollEl) {
@@ -183,6 +233,27 @@ const HorizontalScroll: React.AbstractComponent<Props, HTMLDivElement> = React.f
         ref={mergeRefs([ref, containerRef])}
         elevationColor={theme.orbit[elevationColor]}
       >
+        {arrows && (
+          <>
+            <StyledButton
+              tabIndex={0}
+              type="button"
+              isHidden={reachedStart}
+              onClick={() => handleClick("left")}
+            >
+              <ChevronLeft customColor={arrowColor} />
+            </StyledButton>
+            <StyledButton
+              tabIndex={0}
+              type="button"
+              isHidden={reachedEnd}
+              onClick={() => handleClick("right")}
+            >
+              <ChevronRight customColor={arrowColor} />
+            </StyledButton>
+          </>
+        )}
+
         <StyledOverflow
           $scrollSnap={scrollSnap}
           scrollPadding={scrollPadding}

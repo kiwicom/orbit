@@ -16,13 +16,17 @@ export default {
 export const Default = (): React.Node => {
   const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.XXXSMALL);
   const overflowElevation = boolean("overflowElevation", true);
-  const elevationColor = text("elevationColor", "#000");
+  const elevationColor = text("elevationColor", "");
+  const arrows = boolean("arrows", false);
+  const arrowColor = text("arrowColor", "");
 
   return (
     <HorizontalScroll
       spacing={spacing}
+      arrows={arrows}
       overflowElevation={overflowElevation}
       elevationColor={elevationColor}
+      arrowColor={arrowColor}
     >
       {Array(...Array(10)).map((_, key) => (
         <Box

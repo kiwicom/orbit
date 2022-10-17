@@ -31,6 +31,8 @@ After adding import into your project you can use it simply like:
 | overflowElevation | `boolean`                   |                    |                      | set box-shadow on sides during scroll              |
 | elevationColor    | `string`                    |                    | `paletteCloudDarker` | set box-shadow color                               |
 | onOverflow        | `() => void`                |                    |                      | callback function, fires, if content is overflowed |
+| arrows            | `boolean`                   |                    |                      | show arrows                                        |
+| arrowsColor       | `string`                    |                    |                      | set arrows color                                   |
 
 # ScrollSnap
 

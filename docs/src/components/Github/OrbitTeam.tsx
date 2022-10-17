@@ -8,16 +8,12 @@ import Member from "./TeamMember";
 
 import { Contributor } from ".";
 
-interface AllMembers {
-  current: Contributor[];
-  previous: Contributor[];
-}
-
 interface Props {
-  contributors: Contributor[];
+  currentContributors: Contributor[];
+  previousContributors: Contributor[];
 }
 
-const OrbitTeam = ({ contributors }: Props) => {
+const OrbitTeam = ({ currentContributors, previousContributors }: Props) => {
   const { allFile } = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { regex: "/team/" } }) {
@@ -39,34 +35,22 @@ const OrbitTeam = ({ contributors }: Props) => {
     }
   `);
 
-  const getImg = id =>
+  const getImg = (id: string) =>
     allFile.edges
       .map(n => n.node.childImageSharp && n.node.childImageSharp.fluid)
       .filter(Boolean)
       .find(n => n.originalName.includes(id));
-
-  const splittedMembers = contributors.reduce<AllMembers>(
-    (acc, cur) => {
-      if (cur.active) {
-        acc.current.push(cur);
-      } else {
-        acc.previous.push(cur);
-      }
-
-      return acc;
-    },
-    { current: [], previous: [] },
-  );
 
   return (
     <Stack direction="column" spacing="large" spaceAfter="large">
       <Heading type="title1" as="h3">
         Core team
       </Heading>
-      {splittedMembers.current.map(({ id, ...info }) => {
+      {currentContributors.map(({ id, username, ...info }) => {
         return (
           <Member
             key={id}
+            username={username}
             id={id}
             {...info}
             image={
@@ -76,7 +60,7 @@ const OrbitTeam = ({ contributors }: Props) => {
                   min-width: 120px;
                   height: 120px;
                 `}
-                fluid={getImg(id)}
+                fluid={getImg(username)}
               />
             }
           />
@@ -85,10 +69,11 @@ const OrbitTeam = ({ contributors }: Props) => {
       <Heading type="title1" as="h3">
         Former members
       </Heading>
-      {splittedMembers.previous.map(({ id, ...info }) => {
+      {previousContributors.map(({ id, username, ...info }) => {
         return (
           <Member
             key={id}
+            username={username}
             id={id}
             {...info}
             image={
@@ -98,7 +83,7 @@ const OrbitTeam = ({ contributors }: Props) => {
                   min-width: 120px;
                   height: 120px;
                 `}
-                fluid={getImg(id)}
+                fluid={getImg(username)}
               />
             }
           />

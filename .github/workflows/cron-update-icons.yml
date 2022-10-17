@@ -1,0 +1,44 @@
+name: Update icons
+
+on:
+  schedule:
+    - cron: "0 10 * * *"
+
+jobs:
+  cron-update-icons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Today date
+        run: echo "TODAY=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Setup git identity
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Update icons
+        run: |
+          yarn components fetch:icons
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "feat(icons): update icons from figma"
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v4
+        with:
+          base: master
+          branch: feat/update-icons-and-svgs
+          token: ${{ secrets.PAT }}
+          delete-branch: true
+          title: "feat(icons): update icons from Figma"
+          labels: Icons
+          body: |
+            - Automatically generated PR on ${{ env.TODAY }}.
+            - Updates icons from Figma
+          assignees: mainframev
+          reviewers: mainframev
+          draft: false

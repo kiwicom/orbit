@@ -10,6 +10,7 @@
     "github": "https://github.com/CollierCZ",
     "twitter": "",
     "website": "https://collier.cz/",
+    "core": true,
     "active": false
   },
   {
@@ -23,6 +24,7 @@
     "github": "https://github.com/williamkolmacka",
     "twitter": "https://twitter.com/willkolmacka",
     "website": "",
+    "core": true,
     "active": true
   },
   {
@@ -36,6 +38,7 @@
     "github": "https://github.com/majlan",
     "twitter": "https://twitter.com/milanseitler",
     "website": "http://seitler.cz/",
+    "core": true,
     "active": true
   },
   {
@@ -49,6 +52,7 @@
     "github": "https://github.com/vepor",
     "twitter": "https://twitter.com/elvepor",
     "website": "",
+    "core": true,
     "active": false
   },
   {
@@ -62,6 +66,7 @@
     "twitter": "",
     "dribbble": "",
     "website": "https://mainframev.com",
+    "core": true,
     "active": true
   },
   {
@@ -75,6 +80,7 @@
     "twitter": "",
     "dribbble": "",
     "website": "",
+    "core": true,
     "active": true
   },
   {
@@ -87,6 +93,7 @@
     "dribbble": "",
     "twitter": "https://twitter.com/silvenon",
     "website": "https://silvenon.com/",
+    "core": true,
     "active": false
   },
   {
@@ -100,6 +107,7 @@
     "twitter": "https://twitter.com/filipdanisko",
     "github": "https://github.com/filipdanisko",
     "website": "https://danisko.cz/",
+    "core": true,
     "active": false
   },
   {
@@ -113,6 +121,7 @@
     "twitter": "",
     "github": "https://github.com/tomashapl",
     "website": "https://tomashapl.cz/",
+    "core": true,
     "active": false
   },
   {
@@ -126,6 +135,7 @@
     "github": "https://github.com/FilipMessa",
     "twitter": "https://twitter.com/filipmessa",
     "website": "",
+    "core": true,
     "active": false
   },
   {
@@ -139,6 +149,7 @@
     "github": "https://github.com/sampi",
     "twitter": "",
     "website": "",
+    "core": true,
     "active": false
   },
   {
@@ -152,6 +163,7 @@
     "github": "https://github.com/HonzaTmn",
     "twitter": "https://twitter.com/HonzaTmn",
     "website": "",
+    "core": true,
     "active": false
   },
   {
@@ -165,6 +177,7 @@
     "twitter": "https://twitter.com/janvaclavik",
     "github": "https://github.com/jvaclavik",
     "website": "http://janvaclavik.cz/",
+    "core": true,
     "active": false
   }
 ]

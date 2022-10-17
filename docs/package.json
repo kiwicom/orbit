@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
+    "fetch:contributors": "babel-node ./plugins/contributors/fetchContributors.mjs",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
@@ -65,6 +66,7 @@
     "dotenv-safe": "^8.2.0",
     "downshift": "^6.1.7",
     "eslint-plugin-orbit-components": "*",
+    "filedirname": "^2.7.0",
     "fontfaceobserver": "^2.1.0",
     "fs-extra": "^9.1.0",
     "fuzzaldrin-plus": "^0.6.0",

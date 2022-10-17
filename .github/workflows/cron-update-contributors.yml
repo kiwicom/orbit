@@ -1,0 +1,44 @@
+name: Update contributors
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+
+jobs:
+  cron-update-contributors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Today date
+        run: echo "TODAY=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Setup git identity
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Update contributors
+        run: |
+          yarn docs fetch:contributors
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "docs: update contributors"
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v4
+        with:
+          base: master
+          branch: docs/update-contributors
+          token: ${{ secrets.PAT }}
+          delete-branch: true
+          title: "chore: update contributors"
+          labels: Documentation
+          body: |
+            - Automatically generated PR on ${{ env.TODAY }}.
+            - Updates contributors for docs
+          assignees: mainframev
+          reviewers: mainframev
+          draft: false

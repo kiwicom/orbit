@@ -1,0 +1,41 @@
+name: Update component statuses
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+
+jobs:
+  cron-update-statuses:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Today date
+        run: echo "TODAY=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Setup git identity
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Update component statuses
+        run: |
+          yarn check:statuses
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "chore: update component statuses"
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v4
+        with:
+          base: master
+          branch: chore/update-icons-and-svgs
+          token: ${{ secrets.PAT }}
+          delete-branch: true
+          title: "chore: update component statuses"
+          body: |
+            - Automatically generated PR on ${{ env.TODAY }}.
+            - Updates component statuses
+          assignees: mainframev
+          reviewers: mainframev
+          draft: false

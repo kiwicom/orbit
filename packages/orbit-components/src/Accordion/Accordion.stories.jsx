@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import { action } from "@storybook/addon-actions";
 
 import Text from "../Text";
 import Button from "../Button";
@@ -142,7 +143,7 @@ export const AccordionWithCustomActions = (): React.Node => {
             <Text size="small">This is a header label</Text>
           </Stack>
         }
-        actions={<Button>Open</Button>}
+        actions={<Button onClick={action("Open onClick")}>Open</Button>}
       >
         <Text type="primary">This is a content text</Text>
       </AccordionSection>
@@ -168,8 +169,10 @@ export const AccordionWithCustomActions = (): React.Node => {
         }
         actions={
           <Stack direction="row">
-            <Button type="secondary">Edit</Button>
-            <Button>Custom close</Button>
+            <Button onClick={action("Edit onClick")} type="secondary">
+              Edit
+            </Button>
+            <Button onClick={action("Close onClick")}>Custom close</Button>
           </Stack>
         }
       >

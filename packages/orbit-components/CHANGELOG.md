@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@4.0.0...@kiwicom/orbit-components@4.1.0) (2022-10-18)
+
+
+### Bug Fixes
+
+* **Accordion:** not expanding ([#3606](https://github.com/kiwicom/orbit/issues/3606)) ([61d7f3b](https://github.com/kiwicom/orbit/commit/61d7f3bbc465cf66fa1424c95a1e01f8f5d43068))
+* **LinkList:** fix missing direction prop in sc ([c04c42a](https://github.com/kiwicom/orbit/commit/c04c42ac33b8d9deac0487aaf40d5aebfabd25fe))
+* **Table:** responsive shadow was not correct ([#3604](https://github.com/kiwicom/orbit/issues/3604)) ([4feb4c9](https://github.com/kiwicom/orbit/commit/4feb4c9062e56712dc8253eee8aa8e5bd8e2f45f))
+
+
+### Features
+
+* **HorizontalScroll:** add arrows to scroll ([#3603](https://github.com/kiwicom/orbit/issues/3603)) ([3ec0895](https://github.com/kiwicom/orbit/commit/3ec0895ad1b7e8b735ce27dac3f8a2c06e697a37))
+* **LinkList:** add legacy prop ([553029f](https://github.com/kiwicom/orbit/commit/553029f82b00c35705b7540932f725c308e9210a))
+* **Stack:** add legacy prop to apply old spacing behaviour ([c6096dd](https://github.com/kiwicom/orbit/commit/c6096dd4986249000e022c3b3544d2caf073722b))
+
+
+
+
+
 # [4.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@3.8.0...@kiwicom/orbit-components@4.0.0) (2022-10-12)
 
 

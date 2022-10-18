@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
+import type { CSSRules } from "styled-components";
 
 import { left, rtlSpacing } from "../utils/rtl";
 import mq from "../utils/mediaQuery";
@@ -13,15 +14,16 @@ import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTem
 import type { Props } from ".";
 
 const StyledLinkList = styled.ul`
-  ${({ indent, direction, theme }) => css`
-  display: flex;
-  flex-direction: ${direction};
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  padding-${left}: ${indent && theme.orbit.spaceXXSmall};
-  list-style: none;
-  font-size: ${theme.orbit.fontSizeTextNormal};
+  ${({ indent, direction, theme, legacy, spacing }) => css`
+    display: flex;
+    flex-direction: ${direction};
+    width: 100%;
+    margin: 0;
+    gap: ${!legacy && spacing && getSpacing({ theme })[spacing]};
+    padding: 0;
+    padding-${left}: ${indent && theme.orbit.spaceXXSmall};
+    list-style: none;
+    font-size: ${theme.orbit.fontSizeTextNormal};
   `};
 `;
 
@@ -30,7 +32,7 @@ StyledLinkList.defaultProps = {
   theme: defaultTheme,
 };
 
-const resolveSpacings = ({ spacing, direction, ...props }) => {
+const resolveSpacings = ({ spacing, legacy, direction, ...props }): CSSRules | null => {
   const margin =
     spacing &&
     direction &&
@@ -38,6 +40,8 @@ const resolveSpacings = ({ spacing, direction, ...props }) => {
       "__spacing__",
       getSpacing(props)[spacing],
     );
+
+  if (!legacy) return null;
 
   return css`
     margin: ${margin && rtlSpacing(margin)};
@@ -77,15 +81,22 @@ StyledNavigationLinkListChild.defaultProps = {
 const LinkList = ({
   direction = "column",
   indent,
+  legacy = false,
   spacing = SPACINGS.MEDIUM,
   children,
   dataTest,
 }: Props): React.Node => (
-  <StyledLinkList indent={indent} direction={direction} data-test={dataTest}>
+  <StyledLinkList
+    indent={indent}
+    direction={direction}
+    data-test={dataTest}
+    legacy={legacy}
+    spacing={spacing}
+  >
     {React.Children.map(children, item => {
       if (React.isValidElement(item)) {
         return (
-          <StyledNavigationLinkListChild direction={direction} spacing={spacing}>
+          <StyledNavigationLinkListChild direction={direction} spacing={spacing} legacy={legacy}>
             {item}
           </StyledNavigationLinkListChild>
         );

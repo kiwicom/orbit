@@ -21,14 +21,15 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in LinkList component.
 
-| Name         | Type                  | Default    | Description                            |
-| :----------- | :-------------------- | :--------- | :------------------------------------- |
-| **children** | `React.Node`          |            | The content of the LinkList            |
-| dataTest     | `string`              |            | Optional prop for testing purposes.    |
-| id           | `string`              |            | Set `id` for `LinkList`                |
-| direction    | [`enum`](#enum)       | `"column"` | The size of the LinkList.              |
-| indent       | `boolean`             |            | Indenting LinkList item                |
-| spacing      | [`spacing`](#spacing) | `"medium"` | The spacing between LinkList children. |
+| Name         | Type                  | Default    | Description                                                        |
+| :----------- | :-------------------- | :--------- | :----------------------------------------------------------------- |
+| **children** | `React.Node`          |            | The content of the LinkList                                        |
+| dataTest     | `string`              |            | Optional prop for testing purposes.                                |
+| id           | `string`              |            | Set `id` for `LinkList`                                            |
+| direction    | [`enum`](#enum)       | `"column"` | The size of the LinkList.                                          |
+| indent       | `boolean`             |            | Indenting LinkList item                                            |
+| spacing      | [`spacing`](#spacing) | `"medium"` | The spacing between LinkList children.                             |
+| legacy       | `boolean`             | `false`    | If `true` will use `margin` for spacing, if `false` will use `gap` |
 
 ### enum
 

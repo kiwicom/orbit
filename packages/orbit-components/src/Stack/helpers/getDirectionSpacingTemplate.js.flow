@@ -1,0 +1,4 @@
+// @flow
+export type GetDirectionSpacingTemplate = (direction: ?string) => string | boolean;
+
+declare export default GetDirectionSpacingTemplate;

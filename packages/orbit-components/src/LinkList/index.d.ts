@@ -9,6 +9,7 @@ import { Spacing } from "../Stack";
 export interface Props extends Common.Global {
   readonly direction?: "column" | "row";
   readonly indent?: boolean;
+  readonly legacy?: boolean;
   readonly spacing?: Spacing;
   readonly children: React.ReactNode;
 }

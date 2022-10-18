@@ -4,10 +4,10 @@ import { css } from "styled-components";
 import getSpacing from "./getSpacing";
 import getProperty from "./getProperty";
 import { QUERIES } from "../../utils/mediaQuery/consts";
-import type { GetGap } from "./getGap";
 import { rtlSpacing } from "../../utils/rtl";
 import { DIRECTIONS } from "../../utils/layout/consts";
 import type { Direction, Spacing } from "..";
+import type { GetGap } from "./getGap";
 
 const getDirectionSpacingTemplate = (direction: Direction | Spacing): string => {
   switch (direction) {

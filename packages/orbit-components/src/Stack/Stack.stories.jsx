@@ -332,6 +332,7 @@ NestedExample.story = {
 };
 
 export const Playground = (): React.Node => {
+  const legacy = boolean("legacy", true);
   const dataTest = text("dataTest", "test");
   const flex = boolean("flex", true);
   const inline = boolean("Inline", false);
@@ -367,6 +368,7 @@ export const Playground = (): React.Node => {
       dataTest={dataTest}
       flex={flex}
       direction={direction}
+      legacy={legacy}
       align={align}
       justify={justify}
       wrap={wrap}

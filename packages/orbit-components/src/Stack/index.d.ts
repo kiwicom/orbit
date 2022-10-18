@@ -38,6 +38,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly wrap?: boolean;
   readonly grow?: boolean;
   readonly shrink?: boolean;
+  readonly legacy?: boolean;
   readonly basis?: string;
   readonly align?: Align;
   readonly justify?: Justify;

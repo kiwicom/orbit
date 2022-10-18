@@ -40,7 +40,7 @@
 First, you need to build the project:
 
 ```
-yarn build-ci
+yarn build
 ```
 
 Next, run Storybook:

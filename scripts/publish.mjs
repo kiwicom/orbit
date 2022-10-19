@@ -6,11 +6,38 @@ import { obj as transform } from "through2";
 import mergeStreams from "merge-stream";
 import markdownChalk from "markdown-chalk";
 import slackify from "slackify-markdown";
+import { Octokit } from "@octokit/rest";
 
-const SLACK_API = `https://skypicker.slack.com/api/chat.postMessage`;
+import { parseSlackMessages } from "./helpers.mjs";
+
 const TITLE = `New orbit release 🚀`;
 const CHANNEL = `orbit-react`;
-const COLOR = `#00A58E`;
+const COLOR_CORE = `#00A58E`;
+const COLOR_PING = `#0172CB`;
+
+const octokit = new Octokit({
+  auth: process.env.GH_TOKEN,
+});
+
+const apiRequest = ({ method = "GET", url, body }) =>
+  fetch.call(null, url, {
+    method,
+    body,
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      Authorization: `Bearer ${process.env.SLACK_TOKEN}`,
+      Accept: "application/json",
+    },
+  });
+
+async function getLatestReleaseTime() {
+  const res = await octokit.rest.repos.getLatestRelease({
+    owner: "kiwicom",
+    repo: "orbit",
+  });
+
+  return new Date(res.data.published_at).getTime() / 1000;
+}
 
 function installDependencies() {
   return new Promise((resolve, reject) =>
@@ -42,10 +69,29 @@ function adjustChangelog(str) {
   return output;
 }
 
-async function postSlackNotification(changelog) {
+async function getUserNames(timestamp) {
   try {
     $.verbose = false;
-    const res = await fetch(SLACK_API, {
+
+    const res = await apiRequest({
+      url: `${process.env.SLACK_API_READ_PLZ_ORBIT}&oldest=${timestamp}`,
+    });
+
+    if (!res.ok) return res.error;
+    const { messages } = await res.json();
+    return parseSlackMessages(messages);
+  } catch (err) {
+    console.error(err);
+  }
+
+  return undefined;
+}
+
+async function postSlackNotification(changelog, names) {
+  try {
+    $.verbose = false;
+    const res = await apiRequest({
+      url: process.env.SLACK_API_POST_RELEASE_MESSAGE,
       method: "POST",
       body: JSON.stringify({
         channel: CHANNEL,
@@ -53,15 +99,14 @@ async function postSlackNotification(changelog) {
           {
             title: TITLE,
             text: slackify(adjustChangelog(changelog)),
-            color: COLOR,
+            color: COLOR_CORE,
+          },
+          {
+            text: names.join(","),
+            color: COLOR_PING,
           },
         ],
       }),
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        Authorization: `Bearer ${process.env.SLACK_TOKEN}`,
-        Accept: "application/json",
-      },
     });
     if (!res.ok) return res.error;
   } catch (err) {
@@ -78,9 +123,15 @@ async function configureGitHubToken() {
       example: ".env.example",
     });
   } catch (err) {
-    if (/GH_TOKEN|SLACK_TOKEN/g.test(err.message)) {
+    if (/SLACK_TOKEN/g.test(err.message)) {
       throw new Error(
-        "GitHub token or Slack token is missing in the .env file, Lerna needs it to create GitHub releases.\nLearn how to create one: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token.",
+        "Slack token is missing in the .env file, please add it.\nLearn how to create one: https://slack.com/intl/en-cz/help/articles/215770388-Create-and-regenerate-API-tokens",
+      );
+    }
+
+    if (/GH_TOKEN/g.test(err.message)) {
+      throw new Error(
+        "GitHub token is missing in the .env file, Lerna needs it to create GitHub releases.\nLearn how to create one: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token.",
       );
     }
   }
@@ -89,12 +140,7 @@ async function configureGitHubToken() {
 async function previewChangelog() {
   const packages = await getPackages();
   const streams = packages
-    .filter(
-      pkg =>
-        !/orbit.kiwi|orbit-tracking|(babel|eslint)-plugin-orbit-components|orbit-design-tokens/gm.test(
-          pkg.name,
-        ),
-    )
+    .filter(pkg => !/orbit.kiwi|orbit-tracking/gm.test(pkg.name))
     .map(pkg => {
       return conventionalChangelog(
         {
@@ -138,6 +184,9 @@ async function previewChangelog() {
   await configureGitHubToken();
   await installDependencies();
   await publishPackages();
-  const changelog = await previewChangelog();
-  await postSlackNotification(changelog);
+  const timestamp = await getLatestReleaseTime();
+  const names = await getUserNames(timestamp);
+  await previewChangelog().then(changelog => {
+    postSlackNotification(changelog, names);
+  });
 })();

@@ -2269,7 +2269,7 @@
       }
     },
     "widthIconMedium": {
-      "value": "24px",
+      "value": "20px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2278,7 +2278,7 @@
       }
     },
     "heightIconMedium": {
-      "value": "24px",
+      "value": "20px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2287,7 +2287,7 @@
       }
     },
     "widthIconLarge": {
-      "value": "32px",
+      "value": "24px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2296,7 +2296,7 @@
       }
     },
     "heightIconLarge": {
-      "value": "32px",
+      "value": "24px",
       "type": "size",
       "category": "",
       "comment": "",

@@ -346,7 +346,7 @@
 @value background-button-secondary: rgb(232, 237, 241);
 @value background-button-info-active: rgb(1, 80, 142);
 @value background-button-link-primary-hover: rgb(229, 234, 239);
-@value width-icon-medium: 24px;
+@value width-icon-medium: 20px;
 @value color-text-badge-neutral: rgb(37, 42, 49);
 @value space-x-small: 8px;
 @value palette-green-normal-active: rgb(29, 114, 40);
@@ -359,7 +359,7 @@
 @value space-xxx-small: 2px;
 @value duration-slow: "0.4s";
 @value space-large: 24px;
-@value height-icon-medium: 24px;
+@value height-icon-medium: 20px;
 @value border-color-input-error: rgb(210, 28, 28);
 @value background-carrier-logo: "transparent";
 @value color-text-button-white-hover: rgb(24, 27, 32);
@@ -438,7 +438,7 @@
 @value palette-ink-dark-hover: rgb(24, 27, 32);
 @value color-text-button-info-bordered: rgb(1, 114, 203);
 @value height-country-flag: "auto";
-@value height-icon-large: 32px;
+@value height-icon-large: 24px;
 @value box-shadow-button-focus: 0 0 4px 1px rgba(1, 114, 203, 0.3);
 @value palette-blue-light-hover: rgb(222, 240, 252);
 @value border-color-checkbox-radio-hover: rgb(79, 94, 113);
@@ -466,7 +466,7 @@
 @value background-alert-info: rgb(241, 248, 254);
 @value palette-blue-normal: rgb(1, 114, 203);
 @value height-badge: 24px;
-@value width-icon-large: 32px;
+@value width-icon-large: 24px;
 @value background-input: rgb(255, 255, 255);
 @value color-text-button-primary-hover: rgb(255, 255, 255);
 @value palette-red-normal: rgb(210, 28, 28);

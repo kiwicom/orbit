@@ -7,12 +7,10 @@ const StyledMiddle = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    padding: ${CONTENT_PADDING} ${CONTENT_PADDING} 0;
-    width: calc(100% - (${CONTENT_PADDING} * 2));
     max-width: ${MAX_CONTENT_WIDTH};
-    margin: 0 auto;
     box-sizing: content-box;
     ${mediaQueries.largeDesktop(css`
+      padding-left: ${CONTENT_PADDING};
       flex-direction: row;
       > * + * {
         margin-left: ${theme.orbit.spaceLarge};

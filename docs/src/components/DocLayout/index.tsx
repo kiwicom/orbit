@@ -69,6 +69,22 @@ const StyledTopWrapper = styled.div<{ $hasTabs: boolean }>`
   `}
 `;
 
+const StyledGrayBg = styled.div`
+  position: relative;
+  margin-right: -2rem;
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    z-index: -1;
+    height: 238px;
+    width: 100%;
+    background: linear-gradient(85.39deg, #f1f4f7 3.73%, #f5f7f9 53.77%);
+  }
+`;
+
 interface Props {
   children: React.ReactNode;
   description?: string;
@@ -132,7 +148,7 @@ export default function DocLayout({
             }
           />
           <StyledMiddle>
-            <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
+            <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
               <StyledDocNavigationWidth>
                 <StyledDocNavigationWrapper>
                   <DocNavigation currentUrl={path} />
@@ -153,31 +169,32 @@ export default function DocLayout({
                 </StyledProse>
               ) : (
                 <>
-                  {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
-                  <Box padding={{ bottom: "medium" }}>
-                    <Stack inline align="center" spaceAfter="small">
-                      <AddBookmark title={title} description={description} />
-                      <div
-                        css={css`
-                          /* align with the bookmark icon */
-                          position: relative;
-                          top: 1px;
-                        `}
-                      >
-                        <Heading as="h1" type="title1">
-                          {title}
-                        </Heading>
-                      </div>
-                    </Stack>
-                    {description && (
-                      <Box padding={{ left: "XXLarge" }}>
-                        <Text>
-                          <StyledDescription>{description}</StyledDescription>
-                        </Text>
-                      </Box>
-                    )}
-                  </Box>
-                  <StyledMobileOutdent>
+                  <Box background="cloudLight" padding="XXLarge" width="100%">
+                    {/* <StyledGrayBg /> */}
+                    {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
+                    <Box padding={{ bottom: "medium" }}>
+                      <Stack inline align="center" spaceAfter="small">
+                        <AddBookmark title={title} description={description} />
+                        <div
+                          css={css`
+                            /* align with the bookmark icon */
+                            position: relative;
+                            top: 1px;
+                          `}
+                        >
+                          <Heading as="h1" type="title1">
+                            {title}
+                          </Heading>
+                        </div>
+                      </Stack>
+                      {description && (
+                        <Box padding={{ left: "XXLarge" }}>
+                          <Text>
+                            <StyledDescription>{description}</StyledDescription>
+                          </Text>
+                        </Box>
+                      )}
+                    </Box>
                     {(tabs || headerLink) && (
                       <Box
                         display="flex"
@@ -207,6 +224,8 @@ export default function DocLayout({
                         </StyledTopWrapper>
                       </Box>
                     )}
+                  </Box>
+                  <StyledMobileOutdent>
                     <Grid
                       columns="100%"
                       tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}

@@ -694,7 +694,7 @@ module.exports = {
   /*  */
   backgroundButtonLinkPrimaryHover: "rgb(229, 234, 239)",
   /*  */
-  widthIconMedium: "24px",
+  widthIconMedium: "20px",
   /*  */
   colorTextBadgeNeutral: "rgb(37, 42, 49)",
   /*  */
@@ -720,7 +720,7 @@ module.exports = {
   /*  */
   spaceLarge: "24px",
   /*  */
-  heightIconMedium: "24px",
+  heightIconMedium: "20px",
   /*  */
   borderColorInputError: "rgb(210, 28, 28)",
   /*  */
@@ -878,7 +878,7 @@ module.exports = {
   /*  */
   heightCountryFlag: "auto",
   /*  */
-  heightIconLarge: "32px",
+  heightIconLarge: "24px",
   /*  */
   boxShadowButtonFocus: "0 0 4px 1px rgba(1, 114, 203, 0.3)",
   /*  */
@@ -934,7 +934,7 @@ module.exports = {
   /*  */
   heightBadge: "24px",
   /*  */
-  widthIconLarge: "32px",
+  widthIconLarge: "24px",
   /*  */
   backgroundInput: "rgb(255, 255, 255)",
   /*  */

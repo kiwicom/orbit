@@ -1029,19 +1029,19 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>widthIconMedium</name>
-          <value>24px</value>
+          <value>20px</value>
         </token>
         <token>
           <name>heightIconMedium</name>
-          <value>24px</value>
+          <value>20px</value>
         </token>
         <token>
           <name>widthIconLarge</name>
-          <value>32px</value>
+          <value>24px</value>
         </token>
         <token>
           <name>heightIconLarge</name>
-          <value>32px</value>
+          <value>24px</value>
         </token>
         <token>
           <name>heightInputNormal</name>

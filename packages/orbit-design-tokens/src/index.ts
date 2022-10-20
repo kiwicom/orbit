@@ -286,12 +286,12 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     zIndexOnTheTop: "900",
     // category:Size (width, height)
     // description:
-    widthIconSmall: theme.base.sizeSm,
-    heightIconSmall: theme.base.sizeSm,
-    widthIconMedium: theme.base.sizeMd,
-    heightIconMedium: theme.base.sizeMd,
-    widthIconLarge: theme.base.sizeLg,
-    heightIconLarge: theme.base.sizeLg,
+    widthIconSmall: theme.base.iconSizeSm,
+    heightIconSmall: theme.base.iconSizeSm,
+    widthIconMedium: theme.base.iconSizeMd,
+    heightIconMedium: theme.base.iconSizeMd,
+    widthIconLarge: theme.base.iconSizeLg,
+    heightIconLarge: theme.base.iconSizeLg,
     heightInputNormal: theme.base.sizeXl,
     heightInputLarge: theme.base.size2xl,
     heightInputSmall: theme.base.sizeLg,

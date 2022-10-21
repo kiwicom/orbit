@@ -63,6 +63,7 @@ const StyledSeatWrapper = styled.div`
 
     &:active,
     &:focus {
+      outline: revert;
       ${StyledPathNormal}, ${StyledPathSmall} {
         fill: ${resolveFillColor({ theme, type, selected, focus: true })};
       }

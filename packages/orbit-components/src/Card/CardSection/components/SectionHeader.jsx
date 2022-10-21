@@ -39,7 +39,7 @@ const StyledCardSectionHeader = styled.div`
 
   &:focus {
     background: ${({ theme, expandable }) => expandable && theme.orbit.paletteWhiteHover};
-    outline: none;
+    z-index: 1;
   }
 `;
 

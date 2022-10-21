@@ -94,7 +94,6 @@ const StyledCardWrapper = styled.div`
     `)}
 
     &:focus {
-      outline: 0;
       background: ${theme.orbit.paletteWhiteHover};
     }
 

@@ -51,7 +51,6 @@ const StyledListChoice = styled(({ disabled, theme, ...props }) => <div {...prop
       border: none;
     }
 
-    &:focus,
     &:hover {
       outline: none;
       button {

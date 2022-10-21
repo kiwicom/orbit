@@ -24,11 +24,9 @@ const StyledCallOutBanner = styled.div`
           box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
           transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
           cursor: pointer;
-          :focus,
           :active,
           :hover {
             box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
-            outline: none;
           }
           border: 1px solid transparent;
         `

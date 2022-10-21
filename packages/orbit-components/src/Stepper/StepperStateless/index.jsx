@@ -8,6 +8,7 @@ import Plus from "../../icons/Plus";
 import defaultTheme from "../../defaultTheme";
 import Button from "../../primitives/ButtonPrimitive";
 import useTheme from "../../hooks/useTheme";
+import { defaultFocus } from "../../utils/common";
 
 import type { StateLessProps } from ".";
 
@@ -101,6 +102,17 @@ StyledStepperInput.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledStepperButton = styled(Button)`
+  &:focus {
+    outline: none;
+
+    ${StyledMinusIcon},
+    ${StyledPlusIcon} {
+      ${defaultFocus}
+    }
+  }
+`;
+
 const StepperStateless = ({
   maxWidth = "120px",
   disabled,
@@ -139,7 +151,7 @@ const StepperStateless = ({
 
   return (
     <StyledStepper data-test={dataTest} id={id} maxWidth={maxWidth}>
-      <Button
+      <StyledStepperButton
         disabled={isMinusDisabled}
         iconLeft={<StyledMinusIcon size="small" isActive={active} isDisabled={isMinusDisabled} />}
         onClick={ev => {
@@ -167,7 +179,7 @@ const StepperStateless = ({
         onFocus={onFocus}
         readOnly
       />
-      <Button
+      <StyledStepperButton
         disabled={isPlusDisabled}
         iconLeft={<StyledPlusIcon size="small" isActive={active} isDisabled={isPlusDisabled} />}
         onClick={ev => {

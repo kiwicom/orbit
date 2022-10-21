@@ -49,8 +49,7 @@ const StyledWrapper = styled.div`
     border-${left}: ${theme.orbit.borderRadiusNormal} solid ${$type && resolveColor($type)};
     box-shadow: ${theme.orbit.boxShadowFixed};
     margin-bottom: ${getSpacingToken};
-    &:hover,
-    &:focus {
+    &:hover {
       outline: none;
       box-shadow: ${theme.orbit.boxShadowActionActive};
     }
@@ -114,7 +113,7 @@ const ItineraryStatus = ({
   offset = 0,
 }: Props): React.Node => {
   return (
-    <StyledWrapper $type={type} spaceAfter={spaceAfter} tabIndex={0}>
+    <StyledWrapper $type={type} spaceAfter={spaceAfter}>
       <StyledStatusHeader $type={type}>
         <StyledStatusText $offset={offset}>
           <Stack flex spacing="XSmall" align="center">

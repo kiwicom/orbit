@@ -101,7 +101,6 @@ export const getLinkStyle = ({ theme }: GetLinkStyleProps): any => css`
   }
 
   &:active,
-  &:focus {
     outline: none;
     text-decoration: none;
     color: ${getActiveColor};

@@ -23,9 +23,6 @@ const StyledTileHeader = styled.div`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   transition: ${transition(["background-color"], "fast", "ease-in-out")};
-  :focus {
-    outline: none;
-  }
 
   ${mq.largeMobile(css`
     padding: ${({ theme }) => theme.orbit.spaceLarge};

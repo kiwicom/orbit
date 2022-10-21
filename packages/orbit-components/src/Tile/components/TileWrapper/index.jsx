@@ -5,6 +5,7 @@ import styled, { css } from "styled-components";
 import transition from "../../../utils/transition";
 import { StyledIconRight } from "../TileHeader";
 import defaultTheme from "../../../defaultTheme";
+import { defaultFocus } from "../../../utils/common";
 
 import type { Props } from ".";
 
@@ -21,9 +22,7 @@ export const StyledTileWrapper: any = styled.div`
     box-shadow: ${theme.orbit.boxShadowAction};
     transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
 
-    :hover,
-    :focus {
-      outline: none;
+    :hover {
       box-shadow: ${theme.orbit.boxShadowActionActive};
       ${StyledIconRight} {
         color: ${theme.orbit.paletteInkLightHover};
@@ -46,8 +45,7 @@ const StyledTileAnchor = styled.a`
     text-decoration: none;
     color: ${theme.orbit.paletteInkDark};
     &:focus {
-      outline: none;
-      box-shadow: ${theme.orbit.boxShadowActionActive};
+      ${defaultFocus}
       ${StyledIconRight} {
         color: ${theme.orbit.paletteInkLightHover};
       }

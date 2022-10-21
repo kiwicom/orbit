@@ -143,7 +143,7 @@ const NavigationLinks = ({ isDesktop }) => {
     </Stack>
   ) : (
     <Popover placement="top-end" content={<Stack direction="column">{links}</Stack>}>
-      <ButtonLink type="secondary" iconLeft={<MenuHamburger />} />
+      <Button type="white" circled iconLeft={<MenuHamburger />} />
     </Popover>
   );
 };

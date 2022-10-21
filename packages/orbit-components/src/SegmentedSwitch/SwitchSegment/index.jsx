@@ -64,7 +64,8 @@ const StyledInput = styled.input`
       z-index: 10;
       border-radius: 5px !important;
       color: ${theme.orbit.paletteInkNormal};
-      box-shadow: 0 0 0 2px ${theme.orbit.paletteBlueNormal};
+      outline: 1px solid Highlight;
+      outline: 1px solid -webkit-focus-ring-color;
     }
   `};
 `;

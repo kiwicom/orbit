@@ -14,7 +14,6 @@ import {
   mediaQueries as mq,
   TextLink,
   Popover,
-  ButtonLink,
   useMediaQuery,
 } from "@kiwicom/orbit-components";
 import { MenuHamburger, StarEmpty, Logout } from "@kiwicom/orbit-components/icons";
@@ -164,7 +163,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
   return (
     <StyledWrapper>
       <StyledInner>
-        <Stack inline shrink align="center">
+        <Stack inline shrink align="center" spacing="small">
           <Link to="/" aria-label="Back to home page">
             <StyledLogo width={192} height={44} />
             <StyledLogoGlyph width={44} height={44} />

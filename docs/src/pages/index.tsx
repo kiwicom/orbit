@@ -146,7 +146,12 @@ export default function Home({ location, path }: Props) {
             `}
           >
             <Heading as="h2">Foundation</Heading>
-            <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+            <Grid
+              columns="1fr"
+              tablet={{ columns: "repeat(2, 1fr)" }}
+              desktop={{ columns: "repeat(3, 1fr)" }}
+              gap="1rem"
+            >
               <Tile
                 title="Colors"
                 linkContent="See our colors"
@@ -172,7 +177,7 @@ export default function Home({ location, path }: Props) {
               >
                 Consistent spacing makes an interface more clear and easy to scan.
               </Tile>
-            </Stack>
+            </Grid>
             <div
               css={css`
                 display: flex;
@@ -193,7 +198,12 @@ export default function Home({ location, path }: Props) {
             `}
           >
             <Heading as="h2">Content</Heading>
-            <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+            <Grid
+              columns="1fr"
+              tablet={{ columns: "repeat(2, 1fr)" }}
+              desktop={{ columns: "repeat(3, 1fr)" }}
+              gap="1rem"
+            >
               <Tile
                 title="Voice & tone"
                 linkContent="See our voice"
@@ -218,7 +228,7 @@ export default function Home({ location, path }: Props) {
               >
                 A list of commonly used words and phrases in Kiwi.com products.
               </Tile>
-            </Stack>
+            </Grid>
             <div
               css={css`
                 display: flex;

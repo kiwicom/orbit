@@ -9,7 +9,6 @@ import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
-import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
 
@@ -106,11 +105,6 @@ const StyledTextArea = styled.textarea`
       `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
-  }
-
-  &:focus {
-    ${formElementFocus}
-    outline: none;
   }
 `;
 

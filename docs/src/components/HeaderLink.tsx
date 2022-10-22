@@ -39,18 +39,20 @@ const HeaderLink = ({
       case "figma.com":
       case "www.figma.com":
         return "Figma";
-      case "github.com":
-        return "GitHub";
+      // case "github.com":
+      //   return "GitHub";
       default:
         return "";
     }
   };
+
   return (
     <ButtonComponent
       external
       href={href}
       iconLeft={getUsedIcon()}
-      iconRight={<NewWindow ariaLabel="Opens in new window" />}
+      size="large"
+      iconRight={!href.match(/github/) && <NewWindow ariaLabel="Opens in new window" />}
       type="secondary"
     >
       {getUsedText()}

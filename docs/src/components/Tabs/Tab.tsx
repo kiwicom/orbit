@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 
-import StackOfTabs, { StyledWrapper as StyledStackWrapper } from "./StackOfTabs";
-import { TAB_HEIGHT, BORDER_RADIUS, TAB_ACTIVE_SHADOW_TOKEN } from "./consts";
+import StackOfTabs from "./StackOfTabs";
+import { TAB_HEIGHT, BORDER_RADIUS } from "./consts";
 import { getTabShadowReachTop } from "./helpers";
-import { boxShadowDefault } from "../mixins";
 
 export interface TabObject {
   slug: string;
@@ -15,7 +14,7 @@ export interface TabObject {
 
 const commonStyle = css`
   ${({ theme }) => css`
-    font-size: ${theme.orbit.fontSizeTextNormal};
+    font-size: ${theme.orbit.fontSizeTextLarge};
     font-weight: ${theme.orbit.fontWeightMedium};
     padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
       ${theme.orbit.spaceMedium};
@@ -41,7 +40,6 @@ export const commonTabStyle = css`
     height: calc(${TAB_HEIGHT} - ${getTabShadowReachTop});
     border-top-left-radius: ${BORDER_RADIUS};
     border-top-right-radius: ${BORDER_RADIUS};
-    ${boxShadowDefault};
     background: ${theme.orbit.paletteWhite};
   `};
 `;
@@ -55,20 +53,11 @@ const StyledTab = styled.span<{ fullWidth?: boolean }>`
     align-items: center;
     justify-content: space-between;
     color: ${theme.orbit.paletteInkDark};
-    ${fullWidth &&
-    css`
-      width: 100%;
-    `};
-    transition: box-shadow ${theme.orbit.durationFast};
-
-    ${StyledStackWrapper}:hover & {
-      box-shadow: ${theme.orbit[TAB_ACTIVE_SHADOW_TOKEN]};
-    }
-
+    width: ${fullWidth && "100%"};
     > * + * {
       margin-left: ${theme.orbit.spaceSmall};
     }
-  `}
+  `};
 `;
 
 interface TabProps {

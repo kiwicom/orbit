@@ -12,6 +12,7 @@ const StyledWrapper = styled.div`
   display: grid;
   position: relative;
   grid-template-rows: auto 1fr auto;
+  overflow-x: hidden;
   grid-template-columns: 100%;
   min-height: 100vh;
 `;

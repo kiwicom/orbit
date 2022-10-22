@@ -1,17 +1,14 @@
 import styled, { css } from "styled-components";
 import { mediaQueries } from "@kiwicom/orbit-components";
 
-import { CONTENT_PADDING, MAX_CONTENT_WIDTH } from "../../../consts";
-
-const StyledMiddle = styled.div`
-  ${({ theme }) => css`
+const StyledMiddle = styled.div<{ hasBorder?: boolean }>`
+  ${({ theme, hasBorder }) => css`
     display: flex;
     flex-direction: column;
-    max-width: ${MAX_CONTENT_WIDTH};
+    margin: 0 auto;
     box-sizing: content-box;
+    border-left: ${hasBorder && `1px solid ${theme.orbit.paletteCloudNormal}`};
     ${mediaQueries.largeDesktop(css`
-      padding-left: ${CONTENT_PADDING};
-      flex-direction: row;
       > * + * {
         margin-left: ${theme.orbit.spaceLarge};
       }

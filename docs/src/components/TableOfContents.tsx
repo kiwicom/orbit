@@ -9,59 +9,41 @@ interface StyledAnchorProps {
   active: boolean;
 }
 
-const getWidth = (level: number) => {
-  if (level === 0) return "4px";
-  if (level === 1) return "8px";
-  return "12px";
-};
-
 const getColor = (active: boolean, level: number, theme) => {
   if (active) return theme.orbit.paletteProductNormal;
-  if (level === 0) return theme.orbit.paletteInkDark;
-  return theme.orbit.paletteInkDark;
+  if (level === 0) return theme.orbit.paletteInkNormal;
+  return theme.orbit.paletteInkNormal;
 };
 
 const StyledAnchor = styled.a<StyledAnchorProps>`
   ${({ active, level, theme }) => css`
     color: ${getColor(active, level, theme)};
-    font-size: ${level === 0 ? "14px" : "12px"};
-    font-weight: ${level <= 1 && "500"};
-    text-indent: -${theme.orbit.spaceXLarge};
-    margin-bottom: ${level === 0 && "8px"};
-    padding-left: ${theme.orbit.spaceXLarge};
+    font-size: 14px;
     display: inline-block;
-
-    ::before {
-      display: inline-block;
-      content: "";
-      height: 2px;
-      border-radius: 1px;
-      background: currentColor;
-      width: ${getWidth(level)};
-      margin: 4px 12px;
-    }
-  `}
+    font-weight: ${level === 0 ? "450" : "400"};
+    margin-bottom: ${level === 0 && "8px"};
+  `};
 `;
 
 const StyledTocList = styled.ul`
   max-height: 100vh;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 `;
 
-const StyledTocListItem = styled.li<{ level: number }>`
-  ${({ level }) => `
-    ${
-      level === 0 &&
-      `
-      margin-bottom: 8px;
-    `
-    };
-    ${
-      level === 1 &&
-      `
-      margin-bottom: 4px;
-    `
-    };
+const StyledTocListItem = styled.li<{ level: number; active?: boolean }>`
+  ${({ theme, active }) => css`
+    margin-left: ${theme.orbit.spaceMedium};
+    margin-bottom: ${theme.orbit.spaceXSmall};
+    &:before {
+      position: absolute;
+      left: 0;
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: ${active ? theme.orbit.paletteProductNormal : theme.orbit.paletteCloudNormal};
+    }
   `};
 `;
 
@@ -74,7 +56,7 @@ const getTocContent = (tree: TableOfContentsTreeItem[], level = 0, activeScrollS
   return tree.map(item => {
     const nestedContent = getTocContent(item.items, nextLevel, activeScrollSpy);
     return (
-      <StyledTocListItem key={item.id} level={level}>
+      <StyledTocListItem key={item.id} level={level} active={activeScrollSpy === item.slug}>
         <StyledAnchor level={level} href={`#${item.slug}`} active={activeScrollSpy === item.slug}>
           {item.title}
         </StyledAnchor>

@@ -18,8 +18,6 @@ const StyledImageWrapper = styled.div`
 `;
 
 export default function RocketImage() {
-  const [isLoaded, setIsLoaded] = React.useState(false);
-
   const data: {
     file: {
       childImageSharp: {
@@ -58,9 +56,8 @@ export default function RocketImage() {
             background: linear-gradient(0deg, #ffffff 6.03%, rgba(255, 255, 255, 0) 100%);
           }
         `}
-        style={{ position: "absolute", display: !isLoaded && "none" }} // to override gatsby-image's position
+        style={{ position: "absolute" }} // to override gatsby-image's position
         fixed={data.file.childImageSharp.fixed}
-        onLoad={() => setIsLoaded(true)}
       />
     </StyledImageWrapper>
   );

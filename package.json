@@ -28,6 +28,7 @@
     "size": "yarn size:build && size-limit",
     "test-ci": "jest --ci --maxWorkers=2 && lerna run test",
     "test": "jest",
+    "themer": "yarn workspace @kiwicom/orbit-themer",
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "tracking": "yarn workspace @kiwicom/orbit-tracking",
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md"

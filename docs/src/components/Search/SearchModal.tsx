@@ -33,7 +33,7 @@ interface QueryResponse {
     nodes: Array<{
       fields: {
         slug: string;
-        trail: Array<{
+        breadcrumbs: Array<{
           name: string;
         }>;
       };
@@ -91,7 +91,7 @@ export default function SearchModal({ onClose }: Props) {
         nodes {
           fields {
             slug
-            trail {
+            breadcrumbs {
               name
             }
           }
@@ -131,7 +131,7 @@ export default function SearchModal({ onClose }: Props) {
 
   const documents = React.useMemo<SearchResult[]>(() => {
     const mdxPages = data.allMdx.nodes.map(node => {
-      const breadcrumbs = node.fields ? node.fields.trail.map(({ name }) => name) : [];
+      const breadcrumbs = node.fields ? node.fields.breadcrumbs.map(({ name }) => name) : [];
       return {
         name: breadcrumbs.join(" "),
         breadcrumbs,

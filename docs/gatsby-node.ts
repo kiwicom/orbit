@@ -4,7 +4,12 @@ import yaml from "js-yaml";
 import { createFilePath } from "gatsby-source-filesystem";
 import type { GatsbyNode } from "gatsby";
 
-import { omitNumbers, getDocumentUrl, getParentUrl, getDocumentTrail } from "./utils/document";
+import {
+  omitNumbers,
+  getDocumentUrl,
+  getParentUrl,
+  getDocumentBreadcrumbs,
+} from "./utils/document";
 import getOverviewPages from "./services/overviewPages";
 import parseChangelog from "./services/changelog";
 
@@ -34,7 +39,7 @@ export const onCreateNode = async ({ cache, node, getNode, actions, reporter }) 
 
   /**
    * TODO: updating meta.yml files should update document navigation and breadcrumbs,
-   * an obvious solution for this is to compute `trail` on frontend rather than here,
+   * an obvious solution for this is to compute `breadcrumbs` on frontend rather than here,
    * but we wanted to avoid large and repetitive GraphQL queries.
    *
    * A temporary and clumsy way to see meta.yml updates appears to be editing an MDX file
@@ -144,26 +149,26 @@ export const onCreateNode = async ({ cache, node, getNode, actions, reporter }) 
     });
 
     if (node.fields.collection === "documentation") {
-      let documentTrail;
+      let documentBreadcrumbs;
 
       if (hasTabs && path.basename(node.fileAbsolutePath).startsWith("01-")) {
-        documentTrail = await getDocumentTrail(cache, node.fields.slug);
+        documentBreadcrumbs = await getDocumentBreadcrumbs(cache, node.fields.slug);
       } else {
-        documentTrail = await getDocumentTrail(cache, getParentUrl(node.fields.slug));
-        documentTrail.push({
+        documentBreadcrumbs = await getDocumentBreadcrumbs(cache, getParentUrl(node.fields.slug));
+        documentBreadcrumbs.push({
           name: node.frontmatter.title,
           url: node.fields.slug,
         });
       }
       createNodeField({
         node,
-        name: "trail",
-        value: documentTrail,
+        name: "breadcrumbs",
+        value: documentBreadcrumbs,
       });
     } else {
       createNodeField({
         node,
-        name: "trail",
+        name: "breadcrumbs",
         value: [],
       });
     }
@@ -195,13 +200,13 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   await Promise.all(
     overviewPages.map(async page => {
-      const trail = await getDocumentTrail(cache, page.slug);
+      const breadcrumbs = await getDocumentBreadcrumbs(cache, page.slug);
       const overviewPath = path.join(__dirname, "../../src/templates/Overview.tsx");
       createPage({
         path: page.slug,
         component:
           process.env.NODE_ENV === "test" ? path.relative(ROOT, overviewPath) : overviewPath,
-        context: { ...page, trail },
+        context: { ...page, breadcrumbs },
       });
     }),
   );
@@ -247,10 +252,10 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       slug: String!
       tabCollection: String
       title: String!
-      trail: [TrailPart]
+      breadcrumbs: [BreadcrumbsPart]
     }
 
-    type TrailPart {
+    type BreadcrumbsPart {
       name: String!
       url: String!
     }

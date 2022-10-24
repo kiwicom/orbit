@@ -22,25 +22,25 @@ const StyledListItem = styled.li<{ current: boolean }>`
 `;
 
 interface Props {
-  trail: Array<{
+  breadcrumbs: Array<{
     name: string;
     url: string;
   }>;
 }
 
-const Breadcrumbs = ({ trail }: Props) => {
+const Breadcrumbs = ({ breadcrumbs }: Props) => {
   const root = { name: "Orbit.kiwi", url: "/" };
-  const fullTrail = [root, ...trail];
+  const fullBreadcrumbs = [root, ...breadcrumbs];
   return (
     <StyledList role="navigation" aria-label="breadcrumbs">
-      {fullTrail.map(({ name, url }, i) => {
-        const current = i === fullTrail.length - 1;
+      {fullBreadcrumbs.map(({ name, url }, i) => {
+        const current = i === fullBreadcrumbs.length - 1;
         return (
           <StyledListItem key={url} current={current}>
             <Link to={url} aria-label={name} aria-current={current && "page"}>
               {name}
             </Link>
-            {i + 1 !== fullTrail.length && <span>/</span>}
+            {i + 1 !== fullBreadcrumbs.length && <span>/</span>}
           </StyledListItem>
         );
       })}

@@ -78,7 +78,7 @@ interface Props {
   path: string;
   tabs?: TabObject[];
   title?: string;
-  trail?: Array<{
+  breadcrumbs?: Array<{
     name: string;
     url: string;
   }>;
@@ -94,7 +94,7 @@ export default function DocLayout({
   path,
   tabs,
   title,
-  trail = title ? [{ name: title, url: path }] : undefined,
+  breadcrumbs = title ? [{ name: title, url: path }] : undefined,
   custom,
 }: Props) {
   const [tableOfContents] = useTableOfContents();
@@ -103,7 +103,11 @@ export default function DocLayout({
   return (
     <>
       <Head
-        title={title ? getDocumentPageTitle(title, trail ? trail.map(t => t.name) : []) : "Orbit"}
+        title={
+          title
+            ? getDocumentPageTitle(title, breadcrumbs ? breadcrumbs.map(t => t.name) : [])
+            : "Orbit"
+        }
         hasSiteName={Boolean(title)}
         description={description}
         path={path}
@@ -149,7 +153,7 @@ export default function DocLayout({
                 </StyledProse>
               ) : (
                 <>
-                  {trail && <Breadcrumbs trail={trail} />}
+                  {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
                   <Box padding={{ bottom: "medium" }}>
                     <Stack inline align="center" spaceAfter="small">
                       <AddBookmark title={title} description={description} />

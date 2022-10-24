@@ -65,7 +65,7 @@ const cache = {
   set: async (key, value) => cacheMap.set(key, value),
 };
 
-async function createTrails() {
+async function createBreadcrumbs() {
   const files = globby.sync(ROOT);
 
   await Promise.all(
@@ -78,7 +78,7 @@ async function createTrails() {
       }),
   );
 
-  const trails = await Promise.all(
+  const breadcrumbs = await Promise.all(
     files
       .filter(file => !file.endsWith("meta.yml"))
       .sort()
@@ -95,11 +95,11 @@ async function createTrails() {
         // @ts-expect-error TODO
         await onCreateNode({ cache, node, getNode, actions });
         // @ts-expect-error TODO
-        return { file: relativePath, trail: node.fields.trail };
+        return { file: relativePath, breadcrumbs: node.fields.breadcrumbs };
       }),
   );
 
-  return trails;
+  return breadcrumbs;
 }
 
 afterEach(() => {
@@ -170,7 +170,7 @@ describe("gatsby-node", () => {
       `);
     });
 
-    it("should create trail nodes", async () => {
+    it("should create breadcrumb nodes", async () => {
       vol.fromJSON(
         {
           "./01-getting-started/meta.yml": dedent`
@@ -196,7 +196,7 @@ describe("gatsby-node", () => {
         ROOT,
       );
 
-      expect(await createTrails()).toMatchSnapshot();
+      expect(await createBreadcrumbs()).toMatchSnapshot();
     });
   });
 
@@ -247,7 +247,7 @@ describe("gatsby-node", () => {
         ROOT,
       );
 
-      await createTrails();
+      await createBreadcrumbs();
       // @ts-expect-error TODO
       await createPages({
         graphql: () =>

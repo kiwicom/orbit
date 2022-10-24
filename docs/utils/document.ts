@@ -15,10 +15,10 @@ export function getParentUrl(url) {
   return path.join(path.dirname(url), "/");
 }
 
-export async function getDocumentTrail(cache, url, trail = []) {
-  if (url === "/") return trail;
+export async function getDocumentBreadcrumbs(cache, url, breadcrumbs = []) {
+  if (url === "/") return breadcrumbs;
   const { title } = await cache.get(url);
 
   // @ts-expect-error TODO
-  return getDocumentTrail(cache, getParentUrl(url), [{ name: title, url }, ...trail]);
+  return getDocumentBreadcrumbs(cache, getParentUrl(url), [{ name: title, url }, ...breadcrumbs]);
 }

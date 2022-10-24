@@ -12,7 +12,7 @@ interface Props extends PageRendererProps {
   pageContext: {
     slug: string;
     title: string;
-    trail: Array<{
+    breadcrumbs: Array<{
       name: string;
       url: string;
     }>;
@@ -26,7 +26,7 @@ interface Props extends PageRendererProps {
 }
 
 const Overview = ({ location, pageContext }: Props) => {
-  const { slug, title, trail, pages } = pageContext;
+  const { slug, title, breadcrumbs, pages } = pageContext;
   const [devMode] = useDevMode();
   const [render, setRender] = React.useState(false);
 
@@ -40,7 +40,13 @@ const Overview = ({ location, pageContext }: Props) => {
 
   return (
     render && (
-      <DocLayout location={location} path={slug} title={title} trail={trail} noElevation>
+      <DocLayout
+        location={location}
+        path={slug}
+        title={title}
+        breadcrumbs={breadcrumbs}
+        noElevation
+      >
         <Grid
           columns="1fr"
           gap="2rem"

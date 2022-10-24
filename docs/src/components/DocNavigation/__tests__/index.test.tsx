@@ -1,8 +1,8 @@
-import { groupTrails } from "..";
+import { groupBreadcrumbs } from "..";
 
 describe("DocNavigation", () => {
-  it("should group trails into navigation items", () => {
-    const navigation = groupTrails({
+  it("should group breadcrumbs into navigation items", () => {
+    const navigation = groupBreadcrumbs({
       content: [
         [
           { name: "Getting started", url: "/getting-started/", hasReactTab: false },

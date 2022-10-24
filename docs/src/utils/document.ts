@@ -1,12 +1,12 @@
-export function getDocumentPageTitle(title: string, trail: string[] = []): string {
-  if (trail.includes("Components")) {
+export function getDocumentPageTitle(title: string, breadcrumbs: string[] = []): string {
+  if (breadcrumbs.includes("Components")) {
     return `${title} component`;
   }
-  if (trail.includes("Hooks")) {
+  if (breadcrumbs.includes("Hooks")) {
     return `${title} hook`;
   }
   if (
-    trail.includes("Getting started") &&
+    breadcrumbs.includes("Getting started") &&
     (title === "For designers" || title === "For developers")
   ) {
     return `Getting started: ${title}`;

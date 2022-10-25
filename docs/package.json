@@ -27,7 +27,7 @@
     "@csstools/convert-colors": "^2.0.0",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
-    "@kiwicom/babel-plugin-orbit-components": "*",
+    "@kiwicom/babel-plugin-orbit-components": "^4.0.1",
     "@kiwicom/browserslist-config": "^2.1.0",
     "@kiwicom/orbit-components": "*",
     "@kiwicom/orbit-design-tokens": "*",

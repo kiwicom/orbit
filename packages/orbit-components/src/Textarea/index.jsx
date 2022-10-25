@@ -145,6 +145,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
     help,
     rows,
     readOnly,
+    required,
   }: Props = props;
 
   const {
@@ -166,6 +167,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
           filled={!!value}
           error={!!error}
           help={!!help}
+          required={required}
           disabled={disabled}
           iconRef={iconRef}
           onMouseEnter={() => setTooltipShownHover(true)}
@@ -178,6 +180,7 @@ const Textarea: React.AbstractComponent<Props, HTMLElement> = React.forwardRef<
       <StyledTextArea
         data-state={getFieldDataState(!!error)}
         data-test={dataTest}
+        aria-required={!!required}
         id={id}
         name={name}
         value={value}

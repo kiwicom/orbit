@@ -76,6 +76,7 @@ module.exports = {
     {
       files: ["*.js?(x)", "*.js?(x).flow"],
       extends: ["plugin:flowtype/recommended", "prettier"],
+      parser: "@babel/eslint-parser",
       plugins: ["adeira"],
       rules: {
         "flowtype/require-exact-type": "error",
@@ -211,6 +212,7 @@ module.exports = {
         ],
       },
       settings: {
+        "mdx/code-blocks": true,
         "import/resolver": {
           node: {
             extensions: [".ts", ".tsx"],

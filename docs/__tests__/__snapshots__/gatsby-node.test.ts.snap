@@ -1,10 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`gatsby-node registering documents should create trail nodes 1`] = `
+exports[`gatsby-node registering documents should create breadcrumb nodes 1`] = `
 Array [
   Object {
-    "file": "01-getting-started/01-for-designers/01-kiwi.mdx",
-    "trail": Array [
+    "breadcrumbs": Array [
       Object {
         "name": "Getting started",
         "url": "/getting-started/",
@@ -14,10 +13,10 @@ Array [
         "url": "/getting-started/for-designers/",
       },
     ],
+    "file": "01-getting-started/01-for-designers/01-kiwi.mdx",
   },
   Object {
-    "file": "01-getting-started/02-for-developers.mdx",
-    "trail": Array [
+    "breadcrumbs": Array [
       Object {
         "name": "Getting started",
         "url": "/getting-started/",
@@ -27,6 +26,7 @@ Array [
         "url": "/getting-started/for-developers/",
       },
     ],
+    "file": "01-getting-started/02-for-developers.mdx",
   },
 ]
 `;

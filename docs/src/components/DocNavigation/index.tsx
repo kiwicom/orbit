@@ -10,7 +10,7 @@ import DocNavigationItem, { getItemKey } from "./DocNavigationItem";
 import useDevMode from "../../hooks/useDevMode";
 import { Navigation, NavigationItem } from "./types";
 
-export type Trail = Array<{
+export type Breadcrumbs = Array<{
   name: string;
   url: string;
   hasReactTab: boolean;
@@ -22,7 +22,7 @@ interface QueryData {
       id: string;
       fields: {
         tabCollection: string | null;
-        trail: Trail;
+        breadcrumbs: Breadcrumbs;
       };
       parent: {
         name: string;
@@ -31,12 +31,15 @@ interface QueryData {
   };
 }
 
-export function groupTrails(trails: { components: Trail; content: Trail[] }): Navigation {
+export function groupBreadcrumbs(breadcrumbs: {
+  components: Breadcrumbs;
+  content: Breadcrumbs[];
+}): Navigation {
   // https://stackoverflow.com/a/57344801/1247274
   const result: Navigation = [];
   const level = { result };
 
-  trails.content.forEach(content => {
+  breadcrumbs.content.forEach(content => {
     content.reduce((acc, { name, url, hasReactTab }, index) => {
       if (!acc[name]) {
         acc[name] = { result: [] };
@@ -50,12 +53,14 @@ export function groupTrails(trails: { components: Trail; content: Trail[] }): Na
     }, level);
   });
 
-  const componentItems: NavigationItem[] = trails.components.map(({ name, url, hasReactTab }) => ({
-    type: "leaf",
-    name,
-    url,
-    hasReactTab,
-  }));
+  const componentItems: NavigationItem[] = breadcrumbs.components.map(
+    ({ name, url, hasReactTab }) => ({
+      type: "leaf",
+      name,
+      url,
+      hasReactTab,
+    }),
+  );
 
   result.splice(2, 0, {
     type: "branch",
@@ -84,7 +89,7 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
           id
           fields {
             tabCollection
-            trail {
+            breadcrumbs {
               name
               url
             }
@@ -99,17 +104,17 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
     }
   `);
 
-  const trails = data.allMdx.nodes
+  const breadcrumbs = data.allMdx.nodes
     .filter(node => !node.fields.tabCollection || node.parent.name.startsWith("01-"))
     .map(node =>
-      node.fields.trail.map((t, i) => {
-        if (i === node.fields.trail.length - 1) {
+      node.fields.breadcrumbs.map((t, i) => {
+        if (i === node.fields.breadcrumbs.length - 1) {
           return {
             ...t,
             hasReactTab: data.allMdx.nodes.some(
               n =>
                 n.fields.tabCollection === node.fields.tabCollection &&
-                n.fields.trail[n.fields.trail.length - 1].url.endsWith("/react/"),
+                n.fields.breadcrumbs[n.fields.breadcrumbs.length - 1].url.endsWith("/react/"),
             ),
           };
         }
@@ -117,7 +122,7 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
       }),
     )
     .reduce(
-      (acc: { content: Trail[]; components: Trail }, cur: Trail) => {
+      (acc: { content: Breadcrumbs[]; components: Breadcrumbs }, cur: Breadcrumbs) => {
         if (cur[0].name === "Components") acc.components.push(cur.slice(-1)[0]);
         else acc.content.push(cur);
         return acc;
@@ -127,7 +132,7 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
 
   const navigation = (
     <>
-      {groupTrails(trails).map(item => (
+      {groupBreadcrumbs(breadcrumbs).map(item => (
         <DocNavigationItem
           devMode={devMode}
           key={getItemKey(item)}

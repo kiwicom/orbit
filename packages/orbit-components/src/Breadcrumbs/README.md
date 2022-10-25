@@ -52,10 +52,11 @@ import BreadcrumbsItem from "@kiwicom/orbit-components/lib/Breadcrumbs/Breadcrum
 
 Table below contains all types of the props available in BreadcrumbsItem component.
 
-| Name         | Type                       | Default | Description                                           |
-| :----------- | :------------------------- | :------ | :---------------------------------------------------- |
-| **children** | `string`                   |         | The content of the BreadcrumbsItem.                   |
-| dataTest     | `string`                   |         | Optional prop for testing purposes.                   |
-| **href**     | `string`                   |         | The URL to link when the BreadcrumbsItem is clicked.. |
-| id           | `string`                   |         | HTML `id` attribute for BreadcrumbsItem.              |
-| onClick      | `event => void \| Promise` |         | Function for handling the onClick event.              |
+| Name         | Type                       | Default         | Description                                          |
+| :----------- | :------------------------- | :-------------- | :--------------------------------------------------- |
+| **children** | `string`                   |                 | The content of the BreadcrumbsItem.                  |
+| dataTest     | `string`                   |                 | Optional prop for testing purposes.                  |
+| **href**     | `string`                   |                 | The URL to link when the BreadcrumbsItem is clicked. |
+| id           | `string`                   |                 | HTML `id` attribute for BreadcrumbsItem.             |
+| onClick      | `event => void \| Promise` |                 | Function for handling the onClick event.             |
+| component    | `string \| React.Element`  | `a` or `button` | Allows to customize the element to be rendered.      |

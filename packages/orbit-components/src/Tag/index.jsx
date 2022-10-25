@@ -110,9 +110,18 @@ export const StyledTag: any = styled.div`
     css`
       cursor: pointer;
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         background: ${getBackgroundColor(STATES.HOVER)};
         box-shadow: none;
+      }
+
+      &:focus {
+        background: ${getBackgroundColor(STATES.HOVER)};
+      }
+
+      &:focus:not(:focus-visible):not(:active) {
+        background: ${getBackgroundColor(STATES.HOVER)};
       }
 
       &:active {

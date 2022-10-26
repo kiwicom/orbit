@@ -12,6 +12,7 @@ import type { Props } from ".";
 const MobileDialog = ({
   children,
   enabled = true,
+  onShow,
   renderInPortal = true,
   tabIndex = "0",
   dataTest,
@@ -27,7 +28,7 @@ const MobileDialog = ({
     setRenderWithTimeout,
     clearRenderTimeout,
   ] = useStateWithTimeout<boolean>(false, 200);
-  const [shown, setshown, setshownWithTimeout] = useStateWithTimeout<boolean>(false, 200);
+  const [shown, setShown, setShownWithTimeout] = useStateWithTimeout<boolean>(false, 200);
   const mobileDialogID = useRandomId();
 
   const handleInMobile = React.useCallback(
@@ -38,10 +39,11 @@ const MobileDialog = ({
       }
 
       setRender(true);
-      setshownWithTimeout(true);
+      if (onShow) onShow();
+      setShownWithTimeout(true);
       clearRenderTimeout();
     },
-    [clearRenderTimeout, setRender, setshownWithTimeout, stopPropagation],
+    [clearRenderTimeout, setRender, setShownWithTimeout, stopPropagation],
   );
 
   const handleOutMobile = React.useCallback(
@@ -49,10 +51,10 @@ const MobileDialog = ({
       if (stopPropagation) {
         ev.stopPropagation();
       }
-      setshown(false);
+      setShown(false);
       setRenderWithTimeout(false);
     },
-    [setRenderWithTimeout, setshown, stopPropagation],
+    [setRenderWithTimeout, setShown, stopPropagation],
   );
 
   if (!enabled) return children;

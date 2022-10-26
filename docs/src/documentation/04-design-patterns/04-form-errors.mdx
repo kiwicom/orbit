@@ -65,34 +65,17 @@ If a user misses errors created while navigating through the form
 the form is also validated on submission.
 This validation highlights all fields with errors (again in red and with an icon).
 
-<ImageContainer size="medium">
-
-![An unfocused error form shows two inputs (name and email) have errors,
-  but neither message is shown
-  .](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:459%3A4568)
-
-</ImageContainer>
+<ImageContainer size="medium" />
 
 To help users complete all fields correctly,
 the best behavior is to automatically scroll to the first field with an error and focus on it.
 This focus makes the error message for that field, and only that field, appear as a tooltip.
 
-<ImageContainer size="medium">
+<ImageContainer size="medium" />
 
-![Focusing on the name field reveals the error message there,
-  but not for the email
-  .](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:459%3A4639)
-
-</ImageContainer>
 As the user focuses on other fields, each has its error message shown only on focus.
 
-<ImageContainer size="medium">
-
-![Focusing on the email field reveals the error message there,
-  and hides it for the name
-  .](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:459%3A4779)
-
-</ImageContainer>
+<ImageContainer size="medium" />
 
 ## Designing easy-to-complete forms
 
@@ -122,62 +105,26 @@ Be **polite**.
 Focus on a solution and not on blaming the user or apologizing for the problem.
 
 <GuidelinesSideBySide>
+  <Do />
 
-<Do>
-
-- Name is required
-- Flight not found. Try entering again.
-
-</Do>
-
-<Dont>
-
-- You didn't enter your name
-- We're very sorry but we couldn't find that flight. Please try to enter the number again.
-
-</Dont>
-
+  <Dont />
 </GuidelinesSideBySide>
 
 **Clarity is key**.
 Users see errors as barriers so they’re not the right place for jargon, humor, or personality.
 
 <GuidelinesSideBySide>
+  <Do />
 
-<Do>
-
-- Email not in the proper format
-- Password must contain at least one number
-
-</Do>
-
-<Dont>
-
-- Your email is too fancy for words
-- Your secrets are safe with us as long as you give us a number
-
-</Dont>
-
+  <Dont />
 </GuidelinesSideBySide>
 
 Keep it **short**.
 
 <GuidelinesSideBySide>
+  <Do />
 
-<Do>
-
-- Expiration must be in the future
-- Improper format for ID number
-
-</Do>
-
-<Dont>
-
-- The date when your passport expires must take place at some point in the future
-- The data you entered for your ID number contains some characters that shouldn't be there
-
-</Dont>
-
+  <Dont />
 </GuidelinesSideBySide>
 
 ## Affected components
@@ -227,11 +174,11 @@ specifically [Select](/components/input/select/) and [Textarea](/components/inpu
 
 ### Color and borders
 
-Our default focus for form elements is <InlineToken name="paletteBlueNormal" alternateName/>.
+Our default focus for form elements is <InlineToken name="paletteBlueNormal" alternateName />.
 We use a 1 px border and a 3 px outline with opacity,
 which should draw attention to the focused element.
 For errors, we use the same structure for the focused element,
-but instead of blue it’s <InlineToken name="paletteRedNormal" alternateName/>.
+but instead of blue it’s <InlineToken name="paletteRedNormal" alternateName />.
 Buttons are always focused with a 3 px outline with opacity in the color equal to the background.
 For block actionable elements,
-we use <InlineToken name="paletteCloudNormal" alternateName/> for the background.
+we use <InlineToken name="paletteCloudNormal" alternateName /> for the background.

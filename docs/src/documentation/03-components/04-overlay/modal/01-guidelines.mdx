@@ -4,8 +4,8 @@ redirect_from:
   - /components/modal/
 ---
 
-import { SIZES as MODAL_SIZES } from "@kiwicom/orbit-components/src/Modal/consts.js";
-import theme from "@kiwicom/orbit-components/lib/defaultTheme";
+{`import { SIZES as MODAL_SIZES } from "@kiwicom/orbit-components/src/Modal/consts.js"; `}
+{`import theme from "@kiwicom/orbit-components/lib/defaultTheme"`};
 
 <ReactExample exampleId="Modal-header_footer" height={420} />
 
@@ -66,21 +66,9 @@ Keep it short and focused on either an action (verb) or a category (noun).
 
 <GuidelinesSideBySide>
 
-<Do>
+<Do />
 
-- Save payment card
-- Activate your plan
-- Priority Boarding
-
-</Do>
-
-<Dont>
-
-- Your payment card is safe with us
-- Great! Your email has been verified. Now activate your plan.
-- All details about Priority Boarding
-
-</Dont>
+<Dont />
 
 </GuidelinesSideBySide>
 
@@ -100,21 +88,9 @@ Desktop modals should include a close button in the upper right and
 the option to close the modal by clicking the overlay.
 Optionally include a secondary button in the footer.
 
-<Guideline type="do" title="Mobile">
+<Guideline type="do" title="Mobile" />
 
-![A modal for mobile with a Save button and a Close button.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:46%3A119)
-
-![A modal for mobile with a Save button but no other actions.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:46%3A118)
-
-</Guideline>
-
-<Guideline type="do" title="Desktop">
-
-![A modal for desktop with a Save button and a Close button](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:153%3A119)
-
-![A modal for desktop with a Save button but no other actions](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:45%3A58)
-
-</Guideline>
+<Guideline type="do" title="Desktop" />
 
 ## Look & feel
 
@@ -125,32 +101,14 @@ These set the maximum width a modal can have on large screens.
 
 <table>
   <thead>
-    <tr>
-      <th>Size</th>
-      <th>Width</th>
-    </tr>
+    <tr />
   </thead>
   <tbody>
-    <tr>
-      <td>{MODAL_SIZES.EXTRASMALL}</td>
-      <td>360px</td>
-    </tr>
-    <tr>
-      <td>{MODAL_SIZES.SMALL}</td>
-      <td>{theme.orbit.widthModalSmall}</td>
-    </tr>
-    <tr>
-      <td>{MODAL_SIZES.NORMAL}</td>
-      <td>{theme.orbit.widthModalNormal}</td>
-    </tr>
-    <tr>
-      <td>{MODAL_SIZES.LARGE}</td>
-      <td>{theme.orbit.widthModalLarge}</td>
-    </tr>
-    <tr>
-      <td>{MODAL_SIZES.EXTRALARGE}</td>
-      <td>{theme.orbit.widthModalExtraLarge}</td>
-    </tr>
+    <tr />
+    <tr />
+    <tr />
+    <tr />
+    <tr />
   </tbody>
 </table>
 

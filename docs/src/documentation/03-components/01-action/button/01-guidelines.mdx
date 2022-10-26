@@ -4,13 +4,13 @@ redirect_from:
   - /components/button/
 ---
 
+import ActionableTextSnippet from "../../../../snippets/actionable-text.mdx";
+import ButtonSizeSnippet from "../../../../snippets/button-size.mdx";
+
 import WebStructureImage from "../../../../images/component-structure/web/button.svg";
 import ButtonPrimaryActionDo from "../../../../images/button-primary-action-do.svg";
 import ButtonPrimaryActionDont from "../../../../images/button-primary-action-dont.svg";
 import ButtonShowHierarchy from "../../../../images/button-show-hierarchy.svg";
-
-import ActionableTextSnippet from "snippets/actionable-text.mdx";
-import ButtonSizeSnippet from "snippets/button-size.mdx";
 
 ## Overview
 
@@ -30,24 +30,8 @@ They are typically placed throughout your UI, in places like: Dialogs, Forms, To
 
 <Usage>
 
-<UsageUse>
-
-- To display several details about a single idea like a transfer at an airport.
-
-- To use common visual cues (icons and colors) to help users scan the details.
-
-</UsageUse>
-<UsageDontUse>
-
-- When you have many actions at once---use a [button link](/components/action/buttonlink/).
-
-- You want to offer a less important action---use a [button link](/components/action/buttonlink/).
-
-- To make text inside paragraphs or lists actionable---use a [text link](/components/action/textlink/).
-
-- So users can sign in using a social service---use a [SocialButton](/components/action/socialbutton/).
-
-</UsageDontUse>
+<UsageUse />
+<UsageDontUse />
 
 </Usage>
 
@@ -93,19 +77,13 @@ You need to know which actions are the most important within a given section of 
 Once you've identified which actions are the most important at the moment,
 you can indicate importance through [size, type, and variation](#mobile-vs-desktop-size).
 
-<Guideline type="do" title="Have one primary action" svgs={[ButtonPrimaryActionDo, ButtonPrimaryActionDont]}>
+<Guideline
+  type="do"
+  title="Have one primary action"
+  svgs={[ButtonPrimaryActionDo, ButtonPrimaryActionDont]}
+/>
 
-Every screen should have only one button that represents the most important action.
-It leads the user to the next step.
-
-</Guideline>
-
-<Guideline type="do" title="Show importance hierarchy" svgs={[ButtonShowHierarchy]}>
-
-If you have multiple actions on one screen,
-use different button types and sizes to show different levels of importance.
-
-</Guideline>
+<Guideline type="do" title="Show importance hierarchy" svgs={[ButtonShowHierarchy]} />
 
 ### Avoid disabled buttons
 
@@ -141,29 +119,11 @@ All remaining actions can be secondary buttons or [another component](#usage-of-
   src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D6693%253A796"
 />
 
-<Guideline type="do" title="Use secondary small buttons for additional actions on the page">
+<Guideline type="do" title="Use secondary small buttons for additional actions on the page" />
 
-The secondary small button is great for actions in [cards](/components/structure/card/)
-as it stands out from the interface but doesn't take so much attention.
+<Guideline type="do" title="Use secondary buttons for items in loop" />
 
-</Guideline>
-
-<Guideline type="do" title="Use secondary buttons for items in loop">
-
-If you have a repeated view,
-use the secondary button for their main action.
-Primary buttons would offer too many choices to select from.
-
-</Guideline>
-
-<Guideline type="do" title="Don't use primary buttons to manipulate users">
-
-If there are more choices on one level (and it's an essential step in the flow),
-all buttons should be primary.
-
-Making one primary and the other secondary would be manipulating the user towards our preferred choice.
-
-</Guideline>
+<Guideline type="do" title="Don't use primary buttons to manipulate users" />
 
 ### Buttons with icons
 
@@ -175,27 +135,11 @@ If everything is grabbing attention, things usually get messy.
 
 <ReactExample exampleId="Button-icons" responsive={false} />
 
-<Guideline type="do" title="Use a left icon when the button adds another item">
+<Guideline type="do" title="Use a left icon when the button adds another item" />
 
-For cases like this, it's great to use an icon with a plus to represent the addition,
-such as PlusCircle or PassengerAdd.
+<Guideline type="do" title="Right icons should only be directional" />
 
-</Guideline>
-
-<Guideline type="do" title="Right icons should only be directional">
-
-They can help explain what happens when the user interacts with the button.
-An icon (with an aria-label) makes it easier to know if the user is taken elsewhere.
-
-</Guideline>
-
-<Guideline type="do" title="Add a label when using icon-only buttons">
-
-Even the simplest icons like plus can be understood in many different ways.
-To make sure your icon is accessible,
-add a proper label to communicate the purpose.
-
-</Guideline>
+<Guideline type="do" title="Add a label when using icon-only buttons" />
 
 <FigmaIframe
   title="Button states"

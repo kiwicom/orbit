@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, PageRendererProps } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import DocLayout from "../components/DocLayout";
 import { TabObject } from "../components/Tabs";
@@ -18,7 +17,6 @@ interface Props extends PageRendererProps {
           url: string;
         }>;
       };
-      body: string;
     };
     tabs: {
       nodes: {
@@ -34,8 +32,8 @@ interface Props extends PageRendererProps {
   };
 }
 
-export default function Doc({ data, location }: Props) {
-  const { fields, body } = data.mdx;
+export default function Doc({ data, location, children }: React.PropsWithChildren<Props>) {
+  const { fields } = data.mdx;
   const tabs = data.tabs.nodes[0].fields.tabCollection !== null ? data.tabs.nodes : [];
   const usedTabs: TabObject[] = tabs.map(tab => ({
     slug: tab.fields.slug,
@@ -52,7 +50,7 @@ export default function Doc({ data, location }: Props) {
       title={fields.title}
       breadcrumbs={fields.breadcrumbs}
     >
-      <MDXRenderer>{body}</MDXRenderer>
+      {children}
     </DocLayout>
   );
 }
@@ -60,6 +58,10 @@ export default function Doc({ data, location }: Props) {
 export const query = graphql`
   query DocQuery($id: String!, $tabs: String) {
     mdx(id: { eq: $id }) {
+      internal {
+        contentFilePath
+      }
+
       fields {
         description
         headerLink
@@ -70,13 +72,14 @@ export const query = graphql`
           url
         }
       }
-      body
     }
     tabs: allMdx(
-      filter: { fields: { tabCollection: { eq: $tabs } } }
-      sort: { fields: fileAbsolutePath }
+      filter: { fields: { tabCollection: { eq: $tabs } } } # sort: { internal: contentFilePath }
     ) {
       nodes {
+        internal {
+          contentFilePath
+        }
         frontmatter {
           title
         }

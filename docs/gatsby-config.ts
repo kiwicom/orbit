@@ -1,8 +1,16 @@
 import tokensPkg from "@kiwicom/orbit-design-tokens/package.json";
 import path from "path";
-import deflist from "remark-deflist";
 import componentsPkg from "@kiwicom/orbit-components/package.json";
 import type { GatsbyConfig } from "gatsby";
+
+const wrapESMPlugin = name =>
+  function wrapESM(opts) {
+    return async (...args) => {
+      const mod = await import(name);
+      const plugin = mod.default(opts);
+      return plugin(...args);
+    };
+  };
 
 const innerPlugins = [
   {
@@ -64,6 +72,9 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-mdx",
       options: {
+        // mdxOptions: {
+        //   remarkPlugins: [wrapESMPlugin("remark-deflist")],
+        // },
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
@@ -99,8 +110,6 @@ const config: GatsbyConfig = {
             },
           },
         ],
-        remarkPlugins: [deflist],
-        rehypePlugins: [],
       },
     },
     "gatsby-transformer-sharp",

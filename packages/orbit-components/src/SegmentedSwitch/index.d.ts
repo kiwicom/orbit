@@ -12,7 +12,7 @@ export interface Option {
   readonly value: string | number;
   readonly disabled?: boolean;
   readonly name?: string;
-  readonly defaultCheck?: boolean;
+  readonly defaultChecked?: boolean;
 }
 
 export interface Props extends Common.Global {

@@ -5,7 +5,8 @@ export type Type = "success" | "warning" | "critical" | "info";
 export type Props = {|
   +children: React.Node,
   +subLabel?: React.Node,
-  +label: string,
+  +label: React.Node,
+  +active?: boolean,
   +type?: Type,
 |};
 

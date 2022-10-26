@@ -39,11 +39,10 @@ const TimelineStepDesktop = ({
   prevType,
   last,
   children,
+  active,
   label,
   subLabel,
 }: Props): React.Node => {
-  const active = type && !nextType;
-
   return (
     <Stack inline shrink direction="column" align="center" spaceAfter="large">
       {subLabel && (

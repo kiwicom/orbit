@@ -21,10 +21,9 @@ const TimelineStepMobile = ({
   label,
   nextType,
   children,
+  active,
   last,
 }: Props): React.Node => {
-  const active = type && !nextType;
-
   return (
     <StyledRelative>
       <Stack flex spaceAfter="large" align="stretch" desktop={{ align: "start" }}>

@@ -68,7 +68,9 @@ describe("Textarea", () => {
     userEvent.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
-    // $FlowFixMe: jest
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
     await act(async () => {});
   });
 });

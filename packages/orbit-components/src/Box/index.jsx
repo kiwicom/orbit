@@ -10,8 +10,8 @@ import normalize from "./normalize";
 import type { Props } from ".";
 
 const StyledBox: any = styled(
-  ({ className, asComponent: Element, children, dataTest, id, ref }) => (
-    <Element className={className} data-test={dataTest} id={id} ref={ref}>
+  ({ className, asComponent: Element, children, dataTest, id, forwardRef }) => (
+    <Element className={className} data-test={dataTest} id={id} ref={forwardRef}>
       {children}
     </Element>
   ),
@@ -56,7 +56,7 @@ const Box: React.AbstractComponent<Props, HTMLDivElement> = React.forwardRef<Pro
 
     return (
       <StyledBox
-        ref={ref}
+        forwardRef={ref}
         asComponent={as}
         id={id}
         dataTest={dataTest}

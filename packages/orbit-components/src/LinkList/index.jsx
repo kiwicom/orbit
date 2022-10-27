@@ -14,12 +14,12 @@ import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTem
 import type { Props } from ".";
 
 const StyledLinkList = styled.ul`
-  ${({ indent, direction, theme, legacy, spacing }) => css`
+  ${({ indent, direction, theme, $legacy, spacing }) => css`
     display: flex;
     flex-direction: ${direction};
     width: 100%;
     margin: 0;
-    gap: ${!legacy && spacing && getSpacing({ theme })[spacing]};
+    gap: ${!$legacy && spacing && getSpacing({ theme })[spacing]};
     padding: 0;
     padding-${left}: ${indent && theme.orbit.spaceXXSmall};
     list-style: none;
@@ -32,7 +32,7 @@ StyledLinkList.defaultProps = {
   theme: defaultTheme,
 };
 
-const resolveSpacings = ({ spacing, legacy, direction, ...props }): CSSRules | null => {
+const resolveSpacings = ({ spacing, $legacy, direction, ...props }): CSSRules | null => {
   const margin =
     spacing &&
     direction &&
@@ -41,7 +41,7 @@ const resolveSpacings = ({ spacing, legacy, direction, ...props }): CSSRules | n
       getSpacing(props)[spacing],
     );
 
-  if (!legacy) return null;
+  if (!$legacy) return null;
 
   return css`
     margin: ${margin && rtlSpacing(margin)};
@@ -90,13 +90,13 @@ const LinkList = ({
     indent={indent}
     direction={direction}
     data-test={dataTest}
-    legacy={legacy}
+    $legacy={legacy}
     spacing={spacing}
   >
     {React.Children.map(children, item => {
       if (React.isValidElement(item)) {
         return (
-          <StyledNavigationLinkListChild direction={direction} spacing={spacing} legacy={legacy}>
+          <StyledNavigationLinkListChild direction={direction} spacing={spacing} $legacy={legacy}>
             {item}
           </StyledNavigationLinkListChild>
         );

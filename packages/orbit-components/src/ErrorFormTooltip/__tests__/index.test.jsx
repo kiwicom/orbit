@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import ErrorFormTooltip from "..";
@@ -18,7 +18,7 @@ describe("ErrorFormTooltip", () => {
     expect(onShown).toHaveBeenCalled();
   });
 
-  it("should have help", () => {
+  it("should have help", async () => {
     const onShown = jest.fn();
     render(<ErrorFormTooltip dataTest="test" onShown={onShown} shown help="help" />);
 
@@ -27,5 +27,9 @@ describe("ErrorFormTooltip", () => {
 
     userEvent.click(screen.getByLabelText("close"));
     expect(onShown).toHaveBeenCalled();
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 });

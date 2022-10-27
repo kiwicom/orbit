@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { screen, render, waitForElementToBeRemoved } from "@testing-library/react";
+import { screen, render, act, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Tooltip from "../../Tooltip";
@@ -17,7 +17,7 @@ jest.mock("../../hooks/useMediaQuery", () => {
 });
 
 describe("Popover", () => {
-  it("should have expected DOM output", () => {
+  it("should have expected DOM output", async () => {
     const content = "Message for a user";
     const position = "bottom";
     const onOpen = jest.fn();
@@ -43,9 +43,13 @@ describe("Popover", () => {
     const closeButton = screen.getByRole("button", { name: "Close" });
     userEvent.click(closeButton);
     expect(onClose).toHaveBeenCalled();
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 
-  it("should have actions", () => {
+  it("should have actions", async () => {
     const actions = (
       <Stack direction="row" justify="between">
         <Button type="secondary" size="small">
@@ -60,18 +64,26 @@ describe("Popover", () => {
       </Popover>,
     );
     expect(screen.getByRole("button", { name: "Cancel" })).toBeInTheDocument();
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 
-  it("should have no padding", () => {
+  it("should have no padding", async () => {
     render(
       <Popover noPadding opened dataTest="test" content="kek">
         bur
       </Popover>,
     );
     expect(screen.getByText("kek").closest("div")).toHaveStyle({ padding: "0" });
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 
-  it("should have offset", () => {
+  it("should have offset", async () => {
     render(
       <Popover opened offset={{ top: 10, left: 20 }} content="kek">
         <Button type="secondary" size="small">
@@ -82,6 +94,10 @@ describe("Popover", () => {
 
     // default is 4px
     expect(screen.getByRole("tooltip")).toHaveStyle({ top: "10" });
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 
   it("with tooltip", async () => {
@@ -95,5 +111,9 @@ describe("Popover", () => {
     expect(overlay).toBeInTheDocument();
     if (overlay) userEvent.click(overlay);
     await waitForElementToBeRemoved(screen.queryByTestId("popover"));
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 });

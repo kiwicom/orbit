@@ -1,14 +1,50 @@
 // @flow
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import defaultTheme from "../../../defaultTheme";
+import { renderStatus } from "./helpers";
+
+const pulseAnimation = keyframes`
+  0% {
+    transform: scale(0.01);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.01);
+  }
+`;
 
 const StyledIconWrapper: any = styled.div`
-  min-width: ${({ theme, mobile }) => mobile && theme.orbit.spaceLarge};
-  min-height: ${({ theme }) => theme.orbit.spaceLarge};
-  z-index: 1;
-  text-align: center;
-  line-height: ${({ theme }) => theme.orbit.lineHeightText};
+  ${({ theme, mobile, status, active }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: ${mobile && theme.orbit.spaceLarge};
+    z-index: 1;
+    text-align: center;
+    position: relative;
+    height: 20px;
+    line-height: ${theme.orbit.lineHeightText};
+    &:after {
+      position: absolute;
+      top: 0px;
+      left: ${mobile ? "2px" : "-2px"};
+      content: "";
+      height: 20px;
+      width: 20px;
+      border-radius: 100%;
+      ${active &&
+      css`
+        animation: ${pulseAnimation} 2.5s ease-in-out infinite;
+      `};
+      background: ${status && convertHexToRgba(renderStatus(status, theme), 10)};
+    }
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

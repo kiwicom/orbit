@@ -1,62 +1,47 @@
 // @flow
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import StyledRelative from "../primitives/StyledRelative";
-import StyledIconWrapper from "../primitives/StyledIconWrapper";
+import TypeIcon from "./TypeIcon";
 import StyledProgressLine from "../primitives/StyledProgressLine";
 import StyledText from "../primitives/StyledText";
-import CustomBadge from "./CustomBadge";
-import Badge from "../../../Badge";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
 import type { Props as StepProps, Type } from "..";
+import defaultTheme from "../../../defaultTheme";
 
 const StyledDescription = styled.div`
-  max-width: 250px;
-  width: 100%;
+  ${({ theme, active }) => css`
+    max-width: 250px;
+    width: 100%;
+    > p {
+      color: ${active ? theme.orbit.paletteInkDark : theme.orbit.paletteInkLight};
+    }
+  `}
 `;
 
-const StyledAligned = styled.div`
-  text-align: center;
-`;
+// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
+StyledDescription.defaultProps = {
+  theme: defaultTheme,
+};
 
 type Props = {|
   ...StepProps,
+  prevType: Type,
   last: boolean,
-  typeIcon: React.Node,
   nextType: Type,
 |};
 
-const Label = ({ asText, type, label }) => {
-  if (asText) {
-    return (
-      <Text type={type} weight="bold">
-        {label}
-      </Text>
-    );
-  }
-
-  return !type ? (
-    <CustomBadge>
-      <StyledAligned>{label}</StyledAligned>
-    </CustomBadge>
-  ) : (
-    <Badge type={type}>
-      <StyledAligned>{label}</StyledAligned>
-    </Badge>
-  );
-};
-
 const TimelineStepDesktop = ({
   type,
-  last,
   nextType,
+  prevType,
+  last,
   children,
+  active,
   label,
   subLabel,
-  asText,
-  typeIcon,
 }: Props): React.Node => {
   return (
     <Stack inline shrink direction="column" align="center" spaceAfter="large">
@@ -66,16 +51,22 @@ const TimelineStepDesktop = ({
         </StyledText>
       )}
       <StyledRelative inner>
-        <StyledProgressLine data-test="progressLine" desktop status={type} />
-        <StyledIconWrapper>{typeIcon}</StyledIconWrapper>
-        <StyledProgressLine data-test="progressLine" desktop status={nextType || (last && type)} />
+        <StyledProgressLine desktop status={type} prevStatus={prevType} nextStatus={nextType} />
+        <TypeIcon type={type} active={!!active} />
+        <StyledProgressLine
+          desktop
+          status={!nextType && !last ? undefined : type}
+          prevStatus={prevType}
+          nextStatus={nextType}
+          last={last}
+        />
       </StyledRelative>
       <Stack flex align="center" spacing="XSmall" direction="column">
-        <Label asText={asText} type={type} label={label} />
-        <StyledDescription>
-          <Text align="center" type={type ? "primary" : "secondary"}>
-            {children}
-          </Text>
+        <StyledText active={active}>
+          <Text weight="bold">{label}</Text>
+        </StyledText>
+        <StyledDescription active={active}>
+          <Text align="center">{children}</Text>
         </StyledDescription>
       </Stack>
     </Stack>

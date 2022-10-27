@@ -4,9 +4,10 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../../../defaultTheme";
 
 const StyledText: any = styled.div`
-  ${({ theme }) => css`
-    height: ${theme.orbit.spaceMedium};
-    text-align: center;
+  ${({ theme, active }) => css`
+    > p {
+      color: ${active ? theme.orbit.paletteInkDark : theme.orbit.paletteInkLight};
+    }
   `};
 `;
 

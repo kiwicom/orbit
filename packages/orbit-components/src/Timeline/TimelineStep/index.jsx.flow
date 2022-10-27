@@ -1,12 +1,12 @@
 // @flow
 import * as React from "react";
 
-export type Type = "success" | "warning" | "critical";
+export type Type = "success" | "warning" | "critical" | "info";
 export type Props = {|
   +children: React.Node,
   +subLabel?: React.Node,
-  +asText?: boolean,
-  +label: string,
+  +label: React.Node,
+  +active?: boolean,
   +type?: Type,
 |};
 

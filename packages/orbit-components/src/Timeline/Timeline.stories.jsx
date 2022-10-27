@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { text, select } from "@storybook/addon-knobs";
 
 import Modal, { ModalSection } from "../Modal";
 import TimelineStep from "./TimelineStep";
@@ -15,7 +15,6 @@ export default {
 };
 
 export const Default = (): React.Node => {
-  const asText = boolean("asText", false);
   const type = text("type", "success");
   const label = text("label", "In progress");
   const time = text("time", "4th May 10:25");
@@ -27,20 +26,42 @@ export const Default = (): React.Node => {
 
   return (
     <Timeline dataTest={dataTest} direction={direction}>
-      <TimelineStep asText={asText} label="Requested" subLabel="3rd May 14:04" type="success">
+      <TimelineStep label="Requested" subLabel="3rd May 14:04" type="success">
         We’ve received your request and will assign it to one of our agents.
       </TimelineStep>
-      <TimelineStep asText={asText} label={label} subLabel={time} type={type}>
+      <TimelineStep label={label} subLabel={time} type={type}>
         {children}
       </TimelineStep>
-      <TimelineStep asText={asText} label="Waiting for the carrier" subLabel="5th May 15:03">
+      <TimelineStep label="Waiting for the carrier" subLabel="5th May 15:03" type="info">
         We’ll wait for the carrier(s) to send us the refund and contact them again if necessary.
       </TimelineStep>
-      <TimelineStep asText={asText} label="Carrier is refunding" subLabel="6th May 20:50">
+      <TimelineStep label="Carrier is refunding" subLabel="6th May 20:50">
         The carrier has sent us a refund. There might be more depending on their policy.
       </TimelineStep>
-      <TimelineStep asText={asText} label="Refunded" subLabel="7th May 10:30">
+      <TimelineStep label="Refunded" subLabel="7th May 10:30">
         We’ll forward you all refunds from the carrier(s) after we receive it.
+      </TimelineStep>
+    </Timeline>
+  );
+};
+
+export const AllSuccessfull = (): React.Node => {
+  return (
+    <Timeline>
+      <TimelineStep label="Requested" type="success">
+        Step 1
+      </TimelineStep>
+      <TimelineStep label="Done" type="success">
+        Step 2
+      </TimelineStep>
+      <TimelineStep label="Waiting for the carrier" type="success">
+        Step 3
+      </TimelineStep>
+      <TimelineStep label="Carrier is refunding" type="success">
+        Step 4
+      </TimelineStep>
+      <TimelineStep label="Refunded" type="success" active={false}>
+        Step 5
       </TimelineStep>
     </Timeline>
   );

@@ -40,13 +40,13 @@ import TimelineStep from "@kiwicom/orbit-components/lib/Timeline/TimelineStep";
 
 Table below contains all types of the props in **TimelineStep** component.
 
-| Name         | Type            | Default | Description                                                               |
-| :----------- | :-------------- | :------ | :------------------------------------------------------------------------ |
-| **children** | `React.Node`    |         | The content of the component                                              |
-| label        | `string`        |         | Text for [`Badge`](https://orbit.kiwi/components/badge/) component inside |
-| type         | [`enum`](#enum) |         | Type of current process step                                              |
-| subLabel     | `string`        |         | SubLabel text of current process step                                     |
-| asText       | `boolean`       |         | Label is rendered as `Text` instead of `Badge`                            |
+| Name         | Type            | Default | Description                          |
+| :----------- | :-------------- | :------ | :----------------------------------- |
+| **children** | `React.Node`    |         | The content of the component         |
+| label        | `React.Node`    |         | Text for `label` component inside    |
+| subLabel     | `React.Node`    |         | Text for `subLabel` component inside |
+| type         | [`enum`](#enum) |         | Type of current process step         |
+| active       | `boolean`       |         | Controlled state of the step         |
 
 ### enum
 
@@ -55,3 +55,4 @@ Table below contains all types of the props in **TimelineStep** component.
 | "success"  |
 | "warning"  |
 | "critical" |
+| "info"     |

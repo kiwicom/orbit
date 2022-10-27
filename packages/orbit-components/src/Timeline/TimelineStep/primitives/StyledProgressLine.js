@@ -3,23 +3,48 @@ import styled, { css } from "styled-components";
 
 import { left } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
+import { renderStatus } from "./helpers";
 
-const renderStatus = (type, theme) => {
-  if (type === "success") return theme.orbit.colorTextSuccess;
-  if (type === "warning") return theme.orbit.colorTextWarning;
-  if (type === "critical") return theme.orbit.colorTextCritical;
+const getBorderStyle = ({ desktop, status, nextStatus, theme, last, prevStatus }) => {
+  if (desktop) {
+    if (status && !nextStatus && !last) {
+      return css`
+        border-image-slice: 1;
+        border-image-source: linear-gradient(
+          to right,
+          ${renderStatus(prevStatus, theme)},
+          ${renderStatus(status, theme)}
+        );
+      `;
+    }
+  }
 
-  return theme.orbit.paletteCloudNormalHover;
+  if (status && !nextStatus && !last) {
+    return css`
+      border-image-slice: 1;
+      border-image-source: linear-gradient(
+        to bottom,
+        ${renderStatus(prevStatus, theme)},
+        ${renderStatus(status, theme)}
+      );
+    `;
+  }
+
+  return css`
+    border-color: ${renderStatus(status, theme)};
+  `;
 };
 
 const StyledProgressLine: any = styled.span`
-  ${({ desktop, theme, status }) => css`
-    ${!desktop && `position: absolute`};
-    ${!desktop && `top: 18px`};
-    width: ${desktop ? "50%" : "2px"};
-    ${left}: 11px;
-    background: ${renderStatus(status, theme)};
-    height: ${desktop ? `2px` : `calc(100% + 4px)`};
+  ${({ desktop, theme, status, nextStatus, prevStatus, last }) => css`
+    position: ${!desktop && "absolute"};
+    top: ${!desktop && "15px"};
+    border-width: 1px;
+    border-style: ${!nextStatus && !last ? "dashed" : "solid"};
+    ${getBorderStyle({ desktop, theme, status, nextStatus, prevStatus, last })};
+    ${left}: ${!desktop && "11px"};
+    width: ${desktop && "50%"};
+    height: ${!desktop && `calc(100% + 2px)`};
   `}
 `;
 

@@ -1,10 +1,6 @@
 // @flow
 import * as React from "react";
 
-import CheckCircle from "../../icons/CheckCircle";
-import Circle from "../../icons/CircleEmpty";
-import AlertCircle from "../../icons/AlertCircle";
-import CloseCircle from "../../icons/CloseCircle";
 import { useStatuses, useStep } from "../TimelineContext";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import TimelineStepDesktop from "./components/TimelineStepDesktop";
@@ -12,20 +8,21 @@ import TimelineStepMobile from "./components/TimelineStepMobile";
 
 import type { Props } from ".";
 
-const TypeIcon = ({ type }) => {
-  if (type === "success") return <CheckCircle color="success" />;
-  if (type === "warning") return <AlertCircle color="warning" />;
-  if (type === "critical") return <CloseCircle color="critical" />;
+const getActiveState = (active, isLast, type, nextType) => {
+  if (active == null) return type && !nextType;
+  if (isLast && type === "success") return false;
 
-  return <Circle color="tertiary" size="small" />;
+  return active;
 };
 
-const TimelineStep = ({ children, label, subLabel, type, asText }: Props): React.Node => {
+const TimelineStep = ({ children, label, subLabel, type, active }: Props): React.Node => {
   const { types, setTypes, isColumnOnDesktop } = useStatuses();
   const { index, last } = useStep();
   const { isDesktop } = useMediaQuery();
 
   const nextType = types[index + 1];
+  const prevType = types[index - 1];
+  const isActive = getActiveState(active, last, type, nextType);
 
   React.useEffect(() => {
     setTypes(prev => ({ ...prev, [index]: type }));
@@ -34,9 +31,9 @@ const TimelineStep = ({ children, label, subLabel, type, asText }: Props): React
   if (isColumnOnDesktop)
     return (
       <TimelineStepMobile
-        typeIcon={<TypeIcon type={type} />}
         nextType={nextType}
         label={label}
+        active={isActive}
         type={type}
         subLabel={subLabel}
         last={last}
@@ -48,13 +45,13 @@ const TimelineStep = ({ children, label, subLabel, type, asText }: Props): React
   if (isDesktop)
     return (
       <TimelineStepDesktop
-        typeIcon={<TypeIcon type={type} />}
         nextType={nextType}
+        prevType={prevType}
         label={label}
-        asText={asText}
+        last={last}
+        active={isActive}
         type={type}
         subLabel={subLabel}
-        last={last}
       >
         {children}
       </TimelineStepDesktop>
@@ -62,11 +59,10 @@ const TimelineStep = ({ children, label, subLabel, type, asText }: Props): React
 
   return (
     <TimelineStepMobile
-      typeIcon={<TypeIcon type={type} />}
       nextType={nextType}
       label={label}
-      asText={asText}
       type={type}
+      active={isActive}
       subLabel={subLabel}
       last={last}
     >

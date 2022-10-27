@@ -1,11 +1,10 @@
 import { Box, mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
-import { boxShadowDefault } from "../../mixins";
 import { StyledAnchor } from "../../HeadingWithLink";
 
 const StyledProse = styled(Box)`
-  ${({ theme, elevation }) => css`
+  ${({ theme }) => css`
     font-size: ${theme.orbit.fontSizeTextNormal};
     ${mediaQueries.tablet(css`
       border-radius: ${theme.orbit.spaceMedium};
@@ -50,10 +49,6 @@ const StyledProse = styled(Box)`
     h2:first-child {
       margin-top: 0;
     }
-    ${elevation === "raised" &&
-    css`
-      ${boxShadowDefault}
-    `}
   `}
 `;
 

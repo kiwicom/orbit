@@ -8,7 +8,7 @@ import debounce from "lodash/debounce";
 import Tab, { TabObject } from "./Tab";
 import useFontLoaded from "../../hooks/useFontLoaded";
 import { TAB_HEIGHT, FULL_WIDTH_BREAKPOINT } from "./consts";
-import { getTabShadowReachTop, getTabShadowReachLeft, getTabShadowReachRight } from "./helpers";
+import { getTabShadowReachTop, getTabShadowReachLeft } from "./helpers";
 
 const StyledContainer = styled.div<{ collapsed: boolean }>`
   ${({ theme, collapsed }) => css`
@@ -24,15 +24,10 @@ const StyledContainer = styled.div<{ collapsed: boolean }>`
     display: flex;
     flex-wrap: wrap; /* so that we can detect whether tabs wrap, and in that case collapse them */
     padding-top: ${getTabShadowReachTop};
-    padding-left: ${getTabShadowReachLeft};
-    padding-right: ${getTabShadowReachRight};
     /* prevents box shadow and tabs stack from overflowing at the bottom in order to */
     /* achieve the effect of attached tabs, also prevents wrapped tabs from showing */
     overflow: hidden;
-
-    > * + * {
-      margin-left: ${theme.orbit.spaceMedium};
-    }
+    gap: ${theme.orbit.spaceLarge};
 
     ${collapsed &&
     css`

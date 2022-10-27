@@ -14,7 +14,6 @@ import {
   mediaQueries as mq,
   TextLink,
   Popover,
-  ButtonLink,
   useMediaQuery,
 } from "@kiwicom/orbit-components";
 import { MenuHamburger, StarEmpty, Logout } from "@kiwicom/orbit-components/icons";
@@ -143,7 +142,7 @@ const NavigationLinks = ({ isDesktop }) => {
     </Stack>
   ) : (
     <Popover placement="top-end" content={<Stack direction="column">{links}</Stack>}>
-      <ButtonLink type="secondary" iconLeft={<MenuHamburger />} />
+      <Button type="white" circled iconLeft={<MenuHamburger />} />
     </Popover>
   );
 };
@@ -164,7 +163,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
   return (
     <StyledWrapper>
       <StyledInner>
-        <Stack inline shrink align="center">
+        <Stack inline shrink align="center" spacing="small">
           <Link to="/" aria-label="Back to home page">
             <StyledLogo width={192} height={44} />
             <StyledLogoGlyph width={44} height={44} />

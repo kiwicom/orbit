@@ -32,6 +32,7 @@ const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"
     color: ${theme.orbit.colorTextWhite};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
+    overflow: hidden;
     width: 100%;
     flex-direction: column;
     ${boxShadowDefault};
@@ -132,7 +133,7 @@ export default function BrandedTile({
           align="center"
           justify="between"
           spacing="small"
-          tablet={{ direction: "row" }}
+          mediumMobile={{ direction: "row" }}
         >
           <Button
             size="large"

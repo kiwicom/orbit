@@ -66,7 +66,9 @@ describe("InputField", () => {
     fireEvent.focus(input); // userEvent.tab() doesn't work because of tabIndex="-1"
     expect(screen.getByTestId("help")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
-    // $FlowFixMe:TODO
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -145,7 +147,9 @@ describe("InputField", () => {
       userEvent.tab();
       expect(screen.queryByTestId("help")).not.toBeInTheDocument();
       expect(screen.getByTestId("error")).toBeInTheDocument();
-      // $FlowFixMe:TODO
+      // Needs to flush async `floating-ui` hooks
+      // https://github.com/floating-ui/floating-ui/issues/1520
+      // $FlowFixMe
       await act(async () => {});
     });
   });
@@ -171,7 +175,9 @@ describe("InputField", () => {
       userEvent.tab();
       expect(screen.queryByText("Second")).not.toBeInTheDocument();
       expect(screen.getByText("Third")).toBeVisible();
-      // $FlowFixMe:TODO
+      // Needs to flush async `floating-ui` hooks
+      // https://github.com/floating-ui/floating-ui/issues/1520
+      // $FlowFixMe
       await act(async () => {});
     });
   });

@@ -1,12 +1,12 @@
 // @flow
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import SegmentedSwitch from "..";
 
 describe("SegmentedSwitch", () => {
-  it("should have expected DOM output", () => {
+  it("should have expected DOM output", async () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const label = "label";
@@ -35,9 +35,13 @@ describe("SegmentedSwitch", () => {
     userEvent.click(screen.getByLabelText("Female"));
     expect(screen.getByDisplayValue("Female")).toBeInTheDocument();
     expect(onChange).toHaveBeenCalled();
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 
-  it("should have error", () => {
+  it("should have error", async () => {
     const error = "Error message";
     const label = "Gender";
 
@@ -56,9 +60,13 @@ describe("SegmentedSwitch", () => {
     userEvent.hover(screen.getByText(label));
     expect(screen.getByText(error)).toBeInTheDocument();
     expect(screen.getByLabelText("Female")).toBeDisabled();
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 
-  it("should have help", () => {
+  it("should have help", async () => {
     const help = "Help message";
 
     render(
@@ -75,5 +83,9 @@ describe("SegmentedSwitch", () => {
 
     userEvent.hover(screen.getByText("Gender"));
     expect(screen.getByText(help)).toBeInTheDocument();
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 });

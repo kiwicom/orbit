@@ -1,13 +1,13 @@
 // @flow
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Tooltip from "..";
 import Airplane from "../../../icons/Airplane";
 
 describe("Tooltip", () => {
-  it("it should match snapshot", () => {
+  it("it should match snapshot", async () => {
     const content = "Write some message to the user";
     const { container } = render(
       <Tooltip content={content}>
@@ -16,9 +16,13 @@ describe("Tooltip", () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 
-  it("should call onClick 1 time", () => {
+  it("should call onClick 1 time", async () => {
     const content = "Write some message to the user";
     const onClick = jest.fn();
 
@@ -41,9 +45,13 @@ describe("Tooltip", () => {
     userEvent.click(screen.getByText(content));
 
     expect(onClick).toHaveBeenCalledTimes(1);
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 
-  it("should call onClick 2 times", () => {
+  it("should call onClick 2 times", async () => {
     const content = "Write some message to the user";
     const onClick = jest.fn();
 
@@ -65,5 +73,9 @@ describe("Tooltip", () => {
     userEvent.click(screen.getByText(content));
 
     expect(onClick).toHaveBeenCalledTimes(2);
+    // Needs to flush async `floating-ui` hooks
+    // https://github.com/floating-ui/floating-ui/issues/1520
+    // $FlowFixMe
+    await act(async () => {});
   });
 });

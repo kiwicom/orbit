@@ -11,6 +11,7 @@ export interface Props extends Common.Global {
   readonly enabled?: boolean;
   readonly lockScrolling?: boolean;
   readonly tabIndex?: string | number;
+  readonly onShow?: () => void | Promise<void>;
   readonly renderInPortal?: boolean;
   readonly content: React.ReactNode;
   readonly stopPropagation?: boolean;

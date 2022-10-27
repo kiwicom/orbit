@@ -47,6 +47,7 @@ const Tooltip = ({
       dataTest={dataTest}
       tabIndex={tabIndex}
       id={id}
+      onShow={onShow}
       enabled={enabled}
       lockScrolling={lockScrolling}
       content={content}

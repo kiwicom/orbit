@@ -10,6 +10,7 @@ export type Props = {|
   lockScrolling?: boolean,
   renderInPortal?: boolean,
   content: React.Node,
+  onShow?: () => void | Promise<void>,
   stopPropagation?: boolean,
   removeUnderlinedText?: boolean,
   block?: boolean,

@@ -30,6 +30,7 @@ Table below contains all types of the props available in the MobileDialogPrimiti
 | stopPropagation      | `boolean`          |         | If `true` the click event on children won't bubble. Useful when you use MobileDialogPrimitive inside another clickable element.                     |
 | lockScrolling        | `boolean`          | `true`  | Whether to prevent scrolling of the rest of the page while ModalDialogPrimitive is open. This is on by default to provide a better user experience. |
 | tabIndex             | `string \| number` | `"0"`   | Specifies the tab order of an element                                                                                                               |
+| onShow               | `() => void`       |         | Fires when MobileDialog appears                                                                                                                     |
 
 ## Functional specs
 

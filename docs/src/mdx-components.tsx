@@ -5,7 +5,6 @@ import {
   Separator,
   Text,
   TextLink,
-  Table,
   TableHead,
   TableBody,
   TableRow,
@@ -23,6 +22,7 @@ import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
 import { getTextFromChildren } from "./utils/common";
 import { useTableOfContentsRegister } from "./services/table-of-contents";
+import PropsTable, { TableHeadCell } from "./docs-table";
 
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
@@ -81,7 +81,7 @@ export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
 export const blockquote = BlockQuote;
 
 export const table = ({ children }: React.TableHTMLAttributes<HTMLTableElement>) => (
-  <Table>{children}</Table>
+  <PropsTable>{children}</PropsTable>
 );
 
 export const thead = ({ children }: React.HTMLAttributes<HTMLTableSectionElement>) => (
@@ -96,11 +96,7 @@ export const tr = ({ children }: React.HTMLAttributes<HTMLTableRowElement>) => (
   <TableRow>{children}</TableRow>
 );
 
-export const td = ({
-  children,
-  align,
-  valign,
-}: React.TdHTMLAttributes<HTMLTableDataCellElement>) => (
+export const td = ({ children, align, valign }: React.TdHTMLAttributes<HTMLTableCellElement>) => (
   <TableCell
     as="td"
     align={align === "left" || align === "center" || align === "right" ? align : undefined}
@@ -111,13 +107,8 @@ export const td = ({
   </TableCell>
 );
 
-export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => (
-  <TableCell
-    as="th"
-    align={align === "left" || align === "center" || align === "right" ? align : undefined}
-  >
-    {children}
-  </TableCell>
+export const th = ({ children }: React.ThHTMLAttributes<HTMLTableCellElement>) => (
+  <TableHeadCell as="th">{children}</TableHeadCell>
 );
 
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (

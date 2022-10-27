@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import defaultTheme from "../defaultTheme";
 import { StyledText } from "../Text";
@@ -9,6 +8,7 @@ import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
 import media from "../utils/mediaQuery";
+import { defaultFocus } from "../utils/common";
 
 import type { Props } from ".";
 
@@ -122,17 +122,7 @@ const Input = styled.input`
   }
 
   &:focus + ${IconContainer} {
-    outline: 0;
-    border: ${({ theme, hasError }) =>
-      `2px ${theme.orbit.borderStyleInput} ${
-        hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorCheckboxRadioFocus
-      }`};
-    box-shadow: 0 0 0 2px
-      ${({ theme, hasError }) =>
-        convertHexToRgba(
-          hasError ? theme.orbit.paletteRedNormal : theme.orbit.borderColorInputFocus,
-          15,
-        )};
+    ${defaultFocus}
 
     ${media.largeMobile(css`
       border-width: 1px;

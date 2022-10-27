@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 import useClickOutside from "../../hooks/useClickOutside";
 import defaultTheme from "../../defaultTheme";
+import { defaultFocus } from "../../utils/common";
 
 import type { Props } from ".";
 
@@ -64,7 +65,7 @@ const StyledInput = styled.input`
       z-index: 10;
       border-radius: 5px !important;
       color: ${theme.orbit.paletteInkNormal};
-      box-shadow: 0 0 0 2px ${theme.orbit.paletteBlueNormal};
+      ${defaultFocus}
     }
   `};
 `;

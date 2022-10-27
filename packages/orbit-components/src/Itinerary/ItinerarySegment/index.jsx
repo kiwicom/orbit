@@ -23,7 +23,6 @@ const StyledWrapper = styled.div`
       &:hover,
       &:focus {
         box-shadow: ${!noElevation && theme.orbit.boxShadowActionActive};
-        outline: none;
       }
     `}
   `}

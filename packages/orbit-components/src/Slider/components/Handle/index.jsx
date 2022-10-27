@@ -77,9 +77,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
     border-radius: 8px;
   }
   :hover,
-  :focus,
   :active {
-    outline: none;
     box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
   }
 `;

@@ -132,7 +132,7 @@ const StyledInputGroup = styled(
         box-shadow: none;
         background-color: transparent;
         &:focus {
-          box-shadow: none;
+          outline: none;
         }
       }
     }

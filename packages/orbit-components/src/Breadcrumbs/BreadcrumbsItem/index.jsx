@@ -27,17 +27,16 @@ const StyledBreadcrumbsItemAnchor = styled(
     css`
       transition: color ${theme.orbit.durationFast} ease-in-out;
       cursor: pointer;
+      border: none;
+      background-color: inherit;
+      padding: 0;
+      outline-offset: 1px;
+      font-size: inherit;
+      font-weight: inherit;
 
-      &:hover,
-      &:focus {
-        outline: none;
-        text-decoration: none;
-      }
       &:hover {
+        text-decoration: none;
         color: ${theme.orbit.paletteProductNormalHover};
-      }
-      :focus {
-        color: ${theme.orbit.paletteProductNormalActive};
       }
     `};
   `}
@@ -59,8 +58,9 @@ StyledBreadcrumbsItemIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-// eslint-disable-next-line jsx-a11y/anchor-has-content
-const DefaultComponent = props => <a {...props} />;
+const DefaultComponent = (props: Props) =>
+  // eslint-disable-next-line react/button-has-type, jsx-a11y/anchor-has-content
+  props.onClick && !props.href ? <button {...props} /> : <a {...props} />;
 
 const BreadcrumbsItem = ({
   active,
@@ -69,7 +69,7 @@ const BreadcrumbsItem = ({
   onClick,
   href,
   contentKey,
-  component = DefaultComponent,
+  component,
   id,
   ...props
 }: Props): React.Node => {
@@ -84,7 +84,7 @@ const BreadcrumbsItem = ({
       <StyledBreadcrumbsItemAnchor
         isClickable={href || onClick}
         href={href}
-        component={component}
+        component={component || DefaultComponent}
         active={active}
         onClick={onClick}
         itemScope

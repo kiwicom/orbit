@@ -5,6 +5,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Circle from "../icons/Circle";
 import handleKeyDown from "../utils/handleKeyDown";
+import { defaultFocus } from "../utils/common";
 
 import type { Props } from ".";
 
@@ -81,7 +82,7 @@ const StyledSwitchInput = styled.input`
   padding: 0;
 
   &:focus + ${StyledSwitchButton} {
-    box-shadow: rgba(95, 115, 140, 0.3) 0px 0px 0px 2px;
+    ${defaultFocus}
   }
 `;
 

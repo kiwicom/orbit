@@ -106,30 +106,25 @@ export const StyledTag: any = styled.div`
       box-shadow ${theme.orbit.durationFast} ease-in-out,
       background ${theme.orbit.durationFast} ease-in-out;
 
-    &:focus {
-      outline: 0;
-      box-shadow: none;
-    }
-
     ${actionable &&
     css`
       cursor: pointer;
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         background: ${getBackgroundColor(STATES.HOVER)};
         box-shadow: none;
       }
 
       &:focus {
-        background: ${getBackgroundColor(STATES.DEFAULT)};
+        background: ${getBackgroundColor(STATES.HOVER)};
       }
 
       &:focus:not(:focus-visible):not(:active) {
-        background: ${getBackgroundColor(STATES.DEFAULT)};
+        background: ${getBackgroundColor(STATES.HOVER)};
       }
 
-      &:active,
-      &:focus-visible {
+      &:active {
         ${CloseContainer} {
           opacity: 1;
         }
@@ -152,8 +147,6 @@ const StyledClose = styled.div`
     ${CloseContainer} {
       opacity: 1;
     }
-    outline: none;
-    box-shadow: 0 0 0 2px;
   }
 `;
 

@@ -22,6 +22,18 @@ export default function RocketImage() {
     file: {
       childImageSharp: {
         fixed: FixedObject;
+        gatsbyImageData: {
+          height: number;
+          layout: string;
+          width: number;
+          images: {
+            fallback: { src: string; srcSet: string };
+            sources: Array<{ srcSet: string; sizes: string; type: string }>;
+          };
+          placeholder: {
+            fallback: string;
+          };
+        };
       };
     };
   } = useStaticQuery(graphql`
@@ -29,8 +41,9 @@ export default function RocketImage() {
       file(relativePath: { eq: "rocket.jpg" }) {
         childImageSharp {
           fixed(width: 810, height: 852) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
+          gatsbyImageData(placeholder: TRACED_SVG)
         }
       }
     }
@@ -58,6 +71,7 @@ export default function RocketImage() {
         `}
         style={{ position: "absolute" }} // to override gatsby-image's position
         fixed={data.file.childImageSharp.fixed}
+        placeholder={data.file.childImageSharp.gatsbyImageData.placeholder}
       />
     </StyledImageWrapper>
   );

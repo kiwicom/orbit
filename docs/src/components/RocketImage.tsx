@@ -38,7 +38,7 @@ export default function RocketImage() {
     };
   } = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "rocket.jpg" }) {
+      file(relativePath: { eq: "rocket.png" }) {
         childImageSharp {
           fixed(width: 810, height: 852) {
             ...GatsbyImageSharpFixed_withWebp_tracedSVG

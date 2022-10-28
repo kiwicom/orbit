@@ -115,7 +115,7 @@ export default function DocLayout({
                   </StyledDocNavigationWrapper>
                 </StyledDocNavigationWidth>
               </Hide>
-              <StyledMiddle hasBorder={breadcrumbs && breadcrumbs.length >= 2}>
+              <StyledMiddle hasBorder={tabs && tabs.length > 0}>
                 <TopBar
                   breadcrumbs={breadcrumbs}
                   headerLink={headerLink}

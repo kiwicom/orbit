@@ -65,7 +65,7 @@ const TopBar = ({
       {children}
     </StyledProse>
   ) : (
-    <StyledWrapper hasBg={breadcrumbs.length >= 2}>
+    <StyledWrapper hasBg={tabs && tabs.length > 0}>
       <Box padding={{ top: "XXLarge", left: "XXLarge", right: "XXLarge" }}>
         {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
         <Box padding={{ bottom: "medium" }}>

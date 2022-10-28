@@ -1,0 +1,4 @@
+{
+  "presets": ["@babel/flow", "@babel/preset-env", "@babel/react"],
+  "plugins": ["@kiwicom/orbit-components", "@babel/plugin-proposal-class-properties"]
+}

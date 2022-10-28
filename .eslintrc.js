@@ -176,7 +176,7 @@ module.exports = {
       },
     },
     {
-      files: ["packages/orbit-components/src/**/*", "docs/src/**/*"],
+      files: ["packages/orbit-components/src/**/*", "docs/src/**/*", "packages/orbit-themer/**/*"],
       env: {
         browser: true,
       },

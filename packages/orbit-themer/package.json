@@ -1,0 +1,46 @@
+{
+  "name": "@kiwicom/orbit-themer",
+  "version": "0.0.3",
+  "private": "true",
+  "description": "Design your own orbit-components theme with custom colors",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --open --hot --host 0.0.0.0",
+    "flow": "flow",
+    "build": "webpack --mode production"
+  },
+  "author": "Tomáš Hapl",
+  "license": "MIT",
+  "dependencies": {
+    "@kiwicom/orbit-components": "*",
+    "@kiwicom/orbit-design-tokens": "*",
+    "copy-to-clipboard": "^3.3.1",
+    "deep-object-diff": "^1.1.7",
+    "object-hash": "^3.0.0",
+    "prism-react-renderer": "^1.3.5",
+    "ramda": "^0.28.0",
+    "react": "^17.0.2",
+    "react-color": "^2.19.3",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-flow": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
+    "@kiwicom/babel-plugin-orbit-components": "^3.5.2",
+    "babel-loader": "^8.2.5",
+    "copy-webpack-plugin": "^11.0.0",
+    "flow-bin": "^0.183.0",
+    "html-loader": "^4.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}

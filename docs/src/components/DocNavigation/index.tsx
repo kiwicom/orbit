@@ -82,11 +82,13 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
   const data: QueryData = useStaticQuery(graphql`
     query NavigationItems {
       allMdx(
-        filter: { fields: { collection: { eq: "documentation" } } }
-        sort: { fields: fileAbsolutePath }
+        filter: { fields: { collection: { eq: "documentation" } } } # sort: { internal: contentFilePath }
       ) {
         nodes {
           id
+          internal {
+            contentFilePath
+          }
           fields {
             tabCollection
             breadcrumbs {

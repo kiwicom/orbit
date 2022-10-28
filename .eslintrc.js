@@ -76,6 +76,10 @@ module.exports = {
     {
       files: ["*.js?(x)", "*.js?(x).flow"],
       extends: ["plugin:flowtype/recommended", "prettier"],
+      parser: "@babel/eslint-parser",
+      parserOptions: {
+        requireConfigFile: false,
+      },
       plugins: ["adeira"],
       rules: {
         "flowtype/require-exact-type": "error",
@@ -198,9 +202,14 @@ module.exports = {
       extends: ["plugin:mdx/recommended"],
       rules: {
         "react/jsx-filename-extension": ["error", { extensions: [".mdx"] }],
-        "mdx/no-unescaped-entities": "OFF",
-        "react/no-unescaped-entities": "OFF",
+        "mdx/no-unescaped-entities": "off",
+        "react/self-closing-comp": "off",
+        "react/no-unescaped-entities": "off",
         "mdx/remark": "error",
+        "no-unused-expressions": "off",
+        "import/order": "off",
+        "babel/no-unused-expressions": "off",
+        "lines-around-directive": "off",
         "import/extensions": [
           "error",
           "ignorePackages",
@@ -211,12 +220,10 @@ module.exports = {
         ],
       },
       settings: {
+        "mdx/code-blocks": true,
         "import/resolver": {
           node: {
             extensions: [".ts", ".tsx"],
-          },
-          alias: {
-            map: [["snippets", "./docs/src/snippets"]],
           },
         },
       },

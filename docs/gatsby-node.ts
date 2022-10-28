@@ -3,6 +3,7 @@ import fs from "fs";
 import yaml from "js-yaml";
 import { createFilePath } from "gatsby-source-filesystem";
 import type { GatsbyNode } from "gatsby";
+import BundleAnalyzerPlugin from "webpack-bundle-analyzer";
 
 import {
   omitNumbers,
@@ -151,7 +152,7 @@ export const onCreateNode = async ({ cache, node, getNode, actions, reporter }) 
     if (node.fields.collection === "documentation") {
       let documentBreadcrumbs;
 
-      if (hasTabs && path.basename(node.fileAbsolutePath).startsWith("01-")) {
+      if (hasTabs && path.basename(node.internal.contentFilePath).startsWith("01-")) {
         documentBreadcrumbs = await getDocumentBreadcrumbs(cache, node.fields.slug);
       } else {
         documentBreadcrumbs = await getDocumentBreadcrumbs(cache, getParentUrl(node.fields.slug));
@@ -187,6 +188,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
       allMdx(filter: { fields: { collection: { eq: "documentation" } } }) {
         nodes {
           id
+          internal {
+            contentFilePath
+          }
+          frontmatter {
+            slug
+          }
           fields {
             slug
             tabCollection
@@ -217,10 +224,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
   }
 
   // @ts-expect-error TODO
-  result.data.allMdx.nodes.forEach(({ id, fields }) => {
+  result.data.allMdx.nodes.forEach(({ id, fields, internal, frontmatter }) => {
+    const template = path.resolve(process.cwd(), "src/templates/Doc.tsx");
     createPage({
-      path: fields.slug,
-      component: `${process.cwd()}/src/templates/Doc.tsx`,
+      path: frontmatter.slug,
+      // FYI: https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#migrating-from-v3-to-v4
+      component: `${template}__contentFilePath=${internal.contentFilePath}`,
       context: { id, tabs: fields.tabCollection },
     });
   });
@@ -228,6 +237,21 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
 export const onPreBuild = async () => {
   await parseChangelog();
+};
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  const analyzerMode = process.env.INTERACTIVE_ANALYZE ? "server" : "json";
+
+  if (stage === "build-javascript") {
+    actions.setWebpackConfig({
+      plugins: [
+        new BundleAnalyzerPlugin({
+          analyzerMode,
+          reportFileName: `./bundlereport.json`,
+        }),
+      ],
+    });
+  }
 };
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
@@ -251,8 +275,8 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       description: String
       slug: String!
       tabCollection: String
-      title: String!
-      breadcrumbs: [BreadcrumbsPart]
+      title: String
+      trail: [TrailPart]
     }
 
     type BreadcrumbsPart {

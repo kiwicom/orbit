@@ -7,7 +7,7 @@ const StyledMain = styled.main`
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: calc(${MAX_CONTENT_WIDTH} - 22ch);
+  max-width: ${MAX_CONTENT_WIDTH};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
 
   > *:last-child {

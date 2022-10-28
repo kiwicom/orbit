@@ -71,7 +71,7 @@ export default function RocketImage() {
         `}
         style={{ position: "absolute" }} // to override gatsby-image's position
         fixed={data.file.childImageSharp.fixed}
-        placeholder={data.file.childImageSharp.gatsbyImageData.placeholder}
+        placeholderStyle={{ ...data.file.childImageSharp.gatsbyImageData.placeholder }}
       />
     </StyledImageWrapper>
   );

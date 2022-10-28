@@ -12,27 +12,20 @@ import {
   Badge,
   Modal,
   mediaQueries as mq,
-  TextLink,
-  Popover,
-  useMediaQuery,
 } from "@kiwicom/orbit-components";
 import { MenuHamburger, StarEmpty, Logout } from "@kiwicom/orbit-components/icons";
 import GitHubButton from "react-github-btn";
 
-import Logo from "../images/orbit-logo.svg";
-import Glyph from "../images/orbit-glyph.svg";
-import Bookmarks from "./Bookmarks";
-import Search from "./Search";
-import { useBookmarks } from "../services/bookmarks";
-import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
-import { useKeyboard } from "../services/KeyboardProvider";
-import SearchNavbarButton from "./Search/SearchNavbarButton";
-import { isLoggedIn, logout } from "../services/auth";
-import PuzzleIcon from "./icons/Puzzle";
-import ColorBrushIcon from "../images/streamline-light/color-brush.svg";
-import ReadArt from "../images/streamline-light/read-art.svg";
-import IrisScanIcon from "../images/streamline-light/iris-scan.svg";
-import ScriptIcon from "../images/streamline-light/script.svg";
+import Logo from "../../images/orbit-logo.svg";
+import Glyph from "../../images/orbit-glyph.svg";
+import Bookmarks from "../Bookmarks";
+import Search from "../Search";
+import { useBookmarks } from "../../services/bookmarks";
+import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../../consts";
+import { useKeyboard } from "../../services/KeyboardProvider";
+import SearchNavbarButton from "../Search/SearchNavbarButton";
+import { isLoggedIn, logout } from "../../services/auth";
+import NavigationLinks from "./Links";
 
 const StyledWrapper = styled.header`
   position: relative;
@@ -100,52 +93,6 @@ const StyledTab = styled.button`
     }
   `};
 `;
-const NavigationLinks = ({ isDesktop }) => {
-  const links = (
-    <>
-      <TextLink noUnderline type="secondary" href="/components">
-        <Stack align="center" spacing="XSmall" inline>
-          {!isDesktop && <PuzzleIcon stroke="#252A31" width="20px" height="20px" />}Components
-        </Stack>
-      </TextLink>
-      {isDesktop && <span>&sdot;</span>}
-      <TextLink noUnderline type="secondary" href="/foundation">
-        <Stack align="center" spacing="XSmall" inline>
-          {!isDesktop && <ScriptIcon stroke="#252A31" width="20px" height="20px" />}Foundation
-        </Stack>
-      </TextLink>
-      {isDesktop && <span>&sdot;</span>}
-      <TextLink noUnderline type="secondary" href="/foundation/design-tokens/">
-        <Stack align="center" spacing="XSmall" inline>
-          {!isDesktop && <ColorBrushIcon stroke="#252A31" width="20px" height="20px" />}Design
-          Tokens
-        </Stack>
-      </TextLink>
-      {isDesktop && <span>&sdot;</span>}
-      <TextLink noUnderline type="secondary" href="/kiwi-use/guides/">
-        <Stack align="center" spacing="XSmall" inline>
-          {!isDesktop && <ReadArt stroke="#252A31" width="20px" height="20px" />}Guides
-        </Stack>
-      </TextLink>
-      {isDesktop && <span>&sdot;</span>}
-      <TextLink noUnderline type="secondary" href="/foundation/accessibility">
-        <Stack align="center" spacing="XSmall" inline>
-          {!isDesktop && <IrisScanIcon stroke="#252A31" width="20px" height="20px" />}Accessibility
-        </Stack>
-      </TextLink>
-    </>
-  );
-
-  return isDesktop ? (
-    <Stack align="center" inline>
-      {links}
-    </Stack>
-  ) : (
-    <Popover placement="top-end" content={<Stack direction="column">{links}</Stack>}>
-      <Button type="white" circled iconLeft={<MenuHamburger />} />
-    </Popover>
-  );
-};
 
 interface Props {
   location: WindowLocation;
@@ -158,7 +105,6 @@ const Navbar = ({ location, docNavigation }: Props) => {
   const [activeTab, setActiveTab] = React.useState<"navigation" | "bookmarks">("navigation");
   const isHome = location && location.pathname === "/";
   const { bookmarks } = useBookmarks();
-  const { isDesktop, isLargeMobile } = useMediaQuery();
 
   return (
     <StyledWrapper>
@@ -168,8 +114,8 @@ const Navbar = ({ location, docNavigation }: Props) => {
             <StyledLogo width={192} height={44} />
             <StyledLogoGlyph width={44} height={44} />
           </Link>
-          {isLargeMobile && (
-            <>
+          <Hide on={["smallMobile", "mediumMobile"]}>
+            <Stack inline align="center">
               <span>&sdot;</span>
               <div
                 css={css`
@@ -183,15 +129,15 @@ const Navbar = ({ location, docNavigation }: Props) => {
                   title="kiwicom/orbit"
                   aria-label="orbit github"
                 />
-              </div>{" "}
-            </>
-          )}
+              </div>
+            </Stack>
+          </Hide>
         </Stack>
 
         <StyledRight>
           <Stack inline spacing="XXSmall" align="center">
             {isHome ? (
-              <NavigationLinks isDesktop={isDesktop} />
+              <NavigationLinks />
             ) : (
               <SearchNavbarButton onClick={() => setSearchOpen(true)} />
             )}
@@ -365,67 +311,6 @@ const Navbar = ({ location, docNavigation }: Props) => {
                       </ModalSection>
                     </>
                   )}
-                  {/* hiding this feature for now, we'll fully implement it later according to the design */}
-                  {/* <ModalFooter>
-                    <Hide block on={["largeDesktop"]}>
-                      {activeTab === "bookmarks" && editingBookmarks ? (
-                        <>
-                          <Button type="secondary" onClick={() => setEditingBookmarks(false)}>
-                            Cancel
-                          </Button>
-                          {selectedBookmarks.length > 0 && (
-                            <Button
-                              type="primarySubtle"
-                              onClick={() => {
-                                // delete bookmarks...
-                                setEditingBookmarks(false);
-                              }}
-                            >
-                              Remove selected ({selectedBookmarks.length})
-                            </Button>
-                          )}
-                        </>
-                      ) : (
-                        <Button type="secondary" onClick={() => setMenuOpen(false)}>
-                          Close
-                        </Button>
-                      )}
-                    </Hide>
-                    <Hide
-                      block
-                      on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}
-                    >
-                      {!editingBookmarks && (
-                        <Button type="secondary" onClick={() => setEditingBookmarks(true)}>
-                          Edit bookmarks
-                        </Button>
-                      )}
-                      {editingBookmarks && selectedBookmarks.length === 0 && (
-                        <Stack flex align="center" justify="between" spacing="XLarge">
-                          <p>Select the bookmarks you would like to remove.</p>
-                          <Button type="secondary" onClick={() => setEditingBookmarks(false)}>
-                            Cancel
-                          </Button>
-                        </Stack>
-                      )}
-                      {editingBookmarks && selectedBookmarks.length > 0 && (
-                        <Stack flex justify="end">
-                          <Button type="secondary" onClick={() => setEditingBookmarks(false)}>
-                            Cancel
-                          </Button>
-                          <Button
-                            type="criticalSubtle"
-                            onClick={() => {
-                              // delete bookmarks...
-                              setEditingBookmarks(false);
-                            }}
-                          >
-                            Remove selected
-                          </Button>
-                        </Stack>
-                      )}
-                    </Hide>
-                  </ModalFooter> */}
                 </Modal>
               </div>
             </Portal>

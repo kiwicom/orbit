@@ -7,7 +7,7 @@ import {
   Popover,
   Radio,
 } from "@kiwicom/orbit-components";
-import { ChevronUp, ChevronDown } from "@kiwicom/orbit-components/icons";
+import { ChevronUp, ChevronDown, Close } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 
 import Variants from "./Variants";
@@ -18,10 +18,10 @@ import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
 import { BgType } from "..";
 import { Variant } from "../Example";
 
-const StyledBoard = styled.div<{ isOpened: boolean }>`
-  ${({ theme, isOpened }) => css`
+const StyledBoard = styled.div<{ isOpened: boolean; isFullScreen: boolean }>`
+  ${({ theme, isOpened, isFullScreen }) => css`
     margin-top: 0;
-    border-radius: ${!isOpened && `0 0 12px 12px`};
+    border-radius: ${!isFullScreen && !isOpened && `0 0 12px 12px`};
     padding: ${theme.orbit.spaceXSmall};
     border-top: 1px solid ${theme.orbit.paletteCloudNormal};
     background: ${theme.orbit.paletteCloudLight};
@@ -30,10 +30,10 @@ const StyledBoard = styled.div<{ isOpened: boolean }>`
 `;
 
 interface Props {
-  exampleId?: string;
+  pageId?: string;
   code: string;
-  origin?: string;
-  isFullPage?: boolean;
+  isFullScreen: boolean;
+  onOpenFullScreen: () => void;
   isPlaygroundOpened: boolean;
   isEditorOpened: boolean;
   currentVariant: string | null;
@@ -48,12 +48,12 @@ interface Props {
 }
 
 const Board = ({
-  isFullPage,
-  exampleId,
+  pageId,
   background,
   code,
   variants,
   currentVariant,
+  isFullScreen,
   isVariantsOpened,
   isEditorOpened,
   isPlaygroundOpened,
@@ -61,8 +61,8 @@ const Board = ({
   onChangeVariant,
   onOpenEditor,
   onSelectBackground,
+  onOpenFullScreen,
   knobs,
-  origin,
 }: Props) => {
   const [isCopied, copy] = useCopyToClipboard();
   const { isLargeMobile } = useMediaQuery();
@@ -86,7 +86,7 @@ const Board = ({
   };
 
   return (
-    <StyledBoard isOpened={isEditorOpened || isPlaygroundOpened}>
+    <StyledBoard isOpened={isEditorOpened || isPlaygroundOpened} isFullScreen={isFullScreen}>
       <Stack flex justify="between" align="center">
         <Stack inline>
           <ButtonLink
@@ -110,7 +110,7 @@ const Board = ({
           {variants.length > 0 && (
             <Popover
               noFlip
-              placement={isFullPage ? "top-start" : "bottom-start"}
+              placement="bottom-start"
               renderInPortal={false}
               content={
                 <Variants
@@ -168,27 +168,20 @@ const Board = ({
               <DarkMode />
             </ButtonLink>
           </Popover>
-          {exampleId &&
-            !isFullPage &&
-            (isLargeMobile ? (
-              <Tooltip placement="top-start" content="Open in a new tab">
-                <ButtonLink
-                  type="secondary"
-                  external
-                  href={`${origin}/examples/${exampleId?.toLowerCase()}`}
-                >
-                  <NewWindow />
-                </ButtonLink>
-              </Tooltip>
-            ) : (
-              <ButtonLink
-                type="secondary"
-                external
-                href={`${origin}/examples/${exampleId?.toLowerCase()}`}
-              >
-                <NewWindow />
+          {isLargeMobile ? (
+            <Tooltip
+              placement="top-start"
+              content={isFullScreen ? "Exit from full screen" : "Open in full screen"}
+            >
+              <ButtonLink type="secondary" external onClick={onOpenFullScreen}>
+                {isFullScreen ? <Close /> : <NewWindow />}
               </ButtonLink>
-            ))}
+            </Tooltip>
+          ) : (
+            <ButtonLink type="secondary" external onClick={onOpenFullScreen}>
+              {isFullScreen ? <Close /> : <NewWindow />}
+            </ButtonLink>
+          )}
         </Stack>
       </Stack>
     </StyledBoard>

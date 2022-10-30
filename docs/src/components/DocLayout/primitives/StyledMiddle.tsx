@@ -6,6 +6,7 @@ const StyledMiddle = styled.div<{ hasBorder?: boolean }>`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    width: 100%;
     box-sizing: content-box;
     border-left: ${hasBorder && `1px solid ${theme.orbit.paletteCloudNormal}`};
     ${mediaQueries.largeDesktop(css`

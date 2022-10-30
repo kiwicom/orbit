@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { Portal } from "@kiwicom/orbit-components";
 
 import { StyledAnchor } from "../HeadingWithLink";
 import Editor from "./components/Editor";
@@ -11,17 +12,28 @@ import { transform } from "./transform";
 
 import { BgType, Props as InitialProps } from ".";
 
-const StyledWrapper = styled.div<{ isFullPage?: boolean }>`
-  ${({ theme, isFullPage }) => css`
+const fullScreenMixin = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  margin-top: 0 !important;
+`;
+
+const StyledWrapper = styled.div<{ isFullScreen: boolean }>`
+  ${({ theme, isFullScreen }) => css`
     resize: vertical;
     display: grid;
-    min-height: ${isFullPage && `100%`};
     grid-template-rows: auto 1fr min-content;
     grid-template-columns: 1fr;
-    border-radius: ${!isFullPage && `12px`};
-    border: ${!isFullPage && `1px solid ${theme.orbit.paletteCloudNormal}`};
+    border-radius: ${!isFullScreen && "12px"};
+    border: 1px solid ${theme.orbit.paletteCloudNormal};
     overflow: hidden;
     overflow-y: auto;
+    background: ${theme.orbit.paletteWhite};
+    ${isFullScreen && fullScreenMixin};
 
     ${StyledAnchor} + & {
       margin-top: ${theme.orbit.spaceMedium} !important;
@@ -74,8 +86,6 @@ interface Props extends InitialProps {
   responsive?: boolean;
   code: string;
   example: string;
-  fullPageExampleId?: string;
-  isFullPage?: boolean;
   exampleName: string;
   exampleKnobs: ExampleKnob[];
   exampleVariants: Variant[];
@@ -91,14 +101,13 @@ const Example = ({
   exampleKnobs,
   exampleName,
   exampleVariants,
-  fullPageExampleId,
   height,
   background,
-  isFullPage,
   onChangeCode,
   example,
 }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
+  const [isFullScreen, setFullScreen] = React.useState(false);
   const [isPlaygroundOpened, setPlaygroundOpened] = React.useState(false);
   const [isVariantsOpened, setVariantsOpened] = React.useState(false);
   const [currentVariant, setCurrentVariant] = React.useState<string | null>(
@@ -108,31 +117,45 @@ const Example = ({
   const [width, setPreviewWidth] = React.useState<number | string>(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
 
+  const handleKeyDown = React.useCallback(
+    (ev: KeyboardEvent) => {
+      if (ev.key === "Escape") {
+        if (isFullScreen) setFullScreen(false);
+      }
+    },
+    [isFullScreen],
+  );
+
   React.useEffect(() => {
     if (background) setSelectedBackground(background);
-  }, [background, setSelectedBackground]);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [background, setSelectedBackground, handleKeyDown]);
 
-  return (
-    <StyledWrapper isFullPage={isFullPage}>
+  const content = (
+    <StyledWrapper isFullScreen={isFullScreen}>
       {responsive && <ViewportsRuler onChangeSize={handleChangeRulerSize} />}
       <StyledWrapperFrame width={width} responsive={responsive}>
         <Frame
           origin={origin}
           pageId={exampleId}
+          isFullScreen={isFullScreen}
           exampleId={exampleId}
           height={height}
-          isFullPage={isFullPage}
           background={selectedBackground}
         />
       </StyledWrapperFrame>
       <Board
         background={selectedBackground}
-        exampleId={fullPageExampleId}
+        pageId={exampleId}
+        isFullScreen={isFullScreen}
         isEditorOpened={isEditorOpened}
         isPlaygroundOpened={isPlaygroundOpened}
-        isFullPage={isFullPage}
         isVariantsOpened={isVariantsOpened}
         onSelectBackground={value => setSelectedBackground(value)}
+        onOpenFullScreen={() => setFullScreen(!isFullScreen)}
         onOpenEditor={() => {
           setOpenEditor(prev => !prev);
           setPlaygroundOpened(false);
@@ -151,9 +174,10 @@ const Example = ({
           if (variantCode) onChangeCode(variantCode);
         }}
         code={code}
-        origin={origin}
       />
-      {isEditorOpened && <Editor isFullPage={isFullPage} onChange={onChangeCode} code={example} />}
+      {isEditorOpened && (
+        <Editor onChange={onChangeCode} code={example} isFullScreen={isFullScreen} />
+      )}
       {isPlaygroundOpened && exampleKnobs && exampleKnobs.length > 0 && (
         <Playground
           onChange={knob => onChangeCode(transform(exampleName, example, knob))}
@@ -162,6 +186,8 @@ const Example = ({
       )}
     </StyledWrapper>
   );
+
+  return isFullScreen ? <Portal>{content}</Portal> : content;
 };
 
 export default Example;

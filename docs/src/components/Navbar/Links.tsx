@@ -1,6 +1,7 @@
 import React from "react";
 import { Hide, TextLink, Stack, Button, Popover } from "@kiwicom/orbit-components";
 import { MenuHamburger } from "@kiwicom/orbit-components/lib/icons";
+import { Link as GatsbyLink } from "gatsby";
 
 import PuzzleIcon from "../icons/Puzzle";
 import ColorBrushIcon from "../../images/streamline-light/color-brush.svg";
@@ -52,6 +53,14 @@ const Icon = ({
   return <>{children}</>;
 };
 
+const getLinkPath = (link: Link) => {
+  if (link === "Tokens") return "/foundation/design-tokens/";
+  if (link === "Guides") return "/development/guides/";
+  if (link === "Accessibility") return "/foundation/accessibility/";
+
+  return link.toLowerCase();
+};
+
 const LinkList = ({ isDesktop, links }: { isDesktop?: boolean; links: Props["links"] }) => (
   <>
     {links &&
@@ -60,9 +69,11 @@ const LinkList = ({ isDesktop, links }: { isDesktop?: boolean; links: Props["lin
           <Icon isDesktop={isDesktop} idx={idx}>
             <LinkIcon name={link} />
           </Icon>
-          <TextLink noUnderline type="secondary" href={`/${link.toLowerCase()}`}>
-            {link}
-          </TextLink>
+          <GatsbyLink to={getLinkPath(link)}>
+            <TextLink asComponent="span" noUnderline type="secondary">
+              {link}
+            </TextLink>
+          </GatsbyLink>
         </Stack>
       ))}
   </>

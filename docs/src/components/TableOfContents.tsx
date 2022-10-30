@@ -1,6 +1,7 @@
 import React from "react";
 import Scrollspy from "react-scrollspy";
 import styled, { css } from "styled-components";
+import { mediaQueries as mq } from "@kiwicom/orbit-components";
 
 import { TableOfContentsItem, useTableOfContents } from "../services/table-of-contents";
 
@@ -36,14 +37,17 @@ const StyledTocListItem = styled.li<{ level: number; active?: boolean }>`
   ${({ theme, active }) => css`
     margin-left: ${theme.orbit.spaceMedium};
     margin-bottom: ${theme.orbit.spaceXSmall};
-    &:before {
-      position: absolute;
-      left: 0;
-      content: "";
-      width: 2px;
-      height: 100%;
-      background: ${active ? theme.orbit.paletteProductNormal : theme.orbit.paletteCloudNormal};
-    }
+
+    ${mq.desktop(css`
+      &:before {
+        position: absolute;
+        left: 0;
+        content: "";
+        width: 2px;
+        height: 100%;
+        background: ${active ? theme.orbit.paletteProductNormal : theme.orbit.paletteCloudNormal};
+      }
+    `)}
   `};
 `;
 

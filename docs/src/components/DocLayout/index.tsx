@@ -104,6 +104,7 @@ export default function DocLayout({
             css={css`
               display: flex;
               margin: 0 auto;
+              width: 100%;
               max-width: 80rem;
             `}
           >

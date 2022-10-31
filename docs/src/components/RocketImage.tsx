@@ -41,9 +41,8 @@ export default function RocketImage() {
       file(relativePath: { eq: "rocket.png" }) {
         childImageSharp {
           fixed(width: 810, height: 852) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            ...GatsbyImageSharpFixed_withWebp
           }
-          gatsbyImageData(placeholder: TRACED_SVG)
         }
       }
     }
@@ -71,7 +70,6 @@ export default function RocketImage() {
         `}
         style={{ position: "absolute" }} // to override gatsby-image's position
         fixed={data.file.childImageSharp.fixed}
-        placeholderStyle={{ ...data.file.childImageSharp.gatsbyImageData.placeholder }}
       />
     </StyledImageWrapper>
   );

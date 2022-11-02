@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@4.1.0...@kiwicom/orbit-components@4.2.0) (2022-11-02)
+
+
+### Bug Fixes
+
+* **Breadcrumbs:** element without href is now focusable if it has onClick ([b252f72](https://github.com/kiwicom/orbit/commit/b252f728a5706f9b86f2941464d2953d59e35827))
+* **Grid:** fix TypeScript type for spaceAfter in Grid ([#3623](https://github.com/kiwicom/orbit/issues/3623)) ([70d713b](https://github.com/kiwicom/orbit/commit/70d713be3e1404e6aa493acf8acf7313f28c99a0))
+* **SegmentedSwitch:** incorrect defaultChecked prop name ([#3618](https://github.com/kiwicom/orbit/issues/3618)) ([e5c8efb](https://github.com/kiwicom/orbit/commit/e5c8efbfe5ad27e5b4fac668d3517519a5d70a05))
+* **Textarea:** required prop displays an asterisk ([#3617](https://github.com/kiwicom/orbit/issues/3617)) ([1d531a4](https://github.com/kiwicom/orbit/commit/1d531a49584ce787179a109b48ee65402b8d1a97))
+* **Timeline:** make last successful step text ink colored ([#3635](https://github.com/kiwicom/orbit/issues/3635)) ([c5a3f7d](https://github.com/kiwicom/orbit/commit/c5a3f7d8510b6657441dbc7bbfbe3ef18bea5f20))
+* **Tooltip:** add missing onShow for MobileDialog ([206a818](https://github.com/kiwicom/orbit/commit/206a8184083dfce72c7bf1d63744c6d865d881a2))
+
+
+### Features
+
+* **Breadcrumbs:** change focus to native colors ([c23dc88](https://github.com/kiwicom/orbit/commit/c23dc88837a02ec86c5c0785681517f2df2645b9))
+* **CallOutBanner:** change focus to native colors ([73e2fed](https://github.com/kiwicom/orbit/commit/73e2fed00595141edeba1a19e7761afb04d00925))
+* **Card:** change focus to native colors ([4f7e209](https://github.com/kiwicom/orbit/commit/4f7e2095231d45608475959c3da5252808eb4e39))
+* **Checkbox:** change focus to native colors ([6298b19](https://github.com/kiwicom/orbit/commit/6298b19390b977b443927bc57d2022509441f9cc))
+* **icons:** update icons from figma ([#3630](https://github.com/kiwicom/orbit/issues/3630)) ([7f524a0](https://github.com/kiwicom/orbit/commit/7f524a034f94f37dc44b4805063636d2310ed151))
+* **InputFile:** change focus to native colors ([8e5f155](https://github.com/kiwicom/orbit/commit/8e5f155775a3dc3fcd073d63bef011da33381315))
+* **InputGroup:** change focus to native colors ([9770ea8](https://github.com/kiwicom/orbit/commit/9770ea819ea90456938d1cfe753c1c6ca71b90ec))
+* **Itinerary:** change focus to native colors ([052cbe6](https://github.com/kiwicom/orbit/commit/052cbe644d33e56a02398c09a4fde0667a14a27e))
+* **ListChoice:** change focus to native colors ([517bd20](https://github.com/kiwicom/orbit/commit/517bd20e511cf5dc9e780c033076399bccf63e25))
+* **MobileDialog:** add onShow callback ([2dee49e](https://github.com/kiwicom/orbit/commit/2dee49ec0d8668b13ca12c30c4554db030d31d2a))
+* **Radio:** change focus to native colors ([e85e76c](https://github.com/kiwicom/orbit/commit/e85e76c4a881d6329b62cc943671987553487b97))
+* **Seat:** change focus to native colors ([2b8d8b6](https://github.com/kiwicom/orbit/commit/2b8d8b66b6897922680b4d0d1963dd15ccd60012))
+* **SegmentedSwitch:** change focus to native colors ([f08e9d1](https://github.com/kiwicom/orbit/commit/f08e9d13dc5d76c3e1345e491eab8c549519e37f))
+* **Slider:** change focus to native colors ([793ef00](https://github.com/kiwicom/orbit/commit/793ef008d3e3c2ff397966f31b1733085e325ce4))
+* **Stepper:** change focus to native colors ([16e9a75](https://github.com/kiwicom/orbit/commit/16e9a751cd17c65d666b439ea346cc5f90dc487c))
+* **Switch:** change focus to native colors ([ead846a](https://github.com/kiwicom/orbit/commit/ead846a1c63676e6f5fdbebbb503896aae9e1763))
+* **Tag:** change focus to native colors ([6189785](https://github.com/kiwicom/orbit/commit/6189785da00b99c3f65aec389cc662511b4864a8))
+* **Textarea:** change focus to native colors ([19cbd79](https://github.com/kiwicom/orbit/commit/19cbd795ca9069e92dbe610f34868bba71d7545e))
+* **TextLink:** change focus to native colors ([9299123](https://github.com/kiwicom/orbit/commit/92991239a122388ec2c71a58d0774cc505ae18dd))
+* **Tile:** change focus to native colors ([14455eb](https://github.com/kiwicom/orbit/commit/14455ebc019a04e3bb440f5dcf2ae8ab4a73e414))
+* **Timeline:** add active prop, subLabel and label accept React.Node ([ed45cf9](https://github.com/kiwicom/orbit/commit/ed45cf918d5ee9acc6461975a1addc50b2a976ed))
+* **Timeline:** new component design ([99d5094](https://github.com/kiwicom/orbit/commit/99d50947e19566569a5b1e309b65bbb285c7fb7f))
+* **utils:** add defaultFocus ([f419334](https://github.com/kiwicom/orbit/commit/f4193346cdf2998803e22fcc6a8cb21d2e7f7166))
+
+
+
+
+
 # [4.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@4.0.0...@kiwicom/orbit-components@4.1.0) (2022-10-18)
 
 

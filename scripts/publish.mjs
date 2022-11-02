@@ -102,7 +102,7 @@ async function postSlackNotification(changelog, names) {
             color: COLOR_CORE,
           },
           {
-            text: names.join(","),
+            text: names ? names.join(",") : "",
             color: COLOR_PING,
           },
         ],
@@ -186,7 +186,6 @@ async function previewChangelog() {
   await publishPackages();
   const timestamp = await getLatestReleaseTime();
   const names = await getUserNames(timestamp);
-  await previewChangelog().then(changelog => {
-    postSlackNotification(changelog, names);
-  });
+  const changelog = await previewChangelog();
+  await postSlackNotification(changelog, names);
 })();

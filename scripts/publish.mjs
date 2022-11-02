@@ -72,7 +72,6 @@ function adjustChangelog(str) {
 async function getUserNames(timestamp) {
   try {
     $.verbose = false;
-
     const res = await apiRequest({
       url: `${process.env.SLACK_API_READ_PLZ_ORBIT}&oldest=${timestamp}`,
     });
@@ -102,7 +101,7 @@ async function postSlackNotification(changelog, names) {
             color: COLOR_CORE,
           },
           {
-            text: names ? names.join(",") : "",
+            text: names ? [...new Set(names)].join(",") : "",
             color: COLOR_PING,
           },
         ],
@@ -181,11 +180,18 @@ async function previewChangelog() {
 }
 
 (async () => {
-  await configureGitHubToken();
-  await installDependencies();
-  await publishPackages();
-  const timestamp = await getLatestReleaseTime();
-  const names = await getUserNames(timestamp);
-  const changelog = await previewChangelog();
-  await postSlackNotification(changelog, names);
+  try {
+    await configureGitHubToken();
+    await installDependencies();
+    await publishPackages();
+    const timestamp = await getLatestReleaseTime();
+    const names = await getUserNames(timestamp);
+    const changelog = await previewChangelog();
+    if (changelog) {
+      await postSlackNotification(changelog, names);
+    }
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
 })();

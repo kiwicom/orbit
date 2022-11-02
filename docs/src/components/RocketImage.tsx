@@ -9,11 +9,10 @@ const StyledImageWrapper = styled.div`
   ${mq.desktop(css`
     display: block;
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
-    width: 100%;
     height: 100%;
-    overflow: hidden;
+    z-index: -1;
   `)}
 
   [data-main-image] {
@@ -42,21 +41,9 @@ export default function RocketImage() {
           alt="orbit-rocket"
           image={image}
           css={css`
-            position: relative;
-            top: 40px;
+            bottom: 0;
             right: 0;
-            width: 60vw;
-            min-width: 400px;
-            max-width: 850px;
-
-            &:after {
-              position: absolute;
-              content: "";
-              bottom: 0;
-              width: 100%;
-              height: 300px;
-              background: linear-gradient(0deg, #ffffff 6.03%, rgba(255, 255, 255, 0) 100%);
-            }
+            width: 600px;
           `}
           style={{ position: "absolute" }} // to override gatsby-image's position
         />

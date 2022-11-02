@@ -62,10 +62,10 @@ const TimelineStepDesktop = ({
         />
       </StyledRelative>
       <Stack flex align="center" spacing="XSmall" direction="column">
-        <StyledText active={active}>
+        <StyledText active={active || (last && type === "success")}>
           <Text weight="bold">{label}</Text>
         </StyledText>
-        <StyledDescription active={active}>
+        <StyledDescription active={active || (last && type === "success")}>
           <Text align="center">{children}</Text>
         </StyledDescription>
       </Stack>

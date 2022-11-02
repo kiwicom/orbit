@@ -31,7 +31,7 @@ const TimelineStepMobile = ({
         {!last && <StyledProgressLine status={nextType} prevStatus={type} />}
         <Stack flex shrink direction="column" spacing="XXSmall">
           <Stack flex direction="column" spacing="XXSmall">
-            <StyledText active={active}>
+            <StyledText active={active || (last && type === "success")}>
               <Text weight="bold">{label}</Text>
             </StyledText>
             {subLabel && (
@@ -40,7 +40,7 @@ const TimelineStepMobile = ({
               </StyledText>
             )}
           </Stack>
-          <StyledText active={active}>
+          <StyledText active={active || (last && type === "success")}>
             <Text>{children}</Text>
           </StyledText>
         </Stack>

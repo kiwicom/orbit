@@ -39,8 +39,8 @@ ModalHeading.defaultProps = {
   theme: defaultTheme,
 };
 
+// TODO: create token marginModalTitle and marginModalTitleWithIllustration
 const ModalTitle = styled.div`
-  // TODO: create token marginModalTitle and marginModalTitleWithIllustration
   ${({ theme, illustration }) => css`
     margin-top: ${illustration && theme.orbit.spaceMedium};
 
@@ -125,16 +125,13 @@ export const MobileHeader: any = styled.div`
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    // TODO use token for 52px
     top: ${isMobileFullPage ? "0" : "16px"};
     ${right}: 48px;
     ${left}: 0;
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${theme.orbit.fontWeightHeadingDisplay};
-    // TODO create token
     font-size: 18px;
     color: ${theme.orbit.colorHeading};
-    // TODO use token for 52px
     line-height: 52px;
     box-sizing: border-box;
     padding: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};

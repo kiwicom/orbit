@@ -11,19 +11,21 @@ import useCopyToClipboard from "../hooks/useCopyToClipboard";
 
 const StyledAnchor = styled.a`
   ${({ theme }) => css`
-  background-color: ${theme.orbit.paletteProductLight};
-  color: ${theme.orbit.paletteProductNormal};
-  padding: ${theme.orbit.paddingButtonSmallWithLeftIcon};
-  padding-top: ${theme.orbit.spaceXXSmall};
-  height: ${theme.orbit.heightButtonSmall};
-  border-radius: ${theme.orbit.borderRadiusNormal}
-  transition: all ${theme.orbit.durationFast} ease-in;
+    background-color: ${theme.orbit.paletteProductLight};
+    color: ${theme.orbit.paletteProductNormal};
+    padding: ${theme.orbit.paddingButtonSmallWithLeftIcon};
+    padding-top: ${theme.orbit.spaceXXSmall};
+    height: ${theme.orbit.heightButtonSmall};
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    transition: all ${theme.orbit.durationFast} ease-in;
 
-  &:hover,&:active,&:focus {
-    background-color: ${theme.orbit.paletteProductLightHover};
-    color: ${theme.orbit.paletteProductDark};
-  }
-`}
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: ${theme.orbit.paletteProductLightHover};
+      color: ${theme.orbit.paletteProductDark};
+    }
+  `}
 `;
 
 const ImageContainer = styled.div`
@@ -44,7 +46,7 @@ const ImageWrap = styled.div<ImageWrapProps>`
     margin-top: ${theme.orbit.spaceMedium};
     width: ${width};
     margin-right: 2%;
-  `}
+  `};
 `;
 
 const ImageCenterer = styled.div`

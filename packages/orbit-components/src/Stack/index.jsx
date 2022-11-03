@@ -14,13 +14,13 @@ import getGap from "./helpers/getGap";
 
 import type { Props } from ".";
 
+// just apply all mediaQueries
+// smallMobile - default values are not mediaQuery and needs to be rendered differently
 const StyledStack = styled(({ className, element: Element, children, dataTest }) => (
   <Element className={className} data-test={dataTest}>
     {children}
   </Element>
 ))`
-  // just apply all mediaQueries
-  // smallMobile - default values are not mediaQuery and needs to be rendered differently
   ${props =>
     DEVICES.map((viewport, index, devices) =>
       viewport in mediaQueries

@@ -2,6 +2,7 @@ import React from "react";
 import { Stack, Button } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 import { Search as SearchIcon } from "@kiwicom/orbit-components/icons";
+import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import useOs from "../../hooks/useOs";
 
@@ -10,6 +11,14 @@ interface Props {
 }
 
 type Type = "primary" | "secondary";
+
+const StyledSearchButtonWrapper = styled.div`
+  ${({ theme }) => css`
+    > button {
+      background: ${convertHexToRgba(theme.orbit.paletteProductNormal, 10)};
+    }
+  `}
+`;
 
 const StyledWrapper = styled.div<{ type: Type }>`
   ${({ theme, type }) => css`
@@ -50,12 +59,14 @@ export const KeyboardShortcuts = ({ type = "primary" }: { type: Type }) => {
 
 const SearchButton = ({ onClick }: Props) => {
   return (
-    <Button size="large" type="primarySubtle" circled iconLeft={<SearchIcon />} onClick={onClick}>
-      <Stack inline align="center" spacing="XSmall">
-        <p>Search</p>
-        <KeyboardShortcuts type="primary" />
-      </Stack>
-    </Button>
+    <StyledSearchButtonWrapper>
+      <Button size="large" type="primarySubtle" circled iconLeft={<SearchIcon />} onClick={onClick}>
+        <Stack inline align="center" spacing="XSmall">
+          <p>Search</p>
+          <KeyboardShortcuts type="primary" />
+        </Stack>
+      </Button>
+    </StyledSearchButtonWrapper>
   );
 };
 

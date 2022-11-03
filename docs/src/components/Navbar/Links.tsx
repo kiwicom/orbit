@@ -80,7 +80,7 @@ const LinkList = ({ isDesktop, links }: { isDesktop?: boolean; links: Props["lin
 );
 
 const Links = ({
-  links = ["Components", "Foundation", "Tokens", "Guides", "Accessibility"],
+  links = ["Foundation", "Components", "Tokens", "Guides", "Accessibility"],
 }: Props) => {
   return (
     <>

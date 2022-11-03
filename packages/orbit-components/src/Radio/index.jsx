@@ -70,7 +70,7 @@ const TextContainer = styled.div`
     flex-direction: column;
     font-weight: ${theme.orbit.fontWeightMedium};
     margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-    flex: 1; // IE wrapping fix
+    flex: 1;
   `}
 `;
 

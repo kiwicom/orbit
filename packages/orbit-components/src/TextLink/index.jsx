@@ -83,9 +83,8 @@ const resolveUnderline = ({ type, theme, noUnderline }) => {
     : theme.orbit.textDecorationTextLinkPrimary;
 };
 
+// Common styles for TextLink and "a" in Text
 export const getLinkStyle = ({ theme }: GetLinkStyleProps): any => css`
-  // Common styles for TextLink and "a" in Text
-
   &,
   &:link,
   &:visited {

@@ -24,9 +24,11 @@ StyledAsterisk.defaultProps = {
 };
 
 const StyledInputErrorIcWrapper = styled.span`
-  margin: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0 0`)};
-  display: inline-flex;
-  align-items: center;
+  ${({ theme }) => css`
+    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0 0`)};
+    display: inline-flex;
+    align-items: center;
+  `};
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

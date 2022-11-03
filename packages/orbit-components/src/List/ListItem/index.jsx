@@ -82,7 +82,6 @@ export const IconContainer: any = styled.div`
         ${getIconSizeFromType};
       }
     }
-    // Icons
     svg {
       ${getIconSizeFromType};
     }

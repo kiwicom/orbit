@@ -19,7 +19,7 @@ const StyledTileHeader = styled.div`
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; //TODO Create token paddingTile
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
   transition: ${transition(["background-color"], "fast", "ease-in-out")};

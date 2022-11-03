@@ -17,7 +17,7 @@ export const StyledTileWrapper: any = styled.div`
     font-family: ${theme.orbit.fontFamily};
     color: ${theme.orbit.paletteInkDark};
     text-decoration: none;
-    background: ${theme.orbit.paletteWhite}; //TODO Create token backgroundColorTile
+    background: ${theme.orbit.paletteWhite};
     border-radius: ${theme.orbit.borderRadiusLarge};
     box-shadow: ${theme.orbit.boxShadowAction};
     transition: ${transition(["box-shadow"], "fast", "ease-in-out")};

@@ -17,6 +17,7 @@ const hoverAndFocus = () => css`
   }
 `;
 
+// NOTE:https://skypicker.slack.com/archives/CAMS40F7B/p1658992944387749
 const StyledContentWrapper = styled.div`
   ${({ disabled }) => css`
     box-sizing: border-box;
@@ -32,7 +33,6 @@ const StyledContentWrapper = styled.div`
       opacity: 0;
     }
 
-    // https://skypicker.slack.com/archives/CAMS40F7B/p1658992944387749
     ${!disabled &&
     css`
       @media (hover: none) {

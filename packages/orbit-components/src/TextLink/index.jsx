@@ -100,7 +100,7 @@ export const getLinkStyle = ({ theme }: GetLinkStyleProps): any => css`
     color: ${getHoverColor};
   }
 
-  &:active,
+  &:active {
     outline: none;
     text-decoration: none;
     color: ${getActiveColor};

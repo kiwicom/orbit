@@ -39,7 +39,7 @@ export const StyledServiceLogo: any = styled(
 )`
   height: ${({ theme, size }) => getHeight(theme, size)};
   width: auto;
-  background-color: transparent; // TODO: create token backgroundServiceLogo
+  background-color: transparent;
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

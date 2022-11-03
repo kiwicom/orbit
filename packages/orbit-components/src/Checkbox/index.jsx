@@ -93,7 +93,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-  flex: 1; // IE wrapping fix
+  flex: 1;
 `;
 
 // $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198

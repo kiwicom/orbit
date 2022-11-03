@@ -21,7 +21,6 @@ const Field = styled.label`
   position: relative;
   height: ${({ fullHeight }) => fullHeight && "100%"};
   flex-direction: column;
-  // for usage with Stack
   flex: ${({ fullHeight }) => fullHeight && "1"};
   margin-bottom: ${getSpacingToken};
 `;
@@ -56,6 +55,8 @@ const getPadding = ({ theme, size }) => {
   return rtlSpacing(tokens[size]);
 };
 
+// TODO: add token for height
+// flex is used for Stack
 const StyledTextArea = styled.textarea`
   appearance: none;
   box-sizing: border-box;
@@ -78,7 +79,7 @@ const StyledTextArea = styled.textarea`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   resize: ${({ resize }) => resize};
   transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  min-height: 44px; // TODO: create token
+  min-height: 44px;
 
   /* for usage with Stack */
   border-radius: 6px;
@@ -86,13 +87,8 @@ const StyledTextArea = styled.textarea`
     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   `)};
 
-  // for usage with Stack
   flex: ${({ fullHeight }) => fullHeight && "1"};
-
-  /* IE 11 bug fix, border: 0 won't work - the box-shadow will be hidden */
   border: 1px solid transparent;
-
-  /* IE 11 bug fix, hide scrollbar by default (shown only when scrollable) */
   overflow: auto;
 
   &::placeholder {

@@ -51,7 +51,7 @@ const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden,
   display: inline-block;
   width: ${({ size }) => getSize(size)};
   height: ${({ size }) => getSize(size)};
-  flex-shrink: 0; // prevent shrinking when used in flex-box
+  flex-shrink: 0;
   vertical-align: middle;
   fill: currentColor;
   color: ${({ color, customColor }) => customColor || (color && getColor())};

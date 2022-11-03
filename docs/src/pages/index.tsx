@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Inline, Stack, Grid, Button } from "@kiwicom/orbit-components";
+import {
+  Heading,
+  Inline,
+  Stack,
+  Grid,
+  Button,
+  mediaQueries as mq,
+} from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
@@ -27,6 +34,7 @@ import ArrowRight from "../components/ArrowRight";
 import Layout from "../components/Layout";
 import RocketImage from "../components/RocketImage";
 import Tile from "../components/Tile";
+import HeaderBox from "../components/HeaderBox";
 import BrandedTile from "../components/BrandedTile";
 import GitHubLogo from "../images/github-full.svg";
 import FigmaLogo from "../images/figma-logo.svg";
@@ -58,59 +66,61 @@ export default function Home({ location, path }: Props) {
         path="/"
         isHome
       >
-        <RocketImage />
+        <HeaderBox>
+          <RocketImage />
+
+          <Heading type="display">
+            <div
+              css={css`
+                max-width: 43rem;
+                font-size: 3rem;
+                line-height: 1.3;
+              `}
+            >
+              Open source design system for your next travel project.
+            </div>
+          </Heading>
+          <div
+            css={css`
+              margin-top: 3rem;
+              button,
+              a {
+                height: 64px;
+              }
+            `}
+          >
+            <Inline spacing="small">
+              <Button
+                size="large"
+                type="primary"
+                circled
+                iconRight={<ArrowRight />}
+                // @ts-expect-error asComponent has wrong type declaration
+                asComponent={GatsbyLinkToButton}
+                href="/getting-started/"
+              >
+                Get started
+              </Button>
+              <SearchButton onClick={() => setSearchOpen(true)} />
+              {isSearchOpen && <Search onClose={() => setSearchOpen(false)} />}
+            </Inline>
+          </div>
+        </HeaderBox>
         <div
           css={css`
             /* so that the rest of the content has a higher z-order than the image */
-            position: relative;
+
+            top: 100px;
             width: 100%;
-            max-width: ${MAX_CONTENT_WIDTH};
+            max-width: calc(${MAX_CONTENT_WIDTH} - 10rem);
             margin: 0 auto;
+            z-index: 1;
 
             > * + * {
               margin-top: 5.25rem;
             }
           `}
         >
-          <>
-            <Heading type="display">
-              <div
-                css={css`
-                  max-width: 43rem;
-                  font-size: 3rem;
-                  line-height: 1.3;
-                `}
-              >
-                Open source design system for your next travel project.
-              </div>
-            </Heading>
-
-            <div
-              css={css`
-                margin-top: 3rem;
-                button,
-                a {
-                  height: 64px;
-                }
-              `}
-            >
-              <Inline spacing="small">
-                <Button
-                  size="large"
-                  type="primary"
-                  circled
-                  iconRight={<ArrowRight />}
-                  // @ts-expect-error asComponent has wrong type declaration
-                  asComponent={GatsbyLinkToButton}
-                  href="/getting-started/"
-                >
-                  Get started
-                </Button>
-                <SearchButton onClick={() => setSearchOpen(true)} />
-                {isSearchOpen && <Search onClose={() => setSearchOpen(false)} />}
-              </Inline>
-            </div>
-          </>
           <RecentBookmarks />
           <Stack
             flex

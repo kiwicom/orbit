@@ -103,6 +103,7 @@ const config: GatsbyConfig = {
         rehypePlugins: [],
       },
     },
+    "gatsby-plugin-image",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {

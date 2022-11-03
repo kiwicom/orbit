@@ -1,0 +1,19 @@
+{
+  "customSyntax": "@stylelint/postcss-css-in-js",
+  "ignoreFiles": [
+    "**/deprecated/**"
+  ],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components"
+  ],
+  "rules": {
+    "function-no-unknown": null,
+    "no-extra-semicolons": null,
+    "unit-no-unknown": null,
+    "no-duplicate-selectors": null,
+    "property-no-vendor-prefix": null,
+    "no-descending-specificity": null,
+    "annotation-no-unknown": null
+  }
+}

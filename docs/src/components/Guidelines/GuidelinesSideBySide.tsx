@@ -15,9 +15,11 @@ interface GuidelineItemProps extends GuidelineType {
 const StyledWrapper = styled.div`
   ${({ theme }) => css`
     padding-top: ${theme.orbit.spaceLarge};
-  `}
+  `};
 `;
 
+// Guidelines don't inherit spacing from Prose
+// So otherwise adjacent p elements are right next to each other
 const StyledContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean }>`
   ${({ theme }) => css`
     padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
@@ -26,8 +28,6 @@ const StyledContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean
     width: 100%;
     ${resolveBorders};
 
-    // Guidelines don't inherit spacing from Prose
-    // So otherwise adjacent p elements are right next to each other
     p + p {
       margin-top: ${theme.orbit.spaceSmall};
     }

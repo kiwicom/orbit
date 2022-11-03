@@ -56,7 +56,6 @@ const StyledInnerWrapper = styled.div`
       width: initial;
       padding: ${theme.orbit.spaceSmall};
     `)}
-    }
 
     ${css`
       &:before {

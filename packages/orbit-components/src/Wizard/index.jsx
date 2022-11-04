@@ -24,13 +24,13 @@ const unstyledListMixin = css`
   padding: 0;
 `;
 
+// support column layout on desktop
+// https://github.com/kiwicom/orbit/issues/3308
 const StyledList = styled.ul`
   ${({ $direction }) => css`
     display: flex;
     ${unstyledListMixin};
     ${mq.largeMobile(css`
-      // support column layout on desktop
-      // https://github.com/kiwicom/orbit/issues/3308
       flex-direction: ${$direction};
       li {
         flex: 1 1 0%;

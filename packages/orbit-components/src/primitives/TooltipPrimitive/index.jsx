@@ -23,11 +23,10 @@ export const StyledTooltipChildren: any = styled.span`
     css`
       ${StyledText} {
         display: inline-block;
-        text-decoration: underline; // fallback for IE 10+
+        text-decoration: underline;
         text-decoration: underline currentColor dotted;
       }
     `};
-    /* enable event bubbling for disabled children, e.g. buttons */
     [disabled] {
       pointer-events: none;
     }

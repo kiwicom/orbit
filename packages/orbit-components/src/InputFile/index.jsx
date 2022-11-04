@@ -66,8 +66,8 @@ FakeInput.defaultProps = {
   theme: defaultTheme,
 };
 
+// we need to hide the input, but not with display or visibility so we can trigger the focus
 const Input = styled.input`
-  // we need to hide the input, but not with display or visibility so we can trigger the focus
   opacity: 0;
   position: absolute;
   height: 0;

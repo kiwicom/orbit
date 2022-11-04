@@ -120,15 +120,15 @@ export const StyledTag: any = styled.div`
         background: ${getBackgroundColor(STATES.HOVER)};
       }
 
-      &:focus:not(:focus-visible):not(:active) {
-        background: ${getBackgroundColor(STATES.HOVER)};
-      }
-
       &:active {
         ${CloseContainer} {
           opacity: 1;
         }
         background: ${getBackgroundColor(STATES.ACTIVE)};
+      }
+
+      &:focus:not(:focus-visible):not(:active) {
+        background: ${getBackgroundColor(STATES.HOVER)};
       }
     `};
   `}

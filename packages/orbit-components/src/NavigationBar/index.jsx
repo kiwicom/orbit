@@ -28,13 +28,14 @@ StyledNavigationBarContent.defaultProps = {
   theme: defaultTheme,
 };
 
+// TODO: create token for height for mobile and desktop
 const StyledNavigationBar = styled.nav`
   ${({ theme, shown }) => css`
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: ${NAVBAR_HEIGHT.MOBILE}px; // TODO: create token
+    height: ${NAVBAR_HEIGHT.MOBILE}px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -46,7 +47,7 @@ const StyledNavigationBar = styled.nav`
     transition: ${transition(["transform"], "normal", "ease-in-out")};
     transform: translate3d(0, ${shown ? "0" : `-${NAVBAR_HEIGHT.MOBILE}px`}, 0);
     ${mq.tablet(css`
-      height: ${NAVBAR_HEIGHT.DESKTOP}px; // TODO: create token
+      height: ${NAVBAR_HEIGHT.DESKTOP}px;
       transform: translate3d(0, ${shown ? "0" : `-${NAVBAR_HEIGHT.DESKTOP}px`}, 0);
     `)};
   `}

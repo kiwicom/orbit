@@ -10,11 +10,10 @@ interface Props {
 
 // https://stackoverflow.com/a/44145771/1247274
 // https://stackoverflow.com/a/31578187/1247274
+
 const StyledContainer = styled.span`
   @media not screen and (-webkit-min-device-pixel-ratio: 2),
-    not screen and (min--moz-device-pixel-ratio: 2),
     not screen and (-o-min-device-pixel-ratio: 2/1),
-    not screen and (min-device-pixel-ratio: 2),
     not screen and (min-resolution: 192dpi),
     not screen and (min-resolution: 2dppx) {
     margin-right: 5px;

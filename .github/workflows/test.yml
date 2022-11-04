@@ -40,6 +40,7 @@ jobs:
         run: |
           yarn eslint:ci
           yarn prettier:test
+          yarn check:css
 
       - name: Test
         env:

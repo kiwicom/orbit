@@ -38,16 +38,9 @@ const StyledContainer = styled.li`
     css`
       button {
         border-radius: 0;
+        background: ${status === "disabled" && theme.orbit.paletteCloudLight};
+        opacity: ${status === "disabled" && "1"};
       }
-
-      ${status === "disabled" &&
-      css`
-        background: ${theme.orbit.paletteCloudLight};
-        button {
-          /* to make coloring more precise in disabled state */
-          opacity: 1;
-        }
-      `}
     `}
 
     ${mq.desktop(css`

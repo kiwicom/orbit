@@ -41,6 +41,7 @@ StyledTooltipArrow.defaultProps = {
   theme: defaultTheme,
 };
 
+// TODO: add token for z-index
 const StyledTooltipWrapper = styled.div`
   ${({ theme, shown, popper }) => css`
     display: block;
@@ -55,7 +56,7 @@ const StyledTooltipWrapper = styled.div`
     visibility: ${shown ? "visible" : "hidden"};
     opacity: ${shown ? "1" : "0"};
     transition: ${transition(["opacity", "visibility"], "fast", "ease-in-out")};
-    z-index: 10012; // TODO: use some good value
+    z-index: 10012;
     overflow-y: scroll;
     overflow: visible;
 

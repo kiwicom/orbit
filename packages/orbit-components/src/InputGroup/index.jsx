@@ -49,10 +49,10 @@ const FakeGroup = styled(({ children, className }) => (
     z-index: 1;
     box-sizing: border-box;
     height: ${getToken(TOKENS.height)};
-    box-shadow: ${`inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`}; // Normal state
+    box-shadow: ${`inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`};
     box-shadow: ${error &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`}; // Error state
-    ${({ active }) => active && formElementFocus}; // Active state
+    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`};
+    ${({ active }) => active && formElementFocus};
     background-color: ${disabled
       ? theme.orbit.backgroundInputDisabled
       : theme.orbit.backgroundInput};

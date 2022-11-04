@@ -20,15 +20,15 @@ export const StyledModalSection: any = styled.section`
 
     &:first-of-type {
       border-top: ${suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
-      border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
-      border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+      border-top-left-radius: ${!isMobileFullPage && "12px"};
+      border-top-right-radius: ${!isMobileFullPage && "12px"};
       margin-top: ${suppressed && closable && theme.orbit.spaceLarge};
     }
 
     &:last-of-type {
       border-bottom: ${suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : "0"};
-      border-bottom-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
-      border-bottom-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+      border-bottom-left-radius: ${!isMobileFullPage && "12px"};
+      border-bottom-right-radius: ${!isMobileFullPage && "12px"};
       & ~ ${StyledModalFooter} {
         margin-top: ${suppressed && theme.orbit.spaceMedium};
       }
@@ -43,13 +43,13 @@ export const StyledModalSection: any = styled.section`
 
       &:first-of-type {
         margin-top: ${((suppressed && closable) || suppressed) && theme.orbit.spaceXXLarge};
-        border-top-left-radius: ${!isMobileFullPage && "9px"}; // TODO: create token
-        border-top-right-radius: ${!isMobileFullPage && "9px"}; // TODO: create token
+        border-top-left-radius: ${!isMobileFullPage && "9px"};
+        border-top-right-radius: ${!isMobileFullPage && "9px"};
       }
 
       &:last-of-type {
-        border-bottom-left-radius: ${!isMobileFullPage && "9px"}; // TODO: create token
-        border-bottom-right-radius: ${!isMobileFullPage && "9px"}; // TODO: create token
+        border-bottom-left-radius: ${!isMobileFullPage && "9px"};
+        border-bottom-right-radius: ${!isMobileFullPage && "9px"};
         & ~ ${StyledModalFooter} {
           padding-top: ${!suppressed && "0"};
           margin-top: 0;

@@ -33,7 +33,7 @@ StyledChild.defaultProps = {
 export const StyledModalFooter: any = styled.div`
   ${({ theme, children, isMobileFullPage }) => css`
     display: flex;
-    z-index: 800; // TODO: use z-index framework
+    z-index: 800;
     width: 100%;
     background-color: ${theme.orbit.paletteWhite};
     padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};

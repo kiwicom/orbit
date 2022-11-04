@@ -79,8 +79,7 @@ export const StyledText: any = styled(
     margin-bottom: ${getSpacingToken};
 
     a:not(${StyledTextLink}) {
-      // TextLink in Text always win
-      ${getLinkStyle({ theme, type })}// Get styles from TextLink
+      ${getLinkStyle({ theme, type })};
     }
   `}
 `;

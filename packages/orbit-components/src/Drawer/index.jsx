@@ -28,7 +28,7 @@ const getPadding = ({ noPadding, theme, hasTopPadding }) => {
     css`
       padding: ${padding(theme.orbit.spaceMedium)};
       ${mq.largeMobile(css`
-        padding: ${padding(theme.orbit.spaceXLarge)}};
+        padding: ${padding(theme.orbit.spaceXLarge)};
       `)};
     `
   );
@@ -71,9 +71,7 @@ const StyledDrawerSide = styled(
     font-family: ${theme.orbit.fontFamily};
     overflow-y: auto;
     box-shadow: ${theme.orbit.boxShadowRaised};
-    background: ${suppressed
-      ? theme.orbit.paletteCloudLight
-      : theme.orbit.paletteWhite}; // TODO: create token backgroundDrawer
+    background: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
     transition: ${transition(["transform"], "normal", "ease-in-out")};
     width: 100%;
     ${mq.largeMobile(css`

@@ -15,4 +15,9 @@ import { $, argv } from "zx";
   if (argv.statuses) {
     await $`zx docs/services/componentStatuses.mjs`;
   }
+
+  if (argv.css) {
+    await $`yarn workspace @kiwicom/orbit-components stylelint "./src/**/*.jsx"`;
+    await $`yarn workspace @kiwicom/orbit.kiwi stylelint "./src/**/*.tsx"`;
+  }
 })();

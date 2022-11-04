@@ -24,7 +24,7 @@ const StyledDialogWrapper = styled.div`
   border-radius: 12px;
   background-color: ${({ theme }) => theme.orbit.paletteInkDark};
   box-shadow: ${({ theme }) => theme.orbit.boxShadowRaisedReverse};
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; // TODO: create token paddingTooltip
+  padding: ${({ theme }) => theme.orbit.spaceMedium};
   visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
   opacity: ${({ shown }) => (shown ? "1" : "0")};
   transition: ${({ theme, shown }) =>
@@ -33,8 +33,7 @@ const StyledDialogWrapper = styled.div`
       ${transition(["visibility"], "fast", "linear")},
         ${!shown && theme.orbit.durationNormal}
     `};
-
-  z-index: 10012; // TODO: use some good value
+  z-index: 10012;
   transform: ${({ shown }) => (!shown ? "translateY(calc(100% + 16px))" : "translateY(0)")};
   bottom: ${({ theme }) => theme.orbit.spaceMedium};
   left: ${({ theme }) => theme.orbit.spaceMedium};
@@ -76,6 +75,8 @@ StyledTooltipContent.defaultProps = {
   theme: defaultTheme,
 };
 
+// TODO: add token for background-color
+// TODO: use some good value for z-index
 const StyledDialogOverlay = styled.div`
   position: fixed;
   visibility: ${({ shown }) => (shown ? "visible" : "hidden")};
@@ -85,8 +86,8 @@ const StyledDialogOverlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(23, 27, 30, 0.6); // TODO: token
-  z-index: 10011; // TODO: use some good value
+  background-color: rgba(23, 27, 30, 0.6);
+  z-index: 10011;
   opacity: ${({ shown }) => (shown ? "1" : "0")};
   transition: ${({ theme, shown }) => css`
     ${transition(["opacity"], "normal", "ease-in-out")},

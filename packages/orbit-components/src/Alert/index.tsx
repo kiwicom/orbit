@@ -185,7 +185,7 @@ const StyledContentWrapper = styled.div<{
   inlineActions: boolean;
 }>`
   ${({ hasTitle, inlineActions }) => css`
-    flex: 1; // IE wrapping fix
+    flex: 1;
     display: flex;
     flex-direction: ${hasTitle && inlineActions ? "row" : "column"};
     align-items: ${!hasTitle && "center"};

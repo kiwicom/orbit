@@ -63,8 +63,6 @@ const StyledShadow = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  // TODO: create token borderColorCountryFlag
-  // TODO: create token borderWidthCountryFlag
   box-shadow: inset 0 0 0 1px ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)};
   border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
 `;

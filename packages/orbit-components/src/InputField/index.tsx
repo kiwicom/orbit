@@ -294,11 +294,7 @@ export const Input = styled(
     box-sizing: border-box;
     border-radius: ${theme.orbit.borderRadiusNormal};
     z-index: 2;
-
-    // FIREFOX Applies a box-shadow when err is present from HTML validation
     box-shadow: none;
-
-    // FIREFOX flexbox bug: the input doesn't shrink properly
     min-width: 0;
 
     font-variant-numeric: ${type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
@@ -327,7 +323,6 @@ export const Input = styled(
       opacity: 1;
     }
 
-    /* Microsoft Edge */
     &::-ms-input-placeholder {
       color: ${theme.orbit.colorPlaceholderInput};
     }

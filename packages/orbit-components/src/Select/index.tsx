@@ -126,16 +126,13 @@ const StyledSelect = styled(
     display: none;
   }
 
-  // IE Bug fix: highlighted background color and color of text
   &::-ms-value {
     background: transparent;
     color: ${({ theme, filled }) =>
       filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
-    // needs to rgba, transparent is not allow in IE
     color: ${({ customValueText }) => customValueText && "rgba(255, 255, 255, 0)"};
   }
 
-  /* Based on state of select */
   border: 0;
   box-shadow: inset 0 0 0
     ${({ theme, error }) =>
@@ -165,10 +162,6 @@ const StyledSelect = styled(
     }
   }
 
-  /*
-    This fix is needed for case where Select has customValueText and it's autofilled by webkit based browser.
-    In that case autofilled value would be displayed, overflowing customValueText.
-  */
   ${({ customValueText }) =>
     customValueText &&
     `

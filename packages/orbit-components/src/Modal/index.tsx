@@ -76,8 +76,8 @@ const ModalWrapper = styled.div<{
     margin: 0 auto;
     position: fixed;
     width: 100%;
-    border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
-    border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    border-top-left-radius: ${!isMobileFullPage && "12px"};
+    border-top-right-radius: ${!isMobileFullPage && "12px"};
     ${disableAnimation
       ? css`
           top: ${!isMobileFullPage && "32px"};
@@ -109,7 +109,6 @@ const CloseContainer = styled.div<{
 }>`
   ${({ theme, scrolled, fixedClose, isMobileFullPage, modalWidth, size }) => css`
     display: flex;
-    // -ms-page needs to set up for IE on max largeMobile
     ${
       fixedClose || scrolled
         ? css`
@@ -126,14 +125,13 @@ const CloseContainer = styled.div<{
     justify-content: flex-end;
     align-items: center;
     box-sizing: border-box;
-    // TODO create tokens
     height: 52px;
     width: 100%;
     max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken({ size, theme })};
     box-shadow: ${scrolled && theme.orbit.boxShadowFixed};
     background-color: ${scrolled && theme.orbit.paletteWhite};
-    border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
-    border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    border-top-left-radius: ${!isMobileFullPage && "12px"};
+    border-top-right-radius: ${!isMobileFullPage && "12px"};
     transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
     pointer-events: none;
 
@@ -198,8 +196,7 @@ const ModalWrapperContent = styled.div<{
   }) => css`
     position: absolute;
     box-sizing: border-box;
-    border-top-left-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
-    border-top-right-radius: ${!isMobileFullPage && "12px"}; // TODO: create token
+    border-top-right-radius: ${!isMobileFullPage && "12px"};
     background-color: ${theme.orbit.backgroundModal};
     font-family: ${theme.orbit.fontFamily};
     width: 100%;

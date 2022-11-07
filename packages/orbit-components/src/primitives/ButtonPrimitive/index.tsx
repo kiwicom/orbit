@@ -122,7 +122,7 @@ export const StyledButtonPrimitive = styled(
     text-align: center;
     text-decoration: ${underlined ? "underline" : "none"};
     flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};
-    max-width: 100%; // to ensure that Buttons content wraps in IE
+    max-width: 100%;
     background: ${background};
     color: ${foreground}!important;
     border: 0;
@@ -187,8 +187,6 @@ export const StyledButtonPrimitive = styled(
       text-decoration: none;
       ${icons && icons.foregroundFocus && iconContainerColor(icons.foregroundFocus)};
     }
-
-    // prevent :focus styles from overriding :hover and :active styles
 
     &:hover:focus {
       background: ${backgroundHover};

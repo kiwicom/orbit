@@ -41,6 +41,7 @@ import TopBar from "./TopBar";
 interface Props {
   children: React.ReactNode;
   description?: string;
+  hasHeaderLink?: boolean;
   headerLink?: string;
   location: WindowLocation;
   noElevation?: boolean;
@@ -52,12 +53,15 @@ interface Props {
     url: string;
   }>;
   custom?: boolean;
-  storybookLink?: null | string;
+  noTopBar?: boolean;
+  hasStorybook?: boolean;
+  storybookLink?: string;
 }
 
 export default function DocLayout({
   children,
   description,
+  hasHeaderLink,
   headerLink,
   location,
   noElevation,
@@ -66,6 +70,8 @@ export default function DocLayout({
   title,
   breadcrumbs = title ? [{ name: title, url: path }] : undefined,
   custom,
+  noTopBar,
+  hasStorybook,
   storybookLink,
 }: Props) {
   const [tableOfContents] = useTableOfContents();
@@ -111,27 +117,31 @@ export default function DocLayout({
             `}
           >
             <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
-              <StyledDocNavigationWidth hasOutdent={tabs && tabs.length > 0}>
+              <StyledDocNavigationWidth>
                 <StyledDocNavigationWrapper>
                   <DocNavigation currentUrl={path} />
                 </StyledDocNavigationWrapper>
               </StyledDocNavigationWidth>
             </Hide>
-            <StyledMiddle hasBorder={tabs && tabs.length > 0}>
-              <TopBar
-                breadcrumbs={breadcrumbs}
-                headerLink={headerLink}
-                tocHasItems={tocHasItems}
-                tabs={tabs}
-                location={location}
-                description={description}
-                custom={custom}
-                noElevation={noElevation}
-                title={title}
-                storybookLink={storybookLink}
-              >
-                {children}
-              </TopBar>
+            <StyledMiddle>
+              {!noTopBar && (
+                <TopBar
+                  breadcrumbs={breadcrumbs}
+                  hasHeaderLink={hasHeaderLink}
+                  headerLink={headerLink}
+                  tocHasItems={tocHasItems}
+                  tabs={tabs}
+                  location={location}
+                  description={description}
+                  custom={custom}
+                  noElevation={noElevation}
+                  title={title}
+                  hasStorybook={hasStorybook}
+                  storybookLink={storybookLink}
+                >
+                  {children}
+                </TopBar>
+              )}
               <StyledMain>
                 <StyledMobileOutdent>
                   <Grid columns="100%" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>
@@ -147,7 +157,7 @@ export default function DocLayout({
                         noElevation
                           ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
                           : {
-                              top: "XLarge",
+                              top: "XXLarge",
                               bottom: "XXLarge",
                               left: "XLarge",
                               right: "XLarge",

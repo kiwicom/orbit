@@ -40,13 +40,7 @@ const Overview = ({ location, pageContext }: Props) => {
 
   return (
     render && (
-      <DocLayout
-        location={location}
-        path={slug}
-        title={title}
-        breadcrumbs={breadcrumbs}
-        noElevation
-      >
+      <DocLayout location={location} path={slug} title={title} breadcrumbs={breadcrumbs}>
         <Grid
           columns="1fr"
           gap="2rem"

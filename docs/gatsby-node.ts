@@ -93,6 +93,12 @@ export const onCreateNode = async ({ cache, node, getNode, actions, reporter }) 
 
     createNodeField({
       node,
+      name: "hasStorybook",
+      value: metaFileData.hasStorybook ?? dir.startsWith("/03-components"),
+    });
+
+    createNodeField({
+      node,
       name: "storybookLink",
       value: metaFileData.storybook,
     });
@@ -245,8 +251,11 @@ export const onPreBuild = async () => {
   await parseChangelog();
 };
 
-export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
-  actions.createTypes(
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
+  actions,
+  schema,
+}) => {
+  const typeDefs = [
     `
     type Mdx implements Node {
       frontmatter: MdxFrontmatter!
@@ -261,21 +270,26 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       type: String
     }
 
-    type MdxFields {
-      collection: String!
-      description: String
-      slug: String!
-      tabCollection: String
-      title: String!
-      breadcrumbs: [BreadcrumbsPart]
-      storybookLink: String
-      headerLink: String
-    }
-
     type BreadcrumbsPart {
       name: String!
       url: String!
     }
-  `,
-  );
+    `,
+    schema.buildObjectType({
+      name: "MdxFields",
+      fields: {
+        breadcrumbs: "[BreadcrumbsPart]",
+        collection: "String!",
+        description: "String",
+        slug: "String!",
+        tabCollection: "String",
+        title: "String!",
+        storybookLink: "String",
+        headerLink: "String",
+        hasHeaderLink: "Boolean",
+        hasStorybook: "Boolean",
+      },
+    }),
+  ];
+  actions.createTypes(typeDefs);
 };

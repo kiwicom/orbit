@@ -6,10 +6,6 @@ module.exports = {
   ],
   plugins: [
     require.resolve("babel-plugin-styled-components"),
-    [require.resolve("@babel/plugin-proposal-class-properties"), { loose: true }],
-    [require.resolve("@babel/plugin-proposal-private-methods"), { loose: true }],
-    require.resolve("@babel/plugin-proposal-object-rest-spread"),
-    require.resolve("@babel/plugin-proposal-nullish-coalescing-operator"),
     require.resolve("@adeira/babel-preset-adeira/src/adeira-js-warning"),
     require.resolve("@adeira/babel-preset-adeira/src/adeira-js-invariant"),
     [

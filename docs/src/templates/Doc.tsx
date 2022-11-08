@@ -13,6 +13,7 @@ interface Props extends PageRendererProps {
         headerLink: string;
         slug: string;
         title: string;
+        storybookLink: null | string;
         breadcrumbs: Array<{
           name: string;
           url: string;
@@ -51,6 +52,7 @@ export default function Doc({ data, location }: Props) {
       tabs={usedTabs}
       title={fields.title}
       breadcrumbs={fields.breadcrumbs}
+      storybookLink={fields.storybookLink}
     >
       <MDXRenderer>{body}</MDXRenderer>
     </DocLayout>
@@ -65,6 +67,7 @@ export const query = graphql`
         headerLink
         slug
         title
+        storybookLink
         breadcrumbs {
           name
           url

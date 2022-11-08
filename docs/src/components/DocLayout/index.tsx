@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "styled-components";
-import { Collapse, Grid, Hide, Stack } from "@kiwicom/orbit-components";
+import { Collapse, Grid, Hide } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
@@ -52,6 +52,7 @@ interface Props {
     url: string;
   }>;
   custom?: boolean;
+  storybookLink?: null | string;
 }
 
 export default function DocLayout({
@@ -65,6 +66,7 @@ export default function DocLayout({
   title,
   breadcrumbs = title ? [{ name: title, url: path }] : undefined,
   custom,
+  storybookLink,
 }: Props) {
   const [tableOfContents] = useTableOfContents();
   const tocHasItems = tableOfContents.length > 0;
@@ -126,6 +128,7 @@ export default function DocLayout({
                 custom={custom}
                 noElevation={noElevation}
                 title={title}
+                storybookLink={storybookLink}
               >
                 {children}
               </TopBar>

@@ -52,6 +52,7 @@ const TopBar = ({
   headerLink,
   breadcrumbs,
   description,
+  storybookLink,
 }) => {
   return custom ? (
     <StyledProse
@@ -104,13 +105,15 @@ const TopBar = ({
                 <Hide on={["smallMobile", "mediumMobile"]}>
                   <Stack flex spacing="XXSmall">
                     <HeaderButtonLink href={headerLink} />
-                    {title && (
+                    {title && storybookLink !== "false" && (
                       <ButtonLink
                         type="secondary"
                         size="large"
                         iconLeft={<StorybookLogo />}
                         external
-                        href={`https://kiwicom.github.io/orbit/?path=/story/${title.toLowerCase()}`}
+                        href={`https://kiwicom.github.io/orbit/?path=/story/${
+                          storybookLink ?? title.toLowerCase()
+                        }`}
                       />
                     )}
                   </Stack>

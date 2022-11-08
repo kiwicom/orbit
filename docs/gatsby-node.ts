@@ -93,6 +93,12 @@ export const onCreateNode = async ({ cache, node, getNode, actions, reporter }) 
 
     createNodeField({
       node,
+      name: "storybookLink",
+      value: metaFileData.storybook,
+    });
+
+    createNodeField({
+      node,
       name: "slug",
       value: getDocumentUrl(fileUrl, hasTabs),
     });
@@ -253,6 +259,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       tabCollection: String
       title: String!
       breadcrumbs: [BreadcrumbsPart]
+      storybookLink: String
     }
 
     type BreadcrumbsPart {

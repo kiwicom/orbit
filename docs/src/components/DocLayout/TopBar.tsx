@@ -55,7 +55,7 @@ const TopBar = ({
   hasStorybook,
   storybookLink,
 }) => {
-  const hasTabs = tabs && tabs.length > 1;
+  const hasTabs = tabs && tabs.length > 0;
   const hasLowerLayer = hasTabs || hasHeaderLink || hasStorybook;
 
   return custom ? (

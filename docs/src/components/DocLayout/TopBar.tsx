@@ -104,7 +104,7 @@ const TopBar = ({
               {headerLink && (
                 <Hide on={["smallMobile", "mediumMobile"]}>
                   <Stack flex spacing="XXSmall">
-                    <HeaderButtonLink href={headerLink} />
+                    {headerLink !== "false" && <HeaderButtonLink href={headerLink} />}
                     {title && storybookLink !== "false" && (
                       <ButtonLink
                         type="secondary"

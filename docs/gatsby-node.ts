@@ -148,10 +148,19 @@ export const onCreateNode = async ({ cache, node, getNode, actions, reporter }) 
       return "";
     };
 
+    const headerLink =
+      metaFileData.headerLink || getLinkForComponents() || node.frontmatter.headerLink;
+
     createNodeField({
       node,
       name: "headerLink",
-      value: getLinkForComponents() || node.frontmatter.headerLink || metaFileData.headerLink,
+      value: headerLink,
+    });
+
+    createNodeField({
+      node,
+      name: "hasHeaderLink",
+      value: metaFileData.hasHeaderLink ?? Boolean(headerLink),
     });
 
     if (node.fields.collection === "documentation") {
@@ -260,6 +269,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       title: String!
       breadcrumbs: [BreadcrumbsPart]
       storybookLink: String
+      headerLink: String
     }
 
     type BreadcrumbsPart {

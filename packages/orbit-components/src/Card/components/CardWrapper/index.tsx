@@ -51,13 +51,13 @@ const StyledCardWrapper = styled.div<Props>`
     transition: ${transition(["margin"], "fast", "ease-in-out")};
     ${noBorderTop &&
     !expandable &&
-    `
+    css`
       border-top: 1px solid transparent;
       padding-top: 0 !important;
     `};
 
     ${expanded &&
-    `
+    css`
       margin: ${theme.orbit.spaceXSmall} 0;
       border: 1px solid transparent;
     `};

@@ -19,7 +19,7 @@ const StyledCardSectionHeader = styled.div<{
     cursor: ${expandable && "pointer"};
     position: relative;
     padding: ${theme.orbit.spaceMedium};
-    margin: -${parseInt(theme.orbit.spaceLarge, 10) + 1}px;
+    margin: -${parseInt(theme.orbit.spaceMedium, 10) + 1}px;
     margin-bottom: ${expanded && isContent && 0};
     min-height: ${expandable && getSize(ICON_SIZES.MEDIUM)};
 

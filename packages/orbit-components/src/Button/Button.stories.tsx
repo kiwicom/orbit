@@ -34,8 +34,8 @@ Default.story = {
 export const BasicButtons = () => {
   const children = text("Children", "Button");
   const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], TYPE_OPTIONS.PRIMARY);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
+  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
 
   return (
     <Button onClick={action("clicked")} fullWidth={fullWidth} type={type} size={size}>
@@ -56,7 +56,7 @@ BasicButtons.story = {
 export const ButtonWithIcons = () => {
   const children = text("Children", "Button");
   const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], TYPE_OPTIONS.PRIMARY);
+  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
   const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));

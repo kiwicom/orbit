@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 6007 -c .storybook --ci",
     "cy:dev": "vite cypress/integration --logLevel silent",
     "cy:run": "start-server-and-test cy:dev http-get://localhost:3000 'cypress run'",
-    "cy:open": "start-server-and-test cy:dev http-get://localhost:3000 'cypress open --component'",
+    "cy:open": "start-server-and-test cy:dev http-get://localhost:3000 'cypress open'",
     "prepublishOnly": "yarn build && pinst --disable",
     "postpublish": "pinst --enable",
     "build": "ts-node --esm config/build/index.mts",

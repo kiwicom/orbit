@@ -1,0 +1,26 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/illustration/
+*/
+import * as React from "react";
+
+import type { Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
+
+type Name =
+  | "BGYFastTrack"
+  | "BUDFastTrack"
+  | "MRSSmartPass"
+  | "NCEFastTrack"
+  | "PRGSmartPass"
+  | "VCESmartPass";
+
+export type Props = {|
+  +size?: "extraSmall" | "small" | "medium" | "large" | "display",
+  +name: Name,
+  +alt?: string,
+  ...Globals,
+  ...spaceAfter,
+|};
+
+declare export default React.ComponentType<Props>;

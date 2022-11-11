@@ -5,8 +5,9 @@
     "module": "esnext",
     "allowJs": true,
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "esModuleInterop": true
   },
   "include": ["src/**/*.ts", "scripts/**/*.ts"],
-  "exclude": ["src/__tests__/**/*"]
+  "exclude": ["src/__tests__/**/*", "node_modules"]
 }

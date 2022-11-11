@@ -1,0 +1,15 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/hide/
+*/
+import * as React from "react";
+
+import type { Devices } from "../utils/mediaQuery/consts.js.flow";
+
+export type Props = {|
+  +children: React.Node,
+  +on: Devices[],
+  +block?: boolean,
+|};
+
+declare export default React.ComponentType<Props>;

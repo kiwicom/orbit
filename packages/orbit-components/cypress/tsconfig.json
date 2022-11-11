@@ -1,8 +1,15 @@
 {
-  "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "types": ["cypress", "@testing-library/cypress"]
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["cypress", "@testing-library/cypress", "node"],
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "include": ["**/*.test.*"],
+  "include": ["**/*.test.*", "cypress.d.ts", "./support/*.ts"],
   "exclude": []
 }

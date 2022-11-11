@@ -1,0 +1,23 @@
+// @flow
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+import type { Globals, Translation } from "../../common/common.js.flow";
+import type { Size } from "../index.js.flow";
+import type { Theme } from "../../defaultTheme.js.flow";
+
+export type Props = {|
+  +children: React.Node,
+  +label?: Translation,
+  +icon?: React.Element<any>,
+  ...Globals,
+|};
+
+declare export default React.ComponentType<Props>;
+
+declare export var Item: StyledComponent<any, any, HTMLElement>;
+declare export var IconContainer: StyledComponent<any, any, HTMLElement>;
+
+export type GetLineHeightToken = ({| theme: Theme, size: Size |}) => string;
+
+declare export var getLineHeightToken: GetLineHeightToken;

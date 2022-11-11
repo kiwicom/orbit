@@ -1,0 +1,22 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/card/
+*/
+import * as React from "react";
+
+import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
+import type { Globals } from "../common/common.js.flow";
+import typeof AccordionSectionType from "./AccordionSection/index.js.flow";
+
+export type Props = {|
+  +children?: React.Node,
+  +expandedSection?: string | number,
+  +onExpand?: (sectionId: string | number) => void | Promise<any>,
+  +loading?: boolean,
+  ...Globals,
+  ...spaceAfter,
+|};
+
+declare export default React.ComponentType<Props>;
+declare export var AccordionSection: AccordionSectionType;
+declare export var StyledAccordion: React.ComponentType<Props>;

@@ -1,5 +1,5 @@
 // @flow
-import defaultTheme from "../../defaultTheme";
+import defaultTheme from "../../defaultTheme.js.flow";
 
 export type spaceAfter = {|
   +spaceAfter?: "none" | "smallest" | "small" | "normal" | "medium" | "large" | "largest",

@@ -1,0 +1,40 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/inputstepper/
+*/
+import * as React from "react";
+
+import type { Globals, Translation } from "../../common/common.js.flow";
+import type { Size } from "../../InputField/index.js.flow";
+import type { spaceAfter } from "../../common/getSpacingToken/index.js.flow";
+
+export type SharedProps = {|
+  ...Globals,
+  ...spaceAfter,
+  +size?: Size,
+  +label?: Translation,
+  +step?: number,
+  +help?: React.Node,
+  +error?: React.Node,
+  +name?: string,
+  +disabled?: boolean,
+  +maxValue?: number,
+  +width?: string,
+  +minValue?: number,
+  +required?: boolean,
+  +readOnly?: boolean,
+  tabIndex?: string | number,
+  +titleIncrement?: string | (any => string),
+  +titleDecrement?: string | (any => string),
+  +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+|};
+
+export type Props = {|
+  ...SharedProps,
+  +defaultValue?: number,
+  +onChange?: number => void | Promise<any>,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLElement>;
+export { default as InputStepperStateless } from "./InputStepperStateless/index.js.flow";

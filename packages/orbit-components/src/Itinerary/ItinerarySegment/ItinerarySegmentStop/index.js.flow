@@ -1,0 +1,22 @@
+// @flow
+import * as React from "react";
+
+import type { Status } from "../../index.js.flow";
+
+export type Props = {|
+  +date?: string,
+  +time?: React.Node,
+  +cancelledDate?: React.Node,
+  +cancelledStation?: React.Node,
+  +cancelledCity?: React.Node,
+  +cancelledTime?: React.Node,
+  +city: React.Node,
+  +station: React.Node,
+  +hidden?: boolean,
+  +hiddenCityText?: React.Node,
+  +type?: Status,
+  +minWidth?: number,
+  +icon?: React.Node,
+|};
+
+declare export default React.ComponentType<Props>;

@@ -1,0 +1,43 @@
+// @flow
+import * as React from "react";
+
+import type { Value, AriaLabel } from "../../index.js.flow";
+
+type Callback<A> = (event: A) => void;
+
+export type Props = {|
+  tabIndex: string | number,
+  onMouseDown: Callback<SyntheticMouseEvent<HTMLDivElement>>,
+  onFocus: Callback<SyntheticKeyboardEvent<HTMLDivElement>>,
+  onTouchStart: Callback<SyntheticTouchEvent<HTMLDivElement>>,
+  valueMax: number,
+  valueMin: number,
+  onTop: boolean,
+  index: number,
+  hasHistogram: boolean,
+  value: Value,
+  ariaLabel: ?AriaLabel,
+  ariaValueText: ?string,
+  dataTest?: ?string,
+|};
+
+declare export default React.ComponentType<Props>;
+
+export type CalculateLeftPosition = (
+  valueNow: number,
+  valueMin: number,
+  valueMax: number,
+  isFirst: boolean,
+  isSimple: boolean,
+) => number;
+
+declare export var calculateLeftPosition: CalculateLeftPosition;
+
+export type IsFirst = (
+  value: Value,
+  valueNow: number,
+  index: number,
+  hasHistogram: boolean,
+) => boolean;
+
+declare export var isFirst: IsFirst;

@@ -38,6 +38,7 @@ Table below contains all types of the props available in the InputFile component
 | tabIndex         | `string \| number`         |                      | Specifies the tab order of an element                                                                                                                          |
 | width            | `string`                   | `100%`               | Specifies width of InputFile                                                                                                                                   |
 | helpClosable     | `boolean`                  | `true`               | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                 |
+| insideInputGroup | `boolean`                  | `false`              | Set to `true` if InputFile is inside InputGroup                                                                                                                |
 
 ## Functional specs
 

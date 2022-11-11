@@ -1,4 +1,0 @@
-// @flow
-import { getTokens as GetTokens } from "@kiwicom/orbit-design-tokens";
-
-declare export default typeof GetTokens;

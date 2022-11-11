@@ -1,0 +1,12 @@
+// @flow
+import * as React from "react";
+
+import type { Props } from "./index.js.flow";
+
+export type CreateIcon = (
+  def: React.Node,
+  viewBox: string,
+  displayName: string,
+) => React.ComponentType<Props>;
+
+declare export default CreateIcon;

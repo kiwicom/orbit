@@ -34,7 +34,7 @@ jobs:
           yarn tracking build
 
       - name: Type checks
-        run: yarn check:types
+        run: yarn check:types && yarn flow check
 
       - name: Lint
         run: |

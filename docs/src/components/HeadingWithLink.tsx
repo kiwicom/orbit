@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Stack } from "@kiwicom/orbit-components";
 import { Link as LinkIcon } from "@kiwicom/orbit-components/icons";
-import { SpaceAfter } from "@kiwicom/orbit-components/lib/common/common";
+import * as Common from "@kiwicom/orbit-components/lib/common/types";
 
 import { getTextFromChildren, slugify } from "../utils/common";
 
@@ -39,7 +39,7 @@ export const StyledAnchor = styled.a<{ $level: number }>`
   `}
 `;
 
-interface Props extends SpaceAfter {
+interface Props extends Common.SpaceAfter {
   level: number;
   children?: React.ReactNode;
   noId?: boolean;

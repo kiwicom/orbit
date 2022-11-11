@@ -1,5 +1,4 @@
 // @flow
-
 declare export var addScrollHandler: (onScrollFunction: () => void, element?: Node) => HTMLElement;
 
 declare export var removeScrollHandler: (

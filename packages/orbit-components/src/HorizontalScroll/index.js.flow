@@ -1,0 +1,23 @@
+// @flow
+import * as React from "react";
+
+import type { Spacing } from "../Stack/index.js.flow";
+import type { Globals } from "../common/common.js.flow";
+
+export type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
+
+export type Props = {|
+  ...Globals,
+  +minHeight?: number,
+  +spacing?: Spacing,
+  +arrows?: boolean,
+  +arrowColor?: string,
+  +children: React.Node,
+  +scrollSnap?: ScrollSnap,
+  +scrollPadding?: number,
+  +overflowElevation?: boolean,
+  +onOverflow?: () => void,
+  +elevationColor?: string,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLDivElement>;

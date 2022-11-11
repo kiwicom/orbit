@@ -9,6 +9,6 @@ export const StyledComponent = styled.div`
   `)};
 `;
 
-export const shouldBeNumber: number = getBreakpointWidth("desktop", Theme, true);
-export const shouldBeString: string = getBreakpointWidth("desktop", Theme, false);
-export const shouldAlsoBeString: string = getBreakpointWidth("desktop", Theme);
+export const shouldBeNumber = getBreakpointWidth("desktop", Theme, true);
+export const shouldBeString = getBreakpointWidth("desktop", Theme, false);
+export const shouldAlsoBeString = getBreakpointWidth("desktop", Theme);

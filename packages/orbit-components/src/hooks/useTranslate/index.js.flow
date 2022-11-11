@@ -1,5 +1,5 @@
 // @flow
-import type { Values, Key } from "../../Translate";
+import type { Values, Key } from "../../Translate/index.js.flow";
 
 type TranslateFunction = (key: Key, values?: Values) => string;
 

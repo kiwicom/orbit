@@ -1,5 +1,4 @@
 // @flow
-
 declare function useTransition(options: {|
   +show: boolean,
   +appear?: boolean,

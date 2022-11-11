@@ -26,10 +26,13 @@
   ],
   "scripts": {
     "build": "yarn clean && babel ./src --extensions '.ts' --out-dir ./dist",
-    "clean": "rimraf dist",
+    "clean": "del dist",
     "postinstall": "yarn build",
     "prepublishOnly": "yarn build && pinst --disable",
     "postpublish": "pinst --enable"
+  },
+  "peerDependencies": {
+    "eslint": ">=7"
   },
   "dependencies": {
     "@babel/types": "=7.12.10"
@@ -44,6 +47,6 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.14.0",
     "pinst": "^2.1.4",
-    "rimraf": "^3.0.2"
+    "del-cli": "^4.0.1"
   }
 }

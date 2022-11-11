@@ -8,10 +8,6 @@
 src/data/airportIllustrations.json
 src/data/illustrations.json
 src/data/icons.json
-src/Illustration/index.*.flow
-src/AirportIllustration/index.*.flow
-src/ServiceLogo/index.*.flow
-src/FeatureIcon/index.*.flow
 src/Illustration/index.d.ts
 src/AirportIllustration/index.d.ts
 src/ServiceLogo/index.d.ts

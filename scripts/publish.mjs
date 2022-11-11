@@ -19,8 +19,8 @@ const octokit = new Octokit({
   auth: process.env.GH_TOKEN,
 });
 
-const apiRequest = ({ method = "GET", url, body }) =>
-  fetch.call(null, url, {
+const apiRequest = async ({ method = "GET", url, body }) =>
+  fetch(url, {
     method,
     body,
     headers: {
@@ -28,7 +28,7 @@ const apiRequest = ({ method = "GET", url, body }) =>
       Authorization: `Bearer ${process.env.SLACK_TOKEN}`,
       Accept: "application/json",
     },
-  });
+  }).then(res => res.json());
 
 async function getLatestReleaseTime() {
   const res = await octokit.rest.repos.getLatestRelease({
@@ -76,9 +76,7 @@ async function getUserNames(timestamp) {
       url: `${process.env.SLACK_API_READ_PLZ_ORBIT}&oldest=${timestamp}`,
     });
 
-    if (!res.ok) return res.error;
-    const { messages } = await res.json();
-    return parseSlackMessages(messages);
+    return parseSlackMessages(res.messages);
   } catch (err) {
     console.error(err);
   }
@@ -107,7 +105,8 @@ async function postSlackNotification(changelog, names) {
         ],
       }),
     });
-    if (!res.ok) return res.error;
+
+    return res;
   } catch (err) {
     console.error(err);
   }

@@ -1,0 +1,20 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/socialbutton/
+*/
+import * as React from "react";
+
+import type { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index.js.flow";
+
+export type Type = "apple" | "facebook" | "google" | "twitter" | "email";
+
+export type Props = {|
+  +type?: Type,
+  +size?: Size,
+  ...$Diff<
+    ButtonCommonProps,
+    {| +iconLeft?: React.Node, +iconRight?: React.Node, +circled?: boolean |},
+  >,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLButtonElement>;

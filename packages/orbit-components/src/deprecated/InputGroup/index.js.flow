@@ -1,0 +1,30 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/inputgroup/
+*/
+import * as React from "react";
+
+import type { Globals, Translation } from "../../common/common.js.flow";
+import type { spaceAfter } from "../../common/getSpacingToken/index.js.flow";
+
+export type Props = {|
+  ...Globals,
+  ...spaceAfter,
+  +label?: Translation,
+  +flex?: string | Array<string>,
+  +size?: "small" | "normal",
+  +help?: React.Node,
+  +children: React.Node,
+  +error?: React.Node,
+  +onChange?: (
+    ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
+  ) => void | Promise<any>,
+  +onFocus?: (
+    ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
+  ) => void | Promise<any>,
+  +onBlur?: (
+    ev: SyntheticInputEvent<HTMLInputElement> | SyntheticInputEvent<HTMLSelectElement>,
+  ) => void | Promise<any>,
+|};
+
+declare export default React.ComponentType<Props>;

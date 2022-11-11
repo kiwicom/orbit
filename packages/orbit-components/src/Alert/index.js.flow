@@ -1,0 +1,28 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/alert-message/
+*/
+import * as React from "react";
+
+import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
+import type { Globals, Translation } from "../common/common.js.flow";
+import type { Props as AlertButtonProps } from "./AlertButton/index.js.flow";
+
+type Type = "info" | "success" | "warning" | "critical";
+
+export type Props = {|
+  +type?: Type,
+  +children?: React.Node,
+  +title?: Translation,
+  +icon?: React.Element<any> | boolean,
+  +closable?: boolean,
+  +suppressed?: boolean,
+  +inlineActions?: React.Node,
+  +onClose?: () => void | Promise<any>,
+  ...Globals,
+  ...spaceAfter,
+|};
+
+declare export var AlertButton: React.AbstractComponent<AlertButtonProps, HTMLButtonElement>;
+
+declare export default React.ComponentType<Props>;

@@ -1,0 +1,18 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/buttonlink/
+*/
+import * as React from "react";
+
+import type { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index.js.flow";
+
+export type Type = "primary" | "secondary" | "critical";
+
+export type Props = {|
+  +compact?: boolean,
+  +type?: Type,
+  +size?: Size,
+  ...ButtonCommonProps,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLButtonElement>;

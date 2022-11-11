@@ -1,6 +1,0 @@
-// @flow
-import type { CSSRules } from "styled-components";
-
-export type GetDisplay = (inline: ?boolean, force: boolean) => CSSRules;
-
-declare export default GetDisplay;

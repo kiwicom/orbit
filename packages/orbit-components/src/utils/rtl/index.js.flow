@@ -1,5 +1,5 @@
 // @flow
-import type { ThemeProps } from "../../defaultTheme";
+import type { ThemeProps } from "../../defaultTheme.js.flow";
 
 export type LeftToRight = <T1, T2>(left: T1, right: T2) => ({ ...ThemeProps, ... }) => T1 | T2;
 

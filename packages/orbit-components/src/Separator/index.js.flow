@@ -1,0 +1,19 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/separator/
+*/
+import * as React from "react";
+import type { CSSRules } from "styled-components";
+
+import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
+
+export type Indent = "none" | "small" | "medium" | "large" | "XLarge" | "XXLarge";
+
+export type Props = {|
+  ...spaceAfter,
+  indent?: Indent,
+  align?: "left" | "right" | "center",
+|};
+
+declare export default React.ComponentType<Props>;
+declare export var StyledSeparator: CSSRules;

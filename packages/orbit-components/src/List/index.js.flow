@@ -1,0 +1,26 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/list/
+*/
+
+import * as React from "react";
+
+import typeof ListItemType from "./ListItem/index.js.flow";
+import type { Globals } from "../common/common.js.flow";
+import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
+
+export type Size = "small" | "normal" | "large";
+
+export type Type = "primary" | "secondary";
+
+export type Props = {|
+  +children: React.Node,
+  +size?: Size,
+  +type?: Type,
+  ...Globals,
+  ...spaceAfter,
+|};
+
+declare export default React.ComponentType<Props>;
+
+declare export var ListItem: ListItemType;

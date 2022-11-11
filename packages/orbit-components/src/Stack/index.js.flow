@@ -1,0 +1,61 @@
+// @flow
+/*
+  DOCUMENTATION: https://orbit.kiwi/components/stack/
+*/
+import * as React from "react";
+
+import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
+import type { Globals } from "../common/common.js.flow";
+import type { Theme } from "../defaultTheme.js.flow";
+
+export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
+
+export type Align = "start" | "end" | "center" | "stretch" | "baseline";
+
+export type Justify = "start" | "end" | "center" | "between" | "around";
+
+export type Basis = string | ((theme: Theme) => string);
+
+export type Spacing =
+  | "none"
+  | "XXXSmall"
+  | "XXSmall"
+  | "XSmall"
+  | "small"
+  | "medium"
+  | "large"
+  | "XLarge"
+  | "XXLarge";
+
+export type MediaQuery = {|
+  ...spaceAfter,
+  +inline?: boolean,
+  +direction?: Direction,
+  +wrap?: boolean,
+  +grow?: boolean,
+  +shrink?: boolean,
+  +basis?: Basis,
+  +align?: Align,
+  +justify?: Justify,
+  +spacing?: Spacing,
+|};
+
+export type SmallMobile = {|
+  +smallMobile: MediaQuery,
+|};
+
+export type Props = {|
+  ...Globals,
+  ...MediaQuery,
+  +flex?: boolean,
+  +legacy?: boolean,
+  +mediumMobile?: MediaQuery,
+  +largeMobile?: MediaQuery,
+  +tablet?: MediaQuery,
+  +desktop?: MediaQuery,
+  +largeDesktop?: MediaQuery,
+  +as?: string,
+  +children: React.Node,
+|};
+
+declare export default React.ComponentType<Props>;

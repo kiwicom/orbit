@@ -1,0 +1,24 @@
+// @flow
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+import type { TransitionDuration } from "../transition/index.js.flow";
+
+export type State = {|
+  maxHeight: number | null,
+  transitionFinished: boolean,
+  visible: boolean,
+|};
+
+export type Props = {|
+  +children: React.Node,
+  +maxHeight: ?number,
+  +expanded?: boolean,
+  +ariaLabelledBy?: string,
+  +id?: string,
+  +transitionDuration?: TransitionDuration,
+|};
+
+declare export var StyledSlide: StyledComponent<any, any, HTMLElement>;
+
+declare export default React.ComponentType<Props>;

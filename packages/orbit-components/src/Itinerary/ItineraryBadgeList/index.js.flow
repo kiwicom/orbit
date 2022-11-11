@@ -1,0 +1,17 @@
+// @flow
+import * as React from "react";
+import type { StyledComponent } from "styled-components";
+
+import type { spaceAfter } from "../../common/getSpacingToken/index.js.flow";
+import type { Props as BadgeListProps } from "../../BadgeList/index.js.flow";
+import type { Props as ItineraryBadgeListItemProps } from "./ItineraryBadgeListItem.js.flow";
+
+export type Props = {|
+  +children: React.Node,
+  ...BadgeListProps,
+  ...spaceAfter,
+|};
+
+declare export var StyledWrapper: StyledComponent<any, any, HTMLElement>;
+declare export var ItineraryBadgeListItem: React.ComponentType<ItineraryBadgeListItemProps>;
+declare export default React.ComponentType<Props>;

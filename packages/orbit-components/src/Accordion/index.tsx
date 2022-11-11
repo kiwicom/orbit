@@ -4,12 +4,9 @@ import styled, { css } from "styled-components";
 import { Provider as SectionProvider } from "./AccordionContext";
 import getSpacingToken from "../common/getSpacingToken";
 import type { Props } from "./types";
-import * as Common from "../common/types";
 import defaultTheme from "../defaultTheme";
 
-interface StyledProps extends Common.SpaceAfter {}
-
-export const StyledAccordion = styled.div<StyledProps>`
+export const StyledAccordion = styled.div<{ spaceAfter?: Props["spaceAfter"] }>`
   ${({ theme }) => css`
     width: 100%;
     box-sizing: border-box;

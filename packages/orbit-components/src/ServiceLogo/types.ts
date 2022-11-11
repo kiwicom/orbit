@@ -42,4 +42,3 @@ export interface Props extends Common.Globals {
   readonly size?: Size;
   readonly grayScale?: boolean;
 }
-

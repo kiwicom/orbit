@@ -92,4 +92,3 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly name: Name;
   readonly alt?: string;
 }
-

@@ -1,8 +1,6 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/airportillustration/
 */
-import * as React from "react";
-
 import * as Common from "../common/types";
 
 type Name =

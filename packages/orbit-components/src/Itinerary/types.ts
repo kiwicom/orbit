@@ -1,13 +1,5 @@
 import React from "react";
 
-import ItinerarySegment from "./ItinerarySegment";
-import ItineraryStatus from "./ItineraryStatus";
-import ItinerarySeparator from "./ItinerarySeparator";
-import ItineraryBadgeList from "./ItineraryBadgeList";
-import ItineraryBadgeListItem from "./ItineraryBadgeList/ItineraryBadgeListItem";
-import ItinerarySegmentStop from "./ItinerarySegment/ItinerarySegmentStop";
-import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
-import ItinerarySegmentBanner from "./ItinerarySegment/ItinerarySegmentBanner";
 import * as Common from "../common/types";
 
 /** DOCS:
@@ -52,14 +44,3 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   /** The content of Itinerary component */
   readonly children: React.ReactNode;
 }
-
-export {
-  ItinerarySegment,
-  ItinerarySeparator,
-  ItinerarySegmentStop,
-  ItinerarySegmentBanner,
-  ItineraryBadgeListItem,
-  ItinerarySegmentDetail,
-  ItineraryStatus,
-  ItineraryBadgeList,
-};

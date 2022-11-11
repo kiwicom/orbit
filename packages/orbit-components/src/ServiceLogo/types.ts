@@ -45,6 +45,3 @@ export interface Props extends Common.Globals {
   readonly size?: Size;
   readonly grayScale?: boolean;
 }
-
-declare const ServiceLogo: React.FunctionComponent<Props>;
-export { ServiceLogo, ServiceLogo as default };

@@ -4,7 +4,6 @@
 import * as React from "react";
 
 import * as Common from "../common/types";
-import SeatLegend from "./components/SeatLegend";
 
 export type Size = "small" | "medium";
 export type Type = "default" | "legroom" | "unavailable";

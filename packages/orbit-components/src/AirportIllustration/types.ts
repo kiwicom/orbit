@@ -18,6 +18,3 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly name: Name;
   readonly alt?: string;
 }
-
-declare const AirportIllustration: React.FunctionComponent<Props>;
-export { AirportIllustration, AirportIllustration as default };

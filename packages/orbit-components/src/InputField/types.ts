@@ -48,6 +48,3 @@ export interface Props extends Common.Globals, Common.Ref, Common.SpaceAfter, Co
   readonly onKeyDown?: KeyboardEvent;
   readonly onKeyUp?: KeyboardEvent;
 }
-
-declare const InputField: React.FunctionComponent<Props>;
-export { InputField, InputField as default };

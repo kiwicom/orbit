@@ -575,7 +575,7 @@
 - component: Toast
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Information
@@ -616,7 +616,7 @@
   docs: Released
   group: Progress indicators
 - component: KeyValue
-  ios: Planned
+  ios: Released
   android: Released
   react: Released
   docs: Planned

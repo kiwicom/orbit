@@ -5,6 +5,7 @@
     "outDir": "lib",
     "declaration": true,
     "moduleResolution": "node",
+    "importsNotUsedAsValues": "error",
     "emitDeclarationOnly": true
   },
   "include": ["src/**/*"],

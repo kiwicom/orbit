@@ -3718,12 +3718,10 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@icons-pack/react-simple-icons@^4.0.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-4.2.0.tgz#9218a0f5509bc064da0a6574717e470ec32407a3"
-  integrity sha512-ZWswvsfhwu+fevgO4Cv3j/21J/X7LQJ1sV6gRNyiCx3JpcDlq56NkrWUBVZe/szmES8kOGhYe1L4OmslJgBpSQ==
-  dependencies:
-    prop-types "^15.7.2"
+"@icons-pack/react-simple-icons@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-6.1.0.tgz#a6e3687b428bb169de5cb2c054315b032e022543"
+  integrity sha512-ibidZFMK6Iv2cbWy/B9cLx8gSdTB0bWsO2Drvi3LqIMELi09BFApUQ8T3sicByBP5xRpB7I9YPzabkJfHVdCZg==
 
 "@icons/material@^0.2.4":
   version "0.2.4"

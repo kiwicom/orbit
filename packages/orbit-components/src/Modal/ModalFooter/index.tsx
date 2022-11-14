@@ -39,7 +39,7 @@ export const StyledModalFooter = styled.div<{
     padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
     box-sizing: border-box;
     transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
-    @media (max-width: ${+getBreakpointWidth(QUERIES.largeMobile, theme, true) - 1}px) {
+    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
       ${StyledButtonPrimitive} {
         font-size: ${theme.orbit.fontSizeButtonNormal};
         height: ${theme.orbit.heightButtonNormal};

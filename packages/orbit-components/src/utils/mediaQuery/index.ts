@@ -4,7 +4,7 @@ import { Theme } from "../../defaultTheme";
 import { QUERIES } from "./consts";
 import { MediaQueries, Devices, BreakpointToken } from "./types";
 
-const TOKEN = {
+export const TOKEN = {
   mediumMobile: "widthBreakpointMediumMobile",
   largeMobile: "widthBreakpointLargeMobile",
   tablet: "widthBreakpointTablet",
@@ -21,7 +21,7 @@ export const getBreakpointWidth = (
 };
 
 const mediaQueries = Object.values(QUERIES).reduce<MediaQueries>(
-  (acc: MediaQueries, device: keyof typeof QUERIES) => {
+  (acc: MediaQueries, device: keyof typeof TOKEN) => {
     acc[device] = style => css`
       @media ${({ theme }) => getBreakpointWidth(device, theme)} {
         ${style};

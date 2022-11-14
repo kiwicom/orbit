@@ -17,7 +17,7 @@ const StyledColumn = styled.div<{ spanEntireRow?: boolean; hideOn?: Devices[] }>
       grid-column: 1 / -1;
     `};
 
-    @media (max-width: ${+getBreakpointWidth(QUERIES.largeMobile, theme, true) - 1}px) {
+    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
       ${StyledCard} {
         margin-right: -${theme.orbit.spaceMedium};
         margin-left: -${theme.orbit.spaceMedium};

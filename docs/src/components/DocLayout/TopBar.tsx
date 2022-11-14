@@ -14,11 +14,10 @@ const StyledDescription = styled.span`
   line-height: 22px;
 `;
 
-const StyledWrapper = styled.div<{ hasBg?: boolean }>`
-  ${({ theme, hasBg }) => css`
+const StyledWrapper = styled.div`
+  ${({ theme }) => css`
     position: relative;
-    background: ${hasBg &&
-    `linear-gradient(
+    background: ${`linear-gradient(
       85.39deg,
       ${theme.orbit.paletteWhiteHover} 3.73%,
       ${theme.orbit.paletteCloudLight} 53.77%
@@ -49,10 +48,16 @@ const TopBar = ({
   tabs,
   location,
   tocHasItems,
+  hasHeaderLink,
   headerLink,
   breadcrumbs,
   description,
+  hasStorybook,
+  storybookLink,
 }) => {
+  const hasTabs = tabs && tabs.length > 0;
+  const hasLowerLayer = hasTabs || hasHeaderLink || hasStorybook;
+
   return custom ? (
     <StyledProse
       padding={
@@ -65,10 +70,17 @@ const TopBar = ({
       {children}
     </StyledProse>
   ) : (
-    <StyledWrapper hasBg={tabs && tabs.length > 0}>
-      <Box padding={{ top: "XXLarge", left: "XXLarge", right: "XXLarge" }}>
+    <StyledWrapper>
+      <Box
+        padding={{
+          top: "XXLarge",
+          left: "XXLarge",
+          right: "XXLarge",
+          bottom: hasLowerLayer ? "none" : "XXLarge",
+        }}
+      >
         {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
-        <Box padding={{ bottom: "medium" }}>
+        <Box padding={{ bottom: hasLowerLayer ? "medium" : "none" }}>
           <Stack inline align="center" spaceAfter="small">
             <AddBookmark title={title} description={description} />
             <div
@@ -91,31 +103,31 @@ const TopBar = ({
             </Box>
           )}
         </Box>
-        {(tabs || headerLink) && (
+        {hasLowerLayer && (
           <Box
             display="flex"
             align="end"
-            justify={tabs && tabs.length > 0 ? "between" : "end"}
+            justify={hasTabs ? "between" : "end"}
             tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
           >
             <StyledTopWrapper $hasTabs={Boolean(tabs)}>
-              {tabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
-              {headerLink && (
-                <Hide on={["smallMobile", "mediumMobile"]}>
-                  <Stack flex spacing="XXSmall">
-                    <HeaderButtonLink href={headerLink} />
-                    {title && (
-                      <ButtonLink
-                        type="secondary"
-                        size="large"
-                        iconLeft={<StorybookLogo />}
-                        external
-                        href={`https://kiwicom.github.io/orbit/?path=/story/${title.toLowerCase()}`}
-                      />
-                    )}
-                  </Stack>
-                </Hide>
-              )}
+              {hasTabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
+              <Hide on={["smallMobile", "mediumMobile"]}>
+                <Stack flex spacing="XXSmall">
+                  {hasHeaderLink && headerLink && <HeaderButtonLink href={headerLink} />}
+                  {hasStorybook && (storybookLink || title) && (
+                    <ButtonLink
+                      type="secondary"
+                      size="large"
+                      iconLeft={<StorybookLogo />}
+                      external
+                      href={`https://kiwicom.github.io/orbit/?path=/story/${
+                        storybookLink ?? title.toLowerCase()
+                      }`}
+                    />
+                  )}
+                </Stack>
+              </Hide>
             </StyledTopWrapper>
           </Box>
         )}

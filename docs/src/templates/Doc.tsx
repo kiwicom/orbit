@@ -10,9 +10,12 @@ interface Props extends PageRendererProps {
     mdx: {
       fields: {
         description: string;
+        hasHeaderLink: boolean;
         headerLink: string;
         slug: string;
         title: string;
+        hasStorybook: boolean;
+        storybookLink: string;
         breadcrumbs: Array<{
           name: string;
           url: string;
@@ -45,12 +48,15 @@ export default function Doc({ data, location }: Props) {
   return (
     <DocLayout
       description={fields.description}
+      hasHeaderLink={fields.hasHeaderLink}
       headerLink={fields.headerLink}
       location={location}
       path={fields.slug}
       tabs={usedTabs}
       title={fields.title}
       breadcrumbs={fields.breadcrumbs}
+      hasStorybook={fields.hasStorybook}
+      storybookLink={fields.storybookLink}
     >
       <MDXRenderer>{body}</MDXRenderer>
     </DocLayout>
@@ -62,9 +68,12 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       fields {
         description
+        hasHeaderLink
         headerLink
         slug
         title
+        hasStorybook
+        storybookLink
         breadcrumbs {
           name
           url

@@ -10,7 +10,7 @@ export default function PageNotFound({ location }: PageProps) {
   const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
 
   return (
-    <DocLayout custom noElevation title="Page not found" location={location} path="/">
+    <DocLayout custom noElevation title="Page not found" location={location} path="/" noTopBar>
       <Stack flex>
         <Stack spacing="XLarge">
           <Stack spacing="small">

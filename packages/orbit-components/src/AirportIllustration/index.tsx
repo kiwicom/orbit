@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Props } from "./types";
+import type { Props } from "./types";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
 import IllustrationPrimitive from "../primitives/IllustrationPrimitive";
 

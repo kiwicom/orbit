@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import * as Common from "../../common/types";
+import type * as Common from "../../common/types";
 
 type Size = "small" | "medium" | "large";
 type Color = "primary" | "secondary";

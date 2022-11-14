@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import * as Common from "../../common/types";
+import type * as Common from "../../common/types";
 
 export const StyledTableRow = styled(({ children, className, dataTest }) => (
   <tr className={className} data-test={dataTest}>

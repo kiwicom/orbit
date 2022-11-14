@@ -8,7 +8,7 @@ import defaultTheme from "../../defaultTheme";
 import Button from "../../primitives/ButtonPrimitive";
 import useTheme from "../../hooks/useTheme";
 import { defaultFocus } from "../../utils/common";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const getMaxWidth = ({ maxWidth }) => {
   if (typeof maxWidth === "string") return maxWidth;

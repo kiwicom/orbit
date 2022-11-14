@@ -7,7 +7,7 @@ import SectionHeader from "./components/SectionHeader";
 import SectionContent from "./components/SectionContent";
 import useRandomId from "../../hooks/useRandomId";
 import { ELEMENT_OPTIONS } from "../../Heading/consts";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const CardSection = ({
   title,

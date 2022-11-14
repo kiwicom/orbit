@@ -1,12 +1,13 @@
-import { css, FlattenInterpolation, ThemeProps } from "styled-components";
+import type { FlattenInterpolation, ThemeProps } from "styled-components";
+import { css } from "styled-components";
 
 import getSpacing from "./getSpacing";
 import getProperty from "./getProperty";
 import { rtlSpacing } from "../../utils/rtl";
 import { DIRECTIONS } from "../../utils/layout/consts";
-import { Direction, Spacing, Props } from "../types";
-import defaultTheme from "../../defaultTheme";
-import { Devices } from "../../utils/mediaQuery/types";
+import type { Direction, Spacing, Props } from "../types";
+import type defaultTheme from "../../defaultTheme";
+import type { Devices } from "../../utils/mediaQuery/types";
 
 interface PropsWithTheme extends Props {
   theme: typeof defaultTheme;

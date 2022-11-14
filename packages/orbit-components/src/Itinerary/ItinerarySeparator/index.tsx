@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import Divider from "./Divider";
 import defaultTheme from "../../defaultTheme";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledWrapper = styled.div`
   display: flex;

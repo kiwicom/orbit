@@ -1,9 +1,9 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/types";
-import { DataAttrs } from "../common/types";
-import defaultTheme, { Theme } from "../defaultTheme";
+import type { DataAttrs, Size } from "../common/types";
+import type { Theme } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
 import ErrorFormTooltip from "../ErrorFormTooltip";
@@ -14,9 +14,9 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
-import { Props } from "./types";
+import type { Props } from "./types";
 
-const getSelectSize = ({ theme, size }: { theme: Theme; size: Common.Size }) => {
+const getSelectSize = ({ theme, size }: { theme: Theme; size: Size }) => {
   const tokens = {
     [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
@@ -24,7 +24,7 @@ const getSelectSize = ({ theme, size }: { theme: Theme; size: Common.Size }) => 
   return tokens[size];
 };
 
-const StyledLabel = styled.label<{ $width: string; spaceAfter?: Common.SpaceAfterSizes }>`
+const StyledLabel = styled.label<{ $width: string; spaceAfter?: Props["spaceAfter"] }>`
   ${({ $width }) => css`
     position: relative;
     display: block;
@@ -192,7 +192,7 @@ SelectContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectPrefix = styled.div<{ size: Common.Size }>`
+const SelectPrefix = styled.div<{ size: Size }>`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -209,7 +209,7 @@ SelectPrefix.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectSuffix = styled.div<{ disabled?: boolean; size: Common.Size }>`
+const SelectSuffix = styled.div<{ disabled?: boolean; size: Size }>`
   ${({ theme, size, disabled }) => css`
     position: absolute;
     display: flex;

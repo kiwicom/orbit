@@ -2,8 +2,8 @@ import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import getButtonTypeToken from "./getButtonTypeToken";
 import { TOKENS } from "../consts";
 import getButtonBoxShadow from "./getButtonBoxShadow";
-import { Theme } from "../../defaultTheme";
-import { Type, ButtonStates } from "../types";
+import type { Theme } from "../../defaultTheme";
+import type { Type, ButtonStates } from "../types";
 
 const getButtonStyles = ({
   disabled,

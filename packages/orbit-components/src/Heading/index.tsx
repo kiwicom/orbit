@@ -2,12 +2,13 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { textAlign } from "../utils/rtl";
-import defaultTheme, { Theme } from "../defaultTheme";
+import type { Theme } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
 import { DEVICES } from "../utils/mediaQuery/consts";
-import { Props, Type, As } from "./types";
+import type { Props, Type, As } from "./types";
 
 export const getHeadingToken = (name: string, type: Type) => ({ theme }: { theme: Theme }) => {
   const tokens = {

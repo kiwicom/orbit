@@ -5,7 +5,7 @@ import { SPACINGS } from "../utils/layout/consts";
 import Box from "../Box";
 import Text from "../Text";
 import Stack from "../Stack";
-import { Spacing } from "../Stack/types";
+import type { Spacing } from "../Stack/types";
 
 import HorizontalScroll from ".";
 

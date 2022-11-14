@@ -1,7 +1,8 @@
-import getCommonProps, {
+import type {
   Params as CommonParams,
   Output as CommonOutput,
 } from "../../primitives/ButtonPrimitive/common/getCommonProps";
+import getCommonProps from "../../primitives/ButtonPrimitive/common/getCommonProps";
 
 interface Props extends CommonParams {
   readonly compact?: boolean;

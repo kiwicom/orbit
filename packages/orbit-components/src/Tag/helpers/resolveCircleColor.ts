@@ -1,6 +1,6 @@
 import { TYPES } from "../consts";
-import { Type } from "../types";
-import { Theme } from "../../defaultTheme";
+import type { Type } from "../types";
+import type { Theme } from "../../defaultTheme";
 
 const resolveColor = () => ({
   theme,

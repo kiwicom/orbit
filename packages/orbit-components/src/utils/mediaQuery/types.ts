@@ -2,7 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 import type { Interpolation } from "styled-components";
 
-import { TOKEN } from ".";
+import type { TOKEN } from ".";
 
 export type Devices =
   | "largeDesktop"

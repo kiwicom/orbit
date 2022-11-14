@@ -8,7 +8,7 @@ import ButtonLink from "../../../ButtonLink";
 import InputField, { Input, Prefix } from "../../../InputField";
 import defaultTheme from "../../../defaultTheme";
 import getSpacingToken from "../../../common/getSpacingToken";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledInputStepper = styled.div<{ spaceAfter: Props["spaceAfter"] }>`
   width: 100%;

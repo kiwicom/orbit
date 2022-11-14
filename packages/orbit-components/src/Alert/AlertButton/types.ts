@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps } from "../../primitives/ButtonPrimitive/types";
+import type { ButtonCommonProps } from "../../primitives/ButtonPrimitive/types";
 
 export type Type =
   | "info"

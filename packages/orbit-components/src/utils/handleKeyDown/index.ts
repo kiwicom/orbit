@@ -1,4 +1,4 @@
-import * as Common from "../../common/types";
+import type * as Common from "../../common/types";
 import KEY_CODE_MAP from "../../common/keyMaps";
 
 type Event<T> = Common.Event<React.SyntheticEvent<T>> | React.KeyboardEventHandler<T>;

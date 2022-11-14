@@ -8,7 +8,7 @@ import useTheme from "../../hooks/useTheme";
 import getAlertButtonStyles from "./helpers/getAlertButtonStyles";
 import getAlertButtonIconForeground from "./helpers/getAlertButtonIconForeground";
 import { SIZE_OPTIONS } from "../../primitives/ButtonPrimitive/common/consts";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const AlertButton = React.forwardRef<HTMLButtonElement, Props>(
   ({ type = TYPE_OPTIONS.INFO, children, disabled = false, ...props }, ref) => {

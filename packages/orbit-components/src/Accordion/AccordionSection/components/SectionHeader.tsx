@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 import Button from "../../../Button";
-import * as Common from "../../../common/types";
+import type * as Common from "../../../common/types";
 import defaultTheme from "../../../defaultTheme";
 
 const StyledWrapper = styled.div<{

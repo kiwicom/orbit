@@ -1,8 +1,9 @@
-import { keyframes, css, FlattenSimpleInterpolation, Keyframes } from "styled-components";
+import type { FlattenSimpleInterpolation, Keyframes } from "styled-components";
+import { keyframes, css } from "styled-components";
 
-import { ThemeProps } from "../defaultTheme";
+import type { ThemeProps } from "../defaultTheme";
 import { translate3d } from "../utils/rtl";
-import { Placement } from "./types";
+import type { Placement } from "./types";
 
 export const lightAnimation = ({ theme }: ThemeProps): Keyframes => keyframes`
   0% {

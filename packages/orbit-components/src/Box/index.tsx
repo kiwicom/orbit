@@ -5,7 +5,7 @@ import defaultTheme from "../defaultTheme";
 import media from "../utils/mediaQuery";
 import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
 import normalize from "./normalize";
-import {
+import type {
   Props,
   SpacingToken,
   SpacingObject,

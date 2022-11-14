@@ -5,7 +5,7 @@ import defaultTheme from "../defaultTheme";
 import { borderRadius, rtlSpacing } from "../utils/rtl";
 import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import mq from "../utils/mediaQuery";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledButtonGroup = styled.div`
   display: flex;

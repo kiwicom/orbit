@@ -80,7 +80,13 @@ module.exports = {
       },
     },
     {
-      files: ["*.ts?(x)", "*.d.ts", "*.mts"],
+      files: ["packages/orbit-components/src/**/*.ts?(x)"],
+      rules: {
+        "@typescript-eslint/consistent-type-imports": "error",
+      },
+    },
+    {
+      files: ["*.ts?(x)", "*.mts"],
       extends: [
         // disables core ESLint rules which are handled by TypeScript
         "plugin:@typescript-eslint/eslint-recommended",
@@ -113,7 +119,6 @@ module.exports = {
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/no-empty-function": "off",
-        "@typescript-eslint/consistent-type-imports": "error",
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": "error",
         "babel/no-unused-expressions": "off",

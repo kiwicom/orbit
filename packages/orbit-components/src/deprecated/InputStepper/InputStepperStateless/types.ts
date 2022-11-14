@@ -1,10 +1,10 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import type * as React from "react";
 
-import * as Common from "../../../common/types";
-import { SharedProps, Event } from "../types";
+import type * as Common from "../../../common/types";
+import type { SharedProps, Event } from "../types";
 
 export interface Props extends SharedProps {
   readonly value: number | string | (() => string | number);

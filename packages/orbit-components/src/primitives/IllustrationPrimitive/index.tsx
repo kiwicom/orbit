@@ -1,10 +1,11 @@
 import React from "react";
-import styled, { StyledComponent } from "styled-components";
+import type { StyledComponent } from "styled-components";
+import styled from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
-import { Props, Size } from "./types";
+import type { Size, Props } from "./types";
 
 const getHeightToken = ({ theme, size }) => {
   const tokens = {

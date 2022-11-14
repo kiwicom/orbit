@@ -1,9 +1,10 @@
-import { css, FlattenSimpleInterpolation } from "styled-components";
+import type { FlattenSimpleInterpolation } from "styled-components";
+import { css } from "styled-components";
 
 import mediaQueries from "../../utils/mediaQuery";
 import { DEVICES } from "../../utils/mediaQuery/consts";
-import { Devices } from "../../utils/mediaQuery/types";
-import getDisplay from "./getDisplay";
+import type { Devices } from "../../utils/mediaQuery/types";
+import type getDisplay from "./getDisplay";
 
 const getViewportHideStyles = (
   on: Devices[],

@@ -1,4 +1,5 @@
-import { keyframes, css, FlattenSimpleInterpolation } from "styled-components";
+import type { FlattenSimpleInterpolation } from "styled-components";
+import { keyframes, css } from "styled-components";
 
 export const resolveValue = (value: string | number): string => {
   if (typeof value === "string") return value;

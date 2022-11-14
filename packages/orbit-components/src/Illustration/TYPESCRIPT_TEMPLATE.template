@@ -1,7 +1,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/illustration/
 */
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 
 export type Name =%NAMES%
 

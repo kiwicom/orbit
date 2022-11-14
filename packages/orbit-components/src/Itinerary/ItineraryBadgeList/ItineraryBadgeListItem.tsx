@@ -9,7 +9,7 @@ import {
 } from "../../BadgeList/BadgeListItem";
 import Text from "../../Text";
 import Stack from "../../Stack";
-import { BadgeListItem as Props } from "./types";
+import type { BadgeListItem as Props } from "./types";
 
 const ItineraryBadgeListItem = ({
   children,

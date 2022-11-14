@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { Value } from "../../types";
+import type { Value } from "../../types";
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 

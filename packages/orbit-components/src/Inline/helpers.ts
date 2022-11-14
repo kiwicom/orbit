@@ -1,8 +1,8 @@
 import { left } from "../utils/rtl";
-import { Theme, ThemeProps } from "../defaultTheme";
+import type { Theme, ThemeProps } from "../defaultTheme";
 import { getAlign, getJustify, formatCSS } from "../utils/layout";
 import { TOKENS } from "../utils/layout/consts";
-import { SpacingToken, Align, Justify } from "./types";
+import type { SpacingToken, Align, Justify } from "./types";
 
 type Prop = "align" | "justify" | "spacing";
 

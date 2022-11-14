@@ -12,7 +12,7 @@ import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentC
 import mq from "../../utils/mediaQuery";
 import createRel from "./common/createRel";
 import onKeyDown from "../../utils/handleKeyDown";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const iconContainerColor = (color: string, important = true) => css`
   ${StyledButtonPrimitiveIconContainer} {

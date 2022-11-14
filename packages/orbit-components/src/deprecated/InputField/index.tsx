@@ -8,14 +8,14 @@ import DefaultFormLabel from "../../FormLabel";
 import { StyledServiceLogo } from "../../ServiceLogo";
 import { rtlSpacing } from "../../utils/rtl";
 import InputTags from "./InputTags";
-import { Translation } from "../../common/types";
+import type { Translation } from "../../common/types";
 import getSpacingToken from "../../common/getSpacingToken";
 import getFieldDataState from "../../common/getFieldDataState";
 import randomID from "../../utils/randomID";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../../utils/mediaQuery";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const FormLabel = ({
   label,

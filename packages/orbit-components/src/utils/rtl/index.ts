@@ -1,5 +1,5 @@
-import { Theme } from "../../defaultTheme";
-import { RtlSpacing, BorderRadius, Translate3d, TextAlign, LeftToRight } from "./types";
+import type { Theme } from "../../defaultTheme";
+import type { RtlSpacing, BorderRadius, Translate3d, TextAlign, LeftToRight } from "./types";
 
 const leftToRight = (left: string, right: string) => ({ theme }: { theme: Theme }) =>
   theme.rtl ? right : left;

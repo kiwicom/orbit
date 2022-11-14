@@ -9,7 +9,7 @@ import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledChild = styled.div<{ flex?: Props["flex"] }>`
   ${({ theme, flex }) => css`

@@ -2,8 +2,9 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import * as Common from "../common/types";
-import defaultTheme, { Theme } from "../defaultTheme";
+import type * as Common from "../common/types";
+import type { Theme } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import {
   TYPE_OPTIONS,
   WEIGHT_OPTIONS,
@@ -14,7 +15,7 @@ import {
 import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
 import { getLinkStyle, StyledTextLink } from "../TextLink";
-import { Props, Type, Weight } from "./types";
+import type { Props, Type, Weight } from "./types";
 
 const getTypeToken = ({ theme, type }: { theme: Theme; type: Type }): string => {
   const typeTokens = {

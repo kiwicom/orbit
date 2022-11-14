@@ -1,6 +1,6 @@
 import { TYPES } from "../../consts";
 
-import { Params } from ".";
+import type { Params } from ".";
 
 const resolveHoverColor = ({ theme, type }: Params): string => {
   if (type === TYPES.UNAVAILABLE) return "";

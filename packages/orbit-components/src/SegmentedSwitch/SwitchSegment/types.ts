@@ -1,9 +1,9 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import type * as React from "react";
 
-import { Option, Props as Properties } from "../types";
+import type { Option, Props as Properties } from "../types";
 
 export interface Props extends Option {
   readonly onChange: Properties["onChange"];

@@ -1,7 +1,7 @@
 import { TOKENS } from "../consts";
 import getSocialButtonTypeToken from "./getSocialButtonTypeToken";
-import { Theme } from "../../defaultTheme";
-import { Type } from "../types";
+import type { Theme } from "../../defaultTheme";
+import type { Type } from "../types";
 
 const getSocialButtonIconForeground = ({
   theme,

@@ -8,10 +8,11 @@ import Stack from "../Stack";
 import Text from "../Text";
 import useTheme from "../hooks/useTheme";
 import WizardStepIcon, { StyledStepIconContainer } from "./WizardStepIcon";
-import { WizardStepContext, Status } from "./WizardContext";
+import type { Status } from "./WizardContext";
+import { WizardStepContext } from "./WizardContext";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
-import { WizardStepProps } from "./types";
+import type { WizardStepProps } from "./types";
 import { resolveStepBorder } from "./helpers";
 
 const StyledBorder = styled.div`

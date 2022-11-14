@@ -11,8 +11,8 @@ import { StyledModalSection } from "../ModalSection";
 import { left, right, rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
-import { Props } from "./types";
-import { Type } from "../../Heading/types";
+import type { Props } from "./types";
+import type { Type } from "../../Heading/types";
 
 const getModalHeading = (type: Type, token: string) => ({
   theme,

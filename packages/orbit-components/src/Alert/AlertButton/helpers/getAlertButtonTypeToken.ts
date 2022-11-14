@@ -1,8 +1,8 @@
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
-import { Type } from "../types";
-import { Theme } from "../../../defaultTheme";
+import type { Type } from "../types";
+import type { Theme } from "../../../defaultTheme";
 
 export type TokenName =
   | "backgroundButton"

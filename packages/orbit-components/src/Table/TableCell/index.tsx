@@ -1,11 +1,12 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme, { Theme } from "../../defaultTheme";
+import type { Theme } from "../../defaultTheme";
+import defaultTheme from "../../defaultTheme";
 import { ALIGN_OPTIONS } from "./consts";
 import { TYPE_AS } from "../consts";
 import { textAlign } from "../../utils/rtl";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 interface StyledProps extends Partial<Props> {
   theme: Theme;

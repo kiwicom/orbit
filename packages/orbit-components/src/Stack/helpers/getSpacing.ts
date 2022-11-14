@@ -1,5 +1,5 @@
 import { SPACINGS } from "../../utils/layout/consts";
-import { Theme } from "../../defaultTheme";
+import type { Theme } from "../../defaultTheme";
 
 const getSpacing = (theme: Theme): Record<string, string> => ({
   [SPACINGS.NONE]: "",

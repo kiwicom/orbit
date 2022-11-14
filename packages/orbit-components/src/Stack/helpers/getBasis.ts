@@ -1,5 +1,5 @@
-import { Basis } from "../types";
-import { Theme } from "../../defaultTheme";
+import type { Basis } from "../types";
+import type { Theme } from "../../defaultTheme";
 
 const getBasis = (basis: Basis) => ({ theme }: { theme: Theme }): Basis => {
   if (typeof basis === "undefined") return "";

@@ -1,7 +1,7 @@
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import { Theme } from "../../defaultTheme";
-import { Type } from "../types";
+import type { Theme } from "../../defaultTheme";
+import type { Type } from "../types";
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 
 const getButtonTypeToken = ({

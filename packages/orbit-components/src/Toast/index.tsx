@@ -1,12 +1,12 @@
 import { toast } from "react-hot-toast";
 
-import {
+import type {
+  createToast as createToastType,
+  createToastPromise as createToastPromiseType,
   Props,
   Placement,
   Options,
   Toast,
-  createToast as createToastType,
-  createToastPromise as createToastPromiseType,
 } from "./types";
 import ToastRoot from "./ToastRoot";
 

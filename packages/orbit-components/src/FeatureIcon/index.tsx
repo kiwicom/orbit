@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { baseURL } from "./consts";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const baseSize = 52;
 

@@ -1,5 +1,6 @@
 import * as React from "react";
-import styled, { css, FlattenSimpleInterpolation } from "styled-components";
+import type { FlattenSimpleInterpolation } from "styled-components";
+import styled, { css } from "styled-components";
 
 import { left, rtlSpacing } from "../utils/rtl";
 import mq from "../utils/mediaQuery";
@@ -8,7 +9,7 @@ import defaultTheme from "../defaultTheme";
 import { SPACINGS } from "../utils/layout/consts";
 import getSpacing from "../Stack/helpers/getSpacing";
 import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledLinkList = styled.ul<{
   $indent?: Props["indent"];

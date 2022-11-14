@@ -1,8 +1,8 @@
 import { css } from "styled-components";
 
-import { Theme } from "../../defaultTheme";
+import type { Theme } from "../../defaultTheme";
 import { QUERIES } from "./consts";
-import { MediaQueries, Devices, BreakpointToken } from "./types";
+import type { MediaQueries, Devices, BreakpointToken } from "./types";
 
 export const TOKEN = {
   mediumMobile: "widthBreakpointMediumMobile",

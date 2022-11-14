@@ -1,8 +1,8 @@
 import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
-import { Type } from "../types";
-import { Theme } from "../../defaultTheme";
-import { IconForeground } from "../../primitives/ButtonPrimitive/types";
+import type { Type } from "../types";
+import type { Theme } from "../../defaultTheme";
+import type { IconForeground } from "../../primitives/ButtonPrimitive/types";
 
 type getButtonLinkIconForegroundType = ({
   type,

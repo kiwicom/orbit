@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const getHeight = (theme, size) => {
   const tokens = {

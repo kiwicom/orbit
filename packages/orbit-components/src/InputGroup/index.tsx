@@ -13,7 +13,7 @@ import useRandomId, { useRandomIdSeed } from "../hooks/useRandomId";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const getToken = (name: string) => ({
   theme,

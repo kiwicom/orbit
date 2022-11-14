@@ -1,9 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import transition, { TransitionDuration } from "../transition";
+import type { TransitionDuration } from "../transition";
+import transition from "../transition";
 import defaultTheme from "../../defaultTheme";
-import { Props, State } from "./types";
+import type { Props, State } from "./types";
 
 const getMaxHeight = ({ maxHeight }) => {
   if (maxHeight === 0) return `0px`;

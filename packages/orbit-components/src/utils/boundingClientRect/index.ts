@@ -1,4 +1,4 @@
-import React from "react";
+import type * as React from "react";
 
 export interface Dimensions {
   top: number;

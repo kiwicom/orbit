@@ -1,6 +1,6 @@
-import React from "react";
+import type * as React from "react";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 
 /** DOCS:
   To implement the Itinerary component into your project you'll need to add the import:

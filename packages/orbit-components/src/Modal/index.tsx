@@ -18,7 +18,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import usePrevious from "../hooks/usePrevious";
 import useLockScrolling from "../hooks/useLockScrolling";
-import { Instance, Props } from "./types";
+import type { Instance, Props } from "./types";
 
 const getSizeToken = ({ size, theme }: { size: Props["size"]; theme: typeof defaultTheme }) => {
   const tokens = {

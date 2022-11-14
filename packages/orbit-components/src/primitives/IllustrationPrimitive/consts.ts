@@ -1,4 +1,4 @@
-import { Size } from "./types";
+import type { Size } from "./types";
 
 type SizeKeys = "EXTRASMALL" | "SMALL" | "MEDIUM" | "LARGE" | "DISPLAY";
 

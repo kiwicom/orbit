@@ -1,7 +1,7 @@
 import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
-import { Type } from "../types";
-import { Theme } from "../../defaultTheme";
+import type { Type } from "../types";
+import type { Theme } from "../../defaultTheme";
 
 interface ButtonLinkStyles {
   background?: string;

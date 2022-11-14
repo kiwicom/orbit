@@ -3,7 +3,7 @@ import React from "react";
 
 import { CardElement } from "../../../Card/helpers/mixins";
 import { getBorder, getBorderRadius } from "../../../Card/helpers/borders";
-import { Props } from "./types";
+import type { Props } from "./types";
 import defaultTheme from "../../../defaultTheme";
 
 const StyledAccordionWrapper = styled.div<{ expanded?: boolean }>`

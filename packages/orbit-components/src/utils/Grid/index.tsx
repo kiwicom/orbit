@@ -6,7 +6,7 @@ import mediaQueries from "../mediaQuery";
 import { DEVICES } from "../mediaQuery/consts";
 import getViewportGridStyles from "./helpers/getViewportGridStyles";
 import { isDefined } from "../layout";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledGrid = styled.div<Props>`
   ${({ theme, ...props }) =>

@@ -7,7 +7,7 @@ import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
 import defaultTheme from "../../../defaultTheme";
 import Header from "../../components/Header";
-import { As } from "../../../Heading/types";
+import type { As } from "../../../Heading/types";
 
 const StyledCardSectionHeader = styled.div<{
   expandable?: boolean;

@@ -8,7 +8,7 @@ import StyledText from "../primitives/StyledText";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
 import defaultTheme from "../../../defaultTheme";
-import { Props as StepProps, Type } from "../types";
+import type { Props as StepProps, Type } from "../types";
 
 const StyledDescription = styled.div<{ active?: boolean }>`
   ${({ theme, active }) => css`

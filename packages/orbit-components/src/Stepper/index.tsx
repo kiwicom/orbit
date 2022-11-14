@@ -4,7 +4,7 @@ import StepperStateless from "./StepperStateless";
 import validateIncrement from "../utils/validateIncrement";
 import validateDecrement from "../utils/validateDecrement";
 import useStateWithCallback from "../hooks/useStateWithCallback";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const Stepper = ({ onChange, defaultValue = 0, maxWidth = 108, ...props }: Props) => {
   const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);

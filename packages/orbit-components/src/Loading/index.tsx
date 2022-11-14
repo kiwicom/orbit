@@ -4,7 +4,7 @@ import styled, { keyframes, css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import TYPE_OPTIONS from "./consts";
 import { left, right } from "../utils/rtl";
-import { Props, Type } from "./types";
+import type { Props, Type } from "./types";
 
 const getHeight = ({
   type,

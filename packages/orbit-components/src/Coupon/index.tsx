@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledCoupon = styled.mark`
   ${({ theme }) => css`

@@ -1,7 +1,7 @@
-import * as React from "react";
+import type * as React from "react";
 
-import * as Common from "../../../common/types";
-import { As } from "../../../Heading/types";
+import type * as Common from "../../../common/types";
+import type { As } from "../../../Heading/types";
 
 export interface Props {
   description?: React.ReactNode;

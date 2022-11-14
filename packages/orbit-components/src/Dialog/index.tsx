@@ -14,7 +14,7 @@ import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import KEY_CODE_MAP from "../common/keyMaps";
 import useRandomId from "../hooks/useRandomId";
 import { left } from "../utils/rtl";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledDialog = styled.div`
   ${({ theme }) => css`

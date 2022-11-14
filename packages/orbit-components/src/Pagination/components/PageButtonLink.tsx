@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import * as Common from "../../common/types";
+import type * as Common from "../../common/types";
 import ButtonLink from "../../ButtonLink";
-import { OnPageChange } from "../types";
+import type { OnPageChange } from "../types";
 
 export interface Props {
   children: number;

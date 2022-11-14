@@ -10,7 +10,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
 import media from "../utils/mediaQuery";
 import { defaultFocus } from "../utils/common";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 interface StyledInputProps extends Props {
   error: boolean;

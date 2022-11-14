@@ -4,7 +4,7 @@ import { boolean, text, select } from "@storybook/addon-knobs";
 import { ALIGN_OPTIONS, ALIGN_V_OPTIONS, WHITE_SPACE } from "./TableCell/consts";
 import { TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { VerticalAlign } from "./TableCell/types";
+import type { VerticalAlign } from "./TableCell/types";
 
 import Table, { TableFooter, TableHead, TableBody, TableRow, TableCell } from ".";
 

@@ -1,5 +1,5 @@
-import { Props } from "../types";
-import { Devices } from "../../utils/mediaQuery/types";
+import type { Props } from "../types";
+import type { Devices } from "../../utils/mediaQuery/types";
 
 type GetProperty = (
   property: "spacing" | "direction",

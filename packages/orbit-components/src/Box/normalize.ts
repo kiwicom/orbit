@@ -3,7 +3,7 @@ import { TOKENS } from "../utils/layout/consts";
 import type { ThemeProps, Theme } from "../defaultTheme";
 import { firstToUpper } from "../utils/common";
 import { getJustify, getAlign, formatCSS, getDirection, getWrap, isDefined } from "../utils/layout";
-import { MediaQueryObject, Elevation } from "./types";
+import type { MediaQueryObject, Elevation } from "./types";
 
 const normalizeSpacing = (el, property, theme: Theme): string[] => {
   if (typeof el === "object") {

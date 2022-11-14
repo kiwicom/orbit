@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { warning } from "@adeira/js";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import defaultTheme, { Theme } from "../defaultTheme";
+import type { Theme } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import { baseURL, CODES, SIZES, TOKENS } from "./consts";
-import { Props, Size } from "./types";
+import type { Props, Size } from "./types";
 
 const getSizeToken = (name: string) => ({ theme, size }: { theme: Theme; size: Size }) => {
   const tokens = {

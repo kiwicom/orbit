@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import useDictionary from "../useDictionary";
 import { pureTranslate } from "../../Translate";
-import { Values } from "../../Translate/types";
+import type { Values } from "../../Translate/types";
 
 type UseTranslateFunction = (key: string, values?: Values) => string;
 

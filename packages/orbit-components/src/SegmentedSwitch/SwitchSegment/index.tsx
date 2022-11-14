@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import useClickOutside from "../../hooks/useClickOutside";
 import defaultTheme from "../../defaultTheme";
 import { defaultFocus } from "../../utils/common";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 export const StyledLabel = styled.label`
   display: flex;

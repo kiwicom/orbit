@@ -1,7 +1,8 @@
-import { css, FlattenSimpleInterpolation } from "styled-components";
-import { Placement } from "@popperjs/core/lib/enums";
+import type { FlattenSimpleInterpolation } from "styled-components";
+import { css } from "styled-components";
+import type { Placement } from "@popperjs/core/lib/enums";
 
-import { Theme } from "../../../defaultTheme";
+import type { Theme } from "../../../defaultTheme";
 
 const BORDER_SIZE = 6;
 

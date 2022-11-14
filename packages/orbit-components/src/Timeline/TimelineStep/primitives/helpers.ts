@@ -1,5 +1,5 @@
-import { Type } from "../types";
-import defaultTheme from "../../../defaultTheme";
+import type { Type } from "../types";
+import type defaultTheme from "../../../defaultTheme";
 
 export const renderStatus = (type: Type, theme: typeof defaultTheme): string => {
   if (type === "success") return theme.orbit.colorTextSuccess;

@@ -1,9 +1,9 @@
-import * as React from "react";
+import type * as React from "react";
 
 import { rtlSpacing } from "../../../utils/rtl";
 import { SIZE_OPTIONS, TOKENS } from "./consts";
-import { Size } from "../types";
-import { Theme } from "../../../defaultTheme";
+import type { Size } from "../types";
+import type { Theme } from "../../../defaultTheme";
 
 const getSpacing = (
   onlyIcon: boolean,

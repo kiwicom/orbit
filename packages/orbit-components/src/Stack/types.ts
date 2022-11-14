@@ -1,10 +1,10 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import type * as React from "react";
 
-import { Theme } from "../defaultTheme";
-import * as Common from "../common/types";
+import type { Theme } from "../defaultTheme";
+import type * as Common from "../common/types";
 
 export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
 export type Align = "start" | "end" | "center" | "stretch" | "baseline";

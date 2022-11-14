@@ -6,7 +6,7 @@ import Stack from "../../../Stack";
 import StyledProgressLine from "../primitives/StyledProgressLine";
 import TypeIcon from "./TypeIcon";
 import StyledText from "../primitives/StyledText";
-import { Props as StepProps, Type } from "../types";
+import type { Props as StepProps, Type } from "../types";
 
 interface Props extends StepProps {
   last: boolean;

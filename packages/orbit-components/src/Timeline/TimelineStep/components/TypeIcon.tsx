@@ -5,7 +5,7 @@ import Circle from "../../../icons/CircleEmpty";
 import AlertCircle from "../../../icons/AlertCircle";
 import CloseCircle from "../../../icons/CloseCircle";
 import StyledIconWrapper from "../primitives/StyledIconWrapper";
-import { Type } from "../types";
+import type { Type } from "../types";
 
 const getTypeIcon = ({ type, active }: { type?: Type; active: boolean }) => {
   if (type === "success" && active)

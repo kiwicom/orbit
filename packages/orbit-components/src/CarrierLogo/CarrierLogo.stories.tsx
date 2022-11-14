@@ -3,7 +3,7 @@ import { object, select, text } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { Carrier } from "./types";
+import type { Carrier } from "./types";
 
 import CarrierLogo from ".";
 

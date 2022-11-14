@@ -1,8 +1,9 @@
-import { css, FlattenInterpolation, ThemeProps } from "styled-components";
+import type { FlattenInterpolation, ThemeProps } from "styled-components";
+import { css } from "styled-components";
 
 import mq from "../../utils/mediaQuery";
 import POSITIONS from "../consts";
-import { Theme } from "../../defaultTheme";
+import type { Theme } from "../../defaultTheme";
 
 const computedWidth = (width: string, isPrefixed: boolean) => `${isPrefixed ? "-" : ""}${width}`;
 

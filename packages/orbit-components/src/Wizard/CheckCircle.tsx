@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import createIcon from "../Icon/createIcon";
-import { Props } from "../Icon/types";
+import type { Props } from "../Icon/types";
 
 /** modified version of Orbit's CheckCircle icon, so that we can make the checkmark white instead being a hole */
 

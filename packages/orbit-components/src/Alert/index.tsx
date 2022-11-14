@@ -2,10 +2,11 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import { Props as IconProps } from "../Icon/types";
-import * as Common from "../common/types";
-import { Type, Props } from "./types";
-import defaultTheme, { Theme } from "../defaultTheme";
+import type { Props as IconProps } from "../Icon/types";
+import type * as Common from "../common/types";
+import type { Type, Props } from "./types";
+import type { Theme } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import InformationCircle from "../icons/InformationCircle";
 import Check from "../icons/Check";
 import AlertTriangle from "../icons/Alert";

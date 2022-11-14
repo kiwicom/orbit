@@ -1,7 +1,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/types";
+import type { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/types";
 
 export type Type = "apple" | "facebook" | "google" | "twitter" | "email";
 

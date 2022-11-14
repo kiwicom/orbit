@@ -3,7 +3,7 @@ import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import defaultTheme from "../../../defaultTheme";
 import { renderStatus } from "./helpers";
-import { Type } from "../types";
+import type { Type } from "../types";
 
 const pulseAnimation = keyframes`
   0% {

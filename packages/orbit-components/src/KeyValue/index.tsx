@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import { SPACINGS } from "../utils/layout/consts";
 import Text from "../Text";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const getSpacing = ({ theme }) => ({
   [SPACINGS.XXXSMALL]: theme.orbit.spaceXXXSmall,

@@ -2,8 +2,8 @@ import getSocialButtonTypeToken from "./getSocialButtonTypeToken";
 import getSocialButtonBoxShadow from "./getSocialButtonBoxShadow";
 import { TOKENS } from "../consts";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
-import { Theme } from "../../defaultTheme";
-import { Type } from "../types";
+import type { Theme } from "../../defaultTheme";
+import type { Type } from "../types";
 
 interface Output {
   background: string;

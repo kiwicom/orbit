@@ -24,6 +24,3 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly onFocus?: Event;
   readonly onBlur?: Event;
 }
-
-declare const InputGroup: React.ForwardRefRenderFunction<HTMLDivElement, Props>;
-export { InputGroup, InputGroup as default };

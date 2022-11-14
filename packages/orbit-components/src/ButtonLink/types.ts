@@ -13,6 +13,3 @@ export interface Props extends Common.Globals, Common.Ref, Common.SpaceAfter, Bu
   readonly type?: Type;
   readonly size?: Size;
 }
-
-declare const ButtonLink: React.FunctionComponent<Props>;
-export { ButtonLink, ButtonLink as default };

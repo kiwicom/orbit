@@ -1,8 +1,6 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/airportillustration/
 */
-import * as React from "react";
-
 import * as Common from "../common/types";
 
 type Name =
@@ -18,6 +16,3 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly name: Name;
   readonly alt?: string;
 }
-
-declare const AirportIllustration: React.FunctionComponent<Props>;
-export { AirportIllustration, AirportIllustration as default };

@@ -1,7 +1,5 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-import { AnyStyledComponent } from "styled-components";
-
 import { SharedProps } from "../types";
 
 export type Align = "left" | "center" | "right";
@@ -17,7 +15,3 @@ export interface Props extends SharedProps {
   readonly whiteSpace?: WhiteSpace;
   readonly verticalAlign?: VerticalAlign;
 }
-
-declare const StyledTableCell: AnyStyledComponent;
-declare const TableCell: React.FunctionComponent<Props>;
-export { TableCell, StyledTableCell, TableCell as default };

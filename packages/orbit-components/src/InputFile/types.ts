@@ -27,6 +27,3 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly insideInputGroup?: boolean;
   readonly onRemoveFile?: Common.Callback;
 }
-
-declare const InputFile: React.ForwardRefRenderFunction<HTMLInputElement, Props>;
-export { InputFile, InputFile as default };

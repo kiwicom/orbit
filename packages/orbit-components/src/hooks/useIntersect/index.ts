@@ -1,8 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-import UseIntersect from "./types";
+type UseIntersect = (
+  intersect?: IntersectionObserverInit,
+) => {
+  ref: (el: Element | null) => void;
+  entry: IntersectionObserverEntry | null;
+  observer: IntersectionObserver | null;
+};
 
-const useIntersect: typeof UseIntersect = ({ root = null, rootMargin, threshold = 0 } = {}) => {
+const useIntersect: UseIntersect = ({ root = null, rootMargin, threshold = 0 } = {}) => {
   const [entry, updateEntry] = useState<IntersectionObserverEntry | null>(null);
   const [node, setNode] = useState<Element | null>(null);
 

@@ -23,7 +23,7 @@ const getChildrenMargin = ({
   index: number;
   devices: Devices[];
 }) => (props: Props): FlattenInterpolation<ThemeProps<any>> | null => {
-  if (props[viewport] || viewport === QUERIES.desktop) {
+  if (props[viewport] || viewport === QUERIES.DESKTOP) {
     const spacing = getProperty("spacing", { index, devices }, props);
     if (spacing === SPACINGS.NONE) return null;
     const direction = getProperty("direction", { index, devices }, props) as Direction;

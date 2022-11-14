@@ -15,7 +15,7 @@ import Histogram from "./components/Histogram";
 import defaultTheme, { ThemeProps } from "../defaultTheme";
 import mq from "../utils/mediaQuery";
 import boundingClientRect from "../utils/boundingClientRect";
-import { State, Callback as SliderCallback, Props, Value } from "./types";
+import { State, Callback as SliderCallback, Props, Value, Label, Data } from "./types";
 
 const StyledSlider = styled.div`
   position: relative;
@@ -562,4 +562,4 @@ const ThemedSlider: any = withTheme(PureSlider);
 ThemedSlider.displayName = "Slider";
 export default ThemedSlider;
 
-export { Props, State };
+export { Props, State, Value, SliderCallback as Callback, Data, Label };

@@ -7,7 +7,7 @@ import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
 import { DEVICES } from "../utils/mediaQuery/consts";
-import { Props, Type } from "./types";
+import { Props, Type, As } from "./types";
 
 export const getHeadingToken = (name: string, type: Type) => ({ theme }: { theme: Theme }) => {
   const tokens = {
@@ -119,4 +119,4 @@ const Heading = ({
 };
 
 export default Heading;
-export { Props };
+export { Props, Type, As };

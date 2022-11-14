@@ -286,3 +286,4 @@ const ErrorFormTooltip = ({
 };
 
 export default ErrorFormTooltip;
+export { Props };

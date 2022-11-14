@@ -54,3 +54,4 @@ const Grid = ({
 };
 
 export default Grid;
+export { Props };

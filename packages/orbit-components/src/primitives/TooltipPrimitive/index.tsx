@@ -147,3 +147,4 @@ const TooltipPrimitive = ({
 };
 
 export default TooltipPrimitive;
+export { Props };

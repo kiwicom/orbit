@@ -57,3 +57,4 @@ const Inline = ({
 };
 
 export default Inline;
+export { Props };

@@ -213,3 +213,4 @@ const Loading = ({
 Loading.displayName = "Loading";
 
 export default Loading;
+export { Props, Type };

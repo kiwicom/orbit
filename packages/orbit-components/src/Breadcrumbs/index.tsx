@@ -101,3 +101,4 @@ const Breadcrumbs = (props: Props) => {
 export default Breadcrumbs;
 
 export { default as BreadcrumbsItem } from "./BreadcrumbsItem";
+export { Props };

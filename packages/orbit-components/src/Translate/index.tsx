@@ -21,3 +21,4 @@ const Translate = ({ tKey, values }: Props): JSX.Element => {
 };
 
 export default Translate;
+export { Props, PureTranslate };

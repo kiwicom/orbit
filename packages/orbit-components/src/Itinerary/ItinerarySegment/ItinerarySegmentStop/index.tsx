@@ -167,3 +167,4 @@ const ItinerarySegmentStop = ({
 };
 
 export default ItinerarySegmentStop;
+export { Props };

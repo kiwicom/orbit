@@ -130,3 +130,4 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
 };
 
 export default SkipNavigation;
+export { Props };

@@ -22,3 +22,4 @@ const Hide = ({ on = [], block, children }: Props) => (
 );
 
 export default Hide;
+export { Props };

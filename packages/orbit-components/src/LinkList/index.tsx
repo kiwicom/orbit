@@ -118,3 +118,4 @@ const LinkList = ({
 );
 
 export default LinkList;
+export { Props };

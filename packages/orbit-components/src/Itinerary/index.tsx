@@ -40,4 +40,6 @@ export {
   ItineraryBadgeListItem,
   ItineraryStatus,
 };
+
 export default Itinerary;
+export { Props };

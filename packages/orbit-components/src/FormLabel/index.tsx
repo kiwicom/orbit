@@ -88,3 +88,4 @@ FormLabel.defaultProps = {
 };
 
 export default FormLabel;
+export { Props };

@@ -119,3 +119,4 @@ const Heading = ({
 };
 
 export default Heading;
+export { Props };

@@ -81,3 +81,4 @@ const Tile = ({
 };
 
 export default Tile;
+export { Props };

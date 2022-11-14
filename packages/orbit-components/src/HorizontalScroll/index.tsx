@@ -277,3 +277,4 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
 );
 
 export default HorizontalScroll;
+export { Props, ScrollSnap };

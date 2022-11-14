@@ -8,3 +8,4 @@ const Desktop = ({ children }: Props) => (
 );
 
 export default Desktop;
+export { Props };

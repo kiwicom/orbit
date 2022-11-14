@@ -126,3 +126,4 @@ const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
 };
 
 export default ModalFooter;
+export { Props };

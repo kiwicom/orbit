@@ -1,5 +1,5 @@
 import { Theme } from "../../defaultTheme";
-import { RtlSpacing, BorderRadius, Translate3d } from "./types";
+import { RtlSpacing, BorderRadius, Translate3d, TextAlign, LeftToRight } from "./types";
 
 const leftToRight = (left: string, right: string) => ({ theme }: { theme: Theme }) =>
   theme.rtl ? right : left;
@@ -44,3 +44,5 @@ export const translate3d: Translate3d = value => ({ theme }: { theme: Theme }) =
   const newX = x[0] === "-" ? x.slice(1) : `-${x}`;
   return `translate3d(${newX},${parts[1]},${parts[2]})`;
 };
+
+export { RtlSpacing, BorderRadius, Translate3d, TextAlign, LeftToRight };

@@ -257,3 +257,4 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
 ButtonPrimitive.displayName = "ButtonPrimitive";
 
 export default ButtonPrimitive;
+export { Props };

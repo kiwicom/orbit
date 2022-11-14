@@ -101,3 +101,4 @@ const ModalSection = ({ children, suppressed, dataTest }: Props) => {
 };
 
 export default ModalSection;
+export { Props };

@@ -130,3 +130,4 @@ const Card = ({
 
 export default Card;
 export { default as CardSection } from "./CardSection";
+export { Props };

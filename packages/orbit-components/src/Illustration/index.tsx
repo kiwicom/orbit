@@ -9,3 +9,4 @@ const Illustration = ({ size = SIZE_OPTIONS.MEDIUM, ...props }: Props) => (
 );
 
 export default Illustration;
+export { Props };

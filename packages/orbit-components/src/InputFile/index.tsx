@@ -216,3 +216,4 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 InputFile.displayName = "InputFile";
 
 export default InputFile;
+export { Props };

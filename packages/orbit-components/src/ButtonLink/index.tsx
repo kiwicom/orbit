@@ -7,7 +7,7 @@ import getIconContainer from "../primitives/ButtonPrimitive/common/getIconContai
 import getButtonLinkStyles from "./helpers/getButtonLinkStyles";
 import getButtonLinkIconForeground from "./helpers/getButtonLinkIconForeground";
 import getButtonLinkCommonProps from "./helpers/getButtonLinkCommonProps";
-import { Props } from "./types";
+import { Props, Type } from "./types";
 
 const ButtonLink = React.forwardRef<HTMLButtonElement, Props>(
   ({ type = TYPES.PRIMARY, size, compact = false, ...props }, ref) => {
@@ -29,3 +29,4 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, Props>(
 ButtonLink.displayName = "ButtonLink";
 
 export default ButtonLink;
+export { Props, Type };

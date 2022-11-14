@@ -561,3 +561,5 @@ export class PureSlider extends React.PureComponent<SliderProps, State> {
 const ThemedSlider: any = withTheme(PureSlider);
 ThemedSlider.displayName = "Slider";
 export default ThemedSlider;
+
+export { Props, State };

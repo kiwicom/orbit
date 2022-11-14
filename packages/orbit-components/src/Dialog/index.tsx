@@ -201,3 +201,4 @@ const Dialog = ({
 };
 
 export default Dialog;
+export { Props };

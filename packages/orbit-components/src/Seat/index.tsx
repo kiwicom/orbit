@@ -147,3 +147,4 @@ const Seat = ({
 
 export { SeatLegend };
 export default Seat;
+export { Props, Type, Size };

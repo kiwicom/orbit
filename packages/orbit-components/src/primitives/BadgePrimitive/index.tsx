@@ -102,3 +102,4 @@ const BadgePrimitive = ({
 };
 
 export default BadgePrimitive;
+export { Props };

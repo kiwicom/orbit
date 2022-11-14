@@ -99,3 +99,4 @@ const BreadcrumbsItem = ({
 };
 
 export default BreadcrumbsItem;
+export { Props };

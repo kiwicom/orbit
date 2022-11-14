@@ -29,3 +29,4 @@ const Truncate = ({ children, maxWidth = "100%", dataTest }: Props) => (
 );
 
 export default Truncate;
+export { Props };

@@ -67,3 +67,4 @@ const BaggageStepper = ({ onChange, defaultValue = 0, ...props }: Props) => {
 };
 
 export default BaggageStepper;
+export { Props };

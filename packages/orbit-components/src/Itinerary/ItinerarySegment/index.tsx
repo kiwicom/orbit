@@ -100,3 +100,4 @@ const ItinerarySegment = ({
 };
 
 export default ItinerarySegment;
+export { Props };

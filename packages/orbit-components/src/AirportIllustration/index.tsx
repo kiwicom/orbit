@@ -9,3 +9,4 @@ const AirportIllustration = ({ size = SIZE_OPTIONS.MEDIUM, ...props }: Props) =>
 );
 
 export default AirportIllustration;
+export { Props };

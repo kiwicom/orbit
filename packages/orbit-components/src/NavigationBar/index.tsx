@@ -117,3 +117,4 @@ const NavigationBar = ({
 };
 
 export default NavigationBar;
+export { Props };

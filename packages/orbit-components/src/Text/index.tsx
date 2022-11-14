@@ -137,3 +137,4 @@ const Text = ({
 };
 
 export default Text;
+export { Props, Type, Weight };

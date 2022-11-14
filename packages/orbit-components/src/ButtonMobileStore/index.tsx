@@ -53,3 +53,4 @@ const ButtonMobileStore = ({
 };
 
 export default ButtonMobileStore;
+export { Props, Type };

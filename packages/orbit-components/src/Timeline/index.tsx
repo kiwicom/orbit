@@ -52,3 +52,4 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
 
 export default Timeline;
 export { default as TimelineStep } from "./TimelineStep";
+export { Props };

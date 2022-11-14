@@ -25,3 +25,5 @@ export default function ClickOutside({ children, onClickOutside }: Props) {
 
   return <InnerStyled ref={ref}>{children}</InnerStyled>;
 }
+
+export { Props };

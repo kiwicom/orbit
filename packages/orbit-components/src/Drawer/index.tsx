@@ -259,3 +259,4 @@ const Drawer = ({
 };
 
 export default Drawer;
+export { Props };

@@ -130,3 +130,4 @@ const ListChoice = ({
 };
 
 export default ListChoice;
+export { Props };

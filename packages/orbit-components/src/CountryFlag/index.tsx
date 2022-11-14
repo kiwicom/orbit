@@ -100,3 +100,4 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props) => 
 };
 
 export default CountryFlag;
+export { Props, Size };

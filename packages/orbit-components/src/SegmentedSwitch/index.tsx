@@ -109,3 +109,4 @@ const SegmentedSwitch = ({
 };
 
 export default SegmentedSwitch;
+export { Props };

@@ -172,3 +172,4 @@ const Wizard = ({
 
 export default Wizard;
 export { WizardStep };
+export { Props, WizardStepProps };

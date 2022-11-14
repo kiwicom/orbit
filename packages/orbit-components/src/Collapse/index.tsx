@@ -139,3 +139,4 @@ const Collapse = ({
 };
 
 export default Collapse;
+export { Props };

@@ -72,3 +72,4 @@ const List = ({
 export default List;
 
 export { default as ListItem } from "./ListItem";
+export { Props };

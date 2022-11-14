@@ -141,3 +141,4 @@ const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) 
 };
 
 export default ListItem;
+export { Props };

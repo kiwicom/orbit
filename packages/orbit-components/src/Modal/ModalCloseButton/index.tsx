@@ -21,3 +21,4 @@ const ModalCloseButton = ({ onClick, dataTest }: Props) => {
 };
 
 export default ModalCloseButton;
+export { Props };

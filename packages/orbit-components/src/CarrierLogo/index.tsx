@@ -114,3 +114,4 @@ const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest, id, rounde
   </StyledCarrierLogo>
 );
 export default CarrierLogo;
+export { Props, CarrierType, Size, Carrier };

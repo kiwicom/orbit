@@ -166,3 +166,4 @@ class Slide extends React.Component<Props, State> {
 }
 
 export default Slide;
+export { Props, State };

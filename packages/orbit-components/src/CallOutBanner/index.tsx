@@ -87,3 +87,4 @@ const CallOutBanner = ({
 );
 
 export default CallOutBanner;
+export { Props };

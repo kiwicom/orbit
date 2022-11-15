@@ -3,10 +3,12 @@ import styled, { css } from "styled-components";
 
 import type { Theme } from "../defaultTheme";
 import defaultTheme from "../defaultTheme";
+import { left } from "../utils/rtl";
 import { SIZE_OPTIONS, BASE_URL } from "./consts";
 import type { Props, CarrierType, Size, Carrier } from "./types";
 
 interface StyledProps {
+  inlineStacked: boolean;
   rounded?: boolean;
   carrierType?: CarrierType;
   carriersLength: number;
@@ -24,9 +26,9 @@ const getRenderSize = ({ theme, size }) => {
   return renderSizes[size];
 };
 
-const getCarrierLogoSize = ({ theme, carriersLength, size }) => {
+const getCarrierLogoSize = ({ theme, carriersLength, size, inlineStacked }) => {
   const defaultSizes =
-    carriersLength > 1
+    carriersLength > 1 && !inlineStacked
       ? getRenderSize({ theme, size: SIZE_OPTIONS.SMALL })
       : getRenderSize({ theme, size });
 
@@ -53,22 +55,32 @@ const getURLSizes = ({ size }) => {
 };
 
 const StyledImage = styled.img.attrs<StyledProps>(
-  ({ carrierType = "airline", carriersLength, size, code }) => {
+  ({ carrierType = "airline", carriersLength, size, code, inlineStacked }) => {
     const urlSizes =
-      carriersLength > 1 ? getURLSizes({ size: SIZE_OPTIONS.SMALL }) : getURLSizes({ size });
+      carriersLength > 1 && !inlineStacked
+        ? getURLSizes({ size: SIZE_OPTIONS.SMALL })
+        : getURLSizes({ size });
+
     return {
       src: `${BASE_URL}/airlines/${urlSizes.base}x${urlSizes.base}/${code}.png?default=${carrierType}.png`,
       srcSet: `${BASE_URL}/airlines/${urlSizes.retina}x${urlSizes.retina}/${code}.png?default=${carrierType}.png 2x`,
     };
   },
 )`
-  ${({ theme, rounded }: StyledProps) => css`
+  ${({ theme, rounded, inlineStacked }: StyledProps) => css`
     background-color: ${theme.orbit.backgroundCarrierLogo};
     border-radius: ${rounded ? theme.orbit.borderRadiusCircle : theme.orbit.borderRadiusNormal};
     height: ${getCarrierLogoSize};
     width: ${getCarrierLogoSize};
+    border: ${inlineStacked && `1px solid ${theme.orbit.paletteWhite}`};
+    box-shadow: ${inlineStacked && `${theme.orbit.boxShadowFixed}, ${theme.orbit.boxShadowRaised}`};
+
+    &:not(:first-child) {
+      margin-${left}: ${inlineStacked && `calc(-1 * ${theme.orbit.spaceXSmall})`};
+    }
+
     &:last-child {
-      align-self: flex-end;
+      align-self: ${!inlineStacked && "flex-end"};
     }
   `}
 `;
@@ -77,18 +89,23 @@ StyledImage.defaultProps = {
   theme: defaultTheme,
 };
 
-export const StyledCarrierLogo = styled.div<{ theme: Theme; carriers: Carrier[]; size: Size }>`
-  ${({ theme, carriers, size }) => css`
+export const StyledCarrierLogo = styled.div<{
+  theme: typeof defaultTheme;
+  carriers: Carrier[];
+  size: Size;
+  inlineStacked?: boolean;
+}>`
+  ${({ theme, carriers, size, inlineStacked }) => css`
     background-color: ${theme.orbit.backgroundCarrierLogo};
-    height: ${carriers.length > 1
+    height: ${carriers.length > 1 && !inlineStacked
       ? theme.orbit.heightIconLarge
       : `${getRenderSize({ theme, size })}px`};
     width: ${carriers.length > 1
       ? theme.orbit.widthIconLarge
       : `${getRenderSize({ theme, size })}px`};
     display: flex;
-    flex-direction: ${carriers.length > 1 ? "column" : "row"};
-    flex-wrap: ${carriers.length > 2 && "wrap"};
+    flex-direction: ${carriers.length > 1 && !inlineStacked ? "column" : "row"};
+    flex-wrap: ${carriers.length > 2 && !inlineStacked && "wrap"};
     align-content: space-between;
     justify-content: space-between;
   `}
@@ -98,8 +115,21 @@ StyledCarrierLogo.defaultProps = {
   theme: defaultTheme,
 };
 
-const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest, id, rounded }: Props) => (
-  <StyledCarrierLogo carriers={carriers} size={size} data-test={dataTest} id={id}>
+const CarrierLogo = ({
+  size = SIZE_OPTIONS.LARGE,
+  carriers,
+  dataTest,
+  id,
+  rounded,
+  inlineStacked = false,
+}: Props) => (
+  <StyledCarrierLogo
+    carriers={carriers}
+    size={size}
+    data-test={dataTest}
+    id={id}
+    inlineStacked={inlineStacked}
+  >
     {carriers.slice(0, 4).map(carrierImage => (
       <StyledImage
         key={carrierImage.code}
@@ -108,6 +138,7 @@ const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest, id, rounde
         carriersLength={carriers.length}
         code={carrierImage.code}
         size={size}
+        inlineStacked={inlineStacked}
         alt={carrierImage.name}
         title={carrierImage.name}
       />

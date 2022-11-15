@@ -70,6 +70,32 @@ export default {
           },
         ]}
       />
+      <CarrierLogo
+        inlineStacked
+        rounded
+        carriers={[
+          {
+            code: "OK",
+            type: "airline",
+            name: "Czech Airlines",
+          },
+          {
+            code: "FR",
+            type: "airline",
+            name: "Ryanair",
+          },
+          {
+            code: "TO",
+            type: "airline",
+            name: "Transavia France",
+          },
+          {
+            code: "VY",
+            type: "airline",
+            name: "Vueling",
+          },
+        ]}
+      />
     </Stack>
   ),
 };

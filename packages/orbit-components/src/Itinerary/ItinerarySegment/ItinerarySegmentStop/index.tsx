@@ -98,6 +98,7 @@ const ItinerarySegmentStop = ({
             {time && (
               <Text
                 weight="medium"
+                as="div"
                 type={cancelledTime ? textType : "primary"}
                 withBackground={!!cancelledTime}
               >
@@ -109,18 +110,19 @@ const ItinerarySegmentStop = ({
                 type={cancelledDate ? textType : "secondary"}
                 size="small"
                 align="right"
+                as="div"
                 withBackground={!!cancelledDate}
               >
                 {date}
               </Text>
             )}
             {cancelledTime && (
-              <Text type="secondary" weight="medium" strikeThrough>
+              <Text type="secondary" weight="medium" strikeThrough as="div">
                 {cancelledTime}
               </Text>
             )}
             {cancelledDate && (
-              <Text type="secondary" size="small" align="right" strikeThrough>
+              <Text type="secondary" size="small" align="right" strikeThrough as="div">
                 {cancelledDate}
               </Text>
             )}
@@ -137,6 +139,7 @@ const ItinerarySegmentStop = ({
         <Stack direction="column" shrink spacing="none">
           {hidden && hiddenCityText && <StyledHiddenCity>{hiddenCityText}</StyledHiddenCity>}
           <Text
+            as="div"
             weight="medium"
             withBackground={!!cancelledCity}
             type={cancelledCity ? textType : "primary"}
@@ -144,6 +147,7 @@ const ItinerarySegmentStop = ({
             {city}
           </Text>
           <Text
+            as="div"
             size="small"
             type={cancelledStation ? textType : "secondary"}
             withBackground={!!cancelledStation}
@@ -151,12 +155,12 @@ const ItinerarySegmentStop = ({
             {station}
           </Text>
           {cancelledCity && (
-            <Text weight="medium" strikeThrough>
+            <Text weight="medium" strikeThrough as="div">
               {cancelledCity}
             </Text>
           )}
           {cancelledStation && (
-            <Text type="secondary" size="small" strikeThrough>
+            <Text type="secondary" size="small" strikeThrough as="div">
               {cancelledStation}
             </Text>
           )}

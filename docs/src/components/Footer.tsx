@@ -107,8 +107,8 @@ export default function Footer() {
               tablet={{ direction: "row", align: "center", spacing: "XXLarge" }}
             >
               <StyledFooterLink to="/component-status/">Component status</StyledFooterLink>
-              <Dot />
-              <StyledFooterLink to="/roadmap/">Roadmap</StyledFooterLink>
+              {/* <Dot /> */}
+              {/* <StyledFooterLink to="/roadmap/">Roadmap</StyledFooterLink> */}
               <Dot />
               <StyledFooterLink to="https://kiwicom.github.io/orbit/">Storybook</StyledFooterLink>
               <Dot />

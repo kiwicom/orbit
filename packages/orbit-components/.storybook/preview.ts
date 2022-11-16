@@ -7,11 +7,11 @@ import theme from "../src/defaultTheme";
 
 const tokens = {
   smallMobile: 320,
-  [QUERIES.mediumMobile]: theme.orbit.widthBreakpointMediumMobile,
-  [QUERIES.largeMobile]: theme.orbit.widthBreakpointLargeMobile,
-  [QUERIES.tablet]: theme.orbit.widthBreakpointTablet,
-  [QUERIES.desktop]: theme.orbit.widthBreakpointDesktop,
-  [QUERIES.largeDesktop]: theme.orbit.widthBreakpointLargeDesktop,
+  [QUERIES.MEDIUMMOBILE]: theme.orbit.widthBreakpointMediumMobile,
+  [QUERIES.LARGEMOBILE]: theme.orbit.widthBreakpointLargeMobile,
+  [QUERIES.TABLET]: theme.orbit.widthBreakpointTablet,
+  [QUERIES.DESKTOP]: theme.orbit.widthBreakpointDesktop,
+  [QUERIES.LARGEDESKTOP]: theme.orbit.widthBreakpointLargeDesktop,
 };
 
 const viewports = Object.entries(tokens).reduce((acc, [viewport, width]) => {

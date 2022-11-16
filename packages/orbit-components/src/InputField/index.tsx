@@ -251,6 +251,8 @@ Suffix.defaultProps = {
 interface StyledInputProps extends Partial<Props> {
   min: number;
   max: number;
+  autoCorrect: string;
+  autoCapitalize: string;
   ariaLabelledby?: string;
 }
 
@@ -500,6 +502,8 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             ariaLabelledby={!label ? inputId : undefined}
             inlineLabel={inlineLabel}
             readOnly={readOnly}
+            autoCapitalize="off"
+            autoCorrect="off"
             autoComplete={autoComplete}
             autoFocus={autoFocus}
             id={inputId}

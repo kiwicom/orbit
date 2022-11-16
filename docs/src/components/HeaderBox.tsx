@@ -7,7 +7,7 @@ const HeaderBox = styled.div`
   display: block;
   border-radius: 24px;
   width: 100%;
-  max-width: ${MAX_CONTENT_WIDTH};
+  max-width: calc(${MAX_CONTENT_WIDTH} - 5rem);
   max-height: 530px;
   margin: 0 auto;
 

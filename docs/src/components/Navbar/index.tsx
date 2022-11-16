@@ -44,7 +44,6 @@ const StyledWrapper = styled.header`
 const StyledInner = styled.div`
   max-width: ${MAX_CONTENT_WIDTH};
   padding: 0 ${CONTENT_PADDING};
-  box-sizing: content-box;
   height: 52px;
   margin: 0 auto;
   display: flex;

@@ -1,9 +1,10 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/types";
-import defaultTheme, { Theme } from "../defaultTheme";
-import { Props, Type } from "./types";
+import type * as Common from "../common/types";
+import type { Theme } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
+import type { Type, Props } from "./types";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import createRel from "../primitives/ButtonPrimitive/common/createRel";
 
@@ -208,3 +209,4 @@ const TextLink = ({
 };
 
 export default TextLink;
+export { Props };

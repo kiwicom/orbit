@@ -1,9 +1,11 @@
 import { BUTTON_STATES } from "../../../primitives/ButtonPrimitive/common/consts";
-import getAlertButtonTypeToken, { TokenName } from "./getAlertButtonTypeToken";
+import type { TokenName } from "./getAlertButtonTypeToken";
+import getAlertButtonTypeToken from "./getAlertButtonTypeToken";
 import { TOKENS } from "../consts";
-import getAlertButtonBoxShadow, { State } from "./getAlertButtonBoxShadow";
-import { Theme } from "../../../defaultTheme";
-import { Type } from "../types";
+import type { State } from "./getAlertButtonBoxShadow";
+import getAlertButtonBoxShadow from "./getAlertButtonBoxShadow";
+import type { Theme } from "../../../defaultTheme";
+import type { Type } from "../types";
 
 const getAlertButtonStyles = ({
   disabled,

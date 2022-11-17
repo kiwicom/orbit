@@ -1,11 +1,11 @@
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
-import { Interpolation } from "styled-components";
+import type { Interpolation } from "styled-components";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import getButtonTypeToken from "./getButtonTypeToken";
-import { Type, ButtonStates } from "../types";
-import { Theme } from "../../defaultTheme";
+import type { Type, ButtonStates } from "../types";
+import type { Theme } from "../../defaultTheme";
 
 const opacity = {
   [TYPE_OPTIONS.PRIMARY]: 15,

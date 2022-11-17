@@ -4,7 +4,7 @@ import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import getBoxShadow from "./helpers/getBoxShadow";
 import getPadding from "../../primitives/ButtonPrimitive/common/getPadding";
 import useTheme from "../../hooks/useTheme";
-import { Props as PrimitiveProps } from "../../primitives/ButtonPrimitive/types";
+import type { Props as PrimitiveProps } from "../../primitives/ButtonPrimitive/types";
 import ButtonPrimitive from "../../primitives/ButtonPrimitive";
 import { ICON_SIZE, BUTTON_SIZE } from "./consts";
 

@@ -13,7 +13,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import useTranslate from "../hooks/useTranslate";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
-import { Props, WizardStepProps } from "./types";
+import type { Props, WizardStepProps } from "./types";
 
 const unstyledListMixin = css`
   list-style-type: none;
@@ -172,3 +172,4 @@ const Wizard = ({
 
 export default Wizard;
 export { WizardStep };
+export { Props, WizardStepProps };

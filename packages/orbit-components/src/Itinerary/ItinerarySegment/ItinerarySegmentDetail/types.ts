@@ -1,4 +1,4 @@
-import React from "react";
+import type * as React from "react";
 
 /** DOCS:
   ItineraryPartDetail serves as connection between two ItineraryPartPlace components (segments)

@@ -1,6 +1,6 @@
-import * as React from "react";
+import type * as React from "react";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 
 export interface Props extends Common.Globals {
   readonly id: string;

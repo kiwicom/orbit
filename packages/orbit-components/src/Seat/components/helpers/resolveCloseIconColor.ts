@@ -1,6 +1,6 @@
 import { TYPES } from "../../consts";
 
-import { Params } from ".";
+import type { Params } from ".";
 
 const resolveCloseIconColor = ({ type, theme, hover }: Params): string => {
   if (hover) {

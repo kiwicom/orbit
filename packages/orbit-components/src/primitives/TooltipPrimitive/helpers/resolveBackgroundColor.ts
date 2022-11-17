@@ -1,4 +1,4 @@
-import { Theme } from "../../../defaultTheme";
+import type { Theme } from "../../../defaultTheme";
 
 const backgroundColor = ({
   theme,

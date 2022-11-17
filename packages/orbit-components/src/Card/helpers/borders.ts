@@ -1,4 +1,4 @@
-import { ThemeProps } from "../../defaultTheme";
+import type { ThemeProps } from "../../defaultTheme";
 
 export const getBorder = ({ theme }: ThemeProps): string =>
   `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;

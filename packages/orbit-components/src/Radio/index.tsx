@@ -8,7 +8,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
 import media from "../utils/mediaQuery";
 import { defaultFocus } from "../utils/common";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const getBorderColor = () => ({
   theme,
@@ -235,3 +235,4 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 Radio.displayName = "Radio";
 
 export default Radio;
+export { Props };

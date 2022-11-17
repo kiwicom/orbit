@@ -2,7 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 import type { Interpolation } from "styled-components";
 
-import { QUERIES } from "./consts";
+import type { TOKEN } from ".";
 
 export type Devices =
   | "largeDesktop"
@@ -21,4 +21,4 @@ export type BreakpointToken =
 
 export type QueryFunction = (style: Interpolation<any>) => Interpolation<any>;
 
-export type MediaQueries = Record<keyof typeof QUERIES, QueryFunction>;
+export type MediaQueries = Record<keyof typeof TOKEN, QueryFunction>;

@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import Heading from "../Heading";
-import { Type } from "../Heading/types";
+import type { Type } from "../Heading/types";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
 import Feedback, { StyledFormFeedback } from "./components/Feedback";
@@ -10,7 +10,7 @@ import defaultTheme from "../defaultTheme";
 import FilterWrapper from "./components/FilterWrapper";
 import useRandomId from "../hooks/useRandomId";
 import useTheme from "../hooks/useTheme";
-import { Props, Size } from "./types";
+import type { Props, Size } from "./types";
 
 const getHeadingSize = (size: Size): Type => {
   const SIZES: Record<Size, Type> = {
@@ -131,3 +131,4 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
 );
 
 export default ChoiceGroup;
+export { Props, Size };

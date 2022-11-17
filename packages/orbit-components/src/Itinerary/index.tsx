@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 import ItinerarySegmentBanner from "./ItinerarySegment/ItinerarySegmentBanner";
 import ItineraryBadgeList, { ItineraryBadgeListItem } from "./ItineraryBadgeList";
 import ItinerarySegment from "./ItinerarySegment";
@@ -12,7 +12,7 @@ import ItinerarySegmentDetail from "./ItinerarySegment/ItinerarySegmentDetail";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import { ItineraryProvider } from "./context";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledItineraryWrapper = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
   margin-bottom: ${getSpacingToken};
@@ -40,4 +40,6 @@ export {
   ItineraryBadgeListItem,
   ItineraryStatus,
 };
+
 export default Itinerary;
+export { Props };

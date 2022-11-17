@@ -7,8 +7,8 @@ import defaultTheme from "../../defaultTheme";
 import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
 import { right } from "../../utils/rtl";
-import { Props, Type } from "./types";
-import { Props as IconProps } from "../../Icon/types";
+import type { Props, Type } from "./types";
+import type { Props as IconProps } from "../../Icon/types";
 
 const getBackground = ({ theme, $type }: { theme: typeof defaultTheme; $type?: Type }) => {
   const tokens = {
@@ -111,3 +111,4 @@ const BadgeListItem = ({
 };
 
 export default BadgeListItem;
+export { Props, Type };

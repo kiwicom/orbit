@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { StyledText } from "../Text";
 import { StyledHeading } from "../Heading";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledTruncate = styled.div<{ maxWidth?: string }>`
   ${({ maxWidth }) => `
@@ -29,3 +29,4 @@ const Truncate = ({ children, maxWidth = "100%", dataTest }: Props) => (
 );
 
 export default Truncate;
+export { Props };

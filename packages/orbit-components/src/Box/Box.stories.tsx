@@ -3,7 +3,7 @@ import { text, select, number } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { WIDTH_AND_HEIGHT } from "./consts";
-import { SpacingToken, ColorTokens } from "./types";
+import type { SpacingToken, ColorTokens } from "./types";
 
 import Box from ".";
 

@@ -1,9 +1,9 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import type * as React from "react";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 
 export type Size = "normal" | "large";
 type Element = "h2" | "h3" | "h4" | "h5" | "h6";

@@ -1,9 +1,9 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import type * as React from "react";
 
-import { TransitionDuration } from "../transition";
+import type { TransitionDuration } from "../transition";
 
 export interface State {
   maxHeight: number | null;

@@ -1,13 +1,13 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 import Stack from "../Stack";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { TimelineStatusProvider, TimelineStepContext } from "./TimelineContext";
 import getSpacingToken from "../common/getSpacingToken";
 import themeDefault from "../defaultTheme";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const WrapperStyled = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
   position: relative;
@@ -52,3 +52,4 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
 
 export default Timeline;
 export { default as TimelineStep } from "./TimelineStep";
+export { Props };

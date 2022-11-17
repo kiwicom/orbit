@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 import defaultTheme from "../defaultTheme";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
@@ -15,7 +15,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const Field = styled.label<{ $width: Props["width"]; spaceAfter?: Common.SpaceAfterSizes }>`
   ${({ theme, $width }) => css`
@@ -216,3 +216,4 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 InputFile.displayName = "InputFile";
 
 export default InputFile;
+export { Props };

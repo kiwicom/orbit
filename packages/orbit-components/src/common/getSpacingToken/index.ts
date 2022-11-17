@@ -1,5 +1,6 @@
 import SPACINGS_AFTER from "./consts";
-import { Props } from "./types";
+import type { Props } from "./types";
+import type { SpaceAfter } from "../types";
 
 const getSpacingToken = ({ spaceAfter, theme }: Props): string | undefined => {
   const tokens = {
@@ -16,3 +17,4 @@ const getSpacingToken = ({ spaceAfter, theme }: Props): string | undefined => {
 };
 
 export default getSpacingToken;
+export { Props, SpaceAfter };

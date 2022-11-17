@@ -6,7 +6,7 @@ import Close from "../../icons/Close";
 import defaultTheme from "../../defaultTheme";
 import { left } from "../../utils/rtl";
 import useTranslate from "../../hooks/useTranslate";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledDrawerClose = styled.div`
   margin-${left}: ${({ theme }) => theme.orbit.spaceMedium};

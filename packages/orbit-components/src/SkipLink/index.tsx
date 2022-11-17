@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import KEY_CODE_MAP from "../common/keyMaps";
 import defaultTheme from "../defaultTheme";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledNavigation = styled.nav``;
 
@@ -69,3 +69,4 @@ const SkipLink = ({ links, buttonLabel }: Props) => {
 };
 
 export default SkipLink;
+export { Props };

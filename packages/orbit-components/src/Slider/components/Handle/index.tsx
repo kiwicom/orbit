@@ -4,7 +4,7 @@ import styled from "styled-components";
 import transition from "../../../utils/transition";
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
-import { Value } from "../../types";
+import type { Value } from "../../types";
 
 type CalculateLeftPosition = (
   valueNow: number,

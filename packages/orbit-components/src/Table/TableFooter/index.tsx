@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import * as Common from "../../common/types";
+import type * as Common from "../../common/types";
 import defaultTheme from "../../defaultTheme";
 
 export const StyledTableFooter = styled(({ children, className, dataTest }) => (

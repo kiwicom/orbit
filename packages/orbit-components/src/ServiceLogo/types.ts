@@ -1,6 +1,6 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 
 export type Size = "small" | "medium" | "large";
 type Name =

@@ -10,7 +10,7 @@ import getGap from "./helpers/getGap";
 import shouldUseFlex from "./helpers/shouldUseFlex";
 import getChildrenMargin from "./helpers/getChildrenMargin";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
-import { Props } from "./types";
+import type { Props, Direction, Spacing, Align, Justify, Basis } from "./types";
 
 // just apply all mediaQueries
 // smallMobile - default values are not mediaQuery and needs to be rendered differently
@@ -97,4 +97,6 @@ const Stack = (props: Props) => {
     </StyledStack>
   );
 };
+
 export default Stack;
+export { Props, Direction, Spacing, Align, Justify, Basis };

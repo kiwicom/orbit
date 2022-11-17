@@ -8,7 +8,7 @@ import Stack from "../Stack";
 import SwitchSegment, { StyledText, StyledLabel } from "./SwitchSegment";
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledWrapper = styled.label<{
   $maxWidth?: Props["maxWidth"];
@@ -109,3 +109,4 @@ const SegmentedSwitch = ({
 };
 
 export default SegmentedSwitch;
+export { Props };

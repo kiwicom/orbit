@@ -9,7 +9,7 @@ import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledChild = styled.div<{ flex?: Props["flex"] }>`
   ${({ theme, flex }) => css`
@@ -39,7 +39,7 @@ export const StyledModalFooter = styled.div<{
     padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
     box-sizing: border-box;
     transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
-    @media (max-width: ${+getBreakpointWidth(QUERIES.largeMobile, theme, true) - 1}px) {
+    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
       ${StyledButtonPrimitive} {
         font-size: ${theme.orbit.fontSizeButtonNormal};
         height: ${theme.orbit.heightButtonNormal};
@@ -126,3 +126,4 @@ const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
 };
 
 export default ModalFooter;
+export { Props };

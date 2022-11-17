@@ -1,6 +1,6 @@
 import getProperty from "../getProperty";
 import theme from "../../../defaultTheme";
-import { Devices } from "../../../utils/mediaQuery/types";
+import type { Devices } from "../../../utils/mediaQuery/types";
 
 const params = {
   index: 0,

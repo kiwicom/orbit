@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import whiteListProps from "./helpers/whiteListProps";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 import OrbitIcon from ".";
 

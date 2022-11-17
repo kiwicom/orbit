@@ -1,10 +1,10 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import { Placement } from "@popperjs/core/lib/enums";
-import * as React from "react";
+import type { Placement } from "@popperjs/core/lib/enums";
+import type * as React from "react";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 
 export interface Offset {
   top?: number;

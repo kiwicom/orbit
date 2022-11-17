@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { usePopper } from "react-popper";
 
-import * as Common from "../../common/types";
+import type * as Common from "../../common/types";
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
@@ -16,7 +16,7 @@ import resolveColor from "./helpers/resolveColor";
 import resolvePlacement from "./helpers/resolvePlacement";
 import { SIDE_NUDGE } from "./consts";
 import useTheme from "../../hooks/useTheme";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledArrow = styled.div<{
   inlineLabel?: boolean;
@@ -286,3 +286,4 @@ const ErrorFormTooltip = ({
 };
 
 export default ErrorFormTooltip;
+export { Props };

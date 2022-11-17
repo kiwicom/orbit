@@ -1,6 +1,6 @@
 import { TYPES } from "../../consts";
 
-import { Params } from ".";
+import type { Params } from ".";
 
 const resolveTextColor = ({ type, theme, selected }: Params): string => {
   if (selected) return theme.orbit.paletteWhite;

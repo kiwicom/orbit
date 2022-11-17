@@ -9,7 +9,7 @@ import getSocialButtonStyles from "./helpers/getSocialButtonStyles";
 import getSocialButtonIconForeground from "./helpers/getSocialButtonIconForeground";
 import getSocialButtonIcon from "./helpers/getSocialButtonIcon";
 import { TYPE_OPTIONS } from "./consts";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const SocialButton = React.forwardRef<HTMLButtonElement, Props>(
   ({ type = TYPE_OPTIONS.APPLE, disabled = false, size, ...props }, ref) => {
@@ -46,3 +46,4 @@ const SocialButton = React.forwardRef<HTMLButtonElement, Props>(
 SocialButton.displayName = "SocialButton";
 
 export default SocialButton;
+export { Props };

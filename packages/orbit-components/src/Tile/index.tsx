@@ -5,7 +5,7 @@ import TileContent from "./components/TileContent";
 import TileExpandable from "./components/TileExpandable";
 import TileWrapper from "./components/TileWrapper";
 import handleKeyDown from "../utils/handleKeyDown";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const Tile = ({
   href,
@@ -81,3 +81,4 @@ const Tile = ({
 };
 
 export default Tile;
+export { Props };

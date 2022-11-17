@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import ToastMessage from "./ToastMessage";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledWrapper = styled.div<{ $top: number; $left: number; $right: number; $bottom: number }>`
   ${({ theme, $top, $left, $right, $bottom }) => css`

@@ -7,7 +7,7 @@ import { StyledTableBody } from "./TableBody";
 import { StyledTableHead } from "./TableHead";
 import { TYPE_OPTIONS } from "./consts";
 import defaultTheme from "../defaultTheme";
-import { Props, Type } from "./types";
+import type { Props, Type } from "./types";
 
 const StyledTableOuter = styled.div<{
   showShadows?: boolean;
@@ -167,3 +167,4 @@ export { default as TableFooter } from "./TableFooter";
 export { default as TableRow } from "./TableRow";
 export { default as TableCell } from "./TableCell";
 export { StyledTable, StyledTableCell, StyledTableBody, StyledTableRow, StyledTableHead };
+export { Props, Type };

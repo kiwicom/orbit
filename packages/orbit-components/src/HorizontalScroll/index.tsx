@@ -8,7 +8,7 @@ import useTheme from "../hooks/useTheme";
 import useScrollBox from "./useScroll";
 import ChevronLeft from "../icons/ChevronLeft";
 import ChevronRight from "../icons/ChevronRight";
-import { Props, ScrollSnap } from "./types";
+import type { Props, ScrollSnap } from "./types";
 
 const TRIGGER_OFFSET = 20;
 
@@ -277,3 +277,4 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
 );
 
 export default HorizontalScroll;
+export { Props, ScrollSnap };

@@ -1,4 +1,5 @@
-import { css, FlattenInterpolation } from "styled-components";
+import type { FlattenInterpolation } from "styled-components";
+import { css } from "styled-components";
 
 import {
   getJustify,
@@ -12,9 +13,9 @@ import getWidth from "./getWidth";
 import getDisplay from "./getDisplay";
 import getBasis from "./getBasis";
 import getSpacingToken from "../../common/getSpacingToken";
-import { Devices } from "../../utils/mediaQuery/types";
-import { Props } from "../types";
-import { Theme } from "../../defaultTheme";
+import type { Devices } from "../../utils/mediaQuery/types";
+import type { Props } from "../types";
+import type { Theme } from "../../defaultTheme";
 
 interface StyledProps extends Props {
   theme: Theme;

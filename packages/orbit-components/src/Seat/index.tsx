@@ -23,7 +23,7 @@ import {
 } from "./components/helpers";
 import SeatCircle, { StyledCirclePath } from "./components/SeatCircle";
 import { SIZE_OPTIONS, TYPES } from "./consts";
-import { Props, Type, Size } from "./types";
+import type { Props, Type, Size } from "./types";
 
 const getSize = ({ size }: { size: Size }) => {
   const height = {
@@ -147,3 +147,4 @@ const Seat = ({
 
 export { SeatLegend };
 export default Seat;
+export { Props, Type, Size };

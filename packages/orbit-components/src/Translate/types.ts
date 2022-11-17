@@ -1,7 +1,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import { Translations } from "../Dictionary/types";
+import type { Translations } from "../Dictionary/types";
 
 export type Values = Record<string, string | number>;
 

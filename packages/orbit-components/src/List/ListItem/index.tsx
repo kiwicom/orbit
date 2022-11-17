@@ -1,16 +1,17 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { Type } from "../types";
-import * as Common from "../../common/types";
-import defaultTheme, { Theme } from "../../defaultTheme";
+import type { Type } from "../types";
+import type * as Common from "../../common/types";
+import type { Theme } from "../../defaultTheme";
+import defaultTheme from "../../defaultTheme";
 import CircleSmall from "../../icons/CircleSmall";
 import { rtlSpacing } from "../../utils/rtl";
 import { StyledCarrierLogo } from "../../CarrierLogo";
 import { SIZES, TYPES } from "../consts";
 import { StyledText } from "../../Text";
 import ListContext from "../ListContext";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 export const getLineHeightToken = ({
   theme,
@@ -141,3 +142,4 @@ const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) 
 };
 
 export default ListItem;
+export { Props };

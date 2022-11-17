@@ -5,7 +5,7 @@ import defaultTheme from "../defaultTheme";
 import Circle from "../icons/Circle";
 import handleKeyDown from "../utils/handleKeyDown";
 import { defaultFocus } from "../utils/common";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledSwitch = styled.label`
   display: inline-block;
@@ -132,3 +132,4 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
 Switch.displayName = "Switch";
 
 export default Switch;
+export { Props };

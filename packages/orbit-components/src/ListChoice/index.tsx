@@ -8,7 +8,7 @@ import defaultTheme from "../defaultTheme";
 import { getSize } from "../Icon";
 import { right } from "../utils/rtl";
 import handleKeyDown from "../utils/handleKeyDown";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledListChoiceIcon = styled.div`
   ${({ theme }) => css`
@@ -130,3 +130,4 @@ const ListChoice = ({
 };
 
 export default ListChoice;
+export { Props };

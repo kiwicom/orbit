@@ -2,7 +2,7 @@ import React from "react";
 
 import useDictionary from "../hooks/useDictionary";
 import DEFAULT_DICTIONARY from "../data/dictionary/en-GB.json";
-import { Props, PureTranslate } from "./types";
+import type { Props, PureTranslate } from "./types";
 
 export const pureTranslate: PureTranslate = (translations, key, values = {}) => {
   const translation: string = translations[key] || DEFAULT_DICTIONARY[key];
@@ -21,3 +21,4 @@ const Translate = ({ tKey, values }: Props): JSX.Element => {
 };
 
 export default Translate;
+export { Props, PureTranslate };

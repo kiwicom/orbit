@@ -5,7 +5,7 @@ import Text from "../../../Text";
 import useTheme from "../../../hooks/useTheme";
 import { resolveAccentColor } from "../helpers";
 import { TYPES } from "../../consts";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest }: Props) => {
   const theme = useTheme();

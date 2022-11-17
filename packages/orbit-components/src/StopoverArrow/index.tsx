@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledArrow = styled.svg`
   vertical-align: middle;
@@ -66,3 +66,4 @@ const StopoverArrow = ({ stops = STOPS.ZERO, dataTest, id }: Props) => {
 };
 
 export default StopoverArrow;
+export { Props };

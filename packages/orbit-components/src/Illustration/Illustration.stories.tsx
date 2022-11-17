@@ -6,7 +6,7 @@ import { NAMES } from "./consts.mts";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
-import { Name } from "./types";
+import type { Name } from "./types";
 
 import Illustration from ".";
 

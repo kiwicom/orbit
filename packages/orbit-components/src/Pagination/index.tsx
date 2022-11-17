@@ -11,7 +11,7 @@ import CompactPages from "./components/CompactPages";
 import ActiveButton from "./components/ActiveButton";
 import Translate from "../Translate";
 import useTranslate from "../hooks/useTranslate";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
   if (onPageChange && nextPageIndex <= pageCount && nextPageIndex >= 0) {
@@ -105,3 +105,4 @@ const Pagination = ({
 };
 
 export default Pagination;
+export { Props };

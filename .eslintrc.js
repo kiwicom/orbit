@@ -68,11 +68,9 @@ module.exports = {
     {
       files: ["*.js?(x)", "*.js?(x).flow"],
       extends: ["plugin:flowtype/recommended", "prettier"],
-      plugins: ["adeira"],
       rules: {
         "flowtype/require-exact-type": "error",
         "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint
-        "adeira/no-internal-flow-type": "error",
       },
     },
     {
@@ -82,7 +80,13 @@ module.exports = {
       },
     },
     {
-      files: ["*.ts?(x)", "*.d.ts", "*.mts"],
+      files: ["packages/orbit-components/src/**/*.ts?(x)"],
+      rules: {
+        "@typescript-eslint/consistent-type-imports": "error",
+      },
+    },
+    {
+      files: ["*.ts?(x)", "*.mts"],
       extends: [
         // disables core ESLint rules which are handled by TypeScript
         "plugin:@typescript-eslint/eslint-recommended",

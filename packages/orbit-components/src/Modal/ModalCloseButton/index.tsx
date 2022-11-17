@@ -3,7 +3,7 @@ import * as React from "react";
 import ButtonLink from "../../ButtonLink";
 import Close from "../../icons/Close";
 import useTranslate from "../../hooks/useTranslate";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const ModalCloseButton = ({ onClick, dataTest }: Props) => {
   const translate = useTranslate();
@@ -21,3 +21,4 @@ const ModalCloseButton = ({ onClick, dataTest }: Props) => {
 };
 
 export default ModalCloseButton;
+export { Props };

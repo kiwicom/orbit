@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Props } from "../types";
+import type { Props } from "../types";
 import Svg from "../Svg";
 
 const Button = ({ height = 44, rowHeight = 44, width = 150, ...props }: Props) => {

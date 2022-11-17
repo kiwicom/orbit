@@ -1,10 +1,10 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import type * as React from "react";
 
-import * as Common from "../common/types";
-import { As } from "../Heading/types";
+import type * as Common from "../common/types";
+import type { As } from "../Heading/types";
 
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly children?: React.ReactNode;

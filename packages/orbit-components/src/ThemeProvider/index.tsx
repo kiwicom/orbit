@@ -4,7 +4,7 @@ import { UIDReset, UIDFork } from "react-uid";
 
 import Dictionary from "../Dictionary";
 import QueryContextProvider from "./QueryContext/Provider";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const ThemeProvider = ({ theme, dictionary, children }: Props) => {
   return (
@@ -25,3 +25,4 @@ const ThemeProvider = ({ theme, dictionary, children }: Props) => {
 };
 
 export default ThemeProvider;
+export { Props };

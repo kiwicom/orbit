@@ -7,7 +7,8 @@ import useFocusTrap from "../hooks/useFocusTrap";
 import useLockScrolling from "../hooks/useLockScrolling";
 import transition from "../utils/transition";
 import mq from "../utils/mediaQuery";
-import defaultTheme, { Theme } from "../defaultTheme";
+import type { Theme } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import DrawerClose from "./components/DrawerClose";
 import POSITIONS from "./consts";
 import getPosition from "./helpers/getPosition";
@@ -17,7 +18,7 @@ import Stack from "../Stack";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import Heading from "../Heading";
 import { rtlSpacing } from "../utils/rtl";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const getPadding = ({
   noPadding,
@@ -259,3 +260,4 @@ const Drawer = ({
 };
 
 export default Drawer;
+export { Props };

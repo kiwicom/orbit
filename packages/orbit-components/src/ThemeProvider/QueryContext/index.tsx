@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { QueryMap } from "../../hooks/useMediaQuery/types";
+import type { QueryMap } from "../../hooks/useMediaQuery/types";
 
 export const initialValue = {
   isLargeDesktop: null,

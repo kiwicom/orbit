@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import CarrierLogo, { StyledCarrierLogo } from "../../CarrierLogo";
 import defaultTheme from "../../defaultTheme";
 import { rtlSpacing, left } from "../../utils/rtl";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 export const StyledBadge = styled(({ className, children, dataTest, ariaLabel, id }) => (
   <div className={className} id={id} data-test={dataTest} aria-label={ariaLabel}>
@@ -102,3 +102,4 @@ const BadgePrimitive = ({
 };
 
 export default BadgePrimitive;
+export { Props };

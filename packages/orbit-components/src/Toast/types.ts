@@ -1,14 +1,14 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-import * as React from "react";
-import {
+import type * as React from "react";
+import type {
   ValueOrFunction,
   Renderable,
   Toast as ToastType,
   DefaultToastOptions,
 } from "react-hot-toast";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 
 export type Placement =
   | "top-left"

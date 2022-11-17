@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import ChevronRight from "../../icons/ChevronRight";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledBreadcrumbsItem = styled.li`
   display: flex;
@@ -99,3 +99,4 @@ const BreadcrumbsItem = ({
 };
 
 export default BreadcrumbsItem;
+export { Props };

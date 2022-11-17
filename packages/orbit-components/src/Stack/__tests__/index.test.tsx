@@ -8,7 +8,7 @@ import Button from "../../Button";
 import { DIRECTIONS, SPACINGS } from "../../utils/layout/consts";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import getSpacing from "../helpers/getSpacing";
-import { Justify, Spacing, Align } from "../types";
+import type { Justify, Spacing, Align } from "../types";
 
 describe("Stack", () => {
   it("should have expected DOM output", () => {

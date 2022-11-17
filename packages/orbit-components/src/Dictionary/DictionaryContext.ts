@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Translations } from "./types";
+import type { Translations } from "./types";
 
 const DictionaryContext = React.createContext<Translations>({});
 DictionaryContext.displayName = "DictionaryOrbitContext";

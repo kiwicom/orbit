@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Props } from "../types";
+import type { Props } from "../types";
 import Svg from "../Svg";
 
 const Text = ({ height = 110, ...props }: Props) => {

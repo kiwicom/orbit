@@ -12,10 +12,11 @@ import Bar from "./components/Bar";
 import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
-import defaultTheme, { ThemeProps } from "../defaultTheme";
+import type { ThemeProps } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
 import boundingClientRect from "../utils/boundingClientRect";
-import { State, Callback as SliderCallback, Props, Value } from "./types";
+import type { State, Callback as SliderCallback, Props, Value, Label, Data } from "./types";
 
 const StyledSlider = styled.div`
   position: relative;
@@ -561,3 +562,5 @@ export class PureSlider extends React.PureComponent<SliderProps, State> {
 const ThemedSlider: any = withTheme(PureSlider);
 ThemedSlider.displayName = "Slider";
 export default ThemedSlider;
+
+export { Props, State, Value, SliderCallback as Callback, Data, Label };

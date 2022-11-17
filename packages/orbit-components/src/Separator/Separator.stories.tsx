@@ -3,7 +3,7 @@ import { select } from "@storybook/addon-knobs";
 
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { Indent } from "./types";
+import type { Indent } from "./types";
 
 import Separator from ".";
 

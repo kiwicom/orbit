@@ -1,6 +1,6 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-import { SharedProps } from "../types";
+import type { SharedProps } from "../types";
 
 export type Align = "left" | "center" | "right";
 export type As = "th" | "td";

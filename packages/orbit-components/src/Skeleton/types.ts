@@ -1,8 +1,8 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-import React from "react";
+import type * as React from "react";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 
 type Preset = "List" | "Image" | "Card" | "Button" | "Text";
 

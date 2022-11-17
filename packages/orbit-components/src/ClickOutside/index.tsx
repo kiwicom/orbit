@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const InnerStyled = styled.div`
   width: 100%;
@@ -25,3 +25,5 @@ export default function ClickOutside({ children, onClickOutside }: Props) {
 
   return <InnerStyled ref={ref}>{children}</InnerStyled>;
 }
+
+export { Props };

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Props } from "../types";
+import type { Props } from "../types";
 import Svg from "../Svg";
 
 const List = ({ height = 80, ...props }: Props) => {

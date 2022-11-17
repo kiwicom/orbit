@@ -1,6 +1,7 @@
-import React, { useRef, useState, useCallback } from "react";
+import type * as React from "react";
+import { useRef, useState, useCallback } from "react";
 
-import { Event } from "../../common/types";
+import type { Event } from "../../common/types";
 
 const useErrorTooltip = <T = HTMLInputElement, K = HTMLLabelElement>({
   onFocus,

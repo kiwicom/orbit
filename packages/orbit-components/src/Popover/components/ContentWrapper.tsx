@@ -4,7 +4,7 @@ import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 import { usePopper } from "react-popper";
 import type { Placement } from "@popperjs/core/lib/enums";
 
-import * as Common from "../../common/types";
+import type * as Common from "../../common/types";
 import defaultTheme from "../../defaultTheme";
 import mq from "../../utils/mediaQuery";
 import Button from "../../Button";
@@ -17,7 +17,7 @@ import { ModalContext } from "../../Modal/ModalContext";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import { PLACEMENTS } from "../../common/consts";
 import boundingClientRect from "../../utils/boundingClientRect";
-import { Offset } from "../types";
+import type { Offset } from "../types";
 
 const mobileTop = ({ theme }) => theme.orbit.spaceXLarge;
 const popoverPadding = ({ theme }) => theme.orbit.spaceMedium;

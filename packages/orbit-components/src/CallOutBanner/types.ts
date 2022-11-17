@@ -1,10 +1,10 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import type * as React from "react";
 
-import * as Common from "../common/types";
-import Illustration from "../Illustration";
+import type * as Common from "../common/types";
+import type Illustration from "../Illustration";
 
 export interface Props extends Common.Globals {
   readonly tabIndex?: number;

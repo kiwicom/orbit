@@ -1,11 +1,11 @@
-import * as React from "react";
+import type * as React from "react";
 
 import { SIZE_OPTIONS, TOKENS } from "./consts";
 import { rtlSpacing } from "../../../utils/rtl";
 import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
-import { Size, IconForeground, IconProps } from "../types";
-import { Theme } from "../../../defaultTheme";
+import type { Size, IconForeground, IconProps } from "../types";
+import type { Theme } from "../../../defaultTheme";
 
 type getIconContainerType = ({
   iconLeft,

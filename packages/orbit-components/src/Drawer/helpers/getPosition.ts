@@ -1,6 +1,7 @@
-import { css, FlattenSimpleInterpolation } from "styled-components";
+import type { FlattenSimpleInterpolation } from "styled-components";
+import { css } from "styled-components";
 
-import { Theme } from "../../defaultTheme";
+import type { Theme } from "../../defaultTheme";
 import POSITIONS from "../consts";
 import { left, right } from "../../utils/rtl";
 

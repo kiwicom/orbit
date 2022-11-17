@@ -1,10 +1,11 @@
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import { Theme } from "../../../defaultTheme";
-import getAlertButtonTypeToken, { TokenName } from "./getAlertButtonTypeToken";
+import type { Theme } from "../../../defaultTheme";
+import type { TokenName } from "./getAlertButtonTypeToken";
+import getAlertButtonTypeToken from "./getAlertButtonTypeToken";
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import { BUTTON_STATES } from "../../../primitives/ButtonPrimitive/common/consts";
-import { Type } from "../types";
+import type { Type } from "../types";
 
 const opacity = {
   [TYPE_OPTIONS.INFO]: 15,

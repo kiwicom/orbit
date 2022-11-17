@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import * as Common from "../common/types";
+import type * as Common from "../common/types";
 import defaultTheme from "../defaultTheme";
 import ChevronLeft from "../icons/ChevronLeft";
 import getSpacingToken from "../common/getSpacingToken";
@@ -9,8 +9,8 @@ import useTranslate from "../hooks/useTranslate";
 import { right } from "../utils/rtl";
 import TextLink from "../TextLink";
 import Hide from "../Hide";
-import { Props } from "./types";
-import { Props as BreadcrumbsItemProps } from "./BreadcrumbsItem/types";
+import type { Props } from "./types";
+import type { Props as BreadcrumbsItemProps } from "./BreadcrumbsItem/types";
 
 const StyledBreadcrumbs = styled.nav<{ spaceAfter?: Common.SpaceAfterSizes }>`
   ${({ theme }) => css`
@@ -101,3 +101,4 @@ const Breadcrumbs = (props: Props) => {
 export default Breadcrumbs;
 
 export { default as BreadcrumbsItem } from "./BreadcrumbsItem";
+export { Props };

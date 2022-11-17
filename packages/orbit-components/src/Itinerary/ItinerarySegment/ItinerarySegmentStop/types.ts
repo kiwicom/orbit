@@ -1,6 +1,6 @@
-import * as React from "react";
+import type * as React from "react";
 
-import { Status } from "../../types";
+import type { Status } from "../../types";
 
 /** DOCS:
   ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two locations, date and time,

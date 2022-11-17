@@ -8,8 +8,8 @@ import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import Header from "./components/Header";
 import { ELEMENT_OPTIONS } from "../Heading/consts";
-import { Props } from "./types";
-import * as Common from "../common/types";
+import type { Props } from "./types";
+import type * as Common from "../common/types";
 
 export const StyledCard = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
   width: 100%;
@@ -130,3 +130,4 @@ const Card = ({
 
 export default Card;
 export { default as CardSection } from "./CardSection";
+export { Props };

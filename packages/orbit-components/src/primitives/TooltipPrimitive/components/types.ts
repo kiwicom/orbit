@@ -1,7 +1,7 @@
-import * as React from "react";
+import type * as React from "react";
 
-import { Popper, Size } from "../types";
-import * as Common from "../../../common/types";
+import type { Popper, Size } from "../types";
+import type * as Common from "../../../common/types";
 
 export interface Props extends Common.Globals, Popper {
   shown: boolean;

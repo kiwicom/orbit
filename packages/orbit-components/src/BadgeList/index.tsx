@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledBadgeList = styled.ul`
   margin: 0;
@@ -20,3 +20,5 @@ const BadgeList = ({ children, dataTest, id }: Props) => {
 
 export { default as BadgeListItem } from "./BadgeListItem";
 export default BadgeList;
+
+export { Props };

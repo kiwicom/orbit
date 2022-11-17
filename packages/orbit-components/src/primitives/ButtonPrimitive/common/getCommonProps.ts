@@ -1,8 +1,8 @@
 import getSizeToken from "./getSizeToken";
 import getPadding from "./getPadding";
 import { SIZE_OPTIONS } from "./consts";
-import { Size, HeightProps, ButtonCommonProps } from "../types";
-import { Theme } from "../../../defaultTheme";
+import type { Size, HeightProps, ButtonCommonProps } from "../types";
+import type { Theme } from "../../../defaultTheme";
 
 export interface Params
   extends Pick<

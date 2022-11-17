@@ -1,10 +1,10 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import * as React from "react";
+import type * as React from "react";
 
-import { Translations } from "../Dictionary/types";
-import { Theme } from "../defaultTheme";
+import type { Translations } from "../Dictionary/types";
+import type { Theme } from "../defaultTheme";
 
 export interface Props {
   readonly theme: Theme;

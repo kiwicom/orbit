@@ -1,9 +1,10 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme, { Theme } from "../defaultTheme";
+import type { Theme } from "../defaultTheme";
+import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, BASE_URL } from "./consts";
-import { Props, CarrierType, Size, Carrier } from "./types";
+import type { Props, CarrierType, Size, Carrier } from "./types";
 
 interface StyledProps {
   rounded?: boolean;
@@ -114,3 +115,4 @@ const CarrierLogo = ({ size = SIZE_OPTIONS.LARGE, carriers, dataTest, id, rounde
   </StyledCarrierLogo>
 );
 export default CarrierLogo;
+export { Props, CarrierType, Size, Carrier };

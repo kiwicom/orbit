@@ -5,7 +5,7 @@ import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import Portal from "../../Portal";
 import { StyledTooltipChildren } from "../TooltipPrimitive";
 import DialogContent from "./components/DialogContent";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const MobileDialog = ({
   children,
@@ -89,3 +89,4 @@ const MobileDialog = ({
 };
 
 export default MobileDialog;
+export { Props };

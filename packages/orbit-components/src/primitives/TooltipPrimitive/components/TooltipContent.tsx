@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 import { usePopper } from "react-popper";
-import { Placement } from "@popperjs/core/lib/enums";
+import type { Placement } from "@popperjs/core/lib/enums";
 
 import { PLACEMENTS } from "../../../common/consts";
 import tooltipSize from "../helpers/tooltipSize";
@@ -14,8 +14,8 @@ import defaultTheme from "../../../defaultTheme";
 import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
-import { Props } from "./types";
-import { Size } from "../types";
+import type { Props } from "./types";
+import type { Size } from "../types";
 
 const StyledTooltip = styled.div`
   width: 100%;

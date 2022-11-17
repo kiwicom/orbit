@@ -9,7 +9,7 @@ import { rtlSpacing } from "../../utils/rtl";
 import getSpacingToken from "../../common/getSpacingToken";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../../utils/mediaQuery";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const Field = styled.label<{ fullHeight?: boolean; spaceAfter?: Props["spaceAfter"] }>`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

@@ -6,8 +6,8 @@ import getViewportHideStyles from "../../Hide/helpers/getViewportHideStyles";
 import { StyledCard } from "../../Card";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 import { QUERIES } from "../../utils/mediaQuery/consts";
-import { Props } from "./types";
-import { Devices } from "../../utils/mediaQuery/types";
+import type { Props } from "./types";
+import type { Devices } from "../../utils/mediaQuery/types";
 
 const StyledColumn = styled.div<{ spanEntireRow?: boolean; hideOn?: Devices[] }>`
   ${({ theme, spanEntireRow, hideOn }) => css`
@@ -17,7 +17,7 @@ const StyledColumn = styled.div<{ spanEntireRow?: boolean; hideOn?: Devices[] }>
       grid-column: 1 / -1;
     `};
 
-    @media (max-width: ${+getBreakpointWidth(QUERIES.largeMobile, theme, true) - 1}px) {
+    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
       ${StyledCard} {
         margin-right: -${theme.orbit.spaceMedium};
         margin-left: -${theme.orbit.spaceMedium};
@@ -41,3 +41,4 @@ const LayoutColumn = ({ children, hideOn, as = "div", spanEntireRow, dataTest }:
 };
 
 export default LayoutColumn;
+export { Props };

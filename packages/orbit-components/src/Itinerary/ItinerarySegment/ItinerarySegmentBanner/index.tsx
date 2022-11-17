@@ -5,7 +5,7 @@ import defaultTheme from "../../../defaultTheme";
 import { StyledSeparator } from "../../../Separator";
 import ChevronRight from "../../../icons/ChevronRight";
 import { StyledWrapper as StyledBadgeListWrapper } from "../../ItineraryBadgeList";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledBannerWrapper = styled.div`
   ${({ theme }) => css`
@@ -46,3 +46,4 @@ const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
 };
 
 export default ItinerarySegmentBanner;
+export { Props };

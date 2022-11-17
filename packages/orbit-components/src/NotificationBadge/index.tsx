@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Badge from "../Badge";
 import { StyledBadge } from "../primitives/BadgePrimitive";
 import defaultTheme from "../defaultTheme";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledNotificationBadge = styled.div`
   ${StyledBadge} {
@@ -28,3 +28,4 @@ const NotificationBadge = ({ type, children, icon, ariaLabel, dataTest, id }: Pr
 };
 
 export default NotificationBadge;
+export { Props };

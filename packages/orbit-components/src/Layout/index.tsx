@@ -5,8 +5,8 @@ import defaultTheme from "../defaultTheme";
 import Grid from "../utils/Grid";
 import { LAYOUT_SETTINGS } from "./consts";
 import mq from "../utils/mediaQuery";
-import { Props, Type } from "./types";
-import { Props as LayoutColumnProps } from "./LayoutColumn/types";
+import type { Props, Type } from "./types";
+import type { Props as LayoutColumnProps } from "./LayoutColumn/types";
 
 const getChildrenProps = (type: Type, key: string) => {
   if (LAYOUT_SETTINGS[type].layoutColumns && LAYOUT_SETTINGS[type].layoutColumns[key]) {
@@ -45,3 +45,4 @@ const Layout = ({ children, type, dataTest }: Props) => (
 export default Layout;
 
 export { default as LayoutColumn } from "./LayoutColumn";
+export { Props, Type };

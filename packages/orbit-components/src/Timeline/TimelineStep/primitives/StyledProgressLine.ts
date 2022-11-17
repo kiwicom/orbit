@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { Type } from "../types";
+import type { Type } from "../types";
 import { left } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 import { renderStatus } from "./helpers";

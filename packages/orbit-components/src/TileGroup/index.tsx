@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { StyledTileWrapper } from "../Tile/components/TileWrapper";
 import defaultTheme from "../defaultTheme";
 import { StyledSlide } from "../utils/Slide";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const StyledTileGroup = styled.div`
   ${({ theme }) => css`
@@ -55,3 +55,4 @@ const TileGroup = ({ children, dataTest, id, as }: Props) => {
 };
 
 export default TileGroup;
+export { Props };

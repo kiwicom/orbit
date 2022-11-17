@@ -1,6 +1,7 @@
-import { css, FlattenInterpolation, ThemeProps } from "styled-components";
+import type { FlattenInterpolation, ThemeProps } from "styled-components";
+import { css } from "styled-components";
 
-import * as Common from "../../../common/types";
+import type * as Common from "../../../common/types";
 import type { Theme } from "../../../defaultTheme";
 import { left } from "../../../utils/rtl";
 

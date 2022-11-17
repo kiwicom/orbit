@@ -6,7 +6,7 @@ import Stack from "../Stack";
 import ButtonLink from "../Button";
 import defaultTheme from "../defaultTheme";
 import Translate from "../Translate";
-import { Props, MappedOptions } from "./types";
+import type { MappedOptions, Props } from "./types";
 
 const StyledNavigation = styled.div<{ show?: boolean }>`
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight}; /* TODO: Token */
@@ -130,3 +130,4 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
 };
 
 export default SkipNavigation;
+export { Props };

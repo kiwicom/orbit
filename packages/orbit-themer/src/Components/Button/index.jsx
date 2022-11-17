@@ -4,36 +4,31 @@ import Stack from "@kiwicom/orbit-components/lib/Stack";
 
 const Buttons = () => {
   const size = "small";
-
   return (
     <Stack>
       <Stack direction="row">
-        <Stack>
-          <Button type="primary" size={size}>
-            Primary
-          </Button>
-          <Button type="primarySubtle" size={size}>
-            Primary subtle
-          </Button>
-        </Stack>
-
-        <Stack>
-          <Button type="critical" size={size}>
-            Critical
-          </Button>
-          <Button type="criticalSubtle" size={size}>
-            Critical subtle
-          </Button>
-        </Stack>
-
-        <Stack>
-          <Button type="secondary" size={size}>
-            Secondary
-          </Button>
-          <Button type="white" size={size}>
-            White
-          </Button>
-        </Stack>
+        <Button size={size} type="primary">
+          Primary
+        </Button>
+        <Button size={size} type="primarySubtle">
+          Primary subtle
+        </Button>
+      </Stack>
+      <Stack direction="row">
+        <Button size={size} type="critical">
+          Critical
+        </Button>
+        <Button size={size} type="criticalSubtle">
+          Critical subtle
+        </Button>
+      </Stack>
+      <Stack direction="row">
+        <Button size={size} type="secondary">
+          Secondary
+        </Button>
+        <Button size={size} type="white">
+          White
+        </Button>
       </Stack>
     </Stack>
   );

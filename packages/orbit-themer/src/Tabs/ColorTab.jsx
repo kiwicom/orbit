@@ -7,6 +7,7 @@ import ChevronRight from "@kiwicom/orbit-components/lib/icons/ChevronRight";
 import InformationCircle from "@kiwicom/orbit-components/lib/icons/InformationCircle";
 import Badge from "@kiwicom/orbit-components/lib/Badge";
 import Heading from "@kiwicom/orbit-components/lib/Heading";
+import { defaultTheme } from "@kiwicom/orbit-components";
 
 import { DEFAULT_COLORS } from "../consts";
 import ColorContext from "../ColorContext";
@@ -29,6 +30,10 @@ const StyledColorTabHeader = styled.div`
   `}
 `;
 
+StyledColorTabHeader.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledColorTabIcon = styled.div`
   position: absolute;
   top: 50%;
@@ -36,6 +41,11 @@ const StyledColorTabIcon = styled.div`
   right: 12px;
   color: ${({ theme }) => theme.orbit.paletteCloudDarker};
 `;
+
+StyledColorTabIcon.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StyledColorTabChildren = styled.div`
   ${({ opened, theme }) => css`
     max-height: ${opened ? 100 : 0};
@@ -45,6 +55,10 @@ const StyledColorTabChildren = styled.div`
     margin-top: -6px;
   `}
 `;
+
+StyledColorTabChildren.defaultProps = {
+  theme: defaultTheme,
+};
 
 const StyledAdjusted = styled.div`
   position: absolute;

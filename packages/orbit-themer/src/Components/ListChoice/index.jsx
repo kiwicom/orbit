@@ -11,6 +11,15 @@ const ListChoices = () => {
     <>
       <ListChoice title={title} description={description} icon={icon} selectable />
       <ListChoice title={title} description={description} icon={icon} selectable selected />
+      <ListChoice title={title} description={description} icon={icon} selectable disabled />
+      <ListChoice
+        title={title}
+        description={description}
+        icon={icon}
+        selectable
+        selected
+        disabled
+      />
     </>
   );
 };

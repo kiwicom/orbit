@@ -12,20 +12,24 @@ const Alerts = (): React.Node => {
   const title = "Lorem ipsum";
 
   return (
-    <Stack direction="row">
-      <Alert type="info" title={title} icon={<InfoCircle />}>
-        {message}
-      </Alert>
-      <Alert type="success" title={title} icon={<Check />}>
-        {message}
-      </Alert>
-      <Alert type="warning" title={title} icon={<AlertIcon />}>
-        {message}
-      </Alert>
-      <Alert type="critical" title={title} icon={<AlertCircle />}>
-        {message}
-      </Alert>
-    </Stack>
+    <>
+      <Stack direction="row" spaceAfter="medium" wrap>
+        <Alert type="info" title={title} icon={<InfoCircle />}>
+          {message}
+        </Alert>
+        <Alert type="success" title={title} icon={<Check />}>
+          {message}
+        </Alert>
+      </Stack>
+      <Stack direction="row" wrap>
+        <Alert type="warning" title={title} icon={<AlertIcon />}>
+          {message}
+        </Alert>
+        <Alert type="critical" title={title} icon={<AlertCircle />}>
+          {message}
+        </Alert>
+      </Stack>
+    </>
   );
 };
 

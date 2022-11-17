@@ -10,7 +10,6 @@ const InputFields = () => {
     <Stack direction="column" spacing="XXLarge">
       <Stack direction="row">
         <InputField label={label} placeholder={placeholder} />
-        <InputField label={label} placeholder={placeholder} />
       </Stack>
       <Stack flex>
         <InputField

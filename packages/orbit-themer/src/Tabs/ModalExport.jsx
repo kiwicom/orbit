@@ -51,7 +51,7 @@ const App = () =>
   }, [code]);
 
   return (
-    <Modal onClose={onClose}>
+    <Modal onClose={onClose} size="extraLarge">
       <ModalHeader title="Export theme" />
       <ModalSection>
         <Highlight {...defaultProps} code={code} language="jsx">

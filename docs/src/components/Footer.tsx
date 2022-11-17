@@ -113,6 +113,8 @@ export default function Footer() {
               <StyledFooterLink to="https://kiwicom.github.io/orbit/">Storybook</StyledFooterLink>
               <Dot />
               <StyledFooterLink to="/changelog/">Changelog</StyledFooterLink>
+              <Dot />
+              <StyledFooterLink to="/themer/">Themer</StyledFooterLink>
             </Stack>
             <Stack
               inline

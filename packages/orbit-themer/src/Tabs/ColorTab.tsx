@@ -5,9 +5,7 @@ import path from "ramda/src/path";
 import ChevronDown from "@kiwicom/orbit-components/lib/icons/ChevronDown";
 import ChevronRight from "@kiwicom/orbit-components/lib/icons/ChevronRight";
 import InformationCircle from "@kiwicom/orbit-components/lib/icons/InformationCircle";
-import Badge from "@kiwicom/orbit-components/lib/Badge";
-import Heading from "@kiwicom/orbit-components/lib/Heading";
-import { defaultTheme } from "@kiwicom/orbit-components";
+import { defaultTheme, Badge, Heading } from "@kiwicom/orbit-components";
 
 import { DEFAULT_COLORS } from "../consts";
 import ColorContext from "../ColorContext";
@@ -16,7 +14,7 @@ const StyledColorTab = styled.div`
   font-size: 14px;
 `;
 
-const StyledColorTabHeader = styled.div`
+const StyledColorTabHeader = styled.div<{ opened?: boolean }>`
   ${({ opened, theme }) => css`
     cursor: pointer;
     padding: 14px 12px;
@@ -39,14 +37,14 @@ const StyledColorTabIcon = styled.div`
   top: 50%;
   margin-top: -8px;
   right: 12px;
-  color: ${({ theme }) => theme.orbit.paletteCloudDarker};
+  color: ${({ theme }) => theme.orbit.paletteCloudDark};
 `;
 
 StyledColorTabIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledColorTabChildren = styled.div`
+const StyledColorTabChildren = styled.div<{ opened?: boolean }>`
   ${({ opened, theme }) => css`
     max-height: ${opened ? 100 : 0};
     overflow: hidden;
@@ -86,7 +84,7 @@ const ColorTab = ({ title, children, colorPath }) => {
         <Heading type="title4">{title}</Heading>
         {isAdjusted && (
           <StyledAdjusted>
-            <Badge type="info" icon={<InformationCircle />} size="small">
+            <Badge type="info" icon={<InformationCircle />}>
               Adjusted
             </Badge>
           </StyledAdjusted>

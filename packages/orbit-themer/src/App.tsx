@@ -1,10 +1,8 @@
 import React from "react";
 import assocPath from "ramda/src/assocPath";
 import { hot } from "react-hot-loader";
-import styled, { createGlobalStyle, css } from "styled-components";
-import getTokens from "@kiwicom/orbit-components/lib/getTokens";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
-import { defaultTheme } from "@kiwicom/orbit-components";
+import styled, { createGlobalStyle } from "styled-components";
+import { getTokens, ThemeProvider } from "@kiwicom/orbit-components";
 
 import Components from "./Components";
 import Tabs from "./Tabs";
@@ -26,16 +24,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledApp = styled.div`
-  ${({ theme }) => css`
-    min-height: 100%;
-    display: flex;
-    margin: 0 -${theme.orbit.spaceXLarge};
-  `}
+  min-height: 100%;
+  display: flex;
 `;
-
-StyledApp.defaultProps = {
-  theme: defaultTheme,
-};
 
 const App = () => {
   const [colors, setColors] = React.useState(DEFAULT_COLORS);

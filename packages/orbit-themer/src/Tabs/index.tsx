@@ -1,9 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import Heading from "@kiwicom/orbit-components/lib/Heading";
-import Button from "@kiwicom/orbit-components/lib/Button";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
-import { defaultTheme } from "@kiwicom/orbit-components";
+import { defaultTheme, Heading, Button, Stack } from "@kiwicom/orbit-components";
 
 import Color from "./Color";
 import ColorTab from "./ColorTab";
@@ -45,7 +42,7 @@ const Tabs = () => {
   return (
     <StyledTabs>
       <ColorsPanel>
-        <Heading type="title3" element="h2">
+        <Heading type="title3" as="h2">
           Colors
         </Heading>
         <StyledColors>

@@ -1,6 +1,5 @@
 import React from "react";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
-import ButtonLink from "@kiwicom/orbit-components/lib/ButtonLink";
+import { ButtonLink, Stack } from "@kiwicom/orbit-components";
 
 const ButtonLinks = () => {
   return (

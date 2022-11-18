@@ -8,7 +8,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "yarn build --watch",
-    "build": "babel src/ --out-dir dist --copy-files",
+    "build": "tsc && babel src/ --out-dir dist",
     "clean": "rm -rf dist/"
   },
   "author": "Kiwi.com",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@kiwicom/orbit-components": "*",
     "@kiwicom/orbit-design-tokens": "*",
+    "@types/react": "^17.0.26",
     "copy-to-clipboard": "^3.3.1",
     "deep-object-diff": "^1.1.9",
     "object-hash": "^3.0.0",
@@ -30,12 +31,12 @@
   "devDependencies": {
     "@babel/cli": "^7.18.9",
     "@babel/core": "^7.18.9",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.18.9",
-    "@babel/preset-flow": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime": "^7.18.9",
     "@kiwicom/babel-plugin-orbit-components": "^3.5.2",
-    "babel-loader": "^8.2.5"
+    "babel-loader": "^8.2.5",
+    "typescript": "^4.8.3"
   }
 }

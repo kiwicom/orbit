@@ -1,19 +1,16 @@
 import React from "react";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
-import Badge from "@kiwicom/orbit-components/lib/Badge";
+import { Badge, Stack } from "@kiwicom/orbit-components";
 
 const Badges = () => {
   const message = "Badge";
   return (
     <Stack direction="column">
-      <Stack direction="row" wrap>
+      <Stack wrap>
         <Badge type="info">{message}</Badge>
         <Badge type="warning">{message}</Badge>
         <Badge type="success">{message}</Badge>
         <Badge type="critical">{message}</Badge>
         <Badge type="neutral">{message}</Badge>
-      </Stack>
-      <Stack direction="row" wrap>
         <Badge type="infoInverted">{message}</Badge>
         <Badge type="warningInverted">{message}</Badge>
         <Badge type="successInverted">{message}</Badge>

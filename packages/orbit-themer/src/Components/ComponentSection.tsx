@@ -1,6 +1,5 @@
 import React from "react";
-import Heading from "@kiwicom/orbit-components/lib/Heading";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import { Heading, Stack } from "@kiwicom/orbit-components";
 
 const ComponentSection = ({ name, children }) => {
   return (

@@ -3,7 +3,7 @@ import { SketchPicker } from "react-color";
 import styled from "styled-components";
 import path from "ramda/src/path";
 import AlertCircle from "@kiwicom/orbit-components/lib/icons/AlertCircle";
-import Tooltip from "@kiwicom/orbit-components/lib/Tooltip";
+import { Tooltip } from "@kiwicom/orbit-components/";
 
 import ColorContext from "../ColorContext";
 import { DEFAULT_COLORS } from "../consts";
@@ -23,7 +23,7 @@ const StyledColorNameExtra = styled.span`
   color: #7f91a8;
 `;
 
-const StyledChoosedColor = styled.div`
+const StyledChoosedColor = styled.div<{ isAdjusted?: boolean }>`
   float: right;
   width: 16px;
   height: 16px;
@@ -53,7 +53,7 @@ const StyledAdjustedColor = styled.div`
   margin-right: 4px;
 `;
 
-const Color = ({ name, extra, objectKey }) => {
+const Color = ({ name, extra, objectKey }: { name: string; extra?: string; objectKey: string }) => {
   const [openedColorPicker, setOpenedColorPicker] = React.useState(false);
   const defaultColor = path(objectKey.split("."), DEFAULT_COLORS);
 

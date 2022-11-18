@@ -1,13 +1,11 @@
-// @flow
 import * as React from "react";
-import Alert from "@kiwicom/orbit-components/lib/Alert";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import { Alert, Stack } from "@kiwicom/orbit-components";
 import InfoCircle from "@kiwicom/orbit-components/lib/icons/InformationCircle";
 import AlertCircle from "@kiwicom/orbit-components/lib/icons/AlertCircle";
 import Check from "@kiwicom/orbit-components/lib/icons/Check";
 import AlertIcon from "@kiwicom/orbit-components/lib/icons/Alert";
 
-const Alerts = (): React.Node => {
+const Alerts = () => {
   const message = "Lorem ipsum dolor sit amet…";
   const title = "Lorem ipsum";
 

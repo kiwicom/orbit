@@ -16592,14 +16592,6 @@ eslint-module-utils@^2.7.2:
     debug "^3.2.7"
     find-up "^2.1.0"
 
-eslint-plugin-adeira@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-adeira/-/eslint-plugin-adeira-0.11.0.tgz#0a3491e74ab3f4929118ec4fc184b66530c0418b"
-  integrity sha512-IyyLjiXLpP/xlM8ER+J+Nc06HuVjjb52Q3sUwbI+QN5ZQjch2NMnvGziv7bwC7zsp+qAkwU6UAtoU4UI61i2CQ==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    fast-levenshtein "^3.0.0"
-
 eslint-plugin-babel@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-babel/-/eslint-plugin-babel-5.3.1.tgz#75a2413ffbf17e7be57458301c60291f2cfbf560"
@@ -17425,14 +17417,7 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
-fast-levenshtein@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-3.0.0.tgz#37b899ae47e1090e40e3fd2318e4d5f0142ca912"
-  integrity sha512-hKKNajm46uNmTlhHSyZkmToAc56uZJwYq7yrciZjqOxnlfQwERDQJmHPUp7m1m9wx8vgOe8IaCKZ5Kv2k1DdCQ==
-  dependencies:
-    fastest-levenshtein "^1.0.7"
-
-fastest-levenshtein@^1.0.12, fastest-levenshtein@^1.0.7:
+fastest-levenshtein@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/fastest-levenshtein/-/fastest-levenshtein-1.0.12.tgz#9990f7d3a88cc5a9ffd1f1745745251700d497e2"
   integrity sha512-On2N+BpYJ15xIC974QNVuYGMOlEVt4s0EOI3wwMqOmK1fdDY+FN/zltPV8vosq4ad4c/gJ1KHScUn/6AWIgiow==

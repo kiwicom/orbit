@@ -1,6 +1,6 @@
 import React from "react";
 import Gps from "@kiwicom/orbit-components/lib/icons/GpsFixed";
-import ListChoice from "@kiwicom/orbit-components/lib/ListChoice";
+import { ListChoice } from "@kiwicom/orbit-components";
 
 const ListChoices = () => {
   const title = "Choice Title";

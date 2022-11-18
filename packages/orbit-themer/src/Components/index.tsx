@@ -1,10 +1,6 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
-import Card from "@kiwicom/orbit-components/lib/Card";
-import CardSection from "@kiwicom/orbit-components/lib/Card/CardSection";
-import { defaultTheme } from "@kiwicom/orbit-components";
+import { defaultTheme, Stack, Card, CardSection } from "@kiwicom/orbit-components";
 
 import Alert from "./Alert";
 import Badge from "./Badge";
@@ -16,9 +12,9 @@ import Radios from "./Radio";
 import ListChoices from "./ListChoice";
 import ButtonLinks from "./ButtonLink";
 
-const StyledComponentsOuter: any = styled.div`
+const StyledComponentsOuter = styled.div`
   ${({ theme }) => css`
-    background: #f5f7f9;
+    background: ${theme.orbit.paletteCloudLight};
     padding: ${theme.orbit.spaceLarge} ${theme.orbit.spaceXXLarge};
     max-height: 100vh;
     flex: 1 auto;
@@ -33,7 +29,7 @@ StyledComponentsOuter.defaultProps = {
   theme: defaultTheme,
 };
 
-const Components = (): React.Node => (
+const Components = () => (
   <StyledComponentsOuter>
     <ComponentSection name="Status components">
       <Card title="Alerts">

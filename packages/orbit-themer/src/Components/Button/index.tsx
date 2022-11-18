@@ -1,6 +1,5 @@
 import React from "react";
-import Button from "@kiwicom/orbit-components/lib/Button";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import { Button, Stack } from "@kiwicom/orbit-components";
 
 const Buttons = () => {
   const size = "small";

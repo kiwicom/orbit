@@ -1,6 +1,5 @@
 import * as React from "react";
-import InputField from "@kiwicom/orbit-components/lib/deprecated/InputField";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import { InputField, Stack } from "@kiwicom/orbit-components";
 
 const InputFields = () => {
   const label = "Text label";

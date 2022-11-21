@@ -37,6 +37,7 @@ import StyledProse from "./primitives/StyledProse";
 import StyledMobileTocWrapper from "./primitives/StyledMobileTocWrapper";
 import { getDocumentPageTitle } from "../../utils/document";
 import TopBar from "./TopBar";
+import { MAX_CONTENT_WIDTH } from "../../consts";
 
 interface Props {
   children: React.ReactNode;
@@ -113,7 +114,9 @@ export default function DocLayout({
               display: flex;
               margin: 0 auto;
               width: 100%;
-              max-width: 80rem;
+              box-sizing: border-box;
+              padding: 0 2rem;
+              max-width: ${MAX_CONTENT_WIDTH};
             `}
           >
             <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>

@@ -6,6 +6,7 @@ import { StyledSeparator } from "../../../Separator";
 import ChevronRight from "../../../icons/ChevronRight";
 import { StyledWrapper as StyledBadgeListWrapper } from "../../ItineraryBadgeList";
 import type { Props } from "./types";
+import { left } from "../../../utils/rtl"
 
 const StyledBannerWrapper = styled.div`
   ${({ theme }) => css`
@@ -18,7 +19,7 @@ const StyledBannerWrapper = styled.div`
     padding: 0 ${theme.orbit.spaceMedium};
 
     ${StyledBadgeListWrapper} {
-      margin-left: 0 !important;
+      margin-${left}: 0 !important;
     }
 
     ${StyledSeparator} {

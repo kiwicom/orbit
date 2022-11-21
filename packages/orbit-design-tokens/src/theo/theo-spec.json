@@ -846,6 +846,60 @@
         "categoryDescription": ""
       }
     },
+    "colorTextButtonPrimarySubtle": {
+      "value": "#00A58E",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "colorTextButtonPrimarySubtleHover": {
+      "value": "#007F6D",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "colorTextButtonPrimarySubtleActive": {
+      "value": "#007F6D",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "colorTextButtonCriticalSubtle": {
+      "value": "#D21C1C",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "colorTextButtonCriticalSubtleHover": {
+      "value": "#970C0C",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "colorTextButtonCriticalSubtleActive": {
+      "value": "#970C0C",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "colorTextInput": {
       "value": "#252A31",
       "type": "color",
@@ -1568,6 +1622,78 @@
     },
     "backgroundButtonLinkSecondaryActive": {
       "value": "#D6DEE6",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonPrimarySubtle": {
+      "value": "#ECF8F7",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonPrimarySubtleHover": {
+      "value": "#D6F0EC",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonPrimarySubtleActive": {
+      "value": "#BFE8E2",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonPrimarySubtleFocus": {
+      "value": "#ECF8F7",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonCriticalSubtle": {
+      "value": "#FCF3F3",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonCriticalSubtleHover": {
+      "value": "#F8E2E2",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonCriticalSubtleActive": {
+      "value": "#F3CECE",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonCriticalSubtleFocus": {
+      "value": "#FCF3F3",
       "type": "color",
       "category": "",
       "comment": "",

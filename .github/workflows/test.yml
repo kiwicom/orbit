@@ -32,6 +32,7 @@ jobs:
           yarn tokens build
           yarn components build
           yarn tracking build
+          yarn themer build
 
       - name: Type checks
         run: yarn check:types && yarn flow check

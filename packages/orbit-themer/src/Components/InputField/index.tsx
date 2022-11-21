@@ -1,6 +1,5 @@
 import * as React from "react";
-import InputField from "@kiwicom/orbit-components/lib/deprecated/InputField";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import { InputField, Stack } from "@kiwicom/orbit-components";
 
 const InputFields = () => {
   const label = "Text label";
@@ -9,7 +8,6 @@ const InputFields = () => {
   return (
     <Stack direction="column" spacing="XXLarge">
       <Stack direction="row">
-        <InputField label={label} placeholder={placeholder} />
         <InputField label={label} placeholder={placeholder} />
       </Stack>
       <Stack flex>

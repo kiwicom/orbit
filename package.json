@@ -20,7 +20,7 @@
     "eslint:docs": "eslint --fix docs/src/documentation --report-unused-disable-directives",
     "loki:approve": "yarn components loki approve",
     "loki:test": "yarn components loki test",
-    "orbit-kiwi:build": "yarn && yarn tokens build && yarn components build && yarn docs build",
+    "orbit-kiwi:build": "yarn && yarn tokens build && yarn components build && yarn themer build && yarn docs build",
     "postinstall": "lerna run postinstall --stream",
     "prepare": "husky install",
     "prettier:test": "prettier --check '**/*.md'",

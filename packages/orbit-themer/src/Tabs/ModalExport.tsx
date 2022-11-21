@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { diff } from "deep-object-diff";
 import copy from "copy-to-clipboard";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import Modal, { ModalHeader, ModalSection, ModalFooter } from "@kiwicom/orbit-components/lib/Modal";
-import Button from "@kiwicom/orbit-components/lib/Button";
+import { Modal, ModalHeader, ModalSection, ModalFooter, Button } from "@kiwicom/orbit-components/";
 
 import { DEFAULT_COLORS } from "../consts";
 import ColorContext from "../ColorContext";
@@ -51,7 +50,7 @@ const App = () =>
   }, [code]);
 
   return (
-    <Modal onClose={onClose}>
+    <Modal onClose={onClose} size="extraLarge">
       <ModalHeader title="Export theme" />
       <ModalSection>
         <Highlight {...defaultProps} code={code} language="jsx">

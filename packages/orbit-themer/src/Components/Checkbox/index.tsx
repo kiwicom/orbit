@@ -1,6 +1,5 @@
 import React from "react";
-import Checkbox from "@kiwicom/orbit-components/lib/Checkbox";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import { Checkbox, Stack } from "@kiwicom/orbit-components";
 
 const Checkboxes = () => {
   const label = "Text label";

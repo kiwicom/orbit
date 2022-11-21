@@ -2,8 +2,7 @@ import React from "react";
 import assocPath from "ramda/src/assocPath";
 import { hot } from "react-hot-loader";
 import styled, { createGlobalStyle } from "styled-components";
-import getTokens from "@kiwicom/orbit-components/lib/getTokens";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import { getTokens, ThemeProvider } from "@kiwicom/orbit-components";
 
 import Components from "./Components";
 import Tabs from "./Tabs";

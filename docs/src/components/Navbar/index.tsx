@@ -103,6 +103,8 @@ const Navbar = ({ location, docNavigation }: Props) => {
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const [activeTab, setActiveTab] = React.useState<"navigation" | "bookmarks">("navigation");
   const isHome = location && location.pathname === "/";
+  const isThemer = location && location.pathname === "/themer/";
+  const shouldHaveNavLinks = isHome || isThemer;
   const { bookmarks } = useBookmarks();
 
   return (
@@ -135,7 +137,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
 
         <StyledRight>
           <Stack inline spacing="XXSmall" align="center">
-            {isHome ? (
+            {shouldHaveNavLinks ? (
               <NavigationLinks />
             ) : (
               <SearchNavbarButton onClick={() => setSearchOpen(true)} />

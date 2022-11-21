@@ -1,8 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import Heading from "@kiwicom/orbit-components/lib/Heading";
-import Button from "@kiwicom/orbit-components/lib/Button";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import styled, { css } from "styled-components";
+import { defaultTheme, Heading, Button, Stack } from "@kiwicom/orbit-components";
 
 import Color from "./Color";
 import ColorTab from "./ColorTab";
@@ -10,25 +8,22 @@ import ColorContext from "../ColorContext";
 import ModalExport from "./ModalExport";
 
 const StyledTabs = styled.div`
-  padding: 32px 20px;
-  box-sizing: border-box;
-  flex: 0 368px;
-  min-width: 368px;
-  border-right: ${({ theme }) => `1px solid ${theme.orbit.paletteCloudDark}`};
-  position: relative;
-  overflow-y: scroll;
+  ${({ theme }) => css`
+    padding: ${theme.orbit.spaceXLarge} 0;
+    padding-right: ${theme.orbit.spaceMedium};
+    box-sizing: border-box;
+    flex: 0 280px;
+    min-width: 280px;
+    border-right: 1px solid ${theme.orbit.paletteCloudDark};
+    position: relative;
+  `}
 `;
 
-const StyledLogo = styled.div``;
+StyledTabs.defaultProps = {
+  theme: defaultTheme,
+};
 
-const ColorsPanel = styled.div`
-  position: absolute;
-  top: 90px;
-  bottom: 90px;
-  left: 24px;
-  right: 24px;
-  overflow-y: scroll;
-`;
+const ColorsPanel = styled.div``;
 
 const StyledColors = styled.div`
   margin-top: 8px;
@@ -46,11 +41,8 @@ const Tabs = () => {
 
   return (
     <StyledTabs>
-      <StyledLogo>
-        <img alt="logo" src="./assets/logo.svg" />
-      </StyledLogo>
       <ColorsPanel>
-        <Heading type="title3" element="h2">
+        <Heading type="title3" as="h2">
           Colors
         </Heading>
         <StyledColors>

@@ -6,6 +6,7 @@
   "include": [
     "packages/orbit-components/**/*",
     "packages/orbit-design-tokens/**/*",
+    "packages/orbit-themer/**/*",
     "packages/eslint-plugin-orbit-components/**/*"
   ],
   "exclude": ["**/scripts/**/*", "packages/orbit-components/cypress/**/*.test.*"]

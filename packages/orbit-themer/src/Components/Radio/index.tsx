@@ -1,6 +1,5 @@
 import React from "react";
-import Radio from "@kiwicom/orbit-components/lib/Radio";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
+import { Radio, Stack } from "@kiwicom/orbit-components";
 
 const Radios = () => {
   const label = "Text label";

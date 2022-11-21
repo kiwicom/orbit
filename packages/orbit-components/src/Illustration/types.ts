@@ -1,7 +1,7 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/illustration/
 */
-import type { Globals, SpaceAfter } from "../common/types";
+import type * as Common from "../common/types";
 
 export type Name =
   | "AppKiwi"
@@ -87,7 +87,7 @@ export type Name =
   | "TransportTaxi"
   | "WomanWithPhone";
 
-export interface Props extends Globals, SpaceAfter {
+export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: Name;
   readonly alt?: string;

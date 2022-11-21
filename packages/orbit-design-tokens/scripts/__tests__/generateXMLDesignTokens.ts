@@ -396,6 +396,30 @@ describe(generateXMLDesignTokens.name, () => {
           <value>#008472</value>
         </token>
         <token>
+          <name>colorTextButtonPrimarySubtle</name>
+          <value>#00A58E</value>
+        </token>
+        <token>
+          <name>colorTextButtonPrimarySubtleHover</name>
+          <value>#007F6D</value>
+        </token>
+        <token>
+          <name>colorTextButtonPrimarySubtleActive</name>
+          <value>#007F6D</value>
+        </token>
+        <token>
+          <name>colorTextButtonCriticalSubtle</name>
+          <value>#D21C1C</value>
+        </token>
+        <token>
+          <name>colorTextButtonCriticalSubtleHover</name>
+          <value>#970C0C</value>
+        </token>
+        <token>
+          <name>colorTextButtonCriticalSubtleActive</name>
+          <value>#970C0C</value>
+        </token>
+        <token>
           <name>colorTextInput</name>
           <value>#252A31</value>
         </token>
@@ -718,6 +742,38 @@ describe(generateXMLDesignTokens.name, () => {
         <token>
           <name>backgroundButtonLinkSecondaryActive</name>
           <value>#D6DEE6</value>
+        </token>
+        <token>
+          <name>backgroundButtonPrimarySubtle</name>
+          <value>#ECF8F7</value>
+        </token>
+        <token>
+          <name>backgroundButtonPrimarySubtleHover</name>
+          <value>#D6F0EC</value>
+        </token>
+        <token>
+          <name>backgroundButtonPrimarySubtleActive</name>
+          <value>#BFE8E2</value>
+        </token>
+        <token>
+          <name>backgroundButtonPrimarySubtleFocus</name>
+          <value>#ECF8F7</value>
+        </token>
+        <token>
+          <name>backgroundButtonCriticalSubtle</name>
+          <value>#FCF3F3</value>
+        </token>
+        <token>
+          <name>backgroundButtonCriticalSubtleHover</name>
+          <value>#F8E2E2</value>
+        </token>
+        <token>
+          <name>backgroundButtonCriticalSubtleActive</name>
+          <value>#F3CECE</value>
+        </token>
+        <token>
+          <name>backgroundButtonCriticalSubtleFocus</name>
+          <value>#FCF3F3</value>
         </token>
         <token>
           <name>backgroundInput</name>

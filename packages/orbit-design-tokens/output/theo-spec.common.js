@@ -262,6 +262,8 @@ module.exports = {
   /*  */
   colorTextBadgeDark: "rgb(255, 255, 255)",
   /*  */
+  backgroundButtonPrimarySubtleFocus: "rgb(236, 248, 247)",
+  /*  */
   borderColorInputHover: "rgb(62, 78, 99)",
   /*  */
   backgroundButtonBundleTopHover: "linear-gradient(to top right, #171718 0%, #51575C 100%)",
@@ -382,6 +384,8 @@ module.exports = {
   /*  */
   colorTextButtonCriticalBordered: "rgb(210, 28, 28)",
   /*  */
+  backgroundButtonCriticalSubtle: "rgb(252, 243, 243)",
+  /*  */
   colorTextInputPrefix: "rgb(79, 94, 113)",
   /*  */
   backgroundBadgeBundleMedium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
@@ -395,6 +399,8 @@ module.exports = {
   backgroundButtonBundleBasic: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
   /*  */
   fontWeightBold: "700",
+  /*  */
+  backgroundButtonCriticalSubtleFocus: "rgb(252, 243, 243)",
   /*  */
   colorTextButtonLinkPrimaryActive: "rgb(0, 102, 87)",
   /*  */
@@ -418,6 +424,8 @@ module.exports = {
   /*  */
   colorTextButtonWhiteActive: "rgb(11, 12, 15)",
   /*  */
+  backgroundButtonPrimarySubtleHover: "rgb(214, 240, 236)",
+  /*  */
   widthStopoverArrow: "36px",
   /*  */
   paletteOrangeLight: "rgb(254, 247, 241)",
@@ -427,6 +435,8 @@ module.exports = {
   fontSizeHeadingTitle3: "16px",
   /*  */
   backgroundAlertCritical: "rgb(252, 243, 243)",
+  /*  */
+  colorTextButtonPrimarySubtle: "rgb(0, 165, 142)",
   /*  */
   widthModalNormal: "740px",
   /*  */
@@ -454,6 +464,8 @@ module.exports = {
   /*  */
   borderRadiusCircle: "50%",
   /*  */
+  colorTextButtonCriticalSubtle: "rgb(210, 28, 28)",
+  /*  */
   paletteWhite: "rgb(255, 255, 255)",
   /*  */
   fontSizeHeadingTitle4: "14px",
@@ -478,6 +490,8 @@ module.exports = {
   /*  */
   fontWeightNormal: "400",
   /*  */
+  colorTextButtonCriticalSubtleHover: "rgb(151, 12, 12)",
+  /*  */
   backgroundButtonLinkPrimaryActive: "rgb(214, 222, 230)",
   /*  */
   colorFormLabelFilled: "rgb(79, 94, 113)",
@@ -487,6 +501,10 @@ module.exports = {
   lineHeightTextNormal: "20px",
   /*  */
   borderColorButtonGoogleBorderedHover: "rgb(24, 27, 32)",
+  /*  */
+  backgroundButtonPrimarySubtle: "rgb(236, 248, 247)",
+  /*  */
+  colorTextButtonPrimarySubtleHover: "rgb(0, 127, 109)",
   /*  */
   fontSizeHeadingTitle5: "12px",
   /*  */
@@ -533,6 +551,8 @@ module.exports = {
   colorStopoverArrow: "rgb(79, 94, 113)",
   /*  */
   heightInputGroupSeparatorNormal: "24px",
+  /*  */
+  backgroundButtonCriticalSubtleHover: "rgb(248, 226, 226)",
   /*  */
   colorTextButtonCriticalBorderedHover: "rgb(185, 25, 25)",
   /*  */
@@ -612,6 +632,8 @@ module.exports = {
   /*  */
   paddingButtonWithoutText: "0",
   /*  */
+  backgroundButtonCriticalSubtleActive: "rgb(243, 206, 206)",
+  /*  */
   colorPlaceholderInputFileError: "rgb(210, 28, 28)",
   /*  */
   paletteProductDarkHover: "rgb(0, 112, 96)",
@@ -623,6 +645,8 @@ module.exports = {
   lineHeightHeadingDisplaySubtitle: "28px",
   /*  */
   backgroundButtonWhiteHover: "rgb(245, 247, 249)",
+  /*  */
+  colorTextButtonPrimarySubtleActive: "rgb(0, 127, 109)",
   /*  */
   borderColorButtonCriticalBordered: "rgb(210, 28, 28)",
   /*  */
@@ -658,6 +682,8 @@ module.exports = {
   /*  */
   backgroundButtonWhiteBordered: "transparent",
   /*  */
+  colorTextButtonCriticalSubtleActive: "rgb(151, 12, 12)",
+  /*  */
   widthModalLarge: "900px",
   /*  */
   paletteWhiteActive: "rgb(229, 234, 239)",
@@ -683,6 +709,8 @@ module.exports = {
   zIndexModal: "825",
   /*  */
   borderColorTagFocus: "rgb(1, 114, 203)",
+  /*  */
+  backgroundButtonPrimarySubtleActive: "rgb(191, 232, 226)",
   /*  */
   borderStyleCard: "solid",
   /*  */

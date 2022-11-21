@@ -75,6 +75,27 @@ FourCarriers.story = {
   },
 };
 
+export const InlineStacked = () => {
+  const carrier = [
+    { code: "FR", name: "Ryanair" },
+    { code: "TO", name: "Transavia France" },
+    { code: "VY", name: "Vueling" },
+    { code: "OK", name: "Czech Airlines" },
+  ];
+
+  const carriersObject = object(carriersLabel, carrier);
+
+  return <CarrierLogo carriers={carriersObject} inlineStacked rounded />;
+};
+
+InlineStacked.story = {
+  name: "Inline stacked",
+
+  parameters: {
+    info: "Carrier logos are displayed inline, stacking on top of each other.",
+  },
+};
+
 export const NonExistingCarriers = () => {
   const carrier: Carrier[] = [
     { code: "LOL", name: "Lorem ipsum", type: "airline" },
@@ -121,6 +142,8 @@ NonExistingCarrier.story = {
 export const Rtl = () => (
   <RenderInRtl>
     <CarrierLogo
+      rounded
+      inlineStacked
       size="large"
       carriers={[
         { code: "FR", name: "Lorem ipsum", type: "airline" },

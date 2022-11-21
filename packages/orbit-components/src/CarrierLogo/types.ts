@@ -16,4 +16,5 @@ export interface Props extends Common.Globals {
   readonly size?: Size;
   readonly rounded?: boolean;
   readonly carriers: Common.Carrier[];
+  readonly inlineStacked?: boolean;
 }

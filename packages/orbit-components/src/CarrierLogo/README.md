@@ -16,13 +16,14 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in CarrierLogo component.
 
-| Name         | Type                    | Default   | Description                                                            |
-| :----------- | :---------------------- | :-------- | :--------------------------------------------------------------------- |
-| **carriers** | [`Carrier[]`](#carrier) |           | The content of the CarrierLogo, passed as array of objects.            |
-| dataTest     | `string`                |           | Optional prop for testing purposes.                                    |
-| id           | `string`                |           | Set `id` for `CarrierLogo`                                             |
-| size         | [`enum`](#enum)         | `"large"` | The size of the CarrierLogo. [See Functional specs](#functional-specs) |
-| rounded      | `boolean`               |           | Rounded carrier image                                                  |
+| Name          | Type                    | Default   | Description                                                            |
+| :------------ | :---------------------- | :-------- | :--------------------------------------------------------------------- |
+| **carriers**  | [`Carrier[]`](#carrier) |           | The content of the CarrierLogo, passed as array of objects.            |
+| dataTest      | `string`                |           | Optional prop for testing purposes.                                    |
+| id            | `string`                |           | Set `id` for `CarrierLogo`                                             |
+| size          | [`enum`](#enum)         | `"large"` | The size of the CarrierLogo. [See Functional specs](#functional-specs) |
+| rounded       | `boolean`               |           | Rounded carrier image                                                  |
+| inlineStacked | `boolean`               |           | Carrier logos are displayed inline, stacking on top of each other.     |
 
 ### Carrier
 

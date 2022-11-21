@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import tokensList from "@kiwicom/orbit-design-tokens/output/theo-spec.json";
+import { convertRgbaToHex } from "@kiwicom/orbit-design-tokens";
 import {
   InputField,
   Stack,
@@ -27,6 +28,9 @@ const allTokens: Array<{ name: TokenName; value: TokenValue }> = Object.entries(
 
 const DesignToken = ({ value }: { value: TokenValueType }) => {
   const [isCopied, copy] = useCopyToClipboard(2000);
+  const formattedValue =
+    typeof value !== "string" || !value.startsWith("rgb") ? value : convertRgbaToHex(value);
+
   return isCopied ? (
     <Stack inline spacing="XSmall" shrink align="center">
       <StyledDesignTokenOther />
@@ -36,8 +40,12 @@ const DesignToken = ({ value }: { value: TokenValueType }) => {
     <Tooltip content="Click to copy">
       <Stack inline spacing="XSmall" shrink align="center">
         <DesignTokenIcon value={value} />
-        <button type="button" onClick={() => copy(String(value))} title={String(value)}>
-          <Truncate maxWidth="200px">{value}</Truncate>
+        <button
+          type="button"
+          onClick={() => copy(String(formattedValue))}
+          title={String(formattedValue)}
+        >
+          <Truncate maxWidth="200px">{formattedValue}</Truncate>
         </button>
       </Stack>
     </Tooltip>

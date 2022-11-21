@@ -1,6 +1,7 @@
 import mergeDeep from "./mergeDeep";
 import palette from "./basePalette";
 import convertHexToRgba from "./convertHexToRgba";
+import convertRgbaToHex from "./convertRgbaToHex";
 import foundation from "./foundation";
 import { Tokens, CustomFoundation, ThemePaletteColors, Foundation } from "./types";
 
@@ -590,7 +591,7 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
 
 export const defaultTokens: Tokens = getTokens();
 
-export { foundation, convertHexToRgba, palette };
+export { foundation, convertHexToRgba, convertRgbaToHex, palette };
 
 export const fromPlainObject = (themePaletteColors: ThemePaletteColors): Tokens => {
   const theme = {

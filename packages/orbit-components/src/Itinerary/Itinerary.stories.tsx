@@ -1,6 +1,7 @@
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import styled, { css } from "styled-components";
+import { action } from "@storybook/addon-actions";
 
 import Modal, { ModalSection } from "../Modal";
 import * as Icons from "../icons";
@@ -841,7 +842,7 @@ export const RTL = () => {
           <ItinerarySegment
             banner={
               <Stack inline align="stretch">
-                <ItinerarySegmentBanner>
+                <ItinerarySegmentBanner onClick={action("onClick")}>
                   <ItineraryBadgeList>
                     <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
                       <StyledText as="span" type="info" weight="bold">

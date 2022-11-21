@@ -6,7 +6,7 @@ import { StyledSeparator } from "../../../Separator";
 import ChevronRight from "../../../icons/ChevronRight";
 import { StyledWrapper as StyledBadgeListWrapper } from "../../ItineraryBadgeList";
 import type { Props } from "./types";
-import { left } from "../../../utils/rtl"
+import { left } from "../../../utils/rtl";
 
 const StyledBannerWrapper = styled.div`
   ${({ theme }) => css`
@@ -39,7 +39,12 @@ StyledBannerWrapper.defaultProps = {
 
 const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
   return (
-    <StyledBannerWrapper onClick={onClick}>
+    <StyledBannerWrapper
+      onClick={ev => {
+        ev.stopPropagation();
+        if (onClick) onClick(ev);
+      }}
+    >
       <div>{children}</div>
       <ChevronRight color="secondary" />
     </StyledBannerWrapper>

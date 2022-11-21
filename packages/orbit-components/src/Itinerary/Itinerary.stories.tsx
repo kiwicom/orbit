@@ -1,6 +1,7 @@
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import styled, { css } from "styled-components";
+import { action } from "@storybook/addon-actions";
 
 import Modal, { ModalSection } from "../Modal";
 import * as Icons from "../icons";
@@ -790,51 +791,95 @@ export const RTL = () => {
   const Icon = Icons[source];
 
   return (
-    <RenderInRtl>
-      <Itinerary>
-        <ItinerarySegment spaceAfter="medium">
-          <ItinerarySegmentStop
-            city="Moscow"
-            station="Sheremetyevo International Airport (SVO)"
-            date="Fri, 19.10"
-            time="14:05"
-          />
-          <ItinerarySegmentDetail
-            icon={<Icon size="small" />}
-            duration="2h 30m"
-            summary={<BadgeGroup />}
-            content={content}
-          />
-          <ItinerarySegmentStop
-            city="Prague"
-            station="Václav Havel Airport Prague (PRG)"
-            date="Fri, 19.10"
-            time="16:35"
-          />
-        </ItinerarySegment>
-        <ItineraryBadgeList>
-          <ItineraryBadgeListItem icon={<Guarantee />}>
-            Connection protected by the Kiwi.com Guarantee
-          </ItineraryBadgeListItem>
-        </ItineraryBadgeList>
-        <ItinerarySegment spaceAfter="large">
-          <ItinerarySegmentStop
-            city="Prague"
-            station="Václav Havel Airport Prague (PRG)"
-            date="Sat, 20.10"
-            time="11:05"
-          />
-          <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
-          <ItinerarySegmentStop
-            city="Milan"
-            station="Milan Bergamo International Airport (BGY)"
-            date="Fri, 20.10"
-            time="16:35"
-            type="warning"
-          />
-        </ItinerarySegment>
-      </Itinerary>
-    </RenderInRtl>
+    <>
+      <RenderInRtl>
+        <Itinerary>
+          <ItinerarySegment spaceAfter="medium">
+            <ItinerarySegmentStop
+              city="Moscow"
+              station="Sheremetyevo International Airport (SVO)"
+              date="Fri, 19.10"
+              time="14:05"
+            />
+            <ItinerarySegmentDetail
+              icon={<Icon size="small" />}
+              duration="2h 30m"
+              summary={<BadgeGroup />}
+              content={content}
+            />
+            <ItinerarySegmentStop
+              city="Prague"
+              station="Václav Havel Airport Prague (PRG)"
+              date="Fri, 19.10"
+              time="16:35"
+            />
+          </ItinerarySegment>
+          <ItineraryBadgeList>
+            <ItineraryBadgeListItem icon={<Guarantee />}>
+              Connection protected by the Kiwi.com Guarantee
+            </ItineraryBadgeListItem>
+          </ItineraryBadgeList>
+          <ItinerarySegment spaceAfter="large">
+            <ItinerarySegmentStop
+              city="Prague"
+              station="Václav Havel Airport Prague (PRG)"
+              date="Sat, 20.10"
+              time="11:05"
+            />
+            <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
+            <ItinerarySegmentStop
+              city="Milan"
+              station="Milan Bergamo International Airport (BGY)"
+              date="Fri, 20.10"
+              time="16:35"
+              type="warning"
+            />
+          </ItinerarySegment>
+        </Itinerary>
+      </RenderInRtl>
+      <RenderInRtl>
+        <Itinerary>
+          <ItinerarySegment
+            banner={
+              <Stack inline align="stretch">
+                <ItinerarySegmentBanner onClick={action("onClick")}>
+                  <ItineraryBadgeList>
+                    <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
+                      <StyledText as="span" type="info" weight="bold">
+                        Throwaway ticketing hack:{" "}
+                      </StyledText>{" "}
+                      You are saving money with this travel hack.
+                    </ItineraryBadgeListItem>
+                  </ItineraryBadgeList>
+                </ItinerarySegmentBanner>
+              </Stack>
+            }
+          >
+            <ItinerarySegmentStop
+              city="Barcelona BCN"
+              station="Brno-Tuřany"
+              date="Mon, 30.1"
+              time="17:30"
+            />
+            <ItinerarySegmentDetail
+              duration="2h 30m"
+              summary={
+                <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
+                  Ryanair
+                </Badge>
+              }
+              content={content}
+            />
+            <ItinerarySegmentStop
+              city="London LHR"
+              station="London Heathrow"
+              date="Mon, 30.1"
+              time="20:00"
+            />
+          </ItinerarySegment>
+        </Itinerary>
+      </RenderInRtl>
+    </>
   );
 };
 

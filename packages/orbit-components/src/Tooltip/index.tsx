@@ -59,4 +59,3 @@ const Tooltip = ({
 };
 
 export default Tooltip;
-export { Props };

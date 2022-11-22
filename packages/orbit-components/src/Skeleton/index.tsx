@@ -11,4 +11,3 @@ const Skeleton = ({ preset, ...props }: Props) => {
 };
 
 export default Skeleton;
-export { Props };

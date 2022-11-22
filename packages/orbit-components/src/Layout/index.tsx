@@ -45,4 +45,3 @@ const Layout = ({ children, type, dataTest }: Props) => (
 export default Layout;
 
 export { default as LayoutColumn } from "./LayoutColumn";
-export { Props, Type };

@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { pureTranslate } from "../Translate";
 import DictionaryContext from "./DictionaryContext";
-import type { Props, Translations } from "./types";
+import type { Props } from "./types";
 
 const Dictionary = ({ values, children }: Props) => (
   <DictionaryContext.Provider value={values}>{children}</DictionaryContext.Provider>
@@ -24,4 +24,3 @@ export function withDictionary(Component: React.ComponentType<any>) {
 }
 
 export default Dictionary;
-export { Props, Translations };

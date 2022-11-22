@@ -37,4 +37,3 @@ const FeatureIcon = ({ alt = "", name, dataTest, id }: Props) => (
 );
 
 export default FeatureIcon;
-export { Props };

@@ -52,4 +52,3 @@ const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
 };
 
 export default ItinerarySegmentBanner;
-export { Props };

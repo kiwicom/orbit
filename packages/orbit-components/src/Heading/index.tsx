@@ -8,7 +8,7 @@ import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
 import { DEVICES } from "../utils/mediaQuery/consts";
-import type { Props, Type, As } from "./types";
+import type { Props, Type } from "./types";
 
 export const getHeadingToken = (name: string, type: Type) => ({ theme }: { theme: Theme }) => {
   const tokens = {
@@ -61,9 +61,9 @@ export const StyledHeading = styled(
     text-transform: ${type === TYPE_OPTIONS.TITLE5 && "uppercase"};
     color: ${inverted ? theme.orbit.colorHeadingInverted : theme.orbit.colorHeading};
     margin: 0;
-    text-align: ${textAlign(align)};
     font-size: ${getHeadingToken(TOKENS.sizeHeading, type)};
     font-weight: ${getHeadingToken(TOKENS.weightHeading, type)};
+    text-align: ${textAlign(align)};
     line-height: ${getHeadingToken(TOKENS.lineHeight, type)};
     margin-bottom: ${getSpacingToken};
     ${Object.values(DEVICES)
@@ -72,8 +72,8 @@ export const StyledHeading = styled(
         const { type: value, spaceAfter, align: txtAlign } = viewports[viewport];
         return mediaQueries[viewport](css`
           font-size: ${getHeadingToken(TOKENS.sizeHeading, value)};
-          text-align: ${textAlign(txtAlign)};
           font-weight: ${getHeadingToken(TOKENS.weightHeading, value)};
+          text-align: ${textAlign(txtAlign)};
           line-height: ${getHeadingToken(TOKENS.lineHeight, value)};
           margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
         `);
@@ -120,4 +120,3 @@ const Heading = ({
 };
 
 export default Heading;
-export { Props, Type, As };

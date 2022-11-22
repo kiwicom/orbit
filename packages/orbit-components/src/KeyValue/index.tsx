@@ -49,4 +49,3 @@ const KeyValue = ({ dataTest, label, value, direction, size = "normal", icon, sp
 };
 
 export default KeyValue;
-export { Props };

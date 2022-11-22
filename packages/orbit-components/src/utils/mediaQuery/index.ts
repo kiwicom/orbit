@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 import type { Theme } from "../../defaultTheme";
 import { QUERIES } from "./consts";
-import type { MediaQueries, Devices, BreakpointToken } from "./types";
+import type { MediaQueries } from "./types";
 
 export const TOKEN = {
   mediumMobile: "widthBreakpointMediumMobile",
@@ -34,4 +34,3 @@ const mediaQueries = Object.values(QUERIES).reduce<MediaQueries>(
 );
 
 export default mediaQueries;
-export { MediaQueries, Devices, BreakpointToken };

@@ -58,4 +58,3 @@ const TableCell = ({
 };
 
 export default TableCell;
-export { Props };

@@ -68,5 +68,5 @@ const Stepper = ({ onChange, defaultValue = 0, maxWidth = 108, ...props }: Props
 };
 
 export default Stepper;
-export { Props };
+
 export { default as StepperStateless } from "./StepperStateless";

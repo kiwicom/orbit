@@ -20,5 +20,3 @@ const BadgeList = ({ children, dataTest, id }: Props) => {
 
 export { default as BadgeListItem } from "./BadgeListItem";
 export default BadgeList;
-
-export { Props };

@@ -94,4 +94,3 @@ const useMediaQuery = () => {
 };
 
 export default useMediaQuery;
-export { QueryMap };

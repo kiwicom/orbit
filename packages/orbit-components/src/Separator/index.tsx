@@ -64,4 +64,3 @@ const Separator = ({ align = "left", indent = "none", spaceAfter }: Props) => (
 );
 
 export default Separator;
-export { Props, Indent, Align };

@@ -89,4 +89,3 @@ const MobileDialog = ({
 };
 
 export default MobileDialog;
-export { Props };

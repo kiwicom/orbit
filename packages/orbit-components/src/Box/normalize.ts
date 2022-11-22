@@ -3,9 +3,13 @@ import { TOKENS } from "../utils/layout/consts";
 import type { ThemeProps, Theme } from "../defaultTheme";
 import { firstToUpper } from "../utils/common";
 import { getJustify, getAlign, formatCSS, getDirection, getWrap, isDefined } from "../utils/layout";
-import type { MediaQueryObject, Elevation } from "./types";
+import type { MediaQueryObject, Elevation, SpacingToken, SpacingObject, Props } from "./types";
 
-const normalizeSpacing = (el, property, theme: Theme): string[] => {
+const normalizeSpacing = (
+  el: SpacingToken | SpacingObject,
+  property: string,
+  theme: Theme,
+): string[] => {
   if (typeof el === "object") {
     return Object.keys(el).map(key => {
       const val = el[key];
@@ -24,7 +28,7 @@ const normalizeSpacing = (el, property, theme: Theme): string[] => {
 const normalizeToken = (token, property, prefix, theme: Theme): string =>
   formatCSS(property, theme.orbit[prefix + firstToUpper(token)]);
 
-const normalizeSize = (val, property): string => {
+const normalizeSize = (val: string, property: string): string => {
   if (val === WIDTH_AND_HEIGHT.FULL) {
     return formatCSS(property, "100%");
   }
@@ -67,7 +71,7 @@ const norm = ({ val, key, theme }): string | void => {
   return all[key];
 };
 
-const normalize = (mqObject: MediaQueryObject) => ({ theme }: ThemeProps) => {
+const normalize = (mqObject: MediaQueryObject) => ({ theme }: ThemeProps): string[] | null => {
   if (!mqObject) return null;
 
   return Object.keys(mqObject).reduce<string[]>((acc, prop) => {

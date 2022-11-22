@@ -132,4 +132,3 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
 Switch.displayName = "Switch";
 
 export default Switch;
-export { Props };

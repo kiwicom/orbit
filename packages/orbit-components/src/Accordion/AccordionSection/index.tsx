@@ -53,4 +53,3 @@ const AccordionSection = ({
 };
 
 export default AccordionSection;
-export { Props };

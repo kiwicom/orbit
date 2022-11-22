@@ -66,4 +66,3 @@ const StopoverArrow = ({ stops = STOPS.ZERO, dataTest, id }: Props) => {
 };
 
 export default StopoverArrow;
-export { Props };

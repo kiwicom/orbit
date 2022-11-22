@@ -383,4 +383,3 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
 Select.displayName = "Select";
 
 export default Select;
-export { Props };

@@ -46,4 +46,3 @@ const SocialButton = React.forwardRef<HTMLButtonElement, Props>(
 SocialButton.displayName = "SocialButton";
 
 export default SocialButton;
-export { Props };

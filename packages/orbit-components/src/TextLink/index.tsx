@@ -209,4 +209,3 @@ const TextLink = ({
 };
 
 export default TextLink;
-export { Props };

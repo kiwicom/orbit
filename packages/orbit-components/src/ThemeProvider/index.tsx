@@ -25,4 +25,3 @@ const ThemeProvider = ({ theme, dictionary, children }: Props) => {
 };
 
 export default ThemeProvider;
-export { Props };

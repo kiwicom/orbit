@@ -5,14 +5,7 @@ import defaultTheme from "../defaultTheme";
 import media from "../utils/mediaQuery";
 import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
 import normalize from "./normalize";
-import type {
-  Props,
-  SpacingToken,
-  SpacingObject,
-  Elevation,
-  ColorTokens,
-  MediaQueryObject,
-} from "./types";
+import type { Props } from "./types";
 
 const StyledBox = styled(
   ({ className, asComponent: Element, children, dataTest, id, forwardRef }) => (
@@ -75,4 +68,3 @@ const Box = React.forwardRef<HTMLDivElement, Props>(
 );
 
 export default Box;
-export { Props, SpacingToken, SpacingObject, Elevation, ColorTokens, MediaQueryObject };

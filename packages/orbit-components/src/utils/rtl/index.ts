@@ -1,7 +1,7 @@
 import type { Theme } from "../../defaultTheme";
 import type { RtlSpacing, BorderRadius, Translate3d, TextAlign, LeftToRight } from "./types";
 
-const leftToRight = (left: string, right: string) => ({ theme }: { theme: Theme }) =>
+const leftToRight: LeftToRight = (left: string, right: string) => ({ theme }: { theme: Theme }) =>
   theme.rtl ? right : left;
 
 export const rtlSpacing: RtlSpacing = value => ({ theme }) => {
@@ -22,7 +22,7 @@ export const borderRadius: BorderRadius = value => ({ theme }) => {
   return parts.length === 4 ? [parts[1], parts[0], parts[3], parts[2]].join(" ") : value;
 };
 
-export const textAlign = (value: string) => ({ theme }: { theme: Theme }): string => {
+export const textAlign: TextAlign = (value: string) => ({ theme }: { theme: Theme }): string => {
   if (theme.rtl) {
     if (value === "left") {
       return leftToRight("left", "right")({ theme });
@@ -30,6 +30,7 @@ export const textAlign = (value: string) => ({ theme }: { theme: Theme }): strin
     if (value === "right") {
       return leftToRight("right", "left")({ theme });
     }
+    return value;
   }
   return value;
 };
@@ -44,5 +45,3 @@ export const translate3d: Translate3d = value => ({ theme }: { theme: Theme }) =
   const newX = x[0] === "-" ? x.slice(1) : `-${x}`;
   return `translate3d(${newX},${parts[1]},${parts[2]})`;
 };
-
-export { RtlSpacing, BorderRadius, Translate3d, TextAlign, LeftToRight };

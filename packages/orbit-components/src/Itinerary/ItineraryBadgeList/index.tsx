@@ -33,4 +33,3 @@ const ItineraryBadgeList = ({ children, spaceAfter, ...props }: Props) => {
 
 export default ItineraryBadgeList;
 export { ItineraryBadgeListItem };
-export { Props };

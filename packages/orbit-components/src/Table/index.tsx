@@ -167,4 +167,3 @@ export { default as TableFooter } from "./TableFooter";
 export { default as TableRow } from "./TableRow";
 export { default as TableCell } from "./TableCell";
 export { StyledTable, StyledTableCell, StyledTableBody, StyledTableRow, StyledTableHead };
-export { Props, Type };

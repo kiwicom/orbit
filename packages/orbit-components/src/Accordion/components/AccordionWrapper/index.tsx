@@ -27,4 +27,3 @@ const AccordionWrapper = ({ dataTest, initialExpanded, ...props }: Props) => (
 );
 
 export default AccordionWrapper;
-export { Props };

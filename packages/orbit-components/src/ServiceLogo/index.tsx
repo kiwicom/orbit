@@ -55,4 +55,3 @@ const ServiceLogo = ({
 );
 
 export default ServiceLogo;
-export { Props };

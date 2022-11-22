@@ -344,4 +344,3 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
 );
 
 export default InputGroup;
-export { Props };

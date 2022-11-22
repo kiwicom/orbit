@@ -334,4 +334,3 @@ const Alert = (props: Props) => {
 export { default as AlertButton } from "./AlertButton";
 
 export default Alert;
-export { Props, Type };

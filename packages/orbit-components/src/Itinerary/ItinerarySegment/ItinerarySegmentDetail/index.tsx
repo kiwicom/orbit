@@ -223,4 +223,3 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props) => 
 };
 
 export default ItinerarySegmentDetail;
-export { Props };

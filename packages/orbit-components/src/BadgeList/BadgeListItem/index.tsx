@@ -111,4 +111,3 @@ const BadgeListItem = ({
 };
 
 export default BadgeListItem;
-export { Props, Type };

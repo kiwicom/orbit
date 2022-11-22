@@ -41,4 +41,3 @@ const LayoutColumn = ({ children, hideOn, as = "div", spanEntireRow, dataTest }:
 };
 
 export default LayoutColumn;
-export { Props };

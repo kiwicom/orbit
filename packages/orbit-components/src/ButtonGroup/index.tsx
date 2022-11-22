@@ -46,4 +46,3 @@ const ButtonGroup = ({ children, dataTest }: Props) => (
 );
 
 export default ButtonGroup;
-export { Props };

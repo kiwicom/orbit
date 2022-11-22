@@ -55,4 +55,3 @@ const TileGroup = ({ children, dataTest, id, as }: Props) => {
 };
 
 export default TileGroup;
-export { Props };

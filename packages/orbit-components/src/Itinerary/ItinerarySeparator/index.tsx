@@ -64,4 +64,3 @@ const ItinerarySeparator = ({ children }: Props) => {
 };
 
 export default ItinerarySeparator;
-export { Props };

@@ -69,4 +69,3 @@ const SkipLink = ({ links, buttonLabel }: Props) => {
 };
 
 export default SkipLink;
-export { Props };

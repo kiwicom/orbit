@@ -31,4 +31,3 @@ const Coupon = ({ children, dataTest, id }: Props) => (
 );
 
 export default Coupon;
-export { Props };

@@ -39,4 +39,3 @@ const Portal = ({ renderInto, children }: Props) => {
 };
 
 export default Portal;
-export { Props };

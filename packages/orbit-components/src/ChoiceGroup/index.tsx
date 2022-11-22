@@ -131,4 +131,3 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
 );
 
 export default ChoiceGroup;
-export { Props, Size };

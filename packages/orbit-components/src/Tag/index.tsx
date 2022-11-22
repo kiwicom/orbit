@@ -245,4 +245,3 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
 );
 
 export default Tag;
-export { Props, Type };

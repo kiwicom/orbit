@@ -146,4 +146,3 @@ const CarrierLogo = ({
   </StyledCarrierLogo>
 );
 export default CarrierLogo;
-export { Props, CarrierType, Size, Carrier };

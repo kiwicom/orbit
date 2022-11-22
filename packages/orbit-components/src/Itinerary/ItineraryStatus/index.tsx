@@ -122,4 +122,3 @@ const ItineraryStatus = ({ type, label, spaceAfter = "medium", children, offset 
 };
 
 export default ItineraryStatus;
-export { Props };

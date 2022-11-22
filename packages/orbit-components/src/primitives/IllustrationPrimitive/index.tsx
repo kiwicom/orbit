@@ -68,4 +68,3 @@ const IllustrationPrimitive = ({
 };
 
 export default IllustrationPrimitive;
-export { Props };

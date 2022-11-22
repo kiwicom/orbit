@@ -28,4 +28,3 @@ const NotificationBadge = ({ type, children, icon, ariaLabel, dataTest, id }: Pr
 };
 
 export default NotificationBadge;
-export { Props };

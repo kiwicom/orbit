@@ -86,7 +86,7 @@ describe("#Box", () => {
 
   it("should have display flex", () => {
     render(
-      <Box dataTest={dataTest} display="flex" wrap="wrap" direction="row" grow={0} shrink={0}>
+      <Box dataTest={dataTest} display="flex" wrap="nowrap" direction="row" grow={0} shrink={0}>
         kek
       </Box>,
     );
@@ -95,7 +95,7 @@ describe("#Box", () => {
     expect(screen.getByTestId(dataTest)).toHaveStyle({ flexDirection: "row" });
     expect(screen.getByTestId(dataTest)).toHaveStyle({ flexShrink: "0" });
     expect(screen.getByTestId(dataTest)).toHaveStyle({ flexGrow: "0" });
-    expect(screen.getByTestId(dataTest)).toHaveStyle({ flexWrap: "wrap" });
+    expect(screen.getByTestId(dataTest)).toHaveStyle({ flexWrap: "nowrap" });
   });
 
   it.each(Object.values(DIRECTIONS))("should have directions", direction => {

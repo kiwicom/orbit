@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { withKnobs, text, select, boolean, object } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
@@ -13,7 +13,6 @@ import ListChoice from "../ListChoice";
 import Text from "../Text";
 import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
-import Sticky from "../deprecated/Sticky";
 import Card from "../Card";
 import Loading from "../Loading";
 
@@ -353,7 +352,12 @@ LongContent.story = {
 export const ScrollingPage = () => {
   return (
     <>
-      <Sticky>
+      <div
+        css={css`
+          position: sticky;
+          top: 20px;
+        `}
+      >
         <Card>
           <Popover fixed content={content} onOpen={action("open")} onClose={action("close")}>
             <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
@@ -361,12 +365,13 @@ export const ScrollingPage = () => {
             </Button>
           </Popover>
         </Card>
-      </Sticky>
+      </div>
 
       <Content />
     </>
   );
 };
+
 ScrollingPage.story = {
   name: "Scrolling page",
 

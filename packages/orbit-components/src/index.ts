@@ -23,13 +23,11 @@ export { default as Desktop } from "./Desktop";
 export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
 export { default as NotificationBadge } from "./NotificationBadge";
-export { default as PictureCard } from "./deprecated/PictureCard";
 export { default as Wizard, WizardStep } from "./Wizard";
 
 // Card
 export { default as Card, CardSection } from "./Card";
 export { default as Coupon } from "./Coupon";
-export { default as Sticky } from "./deprecated/Sticky";
 
 // Accordion
 export { default as Accordion, AccordionSection } from "./Accordion";
@@ -84,7 +82,6 @@ export { default as Mobile } from "./Mobile";
 export { default as Pagination } from "./Pagination";
 export { default as Popover } from "./Popover";
 export { default as Radio } from "./Radio";
-export { default as RatingStars } from "./deprecated/RatingStars";
 export { default as Seat, SeatLegend } from "./Seat";
 export { default as Select } from "./Select";
 export { default as Skeleton } from "./Skeleton";

@@ -2,7 +2,7 @@ import { WIDTH_AND_HEIGHT } from "./consts";
 import { TOKENS } from "../utils/layout/consts";
 import type { ThemeProps, Theme } from "../defaultTheme";
 import { firstToUpper } from "../utils/common";
-import { getJustify, getAlign, formatCSS, getDirection, getWrap, isDefined } from "../utils/layout";
+import { getJustify, getAlign, formatCSS, getDirection, isDefined } from "../utils/layout";
 import type { MediaQueryObject, Elevation, SpacingToken, SpacingObject, Props } from "./types";
 
 const normalizeSpacing = (
@@ -58,7 +58,7 @@ const norm = ({ val, key, theme }): string | void => {
     direction: formatCSS("flex-direction", getDirection(val)),
     grow: formatCSS("flex-grow", val),
     shrink: formatCSS("flex-shrink", val),
-    wrap: formatCSS("flex-wrap", getWrap(val)),
+    wrap: formatCSS("flex-wrap", val),
     textAlign: formatCSS("text-align", val),
     minWidth: formatCSS("min-width", val),
     maxWidth: formatCSS("max-width", val),

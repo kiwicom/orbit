@@ -102,8 +102,6 @@ export const CATEGORIES = {
     "FeatureIcon",
     "Icon",
     "Illustration",
-    "PictureCard",
-    "RatingStars",
     "Seat",
     "ServiceLogo",
     "StopoverArrow",
@@ -122,6 +120,6 @@ export const CATEGORIES = {
   NAVIGATION: ["Breadcrumbs", "BreadcrumbsItem", "LinkList", "NavigationBar", "Pagination"],
   LAYOUT: ["Box", "Grid", "HorizontalScroll", "Inline", "Layout", "LayoutColumn", "Stack"],
   RESPONSIVE: ["Desktop", "Hide", "Mobile"],
-  UTILITY: ["Portal", "Sticky", "Truncate"],
+  UTILITY: ["Portal", "Truncate"],
   PRIMITIVES: ["BadgePrimitive", "ButtonPrimitive", "IllustrationPrimitive"],
 };

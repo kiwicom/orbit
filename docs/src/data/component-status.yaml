@@ -397,13 +397,6 @@
   android: Released
   docs: Released
   group: Input
-- component: RatingStars
-  figma: Designing
-  react: Released
-  ios: N/A
-  android: N/A
-  docs: Released
-  group: Visuals
 - component: Seat
   figma: Designing
   react: Released
@@ -481,13 +474,6 @@
   android: Released
   docs: Released
   group: Interaction
-- component: Sticky
-  figma: N/A
-  react: Released
-  ios: N/A
-  android: N/A
-  docs: Released
-  group: Utility
 - component: StopoverArrow
   figma: N/A
   react: Released

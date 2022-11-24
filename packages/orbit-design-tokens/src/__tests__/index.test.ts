@@ -1,6 +1,7 @@
 import { defaultTokens, getTokens, fromPlainObject } from "..";
 import foundation from "../foundation";
 import convertHexToRgba from "../convertHexToRgba";
+import convertRgbaToHex from "../convertRgbaToHex";
 
 describe("defaultTokens", () => {
   it("should match snapshot", () => {
@@ -149,5 +150,34 @@ describe("convertHexToRgba", () => {
     expect(convertHexToRgba(colors.light, 0)).toBe(finalColors.light);
     expect(convertHexToRgba(colors.whiteShort, 10)).toBe(finalColors.whiteShort);
     expect(convertHexToRgba(colors.whiteLong, 100)).toBe(finalColors.whiteLong);
+  });
+});
+
+describe("convertRgbaToHex", () => {
+  const colors = {
+    lighter: "rgba(186, 199, 213, 0.6)",
+    lighterHover: "rgba(166, 182, 200, 0.23)",
+    lighterActive: "rgba(148, 168, 190, 1)",
+    lighterActiveRGB: "rgb(148, 168, 190)",
+    transparent: "rgba(127, 145, 168, 0)",
+    whiteAlpha: "rgba(255, 255, 255, 0.1)",
+    white: "rgb(255, 255, 255)",
+  };
+  const finalColors = {
+    lighter: "#bac7d599",
+    lighterHover: "#a6b6c83a",
+    lighterActive: "#94a8be",
+    light: "#7f91a800",
+    whiteShort: "#ffffff19",
+    white: "#ffffff",
+  };
+  it("should converts to right HEX colors", () => {
+    expect(convertRgbaToHex(colors.lighter)).toBe(finalColors.lighter);
+    expect(convertRgbaToHex(colors.lighterHover)).toBe(finalColors.lighterHover);
+    expect(convertRgbaToHex(colors.lighterActive)).toBe(finalColors.lighterActive);
+    expect(convertRgbaToHex(colors.lighterActiveRGB)).toBe(finalColors.lighterActive);
+    expect(convertRgbaToHex(colors.transparent)).toBe(finalColors.light);
+    expect(convertRgbaToHex(colors.whiteAlpha)).toBe(finalColors.whiteShort);
+    expect(convertRgbaToHex(colors.white)).toBe(finalColors.white);
   });
 });

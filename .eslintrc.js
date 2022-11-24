@@ -47,6 +47,14 @@ module.exports = {
     "react/no-access-state-in-setstate": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "no-await-in-loop": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+      },
+    ],
     // to improve performance locally
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#my-linting-feels-really-slow
     ...(!process.env.CI

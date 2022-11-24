@@ -9,16 +9,16 @@ There are files which contains our own translations.
 
 ```jsx
 import en_GB from "@kiwicom/orbit-components/lib/data/dictionary/en-GB.json";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
 import Tooltip from "@kiwicom/orbit-components/lib/Tooltip";
 import Heading from "@kiwicom/orbit-components/lib/Heading";
 
 const App = () => (
-  <ThemeProvider dictionary={en_GB}>
+  <OrbitProvider dictionary={en_GB}>
     <Tooltip content="Write your text here. If it’s longer than three li…">
       <Heading>Orbit design system</Heading>
     </Tooltip>
-  </ThemeProvider>
+  </OrbitProvider>
 );
 ```
 
@@ -32,15 +32,15 @@ const App = () => (
 There is option to add your own dictionary, just pass object containing keys and values.
 
 ```jsx
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
 
 const App = () => (
-  <ThemeProvider
+  <OrbitProvider
     dictionary={{
       button_close: "My own translation",
     }}
   >
     <Button type="secondary" size="large" />
-  </ThemeProvider>
+  </OrbitProvider>
 );
 ```

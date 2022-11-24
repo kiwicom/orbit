@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Stack } from "@kiwicom/orbit-components";
 import getTokens from "@kiwicom/orbit-components/lib/getTokens";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
 
 export default {
   Example: () => {
@@ -25,9 +25,9 @@ export default {
     return (
       <Stack>
         <Button type="primary">Primary Button</Button>
-        <ThemeProvider theme={{ orbit: customTokens }}>
+        <OrbitProvider theme={{ orbit: customTokens }}>
           <Button type="primary">Primary Button (themed)</Button>
-        </ThemeProvider>
+        </OrbitProvider>
       </Stack>
     );
   },

@@ -1,7 +1,7 @@
-import { ThemeProvider } from "@kiwicom/orbit-components";
+import { OrbitProvider } from "@kiwicom/orbit-components";
 import { hex2hsl } from "@csstools/convert-colors";
 
-type ThemeShape = React.ComponentProps<typeof ThemeProvider>["theme"];
+type ThemeShape = React.ComponentProps<typeof OrbitProvider>["theme"];
 
 interface Params {
   dark?: boolean;

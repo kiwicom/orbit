@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { createRouter } from "@nanostores/router";
 import { useStore } from "@nanostores/react";
-import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
+import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 import LockScrolling from "./pages/lock-scrolling";
 import MediaQueries from "./pages/media-queries";
@@ -28,7 +28,7 @@ function App() {
   switch (page.route) {
     case "lockScrolling":
       return (
-        <ThemeProvider
+        <OrbitProvider
           theme={{
             ...defaultTheme,
             lockScrollingBarGap: true,
@@ -37,19 +37,19 @@ function App() {
           }}
         >
           <LockScrolling />
-        </ThemeProvider>
+        </OrbitProvider>
       );
     case "mediaQueries":
       return (
-        <ThemeProvider theme={defaultTheme}>
+        <OrbitProvider theme={defaultTheme}>
           <MediaQueries />
-        </ThemeProvider>
+        </OrbitProvider>
       );
     case "modalFooter":
       return (
-        <ThemeProvider theme={defaultTheme}>
+        <OrbitProvider theme={defaultTheme}>
           <ModalFooter />
-        </ThemeProvider>
+        </OrbitProvider>
       );
     default:
       return <PageNotFound />;

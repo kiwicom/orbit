@@ -6,7 +6,7 @@ import Dictionary from "../Dictionary";
 import QueryContextProvider from "./QueryContext/Provider";
 import type { Props } from "./types";
 
-const ThemeProvider = ({ theme, dictionary, children }: Props) => {
+const OrbitProvider = ({ theme, dictionary, children }: Props) => {
   return (
     <UIDReset>
       <UIDFork>
@@ -24,4 +24,4 @@ const ThemeProvider = ({ theme, dictionary, children }: Props) => {
   );
 };
 
-export default ThemeProvider;
+export default OrbitProvider;

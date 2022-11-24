@@ -2,15 +2,14 @@
 
 Package `orbit-components` supports right to left languages. It's done with `theme` context from `styled-components`.
 
-If you need to enable `rtl` inside `orbit-components`, set it inside `ThemeProvider`:
+If you need to enable `rtl` inside `orbit-components`, set it inside `OrbitProvider`:
 
 ```jsx
-import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "@kiwicom/orbit-components";
+import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
-<ThemeProvider theme={{ ...defaultTheme, rtl: true }}>
+<OrbitProvider theme={{ ...defaultTheme, rtl: true }}>
   <App />
-</ThemeProvider>;
+</OrbitProvider>;
 ```
 
 It's also important to pass some `orbit` object, in our case `defaultTheme`.

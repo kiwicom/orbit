@@ -18,16 +18,16 @@ You can use dictionaries with various components.
 import en_GB from "@kiwicom/orbit-components/lib/data/dictionary/en-GB.json";
 import cs_CZ from "@kiwicom/orbit-components/lib/data/dictionary/cs-CZ.json";
 import Pagination from "@kiwicom/orbit-components/lib/Pagination";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 const App = () => (
-  <ThemeProvider theme={defaultTheme} dictionary={en_GB}>
+  <OrbitProvider theme={defaultTheme} dictionary={en_GB}>
     <Pagination pageCount={4} selectedPage={3} hideLabels={false} />
-  </ThemeProvider>
-  <ThemeProvider theme={defaultTheme} dictionary={cs_CZ}>
+  </OrbitProvider>
+  <OrbitProvider theme={defaultTheme} dictionary={cs_CZ}>
     <Pagination pageCount={4} selectedPage={3} hideLabels={false} />
-  </ThemeProvider>
+  </OrbitProvider>
 );
 ```
 
@@ -47,16 +47,16 @@ You can add your own dictionary.
 Just pass an object containing keys and values.
 
 ```jsx
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
 
 const App = () => (
-  <ThemeProvider
+  <OrbitProvider
     dictionary={{
       button_close: "My own translation",
     }}
   >
     <Button type="secondary" size="large" />
-  </ThemeProvider>
+  </OrbitProvider>
 );
 ```
 

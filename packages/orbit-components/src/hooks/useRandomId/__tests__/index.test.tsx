@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import MatchMediaMock from "jest-matchmedia-mock";
 
-import ThemeProvider from "../../../ThemeProvider";
+import OrbitProvider from "../../../OrbitProvider";
 import theme from "../../../defaultTheme";
 import useRandomId from "..";
 
@@ -32,17 +32,17 @@ describe("useRandomId", () => {
     const container = document.createElement("div");
 
     container.innerHTML = renderToString(
-      <ThemeProvider theme={{ ...theme }}>
+      <OrbitProvider theme={{ ...theme }}>
         <Component />
-      </ThemeProvider>,
+      </OrbitProvider>,
     );
 
     document.body?.appendChild(container);
 
     const { container: clientContainer } = render(
-      <ThemeProvider theme={{ ...theme }}>
+      <OrbitProvider theme={{ ...theme }}>
         <Component />
-      </ThemeProvider>,
+      </OrbitProvider>,
       { container, hydrate: true },
     );
 

@@ -1,10 +1,10 @@
 import React from "react";
-import { ThemeProvider } from "@kiwicom/orbit-components";
+import { OrbitProvider } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
 import { commonTabStyle } from "./Tab";
 
-type ThemeShape = React.ComponentProps<typeof ThemeProvider>["theme"];
+type ThemeShape = React.ComponentProps<typeof OrbitProvider>["theme"];
 
 export const getStackOffset = (theme: ThemeShape) => theme.orbit.spaceMedium;
 

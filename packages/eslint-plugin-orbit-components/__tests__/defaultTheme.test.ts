@@ -34,7 +34,7 @@ describe("defaultTheme", () => {
         code: `
           import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";\
 
-          <ThemeProvider theme={defaultTheme}>
+          <OrbitProvider theme={defaultTheme}>
             <BrandProvider value={brand}>
               <FetchedProvider value={fetched}>
                 <LogProvider value={{ log: (e, p) => cuckoo.nitro(e, p) }}>
@@ -42,7 +42,7 @@ describe("defaultTheme", () => {
                 </LogProvider>
               </FetchedProvider>
           </BrandProvider>
-        </ThemeProvider>
+        </OrbitProvider>
         `,
       },
     ],

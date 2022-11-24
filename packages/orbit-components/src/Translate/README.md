@@ -19,14 +19,14 @@ Table below contains all types of the props available in Translate component.
 import en_GB from "@kiwicom/orbit-components/lib/data/dictionary/en-GB.json";
 import Button from "@kiwicom/orbit-components/lib/Button";
 import Translate from "@kiwicom/orbit-components/lib/Translate";
-import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
+import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
 
 const App = () =>
-  <ThemeProvider theme={...} dictionary={en_GB}>
+  <OrbitProvider theme={...} dictionary={en_GB}>
     <Button>
       <Translate tKey="button_close" />
     </Button>
-  </ThemeProvider>;
+  </OrbitProvider>;
 ```
 
 ### Values

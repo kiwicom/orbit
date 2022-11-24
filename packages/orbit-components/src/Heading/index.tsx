@@ -50,6 +50,7 @@ export const StyledHeading = styled(
       className={className}
       data-test={dataTest}
       data-a11y-section={dataA11ySection}
+      role={Component === "div" ? "heading" : undefined}
       id={id}
     >
       {children}

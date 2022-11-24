@@ -85,7 +85,7 @@ export const Playground = () => {
   const fullWidth = boolean("fullWidth", false);
   const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
-  const width = number("Width", 0);
+  const width = number("Width", NaN);
   const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
   const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
   const href = text("Href", "");

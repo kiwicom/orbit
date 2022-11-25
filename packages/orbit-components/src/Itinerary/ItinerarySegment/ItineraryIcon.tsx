@@ -76,8 +76,8 @@ IconStyled.defaultProps = {
 };
 
 const Icon = ({ type, isDetails, icon }) => {
-  if (icon) return icon;
   if (type) return <AlertCircle size="small" color={type === "neutral" ? "primary" : type} />;
+  if (icon) return icon;
   if (isDetails) return <AirplaneDown size="small" />;
 
   return <Circle size="small" color="secondary" />;

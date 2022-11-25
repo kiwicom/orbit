@@ -70,7 +70,10 @@ export default async ({ actions, createNodeId, createContentDigest, reporter }) 
       if (pathsRes) {
         const paths = pathsRes.project.repository.tree.blobs.nodes
           .map(b => b.path)
-          .filter(n => n.includes(".json"));
+          .filter(n => n.includes(".json"))
+          // @ts-expect-error expected
+          .sort((a, b) => b.split("-")[0] - a.split("-")[0]);
+
         const lastData = await getBlobs({ paths, last: 1 });
         const firstData = await getBlobs({ paths, first: 1 });
 

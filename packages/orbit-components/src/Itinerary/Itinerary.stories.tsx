@@ -384,7 +384,7 @@ export const Stop = () => {
   const time = text("time", "14:05");
   const station = text("station", "Václav Havel Airport Prague (PRG)");
   const city = text("city", "Prague");
-  const type = select("type", ["warning", "critical", "success", "info"], "warning");
+  const type = select("type", [undefined, "warning", "critical", "success", "info"], undefined);
   const hidden = boolean("hidden", false);
 
   return (

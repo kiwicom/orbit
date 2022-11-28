@@ -34,8 +34,8 @@ const getSizeToken = ({ size, theme }: { size: Props["size"]; theme: typeof defa
   return tokens[size];
 };
 
-const ModalBody = styled.div`
-  ${({ theme }) => css`
+const ModalBody = styled.div<{ isMobileFullPage: Props["isMobileFullPage"] }>`
+  ${({ theme, isMobileFullPage }) => css`
     width: 100%;
     height: 100%;
     position: fixed;
@@ -47,12 +47,13 @@ const ModalBody = styled.div`
     box-sizing: border-box;
     outline: none;
     overflow-x: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: ${!isMobileFullPage && "rgba(0, 0, 0, 0.5)"};
     font-family: ${theme.orbit.fontFamily};
     -webkit-overflow-scrolling: auto;
     ${media.largeMobile(css`
       overflow-y: auto;
       padding: ${theme.orbit.spaceXXLarge};
+      background-color: rgba(0, 0, 0, 0.5);
     `)};
   `}
 `;
@@ -608,6 +609,7 @@ const Modal = React.forwardRef<Instance, Props>(
         id={id}
         ref={modalBodyRef}
         role="dialog"
+        isMobileFullPage={isMobileFullPage}
         // @ts-expect-error TODO
         autoFocus={autoFocus}
         aria-modal="true"

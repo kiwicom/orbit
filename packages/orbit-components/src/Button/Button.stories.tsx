@@ -83,6 +83,49 @@ ButtonWithIcons.story = {
   },
 };
 
+export const FullWidthButtons = () => {
+  const children = text("Children", "Button");
+  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
+  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+  const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
+  const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
+
+  return (
+    <Stack spacing="small" direction="column">
+      <Button
+        onClick={action("clicked")}
+        fullWidth
+        type={type}
+        size={size}
+        iconLeft={IconLeft && <IconLeft />}
+        iconRight={IconRight && <IconRight />}
+      >
+        {children}
+      </Button>
+      <Button
+        onClick={action("clicked")}
+        centered
+        fullWidth
+        type={type}
+        size={size}
+        iconLeft={IconLeft && <IconLeft />}
+        iconRight={IconRight && <IconRight />}
+      >
+        {children}
+      </Button>
+    </Stack>
+  );
+};
+
+FullWidthButtons.story = {
+  name: "Full width buttons",
+
+  parameters: {
+    info:
+      "By default, a full width Button renders with the children centered. However, if icons are used, the content will align to the left by default. In such scenario, the centered prop can be used to center everything.",
+  },
+};
+
 export const SubtleButtons = () => {
   const children = text("Children", "Button");
   const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));

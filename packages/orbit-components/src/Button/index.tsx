@@ -7,9 +7,9 @@ import getCommonProps from "../primitives/ButtonPrimitive/common/getCommonProps"
 import useTheme from "../hooks/useTheme";
 import getButtonStyles from "./helpers/getButtonStyles";
 import getButtonIconForeground from "./helpers/getButtonIconForeground";
-import type { Props } from "./types";
+import type { Props, FullWidthConditionalProps } from "./types";
 
-const Button = React.forwardRef<HTMLButtonElement, Props>(
+const Button = React.forwardRef<HTMLButtonElement, Props & FullWidthConditionalProps>(
   ({ type = TYPE_OPTIONS.PRIMARY, size, disabled = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, size, ...props };

@@ -32,6 +32,7 @@ export type Name =
   | "Error"
   | "Error404"
   | "EVisa"
+  | "FastBooking"
   | "FastTrack"
   | "FastTrackMan"
   | "FareLock"

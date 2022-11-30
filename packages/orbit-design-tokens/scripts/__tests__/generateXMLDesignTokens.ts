@@ -1068,6 +1068,14 @@ describe(generateXMLDesignTokens.name, () => {
           <value>32px</value>
         </token>
         <token>
+          <name>heightCarrierLogo</name>
+          <value>32px</value>
+        </token>
+        <token>
+          <name>widthCarrierLogo</name>
+          <value>32px</value>
+        </token>
+        <token>
           <name>heightRadioButton</name>
           <value>20px</value>
         </token>

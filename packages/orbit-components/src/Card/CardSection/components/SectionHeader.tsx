@@ -32,11 +32,6 @@ const StyledCardSectionHeader = styled.div<{
     &:hover {
       background: ${expandable && theme.orbit.paletteWhiteHover};
     }
-
-    &:focus {
-      background: ${expandable && theme.orbit.paletteWhiteHover};
-      z-index: 1;
-    }
   `}
 `;
 

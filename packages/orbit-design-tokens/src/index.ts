@@ -298,6 +298,8 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     heightButtonNormal: theme.base.sizeXl,
     heightButtonLarge: theme.base.size2xl,
     heightButtonSmall: theme.base.sizeLg,
+    heightCarrierLogo: theme.base.sizeLg,
+    widthCarrierLogo: theme.base.sizeLg,
     heightRadioButton: "20px",
     widthRadioButton: "20px",
     heightCheckbox: "20px",

@@ -3193,6 +3193,13 @@
       "name": "colorIconCheckboxRadio"
     },
     {
+      "value": "32px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "name": "heightCarrierLogo"
+    },
+    {
       "value": "8px 12px",
       "type": "size",
       "category": "",
@@ -3338,6 +3345,13 @@
       "category": "",
       "comment": "",
       "name": "backgroundButtonCriticalHover"
+    },
+    {
+      "value": "32px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "name": "widthCarrierLogo"
     },
     {
       "value": 768,

@@ -456,6 +456,7 @@
   <color name="BORDERCOLORBUTTONSECONDARYBORDEREDACTIVE" category="">#ff0b0c0f</color>
   <color name="PALETTECLOUDLIGHT" category="">#fff5f7f9</color>
   <color name="COLORICONCHECKBOXRADIO" category="">#ff00a58e</color>
+  <dimen name="HEIGHTCARRIERLOGO" category="">32dp</dimen>
   <dimen name="PADDINGTEXTAREASMALL" category="">8 12dp</dimen>
   <string name="BACKGROUNDTABLESHADOWRIGHT" category="">linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))</string>
   <color name="BACKGROUNDBUTTONWARNING" category="">#ffdf7b00</color>
@@ -477,6 +478,7 @@
   <dimen name="PADDINGTABLE" category="">12 16dp</dimen>
   <string name="BACKGROUNDBUTTONBUNDLEMEDIUMACTIVE" category="">linear-gradient(to top right, #250F79 0, #5A3485 1)</string>
   <color name="BACKGROUNDBUTTONCRITICALHOVER" category="">#ffb91919</color>
+  <dimen name="WIDTHCARRIERLOGO" category="">32dp</dimen>
   <integer name="WIDTHBREAKPOINTTABLET" category="">768</integer>
   <color name="COLORTEXTBUTTONLINKSECONDARYACTIVE" category="">#ff0b0c0f</color>
   <color name="PALETTEGREENDARK" category="">#ff2d7738</color>

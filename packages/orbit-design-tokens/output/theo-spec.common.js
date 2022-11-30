@@ -912,6 +912,8 @@ module.exports = {
   /*  */
   colorIconCheckboxRadio: "rgb(0, 165, 142)",
   /*  */
+  heightCarrierLogo: "32px",
+  /*  */
   paddingTextareaSmall: "8px 12px",
   /*  */
   backgroundTableShadowRight: "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
@@ -953,6 +955,8 @@ module.exports = {
   backgroundButtonBundleMediumActive: "linear-gradient(to top right, #250F79 0%, #5A3485 100%)",
   /*  */
   backgroundButtonCriticalHover: "rgb(185, 25, 25)",
+  /*  */
+  widthCarrierLogo: "32px",
   /*  */
   widthBreakpointTablet: 768,
   /*  */

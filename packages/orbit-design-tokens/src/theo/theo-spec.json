@@ -2358,6 +2358,24 @@
         "categoryDescription": ""
       }
     },
+    "heightCarrierLogo": {
+      "value": "32px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "widthCarrierLogo": {
+      "value": "32px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "heightRadioButton": {
       "value": "20px",
       "type": "size",

@@ -27,6 +27,7 @@ export const NAMES = [
   "Error",
   "Error404",
   "EVisa",
+  "FastBooking",
   "FastTrack",
   "FastTrackMan",
   "FareLock",

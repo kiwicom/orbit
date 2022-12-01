@@ -221,6 +221,8 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
       icons = { width: null, height: null, leftMargin: null, rightMargin: null },
       contentAlign = "center",
       contentWidth,
+      fullWidth,
+      centered,
     } = props;
     const { width, height, leftMargin, rightMargin } = icons;
     const isDisabled = loading || disabled;
@@ -239,6 +241,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
             <ButtonPrimitiveContentChildren
               hasIcon={Boolean(iconLeft || iconRight)}
               contentWidth={contentWidth}
+              centered={fullWidth && centered}
             >
               {children}
             </ButtonPrimitiveContentChildren>

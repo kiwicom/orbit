@@ -22,6 +22,7 @@ Table below contains all types of the props available in Button component.
 | ariaExpanded | `boolean`                  |             | Tells screen reader the controlled element from `ariaControls` is expanded                                                                                     |
 | asComponent  | `string \| React.Element`  | `"button"`  | The component used for the root node.                                                                                                                          |
 | fullWidth    | `boolean`                  | `false`     | If `true`, the Button will grow up to the full width of its container.                                                                                         |
+| centered     | `boolean`                  | `false`     | Can only be used when `fullWidth` is true and if `iconLeft` and/or `iconRight` are defined. If `centered` prop is `true`, the Button will center everything.   |
 | circled      | `boolean`                  | `false`     | If `true`, the Button will have circular shape.                                                                                                                |
 | children     | `React.Node`               |             | The content of the Button. [See Functional specs](#functional-specs)                                                                                           |
 | dataTest     | `string`                   |             | Optional prop for testing purposes.                                                                                                                            |
@@ -79,6 +80,8 @@ Table below contains all types of the props available in Button component.
   ```jsx
   const YourComponent = props => <div {...props}>YourComponent</div>;
   ```
+
+- By default, a full width Button renders with the children centered. However, if `iconLeft` and/or `iconRight` are defined, the content will align to the left by default. In such scenario, the `centered` prop can be used to center everything.
 
 ## Accessibility
 

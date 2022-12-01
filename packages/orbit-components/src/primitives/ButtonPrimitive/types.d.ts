@@ -12,6 +12,7 @@ export interface ButtonCommonProps extends Common.Globals, Common.SpaceAfter {
   readonly ariaCurrent?: string;
   readonly ariaExpanded?: boolean;
   readonly ariaLabelledby?: string;
+  readonly centered?: boolean;
   readonly children?: React.ReactNode;
   readonly circled?: boolean;
   readonly underlined?: boolean;

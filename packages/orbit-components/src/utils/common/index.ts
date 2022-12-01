@@ -11,16 +11,18 @@ export const defaultFocus = (): FlattenSimpleInterpolation => css`
 `;
 
 export const marginUtility = (
-  margin?: string | ObjectProperty,
+  margin?: React.CSSProperties["margin"] | ObjectProperty,
 ): FlattenSimpleInterpolation | null => {
   if (!margin) return null;
-  if (typeof margin === "string") {
+  if (typeof margin === "string" || typeof margin === "number") {
     return css`
       margin: ${margin};
     `;
   }
 
+  const { top = 0, right = 0, bottom = 0, left = 0 } = margin;
+
   return css`
-    margin: ${margin.top} ${margin.right} ${margin.bottom} ${margin.left};
+    margin: ${top} ${right} ${bottom} ${left};
   `;
 };

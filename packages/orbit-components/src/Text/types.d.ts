@@ -25,7 +25,7 @@ export type Weight = "normal" | "medium" | "bold";
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly type?: Type;
   readonly size?: Common.Size;
-  readonly margin?: string | Common.ObjectProperty;
+  readonly margin?: React.CSSProperties["margin"] | Common.ObjectProperty;
   readonly weight?: Weight;
   readonly align?: Align;
   readonly italic?: boolean;

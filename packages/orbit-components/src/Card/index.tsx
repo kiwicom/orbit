@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Loading from "../Loading";
 import CardWrapper from "./components/CardWrapper";
@@ -10,13 +10,20 @@ import Header from "./components/Header";
 import { ELEMENT_OPTIONS } from "../Heading/consts";
 import type { Props } from "./types";
 import type * as Common from "../common/types";
+import useTheme from "../hooks/useTheme";
+import { marginUtility } from "../utils/common";
 
-export const StyledCard = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  margin-bottom: ${getSpacingToken};
+export const StyledCard = styled.div<{
+  spaceAfter?: Common.SpaceAfterSizes;
+  margin?: Props["margin"];
+}>`
+  ${({ margin, theme }) => css`
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    font-family: ${theme.orbit.fontFamily};
+    ${marginUtility(margin)}
+  `};
 `;
 
 StyledCard.defaultProps = {
@@ -34,11 +41,13 @@ const Card = ({
   id,
   onClose,
   loading,
+  margin,
   header,
   spaceAfter,
   dataA11ySection,
 }: Props) => {
   const [expandedSections, setExpandedSections] = React.useState<number[]>([]);
+  const theme = useTheme();
 
   // handles array of expanded sections
   const addSection = React.useCallback((index: number) => {
@@ -68,7 +77,12 @@ const Card = ({
   };
 
   return (
-    <StyledCard spaceAfter={spaceAfter} data-test={dataTest} id={id}>
+    <StyledCard
+      // TODO: remove spaceAfter in the next major version
+      margin={spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin}
+      data-test={dataTest}
+      id={id}
+    >
       {(title || header) && !loading && (
         <CardWrapper bottomBorder={!children || expandedSections.some(val => val === 0)}>
           <Header

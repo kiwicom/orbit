@@ -94,7 +94,7 @@ type Name =
 export type Props = {|
   +size?: "extraSmall" | "small" | "medium" | "large" | "display",
   +name: Name,
-  +margin?: string | ObjectProperty,
+  +margin?: string | number | ObjectProperty,
   +alt?: string,
   ...Globals,
   ...spaceAfter,

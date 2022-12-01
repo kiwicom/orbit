@@ -12,6 +12,7 @@ export default {
       component: "Card",
       knobs: [
         { name: "icon", type: "icon", defaultValue: "" },
+        { name: "margin", type: "text", defaultValue: "" },
         { name: "loading", type: "boolean", defaultValue: false },
         { name: "title", type: "text", defaultValue: "Passenger info" },
         { name: "description", type: "text", defaultValue: "All passengers in this itinerary" },

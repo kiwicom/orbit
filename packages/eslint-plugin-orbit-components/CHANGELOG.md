@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.5.6...eslint-plugin-orbit-components@0.6.0) (2022-12-01)
+
+
+### Features
+
+* rename ThemeProvider to OrbitProvider ([#3601](https://github.com/kiwicom/orbit/issues/3601)) ([10030dd](https://github.com/kiwicom/orbit/commit/10030dddc66826cfd7ff84edac90afdc4897dc94))
+
+
+### BREAKING CHANGES
+
+* ThemeProvider is now called OrbitProvider.
+Everything else didn't change
+
+* docs: create documentation for OrbitProvider
+
+New documentation page for OrbitProvider created.
+
+
+
+
+
 ## [0.5.6](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.5.5...eslint-plugin-orbit-components@0.5.6) (2022-06-02)
 
 **Note:** Version bump only for package eslint-plugin-orbit-components

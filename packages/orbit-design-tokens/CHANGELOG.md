@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@2.0.0...@kiwicom/orbit-design-tokens@3.0.0) (2022-12-01)
+
+
+### Bug Fixes
+
+* **CarrierLogo:** use CarrierLogo tokens ([89ece90](https://github.com/kiwicom/orbit/commit/89ece90067782458611af91feec6fc9f23c3ee25))
+
+
+### Features
+
+* **Button:** add tokens for subtle button ([#3658](https://github.com/kiwicom/orbit/issues/3658)) ([2e84139](https://github.com/kiwicom/orbit/commit/2e8413996d79ce707626721b1bcd9892497c2177))
+* **tokens:** add carrierLogo tokens ([0f86a45](https://github.com/kiwicom/orbit/commit/0f86a4558940cdfd1ca69f44e6e37f2eadfa6ffa))
+* **tokens:** change icon sizes according to a new designs ([54e515f](https://github.com/kiwicom/orbit/commit/54e515f0a972e8e6c6414ce5966cb8d8e9d58e48))
+
+
+### BREAKING CHANGES
+
+* **tokens:** Visual breaking changes. Icons medium sized now have 20px (24px before),
+size large 24px (32px before)
+
+
+
+
+
 # [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@1.5.2...@kiwicom/orbit-design-tokens@2.0.0) (2022-10-12)
 
 

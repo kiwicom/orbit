@@ -39,26 +39,6 @@ async function getLatestReleaseTime() {
   return new Date(res.data.published_at).getTime() / 1000;
 }
 
-function installDependencies() {
-  return new Promise((resolve, reject) =>
-    $.spawn("yarn", ["install"], { stdio: "inherit" })
-      .on("close", c => resolve(c))
-      .on("error", err => reject(err)),
-  );
-}
-
-function publishPackages() {
-  return new Promise((resolve, reject) =>
-    $.spawn(
-      "yarn",
-      ["lerna", "publish", "--no-private", "--conventional-commits", "--create-release", "github"],
-      { stdio: "inherit" },
-    )
-      .on("close", c => resolve(c))
-      .on("error", err => reject(err)),
-  );
-}
-
 function adjustChangelog(str) {
   const output = str
     .replace("Bug Fixes", "Bug Fixes 🐛")
@@ -181,8 +161,10 @@ async function previewChangelog() {
 (async () => {
   try {
     await configureGitHubToken();
-    await installDependencies();
-    await publishPackages();
+
+    await $`yarn install`;
+    await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
+
     const timestamp = await getLatestReleaseTime();
     const names = await getUserNames(timestamp);
     const changelog = await previewChangelog();

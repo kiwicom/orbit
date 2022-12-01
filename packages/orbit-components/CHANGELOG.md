@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@4.2.0...@kiwicom/orbit-components@5.0.0) (2022-12-01)
+
+
+### Bug Fixes
+
+* **Box:** wrap property was calculated incorrectly ([620812d](https://github.com/kiwicom/orbit/commit/620812d7d5047ad097c53f2809f4cb106bcad8ca))
+* **CardSection:** remove focus background style ([#3671](https://github.com/kiwicom/orbit/issues/3671)) ([cd11b2c](https://github.com/kiwicom/orbit/commit/cd11b2c058d2ca4d91f2c0756af996e1a59c07cb))
+* **CarrierLogo:** use CarrierLogo tokens ([89ece90](https://github.com/kiwicom/orbit/commit/89ece90067782458611af91feec6fc9f23c3ee25))
+* **CarrierLogo:** use space token after icon size changes ([d4408eb](https://github.com/kiwicom/orbit/commit/d4408eb24d2babd6d284374ad20de1f9c083bc65))
+* **Heading:** add missing role='heading' for div rendered as Heading ([#3666](https://github.com/kiwicom/orbit/issues/3666)) ([caed409](https://github.com/kiwicom/orbit/commit/caed409ce1c53ca0a1ce9ad8da4b5ea59db8be9e))
+* **Itinerary:** render text as div ([#3643](https://github.com/kiwicom/orbit/issues/3643)) ([fd5dd46](https://github.com/kiwicom/orbit/commit/fd5dd469ce2b6e5e520dd67afdd959b527bae0ba))
+* **ItinerarySegmentBanner:** fix RTL issue ([#3659](https://github.com/kiwicom/orbit/issues/3659)) ([6ed2395](https://github.com/kiwicom/orbit/commit/6ed2395e93f43aae664c2a5c6ea2fbb63df38c74))
+* **ItinerarySegment:** fix access of hidden prop in the context ([#3675](https://github.com/kiwicom/orbit/issues/3675)) ([e18b9dd](https://github.com/kiwicom/orbit/commit/e18b9dd8b7b56a0c275bcb6806556f9b52af87f1))
+* **ItinerarySegmentStop:** fix ItineraryIcon ([#3669](https://github.com/kiwicom/orbit/issues/3669)) ([6da4c6d](https://github.com/kiwicom/orbit/commit/6da4c6ddc538a40cc6ccfb374f2a41fcdcdcdb32))
+* **Modal:** don't render overlay if is full page ([4e31400](https://github.com/kiwicom/orbit/commit/4e31400ff49df156973959a8949eac73f2e5ca61))
+* **TextLink:** repair broken CSS rule ([#3638](https://github.com/kiwicom/orbit/issues/3638)) ([1927ca1](https://github.com/kiwicom/orbit/commit/1927ca11c53d26708fbdeb36384947c9ab1950f0))
+* **Tooltip:** background color ([#3667](https://github.com/kiwicom/orbit/issues/3667)) ([7819c9b](https://github.com/kiwicom/orbit/commit/7819c9b98421bdcb2c7c3b6781a3e7fb5a30a828))
+
+
+### Features
+
+* add inlineStacked property to CarrierLogo ([#3652](https://github.com/kiwicom/orbit/issues/3652)) ([e30e1c3](https://github.com/kiwicom/orbit/commit/e30e1c36b85211d7f119428ee9e305aaa2d934b8))
+* **Button:** add centered prop for fullWidth ([#3673](https://github.com/kiwicom/orbit/issues/3673)) ([f639b3e](https://github.com/kiwicom/orbit/commit/f639b3e54c28eed31b25ee39c5586331ef61bf2e))
+* **Button:** add line-height: 1 ([#3676](https://github.com/kiwicom/orbit/issues/3676)) ([34130c2](https://github.com/kiwicom/orbit/commit/34130c204533bf33e2145978ed26132497bdd437))
+* **Button:** add tokens for subtle button ([#3658](https://github.com/kiwicom/orbit/issues/3658)) ([2e84139](https://github.com/kiwicom/orbit/commit/2e8413996d79ce707626721b1bcd9892497c2177))
+* **Illustration:** add FastBooking illustration ([#3672](https://github.com/kiwicom/orbit/issues/3672)) ([3b19cd6](https://github.com/kiwicom/orbit/commit/3b19cd645abb3c54af511d3eafd79954c44c0e83))
+* **InputField:** set autoCorrect and autoCapitalize explicitly to off ([#3651](https://github.com/kiwicom/orbit/issues/3651)) ([f27912e](https://github.com/kiwicom/orbit/commit/f27912ee46f9d5223334224de29e4e724440b4bd))
+* rename ThemeProvider to OrbitProvider ([#3601](https://github.com/kiwicom/orbit/issues/3601)) ([10030dd](https://github.com/kiwicom/orbit/commit/10030dddc66826cfd7ff84edac90afdc4897dc94))
+* **ServiceLogo:** add AirHelpPlus logo ([6313ada](https://github.com/kiwicom/orbit/commit/6313ada629ab664be71e12e3a61b5e7c7926e7f9))
+* **tokens:** change icon sizes according to a new designs ([54e515f](https://github.com/kiwicom/orbit/commit/54e515f0a972e8e6c6414ce5966cb8d8e9d58e48))
+
+
+### Reverts
+
+* revert exporting types from index ([9e827b4](https://github.com/kiwicom/orbit/commit/9e827b467c099cf052abb02467a5b47c12a70698))
+
+
+### BREAKING CHANGES
+
+* **tokens:** Visual breaking changes. Icons medium sized now have 20px (24px before),
+size large 24px (32px before)
+* ThemeProvider is now called OrbitProvider.
+Everything else didn't change
+
+* docs: create documentation for OrbitProvider
+
+New documentation page for OrbitProvider created.
+
+
+
+
+
 # [4.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@4.1.0...@kiwicom/orbit-components@4.2.0) (2022-11-02)
 
 

@@ -10,7 +10,10 @@ export const defaultFocus = (): FlattenSimpleInterpolation => css`
   outline: 2px solid -webkit-focus-ring-color;
 `;
 
-export const marginUtility = (margin: string | ObjectProperty): FlattenSimpleInterpolation => {
+export const marginUtility = (
+  margin?: string | ObjectProperty,
+): FlattenSimpleInterpolation | null => {
+  if (!margin) return null;
   if (typeof margin === "string") {
     return css`
       margin: ${margin};

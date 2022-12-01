@@ -5,16 +5,17 @@ import { left } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 
 interface Props {
+  centered?: boolean;
   hasIcon: boolean;
   contentWidth?: string | null;
 }
 
 const StyledButtonPrimitiveContentChildren = styled.div<Props>`
-  ${({ hasIcon, contentWidth }) => css`
+  ${({ hasIcon, contentWidth, centered }) => css`
     display: inline-block;
     width: ${contentWidth};
-    text-align: ${hasIcon && left};
     line-height: 1;
+    text-align: ${hasIcon && !centered && left};
   `}
 `;
 
@@ -26,8 +27,13 @@ const ButtonPrimitiveContentChildren = ({
   children,
   hasIcon,
   contentWidth,
+  centered,
 }: React.PropsWithChildren<Props>) => (
-  <StyledButtonPrimitiveContentChildren hasIcon={hasIcon} contentWidth={contentWidth}>
+  <StyledButtonPrimitiveContentChildren
+    hasIcon={hasIcon}
+    contentWidth={contentWidth}
+    centered={centered}
+  >
     {children}
   </StyledButtonPrimitiveContentChildren>
 );

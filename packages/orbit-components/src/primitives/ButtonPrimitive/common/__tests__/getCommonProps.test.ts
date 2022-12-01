@@ -21,4 +21,9 @@ describe("ButtonPrimitive: getCommonProps function", () => {
       }),
     ).toMatchSnapshot();
   });
+  it("should match: undefined contentWidth and center align", () => {
+    const fullWidth = true;
+    const centered = true;
+    expect(getCommonProps({ fullWidth, centered, theme })).toMatchSnapshot();
+  });
 });

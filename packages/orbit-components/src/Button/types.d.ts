@@ -16,6 +16,16 @@ export type Type =
 
 export type ButtonStates = "default" | "hover" | "active" | "focus";
 
+export type FullWidthConditionalProps =
+  | {
+      readonly fullWidth: true;
+      readonly centered?: boolean;
+    }
+  | {
+      readonly fullWidth?: false;
+      readonly centered?: never;
+    };
+
 export interface Props extends ButtonCommonProps {
   readonly type?: Type;
   readonly size?: Size;

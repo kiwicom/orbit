@@ -7,7 +7,15 @@ import type { Theme } from "../../../defaultTheme";
 export interface Params
   extends Pick<
     ButtonCommonProps,
-    "iconRight" | "contentAlign" | "contentWidth" | "iconLeft" | "width" | "iconRight" | "children"
+    | "iconRight"
+    | "contentAlign"
+    | "contentWidth"
+    | "iconLeft"
+    | "width"
+    | "iconRight"
+    | "children"
+    | "fullWidth"
+    | "centered"
   > {
   size?: Size;
   theme: Theme;
@@ -27,11 +35,15 @@ const getCommonProps = ({
   iconRight,
   contentAlign,
   contentWidth,
+  fullWidth,
+  centered,
   iconLeft,
   children,
 }: Params): Output => {
   const onlyIcon = Boolean((iconLeft || iconRight) && !children);
-  const hasCenteredContent = Boolean(onlyIcon || (children && !(iconLeft || iconRight)));
+  const hasCenteredContent = Boolean(
+    onlyIcon || (children && !(iconLeft || iconRight)) || (fullWidth && centered),
+  );
 
   return {
     ...getSizeToken(size, theme),
@@ -39,7 +51,7 @@ const getCommonProps = ({
     padding: getPadding(onlyIcon, iconRight, iconLeft, size, theme),
     fontWeight: theme.orbit.fontWeightMedium,
     contentAlign: contentAlign || (onlyIcon || hasCenteredContent ? "center" : "space-between"),
-    contentWidth: contentWidth || "100%",
+    contentWidth: contentWidth || (fullWidth && centered ? undefined : "100%"),
   };
 };
 

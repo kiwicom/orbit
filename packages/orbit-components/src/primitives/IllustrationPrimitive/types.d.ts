@@ -8,5 +8,6 @@ export type Size = "extraSmall" | "small" | "medium" | "large" | "display";
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: Size;
   readonly name: string;
+  readonly margin?: string | Common.ObjectProperty;
   readonly alt?: string;
 }

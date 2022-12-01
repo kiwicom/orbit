@@ -96,6 +96,7 @@ export default {
           defaultValue: "medium",
           options: ["extraSmall", "small", "medium", "large", "display"],
         },
+        { name: "margin", type: "text", defaultValue: "" },
       ],
     },
   ],

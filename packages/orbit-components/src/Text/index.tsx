@@ -16,6 +16,7 @@ import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
 import { getLinkStyle, StyledTextLink } from "../TextLink";
 import { marginUtility } from "../utils/common";
+import useTheme from "../hooks/useTheme";
 import type { Props, Type, Weight } from "./types";
 
 const getTypeToken = ({ theme, type }: { theme: Theme; type: Type }): string => {
@@ -88,7 +89,6 @@ export const StyledText = styled(({ element: TextElement, children, className, d
     strikeThrough,
     type,
     italic,
-    spaceAfter,
     withBackground,
     margin,
   }) => css`
@@ -102,10 +102,7 @@ export const StyledText = styled(({ element: TextElement, children, className, d
     text-transform: ${uppercase && `uppercase`};
     text-decoration: ${strikeThrough && `line-through`};
     font-style: ${italic && `italic`};
-
-    ${marginUtility(
-      (spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin) || "0",
-    )};
+    ${marginUtility(margin)};
 
     a:not(${StyledTextLink}) {
       ${getLinkStyle({ theme, type })};
@@ -133,10 +130,13 @@ const Text = ({
   withBackground,
   id,
 }: Props) => {
+  const theme = useTheme();
+
   return (
     <StyledText
       id={id}
-      margin={margin}
+      // TODO: remove spaceAfter in the next major version
+      margin={(spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin) || "0"}
       type={type}
       size={size}
       strikeThrough={strikeThrough}
@@ -147,7 +147,6 @@ const Text = ({
       uppercase={uppercase}
       italic={italic}
       dataTest={dataTest}
-      spaceAfter={spaceAfter}
     >
       {children}
     </StyledText>

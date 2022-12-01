@@ -17,6 +17,7 @@ describe("IllustrationPrimitive", () => {
         name="Accommodation"
         alt="Alternative text"
         dataTest="test"
+        // TODO: remove spaceAfter in the next major version
         spaceAfter={SPACINGS_AFTER.NORMAL}
       />,
     );

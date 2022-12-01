@@ -8,6 +8,11 @@ export default {
       component: "Text",
       knobs: [
         {
+          name: "margin",
+          type: "text",
+          defaultValue: "",
+        },
+        {
           name: "as",
           type: "select",
           options: ["p", "span", "div"],

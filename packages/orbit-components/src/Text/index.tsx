@@ -15,6 +15,7 @@ import {
 import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
 import { getLinkStyle, StyledTextLink } from "../TextLink";
+import { marginUtility } from "../utils/common";
 import type { Props, Type, Weight } from "./types";
 
 const getTypeToken = ({ theme, type }: { theme: Theme; type: Type }): string => {
@@ -78,7 +79,19 @@ export const StyledText = styled(({ element: TextElement, children, className, d
     {children}
   </TextElement>
 ))`
-  ${({ theme, align, uppercase, size, weight, strikeThrough, type, italic, withBackground }) => css`
+  ${({
+    theme,
+    align,
+    uppercase,
+    size,
+    weight,
+    strikeThrough,
+    type,
+    italic,
+    spaceAfter,
+    withBackground,
+    margin,
+  }) => css`
     font-family: ${theme.orbit.fontFamily};
     background: ${withBackground && convertHexToRgba(getTypeToken({ theme, type }), 10)};
     font-size: ${getSizeToken({ theme, size })};
@@ -89,8 +102,10 @@ export const StyledText = styled(({ element: TextElement, children, className, d
     text-transform: ${uppercase && `uppercase`};
     text-decoration: ${strikeThrough && `line-through`};
     font-style: ${italic && `italic`};
-    margin: 0;
-    margin-bottom: ${getSpacingToken};
+
+    ${marginUtility(
+      (spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin) || "0",
+    )};
 
     a:not(${StyledTextLink}) {
       ${getLinkStyle({ theme, type })};
@@ -107,6 +122,7 @@ const Text = ({
   size = SIZE_OPTIONS.NORMAL,
   weight = WEIGHT_OPTIONS.NORMAL,
   align = ALIGN_OPTIONS.LEFT,
+  margin,
   as = ELEMENT_OPTIONS.P,
   uppercase,
   italic,
@@ -120,6 +136,7 @@ const Text = ({
   return (
     <StyledText
       id={id}
+      margin={margin}
       type={type}
       size={size}
       strikeThrough={strikeThrough}

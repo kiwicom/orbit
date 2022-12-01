@@ -20,9 +20,12 @@ export type Type =
 
 export type Weight = "normal" | "medium" | "bold";
 
+/** spaceAfter prop is deprecated, use margin instead  */
+
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly type?: Type;
   readonly size?: Common.Size;
+  readonly margin?: string | Common.ObjectPropertyUtility;
   readonly weight?: Weight;
   readonly align?: Align;
   readonly italic?: boolean;

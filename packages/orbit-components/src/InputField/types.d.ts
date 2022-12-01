@@ -11,7 +11,7 @@ type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search" | "t
 type InputEvent = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 type KeyboardEvent = Common.Event<React.KeyboardEvent<HTMLInputElement>>;
 
-export interface Props extends Common.Globals, Common.Ref, Common.SpaceAfter, Common.DataAttrs {
+export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAttrs {
   readonly size?: Common.InputSize;
   readonly type?: Type;
   readonly inputMode?: InputMode;

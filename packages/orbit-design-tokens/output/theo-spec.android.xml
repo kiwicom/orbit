@@ -347,7 +347,7 @@
   <color name="BACKGROUNDBUTTONSECONDARY" category="">#ffe8edf1</color>
   <color name="BACKGROUNDBUTTONINFOACTIVE" category="">#ff01508e</color>
   <color name="BACKGROUNDBUTTONLINKPRIMARYHOVER" category="">#ffe5eaef</color>
-  <dimen name="WIDTHICONMEDIUM" category="">24dp</dimen>
+  <dimen name="WIDTHICONMEDIUM" category="">20dp</dimen>
   <color name="COLORTEXTBADGENEUTRAL" category="">#ff252a31</color>
   <dimen name="SPACEXSMALL" category="">8dp</dimen>
   <color name="PALETTEGREENNORMALACTIVE" category="">#ff1d7228</color>
@@ -360,7 +360,7 @@
   <dimen name="SPACEXXXSMALL" category="">2dp</dimen>
   <string name="DURATIONSLOW" category="">0.4s</string>
   <dimen name="SPACELARGE" category="">24dp</dimen>
-  <dimen name="HEIGHTICONMEDIUM" category="">24dp</dimen>
+  <dimen name="HEIGHTICONMEDIUM" category="">20dp</dimen>
   <color name="BORDERCOLORINPUTERROR" category="">#ffd21c1c</color>
   <string name="BACKGROUNDCARRIERLOGO" category="">transparent</string>
   <color name="COLORTEXTBUTTONWHITEHOVER" category="">#ff181b20</color>
@@ -439,7 +439,7 @@
   <color name="PALETTEINKDARKHOVER" category="">#ff181b20</color>
   <color name="COLORTEXTBUTTONINFOBORDERED" category="">#ff0172cb</color>
   <string name="HEIGHTCOUNTRYFLAG" category="">auto</string>
-  <dimen name="HEIGHTICONLARGE" category="">32dp</dimen>
+  <dimen name="HEIGHTICONLARGE" category="">24dp</dimen>
   <dimen name="BOXSHADOWBUTTONFOCUS" category="">0 0 4px 1px rgba(1, 114, 203, 0.3)</dimen>
   <color name="PALETTEBLUELIGHTHOVER" category="">#ffdef0fc</color>
   <color name="BORDERCOLORCHECKBOXRADIOHOVER" category="">#ff4f5e71</color>
@@ -456,6 +456,7 @@
   <color name="BORDERCOLORBUTTONSECONDARYBORDEREDACTIVE" category="">#ff0b0c0f</color>
   <color name="PALETTECLOUDLIGHT" category="">#fff5f7f9</color>
   <color name="COLORICONCHECKBOXRADIO" category="">#ff00a58e</color>
+  <dimen name="HEIGHTCARRIERLOGO" category="">32dp</dimen>
   <dimen name="PADDINGTEXTAREASMALL" category="">8 12dp</dimen>
   <string name="BACKGROUNDTABLESHADOWRIGHT" category="">linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))</string>
   <color name="BACKGROUNDBUTTONWARNING" category="">#ffdf7b00</color>
@@ -467,7 +468,7 @@
   <color name="BACKGROUNDALERTINFO" category="">#fff1f8fe</color>
   <color name="PALETTEBLUENORMAL" category="">#ff0172cb</color>
   <dimen name="HEIGHTBADGE" category="">24dp</dimen>
-  <dimen name="WIDTHICONLARGE" category="">32dp</dimen>
+  <dimen name="WIDTHICONLARGE" category="">24dp</dimen>
   <color name="BACKGROUNDINPUT" category="">#ffffffff</color>
   <color name="COLORTEXTBUTTONPRIMARYHOVER" category="">#ffffffff</color>
   <color name="PALETTEREDNORMAL" category="">#ffd21c1c</color>
@@ -477,6 +478,7 @@
   <dimen name="PADDINGTABLE" category="">12 16dp</dimen>
   <string name="BACKGROUNDBUTTONBUNDLEMEDIUMACTIVE" category="">linear-gradient(to top right, #250F79 0, #5A3485 1)</string>
   <color name="BACKGROUNDBUTTONCRITICALHOVER" category="">#ffb91919</color>
+  <dimen name="WIDTHCARRIERLOGO" category="">32dp</dimen>
   <integer name="WIDTHBREAKPOINTTABLET" category="">768</integer>
   <color name="COLORTEXTBUTTONLINKSECONDARYACTIVE" category="">#ff0b0c0f</color>
   <color name="PALETTEGREENDARK" category="">#ff2d7738</color>

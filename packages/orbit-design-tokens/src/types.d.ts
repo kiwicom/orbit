@@ -258,6 +258,8 @@ export type Tokens = {
   zIndexOnTheTop: string;
   widthIconSmall: string;
   heightIconSmall: string;
+  heightCarrierLogo: string;
+  widthCarrierLogo: string;
   widthIconMedium: string;
   heightIconMedium: string;
   widthIconLarge: string;

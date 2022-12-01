@@ -50,6 +50,9 @@ describe("getTokens should accept some palette and base foundation", () => {
 describe("getTokens should accept some base", () => {
   const brand = {
     base: {
+      iconSizeSm: "16px",
+      iconSizeMd: "20px",
+      iconSizeLg: "24px",
       sizeSm: "1px",
       sizeMd: "2px",
       sizeLg: "3px",
@@ -62,12 +65,12 @@ describe("getTokens should accept some base", () => {
     expect(theme).toMatchSnapshot();
   });
   it("tokens should have those colors", () => {
-    expect(theme.widthIconSmall).toBe(brand.base.sizeSm);
-    expect(theme.heightIconSmall).toBe(brand.base.sizeSm);
-    expect(theme.widthIconMedium).toBe(brand.base.sizeMd);
-    expect(theme.heightIconMedium).toBe(brand.base.sizeMd);
-    expect(theme.widthIconLarge).toBe(brand.base.sizeLg);
-    expect(theme.heightIconLarge).toBe(brand.base.sizeLg);
+    expect(theme.widthIconSmall).toBe(brand.base.iconSizeSm);
+    expect(theme.heightIconSmall).toBe(brand.base.iconSizeSm);
+    expect(theme.widthIconMedium).toBe(brand.base.iconSizeMd);
+    expect(theme.heightIconMedium).toBe(brand.base.iconSizeMd);
+    expect(theme.widthIconLarge).toBe(brand.base.iconSizeLg);
+    expect(theme.heightIconLarge).toBe(brand.base.iconSizeLg);
     expect(theme.heightInputNormal).toBe(brand.base.sizeXl);
     expect(theme.heightInputLarge).toBe(brand.base.size2xl);
     expect(theme.heightInputSmall).toBe(brand.base.sizeLg);

@@ -198,7 +198,7 @@ export const CardWithDefaultExpanded = () => {
     <Card>
       <CardSection
         expandable
-        icon={<CarrierLogo size="large" carriers={[{ code: "FR", name: "Ryanair" }]} />}
+        icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}
         header={
           <Stack inline align="center" justify="end">
             <Text type="secondary">Trip length: 1h55m</Text>
@@ -219,7 +219,7 @@ export const CardWithDefaultExpanded = () => {
             Close
           </Button>
         }
-        icon={<CarrierLogo size="large" carriers={[{ code: "FR", name: "Ryanair" }]} />}
+        icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}
         onClose={action("onClose")}
         header={
           <Stack inline justify="end">

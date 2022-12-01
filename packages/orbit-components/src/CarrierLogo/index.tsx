@@ -98,10 +98,10 @@ export const StyledCarrierLogo = styled.div<{
   ${({ theme, carriers, size, inlineStacked }) => css`
     background-color: ${theme.orbit.backgroundCarrierLogo};
     height: ${carriers.length > 1 && !inlineStacked
-      ? theme.orbit.heightIconLarge
+      ? theme.orbit.heightCarrierLogo
       : `${getRenderSize({ theme, size })}px`};
     width: ${carriers.length > 1
-      ? theme.orbit.widthIconLarge
+      ? theme.orbit.widthCarrierLogo
       : `${getRenderSize({ theme, size })}px`};
     display: flex;
     flex-direction: ${carriers.length > 1 && !inlineStacked ? "column" : "row"};

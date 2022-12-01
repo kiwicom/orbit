@@ -694,7 +694,7 @@ module.exports = {
   /*  */
   backgroundButtonLinkPrimaryHover: "rgb(229, 234, 239)",
   /*  */
-  widthIconMedium: "24px",
+  widthIconMedium: "20px",
   /*  */
   colorTextBadgeNeutral: "rgb(37, 42, 49)",
   /*  */
@@ -720,7 +720,7 @@ module.exports = {
   /*  */
   spaceLarge: "24px",
   /*  */
-  heightIconMedium: "24px",
+  heightIconMedium: "20px",
   /*  */
   borderColorInputError: "rgb(210, 28, 28)",
   /*  */
@@ -878,7 +878,7 @@ module.exports = {
   /*  */
   heightCountryFlag: "auto",
   /*  */
-  heightIconLarge: "32px",
+  heightIconLarge: "24px",
   /*  */
   boxShadowButtonFocus: "0 0 4px 1px rgba(1, 114, 203, 0.3)",
   /*  */
@@ -912,6 +912,8 @@ module.exports = {
   /*  */
   colorIconCheckboxRadio: "rgb(0, 165, 142)",
   /*  */
+  heightCarrierLogo: "32px",
+  /*  */
   paddingTextareaSmall: "8px 12px",
   /*  */
   backgroundTableShadowRight: "linear-gradient(to right, transparent, rgba(186, 199, 213, 0.23))",
@@ -934,7 +936,7 @@ module.exports = {
   /*  */
   heightBadge: "24px",
   /*  */
-  widthIconLarge: "32px",
+  widthIconLarge: "24px",
   /*  */
   backgroundInput: "rgb(255, 255, 255)",
   /*  */
@@ -953,6 +955,8 @@ module.exports = {
   backgroundButtonBundleMediumActive: "linear-gradient(to top right, #250F79 0%, #5A3485 100%)",
   /*  */
   backgroundButtonCriticalHover: "rgb(185, 25, 25)",
+  /*  */
+  widthCarrierLogo: "32px",
   /*  */
   widthBreakpointTablet: 768,
   /*  */

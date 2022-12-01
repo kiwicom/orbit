@@ -44,13 +44,14 @@ const ItinerarySegment = ({
   onClick,
   banner,
 }: Props) => {
-  const content = React.Children.toArray(children);
+  const content = React.Children.toArray(children) as React.ReactElement[];
 
   const [opened, setOpened] = React.useState(false);
 
   const parts = (
     <Stack direction="column" spacing="none">
       {React.Children.map(children, (el, i) => {
+        if (!React.isValidElement(el)) return null;
         return (
           <ItinerarySegmentContext.Provider
             value={{
@@ -58,15 +59,11 @@ const ItinerarySegment = ({
               opened,
               toggleOpened: () => setOpened(prev => !prev),
               last: i === React.Children.count(children) - 1,
-              // @ts-expect-error expected
-              isNextHidden: content[i + 1] && content[i + 1].props.hidden,
-              // @ts-expect-error expected
-              isPrevHidden: content[i - 1] && content[i - 1].props.hidden,
+              isNextHidden: Boolean(content[i + 1]?.props?.hidden),
+              isPrevHidden: Boolean(content[i - 1]?.props?.hidden),
               isBanner: !!banner,
               count: React.Children.count(children),
-              // @ts-expect-error expected
-
-              isHidden: el.props.hidden,
+              isHidden: !!(el.props && el.props.hidden),
               noElevation: !!noElevation,
             }}
           >

@@ -6,7 +6,7 @@ import * as React from "react";
 import type { StyledComponent } from "styled-components";
 
 import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, ObjectProperty } from "../common/common.js.flow";
 
 type Align = "left" | "center" | "right" | "justify";
 type As = "p" | "span" | "div";
@@ -18,7 +18,7 @@ export type Props = {|
   +type?: Type,
   +size?: Size,
   +weight?: Weight,
-  +margin?: string,
+  +margin?: string | ObjectProperty,
   +align?: Align,
   +strikeThrough?: boolean,
   +withBackground?: boolean,

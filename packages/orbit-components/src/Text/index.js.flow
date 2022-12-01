@@ -18,6 +18,7 @@ export type Props = {|
   +type?: Type,
   +size?: Size,
   +weight?: Weight,
+  +margin?: string,
   +align?: Align,
   +strikeThrough?: boolean,
   +withBackground?: boolean,

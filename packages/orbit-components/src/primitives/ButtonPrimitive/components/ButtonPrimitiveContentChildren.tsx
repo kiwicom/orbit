@@ -14,6 +14,7 @@ const StyledButtonPrimitiveContentChildren = styled.div<Props>`
     display: inline-block;
     width: ${contentWidth};
     text-align: ${hasIcon && left};
+    line-height: 1;
   `}
 `;
 

@@ -7,7 +7,7 @@ import type * as Common from "../common/types";
 
 export type Type = "colored" | "neutral";
 
-export interface Props extends Common.Globals, Common.Ref {
+export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
   readonly type?: "colored" | "neutral";
   readonly selected?: boolean;

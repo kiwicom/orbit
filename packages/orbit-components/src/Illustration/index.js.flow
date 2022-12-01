@@ -4,7 +4,7 @@
 */
 import * as React from "react";
 
-import type { Globals } from "../common/common.js.flow";
+import type { Globals, ObjectProperty } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
 
 type Name =
@@ -94,6 +94,7 @@ type Name =
 export type Props = {|
   +size?: "extraSmall" | "small" | "medium" | "large" | "display",
   +name: Name,
+  +margin?: string | ObjectProperty,
   +alt?: string,
   ...Globals,
   ...spaceAfter,

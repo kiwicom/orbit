@@ -91,5 +91,6 @@ export type Name =
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: Name;
+  readonly margin?: string | Common.ObjectProperty;
   readonly alt?: string;
 }

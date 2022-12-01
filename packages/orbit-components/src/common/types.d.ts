@@ -60,7 +60,7 @@ export type SpaceAfterSizes =
 export interface SpaceAfter {
   readonly spaceAfter?: SpaceAfterSizes;
 }
-export interface ObjectPropertyUtility {
+export interface ObjectProperty {
   top?: string | number;
   right?: string | number;
   bottom?: string | number;

@@ -24,7 +24,7 @@ export type TranslationString = React.Node;
 
 export type Component = string | (() => React.Element<any>);
 
-export type ObjectPropertyUtility = {|
+export type ObjectProperty = {|
   top?: string | number,
   right?: string | number,
   bottom?: string | number,

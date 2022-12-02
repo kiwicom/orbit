@@ -20,7 +20,6 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, Props>(
       iconForeground: getButtonLinkIconForeground({ type, theme, compact }),
     });
     return (
-      // @ts-expect-error FIXME: migration issue
       <ButtonPrimitive ref={ref} {...props} {...buttonLinkStyles} {...commonProps} {...icons} />
     );
   },

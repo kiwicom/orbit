@@ -6,7 +6,7 @@ import type * as React from "react";
 import type Tooltip from "../Tooltip";
 import type * as Common from "../common/types";
 
-export interface Props extends Common.Globals, Common.Ref {
+export interface Props extends Common.Globals {
   readonly label?: React.ReactNode;
   readonly value?: string;
   readonly hasError?: boolean;

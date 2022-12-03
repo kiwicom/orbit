@@ -25,9 +25,9 @@ describe("Card", () => {
     expect(screen.getByRole("button"));
     expect(screen.getByTestId("test")).toHaveStyle({
       marginTop: "12px",
-      marginBottom: "0",
-      marginRight: "0",
-      marginLeft: "0",
+      marginBottom: undefined,
+      marginRight: undefined,
+      marginLeft: undefined,
     });
   });
 

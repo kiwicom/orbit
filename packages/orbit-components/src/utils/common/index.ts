@@ -10,19 +10,27 @@ export const defaultFocus = (): FlattenSimpleInterpolation => css`
   outline: 2px solid -webkit-focus-ring-color;
 `;
 
+const setValue = (value?: string | number): string | null => {
+  if (value == null) return null;
+  return typeof value === "number" && value !== 0 ? `${value}px` : String(value);
+};
+
 export const marginUtility = (
   margin?: React.CSSProperties["margin"] | ObjectProperty,
 ): FlattenSimpleInterpolation | null => {
   if (!margin) return null;
   if (typeof margin === "string" || typeof margin === "number") {
     return css`
-      margin: ${margin};
+      margin: ${setValue(margin)};
     `;
   }
 
-  const { top = 0, right = 0, bottom = 0, left = 0 } = margin;
+  const { top, right, bottom, left } = margin;
 
   return css`
-    margin: ${top} ${right} ${bottom} ${left};
+    margin-top: ${setValue(top)};
+    margin-right: ${setValue(right)};
+    margin-bottom: ${setValue(bottom)};
+    margin-left: ${setValue(left)};
   `;
 };

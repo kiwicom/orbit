@@ -8,7 +8,7 @@ import Stack from "../Stack";
 import Text from "../Text";
 import type { Props } from "./types";
 
-const StyledCallOutBanner = styled.div<Partial<Props>>`
+const StyledCallOutBanner = styled.div<{ onClick?: Props["onClick"] }>`
   ${({ theme, onClick }) => css`
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@ const CallOutBanner = ({
 }: Props) => (
   <StyledCallOutBanner
     onClick={onClick}
-    tabIndex={(onClick || tabIndex) && (tabIndex || 0)}
+    tabIndex={(onClick || Number(tabIndex)) && (Number(tabIndex) || 0)}
     data-test={dataTest}
     id={id}
   >

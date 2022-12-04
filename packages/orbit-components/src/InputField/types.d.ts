@@ -32,7 +32,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly minLength?: number;
   readonly width?: string;
   readonly required?: boolean;
-  readonly tabIndex?: number;
+  readonly tabIndex?: string | number;
   readonly readOnly?: boolean;
   readonly autoComplete?: string;
   readonly autoFocus?: boolean;

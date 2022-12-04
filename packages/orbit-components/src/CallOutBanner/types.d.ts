@@ -7,7 +7,7 @@ import type * as Common from "../common/types";
 import type Illustration from "../Illustration";
 
 export interface Props extends Common.Globals {
-  readonly tabIndex?: number;
+  readonly tabIndex?: string | number;
   readonly onClick?: Common.Callback;
   readonly title: Common.Translation;
   readonly description?: Common.Translation;

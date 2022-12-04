@@ -14,7 +14,7 @@ import {
   mediaQueries as mq,
 } from "@kiwicom/orbit-components";
 import { MenuHamburger, StarEmpty, Logout } from "@kiwicom/orbit-components/icons";
-import GitHubButton from "react-github-btn";
+// import GitHubButton from "react-github-btn";
 
 import Logo from "../../images/orbit-logo.svg";
 import Glyph from "../../images/orbit-glyph.svg";
@@ -115,7 +115,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
             <StyledLogo width={192} height={44} />
             <StyledLogoGlyph width={44} height={44} />
           </Link>
-          <Hide on={["smallMobile", "mediumMobile"]}>
+          {/* <Hide on={["smallMobile", "mediumMobile"]}>
             <Stack inline align="center">
               <span>&sdot;</span>
               <div
@@ -132,7 +132,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                 />
               </div>
             </Stack>
-          </Hide>
+          </Hide> */}
         </Stack>
 
         <StyledRight>

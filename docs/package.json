@@ -21,11 +21,12 @@
   },
   "dependencies": {
     "@adeira/js": "^2.1.1",
-    "@babel/runtime": "^7.18.2",
     "@babel/core": "^7.18.9",
     "@babel/generator": "^7.18.9",
+    "@babel/runtime": "^7.18.2",
     "@babel/standalone": "^7.18.9",
     "@csstools/convert-colors": "^2.0.0",
+    "@fontsource/dm-sans": "^4.5.9",
     "@icons-pack/react-simple-icons": "^4.0.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "*",
@@ -122,8 +123,11 @@
     "unist-util-visit": "^2.0.3",
     "use-resize-observer": "^8.0.0",
     "uuid": "^8.3.2",
-    "webpack": "^5.74.0",
     "vfile-reporter": "^7.0.4",
+    "webpack": "^5.74.0",
     "zx": "7.0.7"
+  },
+  "devDependencies": {
+    "@fontsource/dm-sans": "^4.5.9"
   }
 }

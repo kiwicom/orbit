@@ -9,7 +9,7 @@ import type { Status } from "../../types";
 */
 export interface Props {
   /** The date of ItinerarySegmentStop */
-  readonly date?: string;
+  readonly date?: React.ReactNode;
   /** The time of ItinerarySegmentStop */
   readonly time?: React.ReactNode;
   /** Render time with strikeThrough property */

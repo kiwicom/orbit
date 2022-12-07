@@ -6,6 +6,7 @@ import defaultTheme from "../defaultTheme";
 import { left } from "../utils/rtl";
 import { SIZE_OPTIONS, BASE_URL } from "./consts";
 import type { Props, CarrierType, Size, Carrier } from "./types";
+import { useRandomIdSeed } from "../hooks/useRandomId";
 
 interface StyledProps {
   inlineStacked: boolean;
@@ -122,27 +123,32 @@ const CarrierLogo = ({
   id,
   rounded,
   inlineStacked = false,
-}: Props) => (
-  <StyledCarrierLogo
-    carriers={carriers}
-    size={size}
-    data-test={dataTest}
-    id={id}
-    inlineStacked={inlineStacked}
-  >
-    {carriers.slice(0, 4).map(carrierImage => (
-      <StyledImage
-        key={carrierImage.code}
-        rounded={rounded}
-        carrierType={carrierImage.type}
-        carriersLength={carriers.length}
-        code={carrierImage.code}
-        size={size}
-        inlineStacked={inlineStacked}
-        alt={carrierImage.name}
-        title={carrierImage.name}
-      />
-    ))}
-  </StyledCarrierLogo>
-);
+}: Props) => {
+  const randomId = useRandomIdSeed();
+
+  return (
+    <StyledCarrierLogo
+      carriers={carriers}
+      size={size}
+      data-test={dataTest}
+      id={id}
+      inlineStacked={inlineStacked}
+    >
+      {carriers.slice(0, 4).map((carrierImage, idx) => (
+        <StyledImage
+          key={randomId(idx.toString())}
+          rounded={rounded}
+          carrierType={carrierImage.type}
+          carriersLength={carriers.length}
+          code={carrierImage.code}
+          size={size}
+          inlineStacked={inlineStacked}
+          alt={carrierImage.name}
+          title={carrierImage.name}
+        />
+      ))}
+    </StyledCarrierLogo>
+  );
+};
+
 export default CarrierLogo;

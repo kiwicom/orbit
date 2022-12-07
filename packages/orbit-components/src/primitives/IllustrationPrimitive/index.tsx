@@ -1,11 +1,12 @@
 import React from "react";
-import type { StyledComponent } from "styled-components";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
 import type { Size, Props } from "./types";
+import { marginUtility } from "../../utils/common";
+import useTheme from "../../hooks/useTheme";
 
 const getHeightToken = ({ theme, size }) => {
   const tokens = {
@@ -18,29 +19,37 @@ const getHeightToken = ({ theme, size }) => {
   return tokens[size];
 };
 
-export const StyledImage: StyledComponent<
-  any,
-  any,
-  { size: Size; illustrationName: string }
-> = styled.img.attrs<{ size: Size; illustrationName: string }>(
-  ({ theme, size, illustrationName }) => {
-    const height = parseInt(getHeightToken({ theme, size }), 10);
-    const illustrationPath = `${illustrationName}-Q85.png`;
-    return {
-      src: `${baseURL}/illustrations/0x${height}/${illustrationPath}`,
-      srcSet: `${baseURL}/illustrations/0x${
-        height * 2
-      }/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`,
-    };
-  },
-)`
-  display: inline-block;
-  margin: auto 0;
-  max-height: ${getHeightToken};
-  max-width: 100%;
-  background-color: ${({ theme }) => theme.orbit.backgroundIllustration};
-  margin-bottom: ${getSpacingToken};
-  flex-shrink: 0;
+export const StyledImage = styled.img.attrs<{
+  size: Size;
+  illustrationName: string;
+}>(({ theme, size, illustrationName }) => {
+  const height = parseInt(getHeightToken({ theme, size }), 10);
+  const illustrationPath = `${illustrationName}-Q85.png`;
+  return {
+    src: `${baseURL}/illustrations/0x${height}/${illustrationPath}`,
+    srcSet: `${baseURL}/illustrations/0x${
+      height * 2
+    }/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`,
+  };
+})`
+  ${({
+    theme,
+    margin,
+    size,
+  }: {
+    theme: typeof defaultTheme;
+    illustrationName: string;
+    margin: Props["margin"];
+    size: Props["size"];
+  }) => css`
+    display: inline-block;
+    margin: auto 0;
+    max-height: ${getHeightToken({ theme, size })};
+    max-width: 100%;
+    background-color: ${theme.orbit.backgroundIllustration};
+    flex-shrink: 0;
+    ${marginUtility(margin)};
+  `};
 `;
 
 StyledImage.defaultProps = {
@@ -50,19 +59,23 @@ StyledImage.defaultProps = {
 const IllustrationPrimitive = ({
   name,
   alt,
+  margin,
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
   id,
+  // TODO: remove spaceAfter in the next major version
   spaceAfter,
 }: Props) => {
+  const theme = useTheme();
+
   return (
     <StyledImage
       illustrationName={name}
       alt={typeof alt === "string" ? alt : name}
       size={size}
       id={id}
+      margin={spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin}
       data-test={dataTest}
-      spaceAfter={spaceAfter}
     />
   );
 };

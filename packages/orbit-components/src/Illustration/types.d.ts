@@ -88,8 +88,12 @@ export type Name =
   | "TransportTaxi"
   | "WomanWithPhone";
 
+// TODO: remove spaceAfter in the next major version
+
+/** spaceAfter is deprecated, use margin instead */
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: Name;
+  readonly margin?: React.CSSProperties["margin"] | Common.ObjectProperty;
   readonly alt?: string;
 }

@@ -23,3 +23,10 @@ export type Translation = React.Element<React.ComponentType<any>> | string;
 export type TranslationString = React.Node;
 
 export type Component = string | (() => React.Element<any>);
+
+export type ObjectProperty = {|
+  top?: string | number,
+  right?: string | number,
+  bottom?: string | number,
+  left?: string | number,
+|};

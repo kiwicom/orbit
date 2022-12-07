@@ -28,4 +28,32 @@ describe("Text", () => {
       marginBottom: defaultTheme.orbit.spaceSmall,
     });
   });
+
+  it("should have object margin", () => {
+    const dataTest = "test";
+
+    render(
+      <Text dataTest={dataTest} margin={{ bottom: "0" }}>
+        Chuck Norris can divide by zero.
+      </Text>,
+    );
+
+    expect(screen.getByTestId(dataTest)).toHaveStyle({
+      marginBottom: "0",
+    });
+  });
+
+  it("should have string margin", () => {
+    const dataTest = "test";
+
+    render(
+      <Text dataTest={dataTest} margin="0 12px 0 0">
+        Chuck Norris can divide by zero.
+      </Text>,
+    );
+
+    expect(screen.getByTestId(dataTest)).toHaveStyle({
+      marginRight: "12px",
+    });
+  });
 });

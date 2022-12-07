@@ -15,6 +15,8 @@ import {
 import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
 import { getLinkStyle, StyledTextLink } from "../TextLink";
+import { marginUtility } from "../utils/common";
+import useTheme from "../hooks/useTheme";
 import type { Props, Type, Weight } from "./types";
 
 const getTypeToken = ({ theme, type }: { theme: Theme; type: Type }): string => {
@@ -78,7 +80,18 @@ export const StyledText = styled(({ element: TextElement, children, className, d
     {children}
   </TextElement>
 ))`
-  ${({ theme, align, uppercase, size, weight, strikeThrough, type, italic, withBackground }) => css`
+  ${({
+    theme,
+    align,
+    uppercase,
+    size,
+    weight,
+    strikeThrough,
+    type,
+    italic,
+    withBackground,
+    margin,
+  }) => css`
     font-family: ${theme.orbit.fontFamily};
     background: ${withBackground && convertHexToRgba(getTypeToken({ theme, type }), 10)};
     font-size: ${getSizeToken({ theme, size })};
@@ -89,8 +102,7 @@ export const StyledText = styled(({ element: TextElement, children, className, d
     text-transform: ${uppercase && `uppercase`};
     text-decoration: ${strikeThrough && `line-through`};
     font-style: ${italic && `italic`};
-    margin: 0;
-    margin-bottom: ${getSpacingToken};
+    ${marginUtility(margin)};
 
     a:not(${StyledTextLink}) {
       ${getLinkStyle({ theme, type })};
@@ -107,6 +119,7 @@ const Text = ({
   size = SIZE_OPTIONS.NORMAL,
   weight = WEIGHT_OPTIONS.NORMAL,
   align = ALIGN_OPTIONS.LEFT,
+  margin,
   as = ELEMENT_OPTIONS.P,
   uppercase,
   italic,
@@ -117,9 +130,13 @@ const Text = ({
   withBackground,
   id,
 }: Props) => {
+  const theme = useTheme();
+
   return (
     <StyledText
       id={id}
+      // TODO: remove spaceAfter in the next major version
+      margin={(spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin) || "0"}
       type={type}
       size={size}
       strikeThrough={strikeThrough}
@@ -130,7 +147,6 @@ const Text = ({
       uppercase={uppercase}
       italic={italic}
       dataTest={dataTest}
-      spaceAfter={spaceAfter}
     >
       {children}
     </StyledText>

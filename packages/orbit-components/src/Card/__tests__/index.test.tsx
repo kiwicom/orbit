@@ -14,6 +14,7 @@ describe("Card", () => {
         title="kek"
         description="description"
         icon={<Airplane dataTest="airplane" />}
+        margin={{ top: "12px" }}
         actions={<Button>button</Button>}
       />,
     );
@@ -22,6 +23,12 @@ describe("Card", () => {
     expect(screen.getByText("description")).toBeInTheDocument();
     expect(screen.getByTestId("airplane"));
     expect(screen.getByRole("button"));
+    expect(screen.getByTestId("test")).toHaveStyle({
+      marginTop: "12px",
+      marginBottom: undefined,
+      marginRight: undefined,
+      marginLeft: undefined,
+    });
   });
 
   it("section", () => {

@@ -30,8 +30,8 @@ const StyledBoard = styled.div<{ isOpened: boolean; isFullScreen: boolean }>`
 `;
 
 interface Props {
-  pageId?: string;
   code: string;
+  imports: string;
   isFullScreen: boolean;
   onOpenFullScreen: () => void;
   isPlaygroundOpened: boolean;
@@ -48,7 +48,6 @@ interface Props {
 }
 
 const Board = ({
-  pageId,
   background,
   code,
   variants,
@@ -56,6 +55,7 @@ const Board = ({
   isFullScreen,
   isVariantsOpened,
   isEditorOpened,
+  imports,
   isPlaygroundOpened,
   onOpenPlayground,
   onChangeVariant,
@@ -79,10 +79,12 @@ const Board = ({
     setActive(prev => ({ ...prev, [background]: true }));
   }, [background, setActive]);
 
-  const handleBackground = ev => {
-    const { name, value } = ev.target;
+  const handleBackground = (ev: React.SyntheticEvent<HTMLInputElement>) => {
+    const { name, value } = ev.currentTarget;
     setActive({ ...defaultValues, [name]: value });
-    onSelectBackground(ev.target.name);
+    if (name === "white" || name === "dark" || name === "grid") {
+      onSelectBackground(name);
+    }
   };
 
   return (
@@ -133,7 +135,11 @@ const Board = ({
         </Stack>
         <Stack inline justify="end" align="center" spacing="none">
           <Tooltip content={isCopied ? "copied" : "Copy to clipboard"}>
-            <ButtonLink onClick={() => copy(code)} type="secondary" title="Copy to clipboard">
+            <ButtonLink
+              onClick={() => copy([imports, code].join("\n"))}
+              type="secondary"
+              title="Copy to clipboard"
+            >
               <Copy />
             </ButtonLink>
           </Tooltip>

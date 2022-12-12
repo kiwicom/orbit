@@ -2,8 +2,10 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Text } from "@kiwicom/orbit-components";
 
+import { pureTransform } from "./transform";
 import { copyImports } from "./helpers";
 import Example from "./Example";
+import useSandbox from "../../hooks/useSandbox";
 
 export type BgType = "white" | "dark" | "grid";
 export interface Props {
@@ -14,10 +16,6 @@ export interface Props {
 }
 
 const ReactExample = ({ exampleId, responsive = true, background = "white", height }: Props) => {
-  const [code, setCode] = React.useState("");
-  const [origin, setOrigin] = React.useState("");
-  const key = exampleId.toLowerCase();
-
   const { allExample } = useStaticQuery(
     graphql`
       query ExamplesQuery {
@@ -50,40 +48,30 @@ const ReactExample = ({ exampleId, responsive = true, background = "white", heig
     `,
   );
 
-  React.useEffect(() => {
-    if (code) window.localStorage.setItem(key, code);
+  const key = exampleId.toLowerCase();
+  const example = allExample.nodes.find(({ example_id }) => example_id === key);
 
-    setOrigin(window.location.origin);
-
-    return () => window.localStorage.removeItem(key);
-  }, [code, exampleId, setOrigin, key]);
-
-  React.useEffect(() => {
-    if (window.localStorage.getItem(key)) {
-      setCode(window.localStorage.getItem(key) || "");
-    }
-  }, [setCode, key]);
-
-  const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
+  const { setCode, code } = useSandbox(
+    exampleId.toLowerCase(),
+    pureTransform(exampleId, example?.example),
+  );
 
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
   const imports = copyImports(example.scope);
-  const codeWithImports = [imports, code].join("\n");
 
   return (
     <Example
       responsive={responsive}
       height={height}
+      imports={imports}
       background={background}
-      origin={origin}
       exampleKnobs={example.exampleKnobs}
       exampleVariants={example.exampleVariants}
-      code={codeWithImports}
       exampleId={example.id}
       exampleName={exampleId}
-      example={example.example}
-      onChangeCode={c => setCode(c)}
+      code={code}
+      onChangeCode={c => setCode(pureTransform(exampleId, c))}
     />
   );
 };

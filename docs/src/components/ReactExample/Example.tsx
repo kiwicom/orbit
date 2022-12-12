@@ -84,27 +84,25 @@ export interface Variant {
 
 interface Props extends InitialProps {
   responsive?: boolean;
+  imports: string;
   code: string;
-  example: string;
   exampleName: string;
   exampleKnobs: ExampleKnob[];
   exampleVariants: Variant[];
   onChangeCode: (code: string) => void;
-  origin: string;
 }
 
 const Example = ({
   responsive = true,
-  code,
-  origin,
   exampleId,
   exampleKnobs,
   exampleName,
   exampleVariants,
   height,
+  code,
+  imports,
   background,
   onChangeCode,
-  example,
 }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [isFullScreen, setFullScreen] = React.useState(false);
@@ -113,6 +111,7 @@ const Example = ({
   const [currentVariant, setCurrentVariant] = React.useState<string | null>(
     exampleVariants[0]?.name ?? null,
   );
+
   const [selectedBackground, setSelectedBackground] = React.useState<BgType>("white");
   const [width, setPreviewWidth] = React.useState<number | string>(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
@@ -132,7 +131,7 @@ const Example = ({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [background, setSelectedBackground, handleKeyDown]);
+  }, [background, setSelectedBackground, handleKeyDown, exampleName]);
 
   const content = (
     <StyledWrapper isFullScreen={isFullScreen}>
@@ -149,9 +148,9 @@ const Example = ({
       </StyledWrapperFrame>
       <Board
         background={selectedBackground}
-        pageId={exampleId}
         isFullScreen={isFullScreen}
         isEditorOpened={isEditorOpened}
+        imports={imports}
         isPlaygroundOpened={isPlaygroundOpened}
         isVariantsOpened={isVariantsOpened}
         onSelectBackground={value => setSelectedBackground(value)}
@@ -175,12 +174,13 @@ const Example = ({
         }}
         code={code}
       />
-      {isEditorOpened && (
-        <Editor onChange={onChangeCode} code={example} isFullScreen={isFullScreen} />
-      )}
+      {isEditorOpened && <Editor onChange={onChangeCode} code={code} isFullScreen={isFullScreen} />}
       {isPlaygroundOpened && exampleKnobs && exampleKnobs.length > 0 && (
         <Playground
-          onChange={knob => onChangeCode(transform(exampleName, example, knob))}
+          exampleId={exampleName.toLowerCase()}
+          onChange={knob => {
+            if (knob) onChangeCode(transform(exampleName, code, knob));
+          }}
           exampleKnobs={exampleKnobs}
         />
       )}

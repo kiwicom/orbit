@@ -7,7 +7,7 @@ interface Scope {
   default: boolean;
 }
 
-export const getAst = (str, filename) =>
+export const getAst = (str: string, filename: string) =>
   parseSync(str, {
     filename,
     sourceType: "module",

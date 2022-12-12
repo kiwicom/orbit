@@ -9,8 +9,11 @@ import TextKnob from "./knobs/Text";
 import IconKnob from "./knobs/Icon";
 import NumberKnob from "./knobs/Number";
 import { ExampleKnob } from "../Example";
+import { getProperties } from "../transform";
+import { load } from "../../../utils/storage";
 
 interface Props {
+  exampleId: string;
   exampleKnobs: ExampleKnob[];
   onChange: (val: Record<string, Record<string, string | number | boolean>>) => void;
 }
@@ -26,13 +29,22 @@ const StyledKnobsWrapper = styled.div`
   align-items: center;
 `;
 
-const Playground = ({ exampleKnobs, onChange }: Props) => {
+const Playground = ({ exampleId, exampleKnobs, onChange }: Props) => {
   const [values, setValues] = React.useState(() => {
     const defaultVals = {};
 
+    const properties = getProperties(exampleId, load(exampleId) || "");
+
     exampleKnobs.forEach(({ component, knobs }) => {
       knobs.forEach(({ defaultValue, name }) => {
-        set(defaultVals, [component, name], defaultValue);
+        if (properties) {
+          const value = properties[name];
+          if (value) {
+            set(defaultVals, [component, name], value);
+          }
+        } else {
+          set(defaultVals, [component, name], defaultValue);
+        }
       });
     });
 

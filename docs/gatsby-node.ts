@@ -293,15 +293,3 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
   ];
   actions.createTypes(typeDefs);
 };
-
-export const onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      fallback: {
-        path: require.resolve("path-browserify"),
-        fs: require.resolve("browserify-fs"),
-        stream: require.resolve("stream-browserify"),
-      },
-    },
-  });
-};

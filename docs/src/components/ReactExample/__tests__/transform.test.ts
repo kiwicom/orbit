@@ -99,11 +99,6 @@ describe("sandbox transform", () => {
       ),
     ).toMatchInlineSnapshot(`
       "() => /*#__PURE__*/React.createElement(Component, {
-        iconRight: /*#__PURE__*/React.createElement(Visibility, null),
-        options: [{
-          \\"kek\\": \\"bur\\",
-          \\"blin\\": \\"cheburek\\"
-        }],
         disabled: true,
         fullWidth: true,
         title: \\"kek\\"

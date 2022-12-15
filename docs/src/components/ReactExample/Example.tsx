@@ -8,7 +8,7 @@ import Frame, { StyledFrame } from "./components/Frame";
 import Board from "./components/Board";
 import Playground from "./components/Playground";
 import ViewportsRuler from "./components/ViewportsRuler";
-import { transform } from "./transform";
+import { transform, transformReactElementToJsx } from "./transform";
 
 import { BgType, Props as InitialProps } from ".";
 
@@ -174,7 +174,13 @@ const Example = ({
         }}
         code={code}
       />
-      {isEditorOpened && <Editor onChange={onChangeCode} code={code} isFullScreen={isFullScreen} />}
+      {isEditorOpened && (
+        <Editor
+          onChange={onChangeCode}
+          code={transformReactElementToJsx(exampleName, code)}
+          isFullScreen={isFullScreen}
+        />
+      )}
       {isPlaygroundOpened && exampleKnobs && exampleKnobs.length > 0 && (
         <Playground
           exampleId={exampleName.toLowerCase()}

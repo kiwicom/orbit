@@ -1,19 +1,23 @@
 import { transform as babelTransform } from "@babel/standalone";
-import _ from "lodash";
-import type { BabelFileResult } from "@babel/core";
-import { types as babelTypes } from "@babel/core";
+import type { BabelFileResult, NodePath } from "@babel/core";
+import type {
+  ObjectProperty,
+  JSXAttribute,
+  JSXIdentifier,
+  JSXOpeningElement,
+  JSXSpreadAttribute,
+} from "@babel/types";
+import fp from "lodash/fp";
 
-/* eslint-disable no-param-reassign */
-
-const parseArrayOfObjectProps = (props: babelTypes.ObjectProperty[]) => {
+const parseArrayOfObjectProps = (props: ObjectProperty[]) => {
   return props.reduce((acc, prop) => {
-    if (babelTypes.isObjectProperty(prop)) {
+    if (prop.type === "ObjectProperty") {
       const { key, value } = prop;
-      if (babelTypes.isIdentifier(key)) {
+      if (key.type === "Identifier") {
         if (
-          babelTypes.isNumericLiteral(value) ||
-          babelTypes.isStringLiteral(value) ||
-          babelTypes.isBooleanLiteral(value)
+          value.type === "NumericLiteral" ||
+          value.type === "StringLiteral" ||
+          value.type === "BooleanLiteral"
         ) {
           acc[key.name] = value.value;
         }
@@ -32,43 +36,63 @@ export const transform = (
   const result: BabelFileResult = babelTransform(code, {
     filename: exampleName,
     sourceType: "module",
-    presets: ["typescript", "react"],
     plugins: [
-      ({ types: t }: { types: typeof babelTypes }) => {
-        const parseValue = (value: string | number | boolean) => {
-          if (typeof value === "boolean") return t.booleanLiteral(value);
-          if (typeof value === "number") return t.numericLiteral(value);
+      "syntax-jsx",
+      ({ types: t }) => {
+        const parsePropValue = (value: string | number | boolean) => {
+          if (typeof value === "string" && value.includes("-icon")) {
+            const iconName = `${value.split("-icon")[0]}`;
+            return t.jsxExpressionContainer(
+              t.jsxElement(
+                t.jsxOpeningElement(
+                  t.jsxMemberExpression(t.jsxIdentifier("Icons"), t.jsxIdentifier(iconName)),
+                  [],
+                  true,
+                ),
+                null,
+                [],
+                true,
+              ),
+            );
+          }
+
+          if (typeof value === "boolean") return t.jsxExpressionContainer(t.booleanLiteral(value));
+          if (typeof value === "number") return t.jsxExpressionContainer(t.numericLiteral(value));
           if (typeof value === "string") return t.stringLiteral(value);
 
-          return t.nullLiteral();
+          return t.expressionContainer(t.nullLiteral());
         };
 
         return {
           visitor: {
-            CallExpression: path => {
+            JSXOpeningElement: (path: NodePath<JSXOpeningElement>) => {
               const { node } = path;
-              if (
-                t.isMemberExpression(node.callee) &&
-                node.callee.property.name === "createElement"
-              ) {
-                const [component] = node.arguments;
-                if (t.isIdentifier(component)) {
-                  const { name: componentName } = component;
-                  const knobsObj = knobs[componentName];
+              if (t.isJSXIdentifier(node.name)) {
+                const { name } = node.name as JSXIdentifier;
+                const defaultKnobs = knobs[name];
+                const getProp = (
+                  attributes: (JSXAttribute | JSXSpreadAttribute)[],
+                  propName: string,
+                ) =>
+                  fp.compose(
+                    fp.find(
+                      (attr: JSXAttribute) => t.isJSXAttribute(attr) && attr.name.name === propName,
+                    ),
+                    fp.filter(t.isJSXAttribute),
+                  )(attributes);
 
-                  // for initial knobs applying
-                  if (knobsObj) {
-                    path.node.arguments = [
-                      path.node.arguments[0],
-                      t.objectExpression(
-                        Object.entries(knobsObj).map(([name, val]) => {
-                          return t.objectProperty(t.identifier(name), parseValue(val));
-                        }),
-                      ),
-                      ...path.node.arguments.slice(2),
-                    ];
+                Object.entries(defaultKnobs).forEach(([propName, propValue]) => {
+                  if (propValue == null) return;
+                  const prop = getProp(node.attributes, propName);
+
+                  if (prop) {
+                    prop.value = parsePropValue(propValue);
+                  } else {
+                    node.attributes.push(
+                      t.jsxAttribute(t.jsxIdentifier(propName), parsePropValue(propValue)),
+                    );
                   }
-                }
+                });
               }
             },
           },
@@ -80,25 +104,15 @@ export const transform = (
   return result.code || "";
 };
 
-export const pureTransform = (exampleName: string, example: string) => {
-  const result: BabelFileResult = babelTransform(example, {
-    filename: exampleName,
-    sourceType: "module",
-    presets: ["typescript", "react"],
-  });
-
-  return result.code || "";
-};
-
 export const getProperties = (exampleName: string, example: string) => {
-  const result: babelTypes.ObjectProperty[] = [];
+  const result: ObjectProperty[] = [];
 
   babelTransform(example, {
     filename: exampleName,
     sourceType: "module",
     presets: ["typescript", "react"],
     plugins: [
-      ({ types: t }: { types: typeof babelTypes }) => {
+      ({ types: t }) => {
         return {
           visitor: {
             CallExpression: path => {
@@ -106,7 +120,7 @@ export const getProperties = (exampleName: string, example: string) => {
               if (t.isMemberExpression(node.callee)) {
                 const [, props] = node.arguments;
                 if (t.isObjectExpression(props)) {
-                  props.properties.forEach(prop => {
+                  props.properties.forEach((prop: ObjectProperty) => {
                     if (t.isObjectProperty(prop)) {
                       result.push(prop);
                     }

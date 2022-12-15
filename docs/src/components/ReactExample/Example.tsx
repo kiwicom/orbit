@@ -9,6 +9,7 @@ import Board from "./components/Board";
 import Playground from "./components/Playground";
 import ViewportsRuler from "./components/ViewportsRuler";
 import { transform } from "./transform";
+import useSandbox from "../../hooks/useSandbox";
 
 import { BgType, Props as InitialProps } from ".";
 
@@ -115,6 +116,7 @@ const Example = ({
   const [selectedBackground, setSelectedBackground] = React.useState<BgType>("white");
   const [width, setPreviewWidth] = React.useState<number | string>(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
+  const { origin } = useSandbox(exampleId.toLowerCase());
 
   const handleKeyDown = React.useCallback(
     (ev: KeyboardEvent) => {

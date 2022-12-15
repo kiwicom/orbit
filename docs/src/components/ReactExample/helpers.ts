@@ -1,5 +1,6 @@
 import * as Components from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/icons";
+import { types as t } from "@babel/core";
 
 interface Scope {
   path: string;

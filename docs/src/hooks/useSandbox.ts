@@ -1,14 +1,16 @@
 import React from "react";
 
+import { load, save } from "../utils/storage";
+
 const useSandbox = (exampleId: string, receivedCode?: string) => {
   const [code, setCode] = React.useState(() => {
-    return receivedCode || window.localStorage.getItem(exampleId) || "";
+    return receivedCode || load(exampleId) || "";
   });
 
   const [origin, setOrigin] = React.useState("");
 
   React.useEffect(() => {
-    if (code) window.localStorage.setItem(exampleId, code);
+    if (code) save(exampleId, code);
   }, [code, exampleId]);
 
   React.useEffect(() => {

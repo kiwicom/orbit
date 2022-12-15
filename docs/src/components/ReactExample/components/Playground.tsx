@@ -37,14 +37,8 @@ const Playground = ({ exampleId, exampleKnobs, onChange }: Props) => {
 
     exampleKnobs.forEach(({ component, knobs }) => {
       knobs.forEach(({ defaultValue, name }) => {
-        if (properties) {
-          const value = properties[name];
-          if (value) {
-            set(defaultVals, [component, name], value);
-          }
-        } else {
-          set(defaultVals, [component, name], defaultValue);
-        }
+        if (properties) set(defaultVals, [component, name], properties[name]);
+        else set(defaultVals, [component, name], defaultValue);
       });
     });
 

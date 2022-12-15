@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@5.0.0...@kiwicom/orbit-components@5.1.0) (2022-12-15)
+
+
+### Bug Fixes
+
+* **Button:** export conditional types correctly ([#3680](https://github.com/kiwicom/orbit/issues/3680)) ([6aec97f](https://github.com/kiwicom/orbit/commit/6aec97f73c7573909782d41a3da05a2b10a0f3e4))
+* **ButtonLink:** remove redundant ref type ([d483280](https://github.com/kiwicom/orbit/commit/d4832802a4629d2a6ccc5d9c5bda9939d2540ddb))
+* **CalloutBanner:** fix tabIndex type ([4187abc](https://github.com/kiwicom/orbit/commit/4187abc4d509f8c15c00ccbb034cad8d6551eb49))
+* **Card:** inconsistent expanded state is now impossible ([#3679](https://github.com/kiwicom/orbit/issues/3679)) ([c7d5cd2](https://github.com/kiwicom/orbit/commit/c7d5cd29d25921904b2685610ca4c85ee46d970b))
+* **CarrierLogo:** use useRandomIdSeed ([#3686](https://github.com/kiwicom/orbit/issues/3686)) ([ba538f8](https://github.com/kiwicom/orbit/commit/ba538f8d9879d334bf89703916ee055b919b4e53))
+* **InputField:** fix tabIndex type ([a11e324](https://github.com/kiwicom/orbit/commit/a11e32413e1f813b45f7c796b9b96417196352b9))
+* **InputField:** remove redundant ref type ([e8bce1e](https://github.com/kiwicom/orbit/commit/e8bce1e69635130b8f89649d378a5c70c1b388b2))
+* **ItinerarySegment:** fix incorrect counting of elements ([#3687](https://github.com/kiwicom/orbit/issues/3687)) ([6061b95](https://github.com/kiwicom/orbit/commit/6061b953e75a279af9f0537c91554aac741548bf))
+* **ItinerarySegmentStop:** fix date type ([3f1b92d](https://github.com/kiwicom/orbit/commit/3f1b92db04fae25fe837b83fa6f950c96db834f6))
+* **Radio:** remove redundant ref type ([ac51550](https://github.com/kiwicom/orbit/commit/ac5155019612f8a92fbf2e769d39713b8336c90a))
+* **Select:** fix select ref type ([0bc368d](https://github.com/kiwicom/orbit/commit/0bc368d4f24e728b2c006473330abf468cb5d257))
+* **Select:** remove ref type ([4b80564](https://github.com/kiwicom/orbit/commit/4b80564994e67eb21aacde5ec57c74aa378783ff))
+* **Switch:** remove redundant ref type ([b05f267](https://github.com/kiwicom/orbit/commit/b05f267f924e04c043075111fd47c67f4d291d6c))
+* **Tag:** remove redundant ref type ([fcf00eb](https://github.com/kiwicom/orbit/commit/fcf00eb4724ce9423acc9f1a8b6da5f981d946df))
+
+
+### Features
+
+* **Card:** add margin utility prop ([eddb2fe](https://github.com/kiwicom/orbit/commit/eddb2fe51e73ab3e8d66242fb35be77f3d918cb2))
+* **common:** add ObjectPropertUtility type ([600f8f9](https://github.com/kiwicom/orbit/commit/600f8f9cc148445345c83c47fcd0d1175834d37f))
+* **icons:** update icons from figma ([#3691](https://github.com/kiwicom/orbit/issues/3691)) ([898d44f](https://github.com/kiwicom/orbit/commit/898d44f8bb7fd8f440f150868fc9338f7077fe67))
+* **Illustration:** add margin utility prop ([581fcb9](https://github.com/kiwicom/orbit/commit/581fcb9706358473a39080ab1d653c13f2c8aada))
+* **IllustrationPrimitive:** add margin utility prop ([8efc6e9](https://github.com/kiwicom/orbit/commit/8efc6e91040b1cfaedf88ede9eee9a681d58a1ff))
+* **Text:** add margin utility prop ([02b9549](https://github.com/kiwicom/orbit/commit/02b954954f454052bb83ae10dfd425c7d12b0898))
+* **utils:** add marginUtility ([0f880a4](https://github.com/kiwicom/orbit/commit/0f880a4a705db9195e6a5c4b8feb8f1eee5bb534))
+
+
+
+
+
 # [5.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@4.2.0...@kiwicom/orbit-components@5.0.0) (2022-12-01)
 
 

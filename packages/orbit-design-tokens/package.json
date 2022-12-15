@@ -33,7 +33,6 @@
     "build:xml": "NODE_RUN=true ts-node-esm ./scripts/generateXMLDesignTokens.ts",
     "build": "yarn clean && tsup && yarn run generate:json && yarn run build-html && yarn run build-web && yarn run build-ios && yarn run build-android && yarn build:xml && yarn generate:flow",
     "size:build": "yarn run build",
-    "prepublishOnly": "yarn build && yarn fetch:colors",
     "clean": "rimraf dist pages output"
   },
   "author": "Kiwi.com",

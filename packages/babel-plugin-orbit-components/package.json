@@ -8,6 +8,10 @@
     "url": "https://github.com/kiwicom/orbit",
     "directory": "packages/babel-plugin-orbit-components"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "babel",
     "plugin"

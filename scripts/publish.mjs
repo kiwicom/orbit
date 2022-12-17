@@ -162,6 +162,7 @@ async function previewChangelog() {
   try {
     await configureGitHubToken();
 
+    await $`npm login --registry=https://registry.npmjs.org`;
     await $`yarn install`;
     await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
 

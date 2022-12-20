@@ -1,8 +1,7 @@
-import { path, fs, globby } from "zx";
+import { path, fs, globby, $ } from "zx";
 import { JSDOM } from "jsdom";
 import capitalize from "capitalize";
 import camelcase from "camelcase";
-import mkdirp from "mkdirp";
 import { types as t } from "@babel/core";
 import { transform } from "@svgr/core";
 import svgoPlugin from "@svgr/plugin-svgo";
@@ -16,6 +15,8 @@ import { getProperty, getHTMLComments } from "../checkIcons.mts";
 import { NAMES as ILLUSTRATION_NAMES } from "../../src/Illustration/consts.mts";
 // @ts-expect-error FIXME: currently ts has some issue with importing mts ext
 import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustration/consts.mts";
+
+const randomId = () => Math.random().toString(36).substring(2, 9);
 
 (async () => {
   const files = await globby("src/icons/svg/*.svg");
@@ -35,10 +36,9 @@ import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustrati
   });
 
   const componentPath = path.join(__dirname, "../../", "src", "icons");
-  // @ts-expect-error TODO
-  mkdirp(componentPath);
+  await $`mkdir -p ${componentPath}`;
 
-  function getViewBox(attributes) {
+  function getViewBox(attributes: NamedNodeMap) {
     return getProperty(attributes, "viewBox", "0 0 24 24");
   }
 
@@ -58,7 +58,7 @@ import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustrati
     `;
   };
 
-  const flowTemplate = functionName => `// @flow
+  const flowTemplate = (functionName: string) => `// @flow
 import * as React from "react";
 
 import type { Props } from "../Icon";
@@ -87,6 +87,9 @@ export { ${functionName}, ${functionName} as default };
         content.outerHTML,
         {
           plugins: [svgoPlugin, jsxPlugin, prettierPlugin],
+          svgoConfig: {
+            plugins: ["preset-default", { name: "prefixIds", params: { prefix: randomId() } }],
+          },
           svgProps: { viewBox: getViewBox(content.attributes) || "" },
           template,
         },
@@ -126,14 +129,14 @@ import * as React from "react";\n\n`;
   const TSHeader = `// Type definitions for @kiwicom/orbit-components
 // Project: https://github.com/kiwicom/orbit/\n`;
 
-  const iconMapper = interpolation =>
+  const iconMapper = (interpolation: (param: string) => string) =>
     names.map(({ functionName }) => interpolation(functionName)).join("");
 
   fs.writeFileSync(
     path.join(componentPath, "index.js.flow"),
     flow +
-      iconMapper(name => `import type { ${name}Type } from "./${name}";\n`) +
-      iconMapper(name => `declare export var ${name}: ${name}Type;\n`),
+      iconMapper((name: string) => `import type { ${name}Type } from "./${name}";\n`) +
+      iconMapper((name: string) => `declare export var ${name}: ${name}Type;\n`),
   );
 
   fs.writeFileSync(

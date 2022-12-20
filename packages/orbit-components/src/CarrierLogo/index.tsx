@@ -27,6 +27,12 @@ const getRenderSize = ({ theme, size }) => {
   return renderSizes[size];
 };
 
+const getWidth = ({ theme, size, inlineStacked, totalCarriers }) => {
+  if (inlineStacked) return "min-content";
+
+  return totalCarriers > 1 ? theme.orbit.widthCarrierLogo : `${getRenderSize({ theme, size })}px`;
+};
+
 const getCarrierLogoSize = ({ theme, carriersLength, size, inlineStacked }) => {
   const defaultSizes =
     carriersLength > 1 && !inlineStacked
@@ -101,9 +107,7 @@ export const StyledCarrierLogo = styled.div<{
     height: ${carriers.length > 1 && !inlineStacked
       ? theme.orbit.heightCarrierLogo
       : `${getRenderSize({ theme, size })}px`};
-    width: ${carriers.length > 1
-      ? theme.orbit.widthCarrierLogo
-      : `${getRenderSize({ theme, size })}px`};
+    width: ${getWidth({ theme, size, inlineStacked, totalCarriers: carriers.length })};
     display: flex;
     flex-direction: ${carriers.length > 1 && !inlineStacked ? "column" : "row"};
     flex-wrap: ${carriers.length > 2 && !inlineStacked && "wrap"};

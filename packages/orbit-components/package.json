@@ -29,10 +29,6 @@
     "deploy:updateURL": "ts-node --esm config/deploymentUtils.mts updateLiveURL",
     "docs-gen": "monstra docs"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",
     "gitEmail": "hello@ghbot.com",

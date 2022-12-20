@@ -21,10 +21,6 @@
     "output/*",
     "pages/*"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "fetch:colors": "zx ./scripts/fetchBaseTokens.mjs",
     "check:types": "tsc",

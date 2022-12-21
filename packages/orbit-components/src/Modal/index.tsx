@@ -677,6 +677,6 @@ const Modal = React.forwardRef<Instance, Props>(
 Modal.displayName = "Modal";
 export default Modal;
 
-export { default as ModalHeader } from "./ModalHeader";
+export { default as ModalHeader, ModalHeading } from "./ModalHeader";
 export { default as ModalSection } from "./ModalSection";
 export { default as ModalFooter } from "./ModalFooter";

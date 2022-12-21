@@ -154,8 +154,19 @@ MobileHeader.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledModalHeaderContent = styled.div<{ description?: boolean }>`
-  margin-top: ${({ description }) => (description ? "32px" : "16px")};
+const getModalHeaderContentMargin = ({ hasHeader, hasDescription, hasChildren }) => {
+  if (!hasHeader && hasChildren) return "0";
+
+  return hasDescription ? "32px" : "16px";
+};
+
+const StyledModalHeaderContent = styled.div<{
+  hasHeader: boolean;
+  hasDescription: boolean;
+  hasChildren: boolean;
+}>`
+  margin-top: ${({ hasHeader, hasDescription, hasChildren }) =>
+    getModalHeaderContentMargin({ hasHeader, hasDescription, hasChildren })};
 `;
 
 const ModalHeader = ({
@@ -202,7 +213,13 @@ const ModalHeader = ({
         </ModalTitle>
       )}
       {children && (
-        <StyledModalHeaderContent description={!!description}>{children}</StyledModalHeaderContent>
+        <StyledModalHeaderContent
+          hasHeader={!!hasHeader}
+          hasChildren={!!children}
+          hasDescription={!!description}
+        >
+          {children}
+        </StyledModalHeaderContent>
       )}
       {title && hasMobileHeader && (
         <MobileHeader role="presentation" isMobileFullPage={isMobileFullPage}>

@@ -31,9 +31,9 @@ const StyledCardSectionContent = styled.div<Partial<Props>>`
     transition: ${transition(["padding", "border-top"], "fast", "linear")};
 
     ${mq.largeMobile(css`
-      padding-top: ${theme.orbit.spaceLarge};
+      padding-top: ${hasPaddingTop && theme.orbit.spaceLarge};
     `)}
-  `}
+  `};
 `;
 
 StyledCardSectionContent.defaultProps = {

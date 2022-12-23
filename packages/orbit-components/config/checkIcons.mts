@@ -14,7 +14,7 @@ import dedent from "dedent";
 const DEFAULT_ICON_SIZE = "24";
 const DEFAULT_ICON_PATH = "src/icons/svg/*.svg";
 
-interface Attr {
+export interface Attr {
   name: string;
   value: string;
 }

@@ -5,8 +5,12 @@ import type * as Common from "../common/types";
 
 export type Name =%NAMES%
 
+// TODO: remove spaceAfter in the next major version
+/** SpaceAfter is deprecated, use margin instead */
+
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: Name;
+  readonly margin?: React.CSSProperties["margin"] | Common.ObjectProperty;
   readonly alt?: string;
 }

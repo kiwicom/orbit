@@ -20,7 +20,7 @@ export default {
     },
     {
       name: "With only icon",
-      code: "() => <Button iconRight={<Icons.ChevronRight />} />",
+      code: "() => <Button iconLeft={<Icons.ChevronRight />} />",
     },
   ],
 };

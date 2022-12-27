@@ -35,7 +35,8 @@
     "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md"
   },
   "engines": {
-    "yarn": ">=1.19.1"
+    "yarn": ">=1.19.1",
+    "node": ">=18.0.0"
   },
   "author": "kiwi.com",
   "license": "MIT",

@@ -81,18 +81,20 @@ export const transform = (
                     fp.filter(t.isJSXAttribute),
                   )(attributes);
 
-                Object.entries(defaultKnobs).forEach(([propName, propValue]) => {
-                  if (propValue == null) return;
-                  const prop = getProp(node.attributes, propName);
+                if (defaultKnobs) {
+                  Object.entries(defaultKnobs).forEach(([propName, propValue]) => {
+                    if (propValue == null) return;
+                    const prop = getProp(node.attributes, propName);
 
-                  if (prop) {
-                    prop.value = parsePropValue(propValue);
-                  } else {
-                    node.attributes.push(
-                      t.jsxAttribute(t.jsxIdentifier(propName), parsePropValue(propValue)),
-                    );
-                  }
-                });
+                    if (prop) {
+                      prop.value = parsePropValue(propValue);
+                    } else {
+                      node.attributes.push(
+                        t.jsxAttribute(t.jsxIdentifier(propName), parsePropValue(propValue)),
+                      );
+                    }
+                  });
+                }
               }
             },
           },

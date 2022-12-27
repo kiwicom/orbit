@@ -2,7 +2,6 @@
   DOCUMENTATION: https://orbit.kiwi/components/illustration/
 */
 import type React from "react";
-
 import type * as Common from "../common/types";
 
 export type Name =

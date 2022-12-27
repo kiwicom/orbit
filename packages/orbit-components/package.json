@@ -6,6 +6,9 @@
   "author": "Kiwi.com",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "storybook": "storybook dev -p 6007 -c .storybook --ci",
     "cy:dev": "vite cypress/integration --logLevel silent",

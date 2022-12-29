@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Slider from "..";
@@ -32,6 +32,8 @@ jest.mock("../utils", () => {
 });
 
 describe("Slider", () => {
+  const user = userEvent.setup();
+
   const onChange = jest.fn();
   const onChangeBefore = jest.fn();
   const onChangeAfter = jest.fn();
@@ -61,7 +63,7 @@ describe("Slider", () => {
   );
   const slider = screen.getByRole("slider");
 
-  it("should have expected DOM output and work with mouse events", () => {
+  it("should have expected DOM output and work with mouse events", async () => {
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByText(valueDescription)).toBeInTheDocument();
     expect(screen.getByText(label)).toBeInTheDocument();
@@ -72,9 +74,9 @@ describe("Slider", () => {
     expect(slider).toHaveAttribute("aria-valuenow", defaultValue.toString());
     expect(slider).toHaveAttribute("aria-valuetext", ariaValueText.toString());
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(onChangeBefore).toHaveBeenCalled();
-    userEvent.tab();
+    await act(() => user.tab());
     expect(onChangeAfter).toHaveBeenCalled();
     expect(onChangeAfter).toHaveBeenCalledWith(2);
 

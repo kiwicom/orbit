@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen, fireEvent, act } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputField from "..";
@@ -12,6 +12,8 @@ import { INPUTMODE } from "../consts";
 import defaultTheme from "../../defaultTheme";
 
 describe("InputField", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", async () => {
     const ref = React.createRef<HTMLInputElement>();
     const { container } = render(
@@ -26,7 +28,7 @@ describe("InputField", () => {
         minLength={1}
         maxLength={10}
         dataTest="test"
-        tabIndex={-1}
+        tabIndex={0}
         readOnly
         autoComplete="off"
         spaceAfter={SPACINGS_AFTER.NORMAL}
@@ -54,7 +56,7 @@ describe("InputField", () => {
     expect(input).toHaveAttribute("inputmode", INPUTMODE.NUMERIC);
     expect(input).toHaveAttribute("autocomplete", "off");
     expect(input).toHaveAttribute("readonly");
-    expect(input).toHaveAttribute("tabindex", "-1");
+    expect(input).toHaveAttribute("tabindex", "0");
     expect(input).toHaveAttribute("data-recording-ignore");
     expect(input).toHaveAttribute("id", "id");
     expect(input).toHaveAttribute("data-state", "ok");
@@ -62,15 +64,12 @@ describe("InputField", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByTestId("prefix")).toBeInTheDocument();
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
-    fireEvent.focus(input); // userEvent.tab() doesn't work because of tabIndex="-1"
+    await act(() => user.tab());
     expect(screen.getByTestId("help")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
 
-  it("should trigger given event handlers", () => {
+  it("should trigger given event handlers", async () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const onBlur = jest.fn();
@@ -92,7 +91,7 @@ describe("InputField", () => {
       />,
     );
     const input = screen.getByRole("textbox");
-    userEvent.type(input, "Hello world!");
+    await user.type(input, "Hello world!");
     expect(onFocus).toHaveBeenCalled();
     expect(onChange).toHaveBeenCalled();
     expect(onMouseDown).toHaveBeenCalled();
@@ -101,7 +100,7 @@ describe("InputField", () => {
     expect(onKeyDown).toHaveBeenCalled();
     expect(onKeyUp).toHaveBeenCalled();
     expect(onSelect).toHaveBeenCalled();
-    userEvent.tab();
+    await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 
@@ -143,40 +142,40 @@ describe("InputField", () => {
       expect(input).toHaveAttribute("data-state", "error");
       expect(input).toBeInvalid();
 
-      userEvent.tab();
+      await act(() => user.tab());
       expect(screen.queryByTestId("help")).not.toBeInTheDocument();
       expect(screen.getByTestId("error")).toBeInTheDocument();
-      expect(input).toHaveDescription("Something went wrong.");
-      // Needs to flush async `floating-ui` hooks
-      // https://github.com/floating-ui/floating-ui/issues/1520
-      await act(async () => {});
     });
   });
 
   describe("error forms", () => {
-    it("should close tooltip when tabbing away from content", async () => {
+    it("shold show the correct error tooltips while tabbing between fields", async () => {
       render(
         <>
           <InputField error="First" />
-          <InputField error={<a href="/">Second</a>} />
-          <InputField error="Third" />
+          <InputField error="Second" />
         </>,
       );
 
       expect(screen.queryByText("First")).not.toBeInTheDocument();
-      userEvent.tab();
+      await act(() => user.tab());
       expect(screen.getByText("First")).toBeVisible();
-      userEvent.tab();
+      await act(() => user.tab());
       expect(screen.queryByText("First")).not.toBeInTheDocument();
       expect(screen.getByText("Second")).toBeVisible();
-      userEvent.tab();
-      expect(screen.getByText("Second")).toHaveFocus();
-      userEvent.tab();
+    });
+
+    it("should close tooltip when tabbing away from its content", async () => {
+      render(<InputField error={<a href="/">Second</a>} />);
+
+      await act(() => user.tab());
+      expect(screen.getByText("Second")).toBeVisible();
+
+      screen.getByRole("link").focus();
+      expect(screen.getByRole("link")).toHaveFocus();
+
+      await act(() => user.tab());
       expect(screen.queryByText("Second")).not.toBeInTheDocument();
-      expect(screen.getByText("Third")).toBeVisible();
-      // Needs to flush async `floating-ui` hooks
-      // https://github.com/floating-ui/floating-ui/issues/1520
-      await act(async () => {});
     });
   });
 });

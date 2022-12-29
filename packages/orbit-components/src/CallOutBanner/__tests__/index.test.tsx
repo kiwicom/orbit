@@ -6,6 +6,8 @@ import CallOutBanner from "..";
 import Illustration from "../../Illustration";
 
 describe("CallOutBanner", () => {
+  const user = userEvent.setup();
+
   it("flat", () => {
     render(
       <CallOutBanner
@@ -24,12 +26,12 @@ describe("CallOutBanner", () => {
     expect(banner.textContent).toMatch("description");
     expect(screen.getByTestId("illustration"));
   });
-  it("actionable", () => {
+  it("actionable", async () => {
     const onClick = jest.fn();
     render(<CallOutBanner dataTest="test" title="title" onClick={onClick} />);
     const banner = screen.getByTestId("test");
     expect(banner).toHaveAttribute("tabindex", "0");
-    userEvent.click(banner);
+    await user.click(banner);
     expect(onClick).toHaveBeenCalled();
   });
 });

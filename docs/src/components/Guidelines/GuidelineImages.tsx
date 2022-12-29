@@ -60,7 +60,7 @@ export const DontImage = ({ children }: ImageProps) => (
 );
 
 interface GuidelineImagesProps {
-  children: [ImageProps];
+  children: ImageProps["children"];
 }
 
 export default function GuidelineImages({ children }: GuidelineImagesProps) {

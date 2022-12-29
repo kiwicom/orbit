@@ -8,12 +8,14 @@ Test files should generally consist of one root `describe` block which is named 
 
 ```jsx
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Button from "../";
 
 describe("Button", () => {
+  const user = userEvent.setup();
+
   it("should be accessible", () => {
     render(<Button>Click me</Button>);
     expect(screen.getByRole("button", { name: "Click me" })).toBeInTheDocument();
@@ -21,7 +23,8 @@ describe("Button", () => {
   it("should trigger the click handler", () => {
     const onClick = jest.fn();
     render(<Button onClick={onClick}>Click me</Button>);
-    userEvent.click(screen.getByRole("button", { name: "Click me" }));
+
+    act(() => user.click(screen.getByRole("button", { name: "Click me" })));
     expect(onClick).toHaveBeenCalled();
   });
   describe("when disabled", () => {
@@ -32,7 +35,8 @@ describe("Button", () => {
           Click me
         </Button>,
       );
-      userEvent.click(screen.getByRole("button", { name: "Click me" }));
+
+      act(() => user.click(screen.getByRole("button", { name: "Click me" })));
       expect(onClick).not.toHaveBeenCalled();
     });
   });
@@ -55,6 +59,8 @@ import userEvent from "@testing-library/user-event";
 import Button from "../";
 
 describe("Button", () => {
+  const user = userEvent.setup();
+
   it("default", () => {
     const onClick = jest.fn();
     render(
@@ -62,8 +68,9 @@ describe("Button", () => {
         Click me {/* it's not necessary to save this into a variable */}
       </Button>,
     );
+
     const button = screen.getByRole("button");
-    userEvent.click(button);
+    act(() => user.click(button));
     expect(button).toHaveTextContent("Click me"); // you can just repeat it
     expect(onClick).toHaveBeenCalled();
   });

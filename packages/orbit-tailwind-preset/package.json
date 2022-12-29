@@ -34,5 +34,8 @@
   },
   "dependencies": {
     "@kiwicom/orbit-design-tokens": "^5.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0"
   }
 }

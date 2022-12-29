@@ -5,14 +5,14 @@ import { transformToKebabCase, getComponentLevelToken } from "../presets/foundat
 describe("orbit-tailwind-preset", () => {
   it("should transform foundation to kebab case", () => {
     expect(transformToKebabCase(defaultFoundation)).toMatchInlineSnapshot(`
-      Object {
-        "border-radius": Object {
+      {
+        "border-radius": {
           "circle": "50%",
           "large": "6px",
           "normal": "3px",
           "small": "2px",
         },
-        "breakpoint": Object {
+        "breakpoint": {
           "desktop": 992,
           "large-desktop": 1200,
           "large-mobile": 576,
@@ -20,28 +20,28 @@ describe("orbit-tailwind-preset", () => {
           "small-mobile": 320,
           "tablet": 768,
         },
-        "font-family": Object {
+        "font-family": {
           "base": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
         },
-        "font-size": Object {
+        "font-size": {
           "extra-large": "18px",
           "large": "16px",
           "normal": "15px",
           "small": "13px",
         },
-        "font-weight": Object {
+        "font-weight": {
           "bold": "700",
           "medium": "500",
           "normal": "400",
         },
-        "line-height": Object {
+        "line-height": {
           "extra-large": "24px",
           "large": "24px",
           "normal": "20px",
           "small": "16px",
         },
-        "palette": Object {
-          "blue": Object {
+        "palette": {
+          "blue": {
             "dark": "#005AA3",
             "dark-active": "#003E70",
             "dark-hover": "#004F8F",
@@ -53,11 +53,11 @@ describe("orbit-tailwind-preset", () => {
             "normal-active": "#01508E",
             "normal-hover": "#0161AC",
           },
-          "bundle": Object {
+          "bundle": {
             "basic": "#D7331C",
             "medium": "#3B1EB0",
           },
-          "cloud": Object {
+          "cloud": {
             "dark": "#BAC7D5",
             "dark-active": "#94A8BE",
             "dark-hover": "#A6B6C8",
@@ -68,7 +68,7 @@ describe("orbit-tailwind-preset", () => {
             "normal-active": "#CAD4DE",
             "normal-hover": "#DCE3E9",
           },
-          "green": Object {
+          "green": {
             "dark": "#2D7738",
             "dark-active": "#1F5126",
             "dark-hover": "#276831",
@@ -80,7 +80,7 @@ describe("orbit-tailwind-preset", () => {
             "normal-active": "#1D7228",
             "normal-hover": "#238B31",
           },
-          "ink": Object {
+          "ink": {
             "dark": "#252A31",
             "dark-active": "#0B0C0F",
             "dark-hover": "#181B20",
@@ -91,7 +91,7 @@ describe("orbit-tailwind-preset", () => {
             "normal-active": "#324256",
             "normal-hover": "#3E4E63",
           },
-          "orange": Object {
+          "orange": {
             "dark": "#AD5700",
             "dark-active": "#954A00",
             "dark-hover": "#A75400",
@@ -103,7 +103,7 @@ describe("orbit-tailwind-preset", () => {
             "normal-active": "#B26200",
             "normal-hover": "#C96F00",
           },
-          "product": Object {
+          "product": {
             "dark": "#007A69",
             "dark-active": "#006657",
             "dark-hover": "#007060",
@@ -115,7 +115,7 @@ describe("orbit-tailwind-preset", () => {
             "normal-active": "#008472",
             "normal-hover": "#009580",
           },
-          "red": Object {
+          "red": {
             "dark": "#970C0C",
             "dark-active": "#6D0909",
             "dark-hover": "#890B0B",
@@ -127,25 +127,25 @@ describe("orbit-tailwind-preset", () => {
             "normal-active": "#9D1515",
             "normal-hover": "#B91919",
           },
-          "social": Object {
+          "social": {
             "facebook": "#3B5998",
             "facebook-active": "#354F88",
             "facebook-hover": "#385490",
           },
-          "white": Object {
+          "white": {
             "normal": "#FFFFFF",
             "normal-active": "#E7ECF1",
             "normal-hover": "#F1F4F7",
           },
         },
-        "size": Object {
+        "size": {
           "extra-extra-large": "52px",
           "extra-large": "44px",
           "large": "32px",
           "medium": "24px",
           "small": "16px",
         },
-        "space": Object {
+        "space": {
           "large": "24px",
           "medium": "16px",
           "small": "12px",
@@ -162,7 +162,7 @@ describe("orbit-tailwind-preset", () => {
 
   it("should get component level token", () => {
     expect(getComponentLevelToken("heading", "fontSize")).toMatchInlineSnapshot(`
-      Object {
+      {
         "heading-display-font-size": "40px",
         "heading-display-subtitle-font-size": "22px",
         "heading-title1font-size": "28px",
@@ -175,7 +175,7 @@ describe("orbit-tailwind-preset", () => {
     `);
 
     expect(getComponentLevelToken("heading", "lineHeight")).toMatchInlineSnapshot(`
-      Object {
+      {
         "heading-display-line-height": "44px",
         "heading-display-subtitle-line-height": "28px",
         "heading-title1line-height": "32px",
@@ -188,7 +188,7 @@ describe("orbit-tailwind-preset", () => {
     `);
 
     expect(getComponentLevelToken("heading", "fontWeight")).toMatchInlineSnapshot(`
-      Object {
+      {
         "heading-display-font-weight": "700",
         "heading-display-subtitle-font-weight": "400",
         "heading-title1font-weight": "700",
@@ -201,7 +201,7 @@ describe("orbit-tailwind-preset", () => {
     `);
 
     expect(getComponentLevelToken("button", "background")).toMatchInlineSnapshot(`
-      Object {
+      {
         "button-bundle-basic-background": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
         "button-bundle-medium-background": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
         "button-bundle-top-background": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
@@ -221,7 +221,7 @@ describe("orbit-tailwind-preset", () => {
     `);
 
     expect(getComponentLevelToken("button", "backgroundHover")).toMatchInlineSnapshot(`
-      Object {
+      {
         "button-bundle-basic-background-hover": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
         "button-bundle-medium-background-hover": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
         "button-bundle-top-background-hover": "linear-gradient(to top right, #171718 0%, #51575C 100%)",

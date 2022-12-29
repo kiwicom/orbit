@@ -6,7 +6,9 @@ import Select from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Select", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const placeholder = "Default placeholder";
     const dataTest = "test";
     const label = "label";
@@ -61,11 +63,11 @@ describe("Select", () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
     expect(screen.getByText(placeholder)).toBeInTheDocument();
 
-    userEvent.selectOptions(select, screen.getByText("One"));
+    await user.selectOptions(select, screen.getByText("One"));
     expect(onChange).toHaveBeenCalled();
-    userEvent.tab();
+    await user.tab();
     expect(onFocus).toHaveBeenCalled();
-    userEvent.tab();
+    await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 
@@ -93,10 +95,10 @@ describe("Select", () => {
     );
     const select = screen.getByTestId("error-select");
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(select).toBeInvalid();
-    expect(select).toHaveDescription("error");
+    expect(select).toHaveAccessibleDescription("error");
     await act(async () => {});
   });
 
@@ -111,9 +113,9 @@ describe("Select", () => {
     );
     const select = screen.getByTestId("help-select");
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("help")).toBeInTheDocument();
-    expect(select).toHaveDescription("help");
+    expect(select).toHaveAccessibleDescription("help");
     await act(async () => {});
   });
 

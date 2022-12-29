@@ -70,7 +70,7 @@ const ToastRoot = ({
             onDismiss={notify.dismiss}
             ariaLive={ariaProps["aria-live"]}
           >
-            {message}
+            {message as React.ReactNode}
           </ToastMessage>
         );
       })}

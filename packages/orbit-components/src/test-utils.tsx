@@ -6,7 +6,7 @@ import path from "path";
 
 import theme from "./defaultTheme";
 
-const wrapper: React.ComponentType = ({ children }) => <>{children}</>;
+const wrapper: React.ComponentType = ({ children }: React.PropsWithChildren) => <>{children}</>;
 
 const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, "wrapper">) => {
   const view = render(ui, { wrapper, ...options });

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import MobileDialog from "..";
@@ -16,7 +16,9 @@ afterAll(() => {
   document.body?.removeChild(dialogs);
 });
 describe("MobileDialogPrimitive", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const onShown = jest.fn();
     render(
       // eslint-disable-next-line jsx-a11y/tabindex-no-positive
@@ -26,7 +28,7 @@ describe("MobileDialogPrimitive", () => {
     );
     const children = screen.getByText("children");
     expect(children).toHaveAttribute("tabindex", "1");
-    userEvent.click(children);
+    await act(() => user.click(children));
     expect(onShown).toHaveBeenCalledTimes(1);
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(screen.getByTestId("test")).toBeInTheDocument();

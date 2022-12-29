@@ -34,7 +34,7 @@ const getSizeToken = ({ size, theme }: { size: Props["size"]; theme: typeof defa
   return tokens[size];
 };
 
-const ModalBody = styled.div<{ isMobileFullPage: Props["isMobileFullPage"] }>`
+const ModalBody = styled.div<{ autoFocus?: boolean; isMobileFullPage: Props["isMobileFullPage"] }>`
   ${({ theme, isMobileFullPage }) => css`
     width: 100%;
     height: 100%;

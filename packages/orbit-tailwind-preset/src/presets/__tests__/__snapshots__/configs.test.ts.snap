@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`componentsPreset should match snapshot 1`] = `
-Object {
-  "blocklist": Array [],
-  "content": Object {
-    "extract": Object {},
-    "files": Array [
+{
+  "blocklist": [],
+  "content": {
+    "extract": {},
+    "files": [
       "auto",
     ],
     "relative": false,
-    "transform": Object {},
+    "transform": {},
   },
-  "corePlugins": Array [
+  "corePlugins": [
     "container",
     "accessibility",
     "pointerEvents",
@@ -189,29 +189,29 @@ Object {
   ],
   "darkMode": "media",
   "important": false,
-  "plugins": Array [
-    Object {
+  "plugins": [
+    {
       "config": undefined,
       "handler": [Function],
     },
   ],
   "prefix": "",
-  "presets": Array [
-    Object {
-      "content": Array [
+  "presets": [
+    {
+      "content": [
         "auto",
       ],
-      "corePlugins": Object {
+      "corePlugins": {
         "preflight": false,
       },
-      "theme": Object {
-        "borderRadius": Object {
+      "theme": {
+        "borderRadius": {
           "circle": "50%",
           "large": "6px",
           "normal": "3px",
           "small": "2px",
         },
-        "boxShadow": Object {
+        "boxShadow": {
           "action": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 1px 4px 0 rgba(37, 42, 49, 0.12)",
           "action-active": "0 1px 4px 0 rgba(37, 42, 49, 0.16),0 4px 8px 0 rgba(37, 42, 49, 0.12)",
           "fixed": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 2px 4px 0 rgba(37, 42, 49, 0.12)",
@@ -221,8 +221,8 @@ Object {
           "raised": "0 4px 8px 0 rgba(37, 42, 49, 0.16),0 8px 24px 0 rgba(37, 42, 49, 0.24)",
           "raised-reverse": "0 -4px 8px 0 rgba(37, 42, 49, 0.16),0 -8px 24px 0 rgba(37, 42, 49, 0.24)",
         },
-        "colors": Object {
-          "blue": Object {
+        "colors": {
+          "blue": {
             "dark": "#005AA3",
             "dark-active": "#003E70",
             "dark-hover": "#004F8F",
@@ -234,11 +234,11 @@ Object {
             "normal-active": "#01508E",
             "normal-hover": "#0161AC",
           },
-          "bundle": Object {
+          "bundle": {
             "basic": "#D7331C",
             "medium": "#3B1EB0",
           },
-          "cloud": Object {
+          "cloud": {
             "dark": "#BAC7D5",
             "dark-active": "#94A8BE",
             "dark-hover": "#A6B6C8",
@@ -249,7 +249,7 @@ Object {
             "normal-active": "#CAD4DE",
             "normal-hover": "#DCE3E9",
           },
-          "green": Object {
+          "green": {
             "dark": "#2D7738",
             "dark-active": "#1F5126",
             "dark-hover": "#276831",
@@ -261,7 +261,7 @@ Object {
             "normal-active": "#1D7228",
             "normal-hover": "#238B31",
           },
-          "ink": Object {
+          "ink": {
             "dark": "#252A31",
             "dark-active": "#0B0C0F",
             "dark-hover": "#181B20",
@@ -272,7 +272,7 @@ Object {
             "normal-active": "#324256",
             "normal-hover": "#3E4E63",
           },
-          "orange": Object {
+          "orange": {
             "dark": "#AD5700",
             "dark-active": "#954A00",
             "dark-hover": "#A75400",
@@ -284,7 +284,7 @@ Object {
             "normal-active": "#B26200",
             "normal-hover": "#C96F00",
           },
-          "product": Object {
+          "product": {
             "dark": "#007A69",
             "dark-active": "#006657",
             "dark-hover": "#007060",
@@ -296,7 +296,7 @@ Object {
             "normal-active": "#008472",
             "normal-hover": "#009580",
           },
-          "red": Object {
+          "red": {
             "dark": "#970C0C",
             "dark-active": "#6D0909",
             "dark-hover": "#890B0B",
@@ -308,19 +308,19 @@ Object {
             "normal-active": "#9D1515",
             "normal-hover": "#B91919",
           },
-          "social": Object {
+          "social": {
             "facebook": "#3B5998",
             "facebook-active": "#354F88",
             "facebook-hover": "#385490",
           },
-          "white": Object {
+          "white": {
             "normal": "#FFFFFF",
             "normal-active": "#E7ECF1",
             "normal-hover": "#F1F4F7",
           },
         },
-        "extend": Object {
-          "zIndex": Object {
+        "extend": {
+          "zIndex": {
             "default": "1",
             "drawer": "815",
             "modal": "825",
@@ -329,27 +329,27 @@ Object {
             "sticky": "100",
           },
         },
-        "fontFamily": Object {
+        "fontFamily": {
           "base": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
         },
-        "fontSize": Object {
+        "fontSize": {
           "extra-large": "18px",
           "large": "16px",
           "normal": "15px",
           "small": "13px",
         },
-        "fontWeight": Object {
+        "fontWeight": {
           "bold": "700",
           "medium": "500",
           "normal": "400",
         },
-        "lineHeight": Object {
+        "lineHeight": {
           "extra-large": "24px",
           "large": "24px",
           "normal": "20px",
           "small": "16px",
         },
-        "screens": Object {
+        "screens": {
           "de": "992px",
           "ld": "1200px",
           "lm": "576px",
@@ -357,7 +357,7 @@ Object {
           "sm": "320px",
           "tb": "768px",
         },
-        "spacing": Object {
+        "spacing": {
           "0": "0px",
           "lg": "24px",
           "md": "16px",
@@ -370,7 +370,7 @@ Object {
           "xxxl": "52px",
           "xxxs": "2px",
         },
-        "transitionDuration": Object {
+        "transitionDuration": {
           "fast": "0.15s",
           "normal": "0.3s",
           "slow": "0.4s",
@@ -378,12 +378,12 @@ Object {
       },
     },
   ],
-  "safelist": Array [],
+  "safelist": [],
   "separator": ":",
-  "theme": Object {
-    "accentColor": Object {
+  "theme": {
+    "accentColor": {
       "auto": "auto",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -395,11 +395,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -410,7 +410,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -422,7 +422,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -433,7 +433,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -445,7 +445,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -457,7 +457,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -469,18 +469,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "animation": Object {
+    "animation": {
       "bounce": "bounce 1s infinite",
       "loader": "loader 1s 1.25s infinite ease-in-out",
       "none": "none",
@@ -490,23 +490,23 @@ Object {
       "spin": "spin 1s linear infinite",
       "spinner": "spinner 0.75s linear infinite",
     },
-    "aria": Object {
-      "busy": "busy=\\"true\\"",
-      "checked": "checked=\\"true\\"",
-      "disabled": "disabled=\\"true\\"",
-      "expanded": "expanded=\\"true\\"",
-      "hidden": "hidden=\\"true\\"",
-      "pressed": "pressed=\\"true\\"",
-      "readonly": "readonly=\\"true\\"",
-      "required": "required=\\"true\\"",
-      "selected": "selected=\\"true\\"",
+    "aria": {
+      "busy": "busy="true"",
+      "checked": "checked="true"",
+      "disabled": "disabled="true"",
+      "expanded": "expanded="true"",
+      "hidden": "hidden="true"",
+      "pressed": "pressed="true"",
+      "readonly": "readonly="true"",
+      "required": "required="true"",
+      "selected": "selected="true"",
     },
-    "aspectRatio": Object {
+    "aspectRatio": {
       "auto": "auto",
       "square": "1 / 1",
       "video": "16 / 9",
     },
-    "backdropBlur": Object {
+    "backdropBlur": {
       "0": "0",
       "2xl": "40px",
       "3xl": "64px",
@@ -517,7 +517,7 @@ Object {
       "sm": "4px",
       "xl": "24px",
     },
-    "backdropBrightness": Object {
+    "backdropBrightness": {
       "0": "0",
       "100": "1",
       "105": "1.05",
@@ -530,7 +530,7 @@ Object {
       "90": ".9",
       "95": ".95",
     },
-    "backdropContrast": Object {
+    "backdropContrast": {
       "0": "0",
       "100": "1",
       "125": "1.25",
@@ -539,11 +539,11 @@ Object {
       "50": ".5",
       "75": ".75",
     },
-    "backdropGrayscale": Object {
+    "backdropGrayscale": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "backdropHueRotate": Object {
+    "backdropHueRotate": {
       "0": "0deg",
       "15": "15deg",
       "180": "180deg",
@@ -551,11 +551,11 @@ Object {
       "60": "60deg",
       "90": "90deg",
     },
-    "backdropInvert": Object {
+    "backdropInvert": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "backdropOpacity": Object {
+    "backdropOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -572,18 +572,18 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "backdropSaturate": Object {
+    "backdropSaturate": {
       "0": "0",
       "100": "1",
       "150": "1.5",
       "200": "2",
       "50": ".5",
     },
-    "backdropSepia": Object {
+    "backdropSepia": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "backgroundColor": Object {
+    "backgroundColor": {
       "badge-bundle-basic-background": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
       "badge-bundle-medium-background": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
       "badge-bundle-top-background": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
@@ -598,7 +598,7 @@ Object {
       "badge-warning-background": "#DF7B00",
       "badge-warning-subtle-background": "#FEF2E6",
       "badge-white-background": "#FFFFFF",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -610,7 +610,7 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
@@ -659,7 +659,7 @@ Object {
       "button-white-background": "#FFFFFF",
       "button-white-background-active": "#E5EAEF",
       "button-white-background-hover": "#F5F7F9",
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -672,7 +672,7 @@ Object {
       },
       "form-element-background": "#FFFFFF",
       "form-element-disabled-background": "#E8EDF1",
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -684,7 +684,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -695,7 +695,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -707,7 +707,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -719,7 +719,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -731,7 +731,7 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
@@ -754,13 +754,13 @@ Object {
       "tag-neutral-background": "#E8EDF1",
       "tag-neutral-background-active": "#CAD4DE",
       "tag-neutral-background-hover": "#DCE3E9",
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "backgroundImage": Object {
+    "backgroundImage": {
       "gradient-to-b": "linear-gradient(to bottom, var(--tw-gradient-stops))",
       "gradient-to-bl": "linear-gradient(to bottom left, var(--tw-gradient-stops))",
       "gradient-to-br": "linear-gradient(to bottom right, var(--tw-gradient-stops))",
@@ -771,7 +771,7 @@ Object {
       "gradient-to-tr": "linear-gradient(to top right, var(--tw-gradient-stops))",
       "none": "none",
     },
-    "backgroundOpacity": Object {
+    "backgroundOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -788,7 +788,7 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "backgroundPosition": Object {
+    "backgroundPosition": {
       "bottom": "bottom",
       "center": "center",
       "left": "left",
@@ -799,12 +799,12 @@ Object {
       "right-top": "right top",
       "top": "top",
     },
-    "backgroundSize": Object {
+    "backgroundSize": {
       "auto": "auto",
       "contain": "contain",
       "cover": "cover",
     },
-    "blur": Object {
+    "blur": {
       "0": "0",
       "2xl": "40px",
       "3xl": "64px",
@@ -815,9 +815,9 @@ Object {
       "sm": "4px",
       "xl": "24px",
     },
-    "borderColor": Object {
+    "borderColor": {
       "DEFAULT": "currentColor",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -829,7 +829,7 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
@@ -866,7 +866,7 @@ Object {
       "checkbox-radio-error": "#D21C1C",
       "checkbox-radio-focus": "#0172CB",
       "checkbox-radio-hover": "#4F5E71",
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -884,7 +884,7 @@ Object {
       "form-element-error": "#D21C1C",
       "form-element-focus": "#0172CB",
       "form-element-hover": "#A6B6C8",
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -896,7 +896,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -915,7 +915,7 @@ Object {
       "input-focus": "#0172CB",
       "input-hover": "#A6B6C8",
       "modal": "#E8EDF1",
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -927,7 +927,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -942,7 +942,7 @@ Object {
       "radio-active": "#0172CB",
       "radio-disabled": "#E8EDF1",
       "radio-hover": "#C7E4FA",
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -954,7 +954,7 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
@@ -966,7 +966,7 @@ Object {
       "tag-focus": "#0172CB",
       "white": "#FFFFFF",
     },
-    "borderOpacity": Object {
+    "borderOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -983,13 +983,13 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "borderRadius": Object {
+    "borderRadius": {
       "circle": "50%",
       "large": "6px",
       "normal": "3px",
       "small": "2px",
     },
-    "borderSpacing": Object {
+    "borderSpacing": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -1002,14 +1002,14 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "borderWidth": Object {
+    "borderWidth": {
       "0": "0px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
       "DEFAULT": "1px",
     },
-    "boxShadow": Object {
+    "boxShadow": {
       "action": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 1px 4px 0 rgba(37, 42, 49, 0.12)",
       "action-active": "0 1px 4px 0 rgba(37, 42, 49, 0.16),0 4px 8px 0 rgba(37, 42, 49, 0.12)",
       "fixed": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 2px 4px 0 rgba(37, 42, 49, 0.12)",
@@ -1019,8 +1019,8 @@ Object {
       "raised": "0 4px 8px 0 rgba(37, 42, 49, 0.16),0 8px 24px 0 rgba(37, 42, 49, 0.24)",
       "raised-reverse": "0 -4px 8px 0 rgba(37, 42, 49, 0.16),0 -8px 24px 0 rgba(37, 42, 49, 0.24)",
     },
-    "boxShadowColor": Object {
-      "blue": Object {
+    "boxShadowColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -1032,11 +1032,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -1047,7 +1047,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -1059,7 +1059,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -1070,7 +1070,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -1082,7 +1082,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -1094,7 +1094,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -1106,18 +1106,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "brightness": Object {
+    "brightness": {
       "0": "0",
       "100": "1",
       "105": "1.05",
@@ -1130,8 +1130,8 @@ Object {
       "90": ".9",
       "95": ".95",
     },
-    "caretColor": Object {
-      "blue": Object {
+    "caretColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -1143,11 +1143,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -1158,7 +1158,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -1170,7 +1170,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -1181,7 +1181,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -1193,7 +1193,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -1205,7 +1205,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -1217,19 +1217,19 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "colors": Object {
-      "blue": Object {
+    "colors": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -1241,11 +1241,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -1256,7 +1256,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -1268,7 +1268,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -1279,7 +1279,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -1291,7 +1291,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -1303,7 +1303,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -1315,18 +1315,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "columns": Object {
+    "columns": {
       "1": "1",
       "10": "10",
       "11": "11",
@@ -1354,11 +1354,11 @@ Object {
       "xl": "36rem",
       "xs": "20rem",
     },
-    "container": Object {},
-    "content": Object {
+    "container": {},
+    "content": {
       "none": "none",
     },
-    "contrast": Object {
+    "contrast": {
       "0": "0",
       "100": "1",
       "125": "1.25",
@@ -1367,7 +1367,7 @@ Object {
       "50": ".5",
       "75": ".75",
     },
-    "cursor": Object {
+    "cursor": {
       "alias": "alias",
       "all-scroll": "all-scroll",
       "auto": "auto",
@@ -1405,10 +1405,10 @@ Object {
       "zoom-in": "zoom-in",
       "zoom-out": "zoom-out",
     },
-    "data": Object {},
-    "divideColor": Object {
+    "data": {},
+    "divideColor": {
       "DEFAULT": "currentColor",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -1420,7 +1420,7 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
@@ -1457,7 +1457,7 @@ Object {
       "checkbox-radio-error": "#D21C1C",
       "checkbox-radio-focus": "#0172CB",
       "checkbox-radio-hover": "#4F5E71",
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -1475,7 +1475,7 @@ Object {
       "form-element-error": "#D21C1C",
       "form-element-focus": "#0172CB",
       "form-element-hover": "#A6B6C8",
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -1487,7 +1487,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -1506,7 +1506,7 @@ Object {
       "input-focus": "#0172CB",
       "input-hover": "#A6B6C8",
       "modal": "#E8EDF1",
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -1518,7 +1518,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -1533,7 +1533,7 @@ Object {
       "radio-active": "#0172CB",
       "radio-disabled": "#E8EDF1",
       "radio-hover": "#C7E4FA",
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -1545,7 +1545,7 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
@@ -1557,7 +1557,7 @@ Object {
       "tag-focus": "#0172CB",
       "white": "#FFFFFF",
     },
-    "divideOpacity": Object {
+    "divideOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -1574,36 +1574,36 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "divideWidth": Object {
+    "divideWidth": {
       "0": "0px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
       "DEFAULT": "1px",
     },
-    "dropShadow": Object {
+    "dropShadow": {
       "2xl": "0 25px 25px rgb(0 0 0 / 0.15)",
-      "DEFAULT": Array [
+      "DEFAULT": [
         "0 1px 2px rgb(0 0 0 / 0.1)",
         "0 1px 1px rgb(0 0 0 / 0.06)",
       ],
-      "lg": Array [
+      "lg": [
         "0 10px 8px rgb(0 0 0 / 0.04)",
         "0 4px 3px rgb(0 0 0 / 0.1)",
       ],
-      "md": Array [
+      "md": [
         "0 4px 3px rgb(0 0 0 / 0.07)",
         "0 2px 2px rgb(0 0 0 / 0.06)",
       ],
       "none": "0 0 #0000",
       "sm": "0 1px 1px rgb(0 0 0 / 0.05)",
-      "xl": Array [
+      "xl": [
         "0 20px 13px rgb(0 0 0 / 0.03)",
         "0 8px 5px rgb(0 0 0 / 0.08)",
       ],
     },
-    "fill": Object {
-      "blue": Object {
+    "fill": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -1615,11 +1615,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -1630,7 +1630,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -1642,7 +1642,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -1654,7 +1654,7 @@ Object {
         "normal-hover": "#3E4E63",
       },
       "none": "none",
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -1666,7 +1666,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -1678,7 +1678,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -1690,24 +1690,24 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "flex": Object {
+    "flex": {
       "1": "1 1 0%",
       "auto": "1 1 auto",
       "initial": "0 1 auto",
       "none": "none",
     },
-    "flexBasis": Object {
+    "flexBasis": {
       "0": "0px",
       "1/12": "8.333333%",
       "1/2": "50%",
@@ -1748,18 +1748,18 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "flexGrow": Object {
+    "flexGrow": {
       "0": "0",
       "DEFAULT": "1",
     },
-    "flexShrink": Object {
+    "flexShrink": {
       "0": "0",
       "DEFAULT": "1",
     },
-    "fontFamily": Object {
+    "fontFamily": {
       "base": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
     },
-    "fontSize": Object {
+    "fontSize": {
       "button-large": "16px",
       "button-normal": "15px",
       "button-small": "13px",
@@ -1778,7 +1778,7 @@ Object {
       "normal": "15px",
       "small": "13px",
     },
-    "fontWeight": Object {
+    "fontWeight": {
       "bold": "700",
       "heading-display": "700",
       "heading-display-subtitle": "400",
@@ -1792,7 +1792,7 @@ Object {
       "normal": "400",
       "table-head": "700",
     },
-    "gap": Object {
+    "gap": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -1805,7 +1805,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "gradientColorStopPositions": Object {
+    "gradientColorStopPositions": {
       "0%": "0%",
       "10%": "10%",
       "100%": "100%",
@@ -1828,8 +1828,8 @@ Object {
       "90%": "90%",
       "95%": "95%",
     },
-    "gradientColorStops": Object {
-      "blue": Object {
+    "gradientColorStops": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -1841,11 +1841,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -1856,7 +1856,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -1868,7 +1868,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -1879,7 +1879,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -1891,7 +1891,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -1903,7 +1903,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -1915,34 +1915,34 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "grayscale": Object {
+    "grayscale": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "gridAutoColumns": Object {
+    "gridAutoColumns": {
       "auto": "auto",
       "fr": "minmax(0, 1fr)",
       "max": "max-content",
       "min": "min-content",
     },
-    "gridAutoRows": Object {
+    "gridAutoRows": {
       "auto": "auto",
       "fr": "minmax(0, 1fr)",
       "max": "max-content",
       "min": "min-content",
     },
-    "gridColumn": Object {
+    "gridColumn": {
       "auto": "auto",
       "span-1": "span 1 / span 1",
       "span-10": "span 10 / span 10",
@@ -1958,7 +1958,7 @@ Object {
       "span-9": "span 9 / span 9",
       "span-full": "1 / -1",
     },
-    "gridColumnEnd": Object {
+    "gridColumnEnd": {
       "1": "1",
       "10": "10",
       "11": "11",
@@ -1974,7 +1974,7 @@ Object {
       "9": "9",
       "auto": "auto",
     },
-    "gridColumnStart": Object {
+    "gridColumnStart": {
       "1": "1",
       "10": "10",
       "11": "11",
@@ -1990,7 +1990,7 @@ Object {
       "9": "9",
       "auto": "auto",
     },
-    "gridRow": Object {
+    "gridRow": {
       "auto": "auto",
       "span-1": "span 1 / span 1",
       "span-2": "span 2 / span 2",
@@ -2000,7 +2000,7 @@ Object {
       "span-6": "span 6 / span 6",
       "span-full": "1 / -1",
     },
-    "gridRowEnd": Object {
+    "gridRowEnd": {
       "1": "1",
       "2": "2",
       "3": "3",
@@ -2010,7 +2010,7 @@ Object {
       "7": "7",
       "auto": "auto",
     },
-    "gridRowStart": Object {
+    "gridRowStart": {
       "1": "1",
       "2": "2",
       "3": "3",
@@ -2020,7 +2020,7 @@ Object {
       "7": "7",
       "auto": "auto",
     },
-    "gridTemplateColumns": Object {
+    "gridTemplateColumns": {
       "1": "repeat(1, minmax(0, 1fr))",
       "10": "repeat(10, minmax(0, 1fr))",
       "11": "repeat(11, minmax(0, 1fr))",
@@ -2035,7 +2035,7 @@ Object {
       "9": "repeat(9, minmax(0, 1fr))",
       "none": "none",
     },
-    "gridTemplateRows": Object {
+    "gridTemplateRows": {
       "1": "repeat(1, minmax(0, 1fr))",
       "2": "repeat(2, minmax(0, 1fr))",
       "3": "repeat(3, minmax(0, 1fr))",
@@ -2044,7 +2044,7 @@ Object {
       "6": "repeat(6, minmax(0, 1fr))",
       "none": "none",
     },
-    "height": Object {
+    "height": {
       "0": "0px",
       "1/2": "50%",
       "1/3": "33.333333%",
@@ -2087,7 +2087,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "hueRotate": Object {
+    "hueRotate": {
       "0": "0deg",
       "15": "15deg",
       "180": "180deg",
@@ -2095,7 +2095,7 @@ Object {
       "60": "60deg",
       "90": "90deg",
     },
-    "inset": Object {
+    "inset": {
       "0": "0px",
       "1/2": "50%",
       "1/3": "33.333333%",
@@ -2116,83 +2116,83 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "invert": Object {
+    "invert": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "keyframes": Object {
-      "bounce": Object {
-        "0%, 100%": Object {
+    "keyframes": {
+      "bounce": {
+        "0%, 100%": {
           "animationTimingFunction": "cubic-bezier(0.8,0,1,1)",
           "transform": "translateY(-25%)",
         },
-        "50%": Object {
+        "50%": {
           "animationTimingFunction": "cubic-bezier(0,0,0.2,1)",
           "transform": "none",
         },
       },
-      "loader": Object {
-        "0%": Object {
+      "loader": {
+        "0%": {
           "opacity": "0.3",
           "transform": "translateY(0px)",
         },
-        "100%": Object {
+        "100%": {
           "opacity": "0.3",
           "transform": "translateY(0px)",
         },
-        "20%": Object {
+        "20%": {
           "opacity": "1",
           "transform": "translateY(-3px)",
         },
-        "40%": Object {
+        "40%": {
           "opacity": "0.3",
           "transform": "translateY(0px)",
         },
       },
-      "ping": Object {
-        "75%, 100%": Object {
+      "ping": {
+        "75%, 100%": {
           "opacity": "0",
           "transform": "scale(2)",
         },
       },
-      "pulse": Object {
-        "0%": Object {
+      "pulse": {
+        "0%": {
           "transform": "scale(1)",
         },
-        "100%": Object {
+        "100%": {
           "transform": "scale(1)",
         },
-        "50%": Object {
+        "50%": {
           "opacity": ".5",
           "transform": "scale(2)",
         },
       },
-      "slow-pulse": Object {
-        "0%": Object {
+      "slow-pulse": {
+        "0%": {
           "opacity": "1",
         },
-        "100%": Object {
+        "100%": {
           "opacity": "1",
         },
-        "50%": Object {
+        "50%": {
           "opacity": "0.3",
         },
       },
-      "spin": Object {
-        "to": Object {
+      "spin": {
+        "to": {
           "transform": "rotate(360deg)",
         },
       },
-      "spinner": Object {
-        "0%": Object {
+      "spinner": {
+        "0%": {
           "transform": "rotate(0deg)",
         },
-        "100%": Object {
+        "100%": {
           "transform": "rotate(360deg)",
         },
       },
     },
-    "letterSpacing": Object {
+    "letterSpacing": {
       "normal": "0em",
       "tight": "-0.025em",
       "tighter": "-0.05em",
@@ -2200,7 +2200,7 @@ Object {
       "wider": "0.05em",
       "widest": "0.1em",
     },
-    "lineClamp": Object {
+    "lineClamp": {
       "1": "1",
       "2": "2",
       "3": "3",
@@ -2208,7 +2208,7 @@ Object {
       "5": "5",
       "6": "6",
     },
-    "lineHeight": Object {
+    "lineHeight": {
       "checkbox": "20px",
       "extra-large": "24px",
       "heading": "1.2",
@@ -2225,15 +2225,15 @@ Object {
       "small": "16px",
       "text": "1.4",
     },
-    "listStyleImage": Object {
+    "listStyleImage": {
       "none": "none",
     },
-    "listStyleType": Object {
+    "listStyleType": {
       "decimal": "decimal",
       "disc": "disc",
       "none": "none",
     },
-    "margin": Object {
+    "margin": {
       "0": "0px",
       "auto": "auto",
       "lg": "24px",
@@ -2247,7 +2247,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "maxHeight": Object {
+    "maxHeight": {
       "0": "0px",
       "fit": "fit-content",
       "full": "100%",
@@ -2265,7 +2265,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "maxWidth": Object {
+    "maxWidth": {
       "0": "0rem",
       "2xl": "42rem",
       "3xl": "48rem",
@@ -2291,7 +2291,7 @@ Object {
       "xl": "36rem",
       "xs": "20rem",
     },
-    "minHeight": Object {
+    "minHeight": {
       "0": "0px",
       "fit": "fit-content",
       "full": "100%",
@@ -2299,14 +2299,14 @@ Object {
       "min": "min-content",
       "screen": "100vh",
     },
-    "minWidth": Object {
+    "minWidth": {
       "0": "0px",
       "fit": "fit-content",
       "full": "100%",
       "max": "max-content",
       "min": "min-content",
     },
-    "objectPosition": Object {
+    "objectPosition": {
       "bottom": "bottom",
       "center": "center",
       "left": "left",
@@ -2317,7 +2317,7 @@ Object {
       "right-top": "right top",
       "top": "top",
     },
-    "opacity": Object {
+    "opacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -2334,7 +2334,7 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "order": Object {
+    "order": {
       "1": "1",
       "10": "10",
       "11": "11",
@@ -2351,8 +2351,8 @@ Object {
       "last": "9999",
       "none": "0",
     },
-    "outlineColor": Object {
-      "blue": Object {
+    "outlineColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -2364,11 +2364,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -2379,7 +2379,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -2391,7 +2391,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -2402,7 +2402,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -2414,7 +2414,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -2426,7 +2426,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -2438,32 +2438,32 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "outlineOffset": Object {
+    "outlineOffset": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
     },
-    "outlineWidth": Object {
+    "outlineWidth": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
     },
-    "padding": Object {
+    "padding": {
       "0": "0px",
       "button-large-both-icons-padding": "0 16px",
       "button-large-left-icon-padding": "0 28px 0 16px",
@@ -2492,8 +2492,8 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "placeholderColor": Object {
-      "blue": Object {
+    "placeholderColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -2505,11 +2505,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -2520,7 +2520,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -2532,7 +2532,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -2543,7 +2543,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -2555,7 +2555,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -2567,7 +2567,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -2579,18 +2579,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "placeholderOpacity": Object {
+    "placeholderOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -2607,9 +2607,9 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "ringColor": Object {
+    "ringColor": {
       "DEFAULT": "#3b82f6",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -2621,11 +2621,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -2636,7 +2636,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -2648,7 +2648,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -2659,7 +2659,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -2671,7 +2671,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -2683,7 +2683,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -2695,19 +2695,19 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "ringOffsetColor": Object {
-      "blue": Object {
+    "ringOffsetColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -2719,11 +2719,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -2734,7 +2734,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -2746,7 +2746,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -2757,7 +2757,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -2769,7 +2769,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -2781,7 +2781,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -2793,25 +2793,25 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "ringOffsetWidth": Object {
+    "ringOffsetWidth": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
     },
-    "ringOpacity": Object {
+    "ringOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -2829,7 +2829,7 @@ Object {
       "95": "0.95",
       "DEFAULT": "0.5",
     },
-    "ringWidth": Object {
+    "ringWidth": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
@@ -2837,7 +2837,7 @@ Object {
       "8": "8px",
       "DEFAULT": "3px",
     },
-    "rotate": Object {
+    "rotate": {
       "0": "0deg",
       "1": "1deg",
       "12": "12deg",
@@ -2848,14 +2848,14 @@ Object {
       "6": "6deg",
       "90": "90deg",
     },
-    "saturate": Object {
+    "saturate": {
       "0": "0",
       "100": "1",
       "150": "1.5",
       "200": "2",
       "50": ".5",
     },
-    "scale": Object {
+    "scale": {
       "0": "0",
       "100": "1",
       "105": "1.05",
@@ -2867,7 +2867,7 @@ Object {
       "90": ".9",
       "95": ".95",
     },
-    "screens": Object {
+    "screens": {
       "de": "992px",
       "ld": "1200px",
       "lm": "576px",
@@ -2875,7 +2875,7 @@ Object {
       "sm": "320px",
       "tb": "768px",
     },
-    "scrollMargin": Object {
+    "scrollMargin": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -2888,7 +2888,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "scrollPadding": Object {
+    "scrollPadding": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -2901,11 +2901,11 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "sepia": Object {
+    "sepia": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "skew": Object {
+    "skew": {
       "0": "0deg",
       "1": "1deg",
       "12": "12deg",
@@ -2913,7 +2913,7 @@ Object {
       "3": "3deg",
       "6": "6deg",
     },
-    "space": Object {
+    "space": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -2926,7 +2926,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "spacing": Object {
+    "spacing": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -2939,8 +2939,8 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "stroke": Object {
-      "blue": Object {
+    "stroke": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -2952,11 +2952,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -2967,7 +2967,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -2979,7 +2979,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -2991,7 +2991,7 @@ Object {
         "normal-hover": "#3E4E63",
       },
       "none": "none",
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -3003,7 +3003,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -3015,7 +3015,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -3027,24 +3027,24 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "strokeWidth": Object {
+    "strokeWidth": {
       "0": "0",
       "1": "1",
       "2": "2",
     },
-    "supports": Object {},
-    "textColor": Object {
+    "supports": {},
+    "textColor": {
       "badge-bundle-basic-foreground": "#FFFFFF",
       "badge-bundle-medium-foreground": "#FFFFFF",
       "badge-bundle-top-foreground": "#FFFFFF",
@@ -3059,7 +3059,7 @@ Object {
       "badge-warning-foreground": "#FFFFFF",
       "badge-warning-subtle-foreground": "#AD5700",
       "badge-white-foreground": "#252A31",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -3071,7 +3071,7 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
@@ -3111,7 +3111,7 @@ Object {
       "button-white-foreground": "#252A31",
       "button-white-foreground-active": "#0B0C0F",
       "button-white-foreground-hover": "#181B20",
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -3129,7 +3129,7 @@ Object {
       "form-element-label-filled-foreground": "#697D95",
       "form-element-label-foreground": "#4F5E71",
       "form-element-prefix-foreground": "#697D95",
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -3151,7 +3151,7 @@ Object {
       "icon-tertiary-foreground": "#BAC7D5",
       "icon-warning-foreground": "#DF7B00",
       "info-foreground": "#0172CB",
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -3166,7 +3166,7 @@ Object {
       "link-primary-foreground": "#007A69",
       "link-secondary-foreground": "#252A31",
       "loading-foreground": "#BAC7D5",
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -3179,7 +3179,7 @@ Object {
         "normal-hover": "#C96F00",
       },
       "primary-foreground": "#252A31",
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -3191,7 +3191,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -3204,7 +3204,7 @@ Object {
         "normal-hover": "#B91919",
       },
       "secondary-foreground": "#4F5E71",
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
@@ -3229,15 +3229,15 @@ Object {
       "tag-colored-foreground": "#004680",
       "tag-neutral-foreground": "#252A31",
       "warning-foreground": "#DF7B00",
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
       "white-foreground": "#FFFFFF",
     },
-    "textDecorationColor": Object {
-      "blue": Object {
+    "textDecorationColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -3249,11 +3249,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -3264,7 +3264,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -3276,7 +3276,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -3287,7 +3287,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -3299,7 +3299,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -3311,7 +3311,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -3323,18 +3323,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "textDecorationThickness": Object {
+    "textDecorationThickness": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
@@ -3343,7 +3343,7 @@ Object {
       "auto": "auto",
       "from-font": "from-font",
     },
-    "textIndent": Object {
+    "textIndent": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -3356,7 +3356,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "textOpacity": Object {
+    "textOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -3373,7 +3373,7 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "textUnderlineOffset": Object {
+    "textUnderlineOffset": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
@@ -3381,7 +3381,7 @@ Object {
       "8": "8px",
       "auto": "auto",
     },
-    "transformOrigin": Object {
+    "transformOrigin": {
       "bottom": "bottom",
       "bottom-left": "bottom left",
       "bottom-right": "bottom right",
@@ -3392,7 +3392,7 @@ Object {
       "top-left": "top left",
       "top-right": "top right",
     },
-    "transitionDelay": Object {
+    "transitionDelay": {
       "0": "0s",
       "100": "100ms",
       "1000": "1000ms",
@@ -3403,12 +3403,12 @@ Object {
       "700": "700ms",
       "75": "75ms",
     },
-    "transitionDuration": Object {
+    "transitionDuration": {
       "fast": "0.15s",
       "normal": "0.3s",
       "slow": "0.4s",
     },
-    "transitionProperty": Object {
+    "transitionProperty": {
       "DEFAULT": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
       "all": "all",
       "colors": "color, background-color, border-color, text-decoration-color, fill, stroke",
@@ -3417,14 +3417,14 @@ Object {
       "shadow": "box-shadow",
       "transform": "transform",
     },
-    "transitionTimingFunction": Object {
+    "transitionTimingFunction": {
       "DEFAULT": "cubic-bezier(0.4, 0, 0.2, 1)",
       "in": "cubic-bezier(0.4, 0, 1, 1)",
       "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
       "linear": "linear",
       "out": "cubic-bezier(0, 0, 0.2, 1)",
     },
-    "translate": Object {
+    "translate": {
       "0": "0px",
       "1/2": "50%",
       "1/3": "33.333333%",
@@ -3444,7 +3444,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "width": Object {
+    "width": {
       "0": "0px",
       "1/12": "8.333333%",
       "1/2": "50%",
@@ -3493,13 +3493,13 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "willChange": Object {
+    "willChange": {
       "auto": "auto",
       "contents": "contents",
       "scroll": "scroll-position",
       "transform": "transform",
     },
-    "zIndex": Object {
+    "zIndex": {
       "0": "0",
       "10": "10",
       "20": "20",
@@ -3519,17 +3519,17 @@ Object {
 `;
 
 exports[`foundationPreset should match snapshot 1`] = `
-Object {
-  "blocklist": Array [],
-  "content": Object {
-    "extract": Object {},
-    "files": Array [
+{
+  "blocklist": [],
+  "content": {
+    "extract": {},
+    "files": [
       "auto",
     ],
     "relative": false,
-    "transform": Object {},
+    "transform": {},
   },
-  "corePlugins": Array [
+  "corePlugins": [
     "container",
     "accessibility",
     "pointerEvents",
@@ -3707,15 +3707,15 @@ Object {
   ],
   "darkMode": "media",
   "important": false,
-  "plugins": Array [],
+  "plugins": [],
   "prefix": "",
-  "presets": Array [],
-  "safelist": Array [],
+  "presets": [],
+  "safelist": [],
   "separator": ":",
-  "theme": Object {
-    "accentColor": Object {
+  "theme": {
+    "accentColor": {
       "auto": "auto",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -3727,11 +3727,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -3742,7 +3742,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -3754,7 +3754,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -3765,7 +3765,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -3777,7 +3777,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -3789,7 +3789,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -3801,41 +3801,41 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "animation": Object {
+    "animation": {
       "bounce": "bounce 1s infinite",
       "none": "none",
       "ping": "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
       "pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       "spin": "spin 1s linear infinite",
     },
-    "aria": Object {
-      "busy": "busy=\\"true\\"",
-      "checked": "checked=\\"true\\"",
-      "disabled": "disabled=\\"true\\"",
-      "expanded": "expanded=\\"true\\"",
-      "hidden": "hidden=\\"true\\"",
-      "pressed": "pressed=\\"true\\"",
-      "readonly": "readonly=\\"true\\"",
-      "required": "required=\\"true\\"",
-      "selected": "selected=\\"true\\"",
+    "aria": {
+      "busy": "busy="true"",
+      "checked": "checked="true"",
+      "disabled": "disabled="true"",
+      "expanded": "expanded="true"",
+      "hidden": "hidden="true"",
+      "pressed": "pressed="true"",
+      "readonly": "readonly="true"",
+      "required": "required="true"",
+      "selected": "selected="true"",
     },
-    "aspectRatio": Object {
+    "aspectRatio": {
       "auto": "auto",
       "square": "1 / 1",
       "video": "16 / 9",
     },
-    "backdropBlur": Object {
+    "backdropBlur": {
       "0": "0",
       "2xl": "40px",
       "3xl": "64px",
@@ -3846,7 +3846,7 @@ Object {
       "sm": "4px",
       "xl": "24px",
     },
-    "backdropBrightness": Object {
+    "backdropBrightness": {
       "0": "0",
       "100": "1",
       "105": "1.05",
@@ -3859,7 +3859,7 @@ Object {
       "90": ".9",
       "95": ".95",
     },
-    "backdropContrast": Object {
+    "backdropContrast": {
       "0": "0",
       "100": "1",
       "125": "1.25",
@@ -3868,11 +3868,11 @@ Object {
       "50": ".5",
       "75": ".75",
     },
-    "backdropGrayscale": Object {
+    "backdropGrayscale": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "backdropHueRotate": Object {
+    "backdropHueRotate": {
       "0": "0deg",
       "15": "15deg",
       "180": "180deg",
@@ -3880,11 +3880,11 @@ Object {
       "60": "60deg",
       "90": "90deg",
     },
-    "backdropInvert": Object {
+    "backdropInvert": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "backdropOpacity": Object {
+    "backdropOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -3901,19 +3901,19 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "backdropSaturate": Object {
+    "backdropSaturate": {
       "0": "0",
       "100": "1",
       "150": "1.5",
       "200": "2",
       "50": ".5",
     },
-    "backdropSepia": Object {
+    "backdropSepia": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "backgroundColor": Object {
-      "blue": Object {
+    "backgroundColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -3925,11 +3925,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -3940,7 +3940,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -3952,7 +3952,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -3963,7 +3963,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -3975,7 +3975,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -3987,7 +3987,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -3999,18 +3999,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "backgroundImage": Object {
+    "backgroundImage": {
       "gradient-to-b": "linear-gradient(to bottom, var(--tw-gradient-stops))",
       "gradient-to-bl": "linear-gradient(to bottom left, var(--tw-gradient-stops))",
       "gradient-to-br": "linear-gradient(to bottom right, var(--tw-gradient-stops))",
@@ -4021,7 +4021,7 @@ Object {
       "gradient-to-tr": "linear-gradient(to top right, var(--tw-gradient-stops))",
       "none": "none",
     },
-    "backgroundOpacity": Object {
+    "backgroundOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -4038,7 +4038,7 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "backgroundPosition": Object {
+    "backgroundPosition": {
       "bottom": "bottom",
       "center": "center",
       "left": "left",
@@ -4049,12 +4049,12 @@ Object {
       "right-top": "right top",
       "top": "top",
     },
-    "backgroundSize": Object {
+    "backgroundSize": {
       "auto": "auto",
       "contain": "contain",
       "cover": "cover",
     },
-    "blur": Object {
+    "blur": {
       "0": "0",
       "2xl": "40px",
       "3xl": "64px",
@@ -4065,9 +4065,9 @@ Object {
       "sm": "4px",
       "xl": "24px",
     },
-    "borderColor": Object {
+    "borderColor": {
       "DEFAULT": "currentColor",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -4079,11 +4079,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -4094,7 +4094,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -4106,7 +4106,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -4117,7 +4117,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -4129,7 +4129,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -4141,7 +4141,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -4153,18 +4153,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "borderOpacity": Object {
+    "borderOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -4181,13 +4181,13 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "borderRadius": Object {
+    "borderRadius": {
       "circle": "50%",
       "large": "6px",
       "normal": "3px",
       "small": "2px",
     },
-    "borderSpacing": Object {
+    "borderSpacing": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -4200,14 +4200,14 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "borderWidth": Object {
+    "borderWidth": {
       "0": "0px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
       "DEFAULT": "1px",
     },
-    "boxShadow": Object {
+    "boxShadow": {
       "action": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 1px 4px 0 rgba(37, 42, 49, 0.12)",
       "action-active": "0 1px 4px 0 rgba(37, 42, 49, 0.16),0 4px 8px 0 rgba(37, 42, 49, 0.12)",
       "fixed": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 2px 4px 0 rgba(37, 42, 49, 0.12)",
@@ -4217,8 +4217,8 @@ Object {
       "raised": "0 4px 8px 0 rgba(37, 42, 49, 0.16),0 8px 24px 0 rgba(37, 42, 49, 0.24)",
       "raised-reverse": "0 -4px 8px 0 rgba(37, 42, 49, 0.16),0 -8px 24px 0 rgba(37, 42, 49, 0.24)",
     },
-    "boxShadowColor": Object {
-      "blue": Object {
+    "boxShadowColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -4230,11 +4230,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -4245,7 +4245,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -4257,7 +4257,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -4268,7 +4268,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -4280,7 +4280,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -4292,7 +4292,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -4304,18 +4304,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "brightness": Object {
+    "brightness": {
       "0": "0",
       "100": "1",
       "105": "1.05",
@@ -4328,8 +4328,8 @@ Object {
       "90": ".9",
       "95": ".95",
     },
-    "caretColor": Object {
-      "blue": Object {
+    "caretColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -4341,11 +4341,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -4356,7 +4356,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -4368,7 +4368,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -4379,7 +4379,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -4391,7 +4391,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -4403,7 +4403,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -4415,19 +4415,19 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "colors": Object {
-      "blue": Object {
+    "colors": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -4439,11 +4439,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -4454,7 +4454,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -4466,7 +4466,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -4477,7 +4477,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -4489,7 +4489,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -4501,7 +4501,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -4513,18 +4513,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "columns": Object {
+    "columns": {
       "1": "1",
       "10": "10",
       "11": "11",
@@ -4552,11 +4552,11 @@ Object {
       "xl": "36rem",
       "xs": "20rem",
     },
-    "container": Object {},
-    "content": Object {
+    "container": {},
+    "content": {
       "none": "none",
     },
-    "contrast": Object {
+    "contrast": {
       "0": "0",
       "100": "1",
       "125": "1.25",
@@ -4565,7 +4565,7 @@ Object {
       "50": ".5",
       "75": ".75",
     },
-    "cursor": Object {
+    "cursor": {
       "alias": "alias",
       "all-scroll": "all-scroll",
       "auto": "auto",
@@ -4603,10 +4603,10 @@ Object {
       "zoom-in": "zoom-in",
       "zoom-out": "zoom-out",
     },
-    "data": Object {},
-    "divideColor": Object {
+    "data": {},
+    "divideColor": {
       "DEFAULT": "currentColor",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -4618,11 +4618,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -4633,7 +4633,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -4645,7 +4645,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -4656,7 +4656,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -4668,7 +4668,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -4680,7 +4680,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -4692,18 +4692,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "divideOpacity": Object {
+    "divideOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -4720,36 +4720,36 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "divideWidth": Object {
+    "divideWidth": {
       "0": "0px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
       "DEFAULT": "1px",
     },
-    "dropShadow": Object {
+    "dropShadow": {
       "2xl": "0 25px 25px rgb(0 0 0 / 0.15)",
-      "DEFAULT": Array [
+      "DEFAULT": [
         "0 1px 2px rgb(0 0 0 / 0.1)",
         "0 1px 1px rgb(0 0 0 / 0.06)",
       ],
-      "lg": Array [
+      "lg": [
         "0 10px 8px rgb(0 0 0 / 0.04)",
         "0 4px 3px rgb(0 0 0 / 0.1)",
       ],
-      "md": Array [
+      "md": [
         "0 4px 3px rgb(0 0 0 / 0.07)",
         "0 2px 2px rgb(0 0 0 / 0.06)",
       ],
       "none": "0 0 #0000",
       "sm": "0 1px 1px rgb(0 0 0 / 0.05)",
-      "xl": Array [
+      "xl": [
         "0 20px 13px rgb(0 0 0 / 0.03)",
         "0 8px 5px rgb(0 0 0 / 0.08)",
       ],
     },
-    "fill": Object {
-      "blue": Object {
+    "fill": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -4761,11 +4761,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -4776,7 +4776,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -4788,7 +4788,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -4800,7 +4800,7 @@ Object {
         "normal-hover": "#3E4E63",
       },
       "none": "none",
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -4812,7 +4812,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -4824,7 +4824,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -4836,24 +4836,24 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "flex": Object {
+    "flex": {
       "1": "1 1 0%",
       "auto": "1 1 auto",
       "initial": "0 1 auto",
       "none": "none",
     },
-    "flexBasis": Object {
+    "flexBasis": {
       "0": "0px",
       "1/12": "8.333333%",
       "1/2": "50%",
@@ -4894,29 +4894,29 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "flexGrow": Object {
+    "flexGrow": {
       "0": "0",
       "DEFAULT": "1",
     },
-    "flexShrink": Object {
+    "flexShrink": {
       "0": "0",
       "DEFAULT": "1",
     },
-    "fontFamily": Object {
+    "fontFamily": {
       "base": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
     },
-    "fontSize": Object {
+    "fontSize": {
       "extra-large": "18px",
       "large": "16px",
       "normal": "15px",
       "small": "13px",
     },
-    "fontWeight": Object {
+    "fontWeight": {
       "bold": "700",
       "medium": "500",
       "normal": "400",
     },
-    "gap": Object {
+    "gap": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -4929,7 +4929,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "gradientColorStopPositions": Object {
+    "gradientColorStopPositions": {
       "0%": "0%",
       "10%": "10%",
       "100%": "100%",
@@ -4952,8 +4952,8 @@ Object {
       "90%": "90%",
       "95%": "95%",
     },
-    "gradientColorStops": Object {
-      "blue": Object {
+    "gradientColorStops": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -4965,11 +4965,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -4980,7 +4980,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -4992,7 +4992,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -5003,7 +5003,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -5015,7 +5015,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -5027,7 +5027,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -5039,34 +5039,34 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "grayscale": Object {
+    "grayscale": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "gridAutoColumns": Object {
+    "gridAutoColumns": {
       "auto": "auto",
       "fr": "minmax(0, 1fr)",
       "max": "max-content",
       "min": "min-content",
     },
-    "gridAutoRows": Object {
+    "gridAutoRows": {
       "auto": "auto",
       "fr": "minmax(0, 1fr)",
       "max": "max-content",
       "min": "min-content",
     },
-    "gridColumn": Object {
+    "gridColumn": {
       "auto": "auto",
       "span-1": "span 1 / span 1",
       "span-10": "span 10 / span 10",
@@ -5082,7 +5082,7 @@ Object {
       "span-9": "span 9 / span 9",
       "span-full": "1 / -1",
     },
-    "gridColumnEnd": Object {
+    "gridColumnEnd": {
       "1": "1",
       "10": "10",
       "11": "11",
@@ -5098,7 +5098,7 @@ Object {
       "9": "9",
       "auto": "auto",
     },
-    "gridColumnStart": Object {
+    "gridColumnStart": {
       "1": "1",
       "10": "10",
       "11": "11",
@@ -5114,7 +5114,7 @@ Object {
       "9": "9",
       "auto": "auto",
     },
-    "gridRow": Object {
+    "gridRow": {
       "auto": "auto",
       "span-1": "span 1 / span 1",
       "span-2": "span 2 / span 2",
@@ -5124,7 +5124,7 @@ Object {
       "span-6": "span 6 / span 6",
       "span-full": "1 / -1",
     },
-    "gridRowEnd": Object {
+    "gridRowEnd": {
       "1": "1",
       "2": "2",
       "3": "3",
@@ -5134,7 +5134,7 @@ Object {
       "7": "7",
       "auto": "auto",
     },
-    "gridRowStart": Object {
+    "gridRowStart": {
       "1": "1",
       "2": "2",
       "3": "3",
@@ -5144,7 +5144,7 @@ Object {
       "7": "7",
       "auto": "auto",
     },
-    "gridTemplateColumns": Object {
+    "gridTemplateColumns": {
       "1": "repeat(1, minmax(0, 1fr))",
       "10": "repeat(10, minmax(0, 1fr))",
       "11": "repeat(11, minmax(0, 1fr))",
@@ -5159,7 +5159,7 @@ Object {
       "9": "repeat(9, minmax(0, 1fr))",
       "none": "none",
     },
-    "gridTemplateRows": Object {
+    "gridTemplateRows": {
       "1": "repeat(1, minmax(0, 1fr))",
       "2": "repeat(2, minmax(0, 1fr))",
       "3": "repeat(3, minmax(0, 1fr))",
@@ -5168,7 +5168,7 @@ Object {
       "6": "repeat(6, minmax(0, 1fr))",
       "none": "none",
     },
-    "height": Object {
+    "height": {
       "0": "0px",
       "1/2": "50%",
       "1/3": "33.333333%",
@@ -5202,7 +5202,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "hueRotate": Object {
+    "hueRotate": {
       "0": "0deg",
       "15": "15deg",
       "180": "180deg",
@@ -5210,7 +5210,7 @@ Object {
       "60": "60deg",
       "90": "90deg",
     },
-    "inset": Object {
+    "inset": {
       "0": "0px",
       "1/2": "50%",
       "1/3": "33.333333%",
@@ -5231,39 +5231,39 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "invert": Object {
+    "invert": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "keyframes": Object {
-      "bounce": Object {
-        "0%, 100%": Object {
+    "keyframes": {
+      "bounce": {
+        "0%, 100%": {
           "animationTimingFunction": "cubic-bezier(0.8,0,1,1)",
           "transform": "translateY(-25%)",
         },
-        "50%": Object {
+        "50%": {
           "animationTimingFunction": "cubic-bezier(0,0,0.2,1)",
           "transform": "none",
         },
       },
-      "ping": Object {
-        "75%, 100%": Object {
+      "ping": {
+        "75%, 100%": {
           "opacity": "0",
           "transform": "scale(2)",
         },
       },
-      "pulse": Object {
-        "50%": Object {
+      "pulse": {
+        "50%": {
           "opacity": ".5",
         },
       },
-      "spin": Object {
-        "to": Object {
+      "spin": {
+        "to": {
           "transform": "rotate(360deg)",
         },
       },
     },
-    "letterSpacing": Object {
+    "letterSpacing": {
       "normal": "0em",
       "tight": "-0.025em",
       "tighter": "-0.05em",
@@ -5271,7 +5271,7 @@ Object {
       "wider": "0.05em",
       "widest": "0.1em",
     },
-    "lineClamp": Object {
+    "lineClamp": {
       "1": "1",
       "2": "2",
       "3": "3",
@@ -5279,21 +5279,21 @@ Object {
       "5": "5",
       "6": "6",
     },
-    "lineHeight": Object {
+    "lineHeight": {
       "extra-large": "24px",
       "large": "24px",
       "normal": "20px",
       "small": "16px",
     },
-    "listStyleImage": Object {
+    "listStyleImage": {
       "none": "none",
     },
-    "listStyleType": Object {
+    "listStyleType": {
       "decimal": "decimal",
       "disc": "disc",
       "none": "none",
     },
-    "margin": Object {
+    "margin": {
       "0": "0px",
       "auto": "auto",
       "lg": "24px",
@@ -5307,7 +5307,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "maxHeight": Object {
+    "maxHeight": {
       "0": "0px",
       "fit": "fit-content",
       "full": "100%",
@@ -5325,7 +5325,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "maxWidth": Object {
+    "maxWidth": {
       "0": "0rem",
       "2xl": "42rem",
       "3xl": "48rem",
@@ -5351,7 +5351,7 @@ Object {
       "xl": "36rem",
       "xs": "20rem",
     },
-    "minHeight": Object {
+    "minHeight": {
       "0": "0px",
       "fit": "fit-content",
       "full": "100%",
@@ -5359,14 +5359,14 @@ Object {
       "min": "min-content",
       "screen": "100vh",
     },
-    "minWidth": Object {
+    "minWidth": {
       "0": "0px",
       "fit": "fit-content",
       "full": "100%",
       "max": "max-content",
       "min": "min-content",
     },
-    "objectPosition": Object {
+    "objectPosition": {
       "bottom": "bottom",
       "center": "center",
       "left": "left",
@@ -5377,7 +5377,7 @@ Object {
       "right-top": "right top",
       "top": "top",
     },
-    "opacity": Object {
+    "opacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -5394,7 +5394,7 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "order": Object {
+    "order": {
       "1": "1",
       "10": "10",
       "11": "11",
@@ -5411,8 +5411,8 @@ Object {
       "last": "9999",
       "none": "0",
     },
-    "outlineColor": Object {
-      "blue": Object {
+    "outlineColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -5424,11 +5424,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -5439,7 +5439,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -5451,7 +5451,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -5462,7 +5462,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -5474,7 +5474,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -5486,7 +5486,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -5498,32 +5498,32 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "outlineOffset": Object {
+    "outlineOffset": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
     },
-    "outlineWidth": Object {
+    "outlineWidth": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
     },
-    "padding": Object {
+    "padding": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -5536,8 +5536,8 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "placeholderColor": Object {
-      "blue": Object {
+    "placeholderColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -5549,11 +5549,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -5564,7 +5564,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -5576,7 +5576,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -5587,7 +5587,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -5599,7 +5599,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -5611,7 +5611,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -5623,18 +5623,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "placeholderOpacity": Object {
+    "placeholderOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -5651,9 +5651,9 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "ringColor": Object {
+    "ringColor": {
       "DEFAULT": "#3b82f6",
-      "blue": Object {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -5665,11 +5665,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -5680,7 +5680,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -5692,7 +5692,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -5703,7 +5703,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -5715,7 +5715,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -5727,7 +5727,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -5739,19 +5739,19 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "ringOffsetColor": Object {
-      "blue": Object {
+    "ringOffsetColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -5763,11 +5763,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -5778,7 +5778,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -5790,7 +5790,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -5801,7 +5801,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -5813,7 +5813,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -5825,7 +5825,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -5837,25 +5837,25 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "ringOffsetWidth": Object {
+    "ringOffsetWidth": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
       "4": "4px",
       "8": "8px",
     },
-    "ringOpacity": Object {
+    "ringOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -5873,7 +5873,7 @@ Object {
       "95": "0.95",
       "DEFAULT": "0.5",
     },
-    "ringWidth": Object {
+    "ringWidth": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
@@ -5881,7 +5881,7 @@ Object {
       "8": "8px",
       "DEFAULT": "3px",
     },
-    "rotate": Object {
+    "rotate": {
       "0": "0deg",
       "1": "1deg",
       "12": "12deg",
@@ -5892,14 +5892,14 @@ Object {
       "6": "6deg",
       "90": "90deg",
     },
-    "saturate": Object {
+    "saturate": {
       "0": "0",
       "100": "1",
       "150": "1.5",
       "200": "2",
       "50": ".5",
     },
-    "scale": Object {
+    "scale": {
       "0": "0",
       "100": "1",
       "105": "1.05",
@@ -5911,7 +5911,7 @@ Object {
       "90": ".9",
       "95": ".95",
     },
-    "screens": Object {
+    "screens": {
       "de": "992px",
       "ld": "1200px",
       "lm": "576px",
@@ -5919,7 +5919,7 @@ Object {
       "sm": "320px",
       "tb": "768px",
     },
-    "scrollMargin": Object {
+    "scrollMargin": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -5932,7 +5932,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "scrollPadding": Object {
+    "scrollPadding": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -5945,11 +5945,11 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "sepia": Object {
+    "sepia": {
       "0": "0",
       "DEFAULT": "100%",
     },
-    "skew": Object {
+    "skew": {
       "0": "0deg",
       "1": "1deg",
       "12": "12deg",
@@ -5957,7 +5957,7 @@ Object {
       "3": "3deg",
       "6": "6deg",
     },
-    "space": Object {
+    "space": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -5970,7 +5970,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "spacing": Object {
+    "spacing": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -5983,8 +5983,8 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "stroke": Object {
-      "blue": Object {
+    "stroke": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -5996,11 +5996,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -6011,7 +6011,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -6023,7 +6023,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -6035,7 +6035,7 @@ Object {
         "normal-hover": "#3E4E63",
       },
       "none": "none",
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -6047,7 +6047,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -6059,7 +6059,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -6071,25 +6071,25 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "strokeWidth": Object {
+    "strokeWidth": {
       "0": "0",
       "1": "1",
       "2": "2",
     },
-    "supports": Object {},
-    "textColor": Object {
-      "blue": Object {
+    "supports": {},
+    "textColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -6101,11 +6101,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -6116,7 +6116,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -6128,7 +6128,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -6139,7 +6139,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -6151,7 +6151,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -6163,7 +6163,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -6175,19 +6175,19 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "textDecorationColor": Object {
-      "blue": Object {
+    "textDecorationColor": {
+      "blue": {
         "dark": "#005AA3",
         "dark-active": "#003E70",
         "dark-hover": "#004F8F",
@@ -6199,11 +6199,11 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
-      "bundle": Object {
+      "bundle": {
         "basic": "#D7331C",
         "medium": "#3B1EB0",
       },
-      "cloud": Object {
+      "cloud": {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
         "dark-hover": "#A6B6C8",
@@ -6214,7 +6214,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-      "green": Object {
+      "green": {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
         "dark-hover": "#276831",
@@ -6226,7 +6226,7 @@ Object {
         "normal-active": "#1D7228",
         "normal-hover": "#238B31",
       },
-      "ink": Object {
+      "ink": {
         "dark": "#252A31",
         "dark-active": "#0B0C0F",
         "dark-hover": "#181B20",
@@ -6237,7 +6237,7 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "orange": Object {
+      "orange": {
         "dark": "#AD5700",
         "dark-active": "#954A00",
         "dark-hover": "#A75400",
@@ -6249,7 +6249,7 @@ Object {
         "normal-active": "#B26200",
         "normal-hover": "#C96F00",
       },
-      "product": Object {
+      "product": {
         "dark": "#007A69",
         "dark-active": "#006657",
         "dark-hover": "#007060",
@@ -6261,7 +6261,7 @@ Object {
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "red": Object {
+      "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
         "dark-hover": "#890B0B",
@@ -6273,18 +6273,18 @@ Object {
         "normal-active": "#9D1515",
         "normal-hover": "#B91919",
       },
-      "social": Object {
+      "social": {
         "facebook": "#3B5998",
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
-      "white": Object {
+      "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
         "normal-hover": "#F1F4F7",
       },
     },
-    "textDecorationThickness": Object {
+    "textDecorationThickness": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
@@ -6293,7 +6293,7 @@ Object {
       "auto": "auto",
       "from-font": "from-font",
     },
-    "textIndent": Object {
+    "textIndent": {
       "0": "0px",
       "lg": "24px",
       "md": "16px",
@@ -6306,7 +6306,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "textOpacity": Object {
+    "textOpacity": {
       "0": "0",
       "10": "0.1",
       "100": "1",
@@ -6323,7 +6323,7 @@ Object {
       "90": "0.9",
       "95": "0.95",
     },
-    "textUnderlineOffset": Object {
+    "textUnderlineOffset": {
       "0": "0px",
       "1": "1px",
       "2": "2px",
@@ -6331,7 +6331,7 @@ Object {
       "8": "8px",
       "auto": "auto",
     },
-    "transformOrigin": Object {
+    "transformOrigin": {
       "bottom": "bottom",
       "bottom-left": "bottom left",
       "bottom-right": "bottom right",
@@ -6342,7 +6342,7 @@ Object {
       "top-left": "top left",
       "top-right": "top right",
     },
-    "transitionDelay": Object {
+    "transitionDelay": {
       "0": "0s",
       "100": "100ms",
       "1000": "1000ms",
@@ -6353,12 +6353,12 @@ Object {
       "700": "700ms",
       "75": "75ms",
     },
-    "transitionDuration": Object {
+    "transitionDuration": {
       "fast": "0.15s",
       "normal": "0.3s",
       "slow": "0.4s",
     },
-    "transitionProperty": Object {
+    "transitionProperty": {
       "DEFAULT": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
       "all": "all",
       "colors": "color, background-color, border-color, text-decoration-color, fill, stroke",
@@ -6367,14 +6367,14 @@ Object {
       "shadow": "box-shadow",
       "transform": "transform",
     },
-    "transitionTimingFunction": Object {
+    "transitionTimingFunction": {
       "DEFAULT": "cubic-bezier(0.4, 0, 0.2, 1)",
       "in": "cubic-bezier(0.4, 0, 1, 1)",
       "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
       "linear": "linear",
       "out": "cubic-bezier(0, 0, 0.2, 1)",
     },
-    "translate": Object {
+    "translate": {
       "0": "0px",
       "1/2": "50%",
       "1/3": "33.333333%",
@@ -6394,7 +6394,7 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "width": Object {
+    "width": {
       "0": "0px",
       "1/12": "8.333333%",
       "1/2": "50%",
@@ -6439,13 +6439,13 @@ Object {
       "xxxl": "52px",
       "xxxs": "2px",
     },
-    "willChange": Object {
+    "willChange": {
       "auto": "auto",
       "contents": "contents",
       "scroll": "scroll-position",
       "transform": "transform",
     },
-    "zIndex": Object {
+    "zIndex": {
       "0": "0",
       "10": "10",
       "20": "20",

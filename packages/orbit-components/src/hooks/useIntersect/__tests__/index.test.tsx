@@ -1,6 +1,5 @@
 import * as React from "react";
-import { render, screen, act } from "@testing-library/react";
-import { renderHook } from "@testing-library/react-hooks";
+import { render, screen, act, renderHook } from "@testing-library/react";
 
 import useIntersect from "..";
 

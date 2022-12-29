@@ -32,7 +32,7 @@ describe("Skeleton", () => {
 
   it("should have rows", () => {
     render(<Skeleton dataTest="test" rows={6} width="50%" />);
-    expect(document.querySelectorAll("rect")).toHaveLength(7);
+    expect(document.querySelector("clipPath")?.childElementCount).toBe(6);
     expect(screen.getByRole("img")).toHaveStyle({ width: "50%" });
   });
 });

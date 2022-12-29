@@ -12,6 +12,8 @@ import { INPUTMODE } from "../consts";
 import defaultTheme from "../../../defaultTheme";
 
 describe("InputField", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", () => {
     const ref = React.createRef() as React.RefObject<HTMLInputElement>;
     const { container } = render(
@@ -65,7 +67,7 @@ describe("InputField", () => {
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
 
-  it("should trigger given event handlers", () => {
+  it("should trigger given event handlers", async () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const onBlur = jest.fn();
@@ -87,7 +89,7 @@ describe("InputField", () => {
       />,
     );
     const input = screen.getByRole("textbox");
-    userEvent.type(input, "Hello world!");
+    await user.type(input, "Hello world!");
     expect(onFocus).toHaveBeenCalled();
     expect(onChange).toHaveBeenCalled();
     expect(onMouseDown).toHaveBeenCalled();

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Card, { CardSection } from "..";
@@ -7,6 +7,8 @@ import Button from "../../Button";
 import { Airplane } from "../../icons";
 
 describe("Card", () => {
+  const user = userEvent.setup();
+
   it("default", () => {
     render(
       <Card
@@ -64,7 +66,7 @@ describe("Card", () => {
     expect(screen.queryByText("section")).not.toBeInTheDocument();
   });
 
-  it("should be clickable", () => {
+  it("should be clickable", async () => {
     const onClick = jest.fn();
 
     render(
@@ -73,12 +75,12 @@ describe("Card", () => {
       </Card>,
     );
 
-    userEvent.click(screen.getByText("kek"));
+    await user.click(screen.getByText("kek"));
     expect(onClick).toHaveBeenCalled();
   });
 
   describe("expandable", () => {
-    it("controlled", () => {
+    it("controlled", async () => {
       const { rerender } = render(
         <Card>
           <CardSection title="kek" expandable expanded={false}>
@@ -88,7 +90,7 @@ describe("Card", () => {
       );
       const content = document.querySelector("[aria-hidden]");
       expect(content).toHaveAttribute("aria-hidden", "true");
-      userEvent.click(screen.getByText("kek"));
+      await user.click(screen.getByText("kek"));
       expect(content).toHaveAttribute("aria-hidden", "true");
       rerender(
         <Card>
@@ -98,11 +100,11 @@ describe("Card", () => {
         </Card>,
       );
       expect(content).toHaveAttribute("aria-hidden", "false");
-      userEvent.click(screen.getByText("kek"));
+      await user.click(screen.getByText("kek"));
       expect(content).toHaveAttribute("aria-hidden", "false");
     });
 
-    it("uncontrolled", () => {
+    it("uncontrolled", async () => {
       render(
         <Card>
           <CardSection title="kek" expandable>
@@ -112,7 +114,7 @@ describe("Card", () => {
       );
       const content = document.querySelector("[aria-hidden]");
       expect(content).toHaveAttribute("aria-hidden", "true");
-      userEvent.click(screen.getByText("kek"));
+      await act(() => user.click(screen.getByText("kek")));
       expect(content).toHaveAttribute("aria-hidden", "false");
     });
   });

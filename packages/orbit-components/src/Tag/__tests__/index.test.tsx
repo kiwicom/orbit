@@ -5,7 +5,9 @@ import userEvent from "@testing-library/user-event";
 import Tag from "..";
 
 describe("Tag", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const content = "Brno";
     const dataTest = "test";
     const onRemove = jest.fn();
@@ -19,9 +21,9 @@ describe("Tag", () => {
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     const tag = screen.getByRole("button", { name: content });
-    userEvent.click(tag);
+    await user.click(tag);
     expect(onClick).toHaveBeenCalled();
-    userEvent.click(screen.getByRole("button", { name: "close" }));
+    await user.click(screen.getByRole("button", { name: "close" }));
     expect(onRemove).toHaveBeenCalled();
     expect(screen.getByText(content)).toBeInTheDocument();
   });

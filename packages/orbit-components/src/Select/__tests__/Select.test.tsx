@@ -6,7 +6,9 @@ import Select from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Select", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const placeholder = "Default placeholder";
     const dataTest = "test";
     const label = "label";
@@ -60,11 +62,14 @@ describe("Select", () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
     expect(screen.getByText(placeholder)).toBeInTheDocument();
 
-    userEvent.selectOptions(select, screen.getByText("One"));
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.selectOptions(select, screen.getByText("One")));
     expect(onChange).toHaveBeenCalled();
-    userEvent.tab();
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.tab());
     expect(onFocus).toHaveBeenCalled();
-    userEvent.tab();
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.tab());
     expect(onBlur).toHaveBeenCalled();
   });
 
@@ -83,16 +88,14 @@ describe("Select", () => {
 
   it("should have error message", async () => {
     render(<Select error="error" readOnly options={[{ value: "1", label: "One" }]} />);
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("error")).toBeInTheDocument();
-    await act(async () => {});
   });
 
   it("should have help message", async () => {
     render(<Select help="help" readOnly options={[{ value: "1", label: "One" }]} />);
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("help")).toBeInTheDocument();
-    await act(async () => {});
   });
 
   it("should be disabled", () => {

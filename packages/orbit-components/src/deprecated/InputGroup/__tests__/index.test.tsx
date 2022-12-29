@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InputGroup from "..";
@@ -7,6 +7,8 @@ import InputField from "../../../InputField";
 import defaultTheme from "../../../defaultTheme";
 
 describe("InputGroup", () => {
+  const user = userEvent.setup();
+
   it("should render label", () => {
     render(
       <InputGroup label="Label">
@@ -58,7 +60,7 @@ describe("InputGroup", () => {
     expect(screen.queryByText("help message")).not.toBeInTheDocument();
     expect(screen.queryByText("error message")).not.toBeInTheDocument();
   });
-  it("should pass event handlers to child inputs", () => {
+  it("should pass event handlers to child inputs", async () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const onBlur = jest.fn();
@@ -68,7 +70,8 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
     const input = screen.getByRole("textbox");
-    userEvent.type(input, "text");
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.type(input, "text"));
     expect(onChange).toHaveBeenCalled();
     expect(onFocus).toHaveBeenCalled();
     fireEvent.blur(input);

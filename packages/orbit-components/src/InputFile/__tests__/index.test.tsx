@@ -6,7 +6,9 @@ import InputFile from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("InputFile", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const label = "Select file";
     const buttonLabel = "Click on me";
     const name = "name";
@@ -43,7 +45,8 @@ describe("InputFile", () => {
     expect(input).toHaveAttribute("tabindex", "-1");
     expect(input).toHaveAttribute("accept", ".png,.jpg,.pdf");
 
-    userEvent.upload(input, file);
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.upload(input, file));
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -53,13 +56,13 @@ describe("InputFile", () => {
     expect(document.querySelector("label")).toHaveStyle({ width });
   });
 
-  it("should have filename, onRemoveFile", () => {
+  it("should have filename, onRemoveFile", async () => {
     const onRemoveFile = jest.fn();
 
     render(<InputFile fileName="bur" onRemoveFile={onRemoveFile} />);
 
     const button = screen.getByRole("button", { name: "remove" });
-    userEvent.click(button);
+    await user.click(button);
     expect(onRemoveFile).toHaveBeenCalled();
   });
 
@@ -75,14 +78,12 @@ describe("InputFile", () => {
       />,
     );
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(onFocus).toHaveBeenCalled();
 
     expect(screen.getByText("chuck norris counted to infinity twice")).toBeInTheDocument();
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(onBlur).toHaveBeenCalled();
-
-    await act(async () => {});
   });
 });

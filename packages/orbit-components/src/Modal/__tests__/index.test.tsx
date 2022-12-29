@@ -10,19 +10,15 @@ import ModalFooter from "../ModalFooter";
 import Illustration from "../../Illustration";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-jest.useFakeTimers("modern");
-
 jest.mock("../../hooks/useMediaQuery", () => {
   return jest.fn(() => ({ isLargeMobile: true }));
 });
 
 const mockUseMediaQuery = useMediaQuery;
 
-beforeEach(() => {
-  jest.clearAllTimers();
-});
-
 describe("Modal", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", () => {
     render(
       <Modal dataTest="container">
@@ -54,6 +50,8 @@ describe("Modal", () => {
   });
 
   it("should be able to focus content", async () => {
+    jest.useFakeTimers("modern");
+
     render(
       <Modal>
         <input />
@@ -64,10 +62,9 @@ describe("Modal", () => {
       jest.runOnlyPendingTimers();
     });
     expect(screen.getByRole("dialog")).toHaveFocus();
-    userEvent.tab();
-    act(() => {
-      jest.runOnlyPendingTimers();
-    });
+    jest.useRealTimers();
+
+    await user.tab();
     expect(screen.getByRole("textbox")).toHaveFocus();
   });
 
@@ -111,7 +108,7 @@ describe("Modal", () => {
     mockUseMediaQuery.mockImplementation(() => ({ isLargeMobile: true }));
   });
 
-  it("should call callback function when clicking on close button", () => {
+  it("should call callback function when clicking on close button", async () => {
     const onClose = jest.fn();
     render(
       <Modal hasCloseButton onClose={onClose}>
@@ -119,7 +116,7 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    userEvent.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
+    await act(() => user.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST)));
     expect(onClose).toBeCalled();
   });
 

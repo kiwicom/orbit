@@ -16,9 +16,11 @@ const width = {
 };
 
 describe("Seat", () => {
+  const user = userEvent.setup();
+
   const dataTest = "test";
   const onClick = jest.fn();
-  it("should have expected DOM output", () => {
+  it("should have expected DOM output", async () => {
     render(
       <Seat
         type={TYPES.DEFAULT}
@@ -30,7 +32,7 @@ describe("Seat", () => {
       />,
     );
 
-    userEvent.click(screen.getByTestId(dataTest));
+    await user.click(screen.getByTestId(dataTest));
     expect(onClick).toHaveBeenCalled();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByTitle("kek")).toBeInTheDocument();

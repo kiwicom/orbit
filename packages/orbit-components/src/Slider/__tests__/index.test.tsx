@@ -1,11 +1,13 @@
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Slider from "..";
 
 describe("Slider", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const onChange = jest.fn();
     const onChangeBefore = jest.fn();
     const onChangeAfter = jest.fn();
@@ -46,9 +48,9 @@ describe("Slider", () => {
     expect(slider).toHaveAttribute("aria-valuenow", defaultValue.toString());
     expect(slider).toHaveAttribute("aria-valuetext", ariaValueText.toString());
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(onChangeBefore).toHaveBeenCalled();
-    userEvent.tab();
+    await act(() => user.tab());
     expect(onChangeAfter).toHaveBeenCalled();
 
     fireEvent.mouseDown(slider, { button: 0, buttons: 0 });

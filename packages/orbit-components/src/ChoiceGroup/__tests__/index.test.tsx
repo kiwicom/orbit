@@ -8,7 +8,9 @@ import Checkbox from "../../Checkbox";
 import ChoiceGroup from "..";
 
 describe("ChoiceGroup", () => {
-  it("radio", () => {
+  const user = userEvent.setup();
+
+  it("radio", async () => {
     const onChange = jest.fn();
     render(
       <ChoiceGroup
@@ -23,11 +25,11 @@ describe("ChoiceGroup", () => {
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("Label")).toBeInTheDocument();
-    userEvent.click(screen.getByRole("radio", { name: "Option" }));
+    await user.click(screen.getByRole("radio", { name: "Option" }));
     expect(onChange).toHaveBeenCalled();
   });
 
-  it("filter", () => {
+  it("filter", async () => {
     const onOnlySelection = jest.fn();
     render(
       <ChoiceGroup
@@ -42,11 +44,11 @@ describe("ChoiceGroup", () => {
         <Checkbox value="option" label="Option" />
       </ChoiceGroup>,
     );
-    userEvent.click(screen.getByText("Only"));
+    await user.click(screen.getByText("Only"));
     expect(onOnlySelection).toHaveBeenCalled();
   });
 
-  it("render prop", () => {
+  it("render prop", async () => {
     const onChange = jest.fn();
     render(
       <ChoiceGroup onChange={onChange}>
@@ -59,7 +61,7 @@ describe("ChoiceGroup", () => {
         )}
       </ChoiceGroup>,
     );
-    userEvent.click(screen.getByRole("radio", { name: "Option" }));
+    await user.click(screen.getByRole("radio", { name: "Option" }));
     expect(onChange).toHaveBeenCalled();
   });
 

@@ -1,11 +1,11 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import ComponentStructure from "..";
 
-const structure = platform => ({
-  Image: props => <svg {...props} />,
+const structure = (platform: string) => ({
+  Image: (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => <svg {...props} />,
   imageWidth: 124,
   parts: [
     {
@@ -20,6 +20,8 @@ const structure = platform => ({
 });
 
 describe("ComponentStructure", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM", async () => {
     render(
       <ComponentStructure
@@ -45,7 +47,7 @@ describe("ComponentStructure", () => {
     screen.getByText(/WebTwo/);
   });
 
-  it("should open tab on click", () => {
+  it("should open tab on click", async () => {
     render(
       <ComponentStructure
         component="Test"
@@ -55,11 +57,11 @@ describe("ComponentStructure", () => {
       />,
     );
 
-    userEvent.click(screen.getByRole("tab", { name: "iOS" }));
+    await act(() => user.click(screen.getByRole("tab", { name: "iOS" })));
     screen.getByText(/iOSOne/);
   });
 
-  it("should move focus along tabs when pressing arrow keys", () => {
+  it("should move focus along tabs when pressing arrow keys", async () => {
     render(
       <ComponentStructure
         component="Test"
@@ -73,31 +75,39 @@ describe("ComponentStructure", () => {
     const tabIOS = screen.getByRole("tab", { name: "iOS" });
     const tabAndroid = screen.getByRole("tab", { name: "Android" });
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(tabWeb).toHaveFocus();
 
-    userEvent.keyboard("{ArrowRight}");
+    await act(async () => {
+      await user.keyboard("{ArrowRight}");
+    });
     expect(tabIOS).toHaveFocus();
 
     expect(tabWeb).toHaveAttribute("tabindex", "-1");
     expect(tabIOS).toHaveAttribute("tabindex", "0");
     expect(tabAndroid).toHaveAttribute("tabindex", "-1");
 
-    userEvent.keyboard("{ArrowLeft}");
+    await act(async () => {
+      await user.keyboard("{ArrowLeft}");
+    });
     expect(tabWeb).toHaveFocus();
 
     expect(tabWeb).toHaveAttribute("tabindex", "0");
     expect(tabIOS).toHaveAttribute("tabindex", "-1");
     expect(tabAndroid).toHaveAttribute("tabindex", "-1");
 
-    userEvent.keyboard("{ArrowLeft}");
+    await act(async () => {
+      await user.keyboard("{ArrowLeft}");
+    });
     expect(tabAndroid).toHaveFocus();
 
     expect(tabWeb).toHaveAttribute("tabindex", "-1");
     expect(tabIOS).toHaveAttribute("tabindex", "-1");
     expect(tabAndroid).toHaveAttribute("tabindex", "0");
 
-    userEvent.keyboard("{ArrowRight}");
+    await act(async () => {
+      await user.keyboard("{ArrowRight}");
+    });
     expect(tabWeb).toHaveFocus();
 
     expect(tabWeb).toHaveAttribute("tabindex", "0");

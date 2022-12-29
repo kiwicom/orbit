@@ -6,7 +6,9 @@ import Textarea from "..";
 import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
 
 describe("Textarea", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const name = "name";
     const label = "Label";
     const value = "value";
@@ -53,15 +55,14 @@ describe("Textarea", () => {
 
     fireEvent.blur(textarea);
     expect(onBlur).toHaveBeenCalled();
-    userEvent.type(textarea, "kek");
+    await user.type(textarea, "kek");
     expect(onChange).toHaveBeenCalled();
   });
 
-  it("should have focus", () => {
+  it("should have focus", async () => {
     const onFocus = jest.fn();
     render(<Textarea onFocus={onFocus} />);
-    // @ts-expect-error testing-library
-    userEvent.tab(screen.getByRole("textbox"));
+    await user.tab();
     expect(onFocus).toHaveBeenCalled();
   });
 

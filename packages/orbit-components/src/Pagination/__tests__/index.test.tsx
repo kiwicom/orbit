@@ -19,8 +19,10 @@ afterEach(() => {
 });
 
 describe("Pagination", () => {
-  describe.each(Object.entries(breakpoints))("%s", (breakpoint, queryObject) => {
-    it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  describe.each(Object.entries(breakpoints))("%s", (_breakpoint, queryObject) => {
+    it("should have expected DOM output", async () => {
       const dataTest = "test";
       const pageCount = 9;
       const selectedPage = 3;
@@ -37,7 +39,7 @@ describe("Pagination", () => {
       );
 
       expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-      userEvent.click(screen.getByRole("button", { name: "Next" }));
+      await user.click(screen.getByRole("button", { name: "Next" }));
       expect(onPageChange).toHaveBeenCalled();
     });
 

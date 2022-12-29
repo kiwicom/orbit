@@ -6,6 +6,8 @@ import InputStepper from "..";
 import defaultTheme from "../../../defaultTheme";
 
 describe("InputStepper", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", () => {
     const { container } = render(
       <InputStepper
@@ -41,54 +43,52 @@ describe("InputStepper", () => {
   });
   it("should render help message", async () => {
     render(<InputStepper label="Label" help="help message" />);
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("help message")).toBeInTheDocument();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
   it("should render error message", async () => {
     render(<InputStepper label="Label" error="error message" />);
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("error message")).toBeInTheDocument();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
-  it("should not be able to change value by typing", () => {
+  it("should not be able to change value by typing", async () => {
     const onChange = jest.fn();
     render(<InputStepper onChange={onChange} />);
     const input = screen.getByRole("spinbutton");
-    userEvent.type(input, "5");
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.type(input, "5"));
     expect(input).toHaveValue(0);
     expect(onChange).not.toHaveBeenCalled();
   });
   it.each([["increment"], ["decrement"]])(
     "should be able to change the value with buttons: %s",
-    label => {
+    async label => {
       const onChange = jest.fn();
       render(
         <InputStepper titleIncrement="increment" titleDecrement="decrement" onChange={onChange} />,
       );
-      userEvent.click(screen.getByLabelText(label));
+      // This act can be removed after ORBIT-2464 is done
+      await act(() => user.click(screen.getByLabelText(label)));
       expect(screen.getByRole("spinbutton")).toHaveValue(label === "increment" ? 1 : -1);
       expect(onChange).toHaveBeenCalled();
     },
   );
-  it("should trigger focus and blur event handlers", () => {
+  it("should trigger focus and blur event handlers", async () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
     render(<InputStepper onFocus={onFocus} onBlur={onBlur} />);
-    userEvent.tab();
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.tab());
     expect(onFocus).toHaveBeenCalled();
-    userEvent.tab();
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.tab());
     expect(onBlur).toHaveBeenCalled();
   });
-  it("should not work if disabled", () => {
+  it("should not work if disabled", async () => {
     const onChange = jest.fn();
     render(<InputStepper disabled onChange={onChange} />);
-    userEvent.click(screen.getByLabelText("Increment value"));
-    userEvent.click(screen.getByLabelText("Decrement value"));
+    await user.click(screen.getByLabelText("Increment value"));
+    await user.click(screen.getByLabelText("Decrement value"));
     expect(onChange).not.toHaveBeenCalled();
   });
 });

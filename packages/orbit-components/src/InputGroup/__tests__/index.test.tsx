@@ -7,6 +7,8 @@ import InputField from "../../InputField";
 import defaultTheme from "../../defaultTheme";
 
 describe("InputGroup", () => {
+  const user = userEvent.setup();
+
   it("should render label", () => {
     render(
       <InputGroup label="Label">
@@ -38,12 +40,8 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("help message")).toBeInTheDocument();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
-    await act(async () => {});
   });
   it("should render error message", async () => {
     render(
@@ -52,15 +50,11 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("error message")).toBeInTheDocument();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
-    await act(async () => {});
   });
 
-  it("should pass event handlers to child inputs", () => {
+  it("should pass event handlers to child inputs", async () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const onBlur = jest.fn();
@@ -70,10 +64,12 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
     const input = screen.getByRole("textbox");
-    userEvent.type(input, "text");
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.type(input, "text"));
     expect(onChange).toHaveBeenCalled();
     expect(onFocus).toHaveBeenCalled();
-    userEvent.tab();
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.tab());
     expect(onBlur).toHaveBeenCalled();
   });
   it("should be able to disable children", () => {

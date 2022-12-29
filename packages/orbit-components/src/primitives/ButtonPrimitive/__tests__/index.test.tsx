@@ -6,7 +6,9 @@ import ButtonPrimitive from "..";
 import { Airplane, ChevronDown } from "../../../icons";
 
 describe("ButtonPrimitive", () => {
-  it("default", () => {
+  const user = userEvent.setup();
+
+  it("default", async () => {
     const ref = React.createRef<HTMLButtonElement>();
     const children = "Lorem ipsum dolor sit amet";
     const onClick = jest.fn();
@@ -38,7 +40,7 @@ describe("ButtonPrimitive", () => {
     expect(screen.getByTestId("airplane")).toBeInTheDocument();
     expect(screen.getByTestId("chevron")).toBeInTheDocument();
     expect(button).toHaveTextContent(children);
-    userEvent.click(button);
+    await user.click(button);
     expect(onClick).toHaveBeenCalled();
   });
 
@@ -48,7 +50,7 @@ describe("ButtonPrimitive", () => {
       expect(screen.getByRole("button")).toBeDisabled();
     });
 
-    it("with href", () => {
+    it("with href", async () => {
       const onClick = jest.fn();
       render(
         <ButtonPrimitive disabled href="#" onClick={onClick}>
@@ -56,7 +58,7 @@ describe("ButtonPrimitive", () => {
         </ButtonPrimitive>,
       );
       expect(screen.queryByRole("link")).not.toBeInTheDocument();
-      userEvent.click(screen.getByText("Lorem ipsum"));
+      await user.click(screen.getByText("Lorem ipsum"));
       // we don't have to test this behavior with <button> tag because blocking
       // onClick for disabled <button> is default browser behavior
       expect(onClick).not.toHaveBeenCalled();
@@ -79,7 +81,7 @@ describe("ButtonPrimitive", () => {
     expect(screen.getByRole("link")).toHaveAttribute("href", "#");
   });
 
-  it("should behave as button", () => {
+  it("should behave as button", async () => {
     const children = "Lorem ipsum";
     const dataTest = "test";
     const onClick = jest.fn();
@@ -92,7 +94,7 @@ describe("ButtonPrimitive", () => {
 
     const button = screen.getByTestId(dataTest);
 
-    userEvent.tab();
+    await user.tab();
     fireEvent.keyDown(button, { keyCode: 13 });
     expect(onClick).toHaveBeenCalledTimes(1);
     expect(button).toHaveFocus();

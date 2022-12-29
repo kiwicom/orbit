@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Button from "../../Button";
@@ -14,7 +14,9 @@ jest.mock("../../hooks/useMediaQuery", () => {
 });
 
 describe("Tooltip mobile", () => {
-  it("it should not propagate onClick event when closing the tooltip using the close button", () => {
+  const user = userEvent.setup();
+
+  it("it should not propagate onClick event when closing the tooltip using the close button", async () => {
     const content = "Write some message to the user";
     const onClick = jest.fn();
     render(
@@ -26,9 +28,9 @@ describe("Tooltip mobile", () => {
     );
 
     // Open the tooltip
-    userEvent.click(screen.getByText("kek"));
+    await act(() => user.click(screen.getByText("kek")));
     // Close the tooltip
-    userEvent.click(screen.getByText("Close"));
+    await act(() => user.click(screen.getByText("Close")));
 
     expect(onClick).not.toHaveBeenCalled();
   });

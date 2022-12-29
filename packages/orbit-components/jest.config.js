@@ -8,4 +8,8 @@ module.exports = {
     "\\.[jt]sx?$": ["babel-jest", { root: __dirname }],
   },
   testPathIgnorePatterns: ["/node_modules/", "/cypress/"],
+  snapshotFormat: {
+    escapeString: true,
+    printBasicPrototype: true,
+  },
 };

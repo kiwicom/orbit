@@ -6,6 +6,8 @@ import ListChoice from "..";
 import Accommodation from "../../icons/Accommodation";
 
 describe("ListChoice", () => {
+  const user = userEvent.setup();
+
   const title = "Choice Title";
   const dataTest = "test";
   const onClick = jest.fn();
@@ -38,17 +40,17 @@ describe("ListChoice", () => {
     expect(screen.getByRole("checkbox", { checked: false })).toBeInTheDocument();
   });
 
-  it("should NOT execute onClick method", () => {
+  it("should NOT execute onClick method", async () => {
     render(<ListChoice title={title} disabled onClick={onClick} dataTest={dataTest} />);
     const component = screen.getByTestId(dataTest);
-    userEvent.click(component);
+    await user.click(component);
     expect(onClick).not.toHaveBeenCalled();
   });
 
-  it("should execute onClick method", () => {
+  it("should execute onClick method", async () => {
     render(<ListChoice title={title} onClick={onClick} dataTest={dataTest} />);
     const el = screen.getByTestId(dataTest);
-    userEvent.click(el);
+    await user.click(el);
     expect(onClick).toHaveBeenCalled();
   });
 
@@ -62,15 +64,15 @@ describe("ListChoice", () => {
     expect(screen.getByTestId(dataTest)).toHaveAttribute("role", "checkbox");
   });
 
-  it("should have focus", () => {
+  it("should have focus", async () => {
     render(<ListChoice title={title} selectable dataTest={dataTest} />);
-    userEvent.tab();
+    await user.tab();
     expect(screen.getByTestId(dataTest)).toHaveFocus();
   });
 
-  it("should not have focus", () => {
+  it("should not have focus", async () => {
     render(<ListChoice title={title} disabled selectable dataTest={dataTest} />);
-    userEvent.tab();
+    await user.tab();
     expect(screen.getByTestId(dataTest)).not.toHaveFocus();
   });
 });

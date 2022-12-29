@@ -10,7 +10,7 @@ describe("sandbox transform", () => {
       .toMatchInlineSnapshot(`
       "() => /*#__PURE__*/React.createElement(Component, {
         disabled: false
-      }, \\"kek\\");"
+      }, "kek");"
     `);
   });
 
@@ -24,7 +24,7 @@ describe("sandbox transform", () => {
     ).toMatchInlineSnapshot(`
       "() => /*#__PURE__*/React.createElement(Component, {
         disabled: false
-      }, \\"kek\\");"
+      }, "kek");"
     `);
   });
 
@@ -38,7 +38,7 @@ describe("sandbox transform", () => {
     ).toMatchInlineSnapshot(`
       "() => /*#__PURE__*/React.createElement(Component, {
         disabled: true
-      }, \\"kek\\");"
+      }, "kek");"
     `);
   });
 
@@ -51,8 +51,8 @@ describe("sandbox transform", () => {
       ),
     ).toMatchInlineSnapshot(`
       "() => /*#__PURE__*/React.createElement(Component, {
-        label: \\"bur\\"
-      }, \\"kek\\");"
+        label: "bur"
+      }, "kek");"
     `);
   });
 
@@ -60,8 +60,8 @@ describe("sandbox transform", () => {
     expect(transform("TEST.tsx", `() => <Component>kek</Component>;`, setKnob("label", "bur")))
       .toMatchInlineSnapshot(`
       "() => /*#__PURE__*/React.createElement(Component, {
-        label: \\"bur\\"
-      }, \\"kek\\");"
+        label: "bur"
+      }, "kek");"
     `);
   });
 
@@ -71,7 +71,7 @@ describe("sandbox transform", () => {
     ).toMatchInlineSnapshot(`
       "() => /*#__PURE__*/React.createElement(Component, {
         value: 2
-      }, \\"kek\\");"
+      }, "kek");"
     `);
   });
 
@@ -80,7 +80,7 @@ describe("sandbox transform", () => {
       .toMatchInlineSnapshot(`
       "() => /*#__PURE__*/React.createElement(Component, {
         value: 2
-      }, \\"kek\\");"
+      }, "kek");"
     `);
   });
 
@@ -101,13 +101,13 @@ describe("sandbox transform", () => {
       "() => /*#__PURE__*/React.createElement(Component, {
         iconRight: /*#__PURE__*/React.createElement(Visibility, null),
         options: [{
-          \\"kek\\": \\"bur\\",
-          \\"blin\\": \\"cheburek\\"
+          "kek": "bur",
+          "blin": "cheburek"
         }],
         disabled: true,
         fullWidth: true,
-        title: \\"kek\\"
-      }, \\"children\\");"
+        title: "kek"
+      }, "children");"
     `);
   });
 });

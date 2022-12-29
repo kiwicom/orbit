@@ -115,9 +115,9 @@ describe("gatsby-node", () => {
       // @ts-expect-error TODO
       await onCreateNode({ cache, node, reporter });
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
-        Array [
-          Array [
-            "Expected meta.yml file to exist in \\"docs/src/documentation/01-getting-started\\", every directory in \\"src/documentation\\" should have one",
+        [
+          [
+            "Expected meta.yml file to exist in "docs/src/documentation/01-getting-started", every directory in "src/documentation" should have one",
           ],
         ]
       `);
@@ -138,9 +138,9 @@ describe("gatsby-node", () => {
       await onCreateNode({ cache, node, reporter });
       // first time for "title", second for "type"
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
-        Array [
-          Array [
-            "Expected \\"docs/src/documentation/01-getting-started/meta.yml\\" to contain fields: title, type",
+        [
+          [
+            "Expected "docs/src/documentation/01-getting-started/meta.yml" to contain fields: title, type",
           ],
         ]
       `);
@@ -162,9 +162,9 @@ describe("gatsby-node", () => {
       await onCreateNode({ cache, node, reporter });
       // first time for "title", second for "type"
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
-        Array [
-          Array [
-            "Expected the value of \\"type\\" in \\"docs/src/documentation/01-getting-started/meta.yml\\" to be one of: folder, tabs",
+        [
+          [
+            "Expected the value of "type" in "docs/src/documentation/01-getting-started/meta.yml" to be one of: folder, tabs",
           ],
         ]
       `);
@@ -262,7 +262,7 @@ describe("gatsby-node", () => {
         cache,
       });
 
-      expect(createPage.mock.calls).toMatchInlineSnapshot(`Array []`);
+      expect(createPage.mock.calls).toMatchInlineSnapshot(`[]`);
     });
   });
 });

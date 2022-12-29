@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import useTransition from "..";
@@ -29,15 +29,17 @@ function App(props: { show: boolean; appear: boolean }) {
 }
 
 describe("useTransition", () => {
+  const user = userEvent.setup();
+
   it("should provide correct API for transitioning", async () => {
     render(<App show={false} appear={false} />);
     expect(screen.queryByText("Test")).not.toBeInTheDocument();
-    userEvent.click(screen.getByRole("button"));
+    await act(() => user.click(screen.getByRole("button")));
     expect(screen.getByText("Test")).toHaveStyle({ opacity: 1 });
     expect(screen.getByRole("button")).toBeDisabled();
     fireEvent.transitionEnd(screen.getByText("Test"));
     expect(screen.getByRole("button")).not.toBeDisabled();
-    userEvent.click(screen.getByRole("button"));
+    await act(() => user.click(screen.getByRole("button")));
     expect(screen.getByText("Test")).toHaveStyle({ opacity: 0 });
     fireEvent.transitionEnd(screen.getByText("Test"));
     expect(screen.queryByText("Test")).not.toBeInTheDocument();

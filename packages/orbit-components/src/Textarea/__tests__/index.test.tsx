@@ -6,6 +6,8 @@ import Textarea from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Textarea", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", async () => {
     const name = "name";
     const label = "Label";
@@ -39,7 +41,7 @@ describe("Textarea", () => {
     expect(screen.getByDisplayValue(value)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(placeholder)).toBeInTheDocument();
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("Something useful.")).toBeInTheDocument();
     expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
     expect(textarea).toHaveAttribute("rows", "4");
@@ -47,28 +49,26 @@ describe("Textarea", () => {
     expect(textarea.parentElement).toHaveStyle({ marginBottom: "12px" });
     expect(textarea).toHaveStyle({ padding: "12px" });
 
-    userEvent.type(textarea, "kek");
+    await act(() => user.type(textarea, "kek"));
     expect(onChange).toHaveBeenCalled();
   });
 
-  it("should have focus and blur", () => {
+  it("should have focus and blur", async () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
 
     render(<Textarea onFocus={onFocus} onBlur={onBlur} />);
-    userEvent.tab();
+    // This act can be removed after ORBIT-2464 is done
+    await act(() => user.tab());
     expect(onFocus).toHaveBeenCalled();
-    userEvent.tab();
+    await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 
   it("should have error", async () => {
     render(<Textarea error="error" size="small" />);
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
 });

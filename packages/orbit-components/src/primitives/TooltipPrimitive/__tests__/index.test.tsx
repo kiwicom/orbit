@@ -6,6 +6,8 @@ import Tooltip from "..";
 import Airplane from "../../../icons/Airplane";
 
 describe("Tooltip", () => {
+  const user = userEvent.setup();
+
   it("it should match snapshot", async () => {
     const content = "Write some message to the user";
     const { container } = render(
@@ -15,10 +17,6 @@ describe("Tooltip", () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
-    await act(async () => {});
   });
 
   it("should call onClick 1 time", async () => {
@@ -40,14 +38,10 @@ describe("Tooltip", () => {
       </div>,
     );
 
-    userEvent.hover(screen.getByText("kek"));
-    userEvent.click(screen.getByText(content));
+    await act(() => user.hover(screen.getByText("kek")));
+    await act(() => user.click(screen.getByText(content)));
 
     expect(onClick).toHaveBeenCalledTimes(1);
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
-    await act(async () => {});
   });
 
   it("should call onClick 2 times", async () => {
@@ -68,13 +62,9 @@ describe("Tooltip", () => {
       </div>,
     );
 
-    userEvent.hover(screen.getByText("kek"));
-    userEvent.click(screen.getByText(content));
+    await act(() => user.hover(screen.getByText("kek")));
+    await act(() => user.click(screen.getByText(content)));
 
     expect(onClick).toHaveBeenCalledTimes(2);
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
-    await act(async () => {});
   });
 });

@@ -1,10 +1,10 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 
 import Slide from "..";
 
 describe(`slide util`, () => {
-  it("should has a11y", () => {
+  it("should have a11y", () => {
     render(
       <Slide maxHeight={20} expanded>
         Expanded content
@@ -29,7 +29,11 @@ describe(`slide util`, () => {
         Collapsed content
       </Slide>,
     );
-    jest.runAllTimers();
+
+    act(() => {
+      jest.runAllTimers();
+    });
+
     expect(screen.getByText("Collapsed content")).toHaveStyle("max-height: 0px");
 
     rerender(
@@ -38,7 +42,11 @@ describe(`slide util`, () => {
       </Slide>,
     );
     expect(screen.getByText("Expanded content")).toHaveStyle("max-height: 20px");
-    jest.runAllTimers();
+
+    act(() => {
+      jest.runAllTimers();
+    });
+
     expect(screen.getByText("Expanded content")).toHaveStyle({ maxHeight: undefined });
   });
 });

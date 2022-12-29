@@ -12,6 +12,8 @@ import BreadcrumbsItem from "../BreadcrumbsItem";
 jest.mock("../../Hide", () => ({ children }) => children);
 
 describe("#Breadcrumbs", () => {
+  const user = userEvent.setup();
+
   const dataTest = "test";
   const onGoBack = jest.fn();
   beforeEach(() => {
@@ -41,9 +43,9 @@ describe("#Breadcrumbs", () => {
     expect(screen.getByRole("listitem")).toHaveAttribute("aria-current", "page");
     expect(document.querySelector("meta")).toHaveAttribute("content", "1");
   });
-  it("should execute onGoBack", () => {
+  it("should execute onGoBack", async () => {
     for (const backBtn of screen.getAllByRole("button", { name: "Back" })) {
-      userEvent.click(backBtn);
+      await user.click(backBtn);
     }
 
     expect(onGoBack).toHaveBeenCalledTimes(1);

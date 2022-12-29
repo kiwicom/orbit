@@ -10,28 +10,30 @@ const title = "My text link";
 const dataTest = "test";
 
 describe("#TextLink", () => {
-  it("should be focusable and have button role", () => {
+  const user = userEvent.setup();
+
+  it("should be focusable and have button role", async () => {
     render(<TextLink asComponent="button">{title}</TextLink>);
-    userEvent.tab();
+    await user.tab();
     expect(screen.getByText(title)).toHaveFocus();
     expect(screen.getByRole("button")).toBeInTheDocument();
   });
 
-  it("should execute onClick method", () => {
+  it("should execute onClick method", async () => {
     const onClick = jest.fn();
     render(<TextLink onClick={onClick}>{title}</TextLink>);
-    userEvent.click(screen.getByText(title));
+    await user.click(screen.getByText(title));
     expect(onClick).toHaveBeenCalled();
   });
 
-  it("should execute onClick method once when stopPropagation", () => {
+  it("should execute onClick method once when stopPropagation", async () => {
     const onClick = jest.fn();
     render(
       <TextLink onClick={onClick} stopPropagation>
         {title}
       </TextLink>,
     );
-    userEvent.click(screen.getByText(title));
+    await user.click(screen.getByText(title));
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 

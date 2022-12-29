@@ -5,7 +5,9 @@ import userEvent from "@testing-library/user-event";
 import ErrorFormTooltip from "..";
 
 describe("ErrorFormTooltip", () => {
-  it("should have error", () => {
+  const user = userEvent.setup();
+
+  it("should have error", async () => {
     const onShown = jest.fn();
     const { container } = render(
       <ErrorFormTooltip dataTest="test" onShown={onShown} shown error="error" />,
@@ -13,7 +15,7 @@ describe("ErrorFormTooltip", () => {
 
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("error")).toBeInTheDocument();
-    userEvent.click(container);
+    await act(() => user.click(container));
     expect(onShown).toHaveBeenCalled();
   });
 
@@ -24,11 +26,7 @@ describe("ErrorFormTooltip", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("help")).toBeInTheDocument();
 
-    userEvent.click(screen.getByLabelText("close"));
+    await act(() => user.click(screen.getByLabelText("close")));
     expect(onShown).toHaveBeenCalled();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
-    await act(async () => {});
   });
 });

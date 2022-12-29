@@ -6,7 +6,9 @@ import Select from "..";
 import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
 
 describe("Select", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const placeholder = "Default placeholder";
     const dataTest = "test";
     const label = "label";
@@ -48,7 +50,7 @@ describe("Select", () => {
       />,
     );
 
-    const select: any = screen.getByRole("combobox");
+    const select = screen.getByRole("combobox");
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(select).toHaveAttribute("id", id);
@@ -60,9 +62,9 @@ describe("Select", () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
     expect(screen.getByText(placeholder)).toBeInTheDocument();
 
-    userEvent.selectOptions(select, screen.getByText("One"));
+    await user.selectOptions(select, screen.getByText("One"));
     expect(onChange).toHaveBeenCalled();
-    userEvent.tab(select);
+    await user.tab();
     expect(onFocus).toHaveBeenCalled();
     fireEvent.blur(select);
     expect(onBlur).toHaveBeenCalled();

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Collapse from "..";
@@ -10,6 +10,8 @@ const toggleButtons = [
 ];
 
 describe("Collapse", () => {
+  const user = userEvent.setup();
+
   it("should have expected parts of DOM output", () => {
     render(
       <Collapse dataTest="test" label="Collapse">
@@ -29,7 +31,7 @@ describe("Collapse", () => {
     expect(screen.getByText("customLabel")).toBeInTheDocument();
   });
 
-  it.each(toggleButtons)("should trigger click handler when clicking on %s", buttonIndex => {
+  it.each(toggleButtons)("should trigger click handler when clicking on %s", async buttonIndex => {
     const onClick = jest.fn();
     render(
       <Collapse label="Collapse" onClick={onClick}>
@@ -37,12 +39,12 @@ describe("Collapse", () => {
       </Collapse>,
     );
     const toggleButton = screen.getAllByRole("button", { name: "Collapse" })[buttonIndex];
-    userEvent.click(toggleButton);
+    await act(() => user.click(toggleButton));
     expect(onClick).toHaveBeenCalled();
   });
 
   describe("uncontrolled", () => {
-    it.each(toggleButtons)("should expand/collapse when clicking on %s", buttonIndex => {
+    it.each(toggleButtons)("should expand/collapse when clicking on %s", async buttonIndex => {
       render(
         <Collapse label="Collapse">
           <article>children</article>
@@ -51,9 +53,9 @@ describe("Collapse", () => {
       const toggleButton = screen.getAllByRole("button", { name: "Collapse" })[buttonIndex];
       // with ByRole we can test whether the content is visible because of aria-hidden
       expect(screen.queryByRole("article")).not.toBeInTheDocument();
-      userEvent.click(toggleButton);
+      await act(() => user.click(toggleButton));
       expect(screen.getByRole("article")).toBeInTheDocument();
-      userEvent.click(toggleButton);
+      await act(() => user.click(toggleButton));
       expect(screen.queryByRole("article")).not.toBeInTheDocument();
     });
   });

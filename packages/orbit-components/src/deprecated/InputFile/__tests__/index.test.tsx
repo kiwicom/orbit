@@ -6,7 +6,9 @@ import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
 import InputFile from "..";
 
 describe("InputFile", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const label = "Select file";
     const buttonLabel = "Click on me";
     const name = "name";
@@ -47,21 +49,21 @@ describe("InputFile", () => {
     fireEvent.blur(input);
     expect(onBlur).toHaveBeenCalled();
 
-    userEvent.upload(input, file);
+    await user.upload(input, file);
     expect(onChange).toHaveBeenCalled();
   });
 
-  it("should have filename, onRemoveFile", () => {
+  it("should have filename, onRemoveFile", async () => {
     const onRemoveFile = jest.fn();
 
     render(<InputFile fileName="bur" onRemoveFile={onRemoveFile} />);
 
     const button = screen.getByRole("button", { name: "remove" });
-    userEvent.click(button);
+    await user.click(button);
     expect(onRemoveFile).toHaveBeenCalled();
   });
 
-  it("should have error", () => {
+  it("should have error", async () => {
     const onFocus = jest.fn();
 
     render(
@@ -73,7 +75,7 @@ describe("InputFile", () => {
     );
 
     // @ts-expect-error TODO
-    userEvent.tab(screen.getByTestId("test"));
+    await user.tab(screen.getByTestId("test"));
     expect(onFocus).toHaveBeenCalled();
     screen.getByText("chuck norris counted to infinity twice");
   });

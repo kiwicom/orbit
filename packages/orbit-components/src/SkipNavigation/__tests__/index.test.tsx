@@ -1,10 +1,12 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import SkipNavigation from "..";
 
 describe("SkipNavigation", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", () => {
     const actions = [
       {
@@ -24,7 +26,7 @@ describe("SkipNavigation", () => {
     expect(screen.getByRole("combobox")).toBeInTheDocument();
   });
 
-  it("should toggle select on focus/blur", () => {
+  it("should toggle select on focus/blur", async () => {
     const { container } = render(
       <SkipNavigation
         actions={[
@@ -37,7 +39,7 @@ describe("SkipNavigation", () => {
     );
 
     expect(container).toHaveStyle({ clip: "rect(0 0 0 0)" });
-    userEvent.tab();
+    await act(() => user.tab());
     expect(container).toHaveStyle({ clip: "" });
   });
 });

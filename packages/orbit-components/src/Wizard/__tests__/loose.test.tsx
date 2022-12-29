@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Wizard, { WizardStep } from "..";
@@ -7,8 +7,10 @@ import Wizard, { WizardStep } from "..";
 jest.mock("../../hooks/useMediaQuery", () => () => ({ isLargeMobile: true }));
 
 describe("Wizard", () => {
+  const user = userEvent.setup();
+
   describe("loose", () => {
-    it("can navigate through steps", () => {
+    it("can navigate through steps", async () => {
       const MyApp = () => {
         const [activeStep, setActiveStep] = React.useState(3);
         return (
@@ -30,11 +32,11 @@ describe("Wizard", () => {
       const customizeYourTripStep = screen.getByRole("button", { name: /Customize your trip/ });
       expect(customizeYourTripStep).toHaveAttribute("aria-current", "step");
       const ticketFareStep = screen.getByRole("button", { name: /Ticket fare/ });
-      userEvent.click(ticketFareStep);
+      await act(() => user.click(ticketFareStep));
       expect(ticketFareStep).toHaveAttribute("aria-current", "step");
     });
 
-    it("cannot select disabled steps", () => {
+    it("cannot select disabled steps", async () => {
       const onClick = jest.fn();
       render(
         <Wizard id="wizard" completedSteps={3} activeStep={3}>
@@ -45,7 +47,7 @@ describe("Wizard", () => {
           <WizardStep title="Overview & payment" onClick={onClick} />
         </Wizard>,
       );
-      userEvent.click(screen.getByText("Overview & payment"));
+      await act(() => user.click(screen.getByText("Overview & payment")));
       expect(onClick).not.toHaveBeenCalled();
     });
   });

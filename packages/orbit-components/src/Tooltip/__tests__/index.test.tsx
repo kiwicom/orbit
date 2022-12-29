@@ -13,6 +13,8 @@ jest.mock("../../hooks/useMediaQuery", () => {
 });
 
 describe("Tooltip", () => {
+  const user = userEvent.setup();
+
   it("it should render Tooltip", async () => {
     const content = "Write some message to the user";
     const onShow = jest.fn();
@@ -24,10 +26,7 @@ describe("Tooltip", () => {
     );
 
     expect(screen.getByText("kek")).toBeInTheDocument();
-    userEvent.hover(screen.getByText("kek"));
+    await act(() => user.hover(screen.getByText("kek")));
     expect(onShow).toHaveBeenCalled();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
 });

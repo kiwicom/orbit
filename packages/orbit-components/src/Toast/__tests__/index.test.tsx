@@ -9,20 +9,13 @@ import Button from "../../Button";
 import { EXPIRE_DISMISS_DELAY, SWIPE_DISMISS_DELAY } from "../consts";
 
 describe("Toast", () => {
-  beforeEach(() => {
-    // reset mocks before each test
-    jest.useFakeTimers();
-  });
+  const user = userEvent.setup();
 
   afterEach(done => {
     act(() => {
-      jest.runAllTimers();
+      jest.useRealTimers();
       done();
     });
-  });
-
-  afterAll(() => {
-    jest.useRealTimers();
   });
 
   it("should have expected DOM output", async () => {
@@ -47,11 +40,13 @@ describe("Toast", () => {
 
     const toast = screen.getByText("kek");
 
-    userEvent.hover(toast);
+    await act(() => user.hover(toast));
     expect(onMouseEnter).toHaveBeenCalled();
 
-    userEvent.unhover(toast);
+    await act(() => user.unhover(toast));
     expect(onMouseLeave).toHaveBeenCalled();
+
+    jest.useFakeTimers();
 
     // test dismiss on swipe
     fireEvent.mouseDown(toast, { screenX: 10 });
@@ -65,7 +60,7 @@ describe("Toast", () => {
     expect(screen.getByRole("status")).toHaveStyle({ bottom: 0, justifyContent: "center" });
   });
 
-  it(`should have expected DOM output with ToastRoot`, () => {
+  it(`should have expected DOM output with ToastRoot`, async () => {
     render(
       <>
         <ToastRoot
@@ -85,7 +80,7 @@ describe("Toast", () => {
       </>,
     );
 
-    userEvent.click(screen.getByRole("button"));
+    await act(() => user.click(screen.getByRole("button")));
 
     expect(screen.getByTestId("test")).toHaveStyle({
       top: "30px",
@@ -101,6 +96,7 @@ describe("Toast", () => {
   it("should be removed from DOM on dismiss", () => {
     const dismissTimeout = 300;
     render(<ToastRoot dismissTimeout={dismissTimeout} />);
+    jest.useFakeTimers();
     act(() => createToast("kek", { icon: <Airplane /> }));
     // TODO: find out why it needs an additional millisecond
     act(() => jest.advanceTimersByTime(dismissTimeout + EXPIRE_DISMISS_DELAY + 1));

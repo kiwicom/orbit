@@ -1,4 +1,4 @@
-import { renderHook, act } from "@testing-library/react-hooks/server";
+import { renderHook, act } from "@testing-library/react";
 
 import useErrorTooltip from "../hooks/useErrorTooltip";
 
@@ -7,9 +7,7 @@ describe("useErrorTooltip hook", () => {
     const onFocus = jest.fn();
     const ev: unknown = jest.fn();
 
-    const { result, hydrate } = renderHook(() => useErrorTooltip({ onFocus, hasTooltip: true }));
-
-    hydrate();
+    const { result } = renderHook(() => useErrorTooltip({ onFocus, hasTooltip: true }));
 
     expect(result.current.tooltipShown).toBeFalsy();
 
@@ -25,9 +23,7 @@ describe("useErrorTooltip hook", () => {
     const onFocus = jest.fn();
     const ev: unknown = jest.fn();
 
-    const { result, hydrate } = renderHook(() => useErrorTooltip({ onFocus, hasTooltip: false }));
-
-    hydrate();
+    const { result } = renderHook(() => useErrorTooltip({ onFocus, hasTooltip: false }));
 
     expect(result.current.tooltipShown).toBeFalsy();
 
@@ -40,9 +36,7 @@ describe("useErrorTooltip hook", () => {
   });
 
   it("should allow manual trigger of the tooltip visibility", async () => {
-    const { result, hydrate } = renderHook(() => useErrorTooltip({ hasTooltip: true }));
-
-    hydrate();
+    const { result } = renderHook(() => useErrorTooltip({ hasTooltip: true }));
 
     expect(result.current.tooltipShown).toBeFalsy();
 

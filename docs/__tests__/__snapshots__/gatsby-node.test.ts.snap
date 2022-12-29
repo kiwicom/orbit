@@ -1,27 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`gatsby-node registering documents should create breadcrumb nodes 1`] = `
-Array [
-  Object {
-    "breadcrumbs": Array [
-      Object {
+[
+  {
+    "breadcrumbs": [
+      {
         "name": "Getting started",
         "url": "/getting-started/",
       },
-      Object {
+      {
         "name": "For designers",
         "url": "/getting-started/for-designers/",
       },
     ],
     "file": "01-getting-started/01-for-designers/01-kiwi.mdx",
   },
-  Object {
-    "breadcrumbs": Array [
-      Object {
+  {
+    "breadcrumbs": [
+      {
         "name": "Getting started",
         "url": "/getting-started/",
       },
-      Object {
+      {
         "name": "For developers",
         "url": "/getting-started/for-developers/",
       },

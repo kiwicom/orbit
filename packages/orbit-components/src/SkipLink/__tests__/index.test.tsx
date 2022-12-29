@@ -5,7 +5,9 @@ import userEvent from "@testing-library/user-event";
 import SkipLink from "..";
 
 describe("SkipLink", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const onClick = jest.fn();
     const links = [
       {
@@ -26,8 +28,8 @@ describe("SkipLink", () => {
     expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
     expect(screen.getByRole("navigation")).toBeInTheDocument();
     expect(screen.getByLabelText("https://www.kiwi.com/en/"));
-    // @ts-expect-error TODO
-    userEvent.click(screen.getByRole("button"), { keyCode: 13 });
+
+    await user.click(screen.getByRole("button"));
     expect(onClick).toHaveBeenCalled();
   });
 });

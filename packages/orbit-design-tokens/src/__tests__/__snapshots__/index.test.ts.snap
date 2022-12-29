@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`defaultTokens should match snapshot 1`] = `
-Object {
+{
   "alertBackgroundCritical": "#FAEAEA",
   "alertBackgroundInfo": "#E8F4FD",
   "alertBackgroundSuccess": "#EAF5EA",

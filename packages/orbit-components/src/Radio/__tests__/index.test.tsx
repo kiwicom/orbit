@@ -5,7 +5,9 @@ import userEvent from "@testing-library/user-event";
 import Radio from "..";
 
 describe(`Radio`, () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const label = "Radio";
     const onChange = jest.fn();
     const value = "option";
@@ -34,7 +36,7 @@ describe(`Radio`, () => {
     expect(radio).toHaveAttribute("readonly");
     expect(radio).toHaveAttribute("data-state", "ok");
     expect(screen.getByDisplayValue(value)).toBeInTheDocument();
-    userEvent.click(radio);
+    await user.click(radio);
     expect(onChange).toHaveBeenCalled();
   });
 

@@ -14,6 +14,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
+import useRandomId from "../hooks/useRandomId";
 import type { Props } from "./types";
 
 const getSelectSize = ({ theme, size }: { theme: Theme; size: Size }) => {
@@ -42,6 +43,8 @@ interface StyledSelectType extends Partial<Props>, DataAttrs {
   children: React.ReactNode;
   error?: React.ReactNode;
   filled: boolean;
+  ariaDescribedby?: string;
+  ariaInvalid?: boolean;
 }
 
 const StyledSelect = styled(
@@ -62,6 +65,8 @@ const StyledSelect = styled(
         id,
         dataAttrs,
         readOnly,
+        ariaDescribedby,
+        ariaInvalid,
       },
       ref,
     ) => (
@@ -80,6 +85,8 @@ const StyledSelect = styled(
         name={name}
         tabIndex={tabIndex ? Number(tabIndex) : undefined}
         ref={ref}
+        aria-describedby={ariaDescribedby}
+        aria-invalid={ariaInvalid}
         {...dataAttrs}
       >
         {children}
@@ -287,6 +294,9 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
   } = props;
   const filled = !(value == null || value === "");
 
+  const forID = useRandomId();
+  const selectId = id || forID;
+
   const {
     tooltipShown,
     tooltipShownHover,
@@ -339,11 +349,13 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           filled={filled}
           customValueText={customValueText}
           tabIndex={tabIndex ? Number(tabIndex) : undefined}
-          id={id}
+          id={selectId}
           readOnly={readOnly}
           required={required}
           ref={ref}
           dataAttrs={dataAttrs}
+          ariaDescribedby={shown ? `${selectId}-feedback` : undefined}
+          ariaInvalid={error ? true : undefined}
         >
           {placeholder && (
             <option label={placeholder.toString()} value="">
@@ -366,6 +378,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
       </SelectContainer>
       {!insideInputGroup && (
         <ErrorFormTooltip
+          id={`${selectId}-feedback`}
           help={help}
           error={error}
           inputSize={size}

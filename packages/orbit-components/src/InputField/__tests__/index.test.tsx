@@ -59,6 +59,7 @@ describe("InputField", () => {
     expect(input).toHaveAttribute("data-recording-ignore");
     expect(input).toHaveAttribute("id", "id");
     expect(input).toHaveAttribute("data-state", "ok");
+    expect(input).not.toBeInvalid();
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByTestId("prefix")).toBeInTheDocument();
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
@@ -142,10 +143,12 @@ describe("InputField", () => {
       expect(input).toHaveAttribute("min", "1");
       expect(input).toHaveAttribute("max", "5");
       expect(input).toHaveAttribute("data-state", "error");
+      expect(input).toBeInvalid();
 
       userEvent.tab();
       expect(screen.queryByTestId("help")).not.toBeInTheDocument();
       expect(screen.getByTestId("error")).toBeInTheDocument();
+      expect(input).toHaveDescription("Something went wrong.");
       // Needs to flush async `floating-ui` hooks
       // https://github.com/floating-ui/floating-ui/issues/1520
       await act(async () => {});

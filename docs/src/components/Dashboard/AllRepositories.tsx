@@ -9,8 +9,7 @@ import { SchemeTrackingNode } from "./interfaces";
 const AllRepositories = ({ location }: PageRendererProps) => {
   const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
     query AllRepositoriesTracking {
-      # get only the latest
-      allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
+      allTracking(sort: { createdAt: DESC }, limit: 8) {
         nodes {
           fields {
             currentComponents

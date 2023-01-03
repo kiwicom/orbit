@@ -28,7 +28,7 @@ const ComponentPage = ({ location }) => {
 
   const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
     query TrackingComponentQuery {
-      allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
+      allTracking(sort: { createdAt: DESC }, limit: 8) {
         nodes {
           createdAt
           name

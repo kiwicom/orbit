@@ -17,7 +17,7 @@ jest.mock("gatsby-source-filesystem", () => {
   const { basename } = require("path");
   return {
     createFilePath: ({ node }) =>
-      `/${node.parent.relativeDirectory}/${basename(node.fileAbsolutePath)}/`,
+      `/${node.parent.relativeDirectory}/${basename(node.internal.contentFilePath)}/`,
   };
 });
 
@@ -47,7 +47,7 @@ function getMetaFileNode(relativePath) {
 
 function getMdxNode(relativePath, frontmatter) {
   return {
-    internal: { type: "Mdx" },
+    internal: { type: "Mdx", contentFilePath: path.join(ROOT, relativePath) },
     fileAbsolutePath: path.join(ROOT, relativePath),
     frontmatter,
     fields: {},

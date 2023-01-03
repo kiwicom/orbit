@@ -60,7 +60,6 @@ const config: GatsbyConfig = {
         path: path.resolve("src/pages"),
       },
     },
-    "gatsby-remark-images",
     {
       resolve: "gatsby-plugin-mdx",
       options: {
@@ -99,8 +98,10 @@ const config: GatsbyConfig = {
             },
           },
         ],
-        remarkPlugins: [deflist],
-        rehypePlugins: [],
+        mdxOptions: {
+          remarkPlugins: [deflist],
+          rehypePlugins: [],
+        },
       },
     },
     "gatsby-plugin-image",

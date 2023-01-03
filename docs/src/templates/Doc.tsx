@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, PageRendererProps } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import DocLayout from "../components/DocLayout";
 import { TabObject } from "../components/Tabs";
@@ -21,7 +20,6 @@ interface Props extends PageRendererProps {
           url: string;
         }>;
       };
-      body: string;
     };
     tabs: {
       nodes: {
@@ -35,10 +33,11 @@ interface Props extends PageRendererProps {
       }[];
     };
   };
+  children: unknown;
 }
 
-export default function Doc({ data, location }: Props) {
-  const { fields, body } = data.mdx;
+export default function Doc({ data, location, children }: Props) {
+  const { fields } = data.mdx;
   const tabs = data.tabs.nodes[0].fields.tabCollection !== null ? data.tabs.nodes : [];
   const usedTabs: TabObject[] = tabs.map(tab => ({
     slug: tab.fields.slug,
@@ -58,7 +57,7 @@ export default function Doc({ data, location }: Props) {
       hasStorybook={fields.hasStorybook}
       storybookLink={fields.storybookLink}
     >
-      <MDXRenderer>{body}</MDXRenderer>
+      {children}
     </DocLayout>
   );
 }
@@ -79,11 +78,10 @@ export const query = graphql`
           url
         }
       }
-      body
     }
     tabs: allMdx(
       filter: { fields: { tabCollection: { eq: $tabs } } }
-      sort: { fields: fileAbsolutePath }
+      sort: { internal: { contentFilePath: ASC } }
     ) {
       nodes {
         frontmatter {

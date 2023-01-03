@@ -25,7 +25,7 @@ const ContributorsComponent = () => {
     graphql`
       query CollaboratorsQuery {
         allContributor(filter: { core: { eq: true } }) {
-          group(field: active) {
+          group(field: { active: SELECT }) {
             nodes {
               id
               name

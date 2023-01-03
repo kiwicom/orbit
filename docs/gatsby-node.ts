@@ -172,7 +172,7 @@ export const onCreateNode = async ({ cache, node, getNode, actions, reporter }) 
     if (node.fields.collection === "documentation") {
       let documentBreadcrumbs;
 
-      if (hasTabs && path.basename(node.fileAbsolutePath).startsWith("01-")) {
+      if (hasTabs && path.basename(node.internal.contentFilePath).startsWith("01-")) {
         documentBreadcrumbs = await getDocumentBreadcrumbs(cache, node.fields.slug);
       } else {
         documentBreadcrumbs = await getDocumentBreadcrumbs(cache, getParentUrl(node.fields.slug));
@@ -212,6 +212,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
             slug
             tabCollection
           }
+          internal {
+            contentFilePath
+          }
         }
       }
     }
@@ -238,10 +241,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
   }
 
   // @ts-expect-error TODO
-  result.data.allMdx.nodes.forEach(({ id, fields }) => {
+  result.data.allMdx.nodes.forEach(({ id, fields, internal }) => {
     createPage({
       path: fields.slug,
-      component: `${process.cwd()}/src/templates/Doc.tsx`,
+      component: `${process.cwd()}/src/templates/Doc.tsx?__contentFilePath=${
+        internal.contentFilePath
+      }`,
       context: { id, tabs: fields.tabCollection },
     });
   });

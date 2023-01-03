@@ -87,7 +87,7 @@ export default function SearchModal({ onClose }: Props) {
 
   const data: QueryResponse = useStaticQuery(graphql`
     query Documents {
-      allMdx(filter: { fileAbsolutePath: { regex: "/documentation/" } }) {
+      allMdx(filter: { internal: { contentFilePath: { regex: "/documentation/" } } }) {
         nodes {
           fields {
             slug

@@ -83,7 +83,7 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
     query NavigationItems {
       allMdx(
         filter: { fields: { collection: { eq: "documentation" } } }
-        sort: { fields: fileAbsolutePath }
+        sort: { internal: { contentFilePath: ASC } }
       ) {
         nodes {
           id

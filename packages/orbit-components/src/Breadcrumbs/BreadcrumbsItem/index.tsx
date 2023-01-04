@@ -24,11 +24,8 @@ const StyledBreadcrumbsItemAnchor = styled(({ component, children, isClickable, 
       transition: color ${theme.orbit.durationFast} ease-in-out;
       cursor: pointer;
       border: none;
-      background-color: inherit;
       padding: 0;
       outline-offset: 1px;
-      font-size: inherit;
-      font-weight: inherit;
 
       &:hover {
         text-decoration: none;

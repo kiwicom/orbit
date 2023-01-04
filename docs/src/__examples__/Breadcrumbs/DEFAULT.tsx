@@ -26,11 +26,6 @@ export default {
           defaultValue: "none",
           options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
         },
-        {
-          name: "href",
-          type: "text",
-          defaultValue: "",
-        },
       ],
     },
   ],

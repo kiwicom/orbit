@@ -39,6 +39,12 @@ export default {
           <Text>8 kg personal item</Text>
         </Inline>
       </Tile>
+      <Tile title="Extended baggage bundle">
+        <Inline>
+          <BaggagePersonal />
+          <Text>Up to 40kg personal item</Text>
+        </Inline>
+      </Tile>
     </HorizontalScroll>
   ),
   exampleKnobs: [

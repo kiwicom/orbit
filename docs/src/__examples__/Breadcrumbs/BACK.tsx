@@ -31,11 +31,6 @@ export default {
           type: "text",
           defaultValue: "",
         },
-        {
-          name: "href",
-          type: "text",
-          defaultValue: "",
-        },
       ],
     },
   ],

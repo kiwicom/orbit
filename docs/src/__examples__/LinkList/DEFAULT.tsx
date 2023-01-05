@@ -39,7 +39,7 @@ export default {
         {
           name: "direction",
           type: "select",
-          defaultValue: "column",
+          defaultValue: "row",
           options: ["row", "column"],
         },
         {

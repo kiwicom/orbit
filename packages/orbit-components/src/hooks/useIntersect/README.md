@@ -1,7 +1,5 @@
 # useIntersect
 
-Note: This hook uses `Intersection Observer API` and it's not supported in [IE 10 and 11](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
-
 To implement the `useIntersect` hook in your component, add the import:
 
 ```jsx

@@ -8,11 +8,11 @@ import SelectKnob from "./knobs/Select";
 import TextKnob from "./knobs/Text";
 import IconKnob from "./knobs/Icon";
 import NumberKnob from "./knobs/Number";
-import { ExampleKnob, Knob } from "../Example";
+import { ExampleKnob } from "../Example";
 
 interface Props {
   exampleKnobs: ExampleKnob[];
-  onChange: (val: Record<string, Knob>) => void;
+  onChange: (val: Record<string, Record<string, string | number | boolean>>) => void;
 }
 
 const StyledWrapper = styled.div`

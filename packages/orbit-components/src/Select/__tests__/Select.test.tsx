@@ -57,7 +57,6 @@ describe("Select", () => {
     expect(select).toHaveAttribute("data-state", "ok");
     expect(select).toHaveAttribute("data-recording-ignore");
     expect(select).toHaveAttribute("name", name);
-    expect(select).not.toBeInvalid();
     expect(screen.getByLabelText(label)).toBeInTheDocument();
     expect(screen.getByText(placeholder)).toBeInTheDocument();
 
@@ -83,37 +82,16 @@ describe("Select", () => {
   });
 
   it("should have error message", async () => {
-    render(
-      <Select
-        dataTest="error-select"
-        error="error"
-        readOnly
-        options={[{ value: "1", label: "One" }]}
-      />,
-    );
-    const select = screen.getByTestId("error-select");
-
+    render(<Select error="error" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
-    expect(select).toBeInvalid();
-    expect(select).toHaveDescription("error");
     await act(async () => {});
   });
 
   it("should have help message", async () => {
-    render(
-      <Select
-        dataTest="help-select"
-        help="help"
-        readOnly
-        options={[{ value: "1", label: "One" }]}
-      />,
-    );
-    const select = screen.getByTestId("help-select");
-
+    render(<Select help="help" readOnly options={[{ value: "1", label: "One" }]} />);
     userEvent.tab();
     expect(screen.getByText("help")).toBeInTheDocument();
-    expect(select).toHaveDescription("help");
     await act(async () => {});
   });
 

@@ -30,7 +30,6 @@ const StyledBoard = styled.div<{ isOpened: boolean; isFullScreen: boolean }>`
 `;
 
 interface Props {
-  pageId?: string;
   code: string;
   isFullScreen: boolean;
   onOpenFullScreen: () => void;
@@ -48,7 +47,6 @@ interface Props {
 }
 
 const Board = ({
-  pageId,
   background,
   code,
   variants,

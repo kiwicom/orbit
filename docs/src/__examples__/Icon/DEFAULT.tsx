@@ -11,7 +11,7 @@ export default {
           name: "size",
           type: "select",
           options: ["small", "medium", "large"],
-          defaultValue: "small",
+          defaultValue: "medium",
         },
         {
           name: "customColor",

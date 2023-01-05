@@ -149,7 +149,6 @@ const Example = ({
       </StyledWrapperFrame>
       <Board
         background={selectedBackground}
-        pageId={exampleId}
         isFullScreen={isFullScreen}
         isEditorOpened={isEditorOpened}
         isPlaygroundOpened={isPlaygroundOpened}

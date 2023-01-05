@@ -90,15 +90,5 @@ export default {
         },
       ],
     },
-    {
-      component: "WizardStep",
-      knobs: [
-        {
-          name: "title",
-          type: "text",
-          defaultValue: "",
-        },
-      ],
-    },
   ],
 };

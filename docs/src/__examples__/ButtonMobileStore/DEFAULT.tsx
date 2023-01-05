@@ -24,7 +24,6 @@ export default {
           defaultValue: "googlePlay",
           options: ["appStore", "googlePlay"],
         },
-        { name: "variant", type: "select", defaultValue: "dark", options: ["dark", "light"] },
       ],
     },
   ],

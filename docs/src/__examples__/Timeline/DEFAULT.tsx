@@ -18,38 +18,4 @@ export default {
       </TimelineStep>
     </Timeline>
   ),
-  exampleKnobs: [
-    {
-      component: "TimelineStep",
-      knobs: [
-        {
-          name: "type",
-          type: "select",
-          defaultValue: "success",
-          options: ["success", "warning", "critical"],
-        },
-        {
-          name: "direction",
-          type: "select",
-          defaultValue: null,
-          options: ["row", "column"],
-        },
-        {
-          name: "label",
-          type: "text",
-          defaultValue: "Booked",
-        },
-        {
-          name: "asText",
-          type: "boolean",
-          defaultValue: false,
-        },
-        {
-          name: "subLabel",
-          type: "text",
-          defaultValue: "January 3, 10:43",
-        },
-      ],
-    },
-  ],
 };

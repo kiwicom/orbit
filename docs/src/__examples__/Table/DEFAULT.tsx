@@ -51,45 +51,5 @@ export default {
         },
       ],
     },
-    {
-      component: "TableCell",
-      knobs: [
-        {
-          name: "scope",
-          type: "select",
-          defaultValue: "",
-          options: ["col", "row", "colgroup", "rowgroup"],
-          component: "TableCell",
-        },
-        {
-          name: "verticalAlign",
-          type: "select",
-          defaultValue: "",
-          options: ["baseline", "middle", "top", "bottom"],
-          component: "TableCell",
-        },
-        {
-          name: "whiteSpace",
-          type: "select",
-          defaultValue: "",
-          options: ["nowrap", "pre", "pre-line", "normal"],
-          component: "TableCell",
-        },
-        {
-          name: "as",
-          type: "select",
-          defaultValue: "th",
-          options: ["th", "td"],
-          component: "TableCell",
-        },
-        {
-          name: "align",
-          type: "select",
-          defaultValue: "",
-          options: ["left", "center", "right"],
-          component: "TableCell",
-        },
-      ],
-    },
   ],
 };

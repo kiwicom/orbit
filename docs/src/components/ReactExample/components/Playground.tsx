@@ -12,7 +12,7 @@ import { ExampleKnob } from "../Example";
 
 interface Props {
   exampleKnobs: ExampleKnob[];
-  onChange: (val) => void;
+  onChange: (val: Record<string, Record<string, string | number | boolean>>) => void;
 }
 
 const StyledWrapper = styled.div`

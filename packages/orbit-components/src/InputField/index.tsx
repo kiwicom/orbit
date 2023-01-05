@@ -255,26 +255,12 @@ interface StyledInputProps extends Partial<Props> {
   autoCorrect: string;
   autoCapitalize: string;
   ariaLabelledby?: string;
-  ariaDescribedby?: string;
-  ariaInvalid?: boolean;
 }
 
 export const Input = styled(
   React.forwardRef<HTMLInputElement, StyledInputProps>(
     (
-      {
-        type,
-        size,
-        error,
-        help,
-        inlineLabel,
-        dataAttrs,
-        required,
-        ariaLabelledby,
-        ariaDescribedby,
-        ariaInvalid,
-        ...props
-      },
+      { type, size, error, help, inlineLabel, dataAttrs, required, ariaLabelledby, ...props },
       ref,
     ) => {
       return (
@@ -289,8 +275,6 @@ export const Input = styled(
           aria-required={required}
           // in case when there is no label
           aria-labelledby={ariaLabelledby}
-          aria-describedby={ariaDescribedby}
-          aria-invalid={ariaInvalid}
         />
       );
     },
@@ -517,8 +501,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             ref={ref}
             tabIndex={tabIndex}
             ariaLabelledby={!label ? inputId : undefined}
-            ariaDescribedby={shown ? `${inputId}-feedback` : undefined}
-            ariaInvalid={error ? true : undefined}
             inlineLabel={inlineLabel}
             readOnly={readOnly}
             autoCapitalize="off"
@@ -535,7 +517,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         {!insideInputGroup && (
           <ErrorFormTooltip
             help={help}
-            id={`${inputId}-feedback`}
+            id={inputId}
             shown={shown}
             helpClosable={helpClosable}
             onShown={setTooltipShown}

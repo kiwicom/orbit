@@ -44,7 +44,6 @@ describe("Textarea", () => {
     expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
     expect(textarea).toHaveAttribute("rows", "4");
     expect(textarea).toHaveAttribute("name", name);
-    expect(textarea).not.toBeInvalid();
     expect(textarea.parentElement).toHaveStyle({ marginBottom: "12px" });
     expect(textarea).toHaveStyle({ padding: "12px" });
 
@@ -65,13 +64,9 @@ describe("Textarea", () => {
 
   it("should have error", async () => {
     render(<Textarea error="error" size="small" />);
-    const textarea = screen.getByRole("textbox");
-
     userEvent.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
-    expect(textarea).toHaveStyle({ padding: "8px 12px" });
-    expect(textarea).toBeInvalid();
-    expect(textarea).toHaveDescription("error");
+    expect(screen.getByRole("textbox")).toHaveStyle({ padding: "8px 12px" });
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
     await act(async () => {});

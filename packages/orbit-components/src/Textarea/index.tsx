@@ -13,7 +13,6 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
-import useRandomId from "../hooks/useRandomId";
 
 const Field = styled.label<{ fullHeight?: boolean; spaceAfter?: Common.SpaceAfterSizes }>`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
@@ -146,9 +145,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     required,
   }: Props = props;
 
-  const forID = useRandomId();
-  const inputId = id || forID;
-
   const {
     tooltipShown,
     tooltipShownHover,
@@ -182,7 +178,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         data-state={getFieldDataState(!!error)}
         data-test={dataTest}
         aria-required={!!required}
-        id={inputId}
+        id={id}
         name={name}
         value={value}
         size={size}
@@ -199,11 +195,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         tabIndex={tabIndex ? Number(tabIndex) : undefined}
         readOnly={readOnly}
         ref={ref}
-        aria-describedby={shown ? `${inputId}-feedback` : undefined}
-        aria-invalid={error ? true : undefined}
       />
       <ErrorFormTooltip
-        id={`${inputId}-feedback`}
         help={help}
         inputSize={size}
         helpClosable={helpClosable}

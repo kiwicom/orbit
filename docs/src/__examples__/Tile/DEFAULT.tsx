@@ -6,7 +6,6 @@ export default {
   Example: () => (
     <Tile
       href="https://orbit.kiwi/design-patterns/progressive-disclosure/"
-      icon={<Visibility />}
       title="Read more about progressive disclosure"
     >
       <Text>Content</Text>

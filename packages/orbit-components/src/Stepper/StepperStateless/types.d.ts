@@ -13,7 +13,6 @@ export interface Props extends SharedProps, Common.Globals {
   readonly disabledIncrement?: boolean;
   readonly disabledDecrement?: boolean;
   readonly onKeyDown?: InputEvent;
-  readonly size?: "small" | "normal";
   readonly onDecrement?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
   readonly onIncrement?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
   readonly onChange?: InputEvent;

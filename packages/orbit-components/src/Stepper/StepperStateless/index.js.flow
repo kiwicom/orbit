@@ -6,7 +6,6 @@ import type { SharedProps } from "../index.js.flow";
 export type StateLessProps = {|
   ...SharedProps,
   +value: number | string | (() => string),
-  +size?: "small" | "normal",
   +disabledIncrement?: boolean,
   +disabledDecrement?: boolean,
   +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,

@@ -24,7 +24,11 @@ export default {
       component: "InputFile",
       knobs: [
         { name: "error", type: "text", defaultValue: "" },
-        { name: "help", type: "text", defaultValue: "" },
+        {
+          name: "help",
+          type: "text",
+          defaultValue: "Select a photo in one of the following types .png,.jpg,.jpeg,.webp",
+        },
         { name: "fileName", type: "text", defaultValue: "" },
         { name: "required", type: "boolean", defaultValue: false },
         { name: "buttonLabel", type: "text", defaultValue: "Select photo" },

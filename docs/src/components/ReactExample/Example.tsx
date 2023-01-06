@@ -1,6 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { Portal } from "@kiwicom/orbit-components";
+import { format } from "prettier/standalone";
+import parserBabel from "prettier/parser-babel";
 
 import { StyledAnchor } from "../HeadingWithLink";
 import Editor from "./components/Editor";
@@ -160,6 +162,7 @@ const Example = ({
         onOpenEditor={() => {
           setOpenEditor(prev => !prev);
           setPlaygroundOpened(false);
+          onChangeCode(format(code, { parser: "babel", plugins: [parserBabel] }));
           setVariantsOpened(false);
         }}
         onOpenPlayground={() => {

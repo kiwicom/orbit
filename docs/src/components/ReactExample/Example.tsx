@@ -86,26 +86,24 @@ export interface Variant {
 }
 
 interface Props extends InitialProps {
+  defaultCode: string;
   responsive?: boolean;
   imports: string;
-  code: string;
   exampleName: string;
   exampleKnobs: ExampleKnob[];
   exampleVariants: Variant[];
-  onChangeCode: (code: string) => void;
 }
 
 const Example = ({
   responsive = true,
   exampleId,
+  defaultCode,
   exampleKnobs,
   exampleName,
   exampleVariants,
   height,
-  code,
   imports,
   background,
-  onChangeCode,
 }: Props) => {
   const [isEditorOpened, setOpenEditor] = React.useState(false);
   const [isFullScreen, setFullScreen] = React.useState(false);
@@ -118,7 +116,12 @@ const Example = ({
   const [selectedBackground, setSelectedBackground] = React.useState<BgType>("white");
   const [width, setPreviewWidth] = React.useState<number | string>(0);
   const handleChangeRulerSize = React.useCallback(size => setPreviewWidth(size), []);
-  const { origin } = useSandbox(exampleId.toLowerCase());
+  const { origin, code, updateLocalStorage, restoreLocalStorage } = useSandbox(
+    exampleName.toLowerCase(),
+    defaultCode,
+  );
+
+  const [isRestored, setRestored] = React.useState(false);
 
   const handleKeyDown = React.useCallback(
     (ev: KeyboardEvent) => {
@@ -161,13 +164,22 @@ const Example = ({
         onOpenFullScreen={() => setFullScreen(!isFullScreen)}
         onOpenEditor={() => {
           setOpenEditor(prev => !prev);
+          setRestored(false);
           setPlaygroundOpened(false);
-          onChangeCode(format(code, { parser: "babel", plugins: [parserBabel] }));
+          updateLocalStorage(format(code, { parser: "babel", plugins: [parserBabel] }));
           setVariantsOpened(false);
         }}
         onOpenPlayground={() => {
+          setRestored(false);
           setOpenEditor(false);
           setPlaygroundOpened(prev => !prev);
+        }}
+        onRestoreToDefault={() => {
+          setRestored(true);
+          restoreLocalStorage();
+          setPlaygroundOpened(false);
+          setOpenEditor(true);
+          updateLocalStorage(defaultCode);
         }}
         knobs={exampleKnobs.length > 0}
         variants={exampleVariants}
@@ -175,16 +187,18 @@ const Example = ({
         onChangeVariant={variant => {
           setCurrentVariant(variant);
           const variantCode = exampleVariants.find(({ name }) => name === variant)?.code;
-          if (variantCode) onChangeCode(variantCode);
+          if (variantCode) updateLocalStorage(variantCode);
         }}
         code={code}
       />
-      {isEditorOpened && <Editor onChange={onChangeCode} code={code} isFullScreen={isFullScreen} />}
+      {isEditorOpened && (
+        <Editor onChange={updateLocalStorage} code={code} isFullScreen={isFullScreen} />
+      )}
       {isPlaygroundOpened && exampleKnobs && exampleKnobs.length > 0 && (
         <Playground
           exampleId={exampleName.toLowerCase()}
           onChange={knob => {
-            if (knob) onChangeCode(transform(exampleName, code, knob));
+            if (knob && !isRestored) updateLocalStorage(transform(exampleName, code, knob));
           }}
           exampleKnobs={exampleKnobs}
         />

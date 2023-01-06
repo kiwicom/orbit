@@ -2,30 +2,48 @@ import React from "react";
 
 import { load, save } from "../utils/storage";
 
-const useSandbox = (exampleId: string, receivedCode?: string) => {
+const useSandbox = (exampleId: string, initialCode: string) => {
   const [code, setCode] = React.useState(() => {
-    return receivedCode || load(exampleId) || "";
+    try {
+      const storedCode = load(exampleId);
+      return storedCode || initialCode;
+    } catch (err) {
+      console.error(err);
+      return initialCode;
+    }
   });
 
   const [origin, setOrigin] = React.useState("");
 
   React.useEffect(() => {
-    if (code) save(exampleId, code);
-  }, [code, exampleId]);
-
-  React.useEffect(() => {
     setOrigin(window.location.origin);
 
-    const handleStorage = (ev: StorageEvent) => {
-      if (ev.key === exampleId && ev.newValue) {
-        setCode(ev.newValue);
+    window.addEventListener("storage", e => {
+      if (e.key === exampleId && e.newValue) {
+        setCode(e.newValue);
       }
-    };
-    window.addEventListener("storage", handleStorage);
-    return () => window.removeEventListener("storage", handleStorage);
-  }, [exampleId, receivedCode]);
+    });
+  }, [exampleId]);
 
-  return { code, origin, setCode };
+  const updateLocalStorage = (newCode: string) => {
+    try {
+      save(exampleId, newCode);
+      setCode(newCode);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const restoreLocalStorage = () => {
+    try {
+      window.localStorage.removeItem(exampleId);
+      setCode(initialCode);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  return { code, origin, updateLocalStorage, restoreLocalStorage };
 };
 
 export default useSandbox;

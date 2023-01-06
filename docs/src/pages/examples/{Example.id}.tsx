@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
 const PureSandbox = ({ data }) => {
   const { example, example_id, scope } = data.allExample.nodes[0];
-  const { code } = useSandbox(example_id);
+  const { code } = useSandbox(example_id, example.example);
   const modules = getModules(scope);
 
   return (

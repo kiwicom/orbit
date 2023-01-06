@@ -7,7 +7,7 @@ import {
   Popover,
   Radio,
 } from "@kiwicom/orbit-components";
-import { ChevronUp, ChevronDown, Close } from "@kiwicom/orbit-components/icons";
+import { ChevronUp, ChevronDown, Close, Reload } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 
 import Variants from "./Variants";
@@ -42,6 +42,7 @@ interface Props {
   variants: Variant[];
   background: BgType;
   onSelectBackground: (value: BgType) => void;
+  onRestoreToDefault: () => void;
   onOpenPlayground: () => void;
   onChangeVariant: (variant: string) => void;
   onOpenEditor: () => void;
@@ -52,6 +53,7 @@ const Board = ({
   code,
   variants,
   currentVariant,
+  onRestoreToDefault,
   isFullScreen,
   isVariantsOpened,
   isEditorOpened,
@@ -134,6 +136,11 @@ const Board = ({
           )}
         </Stack>
         <Stack inline justify="end" align="center" spacing="none">
+          <Tooltip content="Restore to default">
+            <ButtonLink type="secondary" title="Restore to default" onClick={onRestoreToDefault}>
+              <Reload size="large" />
+            </ButtonLink>
+          </Tooltip>
           <Tooltip content={isCopied ? "copied" : "Copy to clipboard"}>
             <ButtonLink
               onClick={() => copy([imports, code].join("\n"))}

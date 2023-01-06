@@ -29,21 +29,23 @@ const StyledKnobsWrapper = styled.div`
   align-items: center;
 `;
 
-const Playground = ({ exampleId, exampleKnobs, onChange }: Props) => {
-  const [values, setValues] = React.useState(() => {
-    const defaultVals = {};
+const getKnobsValues = (knobsArr: ExampleKnob[], exampleId: string) => {
+  const values = {};
+  const properties = getProperties(exampleId, load(exampleId) || "");
 
-    const properties = getProperties(exampleId, load(exampleId) || "");
-
-    exampleKnobs.forEach(({ component, knobs }) => {
-      knobs.forEach(({ defaultValue, name }) => {
-        if (!isEmpty(properties)) set(defaultVals, [component, name], properties[component][name]);
-        else set(defaultVals, [component, name], defaultValue);
-      });
+  knobsArr.forEach(({ component, knobs }) => {
+    knobs.forEach(({ defaultValue, name }) => {
+      if (!isEmpty(properties[component])) {
+        set(values, [component, name], properties[component][name]);
+      } else set(values, [component, name], defaultValue);
     });
-
-    return defaultVals;
   });
+
+  return values;
+};
+
+const Playground = ({ exampleId, exampleKnobs, onChange }: Props) => {
+  const [values, setValues] = React.useState(() => getKnobsValues(exampleKnobs, exampleId));
 
   const handleChangeKnob = ({
     component,

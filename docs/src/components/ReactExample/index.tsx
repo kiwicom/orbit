@@ -50,8 +50,6 @@ const ReactExample = ({ exampleId, responsive = true, background = "white", heig
   const key = exampleId.toLowerCase();
   const example = allExample.nodes.find(({ example_id }) => example_id === key);
 
-  const { setCode, code } = useSandbox(exampleId.toLowerCase(), example ? example.example : "");
-
   if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
 
   const imports = copyImports(example.scope);
@@ -66,8 +64,7 @@ const ReactExample = ({ exampleId, responsive = true, background = "white", heig
       exampleVariants={example.exampleVariants}
       exampleId={example.id}
       exampleName={exampleId}
-      code={code}
-      onChangeCode={setCode}
+      defaultCode={example.example}
     />
   );
 };

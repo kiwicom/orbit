@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "@kiwicom/orbit-components";
-import { set, sortBy } from "lodash";
+import { set, sortBy, isEmpty } from "lodash";
 
 import BooleanKnob from "./knobs/Boolean";
 import SelectKnob from "./knobs/Select";
@@ -37,7 +37,7 @@ const Playground = ({ exampleId, exampleKnobs, onChange }: Props) => {
 
     exampleKnobs.forEach(({ component, knobs }) => {
       knobs.forEach(({ defaultValue, name }) => {
-        if (properties) set(defaultVals, [component, name], properties[name]);
+        if (!isEmpty(properties)) set(defaultVals, [component, name], properties[name]);
         else set(defaultVals, [component, name], defaultValue);
       });
     });

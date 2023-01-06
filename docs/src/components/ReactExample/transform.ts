@@ -9,25 +9,6 @@ import type {
 } from "@babel/types";
 import fp from "lodash/fp";
 
-const parseArrayOfObjectProps = (props: ObjectProperty[]) => {
-  return props.reduce((acc, prop) => {
-    if (prop.type === "ObjectProperty") {
-      const { key, value } = prop;
-      if (key.type === "Identifier") {
-        if (
-          value.type === "NumericLiteral" ||
-          value.type === "StringLiteral" ||
-          value.type === "BooleanLiteral"
-        ) {
-          acc[key.name] = value.value;
-        }
-      }
-    }
-
-    return acc;
-  }, {});
-};
-
 export const transform = (
   exampleName: string,
   code: string,
@@ -107,7 +88,7 @@ export const transform = (
 };
 
 export const getProperties = (exampleName: string, example: string) => {
-  const result: ObjectProperty[] = [];
+  const result = {};
 
   babelTransform(example, {
     filename: exampleName,
@@ -120,13 +101,26 @@ export const getProperties = (exampleName: string, example: string) => {
             CallExpression: path => {
               const { node } = path;
               if (t.isMemberExpression(node.callee)) {
-                const [, props] = node.arguments;
-                if (t.isObjectExpression(props)) {
-                  props.properties.forEach((prop: ObjectProperty) => {
-                    if (t.isObjectProperty(prop)) {
-                      result.push(prop);
-                    }
-                  });
+                const [identifier, props] = node.arguments;
+                if (identifier && identifier.name) {
+                  result[identifier.name] = {};
+                  if (t.isObjectExpression(props)) {
+                    props.properties.forEach((prop: ObjectProperty) => {
+                      if (t.isObjectProperty(prop)) {
+                        const { key, value } = prop;
+                        if (t.isIdentifier(key)) {
+                          if (
+                            value.type === "NumericLiteral" ||
+                            value.type === "StringLiteral" ||
+                            value.type === "BooleanLiteral"
+                          ) {
+                            // @ts-expect-error it's identifier
+                            result[identifier.name][key.name] = value.value;
+                          }
+                        }
+                      }
+                    });
+                  }
                 }
               }
             },
@@ -136,5 +130,5 @@ export const getProperties = (exampleName: string, example: string) => {
     ],
   });
 
-  return parseArrayOfObjectProps(result);
+  return result;
 };

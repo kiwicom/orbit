@@ -134,7 +134,7 @@
 - component: Collapse
   figma: Designing
   react: Released
-  ios: Planned
+  ios: Released
   android: N/A
   docs: Released
   group: Interaction

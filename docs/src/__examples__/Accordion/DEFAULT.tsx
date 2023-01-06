@@ -116,12 +116,5 @@ export default {
       component: "Accordion",
       knobs: [{ name: "loading", type: "boolean", defaultValue: false }],
     },
-    {
-      component: "AccordionSection",
-      knobs: [
-        { name: "expanded", type: "boolean", defaultValue: false },
-        { name: "expandable", type: "boolean", defaultValue: true },
-      ],
-    },
   ],
 };

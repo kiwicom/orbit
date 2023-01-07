@@ -608,7 +608,7 @@
   docs: Planned
 - component: SegmentedSwitch
   android: Released
-  ios: Planned
+  ios: Released
   figma: Released
   react: Released
   docs: Released

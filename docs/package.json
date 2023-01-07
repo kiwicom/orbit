@@ -27,7 +27,7 @@
     "@babel/runtime": "^7.18.2",
     "@babel/standalone": "^7.18.9",
     "@csstools/convert-colors": "^2.0.0",
-    "@icons-pack/react-simple-icons": "^4.0.0",
+    "@icons-pack/react-simple-icons": "^6.2.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "*",
     "@kiwicom/browserslist-config": "^2.1.0",

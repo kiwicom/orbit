@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "@kiwicom/orbit-components";
-import { set, sortBy } from "lodash";
+import { set, sortBy, isEmpty } from "lodash";
 
 import BooleanKnob from "./knobs/Boolean";
 import SelectKnob from "./knobs/Select";
@@ -9,8 +9,11 @@ import TextKnob from "./knobs/Text";
 import IconKnob from "./knobs/Icon";
 import NumberKnob from "./knobs/Number";
 import { ExampleKnob } from "../Example";
+import { getProperties } from "../transform";
+import { load } from "../../../utils/storage";
 
 interface Props {
+  exampleId: string;
   exampleKnobs: ExampleKnob[];
   onChange: (val: Record<string, Record<string, string | number | boolean>>) => void;
 }
@@ -26,18 +29,23 @@ const StyledKnobsWrapper = styled.div`
   align-items: center;
 `;
 
-const Playground = ({ exampleKnobs, onChange }: Props) => {
-  const [values, setValues] = React.useState(() => {
-    const defaultVals = {};
+const getKnobsValues = (knobsArr: ExampleKnob[], exampleId: string) => {
+  const values = {};
+  const properties = getProperties(exampleId, load(exampleId) || "");
 
-    exampleKnobs.forEach(({ component, knobs }) => {
-      knobs.forEach(({ defaultValue, name }) => {
-        set(defaultVals, [component, name], defaultValue);
-      });
+  knobsArr.forEach(({ component, knobs }) => {
+    knobs.forEach(({ defaultValue, name }) => {
+      if (!isEmpty(properties[component])) {
+        set(values, [component, name], properties[component][name]);
+      } else set(values, [component, name], defaultValue);
     });
-
-    return defaultVals;
   });
+
+  return values;
+};
+
+const Playground = ({ exampleId, exampleKnobs, onChange }: Props) => {
+  const [values, setValues] = React.useState(() => getKnobsValues(exampleKnobs, exampleId));
 
   const handleChangeKnob = ({
     component,

@@ -18,4 +18,17 @@ export default {
       </TimelineStep>
     </Timeline>
   ),
+  exampleKnobs: [
+    {
+      component: "Timeline",
+      knobs: [
+        {
+          name: "direction",
+          type: "select",
+          defaultValue: null,
+          options: ["row", "column"],
+        },
+      ],
+    },
+  ],
 };

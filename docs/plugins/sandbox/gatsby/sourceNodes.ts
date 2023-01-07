@@ -14,9 +14,9 @@ export default async (
     const { createNode } = actions;
     const files = await globby(`${folder}/**/*.tsx`);
 
-    files.forEach(file => {
+    files.forEach((file: string) => {
       const { name } = path.parse(file);
-      const getProperty = (content, prop) => getByName(getAst(content, file), prop);
+      const getProperty = (content: string, prop: string) => getByName(getAst(content, file), prop);
 
       const exampleFolder = path.dirname(file).split("/").slice(-1).join("").toLowerCase();
       const content = fs.readFileSync(file, "utf-8");
@@ -25,7 +25,7 @@ export default async (
       const example = getProperty(content, "Example");
       const knobCode = getProperty(content, "exampleKnobs");
       const variants = getProperty(content, "exampleVariants");
-      const formatSource = source =>
+      const formatSource = (source: string) =>
         format(source, { parser: "json-stringify", quoteProps: "consistent" });
 
       // eslint-disable-next-line no-eval

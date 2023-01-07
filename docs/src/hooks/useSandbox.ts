@@ -1,24 +1,49 @@
 import React from "react";
 
-const useSandbox = (exampleId: string) => {
-  const [code, setCode] = React.useState("");
+import { load, save } from "../utils/storage";
+
+const useSandbox = (exampleId: string, initialCode: string) => {
+  const [code, setCode] = React.useState(() => {
+    try {
+      const storedCode = load(exampleId);
+      return storedCode || initialCode;
+    } catch (err) {
+      console.error(err);
+      return initialCode;
+    }
+  });
+
   const [origin, setOrigin] = React.useState("");
 
   React.useEffect(() => {
-    const example = exampleId.toLowerCase();
-    setCode(window.localStorage.getItem(example) || "");
     setOrigin(window.location.origin);
 
-    const handleStorage = (ev: StorageEvent) => {
-      if (ev.key === example && ev.newValue) {
-        setCode(ev.newValue);
+    window.addEventListener("storage", e => {
+      if (e.key === exampleId && e.newValue) {
+        setCode(e.newValue);
       }
-    };
-    window.addEventListener("storage", handleStorage);
-    return () => window.removeEventListener("storage", handleStorage);
+    });
   }, [exampleId]);
 
-  return { code, origin, setCode };
+  const updateLocalStorage = (newCode: string) => {
+    try {
+      save(exampleId, newCode);
+      setCode(newCode);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const restoreLocalStorage = () => {
+    try {
+      window.localStorage.removeItem(exampleId);
+      setCode(initialCode);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  return { code, origin, updateLocalStorage, restoreLocalStorage };
 };
 
 export default useSandbox;

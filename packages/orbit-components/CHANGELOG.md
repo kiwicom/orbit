@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@5.1.0...@kiwicom/orbit-components@5.2.0) (2023-01-09)
+
+
+### Bug Fixes
+
+* **Breadcrumbs:** make last element always bold ([#3699](https://github.com/kiwicom/orbit/issues/3699)) ([a9ab2aa](https://github.com/kiwicom/orbit/commit/a9ab2aafeaad9e8634094be3735cdf1c8b3a8c2f))
+* **Card:** remove additional padding in CardSection ([#3696](https://github.com/kiwicom/orbit/issues/3696)) ([826cae2](https://github.com/kiwicom/orbit/commit/826cae200206daf52f6042ad9d30561425da9e45))
+* **CarrierLogo:** correct width when inlineStacked ([4bd0bed](https://github.com/kiwicom/orbit/commit/4bd0bed997acf7bc4507456457fdf5c2c34aa8b2))
+* **icons:** add prefixes to icon ids ([#3698](https://github.com/kiwicom/orbit/issues/3698)) ([d585b3d](https://github.com/kiwicom/orbit/commit/d585b3d8529c3fbb07b66bf1e152dc93d2f6ed4e))
+* **Popover:** click outside was not working correctly ([#3702](https://github.com/kiwicom/orbit/issues/3702)) ([eeeeb86](https://github.com/kiwicom/orbit/commit/eeeeb86f7b18dcc37d999744a708c95d2ac2973d))
+* **StepperStateless:** remove size prop from types ([71b6190](https://github.com/kiwicom/orbit/commit/71b619056142c77d38b15251d615ce6608df0e1f))
+
+
+### Features
+
+* **icons:** update icons from figma ([#3709](https://github.com/kiwicom/orbit/issues/3709)) ([16d4b41](https://github.com/kiwicom/orbit/commit/16d4b41d46c8337160c0a41370d8a52c579847a6))
+* **InputField:** add aria-invalid and aria-describedby ([33f4bb6](https://github.com/kiwicom/orbit/commit/33f4bb6688f1ca9a1c065bf9ead56a65952862fd))
+* **Select:** add aria-invalid and aria-describedby ([eb49bb4](https://github.com/kiwicom/orbit/commit/eb49bb4dcbb7d3a5ca90a005622f7dcdc585e07e))
+* **Textarea:** add aria-invalid and aria-describedby ([05f955a](https://github.com/kiwicom/orbit/commit/05f955ac49539ef895c434cf1c628f59c555c3d1))
+
+
+### Reverts
+
+* Revert "Add aria-invalid and aria-describedby to form components (#3706)" ([a7be870](https://github.com/kiwicom/orbit/commit/a7be870faeca4183041c06aae56a9fdb918f386f)), closes [#3706](https://github.com/kiwicom/orbit/issues/3706)
+
+
+
+
+
 # [5.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@5.0.0...@kiwicom/orbit-components@5.1.0) (2022-12-15)
 
 

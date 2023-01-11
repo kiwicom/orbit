@@ -55,18 +55,22 @@ const SegmentedSwitch = ({
   error,
   label,
 }: Props) => {
+  const hasTooltip = Boolean(error || help);
+
   const {
     tooltipShown,
     tooltipShownHover,
     setTooltipShown,
     setTooltipShownHover,
     labelRef,
-  } = useErrorTooltip({ onFocus });
+  } = useErrorTooltip({ onFocus, hasTooltip });
 
   React.useEffect(() => {
-    if (showTooltip) setTooltipShown(true);
-    else setTooltipShown(false);
-  }, [showTooltip]);
+    if (hasTooltip) {
+      if (showTooltip) setTooltipShown(true);
+      else setTooltipShown(false);
+    }
+  }, [showTooltip, hasTooltip, setTooltipShown]);
 
   return (
     <StyledWrapper spaceAfter={spaceAfter} data-test={dataTest} $maxWidth={maxWidth}>
@@ -94,7 +98,7 @@ const SegmentedSwitch = ({
           />
         ))}
       </Stack>
-      {(!!help || !!error) && (
+      {hasTooltip && (
         <ErrorFormTooltip
           help={help}
           error={error}

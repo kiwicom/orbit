@@ -149,6 +149,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
   const forID = useRandomId();
   const inputId = id || forID;
 
+  const hasTooltip = Boolean(error || help);
+
   const {
     tooltipShown,
     tooltipShownHover,
@@ -157,7 +159,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     labelRef,
     iconRef,
     handleFocus,
-  } = useErrorTooltip({ onFocus });
+  } = useErrorTooltip({ onFocus, hasTooltip });
 
   const shown = tooltipShown || tooltipShownHover;
 
@@ -202,16 +204,18 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         aria-describedby={shown ? `${inputId}-feedback` : undefined}
         aria-invalid={error ? true : undefined}
       />
-      <ErrorFormTooltip
-        id={`${inputId}-feedback`}
-        help={help}
-        inputSize={size}
-        helpClosable={helpClosable}
-        error={error}
-        onShown={setTooltipShown}
-        shown={shown}
-        referenceElement={labelRef}
-      />
+      {hasTooltip && (
+        <ErrorFormTooltip
+          id={`${inputId}-feedback`}
+          help={help}
+          inputSize={size}
+          helpClosable={helpClosable}
+          error={error}
+          onShown={setTooltipShown}
+          shown={shown}
+          referenceElement={labelRef}
+        />
+      )}
     </Field>
   );
 });

@@ -126,6 +126,8 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     insideInputGroup,
   } = props;
 
+  const hasTooltip = Boolean(error || help);
+
   const {
     tooltipShown,
     tooltipShownHover,
@@ -134,7 +136,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     labelRef,
     iconRef,
     handleFocus,
-  } = useErrorTooltip({ onFocus });
+  } = useErrorTooltip({ onFocus, hasTooltip });
 
   const shown = tooltipShown || tooltipShownHover;
 
@@ -198,7 +200,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           />
         )}
       </FakeInput>
-      {!insideInputGroup && (
+      {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip
           help={help}
           error={error}

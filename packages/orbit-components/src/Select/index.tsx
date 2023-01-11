@@ -297,6 +297,8 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
   const forID = useRandomId();
   const selectId = id || forID;
 
+  const hasTooltip = Boolean(error || help);
+
   const {
     tooltipShown,
     tooltipShownHover,
@@ -305,7 +307,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     iconRef,
     setTooltipShown,
     handleFocus,
-  } = useErrorTooltip<HTMLSelectElement, HTMLDivElement>({ onFocus });
+  } = useErrorTooltip<HTMLSelectElement, HTMLDivElement>({ onFocus, hasTooltip });
 
   const inputRef = React.useRef<HTMLLabelElement | null>(null);
 
@@ -376,7 +378,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           <ChevronDown color="secondary" />
         </SelectSuffix>
       </SelectContainer>
-      {!insideInputGroup && (
+      {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip
           id={`${selectId}-feedback`}
           help={help}

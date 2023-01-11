@@ -15,12 +15,12 @@ jobs:
       - name: Node
         uses: ./.github/actions/node
 
-      - name: Update tracking
-        uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
+      - name: Update tracking data
+        uses: appleboy/ssh-action@master
         with:
-          SSHKEY: ${{ secrets.SSH_KEY }}
-        run: |
-          yarn tracking build
-          yarn tracking orbit-tracking
-        env:
-          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: ${{ secrets.GITLAB_TOKEN }}
+          script: |
+            yarn tracking build
+            yarn tracking orbit-tracking

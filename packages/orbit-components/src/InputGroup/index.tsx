@@ -46,7 +46,7 @@ const getFakeGroupMarginTop = ({
   theme: typeof defaultTheme;
 }) => {
   if (!label) return false;
-  return `calc(${theme.orbit.lineHeightTextSmall} + ${theme.orbit.spaceXXSmall})`;
+  return `calc(${theme.orbit.lineHeightTextNormal} + ${theme.orbit.spaceXXSmall})`;
 };
 
 const FakeGroup = styled.span<{

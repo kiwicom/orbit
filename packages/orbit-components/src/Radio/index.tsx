@@ -37,8 +37,7 @@ const getBackground = () => ({
   disabled?: boolean;
   checked?: boolean;
 }) => {
-  if (disabled && checked) return theme.orbit.paletteCloudNormal;
-  if (disabled && !checked) return theme.orbit.paletteCloudNormal;
+  if (disabled) return theme.orbit.paletteCloudNormal;
 
   return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
 };
@@ -79,13 +78,14 @@ StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledTextContainer = styled.div`
-  ${({ theme }) => css`
+const StyledTextContainer = styled.div<{ disabled?: boolean }>`
+  ${({ theme, disabled }) => css`
     display: flex;
     flex-direction: column;
     font-weight: ${theme.orbit.fontWeightMedium};
     margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
     flex: 1;
+    opacity: ${disabled ? theme.orbit.opacityRadioButtonDisabled : "1"};
   `}
 `;
 
@@ -155,8 +155,7 @@ const StyledLabel = styled(({ disabled, theme, type, hasError, ...props }) => (
     width: 100%;
     flex-direction: row;
     align-items: self-start;
-    opacity: ${disabled ? theme.orbit.opacityCheckboxDisabled : "1"};
-    cursor: ${disabled ? "default" : "pointer"};
+    cursor: ${disabled ? "not-allowed" : "pointer"};
     position: relative;
 
     ${StyledIconContainer} {
@@ -223,7 +222,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         </StyledIconContainer>,
       )}
       {(label || info) && (
-        <StyledTextContainer>
+        <StyledTextContainer disabled={disabled}>
           {label && <StyledLabelText>{label}</StyledLabelText>}
           {info && <StyledInfo>{info}</StyledInfo>}
         </StyledTextContainer>

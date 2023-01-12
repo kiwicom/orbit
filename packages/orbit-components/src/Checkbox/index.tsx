@@ -63,7 +63,7 @@ const getToken = (name: keyof typeof TOKENS) => ({
 };
 
 const StyledIconContainer = styled.div<{ checked: boolean; disabled: boolean }>`
-  ${({ theme, checked }) => css`
+  ${({ theme, checked, disabled }) => css`
     position: relative;
     box-sizing: border-box;
     flex: 0 0 auto;
@@ -87,7 +87,8 @@ const StyledIconContainer = styled.div<{ checked: boolean; disabled: boolean }>`
     }
 
     &:hover {
-      background-color: ${checked ? theme.orbit.paletteBlueDark : theme.orbit.backgroundInput};
+      background-color: ${!disabled &&
+      (checked ? theme.orbit.paletteBlueDark : theme.orbit.backgroundInput)};
     }
 
     ${media.desktop(css`
@@ -100,11 +101,14 @@ StyledIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledTextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-  flex: 1;
+const StyledTextContainer = styled.div<{ disabled?: boolean }>`
+  ${({ disabled, theme }) => css`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
+    opacity: ${disabled ? theme.orbit.opacityCheckboxDisabled : "1"};
+  `}
 `;
 
 StyledTextContainer.defaultProps = {
@@ -166,32 +170,31 @@ export const StyledLabel = styled(({ className, children, dataTest }) => (
     {children}
   </label>
 ))`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: self-start;
-  opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityCheckboxDisabled : "1")};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  position: relative;
+  ${({ theme, disabled, checked }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: self-start;
+    cursor: ${disabled ? "not-allowed" : "pointer"};
+    position: relative;
 
-  ${StyledIconContainer} {
-    color: ${getToken(TOKENS.iconColor)};
-    border: 1px solid ${getToken(TOKENS.borderColor)};
-  }
+    ${StyledIconContainer} {
+      color: ${getToken(TOKENS.iconColor)};
+      border: 1px solid ${getToken(TOKENS.borderColor)};
+    }
 
-  &:hover ${StyledIconContainer} {
-    border-color: ${({ disabled, theme, checked }) =>
-      !disabled && checked ? theme.orbit.paletteBlueDark : theme.orbit.paletteBlueLightActive};
-    box-shadow: none;
-  }
+    &:hover ${StyledIconContainer} {
+      border-color: ${!disabled &&
+      (checked ? theme.orbit.paletteBlueDark : theme.orbit.paletteBlueLightActive)};
+      box-shadow: none;
+    }
 
-  &:active ${StyledIconContainer} {
-    border-color: ${({ disabled, theme }) =>
-      disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
-    transform: ${({ disabled, theme }) =>
-      !disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
-  }
+    &:active ${StyledIconContainer} {
+      border-color: ${disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
+      transform: ${!disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
+    }
+  `}
 `;
 
 StyledLabel.defaultProps = {
@@ -245,7 +248,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         </StyledIconContainer>,
       )}
       {(label || info) && (
-        <StyledTextContainer>
+        <StyledTextContainer disabled={disabled}>
           {label && <StyledLabelText>{label}</StyledLabelText>}
           {info && <Info>{info}</Info>}
         </StyledTextContainer>

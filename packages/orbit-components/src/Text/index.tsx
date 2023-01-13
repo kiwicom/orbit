@@ -102,6 +102,7 @@ export const StyledText = styled(({ element: TextElement, children, className, d
     text-transform: ${uppercase && `uppercase`};
     text-decoration: ${strikeThrough && `line-through`};
     font-style: ${italic && `italic`};
+    margin: 0;
     ${marginUtility(margin)};
 
     a:not(${StyledTextLink}) {

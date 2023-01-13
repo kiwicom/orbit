@@ -8,7 +8,6 @@ import {
   ALIGN_OPTIONS,
   ELEMENT_OPTIONS,
 } from "./consts";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Text from ".";
@@ -116,7 +115,6 @@ export const Playground = () => {
   const strikeThrough = boolean("StrikeThrough", false);
   const italic = boolean("Italic", false);
   const children = text("Text", customText);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const dataTest = text("dataTest", "test");
   const id = text("id", "ID");
   const withBackground = boolean("withBackground", false);
@@ -134,7 +132,6 @@ export const Playground = () => {
       uppercase={uppercase}
       italic={italic}
       dataTest={dataTest}
-      spaceAfter={spaceAfter}
     >
       {children}
     </Text>

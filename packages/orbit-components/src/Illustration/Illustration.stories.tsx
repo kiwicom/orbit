@@ -4,7 +4,6 @@ import { select, text } from "@storybook/addon-knobs";
 // @ts-expect-error currently not resolving mts properly
 import { NAMES } from "./consts.mts";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
 import type { Name } from "./types";
 
@@ -19,9 +18,8 @@ export const Playground = () => {
   const name = select("Name", Object.values(NAMES), "Accommodation") as Name;
   const dataTest = text("dataTest", "test");
   const alt = text("alt", "");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NORMAL);
   return (
-    <Illustration size={size} name={name} dataTest={dataTest} spaceAfter={spaceAfter} alt={alt} />
+    <Illustration size={size} name={name} dataTest={dataTest} margin={{ bottom: 12 }} alt={alt} />
   );
 };
 

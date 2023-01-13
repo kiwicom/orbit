@@ -4,7 +4,7 @@ import { Card, CardSection } from "@kiwicom/orbit-components";
 export default {
   Example: () => (
     <Card title="Passenger info" description="All passengers in this itinerary">
-      <CardSection title="Yasmin Karenth" description="1st class" />
+      <CardSection title="Yasmin Karenth" expandable description="1st class" />
     </Card>
   ),
   exampleKnobs: [
@@ -23,6 +23,7 @@ export default {
       knobs: [
         { name: "icon", type: "icon", defaultValue: "" },
         { name: "noSeparator", type: "boolean", defaultValue: false },
+        { name: "expandable", type: "boolean", defaultValue: true },
         { name: "initialExpanded", type: "boolean", defaultValue: false },
         { name: "title", type: "text", defaultValue: "Yasmin Karenth" },
         { name: "description", type: "text", defaultValue: "1st class" },

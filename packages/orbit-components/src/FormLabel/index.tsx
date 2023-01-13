@@ -78,7 +78,7 @@ const FormLabel = styled(
     font-size: ${theme.orbit.fontSizeFormLabel};
     font-weight: ${theme.orbit.fontWeightMedium};
     color: ${!filled || disabled ? theme.orbit.colorFormLabel : theme.orbit.colorFormLabelFilled};
-    line-height: ${theme.orbit.lineHeightTextSmall};
+    line-height: ${theme.orbit.lineHeightTextNormal};
     margin-bottom: ${theme.orbit.spaceXXSmall};
   `}
 `;

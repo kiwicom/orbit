@@ -134,6 +134,7 @@ const StyledAlert = styled.div<{
     color: ${theme.orbit.paletteInkDark};
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeTextNormal};
+    line-height: ${theme.orbit.lineHeightTextNormal};
     box-sizing: border-box;
     margin-bottom: ${getSpacingToken};
     border-top: 3px solid ${getTypeToken(TOKENS.colorAccentBorder)};
@@ -166,6 +167,7 @@ const StyledIconContainer = styled.div<{ inlineActions: boolean; type: Type }>`
     color: ${getTypeToken(TOKENS.colorIconAlert)};
     display: ${inlineActions && "flex"};
     align-items: ${inlineActions && "center"};
+    line-height: 1;
 
     ${media.tablet(css`
       margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)({ theme })};

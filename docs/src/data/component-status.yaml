@@ -37,7 +37,7 @@
   figma: N/A
   react: Released
   ios: N/A
-  android: Planned
+  android: Released
   docs: Released
   group: Primitives
 - component: Box
@@ -506,7 +506,7 @@
   figma: Released
   react: Planned
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Structure
 - component: Tag

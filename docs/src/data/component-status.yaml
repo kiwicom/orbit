@@ -226,7 +226,7 @@
   figma: N/A
   react: Released
   ios: Released
-  android: N/A
+  android: Planned
   docs: Writing
   group: Layout
 - component: Icon
@@ -324,7 +324,7 @@
   figma: Released
   react: Released
   ios: Planned
-  android: N/A
+  android: Released
   docs: Released
   group: Progress indicators
 - component: Mobile
@@ -450,7 +450,7 @@
   figma: Designing
   react: Released
   ios: Planned
-  android: N/A
+  android: Planned
   docs: Released
   group: Interaction
 - component: SocialButton
@@ -541,14 +541,14 @@
   figma: Planned
   react: Released
   ios: Released
-  android: N/A
+  android: Planned
   docs: Released
   group: Structure
 - component: Tile
   figma: Planned
   react: Released
   ios: Released
-  android: N/A
+  android: Planned
   docs: Released
   group: Structure
 - component: Timeline
@@ -562,7 +562,7 @@
   figma: Released
   react: Released
   ios: Released
-  android: N/A
+  android: Released
   docs: Released
   group: Information
 - component: Tooltip

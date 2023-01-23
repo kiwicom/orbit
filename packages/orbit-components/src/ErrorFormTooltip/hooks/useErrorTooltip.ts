@@ -5,8 +5,10 @@ import type { Event } from "../../common/types";
 
 const useErrorTooltip = <T = HTMLInputElement, K = HTMLLabelElement>({
   onFocus,
+  hasTooltip = true,
 }: {
   onFocus?: Event<React.SyntheticEvent<T>>;
+  hasTooltip?: boolean;
 }): {
   tooltipShown: boolean;
   tooltipShownHover: boolean;
@@ -24,9 +26,9 @@ const useErrorTooltip = <T = HTMLInputElement, K = HTMLLabelElement>({
   const handleFocus = useCallback(
     (ev: React.SyntheticEvent<T>) => {
       if (onFocus) onFocus(ev);
-      setTooltipShown(true);
+      if (hasTooltip) setTooltipShown(true);
     },
-    [onFocus],
+    [onFocus, hasTooltip],
   );
 
   return {

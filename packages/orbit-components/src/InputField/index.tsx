@@ -406,6 +406,8 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const forID = useRandomId();
   const inputId = id || forID;
 
+  const hasTooltip = Boolean(error || help);
+
   const {
     tooltipShown,
     tooltipShownHover,
@@ -414,7 +416,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     labelRef,
     iconRef,
     handleFocus,
-  } = useErrorTooltip<HTMLInputElement, HTMLDivElement>({ onFocus });
+  } = useErrorTooltip<HTMLInputElement, HTMLDivElement>({ onFocus, hasTooltip });
 
   const shown = tooltipShown || tooltipShownHover;
   const fieldRef = React.useRef<HTMLElement | null>(null);
@@ -532,7 +534,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           {suffix && <Suffix size={size}>{suffix}</Suffix>}
           <FakeInput size={size} disabled={disabled} error={error} />
         </InputContainer>
-        {!insideInputGroup && (
+        {!insideInputGroup && hasTooltip && (
           <ErrorFormTooltip
             help={help}
             id={`${inputId}-feedback`}

@@ -39,12 +39,24 @@ const Grid = ({
   columnGap,
   maxWidth,
   width,
+  spaceAfter,
   children,
   dataTest,
   as = "div",
   ...props
 }: Props) => {
-  const smallMobile = { inline, rows, columns, gap, rowGap, columnGap, maxWidth, width };
+  const smallMobile = {
+    inline,
+    rows,
+    columns,
+    gap,
+    rowGap,
+    columnGap,
+    maxWidth,
+    width,
+    spaceAfter,
+  };
+
   return (
     // @ts-expect-error As prop
     <StyledGrid {...props} smallMobile={smallMobile} data-test={dataTest} as={as}>

@@ -23,7 +23,7 @@ export const StyledTableCell = styled(
     box-sizing: border-box;
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeTextNormal};
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
     text-align: ${align && textAlign(align)};
     white-space: ${whiteSpace};
     vertical-align: ${verticalAlign};

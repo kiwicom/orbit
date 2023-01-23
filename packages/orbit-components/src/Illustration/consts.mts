@@ -43,6 +43,7 @@ export const NAMES = [
   "Mailbox",
   "Meal",
   "MobileApp",
+  "MobileApp2",
   "Money",
   "MusicalInstruments",
   "NetVerify",

@@ -92,7 +92,7 @@ const StyledTable = styled.table<{ type: Type; striped?: boolean; compact?: bool
         ? `6px ${theme.orbit.spaceSmall}`
         : `10px ${theme.orbit.spaceSmall}`}; /* TODO: remove 10px and 6px with new tokens */
       line-height: ${theme.orbit.lineHeightTextNormal};
-      color: ${type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkLight};
+      color: ${type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkNormal};
     }
   `};
 `;

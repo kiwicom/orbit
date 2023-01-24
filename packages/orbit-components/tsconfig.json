@@ -8,7 +8,7 @@
     "importsNotUsedAsValues": "error",
     "emitDeclarationOnly": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "css-prop.d.ts"],
   "exclude": [
     "**/*.stories.*",
     "**/*.test.*",

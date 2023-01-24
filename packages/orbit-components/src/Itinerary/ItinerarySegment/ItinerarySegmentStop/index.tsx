@@ -7,7 +7,7 @@ import Circle from "../../../icons/CircleSmall";
 import { useWidth } from "../../context";
 import defaultTheme from "../../../defaultTheme";
 import Stack from "../../../Stack";
-import Text from "../../../Text";
+import { StyledTemporaryText as Text } from "../../ItineraryBadgeList/ItineraryBadgeListItem";
 import ItineraryIcon from "../ItineraryIcon";
 import { usePart } from "../context";
 import type { Props } from "./types";

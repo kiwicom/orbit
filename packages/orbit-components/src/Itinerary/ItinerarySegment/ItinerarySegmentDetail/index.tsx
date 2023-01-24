@@ -8,7 +8,7 @@ import ChevronUp from "../../../icons/ChevronUp";
 import ChevronDown from "../../../icons/ChevronDown";
 import themeDefault from "../../../defaultTheme";
 import Stack from "../../../Stack";
-import Text from "../../../Text";
+import { StyledTemporaryText as Text } from "../../ItineraryBadgeList/ItineraryBadgeListItem";
 import Slide from "../../../utils/Slide";
 import useBoundingRect from "../../../hooks/useBoundingRect";
 import { useRandomIdSeed } from "../../../hooks/useRandomId";

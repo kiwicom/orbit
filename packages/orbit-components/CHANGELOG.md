@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@5.2.0...@kiwicom/orbit-components@5.3.0) (2023-01-24)
+
+
+### Bug Fixes
+
+* **Alert:** line-height of elements ([3601846](https://github.com/kiwicom/orbit/commit/3601846fc1b33dae59469f240f1a08542ed511e3))
+* **Checkbox:** disabled color ([fc82a93](https://github.com/kiwicom/orbit/commit/fc82a9375e10a6ebc7587fe9332f12005bdf5f11))
+* **FormLabel:** adjust line-height ([e505725](https://github.com/kiwicom/orbit/commit/e505725dc33d5a659e6d25ff8a594a14ed26aa96))
+* **Grid:** fix missing spaceAfter ([#3728](https://github.com/kiwicom/orbit/issues/3728)) ([9f1cd25](https://github.com/kiwicom/orbit/commit/9f1cd25df51a18db2e7a3a029bea4279ecaca8ed))
+* **icons:** fix calendar-duration icon ([#3714](https://github.com/kiwicom/orbit/issues/3714)) ([b07e295](https://github.com/kiwicom/orbit/commit/b07e295c9ca41c595fed77043c01a2b1cec71fe3))
+* **Radio:** disabled color and cursor ([d7f7714](https://github.com/kiwicom/orbit/commit/d7f7714068ad325439896c954d5caabbbe9c72a7))
+* **SegmentedSwitch:** adjust padding on option ([9760298](https://github.com/kiwicom/orbit/commit/9760298ede857e978a563440956b81cfae544d3e))
+* **Table:** fix incorrect color value from paletteInkNormal to paletteInkDark ([#3727](https://github.com/kiwicom/orbit/issues/3727)) ([fc5e7d3](https://github.com/kiwicom/orbit/commit/fc5e7d3c60c597daf59793aff676a5466fc33af4))
+* **Text:** default margin to 0 after removing unintentionally ([ecdcb9a](https://github.com/kiwicom/orbit/commit/ecdcb9a143fafe32cb856d680f1850794db1a818))
+
+
+### Features
+
+* **ErrorFormTooltip:** add hasTooltip parameter to hook ([519f841](https://github.com/kiwicom/orbit/commit/519f841dd72984ef69deb236e11f230286a1de64))
+* **icons:** update icons from figma ([#3717](https://github.com/kiwicom/orbit/issues/3717)) ([9eadb46](https://github.com/kiwicom/orbit/commit/9eadb4624ed8e33bcbf0e007431fb2c4a2c7fc7c))
+* **icons:** update icons from figma ([#3722](https://github.com/kiwicom/orbit/issues/3722)) ([ebf10b0](https://github.com/kiwicom/orbit/commit/ebf10b06096319240f11a3a9d8cbce780e8a7e25))
+* **Illustration:** add MobileApp2 illustration ([#3725](https://github.com/kiwicom/orbit/issues/3725)) ([92e4483](https://github.com/kiwicom/orbit/commit/92e448396ef96c86f1cb87b9d1e4a06e103a23ab))
+
+
+
+
+
 # [5.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@5.1.0...@kiwicom/orbit-components@5.2.0) (2023-01-09)
 
 

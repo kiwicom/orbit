@@ -7,7 +7,9 @@ import Circle from "../../../icons/CircleSmall";
 import { useWidth } from "../../context";
 import defaultTheme from "../../../defaultTheme";
 import Stack from "../../../Stack";
-import { StyledTemporaryText as Text } from "../../ItineraryBadgeList/ItineraryBadgeListItem";
+// TODO: remove after designers will resolve status colors
+// https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
+import Text from "../../ItineraryTemporaryText";
 import ItineraryIcon from "../ItineraryIcon";
 import { usePart } from "../context";
 import type { Props } from "./types";

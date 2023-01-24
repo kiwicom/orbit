@@ -8,7 +8,10 @@ import ChevronUp from "../../../icons/ChevronUp";
 import ChevronDown from "../../../icons/ChevronDown";
 import themeDefault from "../../../defaultTheme";
 import Stack from "../../../Stack";
-import { StyledTemporaryText as Text } from "../../ItineraryBadgeList/ItineraryBadgeListItem";
+// TODO: remove after designers will resolve status colors
+// https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
+import TemporaryText from "../../ItineraryTemporaryText";
+import Text from "../../../Text";
 import Slide from "../../../utils/Slide";
 import useBoundingRect from "../../../hooks/useBoundingRect";
 import { useRandomIdSeed } from "../../../hooks/useRandomId";
@@ -144,9 +147,9 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props) => 
       <StyledInnerWrapper>
         <Stack align="center" spacing="small">
           <StyledDuration $minWidth={calculatedWidth || 60}>
-            <Text as="div" size="small" weight="medium">
+            <TemporaryText as="div" size="small" weight="medium">
               {duration}
-            </Text>
+            </TemporaryText>
           </StyledDuration>
           <StyledDetailsIcon>
             <ItineraryIcon isDetails>{icon}</ItineraryIcon>
@@ -183,9 +186,9 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props) => 
                   // eslint-disable-next-line react/no-array-index-key
                   <React.Fragment key={idx}>
                     <StyledHeadingOffset>
-                      <Text as="div" size="small" weight="medium" spaceAfter="small">
+                      <TemporaryText as="div" size="small" weight="medium" spaceAfter="small">
                         {title}
-                      </Text>
+                      </TemporaryText>
                     </StyledHeadingOffset>
                     <Stack
                       direction="column"
@@ -203,9 +206,9 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props) => 
                               <Text size="small">{name}</Text>
                             </Truncate>
                             <Truncate>
-                              <Text as="div" size="small" weight="medium" align="right">
+                              <TemporaryText as="div" size="small" weight="medium" align="right">
                                 {value}
-                              </Text>
+                              </TemporaryText>
                             </Truncate>
                           </Stack>
                         );

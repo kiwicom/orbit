@@ -107,7 +107,6 @@ const Wizard = ({
               })}
             </b>
             <span
-              // @ts-expect-error sc issue
               css={css`
                 font-weight: normal;
               `}
@@ -127,14 +126,12 @@ const Wizard = ({
                 }}
               >
                 <nav
-                  // @ts-expect-error sc issue
                   css={css`
                     /* matching this to ModalBody's border-radius */
                     padding-top: 9px;
                   `}
                 >
                   <ul
-                    // @ts-expect-error sc issue
                     css={css`
                       ${unstyledListMixin};
                     `}

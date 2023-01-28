@@ -36,7 +36,9 @@ jobs:
       - name: Get BRANCH_URL
         # do not run on master branch
         if: github.ref != 'refs/heads/master'
-        run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${{ github.head_ref }})" >> $GITHUB_ENV
+        env:
+          BRANCH_NAME: ${{ github.head_ref }}
+        run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${BRANCH_NAME})" >> $GITHUB_ENV
 
       - name: Get DOMAIN
         if: github.ref != 'refs/heads/master'

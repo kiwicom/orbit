@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import type * as Common from "../../common/types";
 import { left, rtlSpacing } from "../../utils/rtl";
-import Text from "../../Text";
+import Text from "../ItineraryTemporaryText";
 import Stack from "../../Stack";
 import type { ThemeProps } from "../../defaultTheme";
 import defaultTheme from "../../defaultTheme";
@@ -14,6 +14,7 @@ import AlertOctagon from "../../icons/AlertOctagon";
 import Warning from "../../icons/AlertCircle";
 import Info from "../../icons/InformationCircle";
 import Check from "../../icons/CheckCircle";
+import useTheme from "../../hooks/useTheme";
 import type { Props } from "./types";
 
 const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemeProps) => {
@@ -86,18 +87,22 @@ StyledStatusText.defaultProps = {
   theme: defaultTheme,
 };
 
+// TODO: refactor this after designers will resolve status colors
+// https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
 const StatusIcon = ({ type }: { type: Status }) => {
+  const theme = useTheme();
+
   switch (type) {
     case "info":
-      return <Info size="small" color={type} />;
+      return <Info size="small" customColor={theme.orbit.paletteBlueDark} />;
     case "critical":
-      return <AlertOctagon size="small" color={type} />;
+      return <AlertOctagon size="small" customColor={theme.orbit.paletteRedDark} />;
     case "success":
-      return <Check size="small" color={type} />;
+      return <Check size="small" customColor={theme.orbit.paletteGreenDark} />;
     case "neutral":
-      return <Info size="small" color="primary" />;
+      return <Info size="small" customColor="primary" />;
     default:
-      return <Warning size="small" color={type} />;
+      return <Warning size="small" customColor={theme.orbit.paletteOrangeDark} />;
   }
 };
 

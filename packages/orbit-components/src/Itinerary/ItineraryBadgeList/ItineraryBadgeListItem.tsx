@@ -7,8 +7,10 @@ import {
   StyledVerticalBadge,
   StyledBadgeContent,
 } from "../../BadgeList/BadgeListItem";
-import Text from "../../Text";
 import Stack from "../../Stack";
+// TODO: remove after designers will resolve status colors
+// https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
+import Text from "../ItineraryTemporaryText";
 import type { BadgeListItem as Props } from "./types";
 
 const ItineraryBadgeListItem = ({
@@ -27,7 +29,6 @@ const ItineraryBadgeListItem = ({
         {React.isValidElement(icon) && React.cloneElement(icon, { color: getIconColor(type) })}
       </StyledVerticalBadge>
       <StyledBadgeContent
-        // @ts-expect-error TODO
         css={css`
           margin-top: ${cancelledValue ? `4px` : ""};
         `}

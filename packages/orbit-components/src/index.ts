@@ -109,6 +109,7 @@ export { default as Textarea } from "./Textarea";
 export { default as TextLink } from "./TextLink";
 export { default as OrbitProvider } from "./OrbitProvider";
 export { default as Tile } from "./Tile";
+export { default as Tabs, TabList, Tab, TabPanels, TabPanel } from "./Tabs";
 export { default as TileGroup } from "./TileGroup";
 export { default as Timeline, TimelineStep } from "./Timeline";
 export { default as Tooltip } from "./Tooltip";

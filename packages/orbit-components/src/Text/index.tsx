@@ -75,11 +75,13 @@ const getLineHeightToken = ({
   return lineHeightTokens[size];
 };
 
-export const StyledText = styled(({ element: TextElement, children, className, dataTest, id }) => (
-  <TextElement className={className} data-test={dataTest} id={id}>
-    {children}
-  </TextElement>
-))`
+export const StyledText = styled(
+  ({ element: TextElement = ELEMENT_OPTIONS.P, children, className, dataTest, id }) => (
+    <TextElement className={className} data-test={dataTest} id={id}>
+      {children}
+    </TextElement>
+  ),
+)`
   ${({
     theme,
     align,

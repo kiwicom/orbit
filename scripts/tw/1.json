@@ -1,0 +1,58 @@
+{
+  "first-contentful-paint": {
+    "numericValue": 481.822,
+    "numericUnit": "millisecond",
+    "score": 1,
+    "displayValue": "0.5 s",
+    "scoreDisplayMode": "numeric"
+  },
+  "largest-contentful-paint": {
+    "numericValue": 953.4125000000001,
+    "numericUnit": "millisecond",
+    "score": 0.95,
+    "displayValue": "1.0 s",
+    "scoreDisplayMode": "numeric"
+  },
+  "first-meaningful-paint": {
+    "numericValue": 539.322,
+    "numericUnit": "millisecond",
+    "score": 0.99,
+    "displayValue": "0.5 s",
+    "scoreDisplayMode": "numeric"
+  },
+  "speed-index": {
+    "numericValue": 1465.3204161577216,
+    "numericUnit": "millisecond",
+    "score": 0.84,
+    "displayValue": "1.5 s",
+    "scoreDisplayMode": "numeric"
+  },
+  "total-blocking-time": {
+    "numericValue": 293,
+    "numericUnit": "millisecond",
+    "score": 0.6,
+    "displayValue": "290 ms",
+    "scoreDisplayMode": "numeric"
+  },
+  "max-potential-fid": {
+    "numericValue": 138,
+    "numericUnit": "millisecond",
+    "score": 0.87,
+    "displayValue": "140 ms",
+    "scoreDisplayMode": "numeric"
+  },
+  "cumulative-layout-shift": {
+    "numericValue": 0.00818879022794496,
+    "numericUnit": "unitless",
+    "score": 1,
+    "displayValue": "0.008",
+    "scoreDisplayMode": "numeric"
+  },
+  "interactive": {
+    "numericValue": 3534.7470000000003,
+    "numericUnit": "millisecond",
+    "score": 0.69,
+    "displayValue": "3.5 s",
+    "scoreDisplayMode": "numeric"
+  }
+}

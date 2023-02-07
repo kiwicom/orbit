@@ -1,0 +1,10 @@
+{
+  "first-contentful-paint": 0.7020000000000004,
+  "largest-contentful-paint": 1.1230000000000004,
+  "first-meaningful-paint": 0.7520000000000004,
+  "speed-index": 1.226,
+  "interactive": 3.3480000000000008,
+  "total-blocking-time": 131.8,
+  "max-potential-fid": 135.8,
+  "cumulative-layout-shift": 0.008290000000000006
+}

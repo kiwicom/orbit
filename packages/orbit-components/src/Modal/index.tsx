@@ -197,6 +197,7 @@ const ModalWrapperContent = styled.div<{
   }) => css`
     position: absolute;
     box-sizing: border-box;
+    border-top-left-radius: ${!isMobileFullPage && "12px"};
     border-top-right-radius: ${!isMobileFullPage && "12px"};
     background-color: ${theme.orbit.backgroundModal};
     font-family: ${theme.orbit.fontFamily};

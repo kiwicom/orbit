@@ -46,7 +46,7 @@ const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
       }}
     >
       <div>{children}</div>
-      <ChevronRight color="secondary" />
+      {onClick && <ChevronRight color="secondary" />}
     </StyledBannerWrapper>
   );
 };

@@ -651,6 +651,8 @@ export const InsideModal = () => {
 };
 
 export const MultipleBanners = () => {
+  const [isOpenedModal, setIsOpenedModal] = React.useState(false);
+
   return (
     <>
       <Heading type="title2">Throwaway ticketing</Heading>
@@ -659,7 +661,7 @@ export const MultipleBanners = () => {
           <ItinerarySegment
             banner={
               <Stack direction="column" align="stretch" spacing="XSmall">
-                <ItinerarySegmentBanner>
+                <ItinerarySegmentBanner onClick={() => setIsOpenedModal(true)}>
                   <ItineraryBadgeList>
                     <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
                       <Text as="span" type="info" weight="bold">
@@ -782,6 +784,17 @@ export const MultipleBanners = () => {
           </ItinerarySegment>
         </ItineraryStatus>
       </Itinerary>
+      {isOpenedModal && (
+        <Modal
+          hasCloseButton
+          onClose={ev => {
+            ev.stopPropagation();
+            setIsOpenedModal(false);
+          }}
+        >
+          <ModalSection>Throwaway ticketing info</ModalSection>
+        </Modal>
+      )}
     </>
   );
 };

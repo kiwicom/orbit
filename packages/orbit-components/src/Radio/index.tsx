@@ -146,7 +146,7 @@ StyledInput.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledLabel = styled(({ disabled, theme, type, hasError, ...props }) => (
+export const StyledLabel = styled(({ disabled, theme, type, hasError, ...props }) => (
   <label {...props}>{props.children}</label>
 ))`
   ${({ theme, disabled }) => css`

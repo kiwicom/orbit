@@ -9,14 +9,14 @@ Object {
 
 exports[`ButtonPrimitive: getSizeToken function normal size, should match snapshot 1`] = `
 Object {
-  "fontSize": "14px",
+  "fontSize": "15px",
   "height": "44px",
 }
 `;
 
 exports[`ButtonPrimitive: getSizeToken function small size, should match snapshot 1`] = `
 Object {
-  "fontSize": "12px",
+  "fontSize": "13px",
   "height": "32px",
 }
 `;

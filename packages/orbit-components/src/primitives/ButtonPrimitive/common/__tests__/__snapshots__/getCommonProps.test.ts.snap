@@ -4,7 +4,7 @@ exports[`ButtonPrimitive: getCommonProps function should match: dynamic width an
 Object {
   "contentAlign": "center",
   "contentWidth": "100%",
-  "fontSize": "14px",
+  "fontSize": "15px",
   "fontWeight": "500",
   "height": "44px",
   "padding": "0",
@@ -28,7 +28,7 @@ exports[`ButtonPrimitive: getCommonProps function should match: undefined conten
 Object {
   "contentAlign": "center",
   "contentWidth": undefined,
-  "fontSize": "14px",
+  "fontSize": "15px",
   "fontWeight": "500",
   "height": "44px",
   "padding": "0 16px",

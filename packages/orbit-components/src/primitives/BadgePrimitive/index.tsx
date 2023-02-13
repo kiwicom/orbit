@@ -59,7 +59,7 @@ IconContainer.defaultProps = {
 
 const StyledBadgeContent = styled.div<{ $isCarrier?: boolean }>`
   ${({ theme, $isCarrier }) => css`
-    padding: 5px 0;
+    padding: ${theme.orbit.spaceXXSmall} 0;
     line-height: 1;
     margin-${left}: ${
     $isCarrier && parseInt(theme.orbit.widthIconMedium, 10) - parseInt(theme.orbit.spaceXXSmall, 10)

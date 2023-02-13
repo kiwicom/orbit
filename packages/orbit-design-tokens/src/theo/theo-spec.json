@@ -2134,7 +2134,7 @@
       }
     },
     "fontSizeHeadingTitle4": {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2143,7 +2143,7 @@
       }
     },
     "fontSizeHeadingTitle5": {
-      "value": "12px",
+      "value": "13px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2152,7 +2152,7 @@
       }
     },
     "fontSizeTextNormal": {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2170,7 +2170,7 @@
       }
     },
     "fontSizeTextSmall": {
-      "value": "12px",
+      "value": "13px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2179,7 +2179,7 @@
       }
     },
     "fontSizeMessage": {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2197,7 +2197,7 @@
       }
     },
     "fontSizeButtonNormal": {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2206,7 +2206,7 @@
       }
     },
     "fontSizeButtonSmall": {
-      "value": "12px",
+      "value": "13px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2215,7 +2215,7 @@
       }
     },
     "fontSizeInputNormal": {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2224,7 +2224,7 @@
       }
     },
     "fontSizeInputSmall": {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2233,7 +2233,7 @@
       }
     },
     "fontSizeFormLabel": {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2242,7 +2242,7 @@
       }
     },
     "fontSizeFormFeedback": {
-      "value": "12px",
+      "value": "13px",
       "type": "size",
       "category": "",
       "comment": "",

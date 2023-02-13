@@ -57,7 +57,7 @@
       "name": "colorIconWarning"
     },
     {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -211,7 +211,7 @@
       "name": "colorTextButtonGoogleActive"
     },
     {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -449,7 +449,7 @@
       "name": "colorTextButtonLinkSecondaryHover"
     },
     {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -540,7 +540,7 @@
       "name": "borderStyleInput"
     },
     {
-      "value": "12px",
+      "value": "13px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1044,7 +1044,7 @@
       "name": "spaceXxxLarge"
     },
     {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1065,7 +1065,7 @@
       "name": "paletteInkNormalHover"
     },
     {
-      "value": "12px",
+      "value": "13px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1485,7 +1485,7 @@
       "name": "backgroundTagSelectedActive"
     },
     {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1660,7 +1660,7 @@
       "name": "paletteWhite"
     },
     {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1793,7 +1793,7 @@
       "name": "colorTextButtonPrimarySubtleHover"
     },
     {
-      "value": "12px",
+      "value": "13px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2703,7 +2703,7 @@
       "name": "backgroundButtonBundleMedium"
     },
     {
-      "value": "14px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2955,7 +2955,7 @@
       "name": "borderColorTableCell"
     },
     {
-      "value": "12px",
+      "value": "13px",
       "type": "size",
       "category": "",
       "comment": "",

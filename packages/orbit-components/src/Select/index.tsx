@@ -184,15 +184,12 @@ StyledSelect.defaultProps = {
 };
 
 export const SelectContainer = styled.div`
-  ${({ theme }) => css`
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: ${theme.orbit.backgroundInput};
-    width: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-  `};
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
 `;
 
 SelectContainer.defaultProps = {

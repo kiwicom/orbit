@@ -1,9 +1,6 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import StarFull from "../../../icons/StarFull";
-import CircleEmpty from "../../../icons/CircleSmallEmpty";
-import Circle from "../../../icons/CircleSmall";
 import { useWidth } from "../../context";
 import defaultTheme from "../../../defaultTheme";
 import Stack from "../../../Stack";
@@ -49,33 +46,15 @@ StyledHiddenCity.defaultProps = {
   theme: defaultTheme,
 };
 
-const ItinerarySegmentStopIcon = ({
-  isPrevHidden,
-  isLast,
-  isHidden,
-  icon,
-}: {
-  isHidden?: boolean;
-  isPrevHidden: boolean;
-  isLast: boolean;
-  icon?: React.ReactNode;
-}): JSX.Element => {
-  if (icon) return <>{icon}</>;
-  if (isHidden) return <StarFull color="warning" size="small" />;
-  if (isPrevHidden && isLast) return <CircleEmpty size="small" color="tertiary" />;
-
-  return <Circle size="small" color="secondary" />;
-};
-
 const ItinerarySegmentStop = ({
   date,
-  icon,
   time,
   cancelledDate,
   cancelledCity,
   cancelledStation,
   cancelledTime,
   city,
+  icon,
   station,
   hidden,
   hiddenCityText = "Hidden city",
@@ -83,7 +62,7 @@ const ItinerarySegmentStop = ({
   type,
 }: Props) => {
   const { calculatedWidth, setWidths } = useWidth();
-  const { isPrevHidden, last, isBanner, index } = usePart();
+  const { last, isBanner, index } = usePart();
   const [dateWidth, setDateWidth] = React.useState<HTMLDivElement | null>(null);
 
   const textType = type === "neutral" ? "primary" : type;
@@ -130,14 +109,7 @@ const ItinerarySegmentStop = ({
             )}
           </Stack>
         </StyledDate>
-        <ItineraryIcon type={type}>
-          <ItinerarySegmentStopIcon
-            isLast={last}
-            isHidden={hidden}
-            isPrevHidden={isPrevHidden}
-            icon={icon}
-          />
-        </ItineraryIcon>
+        <ItineraryIcon type={type}>{icon}</ItineraryIcon>
         <Stack direction="column" shrink spacing="none">
           {hidden && hiddenCityText && <StyledHiddenCity>{hiddenCityText}</StyledHiddenCity>}
           <Text

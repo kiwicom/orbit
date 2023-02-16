@@ -17,8 +17,9 @@ import useBoundingRect from "../../../hooks/useBoundingRect";
 import { useRandomIdSeed } from "../../../hooks/useRandomId";
 import { usePart } from "../context";
 import { useWidth } from "../../context";
-import ItineraryIcon from "../ItineraryIcon";
+import AirplaneDown from "../../../icons/AirplaneDown";
 import type { Props } from "./types";
+import ItineraryIcon from "../ItineraryIcon";
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -133,7 +134,12 @@ StyledExpandableContent.defaultProps = {
   theme: themeDefault,
 };
 
-const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props) => {
+const ItinerarySegmentDetail = ({
+  duration,
+  summary,
+  content,
+  icon = <AirplaneDown size="small" />,
+}: Props) => {
   const { opened, toggleOpened } = usePart();
   const { calculatedWidth } = useWidth();
   const [{ height: slideHeight }, slideRef] = useBoundingRect<HTMLDivElement>({
@@ -152,8 +158,9 @@ const ItinerarySegmentDetail = ({ duration, summary, content, icon }: Props) => 
             </TemporaryText>
           </StyledDuration>
           <StyledDetailsIcon>
-            <ItineraryIcon isDetails>{icon}</ItineraryIcon>
+            <ItineraryIcon>{icon}</ItineraryIcon>
           </StyledDetailsIcon>
+
           <StyledSummary
             onClick={ev => {
               if (isOverflowed && opened) ev.stopPropagation();

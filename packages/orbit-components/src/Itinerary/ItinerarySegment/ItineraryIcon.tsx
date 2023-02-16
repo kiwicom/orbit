@@ -2,14 +2,14 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { usePart } from "./context";
-import AirplaneDown from "../../icons/AirplaneDown";
 import AlertCircle from "../../icons/AlertCircle";
-import Circle from "../../icons/Circle";
 import defaultTheme from "../../defaultTheme";
 import type { Status } from "../types";
+import StarFull from "../../icons/StarFull";
+import CircleEmpty from "../../icons/CircleSmallEmpty";
+import CircleSmall from "../../icons/CircleSmall";
 
 interface Props {
-  isDetails?: boolean;
   type?: Status;
   children?: React.ReactNode;
 }
@@ -75,15 +75,28 @@ IconStyled.defaultProps = {
   theme: defaultTheme,
 };
 
-const Icon = ({ type, isDetails, icon }) => {
-  if (type) return <AlertCircle size="small" color={type === "neutral" ? "primary" : type} />;
-  if (icon) return icon;
-  if (isDetails) return <AirplaneDown size="small" />;
+const RenderedIcon = ({
+  isPrevHidden,
+  isLast,
+  isHidden,
+  children,
+  type,
+}: {
+  isHidden?: boolean;
+  isPrevHidden: boolean;
+  isLast: boolean;
+  children: React.ReactNode;
+  type: Props["type"];
+}): JSX.Element => {
+  if (type && children !== null)
+    return <AlertCircle size="small" color={type === "neutral" ? "primary" : type} />;
+  if (isHidden) return <StarFull color="warning" size="small" />;
+  if (isPrevHidden && isLast) return <CircleEmpty size="small" color="tertiary" />;
 
-  return <Circle size="small" color="secondary" />;
+  return <>{children || <CircleSmall size="small" color="secondary" />}</>;
 };
 
-const ItineraryIcon = ({ isDetails, type, children }: Props) => {
+const ItinerarySegmentStopIcon = ({ type, children }: Props) => {
   const { index, last, isPrevHidden, isHidden, count } = usePart();
 
   return (
@@ -94,9 +107,11 @@ const ItineraryIcon = ({ isDetails, type, children }: Props) => {
       isHidden={isHidden}
       count={count}
     >
-      <Icon type={type} isDetails={isDetails} icon={children} />
+      <RenderedIcon type={type} isPrevHidden={isPrevHidden} isLast={last} isHidden={isHidden}>
+        {children}
+      </RenderedIcon>
     </IconStyled>
   );
 };
 
-export default ItineraryIcon;
+export default ItinerarySegmentStopIcon;

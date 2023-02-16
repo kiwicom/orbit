@@ -46,7 +46,7 @@ const StyledProgressLine = styled.span<{
     position: ${!desktop && "absolute"};
     top: ${!desktop && "15px"};
     border-width: 1px;
-    border-style: ${!nextStatus && !last ? "dashed" : "solid"};
+    border-style: ${!status ? "dashed" : "solid"};
     ${getBorderStyle({ desktop, theme, status, nextStatus, prevStatus, last })};
     ${left}: ${!desktop && "11px"};
     width: ${desktop && "50%"};

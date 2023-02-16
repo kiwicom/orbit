@@ -395,8 +395,8 @@ export const Stop = () => {
         station={station}
         hidden={hidden}
         date={date}
-        time={time}
         type={type}
+        time={time}
       />
       <Heading type="title2">Hidden city example</Heading>
       <Itinerary>

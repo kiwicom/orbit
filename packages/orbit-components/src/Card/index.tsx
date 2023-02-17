@@ -11,7 +11,7 @@ import { ELEMENT_OPTIONS } from "../Heading/consts";
 import type { Props } from "./types";
 import type * as Common from "../common/types";
 import useTheme from "../hooks/useTheme";
-import { marginUtility } from "../utils/common";
+import { spacingUtility } from "../utils/common";
 
 export const StyledCard = styled.div<{
   spaceAfter?: Common.SpaceAfterSizes;
@@ -22,7 +22,7 @@ export const StyledCard = styled.div<{
     box-sizing: border-box;
     position: relative;
     font-family: ${theme.orbit.fontFamily};
-    ${marginUtility(margin)}
+    ${spacingUtility(margin)}
   `};
 `;
 

@@ -5,7 +5,7 @@ import defaultTheme from "../../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
 import type { Size, Props } from "./types";
-import { marginUtility } from "../../utils/common";
+import { spacingUtility } from "../../utils/common";
 import useTheme from "../../hooks/useTheme";
 
 const getHeightToken = ({ theme, size }) => {
@@ -48,7 +48,7 @@ export const StyledImage = styled.img.attrs<{
     max-width: 100%;
     background-color: ${theme.orbit.backgroundIllustration};
     flex-shrink: 0;
-    ${marginUtility(margin)};
+    ${spacingUtility(margin)};
   `};
 `;
 

@@ -266,7 +266,7 @@ module.exports = {
   /*  */
   borderColorInputHover: "rgb(62, 78, 99)",
   /*  */
-  backgroundButtonBundleTopHover: "linear-gradient(to top right, #171718 0%, #51575C 100%)",
+  backgroundButtonBundleTopHover: "linear-gradient(to top right, #171718 0%, #51575C  100%)",
   /*  */
   paddingTag: "8px",
   /*  */
@@ -369,6 +369,8 @@ module.exports = {
   paletteCloudDarkHover: "rgb(166, 182, 200)",
   /*  */
   colorTextButtonSuccessBordered: "rgb(40, 161, 56)",
+  /*  */
+  backgroundColorTabBundleBasic: "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)",
   /*  */
   paletteOrangeNormalHover: "rgb(201, 111, 0)",
   /*  */
@@ -524,7 +526,7 @@ module.exports = {
   /*  */
   colorTextAlertWarning: "rgb(186, 93, 0)",
   /*  */
-  backgroundButtonBundleBasicHover: "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
+  backgroundButtonBundleBasicHover: "linear-gradient(to top right, #BD2825 0%, #BD2825 100%)",
   /*  */
   textDecorationTextLinkSecondary: "underline",
   /*  */
@@ -602,7 +604,7 @@ module.exports = {
   /*  */
   paletteBundleMedium: "rgb(59, 30, 176)",
   /*  */
-  backgroundButtonBundleBasicActive: "linear-gradient(to top right, #9F1816 0%, #C36802 100%)",
+  backgroundButtonBundleBasicActive: "linear-gradient(to top right, #9F1816 0%, #9F1816 100%)",
   /*  */
   backgroundBadgeNeutral: "rgb(245, 247, 249)",
   /*  */
@@ -646,6 +648,8 @@ module.exports = {
   /*  */
   backgroundButtonWhiteHover: "rgb(245, 247, 249)",
   /*  */
+  backgroundColorTabBundleTop: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
+  /*  */
   colorTextButtonPrimarySubtleActive: "rgb(0, 127, 109)",
   /*  */
   borderColorButtonCriticalBordered: "rgb(210, 28, 28)",
@@ -658,7 +662,7 @@ module.exports = {
   /*  */
   colorTextSuccess: "rgb(40, 161, 56)",
   /*  */
-  backgroundButtonBundleTop: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+  backgroundButtonBundleTop: "linear-gradient(to top right, #2D2D2E 0%, #696E73  100%)",
   /*  */
   borderColorInput: "rgb(186, 199, 213)",
   /*  */
@@ -786,6 +790,8 @@ module.exports = {
   /*  */
   paddingButtonLargeWithRightIcon: "0 16px 0 28px",
   /*  */
+  backgroundColorTabBundleMedium: "linear-gradient(80.91deg, #3719AB 0%, #8539DB 100%)",
+  /*  */
   borderColorTable: "rgb(232, 237, 241)",
   /*  */
   widthBreakpointLargeDesktop: 1200,
@@ -822,7 +828,7 @@ module.exports = {
   /*  */
   fontSizeButtonLarge: "16px",
   /*  */
-  backgroundButtonBundleTopActive: "linear-gradient(to top right, #101011 0%, #51575C)",
+  backgroundButtonBundleTopActive: "linear-gradient(to top right, #101011 0%, #51575C  100%)",
   /*  */
   backgroundButtonGoogle: "rgb(245, 247, 249)",
   /*  */
@@ -976,7 +982,7 @@ module.exports = {
   /*  */
   textDecorationTextLinkPrimary: "underline",
   /*  */
-  backgroundBadgeBundleTop: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+  backgroundBadgeBundleTop: "linear-gradient(to top right,#2D2D2E 0%, #696E73 100%)",
   /*  */
   textDecorationTextLinkPrimaryHover: "none",
   /*  */

@@ -932,7 +932,7 @@
       "name": "borderColorInputHover"
     },
     {
-      "value": "linear-gradient(to top right, #171718 0, #51575C 1)",
+      "value": "linear-gradient(to top right, #171718 0, #51575C  1)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1294,6 +1294,13 @@
       "category": "",
       "comment": "",
       "name": "colorTextButtonSuccessBordered"
+    },
+    {
+      "value": "linear-gradient(80.91deg, #E13E3B 0, #E87E09 1)",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "name": "backgroundColorTabBundleBasic"
     },
     {
       "value": "rgb(201, 111, 0)",
@@ -1835,7 +1842,7 @@
       "name": "colorTextAlertWarning"
     },
     {
-      "value": "linear-gradient(to top right, #BD2825 0, #D67000 1)",
+      "value": "linear-gradient(to top right, #BD2825 0, #BD2825 1)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -2108,7 +2115,7 @@
       "name": "paletteBundleMedium"
     },
     {
-      "value": "linear-gradient(to top right, #9F1816 0, #C36802 1)",
+      "value": "linear-gradient(to top right, #9F1816 0, #9F1816 1)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -2262,6 +2269,13 @@
       "name": "backgroundButtonWhiteHover"
     },
     {
+      "value": "linear-gradient(80.91deg, #2D2D2E 0, #696E73 1)",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "name": "backgroundColorTabBundleTop"
+    },
+    {
       "value": "rgb(0, 127, 109)",
       "type": "color",
       "category": "",
@@ -2304,7 +2318,7 @@
       "name": "colorTextSuccess"
     },
     {
-      "value": "linear-gradient(to top right, #2D2D2E 0, #696E73 1)",
+      "value": "linear-gradient(to top right, #2D2D2E 0, #696E73  1)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -2752,6 +2766,13 @@
       "name": "paddingButtonLargeWithRightIcon"
     },
     {
+      "value": "linear-gradient(80.91deg, #3719AB 0, #8539DB 1)",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "name": "backgroundColorTabBundleMedium"
+    },
+    {
       "value": "rgb(232, 237, 241)",
       "type": "color",
       "category": "",
@@ -2878,7 +2899,7 @@
       "name": "fontSizeButtonLarge"
     },
     {
-      "value": "linear-gradient(to top right, #101011 0, #51575C)",
+      "value": "linear-gradient(to top right, #101011 0, #51575C  1)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -3417,7 +3438,7 @@
       "name": "textDecorationTextLinkPrimary"
     },
     {
-      "value": "linear-gradient(to top right, #2D2D2E 0, #696E73 1)",
+      "value": "linear-gradient(to top right,#2D2D2E 0, #696E73 1)",
       "type": "string",
       "category": "",
       "comment": "",

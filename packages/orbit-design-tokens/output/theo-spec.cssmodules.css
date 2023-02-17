@@ -132,7 +132,7 @@
 @value color-text-badge-dark: rgb(255, 255, 255);
 @value background-button-primary-subtle-focus: rgb(236, 248, 247);
 @value border-color-input-hover: rgb(62, 78, 99);
-@value background-button-bundle-top-hover: "linear-gradient(to top right, #171718 0%, #51575C 100%)";
+@value background-button-bundle-top-hover: "linear-gradient(to top right, #171718 0%, #51575C  100%)";
 @value padding-tag: 8px;
 @value color-text-badge-warning: rgb(223, 123, 0);
 @value background-button-white: rgb(255, 255, 255);
@@ -184,6 +184,7 @@
 @value background-button-bordered: "transparent";
 @value palette-cloud-dark-hover: rgb(166, 182, 200);
 @value color-text-button-success-bordered: rgb(40, 161, 56);
+@value background-color-tab-bundle-basic: "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)";
 @value palette-orange-normal-hover: rgb(201, 111, 0);
 @value palette-orange-darker: rgb(128, 63, 0);
 @value palette-red-dark: rgb(151, 12, 12);
@@ -261,7 +262,7 @@
 @value background-tag-hover: rgb(229, 234, 239);
 @value font-size-heading-display: 40px;
 @value color-text-alert-warning: rgb(186, 93, 0);
-@value background-button-bundle-basic-hover: "linear-gradient(to top right, #BD2825 0%, #D67000 100%)";
+@value background-button-bundle-basic-hover: "linear-gradient(to top right, #BD2825 0%, #BD2825 100%)";
 @value text-decoration-text-link-secondary: "underline";
 @value padding-button-small-with-icons: 0 8px;
 @value color-text-badge-success: rgb(40, 161, 56);
@@ -300,7 +301,7 @@
 @value font-weight-links: "500";
 @value color-text-primary: rgb(37, 42, 49);
 @value palette-bundle-medium: rgb(59, 30, 176);
-@value background-button-bundle-basic-active: "linear-gradient(to top right, #9F1816 0%, #C36802 100%)";
+@value background-button-bundle-basic-active: "linear-gradient(to top right, #9F1816 0%, #9F1816 100%)";
 @value background-badge-neutral: rgb(245, 247, 249);
 @value width-modal-extra-large: 1280px;
 @value padding-tag-removable: 6px 6px 6px 8px;
@@ -322,13 +323,14 @@
 @value font-family: "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif";
 @value line-height-heading-display-subtitle: 28px;
 @value background-button-white-hover: rgb(245, 247, 249);
+@value background-color-tab-bundle-top: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)";
 @value color-text-button-primary-subtle-active: rgb(0, 127, 109);
 @value border-color-button-critical-bordered: rgb(210, 28, 28);
 @value color-text-button-facebook-bordered: rgb(59, 89, 152);
 @value border-color-button-google-bordered-active: rgb(11, 12, 15);
 @value line-height-text-large: 24px;
 @value color-text-success: rgb(40, 161, 56);
-@value background-button-bundle-top: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)";
+@value background-button-bundle-top: "linear-gradient(to top right, #2D2D2E 0%, #696E73  100%)";
 @value border-color-input: rgb(186, 199, 213);
 @value palette-orange-light-active: rgb(250, 226, 198);
 @value font-weight-heading-title1: "700";
@@ -392,6 +394,7 @@
 @value color-text-alert-success: rgb(45, 119, 56);
 @value background-badge-bundle-basic: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)";
 @value padding-button-large-with-right-icon: 0 16px 0 28px;
+@value background-color-tab-bundle-medium: "linear-gradient(80.91deg, #3719AB 0%, #8539DB 100%)";
 @value border-color-table: rgb(232, 237, 241);
 @value width-breakpoint-large-desktop: 1200;
 @value palette-blue-darker: rgb(0, 70, 128);
@@ -410,7 +413,7 @@
 @value color-text-button-white-bordered-active: rgb(255, 255, 255);
 @value color-icon-checkbox-radio-disabled: rgb(186, 199, 213);
 @value font-size-button-large: 16px;
-@value background-button-bundle-top-active: "linear-gradient(to top right, #101011 0%, #51575C)";
+@value background-button-bundle-top-active: "linear-gradient(to top right, #101011 0%, #51575C  100%)";
 @value background-button-google: rgb(245, 247, 249);
 @value border-color-input-active: rgb(50, 66, 86);
 @value opacity-button-disabled: "0.3";
@@ -487,7 +490,7 @@
 @value background-illustration: "transparent";
 @value height-input-group-separator-small: 16px;
 @value text-decoration-text-link-primary: "underline";
-@value background-badge-bundle-top: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)";
+@value background-badge-bundle-top: "linear-gradient(to top right,#2D2D2E 0%, #696E73 100%)";
 @value text-decoration-text-link-primary-hover: "none";
 @value border-color-button-warning-bordered-hover: rgb(201, 111, 0);
 @value padding-button-large-with-left-icon: 0 28px 0 16px;

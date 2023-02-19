@@ -13,10 +13,16 @@ const StyledTabListWrapper = styled.div<{ $margin?: Props["margin"]; $padding?: 
   `};
 `;
 
-const TabList = ({ children, spacing, dataTest, compact, padding, margin }: Props) => {
+const TabList = ({ children, spacing, compact, padding, margin, dataTest }: Props) => {
   return (
-    <StyledTabListWrapper role="tablist" aria-label="tabs" $padding={padding} $margin={margin}>
-      <Stack inline spacing={spacing} data-test={dataTest}>
+    <StyledTabListWrapper
+      role="tablist"
+      aria-label="tabs"
+      $padding={padding}
+      $margin={margin}
+      data-test={dataTest}
+    >
+      <Stack inline spacing={spacing}>
         {React.Children.map(children, (child, idx) => {
           if (!React.isValidElement(child)) return null;
           return (

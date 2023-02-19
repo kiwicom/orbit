@@ -31,6 +31,6 @@ describe("Tabs", () => {
     expect(screen.getByTestId("first-tab")).toHaveAttribute("aria-selected", "false");
     expect(screen.getByTestId("second-tab")).toHaveAttribute("aria-selected", "true");
     expect(screen.getByRole("tablist")).toBeInTheDocument();
-    expect(screen.getByRole("tab")).toBeInTheDocument();
+    expect(screen.getAllByRole("tab")).toHaveLength(2);
   });
 });

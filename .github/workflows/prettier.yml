@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: Prettify documentation
-        uses: creyD/prettier_action@v4.2
+        uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --write **/*.{md,mdx}
           commit_message: "chore(docs): prettify md and mdx files"

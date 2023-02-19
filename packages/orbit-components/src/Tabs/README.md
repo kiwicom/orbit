@@ -31,31 +31,39 @@ Once you have imported the Tabs component, you can use it in your React applicat
 
 Table below contains all types of the props available in Tabs component.
 
-| Name            | Type         | Default | Description                                                              |
-| :-------------- | :----------- | :------ | :----------------------------------------------------------------------- |
-| dataTest        | `string`     |         | Optional prop for testing purposes.                                      |
-| defaultSelected | `number`     | `0`     | Optional prop to set the initial active tab index.                       |
-| children        | `React.node` |         | Required prop that should contain the `TabList`, `TabPanels` components. |
+| Name            | Type                             | Default | Description                                                                                                  |
+| :-------------- | :------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------- |
+| dataTest        | `string`                         |         | Optional prop for testing purposes.                                                                          |
+| defaultSelected | `number`                         | `0`     | Optional prop to set the initial active tab index. Use only if you do not want to control state on your side |
+| children        | `React.node`                     |         | Required prop that should contain the `TabList`, `TabPanels` components.                                     |
+| onChange        | `event => void \| Promise<void>` |         | Function for handling onChange. Use only if you do not want to control state on your side.                   |
 
 ### TabList
 
 Table below contains all types of the props available in TabList component.
 
-| Name     | Type         | Default | Description                                                                          |
-| :------- | :----------- | :------ | :----------------------------------------------------------------------------------- |
-| dataTest | `string`     |         | Optional prop for testing purposes.                                                  |
-| children | `React.node` |         | Required prop that should contain the `Tab` components.                              |
-| compact  | `boolean`    | `false` | Optional prop that responsible for `Tab`size, if provided, the Tabs will be smaller. |
+| Name     | Type            | Default | Description                                                                          |
+| :------- | :-------------- | :------ | :----------------------------------------------------------------------------------- |
+| dataTest | `string`        |         | Optional prop for testing purposes.                                                  |
+| children | `React.node`    |         | Required prop that should contain the `Tab` components.                              |
+| compact  | `boolean`       | `false` | Optional prop that responsible for `Tab`size, if provided, the Tabs will be smaller. |
+| spacing  | [`enum`](#enum) | `none`  | Optional prop to set gap between `Tab` elements                                      |
 
 ### Tab
 
 Table below contains all types of the props available in Tab component.
 
-| Name     | Type            | Default   | Description                                          |
-| :------- | :-------------- | :-------- | :--------------------------------------------------- |
-| dataTest | `string`        |           | Optional prop for testing purposes.                  |
-| children | `React.node`    |           | Required prop that should contain the `Tab` content. |
-| type     | [`enum`](#enum) | `default` | Optional prop that responsible for Tab style.        |
+You can choose how you would like to use the component. By default it's using inner state to set active state on `Tab`. If you
+would like to control that behavior, you will need to provide `active` and `onClick` properties and handle the change on your side.
+
+| Name     | Type                             | Default   | Description                                                  |
+| :------- | :------------------------------- | :-------- | :----------------------------------------------------------- |
+| dataTest | `string`                         |           | Optional prop for testing purposes.                          |
+| disabled | `boolean`                        |           | Optional prop to set disabled state.                         |
+| children | `React.node`                     |           | Required prop that should contain the `Tab` content.         |
+| type     | [`enum`](#enum)                  | `default` | Optional prop that responsible for Tab style.                |
+| active   | `boolean`                        | `false`   | Optional prop to have controlled behavior over active state. |
+| onClick  | `event => void \| Promise<void>` |           | Function for handling onClick event.                         |
 
 ### TabPanels
 
@@ -70,20 +78,26 @@ Table below contains all types of the props available in TabPanel component.
 
 Table below contains all types of the props available in TabPanel component.
 
-| Name     | Type                         | Default | Description                                               |
-| :------- | :--------------------------- | :------ | :-------------------------------------------------------- |
-| dataTest | `string`                     |         | Optional prop for testing purposes.                       |
-| children | `React.node`                 |         | Required prop that should contain the `TabPanel` content. |
-| margin   | `string \| number \| Object` | `"0"`   | Utility property to set margin.                           |
-| padding  | `string \| number \| Object` | `"0"`   | Utility property to set padding.                          |
+| Name     | Type                         | Default | Description                                                  |
+| :------- | :--------------------------- | :------ | :----------------------------------------------------------- |
+| dataTest | `string`                     |         | Optional prop for testing purposes.                          |
+| children | `React.node`                 |         | Required prop that should contain the `TabPanel` content.    |
+| margin   | `string \| number \| Object` | `"0"`   | Utility property to set margin.                              |
+| padding  | `string \| number \| Object` | `"0"`   | Utility property to set padding.                             |
+| active   | `boolean`                    | `false` | Optional prop to have controlled behavior over active state. |
 
 ### enum
 
 #### enum
 
-| type      |
-| :-------- |
-| `default` |
-| `basic`   |
-| `medium`  |
-| `top`     |
+| type      | spacing    |
+| :-------- | ---------- |
+| `default` | `none`     |
+| `basic`   | `XXXSmall` |
+| `medium`  | `XXSmall`  |
+| `top`     | `XSmall`   |
+|           | `small`    |
+|           | `medium`   |
+|           | `large`    |
+|           | `XLarge`   |
+|           | `XXLarge`  |

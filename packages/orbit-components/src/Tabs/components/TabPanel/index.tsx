@@ -12,14 +12,14 @@ const StyledPanel = styled.div<{ $margin?: Props["margin"]; $padding?: Props["pa
   `};
 `;
 
-const TabPanel = ({ children, margin, padding, dataTest }: Props) => {
-  const { index } = usePanel();
+const TabPanel = ({ children, margin, padding, dataTest, active = false }: Props) => {
+  const { index, isActive } = usePanel();
 
-  return (
+  return active || isActive ? (
     <StyledPanel $margin={margin} $padding={padding} id={`panel-${index}`} data-test={dataTest}>
       {children}
     </StyledPanel>
-  );
+  ) : null;
 };
 
 export default TabPanel;

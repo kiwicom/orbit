@@ -8,7 +8,7 @@ import TabPanels from "./components/TabPanels";
 import TabList from "./components/TabList";
 import type { Props } from "./types";
 
-const Tabs = ({ children, spacing, dataTest, defaultSelected = 0, onChange }: Props) => {
+const Tabs = ({ children, spacing, dataTest, defaultSelected, onChange }: Props) => {
   return (
     <TabProvider defaultSelected={defaultSelected} onChange={onChange}>
       <Stack dataTest={dataTest} direction="column" spacing={spacing}>

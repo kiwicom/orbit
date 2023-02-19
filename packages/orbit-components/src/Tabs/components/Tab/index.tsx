@@ -40,42 +40,45 @@ const getBackgroundType = (state?: "hover" | "active") => ({
 const StyledTab = styled.button<{
   $type: Props["type"];
   active?: Props["active"];
-  compact: Props["compact"];
+  compact: boolean;
 }>`
-  ${({ theme, active, $type }) => css`
+  ${({ theme, active, $type, compact, disabled }) => css`
     display: flex;
     border: 0;
     position: relative;
     appearance: none;
     flex-direction: row;
     justify-content: space-between;
+    box-sizing: border-box;
     align-items: center;
     font-family: ${theme.orbit.fontFamily};
-    cursor: pointer;
-    padding: 10px 16px;
+    cursor: ${!disabled && "pointer"};
+    opacity: ${disabled && "0.5"};
+    padding: ${compact ? "5px 16px" : "9px 16px"};
     background: ${getBackgroundType()};
     font-weight: ${theme.orbit.fontWeightMedium};
-    font-size: ${theme.orbit.fontSizeTextLarge};
+    line-height: ${compact ? theme.orbit.lineHeightTextNormal : theme.orbit.lineHeightTextLarge};
+    font-size: ${compact ? theme.orbit.fontSizeTextNormal : theme.orbit.fontSizeTextLarge};
     border-radius: ${theme.orbit.borderRadiusNormal} ${theme.orbit.borderRadiusNormal} 0 0;
     transition: background ${theme.orbit.durationFast} ease-in-out;
-    border-bottom-width: ${active && "2px"};
+    border-bottom-width: 2px;
     border-style: solid;
     border-image-slice: 1;
-    border-image-source: ${active &&
+    border-image-source: ${!disabled &&
+    active &&
     $type !== TYPE_OPTIONS.DEFAULT &&
     getColorBackground({ type: $type, theme })};
-
-    border-bottom: ${active &&
-    $type === TYPE_OPTIONS.DEFAULT &&
-    `2px solid ${theme.orbit.paletteProductNormal}`};
+    border-bottom-color: ${!disabled && active && $type === TYPE_OPTIONS.DEFAULT
+      ? `${theme.orbit.paletteProductNormal}`
+      : "transparent"};
 
     &:hover {
-      background: ${getBackgroundType("hover")};
+      background: ${!disabled && getBackgroundType("hover")};
     }
 
     &:focus,
     &:active {
-      background: ${getBackgroundType("active")};
+      background: ${!disabled && getBackgroundType("active")};
     }
   `};
 `;
@@ -102,21 +105,40 @@ StyledTabText.defaultProps = {
   theme: defaultTheme,
 };
 
-const Tab = ({ children, dataTest, type = TYPE_OPTIONS.DEFAULT }: Props) => {
-  const { setSelected, selected } = useTabs();
+const Tab = ({
+  children,
+  dataTest,
+  active = false,
+  disabled,
+  onClick,
+  type = TYPE_OPTIONS.DEFAULT,
+}: Props) => {
+  const { setSelected, selected, onChange } = useTabs();
   const { index, compact } = useTab();
+  const isSelected = active || selected === index;
+
+  React.useEffect(() => {
+    if (onChange && !onClick) onChange(selected);
+    if (onClick) setSelected(undefined);
+  }, [onChange, selected, setSelected]);
 
   return (
     <StyledTab
       data-test={dataTest}
-      onClick={() => setSelected(index)}
+      onClick={ev => {
+        if (onClick) {
+          onClick(ev);
+        } else setSelected(index);
+      }}
       type="button"
+      disabled={disabled}
       $type={type}
       role="tab"
-      aria-selected={selected === index}
+      aria-selected={isSelected}
+      aria-disabled={disabled}
       aria-controls={`panel-${index}`}
       compact={compact}
-      active={selected === index}
+      active={isSelected}
     >
       <StyledTabText type={type}>{children}</StyledTabText>
     </StyledTab>

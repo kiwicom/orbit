@@ -13,7 +13,7 @@ const StyledTabListWrapper = styled.div<{ $margin?: Props["margin"]; $padding?: 
   `};
 `;
 
-const TabList = ({ children, spacing, compact, padding, margin, dataTest }: Props) => {
+const TabList = ({ children, spacing = "none", compact, padding, margin, dataTest }: Props) => {
   return (
     <StyledTabListWrapper
       role="tablist"

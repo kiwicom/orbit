@@ -504,7 +504,7 @@
   group: Structure
 - component: Tabs
   figma: Released
-  react: Planned
+  react: Released
   ios: Released
   android: Released
   docs: Released

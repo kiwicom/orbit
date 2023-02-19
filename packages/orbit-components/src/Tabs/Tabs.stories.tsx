@@ -1,5 +1,5 @@
 import * as React from "react";
-import { select, text, boolean } from "@storybook/addon-knobs";
+import { select, text, boolean, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -26,42 +26,10 @@ export const Default = () => {
   );
 };
 
-Default.story = {
-  name: "Default",
-};
-
-export default {
-  title: "Tabs",
-};
-
-export const Playground = () => {
-  const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DEFAULT);
-  const compact = boolean("compact", false);
-  const firstTabLabel = text("first tab label", "Tab 1");
-  const secondTabLabel = text("second tab label", "Tab 2");
-  const firstTabContent = text("first tab content", "Tab 1");
-  const secondTabContent = text("second tab content", "Tab 2");
-
+export const Compact = () => {
   return (
     <Tabs onChange={action("onChange")}>
-      <TabList>
-        <Tab>{firstTabLabel}</Tab>
-        <Tab type={type} compact={compact}>
-          {secondTabLabel}
-        </Tab>
-      </TabList>
-      <TabPanels>
-        <TabPanel>{firstTabContent}</TabPanel>
-        <TabPanel>{secondTabContent}</TabPanel>
-      </TabPanels>
-    </Tabs>
-  );
-};
-
-export const RTL = () => {
-  <RenderInRtl>
-    <Tabs>
-      <TabList>
+      <TabList compact>
         <Tab>Tab 1</Tab>
         <Tab type="basic">Tab 2</Tab>
         <Tab type="medium">Tab 3</Tab>
@@ -74,7 +42,89 @@ export const RTL = () => {
         <TabPanel>Tab 4 content</TabPanel>
       </TabPanels>
     </Tabs>
-  </RenderInRtl>;
+  );
+};
+
+export const Controlled = () => {
+  const [selected, setSelected] = React.useState(2);
+
+  return (
+    <Tabs>
+      <TabList>
+        <Tab onClick={() => setSelected(0)} active={selected === 0}>
+          Tab 1
+        </Tab>
+        <Tab type="basic" onClick={() => setSelected(1)} active={selected === 1}>
+          Tab 2
+        </Tab>
+        <Tab type="medium" onClick={() => setSelected(2)} active={selected === 2}>
+          Tab 3
+        </Tab>
+        <Tab type="top" onClick={() => setSelected(3)} active={selected === 3}>
+          Tab 4
+        </Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel active={selected === 0}>Tab 1 content</TabPanel>
+        <TabPanel active={selected === 1}>Tab 2 content</TabPanel>
+        <TabPanel active={selected === 2}>Tab 3 content</TabPanel>
+        <TabPanel active={selected === 3}>Tab 4 content</TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+
+Default.story = {
+  name: "Default",
+};
+
+export default {
+  title: "Tabs",
+};
+
+export const Playground = () => {
+  const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DEFAULT);
+  const compact = boolean("compact", false);
+  const disabled = boolean("disabled", false);
+  const defaultSelected = number("defaultSelected", 0);
+  const firstTabLabel = text("first tab label", "Tab 1");
+  const secondTabLabel = text("second tab label", "Tab 2");
+  const firstTabContent = text("first tab content", "Tab 1");
+  const secondTabContent = text("second tab content", "Tab 2");
+
+  return (
+    <Tabs onChange={action("onChange")} defaultSelected={defaultSelected}>
+      <TabList compact={compact}>
+        <Tab disabled={disabled}>{firstTabLabel}</Tab>
+        <Tab type={type}>{secondTabLabel}</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>{firstTabContent}</TabPanel>
+        <TabPanel>{secondTabContent}</TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+
+export const RTL = () => {
+  return (
+    <RenderInRtl>
+      <Tabs>
+        <TabList>
+          <Tab>Tab 1</Tab>
+          <Tab type="basic">Tab 2</Tab>
+          <Tab type="medium">Tab 3</Tab>
+          <Tab type="top">Tab 4</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>Tab 1 content</TabPanel>
+          <TabPanel>Tab 2 content</TabPanel>
+          <TabPanel>Tab 3 content</TabPanel>
+          <TabPanel>Tab 4 content</TabPanel>
+        </TabPanels>
+      </Tabs>
+    </RenderInRtl>
+  );
 };
 
 Playground.story = {

@@ -11,11 +11,9 @@ const TabPanels = ({ children, dataTest }: Props) => {
       {React.Children.map(children, (child, idx) => {
         if (!React.isValidElement(child)) return null;
         return (
-          idx === selected && (
-            <TabPanelProvider isSelected={selected} index={idx}>
-              {child}
-            </TabPanelProvider>
-          )
+          <TabPanelProvider isActive={selected === idx} index={idx}>
+            {child}
+          </TabPanelProvider>
         );
       })}
     </div>

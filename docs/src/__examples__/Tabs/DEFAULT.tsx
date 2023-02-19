@@ -28,6 +28,11 @@ export default {
           defaultValue: "default",
           options: ["default", "basic", "medium", "top"],
         },
+        {
+          name: "disabled",
+          type: "boolean",
+          defaultValue: false,
+        },
       ],
     },
   ],

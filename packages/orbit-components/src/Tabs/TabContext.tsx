@@ -5,8 +5,8 @@ import type { Props } from "./types";
 interface TabsContextValue {
   defaultSelected?: Props["defaultSelected"];
   onChange: Props["onChange"];
-  selected: number;
-  setSelected: React.Dispatch<React.SetStateAction<number>>;
+  selected: number | undefined;
+  setSelected: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
 const TabsContext = React.createContext<TabsContextValue>({
@@ -21,8 +21,8 @@ const TabContext = React.createContext<{ index: number; compact: boolean }>({
   compact: false,
 });
 
-const TabPanelContext = React.createContext<{ isSelected: boolean; index: number }>({
-  isSelected: false,
+const TabPanelContext = React.createContext<{ isActive: boolean; index: number }>({
+  isActive: false,
   index: 0,
 });
 
@@ -31,11 +31,7 @@ const TabsProvider = ({
   defaultSelected = 0,
   onChange,
 }: React.PropsWithChildren<Pick<TabsContextValue, "onChange" | "defaultSelected">>) => {
-  const [selected, setSelected] = React.useState(defaultSelected);
-
-  React.useEffect(() => {
-    if (onChange) onChange(selected);
-  }, [onChange, selected]);
+  const [selected, setSelected] = React.useState<number | undefined>(defaultSelected);
 
   return (
     <TabsContext.Provider value={{ selected, setSelected, onChange }}>
@@ -48,9 +44,9 @@ export const TabProvider = ({ children, index, compact }) => {
   return <TabContext.Provider value={{ index, compact }}>{children}</TabContext.Provider>;
 };
 
-export const TabPanelProvider = ({ children, isSelected, index }) => {
+export const TabPanelProvider = ({ children, isActive, index }) => {
   return (
-    <TabPanelContext.Provider value={{ isSelected, index }}>{children}</TabPanelContext.Provider>
+    <TabPanelContext.Provider value={{ isActive, index }}>{children}</TabPanelContext.Provider>
   );
 };
 

@@ -211,7 +211,7 @@ StyledTitle.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledContent = styled.div<{ inlineActions?: boolean; type: Type; $noUnderline: boolean }>`
+const StyledContent = styled.div<{ inlineActions?: boolean; $type: Type; $noUnderline: boolean }>`
   ${({ inlineActions, theme }) => css`
     display: flex;
     align-items: center;
@@ -311,12 +311,12 @@ const Alert = (props: Props) => {
           </StyledTitle>
         )}
         {children && !inlineActions && (
-          <StyledContent type={type} $noUnderline>
+          <StyledContent $type={type} $noUnderline>
             {children}
           </StyledContent>
         )}
         {inlineActions && (
-          <StyledContent type={type} inlineActions={!!inlineActions} $noUnderline>
+          <StyledContent $type={type} inlineActions={!!inlineActions} $noUnderline>
             {inlineActions}
           </StyledContent>
         )}

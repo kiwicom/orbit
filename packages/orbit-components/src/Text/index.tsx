@@ -89,16 +89,16 @@ export const StyledText = styled(
     size,
     weight,
     strikeThrough,
-    $type,
+    type,
     italic,
     withBackground,
     margin,
   }) => css`
     font-family: ${theme.orbit.fontFamily};
-    background: ${withBackground && convertHexToRgba(getTypeToken({ theme, type: $type }), 10)};
+    background: ${withBackground && convertHexToRgba(getTypeToken({ theme, type }), 10)};
     font-size: ${getSizeToken({ theme, size })};
     font-weight: ${getWeightToken({ theme, weight })};
-    color: ${getTypeToken({ theme, type: $type })};
+    color: ${getTypeToken({ theme, type })};
     line-height: ${getLineHeightToken({ theme, size })};
     text-align: ${textAlign(align)};
     text-transform: ${uppercase && `uppercase`};
@@ -108,7 +108,7 @@ export const StyledText = styled(
     ${marginUtility(margin)};
 
     a:not(${StyledTextLink}) {
-      ${getLinkStyle({ theme, $type })};
+      ${getLinkStyle({ theme, type })};
     }
   `}
 `;
@@ -140,7 +140,7 @@ const Text = ({
       id={id}
       // TODO: remove spaceAfter in the next major version
       margin={(spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin) || "0"}
-      $type={type}
+      type={type}
       size={size}
       strikeThrough={strikeThrough}
       withBackground={withBackground}

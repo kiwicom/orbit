@@ -9,12 +9,12 @@ import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import createRel from "../primitives/ButtonPrimitive/common/createRel";
 
 type GetTextLinkTokensType = ({
-  $type,
+  type,
 }: {
-  $type?: Type;
+  type?: Type;
 }) => ({ theme }: { theme: Theme }) => string | null;
 
-const getColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
+const getColor: GetTextLinkTokensType = ({ type }) => ({ theme }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
@@ -25,12 +25,12 @@ const getColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
     [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite,
   };
 
-  if (!$type) return null;
+  if (!type) return null;
 
-  return tokens[$type];
+  return tokens[type];
 };
 
-const getHoverColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
+const getHoverColor: GetTextLinkTokensType = ({ type }) => ({ theme }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarkHover,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarkHover,
@@ -41,12 +41,12 @@ const getHoverColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
     [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
   };
 
-  if (!$type) return null;
+  if (!type) return null;
 
-  return tokens[$type];
+  return tokens[type];
 };
 
-const getActiveColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
+const getActiveColor: GetTextLinkTokensType = ({ type }) => ({ theme }) => {
   const tokens = {
     [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarker,
     [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarker,
@@ -57,9 +57,9 @@ const getActiveColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
     [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
   };
 
-  if (!$type) return null;
+  if (!type) return null;
 
-  return tokens[$type];
+  return tokens[type];
 };
 
 const getSizeToken = ({ theme, size }: { theme: Theme; size: Common.Size }): string => {
@@ -91,22 +91,22 @@ StyledIconContainer.defaultProps = {
 };
 
 const resolveUnderline = ({
-  $type,
+  type,
   theme,
   $noUnderline,
 }: {
-  $type: Type;
+  type: Type;
   theme: Theme;
   $noUnderline: boolean;
 }) => {
   if ($noUnderline) return "none";
-  return $type === TYPE_OPTIONS.SECONDARY
+  return type === TYPE_OPTIONS.SECONDARY
     ? theme.orbit.textDecorationTextLinkSecondary
     : theme.orbit.textDecorationTextLinkPrimary;
 };
 
 // Common styles for TextLink and "a" in Text
-export const getLinkStyle = ({ theme }: { theme: Theme; $type: Props["type"] }) => css`
+export const getLinkStyle = ({ theme }: { theme: Theme; type: Props["type"] }) => css`
   &,
   &:link,
   &:visited {
@@ -128,7 +128,7 @@ export const getLinkStyle = ({ theme }: { theme: Theme; $type: Props["type"] }) 
   }
 `;
 
-export const StyledTextLink = styled(({ asComponent: Component, theme, ...props }) => (
+export const StyledTextLink = styled(({ asComponent: Component, ...props }) => (
   <Component {...props}>{props.children}</Component>
 ))`
   ${({ theme, $standAlone, size }) => css`
@@ -187,7 +187,7 @@ const TextLink = ({
     <StyledTextLink
       aria-current={ariaCurrent}
       id={id}
-      $type={type}
+      type={type}
       size={size}
       href={href}
       target={external ? "_blank" : undefined}

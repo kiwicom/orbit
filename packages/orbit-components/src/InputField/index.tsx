@@ -252,7 +252,6 @@ Suffix.defaultProps = {
 interface StyledInputProps extends Partial<Props> {
   min: number;
   max: number;
-  theme: typeof defaultTheme;
   autoCorrect: string;
   autoCapitalize: string;
   ariaLabelledby?: string;
@@ -269,7 +268,6 @@ export const Input = styled(
         error,
         help,
         inlineLabel,
-        theme,
         dataAttrs,
         required,
         ariaLabelledby,

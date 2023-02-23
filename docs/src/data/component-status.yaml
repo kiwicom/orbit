@@ -470,7 +470,7 @@
 - component: Stepper
   figma: Released
   react: Released
-  ios: Planned
+  ios: Released
   android: Released
   docs: Released
   group: Interaction

@@ -15,7 +15,7 @@ import {
 import getSpacingToken from "../common/getSpacingToken";
 import { textAlign } from "../utils/rtl";
 import { getLinkStyle, StyledTextLink } from "../TextLink";
-import { marginUtility } from "../utils/common";
+import { spacingUtility } from "../utils/common";
 import useTheme from "../hooks/useTheme";
 import type { Props, Type, Weight } from "./types";
 
@@ -105,7 +105,7 @@ export const StyledText = styled(
     text-decoration: ${strikeThrough && `line-through`};
     font-style: ${italic && `italic`};
     margin: 0;
-    ${marginUtility(margin)};
+    ${spacingUtility(margin)};
 
     a:not(${StyledTextLink}) {
       ${getLinkStyle({ theme, $type })};

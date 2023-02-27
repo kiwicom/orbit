@@ -1440,6 +1440,33 @@
         "categoryDescription": ""
       }
     },
+    "backgroundColorTabBundleBasic": {
+      "value": "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundColorTabBundleMedium": {
+      "value": "linear-gradient(80.91deg, #3719AB 0%, #8539DB 100%)",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundColorTabBundleTop": {
+      "value": "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "backgroundButtonBundleBasic": {
       "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
       "type": "string",
@@ -1450,7 +1477,7 @@
       }
     },
     "backgroundButtonBundleBasicHover": {
-      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
+      "value": "linear-gradient(to top right, #BD2825 0%, #BD2825 100%)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1459,7 +1486,7 @@
       }
     },
     "backgroundButtonBundleBasicActive": {
-      "value": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)",
+      "value": "linear-gradient(to top right, #9F1816 0%, #9F1816 100%)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1495,7 +1522,7 @@
       }
     },
     "backgroundButtonBundleTop": {
-      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73  100%)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1504,7 +1531,7 @@
       }
     },
     "backgroundButtonBundleTopHover": {
-      "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)",
+      "value": "linear-gradient(to top right, #171718 0%, #51575C  100%)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1513,7 +1540,7 @@
       }
     },
     "backgroundButtonBundleTopActive": {
-      "value": "linear-gradient(to top right, #101011 0%, #51575C)",
+      "value": "linear-gradient(to top right, #101011 0%, #51575C  100%)",
       "type": "string",
       "category": "",
       "comment": "",
@@ -1837,7 +1864,7 @@
       }
     },
     "backgroundBadgeBundleTop": {
-      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+      "value": "linear-gradient(to top right,#2D2D2E 0%, #696E73 100%)",
       "type": "string",
       "category": "",
       "comment": "",

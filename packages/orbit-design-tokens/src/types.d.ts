@@ -208,6 +208,9 @@ export type Tokens = {
   backgroundBadgeCritical: string;
   backgroundBadgeDark: string;
   backgroundBadgeWhite: string;
+  backgroundColorTabBundleBasic: string;
+  backgroundColorTabBundleMedium: string;
+  backgroundColorTabBundleTop: string;
   backgroundBadgeBundleBasic: string;
   backgroundBadgeBundleMedium: string;
   backgroundBadgeBundleTop: string;

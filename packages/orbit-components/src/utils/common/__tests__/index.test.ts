@@ -2,40 +2,58 @@ import * as utils from "..";
 
 describe("utils", () => {
   it("should have correct margin values", () => {
-    expect(utils.marginUtility("10px")).toMatchInlineSnapshot(`
+    expect(utils.spacingUtility("10px")).toMatchInlineSnapshot(`
       Array [
-        "margin:",
+        "margin",
+        ":",
         "10px",
         ";",
       ]
     `);
-    expect(utils.marginUtility(10)).toMatchInlineSnapshot(`
+    expect(utils.spacingUtility(10)).toMatchInlineSnapshot(`
       Array [
-        "margin:",
+        "margin",
+        ":",
         "10px",
         ";",
       ]
     `);
-    expect(utils.marginUtility({ top: "10px" })).toMatchInlineSnapshot(`
+    expect(utils.spacingUtility({ top: "10px" })).toMatchInlineSnapshot(`
       Array [
-        "margin-top:",
+        "margin",
+        "-top:",
         "10px",
-        ";margin-right:",
-        ";margin-bottom:",
-        ";margin-left:",
+        ";",
+        "margin",
+        "-right:",
+        ";",
+        "margin",
+        "-bottom:",
+        ";",
+        "margin",
+        "-left:",
         ";",
       ]
     `);
-    expect(utils.marginUtility({ top: 10, bottom: 2 })).toMatchInlineSnapshot(`
+    expect(utils.spacingUtility({ top: 10, bottom: 2 })).toMatchInlineSnapshot(`
       Array [
-        "margin-top:",
+        "margin",
+        "-top:",
         "10px",
-        ";margin-right:",
-        ";margin-bottom:",
+        ";",
+        "margin",
+        "-right:",
+        ";",
+        "margin",
+        "-bottom:",
         "2px",
-        ";margin-left:",
+        ";",
+        "margin",
+        "-left:",
         ";",
       ]
     `);
+    expect(utils.spacingUtility({ top: 10, bottom: 3 }, "padding"));
+    expect(utils.spacingUtility("10", "padding"));
   });
 });

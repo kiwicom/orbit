@@ -660,16 +660,28 @@ describe(generateXMLDesignTokens.name, () => {
           <value>#E5EAEF</value>
         </token>
         <token>
+          <name>backgroundColorTabBundleBasic</name>
+          <value>linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)</value>
+        </token>
+        <token>
+          <name>backgroundColorTabBundleMedium</name>
+          <value>linear-gradient(80.91deg, #3719AB 0%, #8539DB 100%)</value>
+        </token>
+        <token>
+          <name>backgroundColorTabBundleTop</name>
+          <value>linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)</value>
+        </token>
+        <token>
           <name>backgroundButtonBundleBasic</name>
           <value>linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)</value>
         </token>
         <token>
           <name>backgroundButtonBundleBasicHover</name>
-          <value>linear-gradient(to top right, #BD2825 0%, #D67000 100%)</value>
+          <value>linear-gradient(to top right, #BD2825 0%, #BD2825 100%)</value>
         </token>
         <token>
           <name>backgroundButtonBundleBasicActive</name>
-          <value>linear-gradient(to top right, #9F1816 0%, #C36802 100%)</value>
+          <value>linear-gradient(to top right, #9F1816 0%, #9F1816 100%)</value>
         </token>
         <token>
           <name>backgroundButtonBundleMedium</name>
@@ -685,15 +697,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundButtonBundleTop</name>
-          <value>linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)</value>
+          <value>linear-gradient(to top right, #2D2D2E 0%, #696E73  100%)</value>
         </token>
         <token>
           <name>backgroundButtonBundleTopHover</name>
-          <value>linear-gradient(to top right, #171718 0%, #51575C 100%)</value>
+          <value>linear-gradient(to top right, #171718 0%, #51575C  100%)</value>
         </token>
         <token>
           <name>backgroundButtonBundleTopActive</name>
-          <value>linear-gradient(to top right, #101011 0%, #51575C)</value>
+          <value>linear-gradient(to top right, #101011 0%, #51575C  100%)</value>
         </token>
         <token>
           <name>backgroundButtonBordered</name>
@@ -837,7 +849,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundBadgeBundleTop</name>
-          <value>linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)</value>
+          <value>linear-gradient(to top right,#2D2D2E 0%, #696E73 100%)</value>
         </token>
         <token>
           <name>backgroundServiceLogo</name>

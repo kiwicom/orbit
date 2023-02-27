@@ -15,22 +15,23 @@ const setValue = (value?: string | number): string | null => {
   return typeof value === "number" && value !== 0 ? `${value}px` : String(value);
 };
 
-export const marginUtility = (
-  margin?: React.CSSProperties["margin"] | ObjectProperty,
+export const spacingUtility = (
+  spacing?: string | number | ObjectProperty,
+  prop: "padding" | "margin" = "margin",
 ): FlattenSimpleInterpolation | null => {
-  if (!margin) return null;
-  if (typeof margin === "string" || typeof margin === "number") {
+  if (!spacing) return null;
+  if (typeof spacing === "string" || typeof spacing === "number") {
     return css`
-      margin: ${setValue(margin)};
+      ${prop}: ${setValue(spacing)};
     `;
   }
 
-  const { top, right, bottom, left } = margin;
+  const { top, right, bottom, left } = spacing;
 
   return css`
-    margin-top: ${setValue(top)};
-    margin-right: ${setValue(right)};
-    margin-bottom: ${setValue(bottom)};
-    margin-left: ${setValue(left)};
+    ${prop}-top: ${setValue(top)};
+    ${prop}-right: ${setValue(right)};
+    ${prop}-bottom: ${setValue(bottom)};
+    ${prop}-left: ${setValue(left)};
   `;
 };

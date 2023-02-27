@@ -14,7 +14,7 @@ import InputFile from "./InputFile";
 import InputGroup from "./InputGroup";
 import Button from "./Button";
 import Text from "./Text";
-import ChevronLeft from "./icons/ChevronLeft";
+import ChevronBackward from "./icons/ChevronBackward";
 import Card from "./Card";
 import CountryFlag from "./CountryFlag";
 import Airplane from "./icons/Airplane";
@@ -453,7 +453,7 @@ export const withModal = () => {
         </Stack>
       </ModalSection>
       <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-        <Button iconLeft={<ChevronLeft />} type="secondary">
+        <Button iconLeft={<ChevronBackward />} type="secondary">
           Back
         </Button>
         <Button fullWidth>Proceed to Payment (23.98€)</Button>

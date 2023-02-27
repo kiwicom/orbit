@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import ChevronRight from "../../icons/ChevronRight";
+import ChevronForward from "../../icons/ChevronForward";
 import type { Props } from "./types";
 
 const StyledBreadcrumbsItem = styled.li`
@@ -39,7 +39,7 @@ StyledBreadcrumbsItemAnchor.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledBreadcrumbsItemIcon = styled(ChevronRight)`
+const StyledBreadcrumbsItemIcon = styled(ChevronForward)`
   ${({ theme }) => css`
     margin: 0 ${theme.orbit.spaceXXSmall};
   `}

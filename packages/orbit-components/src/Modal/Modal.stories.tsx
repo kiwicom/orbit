@@ -8,7 +8,7 @@ import Illustration from "../Illustration";
 import Text from "../Text";
 // @ts-expect-error currently not resolving mts properly
 import { NAMES } from "../Illustration/consts.mts";
-import ChevronLeft from "../icons/ChevronLeft";
+import ChevronBackward from "../icons/ChevronBackward";
 import FlightDirect from "../icons/FlightDirect";
 import Stack from "../Stack";
 import ButtonLink from "../ButtonLink";
@@ -150,7 +150,7 @@ export const WithoutSection = () => {
           </ModalSection>
         )}
         <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button iconLeft={<ChevronLeft />} type="secondary">
+          <Button iconLeft={<ChevronBackward />} type="secondary">
             Back
           </Button>
           <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -189,7 +189,7 @@ export const RemovableSections = () => {
           <Text>Lorem ipsum dolor sit amet</Text>
         </ModalSection>
         <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button iconLeft={<ChevronLeft />} type="secondary">
+          <Button iconLeft={<ChevronBackward />} type="secondary">
             Back
           </Button>
           <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -253,7 +253,7 @@ export const WithForm = () => {
           </Stack>
         </ModalSection>
         <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button iconLeft={<ChevronLeft />} type="secondary">
+          <Button iconLeft={<ChevronBackward />} type="secondary">
             Back
           </Button>
           <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -441,7 +441,7 @@ export const WithFixedFooter = () => {
           </Stack>
         </ModalSection>
         <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-          <Button iconLeft={<ChevronLeft />} type="secondary">
+          <Button iconLeft={<ChevronBackward />} type="secondary">
             Back
           </Button>
           <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -508,7 +508,7 @@ export const FullPreview = () => {
         <ModalFooter flex={flex}>
           {showBack && (
             <Stack direction="row">
-              <Button type="secondary" iconLeft={<ChevronLeft />}>
+              <Button type="secondary" iconLeft={<ChevronBackward />}>
                 Back
               </Button>
               <ButtonLink type="secondary">Button</ButtonLink>
@@ -555,7 +555,7 @@ export const Rtl = () => {
             </Text>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button type="secondary" iconLeft={<ChevronLeft />}>
+            <Button type="secondary" iconLeft={<ChevronBackward />}>
               Back
             </Button>
             <Button fullWidth>Continue to Payment</Button>

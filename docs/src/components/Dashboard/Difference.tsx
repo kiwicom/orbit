@@ -10,7 +10,7 @@ import {
   Text,
   Stack,
 } from "@kiwicom/orbit-components";
-import { ChevronRight } from "@kiwicom/orbit-components/icons";
+import { ChevronForward } from "@kiwicom/orbit-components/icons";
 
 import DocLayout from "../DocLayout";
 import { SchemeTrackingNode, TrackingNode, TrackingProp } from "./interfaces";
@@ -114,7 +114,7 @@ const DataDiffTemplate = ({ location }: PageRendererProps) => {
                 <TableCell>
                   <Stack inline align="center" spacing="small">
                     <Text type={getStatus(before, after)}>{before}</Text>
-                    <ChevronRight size="small" />
+                    <ChevronForward size="small" />
                     <Text type={getStatus(before, after)}>{after}</Text>
                   </Stack>
                 </TableCell>
@@ -133,7 +133,7 @@ const DataDiffTemplate = ({ location }: PageRendererProps) => {
                             >
                               {propInstances.before}
                             </Text>
-                            <ChevronRight size="small" />
+                            <ChevronForward size="small" />
                             <Text
                               size="small"
                               type={getStatus(propInstances.before, propInstances.after)}

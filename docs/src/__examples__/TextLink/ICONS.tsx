@@ -1,6 +1,6 @@
 import React from "react";
 import { TextLink, Stack } from "@kiwicom/orbit-components";
-import { ChevronRight, NewWindow } from "@kiwicom/orbit-components/icons";
+import { ChevronForward, NewWindow } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
@@ -12,7 +12,7 @@ export default {
       >
         Orbit design system
       </TextLink>
-      <TextLink iconRight={<ChevronRight />}>Skip this step</TextLink>
+      <TextLink iconRight={<ChevronForward />}>Skip this step</TextLink>
     </Stack>
   ),
 };

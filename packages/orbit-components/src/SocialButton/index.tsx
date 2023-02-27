@@ -3,7 +3,7 @@ import * as React from "react";
 import ButtonPrimitive from "../primitives/ButtonPrimitive";
 import getIconContainer from "../primitives/ButtonPrimitive/common/getIconContainer";
 import getCommonProps from "../primitives/ButtonPrimitive/common/getCommonProps";
-import ChevronRightIcon from "../icons/ChevronRight";
+import ChevronForwardIcon from "../icons/ChevronForward";
 import useTheme from "../hooks/useTheme";
 import getSocialButtonStyles from "./helpers/getSocialButtonStyles";
 import getSocialButtonIconForeground from "./helpers/getSocialButtonIconForeground";
@@ -32,7 +32,7 @@ const SocialButton = React.forwardRef<HTMLButtonElement, Props>(
         disabled={disabled}
         iconLeft={iconLeft}
         iconRight={
-          <ChevronRightIcon
+          <ChevronForwardIcon
             customColor={type === TYPE_OPTIONS.APPLE ? "#FFF" : ""}
             color="primary"
           />

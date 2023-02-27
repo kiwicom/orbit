@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import TextLink from "..";
-import ChevronRight from "../../icons/ChevronRight";
+import ChevronForward from "../../icons/ChevronForward";
 import defaultTheme from "../../defaultTheme";
 
 const title = "My text link";
@@ -43,8 +43,8 @@ describe("#TextLink", () => {
     render(
       <TextLink
         href={href}
-        iconRight={<ChevronRight dataTest={dataTestLeftIcon} />}
-        iconLeft={<ChevronRight dataTest={dataTestRightIcon} />}
+        iconRight={<ChevronForward dataTest={dataTestLeftIcon} />}
+        iconLeft={<ChevronForward dataTest={dataTestRightIcon} />}
         tabIndex={tabIndex}
         dataTest={dataTest}
       >

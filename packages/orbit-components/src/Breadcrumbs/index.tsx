@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import type * as Common from "../common/types";
 import defaultTheme from "../defaultTheme";
-import ChevronLeft from "../icons/ChevronLeft";
+import ChevronBackward from "../icons/ChevronBackward";
 import getSpacingToken from "../common/getSpacingToken";
 import useTranslate from "../hooks/useTranslate";
 import { right } from "../utils/rtl";
@@ -85,7 +85,7 @@ const Breadcrumbs = (props: Props) => {
             standAlone
             type="secondary"
             id={id}
-            iconLeft={<ChevronLeft reverseOnRtl />}
+            iconLeft={<ChevronBackward reverseOnRtl />}
             dataTest="BreadcrumbsBack"
             onClick={onGoBack}
             href={backHref}

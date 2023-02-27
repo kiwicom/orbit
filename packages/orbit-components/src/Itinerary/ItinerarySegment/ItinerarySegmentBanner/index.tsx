@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
 import { StyledSeparator } from "../../../Separator";
-import ChevronRight from "../../../icons/ChevronRight";
+import ChevronForward from "../../../icons/ChevronForward";
 import { StyledWrapper as StyledBadgeListWrapper } from "../../ItineraryBadgeList";
 import type { Props } from "./types";
 import { left } from "../../../utils/rtl";
@@ -46,7 +46,7 @@ const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
       }}
     >
       <div>{children}</div>
-      {onClick && <ChevronRight color="secondary" />}
+      {onClick && <ChevronForward color="secondary" />}
     </StyledBannerWrapper>
   );
 };

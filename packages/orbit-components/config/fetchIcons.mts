@@ -95,8 +95,8 @@ const setSvgContent = (name: string, content: string, id: string) => {
   return dedent`
     <!--character:${id}-->
       ${content
-      .replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")
-      .replace(/(stroke|stroke-.*)=".*"/gm, "")}
+        .replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")
+        .replace(/(stroke|stroke-.*)=".*"/gm, "")}
   `;
 };
 

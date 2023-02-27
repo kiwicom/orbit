@@ -8,7 +8,7 @@ import Stack from "../../../Stack";
 import Heading from "../../../Heading";
 import ChevronDown from "../../../icons/ChevronDown";
 import NewWindow from "../../../icons/NewWindow";
-import ChevronRight from "../../../icons/ChevronRight";
+import ChevronForward from "../../../icons/ChevronForward";
 import transition from "../../../utils/transition";
 import mq from "../../../utils/mediaQuery";
 
@@ -111,7 +111,7 @@ const IconRight = ({
   if (expandable) return <ChevronDown color="secondary" className={className} />;
   if (external) return <NewWindow className={className} />;
 
-  return <ChevronRight color="secondary" className={className} reverseOnRtl />;
+  return <ChevronForward color="secondary" className={className} reverseOnRtl />;
 };
 
 export const StyledIconRight = styled(IconRight)`

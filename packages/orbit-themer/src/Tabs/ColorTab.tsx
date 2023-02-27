@@ -3,7 +3,7 @@ import React from "react";
 import equals from "ramda/src/equals";
 import path from "ramda/src/path";
 import ChevronDown from "@kiwicom/orbit-components/lib/icons/ChevronDown";
-import ChevronRight from "@kiwicom/orbit-components/lib/icons/ChevronRight";
+import ChevronForward from "@kiwicom/orbit-components/lib/icons/ChevronForward";
 import InformationCircle from "@kiwicom/orbit-components/lib/icons/InformationCircle";
 import { defaultTheme, Badge, Heading } from "@kiwicom/orbit-components";
 
@@ -90,7 +90,7 @@ const ColorTab = ({ title, children, colorPath }) => {
           </StyledAdjusted>
         )}
         <StyledColorTabIcon>
-          {opened ? <ChevronDown size="small" /> : <ChevronRight size="small" />}
+          {opened ? <ChevronDown size="small" /> : <ChevronForward size="small" />}
         </StyledColorTabIcon>
       </StyledColorTabHeader>
       <StyledColorTabChildren opened={opened}>{children}</StyledColorTabChildren>

@@ -4,7 +4,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import ButtonLink from "../ButtonLink";
 import Stack from "../Stack";
 import ChevronBackward from "../icons/ChevronBackward";
-import ChevronRight from "../icons/ChevronRight";
+import ChevronForward from "../icons/ChevronForward";
 import { MAXIMUM_PAGES, SIZES } from "./consts";
 import Pages from "./components/Pages";
 import CompactPages from "./components/CompactPages";
@@ -51,7 +51,7 @@ const Pagination = ({
           </ActiveButton>
           <ButtonLink
             onClick={() => pageChanged(selectedPage + 1)}
-            iconLeft={<ChevronRight />}
+            iconLeft={<ChevronForward />}
             type="secondary"
             title={translate("pagination_label_next")}
             size={size}
@@ -89,8 +89,8 @@ const Pagination = ({
           </Stack>
           <ButtonLink
             onClick={() => pageChanged(selectedPage + 1)}
-            iconRight={!hideLabels && <ChevronRight />}
-            iconLeft={hideLabels && <ChevronRight />}
+            iconRight={!hideLabels && <ChevronForward />}
+            iconLeft={hideLabels && <ChevronForward />}
             type="secondary"
             title={hideLabels ? translate("pagination_label_next") : undefined}
             size={size}

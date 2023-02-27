@@ -88,7 +88,7 @@ LinkWithLeftIcon.story = {
 export const LinkWithRightIcon = () => {
   const href = text("Href", "https://kiwi.com");
   const children = text("children", "TextLink with icon");
-  const Icon = getIcon(getIcons("iconRight", "ChevronRight"));
+  const Icon = getIcon(getIcons("iconRight", "ChevronForward"));
 
   return (
     <TextLink onClick={action("clicked")} href={href} iconRight={Icon && <Icon />}>
@@ -113,7 +113,7 @@ export const Playground = () => {
   const external = boolean("External", true);
   const children = text("Text", "Custom link");
   const rel = text("Rel", "");
-  const IconRight = getIcon(getIcons("iconRight", "ChevronRight"));
+  const IconRight = getIcon(getIcons("iconRight", "ChevronForward"));
   const IconLeft = getIcon(getIcons("iconLeft", ""));
   const dataTest = text("dataTest", "test");
   const tabIndex = text("tabIndex", "");
@@ -198,7 +198,7 @@ Accessibility.story = {
 
 export const Rtl = () => (
   <RenderInRtl>
-    <TextLink onClick={action("clicked")} href="#" iconRight={<Icons.ChevronRight />}>
+    <TextLink onClick={action("clicked")} href="#" iconRight={<Icons.ChevronForward />}>
       Link
     </TextLink>
   </RenderInRtl>

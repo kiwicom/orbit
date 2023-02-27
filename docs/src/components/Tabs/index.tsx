@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Popover, mediaQueries } from "@kiwicom/orbit-components";
-import { ChevronUp, ChevronDown, ChevronRight } from "@kiwicom/orbit-components/icons";
+import { ChevronUp, ChevronDown, ChevronForward } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 import debounce from "lodash/debounce";
 
@@ -157,7 +157,7 @@ export default function Tabs({ activeTab: activeTabSlug, tabs }: Props) {
                   $active={tab.slug === activeTabSlug}
                 >
                   <span>{tab.title}</span>
-                  <ChevronRight />
+                  <ChevronForward />
                 </StyledPopoverTab>
               ))}
             </StyledPopoverContent>

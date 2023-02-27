@@ -92,7 +92,7 @@ export const ButtonPrimitive = () => {
   const height = text("height", "46px");
   const href = text("href", "");
   const IconLeft = getIcon(getIcons("iconLeft", ""));
-  const IconRight = getIcon(getIcons("iconRight", "ChevronRight"));
+  const IconRight = getIcon(getIcons("iconRight", "ChevronForward"));
   const icons = object("icons", {
     width: "16px",
     height: "16px",

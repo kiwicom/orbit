@@ -14,7 +14,7 @@ import {
   mediaQueries,
   useMediaQuery,
 } from "@kiwicom/orbit-components";
-import { Search as SearchIcon, ChevronRight } from "@kiwicom/orbit-components/icons";
+import { Search as SearchIcon, ChevronForward } from "@kiwicom/orbit-components/icons";
 
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
@@ -267,7 +267,7 @@ export default function SearchModal({ onClose }: Props) {
                     <StyledMenuItemTitle>{getItemTitle(item)}</StyledMenuItemTitle>
                     <div>{item.description}</div>
                   </div>
-                  <ChevronRight size="medium" />
+                  <ChevronForward size="medium" />
                 </StyledMenuItem>
               ))}
             </StyledMenu>

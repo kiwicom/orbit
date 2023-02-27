@@ -2,7 +2,7 @@ import axios from "axios";
 import dotenv from "dotenv-safe";
 import dedent from "dedent";
 import ora from "ora";
-import { path, argv, fs, chalk } from "zx";
+import { path, argv, fs, globby, chalk } from "zx";
 
 const EXCLUDE_COMPONENTS = ["Header", "FeatureIcons"];
 const ICONS_ID = "wjYAT0sNBXtirEoyKgXUwr";
@@ -10,20 +10,16 @@ const FIGMA_FILE_URI = `https://api.figma.com/v1/files/${ICONS_ID}`;
 const FIGMA_IMAGE_URI = `https://api.figma.com/v1/images/${ICONS_ID}`;
 const SVG_FOLDER = path.resolve(process.cwd(), "src/icons/svg");
 
+const generateId = () => String(Math.floor(Math.random() * 9000) + 1000);
+const generateUniqueId = (id: string, arr: string[]) => (arr.includes(id) ? generateId() : id);
+const getId = (str: string) => {
+  const match = str.match(/character.*?(\d+)/);
+  return match ? match[1] : str;
+};
 // helper functions
 const isCorrectSize = (name: string) => {
   const size = argv.size || "large";
   return name === `size=${size}`;
-};
-
-const range = (start: number, end: number): number[] =>
-  Array.from({ length: end - start + 1 }, (_, i) => start + i);
-
-const sampleSize = (arr: number[], size: number) => {
-  return arr
-    .slice(0)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, size);
 };
 
 const removeCommentId = (str: string) => str.replace(/<!--.*-->/g, "");
@@ -88,7 +84,7 @@ const parseName = (name: string) => {
   return name;
 };
 
-const setSvgContent = (name: string, content: string, id: number) => {
+const setSvgContent = (name: string, content: string, id: string) => {
   if (/colored-/g.test(name) || name === "google") {
     return dedent`
     <!--character:${id}-->
@@ -99,30 +95,35 @@ const setSvgContent = (name: string, content: string, id: number) => {
   return dedent`
     <!--character:${id}-->
       ${content
-        .replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")
-        .replace(/(stroke|stroke-.*)=".*"/gm, "")}
+      .replace(/(fill|clip)-rule="evenodd"|fill=".*"/gm, "")
+      .replace(/(stroke|stroke-.*)=".*"/gm, "")}
   `;
 };
 
 async function saveOrbitIcons(data) {
-  const uniqueIds = sampleSize(range(1000, 9000), data.length + 1);
+  const savedIds: string[] = [];
 
-  let idx = 0;
   for (const { name, svg } of data) {
-    idx += 1;
     const parsedName = parseName(name);
-    const content = setSvgContent(parsedName, svg, uniqueIds[idx]);
+    const id = generateId();
+    const uniqueId = generateUniqueId(id, savedIds);
+    const content = setSvgContent(parsedName, svg, uniqueId);
     const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
+    let currentId = uniqueId;
 
     if (!fs.existsSync(filePath)) {
       await fs.writeFile(filePath, content, "utf-8").then(() => {
         console.log(chalk.green.bold(`saved ${parsedName}`));
       });
     } else if (removeCommentId(content) !== removeCommentId(fs.readFileSync(filePath, "utf-8"))) {
+      const match = getId(fs.readFileSync(filePath, "utf-8"));
+      currentId = match;
       await fs.writeFile(filePath, content, "utf-8").then(() => {
         console.log(chalk.yellow.bold(`file was changed, updated the content for: ${parsedName}`));
       });
     }
+
+    savedIds.push(currentId);
   }
 }
 
@@ -159,7 +160,25 @@ const fetchOrbitIcons = async () => {
     );
 
     await saveOrbitIcons(svgs);
-    imagesSpinner.succeed(chalk.bold.green("done"));
+
+    if (process.env.GITHUB_ACTIONS === "true") {
+      imagesSpinner.succeed(chalk.bold.green("done"));
+      const checkSpinner = ora(
+        chalk.bold.underline.magenta("Check if icons ids are unique..."),
+      ).start();
+      const iconsData = await globby(SVG_FOLDER);
+      const ids: string[] = [];
+
+      for (const icon of iconsData) {
+        const id = getId(await fs.readFile(icon, "utf-8"));
+        if (ids.includes(id)) {
+          throw new Error(`Icon with the same ID already exists, ${icon}`);
+        } else {
+          ids.push(id);
+        }
+      }
+      checkSpinner.succeed("All ids are unique");
+    }
   } catch (err) {
     console.error(err);
   }

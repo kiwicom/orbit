@@ -2,7 +2,7 @@ import * as React from "react";
 import { boolean } from "@storybook/addon-knobs";
 
 import Separator from "../Separator";
-import ChevronLeft from "../icons/ChevronLeft";
+import ChevronBackward from "../icons/ChevronBackward";
 import type { Devices } from "../utils/mediaQuery/types";
 
 import Hide from ".";
@@ -47,7 +47,7 @@ export const Playground = () => {
 
   return (
     <Hide on={on} block={block}>
-      <ChevronLeft />
+      <ChevronBackward />
     </Hide>
   );
 };

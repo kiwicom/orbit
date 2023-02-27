@@ -9,7 +9,7 @@ import Stack from "../Stack";
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "../Modal";
 import Button from "../Button";
 import Illustration from "../Illustration";
-import ChevronLeft from "../icons/ChevronLeft";
+import ChevronBackward from "../icons/ChevronBackward";
 import FlightDirect from "../icons/FlightDirect";
 import CarrierLogo from "../CarrierLogo";
 import Tooltip from "../Tooltip";
@@ -250,7 +250,7 @@ export const WithinModal = () => (
       </Stack>
     </ModalSection>
     <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-      <Button iconLeft={<ChevronLeft />} type="secondary">
+      <Button iconLeft={<ChevronBackward />} type="secondary">
         Back
       </Button>
       <Button fullWidth>Proceed to Payment (23.98€)</Button>

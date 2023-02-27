@@ -6,7 +6,7 @@ import mergeRefs from "../utils/mergeRefs";
 import defaultTheme from "../defaultTheme";
 import useTheme from "../hooks/useTheme";
 import useScrollBox from "./useScroll";
-import ChevronLeft from "../icons/ChevronLeft";
+import ChevronBackward from "../icons/ChevronBackward";
 import ChevronRight from "../icons/ChevronRight";
 import type { Props, ScrollSnap } from "./types";
 
@@ -245,7 +245,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
               isHidden={reachedStart}
               onClick={() => handleClick("left")}
             >
-              <ChevronLeft customColor={arrowColor} />
+              <ChevronBackward customColor={arrowColor} />
             </StyledButton>
             <StyledButton
               tabIndex={0}

@@ -176,7 +176,7 @@ import Button from "@kiwicom/orbit-components/lib/Button";
 ```jsx
 <Modal fixedFooter>
   <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-    <Button type="secondary" iconLeft={<ChevronLeft />}>
+    <Button type="secondary" iconLeft={<ChevronBackward />}>
       Back
     </Button>
     <Button block>Continue to Payment</Button>

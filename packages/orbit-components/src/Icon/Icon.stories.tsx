@@ -55,7 +55,7 @@ CustomColor.story = {
 };
 
 export const ReversedOnRtl = () => {
-  const source = select("Icon", Object.keys(Icons), "ChevronLeft");
+  const source = select("Icon", Object.keys(Icons), "ChevronBackward");
   const Icon = Icons[source];
   return (
     <RenderInRtl>

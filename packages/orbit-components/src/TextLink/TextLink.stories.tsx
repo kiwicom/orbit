@@ -67,7 +67,7 @@ SecondaryLink.story = {
 export const LinkWithLeftIcon = () => {
   const href = text("Href", "https://kiwi.com");
   const children = text("children", "TextLink with icon");
-  const Icon = getIcon(getIcons("iconLeft", "ChevronLeft"));
+  const Icon = getIcon(getIcons("iconLeft", "ChevronBackward"));
 
   return (
     <TextLink onClick={action("clicked")} href={href} iconLeft={Icon && <Icon />} standAlone>

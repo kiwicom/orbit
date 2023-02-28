@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@5.3.0...@kiwicom/orbit-components@6.0.0) (2023-02-28)
+
+
+### Bug Fixes
+
+* adjust marginUtility to spacingUtility ([e9e2f09](https://github.com/kiwicom/orbit/commit/e9e2f09eaf94175822f36949f8be9a330d364467))
+* **icons:** fix bank icon id ([1e9bec1](https://github.com/kiwicom/orbit/commit/1e9bec1cc65b6f5282ba2c051c6b2fba53764d49))
+* **icons:** icon names were changed in Figma ([a9c1c10](https://github.com/kiwicom/orbit/commit/a9c1c10dbe382d2fc3c5472de6464abf714c4caa))
+* **InptuField:** remove theme from DOM element ([c9e7011](https://github.com/kiwicom/orbit/commit/c9e7011fe670fa6a405979970eec94aa1bfed1c9))
+* **ItineraryBadgeList:** fix status colors ([d921a30](https://github.com/kiwicom/orbit/commit/d921a307c53a7d1c105910af9eefda55eadfafb3))
+* **Itinerary:** only display chevron if Banner is clickable ([#3741](https://github.com/kiwicom/orbit/issues/3741)) ([8f2df5f](https://github.com/kiwicom/orbit/commit/8f2df5f65a5afba140ce030f46cc8ddadb144491))
+* **ItinerarySegment:** fix incorrect status colors ([ebafe7e](https://github.com/kiwicom/orbit/commit/ebafe7e6851de5f7c725e3eb252bd1bf03244d99))
+* **ItinerarySegmentStop:** fix CircleSmall icon ([#3746](https://github.com/kiwicom/orbit/issues/3746)) ([8d22436](https://github.com/kiwicom/orbit/commit/8d22436f3cd2fb7aaaf87913eef0c343a8810bcf))
+* **ItineraryStatus:** fix incorrect status colors ([815721b](https://github.com/kiwicom/orbit/commit/815721bbb113ac04de6dca77e3368d343cd896ff))
+* **Modal:** border-radius on mobile ([#3740](https://github.com/kiwicom/orbit/issues/3740)) ([5d8e08a](https://github.com/kiwicom/orbit/commit/5d8e08a6f8f2662a1e8675aed60bb5bcda35b45a))
+* **Modal:** fixed mobile header while scrolling ([#3753](https://github.com/kiwicom/orbit/issues/3753)) ([967375d](https://github.com/kiwicom/orbit/commit/967375df8f6f70fb53d0f02119b7d732b4e979b1))
+* **Select:** remove white bg from container ([#3745](https://github.com/kiwicom/orbit/issues/3745)) ([0fc18c8](https://github.com/kiwicom/orbit/commit/0fc18c8f949d5c116692f9956a83369335d4906b))
+* **TextLink:** remove type and theme props from DOM element ([6c573aa](https://github.com/kiwicom/orbit/commit/6c573aa02c999fbc827b5d6a841356c14536cac8))
+* **Timeline:** fix the last bold line in TimelineStep on desktop ([#3747](https://github.com/kiwicom/orbit/issues/3747)) ([520d345](https://github.com/kiwicom/orbit/commit/520d345aa6e62ccc2576ec0c5c13d883f2861db3))
+
+
+### Features
+
+* **icons:** update icons from figma ([#3737](https://github.com/kiwicom/orbit/issues/3737)) ([7b82d6e](https://github.com/kiwicom/orbit/commit/7b82d6ef3031a10413bed4caeb08ec018af42914))
+* **icons:** update icons from figma ([#3744](https://github.com/kiwicom/orbit/issues/3744)) ([7c43a44](https://github.com/kiwicom/orbit/commit/7c43a4441fe4377ce41ece9a5021c76665dc0102))
+* introduce Tabs component ([6c7607f](https://github.com/kiwicom/orbit/commit/6c7607f925cc09d61a454fe711e6646f7e020d86))
+* **Modal:** export ModalHeading subcomponent ([94010b8](https://github.com/kiwicom/orbit/commit/94010b83f37a9c9d9644c02e26af8e72b47349e0))
+* **Modal:** remove margin when there's no title or description ([15f12ac](https://github.com/kiwicom/orbit/commit/15f12acfd818fe8c987289f298b6c7c2f44f00ec))
+* **Text:** element prop in StyledText now has `p` as defaultValue ([723dd5d](https://github.com/kiwicom/orbit/commit/723dd5dda1d4bba538bc21102f03a8dfa939e1c6))
+
+
+### BREAKING CHANGES
+
+* **icons:** ChevronDoubleRight -> ChevronDoubleForward
+ChevronDoubleLeft  -> ChevronDoubleBackward
+ChevronRight -> ChevronForward
+ChevronLeft -> ChevronBackward
+* marginUtility renamed to spacingUtility
+* **Modal:** When a ModalHeader has no title nor description but has children, no margin is applied by default
+
+
+
+
+
 # [5.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@5.2.0...@kiwicom/orbit-components@5.3.0) (2023-01-24)
 
 

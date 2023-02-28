@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.0.1...@kiwicom/orbit-design-tokens@3.1.0) (2023-02-28)
+
+
+### Features
+
+* **tokens:** add tab bundle tokens ([25ea622](https://github.com/kiwicom/orbit/commit/25ea622d39ea0e66f9f6099494005babbb570c9a))
+
+
+
+
+
 ## [3.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.0.0...@kiwicom/orbit-design-tokens@3.0.1) (2022-12-15)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

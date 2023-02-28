@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@4.0.6...@kiwicom/babel-plugin-orbit-components@4.1.0) (2023-02-28)
+
+
+### Features
+
+* **babel-plugin:** add Tab export ([861f4c8](https://github.com/kiwicom/orbit/commit/861f4c858463c46b8e1c1ab22d1f68bf7593500d))
+
+
+
+
+
 ## [4.0.6](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@4.0.5...@kiwicom/babel-plugin-orbit-components@4.0.6) (2023-01-24)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

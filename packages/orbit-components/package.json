@@ -10,7 +10,6 @@
     "cy:dev": "vite cypress/integration --logLevel silent",
     "cy:run": "start-server-and-test cy:dev http-get://localhost:3000 'cypress run'",
     "cy:open": "start-server-and-test cy:dev http-get://localhost:3000 'cypress open'",
-    "prepublishOnly": "yarn build",
     "build": "ts-node --esm config/build/index.mts",
     "size:build": "yarn build --size",
     "size": "size-limit",

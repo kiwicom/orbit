@@ -619,7 +619,6 @@ const Modal = React.forwardRef<Instance, Props>(
         <ModalWrapper
           size={size}
           loaded={loaded}
-          onScroll={handleMobileScroll}
           fixedFooter={fixedFooter}
           isMobileFullPage={isMobileFullPage}
           disableAnimation={disableAnimation}
@@ -627,6 +626,7 @@ const Modal = React.forwardRef<Instance, Props>(
           <ModalWrapperContent
             size={size}
             fixedFooter={fixedFooter}
+            onScroll={handleMobileScroll}
             scrolled={scrolled}
             ref={modalContentRef}
             fixedClose={fixedClose}

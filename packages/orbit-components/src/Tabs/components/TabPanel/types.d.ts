@@ -1,3 +1,5 @@
+import type React from "react";
+
 import type { Globals, ObjectProperty } from "../../../common/types";
 
 export interface Props extends Globals {

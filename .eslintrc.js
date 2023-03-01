@@ -94,7 +94,7 @@ module.exports = {
       },
     },
     {
-      files: ["*.ts?(x)", "*.mts"],
+      files: ["*.ts?(x)", "*.mts", "*.d.ts"],
       extends: [
         // disables core ESLint rules which are handled by TypeScript
         "plugin:@typescript-eslint/eslint-recommended",
@@ -146,6 +146,7 @@ module.exports = {
         "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
         "import/named": "off",
         "import/namespace": "off",
+        "import/no-unresolved": "error",
         "import/default": "off",
         "import/no-named-as-default-member": "off",
       },
@@ -167,6 +168,7 @@ module.exports = {
     {
       files: "*.d.ts",
       rules: {
+        "no-undef": "error",
         "react/prefer-stateless-function": "off",
       },
     },

@@ -1,5 +1,6 @@
 import "styled-components";
 import { OrbitProvider } from "@kiwicom/orbit-components";
+import React from "react";
 
 type ThemeShape = React.ComponentProps<typeof OrbitProvider>["theme"];
 

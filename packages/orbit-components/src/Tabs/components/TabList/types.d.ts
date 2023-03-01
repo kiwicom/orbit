@@ -1,4 +1,4 @@
-import type { Globals } from "../../../common/types";
+import type { Globals, ObjectProperty } from "../../../common/types";
 import type { Spacing } from "../../../Stack/types";
 
 export interface Props extends Globals {

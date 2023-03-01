@@ -1,3 +1,5 @@
+import type React from "react";
+
 import type { Globals } from "../../../common/types";
 import type { Props as TabPanelProps } from "../TabPanel/types";
 

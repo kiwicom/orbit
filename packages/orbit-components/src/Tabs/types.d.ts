@@ -1,3 +1,5 @@
+import type React from "react";
+
 import type { Spacing } from "../Stack/types";
 import type { Globals } from "../common/types";
 

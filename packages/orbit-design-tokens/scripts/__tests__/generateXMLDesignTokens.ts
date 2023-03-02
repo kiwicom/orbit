@@ -396,6 +396,18 @@ describe(generateXMLDesignTokens.name, () => {
           <value>#008472</value>
         </token>
         <token>
+          <name>colorTextButtonLinkCritical</name>
+          <value>#D21C1C</value>
+        </token>
+        <token>
+          <name>colorTextButtonLinkCriticalHover</name>
+          <value>#B91919</value>
+        </token>
+        <token>
+          <name>colorTextButtonLinkCriticalActive</name>
+          <value>#9D1515</value>
+        </token>
+        <token>
           <name>colorTextButtonPrimarySubtle</name>
           <value>#00A58E</value>
         </token>
@@ -737,11 +749,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>backgroundButtonLinkPrimaryHover</name>
-          <value>#E5EAEF</value>
+          <value>#D6F0EC</value>
         </token>
         <token>
           <name>backgroundButtonLinkPrimaryActive</name>
-          <value>#D6DEE6</value>
+          <value>#BFE8E2</value>
         </token>
         <token>
           <name>backgroundButtonLinkSecondary</name>
@@ -754,6 +766,18 @@ describe(generateXMLDesignTokens.name, () => {
         <token>
           <name>backgroundButtonLinkSecondaryActive</name>
           <value>#D6DEE6</value>
+        </token>
+        <token>
+          <name>backgroundButtonLinkCritical</name>
+          <value>transparent</value>
+        </token>
+        <token>
+          <name>backgroundButtonLinkCriticalHover</name>
+          <value>#F8E2E2</value>
+        </token>
+        <token>
+          <name>backgroundButtonLinkCriticalActive</name>
+          <value>#F3CECE</value>
         </token>
         <token>
           <name>backgroundButtonPrimarySubtle</name>

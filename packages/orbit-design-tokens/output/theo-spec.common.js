@@ -36,11 +36,15 @@ module.exports = {
   /*  */
   colorTextButtonCritical: "rgb(255, 255, 255)",
   /*  */
+  colorTextButtonLinkCriticalActive: "rgb(157, 21, 21)",
+  /*  */
   zIndexSticky: "100",
   /*  */
   borderColorCheckboxRadio: "rgb(186, 199, 213)",
   /*  */
   paletteBlueLight: "rgb(241, 248, 254)",
+  /*  */
+  colorTextButtonLinkCriticalHover: "rgb(185, 25, 25)",
   /*  */
   boxShadowAction: "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12)",
   /*  */
@@ -101,6 +105,8 @@ module.exports = {
   backgroundButtonGoogleHover: "rgb(229, 234, 239)",
   /*  */
   boxShadowRaised: "0px 4px 8px 0px rgba(37, 42, 49, 0.16), 0px 8px 24px 0px rgba(37, 42, 49, 0.24)",
+  /*  */
+  backgroundButtonLinkCriticalHover: "rgb(248, 226, 226)",
   /*  */
   backgroundBadgeInfo: "rgb(241, 248, 254)",
   /*  */
@@ -494,7 +500,7 @@ module.exports = {
   /*  */
   colorTextButtonCriticalSubtleHover: "rgb(151, 12, 12)",
   /*  */
-  backgroundButtonLinkPrimaryActive: "rgb(214, 222, 230)",
+  backgroundButtonLinkPrimaryActive: "rgb(191, 232, 226)",
   /*  */
   colorFormLabelFilled: "rgb(79, 94, 113)",
   /*  */
@@ -696,7 +702,7 @@ module.exports = {
   /*  */
   backgroundButtonInfoActive: "rgb(1, 80, 142)",
   /*  */
-  backgroundButtonLinkPrimaryHover: "rgb(229, 234, 239)",
+  backgroundButtonLinkPrimaryHover: "rgb(214, 240, 236)",
   /*  */
   widthIconMedium: "20px",
   /*  */
@@ -852,6 +858,8 @@ module.exports = {
   /*  */
   boxShadowFixedReverse: "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)",
   /*  */
+  backgroundButtonLinkCritical: "transparent",
+  /*  */
   backgroundTableEven: "rgb(245, 247, 249)",
   /*  */
   backgroundButtonLinkSecondary: "transparent",
@@ -891,6 +899,8 @@ module.exports = {
   paletteBlueLightHover: "rgb(222, 240, 252)",
   /*  */
   borderColorCheckboxRadioHover: "rgb(79, 94, 113)",
+  /*  */
+  colorTextButtonLinkCritical: "rgb(210, 28, 28)",
   /*  */
   colorTextButtonCriticalHover: "rgb(255, 255, 255)",
   /*  */
@@ -999,6 +1009,8 @@ module.exports = {
   fontSizeTextLarge: "16px",
   /*  */
   colorTextInfo: "rgb(1, 114, 203)",
+  /*  */
+  backgroundButtonLinkCriticalActive: "rgb(243, 206, 206)",
   /*  */
   backgroundButtonGoogleActive: "rgb(214, 222, 230)",
   /*  */

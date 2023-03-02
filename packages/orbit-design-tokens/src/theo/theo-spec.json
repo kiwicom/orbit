@@ -846,6 +846,33 @@
         "categoryDescription": ""
       }
     },
+    "colorTextButtonLinkCritical": {
+      "value": "#D21C1C",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "colorTextButtonLinkCriticalHover": {
+      "value": "#B91919",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "colorTextButtonLinkCriticalActive": {
+      "value": "#9D1515",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "colorTextButtonPrimarySubtle": {
       "value": "#00A58E",
       "type": "color",
@@ -1612,7 +1639,7 @@
       }
     },
     "backgroundButtonLinkPrimaryHover": {
-      "value": "#E5EAEF",
+      "value": "#D6F0EC",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1621,7 +1648,7 @@
       }
     },
     "backgroundButtonLinkPrimaryActive": {
-      "value": "#D6DEE6",
+      "value": "#BFE8E2",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1649,6 +1676,33 @@
     },
     "backgroundButtonLinkSecondaryActive": {
       "value": "#D6DEE6",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonLinkCritical": {
+      "value": "transparent",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonLinkCriticalHover": {
+      "value": "#F8E2E2",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundButtonLinkCriticalActive": {
+      "value": "#F3CECE",
       "type": "color",
       "category": "",
       "comment": "",

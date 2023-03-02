@@ -18,9 +18,11 @@
   <color name="COLORALERTICONINFO" category="">#ff0172cb</color>
   <color name="PALETTEBLUENORMALHOVER" category="">#ff0161ac</color>
   <color name="COLORTEXTBUTTONCRITICAL" category="">#ffffffff</color>
+  <color name="COLORTEXTBUTTONLINKCRITICALACTIVE" category="">#ff9d1515</color>
   <string name="ZINDEXSTICKY" category="">100</string>
   <color name="BORDERCOLORCHECKBOXRADIO" category="">#ffbac7d5</color>
   <color name="PALETTEBLUELIGHT" category="">#fff1f8fe</color>
+  <color name="COLORTEXTBUTTONLINKCRITICALHOVER" category="">#ffb91919</color>
   <dimen name="BOXSHADOWACTION" category="">0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12)</dimen>
   <color name="PALETTEINKDARK" category="">#ff252a31</color>
   <color name="COLORTEXTBADGEINFO" category="">#ff0172cb</color>
@@ -51,6 +53,7 @@
   <color name="BORDERCOLORBUTTONFACEBOOKBORDEREDHOVER" category="">#ff385490</color>
   <color name="BACKGROUNDBUTTONGOOGLEHOVER" category="">#ffe5eaef</color>
   <dimen name="BOXSHADOWRAISED" category="">0px 4px 8px 0px rgba(37, 42, 49, 0.16), 0px 8px 24px 0px rgba(37, 42, 49, 0.24)</dimen>
+  <color name="BACKGROUNDBUTTONLINKCRITICALHOVER" category="">#fff8e2e2</color>
   <color name="BACKGROUNDBADGEINFO" category="">#fff1f8fe</color>
   <color name="BORDERCOLORTAG" category="">#ffbac7d5</color>
   <color name="BACKGROUNDBUTTONSUCCESS" category="">#ff28a138</color>
@@ -247,7 +250,7 @@
   <color name="PALETTEWHITEHOVER" category="">#fff5f7f9</color>
   <string name="FONTWEIGHTNORMAL" category="">400</string>
   <color name="COLORTEXTBUTTONCRITICALSUBTLEHOVER" category="">#ff970c0c</color>
-  <color name="BACKGROUNDBUTTONLINKPRIMARYACTIVE" category="">#ffd6dee6</color>
+  <color name="BACKGROUNDBUTTONLINKPRIMARYACTIVE" category="">#ffbfe8e2</color>
   <color name="COLORFORMLABELFILLED" category="">#ff4f5e71</color>
   <color name="PALETTEGREENNORMAL" category="">#ff28a138</color>
   <dimen name="LINEHEIGHTTEXTNORMAL" category="">20dp</dimen>
@@ -348,7 +351,7 @@
   <color name="PALETTEWHITEACTIVE" category="">#ffe5eaef</color>
   <color name="BACKGROUNDBUTTONSECONDARY" category="">#ffe8edf1</color>
   <color name="BACKGROUNDBUTTONINFOACTIVE" category="">#ff01508e</color>
-  <color name="BACKGROUNDBUTTONLINKPRIMARYHOVER" category="">#ffe5eaef</color>
+  <color name="BACKGROUNDBUTTONLINKPRIMARYHOVER" category="">#ffd6f0ec</color>
   <dimen name="WIDTHICONMEDIUM" category="">20dp</dimen>
   <color name="COLORTEXTBADGENEUTRAL" category="">#ff252a31</color>
   <dimen name="SPACEXSMALL" category="">8dp</dimen>
@@ -426,6 +429,7 @@
   <color name="PALETTEREDDARKER" category="">#ff760909</color>
   <color name="COLORTEXTWHITE" category="">#ffffffff</color>
   <dimen name="BOXSHADOWFIXEDREVERSE" category="">0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)</dimen>
+  <string name="BACKGROUNDBUTTONLINKCRITICAL" category="">transparent</string>
   <color name="BACKGROUNDTABLEEVEN" category="">#fff5f7f9</color>
   <string name="BACKGROUNDBUTTONLINKSECONDARY" category="">transparent</string>
   <color name="BORDERCOLORBUTTONFACEBOOKBORDERED" category="">#ff3b5998</color>
@@ -446,6 +450,7 @@
   <dimen name="BOXSHADOWBUTTONFOCUS" category="">0 0 4px 1px rgba(1, 114, 203, 0.3)</dimen>
   <color name="PALETTEBLUELIGHTHOVER" category="">#ffdef0fc</color>
   <color name="BORDERCOLORCHECKBOXRADIOHOVER" category="">#ff4f5e71</color>
+  <color name="COLORTEXTBUTTONLINKCRITICAL" category="">#ffd21c1c</color>
   <color name="COLORTEXTBUTTONCRITICALHOVER" category="">#ffffffff</color>
   <string name="ZINDEXMODALOVERLAY" category="">800</string>
   <color name="COLORICONCRITICAL" category="">#ffd21c1c</color>
@@ -500,6 +505,7 @@
   <color name="PALETTEGREENDARKHOVER" category="">#ff276831</color>
   <dimen name="FONTSIZETEXTLARGE" category="">16dp</dimen>
   <color name="COLORTEXTINFO" category="">#ff0172cb</color>
+  <color name="BACKGROUNDBUTTONLINKCRITICALACTIVE" category="">#fff3cece</color>
   <color name="BACKGROUNDBUTTONGOOGLEACTIVE" category="">#ffd6dee6</color>
   <dimen name="BOXSHADOWRAISEDREVERSE" category="">0px -4px 8px 0px rgba(37, 42, 49, 0.16), 0px -8px 24px 0px rgba(37, 42, 49, 0.24)</dimen>
   <string name="FONTWEIGHTHEADINGDISPLAYSUBTITLE" category="">400</string>

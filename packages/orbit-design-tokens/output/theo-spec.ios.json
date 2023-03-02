@@ -127,6 +127,13 @@
       "name": "colorTextButtonCritical"
     },
     {
+      "value": "rgb(157, 21, 21)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "colorTextButtonLinkCriticalActive"
+    },
+    {
       "value": "100",
       "type": "string",
       "category": "",
@@ -146,6 +153,13 @@
       "category": "",
       "comment": "",
       "name": "paletteBlueLight"
+    },
+    {
+      "value": "rgb(185, 25, 25)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "colorTextButtonLinkCriticalHover"
     },
     {
       "value": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12)",
@@ -356,6 +370,13 @@
       "category": "",
       "comment": "",
       "name": "boxShadowRaised"
+    },
+    {
+      "value": "rgb(248, 226, 226)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "backgroundButtonLinkCriticalHover"
     },
     {
       "value": "rgb(241, 248, 254)",
@@ -1730,7 +1751,7 @@
       "name": "colorTextButtonCriticalSubtleHover"
     },
     {
-      "value": "rgb(214, 222, 230)",
+      "value": "rgb(191, 232, 226)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2437,7 +2458,7 @@
       "name": "backgroundButtonInfoActive"
     },
     {
-      "value": "rgb(229, 234, 239)",
+      "value": "rgb(214, 240, 236)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2983,6 +3004,13 @@
       "name": "boxShadowFixedReverse"
     },
     {
+      "value": "transparent",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "name": "backgroundButtonLinkCritical"
+    },
+    {
       "value": "rgb(245, 247, 249)",
       "type": "color",
       "category": "",
@@ -3121,6 +3149,13 @@
       "category": "",
       "comment": "",
       "name": "borderColorCheckboxRadioHover"
+    },
+    {
+      "value": "rgb(210, 28, 28)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "colorTextButtonLinkCritical"
     },
     {
       "value": "rgb(255, 255, 255)",
@@ -3499,6 +3534,13 @@
       "category": "",
       "comment": "",
       "name": "colorTextInfo"
+    },
+    {
+      "value": "rgb(243, 206, 206)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "backgroundButtonLinkCriticalActive"
     },
     {
       "value": "rgb(214, 222, 230)",

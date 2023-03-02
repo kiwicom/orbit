@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.0.0...@kiwicom/orbit-components@6.0.1) (2023-03-02)
+
+
+### Bug Fixes
+
+* **Tabs:** fix typing issues in .d.ts files ([4198d88](https://github.com/kiwicom/orbit/commit/4198d88924c585033e52ce0d6d39e757b9e37ed8))
+
+
+
+
+
 # [6.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@5.3.0...@kiwicom/orbit-components@6.0.0) (2023-02-28)
 
 

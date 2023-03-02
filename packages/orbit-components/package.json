@@ -11,6 +11,7 @@
     "cy:run": "start-server-and-test cy:dev http-get://localhost:3000 'cypress run'",
     "cy:open": "start-server-and-test cy:dev http-get://localhost:3000 'cypress open'",
     "build": "ts-node --esm config/build/index.mts",
+    "prepublishOnly": "yarn build",
     "size:build": "yarn build --size",
     "size": "size-limit",
     "size:why": "size-limit --why",

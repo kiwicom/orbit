@@ -100,6 +100,9 @@ export type Tokens = {
   colorTextButtonLinkSecondaryActive: string;
   colorTextButtonLinkSecondaryCompactHover: string;
   colorTextButtonLinkSecondaryCompactActive: string;
+  colorTextButtonLinkCritical: string;
+  colorTextButtonLinkCriticalHover: string;
+  colorTextButtonLinkCriticalActive: string;
   colorTextButtonPrimarySubtle: string;
   colorTextButtonPrimarySubtleHover: string;
   colorTextButtonPrimarySubtleActive: string;
@@ -187,6 +190,9 @@ export type Tokens = {
   backgroundButtonLinkSecondary: string;
   backgroundButtonLinkSecondaryHover: string;
   backgroundButtonLinkSecondaryActive: string;
+  backgroundButtonLinkCritical: string;
+  backgroundButtonLinkCriticalHover: string;
+  backgroundButtonLinkCriticalActive: string;
   backgroundButtonPrimarySubtle: string;
   backgroundButtonPrimarySubtleHover: string;
   backgroundButtonPrimarySubtleActive: string;

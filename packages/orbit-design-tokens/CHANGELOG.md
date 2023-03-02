@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.1.0...@kiwicom/orbit-design-tokens@3.1.1) (2023-03-02)
+
+
+### Bug Fixes
+
+* **tokens:** fix ButtonLink bg primary tokens ([b259d32](https://github.com/kiwicom/orbit/commit/b259d328e36dd69bfe4e9c46285ce44fed91aa13))
+
+
+
+
+
 # [3.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.0.1...@kiwicom/orbit-design-tokens@3.1.0) (2023-02-28)
 
 

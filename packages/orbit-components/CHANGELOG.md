@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.0.2...@kiwicom/orbit-components@6.0.3) (2023-03-03)
+
+
+### Bug Fixes
+
+* **TabList:** remove twiced ObjectProperty from d.ts ([6735b60](https://github.com/kiwicom/orbit/commit/6735b60a98991f42555d7040df91b6d8366eaa7b))
+
+
+
+
+
 ## [6.0.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.0.1...@kiwicom/orbit-components@6.0.2) (2023-03-02)
 
 **Note:** Version bump only for package @kiwicom/orbit-components

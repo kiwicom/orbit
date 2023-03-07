@@ -5,8 +5,9 @@ const StyledContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: ${theme.orbit.spaceSmall};
     padding: ${theme.orbit.spaceXLarge};
-    gap: ${theme.orbit.spaceXLarge};
     border-radius: ${theme.orbit.borderRadiusLarge};
     background: ${theme.orbit.paletteCloudLight};
 

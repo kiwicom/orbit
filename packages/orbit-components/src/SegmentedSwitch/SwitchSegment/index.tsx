@@ -23,11 +23,12 @@ export const StyledText = styled.div`
     background: ${theme.orbit.paletteWhite};
     color: ${theme.orbit.paletteInkNormal};
     border: 0;
-    padding: 13px 12px;
+    padding: ${theme.orbit.spaceSmall};
     color: ${theme.orbit.paletteInkLight};
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${theme.orbit.fontWeightMedium};
     font-size: ${theme.orbit.fontSizeTextNormal};
+    line-height: ${theme.orbit.lineHeightTextNormal};
     cursor: pointer;
     transition: color ${theme.orbit.durationFast} ease-in-out;
     width: 100%;

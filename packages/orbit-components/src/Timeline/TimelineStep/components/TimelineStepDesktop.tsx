@@ -44,7 +44,9 @@ const TimelineStepDesktop = ({
     <Stack inline shrink direction="column" align="center" spaceAfter="large">
       {subLabel && (
         <StyledText>
-          <Text size="small">{subLabel}</Text>
+          <Text align="center" size="small">
+            {subLabel}
+          </Text>
         </StyledText>
       )}
       <StyledRelative inner>
@@ -60,7 +62,9 @@ const TimelineStepDesktop = ({
       </StyledRelative>
       <Stack flex align="center" spacing="XSmall" direction="column">
         <StyledText active={active || (last && type === "success")}>
-          <Text weight="bold">{label}</Text>
+          <Text align="center" weight="bold">
+            {label}
+          </Text>
         </StyledText>
         <StyledDescription active={active || (last && type === "success")}>
           <Text align="center">{children}</Text>

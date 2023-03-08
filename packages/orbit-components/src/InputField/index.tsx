@@ -418,6 +418,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     labelRef,
     iconRef,
     handleFocus,
+    handleBlur,
   } = useErrorTooltip<HTMLInputElement, HTMLDivElement>({ onFocus, hasTooltip });
 
   const shown = tooltipShown || tooltipShownHover;
@@ -501,7 +502,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             }
             onChange={onChange}
             onFocus={handleFocus}
-            onBlur={onBlur}
+            onBlur={handleBlur}
             onKeyUp={onKeyUp}
             onKeyDown={onKeyDown}
             onSelect={onSelect}

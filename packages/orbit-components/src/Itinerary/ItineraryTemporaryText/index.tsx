@@ -22,7 +22,9 @@ const getColorType = ({ type }: { type: TextProps["type"] }) => ({ theme }) => {
   return theme.orbit.colorTextPrimary;
 };
 
-const StyledTemporaryText = styled(StyledText)<TextProps>`
+const StyledTemporaryText = styled(StyledText)<
+  Omit<TextProps, "type"> & { $type: TextProps["type"] }
+>`
   color: ${getColorType};
 `;
 
@@ -41,7 +43,7 @@ const TemporaryText = ({
 }: TextProps) => {
   return (
     <StyledTemporaryText
-      type={type}
+      $type={type}
       size={size}
       weight={weight}
       align={align}

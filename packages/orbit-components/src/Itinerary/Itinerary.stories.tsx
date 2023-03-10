@@ -248,8 +248,13 @@ export const Status = () => {
   return (
     <>
       <Itinerary>
-        <ItineraryStatus type="critical" label="Rescheduled · 4h later" spaceAfter="medium">
-          <ItinerarySegment noElevation>
+        <ItineraryStatus
+          type="critical"
+          label="Rescheduled · 4h later"
+          spaceAfter="medium"
+          actionable={false}
+        >
+          <ItinerarySegment noElevation actionable={false}>
             <ItinerarySegmentStop
               city="Prague"
               station="Václav Havel Airport Prague (PRG)"
@@ -258,7 +263,7 @@ export const Status = () => {
               time="14:05"
               cancelledTime="12:50"
             />
-            <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
+            <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} />
             <ItinerarySegmentStop
               city="Vienna"
               type="critical"

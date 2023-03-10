@@ -39,8 +39,12 @@ const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemePr
   return border[status];
 };
 
-const StyledWrapper = styled.div<{ $type: Status; spaceAfter: Common.SpaceAfterSizes }>`
-  ${({ theme, $type }) => css`
+const StyledWrapper = styled.div<{
+  $type: Status;
+  spaceAfter: Common.SpaceAfterSizes;
+  actionable?: boolean;
+}>`
+  ${({ theme, $type, actionable }) => css`
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
@@ -49,9 +53,13 @@ const StyledWrapper = styled.div<{ $type: Status; spaceAfter: Common.SpaceAfterS
     border-${left}: ${theme.orbit.borderRadiusNormal} solid ${$type && resolveColor($type)};
     box-shadow: ${theme.orbit.boxShadowFixed};
     margin-bottom: ${getSpacingToken};
-    &:hover {
-      outline: none;
-      box-shadow: ${theme.orbit.boxShadowActionActive};
+    ${
+      actionable &&
+      css`
+        &:hover {
+          box-shadow: ${theme.orbit.boxShadowActionActive};
+        }
+      `
     }
   `}
 `;
@@ -106,9 +114,16 @@ const StatusIcon = ({ type }: { type: Status }) => {
   }
 };
 
-const ItineraryStatus = ({ type, label, spaceAfter = "medium", children, offset = 0 }: Props) => {
+const ItineraryStatus = ({
+  type,
+  label,
+  spaceAfter = "medium",
+  children,
+  offset = 0,
+  actionable = true,
+}: Props) => {
   return (
-    <StyledWrapper $type={type} spaceAfter={spaceAfter}>
+    <StyledWrapper $type={type} spaceAfter={spaceAfter} actionable={actionable}>
       <StyledStatusHeader $type={type}>
         <StyledStatusText $offset={offset}>
           <Stack flex spacing="XSmall" align="center">

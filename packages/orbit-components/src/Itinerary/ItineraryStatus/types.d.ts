@@ -5,6 +5,7 @@ import type * as Common from "../../common/types";
 export type Status = "warning" | "critical" | "info" | "success" | "neutral";
 
 export interface Props extends Common.SpaceAfter {
+  readonly actionable?: boolean;
   /** Type of the status  */
   readonly type: Status;
   /** Label of the status */

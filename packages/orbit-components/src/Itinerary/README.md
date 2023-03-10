@@ -60,7 +60,6 @@ ItinerarySegment component serves as a wrapper of atomic units `ItinerarySegment
 | spaceAfter  | `enum`            |                    |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | actionable  | `boolean`         |                    | `true`  | Applies actionable styles for ItinerarySegment wrapper                                                                                                         |
 | banner      | `React.Node`      |                    |         | Additional information for `ItinerarySegment`                                                                                                                  |
-|             |
 
 ## ItinerarySegmentStop
 
@@ -70,8 +69,8 @@ ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two loc
 
 | Name             | Type                | Required           | Default       | Description                                              |
 | ---------------- | ------------------- | ------------------ | ------------- | -------------------------------------------------------- |
-| date             | `React.Node`        | :heavy_check_mark: |               | The date of `ItinerarySegmentStop`                       |
-| time             | `React.Node`        | :heavy_check_mark: |               | The time of `ItinerarySegmentStop`                       |
+| date             | `React.Node`        |                    |               | The date of `ItinerarySegmentStop`                       |
+| time             | `React.Node`        |                    |               | The time of `ItinerarySegmentStop`                       |
 | cancelledTime    | `React.Node`        |                    |               | The cancelled time of `ItinerarySegmentStop`             |
 | cancelledDate    | `React.Node`        |                    |               | The cancelled date of `ItinerarySegmentStop`             |
 | cancelledStation | `React.Node`        |                    |               | The cancelled station of `ItinerarySegmentStop`          |
@@ -91,12 +90,13 @@ ItineraryStatus is a wrapper for `ItinerarySegment` or group of segments. Shows 
 
 ### Props
 
-| Name     | Type                | Required           | Default | Description                                |
-| -------- | ------------------- | ------------------ | ------- | ------------------------------------------ |
-| type     | [`Status`](#status) |                    |         | The type of `ItineraryStatus` component    |
-| label    | `React.Node`        |                    |         | The label of the `ItineraryStatus`         |
-| offset   | `number`            |                    | `0`     | The offset for the label                   |
-| children | `React.ReactNode`   | :heavy_check_mark: |         | The content of `ItineraryStatus` component |
+| Name       | Type                | Required           | Default | Description                                   |
+| ---------- | ------------------- | ------------------ | ------- | --------------------------------------------- |
+| type       | [`Status`](#status) |                    |         | The type of `ItineraryStatus` component       |
+| label      | `React.Node`        |                    |         | The label of the `ItineraryStatus`            |
+| offset     | `number`            |                    | `0`     | The offset for the label                      |
+| actionable | `boolean`           |                    | true    | Applies actionable styles for ItineraryStatus |
+| children   | `React.ReactNode`   | :heavy_check_mark: |         | The content of `ItineraryStatus` component    |
 
 ## ItinerarySegmentDetail
 

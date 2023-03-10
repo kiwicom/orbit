@@ -57,7 +57,9 @@ const ItinerarySegment = ({
             value={{
               index: i,
               opened,
-              toggleOpened: () => setOpened(prev => !prev),
+              toggleOpened: () => {
+                if (document && document.getSelection()?.type !== "Range") setOpened(prev => !prev);
+              },
               last: i === content.length - 1,
               isNextHidden: Boolean(content[i + 1]?.props?.hidden),
               isPrevHidden: Boolean(content[i - 1]?.props?.hidden),

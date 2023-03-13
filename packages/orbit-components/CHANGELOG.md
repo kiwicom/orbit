@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.0.3...@kiwicom/orbit-components@6.1.0) (2023-03-13)
+
+
+### Bug Fixes
+
+* **Itinerary:** incorrect internal type passing Text on cancelled info ([#3760](https://github.com/kiwicom/orbit/issues/3760)) ([d945ae7](https://github.com/kiwicom/orbit/commit/d945ae781df93c9afbeb9c39fac8609cde835cc0))
+* **Itinerary:** text can now be selected inside ItinerarySegmentDetails ([f705780](https://github.com/kiwicom/orbit/commit/f7057801fc86f7fd671b4cc9c5c5d895ecd02ebc))
+* **Timeline:** correctly align text inside a Modal ([#3759](https://github.com/kiwicom/orbit/issues/3759)) ([0acff49](https://github.com/kiwicom/orbit/commit/0acff499f76c35c9f1e19a21ac98bc2cd3b54eb4))
+
+
+### Features
+
+* **icons:** update icons from figma ([#3757](https://github.com/kiwicom/orbit/issues/3757)) ([22ae41a](https://github.com/kiwicom/orbit/commit/22ae41a5eb8884a9513f0a2ab52d782cf786c134))
+* **Itinerary:** add actionable bool prop to ItineraryStatus ([d58e9ce](https://github.com/kiwicom/orbit/commit/d58e9cebd8cd7a4db0502f4ccb46d55d4c176997))
+
+
+
+
+
 ## [6.0.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.0.2...@kiwicom/orbit-components@6.0.3) (2023-03-03)
 
 

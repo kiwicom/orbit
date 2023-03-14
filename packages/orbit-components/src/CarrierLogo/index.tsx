@@ -80,7 +80,6 @@ const StyledImage = styled.img.attrs<StyledProps>(
     height: ${getCarrierLogoSize};
     width: ${getCarrierLogoSize};
     border: ${inlineStacked && `1px solid ${theme.orbit.paletteWhite}`};
-    box-shadow: ${inlineStacked && `${theme.orbit.boxShadowFixed}, ${theme.orbit.boxShadowRaised}`};
 
     &:not(:first-child) {
       margin-${left}: ${inlineStacked && `calc(-1 * ${theme.orbit.spaceXSmall})`};

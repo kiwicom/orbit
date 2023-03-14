@@ -58,7 +58,7 @@ const StyledTileAnchor = styled.a`
     text-decoration: none;
     color: ${theme.orbit.paletteInkDark};
     &:focus {
-      ${defaultFocus}
+      ${defaultFocus};
       ${StyledIconRight} {
         color: ${theme.orbit.paletteInkLightHover};
       }

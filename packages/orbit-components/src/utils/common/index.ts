@@ -2,12 +2,16 @@ import type { FlattenSimpleInterpolation } from "styled-components";
 import { css } from "styled-components";
 
 import type { ObjectProperty } from "../../common/types";
+import type defaultTheme from "../../defaultTheme";
 
 export const firstToUpper = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1);
 
-export const defaultFocus = (): FlattenSimpleInterpolation => css`
-  outline: 2px solid Highlight;
-  outline: 2px solid -webkit-focus-ring-color;
+export const defaultFocus = ({
+  theme,
+}: {
+  theme: typeof defaultTheme;
+}): FlattenSimpleInterpolation => css`
+  outline: 2px solid ${theme.orbit.paletteBlueNormal};
 `;
 
 const setValue = (value?: string | number): string | null => {

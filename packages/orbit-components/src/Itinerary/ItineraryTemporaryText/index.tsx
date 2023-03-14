@@ -12,7 +12,7 @@ import {
   SIZE_OPTIONS,
 } from "../../Text/consts";
 
-const getColorType = ({ type }: { type: TextProps["type"] }) => ({ theme }) => {
+const getColorType = ({ $type: type }: { $type: TextProps["type"] }) => ({ theme }) => {
   if (type === "secondary") return theme.orbit.colorTextSecondary;
   if (type === "info") return theme.orbit.paletteBlueDark;
   if (type === "success") return theme.orbit.paletteGreenDark;

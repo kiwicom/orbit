@@ -342,10 +342,14 @@ export const Status = () => {
             />
             <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
             <ItinerarySegmentStop
+              type="success"
               city="Vienna"
               station="Vienna International Airport"
               date="Fri, 19.10"
               time="15:35"
+              cancelledCity="Brno"
+              cancelledStation="Brno Tuřany Airport"
+              cancelledTime="15:15"
             />
           </ItinerarySegment>
         </ItineraryStatus>

@@ -88,6 +88,7 @@ const SwitchSegment = ({
         name={name || "switch-segment"}
         defaultChecked={defaultChecked}
         type="radio"
+        role="switch"
         ref={ref}
         onChange={onChange}
         onFocus={onFocus}

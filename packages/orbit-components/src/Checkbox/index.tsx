@@ -157,7 +157,7 @@ const StyledInput = styled.input<StyledInputProps>`
   }
 
   &:focus + ${StyledIconContainer} {
-    ${defaultFocus}
+    ${defaultFocus};
   }
 `;
 

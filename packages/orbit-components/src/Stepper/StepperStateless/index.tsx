@@ -108,6 +108,10 @@ const StyledStepperButton = styled(Button)`
   }
 `;
 
+StyledStepperButton.defaultProps = {
+  theme: defaultTheme,
+};
+
 const StepperStateless = ({
   maxWidth = "120px",
   disabled,

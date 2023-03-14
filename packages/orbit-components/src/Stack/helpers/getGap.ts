@@ -41,9 +41,16 @@ const getGap = ({ index, devices }: { index: number; devices: Devices[] }) => (
       getSpacing(props.theme)[spacing],
     );
 
+  // workaround to make it work on Safari iOS < 14.1
+  // TODO: remove that after dropping support for iOS < 14.1
   if (props.flex) {
     return css`
       gap: ${gap};
+      @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+        & > *:not(:last-child) {
+          margin: ${margin && rtlSpacing(margin)} !important;
+        }
+      }
     `;
   }
 

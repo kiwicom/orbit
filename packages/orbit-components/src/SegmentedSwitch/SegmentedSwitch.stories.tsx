@@ -1,5 +1,5 @@
 import * as React from "react";
-import { text, number, boolean } from "@storybook/addon-knobs";
+import { text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import SegmentedSwitch from ".";
@@ -12,7 +12,7 @@ export const Default = () => {
   const label = text("Label", "Gender");
   const help = text("Help", "When Chuck Norris plays dodgeball, the balls dodge him.");
   const error = text("Error", "Chuck Norris makes onions cry.");
-  const maxWidth = number("maxWidth", NaN);
+  const maxWidth = text("maxWidth", "");
   const showTooltip = boolean("showTooltip", false);
 
   return (

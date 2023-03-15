@@ -84,7 +84,7 @@ const StyledSwitchInput = styled.input`
   padding: 0;
 
   &:focus + ${StyledSwitchButton} {
-    ${defaultFocus}
+    ${defaultFocus};
   }
 `;
 

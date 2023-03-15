@@ -134,7 +134,7 @@ const StyledInput = styled.input`
   }
 
   &:focus + ${StyledIconContainer} {
-    ${defaultFocus}
+    ${defaultFocus};
 
     ${media.largeMobile(css`
       border-width: 1px;

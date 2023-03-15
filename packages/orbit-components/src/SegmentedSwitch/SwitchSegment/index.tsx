@@ -60,7 +60,7 @@ const StyledInput = styled.input`
       z-index: 10;
       border-radius: 5px !important;
       color: ${theme.orbit.paletteInkNormal};
-      ${defaultFocus}
+      ${defaultFocus};
     }
   `};
 `;
@@ -88,7 +88,9 @@ const SwitchSegment = ({
         name={name || "switch-segment"}
         defaultChecked={defaultChecked}
         type="radio"
+        role="switch"
         ref={ref}
+        aria-checked={Boolean(value)}
         onChange={onChange}
         onFocus={onFocus}
         disabled={disabled}

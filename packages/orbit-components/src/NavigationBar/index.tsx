@@ -7,7 +7,6 @@ import defaultTheme from "../defaultTheme";
 import MenuHamburger from "../icons/MenuHamburger";
 import ButtonLink from "../ButtonLink";
 import useStateWithCallback from "../hooks/useStateWithCallback";
-import useTranslate from "../hooks/useTranslate";
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
@@ -57,12 +56,12 @@ const NavigationBar = ({
   onMenuOpen,
   children,
   dataTest,
+  openTitle = "Open navigation menu",
   id,
   onShow,
   onHide,
   hideOnScroll = true,
 }: Props) => {
-  const translate = useTranslate();
   const resolveCallback = React.useCallback(
     state => {
       if (onHide && !state) onHide();
@@ -109,7 +108,7 @@ const NavigationBar = ({
           type="secondary"
           onClick={onMenuOpen}
           iconLeft={<MenuHamburger />}
-          title={translate("navigationbar_open_menu")}
+          title={openTitle}
         />
       )}
     </StyledNavigationBar>

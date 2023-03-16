@@ -9,5 +9,6 @@ export interface Props extends Common.Globals {
   readonly onShow?: Common.Callback;
   readonly onHide?: Common.Callback;
   readonly children: React.ReactNode;
+  readonly openTitle?: React.ReactNode;
   readonly hideOnScroll?: boolean;
 }

@@ -24,12 +24,13 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the NavigationBar component.
 
-| Name         | Type                    | Default | Description                                                                                           |
-| :----------- | :---------------------- | :------ | :---------------------------------------------------------------------------------------------------- |
-| **children** | `React.Node`            |         | The content of the NavigationBar.                                                                     |
-| dataTest     | `string`                |         | Optional prop for testing purposes.                                                                   |
-| id           | `string`                |         | Set `id` for `NavigationBar`                                                                          |
-| onMenuOpen   | `() => void \| Promise` |         | Function for handling onClick event on HamburgerMenu icon. If `null`, the HamburgerMenu won't appear. |
-| onHide       | `() => void \| Promise` |         | Function for handling event when the NavigationBar disappears.                                        |
-| onShow       | `() => void \| Promise` |         | Function for handling event when the NavigationBar appears.                                           |
-| hideOnScroll | `boolean`               | `true`  | Turn on or off hiding navigation bar on scroll                                                        |
+| Name         | Type                    | Default                  | Description                                                                                           |
+| :----------- | :---------------------- | :----------------------- | :---------------------------------------------------------------------------------------------------- |
+| **children** | `React.Node`            |                          | The content of the NavigationBar.                                                                     |
+| dataTest     | `string`                |                          | Optional prop for testing purposes.                                                                   |
+| id           | `string`                |                          | Set `id` for `NavigationBar`                                                                          |
+| onMenuOpen   | `() => void \| Promise` |                          | Function for handling onClick event on HamburgerMenu icon. If `null`, the HamburgerMenu won't appear. |
+| onHide       | `() => void \| Promise` |                          | Function for handling event when the NavigationBar disappears.                                        |
+| onShow       | `() => void \| Promise` |                          | Function for handling event when the NavigationBar appears.                                           |
+| hideOnScroll | `boolean`               | `true`                   | Turn on or off hiding navigation bar on scroll                                                        |
+| openTitle    | `React.Node`            | `"Open navigation menu"` | Property for passing translation string to open Button title                                          |

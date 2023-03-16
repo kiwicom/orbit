@@ -5,7 +5,6 @@ import type * as Common from "../common/types";
 import defaultTheme from "../defaultTheme";
 import ChevronBackward from "../icons/ChevronBackward";
 import getSpacingToken from "../common/getSpacingToken";
-import useTranslate from "../hooks/useTranslate";
 import { right } from "../utils/rtl";
 import TextLink from "../TextLink";
 import Hide from "../Hide";
@@ -43,20 +42,11 @@ StyledBackButtonWrapper.defaultProps = {
 };
 
 const Breadcrumbs = (props: Props) => {
-  const translate = useTranslate();
   const childEls = React.Children.toArray(
     props.children,
   ) as React.ReactElement<BreadcrumbsItemProps>[];
 
-  const {
-    children,
-    dataTest,
-    onGoBack,
-    goBackTitle = translate("breadcrumbs_back"),
-    spaceAfter,
-    backHref,
-    id,
-  } = props;
+  const { children, dataTest, onGoBack, goBackTitle = "Back", spaceAfter, backHref, id } = props;
   return (
     <>
       <Hide on={["smallMobile", "mediumMobile"]}>

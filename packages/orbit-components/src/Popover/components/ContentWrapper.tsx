@@ -9,7 +9,6 @@ import defaultTheme from "../../defaultTheme";
 import mq from "../../utils/mediaQuery";
 import Button from "../../Button";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import Translate from "../../Translate";
 import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
 import useLockScrolling from "../../hooks/useLockScrolling";
@@ -34,6 +33,7 @@ export interface Props extends Common.Globals {
   overlapped?: boolean;
   shown: boolean;
   fixed?: boolean;
+  labelClose?: React.ReactNode;
   lockScrolling?: boolean;
   actions?: React.ReactNode;
   offset?: Offset;
@@ -218,6 +218,7 @@ StyledPopoverClose.defaultProps = {
 const PopoverContentWrapper = ({
   children,
   onClose,
+  labelClose,
   width,
   noFlip,
   offset = { top: 4, left: 0 },
@@ -325,7 +326,7 @@ const PopoverContentWrapper = ({
           ) : (
             <StyledPopoverClose ref={actionsRef}>
               <Button type="secondary" fullWidth onClick={onClose}>
-                <Translate tKey="button_close" />
+                {labelClose}
               </Button>
             </StyledPopoverClose>
           )}

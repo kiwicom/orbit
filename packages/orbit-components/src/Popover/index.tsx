@@ -26,6 +26,7 @@ const Popover = ({
   fixed,
   lockScrolling = true,
   noFlip,
+  labelClose,
   allowOverflow,
   noPadding,
   width,
@@ -125,6 +126,7 @@ const Popover = ({
     <PopoverContent
       shown={shown}
       id={id}
+      labelClose={labelClose}
       dataTest={dataTest}
       overlapped={overlapped}
       fixed={fixed}

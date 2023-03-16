@@ -250,12 +250,14 @@ OpenedByProp.story = {
 export const Overlapped = () => {
   const overlapped = boolean("overlapped", true);
   const opened = boolean("opened", false);
+  const labelClose = text("Label close", "Close");
 
   return (
     <Popover
       overlapped={overlapped}
       content={content}
       actions={actions}
+      labelClose={labelClose}
       onOpen={action("open")}
       onClose={action("close")}
     >
@@ -273,11 +275,14 @@ Overlapped.story = {
 };
 
 export const MultiplePopovers = () => {
+  const labelClose = text("Label close", "Close");
+
   return (
     <Stack flex>
       <Popover
         content={content}
         actions={actions}
+        labelClose={labelClose}
         onOpen={action("open")}
         onClose={action("close")}
         placement="bottom-start"
@@ -307,10 +312,12 @@ MultiplePopovers.story = {
 };
 
 export const LongContent = () => {
+  const labelClose = text("Label close", "Close");
   return (
     <>
       <Popover
         content={longContent}
+        labelClose={labelClose}
         actions={
           <Stack direction="row" justify="between">
             <Button type="secondary">Cancel</Button>
@@ -404,6 +411,7 @@ export const Playground = () => {
   const width = text("width", "350px");
   const noPadding = boolean("noPadding", false);
   const overlapped = boolean("overlapped", false);
+  const labelClose = text("Label close", "Close");
   const opened = boolean("opened", true);
   const offset = object("offset", { top: 0, left: 0 });
   const noFlip = boolean("noFlip", false);
@@ -421,6 +429,7 @@ export const Playground = () => {
         allowOverflow={allowOverflow}
         opened={opened}
         noFlip={noFlip}
+        labelClose={labelClose}
         actions={
           <Stack direction="row" justify="between">
             <Button type="secondary" size="small">

@@ -23,6 +23,7 @@ export interface Props extends Common.Globals {
   readonly overlapped?: boolean;
   readonly fixed?: boolean;
   readonly actions?: React.ReactNode;
+  readonly labelClose?: React.ReactNode;
   readonly offset?: Offset;
   readonly lockScrolling?: boolean;
   readonly onOpen?: Common.Callback;

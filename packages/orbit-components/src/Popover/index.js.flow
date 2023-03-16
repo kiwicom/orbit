@@ -26,6 +26,7 @@ export type Props = {|
   +overlapped?: boolean,
   +fixed?: boolean,
   +actions?: React.Node,
+  +labelClose?: React.Node,
   +offset?: Offset,
   +lockScrolling?: boolean,
   +renderInPortal?: boolean,

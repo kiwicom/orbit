@@ -17,6 +17,9 @@ export type Props = {|
   ...PageCount,
   ...SelectedPage,
   hideLabels?: boolean,
+  prevLabel: React.Node,
+  nextLabel: React.Node,
+  progressLabel: React.Node,
   size?: Sizes,
 |};
 

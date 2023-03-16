@@ -12,16 +12,33 @@ export default {
 
 export const Default = () => {
   const pageCount = number("pageCount", 6);
+  const labelPrev = text("labelPrev", "prev");
+  const labelNext = text("labelNext", "next");
+  const labelProgress = text("labelProgress", "of");
 
-  return <Pagination pageCount={pageCount} onPageChange={action("onPageChange")} />;
+  return (
+    <Pagination
+      labelPrev={labelPrev}
+      labelNext={labelNext}
+      labelProgress={labelProgress}
+      pageCount={pageCount}
+      onPageChange={action("onPageChange")}
+    />
+  );
 };
 
 export const WithALotOfPages = () => {
   const selectedPage = number("selectedPage", 44);
   const pageCount = number("pageCount", 100);
+  const labelPrev = text("labelPrev", "prev");
+  const labelNext = text("labelNext", "next");
+  const labelProgress = text("labelProgress", "of");
 
   return (
     <Pagination
+      labelPrev={labelPrev}
+      labelNext={labelNext}
+      labelProgress={labelProgress}
       pageCount={pageCount}
       selectedPage={selectedPage}
       onPageChange={action("onPageChange")}
@@ -36,8 +53,20 @@ WithALotOfPages.story = {
 export const SmallSize = () => {
   const size = select("size", Object.values(SIZES), SIZES.SMALL);
   const pageCount = number("pageCount", 100);
+  const labelPrev = text("labelPrev", "prev");
+  const labelNext = text("labelNext", "next");
+  const labelProgress = text("labelProgress", "of");
 
-  return <Pagination pageCount={pageCount} size={size} onPageChange={action("onPageChange")} />;
+  return (
+    <Pagination
+      labelPrev={labelPrev}
+      labelNext={labelNext}
+      labelProgress={labelProgress}
+      pageCount={pageCount}
+      size={size}
+      onPageChange={action("onPageChange")}
+    />
+  );
 };
 
 SmallSize.story = {
@@ -50,9 +79,15 @@ export const Playground = () => {
   const selectedPage = number("selectedPage", 2);
   const hideLabels = boolean("hideLabels", false);
   const size = select("size", Object.values(SIZES), SIZES.NORMAL);
+  const labelPrev = text("labelPrev", "prev");
+  const labelNext = text("labelNext", "next");
+  const labelProgress = text("labelProgress", "of");
 
   return (
     <Pagination
+      labelPrev={labelPrev}
+      labelNext={labelNext}
+      labelProgress={labelProgress}
       dataTest={dataTest}
       pageCount={pageCount}
       selectedPage={selectedPage}

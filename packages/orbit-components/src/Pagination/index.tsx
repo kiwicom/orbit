@@ -9,8 +9,6 @@ import { MAXIMUM_PAGES, SIZES } from "./consts";
 import Pages from "./components/Pages";
 import CompactPages from "./components/CompactPages";
 import ActiveButton from "./components/ActiveButton";
-import Translate from "../Translate";
-import useTranslate from "../hooks/useTranslate";
 import type { Props } from "./types";
 
 const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
@@ -21,6 +19,9 @@ const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
 
 const Pagination = ({
   pageCount,
+  labelPrev,
+  labelNext,
+  labelProgress,
   selectedPage = 1,
   onPageChange,
   dataTest,
@@ -29,7 +30,6 @@ const Pagination = ({
 }: Props) => {
   const pageChanged = handlePageChange(onPageChange, pageCount);
   const { isTablet } = useMediaQuery();
-  const translate = useTranslate();
 
   return (
     <Stack spacing="XXSmall" align="center" grow={false} shrink dataTest={dataTest} basis="auto">
@@ -39,21 +39,18 @@ const Pagination = ({
             onClick={() => pageChanged(selectedPage - 1)}
             iconLeft={<ChevronBackward />}
             type="secondary"
-            title={translate("pagination_label_prev")}
+            title={labelPrev}
             size={size}
             disabled={selectedPage <= 1}
           />
           <ActiveButton transparent size={size}>
-            {translate("pagination_progress", {
-              number: selectedPage,
-              total: pageCount,
-            })}
+            {labelProgress}
           </ActiveButton>
           <ButtonLink
             onClick={() => pageChanged(selectedPage + 1)}
             iconLeft={<ChevronForward />}
             type="secondary"
-            title={translate("pagination_label_next")}
+            title={labelNext}
             size={size}
             disabled={pageCount <= selectedPage}
           />
@@ -64,11 +61,11 @@ const Pagination = ({
             onClick={() => pageChanged(selectedPage - 1)}
             iconLeft={<ChevronBackward />}
             type="secondary"
-            title={hideLabels ? translate("pagination_label_prev") : undefined}
+            title={hideLabels ? labelPrev : undefined}
             size={size}
             disabled={selectedPage <= 1}
           >
-            {!hideLabels && <Translate tKey="pagination_label_prev" />}
+            {!hideLabels && labelPrev}
           </ButtonLink>
           <Stack inline grow={false} spacing="XXSmall" align="center">
             {pageCount <= MAXIMUM_PAGES ? (
@@ -92,11 +89,11 @@ const Pagination = ({
             iconRight={!hideLabels && <ChevronForward />}
             iconLeft={hideLabels && <ChevronForward />}
             type="secondary"
-            title={hideLabels ? translate("pagination_label_next") : undefined}
+            title={hideLabels ? labelNext : undefined}
             size={size}
             disabled={pageCount <= selectedPage}
           >
-            {!hideLabels && <Translate tKey="pagination_label_next" />}
+            {!hideLabels && labelNext}
           </ButtonLink>
         </>
       )}

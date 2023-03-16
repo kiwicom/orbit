@@ -288,6 +288,13 @@
       "name": "paletteBlueNormalActive"
     },
     {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "backgroundSwitch"
+    },
+    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "",
@@ -601,6 +608,13 @@
       "category": "",
       "comment": "",
       "name": "borderColorButtonSuccessBordered"
+    },
+    {
+      "value": "rgb(1, 114, 203)",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "name": "backgroundSwitchChecked"
     },
     {
       "value": "rgb(149, 74, 0)",

@@ -82,6 +82,8 @@ module.exports = {
   /*  */
   paletteBlueNormalActive: "rgb(1, 80, 142)",
   /*  */
+  backgroundSwitch: "rgb(186, 199, 213)",
+  /*  */
   colorTextButtonWarningHover: "rgb(255, 255, 255)",
   /*  */
   paletteCloudLightActive: "rgb(214, 222, 230)",
@@ -171,6 +173,8 @@ module.exports = {
   colorTextTagSelected: "rgb(186, 199, 213)",
   /*  */
   borderColorButtonSuccessBordered: "rgb(40, 161, 56)",
+  /*  */
+  backgroundSwitchChecked: "rgb(1, 114, 203)",
   /*  */
   paletteOrangeDarkActive: "rgb(149, 74, 0)",
   /*  */

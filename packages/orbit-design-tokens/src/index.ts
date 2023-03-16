@@ -233,6 +233,8 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     backgroundBadgeBundleMedium: `linear-gradient(to top right, ${theme.palette.bundle.mediumGradientStart} 0%, ${theme.palette.bundle.mediumGradientEnd} 100%)`,
     backgroundBadgeBundleTop: `linear-gradient(to top right,${theme.palette.bundle.topGradientStart} 0%, ${theme.palette.bundle.topGradientEnd} 100%)`,
     backgroundServiceLogo: "transparent",
+    backgroundSwitch: theme.palette.cloud.dark,
+    backgroundSwitchChecked: theme.palette.blue.normal,
     backgroundIllustration: "transparent",
     backgroundSeparator: theme.palette.cloud.normal,
     backgroundTableShadowLeft: `linear-gradient(to left, transparent, ${convertHexToRgba(

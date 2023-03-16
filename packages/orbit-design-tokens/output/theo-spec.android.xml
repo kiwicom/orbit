@@ -41,6 +41,7 @@
   <dimen name="HEIGHTSERVICELOGOLARGE" category="">48dp</dimen>
   <color name="BACKGROUNDBUTTONLINKSECONDARYHOVER" category="">#ffe5eaef</color>
   <color name="PALETTEBLUENORMALACTIVE" category="">#ff01508e</color>
+  <color name="BACKGROUNDSWITCH" category="">#ffbac7d5</color>
   <color name="COLORTEXTBUTTONWARNINGHOVER" category="">#ffffffff</color>
   <color name="PALETTECLOUDLIGHTACTIVE" category="">#ffd6dee6</color>
   <dimen name="LINEHEIGHTHEADINGTITLE3" category="">24dp</dimen>
@@ -86,6 +87,7 @@
   <dimen name="BOXSHADOWOVERLAY" category="">0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)</dimen>
   <color name="COLORTEXTTAGSELECTED" category="">#ffbac7d5</color>
   <color name="BORDERCOLORBUTTONSUCCESSBORDERED" category="">#ff28a138</color>
+  <color name="BACKGROUNDSWITCHCHECKED" category="">#ff0172cb</color>
   <color name="PALETTEORANGEDARKACTIVE" category="">#ff954a00</color>
   <color name="COLORTEXTBUTTONPRIMARYACTIVE" category="">#ffffffff</color>
   <color name="COLORTEXTBUTTONLINKPRIMARY" category="">#ff00a58e</color>

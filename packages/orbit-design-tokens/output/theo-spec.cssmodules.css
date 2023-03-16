@@ -40,6 +40,7 @@
 @value height-service-logo-large: 48px;
 @value background-button-link-secondary-hover: rgb(229, 234, 239);
 @value palette-blue-normal-active: rgb(1, 80, 142);
+@value background-switch: rgb(186, 199, 213);
 @value color-text-button-warning-hover: rgb(255, 255, 255);
 @value palette-cloud-light-active: rgb(214, 222, 230);
 @value line-height-heading-title3: 24px;
@@ -85,6 +86,7 @@
 @value box-shadow-overlay: 0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32);
 @value color-text-tag-selected: rgb(186, 199, 213);
 @value border-color-button-success-bordered: rgb(40, 161, 56);
+@value background-switch-checked: rgb(1, 114, 203);
 @value palette-orange-dark-active: rgb(149, 74, 0);
 @value color-text-button-primary-active: rgb(255, 255, 255);
 @value color-text-button-link-primary: rgb(0, 165, 142);

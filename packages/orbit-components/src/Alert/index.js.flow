@@ -18,6 +18,7 @@ export type Props = {|
   +closable?: boolean,
   +suppressed?: boolean,
   +inlineActions?: React.Node,
+  +labelClose?: React.Node,
   +onClose?: () => void | Promise<any>,
   ...Globals,
   ...spaceAfter,

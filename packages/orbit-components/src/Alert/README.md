@@ -29,6 +29,7 @@ The table below contains all types of the props available in Alert component.
 | title         | `Translation`                   |          | The title of the Alert.                                                                                                                                        |
 | **type**      | [`enum`](#enum)                 | `"info"` | The type of Alert.                                                                                                                                             |
 | suppressed    | `boolean`                       |          | If `suppressed` is on, Alert will not have colored background                                                                                                  |
+| labelClose    | `React.Node`                    |          | The label of the close button.                                                                                                                                 |
 
 ### enum
 

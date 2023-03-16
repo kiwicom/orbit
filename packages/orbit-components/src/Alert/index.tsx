@@ -19,7 +19,6 @@ import { rtlSpacing, right, left } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
-import useTranslate from "../hooks/useTranslate";
 import { StyledHeading } from "../Heading";
 import media from "../utils/mediaQuery";
 
@@ -247,14 +246,15 @@ const AlertCloseButton = ({
   hasChildren,
   dataTest,
   onClick,
+  labelClose,
   icon,
 }: {
   hasChildren: boolean;
   dataTest: string;
+  labelClose?: React.ReactNode;
   onClick?: Common.Callback;
   icon: React.ReactNode;
 }) => {
-  const translate = useTranslate();
   return (
     <CloseContainer hasChildren={hasChildren}>
       <ButtonLink
@@ -263,7 +263,7 @@ const AlertCloseButton = ({
         size="small"
         iconLeft={icon}
         type="secondary"
-        title={translate("button_close")}
+        title={labelClose}
       />
     </CloseContainer>
   );
@@ -282,6 +282,7 @@ const Alert = (props: Props) => {
     spaceAfter,
     suppressed,
     inlineActions,
+    labelClose,
   } = props;
   return (
     <StyledAlert
@@ -320,6 +321,7 @@ const Alert = (props: Props) => {
           hasChildren={!!children}
           dataTest={CLOSE_BUTTON_DATA_TEST}
           onClick={onClose}
+          labelClose={labelClose}
           icon={<Close size="small" color={type} />}
         />
       )}

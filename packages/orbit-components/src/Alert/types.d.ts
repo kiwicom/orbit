@@ -13,6 +13,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly icon?: React.ReactNode;
   readonly closable?: boolean;
   readonly inlineActions?: React.ReactNode;
+  readonly labelClose?: React.ReactNode;
   readonly onClose?: Common.Callback;
   readonly suppressed?: boolean;
 }

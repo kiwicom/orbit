@@ -16,6 +16,7 @@ const Tooltip = ({
   content,
   id,
   placement,
+  labelClose,
   lockScrolling,
   renderInPortal = true,
   stopPropagation = false,
@@ -45,6 +46,7 @@ const Tooltip = ({
       dataTest={dataTest}
       tabIndex={tabIndex}
       id={id}
+      labelClose={labelClose}
       onShow={onShow}
       enabled={enabled}
       lockScrolling={lockScrolling}

@@ -16,6 +16,7 @@ export interface Props extends Common.Globals, Popper {
   readonly stopPropagation?: boolean;
   readonly enabled?: boolean;
   readonly onShow?: Common.Callback;
+  readonly labelClose?: React.ReactNode;
   readonly placement?: Placement;
   readonly tabIndex?: string | number;
   readonly removeUnderlinedText?: boolean;

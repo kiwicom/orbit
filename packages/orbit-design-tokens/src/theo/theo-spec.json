@@ -1935,6 +1935,24 @@
         "categoryDescription": ""
       }
     },
+    "backgroundSwitch": {
+      "value": "#BAC7D5",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "backgroundSwitchChecked": {
+      "value": "#0172CB",
+      "type": "color",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "backgroundIllustration": {
       "value": "transparent",
       "type": "string",

@@ -221,6 +221,8 @@ export type Tokens = {
   backgroundBadgeBundleMedium: string;
   backgroundBadgeBundleTop: string;
   backgroundServiceLogo: string;
+  backgroundSwitch: string;
+  backgroundSwitchChecked: string;
   backgroundIllustration: string;
   backgroundSeparator: string;
   backgroundTableShadowLeft: string;

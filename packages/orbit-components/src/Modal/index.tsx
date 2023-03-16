@@ -310,6 +310,7 @@ const Modal = React.forwardRef<Instance, Props>(
       disableAnimation = false,
       dataTest,
       id,
+      labelClose = "Close",
       lockScrolling = true,
     }: Props,
     ref,
@@ -647,7 +648,11 @@ const Modal = React.forwardRef<Instance, Props>(
                 isMobileFullPage={isMobileFullPage}
               >
                 {onClose && hasCloseButton && (
-                  <ModalCloseButton onClick={onClose} dataTest={CLOSE_BUTTON_DATA_TEST} />
+                  <ModalCloseButton
+                    onClick={onClose}
+                    dataTest={CLOSE_BUTTON_DATA_TEST}
+                    title={labelClose}
+                  />
                 )}
               </CloseContainer>
             )}

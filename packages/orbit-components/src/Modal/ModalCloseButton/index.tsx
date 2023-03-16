@@ -2,12 +2,9 @@ import * as React from "react";
 
 import ButtonLink from "../../ButtonLink";
 import Close from "../../icons/Close";
-import useTranslate from "../../hooks/useTranslate";
 import type { Props } from "./types";
 
-const ModalCloseButton = ({ onClick, dataTest }: Props) => {
-  const translate = useTranslate();
-
+const ModalCloseButton = ({ onClick, dataTest, title }: Props) => {
   return (
     <ButtonLink
       onClick={onClick}
@@ -15,7 +12,7 @@ const ModalCloseButton = ({ onClick, dataTest }: Props) => {
       iconLeft={<Close />}
       dataTest={dataTest}
       type="secondary"
-      title={translate("button_close")}
+      title={title}
     />
   );
 };

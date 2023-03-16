@@ -6,6 +6,7 @@ import type { Globals } from "../../common/common.js.flow";
 export type Props = {|
   ...Globals,
   +onClick: (ev: SyntheticEvent<HTMLButtonElement>) => void | Promise<any>,
+  +title?: React.Node,
 |};
 
 declare export default React.ComponentType<Props>;

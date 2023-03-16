@@ -7,6 +7,9 @@ export default {
     return (
       <Pagination
         pageCount={7}
+        labelPrev="Prev"
+        labelNext="Next"
+        labelProgress={`Page ${currentPage} of 7`}
         onPageChange={selectedPage => setCurrentPage(selectedPage)}
         selectedPage={currentPage}
       />
@@ -16,6 +19,21 @@ export default {
     {
       component: "Pagination",
       knobs: [
+        {
+          name: "labelPrev",
+          type: "text",
+          defaultValue: "Prev",
+        },
+        {
+          name: "labelNext",
+          type: "text",
+          defaultValue: "Next",
+        },
+        {
+          name: "labelProgress",
+          type: "text",
+          defaultValue: "Page 2 of 7",
+        },
         {
           name: "pageCount",
           type: "number",

@@ -6,6 +6,9 @@ export default {
     const [currentPage, setCurrentPage] = React.useState(6);
     return (
       <Pagination
+        labelPrev="Prev"
+        labelNext="Next"
+        labelProgress={`Page ${currentPage} of 12`}
         pageCount={12}
         onPageChange={selectedPage => setCurrentPage(selectedPage)}
         selectedPage={currentPage}

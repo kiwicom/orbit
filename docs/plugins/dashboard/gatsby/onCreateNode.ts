@@ -5,7 +5,6 @@ import fs from "fs-extra";
 const EXCLUDED = [
   "Translate",
   "Icon",
-  "Dictionary",
   "ErrorFormTooltip",
   // used with different import names (probably ask to rename)
   "Toast",

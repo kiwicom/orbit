@@ -63,7 +63,7 @@ import Alert from "@kiwicom/orbit-components/lib/Alert";
 <Alert>Hello World!</Alert>;
 ```
 
-If you want to use custom theme or dictionary inside your project, it's necessary to wrap your app into `<OrbitProvider>`. See [this document](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/OrbitProvider/README.md) for more information.
+If you want to use custom theme inside your project, it's necessary to wrap your app into `<OrbitProvider>`. See [this document](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/OrbitProvider/README.md) for more information.
 
 For live preview check out [Storybook](https://kiwicom.github.io/orbit/) or [orbit.kiwi](https://orbit.kiwi).
 
@@ -87,7 +87,6 @@ yarn add @types/styled-components -D
 - [Icons](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/Icon/README.md)
 - [Right to left languages](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/rtl/README.md)
 - [Theming](https://github.com/kiwicom/orbit/blob/master/.github/theming.md)
-- [Dictionary](https://github.com/kiwicom/orbit/blob/master/docs/src/documentation/05-development/01-guides/02-dictionary.mdx)
 
 ## Contributing
 

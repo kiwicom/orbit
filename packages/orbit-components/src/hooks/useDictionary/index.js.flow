@@ -1,7 +1,0 @@
-// @flow
-
-import type { Translations } from "../../Dictionary/index.js.flow";
-
-export type UseDictionary = () => Translations;
-
-declare export default UseDictionary;

@@ -1,62 +1,13 @@
 import * as React from "react";
-import { select, boolean, object } from "@storybook/addon-knobs";
+import { object } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
-import useTranslate from "../hooks/useTranslate";
 import Button from "../Button";
 import getTokens from "../getTokens";
-import languages from "../data/dictionary";
-import Badge from "../Badge";
-import Tooltip from "../Tooltip";
 
 import OrbitProvider from ".";
 
-const ButtonWithTranslation = () => {
-  const translate = useTranslate();
-  return <Button>{translate("button_close")}</Button>;
-};
-
-export default {
-  title: "OrbitProvider",
-};
-
-export const DictionaryContext = () => {
-  const dictionary = select("dictionary", Object.keys(languages), "en");
-  return (
-    <OrbitProvider theme={{ orbit: getTokens() }} dictionary={languages[dictionary]}>
-      <ButtonWithTranslation />
-    </OrbitProvider>
-  );
-};
-
-DictionaryContext.story = {
-  name: "Dictionary context",
-
-  parameters: {
-    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-export const WithoutTransitions = () => {
-  const transitions = boolean("transitions", false);
-  return (
-    <OrbitProvider theme={{ orbit: getTokens(), transitions }}>
-      <Tooltip content="Lorem ipsum dolor sit amet">
-        <Badge>Info</Badge>
-      </Tooltip>
-    </OrbitProvider>
-  );
-};
-
-WithoutTransitions.story = {
-  name: "Without transitions",
-
-  parameters: {
-    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-export const OwnTheme = () => {
+export function OwnTheme() {
   const orbitTheme = object("orbitTheme", {
     palette: {
       product: {
@@ -79,7 +30,7 @@ export const OwnTheme = () => {
       <Button onClick={action("onClick")}>Hello World!</Button>
     </OrbitProvider>
   );
-};
+}
 
 OwnTheme.story = {
   name: "Own theme",

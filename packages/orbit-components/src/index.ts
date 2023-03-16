@@ -113,7 +113,6 @@ export { default as Tabs, TabList, Tab, TabPanels, TabPanel } from "./Tabs";
 export { default as TileGroup } from "./TileGroup";
 export { default as Timeline, TimelineStep } from "./Timeline";
 export { default as Tooltip } from "./Tooltip";
-export { default as Translate } from "./Translate";
 export { default as Truncate } from "./Truncate";
 
 // tokens

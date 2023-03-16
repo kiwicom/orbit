@@ -22,7 +22,6 @@
     "build:iconsPng": "ts-node --esm config/generatePngIcons.mts",
     "build:storybook": "ts-node --esm  config/build/buildIcons.mts && build-storybook -c .storybook -o .out",
     "eslint:check": "eslint . --report-unused-disable-directives",
-    "fetch-translations": "ts-node --esm config/fetchTranslations.mts --quiet",
     "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",
     "deploy:surge": "yarn surge .out/",
     "deploy:updateURL": "ts-node --esm config/deploymentUtils.mts updateLiveURL",

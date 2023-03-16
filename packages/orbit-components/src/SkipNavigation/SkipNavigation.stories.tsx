@@ -75,6 +75,7 @@ Default.story = {
 };
 
 export const Playground = () => {
+  const feedbackLabel = "Send feedback";
   return (
     <div>
       <SkipNavigation
@@ -93,6 +94,7 @@ export const Playground = () => {
           },
         ]}
         feedbackUrl="#"
+        feedbackLabel={feedbackLabel}
       />
 
       {Content}

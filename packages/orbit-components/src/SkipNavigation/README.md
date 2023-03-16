@@ -18,10 +18,11 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the SkipNavigation component.
 
-| Name        | Type                    | Description                                  |
-| :---------- | :---------------------- | :------------------------------------------- |
-| feedbackUrl | `string`                | Url to a feeedback form.                     |
-| **actions** | [`Actions[]`](#actions) | An array specifying common actions on a page |
+| Name          | Type                    | Description                                  |
+| :------------ | :---------------------- | :------------------------------------------- |
+| feedbackUrl   | `string`                | Url to a feedback form.                      |
+| feedbackLabel | `React.Node`            | Text for a feedback form.                    |
+| **actions**   | [`Actions[]`](#actions) | An array specifying common actions on a page |
 
 ## actions
 

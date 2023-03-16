@@ -12,6 +12,7 @@ interface Action {
 export interface Props {
   readonly actions?: Action[];
   readonly feedbackUrl?: string;
+  readonly feedbackLabel?: React.ReactNode;
 }
 
 export interface MappedOptions {

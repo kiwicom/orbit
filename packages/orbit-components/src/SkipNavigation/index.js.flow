@@ -16,9 +16,11 @@ export type MappedOptions = {|
   +label?: string,
   +disabled?: boolean,
 |};
+
 export type Props = {|
   actions?: Actions[],
   feedbackUrl?: string,
+  feedbackLabel: React.Node,
 |};
 
 declare export default React.ComponentType<Props>;

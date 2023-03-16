@@ -5,7 +5,6 @@ import Select from "../Select";
 import Stack from "../Stack";
 import ButtonLink from "../Button";
 import defaultTheme from "../defaultTheme";
-import Translate from "../Translate";
 import type { MappedOptions, Props } from "./types";
 
 const StyledNavigation = styled.div<{ show?: boolean }>`
@@ -41,7 +40,7 @@ const StyledSelectWrapper = styled.div`
   max-width: 800px;
 `;
 
-const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
+const SkipNavigation = ({ actions, feedbackUrl, feedbackText }: Props) => {
   const [links, setLinks] = React.useState<HTMLAnchorElement[]>([]);
   const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
   const [innerPages, setPages] = React.useState<{ value: number; label?: string }[]>([]);
@@ -121,7 +120,7 @@ const SkipNavigation = ({ actions, feedbackUrl }: Props) => {
         </StyledSelectWrapper>
         {feedbackUrl && (
           <ButtonLink href={feedbackUrl} type="secondary" external size="small">
-            <Translate tKey="a11ymenu_send_feedback" />
+            {feedbackText}
           </ButtonLink>
         )}
       </Stack>

@@ -20,6 +20,7 @@ export type Props = {|
   +size?: Sizes,
   +onShow?: () => void | Promise<void>,
   +enabled?: boolean,
+  +labelClose?: React.Node,
   +renderInPortal?: boolean,
   +stopPropagation?: boolean,
   +tabIndex?: string | number,

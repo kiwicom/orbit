@@ -9,6 +9,7 @@ import type { Props } from "./types";
 
 const MobileDialog = ({
   children,
+  labelClose,
   enabled = true,
   onShow,
   renderInPortal = true,
@@ -57,6 +58,7 @@ const MobileDialog = ({
     <DialogContent
       dataTest={dataTest}
       shown={shown}
+      labelClose={labelClose}
       lockScrolling={lockScrolling}
       dialogId={mobileDialogID}
       onClose={handleOutMobile}

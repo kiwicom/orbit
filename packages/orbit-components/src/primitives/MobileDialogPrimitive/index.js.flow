@@ -9,6 +9,7 @@ export type Props = {|
   children?: React.Node,
   lockScrolling?: boolean,
   renderInPortal?: boolean,
+  labelClose: React.Node,
   content: React.Node,
   onShow?: () => void | Promise<void>,
   stopPropagation?: boolean,

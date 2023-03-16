@@ -6,7 +6,6 @@ import { StyledText } from "../../../Text";
 import { Item } from "../../../List/ListItem";
 import defaultTheme from "../../../defaultTheme";
 import Button from "../../../Button";
-import Translate from "../../../Translate";
 import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
@@ -16,6 +15,7 @@ interface Props extends Common.Globals {
   shown: boolean;
   lockScrolling?: boolean;
   dialogId: string;
+  labelClose: React.ReactNode;
   children: React.ReactNode;
   onClose: (ev: React.SyntheticEvent<HTMLElement>) => void;
 }
@@ -107,6 +107,7 @@ const DialogContent = ({
   dataTest,
   shown,
   lockScrolling = true,
+  labelClose,
   dialogId,
   children,
   onClose,
@@ -146,7 +147,7 @@ const DialogContent = ({
       >
         <StyledTooltipContent>{children}</StyledTooltipContent>
         <Button type="secondary" fullWidth onClick={onClose}>
-          <Translate tKey="button_close" />
+          {labelClose}
         </Button>
       </StyledDialogWrapper>
     </StyledDialog>

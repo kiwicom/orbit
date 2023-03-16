@@ -6,7 +6,7 @@ import Button from "../../Button";
 import TooltipPrimitive from ".";
 
 export default {
-  title: "MobileDialogPrimtive",
+  title: "MobileDialogPrimitive",
 };
 
 export const Playground = () => {
@@ -16,12 +16,14 @@ export const Playground = () => {
   const enabled = boolean("enabled", true);
   const stopPropagation = boolean("enabled", true);
   const removeUnderlinedText = boolean("removeUnderlinedText", false);
+  const labelClose = text("labelClose", "Close");
 
   return (
     <TooltipPrimitive
       content={content}
       dataTest={dataTest}
       tabIndex={tabIndex}
+      labelClose={labelClose}
       enabled={enabled}
       stopPropagation={stopPropagation}
       removeUnderlinedText={removeUnderlinedText}

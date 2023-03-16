@@ -156,6 +156,7 @@ const Drawer = ({
   onClose,
   lockScrolling = true,
   fixedHeader,
+  labelHide,
   shown = true,
   width = "320px",
   position = POSITIONS.RIGHT,
@@ -241,7 +242,7 @@ const Drawer = ({
                 {actions}
               </Stack>
             )}
-            {onClose && <DrawerClose onClick={onClose} ref={closeButtonRef} />}
+            {onClose && <DrawerClose onClick={onClose} ref={closeButtonRef} title={labelHide} />}
           </StyledDrawerHeader>
         )}
         <StyledDrawerContent

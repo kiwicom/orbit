@@ -5,7 +5,6 @@ import ButtonLink from "../../ButtonLink";
 import Close from "../../icons/Close";
 import defaultTheme from "../../defaultTheme";
 import { left } from "../../utils/rtl";
-import useTranslate from "../../hooks/useTranslate";
 import type { Props } from "./types";
 
 const StyledDrawerClose = styled.div`
@@ -16,18 +15,10 @@ StyledDrawerClose.defaultProps = {
   theme: defaultTheme,
 };
 
-const DrawerClose = React.forwardRef<HTMLButtonElement, Props>(({ onClick }, ref) => {
-  const translate = useTranslate();
-
+const DrawerClose = React.forwardRef<HTMLButtonElement, Props>(({ onClick, title }, ref) => {
   return (
     <StyledDrawerClose>
-      <ButtonLink
-        onClick={onClick}
-        iconLeft={<Close />}
-        ref={ref}
-        type="secondary"
-        title={translate("drawer_hide")}
-      />
+      <ButtonLink onClick={onClick} iconLeft={<Close />} ref={ref} type="secondary" title={title} />
     </StyledDrawerClose>
   );
 });

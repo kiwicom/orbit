@@ -13,6 +13,7 @@ export type Props = {|
   +lockScrolling?: boolean,
   +noPadding?: boolean,
   +fixedHeader?: boolean,
+  +labelHide?: React.Node,
   +onClose?: OnClose,
   +position?: Position,
   +shown: boolean,

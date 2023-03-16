@@ -16,6 +16,7 @@ export interface Props extends Common.Globals {
   readonly fixedHeader?: boolean;
   readonly position?: Position;
   readonly shown: boolean;
+  readonly labelHide?: React.ReactNode;
   readonly suppressed?: boolean;
   readonly title?: Common.Translation;
   readonly width?: string;

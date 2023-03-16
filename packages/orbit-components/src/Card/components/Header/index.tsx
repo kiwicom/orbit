@@ -9,7 +9,6 @@ import Stack from "../../../Stack";
 import Heading from "../../../Heading";
 import Text from "../../../Text";
 import Close from "../../../icons/Close";
-import useTranslate from "../../../hooks/useTranslate";
 import ButtonLink from "../../../ButtonLink";
 import type { Props } from "./types";
 
@@ -29,15 +28,14 @@ const StyledCloseContainer = styled.div`
   z-index: 1;
 `;
 
-const CardCloseButton = ({ onClick }) => {
-  const translate = useTranslate();
+const CardCloseButton = ({ onClick, labelClose }) => {
   return (
     <ButtonLink
       type="secondary"
       size="small"
       iconLeft={<Close />}
       onClick={onClick}
-      title={translate("button_close")}
+      title={labelClose}
     />
   );
 };
@@ -48,6 +46,7 @@ const Header = ({
   title,
   titleAs,
   isSection,
+  labelClose,
   actions,
   dataA11ySection,
   onClose,
@@ -89,7 +88,7 @@ const Header = ({
     )}
     {onClose && !actions && (
       <StyledCloseContainer>
-        <CardCloseButton onClick={onClose} />
+        <CardCloseButton onClick={onClose} labelClose={labelClose} />
       </StyledCloseContainer>
     )}
   </Stack>

@@ -48,6 +48,7 @@ interface Props {
   dataA11ySection?: string;
   header?: React.ReactNode;
   expandable?: boolean;
+  labelClose?: React.ReactNode;
   expanded?: boolean;
   handleKeyDown: React.KeyboardEventHandler<HTMLDivElement>;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
@@ -64,6 +65,7 @@ const CardSectionHeader = ({
   isContent,
   expandable,
   expanded,
+  labelClose,
   onClick,
   slideID,
   labelID,
@@ -89,6 +91,7 @@ const CardSectionHeader = ({
         title={title}
         titleAs={titleAs}
         description={description}
+        labelClose={labelClose}
         icon={icon}
         expandable={expandable}
         header={header}

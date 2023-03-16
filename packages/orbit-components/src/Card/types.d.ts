@@ -14,6 +14,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly titleAs?: As;
   readonly margin?: React.CSSProperties["margin"] | Common.ObjectProperty;
   readonly description?: React.ReactNode;
+  readonly labelClose?: React.ReactNode;
   readonly icon?: React.ReactNode;
   readonly actions?: React.ReactNode;
   readonly onClose?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;

@@ -37,6 +37,7 @@ const Card = ({
   actions,
   description,
   children,
+  labelClose,
   dataTest,
   id,
   onClose,
@@ -91,6 +92,7 @@ const Card = ({
             dataA11ySection={dataA11ySection}
             actions={actions}
             title={title}
+            labelClose={labelClose}
             titleAs={titleAs}
             onClose={onClose}
             header={header}

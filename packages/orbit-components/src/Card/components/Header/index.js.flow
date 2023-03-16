@@ -10,6 +10,7 @@ export type Props = {|
   +onClose?: () => void | Promise<any>,
   +title?: React.Node,
   +titleAs?: As,
+  +labelClose?: React.Node,
   +isSection?: boolean,
   +dataA11ySection?: string,
   +expandable?: boolean,

@@ -10,7 +10,6 @@ import Portal from "../Portal";
 import Modal from "../Modal";
 import { CardSection } from "../Card";
 import useMediaQuery from "../hooks/useMediaQuery";
-import useTranslate from "../hooks/useTranslate";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
 import type { Props, WizardStepProps } from "./types";
@@ -45,6 +44,8 @@ const Wizard = ({
   lockScrolling = true,
   direction,
   id,
+  labelClose = "Close",
+  labelProgress,
   completedSteps,
   activeStep,
   children,
@@ -53,8 +54,6 @@ const Wizard = ({
   const { isLargeMobile } = useMediaQuery();
   const [open, setOpen] = React.useState(false);
   const toggle = React.useRef(null);
-  const translate = useTranslate();
-
   const isCompact = !isLargeMobile;
   const childrenArray = React.Children.toArray(children) as React.ReactElement<WizardStepProps>[];
   const stepStatuses = childrenArray.map((step, index) => {
@@ -100,12 +99,7 @@ const Wizard = ({
           }}
         >
           <Stack as="span" inline>
-            <b>
-              {translate("wizard_progress", {
-                number: activeStep + 1,
-                total: stepsCount,
-              })}
-            </b>
+            <b>{labelProgress}</b>
             <span
               css={css`
                 font-weight: normal;
@@ -146,7 +140,7 @@ const Wizard = ({
                             setOpen(false);
                           }}
                         >
-                          {translate("button_close")}
+                          {labelClose}
                         </Button>
                       </CardSection>
                     </li>

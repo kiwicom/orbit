@@ -40,7 +40,7 @@ const StyledSelectWrapper = styled.div`
   max-width: 800px;
 `;
 
-const SkipNavigation = ({ actions, feedbackUrl, feedbackText }: Props) => {
+const SkipNavigation = ({ actions, feedbackUrl, feedbackLabel }: Props) => {
   const [links, setLinks] = React.useState<HTMLAnchorElement[]>([]);
   const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
   const [innerPages, setPages] = React.useState<{ value: number; label?: string }[]>([]);
@@ -120,7 +120,7 @@ const SkipNavigation = ({ actions, feedbackUrl, feedbackText }: Props) => {
         </StyledSelectWrapper>
         {feedbackUrl && (
           <ButtonLink href={feedbackUrl} type="secondary" external size="small">
-            {feedbackText}
+            {feedbackLabel}
           </ButtonLink>
         )}
       </Stack>

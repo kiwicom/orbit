@@ -22,14 +22,17 @@ Then use `Wizard` as the container for multiple `WizardStep`s:
 
 ## Wizard props
 
-| Name             | Type                                                      | Default | Description                                                                                                                          |
-| :--------------- | :-------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------- |
-| `activeStep`     | `number`                                                  |         | Zero-based index marking the current Wizard step. Should be lower than or equal to the value of `completedSteps`.                    |
-| `children`       | `React.ChildrenArray<React.Element<WizardStepComponent>>` |         | `WizardStep` elements.                                                                                                               |
-| `completedSteps` | `number`                                                  |         | Number of completed steps, ranging from 0 to total number of steps.                                                                  |
-| `onChangeStep`   | `(stepIndex: number) => void \| Promise<any>`             |         | Function which handles when a Wizard step is clicked. It's called with the step index, so you can use it to change `activeStep`.     |
-| lockScrolling    | `boolean`                                                 | `true`  | Whether to prevent scrolling of the rest of the page while Modal is open. This is on by default to provide a better user experience. |
-| `direction`      | `row \| column`                                           | `row`   | Allows to use `column` direction on desktop                                                                                          |
+| Name             | Type                                                      | Default   | Description                                                                                                                          |
+| :--------------- | :-------------------------------------------------------- | :-------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| `activeStep`     | `number`                                                  |           | Zero-based index marking the current Wizard step. Should be lower than or equal to the value of `completedSteps`.                    |
+| `children`       | `React.ChildrenArray<React.Element<WizardStepComponent>>` |           | `WizardStep` elements.                                                                                                               |
+| `completedSteps` | `number`                                                  |           | Number of completed steps, ranging from 0 to total number of steps.                                                                  |
+| `onChangeStep`   | `(stepIndex: number) => void \| Promise<any>`             |           | Function which handles when a Wizard step is clicked. It's called with the step index, so you can use it to change `activeStep`.     |
+| lockScrolling    | `boolean`                                                 | `true`    | Whether to prevent scrolling of the rest of the page while Modal is open. This is on by default to provide a better user experience. |
+| `direction`      | `row \| column`                                           | `row`     | Allows to use `column` direction on desktop                                                                                          |
+| `dataTest`       | `string`                                                  |           | Optional prop for testing purposes.                                                                                                  |
+| `labelClose`     | `React.Node`                                              | `"Close"` | Property for passing translation string to close Button title                                                                        |
+| `labelProgress`  | `React.Node`                                              |           | Property for passing translation string to progress text                                                                             |
 
 ## WizardStep props
 

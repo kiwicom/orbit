@@ -29,6 +29,9 @@ describe("Pagination", () => {
       useMediaQueryMock.mockImplementation(() => queryObject);
       render(
         <Pagination
+          labelPrev="Previous"
+          labelNext="Next"
+          labelProgress="3 of 9"
           dataTest={dataTest}
           pageCount={pageCount}
           selectedPage={selectedPage}
@@ -46,6 +49,9 @@ describe("Pagination", () => {
       render(
         <Pagination
           dataTest="test"
+          labelPrev="Previous"
+          labelNext="Next"
+          labelProgress="9 of 9"
           hideLabels={false}
           pageCount={9}
           selectedPage={9}
@@ -59,6 +65,9 @@ describe("Pagination", () => {
       useMediaQueryMock.mockImplementation(() => queryObject);
       render(
         <Pagination
+          labelPrev="Previous"
+          labelNext="Next"
+          labelProgress="1 of 6"
           dataTest="test"
           hideLabels={false}
           pageCount={6}
@@ -73,13 +82,31 @@ describe("Pagination", () => {
   describe("normal", () => {
     it("should be able to hide labels", () => {
       useMediaQueryMock.mockImplementation(() => breakpoints.normal);
-      render(<Pagination hideLabels pageCount={6} onPageChange={() => {}} />);
+      render(
+        <Pagination
+          labelPrev="Previous"
+          labelNext="Next"
+          labelProgress="9 of 9"
+          hideLabels
+          pageCount={6}
+          onPageChange={() => {}}
+        />,
+      );
       expect(screen.getByRole("button", { name: "Previous" })).not.toHaveTextContent("Previous");
     });
 
     it("should be able to show labels", () => {
       useMediaQueryMock.mockImplementation(() => breakpoints.normal);
-      render(<Pagination hideLabels={false} pageCount={6} onPageChange={() => {}} />);
+      render(
+        <Pagination
+          labelPrev="Previous"
+          labelNext="Next"
+          labelProgress="1 of 6"
+          hideLabels={false}
+          pageCount={6}
+          onPageChange={() => {}}
+        />,
+      );
       expect(screen.getByRole("button", { name: "Previous" })).toHaveTextContent("Previous");
     });
   });
@@ -87,7 +114,16 @@ describe("Pagination", () => {
   describe("compact", () => {
     it("should always hide labels", () => {
       useMediaQueryMock.mockImplementation(() => breakpoints.compact);
-      render(<Pagination hideLabels={false} pageCount={6} onPageChange={() => {}} />);
+      render(
+        <Pagination
+          labelPrev="Previous"
+          labelNext="Next"
+          labelProgress="1 of 6"
+          hideLabels={false}
+          pageCount={6}
+          onPageChange={() => {}}
+        />,
+      );
       expect(screen.getByRole("button", { name: "Previous" })).not.toHaveTextContent("Previous");
     });
   });

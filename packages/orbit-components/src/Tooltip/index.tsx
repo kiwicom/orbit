@@ -16,7 +16,7 @@ const Tooltip = ({
   content,
   id,
   placement,
-  labelClose,
+  labelClose = "Close",
   lockScrolling,
   renderInPortal = true,
   stopPropagation = false,

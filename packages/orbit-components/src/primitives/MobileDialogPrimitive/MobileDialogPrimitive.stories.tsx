@@ -33,6 +33,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
+    loki: { skip: true },
     info:
       "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },

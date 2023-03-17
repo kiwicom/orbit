@@ -3,14 +3,13 @@ import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Tooltip from "..";
-import Airplane from "../../../icons/Airplane";
 
 describe("Tooltip", () => {
   it("it should match snapshot", async () => {
     const content = "Write some message to the user";
     const { container } = render(
       <Tooltip content={content}>
-        <Airplane />
+        <p>Some text</p>
       </Tooltip>,
     );
 

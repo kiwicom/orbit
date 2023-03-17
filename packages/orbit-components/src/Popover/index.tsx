@@ -26,7 +26,7 @@ const Popover = ({
   fixed,
   lockScrolling = true,
   noFlip,
-  labelClose,
+  labelClose = "Close",
   allowOverflow,
   noPadding,
   width,

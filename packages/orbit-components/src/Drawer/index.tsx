@@ -156,7 +156,7 @@ const Drawer = ({
   onClose,
   lockScrolling = true,
   fixedHeader,
-  labelHide,
+  labelHide = "Hide",
   shown = true,
   width = "320px",
   position = POSITIONS.RIGHT,

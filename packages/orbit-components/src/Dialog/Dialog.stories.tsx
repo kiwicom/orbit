@@ -24,6 +24,7 @@ export const Default = () => {
       description={description}
       dataTest={dataTest}
       primaryAction={<Button type="critical">Log out</Button>}
+      renderInPortal={false}
     />
   );
 };
@@ -51,6 +52,7 @@ export const Playground = () => {
       onClose={action("onClose")}
       primaryAction={<Button type="critical">Log out</Button>}
       secondaryAction={<ButtonLink type="secondary">Cancel</ButtonLink>}
+      renderInPortal={false}
     />
   );
 };

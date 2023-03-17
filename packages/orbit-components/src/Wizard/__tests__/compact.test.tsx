@@ -10,7 +10,7 @@ describe("Wizard", () => {
   describe("compact", () => {
     it("shows the current position", () => {
       render(
-        <Wizard id="wizard" completedSteps={3} activeStep={3}>
+        <Wizard id="wizard" completedSteps={3} activeStep={3} labelProgress="4 of 5">
           <WizardStep title="Search" />
           <WizardStep title="Passenger details" />
           <WizardStep title="Ticket fare" />

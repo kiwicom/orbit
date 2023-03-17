@@ -185,8 +185,8 @@ export default function Home({ location, path }: Props) {
                 justify-content: flex-end;
               `}
             >
-              <Button href="/foundation/" size="large" circled type="primarySubtle">
-                See all items
+              <Button size="large" circled type="primarySubtle">
+                <Link to="/foundation/">See all items</Link>
               </Button>
             </div>
           </div>

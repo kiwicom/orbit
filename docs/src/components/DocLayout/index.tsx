@@ -1,9 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-import { Collapse, Grid, Hide, defaultTheme, mediaQueries as mq } from "@kiwicom/orbit-components";
+import styled, { css } from "styled-components";
+import { Collapse, Grid, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
-import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 import * as components from "../../mdx-components";
 import Head from "../Head";
@@ -50,10 +49,6 @@ const StyledInnerWrapper = styled.div`
     padding: 0 2rem;
   `)};
 `;
-
-StyledInnerWrapper.defaultProps = {
-  theme: defaultTheme,
-};
 
 interface Props {
   children: React.ReactNode;

@@ -31,7 +31,7 @@ Table below contains all types of the props available in the Drawer component.
 | width         | `string`                | `"320px"` | The width of the Drawer.                                                                                                              |
 | lockScrolling | `boolean`               | `true`    | Whether to prevent scrolling of the rest of the page while Drawer is open. This is on by default to provide a better user experience. |
 | fixedHeader   | `boolean`               |           | If `true` the DrawerHeader will be fixed to the top.                                                                                  |
-| labelHide     | `React.Node`            |           | Label for the close button.                                                                                                           |
+| labelHide     | `React.Node`            | `Hide`    | Label for the close button.                                                                                                           |
 
 ### enum
 

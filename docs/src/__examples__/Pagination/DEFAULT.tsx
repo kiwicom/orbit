@@ -9,7 +9,7 @@ export default {
         pageCount={7}
         labelPrev="Prev"
         labelNext="Next"
-        labelProgress={`Page ${currentPage} of 7`}
+        labelProgress={`${currentPage} of ${pageCount}`}
         onPageChange={selectedPage => setCurrentPage(selectedPage)}
         selectedPage={currentPage}
       />

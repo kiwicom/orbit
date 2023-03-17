@@ -38,7 +38,7 @@ export const WithALotOfPages = () => {
     <Pagination
       labelPrev={labelPrev}
       labelNext={labelNext}
-      labelProgress={labelProgress}
+      labelProgress={`${selectedPage} ${labelProgress} ${pageCount}`}
       pageCount={pageCount}
       selectedPage={selectedPage}
       onPageChange={action("onPageChange")}

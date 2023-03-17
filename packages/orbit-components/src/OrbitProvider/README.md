@@ -1,6 +1,6 @@
 # OrbitProvider
 
-orbit-components has theming support via our own `<OrbitProvider>` which adds you possibilities to add your own theme.
+orbit-components has theming support via our own `<OrbitProvider>` which adds you the possibility to add your own theme.
 
 ```jsx
 import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";

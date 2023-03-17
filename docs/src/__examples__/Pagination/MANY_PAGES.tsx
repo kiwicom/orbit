@@ -8,7 +8,7 @@ export default {
       <Pagination
         labelPrev="Prev"
         labelNext="Next"
-        labelProgress={`Page ${currentPage} of 12`}
+        labelProgress={`${currentPage} of ${pageCount}`}
         pageCount={12}
         onPageChange={selectedPage => setCurrentPage(selectedPage)}
         selectedPage={currentPage}

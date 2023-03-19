@@ -170,9 +170,7 @@ const Drawer = ({
   const overlayRef = React.useRef(null);
   const closeButtonRef = React.useRef<HTMLButtonElement | null>(null);
   const scrollableRef = React.useRef<HTMLElement | null>(null);
-  const timeoutLength = React.useMemo(() => parseFloat(theme.orbit.durationNormal) * 1000, [
-    theme.orbit.durationNormal,
-  ]);
+  const timeoutLength = parseFloat(theme.orbit.durationNormal) * 1000;
 
   const [overlayShown, setOverlayShown, setOverlayShownWithTimeout] = useStateWithTimeout<boolean>(
     shown,

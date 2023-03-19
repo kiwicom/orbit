@@ -80,7 +80,7 @@ const Collapse = ({
   onClick,
   actions,
 }: Props) => {
-  const isControlledComponent = React.useMemo(() => expandedProp != null, [expandedProp]);
+  const isControlledComponent = expandedProp != null;
   const [expandedState, setExpandedState] = React.useState(
     isControlledComponent ? expandedProp : initialExpanded,
   );

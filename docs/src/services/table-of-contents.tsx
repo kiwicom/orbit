@@ -35,17 +35,19 @@ export function useTableOfContents() {
 
 export function useTableOfContentsRegister({ title, level }: { title: string; level: number }) {
   const [, setTableOfContents] = React.useContext(TableOfContentsContext);
-  const id = React.useMemo(() => uuidv4(), []);
+  const idRef = React.useRef<string>("");
+  const id = uuidv4();
+  idRef.current = id;
 
   React.useEffect(() => {
     setTableOfContents(prevToc => {
       if (level >= DEPTH) return prevToc;
-      if (prevToc.find(item => item.id === id)) {
+      if (prevToc.find(item => item.id === idRef.current)) {
         return prevToc.map(item =>
-          item.id === id ? { ...item, title, slug: slugify(title), level } : item,
+          item.id === idRef.current ? { ...item, title, slug: slugify(title), level } : item,
         );
       }
-      return [...prevToc, { id, title, slug: slugify(title), level }];
+      return [...prevToc, { id: idRef.current, title, slug: slugify(title), level }];
     });
-  }, [title, level, id, setTableOfContents]);
+  }, [title, level, idRef, setTableOfContents]);
 }

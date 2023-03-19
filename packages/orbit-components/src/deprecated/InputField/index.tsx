@@ -11,7 +11,7 @@ import InputTags from "./InputTags";
 import type { Translation } from "../../common/types";
 import getSpacingToken from "../../common/getSpacingToken";
 import getFieldDataState from "../../common/getFieldDataState";
-import randomID from "../../utils/randomID";
+import { useRandomIdSeed } from "../../hooks/useRandomId";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../../utils/mediaQuery";
@@ -378,10 +378,8 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     dataAttrs,
   } = props;
 
-  const forID = React.useMemo(() => id || (label ? randomID("inputFieldID") : undefined), [
-    id,
-    label,
-  ]);
+  const randomId = useRandomIdSeed();
+  const forID = id || (label ? randomId("inputFieldID") : undefined);
 
   return (
     // @ts-expect-error suppressed until removed

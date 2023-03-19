@@ -127,9 +127,7 @@ const Dialog = ({
   useLockScrolling(wrapperRef, lockScrolling);
   const ref = React.useRef<HTMLDivElement | null>(null);
   const theme = useTheme();
-  const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
-    theme.orbit.durationFast,
-  ]);
+  const transitionLength = parseFloat(theme.orbit.durationFast) * 1000;
   const [shown, setShown] = React.useState(false);
 
   useFocusTrap(ref);

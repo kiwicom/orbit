@@ -16,11 +16,11 @@ const App = () => (
 ```
 
 ```jsx
-import React, { useMemo } from "react";
+import React from "react";
 import randomID from "../utils/randomID";
 
-const firstID = useMemo(() => randomID("firstID"), []);
-const secondID = useMemo(() => randomID("secondID"), []);
+const firstID = randomID("firstID");
+const secondID = randomID("secondID");
 
 const App = () => (
   <>

@@ -1,6 +1,6 @@
 import React from "react";
-import { css } from "styled-components";
-import { Collapse, Grid, Hide } from "@kiwicom/orbit-components";
+import styled, { css } from "styled-components";
+import { Collapse, Grid, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
@@ -38,6 +38,17 @@ import StyledMobileTocWrapper from "./primitives/StyledMobileTocWrapper";
 import { getDocumentPageTitle } from "../../utils/document";
 import TopBar from "./TopBar";
 import { MAX_CONTENT_WIDTH } from "../../consts";
+
+const StyledInnerWrapper = styled.div`
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: ${MAX_CONTENT_WIDTH};
+  ${mq.tablet(css`
+    padding: 0 2rem;
+  `)};
+`;
 
 interface Props {
   children: React.ReactNode;
@@ -109,16 +120,7 @@ export default function DocLayout({
               />
             }
           />
-          <div
-            css={css`
-              display: flex;
-              margin: 0 auto;
-              width: 100%;
-              box-sizing: border-box;
-              padding: 0 2rem;
-              max-width: ${MAX_CONTENT_WIDTH};
-            `}
-          >
+          <StyledInnerWrapper>
             <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
               <StyledDocNavigationWidth>
                 <StyledDocNavigationWrapper>
@@ -210,7 +212,7 @@ export default function DocLayout({
                 </StyledMobileOutdent>
               </StyledMain>
             </StyledMiddle>
-          </div>
+          </StyledInnerWrapper>
           <Footer />
         </StyledWrapper>
       </BookmarkProvider>

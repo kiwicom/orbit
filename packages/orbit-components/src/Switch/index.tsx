@@ -19,7 +19,7 @@ const StyledSwitchBase = styled.div<{ checked?: boolean; disabled?: boolean }>`
     cursor: ${!disabled && "pointer"};
     width: 40px;
     height: 20px;
-    background-color: ${theme.orbit.paletteCloudNormal};
+    background-color: ${theme.orbit.backgroundSwitch};
     border-radius: 100px;
     position: relative;
     transition: background-color ${theme.orbit.durationFast};
@@ -27,7 +27,7 @@ const StyledSwitchBase = styled.div<{ checked?: boolean; disabled?: boolean }>`
 
     ${checked &&
     css`
-      background-color: ${theme.orbit.paletteBlueNormal};
+      background-color: ${theme.orbit.backgroundSwitchChecked};
     `};
   `};
 `;
@@ -58,7 +58,7 @@ const StyledSwitchButton = styled.div<{
     svg {
       height: 12px;
       width: 12px;
-      color: ${hasCustomIcon ? theme.orbit.paletteInkNormal : theme.orbit.paletteCloudNormal};
+      color: ${hasCustomIcon ? theme.orbit.paletteInkNormal : theme.orbit.backgroundSwitch};
     }
 
     ${checked &&
@@ -66,7 +66,7 @@ const StyledSwitchButton = styled.div<{
       left: calc(100% + 2px);
       transform: translateX(-100%);
       svg {
-        color: ${theme.orbit.paletteBlueNormal};
+        color: ${theme.orbit.backgroundSwitchChecked};
       }
     `};
   `};

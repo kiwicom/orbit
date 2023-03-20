@@ -880,6 +880,14 @@ describe(generateXMLDesignTokens.name, () => {
           <value>transparent</value>
         </token>
         <token>
+          <name>backgroundSwitch</name>
+          <value>#BAC7D5</value>
+        </token>
+        <token>
+          <name>backgroundSwitchChecked</name>
+          <value>#0172CB</value>
+        </token>
+        <token>
           <name>backgroundIllustration</name>
           <value>transparent</value>
         </token>

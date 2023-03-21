@@ -72,11 +72,15 @@ describe("ButtonPrimitive", () => {
 
   it("with href", () => {
     render(
-      <ButtonPrimitive href="#" external>
+      <ButtonPrimitive href="#" external download="custom-name">
         Lorem ipsum
       </ButtonPrimitive>,
     );
-    expect(screen.getByRole("link")).toHaveAttribute("href", "#");
+    const link = screen.getByRole("link");
+
+    expect(link).toHaveAttribute("href", "#");
+    expect(link).toHaveAttribute("download", "custom-name");
+    expect(link).toHaveAttribute("target", "_blank");
   });
 
   it("should behave as button", () => {

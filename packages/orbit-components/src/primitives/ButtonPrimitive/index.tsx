@@ -46,6 +46,7 @@ export const StyledButtonPrimitive = styled(
         tabIndex,
         onClick,
         role,
+        download,
         ...props
       },
       ref,
@@ -77,6 +78,7 @@ export const StyledButtonPrimitive = styled(
           tabIndex={tabIndex}
           onClick={!disabled ? onClick : null}
           role={role}
+          download={download}
         >
           {props.children}
         </Component>

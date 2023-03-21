@@ -1,5 +1,5 @@
 import * as React from "react";
-import { number, array, select } from "@storybook/addon-knobs";
+import { number, array, select, text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -12,6 +12,8 @@ export default {
 
 export const Default = () => {
   const direction = select("direction", ["row", "column"], "row");
+  const labelClose = text("labelClose", "Close");
+  const labelProgress = text("labelProgress", "of");
 
   return (
     <Wizard
@@ -19,6 +21,8 @@ export const Default = () => {
       direction={direction}
       completedSteps={3}
       activeStep={3}
+      labelClose={labelClose}
+      labelProgress={`3 ${labelProgress} 3`}
       onChangeStep={action("onChangeStep")}
     >
       <WizardStep title="Search" />
@@ -33,7 +37,13 @@ export const Default = () => {
 export const Rtl = () => {
   return (
     <RenderInRtl>
-      <Wizard id="wizard" completedSteps={3} activeStep={3} onChangeStep={action("onChangeStep")}>
+      <Wizard
+        id="wizard"
+        completedSteps={3}
+        activeStep={3}
+        onChangeStep={action("onChangeStep")}
+        labelProgress="3 of 3"
+      >
         <WizardStep title="Search" />
         <WizardStep title="Passenger details" />
         <WizardStep title="Ticket fare" />
@@ -49,6 +59,8 @@ Rtl.story = {
 };
 
 export const Playground = () => {
+  const labelClose = text("labelClose", "Close");
+  const labelProgress = text("labelProgress", "of");
   const steps = array("Steps", [
     "Search",
     "Passenger details",
@@ -71,6 +83,8 @@ export const Playground = () => {
   return (
     <Wizard
       id="wizard"
+      labelClose={labelClose}
+      labelProgress={`${activeStep} ${labelProgress} ${steps.length}`}
       completedSteps={completedSteps}
       activeStep={activeStep}
       onChangeStep={action("onChangeStep")}

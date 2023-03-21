@@ -1,12 +1,12 @@
 # Breadcrumbs
 
-To implement Button component into your project you'll need to add the import:
+To implement the Button component into your project you'll need to add the import:
 
 ```jsx
 import Breadcrumbs, { BreadcrumbsItem } from "@kiwicom/orbit-components/lib/Breadcrumbs";
 ```
 
-After adding import into your project you can use it simply like:
+After adding import in your project you can use it simply like:
 
 ```jsx
 <Breadcrumbs>
@@ -16,7 +16,7 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-Table below contains all types of the props available in Breadcrumbs component.
+The Table below contains all types of props available in the Breadcrumbs component.
 
 | Name         | Type                       | Default  | Description                                                                                                                                                       |
 | :----------- | :------------------------- | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -25,12 +25,13 @@ Table below contains all types of the props available in Breadcrumbs component.
 | **children** | `React.Node`               |          | The content of the Breadcrumbs, normally [`BreadcrumbsItem`](#breadcrumbsitem).                                                                                   |
 | onGoBack     | `event => void \| Promise` |          | Callback for handling back button action. If present the back button is visible.                                                                                  |
 | backHref     | `string`                   |          | The location for the back button to direct to. Turns the back button into a link when present (renders as an `a` element).                                        |
-| goBackTitle  | `React.Node`               | `"Back"` | Property for passing translation string when you want to use the `onGoBack` callback.                                                                             |
+| goBackTitle  | `React.Node`               | `"Back"` | Translation string for the go back link on mobile, defined when onGoBack is defined.                                                                              |
+|              |
 | spaceAfter   | `enum`                     |          | Additional `margin-bottom` after component. [See spacing docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 
 ## Functional specs
 
-- The last BreadcrumbsItem will have stronger `font-weight` automatically. Also, all meta information are automatically render too, so you don't have to specify it explicitly.
+- The last BreadcrumbsItem will have the stronger `font-weight` automatically. Also, all meta-information is automatically rendered too, so you don't have to specify it explicitly.
 
 ## Subcomponents
 
@@ -50,7 +51,7 @@ import BreadcrumbsItem from "@kiwicom/orbit-components/lib/Breadcrumbs/Breadcrum
 
 #### Props
 
-Table below contains all types of the props available in BreadcrumbsItem component.
+The Table below contains all types of props available in BreadcrumbsItem component.
 
 | Name         | Type                       | Default         | Description                                          |
 | :----------- | :------------------------- | :-------------- | :--------------------------------------------------- |

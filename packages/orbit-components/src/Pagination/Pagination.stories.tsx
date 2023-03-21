@@ -11,6 +11,7 @@ export default {
 };
 
 export const Default = () => {
+  const selectedPage = number("selectedPage", 1);
   const pageCount = number("pageCount", 6);
   const labelPrev = text("labelPrev", "prev");
   const labelNext = text("labelNext", "next");
@@ -20,7 +21,7 @@ export const Default = () => {
     <Pagination
       labelPrev={labelPrev}
       labelNext={labelNext}
-      labelProgress={labelProgress}
+      labelProgress={`${selectedPage} ${labelProgress} ${pageCount}`}
       pageCount={pageCount}
       onPageChange={action("onPageChange")}
     />
@@ -51,6 +52,7 @@ WithALotOfPages.story = {
 };
 
 export const SmallSize = () => {
+  const selectedPage = number("selectedPage", 1);
   const size = select("size", Object.values(SIZES), SIZES.SMALL);
   const pageCount = number("pageCount", 100);
   const labelPrev = text("labelPrev", "prev");
@@ -61,7 +63,7 @@ export const SmallSize = () => {
     <Pagination
       labelPrev={labelPrev}
       labelNext={labelNext}
-      labelProgress={labelProgress}
+      labelProgress={`${selectedPage} ${labelProgress} ${pageCount}`}
       pageCount={pageCount}
       size={size}
       onPageChange={action("onPageChange")}
@@ -87,7 +89,7 @@ export const Playground = () => {
     <Pagination
       labelPrev={labelPrev}
       labelNext={labelNext}
-      labelProgress={labelProgress}
+      labelProgress={`${selectedPage} ${labelProgress} ${pageCount}`}
       dataTest={dataTest}
       pageCount={pageCount}
       selectedPage={selectedPage}

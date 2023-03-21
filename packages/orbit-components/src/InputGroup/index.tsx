@@ -222,8 +222,8 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
     const labelRef = React.useRef(null);
     const iconRef = React.useRef(null);
 
-    const foundErrors = React.useMemo(() => findPropInChild("error", children), [children]);
-    const foundHelp = React.useMemo(() => findPropInChild("help", children), [children]);
+    const foundErrors = findPropInChild("error", children);
+    const foundHelp = findPropInChild("help", children);
 
     const errorReal = error || (foundErrors.length > 0 && foundErrors[0]);
     const helpReal = help || (foundHelp.length > 0 && foundHelp[0]);

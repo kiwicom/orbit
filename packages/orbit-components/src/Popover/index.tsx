@@ -37,13 +37,9 @@ const Popover = ({
 
   const theme = useTheme();
 
-  const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
-    theme.orbit.durationFast,
-  ]);
-
   const [shown, setShown, setShownWithTimeout, clearShownTimeout] = useStateWithTimeout<boolean>(
     false,
-    transitionLength,
+    parseFloat(theme.orbit.durationFast) * 1000,
   );
 
   const [
@@ -51,7 +47,7 @@ const Popover = ({
     setRender,
     setRenderWithTimeout,
     clearRenderTimeout,
-  ] = useStateWithTimeout<boolean>(false, transitionLength);
+  ] = useStateWithTimeout<boolean>(false, parseFloat(theme.orbit.durationFast) * 1000);
 
   const resolveCallback = React.useCallback(
     state => {

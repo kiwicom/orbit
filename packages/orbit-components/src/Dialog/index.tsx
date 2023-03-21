@@ -127,14 +127,12 @@ const Dialog = ({
   useLockScrolling(wrapperRef, lockScrolling);
   const ref = React.useRef<HTMLDivElement | null>(null);
   const theme = useTheme();
-  const transitionLength = React.useMemo(() => parseFloat(theme.orbit.durationFast) * 1000, [
-    theme.orbit.durationFast,
-  ]);
   const [shown, setShown] = React.useState(false);
 
   useFocusTrap(ref);
 
   React.useEffect(() => {
+    const transitionLength = parseFloat(theme.orbit.durationFast) * 1000;
     const timer = setTimeout(() => {
       setShown(true);
       if (ref.current) {
@@ -142,7 +140,7 @@ const Dialog = ({
       }
     }, transitionLength);
     return () => clearTimeout(timer);
-  }, [transitionLength]);
+  }, [theme.orbit.durationFast]);
 
   const handleClose = (ev: React.MouseEvent<HTMLDivElement>) => {
     if (ref.current && onClose) {

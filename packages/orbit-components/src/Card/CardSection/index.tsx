@@ -29,7 +29,7 @@ const CardSection = ({
   const { addSection, removeSection, index, roundedBorders, noBorderTop, isOpened } = useCard();
   const [opened, setOpened] = React.useState(isOpened || initialExpanded);
 
-  const isControlled = React.useMemo(() => expanded != null, [expanded]);
+  const isControlled = expanded != null;
 
   // effect that solves controlled component
   React.useEffect(() => {

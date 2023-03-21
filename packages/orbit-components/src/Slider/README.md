@@ -87,7 +87,7 @@ const MobileSlider = () => {
 ```jsx
 const SliderExample = () => {
   const [value, setValue] = React.useState(12);
-  const ariaValueText = React.useMemo(() => `from midnight to ${value}`, [value]);
+  const ariaValueText = `from midnight to ${value}`;
   return (
     <Slider
       defaultValue={12}

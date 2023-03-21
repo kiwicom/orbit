@@ -1,12 +1,12 @@
 # SkipNavigation
 
-To implement SkipNavigation component into your project you'll need to add the import:
+To implement the SkipNavigation component into your project you'll need to add the import:
 
 ```jsx
 import SkipNavigation from "@kiwicom/orbit-components/lib/SkipNavigation";
 ```
 
-After adding import into your project you can use it simply like:
+After adding import in your project you can use it simply like:
 
 ```jsx
 <SkipNavigation />
@@ -16,17 +16,17 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-Table below contains all types of the props available in the SkipNavigation component.
+The table below contains all types of props available in the SkipNavigation component.
 
-| Name          | Type                    | Description                                  |
-| :------------ | :---------------------- | :------------------------------------------- |
-| feedbackUrl   | `string`                | Url to a feedback form.                      |
-| feedbackLabel | `React.Node`            | Text for a feedback form.                    |
-| **actions**   | [`Actions[]`](#actions) | An array specifying common actions on a page |
+| Name          | Type                    | Default         | Description                                  |
+| :------------ | :---------------------- | :-------------- | -------------------------------------------- |
+| feedbackUrl   | `string`                | `Send feedback` | Url to a feedback form.                      |
+| feedbackLabel | `React.Node`            |                 | Text for a feedback form.                    |
+| **actions**   | [`Actions[]`](#actions) |                 | An array specifying common actions on a page |
 
 ## actions
 
-Table below contains all types of the props available for Actions array.
+The table below contains all types of props available for the Actions array.
 
 | Name    | Type                    | Description                         |
 | :------ | :---------------------- | :---------------------------------- |
@@ -40,5 +40,5 @@ Table below contains all types of the props available for Actions array.
 
 ## Rationale
 
-SkipNavigation is used to adress [WCAG2.0 Criterion 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html).
+SkipNavigation is used to address [WCAG2.0 Criterion 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html).
 The intent of this is to allow people who navigate sequentially through content more direct access to the primary content and common actions of the Web page.

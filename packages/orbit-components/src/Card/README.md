@@ -32,6 +32,7 @@ Table below contains all types of the props available in the Card component.
 | title       | `React.Node`                 |         | The title of the Card                                                                                          |
 | titleAs     | [`enum`](#enum)              | `"h2"`  | The element used for the root node of the title of Card.                                                       |
 | margin      | `string \| number \| Object` |         | Utility prop to set margin.                                                                                    |
+| labelClose  | `React.Node`                 | `Close` | Property for passing translation string to close Button.                                                       |
 
 ### CardSection
 

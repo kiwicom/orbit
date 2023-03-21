@@ -9,7 +9,7 @@ import type { Props } from "./types";
 
 const MobileDialog = ({
   children,
-  labelClose,
+  labelClose = "Close",
   enabled = true,
   onShow,
   renderInPortal = true,

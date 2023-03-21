@@ -77,6 +77,7 @@ const longContent = (
 const PopoverState = () => {
   const [render, setRender] = React.useState(false);
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
+  const labelClose = text("labelClose", "Close");
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -89,6 +90,7 @@ const PopoverState = () => {
   return (
     <Stack justify="start">
       <Popover
+        labelClose={labelClose}
         placement={placement}
         content={
           render ? (
@@ -133,8 +135,9 @@ export default {
 };
 
 export const Default = () => {
+  const labelClose = text("labelClose", "Close");
   return (
-    <Popover content={content}>
+    <Popover content={content} labelClose={labelClose}>
       <Button type="secondary" iconRight={<ChevronDown />}>
         Open popover
       </Button>
@@ -143,8 +146,9 @@ export const Default = () => {
 };
 
 export const withTooltip = () => {
+  const labelClose = text("labelClose", "Close");
   return (
-    <Popover content={<Tooltip content="Content">Tooltip</Tooltip>}>
+    <Popover content={<Tooltip content="Content">Tooltip</Tooltip>} labelClose={labelClose}>
       <Button type="secondary" iconRight={<ChevronDown />}>
         Open popover
       </Button>
@@ -160,10 +164,11 @@ Default.story = {
 
 export const Placement = () => {
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.TOP_START);
+  const labelClose = text("labelClose", "Close");
 
   return (
     <Stack justify="center">
-      <Popover content={content} placement={placement}>
+      <Popover content={content} placement={placement} labelClose={labelClose}>
         <Button type="secondary" iconRight={<ChevronDown />}>
           Open popover
         </Button>
@@ -180,10 +185,12 @@ Placement.story = {
 
 export const WithListChoice = () => {
   const width = text("width", "250px");
+  const labelClose = text("labelClose", "Close");
   return (
     <Popover
       noPadding
       width={width}
+      labelClose={labelClose}
       content={
         <div>
           <ListChoice
@@ -229,9 +236,16 @@ WithListChoice.story = {
 
 export const OpenedByProp = () => {
   const opened = boolean("opened", false);
+  const labelClose = text("labelClose", "Close");
 
   return (
-    <Popover opened={opened} content={content} onOpen={action("open")} onClose={action("close")}>
+    <Popover
+      opened={opened}
+      content={content}
+      onOpen={action("open")}
+      onClose={action("close")}
+      labelClose={labelClose}
+    >
       <Button type="secondary" iconRight={<ChevronDown />}>
         Open popover
       </Button>
@@ -250,14 +264,12 @@ OpenedByProp.story = {
 export const Overlapped = () => {
   const overlapped = boolean("overlapped", true);
   const opened = boolean("opened", false);
-  const labelClose = text("Label close", "Close");
 
   return (
     <Popover
       overlapped={overlapped}
       content={content}
       actions={actions}
-      labelClose={labelClose}
       onOpen={action("open")}
       onClose={action("close")}
     >
@@ -275,14 +287,10 @@ Overlapped.story = {
 };
 
 export const MultiplePopovers = () => {
-  const labelClose = text("Label close", "Close");
-
   return (
     <Stack flex>
       <Popover
         content={content}
-        actions={actions}
-        labelClose={labelClose}
         onOpen={action("open")}
         onClose={action("close")}
         placement="bottom-start"
@@ -312,12 +320,10 @@ MultiplePopovers.story = {
 };
 
 export const LongContent = () => {
-  const labelClose = text("Label close", "Close");
   return (
     <>
       <Popover
         content={longContent}
-        labelClose={labelClose}
         actions={
           <Stack direction="row" justify="between">
             <Button type="secondary">Cancel</Button>
@@ -350,6 +356,7 @@ LongContent.story = {
 };
 
 export const ScrollingPage = () => {
+  const labelClose = text("labelClose", "Close");
   return (
     <>
       <div
@@ -359,7 +366,13 @@ export const ScrollingPage = () => {
         `}
       >
         <Card>
-          <Popover fixed content={content} onOpen={action("open")} onClose={action("close")}>
+          <Popover
+            fixed
+            content={content}
+            onOpen={action("open")}
+            labelClose={labelClose}
+            onClose={action("close")}
+          >
             <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
               Open popover
             </Button>
@@ -381,11 +394,17 @@ ScrollingPage.story = {
 };
 
 export const ScrollingContent = () => {
+  const labelClose = text("labelClose", "Close");
   return (
     <ScrollWrapper>
       <ScrolledPage>
         <Card>
-          <Popover content={content} onOpen={action("open")} onClose={action("close")}>
+          <Popover
+            content={content}
+            onOpen={action("open")}
+            labelClose={labelClose}
+            onClose={action("close")}
+          >
             <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
               Open popover
             </Button>
@@ -411,7 +430,6 @@ export const Playground = () => {
   const width = text("width", "350px");
   const noPadding = boolean("noPadding", false);
   const overlapped = boolean("overlapped", false);
-  const labelClose = text("Label close", "Close");
   const opened = boolean("opened", true);
   const offset = object("offset", { top: 0, left: 0 });
   const noFlip = boolean("noFlip", false);
@@ -429,7 +447,6 @@ export const Playground = () => {
         allowOverflow={allowOverflow}
         opened={opened}
         noFlip={noFlip}
-        labelClose={labelClose}
         actions={
           <Stack direction="row" justify="between">
             <Button type="secondary" size="small">
@@ -458,12 +475,18 @@ Playground.story = {
 
 export const Rtl = () => {
   const dataTest = text("dataTest", "test");
+  const labelClose = text("labelClose", "Close");
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
 
   return (
     <RenderInRtl>
       <Stack flex>
-        <Popover dataTest={dataTest} content={content} placement={placement}>
+        <Popover
+          dataTest={dataTest}
+          content={content}
+          labelClose={labelClose}
+          placement={placement}
+        >
           <Button type="secondary" iconRight={<ChevronDown />}>
             Open popover
           </Button>
@@ -483,11 +506,12 @@ Rtl.story = {
 
 export const RtlReverse = () => {
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
+  const labelClose = text("labelClose", "Close");
 
   return (
     <RenderInRtl>
       <Stack justify="end">
-        <Popover content={content} placement={placement}>
+        <Popover content={content} placement={placement} labelClose={labelClose}>
           <Button type="secondary" iconRight={<ChevronDown />}>
             Open popover
           </Button>

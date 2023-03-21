@@ -39,3 +39,7 @@ OwnTheme.story = {
     info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
+
+export default {
+  title: "OrbitProvider",
+};

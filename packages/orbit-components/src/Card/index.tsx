@@ -37,7 +37,7 @@ const Card = ({
   actions,
   description,
   children,
-  labelClose,
+  labelClose = "Close",
   dataTest,
   id,
   onClose,

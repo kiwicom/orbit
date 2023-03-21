@@ -40,6 +40,7 @@ describe("#TextLink", () => {
     const dataTestRightIcon = "rightIcon";
     const tabIndex = "-1";
     const href = "https://kiwi.com";
+    const download = "custom-name";
     render(
       <TextLink
         href={href}
@@ -47,12 +48,14 @@ describe("#TextLink", () => {
         iconLeft={<ChevronForward dataTest={dataTestRightIcon} />}
         tabIndex={tabIndex}
         dataTest={dataTest}
+        download={download}
       >
         {title}
       </TextLink>,
     );
     expect(screen.getByText(title)).toBeInTheDocument();
     expect(screen.getByRole("link")).toHaveAttribute("href", href);
+    expect(screen.getByRole("link")).toHaveAttribute("download", download);
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByTestId(dataTestLeftIcon)).toBeInTheDocument();
     expect(screen.getByTestId(dataTestRightIcon)).toBeInTheDocument();

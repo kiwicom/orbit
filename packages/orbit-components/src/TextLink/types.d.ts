@@ -4,10 +4,11 @@
 import type * as React from "react";
 
 import type * as Common from "../common/types";
+import type { DownloadWithHrefConditionalProps } from "../primitives/ButtonPrimitive/types";
 
 export type Type = "primary" | "secondary" | "info" | "success" | "warning" | "critical" | "white";
 
-export interface Props extends Common.Globals {
+interface BaseProps extends Common.Globals {
   readonly ariaCurrent?: string;
   readonly asComponent?: Common.Component;
   readonly children: React.ReactNode;
@@ -25,3 +26,5 @@ export interface Props extends Common.Globals {
   readonly title?: string;
   readonly type?: Type;
 }
+
+export type Props = BaseProps & DownloadWithHrefConditionalProps;

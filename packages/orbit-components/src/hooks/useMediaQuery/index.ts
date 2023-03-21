@@ -23,10 +23,7 @@ const useMediaQuery = () => {
   const [result, setResult] = React.useState<QueryMap<null | boolean>>(contextValue);
 
   // if context value is anything other than initial, it's available
-  const hasContext = React.useMemo(
-    () => QUERIES.some(query => contextValue[query] !== initialValue[query]),
-    [contextValue],
-  );
+  const hasContext = QUERIES.some(query => contextValue[query] !== initialValue[query]);
 
   React.useEffect(() => {
     let mqListMap: QueryMap<MediaQueryList>;

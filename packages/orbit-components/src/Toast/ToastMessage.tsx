@@ -93,17 +93,9 @@ const ToastMessage = ({
   ariaLive,
 }: Props) => {
   const theme = useTheme();
-  const measurerRef = React.useMemo(
-    () => createRectRef(({ height }) => onUpdateHeight(id, height)),
-    // it's safer to include children as well because if they change then we need to remeasure
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [onUpdateHeight, id, children],
-  );
+  const measurerRef = createRectRef(({ height }) => onUpdateHeight(id, height));
   const innerRef = React.useRef(null);
-  const mergedRef = React.useMemo(
-    () => mergeRefs<HTMLDivElement>([measurerRef, innerRef]),
-    [measurerRef],
-  );
+  const mergedRef = mergeRefs<HTMLDivElement>([measurerRef, innerRef]);
   const [isPaused, setPaused] = React.useState(false);
   const { swipeOffset, swipeOpacity } = useSwipe(
     innerRef,

@@ -20,6 +20,8 @@ export type MappedOptions = {|
 export type Props = {|
   actions?: Actions[],
   feedbackUrl?: string,
+  firstSectionLabel?: React.Node,
+  firstActionLabel?: React.Node,
   feedbackLabel: React.Node,
 |};
 

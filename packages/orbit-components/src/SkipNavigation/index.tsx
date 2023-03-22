@@ -40,10 +40,16 @@ const StyledSelectWrapper = styled.div`
   max-width: 800px;
 `;
 
-const SkipNavigation = ({ actions, feedbackUrl, feedbackLabel = "Send feedback" }: Props) => {
+const SkipNavigation = ({
+  actions,
+  feedbackUrl,
+  feedbackLabel = "Send feedback",
+  firstSectionLabel = "Jump to section",
+  firstActionLabel = "Common actions",
+}: Props) => {
   const [links, setLinks] = React.useState<HTMLAnchorElement[]>([]);
   const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
-  const [innerPages, setPages] = React.useState<{ value: number; label?: string }[]>([]);
+  const [innerPages, setPages] = React.useState<{ value: number; label?: React.ReactNode }[]>([]);
   const [show, setShow] = React.useState(false);
 
   const handleLinksClick = (ev: React.SyntheticEvent<HTMLSelectElement>) => {
@@ -76,7 +82,7 @@ const SkipNavigation = ({ actions, feedbackUrl, feedbackLabel = "Send feedback" 
       const mappedSections = [
         {
           value: 0,
-          label: "Jump to section", // TODO: Dictionary
+          label: firstSectionLabel,
         },
         ...Object.keys(selectedLinks).map(key => ({
           value: Number(key) + 1,
@@ -94,7 +100,7 @@ const SkipNavigation = ({ actions, feedbackUrl, feedbackLabel = "Send feedback" 
         const mappedPages = [
           {
             value: 0,
-            label: "Common actions", // TODO: Dictionary
+            label: firstActionLabel,
           },
           ...actions.map((el, i) => {
             return { value: i + 1, label: el.name };

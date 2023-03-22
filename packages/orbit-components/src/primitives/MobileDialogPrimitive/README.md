@@ -31,7 +31,7 @@ Table below contains all types of the props available in the MobileDialogPrimiti
 | lockScrolling        | `boolean`          | `true`  | Whether to prevent scrolling of the rest of the page while ModalDialogPrimitive is open. This is on by default to provide a better user experience. |
 | tabIndex             | `string \| number` | `"0"`   | Specifies the tab order of an element                                                                                                               |
 | onShow               | `() => void`       |         | Fires when MobileDialog appears                                                                                                                     |
-| labelClose           | `React.Node`       |         | The text label for the close button.                                                                                                                |
+| labelClose           | `React.Node`       | `Close` | The text label for the close button.                                                                                                                |
 
 ## Functional specs
 

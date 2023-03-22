@@ -8,7 +8,7 @@ import type * as Common from "../../common/types";
 export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
   readonly enabled?: boolean;
-  readonly labelClose: React.ReactNode;
+  readonly labelClose?: React.ReactNode;
   readonly lockScrolling?: boolean;
   readonly tabIndex?: string | number;
   readonly onShow?: () => void | Promise<void>;

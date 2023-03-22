@@ -11,7 +11,7 @@ import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
 type Option = {|
   +key?: string,
   +value: string | number,
-  +label?: string,
+  +label?: React.Node,
   +disabled?: boolean,
 |};
 

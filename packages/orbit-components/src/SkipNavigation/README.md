@@ -6,7 +6,7 @@ To implement the SkipNavigation component into your project you'll need to add t
 import SkipNavigation from "@kiwicom/orbit-components/lib/SkipNavigation";
 ```
 
-After adding import to your project you can use it simply like:
+After adding an import to your project you can use it simply like:
 
 ```jsx
 <SkipNavigation />

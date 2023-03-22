@@ -6,7 +6,7 @@ To implement the SkipNavigation component into your project you'll need to add t
 import SkipNavigation from "@kiwicom/orbit-components/lib/SkipNavigation";
 ```
 
-After adding import in your project you can use it simply like:
+After adding import to your project you can use it simply like:
 
 ```jsx
 <SkipNavigation />
@@ -18,11 +18,14 @@ After adding import in your project you can use it simply like:
 
 The table below contains all types of props available in the SkipNavigation component.
 
-| Name          | Type                    | Default         | Description                                  |
-| :------------ | :---------------------- | :-------------- | -------------------------------------------- |
-| feedbackUrl   | `string`                | `Send feedback` | Url to a feedback form.                      |
-| feedbackLabel | `React.Node`            |                 | Text for a feedback form.                    |
-| **actions**   | [`Actions[]`](#actions) |                 | An array specifying common actions on a page |
+| Name              | Type                    | Default           | Description                                  |
+| :---------------- | :---------------------- | :---------------- | -------------------------------------------- |
+| feedbackUrl       | `string`                |                   | Url to a feedback form.                      |
+| feedbackLabel     | `React.Node`            | `Send feedback`   | Text for a feedback form.                    |
+| **actions**       | [`Actions[]`](#actions) |                   | An array specifying common actions on a page |
+| dataTest          | `string`                |                   | Optional prop for testing purposes           |
+| firstSectionLabel | `React.Node`            | `Jump to section` | Label for a first section link.              |
+| firstActionLabel  | `React.Node`            | `Jump to action`  | Label for a first action link.               |
 
 ## actions
 

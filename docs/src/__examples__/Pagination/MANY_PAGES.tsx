@@ -3,13 +3,15 @@ import { Pagination } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
-    const [currentPage, setCurrentPage] = React.useState(6);
+    const pageCount = 12;
+    const [currentPage, setCurrentPage] = React.useState(pageCount);
+
     return (
       <Pagination
         labelPrev="Prev"
         labelNext="Next"
         labelProgress={`${currentPage} of ${pageCount}`}
-        pageCount={12}
+        pageCount={pageCount}
         onPageChange={selectedPage => setCurrentPage(selectedPage)}
         selectedPage={currentPage}
       />

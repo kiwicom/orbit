@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.1.0...@kiwicom/orbit-components@6.2.0) (2023-03-23)
+
+
+### Bug Fixes
+
+* **CarrierLogo:** remove shadow from inlineStacked variation ([f06731f](https://github.com/kiwicom/orbit/commit/f06731fdf90c55b3722fbc426a93a26c674620c6))
+* **Itinerary:** type colors were not being correctly applied ([cb90cef](https://github.com/kiwicom/orbit/commit/cb90ceffc1f96c1df37b2de37cbecf5d14fc3dd7))
+* **SegmentedSwitch:** add role switch ([4b2e5e2](https://github.com/kiwicom/orbit/commit/4b2e5e20d72785cc747deeb2a10117f99af1791c))
+* **Stack:** fix gap issue for iOS Safar < 14.1 ([#3763](https://github.com/kiwicom/orbit/issues/3763)) ([8fd4fa4](https://github.com/kiwicom/orbit/commit/8fd4fa420edd05078fc0f0c28f143d9d2faeb2ab))
+* **Switch:** background color was not correct ([5a6841b](https://github.com/kiwicom/orbit/commit/5a6841b6bc33eff1b02b9e3adddd688139375b46))
+* **utils:** force outline to have only blue color ([7170bb7](https://github.com/kiwicom/orbit/commit/7170bb7895a33faf75c1425b0c41453f08b704c4))
+
+
+### Features
+
+* **Button:** add download prop ([a27447c](https://github.com/kiwicom/orbit/commit/a27447c659db4d6814d737f40f567197656b520c))
+* **ButtonLink:** add download and centered props ([6d90b90](https://github.com/kiwicom/orbit/commit/6d90b90813cd80cb33d7f45d6d225c6689b0b57a))
+* **ButtonPrimitive:** add download prop ([a1a6d64](https://github.com/kiwicom/orbit/commit/a1a6d64ca3a41a3c56b49906446e8fbc24f6174a))
+* **TextLink:** add download prop ([618d016](https://github.com/kiwicom/orbit/commit/618d0165dd90e1e031f2564b2ca2dc80e284dff0))
+
+
+
+
+
 # [6.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.0.3...@kiwicom/orbit-components@6.1.0) (2023-03-13)
 
 

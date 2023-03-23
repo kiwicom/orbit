@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.1.1...@kiwicom/orbit-design-tokens@3.2.0) (2023-03-23)
+
+
+### Features
+
+* **tokens:** add backgroundSwitch and backgroundSwitchChecked tokens ([798cbe2](https://github.com/kiwicom/orbit/commit/798cbe2676a8c853c58aba8b81a90b2c62914fa2))
+
+
+
+
+
 ## [3.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.1.0...@kiwicom/orbit-design-tokens@3.1.1) (2023-03-02)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.2.0...@kiwicom/orbit-components@6.2.1) (2023-03-23)
+
+
+### Bug Fixes
+
+* **Button:** fullWidth prop type was incorrectly set ([#3776](https://github.com/kiwicom/orbit/issues/3776)) ([d1b2376](https://github.com/kiwicom/orbit/commit/d1b2376c2195578403cd0e34e2d49126ee0562de))
+
+
+
+
+
 # [6.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.1.0...@kiwicom/orbit-components@6.2.0) (2023-03-23)
 
 

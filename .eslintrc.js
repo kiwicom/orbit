@@ -260,6 +260,8 @@ module.exports = {
         ReactExample: false,
         Usage: false,
         UsageUse: false,
+        Container: false,
+        Grid: false,
         UsageDontUse: false,
       },
     },

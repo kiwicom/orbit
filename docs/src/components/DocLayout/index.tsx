@@ -24,6 +24,7 @@ import TableOfContents from "../TableOfContents";
 import { useTableOfContents } from "../../services/table-of-contents";
 import { TabObject } from "../Tabs";
 import ReactExample from "../ReactExample";
+import Container from "../Container";
 import FigmaIframe from "../FigmaIframe";
 import Footer from "../Footer";
 import StyledWrapper from "./primitives/StyledWrapper";
@@ -202,6 +203,8 @@ export default function DocLayout({
                           ImageContainer,
                           InlineToken,
                           ReactExample,
+                          Container,
+                          Grid,
                           FigmaIframe,
                         }}
                       >

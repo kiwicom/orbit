@@ -8,7 +8,7 @@ export type Size = "small" | "normal" | "large";
 
 export type FullWidthConditionalProps =
   | {
-      readonly fullWidth: true;
+      readonly fullWidth: boolean;
       readonly centered?: boolean;
     }
   | {

@@ -6,6 +6,23 @@ type functionReturningString = () => string;
 
 export type Size = "small" | "normal" | "large";
 
+export type FullWidthConditionalProps =
+  | {
+      readonly fullWidth: true;
+      readonly centered?: boolean;
+    }
+  | {
+      readonly fullWidth?: false;
+      readonly centered?: never;
+    };
+
+export type DownloadWithHrefConditionalProps =
+  | {
+      readonly href: string;
+      readonly download?: boolean | string;
+    }
+  | { readonly href?: undefined; readonly download?: never };
+
 export interface ButtonCommonProps extends Common.Globals, Common.SpaceAfter {
   readonly asComponent?: Common.Component;
   readonly ariaControls?: string;
@@ -17,6 +34,7 @@ export interface ButtonCommonProps extends Common.Globals, Common.SpaceAfter {
   readonly circled?: boolean;
   readonly underlined?: boolean;
   readonly disabled?: boolean;
+  readonly download?: boolean | string;
   readonly external?: boolean;
   readonly fullWidth?: boolean;
   readonly href?: string;

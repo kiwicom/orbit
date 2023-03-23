@@ -168,6 +168,7 @@ const TextLink = ({
   iconRight,
   onClick,
   dataTest,
+  download,
   id,
   tabIndex,
   asComponent = DefaultComponent,
@@ -198,6 +199,7 @@ const TextLink = ({
       role={!href ? "button" : undefined}
       asComponent={asComponent}
       title={title}
+      download={download}
       $noUnderline={noUnderline}
       $standAlone={standAlone}
     >

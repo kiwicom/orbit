@@ -38,17 +38,6 @@ const getToken = (name: string) => ({
   return tokens[name][size];
 };
 
-const getFakeGroupMarginTop = ({
-  label,
-  theme,
-}: {
-  label?: string;
-  theme: typeof defaultTheme;
-}) => {
-  if (!label) return false;
-  return `calc(${theme.orbit.lineHeightTextNormal} + ${theme.orbit.spaceXXSmall})`;
-};
-
 const FakeGroup = styled.span<{
   error?: Props["error"];
   label?: Props["label"];
@@ -59,9 +48,6 @@ const FakeGroup = styled.span<{
   ${({ theme, error, disabled, active }) => css`
     width: 100%;
     display: block;
-    position: absolute;
-    top: 0px;
-    left: 0;
     z-index: 1;
     box-sizing: border-box;
     height: ${getToken(TOKENS.height)};
@@ -74,7 +60,6 @@ const FakeGroup = styled.span<{
       : theme.orbit.backgroundInput};
     font-size: ${theme.orbit.fontSizeInputNormal};
     transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
-    margin-top: ${getFakeGroupMarginTop};
 
     border-radius: 6px;
     ${mq.tablet(css`
@@ -307,28 +292,29 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
           </FormLabel>
         )}
 
-        <StyledChildren onBlur={handleBlurGroup}>
-          {React.Children.toArray(children).map((child, key) => {
-            const childFlex =
-              Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
-            const item = child as React.ReactElement<Props>;
-            return (
-              <StyledChild flex={childFlex || "0 1 auto"} key={randomId(String(key))}>
-                {React.cloneElement(item, {
-                  disabled: item.props.disabled || disabled,
-                  size,
-                  label: undefined,
-                  onChange: handleChange(item.props.onChange),
-                  onBlur: handleBlur(item.props.onBlur),
-                  onFocus: handleFocus(item.props.onFocus),
-                  // @ts-expect-error custom prop
-                  insideInputGroup: true,
-                })}
-              </StyledChild>
-            );
-          })}
-        </StyledChildren>
-        <FakeGroup label={label} error={errorReal} active={active} size={size} />
+        <FakeGroup label={label} error={errorReal} active={active} size={size}>
+          <StyledChildren onBlur={handleBlurGroup}>
+            {React.Children.toArray(children).map((child, key) => {
+              const childFlex =
+                Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
+              const item = child as React.ReactElement<Props>;
+              return (
+                <StyledChild flex={childFlex || "0 1 auto"} key={randomId(String(key))}>
+                  {React.cloneElement(item, {
+                    disabled: item.props.disabled || disabled,
+                    size,
+                    label: undefined,
+                    onChange: handleChange(item.props.onChange),
+                    onBlur: handleBlur(item.props.onBlur),
+                    onFocus: handleFocus(item.props.onFocus),
+                    // @ts-expect-error custom prop
+                    insideInputGroup: true,
+                  })}
+                </StyledChild>
+              );
+            })}
+          </StyledChildren>
+        </FakeGroup>
         <ErrorFormTooltip
           help={helpReal}
           error={errorReal}

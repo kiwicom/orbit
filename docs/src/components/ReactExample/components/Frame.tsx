@@ -15,9 +15,11 @@ interface Props {
 
 const DEFAULT_HEIGHT = 100;
 
-const getBackground = (type: BgType) => ({ theme }) => {
-  if (type === "grid") {
-    return `
+const getBackground =
+  (type: BgType) =>
+  ({ theme }) => {
+    if (type === "grid") {
+      return `
       background:
       linear-gradient(-90deg, rgba(0,0,0,.08) 1px, transparent 1px),
       linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
@@ -39,12 +41,12 @@ const getBackground = (type: BgType) => ({ theme }) => {
         80px 80px,
         80px 80px;
     `;
-  }
+    }
 
-  if (type === "dark") return `background: ${theme.orbit.paletteInkDark}`;
+    if (type === "dark") return `background: ${theme.orbit.paletteInkDark}`;
 
-  return `background: ${theme.orbit.paletteWhite}`;
-};
+    return `background: ${theme.orbit.paletteWhite}`;
+  };
 
 export const StyledFrame = styled.iframe<Partial<Props>>`
   ${({ background, isFullScreen }) => css`

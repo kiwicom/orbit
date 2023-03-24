@@ -14,28 +14,26 @@ const getColorBackground = ({ type, theme }) => {
   return theme.orbit.backgroundColorTabBundleTop;
 };
 
-const getBackgroundType = (state?: "hover" | "active") => ({
-  theme,
-  $type,
-}: {
-  theme: typeof defaultTheme;
-  $type: Props["type"];
-}) => {
-  if (state === "hover") {
-    if ($type === TYPE_OPTIONS.MEDIUM) return convertHexToRgba(theme.orbit.paletteBundleMedium, 8);
-    if ($type === TYPE_OPTIONS.BASIC) return convertHexToRgba(theme.orbit.paletteBundleBasic, 8);
-    return theme.orbit.paletteWhiteHover;
-  }
+const getBackgroundType =
+  (state?: "hover" | "active") =>
+  ({ theme, $type }: { theme: typeof defaultTheme; $type: Props["type"] }) => {
+    if (state === "hover") {
+      if ($type === TYPE_OPTIONS.MEDIUM)
+        return convertHexToRgba(theme.orbit.paletteBundleMedium, 8);
+      if ($type === TYPE_OPTIONS.BASIC) return convertHexToRgba(theme.orbit.paletteBundleBasic, 8);
+      return theme.orbit.paletteWhiteHover;
+    }
 
-  if (state === "active") {
-    if ($type === TYPE_OPTIONS.MEDIUM) return convertHexToRgba(theme.orbit.paletteBundleMedium, 12);
-    if ($type === TYPE_OPTIONS.BASIC) return convertHexToRgba(theme.orbit.paletteBundleBasic, 12);
+    if (state === "active") {
+      if ($type === TYPE_OPTIONS.MEDIUM)
+        return convertHexToRgba(theme.orbit.paletteBundleMedium, 12);
+      if ($type === TYPE_OPTIONS.BASIC) return convertHexToRgba(theme.orbit.paletteBundleBasic, 12);
 
-    return theme.orbit.paletteWhiteActive;
-  }
+      return theme.orbit.paletteWhiteActive;
+    }
 
-  return "none";
-};
+    return "none";
+  };
 
 const StyledTab = styled.button<{
   $type: Props["type"];

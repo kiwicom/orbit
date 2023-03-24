@@ -21,8 +21,7 @@ export const Default = () => {
 
 Default.story = {
   parameters: {
-    info:
-      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -46,8 +45,7 @@ export const InStack = () => {
 
 InStack.story = {
   parameters: {
-    info:
-      "This is the configuration of this component in combination with Stack. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the configuration of this component in combination with Stack. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -66,8 +64,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "This is the configuration of this component in combination with Stack. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the configuration of this component in combination with Stack. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 

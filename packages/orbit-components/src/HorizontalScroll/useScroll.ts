@@ -8,9 +8,7 @@ const decay = (v: number) => -0.1 * ((1 / timing) ^ 4) + v;
 
 const TRIGGER_OFFSET = 50;
 
-type UseScroll = (
-  ref: React.RefObject<HTMLElement>,
-) => {
+type UseScroll = (ref: React.RefObject<HTMLElement>) => {
   isDragging: boolean;
   clickStartX: number | undefined;
   scrollStartX: number | undefined;

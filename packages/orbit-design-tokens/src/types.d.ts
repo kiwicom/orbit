@@ -541,16 +541,16 @@ export type ThemePaletteColors = {
 };
 
 type CustomPalette = {
-  product?: Partial<typeof palette["product"]>;
-  white?: Partial<typeof palette["white"]>;
-  cloud?: Partial<typeof palette["cloud"]>;
-  ink?: Partial<typeof palette["ink"]>;
-  orange?: Partial<typeof palette["orange"]>;
-  red?: Partial<typeof palette["red"]>;
-  green?: Partial<typeof palette["green"]>;
-  blue?: Partial<typeof palette["blue"]>;
-  social?: Partial<typeof palette["social"]>;
-  bundle?: Partial<typeof palette["bundle"]>;
+  product?: Partial<(typeof palette)["product"]>;
+  white?: Partial<(typeof palette)["white"]>;
+  cloud?: Partial<(typeof palette)["cloud"]>;
+  ink?: Partial<(typeof palette)["ink"]>;
+  orange?: Partial<(typeof palette)["orange"]>;
+  red?: Partial<(typeof palette)["red"]>;
+  green?: Partial<(typeof palette)["green"]>;
+  blue?: Partial<(typeof palette)["blue"]>;
+  social?: Partial<(typeof palette)["social"]>;
+  bundle?: Partial<(typeof palette)["bundle"]>;
 };
 
 type CustomBase = Partial<Base>;

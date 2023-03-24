@@ -32,13 +32,8 @@ import theme from "@kiwicom/orbit-components/lib/defaultTheme";
 ```jsx
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
-const {
-  borderWidthCard,
-  borderStyleCard,
-  borderColorCard,
-  borderRadiusNormal,
-  spaceMedium,
-} = defaultTheme.orbit;
+const { borderWidthCard, borderStyleCard, borderColorCard, borderRadiusNormal, spaceMedium } =
+  defaultTheme.orbit;
 ```
 
 Proper usage of defaultTheme is:

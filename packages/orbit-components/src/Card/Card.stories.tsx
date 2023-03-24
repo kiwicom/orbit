@@ -127,8 +127,7 @@ CardWithExpandableSections.story = {
   name: "Card with expandable sections",
 
   parameters: {
-    info:
-      "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -164,8 +163,7 @@ CardWithControlledAndUncontrolled.story = {
   name: "Card with controlled and uncontrolled",
 
   parameters: {
-    info:
-      "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -187,8 +185,7 @@ CardWithControlledWithKnobe.story = {
   name: "Card with controlled with knobe",
 
   parameters: {
-    info:
-      "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -240,8 +237,7 @@ CardWithDefaultExpanded.story = {
   name: "Card with default expanded",
 
   parameters: {
-    info:
-      "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -279,8 +275,7 @@ CardWithMixedSections.story = {
   name: "Card with mixed sections",
 
   parameters: {
-    info:
-      "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -295,8 +290,7 @@ export const LoadingCard = () => {
 
 LoadingCard.story = {
   parameters: {
-    info:
-      "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -333,8 +327,7 @@ Rtl.story = {
   name: "RTL",
 
   parameters: {
-    info:
-      "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 

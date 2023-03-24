@@ -26,8 +26,7 @@ export const Default = () => <Select options={objectOptions} onChange={action("o
 
 Default.story = {
   parameters: {
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -44,8 +43,7 @@ WithPrefix.story = {
   name: "With prefix",
 
   parameters: {
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -65,8 +63,7 @@ WithCountryFlagPrefix.story = {
   name: "With CountryFlag prefix",
 
   parameters: {
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -86,8 +83,7 @@ WithPlaceholder.story = {
   name: "With placeholder",
 
   parameters: {
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -104,8 +100,7 @@ WithSmallSize.story = {
   name: "With small size",
 
   parameters: {
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -122,8 +117,7 @@ WithHelpMessage.story = {
   name: "With help message",
 
   parameters: {
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -140,8 +134,7 @@ WithErrorMessage.story = {
   name: "With error message",
 
   parameters: {
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -189,8 +182,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 

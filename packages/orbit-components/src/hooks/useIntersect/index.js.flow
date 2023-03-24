@@ -1,7 +1,5 @@
 // @flow
-export type useIntersect = (
-  intersect?: IntersectionObserverOptions,
-) => {|
+export type useIntersect = (intersect?: IntersectionObserverOptions) => {|
   ref: (Element | null) => void,
   entry: IntersectionObserverEntry | null,
   observer: IntersectionObserver | null,

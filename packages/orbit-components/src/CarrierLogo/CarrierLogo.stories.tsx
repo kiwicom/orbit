@@ -28,8 +28,7 @@ OneCarrier.story = {
   name: "One carrier",
 
   parameters: {
-    info:
-      "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -48,8 +47,7 @@ TwoCarriers.story = {
   name: "Two carriers",
 
   parameters: {
-    info:
-      "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -70,8 +68,7 @@ FourCarriers.story = {
   name: "Four carriers",
 
   parameters: {
-    info:
-      "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -112,8 +109,7 @@ NonExistingCarriers.story = {
   name: "Non-existing carriers",
 
   parameters: {
-    info:
-      "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Carrier logo displays one or more logos of transport carriers. It is usually together with the travel itinerary. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -134,8 +130,7 @@ NonExistingCarrier.story = {
   name: "Non-existing carrier",
 
   parameters: {
-    info:
-      "CarrierLogo can display proper placeholder for non-existing carriers by its type. If not you specify the type of carrier, airline placeholder will be displayed.",
+    info: "CarrierLogo can display proper placeholder for non-existing carriers by its type. If not you specify the type of carrier, airline placeholder will be displayed.",
   },
 };
 

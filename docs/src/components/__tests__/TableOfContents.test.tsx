@@ -7,7 +7,12 @@ import TableOfContents from "../TableOfContents";
 import { TableOfContentsProvider } from "../../services/table-of-contents";
 import { h2 as H2, h3 as H3, h4 as H4, h5 as H5 } from "../../mdx-components";
 
-jest.mock("react-scrollspy", () => ({ children }) => children);
+jest.mock(
+  "react-scrollspy",
+  () =>
+    ({ children }) =>
+      children,
+);
 
 let matchMedia;
 

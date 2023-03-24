@@ -32,8 +32,7 @@ export const Default = () => {
 Default.story = {
   name: "Default",
   parameters: {
-    info:
-      "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -49,8 +48,7 @@ export const CustomColor = () => {
 CustomColor.story = {
   name: "Custom Color",
   parameters: {
-    info:
-      "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -67,8 +65,7 @@ export const ReversedOnRtl = () => {
 ReversedOnRtl.story = {
   name: "Reversed on RTL",
   parameters: {
-    info:
-      "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 

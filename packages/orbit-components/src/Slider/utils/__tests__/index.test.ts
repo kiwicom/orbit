@@ -2,30 +2,7 @@ import calculateCountOf from "../calculateCountOf";
 
 describe("calculateCountOf", () => {
   const data = [
-    11,
-    25,
-    37,
-    5,
-    21,
-    27,
-    24,
-    33,
-    16,
-    21,
-    22,
-    2,
-    11,
-    25,
-    37,
-    5,
-    21,
-    27,
-    24,
-    33,
-    16,
-    21,
-    22,
-    3,
+    11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 3,
   ];
   const min = 1;
   it("should count proper values", () => {

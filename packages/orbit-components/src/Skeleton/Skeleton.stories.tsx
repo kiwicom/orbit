@@ -25,8 +25,7 @@ export const Default = () => {
 
 Default.story = {
   parameters: {
-    info:
-      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -96,7 +95,6 @@ export const Presets = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };

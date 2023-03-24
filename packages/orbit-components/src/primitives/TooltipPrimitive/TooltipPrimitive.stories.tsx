@@ -60,8 +60,7 @@ TooltipPrimitiveOnInlineElement.story = {
   name: "TooltipPrimitive on inline element",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -81,8 +80,7 @@ TooltipPrimitiveOnBlockElement.story = {
   name: "TooltipPrimitive on block element",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -99,8 +97,7 @@ TooltipPrimitiveOnDisabledElement.story = {
   name: "TooltipPrimitive on disabled element",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -136,8 +133,7 @@ Placement.story = {
   name: "Placement",
 
   parameters: {
-    info:
-      "If you want to, you can specify one preferred position. If it won't be possible to use it, the defaults will be used.",
+    info: "If you want to, you can specify one preferred position. If it won't be possible to use it, the defaults will be used.",
   },
 };
 
@@ -180,8 +176,7 @@ WithImageInside.story = {
   name: "With image inside",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -214,8 +209,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -244,7 +238,6 @@ Rtl.story = {
   name: "RTL ",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };

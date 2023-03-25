@@ -204,7 +204,6 @@ export default function DocLayout({
                           InlineToken,
                           ReactExample,
                           Container,
-                          Grid,
                           FigmaIframe,
                         }}
                       >

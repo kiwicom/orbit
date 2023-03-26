@@ -4,6 +4,8 @@ redirect_from:
   - /components/alert/
 ---
 
+import { Grid } from "@kiwicom/orbit-components";
+
 import MoreThanColorSnippet from "snippets/more-than-color.mdx";
 
 <ReactExample exampleId="Alert-default" />
@@ -123,8 +125,6 @@ but keep it focused and related to the topic on the screen.
 Consider tailoring your icons to your message.
 Baggage, clocks, or other symbols strengthen the informative nature of your message.
 
-![INFORMATION_ALERT](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1181%6432)
-
 </Container>
 
 <Container>
@@ -139,13 +139,7 @@ Usually used without an action button.
 such as when users need to confirm something by e-mail.
 For such actions, use an informational alert instead.
 
-![SUCCESS_ALERT](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1181%6322)
-
 </Container>
-
-</Grid>
-
-<Grid columns="1fr" desktop={{ "columns": "1fr 1fr" }} gap="16px">
 
 <Container>
 
@@ -154,8 +148,6 @@ For such actions, use an informational alert instead.
 Use warning alerts when you need to inform users about a **potentially unfavorable situation**
 that requires eventual action from them.
 If the issue requires immediate attention, use a critical alert.
-
-![WARNING_ALERT](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1181%6435)
 
 </Container>
 
@@ -171,10 +163,7 @@ A critical alert should provide some form of solution for their problem.
 If something is **important for users to solve as soon as possible**,
 it's worth considering automatically opening a [modal](/components/overlay/modal/).
 
-![CRITICAL_ALERT](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1181%6377)
-
 </Container>
-
 </Grid>
 
 ### Mobile vs. desktop

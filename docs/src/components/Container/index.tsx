@@ -20,7 +20,7 @@ const StyledContainer = styled.div`
   `};
 `;
 
-const Container = ({ children }) => {
+const Container = ({ children }: { children: React.ReactNode }) => {
   return <StyledContainer>{children}</StyledContainer>;
 };
 

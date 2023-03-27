@@ -50,7 +50,7 @@
     "@babel/runtime": "7.18.9",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@kiwicom/browserslist-config": "^3.0.0",
+    "@kiwicom/browserslist-config": "^4.0.0",
     "@octokit/rest": "^19.0.5",
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "@lerna/project": "^5.2.0",

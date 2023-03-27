@@ -4420,6 +4420,11 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-3.0.0.tgz#5710f4c94c4165ad9b9e7c0f43feee3dfb0d989b"
   integrity sha512-g0TZoOEEiFmtQncFDiabku44p/AFRP3ZeRjhl+z15Cx+1OcNFqI0O84Alj7YKfcjF7SFwWuDkZJ7ERt+rlE1Hg==
 
+"@kiwicom/browserslist-config@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-4.0.0.tgz#9eef54b36ee8bfc4e28496d77e28ad9e91e943e1"
+  integrity sha512-CkBXOf5noNBSh8nOQl6/qMBEz1GwYQpIxDTyImqJDwSiXgY/lWHgW9TQT8n9akhFMd4uB9tAFsWFPk8EhzogfA==
+
 "@lerna/add@5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-5.2.0.tgz#b9d3c728e059eea67f5757ee4b8e9550295f0be6"

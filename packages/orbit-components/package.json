@@ -101,7 +101,7 @@
     "@babel/types": "^7.18.9",
     "@cypress/vite-dev-server": "^4.0.0",
     "@emotion/core": "^11.0.0",
-    "@kiwicom/browserslist-config": "^3.0.0",
+    "@kiwicom/browserslist-config": "^4.0.0",
     "@nanostores/react": "^0.2.0",
     "@nanostores/router": "^0.3.1",
     "@octokit/rest": "^18.0.14",

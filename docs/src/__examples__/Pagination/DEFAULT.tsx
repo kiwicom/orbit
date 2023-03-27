@@ -32,11 +32,6 @@ export default {
           defaultValue: "Next",
         },
         {
-          name: "labelProgress",
-          type: "text",
-          defaultValue: "Page 2 of 7",
-        },
-        {
           name: "pageCount",
           type: "number",
           defaultValue: 7,

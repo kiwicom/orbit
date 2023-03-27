@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { warning } from "@adeira/js";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import type { Theme } from "../defaultTheme";
@@ -76,7 +75,7 @@ function getCountryProps(code?: string, name?: string) {
   const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "UNDEFINED";
   const countryCodeExists = codeNormalized in CODES;
 
-  warning(countryCodeExists, "Country code not supported: %s", code);
+  console.warn(countryCodeExists, "Country code not supported: %s", code);
   const countryCode = countryCodeExists ? CODES[codeNormalized] : CODES.UNDEFINED;
   const countryName = countryCode === CODES.UNDEFINED && !name ? "Undefined" : name;
   return { code: countryCode, name: countryName };

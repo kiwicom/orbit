@@ -79,7 +79,6 @@
     "styled-components": "^4 || ^5"
   },
   "dependencies": {
-    "@adeira/js": "^2.1.1",
     "@kiwicom/orbit-design-tokens": "^3.2.0",
     "@popperjs/core": "^2.9.2",
     "react-hot-toast": "^2.2.0",
@@ -87,7 +86,6 @@
     "react-uid": "^2.3.2"
   },
   "devDependencies": {
-    "@adeira/babel-preset-adeira": "^4.0.0",
     "@babel/cli": "^7.18.9",
     "@babel/core": "^7.18.9",
     "@babel/generator": "^7.18.9",

@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled, { css, withTheme } from "styled-components";
-import { warning } from "@adeira/js";
 
 import transition from "../utils/transition";
 import Text from "../Text";
@@ -16,7 +15,7 @@ import type { ThemeProps } from "../defaultTheme";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
 import boundingClientRect from "../utils/boundingClientRect";
-import type { State, Callback as SliderCallback, Props, Value, Label, Data } from "./types";
+import type { State, Callback as SliderCallback, Props, Value } from "./types";
 
 const StyledSlider = styled.div`
   position: relative;
@@ -518,7 +517,7 @@ export class PureSlider extends React.PureComponent<SliderProps, State> {
     } = this.props;
     if (histogramData) {
       const properHistogramLength = (maxValue - minValue + step) / step;
-      warning(
+      console.warn(
         histogramData.length === properHistogramLength,
         `Warning: Length of histogramData array is ${histogramData.length}, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
       );

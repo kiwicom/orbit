@@ -42,12 +42,13 @@ Table below contains all types of the props available in Tabs component.
 
 Table below contains all types of the props available in TabList component.
 
-| Name     | Type            | Default | Description                                                                          |
-| :------- | :-------------- | :------ | :----------------------------------------------------------------------------------- |
-| dataTest | `string`        |         | Optional prop for testing purposes.                                                  |
-| children | `React.node`    |         | Required prop that should contain the `Tab` components.                              |
-| compact  | `boolean`       | `false` | Optional prop that responsible for `Tab`size, if provided, the Tabs will be smaller. |
-| spacing  | [`enum`](#enum) | `none`  | Optional prop to set gap between `Tab` elements                                      |
+| Name      | Type            | Default | Description                                                                          |
+| :-------- | :-------------- | :------ | :----------------------------------------------------------------------------------- |
+| dataTest  | `string`        |         | Optional prop for testing purposes.                                                  |
+| children  | `React.node`    |         | Required prop that should contain the `Tab` components.                              |
+| compact   | `boolean`       | `false` | Optional prop that responsible for `Tab`size, if provided, the Tabs will be smaller. |
+| spacing   | [`enum`](#enum) | `none`  | Optional prop to set gap between `Tab` elements                                      |
+| fullWidth | `boolean`       | `false` | Optional prop to set `TabList` to full width.                                        |
 
 ### Tab
 

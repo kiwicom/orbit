@@ -91,10 +91,11 @@ export const Playground = () => {
   const secondTabLabel = text("second tab label", "Tab 2");
   const firstTabContent = text("first tab content", "Tab 1");
   const secondTabContent = text("second tab content", "Tab 2");
+  const fullWidth = boolean("fullWidth", false);
 
   return (
     <Tabs onChange={action("onChange")} defaultSelected={defaultSelected}>
-      <TabList compact={compact}>
+      <TabList compact={compact} fullWidth={fullWidth}>
         <Tab disabled={disabled}>{firstTabLabel}</Tab>
         <Tab type={type}>{secondTabLabel}</Tab>
       </TabList>

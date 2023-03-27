@@ -35,5 +35,20 @@ export default {
         },
       ],
     },
+    {
+      component: "TabList",
+      knobs: [
+        {
+          name: "compact",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
+          name: "fullWidth",
+          type: "boolean",
+          defaultValue: false,
+        },
+      ],
+    },
   ],
 };

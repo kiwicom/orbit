@@ -125,7 +125,6 @@ export const RenderProp = () => {
                 ...style,
               }}
             >
-              {/* @ts-expect-error TODO */}
               <Item>
                 <Radio label={`Option ${index}`} value={index} />
               </Item>

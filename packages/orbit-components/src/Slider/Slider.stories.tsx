@@ -82,7 +82,7 @@ export const SliderWithHistogram = () => {
         defaultValue={defaultValue}
         maxValue={maxValue}
         minValue={minValue}
-        histogramData={histogramData}
+        histogramData={histogramData.map(v => parseInt(v, 10))}
       />
     </div>
   );
@@ -109,7 +109,7 @@ export const RangeSlider = () => {
       onChange={action("onChange")}
       label={label}
       valueDescription={valueDescription}
-      defaultValue={defaultValue}
+      defaultValue={defaultValue.map(v => parseInt(v, 10))}
       minValue={minValue}
       maxValue={maxValue}
       step={step}
@@ -169,8 +169,8 @@ export const RangeSliderWithHistogram = () => {
         label={label}
         valueDescription={valueDescription}
         histogramDescription={histogramDescription}
-        defaultValue={defaultValue}
-        histogramData={histogramData}
+        defaultValue={defaultValue.map(v => parseInt(v, 10))}
+        histogramData={histogramData.map(v => parseInt(v, 10))}
         minValue={minValue}
         maxValue={maxValue}
         step={step}
@@ -317,8 +317,8 @@ export const RangeSliderPlayground = () => {
         ariaLabel={ariaLabel}
         ariaValueText={ariaValueText}
         dataTest={dataTest}
-        defaultValue={defaultValue}
-        histogramData={histogramData}
+        defaultValue={defaultValue.map(v => parseInt(v, 10))}
+        histogramData={histogramData.map(v => parseInt(v, 10))}
         histogramDescription={histogramDescription}
         histogramLoading={histogramLoading}
         histogramLoadingText={histogramLoadingText}

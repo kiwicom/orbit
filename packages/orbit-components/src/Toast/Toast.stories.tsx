@@ -55,6 +55,7 @@ export const WithPromise = () => {
     });
 
     createToastPromise(promise, {
+      /* @ts-expect-error ignore icon as it currently has no effect */
       icon: Notification,
       loading: "...Loading",
       success: "Freddy Krueger has nightmares about Chuck Norris!",

@@ -10,7 +10,6 @@
   },
   "include": ["src/**/*", "css-prop.d.ts"],
   "exclude": [
-    "**/*.stories.*",
     "**/*.test.*",
     "**/__tests__/**/*",
     "**/__typetests__/**/*",

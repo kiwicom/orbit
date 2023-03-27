@@ -537,7 +537,6 @@ export const AdvancedErrorExample = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        // @ts-expect-error CSS prop
         css={css`
           max-width: 600px;
           padding: 20px 0;
@@ -744,7 +743,6 @@ export const AdvancedHelpExample = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        // @ts-expect-error CSS prop
         css={css`
           max-width: 600px;
           padding: 20px 0;

@@ -2,6 +2,7 @@ import * as React from "react";
 import { number, array, select, text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import Stack from "../Stack";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Wizard, { WizardStep } from ".";
@@ -42,7 +43,13 @@ export const Rtl = () => {
         completedSteps={3}
         activeStep={3}
         onChangeStep={action("onChangeStep")}
-        labelProgress="3 of 3"
+        labelProgress={
+          <Stack flex spacing="XXSmall">
+            <div>3</div>
+            <div>of</div>
+            <div>3</div>
+          </Stack>
+        }
       >
         <WizardStep title="Search" />
         <WizardStep title="Passenger details" />

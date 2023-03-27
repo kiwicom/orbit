@@ -11,7 +11,7 @@ import { SIZE_OPTIONS } from "../../primitives/ButtonPrimitive/common/consts";
 import type { Props } from "./types";
 
 const AlertButton = React.forwardRef<HTMLButtonElement, Props>(
-  ({ type = TYPE_OPTIONS.INFO, children, disabled = false, ...props }, ref) => {
+  ({ type = TYPE_OPTIONS.INFO, disabled = false, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };
     const commonProps = getCommonProps({ ...propsWithTheme, size: SIZE_OPTIONS.SMALL });
@@ -29,9 +29,7 @@ const AlertButton = React.forwardRef<HTMLButtonElement, Props>(
         {...buttonStyles}
         {...commonProps}
         {...icons}
-      >
-        {children}
-      </ButtonPrimitive>
+      />
     );
   },
 );

@@ -75,7 +75,7 @@ function getCountryProps(code?: string, name?: string) {
   const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "UNDEFINED";
   const countryCodeExists = codeNormalized in CODES;
 
-  console.warn(countryCodeExists, "Country code not supported: %s", code);
+  console.warn(`Country code not supported: ${code}`);
   const countryCode = countryCodeExists ? CODES[codeNormalized] : CODES.UNDEFINED;
   const countryName = countryCode === CODES.UNDEFINED && !name ? "Undefined" : name;
   return { code: countryCode, name: countryName };

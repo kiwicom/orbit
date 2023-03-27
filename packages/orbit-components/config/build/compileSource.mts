@@ -38,8 +38,7 @@ export default async function compileSource() {
 
       for (const file of files) {
         const result = await parseFile(path.join("src", file), options);
-
-        await fs.outputFile(renameFileExtension(path.join(dir, file)), result?.code);
+        await fs.outputFile(renameFileExtension(path.join(dir, file)), String(result?.code));
       }
 
       spinner.succeed(`${name} → ${dir}`);

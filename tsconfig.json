@@ -9,5 +9,9 @@
     "packages/orbit-themer/**/*",
     "packages/eslint-plugin-orbit-components/**/*"
   ],
-  "exclude": ["**/scripts/**/*", "packages/orbit-components/cypress/**/*.test.*"]
+  "exclude": [
+    "**/scripts/**/*",
+    "packages/orbit-components/cypress/**/*.test.*",
+    "packages/orbit-components/transforms/**"
+  ]
 }

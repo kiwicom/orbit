@@ -40,10 +40,10 @@ const getSize = ({ size }: { size: Size }) => {
 };
 
 const StyledSeatWrapper = styled.div<{ type: Type; selected?: boolean; size: Size }>`
-  ${({ type, selected, theme }) => css`
+  ${({ type, selected, theme, size }) => css`
     position: relative;
     cursor: ${type !== TYPES.UNAVAILABLE && "pointer"};
-    ${getSize};
+    ${getSize({ size })};
     outline: none;
     font-family: ${theme.orbit.fontFamily};
     &:hover {

@@ -1,4 +1,3 @@
-// @flow
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -28,8 +27,7 @@ describe("SegmentedSwitch", () => {
     expect(screen.getByText(label)).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
 
-    // $FlowFixMe
-    userEvent.tab(screen.getByLabelText("Male"));
+    userEvent.tab();
     expect(onFocus).toHaveBeenCalled();
 
     userEvent.click(screen.getByLabelText("Female"));
@@ -37,7 +35,6 @@ describe("SegmentedSwitch", () => {
     expect(onChange).toHaveBeenCalled();
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -62,7 +59,6 @@ describe("SegmentedSwitch", () => {
     expect(screen.getByLabelText("Female")).toBeDisabled();
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -85,7 +81,6 @@ describe("SegmentedSwitch", () => {
     expect(screen.getByText(help)).toBeInTheDocument();
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 });

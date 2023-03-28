@@ -7,7 +7,7 @@ import { StyledTag } from "../../../Tag";
 
 const StyledInputTags = styled.div`
   position: relative;
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceThreeX}`)};
+  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
   display: flex;
   align-items: center;
   flex: 0 1 auto;
@@ -34,7 +34,7 @@ const StyledInputTagsInner = styled.div`
   }
 
   ${StyledTag} + ${StyledTag} {
-    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceTwoX}`)};
+    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
   }
 `;
 

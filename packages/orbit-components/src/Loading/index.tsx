@@ -104,9 +104,11 @@ StyledLoadingText.defaultProps = {
 };
 
 export const StyledSpinner = styled.svg<{ customSize?: Props["customSize"] }>`
-  width: 40px;
-  height: 40px;
-  animation: ${SpinnerAnimation} 0.75s linear infinite;
+  ${({ customSize }) => css`
+    width: ${customSize ? `${customSize}px` : "40px"};
+    height: ${customSize ? `${customSize}px` : "40px"};
+    animation: ${SpinnerAnimation} 0.75s linear infinite;
+  `};
 `;
 
 const StyledSpinnerCircle = styled.circle<{ customSize?: Props["customSize"] }>`

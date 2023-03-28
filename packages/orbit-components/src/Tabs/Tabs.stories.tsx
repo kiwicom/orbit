@@ -26,6 +26,28 @@ export const Default = () => {
   );
 };
 
+export const FullWidth = () => {
+  const compact = boolean("compact", false);
+  const fullWidth = boolean("fullWidth", true);
+
+  return (
+    <Tabs onChange={action("onChange")}>
+      <TabList fullWidth={fullWidth} compact={compact}>
+        <Tab>Tab 1</Tab>
+        <Tab type="basic">Tab 2</Tab>
+        <Tab type="medium">Tab 3</Tab>
+        <Tab type="top">Tab 4</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>Tab 1 content</TabPanel>
+        <TabPanel>Tab 2 content</TabPanel>
+        <TabPanel>Tab 3 content</TabPanel>
+        <TabPanel>Tab 4 content</TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+
 export const Compact = () => {
   return (
     <Tabs onChange={action("onChange")}>
@@ -91,10 +113,11 @@ export const Playground = () => {
   const secondTabLabel = text("second tab label", "Tab 2");
   const firstTabContent = text("first tab content", "Tab 1");
   const secondTabContent = text("second tab content", "Tab 2");
+  const fullWidth = boolean("fullWidth", false);
 
   return (
     <Tabs onChange={action("onChange")} defaultSelected={defaultSelected}>
-      <TabList compact={compact}>
+      <TabList compact={compact} fullWidth={fullWidth}>
         <Tab disabled={disabled}>{firstTabLabel}</Tab>
         <Tab type={type}>{secondTabLabel}</Tab>
       </TabList>

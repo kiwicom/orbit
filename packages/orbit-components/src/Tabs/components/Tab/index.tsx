@@ -45,6 +45,7 @@ const StyledTab = styled.button<{
   ${({ theme, active, $type, compact, disabled }) => css`
     display: flex;
     border: 0;
+    flex: 1;
     position: relative;
     appearance: none;
     flex-direction: row;
@@ -90,6 +91,7 @@ StyledTab.defaultProps = {
 const StyledTabText = styled.span<{ type: Props["type"] }>`
   ${({ theme, type }) => css`
     color: ${theme.orbit.paletteInkDark};
+    width: 100%;
 
     ${type !== TYPE_OPTIONS.DEFAULT &&
     css`

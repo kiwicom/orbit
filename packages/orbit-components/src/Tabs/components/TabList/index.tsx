@@ -6,23 +6,37 @@ import { TabProvider } from "../../TabContext";
 import type { Props } from "./types";
 import { spacingUtility } from "../../../utils/common";
 
-const StyledTabListWrapper = styled.div<{ $margin?: Props["margin"]; $padding?: Props["padding"] }>`
-  ${({ $margin, $padding }) => css`
+const StyledTabListWrapper = styled.div<{
+  $margin?: Props["margin"];
+  $padding?: Props["padding"];
+  $fullWidth: Props["fullWidth"];
+}>`
+  ${({ $margin, $padding, $fullWidth }) => css`
+    width: ${$fullWidth ? "100%" : "auto"};
     ${spacingUtility($padding, "padding")};
     ${spacingUtility($margin)};
   `};
 `;
 
-const TabList = ({ children, spacing = "none", compact, padding, margin, dataTest }: Props) => {
+const TabList = ({
+  children,
+  spacing = "none",
+  compact,
+  padding,
+  margin,
+  dataTest,
+  fullWidth,
+}: Props) => {
   return (
     <StyledTabListWrapper
       role="tablist"
       aria-label="tabs"
+      $fullWidth={fullWidth}
       $padding={padding}
       $margin={margin}
       data-test={dataTest}
     >
-      <Stack inline spacing={spacing}>
+      <Stack flex={fullWidth} spacing={spacing}>
         {React.Children.map(children, (child, idx) => {
           if (!React.isValidElement(child)) return null;
           return (

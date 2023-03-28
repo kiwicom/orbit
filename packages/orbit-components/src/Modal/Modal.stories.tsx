@@ -89,6 +89,23 @@ Sizes.story = {
   },
 };
 
+export const ModalFooterOnly = () => {
+  const isBackButton = boolean("isBackButton", false);
+  const isNextButton = boolean("isNextButton", true);
+
+  return (
+    <Modal>
+      <ModalSection>
+        The dinosaurs looked at Chuck Norris the wrong way once. You know what happened to them.
+      </ModalSection>
+      <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
+        {isBackButton ? <Button>Back</Button> : null}
+        {isNextButton ? <Button>Next</Button> : null}
+      </ModalFooter>
+    </Modal>
+  );
+};
+
 export const ShortModal = () => {
   const { Container, onClose } = useModal();
   return (

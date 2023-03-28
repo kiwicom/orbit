@@ -6,6 +6,7 @@ import type { Spacing } from "../../../Stack/types";
 export interface Props extends Globals {
   children: React.ReactNode;
   spacing?: Spacing;
+  fullWidth?: boolean;
   compact?: boolean;
   margin?: React.CSSProperties["margin"] | ObjectProperty;
   padding?: React.CSSProperties["padding"] | ObjectProperty;

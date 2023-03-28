@@ -8,6 +8,6 @@
     "importsNotUsedAsValues": "error",
     "emitDeclarationOnly": true
   },
-  "include": ["src/**/*", "css-prop.d.ts"],
+  "include": ["src/**/*", "typings/**/*.d.ts"],
   "exclude": ["**/*.test.*", "**/__tests__/**/*", "**/__typetests__/**/*", "**/*.stories.*"]
 }

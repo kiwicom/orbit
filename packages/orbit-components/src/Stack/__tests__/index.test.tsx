@@ -103,7 +103,7 @@ describe("Stack", () => {
         <div>bur</div>
       </Stack>,
     );
-    // @ts-expect-error expected
+
     expect(screen.getByTestId("test")).toHaveStyleRule("justify-content", expected);
   });
 

@@ -11,7 +11,6 @@ import {
   getDocumentBreadcrumbs,
 } from "./utils/document";
 import getOverviewPages from "./services/overviewPages";
-import parseChangelog from "./services/changelog";
 
 const ROOT = path.resolve(__dirname, "..");
 
@@ -245,10 +244,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
       context: { id, tabs: fields.tabCollection },
     });
   });
-};
-
-export const onPreBuild = async () => {
-  await parseChangelog();
 };
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({

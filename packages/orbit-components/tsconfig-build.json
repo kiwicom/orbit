@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+    "declaration": true,
+    "moduleResolution": "node",
+    "importsNotUsedAsValues": "error",
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*", "css-prop.d.ts"],
+  "exclude": ["**/*.test.*", "**/__tests__/**/*", "**/__typetests__/**/*", "**/*.stories.*"]
+}

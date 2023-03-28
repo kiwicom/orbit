@@ -3,17 +3,10 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib",
-    "declaration": true,
+    "noEmit": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "moduleResolution": "node",
-    "importsNotUsedAsValues": "error",
-    "emitDeclarationOnly": true
+    "importsNotUsedAsValues": "error"
   },
-  "include": ["src/**/*", "css-prop.d.ts"],
-  "exclude": [
-    "**/*.test.*",
-    "**/__tests__/**/*",
-    "**/__typetests__/**/*",
-    "**/__examples__/*.*",
-    "**/examples.*"
-  ]
+  "include": ["src/**/*", "css-prop.d.ts", "typings/**/*.d.ts"]
 }

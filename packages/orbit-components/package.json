@@ -17,7 +17,7 @@
     "size:why": "size-limit --why",
     "fetch:icons": "ts-node --esm config/fetchIcons.mts",
     "check:icons": "ts-node --esm config/checkIconsCli.mts",
-    "check:types": "tsc --noEmit --emitDeclarationOnly false",
+    "check:types": "tsc --p tsconfig.json",
     "flow:ci": "flow check",
     "build:iconsPng": "ts-node --esm config/generatePngIcons.mts",
     "build:storybook": "ts-node --esm  config/build/buildIcons.mts && build-storybook -c .storybook -o .out",
@@ -81,6 +81,7 @@
   "dependencies": {
     "@kiwicom/orbit-design-tokens": "^3.2.0",
     "@popperjs/core": "^2.9.2",
+    "@types/testing-library__jest-dom": "^5.14.5",
     "react-hot-toast": "^2.2.0",
     "react-popper": "^2.2.5",
     "react-uid": "^2.3.2"

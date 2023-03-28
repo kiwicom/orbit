@@ -31,11 +31,11 @@ Once you have imported the Tabs component, you can use it in your React applicat
 
 Table below contains all types of the props available in Tabs component.
 
-| Name            | Type                             | Default | Description                                                                                                  |
-| :-------------- | :------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------- |
-| dataTest        | `string`                         |         | Optional prop for testing purposes.                                                                          |
-| defaultSelected | `number`                         | `0`     | Optional prop to set the initial active tab index. Use only if you do not want to control state on your side |
-| children        | `React.node`                     |         | Required prop that should contain the `TabList`, `TabPanels` components.                                     |
+| Name            | Type                                               | Default | Description                                                                                                  |
+| :-------------- | :------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------- |
+| dataTest        | `string`                                           |         | Optional prop for testing purposes.                                                                          |
+| defaultSelected | `number`                                           | `0`     | Optional prop to set the initial active tab index. Use only if you do not want to control state on your side |
+| children        | `React.node`                                       |         | Required prop that should contain the `TabList`, `TabPanels` components.                                     |
 | onChange        | `(selectedIndex: number) => void \| Promise<void>` |         | Function for handling onChange. Use only if you do not want to control state on your side.                   |
 
 ### TabList

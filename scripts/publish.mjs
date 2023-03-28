@@ -164,6 +164,7 @@ async function previewChangelog() {
 
     await $`yarn install`;
     await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
+    await $`yarn docs changelog`;
 
     const timestamp = await getLatestReleaseTime();
     const names = await getUserNames(timestamp);

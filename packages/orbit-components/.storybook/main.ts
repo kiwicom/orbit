@@ -21,9 +21,7 @@ const config = {
   webpackFinal(cfg) {
     if (cfg) {
       // resolve to .js rather than .mjs to avoid webpack failing because of ambiguous imports
-      cfg.resolve.alias["@adeira/js"] = require.resolve("@adeira/js/src/index.js");
       cfg.resolve.extensions = cfg.resolve.extensions.filter(ext => ext !== ".mjs");
-
       cfg.module.rules.push({
         test: /\.(ts|tsx|mts)$/,
         loader: require.resolve("babel-loader"),

@@ -6,8 +6,6 @@ module.exports = {
   ],
   plugins: [
     require.resolve("babel-plugin-styled-components"),
-    require.resolve("@adeira/babel-preset-adeira/src/adeira-js-warning"),
-    require.resolve("@adeira/babel-preset-adeira/src/adeira-js-invariant"),
     [
       require.resolve("@babel/plugin-transform-runtime"),
       { version: require("@babel/runtime/package.json").version },

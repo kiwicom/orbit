@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import tokensList from "@kiwicom/orbit-design-tokens/output/theo-spec.json";
-import { warning } from "@adeira/js";
 import { Text, Tooltip } from "@kiwicom/orbit-components";
 
 import DesignTokenIcon from "./DesignTokensList/components/DesignTokenIcon";
@@ -77,7 +76,7 @@ const StyledLabelVariant = styled.span<{ size: "medium" | "large" }>`
 
 const findValue = (name: TokenNameType): TokenValueType => {
   const tokenValue = name in tokensList ? tokensList[name] : "";
-  warning(!!tokenValue, "%s wasn't found in the tokens.", name);
+  console.warn(!!tokenValue, "%s wasn't found in the tokens.", name);
   return tokenValue;
 };
 

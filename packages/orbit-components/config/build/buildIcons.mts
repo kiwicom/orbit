@@ -1,7 +1,5 @@
 import { path, fs, globby, $ } from "zx";
 import { JSDOM } from "jsdom";
-import capitalize from "capitalize";
-import camelcase from "camelcase";
 import { types as t } from "@babel/core";
 import { transform } from "@svgr/core";
 import svgoPlugin from "@svgr/plugin-svgo";
@@ -18,13 +16,16 @@ import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustrati
 
 const randomId = () => Math.random().toString(36).substring(2, 9);
 
+const camelcase = (str: string) => str.replace(/[-_.](.)/g, (_, char) => char.toUpperCase());
+const firstToUpper = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
 (async () => {
   const files = await globby("src/icons/svg/*.svg");
   const [, __dirname] = filedirname();
 
   const names = files.map(inputFileName => {
     const baseName = path.basename(inputFileName).replace(/( \(custom\))?\.svg$/, "");
-    const functionName = capitalize(camelcase(baseName), true);
+    const functionName = firstToUpper(camelcase(baseName));
     const outputComponentFileName = `${functionName}.tsx`;
 
     return {

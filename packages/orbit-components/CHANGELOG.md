@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.2.1...@kiwicom/orbit-components@6.3.0) (2023-03-29)
+
+
+### Bug Fixes
+
+* **AlertButton:** padding was not correct when there was an icon ([#3778](https://github.com/kiwicom/orbit/issues/3778)) ([e2feb34](https://github.com/kiwicom/orbit/commit/e2feb34593de6024977298819aea30a0178ad43a))
+* **Coupon:** change border color to paletteCloudDark ([457efe6](https://github.com/kiwicom/orbit/commit/457efe6c4181347633f5599bfecea5d2ba38185c))
+* **InputGroup:** fixes problem with long labels ([#3779](https://github.com/kiwicom/orbit/issues/3779)) ([2ef2dc1](https://github.com/kiwicom/orbit/commit/2ef2dc14c7f9cc4e1bc912cdc4c3fc6a141c4da7))
+* **Loading:** fix LoadingSpinner size with customSize prop ([#3789](https://github.com/kiwicom/orbit/issues/3789)) ([0b4056c](https://github.com/kiwicom/orbit/commit/0b4056c406abed59d922752284e1740ba521fc68))
+* **ModalFooter:** count children properly ([#3790](https://github.com/kiwicom/orbit/issues/3790)) ([c982e6c](https://github.com/kiwicom/orbit/commit/c982e6cfffe2c15177c9541e0f3204d5bf747c2a))
+
+
+### Features
+
+* **docs:** fix onChange type ([#3788](https://github.com/kiwicom/orbit/issues/3788)) ([7566138](https://github.com/kiwicom/orbit/commit/75661384f324ce48f63fc7f7aaac7b0145186e2b))
+* **Tabs:** add fullWidth prop ([#3786](https://github.com/kiwicom/orbit/issues/3786)) ([fef1d07](https://github.com/kiwicom/orbit/commit/fef1d07e7b9a4b198fbab31f19ec16c915720be6))
+* **Tabs:** add width: 100% to TabPanels ([#3793](https://github.com/kiwicom/orbit/issues/3793)) ([a3fd7a9](https://github.com/kiwicom/orbit/commit/a3fd7a983a7c17c739a5435e2d9bb3189ea30657))
+
+
+
+
+
 ## [6.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.2.0...@kiwicom/orbit-components@6.2.1) (2023-03-23)
 
 

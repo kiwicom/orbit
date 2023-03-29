@@ -15,6 +15,4 @@ export const COMPILE_IGNORE_PATTERNS = [
   "**/*.test.*",
   "**/__tests__/**/*",
   "**/__typetests__/**/*",
-  "**/__examples__/*.*",
-  "**/examples.*",
 ];

@@ -11,7 +11,7 @@ const StyledCoupon = styled.mark`
     font-size: ${theme.orbit.fontSizeTextSmall};
     letter-spacing: 0.75px;
     text-transform: uppercase;
-    border: 1px dashed ${theme.orbit.paletteCloudDarker};
+    border: 1px dashed ${theme.orbit.paletteCloudDark};
     padding: 2px ${theme.orbit.spaceXXSmall};
     line-height: inherit;
     font-weight: ${theme.orbit.fontWeightMedium};

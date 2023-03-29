@@ -15,7 +15,6 @@ function App(props: { show: boolean; appear: boolean }) {
       {transition.mounted && (
         <div
           ref={transition.ref}
-          // @ts-expect-error expected
           css={`
             transition: opacity 0.5s ease-in-out;
             opacity: ${transition.state === "enter" ? 1 : 0};

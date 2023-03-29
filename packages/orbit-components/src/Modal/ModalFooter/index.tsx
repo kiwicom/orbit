@@ -69,28 +69,27 @@ const getChildFlex = (flex: Props["flex"], key: number) =>
   Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
 
 const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
-  if (!Array.isArray(children)) return children;
   return React.Children.map(children, (child, key) => {
-    if (child) {
-      return (
-        <StyledChild flex={getChildFlex(flex, key)}>
-          {React.cloneElement(child, {
-            ref: child.ref
-              ? node => {
-                  // Call the original ref, if any
-                  const { ref } = child;
-                  if (typeof ref === "function") {
-                    ref(node);
-                  } else if (ref !== null) {
-                    ref.current = node;
-                  }
+    if (!React.isValidElement(child)) return null;
+    return (
+      <StyledChild flex={getChildFlex(flex, key)}>
+        {React.cloneElement(child, {
+          // @ts-expect-error React.cloneElement  issue
+          ref: child.ref
+            ? node => {
+                // Call the original ref, if any
+                // @ts-expect-error React.cloneElement  issue
+                const { ref } = child;
+                if (typeof ref === "function") {
+                  ref(node);
+                } else if (ref !== null) {
+                  ref.current = node;
                 }
-              : null,
-          })}
-        </StyledChild>
-      );
-    }
-    return null;
+              }
+            : null,
+        })}
+      </StyledChild>
+    );
   });
 };
 
@@ -118,7 +117,7 @@ const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
       ref={containerRef}
       data-test={dataTest}
       isMobileFullPage={isMobileFullPage}
-      childrenLength={React.Children.count(children)}
+      childrenLength={React.Children.toArray(children).length}
     >
       {flex && wrappedChildren(children, flex)}
     </StyledModalFooter>

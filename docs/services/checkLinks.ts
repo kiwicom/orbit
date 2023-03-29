@@ -9,6 +9,7 @@ import reporter from "vfile-reporter";
 import fsx from "fs-extra";
 import dotenv from "dotenv-safe";
 import toVFile from "to-vfile";
+import { VFile } from "vfile-reporter/lib";
 
 import { warnMissingAccessToken } from "../utils/warnings";
 
@@ -114,7 +115,7 @@ const checkForDeadUrls = async () => {
   if (deadUrls.length > 0) {
     const completeMap = new Map([...urlsWithLocal, ...githubUrls]);
 
-    const filesWithMessages: toVFile.VFile[] = [];
+    const filesWithMessages: VFile[] = [];
     deadUrls.forEach(deadUrl => {
       completeMap.get(deadUrl).sources.forEach(file => {
         file.message(`Broken link: ${deadUrl}`);

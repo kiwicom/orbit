@@ -35,7 +35,9 @@ describe("Modal", () => {
           header content
         </ModalHeader>
         <ModalSection dataTest="section">section content</ModalSection>
-        <ModalFooter dataTest="footer">footer content</ModalFooter>
+        <ModalFooter dataTest="footer">
+          <p>footer content</p>
+        </ModalFooter>
       </Modal>,
     );
 

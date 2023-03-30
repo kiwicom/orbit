@@ -517,10 +517,12 @@ export class PureSlider extends React.PureComponent<SliderProps, State> {
     } = this.props;
     if (histogramData) {
       const properHistogramLength = (maxValue - minValue + step) / step;
-      console.warn(
-        histogramData.length === properHistogramLength,
-        `Warning: Length of histogramData array is ${histogramData.length}, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
-      );
+
+      if (histogramData.length !== properHistogramLength) {
+        console.warn(
+          `Warning: Length of histogramData array is ${histogramData.length}, but should be ${properHistogramLength}. This will cause broken visuals of the whole Histogram.`,
+        );
+      }
     }
     const { value, focused } = this.state;
     const sortedValue = this.sortArray(value);

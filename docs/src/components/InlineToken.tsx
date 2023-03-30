@@ -76,7 +76,7 @@ const StyledLabelVariant = styled.span<{ size: "medium" | "large" }>`
 
 const findValue = (name: TokenNameType): TokenValueType => {
   const tokenValue = name in tokensList ? tokensList[name] : "";
-  console.warn(!!tokenValue, "%s wasn't found in the tokens.", name);
+  if (tokenValue === "") console.warn(`${name} wasn't found in the tokens.`);
   return tokenValue;
 };
 

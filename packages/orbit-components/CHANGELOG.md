@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.3.0...@kiwicom/orbit-components@6.3.1) (2023-03-31)
+
+
+### Bug Fixes
+
+* **CountryFlag:** add condition to console.warn ([7bc2b95](https://github.com/kiwicom/orbit/commit/7bc2b953089ae688351b44b81b574636f84fbb9e))
+* **Slider:** add condition to console.warn ([78c59ce](https://github.com/kiwicom/orbit/commit/78c59ce27c686c5e60220f1b95f55c04b1316bb8))
+
+
+
+
+
 # [6.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.2.1...@kiwicom/orbit-components@6.3.0) (2023-03-29)
 
 

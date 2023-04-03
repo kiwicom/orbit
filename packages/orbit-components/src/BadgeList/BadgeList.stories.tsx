@@ -48,6 +48,17 @@ export const Types = () => {
   );
 };
 
+export const Sizes = () => (
+  <BadgeList>
+    <BadgeListItem icon={<Icons.AlertCircle />} size="small">
+      Size small
+    </BadgeListItem>
+    <BadgeListItem icon={<Icons.BaggageCabin />} size="normal">
+      Size normal
+    </BadgeListItem>
+  </BadgeList>
+);
+
 export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.NEUTRAL);

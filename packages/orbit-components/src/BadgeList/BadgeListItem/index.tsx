@@ -52,8 +52,8 @@ export const StyledVerticalBadge = styled.div<{ $type?: Props["type"] }>`
     justify-content: center;
     margin-${right}: ${theme.orbit.spaceXSmall};
     flex-shrink: 0;
-    height: ${theme.orbit.heightIconMedium};
-    width: ${theme.orbit.widthIconMedium};
+    height: ${theme.orbit.heightIconLarge};
+    width: ${theme.orbit.widthIconLarge};
     border-radius: ${theme.orbit.borderRadiusCircle};
     svg {
       height: ${theme.orbit.heightIconSmall};
@@ -70,11 +70,6 @@ export const StyledBadgeContent = styled.div`
   ${({ theme }) => css`
     display: inline-flex;
     align-items: center;
-    &,
-    ${StyledText} {
-      font-size: ${theme.orbit.fontSizeTextSmall};
-      line-height: ${theme.orbit.lineHeightTextSmall};
-    }
 
     ${StyledTooltipChildren} ${StyledText} {
       font-weight: ${theme.orbit.fontWeightMedium};
@@ -90,6 +85,7 @@ const BadgeListItem = ({
   icon,
   strikeThrough,
   type = TYPE_OPTIONS.NEUTRAL,
+  size = "small",
   dataTest,
   children,
 }: Props) => {
@@ -102,7 +98,7 @@ const BadgeListItem = ({
           })}
       </StyledVerticalBadge>
       <StyledBadgeContent>
-        <Text type="secondary" size="small" as="span" strikeThrough={strikeThrough}>
+        <Text type="secondary" size={size} as="span" strikeThrough={strikeThrough}>
           {children}
         </Text>
       </StyledBadgeContent>

@@ -5,3 +5,8 @@ export enum TYPE_OPTIONS {
   WARNING = "warning",
   CRITICAL = "critical",
 }
+
+export enum SIZE_OPTIONS {
+  SMALL = "small",
+  NORMAL = "normal",
+}

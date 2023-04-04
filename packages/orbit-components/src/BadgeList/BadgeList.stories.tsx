@@ -5,7 +5,7 @@ import { text, select, boolean } from "@storybook/addon-knobs";
 import * as Icons from "../icons";
 import Tooltip from "../Tooltip";
 import TextLink from "../TextLink";
-import { TYPE_OPTIONS } from "./consts";
+import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
 import Text from "../Text";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
@@ -62,20 +62,36 @@ export const Sizes = () => (
 export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.NEUTRAL);
+  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const strikeThrough = boolean("strikeThrough", false);
 
   return (
     <BadgeList dataTest={dataTest}>
-      <BadgeListItem icon={<Icons.AlertCircle />} type={type} strikeThrough={strikeThrough}>
+      <BadgeListItem
+        icon={<Icons.AlertCircle />}
+        type={type}
+        strikeThrough={strikeThrough}
+        size={size}
+      >
         You&apos;re departing from a different place
       </BadgeListItem>
-      <BadgeListItem icon={<Icons.SelfTransfer />} type={type} strikeThrough={strikeThrough}>
+      <BadgeListItem
+        icon={<Icons.SelfTransfer />}
+        type={type}
+        strikeThrough={strikeThrough}
+        size={size}
+      >
         <Tooltip content="Additional information">
           <Text>Self transfer at Vienna</Text>
         </Tooltip>{" "}
         is your responsibility
       </BadgeListItem>
-      <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type} strikeThrough={strikeThrough}>
+      <BadgeListItem
+        icon={<Icons.KiwicomGuarantee />}
+        type={type}
+        strikeThrough={strikeThrough}
+        size={size}
+      >
         <TextLink onClick={action("link clicked")} type="secondary">
           Transfer protected
         </TextLink>{" "}

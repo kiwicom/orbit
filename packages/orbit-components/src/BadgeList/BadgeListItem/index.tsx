@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Text, { StyledText } from "../../Text";
-import { TYPE_OPTIONS } from "../consts";
+import { TYPE_OPTIONS, SIZE_OPTIONS } from "../consts";
 import defaultTheme from "../../defaultTheme";
 import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
@@ -85,7 +85,7 @@ const BadgeListItem = ({
   icon,
   strikeThrough,
   type = TYPE_OPTIONS.NEUTRAL,
-  size = "small",
+  size = SIZE_OPTIONS.SMALL,
   dataTest,
   children,
 }: Props) => {

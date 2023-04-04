@@ -31,14 +31,15 @@ Table below contains all types of the props available in BadgeList component.
 | children      | `React.Node`    |             | The content of the BadgeListItem.    |
 | icon          | `React.Node`    |             | The displayed icon on the left.      |
 | type          | [`enum`](#enum) | `"neutral"` | The color type of the BadgeListItem. |
+| size          | [`enum`](#enum) | `"small"`   | The text size of the BadgeListItem.  |
 | strikeThrough | `boolean`       | `false`     | Whether the text is striked through. |
 
 ### enum
 
-| type         |
-| :----------- |
-| `"neutral"`  |
-| `"info"`     |
-| `"success"`  |
-| `"warning"`  |
-| `"critical"` |
+| type         | size       |
+| :----------- | ---------- |
+| `"neutral"`  | `"small"`  |
+| `"info"`     | `"normal"` |
+| `"success"`  |            |
+| `"warning"`  |            |
+| `"critical"` |            |

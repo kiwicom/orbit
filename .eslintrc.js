@@ -9,11 +9,11 @@ module.exports = {
     "plugin:orbit-components/internal",
     "plugin:prettier/recommended",
   ],
-  plugins: ["babel"],
+  plugins: ["@babel"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
-    "no-unused-expressions": "off",
-    "babel/no-unused-expressions": "error",
+    "no-unus@ed-expressions": "off",
+    "@babel/no-unused-expressions": "error",
     "import/no-useless-path-segments": ["error", { noUselessIndex: true }],
     "import/order": [
       "error",
@@ -75,6 +75,7 @@ module.exports = {
     },
     {
       files: ["*.js?(x)", "*.js?(x).flow"],
+      parser: "@babel/eslint-parser",
       extends: ["plugin:flowtype/recommended", "prettier"],
       rules: {
         "flowtype/require-exact-type": "error",
@@ -129,7 +130,7 @@ module.exports = {
         "@typescript-eslint/no-empty-function": "off",
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": "error",
-        "babel/no-unused-expressions": "off",
+        "@babel/no-unused-expressions": "off",
         "@typescript-eslint/no-unused-expressions": "error",
         "no-use-before-define": "off", // disable conflicting rule
         "@typescript-eslint/no-use-before-define": "error",

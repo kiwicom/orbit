@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import Text, { StyledText } from "../../Text";
-import { TYPE_OPTIONS } from "../consts";
+import { TYPE_OPTIONS, SIZE_OPTIONS } from "../consts";
 import defaultTheme from "../../defaultTheme";
 import { ICON_COLORS } from "../../Icon/consts";
 import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
@@ -52,8 +52,8 @@ export const StyledVerticalBadge = styled.div<{ $type?: Props["type"] }>`
     justify-content: center;
     margin-${right}: ${theme.orbit.spaceXSmall};
     flex-shrink: 0;
-    height: ${theme.orbit.heightIconMedium};
-    width: ${theme.orbit.widthIconMedium};
+    height: ${theme.orbit.heightIconLarge};
+    width: ${theme.orbit.widthIconLarge};
     border-radius: ${theme.orbit.borderRadiusCircle};
     svg {
       height: ${theme.orbit.heightIconSmall};
@@ -70,11 +70,6 @@ export const StyledBadgeContent = styled.div`
   ${({ theme }) => css`
     display: inline-flex;
     align-items: center;
-    &,
-    ${StyledText} {
-      font-size: ${theme.orbit.fontSizeTextSmall};
-      line-height: ${theme.orbit.lineHeightTextSmall};
-    }
 
     ${StyledTooltipChildren} ${StyledText} {
       font-weight: ${theme.orbit.fontWeightMedium};
@@ -90,6 +85,7 @@ const BadgeListItem = ({
   icon,
   strikeThrough,
   type = TYPE_OPTIONS.NEUTRAL,
+  size = SIZE_OPTIONS.SMALL,
   dataTest,
   children,
 }: Props) => {
@@ -102,7 +98,7 @@ const BadgeListItem = ({
           })}
       </StyledVerticalBadge>
       <StyledBadgeContent>
-        <Text type="secondary" size="small" as="span" strikeThrough={strikeThrough}>
+        <Text type="secondary" size={size} as="span" strikeThrough={strikeThrough}>
           {children}
         </Text>
       </StyledBadgeContent>

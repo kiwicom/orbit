@@ -20,6 +20,12 @@ export default {
           defaultValue: "neutral",
           options: ["neutral", "info", "success", "warning", "critical"],
         },
+        {
+          name: "size",
+          type: "select",
+          defaultValue: "small",
+          options: ["small", "normal"],
+        },
         { name: "strikeThrough", type: "boolean", defaultValue: false },
       ],
     },

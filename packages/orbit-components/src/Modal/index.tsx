@@ -612,10 +612,9 @@ const Modal = React.forwardRef<Instance, Props>(
         ref={modalBodyRef}
         role="dialog"
         isMobileFullPage={isMobileFullPage}
-        // @ts-expect-error TODO
         autoFocus={autoFocus}
         aria-modal="true"
-        aria-labelledby={hasModalTitle ? modalTitleID : null}
+        aria-labelledby={hasModalTitle ? modalTitleID : ""}
       >
         <ModalWrapper
           size={size}

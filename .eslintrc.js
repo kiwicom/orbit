@@ -12,7 +12,7 @@ module.exports = {
   plugins: ["@babel"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
-    "no-unus@ed-expressions": "off",
+    "no-unused-expressions": "off",
     "@babel/no-unused-expressions": "error",
     "import/no-useless-path-segments": ["error", { noUselessIndex: true }],
     "import/order": [

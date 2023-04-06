@@ -5,12 +5,14 @@ import type { StyledComponent } from "styled-components";
 import type { Globals } from "../../common/common.js.flow";
 
 export type Type = "neutral" | "info" | "success" | "warning" | "critical";
+export type Size = "small" | "normal";
 
 export type Props = {|
   +children: React.Node,
   +icon: React.Element<any>,
   +strikeThrough?: boolean,
   +type?: Type,
+  +size?: Size,
   ...Globals,
 |};
 

@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 import Drawer from "..";
 
-jest.useFakeTimers("modern");
+jest.useFakeTimers();
 
 describe("Drawer", () => {
   it("should have expected DOM output", () => {

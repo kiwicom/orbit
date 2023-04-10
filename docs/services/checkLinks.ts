@@ -1,7 +1,7 @@
 import server from "browser-sync";
 import checkLinks from "check-links";
 import { path, globby } from "zx";
-import unified from "unified";
+import { unified } from "unified";
 import parse from "rehype-parse";
 import inspectUrls from "@jsdevtools/rehype-url-inspector";
 import stringify from "rehype-stringify";

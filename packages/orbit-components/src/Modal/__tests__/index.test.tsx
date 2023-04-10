@@ -10,7 +10,7 @@ import ModalFooter from "../ModalFooter";
 import Illustration from "../../Illustration";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-jest.useFakeTimers("modern");
+jest.useFakeTimers();
 
 jest.mock("../../hooks/useMediaQuery", () => {
   return jest.fn(() => ({ isLargeMobile: true }));

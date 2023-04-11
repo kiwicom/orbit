@@ -32,22 +32,21 @@ const TabsProvider = ({
   onChange,
 }: React.PropsWithChildren<Pick<TabsContextValue, "onChange" | "defaultSelected">>) => {
   const [selected, setSelected] = React.useState<number | undefined>(defaultSelected);
+  const value = React.useMemo(() => ({ selected, onChange, setSelected }), [onChange, selected]);
 
-  return (
-    <TabsContext.Provider value={{ selected, setSelected, onChange }}>
-      {children}
-    </TabsContext.Provider>
-  );
+  return <TabsContext.Provider value={value}>{children}</TabsContext.Provider>;
 };
 
 export const TabProvider = ({ children, index, compact }) => {
-  return <TabContext.Provider value={{ index, compact }}>{children}</TabContext.Provider>;
+  const value = React.useMemo(() => ({ index, compact }), [index, compact]);
+
+  return <TabContext.Provider value={value}>{children}</TabContext.Provider>;
 };
 
 export const TabPanelProvider = ({ children, isActive, index }) => {
-  return (
-    <TabPanelContext.Provider value={{ isActive, index }}>{children}</TabPanelContext.Provider>
-  );
+  const value = React.useMemo(() => ({ isActive, index }), [isActive, index]);
+
+  return <TabPanelContext.Provider value={value}>{children}</TabPanelContext.Provider>;
 };
 
 export default TabsProvider;

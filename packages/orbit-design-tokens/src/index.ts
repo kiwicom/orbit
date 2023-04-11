@@ -7,9 +7,9 @@ import { Tokens, CustomFoundation, ThemePaletteColors, Foundation } from "./type
 
 export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
   // By default it takes base foundation config
-  const theme = (customFoundation
-    ? mergeDeep(foundation, customFoundation)
-    : foundation) as Foundation;
+  const theme = (
+    customFoundation ? mergeDeep(foundation, customFoundation) : foundation
+  ) as Foundation;
 
   return {
     // category:Colors

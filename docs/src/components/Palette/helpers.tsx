@@ -33,80 +33,74 @@ export const isLight = (hex: string) => {
   return hsp > 140;
 };
 
-export const resolveBorders = ({
-  order,
-  isFull,
-  isMiddle,
-  isLeft,
-  isFullBottom,
-  isRight,
-  isExpanded,
-}: BorderProps) => ({ theme }) => {
-  const radius = theme.orbit.borderRadiusLarge;
+export const resolveBorders =
+  ({ order, isFull, isMiddle, isLeft, isFullBottom, isRight, isExpanded }: BorderProps) =>
+  ({ theme }) => {
+    const radius = theme.orbit.borderRadiusLarge;
 
-  if (order === "only") {
-    if (isExpanded) {
-      if (isMiddle) return null;
-      if (isLeft)
+    if (order === "only") {
+      if (isExpanded) {
+        if (isMiddle) return null;
+        if (isLeft)
+          return css`
+            border-top-left-radius: ${radius};
+            border-bottom-left-radius: ${radius};
+          `;
+        if (isRight) {
+          return css`
+            border-top-right-radius: ${radius};
+            border-bottom-right-radius: ${radius};
+          `;
+        }
+      }
+
+      return css`
+        border-radius: ${radius};
+      `;
+    }
+
+    if (order === "first") {
+      if (isFull) {
+        return css`
+          border-radius: ${radius} ${radius} 0 0;
+        `;
+      }
+
+      if (isLeft) {
         return css`
           border-top-left-radius: ${radius};
-          border-bottom-left-radius: ${radius};
         `;
+      }
+
       if (isRight) {
         return css`
           border-top-right-radius: ${radius};
+        `;
+      }
+    }
+
+    if (order === "last") {
+      if (isFull || isFullBottom) {
+        return css`
+          border-radius: 0 0 ${radius} ${radius};
+        `;
+      }
+
+      if (isLeft) {
+        return css`
+          border-bottom-left-radius: ${radius};
+        `;
+      }
+
+      if (isRight) {
+        return css`
           border-bottom-right-radius: ${radius};
         `;
       }
     }
 
-    return css`
-      border-radius: ${radius};
-    `;
-  }
-
-  if (order === "first") {
-    if (isFull) {
-      return css`
-        border-radius: ${radius} ${radius} 0 0;
-      `;
-    }
-
-    if (isLeft) {
-      return css`
-        border-top-left-radius: ${radius};
-      `;
-    }
-
-    if (isRight) {
-      return css`
-        border-top-right-radius: ${radius};
-      `;
-    }
-  }
-
-  if (order === "last") {
-    if (isFull || isFullBottom) {
-      return css`
-        border-radius: 0 0 ${radius} ${radius};
-      `;
-    }
-
-    if (isLeft) {
-      return css`
-        border-bottom-left-radius: ${radius};
-      `;
-    }
-
-    if (isRight) {
-      return css`
-        border-bottom-right-radius: ${radius};
-      `;
-    }
-  }
-
-  return null;
-};
+    return null;
+  };
 
 export const determineOrder = (idx, arr): Order => {
   if (arr.length === 1) return "only";

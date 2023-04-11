@@ -5,27 +5,7 @@ export default {
   Example: () => {
     // the numbers are just random so no need to make them pretty
     const availableFlights = [
-      5,
-      29,
-      28,
-      7,
-      13,
-      7,
-      16,
-      12,
-      8,
-      39,
-      13,
-      7,
-      20,
-      38,
-      15,
-      18,
-      28,
-      14,
-      23,
-      24,
-      10,
+      5, 29, 28, 7, 13, 7, 16, 12, 8, 39, 13, 7, 20, 38, 15, 18, 28, 14, 23, 24, 10,
     ];
 
     const [priceRange, setPriceRange] = React.useState([50, 250]);

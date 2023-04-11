@@ -12,15 +12,17 @@ import {
   SIZE_OPTIONS,
 } from "../../Text/consts";
 
-const getColorType = ({ $type: type }: { $type: TextProps["type"] }) => ({ theme }) => {
-  if (type === "secondary") return theme.orbit.colorTextSecondary;
-  if (type === "info") return theme.orbit.paletteBlueDark;
-  if (type === "success") return theme.orbit.paletteGreenDark;
-  if (type === "warning") return theme.orbit.paletteOrangeDark;
-  if (type === "critical") return theme.orbit.paletteRedDark;
+const getColorType =
+  ({ $type: type }: { $type: TextProps["type"] }) =>
+  ({ theme }) => {
+    if (type === "secondary") return theme.orbit.colorTextSecondary;
+    if (type === "info") return theme.orbit.paletteBlueDark;
+    if (type === "success") return theme.orbit.paletteGreenDark;
+    if (type === "warning") return theme.orbit.paletteOrangeDark;
+    if (type === "critical") return theme.orbit.paletteRedDark;
 
-  return theme.orbit.colorTextPrimary;
-};
+    return theme.orbit.colorTextPrimary;
+  };
 
 const StyledTemporaryText = styled(StyledText)<
   Omit<TextProps, "type"> & { $type: TextProps["type"] }

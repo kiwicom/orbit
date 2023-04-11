@@ -29,8 +29,7 @@ PrimaryText.story = {
   name: "Primary text",
 
   parameters: {
-    info:
-      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -44,8 +43,7 @@ SecondaryText.story = {
   name: "Secondary text",
 
   parameters: {
-    info:
-      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -66,8 +64,7 @@ StatusText.story = {
   name: "Status text",
 
   parameters: {
-    info:
-      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -81,8 +78,7 @@ LinkInText.story = {
   name: "Link in text",
 
   parameters: {
-    info:
-      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -100,8 +96,7 @@ WhiteText.story = {
   name: "White text",
 
   parameters: {
-    info:
-      "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "The most basic component for rendering text blocks. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -140,8 +135,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 

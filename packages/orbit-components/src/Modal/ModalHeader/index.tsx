@@ -14,13 +14,11 @@ import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import type { Props } from "./types";
 import type { Type } from "../../Heading/types";
 
-const getModalHeading = (type: Type, token: string) => ({
-  theme,
-}: {
-  theme: typeof defaultTheme;
-}) => {
-  return getHeadingToken(token, type)({ theme });
-};
+const getModalHeading =
+  (type: Type, token: string) =>
+  ({ theme }: { theme: typeof defaultTheme }) => {
+    return getHeadingToken(token, type)({ theme });
+  };
 
 export const ModalHeading = styled.h2`
   ${({ theme }) => css`
@@ -70,18 +68,20 @@ ModalDescription.defaultProps = {
   theme: defaultTheme,
 };
 
-const getModalHeaderPadding = (desktop = false) => ({ theme, suppressed }) => {
-  if (desktop) {
-    if (suppressed) {
-      return theme.orbit.spaceXLarge;
+const getModalHeaderPadding =
+  (desktop = false) =>
+  ({ theme, suppressed }) => {
+    if (desktop) {
+      if (suppressed) {
+        return theme.orbit.spaceXLarge;
+      }
+      return `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceXLarge}`;
     }
-    return `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceXLarge}`;
-  }
-  if (suppressed) {
-    return `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium}`;
-  }
-  return `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`;
-};
+    if (suppressed) {
+      return `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium}`;
+    }
+    return `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`;
+  };
 
 export const StyledModalHeader = styled.div<{
   suppressed?: Props["suppressed"];
@@ -177,9 +177,8 @@ const ModalHeader = ({
   title,
   dataTest,
 }: Props) => {
-  const { setHasModalTitle, hasMobileHeader, isMobileFullPage, titleID } = React.useContext(
-    ModalContext,
-  );
+  const { setHasModalTitle, hasMobileHeader, isMobileFullPage, titleID } =
+    React.useContext(ModalContext);
 
   useModalContextFunctions();
 

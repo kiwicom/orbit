@@ -7,19 +7,21 @@ import defaultTheme from "../defaultTheme";
 import { baseURL, CODES, SIZES, TOKENS } from "./consts";
 import type { Props, Size } from "./types";
 
-const getSizeToken = (name: string) => ({ theme, size }: { theme: Theme; size: Size }) => {
-  const tokens = {
-    [TOKENS.WIDTH]: {
-      [SIZES.SMALL]: "16px",
-      [SIZES.MEDIUM]: theme.orbit.widthCountryFlag,
-    },
-    [TOKENS.HEIGHT]: {
-      [SIZES.SMALL]: "9px",
-      [SIZES.MEDIUM]: "13px",
-    },
+const getSizeToken =
+  (name: string) =>
+  ({ theme, size }: { theme: Theme; size: Size }) => {
+    const tokens = {
+      [TOKENS.WIDTH]: {
+        [SIZES.SMALL]: "16px",
+        [SIZES.MEDIUM]: theme.orbit.widthCountryFlag,
+      },
+      [TOKENS.HEIGHT]: {
+        [SIZES.SMALL]: "9px",
+        [SIZES.MEDIUM]: "13px",
+      },
+    };
+    return tokens[name][size];
   };
-  return tokens[name][size];
-};
 
 const StyledCountryFlag = styled.div<{ size: Size }>`
   position: relative;

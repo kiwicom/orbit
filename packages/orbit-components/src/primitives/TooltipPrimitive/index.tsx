@@ -56,12 +56,8 @@ const TooltipPrimitive = ({
   const [shown, setShown] = React.useState(false);
   const [referenceElement, setReferenceElement] = React.useState<HTMLSpanElement | null>(null);
 
-  const [
-    render,
-    setRender,
-    setRenderWithTimeout,
-    clearRenderTimeout,
-  ] = useStateWithTimeout<boolean>(false, 200);
+  const [render, setRender, setRenderWithTimeout, clearRenderTimeout] =
+    useStateWithTimeout<boolean>(false, 200);
 
   const tooltipId = useRandomId();
 

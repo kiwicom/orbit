@@ -71,14 +71,16 @@ const norm = ({ val, key, theme }): string | void => {
   return all[key];
 };
 
-const normalize = (mqObject: MediaQueryObject) => ({ theme }: ThemeProps): string[] | null => {
-  if (!mqObject) return null;
+const normalize =
+  (mqObject: MediaQueryObject) =>
+  ({ theme }: ThemeProps): string[] | null => {
+    if (!mqObject) return null;
 
-  return Object.keys(mqObject).reduce<string[]>((acc, prop) => {
-    const val = mqObject[prop];
-    const accFn = additional => [...acc, ...additional];
-    return accFn([norm({ val, key: prop, theme })]);
-  }, []);
-};
+    return Object.keys(mqObject).reduce<string[]>((acc, prop) => {
+      const val = mqObject[prop];
+      const accFn = additional => [...acc, ...additional];
+      return accFn([norm({ val, key: prop, theme })]);
+    }, []);
+  };
 
 export default normalize;

@@ -25,29 +25,7 @@ export const Default = () => {
         valueDescription="00:00 - 24:00"
         defaultValue={[1, 12]}
         histogramData={[
-          11,
-          25,
-          37,
-          5,
-          21,
-          27,
-          24,
-          33,
-          16,
-          21,
-          22,
-          2,
-          11,
-          25,
-          37,
-          5,
-          21,
-          27,
-          24,
-          33,
-          16,
-          21,
-          22,
+          11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22,
           2,
         ]}
         minValue={1}
@@ -59,8 +37,7 @@ export const Default = () => {
 
 Default.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -81,29 +58,7 @@ export const WithCustomLabel = () => {
         valueDescription="00:00 - 24:00"
         defaultValue={[1, 12]}
         histogramData={[
-          11,
-          25,
-          37,
-          5,
-          21,
-          27,
-          24,
-          33,
-          16,
-          21,
-          22,
-          2,
-          11,
-          25,
-          37,
-          5,
-          21,
-          27,
-          24,
-          33,
-          16,
-          21,
-          22,
+          11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22,
           2,
         ]}
         minValue={1}
@@ -122,29 +77,7 @@ export const OpenedByDefault = () => {
         valueDescription="00:00 - 24:00"
         defaultValue={[1, 12]}
         histogramData={[
-          11,
-          25,
-          37,
-          5,
-          21,
-          27,
-          24,
-          33,
-          16,
-          21,
-          22,
-          2,
-          11,
-          25,
-          37,
-          5,
-          21,
-          27,
-          24,
-          33,
-          16,
-          21,
-          22,
+          11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22,
           2,
         ]}
         minValue={1}
@@ -158,8 +91,7 @@ OpenedByDefault.story = {
   name: "Opened by default",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -187,8 +119,7 @@ WithActions.story = {
   name: "With actions",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -235,8 +166,7 @@ export const MultipleCollapses = () => {
 
 MultipleCollapses.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -258,8 +188,7 @@ export const Uncontrolled = () => {
 
 Uncontrolled.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -293,7 +222,6 @@ Rtl.story = {
   name: "RTL",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };

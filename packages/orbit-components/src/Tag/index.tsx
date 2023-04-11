@@ -23,52 +23,47 @@ const getFontSize = ({ theme, size }: { theme: Theme; size: Props["size"] }): st
   return tokens[size];
 };
 
-const getBackgroundColor = (state: string) => ({
-  type,
-  dateTag,
-}: {
-  type: Type;
-  size: Props["size"];
-  dateTag?: boolean;
-}): string => {
-  const states = {
-    [TYPES.COLORED]: {
-      [STATES.DEFAULT]: resolveColor({
-        selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormal",
-        removable: "paletteBlueLight",
-        normal: "paletteBlueLight",
-      }),
-      [STATES.HOVER]: resolveColor({
-        selected: dateTag ? "paletteInkLightActive" : "paletteBlueNormalHover",
-        removable: "paletteBlueLightHover",
-        normal: "paletteBlueLightHover",
-      }),
-      [STATES.ACTIVE]: resolveColor({
-        selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormalActive",
-        removable: "paletteBlueLightActive",
-        normal: "paletteBlueLightActive",
-      }),
-    },
-    [TYPES.NEUTRAL]: {
-      [STATES.DEFAULT]: resolveColor({
-        selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormal",
-        removable: "paletteCloudNormal",
-        normal: "paletteCloudNormal",
-      }),
-      [STATES.HOVER]: resolveColor({
-        selected: dateTag ? "paletteInkLightActive" : "paletteBlueNormalHover",
-        removable: "paletteCloudNormalHover",
-        normal: "paletteCloudNormalHover",
-      }),
-      [STATES.ACTIVE]: resolveColor({
-        selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormalActive",
-        removable: "paletteCloudNormalActive",
-        normal: "paletteCloudNormalActive",
-      }),
-    },
+const getBackgroundColor =
+  (state: string) =>
+  ({ type, dateTag }: { type: Type; size: Props["size"]; dateTag?: boolean }): string => {
+    const states = {
+      [TYPES.COLORED]: {
+        [STATES.DEFAULT]: resolveColor({
+          selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormal",
+          removable: "paletteBlueLight",
+          normal: "paletteBlueLight",
+        }),
+        [STATES.HOVER]: resolveColor({
+          selected: dateTag ? "paletteInkLightActive" : "paletteBlueNormalHover",
+          removable: "paletteBlueLightHover",
+          normal: "paletteBlueLightHover",
+        }),
+        [STATES.ACTIVE]: resolveColor({
+          selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormalActive",
+          removable: "paletteBlueLightActive",
+          normal: "paletteBlueLightActive",
+        }),
+      },
+      [TYPES.NEUTRAL]: {
+        [STATES.DEFAULT]: resolveColor({
+          selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormal",
+          removable: "paletteCloudNormal",
+          normal: "paletteCloudNormal",
+        }),
+        [STATES.HOVER]: resolveColor({
+          selected: dateTag ? "paletteInkLightActive" : "paletteBlueNormalHover",
+          removable: "paletteCloudNormalHover",
+          normal: "paletteCloudNormalHover",
+        }),
+        [STATES.ACTIVE]: resolveColor({
+          selected: dateTag ? "paletteInkLightHover" : "paletteBlueNormalActive",
+          removable: "paletteCloudNormalActive",
+          normal: "paletteCloudNormalActive",
+        }),
+      },
+    };
+    return states[type][state];
   };
-  return states[type][state];
-};
 
 const CloseContainer = styled.div<{
   actionable?: boolean;
@@ -173,16 +168,15 @@ StyledClose.defaultProps = {
   theme: defaultTheme,
 };
 
-const buttonClickEmulation = (callback?: Common.Callback) => (
-  ev?: React.KeyboardEvent<HTMLDivElement>,
-) => {
-  if (ev && ev.keyCode === KEY_CODE_MAP.SPACE) {
-    ev.preventDefault();
-    if (callback) callback();
-  } else if (ev && ev.keyCode === KEY_CODE_MAP.ENTER) {
-    if (callback) callback();
-  }
-};
+const buttonClickEmulation =
+  (callback?: Common.Callback) => (ev?: React.KeyboardEvent<HTMLDivElement>) => {
+    if (ev && ev.keyCode === KEY_CODE_MAP.SPACE) {
+      ev.preventDefault();
+      if (callback) callback();
+    } else if (ev && ev.keyCode === KEY_CODE_MAP.ENTER) {
+      if (callback) callback();
+    }
+  };
 
 const Tag = React.forwardRef<HTMLDivElement, Props>(
   (

@@ -26,8 +26,7 @@ export const Default = () => {
 
 Default.story = {
   parameters: {
-    info:
-      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -48,8 +47,7 @@ BasicButtons.story = {
   name: "Basic buttons",
 
   parameters: {
-    info:
-      "Basic buttons have three sizes (large, normal and small) and can be either primary or secondary type. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Basic buttons have three sizes (large, normal and small) and can be either primary or secondary type. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -78,8 +76,7 @@ ButtonWithIcons.story = {
   name: "Button with icons",
 
   parameters: {
-    info:
-      "Buttons with icon are great when you need to draw more attention to the action. However, it's essential to not over-use these buttons. If everything tries to grab attention, things usually get messy. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Buttons with icon are great when you need to draw more attention to the action. However, it's essential to not over-use these buttons. If everything tries to grab attention, things usually get messy. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -121,8 +118,7 @@ FullWidthButtons.story = {
   name: "Full width buttons",
 
   parameters: {
-    info:
-      "By default, a full width Button renders with the children centered. However, if icons are used, the content will align to the left by default. In such scenario, the centered prop can be used to center everything.",
+    info: "By default, a full width Button renders with the children centered. However, if icons are used, the content will align to the left by default. In such scenario, the centered prop can be used to center everything.",
   },
 };
 
@@ -156,8 +152,7 @@ SubtleButtons.story = {
   name: "Subtle buttons",
 
   parameters: {
-    info:
-      "We use status buttons exclusively in Alert messages when we need to show supporting action connected to the displayed message. We only use the small size of buttons. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "We use status buttons exclusively in Alert messages when we need to show supporting action connected to the displayed message. We only use the small size of buttons. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -182,8 +177,7 @@ CircledButton.story = {
   name: "Circled button",
 
   parameters: {
-    info:
-      "Button can be also rendered in circled shape, but only when it does have iconLeft and not have children. Use title prop to ensure accessibility.",
+    info: "Button can be also rendered in circled shape, but only when it does have iconLeft and not have children. Use title prop to ensure accessibility.",
   },
 };
 
@@ -203,8 +197,7 @@ DestructiveButtons.story = {
   name: "Destructive buttons",
 
   parameters: {
-    info:
-      "Destructive buttons are a specific version of critical status buttons, paired together with 'Remove' icon. We use them when we need to inform our users about possible dangerous actions (canceling a booking, removing an item, etc.). Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Destructive buttons are a specific version of critical status buttons, paired together with 'Remove' icon. We use them when we need to inform our users about possible dangerous actions (canceling a booking, removing an item, etc.). Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -234,8 +227,7 @@ ButtonAsALink.story = {
   name: "Button as a link",
 
   parameters: {
-    info:
-      "If you need to, you can pass some href to this component and it will automatically render into anchor.",
+    info: "If you need to, you can pass some href to this component and it will automatically render into anchor.",
   },
 };
 

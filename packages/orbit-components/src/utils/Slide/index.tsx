@@ -137,11 +137,10 @@ class Slide extends React.Component<Props, State> {
     }
   };
 
-  transitionFinishedCallback: (transitionFinished: boolean) => () => void = (
-    transitionFinished: boolean,
-  ) => () => {
-    this.setState({ transitionFinished });
-  };
+  transitionFinishedCallback: (transitionFinished: boolean) => () => void =
+    (transitionFinished: boolean) => () => {
+      this.setState({ transitionFinished });
+    };
 
   render() {
     const { children, expanded = false, id, ariaLabelledBy, transitionDuration } = this.props;

@@ -23,8 +23,7 @@ export const Default = () => <ButtonLink href="https://kiwi.com">ButtonLink</But
 
 Default.story = {
   parameters: {
-    info:
-      "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
   },
 };
 
@@ -36,8 +35,7 @@ export const Secondary = () => (
 
 Secondary.story = {
   parameters: {
-    info:
-      "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
   },
 };
 
@@ -49,8 +47,7 @@ export const Critical = () => (
 
 Critical.story = {
   parameters: {
-    info:
-      "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
   },
 };
 
@@ -74,8 +71,7 @@ export const Circled = () => {
 
 Circled.story = {
   parameters: {
-    info:
-      "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
   },
 };
 
@@ -129,8 +125,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
   },
 };
 

@@ -14,53 +14,59 @@ type GetTextLinkTokensType = ({
   $type?: Type;
 }) => ({ theme }: { theme: Theme }) => string | null;
 
-const getColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
-  const tokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
-    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDark,
-    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
-    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
-    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
-    [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite,
+const getColor: GetTextLinkTokensType =
+  ({ $type }) =>
+  ({ theme }) => {
+    const tokens = {
+      [TYPE_OPTIONS.PRIMARY]: theme.orbit.colorTextLinkPrimary,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.colorTextLinkSecondary,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDark,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite,
+    };
+
+    if (!$type) return null;
+
+    return tokens[$type];
   };
 
-  if (!$type) return null;
+const getHoverColor: GetTextLinkTokensType =
+  ({ $type }) =>
+  ({ theme }) => {
+    const tokens = {
+      [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarkHover,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarkHover,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkHover,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
+    };
 
-  return tokens[$type];
-};
+    if (!$type) return null;
 
-const getHoverColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
-  const tokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarkHover,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarkHover,
-    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
-    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
-    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
-    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkHover,
-    [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
+    return tokens[$type];
   };
 
-  if (!$type) return null;
+const getActiveColor: GetTextLinkTokensType =
+  ({ $type }) =>
+  ({ theme }) => {
+    const tokens = {
+      [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarker,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarker,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarker,
+      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarker,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarker,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarker,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
+    };
 
-  return tokens[$type];
-};
+    if (!$type) return null;
 
-const getActiveColor: GetTextLinkTokensType = ({ $type }) => ({ theme }) => {
-  const tokens = {
-    [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarker,
-    [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarker,
-    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarker,
-    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarker,
-    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarker,
-    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarker,
-    [TYPE_OPTIONS.WHITE]: theme.orbit.paletteProductLight,
+    return tokens[$type];
   };
-
-  if (!$type) return null;
-
-  return tokens[$type];
-};
 
 const getSizeToken = ({ theme, size }: { theme: Theme; size: Common.Size }): string => {
   const sizeTokens = {

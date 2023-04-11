@@ -30,8 +30,7 @@ export const Default = () => {
 
 Default.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -44,30 +43,7 @@ export const SliderWithHistogram = () => {
   const histogramData = array(
     "histogramData",
     [
-      11,
-      25,
-      37,
-      5,
-      21,
-      27,
-      24,
-      33,
-      16,
-      21,
-      22,
-      2,
-      11,
-      25,
-      37,
-      5,
-      21,
-      27,
-      24,
-      33,
-      16,
-      21,
-      22,
-      2,
+      11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2,
     ].map(v => v.toString()),
   );
 
@@ -92,8 +68,7 @@ SliderWithHistogram.story = {
   name: "Slider with Histogram",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -119,8 +94,7 @@ export const RangeSlider = () => {
 
 RangeSlider.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -134,30 +108,7 @@ export const RangeSliderWithHistogram = () => {
   const histogramData = array(
     "histogramData",
     [
-      11,
-      25,
-      37,
-      5,
-      21,
-      27,
-      24,
-      33,
-      16,
-      21,
-      22,
-      2,
-      11,
-      25,
-      37,
-      5,
-      21,
-      27,
-      24,
-      33,
-      16,
-      21,
-      22,
-      2,
+      11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2,
       11,
     ].map(v => v.toString()),
   );
@@ -183,8 +134,7 @@ RangeSliderWithHistogram.story = {
   name: "Range Slider with Histogram",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -214,8 +164,7 @@ SliderWithLoadingHistogram.story = {
   name: "Slider with loading Histogram",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -245,8 +194,7 @@ RangeSliderWithLoadingHistogram.story = {
   name: "Range Slider with loading Histogram",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -284,8 +232,7 @@ SliderPlayground.story = {
   name: "Slider playground",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -339,8 +286,7 @@ RangeSliderPlayground.story = {
   name: "Range Slider playground",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -361,8 +307,7 @@ RtlDefaultSlider.story = {
   name: "RTL default Slider",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -379,29 +324,7 @@ export const RtlSliderWithHistogram = () => {
           maxValue={24}
           minValue={1}
           histogramData={[
-            11,
-            25,
-            37,
-            5,
-            21,
-            27,
-            24,
-            33,
-            16,
-            21,
-            22,
-            2,
-            11,
-            25,
-            37,
-            5,
-            21,
-            27,
-            24,
-            33,
-            16,
-            21,
-            22,
+            11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22,
             2,
           ]}
         />
@@ -414,8 +337,7 @@ RtlSliderWithHistogram.story = {
   name: "RTL Slider with Histogram",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -430,29 +352,7 @@ export const RtlRangeSliderWithHistogram = () => {
           histogramDescription="20 of 133 flights"
           defaultValue={[1, 24]}
           histogramData={[
-            11,
-            25,
-            37,
-            5,
-            21,
-            27,
-            24,
-            33,
-            16,
-            21,
-            22,
-            2,
-            11,
-            25,
-            37,
-            5,
-            21,
-            27,
-            24,
-            33,
-            16,
-            21,
-            22,
+            11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22,
             2,
           ]}
           minValue={1}
@@ -467,8 +367,7 @@ RtlRangeSliderWithHistogram.story = {
   name: "RTL Range Slider with Histogram",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -500,7 +399,6 @@ RtlSliderWithLoadingHistogram.story = {
   name: "RTL Slider with loading Histogram",
 
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };

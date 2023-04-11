@@ -17,8 +17,7 @@ export const Default = () => {
 
 Default.story = {
   parameters: {
-    info:
-      "Country flag displays one flag of selected country. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Country flag displays one flag of selected country. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -32,7 +31,6 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "Country flag displays one flag of selected country. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Country flag displays one flag of selected country. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };

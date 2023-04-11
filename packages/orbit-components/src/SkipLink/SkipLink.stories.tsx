@@ -72,8 +72,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "All possible options for SkipLink. SkipLink is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+    info: "All possible options for SkipLink. SkipLink is displayed only when focused. Use Tab or Shift + Tab to focus it.",
   },
 };
 

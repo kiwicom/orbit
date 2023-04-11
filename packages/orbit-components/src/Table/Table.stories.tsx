@@ -53,8 +53,7 @@ export const DefaultTable = () => (
 
 DefaultTable.story = {
   parameters: {
-    info:
-      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -87,8 +86,7 @@ export const CompactTable = () => (
 
 CompactTable.story = {
   parameters: {
-    info:
-      "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -123,8 +121,7 @@ SecondaryType.story = {
   name: "Secondary type",
 
   parameters: {
-    info:
-      "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -159,8 +156,7 @@ WithoutStripes.story = {
   name: "Without stripes",
 
   parameters: {
-    info:
-      "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the compact configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -264,8 +260,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 

@@ -19,8 +19,7 @@ export const Default = () => <Loading />;
 
 Default.story = {
   parameters: {
-    info:
-      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -30,8 +29,7 @@ ButtonLoading.story = {
   name: "Button loading",
 
   parameters: {
-    info:
-      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -55,8 +53,7 @@ CardLoading.story = {
   name: "Card loading",
 
   parameters: {
-    info:
-      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -69,8 +66,7 @@ InlineLoader.story = {
   name: "Inline loader",
 
   parameters: {
-    info:
-      "This configuration of this component is without any height, width or paddings. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This configuration of this component is without any height, width or paddings. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -91,8 +87,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 

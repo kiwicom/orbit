@@ -70,8 +70,7 @@ export const Default = () => {
 
 Default.story = {
   parameters: {
-    info:
-      "Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+    info: "Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
   },
 };
 
@@ -103,7 +102,6 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+    info: "All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
   },
 };

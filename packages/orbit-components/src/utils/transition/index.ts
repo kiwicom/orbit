@@ -14,18 +14,20 @@ type Transition = (
   timingFunction: string,
 ) => ({ theme }: { theme: Theme }) => string | null;
 
-const transition: Transition = (properties, duration, timingFunction) => ({ theme }) => {
-  if (theme.transitions === false) return null;
+const transition: Transition =
+  (properties, duration, timingFunction) =>
+  ({ theme }) => {
+    if (theme.transitions === false) return null;
 
-  const tokens = {
-    [DURATIONS.SLOW]: theme.orbit.durationSlow,
-    [DURATIONS.NORMAL]: theme.orbit.durationNormal,
-    [DURATIONS.FAST]: theme.orbit.durationFast,
+    const tokens = {
+      [DURATIONS.SLOW]: theme.orbit.durationSlow,
+      [DURATIONS.NORMAL]: theme.orbit.durationNormal,
+      [DURATIONS.FAST]: theme.orbit.durationFast,
+    };
+
+    return properties
+      .map(property => `${property} ${tokens[duration] || duration} ${timingFunction}`)
+      .join(",");
   };
-
-  return properties
-    .map(property => `${property} ${tokens[duration] || duration} ${timingFunction}`)
-    .join(",");
-};
 
 export default transition;

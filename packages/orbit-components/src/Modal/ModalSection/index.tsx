@@ -66,12 +66,8 @@ StyledModalSection.defaultProps = {
 };
 
 const ModalSection = ({ children, suppressed, dataTest }: Props) => {
-  const {
-    removeHasModalSection,
-    setHasModalSection,
-    isMobileFullPage,
-    closable,
-  } = React.useContext(ModalContext);
+  const { removeHasModalSection, setHasModalSection, isMobileFullPage, closable } =
+    React.useContext(ModalContext);
 
   useModalContextFunctions();
 

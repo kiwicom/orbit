@@ -35,8 +35,9 @@ const preferSingleDestructure: Rule.RuleModule = {
         if (t.isMemberExpression(node.tag)) {
           if (t.isIdentifier(node.tag.object) && node.tag.object.name === specifier) {
             if (t.isTemplateLiteral(node.quasi)) {
-              const count = node.quasi.expressions.filter(e => t.isArrowFunctionExpression(e))
-                .length;
+              const count = node.quasi.expressions.filter(e =>
+                t.isArrowFunctionExpression(e),
+              ).length;
               if (count > LIMIT) {
                 context.report({
                   // @ts-expect-error TODO

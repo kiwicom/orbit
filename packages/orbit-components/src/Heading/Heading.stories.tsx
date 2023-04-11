@@ -18,8 +18,7 @@ export const Default = () => {
 
 Default.story = {
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -35,8 +34,7 @@ export const TitleDisplay = () => {
 
 TitleDisplay.story = {
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -54,8 +52,7 @@ TitleDisplaySubtitle.story = {
   name: "Title displaySubtitle",
 
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -71,8 +68,7 @@ export const Title1 = () => {
 
 Title1.story = {
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -88,8 +84,7 @@ export const Title2 = () => {
 
 Title2.story = {
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -105,8 +100,7 @@ export const Title3 = () => {
 
 Title3.story = {
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -122,8 +116,7 @@ export const Title4 = () => {
 
 Title4.story = {
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -139,8 +132,7 @@ export const Title5 = () => {
 
 Title5.story = {
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -163,8 +155,7 @@ InvertedHeading.story = {
   name: "Inverted heading",
 
   parameters: {
-    info:
-      "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -225,8 +216,7 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 

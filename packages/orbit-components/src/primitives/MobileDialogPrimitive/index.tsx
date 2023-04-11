@@ -20,12 +20,8 @@ const MobileDialog = ({
   block = false,
   lockScrolling,
 }: Props) => {
-  const [
-    render,
-    setRender,
-    setRenderWithTimeout,
-    clearRenderTimeout,
-  ] = useStateWithTimeout<boolean>(false, 200);
+  const [render, setRender, setRenderWithTimeout, clearRenderTimeout] =
+    useStateWithTimeout<boolean>(false, 200);
   const [shown, setShown, setShownWithTimeout] = useStateWithTimeout<boolean>(false, 200);
   const mobileDialogID = useRandomId();
 

@@ -38,8 +38,7 @@ PrimaryLink.story = {
   name: "Primary link",
 
   parameters: {
-    info:
-      "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -59,8 +58,7 @@ SecondaryLink.story = {
   name: "Secondary link",
 
   parameters: {
-    info:
-      "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -80,8 +78,7 @@ LinkWithLeftIcon.story = {
   name: "Link with left icon",
 
   parameters: {
-    info:
-      "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -101,8 +98,7 @@ LinkWithRightIcon.story = {
   name: "Link with right icon",
 
   parameters: {
-    info:
-      "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
@@ -166,15 +162,13 @@ export const TextLinkInText = () => {
 TextLinkInText.story = {
   name: "TextLink inside paragraph",
   parameters: {
-    info:
-      "It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
 Playground.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
@@ -191,8 +185,7 @@ export const Accessibility = () => {
 
 Accessibility.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 

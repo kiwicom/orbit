@@ -312,21 +312,18 @@ export class PureSlider extends React.PureComponent<SliderProps, State> {
     }
   };
 
-  injectCallbackAndSetState: (
-    callback: SliderCallback,
-    newValue: Value,
-    forced?: boolean,
-  ) => void = (callback: SliderCallback, newValue: Value, forced?: boolean) => {
-    const { value } = this.state;
-    if (newValue != null) {
-      if (this.isNotEqual(newValue, value) || forced) {
-        this.setState({ value: newValue });
-        if (callback) {
-          callback(this.sortArray(newValue));
+  injectCallbackAndSetState: (callback: SliderCallback, newValue: Value, forced?: boolean) => void =
+    (callback: SliderCallback, newValue: Value, forced?: boolean) => {
+      const { value } = this.state;
+      if (newValue != null) {
+        if (this.isNotEqual(newValue, value) || forced) {
+          this.setState({ value: newValue });
+          if (callback) {
+            callback(this.sortArray(newValue));
+          }
         }
       }
-    }
-  };
+    };
 
   handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const newValue = this.calculateValueFromPosition(event.pageX);

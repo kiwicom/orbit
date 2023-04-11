@@ -14,20 +14,22 @@ import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../../utils/mediaQuery";
 import type { Props } from "./types";
 
-const getToken = name => ({ theme, size }) => {
-  const tokens = {
-    [TOKENS.height]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
-    },
-    [TOKENS.heightLine]: {
-      [SIZE_OPTIONS.SMALL]: "16px",
-      [SIZE_OPTIONS.NORMAL]: "24px",
-    },
-  };
+const getToken =
+  name =>
+  ({ theme, size }) => {
+    const tokens = {
+      [TOKENS.height]: {
+        [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
+        [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+      },
+      [TOKENS.heightLine]: {
+        [SIZE_OPTIONS.SMALL]: "16px",
+        [SIZE_OPTIONS.NORMAL]: "24px",
+      },
+    };
 
-  return tokens[name][size];
-};
+    return tokens[name][size];
+  };
 
 const FakeGroup = styled(({ children, className }) => (
   <span className={className}>{children}</span>

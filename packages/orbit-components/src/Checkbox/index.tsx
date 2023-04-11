@@ -16,51 +16,53 @@ interface StyledInputProps extends Props {
   error: boolean;
 }
 
-const getToken = (name: keyof typeof TOKENS) => ({
-  theme,
-  hasError,
-  disabled,
-  checked,
-}: {
-  theme: typeof defaultTheme;
-  hasError?: boolean;
-  disabled?: boolean;
-  checked?: boolean;
-}): string => {
-  const resolveBorderColor = () => {
-    if (disabled) {
-      return theme.orbit.paletteCloudDark;
-    }
-    if (checked) {
-      return theme.orbit.paletteBlueNormal;
-    }
-    if (hasError && !disabled && !checked) {
-      return theme.orbit.borderColorCheckboxRadioError;
-    }
+const getToken =
+  (name: keyof typeof TOKENS) =>
+  ({
+    theme,
+    hasError,
+    disabled,
+    checked,
+  }: {
+    theme: typeof defaultTheme;
+    hasError?: boolean;
+    disabled?: boolean;
+    checked?: boolean;
+  }): string => {
+    const resolveBorderColor = () => {
+      if (disabled) {
+        return theme.orbit.paletteCloudDark;
+      }
+      if (checked) {
+        return theme.orbit.paletteBlueNormal;
+      }
+      if (hasError && !disabled && !checked) {
+        return theme.orbit.borderColorCheckboxRadioError;
+      }
 
-    return theme.orbit.borderColorCheckboxRadio;
+      return theme.orbit.borderColorCheckboxRadio;
+    };
+
+    const getBackground = () => {
+      if (disabled && checked) {
+        return theme.orbit.paletteCloudDark;
+      }
+      if (disabled && !checked) {
+        return theme.orbit.paletteCloudNormal;
+      }
+      return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
+    };
+
+    const tokens = {
+      [TOKENS.background]: getBackground(),
+      [TOKENS.borderColor]: resolveBorderColor(),
+      [TOKENS.iconColor]: disabled
+        ? theme.orbit.paletteCloudDark
+        : theme.orbit.colorIconCheckboxRadio,
+    };
+
+    return tokens[name];
   };
-
-  const getBackground = () => {
-    if (disabled && checked) {
-      return theme.orbit.paletteCloudDark;
-    }
-    if (disabled && !checked) {
-      return theme.orbit.paletteCloudNormal;
-    }
-    return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
-  };
-
-  const tokens = {
-    [TOKENS.background]: getBackground(),
-    [TOKENS.borderColor]: resolveBorderColor(),
-    [TOKENS.iconColor]: disabled
-      ? theme.orbit.paletteCloudDark
-      : theme.orbit.colorIconCheckboxRadio,
-  };
-
-  return tokens[name];
-};
 
 const StyledIconContainer = styled.div<{ checked: boolean; disabled: boolean }>`
   ${({ theme, checked, disabled }) => css`

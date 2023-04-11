@@ -37,7 +37,7 @@ export enum SPACINGS {
 }
 
 const TokenNames = Object.values(SPACINGS);
-type Tokens = typeof TokenNames[number];
+type Tokens = (typeof TokenNames)[number];
 
 export const TOKENS = (theme: Theme): Record<Tokens, string> => ({
   none: "",

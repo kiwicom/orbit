@@ -5,27 +5,31 @@ import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";
 import type { GetSize, FactoryProps } from "./types";
 
-export const getSize: GetSize = size => ({ theme }) => {
-  const tokens = {
-    [ICON_SIZES.SMALL]: theme.orbit.widthIconSmall,
-    [ICON_SIZES.MEDIUM]: theme.orbit.widthIconMedium,
-    [ICON_SIZES.LARGE]: theme.orbit.widthIconLarge,
+export const getSize: GetSize =
+  size =>
+  ({ theme }) => {
+    const tokens = {
+      [ICON_SIZES.SMALL]: theme.orbit.widthIconSmall,
+      [ICON_SIZES.MEDIUM]: theme.orbit.widthIconMedium,
+      [ICON_SIZES.LARGE]: theme.orbit.widthIconLarge,
+    };
+    return tokens[size] || tokens[ICON_SIZES.MEDIUM];
   };
-  return tokens[size] || tokens[ICON_SIZES.MEDIUM];
-};
 
-const getColor = () => ({ theme, color }) => {
-  const tokens = {
-    [ICON_COLORS.PRIMARY]: theme.orbit.colorIconPrimary,
-    [ICON_COLORS.SECONDARY]: theme.orbit.colorIconSecondary,
-    [ICON_COLORS.TERTIARY]: theme.orbit.colorIconTertiary,
-    [ICON_COLORS.INFO]: theme.orbit.colorIconInfo,
-    [ICON_COLORS.SUCCESS]: theme.orbit.colorIconSuccess,
-    [ICON_COLORS.WARNING]: theme.orbit.colorIconWarning,
-    [ICON_COLORS.CRITICAL]: theme.orbit.colorIconCritical,
+const getColor =
+  () =>
+  ({ theme, color }) => {
+    const tokens = {
+      [ICON_COLORS.PRIMARY]: theme.orbit.colorIconPrimary,
+      [ICON_COLORS.SECONDARY]: theme.orbit.colorIconSecondary,
+      [ICON_COLORS.TERTIARY]: theme.orbit.colorIconTertiary,
+      [ICON_COLORS.INFO]: theme.orbit.colorIconInfo,
+      [ICON_COLORS.SUCCESS]: theme.orbit.colorIconSuccess,
+      [ICON_COLORS.WARNING]: theme.orbit.colorIconWarning,
+      [ICON_COLORS.CRITICAL]: theme.orbit.colorIconCritical,
+    };
+    return tokens[color];
   };
-  return tokens[color];
-};
 
 const reverse = ({ reverseOnRtl, theme }) =>
   reverseOnRtl &&

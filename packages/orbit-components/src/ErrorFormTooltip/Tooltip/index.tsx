@@ -178,38 +178,38 @@ const ErrorFormTooltip = ({
     return [0, 3];
   }, [inlineLabel, inputSize]);
 
-  const { styles, attributes: attrs, update } = usePopper(
-    referenceElement?.current,
-    tooltipRef.current,
-    {
-      placement: rtl ? "top-end" : "top-start",
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            // @ts-expect-error TODO
-            offset: resolveOffset,
-          },
+  const {
+    styles,
+    attributes: attrs,
+    update,
+  } = usePopper(referenceElement?.current, tooltipRef.current, {
+    placement: rtl ? "top-end" : "top-start",
+    modifiers: [
+      {
+        name: "offset",
+        options: {
+          // @ts-expect-error TODO
+          offset: resolveOffset,
         },
-        {
-          name: "flip",
-          enabled: false,
+      },
+      {
+        name: "flip",
+        enabled: false,
+      },
+      {
+        name: "arrow",
+        options: {
+          element: arrowRef,
         },
-        {
-          name: "arrow",
-          options: {
-            element: arrowRef,
-          },
+      },
+      {
+        name: "eventListeners",
+        options: {
+          scroll: false,
         },
-        {
-          name: "eventListeners",
-          options: {
-            scroll: false,
-          },
-        },
-      ],
-    },
-  );
+      },
+    ],
+  });
 
   const { popper } = styles;
 

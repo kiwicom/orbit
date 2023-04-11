@@ -658,12 +658,10 @@ export const AdvancedHelpExample = () => {
   };
 
   const helpMessages = {
-    name:
-      "Use the full name of the account holder. It’s either you or the person receiving the funds",
+    name: "Use the full name of the account holder. It’s either you or the person receiving the funds",
     iban: "Use the international format of your account number, e.g. IBAN if you're from the EU",
     swift: "This is the code of your bank. You can search for it online or check with your bank",
-    bank:
-      "If your bank doesn’t accept international transfers, we’ll need the code of their correspondent bank. Otherwise, you can leave this blank.",
+    bank: "If your bank doesn’t accept international transfers, we’ll need the code of their correspondent bank. Otherwise, you can leave this blank.",
   };
 
   const [values, setValues] = React.useState(defaultValues);

@@ -9,7 +9,12 @@ import BreadcrumbsItem from "../BreadcrumbsItem";
 // jsdom doesn't support @media queries, so for <Hide> the computed value of
 // "display" is "none", which @testing-library/react (impressively) detects as
 // inaccessible, so we're replacing <Hide> with a dummy component
-jest.mock("../../Hide", () => ({ children }) => children);
+jest.mock(
+  "../../Hide",
+  () =>
+    ({ children }) =>
+      children,
+);
 
 describe("#Breadcrumbs", () => {
   const dataTest = "test";

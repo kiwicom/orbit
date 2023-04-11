@@ -136,7 +136,6 @@
     "@types/testing-library__jest-dom": "^5.14.5",
     "@types/webpack": "^5.28.0",
     "@vitejs/plugin-react": "^2.2.0",
-    "axios": "^0.27.2",
     "babel-loader": "^8.2.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^2.0.7",

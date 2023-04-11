@@ -17,27 +17,29 @@ import Check from "../../icons/CheckCircle";
 import useTheme from "../../hooks/useTheme";
 import type { Props } from "./types";
 
-const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemeProps) => {
-  const border = {
-    [STATUS.WARNING]: theme.orbit.paletteOrangeNormal,
-    [STATUS.CRITICAL]: theme.orbit.paletteRedNormal,
-    [STATUS.INFO]: theme.orbit.paletteBlueNormal,
-    [STATUS.SUCCESS]: theme.orbit.paletteGreenNormal,
-    [STATUS.NEUTRAL]: theme.orbit.paletteInkDark,
+const resolveColor =
+  (status: Status, isHeader?: boolean) =>
+  ({ theme }: ThemeProps) => {
+    const border = {
+      [STATUS.WARNING]: theme.orbit.paletteOrangeNormal,
+      [STATUS.CRITICAL]: theme.orbit.paletteRedNormal,
+      [STATUS.INFO]: theme.orbit.paletteBlueNormal,
+      [STATUS.SUCCESS]: theme.orbit.paletteGreenNormal,
+      [STATUS.NEUTRAL]: theme.orbit.paletteInkDark,
+    };
+
+    const header = {
+      [STATUS.WARNING]: theme.orbit.paletteOrangeLight,
+      [STATUS.INFO]: theme.orbit.paletteBlueLight,
+      [STATUS.CRITICAL]: theme.orbit.paletteRedLight,
+      [STATUS.SUCCESS]: theme.orbit.paletteGreenLight,
+      [STATUS.NEUTRAL]: theme.orbit.paletteCloudNormal,
+    };
+
+    if (isHeader) return header[status];
+
+    return border[status];
   };
-
-  const header = {
-    [STATUS.WARNING]: theme.orbit.paletteOrangeLight,
-    [STATUS.INFO]: theme.orbit.paletteBlueLight,
-    [STATUS.CRITICAL]: theme.orbit.paletteRedLight,
-    [STATUS.SUCCESS]: theme.orbit.paletteGreenLight,
-    [STATUS.NEUTRAL]: theme.orbit.paletteCloudNormal,
-  };
-
-  if (isHeader) return header[status];
-
-  return border[status];
-};
 
 const StyledWrapper = styled.div<{
   $type: Status;

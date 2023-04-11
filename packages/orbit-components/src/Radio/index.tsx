@@ -10,37 +10,41 @@ import media from "../utils/mediaQuery";
 import { defaultFocus } from "../utils/common";
 import type { Props } from "./types";
 
-const getBorderColor = () => ({
-  theme,
-  hasError,
-  disabled,
-  checked,
-}: {
-  theme: typeof defaultTheme;
-  hasError?: boolean;
-  disabled?: boolean;
-  checked?: boolean;
-}) => {
-  if (disabled) return theme.orbit.paletteCloudNormal;
-  if (checked) return theme.orbit.paletteBlueNormal;
-  if (hasError && !disabled && !checked) return theme.orbit.borderColorCheckboxRadioError;
+const getBorderColor =
+  () =>
+  ({
+    theme,
+    hasError,
+    disabled,
+    checked,
+  }: {
+    theme: typeof defaultTheme;
+    hasError?: boolean;
+    disabled?: boolean;
+    checked?: boolean;
+  }) => {
+    if (disabled) return theme.orbit.paletteCloudNormal;
+    if (checked) return theme.orbit.paletteBlueNormal;
+    if (hasError && !disabled && !checked) return theme.orbit.borderColorCheckboxRadioError;
 
-  return theme.orbit.borderColorCheckboxRadio;
-};
+    return theme.orbit.borderColorCheckboxRadio;
+  };
 
-const getBackground = () => ({
-  theme,
-  disabled,
-  checked,
-}: {
-  theme: typeof defaultTheme;
-  disabled?: boolean;
-  checked?: boolean;
-}) => {
-  if (disabled) return theme.orbit.paletteCloudNormal;
+const getBackground =
+  () =>
+  ({
+    theme,
+    disabled,
+    checked,
+  }: {
+    theme: typeof defaultTheme;
+    disabled?: boolean;
+    checked?: boolean;
+  }) => {
+    if (disabled) return theme.orbit.paletteCloudNormal;
 
-  return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
-};
+    return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
+  };
 
 const Glyph = styled.span<{ disabled?: boolean }>`
   ${({ theme, disabled }) => css`

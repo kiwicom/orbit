@@ -1,4 +1,3 @@
-// eslint-disable-next-line prettier/prettier
 export enum NAME_OPTIONS {
   AIRHELP = "AirHelp",
   AIRHELPPLUS = "AirHelpPlus",

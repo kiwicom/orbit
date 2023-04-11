@@ -3,6 +3,7 @@ const orbits = require("@kiwicom/orbit-components");
 const icons = require("@kiwicom/orbit-components/icons");
 const fs = require("fs");
 const path = require("path");
+// eslint-disable-next-line import/no-extraneous-dependencies
 const prettier = require("prettier");
 
 const fileContent = `// @flow

@@ -30,7 +30,7 @@ export const GROUPS = [
   "Utility",
   "Visuals",
 ] as const;
-export type Group = typeof GROUPS[number];
+export type Group = (typeof GROUPS)[number];
 
 export interface ComponentStatus {
   component: string;
@@ -43,9 +43,9 @@ export interface ComponentStatus {
 }
 
 export const PLATFORMS = ["figma", "react", "ios", "android", "docs"] as const;
-export type Platform = typeof PLATFORMS[number];
+export type Platform = (typeof PLATFORMS)[number];
 
-export const STATUS_COLOR: Record<Status, keyof typeof defaultTheme["orbit"]> = {
+export const STATUS_COLOR: Record<Status, keyof (typeof defaultTheme)["orbit"]> = {
   Released: "paletteGreenNormal",
   Designing: "paletteOrangeNormal",
   Developing: "paletteOrangeNormal",

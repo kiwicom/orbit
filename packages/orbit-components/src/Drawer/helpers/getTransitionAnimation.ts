@@ -7,16 +7,16 @@ import type { Theme } from "../../defaultTheme";
 
 const computedWidth = (width: string, isPrefixed: boolean) => `${isPrefixed ? "-" : ""}${width}`;
 
-const transitionCss = ({ width, shown }: { width: string; shown?: boolean }) => (
-  isPrefixed: boolean,
-) => {
-  return css`
-    transform: translate3d(${shown ? "0, 0, 0" : `${computedWidth("100%", isPrefixed)} , 0, 0`});
-    ${mq.largeMobile(css`
-      transform: translate3d(${shown ? "0, 0, 0" : `${computedWidth(width, isPrefixed)} , 0, 0`});
-    `)};
-  `;
-};
+const transitionCss =
+  ({ width, shown }: { width: string; shown?: boolean }) =>
+  (isPrefixed: boolean) => {
+    return css`
+      transform: translate3d(${shown ? "0, 0, 0" : `${computedWidth("100%", isPrefixed)} , 0, 0`});
+      ${mq.largeMobile(css`
+        transform: translate3d(${shown ? "0, 0, 0" : `${computedWidth(width, isPrefixed)} , 0, 0`});
+      `)};
+    `;
+  };
 
 const getTransitionAnimation = ({
   width,

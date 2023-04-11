@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-type UseIntersect = (
-  intersect?: IntersectionObserverInit,
-) => {
+type UseIntersect = (intersect?: IntersectionObserverInit) => {
   ref: (el: Element | null) => void;
   entry: IntersectionObserverEntry | null;
   observer: IntersectionObserver | null;

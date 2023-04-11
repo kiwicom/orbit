@@ -57,13 +57,8 @@ const SegmentedSwitch = ({
 }: Props) => {
   const hasTooltip = Boolean(error || help);
 
-  const {
-    tooltipShown,
-    tooltipShownHover,
-    setTooltipShown,
-    setTooltipShownHover,
-    labelRef,
-  } = useErrorTooltip({ onFocus, hasTooltip });
+  const { tooltipShown, tooltipShownHover, setTooltipShown, setTooltipShownHover, labelRef } =
+    useErrorTooltip({ onFocus, hasTooltip });
 
   React.useEffect(() => {
     if (hasTooltip) {

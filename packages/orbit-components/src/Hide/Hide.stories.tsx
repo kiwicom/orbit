@@ -22,8 +22,7 @@ export const WithSeparator = () => {
 
 WithSeparator.story = {
   parameters: {
-    info:
-      "Configuration with Separator, for separator to work correctly block property has to be set.",
+    info: "Configuration with Separator, for separator to work correctly block property has to be set.",
   },
 };
 
@@ -54,7 +53,6 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: {
-    info:
-      "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };

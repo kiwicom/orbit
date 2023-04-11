@@ -42,12 +42,8 @@ const Popover = ({
     parseFloat(theme.orbit.durationFast) * 1000,
   );
 
-  const [
-    render,
-    setRender,
-    setRenderWithTimeout,
-    clearRenderTimeout,
-  ] = useStateWithTimeout<boolean>(false, parseFloat(theme.orbit.durationFast) * 1000);
+  const [render, setRender, setRenderWithTimeout, clearRenderTimeout] =
+    useStateWithTimeout<boolean>(false, parseFloat(theme.orbit.durationFast) * 1000);
 
   const resolveCallback = React.useCallback(
     state => {

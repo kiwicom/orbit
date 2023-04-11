@@ -15,28 +15,24 @@ import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
-const getToken = (name: string) => ({
-  theme,
-  size,
-}: {
-  theme: typeof defaultTheme;
-  size?: Props["size"];
-}): string | null => {
-  const tokens = {
-    [TOKENS.height]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
-    },
-    [TOKENS.heightLine]: {
-      [SIZE_OPTIONS.SMALL]: "16px",
-      [SIZE_OPTIONS.NORMAL]: "24px",
-    },
+const getToken =
+  (name: string) =>
+  ({ theme, size }: { theme: typeof defaultTheme; size?: Props["size"] }): string | null => {
+    const tokens = {
+      [TOKENS.height]: {
+        [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
+        [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+      },
+      [TOKENS.heightLine]: {
+        [SIZE_OPTIONS.SMALL]: "16px",
+        [SIZE_OPTIONS.NORMAL]: "24px",
+      },
+    };
+
+    if (!size) return null;
+
+    return tokens[name][size];
   };
-
-  if (!size) return null;
-
-  return tokens[name][size];
-};
 
 const FakeGroup = styled.span<{
   error?: Props["error"];
@@ -223,31 +219,31 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
       isFilled();
     }, [isFilled, label]);
 
-    const handleFocus = callBack => (
-      ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
-    ) => {
-      setActive(true);
-      setTooltipShown(true);
-      if (onFocus) onFocus(ev);
-      if (callBack) callBack(ev);
-    };
+    const handleFocus =
+      callBack =>
+      (ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        setActive(true);
+        setTooltipShown(true);
+        if (onFocus) onFocus(ev);
+        if (callBack) callBack(ev);
+      };
 
-    const handleBlur = callBack => (
-      ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
-    ) => {
-      isFilled();
-      setActive(false);
-      if (onBlur) onBlur(ev);
-      if (callBack) callBack(ev);
-    };
+    const handleBlur =
+      callBack =>
+      (ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        isFilled();
+        setActive(false);
+        if (onBlur) onBlur(ev);
+        if (callBack) callBack(ev);
+      };
 
-    const handleChange = callBack => (
-      ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
-    ) => {
-      isFilled();
-      if (onChange) onChange(ev);
-      if (callBack) callBack(ev);
-    };
+    const handleChange =
+      callBack =>
+      (ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        isFilled();
+        if (onChange) onChange(ev);
+        if (callBack) callBack(ev);
+      };
 
     const handleBlurGroup = ev => {
       ev.persist();

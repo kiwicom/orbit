@@ -131,7 +131,11 @@ const TooltipContent = ({
   const [contentHeight, setContentHeight] = React.useState(0);
   const content = React.useRef<HTMLDivElement | null>(null);
 
-  const { styles, attributes: attrs, update } = usePopper(referenceElement, tooltip, {
+  const {
+    styles,
+    attributes: attrs,
+    update,
+  } = usePopper(referenceElement, tooltip, {
     placement,
     modifiers: [
       {

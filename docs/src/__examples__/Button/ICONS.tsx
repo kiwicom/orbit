@@ -15,8 +15,7 @@ export default {
     },
     {
       name: "With both icons",
-      code:
-        "() => <Button iconRight={<Icons.ChevronForward />} iconLeft={<Icons.ChevronBackward />}>Add item</Button>",
+      code: "() => <Button iconRight={<Icons.ChevronForward />} iconLeft={<Icons.ChevronBackward />}>Add item</Button>",
     },
     {
       name: "With only icon",

@@ -53,8 +53,7 @@ WithError.story = {
   name: "With error",
 
   parameters: {
-    info:
-      "Show there is an error with the hasError prop. Only displays when checked and disabled are false.",
+    info: "Show there is an error with the hasError prop. Only displays when checked and disabled are false.",
   },
 };
 

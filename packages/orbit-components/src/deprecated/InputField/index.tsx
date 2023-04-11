@@ -31,32 +31,28 @@ const FormLabel = ({
   </DefaultFormLabel>
 );
 
-const getToken = (name: string) => ({
-  theme,
-  size,
-}: {
-  theme: typeof defaultTheme;
-  size: Props["size"];
-}) => {
-  const tokens = {
-    [TOKENS.heightInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
-    },
-    [TOKENS.fontSizeInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
-    },
-    [TOKENS.iconSize]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
-    },
+const getToken =
+  (name: string) =>
+  ({ theme, size }: { theme: typeof defaultTheme; size: Props["size"] }) => {
+    const tokens = {
+      [TOKENS.heightInput]: {
+        [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
+        [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+      },
+      [TOKENS.fontSizeInput]: {
+        [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
+        [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
+      },
+      [TOKENS.iconSize]: {
+        [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
+        [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
+      },
+    };
+
+    if (!size) return null;
+
+    return tokens[name][size];
   };
-
-  if (!size) return null;
-
-  return tokens[name][size];
-};
 
 const getPadding = ({ theme, size }) => {
   const tokens = {

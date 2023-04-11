@@ -21,32 +21,36 @@ import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitiv
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
-const getToken = (name: string) => ({ theme, size }: { theme: Theme; size: Props["size"] }) => {
-  const tokens = {
-    [TOKENS.heightInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
-    },
-    [TOKENS.fontSizeInput]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
-    },
-    [TOKENS.iconSize]: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
-    },
+const getToken =
+  (name: string) =>
+  ({ theme, size }: { theme: Theme; size: Props["size"] }) => {
+    const tokens = {
+      [TOKENS.heightInput]: {
+        [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
+        [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
+      },
+      [TOKENS.fontSizeInput]: {
+        [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
+        [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
+      },
+      [TOKENS.iconSize]: {
+        [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
+        [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
+      },
+    };
+
+    return tokens[name][size];
   };
 
-  return tokens[name][size];
-};
-
-const getPadding = () => ({ theme, size }) => {
-  const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputNormal,
+const getPadding =
+  () =>
+  ({ theme, size }) => {
+    const tokens = {
+      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall,
+      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputNormal,
+    };
+    return rtlSpacing(tokens[size]);
   };
-  return rtlSpacing(tokens[size]);
-};
 
 const getDOMType = type => {
   if (type === TYPE_OPTIONS.PASSPORTID) {

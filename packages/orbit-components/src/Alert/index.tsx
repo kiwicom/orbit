@@ -23,74 +23,68 @@ import useTranslate from "../hooks/useTranslate";
 import { StyledHeading } from "../Heading";
 import media from "../utils/mediaQuery";
 
-const getTypeToken = (name: string) => ({
-  theme,
-  type,
-  suppressed,
-}: {
-  theme: Theme;
-  type: Type;
-  suppressed?: boolean;
-}) => {
-  const tokens = {
-    [TOKENS.colorIconAlert]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
-    },
-    [TOKENS.backgroundAlert]: {
-      [TYPE_OPTIONS.INFO]: suppressed
-        ? theme.orbit.paletteCloudLight
-        : theme.orbit.backgroundAlertInfo,
-      [TYPE_OPTIONS.SUCCESS]: suppressed
-        ? theme.orbit.paletteCloudLight
-        : theme.orbit.backgroundAlertSuccess,
-      [TYPE_OPTIONS.WARNING]: suppressed
-        ? theme.orbit.paletteCloudLight
-        : theme.orbit.backgroundAlertWarning,
-      [TYPE_OPTIONS.CRITICAL]: suppressed
-        ? theme.orbit.paletteCloudLight
-        : theme.orbit.backgroundAlertCritical,
-    },
-    // TODO: create token
-    [TOKENS.colorTextLinkAlertHover]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkActive,
-    },
-    // TODO: create token
-    [TOKENS.colorTextLinkAlertFocus]: {
-      [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueDarkHover, 10),
-      [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.paletteGreenDarkHover, 10),
-      [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.paletteOrangeDarkHover, 10),
-      [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedDarkActive, 10),
-    },
-    [TOKENS.colorBorderAlert]: {
-      [TYPE_OPTIONS.INFO]: suppressed
-        ? theme.orbit.paletteCloudNormal
-        : theme.orbit.paletteBlueLightHover,
-      [TYPE_OPTIONS.SUCCESS]: suppressed
-        ? theme.orbit.paletteCloudNormal
-        : theme.orbit.paletteGreenLightHover,
-      [TYPE_OPTIONS.WARNING]: suppressed
-        ? theme.orbit.paletteCloudNormal
-        : theme.orbit.paletteOrangeLightHover,
-      [TYPE_OPTIONS.CRITICAL]: suppressed
-        ? theme.orbit.paletteCloudNormal
-        : theme.orbit.paletteRedLightHover,
-    },
-    [TOKENS.colorAccentBorder]: {
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
-    },
-  };
+const getTypeToken =
+  (name: string) =>
+  ({ theme, type, suppressed }: { theme: Theme; type: Type; suppressed?: boolean }) => {
+    const tokens = {
+      [TOKENS.colorIconAlert]: {
+        [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
+        [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
+        [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
+        [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
+      },
+      [TOKENS.backgroundAlert]: {
+        [TYPE_OPTIONS.INFO]: suppressed
+          ? theme.orbit.paletteCloudLight
+          : theme.orbit.backgroundAlertInfo,
+        [TYPE_OPTIONS.SUCCESS]: suppressed
+          ? theme.orbit.paletteCloudLight
+          : theme.orbit.backgroundAlertSuccess,
+        [TYPE_OPTIONS.WARNING]: suppressed
+          ? theme.orbit.paletteCloudLight
+          : theme.orbit.backgroundAlertWarning,
+        [TYPE_OPTIONS.CRITICAL]: suppressed
+          ? theme.orbit.paletteCloudLight
+          : theme.orbit.backgroundAlertCritical,
+      },
+      // TODO: create token
+      [TOKENS.colorTextLinkAlertHover]: {
+        [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
+        [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
+        [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
+        [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkActive,
+      },
+      // TODO: create token
+      [TOKENS.colorTextLinkAlertFocus]: {
+        [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueDarkHover, 10),
+        [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.paletteGreenDarkHover, 10),
+        [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.paletteOrangeDarkHover, 10),
+        [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedDarkActive, 10),
+      },
+      [TOKENS.colorBorderAlert]: {
+        [TYPE_OPTIONS.INFO]: suppressed
+          ? theme.orbit.paletteCloudNormal
+          : theme.orbit.paletteBlueLightHover,
+        [TYPE_OPTIONS.SUCCESS]: suppressed
+          ? theme.orbit.paletteCloudNormal
+          : theme.orbit.paletteGreenLightHover,
+        [TYPE_OPTIONS.WARNING]: suppressed
+          ? theme.orbit.paletteCloudNormal
+          : theme.orbit.paletteOrangeLightHover,
+        [TYPE_OPTIONS.CRITICAL]: suppressed
+          ? theme.orbit.paletteCloudNormal
+          : theme.orbit.paletteRedLightHover,
+      },
+      [TOKENS.colorAccentBorder]: {
+        [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
+        [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
+        [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
+        [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
+      },
+    };
 
-  return tokens[name][type];
-};
+    return tokens[name][type];
+  };
 
 const StyledIcon = ({ icon, type }: Pick<Props, "icon" | "type">) => {
   // Icon should be boolean and TRUE

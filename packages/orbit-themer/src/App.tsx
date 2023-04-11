@@ -46,16 +46,15 @@ const App = () => {
     setColors(DEFAULT_COLORS);
   }, []);
 
+  const value = React.useMemo(
+    () => ({ colors, setColor, resetColors }),
+    [colors, setColor, resetColors],
+  );
+
   return (
     <StyledApp>
       <GlobalStyle />
-      <ColorContext.Provider
-        value={{
-          colors,
-          setColor,
-          resetColors,
-        }}
-      >
+      <ColorContext.Provider value={value}>
         <>
           <OrbitProvider
             theme={{

@@ -227,10 +227,11 @@ module.exports = {
       extends: ["plugin:mdx/recommended"],
       rules: {
         "react/jsx-filename-extension": ["error", { extensions: [".mdx"] }],
-        "mdx/no-unescaped-entities": "off",
-        "react/no-unescaped-entities": "off",
-        "react/self-closing-comp": "off",
-        "remark-lint-maximum-heading-length": "off",
+        "mdx/no-unescaped-entities": "OFF",
+        "react/function-component-definition": "OFF",
+        "react/no-unescaped-entities": "OFF",
+        "react/self-closing-comp": "OFF",
+        "remark-lint-maximum-heading-length": "OFF",
         "mdx/remark": "error",
         "import/extensions": [
           "error",

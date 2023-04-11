@@ -86,6 +86,7 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
             // for now a plain <div> is all we need, but we're reserving this space in the API
             // in case we'll need something more in the future
             Container: "div",
+            // eslint-disable-next-line react/no-unstable-nested-components
             Item: ({ children: itemChildren }) => {
               return !filter ? (
                 // @ts-expect-error TODO

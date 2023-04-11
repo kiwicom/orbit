@@ -1,7 +1,7 @@
 export type RgbaToHex = (rgba: string) => string;
 
 const convertRgbaToHex: RgbaToHex = (rgba: string) => {
-  const rgbaRegex = new RegExp("rgba?\\((\\d+), (\\d+), (\\d+),? ?(.*)?\\)");
+  const rgbaRegex = /rgba?\\((\\d+), (\\d+), (\\d+),? ?(.*)?\\)/;
   const [_, r, g, b, a] = rgba.match(rgbaRegex) ?? [];
 
   const red = parseInt(r, 10).toString(16).padStart(2, "0");

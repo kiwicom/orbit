@@ -55,10 +55,10 @@ interface TableOfContentsTreeItem extends TableOfContentsItem {
   items: TableOfContentsTreeItem[];
 }
 
-const getTocContent = (tree: TableOfContentsTreeItem[], level = 0, activeScrollSpy: string) => {
+const getTocContent = (tree: TableOfContentsTreeItem[], activeScrollSpy: string, level = 0) => {
   const nextLevel = level + 1;
   return tree.map(item => {
-    const nestedContent = getTocContent(item.items, nextLevel, activeScrollSpy);
+    const nestedContent = getTocContent(item.items, activeScrollSpy, nextLevel);
     return (
       <StyledTocListItem key={item.id} level={level} active={activeScrollSpy === item.slug}>
         <StyledAnchor level={level} href={`#${item.slug}`} active={activeScrollSpy === item.slug}>
@@ -94,7 +94,7 @@ const TableOfContents = () => {
       return result;
     }, []);
 
-  const tocContent = getTocContent(tree, 0, activeScrollSpy);
+  const tocContent = getTocContent(tree, activeScrollSpy, 0);
 
   React.useEffect(() => {
     return () => {

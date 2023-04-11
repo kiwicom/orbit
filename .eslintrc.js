@@ -77,6 +77,11 @@ module.exports = {
       files: ["*.js?(x)", "*.js?(x).flow"],
       parser: "@babel/eslint-parser",
       extends: ["plugin:flowtype/recommended", "prettier"],
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: "module",
+        requireConfigFile: false,
+      },
       rules: {
         "flowtype/require-exact-type": "error",
         "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint

@@ -133,9 +133,12 @@ module.exports = {
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/no-empty-function": "off",
+        "no-restricted-exports": "off",
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": "error",
         "@babel/no-unused-expressions": "off",
+        "react/function-component-definition": "off",
+        "react/no-unknown-property": ["error", { ignore: ["css"] }],
         "@typescript-eslint/no-unused-expressions": "error",
         "no-use-before-define": "off", // disable conflicting rule
         "@typescript-eslint/no-use-before-define": "error",
@@ -313,6 +316,7 @@ module.exports = {
       files: ["*.stories.*", "**/__examples__/**", "*.test.*"],
       rules: {
         "orbit-components/unique-id": "off",
+        "react/no-unstable-nested-components": "off",
       },
     },
     {
@@ -335,6 +339,7 @@ module.exports = {
       files: "docs/plugins/**",
       rules: {
         "import/no-extraneous-dependencies": ["error", { packageDir: `${__dirname}/docs` }],
+        "import/no-relative-packages": "off",
       },
     },
   ],

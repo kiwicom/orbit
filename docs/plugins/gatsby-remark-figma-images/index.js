@@ -68,6 +68,7 @@ module.exports = (props, pluginOptions) => {
   };
 
   const wait = delay => {
+    // eslint-disable-next-line no-promise-executor-return
     return new Promise(resolve => setTimeout(resolve, delay));
   };
 

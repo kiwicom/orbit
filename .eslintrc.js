@@ -153,6 +153,7 @@ module.exports = {
           },
         ],
         "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
+        "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
         "import/named": "off",
         "import/namespace": "off",
         "import/no-unresolved": "error",
@@ -226,8 +227,10 @@ module.exports = {
       extends: ["plugin:mdx/recommended"],
       rules: {
         "react/jsx-filename-extension": ["error", { extensions: [".mdx"] }],
-        "mdx/no-unescaped-entities": "OFF",
-        "react/no-unescaped-entities": "OFF",
+        "mdx/no-unescaped-entities": "off",
+        "react/no-unescaped-entities": "off",
+        "react/self-closing-comp": "off",
+        "remark-lint-maximum-heading-length": "off",
         "mdx/remark": "error",
         "import/extensions": [
           "error",

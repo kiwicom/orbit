@@ -42,10 +42,8 @@ const rtlUtils: Rule.RuleModule = {
                         // if it's literal value of which matches patterns
                         // @ts-expect-error babel-types
                         if (t.isLiteral(consequent) && consequent.value) {
-                          const regexWithProp = new RegExp(
-                            /left|right|margin-left|margin-right|padding-left|padding-right/g,
-                          );
-
+                          const regexWithProp =
+                            /left|right|margin-left|margin-right|padding-left|padding-right/g;
                           // @ts-expect-error babel-types
                           if (consequent.value.match(regexWithProp)) {
                             context.report({

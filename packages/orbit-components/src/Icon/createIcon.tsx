@@ -4,7 +4,6 @@ import whiteListProps from "./helpers/whiteListProps";
 
 import OrbitIcon from ".";
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const createIcon = (def: React.ReactNode, viewBox: string, displayName: string) => {
   const icon = props => (
     <OrbitIcon viewBox={viewBox} {...whiteListProps(props)}>

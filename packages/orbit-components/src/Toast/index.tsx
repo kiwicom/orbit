@@ -10,7 +10,7 @@ const createToast: createToastType = (content, options) => {
   toast(content, options);
 };
 
-const createToastPromise: createToastPromiseType = (content, options) =>
-  toast.promise(content, options);
+const createToastPromise: createToastPromiseType = (content, messages, options?) =>
+  toast.promise(content, messages, options);
 
 export { ToastRoot, createToast, createToastPromise };

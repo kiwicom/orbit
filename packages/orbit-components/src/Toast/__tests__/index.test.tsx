@@ -34,7 +34,6 @@ describe("Toast", () => {
       <Toast
         id="1"
         icon={<Airplane dataTest="airplane" />}
-        onUpdateHeight={() => {}}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         ariaLive="polite"

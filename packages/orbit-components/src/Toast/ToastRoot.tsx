@@ -38,9 +38,7 @@ const ToastRoot = ({
     duration: dismissTimeout,
   });
 
-  const { startPause, endPause, calculateOffset, updateHeight } = handlers;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleUpdateHeight = React.useCallback(updateHeight, []);
+  const { startPause, endPause, calculateOffset } = handlers;
 
   return (
     <StyledWrapper
@@ -66,7 +64,6 @@ const ToastRoot = ({
             visible={visible}
             icon={icon}
             offset={offset}
-            onUpdateHeight={handleUpdateHeight}
             onMouseEnter={startPause}
             onMouseLeave={endPause}
             placement={placement}

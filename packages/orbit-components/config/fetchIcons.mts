@@ -176,6 +176,7 @@ const fetchOrbitIcons = async () => {
     for (const chunk of chunks) {
       const params = new URLSearchParams([
         ["ids", decodeURIComponent(chunk.join(","))],
+        ["scale", "1.2"],
         ["format", "svg"],
       ]);
 

@@ -29,12 +29,4 @@ export type Props = {|
   histogramLoadingText?: Translation,
 |};
 
-export type State = {|
-  value: Value,
-  handleIndex: ?number,
-  focused: boolean,
-|};
-
 declare export default React.ComponentType<Props>;
-
-declare export var PureSlider: React.ComponentType<Props>;

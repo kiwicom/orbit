@@ -96,9 +96,9 @@ StyledHandle.defaultProps = {
 
 interface Props {
   tabIndex: string | number;
-  onMouseDown: React.MouseEventHandler<HTMLDivElement>;
-  onFocus: React.FocusEventHandler<HTMLDivElement>;
-  onTouchStart: React.TouchEventHandler<HTMLDivElement>;
+  onMouseDown: (event: MouseEvent) => void;
+  onFocus: (event: FocusEvent) => void;
+  onTouchStart: (event: TouchEvent) => void;
   valueMax: number;
   valueMin: number;
   onTop: boolean;

@@ -5,7 +5,7 @@ interface Context {
   calculatedWidth: number;
 }
 
-export const ItineraryContext = React.createContext({
+export const ItineraryContext = React.createContext<Context>({
   setWidths: () => {},
   calculatedWidth: 0,
 });
@@ -22,17 +22,15 @@ export const ItineraryProvider = ({
     setCalculatedWidth(Math.max(...widths));
   }, [widths]);
 
-  return (
-    <ItineraryContext.Provider
-      value={{
-        calculatedWidth,
-        // @ts-expect-error FIXME
-        setWidths,
-      }}
-    >
-      {children}
-    </ItineraryContext.Provider>
+  const value = React.useMemo(
+    () => ({
+      setWidths,
+      calculatedWidth,
+    }),
+    [calculatedWidth],
   );
+
+  return <ItineraryContext.Provider value={value}>{children}</ItineraryContext.Provider>;
 };
 
 export const useWidth = (): Context => React.useContext(ItineraryContext);

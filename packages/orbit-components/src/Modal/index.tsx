@@ -405,7 +405,7 @@ const Modal = React.forwardRef<Instance, Props>(
       setFullyScrolled(contentHeight + OFFSET - body.scrollTop <= window.innerHeight);
     };
 
-    const manageFocus = () => {
+    const manageFocus = React.useCallback(() => {
       if (!focusTriggered || !modalContent.current) return;
 
       const focusableElements = modalContent.current.querySelectorAll<HTMLElement>(
@@ -416,7 +416,7 @@ const Modal = React.forwardRef<Instance, Props>(
         setFirstFocusableEl(focusableElements[0]);
         setLastFocusableEl(focusableElements[focusableElements.length - 1]);
       }
-    };
+    }, [focusTriggered]);
 
     const keyboardHandler = (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (event.keyCode !== KEY_CODE_MAP.TAB) return;
@@ -533,11 +533,11 @@ const Modal = React.forwardRef<Instance, Props>(
       setClickedModalBody(true);
     };
 
-    const callContextFunctions = () => {
+    const callContextFunctions = React.useCallback(() => {
       setDimensions();
       decideFixedFooter();
       manageFocus();
-    };
+    }, [manageFocus]);
 
     const getScrollPosition = () => {
       if (scrollingElement.current) {
@@ -601,6 +601,30 @@ const Modal = React.forwardRef<Instance, Props>(
 
     const hasCloseContainer = mobileHeader && (hasModalTitle || (onClose && hasCloseButton));
 
+    const value = React.useMemo(
+      () => ({
+        setHasModalTitle,
+        setHasModalSection: () => setHasModalSection(true),
+        removeHasModalSection: () => setHasModalSection(false),
+        callContextFunctions,
+        setFooterHeight,
+        hasModalSection,
+        hasMobileHeader: mobileHeader,
+        isMobileFullPage,
+        closable: Boolean(onClose),
+        isInsideModal: true,
+        titleID: modalTitleID,
+      }),
+      [
+        callContextFunctions,
+        hasModalSection,
+        isMobileFullPage,
+        mobileHeader,
+        onClose,
+        modalTitleID,
+      ],
+    );
+
     return (
       <ModalBody
         tabIndex={0}
@@ -655,23 +679,7 @@ const Modal = React.forwardRef<Instance, Props>(
                 )}
               </CloseContainer>
             )}
-            <ModalContext.Provider
-              value={{
-                setHasModalTitle,
-                setHasModalSection: () => setHasModalSection(true),
-                removeHasModalSection: () => setHasModalSection(false),
-                callContextFunctions,
-                setFooterHeight,
-                hasModalSection,
-                hasMobileHeader: mobileHeader,
-                isMobileFullPage,
-                closable: Boolean(onClose),
-                isInsideModal: true,
-                titleID: modalTitleID,
-              }}
-            >
-              {children}
-            </ModalContext.Provider>
+            <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
           </ModalWrapperContent>
         </ModalWrapper>
       </ModalBody>

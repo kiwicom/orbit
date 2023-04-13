@@ -56,6 +56,15 @@ module.exports = {
       },
     },
     {
+      files: ["src/**/*.test.ts?(x)"],
+      rules: {
+        "import/no-extraneous-dependencies": [
+          "error",
+          { packageDir: [__dirname, path.resolve(__dirname, "../../")] },
+        ],
+      },
+    },
+    {
       files: "config/**",
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",

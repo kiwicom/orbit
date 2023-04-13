@@ -5,7 +5,7 @@ Orbit aims to bring order and consistency to all of our products and processes. 
 
 ## Installation
 
-`orbit-components` is served as an [npm package](https://www.npmjs.com/package/@kiwicom/orbit-components).
+`orbit-components` served as an [npm package](https://www.npmjs.com/package/@kiwicom/orbit-components).
 
 Run [npm](https://www.npmjs.com/) to add the package to your project:
 
@@ -59,7 +59,7 @@ yarn add @types/styled-components -D
 
 ## Contributing
 
-We're working on making this project a fully open source.
+We're working on making this project fully open-source.
 We appreciate any contributions you might make.
 
 [Bug reports](https://github.com/kiwicom/orbit/issues/new?template=bug_report.md)

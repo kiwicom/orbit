@@ -38,6 +38,7 @@
     "@babel/types": "^7.21.4"
   },
   "devDependencies": {
-    "pinst": "^2.1.4"
+    "pinst": "^2.1.4",
+    "babel-eslint": "^10.1.0"
   }
 }

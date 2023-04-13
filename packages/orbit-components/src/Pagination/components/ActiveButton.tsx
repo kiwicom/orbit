@@ -41,6 +41,7 @@ const ActiveButton = ({ children, transparent, size }: Props) => {
     <Button
       type="secondary"
       size={size}
+      // eslint-disable-next-line react/no-unstable-nested-components
       asComponent={(props: Props) => <StyledButton {...props} transparent={transparent} />}
     >
       {children}

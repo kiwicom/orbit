@@ -3,8 +3,6 @@ import dedent from "dedent";
 import ora from "ora";
 import { path, argv, fs, globby, chalk, fetch, $ } from "zx";
 
-/* eslint-disable camelcase */
-
 interface User {
   id: string;
   handle: string;
@@ -85,6 +83,7 @@ try {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
 const api = <T extends unknown>(url: string) =>
   fetch(url, {
     headers: { "Content-Type": "application/", "X-FIGMA-TOKEN": process.env.FIGMA_TOKEN || "" },

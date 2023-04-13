@@ -84,11 +84,9 @@ describe("useLockScrolling", () => {
     expect(document.body).toHaveStyle({ overflow: "hidden" });
 
     rerender(
-      <>
-        <LockFoo>
-          <LockBar lock={false} />
-        </LockFoo>
-      </>,
+      <LockFoo>
+        <LockBar lock={false} />
+      </LockFoo>,
     );
     expect(document.body).toHaveStyle({ overflow: "hidden" });
 

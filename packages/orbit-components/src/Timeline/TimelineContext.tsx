@@ -29,13 +29,17 @@ export const TimelineStepContext = React.createContext<StepContext>({
 export const TimelineStatusProvider = ({ children, direction }) => {
   const [types, setTypes] = React.useState({});
 
-  return (
-    <TimelineStatusContext.Provider
-      value={{ types, setTypes, isColumnOnDesktop: direction === "column" }}
-    >
-      {children}
-    </TimelineStatusContext.Provider>
+  const value = React.useMemo(
+    () => ({ types, setTypes, isColumnOnDesktop: direction === "column" }),
+    [types, setTypes, direction],
   );
+
+  return <TimelineStatusContext.Provider value={value}>{children}</TimelineStatusContext.Provider>;
+};
+
+export const TimelineStepProvider = ({ children, index, last }) => {
+  const value = React.useMemo(() => ({ index, last }), [index, last]);
+  return <TimelineStepContext.Provider value={value}>{children}</TimelineStepContext.Provider>;
 };
 
 export const useStep = () => React.useContext(TimelineStepContext);

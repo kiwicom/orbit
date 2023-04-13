@@ -21,10 +21,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.18.9",
-    "@babel/generator": "^7.18.9",
     "@babel/plugin-syntax-jsx": "^7.18.6",
-    "@babel/runtime": "^7.18.2",
     "@babel/standalone": "^7.18.9",
     "@csstools/convert-colors": "^2.0.0",
     "@icons-pack/react-simple-icons": "^4.0.0",
@@ -124,6 +121,14 @@
     "uuid": "^8.3.2",
     "vfile-reporter": "^7.0.5",
     "webpack": "^5.76.0",
-    "zx": "7.0.7"
+    "remark-cli": "^9.0.0",
+    "remark-frontmatter": "^2.0.0",
+    "remark-lint": "^8.0.0",
+    "remark-lint-first-heading-level": "^2.0.1",
+    "remark-mdx": "^1.6.22",
+    "remark-preset-lint-markdown-style-guide": "^4.0.0",
+    "remark-preset-lint-recommended": "^5.0.0",
+    "remark-preset-prettier": "^0.4.0",
+    "remark-validate-links": "^10.0.2"
   }
 }

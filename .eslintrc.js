@@ -74,32 +74,6 @@ module.exports = {
       },
     },
     {
-      files: ["*.js?(x)", "*.js?(x).flow"],
-      parser: "@babel/eslint-parser",
-      extends: ["plugin:flowtype/recommended", "prettier"],
-      parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: "module",
-        requireConfigFile: false,
-      },
-      rules: {
-        "flowtype/require-exact-type": "error",
-        "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint
-      },
-    },
-    {
-      files: ["packages/orbit-components/{src,es,lib}/**/*.js?(x)", "*.js?(x).flow"],
-      rules: {
-        "flowtype/require-valid-file-annotation": ["error", "always"],
-      },
-    },
-    {
-      files: ["packages/orbit-components/src/**/*.ts?(x)"],
-      rules: {
-        "@typescript-eslint/consistent-type-imports": "error",
-      },
-    },
-    {
       files: ["*.ts?(x)", "*.mts", "*.d.ts"],
       extends: [
         // disables core ESLint rules which are handled by TypeScript
@@ -168,7 +142,6 @@ module.exports = {
         "**/[A-Z]*/index.ts?(x)",
         "**/__typetests__/**",
         "**/__testfixtures__/**",
-        // other
         "docs/**",
       ],
       rules: {
@@ -196,6 +169,8 @@ module.exports = {
         "jest/no-if": "error",
         "jest/consistent-test-it": "warn",
         "jest/no-focused-tests": "error",
+        "orbit-components/unique-id": "off",
+        "react/no-unstable-nested-components": "off",
       },
     },
     {
@@ -207,93 +182,14 @@ module.exports = {
       },
     },
     {
-      files: ["packages/orbit-components/src/**/*", "docs/src/**/*", "packages/orbit-themer/**/*"],
+      files: ["packages/orbit-themer/**/*"],
       env: {
         browser: true,
       },
     },
-    {
-      files: "docs/**",
-      rules: {
-        // these make sense for libraries, but not documentation
-        "global-require": "off",
-        camelcase: "off",
-        "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
-      },
-    },
-    {
-      files: "*.mdx",
-      extends: ["plugin:mdx/recommended"],
-      rules: {
-        "react/jsx-filename-extension": ["error", { extensions: [".mdx"] }],
-        "mdx/no-unescaped-entities": "OFF",
-        "react/function-component-definition": "OFF",
-        "react/no-unescaped-entities": "OFF",
-        "react/self-closing-comp": "OFF",
-        "remark-lint-maximum-heading-length": "OFF",
-        "mdx/remark": "error",
-        "import/extensions": [
-          "error",
-          "ignorePackages",
-          {
-            ts: "never",
-            tsx: "never",
-          },
-        ],
-      },
-      settings: {
-        "import/resolver": {
-          node: {
-            extensions: [".ts", ".tsx"],
-          },
-          alias: {
-            map: [["snippets", "./docs/src/snippets"]],
-          },
-        },
-      },
-      globals: {
-        // Ignore components added as shortcodes so they don't get marked as undefined
-        Callout: false,
-        ComponentStatus: false,
-        ComponentStructure: false,
-        Do: false,
-        Dont: false,
-        DoImage: false,
-        DontImage: false,
-        FancyLink: false,
-        FigmaFile: false,
-        FigmaIframe: false,
-        GitHubContributors: false,
-        GuidelineImages: false,
-        Guideline: false,
-        GuidelinesSideBySide: false,
-        ImageContainer: false,
-        InlineToken: false,
-        ReactExample: false,
-        Usage: false,
-        UsageUse: false,
-        Container: false,
-        Grid: false,
-        UsageDontUse: false,
-      },
-    },
     // some ESLint rules fail in certain cases, so we're disabling them
     {
-      files: ["packages/orbit-components/src/utils/**/*"],
-      rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
-      },
-    },
-    {
-      files: ["packages/orbit-components/scripts/*"],
-      rules: {
-        "no-console": "off",
-        "no-restricted-syntax": "off",
-      },
-    },
-    {
-      files: ["packages/orbit-tracking/src/**/*", "packages/orbit-components/config/**/*"],
+      files: "packages/orbit-tracking/src/**/*",
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
@@ -311,19 +207,6 @@ module.exports = {
       },
     },
     {
-      files: "**/__examples__/**/*.*",
-      rules: {
-        "import/no-useless-path-segments": ["error", { noUselessIndex: false }],
-      },
-    },
-    {
-      files: ["*.stories.*", "**/__examples__/**", "*.test.*"],
-      rules: {
-        "orbit-components/unique-id": "off",
-        "react/no-unstable-nested-components": "off",
-      },
-    },
-    {
       files: "**/config/**",
       globals: {
         argv: false,
@@ -337,13 +220,6 @@ module.exports = {
       files: ["**/*.config.js", "**/.remarkrc.js"],
       rules: {
         "global-require": "off",
-      },
-    },
-    {
-      files: "docs/plugins/**",
-      rules: {
-        "import/no-extraneous-dependencies": ["error", { packageDir: `${__dirname}/docs` }],
-        "import/no-relative-packages": "off",
       },
     },
   ],

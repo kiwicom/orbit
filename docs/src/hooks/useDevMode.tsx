@@ -14,19 +14,18 @@ export function DevModeProvider({ children }: { children: React.ReactNode }) {
     if (load("devMode") === "enabled") setEnabled(true);
   }, []);
 
-  return (
-    <DevMode.Provider
-      value={[
-        enabled,
-        newEnabled => {
-          save("devMode", newEnabled ? "enabled" : "disabled");
-          setEnabled(newEnabled);
-        },
-      ]}
-    >
-      {children}
-    </DevMode.Provider>
+  const value = React.useMemo<[boolean, SetEnabled]>(
+    () => [
+      enabled,
+      (newEnabled: boolean) => {
+        save("devMode", newEnabled ? "enabled" : "disabled");
+        setEnabled(newEnabled);
+      },
+    ],
+    [enabled],
   );
+
+  return <DevMode.Provider value={value}>{children}</DevMode.Provider>;
 }
 
 export default function useDevMode(): [Enabled, SetEnabled] {

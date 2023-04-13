@@ -2,8 +2,11 @@
 
 <p>
   {`${props.visual.replace(/^\w/, c => c.toUpperCase())}s`} can create important context for users,
-  but <a href="/foundation/accessibility/">not everyone sees the {props.visual}</a>. So make sure
-  everything necessary is presented in a non-visual form.
+  but{" "}
+  <a href="/foundation/accessibility/" aria-label="accessibility">
+    not everyone sees the {props.visual}
+  </a>
+  . So make sure everything necessary is presented in a non-visual form.
 </p>
 
 <>

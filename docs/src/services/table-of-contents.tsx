@@ -22,10 +22,10 @@ TableOfContentsContext.displayName = "TableOfContentsContext";
 
 export function TableOfContentsProvider({ children }: { children: React.ReactNode }) {
   const [tableOfContents, setTableOfContents] = React.useState<TableOfContentsItem[]>([]);
+  const value = React.useMemo(() => [tableOfContents, setTableOfContents], [tableOfContents]);
   return (
-    <TableOfContentsContext.Provider value={[tableOfContents, setTableOfContents]}>
-      {children}
-    </TableOfContentsContext.Provider>
+    // @ts-expect-error TODO
+    <TableOfContentsContext.Provider value={value}>{children}</TableOfContentsContext.Provider>
   );
 }
 

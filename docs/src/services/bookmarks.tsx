@@ -45,34 +45,45 @@ export const BookmarkProvider = ({ children, page, location }: Props) => {
     if (Object.keys(bookmarks).includes(location.pathname)) setAdded(true);
   }, [setAdded, bookmarks, location.pathname]);
 
-  const removeBookmark = (p: string) => {
-    delete bookmarks[p];
-    setBookmarks({ ...bookmarks });
-    save("bookmarks", JSON.stringify({ ...bookmarks }));
-  };
-
-  const toggleBookmark = ({ title, description }) => {
-    const pg = {
-      [page]: {
-        title: title || location.pathname,
-        description,
-        href: page,
-      },
-    };
-
-    if (!isAdded) {
-      setBookmarks({ ...bookmarks, ...pg });
-      save("bookmarks", JSON.stringify({ ...bookmarks, ...pg }));
-    } else removeBookmark(page);
-  };
-
-  return (
-    <BookmarksContext.Provider
-      value={{ bookmarks, toggleBookmark, isAdded, setAdded, removeBookmark }}
-    >
-      {children}
-    </BookmarksContext.Provider>
+  const removeBookmark = React.useCallback(
+    (p: string) => {
+      delete bookmarks[p];
+      setBookmarks({ ...bookmarks });
+      save("bookmarks", JSON.stringify({ ...bookmarks }));
+    },
+    [bookmarks],
   );
+
+  const toggleBookmark = React.useCallback(
+    ({ title, description }) => {
+      const pg = {
+        [page]: {
+          title: title || location.pathname,
+          description,
+          href: page,
+        },
+      };
+
+      if (!isAdded) {
+        setBookmarks({ ...bookmarks, ...pg });
+        save("bookmarks", JSON.stringify({ ...bookmarks, ...pg }));
+      } else removeBookmark(page);
+    },
+    [bookmarks, isAdded, page, location.pathname, removeBookmark],
+  );
+
+  const value = React.useMemo(
+    () => ({
+      bookmarks,
+      toggleBookmark,
+      removeBookmark,
+      setAdded,
+      isAdded,
+    }),
+    [bookmarks, toggleBookmark, removeBookmark, setAdded, isAdded],
+  );
+
+  return <BookmarksContext.Provider value={value}>{children}</BookmarksContext.Provider>;
 };
 
 export const useBookmarks = () => React.useContext(BookmarksContext);

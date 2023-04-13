@@ -33,12 +33,14 @@ const StyledContainer = styled.div`
   `};
 `;
 
+const Anchor = (props: React.ComponentProps<typeof A>) => <A orbitType="secondary" {...props} />;
+
 export default function Usage({ children }: Props) {
   return (
     <MDXProvider
       components={{
         ...components,
-        a: (props: React.ComponentProps<typeof A>) => <A orbitType="secondary" {...props} />,
+        a: Anchor,
       }}
     >
       <H2>Usage of the component</H2>

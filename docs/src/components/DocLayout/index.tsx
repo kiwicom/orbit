@@ -46,7 +46,7 @@ const StyledInnerWrapper = styled.div`
   width: 100%;
   box-sizing: border-box;
   max-width: ${MAX_CONTENT_WIDTH};
-  ${mq.tablet(css`
+  ${mq.largeDesktop(css`
     padding: 0 2rem;
   `)};
 `;

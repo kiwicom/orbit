@@ -29,7 +29,7 @@ jobs:
           git diff-index --quiet HEAD || git commit -m "chore: update component statuses"
 
       - name: Create PR
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           base: master
           branch: chore/update-icons-and-svgs

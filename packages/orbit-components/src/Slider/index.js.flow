@@ -2,7 +2,8 @@
 import * as React from "react";
 
 import type { Translation, Globals } from "../common/common.js.flow";
-import type { Data } from "./components/Histogram/index.js.flow";
+
+export type Data = number[];
 
 export type Value = number | number[];
 

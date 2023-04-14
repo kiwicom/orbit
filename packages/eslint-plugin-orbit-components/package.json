@@ -35,10 +35,9 @@
     "eslint": ">=8"
   },
   "dependencies": {
-    "@babel/types": "^7.21.4"
+    "@babel/types": "=7.12.10"
   },
   "devDependencies": {
-    "pinst": "^2.1.4",
-    "babel-eslint": "^10.1.0"
+    "pinst": "^2.1.4"
   }
 }

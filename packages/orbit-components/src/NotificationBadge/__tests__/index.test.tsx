@@ -1,5 +1,6 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
+import convertRgbaToHex from "@kiwicom/orbit-design-tokens/src/convertRgbaToHex";
 
 import theme from "../../defaultTheme";
 import NotificationBadge from "..";
@@ -22,7 +23,7 @@ describe("NotificationBadge", () => {
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByText(content)).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toHaveStyle({
-      background: theme.orbit.paletteBlueLight,
+      background: convertRgbaToHex(theme.orbit.paletteBlueLight),
     });
   });
 

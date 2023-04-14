@@ -73,9 +73,9 @@
   },
   "peerDependencies": {
     "@babel/runtime": "^7.21.0",
-    "react": ">=16.14.0",
-    "react-dom": ">=16.12.0",
-    "styled-components": "^4 || ^5"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "styled-components": "^5"
   },
   "dependencies": {
     "@kiwicom/orbit-design-tokens": "^3.2.2",
@@ -85,14 +85,12 @@
     "react-uid": "^2.3.2"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.18.9",
+    "@babel/helper-get-function-arity": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.21.4",
     "@cypress/vite-dev-server": "^4.0.0",
     "@emotion/core": "^11.0.0",
-    "@kiwicom/browserslist-config": "^4.0.0",
     "@nanostores/react": "^0.2.0",
     "@nanostores/router": "^0.3.1",
-    "@size-limit/file": "^8.0.0",
-    "@size-limit/webpack": "^8.0.0",
     "@size-limit/webpack-why": "^8.0.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-backgrounds": "^6.5.9",

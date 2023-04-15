@@ -24,9 +24,3 @@ export interface Props extends Common.Globals {
   readonly histogramLoading?: boolean;
   readonly histogramLoadingText?: Common.Translation;
 }
-
-export interface State {
-  value: Value;
-  handleIndex: number | null;
-  focused: boolean;
-}

@@ -2,7 +2,8 @@
 import * as React from "react";
 
 import type { Translation, Globals } from "../common/common.js.flow";
-import type { Data } from "./components/Histogram/index.js.flow";
+
+export type Data = number[];
 
 export type Value = number | number[];
 
@@ -29,12 +30,4 @@ export type Props = {|
   histogramLoadingText?: Translation,
 |};
 
-export type State = {|
-  value: Value,
-  handleIndex: ?number,
-  focused: boolean,
-|};
-
 declare export default React.ComponentType<Props>;
-
-declare export var PureSlider: React.ComponentType<Props>;

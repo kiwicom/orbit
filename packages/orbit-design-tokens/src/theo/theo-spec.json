@@ -154,7 +154,7 @@
       }
     },
     "colorTextLinkPrimary": {
-      "value": "#007F6D",
+      "value": "#007A69",
       "type": "color",
       "category": "",
       "comment": "",
@@ -235,7 +235,7 @@
       }
     },
     "colorTextAlertWarning": {
-      "value": "#BA5D00",
+      "value": "#AD5700",
       "type": "color",
       "category": "",
       "comment": "",
@@ -883,7 +883,7 @@
       }
     },
     "colorTextButtonPrimarySubtleHover": {
-      "value": "#007F6D",
+      "value": "#007A69",
       "type": "color",
       "category": "",
       "comment": "",
@@ -892,7 +892,7 @@
       }
     },
     "colorTextButtonPrimarySubtleActive": {
-      "value": "#007F6D",
+      "value": "#007A69",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1711,7 +1711,7 @@
       }
     },
     "backgroundButtonPrimarySubtle": {
-      "value": "#ECF8F7",
+      "value": "#E1F4F3",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1738,7 +1738,7 @@
       }
     },
     "backgroundButtonPrimarySubtleFocus": {
-      "value": "#ECF8F7",
+      "value": "#E1F4F3",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1747,7 +1747,7 @@
       }
     },
     "backgroundButtonCriticalSubtle": {
-      "value": "#FCF3F3",
+      "value": "#FAEAEA",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1774,7 +1774,7 @@
       }
     },
     "backgroundButtonCriticalSubtleFocus": {
-      "value": "#FCF3F3",
+      "value": "#FAEAEA",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1801,7 +1801,7 @@
       }
     },
     "backgroundAlertSuccess": {
-      "value": "#F2F8F2",
+      "value": "#EAF5EA",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1810,7 +1810,7 @@
       }
     },
     "backgroundAlertInfo": {
-      "value": "#F1F8FE",
+      "value": "#E8F4FD",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1819,7 +1819,7 @@
       }
     },
     "backgroundAlertWarning": {
-      "value": "#FEF7F1",
+      "value": "#FEF2E6",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1828,7 +1828,7 @@
       }
     },
     "backgroundAlertCritical": {
-      "value": "#FCF3F3",
+      "value": "#FAEAEA",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1846,7 +1846,7 @@
       }
     },
     "backgroundBadgeInfo": {
-      "value": "#F1F8FE",
+      "value": "#E8F4FD",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1855,7 +1855,7 @@
       }
     },
     "backgroundBadgeSuccess": {
-      "value": "#F2F8F2",
+      "value": "#EAF5EA",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1864,7 +1864,7 @@
       }
     },
     "backgroundBadgeWarning": {
-      "value": "#FEF7F1",
+      "value": "#FEF2E6",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1873,7 +1873,7 @@
       }
     },
     "backgroundBadgeCritical": {
-      "value": "#FCF3F3",
+      "value": "#FAEAEA",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3988,7 +3988,7 @@
       }
     },
     "paletteProductLight": {
-      "value": "#ECF8F7",
+      "value": "#E1F4F3",
       "type": "color",
       "category": "",
       "comment": "",
@@ -4042,7 +4042,7 @@
       }
     },
     "paletteProductDark": {
-      "value": "#007F6D",
+      "value": "#007A69",
       "type": "color",
       "category": "",
       "comment": "",
@@ -4267,7 +4267,7 @@
       }
     },
     "paletteOrangeLight": {
-      "value": "#FEF7F1",
+      "value": "#FEF2E6",
       "type": "color",
       "category": "",
       "comment": "",
@@ -4321,7 +4321,7 @@
       }
     },
     "paletteOrangeDark": {
-      "value": "#BA5D00",
+      "value": "#AD5700",
       "type": "color",
       "category": "",
       "comment": "",
@@ -4357,7 +4357,7 @@
       }
     },
     "paletteRedLight": {
-      "value": "#FCF3F3",
+      "value": "#FAEAEA",
       "type": "color",
       "category": "",
       "comment": "",
@@ -4447,7 +4447,7 @@
       }
     },
     "paletteGreenLight": {
-      "value": "#F2F8F2",
+      "value": "#EAF5EA",
       "type": "color",
       "category": "",
       "comment": "",
@@ -4537,7 +4537,7 @@
       }
     },
     "paletteBlueLight": {
-      "value": "#F1F8FE",
+      "value": "#E8F4FD",
       "type": "color",
       "category": "",
       "comment": "",

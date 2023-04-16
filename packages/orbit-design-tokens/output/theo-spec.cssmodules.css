@@ -11,7 +11,7 @@
 @value font-size-form-label: 14px;
 @value palette-cloud-light-hover: rgb(229, 234, 239);
 @value color-text-button-warning-active: rgb(255, 255, 255);
-@value palette-red-light: rgb(252, 243, 243);
+@value palette-red-light: rgb(250, 234, 234);
 @value line-height-heading-title1: 36px;
 @value background-table: rgb(255, 255, 255);
 @value color-alert-icon-info: rgb(1, 114, 203);
@@ -20,7 +20,7 @@
 @value color-text-button-link-critical-active: rgb(157, 21, 21);
 @value z-index-sticky: "100";
 @value border-color-checkbox-radio: rgb(186, 199, 213);
-@value palette-blue-light: rgb(241, 248, 254);
+@value palette-blue-light: rgb(232, 244, 253);
 @value color-text-button-link-critical-hover: rgb(185, 25, 25);
 @value box-shadow-action: 0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 1px 4px 0px rgba(37, 42, 49, 0.12);
 @value palette-ink-dark: rgb(37, 42, 49);
@@ -44,7 +44,7 @@
 @value color-text-button-warning-hover: rgb(255, 255, 255);
 @value palette-cloud-light-active: rgb(214, 222, 230);
 @value line-height-heading-title3: 24px;
-@value palette-product-light: rgb(236, 248, 247);
+@value palette-product-light: rgb(225, 244, 243);
 @value height-button-large: 52px;
 @value background-button-warning-active: rgb(178, 98, 0);
 @value margin-button-icon-large: 12px;
@@ -54,7 +54,7 @@
 @value background-button-google-hover: rgb(229, 234, 239);
 @value box-shadow-raised: 0px 4px 8px 0px rgba(37, 42, 49, 0.16), 0px 8px 24px 0px rgba(37, 42, 49, 0.24);
 @value background-button-link-critical-hover: rgb(248, 226, 226);
-@value background-badge-info: rgb(241, 248, 254);
+@value background-badge-info: rgb(232, 244, 253);
 @value border-color-tag: rgb(186, 199, 213);
 @value background-button-success: rgb(40, 161, 56);
 @value palette-red-normal-active: rgb(157, 21, 21);
@@ -111,7 +111,7 @@
 @value color-text-button-critical-active: rgb(255, 255, 255);
 @value height-icon-small: 16px;
 @value color-text-button-white: rgb(37, 42, 49);
-@value background-badge-warning: rgb(254, 247, 241);
+@value background-badge-warning: rgb(254, 242, 230);
 @value color-info-check-box-radio: rgb(79, 94, 113);
 @value font-weight-table-head: "700";
 @value palette-blue-light-active: rgb(199, 228, 250);
@@ -135,7 +135,7 @@
 @value color-text-button-facebook: rgb(255, 255, 255);
 @value border-width-input-focus: 2px;
 @value color-text-badge-dark: rgb(255, 255, 255);
-@value background-button-primary-subtle-focus: rgb(236, 248, 247);
+@value background-button-primary-subtle-focus: rgb(225, 244, 243);
 @value border-color-input-hover: rgb(62, 78, 99);
 @value background-button-bundle-top-hover: "linear-gradient(to top right, #171718 0%, #51575C  100%)";
 @value padding-tag: 8px;
@@ -169,7 +169,7 @@
 @value padding-alert-with-icon: 12px;
 @value color-text-button-secondary-hover: rgb(24, 27, 32);
 @value color-alert-icon-warning: rgb(223, 123, 0);
-@value palette-product-dark: rgb(0, 127, 109);
+@value palette-product-dark: rgb(0, 122, 105);
 @value padding-button-normal-with-icons: 0 12px;
 @value background-badge-dark: rgb(37, 42, 49);
 @value palette-ink-light: rgb(105, 125, 149);
@@ -197,7 +197,7 @@
 @value text-decoration-text-link-secondary-hover: "none";
 @value color-text-button-google-bordered-active: rgb(11, 12, 15);
 @value color-text-button-critical-bordered: rgb(210, 28, 28);
-@value background-button-critical-subtle: rgb(252, 243, 243);
+@value background-button-critical-subtle: rgb(250, 234, 234);
 @value color-text-input-prefix: rgb(79, 94, 113);
 @value background-badge-bundle-medium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)";
 @value color-text-warning: rgb(223, 123, 0);
@@ -205,7 +205,7 @@
 @value font-size-heading-title2: 22px;
 @value background-button-bundle-basic: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)";
 @value font-weight-bold: "700";
-@value background-button-critical-subtle-focus: rgb(252, 243, 243);
+@value background-button-critical-subtle-focus: rgb(250, 234, 234);
 @value color-text-button-link-primary-active: rgb(0, 102, 87);
 @value background-tag: rgb(245, 247, 249);
 @value background-button-facebook-active: rgb(53, 79, 136);
@@ -219,15 +219,15 @@
 @value color-text-button-white-active: rgb(11, 12, 15);
 @value background-button-primary-subtle-hover: rgb(214, 240, 236);
 @value width-stopover-arrow: 36px;
-@value palette-orange-light: rgb(254, 247, 241);
+@value palette-orange-light: rgb(254, 242, 230);
 @value palette-green-normal-hover: rgb(35, 139, 49);
 @value font-size-heading-title3: 16px;
-@value background-alert-critical: rgb(252, 243, 243);
+@value background-alert-critical: rgb(250, 234, 234);
 @value color-text-button-primary-subtle: rgb(0, 165, 142);
 @value width-modal-normal: 740px;
 @value width-breakpoint-medium-mobile: 414;
 @value color-text-button-facebook-active: rgb(255, 255, 255);
-@value palette-green-light: rgb(242, 248, 242);
+@value palette-green-light: rgb(234, 245, 234);
 @value palette-social-facebook: rgb(59, 89, 152);
 @value margin-badge-icon: 0 4px 0 0;
 @value palette-social-facebook-hover: rgb(56, 84, 144);
@@ -243,10 +243,10 @@
 @value color-placeholder-input-error: rgb(210, 28, 28);
 @value color-icon-input: rgb(186, 199, 213);
 @value background-button-info: rgb(1, 114, 203);
-@value background-alert-warning: rgb(254, 247, 241);
+@value background-alert-warning: rgb(254, 242, 230);
 @value color-icon-tertiary: rgb(186, 199, 213);
 @value background-button-info-hover: rgb(1, 97, 172);
-@value background-badge-success: rgb(242, 248, 242);
+@value background-badge-success: rgb(234, 245, 234);
 @value height-service-logo-medium: 24px;
 @value palette-white-hover: rgb(245, 247, 249);
 @value font-weight-normal: "400";
@@ -256,8 +256,8 @@
 @value palette-green-normal: rgb(40, 161, 56);
 @value line-height-text-normal: 20px;
 @value border-color-button-google-bordered-hover: rgb(24, 27, 32);
-@value background-button-primary-subtle: rgb(236, 248, 247);
-@value color-text-button-primary-subtle-hover: rgb(0, 127, 109);
+@value background-button-primary-subtle: rgb(225, 244, 243);
+@value color-text-button-primary-subtle-hover: rgb(0, 122, 105);
 @value font-size-heading-title5: 12px;
 @value background-button-white-active: rgb(229, 234, 239);
 @value color-text-critical: rgb(210, 28, 28);
@@ -266,7 +266,7 @@
 @value color-text-button-success-bordered-hover: rgb(35, 139, 49);
 @value background-tag-hover: rgb(229, 234, 239);
 @value font-size-heading-display: 40px;
-@value color-text-alert-warning: rgb(186, 93, 0);
+@value color-text-alert-warning: rgb(173, 87, 0);
 @value background-button-bundle-basic-hover: "linear-gradient(to top right, #BD2825 0%, #BD2825 100%)";
 @value text-decoration-text-link-secondary: "underline";
 @value padding-button-small-with-icons: 0 8px;
@@ -329,7 +329,7 @@
 @value line-height-heading-display-subtitle: 28px;
 @value background-button-white-hover: rgb(245, 247, 249);
 @value background-color-tab-bundle-top: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)";
-@value color-text-button-primary-subtle-active: rgb(0, 127, 109);
+@value color-text-button-primary-subtle-active: rgb(0, 122, 105);
 @value border-color-button-critical-bordered: rgb(210, 28, 28);
 @value color-text-button-facebook-bordered: rgb(59, 89, 152);
 @value border-color-button-google-bordered-active: rgb(11, 12, 15);
@@ -342,7 +342,7 @@
 @value color-heading-inverted: rgb(255, 255, 255);
 @value palette-green-light-active: rgb(205, 228, 207);
 @value palette-social-facebook-active: rgb(53, 79, 136);
-@value background-badge-critical: rgb(252, 243, 243);
+@value background-badge-critical: rgb(250, 234, 234);
 @value background-badge-white: rgb(255, 255, 255);
 @value background-country-flag: "transparent";
 @value color-text-button-facebook-hover: rgb(255, 255, 255);
@@ -372,7 +372,7 @@
 @value color-text-button-white-hover: rgb(24, 27, 32);
 @value background-tooltip: rgb(255, 255, 255);
 @value background-tag-selected-hover: rgb(24, 27, 32);
-@value background-alert-success: rgb(242, 248, 242);
+@value background-alert-success: rgb(234, 245, 234);
 @value padding-input-file: 0 0 0 6px;
 @value color-text-button-link-primary-hover: rgb(0, 112, 96);
 @value color-placeholder-input-file: rgb(105, 125, 149);
@@ -414,7 +414,7 @@
 @value padding-button-large: 0 28px;
 @value color-text-button-secondary-active: rgb(11, 12, 15);
 @value color-text-button-link-secondary: rgb(37, 42, 49);
-@value color-text-link-primary: rgb(0, 127, 109);
+@value color-text-link-primary: rgb(0, 122, 105);
 @value color-text-button-white-bordered-active: rgb(255, 255, 255);
 @value color-icon-checkbox-radio-disabled: rgb(186, 199, 213);
 @value font-size-button-large: 16px;
@@ -474,7 +474,7 @@
 @value padding-button-large-with-icons: 0 16px;
 @value width-country-flag: 24px;
 @value palette-red-light-hover: rgb(248, 226, 226);
-@value background-alert-info: rgb(241, 248, 254);
+@value background-alert-info: rgb(232, 244, 253);
 @value palette-blue-normal: rgb(1, 114, 203);
 @value height-badge: 24px;
 @value width-icon-large: 24px;
@@ -515,6 +515,6 @@
 @value background-modal: rgb(255, 255, 255);
 @value color-text-button-secondary-bordered-hover: rgb(24, 27, 32);
 @value palette-red-normal-hover: rgb(185, 25, 25);
-@value palette-orange-dark: rgb(186, 93, 0);
+@value palette-orange-dark: rgb(173, 87, 0);
 @value line-height-text-small: 16px;
 @value margin-button-group: 0 1px 0 0;

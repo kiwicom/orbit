@@ -310,12 +310,8 @@ ChevronLeft -> ChevronBackward
 
 * **tokens:** Visual breaking changes. Icons medium sized now have 20px (24px before),
 size large 24px (32px before)
-* ThemeProvider is now called OrbitProvider.
-Everything else didn't change
+* ThemeProvider is now called OrbitProvider
 
-* docs: create documentation for OrbitProvider
-
-New documentation page for OrbitProvider created.
 
 
 

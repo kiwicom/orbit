@@ -429,6 +429,7 @@
 @value color-text-button-facebook-bordered-active: rgb(53, 79, 136);
 @value palette-red-darker: rgb(118, 9, 9);
 @value color-text-white: rgb(255, 255, 255);
+@value margin-button-icon: 8px;
 @value box-shadow-fixed-reverse: 0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12);
 @value background-button-link-critical: "transparent";
 @value background-table-even: rgb(245, 247, 249);

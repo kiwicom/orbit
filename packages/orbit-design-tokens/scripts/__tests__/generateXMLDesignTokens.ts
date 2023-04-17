@@ -1576,6 +1576,10 @@ describe(generateXMLDesignTokens.name, () => {
           <value>0 12px</value>
         </token>
         <token>
+          <name>marginButtonIcon</name>
+          <value>8px</value>
+        </token>
+        <token>
           <name>marginButtonIconSmall</name>
           <value>8px</value>
         </token>

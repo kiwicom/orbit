@@ -430,6 +430,7 @@
   <color name="COLORTEXTBUTTONFACEBOOKBORDEREDACTIVE" category="">#ff354f88</color>
   <color name="PALETTEREDDARKER" category="">#ff760909</color>
   <color name="COLORTEXTWHITE" category="">#ffffffff</color>
+  <dimen name="MARGINBUTTONICON" category="">8dp</dimen>
   <dimen name="BOXSHADOWFIXEDREVERSE" category="">0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)</dimen>
   <string name="BACKGROUNDBUTTONLINKCRITICAL" category="">transparent</string>
   <color name="BACKGROUNDTABLEEVEN" category="">#fff5f7f9</color>

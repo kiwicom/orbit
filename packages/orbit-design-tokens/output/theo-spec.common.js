@@ -860,6 +860,8 @@ module.exports = {
   /*  */
   colorTextWhite: "rgb(255, 255, 255)",
   /*  */
+  marginButtonIcon: "8px",
+  /*  */
   boxShadowFixedReverse: "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)",
   /*  */
   backgroundButtonLinkCritical: "transparent",

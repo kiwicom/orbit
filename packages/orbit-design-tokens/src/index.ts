@@ -436,6 +436,7 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     paddingTextareaNormal: theme.base.spaceSm,
     paddingInputSmall: `0 ${theme.base.spaceSm}`,
     paddingInputNormal: `0 ${theme.base.spaceSm}`,
+    marginButtonIcon: theme.base.spaceXs,
     marginButtonIconSmall: theme.base.spaceXs,
     marginButtonIconNormal: theme.base.spaceXs,
     marginButtonIconLarge: theme.base.spaceSm,

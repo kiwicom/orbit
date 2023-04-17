@@ -12,8 +12,6 @@ module.exports = {
   /*  */
   borderColorButtonFacebookBorderedActive: "rgb(53, 79, 136)",
   /*  */
-  marginButtonIconNormal: "8px",
-  /*  */
   heightButtonNormal: "44px",
   /*  */
   colorIconWarning: "rgb(223, 123, 0)",
@@ -95,8 +93,6 @@ module.exports = {
   heightButtonLarge: "52px",
   /*  */
   backgroundButtonWarningActive: "rgb(178, 98, 0)",
-  /*  */
-  marginButtonIconLarge: "12px",
   /*  */
   borderColorButtonInfoBordered: "rgb(1, 114, 203)",
   /*  */
@@ -467,8 +463,6 @@ module.exports = {
   paletteGreenLightHover: "rgb(225, 239, 226)",
   /*  */
   heightButtonSmall: "32px",
-  /*  */
-  marginButtonIconSmall: "8px",
   /*  */
   heightServiceLogoSmall: "12px",
   /*  */

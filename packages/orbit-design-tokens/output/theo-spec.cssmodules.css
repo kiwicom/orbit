@@ -5,7 +5,6 @@
 @value background-button-warning-hover: rgb(201, 111, 0);
 @value color-text-button-primary: rgb(255, 255, 255);
 @value border-color-button-facebook-bordered-active: rgb(53, 79, 136);
-@value margin-button-icon-normal: 8px;
 @value height-button-normal: 44px;
 @value color-icon-warning: rgb(223, 123, 0);
 @value font-size-form-label: 14px;
@@ -47,7 +46,6 @@
 @value palette-product-light: rgb(225, 244, 243);
 @value height-button-large: 52px;
 @value background-button-warning-active: rgb(178, 98, 0);
-@value margin-button-icon-large: 12px;
 @value border-color-button-info-bordered: rgb(1, 114, 203);
 @value background-button-primary: rgb(0, 165, 142);
 @value border-color-button-facebook-bordered-hover: rgb(56, 84, 144);
@@ -233,7 +231,6 @@
 @value palette-social-facebook-hover: rgb(56, 84, 144);
 @value palette-green-light-hover: rgb(225, 239, 226);
 @value height-button-small: 32px;
-@value margin-button-icon-small: 8px;
 @value height-service-logo-small: 12px;
 @value padding-input-small: 0 12px;
 @value border-radius-circle: 50%;

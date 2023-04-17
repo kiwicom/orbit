@@ -43,13 +43,6 @@
       "name": "borderColorButtonFacebookBorderedActive"
     },
     {
-      "value": "8px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "name": "marginButtonIconNormal"
-    },
-    {
       "value": "44px",
       "type": "size",
       "category": "",
@@ -335,13 +328,6 @@
       "category": "",
       "comment": "",
       "name": "backgroundButtonWarningActive"
-    },
-    {
-      "value": "12px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "name": "marginButtonIconLarge"
     },
     {
       "value": "rgb(1, 114, 203)",
@@ -1637,13 +1623,6 @@
       "category": "",
       "comment": "",
       "name": "heightButtonSmall"
-    },
-    {
-      "value": "8px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "name": "marginButtonIconSmall"
     },
     {
       "value": "12px",

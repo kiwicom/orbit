@@ -3510,33 +3510,6 @@
         "categoryDescription": ""
       }
     },
-    "marginButtonIconSmall": {
-      "value": "8px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
-    "marginButtonIconNormal": {
-      "value": "8px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
-    "marginButtonIconLarge": {
-      "value": "12px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
     "marginButtonGroup": {
       "value": "0 1px 0 0",
       "type": "size",

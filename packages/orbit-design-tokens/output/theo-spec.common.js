@@ -448,7 +448,7 @@ module.exports = {
   /*  */
   backgroundAlertCritical: "rgb(250, 234, 234)",
   /*  */
-  colorTextButtonPrimarySubtle: "rgb(0, 165, 142)",
+  colorTextButtonPrimarySubtle: "rgb(0, 122, 105)",
   /*  */
   widthModalNormal: "740px",
   /*  */
@@ -476,7 +476,7 @@ module.exports = {
   /*  */
   borderRadiusCircle: "50%",
   /*  */
-  colorTextButtonCriticalSubtle: "rgb(210, 28, 28)",
+  colorTextButtonCriticalSubtle: "rgb(151, 12, 12)",
   /*  */
   paletteWhite: "rgb(255, 255, 255)",
   /*  */
@@ -502,7 +502,7 @@ module.exports = {
   /*  */
   fontWeightNormal: "400",
   /*  */
-  colorTextButtonCriticalSubtleHover: "rgb(151, 12, 12)",
+  colorTextButtonCriticalSubtleHover: "rgb(137, 11, 11)",
   /*  */
   backgroundButtonLinkPrimaryActive: "rgb(191, 232, 226)",
   /*  */
@@ -516,7 +516,7 @@ module.exports = {
   /*  */
   backgroundButtonPrimarySubtle: "rgb(225, 244, 243)",
   /*  */
-  colorTextButtonPrimarySubtleHover: "rgb(0, 122, 105)",
+  colorTextButtonPrimarySubtleHover: "rgb(0, 112, 96)",
   /*  */
   fontSizeHeadingTitle5: "12px",
   /*  */
@@ -660,7 +660,7 @@ module.exports = {
   /*  */
   backgroundColorTabBundleTop: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
   /*  */
-  colorTextButtonPrimarySubtleActive: "rgb(0, 122, 105)",
+  colorTextButtonPrimarySubtleActive: "rgb(0, 102, 87)",
   /*  */
   borderColorButtonCriticalBordered: "rgb(210, 28, 28)",
   /*  */
@@ -696,7 +696,7 @@ module.exports = {
   /*  */
   backgroundButtonWhiteBordered: "transparent",
   /*  */
-  colorTextButtonCriticalSubtleActive: "rgb(151, 12, 12)",
+  colorTextButtonCriticalSubtleActive: "rgb(109, 9, 9)",
   /*  */
   widthModalLarge: "900px",
   /*  */

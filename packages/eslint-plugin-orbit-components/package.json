@@ -36,8 +36,5 @@
   },
   "dependencies": {
     "@babel/types": "=7.12.10"
-  },
-  "devDependencies": {
-    "pinst": "^2.1.4"
   }
 }

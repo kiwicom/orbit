@@ -4,7 +4,8 @@ import type * as React from "react";
 import type {
   ValueOrFunction,
   Renderable,
-  Toast as ToastType,
+  Toast,
+  ToastType,
   DefaultToastOptions,
 } from "react-hot-toast";
 
@@ -28,13 +29,12 @@ export interface Props extends Common.Globals {
   readonly placement?: Placement;
 }
 
-export interface Toast {
+interface ToastProps {
   readonly id: string;
   readonly icon?: Renderable;
   readonly visible?: boolean;
   readonly children: React.ReactNode;
   readonly dismissTimeout?: number;
-  readonly onUpdateHeight: (id: string, height: number) => void;
   readonly onMouseEnter: () => void;
   readonly onMouseLeave: () => void;
   readonly onDismiss: () => void;
@@ -44,15 +44,19 @@ export interface Toast {
 }
 
 export interface Options<T> {
-  readonly icon: Pick<DefaultToastOptions, "icon">;
   readonly loading: Renderable;
   readonly success: ValueOrFunction<Renderable, T>;
   readonly error: ValueOrFunction<Renderable, any>;
 }
 
-export type createToast = (
-  message: ValueOrFunction<Renderable, ToastType>,
-  options?: Pick<DefaultToastOptions, "icon">,
-) => void;
+export type IconType = Pick<DefaultToastOptions, "icon">;
 
-export type createToastPromise = <T>(promise: Promise<T>, options: Options<T>) => Promise<T>;
+export type createToast = (message: ValueOrFunction<Renderable, Toast>, options?: IconType) => void;
+
+export type createToastPromise = <T>(
+  promise: Promise<T>,
+  messages: Options<T>,
+  options?: IconType & Partial<Record<ToastType, IconType>>,
+) => Promise<T>;
+
+export { ToastProps as Toast };

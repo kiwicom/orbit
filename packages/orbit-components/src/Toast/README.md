@@ -6,7 +6,7 @@ The Toast component consists of `ToastRoot` and `createToast`/`createToastPromis
 import { ToastRoot, createToast } from "@kiwicom/orbit-components/lib/Toast";
 ```
 
-It's better to use ToastRoot once at the root of your application with your other context providers and you can use `createToast` from anywhere after
+It's better to use ToastRoot once at the root of your application with your other context providers and you can use `createToast` from anywhere after. The `createToast` function accepts two arguments. The first is required and is the message to be displayed on the toast. The second is an object with an `icon` key that receives the icon to be rendered on the toast.
 
 ```jsx
 import React from "react";
@@ -25,16 +25,23 @@ const App = () => {
 };
 ```
 
-You can also use `createToastPromise` function, notification will be updated automatically, when promise will be resolved or rejected
+You can also use the `createToastPromise` function. The notification toast will be updated automatically, when the promise is resolved or rejected. The function receives two mandatory arguments and one optional. The first is the promise, the second is the message on the different statuses and the third one controls the icon displayed on each status (or all).
 
 ```jsx
 const notify = () =>
-  createPromiseToast(promise, {
-    icon: <Notification />,
-    loading: "...Loading",
-    success: "Got the data",
-    error: "Error when fetching",
-  });
+  createPromiseToast(
+    promise,
+    {
+      loading: "...Loading",
+      success: "Got the data",
+      error: "Error when fetching",
+    },
+    {
+      success: {
+        icon: <Notification />,
+      },
+    },
+  );
 ```
 
 ## Props

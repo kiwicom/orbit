@@ -20,7 +20,6 @@ export type Toast = {|
   +visible?: boolean,
   +children: React.Node,
   +dismissTimeout?: number,
-  +onUpdateHeight: (id: string, height: number) => void,
   +onMouseEnter: () => void,
   +onMouseLeave: () => void,
   +onDismiss: () => void,
@@ -47,11 +46,16 @@ type Options = {|
   error?: string | ((err: any) => string),
 |};
 
-export type createToastType = (
-  message: React.Node,
-  options?: {| icon?: React.Element<any> |},
-) => void;
-export type createToastPromiseType = (promise: Promise<void>, options?: Options) => Promise<void>;
+type IconType = {| icon?: React.Element<any> |};
+type ToastType = "error" | "success" | "loading" | "blank" | "custom";
+
+export type createToastType = (message: React.Node, options?: IconType) => void;
+
+export type createToastPromiseType = (
+  promise: Promise<void>,
+  messages: Options,
+  options?: IconType & $Partial<{ [k: ToastType]: IconType }>,
+) => Promise<void>;
 
 declare export var ToastRoot: React.ComponentType<Props>;
 declare export var createToast: createToastType;

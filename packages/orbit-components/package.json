@@ -81,7 +81,7 @@
   "dependencies": {
     "@kiwicom/orbit-design-tokens": "^3.2.2",
     "@popperjs/core": "^2.9.2",
-    "react-hot-toast": "^2.2.0",
+    "react-hot-toast": "^2.4.0",
     "react-popper": "^2.2.5",
     "react-uid": "^2.3.2"
   },

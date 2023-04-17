@@ -54,13 +54,19 @@ export const WithPromise = () => {
       setTimeout(Math.random() > 0.5 ? res : rej, 3000);
     });
 
-    createToastPromise(promise, {
-      /* @ts-expect-error ignore icon as it currently has no effect */
-      icon: Notification,
-      loading: "...Loading",
-      success: "Freddy Krueger has nightmares about Chuck Norris!",
-      error: "Chuck did not come",
-    });
+    createToastPromise(
+      promise,
+      {
+        loading: "...Loading",
+        success: "Freddy Krueger has nightmares about Chuck Norris!",
+        error: "Chuck did not come",
+      },
+      {
+        success: {
+          icon: <Notification />,
+        },
+      },
+    );
   };
 
   return (

@@ -5,10 +5,9 @@ import mq from "../utils/mediaQuery";
 import Stack from "../Stack";
 import defaultTheme from "../defaultTheme";
 import Text from "../Text";
-import { fadeIn, fadeOut, lightAnimation, getPositionStyle, createRectRef } from "./helpers";
+import { fadeIn, fadeOut, lightAnimation, getPositionStyle } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import useSwipe from "./hooks/useSwipe";
-import mergeRefs from "../utils/mergeRefs";
 import type { Toast as Props } from "./types";
 
 const StyledWrapper = styled(({ className, children, ariaLive }) => (
@@ -79,8 +78,6 @@ StyledInnerWrapper.defaultProps = {
 };
 
 const ToastMessage = ({
-  id,
-  onUpdateHeight,
   onMouseEnter,
   onMouseLeave,
   visible,
@@ -93,12 +90,10 @@ const ToastMessage = ({
   ariaLive,
 }: Props) => {
   const theme = useTheme();
-  const measurerRef = createRectRef(({ height }) => onUpdateHeight(id, height));
-  const innerRef = React.useRef(null);
-  const mergedRef = mergeRefs<HTMLDivElement>([measurerRef, innerRef]);
+  const ref = React.useRef(null);
   const [isPaused, setPaused] = React.useState(false);
   const { swipeOffset, swipeOpacity } = useSwipe(
-    innerRef,
+    ref,
     onDismiss,
     50,
     placement.match(/right|center/) ? "right" : "left",
@@ -115,7 +110,7 @@ const ToastMessage = ({
     >
       <StyledInnerWrapper
         visible={visible}
-        ref={mergedRef}
+        ref={ref}
         isPaused={isPaused}
         duration={dismissTimeout}
         onMouseEnter={() => {

@@ -34,7 +34,7 @@ function createHeadingComponent(
   tag: HeadingTag,
   { type, spaceAfter }: { type: Type } & SpaceAfter,
 ) {
-  const HeadingComponent = ({ noId, children }: { noId?: boolean; children: React.ReactNode }) => {
+  function HeadingComponent({ noId, children }: { noId?: boolean; children: React.ReactNode }) {
     const level = Number(tag.slice(1)) - 2;
     useTableOfContentsRegister({
       title: getTextFromChildren(children),
@@ -48,7 +48,7 @@ function createHeadingComponent(
         </Heading>
       </HeadingWithLink>
     );
-  };
+  }
 
   HeadingComponent.displayName = `TOC(${tag})`;
   return HeadingComponent;
@@ -156,9 +156,9 @@ export const dt = ({ children }: React.HTMLAttributes<HTMLElement>) => (
 
 export const inlineCode = InlineCode;
 
-const LinkForOrbitTextLink = ({ href, ...props }: { href: string }) => (
-  <Link to={href} {...props} />
-);
+function LinkForOrbitTextLink({ href, ...props }: { href: string }) {
+  return <Link to={href} {...props} />;
+}
 
 export const a = function Anchor({
   children,
@@ -182,6 +182,6 @@ export const a = function Anchor({
   );
 };
 
-export const Callout = ({ icon = true, ...props }) => (
-  <Alert icon={icon} spaceAfter="large" {...props} />
-);
+export function Callout({ icon = true, ...props }) {
+  return <Alert icon={icon} spaceAfter="large" {...props} />;
+}

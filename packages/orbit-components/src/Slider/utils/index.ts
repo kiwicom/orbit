@@ -144,7 +144,7 @@ export const calculateValueFromPosition = ({
 }): number | null => {
   const barRect = boundingClientRect(bar);
   if (barRect) {
-    const mousePosition = (rtl ? barRect?.right : pageX) - (rtl ? pageX : barRect?.left);
+    const mousePosition = (rtl ? barRect.right : pageX) - (rtl ? pageX : barRect.left);
     const positionRatio = mousePosition / barRect.width;
     const hasHistogram = histogramLoading || !!histogramData;
     // when range slider

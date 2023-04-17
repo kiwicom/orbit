@@ -24,7 +24,7 @@ module.exports = {
   /*  */
   colorTextButtonWarningActive: "rgb(255, 255, 255)",
   /*  */
-  paletteRedLight: "rgb(252, 243, 243)",
+  paletteRedLight: "rgb(250, 234, 234)",
   /*  */
   lineHeightHeadingTitle1: "36px",
   /*  */
@@ -42,7 +42,7 @@ module.exports = {
   /*  */
   borderColorCheckboxRadio: "rgb(186, 199, 213)",
   /*  */
-  paletteBlueLight: "rgb(241, 248, 254)",
+  paletteBlueLight: "rgb(232, 244, 253)",
   /*  */
   colorTextButtonLinkCriticalHover: "rgb(185, 25, 25)",
   /*  */
@@ -90,7 +90,7 @@ module.exports = {
   /*  */
   lineHeightHeadingTitle3: "24px",
   /*  */
-  paletteProductLight: "rgb(236, 248, 247)",
+  paletteProductLight: "rgb(225, 244, 243)",
   /*  */
   heightButtonLarge: "52px",
   /*  */
@@ -110,7 +110,7 @@ module.exports = {
   /*  */
   backgroundButtonLinkCriticalHover: "rgb(248, 226, 226)",
   /*  */
-  backgroundBadgeInfo: "rgb(241, 248, 254)",
+  backgroundBadgeInfo: "rgb(232, 244, 253)",
   /*  */
   borderColorTag: "rgb(186, 199, 213)",
   /*  */
@@ -224,7 +224,7 @@ module.exports = {
   /*  */
   colorTextButtonWhite: "rgb(37, 42, 49)",
   /*  */
-  backgroundBadgeWarning: "rgb(254, 247, 241)",
+  backgroundBadgeWarning: "rgb(254, 242, 230)",
   /*  */
   colorInfoCheckBoxRadio: "rgb(79, 94, 113)",
   /*  */
@@ -272,7 +272,7 @@ module.exports = {
   /*  */
   colorTextBadgeDark: "rgb(255, 255, 255)",
   /*  */
-  backgroundButtonPrimarySubtleFocus: "rgb(236, 248, 247)",
+  backgroundButtonPrimarySubtleFocus: "rgb(225, 244, 243)",
   /*  */
   borderColorInputHover: "rgb(62, 78, 99)",
   /*  */
@@ -340,7 +340,7 @@ module.exports = {
   /*  */
   colorAlertIconWarning: "rgb(223, 123, 0)",
   /*  */
-  paletteProductDark: "rgb(0, 127, 109)",
+  paletteProductDark: "rgb(0, 122, 105)",
   /*  */
   paddingButtonNormalWithIcons: "0 12px",
   /*  */
@@ -396,7 +396,7 @@ module.exports = {
   /*  */
   colorTextButtonCriticalBordered: "rgb(210, 28, 28)",
   /*  */
-  backgroundButtonCriticalSubtle: "rgb(252, 243, 243)",
+  backgroundButtonCriticalSubtle: "rgb(250, 234, 234)",
   /*  */
   colorTextInputPrefix: "rgb(79, 94, 113)",
   /*  */
@@ -412,7 +412,7 @@ module.exports = {
   /*  */
   fontWeightBold: "700",
   /*  */
-  backgroundButtonCriticalSubtleFocus: "rgb(252, 243, 243)",
+  backgroundButtonCriticalSubtleFocus: "rgb(250, 234, 234)",
   /*  */
   colorTextButtonLinkPrimaryActive: "rgb(0, 102, 87)",
   /*  */
@@ -440,13 +440,13 @@ module.exports = {
   /*  */
   widthStopoverArrow: "36px",
   /*  */
-  paletteOrangeLight: "rgb(254, 247, 241)",
+  paletteOrangeLight: "rgb(254, 242, 230)",
   /*  */
   paletteGreenNormalHover: "rgb(35, 139, 49)",
   /*  */
   fontSizeHeadingTitle3: "16px",
   /*  */
-  backgroundAlertCritical: "rgb(252, 243, 243)",
+  backgroundAlertCritical: "rgb(250, 234, 234)",
   /*  */
   colorTextButtonPrimarySubtle: "rgb(0, 165, 142)",
   /*  */
@@ -456,7 +456,7 @@ module.exports = {
   /*  */
   colorTextButtonFacebookActive: "rgb(255, 255, 255)",
   /*  */
-  paletteGreenLight: "rgb(242, 248, 242)",
+  paletteGreenLight: "rgb(234, 245, 234)",
   /*  */
   paletteSocialFacebook: "rgb(59, 89, 152)",
   /*  */
@@ -488,13 +488,13 @@ module.exports = {
   /*  */
   backgroundButtonInfo: "rgb(1, 114, 203)",
   /*  */
-  backgroundAlertWarning: "rgb(254, 247, 241)",
+  backgroundAlertWarning: "rgb(254, 242, 230)",
   /*  */
   colorIconTertiary: "rgb(186, 199, 213)",
   /*  */
   backgroundButtonInfoHover: "rgb(1, 97, 172)",
   /*  */
-  backgroundBadgeSuccess: "rgb(242, 248, 242)",
+  backgroundBadgeSuccess: "rgb(234, 245, 234)",
   /*  */
   heightServiceLogoMedium: "24px",
   /*  */
@@ -514,9 +514,9 @@ module.exports = {
   /*  */
   borderColorButtonGoogleBorderedHover: "rgb(24, 27, 32)",
   /*  */
-  backgroundButtonPrimarySubtle: "rgb(236, 248, 247)",
+  backgroundButtonPrimarySubtle: "rgb(225, 244, 243)",
   /*  */
-  colorTextButtonPrimarySubtleHover: "rgb(0, 127, 109)",
+  colorTextButtonPrimarySubtleHover: "rgb(0, 122, 105)",
   /*  */
   fontSizeHeadingTitle5: "12px",
   /*  */
@@ -534,7 +534,7 @@ module.exports = {
   /*  */
   fontSizeHeadingDisplay: "40px",
   /*  */
-  colorTextAlertWarning: "rgb(186, 93, 0)",
+  colorTextAlertWarning: "rgb(173, 87, 0)",
   /*  */
   backgroundButtonBundleBasicHover: "linear-gradient(to top right, #BD2825 0%, #BD2825 100%)",
   /*  */
@@ -660,7 +660,7 @@ module.exports = {
   /*  */
   backgroundColorTabBundleTop: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
   /*  */
-  colorTextButtonPrimarySubtleActive: "rgb(0, 127, 109)",
+  colorTextButtonPrimarySubtleActive: "rgb(0, 122, 105)",
   /*  */
   borderColorButtonCriticalBordered: "rgb(210, 28, 28)",
   /*  */
@@ -686,7 +686,7 @@ module.exports = {
   /*  */
   paletteSocialFacebookActive: "rgb(53, 79, 136)",
   /*  */
-  backgroundBadgeCritical: "rgb(252, 243, 243)",
+  backgroundBadgeCritical: "rgb(250, 234, 234)",
   /*  */
   backgroundBadgeWhite: "rgb(255, 255, 255)",
   /*  */
@@ -746,7 +746,7 @@ module.exports = {
   /*  */
   backgroundTagSelectedHover: "rgb(24, 27, 32)",
   /*  */
-  backgroundAlertSuccess: "rgb(242, 248, 242)",
+  backgroundAlertSuccess: "rgb(234, 245, 234)",
   /*  */
   paddingInputFile: "0 0 0 6px",
   /*  */
@@ -830,7 +830,7 @@ module.exports = {
   /*  */
   colorTextButtonLinkSecondary: "rgb(37, 42, 49)",
   /*  */
-  colorTextLinkPrimary: "rgb(0, 127, 109)",
+  colorTextLinkPrimary: "rgb(0, 122, 105)",
   /*  */
   colorTextButtonWhiteBorderedActive: "rgb(255, 255, 255)",
   /*  */
@@ -950,7 +950,7 @@ module.exports = {
   /*  */
   paletteRedLightHover: "rgb(248, 226, 226)",
   /*  */
-  backgroundAlertInfo: "rgb(241, 248, 254)",
+  backgroundAlertInfo: "rgb(232, 244, 253)",
   /*  */
   paletteBlueNormal: "rgb(1, 114, 203)",
   /*  */
@@ -1032,7 +1032,7 @@ module.exports = {
   /*  */
   paletteRedNormalHover: "rgb(185, 25, 25)",
   /*  */
-  paletteOrangeDark: "rgb(186, 93, 0)",
+  paletteOrangeDark: "rgb(173, 87, 0)",
   /*  */
   lineHeightTextSmall: "16px",
   /*  */

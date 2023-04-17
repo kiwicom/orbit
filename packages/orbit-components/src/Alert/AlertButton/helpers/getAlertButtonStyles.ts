@@ -30,6 +30,8 @@ const getAlertButtonStyles = ({
     backgroundActive: wrappedTypeToken(TOKENS.backgroundButtonActive),
     backgroundFocus: null,
     foreground: wrappedTypeToken(TOKENS.colorTextButton),
+    foregroundHover: wrappedTypeToken(TOKENS.colorTextButtonHover),
+    foregroundActive: wrappedTypeToken(TOKENS.colorTextButtonActive),
     ...boxShadow,
   };
 };

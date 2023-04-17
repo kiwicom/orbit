@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.3.1...@kiwicom/orbit-components@6.4.0) (2023-04-17)
+
+
+### Features
+
+* **BadgeListItem:** add size prop ([#3797](https://github.com/kiwicom/orbit/issues/3797)) ([27501b6](https://github.com/kiwicom/orbit/commit/27501b61203f3cfc39e677308feb162ce6891023))
+* **icons:** update icons from figma ([#3799](https://github.com/kiwicom/orbit/issues/3799)) ([d9a6c65](https://github.com/kiwicom/orbit/commit/d9a6c6529e1c01789599aaa4949b5dfc75c7fa54))
+* **icons:** update icons from figma ([#3807](https://github.com/kiwicom/orbit/issues/3807)) ([239e3b3](https://github.com/kiwicom/orbit/commit/239e3b381aa5875710f82e460a6984382d0b82f1))
+
+
+
+
+
 ## [6.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.3.0...@kiwicom/orbit-components@6.3.1) (2023-03-31)
 
 

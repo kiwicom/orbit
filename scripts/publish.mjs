@@ -1,14 +1,13 @@
-import { $, path, fetch } from "zx";
+import { $, fetch, argv } from "zx";
 import dotenv from "dotenv-safe";
 import conventionalChangelog from "conventional-changelog";
 import { getPackages } from "@lerna/project";
-import { obj as transform } from "through2";
-import mergeStreams from "merge-stream";
-import markdownChalk from "markdown-chalk";
 import slackify from "slackify-markdown";
 import { Octokit } from "@octokit/rest";
 
 import { parseSlackMessages } from "./helpers.mjs";
+
+/* eslint-disable no-console */
 
 const TITLE = `New orbit release 🚀`;
 const CHANNEL = `orbit-react`;
@@ -75,7 +74,7 @@ async function postSlackNotification(changelog, names) {
         attachments: [
           {
             title: TITLE,
-            text: slackify(adjustChangelog(changelog)),
+            text: changelog,
             color: COLOR_CORE,
           },
           {
@@ -115,61 +114,57 @@ async function configureGitHubToken() {
   }
 }
 
-async function previewChangelog() {
+async function getChangelogMessage() {
   const packages = await getPackages();
-  const streams = packages
-    .filter(pkg => !/orbit.kiwi|orbit-tracking/gm.test(pkg.name))
-    .map(pkg => {
-      return conventionalChangelog(
-        {
-          lernaPackage: pkg.name,
-          preset: "angular",
-        },
-        {
-          host: "https://github.com",
-          owner: "kiwicom",
-          repository: "orbit",
-          linkCompare: false,
-          version: pkg.version,
-        },
-        {
-          path: path.join("packages", pkg.name.replace("@kiwicom/", "")),
-        },
-      ).pipe(
-        transform((chunk, _, cb) => {
-          const changelog = chunk.toString();
-          if (changelog.trim().includes("\n")) {
-            // eslint-disable-next-line no-console
-            console.log(markdownChalk(changelog));
-            cb(null, changelog);
-          }
-        }),
-      );
-    });
 
   return new Promise((resolve, reject) => {
-    mergeStreams(...streams)
-      .on("data", data => {
-        resolve(data);
-      })
-      .on("error", err => {
-        reject(err);
-      });
+    let changelog = "";
+    const pkg = packages.find(p => p.name === "@kiwicom/orbit-components");
+    const stream = conventionalChangelog(
+      {
+        lernaPackage: pkg.name,
+        preset: "angular",
+      },
+      {
+        host: "https://github.com",
+        title: "@kiwicom/orbit-components",
+        owner: "kiwicom",
+        repository: "orbit",
+        linkCompare: true,
+        version: pkg.version,
+      },
+    );
+
+    stream.on("data", data => {
+      changelog += data.toString();
+    });
+
+    stream.on("end", () => {
+      changelog = slackify(adjustChangelog(changelog));
+      resolve(changelog);
+    });
+
+    stream.on("error", err => {
+      reject(err);
+    });
   });
 }
 
 (async () => {
   try {
     await configureGitHubToken();
+    const changelog = await getChangelogMessage();
 
-    await $`yarn install`;
-    await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
-    await $`yarn docs changelog`;
-
-    const timestamp = await getLatestReleaseTime();
-    const names = await getUserNames(timestamp);
-    const changelog = await previewChangelog();
-    if (changelog) {
+    if (argv.dry) {
+      console.info(changelog);
+      process.exit(0);
+    } else {
+      await $`yarn install`;
+      await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
+      await $`yarn docs changelog`;
+      await $`git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push`;
+      const timestamp = await getLatestReleaseTime();
+      const names = await getUserNames(timestamp);
       await postSlackNotification(changelog, names);
     }
   } catch (err) {

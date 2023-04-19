@@ -459,7 +459,7 @@ export const FullPreview = () => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
   const description = text("Description", "Lorem ispum dolor sit amet");
-  const illustration = select("Illustration", Object.values(NAMES), NAMES[0]);
+  const illustration = select("Illustration", NAMES, NAMES[0]);
   const fixed = boolean("fixedFooter", false);
   const suppressed = boolean("suppressed", false);
   const content = text(

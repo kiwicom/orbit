@@ -20,14 +20,12 @@ export const BadgePrimitive = () => {
   const Icon = getIcon(getIcons("icon", "Airplane"));
   const background = text("Background", "linear-gradient(#fd1d1d, #ffae28)");
   const foregroundColor = text("ForegroundColor", "#fff");
-  const borderColor = text("borderColor", "");
 
   return (
     <BadgePrimitiveComponent
       background={background}
       foregroundColor={foregroundColor}
       icon={Icon && <Icon />}
-      borderColor={borderColor}
     >
       BadgePrimitive
     </BadgePrimitiveComponent>

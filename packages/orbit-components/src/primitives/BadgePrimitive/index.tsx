@@ -11,7 +11,7 @@ export const StyledBadge = styled(({ className, children, dataTest, ariaLabel, i
     {children}
   </div>
 ))`
-  ${({ theme, borderColor, background, foregroundColor }) => css`
+  ${({ theme, background, foregroundColor }) => css`
     position: relative;
     font-family: ${theme.orbit.fontFamily};
     display: inline-flex;
@@ -27,7 +27,6 @@ export const StyledBadge = styled(({ className, children, dataTest, ariaLabel, i
     color: ${foregroundColor};
     border-radius: ${theme.orbit.borderRadiusBadge};
     padding: ${theme.orbit.paddingBadge};
-    border: ${borderColor && `1px solid ${borderColor}`};
     ${StyledCarrierLogo} {
       position: absolute;
       ${left}: 0px;
@@ -80,7 +79,6 @@ const BadgePrimitive = ({
   id,
   background,
   foregroundColor,
-  borderColor,
   carriers,
 }: Props) => {
   return (
@@ -90,7 +88,6 @@ const BadgePrimitive = ({
       id={id}
       dataTest={dataTest}
       ariaLabel={ariaLabel}
-      borderColor={borderColor}
     >
       {carriers && <CarrierLogo carriers={carriers} rounded size="medium" />}
       {icon && <IconContainer hasContent={!!children}>{icon}</IconContainer>}

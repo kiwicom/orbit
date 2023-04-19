@@ -84,7 +84,7 @@ const ColorTab = ({ title, children, colorPath }) => {
         <Heading type="title4">{title}</Heading>
         {isAdjusted && (
           <StyledAdjusted>
-            <Badge type="info" icon={<InformationCircle />}>
+            <Badge type="infoSubtle" icon={<InformationCircle />}>
               Adjusted
             </Badge>
           </StyledAdjusted>

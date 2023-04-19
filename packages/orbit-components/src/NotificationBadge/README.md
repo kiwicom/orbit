@@ -27,13 +27,13 @@ Table below contains all types of the props available in NotificationBadge compo
 
 ### enum
 
-| type                 |
-| :------------------- |
-| `"neutral"`          |
-| `"dark"`             |
-| `"info"`             |
-| `"success"`          |
-| `"warning"`          |
-| `"critical"`         |
-| `"infoInverted"`     |
-| `"criticalInverted"` |
+| type               |
+| :----------------- |
+| `"neutral"`        |
+| `"dark"`           |
+| `"info"`           |
+| `"success"`        |
+| `"warning"`        |
+| `"critical"`       |
+| `"infoSubtle"`     |
+| `"criticalSubtle"` |

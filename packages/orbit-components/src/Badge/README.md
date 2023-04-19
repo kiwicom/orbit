@@ -39,21 +39,21 @@ Table below contains all types of the props available for object in Carrier arra
 
 ### enum
 
-| type                 |
-| :------------------- |
-| `"neutral"`          |
-| `"dark"`             |
-| `"info"`             |
-| `"success"`          |
-| `"warning"`          |
-| `"critical"`         |
-| `"infoInverted"`     |
-| `"criticalInverted"` |
-| `"successInverted"`  |
-| `"warningInverted"`  |
-| `"bundleBasic"`      |
-| `"bundleMedium"`     |
-| `"bundleTop"`        |
+| type               |
+| :----------------- |
+| `"neutral"`        |
+| `"dark"`           |
+| `"info"`           |
+| `"success"`        |
+| `"warning"`        |
+| `"critical"`       |
+| `"infoSubtle"`     |
+| `"criticalSubtle"` |
+| `"successSubtle"`  |
+| `"warningSubtle"`  |
+| `"bundleBasic"`    |
+| `"bundleMedium"`   |
+| `"bundleTop"`      |
 
 ## Functional specs
 

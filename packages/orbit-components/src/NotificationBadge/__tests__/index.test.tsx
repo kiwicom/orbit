@@ -7,7 +7,7 @@ import Sightseeing from "../../icons/Sightseeing";
 
 describe("NotificationBadge", () => {
   const content = "badge";
-  const type = "info";
+  const type = "infoSubtle";
   const dataTest = "test";
   const ariaLabel = content;
 

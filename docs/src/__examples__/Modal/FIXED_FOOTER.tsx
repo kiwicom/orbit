@@ -1,6 +1,7 @@
 import React from "react";
 import { FlightDirect } from "@kiwicom/orbit-components/icons";
 import {
+  Box,
   Button,
   Stack,
   Text,
@@ -132,9 +133,9 @@ export default {
           </Stack>
         </ModalSection>
         <ModalFooter>
-          <Stack justify="end">
+          <Box display="flex" justify="end">
             <Button>Save meals</Button>
-          </Stack>
+          </Box>
         </ModalFooter>
       </Modal>
     );

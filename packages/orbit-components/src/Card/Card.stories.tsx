@@ -6,7 +6,7 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import CarrierLogo from "../CarrierLogo";
 import Stack from "../Stack";
 import Text from "../Text";
-import Button from "../Button";
+import ButtonLink from "../ButtonLink";
 import Badge from "../Badge";
 import Clock from "../icons/Clock";
 import CardSection from "./CardSection";
@@ -50,7 +50,11 @@ export const CardWithActions = () => {
       icon={<Icons.Airplane />}
       title={title}
       description={description}
-      actions={<Button size="small">Button</Button>}
+      actions={
+        <ButtonLink compact size="small">
+          Button
+        </ButtonLink>
+      }
     />
   );
 };
@@ -212,9 +216,9 @@ export const CardWithDefaultExpanded = () => {
         initialExpanded={initialExpanded}
         onExpand={action("onExpand")}
         actions={
-          <Button type="secondary" size="small">
+          <ButtonLink compact type="secondary" size="small">
             Close
-          </Button>
+          </ButtonLink>
         }
         icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}
         onClose={action("onClose")}
@@ -247,15 +251,23 @@ export const CardWithMixedSections = () => {
   const sectionTitle = text("SectionTitle", "Section Title");
   const sectionDescription = text("SectionDescription", "Section Description");
   return (
-    <Card title={title} description={description} actions={<Button size="small">Button</Button>}>
+    <Card
+      title={title}
+      description={description}
+      actions={
+        <ButtonLink compact size="small">
+          Button
+        </ButtonLink>
+      }
+    >
       <CardSection
         expandable
         icon={<Icons.Airplane />}
         title={sectionTitle}
         actions={
-          <Button size="small" type="secondary">
+          <ButtonLink compact size="small" type="secondary">
             Button
-          </Button>
+          </ButtonLink>
         }
         description={sectionDescription}
       >
@@ -315,7 +327,11 @@ export const Rtl = () => (
         expandable
         title="Content with Heading and text"
         initialExpanded
-        actions={<Button size="small">Action</Button>}
+        actions={
+          <ButtonLink compact size="small">
+            Action
+          </ButtonLink>
+        }
       >
         <Text>Text in content</Text>
       </CardSection>

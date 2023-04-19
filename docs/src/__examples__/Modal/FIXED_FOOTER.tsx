@@ -3,6 +3,7 @@ import { FlightDirect } from "@kiwicom/orbit-components/icons";
 import {
   Box,
   Button,
+  ButtonLink,
   Stack,
   Text,
   Illustration,
@@ -40,9 +41,9 @@ export default {
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
               <CardSection
@@ -55,9 +56,9 @@ export default {
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
               <CardSection
@@ -70,9 +71,9 @@ export default {
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
             </Card>
@@ -94,9 +95,9 @@ export default {
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
               <CardSection
@@ -109,9 +110,9 @@ export default {
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
               <CardSection
@@ -124,9 +125,9 @@ export default {
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
             </Card>

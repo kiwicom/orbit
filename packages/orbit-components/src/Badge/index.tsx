@@ -40,29 +40,12 @@ const getTypeToken = ({ name, theme, type }: { name: string; theme: Theme; type:
       [TYPE_OPTIONS.BUNDLE_MEDIUM]: theme.orbit.paletteWhite,
       [TYPE_OPTIONS.BUNDLE_TOP]: theme.orbit.paletteWhite,
     },
-    [TOKENS.border]: {
-      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.paletteCloudNormal,
-      [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLightHover,
-      [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenLightHover,
-      [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLightHover,
-      [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLightHover,
-      [TYPE_OPTIONS.DARK]: null,
-      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteCloudNormal,
-      [TYPE_OPTIONS.INFO_INVERTED]: null,
-      [TYPE_OPTIONS.CRITICAL_INVERTED]: null,
-      [TYPE_OPTIONS.SUCCESS_INVERTED]: null,
-      [TYPE_OPTIONS.WARNING_INVERTED]: null,
-      [TYPE_OPTIONS.BUNDLE_BASIC]: null,
-      [TYPE_OPTIONS.BUNDLE_MEDIUM]: null,
-      [TYPE_OPTIONS.BUNDLE_TOP]: null,
-    },
   };
   return tokens[name][type];
 };
 
 const Badge = ({
   type = TYPE_OPTIONS.NEUTRAL,
-  border = true,
   icon,
   children,
   ariaLabel,
@@ -77,7 +60,6 @@ const Badge = ({
       carriers={carriers}
       background={getTypeToken({ name: TOKENS.background, theme, type })}
       foregroundColor={getTypeToken({ name: TOKENS.color, theme, type })}
-      borderColor={border ? getTypeToken({ name: TOKENS.border, theme, type }) : "transparent"}
       icon={icon}
       id={id}
       ariaLabel={ariaLabel}

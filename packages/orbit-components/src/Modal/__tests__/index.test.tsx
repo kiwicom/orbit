@@ -89,7 +89,7 @@ describe("Modal", () => {
   it("should switch scrolling container based on the breakpoint", () => {
     const modalRef = React.createRef<React.ElementRef<typeof Modal>>();
     const scrollingElement = React.createRef<HTMLElement>() as React.MutableRefObject<HTMLElement>;
-    const scrollingElementRef = node => {
+    const scrollingElementRef = (node: HTMLElement) => {
       scrollingElement.current = node;
     };
     // @ts-expect-error jest

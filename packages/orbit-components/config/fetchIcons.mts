@@ -83,8 +83,8 @@ try {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
-const api = <T extends unknown>(url: string) =>
+// @ts-expect-error MTS doesn't support generics yet for that
+const api = <T>(url: string) =>
   fetch(url, {
     headers: { "Content-Type": "application/", "X-FIGMA-TOKEN": process.env.FIGMA_TOKEN || "" },
   }).then(res => {

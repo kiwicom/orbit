@@ -71,7 +71,7 @@ const getTocContent = (tree: TableOfContentsTreeItem[], activeScrollSpy: string,
 };
 
 const TableOfContents = () => {
-  const [tableOfContents, setTableOfContents] = useTableOfContents();
+  const { tableOfContents, setTableOfContents } = useTableOfContents();
   // Set scroll state
   const [activeScrollSpy, setActiveScrollSpy] = React.useState("");
 

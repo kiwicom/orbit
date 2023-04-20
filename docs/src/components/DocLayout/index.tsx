@@ -87,7 +87,7 @@ export default function DocLayout({
   hasStorybook,
   storybookLink,
 }: Props) {
-  const [tableOfContents] = useTableOfContents();
+  const { tableOfContents } = useTableOfContents();
   const tocHasItems = tableOfContents.length > 0;
 
   return (

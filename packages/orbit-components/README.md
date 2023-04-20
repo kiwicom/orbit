@@ -5,7 +5,7 @@ Orbit aims to bring order and consistency to all of our products and processes. 
 
 ## Installation
 
-`orbit-components` served as an [npm package](https://www.npmjs.com/package/@kiwicom/orbit-components).
+`orbit-components` is an [npm package](https://www.npmjs.com/package/@kiwicom/orbit-components).
 
 Run [npm](https://www.npmjs.com/) to add the package to your project:
 

@@ -120,13 +120,13 @@ const Table = ({
   const handleScroll = () => {
     if (shadows && inner.current && table.current && outer.current) {
       setLeft(inner.current?.scrollLeft >= 5);
-      setRight(inner.current.scrollLeft + outer.current.clientWidth < table.current?.clientWidth);
+      setRight(inner.current.scrollLeft + outer.current.clientWidth < table.current.clientWidth);
     }
   };
 
   const handleResize = React.useCallback(() => {
     if (table.current && outer.current) {
-      const showShadows = table.current?.clientWidth > outer.current?.clientWidth;
+      const showShadows = table.current.clientWidth > outer.current.clientWidth;
       setShadows(showShadows);
       setRight(showShadows);
     }

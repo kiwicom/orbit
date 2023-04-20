@@ -26,6 +26,7 @@ import Checkbox from "../Checkbox";
 import Radio from "../Radio";
 import Tooltip from "../Tooltip";
 import Tile from "../Tile";
+import Box from "../Box";
 
 import Modal, { ModalHeader, ModalSection, ModalFooter } from ".";
 
@@ -508,7 +509,9 @@ export const FullPreview = () => {
               <ButtonLink type="secondary">Button</ButtonLink>
             </Stack>
           )}
-          <Button fullWidth>Continue to Payment</Button>
+          <Box justify="end" display="flex">
+            <Button>Continue to Payment</Button>
+          </Box>
         </ModalFooter>
       </Modal>
     </Container>

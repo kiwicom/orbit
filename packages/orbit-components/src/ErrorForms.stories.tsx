@@ -22,6 +22,7 @@ import TextLink from "./TextLink";
 import Checkbox from "./Checkbox";
 import Radio from "./Radio";
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "./Modal";
+import Box from "./Box";
 
 const objectOptions = [
   { value: 0, label: "Zero-th item" },
@@ -456,7 +457,9 @@ export const withModal = () => {
         <Button iconLeft={<ChevronBackward />} type="secondary">
           Back
         </Button>
-        <Button fullWidth>Proceed to Payment (23.98€)</Button>
+        <Box display="flex" justify="end">
+          <Button>Proceed to Payment (23.98€)</Button>
+        </Box>
       </ModalFooter>
     </Modal>
   );

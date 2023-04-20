@@ -7,6 +7,7 @@ import Text from "../Text";
 import Card, { CardSection } from "../Card";
 import Stack from "../Stack";
 import Modal, { ModalHeader, ModalSection, ModalFooter } from "../Modal";
+import Box from "../Box";
 import Button from "../Button";
 import Illustration from "../Illustration";
 import ChevronBackward from "../icons/ChevronBackward";
@@ -252,7 +253,9 @@ export const WithinModal = () => (
       <Button iconLeft={<ChevronBackward />} type="secondary">
         Back
       </Button>
-      <Button fullWidth>Proceed to Payment (23.98€)</Button>
+      <Box display="flex" justify="end">
+        <Button>Proceed to Payment (23.98€)</Button>
+      </Box>
     </ModalFooter>
   </Modal>
 );

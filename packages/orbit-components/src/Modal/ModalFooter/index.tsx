@@ -16,10 +16,6 @@ const StyledChild = styled.div<{ flex?: Props["flex"] }>`
     flex: ${flex};
     box-sizing: border-box;
     padding: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-
-    ${media.largeMobile(css`
-      flex: none;
-    `)};
   `}
 `;
 

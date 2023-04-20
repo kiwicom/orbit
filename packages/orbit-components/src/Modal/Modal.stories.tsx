@@ -26,6 +26,7 @@ import Checkbox from "../Checkbox";
 import Radio from "../Radio";
 import Tooltip from "../Tooltip";
 import Tile from "../Tile";
+import Box from "../Box";
 
 import Modal, { ModalHeader, ModalSection, ModalFooter } from ".";
 
@@ -459,7 +460,7 @@ export const FullPreview = () => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
   const description = text("Description", "Lorem ispum dolor sit amet");
-  const illustration = select("Illustration", Object.values(NAMES), NAMES[0]);
+  const illustration = select("Illustration", NAMES, NAMES[0]);
   const fixed = boolean("fixedFooter", false);
   const suppressed = boolean("suppressed", false);
   const content = text(
@@ -508,7 +509,9 @@ export const FullPreview = () => {
               <ButtonLink type="secondary">Button</ButtonLink>
             </Stack>
           )}
-          <Button fullWidth>Continue to Payment</Button>
+          <Box justify="end" display="flex">
+            <Button>Continue to Payment</Button>
+          </Box>
         </ModalFooter>
       </Modal>
     </Container>

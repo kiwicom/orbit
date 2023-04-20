@@ -1,4 +1,6 @@
-export const NAMES = [
+import type { Name } from "./types";
+
+export const NAMES: Name[] = [
   "AppKiwi",
   "Accommodation",
   "AirHelp",

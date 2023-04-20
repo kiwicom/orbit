@@ -3,14 +3,12 @@ import { text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import CarrierLogo from "../CarrierLogo";
 import Stack from "../Stack";
 import Text from "../Text";
 import ButtonLink from "../ButtonLink";
 import Badge from "../Badge";
 import Clock from "../icons/Clock";
 import CardSection from "./CardSection";
-import * as Icons from "../icons";
 import { ELEMENT_OPTIONS } from "../Heading/consts";
 
 import Card from ".";
@@ -22,20 +20,13 @@ export default {
 export const Default = () => {
   const title = text("Title", "Card with title");
   const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
-  return <Card icon={<Icons.Airplane />} title={title} titleAs={titleAs} />;
+  return <Card title={title} titleAs={titleAs} />;
 };
 
 export const CardWithDescription = () => {
   const title = text("Title", "Card with title");
   const description = text("Description", "This is description of the card");
-  return (
-    <Card
-      icon={<Icons.Airplane />}
-      onClose={action("onClose")}
-      title={title}
-      description={description}
-    />
-  );
+  return <Card onClose={action("onClose")} title={title} description={description} />;
 };
 
 CardWithDescription.story = {
@@ -47,7 +38,6 @@ export const CardWithActions = () => {
   const description = text("Description", "This is description of the card");
   return (
     <Card
-      icon={<Icons.Airplane />}
       title={title}
       description={description}
       actions={
@@ -84,22 +74,11 @@ export const CardWithSections = () => {
       <CardSection
         onClick={action("onClick")}
         title={sectionTitle}
-        icon={<Icons.Airplane />}
         description={sectionDescription}
         titleAs={titleAs}
       />
-      <CardSection
-        icon={<Icons.Airplane />}
-        title={sectionTitle}
-        description={sectionDescription}
-        titleAs={titleAs}
-      />
-      <CardSection
-        icon={<Icons.Airplane />}
-        title={sectionTitle}
-        description={sectionDescription}
-        titleAs={titleAs}
-      />
+      <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
+      <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
     </Card>
   );
 };
@@ -199,7 +178,6 @@ export const CardWithDefaultExpanded = () => {
     <Card>
       <CardSection
         expandable
-        icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}
         header={
           <Stack inline align="center" justify="end">
             <Text type="secondary">Trip length: 1h55m</Text>
@@ -220,7 +198,6 @@ export const CardWithDefaultExpanded = () => {
             Close
           </ButtonLink>
         }
-        icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}
         onClose={action("onClose")}
         header={
           <Stack inline justify="end">
@@ -262,7 +239,6 @@ export const CardWithMixedSections = () => {
     >
       <CardSection
         expandable
-        icon={<Icons.Airplane />}
         title={sectionTitle}
         actions={
           <ButtonLink compact size="small" type="secondary">
@@ -308,11 +284,7 @@ LoadingCard.story = {
 
 export const Rtl = () => (
   <RenderInRtl>
-    <Card
-      title="Title of the CardHeader"
-      icon={<Icons.Airplane />}
-      description="Description of the CardHeader"
-    >
+    <Card title="Title of the CardHeader" description="Description of the CardHeader">
       <CardSection title="Content with Heading and text">
         <Text>Text in content</Text>
       </CardSection>

@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 
 import Card, { CardSection } from "..";
 import Button from "../../Button";
-import { Airplane } from "../../icons";
 
 describe("Card", () => {
   it("default", () => {
@@ -13,7 +12,6 @@ describe("Card", () => {
         dataTest="test"
         title="kek"
         description="description"
-        icon={<Airplane dataTest="airplane" />}
         margin={{ top: "12px" }}
         actions={<Button>button</Button>}
       />,
@@ -21,7 +19,6 @@ describe("Card", () => {
     expect(screen.getByTestId("test"));
     expect(screen.getByText("kek")).toBeInTheDocument();
     expect(screen.getByText("description")).toBeInTheDocument();
-    expect(screen.getByTestId("airplane"));
     expect(screen.getByRole("button"));
     expect(screen.getByTestId("test")).toHaveStyle({
       marginTop: "12px",
@@ -38,7 +35,6 @@ describe("Card", () => {
           dataTest="test"
           title="kek"
           description="description"
-          icon={<Airplane dataTest="airplane" />}
           actions={<Button>action</Button>}
           expandable
           expanded
@@ -50,7 +46,6 @@ describe("Card", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("kek")).toBeInTheDocument();
     expect(screen.getByText("description")).toBeInTheDocument();
-    expect(screen.getByTestId("airplane")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "action" })).toBeInTheDocument();
     expect(screen.getByText("section")).toBeInTheDocument();
   });

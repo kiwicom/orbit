@@ -17,7 +17,6 @@ import Text from "./Text";
 import ChevronBackward from "./icons/ChevronBackward";
 import Card from "./Card";
 import CountryFlag from "./CountryFlag";
-import Airplane from "./icons/Airplane";
 import TextLink from "./TextLink";
 import Checkbox from "./Checkbox";
 import Radio from "./Radio";
@@ -421,7 +420,7 @@ export const withModal = () => {
       <ModalHeader title="Refund" description="Reservation number: 123456789" />
       <ModalSection>
         <Stack>
-          <Card title="Cancellation" icon={<Airplane />} />
+          <Card title="Cancellation" />
           <Text size="small" weight="bold">
             Contact information
           </Text>

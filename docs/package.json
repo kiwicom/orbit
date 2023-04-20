@@ -24,7 +24,7 @@
     "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/standalone": "^7.18.9",
     "@csstools/convert-colors": "^2.0.0",
-    "@icons-pack/react-simple-icons": "^4.0.0",
+    "@icons-pack/react-simple-icons": "^7.2.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "*",
     "@kiwicom/orbit-components": "*",

@@ -109,7 +109,7 @@ export const ExpandableWithCustomDescription = () => {
               <Text>13/37/1337</Text>
             </Stack>
             <Stack align="center" basis="0%">
-              <Badge type="info">You</Badge>
+              <Badge type="infoSubtle">You</Badge>
             </Stack>
           </Stack>
         }
@@ -132,7 +132,7 @@ export const ExpandableWithCustomDescription = () => {
               <Text>13/37/1337</Text>
             </Stack>
             <Stack align="center" basis="0%">
-              <Badge type="info">You</Badge>
+              <Badge type="infoSubtle">You</Badge>
             </Stack>
           </Stack>
         }
@@ -155,7 +155,7 @@ export const ExpandableWithCustomDescription = () => {
               <Text>13/37/1337</Text>
             </Stack>
             <Stack align="center" basis="0%">
-              <Badge type="info">You</Badge>
+              <Badge type="infoSubtle">You</Badge>
             </Stack>
           </Stack>
         }
@@ -178,7 +178,7 @@ export const ExpandableWithCustomDescription = () => {
               <Text>13/37/1337</Text>
             </Stack>
             <Stack align="center" basis="0%">
-              <Badge type="info">You</Badge>
+              <Badge type="infoSubtle">You</Badge>
             </Stack>
           </Stack>
         }

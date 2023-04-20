@@ -58,16 +58,16 @@ Info.story = {
   },
 };
 
-export const InfoInverted = () => {
+export const InfoSubtle = () => {
   const content = text("Content", "Badge");
   return (
-    <Badge type={TYPE_OPTIONS.INFO_INVERTED} icon={<Icons.Sightseeing />}>
+    <Badge type={TYPE_OPTIONS.INFO_SUBTLE} icon={<Icons.Sightseeing />}>
       {content}
     </Badge>
   );
 };
 
-InfoInverted.story = {
+InfoSubtle.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
   },
@@ -88,16 +88,16 @@ Success.story = {
   },
 };
 
-export const SuccessInverted = () => {
+export const SuccessSubtle = () => {
   const content = text("Content", "Badge");
   return (
-    <Badge type={TYPE_OPTIONS.SUCCESS_INVERTED} icon={<Icons.CheckCircle />}>
+    <Badge type={TYPE_OPTIONS.SUCCESS_SUBTLE} icon={<Icons.CheckCircle />}>
       {content}
     </Badge>
   );
 };
 
-SuccessInverted.story = {
+SuccessSubtle.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
   },
@@ -118,16 +118,16 @@ Warning.story = {
   },
 };
 
-export const WarningInverted = () => {
+export const WarningSubtle = () => {
   const content = text("Content", "Badge");
   return (
-    <Badge type={TYPE_OPTIONS.WARNING_INVERTED} icon={<Icons.Clock />}>
+    <Badge type={TYPE_OPTIONS.WARNING_SUBTLE} icon={<Icons.Clock />}>
       {content}
     </Badge>
   );
 };
 
-WarningInverted.story = {
+WarningSubtle.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
   },
@@ -148,16 +148,16 @@ Critical.story = {
   },
 };
 
-export const CriticalInverted = () => {
+export const CriticalSubtle = () => {
   const content = text("Content", "Badge");
   return (
-    <Badge type={TYPE_OPTIONS.CRITICAL_INVERTED} icon={<Icons.Sightseeing />}>
+    <Badge type={TYPE_OPTIONS.CRITICAL_SUBTLE} icon={<Icons.Sightseeing />}>
       {content}
     </Badge>
   );
 };
 
-CriticalInverted.story = {
+CriticalSubtle.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
   },
@@ -209,7 +209,7 @@ BadgeWithTranslatedNode.story = {
 
 export const Playground = () => {
   const content = text("Content", "Badge");
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
+  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO_SUBTLE);
   const dataTest = text("dataTest", "test");
   const Icon = getIcon(getIcons("Airplane"));
   const ariaLabel = text("ariaLabel", "test");

@@ -199,7 +199,7 @@ export const CardWithDefaultExpanded = () => {
         header={
           <Stack inline align="center" justify="end">
             <Text type="secondary">Trip length: 1h55m</Text>
-            <Badge icon={<Clock />} type="warning">
+            <Badge icon={<Clock />} type="warningSubtle">
               Unavailable
             </Badge>
           </Stack>
@@ -221,7 +221,7 @@ export const CardWithDefaultExpanded = () => {
         header={
           <Stack inline justify="end">
             <Text type="secondary">Trip length: 1h55m</Text>
-            <Badge icon={<Clock />} type="warning">
+            <Badge icon={<Clock />} type="warningSubtle">
               Unavailable
             </Badge>
           </Stack>

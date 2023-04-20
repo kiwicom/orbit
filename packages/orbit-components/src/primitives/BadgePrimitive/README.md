@@ -19,7 +19,6 @@ Table below contains all types of the props available in BadgePrimitive componen
 | Name            | Type                    | Default | Description                                                          |
 | :-------------- | :---------------------- | :------ | :------------------------------------------------------------------- |
 | background      | `string`                |         | Background of a BadgePrimitive. Can use gradients and images         |
-| borderColor     | `string`                |         | Color of the border that is always solid and one pixel.              |
 | foregroundColor | `string`                |         | Foreground color, controling color of a text and icon.               |
 | children        | `React.Node`            |         | The content of the BadgePrimitive.                                   |
 | dataTest        | `string`                |         | Optional prop for testing purposes.                                  |

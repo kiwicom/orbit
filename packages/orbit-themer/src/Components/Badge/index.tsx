@@ -11,10 +11,10 @@ const Badges = () => {
         <Badge type="success">{message}</Badge>
         <Badge type="critical">{message}</Badge>
         <Badge type="neutral">{message}</Badge>
-        <Badge type="infoInverted">{message}</Badge>
-        <Badge type="warningInverted">{message}</Badge>
-        <Badge type="successInverted">{message}</Badge>
-        <Badge type="criticalInverted">{message}</Badge>
+        <Badge type="infoSubtle">{message}</Badge>
+        <Badge type="warningSubtle">{message}</Badge>
+        <Badge type="successSubtle">{message}</Badge>
+        <Badge type="criticalSubtle">{message}</Badge>
         <Badge type="dark">{message}</Badge>
       </Stack>
     </Stack>

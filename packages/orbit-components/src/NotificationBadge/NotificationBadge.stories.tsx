@@ -50,12 +50,12 @@ Info.story = {
   },
 };
 
-export const InfoInverted = () => {
+export const InfoSubtle = () => {
   const content = text("Content", "10");
-  return <NotificationBadge type={TYPE_OPTIONS.INFO_INVERTED}>{content}</NotificationBadge>;
+  return <NotificationBadge type={TYPE_OPTIONS.INFO_SUBTLE}>{content}</NotificationBadge>;
 };
 
-InfoInverted.story = {
+InfoSubtle.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
   },
@@ -94,12 +94,12 @@ Critical.story = {
   },
 };
 
-export const CriticalInverted = () => {
+export const CriticalSubtle = () => {
   const content = text("Content", "10");
-  return <NotificationBadge type={TYPE_OPTIONS.CRITICAL_INVERTED}>{content}</NotificationBadge>;
+  return <NotificationBadge type={TYPE_OPTIONS.CRITICAL_SUBTLE}>{content}</NotificationBadge>;
 };
 
-CriticalInverted.story = {
+CriticalSubtle.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
   },

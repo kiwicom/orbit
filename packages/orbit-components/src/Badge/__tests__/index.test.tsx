@@ -20,8 +20,6 @@ describe("Badge", () => {
   });
 
   it("should have passed props", () => {
-    const style = getComputedStyle(screen.getByTestId(dataTest));
-    expect(style.border).toMatchInlineSnapshot(`"1px solid #def0fc"`);
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByLabelText(ariaLabel)).toBeInTheDocument();
     expect(screen.getByLabelText("sightseeing")).toBeInTheDocument();

@@ -243,7 +243,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                                 {activeTab === "bookmarks" && (
                                   <Stack flex align="center">
                                     <div>Your bookmarks</div>
-                                    <Badge type="infoInverted">
+                                    <Badge type="info">
                                       {bookmarks ? Object.keys(bookmarks).length : 0}
                                     </Badge>
                                   </Stack>
@@ -262,7 +262,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                             >
                               <Stack flex align="center">
                                 <div>Your bookmarks</div>
-                                <Badge type="infoInverted">
+                                <Badge type="info">
                                   {bookmarks ? Object.keys(bookmarks).length : 0}
                                 </Badge>
                               </Stack>
@@ -299,7 +299,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                         title={
                           <Stack flex align="center">
                             <div>Your bookmarks</div>
-                            <Badge type="infoInverted">
+                            <Badge type="info">
                               {bookmarks ? Object.keys(bookmarks).length : 0}
                             </Badge>
                           </Stack>

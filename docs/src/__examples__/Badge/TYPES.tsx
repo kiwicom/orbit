@@ -10,18 +10,18 @@ export default {
     { name: "Success", code: `() => <Badge type="success">success</Badge>` },
     { name: "Warning", code: `() => <Badge type="warning">Warning</Badge>` },
     { name: "Critical", code: `() => <Badge type="critical">Critical</Badge>` },
-    { name: "infoInverted", code: `() => <Badge type="infoInverted">InfoInverted</Badge>` },
+    { name: "infoSubtle", code: `() => <Badge type="infoSubtle">InfoSubtle</Badge>` },
     {
-      name: "criticalInverted",
-      code: `() => <Badge type="criticalInverted">CriticalInverted</Badge>`,
+      name: "criticalSubtle",
+      code: `() => <Badge type="criticalSubtle">CriticalSubtle</Badge>`,
     },
     {
-      name: "successInverted",
-      code: `() => <Badge type="SuccessInverted">successInverted</Badge>`,
+      name: "successSubtle",
+      code: `() => <Badge type="SuccessSubtle">successSubtle</Badge>`,
     },
     {
-      name: "warningInverted",
-      code: `() => <Badge type="warningInverted">WarningInverted</Badge>`,
+      name: "warningSubtle",
+      code: `() => <Badge type="warningSubtle">WarningSubtle</Badge>`,
     },
     {
       name: "bundleBasic",

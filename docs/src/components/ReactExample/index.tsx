@@ -4,7 +4,6 @@ import { Text } from "@kiwicom/orbit-components";
 
 import { copyImports } from "./helpers";
 import Example from "./Example";
-import useSandbox from "../../hooks/useSandbox";
 
 export type BgType = "white" | "dark" | "grid";
 export interface Props {

@@ -37,6 +37,22 @@ StyledChoiceGroup.defaultProps = {
   theme: defaultTheme,
 };
 
+const ItemContainer =
+  ({ filter, itemProps, onOnlySelection, onlySelectionText }) =>
+  ({ children }) => {
+    return !filter ? (
+      React.cloneElement(React.Children.only(children), itemProps)
+    ) : (
+      <FilterWrapper
+        child={React.Children.only(children)}
+        onOnlySelection={onOnlySelection}
+        onlySelectionText={onlySelectionText}
+      >
+        {React.cloneElement(React.Children.only(children), itemProps)}
+      </FilterWrapper>
+    );
+  };
+
 const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
   (
     {
@@ -86,22 +102,7 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
             // for now a plain <div> is all we need, but we're reserving this space in the API
             // in case we'll need something more in the future
             Container: "div",
-            Item: ({ children: itemChildren }) => {
-              return !filter ? (
-                // @ts-expect-error TODO
-                React.cloneElement(React.Children.only(itemChildren), itemProps)
-              ) : (
-                <FilterWrapper
-                  // @ts-expect-error TODO
-                  child={React.Children.only(itemChildren)}
-                  onOnlySelection={onOnlySelection}
-                  onlySelectionText={onlySelectionText}
-                >
-                  {/* @ts-expect-error TODO */}
-                  {React.cloneElement(React.Children.only(itemChildren), itemProps)}
-                </FilterWrapper>
-              );
-            },
+            Item: ItemContainer({ filter, onOnlySelection, onlySelectionText, itemProps }),
             spacing: filter ? "0px" : theme.orbit.spaceXSmall,
           })
         ) : (

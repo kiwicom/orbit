@@ -64,11 +64,15 @@ const List = ({
   dataTest,
   id,
   spaceAfter,
-}: Props) => (
-  <StyledList type={type} size={size} data-test={dataTest} id={id} spaceAfter={spaceAfter}>
-    <ListContext.Provider value={{ size, type }}>{children}</ListContext.Provider>
-  </StyledList>
-);
+}: Props) => {
+  const value = React.useMemo(() => ({ size, type }), [size, type]);
+
+  return (
+    <StyledList type={type} size={size} data-test={dataTest} id={id} spaceAfter={spaceAfter}>
+      <ListContext.Provider value={value}>{children}</ListContext.Provider>
+    </StyledList>
+  );
+};
 
 export default List;
 

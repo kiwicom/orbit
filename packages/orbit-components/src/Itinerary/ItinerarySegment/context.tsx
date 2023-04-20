@@ -27,3 +27,47 @@ export const ItinerarySegmentContext = React.createContext<Context>({
 });
 
 export const usePart = (): Context => React.useContext(ItinerarySegmentContext);
+
+export const ItinerarySegmentProvider = ({
+  isNextHidden,
+  isPrevHidden,
+  noElevation,
+  isHidden,
+  isBanner,
+  children,
+  index,
+  opened,
+  toggleOpened,
+  last,
+  count,
+}: React.PropsWithChildren<Context>) => {
+  const value = React.useMemo(
+    () => ({
+      isNextHidden,
+      isPrevHidden,
+      noElevation,
+      isHidden,
+      isBanner,
+      index,
+      opened,
+      toggleOpened,
+      last,
+      count,
+    }),
+    [
+      isNextHidden,
+      isPrevHidden,
+      noElevation,
+      isHidden,
+      isBanner,
+      index,
+      opened,
+      toggleOpened,
+      last,
+      count,
+    ],
+  );
+  return (
+    <ItinerarySegmentContext.Provider value={value}>{children}</ItinerarySegmentContext.Provider>
+  );
+};

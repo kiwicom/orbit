@@ -16,24 +16,22 @@ export const Default = () => {
   const lang = select("lang", Object.values(LANGUAGE), LANGUAGE.EN);
 
   return (
-    <>
-      <Stack flex>
-        <ButtonMobileStore
-          onClick={action("clicked")}
-          href={href}
-          lang={lang}
-          type="appStore"
-          alt="Download on the App Store"
-        />
-        <ButtonMobileStore
-          onClick={action("clicked")}
-          href={href}
-          lang={lang}
-          type="googlePlay"
-          alt="Download on the Google Play"
-        />
-      </Stack>
-    </>
+    <Stack flex>
+      <ButtonMobileStore
+        onClick={action("clicked")}
+        href={href}
+        lang={lang}
+        type="appStore"
+        alt="Download on the App Store"
+      />
+      <ButtonMobileStore
+        onClick={action("clicked")}
+        href={href}
+        lang={lang}
+        type="googlePlay"
+        alt="Download on the Google Play"
+      />
+    </Stack>
   );
 };
 

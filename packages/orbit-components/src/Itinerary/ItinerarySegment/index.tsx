@@ -2,13 +2,13 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import type * as Common from "../../common/types";
-import { ItinerarySegmentContext } from "./context";
 import Stack from "../../Stack";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
 import Separator from "../../Separator";
 import type { Props } from "./types";
+import { ItinerarySegmentProvider } from "./context";
 
 const StyledWrapper = styled.div<{
   noElevation?: boolean;
@@ -52,25 +52,24 @@ const ItinerarySegment = ({
     <Stack direction="column" spacing="none">
       {React.Children.map(children, (el, i) => {
         if (!React.isValidElement(el)) return null;
+
         return (
-          <ItinerarySegmentContext.Provider
-            value={{
-              index: i,
-              opened,
-              toggleOpened: () => {
-                if (document && document.getSelection()?.type !== "Range") setOpened(prev => !prev);
-              },
-              last: i === content.length - 1,
-              isNextHidden: Boolean(content[i + 1]?.props?.hidden),
-              isPrevHidden: Boolean(content[i - 1]?.props?.hidden),
-              isBanner: !!banner,
-              count: content.length,
-              isHidden: !!(el.props && el.props.hidden),
-              noElevation: !!noElevation,
+          <ItinerarySegmentProvider
+            index={i}
+            opened={opened}
+            toggleOpened={() => {
+              if (document && document.getSelection()?.type !== "Range") setOpened(prev => !prev);
             }}
+            last={i === content.length - 1}
+            isNextHidden={Boolean(content[i + 1]?.props?.hidden)}
+            isPrevHidden={Boolean(content[i - 1]?.props?.hidden)}
+            isBanner={!!banner}
+            count={content.length}
+            isHidden={!!(el.props && el.props.hidden)}
+            noElevation={!!noElevation}
           >
             {el}
-          </ItinerarySegmentContext.Provider>
+          </ItinerarySegmentProvider>
         );
       })}
     </Stack>

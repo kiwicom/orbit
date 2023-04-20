@@ -1,1 +1,1 @@
-module.exports = require("./packages/orbit-components/.size-limit.js");
+module.exports = require("./packages/orbit-components/.size-limit");

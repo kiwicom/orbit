@@ -3,6 +3,7 @@
 const visit = require("unist-util-visit");
 const path = require("path");
 const fs = require("fs");
+// eslint-disable-next-line import/no-extraneous-dependencies
 const chalk = require("chalk");
 const axios = require("axios");
 const { createFileNode } = require("gatsby-source-filesystem/create-file-node");
@@ -68,6 +69,7 @@ module.exports = (props, pluginOptions) => {
   };
 
   const wait = delay => {
+    // eslint-disable-next-line no-promise-executor-return
     return new Promise(resolve => setTimeout(resolve, delay));
   };
 

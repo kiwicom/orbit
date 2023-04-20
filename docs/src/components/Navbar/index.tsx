@@ -169,15 +169,13 @@ const Navbar = ({ location, docNavigation }: Props) => {
                 </Hide>
               </>
             ) : (
-              <>
-                <Button
-                  type="white"
-                  iconLeft={<StarEmpty />}
-                  circled
-                  title="Open bookmarks"
-                  onClick={() => setMenuOpen(true)}
-                />
-              </>
+              <Button
+                type="white"
+                iconLeft={<StarEmpty />}
+                circled
+                title="Open bookmarks"
+                onClick={() => setMenuOpen(true)}
+              />
             )}
             {isLoggedIn() && (
               <Button title="logout" iconLeft={<Logout />} type="white" circled onClick={logout} />

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import type * as Common from "../common/types";
 import Stack from "../Stack";
 import useMediaQuery from "../hooks/useMediaQuery";
-import { TimelineStatusProvider, TimelineStepContext } from "./TimelineContext";
+import { TimelineStatusProvider, TimelineStepProvider } from "./TimelineContext";
 import getSpacingToken from "../common/getSpacingToken";
 import themeDefault from "../defaultTheme";
 import type { Props } from "./types";
@@ -35,11 +35,9 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
           {React.Children.map(childrenArr, (child, i) => {
             if (React.isValidElement(child)) {
               return (
-                <TimelineStepContext.Provider
-                  value={{ index: i, last: i + 1 === childrenArr.length }}
-                >
+                <TimelineStepProvider index={i} last={i + 1 === childrenArr.length}>
                   {child}
-                </TimelineStepContext.Provider>
+                </TimelineStepProvider>
               );
             }
             return null;

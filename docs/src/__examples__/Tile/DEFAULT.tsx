@@ -1,6 +1,5 @@
 import React from "react";
 import { Tile, Text } from "@kiwicom/orbit-components";
-import { Visibility } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (

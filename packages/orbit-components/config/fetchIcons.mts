@@ -3,8 +3,6 @@ import dedent from "dedent";
 import ora from "ora";
 import { path, argv, fs, globby, chalk, fetch, $ } from "zx";
 
-/* eslint-disable camelcase */
-
 interface User {
   id: string;
   handle: string;
@@ -85,7 +83,8 @@ try {
   }
 }
 
-const api = <T extends unknown>(url: string) =>
+// @ts-expect-error MTS doesn't support generics yet for that
+const api = <T>(url: string) =>
   fetch(url, {
     headers: { "Content-Type": "application/", "X-FIGMA-TOKEN": process.env.FIGMA_TOKEN || "" },
   }).then(res => {

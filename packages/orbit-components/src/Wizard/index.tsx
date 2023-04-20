@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import WizardStep from "./WizardStep";
-import { WizardStepContext } from "./WizardContext";
+import { WizardStepContextProvider } from "./WizardContext";
 import Button from "../Button";
 import Stack from "../Stack";
 import ChevronDown from "../icons/ChevronDown";
@@ -66,21 +66,19 @@ const Wizard = ({
   const stepsCount = React.Children.count(children);
 
   const steps = React.Children.map(children, (step, index) => (
-    <WizardStepContext.Provider
-      value={{
-        index,
-        status: stepStatuses[index],
-        isLastStep: index === stepsCount - 1,
-        isColumnOnDesktop: direction === "column",
-        nextStepStatus: stepStatuses[index + 1],
-        isCompact,
-        isActive: activeStep === index,
-        onChangeStep,
-        onClose: () => setOpen(false),
-      }}
+    <WizardStepContextProvider
+      index={index}
+      status={stepStatuses[index]}
+      isLastStep={index === stepsCount - 1}
+      isColumnOnDesktop={direction === "column"}
+      nextStepStatus={stepStatuses[index + 1]}
+      isCompact
+      isActive={activeStep === index}
+      onChangeStep={onChangeStep}
+      onClose={() => setOpen(false)}
     >
       {step}
-    </WizardStepContext.Provider>
+    </WizardStepContextProvider>
   ));
 
   if (isCompact) {

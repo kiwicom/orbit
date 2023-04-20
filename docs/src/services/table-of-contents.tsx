@@ -14,18 +14,18 @@ export interface TableOfContentsItem {
 
 type SetTableOfContents = React.Dispatch<React.SetStateAction<TableOfContentsItem[]>>;
 
-const TableOfContentsContext = React.createContext<[TableOfContentsItem[], SetTableOfContents]>([
-  [],
-  () => {},
-]);
+const TableOfContentsContext = React.createContext({
+  tableOfContents: [] as TableOfContentsItem[],
+  setTableOfContents: (() => {}) as SetTableOfContents,
+});
+
 TableOfContentsContext.displayName = "TableOfContentsContext";
 
 export function TableOfContentsProvider({ children }: { children: React.ReactNode }) {
   const [tableOfContents, setTableOfContents] = React.useState<TableOfContentsItem[]>([]);
+  const value = React.useMemo(() => ({ tableOfContents, setTableOfContents }), [tableOfContents]);
   return (
-    <TableOfContentsContext.Provider value={[tableOfContents, setTableOfContents]}>
-      {children}
-    </TableOfContentsContext.Provider>
+    <TableOfContentsContext.Provider value={value}>{children}</TableOfContentsContext.Provider>
   );
 }
 
@@ -34,7 +34,7 @@ export function useTableOfContents() {
 }
 
 export function useTableOfContentsRegister({ title, level }: { title: string; level: number }) {
-  const [, setTableOfContents] = React.useContext(TableOfContentsContext);
+  const { setTableOfContents } = React.useContext(TableOfContentsContext);
   const idRef = React.useRef<string>("");
   const id = uuidv4();
   idRef.current = id;

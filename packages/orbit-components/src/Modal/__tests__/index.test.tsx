@@ -10,7 +10,7 @@ import ModalFooter from "../ModalFooter";
 import Illustration from "../../Illustration";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-jest.useFakeTimers("modern");
+jest.useFakeTimers();
 
 jest.mock("../../hooks/useMediaQuery", () => {
   return jest.fn(() => ({ isLargeMobile: true }));
@@ -89,9 +89,9 @@ describe("Modal", () => {
   it("should switch scrolling container based on the breakpoint", () => {
     const modalRef = React.createRef<React.ElementRef<typeof Modal>>();
     const scrollingElement = React.createRef<HTMLElement>() as React.MutableRefObject<HTMLElement>;
-    function scrollingElementRef(node) {
+    const scrollingElementRef = (node: HTMLElement) => {
       scrollingElement.current = node;
-    }
+    };
     // @ts-expect-error jest
     mockUseMediaQuery.mockImplementation(() => ({ isLargeMobile: true }));
     const { rerender } = render(

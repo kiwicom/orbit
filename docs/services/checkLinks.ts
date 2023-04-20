@@ -1,7 +1,7 @@
 import server from "browser-sync";
 import checkLinks from "check-links";
 import { path, globby } from "zx";
-import unified from "unified";
+import { unified } from "unified";
 import parse from "rehype-parse";
 import inspectUrls from "@jsdevtools/rehype-url-inspector";
 import stringify from "rehype-stringify";
@@ -47,12 +47,17 @@ const checkForDeadUrls = async () => {
 
   const processor = await unified()
     .use(parse)
+    // @ts-expect-error TODO
     .use(inspectUrls, {
       inspectEach({ file, node, url }) {
         // filter out preconnect links: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect
         // Otherwise was failing on preconnect links to fonts.gstatic.com (to prepare to load fonts)
-        // @ts-expect-error unknown
-        if (node.tagName === "link" && node.properties.rel.find(e => e === "preconnect")) return;
+        if (
+          node.tagName === "link" &&
+          // @ts-expect-error TODO
+          node.properties.rel.find(e => e === "preconnect")
+        )
+          return;
 
         if (!urls.has(url)) {
           urls.set(url, { sources: [file] });

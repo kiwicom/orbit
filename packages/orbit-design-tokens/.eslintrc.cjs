@@ -1,4 +1,5 @@
 module.exports = {
+  extends: "../../.eslintrc.js",
   overrides: [
     {
       files: ["./src/**", "./scripts/**"],

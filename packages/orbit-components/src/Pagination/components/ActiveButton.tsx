@@ -36,13 +36,19 @@ StyledButton.defaultProps = {
   theme: defaultTheme,
 };
 
+const ActiveButtonAsComponent =
+  ({ transparent }) =>
+  ({ children, ...props }: Props) => {
+    return (
+      <StyledButton {...props} transparent={transparent}>
+        {children}
+      </StyledButton>
+    );
+  };
+
 const ActiveButton = ({ children, transparent, size }: Props) => {
   return (
-    <Button
-      type="secondary"
-      size={size}
-      asComponent={(props: Props) => <StyledButton {...props} transparent={transparent} />}
-    >
+    <Button type="secondary" size={size} asComponent={ActiveButtonAsComponent({ transparent })}>
       {children}
     </Button>
   );

@@ -21,6 +21,24 @@ interface Props {
   unused?: string[];
 }
 
+const Sort = ({
+  children,
+  onClick,
+  isSorted,
+}: {
+  children: React.ReactNode;
+  onClick?: () => void;
+  isSorted?: boolean;
+}) => (
+  <TextLink
+    type="secondary"
+    iconRight={isSorted ? <ChevronUp /> : <ChevronDown />}
+    onClick={onClick}
+  >
+    {children}
+  </TextLink>
+);
+
 const ComponentList = ({ components, unused }: Props) => {
   const [data, setData] = React.useState<ComponentData[]>([]);
   const [isSorted, setSorted] = React.useState(false);
@@ -28,16 +46,6 @@ const ComponentList = ({ components, unused }: Props) => {
   React.useEffect(() => {
     setData(components);
   }, [setData, components]);
-
-  const Sort = ({ children, onClick }) => (
-    <TextLink
-      type="secondary"
-      iconRight={isSorted ? <ChevronUp /> : <ChevronDown />}
-      onClick={onClick}
-    >
-      {children}
-    </TextLink>
-  );
 
   const mappedUnused = unused
     ? unused.map(name => ({

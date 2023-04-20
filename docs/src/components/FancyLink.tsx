@@ -61,16 +61,12 @@ const FancyLink = ({ download, href, icon, title }: Props) => {
         return icon;
     }
   };
-  return (
-    <>
-      {download ? (
-        <StyledAnchor href={href} download>
-          <Tile title={title} icon={usedIcon()} />
-        </StyledAnchor>
-      ) : (
-        <Tile title={title} icon={usedIcon()} href={href} external={isExternal} />
-      )}
-    </>
+  return download ? (
+    <StyledAnchor href={href} download>
+      <Tile title={title} icon={usedIcon()} />
+    </StyledAnchor>
+  ) : (
+    <Tile title={title} icon={usedIcon()} href={href} external={isExternal} />
   );
 };
 

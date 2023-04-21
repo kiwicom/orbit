@@ -54,8 +54,8 @@ const getActiveColor: GetTextLinkTokensType =
   ({ $type }) =>
   ({ theme }) => {
     const tokens = {
-      [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarker,
-      [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarker,
+      [TYPE_OPTIONS.PRIMARY]: theme.orbit.paletteProductDarkActive,
+      [TYPE_OPTIONS.SECONDARY]: theme.orbit.paletteProductDarkActive,
       [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarker,
       [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarker,
       [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarker,

@@ -45,7 +45,7 @@
   <color name="COLORTEXTBUTTONWARNINGHOVER" category="">#ffffffff</color>
   <color name="PALETTECLOUDLIGHTACTIVE" category="">#ffd6dee6</color>
   <dimen name="LINEHEIGHTHEADINGTITLE3" category="">24dp</dimen>
-  <color name="PALETTEPRODUCTLIGHT" category="">#ffe1f4f3</color>
+  <color name="PALETTEPRODUCTLIGHT" category="Color palette">#ffe1f4f3</color>
   <dimen name="HEIGHTBUTTONLARGE" category="">52dp</dimen>
   <color name="BACKGROUNDBUTTONWARNINGACTIVE" category="">#ffb26200</color>
   <dimen name="MARGINBUTTONICONLARGE" category="">12dp</dimen>
@@ -76,7 +76,7 @@
   <color name="BORDERCOLORINPUTFOCUS" category="">#ff0172cb</color>
   <dimen name="PADDINGBUTTONNORMALWITHRIGHTICON" category="">0 12 0 16dp</dimen>
   <color name="BACKGROUNDBUTTONCRITICALACTIVE" category="">#ff9d1515</color>
-  <string name="OPACITYOVERLAY" category="">0.8</string>
+  <string name="OPACITYOVERLAY" category="Opacity">0.8</string>
   <integer name="WIDTHBREAKPOINTDESKTOP" category="">992</integer>
   <string name="BORDERSTYLEINPUT" category="">solid</string>
   <dimen name="FONTSIZEBUTTONSMALL" category="">12dp</dimen>
@@ -122,13 +122,13 @@
   <string name="FONTWEIGHTHEADINGDISPLAY" category="">700</string>
   <color name="BORDERCOLORINPUTERRORHOVER" category="">#ffb91919</color>
   <color name="PALETTEINKDARKACTIVE" category="">#ff0b0c0f</color>
-  <dimen name="WIDTHICONSMALL" category="">16dp</dimen>
+  <dimen name="WIDTHICONSMALL" category="Size (width, height)">16dp</dimen>
   <color name="PALETTEPRODUCTLIGHTACTIVE" category="">#ffbfe8e2</color>
   <color name="BORDERCOLORBUTTONINFOBORDEREDACTIVE" category="">#ff01508e</color>
   <color name="BACKGROUNDBUTTONPRIMARYACTIVE" category="">#ff008472</color>
   <color name="BACKGROUNDTOOLTIPLARGEMOBILE" category="">#ff005aa3</color>
   <dimen name="FONTSIZEHEADINGDISPLAYSUBTITLE" category="">22dp</dimen>
-  <string name="LINEHEIGHTTEXT" category="">1.4</string>
+  <string name="LINEHEIGHTTEXT" category="Line height">1.4</string>
   <color name="BACKGROUNDBUTTONSECONDARYHOVER" category="">#ffdce3e9</color>
   <string name="BACKGROUNDBUTTONLINKPRIMARY" category="">transparent</string>
   <color name="BACKGROUNDBUTTONWHITEBORDEREDHOVER" category="">#33ffffff</color>
@@ -143,7 +143,7 @@
   <color name="COLORTEXTBADGEWARNING" category="">#ffdf7b00</color>
   <color name="BACKGROUNDBUTTONWHITE" category="">#ffffffff</color>
   <dimen name="SPACEXLARGE" category="">32dp</dimen>
-  <string name="ZINDEXDEFAULT" category="">1</string>
+  <string name="ZINDEXDEFAULT" category="Z Index">1</string>
   <color name="BACKGROUNDBUTTONSUCCESSACTIVE" category="">#ff1d7228</color>
   <dimen name="BOXSHADOWFIXED" category="">0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px 2px 4px 0px rgba(37, 42, 49, 0.12)</dimen>
   <string name="ZINDEXDRAWER" category="">815</string>
@@ -175,7 +175,7 @@
   <color name="BACKGROUNDBADGEDARK" category="">#ff252a31</color>
   <color name="PALETTEINKLIGHT" category="">#ff697d95</color>
   <dimen name="PADDINGBUTTONSMALLWITHRIGHTICON" category="">0 8 0 12dp</dimen>
-  <integer name="MODIFIERSCALEBUTTONACTIVE" category="">0.95</integer>
+  <integer name="MODIFIERSCALEBUTTONACTIVE" category="Modifier">0.95</integer>
   <color name="COLORTEXTBUTTONWARNINGBORDEREDACTIVE" category="">#ffb26200</color>
   <color name="PALETTEGREENDARKER" category="">#ff235c2b</color>
   <color name="BORDERCOLORBUTTONSUCCESSBORDEREDACTIVE" category="">#ff1d7228</color>
@@ -185,7 +185,7 @@
   <color name="COLORTEXTBUTTONPRIMARYBORDERED" category="">#ff00a58e</color>
   <integer name="MODIFIERSCALECHECKBOXRADIOACTIVE" category="">0.95</integer>
   <color name="COLORTEXTALERTCRITICAL" category="">#ff970c0c</color>
-  <dimen name="PADDINGALERT" category="">16dp</dimen>
+  <dimen name="PADDINGALERT" category="Spacing">16dp</dimen>
   <dimen name="PADDINGLOADING" category="">12dp</dimen>
   <string name="BACKGROUNDBUTTONBORDERED" category="">transparent</string>
   <color name="PALETTECLOUDDARKHOVER" category="">#ffa6b6c8</color>
@@ -226,7 +226,7 @@
   <color name="BACKGROUNDALERTCRITICAL" category="">#fffaeaea</color>
   <color name="COLORTEXTBUTTONPRIMARYSUBTLE" category="">#ff00a58e</color>
   <dimen name="WIDTHMODALNORMAL" category="">740dp</dimen>
-  <integer name="WIDTHBREAKPOINTMEDIUMMOBILE" category="">414</integer>
+  <integer name="WIDTHBREAKPOINTMEDIUMMOBILE" category="Breakpoints">414</integer>
   <color name="COLORTEXTBUTTONFACEBOOKACTIVE" category="">#ffffffff</color>
   <color name="PALETTEGREENLIGHT" category="">#ffeaf5ea</color>
   <color name="PALETTESOCIALFACEBOOK" category="">#ff3b5998</color>
@@ -237,7 +237,7 @@
   <dimen name="MARGINBUTTONICONSMALL" category="">8dp</dimen>
   <dimen name="HEIGHTSERVICELOGOSMALL" category="">12dp</dimen>
   <dimen name="PADDINGINPUTSMALL" category="">0 12dp</dimen>
-  <dimen name="BORDERRADIUSCIRCLE" category="">0.5</dimen>
+  <dimen name="BORDERRADIUSCIRCLE" category="Border radius">0.5</dimen>
   <color name="COLORTEXTBUTTONCRITICALSUBTLE" category="">#ffd21c1c</color>
   <color name="PALETTEWHITE" category="">#ffffffff</color>
   <dimen name="FONTSIZEHEADINGTITLE4" category="">14dp</dimen>
@@ -250,7 +250,7 @@
   <color name="BACKGROUNDBADGESUCCESS" category="">#ffeaf5ea</color>
   <dimen name="HEIGHTSERVICELOGOMEDIUM" category="">24dp</dimen>
   <color name="PALETTEWHITEHOVER" category="">#fff5f7f9</color>
-  <string name="FONTWEIGHTNORMAL" category="">400</string>
+  <string name="FONTWEIGHTNORMAL" category="Font weight">400</string>
   <color name="COLORTEXTBUTTONCRITICALSUBTLEHOVER" category="">#ff970c0c</color>
   <color name="BACKGROUNDBUTTONLINKPRIMARYACTIVE" category="">#ffbfe8e2</color>
   <color name="COLORFORMLABELFILLED" category="">#ff4f5e71</color>
@@ -263,10 +263,10 @@
   <color name="BACKGROUNDBUTTONWHITEACTIVE" category="">#ffe5eaef</color>
   <color name="COLORTEXTCRITICAL" category="">#ffd21c1c</color>
   <color name="PALETTEORANGELIGHTHOVER" category="">#fffcecda</color>
-  <string name="DURATIONFAST" category="">0.15s</string>
+  <string name="DURATIONFAST" category="Duration">0.15s</string>
   <color name="COLORTEXTBUTTONSUCCESSBORDEREDHOVER" category="">#ff238b31</color>
   <color name="BACKGROUNDTAGHOVER" category="">#ffe5eaef</color>
-  <dimen name="FONTSIZEHEADINGDISPLAY" category="">40dp</dimen>
+  <dimen name="FONTSIZEHEADINGDISPLAY" category="Font size">40dp</dimen>
   <color name="COLORTEXTALERTWARNING" category="">#ffad5700</color>
   <string name="BACKGROUNDBUTTONBUNDLEBASICHOVER" category="">linear-gradient(to top right, #BD2825 0, #BD2825 1)</string>
   <string name="TEXTDECORATIONTEXTLINKSECONDARY" category="">underline</string>
@@ -285,7 +285,7 @@
   <color name="BACKGROUNDBUTTONCRITICALSUBTLEHOVER" category="">#fff8e2e2</color>
   <color name="COLORTEXTBUTTONCRITICALBORDEREDHOVER" category="">#ffb91919</color>
   <color name="PALETTEREDDARKHOVER" category="">#ff890b0b</color>
-  <color name="BACKGROUNDBODY" category="">#fff5f7f9</color>
+  <color name="BACKGROUNDBODY" category="Background colors">#fff5f7f9</color>
   <color name="BACKGROUNDBUTTONBORDEREDHOVER" category="">#fff5f7f9</color>
   <color name="COLORTEXTBUTTONPRIMARYBORDEREDHOVER" category="">#ff009580</color>
   <color name="BORDERCOLORBUTTONWHITEBORDEREDHOVER" category="">#ffffffff</color>
@@ -305,7 +305,7 @@
   <color name="COLORALERTICONSUCCESS" category="">#ff28a138</color>
   <color name="PALETTEINKNORMAL" category="">#ff4f5e71</color>
   <string name="FONTWEIGHTLINKS" category="">500</string>
-  <color name="COLORTEXTPRIMARY" category="">#ff252a31</color>
+  <color name="COLORTEXTPRIMARY" category="Colors">#ff252a31</color>
   <color name="PALETTEBUNDLEMEDIUM" category="">#ff3b1eb0</color>
   <string name="BACKGROUNDBUTTONBUNDLEBASICACTIVE" category="">linear-gradient(to top right, #9F1816 0, #9F1816 1)</string>
   <color name="BACKGROUNDBADGENEUTRAL" category="">#fff5f7f9</color>
@@ -326,7 +326,7 @@
   <color name="COLORPLACEHOLDERINPUTFILEERROR" category="">#ffd21c1c</color>
   <color name="PALETTEPRODUCTDARKHOVER" category="">#ff007060</color>
   <string name="BACKGROUNDSERVICELOGO" category="">transparent</string>
-  <string name="FONTFAMILY" category="">&apos;Roboto&apos;, -apple-system, &apos;.SFNSText-Regular&apos;, &apos;San Francisco&apos;, &apos;Segoe UI&apos;, &apos;Helvetica Neue&apos;, &apos;Lucida Grande&apos;, sans-serif</string>
+  <string name="FONTFAMILY" category="Font family">&apos;Roboto&apos;, -apple-system, &apos;.SFNSText-Regular&apos;, &apos;San Francisco&apos;, &apos;Segoe UI&apos;, &apos;Helvetica Neue&apos;, &apos;Lucida Grande&apos;, sans-serif</string>
   <dimen name="LINEHEIGHTHEADINGDISPLAYSUBTITLE" category="">28dp</dimen>
   <color name="BACKGROUNDBUTTONWHITEHOVER" category="">#fff5f7f9</color>
   <string name="BACKGROUNDCOLORTABBUNDLETOP" category="">linear-gradient(80.91deg, #2D2D2E 0, #696E73 1)</string>
@@ -337,7 +337,7 @@
   <dimen name="LINEHEIGHTTEXTLARGE" category="">24dp</dimen>
   <color name="COLORTEXTSUCCESS" category="">#ff28a138</color>
   <string name="BACKGROUNDBUTTONBUNDLETOP" category="">linear-gradient(to top right, #2D2D2E 0, #696E73  1)</string>
-  <color name="BORDERCOLORINPUT" category="">#ffbac7d5</color>
+  <color name="BORDERCOLORINPUT" category="Border color">#ffbac7d5</color>
   <color name="PALETTEORANGELIGHTACTIVE" category="">#fffae2c6</color>
   <string name="FONTWEIGHTHEADINGTITLE1" category="">700</string>
   <color name="COLORHEADINGINVERTED" category="">#ffffffff</color>
@@ -363,7 +363,7 @@
   <string name="ZINDEXMODAL" category="">825</string>
   <color name="BORDERCOLORTAGFOCUS" category="">#ff0172cb</color>
   <color name="BACKGROUNDBUTTONPRIMARYSUBTLEACTIVE" category="">#ffbfe8e2</color>
-  <string name="BORDERSTYLECARD" category="">solid</string>
+  <string name="BORDERSTYLECARD" category="Border style">solid</string>
   <dimen name="SPACEXXXSMALL" category="">2dp</dimen>
   <string name="DURATIONSLOW" category="">0.4s</string>
   <dimen name="SPACELARGE" category="">24dp</dimen>
@@ -449,7 +449,7 @@
   <color name="COLORTEXTBUTTONINFOBORDERED" category="">#ff0172cb</color>
   <string name="HEIGHTCOUNTRYFLAG" category="">auto</string>
   <dimen name="HEIGHTICONLARGE" category="">24dp</dimen>
-  <dimen name="BOXSHADOWBUTTONFOCUS" category="">0 0 4px 1px rgba(1, 114, 203, 0.3)</dimen>
+  <dimen name="BOXSHADOWBUTTONFOCUS" category="Box shadow">0 0 4px 1px rgba(1, 114, 203, 0.3)</dimen>
   <color name="PALETTEBLUELIGHTHOVER" category="">#ffdef0fc</color>
   <color name="BORDERCOLORCHECKBOXRADIOHOVER" category="">#ff4f5e71</color>
   <color name="COLORTEXTBUTTONLINKCRITICAL" category="">#ffd21c1c</color>
@@ -497,7 +497,7 @@
   <color name="BORDERCOLORBUTTONWARNINGBORDERED" category="">#ffdf7b00</color>
   <string name="BACKGROUNDILLUSTRATION" category="">transparent</string>
   <dimen name="HEIGHTINPUTGROUPSEPARATORSMALL" category="">16dp</dimen>
-  <string name="TEXTDECORATIONTEXTLINKPRIMARY" category="">underline</string>
+  <string name="TEXTDECORATIONTEXTLINKPRIMARY" category="Text decoration">underline</string>
   <string name="BACKGROUNDBADGEBUNDLETOP" category="">linear-gradient(to top right,#2D2D2E 0, #696E73 1)</string>
   <string name="TEXTDECORATIONTEXTLINKPRIMARYHOVER" category="">none</string>
   <color name="BORDERCOLORBUTTONWARNINGBORDEREDHOVER" category="">#ffc96f00</color>

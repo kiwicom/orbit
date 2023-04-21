@@ -3,10 +3,10 @@
     "colorTextPrimary": {
       "value": "#252A31",
       "type": "color",
-      "category": "",
+      "category": "Colors",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use these tokens for text or icon colors. Don't use these for borders and background colors."
       }
     },
     "colorTextSecondary": {
@@ -1173,7 +1173,7 @@
     "fontFamily": {
       "value": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
       "type": "string",
-      "category": "",
+      "category": "Font family",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -1182,10 +1182,10 @@
     "backgroundBody": {
       "value": "#F5F7F9",
       "type": "color",
-      "category": "",
+      "category": "Background colors",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
       }
     },
     "backgroundModal": {
@@ -2091,10 +2091,10 @@
     "fontSizeHeadingDisplay": {
       "value": "40px",
       "type": "size",
-      "category": "",
+      "category": "Font size",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use these sizing tokens for font sizes."
       }
     },
     "fontSizeHeadingDisplaySubtitle": {
@@ -2253,10 +2253,10 @@
     "borderRadiusCircle": {
       "value": "50%",
       "type": "size",
-      "category": "",
+      "category": "Border radius",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use radius tokens to change the border-radius size (rounded corners)."
       }
     },
     "borderRadiusNormal": {
@@ -2298,10 +2298,10 @@
     "zIndexDefault": {
       "value": "1",
       "type": "string",
-      "category": "",
+      "category": "Z Index",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use layers to show depth of page."
       }
     },
     "zIndexSticky": {
@@ -2352,7 +2352,7 @@
     "widthIconSmall": {
       "value": "16px",
       "type": "size",
-      "category": "",
+      "category": "Size (width, height)",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -2676,7 +2676,7 @@
     "widthBreakpointMediumMobile": {
       "value": 414,
       "type": "number",
-      "category": "",
+      "category": "Breakpoints",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -2721,7 +2721,7 @@
     "borderColorInput": {
       "value": "#BAC7D5",
       "type": "color",
-      "category": "",
+      "category": "Border color",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -3135,7 +3135,7 @@
     "borderStyleCard": {
       "value": "solid",
       "type": "string",
-      "category": "",
+      "category": "Border style",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -3180,7 +3180,7 @@
     "opacityOverlay": {
       "value": "0.8",
       "type": "string",
-      "category": "",
+      "category": "Opacity",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -3216,10 +3216,10 @@
     "fontWeightNormal": {
       "value": "400",
       "type": "string",
-      "category": "",
+      "category": "Font weight",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use this for setting basic font weights."
       }
     },
     "fontWeightMedium": {
@@ -3324,10 +3324,10 @@
     "paddingAlert": {
       "value": "16px",
       "type": "size",
-      "category": "",
+      "category": "Spacing",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use this for setting spacings for elements."
       }
     },
     "paddingAlertWithIcon": {
@@ -3729,10 +3729,10 @@
     "durationFast": {
       "value": "0.15s",
       "type": "string",
-      "category": "",
+      "category": "Duration",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use this for setting the speed of animation or transition."
       }
     },
     "durationNormal": {
@@ -3756,10 +3756,10 @@
     "modifierScaleButtonActive": {
       "value": 0.95,
       "type": "number",
-      "category": "",
+      "category": "Modifier",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": "Use this for values for transform property, etc."
       }
     },
     "modifierScaleCheckboxRadioActive": {
@@ -3774,7 +3774,7 @@
     "lineHeightText": {
       "value": "1.4",
       "type": "string",
-      "category": "",
+      "category": "Line height",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -3882,7 +3882,7 @@
     "textDecorationTextLinkPrimary": {
       "value": "underline",
       "type": "string",
-      "category": "",
+      "category": "Text decoration",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -3918,7 +3918,7 @@
     "boxShadowButtonFocus": {
       "value": "0 0 4px 1px rgba(1, 114, 203, 0.3)",
       "type": "size",
-      "category": "",
+      "category": "Box shadow",
       "comment": "",
       "meta": {
         "categoryDescription": ""
@@ -3990,10 +3990,10 @@
     "paletteProductLight": {
       "value": "#E1F4F3",
       "type": "color",
-      "category": "",
+      "category": "Color palette",
       "comment": "",
       "meta": {
-        "categoryDescription": ""
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
     "paletteProductLightHover": {

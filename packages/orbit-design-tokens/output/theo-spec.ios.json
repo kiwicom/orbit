@@ -318,7 +318,7 @@
     {
       "value": "rgb(225, 244, 243)",
       "type": "color",
-      "category": "",
+      "category": "Color palette",
       "comment": "",
       "name": "paletteProductLight"
     },
@@ -535,7 +535,7 @@
     {
       "value": "0.8",
       "type": "string",
-      "category": "",
+      "category": "Opacity",
       "comment": "",
       "name": "opacityOverlay"
     },
@@ -857,7 +857,7 @@
     {
       "value": "16px",
       "type": "size",
-      "category": "",
+      "category": "Size (width, height)",
       "comment": "",
       "name": "widthIconSmall"
     },
@@ -899,7 +899,7 @@
     {
       "value": "1.4",
       "type": "string",
-      "category": "",
+      "category": "Line height",
       "comment": "",
       "name": "lineHeightText"
     },
@@ -1004,7 +1004,7 @@
     {
       "value": "1",
       "type": "string",
-      "category": "",
+      "category": "Z Index",
       "comment": "",
       "name": "zIndexDefault"
     },
@@ -1228,7 +1228,7 @@
     {
       "value": 0.95,
       "type": "number",
-      "category": "",
+      "category": "Modifier",
       "comment": "",
       "name": "modifierScaleButtonActive"
     },
@@ -1298,7 +1298,7 @@
     {
       "value": "16px",
       "type": "size",
-      "category": "",
+      "category": "Spacing",
       "comment": "",
       "name": "paddingAlert"
     },
@@ -1585,7 +1585,7 @@
     {
       "value": 414,
       "type": "number",
-      "category": "",
+      "category": "Breakpoints",
       "comment": "",
       "name": "widthBreakpointMediumMobile"
     },
@@ -1662,7 +1662,7 @@
     {
       "value": "0.5",
       "type": "size",
-      "category": "",
+      "category": "Border radius",
       "comment": "",
       "name": "borderRadiusCircle"
     },
@@ -1753,7 +1753,7 @@
     {
       "value": "400",
       "type": "string",
-      "category": "",
+      "category": "Font weight",
       "comment": "",
       "name": "fontWeightNormal"
     },
@@ -1844,7 +1844,7 @@
     {
       "value": "0.15s",
       "type": "string",
-      "category": "",
+      "category": "Duration",
       "comment": "",
       "name": "durationFast"
     },
@@ -1865,7 +1865,7 @@
     {
       "value": "40px",
       "type": "size",
-      "category": "",
+      "category": "Font size",
       "comment": "",
       "name": "fontSizeHeadingDisplay"
     },
@@ -1998,7 +1998,7 @@
     {
       "value": "rgb(245, 247, 249)",
       "type": "color",
-      "category": "",
+      "category": "Background colors",
       "comment": "",
       "name": "backgroundBody"
     },
@@ -2138,7 +2138,7 @@
     {
       "value": "rgb(37, 42, 49)",
       "type": "color",
-      "category": "",
+      "category": "Colors",
       "comment": "",
       "name": "colorTextPrimary"
     },
@@ -2285,7 +2285,7 @@
     {
       "value": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
       "type": "string",
-      "category": "",
+      "category": "Font family",
       "comment": "",
       "name": "fontFamily"
     },
@@ -2362,7 +2362,7 @@
     {
       "value": "rgb(186, 199, 213)",
       "type": "color",
-      "category": "",
+      "category": "Border color",
       "comment": "",
       "name": "borderColorInput"
     },
@@ -2544,7 +2544,7 @@
     {
       "value": "solid",
       "type": "string",
-      "category": "",
+      "category": "Border style",
       "comment": "",
       "name": "borderStyleCard"
     },
@@ -3146,7 +3146,7 @@
     {
       "value": "0 0 4px 1px rgba(1, 114, 203, 0.3)",
       "type": "size",
-      "category": "",
+      "category": "Box shadow",
       "comment": "",
       "name": "boxShadowButtonFocus"
     },
@@ -3482,7 +3482,7 @@
     {
       "value": "underline",
       "type": "string",
-      "category": "",
+      "category": "Text decoration",
       "comment": "",
       "name": "textDecorationTextLinkPrimary"
     },

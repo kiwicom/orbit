@@ -111,12 +111,10 @@ const StyledTooltipContent = styled.div`
     }
 
     ${media.largeMobile(css`
-      font-size: ${theme.orbit.fontSizeTextSmall};
       font-weight: ${theme.orbit.fontWeightMedium};
 
       ${StyledText}, ${Item}, a {
         font-weight: ${theme.orbit.fontWeightMedium};
-        font-size: ${theme.orbit.fontSizeTextSmall};
       }
     `)};
   `}

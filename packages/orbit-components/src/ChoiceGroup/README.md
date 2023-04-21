@@ -58,15 +58,15 @@ This is a barebones example:
 ```jsx
 <ChoiceGroup onChange={ev => doSomething(ev)}>
   {({ Container, Item, spacing }) => (
-    <Container style={{ display: 'flex', flexDirection: 'column', gap: spacing }}>
+    <Container style={{ display: "flex", flexDirection: "column", gap: spacing }}>
       <Item>
-        <Radio label="Reason one" value="two">
+        <Radio label="Reason one" value="two" />
       </Item>
       <Item>
-        <Radio label="Reason two" value="two">
+        <Radio label="Reason two" value="two" />
       </Item>
       <Item>
-        <Radio label="Reason three" value="three">
+        <Radio label="Reason three" value="three" />
       </Item>
     </Container>
   )}

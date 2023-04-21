@@ -12,8 +12,6 @@ module.exports = {
   /*  */
   borderColorButtonFacebookBorderedActive: "rgb(53, 79, 136)",
   /*  */
-  marginButtonIconNormal: "8px",
-  /*  */
   heightButtonNormal: "44px",
   /*  */
   colorIconWarning: "rgb(223, 123, 0)",
@@ -95,8 +93,6 @@ module.exports = {
   heightButtonLarge: "52px",
   /*  */
   backgroundButtonWarningActive: "rgb(178, 98, 0)",
-  /*  */
-  marginButtonIconLarge: "12px",
   /*  */
   borderColorButtonInfoBordered: "rgb(1, 114, 203)",
   /*  */
@@ -448,7 +444,7 @@ module.exports = {
   /*  */
   backgroundAlertCritical: "rgb(250, 234, 234)",
   /*  */
-  colorTextButtonPrimarySubtle: "rgb(0, 165, 142)",
+  colorTextButtonPrimarySubtle: "rgb(0, 122, 105)",
   /*  */
   widthModalNormal: "740px",
   /*  */
@@ -468,15 +464,13 @@ module.exports = {
   /*  */
   heightButtonSmall: "32px",
   /*  */
-  marginButtonIconSmall: "8px",
-  /*  */
   heightServiceLogoSmall: "12px",
   /*  */
   paddingInputSmall: "0 12px",
   /*  */
   borderRadiusCircle: "50%",
   /*  */
-  colorTextButtonCriticalSubtle: "rgb(210, 28, 28)",
+  colorTextButtonCriticalSubtle: "rgb(151, 12, 12)",
   /*  */
   paletteWhite: "rgb(255, 255, 255)",
   /*  */
@@ -502,7 +496,7 @@ module.exports = {
   /*  */
   fontWeightNormal: "400",
   /*  */
-  colorTextButtonCriticalSubtleHover: "rgb(151, 12, 12)",
+  colorTextButtonCriticalSubtleHover: "rgb(137, 11, 11)",
   /*  */
   backgroundButtonLinkPrimaryActive: "rgb(191, 232, 226)",
   /*  */
@@ -516,7 +510,7 @@ module.exports = {
   /*  */
   backgroundButtonPrimarySubtle: "rgb(225, 244, 243)",
   /*  */
-  colorTextButtonPrimarySubtleHover: "rgb(0, 122, 105)",
+  colorTextButtonPrimarySubtleHover: "rgb(0, 112, 96)",
   /*  */
   fontSizeHeadingTitle5: "12px",
   /*  */
@@ -660,7 +654,7 @@ module.exports = {
   /*  */
   backgroundColorTabBundleTop: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
   /*  */
-  colorTextButtonPrimarySubtleActive: "rgb(0, 122, 105)",
+  colorTextButtonPrimarySubtleActive: "rgb(0, 102, 87)",
   /*  */
   borderColorButtonCriticalBordered: "rgb(210, 28, 28)",
   /*  */
@@ -696,7 +690,7 @@ module.exports = {
   /*  */
   backgroundButtonWhiteBordered: "transparent",
   /*  */
-  colorTextButtonCriticalSubtleActive: "rgb(151, 12, 12)",
+  colorTextButtonCriticalSubtleActive: "rgb(109, 9, 9)",
   /*  */
   widthModalLarge: "900px",
   /*  */
@@ -859,6 +853,8 @@ module.exports = {
   paletteRedDarker: "rgb(118, 9, 9)",
   /*  */
   colorTextWhite: "rgb(255, 255, 255)",
+  /*  */
+  marginButtonIcon: "8px",
   /*  */
   boxShadowFixedReverse: "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)",
   /*  */

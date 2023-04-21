@@ -1,6 +1,6 @@
 import type * as React from "react";
 
-import { SIZE_OPTIONS, TOKENS } from "./consts";
+import { SIZE_OPTIONS } from "./consts";
 import { rtlSpacing } from "../../../utils/rtl";
 import { getSize } from "../../../Icon";
 import { ICON_SIZES } from "../../../Icon/consts";
@@ -21,21 +21,19 @@ type getIconContainerType = ({
   iconForeground: IconForeground;
 }) => { icons: IconProps };
 
-const getIconSpacing = (onlyIcon: boolean, size: Size, theme: Theme) => {
+const getIconSpacing = (onlyIcon: boolean, theme: Theme) => {
   if (onlyIcon) return null;
 
-  const tokens = {
-    [TOKENS.marginRightIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.marginButtonIconLarge,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.marginButtonIconNormal,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.marginButtonIconSmall,
-    },
-  };
-
   return {
-    leftMargin: rtlSpacing(`0 ${tokens[TOKENS.marginRightIcon][size]} 0 0`)({ theme }),
-    rightMargin: rtlSpacing(`0 0 0 ${tokens[TOKENS.marginRightIcon][size]}`)({ theme }),
+    leftMargin: rtlSpacing(`0 ${theme.orbit.marginButtonIcon} 0 0`)({ theme }),
+    rightMargin: rtlSpacing(`0 0 0 ${theme.orbit.marginButtonIcon}`)({ theme }),
   };
+};
+
+const getIconSize = (size: Size) => {
+  if (size === SIZE_OPTIONS.SMALL) return ICON_SIZES.SMALL;
+  if (size === SIZE_OPTIONS.LARGE) return ICON_SIZES.LARGE;
+  return ICON_SIZES.MEDIUM;
 };
 
 const getIconContainer: getIconContainerType = ({
@@ -45,14 +43,14 @@ const getIconContainer: getIconContainerType = ({
   size = SIZE_OPTIONS.NORMAL,
   iconForeground,
 }) => {
-  const onlyIcon = Boolean(iconLeft && !children);
-  const sizeIcon = size === ICON_SIZES.SMALL ? ICON_SIZES.SMALL : ICON_SIZES.MEDIUM;
+  const sizeIcon = getIconSize(size);
   const computedSize = getSize(sizeIcon)({ theme });
+  const onlyIcon = Boolean(iconLeft && !children);
   return {
     icons: {
       height: computedSize,
       width: computedSize,
-      ...getIconSpacing(onlyIcon, size, theme),
+      ...getIconSpacing(onlyIcon, theme),
       ...iconForeground,
     },
   };

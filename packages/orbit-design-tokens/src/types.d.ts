@@ -395,9 +395,7 @@ export type Tokens = {
   paddingTextareaNormal: string;
   paddingInputSmall: string;
   paddingInputNormal: string;
-  marginButtonIconSmall: string;
-  marginButtonIconNormal: string;
-  marginButtonIconLarge: string;
+  marginButtonIcon: string;
   marginButtonGroup: string;
   marginTopFormFeedback: string;
   marginBottomSelectSuffix: string;

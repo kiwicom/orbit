@@ -34,10 +34,10 @@ Object {
     "foreground": null,
     "foregroundActive": null,
     "foregroundHover": null,
-    "height": "20px",
-    "leftMargin": "0 12px 0 0",
-    "rightMargin": "0 0 0 12px",
-    "width": "20px",
+    "height": "24px",
+    "leftMargin": "0 8px 0 0",
+    "rightMargin": "0 0 0 8px",
+    "width": "24px",
   },
 }
 `;

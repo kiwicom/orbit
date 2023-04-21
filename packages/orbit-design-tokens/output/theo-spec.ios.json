@@ -43,13 +43,6 @@
       "name": "borderColorButtonFacebookBorderedActive"
     },
     {
-      "value": "8px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "name": "marginButtonIconNormal"
-    },
-    {
       "value": "44px",
       "type": "size",
       "category": "",
@@ -335,13 +328,6 @@
       "category": "",
       "comment": "",
       "name": "backgroundButtonWarningActive"
-    },
-    {
-      "value": "12px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "name": "marginButtonIconLarge"
     },
     {
       "value": "rgb(1, 114, 203)",
@@ -1569,7 +1555,7 @@
       "name": "backgroundAlertCritical"
     },
     {
-      "value": "rgb(0, 165, 142)",
+      "value": "rgb(0, 122, 105)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1639,13 +1625,6 @@
       "name": "heightButtonSmall"
     },
     {
-      "value": "8px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "name": "marginButtonIconSmall"
-    },
-    {
       "value": "12px",
       "type": "size",
       "category": "",
@@ -1667,7 +1646,7 @@
       "name": "borderRadiusCircle"
     },
     {
-      "value": "rgb(210, 28, 28)",
+      "value": "rgb(151, 12, 12)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1758,7 +1737,7 @@
       "name": "fontWeightNormal"
     },
     {
-      "value": "rgb(151, 12, 12)",
+      "value": "rgb(137, 11, 11)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -1807,7 +1786,7 @@
       "name": "backgroundButtonPrimarySubtle"
     },
     {
-      "value": "rgb(0, 122, 105)",
+      "value": "rgb(0, 112, 96)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2311,7 +2290,7 @@
       "name": "backgroundColorTabBundleTop"
     },
     {
-      "value": "rgb(0, 122, 105)",
+      "value": "rgb(0, 102, 87)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -2437,7 +2416,7 @@
       "name": "backgroundButtonWhiteBordered"
     },
     {
-      "value": "rgb(151, 12, 12)",
+      "value": "rgb(109, 9, 9)",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3009,6 +2988,13 @@
       "category": "",
       "comment": "",
       "name": "colorTextWhite"
+    },
+    {
+      "value": "8px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "name": "marginButtonIcon"
     },
     {
       "value": "0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12)",

@@ -16,5 +16,7 @@ export enum TOKENS {
   backgroundButtonActive = "backgroundButtonActive",
   backgroundButtonFocus = "backgroundButtonFocus",
   colorTextButton = "colorTextButton",
+  colorTextButtonHover = "colorTextButtonHover",
+  colorTextButtonActive = "colorTextButtonActive",
   borderColorButtonFocus = "borderColorButtonFocus",
 }

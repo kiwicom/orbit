@@ -5,7 +5,6 @@
 @value background-button-warning-hover: rgb(201, 111, 0);
 @value color-text-button-primary: rgb(255, 255, 255);
 @value border-color-button-facebook-bordered-active: rgb(53, 79, 136);
-@value margin-button-icon-normal: 8px;
 @value height-button-normal: 44px;
 @value color-icon-warning: rgb(223, 123, 0);
 @value font-size-form-label: 14px;
@@ -47,7 +46,6 @@
 @value palette-product-light: rgb(225, 244, 243);
 @value height-button-large: 52px;
 @value background-button-warning-active: rgb(178, 98, 0);
-@value margin-button-icon-large: 12px;
 @value border-color-button-info-bordered: rgb(1, 114, 203);
 @value background-button-primary: rgb(0, 165, 142);
 @value border-color-button-facebook-bordered-hover: rgb(56, 84, 144);
@@ -223,7 +221,7 @@
 @value palette-green-normal-hover: rgb(35, 139, 49);
 @value font-size-heading-title3: 16px;
 @value background-alert-critical: rgb(250, 234, 234);
-@value color-text-button-primary-subtle: rgb(0, 165, 142);
+@value color-text-button-primary-subtle: rgb(0, 122, 105);
 @value width-modal-normal: 740px;
 @value width-breakpoint-medium-mobile: 414;
 @value color-text-button-facebook-active: rgb(255, 255, 255);
@@ -233,11 +231,10 @@
 @value palette-social-facebook-hover: rgb(56, 84, 144);
 @value palette-green-light-hover: rgb(225, 239, 226);
 @value height-button-small: 32px;
-@value margin-button-icon-small: 8px;
 @value height-service-logo-small: 12px;
 @value padding-input-small: 0 12px;
 @value border-radius-circle: 50%;
-@value color-text-button-critical-subtle: rgb(210, 28, 28);
+@value color-text-button-critical-subtle: rgb(151, 12, 12);
 @value palette-white: rgb(255, 255, 255);
 @value font-size-heading-title4: 14px;
 @value color-placeholder-input-error: rgb(210, 28, 28);
@@ -250,14 +247,14 @@
 @value height-service-logo-medium: 24px;
 @value palette-white-hover: rgb(245, 247, 249);
 @value font-weight-normal: "400";
-@value color-text-button-critical-subtle-hover: rgb(151, 12, 12);
+@value color-text-button-critical-subtle-hover: rgb(137, 11, 11);
 @value background-button-link-primary-active: rgb(191, 232, 226);
 @value color-form-label-filled: rgb(79, 94, 113);
 @value palette-green-normal: rgb(40, 161, 56);
 @value line-height-text-normal: 20px;
 @value border-color-button-google-bordered-hover: rgb(24, 27, 32);
 @value background-button-primary-subtle: rgb(225, 244, 243);
-@value color-text-button-primary-subtle-hover: rgb(0, 122, 105);
+@value color-text-button-primary-subtle-hover: rgb(0, 112, 96);
 @value font-size-heading-title5: 12px;
 @value background-button-white-active: rgb(229, 234, 239);
 @value color-text-critical: rgb(210, 28, 28);
@@ -329,7 +326,7 @@
 @value line-height-heading-display-subtitle: 28px;
 @value background-button-white-hover: rgb(245, 247, 249);
 @value background-color-tab-bundle-top: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)";
-@value color-text-button-primary-subtle-active: rgb(0, 122, 105);
+@value color-text-button-primary-subtle-active: rgb(0, 102, 87);
 @value border-color-button-critical-bordered: rgb(210, 28, 28);
 @value color-text-button-facebook-bordered: rgb(59, 89, 152);
 @value border-color-button-google-bordered-active: rgb(11, 12, 15);
@@ -347,7 +344,7 @@
 @value background-country-flag: "transparent";
 @value color-text-button-facebook-hover: rgb(255, 255, 255);
 @value background-button-white-bordered: "transparent";
-@value color-text-button-critical-subtle-active: rgb(151, 12, 12);
+@value color-text-button-critical-subtle-active: rgb(109, 9, 9);
 @value width-modal-large: 900px;
 @value palette-white-active: rgb(229, 234, 239);
 @value background-button-secondary: rgb(232, 237, 241);
@@ -429,6 +426,7 @@
 @value color-text-button-facebook-bordered-active: rgb(53, 79, 136);
 @value palette-red-darker: rgb(118, 9, 9);
 @value color-text-white: rgb(255, 255, 255);
+@value margin-button-icon: 8px;
 @value box-shadow-fixed-reverse: 0px 0px 2px 0px rgba(37, 42, 49, 0.16), 0px -2px 4px 0px rgba(37, 42, 49, 0.12);
 @value background-button-link-critical: "transparent";
 @value background-table-even: rgb(245, 247, 249);

@@ -409,27 +409,27 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>colorTextButtonPrimarySubtle</name>
-          <value>#00A58E</value>
+          <value>#007A69</value>
         </token>
         <token>
           <name>colorTextButtonPrimarySubtleHover</name>
-          <value>#007A69</value>
+          <value>#007060</value>
         </token>
         <token>
           <name>colorTextButtonPrimarySubtleActive</name>
-          <value>#007A69</value>
+          <value>#006657</value>
         </token>
         <token>
           <name>colorTextButtonCriticalSubtle</name>
-          <value>#D21C1C</value>
+          <value>#970C0C</value>
         </token>
         <token>
           <name>colorTextButtonCriticalSubtleHover</name>
-          <value>#970C0C</value>
+          <value>#890B0B</value>
         </token>
         <token>
           <name>colorTextButtonCriticalSubtleActive</name>
-          <value>#970C0C</value>
+          <value>#6D0909</value>
         </token>
         <token>
           <name>colorTextInput</name>
@@ -1576,16 +1576,8 @@ describe(generateXMLDesignTokens.name, () => {
           <value>0 12px</value>
         </token>
         <token>
-          <name>marginButtonIconSmall</name>
+          <name>marginButtonIcon</name>
           <value>8px</value>
-        </token>
-        <token>
-          <name>marginButtonIconNormal</name>
-          <value>8px</value>
-        </token>
-        <token>
-          <name>marginButtonIconLarge</name>
-          <value>12px</value>
         </token>
         <token>
           <name>marginButtonGroup</name>

@@ -874,7 +874,7 @@
       }
     },
     "colorTextButtonPrimarySubtle": {
-      "value": "#00A58E",
+      "value": "#007A69",
       "type": "color",
       "category": "",
       "comment": "",
@@ -883,7 +883,7 @@
       }
     },
     "colorTextButtonPrimarySubtleHover": {
-      "value": "#007A69",
+      "value": "#007060",
       "type": "color",
       "category": "",
       "comment": "",
@@ -892,7 +892,7 @@
       }
     },
     "colorTextButtonPrimarySubtleActive": {
-      "value": "#007A69",
+      "value": "#006657",
       "type": "color",
       "category": "",
       "comment": "",
@@ -901,7 +901,7 @@
       }
     },
     "colorTextButtonCriticalSubtle": {
-      "value": "#D21C1C",
+      "value": "#970C0C",
       "type": "color",
       "category": "",
       "comment": "",
@@ -910,7 +910,7 @@
       }
     },
     "colorTextButtonCriticalSubtleHover": {
-      "value": "#970C0C",
+      "value": "#890B0B",
       "type": "color",
       "category": "",
       "comment": "",
@@ -919,7 +919,7 @@
       }
     },
     "colorTextButtonCriticalSubtleActive": {
-      "value": "#970C0C",
+      "value": "#6D0909",
       "type": "color",
       "category": "",
       "comment": "",
@@ -3501,26 +3501,8 @@
         "categoryDescription": ""
       }
     },
-    "marginButtonIconSmall": {
+    "marginButtonIcon": {
       "value": "8px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
-    "marginButtonIconNormal": {
-      "value": "8px",
-      "type": "size",
-      "category": "",
-      "comment": "",
-      "meta": {
-        "categoryDescription": ""
-      }
-    },
-    "marginButtonIconLarge": {
-      "value": "12px",
       "type": "size",
       "category": "",
       "comment": "",

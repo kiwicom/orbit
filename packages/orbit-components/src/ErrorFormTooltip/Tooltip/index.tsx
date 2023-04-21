@@ -21,7 +21,6 @@ import type { Props } from "./types";
 const StyledArrow = styled.div<{
   inlineLabel?: boolean;
   isHelp?: boolean;
-  inputSize?: Common.InputSize;
   placement?: string;
 }>`
   position: absolute;
@@ -40,7 +39,6 @@ const StyledFormFeedbackTooltip = styled.div<{
   isHelp?: boolean;
   shown?: boolean;
   inlineLabel?: boolean;
-  inputSize?: Common.InputSize;
   placement?: string;
   top?: string | number;
   left?: string | number;
@@ -49,25 +47,12 @@ const StyledFormFeedbackTooltip = styled.div<{
   right?: string | number;
   transform?: string;
 }>`
-  ${({
-    theme,
-    isHelp,
-    shown,
-    inputSize,
-    top,
-    left,
-    position,
-    bottom,
-    right: popperRight,
-    transform,
-  }) => css`
+  ${({ theme, isHelp, shown, top, left, position, bottom, right: popperRight, transform }) => css`
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     border-radius: ${theme.orbit.borderRadiusNormal};
-    padding: ${theme.orbit.spaceXSmall} ${
-    inputSize === "small" ? theme.orbit.spaceXSmall : theme.orbit.spaceSmall
-  };
+    padding: ${theme.orbit.spaceXSmall} ${theme.orbit.spaceSmall};
     padding-${right}: ${isHelp && theme.orbit.spaceSmall};
     z-index: 10;
     max-height: none;
@@ -158,7 +143,6 @@ const ErrorFormTooltip = ({
   onShown,
   dataTest,
   helpClosable,
-  inputSize,
   children,
   shown,
   referenceElement,
@@ -171,13 +155,6 @@ const ErrorFormTooltip = ({
   const [arrowRef, setArrowRef] = React.useState<HTMLDivElement | null>(null);
   const { rtl } = useTheme();
 
-  const resolveOffset = React.useCallback(() => {
-    if (inlineLabel) {
-      if (inputSize === "small") return [0, 4];
-    }
-    return [0, 3];
-  }, [inlineLabel, inputSize]);
-
   const {
     styles,
     attributes: attrs,
@@ -188,8 +165,7 @@ const ErrorFormTooltip = ({
       {
         name: "offset",
         options: {
-          // @ts-expect-error TODO
-          offset: resolveOffset,
+          offset: [0, 3],
         },
       },
       {
@@ -219,7 +195,7 @@ const ErrorFormTooltip = ({
 
   React.useEffect(() => {
     if (update) update();
-  }, [update, resolveOffset, shown]);
+  }, [update, shown]);
 
   React.useEffect(() => {
     const link = tooltipRef.current?.querySelector("a");
@@ -245,7 +221,6 @@ const ErrorFormTooltip = ({
     <StyledFormFeedbackTooltip
       id={id}
       ref={tooltipRef}
-      inputSize={inputSize}
       shown={shown}
       isHelp={isHelp}
       data-test={dataTest}
@@ -262,7 +237,6 @@ const ErrorFormTooltip = ({
       <StyledArrow
         isHelp={isHelp}
         ref={setArrowRef}
-        inputSize={inputSize}
         inlineLabel={inlineLabel}
         placement={attrs.popper && attrs.popper["data-popper-placement"]}
       />

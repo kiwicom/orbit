@@ -2,7 +2,6 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { usePopper } from "react-popper";
 
-import type * as Common from "../../common/types";
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
@@ -249,7 +248,7 @@ const ErrorFormTooltip = ({
             if (shown) onShown(false);
           }}
         >
-          <CloseIc ariaLabel="close" size="small" />
+          <CloseIc ariaLabel="close" />
         </StyledCloseButton>
       )}
     </StyledFormFeedbackTooltip>

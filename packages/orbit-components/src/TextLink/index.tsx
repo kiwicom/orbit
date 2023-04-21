@@ -78,16 +78,21 @@ const getSizeToken = ({ theme, size }: { theme: Theme; size: Common.Size }): str
   return sizeTokens[size];
 };
 
-const StyledIconContainer = styled(({ children, className }) => (
-  <span className={className}>{children}</span>
-))`
-  ${({ theme }: { theme: Theme }) => css`
+const getIconSize = ({ theme, size }: { theme: Theme; size: Props["size"] }) => {
+  if (size === SIZE_OPTIONS.LARGE)
+    return { width: theme.orbit.widthIconLarge, height: theme.orbit.heightIconLarge };
+  if (size === SIZE_OPTIONS.SMALL)
+    return { width: theme.orbit.widthIconSmall, height: theme.orbit.heightIconSmall };
+  return { width: theme.orbit.widthIconMedium, height: theme.orbit.heightIconMedium };
+};
+
+const StyledIconContainer = styled.span`
+  ${({ theme, size }: { theme: Theme; size: Props["size"] }) => css`
     display: flex;
     align-items: center;
 
     svg {
-      width: ${theme.orbit.widthIconSmall};
-      height: ${theme.orbit.heightIconSmall};
+      ${getIconSize({ theme, size })};
     }
   `}
 `;
@@ -157,9 +162,9 @@ StyledTextLink.defaultProps = {
 // eslint-disable-next-line jsx-a11y/anchor-has-content
 const DefaultComponent = props => <a {...props} />;
 
-const IconContainer = ({ children }) => {
+const IconContainer = ({ children, size }) => {
   if (!children) return null;
-  return <StyledIconContainer>{children}</StyledIconContainer>;
+  return <StyledIconContainer size={size}>{children}</StyledIconContainer>;
 };
 
 const TextLink = ({
@@ -209,9 +214,9 @@ const TextLink = ({
       $noUnderline={noUnderline}
       $standAlone={standAlone}
     >
-      <IconContainer>{iconLeft}</IconContainer>
+      <IconContainer size={size}>{iconLeft}</IconContainer>
       {children}
-      <IconContainer>{iconRight}</IconContainer>
+      <IconContainer size={size}>{iconRight}</IconContainer>
     </StyledTextLink>
   );
 };

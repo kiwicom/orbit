@@ -1,9 +1,8 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select } from "@storybook/addon-knobs";
+import { text, boolean } from "@storybook/addon-knobs";
 import { css } from "styled-components";
 
-import { SIZE_OPTIONS } from "./InputField/consts";
 import Stack from "./Stack";
 import RenderInRtl from "./utils/rtl/RenderInRtl";
 import Tag from "./Tag";
@@ -41,13 +40,11 @@ export const Error = () => {
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
   const prefix = text("Prefix", "$");
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const required = boolean("required", true);
 
   return (
     <Stack direction="column">
       <InputField
-        size={size}
         error={<TextLink tabIndex={0}>{error}</TextLink>}
         label={label}
         value={value}
@@ -55,7 +52,6 @@ export const Error = () => {
         onChange={action("change")}
       />
       <InputField
-        size={size}
         disabled
         inlineLabel
         error={<TextLink tabIndex={0}>{error}</TextLink>}
@@ -65,7 +61,6 @@ export const Error = () => {
         onChange={action("change")}
       />
       <InputField
-        size={size}
         error={error}
         label={label}
         value={value}
@@ -73,14 +68,12 @@ export const Error = () => {
         onChange={action("change")}
       />
       <InputField
-        size={size}
         error={error}
         value={value}
         placeholder={placeholder}
         onChange={action("change")}
       />
       <InputField
-        size={size}
         error={error}
         inlineLabel
         label={label}
@@ -89,7 +82,6 @@ export const Error = () => {
         onChange={action("change")}
       />
       <InputField
-        size={size}
         error={error}
         inlineLabel
         prefix={prefix}
@@ -167,14 +159,12 @@ export const Help = () => {
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
   const prefix = text("Prefix", "$");
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const required = boolean("required", true);
   const helpClosable = boolean("helpClosable", true);
 
   return (
     <Stack>
       <InputField
-        size={size}
         help={<TextLink>{help}</TextLink>}
         label={label}
         helpClosable={helpClosable}
@@ -183,7 +173,6 @@ export const Help = () => {
         onChange={action("change")}
       />
       <InputField
-        size={size}
         help={help}
         value={value}
         helpClosable={helpClosable}
@@ -191,7 +180,6 @@ export const Help = () => {
         onChange={action("change")}
       />
       <InputField
-        size={size}
         help={help}
         inlineLabel
         label={label}
@@ -201,7 +189,6 @@ export const Help = () => {
         onChange={action("change")}
       />
       <InputField
-        size={size}
         help={help}
         inlineLabel
         prefix={prefix}
@@ -307,14 +294,12 @@ export const RtlError = () => {
   const value = text("Value", "");
   const placeholder = text("Placeholder", "Placeholder");
   const prefix = text("Prefix", "$");
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const required = boolean("required", true);
 
   return (
     <RenderInRtl>
       <Stack>
         <InputField
-          size={size}
           error={error}
           label={label}
           value={value}
@@ -322,14 +307,12 @@ export const RtlError = () => {
           onChange={action("change")}
         />
         <InputField
-          size={size}
           error={error}
           value={value}
           placeholder={placeholder}
           onChange={action("change")}
         />
         <InputField
-          size={size}
           error={error}
           inlineLabel
           label={label}
@@ -338,7 +321,6 @@ export const RtlError = () => {
           onChange={action("change")}
         />
         <InputField
-          size={size}
           error={error}
           inlineLabel
           prefix={prefix}

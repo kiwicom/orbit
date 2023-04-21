@@ -41,24 +41,6 @@ DefaultInput.story = {
   },
 };
 
-export const SmallInput = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-
-  return (
-    <InputField label={label} value={value} placeholder={placeholder} onChange={action("change")} />
-  );
-};
-
-SmallInput.story = {
-  name: "Small input",
-
-  parameters: {
-    info: "Some description about this type of InputField in general.",
-  },
-};
-
 export const NumberInput = () => {
   const label = text("Label", "Number");
   const value = text("Value", "2");

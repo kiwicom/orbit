@@ -134,7 +134,7 @@ const StyledInlineLabel = styled.div`
     hasFeedback,
   }: {
     theme: Theme;
-    hasTags?: boolean;
+    hasTags: boolean;
     hasFeedback?: boolean;
   }) => css`
     height: 100%;

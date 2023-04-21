@@ -8,15 +8,12 @@ import type { StyledComponent } from "styled-components";
 import type { Globals, Translation, DataAttrs } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
 
-export type Size = "small" | "normal";
-
 type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search" | "text" | "none";
 
 export type Props = {|
   ...Globals,
   ...spaceAfter,
   ...DataAttrs,
-  +size?: Size,
   +type?: "text" | "number" | "email" | "password" | "passportid",
   +inputMode?: InputMode,
   +name?: string,

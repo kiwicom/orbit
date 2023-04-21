@@ -76,6 +76,7 @@ const StyledFormFeedbackTooltip = styled.div<{
 
     ${media.largeMobile(css`
       width: auto;
+      border-radius: ${theme.orbit.borderRadiusLarge};
     `)};
 `}
 `;

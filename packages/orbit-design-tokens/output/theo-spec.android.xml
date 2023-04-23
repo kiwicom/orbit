@@ -234,7 +234,7 @@
   <dimen name="HEIGHTBUTTONSMALL" category="">32dp</dimen>
   <dimen name="HEIGHTSERVICELOGOSMALL" category="">12dp</dimen>
   <dimen name="PADDINGINPUTSMALL" category="">0 12dp</dimen>
-  <dimen name="BORDERRADIUSCIRCLE" category="">0.5</dimen>
+  <dimen name="BORDERRADIUSCIRCLE" category="Border radius">0.5</dimen>
   <color name="COLORTEXTBUTTONCRITICALSUBTLE" category="">#ff970c0c</color>
   <color name="PALETTEWHITE" category="">#ffffffff</color>
   <dimen name="FONTSIZEHEADINGTITLE4" category="">14dp</dimen>
@@ -247,7 +247,7 @@
   <color name="BACKGROUNDBADGESUCCESS" category="">#ffeaf5ea</color>
   <dimen name="HEIGHTSERVICELOGOMEDIUM" category="">24dp</dimen>
   <color name="PALETTEWHITEHOVER" category="">#fff5f7f9</color>
-  <string name="FONTWEIGHTNORMAL" category="">400</string>
+  <string name="FONTWEIGHTNORMAL" category="Font weight">400</string>
   <color name="COLORTEXTBUTTONCRITICALSUBTLEHOVER" category="">#ff890b0b</color>
   <color name="BACKGROUNDBUTTONLINKPRIMARYACTIVE" category="">#ffbfe8e2</color>
   <color name="COLORFORMLABELFILLED" category="">#ff4f5e71</color>

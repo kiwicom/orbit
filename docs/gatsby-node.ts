@@ -221,7 +221,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   await Promise.all(
     overviewPages.map(async page => {
       const breadcrumbs = await getDocumentBreadcrumbs(cache, page.slug);
-      const overviewPath = path.join(__dirname, "../../src/templates/Overview.tsx");
+      const overviewPath = path.join(__dirname, "src/templates/Overview.tsx");
       createPage({
         path: page.slug,
         component:

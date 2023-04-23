@@ -16,7 +16,7 @@ interface OverviewPage {
   pages?: OverviewPage[];
 }
 
-const DOCUMENTATION_PATH = path.resolve(__dirname, "../../src/documentation");
+const DOCUMENTATION_PATH = path.resolve(__dirname, "../src/documentation");
 
 // derive pages with nested pages from given object structure
 // this function can probably be simplified further

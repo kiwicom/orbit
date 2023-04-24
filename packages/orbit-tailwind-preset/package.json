@@ -1,0 +1,19 @@
+{
+  "name": "@kiwicom/orbit-tailwind-preset",
+  "version": "0.0.1",
+  "description": "Orbit tailwind preset which is based on orbit-design-tokens",
+  "main": "index.js",
+  "author": "Kiwi.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiwicom/orbit",
+    "directory": "packages/orbit-tailwind-preset"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "dependencies": {
+    "@kiwicom/orbit-design-tokens": "^3.2.2"
+  }
+}

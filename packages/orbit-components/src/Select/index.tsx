@@ -1,13 +1,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import type { DataAttrs, Size } from "../common/types";
-import type { Theme } from "../defaultTheme";
+import type { DataAttrs } from "../common/types";
 import defaultTheme from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
 import ErrorFormTooltip from "../ErrorFormTooltip";
-import { SIZE_OPTIONS } from "./consts";
 import { right, left, rtlSpacing } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
@@ -16,14 +14,6 @@ import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
 import useRandomId from "../hooks/useRandomId";
 import type { Props } from "./types";
-
-const getSelectSize = ({ theme, size }: { theme: Theme; size: Size }) => {
-  const tokens = {
-    [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-    [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
-  };
-  return tokens[size];
-};
 
 const StyledLabel = styled.label<{ $width: string; spaceAfter?: Props["spaceAfter"] }>`
   ${({ $width }) => css`
@@ -94,88 +84,77 @@ const StyledSelect = styled(
     ),
   ),
 )`
-  appearance: none;
-  background: ${({ theme }) => theme.orbit.backgroundInput};
-  cursor: pointer;
-  color: ${({ theme, filled }) =>
-    filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
-  height: ${getSelectSize};
-  padding: ${({ theme, size, prefix }) =>
-    rtlSpacing(
-      (size === SIZE_OPTIONS.SMALL &&
-        !prefix &&
-        `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceSmall}`) ||
-        (size === SIZE_OPTIONS.SMALL &&
-          prefix &&
-          `0 ${theme.orbit.spaceXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
-        (prefix && `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
+  ${({ theme, filled, prefix, error, customValueText }) => css`
+    appearance: none;
+    background: ${theme.orbit.backgroundInput};
+    cursor: pointer;
+    color: ${filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeInputNormal};
+    height: ${theme.orbit.heightInputNormal};
+    padding: ${rtlSpacing(
+      (prefix && `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`) ||
         `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceSmall}`,
     )};
-  outline: none;
-  width: 100%;
-  color: ${({ customValueText }) => customValueText && "transparent !important"};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  z-index: 2;
+    outline: none;
+    width: 100%;
+    color: ${customValueText && "transparent !important"};
+    transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+    z-index: 2;
 
-  border-radius: 6px;
-  ${mq.tablet(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)};
+    border-radius: ${theme.orbit.borderRadiusLarge};
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)};
 
-  > option {
-    color: ${({ theme }) => theme.orbit.colorTextInput};
-  }
+    > option {
+      color: ${theme.orbit.colorTextInput};
+    }
 
-  &::-ms-expand {
-    display: none;
-  }
+    &::-ms-expand {
+      display: none;
+    }
 
-  &::-ms-value {
-    background: transparent;
-    color: ${({ theme, filled }) =>
-      filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
-    color: ${({ customValueText }) => customValueText && "rgba(255, 255, 255, 0)"};
-  }
+    &::-ms-value {
+      background: transparent;
+      color: ${filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput};
+      color: ${customValueText && "rgba(255, 255, 255, 0)"};
+    }
 
-  border: 0;
-  box-shadow: inset 0 0 0
-    ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
+    border: 0;
+    box-shadow: inset 0 0 0
+      ${`${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
       }`};
 
-  &:hover {
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
+    &:hover {
+      box-shadow: inset 0 0 0
+        ${`${theme.orbit.borderWidthInput} ${
           error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
         }`};
-  }
-
-  &:focus {
-    ${formElementFocus}
-  }
-
-  &:disabled {
-    color: ${({ theme }) => theme.orbit.colorTextInputDisabled};
-    background: ${({ theme }) => theme.orbit.backgroundInputDisabled};
-    cursor: not-allowed;
-
-    &:hover {
-      box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};
     }
-  }
 
-  ${({ customValueText }) =>
-    customValueText &&
+    &:focus {
+      ${formElementFocus}
+    }
+
+    &:disabled {
+      color: ${theme.orbit.colorTextInputDisabled};
+      background: ${theme.orbit.backgroundInputDisabled};
+      cursor: not-allowed;
+
+      &:hover {
+        box-shadow: inset 0 0 0 1px ${theme.orbit.borderColorInput};
+      }
+    }
+
+    ${customValueText &&
     `
-    &:-webkit-autofill,
-    &:-internal-autofill-selected {
-      -webkit-text-fill-color: transparent;
-    }
+      &:-webkit-autofill,
+      &:-internal-autofill-selected {
+        -webkit-text-fill-color: transparent;
+      }
+    `}
   `}
 `;
 
@@ -196,7 +175,7 @@ SelectContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectPrefix = styled.div<{ size: Size }>`
+const SelectPrefix = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -205,7 +184,7 @@ const SelectPrefix = styled.div<{ size: Size }>`
     pointer-events: none;
     z-index: 3;
     top: 0;
-    height: ${getSelectSize};
+    height: ${theme.orbit.heightInputNormal};
   `};
 `;
 
@@ -213,8 +192,8 @@ SelectPrefix.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectSuffix = styled.div<{ disabled?: boolean; size: Size }>`
-  ${({ theme, size, disabled }) => css`
+const SelectSuffix = styled.div<{ disabled?: boolean }>`
+  ${({ theme, disabled }) => css`
     position: absolute;
     display: flex;
     justify-content: center;
@@ -225,12 +204,6 @@ const SelectSuffix = styled.div<{ disabled?: boolean; size: Size }>`
     pointer-events: none;
     z-index: 3;
     height: 100%;
-
-    & > * {
-      width: ${size === SIZE_OPTIONS.SMALL && theme.orbit.widthIconSmall};
-      height: ${size === SIZE_OPTIONS.SMALL && theme.orbit.heightIconSmall};
-      margin-bottom: ${size === SIZE_OPTIONS.SMALL && theme.orbit.spaceXXXSmall};
-    }
   `};
 `;
 
@@ -238,24 +211,24 @@ SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCustomValue = styled(({ prefix, theme, size, filled, disabled, ...props }) => (
+const StyledCustomValue = styled(({ _prefix, _theme, _filled, _disabled, ...props }) => (
   <div {...props} />
 ))`
-  color: ${({ theme, filled, disabled }) =>
-    (disabled && theme.orbit.paletteInkLight) ||
+  ${({ theme, filled, disabled, prefix }) => css`
+    color: ${(disabled && theme.orbit.paletteInkLight) ||
     (filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
 
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  font-size: ${({ theme, size }) =>
-    size === SIZE_OPTIONS.SMALL ? theme.orbit.fontSizeInputSmall : theme.orbit.fontSizeInputNormal};
-  z-index: 3;
-  position: absolute;
-  height: 100%;
-  line-height: ${getSelectSize};
-  top: 0;
-  ${left}: ${({ prefix, theme }) => (prefix ? "48px" : theme.orbit.spaceSmall)};
-  bottom: 0;
-  pointer-events: none;
+    font-family: ${theme.orbit.fontFamily};
+    font-size: ${theme.orbit.fontSizeInputNormal};
+    z-index: 3;
+    position: absolute;
+    height: 100%;
+    line-height: ${theme.orbit.heightInputNormal};
+    top: 0;
+    ${left}: ${prefix ? "48px" : theme.orbit.spaceSmall};
+    bottom: 0;
+    pointer-events: none;
+  `}
 `;
 
 StyledCustomValue.defaultProps = {
@@ -264,7 +237,6 @@ StyledCustomValue.defaultProps = {
 
 const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
   const {
-    size = SIZE_OPTIONS.NORMAL,
     label,
     placeholder,
     value,
@@ -328,15 +300,14 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
         </FormLabel>
       )}
       <SelectContainer ref={label ? null : labelRef}>
-        {prefix && <SelectPrefix size={size}>{prefix}</SelectPrefix>}
+        {prefix && <SelectPrefix>{prefix}</SelectPrefix>}
         {customValueText && (
-          <StyledCustomValue disabled={disabled} filled={filled} size={size} prefix={prefix}>
+          <StyledCustomValue disabled={disabled} filled={filled} prefix={prefix}>
             {customValueText}
           </StyledCustomValue>
         )}
         <StyledSelect
           dataTest={dataTest}
-          size={size}
           disabled={disabled}
           error={error}
           value={value == null ? "" : value}
@@ -371,7 +342,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             </option>
           ))}
         </StyledSelect>
-        <SelectSuffix size={size} disabled={disabled}>
+        <SelectSuffix disabled={disabled}>
           <ChevronDown color="secondary" />
         </SelectSuffix>
       </SelectContainer>
@@ -380,7 +351,6 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           id={`${selectId}-feedback`}
           help={help}
           error={error}
-          inputSize={size}
           helpClosable={helpClosable}
           shown={shown}
           onShown={setTooltipShown}

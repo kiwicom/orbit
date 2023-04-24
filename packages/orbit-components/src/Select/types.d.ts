@@ -18,7 +18,6 @@ interface Option {
 export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAttrs {
   readonly id?: string;
   readonly required?: boolean;
-  readonly size?: Common.InputSize;
   readonly label?: Common.Translation;
   readonly placeholder?: Common.Translation;
   readonly value?: string | number;

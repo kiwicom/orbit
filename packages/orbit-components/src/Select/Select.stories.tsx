@@ -3,7 +3,6 @@ import { action } from "@storybook/addon-actions";
 import { object, select, text, boolean } from "@storybook/addon-knobs";
 
 import Airplane from "../icons/Airplane";
-import { SIZE_OPTIONS } from "./consts";
 import CountryFlag from "../CountryFlag";
 import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -87,23 +86,6 @@ WithPlaceholder.story = {
   },
 };
 
-export const WithSmallSize = () => (
-  <Select
-    label="Select box (small size)"
-    size="small"
-    options={objectOptions}
-    onChange={action("onChange")}
-  />
-);
-
-WithSmallSize.story = {
-  name: "With small size",
-
-  parameters: {
-    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
 export const WithHelpMessage = () => (
   <Select
     label="Select box (with help text)"
@@ -140,7 +122,6 @@ WithErrorMessage.story = {
 
 export const Playground = () => {
   const placeholder = text("Placeholder", "Select value from list");
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const disabled = boolean("Disabled", false);
   const name = text("Name", "name");
   const customValueText = text("customValueText", "");
@@ -162,7 +143,6 @@ export const Playground = () => {
       id={id}
       required={required}
       placeholder={placeholder}
-      size={size}
       width={width}
       options={option}
       disabled={disabled}

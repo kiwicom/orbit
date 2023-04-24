@@ -1,0 +1,18 @@
+{
+  "foundation": {
+    "palette": {
+      "product": {
+        "dark": { "value": "#007A69", "internal": true, "type": "color" },
+        "dark-active": { "value": "#006657", "internal": true, "type": "color" },
+        "dark-hover": { "value": "#007060", "internal": true, "type": "color" },
+        "darker": { "value": "#005C4E", "internal": true, "type": "color" },
+        "light": { "value": "#E1F4F3", "internal": true, "type": "color" },
+        "light-active": { "value": "#BFE8E2", "internal": true, "type": "color" },
+        "light-hover": { "value": "#D6F0EC", "internal": true, "type": "color" },
+        "normal": { "value": "#00A58E", "internal": true, "type": "color" },
+        "normal-active": { "value": "#008472", "internal": true, "type": "color" },
+        "normal-hover": { "value": "#009580", "internal": true, "type": "color" }
+      }
+    }
+  }
+}

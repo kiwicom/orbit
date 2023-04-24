@@ -1,0 +1,54 @@
+{
+  "component": {
+    "form-element": {
+      "small": {
+        "font-size": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}"
+        }
+      },
+      "normal": {
+        "font-size": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}"
+        }
+      }
+    },
+    "font-size": {
+      "input": {
+        "small": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.small.font-size}",
+          "deprecated-version": "1.0.0"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.normal.font-size}",
+          "deprecated-version": "1.0.0"
+        }
+      },
+      "form-feedback": {
+        "type": "size",
+        "value": "{foundation.font-size.small}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "form-label": {
+        "type": "size",
+        "value": "{foundation.font-size.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "message": {
+        "type": "size",
+        "value": "{foundation.font-size.normal}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

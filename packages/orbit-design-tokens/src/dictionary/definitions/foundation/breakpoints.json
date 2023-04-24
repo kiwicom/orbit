@@ -1,0 +1,36 @@
+{
+  "foundation": {
+    "breakpoint": {
+      "smallMobile": {
+        "type": "breakpoint",
+        "value": 0,
+        "internal": true
+      },
+      "mediumMobile": {
+        "type": "breakpoint",
+        "value": 414,
+        "internal": true
+      },
+      "largeMobile": {
+        "type": "breakpoint",
+        "value": 576,
+        "internal": true
+      },
+      "tablet": {
+        "type": "breakpoint",
+        "value": 768,
+        "internal": true
+      },
+      "desktop": {
+        "type": "breakpoint",
+        "value": 992,
+        "internal": true
+      },
+      "largeDesktop": {
+        "type": "breakpoint",
+        "value": 1200,
+        "internal": true
+      }
+    }
+  }
+}

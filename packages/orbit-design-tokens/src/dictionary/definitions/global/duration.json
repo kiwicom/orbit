@@ -1,0 +1,18 @@
+{
+  "global": {
+    "duration": {
+      "fast": {
+        "type": "duration",
+        "value": 150
+      },
+      "normal": {
+        "type": "duration",
+        "value": 300
+      },
+      "slow": {
+        "type": "duration",
+        "value": 400
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "global": {
+    "palette": {
+      "social": {
+        "facebook": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook}"
+        },
+        "facebook-hover": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-hover}"
+        },
+        "facebook-active": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-active}"
+        }
+      }
+    }
+  }
+}

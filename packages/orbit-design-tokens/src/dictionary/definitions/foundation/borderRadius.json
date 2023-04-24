@@ -1,0 +1,26 @@
+{
+  "foundation": {
+    "border-radius": {
+      "circle": {
+        "type": "border-radius",
+        "value": "50%",
+        "internal": true
+      },
+      "small": {
+        "type": "border-radius",
+        "value": 2,
+        "internal": true
+      },
+      "normal": {
+        "type": "border-radius",
+        "value": 3,
+        "internal": true
+      },
+      "large": {
+        "type": "border-radius",
+        "value": 6,
+        "internal": true
+      }
+    }
+  }
+}

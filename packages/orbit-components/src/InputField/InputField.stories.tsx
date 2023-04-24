@@ -51,8 +51,8 @@ export const NumberInput = () => {
   return (
     <InputField
       type="number"
-      label={label}
       value={value}
+      label={label}
       placeholder={placeholder}
       maxValue={maxValue}
       minValue={minValue}

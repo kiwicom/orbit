@@ -1,0 +1,10 @@
+{
+  "component": {
+    "border-color": {
+      "modal": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.normal}"
+      }
+    }
+  }
+}

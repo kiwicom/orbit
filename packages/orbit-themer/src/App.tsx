@@ -58,9 +58,8 @@ const App = () => {
           <OrbitProvider
             theme={{
               orbit: getTokens({
-                base: {
-                  fontFamily:
-                    '"Circular Pro", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;',
+                fontFamily: {
+                  base: '"Circular Pro", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;',
                 },
               }),
             }}
@@ -71,9 +70,8 @@ const App = () => {
             theme={{
               orbit: getTokens({
                 palette: colors,
-                base: {
-                  fontFamily:
-                    '"Circular Pro", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;',
+                fontFamily: {
+                  base: '"Circular Pro", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;',
                 },
               }),
             }}

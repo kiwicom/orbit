@@ -1,0 +1,42 @@
+{
+  "component": {
+    "tag": {
+      "colored": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.blue.light}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.blue.light-hover}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.blue.light-active}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.blue.darker}"
+        }
+      },
+      "neutral": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal-hover}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal-active}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}"
+        }
+      }
+    }
+  }
+}

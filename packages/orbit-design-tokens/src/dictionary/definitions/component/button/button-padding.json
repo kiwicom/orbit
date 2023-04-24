@@ -1,0 +1,23 @@
+{
+  "component": {
+    "button": {
+      "without-text": {
+        "padding": {
+          "type": "size",
+          "value": "0"
+        }
+      }
+    },
+    "padding": {
+      "button": {
+        "without-text": {
+          "type": "size",
+          "value": "0",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.without-text.padding}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "component": {
+    "button-link": {
+      "secondary": {
+        "background": {
+          "type": "color",
+          "value": "transparent",
+          "comment": "Used for the background of secondary ButtonLink in the default state."
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-hover}",
+          "comment": "Used for the background of secondary ButtonLink in the hover state."
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-active}",
+          "comment": "Used for the background of secondary ButtonLink in the active and the focus state."
+        },
+        "foreground": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark}",
+          "comment": "Used for the text of secondary ButtonLink in the default state."
+        },
+        "foreground-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark-hover}",
+          "comment": "Used for the text of secondary ButtonLink in the hover state."
+        },
+        "foreground-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark-active}",
+          "comment": "Used for the text of secondary ButtonLink in the active and the focus state."
+        }
+      }
+    },
+    "background": {
+      "button-link": {
+        "secondary": {
+          "type": "color",
+          "value": "transparent",
+          "deprecated": true,
+          "deprecated-replace": "{component.button-link.secondary.background}",
+          "deprecated-version": "1.0.0"
+        },
+        "secondary-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-hover}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button-link.secondary.background-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "secondary-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-active}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button-link.secondary.background-active}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "button-link": {
+        "secondary": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button-link.secondary.foreground}",
+          "deprecated-version": "1.0.0"
+        },
+        "secondary-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark-hover}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button-link.secondary.foreground-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "secondary-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark-active}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button-link.secondary.foreground-active}",
+          "deprecated-version": "1.0.0"
+        },
+        "secondary-compact-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.product.normal-hover}",
+          "deprecated": true
+        },
+        "secondary-compact-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.product.normal-active}",
+          "deprecated": true
+        }
+      }
+    }
+  }
+}

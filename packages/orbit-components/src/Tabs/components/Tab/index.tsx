@@ -1,33 +1,30 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import { useTabs, useTab } from "../../TabContext";
 import type { Props } from "./types";
 import { TYPE_OPTIONS } from "./consts";
 import defaultTheme from "../../../defaultTheme";
 
-const getColorBackground = ({ type, theme }) => {
-  if (type === TYPE_OPTIONS.MEDIUM) return theme.orbit.backgroundColorTabBundleMedium;
-  if (type === TYPE_OPTIONS.BASIC) return theme.orbit.backgroundColorTabBundleBasic;
+const getBundleColor = ({ type, theme }) => {
+  if (type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackground;
+  if (type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackground;
 
-  return theme.orbit.backgroundColorTabBundleTop;
+  return theme.orbit.tabBackgroundBundleTop;
 };
 
 const getBackgroundType =
   (state?: "hover" | "active") =>
   ({ theme, $type }: { theme: typeof defaultTheme; $type: Props["type"] }) => {
     if (state === "hover") {
-      if ($type === TYPE_OPTIONS.MEDIUM)
-        return convertHexToRgba(theme.orbit.paletteBundleMedium, 8);
-      if ($type === TYPE_OPTIONS.BASIC) return convertHexToRgba(theme.orbit.paletteBundleBasic, 8);
+      if ($type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackgroundHover;
+      if ($type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackgroundHover;
       return theme.orbit.paletteWhiteHover;
     }
 
     if (state === "active") {
-      if ($type === TYPE_OPTIONS.MEDIUM)
-        return convertHexToRgba(theme.orbit.paletteBundleMedium, 12);
-      if ($type === TYPE_OPTIONS.BASIC) return convertHexToRgba(theme.orbit.paletteBundleBasic, 12);
+      if ($type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackgroundActive;
+      if ($type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackgroundActive;
 
       return theme.orbit.paletteWhiteActive;
     }
@@ -67,7 +64,7 @@ const StyledTab = styled.button<{
     border-image-source: ${!disabled &&
     active &&
     $type !== TYPE_OPTIONS.DEFAULT &&
-    getColorBackground({ type: $type, theme })};
+    getBundleColor({ type: $type, theme })};
     border-bottom-color: ${!disabled && active && $type === TYPE_OPTIONS.DEFAULT
       ? `${theme.orbit.paletteProductNormal}`
       : "transparent"};
@@ -94,7 +91,7 @@ const StyledTabText = styled.span<{ type: Props["type"] }>`
 
     ${type !== TYPE_OPTIONS.DEFAULT &&
     css`
-      background: ${getColorBackground};
+      background: ${getBundleColor};
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;

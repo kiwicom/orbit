@@ -1,0 +1,131 @@
+{
+  "component": {
+    "button": {
+      "white": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-hover}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark-hover}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark-active}"
+        },
+        "border-color-focus": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal-active}",
+          "opacity": 50
+        }
+      }
+    },
+    "background": {
+      "button": {
+        "white": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.background}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.background-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-hover}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.background-active}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered": {
+          "type": "color",
+          "value": "transparent",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "opacity": 20,
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "opacity": 20,
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "button": {
+        "white": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.foreground}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark-hover}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.foreground-hover}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark-active}",
+          "deprecated": true,
+          "deprecated-replace": "{component.button.white.foreground-active}",
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white-bordered-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

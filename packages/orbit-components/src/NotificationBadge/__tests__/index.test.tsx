@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
-import convertRgbaToHex from "@kiwicom/orbit-design-tokens/src/convertRgbaToHex";
+import { convertRgbaToHex } from "@kiwicom/orbit-design-tokens";
 
 import theme from "../../defaultTheme";
 import NotificationBadge from "..";

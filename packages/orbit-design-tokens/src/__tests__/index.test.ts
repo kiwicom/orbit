@@ -1,7 +1,7 @@
 import { defaultTokens, getTokens, fromPlainObject } from "..";
-import foundation from "../foundation";
-import convertHexToRgba from "../convertHexToRgba";
-import convertRgbaToHex from "../convertRgbaToHex";
+import foundation from "../js/defaultFoundation";
+import convertHexToRgba from "../js/convertHexToRgba";
+import convertRgbaToHex from "../js/convertRgbaToHex";
 
 describe("defaultTokens", () => {
   it("should match snapshot", () => {
@@ -29,9 +29,7 @@ describe("getTokens should accept some palette and base foundation", () => {
     },
   };
   const theme = getTokens(brand);
-  it("should match snapshot", () => {
-    expect(theme).toMatchSnapshot();
-  });
+
   it("tokens should have those colors", () => {
     expect(theme.backgroundButtonPrimary).toBe(brand.palette.product.normal);
     expect(theme.colorTextLinkPrimary).toBe(brand.palette.product.dark);
@@ -43,40 +41,27 @@ describe("getTokens should accept some palette and base foundation", () => {
   });
   it("should deep merge", () => {
     expect(theme.paletteProductLight).toBe(foundation.palette.product.light);
-    expect(theme.fontSizeTextNormal).toBe(foundation.base.fontSizeMd);
+    expect(theme.fontSizeTextNormal).toBe(foundation.fontSize.normal);
   });
 });
 
 describe("getTokens should accept some base", () => {
   const brand = {
-    base: {
-      iconSizeSm: "16px",
-      iconSizeMd: "20px",
-      iconSizeLg: "24px",
-      sizeSm: "1px",
-      sizeMd: "2px",
-      sizeLg: "3px",
-      sizeXl: "4px",
-      size2xl: "5px",
+    size: {
+      small: "1px",
+      medium: "2px",
+      large: "3px",
+      extraLarge: "4px",
+      extraExtraLarge: "5px",
     },
   };
+
   const theme = getTokens(brand);
-  it("should match snapshot", () => {
-    expect(theme).toMatchSnapshot();
-  });
-  it("tokens should have those colors", () => {
-    expect(theme.widthIconSmall).toBe(brand.base.iconSizeSm);
-    expect(theme.heightIconSmall).toBe(brand.base.iconSizeSm);
-    expect(theme.widthIconMedium).toBe(brand.base.iconSizeMd);
-    expect(theme.heightIconMedium).toBe(brand.base.iconSizeMd);
-    expect(theme.widthIconLarge).toBe(brand.base.iconSizeLg);
-    expect(theme.heightIconLarge).toBe(brand.base.iconSizeLg);
-    expect(theme.heightInputNormal).toBe(brand.base.sizeXl);
-    expect(theme.heightInputLarge).toBe(brand.base.size2xl);
-    expect(theme.heightInputSmall).toBe(brand.base.sizeLg);
-    expect(theme.heightButtonNormal).toBe(brand.base.sizeXl);
-    expect(theme.heightButtonLarge).toBe(brand.base.size2xl);
-    expect(theme.heightButtonSmall).toBe(brand.base.sizeLg);
+
+  it("tokens should have correct sizes", () => {
+    expect(theme.formBoxLargeHeight).toBe(brand.size.extraExtraLarge);
+    expect(theme.formBoxSmallHeight).toBe(brand.size.large);
+    expect(theme.formBoxNormalHeight).toBe(brand.size.extraLarge);
   });
 });
 
@@ -91,9 +76,6 @@ describe("fromPlainObject should create full theme", () => {
     productDark: "#990000",
   };
   const theme = fromPlainObject(palette);
-  it("should match snapshot", () => {
-    expect(theme).toMatchSnapshot();
-  });
   it("tokens should have those colors", () => {
     expect(theme.backgroundButtonPrimary).toBe(palette.productNormal);
     expect(theme.colorTextLinkPrimary).toBe(palette.productDark);

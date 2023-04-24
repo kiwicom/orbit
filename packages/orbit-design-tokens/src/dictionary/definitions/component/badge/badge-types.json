@@ -1,0 +1,250 @@
+{
+  "component": {
+    "badge": {
+      "critical": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      },
+      "critical-subtle": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.red.light}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.red.dark}"
+        }
+      },
+      "dark": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      },
+      "info": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      },
+      "info-subtle": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.blue.light}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.blue.dark}"
+        }
+      },
+      "neutral": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}"
+        }
+      },
+      "success": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      },
+      "success-subtle": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.green.light}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark}"
+        }
+      },
+      "warning": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      },
+      "warning-subtle": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark}"
+        }
+      },
+      "white": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}"
+        }
+      }
+    },
+    "background": {
+      "badge": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated-replace": "{component.badge.critical.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "critical-subtle": {
+          "type": "color",
+          "value": "{foundation.palette.red.light}",
+          "deprecated-replace": "{component.badge.critical-subtle.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "dark": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}",
+          "deprecated-replace": "{component.badge.dark.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}",
+          "deprecated-replace": "{component.badge.info.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "info-subtle": {
+          "type": "color",
+          "value": "{foundation.palette.blue.light}",
+          "deprecated-replace": "{component.badge.info-subtle.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "neutral": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light}",
+          "deprecated-replace": "{component.badge.neutral.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}",
+          "deprecated-replace": "{component.badge.success.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "success-subtle": {
+          "type": "color",
+          "value": "{foundation.palette.green.light}",
+          "deprecated-replace": "{component.badge.success-subtle.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "deprecated-replace": "{component.badge.warning.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning-subtle": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light}",
+          "deprecated-replace": "{component.badge.warning-subtle.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated-replace": "{component.badge.white.background}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "badge": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}",
+          "deprecated-replace": "{component.badge.critical.foreground}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "dark": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated-replace": "{component.badge.dark.foreground}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}",
+          "deprecated-replace": "{component.badge.info.foreground}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "neutral": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}",
+          "deprecated-replace": "{component.badge.neutral.foreground}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}",
+          "deprecated-replace": "{component.badge.success.foreground}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "deprecated-replace": "{component.badge.warning.foreground}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "white": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}",
+          "deprecated-replace": "{component.badge.white.foreground}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

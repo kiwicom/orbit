@@ -1,0 +1,30 @@
+{
+  "global": {
+    "z-index": {
+      "default": {
+        "type": "z-index",
+        "value": 1
+      },
+      "sticky": {
+        "type": "z-index",
+        "value": 100
+      },
+      "modal-overlay": {
+        "type": "z-index",
+        "value": 800
+      },
+      "drawer": {
+        "type": "z-index",
+        "value": 815
+      },
+      "modal": {
+        "type": "z-index",
+        "value": 825
+      },
+      "on-the-top": {
+        "type": "z-index",
+        "value": 900
+      }
+    }
+  }
+}

@@ -173,6 +173,25 @@ StyledClose.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledIconContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: ${theme.orbit.spaceXSmall};
+
+    svg {
+      width: ${theme.orbit.widthIconSmall};
+      height: ${theme.orbit.heightIconSmall};
+    }
+  `}
+`;
+
+StyledIconContainer.defaultProps = {
+  theme: defaultTheme,
+};
+
 const buttonClickEmulation =
   (callback?: Common.Callback) => (ev?: React.KeyboardEvent<HTMLDivElement>) => {
     if (ev && ev.keyCode === KEY_CODE_MAP.SPACE) {
@@ -188,6 +207,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
     {
       selected,
       children,
+      iconLeft,
       size = SIZES.NORMAL,
       onClick,
       onRemove,
@@ -214,6 +234,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
         role="button"
         onKeyDown={buttonClickEmulation(onClick)}
       >
+        {iconLeft && <StyledIconContainer>{iconLeft}</StyledIconContainer>}
         {children}
         {onRemove && (
           <CloseContainer

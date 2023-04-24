@@ -13,6 +13,7 @@ export type Type = "colored" | "neutral";
 export type Props = {|
   +type?: Type,
   +children: React.Node,
+  +iconLeft?: React.Node,
   +dateTag?: boolean,
   +selected?: boolean,
   +size?: Size,

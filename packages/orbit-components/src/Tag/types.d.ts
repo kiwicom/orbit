@@ -9,6 +9,7 @@ export type Type = "colored" | "neutral";
 
 export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
+  readonly iconLeft?: React.ReactNode;
   readonly type?: "colored" | "neutral";
   readonly selected?: boolean;
   readonly dateTag?: boolean;

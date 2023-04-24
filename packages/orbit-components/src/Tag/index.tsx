@@ -10,6 +10,7 @@ import { SIZES, STATES, TYPES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import resolveColor from "./helpers/resolveColor";
 import resolveCircleColor from "./helpers/resolveCircleColor";
+import mq from "../utils/mediaQuery";
 import type { Props, Type } from "./types";
 
 const getFontSize = ({ theme, size }: { theme: Theme; size: Props["size"] }): string | null => {
@@ -115,11 +116,15 @@ export const StyledTag = styled.div<{
     align-items: center;
     font-size: ${getFontSize};
     font-weight: ${theme.orbit.fontWeightMedium};
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadiusLarge};
     padding: ${theme.orbit.spaceXSmall};
     transition: color ${theme.orbit.durationFast} ease-in-out,
       box-shadow ${theme.orbit.durationFast} ease-in-out,
       background ${theme.orbit.durationFast} ease-in-out;
+
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)}
 
     ${actionable &&
     css`

@@ -134,7 +134,7 @@
 @value border-width-input-focus: 2px;
 @value color-text-badge-dark: rgb(255, 255, 255);
 @value background-button-primary-subtle-focus: rgb(225, 244, 243);
-@value border-color-input-hover: rgb(62, 78, 99);
+@value border-color-input-hover: rgb(166, 182, 200);
 @value background-button-bundle-top-hover: "linear-gradient(to top right, #171718 0%, #51575C  100%)";
 @value padding-tag: 8px;
 @value color-text-badge-warning: rgb(223, 123, 0);

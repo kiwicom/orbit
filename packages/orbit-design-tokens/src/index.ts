@@ -342,7 +342,7 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     // category:Border color
     // description:
     borderColorInput: theme.palette.cloud.dark,
-    borderColorInputHover: theme.palette.ink.normalHover,
+    borderColorInputHover: theme.palette.cloud.darkHover,
     borderColorInputActive: theme.palette.ink.normalActive,
     borderColorInputFocus: theme.palette.blue.normal,
     borderColorInputError: theme.palette.red.normal,

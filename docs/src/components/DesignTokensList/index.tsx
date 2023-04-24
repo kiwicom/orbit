@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import tokensList from "@kiwicom/orbit-design-tokens/output/theo-spec.json";
+import tokensList from "@kiwicom/orbit-design-tokens/dist/tokens.json";
 import { convertRgbaToHex } from "@kiwicom/orbit-design-tokens";
 import {
   InputField,

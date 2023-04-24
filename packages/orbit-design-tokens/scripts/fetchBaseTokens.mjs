@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-import { $, fetch, fs, chalk, path } from "zx";
+import { $, argv, fetch, fs, path, chalk } from "zx";
 import dotenv from "dotenv-safe";
 import dedent from "dedent";
 import { solidPaintToWebRgb, toHex } from "figx";
@@ -9,7 +8,30 @@ import fp from "lodash/fp.js";
 const FILE_ID = "2rTHlBKKR6IWGeP6Dw6qbP";
 const ROOT_API = `https://api.figma.com/v1/files`;
 const FIGMA_FILE_URI = `${ROOT_API}/${FILE_ID}/styles`;
-const OUTPUT_PATH = path.join(__dirname, "../src/basePalette.ts");
+const OUTPUT_FOLDER = path.join(__dirname, "../src/dictionary/definitions/foundation/palette");
+
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-console */
+
+if (argv.debug) {
+  $.verbose = true;
+} else {
+  $.verbose = false;
+}
+
+const normalize = (tokens, currentPalette) => {
+  const res = {};
+
+  Object.entries(tokens).forEach(([name, value]) => {
+    _.set(res, ["foundation", "palette", currentPalette, _.kebabCase(name)], {
+      value,
+      internal: true,
+      type: "color",
+    });
+  });
+
+  return res;
+};
 
 try {
   dotenv.config({
@@ -46,22 +68,15 @@ const sortTokens = tokenObj =>
 async function saveColorTokens(output) {
   const sorted = fp.compose(sortTokens, sortObj)(output);
 
-  console.log(sorted);
-
-  const content = dedent`
-    const palette = ${JSON.stringify(sorted, null, 2)};
-
-    export default palette;
-  `;
-
-  fs.writeFile(OUTPUT_PATH, content, "utf-8")
-    .then(() => {
-      console.log(chalk.green(`Saved color tokens to ${OUTPUT_PATH}`));
-    })
-    .catch(err => {
-      console.error(err);
-      console.log(chalk.red(`Failed to save color tokens to ${OUTPUT_PATH}`));
+  for (const [palette, tokens] of Object.entries(sorted)) {
+    const filePath = path.join(OUTPUT_FOLDER, `${palette}.json`);
+    const normalizedTokens = normalize(tokens, palette);
+    await fs.writeFile(filePath, JSON.stringify(normalizedTokens), "utf-8").then(() => {
+      console.log(chalk.bold.green(`Saved ${palette} tokens to ${filePath}`));
     });
+    // prettify output
+    await $`prettier --write ${filePath}`;
+  }
 
   return undefined;
 }
@@ -130,7 +145,6 @@ const createStructure = nodes =>
 
 async function getColorTokensFromFigma() {
   try {
-    $.verbose = false;
     const { meta, error } = await api(FIGMA_FILE_URI);
     if (!error) {
       const colors = meta.styles
@@ -154,18 +168,9 @@ async function getColorTokensFromFigma() {
         createStructure(res.map(n => parseNode(n.nodes))),
       );
 
-      $.verbose = true;
-
       if (basePaletteTokens) {
-        if (fs.existsSync(OUTPUT_PATH)) {
-          await fs.remove(OUTPUT_PATH);
-          await saveColorTokens(basePaletteTokens);
-        } else {
-          await saveColorTokens(basePaletteTokens);
-        }
+        await saveColorTokens(basePaletteTokens);
       }
-      // prettify output
-      await $`prettier --write ${OUTPUT_PATH}`;
     }
 
     return error;

@@ -1,0 +1,64 @@
+{
+  "component": {
+    "alert": {
+      "background": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.light}"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.light}"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.light}"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.light}"
+        }
+      },
+      "icon": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}"
+        }
+      },
+      "color-text": {
+        "critical": {
+          "type": "color",
+          "value": "{foundation.palette.red.dark}"
+        },
+        "info": {
+          "type": "color",
+          "value": "{foundation.palette.blue.dark}"
+        },
+        "success": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark}"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark}"
+        },
+        "link": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        }
+      }
+    }
+  }
+}

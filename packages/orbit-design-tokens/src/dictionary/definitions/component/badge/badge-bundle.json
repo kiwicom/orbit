@@ -1,0 +1,36 @@
+{
+  "component": {
+    "badge": {
+      "bundle-basic": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      },
+      "bundle-medium": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      },
+      "bundle-top": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        }
+      }
+    }
+  }
+}

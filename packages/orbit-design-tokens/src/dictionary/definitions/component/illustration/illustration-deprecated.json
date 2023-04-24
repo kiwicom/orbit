@@ -1,0 +1,12 @@
+{
+  "components": {
+    "background": {
+      "illustration": {
+        "type": "color",
+        "value": "transparent",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

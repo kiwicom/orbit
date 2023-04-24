@@ -3,6 +3,7 @@
   "version": "7.8.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,
+  "author": "Kiwi.com",
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {

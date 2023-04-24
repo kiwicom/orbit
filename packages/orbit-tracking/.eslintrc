@@ -11,8 +11,10 @@
         "import/extensions": "off",
         "no-restricted-syntax": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "no-console": "off",
+        "guard-for-in": "off",
         "no-underscore-dangle": "off"
       }
     }

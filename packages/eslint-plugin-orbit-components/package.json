@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-orbit-components",
+  "name": "@kiwicom/eslint-plugin-orbit-components",
   "description": "Collection of ESLint rules to enforce the best usage practices of @kiwicom/orbit-components",
   "version": "0.6.10",
   "author": "Kiwi.com",

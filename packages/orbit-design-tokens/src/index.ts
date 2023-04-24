@@ -477,7 +477,7 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     lineHeightHeading: "1.2",
     lineHeightHeadingDisplay: "44px",
     lineHeightHeadingDisplaySubtitle: "28px",
-    lineHeightHeadingTitle1: "36px",
+    lineHeightHeadingTitle1: "32px",
     lineHeightHeadingTitle2: "28px",
     lineHeightHeadingTitle3: "24px",
     lineHeightHeadingTitle4: "20px",

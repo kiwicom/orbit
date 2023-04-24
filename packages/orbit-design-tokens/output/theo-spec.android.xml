@@ -12,7 +12,7 @@
   <color name="PALETTECLOUDLIGHTHOVER" category="">#ffe5eaef</color>
   <color name="COLORTEXTBUTTONWARNINGACTIVE" category="">#ffffffff</color>
   <color name="PALETTEREDLIGHT" category="">#fffaeaea</color>
-  <dimen name="LINEHEIGHTHEADINGTITLE1" category="">36dp</dimen>
+  <dimen name="LINEHEIGHTHEADINGTITLE1" category="">32dp</dimen>
   <color name="BACKGROUNDTABLE" category="">#ffffffff</color>
   <color name="COLORALERTICONINFO" category="">#ff0172cb</color>
   <color name="PALETTEBLUENORMALHOVER" category="">#ff0161ac</color>

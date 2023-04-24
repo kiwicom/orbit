@@ -24,7 +24,7 @@ module.exports = {
   /*  */
   paletteRedLight: "rgb(250, 234, 234)",
   /*  */
-  lineHeightHeadingTitle1: "36px",
+  lineHeightHeadingTitle1: "32px",
   /*  */
   backgroundTable: "rgb(255, 255, 255)",
   /*  */

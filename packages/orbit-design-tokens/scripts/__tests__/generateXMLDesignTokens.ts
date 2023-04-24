@@ -1717,7 +1717,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>lineHeightHeadingTitle1</name>
-          <value>36px</value>
+          <value>32px</value>
         </token>
         <token>
           <name>lineHeightHeadingTitle2</name>

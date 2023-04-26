@@ -10,6 +10,7 @@ import { SIZES, STATES, TYPES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import resolveColor from "./helpers/resolveColor";
 import resolveCircleColor from "./helpers/resolveCircleColor";
+import mq from "../utils/mediaQuery";
 import type { Props, Type } from "./types";
 
 const getFontSize = ({ theme, size }: { theme: Theme; size: Props["size"] }): string | null => {
@@ -115,11 +116,15 @@ export const StyledTag = styled.div<{
     align-items: center;
     font-size: ${getFontSize};
     font-weight: ${theme.orbit.fontWeightMedium};
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadiusLarge};
     padding: ${theme.orbit.spaceXSmall};
     transition: color ${theme.orbit.durationFast} ease-in-out,
       box-shadow ${theme.orbit.durationFast} ease-in-out,
       background ${theme.orbit.durationFast} ease-in-out;
+
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)}
 
     ${actionable &&
     css`
@@ -168,6 +173,25 @@ StyledClose.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledIconContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: ${theme.orbit.spaceXSmall};
+
+    svg {
+      width: ${theme.orbit.widthIconSmall};
+      height: ${theme.orbit.heightIconSmall};
+    }
+  `}
+`;
+
+StyledIconContainer.defaultProps = {
+  theme: defaultTheme,
+};
+
 const buttonClickEmulation =
   (callback?: Common.Callback) => (ev?: React.KeyboardEvent<HTMLDivElement>) => {
     if (ev && ev.keyCode === KEY_CODE_MAP.SPACE) {
@@ -183,6 +207,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
     {
       selected,
       children,
+      iconLeft,
       size = SIZES.NORMAL,
       onClick,
       onRemove,
@@ -209,6 +234,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
         role="button"
         onKeyDown={buttonClickEmulation(onClick)}
       >
+        {iconLeft && <StyledIconContainer>{iconLeft}</StyledIconContainer>}
         {children}
         {onRemove && (
           <CloseContainer

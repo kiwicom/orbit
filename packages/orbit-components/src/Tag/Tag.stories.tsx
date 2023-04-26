@@ -2,6 +2,7 @@ import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import * as Icons from "../icons";
 import Heading from "../Heading";
 import Stack from "../Stack";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -19,6 +20,7 @@ export const Default = () => {
       <Heading type="title2">Neutral</Heading>
       <Stack inline>
         <Tag>Non actionable</Tag>
+        <Tag iconLeft={<Icons.PlusMinus />}>With icon</Tag>
         <Tag onClick={action("onClick")}>Default</Tag>
         <Tag selected onClick={action("onClick")}>
           Selected
@@ -31,6 +33,9 @@ export const Default = () => {
       <Heading type="title2">Colored</Heading>
       <Stack inline>
         <Tag type="colored">Non actionable</Tag>
+        <Tag type="colored" iconLeft={<Icons.PlusMinus />}>
+          With icon
+        </Tag>
         <Tag type="colored" onClick={action("onClick")}>
           Default
         </Tag>
@@ -61,19 +66,23 @@ Default.story = {
 export const Playground = () => {
   const content = text("Content", "Transport");
   const size = select("size", Object.values(SIZES), SIZES.NORMAL);
+  const removable = boolean("removable", true);
   const selected = boolean("selected", true);
   const dateTag = boolean("dateTag", false);
   const dataTest = text("dataTest", "test");
   const type = select("type", Object.values(TYPES), TYPES.NEUTRAL);
+  const iconName = select("iconLeft", [null, ...Object.keys(Icons)], "PlusMinus");
+  const IconLeft = iconName ? Icons[iconName] : null;
 
   return (
     <Tag
       size={size}
       type={type}
+      iconLeft={IconLeft && <IconLeft />}
       dateTag={dateTag}
       selected={selected}
       onClick={action("onClick")}
-      onRemove={action("onRemove")}
+      onRemove={removable ? action("onRemove") : undefined}
       dataTest={dataTest}
     >
       {content}

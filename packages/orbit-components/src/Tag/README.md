@@ -20,6 +20,7 @@ Table below contains all types of the props available in the Tag component.
 | :----------- | :---------------------- | :-------- | :--------------------------------------------------------------------------------------------------- |
 | **children** | `React.Node`            |           | The content of the Tag.                                                                              |
 | dataTest     | `string`                |           | Optional prop for testing purposes.                                                                  |
+| iconLeft     | `React.Node`            |           | The displayed icon on the left.                                                                      |
 | id           | `string`                |           | Set `id` for `Tag`                                                                                   |
 | dateTag      | `string`                |           | Optional prop, if it's true, selected color has ink background                                       |
 | type         | [`enum`](#enum)         | `neutral` | The color type of the Tag.                                                                           |

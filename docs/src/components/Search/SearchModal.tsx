@@ -1,38 +1,24 @@
 import React from "react";
-import styled, { css } from "styled-components";
 import { useStaticQuery, graphql, navigate } from "gatsby";
 import { filter } from "fuzzaldrin-plus";
 import { useCombobox } from "downshift";
-import type { DebouncedFunc } from "lodash";
 import { debounce } from "lodash";
-import {
-  Portal,
-  Modal,
-  ModalHeader,
-  ModalSection,
-  Text,
-  mediaQueries,
-  useMediaQuery,
-} from "@kiwicom/orbit-components";
-import { Search as SearchIcon, ChevronForward } from "@kiwicom/orbit-components/icons";
+import { useMediaQuery } from "@kiwicom/orbit-components";
 
-import StyledInputContainer from "./primitives/StyledInputContainer";
-import StyledPrefix from "./primitives/StyledPrefix";
-import StyledInput from "./primitives/StyledInput";
-import { StyledMenu, StyledMenuItem, StyledMenuItemTitle } from "./primitives/StyledMenu";
+import SearchModalUI from "./SearchModalUI";
 import { isLoggedIn, isBrowser } from "../../services/auth";
+import type { SearchResult, LodashDebounceFunc } from "./types";
 
 interface Props {
   onClose: () => void;
 }
-
-type LodashDebounceFunc = DebouncedFunc<(downshiftInput: { inputValue?: string }) => void>;
 
 interface QueryResponse {
   allMdx: {
     nodes: Array<{
       fields: {
         slug: string;
+        id: string;
         breadcrumbs: Array<{
           name: string;
         }>;
@@ -54,32 +40,6 @@ interface QueryResponse {
     }>;
   };
 }
-
-interface SearchResult {
-  name: string;
-  breadcrumbs: string[];
-  description: string;
-  path: string;
-}
-
-const StyledModalWrapper = styled.div`
-  /* align modal to the top */
-  > * > * > * {
-    height: 100%;
-  }
-  ${mediaQueries.largeMobile(css`
-    > * > * {
-      align-items: flex-start;
-    }
-    > * > * > * {
-      height: auto;
-    }
-  `)}
-`;
-const StyledSearchWrapper = styled.div`
-  margin-bottom: 1rem;
-  font-size: 1rem;
-`;
 
 export default function SearchModal({ onClose }: Props) {
   const [results, setResults] = React.useState<SearchResult[]>([]);
@@ -130,9 +90,10 @@ export default function SearchModal({ onClose }: Props) {
   `);
 
   const documents = React.useMemo<SearchResult[]>(() => {
-    const mdxPages = data.allMdx.nodes.map(node => {
+    const mdxPages = data.allMdx.nodes.map((node, idx) => {
       const breadcrumbs = node.fields ? node.fields.breadcrumbs.map(({ name }) => name) : [];
       return {
+        id: String(idx),
         name: breadcrumbs.join(" "),
         breadcrumbs,
         description: node.frontmatter.description,
@@ -150,10 +111,11 @@ export default function SearchModal({ onClose }: Props) {
                 const fullPath = `${repoName}/${componentName.toLowerCase()}/${propName}`;
 
                 pages.push({
+                  id: componentName,
+                  description: "",
                   name: fullPath.split("/").join(" "),
                   path: `/dashboard/tracking/${repoName}/${componentName.toLowerCase()}/#${propName}`,
                   breadcrumbs: fullPath.split("/"),
-                  description: "",
                 });
               });
             });
@@ -162,8 +124,9 @@ export default function SearchModal({ onClose }: Props) {
           })
         : [];
 
-    const restPages = data.allSitePage.nodes.map(node => {
+    const restPages: SearchResult[] = data.allSitePage.nodes.map(node => {
       return {
+        id: node.id,
         name: node.path.split("/")[1],
         description: "",
         breadcrumbs: [node.path],
@@ -178,10 +141,6 @@ export default function SearchModal({ onClose }: Props) {
   // so it doesn't cause horizontal overflow
   const placeholder = isTablet ? "Search…" : "Search for components, foundation…";
 
-  function getItemTitle(item: SearchResult): string {
-    return item.breadcrumbs.join(" / ");
-  }
-
   const setUserInput = (downshiftInput: { inputValue: string }) => {
     setResults(filter(documents, downshiftInput.inputValue, { key: "name" }));
   };
@@ -193,11 +152,11 @@ export default function SearchModal({ onClose }: Props) {
   const { getMenuProps, getInputProps, getComboboxProps, getItemProps } = useCombobox<SearchResult>(
     {
       items: results,
-      itemToString: item => (item ? getItemTitle(item) : ""),
+      itemToString: item => (item && item.breadcrumbs ? item.breadcrumbs.join(" / ") : ""),
       defaultHighlightedIndex: 0,
       onInputValueChange: debounceUserInput.current,
       onSelectedItemChange: async changes => {
-        if (changes.selectedItem) {
+        if (changes.selectedItem && changes.selectedItem.path) {
           await navigate(changes.selectedItem.path);
           onClose();
         }
@@ -205,75 +164,15 @@ export default function SearchModal({ onClose }: Props) {
     },
   );
 
-  // autofocus
-  const inputRef = React.useRef<HTMLInputElement | null>(null);
-
-  React.useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
-
   return (
-    <Portal>
-      <StyledModalWrapper>
-        <Modal
-          // the search field will be autofocused
-          autoFocus={false}
-          onClose={onClose}
-        >
-          <ModalHeader title="What are you looking for?" />
-          <ModalSection>
-            <StyledSearchWrapper>
-              <StyledInputContainer {...getComboboxProps()}>
-                <StyledPrefix>
-                  <SearchIcon />
-                </StyledPrefix>
-
-                <StyledInput
-                  {...getInputProps({
-                    ref: inputRef,
-                    type: "search",
-                    placeholder,
-                  })}
-                />
-              </StyledInputContainer>
-            </StyledSearchWrapper>
-            <div
-              css={css`
-                position: relative;
-                margin-left: 1.5rem;
-              `}
-            >
-              <div
-                css={css`
-                  position: absolute;
-                  top: -0.5rem;
-                  right: 0;
-                  left: 0;
-                `}
-              >
-                {results.length > 0 && (
-                  <Text as="p">
-                    We found <b>{results.length} results</b> matching your search
-                  </Text>
-                )}
-              </div>
-            </div>
-            <StyledMenu {...getMenuProps()} hasResults={results.length > 0}>
-              {results.map((item, itemIndex) => (
-                <StyledMenuItem key={item.path} {...getItemProps({ item, index: itemIndex })}>
-                  <div>
-                    <StyledMenuItemTitle>{getItemTitle(item)}</StyledMenuItemTitle>
-                    <div>{item.description}</div>
-                  </div>
-                  <ChevronForward size="medium" />
-                </StyledMenuItem>
-              ))}
-            </StyledMenu>
-          </ModalSection>
-        </Modal>
-      </StyledModalWrapper>
-    </Portal>
+    <SearchModalUI
+      onClose={onClose}
+      data={results}
+      placeholder={placeholder}
+      onComboboxProps={getComboboxProps}
+      onGetInputProps={getInputProps}
+      onGetItemProps={getItemProps}
+      onGetMenuProps={getMenuProps}
+    />
   );
 }

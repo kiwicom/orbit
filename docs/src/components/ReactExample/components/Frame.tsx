@@ -15,7 +15,7 @@ interface Props {
 
 const DEFAULT_HEIGHT = 100;
 
-const getBackground =
+export const getBackground =
   (type: BgType) =>
   ({ theme }) => {
     if (type === "grid") {

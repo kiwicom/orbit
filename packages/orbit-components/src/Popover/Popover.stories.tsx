@@ -428,6 +428,8 @@ export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
   const width = text("width", "350px");
+  const maxHeight = text("maxHeight", "");
+  const footerActions = boolean("footerActions", true);
   const noPadding = boolean("noPadding", false);
   const overlapped = boolean("overlapped", false);
   const opened = boolean("opened", true);
@@ -439,6 +441,7 @@ export const Playground = () => {
     <Stack justify="center">
       <Popover
         width={width}
+        maxHeight={maxHeight}
         dataTest={dataTest}
         offset={offset}
         content={content}
@@ -448,12 +451,14 @@ export const Playground = () => {
         opened={opened}
         noFlip={noFlip}
         actions={
-          <Stack direction="row" justify="between">
-            <Button type="secondary" size="small">
-              Cancel
-            </Button>
-            <Button size="small">Done</Button>
-          </Stack>
+          footerActions && (
+            <Stack direction="row" justify="between">
+              <Button type="secondary" size="small">
+                Cancel
+              </Button>
+              <Button size="small">Done</Button>
+            </Stack>
+          )
         }
         overlapped={overlapped}
         onOpen={action("open")}

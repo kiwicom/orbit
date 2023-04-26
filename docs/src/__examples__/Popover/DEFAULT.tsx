@@ -41,6 +41,7 @@ export default {
         { name: "noPadding", type: "boolean", defaultValue: false },
         { name: "fixed", type: "boolean", defaultValue: false },
         { name: "width", type: "text", defaultValue: "" },
+        { name: "maxHeight", type: "text", defaultValue: "" },
         {
           name: "placement",
           type: "select",

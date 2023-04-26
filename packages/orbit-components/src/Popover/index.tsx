@@ -30,6 +30,7 @@ const Popover = ({
   allowOverflow,
   noPadding,
   width,
+  maxHeight,
   actions,
   overlapped,
   dataTest,
@@ -136,6 +137,7 @@ const Popover = ({
       noPadding={noPadding}
       actions={actions}
       width={width}
+      maxHeight={maxHeight}
       offset={offset}
       referenceElement={ref.current}
       onClose={handleOut}

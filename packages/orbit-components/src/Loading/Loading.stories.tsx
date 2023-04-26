@@ -2,7 +2,6 @@ import * as React from "react";
 import { text, select, boolean, number } from "@storybook/addon-knobs";
 
 import TYPE_OPTIONS from "./consts";
-import * as Icons from "../icons";
 import Card from "../Card";
 import CardSection from "../Card/CardSection";
 import Illustration from "../Illustration";
@@ -39,7 +38,7 @@ export const CardLoading = () => {
   const loading = boolean("Loading", true);
   const loadingText = text("Text", "Please wait, Card content is loading...");
   return (
-    <Card loading={loading} icon={<Icons.Airplane />} title={title} description={description}>
+    <Card loading={loading} title={title} description={description}>
       <Loading loading={loading} type="boxLoader" text={loadingText}>
         <CardSection>
           <Illustration name="EnjoyApp" size="medium" />

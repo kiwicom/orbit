@@ -21,6 +21,9 @@ type ExpandableConditionalProps =
 interface CardProps extends Common.Globals {
   readonly title?: React.ReactNode;
   readonly titleAs?: As;
+  /**
+   * @deprecated icon prop is no longer supported. Icons can still be added manually, if needed.
+   */
   readonly icon?: React.ReactNode;
   readonly description?: React.ReactNode;
   readonly children?: React.ReactNode;

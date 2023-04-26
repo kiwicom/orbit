@@ -11,7 +11,6 @@ export default {
     {
       component: "Card",
       knobs: [
-        { name: "icon", type: "icon", defaultValue: "" },
         { name: "margin", type: "text", defaultValue: "" },
         { name: "loading", type: "boolean", defaultValue: false },
         { name: "title", type: "text", defaultValue: "Passenger info" },
@@ -21,7 +20,6 @@ export default {
     {
       component: "CardSection",
       knobs: [
-        { name: "icon", type: "icon", defaultValue: "" },
         { name: "noSeparator", type: "boolean", defaultValue: false },
         { name: "expandable", type: "boolean", defaultValue: true },
         { name: "initialExpanded", type: "boolean", defaultValue: false },

@@ -54,7 +54,7 @@ const Header = ({
   expandable,
   expanded,
 }: Props) => (
-  <Stack align={actions && !header ? "start" : "center"} spacing={header ? "small" : "none"}>
+  <Stack align={actions && !header ? "start" : "center"} spacing="small">
     {(title || description || icon) && !header && (
       <Stack
         flex

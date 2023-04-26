@@ -3,6 +3,7 @@ import { FlightDirect } from "@kiwicom/orbit-components/icons";
 import {
   Box,
   Button,
+  ButtonLink,
   Stack,
   Text,
   Illustration,
@@ -31,48 +32,60 @@ export default {
             </Text>
             <Card>
               <CardSection
-                icon={<CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />}
                 title={
-                  <Stack direction="row" spacing="XXSmall" align="center">
-                    <Text weight="bold">Cairo CAI</Text>
-                    <FlightDirect size="small" />
-                    <Text weight="bold">Dubai SHJ</Text>
+                  <Stack direction="row" spacing="XSmall" align="center">
+                    <Box>
+                      <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
+                    </Box>
+                    <Stack direction="row" spacing="XXSmall" align="center">
+                      <Text weight="bold">Cairo CAI</Text>
+                      <FlightDirect size="small" />
+                      <Text weight="bold">Dubai SHJ</Text>
+                    </Stack>
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
               <CardSection
-                icon={<CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />}
                 title={
-                  <Stack direction="row" spacing="XXSmall" align="center">
-                    <Text weight="bold">Dubai SHJ</Text>
-                    <FlightDirect size="small" />
-                    <Text weight="bold">Mumbai BOM</Text>
+                  <Stack direction="row" spacing="XSmall" align="center">
+                    <Box>
+                      <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
+                    </Box>
+                    <Stack direction="row" spacing="XXSmall" align="center">
+                      <Text weight="bold">Dubai SHJ</Text>
+                      <FlightDirect size="small" />
+                      <Text weight="bold">Mumbai BOM</Text>
+                    </Stack>
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
               <CardSection
-                icon={<CarrierLogo carriers={[{ code: "G8", name: "Go Air" }]} size="large" />}
                 title={
-                  <Stack direction="row" spacing="XXSmall" align="center">
-                    <Text weight="bold">Mumbai BOM</Text>
-                    <FlightDirect size="small" />
-                    <Text weight="bold">Malé MLE</Text>
+                  <Stack direction="row" spacing="XSmall" align="center">
+                    <Box>
+                      <CarrierLogo carriers={[{ code: "G8", name: "Go Air" }]} size="large" />
+                    </Box>
+                    <Stack direction="row" spacing="XXSmall" align="center">
+                      <Text weight="bold">Mumbai BOM</Text>
+                      <FlightDirect size="small" />
+                      <Text weight="bold">Malé MLE</Text>
+                    </Stack>
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
             </Card>
@@ -85,48 +98,60 @@ export default {
             </Text>
             <Card>
               <CardSection
-                icon={<CarrierLogo carriers={[{ code: "G8", name: "Go Air" }]} size="large" />}
                 title={
-                  <Stack direction="row" spacing="XXSmall" align="center">
-                    <Text weight="bold">Malé MLE</Text>
-                    <FlightDirect size="small" />
-                    <Text weight="bold">Mumbai BOM</Text>
+                  <Stack direction="row" spacing="XSmall" align="center">
+                    <Box>
+                      <CarrierLogo carriers={[{ code: "G8", name: "Go Air" }]} size="large" />
+                    </Box>
+                    <Stack direction="row" spacing="XXSmall" align="center">
+                      <Text weight="bold">Malé MLE</Text>
+                      <FlightDirect size="small" />
+                      <Text weight="bold">Mumbai BOM</Text>
+                    </Stack>
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
               <CardSection
-                icon={<CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />}
                 title={
-                  <Stack direction="row" spacing="XXSmall" align="center">
-                    <Text weight="bold">Mumbai BOM</Text>
-                    <FlightDirect size="small" />
-                    <Text weight="bold">Dubai SHJ</Text>
+                  <Stack direction="row" spacing="XSmall" align="center">
+                    <Box>
+                      <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
+                    </Box>
+                    <Stack direction="row" spacing="XXSmall" align="center">
+                      <Text weight="bold">Mumbai BOM</Text>
+                      <FlightDirect size="small" />
+                      <Text weight="bold">Dubai SHJ</Text>
+                    </Stack>
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
               <CardSection
-                icon={<CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />}
                 title={
-                  <Stack direction="row" spacing="XXSmall" align="center">
-                    <Text weight="bold">Dubai SHJ</Text>
-                    <FlightDirect size="small" />
-                    <Text weight="bold">Cairo CAI</Text>
+                  <Stack direction="row" spacing="XSmall" align="center">
+                    <Box>
+                      <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
+                    </Box>
+                    <Stack direction="row" spacing="XXSmall" align="center">
+                      <Text weight="bold">Dubai SHJ</Text>
+                      <FlightDirect size="small" />
+                      <Text weight="bold">Cairo CAI</Text>
+                    </Stack>
                   </Stack>
                 }
                 actions={
-                  <Button type="secondary" size="small">
+                  <ButtonLink compact type="secondary" size="small">
                     See meals
-                  </Button>
+                  </ButtonLink>
                 }
               />
             </Card>

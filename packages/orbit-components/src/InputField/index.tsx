@@ -85,7 +85,7 @@ export const FakeInput = styled(({ children, className }) => (
       : theme.orbit.backgroundInput};
     font-size: ${theme.orbit.fontSizeInputNormal};
     transition: all ${theme.orbit.durationFast} ease-in-out;
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadiusLarge};
     ${mq.tablet(css`
       border-radius: ${theme.orbit.borderRadiusNormal};
     `)};

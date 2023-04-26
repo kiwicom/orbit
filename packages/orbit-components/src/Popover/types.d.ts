@@ -17,6 +17,7 @@ export interface Props extends Common.Globals {
   readonly placement?: Placement;
   readonly opened?: boolean;
   readonly width?: string;
+  readonly maxHeight?: string;
   readonly noPadding?: boolean;
   readonly allowOverflow?: boolean;
   readonly noFlip?: boolean;

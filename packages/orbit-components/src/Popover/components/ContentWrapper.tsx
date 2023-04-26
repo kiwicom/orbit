@@ -27,6 +27,7 @@ export interface Props extends Common.Globals {
   referenceElement: HTMLElement | null;
   placement: Placement;
   width?: string;
+  maxHeight?: string;
   noFlip?: boolean;
   allowOverflow?: boolean;
   noPadding?: boolean;
@@ -41,10 +42,11 @@ export interface Props extends Common.Globals {
 }
 
 const StyledContentWrapper = styled.div<{
+  maxHeight?: string;
   windowHeight?: number | null;
   actionsHeight?: number | null;
 }>`
-  ${({ theme, windowHeight, actionsHeight }) => css`
+  ${({ theme, windowHeight, actionsHeight, maxHeight }) => css`
     overflow: auto;
     border-top-left-radius: ${theme.orbit.spaceSmall};
     border-top-right-radius: ${theme.orbit.spaceSmall};
@@ -56,7 +58,7 @@ const StyledContentWrapper = styled.div<{
     bottom: ${actionsHeight || 0}px;
 
     ${mq.largeMobile(css`
-      max-height: 100%;
+      max-height: ${maxHeight || "100%"};
       border-radius: ${theme.orbit.borderRadiusNormal};
       bottom: auto;
       left: auto;
@@ -220,6 +222,7 @@ const PopoverContentWrapper = ({
   onClose,
   labelClose,
   width,
+  maxHeight,
   noFlip,
   offset = { top: 4, left: 0 },
   referenceElement,
@@ -317,6 +320,7 @@ const PopoverContentWrapper = ({
             actionsHeight={actionsHeight}
             ref={scrollingElementRef}
             windowHeight={windowHeight}
+            maxHeight={maxHeight}
           >
             <StyledPopoverPadding noPadding={noPadding}>{children}</StyledPopoverPadding>
           </StyledContentWrapper>

@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { text, boolean, select, number, object } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
-import { SIZE_OPTIONS, TYPE_OPTIONS, INPUTMODE } from "./consts";
+import { TYPE_OPTIONS, INPUTMODE } from "./consts";
 // @ts-expect-error currently it can't resolve mts properly
 import { NAME_OPTIONS } from "../ServiceLogo/consts.mts";
 import ButtonLink from "../ButtonLink";
@@ -35,30 +35,6 @@ export const DefaultInput = () => {
 
 DefaultInput.story = {
   name: "Default input",
-
-  parameters: {
-    info: "Some description about this type of InputField in general.",
-  },
-};
-
-export const SmallInput = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-
-  return (
-    <InputField
-      size="small"
-      label={label}
-      value={value}
-      placeholder={placeholder}
-      onChange={action("change")}
-    />
-  );
-};
-
-SmallInput.story = {
-  name: "Small input",
 
   parameters: {
     info: "Some description about this type of InputField in general.",
@@ -407,7 +383,6 @@ WithServiceLogoPrefix.story = {
 };
 
 export const WithError = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
   const name = text("Name", "input");
   const label = text("Label", "");
@@ -432,7 +407,6 @@ export const WithError = () => {
 
   return (
     <InputField
-      size={size}
       type={type}
       name={name}
       label={label}
@@ -447,7 +421,7 @@ export const WithError = () => {
           <ButtonLink
             iconLeft={<Suffix />}
             compact
-            size={size}
+            size="normal"
             onClick={action("clicked")}
             disabled={disabled}
           />
@@ -480,7 +454,6 @@ WithError.story = {
 };
 
 export const WithHelp = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
   const name = text("Name", "input");
   const label = text("Label", "Label");
@@ -505,7 +478,6 @@ export const WithHelp = () => {
 
   return (
     <InputField
-      size={size}
       type={type}
       name={name}
       label={label}
@@ -520,7 +492,7 @@ export const WithHelp = () => {
           <ButtonLink
             iconLeft={<Suffix />}
             compact
-            size={size}
+            size="normal"
             onClick={action("clicked")}
             disabled={disabled}
           />
@@ -553,7 +525,6 @@ WithHelp.story = {
 };
 
 export const Playground = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
   const name = text("Name", "input");
   const label = text("Label", "Label");
@@ -581,7 +552,6 @@ export const Playground = () => {
 
   return (
     <InputField
-      size={size}
       type={type}
       width={width}
       name={name}
@@ -596,8 +566,8 @@ export const Playground = () => {
         Suffix && (
           <ButtonLink
             type="primary"
+            size="normal"
             iconLeft={<Suffix />}
-            size={size}
             onClick={action("clicked")}
             disabled={disabled}
             compact

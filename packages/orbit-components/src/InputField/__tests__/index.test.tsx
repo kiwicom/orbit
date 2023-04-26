@@ -18,7 +18,6 @@ describe("InputField", () => {
       <InputField
         ref={ref}
         id="id"
-        size="normal"
         type="text"
         name="name"
         label="Label"

@@ -6,11 +6,6 @@ export enum TYPE_OPTIONS {
   PASSPORTID = "passportid",
 }
 
-export enum SIZE_OPTIONS {
-  SMALL = "small",
-  NORMAL = "normal",
-}
-
 export enum TOKENS {
   heightInput = "heightInput",
   fontSizeInput = "fontSizeInput",

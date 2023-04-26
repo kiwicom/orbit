@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import type * as Common from "../common/types";
 import type { Theme } from "../defaultTheme";
 import defaultTheme from "../defaultTheme";
-import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
+import { TYPE_OPTIONS } from "./consts";
 import { StyledServiceLogo } from "../ServiceLogo";
 import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
@@ -20,37 +20,6 @@ import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
-
-const getToken =
-  (name: string) =>
-  ({ theme, size }: { theme: Theme; size: Props["size"] }) => {
-    const tokens = {
-      [TOKENS.heightInput]: {
-        [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-        [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
-      },
-      [TOKENS.fontSizeInput]: {
-        [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeInputSmall,
-        [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeInputNormal,
-      },
-      [TOKENS.iconSize]: {
-        [SIZE_OPTIONS.SMALL]: theme.orbit.widthIconSmall,
-        [SIZE_OPTIONS.NORMAL]: theme.orbit.widthIconMedium,
-      },
-    };
-
-    return tokens[name][size];
-  };
-
-const getPadding =
-  () =>
-  ({ theme, size }) => {
-    const tokens = {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingInputSmall,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingInputNormal,
-    };
-    return rtlSpacing(tokens[size]);
-  };
 
 const getDOMType = type => {
   if (type === TYPE_OPTIONS.PASSPORTID) {
@@ -106,7 +75,7 @@ export const FakeInput = styled(({ children, className }) => (
     top: 0;
     left: 0;
     box-sizing: border-box;
-    height: ${getToken(TOKENS.heightInput)};
+    height: ${theme.orbit.heightInputNormal};
     box-shadow: inset 0 0 0
       ${`${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
@@ -114,9 +83,9 @@ export const FakeInput = styled(({ children, className }) => (
     background-color: ${disabled
       ? theme.orbit.backgroundInputDisabled
       : theme.orbit.backgroundInput};
-    font-size: ${getToken(TOKENS.fontSizeInput)};
+    font-size: ${theme.orbit.fontSizeInputNormal};
     transition: all ${theme.orbit.durationFast} ease-in-out;
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadiusLarge};
     ${mq.tablet(css`
       border-radius: ${theme.orbit.borderRadiusNormal};
     `)};
@@ -139,10 +108,9 @@ export const InputContainer = styled(({ children, className, labelRef }) => (
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    height: ${getToken(TOKENS.heightInput)};
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    height: ${theme.orbit.heightInputNormal};
     color: ${disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-    font-size: ${getToken(TOKENS.fontSizeInput)};
+    font-size: ${theme.orbit.fontSizeInputNormal};
     cursor: ${disabled ? "not-allowed" : "text"};
 
     &:hover > ${FakeInput} {
@@ -165,9 +133,8 @@ const StyledInlineLabel = styled.div`
     hasFeedback,
   }: {
     theme: Theme;
-    hasTags?: boolean;
+    hasTags: boolean;
     hasFeedback?: boolean;
-    size: Props["size"];
   }) => css`
     height: 100%;
     display: flex;
@@ -180,7 +147,7 @@ const StyledInlineLabel = styled.div`
 
     ${FormLabel} {
       margin-bottom: 0;
-      font-size: ${getToken(TOKENS.fontSizeInput)};
+      font-size: ${theme.orbit.fontSizeInputNormal};
       line-height: ${theme.orbit.lineHeightTextNormal};
       z-index: 3;
       white-space: nowrap;
@@ -213,8 +180,8 @@ export const Prefix = styled(({ children, className, iconRef }) => (
 
     & * svg,
     & > svg {
-      width: ${getToken(TOKENS.iconSize)};
-      height: ${getToken(TOKENS.iconSize)};
+      width: ${theme.orbit.widthIconNormal};
+      height: ${theme.orbit.heightIconNormal};
     }
 
     ${StyledButtonPrimitiveIconContainer} {
@@ -229,7 +196,7 @@ Prefix.defaultProps = {
 
 const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
   ${({ theme, disabled }) => css`
-    height: ${getToken(TOKENS.heightInput)};
+    height: ${theme.orbit.heightInputNormal};
     color: ${theme.orbit.colorTextInputPrefix};
     display: flex;
     flex-shrink: 0;
@@ -269,7 +236,6 @@ export const Input = styled(
     (
       {
         type,
-        size,
         error,
         help,
         inlineLabel,
@@ -307,7 +273,7 @@ export const Input = styled(
     -webkit-text-fill-color: ${disabled && theme.orbit.colorTextInputDisabled};
     font-family: ${theme.orbit.fontFamily};
     border: none;
-    padding: ${getPadding()};
+    padding: ${theme.orbit.paddingInputNormal};
     font-size: inherit;
     font-weight: ${inlineLabel ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
     color: inherit;
@@ -317,7 +283,6 @@ export const Input = styled(
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border-radius: ${theme.orbit.borderRadiusNormal};
     z-index: 2;
     box-shadow: none;
     min-width: 0;
@@ -370,7 +335,6 @@ const StyledIconWrapper = styled.span`
 const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const {
     disabled,
-    size = SIZE_OPTIONS.NORMAL,
     type = TYPE_OPTIONS.TEXT,
     label,
     inlineLabel,
@@ -453,14 +417,9 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           {label}
         </FormLabel>
       )}
-      <InputContainer
-        size={size}
-        disabled={disabled}
-        error={error}
-        labelRef={label ? null : labelRef}
-      >
+      <InputContainer disabled={disabled} error={error} labelRef={label ? null : labelRef}>
         {inlineLabel && !tags && (error || help) ? (
-          <Prefix size={size}>
+          <Prefix>
             {help && !error && (
               <StyledIconWrapper ref={iconRef}>
                 <InformationCircle color="info" size="small" />
@@ -473,15 +432,10 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             )}
           </Prefix>
         ) : (
-          prefix && <Prefix size={size}>{prefix}</Prefix>
+          prefix && <Prefix>{prefix}</Prefix>
         )}
         {label && inlineLabel && (
-          <StyledInlineLabel
-            hasTags={!!tags}
-            hasFeedback={!!(error || help)}
-            ref={labelRef}
-            size={size}
-          >
+          <StyledInlineLabel hasTags={!!tags} hasFeedback={!!(error || help)} ref={labelRef}>
             <FormLabel
               filled={!!value}
               required={required}
@@ -519,7 +473,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           max={maxValue}
           minLength={minLength}
           maxLength={maxLength}
-          size={size}
           error={insideInputGroup ? undefined : error}
           ref={ref}
           tabIndex={tabIndex}
@@ -536,8 +489,8 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           inputMode={inputMode}
           dataAttrs={dataAttrs}
         />
-        {suffix && <Suffix size={size}>{suffix}</Suffix>}
-        <FakeInput size={size} disabled={disabled} error={error} />
+        {suffix && <Suffix>{suffix}</Suffix>}
+        <FakeInput disabled={disabled} error={error} />
       </InputContainer>
       {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip
@@ -547,7 +500,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           helpClosable={helpClosable}
           onShown={setTooltipShown}
           error={error}
-          inputSize={size}
           inlineLabel={inlineLabel}
           referenceElement={inlineLabel && !tags ? iconRef : fieldRef}
         />

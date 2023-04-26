@@ -2,7 +2,6 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { usePopper } from "react-popper";
 
-import type * as Common from "../../common/types";
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
@@ -17,11 +16,11 @@ import resolvePlacement from "./helpers/resolvePlacement";
 import { SIDE_NUDGE } from "./consts";
 import useTheme from "../../hooks/useTheme";
 import type { Props } from "./types";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const StyledArrow = styled.div<{
   inlineLabel?: boolean;
   isHelp?: boolean;
-  inputSize?: Common.InputSize;
   placement?: string;
 }>`
   position: absolute;
@@ -40,7 +39,6 @@ const StyledFormFeedbackTooltip = styled.div<{
   isHelp?: boolean;
   shown?: boolean;
   inlineLabel?: boolean;
-  inputSize?: Common.InputSize;
   placement?: string;
   top?: string | number;
   left?: string | number;
@@ -49,25 +47,12 @@ const StyledFormFeedbackTooltip = styled.div<{
   right?: string | number;
   transform?: string;
 }>`
-  ${({
-    theme,
-    isHelp,
-    shown,
-    inputSize,
-    top,
-    left,
-    position,
-    bottom,
-    right: popperRight,
-    transform,
-  }) => css`
+  ${({ theme, isHelp, shown, top, left, position, bottom, right: popperRight, transform }) => css`
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    border-radius: ${theme.orbit.borderRadiusNormal};
-    padding: ${theme.orbit.spaceXSmall} ${
-    inputSize === "small" ? theme.orbit.spaceXSmall : theme.orbit.spaceSmall
-  };
+    border-radius: ${theme.orbit.borderRadiusLarge};
+    padding: ${theme.orbit.spaceXSmall} ${theme.orbit.spaceSmall};
     padding-${right}: ${isHelp && theme.orbit.spaceSmall};
     z-index: 10;
     max-height: none;
@@ -78,7 +63,6 @@ const StyledFormFeedbackTooltip = styled.div<{
     opacity: ${shown ? "1" : "0"};
     transition: opacity ${theme.orbit.durationFast} ease-in-out,
       visibility ${theme.orbit.durationFast} ease-in-out;
-
     position: ${position};
     top: ${top};
     left: ${left};
@@ -93,6 +77,10 @@ const StyledFormFeedbackTooltip = styled.div<{
     ${media.largeMobile(css`
       width: auto;
     `)};
+
+    ${media.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)}
 `}
 `;
 
@@ -126,12 +114,10 @@ const StyledTooltipContent = styled.div`
     }
 
     ${media.largeMobile(css`
-      font-size: ${theme.orbit.fontSizeTextSmall};
       font-weight: ${theme.orbit.fontWeightMedium};
 
       ${StyledText}, ${Item}, a {
         font-weight: ${theme.orbit.fontWeightMedium};
-        font-size: ${theme.orbit.fontSizeTextSmall};
       }
     `)};
   `}
@@ -158,7 +144,6 @@ const ErrorFormTooltip = ({
   onShown,
   dataTest,
   helpClosable,
-  inputSize,
   children,
   shown,
   referenceElement,
@@ -170,13 +155,7 @@ const ErrorFormTooltip = ({
   const tooltipRef = React.useRef<HTMLDivElement | null>(null);
   const [arrowRef, setArrowRef] = React.useState<HTMLDivElement | null>(null);
   const { rtl } = useTheme();
-
-  const resolveOffset = React.useCallback(() => {
-    if (inlineLabel) {
-      if (inputSize === "small") return [0, 4];
-    }
-    return [0, 3];
-  }, [inlineLabel, inputSize]);
+  const { isDesktop } = useMediaQuery();
 
   const {
     styles,
@@ -188,8 +167,7 @@ const ErrorFormTooltip = ({
       {
         name: "offset",
         options: {
-          // @ts-expect-error TODO
-          offset: resolveOffset,
+          offset: [inlineLabel || isDesktop ? 0 : 4, 3],
         },
       },
       {
@@ -219,7 +197,7 @@ const ErrorFormTooltip = ({
 
   React.useEffect(() => {
     if (update) update();
-  }, [update, resolveOffset, shown]);
+  }, [update, shown]);
 
   React.useEffect(() => {
     const link = tooltipRef.current?.querySelector("a");
@@ -245,7 +223,6 @@ const ErrorFormTooltip = ({
     <StyledFormFeedbackTooltip
       id={id}
       ref={tooltipRef}
-      inputSize={inputSize}
       shown={shown}
       isHelp={isHelp}
       data-test={dataTest}
@@ -262,7 +239,6 @@ const ErrorFormTooltip = ({
       <StyledArrow
         isHelp={isHelp}
         ref={setArrowRef}
-        inputSize={inputSize}
         inlineLabel={inlineLabel}
         placement={attrs.popper && attrs.popper["data-popper-placement"]}
       />
@@ -277,7 +253,7 @@ const ErrorFormTooltip = ({
             if (shown) onShown(false);
           }}
         >
-          <CloseIc ariaLabel="close" size="small" />
+          <CloseIc ariaLabel="close" />
         </StyledCloseButton>
       )}
     </StyledFormFeedbackTooltip>

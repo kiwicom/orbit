@@ -21,7 +21,6 @@ export default {
         { name: "label", type: "text", defaultValue: "Given names" },
         { name: "autoFocus", type: "boolean", defaultValue: false },
         { name: "readOnly", type: "boolean", defaultValue: false },
-        { name: "size", type: "select", options: ["small", "normal"], defaultValue: "normal" },
         {
           name: "inputMode",
           type: "select",

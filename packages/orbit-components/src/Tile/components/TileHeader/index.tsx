@@ -124,7 +124,7 @@ export const StyledIconRight = styled(IconRight)`
     expandable?: Props["expandable"];
   }) => css`
     color: ${theme.orbit.colorIconSecondary};
-    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceMedium}`)};
+    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
     transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
     ${expanded &&
     css`
@@ -170,7 +170,7 @@ const TileHeader = ({
           <Stack spacing="none" direction="column" shrink>
             {title && (
               <StyledTileTitle>
-                <Heading type="title3" as="h3">
+                <Heading type="title4" as="h3">
                   {title}
                 </Heading>
               </StyledTileTitle>

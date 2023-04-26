@@ -6,6 +6,7 @@ import transition from "../../../utils/transition";
 import { StyledIconRight } from "../TileHeader";
 import defaultTheme from "../../../defaultTheme";
 import { defaultFocus } from "../../../utils/common";
+import mq from "../../../utils/mediaQuery";
 
 interface Props extends Common.Globals {
   href?: string;
@@ -42,6 +43,10 @@ export const StyledTileWrapper: any = styled.div`
         color: ${theme.orbit.paletteInkLightHover};
       }
     }
+
+    ${mq.desktop(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)}
   `}
 `;
 

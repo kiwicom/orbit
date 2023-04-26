@@ -109,7 +109,6 @@ export const InputContainer = styled(({ children, className, labelRef }) => (
     justify-content: space-between;
     box-sizing: border-box;
     height: ${theme.orbit.heightInputNormal};
-    border-radius: ${theme.orbit.borderRadiusNormal};
     color: ${disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
     font-size: ${theme.orbit.fontSizeInputNormal};
     cursor: ${disabled ? "not-allowed" : "text"};
@@ -284,7 +283,6 @@ export const Input = styled(
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border-radius: ${theme.orbit.borderRadiusNormal};
     z-index: 2;
     box-shadow: none;
     min-width: 0;

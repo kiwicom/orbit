@@ -16,6 +16,7 @@ import resolvePlacement from "./helpers/resolvePlacement";
 import { SIDE_NUDGE } from "./consts";
 import useTheme from "../../hooks/useTheme";
 import type { Props } from "./types";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const StyledArrow = styled.div<{
   inlineLabel?: boolean;
@@ -50,7 +51,7 @@ const StyledFormFeedbackTooltip = styled.div<{
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadiusLarge};
     padding: ${theme.orbit.spaceXSmall} ${theme.orbit.spaceSmall};
     padding-${right}: ${isHelp && theme.orbit.spaceSmall};
     z-index: 10;
@@ -62,7 +63,6 @@ const StyledFormFeedbackTooltip = styled.div<{
     opacity: ${shown ? "1" : "0"};
     transition: opacity ${theme.orbit.durationFast} ease-in-out,
       visibility ${theme.orbit.durationFast} ease-in-out;
-
     position: ${position};
     top: ${top};
     left: ${left};
@@ -76,8 +76,11 @@ const StyledFormFeedbackTooltip = styled.div<{
 
     ${media.largeMobile(css`
       width: auto;
-      border-radius: ${theme.orbit.borderRadiusLarge};
     `)};
+
+    ${media.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)}
 `}
 `;
 
@@ -152,6 +155,7 @@ const ErrorFormTooltip = ({
   const tooltipRef = React.useRef<HTMLDivElement | null>(null);
   const [arrowRef, setArrowRef] = React.useState<HTMLDivElement | null>(null);
   const { rtl } = useTheme();
+  const { isDesktop } = useMediaQuery();
 
   const {
     styles,
@@ -163,7 +167,7 @@ const ErrorFormTooltip = ({
       {
         name: "offset",
         options: {
-          offset: [0, 3],
+          offset: [inlineLabel || isDesktop ? 0 : 4, 3],
         },
       },
       {

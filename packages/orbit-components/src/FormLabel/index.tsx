@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
-import { rtlSpacing } from "../utils/rtl";
+import { rtlSpacing, left } from "../utils/rtl";
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
@@ -81,8 +81,9 @@ const FormLabel = styled(
     color: ${!filled || disabled ? theme.orbit.colorFormLabel : theme.orbit.colorFormLabelFilled};
     line-height: ${theme.orbit.lineHeightTextNormal};
     margin-bottom: ${theme.orbit.spaceXXSmall};
-    ${mq.largeMobile(css`
-      margin-left: ${theme.orbit.spaceXXSmall};
+    margin-${left}: ${theme.orbit.spaceXXSmall};
+    ${mq.desktop(css`
+      margin-${left}: 0;
     `)}
   `}
 `;

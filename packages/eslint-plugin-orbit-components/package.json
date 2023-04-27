@@ -28,13 +28,13 @@
     "build": "yarn clean && babel ./src --extensions '.ts' --out-dir ./dist",
     "clean": "del dist",
     "postinstall": "yarn build",
-    "prepublishOnly": "yarn build && pinst --disable",
-    "postpublish": "pinst --enable"
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "eslint": ">=8"
   },
   "dependencies": {
     "@babel/types": "=7.12.10"
-  }
+  },
+  "gitHead": "5e7d8f283e39532de0393f7f42cea2f7d33f6ac7"
 }

@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.2.2...@kiwicom/orbit-design-tokens@4.0.0) (2023-04-27)
+
+
+### Bug Fixes
+
+* **tokens:** change borderColorInputHover value ([5e643f9](https://github.com/kiwicom/orbit/commit/5e643f9671a1ce6433873a2d4ed07a129eabfbf1))
+* **tokens:** change subtle buttons text colors ([50c69e8](https://github.com/kiwicom/orbit/commit/50c69e83034a0ded9b30c0150d0a020633ac8c6c))
+
+
+### Features
+
+* **tokens:** add marginButtonIcon token ([b865d64](https://github.com/kiwicom/orbit/commit/b865d64e5a0013282226c02139b9abda1210eeb0))
+* **tokens:** change fontSizeSm to 13px and fontSizeMd to 15px ([262104e](https://github.com/kiwicom/orbit/commit/262104e9374b9abee87539baa59e2d84dab9a883))
+* **tokens:** remove unused margin button icon tokens ([3fcdef1](https://github.com/kiwicom/orbit/commit/3fcdef1f569286d3e7e4d70d3eb1f2dad8059dca))
+* **tokens:** update Heading title1 line-height ([#3824](https://github.com/kiwicom/orbit/issues/3824)) ([dbd7e6c](https://github.com/kiwicom/orbit/commit/dbd7e6ca1da3e5738997fa4e05c11ca1ee8931ba))
+* **tokens:** update palette ([#3798](https://github.com/kiwicom/orbit/issues/3798)) ([342bebc](https://github.com/kiwicom/orbit/commit/342bebc2a49a27cf461ad5d03f7dbff515570259))
+* **tokens:** update palette ([#3818](https://github.com/kiwicom/orbit/issues/3818)) ([2766a09](https://github.com/kiwicom/orbit/commit/2766a095f251757a4f0a54766db5c9b4ad56674e))
+* **tokens:** update palette ([#3825](https://github.com/kiwicom/orbit/issues/3825)) ([c81bf0c](https://github.com/kiwicom/orbit/commit/c81bf0c6990eca4888ced659711387a3fff8ef1a))
+* **tokens:** update palette ([#3835](https://github.com/kiwicom/orbit/issues/3835)) ([bab85d5](https://github.com/kiwicom/orbit/commit/bab85d5d9d9623d7399d9f308642823cf2585b0c))
+
+
+### BREAKING CHANGES
+
+* **tokens:** marginButtonIconSmall, marginButtonIconNormal and marginButtonIconLarge were removed.
+marginButtonIcon is now the only token available.
+
+
+
+
+
 ## [3.2.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.2.1...@kiwicom/orbit-design-tokens@3.2.2) (2023-04-17)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

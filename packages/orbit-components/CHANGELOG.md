@@ -3,6 +3,91 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.4.0...@kiwicom/orbit-components@7.0.0) (2023-04-27)
+
+
+### Bug Fixes
+
+* **Alert:** change colors for AlertButton subtle ([961c6a1](https://github.com/kiwicom/orbit/commit/961c6a1c6c364c42b3264da88c5f585e8ba382f9))
+* **Breacrumbs:** change goBackTitle to accept React.Node ([b1614e6](https://github.com/kiwicom/orbit/commit/b1614e6ff34ee34107d3f3e3cfd504f51c1c8cf2))
+* **Button:** change icon sizes and spacing ([050e157](https://github.com/kiwicom/orbit/commit/050e1572b0b3c93a655d9693480302eedc2a4efb))
+* **ButtonPrimitive:** replace current title type with React.Node ([e1db0d0](https://github.com/kiwicom/orbit/commit/e1db0d04891ad72dca4f788868a46f8c192e3e2e))
+* **Card:** add spacing between actions and title ([da4e898](https://github.com/kiwicom/orbit/commit/da4e8984a3479cefaa3d0100a38b370bcd0617ea))
+* **FormLabel:** add margin-left offset ([eb0f092](https://github.com/kiwicom/orbit/commit/eb0f0924dfc8ae1bc0c7a602d7f6efffd0a7a67c))
+* **SegmentedSwitch:** adjust height to match design specs ([67dee47](https://github.com/kiwicom/orbit/commit/67dee478afebeef681dc9f12229b650ca12fca82))
+* **Select:** change type of label in option to React.Node ([a08eb5f](https://github.com/kiwicom/orbit/commit/a08eb5f3973fee3b84bf05f80a7b22661a463a23))
+* **Tag:** adjust height to match design specs ([09aa998](https://github.com/kiwicom/orbit/commit/09aa998eb207f728d8ed53873e6bbea7417ac687))
+* **Tag:** border-radius on responsive ([dddf4a4](https://github.com/kiwicom/orbit/commit/dddf4a440d8ddbbafa0b71fbcd87982aaeca6906))
+* **TextLink:** fix color on active state ([c981604](https://github.com/kiwicom/orbit/commit/c98160403c51f00e4021c316c66a0c32f92d1ce2))
+* **TextLink:** fix icon sizes ([7161d4f](https://github.com/kiwicom/orbit/commit/7161d4f754e65e00c9ba4526ee2d315055e9dafd))
+* **Tile:** adjust spacing between icon and content ([9e1c83a](https://github.com/kiwicom/orbit/commit/9e1c83a89368834a588727d1562e51964fcd7d16))
+* **Tile:** adjust title styles ([c880ee6](https://github.com/kiwicom/orbit/commit/c880ee66cc750added38a4164ae8e821e246ab9a))
+* **Tile:** fix border-radius on desktop ([5e04164](https://github.com/kiwicom/orbit/commit/5e041648ed050edb9a95b5ffaab9bc01bd4eeb6d))
+* **Toast:** icon on Promisse Toast was not rendered ([#3805](https://github.com/kiwicom/orbit/issues/3805)) ([e50b66f](https://github.com/kiwicom/orbit/commit/e50b66f182e2286f6fc87060beb0971dffd324d5))
+
+
+### chore
+
+* **Illustration:** add type to consts file ([#3815](https://github.com/kiwicom/orbit/issues/3815)) ([224698a](https://github.com/kiwicom/orbit/commit/224698a67514ad7f1835bde201cbd4b9eec8301a)), closes [#3816](https://github.com/kiwicom/orbit/issues/3816)
+
+
+* feat(Wizard)!: add label props ([96035c8](https://github.com/kiwicom/orbit/commit/96035c8a16d1930a7be25b2f401a3ae243f1a7e6))
+
+
+### Features
+
+* **Alert:** add labelClose prop ([5dc5d89](https://github.com/kiwicom/orbit/commit/5dc5d89c2131f36e17b895b36cfcf9e3509a55a7))
+* **BadgePrimitive:** remove borderColor prop ([70a620d](https://github.com/kiwicom/orbit/commit/70a620dd928a5178d6248f4edd90899cc236c555))
+* **Badge:** rename type prop ([a55dbd2](https://github.com/kiwicom/orbit/commit/a55dbd266460c767ae198c03cda98caaaf39b93b))
+* **Card:** add labelClose prop ([71d6cc4](https://github.com/kiwicom/orbit/commit/71d6cc48a72bd98bf373a460b84ed0aadf2ab593))
+* **Card:** icon prop is deprecated ([f6ba524](https://github.com/kiwicom/orbit/commit/f6ba524af38bbb430af6cc453c7549278cf5ae4d))
+* **Drawer:** add labelHide prop ([198b1d8](https://github.com/kiwicom/orbit/commit/198b1d894cd0cec261b43d8ec33cd53409ce6b09))
+* **ErrorFormTooltip:** change border-radius to 6px on responsive ([1bbbc00](https://github.com/kiwicom/orbit/commit/1bbbc009e679341da1bdbf8893d86387814a5f5c))
+* **ErrorFormTooltip:** change font-size to 14px only ([bf09d30](https://github.com/kiwicom/orbit/commit/bf09d3076c12e59e3f1bf480efa14f2e48fdf36e))
+* **ErrorformTooltip:** icon size changed to normal ([9c1045b](https://github.com/kiwicom/orbit/commit/9c1045b11343f2b61eb5d0e6a9ba65a074ad1756))
+* **InputField:** remove size prop ([05918ff](https://github.com/kiwicom/orbit/commit/05918ff3739879a7a742cba6a52b9cca072c1cc3))
+* **InputField:** set border-radius to large on responsive ([a69c792](https://github.com/kiwicom/orbit/commit/a69c792bbac32e9d769e32a300e60d2012954717))
+* **MobileDialogPrimitive:** add labelClose prop ([1c7ab61](https://github.com/kiwicom/orbit/commit/1c7ab61bd2902c0460d3cd597ddee78430debf52))
+* **Modal:** add labelClose prop ([c08c245](https://github.com/kiwicom/orbit/commit/c08c245d44bc20c15bdee96e93a93e613a274dd7))
+* **NavigationBar:** add openTitle prop ([2abe630](https://github.com/kiwicom/orbit/commit/2abe630d4406d294b4c5ab695822e4b1972f5c7c))
+* **Pagination:** add label props ([7b61545](https://github.com/kiwicom/orbit/commit/7b61545b4fe78ffba03b921c29a7db1ae07c27b0))
+* **Popover:** add labelClose prop ([0252aa0](https://github.com/kiwicom/orbit/commit/0252aa04dab1ccf30df3e668e941fcbbd05b587b))
+* **Popover:** add maxHeight prop ([b454d7b](https://github.com/kiwicom/orbit/commit/b454d7b1abca40a481652518b169b1a1a4a824a3))
+* remove deprecated InputStepper component ([ad64d7a](https://github.com/kiwicom/orbit/commit/ad64d7a7bec1af2a3c631949168d0a85ba3297e7))
+* remove translation and dictionary components ([4816c39](https://github.com/kiwicom/orbit/commit/4816c392fb744195a1c70da1f39f7bed7b89ee09))
+* **Select:** remove size prop ([a5e13a3](https://github.com/kiwicom/orbit/commit/a5e13a3be0d087e0143cba3e7b9ec468767ed65f))
+* **SkipNavigation:** add label props ([90f8e65](https://github.com/kiwicom/orbit/commit/90f8e656a4206a4ce293862f53cf1ad780f278ab))
+* **SkipNavigation:** add label props ([e5aeb5a](https://github.com/kiwicom/orbit/commit/e5aeb5a5bb76e46cc4d0361af97288db37e91e7e))
+* **Tag:** add iconLeft prop ([5a55e93](https://github.com/kiwicom/orbit/commit/5a55e9337575f471603a3ad6d74108d9c4c7c73a))
+* **tokens:** change fontSizeSm to 13px and fontSizeMd to 15px ([262104e](https://github.com/kiwicom/orbit/commit/262104e9374b9abee87539baa59e2d84dab9a883))
+* **Tooltip:** add labelClose prop ([01e9e28](https://github.com/kiwicom/orbit/commit/01e9e28618da4af86e1d8b61bdd8757442c997df))
+
+
+### BREAKING CHANGES
+
+* **Select:** size prop was removed. Normal size is now the only option.
+* **InputField:** size prop was removed. Normal size now is the only option.
+* **Illustration:** visual breaking change on ModalFooter. Flex-none is no longer applied after largeMobile.
+* **Badge:** New type subtle is the old default one. New default is the old Inverted
+* **BadgePrimitive:** borderColor prop is no longer accepted
+* translations removed, use labelClose for close Button and labelProgress for progress text
+* **NavigationBar:** translation removed, use openTitle with Translate instead
+* **Modal:** translations removed, use labelClose with Translate instead
+* **Drawer:** removed translation, use labelHide prop with Translate instead
+* Deprecated InputStepper removed, use Stepper instead
+* **Card:** use labelClose prop to add title for close button
+* **Breacrumbs:** translation removed, use goBackTitle prop with Translate
+* **Alert:** translation removed, use labelClose prop
+* **SkipNavigation:** transaltion removed, use feedbackLabel to add translation for feedback button content
+* **Popover:** removed translation, use labelClose prop instead
+* **Pagination:** translations were removed, use label props instead
+* useTranslate, useDictionary, Translate and Dictionary componentes were removed.
+* **Toast:** The createToastPromise function now receives three arguments. Check documentation for further details.
+
+
+
+
+
 # [6.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.3.1...@kiwicom/orbit-components@6.4.0) (2023-04-17)
 
 

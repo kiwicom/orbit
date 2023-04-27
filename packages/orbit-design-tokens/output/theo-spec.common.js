@@ -270,7 +270,7 @@ module.exports = {
   /*  */
   backgroundButtonPrimarySubtleFocus: "rgb(225, 244, 243)",
   /*  */
-  borderColorInputHover: "rgb(62, 78, 99)",
+  borderColorInputHover: "rgb(166, 182, 200)",
   /*  */
   backgroundButtonBundleTopHover: "linear-gradient(to top right, #171718 0%, #51575C  100%)",
   /*  */

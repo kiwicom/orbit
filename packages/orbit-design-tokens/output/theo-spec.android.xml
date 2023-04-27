@@ -135,7 +135,7 @@
   <dimen name="BORDERWIDTHINPUTFOCUS" category="">2dp</dimen>
   <color name="COLORTEXTBADGEDARK" category="">#ffffffff</color>
   <color name="BACKGROUNDBUTTONPRIMARYSUBTLEFOCUS" category="">#ffe1f4f3</color>
-  <color name="BORDERCOLORINPUTHOVER" category="">#ff3e4e63</color>
+  <color name="BORDERCOLORINPUTHOVER" category="">#ffa6b6c8</color>
   <string name="BACKGROUNDBUTTONBUNDLETOPHOVER" category="">linear-gradient(to top right, #171718 0, #51575C  1)</string>
   <dimen name="PADDINGTAG" category="">8dp</dimen>
   <color name="COLORTEXTBADGEWARNING" category="">#ffdf7b00</color>

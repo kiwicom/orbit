@@ -15,15 +15,12 @@ type Option = {|
   +disabled?: boolean,
 |};
 
-type Size = "small" | "normal";
-
 export type Props = {|
   ...Globals,
   ...spaceAfter,
   ...DataAttrs,
   +id?: string,
   +required?: boolean,
-  +size?: Size,
   +label?: Translation,
   +placeholder?: TranslationString,
   +value?: string | number,

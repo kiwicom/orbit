@@ -1233,7 +1233,7 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>borderColorInputHover</name>
-          <value>#3E4E63</value>
+          <value>#A6B6C8</value>
         </token>
         <token>
           <name>borderColorInputActive</name>

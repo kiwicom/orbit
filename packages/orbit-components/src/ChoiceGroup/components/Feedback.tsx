@@ -14,7 +14,7 @@ export const StyledFormFeedback = styled(props => <div {...props} />)`
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeFormFeedback};
     font-weight: ${theme.orbit.fontWeightMedium};
-    line-height: ${theme.orbit.lineHeightText};
+    line-height: ${theme.orbit.lineHeightTextSmall};
     width: 100%;
     margin-top: 2px;
     position: absolute;

@@ -16,7 +16,7 @@ module.exports = {
   /*  */
   colorIconWarning: "rgb(223, 123, 0)",
   /*  */
-  fontSizeFormLabel: "14px",
+  fontSizeFormLabel: "15px",
   /*  */
   paletteCloudLightHover: "rgb(229, 234, 239)",
   /*  */
@@ -60,7 +60,7 @@ module.exports = {
   /*  */
   colorTextButtonGoogleActive: "rgb(11, 12, 15)",
   /*  */
-  fontSizeInputNormal: "14px",
+  fontSizeInputNormal: "15px",
   /*  */
   colorTextButtonGoogleHover: "rgb(24, 27, 32)",
   /*  */
@@ -128,7 +128,7 @@ module.exports = {
   /*  */
   colorTextButtonLinkSecondaryHover: "rgb(24, 27, 32)",
   /*  */
-  fontSizeTextNormal: "14px",
+  fontSizeTextNormal: "15px",
   /*  */
   paletteGreenDarkActive: "rgb(31, 81, 38)",
   /*  */
@@ -154,7 +154,7 @@ module.exports = {
   /*  */
   borderStyleInput: "solid",
   /*  */
-  fontSizeButtonSmall: "12px",
+  fontSizeButtonSmall: "13px",
   /*  */
   borderRadiusNormal: "3px",
   /*  */
@@ -298,13 +298,13 @@ module.exports = {
   /*  */
   spaceXxxLarge: "52px",
   /*  */
-  fontSizeButtonNormal: "14px",
+  fontSizeButtonNormal: "15px",
   /*  */
   borderRadiusSmall: "2px",
   /*  */
   paletteInkNormalHover: "rgb(62, 78, 99)",
   /*  */
-  fontSizeTextSmall: "12px",
+  fontSizeTextSmall: "13px",
   /*  */
   colorTextLinkSecondary: "rgb(37, 42, 49)",
   /*  */
@@ -424,7 +424,7 @@ module.exports = {
   /*  */
   backgroundTagSelectedActive: "rgb(11, 12, 15)",
   /*  */
-  fontSizeInputSmall: "14px",
+  fontSizeInputSmall: "15px",
   /*  */
   colorFormLabel: "rgb(37, 42, 49)",
   /*  */
@@ -474,7 +474,7 @@ module.exports = {
   /*  */
   paletteWhite: "rgb(255, 255, 255)",
   /*  */
-  fontSizeHeadingTitle4: "14px",
+  fontSizeHeadingTitle4: "15px",
   /*  */
   colorPlaceholderInputError: "rgb(210, 28, 28)",
   /*  */
@@ -512,7 +512,7 @@ module.exports = {
   /*  */
   colorTextButtonPrimarySubtleHover: "rgb(0, 112, 96)",
   /*  */
-  fontSizeHeadingTitle5: "12px",
+  fontSizeHeadingTitle5: "13px",
   /*  */
   backgroundButtonWhiteActive: "rgb(229, 234, 239)",
   /*  */
@@ -772,7 +772,7 @@ module.exports = {
   /*  */
   backgroundButtonBundleMedium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
   /*  */
-  fontSizeMessage: "14px",
+  fontSizeMessage: "15px",
   /*  */
   fontWeightHeadingTitle4: "500",
   /*  */
@@ -844,7 +844,7 @@ module.exports = {
   /*  */
   borderColorTableCell: "rgb(186, 199, 213)",
   /*  */
-  fontSizeFormFeedback: "12px",
+  fontSizeFormFeedback: "13px",
   /*  */
   borderColorButtonCriticalBorderedActive: "rgb(157, 21, 21)",
   /*  */

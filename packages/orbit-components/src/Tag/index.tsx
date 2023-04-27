@@ -66,6 +66,17 @@ const getBackgroundColor =
     return states[type][state];
   };
 
+const getLineHeight = ({ theme, size }: { theme: Theme; size: Props["size"] }): string | null => {
+  const tokens = {
+    [SIZES.SMALL]: theme.orbit.lineHeightTextSmall,
+    [SIZES.NORMAL]: theme.orbit.lineHeightTextNormal,
+  };
+
+  if (!size) return null;
+
+  return tokens[size];
+};
+
 const CloseContainer = styled.div<{
   actionable?: boolean;
   type: Type;
@@ -114,6 +125,7 @@ export const StyledTag = styled.div<{
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+    line-height: ${getLineHeight};
     font-size: ${getFontSize};
     font-weight: ${theme.orbit.fontWeightMedium};
     border-radius: ${theme.orbit.borderRadiusLarge};

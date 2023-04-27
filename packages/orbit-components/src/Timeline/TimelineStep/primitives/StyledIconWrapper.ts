@@ -29,7 +29,7 @@ const StyledIconWrapper = styled.div<{ mobile?: boolean; status?: Type; active?:
     text-align: center;
     position: relative;
     height: 20px;
-    line-height: ${theme.orbit.lineHeightText};
+    line-height: ${theme.orbit.lineHeightTextSmall};
     &:after {
       position: absolute;
       top: 0px;

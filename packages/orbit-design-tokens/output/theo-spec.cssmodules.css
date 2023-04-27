@@ -1,4 +1,3 @@
-
 @value background-button-link-secondary-active: rgb(214, 222, 230);
 @value padding-input-normal: 0 12px;
 @value width-modal-small: 540px;
@@ -7,7 +6,7 @@
 @value border-color-button-facebook-bordered-active: rgb(53, 79, 136);
 @value height-button-normal: 44px;
 @value color-icon-warning: rgb(223, 123, 0);
-@value font-size-form-label: 14px;
+@value font-size-form-label: 15px;
 @value palette-cloud-light-hover: rgb(229, 234, 239);
 @value color-text-button-warning-active: rgb(255, 255, 255);
 @value palette-red-light: rgb(250, 234, 234);
@@ -29,7 +28,7 @@
 @value palette-product-normal-hover: rgb(0, 149, 128);
 @value space-xx-small: 4px;
 @value color-text-button-google-active: rgb(11, 12, 15);
-@value font-size-input-normal: 14px;
+@value font-size-input-normal: 15px;
 @value color-text-button-google-hover: rgb(24, 27, 32);
 @value palette-product-normal-active: rgb(0, 132, 114);
 @value line-height-heading-title2: 28px;
@@ -63,7 +62,7 @@
 @value color-text-secondary: rgb(79, 94, 113);
 @value color-text-link-primary-hover: rgb(0, 165, 142);
 @value color-text-button-link-secondary-hover: rgb(24, 27, 32);
-@value font-size-text-normal: 14px;
+@value font-size-text-normal: 15px;
 @value palette-green-dark-active: rgb(31, 81, 38);
 @value border-color-button-primary-bordered: rgb(0, 165, 142);
 @value border-color-button-warning-bordered-active: rgb(178, 98, 0);
@@ -76,7 +75,7 @@
 @value opacity-overlay: "0.8";
 @value width-breakpoint-desktop: 992;
 @value border-style-input: "solid";
-@value font-size-button-small: 12px;
+@value font-size-button-small: 13px;
 @value border-radius-normal: 3px;
 @value border-radius-badge: 12px;
 @value color-text-button-warning-bordered: rgb(223, 123, 0);
@@ -148,10 +147,10 @@
 @value color-text-button-facebook-bordered-hover: rgb(56, 84, 144);
 @value border-color-button-critical-bordered-hover: rgb(185, 25, 25);
 @value space-xxx-large: 52px;
-@value font-size-button-normal: 14px;
+@value font-size-button-normal: 15px;
 @value border-radius-small: 2px;
 @value palette-ink-normal-hover: rgb(62, 78, 99);
-@value font-size-text-small: 12px;
+@value font-size-text-small: 13px;
 @value color-text-link-secondary: rgb(37, 42, 49);
 @value color-icon-info: rgb(1, 114, 203);
 @value padding-button-normal: 0 16px;
@@ -211,7 +210,7 @@
 @value height-stopover-arrow: 7px;
 @value border-color-button-google-bordered: rgb(37, 42, 49);
 @value background-tag-selected-active: rgb(11, 12, 15);
-@value font-size-input-small: 14px;
+@value font-size-input-small: 15px;
 @value color-form-label: rgb(37, 42, 49);
 @value color-icon-radio-button-disabled: rgb(79, 94, 113);
 @value color-text-button-white-active: rgb(11, 12, 15);
@@ -236,7 +235,7 @@
 @value border-radius-circle: 50%;
 @value color-text-button-critical-subtle: rgb(151, 12, 12);
 @value palette-white: rgb(255, 255, 255);
-@value font-size-heading-title4: 14px;
+@value font-size-heading-title4: 15px;
 @value color-placeholder-input-error: rgb(210, 28, 28);
 @value color-icon-input: rgb(186, 199, 213);
 @value background-button-info: rgb(1, 114, 203);
@@ -255,7 +254,7 @@
 @value border-color-button-google-bordered-hover: rgb(24, 27, 32);
 @value background-button-primary-subtle: rgb(225, 244, 243);
 @value color-text-button-primary-subtle-hover: rgb(0, 112, 96);
-@value font-size-heading-title5: 12px;
+@value font-size-heading-title5: 13px;
 @value background-button-white-active: rgb(229, 234, 239);
 @value color-text-critical: rgb(210, 28, 28);
 @value palette-orange-light-hover: rgb(252, 236, 218);
@@ -385,7 +384,7 @@
 @value background-button-facebook-hover: rgb(56, 84, 144);
 @value border-color-checkbox-radio-focus: rgb(1, 114, 203);
 @value background-button-bundle-medium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)";
-@value font-size-message: 14px;
+@value font-size-message: 15px;
 @value font-weight-heading-title4: "500";
 @value border-color-button-success-bordered-hover: rgb(35, 139, 49);
 @value width-badge-circled: 24px;
@@ -421,7 +420,7 @@
 @value opacity-button-disabled: "0.3";
 @value background-button-success-hover: rgb(35, 139, 49);
 @value border-color-table-cell: rgb(186, 199, 213);
-@value font-size-form-feedback: 12px;
+@value font-size-form-feedback: 13px;
 @value border-color-button-critical-bordered-active: rgb(157, 21, 21);
 @value color-text-button-facebook-bordered-active: rgb(53, 79, 136);
 @value palette-red-darker: rgb(118, 9, 9);

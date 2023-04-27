@@ -100,7 +100,7 @@ const StyledTooltipContent = styled.div`
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeTextNormal};
     font-weight: ${theme.orbit.fontWeightNormal};
-    line-height: ${theme.orbit.lineHeightText};
+    line-height: ${theme.orbit.lineHeightTextSmall};
     color: ${theme.orbit.paletteWhite};
 
     & ${StyledText}, ${Item}, a {

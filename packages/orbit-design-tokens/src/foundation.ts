@@ -69,8 +69,8 @@ export const palette = {
 const base = {
   fontFamily:
     "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
-  fontSizeSm: "12px",
-  fontSizeMd: "14px",
+  fontSizeSm: "13px",
+  fontSizeMd: "15px",
   fontSizeLg: "16px",
   iconSizeSm: "16px",
   iconSizeMd: "20px",

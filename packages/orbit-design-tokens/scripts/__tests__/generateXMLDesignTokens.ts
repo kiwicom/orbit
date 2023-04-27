@@ -969,15 +969,15 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>fontSizeHeadingTitle4</name>
-          <value>14px</value>
+          <value>15px</value>
         </token>
         <token>
           <name>fontSizeHeadingTitle5</name>
-          <value>12px</value>
+          <value>13px</value>
         </token>
         <token>
           <name>fontSizeTextNormal</name>
-          <value>14px</value>
+          <value>15px</value>
         </token>
         <token>
           <name>fontSizeTextLarge</name>
@@ -985,11 +985,11 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>fontSizeTextSmall</name>
-          <value>12px</value>
+          <value>13px</value>
         </token>
         <token>
           <name>fontSizeMessage</name>
-          <value>14px</value>
+          <value>15px</value>
         </token>
         <token>
           <name>fontSizeButtonLarge</name>
@@ -997,27 +997,27 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>fontSizeButtonNormal</name>
-          <value>14px</value>
+          <value>15px</value>
         </token>
         <token>
           <name>fontSizeButtonSmall</name>
-          <value>12px</value>
+          <value>13px</value>
         </token>
         <token>
           <name>fontSizeInputNormal</name>
-          <value>14px</value>
+          <value>15px</value>
         </token>
         <token>
           <name>fontSizeInputSmall</name>
-          <value>14px</value>
+          <value>15px</value>
         </token>
         <token>
           <name>fontSizeFormLabel</name>
-          <value>14px</value>
+          <value>15px</value>
         </token>
         <token>
           <name>fontSizeFormFeedback</name>
-          <value>12px</value>
+          <value>13px</value>
         </token>
         <token>
           <name>borderRadiusCircle</name>

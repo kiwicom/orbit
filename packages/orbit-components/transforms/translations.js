@@ -30,7 +30,7 @@ const getTranslationKey = name => {
   return "orbit.button_close";
 };
 
-function translations(fileInfo, api) {
+function translations(fileInfo, api, { withImport = true }) {
   const j = api.jscodeshift;
   const root = j(fileInfo.source);
 
@@ -40,7 +40,7 @@ function translations(fileInfo, api) {
     source: { value: "@kiwicom/nitro/lib/Translate" },
   });
 
-  if (TranslateImport.size() === 0) {
+  if (TranslateImport.size() === 0 && withImport) {
     root
       .find(j.Program)
       .get("body", 0)

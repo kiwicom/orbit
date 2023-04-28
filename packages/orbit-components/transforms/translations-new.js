@@ -38,7 +38,7 @@ const getDefaultMessage = component => {
   return "Close";
 };
 
-function translations(fileInfo, api) {
+function translations(fileInfo, api, { withImport = true }) {
   const j = api.jscodeshift;
   const root = j(fileInfo.source);
 
@@ -48,7 +48,7 @@ function translations(fileInfo, api) {
     source: { value: "react-intl" },
   });
 
-  if (ReactIntl.size() === 0) {
+  if (ReactIntl.size() === 0 && withImport) {
     root
       .find(j.Program)
       .get("body", 0)

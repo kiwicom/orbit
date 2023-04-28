@@ -44,20 +44,22 @@ function translations(fileInfo, api, { withImport = true }) {
 
   const findComponent = name => root.find(j.JSXOpeningElement, { name: { name } });
 
-  const ReactIntl = root.find(j.ImportDeclaration, {
-    source: { value: "react-intl" },
-  });
+  if (COMPONENTS.some(c => findComponent(c).size() > 0)) {
+    const ReactIntl = root.find(j.ImportDeclaration, {
+      source: { value: "react-intl" },
+    });
 
-  if (ReactIntl.size() === 0 && withImport) {
-    root
-      .find(j.Program)
-      .get("body", 0)
-      .insertAfter(
-        j.importDeclaration(
-          [j.importSpecifier(j.identifier("FormattedMessage"))],
-          j.literal("react-intl"),
-        ),
-      );
+    if (ReactIntl.size() === 0 && withImport) {
+      root
+        .find(j.Program)
+        .get("body", 0)
+        .insertAfter(
+          j.importDeclaration(
+            [j.importSpecifier(j.identifier("FormattedMessage"))],
+            j.literal("react-intl"),
+          ),
+        );
+    }
   }
 
   COMPONENTS.forEach(component => {

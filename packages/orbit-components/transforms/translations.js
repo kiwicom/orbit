@@ -36,20 +36,22 @@ function translations(fileInfo, api, { withImport = true }) {
 
   const findComponent = name => root.find(j.JSXOpeningElement, { name: { name } });
 
-  const TranslateImport = root.find(j.ImportDeclaration, {
-    source: { value: "@kiwicom/nitro/lib/Translate" },
-  });
+  if (COMPONENTS.some(c => findComponent(c).size() > 0)) {
+    const TranslateImport = root.find(j.ImportDeclaration, {
+      source: { value: "@kiwicom/nitro/lib/Translate" },
+    });
 
-  if (TranslateImport.size() === 0 && withImport) {
-    root
-      .find(j.Program)
-      .get("body", 0)
-      .insertAfter(
-        j.importDeclaration(
-          [j.importDefaultSpecifier(j.identifier("Translate"))],
-          j.literal("@kiwicom/nitro/lib/components/Translate"),
-        ),
-      );
+    if (TranslateImport.size() === 0 && withImport) {
+      root
+        .find(j.Program)
+        .get("body", 0)
+        .insertAfter(
+          j.importDeclaration(
+            [j.importDefaultSpecifier(j.identifier("Translate"))],
+            j.literal("@kiwicom/nitro/lib/components/Translate"),
+          ),
+        );
+    }
   }
 
   COMPONENTS.forEach(component => {

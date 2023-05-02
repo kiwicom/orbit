@@ -15,36 +15,25 @@ const colors = [
   ["error", defaultTokens.paletteRedNormal],
   ["success", defaultTokens.paletteGreenNormal],
   ["info", defaultTokens.paletteBlueNormal],
+  // TRAM needs that dark shades
+  ["green-dark", defaultTokens.paletteGreenDark],
+  ["red-dark", defaultTokens.paletteRedDark],
+  ["blue-dark", defaultTokens.paletteBlueDark],
+  ["orange-dark", defaultTokens.paletteOrangeDark],
+  ["cloud-dark", defaultTokens.paletteCloudDark],
+  ["ink-dark", defaultTokens.paletteInkDark],
+  ["product-dark", defaultTokens.paletteProductDark],
 ];
 
-async function readFile(pathToFile) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(pathToFile, "utf8", (err, data) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(data);
-    });
-  });
-}
+async function generateIcon(pathToFile: string, size: number, color: string, extraDir: string) {
+  // exclude colored icons
+  if (pathToFile.match(/colored-|google/g)) return "";
 
-async function readDir(pathToDir) {
-  return new Promise((resolve, reject) => {
-    fs.readdir(pathToDir, (err, files) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(files);
-    });
-  });
-}
-
-async function generateIcon(pathToFile, size, color, extraDir) {
   const nameSplit = pathToFile.split("/");
   const name = nameSplit[nameSplit.length - 1].replace(".svg", "");
   const file =
     fs.lstatSync(`./src/icons/svg/${pathToFile}`).isFile() &&
-    (await readFile(`./src/icons/svg/${pathToFile}`));
+    (await fs.readFile(`./src/icons/svg/${pathToFile}`));
 
   if (file) {
     const updateBuffer = Buffer.from(
@@ -83,13 +72,11 @@ function generatePath(targetDir: string) {
     });
 
     // Find all icons
-    const files = await readDir("./src/icons/svg/");
+    const files = await fs.readdir("./src/icons/svg/");
 
     const promises: Promise<string | boolean>[] = [];
 
-    // Generate every variant
-    // @ts-expect-error TODO
-    files.forEach(file => {
+    files.forEach((file: string) => {
       colors.forEach(color => {
         sizesToGenerate.forEach(size => {
           promises.push(generateIcon(file, size, color[1], color[0]));

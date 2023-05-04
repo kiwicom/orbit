@@ -125,6 +125,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
               >
                 <GitHubButton
                   href="https://github.com/kiwicom/orbit"
+                  data-show-count={!isHome}
                   data-icon="star"
                   title="kiwicom/orbit"
                   aria-label="orbit github"

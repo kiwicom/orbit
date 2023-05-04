@@ -24,6 +24,7 @@ export type Props = {|
   +allowOverflow?: boolean,
   +noFlip?: boolean,
   +noPadding?: boolean,
+  +renderTimeout?: number,
   +overlapped?: boolean,
   +fixed?: boolean,
   +actions?: React.Node,

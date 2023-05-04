@@ -42,6 +42,7 @@ export default {
         { name: "fixed", type: "boolean", defaultValue: false },
         { name: "width", type: "text", defaultValue: "" },
         { name: "maxHeight", type: "text", defaultValue: "" },
+        { name: "renderTimeout", type: "number", defaultValue: 0 },
         {
           name: "placement",
           type: "select",

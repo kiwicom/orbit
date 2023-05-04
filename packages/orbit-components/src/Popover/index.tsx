@@ -2,7 +2,6 @@ import * as React from "react";
 import styled from "styled-components";
 
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
-import useTheme from "../hooks/useTheme";
 import { PLACEMENTS } from "../common/consts";
 import PopoverContent from "./components/ContentWrapper";
 import Portal from "../Portal";
@@ -27,6 +26,7 @@ const Popover = ({
   lockScrolling = true,
   noFlip,
   labelClose = "Close",
+  renderTimeout = 0,
   allowOverflow,
   noPadding,
   width,
@@ -37,15 +37,13 @@ const Popover = ({
 }: Props) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
 
-  const theme = useTheme();
-
   const [shown, setShown, setShownWithTimeout, clearShownTimeout] = useStateWithTimeout<boolean>(
     false,
-    parseFloat(theme.orbit.durationFast) * 1000,
+    renderTimeout,
   );
 
   const [render, setRender, setRenderWithTimeout, clearRenderTimeout] =
-    useStateWithTimeout<boolean>(false, parseFloat(theme.orbit.durationFast) * 1000);
+    useStateWithTimeout<boolean>(false, renderTimeout);
 
   const resolveCallback = React.useCallback(
     state => {

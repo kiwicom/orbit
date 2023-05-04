@@ -44,7 +44,6 @@ describe("Popover", () => {
     expect(onClose).toHaveBeenCalled();
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -65,7 +64,6 @@ describe("Popover", () => {
     expect(screen.getByRole("button", { name: "Cancel" })).toBeInTheDocument();
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -78,7 +76,6 @@ describe("Popover", () => {
     expect(screen.getByText("kek").closest("div")).toHaveStyle({ padding: "0" });
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -95,7 +92,6 @@ describe("Popover", () => {
     expect(screen.getByRole("tooltip")).toHaveStyle({ top: "10" });
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -112,7 +108,6 @@ describe("Popover", () => {
     await waitForElementToBeRemoved(screen.queryByTestId("popover"));
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 });

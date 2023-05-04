@@ -25,6 +25,7 @@ export default {
       component: "Select",
       knobs: [
         { name: "label", type: "text", defaultValue: "Nationality" },
+        { name: "inlineLabel", type: "boolean", defaultValue: false },
         { name: "value", type: "text", defaultValue: "" },
         { name: "error", type: "text", defaultValue: "" },
         { name: "help", type: "text", defaultValue: "" },

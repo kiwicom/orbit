@@ -63,11 +63,17 @@ const StyledImageContainer = styled.div<ImageContainerProps>`
 `;
 
 const StyledImage = styled.div`
+  display: flex;
+  justify-content: center;
   height: 100%;
   width: 100%;
 
   svg {
     max-width: 100%;
+  }
+
+  p {
+    width: 100%;
   }
 `;
 

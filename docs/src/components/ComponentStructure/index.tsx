@@ -61,8 +61,8 @@ const StyledImageContainer = styled.div`
 `;
 StyledImageContainer.defaultProps = { theme: docsTheme };
 
-const StyledComponentParts = styled.div`
-  ${({ theme }) => css`
+const StyledComponentParts = styled.div<{ vertical?: boolean }>`
+  ${({ theme, vertical }) => css`
     display: grid;
     align-content: center;
     padding: ${theme.orbit.spaceXLarge};
@@ -70,7 +70,7 @@ const StyledComponentParts = styled.div`
 
     ${mq.largeDesktop(css`
       border-top: 0;
-      border-left: 1px solid ${theme.orbit.paletteCloudNormal};
+      ${vertical ? "border-top" : "border-left"}: 1px solid ${theme.orbit.paletteCloudNormal};
     `)};
 
     ol {
@@ -123,12 +123,13 @@ interface Structure {
 
 interface Props {
   component: string;
+  vertical?: boolean;
   web?: Structure;
   ios?: Structure;
   android?: Structure;
 }
 
-export default function ComponentStructure({ component, web, ios, android }: Props) {
+export default function ComponentStructure({ component, vertical, web, ios, android }: Props) {
   const seed = useRandomIdSeed();
 
   const tabsCount = (web ? 1 : 0) + (ios ? 1 : 0) + (android ? 1 : 0);
@@ -182,7 +183,7 @@ export default function ComponentStructure({ component, web, ios, android }: Pro
               }
             : {})}
         >
-          <Grid largeMobile={{ columns: "repeat(2, 1fr)" }}>
+          <Grid largeMobile={{ columns: vertical ? undefined : "repeat(2, 1fr)" }}>
             <StyledImageContainer>
               <Image
                 role="img"
@@ -190,8 +191,12 @@ export default function ComponentStructure({ component, web, ios, android }: Pro
                 style={{ width: imageWidth }}
               />
             </StyledImageContainer>
-            <StyledComponentParts>
-              <ol>
+            <StyledComponentParts vertical={vertical}>
+              <ol
+                style={
+                  vertical ? { display: "grid", gridTemplateColumns: "repeat(2, 1fr)" } : undefined
+                }
+              >
                 {parts.map(part => (
                   <li key={`part-${part.name}`}>
                     <div>

@@ -44,6 +44,7 @@ const StyledTab = styled.button<{
     display: flex;
     border: 0;
     flex: 1;
+    min-width: fit-content;
     position: relative;
     appearance: none;
     flex-direction: row;

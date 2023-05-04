@@ -42,7 +42,6 @@ describe("InputGroup", () => {
     expect(screen.getByText("help message")).toBeInTheDocument();
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
   it("should render error message", async () => {
@@ -56,7 +55,6 @@ describe("InputGroup", () => {
     expect(screen.getByText("error message")).toBeInTheDocument();
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 

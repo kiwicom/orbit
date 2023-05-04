@@ -16,7 +16,6 @@ describe("Tooltip", () => {
     expect(container.firstChild).toMatchSnapshot();
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -45,7 +44,6 @@ describe("Tooltip", () => {
     expect(onClick).toHaveBeenCalledTimes(1);
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 
@@ -73,7 +71,6 @@ describe("Tooltip", () => {
     expect(onClick).toHaveBeenCalledTimes(2);
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
-    // $FlowFixMe
     await act(async () => {});
   });
 });

@@ -6,7 +6,7 @@ To implement Popover component into your project you'll need to add the import:
 import Popover from "@kiwicom/orbit-components/lib/Popover";
 ```
 
-After adding import into your project you can use it simply like:
+After adding import to your project you can use it simply like:
 
 ```jsx
 <Popover content="Your content">
@@ -16,7 +16,7 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-Table below contains all types of the props available in the Popover component.
+The table below contains all types of props available in the Popover component.
 
 | Name           | Type                     | Default             | Description                                                                                                                                      |
 | :------------- | :----------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,6 +40,7 @@ Table below contains all types of the props available in the Popover component.
 | noFlip         | `boolean`                | `false`             | Turns off automatic flipping of the Popover when there is not enough space                                                                       |
 | allowOverflow  | `boolean`                | `false`             | Allows the Popover to be cut off instead of moving it while scrolling to keep it visible.                                                        |
 | labelClose     | `React.Node`             | `Close`             | The label for close button.                                                                                                                      |
+| renderTimeout  | `number`                 | `0`                 | The timeout for rendering the Popover.                                                                                                           |
 
 ## enum
 
@@ -78,7 +79,7 @@ Table below contains all types of the props available in the Popover component.
 
 - Actions are a way to override default close behavior with your own actions, mainly `Buttons` keep in mind that one of the actions should close the popover.
 
-- The Popover component supports rendering of many different components inside its children. You can use combination of e.g. Text, Stack, ListChoice for example:
+- The Popover component supports rendering of many different components inside its children. You can use a combination of e.g. Text, Stack, ListChoice for example:
 
 ```jsx
 <Popover

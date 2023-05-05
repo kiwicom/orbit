@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { withKnobs, text, select, boolean, object } from "@storybook/addon-knobs";
+import { withKnobs, text, select, boolean, object, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Tooltip from "../Tooltip";
@@ -425,6 +425,7 @@ ScrollingContent.story = {
 };
 
 export const Playground = () => {
+  const renderTimeout = number("renderTimeout", 0);
   const dataTest = text("dataTest", "test");
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
   const width = text("width", "350px");
@@ -442,6 +443,7 @@ export const Playground = () => {
       <Popover
         width={width}
         maxHeight={maxHeight}
+        renderTimeout={renderTimeout}
         dataTest={dataTest}
         offset={offset}
         content={content}

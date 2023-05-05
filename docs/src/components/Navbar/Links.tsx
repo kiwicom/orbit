@@ -1,6 +1,6 @@
 import React from "react";
 import { Hide, TextLink, Stack, Button, Popover } from "@kiwicom/orbit-components";
-import { MenuHamburger } from "@kiwicom/orbit-components/lib/icons";
+import { MenuHamburger, Code } from "@kiwicom/orbit-components/lib/icons";
 import { Link as GatsbyLink } from "gatsby";
 
 import PuzzleIcon from "../icons/Puzzle";
@@ -9,7 +9,7 @@ import ReadArt from "../../images/streamline-light/read-art.svg";
 import IrisScanIcon from "../../images/streamline-light/iris-scan.svg";
 import ScriptIcon from "../../images/streamline-light/script.svg";
 
-type Link = "Components" | "Guides" | "Tokens" | "Accessibility" | "Foundation";
+type Link = "Components" | "Guides" | "Tokens" | "Accessibility" | "Foundation" | "Playground";
 
 interface Props {
   links?: Link[];
@@ -31,6 +31,8 @@ const LinkIcon = ({ name }: { name?: string }) => {
       return <ColorBrushIcon {...iconStyles} />;
     case "Accessibility":
       return <IrisScanIcon {...iconStyles} />;
+    case "Playground":
+      return <Code {...iconStyles} />;
     default:
       return <ScriptIcon {...iconStyles} />;
   }
@@ -80,7 +82,7 @@ const LinkList = ({ isDesktop, links }: { isDesktop?: boolean; links: Props["lin
 );
 
 const Links = ({
-  links = ["Foundation", "Components", "Tokens", "Guides", "Accessibility"],
+  links = ["Foundation", "Components", "Tokens", "Guides", "Accessibility", "Playground"],
 }: Props) => {
   return (
     <>

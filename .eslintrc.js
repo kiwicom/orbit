@@ -142,7 +142,6 @@ module.exports = {
         "**/[A-Z]*/index.ts?(x)",
         "**/__typetests__/**",
         "**/__testfixtures__/**",
-        "docs/**",
       ],
       rules: {
         "@typescript-eslint/explicit-module-boundary-types": "off",

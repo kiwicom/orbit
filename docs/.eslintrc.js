@@ -11,6 +11,7 @@ module.exports = {
     camelcase: "off",
     "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
   },
   overrides: [
     {

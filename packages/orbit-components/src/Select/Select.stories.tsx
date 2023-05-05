@@ -137,6 +137,8 @@ export const Playground = () => {
   const required = boolean("Required", false);
   const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
   const width = text("width", "");
+  const label = text("Label", "Label");
+  const inlineLabel = boolean("inlineLabel", false);
 
   return (
     <Select
@@ -147,7 +149,8 @@ export const Playground = () => {
       options={option}
       disabled={disabled}
       name={name}
-      label={text("Label", "Label")}
+      label={label}
+      inlineLabel={inlineLabel}
       onChange={action("onChange")}
       onBlur={action("onBlur")}
       onFocus={action("onFocus")}

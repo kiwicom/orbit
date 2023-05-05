@@ -39,6 +39,7 @@ export type Props = {|
   +options: Option[],
   +prefix?: React.Node,
   +customValueText?: Translation,
+  +inlineLabel?: boolean,
   +insideInputGroup?: boolean,
 |};
 

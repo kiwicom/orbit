@@ -449,7 +449,7 @@
 - component: Slider
   figma: Designing
   react: Released
-  ios: Planned
+  ios: Released
   android: Released
   docs: Released
   group: Interaction

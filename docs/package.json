@@ -7,7 +7,7 @@
     "fetch:contributors": "babel-node ./plugins/contributors/fetchContributors.mjs",
     "changelog": "zx ./services/changelog.mjs",
     "check:types": "tsc",
-    "build": "gatsby clean && gatsby build",
+    "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
     "repl": "gatsby repl"

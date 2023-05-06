@@ -115,23 +115,26 @@ const Navbar = ({ location, docNavigation }: Props) => {
             <StyledLogo width={192} height={44} />
             <StyledLogoGlyph width={44} height={44} />
           </Link>
-          <Hide on={["smallMobile", "mediumMobile"]}>
-            <Stack inline align="center">
-              <span>&sdot;</span>
-              <div
-                css={css`
-                  height: 22px;
-                `}
-              >
-                <GitHubButton
-                  href="https://github.com/kiwicom/orbit"
-                  data-icon="star"
-                  title="kiwicom/orbit"
-                  aria-label="orbit github"
-                />
-              </div>
-            </Stack>
-          </Hide>
+          {!isHome && (
+            <Hide on={["smallMobile", "mediumMobile"]}>
+              <Stack inline align="center">
+                <span>&sdot;</span>
+                <div
+                  css={css`
+                    height: 22px;
+                  `}
+                >
+                  <GitHubButton
+                    href="https://github.com/kiwicom/orbit"
+                    data-icon="star"
+                    data-show-count={!isHome}
+                    title="kiwicom/orbit"
+                    aria-label="orbit github"
+                  />
+                </div>
+              </Stack>
+            </Hide>
+          )}
         </Stack>
 
         <StyledRight>

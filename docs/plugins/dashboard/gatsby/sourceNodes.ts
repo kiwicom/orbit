@@ -18,15 +18,13 @@ const getBlobs = async ({
   last,
 }: {
   paths: string[];
-  first?: number;
-  last?: number;
+  first?: number | string | string[];
+  last?: number | string | string[];
 }) => {
   const { data } = await request<BlobResponse>(projectRawBlobQuery, {
     path: process.env.GATSBY_ORBIT_STORAGE_PATH || "",
     paths,
-    // @ts-expect-error expected
     first,
-    // @ts-expect-error expected
     last,
   });
 
@@ -71,8 +69,7 @@ export default async ({ actions, createNodeId, createContentDigest, reporter }) 
         const paths = pathsRes.project.repository.tree.blobs.nodes
           .map(b => b.path)
           .filter(n => n.includes(".json"))
-          // @ts-expect-error expected
-          .sort((a, b) => b.split("-")[0] - a.split("-")[0]);
+          .sort((a, b) => Number(b.split("-")[0]) - Number(a.split("-")[0]));
 
         const lastData = await getBlobs({ paths, last: 1 });
         const firstData = await getBlobs({ paths, first: 1 });

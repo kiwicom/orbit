@@ -2,7 +2,10 @@ import axios from "axios";
 
 const BASE_URL = `https://gitlab.skypicker.com/api/graphql/`;
 
-export async function request<T>(query: string, vars?: Record<string, string | number | string[]>) {
+export async function request<T>(
+  query: string,
+  vars?: Record<string, string | number | string[] | undefined>,
+) {
   const { data } = await axios.post<T>(
     BASE_URL,
     {

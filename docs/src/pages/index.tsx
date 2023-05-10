@@ -7,19 +7,10 @@ import { WindowLocation } from "@reach/router";
 
 import { RecentBookmarks } from "../components/Bookmarks";
 // temporarily extract images from @streamlinehq/streamlinehq until they fix the install script
-import ModulePuzzleIcon from "../images/streamline-light/module-puzzle.svg";
-import ColorBrushIcon from "../images/streamline-light/color-brush.svg";
-import ExpandDiagonalIcon from "../images/streamline-light/expand-diagonal-1.svg";
-import LoveItTextIcon from "../images/streamline-light/love-it-text.svg";
-import SpellingCheckIcon from "../images/streamline-light/spelling-check.svg";
-import ArrangeLetterIcon from "../images/streamline-light/arrange-letter.svg";
-import ComputerBugIcon from "../images/streamline-light/computer-bug.svg";
 import LoveBirdIcon from "../images/streamline-light/love-bird.svg";
 import StartupLaunchIcon from "../images/streamline-light/startup-launch-1.svg";
 import ReadArt from "../images/streamline-light/read-art.svg";
 import SearchButton from "../components/Search/SearchButton";
-import TypographyIcon from "../components/icons/Typography";
-import PuzzleIcon from "../components/icons/Puzzle";
 import FigmaIcon from "../components/icons/Figma";
 import GitHubIcon from "../components/icons/GitHub";
 import Search from "../components/Search";
@@ -37,6 +28,7 @@ import { MAX_CONTENT_WIDTH } from "../consts";
 import ScreenReaderText from "../components/ScreenReaderText";
 import { useKeyboard } from "../services/KeyboardProvider";
 import { BookmarkProvider } from "../services/bookmarks";
+import { ICON_MAP } from "../components/icons/consts";
 
 interface Props {
   location: WindowLocation;
@@ -123,7 +115,7 @@ export default function Home({ location, path }: Props) {
               title="Components"
               linkContent="See our components"
               href="/components/"
-              icon={<PuzzleIcon />}
+              icon={ICON_MAP.Components}
             >
               Our components are a collection of interface elements that can be reused across the
               Orbit design system.
@@ -132,7 +124,7 @@ export default function Home({ location, path }: Props) {
               title="Patterns"
               linkContent="See our patterns"
               href="/design-patterns/"
-              icon={<ModulePuzzleIcon />}
+              icon={ICON_MAP["Design patterns"]}
             >
               Make the most of our components by using our design patterns to address common design
               problems.
@@ -157,7 +149,7 @@ export default function Home({ location, path }: Props) {
                 title="Colors"
                 linkContent="See our colors"
                 href="/foundation/color/"
-                icon={<ColorBrushIcon />}
+                icon={ICON_MAP.Colors}
               >
                 Color is used to signal structure, highlight importance, and display different
                 states.
@@ -166,7 +158,7 @@ export default function Home({ location, path }: Props) {
                 title="Typography"
                 linkContent="See our typography"
                 href="foundation/typography/"
-                icon={<TypographyIcon />}
+                icon={ICON_MAP.Typography}
               >
                 Typography is critical for communicating the hierarchy of a page.
               </Tile>
@@ -174,7 +166,7 @@ export default function Home({ location, path }: Props) {
                 title="Spacing"
                 linkContent="See our spacing"
                 href="foundation/spacing/"
-                icon={<ExpandDiagonalIcon />}
+                icon={ICON_MAP.Spacing}
               >
                 Consistent spacing makes an interface more clear and easy to scan.
               </Tile>
@@ -209,7 +201,7 @@ export default function Home({ location, path }: Props) {
                 title="Voice & tone"
                 linkContent="See our voice"
                 href="/kiwi-use/content/voice-and-tone/"
-                icon={<LoveItTextIcon />}
+                icon={ICON_MAP["Voice & tone"]}
               >
                 How we write at Kiwi.com.
               </Tile>
@@ -217,7 +209,7 @@ export default function Home({ location, path }: Props) {
                 title="Grammar & mechanics"
                 linkContent="See our standards"
                 href="/kiwi-use/content/grammar-and-mechanics/"
-                icon={<SpellingCheckIcon />}
+                icon={ICON_MAP["Grammar & mechanics"]}
               >
                 Basic grammar guidelines for writing with Orbit.
               </Tile>
@@ -225,7 +217,7 @@ export default function Home({ location, path }: Props) {
                 title="Glossary"
                 linkContent="See our terms"
                 href="/kiwi-use/content/glossary/"
-                icon={<ArrangeLetterIcon />}
+                icon={ICON_MAP.Glossary}
               >
                 A list of commonly used words and phrases in Kiwi.com products.
               </Tile>
@@ -254,7 +246,7 @@ export default function Home({ location, path }: Props) {
             <Grid columns="1fr" gap="1rem" desktop={{ columns: "1fr 1fr" }}>
               <BrandedTile
                 title="Report a bug"
-                icon={<ComputerBugIcon />}
+                icon={ICON_MAP["Report a bug"]}
                 href="https://github.com/kiwicom/orbit/issues/new/choose"
                 linkContent="Report bug on GitHub"
                 logo={<GitHubLogo />}

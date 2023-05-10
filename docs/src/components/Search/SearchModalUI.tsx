@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import {
+  Heading,
   Portal,
   Modal,
   ModalHeader,
@@ -19,8 +20,16 @@ import type {
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
-import { StyledMenu, StyledMenuItem, StyledMenuItemTitle } from "./primitives/StyledMenu";
+import {
+  StyledMenu,
+  StyledMenuItem,
+  StyledMenuItemTitle,
+  StyledSearchResultsGrid,
+} from "./primitives/StyledMenu";
 import type { SearchResult } from "./types";
+import Tile from "../Tile";
+import { getIconFromItem } from "../icons/consts";
+import { load } from "../../utils/storage";
 
 interface Props {
   onClose: () => void;
@@ -63,6 +72,20 @@ const StyledSearchWrapper = styled.div`
   font-size: 1rem;
 `;
 
+function getItemName({ item, short = false }: { item: SearchResult; short?: boolean }) {
+  const isComponent = (item.breadcrumbs && item.breadcrumbs[0] === "Components") || false;
+  if (isComponent && item.breadcrumbs) {
+    const lastBreadcrumb = item.breadcrumbs[item.breadcrumbs.length - 1];
+    if (lastBreadcrumb === "React" || lastBreadcrumb === "Design") {
+      return short
+        ? item.breadcrumbs[item.breadcrumbs.length - 2]
+        : item.breadcrumbs.slice(item.breadcrumbs.length - 2).join(" / ");
+    }
+    return lastBreadcrumb;
+  }
+  return item.breadcrumbs ? item.breadcrumbs[item.breadcrumbs.length - 1] : item.name;
+}
+
 export default function SearchModalUI({
   onClose,
   placeholder = "Search...",
@@ -81,6 +104,10 @@ export default function SearchModalUI({
     if (inputRef.current) {
       inputRef.current.focus();
     }
+  }, []);
+
+  const recentSearches: string[] = React.useMemo(() => {
+    return JSON.parse(load("search") || "null") || [];
   }, []);
 
   return (
@@ -128,17 +155,52 @@ export default function SearchModalUI({
                 )}
               </div>
             </div>
-            <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
-              {data.map((item, idx) => (
-                <StyledMenuItem key={item.id} {...onGetItemProps({ item, index: idx })}>
-                  <div>
-                    <StyledMenuItemTitle>{item.name.split(" ").join(" / ")}</StyledMenuItemTitle>
-                    {hasDescription && <div>{item.description}</div>}
-                  </div>
-                  <ChevronForward size="medium" />
-                </StyledMenuItem>
-              ))}
-            </StyledMenu>
+            {data.length === 0 && recentSearches.length > 0 && (
+              <StyledMenu {...onGetMenuProps()} hasResults={recentSearches.length > 0}>
+                <Heading type="title2" spaceAfter="large">
+                  Recent searches
+                </Heading>
+                <StyledSearchResultsGrid>
+                  {recentSearches.map((searchResult, idx) => {
+                    const item = JSON.parse(searchResult);
+                    const itemName = getItemName({ item, short: true });
+
+                    return (
+                      <StyledMenuItem key={item.id} tile {...onGetItemProps({ item, index: idx })}>
+                        <div>
+                          <Tile
+                            title={itemName}
+                            linkContent={<ChevronForward size="medium" />}
+                            href={item.path}
+                            onClick={onClose}
+                            icon={getIconFromItem(item)}
+                          />
+                        </div>
+                      </StyledMenuItem>
+                    );
+                  })}
+                </StyledSearchResultsGrid>
+              </StyledMenu>
+            )}
+            {data.length > 0 && (
+              <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
+                <Heading type="title2" spaceAfter="large">
+                  All search results
+                </Heading>
+                {data.map((item, idx) => {
+                  const itemName = getItemName({ item });
+                  return (
+                    <StyledMenuItem key={item.id} {...onGetItemProps({ item, index: idx })}>
+                      <div>
+                        <StyledMenuItemTitle>{itemName}</StyledMenuItemTitle>
+                        {hasDescription && <div>{item.description}</div>}
+                      </div>
+                      <ChevronForward size="medium" />
+                    </StyledMenuItem>
+                  );
+                })}
+              </StyledMenu>
+            )}
           </ModalSection>
         </Modal>
       </StyledModalWrapper>

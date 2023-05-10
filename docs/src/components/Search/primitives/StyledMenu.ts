@@ -16,12 +16,12 @@ export const StyledMenuItemTitle = styled.div`
   `}
 `;
 
-export const StyledMenuItem = styled.li`
-  ${({ theme }) => `
+export const StyledMenuItem = styled.li<{ tile?: boolean }>`
+  ${({ theme, tile }) => `
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: 1em 1.5em;
+    ${!tile && "padding: 1em 1.5em"};
     border-radius: 9px;
     outline: none;
     font-size: 16px;
@@ -29,7 +29,7 @@ export const StyledMenuItem = styled.li`
 
     &[aria-selected=true],
     &:hover {
-      background: ${theme.orbit.paletteCloudLight};
+      ${!tile && `background: ${theme.orbit.paletteCloudLight}`};
       ${StyledMenuItemTitle} {
         color: ${theme.orbit.paletteProductDarkHover};
       }
@@ -39,4 +39,10 @@ export const StyledMenuItem = styled.li`
       flex: 1;
     }
   `}
+`;
+
+export const StyledSearchResultsGrid = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
 `;

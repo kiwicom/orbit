@@ -8,6 +8,7 @@ import { useMediaQuery } from "@kiwicom/orbit-components";
 import SearchModalUI from "./SearchModalUI";
 import { isLoggedIn, isBrowser } from "../../services/auth";
 import type { SearchResult, LodashDebounceFunc } from "./types";
+import { update } from "../../utils/storage";
 
 interface Props {
   onClose: () => void;
@@ -158,6 +159,7 @@ export default function SearchModal({ onClose }: Props) {
       onSelectedItemChange: async changes => {
         if (changes.selectedItem && changes.selectedItem.path) {
           await navigate(changes.selectedItem.path);
+          update("search", JSON.stringify(changes.selectedItem), 4);
           onClose();
         }
       },

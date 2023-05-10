@@ -17,13 +17,13 @@ interface Props {
   href?: string;
   children?: React.ReactNode;
   isBookmark?: boolean;
+  onClick?: () => void;
 }
 
-function TileTitle({ children, alone }: { children: React.ReactNode; alone?: boolean }) {
+function TileTitle({ children }: { children: React.ReactNode }) {
   return (
     <div
       css={css`
-        ${alone && `min-height: 64px`};
         h3 {
           line-height: ${ICON_SIZE};
         }
@@ -76,6 +76,7 @@ interface TileWrapperProps {
   fullWidth: boolean;
   hasContent: boolean;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
 function TileWrapper({ href, ...props }: TileWrapperProps) {
@@ -186,9 +187,10 @@ export default function Tile({
   children,
   fullWidth = true,
   isBookmark,
+  onClick,
 }: Props) {
   return (
-    <TileWrapper href={href} fullWidth={fullWidth} hasContent={Boolean(children)}>
+    <TileWrapper onClick={onClick} href={href} fullWidth={fullWidth} hasContent={Boolean(children)}>
       <div
         css={css`
           flex: 1;
@@ -219,7 +221,7 @@ export default function Tile({
             </div>
           </div>
         ) : (
-          <TileTitle alone>{title}</TileTitle>
+          <TileTitle>{title}</TileTitle>
         )}
       </div>
       {href && (

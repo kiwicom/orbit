@@ -7,8 +7,8 @@ import getDisplay from "./helpers/getDisplay";
 import type { Props } from "./types";
 import type { Devices } from "../utils/mediaQuery/types";
 
-const StyledHide = styled.div<{ on: Devices[]; $block?: boolean }>`
-  ${({ on }) => getViewportHideStyles(on, getDisplay)};
+const StyledHide = styled.div<{ $on: Devices[]; $block?: boolean }>`
+  ${({ $on }) => getViewportHideStyles($on, getDisplay)};
 `;
 
 StyledHide.defaultProps = {
@@ -16,7 +16,7 @@ StyledHide.defaultProps = {
 };
 
 const Hide = ({ on = [], block, children }: Props) => (
-  <StyledHide on={on} $block={block}>
+  <StyledHide $on={on} $block={block}>
     {children}
   </StyledHide>
 );

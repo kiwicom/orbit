@@ -47,7 +47,6 @@ describe("Hide", () => {
 
       <div
         class="c0"
-        on="smallMobile,largeMobile,largeDesktop"
       >
         content
       </div>

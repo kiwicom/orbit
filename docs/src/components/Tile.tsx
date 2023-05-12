@@ -17,6 +17,7 @@ interface Props {
   href?: string;
   children?: React.ReactNode;
   isBookmark?: boolean;
+  inline?: boolean;
   onClick?: () => void;
 }
 
@@ -36,27 +37,29 @@ function TileTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-interface StyledContainerProps extends Pick<Props, "fullWidth"> {
+interface StyledContainerProps {
   href?: string;
   to?: string;
-  hasContent: boolean;
+  $hasContent: boolean;
+  $fullWidth: boolean;
+  $inline?: boolean;
 }
 
 const StyledWrapper = styled.div<StyledContainerProps>`
-  ${({ theme, fullWidth, href, to, hasContent }) => css`
+  ${({ theme, $fullWidth, href, to, $hasContent: hasContent, $inline }) => css`
     padding: 2rem;
     border-radius: 1rem;
     background: ${theme.orbit.paletteWhite};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
     ${boxShadowDefault};
-    ${fullWidth &&
+    ${$fullWidth &&
     css`
       width: 100%;
     `};
     ${hasContent
       ? css`
-          flex-direction: column;
+          flex-direction: ${$inline ? "row" : "column"};
         `
       : css`
           align-items: center;
@@ -73,8 +76,9 @@ const StyledWrapper = styled.div<StyledContainerProps>`
 
 interface TileWrapperProps {
   href?: string;
-  fullWidth: boolean;
-  hasContent: boolean;
+  $fullWidth: boolean;
+  $hasContent: boolean;
+  $inline?: boolean;
   children: React.ReactNode;
   onClick?: () => void;
 }
@@ -184,13 +188,20 @@ export default function Tile({
   icon,
   linkContent,
   title,
+  inline,
   children,
   fullWidth = true,
   isBookmark,
   onClick,
 }: Props) {
   return (
-    <TileWrapper onClick={onClick} href={href} fullWidth={fullWidth} hasContent={Boolean(children)}>
+    <TileWrapper
+      onClick={onClick}
+      href={href}
+      $fullWidth={fullWidth}
+      $hasContent={Boolean(children)}
+      $inline={inline}
+    >
       <div
         css={css`
           flex: 1;

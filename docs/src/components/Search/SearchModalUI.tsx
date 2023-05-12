@@ -8,6 +8,7 @@ import {
   ModalSection,
   Text,
   mediaQueries,
+  Hide,
 } from "@kiwicom/orbit-components";
 import { Search as SearchIcon, ChevronForward } from "@kiwicom/orbit-components/icons";
 import type {
@@ -28,8 +29,8 @@ import {
 } from "./primitives/StyledMenu";
 import type { SearchResult } from "./types";
 import Tile from "../Tile";
-import { getIconFromItem } from "../icons/consts";
-import { load } from "../../utils/storage";
+import { ICON_MAP, getIconFromItem } from "../icons/consts";
+import { load, update } from "../../utils/storage";
 
 interface Props {
   onClose: () => void;
@@ -110,6 +111,24 @@ export default function SearchModalUI({
     return JSON.parse(load("search") || "null") || [];
   }, []);
 
+  const filterComponents = React.useMemo(() => {
+    return data.filter(item => {
+      return (
+        item.breadcrumbs &&
+        item.breadcrumbs[0] === "Components" &&
+        item.breadcrumbs[item.breadcrumbs.length - 1] !== "React"
+      );
+    });
+  }, [data]);
+
+  const handleComponentTileClick = React.useCallback(
+    (item: SearchResult) => {
+      update("search", JSON.stringify(item), 4);
+      onClose();
+    },
+    [onClose],
+  );
+
   return (
     <Portal>
       <StyledModalWrapper>
@@ -182,6 +201,36 @@ export default function SearchModalUI({
                 </StyledSearchResultsGrid>
               </StyledMenu>
             )}
+            <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+              {data.length > 0 && filterComponents.length > 0 && (
+                <StyledMenu {...onGetMenuProps()} hasResults={filterComponents.length > 0}>
+                  <Heading type="title2" spaceAfter="large">
+                    Components
+                  </Heading>
+                  <StyledSearchResultsGrid>
+                    {filterComponents.map(item => {
+                      const itemName = getItemName({ item, short: true });
+                      return (
+                        <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
+                          <div>
+                            <Tile
+                              title={itemName}
+                              linkContent={<ChevronForward size="medium" />}
+                              href={item.path}
+                              onClick={() => handleComponentTileClick(item)}
+                              icon={ICON_MAP.Components}
+                              inline
+                            >
+                              {item.description && <div>{item.description}</div>}
+                            </Tile>
+                          </div>
+                        </StyledMenuItem>
+                      );
+                    })}
+                  </StyledSearchResultsGrid>
+                </StyledMenu>
+              )}
+            </Hide>
             {data.length > 0 && (
               <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
                 <Heading type="title2" spaceAfter="large">

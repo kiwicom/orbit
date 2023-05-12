@@ -20,6 +20,7 @@ interface QueryResponse {
       fields: {
         slug: string;
         id: string;
+        description: string;
         breadcrumbs: Array<{
           name: string;
         }>;
@@ -55,6 +56,7 @@ export default function SearchModal({ onClose }: Props) {
             breadcrumbs {
               name
             }
+            description
           }
           frontmatter {
             title
@@ -97,7 +99,7 @@ export default function SearchModal({ onClose }: Props) {
         id: String(idx),
         name: breadcrumbs.join(" "),
         breadcrumbs,
-        description: node.frontmatter.description,
+        description: node.frontmatter.description || node.fields.description,
         path: node.fields.slug,
       };
     });

@@ -45,9 +45,3 @@ export const StyledMenuItem = styled.li<{ tile?: boolean }>`
     }
   `}
 `;
-
-export const StyledSearchResultsGrid = styled.div`
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
-`;

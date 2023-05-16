@@ -4,6 +4,7 @@ import {
   Heading,
   Portal,
   Modal,
+  Grid,
   ModalHeader,
   ModalSection,
   Text,
@@ -21,12 +22,7 @@ import type {
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
-import {
-  StyledMenu,
-  StyledMenuItem,
-  StyledMenuItemTitle,
-  StyledSearchResultsGrid,
-} from "./primitives/StyledMenu";
+import { StyledMenu, StyledMenuItem, StyledMenuItemTitle } from "./primitives/StyledMenu";
 import type { SearchResult } from "./types";
 import Tile from "../Tile";
 import { ICON_MAP, getIconFromItem } from "../icons/consts";
@@ -55,6 +51,10 @@ interface Props {
 
 export const StyledModalWrapper = styled.div`
   /* align modal to the top */
+  > div:nth-child(2) {
+    max-width: 1180px;
+  }
+
   > * > * > * {
     height: 100%;
   }
@@ -74,8 +74,7 @@ const StyledSearchWrapper = styled.div`
 `;
 
 function getItemName({ item, short = false }: { item: SearchResult; short?: boolean }) {
-  const isComponent = item.breadcrumbs && item.breadcrumbs[0] === "Components";
-  if (isComponent && item.breadcrumbs) {
+  if (item.breadcrumbs) {
     const lastBreadcrumb = item.breadcrumbs[item.breadcrumbs.length - 1];
     if (lastBreadcrumb === "React" || lastBreadcrumb === "Design") {
       return short
@@ -112,16 +111,6 @@ export default function SearchModalUI({
     return JSON.parse(load("search") || "null") || [];
   }, []);
 
-  const filterComponents = React.useMemo(() => {
-    return data.filter(item => {
-      return (
-        item.breadcrumbs &&
-        item.breadcrumbs[0] === "Components" &&
-        item.breadcrumbs[item.breadcrumbs.length - 1] !== "React"
-      );
-    });
-  }, [data]);
-
   const handleComponentTileClick = React.useCallback(
     (item: SearchResult) => {
       update("search", JSON.stringify(item), 4);
@@ -134,6 +123,7 @@ export default function SearchModalUI({
     <Portal>
       <StyledModalWrapper>
         <Modal
+          size="extraLarge"
           // the search field will be auto focused
           autoFocus={false}
           onClose={onClose}
@@ -180,7 +170,11 @@ export default function SearchModalUI({
                 <Heading type="title2" spaceAfter="large">
                   Recent searches
                 </Heading>
-                <StyledSearchResultsGrid>
+                <Grid
+                  columns="repeat(2, 1fr)"
+                  largeDesktop={{ columns: "repeat(3, 1fr)" }}
+                  gap="1rem"
+                >
                   {recentSearches.map((searchResult, idx) => {
                     const item = JSON.parse(searchResult);
                     const itemName = getItemName({ item, short: true });
@@ -199,17 +193,21 @@ export default function SearchModalUI({
                       </StyledMenuItem>
                     );
                   })}
-                </StyledSearchResultsGrid>
+                </Grid>
               </StyledMenu>
             )}
             <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
-              {data.length > 0 && filterComponents.length > 0 && (
-                <StyledMenu {...onGetMenuProps()} hasResults={filterComponents.length > 0}>
+              {data.length > 0 && (
+                <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
                   <Heading type="title2" spaceAfter="large">
                     Components
                   </Heading>
-                  <StyledSearchResultsGrid>
-                    {filterComponents.map(item => {
+                  <Grid
+                    columns="repeat(2, 1fr)"
+                    largeDesktop={{ columns: "repeat(3, 1fr)" }}
+                    gap="1rem"
+                  >
+                    {data.map(item => {
                       const itemName = getItemName({ item, short: true });
                       return (
                         <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
@@ -223,12 +221,13 @@ export default function SearchModalUI({
                               inline
                             >
                               {item.description && <div>{item.description}</div>}
+                              {console.log(item)}
                             </Tile>
                           </div>
                         </StyledMenuItem>
                       );
                     })}
-                  </StyledSearchResultsGrid>
+                  </Grid>
                 </StyledMenu>
               )}
             </Hide>
@@ -237,18 +236,20 @@ export default function SearchModalUI({
                 <Heading type="title2" spaceAfter="large">
                   All search results
                 </Heading>
-                {data.map((item, idx) => {
-                  const itemName = getItemName({ item });
-                  return (
-                    <StyledMenuItem key={item.id} {...onGetItemProps({ item, index: idx })}>
-                      <div>
-                        <StyledMenuItemTitle>{itemName}</StyledMenuItemTitle>
-                        {hasDescription && <div>{item.description}</div>}
-                      </div>
-                      <ChevronForward size="medium" />
-                    </StyledMenuItem>
-                  );
-                })}
+                <Grid columns="1fr" largeDesktop={{ columns: "repeat(2, 1fr)" }} gap="1rem">
+                  {data.map((item, idx) => {
+                    const itemName = getItemName({ item });
+                    return (
+                      <StyledMenuItem key={item.id} {...onGetItemProps({ item, index: idx })}>
+                        <div>
+                          <StyledMenuItemTitle>{itemName}</StyledMenuItemTitle>
+                          {hasDescription && <div>{item.description}</div>}
+                        </div>
+                        <ChevronForward size="medium" />
+                      </StyledMenuItem>
+                    );
+                  })}
+                </Grid>
               </StyledMenu>
             )}
           </ModalSection>

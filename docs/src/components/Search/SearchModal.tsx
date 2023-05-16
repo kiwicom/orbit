@@ -8,6 +8,7 @@ import { useMediaQuery } from "@kiwicom/orbit-components";
 import SearchModalUI from "./SearchModalUI";
 import { isLoggedIn, isBrowser } from "../../services/auth";
 import type { SearchResult, LodashDebounceFunc } from "./types";
+import { update } from "../../utils/storage";
 
 interface Props {
   onClose: () => void;
@@ -19,6 +20,7 @@ interface QueryResponse {
       fields: {
         slug: string;
         id: string;
+        description: string;
         breadcrumbs: Array<{
           name: string;
         }>;
@@ -54,6 +56,7 @@ export default function SearchModal({ onClose }: Props) {
             breadcrumbs {
               name
             }
+            description
           }
           frontmatter {
             title
@@ -96,7 +99,7 @@ export default function SearchModal({ onClose }: Props) {
         id: String(idx),
         name: breadcrumbs.join(" "),
         breadcrumbs,
-        description: node.frontmatter.description,
+        description: node.frontmatter.description || node.fields.description,
         path: node.fields.slug,
       };
     });
@@ -158,6 +161,7 @@ export default function SearchModal({ onClose }: Props) {
       onSelectedItemChange: async changes => {
         if (changes.selectedItem && changes.selectedItem.path) {
           await navigate(changes.selectedItem.path);
+          update("search", JSON.stringify(changes.selectedItem), 4);
           onClose();
         }
       },

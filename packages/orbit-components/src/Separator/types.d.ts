@@ -7,5 +7,7 @@ export type Align = "left" | "center" | "right";
 
 export interface Props extends Common.SpaceAfter {
   indent?: Indent;
+  type?: "solid" | "dashed" | "dotted" | "double" | "none";
+  color?: string;
   align?: Align;
 }

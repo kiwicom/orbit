@@ -23,8 +23,9 @@ export const Playground = () => {
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.LARGEST);
   const align = select("align", ["left", "right", "center"], "left");
   const indentOptions: Indent[] = ["none", "small", "medium", "large", "XLarge", "XXLarge"];
+  const type = select("type", ["solid", "dashed", "dotted", "double"], "solid");
   const indent = select("indent", indentOptions, "none");
-  return <Separator align={align} indent={indent} spaceAfter={spaceAfter} />;
+  return <Separator align={align} indent={indent} spaceAfter={spaceAfter} type={type} />;
 };
 
 Playground.story = {

@@ -19,9 +19,10 @@ export const StyledMenuItemTitle = styled.div`
 export const StyledMenuItem = styled.li<{ tile?: boolean }>`
   ${({ theme, tile }) => `
     display: flex;
+    height: 100%;
     align-items: center;
     cursor: pointer;
-    ${!tile && "padding: 1em 1.5em"};
+    padding: ${!tile && "1em 1.5em"};
     border-radius: 9px;
     outline: none;
     font-size: 16px;
@@ -29,7 +30,7 @@ export const StyledMenuItem = styled.li<{ tile?: boolean }>`
 
     &[aria-selected=true],
     &:hover {
-      ${!tile && `background: ${theme.orbit.paletteCloudLight}`};
+      background: ${!tile && theme.orbit.paletteCloudLight};
       ${StyledMenuItemTitle} {
         color: ${theme.orbit.paletteProductDarkHover};
       }
@@ -37,6 +38,10 @@ export const StyledMenuItem = styled.li<{ tile?: boolean }>`
 
     > *:first-child {
       flex: 1;
+      height: 100%;
+      a:first-child {
+        height: 100%;
+      }
     }
   `}
 `;

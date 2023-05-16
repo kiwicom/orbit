@@ -52,11 +52,8 @@ const StyledWrapper = styled.div<StyledContainerProps>`
     background: ${theme.orbit.paletteWhite};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
+    width: ${$fullWidth && "100%"};
     ${boxShadowDefault};
-    ${$fullWidth &&
-    css`
-      width: 100%;
-    `};
     ${hasContent
       ? css`
           flex-direction: ${$inline ? "row" : "column"};

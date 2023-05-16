@@ -74,16 +74,17 @@ const StyledSearchWrapper = styled.div`
 `;
 
 function getItemName({ item, short = false }: { item: SearchResult; short?: boolean }) {
-  const isComponent = (item.breadcrumbs && item.breadcrumbs[0] === "Components") || false;
+  const isComponent = item.breadcrumbs && item.breadcrumbs[0] === "Components";
   if (isComponent && item.breadcrumbs) {
     const lastBreadcrumb = item.breadcrumbs[item.breadcrumbs.length - 1];
     if (lastBreadcrumb === "React" || lastBreadcrumb === "Design") {
       return short
-        ? item.breadcrumbs[item.breadcrumbs.length - 2]
+        ? item?.breadcrumbs[item.breadcrumbs.length - 2]
         : item.breadcrumbs.slice(item.breadcrumbs.length - 2).join(" / ");
     }
     return lastBreadcrumb;
   }
+
   return item.breadcrumbs ? item.breadcrumbs[item.breadcrumbs.length - 1] : item.name;
 }
 

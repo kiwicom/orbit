@@ -3,6 +3,8 @@ import * as React from "react";
 
 export type Props = {|
   +children?: React.Node,
+  +type?: "dashed" | "solid" | "dotted" | "double" | "none",
+  +color?: string,
 |};
 
 declare export default React.ComponentType<Props>;

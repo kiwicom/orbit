@@ -1,5 +1,5 @@
 import * as React from "react";
-import { select } from "@storybook/addon-knobs";
+import { select, text } from "@storybook/addon-knobs";
 
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -23,9 +23,12 @@ export const Playground = () => {
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.LARGEST);
   const align = select("align", ["left", "right", "center"], "left");
   const indentOptions: Indent[] = ["none", "small", "medium", "large", "XLarge", "XXLarge"];
-  const type = select("type", ["solid", "dashed", "dotted", "double"], "solid");
+  const type = select("type", ["solid", "dashed", "dotted", "double", "none"], "none");
+  const color = text("color", "");
   const indent = select("indent", indentOptions, "none");
-  return <Separator align={align} indent={indent} spaceAfter={spaceAfter} type={type} />;
+  return (
+    <Separator color={color} align={align} indent={indent} spaceAfter={spaceAfter} type={type} />
+  );
 };
 
 Playground.story = {

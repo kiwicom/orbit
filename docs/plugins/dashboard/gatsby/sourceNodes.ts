@@ -1,6 +1,18 @@
+import dotenv from "dotenv-safe";
+import path from "path";
+
 import { projectPathQuery, projectRawBlobQuery } from "./queries";
 import { TrackingNode } from "../../../src/components/Dashboard/interfaces";
 import { request } from "../helpers";
+
+try {
+  dotenv.config({
+    path: path.join(process.cwd(), `../.env`),
+    example: path.join(process.cwd(), `../.env.example`),
+  });
+} catch (error) {
+  console.error(error);
+}
 
 const getPaths = async () => {
   const { data } = await request<PathResponse>(projectPathQuery, {

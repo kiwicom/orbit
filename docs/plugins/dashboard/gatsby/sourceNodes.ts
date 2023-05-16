@@ -7,8 +7,8 @@ import { request } from "../helpers";
 
 try {
   dotenv.config({
-    path: path.join(process.cwd(), `../.env`),
-    example: path.join(process.cwd(), `../.env.example`),
+    path: path.join(process.cwd(), `.env`),
+    example: path.join(process.cwd(), `.env.example`),
   });
 } catch (error) {
   console.error(error);

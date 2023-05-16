@@ -41,6 +41,17 @@ export default {
           options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
         },
         {
+          name: "type",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "solid", "dashed", "dotted", "double"],
+        },
+        {
+          name: "color",
+          type: "text",
+          defaultValue: "",
+        },
+        {
           name: "indent",
           type: "select",
           defaultValue: "none",

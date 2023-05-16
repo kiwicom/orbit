@@ -384,6 +384,19 @@ export const ItinerarySeparatorComponent = () => {
         <Text weight="bold">8 nights in Barcelona</Text>
       </ItinerarySeparator>
       <ItinerarySeparator />
+      <ItinerarySeparator type="solid" color="paletteBlueNormal">
+        <Text weight="bold">Eternity in Valhalla</Text>
+      </ItinerarySeparator>
+      <ItinerarySeparator type="dashed" color="paletteRedNormal">
+        <Text weight="bold">Eternity in Hell</Text>
+      </ItinerarySeparator>
+      <ItinerarySeparator type="dotted" color="paletteGreenNormal">
+        <Text weight="bold">Eternity in Paradise</Text>
+      </ItinerarySeparator>
+      <ItinerarySeparator type="double" color="paletteOrangeNormal">
+        <Text weight="bold">Eternity in Tartarus</Text>
+      </ItinerarySeparator>
+      <ItinerarySeparator />
     </Stack>
   );
 };

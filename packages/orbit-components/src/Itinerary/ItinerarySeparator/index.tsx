@@ -12,8 +12,8 @@ const StyledWrapper = styled.div`
   width: 100%;
 `;
 
-const StyledInner = styled.div`
-  ${({ theme }) => css`
+const StyledInner = styled.div<{ $type: Props["type"]; $color: Props["color"] }>`
+  ${({ theme, $type, $color }) => css`
     &:before,
     &:after {
       content: "";
@@ -21,8 +21,11 @@ const StyledInner = styled.div`
       top: 50%;
       z-index: 10;
       width: 50%;
-      height: 1px;
-      background: ${theme.orbit.paletteCloudNormal};
+      height: ${!$type && theme.orbit.heightSeparator};
+      background: ${theme.orbit.backgroundSeparator};
+      border-width: ${$type && "1px"};
+      border-color: ${$color && theme.orbit[$color]};
+      border-style: ${$type};
     }
 
     &:before {
@@ -40,21 +43,23 @@ StyledInner.defaultProps = {
 };
 
 const StyledWord = styled.div`
-  position: relative;
-  padding: 0 2px;
-  background: #fff;
-  z-index: 11;
+  ${({ theme }) => css`
+    position: relative;
+    padding: 0 2px;
+    background: ${theme.orbit.paletteWhite};
+    z-index: 11;
+  `};
 `;
 
 StyledWord.defaultProps = {
   theme: defaultTheme,
 };
 
-const ItinerarySeparator = ({ children }: Props) => {
-  if (children)
+const ItinerarySeparator = ({ children, type, color }: Props) => {
+  if (children || type)
     return (
       <StyledWrapper>
-        <StyledInner>
+        <StyledInner $type={type} $color={color}>
           <StyledWord>{children}</StyledWord>
         </StyledInner>
       </StyledWrapper>

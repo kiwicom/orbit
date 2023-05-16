@@ -12,7 +12,7 @@ import Itinerary, {
 } from "@kiwicom/orbit-components/lib/Itinerary";
 ```
 
-After adding import into your project you can use it simply like:
+After adding import to your project you can use it simply like:
 
 ```jsx
 <Itinerary>
@@ -46,7 +46,7 @@ After adding import into your project you can use it simply like:
 
 ## ItinerarySegment
 
-ItinerarySegment component serves as a wrapper of atomic units `ItinerarySegmentStop` and `ItinerarySegmentDetail, has status prop for showing important information about the connection between two segments of journey.
+The ItinerarySegment component serves as a wrapper of atomic unit `ItinerarySegmentStop` and `ItinerarySegmentDetail, have a status prop for showing important information about the connection between two segments of a journey.
 
 ## Props
 
@@ -63,44 +63,44 @@ ItinerarySegment component serves as a wrapper of atomic units `ItinerarySegment
 
 ## ItinerarySegmentStop
 
-ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two locations, date and time, has warning property which changes the icon to `<AlertCircle color="warning" />` to attract user attention about some important information about journey.
+ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two locations, date and time, have the warning property which changes the icon to `<AlertCircle color="warning" />` to attract user attention to some important information about a journey.
 
 ## Props
 
-| Name             | Type                | Required           | Default       | Description                                              |
-| ---------------- | ------------------- | ------------------ | ------------- | -------------------------------------------------------- |
-| date             | `React.Node`        |                    |               | The date of `ItinerarySegmentStop`                       |
-| time             | `React.Node`        |                    |               | The time of `ItinerarySegmentStop`                       |
-| cancelledTime    | `React.Node`        |                    |               | The cancelled time of `ItinerarySegmentStop`             |
-| cancelledDate    | `React.Node`        |                    |               | The cancelled date of `ItinerarySegmentStop`             |
-| cancelledStation | `React.Node`        |                    |               | The cancelled station of `ItinerarySegmentStop`          |
-| cancelledCity    | `React.Node`        |                    |               | The cancelled city of `ItinerarySegmentStop`             |
-| city             | `React.Node`        | :heavy_check_mark: |               | The city of `ItinerarySegmentStop`                       |
-| station          | `React.Node`        | :heavy_check_mark: |               | The station of `ItinerarySegmentStop`                    |
-| hidden           | `boolean`           |                    |               | `ItinerarySegmentStop` which status is hidden            |
-| hiddenCityText   | `React.Node`        |                    | `Hidden city` | Text which appears above city                            |
-| icon             | `React.Node`        |                    |               | `ItinerarySegmentStop` custom icon                       |
-| canceled         | `boolean`           |                    |               | Shows segment stop as canceled with striked through Text |
-| type             | [`Status`](#status) |                    |               | The color of `ItinerarySegmentStop` icon                 |
-| minWidth         | `number`            |                    | `70`          | sets min-width for first column with date and time       |
+| Name             | Type              | Required           | Default       | Description                                              |
+| ---------------- | ----------------- | ------------------ | ------------- | -------------------------------------------------------- |
+| date             | `React.Node`      |                    |               | The date of `ItinerarySegmentStop`                       |
+| time             | `React.Node`      |                    |               | The time of `ItinerarySegmentStop`                       |
+| cancelledTime    | `React.Node`      |                    |               | The cancelled time of `ItinerarySegmentStop`             |
+| cancelledDate    | `React.Node`      |                    |               | The cancelled date of `ItinerarySegmentStop`             |
+| cancelledStation | `React.Node`      |                    |               | The cancelled station of `ItinerarySegmentStop`          |
+| cancelledCity    | `React.Node`      |                    |               | The cancelled city of `ItinerarySegmentStop`             |
+| city             | `React.Node`      | :heavy_check_mark: |               | The city of `ItinerarySegmentStop`                       |
+| station          | `React.Node`      | :heavy_check_mark: |               | The station of `ItinerarySegmentStop`                    |
+| hidden           | `boolean`         |                    |               | `ItinerarySegmentStop` which status is hidden            |
+| hiddenCityText   | `React.Node`      |                    | `Hidden city` | Text which appears above city                            |
+| icon             | `React.Node`      |                    |               | `ItinerarySegmentStop` custom icon                       |
+| canceled         | `boolean`         |                    |               | Shows segment stop as canceled with striked through Text |
+| type             | [`Status`](#enum) |                    |               | The color of `ItinerarySegmentStop` icon                 |
+| minWidth         | `number`          |                    | `70`          | sets min-width for first column with date and time       |
 
 ## ItineraryStatus
 
-ItineraryStatus is a wrapper for `ItinerarySegment` or group of segments. Shows the [status](#status) of the `Itinerary` or `ItinerarySegment`
+ItineraryStatus is a wrapper for `ItinerarySegment` or a group of segments. Shows the [status](#enum) of the `Itinerary` or `ItinerarySegment`
 
 ### Props
 
-| Name       | Type                | Required           | Default | Description                                   |
-| ---------- | ------------------- | ------------------ | ------- | --------------------------------------------- |
-| type       | [`Status`](#status) |                    |         | The type of `ItineraryStatus` component       |
-| label      | `React.Node`        |                    |         | The label of the `ItineraryStatus`            |
-| offset     | `number`            |                    | `0`     | The offset for the label                      |
-| actionable | `boolean`           |                    | true    | Applies actionable styles for ItineraryStatus |
-| children   | `React.ReactNode`   | :heavy_check_mark: |         | The content of `ItineraryStatus` component    |
+| Name       | Type              | Required           | Default | Description                                   |
+| ---------- | ----------------- | ------------------ | ------- | --------------------------------------------- |
+| type       | [`Status`](#enum) |                    |         | The type of `ItineraryStatus` component       |
+| label      | `React.Node`      |                    |         | The label of the `ItineraryStatus`            |
+| offset     | `number`          |                    | `0`     | The offset for the label                      |
+| actionable | `boolean`         |                    | true    | Applies actionable styles for ItineraryStatus |
+| children   | `React.ReactNode` | :heavy_check_mark: |         | The content of `ItineraryStatus` component    |
 
 ## ItinerarySegmentDetail
 
-ItinerarySegmentDetail serves as connection between two ItinerarySegmentStop components (segments)
+ItinerarySegmentDetail serves as a connection between two ItinerarySegmentStop components (segments)
 
 ### Props
 
@@ -118,14 +118,22 @@ ItinerarySegmentDetail serves as connection between two ItinerarySegmentStop com
 | children | `React.ReactNode` | :heavy_check_mark: |         | The content of ItineraryDetail component, shown when it's expanded |
 | onClick  | `React.ReactNode` |                    |         | for handling `onClick` callback in`ItinerarySegmentBanner`         |
 
+## ItinerarySeparator
+
 ### Props
 
-### Status
+| Name     | Type              | Required           | Default | Description                                   |
+| :------- | :---------------- | :----------------- | :------ | :-------------------------------------------- |
+| children | `React.ReactNode` | :heavy_check_mark: |         | The content of `ItinerarySeparator` component |
+| type     | [`Status`](#enum) |                    |         | The type of `ItinerarySeparator` component    |
+| color    | `"string"`        |                    |         | The color of `ItinerarySeparator` component   |
 
-| Status       |
-| ------------ |
-| `"warning"`  |
-| `"critical"` |
-| `"info"`     |
-| `"success"`  |
-| `"neutral"`  |
+### enum
+
+| Status       | Type       |
+| ------------ | ---------- |
+| `"warning"`  | `"dashed"` |
+| `"critical"` | `"dotted"` |
+| `"info"`     | `"solid"`  |
+| `"success"`  | `"none"`   |
+| `"neutral"`  | `"double"` |

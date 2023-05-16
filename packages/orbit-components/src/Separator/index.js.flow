@@ -12,6 +12,8 @@ export type Indent = "none" | "small" | "medium" | "large" | "XLarge" | "XXLarge
 export type Props = {|
   ...spaceAfter,
   indent?: Indent,
+  color?: string,
+  type?: "solid" | "dashed" | "dotted" | "double" | "none",
   align?: "left" | "right" | "center",
 |};
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUp } from "@kiwicom/orbit-components/icons";
+import ArrowUp from "@kiwicom/orbit-components/lib/icons/ArrowUp";
 import { css } from "styled-components";
 
 export default function ArrowRight(props: React.ComponentProps<typeof ArrowUp>) {

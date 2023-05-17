@@ -4,6 +4,7 @@ import {
   Heading,
   Portal,
   Modal,
+  Grid,
   ModalHeader,
   ModalSection,
   Text,
@@ -21,12 +22,7 @@ import type {
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";
-import {
-  StyledMenu,
-  StyledMenuItem,
-  StyledMenuItemTitle,
-  StyledSearchResultsGrid,
-} from "./primitives/StyledMenu";
+import { StyledMenu, StyledMenuItem, StyledMenuItemTitle } from "./primitives/StyledMenu";
 import type { SearchResult } from "./types";
 import Tile from "../Tile";
 import { ICON_MAP, getIconFromItem } from "../icons/consts";
@@ -36,6 +32,7 @@ interface Props {
   onClose: () => void;
   title?: React.ReactNode;
   placeholder?: string;
+  hasRecentSearches?: boolean;
   hasDescription?: boolean;
   data: SearchResult[];
   onComboboxProps: (
@@ -55,6 +52,10 @@ interface Props {
 
 export const StyledModalWrapper = styled.div`
   /* align modal to the top */
+  > div:nth-child(2) {
+    max-width: 1180px;
+  }
+
   > * > * > * {
     height: 100%;
   }
@@ -92,6 +93,7 @@ export default function SearchModalUI({
   onClose,
   placeholder = "Search...",
   data,
+  hasRecentSearches = true,
   title = "What are you looking for?",
   hasDescription = true,
   onComboboxProps,
@@ -112,16 +114,6 @@ export default function SearchModalUI({
     return JSON.parse(load("search") || "null") || [];
   }, []);
 
-  const filterComponents = React.useMemo(() => {
-    return data.filter(item => {
-      return (
-        item.breadcrumbs &&
-        item.breadcrumbs[0] === "Components" &&
-        item.breadcrumbs[item.breadcrumbs.length - 1] !== "React"
-      );
-    });
-  }, [data]);
-
   const handleComponentTileClick = React.useCallback(
     (item: SearchResult) => {
       update("search", JSON.stringify(item), 4);
@@ -134,6 +126,7 @@ export default function SearchModalUI({
     <Portal>
       <StyledModalWrapper>
         <Modal
+          size="extraLarge"
           // the search field will be auto focused
           autoFocus={false}
           onClose={onClose}
@@ -175,80 +168,96 @@ export default function SearchModalUI({
                 )}
               </div>
             </div>
-            {data.length === 0 && recentSearches.length > 0 && (
-              <StyledMenu {...onGetMenuProps()} hasResults={recentSearches.length > 0}>
-                <Heading type="title2" spaceAfter="large">
-                  Recent searches
-                </Heading>
-                <StyledSearchResultsGrid>
-                  {recentSearches.map((searchResult, idx) => {
-                    const item = JSON.parse(searchResult);
-                    const itemName = getItemName({ item, short: true });
+            {hasRecentSearches && (
+              <>
+                {data.length === 0 && recentSearches.length > 0 && (
+                  <StyledMenu {...onGetMenuProps()} hasResults={recentSearches.length > 0}>
+                    <Heading type="title2" spaceAfter="large">
+                      Recent searches
+                    </Heading>
+                    <Grid
+                      columns="repeat(2, 1fr)"
+                      largeDesktop={{ columns: "repeat(3, 1fr)" }}
+                      gap="1rem"
+                    >
+                      {recentSearches.map((searchResult, idx) => {
+                        const item = JSON.parse(searchResult);
+                        const itemName = getItemName({ item, short: true });
 
-                    return (
-                      <StyledMenuItem key={item.id} tile {...onGetItemProps({ item, index: idx })}>
-                        <div>
-                          <Tile
-                            title={itemName}
-                            linkContent={<ChevronForward size="medium" />}
-                            href={item.path}
-                            onClick={onClose}
-                            icon={getIconFromItem(item)}
-                          />
-                        </div>
-                      </StyledMenuItem>
-                    );
-                  })}
-                </StyledSearchResultsGrid>
-              </StyledMenu>
-            )}
-            <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
-              {data.length > 0 && filterComponents.length > 0 && (
-                <StyledMenu {...onGetMenuProps()} hasResults={filterComponents.length > 0}>
-                  <Heading type="title2" spaceAfter="large">
-                    Components
-                  </Heading>
-                  <StyledSearchResultsGrid>
-                    {filterComponents.map(item => {
-                      const itemName = getItemName({ item, short: true });
-                      return (
-                        <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
-                          <div>
+                        return (
+                          <StyledMenuItem
+                            key={item.id}
+                            tile
+                            {...onGetItemProps({ item, index: idx })}
+                          >
                             <Tile
                               title={itemName}
                               linkContent={<ChevronForward size="medium" />}
                               href={item.path}
-                              onClick={() => handleComponentTileClick(item)}
-                              icon={ICON_MAP.Components}
-                              inline
-                            >
-                              {item.description && <div>{item.description}</div>}
-                            </Tile>
-                          </div>
-                        </StyledMenuItem>
-                      );
-                    })}
-                  </StyledSearchResultsGrid>
-                </StyledMenu>
-              )}
-            </Hide>
+                              onClick={onClose}
+                              icon={getIconFromItem(item)}
+                            />
+                          </StyledMenuItem>
+                        );
+                      })}
+                    </Grid>
+                  </StyledMenu>
+                )}
+                <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+                  {data.length > 0 && (
+                    <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
+                      <Heading type="title2" spaceAfter="large">
+                        Components
+                      </Heading>
+                      <Grid
+                        columns="repeat(2, 1fr)"
+                        largeDesktop={{ columns: "repeat(3, 1fr)" }}
+                        gap="1rem"
+                      >
+                        {data.map(item => {
+                          const itemName = getItemName({ item, short: true });
+                          return (
+                            <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
+                              <div>
+                                <Tile
+                                  title={itemName}
+                                  linkContent={<ChevronForward size="medium" />}
+                                  href={item.path}
+                                  onClick={() => handleComponentTileClick(item)}
+                                  icon={ICON_MAP.Components}
+                                  inline
+                                >
+                                  {item.description && <div>{item.description}</div>}
+                                </Tile>
+                              </div>
+                            </StyledMenuItem>
+                          );
+                        })}
+                      </Grid>
+                    </StyledMenu>
+                  )}
+                </Hide>
+              </>
+            )}
             {data.length > 0 && (
               <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
                 <Heading type="title2" spaceAfter="large">
                   All search results
                 </Heading>
-                {data.map((item, idx) => {
-                  const itemName = getItemName({ item });
-                  return (
-                    <StyledMenuItem key={item.id} {...onGetItemProps({ item, index: idx })}>
-                      <div>
-                        <StyledMenuItemTitle>{itemName}</StyledMenuItemTitle>
-                        {hasDescription && <div>{item.description}</div>}
-                      </div>
-                      <ChevronForward size="medium" />
-                    </StyledMenuItem>
-                  );
-                })}
+                <Grid columns="1fr" largeDesktop={{ columns: "repeat(2, 1fr)" }} gap="1rem">
+                  {data.map((item, idx) => {
+                    const itemName = getItemName({ item });
+                    return (
+                      <StyledMenuItem key={item.id} {...onGetItemProps({ item, index: idx })}>
+                        <div>
+                          <StyledMenuItemTitle>{itemName}</StyledMenuItemTitle>
+                          {hasDescription && <div>{item.description}</div>}
+                        </div>
+                        <ChevronForward size="medium" />
+                      </StyledMenuItem>
+                    );
+                  })}
+                </Grid>
               </StyledMenu>
             )}
           </ModalSection>

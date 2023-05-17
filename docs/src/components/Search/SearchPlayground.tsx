@@ -82,6 +82,7 @@ const SearchPlayground = ({
       placeholder="Button"
       title="Search for example"
       onClose={onClose}
+      hasRecentSearches={false}
       hasDescription={false}
       data={results}
       onComboboxProps={getComboboxProps}

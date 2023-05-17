@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const StyledMenu = styled.ul<{ hasResults?: boolean }>`
-  ${({ hasResults }) => `
+  ${({ hasResults, theme }) => `
     padding-top: ${hasResults ? "2rem" : "1rem"};
+    font-family: ${theme.orbit.fontFamily};
     z-index: 100;
   `}
 `;
@@ -44,10 +45,4 @@ export const StyledMenuItem = styled.li<{ tile?: boolean }>`
       }
     }
   `}
-`;
-
-export const StyledSearchResultsGrid = styled.div`
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
 `;

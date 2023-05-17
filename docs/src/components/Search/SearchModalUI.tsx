@@ -32,6 +32,7 @@ interface Props {
   onClose: () => void;
   title?: React.ReactNode;
   placeholder?: string;
+  hasRecentSearches?: boolean;
   hasDescription?: boolean;
   data: SearchResult[];
   onComboboxProps: (
@@ -74,7 +75,8 @@ const StyledSearchWrapper = styled.div`
 `;
 
 function getItemName({ item, short = false }: { item: SearchResult; short?: boolean }) {
-  if (item.breadcrumbs) {
+  const isComponent = item.breadcrumbs && item.breadcrumbs[0] === "Components";
+  if (isComponent && item.breadcrumbs) {
     const lastBreadcrumb = item.breadcrumbs[item.breadcrumbs.length - 1];
     if (lastBreadcrumb === "React" || lastBreadcrumb === "Design") {
       return short
@@ -91,6 +93,7 @@ export default function SearchModalUI({
   onClose,
   placeholder = "Search...",
   data,
+  hasRecentSearches = true,
   title = "What are you looking for?",
   hasDescription = true,
   onComboboxProps,
@@ -165,72 +168,77 @@ export default function SearchModalUI({
                 )}
               </div>
             </div>
-            {data.length === 0 && recentSearches.length > 0 && (
-              <StyledMenu {...onGetMenuProps()} hasResults={recentSearches.length > 0}>
-                <Heading type="title2" spaceAfter="large">
-                  Recent searches
-                </Heading>
-                <Grid
-                  columns="repeat(2, 1fr)"
-                  largeDesktop={{ columns: "repeat(3, 1fr)" }}
-                  gap="1rem"
-                >
-                  {recentSearches.map((searchResult, idx) => {
-                    const item = JSON.parse(searchResult);
-                    const itemName = getItemName({ item, short: true });
+            {hasRecentSearches && (
+              <>
+                {data.length === 0 && recentSearches.length > 0 && (
+                  <StyledMenu {...onGetMenuProps()} hasResults={recentSearches.length > 0}>
+                    <Heading type="title2" spaceAfter="large">
+                      Recent searches
+                    </Heading>
+                    <Grid
+                      columns="repeat(2, 1fr)"
+                      largeDesktop={{ columns: "repeat(3, 1fr)" }}
+                      gap="1rem"
+                    >
+                      {recentSearches.map((searchResult, idx) => {
+                        const item = JSON.parse(searchResult);
+                        const itemName = getItemName({ item, short: true });
 
-                    return (
-                      <StyledMenuItem key={item.id} tile {...onGetItemProps({ item, index: idx })}>
-                        <div>
-                          <Tile
-                            title={itemName}
-                            linkContent={<ChevronForward size="medium" />}
-                            href={item.path}
-                            onClick={onClose}
-                            icon={getIconFromItem(item)}
-                          />
-                        </div>
-                      </StyledMenuItem>
-                    );
-                  })}
-                </Grid>
-              </StyledMenu>
-            )}
-            <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
-              {data.length > 0 && (
-                <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
-                  <Heading type="title2" spaceAfter="large">
-                    Components
-                  </Heading>
-                  <Grid
-                    columns="repeat(2, 1fr)"
-                    largeDesktop={{ columns: "repeat(3, 1fr)" }}
-                    gap="1rem"
-                  >
-                    {data.map(item => {
-                      const itemName = getItemName({ item, short: true });
-                      return (
-                        <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
-                          <div>
+                        return (
+                          <StyledMenuItem
+                            key={item.id}
+                            tile
+                            {...onGetItemProps({ item, index: idx })}
+                          >
                             <Tile
                               title={itemName}
                               linkContent={<ChevronForward size="medium" />}
                               href={item.path}
-                              onClick={() => handleComponentTileClick(item)}
-                              icon={ICON_MAP.Components}
-                              inline
-                            >
-                              {item.description && <div>{item.description}</div>}
-                              {console.log(item)}
-                            </Tile>
-                          </div>
-                        </StyledMenuItem>
-                      );
-                    })}
-                  </Grid>
-                </StyledMenu>
-              )}
-            </Hide>
+                              onClick={onClose}
+                              icon={getIconFromItem(item)}
+                            />
+                          </StyledMenuItem>
+                        );
+                      })}
+                    </Grid>
+                  </StyledMenu>
+                )}
+                <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
+                  {data.length > 0 && (
+                    <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
+                      <Heading type="title2" spaceAfter="large">
+                        Components
+                      </Heading>
+                      <Grid
+                        columns="repeat(2, 1fr)"
+                        largeDesktop={{ columns: "repeat(3, 1fr)" }}
+                        gap="1rem"
+                      >
+                        {data.map(item => {
+                          const itemName = getItemName({ item, short: true });
+                          return (
+                            <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
+                              <div>
+                                <Tile
+                                  title={itemName}
+                                  linkContent={<ChevronForward size="medium" />}
+                                  href={item.path}
+                                  onClick={() => handleComponentTileClick(item)}
+                                  icon={ICON_MAP.Components}
+                                  inline
+                                >
+                                  {item.description && <div>{item.description}</div>}
+                                </Tile>
+                              </div>
+                            </StyledMenuItem>
+                          );
+                        })}
+                      </Grid>
+                    </StyledMenu>
+                  )}
+                </Hide>
+              </>
+            )}
             {data.length > 0 && (
               <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
                 <Heading type="title2" spaceAfter="large">

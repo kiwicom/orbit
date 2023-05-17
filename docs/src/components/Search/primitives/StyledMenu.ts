@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const StyledMenu = styled.ul<{ hasResults?: boolean }>`
-  ${({ hasResults }) => `
+  ${({ hasResults, theme }) => `
     padding-top: ${hasResults ? "2rem" : "1rem"};
+    font-family: ${theme.orbit.fontFamily};
     z-index: 100;
   `}
 `;

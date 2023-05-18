@@ -262,9 +262,10 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     fontSizeHeadingDisplaySubtitle: "22px",
     fontSizeHeadingTitle1: "28px",
     fontSizeHeadingTitle2: "22px",
-    fontSizeHeadingTitle3: "16px",
-    fontSizeHeadingTitle4: theme.base.fontSizeMd,
-    fontSizeHeadingTitle5: theme.base.fontSizeSm,
+    fontSizeHeadingTitle3: "18px",
+    fontSizeHeadingTitle4: theme.base.fontSizeLg,
+    fontSizeHeadingTitle5: theme.base.fontSizeMd,
+    fontSizeHeadingTitle6: theme.base.fontSizeSm,
     fontSizeTextNormal: theme.base.fontSizeMd,
     fontSizeTextLarge: theme.base.fontSizeLg,
     fontSizeTextSmall: theme.base.fontSizeSm,
@@ -413,6 +414,7 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     fontWeightHeadingTitle3: theme.base.fontWeightMedium,
     fontWeightHeadingTitle4: theme.base.fontWeightMedium,
     fontWeightHeadingTitle5: theme.base.fontWeightBold,
+    fontWeightHeadingTitle6: theme.base.fontWeightBold,
     fontWeightTableHead: theme.base.fontWeightBold,
     // category:Spacing
     // description:Use this for setting spacings for elements.
@@ -482,6 +484,7 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     lineHeightHeadingTitle3: "24px",
     lineHeightHeadingTitle4: "20px",
     lineHeightHeadingTitle5: "20px",
+    lineHeightHeadingTitle6: "16px",
     // category:Text decoration
     // description:
     textDecorationTextLinkPrimary: "underline",

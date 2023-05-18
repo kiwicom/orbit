@@ -965,14 +965,18 @@ describe(generateXMLDesignTokens.name, () => {
         </token>
         <token>
           <name>fontSizeHeadingTitle3</name>
-          <value>16px</value>
+          <value>18px</value>
         </token>
         <token>
           <name>fontSizeHeadingTitle4</name>
-          <value>15px</value>
+          <value>16px</value>
         </token>
         <token>
           <name>fontSizeHeadingTitle5</name>
+          <value>15px</value>
+        </token>
+        <token>
+          <name>fontSizeHeadingTitle6</name>
           <value>13px</value>
         </token>
         <token>
@@ -1492,6 +1496,10 @@ describe(generateXMLDesignTokens.name, () => {
           <value>700</value>
         </token>
         <token>
+          <name>fontWeightHeadingTitle6</name>
+          <value>700</value>
+        </token>
+        <token>
           <name>fontWeightTableHead</name>
           <value>700</value>
         </token>
@@ -1734,6 +1742,10 @@ describe(generateXMLDesignTokens.name, () => {
         <token>
           <name>lineHeightHeadingTitle5</name>
           <value>20px</value>
+        </token>
+        <token>
+          <name>lineHeightHeadingTitle6</name>
+          <value>16px</value>
         </token>
         <token>
           <name>textDecorationTextLinkPrimary</name>

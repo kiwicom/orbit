@@ -81,6 +81,7 @@
 @value border-radius-badge: 12px;
 @value color-text-button-warning-bordered: rgb(223, 123, 0);
 @value background-button-bundle-medium-hover: "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)";
+@value line-height-heading-title6: 16px;
 @value box-shadow-overlay: 0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32);
 @value color-text-tag-selected: rgb(186, 199, 213);
 @value border-color-button-success-bordered: rgb(40, 161, 56);
@@ -219,7 +220,7 @@
 @value width-stopover-arrow: 36px;
 @value palette-orange-light: rgb(254, 242, 230);
 @value palette-green-normal-hover: rgb(35, 139, 49);
-@value font-size-heading-title3: 16px;
+@value font-size-heading-title3: 18px;
 @value background-alert-critical: rgb(250, 234, 234);
 @value color-text-button-primary-subtle: rgb(0, 122, 105);
 @value width-modal-normal: 740px;
@@ -236,7 +237,7 @@
 @value border-radius-circle: 50%;
 @value color-text-button-critical-subtle: rgb(151, 12, 12);
 @value palette-white: rgb(255, 255, 255);
-@value font-size-heading-title4: 15px;
+@value font-size-heading-title4: 16px;
 @value color-placeholder-input-error: rgb(210, 28, 28);
 @value color-icon-input: rgb(186, 199, 213);
 @value background-button-info: rgb(1, 114, 203);
@@ -255,7 +256,7 @@
 @value border-color-button-google-bordered-hover: rgb(24, 27, 32);
 @value background-button-primary-subtle: rgb(225, 244, 243);
 @value color-text-button-primary-subtle-hover: rgb(0, 112, 96);
-@value font-size-heading-title5: 13px;
+@value font-size-heading-title5: 15px;
 @value background-button-white-active: rgb(229, 234, 239);
 @value color-text-critical: rgb(210, 28, 28);
 @value palette-orange-light-hover: rgb(252, 236, 218);
@@ -269,6 +270,7 @@
 @value padding-button-small-with-icons: 0 8px;
 @value color-text-badge-success: rgb(40, 161, 56);
 @value color-text-button-info: rgb(255, 255, 255);
+@value font-size-heading-title6: 13px;
 @value padding-button-normal-with-left-icon: 0 16px 0 12px;
 @value margin-top-form-feedback: 2px;
 @value palette-orange-normal: rgb(223, 123, 0);
@@ -419,6 +421,7 @@
 @value background-button-google: rgb(245, 247, 249);
 @value border-color-input-active: rgb(50, 66, 86);
 @value opacity-button-disabled: "0.3";
+@value font-weight-heading-title6: "700";
 @value background-button-success-hover: rgb(35, 139, 49);
 @value border-color-table-cell: rgb(186, 199, 213);
 @value font-size-form-feedback: 13px;

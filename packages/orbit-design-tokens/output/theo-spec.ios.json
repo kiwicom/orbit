@@ -575,6 +575,13 @@
       "name": "backgroundButtonBundleMediumHover"
     },
     {
+      "value": "16px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "name": "lineHeightHeadingTitle6"
+    },
+    {
       "value": "0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)",
       "type": "size",
       "category": "",
@@ -1541,7 +1548,7 @@
       "name": "paletteGreenNormalHover"
     },
     {
-      "value": "16px",
+      "value": "18px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1660,7 +1667,7 @@
       "name": "paletteWhite"
     },
     {
-      "value": "15px",
+      "value": "16px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1793,7 +1800,7 @@
       "name": "colorTextButtonPrimarySubtleHover"
     },
     {
-      "value": "13px",
+      "value": "15px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -1889,6 +1896,13 @@
       "category": "",
       "comment": "",
       "name": "colorTextButtonInfo"
+    },
+    {
+      "value": "13px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "name": "fontSizeHeadingTitle6"
     },
     {
       "value": "0 16px 0 12px",
@@ -2939,6 +2953,13 @@
       "category": "",
       "comment": "",
       "name": "opacityButtonDisabled"
+    },
+    {
+      "value": "700",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "name": "fontWeightHeadingTitle6"
     },
     {
       "value": "rgb(35, 139, 49)",

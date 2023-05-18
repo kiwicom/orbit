@@ -164,6 +164,8 @@ module.exports = {
   /*  */
   backgroundButtonBundleMediumHover: "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)",
   /*  */
+  lineHeightHeadingTitle6: "16px",
+  /*  */
   boxShadowOverlay: "0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)",
   /*  */
   colorTextTagSelected: "rgb(186, 199, 213)",
@@ -440,7 +442,7 @@ module.exports = {
   /*  */
   paletteGreenNormalHover: "rgb(35, 139, 49)",
   /*  */
-  fontSizeHeadingTitle3: "16px",
+  fontSizeHeadingTitle3: "18px",
   /*  */
   backgroundAlertCritical: "rgb(250, 234, 234)",
   /*  */
@@ -474,7 +476,7 @@ module.exports = {
   /*  */
   paletteWhite: "rgb(255, 255, 255)",
   /*  */
-  fontSizeHeadingTitle4: "15px",
+  fontSizeHeadingTitle4: "16px",
   /*  */
   colorPlaceholderInputError: "rgb(210, 28, 28)",
   /*  */
@@ -512,7 +514,7 @@ module.exports = {
   /*  */
   colorTextButtonPrimarySubtleHover: "rgb(0, 112, 96)",
   /*  */
-  fontSizeHeadingTitle5: "13px",
+  fontSizeHeadingTitle5: "15px",
   /*  */
   backgroundButtonWhiteActive: "rgb(229, 234, 239)",
   /*  */
@@ -539,6 +541,8 @@ module.exports = {
   colorTextBadgeSuccess: "rgb(40, 161, 56)",
   /*  */
   colorTextButtonInfo: "rgb(255, 255, 255)",
+  /*  */
+  fontSizeHeadingTitle6: "13px",
   /*  */
   paddingButtonNormalWithLeftIcon: "0 16px 0 12px",
   /*  */
@@ -839,6 +843,8 @@ module.exports = {
   borderColorInputActive: "rgb(50, 66, 86)",
   /*  */
   opacityButtonDisabled: "0.3",
+  /*  */
+  fontWeightHeadingTitle6: "700",
   /*  */
   backgroundButtonSuccessHover: "rgb(35, 139, 49)",
   /*  */

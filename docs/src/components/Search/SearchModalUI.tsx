@@ -214,25 +214,28 @@ export default function SearchModalUI({
                         largeDesktop={{ columns: "repeat(3, 1fr)" }}
                         gap="1rem"
                       >
-                        {data.map(item => {
-                          const itemName = getItemName({ item, short: true });
-                          return (
-                            <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
-                              <div>
-                                <Tile
-                                  title={itemName}
-                                  linkContent={<ChevronForward size="medium" />}
-                                  href={item.path}
-                                  onClick={() => handleComponentTileClick(item)}
-                                  icon={ICON_MAP.Components}
-                                  inline
-                                >
-                                  {item.description && <div>{item.description}</div>}
-                                </Tile>
-                              </div>
-                            </StyledMenuItem>
-                          );
-                        })}
+                        {data
+                          // filter doubled results (left only the Tiles with Guidelines tab)
+                          .filter(({ breadcrumbs }) => breadcrumbs && breadcrumbs.length === 3)
+                          .map(item => {
+                            const itemName = getItemName({ item, short: true });
+                            return (
+                              <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
+                                <div>
+                                  <Tile
+                                    title={itemName}
+                                    linkContent={<ChevronForward size="medium" />}
+                                    href={item.path}
+                                    onClick={() => handleComponentTileClick(item)}
+                                    icon={ICON_MAP.Components}
+                                    inline
+                                  >
+                                    {item.description && <div>{item.description}</div>}
+                                  </Tile>
+                                </div>
+                              </StyledMenuItem>
+                            );
+                          })}
                       </Grid>
                     </StyledMenu>
                   )}

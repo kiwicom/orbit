@@ -11,7 +11,16 @@ import type { ThemeProps } from "../defaultTheme.js.flow";
 
 export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
-type Type = "display" | "displaySubtitle" | "title1" | "title2" | "title3" | "title4" | "title5";
+type Type =
+  | "display"
+  | "displaySubtitle"
+  | "title1"
+  | "title2"
+  | "title3"
+  | "title4"
+  | "title5"
+  | "title6";
+
 type Align = "start" | "center" | "end" | "justify";
 export type MediaQuery = {|
   +type?: Type,

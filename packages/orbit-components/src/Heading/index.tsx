@@ -22,6 +22,7 @@ export const getHeadingToken =
         [TYPE_OPTIONS.TITLE3]: theme.orbit.fontWeightHeadingTitle3,
         [TYPE_OPTIONS.TITLE4]: theme.orbit.fontWeightHeadingTitle4,
         [TYPE_OPTIONS.TITLE5]: theme.orbit.fontWeightHeadingTitle5,
+        [TYPE_OPTIONS.TITLE6]: theme.orbit.fontWeightHeadingTitle6,
       },
       [TOKENS.sizeHeading]: {
         [TYPE_OPTIONS.DISPLAY]: theme.orbit.fontSizeHeadingDisplay,
@@ -31,6 +32,7 @@ export const getHeadingToken =
         [TYPE_OPTIONS.TITLE3]: theme.orbit.fontSizeHeadingTitle3,
         [TYPE_OPTIONS.TITLE4]: theme.orbit.fontSizeHeadingTitle4,
         [TYPE_OPTIONS.TITLE5]: theme.orbit.fontSizeHeadingTitle5,
+        [TYPE_OPTIONS.TITLE6]: theme.orbit.fontSizeHeadingTitle6,
       },
       [TOKENS.lineHeight]: {
         [TYPE_OPTIONS.DISPLAY]: theme.orbit.lineHeightHeadingDisplay,
@@ -40,6 +42,7 @@ export const getHeadingToken =
         [TYPE_OPTIONS.TITLE3]: theme.orbit.lineHeightHeadingTitle3,
         [TYPE_OPTIONS.TITLE4]: theme.orbit.lineHeightHeadingTitle4,
         [TYPE_OPTIONS.TITLE5]: theme.orbit.lineHeightHeadingTitle5,
+        [TYPE_OPTIONS.TITLE6]: theme.orbit.lineHeightHeadingTitle6,
       },
     };
 

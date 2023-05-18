@@ -14,5 +14,6 @@ export default {
     { name: "Title3", code: `() => <Heading type="title3">Title3 title</Heading>` },
     { name: "Title4", code: `() => <Heading type="title4">Title4 title</Heading>` },
     { name: "Title5", code: `() => <Heading type="title5">Title5 title</Heading>` },
+    { name: "Title6", code: `() => <Heading type="title6">Title6 title</Heading>` },
   ],
 };

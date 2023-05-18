@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.0.0...@kiwicom/orbit-components@7.1.0) (2023-05-18)
+
+#### Bug Fixes
+
+-   **Hide:** remove on prop from rendered element ([#3845](https://github.com/kiwicom/orbit/issues/3845)) ([f13031c](https://github.com/kiwicom/orbit/commit/f13031c67c28177c8475737d036ceeca792ba7be))
+
+#### Features
+
+-   **ItinerarySeparator:** add type and color props ([d73b182](https://github.com/kiwicom/orbit/commit/d73b182432714231510d25040074496cbf2c9b7c))
+-   **Popover:** add renderTimeout prop ([#3841](https://github.com/kiwicom/orbit/issues/3841)) ([7e242a8](https://github.com/kiwicom/orbit/commit/7e242a8ad91fba37b16b6ea7a73ec9c16f299615))
+-   **Select:** add inlineLabel prop ([8ad7a1d](https://github.com/kiwicom/orbit/commit/8ad7a1deffdd3ef61ba965d2af4b2dbf4d615f15))
+-   **Separator:** add type and color props ([b6497a0](https://github.com/kiwicom/orbit/commit/b6497a038d80306985439c0fb96f0bdc2272e8e3))
+-   **Tab:** add min-width to avoid text wrap ([b75ce17](https://github.com/kiwicom/orbit/commit/b75ce177c037f574e57fe4f88168e70157498f18))
+
 ## [7.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@6.4.0...@kiwicom/orbit-components@7.0.0) (2023-04-27)
 
 #### Bug Fixes

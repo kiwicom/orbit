@@ -1,4 +1,6 @@
 export enum ALIGN_OPTIONS {
+  START = "start",
+  END = "end",
   LEFT = "left",
   CENTER = "center",
   RIGHT = "right",

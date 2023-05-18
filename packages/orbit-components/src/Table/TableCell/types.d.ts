@@ -2,7 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 import type { SharedProps } from "../types";
 
-export type Align = "left" | "center" | "right";
+export type Align = "start" | "end" | "left" | "center" | "right";
 export type As = "th" | "td";
 export type Scope = "col" | "row" | "colgroup" | "rowgroup";
 export type WhiteSpace = "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";

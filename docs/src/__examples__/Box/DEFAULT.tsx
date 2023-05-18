@@ -93,7 +93,7 @@ export default {
         {
           name: "textAlign",
           type: "select",
-          options: ["left", "center", "right"],
+          options: ["start", "end", "left", "center", "right"],
           defaultValue: "center",
         },
         {

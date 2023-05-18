@@ -110,7 +110,9 @@ All this properties - objects have the some own properties and none is required.
 ### textAlign
 
 | textAlign  |
-| :--------- |
+|:-----------|
+| `"start"`  |
+| `"end"`    |
 | `"left"`   |
 | `"center"` |
 | `"right"`  |

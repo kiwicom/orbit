@@ -52,6 +52,8 @@ enum JUSTIFY {
 }
 
 enum TEXT_ALIGN {
+  START = "start",
+  END = "end",
   LEFT = "left",
   RIGHT = "right",
   CENTER = "center",

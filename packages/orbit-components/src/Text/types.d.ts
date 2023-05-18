@@ -5,7 +5,7 @@ import type * as React from "react";
 
 import type * as Common from "../common/types";
 
-type Align = "left" | "center" | "right" | "justify";
+type Align = "start" | "end" | "left" | "center" | "right" | "justify";
 type As = "p" | "span" | "div";
 
 export type Type =

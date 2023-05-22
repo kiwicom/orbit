@@ -5,11 +5,12 @@ import { PREVIEW_ID } from "../consts";
 import { BgType } from "..";
 
 interface Props {
-  pageId: string;
+  pageId?: string;
   background?: BgType;
   isFullScreen?: boolean;
-  height?: number;
-  exampleId: string;
+  isPlayground?: boolean;
+  height?: number | string;
+  exampleId?: string;
   origin: string;
 }
 
@@ -48,16 +49,28 @@ export const getBackground =
     return `background: ${theme.orbit.paletteWhite}`;
   };
 
-export const StyledFrame = styled.iframe<Partial<Props>>`
-  ${({ background, isFullScreen }) => css`
+interface StyledProps extends Partial<Props> {
+  $height: number | string;
+}
+
+export const StyledFrame = styled.iframe<Partial<StyledProps>>`
+  ${({ background, isFullScreen, $height }) => css`
     width: 100%;
     min-height: 120px;
-    height: ${isFullScreen && `100%`};
+    height: ${isFullScreen ? `100%` : $height};
     ${background && getBackground(background)};
   `};
 `;
 
-const Frame = ({ background, isFullScreen, exampleId, height, pageId, origin }: Props) => {
+const Frame = ({
+  background,
+  isFullScreen,
+  exampleId,
+  height,
+  pageId,
+  origin,
+  isPlayground,
+}: Props) => {
   const [measuredHeight, setMeasuredHeight] = React.useState<number>(0);
   const [loaded, setLoaded] = React.useState(false);
 
@@ -80,12 +93,12 @@ const Frame = ({ background, isFullScreen, exampleId, height, pageId, origin }: 
       isFullScreen={isFullScreen}
       background={background}
       title={exampleId}
-      height={height || measuredHeight || DEFAULT_HEIGHT}
+      $height={height || measuredHeight || DEFAULT_HEIGHT}
       loading="lazy"
       allow="allow-popups allow-modals allow-same-origin allow-scripts"
       onLoad={() => setLoaded(true)}
       ref={measuredRef}
-      src={`${origin}/examples/${pageId}/`}
+      src={isPlayground ? `${origin}/playground-full` : `${origin}/examples/${pageId}/`}
     />
   );
 };

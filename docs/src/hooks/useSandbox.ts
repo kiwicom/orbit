@@ -43,7 +43,7 @@ const useSandbox = (exampleId: string, initialCode: string) => {
     }
   };
 
-  return { code, origin, updateLocalStorage, restoreLocalStorage };
+  return { code, setCode, origin, updateLocalStorage, restoreLocalStorage };
 };
 
 export default useSandbox;

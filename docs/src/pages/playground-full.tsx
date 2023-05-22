@@ -1,0 +1,51 @@
+import * as React from "react";
+import { LiveProvider, LiveError, LivePreview } from "react-live";
+import { createGlobalStyle, css } from "styled-components";
+import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
+import loadable from "@loadable/component";
+import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple";
+
+import useSandbox from "../hooks/useSandbox";
+import { PREVIEW_ID } from "../components/ReactExample/consts";
+
+const Orbit = loadable.lib(() => import("@kiwicom/orbit-components"));
+
+const GlobalStyle = createGlobalStyle`
+  body,
+  html,
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+`;
+
+const PlaygroundIframe = () => {
+  const { code } = useSandbox("playground", "() => <Button>Hello world!</Button>");
+
+  return (
+    <OrbitProvider theme={defaultTheme}>
+      <Orbit>
+        {orbit => {
+          const { Icons, ...components } = orbit;
+          return (
+            <LiveProvider code={code} theme={shadesOfPurple} scope={{ ...Icons, ...components }}>
+              <LiveError />
+              <GlobalStyle />
+              <section
+                id={PREVIEW_ID}
+                css={css`
+                  padding: 10px;
+                `}
+              >
+                <LivePreview />
+              </section>
+            </LiveProvider>
+          );
+        }}
+      </Orbit>
+    </OrbitProvider>
+  );
+};
+
+export default PlaygroundIframe;

@@ -48,7 +48,7 @@ interface Props {
   dataA11ySection?: string;
   header?: React.ReactNode;
   expandable?: boolean;
-  labelClose?: React.ReactNode;
+  labelClose?: string;
   expanded?: boolean;
   handleKeyDown: React.KeyboardEventHandler<HTMLDivElement>;
   onClick?: React.MouseEventHandler<HTMLDivElement>;

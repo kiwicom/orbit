@@ -17,7 +17,7 @@ export type Props = {|
   +margin?: string | number | ObjectProperty,
   +description?: React.Node,
   +icon?: React.Node,
-  +labelClose?: React.Node,
+  +labelClose?: string,
   +actions?: React.Node,
   +onClose?: () => void | Promise<any>,
   +loading?: boolean,

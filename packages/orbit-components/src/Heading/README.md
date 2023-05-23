@@ -1,12 +1,12 @@
 # Heading
 
-To implement Heading component into your project you'll need to add the import:
+To implement the Heading component into your project you'll need to add the import:
 
 ```jsx
 import Heading from "@kiwicom/orbit-components/lib/Heading";
 ```
 
-After adding import into your project you can use it simply like:
+After adding import to your project you can use it simply like:
 
 ```jsx
 <Heading>Hello World!</Heading>
@@ -14,7 +14,7 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-Table below contains all types of the props available in Heading component.
+The table below contains all types of props available in the Heading component.
 
 | Name            | Type                       | Default    | Description                                                                                                                                                    |
 | :-------------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -44,6 +44,7 @@ Table below contains all types of the props available in Heading component.
 | `"h5"`  | `"title3"`          |           |
 | `"h6"`  | `"title4"`          |           |
 | `"div"` | `"title5"`          |           |
+|         | `"title6"`          |           |
 
 ### Media Queries
 

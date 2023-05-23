@@ -2125,7 +2125,7 @@
       }
     },
     "fontSizeHeadingTitle3": {
-      "value": "16px",
+      "value": "18px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2134,7 +2134,7 @@
       }
     },
     "fontSizeHeadingTitle4": {
-      "value": "15px",
+      "value": "16px",
       "type": "size",
       "category": "",
       "comment": "",
@@ -2143,6 +2143,15 @@
       }
     },
     "fontSizeHeadingTitle5": {
+      "value": "15px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "fontSizeHeadingTitle6": {
       "value": "13px",
       "type": "size",
       "category": "",
@@ -3312,6 +3321,15 @@
         "categoryDescription": ""
       }
     },
+    "fontWeightHeadingTitle6": {
+      "value": "700",
+      "type": "string",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "fontWeightTableHead": {
       "value": "700",
       "type": "string",
@@ -3854,6 +3872,15 @@
     },
     "lineHeightHeadingTitle5": {
       "value": "20px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
+    "lineHeightHeadingTitle6": {
+      "value": "16px",
       "type": "size",
       "category": "",
       "comment": "",

@@ -16,6 +16,7 @@ export enum TYPE_OPTIONS {
   TITLE3 = "title3",
   TITLE4 = "title4",
   TITLE5 = "title5",
+  TITLE6 = "title6",
 }
 
 export enum TOKENS {

@@ -12,7 +12,8 @@ export type Type =
   | "title2"
   | "title3"
   | "title4"
-  | "title5";
+  | "title5"
+  | "title6";
 
 export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 

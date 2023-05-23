@@ -245,6 +245,7 @@ export type Tokens = {
   fontSizeHeadingTitle3: string;
   fontSizeHeadingTitle4: string;
   fontSizeHeadingTitle5: string;
+  fontSizeHeadingTitle6: string;
   fontSizeTextNormal: string;
   fontSizeTextLarge: string;
   fontSizeTextSmall: string;
@@ -374,6 +375,7 @@ export type Tokens = {
   fontWeightHeadingTitle3: string;
   fontWeightHeadingTitle4: string;
   fontWeightHeadingTitle5: string;
+  fontWeightHeadingTitle6: string;
   fontWeightTableHead: string;
   paddingAlert: string;
   paddingAlertWithIcon: string;
@@ -435,6 +437,7 @@ export type Tokens = {
   lineHeightHeadingTitle3: string;
   lineHeightHeadingTitle4: string;
   lineHeightHeadingTitle5: string;
+  lineHeightHeadingTitle6: string;
   textDecorationTextLinkPrimary: string;
   textDecorationTextLinkPrimaryHover: string;
   textDecorationTextLinkSecondary: string;

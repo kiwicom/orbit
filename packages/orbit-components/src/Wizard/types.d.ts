@@ -7,7 +7,7 @@ export interface Props extends Common.Globals {
   readonly direction?: "row" | "column";
   readonly completedSteps: number;
   readonly activeStep: number;
-  readonly labelClose?: React.ReactNode;
+  readonly labelClose?: string;
   readonly labelProgress?: React.ReactNode;
   readonly lockScrolling?: boolean;
   readonly onChangeStep?: (stepIndex: number) => void | Promise<any>;

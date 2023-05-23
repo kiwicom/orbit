@@ -11,7 +11,7 @@ export type Props = {|
   +lockScrolling?: boolean,
   +completedSteps: number,
   +activeStep: number,
-  +labelClose?: React.Node,
+  +labelClose?: string,
   +labelProgress?: React.Node,
   +onChangeStep?: (stepIndex: number) => void | Promise<any>,
   +children: React.ChildrenArray<React.Element<WizardStepComponent>>,

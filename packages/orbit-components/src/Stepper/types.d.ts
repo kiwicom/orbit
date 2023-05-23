@@ -5,7 +5,6 @@ import type * as React from "react";
 
 import type * as Common from "../common/types";
 
-type Title = string | ((param?: any) => string);
 // InputEvent
 export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
@@ -17,8 +16,8 @@ export interface SharedProps extends Common.Globals {
   readonly maxValue?: number;
   readonly minValue?: number;
   // Deviation from other stepper properties
-  readonly titleIncrement?: Title;
-  readonly titleDecrement?: Title;
+  readonly titleIncrement?: string;
+  readonly titleDecrement?: string;
   // Deviation from common event format onChange
   readonly onFocus?: Event;
   readonly onBlur?: Event;

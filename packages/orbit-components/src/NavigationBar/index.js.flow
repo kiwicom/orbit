@@ -8,7 +8,7 @@ export type Props = {|
   +onShow?: () => void | Promise<any>,
   +onHide?: () => void | Promise<any>,
   +hideOnScroll?: boolean,
-  +openTitle?: React.Node,
+  +openTitle?: string,
   +children: React.Node,
   ...Globals,
 |};

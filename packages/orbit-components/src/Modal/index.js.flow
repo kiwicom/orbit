@@ -40,7 +40,7 @@ export type Props = {|
   +hasCloseButton?: boolean,
   +mobileHeader?: boolean,
   +disableAnimation?: boolean,
-  +labelClose?: React.Node,
+  +labelClose?: string,
   ...Globals,
 |};
 

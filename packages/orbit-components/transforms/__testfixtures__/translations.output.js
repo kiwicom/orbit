@@ -14,7 +14,9 @@ import Breadcrumbs, { BreadcrumbsItem } from "@kiwicom/orbit-components/lib/Brea
 /* prettier-ignore */
 
 const Component = () => {
-  const { translate } = useIntl();
+  const {
+    translate: translate
+  } = useIntl();
 
   return (
     <div>

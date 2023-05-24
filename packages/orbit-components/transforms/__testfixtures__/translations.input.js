@@ -14,8 +14,6 @@ import Breadcrumbs, { BreadcrumbsItem } from "@kiwicom/orbit-components/lib/Brea
 /* prettier-ignore */
 
 const Component = () => {
-  const { translate } = useIntl();
-
   return (
     <div>
       <Popover content="kek">

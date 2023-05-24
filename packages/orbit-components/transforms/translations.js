@@ -54,8 +54,32 @@ function translations(fileInfo, api, { withImport = true }) {
     }
   }
 
-  COMPONENTS.forEach(component => {
-    findComponent(component).forEach(path => {
+  COMPONENTS.forEach((component, idx) => {
+    const componentNodes = findComponent(component);
+
+    if (componentNodes.size() > 0) {
+      const componentNode = componentNodes.at(0).get();
+      const componentParent = j(componentNode).closestScope();
+
+      if (componentParent) {
+        const returnStatement = componentParent.find(j.ReturnStatement);
+
+        if (returnStatement.size() > 0 && idx === 0) {
+          returnStatement.insertBefore(
+            j.variableDeclaration("const", [
+              j.variableDeclarator(
+                j.objectPattern([
+                  j.objectProperty(j.identifier("translate"), j.identifier("translate")),
+                ]),
+                j.callExpression(j.identifier("useIntl"), []),
+              ),
+            ]),
+          );
+        }
+      }
+    }
+
+    componentNodes.forEach(path => {
       const propName = getPropName(component);
       const translationKey = getTranslationKey(component);
 

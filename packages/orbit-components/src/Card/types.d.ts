@@ -14,7 +14,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly titleAs?: As;
   readonly margin?: React.CSSProperties["margin"] | Common.ObjectProperty;
   readonly description?: React.ReactNode;
-  readonly labelClose?: React.ReactNode;
+  readonly labelClose?: string;
   /**
    * @deprecated icon prop is no longer supported. Icons can still be added manually, if needed.
    */

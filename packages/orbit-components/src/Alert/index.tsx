@@ -251,7 +251,7 @@ const AlertCloseButton = ({
 }: {
   hasChildren: boolean;
   dataTest: string;
-  labelClose?: React.ReactNode;
+  labelClose?: string;
   onClick?: Common.Callback;
   icon: React.ReactNode;
 }) => {

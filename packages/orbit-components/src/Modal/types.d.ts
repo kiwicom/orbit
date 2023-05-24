@@ -23,7 +23,7 @@ export interface Props extends Common.Globals {
   readonly preventOverlayClose?: boolean;
   readonly hasCloseButton?: boolean;
   readonly disableAnimation?: boolean;
-  readonly labelClose?: React.ReactNode;
+  readonly labelClose?: string;
 }
 
 export type Instance = {

@@ -10,7 +10,7 @@ export interface Props {
   onClose?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
   title?: React.ReactNode;
   titleAs?: As;
-  labelClose?: React.ReactNode;
+  labelClose?: string;
   isSection?: boolean;
   dataA11ySection?: string;
   expandable?: boolean;

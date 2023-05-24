@@ -31,7 +31,7 @@ Then use `Wizard` as the container for multiple `WizardStep`s:
 | lockScrolling    | `boolean`                                                 | `true`    | Whether to prevent scrolling of the rest of the page while Modal is open. This is on by default to provide a better user experience. |
 | `direction`      | `row \| column`                                           | `row`     | Allows to use `column` direction on desktop                                                                                          |
 | `dataTest`       | `string`                                                  |           | Optional prop for testing purposes.                                                                                                  |
-| `labelClose`     | `React.Node`                                              | `"Close"` | Property for passing translation string to close Button title                                                                        |
+| `labelClose`     | `string`                                                  | `"Close"` | Property for passing translation string to close Button title                                                                        |
 | `labelProgress`  | `React.Node`                                              |           | Property for passing translation string to progress text                                                                             |
 
 ## WizardStep props

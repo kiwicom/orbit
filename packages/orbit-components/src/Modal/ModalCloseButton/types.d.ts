@@ -6,5 +6,5 @@ import type * as Common from "../../common/types";
 
 export interface Props extends Common.Globals {
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
-  readonly title?: React.ReactNode;
+  readonly title?: string;
 }

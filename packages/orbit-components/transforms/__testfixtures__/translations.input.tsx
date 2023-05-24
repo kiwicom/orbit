@@ -1,4 +1,5 @@
 import React from "react";
+import { useIntl } from "@kiwicom/nitro/lib/services/intl/context";
 import Popover from "@kiwicom/orbit-components/lib/Popover";
 import Modal, { ModalSection } from "@kiwicom/orbit-components/lib/Modal";
 import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";
@@ -13,6 +14,8 @@ import Breadcrumbs, { BreadcrumbsItem } from "@kiwicom/orbit-components/lib/Brea
 /* prettier-ignore */
 
 const Component = () => {
+  const { translate } = useIntl();
+
   return (
     <div>
       <Popover content="kek">

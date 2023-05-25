@@ -11,6 +11,8 @@ export interface Props extends Common.Globals {
   readonly selectable?: boolean;
   readonly selected?: boolean;
   readonly disabled?: boolean;
+  readonly role?: string;
+  readonly tabIndex?: number;
   readonly icon?: React.ReactNode;
   readonly action?: React.ReactNode;
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLDivElement>>;

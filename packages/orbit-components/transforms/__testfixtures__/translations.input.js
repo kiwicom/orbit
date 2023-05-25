@@ -1,4 +1,5 @@
 import React from "react";
+import { useIntl } from "@kiwicom/nitro/lib/services/intl/context";
 import Popover from "@kiwicom/orbit-components/lib/Popover";
 import Modal, { ModalSection } from "@kiwicom/orbit-components/lib/Modal";
 import Card, { CardSection } from "@kiwicom/orbit-components/lib/Card";

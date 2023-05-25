@@ -38,7 +38,7 @@ function translations(fileInfo, api, { withImport = true }) {
 
   if (COMPONENTS.some(c => findComponent(c).size() > 0)) {
     const TranslateImport = root.find(j.ImportDeclaration, {
-      source: { value: "@kiwicom/nitro/lib/Translate" },
+      source: { value: "@kiwicom/nitro/lib/services/intl/context" },
     });
 
     if (TranslateImport.size() === 0 && withImport) {
@@ -47,15 +47,39 @@ function translations(fileInfo, api, { withImport = true }) {
         .get("body", 0)
         .insertAfter(
           j.importDeclaration(
-            [j.importDefaultSpecifier(j.identifier("Translate"))],
-            j.literal("@kiwicom/nitro/lib/components/Translate"),
+            [j.importSpecifier(j.identifier("useIntl"))],
+            j.literal("@kiwicom/nitro/lib/services/intl/context"),
           ),
         );
     }
   }
 
-  COMPONENTS.forEach(component => {
-    findComponent(component).forEach(path => {
+  COMPONENTS.forEach((component, idx) => {
+    const componentNodes = findComponent(component);
+
+    if (componentNodes.size() > 0) {
+      const componentNode = componentNodes.at(0).get();
+      const componentParent = j(componentNode).closestScope();
+
+      if (componentParent) {
+        const returnStatement = componentParent.find(j.ReturnStatement);
+
+        if (returnStatement.size() > 0 && idx === 0) {
+          returnStatement.insertBefore(
+            j.variableDeclaration("const", [
+              j.variableDeclarator(
+                j.objectPattern([
+                  j.objectProperty(j.identifier("translate"), j.identifier("translate")),
+                ]),
+                j.callExpression(j.identifier("useIntl"), []),
+              ),
+            ]),
+          );
+        }
+      }
+    }
+
+    componentNodes.forEach(path => {
       const propName = getPropName(component);
       const translationKey = getTranslationKey(component);
 
@@ -64,13 +88,7 @@ function translations(fileInfo, api, { withImport = true }) {
         j.jsxAttribute(
           j.jsxIdentifier(propName),
           j.jsxExpressionContainer(
-            j.jsxElement(
-              j.jsxOpeningElement(
-                j.jsxIdentifier("Translate"),
-                [j.jsxAttribute(j.jsxIdentifier("tKey"), j.stringLiteral(translationKey))],
-                true,
-              ),
-            ),
+            j.callExpression(j.identifier("translate"), [j.stringLiteral(translationKey)]),
           ),
         ),
       ];
@@ -86,24 +104,13 @@ function translations(fileInfo, api, { withImport = true }) {
       j.jsxAttribute(
         j.jsxIdentifier("labelProgress"),
         j.jsxExpressionContainer(
-          j.jsxElement(
-            j.jsxOpeningElement(
-              j.jsxIdentifier("Translate"),
-              [
-                j.jsxAttribute(j.jsxIdentifier("tKey"), j.stringLiteral("orbit.wizard_progress")),
-                j.jsxAttribute(
-                  j.jsxIdentifier("values"),
-                  j.jsxExpressionContainer(
-                    j.objectExpression([
-                      j.objectProperty(j.identifier("number"), active.value.expression),
-                      j.objectProperty(j.identifier("total"), total.value.expression),
-                    ]),
-                  ),
-                ),
-              ],
-              true,
-            ),
-          ),
+          j.callExpression(j.identifier("translate"), [
+            j.stringLiteral("orbit.wizard_progress"),
+            j.objectExpression([
+              j.objectProperty(j.identifier("number"), active.value.expression),
+              j.objectProperty(j.identifier("total"), total.value.expression),
+            ]),
+          ]),
         ),
       ),
     ];

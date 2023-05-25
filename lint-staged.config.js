@@ -2,7 +2,7 @@
 
 module.exports = {
   "*.{js,flow,ts,tsx}": "eslint --fix --report-unused-disable-directives",
-  "*.{ts,tsx,d.ts}": () => "check:types",
+  "*.{ts,tsx,d.ts}": () => "tsc-files --noEmit",
   "*.{md,json,yaml,yml}": "prettier --write",
   "*.mdx": "eslint --fix --report-unused-disable-directives",
   "**/!(snippets)/*.mdx": "remark -q -u validate-links --no-config",

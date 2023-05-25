@@ -62,6 +62,7 @@ export { default as Inline } from "./Inline";
 export { default as InputField } from "./InputField";
 export { default as InputFile } from "./InputFile";
 export { default as InputGroup } from "./InputGroup";
+export { default as InputSelect } from "./InputSelect";
 export {
   default as Itinerary,
   ItinerarySegment,

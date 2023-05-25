@@ -1,0 +1,54 @@
+// @flow
+// Type definitions for @kiwicom/orbit-components
+// Project: http://github.com/kiwicom/orbit
+
+import * as React from "react";
+
+import * as Common from "../common/common.js.flow";
+
+type Option = {|
+  +group?: string,
+  +title: string,
+  +value: string | number,
+  +description?: string,
+|};
+
+export type Props = {|
+  +name?: string,
+  +label?: Common.Translation,
+  +placeholder?: string,
+  +help?: React.Node,
+  +error?: React.Node,
+  +showAll?: boolean,
+  +showAllLabel?: string,
+  +disabled?: boolean,
+  +maxHeight?: string,
+  +maxWidth?: string,
+  +width?: string,
+  +options: Option[],
+  +defaultValue?: Option["value"],
+  +prevSelected?: Option,
+  +prevSelectedLabel?: string,
+  +required?: boolean,
+  +tabIndex?: string | number,
+  +readOnly: boolean,
+  +id?: string,
+  +insideInputGroup?: boolean,
+  +helpClosable?: boolean,
+  +emptyStateMessage?: string,
+  +labelClose?: string,
+  +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onSelect?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
+  +onMouseUp?: (ev: SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
+  +onMouseDown?: (ev: SyntheticEvent<HTMLInputElement>) => void | Promise<any>,
+  +onKeyDown?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
+  +onKeyUp?: (ev: SyntheticKeyboardEvent<HTMLInputElement>) => void | Promise<any>,
+  +onOptionSelect?: (opt: Option | null) => void,
+  +onClose?: (opt: Option | null) => void,
+  ...Common.Globals,
+  ...Common.DataAttrs,
+|};
+
+declare export default React.AbstractComponent<Props, HTMLInputElement>;

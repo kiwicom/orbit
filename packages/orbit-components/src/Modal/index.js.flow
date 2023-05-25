@@ -35,6 +35,7 @@ export type Props = {|
     | {| current: HTMLElement | null |},
   +onClose?: onClose,
   +fixedFooter?: boolean,
+  +onScroll?: (ev: SyntheticEvent<HTMLDivElement>) => void,
   +isMobileFullPage?: boolean,
   +preventOverlayClose?: boolean,
   +hasCloseButton?: boolean,

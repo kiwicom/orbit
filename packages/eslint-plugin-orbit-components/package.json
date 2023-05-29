@@ -10,6 +10,7 @@
     "url": "https://github.com/kiwicom/orbit.git",
     "directory": "packages/eslint-plugin-orbit-components"
   },
+  "gitHead": "5e7d8f283e39532de0393f7f42cea2f7d33f6ac7",
   "files": [
     "dist",
     "docs",
@@ -36,5 +37,7 @@
   "dependencies": {
     "@babel/types": "=7.12.10"
   },
-  "gitHead": "5e7d8f283e39532de0393f7f42cea2f7d33f6ac7"
+  "devDependencies": {
+    "del": "^7.0.0"
+  }
 }

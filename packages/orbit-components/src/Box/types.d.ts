@@ -148,7 +148,7 @@ export interface Props extends Common.Globals {
   readonly bottom?: string;
   readonly align?: "start" | "end" | "center" | "stretch";
   readonly justify?: "center" | "start" | "end" | "between" | "around";
-  readonly textAlign?: "left" | "right" | "center";
+  readonly textAlign?: "start" | "end" | "left" | "right" | "center";
   readonly elevation?: Elevation;
   readonly color?: ColorTokens;
   readonly background?: ColorTokens;

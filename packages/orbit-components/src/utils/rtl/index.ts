@@ -28,9 +28,14 @@ export const borderRadius: BorderRadius =
     return parts.length === 4 ? [parts[1], parts[0], parts[3], parts[2]].join(" ") : value;
   };
 
+/// @deprecated Use "start" or "end" instead.
 export const textAlign: TextAlign =
   (value: string) =>
   ({ theme }: { theme: Theme }): string => {
+    if (["start", "end"].includes(value)) {
+      return value;
+    }
+
     if (theme.rtl) {
       if (value === "left") {
         return leftToRight("left", "right")({ theme });

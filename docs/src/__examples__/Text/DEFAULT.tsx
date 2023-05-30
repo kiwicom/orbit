@@ -33,7 +33,7 @@ export default {
         {
           name: "align",
           type: "select",
-          options: ["left", "center", "right", "justify"],
+          options: ["start", "end", "left", "center", "right", "justify"],
           defaultValue: "left",
         },
         {

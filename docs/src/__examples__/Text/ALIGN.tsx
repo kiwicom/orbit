@@ -4,7 +4,9 @@ import { Text } from "@kiwicom/orbit-components";
 export default {
   Example: () => <Text>Text aligned to the left</Text>,
   exampleVariants: [
-    { name: "Left", code: "() => <Text>Text aligned to the left</Text>" },
+    { name: "Start", code: `() => <Text align="start">Text aligned to "start"</Text>` },
+    { name: "End", code: `() => <Text align="end">Text aligned to "end"</Text>` },
+    { name: "Left", code: `() => <Text align="left">Text aligned to the left</Text>` },
     { name: "Center", code: `() => <Text align="center">Centered text</Text>` },
     { name: "Right", code: `() => <Text align="right">Text aligned to the right</Text>` },
     {

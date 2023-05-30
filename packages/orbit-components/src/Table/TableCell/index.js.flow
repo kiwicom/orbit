@@ -4,7 +4,7 @@ import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
 
-type Align = "left" | "center" | "right";
+type Align = "start" | "end" | "left" | "center" | "right";
 type As = "th" | "td";
 type Scope = "col" | "row" | "colgroup" | "rowgroup";
 type WhiteSpace = "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";

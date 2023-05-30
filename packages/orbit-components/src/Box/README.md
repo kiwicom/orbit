@@ -111,6 +111,8 @@ All this properties - objects have the some own properties and none is required.
 
 | textAlign  |
 | :--------- |
+| `"start"`  |
+| `"end"`    |
 | `"left"`   |
 | `"center"` |
 | `"right"`  |

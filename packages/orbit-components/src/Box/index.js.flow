@@ -136,7 +136,7 @@ export type Props = {|
   +bottom?: string,
   +align?: "start" | "end" | "center" | "stretch",
   +justify?: "center" | "start" | "end" | "between" | "around",
-  +textAlign?: "left" | "right" | "center",
+  +textAlign?: "start" | "end" | "left" | "right" | "center",
   +elevation?: Elevation,
   +color?: ColorTokens,
   +background?: ColorTokens,

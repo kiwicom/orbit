@@ -98,7 +98,7 @@ const Frame = ({
       allow="allow-popups allow-modals allow-same-origin allow-scripts"
       onLoad={() => setLoaded(true)}
       ref={measuredRef}
-      src={isPlayground ? `${origin}/playground-full` : `${origin}/examples/${pageId}/`}
+      src={isPlayground ? `/playground-full` : `${origin}/examples/${pageId}/`}
     />
   );
 };

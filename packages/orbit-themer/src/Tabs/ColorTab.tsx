@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
 import React from "react";
-import equals from "ramda/src/equals";
-import path from "ramda/src/path";
 import ChevronDown from "@kiwicom/orbit-components/lib/icons/ChevronDown";
 import ChevronForward from "@kiwicom/orbit-components/lib/icons/ChevronForward";
 import InformationCircle from "@kiwicom/orbit-components/lib/icons/InformationCircle";
@@ -9,6 +7,7 @@ import { defaultTheme, Badge, Heading } from "@kiwicom/orbit-components";
 
 import { DEFAULT_COLORS } from "../consts";
 import ColorContext from "../ColorContext";
+import { isDeepEqual, get } from "../helpers";
 
 const StyledColorTab = styled.div`
   font-size: 14px;
@@ -65,11 +64,11 @@ const StyledAdjusted = styled.div`
   transform: translateY(-50%);
 `;
 
-const hasAdjustedSomeColor = (colorPath, currentColors) => {
-  const currentColorObject = path(colorPath.split("."), currentColors);
-  const defaultColorObject = path(colorPath.split("."), DEFAULT_COLORS);
+const hasAdjustedSomeColor = (colorPath: string, currentColors: Record<string, any>) => {
+  const currentColorObject = get(colorPath, currentColors);
+  const defaultColorObject = get(colorPath, DEFAULT_COLORS);
 
-  return !equals(currentColorObject, defaultColorObject);
+  return !isDeepEqual(currentColorObject, defaultColorObject);
 };
 
 const ColorTab = ({ title, children, colorPath }) => {

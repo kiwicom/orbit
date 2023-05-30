@@ -1,10 +1,10 @@
 import React from "react";
 import { SketchPicker } from "react-color";
 import styled from "styled-components";
-import path from "ramda/src/path";
 import AlertCircle from "@kiwicom/orbit-components/lib/icons/AlertCircle";
 import { Tooltip } from "@kiwicom/orbit-components/";
 
+import { get } from "../helpers";
 import ColorContext from "../ColorContext";
 import { DEFAULT_COLORS } from "../consts";
 
@@ -55,12 +55,12 @@ const StyledAdjustedColor = styled.div`
 
 const Color = ({ name, extra, objectKey }: { name: string; extra?: string; objectKey: string }) => {
   const [openedColorPicker, setOpenedColorPicker] = React.useState(false);
-  const defaultColor = path(objectKey.split("."), DEFAULT_COLORS);
+  const defaultColor = get(objectKey, DEFAULT_COLORS);
 
   return (
     <ColorContext.Consumer>
       {({ setColor, colors }) => {
-        const color = path(objectKey.split("."), colors);
+        const color = get(objectKey, colors);
         const isAdjustedColor = color !== defaultColor;
 
         return (

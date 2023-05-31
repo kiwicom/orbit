@@ -3,6 +3,8 @@ import flowgen, { beautify } from "flowgen";
 import filedirname from "filedirname";
 import dedent from "dedent";
 
+import { DECLARATIONS_IGNORE_PATTERN } from "./consts.mjs";
+
 const [, __dirname] = filedirname();
 
 export default async function generateTypeDeclarations() {
@@ -19,7 +21,11 @@ export default async function generateTypeDeclarations() {
   await $`tsc --p tsconfig-build.json --rootDir src --outDir es --declaration --emitDeclarationOnly --moduleResolution node`;
 
   console.log(chalk.greenBright.bold("Generating flow declarations..."));
-  const tsDeclarations = await globby("{lib,es}/*.d.ts");
+
+  const tsDeclarations = await globby("{lib,es}/*.d.ts", {
+    ignore: DECLARATIONS_IGNORE_PATTERN,
+  });
+
   await Promise.all(
     tsDeclarations.map(async declaration => {
       const flowDeclPath = declaration.replace(".d.ts", ".js.flow");

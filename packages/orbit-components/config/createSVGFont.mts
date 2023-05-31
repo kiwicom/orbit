@@ -7,6 +7,13 @@ import filedirname from "filedirname";
 const [, __dirname] = filedirname();
 const ORBIT_ICONS_DIR = path.join(__dirname, "../orbit-icons-font");
 
+interface IconType extends fs.ReadStream {
+  metadata: {
+    unicode: string[];
+    name: string;
+  };
+}
+
 const createSVG = () =>
   new Promise((resolve, reject) => {
     if (!fs.existsSync(ORBIT_ICONS_DIR)) {
@@ -35,9 +42,11 @@ const createSVG = () =>
     Object.keys(iconList).forEach(iconName => {
       const iconPath =
         iconList[iconName].iconFont === "false" ? "../src/icons/svg/mobile/" : "../src/icons/svg/";
-      const icon = fs.createReadStream(path.join(__dirname, iconPath, `${iconName}.svg`));
 
-      // @ts-expect-error TODO
+      const icon = fs.createReadStream(
+        path.join(__dirname, iconPath, `${iconName}.svg`),
+      ) as IconType;
+
       icon.metadata = {
         unicode: [String.fromCharCode(Number(`0x${iconList[iconName].character}`))],
         name: iconName,

@@ -1,8 +1,7 @@
 import { fs, $ } from "zx";
 import dedent from "dedent";
 
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import { logStep } from "./helpers.mts";
+import { logStep } from "./helpers.mjs";
 
 export default async function buildSize() {
   await fs.outputFile(

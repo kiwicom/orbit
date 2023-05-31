@@ -7,12 +7,9 @@ import jsxPlugin from "@svgr/plugin-jsx";
 import prettierPlugin from "@svgr/plugin-prettier";
 import filedirname from "filedirname";
 
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import { getProperty, getHTMLComments } from "../checkIcons.mts";
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import { NAMES as ILLUSTRATION_NAMES } from "../../src/Illustration/consts.mts";
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustration/consts.mts";
+import { Attr, getProperty, getHTMLComments } from "../checkIcons.mjs";
+import { NAMES as ILLUSTRATION_NAMES } from "../../src/Illustration/consts.mjs";
+import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustration/consts.mjs";
 
 const randomId = () => Math.random().toString(36).substring(2, 9);
 

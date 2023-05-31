@@ -10,5 +10,11 @@
     "emitDeclarationOnly": true
   },
   "include": ["src/**/*", "typings/**/*.d.ts"],
-  "exclude": ["**/*.test.*", "**/__tests__/**/*", "**/__typetests__/**/*", "**/*.stories.*"]
+  "exclude": [
+    "**/*.test.*",
+    "**/__tests__/**/*",
+    "**/__typetests__/**/*",
+    "**/*.stories.*",
+    "**/RenderInRtl.tsx"
+  ]
 }

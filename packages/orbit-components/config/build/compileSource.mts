@@ -2,8 +2,7 @@ import { path, fs, globby, chalk, $ } from "zx";
 import babel from "@babel/core";
 import ora from "ora";
 
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import { COMPILE_IGNORE_PATTERNS } from "./consts.mts";
+import { COMPILE_IGNORE_PATTERNS } from "./consts.mjs";
 
 type ModuleItem = ["cjs" | "esm", string, babel.TransformOptions | undefined | null];
 

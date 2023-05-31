@@ -1,15 +1,10 @@
 import { $, argv, chalk } from "zx";
 
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import compileSource from "./compileSource.mts";
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import { logStep } from "./helpers.mts";
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import { OUTPUT_PATTERNS } from "./consts.mts";
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import generateTypeDeclarations from "./generateDeclarations.mts";
-// @ts-expect-error FIXME: currently ts has some issue with importing mts ext
-import buildSize from "./buildSize.mts";
+import compileSource from "./compileSource.mjs";
+import { logStep } from "./helpers.mjs";
+import { OUTPUT_PATTERNS } from "./consts.mjs";
+import generateTypeDeclarations from "./generateDeclarations.mjs";
+import buildSize from "./buildSize.mjs";
 
 (async () => {
   logStep("Cleanup");

@@ -10,9 +10,12 @@ export const OUTPUT_PATTERNS = [
 ];
 
 export const COMPILE_IGNORE_PATTERNS = [
+  "**/RenderInRtl.tsx",
   "**/*.d.ts",
   "**/*.stories.*",
   "**/*.test.*",
   "**/__tests__/**/*",
   "**/__typetests__/**/*",
 ];
+
+export const DECLARATIONS_IGNORE_PATTERN = ["**/RenderInRtl.{tsx,d.ts}"];

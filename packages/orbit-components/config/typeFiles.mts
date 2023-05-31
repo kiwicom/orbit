@@ -1,14 +1,10 @@
 import { path, fs } from "zx";
 import filedirname from "filedirname";
 
-// @ts-expect-error TODO
-import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts.mts";
-// @ts-expect-error TODO
-import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../src/AirportIllustration/consts.mts";
-// @ts-expect-error TODO
-import { NAME_OPTIONS as SERVICE_LOGOS_NAMES } from "../src/ServiceLogo/consts.mts";
-// @ts-expect-error TODO
-import { NAME_OPTIONS as FEATURE_ICONS_NAMES } from "../src/FeatureIcon/consts.mts";
+import { NAMES as ILLUSTRATION_NAMES } from "../src/Illustration/consts.mjs";
+import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../src/AirportIllustration/consts.mjs";
+import { NAME_OPTIONS as SERVICE_LOGOS_NAMES } from "../src/ServiceLogo/consts.mjs";
+import { NAME_OPTIONS as FEATURE_ICONS_NAMES } from "../src/FeatureIcon/consts.mjs";
 
 const [, __dirname] = filedirname();
 

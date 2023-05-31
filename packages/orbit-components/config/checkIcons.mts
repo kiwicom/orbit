@@ -37,7 +37,11 @@ export function getHTMLComments(content: string) {
   return null;
 }
 
-export function getProperty(attributes: Attr[], name: string, defaultValue: null | string = null) {
+export function getProperty(
+  attributes: NamedNodeMap,
+  name: string,
+  defaultValue: null | string = null,
+) {
   for (let i = attributes.length - 1; i >= 0; i -= 1) {
     if (attributes[i].name === name) {
       return attributes[i].value;

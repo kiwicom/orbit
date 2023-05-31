@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.4](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.6.3...eslint-plugin-orbit-components@0.6.4) (2023-05-31)
+
+
+### Bug Fixes
+
+* **eslint-plugin:** fix missing dev dependency for postinstall ([#3862](https://github.com/kiwicom/orbit/issues/3862)) ([8c951ec](https://github.com/kiwicom/orbit/commit/8c951ec1a3986745f463c35dda6cab2510d5104b))
+
+
+
+
+
 ## [0.6.3](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.6.2...eslint-plugin-orbit-components@0.6.3) (2023-04-27)
 
 **Note:** Version bump only for package eslint-plugin-orbit-components

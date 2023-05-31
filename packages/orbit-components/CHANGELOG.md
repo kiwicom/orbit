@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.1.0...@kiwicom/orbit-components@7.2.0) (2023-05-31)
+
+
+### Bug Fixes
+
+* **Alert:** change labelClose to accept string only ([6c7c53a](https://github.com/kiwicom/orbit/commit/6c7c53af185a72f15f8eaf6612000a973e07cdcf))
+* **ButtonPrimitive:** change title to accept string only ([6d90024](https://github.com/kiwicom/orbit/commit/6d90024ee5deb96123942109378ebf51ce15910c))
+* **Card:** change labelClose to accept string only ([b11a490](https://github.com/kiwicom/orbit/commit/b11a4906a9e7b923921308407bbb91092345b2d7))
+* **Drawer:** change labelHide to accept string only ([6ff0013](https://github.com/kiwicom/orbit/commit/6ff001325622844dd7072957bd583b6f06fd81ff))
+* **ItinerarySeparator:** rename imported Props to avoid naming conflict ([#3854](https://github.com/kiwicom/orbit/issues/3854)) ([12fca7a](https://github.com/kiwicom/orbit/commit/12fca7add4ee2da7d598d5de176ffef1dad5f70d))
+* **Modal:** change labelClose to accept string only ([5879f55](https://github.com/kiwicom/orbit/commit/5879f55269c742d83f8555d68a5d322c8bc1ac2e))
+* **NavigationBar:** change openTitle to accept string only ([1ce0c9e](https://github.com/kiwicom/orbit/commit/1ce0c9e0754c2dc6e85d9924bcc8a67d965e7e30))
+* **Pagination:** change label types to string ([d815e41](https://github.com/kiwicom/orbit/commit/d815e4114f01cdb84e0440a480445c64729fa1a7))
+* **Select:** change type of Option label to string ([dc18bed](https://github.com/kiwicom/orbit/commit/dc18bed530d45713f961e8f5894260d9f339f465))
+* **Select:** fixed spacing between prefix and customValueText ([143abec](https://github.com/kiwicom/orbit/commit/143abec3178c7d64fb662e92aa33706fd3d00ae7))
+* **SkipNavigation:** change label types to string ([4ad843e](https://github.com/kiwicom/orbit/commit/4ad843e5bffdc444101b81274846a33df790012a))
+* **Stepper:** change title to accept only string ([9ce9121](https://github.com/kiwicom/orbit/commit/9ce912141144be15783ec2877ac73f14dcfb38e4))
+* **Tooltip:** change labelClose to accept string only ([97a7115](https://github.com/kiwicom/orbit/commit/97a711566432edd87ca2e5a372282c31424fba07))
+* **Wizard:** change labelClose to accept string only ([c866ab8](https://github.com/kiwicom/orbit/commit/c866ab8418868c58ba5b7c5023ddce8b74204ee7))
+
+
+### Features
+
+* **Heading:** add title6 type ([6326b13](https://github.com/kiwicom/orbit/commit/6326b13665a945e712fe5a37de8c0f81503c69dd))
+
+
+
+
+
 # [7.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.0.0...@kiwicom/orbit-components@7.1.0) (2023-05-18)
 
 

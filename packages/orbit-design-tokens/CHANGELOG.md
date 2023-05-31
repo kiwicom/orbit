@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@4.0.0...@kiwicom/orbit-design-tokens@4.1.0) (2023-05-31)
+
+
+### Features
+
+* **tokens:** change heading tokens to match figma ([279ca7d](https://github.com/kiwicom/orbit/commit/279ca7d6cd681e576f94772cc1f087e332b33687))
+
+
+
+
+
 # [4.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@3.2.2...@kiwicom/orbit-design-tokens@4.0.0) (2023-04-27)
 
 

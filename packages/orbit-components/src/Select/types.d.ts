@@ -11,7 +11,7 @@ type Event = Common.Event<React.SyntheticEvent<HTMLSelectElement>>;
 interface Option {
   readonly key?: string;
   readonly value: string | number;
-  readonly label?: React.ReactNode;
+  readonly label?: string;
   readonly disabled?: boolean;
 }
 

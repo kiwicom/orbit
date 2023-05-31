@@ -49,7 +49,7 @@ const SkipNavigation = ({
 }: Props) => {
   const [links, setLinks] = React.useState<HTMLAnchorElement[]>([]);
   const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
-  const [innerPages, setPages] = React.useState<{ value: number; label?: React.ReactNode }[]>([]);
+  const [innerPages, setPages] = React.useState<{ value: number; label?: string }[]>([]);
   const [show, setShow] = React.useState(false);
 
   const handleLinksClick = (ev: React.SyntheticEvent<HTMLSelectElement>) => {

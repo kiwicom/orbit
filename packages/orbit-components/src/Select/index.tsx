@@ -244,10 +244,8 @@ SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCustomValue = styled(({ _prefix, theme, _filled, _disabled, ...props }) => (
-  <div {...props} />
-))`
-  ${({ theme, _filled, disabled, prefix }) => css`
+const StyledCustomValue = styled(({ _theme, _filled, _disabled, ...props }) => <div {...props} />)`
+  ${({ theme, _filled, disabled }) => css`
     color: ${(disabled && theme.orbit.paletteInkLight) ||
     (_filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
 
@@ -257,7 +255,7 @@ const StyledCustomValue = styled(({ _prefix, theme, _filled, _disabled, ...props
     position: absolute;
     height: 100%;
     top: 0;
-    ${left}: ${prefix ? "48px" : theme.orbit.spaceSmall};
+    ${left}: ${theme.orbit.spaceSmall};
     bottom: 0;
     pointer-events: none;
   `}
@@ -370,7 +368,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
         )}
         <StyledSelectWrapper>
           {customValueText && (
-            <StyledCustomValue disabled={disabled} _filled={filled} prefix={prefix}>
+            <StyledCustomValue disabled={disabled} _filled={filled}>
               {customValueText}
             </StyledCustomValue>
           )}

@@ -1,9 +1,8 @@
 import React from "react";
-import assocPath from "ramda/src/assocPath";
-import { hot } from "react-hot-loader";
 import styled, { createGlobalStyle } from "styled-components";
 import { getTokens, OrbitProvider } from "@kiwicom/orbit-components";
 
+import { assocPath } from "./helpers";
 import Components from "./Components";
 import Tabs from "./Tabs";
 import ColorContext from "./ColorContext";
@@ -87,4 +86,4 @@ const App = () => {
   );
 };
 
-export default hot(module)(App);
+export default App;

@@ -12,14 +12,14 @@ interface Action {
 export interface Props {
   readonly actions?: Action[];
   readonly feedbackUrl?: string;
-  readonly firstSectionLabel?: React.ReactNode;
-  readonly firstActionLabel?: React.ReactNode;
-  readonly feedbackLabel?: React.ReactNode;
+  readonly firstSectionLabel?: string;
+  readonly firstActionLabel?: string;
+  readonly feedbackLabel?: string;
 }
 
 export interface MappedOptions {
   readonly key?: string;
   readonly value: string | number;
-  readonly label?: React.ReactNode;
+  readonly label?: string;
   readonly disabled?: boolean;
 }

@@ -160,7 +160,7 @@ async function getChangelogMessage() {
       process.exit(0);
     } else {
       await $`yarn install`;
-      await $`yarn lerna publish --no-private --conventional-commits --create-release github --skip-npm`;
+      await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
       await $`yarn docs changelog`;
       await $`git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push`;
       const timestamp = await getLatestReleaseTime();

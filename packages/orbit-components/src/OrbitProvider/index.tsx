@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { UIDReset, UIDFork } from "react-uid";

@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { useToaster, toast as notify } from "react-hot-toast";
 import styled, { css } from "styled-components";

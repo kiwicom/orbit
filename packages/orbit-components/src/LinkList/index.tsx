@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import type { FlattenSimpleInterpolation } from "styled-components";
 import styled, { css } from "styled-components";

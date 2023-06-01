@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";

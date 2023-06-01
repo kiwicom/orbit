@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import KEY_CODE_MAP from "../../common/keyMaps";

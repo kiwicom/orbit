@@ -48,6 +48,8 @@ const firstToUpper = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
     return tpl`
     /* eslint-disable */
+    "use client";
+    
     import * as React from "react";
 
     import createIcon from "../Icon/createIcon";

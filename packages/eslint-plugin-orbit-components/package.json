@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "build": "yarn clean && babel ./src --extensions '.ts' --out-dir ./dist",
-    "clean": "del dist",
+    "clean": "yarn del dist",
     "postinstall": "yarn build",
     "prepublishOnly": "yarn build"
   },
@@ -35,9 +35,7 @@
     "eslint": ">=8"
   },
   "dependencies": {
-    "@babel/types": "=7.12.10"
-  },
-  "devDependencies": {
+    "@babel/types": "=7.12.10",
     "del": "^7.0.0"
   }
 }

@@ -36,6 +36,6 @@
   },
   "dependencies": {
     "@babel/types": "=7.12.10",
-    "del": "^7.0.0"
+    "del-cli": "^5.0.0"
   }
 }

@@ -29,7 +29,15 @@ function fetchComponentDirs() {
     ],
   });
 
-  const whiteListedDirs = ["tokens", "docs", "hooks", "eslint-plugin", "babel-plugin", "themer"];
+  const whiteListedDirs = [
+    "tokens",
+    "docs",
+    "hooks",
+    "eslint-plugin",
+    "babel-plugin",
+    "themer",
+    "icons",
+  ];
 
   return dirs.reduce(filterOut, whiteListedDirs);
 }

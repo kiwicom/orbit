@@ -16,7 +16,7 @@ const StyledChild = styled.div<{ flex?: Props["flex"] }>`
     flex: ${flex};
     box-sizing: border-box;
     padding: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-  `}
+  `};
 `;
 
 StyledChild.defaultProps = {
@@ -65,6 +65,8 @@ const getChildFlex = (flex: Props["flex"], key: number) =>
   Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
 
 const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
+  if (!Array.isArray(children)) return children;
+
   return React.Children.map(children, (child, key) => {
     if (!React.isValidElement(child)) return null;
     return (

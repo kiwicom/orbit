@@ -161,12 +161,7 @@ const StyledSelect = styled(
 
     &:disabled {
       color: ${theme.orbit.colorTextInputDisabled};
-      background: ${theme.orbit.backgroundInputDisabled};
       cursor: not-allowed;
-
-      &:hover {
-        box-shadow: inset 0 0 0 1px ${theme.orbit.borderColorInput};
-      }
     }
 
     ${customValueText &&

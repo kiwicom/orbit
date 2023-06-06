@@ -70,7 +70,7 @@ const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
   return React.Children.map(children, (child, key) => {
     if (!React.isValidElement(child)) return null;
     return (
-      <StyledChild flex={getChildFlex(flex, key)}>
+      <StyledChild flex={getChildFlex(flex, key)} data-test="footer-el-wrapper">
         {React.cloneElement(child, {
           // @ts-expect-error React.cloneElement  issue
           ref: child.ref

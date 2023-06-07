@@ -27,7 +27,7 @@ describe("ModalFooter", () => {
       </ModalFooter>,
     );
 
-    expect(screen.findByTestId("footer-el-wrapper")).toMatchObject({});
+    expect(screen.queryByTestId("footer-el-wrapper")).not.toBeInTheDocument();
   });
 
   it("should render buttons with space-between", () => {

@@ -20,6 +20,16 @@ describe("ModalFooter", () => {
     });
   });
 
+  it("should not have StyledChild wrapper on single children", () => {
+    render(
+      <ModalFooter dataTest="footer">
+        <Button type="secondary">Cancel</Button>
+      </ModalFooter>,
+    );
+
+    expect(screen.findByTestId("footer-el-wrapper")).toMatchObject({});
+  });
+
   it("should render buttons with space-between", () => {
     render(
       <ModalFooter dataTest="footer">
@@ -31,5 +41,7 @@ describe("ModalFooter", () => {
     expect(screen.getByTestId("footer")).toHaveStyleRule("justify-content", "space-between", {
       media: getBreakpointWidth("largeMobile", theme),
     });
+
+    expect(screen.getAllByTestId("footer-el-wrapper")).toHaveLength(2);
   });
 });

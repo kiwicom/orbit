@@ -278,6 +278,13 @@
   android: N/A
   docs: Released
   group: Input
+- component: InputSelect
+  figma: Designing
+  react: Released
+  ios: N/A
+  android: N/A
+  docs: Released
+  group: Input
 - component: InputStepper
   figma: N/A
   react: Released

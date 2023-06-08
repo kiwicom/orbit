@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-design-tokens",
-  "version": "4.2.1",
+  "version": "5.0.0-beta.0",
   "description": "Design tokens for Kiwi.com.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -27,7 +27,7 @@
     "build:dictionary": "ts-node --esm ./src/dictionary/build.ts",
     "generate:flow": "npx flowgen --output-file ./dist/index.js.flow ./dist/index.d.ts --add-flow-header",
     "prepublishOnly": "yarn build",
-    "clean": "del dist output src/js/createTokens.* src/js/defaultFoundation.*"
+    "clean": "del-cli dist output src/js/createTokens.* src/js/defaultFoundation.*"
   },
   "author": "Kiwi.com",
   "license": "MIT",

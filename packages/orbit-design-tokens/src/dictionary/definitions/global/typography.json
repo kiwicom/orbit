@@ -21,6 +21,11 @@
           "type": "size",
           "category": "typography",
           "value": "{foundation.font-size.large}"
+        },
+        "extra-large": {
+          "type": "size",
+          "category": "typography",
+          "value": "{foundation.font-size.extra-large}"
         }
       }
     },

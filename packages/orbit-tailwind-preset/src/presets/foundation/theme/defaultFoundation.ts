@@ -1,7 +1,7 @@
 import { defaultFoundation } from "@kiwicom/orbit-design-tokens";
 
-import { transformToKebabCase } from "../../../helpers";
+import { transformToKebabCase } from "../helpers";
 
-export default {
-  ...transformToKebabCase(defaultFoundation),
-};
+const transformedFoundation = transformToKebabCase(defaultFoundation);
+
+export default transformedFoundation;

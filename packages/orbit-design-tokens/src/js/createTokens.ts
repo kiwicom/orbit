@@ -811,6 +811,7 @@ export type Tokens = {
   fontSizeTextSmall: string;
   fontSizeTextNormal: string;
   fontSizeTextLarge: string;
+  fontSizeTextExtraLarge: string;
   lineHeightText: string;
   lineHeightTextSmall: string;
   lineHeightTextNormal: string;
@@ -829,7 +830,7 @@ export type CreateTokens = (foundation: Foundation) => Tokens;
 const createTokens: CreateTokens = foundation => ({
   paddingAlert: foundation.space.medium,
   paddingAlertWithIcon: foundation.space.small,
-  paddingBadge: `0 ${foundation.space.XXSmall}`,
+  paddingBadge: `0 ${foundation.space.XSmall}`,
   paddingButtonLarge: `0 28px`,
   paddingButtonLargeWithIcons: `0 ${foundation.space.medium}`,
   paddingButtonLargeWithLeftIcon: `0 28px 0 ${foundation.space.medium}`,
@@ -1311,7 +1312,7 @@ const createTokens: CreateTokens = foundation => ({
   widthIconSmall: foundation.size.small,
   widthIconMedium: "20px",
   widthIconLarge: "24px",
-  widthBadgeCircled: "20px",
+  widthBadgeCircled: "24px",
   widthCheckbox: "20px",
   widthRadioButton: "20px",
   widthStopoverArrow: "36px",
@@ -1806,6 +1807,7 @@ const createTokens: CreateTokens = foundation => ({
   fontSizeTextSmall: foundation.fontSize.small,
   fontSizeTextNormal: foundation.fontSize.normal,
   fontSizeTextLarge: foundation.fontSize.large,
+  fontSizeTextExtraLarge: foundation.fontSize.extraLarge,
   lineHeightText: "1.4",
   lineHeightTextSmall: foundation.lineHeight.small,
   lineHeightTextNormal: foundation.lineHeight.normal,

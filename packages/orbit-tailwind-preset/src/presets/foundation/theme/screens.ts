@@ -1,10 +1,12 @@
 import foundation from "./defaultFoundation";
 
-export default {
-  sm: "320px",
-  mm: foundation.breakpoint["medium-mobile"],
-  lm: foundation.breakpoint["large-mobile"],
-  tb: foundation.breakpoint.tablet,
-  de: foundation.breakpoint.desktop,
-  ld: foundation.breakpoint["large-desktop"],
+const screens = {
+  sm: `${foundation.breakpoint["small-mobile"]}px`,
+  mm: `${foundation.breakpoint["medium-mobile"]}px`,
+  lm: `${foundation.breakpoint["large-mobile"]}px`,
+  tb: `${foundation.breakpoint.tablet}px`,
+  de: `${foundation.breakpoint.desktop}px`,
+  ld: `${foundation.breakpoint["large-desktop"]}px`,
 };
+
+export default screens;

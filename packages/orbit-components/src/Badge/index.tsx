@@ -10,7 +10,7 @@ const getTypeToken = ({ name, theme, type }: { name: string; theme: Theme; type:
   const tokens = {
     [TOKENS.background]: {
       [TYPE_OPTIONS.NEUTRAL]: theme.orbit.badgeNeutralBackground,
-      [TYPE_OPTIONS.INFO_SUBTLE]: theme.orbit.paletteBlueLight,
+      [TYPE_OPTIONS.INFO_SUBTLE]: theme.orbit.badgeInfoSubtleBackground,
       [TYPE_OPTIONS.SUCCESS_SUBTLE]: theme.orbit.badgeSuccessSubtleBackground,
       [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.badgeWarningSubtleBackground,
       [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.badgeCriticalSubtleBackground,

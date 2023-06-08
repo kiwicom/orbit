@@ -1,7 +1,9 @@
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-export default {
+const durations = {
   fast: defaultTokens.durationFast,
   normal: defaultTokens.durationNormal,
   slow: defaultTokens.durationSlow,
 };
+
+export default durations;

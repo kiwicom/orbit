@@ -10,7 +10,7 @@ const getBundleColor = ({ type, theme }) => {
   if (type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackground;
   if (type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackground;
 
-  return theme.orbit.tabBackgroundBundleTop;
+  return theme.orbit.tabBundleTopBackground;
 };
 
 const getBackgroundType =

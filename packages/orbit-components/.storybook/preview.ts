@@ -29,6 +29,9 @@ export const parameters = {
   viewport: {
     viewports,
   },
+  options: {
+    showPanel: false,
+  },
 };
 
 const preview: Preview = {

@@ -3,6 +3,7 @@
     "noEmit": true,
     "module": "commonjs",
     "target": "ESNext",
+    "esModuleInterop": true,
     "jsx": "react"
   },
   "include": ["./**/*"]

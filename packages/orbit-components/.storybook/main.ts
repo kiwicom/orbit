@@ -1,39 +1,17 @@
-/* eslint-disable no-param-reassign */
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require("path");
+import path from "path";
+import type { StorybookConfig } from "@storybook/react-vite";
 
-const config = {
-  core: {},
+const config: StorybookConfig = {
   staticDirs: [path.resolve(__dirname, "../static")],
   stories: ["../src/**/*.stories.*"],
-  framework: {
-    name: "@storybook/react-webpack5",
-    options: {},
+  framework: "@storybook/react-vite",
+  core: {
+    builder: "@storybook/builder-vite",
   },
-  addons: [
-    "@storybook/addon-knobs",
-    "@storybook/addon-actions",
-    "@storybook/addon-viewport",
-    "@storybook/addon-backgrounds",
-  ],
-  features: {
-    babelModeV7: true,
-  },
-  webpackFinal(cfg) {
-    if (cfg) {
-      // resolve to .js rather than .mjs to avoid webpack failing because of ambiguous imports
-      cfg.resolve.extensions = cfg.resolve.extensions.filter(ext => ext !== ".mjs");
-      cfg.module.rules.push({
-        test: /\.(ts|tsx|mts)$/,
-        loader: require.resolve("babel-loader"),
-        options: {
-          presets: ["@babel/preset-typescript"],
-        },
-      });
-      cfg.resolve.extensions.push(".ts", ".tsx", ".mts");
-      return cfg;
-    }
-    return undefined;
+  addons: ["@storybook/addon-essentials", "@storybook/addon-knobs"],
+  async viteFinal(cfg: any) {
+    return cfg;
   },
 };
-module.exports = config;
+
+export default config;

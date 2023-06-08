@@ -72,7 +72,7 @@ module.exports = {
       },
     },
     {
-      files: "config/**",
+      files: ["config/**", ".storybook/**"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",

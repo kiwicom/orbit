@@ -22,6 +22,11 @@
         "type": "size",
         "value": 16,
         "internal": true
+      },
+      "extra-large": {
+        "type": "size",
+        "value": 18,
+        "internal": true
       }
     },
     "line-height": {

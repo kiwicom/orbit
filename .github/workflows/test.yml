@@ -46,7 +46,9 @@ jobs:
       - name: Test
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-        run: yarn test-ci
+        run: |
+          yarn tailwind-preset pretest
+          yarn test-ci
 
   docs:
     runs-on: ubuntu-latest

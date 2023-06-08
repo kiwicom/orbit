@@ -240,7 +240,7 @@ export const Playground = () => {
   const fullWidth = boolean("fullWidth", false);
   const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const width = number("Width", 0);
+  const width = text("Width", "auto");
   const circled = boolean("Circled", false);
   const loading = boolean("Loading", false);
   const submit = boolean("Submit", false);

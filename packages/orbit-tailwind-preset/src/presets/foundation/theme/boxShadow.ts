@@ -1,6 +1,6 @@
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-export default {
+const elevations = {
   none: "none",
   fixed: defaultTokens.elevationFixedBoxShadow,
   "fixed-reverse": defaultTokens.elevationFixedReverseBoxShadow,
@@ -10,3 +10,5 @@ export default {
   "action-active": defaultTokens.elevationActionActiveBoxShadow,
   overlay: defaultTokens.elevationOverlayBoxShadow,
 };
+
+export default elevations;

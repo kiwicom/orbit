@@ -3,7 +3,7 @@
     "breakpoint": {
       "smallMobile": {
         "type": "breakpoint",
-        "value": 0,
+        "value": 320,
         "internal": true
       },
       "mediumMobile": {

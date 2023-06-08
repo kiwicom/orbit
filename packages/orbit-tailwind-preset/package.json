@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-tailwind-preset",
-  "version": "0.0.1",
+  "version": "1.0.0-beta.1",
   "description": "Orbit tailwind preset which is based on orbit-design-tokens",
   "author": "Kiwi.com",
   "license": "MIT",
@@ -25,13 +25,14 @@
     "tokens"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "yarn tsup",
+    "pretest": "yarn workspace @kiwicom/orbit-design-tokens build && yarn build && yarn tailwindcss -o style.css",
     "test": "jest"
   },
   "peerDependencies": {
     "tailwindcss": ">=3.3.2"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "*"
+    "@kiwicom/orbit-design-tokens": "5.0.0-beta.0"
   }
 }

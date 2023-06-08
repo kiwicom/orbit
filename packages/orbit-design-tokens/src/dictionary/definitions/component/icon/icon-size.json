@@ -52,9 +52,9 @@
       "badge": {
         "circled": {
           "type": "size",
-          "value": 20,
+          "value": 24,
           "deprecated": true,
-          "deprecated-replace": "{component.icon.medium.size}",
+          "deprecated-replace": "{component.icon.large.size}",
           "deprecated-version": "1.0.0"
         }
       },

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
+import { CheckCircle, CloseCircle, Check, Close } from "@kiwicom/orbit-components/icons";
 import { Stack, Grid, Text } from "@kiwicom/orbit-components";
 
 import { resolveBorders } from "./helpers";
@@ -36,14 +36,21 @@ const StyledContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean
 
 const GuidelineIcons = ({ type }) =>
   type === "do" ? (
-    <CheckCircle color="success" ariaLabel="Do" />
+    <CheckCircle color="success" ariaLabel="Do" size="large" />
   ) : (
-    <CloseCircle color="critical" ariaLabel="Don't" />
+    <CloseCircle color="critical" ariaLabel="Don't" size="large" />
+  );
+
+const GuidelineItemIcons = ({ type }) =>
+  type === "do" ? (
+    <Check color="success" ariaLabel="Do" size="large" />
+  ) : (
+    <Close color="critical" ariaLabel="Don't" size="large" />
   );
 
 const GuidelineItem = ({ children, type }: GuidelineItemProps) => (
-  <Stack flex spacing="small" spaceAfter="small">
-    <GuidelineIcons type={type} />
+  <Stack flex spacing="XSmall" spaceAfter="small">
+    <GuidelineItemIcons type={type} />
     <div>{children}</div>
   </Stack>
 );

@@ -43,6 +43,9 @@ const StyledComponent = styled.div<GuidelineComponent>`
     & + ${StyledAnchor} {
       margin-top: ${theme.orbit.spaceXLarge};
     }
+    li {
+      list-style: inside none disc;
+    }
   `}
 `;
 
@@ -85,7 +88,11 @@ export const DoDontHeader = ({ type }: GuidelineType) => (
     direction="row-reverse"
     tablet={{ direction: "row", justify: "start" }}
   >
-    {type === "do" ? <CheckCircle color="success" /> : <CloseCircle color="critical" />}
+    {type === "do" ? (
+      <CheckCircle color="success" size="large" />
+    ) : (
+      <CloseCircle color="critical" size="large" />
+    )}
     <Text weight="bold" type={type === "do" ? "success" : "critical"}>
       {type === "do" ? "Do" : "Don't"}
     </Text>
@@ -117,9 +124,9 @@ export default function Guideline({ type = "do", title, svgs = [], children }: P
           >
             {allImages.length < 2 &&
               (type === "do" ? (
-                <CheckCircle color="success" ariaLabel="Do" />
+                <CheckCircle color="success" ariaLabel="Do" size="large" />
               ) : (
-                <CloseCircle color="critical" ariaLabel="Don't" />
+                <CloseCircle color="critical" ariaLabel="Don't" size="large" />
               ))}
             <Stack>
               <H3 noId>{title}</H3>

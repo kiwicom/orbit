@@ -1,9 +1,14 @@
 const path = require("path");
 
 module.exports = {
-  extends: "../../.eslintrc.cjs",
+  extends: ["../../.eslintrc.cjs", "plugin:storybook/recommended"],
   rules: {
-    "import/no-extraneous-dependencies": ["error", { packageDir: __dirname }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        packageDir: __dirname,
+      },
+    ],
   },
   env: {
     browser: true,
@@ -60,7 +65,9 @@ module.exports = {
       rules: {
         "import/no-extraneous-dependencies": [
           "error",
-          { packageDir: [__dirname, path.resolve(__dirname, "../../")] },
+          {
+            packageDir: [__dirname, path.resolve(__dirname, "../../")],
+          },
         ],
       },
     },
@@ -76,7 +83,9 @@ module.exports = {
         "import/extensions": "off",
         "import/no-extraneous-dependencies": [
           "error",
-          { packageDir: [__dirname, path.resolve(__dirname, "../../")] },
+          {
+            packageDir: [__dirname, path.resolve(__dirname, "../../")],
+          },
         ],
       },
     },

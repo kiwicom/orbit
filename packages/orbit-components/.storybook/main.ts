@@ -3,12 +3,13 @@
 const path = require("path");
 
 const config = {
-  core: {
-    builder: "webpack5",
-  },
+  core: {},
   staticDirs: [path.resolve(__dirname, "../static")],
   stories: ["../src/**/*.stories.*"],
-  framework: "@storybook/react",
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
+  },
   addons: [
     "@storybook/addon-knobs",
     "@storybook/addon-actions",
@@ -29,14 +30,10 @@ const config = {
           presets: ["@babel/preset-typescript"],
         },
       });
-
       cfg.resolve.extensions.push(".ts", ".tsx", ".mts");
-
       return cfg;
     }
-
     return undefined;
   },
 };
-
 module.exports = config;

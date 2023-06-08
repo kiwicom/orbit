@@ -45,6 +45,8 @@ module.exports = {
       rules: {
         "orbit-components/unique-id": "off",
         "react/no-unstable-nested-components": "off",
+        // TODO: remove after migration to a new actions
+        "import/no-extraneous-dependencies": "off",
       },
     },
     {

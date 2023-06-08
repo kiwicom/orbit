@@ -61,14 +61,6 @@
   ],
   "license": "MIT",
   "resolutions": {
-    "webpack": "^5.69.1",
-    "css-loader": "^5.0.0",
-    "dotenv-webpack": "^6.0.0",
-    "html-webpack-plugin": "^5.0.0",
-    "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.0.0",
-    "webpack-dev-middleware": "^4.1.0",
-    "webpack-virtual-modules": "^0.4.2",
     "ts-node": "^10.9.1"
   },
   "peerDependencies": {
@@ -142,6 +134,6 @@
     "ttf2woff2": "^4.0.1",
     "vite": "^4.3.9",
     "webpack": "^5.76.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^5.1.4"
   }
 }

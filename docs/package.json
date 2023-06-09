@@ -66,7 +66,7 @@
     "fontfaceobserver": "^2.1.0",
     "fs-extra": "^9.1.0",
     "fuzzaldrin-plus": "^0.6.0",
-    "gatsby": "^4.11.1",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-create-client-paths": "^4.9.0",
     "gatsby-plugin-google-gtag": "^4.9.0",

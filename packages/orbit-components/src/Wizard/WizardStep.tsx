@@ -153,7 +153,7 @@ const WizardStep = ({ dataTest, title, onClick }: WizardStepProps) => {
     isLastStep,
   } = React.useContext(WizardStepContext);
 
-  const handleClick = event => {
+  const handleClick = <T extends React.SyntheticEvent<HTMLElement>>(event: T) => {
     if (onClick) onClick(event);
     if (onChangeStep) onChangeStep(index);
     onClose();

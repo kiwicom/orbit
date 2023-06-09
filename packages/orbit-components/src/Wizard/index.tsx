@@ -62,7 +62,7 @@ const Wizard = ({
     return "disabled";
   });
 
-  const activeStepTitle = childrenArray.find((step, index) => index === activeStep)?.props.title;
+  const activeStepTitle = childrenArray.find((_, index) => index === activeStep)?.props.title;
   const stepsCount = React.Children.count(children);
 
   const steps = React.Children.map(children, (step, index) => (
@@ -72,7 +72,7 @@ const Wizard = ({
       isLastStep={index === stepsCount - 1}
       isColumnOnDesktop={direction === "column"}
       nextStepStatus={stepStatuses[index + 1]}
-      isCompact
+      isCompact={isCompact}
       isActive={activeStep === index}
       onChangeStep={onChangeStep}
       onClose={() => setOpen(false)}

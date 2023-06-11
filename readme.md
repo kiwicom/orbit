@@ -8,11 +8,9 @@
 
 <div align="center">
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![Kiwi.com library](https://img.shields.io/badge/Kiwi.com-library-00A991?style=flat-square)](https://code.kiwi.com) [![CI Build](https://img.shields.io/github/actions/workflow/status/kiwicom/orbit/test.yml?branch=master&style=flat-square)](https://github.com/kiwicom/orbit/actions/workflows/test.yml) [![Orbit release](https://img.shields.io/github/package-json/v/kiwicom/orbit?filename=packages%2Forbit-components%2Fpackage.json&style=flat-square)](https://github.com/kiwicom/orbit/blob/master/packages/orbit-components/package.json#L3) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?style=flat-square)](https://lerna.js.org/) [![minified and gzipped size](https://img.shields.io/bundlephobia/minzip/@kiwicom/orbit-components@latest?style=flat-square)](https://bundlephobia.com/package/@kiwicom/orbit-components) [![Maintenance](https://img.shields.io/npms-io/maintenance-score/@kiwicom/orbit-components?style=flat-square)](https://github.com/kiwicom/orbit) [![Downloads](https://img.shields.io/npm/dm/@kiwicom/orbit-components?style=flat-square)](https://www.npmjs.com/package/@kiwicom/orbit-components)
 
-[![minified and gzipped size](https://img.shields.io/bundlephobia/minzip/@kiwicom/orbit-components@latest)](https://bundlephobia.com/package/@kiwicom/orbit-components)
-
-<strong>Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.</strong>
+<strong>Orbit-components is a React component library that provides developers with the easiest possible way of building Kiwi.com’s products.</strong>
 
 </div>
 
@@ -81,7 +79,7 @@ npm install @types/styled-components --save-dev
 yarn add @types/styled-components -D
 ```
 
-## Main Sections:
+## Main Sections
 
 - [Components](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/)
 - [Icons](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/Icon/README.md)
@@ -92,7 +90,7 @@ yarn add @types/styled-components -D
 
 We are working on making this project a fully open source. We appreciate any contributions you might make.
 
-[Bug reports](https://github.com/kiwicom/orbit/issues/new?template=bug_report.md) and [feature request](https://github.com/kiwicom/orbit/issues/new?template=feature_request.md) are welcome but, please use the correct template.
+[Bug reports](https://github.com/kiwicom/orbit/issues/new?template=bug_report.md) and [feature requests](https://github.com/kiwicom/orbit/issues/new?template=feature_request.md) are welcome but, please use the correct template.
 
 Please check out our [Contribution Guide](https://github.com/kiwicom/orbit/tree/master/.github/contribution/README.md). It includes contribution guidelines and information on how to run and develop the project.
 

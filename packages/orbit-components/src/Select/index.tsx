@@ -33,6 +33,7 @@ StyledLabel.defaultProps = {
 
 const StyledInlineLabel = styled.div<{ hasFeedback?: boolean }>`
   ${({ theme, hasFeedback }) => css`
+    z-index: 3;
     height: 100%;
     display: flex;
     align-items: center;
@@ -46,7 +47,6 @@ const StyledInlineLabel = styled.div<{ hasFeedback?: boolean }>`
       margin-bottom: 0;
       font-size: ${theme.orbit.fontSizeInputNormal};
       line-height: ${theme.orbit.lineHeightTextNormal};
-      z-index: 3;
       white-space: nowrap;
     }
   `}
@@ -116,7 +116,7 @@ const StyledSelect = styled(
     ),
   ),
 )`
-  ${({ theme, filled, customValueText }) => css`
+  ${({ theme, filled, customValueText, prefix }) => css`
     appearance: none;
     background: transparent;
     cursor: pointer;
@@ -124,7 +124,11 @@ const StyledSelect = styled(
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeInputNormal};
     height: ${theme.orbit.heightInputNormal};
-    padding: ${rtlSpacing(`0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceSmall}`)};
+    padding: ${rtlSpacing(
+      prefix
+        ? `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.paddingLeftSelectPrefix}`
+        : `0 ${theme.orbit.spaceXXLarge} 0 ${theme.orbit.spaceSmall}`,
+    )};
     outline: none;
     flex: 1 1 20%;
     width: 100%;
@@ -161,12 +165,7 @@ const StyledSelect = styled(
 
     &:disabled {
       color: ${theme.orbit.colorTextInputDisabled};
-      background: ${theme.orbit.backgroundInputDisabled};
       cursor: not-allowed;
-
-      &:hover {
-        box-shadow: inset 0 0 0 1px ${theme.orbit.borderColorInput};
-      }
     }
 
     ${customValueText &&
@@ -213,11 +212,11 @@ const SelectPrefix = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+    position: absolute;
+    padding: 0 ${theme.orbit.spaceSmall};
     pointer-events: none;
     z-index: 3;
-    height: ${theme.orbit.heightInputNormal};
+    top: 0;
   `};
 `;
 
@@ -244,10 +243,10 @@ SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCustomValue = styled(({ _theme, _filled, _disabled, ...props }) => <div {...props} />)`
-  ${({ theme, _filled, disabled }) => css`
-    color: ${(disabled && theme.orbit.paletteInkLight) ||
-    (_filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
+const StyledCustomValue = styled(({ theme, ...props }) => <div {...props} />)`
+  ${({ theme, $filled, $disabled, $prefix }) => css`
+    color: ${($disabled && theme.orbit.paletteInkLight) ||
+    ($filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
 
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeInputNormal};
@@ -255,7 +254,7 @@ const StyledCustomValue = styled(({ _theme, _filled, _disabled, ...props }) => <
     position: absolute;
     height: 100%;
     top: 0;
-    ${left}: ${theme.orbit.spaceSmall};
+    ${left}: ${$prefix ? "48px" : theme.orbit.spaceSmall};
     bottom: 0;
     pointer-events: none;
   `}
@@ -337,8 +336,8 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
         </FormLabel>
       )}
       <SelectContainer ref={label ? null : labelRef} disabled={disabled} error={!!error}>
-        {inlineLabel && (error || help) ? (
-          <SelectPrefix>
+        {label && inlineLabel && (
+          <StyledInlineLabel hasFeedback={!!(error || help)} ref={labelRef}>
             {help && !error && (
               <StyledIconWrapper ref={iconRef}>
                 <InformationCircle color="info" size="small" />
@@ -349,12 +348,6 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                 <AlertCircle color="critical" size="small" />
               </StyledIconWrapper>
             )}
-          </SelectPrefix>
-        ) : (
-          prefix && <SelectPrefix>{prefix}</SelectPrefix>
-        )}
-        {label && inlineLabel && (
-          <StyledInlineLabel hasFeedback={!!(error || help)} ref={labelRef}>
             <FormLabel
               filled={!!value}
               required={required}
@@ -367,8 +360,9 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           </StyledInlineLabel>
         )}
         <StyledSelectWrapper>
+          {prefix && <SelectPrefix>{prefix}</SelectPrefix>}
           {customValueText && (
-            <StyledCustomValue disabled={disabled} _filled={filled}>
+            <StyledCustomValue $disabled={disabled} $filled={filled} $prefix={!!prefix}>
               {customValueText}
             </StyledCustomValue>
           )}

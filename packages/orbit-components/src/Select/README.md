@@ -60,6 +60,8 @@ Table below contains all types of the props available for object in Option array
 
 - When you have limited space of `Select`, you can use `customValueText` property where you can pass text alternative of the current value. For instance, when label of selected option has `Czech Republic (+420)`, you can pass only `+420` into this property and the original label will be visually hidden.
 
+- The `prefix` prop can accept any element. However, it is not recommended to pass it more than an icon (or flag).
+
 - `ref` can be used for example auto-focus the elements immediately after render.
 
 ```jsx

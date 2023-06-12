@@ -68,12 +68,11 @@ const SegmentedSwitch = ({
   }, [showTooltip, hasTooltip, setTooltipShown]);
 
   return (
-    <StyledWrapper spaceAfter={spaceAfter} data-test={dataTest} $maxWidth={maxWidth}>
+    <StyledWrapper spaceAfter={spaceAfter} data-test={dataTest} $maxWidth={maxWidth} ref={labelRef}>
       {label && (
         <FormLabel
           help={!!help}
           error={!!error}
-          labelRef={labelRef}
           onMouseEnter={() => setTooltipShownHover(true)}
           onMouseLeave={() => setTooltipShownHover(false)}
         >

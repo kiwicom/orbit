@@ -141,7 +141,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Field spaceAfter={spaceAfter} ref={label ? undefined : labelRef} $width={width}>
+    <Field spaceAfter={spaceAfter} ref={labelRef} $width={width}>
       <Input
         data-test={dataTest}
         id={id}
@@ -206,7 +206,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           error={error}
           helpClosable={helpClosable}
           inputSize="normal"
-          referenceElement={label ? iconRef : labelRef}
+          referenceElement={labelRef}
           shown={shown}
           onShown={setTooltipShown}
         />

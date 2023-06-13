@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.2.0...@kiwicom/orbit-components@7.3.0) (2023-06-13)
+
+#### Bug Fixes
+
+-   **InputFile:** clicking on icon label no longer triggers the OS input ([b81547f](https://github.com/kiwicom/orbit/commit/b81547f3e2b2acd28c13cf2f2202ba12d96ceb9f))
+-   **InputFile:** errorForm tooltip offset ([5801e7c](https://github.com/kiwicom/orbit/commit/5801e7ccaedf66c18d9ac94814dcbe0b83bb78cc))
+-   **ModalFooter:** wrap elements in StyledChild only when multiple ([#3869](https://github.com/kiwicom/orbit/issues/3869)) ([be1cfe6](https://github.com/kiwicom/orbit/commit/be1cfe60b4086ac27371e907b17b3a393a6996c7))
+-   **SegmentedSwitch:** errorForm tooltip offset ([#3877](https://github.com/kiwicom/orbit/issues/3877)) ([032b93f](https://github.com/kiwicom/orbit/commit/032b93f8f07b75297fc1cf292ffb8c82f3e8f83c))
+-   **Select:** disabled styles ([d1697b1](https://github.com/kiwicom/orbit/commit/d1697b1d64919e338360e288bbc2a2eefde9a20a))
+-   **Select:** fix Option label type for flow ([d541a91](https://github.com/kiwicom/orbit/commit/d541a91e52122a9f4bd304cd37d2693db4bd988b))
+-   **Select:** inlineLabel and Prefix now work as expected ([1fa2c23](https://github.com/kiwicom/orbit/commit/1fa2c2302b7017d582534dcc0b59ad07ff3f7fcd))
+-   **Slider:** value state update was not working correctly ([5c7a9aa](https://github.com/kiwicom/orbit/commit/5c7a9aa4f2f681df8065729fe4c916ea13963e40))
+-   **Wizard:** fix missing provider prop ([#3875](https://github.com/kiwicom/orbit/issues/3875)) ([6b34b90](https://github.com/kiwicom/orbit/commit/6b34b9066bf7a02e7854b413cae5a6ab6ddd9cd2))
+
+#### Features
+
+-   **icons:** update icons from figma ([#3867](https://github.com/kiwicom/orbit/issues/3867)) ([ecd80ec](https://github.com/kiwicom/orbit/commit/ecd80eccd3b6be258d241a24879eade58c93bc1c))
+-   **icons:** update icons from figma ([#3872](https://github.com/kiwicom/orbit/issues/3872)) ([4465369](https://github.com/kiwicom/orbit/commit/44653692b0aa791618b4b1e72bbf678b096c3b46))
+-   **InputField:** add new aria-props ([95c35e5](https://github.com/kiwicom/orbit/commit/95c35e5530a2005ee0764876b2b840bda163961d))
+-   **InputSelect:** new component ([e81110b](https://github.com/kiwicom/orbit/commit/e81110bf58700d31b03c9393afb6cee813732297))
+-   **ListChoice:** add role and tabIndex props ([598de88](https://github.com/kiwicom/orbit/commit/598de88550427dfdec21136a3181a0b4072c0f20))
+-   **Modal:** add onScroll prop ([989e1de](https://github.com/kiwicom/orbit/commit/989e1de21df6a9673c5efe89df0104a30ca45134))
+
 ## [7.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.1.0...@kiwicom/orbit-components@7.2.0) (2023-05-31)
 
 #### Bug Fixes

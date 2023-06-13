@@ -85,7 +85,7 @@ export const alignValue = (
 
 export const injectCallbackAndSetState = (
   value: Value,
-  setValue: React.Dispatch<React.SetStateAction<Value>>,
+  setValue: (value: Value) => void,
   callback: SliderCallback | undefined,
   newValue: Value | null,
   forced?: boolean,

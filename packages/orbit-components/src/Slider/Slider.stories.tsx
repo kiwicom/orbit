@@ -81,6 +81,7 @@ export const RangeSlider = () => {
   const step = number("step", 1);
   return (
     <Slider
+      onChangeAfter={action("onChangeAfter")}
       onChange={action("onChange")}
       label={label}
       valueDescription={valueDescription}

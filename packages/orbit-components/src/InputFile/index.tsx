@@ -68,6 +68,7 @@ const Input = styled.input<{ error?: Props["error"] }>`
   opacity: 0;
   position: absolute;
   height: 0;
+  pointer-events: none;
 
   &:focus ~ ${FakeInput} {
     ${formElementFocus}
@@ -141,7 +142,17 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-    <Field spaceAfter={spaceAfter} ref={label ? undefined : labelRef} $width={width}>
+    <Field
+      spaceAfter={spaceAfter}
+      ref={labelRef}
+      $width={width}
+      onClick={e => {
+        if (iconRef && iconRef.current && iconRef.current.contains(e.target as Node)) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }}
+    >
       <Input
         data-test={dataTest}
         id={id}
@@ -206,7 +217,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           error={error}
           helpClosable={helpClosable}
           inputSize="normal"
-          referenceElement={label ? iconRef : labelRef}
+          referenceElement={labelRef}
           shown={shown}
           onShown={setTooltipShown}
         />

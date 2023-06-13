@@ -32,7 +32,7 @@ StyledListChoiceIcon.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledListChoice = styled.div<Partial<Props>>`
+export const StyledListChoice = styled.div<Partial<Props>>`
   ${({ theme, disabled }) => css`
     display: flex;
     align-items: center;
@@ -43,10 +43,6 @@ const StyledListChoice = styled.div<Partial<Props>>`
     background-color: ${theme.orbit.paletteWhite};
     transition: background-color 0.15s ease-in-out;
     cursor: ${disabled ? "not-allowed" : "pointer"};
-
-    &:last-child {
-      border: none;
-    }
 
     &:hover {
       outline: none;
@@ -86,47 +82,59 @@ StyledListChoiceContent.defaultProps = {
   theme: defaultTheme,
 };
 
-const ListChoice = ({
-  dataTest,
-  id,
-  icon,
-  action,
-  title,
-  description,
-  selectable,
-  onClick,
-  selected,
-  disabled,
-}: Props) => {
-  const conditionalProps = {
-    ...(selectable ? { "aria-checked": selected } : null),
-  };
+const ListChoice = React.forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      dataTest,
+      id,
+      icon,
+      action,
+      title,
+      description,
+      selectable,
+      role,
+      onClick,
+      tabIndex = 0,
+      selected,
+      disabled,
+    },
+    ref,
+  ) => {
+    const conditionalProps = {
+      ...(selectable ? { "aria-checked": selected } : null),
+    };
 
-  return (
-    <StyledListChoice
-      onClick={!disabled ? onClick : undefined}
-      data-test={dataTest}
-      id={id}
-      onKeyDown={!disabled ? handleKeyDown<HTMLDivElement>(onClick) : undefined}
-      tabIndex={disabled ? -1 : 0}
-      disabled={disabled}
-      aria-disabled={disabled}
-      role={selectable ? "checkbox" : "button"}
-      {...conditionalProps}
-    >
-      {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
-      <StyledListChoiceContent>
-        <Heading type="title4">{title}</Heading>
-        {description && (
-          <Text type="secondary" size="small">
-            {description}
-          </Text>
-        )}
-      </StyledListChoiceContent>
-      {selectable && <Checkbox checked={selected} readOnly disabled={disabled} tabIndex={-1} />}
-      {!selectable && action}
-    </StyledListChoice>
-  );
-};
+    return (
+      <StyledListChoice
+        onClick={!disabled ? onClick : undefined}
+        data-test={dataTest}
+        id={id}
+        ref={ref}
+        onKeyDown={!disabled ? handleKeyDown<HTMLDivElement>(onClick) : undefined}
+        tabIndex={tabIndex || disabled ? -1 : 0}
+        disabled={disabled}
+        data-title={title}
+        aria-disabled={disabled}
+        aria-selected={selected}
+        role={role || (selectable ? "checkbox" : "button")}
+        {...conditionalProps}
+      >
+        {icon && <StyledListChoiceIcon>{icon}</StyledListChoiceIcon>}
+        <StyledListChoiceContent>
+          <Heading type="title4">{title}</Heading>
+          {description && (
+            <Text type="secondary" size="small">
+              {description}
+            </Text>
+          )}
+        </StyledListChoiceContent>
+        {selectable && <Checkbox checked={selected} readOnly disabled={disabled} tabIndex={-1} />}
+        {!selectable && action}
+      </StyledListChoice>
+    );
+  },
+);
+
+ListChoice.displayName = "ListChoice";
 
 export default ListChoice;

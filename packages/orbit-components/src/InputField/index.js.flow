@@ -9,6 +9,7 @@ import type { Globals, Translation, DataAttrs } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
 
 type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search" | "text" | "none";
+type AriaAutoComplete = "inline" | "list" | "both" | "none";
 
 export type Props = {|
   ...Globals,
@@ -23,6 +24,7 @@ export type Props = {|
   +placeholder?: string | (() => string),
   +prefix?: React.Node,
   +suffix?: React.Node,
+  +list?: string,
   +help?: React.Node,
   +error?: React.Node,
   +tags?: React.Node,
@@ -40,6 +42,11 @@ export type Props = {|
   +helpClosable?: boolean,
   +id?: string,
   +insideInputGroup?: boolean,
+  +ariaAutocomplete?: AriaAutoComplete,
+  +ariaHasPopup?: boolean,
+  +ariaExpanded?: boolean,
+  +ariaControls?: string,
+  +ariaActiveDescendant?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

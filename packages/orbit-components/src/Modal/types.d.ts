@@ -18,6 +18,7 @@ export interface Props extends Common.Globals {
     | React.SyntheticEvent<HTMLButtonElement | HTMLDivElement | HTMLAnchorElement>
   >;
   readonly fixedFooter?: boolean;
+  readonly onScroll?: Common.Event<React.SyntheticEvent<HTMLDivElement>>;
   readonly mobileHeader?: boolean;
   readonly isMobileFullPage?: boolean;
   readonly preventOverlayClose?: boolean;

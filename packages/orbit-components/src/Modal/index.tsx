@@ -173,7 +173,7 @@ CloseContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const ModalWrapperContent = styled.div<{
+export const ModalWrapperContent = styled.div<{
   isMobileFullPage: Props["isMobileFullPage"];
   fixedFooter: Props["fixedFooter"];
   footerHeight: number;
@@ -305,6 +305,7 @@ const Modal = React.forwardRef<Instance, Props>(
       fixedFooter = false,
       isMobileFullPage = false,
       preventOverlayClose = false,
+      onScroll,
       hasCloseButton = true,
       mobileHeader = true,
       disableAnimation = false,
@@ -515,11 +516,13 @@ const Modal = React.forwardRef<Instance, Props>(
 
     const handleScroll: React.UIEventHandler<HTMLDivElement> = event => {
       if (event.target instanceof HTMLDivElement && event.target === modalBody.current) {
+        if (onScroll) onScroll(event);
         setScrollStates(event.target, OFFSET, OFFSET, getScrollTopPoint());
       }
     };
 
     const handleMobileScroll: React.UIEventHandler<HTMLDivElement> = event => {
+      if (onScroll) onScroll(event);
       if (event.target instanceof HTMLDivElement && event.target === modalContent.current) {
         setScrollStates(event.target, 10, 1, getScrollTopPoint(true), true);
       }

@@ -22,9 +22,7 @@ import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
 const getDOMType = type => {
-  if (type === TYPE_OPTIONS.PASSPORTID) {
-    return TYPE_OPTIONS.TEXT;
-  }
+  if (type === TYPE_OPTIONS.PASSPORTID) return TYPE_OPTIONS.TEXT;
   return type;
 };
 
@@ -39,7 +37,7 @@ interface StyledFieldProps extends React.PropsWithChildren<Partial<Props>> {
   onMouseLeave?: (e: React.MouseEvent<HTMLInputElement>) => void;
 }
 
-const Field = styled(
+export const Field = styled(
   React.forwardRef<HTMLElement, StyledFieldProps>(
     ({ component: Component, className, children, spaceAfter, theme, $width, ...props }, ref) => {
       return (
@@ -224,50 +222,9 @@ interface StyledInputProps extends Partial<Props> {
   min: number;
   max: number;
   theme: typeof defaultTheme;
-  autoCorrect: string;
-  autoCapitalize: string;
-  ariaLabelledby?: string;
-  ariaDescribedby?: string;
-  ariaInvalid?: boolean;
 }
 
-export const Input = styled(
-  React.forwardRef<HTMLInputElement, StyledInputProps>(
-    (
-      {
-        type,
-        error,
-        help,
-        inlineLabel,
-        theme,
-        dataAttrs,
-        required,
-        ariaLabelledby,
-        ariaDescribedby,
-        ariaInvalid,
-        ...props
-      },
-      ref,
-    ) => {
-      return (
-        // @ts-expect-error TODO
-        <input
-          type={getDOMType(type)}
-          {...props}
-          {...dataAttrs}
-          ref={ref}
-          // aria-required is passed to make the field required for screen-reader
-          // we do not pass required field by reason, to avoid native browser message
-          aria-required={required}
-          // in case when there is no label
-          aria-labelledby={ariaLabelledby}
-          aria-describedby={ariaDescribedby}
-          aria-invalid={ariaInvalid}
-        />
-      );
-    },
-  ),
-)`
+export const Input = styled.input<StyledInputProps>`
   ${({ theme, disabled, inlineLabel, type }) => css`
     appearance: none;
     -webkit-text-fill-color: ${disabled && theme.orbit.colorTextInputDisabled};
@@ -363,7 +320,13 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     tags,
     tabIndex,
     readOnly,
+    list,
     autoComplete,
+    ariaAutocomplete,
+    ariaActiveDescendant,
+    ariaHasPopup,
+    ariaExpanded,
+    ariaControls,
     autoFocus,
     spaceAfter,
     id,
@@ -371,6 +334,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     inputMode,
     insideInputGroup,
     dataAttrs,
+    role,
   }: Props = props;
 
   const forID = useRandomId();
@@ -465,7 +429,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           onMouseUp={onMouseUp}
           onMouseDown={onMouseDown}
           name={name}
-          type={type}
+          type={getDOMType(type)}
           value={value}
           placeholder={placeholder}
           disabled={disabled}
@@ -475,19 +439,26 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           maxLength={maxLength}
           error={insideInputGroup ? undefined : error}
           ref={ref}
-          tabIndex={tabIndex}
-          ariaLabelledby={!label ? inputId : undefined}
-          ariaDescribedby={shown ? `${inputId}-feedback` : undefined}
-          ariaInvalid={error ? true : undefined}
+          tabIndex={tabIndex ? Number(tabIndex) : undefined}
+          list={list}
+          aria-labelledby={!label ? inputId : undefined}
+          aria-describedby={shown ? `${inputId}-feedback` : undefined}
+          aria-invalid={error ? true : undefined}
+          aria-autocomplete={ariaAutocomplete}
+          aria-haspopup={ariaHasPopup}
+          aria-expanded={ariaExpanded}
+          aria-controls={ariaControls}
+          aria-activedescendant={ariaActiveDescendant}
           inlineLabel={inlineLabel}
           readOnly={readOnly}
           autoCapitalize="off"
           autoCorrect="off"
+          role={role}
           autoComplete={autoComplete}
           autoFocus={autoFocus}
           id={inputId}
           inputMode={inputMode}
-          dataAttrs={dataAttrs}
+          {...dataAttrs}
         />
         {suffix && <Suffix>{suffix}</Suffix>}
         <FakeInput disabled={disabled} error={error} />

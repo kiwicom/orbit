@@ -13,6 +13,8 @@ export type Props = {|
   +selectable?: boolean,
   +selected?: boolean,
   +disabled?: boolean,
+  +role?: string,
+  +tabIndex?: number,
   +icon?: React.Node,
   +action?: React.Node,
   +onClick?: (

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen, act } from "@testing-library/react";
+import { render, screen, act, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Modal from "..";
@@ -84,6 +84,22 @@ describe("Modal", () => {
     ref.current?.setScrollPosition(20);
     const scrollPosition = ref.current?.getScrollPosition();
     expect(scrollPosition).toBe(20);
+  });
+
+  it("should fire onScroll", () => {
+    const onScroll = jest.fn();
+
+    render(
+      <Modal onScroll={onScroll}>
+        <ModalSection>
+          <div style={{ height: 500 }}>kek</div>
+        </ModalSection>
+      </Modal>,
+    );
+
+    fireEvent.scroll(screen.getByRole("dialog"), { target: { scrollTop: 300 } });
+
+    expect(onScroll).toHaveBeenCalled();
   });
 
   it("should switch scrolling container based on the breakpoint", () => {

@@ -439,7 +439,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           maxLength={maxLength}
           error={insideInputGroup ? undefined : error}
           ref={ref}
-          tabIndex={tabIndex ? Number(tabIndex) : undefined}
+          tabIndex={tabIndex !== undefined ? Number(tabIndex) : undefined}
           list={list}
           aria-labelledby={!label ? inputId : undefined}
           aria-describedby={shown ? `${inputId}-feedback` : undefined}

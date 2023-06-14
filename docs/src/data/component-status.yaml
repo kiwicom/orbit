@@ -148,7 +148,7 @@
 - component: Coupon
   figma: Released
   react: Released
-  ios: N/A
+  ios: Released
   android: N/A
   docs: Released
   group: Visuals

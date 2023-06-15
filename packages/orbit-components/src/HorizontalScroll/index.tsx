@@ -242,7 +242,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
             <StyledButton
               tabIndex={0}
               type="button"
-              isHidden={reachedStart}
+              isHidden={reachedStart || !isOverflowing}
               onClick={() => handleClick("left")}
             >
               <ChevronBackward customColor={arrowColor} />
@@ -250,7 +250,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
             <StyledButton
               tabIndex={0}
               type="button"
-              isHidden={reachedEnd}
+              isHidden={reachedEnd || !isOverflowing}
               onClick={() => handleClick("right")}
             >
               <ChevronForward customColor={arrowColor} />

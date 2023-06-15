@@ -47,6 +47,7 @@ const getWeightToken = ({ theme, weight }: { theme: Theme; weight: Weight }): st
 
 const getSizeToken = ({ theme, size }: { theme: Theme; size: Common.Size }): string | null => {
   const sizeTokens = {
+    [SIZE_OPTIONS.EXTRA_LARGE]: theme.orbit.fontSizeTextExtraLarge,
     [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
     [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,
@@ -65,6 +66,7 @@ const getLineHeightToken = ({
   size?: Common.Size | null;
 }): string | null => {
   const lineHeightTokens = {
+    [SIZE_OPTIONS.EXTRA_LARGE]: theme.orbit.lineHeightTextLarge,
     [SIZE_OPTIONS.LARGE]: theme.orbit.lineHeightTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
     [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,

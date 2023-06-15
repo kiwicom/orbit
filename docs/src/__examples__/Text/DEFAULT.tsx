@@ -27,7 +27,7 @@ export default {
         {
           name: "size",
           type: "select",
-          options: ["small", "normal", "large"],
+          options: ["small", "normal", "large", "extraLarge"],
           defaultValue: "normal",
         },
         {

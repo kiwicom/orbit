@@ -2178,6 +2178,15 @@
         "categoryDescription": ""
       }
     },
+    "fontSizeTextExtraLarge": {
+      "value": "18px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "meta": {
+        "categoryDescription": ""
+      }
+    },
     "fontSizeTextSmall": {
       "value": "13px",
       "type": "size",

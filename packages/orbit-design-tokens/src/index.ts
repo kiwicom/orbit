@@ -268,6 +268,7 @@ export const getTokens = (customFoundation?: CustomFoundation): Tokens => {
     fontSizeHeadingTitle6: theme.base.fontSizeSm,
     fontSizeTextNormal: theme.base.fontSizeMd,
     fontSizeTextLarge: theme.base.fontSizeLg,
+    fontSizeTextExtraLarge: theme.base.fontSizeXl,
     fontSizeTextSmall: theme.base.fontSizeSm,
     fontSizeMessage: theme.base.fontSizeMd,
     fontSizeButtonLarge: theme.base.fontSizeLg,

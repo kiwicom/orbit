@@ -262,6 +262,8 @@ module.exports = {
   /*  */
   backgroundButtonWhiteBorderedHover: "rgba(255, 255, 255, 0.2)",
   /*  */
+  fontSizeTextExtraLarge: "18px",
+  /*  */
   paddingTagWithIcon: "6px 8px 6px 6px",
   /*  */
   colorTextButtonFacebook: "rgb(255, 255, 255)",

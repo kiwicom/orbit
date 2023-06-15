@@ -248,6 +248,7 @@ export type Tokens = {
   fontSizeHeadingTitle6: string;
   fontSizeTextNormal: string;
   fontSizeTextLarge: string;
+  fontSizeTextExtraLarge: string;
   fontSizeTextSmall: string;
   fontSizeMessage: string;
   fontSizeButtonLarge: string;

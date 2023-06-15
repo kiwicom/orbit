@@ -131,6 +131,7 @@
   <color name="BACKGROUNDBUTTONSECONDARYHOVER" category="">#ffdce3e9</color>
   <string name="BACKGROUNDBUTTONLINKPRIMARY" category="">transparent</string>
   <color name="BACKGROUNDBUTTONWHITEBORDEREDHOVER" category="">#33ffffff</color>
+  <dimen name="FONTSIZETEXTEXTRALARGE" category="">18dp</dimen>
   <dimen name="PADDINGTAGWITHICON" category="">6 8 6 6dp</dimen>
   <color name="COLORTEXTBUTTONFACEBOOK" category="">#ffffffff</color>
   <dimen name="BORDERWIDTHINPUTFOCUS" category="">2dp</dimen>

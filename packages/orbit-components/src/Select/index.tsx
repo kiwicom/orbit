@@ -211,6 +211,7 @@ SelectContainer.defaultProps = {
 const SelectPrefix = styled.div`
   ${({ theme }) => css`
     display: flex;
+    height: 100%;
     align-items: center;
     position: absolute;
     padding: 0 ${theme.orbit.spaceSmall};
@@ -265,6 +266,7 @@ StyledCustomValue.defaultProps = {
 };
 
 const StyledSelectWrapper = styled.div`
+  height: 100%;
   width: 100%;
   position: relative;
   z-index: 3;

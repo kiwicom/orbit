@@ -18,7 +18,7 @@ export type Component =
   | string
   | React.ComponentType<any>
   | React.RefForwardingComponent<HTMLElement, any>;
-export type Size = "small" | "normal" | "large";
+export type Size = "small" | "normal" | "large" | "extraLarge";
 export type InputSize = "small" | "normal";
 
 export type Carrier = {

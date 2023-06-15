@@ -70,6 +70,7 @@ const getActiveColor: GetTextLinkTokensType =
 
 const getSizeToken = ({ theme, size }: { theme: Theme; size: Common.Size }): string => {
   const sizeTokens = {
+    [SIZE_OPTIONS.EXTRA_LARGE]: theme.orbit.fontSizeTextLarge,
     [SIZE_OPTIONS.LARGE]: theme.orbit.fontSizeTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.fontSizeTextNormal,
     [SIZE_OPTIONS.SMALL]: theme.orbit.fontSizeTextSmall,

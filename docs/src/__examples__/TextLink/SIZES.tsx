@@ -20,5 +20,9 @@ export default {
       name: "Large",
       code: `() => <TextLink size="large" href="https://orbit.kiwi">Large</TextLink>`,
     },
+    {
+      name: "ExtraLarge",
+      code: `() => <TextLink size="extraLarge" href="https://orbit.kiwi">ExtraLarge</TextLink>`,
+    },
   ],
 };

@@ -36,6 +36,7 @@ function fetchComponentDirs() {
     "eslint-plugin",
     "babel-plugin",
     "themer",
+    "examples",
     "icons",
   ];
 

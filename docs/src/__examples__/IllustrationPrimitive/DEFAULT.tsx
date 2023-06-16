@@ -22,6 +22,7 @@ export default {
             "BoardingPass",
             "BusinessTravel",
             "CabinBaggage",
+            "Cancelled",
             "CompassCollectPoints",
             "CompassDemoted",
             "CompassEmailAdventurer",

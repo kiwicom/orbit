@@ -24,6 +24,7 @@ export default {
             "BusinessTravel",
             "CabinBaggage",
             "Chatbot",
+            "Cancelled",
             "CompassCollectPoints",
             "CompassDemoted",
             "CompassEmailAdventurer",

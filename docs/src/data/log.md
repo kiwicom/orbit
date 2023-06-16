@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.3.0...@kiwicom/orbit-components@7.4.0) (2023-06-16)
+
+#### Bug Fixes
+
+-   **ErrorFormTooltip:** change font-weight to normal ([#3886](https://github.com/kiwicom/orbit/issues/3886)) ([2cb63c7](https://github.com/kiwicom/orbit/commit/2cb63c735512e8e200b336b173b87460cb81b084))
+-   **HorizontalScroll:** arrows now only display if it's overflowing ([#3882](https://github.com/kiwicom/orbit/issues/3882)) ([115fce2](https://github.com/kiwicom/orbit/commit/115fce23904c437b995b62bc193c76e3c3a88d08))
+-   **Itinerary:** correct cursor is now applied to ItinerarySegmentBanner ([#3884](https://github.com/kiwicom/orbit/issues/3884)) ([ff86148](https://github.com/kiwicom/orbit/commit/ff861487abd36c5cdd24830be0e3218f9bcb5c4d))
+-   **Select:** adjust height and alignment of Select and Prefix ([#3883](https://github.com/kiwicom/orbit/issues/3883)) ([cedc3a0](https://github.com/kiwicom/orbit/commit/cedc3a0b6f7787f8110c4a001b6731eee8f23fa0))
+
+#### Features
+
+-   **icons:** update icons from figma ([#3888](https://github.com/kiwicom/orbit/issues/3888)) ([161a242](https://github.com/kiwicom/orbit/commit/161a242aab720a63e290e12d00e44ea5dd446905))
+-   **Illustration:** add Cancelled illustration ([#3887](https://github.com/kiwicom/orbit/issues/3887)) ([3ffe282](https://github.com/kiwicom/orbit/commit/3ffe28294a7b9120cb1643b4d6b790d09d6eb6c5))
+-   **Text:** add extraLarge size ([afe2971](https://github.com/kiwicom/orbit/commit/afe29716fc19c8e9701657e8daf1c02c80b77918))
+-   **TextLink:** add extraLarge size ([6b90277](https://github.com/kiwicom/orbit/commit/6b902779689e013d06f797e7948c5920d41d5575))
+
 ## [7.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.2.0...@kiwicom/orbit-components@7.3.0) (2023-06-13)
 
 #### Bug Fixes

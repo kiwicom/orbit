@@ -28,14 +28,15 @@
   "scripts": {
     "build": "yarn clean && babel ./src --extensions '.ts' --out-dir ./dist",
     "clean": "yarn del dist",
-    "postinstall": "yarn build",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "eslint": ">=8"
   },
-  "dependencies": {
-    "@babel/types": "=7.12.10",
+  "devDependencies": {
     "del-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "@babel/types": "=7.12.10"
   }
 }

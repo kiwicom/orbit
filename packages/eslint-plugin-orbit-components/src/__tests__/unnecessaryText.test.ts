@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import unnecessaryText from "../src/rules/unnecessaryText";
+import unnecessaryText from "../rules/unnecessaryText";
 
 describe("Unnecessary text", () => {
   // @ts-expect-error TODO

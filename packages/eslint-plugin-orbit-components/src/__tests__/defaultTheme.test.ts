@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import defaultTheme, { ERRORS } from "../src/rules/defaultTheme";
+import defaultTheme, { ERRORS } from "../rules/defaultTheme";
 
 describe("defaultTheme", () => {
   ruleTester.run("defaultTheme", defaultTheme, {

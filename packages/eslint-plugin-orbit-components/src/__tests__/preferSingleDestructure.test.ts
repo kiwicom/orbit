@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import preferSingleDestructure, { ERROR } from "../src/rules/preferSingleDestructure";
+import preferSingleDestructure, { ERROR } from "../rules/preferSingleDestructure";
 
 describe("prefer-single-destructure", () => {
   ruleTester.run("prefer-single-destructure", preferSingleDestructure, {

@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import useRtl, { ERROR_RTL_SPACING, ERROR_BORDER_RADIUS, errorBasic } from "../src/rules/useRtl";
+import useRtl, { ERROR_RTL_SPACING, ERROR_BORDER_RADIUS, errorBasic } from "../rules/useRtl";
 
 describe("use-rtl", () => {
   ruleTester.run("use-rtl", useRtl, {

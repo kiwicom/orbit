@@ -6,7 +6,7 @@ const ruleTester = new RuleTester({
     sourceType: "module",
     ecmaVersion: 2020,
     babelOptions: {
-      configFile: require.resolve("./babel.config.js"),
+      configFile: require.resolve("../babel.config.cjs"),
       presets: ["@babel/preset-react", "@babel/preset-env"],
     },
   },

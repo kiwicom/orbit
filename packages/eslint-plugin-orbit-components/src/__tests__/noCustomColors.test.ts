@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import noCustomColors from "../src/rules/noCustomColors";
+import noCustomColors from "../rules/noCustomColors";
 
 describe("no-custom-colors", () => {
   // @ts-expect-error TODO

@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import uniqueId from "../src/rules/uniqueId";
+import uniqueId from "../rules/uniqueId";
 
 describe("unique id", () => {
   ruleTester.run("svg-unique-id", uniqueId, {

@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import rtlUtils, { RightOrLeftError, SpacingError } from "../src/rules/rtlUtils";
+import rtlUtils, { RightOrLeftError, SpacingError } from "../rules/rtlUtils";
 
 describe("rtl-utils", () => {
   ruleTester.run("rtl-utils", rtlUtils, {

@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import buttonHasTitle from "../src/rules/buttonHasTitle";
+import buttonHasTitle from "../rules/buttonHasTitle";
 
 describe("Button has title", () => {
   // @ts-expect-error TODO

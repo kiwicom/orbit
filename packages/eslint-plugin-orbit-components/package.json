@@ -4,6 +4,7 @@
   "version": "0.6.7",
   "author": "Kiwi.com",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -26,15 +27,16 @@
     "kiwicom"
   ],
   "scripts": {
-    "build": "yarn clean && babel ./src --extensions '.ts' --out-dir ./dist",
-    "clean": "yarn del dist",
+    "build": "tsup",
+    "postinstall": "yarn build",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "eslint": ">=8"
   },
   "devDependencies": {
-    "del-cli": "^5.0.0"
+    "del-cli": "^5.0.0",
+    "tsup": "^6.1.0"
   },
   "dependencies": {
     "@babel/types": "=7.12.10"

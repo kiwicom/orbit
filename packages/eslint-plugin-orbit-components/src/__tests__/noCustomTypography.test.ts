@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import noCustomTypography from "../src/rules/noCustomTypography";
+import noCustomTypography from "../rules/noCustomTypography";
 
 describe("no-custom-typography", () => {
   // @ts-expect-error TODO

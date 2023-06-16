@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@4.1.0...@kiwicom/orbit-design-tokens@4.2.0) (2023-06-16)
+
+
+### Features
+
+* **tokens:** add fontSizeXl token ([2943557](https://github.com/kiwicom/orbit/commit/2943557cba2b1fbb9d0d081a44b801c02fa7f564))
+
+
+
+
+
 # [4.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@4.0.0...@kiwicom/orbit-design-tokens@4.1.0) (2023-05-31)
 
 

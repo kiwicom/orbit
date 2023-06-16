@@ -19,6 +19,7 @@ export type Name =
   | "BusinessTravel"
   | "CabinBaggage"
   | "Chatbot"
+  | "Cancelled"
   | "CompassCollectPoints"
   | "CompassDemoted"
   | "CompassEmailAdventurer"

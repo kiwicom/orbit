@@ -14,7 +14,7 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-Table below contains all types of the props available in Illustration component.
+The table below contains all types of props available in the Illustration component.
 
 | Name       | Type            | Default    | Description                                                                                                                                                    |
 | :--------- | :-------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -49,6 +49,7 @@ Table below contains all types of the props available in Illustration component.
 | `"CompassEmailScout"`           |
 | `"CompassPoints"`               |
 | `"Chatbot"`                     |
+| `"Cancelled"`                   |
 | `"CompassTravelPlan"`           |
 | `"CompassSaveOnBooking"`        |
 | `"DesktopSearch"`               |

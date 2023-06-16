@@ -14,6 +14,7 @@ export const NAMES: Name[] = [
   "BusinessTravel",
   "CabinBaggage",
   "Chatbot",
+  "Cancelled",
   "CompassCollectPoints",
   "CompassDemoted",
   "CompassEmailAdventurer",

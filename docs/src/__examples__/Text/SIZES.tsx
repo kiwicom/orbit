@@ -16,5 +16,9 @@ export default {
       name: "Large",
       code: `() => <Text size="large">Large text</Text>`,
     },
+    {
+      name: "ExtraLarge",
+      code: `() => <Text size="extraLarge">Large text</Text>`,
+    },
   ],
 };

@@ -12,6 +12,7 @@ export enum SIZE_OPTIONS {
   SMALL = "small",
   NORMAL = "normal",
   LARGE = "large",
+  EXTRA_LARGE = "extraLarge",
 }
 
 export enum WEIGHT_OPTIONS {

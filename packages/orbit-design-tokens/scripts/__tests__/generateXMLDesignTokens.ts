@@ -988,6 +988,10 @@ describe(generateXMLDesignTokens.name, () => {
           <value>16px</value>
         </token>
         <token>
+          <name>fontSizeTextExtraLarge</name>
+          <value>18px</value>
+        </token>
+        <token>
           <name>fontSizeTextSmall</name>
           <value>13px</value>
         </token>

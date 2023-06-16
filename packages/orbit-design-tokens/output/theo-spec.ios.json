@@ -918,6 +918,13 @@
       "name": "backgroundButtonWhiteBorderedHover"
     },
     {
+      "value": "18px",
+      "type": "size",
+      "category": "",
+      "comment": "",
+      "name": "fontSizeTextExtraLarge"
+    },
+    {
       "value": "6px 8px 6px 6px",
       "type": "size",
       "category": "",

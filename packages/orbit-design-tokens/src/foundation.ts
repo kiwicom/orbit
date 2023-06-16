@@ -5,6 +5,7 @@ export interface Base {
   fontSizeSm: string;
   fontSizeMd: string;
   fontSizeLg: string;
+  fontSizeXl: string;
   borderRadius: string;
   iconSizeSm: string;
   iconSizeMd: string;
@@ -72,6 +73,7 @@ const base = {
   fontSizeSm: "13px",
   fontSizeMd: "15px",
   fontSizeLg: "16px",
+  fontSizeXl: "18px",
   iconSizeSm: "16px",
   iconSizeMd: "20px",
   iconSizeLg: "24px",

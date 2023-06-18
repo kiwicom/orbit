@@ -38,6 +38,7 @@ function fetchComponentDirs() {
     "themer",
     "examples",
     "icons",
+    "tracking",
   ];
 
   return dirs.reduce(filterOut, whiteListedDirs);

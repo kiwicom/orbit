@@ -5,7 +5,7 @@
   "description": "Tracking for orbit design system",
   "author": "Kiwi.com",
   "license": "MIT",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": "./bin/tracking.js",

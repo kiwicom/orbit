@@ -9,6 +9,7 @@ try {
   dotenv.config({
     path: path.join(process.cwd(), `.env`),
     example: path.join(process.cwd(), `.env.example`),
+    allowEmptyValues: true,
   });
 } catch (error) {
   console.error(error);

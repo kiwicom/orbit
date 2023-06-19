@@ -12,6 +12,7 @@ try {
   dotenv.config({
     path: path.join(process.cwd(), `../.env`),
     example: path.join(process.cwd(), `../.env.example`),
+    allowEmptyValues: true,
   });
 } catch (error) {
   // TODO: ADD missingToken utility function after switch to ts-node

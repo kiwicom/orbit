@@ -244,11 +244,12 @@ SelectSuffix.defaultProps = {
   theme: defaultTheme,
 };
 
-const StyledCustomValue = styled(({ theme, ...props }) => <div {...props} />)`
+const StyledCustomValue = styled.div<{ $filled?: boolean; $disabled?: boolean; $prefix?: boolean }>`
   ${({ theme, $filled, $disabled, $prefix }) => css`
     color: ${($disabled && theme.orbit.paletteInkLight) ||
     ($filled ? theme.orbit.colorTextInput : theme.orbit.colorPlaceholderInput)};
-
+    display: flex;
+    align-items: center;
     font-family: ${theme.orbit.fontFamily};
     font-size: ${theme.orbit.fontSizeInputNormal};
     z-index: 3;

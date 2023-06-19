@@ -3,7 +3,9 @@
   "description": "Collection of ESLint rules to enforce the best usage practices of @kiwicom/orbit-components",
   "version": "0.6.9",
   "author": "Kiwi.com",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "type": "module",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "repository": {
@@ -28,17 +30,16 @@
   ],
   "scripts": {
     "build": "tsup",
-    "postinstall": "yarn build",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "eslint": ">=8"
   },
   "devDependencies": {
-    "del-cli": "^5.0.0"
+    "del-cli": "^5.0.0",
+    "tsup": "^6.1.0"
   },
   "dependencies": {
-    "@babel/types": "=7.12.10",
-    "tsup": "^6.1.0"
+    "@babel/types": "=7.12.10"
   }
 }

@@ -5,11 +5,15 @@ It's efforts like yours that help keep our docs useful.
 
 ## Table of Contents
 
-- [Location](#location)
-- [Running the docs locally](#running-the-docs-locally)
-- [Creating new component docs](#creating-new-component-docs)
-- [Code style](#code-style)
-- [Prose style](#prose-style)
+- [Contributing to the docs](#contributing-to-the-docs)
+  - [Table of Contents](#table-of-contents)
+  - [Location](#location)
+  - [Running the docs locally](#running-the-docs-locally)
+  - [Creating new component docs](#creating-new-component-docs)
+  - [Code style](#code-style)
+    - [Line length](#line-length)
+  - [Prose style](#prose-style)
+  - [Checking links](#checking-links)
 
 ## Location
 

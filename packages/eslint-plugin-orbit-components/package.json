@@ -3,10 +3,17 @@
   "description": "Collection of ESLint rules to enforce the best usage practices of @kiwicom/orbit-components",
   "version": "0.6.9",
   "author": "Kiwi.com",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "type": "module",
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",

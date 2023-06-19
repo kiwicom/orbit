@@ -1,14 +1,11 @@
 const { DEV_DEPENDENCIES } = require("./utils/eslint");
 
+const CONFIGS = ["airbnb", "plugin:react-hooks/recommended", "plugin:prettier/recommended"];
+
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
-  extends: [
-    "airbnb",
-    "plugin:react-hooks/recommended",
-    "plugin:orbit-components/internal",
-    "plugin:prettier/recommended",
-  ],
+  extends: CONFIGS,
   plugins: ["@babel"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
@@ -168,7 +165,6 @@ module.exports = {
         "jest/no-if": "error",
         "jest/consistent-test-it": "warn",
         "jest/no-focused-tests": "error",
-        "orbit-components/unique-id": "off",
         "react/no-unstable-nested-components": "off",
       },
     },

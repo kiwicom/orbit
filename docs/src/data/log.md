@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [7.4.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.4.0...@kiwicom/orbit-components@7.4.1) (2023-06-19)
+
+#### Bug Fixes
+
+-   **Select:** customValueText vertical alignment ([#3890](https://github.com/kiwicom/orbit/issues/3890)) ([92c3db8](https://github.com/kiwicom/orbit/commit/92c3db8fc9fea25e91b668f58ca28a442f251cb1))
+
 ## [7.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.3.0...@kiwicom/orbit-components@7.4.0) (2023-06-16)
 
 #### Bug Fixes

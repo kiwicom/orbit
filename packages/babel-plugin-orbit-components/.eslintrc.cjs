@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  extends: "../../.eslintrc.js",
+  extends: "../../.eslintrc.cjs",
   overrides: [
     {
       files: ["__tests__/*.test.js"],

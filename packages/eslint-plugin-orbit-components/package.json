@@ -12,6 +12,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./README.md": "./README.md",
     "./package.json": "./package.json"
   },
   "license": "MIT",

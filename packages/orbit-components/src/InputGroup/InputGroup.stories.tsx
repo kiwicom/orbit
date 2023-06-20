@@ -262,9 +262,8 @@ OnChangeBehavior.story = {
 };
 
 export const Disabled = () => {
-  const disabled = boolean("Disabled", true);
   return (
-    <InputGroup disabled={disabled} label="Disabled">
+    <InputGroup disabled label="Disabled">
       <InputField placeholder="a" maxLength={11} />
       <InputField placeholder="b" maxLength={11} />
     </InputGroup>

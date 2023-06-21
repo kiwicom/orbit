@@ -8,7 +8,15 @@ const config: StorybookConfig = {
   core: {
     builder: "@storybook/builder-vite",
   },
-  addons: ["@storybook/addon-essentials", "@storybook/addon-knobs"],
+  addons: [
+    "@storybook/addon-knobs",
+    {
+      name: "@storybook/addon-essentials",
+      options: {
+        controls: false,
+      },
+    },
+  ],
   async viteFinal(cfg: any) {
     return cfg;
   },

@@ -106,18 +106,18 @@ const PureSlider = ({
   const [focused, setFocused] = React.useState(false);
   const { rtl } = theme;
 
+  const updateValue = (newValue: Value) => {
+    valueRef.current = newValue;
+    setValue(newValue);
+  };
+
   React.useEffect(() => {
     const newValue = Array.isArray(defaultValue)
       ? defaultValue.map(item => Number(item))
       : Number(defaultValue);
 
-    setValue(newValue);
+    updateValue(newValue);
   }, [defaultValue]);
-
-  const updateValue = (newValue: Value) => {
-    valueRef.current = newValue;
-    setValue(newValue);
-  };
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.ctrlKey || event.shiftKey || event.altKey) return;

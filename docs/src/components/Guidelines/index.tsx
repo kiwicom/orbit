@@ -5,7 +5,6 @@ import { Stack, Text, Grid, mediaQueries as mq } from "@kiwicom/orbit-components
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 
 import { StyledAnchor } from "../HeadingWithLink";
-import { h3 as H3 } from "../../mdx-components";
 import { slugify } from "../../utils/common";
 import { extractContent, resolveBorders } from "./helpers";
 
@@ -129,7 +128,7 @@ export default function Guideline({ type = "do", title, svgs = [], children }: P
                 <CloseCircle color="critical" ariaLabel="Don't" size="large" />
               ))}
             <Stack>
-              <H3 noId>{title}</H3>
+              <Text weight="bold">{title}</Text>
               {content}
             </Stack>
           </Stack>

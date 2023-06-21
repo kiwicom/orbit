@@ -73,7 +73,7 @@ const GuidelineContainer = ({ children, type }) => {
           </Text>
         ) : (
           <Text type="critical" weight="bold">
-            Don&apos;t
+            Don’t
           </Text>
         )}
       </Stack>

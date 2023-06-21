@@ -35,23 +35,23 @@ const getToken =
   };
 
 const FakeGroup = styled.span<{
-  error?: Props["error"];
-  label?: Props["label"];
-  disabled?: Props["disabled"];
-  size?: Props["size"];
-  active: boolean;
+  $error?: Props["error"];
+  $label?: Props["label"];
+  $disabled?: Props["disabled"];
+  $size?: Props["size"];
+  $active: boolean;
 }>`
-  ${({ theme, error, disabled, active }) => css`
+  ${({ theme, $error, $disabled, $active }) => css`
     width: 100%;
     display: block;
     z-index: 1;
     box-sizing: border-box;
     height: ${getToken(TOKENS.height)};
     box-shadow: ${`inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`};
-    box-shadow: ${error &&
+    box-shadow: ${$error &&
     `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`};
-    ${active && formElementFocus};
-    background-color: ${disabled
+    ${$active && formElementFocus};
+    background-color: ${$disabled
       ? theme.orbit.backgroundInputDisabled
       : theme.orbit.backgroundInput};
     font-size: ${theme.orbit.fontSizeInputNormal};
@@ -63,10 +63,10 @@ const FakeGroup = styled.span<{
     `)};
 
     &:hover {
-      box-shadow: inset 0 0 0
-        ${`${theme.orbit.borderWidthInput} ${
-          error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
-        }`};
+      box-shadow: ${!$disabled &&
+      `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
+        $error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
+      }`};
     }
   `}
 `;
@@ -288,7 +288,13 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
           </FormLabel>
         )}
 
-        <FakeGroup label={label} error={errorReal} active={active} size={size}>
+        <FakeGroup
+          $label={label}
+          $error={errorReal}
+          $active={active}
+          $size={size}
+          $disabled={disabled}
+        >
           <StyledChildren onBlur={handleBlurGroup}>
             {React.Children.toArray(children).map((child, key) => {
               const childFlex =
@@ -324,5 +330,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
     );
   },
 );
+
+InputGroup.displayName = "InputGroup";
 
 export default InputGroup;

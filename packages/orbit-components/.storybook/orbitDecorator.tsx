@@ -1,6 +1,6 @@
 import * as React from "react";
 import jsxToString from "react-element-to-jsx-string";
-import { Code } from "@storybook/addon-info/dist/components/markdown";
+import { Source } from "@storybook/blocks";
 
 import defaultTheme from "../src/defaultTheme";
 import OrbitProvider from "../src/OrbitProvider";
@@ -31,7 +31,7 @@ const orbitDecorator = (storyFn, context) => {
         {children}
         {process.env.NODE_ENV !== "loki" ? (
           <div style={{ marginTop: 20 }}>
-            <Code code={jsxToString(children, options)} language="jsx" format={false} />
+            <Source code={jsxToString(children, options)} language="jsx" format={false} />
           </div>
         ) : null}
       </div>

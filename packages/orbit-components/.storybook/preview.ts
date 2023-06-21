@@ -1,6 +1,6 @@
-import { addDecorator } from "@storybook/react";
-
 import "loki/configure-react";
+import { Preview } from "@storybook/react";
+
 import { QUERIES } from "../src/utils/mediaQuery/consts";
 import orbitDecorator from "./orbitDecorator";
 import theme from "../src/defaultTheme";
@@ -31,4 +31,8 @@ export const parameters = {
   },
 };
 
-addDecorator(orbitDecorator);
+const preview: Preview = {
+  decorators: [orbitDecorator],
+};
+
+export default preview;

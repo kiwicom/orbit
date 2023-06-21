@@ -1,9 +1,14 @@
 const path = require("path");
 
 module.exports = {
-  extends: "../../.eslintrc.cjs",
+  extends: ["../../.eslintrc.cjs", "plugin:storybook/recommended"],
   rules: {
-    "import/no-extraneous-dependencies": ["error", { packageDir: __dirname }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        packageDir: __dirname,
+      },
+    ],
   },
   env: {
     browser: true,
@@ -40,6 +45,8 @@ module.exports = {
       rules: {
         "orbit-components/unique-id": "off",
         "react/no-unstable-nested-components": "off",
+        // TODO: remove after migration to a new actions
+        "import/no-extraneous-dependencies": "off",
       },
     },
     {
@@ -60,12 +67,14 @@ module.exports = {
       rules: {
         "import/no-extraneous-dependencies": [
           "error",
-          { packageDir: [__dirname, path.resolve(__dirname, "../../")] },
+          {
+            packageDir: [__dirname, path.resolve(__dirname, "../../")],
+          },
         ],
       },
     },
     {
-      files: "config/**",
+      files: ["config/**", ".storybook/**"],
       rules: {
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
@@ -76,7 +85,9 @@ module.exports = {
         "import/extensions": "off",
         "import/no-extraneous-dependencies": [
           "error",
-          { packageDir: [__dirname, path.resolve(__dirname, "../../")] },
+          {
+            packageDir: [__dirname, path.resolve(__dirname, "../../")],
+          },
         ],
       },
     },

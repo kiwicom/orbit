@@ -64,6 +64,7 @@ export const StyledDropdown = styled.ul<{
     box-sizing: border-box;
     width: 100%;
     background: ${theme.orbit.paletteWhite};
+    z-index: 3;
 
     ${mq.largeMobile(css`
       position: absolute;

@@ -44,10 +44,14 @@ const StyledInlineLabel = styled.div<{ hasFeedback?: boolean }>`
     )};
 
     ${FormLabel} {
+      display: inline-block;
       margin-bottom: 0;
       font-size: ${theme.orbit.fontSizeInputNormal};
       line-height: ${theme.orbit.lineHeightTextNormal};
+      text-overflow: ellipsis;
       white-space: nowrap;
+      overflow: hidden;
+      max-width: 20ch;
     }
   `}
 `;

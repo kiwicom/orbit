@@ -221,7 +221,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     const renderOptions = () => {
       if (results.groups.length === 0) {
         return results.all.map((option, idx) => {
-          const { title, description, value: optValue } = option;
+          const { title, description, prefix, value: optValue } = option;
           const optionId = randomId(title);
           const isSelected = optValue === selectedOption?.value;
           const optionRef = React.createRef() as React.RefObject<HTMLDivElement>;
@@ -236,6 +236,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
               ref={optionRef}
               title={title}
               description={description}
+              prefix={prefix}
               onClick={ev => {
                 ev.preventDefault();
                 if (onOptionSelect) onOptionSelect(option);
@@ -272,7 +273,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                   const optionRef = React.createRef() as React.RefObject<HTMLDivElement>;
                   refs[optionIdx] = optionRef;
 
-                  const { title, description, value: optValue } = option;
+                  const { title, description, prefix, value: optValue } = option;
                   const optionId = randomId(title);
                   const isSelected = optValue === selectedOption?.value;
 
@@ -285,6 +286,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                       ref={optionRef}
                       title={title}
                       description={description}
+                      prefix={prefix}
                       onClick={ev => {
                         ev.preventDefault();
                         if (onOptionSelect) onOptionSelect(option);
@@ -304,7 +306,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
             <Text type="secondary">{showAllLabel}</Text>
           </Box>
           {results.all.map(option => {
-            const { title, description, value: optValue, group } = option;
+            const { title, description, prefix, value: optValue, group } = option;
             if (group && !showAll) return null;
             idx += 1;
             const optionRef = React.createRef() as React.RefObject<HTMLDivElement>;
@@ -323,6 +325,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                 ref={optionRef}
                 title={title}
                 description={description}
+                prefix={prefix}
                 onClick={ev => {
                   ev.preventDefault();
                   if (onOptionSelect) onOptionSelect(option);

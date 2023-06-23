@@ -10,6 +10,7 @@ export interface Option {
   readonly title: string;
   readonly value: string | number;
   readonly description?: string;
+  readonly prefix?: React.ReactNode;
 }
 
 // InputEvent

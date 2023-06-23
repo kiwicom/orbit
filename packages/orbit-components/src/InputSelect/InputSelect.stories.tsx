@@ -3,6 +3,8 @@ import { css } from "styled-components";
 import { object, text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import CountryFlag from "../CountryFlag";
+
 import InputSelect from ".";
 
 export default {
@@ -15,28 +17,34 @@ export const Grouped = () => {
       title: "Euro",
       value: "EUR",
       group: "Popular",
+      prefix: <CountryFlag code="eu" />,
     },
     {
       title: "US Dollar",
       value: "USD",
       group: "Popular",
+      prefix: <CountryFlag code="us" />,
     },
     {
       title: "Pound Sterling",
       value: "GBP",
       group: "Popular",
+      prefix: <CountryFlag code="gb" />,
     },
     {
       title: "Australian Dollar",
       value: "AUD",
+      prefix: <CountryFlag code="au" />,
     },
     {
       title: "Brazilian Real",
       value: "BRL",
+      prefix: <CountryFlag code="br" />,
     },
     {
       title: "Czech Koruna",
       value: "CZK",
+      prefix: <CountryFlag code="cz" />,
     },
   ];
 

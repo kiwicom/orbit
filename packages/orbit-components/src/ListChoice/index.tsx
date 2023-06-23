@@ -13,6 +13,7 @@ import type { Props } from "./types";
 const StyledListChoiceIcon = styled.div`
   ${({ theme }) => css`
     display: flex;
+    align-items: center;
     align-self: flex-start;
     flex: 0 0 auto;
     margin-${right}: ${theme.orbit.spaceXSmall};

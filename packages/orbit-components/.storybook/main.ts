@@ -1,17 +1,11 @@
 /* eslint-disable no-param-reassign */
 import path from "path";
+import type { StorybookConfig } from "@storybook/react-webpack5";
 
-const config = {
+const config: StorybookConfig = {
   staticDirs: [path.resolve(__dirname, "../static")],
   stories: ["../src/**/*.stories.*"],
-  framework: {
-    name: "@storybook/react-webpack5",
-    options: {},
-  },
-  core: {},
-  features: {
-    babelModeV7: true,
-  },
+  framework: "@storybook/react-webpack5",
   addons: [
     "@storybook/addon-knobs",
     {

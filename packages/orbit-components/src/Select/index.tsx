@@ -205,6 +205,14 @@ export const SelectContainer = styled.div<{ disabled?: boolean; error?: boolean 
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
     }
+
+    &:focus-within {
+      outline: none;
+
+      ${FakeInput} {
+        ${formElementFocus}
+      }
+    }
   `}
 `;
 

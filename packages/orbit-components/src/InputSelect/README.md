@@ -106,3 +106,4 @@ The table below contains all types of props available for the object in the `Opt
 | **value**   | `string   \| number` | **Required.** The value of the Option. Should be unique in each option on the array of options passed to `InputSelect`. |
 | description | `string`             | The description of the Option.                                                                                          |
 | group       | `string`             | The group of the Option.                                                                                                |
+| prefix      | `React.Node`         | A prefix to the title. Can be an icon, flag, etc.                                                                       |

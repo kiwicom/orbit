@@ -11,6 +11,7 @@ type Option = {|
   +title: string,
   +value: string | number,
   +description?: string,
+  +prefix?: React.Node,
 |};
 
 export type Props = {|

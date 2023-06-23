@@ -24,11 +24,12 @@ type InputSelectOptionProps = {
   isSelected: boolean;
   title: Option["title"];
   description: Option["description"];
+  prefix: Option["prefix"];
   onClick: (ev: React.SyntheticEvent) => void;
 };
 
 const InputSelectOption = React.forwardRef<HTMLDivElement, InputSelectOptionProps>(
-  ({ active, id, onClick, isSelected, title, description }, ref) => {
+  ({ active, id, onClick, isSelected, title, description, prefix }, ref) => {
     return (
       <StyledListChoiceWrapper $active={active}>
         <ListChoice
@@ -41,6 +42,7 @@ const InputSelectOption = React.forwardRef<HTMLDivElement, InputSelectOptionProp
           role="option"
           title={title}
           description={description}
+          icon={prefix}
         />
       </StyledListChoiceWrapper>
     );

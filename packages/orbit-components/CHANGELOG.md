@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.4.1...@kiwicom/orbit-components@7.5.0) (2023-06-23)
+
+
+### Bug Fixes
+
+* **InputGroup:** disabled state was not visually correct ([53a00e0](https://github.com/kiwicom/orbit/commit/53a00e07bbd7774e73f94000be3ca0abaf01dd95))
+* **InputSelect:** z-index was missing from styles ([948574c](https://github.com/kiwicom/orbit/commit/948574cecb4ecaab94ab35da3b38fab39912e27b))
+* **ListChoice:** align icon to the center vertically ([b5c022b](https://github.com/kiwicom/orbit/commit/b5c022b60b45852db4aec203e3b1103718a44766))
+* **Slider:** defaultValue now updates the slider ([62dd911](https://github.com/kiwicom/orbit/commit/62dd91119c302c9c656d70fa172416eb614d8355))
+
+
+### Features
+
+* **InputSelect:** add prefix to Option ([bf89e71](https://github.com/kiwicom/orbit/commit/bf89e7165305271d31d0d703878caa3d1866340b))
+
+
+
+
+
 ## [7.4.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.4.0...@kiwicom/orbit-components@7.4.1) (2023-06-19)
 
 

@@ -28,28 +28,20 @@ jobs:
       - name: Build
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-        run: |
-          yarn tokens build
-          yarn tailwind-preset build
-          yarn components build
-          yarn tracking build
-          yarn themer build
+        run: yarn nx affected -t build --all --parallel
 
       - name: Type checks
-        run: yarn check:types && yarn flow check
-
+        run: yarn nx affected -t check:types --all --parallel
       - name: Lint
         run: |
-          yarn eslint:ci
+          yarn nx affected -t check:lint
           yarn prettier:test
           yarn check:css
 
       - name: Test
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-        run: |
-          yarn tailwind-preset pretest
-          yarn test-ci
+        run: nx affected -t test --paralell=5 --runInBand
 
   docs:
     runs-on: ubuntu-latest
@@ -79,7 +71,7 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
         run: |
-          yarn orbit-kiwi:build
+          nx run --target build --project @kiwicom/orbit.kiwi
 
       - name: Check links
         env:

@@ -1,4 +1,4 @@
-const { DEV_DEPENDENCIES } = require("./utils/eslint");
+const { DEV_DEPENDENCIES } = require("./utils/eslint.cjs");
 
 const CONFIGS = [
   "airbnb",

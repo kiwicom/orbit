@@ -2,11 +2,9 @@
   "$schema": "http://json.schemastore.org/lerna",
   "version": "independent",
   "npmClient": "yarn",
+  "useNx": true,
   "useWorkspaces": true,
-  "packages": [
-    "packages/*",
-    "docs"
-  ],
+  "packages": ["packages/*", "docs"],
   "command": {
     "version": {
       "message": "chore: publish"

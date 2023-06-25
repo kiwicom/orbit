@@ -1,0 +1,33 @@
+{
+  "extends": "nx/presets/npm.json",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "namedInputs": {
+    "noMarkdown": ["!{projectRoot}/**/*.md"],
+    "production": [
+      "noMarkdown",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/jest.config.cjs",
+      "!{projectRoot}/.eslintrc.cjs"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "inputs": ["{workspaceRoot}/.eslintrc.cjs"]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test", "check:lint", "check:types"],
+        "cacheableDirectories": ["node_modules", "docs", "packages"]
+      }
+    }
+  }
+}

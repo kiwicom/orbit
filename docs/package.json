@@ -10,6 +10,7 @@
     "fetch:contributors": "babel-node ./plugins/contributors/fetchContributors.mjs",
     "changelog": "zx ./services/changelog.mjs",
     "check:types": "tsc",
+    "check:css": "yarn stylelint 'src/**/*.tsx'",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",

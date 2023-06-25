@@ -38,6 +38,9 @@
   ],
   "scripts": {
     "build": "tsup",
+    "test": "jest",
+    "check:types": "tsc --noEmit",
+    "check:lint": "eslint . --report-unused-disable-directives",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {

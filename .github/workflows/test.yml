@@ -12,36 +12,86 @@ env: # Set environment variables for every job and step in this workflow
   CLICOLOR: "1" # Enable colors for *NIX commands
   PY_COLORS: "1" # Enable colors for Python-based utilities
   FORCE_COLOR: "1" # Force colors in the terminal
-  STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
-  STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
+  is-pull-request: ${{ github.event_name == 'pull_request' }}
+  is-merge: ${{ github.event_name == 'push' && github.ref_name == 'master' }}
+
+permissions:
+  # Required by nrwl/nx-set-shas
+  actions: read
+  contents: read
 
 jobs:
-  general:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          # Required by nrwl/nx-set-shas
+          fetch-depth: 0
 
-      - name: Node
+      - name: "Derive appropriate SHAs for master and head for `nx affected` commands"
+        uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: master
+
+      - name: Setup node
         uses: ./.github/actions/node
 
-      - name: Build
+      - name: Build feature
+        if: ${{ env.is-pull-request == 'true' }}
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-        run: yarn nx affected -t build --all --parallel
+        run: yarn nx affected:build --exclude @kiwicom/orbit.kiwi
 
-      - name: Type checks
-        run: yarn nx affected -t check:types --all --parallel
-      - name: Lint
-        run: |
-          yarn nx affected -t check:lint
-          yarn prettier:test
-          yarn check:css
-
-      - name: Test
+      - name: Build master
+        if: ${{ env.is-merge == 'true' }}
         env:
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-        run: nx affected -t test --paralell=5 --runInBand
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: yarn nx run-many -t build --all --parallel
+
+      - name: "Types all"
+        if: ${{ env.is-merge == 'true' }}
+        run: yarn nx run-many -t check:types --exclude @kiwicom/orbit.kiwi
+
+      - name: "Types affected"
+        if: ${{ env.is-pull-request == 'true' }}
+        run: yarn check:types:affected
+
+      - name: "Test affected"
+        if: ${{ env.is-pull-request == 'true' }}
+        run: yarn test:affected
+
+      - name: "Test all"
+        if: ${{ env.is-merge == 'true' }}
+        run: yarn test:all
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # Required by nrwl/nx-set-shas
+          fetch-depth: 0
+
+      - name: "Derive appropriate SHAs for master and head for `nx affected` commands"
+        uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: master
+
+      - name: Setup node
+        uses: ./.github/actions/node
+
+      - name: "Lint affected"
+        if: ${{ env.is-pull-request == 'true' }}
+        run: yarn check:lint:affected
+
+      - name: "Lint all"
+        if: ${{ env.is-merge == 'true' }}
+        run: yarn check:lint:all
 
   docs:
     runs-on: ubuntu-latest
@@ -55,6 +105,8 @@ jobs:
       - name: Restore Gatsby cache
         uses: actions/cache@v3
         with:
+          # Required by nrwl/nx-set-shas
+          fetch-depth: 0
           path: |
             docs/.cache
             docs/public
@@ -70,28 +122,30 @@ jobs:
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           NODE_OPTIONS: "--max_old_space_size=4096"
 
-        run: |
-          nx run --target build --project @kiwicom/orbit.kiwi
+        run: yarn nx run @kiwicom/orbit.kiwi:build
 
       - name: Check links
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn check:links
 
+      - name: Check types
+        run: yarn nx run @kiwicom/orbit.kiwi:check:types
+
   cypress:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          # Requrired by nrwl/nx-set-shas
+          fetch-depth: 0
 
       - name: Node
         uses: ./.github/actions/node
 
       - name: Build
-        run: |
-          yarn tokens build
-          yarn tailwind-preset build
-          yarn components build
+        run: yarn nx run @kiwicom/orbit-components:build
 
       - name: Cypress
         uses: cypress-io/github-action@v5

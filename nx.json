@@ -9,6 +9,7 @@
       "noMarkdown",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/jest.config.cjs",
+      "!{projectRoot}/output",
       "!{projectRoot}/.eslintrc.cjs"
     ]
   },

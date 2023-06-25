@@ -12,7 +12,6 @@ packages/eslint-plugin-orbit-components/dist
 !.remarkrc.js
 !.size-limit.cjs
 !.size-limit.js
-
 # from gitignore
 packages/orbit-components/src/icons/*
 

@@ -24,7 +24,7 @@
     "fetch:icons": "ts-node --esm config/fetchIcons.mts",
     "check:icons": "ts-node --esm config/checkIconsCli.mts",
     "check:types": "tsc --p tsconfig.json",
-    "check:lint": "eslint . --report-unused-disable-directives",
+    "check:lin": "eslint . --report-unused-disable-directives",
     "check:css": "yarn stylelint './src/**/*.tsx'",
     "flow:ci": "flow check",
     "build:iconsPng": "ts-node --esm config/generatePngIcons.mts",

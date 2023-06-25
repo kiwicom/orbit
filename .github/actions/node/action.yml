@@ -19,5 +19,5 @@ runs:
           node-modules-
 
     - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile --non-interactive
       shell: bash

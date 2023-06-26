@@ -1,12 +1,12 @@
 # Switch
 
-To implement Switch component into your project you'll need to add the import:
+To implement the Switch component into your project you'll need to add the import:
 
 ```jsx
 import Switch from "@kiwicom/orbit-components/lib/Switch";
 ```
 
-After adding import into your project you can use it simply like:
+After adding import to your project you can use it simply like:
 
 ```jsx
 <Switch checked={isChecked} onChange={handleOnChange} />
@@ -14,7 +14,7 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-Table below contains all types of the props available in StopoverArrow component.
+The table below contains all types of props available in the StopoverArrow component.
 
 | Name           | Type                    | Default      | Description                             |
 | :------------- | :---------------------- | :----------- | :-------------------------------------- |

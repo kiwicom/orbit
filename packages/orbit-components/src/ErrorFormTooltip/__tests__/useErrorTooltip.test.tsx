@@ -1,4 +1,3 @@
-import type { SyntheticEvent } from "react";
 import { renderHook, act } from "@testing-library/react-hooks/server";
 
 import useErrorTooltip from "../hooks/useErrorTooltip";
@@ -15,7 +14,7 @@ describe("useErrorTooltip hook", () => {
     expect(result.current.tooltipShown).toBeFalsy();
 
     act(() => {
-      result.current.handleFocus(ev as SyntheticEvent<HTMLInputElement, Event>);
+      result.current.handleFocus(ev as React.FocusEvent<HTMLInputElement>);
     });
 
     expect(onFocus).toHaveBeenCalledWith(ev);
@@ -33,7 +32,7 @@ describe("useErrorTooltip hook", () => {
     expect(result.current.tooltipShown).toBeFalsy();
 
     act(() => {
-      result.current.handleFocus(ev as SyntheticEvent<HTMLInputElement, Event>);
+      result.current.handleFocus(ev as React.FocusEvent<HTMLInputElement>);
     });
 
     expect(onFocus).toHaveBeenCalledWith(ev);

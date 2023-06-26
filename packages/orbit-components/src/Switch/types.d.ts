@@ -10,7 +10,7 @@ export interface Props extends Common.Globals {
   readonly checked: boolean;
   readonly ariaLabelledby?: string;
   readonly disabled?: boolean;
-  readonly onChange: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
-  readonly onFocus?: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
-  readonly onBlur?: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
+  readonly onChange: React.ChangeEventHandler<HTMLInputElement>;
+  readonly onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  readonly onBlur?: React.FocusEventHandler<HTMLInputElement>;
 }

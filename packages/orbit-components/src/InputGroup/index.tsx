@@ -221,7 +221,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
 
     const handleFocus =
       callBack =>
-      (ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      (ev: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         setActive(true);
         setTooltipShown(true);
         if (onFocus) onFocus(ev);
@@ -230,7 +230,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
 
     const handleBlur =
       callBack =>
-      (ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      (ev: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         isFilled();
         setActive(false);
         if (onBlur) onBlur(ev);
@@ -239,13 +239,13 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
 
     const handleChange =
       callBack =>
-      (ev: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      (ev: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         isFilled();
         if (onChange) onChange(ev);
         if (callBack) callBack(ev);
       };
 
-    const handleBlurGroup = ev => {
+    const handleBlurGroup = (ev: React.FocusEvent<HTMLDivElement>) => {
       ev.persist();
       if (onBlurGroup) {
         setTimeout(() => {

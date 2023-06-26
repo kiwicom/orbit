@@ -41,14 +41,14 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly helpClosable?: boolean;
   readonly emptyStateMessage?: string;
   readonly labelClose?: string;
-  readonly onChange?: InputEvent;
-  readonly onFocus?: InputEvent;
-  readonly onBlur?: InputEvent;
+  readonly onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  readonly onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  readonly onBlur?: React.FocusEventHandler<HTMLInputElement>;
   readonly onSelect?: InputEvent;
-  readonly onMouseUp?: InputEvent;
-  readonly onMouseDown?: InputEvent;
-  readonly onKeyDown?: KeyboardEvent;
-  readonly onKeyUp?: KeyboardEvent;
+  readonly onMouseUp?: React.MouseEventHandler<HTMLInputElement>;
+  readonly onMouseDown?: React.MouseEventHandler<HTMLInputElement>;
+  readonly onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
+  readonly onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
   readonly onOptionSelect?: (opt: Option | null) => void;
   readonly onClose?: (opt: Option | null) => void;
 }

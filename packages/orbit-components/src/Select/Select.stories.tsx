@@ -66,6 +66,26 @@ WithCountryFlagPrefix.story = {
   },
 };
 
+export const WithLongLabel = () => {
+  const inlineLabel = boolean("inlineLabel", true);
+  return (
+    <Select
+      label="Select box (with long label)"
+      options={objectOptions}
+      onChange={action("onChange")}
+      inlineLabel={inlineLabel}
+    />
+  );
+};
+
+WithLongLabel.story = {
+  name: "With long label",
+
+  parameters: {
+    info: "Long labels truncate automatically when inline.",
+  },
+};
+
 export const WithPlaceholder = () => {
   const placeholder = text("Placeholder", "Select value from list");
   return (

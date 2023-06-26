@@ -44,10 +44,14 @@ const StyledInlineLabel = styled.div<{ hasFeedback?: boolean }>`
     )};
 
     ${FormLabel} {
+      display: inline-block;
       margin-bottom: 0;
       font-size: ${theme.orbit.fontSizeInputNormal};
       line-height: ${theme.orbit.lineHeightTextNormal};
+      text-overflow: ellipsis;
       white-space: nowrap;
+      overflow: hidden;
+      max-width: 20ch;
     }
   `}
 `;
@@ -200,6 +204,14 @@ export const SelectContainer = styled.div<{ disabled?: boolean; error?: boolean 
       `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
+    }
+
+    &:focus-within {
+      outline: none;
+
+      ${FakeInput} {
+        ${formElementFocus}
+      }
     }
   `}
 `;

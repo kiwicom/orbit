@@ -5,9 +5,6 @@ import type * as React from "react";
 
 import type * as Common from "../common/types";
 
-// InputEvent
-type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
-
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly label?: Common.Translation;
   readonly buttonLabel?: React.ReactNode;
@@ -21,9 +18,9 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly required?: boolean;
   readonly helpClosable?: boolean;
   readonly tabIndex?: string | number;
-  readonly onChange?: Event;
-  readonly onFocus?: Event;
-  readonly onBlur?: Event;
+  readonly onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  readonly onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  readonly onBlur?: React.FocusEventHandler<HTMLInputElement>;
   readonly insideInputGroup?: boolean;
   readonly onRemoveFile?: Common.Callback;
 }

@@ -25,6 +25,7 @@ import {
   injectCallbackAndSetState,
   moveValueByExtraStep,
   calculateValueFromPosition,
+  isNotEqual,
 } from "./utils";
 
 const StyledSlider = styled.div`
@@ -102,6 +103,7 @@ const PureSlider = ({
   const bar = React.useRef<HTMLDivElement>(null);
   const [value, setValue] = React.useState(defaultValue);
   const valueRef = React.useRef(value);
+  const defaultRef = React.useRef(defaultValue);
   const handleIndex = React.useRef<number | null>(null);
   const [focused, setFocused] = React.useState(false);
   const { rtl } = theme;
@@ -116,7 +118,10 @@ const PureSlider = ({
       ? defaultValue.map(item => Number(item))
       : Number(defaultValue);
 
-    updateValue(newValue);
+    if (isNotEqual(defaultValue, defaultRef.current)) {
+      defaultRef.current = newValue;
+      updateValue(newValue);
+    }
   }, [defaultValue]);
 
   const handleKeyDown = (event: KeyboardEvent) => {

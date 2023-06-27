@@ -2,6 +2,7 @@ import * as React from "react";
 import { array, text, number, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import type { Value } from "./types";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Slider from ".";
@@ -74,18 +75,24 @@ SliderWithHistogram.story = {
 
 export const RangeSlider = () => {
   const label = text("label", "Depart from Prague");
-  const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-  const defaultValue = array("defaultValue", ["1", "5"]);
+  const defaultValue = array("defaultValue", ["1", "5"]).map(v => parseInt(v, 10));
   const minValue = number("minValue", 1);
   const maxValue = number("maxValue", 24);
   const step = number("step", 1);
+
+  const [times, setTimes] = React.useState<Value>(defaultValue);
+  const valueDescription = `${times[0]}:00 - ${times[1]}:00`;
+
   return (
     <Slider
       onChangeAfter={action("onChangeAfter")}
-      onChange={action("onChange")}
+      onChange={v => {
+        setTimes(v);
+        action("onChange")(v);
+      }}
       label={label}
       valueDescription={valueDescription}
-      defaultValue={defaultValue.map(v => parseInt(v, 10))}
+      defaultValue={defaultValue}
       minValue={minValue}
       maxValue={maxValue}
       step={step}
@@ -101,8 +108,7 @@ RangeSlider.story = {
 
 export const RangeSliderWithHistogram = () => {
   const label = text("label", "Depart from Prague");
-  const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-  const defaultValue = array("defaultValue", ["0", "24"]);
+  const defaultValue = array("defaultValue", ["0", "24"]).map(v => parseInt(v, 10));
   const minValue = number("minValue", 0);
   const maxValue = number("maxValue", 48);
   const step = number("step", 2);
@@ -114,14 +120,19 @@ export const RangeSliderWithHistogram = () => {
     ].map(v => v.toString()),
   );
   const histogramDescription = text("histogramDescription", "20 of 133 flights");
+  const [times, setTimes] = React.useState<Value>(defaultValue);
+  const valueDescription = `${times[0]}:00 - ${times[1]}:00`;
   return (
     <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
       <Slider
-        onChange={action("onChange")}
+        onChange={v => {
+          setTimes(v);
+          action("onChange")(v);
+        }}
         label={label}
         valueDescription={valueDescription}
         histogramDescription={histogramDescription}
-        defaultValue={defaultValue.map(v => parseInt(v, 10))}
+        defaultValue={defaultValue}
         histogramData={histogramData.map(v => parseInt(v, 10))}
         minValue={minValue}
         maxValue={maxValue}

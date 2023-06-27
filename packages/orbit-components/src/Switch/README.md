@@ -14,7 +14,7 @@ After adding import to your project you can use it simply like:
 
 ## Props
 
-The table below contains all types of props available in the StopoverArrow component.
+The table below contains all types of the props available in the Switch component.
 
 | Name           | Type                    | Default      | Description                             |
 | :------------- | :---------------------- | :----------- | :-------------------------------------- |

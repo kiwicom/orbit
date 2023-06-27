@@ -12,7 +12,6 @@ const TextKnob = ({ value, name, onChange }: Props) => {
   return (
     <>
       <Text size="small">{name.split("-")[1]}</Text>
-      {/* @ts-expect-error: todo */}
       <InputField name={name} value={value} onChange={onChange} />
     </>
   );

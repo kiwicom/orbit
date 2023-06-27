@@ -19,7 +19,6 @@ const Icon = ({ name, value, onChange }: Props) => {
       <Select
         name={name}
         value={val}
-        /* @ts-expect-error: todo */
         onChange={onChange}
         options={[
           { label: "null", value: "null" },

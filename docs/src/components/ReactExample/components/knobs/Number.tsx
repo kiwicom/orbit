@@ -12,7 +12,6 @@ const NumberKnob = ({ value, name, onChange }: Props) => {
   return (
     <>
       <Text size="small">{name.split("-")[1]}</Text>
-      {/* @ts-expect-error: todo */}
       <InputField type="number" inputMode="numeric" name={name} value={value} onChange={onChange} />
     </>
   );

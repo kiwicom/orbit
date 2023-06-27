@@ -1,4 +1,4 @@
-name: Test
+name: CI
 
 on:
   push:
@@ -105,8 +105,6 @@ jobs:
       - name: Restore Gatsby cache
         uses: actions/cache@v3
         with:
-          # Required by nrwl/nx-set-shas
-          fetch-depth: 0
           path: |
             docs/.cache
             docs/public
@@ -137,9 +135,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          # Requrired by nrwl/nx-set-shas
-          fetch-depth: 0
 
       - name: Node
         uses: ./.github/actions/node

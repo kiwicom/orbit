@@ -1,0 +1,47 @@
+name: Update illustrations
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+
+jobs:
+  cron-update-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Today date
+        run: echo "TODAY=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Setup git identity
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Update palette
+        run: |
+          yarn components fetch:illustrations
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "feat(illustration): update illustrations from Figma"
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          base: master
+          branch: feat/update-palette-tokens
+          token: ${{ secrets.PAT }}
+          delete-branch: true
+          title: "feat(illustration): update illustrations from figma"
+          body: |
+            - Automatically generated PR on ${{ env.TODAY }}.
+            - Updates illustrations from Figma
+          labels: Figma
+          assignees: mainframev
+          reviewers: mainframev
+          draft: false

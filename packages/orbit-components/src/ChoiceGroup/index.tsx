@@ -73,7 +73,7 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
     const groupID = useRandomId();
     const theme = useTheme();
 
-    const handleChange = (ev: React.SyntheticEvent<HTMLInputElement>) => {
+    const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
       if (onChange) {
         onChange(ev);
       }

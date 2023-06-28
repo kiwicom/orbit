@@ -15,7 +15,7 @@ export interface Option {
 
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
-  readonly onFocus?: (ev: React.SyntheticEvent<HTMLInputElement>) => void;
+  readonly onFocus?: (ev: React.FocusEvent<HTMLInputElement>) => void;
   readonly showTooltip?: boolean;
   readonly error?: React.ReactNode;
   readonly maxWidth?: string;

@@ -30,16 +30,16 @@ const Component = () => {
 
 _Table below contains all types of the props available in the SegmentedSwitch component._
 
-| Name        | Type                                             | Default | Description                         |
-| :---------- | :----------------------------------------------- | :------ | :---------------------------------- |
-| dataTest    | `string`                                         |         | Optional prop for testing purposes. |
-| help        | `React.Node`                                     |         | Optional help message.              |
-| error       | `React.Node`                                     |         | Optional error message.             |
-| options     | [`Option[]`](#option)                            |         | Array of options.                   |
-| onChange    | `(ev: SyntheticEvent<HTMLInputElement>) => void` |         | Function for handling change event. |
-| onFocus     | `(ev: SyntheticEvent<HTMLInputElement>) => void` |         | Function for handling focus event.  |
-| label       | `React.Node`                                     |         | Label of the component.             |
-| showTooltip | `boolean`                                        | `false` | Show tooltip.                       |
+| Name        | Type                                          | Default | Description                         |
+| :---------- | :-------------------------------------------- | :------ | :---------------------------------- |
+| dataTest    | `string`                                      |         | Optional prop for testing purposes. |
+| help        | `React.Node`                                  |         | Optional help message.              |
+| error       | `React.Node`                                  |         | Optional error message.             |
+| options     | [`Option[]`](#option)                         |         | Array of options.                   |
+| onChange    | `(ev: ChangeEvent<HTMLInputElement>) => void` |         | Function for handling change event. |
+| onFocus     | `(ev: FocusEvent<HTMLInputElement>) => void`  |         | Function for handling focus event.  |
+| label       | `React.Node`                                  |         | Label of the component.             |
+| showTooltip | `boolean`                                     | `false` | Show tooltip.                       |
 
 ## Option
 

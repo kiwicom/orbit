@@ -1,9 +1,9 @@
-import type * as Common from "../../common/types";
 import KEY_CODE_MAP from "../../common/keyMaps";
 
-type Event<T> = Common.Event<React.SyntheticEvent<T>> | React.KeyboardEventHandler<T>;
-
-type HandleKeyDown = <K>(onClick?: Event<K>, action?: () => void) => React.KeyboardEventHandler<K>;
+type HandleKeyDown = <K>(
+  onAction?: React.KeyboardEventHandler<K>,
+  action?: (ev: any) => void,
+) => (ev: React.KeyboardEvent<K>) => void;
 
 const handleKeyDown: HandleKeyDown = (onAction, action) => ev => {
   if (ev.keyCode === KEY_CODE_MAP.ENTER) {
@@ -12,7 +12,7 @@ const handleKeyDown: HandleKeyDown = (onAction, action) => ev => {
     }
 
     if (action) {
-      action();
+      action(ev);
     }
   } else if (ev.keyCode === KEY_CODE_MAP.SPACE) {
     ev.preventDefault();
@@ -21,7 +21,7 @@ const handleKeyDown: HandleKeyDown = (onAction, action) => ev => {
     }
 
     if (action) {
-      action();
+      action(ev);
     }
   }
 };

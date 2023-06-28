@@ -7,7 +7,7 @@ const useErrorTooltip = <T = HTMLInputElement, K = HTMLLabelElement>({
   onFocus,
   hasTooltip = true,
 }: {
-  onFocus?: Event<React.SyntheticEvent<T>>;
+  onFocus?: Event<React.FocusEvent<T>>;
   hasTooltip?: boolean;
 }): {
   tooltipShown: boolean;
@@ -16,7 +16,7 @@ const useErrorTooltip = <T = HTMLInputElement, K = HTMLLabelElement>({
   setTooltipShownHover: React.Dispatch<React.SetStateAction<boolean>>;
   labelRef: React.MutableRefObject<K | null>;
   iconRef: React.MutableRefObject<HTMLDivElement | null>;
-  handleFocus: Event<React.SyntheticEvent<T>>;
+  handleFocus: Event<React.FocusEvent<T>>;
 } => {
   const [tooltipShown, setTooltipShown] = useState(false);
   const [tooltipShownHover, setTooltipShownHover] = useState(false);
@@ -24,7 +24,7 @@ const useErrorTooltip = <T = HTMLInputElement, K = HTMLLabelElement>({
   const iconRef = useRef<HTMLDivElement | null>(null);
 
   const handleFocus = useCallback(
-    (ev: React.SyntheticEvent<T>) => {
+    (ev: React.FocusEvent<T>) => {
       if (onFocus) onFocus(ev);
       if (hasTooltip) setTooltipShown(true);
     },

@@ -6,7 +6,6 @@ import type * as React from "react";
 import type * as Common from "../common/types";
 
 // InputEvent
-type Event = Common.Event<React.SyntheticEvent<HTMLSelectElement>>;
 
 interface Option {
   readonly key?: string;
@@ -27,9 +26,9 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly error?: React.ReactNode;
   readonly help?: React.ReactNode;
   readonly tabIndex?: string | number;
-  readonly onChange?: Event;
-  readonly onFocus?: Event;
-  readonly onBlur?: Event;
+  readonly onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+  readonly onFocus?: React.FocusEventHandler<HTMLSelectElement>;
+  readonly onBlur?: React.FocusEventHandler<HTMLSelectElement>;
   readonly options: Option[];
   readonly prefix?: React.ReactNode;
   readonly helpClosable?: boolean;

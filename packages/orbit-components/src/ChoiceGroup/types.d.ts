@@ -27,5 +27,5 @@ export interface Props extends Common.Globals {
     param2: { readonly value: string; readonly label: string },
   ) => void | Promise<void>;
   // InputEvent
-  readonly onChange: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
+  readonly onChange: Common.Event<React.ChangeEvent<HTMLInputElement>>;
 }

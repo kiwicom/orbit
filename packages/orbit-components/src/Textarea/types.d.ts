@@ -6,8 +6,6 @@ import type * as React from "react";
 import type * as Common from "../common/types";
 
 type Resize = "vertical" | "none";
-// InputEvent
-type Event = Common.Event<React.SyntheticEvent<HTMLTextAreaElement>>;
 
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly ref?: React.ForwardedRef<HTMLTextAreaElement>;
@@ -27,7 +25,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly helpClosable?: boolean;
   readonly maxLength?: number;
   readonly tabIndex?: string | number;
-  readonly onChange?: Event;
-  readonly onFocus?: Event;
-  readonly onBlur?: Event;
+  readonly onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
+  readonly onFocus?: React.FocusEventHandler<HTMLTextAreaElement>;
+  readonly onBlur?: React.FocusEventHandler<HTMLTextAreaElement>;
 }

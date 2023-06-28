@@ -18,5 +18,5 @@ export interface Props extends Common.Globals {
   readonly readOnly?: boolean;
   readonly tabIndex?: string | number;
   // InputEvent
-  readonly onChange?: Common.Event<React.SyntheticEvent<HTMLInputElement>>;
+  readonly onChange?: Common.Event<React.ChangeEvent<HTMLInputElement>>;
 }

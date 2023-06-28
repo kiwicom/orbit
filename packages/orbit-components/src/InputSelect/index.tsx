@@ -92,17 +92,17 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       flattened: Option[];
     }>(groupedOptions);
 
-    const handleFocus = (ev: React.SyntheticEvent<HTMLInputElement>) => {
+    const handleFocus = (ev: React.FocusEvent<HTMLInputElement>) => {
       if (onFocus) onFocus(ev);
       setIsOpened(true);
       setResults(results || groupedOptions);
     };
 
-    const handleBlur = (ev: React.SyntheticEvent<HTMLInputElement>) => {
+    const handleBlur = (ev: React.FocusEvent<HTMLInputElement>) => {
       if (onBlur) onBlur(ev);
     };
 
-    const handleInputChange = (ev: React.SyntheticEvent<HTMLInputElement>) => {
+    const handleInputChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = ev.currentTarget;
       if (onChange) onChange(ev);
 

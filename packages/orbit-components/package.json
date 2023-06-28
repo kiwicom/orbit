@@ -16,6 +16,7 @@
     "size": "size-limit",
     "size:why": "size-limit --why",
     "fetch:icons": "ts-node --esm config/fetchIcons.mts",
+    "fetch:illustrations": "ts-node --esm config/fetchIllustrations.mts",
     "check:icons": "ts-node --esm config/checkIconsCli.mts",
     "check:types": "tsc --p tsconfig.json",
     "flow:ci": "flow check",

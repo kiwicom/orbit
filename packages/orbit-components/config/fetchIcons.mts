@@ -1,42 +1,8 @@
-import dotenv from "dotenv-safe";
 import dedent from "dedent";
 import ora from "ora";
 import { path, argv, fs, globby, chalk, fetch, $ } from "zx";
-
-interface User {
-  id: string;
-  handle: string;
-  img_url: string;
-}
-interface ContainingFrame {
-  name: string;
-  nodeId: string;
-  pageId: string;
-  pageName: string;
-  backgroundColor: string;
-  containingStateGroup: { name: string; nodeId: string };
-}
-interface Component {
-  key: string;
-  file_key: string;
-  node_id: string;
-  thumbnail_url: string;
-  name: string;
-  description: string;
-  description_rt: string;
-  created_at: string;
-  updated_at: string;
-  containing_frame: ContainingFrame;
-  user: User;
-}
-interface FigmaComponents {
-  error: boolean;
-  status: number;
-  meta: {
-    components: Component[];
-  };
-  i18n: null;
-}
+import { dotenv, api } from "./helpers.mjs";
+import type { FigmaComponents } from "./figma.d";
 
 const FILTERED_FRAMES = ["All icons", "Social Colored", "Social", "Navigation icons"];
 const ICONS_ID = "wjYAT0sNBXtirEoyKgXUwr";
@@ -52,6 +18,8 @@ const sliceIntoChunks = (arr: string[], chunkSize: number) =>
     return acc;
   }, []);
 
+dotenv();
+
 const generateId = () => String(Math.floor(Math.random() * 9000) + 1000);
 const generateUniqueId = (id: string, arr: string[]) => (arr.includes(id) ? generateId() : id);
 const getId = (str: string) => {
@@ -65,32 +33,6 @@ const isCorrectSize = (name: string) => {
 };
 
 const removeCommentId = (str: string) => str.replace(/<!--.*-->/g, "");
-
-try {
-  dotenv.config({
-    example: `${process.cwd()}/../../.env.example`,
-    path: `${process.cwd()}/../../.env`,
-  });
-} catch (err) {
-  if (err.missing.includes("FIGMA_TOKEN")) {
-    throw new Error(
-      dedent`
-        Figma token is missing in the .env file:
-        ${err.missing.join("\n")}
-        You can generate one in your Figma account settings
-      `,
-    );
-  }
-}
-
-// @ts-expect-error MTS doesn't support generics yet for that
-const api = <T>(url: string) =>
-  fetch(url, {
-    headers: { "Content-Type": "application/", "X-FIGMA-TOKEN": process.env.FIGMA_TOKEN || "" },
-  }).then(res => {
-    if (!res.ok) throw new Error(res.statusText);
-    return res.json() as Promise<T>;
-  });
 
 // just to avoid unnecessary breaking change
 const parseName = (name: string) => {

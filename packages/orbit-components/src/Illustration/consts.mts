@@ -52,6 +52,7 @@ export const NAMES: Name[] = [
   "NetVerify",
   "NoBookings", // TODO: Get rid off 22.11
   "NoFavoriteFlights",
+  "NoFlightChange",
   "Nomad",
   "NomadNeutral",
   "NoNotification",

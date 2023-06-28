@@ -57,6 +57,7 @@ export type Name =
   | "NetVerify"
   | "NoBookings"
   | "NoFavoriteFlights"
+  | "NoFlightChange"
   | "Nomad"
   | "NomadNeutral"
   | "NoNotification"

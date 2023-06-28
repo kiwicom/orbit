@@ -25,6 +25,7 @@ import {
   injectCallbackAndSetState,
   moveValueByExtraStep,
   calculateValueFromPosition,
+  isNotEqual,
 } from "./utils";
 
 const StyledSlider = styled.div`
@@ -102,6 +103,7 @@ const PureSlider = ({
   const bar = React.useRef<HTMLDivElement>(null);
   const [value, setValue] = React.useState(defaultValue);
   const valueRef = React.useRef(value);
+  const defaultRef = React.useRef(defaultValue);
   const handleIndex = React.useRef<number | null>(null);
   const [focused, setFocused] = React.useState(false);
   const { rtl } = theme;
@@ -116,7 +118,10 @@ const PureSlider = ({
       ? defaultValue.map(item => Number(item))
       : Number(defaultValue);
 
-    updateValue(newValue);
+    if (isNotEqual(defaultValue, defaultRef.current)) {
+      defaultRef.current = newValue;
+      updateValue(newValue);
+    }
   }, [defaultValue]);
 
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -126,7 +131,6 @@ const PureSlider = ({
       pauseEvent(event);
       if (onChange) {
         injectCallbackAndSetState(
-          value,
           updateValue,
           onChange,
           moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, step),
@@ -137,7 +141,6 @@ const PureSlider = ({
       pauseEvent(event);
       if (onChange) {
         injectCallbackAndSetState(
-          value,
           updateValue,
           onChange,
           moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, -step),
@@ -149,7 +152,6 @@ const PureSlider = ({
       pauseEvent(event);
       if (onChange) {
         injectCallbackAndSetState(
-          value,
           updateValue,
           onChange,
           moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, switchStep),
@@ -161,7 +163,6 @@ const PureSlider = ({
       pauseEvent(event);
       if (onChange) {
         injectCallbackAndSetState(
-          value,
           updateValue,
           onChange,
           moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, switchStep),
@@ -172,7 +173,6 @@ const PureSlider = ({
       pauseEvent(event);
       if (onChange) {
         injectCallbackAndSetState(
-          value,
           updateValue,
           onChange,
           moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, 0, minValue),
@@ -183,7 +183,6 @@ const PureSlider = ({
       pauseEvent(event);
       if (onChange) {
         injectCallbackAndSetState(
-          value,
           updateValue,
           onChange,
           moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, 0, maxValue),
@@ -197,7 +196,7 @@ const PureSlider = ({
     window.removeEventListener("keydown", handleKeyDown);
     window.removeEventListener("focusout", handleBlur);
     if (onChangeAfter) {
-      injectCallbackAndSetState(value, updateValue, onChangeAfter, value, true);
+      injectCallbackAndSetState(updateValue, onChangeAfter, value);
     }
   };
 
@@ -208,7 +207,7 @@ const PureSlider = ({
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("focusout", handleBlur);
     if (onChangeBefore) {
-      injectCallbackAndSetState(value, updateValue, onChangeBefore, value, true);
+      injectCallbackAndSetState(updateValue, onChangeBefore, value);
     }
   };
 
@@ -248,18 +247,14 @@ const PureSlider = ({
           alignValue(maxValue, minValue, step, newValue),
           index || 0,
         );
-        if (onChangeBefore)
-          injectCallbackAndSetState(value, updateValue, onChangeBefore, value, true);
-        if (onChange) injectCallbackAndSetState(value, updateValue, onChange, replacedValue);
-        if (onChangeAfter)
-          injectCallbackAndSetState(value, updateValue, onChangeAfter, replacedValue);
+        if (onChangeBefore) injectCallbackAndSetState(updateValue, onChangeBefore, value);
+        if (onChange) injectCallbackAndSetState(updateValue, onChange, replacedValue);
+        if (onChangeAfter) injectCallbackAndSetState(updateValue, onChangeAfter, replacedValue);
       } else {
         const alignedValue = alignValue(maxValue, minValue, step, newValue);
-        if (onChangeBefore)
-          injectCallbackAndSetState(value, updateValue, onChangeBefore, value, true);
-        if (onChange) injectCallbackAndSetState(value, updateValue, onChange, alignedValue);
-        if (onChangeAfter)
-          injectCallbackAndSetState(value, updateValue, onChangeAfter, alignedValue);
+        if (onChangeBefore) injectCallbackAndSetState(updateValue, onChangeBefore, value);
+        if (onChange) injectCallbackAndSetState(updateValue, onChange, alignedValue);
+        if (onChangeAfter) injectCallbackAndSetState(updateValue, onChangeAfter, alignedValue);
       }
     }
   };
@@ -277,7 +272,7 @@ const PureSlider = ({
       pageX: event.pageX,
     });
     pauseEvent(event);
-    injectCallbackAndSetState(value, updateValue, onChange, handleMove(newValue));
+    injectCallbackAndSetState(updateValue, onChange, handleMove(newValue));
   };
 
   const handleMouseUp = () => {
@@ -286,7 +281,7 @@ const PureSlider = ({
     window.removeEventListener("mousemove", handleMouseMove);
     window.removeEventListener("mouseup", handleMouseUp);
     if (onChangeAfter) {
-      injectCallbackAndSetState(value, updateValue, onChangeAfter, valueRef.current, true);
+      injectCallbackAndSetState(updateValue, onChangeAfter, valueRef.current);
     }
   };
 
@@ -299,7 +294,7 @@ const PureSlider = ({
       window.addEventListener("mouseup", handleMouseUp);
       pauseEvent(event);
       if (onChangeBefore) {
-        injectCallbackAndSetState(value, updateValue, onChangeBefore, value, true);
+        injectCallbackAndSetState(updateValue, onChangeBefore, value);
       }
     }
   };
@@ -318,7 +313,7 @@ const PureSlider = ({
       pageX: event.touches[0]?.pageX || 0,
     });
     pauseEvent(event);
-    injectCallbackAndSetState(value, updateValue, onChange, handleMove(newValue));
+    injectCallbackAndSetState(updateValue, onChange, handleMove(newValue));
   };
 
   const handleTouchEnd = () => {
@@ -326,7 +321,7 @@ const PureSlider = ({
     window.removeEventListener("touchmove", handleOnTouchMove);
     window.removeEventListener("touchend", handleTouchEnd);
     if (onChangeAfter) {
-      injectCallbackAndSetState(value, updateValue, onChangeAfter, valueRef.current, true);
+      injectCallbackAndSetState(updateValue, onChangeAfter, valueRef.current);
     }
   };
 
@@ -340,7 +335,7 @@ const PureSlider = ({
       window.addEventListener("touchend", handleTouchEnd);
       stopPropagation(event);
       if (onChangeBefore) {
-        injectCallbackAndSetState(value, updateValue, onChangeBefore, value, true);
+        injectCallbackAndSetState(updateValue, onChangeBefore, value);
       }
     }
   };

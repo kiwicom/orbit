@@ -3,7 +3,7 @@ import { select, text } from "@storybook/addon-knobs";
 
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import type { Indent } from "./types";
+import type { PaletteTokens, Indent } from "./types";
 
 import Separator from ".";
 
@@ -24,7 +24,7 @@ export const Playground = () => {
   const align = select("align", ["left", "right", "center"], "left");
   const indentOptions: Indent[] = ["none", "small", "medium", "large", "XLarge", "XXLarge"];
   const type = select("type", ["solid", "dashed", "dotted", "double", "none"], "none");
-  const color = text("color", "");
+  const color = text("color", "paletteBlueNormal") as PaletteTokens;
   const indent = select("indent", indentOptions, "none");
   return (
     <Separator color={color} align={align} indent={indent} spaceAfter={spaceAfter} type={type} />

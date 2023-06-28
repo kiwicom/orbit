@@ -37,7 +37,7 @@ const StyledContainer = styled.div<{ $align: Align; $indent: Indent }>`
 export const StyledSeparator = styled.hr<{
   spaceAfter?: Common.SpaceAfterSizes;
   $type: Props["type"];
-  $color: Props["color"];
+  $color?: Props["color"];
 }>`
   ${({ theme, $type, $color }) => css`
     height: ${theme.orbit.heightSeparator};
@@ -64,7 +64,11 @@ const Separator = ({
   const theme = useTheme();
   return (
     <StyledContainer $align={align} $indent={indent}>
-      <StyledSeparator $type={type} spaceAfter={spaceAfter} $color={color && theme.orbit[color]} />
+      <StyledSeparator
+        $type={type}
+        spaceAfter={spaceAfter}
+        $color={color && (theme.orbit[color] as Props["color"])}
+      />
     </StyledContainer>
   );
 };

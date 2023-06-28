@@ -23,7 +23,7 @@ The table below contains all types of props available in the Separator component
 | spaceAfter | `enum`          |          | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken)                                                         |
 | dataTest   | `string`        |          | Optional prop for testing purposes.                                                                                                                                                                                    |
 | type       | [`enum`](#enum) | `"none"` | The type of the separator.                                                                                                                                                                                             |
-| color      | `string`        |          | The color of the separator. You will need to pass `type` property, as it's required for color to be shown. The value should be a string name of the token, for instance: "paletteBlueNormal" or "paletteProductNormal" |
+| color      | `string`        |          | The color of the separator. You will need to pass a value different than `"none"` to the `type` property, as it's required for color to be shown. The value should be a string name of the token, for instance: "paletteBlueNormal" or "paletteProductNormal" |
 
 ### enum
 

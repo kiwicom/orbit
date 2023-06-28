@@ -83,12 +83,7 @@ module.exports = {
         "guard-for-in": "off",
         "no-console": "off",
         "import/extensions": "off",
-        "import/no-extraneous-dependencies": [
-          "error",
-          {
-            packageDir: [__dirname, path.resolve(__dirname, "../../")],
-          },
-        ],
+        "import/no-extraneous-dependencies": "off",
       },
     },
   ],

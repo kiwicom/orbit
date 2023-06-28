@@ -8,6 +8,8 @@ import type * as Common from "../common/types";
 export type Name =
   | "Accommodation"
   | "AirHelp"
+  | "AirportShuttle"
+  | "AirportTransport"
   | "AirportTransportBus"
   | "AirportTransportTaxi"
   | "AppKiwi"
@@ -47,7 +49,6 @@ export type Name =
   | "Improve"
   | "Insurance"
   | "InviteAFriend"
-  | "kek"
   | "Login"
   | "Lounge"
   | "Mailbox"
@@ -91,8 +92,8 @@ export type Name =
   | "TimelinePick"
   | "Tours"
   | "Train"
-  | "TransporTaxi"
   | "TransportBus"
+  | "TransportTaxi"
   | "UnfinishedBooking"
   | "WomanWithPhone";
 

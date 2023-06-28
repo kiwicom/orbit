@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.5.0...@kiwicom/orbit-components@7.6.0) (2023-06-28)
+
+
+### Bug Fixes
+
+* **ChoiceGroup:** fix event types ([1f1832d](https://github.com/kiwicom/orbit/commit/1f1832d353a3db5213832bedb864908cfa2aefbb))
+* **ErrorFormTooltip:** fix event types ([8e85a57](https://github.com/kiwicom/orbit/commit/8e85a57b8166c31ca00635b19fd78018d5021b67))
+* **FormLabel:** fix event types ([74e42f2](https://github.com/kiwicom/orbit/commit/74e42f285266b7e4c35edd896779edfe07c2b4db))
+* **InputField:** fix event types ([4a3dcc0](https://github.com/kiwicom/orbit/commit/4a3dcc06b3e9f27e4a402858c003e2c252922272))
+* **InputFile:** fix event types ([7f88332](https://github.com/kiwicom/orbit/commit/7f8833255fe57ef10b12a9691cc92db209589d8b))
+* **InputGroup:** fix event types ([9c0ecdd](https://github.com/kiwicom/orbit/commit/9c0ecdd4e0a493439c49915dff7e1a910a83538f))
+* **InputSelect:** fix event types ([6ddddb3](https://github.com/kiwicom/orbit/commit/6ddddb326a2b286c42026fad8f9ca689599fceac))
+* **Modal:** fix event types ([f76aee4](https://github.com/kiwicom/orbit/commit/f76aee442442806532b77a45a4212c29dc924167))
+* **Radio:** fix event types ([4f48a4c](https://github.com/kiwicom/orbit/commit/4f48a4cc941a306adac33b91376f41e915acdbea))
+* **SegmentedSwitch:** fix event types ([06a24cf](https://github.com/kiwicom/orbit/commit/06a24cf1e507cfb6a6d704c4e3877a866d736679))
+* **SegmentedSwitch:** fix event types ([3935db2](https://github.com/kiwicom/orbit/commit/3935db285412cd340b706ae1874746877ed96076))
+* **Select:** fix event types ([89c413b](https://github.com/kiwicom/orbit/commit/89c413b8be4ae1e4af795f1f282526a2f255b16b))
+* **Select:** fix focus styles ([6dccd7a](https://github.com/kiwicom/orbit/commit/6dccd7a7b9448f272b9194a44b406a88d2ad6b98))
+* **Select:** long inline label now truncates ([17758b4](https://github.com/kiwicom/orbit/commit/17758b4b403809b94929e6280188f246f816c7f6))
+* **Slider:** allow move the slider over current value ([8696c1b](https://github.com/kiwicom/orbit/commit/8696c1ba147cbcc0b209c3e45f067905b84ab15a))
+* **Slider:** range Slider was not updating correctly ([7fb5229](https://github.com/kiwicom/orbit/commit/7fb52294289981b6e5280954795ab340e6fb2547))
+* **Switch:** fix event types ([2897a26](https://github.com/kiwicom/orbit/commit/2897a269f7eb28520b186438f8c80914d82c8190))
+* **Textarea:** fix event types ([609628b](https://github.com/kiwicom/orbit/commit/609628bd4edb3095b515b6ac5fff4990d63efae2))
+
+
+### Features
+
+* **Illustration:** add NoFlightChange illustration ([#3905](https://github.com/kiwicom/orbit/issues/3905)) ([637f876](https://github.com/kiwicom/orbit/commit/637f8760c60877980e924a0141d1fd1a8d4bb830))
+
+
+
+
+
 # [7.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.4.1...@kiwicom/orbit-components@7.5.0) (2023-06-23)
 
 

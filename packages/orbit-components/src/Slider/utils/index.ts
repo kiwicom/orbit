@@ -84,19 +84,15 @@ export const alignValue = (
 };
 
 export const injectCallbackAndSetState = (
-  value: Value,
   setValue: (value: Value) => void,
   callback: SliderCallback | undefined,
   newValue: Value | null,
-  forced?: boolean,
 ): void => {
   if (newValue != null) {
-    if (isNotEqual(newValue, value) || forced) {
-      if (callback) {
-        callback(sortArray(newValue));
-      }
-      setValue(newValue);
+    if (callback) {
+      callback(sortArray(newValue));
     }
+    setValue(newValue);
   }
 };
 

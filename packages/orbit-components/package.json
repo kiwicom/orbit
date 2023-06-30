@@ -12,6 +12,7 @@
     "cy:run": "start-server-and-test cy:dev http-get://localhost:3000 'cypress run'",
     "cy:open": "start-server-and-test cy:dev http-get://localhost:3000 'cypress open'",
     "build": "ts-node --esm config/build/index.mts",
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./lib/tailwind.css",
     "prepublishOnly": "yarn build",
     "size:build": "yarn build --size",
     "size": "size-limit",
@@ -72,7 +73,9 @@
   },
   "dependencies": {
     "@kiwicom/orbit-design-tokens": "^5.0.0-beta.2",
+    "@kiwicom/orbit-tailwind-preset": "^1.0.0-beta.2",
     "@popperjs/core": "^2.9.2",
+    "clsx": "^2.0.0",
     "react-hot-toast": "^2.4.0",
     "react-popper": "^2.2.5",
     "react-uid": "^2.3.2"
@@ -87,6 +90,7 @@
     "@size-limit/webpack-why": "^8.0.0",
     "@storybook/addon-essentials": "^7.0.23",
     "@storybook/addon-knobs": "^7.0.2",
+    "@storybook/addon-styling": "^1.3.1",
     "@storybook/addons": "^7.0.23",
     "@storybook/blocks": "^7.0.23",
     "@storybook/react": "^7.0.23",
@@ -97,6 +101,7 @@
     "@svgr/plugin-jsx": "^6.3.1",
     "@svgr/plugin-prettier": "^6.3.1",
     "@svgr/plugin-svgo": "^6.3.1",
+    "@testing-library/react": "^11.2.7",
     "@types/readable-stream": "^2.3.13",
     "@types/styled-components": "^5.1.15",
     "@types/svgicons2svgfont": "^10.0.1",

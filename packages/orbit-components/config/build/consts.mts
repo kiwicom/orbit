@@ -16,6 +16,7 @@ export const COMPILE_IGNORE_PATTERNS = [
   "**/*.test.*",
   "**/__tests__/**/*",
   "**/__typetests__/**/*",
+  "**/test-utils.tsx",
 ];
 
-export const DECLARATIONS_IGNORE_PATTERN = ["**/RenderInRtl.{tsx,d.ts}"];
+export const DECLARATIONS_IGNORE_PATTERN = ["**/RenderInRtl.{tsx,d.ts}", "**/test-utils.d.ts"];

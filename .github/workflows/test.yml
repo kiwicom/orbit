@@ -30,6 +30,7 @@ jobs:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
           yarn tokens build
+          yarn tailwind-preset build
           yarn components build
           yarn tracking build
           yarn themer build
@@ -97,6 +98,7 @@ jobs:
       - name: Build
         run: |
           yarn tokens build
+          yarn tailwind-preset build
           yarn components build
 
       - name: Cypress

@@ -11,6 +11,11 @@ const [, __dirname] = filedirname();
 
 const PALETTE_TOKENS = Object.keys(defaultTokens).filter(token => token.startsWith("palette"));
 
+const removePalettePrefix = (token: string) => {
+  const newToken = token.replace("palette", "");
+  return newToken.charAt(0).toLowerCase() + newToken.slice(1);
+};
+
 const generateTypeFile = async (templatePath: string, replacements: Record<string, string>) => {
   const TEMPLATE = fs.readFileSync(templatePath, "utf8");
 
@@ -45,6 +50,10 @@ const templateTokensColors = [
   {
     path: path.join(__dirname, "..", "src", "Separator", "TYPESCRIPT_TEMPLATE.template"),
     tokens: Object.values(PALETTE_TOKENS),
+  },
+  {
+    path: path.join(__dirname, "..", "src", "Box", "TYPESCRIPT_TEMPLATE.template"),
+    tokens: Object.values(PALETTE_TOKENS).map(token => removePalettePrefix(token)),
   },
 ];
 

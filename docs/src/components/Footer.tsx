@@ -115,6 +115,8 @@ export default function Footer() {
               <StyledFooterLink to="/changelog/">Changelog</StyledFooterLink>
               <Dot />
               <StyledFooterLink to="/themer/">Themer</StyledFooterLink>
+              <Dot />
+              <StyledFooterLink to="/playground/">Playground</StyledFooterLink>
             </Stack>
             <Stack
               inline

@@ -60,21 +60,6 @@
     "github": "https://github.com/DSil"
   },
   {
-    "id": 524272,
-    "name": "Daniel Spitzer",
-    "username": "sampi",
-    "error": "",
-    "twitter": "dnsp",
-    "website": "http://sampi.io",
-    "info": null,
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/524272?v=4",
-    "position": "",
-    "github": "https://github.com/sampi"
-  },
-  {
     "id": 7566742,
     "name": "Filip Danisko",
     "username": "filipdanisko",
@@ -448,5 +433,20 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/3984338?v=4",
     "position": "",
     "github": "https://github.com/williamkolmacka"
+  },
+  {
+    "id": 5772786,
+    "name": null,
+    "username": "majlan",
+    "error": "",
+    "twitter": "milanseitler",
+    "website": "seitler.cz",
+    "info": "Designer & ex-developer",
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5772786?v=4",
+    "position": "",
+    "github": "https://github.com/majlan"
   }
 ]

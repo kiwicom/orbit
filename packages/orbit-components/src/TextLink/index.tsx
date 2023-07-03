@@ -118,13 +118,16 @@ const resolveUnderline = ({
 };
 
 // Common styles for TextLink and "a" in Text
-export const getLinkStyle = ({ theme }: { theme: Theme; $type: Props["type"] }) => css`
+export const getLinkStyle = ({ theme, $type }: { theme: Theme; $type: Props["type"] }) => css`
   &,
   &:link,
   &:visited {
-    color: ${getColor};
-    text-decoration: ${resolveUnderline};
-    font-weight: ${theme.orbit.fontWeightLinks};
+    &:not(:hover) {
+      color: ${getColor} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
+      text-decoration: ${resolveUnderline} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
+      font-weight: ${theme.orbit.fontWeightLinks}
+        ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
+    }
   }
 
   &:hover {

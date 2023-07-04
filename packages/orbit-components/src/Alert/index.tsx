@@ -17,7 +17,6 @@ import { getLinkStyle } from "../TextLink/deprecated";
 import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import { rtlSpacing, right, left } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
-import { StyledHeading } from "../Heading";
 import media from "../utils/mediaQuery";
 
 const getTypeToken =
@@ -216,7 +215,7 @@ const StyledContent = styled.div<{ inlineActions?: boolean; $type: Type; $noUnde
 
     & .orbit-list-item,
     .orbit-text,
-    ${StyledHeading} {
+    .orbit-heading {
       color: ${theme.orbit.paletteInkDark};
     }
   `}

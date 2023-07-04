@@ -3,8 +3,6 @@ import styled, { css } from "styled-components";
 
 import transition from "../../utils/transition";
 import Text from "../../Text";
-import { getHeadingToken } from "../../Heading";
-import { TOKENS, TYPE_OPTIONS } from "../../Heading/consts";
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledModalSection } from "../ModalSection";
@@ -12,25 +10,18 @@ import { left, right, rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import type { Props } from "./types";
-import type { Type } from "../../Heading/types";
-
-const getModalHeading =
-  (type: Type, token: string) =>
-  ({ theme }: { theme: typeof defaultTheme }) => {
-    return getHeadingToken(token, type)({ theme });
-  };
 
 export const ModalHeading = styled.h2`
   ${({ theme }) => css`
     margin: 0;
-    font-size: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.sizeHeading)};
-    font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.weightHeading)};
-    line-height: ${getModalHeading(TYPE_OPTIONS.TITLE2, TOKENS.lineHeight)};
+    font-size: ${theme.orbit.fontSizeHeadingTitle2};
+    font-weight: ${theme.orbit.fontWeightHeadingTitle2};
+    line-height: ${theme.orbit.lineHeightHeadingTitle2};
     color: ${theme.orbit.colorHeading};
     ${media.largeMobile(css`
-      font-size: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.sizeHeading)};
-      font-weight: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.weightHeading)};
-      line-height: ${getModalHeading(TYPE_OPTIONS.TITLE1, TOKENS.lineHeight)};
+      font-size: ${theme.orbit.fontSizeHeadingTitle1};
+      font-weight: ${theme.orbit.fontWeightHeadingTitle1};
+      line-height: ${theme.orbit.lineHeightHeadingTitle1};
     `)};
   `}
 `;

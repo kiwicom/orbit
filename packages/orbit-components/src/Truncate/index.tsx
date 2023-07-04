@@ -3,7 +3,6 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { StyledHeading } from "../Heading";
 import type { Props } from "./types";
 
 const StyledTruncate = styled.div<{ maxWidth?: string }>`
@@ -17,7 +16,7 @@ const StyledTruncate = styled.div<{ maxWidth?: string }>`
 const StyledTruncateContent = styled.div`
   &,
   .orbit-text,
-  ${StyledHeading} {
+  .orbit-heading {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

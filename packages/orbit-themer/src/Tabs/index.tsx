@@ -67,9 +67,6 @@ const Tabs = () => {
             <Color name="Cloud Normal" objectKey="cloud.normalActive" extra="active" />
           </ColorTab>
           <ColorTab title="Ink" colorPath="ink">
-            <Color name="Ink Lighter" objectKey="ink.lighter" />
-            <Color name="Ink Lighter" objectKey="ink.lighterHover" extra="hover" />
-            <Color name="Ink Lighter" objectKey="ink.lighterActive" extra="active" />
             <Color name="Ink Light" objectKey="ink.light" />
             <Color name="Ink Light" objectKey="ink.lightHover" extra="hover" />
             <Color name="Ink Light" objectKey="ink.lightActive" extra="active" />
@@ -77,6 +74,8 @@ const Tabs = () => {
             <Color name="Ink Normal" objectKey="ink.normalHover" extra="hover" />
             <Color name="Ink Normal" objectKey="ink.normalActive" extra="active" />
             <Color name="Ink Dark" objectKey="ink.dark" />
+            <Color name="Ink Dark" objectKey="ink.darkHover" extra="hover" />
+            <Color name="Ink Dark" objectKey="ink.darkActive" extra="active" />
           </ColorTab>
           <ColorTab title="Orange" colorPath="orange">
             <Color name="Orange Light" objectKey="orange.light" />

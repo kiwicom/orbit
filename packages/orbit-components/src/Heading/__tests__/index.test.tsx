@@ -1,21 +1,15 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
 
+import { render, screen, spaceAfterTokens } from "../../test-utils";
+import type { SpaceAfterSizes } from "../../common/types";
 import theme from "../../defaultTheme";
 import Heading from "..";
-import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "../consts";
-import { getBreakpointWidth } from "../../utils/mediaQuery";
+import { ELEMENT_OPTIONS, TYPE_OPTIONS, ALIGN } from "../consts";
 
 describe("Heading", () => {
   it("should have expected DOM output", () => {
     render(
-      <Heading
-        as={ELEMENT_OPTIONS.H2}
-        type={TYPE_OPTIONS.TITLE1}
-        inverted={false}
-        dataTest="test"
-        id="id"
-      >
+      <Heading as={ELEMENT_OPTIONS.H2} type={TYPE_OPTIONS.TITLE1} dataTest="test" id="id">
         My lovely heading
       </Heading>,
     );
@@ -25,64 +19,39 @@ describe("Heading", () => {
     expect(heading).toHaveAttribute("id", "id");
   });
 
-  it("should ignore unsupported props", () => {
+  it.each(Object.values(TYPE_OPTIONS))("should have expected styles from type %s", type => {
     render(
-      // className has to be undefined to reproduce the error
-      // @ts-expect-error className is not defined
-      <Heading as="h1" type="display" className={undefined}>
-        My lovely heading
+      <Heading dataTest={type} type={type}>
+        Title
       </Heading>,
     );
-    expect(screen.getByRole("heading", { name: "My lovely heading" }));
+    const element = screen.getByTestId(type);
+    const typeToken = type.charAt(0).toUpperCase() + type.slice(1);
+    expect(element).toHaveStyle({
+      "font-size": theme.orbit[`fontSizeHeading${typeToken}`],
+      "font-weight": theme.orbit[`fontWeightHeading${typeToken}`],
+      "line-height": theme.orbit[`lineHeightHeading${typeToken}`],
+    });
   });
-});
 
-describe("Heading with every media query", () => {
-  it("should have desktop styles", () => {
-    const dataTest = `test`;
-
+  it.each(Object.values(ALIGN))("should have expected styles from align %s", align => {
     render(
-      <Heading
-        dataTest={dataTest}
-        type={TYPE_OPTIONS.TITLE5}
-        mediumMobile={{ type: TYPE_OPTIONS.TITLE4 }}
-        largeMobile={{ type: TYPE_OPTIONS.TITLE3 }}
-        tablet={{ type: TYPE_OPTIONS.TITLE2 }}
-        desktop={{ type: TYPE_OPTIONS.TITLE1 }}
-        largeDesktop={{ type: TYPE_OPTIONS.DISPLAY }}
-      >
-        Heading
+      <Heading dataTest={align} align={align}>
+        Title
       </Heading>,
     );
-
-    expect(screen.getByTestId(dataTest)).toHaveStyleRule(
-      "font-size",
-      theme.orbit.fontSizeHeadingTitle4,
-      { media: getBreakpointWidth("mediumMobile", theme) },
-    );
-
-    expect(screen.getByTestId(dataTest)).toHaveStyleRule(
-      "font-size",
-      theme.orbit.fontSizeHeadingTitle3,
-      { media: getBreakpointWidth("largeMobile", theme) },
-    );
-
-    expect(screen.getByTestId(dataTest)).toHaveStyleRule(
-      "font-size",
-      theme.orbit.fontSizeHeadingTitle2,
-      { media: getBreakpointWidth("tablet", theme) },
-    );
-
-    expect(screen.getByTestId(dataTest)).toHaveStyleRule(
-      "font-size",
-      theme.orbit.fontSizeHeadingTitle1,
-      { media: getBreakpointWidth("desktop", theme) },
-    );
-
-    expect(screen.getByTestId(dataTest)).toHaveStyleRule(
-      "font-size",
-      theme.orbit.fontSizeHeadingDisplay,
-      { media: getBreakpointWidth("largeDesktop", theme) },
-    );
+    expect(screen.getByTestId(align)).toHaveStyle(`text-align: ${align}`);
   });
+
+  it.each(Object.keys(spaceAfterTokens))(
+    "should have expected styles from spaceAfter %s",
+    space => {
+      render(
+        <Heading dataTest={space} spaceAfter={space as SpaceAfterSizes}>
+          Title
+        </Heading>,
+      );
+      expect(screen.getByTestId(space)).toHaveStyle(`margin-bottom: ${spaceAfterTokens[space]}`);
+    },
+  );
 });

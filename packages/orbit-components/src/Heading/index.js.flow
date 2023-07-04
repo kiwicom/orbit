@@ -3,11 +3,9 @@
   DOCUMENTATION: https://orbit.kiwi/components/heading/
 */
 import * as React from "react";
-import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
-import type { ThemeProps } from "../defaultTheme.js.flow";
 
 export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
@@ -44,10 +42,4 @@ export type Props = {|
   +largeDesktop?: MediaQuery,
 |};
 
-export type GetHeadingToken = (name: string, type: Type) => ({| ...ThemeProps |}) => string;
-
 declare export default React.ComponentType<Props>;
-
-declare export var StyledHeading: StyledComponent<any, any, HTMLElement>;
-
-declare export var getHeadingToken: GetHeadingToken;

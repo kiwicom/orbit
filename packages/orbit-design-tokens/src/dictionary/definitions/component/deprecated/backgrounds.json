@@ -5,6 +5,7 @@
         "type": "color",
         "value": "transparent",
         "deprecated": true,
+        "deprecated-replace": "{component.country-flag.background}",
         "deprecated-version": "6.0.0"
       },
       "service-logo": {

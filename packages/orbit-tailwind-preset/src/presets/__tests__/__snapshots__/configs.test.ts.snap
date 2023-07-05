@@ -672,6 +672,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
+      "country-flag-background": "transparent",
       "form-element-background": "#FFFFFF",
       "form-element-disabled-background": "#E8EDF1",
       "green": {
@@ -1022,6 +1023,7 @@ exports[`orbitPreset should match snapshot 1`] = `
     "boxShadow": {
       "action": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 1px 4px 0 rgba(37, 42, 49, 0.12)",
       "action-active": "0 1px 4px 0 rgba(37, 42, 49, 0.16),0 4px 8px 0 rgba(37, 42, 49, 0.12)",
+      "country-flag": "inset 0 0 0 1px rgba(37, 42, 49, 0.1)",
       "fixed": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 2px 4px 0 rgba(37, 42, 49, 0.12)",
       "fixed-reverse": "0 0 2px 0 rgba(37, 42, 49, 0.16),0 -2px 4px 0 rgba(37, 42, 49, 0.12)",
       "none": "none",
@@ -2078,6 +2080,8 @@ exports[`orbitPreset should match snapshot 1`] = `
       "button-normal": "44px",
       "button-small": "32px",
       "checkbox": "20px",
+      "country-flag-medium": "13px",
+      "country-flag-small": "9px",
       "fit": "fit-content",
       "full": "100%",
       "icon-large": "24px",
@@ -3515,6 +3519,8 @@ exports[`orbitPreset should match snapshot 1`] = `
       "9/12": "75%",
       "auto": "auto",
       "checkbox": "20px",
+      "country-flag-medium": "24px",
+      "country-flag-small": "16px",
       "fit": "fit-content",
       "full": "100%",
       "icon-large": "24px",

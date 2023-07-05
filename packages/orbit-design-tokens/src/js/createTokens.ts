@@ -524,6 +524,12 @@ export type Tokens = {
   heightInputGroupSeparatorNormal: string;
   heightIllustrationSmall: string;
   heightIllustrationMedium: string;
+  countryFlagShadow: string;
+  countryFlagBackground: string;
+  countryFlagSmallHeight: string;
+  countryFlagSmallWidth: string;
+  countryFlagMediumHeight: string;
+  countryFlagMediumWidth: string;
   formBoxSmallHeight: string;
   formBoxNormalHeight: string;
   formBoxLargeHeight: string;
@@ -1375,6 +1381,18 @@ const createTokens: CreateTokens = foundation => ({
   heightInputGroupSeparatorNormal: "20px",
   heightIllustrationSmall: "90px",
   heightIllustrationMedium: "200px",
+  countryFlagShadow: boxShadow([
+    {
+      def: ["0", "0", "0", "1px"],
+      color: transparentColor(foundation.palette.ink.dark, 10),
+      inset: true,
+    },
+  ]),
+  countryFlagBackground: "transparent",
+  countryFlagSmallHeight: "9px",
+  countryFlagSmallWidth: "16px",
+  countryFlagMediumHeight: "13px",
+  countryFlagMediumWidth: "24px",
   formBoxSmallHeight: foundation.size.large,
   formBoxNormalHeight: foundation.size.extraLarge,
   formBoxLargeHeight: foundation.size.extraExtraLarge,

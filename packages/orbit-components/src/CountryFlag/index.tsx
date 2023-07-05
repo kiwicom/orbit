@@ -1,79 +1,10 @@
 "use client";
 
 import React from "react";
-import styled from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import cx from "clsx";
 
-import type { Theme } from "../defaultTheme";
-import defaultTheme from "../defaultTheme";
-import { baseURL, CODES, SIZES, TOKENS } from "./consts";
-import type { Props, Size } from "./types";
-
-const getSizeToken =
-  (name: string) =>
-  ({ theme, size }: { theme: Theme; size: Size }) => {
-    const tokens = {
-      [TOKENS.WIDTH]: {
-        [SIZES.SMALL]: "16px",
-        [SIZES.MEDIUM]: theme.orbit.widthCountryFlag,
-      },
-      [TOKENS.HEIGHT]: {
-        [SIZES.SMALL]: "9px",
-        [SIZES.MEDIUM]: "13px",
-      },
-    };
-    return tokens[name][size];
-  };
-
-const StyledCountryFlag = styled.div<{ size: Size }>`
-  position: relative;
-  height: ${getSizeToken(TOKENS.HEIGHT)};
-  width: ${getSizeToken(TOKENS.WIDTH)};
-  background-color: ${({ theme }) => theme.orbit.backgroundCountryFlag};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
-  overflow: hidden;
-  flex-shrink: 0;
-`;
-
-StyledCountryFlag.defaultProps = {
-  theme: defaultTheme,
-};
-
-export const StyledImage: any = styled.img.attrs<{ size: Size; code: string }>(
-  ({ theme, size, code }: { theme: Theme; size: Size; code: string }) => {
-    const width = parseInt(getSizeToken(TOKENS.WIDTH)({ theme, size }), 10);
-    return {
-      src: `${baseURL}/flags/${width}x0/flag-${code.toLowerCase()}.jpg`,
-      srcSet: `${baseURL}/flags/${width * 2}x0/flag-${code.toLowerCase()}.jpg 2x`,
-    };
-  },
-)`
-  display: block;
-  height: 100%;
-  width: 100%;
-  flex-shrink: 0;
-`;
-
-StyledImage.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledShadow = styled.div`
-  position: absolute;
-  display: block;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  box-shadow: inset 0 0 0 1px ${({ theme }) => convertHexToRgba(theme.orbit.paletteInkDark, 10)};
-  border-radius: ${({ theme }) => theme.orbit.borderRadiusSmall};
-`;
-
-StyledShadow.defaultProps = {
-  theme: defaultTheme,
-};
+import { baseURL, CODES, SIZE_WIDTHS, SIZES } from "./consts";
+import type { Props } from "./types";
 
 function getCountryProps(code?: string, name?: string) {
   const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "UNDEFINED";
@@ -88,19 +19,30 @@ function getCountryProps(code?: string, name?: string) {
 
 const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props) => {
   const { code, name } = getCountryProps(props.code, props.name);
+
+  const width = SIZE_WIDTHS[size];
+  const src = `${baseURL}/flags/${width}x0/flag-${code.toLowerCase()}.jpg`;
+  const srcSet = `${baseURL}/flags/${width * 2}x0/flag-${code.toLowerCase()}.jpg 2x`;
+
   return (
-    <StyledCountryFlag size={size}>
-      <StyledImage
+    <div
+      className={cx("rounded-small bg-country-flag-background relative shrink-0 overflow-hidden", {
+        "h-country-flag-small w-country-flag-small": size === SIZES.SMALL,
+        "h-country-flag-medium w-country-flag-medium": size === SIZES.MEDIUM,
+      })}
+    >
+      <img
+        className="block h-full w-full shrink-0"
         key={code}
         alt={name}
         title={name}
-        code={code}
         id={id}
         data-test={dataTest}
-        size={size}
+        src={src}
+        srcSet={srcSet}
       />
-      <StyledShadow />
-    </StyledCountryFlag>
+      <div className="rounded-small shadow-country-flag absolute inset-0 block h-full w-full" />
+    </div>
   );
 };
 

@@ -11798,6 +11798,130 @@
       "value": "200px"
     }
   },
+  "countryFlagShadow": {
+    "type": "box-shadow",
+    "schema": {
+      "namespace": "component",
+      "object": "country-flag",
+      "variant": "shadow"
+    },
+    "javascript": {
+      "name": "countryFlagShadow",
+      "value": "inset 0 0 0 1px rgba(37, 42, 49, 0.1)"
+    },
+    "foundation": {
+      "name": "countryFlagShadow",
+      "value": "inset 0 0 0 1px color(#252A31, opacity: 10)"
+    },
+    "scss": {
+      "name": "countryFlagShadow",
+      "value": "inset 0 0 0 1px rgba(37, 42, 49, 0.1)"
+    }
+  },
+  "countryFlagBackground": {
+    "type": "background-color",
+    "schema": {
+      "namespace": "component",
+      "object": "country-flag",
+      "variant": "background"
+    },
+    "javascript": {
+      "name": "countryFlagBackground",
+      "value": "transparent"
+    },
+    "foundation": {
+      "name": "countryFlagBackground",
+      "value": "none"
+    },
+    "scss": {
+      "name": "countryFlagBackground",
+      "value": "transparent"
+    }
+  },
+  "countryFlagSmallHeight": {
+    "type": "height",
+    "schema": {
+      "namespace": "component",
+      "object": "country-flag",
+      "variant": "small",
+      "subVariant": "height"
+    },
+    "javascript": {
+      "name": "countryFlagSmallHeight",
+      "value": "9px"
+    },
+    "foundation": {
+      "name": "countryFlagSmallHeight",
+      "value": "none"
+    },
+    "scss": {
+      "name": "countryFlagSmallHeight",
+      "value": "9px"
+    }
+  },
+  "countryFlagSmallWidth": {
+    "type": "width",
+    "schema": {
+      "namespace": "component",
+      "object": "country-flag",
+      "variant": "small",
+      "subVariant": "width"
+    },
+    "javascript": {
+      "name": "countryFlagSmallWidth",
+      "value": "16px"
+    },
+    "foundation": {
+      "name": "countryFlagSmallWidth",
+      "value": "none"
+    },
+    "scss": {
+      "name": "countryFlagSmallWidth",
+      "value": "16px"
+    }
+  },
+  "countryFlagMediumHeight": {
+    "type": "height",
+    "schema": {
+      "namespace": "component",
+      "object": "country-flag",
+      "variant": "medium",
+      "subVariant": "height"
+    },
+    "javascript": {
+      "name": "countryFlagMediumHeight",
+      "value": "13px"
+    },
+    "foundation": {
+      "name": "countryFlagMediumHeight",
+      "value": "none"
+    },
+    "scss": {
+      "name": "countryFlagMediumHeight",
+      "value": "13px"
+    }
+  },
+  "countryFlagMediumWidth": {
+    "type": "width",
+    "schema": {
+      "namespace": "component",
+      "object": "country-flag",
+      "variant": "medium",
+      "subVariant": "width"
+    },
+    "javascript": {
+      "name": "countryFlagMediumWidth",
+      "value": "24px"
+    },
+    "foundation": {
+      "name": "countryFlagMediumWidth",
+      "value": "none"
+    },
+    "scss": {
+      "name": "countryFlagMediumWidth",
+      "value": "24px"
+    }
+  },
   "formBoxSmallHeight": {
     "type": "size",
     "deprecated": false,

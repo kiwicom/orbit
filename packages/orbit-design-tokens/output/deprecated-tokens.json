@@ -520,7 +520,7 @@
     "version": "6.0.0"
   },
   "backgroundCountryFlag": {
-    "replacement": null,
+    "replacement": "countryFlagBackground",
     "category": "Background colors",
     "version": "6.0.0"
   },

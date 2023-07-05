@@ -266,7 +266,7 @@ export enum SIZES {
   MEDIUM = "medium",
 }
 
-export enum TOKENS {
-  WIDTH = "width",
-  HEIGHT = "height",
-}
+export const SIZE_WIDTHS = {
+  [SIZES.SMALL]: 16,
+  [SIZES.MEDIUM]: 24,
+};

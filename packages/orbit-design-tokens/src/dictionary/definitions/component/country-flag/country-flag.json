@@ -1,0 +1,47 @@
+{
+  "component": {
+    "country-flag": {
+      "shadow": {
+        "type": "box-shadow",
+        "value": "{foundation.palette.ink.dark}",
+        "attributes": {
+          "box-shadow": [
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 0,
+              "spread": 1,
+              "color": "{foundation.palette.ink.dark}",
+              "opacity": 10,
+              "inset": true
+            }
+          ]
+        }
+      },
+      "background": {
+        "type": "background-color",
+        "value": "transparent"
+      },
+      "small": {
+        "height": {
+          "type": "height",
+          "value": "9px"
+        },
+        "width": {
+          "type": "width",
+          "value": "16px"
+        }
+      },
+      "medium": {
+        "height": {
+          "type": "height",
+          "value": "13px"
+        },
+        "width": {
+          "type": "width",
+          "value": "24px"
+        }
+      }
+    }
+  }
+}

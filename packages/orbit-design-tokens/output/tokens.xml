@@ -2040,6 +2040,30 @@
     <value>200</value>
   </token>
   <token>
+    <name>countryFlagShadow</name>
+    <value>#252A31</value>
+  </token>
+  <token>
+    <name>countryFlagBackground</name>
+    <value>transparent</value>
+  </token>
+  <token>
+    <name>countryFlagSmallHeight</name>
+    <value>9px</value>
+  </token>
+  <token>
+    <name>countryFlagSmallWidth</name>
+    <value>16px</value>
+  </token>
+  <token>
+    <name>countryFlagMediumHeight</name>
+    <value>13px</value>
+  </token>
+  <token>
+    <name>countryFlagMediumWidth</name>
+    <value>24px</value>
+  </token>
+  <token>
     <name>formBoxSmallHeight</name>
     <value>32</value>
   </token>

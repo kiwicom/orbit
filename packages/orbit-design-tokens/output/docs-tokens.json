@@ -11818,7 +11818,7 @@
     },
     "javascript": {
       "name": "headingTitle1LineHeight",
-      "value": "36px"
+      "value": "32px"
     },
     "foundation": {
       "name": "headingTitle1LineHeight",
@@ -11826,7 +11826,7 @@
     },
     "scss": {
       "name": "headingTitle1LineHeight",
-      "value": "36px"
+      "value": "32px"
     }
   },
   "headingTitle2FontSize": {
@@ -12133,7 +12133,7 @@
     },
     "javascript": {
       "name": "headingTitle6LineHeight",
-      "value": "20px"
+      "value": "16px"
     },
     "foundation": {
       "name": "headingTitle6LineHeight",
@@ -12141,7 +12141,7 @@
     },
     "scss": {
       "name": "headingTitle6LineHeight",
-      "value": "20px"
+      "value": "16px"
     }
   },
   "headingForeground": {
@@ -12475,7 +12475,7 @@
     },
     "javascript": {
       "name": "lineHeightHeadingTitle1",
-      "value": "36px"
+      "value": "32px"
     },
     "foundation": {
       "name": "lineHeightHeadingTitle1",
@@ -12483,7 +12483,7 @@
     },
     "scss": {
       "name": "lineHeightHeadingTitle1",
-      "value": "36px"
+      "value": "32px"
     }
   },
   "lineHeightHeadingTitle2": {
@@ -12580,7 +12580,7 @@
     },
     "javascript": {
       "name": "lineHeightHeadingTitle6",
-      "value": "20px"
+      "value": "16px"
     },
     "foundation": {
       "name": "lineHeightHeadingTitle6",
@@ -12588,7 +12588,7 @@
     },
     "scss": {
       "name": "lineHeightHeadingTitle6",
-      "value": "20px"
+      "value": "16px"
     }
   },
   "iconPrimaryForeground": {

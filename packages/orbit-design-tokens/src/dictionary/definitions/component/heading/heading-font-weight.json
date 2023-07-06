@@ -34,7 +34,7 @@
       "title-4": {
         "font-weight": {
           "type": "font-weight",
-          "value": "{foundation.font-weight.medium}"
+          "value": "{foundation.font-weight.bold}"
         }
       },
       "title-5": {
@@ -89,7 +89,7 @@
         },
         "title-4": {
           "type": "font-weight",
-          "value": "{foundation.font-weight.medium}",
+          "value": "{foundation.font-weight.bold}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.title-4.font-weight}",
           "deprecated-version": "1.0.0"

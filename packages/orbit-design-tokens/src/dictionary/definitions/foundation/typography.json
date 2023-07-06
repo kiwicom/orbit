@@ -44,6 +44,11 @@
         "type": "size",
         "value": 24,
         "internal": true
+      },
+      "extra-large": {
+        "type": "size",
+        "value": 24,
+        "internal": true
       }
     },
     "font-weight": {

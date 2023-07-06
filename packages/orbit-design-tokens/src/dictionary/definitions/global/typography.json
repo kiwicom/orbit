@@ -49,6 +49,11 @@
         "type": "size",
         "category": "typography",
         "value": "{foundation.line-height.large}"
+      },
+      "text-extra-large": {
+        "type": "size",
+        "category": "typography",
+        "value": "{foundation.line-height.extra-large}"
       }
     },
     "font-weight": {

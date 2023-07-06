@@ -2061,7 +2061,7 @@
   </token>
   <token>
     <name>formElementDisabledForeground</name>
-    <value>#BAC7D5</value>
+    <value>#4F5E71</value>
   </token>
   <token>
     <name>formElementDisabledOpacity</name>
@@ -2169,7 +2169,7 @@
   </token>
   <token>
     <name>headingTitle1LineHeight</name>
-    <value>36</value>
+    <value>32</value>
   </token>
   <token>
     <name>headingTitle2FontSize</name>
@@ -2185,7 +2185,7 @@
   </token>
   <token>
     <name>headingTitle3FontSize</name>
-    <value>16</value>
+    <value>18</value>
   </token>
   <token>
     <name>headingTitle3FontWeight</name>
@@ -2197,11 +2197,11 @@
   </token>
   <token>
     <name>headingTitle4FontSize</name>
-    <value>15</value>
+    <value>16</value>
   </token>
   <token>
     <name>headingTitle4FontWeight</name>
-    <value>500</value>
+    <value>700</value>
   </token>
   <token>
     <name>headingTitle4LineHeight</name>
@@ -2209,7 +2209,7 @@
   </token>
   <token>
     <name>headingTitle5FontSize</name>
-    <value>13</value>
+    <value>15</value>
   </token>
   <token>
     <name>headingTitle5FontWeight</name>
@@ -2229,7 +2229,7 @@
   </token>
   <token>
     <name>headingTitle6LineHeight</name>
-    <value>20</value>
+    <value>16</value>
   </token>
   <token>
     <name>headingForeground</name>
@@ -2293,7 +2293,7 @@
   </token>
   <token>
     <name>lineHeightHeadingTitle1</name>
-    <value>36</value>
+    <value>32</value>
   </token>
   <token>
     <name>lineHeightHeadingTitle2</name>
@@ -2313,7 +2313,7 @@
   </token>
   <token>
     <name>lineHeightHeadingTitle6</name>
-    <value>20</value>
+    <value>16</value>
   </token>
   <token>
     <name>iconPrimaryForeground</name>
@@ -2378,6 +2378,10 @@
   <token>
     <name>illustrationDisplayHeight</name>
     <value>460</value>
+  </token>
+  <token>
+    <name>loadingForeground</name>
+    <value>#BAC7D5</value>
   </token>
   <token>
     <name>modalExtraSmallWidth</name>
@@ -3205,6 +3209,10 @@
   </token>
   <token>
     <name>lineHeightTextLarge</name>
+    <value>24</value>
+  </token>
+  <token>
+    <name>lineHeightTextExtraLarge</name>
     <value>24</value>
   </token>
   <token>

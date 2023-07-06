@@ -11252,15 +11252,15 @@
     },
     "javascript": {
       "name": "formElementDisabledForeground",
-      "value": "#BAC7D5"
+      "value": "#4F5E71"
     },
     "foundation": {
       "name": "formElementDisabledForeground",
-      "value": "foundation.palette.cloud.dark"
+      "value": "foundation.palette.ink.normal"
     },
     "scss": {
       "name": "formElementDisabledForeground",
-      "value": "rgb(186, 199, 213)"
+      "value": "rgb(79, 94, 113)"
     }
   },
   "formElementDisabledOpacity": {
@@ -11818,7 +11818,7 @@
     },
     "javascript": {
       "name": "headingTitle1LineHeight",
-      "value": "36px"
+      "value": "32px"
     },
     "foundation": {
       "name": "headingTitle1LineHeight",
@@ -11826,7 +11826,7 @@
     },
     "scss": {
       "name": "headingTitle1LineHeight",
-      "value": "36px"
+      "value": "32px"
     }
   },
   "headingTitle2FontSize": {
@@ -11902,15 +11902,15 @@
     },
     "javascript": {
       "name": "headingTitle3FontSize",
-      "value": "16px"
+      "value": "18px"
     },
     "foundation": {
       "name": "headingTitle3FontSize",
-      "value": "foundation.fontSize.large"
+      "value": "foundation.fontSize.extraLarge"
     },
     "scss": {
       "name": "headingTitle3FontSize",
-      "value": "16px"
+      "value": "18px"
     }
   },
   "headingTitle3FontWeight": {
@@ -11965,15 +11965,15 @@
     },
     "javascript": {
       "name": "headingTitle4FontSize",
-      "value": "15px"
+      "value": "16px"
     },
     "foundation": {
       "name": "headingTitle4FontSize",
-      "value": "foundation.fontSize.normal"
+      "value": "foundation.fontSize.large"
     },
     "scss": {
       "name": "headingTitle4FontSize",
-      "value": "15px"
+      "value": "16px"
     }
   },
   "headingTitle4FontWeight": {
@@ -11986,15 +11986,15 @@
     },
     "javascript": {
       "name": "headingTitle4FontWeight",
-      "value": 500
+      "value": 700
     },
     "foundation": {
       "name": "headingTitle4FontWeight",
-      "value": "foundation.fontWeight.medium"
+      "value": "foundation.fontWeight.bold"
     },
     "scss": {
       "name": "headingTitle4FontWeight",
-      "value": 500
+      "value": 700
     }
   },
   "headingTitle4LineHeight": {
@@ -12028,15 +12028,15 @@
     },
     "javascript": {
       "name": "headingTitle5FontSize",
-      "value": "13px"
+      "value": "15px"
     },
     "foundation": {
       "name": "headingTitle5FontSize",
-      "value": "foundation.fontSize.small"
+      "value": "foundation.fontSize.normal"
     },
     "scss": {
       "name": "headingTitle5FontSize",
-      "value": "13px"
+      "value": "15px"
     }
   },
   "headingTitle5FontWeight": {
@@ -12133,7 +12133,7 @@
     },
     "javascript": {
       "name": "headingTitle6LineHeight",
-      "value": "20px"
+      "value": "16px"
     },
     "foundation": {
       "name": "headingTitle6LineHeight",
@@ -12141,7 +12141,7 @@
     },
     "scss": {
       "name": "headingTitle6LineHeight",
-      "value": "20px"
+      "value": "16px"
     }
   },
   "headingForeground": {
@@ -12475,7 +12475,7 @@
     },
     "javascript": {
       "name": "lineHeightHeadingTitle1",
-      "value": "36px"
+      "value": "32px"
     },
     "foundation": {
       "name": "lineHeightHeadingTitle1",
@@ -12483,7 +12483,7 @@
     },
     "scss": {
       "name": "lineHeightHeadingTitle1",
-      "value": "36px"
+      "value": "32px"
     }
   },
   "lineHeightHeadingTitle2": {
@@ -12580,7 +12580,7 @@
     },
     "javascript": {
       "name": "lineHeightHeadingTitle6",
-      "value": "20px"
+      "value": "16px"
     },
     "foundation": {
       "name": "lineHeightHeadingTitle6",
@@ -12588,7 +12588,7 @@
     },
     "scss": {
       "name": "lineHeightHeadingTitle6",
-      "value": "20px"
+      "value": "16px"
     }
   },
   "iconPrimaryForeground": {
@@ -12925,6 +12925,26 @@
     "scss": {
       "name": "illustrationDisplayHeight",
       "value": "460px"
+    }
+  },
+  "loadingForeground": {
+    "type": "color",
+    "schema": {
+      "namespace": "component",
+      "object": "loading",
+      "variant": "foreground"
+    },
+    "javascript": {
+      "name": "loadingForeground",
+      "value": "#BAC7D5"
+    },
+    "foundation": {
+      "name": "loadingForeground",
+      "value": "foundation.palette.cloud.dark"
+    },
+    "scss": {
+      "name": "loadingForeground",
+      "value": "rgb(186, 199, 213)"
     }
   },
   "modalExtraSmallWidth": {
@@ -17267,6 +17287,27 @@
     },
     "scss": {
       "name": "lineHeightTextLarge",
+      "value": "24px"
+    }
+  },
+  "lineHeightTextExtraLarge": {
+    "type": "size",
+    "category": "typography",
+    "schema": {
+      "namespace": "global",
+      "object": "line-height",
+      "variant": "text-extra-large"
+    },
+    "javascript": {
+      "name": "lineHeightTextExtraLarge",
+      "value": "24px"
+    },
+    "foundation": {
+      "name": "lineHeightTextExtraLarge",
+      "value": "foundation.lineHeight.extraLarge"
+    },
+    "scss": {
+      "name": "lineHeightTextExtraLarge",
       "value": "24px"
     }
   },

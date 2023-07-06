@@ -609,6 +609,7 @@ export type Tokens = {
   illustrationMediumHeight: string;
   illustrationLargeHeight: string;
   illustrationDisplayHeight: string;
+  loadingForeground: string;
   modalExtraSmallWidth: string;
   modalSmallWidth: string;
   modalNormalWidth: string;
@@ -816,6 +817,7 @@ export type Tokens = {
   lineHeightTextSmall: string;
   lineHeightTextNormal: string;
   lineHeightTextLarge: string;
+  lineHeightTextExtraLarge: string;
   fontWeightNormal: string;
   fontWeightMedium: string;
   fontWeightBold: string;
@@ -1349,7 +1351,7 @@ const createTokens: CreateTokens = foundation => ({
   formBoxLargeHeight: foundation.size.extraExtraLarge,
   formElementBackground: foundation.palette.white.normal,
   formElementDisabledBackground: foundation.palette.cloud.normal,
-  formElementDisabledForeground: foundation.palette.cloud.dark,
+  formElementDisabledForeground: foundation.palette.ink.normal,
   formElementDisabledOpacity: "0.5",
   formElementBorderColor: foundation.palette.cloud.dark,
   formElementBorderColorHover: foundation.palette.cloud.darkHover,
@@ -1398,22 +1400,22 @@ const createTokens: CreateTokens = foundation => ({
   headingDisplaySubtitleLineHeight: "28px",
   headingTitle1FontSize: "28px",
   headingTitle1FontWeight: foundation.fontWeight.bold,
-  headingTitle1LineHeight: "36px",
+  headingTitle1LineHeight: "32px",
   headingTitle2FontSize: "22px",
   headingTitle2FontWeight: foundation.fontWeight.medium,
   headingTitle2LineHeight: "28px",
-  headingTitle3FontSize: foundation.fontSize.large,
+  headingTitle3FontSize: foundation.fontSize.extraLarge,
   headingTitle3FontWeight: foundation.fontWeight.medium,
   headingTitle3LineHeight: "24px",
-  headingTitle4FontSize: foundation.fontSize.normal,
-  headingTitle4FontWeight: foundation.fontWeight.medium,
+  headingTitle4FontSize: foundation.fontSize.large,
+  headingTitle4FontWeight: foundation.fontWeight.bold,
   headingTitle4LineHeight: "20px",
-  headingTitle5FontSize: foundation.fontSize.small,
+  headingTitle5FontSize: foundation.fontSize.normal,
   headingTitle5FontWeight: foundation.fontWeight.bold,
   headingTitle5LineHeight: "20px",
   headingTitle6FontSize: foundation.fontSize.small,
   headingTitle6FontWeight: foundation.fontWeight.bold,
-  headingTitle6LineHeight: "20px",
+  headingTitle6LineHeight: "16px",
   headingForeground: foundation.palette.ink.dark,
   headingForegroundInverted: foundation.palette.white.normal,
   fontWeightHeadingDisplay: foundation.fontWeight.bold,
@@ -1429,12 +1431,12 @@ const createTokens: CreateTokens = foundation => ({
   lineHeightHeading: "1.2",
   lineHeightHeadingDisplay: "44px",
   lineHeightHeadingDisplaySubtitle: "28px",
-  lineHeightHeadingTitle1: "36px",
+  lineHeightHeadingTitle1: "32px",
   lineHeightHeadingTitle2: "28px",
   lineHeightHeadingTitle3: "24px",
   lineHeightHeadingTitle4: "20px",
   lineHeightHeadingTitle5: "20px",
-  lineHeightHeadingTitle6: "20px",
+  lineHeightHeadingTitle6: "16px",
   iconPrimaryForeground: foundation.palette.ink.dark,
   iconSecondaryForeground: foundation.palette.ink.normal,
   iconTertiaryForeground: foundation.palette.cloud.dark,
@@ -1451,6 +1453,7 @@ const createTokens: CreateTokens = foundation => ({
   illustrationMediumHeight: "200px",
   illustrationLargeHeight: "280px",
   illustrationDisplayHeight: "460px",
+  loadingForeground: foundation.palette.cloud.dark,
   modalExtraSmallWidth: "360px",
   modalSmallWidth: "540px",
   modalNormalWidth: "740px",
@@ -1812,6 +1815,7 @@ const createTokens: CreateTokens = foundation => ({
   lineHeightTextSmall: foundation.lineHeight.small,
   lineHeightTextNormal: foundation.lineHeight.normal,
   lineHeightTextLarge: foundation.lineHeight.large,
+  lineHeightTextExtraLarge: foundation.lineHeight.extraLarge,
   fontWeightNormal: foundation.fontWeight.normal,
   fontWeightMedium: foundation.fontWeight.medium,
   fontWeightBold: foundation.fontWeight.bold,

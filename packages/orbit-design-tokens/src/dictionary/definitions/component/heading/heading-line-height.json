@@ -16,7 +16,7 @@
       "title-1": {
         "line-height": {
           "type": "size",
-          "value": 36
+          "value": 32
         }
       },
       "title-2": {
@@ -46,7 +46,7 @@
       "title-6": {
         "line-height": {
           "type": "size",
-          "value": 20
+          "value": 16
         }
       }
     },
@@ -73,7 +73,7 @@
       },
       "heading-title-1": {
         "type": "size",
-        "value": 36,
+        "value": 32,
         "deprecated": true,
         "deprecated-replace": "{component.heading.title-1.line-height}",
         "deprecated-version": "1.0.0"
@@ -108,7 +108,7 @@
       },
       "heading-title-6": {
         "type": "size",
-        "value": 20,
+        "value": 16,
         "deprecated": true,
         "deprecated-replace": "{component.heading.title-6.line-height}",
         "deprecated-version": "1.0.0"

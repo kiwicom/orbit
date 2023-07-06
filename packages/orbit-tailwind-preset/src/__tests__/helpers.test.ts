@@ -162,9 +162,9 @@ describe("orbit-tailwind-preset", () => {
         "heading-display-subtitle-font-size": "22px",
         "heading-title1font-size": "28px",
         "heading-title2font-size": "22px",
-        "heading-title3font-size": "16px",
-        "heading-title4font-size": "15px",
-        "heading-title5font-size": "13px",
+        "heading-title3font-size": "18px",
+        "heading-title4font-size": "16px",
+        "heading-title5font-size": "15px",
         "heading-title6font-size": "13px",
       }
     `);
@@ -189,7 +189,7 @@ describe("orbit-tailwind-preset", () => {
         "heading-title1font-weight": "700",
         "heading-title2font-weight": "500",
         "heading-title3font-weight": "500",
-        "heading-title4font-weight": "500",
+        "heading-title4font-weight": "700",
         "heading-title5font-weight": "700",
         "heading-title6font-weight": "700",
       }

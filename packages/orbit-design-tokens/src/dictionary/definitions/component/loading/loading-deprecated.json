@@ -1,5 +1,11 @@
 {
   "component": {
+    "loading": {
+      "foreground": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.dark}"
+      }
+    },
     "padding": {
       "loading": {
         "type": "size",

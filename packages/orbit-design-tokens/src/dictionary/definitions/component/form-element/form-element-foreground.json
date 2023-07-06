@@ -15,7 +15,7 @@
       "disabled": {
         "foreground": {
           "type": "color",
-          "value": "{foundation.palette.cloud.dark}"
+          "value": "{foundation.palette.ink.normal}"
         }
       },
       "label": {

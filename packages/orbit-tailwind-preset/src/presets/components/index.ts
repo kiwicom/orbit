@@ -20,6 +20,7 @@ const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "tag",
   "textLink",
   "text",
+  "loading",
   "heading",
 ];
 

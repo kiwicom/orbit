@@ -173,12 +173,12 @@ describe("orbit-tailwind-preset", () => {
       Object {
         "heading-display-line-height": "44px",
         "heading-display-subtitle-line-height": "28px",
-        "heading-title1line-height": "36px",
+        "heading-title1line-height": "32px",
         "heading-title2line-height": "28px",
         "heading-title3line-height": "24px",
         "heading-title4line-height": "20px",
         "heading-title5line-height": "20px",
-        "heading-title6line-height": "20px",
+        "heading-title6line-height": "16px",
       }
     `);
 

@@ -38,6 +38,7 @@ type ExportedComponentLevelTypes =
   | "backgroundHover"
   | "backgroundActive"
   | "foreground"
+  | "foregroundInverted"
   | "foregroundHover"
   | "foregroundActive"
   | "borderColor"

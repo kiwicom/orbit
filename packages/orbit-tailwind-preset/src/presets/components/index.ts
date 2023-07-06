@@ -50,6 +50,7 @@ const cfg = (options?: Options): Config => {
               ...getComponentLevelToken(name, "backgroundHover"),
               ...getComponentLevelToken(name, "backgroundActive"),
               ...getComponentLevelToken(name, "foreground"),
+              ...getComponentLevelToken(name, "foregroundInverted"),
               ...getComponentLevelToken(name, "foregroundHover"),
               ...getComponentLevelToken(name, "foregroundActive"),
               ...getComponentLevelToken(name, "borderColor"),

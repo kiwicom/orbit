@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
 import type { Props } from "./types";
 
-const getHeight = (theme, size) => {
+const getHeight = (theme: typeof defaultTheme, size: Props["size"]) => {
   const tokens = {
     height: {
       [SIZE_OPTIONS.SMALL]: theme.orbit.heightServiceLogoSmall,
@@ -13,10 +13,13 @@ const getHeight = (theme, size) => {
       [SIZE_OPTIONS.LARGE]: theme.orbit.heightServiceLogoLarge,
     },
   };
+
+  if (!size || !tokens.height[size]) return "";
+
   return tokens.height[size];
 };
 
-const getColor = greyScale => (greyScale ? "logos-grayscale" : "logos");
+const getColor = (greyScale: boolean) => (greyScale ? "logos-grayscale" : "logos");
 
 export const StyledServiceLogo = styled(
   ({ className, name, size, grayScale, theme, dataTest, id }) => (

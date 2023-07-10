@@ -26,34 +26,37 @@ Table below contains all types of the props available in ServiceLogo component.
 
 ### enum
 
-| code                | size       |
-| :------------------ | :--------- |
-| `"AirHelp"`         | `"small"`  |
-| `"Alipay"`          | `"medium"` |
-| `"Amex"`            | `"large"`  |
-| `"Axa"`             |
-| `"AxaAssistance"`   |
-| `"Booking"`         |
-| `"BusinessInsider"` |
-| `"ChinaUnionPay"`   |
-| `"DailyExpress"`    |
-| `"DinersClub"`      |
-| `"Discover"`        |
-| `"Elo"`             |
-| `"JCB"`             |
-| `"MailOnline"`      |
-| `"Maestro"`         |
-| `"MasterCard"`      |
-| `"MIR"`             |
-| `"Mirror"`          |
-| `"NewYorkTimes"`    |
-| `"NortonSecured"`   |
-| `"PayPal"`          |
-| `"RentalCars"`      |
-| `"Sofort"`          |
-| `"TravelPulse"`     |
-| `"Trustly"`         |
-| `"UsaToday"`        |
-| `"Visa"`            |
-| `"VisaHQ"`          |
-| `"Zooz"`            |
+| code                    | size       |
+| :---------------------- | :--------- |
+| `"AirHelp"`             | `"small"`  |
+| `"Alipay"`              | `"medium"` |
+| `"Amex"`                | `"large"`  |
+| `"Axa"`                 |
+| `"AxaAssistance"`       |
+| `"Booking"`             |
+| `"BusinessInsider"`     |
+| `"ChinaUnionPay"`       |
+| `"DailyExpress"`        |
+| `"DinersClub"`          |
+| `"Discover"`            |
+| `"Elo"`                 |
+| `"JCB"`                 |
+| `"MailOnline"`          |
+| `"Maestro"`             |
+| `"MasterCard"`          |
+| `"MIR"`                 |
+| `"Mirror"`              |
+| `"NewYorkTimes"`        |
+| `"NortonSecured"`       |
+| `"PayPal"`              |
+| `"RentalCars"`          |
+| `"Sofort"`              |
+| `"TravelPulse"`         |
+| `"Trustly"`             |
+| `"UsaToday"`            |
+| `"Visa"`                |
+| `"VisaHQ"`              |
+| `"Zooz"`                |
+| `"KiwiGuarantee"`       |
+| `"KiwiGuaranteeFull"`   |
+| `"KiwiGuaranteeInline"` |

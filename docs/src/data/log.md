@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.6.0...@kiwicom/orbit-components@7.7.0) (2023-07-11)
+
+#### Bug Fixes
+
+-   **Box:** fix possible color tokens ([97d3807](https://github.com/kiwicom/orbit/commit/97d38073e09537e9253e3af6aeeab108ff71c599))
+-   **TextLink:** allow secondary type inside Alert ([#3912](https://github.com/kiwicom/orbit/issues/3912)) ([a6193f5](https://github.com/kiwicom/orbit/commit/a6193f559c1399c60e321f43243f87e0097b5e9a))
+
+#### Features
+
+-   **InputFile:** add multiple attribute ([#3918](https://github.com/kiwicom/orbit/issues/3918)) ([9119426](https://github.com/kiwicom/orbit/commit/911942608ee74e44a361e3ae9b37fbb2a4f502db))
+-   **Popover:** add zIndex property ([#3919](https://github.com/kiwicom/orbit/issues/3919)) ([36a8d21](https://github.com/kiwicom/orbit/commit/36a8d212609df6f00e1e88b9d7ae143e90cffa4d))
+-   **ServiceLogo:** add KiwiGuarantee logo ([#3916](https://github.com/kiwicom/orbit/issues/3916)) ([60e6665](https://github.com/kiwicom/orbit/commit/60e66658517b3b1519f406c97a6e7faf3ebc6962))
+
 ## [7.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.5.0...@kiwicom/orbit-components@7.6.0) (2023-06-28)
 
 #### Bug Fixes

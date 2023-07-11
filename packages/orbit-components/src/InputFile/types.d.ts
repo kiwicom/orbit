@@ -23,4 +23,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly onBlur?: React.FocusEventHandler<HTMLInputElement>;
   readonly insideInputGroup?: boolean;
   readonly onRemoveFile?: Common.Callback;
+  readonly multiple?: boolean;
 }

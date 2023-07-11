@@ -17,12 +17,13 @@ describe("InputFile", () => {
     const onFocus = jest.fn();
     const tabIndex = "-1";
     const spaceAfter = SPACINGS_AFTER.NORMAL;
-    const file = new File(["blin"], "blin.png", { type: "image/png" });
+    // const file = new File(["blin"], "blin.png", { type: "image/png" });
 
     render(
       <InputFile
         name={name}
         label={label}
+        multiple
         buttonLabel={buttonLabel}
         placeholder={placeholder}
         dataTest={dataTest}
@@ -40,6 +41,7 @@ describe("InputFile", () => {
 
     const input = screen.getByTestId(dataTest);
     expect(input).toHaveAttribute("name", name);
+    expect(input).toHaveAttribute("multiple");
     expect(input).toHaveAttribute("tabindex", "-1");
     expect(input).toHaveAttribute("accept", ".png,.jpg,.pdf");
 

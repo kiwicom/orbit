@@ -120,6 +120,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     onBlur,
     name,
     label,
+    multiple,
     onChange,
     allowedFileTypes,
     tabIndex,
@@ -157,6 +158,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         data-test={dataTest}
         id={id}
         aria-required={required}
+        multiple={multiple}
         data-state={
           insideInputGroup && typeof error === "undefined"
             ? undefined

@@ -39,6 +39,7 @@ Table below contains all types of the props available in the InputFile component
 | width            | `string`                   | `100%`               | Specifies width of InputFile                                                                                                                                   |
 | helpClosable     | `boolean`                  | `true`               | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                 |
 | insideInputGroup | `boolean`                  | `false`              | Set to `true` if InputFile is inside InputGroup                                                                                                                |
+| multiple         | `boolean`                  |                      | If set to `true` will allow to upload multiple files                                                                                                           |
 
 ## Functional specs
 

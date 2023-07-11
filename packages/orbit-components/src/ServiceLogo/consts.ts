@@ -32,6 +32,9 @@ export enum NAME_OPTIONS {
   VISAHQ = "VisaHQ",
   ZOOZ = "Zooz",
   ELO = "Elo",
+  KIWI_GUARANTEE = "KiwiGuarantee",
+  KIWI_GUARANTEE_FULL = "KiwiGuaranteeFull",
+  KIWI_GUARANTEE_INLINE = "KiwiGuaranteeInline",
 }
 
 export enum SIZE_OPTIONS {

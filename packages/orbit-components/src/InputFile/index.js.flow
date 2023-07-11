@@ -27,6 +27,7 @@ export type Props = {|
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onRemoveFile?: () => void | Promise<any>,
+  +multiple?: boolean,
   ref?: Ref,
 |};
 

@@ -107,6 +107,7 @@ WithError.story = {
 
 export const Playground = () => {
   const label = text("Label", "Label");
+  const multiple = boolean("multiple", false);
   const buttonLabel = text("buttonLabel", "Please select file");
   const name = text("Name", "fileInput");
   const placeholder = text("Placeholder", "No file has been selected yet");
@@ -122,6 +123,7 @@ export const Playground = () => {
   return (
     <InputFile
       label={label}
+      multiple={multiple}
       buttonLabel={buttonLabel}
       name={name}
       placeholder={placeholder}

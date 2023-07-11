@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "7.6.0",
+  "version": "7.7.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,
   "main": "lib/index.js",

@@ -10,7 +10,7 @@ import Stack from "../../Stack";
 jest.mock("../../hooks/useMediaQuery", () => {
   return () => {
     return {
-      isTablet: false,
+      isTablet: true,
     };
   };
 });

@@ -27,6 +27,7 @@ export interface Props extends Common.Globals {
   referenceElement: HTMLElement | null;
   placement: Placement;
   width?: string;
+  zIndex?: number;
   maxHeight?: string;
   noFlip?: boolean;
   allowOverflow?: boolean;
@@ -108,6 +109,7 @@ const StyledPopoverParent = styled.div<{
   width?: string | number;
   shown?: boolean;
   fixed?: boolean;
+  $zIndex?: number;
   transform?: string;
   overlapped?: boolean;
   noPadding?: boolean;
@@ -117,7 +119,19 @@ const StyledPopoverParent = styled.div<{
   right?: string | number;
   position?: string;
 }>`
-  ${({ isInsideModal, width, shown, theme, transform, top, left, bottom, right, position }) => css`
+  ${({
+    isInsideModal,
+    width,
+    shown,
+    theme,
+    transform,
+    top,
+    left,
+    bottom,
+    right,
+    position,
+    $zIndex,
+  }) => css`
     position: fixed;
     bottom: 0;
     left: 0;
@@ -141,7 +155,7 @@ const StyledPopoverParent = styled.div<{
       transform: ${transform};
       transition: ${transition(["opacity"], "fast", "ease-in-out")};
       position: ${position};
-      z-index: ${isInsideModal ? "1000" : "710"};
+      z-index: ${isInsideModal ? "1000" : $zIndex};
       width: ${width ? `${width}` : "auto"};
       border-radius: ${theme.orbit.borderRadiusNormal};
       box-shadow: ${theme.orbit.boxShadowRaised};
@@ -220,6 +234,7 @@ StyledPopoverClose.defaultProps = {
 const PopoverContentWrapper = ({
   children,
   onClose,
+  zIndex = 710,
   labelClose,
   width,
   maxHeight,
@@ -303,6 +318,7 @@ const PopoverContentWrapper = ({
       <StyledPopoverParent
         width={width}
         ref={popoverRef}
+        $zIndex={zIndex}
         tabIndex={0}
         data-test={dataTest}
         id={id}

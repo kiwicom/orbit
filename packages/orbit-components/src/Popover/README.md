@@ -41,6 +41,7 @@ The table below contains all types of props available in the Popover component.
 | allowOverflow  | `boolean`                | `false`             | Allows the Popover to be cut off instead of moving it while scrolling to keep it visible.                                                        |
 | labelClose     | `React.Node`             | `Close`             | The label for close button.                                                                                                                      |
 | renderTimeout  | `number`                 | `0`                 | The timeout for rendering the Popover.                                                                                                           |
+| zIndex         | `number`                 | `710`               | The zIndex value of the Popover component.                                                                                                       |
 
 ## enum
 

@@ -34,6 +34,7 @@ export type Props = {|
   +renderInPortal?: boolean,
   +onOpen?: () => void | Promise<any>,
   +onClose?: () => void | Promise<any>,
+  +zIndex?: number,
 |};
 
 declare export default React.ComponentType<Props>;

@@ -31,4 +31,5 @@ export interface Props extends Common.Globals {
   readonly onOpen?: Common.Callback;
   readonly renderInPortal?: boolean;
   readonly onClose?: Common.Callback;
+  readonly zIndex?: number;
 }

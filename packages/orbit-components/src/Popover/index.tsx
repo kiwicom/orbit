@@ -16,6 +16,7 @@ const Popover = ({
   children,
   renderInPortal = true,
   opened,
+  zIndex,
   content,
   onClose,
   id,
@@ -127,6 +128,7 @@ const Popover = ({
       id={id}
       labelClose={labelClose}
       dataTest={dataTest}
+      zIndex={zIndex}
       overlapped={overlapped}
       fixed={fixed}
       noFlip={noFlip}

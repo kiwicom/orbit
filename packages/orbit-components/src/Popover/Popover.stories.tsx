@@ -426,6 +426,7 @@ ScrollingContent.story = {
 
 export const Playground = () => {
   const renderTimeout = number("renderTimeout", 0);
+  const zIndex = number("zIndex", 710);
   const dataTest = text("dataTest", "test");
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
   const width = text("width", "350px");
@@ -442,6 +443,7 @@ export const Playground = () => {
     <Stack justify="center">
       <Popover
         width={width}
+        zIndex={zIndex}
         maxHeight={maxHeight}
         renderTimeout={renderTimeout}
         dataTest={dataTest}

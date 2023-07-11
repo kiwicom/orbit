@@ -36,7 +36,10 @@ type Name =
   | "Visa"
   | "VisaHQ"
   | "Zooz"
-  | "Elo";
+  | "Elo"
+  | "KiwiGuarantee"
+  | "KiwiGuaranteeFull"
+  | "KiwiGuaranteeInline";
 
 export interface Props extends Common.Globals {
   readonly name: Name;

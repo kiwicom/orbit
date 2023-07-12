@@ -12,6 +12,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly placeholder?: Common.Translation;
   readonly fileName?: string;
   readonly allowedFileTypes?: string | string[];
+  readonly disabled?: boolean;
   readonly help?: React.ReactNode;
   readonly error?: React.ReactNode;
   readonly width?: string;

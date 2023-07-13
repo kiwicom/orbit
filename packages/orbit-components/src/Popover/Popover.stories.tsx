@@ -13,8 +13,9 @@ import ListChoice from "../ListChoice";
 import Text from "../Text";
 import * as Icons from "../icons";
 import ChevronDown from "../icons/ChevronDown";
-import Card from "../Card";
+import Card, { CardSection } from "../Card";
 import Loading from "../Loading";
+import Modal from "../Modal";
 
 import Popover from ".";
 
@@ -145,7 +146,43 @@ export const Default = () => {
   );
 };
 
-export const withTooltip = () => {
+export const InsideCard = () => {
+  const [isOpened, setIsOpened] = React.useState(false);
+  const [isOpenedPopover, setIsOpenedPopover] = React.useState(false);
+
+  return (
+    <>
+      <Card>
+        <CardSection
+          onClick={() => {
+            setIsOpened(true);
+          }}
+          onClose={() => setIsOpened(false)}
+        >
+          <Popover
+            opened={isOpenedPopover}
+            onClose={() => {
+              setIsOpenedPopover(false);
+            }}
+            content={<div>Content</div>}
+          >
+            <Button
+              onClick={ev => {
+                ev.stopPropagation();
+                setIsOpenedPopover(true);
+              }}
+            >
+              Open Popover
+            </Button>
+          </Popover>
+        </CardSection>
+      </Card>
+      {isOpened && <Modal onClose={() => setIsOpened(false)}>kek</Modal>}
+    </>
+  );
+};
+
+export const WithTooltip = () => {
   const labelClose = text("labelClose", "Close");
   return (
     <Popover content={<Tooltip content="Content">Tooltip</Tooltip>} labelClose={labelClose}>

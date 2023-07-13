@@ -122,7 +122,7 @@ const cfg = (options?: Options): Config => {
         borderColor: {
           ...Object.keys(defaultTokens).reduce((acc, token) => {
             if (token.startsWith("borderColor")) {
-              const name = kebabCase(token);
+              const name = kebabCase(token).replace("border-color-", "");
               return { ...acc, [name]: defaultTokens[token] };
             }
 

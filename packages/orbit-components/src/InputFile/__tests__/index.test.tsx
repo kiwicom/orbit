@@ -50,6 +50,19 @@ describe("InputFile", () => {
     // expect(onChange).toHaveBeenCalled();
   });
 
+  it("should be disabled", () => {
+    const onChange = jest.fn();
+    const onFocus = jest.fn();
+
+    render(<InputFile dataTest="test" disabled onChange={onChange} onFocus={onFocus} />);
+
+    const input = screen.getByTestId("test");
+    expect(input).toBeDisabled();
+
+    expect(onChange).not.toHaveBeenCalled();
+    expect(onFocus).not.toHaveBeenCalled();
+  });
+
   it("should have passed width", () => {
     const width = "100px";
     render(<InputFile width={width} label="label" />);

@@ -24,6 +24,7 @@ export default {
       component: "InputFile",
       knobs: [
         { name: "error", type: "text", defaultValue: "" },
+        { name: "disabled", type: "boolean", defaultValue: false },
         {
           name: "help",
           type: "text",

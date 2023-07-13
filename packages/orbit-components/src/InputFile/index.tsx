@@ -32,31 +32,36 @@ Field.defaultProps = {
 };
 
 const FakeInput = styled(({ children, className }) => <div className={className}>{children}</div>)`
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  padding: ${({ theme }) => rtlSpacing(theme.orbit.paddingInputFile)};
-  height: ${({ theme }) => theme.orbit.heightInputNormal};
-  box-shadow: inset 0 0 0
-    ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
+  ${({ theme, $disabled, error }) => css`
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: ${rtlSpacing(theme.orbit.paddingInputFile)};
+    height: ${theme.orbit.heightInputNormal};
+    box-shadow: inset 0 0 0
+      ${`${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
       }`};
-  background-color: ${({ theme }) => theme.backgroundInput};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
+    background-color: $ ${theme.backgroundInput};
+    transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)};
 
-  border-radius: 6px;
-  ${mq.tablet(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)};
+    ${$disabled &&
+    css`
+      cursor: not-allowed;
+      background-color: ${theme.orbit.backgroundInputDisabled};
+    `};
 
-  &:hover {
-    box-shadow: inset 0 0 0
-      ${({ theme, error }) =>
-        `${theme.orbit.borderWidthInput} ${
+    &:hover {
+      box-shadow: inset 0 0 0
+        ${`${theme.orbit.borderWidthInput} ${
           error ? theme.orbit.paletteRedNormalHover : theme.orbit.borderColorInputHover
         }`};
-  }
+    }
+  `}
 `;
 
 FakeInput.defaultProps = {
@@ -122,6 +127,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     label,
     multiple,
     onChange,
+    disabled = false,
     allowedFileTypes,
     tabIndex,
     fileName,
@@ -157,6 +163,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       <Input
         data-test={dataTest}
         id={id}
+        disabled={disabled}
         aria-required={required}
         multiple={multiple}
         data-state={
@@ -186,9 +193,10 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           {label}
         </FormLabel>
       )}
-      <FakeInput error={error}>
+      <FakeInput error={error} $disabled={disabled}>
         <Button
           type="secondary"
+          disabled={disabled}
           size="small"
           iconLeft={<Attachment />}
           asComponent="div"
@@ -202,6 +210,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         {fileName && (
           <ButtonLink
             type="primary"
+            disabled={disabled}
             compact
             iconLeft={<CloseCircle ariaLabel="remove" color="secondary" />}
             onClick={ev => {

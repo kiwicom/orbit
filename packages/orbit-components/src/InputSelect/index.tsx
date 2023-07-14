@@ -65,6 +65,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     const [selectedOption, setSelectedOption] = React.useState<null | Option>(
       defaultSelected || null,
     );
+
     const [activeIdx, setActiveIdx] = React.useState(0);
     const [activeDescendant, setActiveDescendant] = React.useState("");
     const [isScrolled, setIsScrolled] = React.useState(false);
@@ -239,12 +240,14 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
               prefix={prefix}
               onClick={ev => {
                 ev.preventDefault();
-                if (onOptionSelect) onOptionSelect(option);
-                setInputValue(isSelected ? "" : title);
-                setSelectedOption(isSelected ? null : option);
                 setActiveIdx(idx);
                 setResults(groupedOptions);
+                if (onOptionSelect) onOptionSelect(option);
                 if (isLargeMobile) setIsOpened(false);
+                if (!isSelected) {
+                  setInputValue(title);
+                  setSelectedOption(option);
+                }
               }}
             />
           );
@@ -290,11 +293,13 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                       onClick={ev => {
                         ev.preventDefault();
                         if (onOptionSelect) onOptionSelect(option);
-                        setInputValue(isSelected ? "" : title);
-                        setSelectedOption(isSelected ? null : option);
                         setActiveIdx(optionIdx);
                         setResults(groupedOptions);
                         if (isLargeMobile) setIsOpened(false);
+                        if (!isSelected) {
+                          setInputValue(title);
+                          setSelectedOption(option);
+                        }
                       }}
                     />
                   );
@@ -329,11 +334,13 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                 onClick={ev => {
                   ev.preventDefault();
                   if (onOptionSelect) onOptionSelect(option);
-                  setInputValue(isSelected ? "" : title);
-                  setSelectedOption(isSelected ? null : option);
                   setActiveIdx(optionIdx);
                   setResults(groupedOptions);
                   if (isLargeMobile) setIsOpened(false);
+                  if (!isSelected) {
+                    setInputValue(title);
+                    setSelectedOption(option);
+                  }
                 }}
               />
             );

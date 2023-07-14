@@ -145,6 +145,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
           setSelectedOption(results.flattened[activeIdx]);
           setIsOpened(false);
           setInputValue(results.flattened[activeIdx].title);
+          if (onOptionSelect) onOptionSelect(results.flattened[activeIdx]);
         }
       }
 

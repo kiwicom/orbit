@@ -313,7 +313,7 @@ const PopoverContentWrapper = ({
 
   return (
     <>
-      <StyledOverlay shown={shown} onMouseDown={onClose} />
+      <StyledOverlay shown={shown} onClick={onClose} />
       {/* @ts-expect-error popper */}
       <StyledPopoverParent
         width={width}

@@ -57,6 +57,7 @@ const Popover = ({
   const handleOut = React.useCallback(
     (ev?: MouseEvent | React.SyntheticEvent<HTMLElement>) => {
       // If open prop is present ignore custom handler
+      ev?.stopPropagation();
       if (ev && ref.current && !ref.current.contains(ev.target as Node)) {
         if (typeof opened === "undefined") {
           setShown(false);

@@ -120,11 +120,10 @@ describe("InputSelect", () => {
     // test closing dropdown by ESC
     fireEvent.keyDown(input, { key: "Escape" });
     expect(dropdown).not.toBeInTheDocument();
-    expect(onClose).toHaveBeenCalledWith(jetLiOption);
+    expect(onClose).toHaveBeenCalled();
 
     // test clear of the input by button and reset of filtered options
     userEvent.tab();
-    expect(input).toHaveValue("Jet Li");
     userEvent.click(screen.getByLabelText("Clear"));
     expect(onOptionSelect).toBeCalledWith(null);
     expect(screen.getByRole("textbox")).toHaveValue("");

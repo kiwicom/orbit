@@ -262,6 +262,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                 if (!isSelected) {
                   setInputValue(title);
                   setSelectedOption(option);
+                  handleClose();
                 }
               }}
             />
@@ -314,6 +315,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                         if (!isSelected) {
                           setInputValue(title);
                           setSelectedOption(option);
+                          handleClose();
                         }
                       }}
                     />
@@ -355,6 +357,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                   if (!isSelected) {
                     setInputValue(title);
                     setSelectedOption(option);
+                    handleClose();
                   }
                 }}
               />

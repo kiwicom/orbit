@@ -1,4 +1,5 @@
 import React from "react";
+import styled, { css } from "styled-components";
 
 import type { Props, Option } from "./types";
 import { groupOptions } from "./helpers";
@@ -18,10 +19,23 @@ import Box from "../Box";
 import Text from "../Text";
 import Stack from "../Stack";
 import useMediaQuery from "../hooks/useMediaQuery";
-import Modal, { ModalSection, ModalHeader, ModalFooter } from "../Modal";
+import Modal, { ModalFooter } from "../Modal";
 import ModalCloseButton from "../Modal/ModalCloseButton";
 import Button from "../Button";
 import Heading from "../Heading";
+import { StyledModalSection as ModalSection } from "../Modal/ModalSection";
+import { StyledModalHeader as ModalHeader } from "../Modal/ModalHeader";
+
+const StyledModalSection = styled(ModalSection)`
+  padding: 0;
+`;
+
+const StyledModalHeader = styled(ModalHeader)`
+  ${({ theme }) => css`
+    padding: ${theme.orbit.spaceMedium} !important;
+    margin-bottom: 0 !important;
+  `};
+`;
 
 const InputSelect = React.forwardRef<HTMLInputElement, Props>(
   (
@@ -65,6 +79,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     const [selectedOption, setSelectedOption] = React.useState<null | Option>(
       defaultSelected || null,
     );
+
     const [activeIdx, setActiveIdx] = React.useState(0);
     const [activeDescendant, setActiveDescendant] = React.useState("");
     const [isScrolled, setIsScrolled] = React.useState(false);
@@ -144,6 +159,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
           setSelectedOption(results.flattened[activeIdx]);
           setIsOpened(false);
           setInputValue(results.flattened[activeIdx].title);
+          if (onOptionSelect) onOptionSelect(results.flattened[activeIdx]);
         }
       }
 
@@ -239,12 +255,15 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
               prefix={prefix}
               onClick={ev => {
                 ev.preventDefault();
-                if (onOptionSelect) onOptionSelect(option);
-                setInputValue(isSelected ? "" : title);
-                setSelectedOption(isSelected ? null : option);
                 setActiveIdx(idx);
                 setResults(groupedOptions);
+                if (onOptionSelect) onOptionSelect(option);
                 if (isLargeMobile) setIsOpened(false);
+                if (!isSelected) {
+                  setInputValue(title);
+                  setSelectedOption(option);
+                  handleClose();
+                }
               }}
             />
           );
@@ -290,11 +309,14 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                       onClick={ev => {
                         ev.preventDefault();
                         if (onOptionSelect) onOptionSelect(option);
-                        setInputValue(isSelected ? "" : title);
-                        setSelectedOption(isSelected ? null : option);
                         setActiveIdx(optionIdx);
                         setResults(groupedOptions);
                         if (isLargeMobile) setIsOpened(false);
+                        if (!isSelected) {
+                          setInputValue(title);
+                          setSelectedOption(option);
+                          handleClose();
+                        }
                       }}
                     />
                   );
@@ -329,11 +351,14 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                 onClick={ev => {
                   ev.preventDefault();
                   if (onOptionSelect) onOptionSelect(option);
-                  setInputValue(isSelected ? "" : title);
-                  setSelectedOption(isSelected ? null : option);
                   setActiveIdx(optionIdx);
                   setResults(groupedOptions);
                   if (isLargeMobile) setIsOpened(false);
+                  if (!isSelected) {
+                    setInputValue(title);
+                    setSelectedOption(option);
+                    handleClose();
+                  }
                 }}
               />
             );
@@ -393,7 +418,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
               mobileHeader={false}
               autoFocus
             >
-              <ModalHeader>
+              <StyledModalHeader>
                 {label && (
                   <Stack align="center" justify="between">
                     <Box>
@@ -403,8 +428,8 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                   </Stack>
                 )}
                 {input}
-              </ModalHeader>
-              <ModalSection>{dropdown}</ModalSection>
+              </StyledModalHeader>
+              <StyledModalSection>{dropdown}</StyledModalSection>
               <ModalFooter flex="100%">
                 <Button type="secondary" fullWidth onClick={handleClose}>
                   {labelClose}

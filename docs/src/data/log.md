@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.7.0...@kiwicom/orbit-components@7.8.0) (2023-07-14)
+
+#### Bug Fixes
+
+-   **InputSelect:** add missing onOptionSelect callback to onKeyDown ([e0d351f](https://github.com/kiwicom/orbit/commit/e0d351f288b674f1541dc9c3f35ec3636bd78542))
+-   **InputSelect:** close after selection ([a6f39e0](https://github.com/kiwicom/orbit/commit/a6f39e06bb7b416d5fec7b76c746f6ee6d6fd1f3))
+-   **InputSelect:** fix ModalHeader padding size ([304e7a7](https://github.com/kiwicom/orbit/commit/304e7a72d4824184f9a12f2087e13a6b3337e596))
+-   **InputSelect:** keep option selected on second click ([0a9fbeb](https://github.com/kiwicom/orbit/commit/0a9fbeb51a53b6ed84e1952d0ee02c3a2538e001))
+-   **Popover:** fix popover overlay bubbling event issue ([#3921](https://github.com/kiwicom/orbit/issues/3921)) ([e507e5e](https://github.com/kiwicom/orbit/commit/e507e5eea08457fa0b69cd899bc381dc21ad58d1))
+
+#### Features
+
+-   **InputFile:** add disabled prop ([#3920](https://github.com/kiwicom/orbit/issues/3920)) ([dd445b2](https://github.com/kiwicom/orbit/commit/dd445b296e0cb1af0949e373f3c9a7d3d3a43384))
+
 ## [7.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.6.0...@kiwicom/orbit-components@7.7.0) (2023-07-11)
 
 #### Bug Fixes

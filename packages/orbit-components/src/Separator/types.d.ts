@@ -90,7 +90,7 @@ export interface CommonProps extends Common.SpaceAfter {
 
 type ConditionalSeparatorType =
   | {
-      readonly color: PaletteTokens;
+      readonly color?: PaletteTokens;
       readonly type: "solid" | "dashed" | "dotted" | "double" | "none";
     }
   | {

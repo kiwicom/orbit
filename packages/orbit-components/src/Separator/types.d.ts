@@ -83,9 +83,19 @@ export type PaletteTokens =
   | "paletteSocialFacebookHover"
   | "paletteSocialFacebookActive";
 
-export interface Props extends Common.SpaceAfter {
+export interface CommonProps extends Common.SpaceAfter {
   indent?: Indent;
-  type?: "solid" | "dashed" | "dotted" | "double" | "none";
-  color?: PaletteTokens;
   align?: Align;
 }
+
+type ConditionalSeparatorType =
+  | {
+      readonly color?: PaletteTokens;
+      readonly type: "solid" | "dashed" | "dotted" | "double" | "none";
+    }
+  | {
+      readonly color?: false;
+      readonly type?: never;
+    };
+
+export type Props = CommonProps & ConditionalSeparatorType;

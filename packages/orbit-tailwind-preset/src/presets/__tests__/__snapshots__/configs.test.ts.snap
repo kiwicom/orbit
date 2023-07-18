@@ -340,6 +340,7 @@ Object {
           "normal": "400",
         },
         "lineHeight": Object {
+          "extra-large": "24px",
           "large": "24px",
           "normal": "20px",
           "small": "16px",
@@ -2268,6 +2269,7 @@ Object {
     },
     "lineHeight": Object {
       "checkbox": "20px",
+      "extra-large": "24px",
       "heading": "1.2",
       "heading-display": "44px",
       "heading-display-subtitle": "28px",
@@ -5346,6 +5348,7 @@ Object {
       "6": "6",
     },
     "lineHeight": Object {
+      "extra-large": "24px",
       "large": "24px",
       "normal": "20px",
       "small": "16px",

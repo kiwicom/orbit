@@ -66,7 +66,7 @@ const getLineHeightToken = ({
   size?: Common.Size | null;
 }): string | null => {
   const lineHeightTokens = {
-    [SIZE_OPTIONS.EXTRA_LARGE]: theme.orbit.lineHeightTextLarge,
+    [SIZE_OPTIONS.EXTRA_LARGE]: theme.orbit.lineHeightTextExtraLarge,
     [SIZE_OPTIONS.LARGE]: theme.orbit.lineHeightTextLarge,
     [SIZE_OPTIONS.NORMAL]: theme.orbit.lineHeightTextNormal,
     [SIZE_OPTIONS.SMALL]: theme.orbit.lineHeightTextSmall,

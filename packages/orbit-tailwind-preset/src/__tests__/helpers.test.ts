@@ -35,6 +35,7 @@ describe("orbit-tailwind-preset", () => {
           "normal": "400",
         },
         "line-height": Object {
+          "extra-large": "24px",
           "large": "24px",
           "normal": "20px",
           "small": "16px",

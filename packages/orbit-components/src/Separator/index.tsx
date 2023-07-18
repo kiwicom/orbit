@@ -41,7 +41,7 @@ export const StyledSeparator = styled.hr<{
 }>`
   ${({ theme, $type, $color }) => css`
     height: ${theme.orbit.heightSeparator};
-    background: ${theme.orbit.backgroundSeparator};
+    background: ${!$color && theme.orbit.backgroundSeparator};
     box-sizing: border-box;
     border-style: ${$type};
     border-color: ${$color};

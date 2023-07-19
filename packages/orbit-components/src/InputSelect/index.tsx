@@ -300,7 +300,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                     <InputSelectOption
                       key={optionId}
                       id={optionId}
-                      active={activeIdx === optionIdx}
+                      active={!!isLargeMobile && activeIdx === optionIdx}
                       isSelected={isSelected}
                       ref={optionRef}
                       title={title}

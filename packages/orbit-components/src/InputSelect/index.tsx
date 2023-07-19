@@ -55,7 +55,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       onBlur,
       placeholder,
       labelClose = "Close",
-      emptyStateMessage = "No results found.",
+      emptyState = "No results found.",
       onOptionSelect,
       onClose,
       disabled,
@@ -367,6 +367,15 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       );
     };
 
+    const noResults =
+      typeof emptyState === "string" ? (
+        <Box padding="medium">
+          <Text>{emptyState}</Text>
+        </Box>
+      ) : (
+        emptyState
+      );
+
     const dropdown = isOpened && (
       <StyledDropdown
         role="listbox"
@@ -377,13 +386,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         $maxWidth={maxWidth}
         ref={dropdownRef}
       >
-        {results.all.length === 0 ? (
-          <Box padding="medium">
-            <Text>{emptyStateMessage}</Text>
-          </Box>
-        ) : (
-          renderOptions()
-        )}
+        {results.all.length === 0 ? noResults : renderOptions()}
       </StyledDropdown>
     );
 

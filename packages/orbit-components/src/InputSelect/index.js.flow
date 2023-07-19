@@ -36,7 +36,7 @@ export type Props = {|
   +id?: string,
   +insideInputGroup?: boolean,
   +helpClosable?: boolean,
-  +emptyStateMessage?: string,
+  +emptyState?: React.Node,
   +labelClose?: string,
   +onChange?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLInputElement>) => void | Promise<any>,

@@ -37,7 +37,7 @@ export default {
       <InputSelect
         placeholder="Search currency"
         options={currencyOptions}
-        emptyStateMessage="No results found"
+        emptyState="No results found"
       />
     );
   },

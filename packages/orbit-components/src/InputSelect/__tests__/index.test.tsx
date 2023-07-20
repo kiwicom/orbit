@@ -120,7 +120,7 @@ describe("InputSelect", () => {
     // test closing dropdown by ESC
     fireEvent.keyDown(input, { key: "Escape" });
     expect(dropdown).not.toBeInTheDocument();
-    expect(onClose).toHaveBeenCalled();
+    expect(onClose).toHaveBeenCalledWith(jetLiOption);
 
     // test clear of the input by button and reset of filtered options
     userEvent.tab();
@@ -132,6 +132,7 @@ describe("InputSelect", () => {
 
   it("can have a default selected value", () => {
     const onClose = jest.fn();
+    const onOptionSelect = jest.fn();
 
     render(
       <InputSelect
@@ -141,6 +142,7 @@ describe("InputSelect", () => {
         name={name}
         defaultSelected={jetLiOption}
         onClose={onClose}
+        onOptionSelect={onOptionSelect}
       />,
     );
 
@@ -153,6 +155,13 @@ describe("InputSelect", () => {
     // Simulate closing to assert the selected value is the default
     fireEvent.keyDown(input, { key: "Escape" });
     expect(onClose).toHaveBeenCalledWith(jetLiOption);
+
+    // Simulate changing the input without selecting anything to assert the previous selected option remains selected
+    userEvent.type(input, "Random unexisting option");
+    fireEvent.keyDown(input, { key: "Escape" });
+    expect(onClose).toHaveBeenLastCalledWith(jetLiOption);
+    expect(onOptionSelect).not.toHaveBeenCalled();
+    expect(screen.getByRole("textbox")).toHaveValue(jetLiOption.title);
   });
 
   it("can have prevSelected defined", () => {

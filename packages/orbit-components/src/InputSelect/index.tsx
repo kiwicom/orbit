@@ -89,13 +89,6 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
 
     const { isLargeMobile } = useMediaQuery();
 
-    const handleClose = () => {
-      if (onClose && isOpened) onClose(selectedOption);
-      setIsOpened(false);
-    };
-
-    useClickOutside(labelRef, handleClose);
-
     const groupedOptions = React.useMemo(
       () => groupOptions(options, showAll, prevSelected),
       [options, prevSelected, showAll],
@@ -106,6 +99,25 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       all: Option[];
       flattened: Option[];
     }>(groupedOptions);
+
+    const handleClose = (selection?: Option | null) => {
+      if (!selection) {
+        if (inputValue !== selectedOption?.title) {
+          setInputValue(selectedOption?.title || "");
+          setResults(groupedOptions);
+          setActiveIdx(0);
+        }
+      }
+
+      if (onClose && isOpened) onClose(selection || selectedOption);
+      setIsOpened(false);
+    };
+
+    const handleCloseClick = () => {
+      handleClose();
+    };
+
+    useClickOutside(labelRef, handleCloseClick);
 
     const handleFocus = (ev: React.FocusEvent<HTMLInputElement>) => {
       if (onFocus) onFocus(ev);
@@ -150,16 +162,18 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         return;
       }
 
-      if (isOpened && ev.keyCode === KEY_CODE.ESC) setIsOpened(false);
+      if (isOpened && ev.keyCode === KEY_CODE.ESC) handleClose();
 
       if (isOpened && ev.keyCode === KEY_CODE.ENTER) {
         ev.preventDefault();
 
         if (results.all.length !== 0) {
-          setSelectedOption(results.flattened[activeIdx]);
-          setIsOpened(false);
-          setInputValue(results.flattened[activeIdx].title);
-          if (onOptionSelect) onOptionSelect(results.flattened[activeIdx]);
+          const option = results.flattened[activeIdx];
+
+          setSelectedOption(option);
+          setInputValue(option.title);
+          if (onOptionSelect) onOptionSelect(option);
+          handleClose(option);
         }
       }
 
@@ -214,10 +228,12 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         ariaControls={isOpened ? dropdownId : undefined}
         autoComplete="off"
         ref={ref}
+        prefix={selectedOption && selectedOption.prefix}
         suffix={
           String(inputValue).length > 1 && (
             <StyledCloseButton
-              onClick={() => {
+              onClick={ev => {
+                ev.preventDefault();
                 if (onOptionSelect) onOptionSelect(null);
                 setInputValue("");
                 setResults(groupedOptions);
@@ -262,7 +278,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                 if (!isSelected) {
                   setInputValue(title);
                   setSelectedOption(option);
-                  handleClose();
+                  handleClose(option);
                 }
               }}
             />
@@ -315,7 +331,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                         if (!isSelected) {
                           setInputValue(title);
                           setSelectedOption(option);
-                          handleClose();
+                          handleClose(option);
                         }
                       }}
                     />
@@ -357,7 +373,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                   if (!isSelected) {
                     setInputValue(title);
                     setSelectedOption(option);
-                    handleClose();
+                    handleClose(option);
                   }
                 }}
               />
@@ -406,12 +422,13 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
           role="textbox"
           placeholder={placeholder}
           value={inputValue}
+          prefix={selectedOption && selectedOption.prefix}
         />
         {isOpened && (
           <StyledModalWrapper $maxHeight={maxHeight} isScrolled={isScrolled && topOffset > 50}>
             <Modal
               labelClose={labelClose}
-              onClose={handleClose}
+              onClose={handleCloseClick}
               fixedFooter
               onScroll={ev => {
                 if (!isLargeMobile) {
@@ -429,14 +446,14 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                     <Box>
                       <Heading type="title2">{label}</Heading>
                     </Box>
-                    <ModalCloseButton onClick={handleClose} title="Close" />
+                    <ModalCloseButton onClick={handleCloseClick} title={labelClose} />
                   </Stack>
                 )}
                 {input}
               </StyledModalHeader>
               <StyledModalSection>{dropdown}</StyledModalSection>
               <ModalFooter flex="100%">
-                <Button type="secondary" fullWidth onClick={handleClose}>
+                <Button type="secondary" fullWidth onClick={handleCloseClick}>
                   {labelClose}
                 </Button>
               </ModalFooter>

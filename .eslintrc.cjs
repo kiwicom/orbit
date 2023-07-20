@@ -1,6 +1,11 @@
 const { DEV_DEPENDENCIES } = require("./utils/eslint");
 
-const CONFIGS = ["airbnb", "plugin:react-hooks/recommended", "plugin:prettier/recommended"];
+const CONFIGS = [
+  "airbnb",
+  "plugin:react-hooks/recommended",
+  "plugin:prettier/recommended",
+  "plugin:tailwindcss/recommended",
+];
 
 module.exports = {
   root: true,
@@ -44,6 +49,8 @@ module.exports = {
     "react/no-access-state-in-setstate": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "no-await-in-loop": "off",
+    "tailwindcss/classnames-order": "off",
+    "tailwindcss/no-custom-classname": [1, { whitelist: ["(orbit\\-).*"] }],
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {

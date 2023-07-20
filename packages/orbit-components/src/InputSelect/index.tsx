@@ -399,6 +399,8 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       <StyledLabel htmlFor={inputId} ref={labelRef}>
         <InputField
           label={label}
+          help={help}
+          error={error}
           onFocus={() => setIsOpened(true)}
           readOnly
           role="textbox"

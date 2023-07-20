@@ -25468,7 +25468,7 @@ stylelint-config-styled-components@^0.1.1:
 
 stylelint-config-tailwindcss@^0.0.7:
   version "0.0.7"
-  resolved "https://registry.npmjs.org/stylelint-config-tailwindcss/-/stylelint-config-tailwindcss-0.0.7.tgz"
+  resolved "https://registry.yarnpkg.com/stylelint-config-tailwindcss/-/stylelint-config-tailwindcss-0.0.7.tgz#12721dce1b1d546561f48e1c497c68fed3a2c5ff"
   integrity sha512-n2dCWH+0ppr0/by4EYCLWW7g5LU+l4UzUIsYS7xbVHqvm9UWa7UhltNdNiz5NmLF/FmbJR4Yd/v9DuUGvLw1Tg==
 
 stylelint@^15.10.1:

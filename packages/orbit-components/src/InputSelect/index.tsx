@@ -62,6 +62,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       maxHeight = "400px",
       maxWidth,
       onKeyDown,
+      spaceAfter,
       ...props
     },
     ref,
@@ -407,12 +408,12 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     );
 
     return isLargeMobile ? (
-      <StyledLabel htmlFor={inputId} ref={labelRef}>
+      <StyledLabel htmlFor={inputId} ref={labelRef} spaceAfter={spaceAfter}>
         {input}
         {dropdown}
       </StyledLabel>
     ) : (
-      <StyledLabel htmlFor={inputId} ref={labelRef}>
+      <StyledLabel htmlFor={inputId} ref={labelRef} spaceAfter={spaceAfter}>
         <InputField
           label={label}
           help={help}

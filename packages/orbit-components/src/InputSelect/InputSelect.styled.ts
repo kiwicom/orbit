@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import type { Props } from "./types";
 import mq from "../utils/mediaQuery";
 import { right, left } from "../utils/rtl";
+import getSpacingToken from "../common/getSpacingToken";
 import defaultTheme from "../defaultTheme";
 import { ModalWrapperContent } from "../Modal";
 import { StyledModalHeader } from "../Modal/ModalHeader";
@@ -10,9 +11,14 @@ import { StyledModalSection } from "../Modal/ModalSection";
 import { StyledModalFooter } from "../Modal/ModalFooter";
 import { Field } from "../InputField";
 
-export const StyledLabel = styled.label`
+export const StyledLabel = styled.label<{ spaceAfter?: Props["spaceAfter"] }>`
   position: relative;
+  margin-bottom: ${getSpacingToken};
 `;
+
+StyledLabel.defaultProps = {
+  theme: defaultTheme,
+};
 
 export const StyledModalWrapper = styled.div<{
   $maxHeight?: Props["maxHeight"];

@@ -1,13 +1,13 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
-enum ALIGN {
+export enum ALIGN {
   START = "start",
   CENTER = "center",
   END = "end",
   STRETCH = "stretch",
 }
 
-export const alignClasses: {
+export const alignItemsClasses: {
   [K in QUERIES | ALIGN]: K extends QUERIES ? Record<ALIGN, string> : string;
 } = {
   [ALIGN.START]: "items-start",

@@ -3,6 +3,10 @@ import { devServer } from "@cypress/vite-dev-server";
 
 export default defineConfig({
   pageLoadTimeout: 120000,
+  defaultCommandTimeout: 120000,
+  videoCompression: false,
+  video: false,
+  screenshotOnRunFailure: false,
   e2e: {
     baseUrl: "http://localhost:3000",
     specPattern: "cypress/**/*.test.*",

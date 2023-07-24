@@ -105,6 +105,7 @@ jobs:
       - name: Cypress
         uses: cypress-io/github-action@v5
         with:
+          browser: chrome
           install: false
           working-directory: packages/orbit-components
           start: yarn cy:dev

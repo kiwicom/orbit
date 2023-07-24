@@ -1,6 +1,6 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
-enum DISPLAY {
+export enum DISPLAY {
   NONE = "none",
   FLEX = "flex",
   INLINE_FLEX = "inline-flex",

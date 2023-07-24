@@ -1,4 +1,6 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
+import type { Devices } from "../../utils/mediaQuery/types";
+import type { Direction } from "../../Stack/types";
 
 export enum DIRECTION {
   ROW = "row",
@@ -45,3 +47,11 @@ export const directionClasses: {
     [DIRECTION.COLUMN_REVERSE]: "mm:flex-col-reverse",
   },
 };
+
+const getDirectionToken = (direction: Direction, viewport?: Devices) => {
+  const root = viewport ? directionClasses[viewport] : directionClasses;
+
+  return root[direction];
+};
+
+export default getDirectionToken;

@@ -1,13 +1,15 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
+import type { Align } from "../../Stack/types";
+import type { Devices } from "../../utils/mediaQuery/types";
 
-enum ALIGN {
+export enum ALIGN {
   START = "start",
   CENTER = "center",
   END = "end",
   STRETCH = "stretch",
 }
 
-export const alignClasses: {
+export const alignItemsClasses: {
   [K in QUERIES | ALIGN]: K extends QUERIES ? Record<ALIGN, string> : string;
 } = {
   [ALIGN.START]: "items-start",
@@ -45,3 +47,11 @@ export const alignClasses: {
     [ALIGN.STRETCH]: "mm:items-stretch",
   },
 };
+
+const getAlignItemsClasses = (align: Align, viewport?: Devices) => {
+  const root = viewport ? alignItemsClasses[viewport] : alignItemsClasses;
+
+  return root[align];
+};
+
+export default getAlignItemsClasses;

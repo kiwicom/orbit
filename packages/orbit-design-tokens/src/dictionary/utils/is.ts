@@ -6,7 +6,7 @@ const isTypeOf = ({ type, category }: DesignToken, typeName: string): boolean =>
 export const isColor = (prop: DesignToken): boolean => isTypeOf(prop, "color");
 
 export const isColorPalette = (prop: DesignToken): boolean =>
-  isColor(prop) && prop.attributes.name.includes("palette");
+  isColor(prop) && prop.attributes.name.startsWith("palette");
 
 export const isBorderRadius = (prop: DesignToken): boolean => isTypeOf(prop, "border-radius");
 

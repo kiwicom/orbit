@@ -2,7 +2,6 @@ import * as React from "react";
 import { text, select, number } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { WIDTH_AND_HEIGHT } from "./consts";
 import type { SpacingToken, ColorTokens } from "./types";
 
 import Box from ".";
@@ -373,10 +372,10 @@ export const Playground = () => {
   const textAlign = select("text-align", Object.values(TEXT_ALIGN), TEXT_ALIGN.LEFT);
   const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.CENTER);
   const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
-  const width = text("width", WIDTH_AND_HEIGHT.FULL);
+  const width = text("width", "full");
   const minWidth = text("min-width", "");
   const maxWidth = text("max-width", "300px");
-  const height = text("height", WIDTH_AND_HEIGHT.AUTO);
+  const height = text("height", "auto");
   const maxHeight = text("max-height", "100px");
   const elevation = select("elevation", Object.values(ELEVATION), ELEVATION.ACTION);
   const borderRadius = select("border-radius", Object.values(BORDER_RADIUS), BORDER_RADIUS.NORMAL);

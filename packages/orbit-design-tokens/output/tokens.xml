@@ -1849,15 +1849,15 @@
   </token>
   <token>
     <name>fontSizeHeadingTitle3</name>
-    <value>16</value>
+    <value>18</value>
   </token>
   <token>
     <name>fontSizeHeadingTitle4</name>
-    <value>15</value>
+    <value>16</value>
   </token>
   <token>
     <name>fontSizeHeadingTitle5</name>
-    <value>13</value>
+    <value>15</value>
   </token>
   <token>
     <name>fontSizeHeadingTitle6</name>
@@ -2261,7 +2261,7 @@
   </token>
   <token>
     <name>fontWeightHeadingTitle4</name>
-    <value>500</value>
+    <value>700</value>
   </token>
   <token>
     <name>fontWeightHeadingTitle5</name>

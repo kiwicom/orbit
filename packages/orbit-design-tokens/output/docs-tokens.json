@@ -10110,15 +10110,15 @@
     },
     "javascript": {
       "name": "fontSizeHeadingTitle3",
-      "value": "16px"
+      "value": "18px"
     },
     "foundation": {
       "name": "fontSizeHeadingTitle3",
-      "value": "foundation.fontSize.large"
+      "value": "foundation.fontSize.extraLarge"
     },
     "scss": {
       "name": "fontSizeHeadingTitle3",
-      "value": "16px"
+      "value": "18px"
     }
   },
   "fontSizeHeadingTitle4": {
@@ -10132,15 +10132,15 @@
     },
     "javascript": {
       "name": "fontSizeHeadingTitle4",
-      "value": "15px"
+      "value": "16px"
     },
     "foundation": {
       "name": "fontSizeHeadingTitle4",
-      "value": "foundation.fontSize.normal"
+      "value": "foundation.fontSize.large"
     },
     "scss": {
       "name": "fontSizeHeadingTitle4",
-      "value": "15px"
+      "value": "16px"
     }
   },
   "fontSizeHeadingTitle5": {
@@ -10154,15 +10154,15 @@
     },
     "javascript": {
       "name": "fontSizeHeadingTitle5",
-      "value": "13px"
+      "value": "15px"
     },
     "foundation": {
       "name": "fontSizeHeadingTitle5",
-      "value": "foundation.fontSize.small"
+      "value": "foundation.fontSize.normal"
     },
     "scss": {
       "name": "fontSizeHeadingTitle5",
-      "value": "13px"
+      "value": "15px"
     }
   },
   "fontSizeHeadingTitle6": {
@@ -12305,15 +12305,15 @@
     },
     "javascript": {
       "name": "fontWeightHeadingTitle4",
-      "value": 500
+      "value": 700
     },
     "foundation": {
       "name": "fontWeightHeadingTitle4",
-      "value": "foundation.fontWeight.medium"
+      "value": "foundation.fontWeight.bold"
     },
     "scss": {
       "name": "fontWeightHeadingTitle4",
-      "value": 500
+      "value": 700
     }
   },
   "fontWeightHeadingTitle5": {

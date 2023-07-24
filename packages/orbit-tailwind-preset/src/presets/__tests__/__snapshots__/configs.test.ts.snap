@@ -402,18 +402,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -437,7 +425,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -496,6 +483,7 @@ Object {
       "spinner": "spinner 0.75s linear infinite",
     },
     "aria": Object {
+      "busy": "busy=\\"true\\"",
       "checked": "checked=\\"true\\"",
       "disabled": "disabled=\\"true\\"",
       "expanded": "expanded=\\"true\\"",
@@ -672,15 +660,6 @@ Object {
       },
       "form-element-background": "#FFFFFF",
       "form-element-disabled-background": "#E8EDF1",
-<<<<<<< HEAD
-=======
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -704,7 +683,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -887,11 +865,6 @@ Object {
       "form-element": "#BAC7D5",
       "form-element-active": "#94A8BE",
       "form-element-border-color": "#BAC7D5",
-<<<<<<< HEAD
-=======
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "form-element-error": "#D21C1C",
       "form-element-focus": "#0172CB",
       "form-element-hover": "#A6B6C8",
@@ -925,7 +898,6 @@ Object {
       "input-error-hover": "#B91919",
       "input-focus": "#0172CB",
       "input-hover": "#A6B6C8",
-      "loading-foreground": "#BAC7D5",
       "modal": "#E8EDF1",
       "orange": Object {
         "dark": "#AD5700",
@@ -1055,18 +1027,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -1090,7 +1050,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -1175,18 +1134,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -1210,7 +1157,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -1282,18 +1228,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -1317,7 +1251,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -1507,11 +1440,6 @@ Object {
       "form-element": "#BAC7D5",
       "form-element-active": "#94A8BE",
       "form-element-border-color": "#BAC7D5",
-<<<<<<< HEAD
-=======
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "form-element-error": "#D21C1C",
       "form-element-focus": "#0172CB",
       "form-element-hover": "#A6B6C8",
@@ -1545,7 +1473,6 @@ Object {
       "input-error-hover": "#B91919",
       "input-focus": "#0172CB",
       "input-hover": "#A6B6C8",
-      "loading-foreground": "#BAC7D5",
       "modal": "#E8EDF1",
       "orange": Object {
         "dark": "#AD5700",
@@ -1667,18 +1594,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -1702,7 +1617,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "none": "none",
       "orange": Object {
         "dark": "#AD5700",
@@ -1902,18 +1816,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -1937,7 +1839,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -2433,18 +2334,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -2468,7 +2357,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -2583,18 +2471,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -2618,7 +2494,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -2708,18 +2583,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -2743,7 +2606,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -2815,18 +2677,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -2850,7 +2700,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -3080,7 +2929,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "none": "none",
       "orange": Object {
         "dark": "#AD5700",
@@ -3209,13 +3057,7 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
       "critical-foreground": "#D21C1C",
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "form-element-disabled-foreground": "#4F5E71",
       "form-element-filled-foreground": "#4F5E71",
       "form-element-foreground": "#BAC7D5",
@@ -3255,12 +3097,9 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-<<<<<<< HEAD
       "link-foreground-hover": "#009580",
       "link-primary-foreground": "#007A69",
       "link-secondary-foreground": "#252A31",
-=======
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
@@ -3356,18 +3195,6 @@ Object {
         "normal-active": "#CAD4DE",
         "normal-hover": "#DCE3E9",
       },
-<<<<<<< HEAD
-=======
-      "form-element-background": "#FFFFFF",
-      "form-element-border-color": "#BAC7D5",
-      "form-element-disabled-background": "#E8EDF1",
-      "form-element-disabled-foreground": "#4F5E71",
-      "form-element-filled-foreground": "#4F5E71",
-      "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
-      "form-element-prefix-foreground": "#697D95",
->>>>>>> 8f679912c (fix(tokens): fix formElementDisabledForeground token value)
       "green": Object {
         "dark": "#2D7738",
         "dark-active": "#1F5126",
@@ -3391,7 +3218,6 @@ Object {
         "normal-active": "#324256",
         "normal-hover": "#3E4E63",
       },
-      "loading-foreground": "#BAC7D5",
       "orange": Object {
         "dark": "#AD5700",
         "dark-active": "#954A00",
@@ -3921,6 +3747,7 @@ Object {
       "spin": "spin 1s linear infinite",
     },
     "aria": Object {
+      "busy": "busy=\\"true\\"",
       "checked": "checked=\\"true\\"",
       "disabled": "disabled=\\"true\\"",
       "expanded": "expanded=\\"true\\"",

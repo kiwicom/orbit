@@ -61,7 +61,7 @@ describe("Stepper", () => {
     render(<StepperStateless value="kek" active />);
 
     expect(document.querySelector("svg")).toHaveStyle({
-      background: defaultTheme.orbit.paletteBlueNormal,
+      background: defaultTheme.orbit.paletteBlueNormalHover,
     });
   });
 

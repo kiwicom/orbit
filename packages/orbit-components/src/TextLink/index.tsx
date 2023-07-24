@@ -122,12 +122,9 @@ export const getLinkStyle = ({ theme, $type }: { theme: Theme; $type: Props["typ
   &,
   &:link,
   &:visited {
-    &:not(:hover) {
-      color: ${getColor} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
-      text-decoration: ${resolveUnderline} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
-      font-weight: ${theme.orbit.fontWeightLinks}
-        ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
-    }
+    color: ${getColor} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
+    text-decoration: ${resolveUnderline} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
+    font-weight: ${theme.orbit.fontWeightLinks} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
   }
 
   &:hover {

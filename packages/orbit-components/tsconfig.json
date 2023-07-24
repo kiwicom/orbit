@@ -3,6 +3,7 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib",
+    "skipLibCheck": true,
     "noEmit": true,
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "moduleResolution": "node",

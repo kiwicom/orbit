@@ -1,6 +1,6 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
-enum JUSTIFY {
+export enum JUSTIFY {
   START = "start",
   CENTER = "center",
   END = "end",

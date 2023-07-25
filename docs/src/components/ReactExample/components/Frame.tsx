@@ -57,6 +57,7 @@ export const StyledFrame = styled.iframe<Partial<StyledProps>>`
   ${({ background, isFullScreen, $height }) => css`
     width: 100%;
     min-height: 120px;
+    border: none;
     height: ${isFullScreen ? `100%` : $height};
     ${background && getBackground(background)};
   `};

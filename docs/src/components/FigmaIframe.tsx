@@ -12,6 +12,7 @@ interface Props {
 const StyledIframe = styled.iframe<Props>`
   ${({ theme, border, height, maxWidth }) => css`
     width: 100%;
+    border: none;
     height: ${height && `${height}px`};
     max-width: ${maxWidth && `${maxWidth}px`};
     border: ${border || `1px solid rgba(0, 0, 0, 0.1)`};

@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
+
+  button {
+    border: none;
+  }
 `;
 
 const PlaygroundIframe = () => {

@@ -1,0 +1,48 @@
+{
+  "global": {
+    "palette": {
+      "green": {
+        "light": {
+          "type": "color",
+          "value": "{foundation.palette.green.light}"
+        },
+        "light-hover": {
+          "type": "color",
+          "value": "{foundation.palette.green.light-hover}"
+        },
+        "light-active": {
+          "type": "color",
+          "value": "{foundation.palette.green.light-active}"
+        },
+        "normal": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}"
+        },
+        "normal-hover": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal-hover}"
+        },
+        "normal-active": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal-active}"
+        },
+        "dark": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark}"
+        },
+        "dark-hover": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark-hover}"
+        },
+        "dark-active": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark-active}"
+        },
+        "darker": {
+          "type": "color",
+          "value": "{foundation.palette.green.darker}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "component": {
+    "social-button": {
+      "facebook": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-hover}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.social.facebook-active}"
+        },
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "icon-foreground": {
+          "type": "color",
+          "value": "#3B5998"
+        }
+      }
+    },
+    "background": {
+      "button": {
+        "facebook": {
+          "type": "color",
+          "value": "#3B5998",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-hover": {
+          "type": "color",
+          "value": "#385490",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-active": {
+          "type": "color",
+          "value": "#354F88",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    },
+    "color-text": {
+      "button": {
+        "facebook": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-bordered": {
+          "type": "color",
+          "value": "#3B5998",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-bordered-hover": {
+          "type": "color",
+          "value": "#385490",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        },
+        "facebook-bordered-active": {
+          "type": "color",
+          "value": "#354F88",
+          "deprecated": true,
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

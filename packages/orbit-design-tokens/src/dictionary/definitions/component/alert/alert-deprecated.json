@@ -1,0 +1,18 @@
+{
+  "component": {
+    "padding": {
+      "alert": {
+        "type": "size",
+        "value": "{foundation.space.medium}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      },
+      "alert-with-icon": {
+        "type": "size",
+        "value": "{foundation.space.small}",
+        "deprecated": true,
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

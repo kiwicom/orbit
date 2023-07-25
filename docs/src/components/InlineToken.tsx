@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import tokensList from "@kiwicom/orbit-design-tokens/output/theo-spec.json";
+import tokensList from "@kiwicom/orbit-design-tokens/dist/tokens.json";
 import { Text, Tooltip } from "@kiwicom/orbit-components";
 
 import DesignTokenIcon from "./DesignTokensList/components/DesignTokenIcon";

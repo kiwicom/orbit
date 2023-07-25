@@ -2,7 +2,7 @@ module.exports = {
   extends: "../../.eslintrc.cjs",
   overrides: [
     {
-      files: ["./src/**", "./scripts/**"],
+      files: ["./src/**", "./scripts/**", "tsup.config.js"],
       rules: {
         "import/no-useless-path-segments": "off",
         "import/extensions": "off",

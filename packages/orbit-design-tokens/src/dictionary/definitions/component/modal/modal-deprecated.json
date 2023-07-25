@@ -1,0 +1,13 @@
+{
+  "component": {
+    "background": {
+      "modal": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.elevation.flat.background}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

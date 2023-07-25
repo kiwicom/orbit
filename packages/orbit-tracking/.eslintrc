@@ -2,17 +2,20 @@
   "extends": "../../.eslintrc.cjs",
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": ["*.ts", "*.js"],
       "parserOptions": {
         "ecmaVersion": 2020,
         "sourceType": "module"
       },
       "rules": {
         "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
         "no-restricted-syntax": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "no-console": "off",
+        "guard-for-in": "off",
         "no-underscore-dangle": "off"
       }
     }

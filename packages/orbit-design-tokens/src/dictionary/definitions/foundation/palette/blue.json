@@ -1,0 +1,18 @@
+{
+  "foundation": {
+    "palette": {
+      "blue": {
+        "dark": { "value": "#005AA3", "internal": true, "type": "color" },
+        "dark-active": { "value": "#003E70", "internal": true, "type": "color" },
+        "dark-hover": { "value": "#004F8F", "internal": true, "type": "color" },
+        "darker": { "value": "#004680", "internal": true, "type": "color" },
+        "light": { "value": "#E8F4FD", "internal": true, "type": "color" },
+        "light-active": { "value": "#C7E4FA", "internal": true, "type": "color" },
+        "light-hover": { "value": "#DEF0FC", "internal": true, "type": "color" },
+        "normal": { "value": "#0172CB", "internal": true, "type": "color" },
+        "normal-active": { "value": "#01508E", "internal": true, "type": "color" },
+        "normal-hover": { "value": "#0161AC", "internal": true, "type": "color" }
+      }
+    }
+  }
+}

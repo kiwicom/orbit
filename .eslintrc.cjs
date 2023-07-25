@@ -169,39 +169,6 @@ module.exports = {
       },
     },
     {
-      files: "packages/eslint-plugin-orbit-components/**/*.ts",
-      rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-      },
-    },
-    {
-      files: ["packages/orbit-themer/**/*"],
-      env: {
-        browser: true,
-      },
-    },
-    // some ESLint rules fail in certain cases, so we're disabling them
-    {
-      files: "packages/orbit-tracking/src/**/*",
-      rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "no-restricted-syntax": "off",
-        "guard-for-in": "off",
-        "no-console": "off",
-        "import/extensions": "off",
-      },
-    },
-    {
-      files: ["packages/eslint-plugin-orbit-components/src/**"],
-      rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "off",
-      },
-    },
-    {
       files: "**/config/**",
       globals: {
         argv: false,

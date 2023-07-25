@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import TextLink from "..";
@@ -81,6 +81,7 @@ describe("#TextLink", () => {
         {title}
       </TextLink>,
     );
+
     expect(screen.getByRole("button")).toHaveStyle({
       textDecoration: "none",
       height: defaultTheme.orbit.heightButtonNormal,

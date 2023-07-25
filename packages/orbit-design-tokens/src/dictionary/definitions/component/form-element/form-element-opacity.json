@@ -1,0 +1,32 @@
+{
+  "component": {
+    "form-element": {
+      "disabled": {
+        "opacity": {
+          "type": "opacity",
+          "value": 50
+        }
+      }
+    },
+    "opacity": {
+      "checkbox": {
+        "disabled": {
+          "type": "opacity",
+          "value": 50,
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.disabled.opacity}",
+          "deprecated-version": "1.0.0"
+        }
+      },
+      "radio-button": {
+        "disabled": {
+          "type": "opacity",
+          "value": 50,
+          "deprecated": true,
+          "deprecated-replace": "{component.form-element.disabled.opacity}",
+          "deprecated-version": "1.0.0"
+        }
+      }
+    }
+  }
+}

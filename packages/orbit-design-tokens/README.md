@@ -28,15 +28,15 @@ Now you can use tokens by typing `defaultTokens` and just continue with the dot-
 
 ### Generating your theme
 
-**orbit-design-tokens** offers a possibility to generate different themes based on the inputted foundations.
+**orbit-design-tokens** package offers the possibility to generate different themes based on the inputted foundations.
 
-First, simply import `getTokens` function to your project.
+First, simply import the `getTokens` function to your project.
 
 ```jsx
 import { getTokens } from "@kiwicom/orbit-design-tokens";
 ```
 
-Now define your foundations that will be used to generated design tokens.
+Now define your foundations that will be used to generate design tokens.
 
 ```jsx
 const foundation = {
@@ -109,4 +109,4 @@ These conventions should be systematic, and work according to template: `propert
 
 ## Contributing
 
-We are opened to bug reports and new token requests but, please use the correct template.
+We are open to bug reports and new token requests, but please use the correct template.

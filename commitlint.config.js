@@ -39,6 +39,8 @@ function fetchComponentDirs() {
     "examples",
     "icons",
     "tracking",
+    "tailwind",
+    "icons",
   ];
 
   return dirs.reduce(filterOut, whiteListedDirs);

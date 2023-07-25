@@ -1,0 +1,40 @@
+{
+  "component": {
+    "tab": {
+      "bundle-basic": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "rgba(215, 51, 28, 0.08)"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "rgba(215, 51, 28, 0.12)"
+        }
+      },
+      "bundle-medium": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "rgba(59, 30, 176, 0.08)"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "rgba(59, 30, 176, 0.12)"
+        }
+      },
+      "bundle-top": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)"
+        }
+      }
+    }
+  }
+}

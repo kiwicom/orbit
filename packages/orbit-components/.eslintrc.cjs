@@ -15,6 +15,12 @@ module.exports = {
   },
   overrides: [
     {
+      files: ["cypress/**/*.ts?(x)"],
+      rules: {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    {
       files: ["{src,es,lib}/**/*.js?(x)", "*.js?(x).flow"],
       rules: {
         "flowtype/require-valid-file-annotation": ["error", "always"],

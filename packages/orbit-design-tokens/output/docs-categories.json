@@ -1,0 +1,15 @@
+{
+  "categories": [
+    "border-radius",
+    "breakpoint",
+    "duration",
+    "elevation",
+    "palette",
+    "space",
+    "font-family",
+    "font-size",
+    "line-height",
+    "font-weight",
+    "z-index"
+  ]
+}

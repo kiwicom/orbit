@@ -1,3 +1,3 @@
-import { foundation } from "@kiwicom/orbit-design-tokens/";
+import defaultFoundation from "@kiwicom/orbit-design-tokens/src/js/defaultFoundation";
 
-export const DEFAULT_COLORS = foundation.palette;
+export const DEFAULT_COLORS = defaultFoundation.palette;

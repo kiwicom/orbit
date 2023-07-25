@@ -1,0 +1,63 @@
+{
+  "global": {
+    "breakpoint": {
+      "mediumMobile": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.mediumMobile}"
+      },
+      "largeMobile": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.largeMobile}"
+      },
+      "tablet": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.tablet}"
+      },
+      "desktop": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.desktop}"
+      },
+      "largeDesktop": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.largeDesktop}"
+      }
+    },
+    "width-breakpoint": {
+      "mediumMobile": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.mediumMobile}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.mediumMobile}",
+        "deprecated-version": "1.0.0"
+      },
+      "largeMobile": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.largeMobile}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.largeMobile}",
+        "deprecated-version": "1.0.0"
+      },
+      "tablet": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.tablet}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.tablet}",
+        "deprecated-version": "1.0.0"
+      },
+      "desktop": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.desktop}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.desktop}",
+        "deprecated-version": "1.0.0"
+      },
+      "largeDesktop": {
+        "type": "breakpoint",
+        "value": "{foundation.breakpoint.largeDesktop}",
+        "deprecated": true,
+        "deprecated-replace": "{global.breakpoint.largeDesktop}",
+        "deprecated-version": "1.0.0"
+      }
+    }
+  }
+}

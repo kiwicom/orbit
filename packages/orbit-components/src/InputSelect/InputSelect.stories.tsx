@@ -246,7 +246,7 @@ export const Playground = () => {
         onClose={action("onClose")}
         onChange={action("onChange")}
         onOptionSelect={action("onOptionSelect")}
-        emptyStateMessage={emptyStateMessage}
+        emptyState={emptyStateMessage}
         showAll={showAll}
         showAllLabel={showAllLabel}
       />

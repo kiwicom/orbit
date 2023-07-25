@@ -2627,20 +2627,6 @@
   resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-4.2.1.tgz#d804e46cea1bd57c3b432e7a9e7c2e48ab0bee70"
   integrity sha512-2fBeaYDAWLHAlafpUYSVPsR8ja13TM7b6b/2PH30n+FrbOts5eWaan7CVgZnOeGaTVfnh7CvJ5CeP7nR+KhUOw==
 
-"@kiwicom/orbit-design-tokens@5.0.0-beta.0":
-  version "5.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-5.0.0-beta.0.tgz#6197e0795e3e823a4de4905ac4723b0bdf5d0106"
-  integrity sha512-3tUXMYiTzJ3EtcutbCaxDuLuMB8IJKpdiCQcnuymal/CpFinoVX+tgYDu7HzyGrzMfjZqw0qtKkujuWWgoza2g==
-  dependencies:
-    color2k "^2.0.2"
-
-"@kiwicom/orbit-tailwind-preset@1.0.0-beta.0":
-  version "1.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-tailwind-preset/-/orbit-tailwind-preset-1.0.0-beta.0.tgz#7875c445cfc41778157aa6f96ccf1ef0197ba9ae"
-  integrity sha512-qzGJP6AvbdjWcG5BpgdCIz+2kbe0ELmkFTEqhT1Ui8RZZYPGt7u72ztR/6pynmZ+oARFU5qiTS4HFCm1inR2zw==
-  dependencies:
-    "@kiwicom/orbit-design-tokens" "5.0.0-beta.0"
-
 "@lerna/add@5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-5.2.0.tgz#b9d3c728e059eea67f5757ee4b8e9550295f0be6"
@@ -25160,7 +25146,7 @@ table@^6.0.9, table@^6.8.1:
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
 
-tailwindcss@^3.0.0, tailwindcss@^3.3.1, tailwindcss@^3.3.2:
+tailwindcss@^3.3.2, tailwindcss@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.3.3.tgz#90da807393a2859189e48e9e7000e6880a736daf"
   integrity sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==

@@ -126,7 +126,7 @@
     "stylelint": "^15.10.1",
     "stylelint-config-recommended": "^9.0.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "tailwindcss": "^3.3.1",
+    "tailwindcss": "^3.3.3",
     "ts-node": "^10.9.1",
     "tsc-files": "^1.1.3",
     "tsup": "^6.7.0",

@@ -6,6 +6,10 @@ const BaseStyles = createGlobalStyle`
       font-family: ${theme.orbit.fontFamily};
       font-size: 16px;
     }
+
+    button {
+      border: none;
+    }
   `}
 `;
 

@@ -1318,7 +1318,7 @@ const createTokens: CreateTokens = foundation => ({
   widthCheckbox: "20px",
   widthRadioButton: "20px",
   widthStopoverArrow: "36px",
-  widthCountryFlag: "20px",
+  widthCountryFlag: "24px",
   widthModalSmall: "540px",
   widthModalNormal: "740px",
   widthModalLarge: "900px",

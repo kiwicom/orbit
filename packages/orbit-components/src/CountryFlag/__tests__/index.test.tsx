@@ -2,13 +2,15 @@ import React from "react";
 import { render, screen, cleanup } from "@testing-library/react";
 
 import CountryFlag from "..";
+import { baseURL } from "../consts";
 
 describe("CountryFlag", () => {
   it("should have expected DOM output", () => {
     render(<CountryFlag code="anywhere" name="Anywhere" dataTest="test" />);
     const flag = screen.getByRole("img", { name: "Anywhere" });
     expect(flag).toHaveAttribute("src", expect.stringContaining("anywhere"));
-    expect(flag).toHaveAttribute("srcset", expect.stringContaining("anywhere"));
+    expect(flag).toHaveAttribute("src", `${baseURL}/flags/24x0/flag-anywhere.jpg`);
+    expect(flag).toHaveAttribute("srcset", `${baseURL}/flags/48x0/flag-anywhere.jpg 2x`);
     expect(screen.getByTitle("Anywhere")).toBeInTheDocument();
     expect(screen.getByAltText("Anywhere")).toBeInTheDocument();
     expect(screen.getByTestId("test")).toBeInTheDocument();

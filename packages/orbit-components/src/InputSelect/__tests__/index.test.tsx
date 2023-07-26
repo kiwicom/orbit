@@ -152,7 +152,7 @@ describe("InputSelect", () => {
 
     expect(input).toHaveValue(jetLiOption.title);
 
-    // Simulate closing to assert the selected value is the default
+    // Simulate closing to assert the selected value is the same
     fireEvent.keyDown(input, { key: "Escape" });
     expect(onClose).toHaveBeenCalledWith(jetLiOption);
 
@@ -162,6 +162,32 @@ describe("InputSelect", () => {
     expect(onClose).toHaveBeenLastCalledWith(jetLiOption);
     expect(onOptionSelect).not.toHaveBeenCalled();
     expect(screen.getByRole("textbox")).toHaveValue(jetLiOption.title);
+  });
+
+  it("clears the selected value when the input is cleared", () => {
+    const onClose = jest.fn();
+    const onOptionSelect = jest.fn();
+
+    render(
+      <InputSelect
+        id={id}
+        label={label}
+        options={options}
+        name={name}
+        defaultSelected={jetLiOption}
+        onClose={onClose}
+        onOptionSelect={onOptionSelect}
+      />,
+    );
+
+    userEvent.tab();
+
+    const input = screen.getByRole("combobox");
+
+    userEvent.clear(input);
+    fireEvent.keyDown(input, { key: "Escape" });
+    expect(onClose).toHaveBeenCalledWith(null);
+    expect(onOptionSelect).toHaveBeenCalledWith(null);
   });
 
   it("can have prevSelected defined", () => {

@@ -10540,7 +10540,7 @@
     },
     "javascript": {
       "name": "widthCountryFlag",
-      "value": "20px"
+      "value": "24px"
     },
     "foundation": {
       "name": "widthCountryFlag",
@@ -10548,7 +10548,7 @@
     },
     "scss": {
       "name": "widthCountryFlag",
-      "value": "20px"
+      "value": "24px"
     }
   },
   "widthModalSmall": {

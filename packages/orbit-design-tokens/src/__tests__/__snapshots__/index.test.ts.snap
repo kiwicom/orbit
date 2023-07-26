@@ -799,7 +799,7 @@ Object {
   "widthBreakpointTablet": 768,
   "widthCarrierLogo": "32px",
   "widthCheckbox": "20px",
-  "widthCountryFlag": "20px",
+  "widthCountryFlag": "24px",
   "widthIconLarge": "24px",
   "widthIconMedium": "20px",
   "widthIconSmall": "16px",

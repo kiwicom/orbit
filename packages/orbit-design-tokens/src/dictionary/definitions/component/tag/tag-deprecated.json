@@ -5,37 +5,37 @@
         "type": "color",
         "value": "{foundation.palette.cloud.light}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-hover": {
         "type": "color",
         "value": "{foundation.palette.cloud.light-hover}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-active": {
         "type": "color",
         "value": "{foundation.palette.cloud.light-active}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-selected": {
         "type": "color",
         "value": "{foundation.palette.ink.dark}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-selected-hover": {
         "type": "color",
         "value": "{foundation.palette.ink.dark-hover}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-selected-active": {
         "type": "color",
         "value": "{foundation.palette.ink.dark-active}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "border-color": {
@@ -43,13 +43,13 @@
         "type": "color",
         "value": "{foundation.palette.cloud.dark}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-focus": {
         "type": "color",
         "value": "{foundation.palette.blue.normal}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "color-text": {
@@ -57,13 +57,13 @@
         "type": "color",
         "value": "{foundation.palette.ink.dark}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-selected": {
         "type": "color",
         "value": "{foundation.palette.cloud.dark}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "padding": {
@@ -78,7 +78,7 @@
           }
         },
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-removable": {
         "type": "size",
@@ -93,13 +93,13 @@
           }
         },
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-removable-with-icon": {
         "type": "size",
         "value": 6,
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "tag-with-icon": {
         "type": "size",
@@ -114,7 +114,7 @@
           }
         },
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     }
   }

@@ -37,28 +37,28 @@
           "type": "color",
           "deprecated": true,
           "value": "{foundation.palette.red.light}",
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.critical-subtle.background}"
         },
         "critical-subtle-hover": {
           "type": "color",
           "value": "{foundation.palette.red.light-hover}",
           "deprecated": true,
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.critical-subtle.background-hover}"
         },
         "critical-subtle-active": {
           "type": "color",
           "value": "{foundation.palette.red.light-active}",
           "deprecated": true,
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.critical-subtle.background-active}"
         },
         "critical-subtle-focus": {
           "type": "color",
           "value": "{foundation.palette.red.light}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     },
@@ -68,21 +68,21 @@
           "type": "color",
           "value": "{foundation.palette.red.dark}",
           "deprecated": true,
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.critical-subtle.foreground}"
         },
         "critical-subtle-hover": {
           "type": "color",
           "value": "{foundation.palette.red.dark-hover}",
           "deprecated": true,
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.critical-subtle.foreground-hover}"
         },
         "critical-subtle-active": {
           "type": "color",
           "value": "{foundation.palette.red.dark-active}",
           "deprecated": true,
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.critical-subtle.foreground-active}"
         }
       }

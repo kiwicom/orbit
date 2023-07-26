@@ -50,20 +50,20 @@
           "type": "color",
           "deprecated": true,
           "deprecated-replace": "{component.button.bundle-basic.background}",
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)"
         },
         "bundle-basic-hover": {
           "type": "color",
           "deprecated": true,
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.bundle-basic.background-hover}",
           "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)"
         },
         "bundle-basic-active": {
           "type": "color",
           "deprecated": true,
-          "deprecated-version": "1.0.0",
+          "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.bundle-basic.background-active}",
           "value": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)"
         },

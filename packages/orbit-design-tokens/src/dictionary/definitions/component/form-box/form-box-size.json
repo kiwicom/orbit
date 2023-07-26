@@ -27,21 +27,21 @@
           "value": "{foundation.size.large}",
           "deprecated": true,
           "deprecated-replace": "{component.form-box.small.height}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "normal": {
           "type": "size",
           "value": "{foundation.size.extra-large}",
           "deprecated": true,
           "deprecated-replace": "{component.form-box.normal.height}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large": {
           "type": "size",
           "value": "{foundation.size.extra-extra-large}",
           "deprecated": true,
           "deprecated-replace": "{component.form-box.large.height}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       },
       "input": {
@@ -50,21 +50,21 @@
           "value": "{foundation.size.large}",
           "deprecated": true,
           "deprecated-replace": "{component.form-box.small.height}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "normal": {
           "type": "size",
           "value": "{foundation.size.extra-large}",
           "deprecated": true,
           "deprecated-replace": "{component.form-box.normal.height}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large": {
           "type": "size",
           "value": "{foundation.size.extra-extra-large}",
           "deprecated": true,
           "deprecated-replace": "{component.form-box.large.height}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

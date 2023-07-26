@@ -5,7 +5,7 @@
         "type": "border-style",
         "value": "solid",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "margin-top": {
@@ -13,7 +13,7 @@
         "type": "size",
         "value": "{foundation.space.x-x-x-small}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "modifier-scale": {
@@ -22,7 +22,7 @@
           "type": "modifier",
           "value": 0.95,
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

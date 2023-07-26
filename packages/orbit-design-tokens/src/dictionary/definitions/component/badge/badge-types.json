@@ -119,77 +119,77 @@
           "value": "{foundation.palette.red.normal}",
           "deprecated-replace": "{component.badge.critical.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "critical-subtle": {
           "type": "color",
           "value": "{foundation.palette.red.light}",
           "deprecated-replace": "{component.badge.critical-subtle.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "dark": {
           "type": "color",
           "value": "{foundation.palette.ink.dark}",
           "deprecated-replace": "{component.badge.dark.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "info": {
           "type": "color",
           "value": "{foundation.palette.blue.normal}",
           "deprecated-replace": "{component.badge.info.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "info-subtle": {
           "type": "color",
           "value": "{foundation.palette.blue.light}",
           "deprecated-replace": "{component.badge.info-subtle.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "neutral": {
           "type": "color",
           "value": "{foundation.palette.cloud.light}",
           "deprecated-replace": "{component.badge.neutral.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "success": {
           "type": "color",
           "value": "{foundation.palette.green.normal}",
           "deprecated-replace": "{component.badge.success.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "success-subtle": {
           "type": "color",
           "value": "{foundation.palette.green.light}",
           "deprecated-replace": "{component.badge.success-subtle.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "warning": {
           "type": "color",
           "value": "{foundation.palette.orange.normal}",
           "deprecated-replace": "{component.badge.warning.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "warning-subtle": {
           "type": "color",
           "value": "{foundation.palette.orange.light}",
           "deprecated-replace": "{component.badge.warning-subtle.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "white": {
           "type": "color",
           "value": "{foundation.palette.white.normal}",
           "deprecated-replace": "{component.badge.white.background}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     },
@@ -200,49 +200,49 @@
           "value": "{foundation.palette.red.normal}",
           "deprecated-replace": "{component.badge.critical.foreground}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "dark": {
           "type": "color",
           "value": "{foundation.palette.white.normal}",
           "deprecated-replace": "{component.badge.dark.foreground}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "info": {
           "type": "color",
           "value": "{foundation.palette.blue.normal}",
           "deprecated-replace": "{component.badge.info.foreground}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "neutral": {
           "type": "color",
           "value": "{foundation.palette.ink.normal}",
           "deprecated-replace": "{component.badge.neutral.foreground}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "success": {
           "type": "color",
           "value": "{foundation.palette.green.normal}",
           "deprecated-replace": "{component.badge.success.foreground}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "warning": {
           "type": "color",
           "value": "{foundation.palette.orange.normal}",
           "deprecated-replace": "{component.badge.warning.foreground}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "white": {
           "type": "color",
           "value": "{foundation.palette.ink.dark}",
           "deprecated-replace": "{component.badge.white.foreground}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

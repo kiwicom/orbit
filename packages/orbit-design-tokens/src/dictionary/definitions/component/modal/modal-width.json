@@ -39,28 +39,28 @@
           "value": 540,
           "deprecated": true,
           "deprecated-replace": "{component.modal.small.width}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "normal": {
           "type": "size",
           "value": 740,
           "deprecated": true,
           "deprecated-replace": "{component.modal.normal.width}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large": {
           "type": "size",
           "value": 900,
           "deprecated": true,
           "deprecated-replace": "{component.modal.large.width}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "extra-large": {
           "type": "size",
           "value": 1280,
           "deprecated": true,
           "deprecated-replace": "{component.modal.extra-large.width}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

@@ -7,6 +7,7 @@ export const NAMES: Name[] = [
   "AirportShuttle",
   "AirportTransport", // TODO: Get rid off 22.11
   "AirportTransportTaxi", // TODO: Get rid off 22.11
+  "Ambulance",
   "AppQRCode",
   "BaggageDrop",
   "Boarding",
@@ -36,6 +37,7 @@ export const NAMES: Name[] = [
   "FareLock",
   "FareLockSuccess",
   "Feedback",
+  "FlexibleDates",
   "GroundTransport404",
   "Help",
   "Improve",

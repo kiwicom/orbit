@@ -34,6 +34,7 @@ The table below contains all types of props available in the Illustration compon
 | `"AirportTransport"`            | `"medium"`     |
 | `"AirportTransportTaxi"`        | `"large"`      |
 | `"AirportShuttle"`              | `"display"`    |
+| `"Ambulance"`                   |
 | `"AppQRCode"`                   |
 | `"BaggageDrop"`                 |
 | `"Boarding"`                    |
@@ -62,6 +63,7 @@ The table below contains all types of props available in the Illustration compon
 | `"FareLockSuccess"`             |
 | `"FastTrackMan"`                |
 | `"Feedback"`                    |
+| `"FlexibleDates"`               |
 | `"Help"`                        |
 | `"Improve"`                     |
 | `"Insurance"`                   |

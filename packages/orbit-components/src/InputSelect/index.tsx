@@ -103,14 +103,17 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
 
     const handleClose = (selection?: Option | null) => {
       if (!selection) {
-        if (inputValue !== selectedOption?.title) {
+        if (inputValue === "") {
+          if (onOptionSelect) onOptionSelect(null);
+          setSelectedOption(null);
+        } else if (inputValue !== selectedOption?.title) {
           setInputValue(selectedOption?.title || "");
-          setResults(groupedOptions);
-          setActiveIdx(0);
         }
+        setResults(groupedOptions);
+        setActiveIdx(0);
       }
 
-      if (onClose && isOpened) onClose(selection || selectedOption);
+      if (onClose && isOpened) onClose(selection || (inputValue === "" ? null : selectedOption));
       setIsOpened(false);
     };
 

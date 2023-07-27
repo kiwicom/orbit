@@ -2,6 +2,7 @@
   "paddingAlert": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -23,6 +24,7 @@
   "paddingAlertWithIcon": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -45,6 +47,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -67,6 +70,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonLargePadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -90,6 +94,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonLargeBothIconsPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -113,6 +118,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonLargeLeftIconPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -136,6 +142,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonLargeRightIconPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -159,6 +166,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonNormalPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -182,6 +190,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonNormalBothIconsPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -205,6 +214,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonNormalLeftIconPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -228,6 +238,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonNormalRightIconPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -250,6 +261,7 @@
   "paddingButtonWithoutText": {
     "type": "size",
     "deprecated": true,
+    "replacement": "buttonWithoutTextPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -273,6 +285,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonSmallPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -296,6 +309,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonSmallBothIconsPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -319,6 +333,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonSmallLeftIconPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -342,6 +357,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "buttonSmallRightIconPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -365,6 +381,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "formElementSmallPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -388,6 +405,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": "formElementNormalPadding",
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -411,6 +429,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -432,6 +451,7 @@
   "paddingLoading": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -454,6 +474,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -476,6 +497,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -498,6 +520,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -520,6 +543,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -541,6 +565,7 @@
   "paddingTagRemovableWithIcon": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -563,6 +588,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -585,6 +611,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -607,6 +634,7 @@
   "paddingTextareaNormal": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding",
@@ -629,6 +657,7 @@
   "backgroundAlertCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -651,6 +680,7 @@
   "backgroundAlertInfo": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -673,6 +703,7 @@
   "backgroundAlertSuccess": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -695,6 +726,7 @@
   "backgroundAlertWarning": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -717,6 +749,7 @@
   "backgroundBadgeCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeCriticalBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -739,6 +772,7 @@
   "backgroundBadgeCriticalSubtle": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeCriticalSubtleBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -761,6 +795,7 @@
   "backgroundBadgeDark": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeDarkBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -783,6 +818,7 @@
   "backgroundBadgeInfo": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeInfoBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -805,6 +841,7 @@
   "backgroundBadgeInfoSubtle": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeInfoSubtleBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -827,6 +864,7 @@
   "backgroundBadgeNeutral": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeNeutralBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -849,6 +887,7 @@
   "backgroundBadgeSuccess": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeSuccessBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -871,6 +910,7 @@
   "backgroundBadgeSuccessSubtle": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeSuccessSubtleBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -893,6 +933,7 @@
   "backgroundBadgeWarning": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeWarningBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -915,6 +956,7 @@
   "backgroundBadgeWarningSubtle": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeWarningSubtleBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -937,6 +979,7 @@
   "backgroundBadgeWhite": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeWhiteBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -959,6 +1002,7 @@
   "backgroundButtonLinkCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkCriticalBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -981,6 +1025,7 @@
   "backgroundButtonLinkCriticalHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkCriticalBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1003,6 +1048,7 @@
   "backgroundButtonLinkCriticalActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkCriticalBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1025,6 +1071,7 @@
   "backgroundButtonLinkPrimary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkPrimaryBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1047,6 +1094,7 @@
   "backgroundButtonLinkPrimaryHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkPrimaryBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1069,6 +1117,7 @@
   "backgroundButtonLinkPrimaryActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkPrimaryBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1091,6 +1140,7 @@
   "backgroundButtonLinkSecondary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkSecondaryBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1113,6 +1163,7 @@
   "backgroundButtonLinkSecondaryHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkSecondaryBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1135,6 +1186,7 @@
   "backgroundButtonLinkSecondaryActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonLinkSecondaryBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1157,6 +1209,7 @@
   "backgroundButtonBundleBasic": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleBasicBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1179,6 +1232,7 @@
   "backgroundButtonBundleBasicHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleBasicBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1201,6 +1255,7 @@
   "backgroundButtonBundleBasicActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleBasicBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1355,6 +1410,7 @@
   "backgroundButtonCriticalSubtle": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalSubtleBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1377,6 +1433,7 @@
   "backgroundButtonCriticalSubtleHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalSubtleBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1399,6 +1456,7 @@
   "backgroundButtonCriticalSubtleActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalSubtleBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1421,6 +1479,7 @@
   "backgroundButtonCriticalSubtleFocus": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1443,6 +1502,7 @@
   "backgroundButtonCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1465,6 +1525,7 @@
   "backgroundButtonCriticalHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1487,6 +1548,7 @@
   "backgroundButtonCriticalActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1509,6 +1571,7 @@
   "backgroundButtonBordered": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1531,6 +1594,7 @@
   "backgroundButtonBorderedHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1553,6 +1617,7 @@
   "backgroundButtonBorderedActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1575,6 +1640,7 @@
   "backgroundButtonInfo": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonInfoBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1597,6 +1663,7 @@
   "backgroundButtonInfoHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonInfoBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1619,6 +1686,7 @@
   "backgroundButtonInfoActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonInfoBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1641,6 +1709,7 @@
   "backgroundButtonPrimarySubtle": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimarySubtleBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1663,6 +1732,7 @@
   "backgroundButtonPrimarySubtleHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimarySubtleBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1685,6 +1755,7 @@
   "backgroundButtonPrimarySubtleActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimarySubtleBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1707,6 +1778,7 @@
   "backgroundButtonPrimarySubtleFocus": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimarySubtleBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1729,6 +1801,7 @@
   "backgroundButtonPrimary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimaryBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1751,6 +1824,7 @@
   "backgroundButtonPrimaryHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimaryBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1773,6 +1847,7 @@
   "backgroundButtonPrimaryActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimaryBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1795,6 +1870,7 @@
   "backgroundButtonSecondary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonSecondaryBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1817,6 +1893,7 @@
   "backgroundButtonSecondaryHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonSecondaryBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1839,6 +1916,7 @@
   "backgroundButtonSecondaryActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonSecondaryBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1861,6 +1939,7 @@
   "backgroundButtonSuccess": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonSuccessBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1883,6 +1962,7 @@
   "backgroundButtonSuccessHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonSuccessBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1905,6 +1985,7 @@
   "backgroundButtonSuccessActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonSuccessBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1927,6 +2008,7 @@
   "backgroundButtonWarning": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonWarningBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1949,6 +2031,7 @@
   "backgroundButtonWarningHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonWarningBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1971,6 +2054,7 @@
   "backgroundButtonWarningActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonWarningBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1993,6 +2077,7 @@
   "backgroundButtonWhite": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonWhiteBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2015,6 +2100,7 @@
   "backgroundButtonWhiteHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonWhiteBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2037,6 +2123,7 @@
   "backgroundButtonWhiteActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonWhiteBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2059,6 +2146,7 @@
   "backgroundButtonWhiteBordered": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2081,6 +2169,7 @@
   "backgroundButtonWhiteBorderedHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2103,6 +2192,7 @@
   "backgroundButtonWhiteBorderedActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2125,6 +2215,7 @@
   "backgroundButtonFacebook": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2147,6 +2238,7 @@
   "backgroundButtonFacebookHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2169,6 +2261,7 @@
   "backgroundButtonFacebookActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2191,6 +2284,7 @@
   "backgroundButtonGoogle": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2213,6 +2307,7 @@
   "backgroundButtonGoogleHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2235,6 +2330,7 @@
   "backgroundButtonGoogleActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2257,6 +2353,7 @@
   "backgroundCard": {
     "type": "color",
     "deprecated": true,
+    "replacement": "elevationFlatBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2278,6 +2375,7 @@
   "backgroundCarrierLogo": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2299,6 +2397,7 @@
   "backgroundCountryFlag": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2320,6 +2419,7 @@
   "backgroundServiceLogo": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2341,6 +2441,7 @@
   "backgroundTooltip": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2362,6 +2463,7 @@
   "backgroundTooltipLargeMobile": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2383,6 +2485,7 @@
   "backgroundSeparator": {
     "type": "color",
     "deprecated": true,
+    "replacement": "elevationFlatBorderColor",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2404,6 +2507,7 @@
   "backgroundSwitch": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2425,6 +2529,7 @@
   "backgroundSwitchChecked": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2446,6 +2551,7 @@
   "backgroundInput": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2467,6 +2573,7 @@
   "backgroundInputDisabled": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementDisabledBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2488,6 +2595,7 @@
   "backgroundModal": {
     "type": "color",
     "deprecated": true,
+    "replacement": "elevationFlatBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2509,6 +2617,7 @@
   "backgroundTable": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2530,6 +2639,7 @@
   "backgroundTableEven": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2551,6 +2661,7 @@
   "backgroundTableHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2571,6 +2682,8 @@
   },
   "backgroundTableShadowLeft": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2592,6 +2705,8 @@
   },
   "backgroundTableShadowRight": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2614,6 +2729,7 @@
   "backgroundTag": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2635,6 +2751,7 @@
   "backgroundTagHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2656,6 +2773,7 @@
   "backgroundTagActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2677,6 +2795,7 @@
   "backgroundTagSelected": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2698,6 +2817,7 @@
   "backgroundTagSelectedHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2719,6 +2839,7 @@
   "backgroundTagSelectedActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -2740,6 +2861,7 @@
   "colorAlertIconCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2762,6 +2884,7 @@
   "colorAlertIconInfo": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2784,6 +2907,7 @@
   "colorAlertIconSuccess": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2806,6 +2930,7 @@
   "colorAlertIconWarning": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2828,6 +2953,7 @@
   "colorFormLabel": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementLabelForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2849,6 +2975,7 @@
   "colorFormLabelFilled": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementLabelFilled",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2870,6 +2997,7 @@
   "colorIconCheckboxRadio": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2891,6 +3019,7 @@
   "colorIconCheckboxRadioDisabled": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2912,6 +3041,7 @@
   "colorIconInput": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconTertiaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2933,6 +3063,7 @@
   "colorIconRadioButton": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2954,6 +3085,7 @@
   "colorIconRadioButtonDisabled": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2975,6 +3107,7 @@
   "colorInfoCheckBoxRadio": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textSecondaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -2996,6 +3129,7 @@
   "colorPlaceholderInput": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3017,6 +3151,7 @@
   "colorPlaceholderInputError": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3038,6 +3173,7 @@
   "colorPlaceholderInputFile": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3059,6 +3195,7 @@
   "colorPlaceholderInputFileError": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3080,6 +3217,7 @@
   "colorTextInput": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementFilledForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3101,6 +3239,7 @@
   "colorTextInputDisabled": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementDisabledForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3122,6 +3261,7 @@
   "colorTextInputPrefix": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementPrefixForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3143,6 +3283,7 @@
   "colorHeading": {
     "type": "color",
     "deprecated": true,
+    "replacement": "headingForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3164,6 +3305,7 @@
   "colorHeadingInverted": {
     "type": "color",
     "deprecated": true,
+    "replacement": "headingForegroundInverted",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3185,6 +3327,7 @@
   "colorIconPrimary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconPrimaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3207,6 +3350,7 @@
   "colorIconSecondary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconSecondaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3229,6 +3373,7 @@
   "colorIconTertiary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconTertiaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3251,6 +3396,7 @@
   "colorIconInfo": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconInfoForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3273,6 +3419,7 @@
   "colorIconSuccess": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconSuccessForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3295,6 +3442,7 @@
   "colorIconWarning": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconWarningForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3317,6 +3465,7 @@
   "colorIconCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconCriticalForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3339,6 +3488,7 @@
   "colorStopoverArrow": {
     "type": "color",
     "deprecated": true,
+    "replacement": "iconSecondaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3360,6 +3510,7 @@
   "colorTextLinkPrimary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textLinkPrimaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3382,6 +3533,7 @@
   "colorTextLinkPrimaryHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textLinkForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3404,6 +3556,7 @@
   "colorTextLinkSecondary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textLinkSecondaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3426,6 +3579,7 @@
   "colorTextLinkSecondaryHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textLinkForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3448,6 +3602,7 @@
   "colorTextPrimary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textPrimaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3470,6 +3625,7 @@
   "colorTextSecondary": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textSecondaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3492,6 +3648,7 @@
   "colorTextInfo": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textInfoForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3514,6 +3671,7 @@
   "colorTextSuccess": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textSuccessForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3536,6 +3694,7 @@
   "colorTextWarning": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textWarningForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3558,6 +3717,7 @@
   "colorTextCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textCriticalForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3580,6 +3740,7 @@
   "colorTextWhite": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textWhiteForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3602,6 +3763,7 @@
   "colorTextError": {
     "type": "color",
     "deprecated": true,
+    "replacement": "textCriticalForeground",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3624,6 +3786,7 @@
   "colorTextAlertCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3646,6 +3809,7 @@
   "colorTextAlertInfo": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3668,6 +3832,7 @@
   "colorTextAlertSuccess": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3690,6 +3855,7 @@
   "colorTextAlertWarning": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3712,6 +3878,7 @@
   "colorTextAlertLink": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3734,6 +3901,7 @@
   "colorTextBadgeCritical": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeCriticalForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3756,6 +3924,7 @@
   "colorTextBadgeDark": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeDarkForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3778,6 +3947,7 @@
   "colorTextBadgeInfo": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeInfoForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3800,6 +3970,7 @@
   "colorTextBadgeNeutral": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeNeutralForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3822,6 +3993,7 @@
   "colorTextBadgeSuccess": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeSuccessForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3844,6 +4016,7 @@
   "colorTextBadgeWarning": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeWarningForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3866,6 +4039,7 @@
   "colorTextBadgeWhite": {
     "type": "color",
     "deprecated": true,
+    "replacement": "badgeWhiteForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3889,6 +4063,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkCriticalForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3912,6 +4087,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkCriticalForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3935,6 +4111,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkCriticalForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3958,6 +4135,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkPrimaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -3981,6 +4159,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkPrimaryForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4004,6 +4183,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkPrimaryForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4027,6 +4207,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkSecondaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4050,6 +4231,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkSecondaryForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4073,6 +4255,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonLinkSecondaryForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4096,6 +4279,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4119,6 +4303,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4141,6 +4326,7 @@
   "colorTextButtonCriticalSubtle": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalSubtleForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4163,6 +4349,7 @@
   "colorTextButtonCriticalSubtleHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalSubtleForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4185,6 +4372,7 @@
   "colorTextButtonCriticalSubtleActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonCriticalSubtleForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4208,6 +4396,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonCriticalForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4231,6 +4420,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonCriticalForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4254,6 +4444,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonCriticalForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4277,6 +4468,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4300,6 +4492,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4323,6 +4516,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4345,6 +4539,7 @@
   "colorTextButtonFilled": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4367,6 +4562,7 @@
   "colorTextButtonFilledHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4389,6 +4585,7 @@
   "colorTextButtonFilledActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4412,6 +4609,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonInfoForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4435,6 +4633,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonInfoForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4458,6 +4657,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonInfoForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4481,6 +4681,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4504,6 +4705,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4527,6 +4729,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4549,6 +4752,7 @@
   "colorTextButtonPrimarySubtle": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimarySubtleForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4571,6 +4775,7 @@
   "colorTextButtonPrimarySubtleHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimarySubtleForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4593,6 +4798,7 @@
   "colorTextButtonPrimarySubtleActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonPrimarySubtleForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4616,6 +4822,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonPrimaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4639,6 +4846,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonPrimaryForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4662,6 +4870,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonPrimaryForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4685,6 +4894,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4708,6 +4918,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4731,6 +4942,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4754,6 +4966,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonSecondaryForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4777,6 +4990,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonSecondaryForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4800,6 +5014,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonSecondaryForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4823,6 +5038,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4846,6 +5062,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4869,6 +5086,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4892,6 +5110,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonSuccessForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4915,6 +5134,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonSuccessForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4938,6 +5158,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonSuccessForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4961,6 +5182,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -4984,6 +5206,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5007,6 +5230,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5030,6 +5254,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonWarningForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5053,6 +5278,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonWarningForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5076,6 +5302,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonWarningForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5099,6 +5326,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5122,6 +5350,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5145,6 +5374,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5168,6 +5398,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonWhiteForeground",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5191,6 +5422,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonWhiteForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5214,6 +5446,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": "buttonWhiteForegroundActive",
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5237,6 +5470,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5260,6 +5494,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5283,6 +5518,7 @@
     "type": "color",
     "category": "foreground",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5305,6 +5541,7 @@
   "colorTextButtonFacebook": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5327,6 +5564,7 @@
   "colorTextButtonFacebookHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5349,6 +5587,7 @@
   "colorTextButtonFacebookActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5371,6 +5610,7 @@
   "colorTextButtonFacebookBordered": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5393,6 +5633,7 @@
   "colorTextButtonFacebookBorderedHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5415,6 +5656,7 @@
   "colorTextButtonFacebookBorderedActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5437,6 +5679,7 @@
   "colorTextButtonGoogle": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5459,6 +5702,7 @@
   "colorTextButtonGoogleHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5481,6 +5725,7 @@
   "colorTextButtonGoogleActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5503,6 +5748,7 @@
   "colorTextButtonGoogleBordered": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5525,6 +5771,7 @@
   "colorTextButtonGoogleBorderedHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5547,6 +5794,7 @@
   "colorTextButtonGoogleBorderedActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5569,6 +5817,7 @@
   "colorTextLoading": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5590,6 +5839,7 @@
   "colorTextTable": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5611,6 +5861,7 @@
   "colorTextTag": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5632,6 +5883,7 @@
   "colorTextTagSelected": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "color-text",
@@ -5652,6 +5904,8 @@
   },
   "alertBackgroundCritical": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5673,6 +5927,8 @@
   },
   "alertBackgroundInfo": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5694,6 +5950,8 @@
   },
   "alertBackgroundSuccess": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5715,6 +5973,8 @@
   },
   "alertBackgroundWarning": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5736,6 +5996,8 @@
   },
   "alertIconCritical": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5757,6 +6019,8 @@
   },
   "alertIconInfo": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5778,6 +6042,8 @@
   },
   "alertIconSuccess": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5799,6 +6065,8 @@
   },
   "alertIconWarning": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5820,6 +6088,8 @@
   },
   "alertColorTextCritical": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5841,6 +6111,8 @@
   },
   "alertColorTextInfo": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5862,6 +6134,8 @@
   },
   "alertColorTextSuccess": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5883,6 +6157,8 @@
   },
   "alertColorTextWarning": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5904,6 +6180,8 @@
   },
   "alertColorTextLink": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "alert",
@@ -5926,6 +6204,7 @@
   "borderRadiusBadge": {
     "type": "border-radius",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-radius",
@@ -5946,6 +6225,8 @@
   },
   "badgeBundleBasicBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -5967,6 +6248,8 @@
   },
   "badgeBundleBasicForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -5988,6 +6271,8 @@
   },
   "badgeBundleMediumBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6009,6 +6294,8 @@
   },
   "badgeBundleMediumForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6030,6 +6317,8 @@
   },
   "badgeBundleTopBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6051,6 +6340,8 @@
   },
   "badgeBundleTopForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6072,6 +6363,8 @@
   },
   "badgeCriticalBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6093,6 +6386,8 @@
   },
   "badgeCriticalForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6114,6 +6409,8 @@
   },
   "badgeCriticalSubtleBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6135,6 +6432,8 @@
   },
   "badgeCriticalSubtleForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6156,6 +6455,8 @@
   },
   "badgeDarkBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6177,6 +6478,8 @@
   },
   "badgeDarkForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6198,6 +6501,8 @@
   },
   "badgeInfoBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6219,6 +6524,8 @@
   },
   "badgeInfoForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6240,6 +6547,8 @@
   },
   "badgeInfoSubtleBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6261,6 +6570,8 @@
   },
   "badgeInfoSubtleForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6282,6 +6593,8 @@
   },
   "badgeNeutralBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6303,6 +6616,8 @@
   },
   "badgeNeutralForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6324,6 +6639,8 @@
   },
   "badgeSuccessBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6345,6 +6662,8 @@
   },
   "badgeSuccessForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6366,6 +6685,8 @@
   },
   "badgeSuccessSubtleBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6387,6 +6708,8 @@
   },
   "badgeSuccessSubtleForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6408,6 +6731,8 @@
   },
   "badgeWarningBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6429,6 +6754,8 @@
   },
   "badgeWarningForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6450,6 +6777,8 @@
   },
   "badgeWarningSubtleBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6471,6 +6800,8 @@
   },
   "badgeWarningSubtleForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6492,6 +6823,8 @@
   },
   "badgeWhiteBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6513,6 +6846,8 @@
   },
   "badgeWhiteForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "badge",
@@ -6536,6 +6871,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "margin",
@@ -6559,6 +6895,7 @@
     "type": "size",
     "category": "spacing",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "margin",
@@ -6580,6 +6917,7 @@
   "marginButtonIcon": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "margin",
@@ -6601,6 +6939,8 @@
   "buttonLinkCriticalBackground": {
     "type": "color",
     "comment": "Used for the background of critical ButtonLink in the default state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6623,6 +6963,8 @@
   "buttonLinkCriticalBackgroundHover": {
     "type": "color",
     "comment": "Used for the background of critical ButtonLink in the hover state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6645,6 +6987,8 @@
   "buttonLinkCriticalBackgroundActive": {
     "type": "color",
     "comment": "Used for the background of critical ButtonLink in the active and the focus state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6668,6 +7012,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of critical ButtonLink in the default state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6691,6 +7037,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of critical ButtonLink in the hover state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6714,6 +7062,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of critical ButtonLink in the active and the focus state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6736,6 +7086,8 @@
   "buttonLinkPrimaryBackground": {
     "type": "color",
     "comment": "Used for the background of primary ButtonLink in the default state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6758,6 +7110,8 @@
   "buttonLinkPrimaryBackgroundHover": {
     "type": "color",
     "comment": "Used for the background of primary ButtonLink in the hover state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6780,6 +7134,8 @@
   "buttonLinkPrimaryBackgroundActive": {
     "type": "color",
     "comment": "Used for the background of primary ButtonLink in the active and the focus state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6803,6 +7159,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of primary ButtonLink in the default state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6826,6 +7184,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of primary ButtonLink in the hover state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6849,6 +7209,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of primary ButtonLink in the active and the focus state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6871,6 +7233,8 @@
   "buttonLinkSecondaryBackground": {
     "type": "color",
     "comment": "Used for the background of secondary ButtonLink in the default state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6893,6 +7257,8 @@
   "buttonLinkSecondaryBackgroundHover": {
     "type": "color",
     "comment": "Used for the background of secondary ButtonLink in the hover state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6915,6 +7281,8 @@
   "buttonLinkSecondaryBackgroundActive": {
     "type": "color",
     "comment": "Used for the background of secondary ButtonLink in the active and the focus state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6938,6 +7306,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of secondary ButtonLink in the default state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6961,6 +7331,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of secondary ButtonLink in the hover state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -6984,6 +7356,8 @@
     "type": "color",
     "category": "foreground",
     "comment": "Used for the text of secondary ButtonLink in the active and the focus state.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button-link",
@@ -7005,6 +7379,8 @@
   },
   "buttonBundleBasicBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7026,6 +7402,8 @@
   },
   "buttonBundleBasicBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7047,6 +7425,8 @@
   },
   "buttonBundleBasicBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7068,6 +7448,8 @@
   },
   "buttonBundleMediumBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7089,6 +7471,8 @@
   },
   "buttonBundleMediumBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7110,6 +7494,8 @@
   },
   "buttonBundleMediumBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7131,6 +7517,8 @@
   },
   "buttonBundleTopBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7152,6 +7540,8 @@
   },
   "buttonBundleTopBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7173,6 +7563,8 @@
   },
   "buttonBundleTopBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7194,6 +7586,8 @@
   },
   "buttonCriticalSubtleBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7215,6 +7609,8 @@
   },
   "buttonCriticalSubtleBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7236,6 +7632,8 @@
   },
   "buttonCriticalSubtleBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7258,6 +7656,8 @@
   "buttonCriticalSubtleForeground": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7280,6 +7680,8 @@
   "buttonCriticalSubtleForegroundHover": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7302,6 +7704,8 @@
   "buttonCriticalSubtleForegroundActive": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7323,6 +7727,8 @@
   },
   "buttonCriticalBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7344,6 +7750,8 @@
   },
   "buttonCriticalBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7365,6 +7773,8 @@
   },
   "buttonCriticalBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7387,6 +7797,8 @@
   "buttonCriticalForeground": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7409,6 +7821,8 @@
   "buttonCriticalForegroundHover": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7431,6 +7845,8 @@
   "buttonCriticalForegroundActive": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7452,6 +7868,8 @@
   },
   "buttonSmallFontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7474,6 +7892,8 @@
   "buttonSmallPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7496,6 +7916,8 @@
   "buttonSmallBothIconsPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7518,6 +7940,8 @@
   "buttonSmallLeftIconPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7540,6 +7964,8 @@
   "buttonSmallRightIconPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7561,6 +7987,8 @@
   },
   "buttonNormalFontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7583,6 +8011,8 @@
   "buttonNormalPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7605,6 +8035,8 @@
   "buttonNormalBothIconsPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7627,6 +8059,8 @@
   "buttonNormalLeftIconPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7649,6 +8083,8 @@
   "buttonNormalRightIconPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7670,6 +8106,8 @@
   },
   "buttonLargeFontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7692,6 +8130,8 @@
   "buttonLargePadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7714,6 +8154,8 @@
   "buttonLargeBothIconsPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7736,6 +8178,8 @@
   "buttonLargeLeftIconPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7758,6 +8202,8 @@
   "buttonLargeRightIconPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7779,6 +8225,8 @@
   },
   "buttonInfoBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7800,6 +8248,8 @@
   },
   "buttonInfoBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7821,6 +8271,8 @@
   },
   "buttonInfoBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7843,6 +8295,8 @@
   "buttonInfoForeground": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7865,6 +8319,8 @@
   "buttonInfoForegroundHover": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7887,6 +8343,8 @@
   "buttonInfoForegroundActive": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7908,6 +8366,8 @@
   },
   "buttonDisabledOpacity": {
     "type": "opacity",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7929,6 +8389,8 @@
   },
   "buttonWithoutTextPadding": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7950,6 +8412,8 @@
   },
   "buttonPrimarySubtleBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7971,6 +8435,8 @@
   },
   "buttonPrimarySubtleBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -7992,6 +8458,8 @@
   },
   "buttonPrimarySubtleBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8014,6 +8482,8 @@
   "buttonPrimarySubtleForeground": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8036,6 +8506,8 @@
   "buttonPrimarySubtleForegroundHover": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8058,6 +8530,8 @@
   "buttonPrimarySubtleForegroundActive": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8079,6 +8553,8 @@
   },
   "buttonPrimaryBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8100,6 +8576,8 @@
   },
   "buttonPrimaryBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8121,6 +8599,8 @@
   },
   "buttonPrimaryBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8143,6 +8623,8 @@
   "buttonPrimaryForeground": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8165,6 +8647,8 @@
   "buttonPrimaryForegroundHover": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8187,6 +8671,8 @@
   "buttonPrimaryForegroundActive": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8209,6 +8695,8 @@
   "buttonPrimaryBorderColorFocus": {
     "type": "color",
     "category": "border-color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8230,6 +8718,8 @@
   },
   "buttonSecondaryBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8251,6 +8741,8 @@
   },
   "buttonSecondaryBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8272,6 +8764,8 @@
   },
   "buttonSecondaryBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8294,6 +8788,8 @@
   "buttonSecondaryForeground": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8316,6 +8812,8 @@
   "buttonSecondaryForegroundHover": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8338,6 +8836,8 @@
   "buttonSecondaryForegroundActive": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8359,6 +8859,8 @@
   },
   "buttonSuccessBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8380,6 +8882,8 @@
   },
   "buttonSuccessBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8401,6 +8905,8 @@
   },
   "buttonSuccessBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8423,6 +8929,8 @@
   "buttonSuccessForeground": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8445,6 +8953,8 @@
   "buttonSuccessForegroundHover": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8467,6 +8977,8 @@
   "buttonSuccessForegroundActive": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8488,6 +9000,8 @@
   },
   "buttonWarningBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8509,6 +9023,8 @@
   },
   "buttonWarningBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8530,6 +9046,8 @@
   },
   "buttonWarningBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8552,6 +9070,8 @@
   "buttonWarningForeground": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8574,6 +9094,8 @@
   "buttonWarningForegroundHover": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8596,6 +9118,8 @@
   "buttonWarningForegroundActive": {
     "type": "color",
     "category": "foreground",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8617,6 +9141,8 @@
   },
   "buttonWhiteBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8638,6 +9164,8 @@
   },
   "buttonWhiteBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8659,6 +9187,8 @@
   },
   "buttonWhiteBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8680,6 +9210,8 @@
   },
   "buttonWhiteForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8701,6 +9233,8 @@
   },
   "buttonWhiteForegroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8722,6 +9256,8 @@
   },
   "buttonWhiteForegroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8743,6 +9279,8 @@
   },
   "buttonWhiteBorderColorFocus": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "button",
@@ -8765,6 +9303,7 @@
   "boxShadowButtonFocus": {
     "type": "box-shadow",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "box-shadow",
@@ -8788,6 +9327,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8811,6 +9351,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8834,6 +9375,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8857,6 +9399,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8880,6 +9423,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8903,6 +9447,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8926,6 +9471,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8949,6 +9495,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8972,6 +9519,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -8995,6 +9543,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9018,6 +9567,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9041,6 +9591,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9064,6 +9615,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9087,6 +9639,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9110,6 +9663,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9133,6 +9687,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9156,6 +9711,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9179,6 +9735,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9202,6 +9759,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9225,6 +9783,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9248,6 +9807,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9271,6 +9831,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9294,6 +9855,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9317,6 +9879,7 @@
     "type": "color",
     "category": "border-color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9339,6 +9902,7 @@
   "borderColorButtonWhiteBordered": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9361,6 +9925,7 @@
   "borderColorButtonWhiteBorderedHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9383,6 +9948,7 @@
   "borderColorButtonWhiteBorderedActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9405,6 +9971,7 @@
   "borderColorCard": {
     "type": "color",
     "deprecated": true,
+    "replacement": "elevationFlatBorderColor",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9426,6 +9993,7 @@
   "borderColorCheckboxRadio": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColor",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9447,6 +10015,7 @@
   "borderColorCheckboxRadioActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColorFocus",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9468,6 +10037,7 @@
   "borderColorCheckboxRadioError": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColorError",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9489,6 +10059,7 @@
   "borderColorCheckboxRadioFocus": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColorFocus",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9510,6 +10081,7 @@
   "borderColorCheckboxRadioHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColorHover",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9531,6 +10103,7 @@
   "borderColorInput": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColor",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9552,6 +10125,7 @@
   "borderColorInputActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColorFocus",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9573,6 +10147,7 @@
   "borderColorInputError": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColorError",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9594,6 +10169,7 @@
   "borderColorInputErrorFocus": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9615,6 +10191,7 @@
   "borderColorInputErrorHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9636,6 +10213,7 @@
   "borderColorInputFocus": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColorFocus",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9657,6 +10235,7 @@
   "borderColorInputHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "formElementBorderColorHover",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9677,6 +10256,8 @@
   },
   "borderColorModal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9698,6 +10279,7 @@
   "borderColorTable": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9719,6 +10301,7 @@
   "borderColorTableCell": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9740,6 +10323,7 @@
   "borderColorTableHead": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9761,6 +10345,7 @@
   "borderColorTag": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9782,6 +10367,7 @@
   "borderColorTagFocus": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -9803,6 +10389,7 @@
   "modifierScaleButtonActive": {
     "type": "modifier",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "modifier-scale",
@@ -9825,6 +10412,7 @@
   "modifierScaleCheckboxRadioActive": {
     "type": "modifier",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "modifier-scale",
@@ -9847,6 +10435,7 @@
   "fontSizeButtonSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": "buttonSmallFontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -9869,6 +10458,7 @@
   "fontSizeButtonNormal": {
     "type": "size",
     "deprecated": true,
+    "replacement": "buttonNormalFontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -9891,6 +10481,7 @@
   "fontSizeButtonLarge": {
     "type": "size",
     "deprecated": true,
+    "replacement": "buttonLargeFontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -9913,6 +10504,7 @@
   "fontSizeInputSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": "formElementSmallFontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -9935,6 +10527,7 @@
   "fontSizeInputNormal": {
     "type": "size",
     "deprecated": true,
+    "replacement": "formElementNormalFontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -9957,6 +10550,7 @@
   "fontSizeFormFeedback": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -9978,6 +10572,7 @@
   "fontSizeFormLabel": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -9999,6 +10594,7 @@
   "fontSizeMessage": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10020,6 +10616,7 @@
   "fontSizeHeadingDisplay": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingDisplayFontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10042,6 +10639,7 @@
   "fontSizeHeadingDisplaySubtitle": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingDisplaySubtitleFontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10064,6 +10662,7 @@
   "fontSizeHeadingTitle1": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle1FontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10086,6 +10685,7 @@
   "fontSizeHeadingTitle2": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle2FontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10108,6 +10708,7 @@
   "fontSizeHeadingTitle3": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle3FontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10130,6 +10731,7 @@
   "fontSizeHeadingTitle4": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle4FontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10152,6 +10754,7 @@
   "fontSizeHeadingTitle5": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle5FontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10174,6 +10777,7 @@
   "fontSizeHeadingTitle6": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle6FontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -10196,6 +10800,7 @@
   "opacityButtonDisabled": {
     "type": "opacity",
     "deprecated": true,
+    "replacement": "buttonDisabledOpacity",
     "schema": {
       "namespace": "component",
       "object": "opacity",
@@ -10218,6 +10823,7 @@
   "opacityCheckboxDisabled": {
     "type": "opacity",
     "deprecated": true,
+    "replacement": "formElementDisabledOpacity",
     "schema": {
       "namespace": "component",
       "object": "opacity",
@@ -10240,6 +10846,7 @@
   "opacityRadioButtonDisabled": {
     "type": "opacity",
     "deprecated": true,
+    "replacement": "formElementDisabledOpacity",
     "schema": {
       "namespace": "component",
       "object": "opacity",
@@ -10262,6 +10869,7 @@
   "borderStyleCard": {
     "type": "border-style",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-style",
@@ -10283,6 +10891,7 @@
   "borderStyleInput": {
     "type": "border-style",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-style",
@@ -10304,6 +10913,7 @@
   "borderWidthCard": {
     "type": "size",
     "deprecated": true,
+    "replacement": "elevationFlatBorderSize",
     "schema": {
       "namespace": "component",
       "object": "border-width",
@@ -10325,6 +10935,7 @@
   "borderWidthInput": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-width",
@@ -10346,6 +10957,7 @@
   "borderWidthInputFocus": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "border-width",
@@ -10367,6 +10979,7 @@
   "widthCarrierLogo": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10388,6 +11001,7 @@
   "widthIconSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10410,6 +11024,7 @@
   "widthIconMedium": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconMediumSize",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10432,6 +11047,7 @@
   "widthIconLarge": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconLargeSize",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10454,6 +11070,7 @@
   "widthBadgeCircled": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconLargeSize",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10476,6 +11093,7 @@
   "widthCheckbox": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconSmallSize",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10497,6 +11115,7 @@
   "widthRadioButton": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconSmallSize",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10518,6 +11137,7 @@
   "widthStopoverArrow": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10539,6 +11159,7 @@
   "widthCountryFlag": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconMediumSize",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10560,6 +11181,7 @@
   "widthModalSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": "modalSmallWidth",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10582,6 +11204,7 @@
   "widthModalNormal": {
     "type": "size",
     "deprecated": true,
+    "replacement": "modalNormalWidth",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10604,6 +11227,7 @@
   "widthModalLarge": {
     "type": "size",
     "deprecated": true,
+    "replacement": "modalLargeWidth",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10626,6 +11250,7 @@
   "widthModalExtraLarge": {
     "type": "size",
     "deprecated": true,
+    "replacement": "modalExtraLargeWidth",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -10648,6 +11273,7 @@
   "heightCarrierLogo": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10669,6 +11295,7 @@
   "heightButtonSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": "formBoxSmallHeight",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10691,6 +11318,7 @@
   "heightButtonNormal": {
     "type": "size",
     "deprecated": true,
+    "replacement": "formBoxNormalHeight",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10713,6 +11341,7 @@
   "heightButtonLarge": {
     "type": "size",
     "deprecated": true,
+    "replacement": "formBoxLargeHeight",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10735,6 +11364,7 @@
   "heightInputSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": "formBoxSmallHeight",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10757,6 +11387,7 @@
   "heightInputNormal": {
     "type": "size",
     "deprecated": true,
+    "replacement": "formBoxNormalHeight",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10779,6 +11410,7 @@
   "heightInputLarge": {
     "type": "size",
     "deprecated": true,
+    "replacement": "formBoxLargeHeight",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10801,6 +11433,7 @@
   "heightIconSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10823,6 +11456,7 @@
   "heightIconMedium": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconMediumSize",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10845,6 +11479,7 @@
   "heightIconLarge": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconLargeSize",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10867,6 +11502,7 @@
   "heightBadge": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconMediumSize",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10888,6 +11524,7 @@
   "heightCheckbox": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconSmallSize",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10909,6 +11546,7 @@
   "heightRadioButton": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconSmallSize",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10930,6 +11568,7 @@
   "heightStopoverArrow": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10951,6 +11590,7 @@
   "heightCountryFlag": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10972,6 +11612,7 @@
   "heightServiceLogoSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -10994,6 +11635,7 @@
   "heightServiceLogoMedium": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconMediumSize",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -11016,6 +11658,7 @@
   "heightServiceLogoLarge": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -11038,6 +11681,7 @@
   "heightSeparator": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -11059,6 +11703,7 @@
   "heightInputGroupSeparatorSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -11081,6 +11726,7 @@
   "heightInputGroupSeparatorNormal": {
     "type": "size",
     "deprecated": true,
+    "replacement": "iconMediumSize",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -11103,6 +11749,7 @@
   "heightIllustrationSmall": {
     "type": "size",
     "deprecated": true,
+    "replacement": "illustrationExtraSmallHeight",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -11125,6 +11772,7 @@
   "heightIllustrationMedium": {
     "type": "size",
     "deprecated": true,
+    "replacement": "illustrationMediumHeight",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -11146,6 +11794,8 @@
   },
   "formBoxSmallHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-box",
@@ -11167,6 +11817,8 @@
   },
   "formBoxNormalHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-box",
@@ -11188,6 +11840,8 @@
   },
   "formBoxLargeHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-box",
@@ -11209,6 +11863,8 @@
   },
   "formElementBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11229,6 +11885,8 @@
   },
   "formElementDisabledBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11250,6 +11908,8 @@
   },
   "formElementDisabledForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11271,6 +11931,8 @@
   },
   "formElementDisabledOpacity": {
     "type": "opacity",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11292,6 +11954,8 @@
   },
   "formElementBorderColor": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11312,6 +11976,8 @@
   },
   "formElementBorderColorHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11332,6 +11998,8 @@
   },
   "formElementBorderColorActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11353,6 +12021,8 @@
   "formElementBorderColorFocus": {
     "type": "color",
     "comment": "Should be used for all form-elements when the component has active or focus state and it's needed to render border attribute, or combined with shadows.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11374,6 +12044,8 @@
   "formElementBorderColorError": {
     "type": "color",
     "comment": "Should be used for all form-elements when the component has error state and it's needed to render border attribute, or combined with shadows.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11394,6 +12066,8 @@
   },
   "formElementFocusBoxShadow": {
     "type": "box-shadow",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11415,6 +12089,8 @@
   },
   "formElementErrorFocusBoxShadow": {
     "type": "box-shadow",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11436,6 +12112,8 @@
   },
   "formElementSmallFontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11458,6 +12136,8 @@
   "formElementSmallPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11479,6 +12159,8 @@
   },
   "formElementNormalFontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11501,6 +12183,8 @@
   "formElementNormalPadding": {
     "type": "size",
     "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11523,6 +12207,8 @@
   "formElementForeground": {
     "type": "color",
     "comment": "Should be used for the text when they value is not filled.",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11543,6 +12229,8 @@
   },
   "formElementFilledForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11564,6 +12252,8 @@
   },
   "formElementLabelForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11585,6 +12275,8 @@
   },
   "formElementLabelFilledForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11606,6 +12298,8 @@
   },
   "formElementPrefixForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "form-element",
@@ -11628,6 +12322,7 @@
   "marginTopFormFeedback": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "margin-top",
@@ -11648,6 +12343,8 @@
   },
   "headingDisplayFontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11669,6 +12366,8 @@
   },
   "headingDisplayFontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11690,6 +12389,8 @@
   },
   "headingDisplayLineHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11711,6 +12412,8 @@
   },
   "headingDisplaySubtitleFontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11732,6 +12435,8 @@
   },
   "headingDisplaySubtitleFontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11753,6 +12458,8 @@
   },
   "headingDisplaySubtitleLineHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11774,6 +12481,8 @@
   },
   "headingTitle1FontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11795,6 +12504,8 @@
   },
   "headingTitle1FontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11816,6 +12527,8 @@
   },
   "headingTitle1LineHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11837,6 +12550,8 @@
   },
   "headingTitle2FontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11858,6 +12573,8 @@
   },
   "headingTitle2FontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11879,6 +12596,8 @@
   },
   "headingTitle2LineHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11900,6 +12619,8 @@
   },
   "headingTitle3FontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11921,6 +12642,8 @@
   },
   "headingTitle3FontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11942,6 +12665,8 @@
   },
   "headingTitle3LineHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11963,6 +12688,8 @@
   },
   "headingTitle4FontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -11984,6 +12711,8 @@
   },
   "headingTitle4FontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12005,6 +12734,8 @@
   },
   "headingTitle4LineHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12026,6 +12757,8 @@
   },
   "headingTitle5FontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12047,6 +12780,8 @@
   },
   "headingTitle5FontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12068,6 +12803,8 @@
   },
   "headingTitle5LineHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12089,6 +12826,8 @@
   },
   "headingTitle6FontSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12110,6 +12849,8 @@
   },
   "headingTitle6FontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12131,6 +12872,8 @@
   },
   "headingTitle6LineHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12152,6 +12895,8 @@
   },
   "headingForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12172,6 +12917,8 @@
   },
   "headingForegroundInverted": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "heading",
@@ -12193,6 +12940,7 @@
   "fontWeightHeadingDisplay": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "headingDisplayFontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12215,6 +12963,7 @@
   "fontWeightHeadingDisplaySubtitle": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "headingDisplaySubtitleFontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12237,6 +12986,7 @@
   "fontWeightHeadingTitle1": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "headingTitle1FontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12259,6 +13009,7 @@
   "fontWeightHeadingTitle2": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "headingTitle2FontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12281,6 +13032,7 @@
   "fontWeightHeadingTitle3": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "headingTitle3FontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12303,6 +13055,7 @@
   "fontWeightHeadingTitle4": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "headingTitle4FontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12325,6 +13078,7 @@
   "fontWeightHeadingTitle5": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "headingTitle5FontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12347,6 +13101,7 @@
   "fontWeightHeadingTitle6": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "headingTitle6FontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12369,6 +13124,7 @@
   "fontWeightTableHead": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12390,6 +13146,7 @@
   "fontWeightLinks": {
     "type": "font-weight",
     "deprecated": true,
+    "replacement": "textLinkFontWeight",
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -12411,6 +13168,7 @@
   "lineHeightHeading": {
     "type": "line-height",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12432,6 +13190,7 @@
   "lineHeightHeadingDisplay": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingDisplayLineHeight",
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12453,6 +13212,7 @@
   "lineHeightHeadingDisplaySubtitle": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingDisplaySubtitleLineHeight",
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12474,6 +13234,7 @@
   "lineHeightHeadingTitle1": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle1LineHeight",
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12495,6 +13256,7 @@
   "lineHeightHeadingTitle2": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle2LineHeight",
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12516,6 +13278,7 @@
   "lineHeightHeadingTitle3": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle3LineHeight",
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12537,6 +13300,7 @@
   "lineHeightHeadingTitle4": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle4LineHeight",
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12558,6 +13322,7 @@
   "lineHeightHeadingTitle5": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle5LineHeight",
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12579,6 +13344,7 @@
   "lineHeightHeadingTitle6": {
     "type": "size",
     "deprecated": true,
+    "replacement": "headingTitle6LineHeight",
     "schema": {
       "namespace": "component",
       "object": "line-height",
@@ -12599,6 +13365,8 @@
   },
   "iconPrimaryForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12620,6 +13388,8 @@
   },
   "iconSecondaryForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12641,6 +13411,8 @@
   },
   "iconTertiaryForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12662,6 +13434,8 @@
   },
   "iconInfoForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12683,6 +13457,8 @@
   },
   "iconSuccessForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12704,6 +13480,8 @@
   },
   "iconWarningForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12725,6 +13503,8 @@
   },
   "iconCriticalForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12746,6 +13526,8 @@
   },
   "iconSmallSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12767,6 +13549,8 @@
   },
   "iconMediumSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12788,6 +13572,8 @@
   },
   "iconLargeSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12809,6 +13595,8 @@
   },
   "iconExtraLargeSize": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "icon",
@@ -12830,6 +13618,8 @@
   },
   "illustrationExtraSmallHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "illustration",
@@ -12851,6 +13641,8 @@
   },
   "illustrationSmallHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "illustration",
@@ -12872,6 +13664,8 @@
   },
   "illustrationMediumHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "illustration",
@@ -12893,6 +13687,8 @@
   },
   "illustrationLargeHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "illustration",
@@ -12914,6 +13710,8 @@
   },
   "illustrationDisplayHeight": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "illustration",
@@ -12935,6 +13733,8 @@
   },
   "loadingForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "loading",
@@ -12955,6 +13755,8 @@
   },
   "modalExtraSmallWidth": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "modal",
@@ -12976,6 +13778,8 @@
   },
   "modalSmallWidth": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "modal",
@@ -12997,6 +13801,8 @@
   },
   "modalNormalWidth": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "modal",
@@ -13018,6 +13824,8 @@
   },
   "modalLargeWidth": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "modal",
@@ -13039,6 +13847,8 @@
   },
   "modalExtraLargeWidth": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "modal",
@@ -13061,6 +13871,7 @@
   "marginBottomSelectSuffix": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "margin-bottom",
@@ -13082,6 +13893,7 @@
   "paddingLeftSelectPrefix": {
     "type": "size",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "padding-left",
@@ -13102,6 +13914,8 @@
   },
   "socialButtonAppleBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13123,6 +13937,8 @@
   },
   "socialButtonAppleBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13144,6 +13960,8 @@
   },
   "socialButtonAppleBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13165,6 +13983,8 @@
   },
   "socialButtonAppleForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13186,6 +14006,8 @@
   },
   "socialButtonAppleForegroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13207,6 +14029,8 @@
   },
   "socialButtonAppleForegroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13228,6 +14052,8 @@
   },
   "socialButtonAppleBorderColorFocus": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13249,6 +14075,8 @@
   },
   "socialButtonAppleIconForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13270,6 +14098,8 @@
   },
   "socialButtonFacebookBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13291,6 +14121,8 @@
   },
   "socialButtonFacebookBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13312,6 +14144,8 @@
   },
   "socialButtonFacebookBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13333,6 +14167,8 @@
   },
   "socialButtonFacebookForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13354,6 +14190,8 @@
   },
   "socialButtonFacebookForegroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13375,6 +14213,8 @@
   },
   "socialButtonFacebookForegroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13396,6 +14236,8 @@
   },
   "socialButtonFacebookIconForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13417,6 +14259,8 @@
   },
   "socialButtonGoogleBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13438,6 +14282,8 @@
   },
   "socialButtonGoogleBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13459,6 +14305,8 @@
   },
   "socialButtonGoogleBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13480,6 +14328,8 @@
   },
   "socialButtonGoogleForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13501,6 +14351,8 @@
   },
   "socialButtonGoogleForegroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13522,6 +14374,8 @@
   },
   "socialButtonGoogleForegroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13543,6 +14397,8 @@
   },
   "socialButtonGoogleIconForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13564,6 +14420,8 @@
   },
   "socialButtonTwitterBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13585,6 +14443,8 @@
   },
   "socialButtonTwitterBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13606,6 +14466,8 @@
   },
   "socialButtonTwitterBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13627,6 +14489,8 @@
   },
   "socialButtonTwitterForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13648,6 +14512,8 @@
   },
   "socialButtonTwitterForegroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13669,6 +14535,8 @@
   },
   "socialButtonTwitterForegroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13690,6 +14558,8 @@
   },
   "socialButtonTwitterBorderColorFocus": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13711,6 +14581,8 @@
   },
   "socialButtonTwitterIconForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "social-button",
@@ -13732,6 +14604,8 @@
   },
   "tabBundleBasicBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tab",
@@ -13753,6 +14627,8 @@
   },
   "tabBundleBasicBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tab",
@@ -13774,6 +14650,8 @@
   },
   "tabBundleBasicBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tab",
@@ -13795,6 +14673,8 @@
   },
   "tabBundleMediumBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tab",
@@ -13816,6 +14696,8 @@
   },
   "tabBundleMediumBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tab",
@@ -13837,6 +14719,8 @@
   },
   "tabBundleMediumBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tab",
@@ -13858,6 +14742,8 @@
   },
   "tabBundleTopBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tab",
@@ -13879,6 +14765,8 @@
   },
   "tagColoredBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tag",
@@ -13900,6 +14788,8 @@
   },
   "tagColoredBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tag",
@@ -13921,6 +14811,8 @@
   },
   "tagColoredBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tag",
@@ -13942,6 +14834,8 @@
   },
   "tagColoredForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tag",
@@ -13963,6 +14857,8 @@
   },
   "tagNeutralBackground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tag",
@@ -13984,6 +14880,8 @@
   },
   "tagNeutralBackgroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tag",
@@ -14005,6 +14903,8 @@
   },
   "tagNeutralBackgroundActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tag",
@@ -14026,6 +14926,8 @@
   },
   "tagNeutralForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "tag",
@@ -14047,6 +14949,8 @@
   },
   "textLinkPrimaryForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
@@ -14068,6 +14972,8 @@
   },
   "textLinkSecondaryForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
@@ -14089,6 +14995,8 @@
   },
   "textLinkForegroundHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
@@ -14109,6 +15017,8 @@
   },
   "textLinkTextDecoration": {
     "type": "text-decoration",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
@@ -14129,6 +15039,8 @@
   },
   "textLinkTextDecorationHover": {
     "type": "text-decoration",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
@@ -14149,6 +15061,8 @@
   },
   "textLinkFontWeight": {
     "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
@@ -14170,6 +15084,7 @@
   "textDecorationTextLinkPrimary": {
     "type": "text-decoration",
     "deprecated": true,
+    "replacement": "textLinkTextDecoration",
     "schema": {
       "namespace": "component",
       "object": "text-decoration",
@@ -14192,6 +15107,7 @@
   "textDecorationTextLinkPrimaryHover": {
     "type": "text-decoration",
     "deprecated": true,
+    "replacement": "textLinkTextDecorationHover",
     "schema": {
       "namespace": "component",
       "object": "text-decoration",
@@ -14214,6 +15130,7 @@
   "textDecorationTextLinkSecondary": {
     "type": "text-decoration",
     "deprecated": true,
+    "replacement": "textLinkTextDecoration",
     "schema": {
       "namespace": "component",
       "object": "text-decoration",
@@ -14236,6 +15153,7 @@
   "textDecorationTextLinkSecondaryHover": {
     "type": "text-decoration",
     "deprecated": true,
+    "replacement": "textLinkTextDecorationHover",
     "schema": {
       "namespace": "component",
       "object": "text-decoration",
@@ -14257,6 +15175,8 @@
   },
   "textPrimaryForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text",
@@ -14278,6 +15198,8 @@
   },
   "textSecondaryForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text",
@@ -14299,6 +15221,8 @@
   },
   "textInfoForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text",
@@ -14320,6 +15244,8 @@
   },
   "textSuccessForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text",
@@ -14341,6 +15267,8 @@
   },
   "textWarningForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text",
@@ -14362,6 +15290,8 @@
   },
   "textCriticalForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text",
@@ -14383,6 +15313,8 @@
   },
   "textWhiteForeground": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text",
@@ -14405,6 +15337,7 @@
   "backgroundIllustration": {
     "type": "color",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "components",
       "object": "background",
@@ -14425,6 +15358,8 @@
   },
   "borderRadiusCircle": {
     "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "border-radius",
@@ -14445,6 +15380,8 @@
   },
   "borderRadiusSmall": {
     "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "border-radius",
@@ -14465,6 +15402,8 @@
   },
   "borderRadiusNormal": {
     "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "border-radius",
@@ -14485,6 +15424,8 @@
   },
   "borderRadiusLarge": {
     "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "border-radius",
@@ -14505,6 +15446,8 @@
   },
   "breakpointMediumMobile": {
     "type": "breakpoint",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "breakpoint",
@@ -14525,6 +15468,8 @@
   },
   "breakpointLargeMobile": {
     "type": "breakpoint",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "breakpoint",
@@ -14545,6 +15490,8 @@
   },
   "breakpointTablet": {
     "type": "breakpoint",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "breakpoint",
@@ -14565,6 +15512,8 @@
   },
   "breakpointDesktop": {
     "type": "breakpoint",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "breakpoint",
@@ -14585,6 +15534,8 @@
   },
   "breakpointLargeDesktop": {
     "type": "breakpoint",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "breakpoint",
@@ -14606,6 +15557,7 @@
   "widthBreakpointMediumMobile": {
     "type": "breakpoint",
     "deprecated": true,
+    "replacement": "breakpointMediumMobile",
     "schema": {
       "namespace": "global",
       "object": "width-breakpoint",
@@ -14627,6 +15579,7 @@
   "widthBreakpointLargeMobile": {
     "type": "breakpoint",
     "deprecated": true,
+    "replacement": "breakpointLargeMobile",
     "schema": {
       "namespace": "global",
       "object": "width-breakpoint",
@@ -14648,6 +15601,7 @@
   "widthBreakpointTablet": {
     "type": "breakpoint",
     "deprecated": true,
+    "replacement": "breakpointTablet",
     "schema": {
       "namespace": "global",
       "object": "width-breakpoint",
@@ -14669,6 +15623,7 @@
   "widthBreakpointDesktop": {
     "type": "breakpoint",
     "deprecated": true,
+    "replacement": "breakpointDesktop",
     "schema": {
       "namespace": "global",
       "object": "width-breakpoint",
@@ -14690,6 +15645,7 @@
   "widthBreakpointLargeDesktop": {
     "type": "breakpoint",
     "deprecated": true,
+    "replacement": "breakpointLargeDesktop",
     "schema": {
       "namespace": "global",
       "object": "width-breakpoint",
@@ -14710,6 +15666,8 @@
   },
   "durationFast": {
     "type": "duration",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "duration",
@@ -14730,6 +15688,8 @@
   },
   "durationNormal": {
     "type": "duration",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "duration",
@@ -14750,6 +15710,8 @@
   },
   "durationSlow": {
     "type": "duration",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "duration",
@@ -14771,6 +15733,8 @@
   "elevationSuppressedBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14793,6 +15757,8 @@
   "elevationFlatBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14815,6 +15781,8 @@
   "elevationFlatBorderColor": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14837,6 +15805,8 @@
   "elevationFlatBorderSize": {
     "type": "size",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14859,6 +15829,8 @@
   "elevationActionBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14881,6 +15853,8 @@
   "elevationActionBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14903,6 +15877,8 @@
   "elevationActionActiveBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14925,6 +15901,8 @@
   "elevationActionActiveBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14947,6 +15925,8 @@
   "elevationFixedBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14969,6 +15949,8 @@
   "elevationFixedBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -14991,6 +15973,8 @@
   "elevationFixedReverseBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -15013,6 +15997,8 @@
   "elevationFixedReverseBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -15035,6 +16021,8 @@
   "elevationRaisedBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -15057,6 +16045,8 @@
   "elevationRaisedBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -15079,6 +16069,8 @@
   "elevationRaisedReverseBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -15101,6 +16093,8 @@
   "elevationRaisedReverseBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -15123,6 +16117,8 @@
   "elevationOverlayBackground": {
     "type": "color",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -15145,6 +16141,8 @@
   "elevationOverlayBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -15167,6 +16165,7 @@
   "backgroundBody": {
     "type": "color",
     "deprecated": true,
+    "replacement": "elevationSuppressedBackground",
     "schema": {
       "namespace": "global",
       "object": "background",
@@ -15188,6 +16187,7 @@
   "boxShadowAction": {
     "type": "box-shadow",
     "deprecated": true,
+    "replacement": "elevationActionBoxShadow",
     "schema": {
       "namespace": "global",
       "object": "box-shadow",
@@ -15209,6 +16209,7 @@
   "boxShadowActionActive": {
     "type": "box-shadow",
     "deprecated": true,
+    "replacement": "elevationActionActiveBoxShadow",
     "schema": {
       "namespace": "global",
       "object": "box-shadow",
@@ -15230,6 +16231,7 @@
   "boxShadowFixed": {
     "type": "box-shadow",
     "deprecated": true,
+    "replacement": "elevationFixedBoxShadow",
     "schema": {
       "namespace": "global",
       "object": "box-shadow",
@@ -15251,6 +16253,7 @@
   "boxShadowFixedReverse": {
     "type": "box-shadow",
     "deprecated": true,
+    "replacement": "elevationFixedReverseBoxShadow",
     "schema": {
       "namespace": "global",
       "object": "box-shadow",
@@ -15272,6 +16275,7 @@
   "boxShadowOverlay": {
     "type": "box-shadow",
     "deprecated": true,
+    "replacement": "elevationOverlayBoxShadow",
     "schema": {
       "namespace": "global",
       "object": "box-shadow",
@@ -15293,6 +16297,7 @@
   "boxShadowRaised": {
     "type": "box-shadow",
     "deprecated": true,
+    "replacement": "elevationRaisedBoxShadow",
     "schema": {
       "namespace": "global",
       "object": "box-shadow",
@@ -15314,6 +16319,7 @@
   "boxShadowRaisedReverse": {
     "type": "box-shadow",
     "deprecated": true,
+    "replacement": "elevationRaisedReverseBoxShadow",
     "schema": {
       "namespace": "global",
       "object": "box-shadow",
@@ -15335,6 +16341,7 @@
   "opacityOverlay": {
     "type": "opacity",
     "deprecated": true,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "opacity",
@@ -15355,6 +16362,8 @@
   },
   "paletteBlueLight": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15376,6 +16385,8 @@
   },
   "paletteBlueLightHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15397,6 +16408,8 @@
   },
   "paletteBlueLightActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15418,6 +16431,8 @@
   },
   "paletteBlueNormal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15439,6 +16454,8 @@
   },
   "paletteBlueNormalHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15460,6 +16477,8 @@
   },
   "paletteBlueNormalActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15481,6 +16500,8 @@
   },
   "paletteBlueDark": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15502,6 +16523,8 @@
   },
   "paletteBlueDarkHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15523,6 +16546,8 @@
   },
   "paletteBlueDarkActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15544,6 +16569,8 @@
   },
   "paletteBlueDarker": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15607,6 +16634,8 @@
   },
   "paletteCloudLight": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15628,6 +16657,8 @@
   },
   "paletteCloudLightHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15649,6 +16680,8 @@
   },
   "paletteCloudLightActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15670,6 +16703,8 @@
   },
   "paletteCloudNormal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15691,6 +16726,8 @@
   },
   "paletteCloudNormalHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15712,6 +16749,8 @@
   },
   "paletteCloudNormalActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15733,6 +16772,8 @@
   },
   "paletteCloudDark": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15754,6 +16795,8 @@
   },
   "paletteCloudDarkHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15775,6 +16818,8 @@
   },
   "paletteCloudDarkActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15796,6 +16841,8 @@
   },
   "paletteGreenLight": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15817,6 +16864,8 @@
   },
   "paletteGreenLightHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15838,6 +16887,8 @@
   },
   "paletteGreenLightActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15859,6 +16910,8 @@
   },
   "paletteGreenNormal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15880,6 +16933,8 @@
   },
   "paletteGreenNormalHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15901,6 +16956,8 @@
   },
   "paletteGreenNormalActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15922,6 +16979,8 @@
   },
   "paletteGreenDark": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15943,6 +17002,8 @@
   },
   "paletteGreenDarkHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15964,6 +17025,8 @@
   },
   "paletteGreenDarkActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -15985,6 +17048,8 @@
   },
   "paletteGreenDarker": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16006,6 +17071,8 @@
   },
   "paletteInkDark": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16027,6 +17094,8 @@
   },
   "paletteInkDarkHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16048,6 +17117,8 @@
   },
   "paletteInkDarkActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16069,6 +17140,8 @@
   },
   "paletteInkLight": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16090,6 +17163,8 @@
   },
   "paletteInkLightHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16111,6 +17186,8 @@
   },
   "paletteInkLightActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16132,6 +17209,8 @@
   },
   "paletteInkNormal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16153,6 +17232,8 @@
   },
   "paletteInkNormalHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16174,6 +17255,8 @@
   },
   "paletteInkNormalActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16195,6 +17278,8 @@
   },
   "paletteOrangeLight": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16216,6 +17301,8 @@
   },
   "paletteOrangeLightHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16237,6 +17324,8 @@
   },
   "paletteOrangeLightActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16258,6 +17347,8 @@
   },
   "paletteOrangeNormal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16279,6 +17370,8 @@
   },
   "paletteOrangeNormalHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16300,6 +17393,8 @@
   },
   "paletteOrangeNormalActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16321,6 +17416,8 @@
   },
   "paletteOrangeDark": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16342,6 +17439,8 @@
   },
   "paletteOrangeDarkHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16363,6 +17462,8 @@
   },
   "paletteOrangeDarkActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16384,6 +17485,8 @@
   },
   "paletteOrangeDarker": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16405,6 +17508,8 @@
   },
   "paletteProductLight": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16426,6 +17531,8 @@
   },
   "paletteProductLightHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16447,6 +17554,8 @@
   },
   "paletteProductLightActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16468,6 +17577,8 @@
   },
   "paletteProductNormal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16489,6 +17600,8 @@
   },
   "paletteProductNormalHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16510,6 +17623,8 @@
   },
   "paletteProductNormalActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16531,6 +17646,8 @@
   },
   "paletteProductDark": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16552,6 +17669,8 @@
   },
   "paletteProductDarkHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16573,6 +17692,8 @@
   },
   "paletteProductDarkActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16594,6 +17715,8 @@
   },
   "paletteProductDarker": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16615,6 +17738,8 @@
   },
   "paletteRedLight": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16636,6 +17761,8 @@
   },
   "paletteRedLightHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16657,6 +17784,8 @@
   },
   "paletteRedLightActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16678,6 +17807,8 @@
   },
   "paletteRedNormal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16699,6 +17830,8 @@
   },
   "paletteRedNormalHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16720,6 +17853,8 @@
   },
   "paletteRedNormalActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16741,6 +17876,8 @@
   },
   "paletteRedDark": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16762,6 +17899,8 @@
   },
   "paletteRedDarkHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16783,6 +17922,8 @@
   },
   "paletteRedDarkActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16804,6 +17945,8 @@
   },
   "paletteRedDarker": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16825,6 +17968,8 @@
   },
   "paletteSocialFacebook": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16846,6 +17991,8 @@
   },
   "paletteSocialFacebookHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16867,6 +18014,8 @@
   },
   "paletteSocialFacebookActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16888,6 +18037,8 @@
   },
   "paletteWhite": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16908,6 +18059,8 @@
   },
   "paletteWhiteNormal": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16928,6 +18081,8 @@
   },
   "paletteWhiteHover": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16948,6 +18103,8 @@
   },
   "paletteWhiteActive": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16968,6 +18125,8 @@
   },
   "spaceXXXSmall": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -16988,6 +18147,8 @@
   },
   "spaceXXSmall": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -17008,6 +18169,8 @@
   },
   "spaceXSmall": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -17028,6 +18191,8 @@
   },
   "spaceSmall": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -17048,6 +18213,8 @@
   },
   "spaceMedium": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -17068,6 +18235,8 @@
   },
   "spaceLarge": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -17088,6 +18257,8 @@
   },
   "spaceXLarge": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -17108,6 +18279,8 @@
   },
   "spaceXXLarge": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -17128,6 +18301,8 @@
   },
   "spaceXXXLarge": {
     "type": "size",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -17149,6 +18324,8 @@
   "fontFamily": {
     "type": "font-family",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "font-family"
@@ -17169,6 +18346,8 @@
   "fontSizeTextSmall": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "font-size",
@@ -17191,6 +18370,8 @@
   "fontSizeTextNormal": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "font-size",
@@ -17213,6 +18394,8 @@
   "fontSizeTextLarge": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "font-size",
@@ -17235,6 +18418,8 @@
   "fontSizeTextExtraLarge": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "font-size",
@@ -17257,6 +18442,8 @@
   "lineHeightText": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "line-height",
@@ -17278,6 +18465,8 @@
   "lineHeightTextSmall": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "line-height",
@@ -17299,6 +18488,8 @@
   "lineHeightTextNormal": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "line-height",
@@ -17320,6 +18511,8 @@
   "lineHeightTextLarge": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "line-height",
@@ -17341,6 +18534,8 @@
   "lineHeightTextExtraLarge": {
     "type": "size",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "line-height",
@@ -17362,6 +18557,8 @@
   "fontWeightNormal": {
     "type": "font-weight",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "font-weight",
@@ -17383,6 +18580,8 @@
   "fontWeightMedium": {
     "type": "font-weight",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "font-weight",
@@ -17404,6 +18603,8 @@
   "fontWeightBold": {
     "type": "font-weight",
     "category": "typography",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "font-weight",
@@ -17424,6 +18625,8 @@
   },
   "zIndexDefault": {
     "type": "z-index",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "z-index",
@@ -17444,6 +18647,8 @@
   },
   "zIndexSticky": {
     "type": "z-index",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "z-index",
@@ -17464,6 +18669,8 @@
   },
   "zIndexModalOverlay": {
     "type": "z-index",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "z-index",
@@ -17484,6 +18691,8 @@
   },
   "zIndexDrawer": {
     "type": "z-index",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "z-index",
@@ -17504,6 +18713,8 @@
   },
   "zIndexModal": {
     "type": "z-index",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "z-index",
@@ -17524,6 +18735,8 @@
   },
   "zIndexOnTheTop": {
     "type": "z-index",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "z-index",

@@ -39,10 +39,12 @@ const DesignTokenValue = ({
   value,
   deprecated,
   hasStrikeThrough,
+  replacement,
   showCopyButton,
   width = "200px",
 }: {
   value: string | number;
+  replacement?: string | null;
   deprecated?: boolean;
   hasStrikeThrough?: boolean;
   showCopyButton?: boolean;
@@ -55,7 +57,11 @@ const DesignTokenValue = ({
   const renderValue = () => {
     if (deprecated) {
       return (
-        <Tooltip content="Token is deprecated">
+        <Tooltip
+          content={
+            replacement ? `Token is deprecated, please use ${replacement}` : "Token is deprecated"
+          }
+        >
           <StyledStrikeThrough $hasStrikeThrough={hasStrikeThrough}>
             {wrapValue()}
           </StyledStrikeThrough>

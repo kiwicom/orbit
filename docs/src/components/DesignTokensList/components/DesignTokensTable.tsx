@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Stack,
+  Heading,
   Table,
   TableBody,
   TableCell,
@@ -9,12 +10,11 @@ import {
   mediaQueries as mq,
 } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
-import { camelCase } from "lodash";
+import { camelCase, upperFirst } from "lodash";
 
 import DesignTokenIcon from "./DesignTokenIcon";
 import DesignTokenValue from "./DesignTokenValue";
 import { StyledDesignTokenBase } from "./DesignTokenColor";
-import { h3 as H3 } from "../../../mdx-components";
 import OptionsFilter from "../OptionsFilter";
 import { GlobalCategories, Platforms, Token } from "../types.d";
 
@@ -22,7 +22,7 @@ interface Props {
   tokens: Token[];
   filter: string;
   platform: keyof typeof Platforms;
-  showDeprecated?: boolean;
+  showReplacement?: boolean;
   tableName: string;
   showVariantColumn?: boolean;
 }
@@ -32,7 +32,7 @@ const StyledDesignTokensTable = styled.div`
     table {
       table-layout: fixed;
     }
-  `)}
+  `)};
 `;
 
 const StyledCol = styled.col<{ $width: string | number }>`
@@ -40,24 +40,25 @@ const StyledCol = styled.col<{ $width: string | number }>`
     css`
       width: ${$width};
       max-width: ${$width};
-    `}
+    `};
 `;
 
 const DesignTokensTable = ({
   tokens,
   filter,
   platform,
-  showDeprecated,
   tableName,
   showVariantColumn,
+  showReplacement,
 }: Props) => {
   const [variantFilterValue, setVariantFilterValue] = React.useState<string[]>([]);
 
-  const handleVariantSelection = name => {
+  const handleVariantSelection = (name: string) => {
     if (variantFilterValue.includes(name)) {
       setVariantFilterValue(prev => prev.filter(category => category !== name));
       return;
     }
+
     setVariantFilterValue(prev => [...prev, name]);
   };
 
@@ -70,10 +71,6 @@ const DesignTokensTable = ({
   const filteredTokens = tokens
     .filter(({ name }) => name.toLowerCase().includes(filter))
     .filter(({ value }) => {
-      if (showDeprecated) return true;
-      return !value.deprecated;
-    })
-    .filter(({ value }) => {
       if (showVariantColumn && variantFilterValue.length > 0 && value.schema.variant) {
         return variantFilterValue.includes(value.schema.variant);
       }
@@ -84,7 +81,7 @@ const DesignTokensTable = ({
 
   return (
     <>
-      <H3>{tableName}</H3>
+      <Heading type="title2">{upperFirst(tableName)}</Heading>
       {showVariantColumn && (
         <OptionsFilter
           value={variantFilterValue}
@@ -96,9 +93,9 @@ const DesignTokensTable = ({
       <StyledDesignTokensTable>
         <Table striped={false} compact>
           <colgroup>
-            <StyledCol $width={showVariantColumn ? "40%" : "60%"} />
-            {showVariantColumn && <StyledCol $width="30%" />}
-            <StyledCol $width={showVariantColumn ? "30%" : "40%"} />
+            <StyledCol $width={showVariantColumn || showReplacement ? "40%" : "60%"} />
+            {(showVariantColumn || showReplacement) && <StyledCol $width="30%" />}
+            <StyledCol $width={showVariantColumn || showReplacement ? "30%" : "40%"} />
           </colgroup>
           <TableHead>
             <TableRow>
@@ -113,6 +110,11 @@ const DesignTokensTable = ({
                   Variant
                 </TableCell>
               )}
+              {showReplacement && (
+                <TableCell as="th" scope="col">
+                  Replacement
+                </TableCell>
+              )}
               <TableCell as="th" scope="col">
                 Value
               </TableCell>
@@ -124,6 +126,7 @@ const DesignTokensTable = ({
                 type,
                 category,
                 deprecated,
+                replacement,
                 schema: { object, variant },
               } = value;
               const { value: tokenValue } = value[platform];
@@ -141,6 +144,7 @@ const DesignTokensTable = ({
                       />
                       <DesignTokenValue
                         value={name}
+                        replacement={replacement}
                         deprecated={!!deprecated}
                         hasStrikeThrough
                         width="280px"
@@ -150,13 +154,27 @@ const DesignTokensTable = ({
                   </TableCell>
                   {showVariantColumn && (
                     <TableCell verticalAlign="middle" align="left">
-                      <DesignTokenValue width="120px" value={String(camelCase(variant))} />
+                      <DesignTokenValue
+                        width="120px"
+                        value={String(camelCase(variant))}
+                        replacement={replacement}
+                      />
+                    </TableCell>
+                  )}
+                  {showReplacement && (
+                    <TableCell verticalAlign="middle" align="left">
+                      <DesignTokenValue
+                        width="300px"
+                        value={replacement || "none"}
+                        replacement={replacement}
+                      />
                     </TableCell>
                   )}
                   <TableCell verticalAlign="middle" align="left">
                     <Stack direction="row" spacing="none" align="center">
                       <DesignTokenValue
                         value={tokenValue}
+                        replacement={replacement}
                         deprecated={!!deprecated}
                         width="200px"
                         showCopyButton

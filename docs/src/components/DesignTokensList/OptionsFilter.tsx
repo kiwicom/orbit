@@ -1,5 +1,10 @@
-import * as React from "react";
+import React from "react";
 import { Button, Inline, Stack, Text } from "@kiwicom/orbit-components";
+
+interface Option {
+  key: string;
+  name: string | null;
+}
 
 const OptionsFilter = ({
   value,
@@ -9,7 +14,7 @@ const OptionsFilter = ({
 }: {
   value: string[];
   label?: string;
-  options: Array<{ key: string; name: string | null }>;
+  options: Option[];
   onChange: (key: string) => void;
 }) => {
   return (

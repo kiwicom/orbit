@@ -1,36 +1,24 @@
 import React from "react";
 import tokensList from "@kiwicom/orbit-design-tokens/output/docs-tokens.json";
 import globalCategories from "@kiwicom/orbit-design-tokens/output/docs-categories.json";
-import { Separator, Select, InputField, Stack, Box, Checkbox } from "@kiwicom/orbit-components";
+import { Separator, Select, InputField, Stack, Box } from "@kiwicom/orbit-components";
 import { Search } from "@kiwicom/orbit-components/icons";
 
 import DesignTokensTable from "./components/DesignTokensTable";
 import OptionsFilter from "./OptionsFilter";
-import { GlobalCategories, Platforms, Token, TypographyCategories } from "./types.d";
+import { GlobalCategories, Platforms, TypographyCategories } from "./types.d";
+import useDebounce from "./useDebounce";
+
+const categories = globalCategories.categories as (keyof typeof GlobalCategories)[];
 
 const allTokens = Object.entries(tokensList).map(([name, value]) => ({
   name,
   value,
 }));
 
-function useDebounce(value: string, delay: number) {
-  const [debouncedValue, setDebouncedValue] = React.useState(value);
-  React.useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-  return debouncedValue;
-}
-
-const groupedCategories = globalCategories.categories
+const groupedCategories = [...categories, "deprecated"]
   .map(category => {
-    if (category in TypographyCategories) {
-      return "typography";
-    }
+    if (category in TypographyCategories) return "typography";
     return category;
   })
   .filter((v, i, a) => a.indexOf(v) === i);
@@ -38,28 +26,24 @@ const groupedCategories = globalCategories.categories
 const globalTokens = Object.assign(
   {},
   ...groupedCategories.map(category => {
-    const categoryTokens = allTokens.filter(
-      ({
-        value: {
-          schema: { namespace, object },
-        },
-      }) => {
-        if (namespace === "global") {
-          if (category === "typography" && object in TypographyCategories) {
-            return true;
-          }
-          return object === category;
-        }
-        return false;
-      },
-    );
+    const categoryTokens = allTokens.filter(token => {
+      const { namespace, object } = token.value.schema;
+
+      if (token.value.deprecated) return category === "deprecated";
+
+      if (namespace === "global") {
+        if (category === "typography" && object in TypographyCategories) return true;
+        return object === category;
+      }
+
+      return false;
+    });
     return { [category]: categoryTokens };
   }),
 );
 
 const GlobalDesignTokens = () => {
   const [filter, setFilter] = React.useState<string>("");
-  const [showDeprecated, setShowDeprecated] = React.useState<boolean>(false);
   const [platform, setPlatform] = React.useState<keyof typeof Platforms>("javascript");
   const [selectedCategories, setSelectedCategories] = React.useState<string[]>([]);
 
@@ -68,6 +52,7 @@ const GlobalDesignTokens = () => {
       setSelectedCategories(prev => prev.filter(category => category !== name));
       return;
     }
+
     setSelectedCategories(prev => [...prev, name]);
   };
 
@@ -97,15 +82,6 @@ const GlobalDesignTokens = () => {
           />
         </Box>
       </Stack>
-      <Box maxWidth="200px" width="full">
-        <Checkbox
-          label="Show deprecated tokens"
-          checked={showDeprecated}
-          onChange={() => {
-            setShowDeprecated(prev => !prev);
-          }}
-        />
-      </Box>
       <OptionsFilter
         label="Selected categories"
         value={selectedCategories}
@@ -125,7 +101,7 @@ const GlobalDesignTokens = () => {
               tokens={value}
               filter={debouncedFilter}
               platform={platform}
-              showDeprecated={showDeprecated}
+              showReplacement={category === "deprecated"}
               tableName={name}
             />
           );

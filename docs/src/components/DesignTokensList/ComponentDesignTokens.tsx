@@ -7,39 +7,29 @@ import { camelCase } from "lodash";
 
 import DesignTokensTable from "./components/DesignTokensTable";
 import { Platforms } from "./types.d";
+import useDebounce from "./useDebounce";
 
 const allTokens = Object.entries(tokensList).map(([name, value]) => ({
   name,
   value,
 }));
 
-function useDebounce(value: string, delay: number) {
-  const [debouncedValue, setDebouncedValue] = React.useState(value);
-  React.useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-  return debouncedValue;
-}
-
 const componentTokens = Object.assign(
   {},
-  ...componentCategories.categories.map(category => {
-    const categoryTokens = allTokens.filter(
-      ({
-        value: {
-          schema: { namespace, object },
+  ...componentCategories.categories
+    .filter(category => category !== "background")
+    .map(category => {
+      const categoryTokens = allTokens.filter(
+        ({
+          value: {
+            schema: { namespace, object },
+          },
+        }) => {
+          return namespace === "component" && object === category;
         },
-      }) => {
-        return namespace === "component" && object === category;
-      },
-    );
-    return { [category]: categoryTokens };
-  }),
+      );
+      return { [category]: categoryTokens };
+    }),
 );
 
 const ComponentDesignTokens = () => {

@@ -15,11 +15,6 @@ import {
 import { falsyString, flattenSpacing, pixelized } from "../utils/string.js";
 import { resolveValue } from "./helpers.js";
 
-const getDeprecatedToken = (deprecatedToken: DesignToken) => {
-  if (!deprecatedToken) return null;
-  return deprecatedToken.name;
-};
-
 const foundationAliasValueGetter = (value: DesignToken["value"]) => {
   if (typeof value === "object") {
     const { namespace, object, variant, subVariant } = value.attributes;
@@ -29,6 +24,44 @@ const foundationAliasValueGetter = (value: DesignToken["value"]) => {
       .join(".");
   }
   return getValue(value);
+};
+
+const transformFoundationToToken = (value: string) => {
+  if (!value) return null;
+  const [, object, variant, subVariant] = value.split(".");
+  return _.camelCase(
+    [object, variant, subVariant]
+      .filter(Boolean)
+      .map(val =>
+        val
+          .replace(/}/, "")
+          .split("-")
+          .map(v => _.upperFirst(v))
+          .join(""),
+      )
+      .join(""),
+  );
+};
+
+const getTokenCategory = (prop: DesignToken) => {
+  const { name, category } = prop;
+  if (isColor(prop) && name.startsWith("background")) return "Background colors";
+  if (isColor(prop) && name.startsWith("borderColor")) return "Border color";
+  if (isColor(prop) && name.startsWith("palette")) return "Color palette";
+  if (name.startsWith("opacity")) return "Opacity";
+  if (isSize(prop) && category === "typography") return "Font size";
+  if (name.startsWith("fontWeight") && category === "typography") return "Font weight";
+  if (name.startsWith("lineHeight") && category === "typography") return "Line height";
+  if (isTextDecoration(prop)) return "Text decoration";
+  if (isSpacing(prop)) return "Spacing";
+  if (isBorderRadius(prop)) return "Border radius";
+  if (isZIndex(prop)) return "Z Index";
+  if (isBoxShadow(prop)) return "Box shadow";
+  if (isSize(prop)) return "Size (width, height)";
+  if (isBreakpoint(prop)) return "Breakpoints";
+  if (isColor(prop)) return "Colors";
+
+  return null;
 };
 
 const resolveFoundationValue = (prop: DesignToken) => {
@@ -76,110 +109,28 @@ const resolveFoundationValue = (prop: DesignToken) => {
   }
   return "none";
 };
-
-const getAndResolveValue = (prop, platform) => {
-  if (platform === "foundation") return resolveFoundationValue(prop);
-  return resolveValue(prop, platform);
-};
-
 const jsonDeprecatedTokens = {
   name: "json/deprecated-tokens",
   formatter: ({ dictionary }) => {
-    const deprecatedTokens = dictionary.allProperties.map(prop => {
+    const deprecatedTokens = dictionary.allProperties.map((prop: DesignToken) => {
       const { name } = prop;
-      const { "deprecated-replace": deprecatedReplace, "deprecated-version": version } = prop;
-      const replaceForToken = getDeprecatedToken(deprecatedReplace);
+      const { "deprecated-version": version, original } = prop;
       return {
         [name]: {
-          replaceForToken,
+          replacement: transformFoundationToToken(original["deprecated-replace"]) || null,
+          category: getTokenCategory(prop),
           version,
         },
       };
     });
+
     return JSON.stringify(Object.assign({}, ...deprecatedTokens), null, 2);
   },
 };
 
-const getTokenCategory = prop => {
-  const { name, category } = prop;
-  if (isColor(prop) && name.startsWith("background")) {
-    return "Background colors";
-  }
-  if (isColor(prop) && name.startsWith("borderColor")) {
-    return "Border color";
-  }
-  if (isColor(prop) && name.startsWith("palette")) {
-    return "Color palette";
-  }
-  if (name.startsWith("opacity")) {
-    return "Opacity";
-  }
-  if (isSize(prop) && category === "typography") {
-    return "Font size";
-  }
-  if (name.startsWith("fontWeight") && category === "typography") {
-    return "Font weight";
-  }
-  if (name.startsWith("lineHeight") && category === "typography") {
-    return "Line height";
-  }
-  if (isTextDecoration(prop)) {
-    return "Text decoration";
-  }
-  if (isSpacing(prop)) {
-    return "Spacing";
-  }
-  if (isBorderRadius(prop)) {
-    return "Border radius";
-  }
-  if (isZIndex(prop)) {
-    return "Z Index";
-  }
-  if (isBoxShadow(prop)) {
-    return "Box shadow";
-  }
-  if (isSize(prop)) {
-    return "Size (width, height)";
-  }
-  if (isBreakpoint(prop)) {
-    return "Breakpoints";
-  }
-  if (isColor(prop)) {
-    return "Colors";
-  }
-  return null;
-};
-
-const jsonOld = {
-  name: "json/old",
-  formatter: ({ dictionary }) => {
-    const props = dictionary.allProperties.map(prop => {
-      const { name } = prop;
-      const value = resolveValue(prop, "javascript");
-      return {
-        [name]: {
-          value,
-          type: typeof value,
-          category: getTokenCategory(prop),
-        },
-      };
-    });
-    return JSON.stringify({ props: Object.assign({}, ...props) }, null, 2);
-  },
-};
-
-const jsonOutputOld = {
-  name: "json/output-old",
-  formatter: ({ dictionary }) => {
-    const props = dictionary.allProperties.map(prop => {
-      const { name } = prop;
-      const value = resolveValue(prop, "javascript");
-      return {
-        [name]: value,
-      };
-    });
-    return JSON.stringify(Object.assign({}, ...props), null, 2);
-  },
+const getAndResolveValue = (prop: DesignToken, platform: string) => {
+  if (platform === "foundation") return resolveFoundationValue(prop);
+  return resolveValue(prop, platform);
 };
 
 const docsTokens = {
@@ -208,7 +159,8 @@ const docsTokens = {
           type,
           category,
           comment,
-          deprecated,
+          deprecated: !!deprecated,
+          replacement: transformFoundationToToken(prop.original["deprecated-replace"]) || null,
           schema: { namespace, object, variant, subVariant },
           ...Object.assign({}, ...platforms),
         },
@@ -217,7 +169,6 @@ const docsTokens = {
     return JSON.stringify(Object.assign({}, ...tokens), null, 2);
   },
 };
-
 const docsCategories: Format = {
   name: "json/documentation-categories",
   formatter: ({ dictionary }) => {
@@ -230,4 +181,4 @@ const docsCategories: Format = {
   },
 };
 
-export default { jsonDeprecatedTokens, docsTokens, docsCategories, jsonOld, jsonOutputOld };
+export default { jsonDeprecatedTokens, docsTokens, docsCategories };

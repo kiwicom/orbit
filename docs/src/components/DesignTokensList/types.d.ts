@@ -7,6 +7,7 @@ export interface TokenSchema {
 
 export enum GlobalCategories {
   "z-index" = "Z-index tokens",
+  "deprecated" = "Deprecated tokens",
   "border-radius" = "Border radius tokens",
   "breakpoint" = "Breakpoint tokens",
   "duration" = "Duration tokens",
@@ -36,14 +37,16 @@ type PlatformValue = {
 };
 
 export type TokenValue = {
-  value: {
-    type: string;
-    category: string;
-    deprecated?: boolean;
-    javascript: PlatformValue;
-    foundation: PlatformValue;
-    schema: TokenSchema;
-  };
+  type: string;
+  category: string;
+  replacement: string | null;
+  deprecated: boolean;
+  javascript: PlatformValue;
+  foundation: PlatformValue;
+  schema: TokenSchema;
 };
 
-export type Token = TokenValue & { name: string };
+export interface Token {
+  name: string;
+  value: TokenValue;
+}

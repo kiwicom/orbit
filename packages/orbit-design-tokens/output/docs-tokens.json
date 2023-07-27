@@ -1278,6 +1278,7 @@
   "backgroundButtonBundleMedium": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleMediumBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1300,6 +1301,7 @@
   "backgroundButtonBundleMediumHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleMediumBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1322,6 +1324,7 @@
   "backgroundButtonBundleMediumActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleMediumBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1344,6 +1347,7 @@
   "backgroundButtonBundleTop": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleTopBackground",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1366,6 +1370,7 @@
   "backgroundButtonBundleTopHover": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleTopBackgroundHover",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -1388,6 +1393,7 @@
   "backgroundButtonBundleTopActive": {
     "type": "color",
     "deprecated": true,
+    "replacement": "buttonBundleTopBackgroundActive",
     "schema": {
       "namespace": "component",
       "object": "background",
@@ -11159,7 +11165,7 @@
   "widthCountryFlag": {
     "type": "size",
     "deprecated": true,
-    "replacement": "iconMediumSize",
+    "replacement": "iconLargeSize",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -16592,6 +16598,8 @@
   },
   "paletteBundleBasic": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",
@@ -16613,6 +16621,8 @@
   },
   "paletteBundleMedium": {
     "type": "color",
+    "deprecated": false,
+    "replacement": null,
     "schema": {
       "namespace": "global",
       "object": "palette",

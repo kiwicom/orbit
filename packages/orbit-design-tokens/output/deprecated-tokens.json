@@ -275,21 +275,33 @@
     "version": "6.0.0"
   },
   "backgroundButtonBundleMedium": {
+    "replacement": "buttonBundleMediumBackground",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleMediumHover": {
+    "replacement": "buttonBundleMediumBackgroundHover",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleMediumActive": {
+    "replacement": "buttonBundleMediumBackgroundActive",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleTop": {
+    "replacement": "buttonBundleTopBackground",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleTopHover": {
+    "replacement": "buttonBundleTopBackgroundHover",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleTopActive": {
+    "replacement": "buttonBundleTopBackgroundActive",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonCriticalSubtle": {
@@ -1676,7 +1688,7 @@
     "version": "6.0.0"
   },
   "widthCountryFlag": {
-    "replacement": "iconMediumSize",
+    "replacement": "iconLargeSize",
     "category": "Size (width, height)",
     "version": "6.0.0"
   },

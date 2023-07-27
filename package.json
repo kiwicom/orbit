@@ -33,7 +33,7 @@
     "size": "yarn size:build && size-limit",
     "test:ci": "nx affected --target=test --parallel=5 --runInBand",
     "test:all": "nx run-many --target=test -all",
-    "test:affected": "nx affected --target=test --parallel",
+    "test:affected": "nx affected --target=test",
     "themer": "yarn workspace @kiwicom/orbit-themer",
     "tailwind-preset": "yarn workspace @kiwicom/orbit-tailwind-preset",
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",

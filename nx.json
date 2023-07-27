@@ -20,6 +20,9 @@
     },
     "check:lint": {
       "inputs": ["{workspaceRoot}/.eslintrc.cjs"]
+    },
+    "test": {
+      "dependsOn": ["build", "^build"]
     }
   },
   "tasksRunnerOptions": {

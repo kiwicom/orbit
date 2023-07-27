@@ -27,6 +27,7 @@
   "scripts": {
     "build": "yarn tsup",
     "pretest": "yarn workspace @kiwicom/orbit-design-tokens build && yarn build && yarn tailwindcss -o style.css",
+    "check:lint": "eslint . --report-unused-disable-directives",
     "test": "jest"
   },
   "peerDependencies": {

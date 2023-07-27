@@ -46,10 +46,6 @@
   "peerDependencies": {
     "eslint": ">=8"
   },
-  "devDependencies": {
-    "del-cli": "^5.0.0",
-    "tsup": "^6.1.0"
-  },
   "dependencies": {
     "@babel/types": "=7.12.10"
   }

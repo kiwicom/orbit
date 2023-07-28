@@ -95,7 +95,9 @@ export const StyledModalHeader = styled.div<{
     border-top-left-radius: ${!isMobileFullPage && "12px"};
     border-top-right-radius: ${!isMobileFullPage && "12px"};
     box-sizing: border-box;
-    background-color: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
+    background-color: ${suppressed
+      ? theme.orbit.paletteCloudLight
+      : theme.orbit.paletteWhiteNormal};
 
     & ~ ${StyledModalSection}:first-of-type {
       border-top: ${suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};

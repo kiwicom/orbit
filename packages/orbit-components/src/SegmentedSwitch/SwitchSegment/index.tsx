@@ -20,7 +20,7 @@ export const StyledText = styled.div`
     box-sizing: border-box;
     text-align: center;
     max-width: 100%;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     color: ${theme.orbit.paletteInkNormal};
     border: 0;
     padding: ${theme.orbit.spaceSmall};

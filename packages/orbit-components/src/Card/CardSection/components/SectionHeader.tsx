@@ -30,7 +30,7 @@ const StyledCardSectionHeader = styled.div<{
     `)}
 
     &:hover {
-      background: ${expandable && theme.orbit.paletteWhiteHover};
+      background: ${expandable && theme.orbit.paletteWhiteNormalHover};
     }
   `}
 `;

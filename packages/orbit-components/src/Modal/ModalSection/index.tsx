@@ -16,7 +16,9 @@ export const StyledModalSection = styled.section<{
   ${({ theme, suppressed, closable, isMobileFullPage }) => css`
     width: 100%;
     padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`};
-    background-color: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
+    background-color: ${suppressed
+      ? theme.orbit.paletteCloudLight
+      : theme.orbit.paletteWhiteNormal};
     border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
     box-sizing: border-box;
 

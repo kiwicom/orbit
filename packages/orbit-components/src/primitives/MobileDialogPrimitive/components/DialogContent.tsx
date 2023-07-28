@@ -62,17 +62,17 @@ const StyledTooltipContent = styled.div`
   font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
   font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
   line-height: ${({ theme }) => theme.orbit.lineHeightTextNormal};
-  color: ${({ theme }) => theme.orbit.paletteWhite};
+  color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
 
   & ${StyledText}, ${Item} {
     font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
     font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
-    color: ${({ theme }) => theme.orbit.paletteWhite};
+    color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   }
 
   & ${StyledTextLink} {
-    color: ${({ theme }) => theme.orbit.paletteWhite};
+    color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   }
 `;
 

@@ -85,11 +85,11 @@ const StyledCardWrapper = styled.div<Props>`
     `)}
 
     &:focus {
-      background: ${theme.orbit.paletteWhiteHover};
+      background: ${theme.orbit.paletteWhiteNormalHover};
     }
 
     &:hover {
-      background: ${onClick && theme.orbit.paletteWhiteHover};
+      background: ${onClick && theme.orbit.paletteWhiteNormalHover};
     }
   `};
 `;

@@ -130,7 +130,7 @@ const CloseContainer = styled.div<{
     width: 100%;
     max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken({ size, theme })};
     box-shadow: ${scrolled && theme.orbit.boxShadowFixed};
-    background-color: ${scrolled && theme.orbit.paletteWhite};
+    background-color: ${scrolled && theme.orbit.paletteWhiteNormal};
     border-top-left-radius: ${!isMobileFullPage && "12px"};
     border-top-right-radius: ${!isMobileFullPage && "12px"};
     transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};

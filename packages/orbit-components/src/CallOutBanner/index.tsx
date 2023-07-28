@@ -14,7 +14,7 @@ const StyledCallOutBanner = styled.div<{ onClick?: Props["onClick"] }>`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     border-radius: ${theme.orbit.borderRadiusSmall};
     padding: ${theme.orbit.spaceMedium};
     ${onClick

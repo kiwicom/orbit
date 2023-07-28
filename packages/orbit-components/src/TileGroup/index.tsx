@@ -14,7 +14,7 @@ const StyledTileGroup = styled.div`
     box-shadow: ${theme.orbit.boxShadowAction};
     border-radius: ${theme.orbit.borderRadiusNormal};
     ${StyledSlide} {
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
     }
     ${StyledTileWrapper} {
       border-radius: 0;

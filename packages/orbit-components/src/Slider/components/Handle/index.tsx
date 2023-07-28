@@ -70,7 +70,7 @@ const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props
   height: 24px;
   border-radius: 24px;
   box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   cursor: pointer;
   transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
   -webkit-tap-highlight-color: transparent;

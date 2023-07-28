@@ -64,7 +64,7 @@ const StyledInnerWrapper = styled.div<{ visible?: boolean; duration?: number; is
         left: 0;
         width: 100%;
         height: 100%;
-        background: ${theme.orbit.paletteWhite};
+        background: ${theme.orbit.paletteWhiteNormal};
         opacity: 0.1;
         animation: ${lightAnimation} ${duration}ms linear;
         animation-play-state: ${isPaused ? "paused" : "running"};
@@ -125,8 +125,11 @@ const ToastMessage = ({
         <Stack flex shrink spacing="XSmall">
           {icon &&
             React.isValidElement(icon) &&
-            // @ts-expect-error TODO: fix this
-            React.cloneElement(icon, { size: "small", customColor: theme.orbit.paletteWhite })}
+            React.cloneElement(icon, {
+              // @ts-expect-error TODO: fix this
+              size: "small",
+              customColor: theme.orbit.paletteWhiteNormal,
+            })}
           <Text type="white">{children}</Text>
         </Stack>
       </StyledInnerWrapper>

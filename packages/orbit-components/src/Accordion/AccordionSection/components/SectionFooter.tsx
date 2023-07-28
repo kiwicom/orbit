@@ -7,7 +7,7 @@ import type * as Common from "../../../common/types";
 const StyledWrapper = styled.div`
   display: flex;
   padding: ${({ theme }) => theme.orbit.spaceLarge};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
+  background-color: ${({ theme }) => theme.orbit.paletteWhiteNormal};
   position: sticky;
   bottom: 0;
   box-sizing: border-box;

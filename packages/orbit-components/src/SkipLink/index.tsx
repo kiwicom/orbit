@@ -32,7 +32,7 @@ const StyledLink = styled.a`
       margin: 0;
       overflow: visible;
       padding: ${theme.orbit.spaceMedium};
-      background-color: ${theme.orbit.paletteWhite};
+      background-color: ${theme.orbit.paletteWhiteNormal};
       z-index: ${theme.orbit.zIndexOnTheTop};
     }
   `}

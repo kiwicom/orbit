@@ -69,7 +69,7 @@ export const StyledDropdown = styled.ul<{
     font-family: ${theme.orbit.fontFamily};
     box-sizing: border-box;
     width: 100%;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     z-index: 3;
 
     ${mq.largeMobile(css`

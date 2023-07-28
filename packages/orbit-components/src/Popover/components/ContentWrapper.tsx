@@ -54,7 +54,7 @@ const StyledContentWrapper = styled.div<{
     position: absolute;
     left: 0;
     width: 100%;
-    background-color: ${theme.orbit.paletteWhite};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     max-height: ${windowHeight && actionsHeight && windowHeight - actionsHeight - 32}px;
     bottom: ${actionsHeight || 0}px;
 
@@ -81,7 +81,7 @@ const StyledActions = styled.div`
     box-sizing: border-box;
     padding: ${popoverPadding};
     padding-top: ${theme.orbit.spaceSmall};
-    background-color: ${theme.orbit.paletteWhite};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     ${StyledButtonPrimitive} {
       width: 100%;
       flex: 1 1 auto;

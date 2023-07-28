@@ -59,7 +59,7 @@ const StyledDialogContent = styled.div<{ $maxWidth?: number; shown?: boolean }>`
     max-width: ${$maxWidth}px;
     box-sizing: border-box;
     padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     border-radius: 12px;
     bottom: ${shown ? "0" : "-100%"};
     box-shadow: ${theme.orbit.boxShadowOverlay};

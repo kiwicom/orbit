@@ -109,7 +109,7 @@ const StyledIcon = styled.div<{ isFirst?: boolean; isLast?: boolean }>`
       border-left: 1px solid ${theme.orbit.paletteCloudNormalActive};
       border-right: 1px solid ${theme.orbit.paletteCloudNormalActive};
       z-index: -1;
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
       ${isFirst &&
       css`
         border: 1px solid ${theme.orbit.paletteCloudNormalActive};
@@ -169,7 +169,7 @@ const ItinerarySegmentDetail = ({
             <HorizontalScroll
               overflowElevation
               onOverflow={() => setOverflowed(true)}
-              elevationColor="paletteWhite"
+              elevationColor="paletteWhiteNormal"
               scrollSnap="mandatory"
             >
               {summary}

@@ -41,7 +41,7 @@ export const StyledListChoice = styled.div<Partial<Props>>`
     width: 100%;
     padding: ${`${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium}`};
     border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
-    background-color: ${theme.orbit.paletteWhite};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     transition: background-color 0.15s ease-in-out;
     cursor: ${disabled ? "not-allowed" : "pointer"};
 

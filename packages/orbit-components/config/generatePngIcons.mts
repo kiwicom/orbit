@@ -7,7 +7,7 @@ const [, __dirname] = filedirname();
 const DIR = path.join(__dirname, "../orbit-email-icons");
 const sizesToGenerate = [32, 48];
 const colors = [
-  ["white", defaultTokens.paletteWhite],
+  ["white", defaultTokens.paletteWhiteNormal],
   ["secondary", defaultTokens.colorIconSecondary],
   ["tertiary", defaultTokens.colorIconTertiary],
   ["primary", defaultTokens.colorIconPrimary],

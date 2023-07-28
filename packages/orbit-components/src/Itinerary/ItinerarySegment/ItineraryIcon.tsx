@@ -33,7 +33,7 @@ const IconStyled = styled.div<{
     justify-content: center;
     z-index: 1;
     svg {
-      background: ${last || index === 0 ? "transparent" : theme.orbit.paletteWhite};
+      background: ${last || index === 0 ? "transparent" : theme.orbit.paletteWhiteNormal};
       overflow: hidden;
     }
     ${index > 0 &&
@@ -42,9 +42,9 @@ const IconStyled = styled.div<{
       padding: ${theme.orbit.spaceXXSmall} 0;
       background: radial-gradient(
         farthest-side,
-        ${theme.orbit.paletteWhite},
-        ${theme.orbit.paletteWhite},
-        ${theme.orbit.paletteWhite},
+        ${theme.orbit.paletteWhiteNormal},
+        ${theme.orbit.paletteWhiteNormal},
+        ${theme.orbit.paletteWhiteNormal},
         transparent
       );
     `}

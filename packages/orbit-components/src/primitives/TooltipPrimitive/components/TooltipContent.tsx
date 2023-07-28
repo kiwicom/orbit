@@ -90,17 +90,17 @@ const StyledTooltipContent = styled.div`
     font-size: ${theme.orbit.fontSizeTextSmall};
     font-weight: ${theme.orbit.fontWeightMedium};
     line-height: ${theme.orbit.lineHeightTextNormal};
-    color: ${theme.orbit.paletteWhite};
+    color: ${theme.orbit.paletteWhiteNormal};
     margin-bottom: 0;
 
     & ${StyledText}, ${Item} {
       font-size: ${theme.orbit.fontSizeTextSmall};
       font-weight: ${theme.orbit.fontWeightMedium};
-      color: ${theme.orbit.paletteWhite};
+      color: ${theme.orbit.paletteWhiteNormal};
     }
 
     & ${StyledTextLink} {
-      color: ${theme.orbit.paletteWhite};
+      color: ${theme.orbit.paletteWhiteNormal};
     }
   `}
 `;

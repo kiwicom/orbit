@@ -19,14 +19,14 @@ const getBackgroundType =
     if (state === "hover") {
       if ($type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackgroundHover;
       if ($type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackgroundHover;
-      return theme.orbit.paletteWhiteHover;
+      return theme.orbit.paletteWhiteNormalHover;
     }
 
     if (state === "active") {
       if ($type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackgroundActive;
       if ($type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackgroundActive;
 
-      return theme.orbit.paletteWhiteActive;
+      return theme.orbit.paletteWhiteNormalActive;
     }
 
     return "none";

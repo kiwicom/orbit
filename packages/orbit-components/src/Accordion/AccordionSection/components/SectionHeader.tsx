@@ -12,7 +12,7 @@ const StyledWrapper = styled.div<{
   ${({ theme, expanded }) => css`
     display: flex;
     padding: ${theme.orbit.spaceLarge};
-    background-color: ${theme.orbit.paletteWhite};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     align-items: center;
     min-height: ${expanded ? "19px" : "44px"};
     transition: max-height ${theme.orbit.durationFast} ease-in-out;

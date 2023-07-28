@@ -88,7 +88,7 @@ const CloseContainer = styled.div<{
     margin-${left}: ${theme.orbit.spaceXSmall};
     opacity: ${selected ? "1" : "0.5"};
     color: ${resolveColor({
-      selected: "paletteWhite",
+      selected: "paletteWhiteNormal",
       removable: type === TYPES.NEUTRAL ? "paletteInkNormal" : "paletteBlueDarker",
       normal: "paletteInkLink",
     })};
@@ -116,7 +116,7 @@ export const StyledTag = styled.div<{
   ${({ theme, actionable, type }) => css`
     font-family: ${theme.orbit.fontFamily};
     color: ${resolveColor({
-      selected: "paletteWhite",
+      selected: "paletteWhiteNormal",
       removable: type === TYPES.NEUTRAL ? "paletteInkDark" : "paletteBlueDarker",
       normal: type === TYPES.NEUTRAL ? "paletteInkDark" : "paletteBlueDarker",
     })};

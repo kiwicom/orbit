@@ -34,7 +34,7 @@ const StyledNavigationBar = styled.nav<{ shown: boolean }>`
     width: 100%;
     display: flex;
     align-items: center;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     box-shadow: ${theme.orbit.boxShadowFixed};
     padding: ${theme.orbit.spaceSmall};
     box-sizing: border-box;

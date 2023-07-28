@@ -24,7 +24,7 @@ const getColor: GetTextLinkTokensType =
       [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDark,
       [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDark,
       [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDark,
-      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.paletteWhiteNormal,
     };
 
     if (!$type) return null;

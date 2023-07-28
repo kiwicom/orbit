@@ -101,15 +101,15 @@ const StyledTooltipContent = styled.div`
     font-size: ${theme.orbit.fontSizeTextNormal};
     font-weight: ${theme.orbit.fontWeightNormal};
     line-height: ${theme.orbit.lineHeightTextSmall};
-    color: ${theme.orbit.paletteWhite};
+    color: ${theme.orbit.paletteWhiteNormal};
 
     & ${StyledText}, ${Item}, a {
-      color: ${theme.orbit.paletteWhite};
+      color: ${theme.orbit.paletteWhiteNormal};
       font-size: ${theme.orbit.fontSizeTextNormal};
       font-weight: ${theme.orbit.fontWeightNormal};
       &:hover,
       &:focus {
-        color: ${theme.orbit.paletteWhite};
+        color: ${theme.orbit.paletteWhiteNormal};
       }
     }
   `}
@@ -121,7 +121,7 @@ StyledTooltipContent.defaultProps = {
 
 const StyledCloseButton = styled.a`
   ${({ theme }) => css`
-    color: ${theme.orbit.paletteWhite};
+    color: ${theme.orbit.paletteWhiteNormal};
     cursor: pointer;
     margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
     display: flex;

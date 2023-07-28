@@ -35,28 +35,28 @@ const getSocialButtonTypeToken = (name: string, type: Type, theme: Theme): strin
       [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteCloudNormal,
     },
     [TOKENS.colorTextButton]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhiteNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteInkDark,
     },
     [TOKENS.colorTextButtonHover]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhiteNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteInkDark,
     },
     [TOKENS.colorTextButtonActive]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhiteNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.GOOGLE]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.TWITTER]: theme.orbit.paletteInkDark,
       [TYPE_OPTIONS.EMAIL]: theme.orbit.paletteInkDark,
     },
     [TOKENS.iconColor]: {
-      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhite,
+      [TYPE_OPTIONS.APPLE]: theme.orbit.paletteWhiteNormal,
       [TYPE_OPTIONS.FACEBOOK]: theme.orbit.paletteSocialFacebook,
       [TYPE_OPTIONS.GOOGLE]: "currentColor",
       [TYPE_OPTIONS.TWITTER]: "#00ACEE", // TODO: add token

@@ -31,7 +31,7 @@ export const StyledModalFooter = styled.div<{
     display: flex;
     z-index: 800;
     width: 100%;
-    background-color: ${theme.orbit.paletteWhite};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
     box-sizing: border-box;
     transition: ${transition(["box-shadow"], "fast", "ease-in-out")};

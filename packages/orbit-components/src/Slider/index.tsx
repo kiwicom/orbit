@@ -60,7 +60,7 @@ const StyledSliderContent = styled.div<{ focused?: boolean }>`
       css`
         visibility: visible;
         opacity: 1;
-        background: ${theme.orbit.paletteWhite};
+        background: ${theme.orbit.paletteWhiteNormal};
         box-shadow: ${theme.orbit.boxShadowRaised};
       `};
     `)};

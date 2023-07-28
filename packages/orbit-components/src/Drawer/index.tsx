@@ -83,7 +83,7 @@ const StyledDrawerSide = styled.aside`
     font-family: ${theme.orbit.fontFamily};
     overflow-y: auto;
     box-shadow: ${theme.orbit.boxShadowRaised};
-    background: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
+    background: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhiteNormal};
     transition: ${transition(["transform"], "normal", "ease-in-out")};
     width: 100%;
     ${mq.largeMobile(css`
@@ -133,7 +133,7 @@ const StyledDrawerHeader = styled.div<{
     align-items: center;
     background: ${suppressed && !bordered
       ? theme.orbit.paletteCloudLight
-      : theme.orbit.paletteWhite};
+      : theme.orbit.paletteWhiteNormal};
     height: 64px;
     box-sizing: border-box;
     border-bottom: ${bordered && `1px solid ${theme.orbit.paletteCloudNormal}`};

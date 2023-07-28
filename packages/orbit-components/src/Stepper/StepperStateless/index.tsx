@@ -140,7 +140,7 @@ const StepperStateless = ({
   };
 
   const iconStyles = {
-    foreground: active ? theme.orbit.paletteWhite : theme.orbit.paletteInkDark,
+    foreground: active ? theme.orbit.paletteWhiteNormal : theme.orbit.paletteInkDark,
   };
 
   const isMinusDisabled =

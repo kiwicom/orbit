@@ -51,7 +51,7 @@ const Glyph = styled.span<{ disabled?: boolean }>`
     visibility: hidden;
     width: 8px;
     height: 8px;
-    background-color: ${disabled ? theme.orbit.paletteCloudNormal : theme.orbit.paletteWhite};
+    background-color: ${disabled ? theme.orbit.paletteCloudNormal : theme.orbit.paletteWhiteNormal};
     border-radius: ${theme.orbit.borderRadiusCircle};
     flex-shrink: 0;
   `}

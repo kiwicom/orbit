@@ -5,7 +5,7 @@ import type { Theme } from "../../defaultTheme";
 const resolveColor =
   () =>
   ({ theme, selected, type }: { theme: Theme; selected?: boolean; type?: Type }): string => {
-    if (selected) return theme.orbit.paletteWhite;
+    if (selected) return theme.orbit.paletteWhiteNormal;
     return type === TYPES.NEUTRAL ? theme.orbit.paletteInkDark : theme.orbit.paletteBlueDarker;
   };
 

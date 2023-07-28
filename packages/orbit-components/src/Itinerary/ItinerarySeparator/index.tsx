@@ -46,7 +46,7 @@ const StyledWord = styled.div`
   ${({ theme }) => css`
     position: relative;
     padding: 0 2px;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     z-index: 11;
   `};
 `;

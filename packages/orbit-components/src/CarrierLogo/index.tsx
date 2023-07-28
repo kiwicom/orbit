@@ -79,7 +79,7 @@ const StyledImage = styled.img.attrs<StyledProps>(
     border-radius: ${rounded ? theme.orbit.borderRadiusCircle : theme.orbit.borderRadiusNormal};
     height: ${getCarrierLogoSize};
     width: ${getCarrierLogoSize};
-    border: ${inlineStacked && `1px solid ${theme.orbit.paletteWhite}`};
+    border: ${inlineStacked && `1px solid ${theme.orbit.paletteWhiteNormal}`};
 
     &:not(:first-child) {
       margin-${left}: ${inlineStacked && `calc(-1 * ${theme.orbit.spaceXSmall})`};

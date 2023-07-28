@@ -19,7 +19,7 @@ const StyledWrapper = styled.div`
     position: relative;
     background: ${`linear-gradient(
       85.39deg,
-      ${theme.orbit.paletteWhiteHover} 3.73%,
+      ${theme.orbit.paletteWhiteNormalHover} 3.73%,
       ${theme.orbit.paletteCloudLight} 53.77%
     )`};
     width: 100%;

@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
     & > img {
       max-width: 100%;
       justify-self: center;
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
       border-radius: ${theme.orbit.borderRadiusLarge};
       padding: ${theme.orbit.spaceXLarge};
     }

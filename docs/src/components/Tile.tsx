@@ -49,7 +49,7 @@ const StyledWrapper = styled.div<StyledContainerProps>`
   ${({ theme, $fullWidth, href, to, $hasContent: hasContent, $inline }) => css`
     padding: 2rem;
     border-radius: 1rem;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
     width: ${$fullWidth && "100%"};

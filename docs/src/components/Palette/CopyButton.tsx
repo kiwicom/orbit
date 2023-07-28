@@ -16,7 +16,7 @@ const StyledButton = styled.button<{ colorValue?: string }>`
   ${({ colorValue, theme }) => css`
     background: ${colorValue && isLight(colorValue)
       ? theme.orbit.paletteInkDark
-      : theme.orbit.paletteWhite};
+      : theme.orbit.paletteWhiteNormal};
     padding: 0 ${theme.orbit.spaceXSmall};
     border-radius: ${theme.orbit.borderRadiusBadge};
     text-transform: uppercase;
@@ -24,7 +24,7 @@ const StyledButton = styled.button<{ colorValue?: string }>`
 
     svg path {
       fill: ${colorValue && isLight(colorValue)
-        ? theme.orbit.paletteWhite
+        ? theme.orbit.paletteWhiteNormal
         : theme.orbit.paletteInkDark};
     }
     &:hover {

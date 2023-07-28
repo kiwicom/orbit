@@ -50,7 +50,7 @@ const StyledComponent = styled.div<GuidelineComponent>`
 
 const StyledImageContainer = styled.div<ImageContainerProps>`
   ${({ theme, type }) => css`
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     border-radius: ${theme.orbit.borderRadiusNormal};
     border-top: 3px solid
       ${type === "do" ? theme.orbit.paletteGreenNormal : theme.orbit.paletteRedNormal};

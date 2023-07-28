@@ -77,7 +77,7 @@ const Table = styled(StyledTable)`
         transition: all ease-in-out ${theme.orbit.durationFast};
 
         &:hover {
-          background-color: ${theme.orbit.paletteWhite};
+          background-color: ${theme.orbit.paletteWhiteNormal};
 
           ${mq.desktop(css`
             border-radius: 6px;

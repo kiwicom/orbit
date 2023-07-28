@@ -40,7 +40,7 @@ export const StyledColorContainerWrapper = styled(({ className, children }) => (
     background: ${colorValue};
     color: ${colorValue && isLight(colorValue)
       ? theme.orbit.colorTextPrimary
-      : theme.orbit.paletteWhite};
+      : theme.orbit.paletteWhiteNormal};
     padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
     transition: transform ${theme.orbit.durationFast} ease-in;
     position: relative;

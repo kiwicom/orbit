@@ -37,7 +37,7 @@ const StyledTab = styled.button<{ active: boolean }>`
     border-bottom: none;
     ${active &&
     css`
-      background: ${theme.orbit.paletteWhite};
+      background: ${theme.orbit.paletteWhiteNormal};
       border-color: ${theme.orbit.paletteCloudNormal};
     `};
   `};
@@ -94,7 +94,7 @@ const StyledComponentParts = styled.div<{ vertical?: boolean }>`
           height: 24px;
           background: #ec5192;
           border-radius: 100%;
-          color: ${theme.orbit.paletteWhite};
+          color: ${theme.orbit.paletteWhiteNormal};
           font-size: ${theme.orbit.fontSizeTextSmall};
           font-weight: bold;
         }

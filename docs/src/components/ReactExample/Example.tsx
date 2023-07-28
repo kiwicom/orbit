@@ -35,7 +35,7 @@ const StyledWrapper = styled.div<{ isFullScreen: boolean }>`
     border: 1px solid ${theme.orbit.paletteCloudNormal};
     overflow: hidden;
     overflow-y: auto;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     ${isFullScreen && fullScreenMixin};
 
     ${StyledAnchor} + & {

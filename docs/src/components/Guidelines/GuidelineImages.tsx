@@ -23,7 +23,7 @@ interface ImageContainerProps {
 const ImageContainer = styled.div<ImageContainerProps>`
   ${({ theme }) => css`
     width: 100%;
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
     border-radius: ${theme.orbit.borderRadiusNormal};
     padding: ${theme.orbit.spaceXLarge};
   `}

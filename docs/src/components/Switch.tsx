@@ -39,7 +39,7 @@ const StyledHandle = styled.div`
     border: 1px solid rgba(7, 64, 92, 0.1);
     border-box: content;
     border-radius: ${theme.orbit.borderRadiusCircle};
-    background-color: ${theme.orbit.paletteWhite};
+    background-color: ${theme.orbit.paletteWhiteNormal};
     background-clip: content-box;
     box-shadow: 0px 2px 3px 0px rgba(7, 64, 92, 0.16);
   `}

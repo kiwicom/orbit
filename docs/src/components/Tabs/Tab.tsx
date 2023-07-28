@@ -40,7 +40,7 @@ export const commonTabStyle = css`
     height: calc(${TAB_HEIGHT} - ${getTabShadowReachTop});
     border-top-left-radius: ${BORDER_RADIUS};
     border-top-right-radius: ${BORDER_RADIUS};
-    background: ${theme.orbit.paletteWhite};
+    background: ${theme.orbit.paletteWhiteNormal};
   `};
 `;
 

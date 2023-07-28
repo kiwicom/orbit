@@ -26,7 +26,7 @@ interface ElevationLevelProps {
 }
 
 export default ({ level }: ElevationLevelProps) => {
-  let backgroundColor = theme.orbit.paletteWhite;
+  let backgroundColor = theme.orbit.paletteWhiteNormal;
   let border = "none";
   let boxShadow = "none";
   switch (level) {

@@ -26,9 +26,9 @@ export const getBackground =
       linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
       linear-gradient(-90deg, rgba(0, 0, 0, .06) 1px, transparent 1px),
       linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
-      linear-gradient(transparent 3px, ${theme.orbit.paletteWhite} 3px, ${theme.orbit.paletteWhite} 78px, transparent 78px),
+      linear-gradient(transparent 3px, ${theme.orbit.paletteWhiteNormal} 3px, ${theme.orbit.paletteWhiteNormal} 78px, transparent 78px),
       linear-gradient(-90deg, ${theme.orbit.paletteInkDark} 1px, transparent 1px),
-      linear-gradient(-90deg, transparent 3px, ${theme.orbit.paletteWhite} 3px, ${theme.orbit.paletteWhite} 78px, transparent 78px),
+      linear-gradient(-90deg, transparent 3px, ${theme.orbit.paletteWhiteNormal} 3px, ${theme.orbit.paletteWhiteNormal} 78px, transparent 78px),
       linear-gradient(${theme.orbit.paletteInkDark} 1px, transparent 1px),
       #f2f2f2;
 
@@ -46,7 +46,7 @@ export const getBackground =
 
     if (type === "dark") return `background: ${theme.orbit.paletteInkDark}`;
 
-    return `background: ${theme.orbit.paletteWhite}`;
+    return `background: ${theme.orbit.paletteWhiteNormal}`;
   };
 
 interface StyledProps extends Partial<Props> {

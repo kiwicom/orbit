@@ -103,7 +103,7 @@ const defaultThemeRule: Rule.RuleModule = {
       /**
        * Prevents defaultTheme as literal inside styled component:
           const Wrapper = styled.div`
-            background: ${defaultTheme.orbit.paletteWhite};
+            background: ${defaultTheme.orbit.paletteWhiteNormal};
           `
        */
 

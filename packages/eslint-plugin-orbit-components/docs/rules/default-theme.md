@@ -42,7 +42,7 @@ Proper usage of defaultTheme is:
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 const Wrapper = styled.div`
-  background: ${({ theme }) => theme.orbit.paletteWhite};
+  background: ${({ theme }) => theme.orbit.paletteWhiteNormal};
 `;
 
 Wrapper.defaultProps = {

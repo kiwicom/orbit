@@ -9,7 +9,7 @@ describe("defaultTheme", () => {
           import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";\
 
           const Wrapper = styled.div\`
-            display: \${({ theme }) => theme.orbit.paletteWhite};
+            display: \${({ theme }) => theme.orbit.paletteWhiteNormal};
           \`;
 
           Wrapper.defaultProps = {
@@ -22,7 +22,7 @@ describe("defaultTheme", () => {
           import { defaultTheme } from "@kiwicom/orbit-components";\
 
           const Wrapper = styled.div\`
-            display: \${({ theme }) => theme.orbit.paletteWhite};
+            display: \${({ theme }) => theme.orbit.paletteWhiteNormal};
           \`;
 
           Wrapper.defaultProps = {

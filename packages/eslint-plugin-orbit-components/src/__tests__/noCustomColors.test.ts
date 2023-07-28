@@ -9,7 +9,7 @@ describe("no-custom-colors", () => {
         code: `
             const Wrapper = styled.div\`
               color: \${({theme}) => theme.orbit.colorTextPrimary};
-              background: \${({theme}) => theme.orbit.paletteWhite};
+              background: \${({theme}) => theme.orbit.paletteWhiteNormal};
             \`
           `,
       },

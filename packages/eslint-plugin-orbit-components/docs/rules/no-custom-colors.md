@@ -18,7 +18,7 @@ The following patterns are **not** considered warnings:
 ```jsx
 const StyledWrapper = styled.div`
   color: ${({theme}) => theme.orbit.colorTextPrimary};
-  background: ${({theme}) => theme.orbit.paletteWhite};
+  background: ${({theme}) => theme.orbit.paletteWhiteNormal};
 `,
 ```
 

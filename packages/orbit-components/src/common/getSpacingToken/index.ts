@@ -15,4 +15,5 @@ const getSpacingToken = ({ spaceAfter, theme }: Props): string | undefined => {
   return spaceAfter && tokens[spaceAfter];
 };
 
+export { SPACINGS_AFTER };
 export default getSpacingToken;

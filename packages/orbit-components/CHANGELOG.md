@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.8.0...@kiwicom/orbit-components@8.0.0) (2023-07-28)
+
+
+### Bug Fixes
+
+* **InputSelect:** clearing the input now clears the selected option ([b805837](https://github.com/kiwicom/orbit/commit/b805837f68d76dc42569e98e06419bb2a2da2924))
+* **InputSelect:** close events and invalid typing ([ce9051a](https://github.com/kiwicom/orbit/commit/ce9051a3b0ee4ea6a1aa463191f543b84ea8d2fb))
+* **InputSelect:** hover effect removed from mobile ([766a8d8](https://github.com/kiwicom/orbit/commit/766a8d8b99b002bec5af1fad85f2270fbd0c9567))
+* **InputSelect:** present error and info on mobile ([6f888f6](https://github.com/kiwicom/orbit/commit/6f888f64ea819c4f113e559233a8e8aa71ec52cc))
+* **InputSelect:** spaceAfter was not working correctly ([46d4f78](https://github.com/kiwicom/orbit/commit/46d4f789b117631ede9a7f5f955aa552ee72dc3e))
+* **Separator:** fix background and border issue ([#3925](https://github.com/kiwicom/orbit/issues/3925)) ([5ffa0ee](https://github.com/kiwicom/orbit/commit/5ffa0eee286ac1b18347dde1ea08c6558b61c5ee))
+
+
+### Features
+
+* **icons:** update icons from figma ([#3927](https://github.com/kiwicom/orbit/issues/3927)) ([51c2f14](https://github.com/kiwicom/orbit/commit/51c2f145f752cf04fb9889eabdce9face65c82f9))
+* **Illustration:** add Ambulance and FlexibleDates illustrations ([#3933](https://github.com/kiwicom/orbit/issues/3933)) ([47e8fe8](https://github.com/kiwicom/orbit/commit/47e8fe81c6b6b71f9d31eb7ced82d2f1fb5349c6))
+* **InputSelect:** rename emptyStateMessage to emptyState ([6a5ade2](https://github.com/kiwicom/orbit/commit/6a5ade2c9108e9186b62fb708d6250b87c429248))
+* **tokens:** migrate to style-dictionary ([5029dcf](https://github.com/kiwicom/orbit/commit/5029dcf5cd70ac6f65c43cb61da2f8ba60787d8d))
+
+
+### BREAKING CHANGES
+
+* **InputSelect:** emptyStateMessage string prop is now called emptyState and accepts any React element.
+
+
+
+
+
 # [7.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.7.0...@kiwicom/orbit-components@7.8.0) (2023-07-14)
 
 

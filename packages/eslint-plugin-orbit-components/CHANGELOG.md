@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.7.0 (2023-07-28)
+
+
+### Bug Fixes
+
+* **eslint-plugin:** add missing entry ([#3892](https://github.com/kiwicom/orbit/issues/3892)) ([8a87de0](https://github.com/kiwicom/orbit/commit/8a87de079b65fa097c44df5492582543fd0f20ee))
+* **eslint-plugin:** fix missing dev dependency for postinstall ([b2382ec](https://github.com/kiwicom/orbit/commit/b2382ecf0272b098898324eb4bf5461f7177b158))
+* **eslint-plugin:** fix missing dev dependency for postinstall ([#3862](https://github.com/kiwicom/orbit/issues/3862)) ([8c951ec](https://github.com/kiwicom/orbit/commit/8c951ec1a3986745f463c35dda6cab2510d5104b))
+* **eslint-plugin:** fix missing tsup dependency ([affd9a6](https://github.com/kiwicom/orbit/commit/affd9a6ff18be926efa1bf3233b1024efe8a71c0))
+* **eslint-plugin:** remove postinstall ([8a06dfa](https://github.com/kiwicom/orbit/commit/8a06dfaacf930a99d153a2356c1978eebe069293))
+* **eslint:** fix preferSingleDestructure rule ([#3323](https://github.com/kiwicom/orbit/issues/3323)) ([bae6511](https://github.com/kiwicom/orbit/commit/bae6511aa64b57d96ba48e42bee9bf2e3436e68c))
+* prepublishOnly script ([34c8571](https://github.com/kiwicom/orbit/commit/34c8571157411a8be0394379f8ba6bc8273e8f94))
+* stop relying on a transient dependency ([#2675](https://github.com/kiwicom/orbit/issues/2675)) ([f72b247](https://github.com/kiwicom/orbit/commit/f72b247532a7a375013b88d5099a98951e6b95a8)), closes [#2660](https://github.com/kiwicom/orbit/issues/2660) [#2674](https://github.com/kiwicom/orbit/issues/2674)
+* use-rtl error messages ([#2876](https://github.com/kiwicom/orbit/issues/2876)) ([e077721](https://github.com/kiwicom/orbit/commit/e07772103110e4f6c3859102f66deb8f1cc99a53))
+
+
+### Features
+
+* **eslint-orbit:** add recommended config ([#2712](https://github.com/kiwicom/orbit/issues/2712)) ([a80c95a](https://github.com/kiwicom/orbit/commit/a80c95a33fe53e5bfc3ad3ec9eb7c6f05abbc786))
+* **eslint-plugin-orbit:** custom-colors ([#2738](https://github.com/kiwicom/orbit/issues/2738)) ([7b864fd](https://github.com/kiwicom/orbit/commit/7b864fd8184c0302c33b0a8199b0b712c69215c4))
+* **eslint-plugin-orbit:** custom-typography ([#2777](https://github.com/kiwicom/orbit/issues/2777)) ([10159d3](https://github.com/kiwicom/orbit/commit/10159d32507d60165b04166a7cff4901766d0408))
+* **eslint-plugin-orbit:** default-theme rule ([#2737](https://github.com/kiwicom/orbit/issues/2737)) ([8669a74](https://github.com/kiwicom/orbit/commit/8669a74d4c5f9a4897330833b5451712c6ebf794))
+* **eslint-plugin-orbit:** prefer-single-destructure ([#2739](https://github.com/kiwicom/orbit/issues/2739)) ([6645da8](https://github.com/kiwicom/orbit/commit/6645da8873b7d23f96214dd8fff65ea1cb40cdab))
+* **eslint-plugin-orbit:** theme-rtl rule ([#2740](https://github.com/kiwicom/orbit/issues/2740)) ([a432ac8](https://github.com/kiwicom/orbit/commit/a432ac8f5fa1d7c21be3ce2ea19163306cd32b6c))
+* **eslint-plugin-orbit:** useRtl rule ([#2833](https://github.com/kiwicom/orbit/issues/2833)) ([cbdd2ff](https://github.com/kiwicom/orbit/commit/cbdd2ff4fe399c16698a3f011731c51a9579f1e0))
+* rename ThemeProvider to OrbitProvider ([#3601](https://github.com/kiwicom/orbit/issues/3601)) ([64c58d9](https://github.com/kiwicom/orbit/commit/64c58d9a9de7552b6aefe9f8463261f10bd81434))
+
+
+### BREAKING CHANGES
+
+* ThemeProvider is now called OrbitProvider
+
+
+
+
+
 ## [0.6.10](https://github.com/kiwicom/orbit/compare/eslint-plugin-orbit-components@0.6.9...eslint-plugin-orbit-components@0.6.10) (2023-06-23)
 
 

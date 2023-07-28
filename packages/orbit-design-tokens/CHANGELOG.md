@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-beta.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@4.2.1...@kiwicom/orbit-design-tokens@5.0.0-beta.2) (2023-07-28)
+
+
+### Bug Fixes
+
+* **tokens:** fix Heading line-height values ([48b6b15](https://github.com/kiwicom/orbit/commit/48b6b1540ef43e3eeaf3d5f85a50904dd7a6a460))
+* **tokens:** fix widthCountryFlag token value ([40243af](https://github.com/kiwicom/orbit/commit/40243af2ce5a66d15dc4dc860dea0a66331eb47b))
+
+
+### Features
+
+* **tokens:** migrate to style-dictionary ([5029dcf](https://github.com/kiwicom/orbit/commit/5029dcf5cd70ac6f65c43cb61da2f8ba60787d8d))
+
+
+
+
+
 ## [4.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@4.2.0...@kiwicom/orbit-design-tokens@4.2.1) (2023-06-23)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

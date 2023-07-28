@@ -153,16 +153,17 @@ async function getChangelogMessage() {
 (async () => {
   try {
     await configureGitHubToken();
-    const changelog = await getChangelogMessage();
 
     if (argv.dry) {
-      console.info(changelog);
+      const log = await getChangelogMessage();
+      console.info(log);
       process.exit(0);
     } else {
       await $`yarn install`;
       await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
       await $`yarn docs changelog`;
       await $`git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push`;
+      const changelog = await getChangelogMessage();
       const timestamp = await getLatestReleaseTime();
       const names = await getUserNames(timestamp);
       await postSlackNotification(changelog, names);

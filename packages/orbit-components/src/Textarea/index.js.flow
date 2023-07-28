@@ -4,12 +4,13 @@
 */
 import * as React from "react";
 
-import type { Globals, Translation, TranslationString } from "../common/common.js.flow";
+import type { Globals, Translation, TranslationString, DataAttrs } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
 
 export type Props = {|
   ...Globals,
   ...spaceAfter,
+  ...DataAttrs,
   +size?: "small" | "normal",
   +name?: string,
   +rows?: number,

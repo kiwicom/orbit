@@ -146,7 +146,7 @@ const cfg = (options?: Options): Config => {
             return acc;
           }, {}),
           "radio-disabled": defaultTokens.paletteCloudNormal,
-          white: defaultTokens.paletteWhite,
+          white: defaultTokens.paletteWhiteNormal,
           "radio-hover": defaultTokens.paletteBlueLightActive,
           "radio-active": defaultTokens.paletteBlueNormal,
           "form-element": defaultTokens.formElementBorderColor,

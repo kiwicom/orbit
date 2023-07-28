@@ -13,6 +13,7 @@
     "unit-no-unknown": null,
     "no-duplicate-selectors": null,
     "property-no-vendor-prefix": null,
+    "media-query-no-invalid": null,
     "no-descending-specificity": null,
     "annotation-no-unknown": null,
     "declaration-block-no-duplicate-properties": null

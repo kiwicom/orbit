@@ -3124,19 +3124,15 @@
     <value>#354F88</value>
   </token>
   <token>
-    <name>paletteWhite</name>
-    <value>#FFFFFF</value>
-  </token>
-  <token>
     <name>paletteWhiteNormal</name>
     <value>#FFFFFF</value>
   </token>
   <token>
-    <name>paletteWhiteHover</name>
+    <name>paletteWhiteNormalHover</name>
     <value>#F1F4F7</value>
   </token>
   <token>
-    <name>paletteWhiteActive</name>
+    <name>paletteWhiteNormalActive</name>
     <value>#E7ECF1</value>
   </token>
   <token>

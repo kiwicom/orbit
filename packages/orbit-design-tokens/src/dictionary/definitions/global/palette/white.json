@@ -2,20 +2,18 @@
   "global": {
     "palette": {
       "white": {
-        "type": "color",
-        "value": "{foundation.palette.white.normal}"
-      },
-      "white-normal": {
-        "type": "color",
-        "value": "{foundation.palette.white.normal}"
-      },
-      "white-hover": {
-        "type": "color",
-        "value": "{foundation.palette.white.normal-hover}"
-      },
-      "white-active": {
-        "type": "color",
-        "value": "{foundation.palette.white.normal-active}"
+        "normal": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "normal-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal-hover}"
+        },
+        "normal-active": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal-active}"
+        }
       }
     }
   }

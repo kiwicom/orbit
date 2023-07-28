@@ -795,10 +795,9 @@ export type Tokens = {
   paletteSocialFacebook: string;
   paletteSocialFacebookHover: string;
   paletteSocialFacebookActive: string;
-  paletteWhite: string;
   paletteWhiteNormal: string;
-  paletteWhiteHover: string;
-  paletteWhiteActive: string;
+  paletteWhiteNormalHover: string;
+  paletteWhiteNormalActive: string;
   spaceXXXSmall: string;
   spaceXXSmall: string;
   spaceXSmall: string;
@@ -1793,10 +1792,9 @@ const createTokens: CreateTokens = foundation => ({
   paletteSocialFacebook: foundation.palette.social.facebook,
   paletteSocialFacebookHover: foundation.palette.social.facebookHover,
   paletteSocialFacebookActive: foundation.palette.social.facebookActive,
-  paletteWhite: foundation.palette.white.normal,
   paletteWhiteNormal: foundation.palette.white.normal,
-  paletteWhiteHover: foundation.palette.white.normalHover,
-  paletteWhiteActive: foundation.palette.white.normalActive,
+  paletteWhiteNormalHover: foundation.palette.white.normalHover,
+  paletteWhiteNormalActive: foundation.palette.white.normalActive,
   spaceXXXSmall: foundation.space.XXXSmall,
   spaceXXSmall: foundation.space.XXSmall,
   spaceXSmall: foundation.space.XSmall,

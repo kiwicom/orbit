@@ -16838,32 +16838,13 @@
       "value": "rgb(53, 79, 136)"
     }
   },
-  "paletteWhite": {
-    "type": "color",
-    "schema": {
-      "namespace": "global",
-      "object": "palette",
-      "variant": "white"
-    },
-    "javascript": {
-      "name": "paletteWhite",
-      "value": "#FFFFFF"
-    },
-    "foundation": {
-      "name": "paletteWhite",
-      "value": "foundation.palette.white.normal"
-    },
-    "scss": {
-      "name": "paletteWhite",
-      "value": "rgb(255, 255, 255)"
-    }
-  },
   "paletteWhiteNormal": {
     "type": "color",
     "schema": {
       "namespace": "global",
       "object": "palette",
-      "variant": "white-normal"
+      "variant": "white",
+      "subVariant": "normal"
     },
     "javascript": {
       "name": "paletteWhiteNormal",
@@ -16878,43 +16859,45 @@
       "value": "rgb(255, 255, 255)"
     }
   },
-  "paletteWhiteHover": {
+  "paletteWhiteNormalHover": {
     "type": "color",
     "schema": {
       "namespace": "global",
       "object": "palette",
-      "variant": "white-hover"
+      "variant": "white",
+      "subVariant": "normal-hover"
     },
     "javascript": {
-      "name": "paletteWhiteHover",
+      "name": "paletteWhiteNormalHover",
       "value": "#F1F4F7"
     },
     "foundation": {
-      "name": "paletteWhiteHover",
+      "name": "paletteWhiteNormalHover",
       "value": "foundation.palette.white.normalHover"
     },
     "scss": {
-      "name": "paletteWhiteHover",
+      "name": "paletteWhiteNormalHover",
       "value": "rgb(241, 244, 247)"
     }
   },
-  "paletteWhiteActive": {
+  "paletteWhiteNormalActive": {
     "type": "color",
     "schema": {
       "namespace": "global",
       "object": "palette",
-      "variant": "white-active"
+      "variant": "white",
+      "subVariant": "normal-active"
     },
     "javascript": {
-      "name": "paletteWhiteActive",
+      "name": "paletteWhiteNormalActive",
       "value": "#E7ECF1"
     },
     "foundation": {
-      "name": "paletteWhiteActive",
+      "name": "paletteWhiteNormalActive",
       "value": "foundation.palette.white.normalActive"
     },
     "scss": {
-      "name": "paletteWhiteActive",
+      "name": "paletteWhiteNormalActive",
       "value": "rgb(231, 236, 241)"
     }
   },

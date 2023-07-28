@@ -2,16 +2,56 @@
   "foundation": {
     "palette": {
       "orange": {
-        "dark": { "value": "#AD5700", "internal": true, "type": "color" },
-        "dark-active": { "value": "#954A00", "internal": true, "type": "color" },
-        "dark-hover": { "value": "#A75400", "internal": true, "type": "color" },
-        "darker": { "value": "#803F00", "internal": true, "type": "color" },
-        "light": { "value": "#FEF2E6", "internal": true, "type": "color" },
-        "light-active": { "value": "#FAE2C6", "internal": true, "type": "color" },
-        "light-hover": { "value": "#FCECDA", "internal": true, "type": "color" },
-        "normal": { "value": "#DF7B00", "internal": true, "type": "color" },
-        "normal-active": { "value": "#B26200", "internal": true, "type": "color" },
-        "normal-hover": { "value": "#C96F00", "internal": true, "type": "color" }
+        "dark": {
+          "value": "#AD5700",
+          "internal": true,
+          "type": "color"
+        },
+        "dark-active": {
+          "value": "#954A00",
+          "internal": true,
+          "type": "color"
+        },
+        "dark-hover": {
+          "value": "#A75400",
+          "internal": true,
+          "type": "color"
+        },
+        "darker": {
+          "value": "#803F00",
+          "internal": true,
+          "type": "color"
+        },
+        "light": {
+          "value": "#FEF2E6",
+          "internal": true,
+          "type": "color"
+        },
+        "light-active": {
+          "value": "#FAE2C6",
+          "internal": true,
+          "type": "color"
+        },
+        "light-hover": {
+          "value": "#FCECDA",
+          "internal": true,
+          "type": "color"
+        },
+        "normal": {
+          "value": "#DF7B00",
+          "internal": true,
+          "type": "color"
+        },
+        "normal-active": {
+          "value": "#B26200",
+          "internal": true,
+          "type": "color"
+        },
+        "normal-hover": {
+          "value": "#C96F00",
+          "internal": true,
+          "type": "color"
+        }
       }
     }
   }

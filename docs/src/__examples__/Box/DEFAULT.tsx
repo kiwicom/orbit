@@ -3,7 +3,13 @@ import { Box } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Box background="blueDark" textAlign="center" color="white" padding="large" maxWidth="300px">
+    <Box
+      background="blueDark"
+      textAlign="center"
+      color="whiteNormal"
+      padding="large"
+      maxWidth="300px"
+    >
       Text
     </Box>
   ),
@@ -128,9 +134,9 @@ export default {
             "productDarkHover",
             "productDarkActive",
             "productDarker",
-            "white",
-            "whiteHover",
-            "whiteActive",
+            "whiteNormal",
+            "whiteNormalHover",
+            "whiteNormalActive",
             "cloudLight",
             "cloudLightHover",
             "cloudLightActive",
@@ -207,9 +213,9 @@ export default {
             "productDarkHover",
             "productDarkActive",
             "productDarker",
-            "white",
-            "whiteHover",
-            "whiteActive",
+            "whiteNormal",
+            "whiteNormalHover",
+            "whiteNormalActive",
             "cloudLight",
             "cloudLightHover",
             "cloudLightActive",
@@ -270,7 +276,7 @@ export default {
             "socialFacebookHover",
             "socialFacebookActive",
           ],
-          defaultValue: "white",
+          defaultValue: "whiteNormal",
         },
         {
           name: "maxHeight",

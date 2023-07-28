@@ -16,14 +16,16 @@ import type { Props } from "./types";
 import useRandomId from "../hooks/useRandomId";
 
 const Field = styled.label<{ fullHeight?: boolean; spaceAfter?: Common.SpaceAfterSizes }>`
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  display: flex;
-  width: 100%;
-  position: relative;
-  height: ${({ fullHeight }) => fullHeight && "100%"};
-  flex-direction: column;
-  flex: ${({ fullHeight }) => fullHeight && "1"};
-  margin-bottom: ${getSpacingToken};
+  ${({ theme, fullHeight }) => css`
+    font-family: ${theme.orbit.fontFamily};
+    display: flex;
+    width: 100%;
+    position: relative;
+    height: ${fullHeight && "100%"};
+    flex-direction: column;
+    flex: ${fullHeight && "1"};
+    margin-bottom: ${getSpacingToken};
+  `};
 `;
 
 Field.defaultProps = {
@@ -70,50 +72,48 @@ interface StyledTextAreaProps extends Partial<Props> {
 }
 
 const StyledTextArea = styled.textarea<StyledTextAreaProps>`
-  appearance: none;
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  height: ${({ fullHeight }) => fullHeight && "100%"};
-  padding: ${getPadding};
-  box-shadow: inset 0 0 0
-    ${({ theme, error }) =>
-      `${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
-      }`};
-  background-color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
-  color: ${({ disabled, theme }) =>
-    disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
-  font-size: ${getFontSize};
-  line-height: ${getLineHeight};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "text")};
-  font-family: ${({ theme }) => theme.orbit.fontFamily};
-  resize: ${({ resize }) => resize};
-  transition: box-shadow ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-  min-height: 44px;
+  ${({ theme, resize, fullHeight, error, disabled }) => css`
+    appearance: none;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: ${fullHeight && "100%"};
+    padding: ${getPadding};
+    box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput}
+      ${error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
+    background-color: ${disabled
+      ? theme.orbit.backgroundInputDisabled
+      : theme.orbit.backgroundInput};
+    color: ${disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    font-size: ${getFontSize};
+    line-height: ${getLineHeight};
+    cursor: ${disabled ? "not-allowed" : "text"};
+    font-family: ${theme.orbit.fontFamily};
+    resize: ${resize};
+    transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
+    min-height: 44px;
 
-  /* for usage with Stack */
-  border-radius: 6px;
-  ${mq.tablet(css`
-    border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-  `)};
+    /* for usage with Stack */
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    ${mq.tablet(css`
+      border-radius: ${theme.orbit.borderRadiusNormal};
+    `)};
 
-  flex: ${({ fullHeight }) => fullHeight && "1"};
-  border: 1px solid transparent;
-  overflow: auto;
+    flex: ${fullHeight && "1"};
+    border: 1px solid transparent;
+    overflow: auto;
 
-  &::placeholder {
-    color: ${({ theme }) => theme.orbit.colorPlaceholderInput};
-  }
+    &::placeholder {
+      color: ${theme.orbit.colorPlaceholderInput};
+    }
 
-  &:hover {
-    box-shadow: ${({ disabled, theme, error }) =>
-      !disabled &&
-      `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
+    &:hover {
+      box-shadow: ${!disabled &&
+      css`inset 0 0 0 ${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
-  }
+    }
+  `};
 `;
 
 StyledTextArea.defaultProps = {
@@ -144,6 +144,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     rows,
     readOnly,
     required,
+    dataAttrs,
   }: Props = props;
 
   const forID = useRandomId();
@@ -203,6 +204,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         ref={ref}
         aria-describedby={shown ? `${inputId}-feedback` : undefined}
         aria-invalid={error ? true : undefined}
+        {...dataAttrs}
       />
       {hasTooltip && (
         <ErrorFormTooltip

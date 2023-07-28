@@ -16,6 +16,9 @@ describe("Textarea", () => {
     const fullHeight = true;
     const onChange = jest.fn();
     const spaceAfter = SPACINGS_AFTER.NORMAL;
+    const dataAttrs = {
+      "data-sample": "Sample",
+    };
 
     render(
       <Textarea
@@ -30,6 +33,7 @@ describe("Textarea", () => {
         onChange={onChange}
         dataTest={dataTest}
         spaceAfter={spaceAfter}
+        dataAttrs={dataAttrs}
       />,
     );
 
@@ -44,6 +48,7 @@ describe("Textarea", () => {
     expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
     expect(textarea).toHaveAttribute("rows", "4");
     expect(textarea).toHaveAttribute("name", name);
+    expect(textarea).toHaveAttribute("data-sample", "Sample");
     expect(textarea).not.toBeInvalid();
     expect(textarea.parentElement).toHaveStyle({ marginBottom: "12px" });
     expect(textarea).toHaveStyle({ padding: "12px" });

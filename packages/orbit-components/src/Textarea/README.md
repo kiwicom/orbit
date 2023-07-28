@@ -18,6 +18,7 @@ Table below contains all types of the props available in Textarea component.
 
 | Name         | Type                       | Default      | Description                                                                                                                                                    |
 | :----------- | :------------------------- | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dataAttrs    | `Object`                   |              | Optional prop for passing `data-*` attributes to the `textarea` DOM element.                                                                                   |
 | dataTest     | `string`                   |              | Optional prop for testing purposes.                                                                                                                            |
 | id           | `string`                   |              | Set `id` for `Textarea`                                                                                                                                        |
 | disabled     | `boolean`                  |              | If `true`, the Textarea will be disabled.                                                                                                                      |

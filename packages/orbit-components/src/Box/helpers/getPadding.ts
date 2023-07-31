@@ -8,7 +8,10 @@ import {
   paddingTopClasses,
 } from "../../common/tailwind/padding";
 
-const getPaddingClass = (padding: Props["padding"], viewport?: QUERIES) => {
+const getPaddingClass = (
+  padding: Props["padding"],
+  viewport?: QUERIES,
+): (string | boolean)[] | string | null => {
   if (!padding) return null;
 
   if (typeof padding === "object") {

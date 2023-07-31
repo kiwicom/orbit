@@ -8,7 +8,10 @@ import {
   marginTopClasses,
 } from "../../common/tailwind/margin";
 
-const getMarginClass = (margin: Props["margin"], viewport?: QUERIES) => {
+const getMarginClass = (
+  margin: Props["margin"],
+  viewport?: QUERIES,
+): (string | boolean)[] | string | null => {
   if (!margin) return null;
 
   if (typeof margin === "object") {

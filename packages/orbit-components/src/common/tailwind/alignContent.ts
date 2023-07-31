@@ -1,7 +1,6 @@
-import type { Devices } from "../../utils/mediaQuery/types";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
-enum ALIGN_CONTENT {
+export enum ALIGN_CONTENT {
   START = "start",
   CENTER = "center",
   END = "end",
@@ -52,10 +51,7 @@ export const alignContentClasses = {
   },
 };
 
-const getAlignContentClasses = (
-  align: Lowercase<keyof typeof ALIGN_CONTENT>,
-  viewport?: Devices,
-) => {
+const getAlignContentClasses = (align: `${ALIGN_CONTENT}`, viewport?: QUERIES): string => {
   const root = viewport ? alignContentClasses[viewport] : alignContentClasses;
 
   return root[align];

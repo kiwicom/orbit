@@ -2,7 +2,7 @@ import getAlignItemsClasses, { alignItemsClasses } from "./alignItems";
 import getAlignContentClasses, { alignContentClasses } from "./alignContent";
 import { backgroundColorClasses } from "./backgroundColor";
 import { colorClasses } from "./color";
-import getDisplayClasses, { displayClasses } from "./display";
+import getDisplayClasses, { displayClasses, getDisplayInlineClass } from "./display";
 import getDirectionClasses, { directionClasses } from "./direction";
 import getJustifyClasses, { justifyClasses } from "./justify";
 import { marginClasses } from "./margin";
@@ -21,6 +21,7 @@ export {
   getShrinkClasses,
   getJustifyClasses,
   getDisplayClasses,
+  getDisplayInlineClass,
   getDirectionClasses,
   getWrapClasses,
   getAlignItemsClasses,

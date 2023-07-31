@@ -14,6 +14,12 @@ const config: StorybookConfig = {
         controls: false,
       },
     },
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        postCss: true,
+      },
+    },
   ],
   webpackFinal(cfg) {
     if (cfg) {

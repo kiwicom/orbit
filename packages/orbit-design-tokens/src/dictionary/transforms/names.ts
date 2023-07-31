@@ -35,3 +35,19 @@ export const nameUppercase = {
     return String(name);
   },
 };
+
+export const removePalettePrefix = {
+  name: "name/ti/removePalettePrefix",
+  type: "name",
+  transformer: (prop: DesignToken): string => {
+    const {
+      attributes: { name, variant, subVariant },
+    } = prop;
+
+    if (name.startsWith("palette")) {
+      return variant + (subVariant ? subVariant.charAt(0).toUpperCase() + subVariant.slice(1) : "");
+    }
+
+    return name;
+  },
+};

@@ -11,6 +11,10 @@ import buildSize from "./buildSize.mjs";
 
   await $`del ${OUTPUT_PATTERNS}`;
 
+  logStep("Building tailwind");
+
+  await $`yarn tailwind`;
+
   logStep("Building icons");
 
   await $`ts-node --esm config/build/buildIcons.mts`;

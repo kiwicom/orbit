@@ -33,7 +33,7 @@ const createSpacing = (name: string, spacing: Record<string, DesignToken>) =>
 /*
   Used for generating typescript file that contains javascript and typescript declarations together.
  */
-const typescriptFactory = (allProperties: Dictionary["allProperties"]) => {
+const typescriptFactory = (allProperties: Dictionary["allProperties"], complete = true) => {
   const type = "type";
 
   const foundationImport = createTypeImport("foundation", "./defaultFoundation");
@@ -61,6 +61,8 @@ const typescriptFactory = (allProperties: Dictionary["allProperties"]) => {
     true,
     type,
   );
+
+  if (!complete) return formatCode([warning, tokensType], "typescript");
 
   const functionExpression = createArrowFunctionExpression(
     createEquivalentType("foundation"),
@@ -163,4 +165,11 @@ const typescriptTokens: Format = {
   },
 };
 
-export default { typescriptTokens };
+const typeOnlyTokens: Format = {
+  name: "typescript/typeOnlyTokens",
+  formatter: ({ dictionary }) => {
+    return typescriptFactory(dictionary.allProperties, false);
+  },
+};
+
+export default { typescriptTokens, typeOnlyTokens };

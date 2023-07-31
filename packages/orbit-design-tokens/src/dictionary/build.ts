@@ -10,6 +10,7 @@ import {
   isNotDeprecated,
   isGlobal,
   isComponentSpecific,
+  isColorPalette,
 } from "./utils/is.js";
 
 const build = () => {
@@ -39,6 +40,21 @@ const build = () => {
       "value/nov/alias",
       "value/javascript",
       "name/ti/camel",
+    ],
+  });
+
+  SD.registerTransformGroup({
+    name: "javascript/palette",
+    transforms: [
+      "attribute/nov",
+      "attribute/nov/isReferenced",
+      "attribute/nov/camelCase",
+      "attribute/javascript/type",
+      "attribute/javascript",
+      "value/nov/alias",
+      "value/javascript",
+      "name/ti/camel",
+      "name/ti/removePalettePrefix",
     ],
   });
 
@@ -138,6 +154,17 @@ const build = () => {
             destination: "js/createTokens.ts",
             format: "typescript/tokens",
             filter: isNotInternal,
+          },
+        ],
+      },
+      "javascript/palette": {
+        transformGroup: "javascript/palette",
+        buildPath: "src/",
+        files: [
+          {
+            destination: "js/paletteColors.d.ts",
+            format: "typescript/typeOnlyTokens",
+            filter: _.overEvery([isNotInternal, isColorPalette]),
           },
         ],
       },

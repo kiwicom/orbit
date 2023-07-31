@@ -1,12 +1,13 @@
-import type { Devices } from "../../utils/mediaQuery/types";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
-enum GROW {
+export enum GROW {
   true = "grow",
   false = "grow-0",
 }
 
-export const growClasses = {
+export const growClasses: {
+  [K in QUERIES | GROW]: K extends QUERIES ? Record<GROW, string> : string;
+} = {
   [GROW.false]: "grow-0",
   [GROW.true]: "grow",
   [QUERIES.MEDIUMMOBILE]: { [GROW.false]: "mm:grow-0", [GROW.true]: "mm:grow" },
@@ -16,10 +17,10 @@ export const growClasses = {
   [QUERIES.LARGEDESKTOP]: { [GROW.false]: "ld:grow-0", [GROW.true]: "ld:grow" },
 };
 
-const getGrowClasses = (grow: boolean, viewport?: Devices) => {
+const getGrowClasses = (grow: boolean, viewport?: QUERIES): string => {
   const root = viewport ? growClasses[viewport] : growClasses;
 
-  return grow ? root.grow1 : root.grow0;
+  return grow ? root.grow : root["grow-0"];
 };
 
 export default getGrowClasses;

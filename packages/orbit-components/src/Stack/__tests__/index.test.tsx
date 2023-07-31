@@ -1,14 +1,11 @@
-import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import React from "react";
 
+import { render, screen } from "../../test-utils";
 import Stack from "..";
-import theme from "../../defaultTheme";
 import InputField from "../../InputField";
 import Button from "../../Button";
-import { DIRECTIONS, SPACINGS } from "../../utils/layout/consts";
-import { QUERIES } from "../../utils/mediaQuery/consts";
-import getSpacing from "../helpers/getSpacing";
-import type { Justify, Spacing, Align } from "../types";
+import { DIRECTION } from "../../common/tailwind/direction";
+import type { Justify, Align } from "../types";
 
 describe("Stack", () => {
   it("should have expected DOM output", () => {
@@ -23,27 +20,13 @@ describe("Stack", () => {
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Sign In" })).toBeInTheDocument();
-    expect(screen.getByTestId(dataTest)).toHaveStyle({
-      gap: "16px",
-      width: "100%",
-      flexDirection: "row",
-      flexWrap: "nowrap",
-      flexShrink: "0",
-      flexGrow: "1",
-      justifyContent: "flex-start",
-      alignItems: "flex-start",
-    });
-  });
 
-  it("should have spacing with margins, if flex or spacing is not provided", () => {
-    render(
-      <Stack>
-        <div>kek</div>
-        <div>bur</div>
-      </Stack>,
-    );
-
-    expect(screen.getByText("kek")).toHaveStyle({ margin: "0 0 16px 0" });
+    expect(screen.getByTestId(dataTest)).toHaveStyle(`flex-direction: row`);
+    expect(screen.getByTestId(dataTest)).toHaveStyle(`flex-wrap: nowrap`);
+    expect(screen.getByTestId(dataTest)).toHaveStyle(`flex-shrink: 0`);
+    expect(screen.getByTestId(dataTest)).toHaveStyle(`flex-grow: 1`);
+    expect(screen.getByTestId(dataTest)).toHaveStyle(`justify-content: flex-start`);
+    expect(screen.getByTestId(dataTest)).toHaveStyle(`align-items: flex-start`);
   });
 
   it("should be inline", () => {
@@ -54,7 +37,7 @@ describe("Stack", () => {
       </Stack>,
     );
 
-    expect(screen.getByTestId("test")).toHaveStyle({ display: "inline-flex" });
+    expect(screen.getByTestId("test")).toHaveStyle(`display: inline-flex`);
   });
 
   it("should turn off grow", () => {
@@ -65,7 +48,7 @@ describe("Stack", () => {
       </Stack>,
     );
 
-    expect(screen.getByTestId("test")).toHaveStyle({ flexGrow: "" });
+    expect(screen.getByTestId("test")).toHaveStyle(`flex-grow: 0`);
   });
 
   it("should turn on shrink", () => {
@@ -79,7 +62,7 @@ describe("Stack", () => {
     expect(screen.getByTestId("test")).toHaveStyle({ flexShrink: 1 });
   });
 
-  it.each(Object.entries(DIRECTIONS))("should have direction %s", (name, direction) => {
+  it.each(Object.entries(DIRECTION))("should have direction %s", (_, direction) => {
     render(
       <Stack flex direction={direction} dataTest="test">
         <div>kek</div>
@@ -87,7 +70,7 @@ describe("Stack", () => {
       </Stack>,
     );
 
-    expect(screen.getByTestId("test")).toHaveStyle({ flexDirection: direction });
+    expect(screen.getByTestId("test")).toHaveStyle(`flex-direction: ${direction}`);
   });
 
   it.each([
@@ -104,7 +87,7 @@ describe("Stack", () => {
       </Stack>,
     );
 
-    expect(screen.getByTestId("test")).toHaveStyleRule("justify-content", expected);
+    expect(screen.getByTestId("test")).toHaveStyle(`justify-content: ${expected}`);
   });
 
   it.each([
@@ -121,57 +104,6 @@ describe("Stack", () => {
       </Stack>,
     );
 
-    expect(screen.getByTestId("test")).toHaveStyle({ alignItems: expected });
-  });
-
-  Object.entries(SPACINGS).forEach(([name, spacing]) => {
-    it(`should change spacing ${name}`, () => {
-      render(
-        <Stack flex spacing={spacing as Spacing} dataTest="test">
-          <div>kek</div>
-          <div>bur</div>
-        </Stack>,
-      );
-
-      expect(screen.getByTestId("test")).toHaveStyle({
-        gap: `${getSpacing(theme)[spacing]}`,
-      });
-    });
-  });
-});
-
-describe("Stack with every media query", () => {
-  it.each(Object.entries(QUERIES))("should have styles for each mediaquery: %s", (name, query) => {
-    const dataTest = `${query}-test`;
-
-    const input: Record<
-      "mediumMobile" | "largeMobile" | "tablet" | "desktop" | "largeDesktop",
-      Spacing
-    > = {
-      mediumMobile: `XXSmall`,
-      largeMobile: `XSmall`,
-      tablet: `small`,
-      desktop: `medium`,
-      largeDesktop: `large`,
-    };
-
-    const expected = {
-      none: "",
-      smallMobile: `${theme.orbit.spaceXSmall}`,
-      mediumMobile: `${theme.orbit.spaceXXSmall}`,
-      largeMobile: `${theme.orbit.spaceXSmall}`,
-      tablet: `${theme.orbit.spaceSmall}`,
-      desktop: `${theme.orbit.spaceMedium}`,
-      largeDesktop: `${theme.orbit.spaceLarge}`,
-    };
-
-    render(
-      <Stack flex dataTest={dataTest} direction={DIRECTIONS.ROW} spacing={input[query]}>
-        <InputField type="password" label="Password" help="You need some help!" />
-        <Button>Sign In</Button>
-      </Stack>,
-    );
-
-    expect(screen.getByTestId(dataTest)).toHaveStyle({ gap: expected[query] });
+    expect(screen.getByTestId("test")).toHaveStyle(`align-items: ${expected}`);
   });
 });

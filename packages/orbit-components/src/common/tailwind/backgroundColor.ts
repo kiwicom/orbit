@@ -1,10 +1,10 @@
-import type { paletteColors } from "@kiwicom/orbit-design-tokens";
+import type { PaletteColors } from "@kiwicom/orbit-design-tokens";
 
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
 export const backgroundColorClasses: {
-  [K in QUERIES | keyof paletteColors]: K extends QUERIES
-    ? Record<keyof paletteColors, string>
+  [K in QUERIES | keyof PaletteColors]: K extends QUERIES
+    ? Record<keyof PaletteColors, string>
     : string;
 } = {
   blueLight: "bg-blue-light",

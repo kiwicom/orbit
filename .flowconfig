@@ -4,6 +4,7 @@
 <PROJECT_ROOT>/packages/*/umd/.*
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/dist/
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/__fixtures__/
+<PROJECT_ROOT>/packages/orbit-design-tokens/dist/index.js.flow
 
 .*/node_modules/webpack-cli/lib/utils/__tests__/
 .*/node_modules/immutable/.*

@@ -1,4 +1,6 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
+import type { Align } from "../../Stack/types";
+import type { Devices } from "../../utils/mediaQuery/types";
 
 export enum ALIGN {
   START = "start",
@@ -45,3 +47,11 @@ export const alignItemsClasses: {
     [ALIGN.STRETCH]: "mm:items-stretch",
   },
 };
+
+const getAlignItemsClasses = (align: Align, viewport?: Devices) => {
+  const root = viewport ? alignItemsClasses[viewport] : alignItemsClasses;
+
+  return root[align];
+};
+
+export default getAlignItemsClasses;

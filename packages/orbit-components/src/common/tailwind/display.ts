@@ -1,4 +1,5 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
+import type { Devices } from "../../utils/mediaQuery/types";
 
 export enum DISPLAY {
   NONE = "none",
@@ -66,3 +67,11 @@ export const displayClasses: {
     [DISPLAY.LIST_ITEM]: "mm:list-item",
   },
 };
+
+const getDisplayClasses = (inline: boolean, viewport?: Devices) => {
+  const root = viewport ? displayClasses[viewport] : displayClasses;
+
+  return inline ? root.inline : root.flex;
+};
+
+export default getDisplayClasses;

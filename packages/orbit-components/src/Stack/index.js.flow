@@ -48,7 +48,6 @@ export type Props = {|
   ...Globals,
   ...MediaQuery,
   +flex?: boolean,
-  +legacy?: boolean,
   +mediumMobile?: MediaQuery,
   +largeMobile?: MediaQuery,
   +tablet?: MediaQuery,

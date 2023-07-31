@@ -1,6 +1,4 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
-import type { Justify } from "../../Stack/types";
-import type { Devices } from "../../utils/mediaQuery/types";
 
 export enum JUSTIFY {
   START = "start",
@@ -55,7 +53,7 @@ export const justifyClasses: {
   },
 };
 
-export const getJustifyClasses = (justify: Justify, viewport?: Devices) => {
+export const getJustifyClasses = (justify: `${JUSTIFY}`, viewport?: QUERIES): string => {
   const root = viewport ? justifyClasses[viewport] : justifyClasses;
 
   return root[justify];

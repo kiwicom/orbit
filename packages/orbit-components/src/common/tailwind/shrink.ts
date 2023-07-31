@@ -1,7 +1,6 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
-import type { Devices } from "../../utils/mediaQuery/types";
 
-enum SHRINK {
+export enum SHRINK {
   shrink = "shrink",
   shrink0 = "shrink-0",
 }
@@ -18,10 +17,10 @@ export const shrinkClasses: {
   [QUERIES.LARGEDESKTOP]: { [SHRINK.shrink0]: "ld:shrink-0", [SHRINK.shrink]: "ld:shrink" },
 };
 
-export const getShrinkToken = (shrink: boolean, viewport?: Devices) => {
+export const getShrinkToken = (shrink: boolean, viewport?: QUERIES): string => {
   const root = viewport ? shrinkClasses[viewport] : shrinkClasses;
 
-  return shrink ? root.shrink1 : root.shrink0;
+  return shrink ? root.shrink : root["shrink-0"];
 };
 
 export default getShrinkToken;

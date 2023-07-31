@@ -1,6 +1,6 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
-enum SIZES {
+export enum SIZES {
   NONE = "none",
   XXXSMALL = "XXXSmall",
   XXSMALL = "XXSmall",

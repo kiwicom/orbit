@@ -1,4 +1,5 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
+import type { Devices } from "../../utils/mediaQuery/types";
 
 enum WRAP {
   WRAP = "wrap",
@@ -31,3 +32,11 @@ export const wrapClasses: {
     [WRAP.NO_WRAP]: "mm:flex-nowrap",
   },
 };
+
+const getWrapClasses = (wrap: boolean, viewport?: Devices) => {
+  const root = viewport ? wrapClasses[viewport] : wrapClasses;
+
+  return wrap ? root.wrap : root.nowrap;
+};
+
+export default getWrapClasses;

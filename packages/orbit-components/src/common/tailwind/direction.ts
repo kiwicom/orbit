@@ -1,6 +1,4 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
-import type { Devices } from "../../utils/mediaQuery/types";
-import type { Direction } from "../../Stack/types";
 
 export enum DIRECTION {
   ROW = "row",
@@ -48,10 +46,8 @@ export const directionClasses: {
   },
 };
 
-const getDirectionToken = (direction: Direction, viewport?: Devices) => {
-  const root = viewport ? directionClasses[viewport] : directionClasses;
-
-  return root[direction];
+const getDirectionToken = (direction: `${DIRECTION}`, viewport?: QUERIES): string => {
+  return viewport ? directionClasses[viewport][direction] : directionClasses[direction];
 };
 
 export default getDirectionToken;

@@ -1,12 +1,12 @@
 # Stack
 
-To implement Stack component into your project you'll need to add the import:
+To implement the Stack component into your project you'll need to add the import:
 
 ```jsx
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 ```
 
-After adding import into your project you can use it simply like:
+After adding import to your project you can use it simply like:
 
 ```jsx
 <Stack>
@@ -17,7 +17,7 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-Table below contains all types of the props available in Stack component.
+The table below contains all types of props available in the Stack component.
 
 | Name         | Type                       | Default    | Description                                                                                                                                                    |
 | :----------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,13 +40,12 @@ Table below contains all types of the props available in Stack component.
 | spaceAfter   | `enum`                     |            | Additional `padding` to bottom of the Stack. [See this doc](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | tablet       | [`Object`](#media-queries) |            | Object for setting up properties for the tablet viewport. [See Media queries](#media-queries)                                                                  |
 | wrap         | `boolean`                  | `false`    | If `true`, the Stack will have `flex-wrap` set to `wrap`, otherwise it will be `nowrap`.                                                                       |
-| legacy       | `boolean`                  | `false`    | If `true`, the Stack will be using `margins` instead of `gap`                                                                                                  |
 
 ### Media Queries
 
-When you need to specify some different behaviour of the Stack component on different viewport, you can use properties for it.
+When you need to specify some different behavior of the Stack component on different viewports, you can use properties for it.
 There are `mediumMobile`, `largeMobile`, `tablet`, `desktop` and `largeDesktop` available and it behaves the same as [mediaQueries](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/utils/mediaQuery) functions.
-All this properties - objects have the some own properties and none is required.
+All these properties - objects have the same own properties and none is required.
 
 | Name       | Type                  | Default   | Description                                                                                                                                                    |
 | :--------- | :-------------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -63,7 +62,7 @@ All this properties - objects have the some own properties and none is required.
 
 ## Functional specs
 
-- The default behaviour for the `Stack` component is to not be a `flexbox` container. It means that by default it's nesting children natively (below each other) and it won't use any `flex` CSS properties.
+- The default behavior for the `Stack` component is to not be a `flexbox` container. It means that by default it's nesting children natively (below each other) and it won't use any `flex` CSS properties.
 
 - If you specify some property (except children, spaceAfter, dataTest and spacing) it will become a `flexbox` container and the `flex-direction: row` will be used.
 

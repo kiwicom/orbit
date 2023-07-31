@@ -141,7 +141,7 @@ MediumMobileProperties.story = {
 
 export const LargeMobileProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), undefined);
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.COLUMN);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
@@ -195,6 +195,7 @@ export const TabletProperties = () => {
   const tablet = {
     inline,
     direction,
+    spaceAfter,
     wrap,
     grow,
     shrink,
@@ -333,7 +334,6 @@ export const Playground = () => {
   const direction = select("Direction", Object.values(DIRECTIONS), undefined);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
-  const legacy = boolean("Legacy", false);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "");
   const align = select("Align", Object.values(ALIGNS), ALIGNS.START);
@@ -364,7 +364,6 @@ export const Playground = () => {
       dataTest={dataTest}
       flex={flex}
       direction={direction}
-      legacy={legacy}
       align={align}
       justify={justify}
       wrap={wrap}

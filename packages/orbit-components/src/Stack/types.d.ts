@@ -12,6 +12,7 @@ export type Justify = "start" | "end" | "center" | "between" | "around";
 export type Basis = string | ((theme: Theme) => string);
 export type Spacing =
   | "none"
+  | "reverse"
   | "XXXSmall"
   | "XXSmall"
   | "XSmall"
@@ -22,9 +23,10 @@ export type Spacing =
   | "XXLarge"
   | "XXXLarge";
 
-interface MediaQuery extends Common.SpaceAfter {
+export interface CommonProps extends Common.SpaceAfter {
   readonly inline?: boolean;
   readonly direction?: Direction;
+  readonly flex?: boolean;
   readonly wrap?: boolean;
   readonly grow?: boolean;
   readonly shrink?: boolean;
@@ -34,23 +36,12 @@ interface MediaQuery extends Common.SpaceAfter {
   readonly spacing?: Spacing;
 }
 
-export interface Props extends Common.Globals, Common.SpaceAfter {
-  readonly inline?: boolean;
-  readonly direction?: Direction;
-  readonly flex?: boolean;
-  readonly wrap?: boolean;
-  readonly grow?: boolean;
-  readonly shrink?: boolean;
-  readonly legacy?: boolean;
-  readonly basis?: Basis;
-  readonly align?: Align;
-  readonly justify?: Justify;
-  readonly spacing?: Spacing;
-  readonly mediumMobile?: MediaQuery;
-  readonly largeMobile?: MediaQuery;
-  readonly tablet?: MediaQuery;
-  readonly desktop?: MediaQuery;
+export interface Props extends CommonProps, Common.Globals {
+  readonly mediumMobile?: CommonProps;
+  readonly largeMobile?: CommonProps;
+  readonly tablet?: CommonProps;
+  readonly desktop?: CommonProps;
   readonly as?: string;
-  readonly largeDesktop?: MediaQuery;
+  readonly largeDesktop?: CommonProps;
   readonly children: React.ReactNode;
 }

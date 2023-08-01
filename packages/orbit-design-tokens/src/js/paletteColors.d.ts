@@ -20,6 +20,8 @@ export type Tokens = {
   blueDarkHover: string;
   blueDarkActive: string;
   blueDarker: string;
+  bundleBasic: string;
+  bundleMedium: string;
   cloudLight: string;
   cloudLightHover: string;
   cloudLightActive: string;

@@ -69,6 +69,12 @@ export type Tokens = {
   backgroundButtonBundleBasic: string;
   backgroundButtonBundleBasicHover: string;
   backgroundButtonBundleBasicActive: string;
+  backgroundButtonBundleMedium: string;
+  backgroundButtonBundleMediumHover: string;
+  backgroundButtonBundleMediumActive: string;
+  backgroundButtonBundleTop: string;
+  backgroundButtonBundleTopHover: string;
+  backgroundButtonBundleTopActive: string;
   backgroundButtonCriticalSubtle: string;
   backgroundButtonCriticalSubtleHover: string;
   backgroundButtonCriticalSubtleActive: string;
@@ -110,12 +116,6 @@ export type Tokens = {
   backgroundButtonGoogle: string;
   backgroundButtonGoogleHover: string;
   backgroundButtonGoogleActive: string;
-  backgroundBundleMedium: string;
-  backgroundBundleMediumHover: string;
-  backgroundBundleMediumActive: string;
-  backgroundBundleTop: string;
-  backgroundBundleTopHover: string;
-  backgroundBundleTopActive: string;
   backgroundCard: string;
   backgroundCarrierLogo: string;
   backgroundCountryFlag: string;
@@ -734,6 +734,8 @@ export type Tokens = {
   paletteBlueDarkHover: string;
   paletteBlueDarkActive: string;
   paletteBlueDarker: string;
+  paletteBundleBasic: string;
+  paletteBundleMedium: string;
   paletteCloudLight: string;
   paletteCloudLightHover: string;
   paletteCloudLightActive: string;
@@ -885,6 +887,12 @@ const createTokens: CreateTokens = foundation => ({
   backgroundButtonBundleBasic: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
   backgroundButtonBundleBasicHover: "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
   backgroundButtonBundleBasicActive: "linear-gradient(to top right, #9F1816 0%, #C36802 100%)",
+  backgroundButtonBundleMedium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
+  backgroundButtonBundleMediumHover: "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
+  backgroundButtonBundleMediumActive: "linear-gradient(to top right, #250F79 0%, #5A3485 100%)",
+  backgroundButtonBundleTop: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+  backgroundButtonBundleTopHover: "linear-gradient(to top right, #171718 0%, #51575C 100%)",
+  backgroundButtonBundleTopActive: "linear-gradient(to top right, #101011 0%, #51575C)",
   backgroundButtonCriticalSubtle: foundation.palette.red.light,
   backgroundButtonCriticalSubtleHover: foundation.palette.red.lightHover,
   backgroundButtonCriticalSubtleActive: foundation.palette.red.lightActive,
@@ -926,12 +934,6 @@ const createTokens: CreateTokens = foundation => ({
   backgroundButtonGoogle: foundation.palette.cloud.light,
   backgroundButtonGoogleHover: foundation.palette.cloud.lightHover,
   backgroundButtonGoogleActive: foundation.palette.cloud.lightActive,
-  backgroundBundleMedium: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
-  backgroundBundleMediumHover: "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
-  backgroundBundleMediumActive: "linear-gradient(to top right, #250F79 0%, #5A3485 100%)",
-  backgroundBundleTop: "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
-  backgroundBundleTopHover: "linear-gradient(to top right, #171718 0%, #51575C 100%)",
-  backgroundBundleTopActive: "linear-gradient(to top right, #101011 0%, #51575C)",
   backgroundCard: foundation.palette.white.normal,
   backgroundCarrierLogo: "transparent",
   backgroundCountryFlag: "transparent",
@@ -1732,6 +1734,8 @@ const createTokens: CreateTokens = foundation => ({
   paletteBlueDarkHover: foundation.palette.blue.darkHover,
   paletteBlueDarkActive: foundation.palette.blue.darkActive,
   paletteBlueDarker: foundation.palette.blue.darker,
+  paletteBundleBasic: foundation.palette.bundle.basic,
+  paletteBundleMedium: foundation.palette.bundle.medium,
   paletteCloudLight: foundation.palette.cloud.light,
   paletteCloudLightHover: foundation.palette.cloud.lightHover,
   paletteCloudLightActive: foundation.palette.cloud.lightActive,

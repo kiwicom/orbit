@@ -1,0 +1,10 @@
+{
+  "foundation": {
+    "palette": {
+      "bundle": {
+        "basic": { "value": "#D7331C", "internal": true, "type": "color" },
+        "medium": { "value": "#3B1EB0", "internal": true, "type": "color" }
+      }
+    }
+  }
+}

@@ -53,6 +53,10 @@ describe("orbit-tailwind-preset", () => {
             "normal-active": "#01508E",
             "normal-hover": "#0161AC",
           },
+          "bundle": Object {
+            "basic": "#D7331C",
+            "medium": "#3B1EB0",
+          },
           "cloud": Object {
             "dark": "#BAC7D5",
             "dark-active": "#94A8BE",

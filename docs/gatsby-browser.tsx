@@ -1,5 +1,5 @@
-import "tailwindcss/lib/css/preflight.css";
 import type { GatsbyBrowser } from "gatsby";
+import "./src/styles/global.css";
 
 import wrapWithProviders from "./wrapWithProviders";
 

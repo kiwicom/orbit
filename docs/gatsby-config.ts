@@ -137,6 +137,7 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-postcss",
     "gatsby-plugin-loadable-components-ssr",
     "gatsby-plugin-meta-redirect",
     "gatsby-plugin-lodash",

@@ -17,7 +17,7 @@ export type Event<T> = (event: T) => void | Promise<void>;
 export type Component =
   | string
   | React.ComponentType<any>
-  | React.RefForwardingComponent<HTMLElement, any>;
+  | React.ForwardRefRenderFunction<HTMLElement, any>;
 export type Size = "small" | "normal" | "large" | "extraLarge";
 export type InputSize = "small" | "normal";
 

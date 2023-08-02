@@ -1,12 +1,13 @@
 name: Test
 
+#TODO remove the all branches condition later
 on:
   push:
     branches:
       - master
   pull_request:
     branches:
-      - master
+      - "**"
 
 env: # Set environment variables for every job and step in this workflow
   CLICOLOR: "1" # Enable colors for *NIX commands

@@ -8,12 +8,14 @@ import LockScrolling from "./pages/lock-scrolling";
 import MediaQueries from "./pages/media-queries";
 import ModalFooter from "./pages/modal-footer";
 import BoxMediaProps from "./pages/box-mediaquery-props";
+import StackMediaProps from "./pages/stack-mediaquery-props";
 
 const router = createRouter({
   lockScrolling: "/lock-scrolling",
   mediaQueries: "/media-queries",
   modalFooter: "/modal-footer",
   boxMediaProps: "/box-media-props",
+  stackMediaProps: "/stack-media-props",
 });
 
 function PageNotFound() {
@@ -57,6 +59,12 @@ function App() {
       return (
         <OrbitProvider theme={defaultTheme}>
           <BoxMediaProps />
+        </OrbitProvider>
+      );
+    case "stackMediaProps":
+      return (
+        <OrbitProvider theme={defaultTheme}>
+          <StackMediaProps />
         </OrbitProvider>
       );
     default:

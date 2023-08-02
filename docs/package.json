@@ -122,5 +122,8 @@
     "uuid": "^8.3.2",
     "vfile-reporter": "^7.0.5",
     "webpack": "^5.76.0"
+  },
+  "devDependencies": {
+    "gatsby-plugin-postcss": "^6.11.0"
   }
 }

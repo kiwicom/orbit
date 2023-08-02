@@ -17,6 +17,8 @@ export type ColorTokens =
   | "blueLightHover"
   | "blueLightActive"
   | "blueNormal"
+  | "bundleBasic"
+  | "bundleMedium"
   | "blueNormalHover"
   | "blueNormalActive"
   | "blueDark"

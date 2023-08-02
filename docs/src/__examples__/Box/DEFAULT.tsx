@@ -208,6 +208,8 @@ export default {
             "productDarkActive",
             "productDarker",
             "white",
+            "bundleBasic",
+            "bundleMedium",
             "whiteHover",
             "whiteActive",
             "cloudLight",

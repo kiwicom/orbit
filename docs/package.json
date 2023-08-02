@@ -30,8 +30,8 @@
     "@kiwicom/babel-plugin-orbit-components": "*",
     "@kiwicom/orbit-components": "*",
     "@kiwicom/orbit-design-tokens": "5.0.0-beta.3",
+    "@kiwicom/orbit-tailwind-preset": "1.0.0-beta.7",
     "@kiwicom/orbit-themer": "*",
-    "@kiwicom/orbit-tailwind-preset": "1.0.0-beta.6",
     "@loadable/component": "^5.15.3",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/mdx": "^1.6.22",
@@ -122,5 +122,8 @@
     "uuid": "^8.3.2",
     "vfile-reporter": "^7.0.5",
     "webpack": "^5.76.0"
+  },
+  "devDependencies": {
+    "gatsby-plugin-postcss": "^6.11.0"
   }
 }

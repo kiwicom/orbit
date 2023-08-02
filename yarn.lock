@@ -1270,7 +1270,7 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.6", "@babel/runtime@^7.14.8", "@babel/runtime@^7.15.4", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.0", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.6", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.6", "@babel/runtime@^7.14.8", "@babel/runtime@^7.15.4", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.0", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.6", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
   version "7.22.6"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.22.6.tgz"
   integrity sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==
@@ -2666,20 +2666,6 @@
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-4.2.1.tgz#d804e46cea1bd57c3b432e7a9e7c2e48ab0bee70"
   integrity sha512-2fBeaYDAWLHAlafpUYSVPsR8ja13TM7b6b/2PH30n+FrbOts5eWaan7CVgZnOeGaTVfnh7CvJ5CeP7nR+KhUOw==
-
-"@kiwicom/orbit-design-tokens@5.0.0-beta.1":
-  version "5.0.0-beta.1"
-  resolved "https://registry.npmjs.org/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-5.0.0-beta.1.tgz"
-  integrity sha512-CwOruWrd57ZSL4FyyPBLXYGuVdJPrWUosJmO4LWE3SeZsAD1KXe764bVZb1nQCAxa/oAxmdOrGDSU/1PJcpiQg==
-  dependencies:
-    color2k "^2.0.2"
-
-"@kiwicom/orbit-tailwind-preset@1.0.0-beta.6":
-  version "1.0.0-beta.6"
-  resolved "https://registry.npmjs.org/@kiwicom/orbit-tailwind-preset/-/orbit-tailwind-preset-1.0.0-beta.6.tgz"
-  integrity sha512-G6Loc4ilOdXn5sSZjXAfeLBCzQuKEZZAwc2WlK+QsNtdOR3Psxhw5FI+OLEfwfdyxH0hiONROfuV1JUyglLNWA==
-  dependencies:
-    "@kiwicom/orbit-design-tokens" "5.0.0-beta.1"
 
 "@lerna/add@5.2.0":
   version "5.2.0"
@@ -14080,6 +14066,14 @@ gatsby-plugin-page-creator@^4.25.0:
     globby "^11.1.0"
     lodash "^4.17.21"
 
+gatsby-plugin-postcss@^6.11.0:
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-6.11.0.tgz#80e78231857f31d6acb1494b12bef0c09a49938d"
+  integrity sha512-/gwAOPxiYPVVPmBwnkpD4Wlg+7svS0b17A6g0ajHfV46N0RQzvP25RRpkMskmC9NbyaxA/wHrASyF+Uv5i0fNQ==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+    postcss-loader "^7.3.2"
+
 gatsby-plugin-react-helmet@^5.9.0:
   version "5.25.0"
   resolved "https://registry.npmjs.org/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-5.25.0.tgz"
@@ -21289,7 +21283,7 @@ postcss-loader@^5.3.0:
     klona "^2.0.4"
     semver "^7.3.4"
 
-postcss-loader@^7.2.4:
+postcss-loader@^7.2.4, postcss-loader@^7.3.2:
   version "7.3.3"
   resolved "https://registry.npmjs.org/postcss-loader/-/postcss-loader-7.3.3.tgz"
   integrity sha512-YgO/yhtevGO/vJePCQmTxiaEwER94LABZN0ZMT4A0vsak9TpO+RvKRs7EmJ8peIlB9xfXCsS7M8LjqncsUZ5HA==

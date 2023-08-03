@@ -21,6 +21,7 @@ export type Blue = {
   normalActive: string;
   normalHover: string;
 };
+export type Bundle = { basic: string; medium: string };
 export type Cloud = {
   dark: string;
   darkActive: string;
@@ -126,6 +127,7 @@ export type LineHeight = { small: string; normal: string; large: string; extraLa
 export type FontWeight = { normal: string; medium: string; bold: string };
 export type Palette = {
   blue: Blue;
+  bundle: Bundle;
   cloud: Cloud;
   green: Green;
   ink: Ink;
@@ -149,6 +151,7 @@ export type Foundation = {
 export type CustomFoundation = {
   palette?: Partial<{
     blue?: Partial<Blue>;
+    bundle?: Partial<Bundle>;
     cloud?: Partial<Cloud>;
     green?: Partial<Green>;
     ink?: Partial<Ink>;
@@ -179,6 +182,7 @@ const blue = {
   normalActive: "#01508E",
   normalHover: "#0161AC",
 };
+const bundle = { basic: "#D7331C", medium: "#3B1EB0" };
 const cloud = {
   dark: "#BAC7D5",
   darkActive: "#94A8BE",
@@ -284,7 +288,7 @@ const fontFamily = {
 const fontSize = { small: "13px", normal: "15px", large: "16px", extraLarge: "18px" };
 const lineHeight = { small: "16px", normal: "20px", large: "24px", extraLarge: "24px" };
 const fontWeight = { normal: "400", medium: "500", bold: "700" };
-const palette = { blue, cloud, green, ink, orange, product, red, social, white };
+const palette = { blue, bundle, cloud, green, ink, orange, product, red, social, white };
 const foundation = {
   palette,
   borderRadius,

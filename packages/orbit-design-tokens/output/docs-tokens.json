@@ -1220,6 +1220,138 @@
       "value": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)"
     }
   },
+  "backgroundButtonBundleMedium": {
+    "type": "color",
+    "deprecated": true,
+    "schema": {
+      "namespace": "component",
+      "object": "background",
+      "variant": "button",
+      "subVariant": "bundle-medium"
+    },
+    "javascript": {
+      "name": "backgroundButtonBundleMedium",
+      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)"
+    },
+    "foundation": {
+      "name": "backgroundButtonBundleMedium",
+      "value": "none"
+    },
+    "scss": {
+      "name": "backgroundButtonBundleMedium",
+      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)"
+    }
+  },
+  "backgroundButtonBundleMediumHover": {
+    "type": "color",
+    "deprecated": true,
+    "schema": {
+      "namespace": "component",
+      "object": "background",
+      "variant": "button",
+      "subVariant": "bundle-medium-hover"
+    },
+    "javascript": {
+      "name": "backgroundButtonBundleMediumHover",
+      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)"
+    },
+    "foundation": {
+      "name": "backgroundButtonBundleMediumHover",
+      "value": "none"
+    },
+    "scss": {
+      "name": "backgroundButtonBundleMediumHover",
+      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)"
+    }
+  },
+  "backgroundButtonBundleMediumActive": {
+    "type": "color",
+    "deprecated": true,
+    "schema": {
+      "namespace": "component",
+      "object": "background",
+      "variant": "button",
+      "subVariant": "bundle-medium-active"
+    },
+    "javascript": {
+      "name": "backgroundButtonBundleMediumActive",
+      "value": "linear-gradient(to top right, #250F79 0%, #5A3485 100%)"
+    },
+    "foundation": {
+      "name": "backgroundButtonBundleMediumActive",
+      "value": "none"
+    },
+    "scss": {
+      "name": "backgroundButtonBundleMediumActive",
+      "value": "linear-gradient(to top right, #250F79 0%, #5A3485 100%)"
+    }
+  },
+  "backgroundButtonBundleTop": {
+    "type": "color",
+    "deprecated": true,
+    "schema": {
+      "namespace": "component",
+      "object": "background",
+      "variant": "button",
+      "subVariant": "bundle-top"
+    },
+    "javascript": {
+      "name": "backgroundButtonBundleTop",
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)"
+    },
+    "foundation": {
+      "name": "backgroundButtonBundleTop",
+      "value": "none"
+    },
+    "scss": {
+      "name": "backgroundButtonBundleTop",
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)"
+    }
+  },
+  "backgroundButtonBundleTopHover": {
+    "type": "color",
+    "deprecated": true,
+    "schema": {
+      "namespace": "component",
+      "object": "background",
+      "variant": "button",
+      "subVariant": "bundle-top-hover"
+    },
+    "javascript": {
+      "name": "backgroundButtonBundleTopHover",
+      "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)"
+    },
+    "foundation": {
+      "name": "backgroundButtonBundleTopHover",
+      "value": "none"
+    },
+    "scss": {
+      "name": "backgroundButtonBundleTopHover",
+      "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)"
+    }
+  },
+  "backgroundButtonBundleTopActive": {
+    "type": "color",
+    "deprecated": true,
+    "schema": {
+      "namespace": "component",
+      "object": "background",
+      "variant": "button",
+      "subVariant": "bundle-top-active"
+    },
+    "javascript": {
+      "name": "backgroundButtonBundleTopActive",
+      "value": "linear-gradient(to top right, #101011 0%, #51575C)"
+    },
+    "foundation": {
+      "name": "backgroundButtonBundleTopActive",
+      "value": "none"
+    },
+    "scss": {
+      "name": "backgroundButtonBundleTopActive",
+      "value": "linear-gradient(to top right, #101011 0%, #51575C)"
+    }
+  },
   "backgroundButtonCriticalSubtle": {
     "type": "color",
     "deprecated": true,
@@ -2120,132 +2252,6 @@
     "scss": {
       "name": "backgroundButtonGoogleActive",
       "value": "rgb(214, 222, 230)"
-    }
-  },
-  "backgroundBundleMedium": {
-    "type": "color",
-    "deprecated": true,
-    "schema": {
-      "namespace": "component",
-      "object": "background",
-      "variant": "bundle-medium"
-    },
-    "javascript": {
-      "name": "backgroundBundleMedium",
-      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)"
-    },
-    "foundation": {
-      "name": "backgroundBundleMedium",
-      "value": "none"
-    },
-    "scss": {
-      "name": "backgroundBundleMedium",
-      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)"
-    }
-  },
-  "backgroundBundleMediumHover": {
-    "type": "color",
-    "deprecated": true,
-    "schema": {
-      "namespace": "component",
-      "object": "background",
-      "variant": "bundle-medium-hover"
-    },
-    "javascript": {
-      "name": "backgroundBundleMediumHover",
-      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)"
-    },
-    "foundation": {
-      "name": "backgroundBundleMediumHover",
-      "value": "none"
-    },
-    "scss": {
-      "name": "backgroundBundleMediumHover",
-      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)"
-    }
-  },
-  "backgroundBundleMediumActive": {
-    "type": "color",
-    "deprecated": true,
-    "schema": {
-      "namespace": "component",
-      "object": "background",
-      "variant": "bundle-medium-active"
-    },
-    "javascript": {
-      "name": "backgroundBundleMediumActive",
-      "value": "linear-gradient(to top right, #250F79 0%, #5A3485 100%)"
-    },
-    "foundation": {
-      "name": "backgroundBundleMediumActive",
-      "value": "none"
-    },
-    "scss": {
-      "name": "backgroundBundleMediumActive",
-      "value": "linear-gradient(to top right, #250F79 0%, #5A3485 100%)"
-    }
-  },
-  "backgroundBundleTop": {
-    "type": "color",
-    "deprecated": true,
-    "schema": {
-      "namespace": "component",
-      "object": "background",
-      "variant": "bundle-top"
-    },
-    "javascript": {
-      "name": "backgroundBundleTop",
-      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)"
-    },
-    "foundation": {
-      "name": "backgroundBundleTop",
-      "value": "none"
-    },
-    "scss": {
-      "name": "backgroundBundleTop",
-      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)"
-    }
-  },
-  "backgroundBundleTopHover": {
-    "type": "color",
-    "deprecated": true,
-    "schema": {
-      "namespace": "component",
-      "object": "background",
-      "variant": "bundle-top-hover"
-    },
-    "javascript": {
-      "name": "backgroundBundleTopHover",
-      "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)"
-    },
-    "foundation": {
-      "name": "backgroundBundleTopHover",
-      "value": "none"
-    },
-    "scss": {
-      "name": "backgroundBundleTopHover",
-      "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)"
-    }
-  },
-  "backgroundBundleTopActive": {
-    "type": "color",
-    "deprecated": true,
-    "schema": {
-      "namespace": "component",
-      "object": "background",
-      "variant": "bundle-top-active"
-    },
-    "javascript": {
-      "name": "backgroundBundleTopActive",
-      "value": "linear-gradient(to top right, #101011 0%, #51575C)"
-    },
-    "foundation": {
-      "name": "backgroundBundleTopActive",
-      "value": "none"
-    },
-    "scss": {
-      "name": "backgroundBundleTopActive",
-      "value": "linear-gradient(to top right, #101011 0%, #51575C)"
     }
   },
   "backgroundCard": {
@@ -15555,6 +15561,48 @@
     "scss": {
       "name": "paletteBlueDarker",
       "value": "rgb(0, 70, 128)"
+    }
+  },
+  "paletteBundleBasic": {
+    "type": "color",
+    "schema": {
+      "namespace": "global",
+      "object": "palette",
+      "variant": "bundle",
+      "subVariant": "basic"
+    },
+    "javascript": {
+      "name": "paletteBundleBasic",
+      "value": "#D7331C"
+    },
+    "foundation": {
+      "name": "paletteBundleBasic",
+      "value": "foundation.palette.bundle.basic"
+    },
+    "scss": {
+      "name": "paletteBundleBasic",
+      "value": "rgb(215, 51, 28)"
+    }
+  },
+  "paletteBundleMedium": {
+    "type": "color",
+    "schema": {
+      "namespace": "global",
+      "object": "palette",
+      "variant": "bundle",
+      "subVariant": "medium"
+    },
+    "javascript": {
+      "name": "paletteBundleMedium",
+      "value": "#3B1EB0"
+    },
+    "foundation": {
+      "name": "paletteBundleMedium",
+      "value": "foundation.palette.bundle.medium"
+    },
+    "scss": {
+      "name": "paletteBundleMedium",
+      "value": "rgb(59, 30, 176)"
     }
   },
   "paletteCloudLight": {

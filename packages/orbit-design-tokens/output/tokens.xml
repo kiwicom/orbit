@@ -220,6 +220,30 @@
     <value>linear-gradient(to top right, #9F1816 0%, #C36802 100%)</value>
   </token>
   <token>
+    <name>backgroundButtonBundleMedium</name>
+    <value>linear-gradient(to top right, #3719AB 0%, #8539DB 100%)</value>
+  </token>
+  <token>
+    <name>backgroundButtonBundleMediumHover</name>
+    <value>linear-gradient(to top right, #BD2825 0%, #D67000 100%)</value>
+  </token>
+  <token>
+    <name>backgroundButtonBundleMediumActive</name>
+    <value>linear-gradient(to top right, #250F79 0%, #5A3485 100%)</value>
+  </token>
+  <token>
+    <name>backgroundButtonBundleTop</name>
+    <value>linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)</value>
+  </token>
+  <token>
+    <name>backgroundButtonBundleTopHover</name>
+    <value>linear-gradient(to top right, #171718 0%, #51575C 100%)</value>
+  </token>
+  <token>
+    <name>backgroundButtonBundleTopActive</name>
+    <value>linear-gradient(to top right, #101011 0%, #51575C)</value>
+  </token>
+  <token>
     <name>backgroundButtonCriticalSubtle</name>
     <value>#FAEAEA</value>
   </token>
@@ -382,30 +406,6 @@
   <token>
     <name>backgroundButtonGoogleActive</name>
     <value>#D6DEE6</value>
-  </token>
-  <token>
-    <name>backgroundBundleMedium</name>
-    <value>linear-gradient(to top right, #3719AB 0%, #8539DB 100%)</value>
-  </token>
-  <token>
-    <name>backgroundBundleMediumHover</name>
-    <value>linear-gradient(to top right, #BD2825 0%, #D67000 100%)</value>
-  </token>
-  <token>
-    <name>backgroundBundleMediumActive</name>
-    <value>linear-gradient(to top right, #250F79 0%, #5A3485 100%)</value>
-  </token>
-  <token>
-    <name>backgroundBundleTop</name>
-    <value>linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)</value>
-  </token>
-  <token>
-    <name>backgroundBundleTopHover</name>
-    <value>linear-gradient(to top right, #171718 0%, #51575C 100%)</value>
-  </token>
-  <token>
-    <name>backgroundBundleTopActive</name>
-    <value>linear-gradient(to top right, #101011 0%, #51575C)</value>
   </token>
   <token>
     <name>backgroundCard</name>
@@ -2878,6 +2878,14 @@
   <token>
     <name>paletteBlueDarker</name>
     <value>#004680</value>
+  </token>
+  <token>
+    <name>paletteBundleBasic</name>
+    <value>#D7331C</value>
+  </token>
+  <token>
+    <name>paletteBundleMedium</name>
+    <value>#3B1EB0</value>
   </token>
   <token>
     <name>paletteCloudLight</name>

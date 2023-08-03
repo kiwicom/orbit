@@ -181,6 +181,24 @@
   "backgroundButtonBundleBasicActive": {
     "version": "1.0.0"
   },
+  "backgroundButtonBundleMedium": {
+    "version": "1.0.0"
+  },
+  "backgroundButtonBundleMediumHover": {
+    "version": "1.0.0"
+  },
+  "backgroundButtonBundleMediumActive": {
+    "version": "1.0.0"
+  },
+  "backgroundButtonBundleTop": {
+    "version": "1.0.0"
+  },
+  "backgroundButtonBundleTopHover": {
+    "version": "1.0.0"
+  },
+  "backgroundButtonBundleTopActive": {
+    "version": "1.0.0"
+  },
   "backgroundButtonCriticalSubtle": {
     "version": "1.0.0"
   },
@@ -315,24 +333,6 @@
   },
   "backgroundButtonGoogleActive": {
     "replaceForToken": null,
-    "version": "1.0.0"
-  },
-  "backgroundBundleMedium": {
-    "version": "1.0.0"
-  },
-  "backgroundBundleMediumHover": {
-    "version": "1.0.0"
-  },
-  "backgroundBundleMediumActive": {
-    "version": "1.0.0"
-  },
-  "backgroundBundleTop": {
-    "version": "1.0.0"
-  },
-  "backgroundBundleTopHover": {
-    "version": "1.0.0"
-  },
-  "backgroundBundleTopActive": {
     "version": "1.0.0"
   },
   "backgroundCard": {

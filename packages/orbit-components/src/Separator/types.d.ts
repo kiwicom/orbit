@@ -7,6 +7,8 @@ export type Align = "left" | "center" | "right";
 
 export type PaletteTokens =
   | "paletteBlueLight"
+  | "paletteBundleBasic"
+  | "paletteBundleMedium"
   | "paletteBlueLightHover"
   | "paletteBlueLightActive"
   | "paletteBlueNormal"

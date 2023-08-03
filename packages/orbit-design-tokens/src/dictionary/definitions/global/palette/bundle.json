@@ -1,0 +1,16 @@
+{
+  "global": {
+    "palette": {
+      "bundle": {
+        "basic": {
+          "value": "{foundation.palette.bundle.basic}",
+          "type": "color"
+        },
+        "medium": {
+          "value": "{foundation.palette.bundle.medium}",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

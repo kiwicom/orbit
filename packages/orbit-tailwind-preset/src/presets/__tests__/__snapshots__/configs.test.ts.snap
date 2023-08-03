@@ -234,6 +234,10 @@ Object {
             "normal-active": "#01508E",
             "normal-hover": "#0161AC",
           },
+          "bundle": Object {
+            "basic": "#D7331C",
+            "medium": "#3B1EB0",
+          },
           "cloud": Object {
             "dark": "#BAC7D5",
             "dark-active": "#94A8BE",
@@ -390,6 +394,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -601,6 +609,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "button-bundle-basic-background": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
       "button-bundle-basic-background-active": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)",
@@ -817,6 +829,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "button-critical-bordered": "#D21C1C",
       "button-critical-bordered-active": "#9D1515",
       "button-critical-bordered-hover": "#B91919",
@@ -1016,6 +1032,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -1123,6 +1143,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -1216,6 +1240,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -1391,6 +1419,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "button-critical-bordered": "#D21C1C",
       "button-critical-bordered-active": "#9D1515",
@@ -1582,6 +1614,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -1804,6 +1840,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -2323,6 +2363,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -2460,6 +2504,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -2572,6 +2620,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -2665,6 +2717,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -2895,6 +2951,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -3009,6 +3069,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "button-critical-foreground": "#FFFFFF",
       "button-critical-foreground-active": "#FFFFFF",
@@ -3183,6 +3247,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -3658,6 +3726,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -3852,6 +3924,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -4002,6 +4078,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -4149,6 +4229,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -4256,6 +4340,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -4349,6 +4437,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -4525,6 +4617,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -4663,6 +4759,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -4863,6 +4963,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -5319,6 +5423,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -5440,6 +5548,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -5552,6 +5664,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -5645,6 +5761,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",
@@ -5875,6 +5995,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -5976,6 +6100,10 @@ Object {
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
       },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
+      },
       "cloud": Object {
         "dark": "#BAC7D5",
         "dark-active": "#94A8BE",
@@ -6069,6 +6197,10 @@ Object {
         "normal": "#0172CB",
         "normal-active": "#01508E",
         "normal-hover": "#0161AC",
+      },
+      "bundle": Object {
+        "basic": "#D7331C",
+        "medium": "#3B1EB0",
       },
       "cloud": Object {
         "dark": "#BAC7D5",

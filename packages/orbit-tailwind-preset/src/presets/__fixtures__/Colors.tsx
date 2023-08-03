@@ -96,6 +96,9 @@ const Colors = () => (
     <p className="text-social-facebook">social-facebook</p>
     <p className="text-social-facebook-hover">social-facebook-hover</p>
     <p className="text-social-facebook-active">social-facebook-active</p>
+
+    <p className="text-bundle-basic">bundle-basic</p>
+    <p className="text-bundle-medium">bundle-medium</p>
   </div>
 );
 

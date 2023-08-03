@@ -2,10 +2,8 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import type * as Common from "../../../common/types";
-import { StyledText } from "../../../Text";
 import defaultTheme from "../../../defaultTheme";
 import Button from "../../../Button";
-import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
 import useLockScrolling from "../../../hooks/useLockScrolling";
@@ -64,13 +62,14 @@ const StyledTooltipContent = styled.div`
   color: ${({ theme }) => theme.orbit.paletteWhite};
   margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
 
-  & ${StyledText}, .orbit-list-item {
+  & .orbit-text,
+  .orbit-list-item {
     font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
     font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
     color: ${({ theme }) => theme.orbit.paletteWhite};
   }
 
-  & ${StyledTextLink} {
+  & .orbit-text-link {
     color: ${({ theme }) => theme.orbit.paletteWhite};
   }
 `;

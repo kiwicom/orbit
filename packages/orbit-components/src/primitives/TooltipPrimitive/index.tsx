@@ -2,7 +2,6 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import { SIZE_OPTIONS } from "./consts";
-import { StyledText } from "../../Text";
 import Portal from "../../Portal";
 import useRandomId from "../../hooks/useRandomId";
 import TooltipContent from "./components/TooltipContent";
@@ -23,7 +22,7 @@ export const StyledTooltipChildren = styled.span<{
     ${enabled &&
     !removeUnderlinedText &&
     css`
-      ${StyledText} {
+      .orbit-text {
         display: inline-block;
         text-decoration: underline;
         text-decoration: underline currentColor dotted;

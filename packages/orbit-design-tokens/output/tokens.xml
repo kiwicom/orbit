@@ -377,11 +377,11 @@
   </token>
   <token>
     <name>backgroundButtonWhiteBorderedHover</name>
-    <value>#FFFFFF</value>
+    <value>#FFFFFF33</value>
   </token>
   <token>
     <name>backgroundButtonWhiteBorderedActive</name>
-    <value>#FFFFFF</value>
+    <value>#FFFFFF33</value>
   </token>
   <token>
     <name>backgroundButtonFacebook</name>
@@ -1501,7 +1501,7 @@
   </token>
   <token>
     <name>buttonPrimaryBorderColorFocus</name>
-    <value>#00A58E</value>
+    <value>#00A58E80</value>
   </token>
   <token>
     <name>buttonSecondaryBackground</name>
@@ -1601,7 +1601,7 @@
   </token>
   <token>
     <name>buttonWhiteBorderColorFocus</name>
-    <value>#E7ECF1</value>
+    <value>#E7ECF180</value>
   </token>
   <token>
     <name>boxShadowButtonFocus</name>
@@ -2437,7 +2437,7 @@
   </token>
   <token>
     <name>socialButtonAppleBorderColorFocus</name>
-    <value>#697D95</value>
+    <value>#697D9580</value>
   </token>
   <token>
     <name>socialButtonAppleIconForeground</name>
@@ -2525,7 +2525,7 @@
   </token>
   <token>
     <name>socialButtonTwitterBorderColorFocus</name>
-    <value>#697D95</value>
+    <value>#697D9580</value>
   </token>
   <token>
     <name>socialButtonTwitterIconForeground</name>
@@ -2596,24 +2596,84 @@
     <value>#007A69</value>
   </token>
   <token>
+    <name>textLinkPrimaryForegroundHover</name>
+    <value>#007060</value>
+  </token>
+  <token>
+    <name>textLinkPrimaryForegroundActive</name>
+    <value>#006657</value>
+  </token>
+  <token>
     <name>textLinkSecondaryForeground</name>
     <value>#252A31</value>
   </token>
   <token>
-    <name>textLinkForegroundHover</name>
-    <value>#009580</value>
+    <name>textLinkSecondaryForegroundHover</name>
+    <value>#007060</value>
   </token>
   <token>
-    <name>textLinkTextDecoration</name>
-    <value>underline</value>
+    <name>textLinkSecondaryForegroundActive</name>
+    <value>#006657</value>
   </token>
   <token>
-    <name>textLinkTextDecorationHover</name>
-    <value>none</value>
+    <name>textLinkSuccessForeground</name>
+    <value>#2D7738</value>
   </token>
   <token>
-    <name>textLinkFontWeight</name>
-    <value>500</value>
+    <name>textLinkSuccessForegroundHover</name>
+    <value>#276831</value>
+  </token>
+  <token>
+    <name>textLinkSuccessForegroundActive</name>
+    <value>#235C2B</value>
+  </token>
+  <token>
+    <name>textLinkInfoForeground</name>
+    <value>#005AA3</value>
+  </token>
+  <token>
+    <name>textLinkInfoForegroundHover</name>
+    <value>#004F8F</value>
+  </token>
+  <token>
+    <name>textLinkInfoForegroundActive</name>
+    <value>#004680</value>
+  </token>
+  <token>
+    <name>textLinkWarningForeground</name>
+    <value>#AD5700</value>
+  </token>
+  <token>
+    <name>textLinkWarningForegroundHover</name>
+    <value>#A75400</value>
+  </token>
+  <token>
+    <name>textLinkWarningForegroundActive</name>
+    <value>#803F00</value>
+  </token>
+  <token>
+    <name>textLinkCriticalForeground</name>
+    <value>#970C0C</value>
+  </token>
+  <token>
+    <name>textLinkCriticalForegroundHover</name>
+    <value>#890B0B</value>
+  </token>
+  <token>
+    <name>textLinkCriticalForegroundActive</name>
+    <value>#760909</value>
+  </token>
+  <token>
+    <name>textLinkWhiteForeground</name>
+    <value>#FFFFFF</value>
+  </token>
+  <token>
+    <name>textLinkWhiteForegroundHover</name>
+    <value>#E1F4F3</value>
+  </token>
+  <token>
+    <name>textLinkWhiteForegroundActive</name>
+    <value>#E1F4F3</value>
   </token>
   <token>
     <name>textDecorationTextLinkPrimary</name>
@@ -2632,28 +2692,56 @@
     <value>none</value>
   </token>
   <token>
+    <name>textPrimaryBackground</name>
+    <value>#252A311A</value>
+  </token>
+  <token>
     <name>textPrimaryForeground</name>
     <value>#252A31</value>
+  </token>
+  <token>
+    <name>textSecondaryBackground</name>
+    <value>#4F5E711A</value>
   </token>
   <token>
     <name>textSecondaryForeground</name>
     <value>#4F5E71</value>
   </token>
   <token>
+    <name>textInfoBackground</name>
+    <value>#0172CB1A</value>
+  </token>
+  <token>
     <name>textInfoForeground</name>
     <value>#0172CB</value>
+  </token>
+  <token>
+    <name>textSuccessBackground</name>
+    <value>#28A1381A</value>
   </token>
   <token>
     <name>textSuccessForeground</name>
     <value>#28A138</value>
   </token>
   <token>
+    <name>textWarningBackground</name>
+    <value>#DF7B001A</value>
+  </token>
+  <token>
     <name>textWarningForeground</name>
     <value>#DF7B00</value>
   </token>
   <token>
+    <name>textCriticalBackground</name>
+    <value>#D21C1C1A</value>
+  </token>
+  <token>
     <name>textCriticalForeground</name>
     <value>#D21C1C</value>
+  </token>
+  <token>
+    <name>textWhiteBackground</name>
+    <value>#FFFFFF1A</value>
   </token>
   <token>
     <name>textWhiteForeground</name>

@@ -1,5 +1,5 @@
 import { DesignToken } from "style-dictionary";
-import { parseToRgba } from "color2k";
+import { rgba, parseToRgba } from "color2k";
 
 import {
   isBorderRadius,
@@ -11,9 +11,11 @@ import {
   isOpacity,
   isColor,
   isHex,
+  isRgb,
 } from "../utils/is.js";
 import { errorTransform } from "../utils/errorMessage.js";
 import { stringify, pixelized } from "../utils/string.js";
+import { determinateAlphaHex } from "../utils/determinate.js";
 
 /*
   Transforms sizes to pixel value.
@@ -64,6 +66,10 @@ export const valueJavascript = {
     if (isDuration(prop)) return durationJavascript.transformer(prop);
     if (isZIndex(prop) || isBreakpoint(prop) || isModifier(prop)) return Number(prop.value);
     if (isOpacity(prop)) return stringify(Number(prop.value) / 100);
+    if (isColor(prop))
+      return prop.opacity !== undefined
+        ? `${stringify(prop.value)}${determinateAlphaHex(prop.opacity)}`
+        : stringify(prop.value);
     return stringify(prop.value);
   },
 };
@@ -80,11 +86,15 @@ export const valueXML = {
 
 export const valueColorRgb = {
   name: "value/color/rgb",
+  transitive: true,
   type: "value",
   transformer: (prop: DesignToken) => {
-    if (isColor(prop) && isHex(prop.value)) {
+    if (isColor(prop) && (isHex(prop.value) || isRgb(prop.value))) {
       const [R, G, B] = parseToRgba(String(prop.value));
-      return `rgb(${R}, ${G}, ${B})`;
+
+      return prop.opacity !== undefined
+        ? rgba(R, G, B, prop.opacity / 100)
+        : `rgb(${R}, ${G}, ${B})`;
     }
 
     return prop.value;

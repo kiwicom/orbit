@@ -1,0 +1,55 @@
+{
+  "component": {
+    "text": {
+      "primary": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}",
+          "opacity": 10
+        }
+      },
+      "secondary": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}",
+          "opacity": 10
+        }
+      },
+      "info": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}",
+          "opacity": 10
+        }
+      },
+      "success": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}",
+          "opacity": 10
+        }
+      },
+      "warning": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}",
+          "opacity": 10
+        }
+      },
+      "critical": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}",
+          "opacity": 10
+        }
+      },
+      "white": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}",
+          "opacity": 10
+        }
+      }
+    }
+  }
+}

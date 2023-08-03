@@ -3,7 +3,6 @@
   DOCUMENTATION: https://orbit.kiwi/components/text/
 */
 import * as React from "react";
-import type { StyledComponent } from "styled-components";
 
 import type { spaceAfter } from "../common/getSpacingToken/index.js.flow";
 import type { Globals, ObjectProperty } from "../common/common.js.flow";
@@ -32,5 +31,3 @@ export type Props = {|
 |};
 
 declare export default React.ComponentType<Props>;
-
-declare export var StyledText: StyledComponent<any, any, HTMLElement>;

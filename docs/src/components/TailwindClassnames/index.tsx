@@ -1,6 +1,5 @@
 import React from "react";
-import { orbitComponentsPreset } from "@kiwicom/orbit-tailwind-preset";
-import type { Config } from "tailwindcss";
+import orbitFoundation, { orbitComponentsPreset } from "@kiwicom/orbit-tailwind-preset";
 import {
   Table,
   TableHead,
@@ -12,7 +11,11 @@ import {
   Heading,
 } from "@kiwicom/orbit-components";
 import styled from "styled-components";
-import { upperFirst } from "lodash";
+import { merge, upperFirst, transform, omit } from "lodash";
+
+import DesignTokenName from "../DesignTokensList/components/DesignTokenName";
+import DesignTokenValue from "../DesignTokensList/components/DesignTokenValue";
+import DesignTokenIcon from "../DesignTokensList/components/DesignTokenIcon";
 
 const StyledTableWrapper = styled.div`
   table {
@@ -23,6 +26,9 @@ const StyledTableWrapper = styled.div`
 const tailwindPrefixes = {
   BackgroundColor: "bg",
   BorderColor: "border",
+  BorderRadius: "rounded",
+  BoxShadow: "shadow",
+  TransitionDuration: "duration",
   TextColor: "text",
   Padding: "p",
   Width: "w",
@@ -30,40 +36,49 @@ const tailwindPrefixes = {
   LineHeight: "leading",
   FontSize: "text",
   FontWeight: "font",
+  FontFamily: "font",
+  ZIndex: "z",
   Animation: "animate",
 };
 
-const getClassnames = (config: Config) => {
-  const classnames = {};
+const getCategory = (name: string) => {
+  if (["Padding", "Width", "Height"].includes(name)) return "size";
+  if (["FontWeight", "FontSize", "LineHeight", "FontFamily"].includes(name)) return "typography";
+  if (name === "ZIndex") return "z-index";
+  if (name === "BorderRadius") return "border-radius";
+  if (name === "BoxShadow") return "elevation";
+  if (name === "Spacing") return "spacing";
+  if (name === "Screens") return "breakpoint";
+  if (name === "TransitionDuration") return "duration";
 
-  if (config && config?.theme?.extend) {
-    Object.keys(config.theme.extend).forEach(group => {
-      if (config?.theme?.extend) {
-        if (group !== "keyframes") {
-          classnames[upperFirst(group)] = {
-            ...config.theme.extend[group],
-          };
-        }
-      }
-    });
-  }
-
-  return classnames;
+  return "palette";
 };
 
 const TailwindClassnames = () => {
-  const groups = getClassnames(orbitComponentsPreset());
-
-  const [listOfClassnames, setListOfClassnames] = React.useState(() =>
-    getClassnames(orbitComponentsPreset()),
+  const mergedConfigs = omit(
+    transform(
+      merge(orbitComponentsPreset()?.theme?.extend, {
+        ...orbitFoundation.theme,
+        zIndex: orbitFoundation.theme?.extend?.zIndex,
+      }),
+      (r, v, k) => {
+        // eslint-disable-next-line no-param-reassign
+        r[upperFirst(k)] = v;
+        return r;
+      },
+      {},
+    ),
+    ["Keyframes", "Colors", "Extend"],
   );
+
+  const [listOfClassnames, setListOfClassnames] = React.useState(mergedConfigs);
 
   const [selectedGroup, setSelectedGroup] = React.useState<string>();
 
   return (
-    <Stack direction="column" spacing="XLarge">
-      <Stack flex spacing="small">
-        {Object.keys(groups).map(grp => {
+    <Stack direction="column" shrink spacing="XLarge">
+      <Stack inline spacing="small" wrap>
+        {Object.keys(mergedConfigs).map(grp => {
           return (
             <Button
               type={selectedGroup === grp ? "primary" : "secondary"}
@@ -73,7 +88,7 @@ const TailwindClassnames = () => {
                 setListOfClassnames(() => {
                   return {
                     [grp]: {
-                      ...groups[grp],
+                      ...mergedConfigs[grp],
                     },
                   };
                 });
@@ -101,8 +116,19 @@ const TailwindClassnames = () => {
                 {Object.entries(listOfClassnames[group]).map(([name, value]) => {
                   return (
                     <TableRow>
-                      <TableCell>{`${tailwindPrefixes[group]}-${name}`}</TableCell>
-                      <TableCell>{String(value)}</TableCell>
+                      <TableCell>
+                        <Stack flex align="center">
+                          <DesignTokenIcon value={String(value)} type={getCategory(group)} />
+                          <DesignTokenName>
+                            {["Screens", "Spacing"].includes(group)
+                              ? name
+                              : `${tailwindPrefixes[group]}-${name}`}
+                          </DesignTokenName>
+                        </Stack>
+                      </TableCell>
+                      <TableCell>
+                        <DesignTokenValue value={String(value)} showCopyButton />
+                      </TableCell>
                     </TableRow>
                   );
                 })}

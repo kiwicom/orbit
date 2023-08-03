@@ -20,7 +20,7 @@ interface Props {
   type: string;
 }
 
-const isTypographyToken = type => {
+const isTypographyToken = (type: string) => {
   return [
     "typography",
     "font-family",
@@ -31,7 +31,7 @@ const isTypographyToken = type => {
   ].includes(type);
 };
 
-const isColor = type => {
+const isColor = (type: string) => {
   return ["color", "palette", "border-color", "foreground"].includes(type);
 };
 

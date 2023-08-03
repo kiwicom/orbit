@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@8.0.0...@kiwicom/orbit-components@8.1.0) (2023-08-03)
+
+
+### Bug Fixes
+
+* **tokens:** fix bundle tokens definitons ([#3940](https://github.com/kiwicom/orbit/issues/3940)) ([d275b5b](https://github.com/kiwicom/orbit/commit/d275b5b9049c54d32126a2dce4f1e2c2b788058a))
+* use ForwardRefRenderFunction instead of deprecated RefForwardingComponent ([#3941](https://github.com/kiwicom/orbit/issues/3941)) ([a70687c](https://github.com/kiwicom/orbit/commit/a70687c1ee5eac3edc83a6121e458686454e4ee6))
+
+
+### Features
+
+* **Textarea:** add  prop to pass data attributes ([#3937](https://github.com/kiwicom/orbit/issues/3937)) ([7089013](https://github.com/kiwicom/orbit/commit/7089013f1fa85e55776a4c00f2ef2cd81380812f))
+
+
+
+
+
 # [8.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@7.8.0...@kiwicom/orbit-components@8.0.0) (2023-07-28)
 
 

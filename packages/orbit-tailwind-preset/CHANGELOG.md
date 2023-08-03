@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.8](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@1.0.0-beta.7...@kiwicom/orbit-tailwind-preset@1.0.0-beta.8) (2023-08-03)
+
+
+### Bug Fixes
+
+* **tokens:** fix bundle tokens definitons ([#3940](https://github.com/kiwicom/orbit/issues/3940)) ([d275b5b](https://github.com/kiwicom/orbit/commit/d275b5b9049c54d32126a2dce4f1e2c2b788058a))
+
+
+
+
+
 # 1.0.0-beta.7 (2023-07-28)
 
 

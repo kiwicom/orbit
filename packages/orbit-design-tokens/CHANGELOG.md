@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-beta.4](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@5.0.0-beta.2...@kiwicom/orbit-design-tokens@5.0.0-beta.4) (2023-08-03)
+
+
+### Bug Fixes
+
+* **tokens:** fix bundle tokens definitons ([#3940](https://github.com/kiwicom/orbit/issues/3940)) ([d275b5b](https://github.com/kiwicom/orbit/commit/d275b5b9049c54d32126a2dce4f1e2c2b788058a))
+
+
+
+
+
 # [5.0.0-beta.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@4.2.1...@kiwicom/orbit-design-tokens@5.0.0-beta.2) (2023-07-28)
 
 

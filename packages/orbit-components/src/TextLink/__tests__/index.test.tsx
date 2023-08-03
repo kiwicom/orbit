@@ -2,21 +2,110 @@ import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
 import { render, screen } from "../../test-utils";
-import TextLink from "..";
+import theme from "../../defaultTheme";
 import ChevronForward from "../../icons/ChevronForward";
-import defaultTheme from "../../defaultTheme";
+import type { Props } from "../types";
+import type { SIZE_OPTIONS } from "../consts";
+import TextLink from "..";
+
+const SIZE_STYLES: { [K in SIZE_OPTIONS]: Record<"font-size", string> } = {
+  small: {
+    "font-size": theme.orbit.fontSizeTextSmall,
+  },
+  normal: {
+    "font-size": theme.orbit.fontSizeTextNormal,
+  },
+  large: {
+    "font-size": theme.orbit.fontSizeTextLarge,
+  },
+  extraLarge: {
+    "font-size": theme.orbit.fontSizeTextExtraLarge,
+  },
+};
+
+const ICON_SIZES: { [K in SIZE_OPTIONS]: Record<"height" | "width", string> } = {
+  small: { width: theme.orbit.widthIconSmall, height: theme.orbit.heightIconSmall },
+  normal: { width: theme.orbit.widthIconMedium, height: theme.orbit.heightIconMedium },
+  large: { width: theme.orbit.widthIconLarge, height: theme.orbit.heightIconLarge },
+  extraLarge: { width: theme.orbit.widthIconMedium, height: theme.orbit.heightIconMedium },
+};
 
 const title = "My text link";
-const dataTest = "test";
 
-describe("#TextLink", () => {
+describe("TextLink", () => {
   const user = userEvent.setup();
 
-  it("should be focusable and have button role", async () => {
-    render(<TextLink asComponent="button">{title}</TextLink>);
-    await user.tab();
-    expect(screen.getByText(title)).toHaveFocus();
-    expect(screen.getByRole("button")).toBeInTheDocument();
+  it("should have expected DOM output", () => {
+    render(
+      <TextLink ariaCurrent="page" id="id" href="http://#" title="title" tabIndex={-1} download>
+        {title}
+      </TextLink>,
+    );
+
+    const element = screen.getByText(title);
+
+    expect(element).toBeInTheDocument();
+    expect(element.tagName).toBe("A");
+    expect(element).toHaveAttribute("aria-current", "page");
+    expect(element).toHaveAttribute("id", "id");
+    expect(element).toHaveAttribute("href", "http://#");
+    expect(element).toHaveAttribute("title", "title");
+    expect(element).toHaveAttribute("tabIndex", "-1");
+    expect(element).toHaveAttribute("download");
+
+    expect(element).toHaveStyle({
+      "font-family": theme.orbit.fontFamily,
+      display: "inline-flex",
+      "align-items": "center",
+      "font-weight": theme.orbit.fontWeightMedium,
+      cursor: "pointer",
+    });
+  });
+
+  it.each(Object.keys(SIZE_STYLES))("should have size %s", size => {
+    render(
+      <TextLink size={size as Props["size"]} href="http://#">
+        {title}
+      </TextLink>,
+    );
+
+    const element = screen.getByText(title);
+
+    expect(element).toHaveStyle(SIZE_STYLES[size]);
+  });
+
+  it("can be external", () => {
+    render(
+      <TextLink href="http://#" external>
+        {title}
+      </TextLink>,
+    );
+
+    const element = screen.getByText(title);
+
+    expect(element).toHaveAttribute("rel", expect.stringContaining("noopener"));
+    expect(element).toHaveAttribute("target", "_blank");
+  });
+
+  it("should be focusable and have button role", () => {
+    render(<TextLink>{title}</TextLink>);
+
+    const element = screen.getByText(title);
+
+    expect(element).toHaveAttribute("tabIndex", "0");
+    expect(element).toHaveAttribute("role", "button");
+  });
+
+  it("should render as the given component", () => {
+    render(
+      <TextLink asComponent="span" href="http://#">
+        {title}
+      </TextLink>,
+    );
+
+    const element = screen.getByText(title);
+
+    expect(element.tagName).toBe("SPAN");
   });
 
   it("should execute onClick method", async () => {
@@ -37,56 +126,51 @@ describe("#TextLink", () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
-  it("should render with props", () => {
-    const dataTestLeftIcon = "leftIcon";
-    const dataTestRightIcon = "rightIcon";
-    const tabIndex = "-1";
-    const href = "https://kiwi.com";
-    const download = "custom-name";
+  it("can be stand alone", () => {
     render(
-      <TextLink
-        href={href}
-        iconRight={<ChevronForward dataTest={dataTestLeftIcon} />}
-        iconLeft={<ChevronForward dataTest={dataTestRightIcon} />}
-        tabIndex={tabIndex}
-        dataTest={dataTest}
-        download={download}
-      >
-        {title}
-      </TextLink>,
-    );
-    expect(screen.getByText(title)).toBeInTheDocument();
-    expect(screen.getByRole("link")).toHaveAttribute("href", href);
-    expect(screen.getByRole("link")).toHaveAttribute("download", download);
-    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-    expect(screen.getByTestId(dataTestLeftIcon)).toBeInTheDocument();
-    expect(screen.getByTestId(dataTestRightIcon)).toBeInTheDocument();
-    expect(screen.getByRole("link")).toBeInTheDocument();
-  });
-  it("should have external and rel attributes", () => {
-    const rel = "nofollow";
-    const href = "https://kiwi.com";
-    render(
-      <TextLink rel={rel} external href={href}>
-        {title}
-      </TextLink>,
-    );
-    const link = screen.getByText(title).closest("a");
-    expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
-    expect(link).toHaveAttribute("rel", expect.stringContaining(rel));
-    expect(link).toHaveAttribute("target", "_blank");
-  });
-
-  it("should no have underline and height for a11y", () => {
-    render(
-      <TextLink noUnderline standAlone>
+      <TextLink standAlone href="http://#">
         {title}
       </TextLink>,
     );
 
-    expect(screen.getByRole("button")).toHaveStyle({
-      textDecoration: "none",
-      height: defaultTheme.orbit.heightButtonNormal,
+    const element = screen.getByText(title);
+
+    expect(element).toHaveStyle({
+      height: theme.orbit.heightButtonNormal,
+    });
+  });
+
+  describe("with icon on the left side", () => {
+    it.each(Object.keys(ICON_SIZES))("should have size %s", size => {
+      render(
+        <TextLink
+          iconLeft={<ChevronForward dataTest="icon" />}
+          size={size as Props["size"]}
+          href="http://#"
+        >
+          {title}
+        </TextLink>,
+      );
+
+      const icon = screen.getByTestId("icon");
+      expect(icon).toHaveStyle(ICON_SIZES[size]);
+    });
+  });
+
+  describe("with icon on the right side", () => {
+    it.each(Object.keys(ICON_SIZES))("should have size %s", size => {
+      render(
+        <TextLink
+          iconRight={<ChevronForward dataTest="icon" />}
+          size={size as Props["size"]}
+          href="http://#"
+        >
+          {title}
+        </TextLink>,
+      );
+
+      const icon = screen.getByTestId("icon");
+      expect(icon).toHaveStyle(ICON_SIZES[size]);
     });
   });
 });

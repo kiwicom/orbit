@@ -5,6 +5,7 @@ export default {
   crawlFrom: TMP_FOLDER,
   includeSubComponents: true,
   deprecated: ["InputStepper"],
+  globs: ["**/!(*.test|*.spec|*.d).@(js|jsx)?(x)"],
   importedFrom: /@kiwicom\/orbit-components/,
   exclude: [
     "node_modules",

@@ -44,6 +44,8 @@ export const isComponentSpecific = ({ attributes: { namespace } }: DesignToken):
 
 export const isHex = (value: string | number): boolean => /^#[A-F0-9]+$/i.test(String(value));
 
+export const isRgb = (value: string | number): boolean => /^rgb\(/.test(String(value));
+
 const getSpacingArray = (spaceArray: string[]): [string[], number] => {
   const array = spaceArray.sort();
   return [array, array.length];

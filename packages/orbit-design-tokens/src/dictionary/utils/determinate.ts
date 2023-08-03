@@ -30,3 +30,9 @@ export const determinateExport =
       isDeclare: true,
     });
   };
+
+export const determinateAlphaHex = (alpha: number): string => {
+  return Math.round(Math.min(Math.max(alpha / 100 || 1, 0), 1) * 255)
+    .toString(16)
+    .toUpperCase();
+};

@@ -663,21 +663,43 @@ export type Tokens = {
   tagNeutralBackgroundActive: string;
   tagNeutralForeground: string;
   textLinkPrimaryForeground: string;
+  textLinkPrimaryForegroundHover: string;
+  textLinkPrimaryForegroundActive: string;
   textLinkSecondaryForeground: string;
-  textLinkForegroundHover: string;
-  textLinkTextDecoration: string;
-  textLinkTextDecorationHover: string;
-  textLinkFontWeight: string;
+  textLinkSecondaryForegroundHover: string;
+  textLinkSecondaryForegroundActive: string;
+  textLinkSuccessForeground: string;
+  textLinkSuccessForegroundHover: string;
+  textLinkSuccessForegroundActive: string;
+  textLinkInfoForeground: string;
+  textLinkInfoForegroundHover: string;
+  textLinkInfoForegroundActive: string;
+  textLinkWarningForeground: string;
+  textLinkWarningForegroundHover: string;
+  textLinkWarningForegroundActive: string;
+  textLinkCriticalForeground: string;
+  textLinkCriticalForegroundHover: string;
+  textLinkCriticalForegroundActive: string;
+  textLinkWhiteForeground: string;
+  textLinkWhiteForegroundHover: string;
+  textLinkWhiteForegroundActive: string;
   textDecorationTextLinkPrimary: string;
   textDecorationTextLinkPrimaryHover: string;
   textDecorationTextLinkSecondary: string;
   textDecorationTextLinkSecondaryHover: string;
+  textPrimaryBackground: string;
   textPrimaryForeground: string;
+  textSecondaryBackground: string;
   textSecondaryForeground: string;
+  textInfoBackground: string;
   textInfoForeground: string;
+  textSuccessBackground: string;
   textSuccessForeground: string;
+  textWarningBackground: string;
   textWarningForeground: string;
+  textCriticalBackground: string;
   textCriticalForeground: string;
+  textWhiteBackground: string;
   textWhiteForeground: string;
   backgroundIllustration: string;
   borderRadiusCircle: string;
@@ -1513,21 +1535,43 @@ const createTokens: CreateTokens = foundation => ({
   tagNeutralBackgroundActive: foundation.palette.cloud.normalActive,
   tagNeutralForeground: foundation.palette.ink.dark,
   textLinkPrimaryForeground: foundation.palette.product.dark,
+  textLinkPrimaryForegroundHover: foundation.palette.product.darkHover,
+  textLinkPrimaryForegroundActive: foundation.palette.product.darkActive,
   textLinkSecondaryForeground: foundation.palette.ink.dark,
-  textLinkForegroundHover: foundation.palette.product.normalHover,
-  textLinkTextDecoration: "underline",
-  textLinkTextDecorationHover: "none",
-  textLinkFontWeight: foundation.fontWeight.medium,
+  textLinkSecondaryForegroundHover: foundation.palette.product.darkHover,
+  textLinkSecondaryForegroundActive: foundation.palette.product.darkActive,
+  textLinkSuccessForeground: foundation.palette.green.dark,
+  textLinkSuccessForegroundHover: foundation.palette.green.darkHover,
+  textLinkSuccessForegroundActive: foundation.palette.green.darker,
+  textLinkInfoForeground: foundation.palette.blue.dark,
+  textLinkInfoForegroundHover: foundation.palette.blue.darkHover,
+  textLinkInfoForegroundActive: foundation.palette.blue.darker,
+  textLinkWarningForeground: foundation.palette.orange.dark,
+  textLinkWarningForegroundHover: foundation.palette.orange.darkHover,
+  textLinkWarningForegroundActive: foundation.palette.orange.darker,
+  textLinkCriticalForeground: foundation.palette.red.dark,
+  textLinkCriticalForegroundHover: foundation.palette.red.darkHover,
+  textLinkCriticalForegroundActive: foundation.palette.red.darker,
+  textLinkWhiteForeground: foundation.palette.white.normal,
+  textLinkWhiteForegroundHover: foundation.palette.product.light,
+  textLinkWhiteForegroundActive: foundation.palette.product.light,
   textDecorationTextLinkPrimary: "underline",
   textDecorationTextLinkPrimaryHover: "none",
   textDecorationTextLinkSecondary: "underline",
   textDecorationTextLinkSecondaryHover: "none",
+  textPrimaryBackground: transparentColor(foundation.palette.ink.dark, 10),
   textPrimaryForeground: foundation.palette.ink.dark,
+  textSecondaryBackground: transparentColor(foundation.palette.ink.normal, 10),
   textSecondaryForeground: foundation.palette.ink.normal,
+  textInfoBackground: transparentColor(foundation.palette.blue.normal, 10),
   textInfoForeground: foundation.palette.blue.normal,
+  textSuccessBackground: transparentColor(foundation.palette.green.normal, 10),
   textSuccessForeground: foundation.palette.green.normal,
+  textWarningBackground: transparentColor(foundation.palette.orange.normal, 10),
   textWarningForeground: foundation.palette.orange.normal,
+  textCriticalBackground: transparentColor(foundation.palette.red.normal, 10),
   textCriticalForeground: foundation.palette.red.normal,
+  textWhiteBackground: transparentColor(foundation.palette.white.normal, 10),
   textWhiteForeground: foundation.palette.white.normal,
   backgroundIllustration: "transparent",
   borderRadiusCircle: foundation.borderRadius.circle,

@@ -2184,7 +2184,7 @@
     },
     "javascript": {
       "name": "backgroundButtonWhiteBorderedHover",
-      "value": "#FFFFFF"
+      "value": "#FFFFFF33"
     },
     "foundation": {
       "name": "backgroundButtonWhiteBorderedHover",
@@ -2192,7 +2192,7 @@
     },
     "scss": {
       "name": "backgroundButtonWhiteBorderedHover",
-      "value": "rgb(255, 255, 255)"
+      "value": "rgba(255, 255, 255, 0.2)"
     }
   },
   "backgroundButtonWhiteBorderedActive": {
@@ -2207,7 +2207,7 @@
     },
     "javascript": {
       "name": "backgroundButtonWhiteBorderedActive",
-      "value": "#FFFFFF"
+      "value": "#FFFFFF33"
     },
     "foundation": {
       "name": "backgroundButtonWhiteBorderedActive",
@@ -2215,7 +2215,7 @@
     },
     "scss": {
       "name": "backgroundButtonWhiteBorderedActive",
-      "value": "rgb(255, 255, 255)"
+      "value": "rgba(255, 255, 255, 0.2)"
     }
   },
   "backgroundButtonFacebook": {
@@ -3539,7 +3539,7 @@
   "colorTextLinkPrimaryHover": {
     "type": "color",
     "deprecated": true,
-    "replacement": "textLinkForegroundHover",
+    "replacement": "textLinkPrimaryForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -3585,7 +3585,7 @@
   "colorTextLinkSecondaryHover": {
     "type": "color",
     "deprecated": true,
-    "replacement": "textLinkForegroundHover",
+    "replacement": "textLinkSecondaryForegroundHover",
     "schema": {
       "namespace": "component",
       "object": "color",
@@ -8711,7 +8711,7 @@
     },
     "javascript": {
       "name": "buttonPrimaryBorderColorFocus",
-      "value": "#00A58E"
+      "value": "#00A58E80"
     },
     "foundation": {
       "name": "buttonPrimaryBorderColorFocus",
@@ -8719,7 +8719,7 @@
     },
     "scss": {
       "name": "buttonPrimaryBorderColorFocus",
-      "value": "rgb(0, 165, 142)"
+      "value": "rgba(0, 165, 142, 0.5)"
     }
   },
   "buttonSecondaryBackground": {
@@ -9295,7 +9295,7 @@
     },
     "javascript": {
       "name": "buttonWhiteBorderColorFocus",
-      "value": "#E7ECF1"
+      "value": "#E7ECF180"
     },
     "foundation": {
       "name": "buttonWhiteBorderColorFocus",
@@ -9303,7 +9303,7 @@
     },
     "scss": {
       "name": "buttonWhiteBorderColorFocus",
-      "value": "rgb(231, 236, 241)"
+      "value": "rgba(231, 236, 241, 0.5)"
     }
   },
   "boxShadowButtonFocus": {
@@ -13152,7 +13152,7 @@
   "fontWeightLinks": {
     "type": "font-weight",
     "deprecated": true,
-    "replacement": "textLinkFontWeight",
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "font-weight",
@@ -14068,7 +14068,7 @@
     },
     "javascript": {
       "name": "socialButtonAppleBorderColorFocus",
-      "value": "#697D95"
+      "value": "#697D9580"
     },
     "foundation": {
       "name": "socialButtonAppleBorderColorFocus",
@@ -14076,7 +14076,7 @@
     },
     "scss": {
       "name": "socialButtonAppleBorderColorFocus",
-      "value": "rgb(105, 125, 149)"
+      "value": "rgba(105, 125, 149, 0.5)"
     }
   },
   "socialButtonAppleIconForeground": {
@@ -14574,7 +14574,7 @@
     },
     "javascript": {
       "name": "socialButtonTwitterBorderColorFocus",
-      "value": "#697D95"
+      "value": "#697D9580"
     },
     "foundation": {
       "name": "socialButtonTwitterBorderColorFocus",
@@ -14582,7 +14582,7 @@
     },
     "scss": {
       "name": "socialButtonTwitterBorderColorFocus",
-      "value": "rgb(105, 125, 149)"
+      "value": "rgba(105, 125, 149, 0.5)"
     }
   },
   "socialButtonTwitterIconForeground": {
@@ -14976,6 +14976,52 @@
       "value": "rgb(0, 122, 105)"
     }
   },
+  "textLinkPrimaryForegroundHover": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "primary",
+      "subVariant": "foreground-hover"
+    },
+    "javascript": {
+      "name": "textLinkPrimaryForegroundHover",
+      "value": "#007060"
+    },
+    "foundation": {
+      "name": "textLinkPrimaryForegroundHover",
+      "value": "foundation.palette.product.darkHover"
+    },
+    "scss": {
+      "name": "textLinkPrimaryForegroundHover",
+      "value": "rgb(0, 112, 96)"
+    }
+  },
+  "textLinkPrimaryForegroundActive": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "primary",
+      "subVariant": "foreground-active"
+    },
+    "javascript": {
+      "name": "textLinkPrimaryForegroundActive",
+      "value": "#006657"
+    },
+    "foundation": {
+      "name": "textLinkPrimaryForegroundActive",
+      "value": "foundation.palette.product.darkActive"
+    },
+    "scss": {
+      "name": "textLinkPrimaryForegroundActive",
+      "value": "rgb(0, 102, 87)"
+    }
+  },
   "textLinkSecondaryForeground": {
     "type": "color",
     "deprecated": false,
@@ -14999,98 +15045,401 @@
       "value": "rgb(37, 42, 49)"
     }
   },
-  "textLinkForegroundHover": {
+  "textLinkSecondaryForegroundHover": {
     "type": "color",
     "deprecated": false,
     "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
-      "variant": "foreground-hover"
+      "variant": "secondary",
+      "subVariant": "foreground-hover"
     },
     "javascript": {
-      "name": "textLinkForegroundHover",
-      "value": "#009580"
+      "name": "textLinkSecondaryForegroundHover",
+      "value": "#007060"
     },
     "foundation": {
-      "name": "textLinkForegroundHover",
-      "value": "foundation.palette.product.normalHover"
+      "name": "textLinkSecondaryForegroundHover",
+      "value": "foundation.palette.product.darkHover"
     },
     "scss": {
-      "name": "textLinkForegroundHover",
-      "value": "rgb(0, 149, 128)"
+      "name": "textLinkSecondaryForegroundHover",
+      "value": "rgb(0, 112, 96)"
     }
   },
-  "textLinkTextDecoration": {
-    "type": "text-decoration",
+  "textLinkSecondaryForegroundActive": {
+    "type": "color",
     "deprecated": false,
     "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
-      "variant": "text-decoration"
+      "variant": "secondary",
+      "subVariant": "foreground-active"
     },
     "javascript": {
-      "name": "textLinkTextDecoration",
-      "value": "underline"
+      "name": "textLinkSecondaryForegroundActive",
+      "value": "#006657"
     },
     "foundation": {
-      "name": "textLinkTextDecoration",
-      "value": "none"
+      "name": "textLinkSecondaryForegroundActive",
+      "value": "foundation.palette.product.darkActive"
     },
     "scss": {
-      "name": "textLinkTextDecoration",
-      "value": "underline"
+      "name": "textLinkSecondaryForegroundActive",
+      "value": "rgb(0, 102, 87)"
     }
   },
-  "textLinkTextDecorationHover": {
-    "type": "text-decoration",
+  "textLinkSuccessForeground": {
+    "type": "color",
     "deprecated": false,
     "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
-      "variant": "text-decoration-hover"
+      "variant": "success",
+      "subVariant": "foreground"
     },
     "javascript": {
-      "name": "textLinkTextDecorationHover",
-      "value": "none"
+      "name": "textLinkSuccessForeground",
+      "value": "#2D7738"
     },
     "foundation": {
-      "name": "textLinkTextDecorationHover",
-      "value": "none"
+      "name": "textLinkSuccessForeground",
+      "value": "foundation.palette.green.dark"
     },
     "scss": {
-      "name": "textLinkTextDecorationHover",
-      "value": "none"
+      "name": "textLinkSuccessForeground",
+      "value": "rgb(45, 119, 56)"
     }
   },
-  "textLinkFontWeight": {
-    "type": "font-weight",
+  "textLinkSuccessForegroundHover": {
+    "type": "color",
     "deprecated": false,
     "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-link",
-      "variant": "font-weight"
+      "variant": "success",
+      "subVariant": "foreground-hover"
     },
     "javascript": {
-      "name": "textLinkFontWeight",
-      "value": 500
+      "name": "textLinkSuccessForegroundHover",
+      "value": "#276831"
     },
     "foundation": {
-      "name": "textLinkFontWeight",
-      "value": "foundation.fontWeight.medium"
+      "name": "textLinkSuccessForegroundHover",
+      "value": "foundation.palette.green.darkHover"
     },
     "scss": {
-      "name": "textLinkFontWeight",
-      "value": 500
+      "name": "textLinkSuccessForegroundHover",
+      "value": "rgb(39, 104, 49)"
+    }
+  },
+  "textLinkSuccessForegroundActive": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "success",
+      "subVariant": "foreground-active"
+    },
+    "javascript": {
+      "name": "textLinkSuccessForegroundActive",
+      "value": "#235C2B"
+    },
+    "foundation": {
+      "name": "textLinkSuccessForegroundActive",
+      "value": "foundation.palette.green.darker"
+    },
+    "scss": {
+      "name": "textLinkSuccessForegroundActive",
+      "value": "rgb(35, 92, 43)"
+    }
+  },
+  "textLinkInfoForeground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "info",
+      "subVariant": "foreground"
+    },
+    "javascript": {
+      "name": "textLinkInfoForeground",
+      "value": "#005AA3"
+    },
+    "foundation": {
+      "name": "textLinkInfoForeground",
+      "value": "foundation.palette.blue.dark"
+    },
+    "scss": {
+      "name": "textLinkInfoForeground",
+      "value": "rgb(0, 90, 163)"
+    }
+  },
+  "textLinkInfoForegroundHover": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "info",
+      "subVariant": "foreground-hover"
+    },
+    "javascript": {
+      "name": "textLinkInfoForegroundHover",
+      "value": "#004F8F"
+    },
+    "foundation": {
+      "name": "textLinkInfoForegroundHover",
+      "value": "foundation.palette.blue.darkHover"
+    },
+    "scss": {
+      "name": "textLinkInfoForegroundHover",
+      "value": "rgb(0, 79, 143)"
+    }
+  },
+  "textLinkInfoForegroundActive": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "info",
+      "subVariant": "foreground-active"
+    },
+    "javascript": {
+      "name": "textLinkInfoForegroundActive",
+      "value": "#004680"
+    },
+    "foundation": {
+      "name": "textLinkInfoForegroundActive",
+      "value": "foundation.palette.blue.darker"
+    },
+    "scss": {
+      "name": "textLinkInfoForegroundActive",
+      "value": "rgb(0, 70, 128)"
+    }
+  },
+  "textLinkWarningForeground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "warning",
+      "subVariant": "foreground"
+    },
+    "javascript": {
+      "name": "textLinkWarningForeground",
+      "value": "#AD5700"
+    },
+    "foundation": {
+      "name": "textLinkWarningForeground",
+      "value": "foundation.palette.orange.dark"
+    },
+    "scss": {
+      "name": "textLinkWarningForeground",
+      "value": "rgb(173, 87, 0)"
+    }
+  },
+  "textLinkWarningForegroundHover": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "warning",
+      "subVariant": "foreground-hover"
+    },
+    "javascript": {
+      "name": "textLinkWarningForegroundHover",
+      "value": "#A75400"
+    },
+    "foundation": {
+      "name": "textLinkWarningForegroundHover",
+      "value": "foundation.palette.orange.darkHover"
+    },
+    "scss": {
+      "name": "textLinkWarningForegroundHover",
+      "value": "rgb(167, 84, 0)"
+    }
+  },
+  "textLinkWarningForegroundActive": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "warning",
+      "subVariant": "foreground-active"
+    },
+    "javascript": {
+      "name": "textLinkWarningForegroundActive",
+      "value": "#803F00"
+    },
+    "foundation": {
+      "name": "textLinkWarningForegroundActive",
+      "value": "foundation.palette.orange.darker"
+    },
+    "scss": {
+      "name": "textLinkWarningForegroundActive",
+      "value": "rgb(128, 63, 0)"
+    }
+  },
+  "textLinkCriticalForeground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "critical",
+      "subVariant": "foreground"
+    },
+    "javascript": {
+      "name": "textLinkCriticalForeground",
+      "value": "#970C0C"
+    },
+    "foundation": {
+      "name": "textLinkCriticalForeground",
+      "value": "foundation.palette.red.dark"
+    },
+    "scss": {
+      "name": "textLinkCriticalForeground",
+      "value": "rgb(151, 12, 12)"
+    }
+  },
+  "textLinkCriticalForegroundHover": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "critical",
+      "subVariant": "foreground-hover"
+    },
+    "javascript": {
+      "name": "textLinkCriticalForegroundHover",
+      "value": "#890B0B"
+    },
+    "foundation": {
+      "name": "textLinkCriticalForegroundHover",
+      "value": "foundation.palette.red.darkHover"
+    },
+    "scss": {
+      "name": "textLinkCriticalForegroundHover",
+      "value": "rgb(137, 11, 11)"
+    }
+  },
+  "textLinkCriticalForegroundActive": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "critical",
+      "subVariant": "foreground-active"
+    },
+    "javascript": {
+      "name": "textLinkCriticalForegroundActive",
+      "value": "#760909"
+    },
+    "foundation": {
+      "name": "textLinkCriticalForegroundActive",
+      "value": "foundation.palette.red.darker"
+    },
+    "scss": {
+      "name": "textLinkCriticalForegroundActive",
+      "value": "rgb(118, 9, 9)"
+    }
+  },
+  "textLinkWhiteForeground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "white",
+      "subVariant": "foreground"
+    },
+    "javascript": {
+      "name": "textLinkWhiteForeground",
+      "value": "#FFFFFF"
+    },
+    "foundation": {
+      "name": "textLinkWhiteForeground",
+      "value": "foundation.palette.white.normal"
+    },
+    "scss": {
+      "name": "textLinkWhiteForeground",
+      "value": "rgb(255, 255, 255)"
+    }
+  },
+  "textLinkWhiteForegroundHover": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "white",
+      "subVariant": "foreground-hover"
+    },
+    "javascript": {
+      "name": "textLinkWhiteForegroundHover",
+      "value": "#E1F4F3"
+    },
+    "foundation": {
+      "name": "textLinkWhiteForegroundHover",
+      "value": "foundation.palette.product.light"
+    },
+    "scss": {
+      "name": "textLinkWhiteForegroundHover",
+      "value": "rgb(225, 244, 243)"
+    }
+  },
+  "textLinkWhiteForegroundActive": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text-link",
+      "variant": "white",
+      "subVariant": "foreground-active"
+    },
+    "javascript": {
+      "name": "textLinkWhiteForegroundActive",
+      "value": "#E1F4F3"
+    },
+    "foundation": {
+      "name": "textLinkWhiteForegroundActive",
+      "value": "foundation.palette.product.light"
+    },
+    "scss": {
+      "name": "textLinkWhiteForegroundActive",
+      "value": "rgb(225, 244, 243)"
     }
   },
   "textDecorationTextLinkPrimary": {
     "type": "text-decoration",
     "deprecated": true,
-    "replacement": "textLinkTextDecoration",
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-decoration",
@@ -15113,7 +15462,7 @@
   "textDecorationTextLinkPrimaryHover": {
     "type": "text-decoration",
     "deprecated": true,
-    "replacement": "textLinkTextDecorationHover",
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-decoration",
@@ -15136,7 +15485,7 @@
   "textDecorationTextLinkSecondary": {
     "type": "text-decoration",
     "deprecated": true,
-    "replacement": "textLinkTextDecoration",
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-decoration",
@@ -15159,7 +15508,7 @@
   "textDecorationTextLinkSecondaryHover": {
     "type": "text-decoration",
     "deprecated": true,
-    "replacement": "textLinkTextDecorationHover",
+    "replacement": null,
     "schema": {
       "namespace": "component",
       "object": "text-decoration",
@@ -15177,6 +15526,29 @@
     "scss": {
       "name": "textDecorationTextLinkSecondaryHover",
       "value": "none"
+    }
+  },
+  "textPrimaryBackground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text",
+      "variant": "primary",
+      "subVariant": "background"
+    },
+    "javascript": {
+      "name": "textPrimaryBackground",
+      "value": "#252A311A"
+    },
+    "foundation": {
+      "name": "textPrimaryBackground",
+      "value": "foundation.palette.ink.dark"
+    },
+    "scss": {
+      "name": "textPrimaryBackground",
+      "value": "rgba(37, 42, 49, 0.1)"
     }
   },
   "textPrimaryForeground": {
@@ -15202,6 +15574,29 @@
       "value": "rgb(37, 42, 49)"
     }
   },
+  "textSecondaryBackground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text",
+      "variant": "secondary",
+      "subVariant": "background"
+    },
+    "javascript": {
+      "name": "textSecondaryBackground",
+      "value": "#4F5E711A"
+    },
+    "foundation": {
+      "name": "textSecondaryBackground",
+      "value": "foundation.palette.ink.normal"
+    },
+    "scss": {
+      "name": "textSecondaryBackground",
+      "value": "rgba(79, 94, 113, 0.1)"
+    }
+  },
   "textSecondaryForeground": {
     "type": "color",
     "deprecated": false,
@@ -15223,6 +15618,29 @@
     "scss": {
       "name": "textSecondaryForeground",
       "value": "rgb(79, 94, 113)"
+    }
+  },
+  "textInfoBackground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text",
+      "variant": "info",
+      "subVariant": "background"
+    },
+    "javascript": {
+      "name": "textInfoBackground",
+      "value": "#0172CB1A"
+    },
+    "foundation": {
+      "name": "textInfoBackground",
+      "value": "foundation.palette.blue.normal"
+    },
+    "scss": {
+      "name": "textInfoBackground",
+      "value": "rgba(1, 114, 203, 0.1)"
     }
   },
   "textInfoForeground": {
@@ -15248,6 +15666,29 @@
       "value": "rgb(1, 114, 203)"
     }
   },
+  "textSuccessBackground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text",
+      "variant": "success",
+      "subVariant": "background"
+    },
+    "javascript": {
+      "name": "textSuccessBackground",
+      "value": "#28A1381A"
+    },
+    "foundation": {
+      "name": "textSuccessBackground",
+      "value": "foundation.palette.green.normal"
+    },
+    "scss": {
+      "name": "textSuccessBackground",
+      "value": "rgba(40, 161, 56, 0.1)"
+    }
+  },
   "textSuccessForeground": {
     "type": "color",
     "deprecated": false,
@@ -15269,6 +15710,29 @@
     "scss": {
       "name": "textSuccessForeground",
       "value": "rgb(40, 161, 56)"
+    }
+  },
+  "textWarningBackground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text",
+      "variant": "warning",
+      "subVariant": "background"
+    },
+    "javascript": {
+      "name": "textWarningBackground",
+      "value": "#DF7B001A"
+    },
+    "foundation": {
+      "name": "textWarningBackground",
+      "value": "foundation.palette.orange.normal"
+    },
+    "scss": {
+      "name": "textWarningBackground",
+      "value": "rgba(223, 123, 0, 0.1)"
     }
   },
   "textWarningForeground": {
@@ -15294,6 +15758,29 @@
       "value": "rgb(223, 123, 0)"
     }
   },
+  "textCriticalBackground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text",
+      "variant": "critical",
+      "subVariant": "background"
+    },
+    "javascript": {
+      "name": "textCriticalBackground",
+      "value": "#D21C1C1A"
+    },
+    "foundation": {
+      "name": "textCriticalBackground",
+      "value": "foundation.palette.red.normal"
+    },
+    "scss": {
+      "name": "textCriticalBackground",
+      "value": "rgba(210, 28, 28, 0.1)"
+    }
+  },
   "textCriticalForeground": {
     "type": "color",
     "deprecated": false,
@@ -15315,6 +15802,29 @@
     "scss": {
       "name": "textCriticalForeground",
       "value": "rgb(210, 28, 28)"
+    }
+  },
+  "textWhiteBackground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "text",
+      "variant": "white",
+      "subVariant": "background"
+    },
+    "javascript": {
+      "name": "textWhiteBackground",
+      "value": "#FFFFFF1A"
+    },
+    "foundation": {
+      "name": "textWhiteBackground",
+      "value": "foundation.palette.white.normal"
+    },
+    "scss": {
+      "name": "textWhiteBackground",
+      "value": "rgba(255, 255, 255, 0.1)"
     }
   },
   "textWhiteForeground": {

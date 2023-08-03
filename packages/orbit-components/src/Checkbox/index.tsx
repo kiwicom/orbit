@@ -6,7 +6,6 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import TOKENS from "./consts";
 import Check from "../icons/Check";
-import { StyledText } from "../Text";
 import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
@@ -139,7 +138,7 @@ const StyledLabelText = styled.span`
     color: ${theme.orbit.colorFormLabel};
     line-height: ${theme.orbit.heightCheckbox};
 
-    ${StyledText} {
+    .orbit-text {
       font-weight: ${theme.orbit.fontWeightMedium};
       font-size: ${theme.orbit.fontSizeFormLabel};
       color: ${theme.orbit.colorFormLabel};

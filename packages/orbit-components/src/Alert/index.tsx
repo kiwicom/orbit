@@ -15,11 +15,10 @@ import AlertTriangle from "../icons/Alert";
 import AlertCircle from "../icons/AlertCircle";
 import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
-import { StyledTextLink, getLinkStyle } from "../TextLink";
+import { getLinkStyle } from "../TextLink/deprecated";
 import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import { rtlSpacing, right, left } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
-import { StyledText } from "../Text";
 import { StyledHeading } from "../Heading";
 import media from "../utils/mediaQuery";
 
@@ -213,12 +212,13 @@ const StyledContent = styled.div<{ inlineActions?: boolean; $type: Type; $noUnde
     width: ${!inlineActions && "100%"};
 
     & a:not([class]),
-    & ${StyledTextLink} {
+    & .orbit-text-link {
       ${getLinkStyle};
     }
 
     & .orbit-list-item,
-    ${StyledText}, ${StyledHeading} {
+    .orbit-text,
+    ${StyledHeading} {
       color: ${theme.orbit.paletteInkDark};
     }
   `}

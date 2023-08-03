@@ -6,7 +6,6 @@ import styled, { css } from "styled-components";
 
 import { left, rtlSpacing } from "../utils/rtl";
 import mq from "../utils/mediaQuery";
-import { StyledTextLink } from "../TextLink";
 import defaultTheme from "../defaultTheme";
 import { SPACINGS } from "../utils/layout/consts";
 import getSpacing from "../Stack/helpers/getSpacing";
@@ -67,7 +66,7 @@ const StyledNavigationLinkListChild = styled.li<{
   $spacing: Props["spacing"];
 }>`
   ${({ $direction, $spacing, $legacy, theme }) => css`
-    ${StyledTextLink} {
+    .orbit-text-link {
       text-decoration: none;
     }
 
@@ -76,7 +75,7 @@ const StyledNavigationLinkListChild = styled.li<{
     ${$direction === "column" &&
     css`
       width: 100%;
-      ${StyledTextLink} {
+      .orbit-text-link {
         width: 100%;
         ${mq.tablet(
           css`

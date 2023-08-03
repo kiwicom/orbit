@@ -7,7 +7,6 @@ import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
-import { StyledText } from "../../Text";
 import CloseIc from "../../icons/Close";
 import { rtlSpacing, right } from "../../utils/rtl";
 import resolveColor from "./helpers/resolveColor";
@@ -103,7 +102,8 @@ const StyledTooltipContent = styled.div`
     line-height: ${theme.orbit.lineHeightTextSmall};
     color: ${theme.orbit.paletteWhite};
 
-    & ${StyledText}, .orbit-list-item,
+    & .orbit-text,
+    .orbit-list-item,
     a {
       color: ${theme.orbit.paletteWhite};
       font-size: ${theme.orbit.fontSizeTextNormal};

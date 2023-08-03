@@ -2,8 +2,7 @@ import React from "react";
 import { Stack } from "@kiwicom/orbit-components";
 import styled from "styled-components";
 import { Twitter, Link as LinkIcon } from "@kiwicom/orbit-components/icons";
-import Github from "@icons-pack/react-simple-icons/lib/components/Github";
-import Dribbble from "@icons-pack/react-simple-icons/lib/components/Dribbble";
+import { SiDribbble as Dribbble, SiGithub as Github } from "@icons-pack/react-simple-icons";
 
 import { Contributor } from ".";
 

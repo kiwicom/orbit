@@ -1,6 +1,5 @@
 import React from "react";
-import Figma from "@icons-pack/react-simple-icons/lib/components/Figma";
-import Github from "@icons-pack/react-simple-icons/lib/components/Github";
+import { SiGithub as Github, SiFigma as Figma } from "@icons-pack/react-simple-icons";
 import { Button, ButtonLink } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
 

@@ -11,6 +11,7 @@ export const PROJECTS: Record<Scope, string> = {
   core: "3371",
   balkan: "616",
   "smart-faq": "1399",
+  handbook: "3090",
 };
 
 export const SCOPE = Object.keys(PROJECTS) as Scope[];

@@ -15,7 +15,8 @@ export type Scope =
   | "account"
   | "mmb"
   | "core"
-  | "balkan";
+  | "balkan"
+  | "handbook";
 
 export interface User {
   id?: string;

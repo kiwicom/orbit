@@ -57,11 +57,7 @@ const DesignTokenValue = ({
   const renderValue = () => {
     if (deprecated) {
       return (
-        <Tooltip
-          content={
-            replacement ? `Token is deprecated, please use ${replacement}` : "Token is deprecated"
-          }
-        >
+        <Tooltip content="Token is deprecated">
           <StyledStrikeThrough $hasStrikeThrough={hasStrikeThrough}>
             {wrapValue()}
           </StyledStrikeThrough>

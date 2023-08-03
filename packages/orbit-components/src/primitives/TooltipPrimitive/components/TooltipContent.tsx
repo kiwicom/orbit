@@ -5,12 +5,10 @@ import type { Placement } from "@popperjs/core/lib/enums";
 
 import { PLACEMENTS } from "../../../common/consts";
 import tooltipSize from "../helpers/tooltipSize";
-import { StyledText } from "../../../Text";
 import resolveBackgroundColor from "../helpers/resolveBackgroundColor";
 import { resolveArrowStyle, resolveArrowPlacement } from "../helpers/resolveArrow";
 import tooltipPadding from "../helpers/tooltipPadding";
 import defaultTheme from "../../../defaultTheme";
-import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
 import type { Props } from "./types";
@@ -93,13 +91,14 @@ const StyledTooltipContent = styled.div`
     color: ${theme.orbit.paletteWhite};
     margin-bottom: 0;
 
-    & ${StyledText}, .orbit-list-item {
+    & .orbit-text,
+    .orbit-list-item {
       font-size: ${theme.orbit.fontSizeTextSmall};
       font-weight: ${theme.orbit.fontWeightMedium};
       color: ${theme.orbit.paletteWhite};
     }
 
-    & ${StyledTextLink} {
+    & .orbit-text-link {
       color: ${theme.orbit.paletteWhite};
     }
   `}

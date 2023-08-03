@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 
-import { StyledText } from "../../Text";
+import { StyledText } from "../../Text/deprecated";
 import defaultTheme from "../../defaultTheme";
 import type { Props as TextProps } from "../../Text/types";
 import {

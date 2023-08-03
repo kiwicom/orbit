@@ -765,7 +765,7 @@
     "version": "6.0.0"
   },
   "colorTextLinkPrimaryHover": {
-    "replacement": "textLinkForegroundHover",
+    "replacement": "textLinkPrimaryForegroundHover",
     "category": "Colors",
     "version": "6.0.0"
   },
@@ -775,7 +775,7 @@
     "version": "6.0.0"
   },
   "colorTextLinkSecondaryHover": {
-    "replacement": "textLinkForegroundHover",
+    "replacement": "textLinkSecondaryForegroundHover",
     "category": "Colors",
     "version": "6.0.0"
   },
@@ -1878,7 +1878,7 @@
     "version": "6.0.0"
   },
   "fontWeightLinks": {
-    "replacement": "textLinkFontWeight",
+    "replacement": null,
     "category": null,
     "version": "6.0.0"
   },
@@ -1938,22 +1938,22 @@
     "version": "6.0.0"
   },
   "textDecorationTextLinkPrimary": {
-    "replacement": "textLinkTextDecoration",
+    "replacement": null,
     "category": "Text decoration",
     "version": "6.0.0"
   },
   "textDecorationTextLinkPrimaryHover": {
-    "replacement": "textLinkTextDecorationHover",
+    "replacement": null,
     "category": "Text decoration",
     "version": "6.0.0"
   },
   "textDecorationTextLinkSecondary": {
-    "replacement": "textLinkTextDecoration",
+    "replacement": null,
     "category": "Text decoration",
     "version": "6.0.0"
   },
   "textDecorationTextLinkSecondaryHover": {
-    "replacement": "textLinkTextDecorationHover",
+    "replacement": null,
     "category": "Text decoration",
     "version": "6.0.0"
   },

@@ -5,29 +5,99 @@
         "foreground": {
           "type": "color",
           "value": "{foundation.palette.product.dark}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.product.dark-hover}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.product.dark-active}"
         }
       },
       "secondary": {
         "foreground": {
           "type": "color",
           "value": "{foundation.palette.ink.dark}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.product.dark-hover}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.product.dark-active}"
         }
       },
-      "foreground-hover": {
-        "type": "color",
-        "value": "{foundation.palette.product.normal-hover}"
+      "success": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.green.dark-hover}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.green.darker}"
+        }
       },
-      "text-decoration": {
-        "type": "text-decoration",
-        "value": "underline"
+      "info": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.blue.dark}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.blue.dark-hover}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.blue.darker}"
+        }
       },
-      "text-decoration-hover": {
-        "type": "text-decoration",
-        "value": "none"
+      "warning": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.orange.dark-hover}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.orange.darker}"
+        }
       },
-      "font-weight": {
-        "type": "font-weight",
-        "value": "{foundation.font-weight.medium}"
+      "critical": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.red.dark}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.red.dark-hover}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.red.darker}"
+        }
+      },
+      "white": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "value": "{foundation.palette.product.light}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "value": "{foundation.palette.product.light}"
+        }
       }
     },
     "color": {
@@ -43,7 +113,7 @@
           "type": "color",
           "value": "{foundation.palette.product.normal}",
           "deprecated": true,
-          "deprecated-replace": "{component.text-link.foreground-hover}",
+          "deprecated-replace": "{component.text-link.primary.foreground-hover}",
           "deprecated-version": "6.0.0"
         },
         "secondary": {
@@ -57,7 +127,7 @@
           "type": "color",
           "value": "{foundation.palette.product.normal}",
           "deprecated": true,
-          "deprecated-replace": "{component.text-link.foreground-hover}",
+          "deprecated-replace": "{component.text-link.secondary.foreground-hover}",
           "deprecated-version": "6.0.0"
         }
       }
@@ -68,28 +138,24 @@
           "type": "text-decoration",
           "value": "underline",
           "deprecated": true,
-          "deprecated-replace": "{component.text-link.text-decoration}",
           "deprecated-version": "6.0.0"
         },
         "primary-hover": {
           "type": "text-decoration",
           "value": "none",
           "deprecated": true,
-          "deprecated-replace": "{component.text-link.text-decoration-hover}",
           "deprecated-version": "6.0.0"
         },
         "secondary": {
           "type": "text-decoration",
           "value": "underline",
           "deprecated": true,
-          "deprecated-replace": "{component.text-link.text-decoration}",
           "deprecated-version": "6.0.0"
         },
         "secondary-hover": {
           "type": "text-decoration",
           "value": "none",
           "deprecated": true,
-          "deprecated-replace": "{component.text-link.text-decoration-hover}",
           "deprecated-version": "6.0.0"
         }
       }
@@ -99,7 +165,6 @@
         "type": "font-weight",
         "value": "{foundation.font-weight.medium}",
         "deprecated": true,
-        "deprecated-replace": "{component.text-link.font-weight}",
         "deprecated-version": "6.0.0"
       }
     }

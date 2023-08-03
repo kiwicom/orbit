@@ -13,6 +13,7 @@ import { flattenSpacing, pixelized } from "../utils/string.js";
 import transparentColor from "../../js/transparentColor.js";
 import { getValue } from "../utils/get.js";
 import { valueColorRgb } from "../transforms/values.js";
+import { determinateAlphaHex } from "../utils/determinate.js";
 
 export const resolveValue = (prop: DesignToken, platform: string) => {
   const { name, attributes, value } = prop;
@@ -49,5 +50,9 @@ export const resolveValue = (prop: DesignToken, platform: string) => {
   if (isOpacity(prop)) return String(Number(finalValue) / 100);
   if (isDuration(prop)) return String(`${Number(finalValue) / 1000}s`);
   if (isBorderRadius(prop)) return pixelized(finalValue, false);
+  if (isColor(prop))
+    return prop.opacity !== undefined
+      ? `${prop.value}${determinateAlphaHex(prop.opacity)}`
+      : prop.value;
   return getValue(value);
 };

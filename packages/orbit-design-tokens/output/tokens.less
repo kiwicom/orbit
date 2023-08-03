@@ -92,8 +92,8 @@
 @background-button-white-hover: rgb(245, 247, 249);
 @background-button-white-active: rgb(229, 234, 239);
 @background-button-white-bordered: transparent;
-@background-button-white-bordered-hover: rgb(255, 255, 255);
-@background-button-white-bordered-active: rgb(255, 255, 255);
+@background-button-white-bordered-hover: rgba(255, 255, 255, 0.2);
+@background-button-white-bordered-active: rgba(255, 255, 255, 0.2);
 @background-button-facebook: rgb(59, 89, 152);
 @background-button-facebook-hover: rgb(56, 84, 144);
 @background-button-facebook-active: rgb(53, 79, 136);
@@ -268,11 +268,11 @@
 @alert-color-text-warning: rgb(173, 87, 0);
 @alert-color-text-link: rgb(79, 94, 113);
 @border-radius-badge: 12;
-@badge-bundle-basic-background: linear-gradient(to top right, #E13E3B 0%, #E87E09 100%);
+@badge-bundle-basic-background: linear-gradient(to top right, #e13e3b 0%, #e87e09 100%);
 @badge-bundle-basic-foreground: rgb(255, 255, 255);
-@badge-bundle-medium-background: linear-gradient(to top right, #3719AB 0%, #8539DB 100%);
+@badge-bundle-medium-background: linear-gradient(to top right, #3719ab 0%, #8539db 100%);
 @badge-bundle-medium-foreground: rgb(255, 255, 255);
-@badge-bundle-top-background: linear-gradient(to top right, #2D2D2E 0%, #696E73 100%);
+@badge-bundle-top-background: linear-gradient(to top right, #2d2d2e 0%, #696e73 100%);
 @badge-bundle-top-foreground: rgb(255, 255, 255);
 @badge-critical-background: rgb(210, 28, 28);
 @badge-critical-foreground: rgb(255, 255, 255);
@@ -300,17 +300,57 @@
 @margin-button-group: null;
 @margin-button-icon: 8;
 @button-link-critical-background: transparent; // Used for the background of critical ButtonLink in the default state.
-@button-link-critical-background-hover: rgb(248, 226, 226); // Used for the background of critical ButtonLink in the hover state.
-@button-link-critical-background-active: rgb(243, 206, 206); // Used for the background of critical ButtonLink in the active and the focus state.
-@button-link-critical-foreground: rgb(210, 28, 28); // Used for the text of critical ButtonLink in the default state.
-@button-link-critical-foreground-hover: rgb(185, 25, 25); // Used for the text of critical ButtonLink in the hover state.
-@button-link-critical-foreground-active: rgb(157, 21, 21); // Used for the text of critical ButtonLink in the active and the focus state.
+@button-link-critical-background-hover: rgb(
+  248,
+  226,
+  226
+); // Used for the background of critical ButtonLink in the hover state.
+@button-link-critical-background-active: rgb(
+  243,
+  206,
+  206
+); // Used for the background of critical ButtonLink in the active and the focus state.
+@button-link-critical-foreground: rgb(
+  210,
+  28,
+  28
+); // Used for the text of critical ButtonLink in the default state.
+@button-link-critical-foreground-hover: rgb(
+  185,
+  25,
+  25
+); // Used for the text of critical ButtonLink in the hover state.
+@button-link-critical-foreground-active: rgb(
+  157,
+  21,
+  21
+); // Used for the text of critical ButtonLink in the active and the focus state.
 @button-link-primary-background: transparent; // Used for the background of primary ButtonLink in the default state.
-@button-link-primary-background-hover: rgb(214, 240, 236); // Used for the background of primary ButtonLink in the hover state.
-@button-link-primary-background-active: rgb(191, 232, 226); // Used for the background of primary ButtonLink in the active and the focus state.
-@button-link-primary-foreground: rgb(0, 165, 142); // Used for the text of primary ButtonLink in the default state.
-@button-link-primary-foreground-hover: rgb(0, 112, 96); // Used for the text of primary ButtonLink in the hover state.
-@button-link-primary-foreground-active: rgb(0, 102, 87); // Used for the text of primary ButtonLink in the active and the focus state.
+@button-link-primary-background-hover: rgb(
+  214,
+  240,
+  236
+); // Used for the background of primary ButtonLink in the hover state.
+@button-link-primary-background-active: rgb(
+  191,
+  232,
+  226
+); // Used for the background of primary ButtonLink in the active and the focus state.
+@button-link-primary-foreground: rgb(
+  0,
+  165,
+  142
+); // Used for the text of primary ButtonLink in the default state.
+@button-link-primary-foreground-hover: rgb(
+  0,
+  112,
+  96
+); // Used for the text of primary ButtonLink in the hover state.
+@button-link-primary-foreground-active: rgb(
+  0,
+  102,
+  87
+); // Used for the text of primary ButtonLink in the active and the focus state.
 @button-link-secondary-background: transparent; // Used for the background of secondary ButtonLink in the default state.
 @button-link-secondary-background-hover: rgb(229, 234, 239); // Used for the background of secondary ButtonLink in the hover state.
 @button-link-secondary-background-active: rgb(214, 222, 230); // Used for the background of secondary ButtonLink in the active and the focus state.
@@ -373,7 +413,7 @@
 @button-primary-foreground: rgb(255, 255, 255);
 @button-primary-foreground-hover: rgb(255, 255, 255);
 @button-primary-foreground-active: rgb(255, 255, 255);
-@button-primary-border-color-focus: rgb(0, 165, 142);
+@button-primary-border-color-focus: rgba(0, 165, 142, 0.5);
 @button-secondary-background: rgb(232, 237, 241);
 @button-secondary-background-hover: rgb(220, 227, 233);
 @button-secondary-background-active: rgb(202, 212, 222);
@@ -398,7 +438,7 @@
 @button-white-foreground: rgb(37, 42, 49);
 @button-white-foreground-hover: rgb(24, 27, 32);
 @button-white-foreground-active: rgb(11, 12, 15);
-@button-white-border-color-focus: rgb(231, 236, 241);
+@button-white-border-color-focus: rgba(231, 236, 241, 0.5);
 @box-shadow-button-focus: rgb(1, 114, 203);
 @border-color-button-primary-bordered: rgb(0, 165, 142);
 @border-color-button-primary-bordered-hover: rgb(0, 149, 128);
@@ -518,15 +558,27 @@
 @form-element-border-color: rgb(186, 199, 213);
 @form-element-border-color-hover: rgb(166, 182, 200);
 @form-element-border-color-active: rgb(148, 168, 190);
-@form-element-border-color-focus: rgb(1, 114, 203); // Should be used for all form-elements when the component has active or focus state and it's needed to render border attribute, or combined with shadows.
-@form-element-border-color-error: rgb(210, 28, 28); // Should be used for all form-elements when the component has error state and it's needed to render border attribute, or combined with shadows.
+@form-element-border-color-focus: rgb(
+  1,
+  114,
+  203
+); // Should be used for all form-elements when the component has active or focus state and it's needed to render border attribute, or combined with shadows.
+@form-element-border-color-error: rgb(
+  210,
+  28,
+  28
+); // Should be used for all form-elements when the component has error state and it's needed to render border attribute, or combined with shadows.
 @form-element-focus-box-shadow: rgb(1, 114, 203);
 @form-element-error-focus-box-shadow: rgb(210, 28, 28);
 @form-element-small-font-size: 15;
 @form-element-small-padding: null;
 @form-element-normal-font-size: 15;
 @form-element-normal-padding: null;
-@form-element-foreground: rgb(186, 199, 213); // Should be used for the text when they value is not filled.
+@form-element-foreground: rgb(
+  186,
+  199,
+  213
+); // Should be used for the text when they value is not filled.
 @form-element-filled-foreground: rgb(79, 94, 113);
 @form-element-label-foreground: rgb(79, 94, 113);
 @form-element-label-filled: rgb(105, 125, 149);
@@ -607,7 +659,7 @@
 @social-button-apple-foreground: rgb(255, 255, 255);
 @social-button-apple-foreground-hover: rgb(255, 255, 255);
 @social-button-apple-foreground-active: rgb(255, 255, 255);
-@social-button-apple-border-color-focus: rgb(105, 125, 149);
+@social-button-apple-border-color-focus: rgba(105, 125, 149, 0.5);
 @social-button-apple-icon-foreground: rgb(255, 255, 255);
 @social-button-facebook-background: rgb(59, 89, 152);
 @social-button-facebook-background-hover: rgb(56, 84, 144);
@@ -629,15 +681,15 @@
 @social-button-twitter-foreground: rgb(79, 94, 113);
 @social-button-twitter-foreground-hover: rgb(79, 94, 113);
 @social-button-twitter-foreground-active: rgb(79, 94, 113);
-@social-button-twitter-border-color-focus: rgb(105, 125, 149);
+@social-button-twitter-border-color-focus: rgba(105, 125, 149, 0.5);
 @social-button-twitter-icon-foreground: rgb(0, 172, 238);
-@tab-bundle-basic-background: linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%);
+@tab-bundle-basic-background: linear-gradient(80.91deg, #e13e3b 0%, #e87e09 100%);
 @tab-bundle-basic-background-hover: rgba(215, 51, 28, 0.08);
 @tab-bundle-basic-background-active: rgba(215, 51, 28, 0.12);
-@tab-bundle-medium-background: linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%);
+@tab-bundle-medium-background: linear-gradient(80.91deg, #3719ab 0%, #8539db 100%);
 @tab-bundle-medium-background-hover: rgba(59, 30, 176, 0.08);
 @tab-bundle-medium-background-active: rgba(59, 30, 176, 0.12);
-@tab-bundle-top-background: linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%);
+@tab-bundle-top-background: linear-gradient(80.91deg, #2d2d2e 0%, #696e73 100%);
 @tag-colored-background: rgb(232, 244, 253);
 @tag-colored-background-hover: rgb(222, 240, 252);
 @tag-colored-background-active: rgb(199, 228, 250);
@@ -647,21 +699,43 @@
 @tag-neutral-background-active: rgb(202, 212, 222);
 @tag-neutral-foreground: rgb(37, 42, 49);
 @text-link-primary-foreground: rgb(0, 122, 105);
+@text-link-primary-foreground-hover: rgb(0, 112, 96);
+@text-link-primary-foreground-active: rgb(0, 102, 87);
 @text-link-secondary-foreground: rgb(37, 42, 49);
-@text-link-foreground-hover: rgb(0, 149, 128);
-@text-link-text-decoration: underline;
-@text-link-text-decoration-hover: none;
-@text-link-font-weight: 500;
+@text-link-secondary-foreground-hover: rgb(0, 112, 96);
+@text-link-secondary-foreground-active: rgb(0, 102, 87);
+@text-link-success-foreground: rgb(45, 119, 56);
+@text-link-success-foreground-hover: rgb(39, 104, 49);
+@text-link-success-foreground-active: rgb(35, 92, 43);
+@text-link-info-foreground: rgb(0, 90, 163);
+@text-link-info-foreground-hover: rgb(0, 79, 143);
+@text-link-info-foreground-active: rgb(0, 70, 128);
+@text-link-warning-foreground: rgb(173, 87, 0);
+@text-link-warning-foreground-hover: rgb(167, 84, 0);
+@text-link-warning-foreground-active: rgb(128, 63, 0);
+@text-link-critical-foreground: rgb(151, 12, 12);
+@text-link-critical-foreground-hover: rgb(137, 11, 11);
+@text-link-critical-foreground-active: rgb(118, 9, 9);
+@text-link-white-foreground: rgb(255, 255, 255);
+@text-link-white-foreground-hover: rgb(225, 244, 243);
+@text-link-white-foreground-active: rgb(225, 244, 243);
 @text-decoration-text-link-primary: underline;
 @text-decoration-text-link-primary-hover: none;
 @text-decoration-text-link-secondary: underline;
 @text-decoration-text-link-secondary-hover: none;
+@text-primary-background: rgba(37, 42, 49, 0.1);
 @text-primary-foreground: rgb(37, 42, 49);
+@text-secondary-background: rgba(79, 94, 113, 0.1);
 @text-secondary-foreground: rgb(79, 94, 113);
+@text-info-background: rgba(1, 114, 203, 0.1);
 @text-info-foreground: rgb(1, 114, 203);
+@text-success-background: rgba(40, 161, 56, 0.1);
 @text-success-foreground: rgb(40, 161, 56);
+@text-warning-background: rgba(223, 123, 0, 0.1);
 @text-warning-foreground: rgb(223, 123, 0);
+@text-critical-background: rgba(210, 28, 28, 0.1);
 @text-critical-foreground: rgb(210, 28, 28);
+@text-white-background: rgba(255, 255, 255, 0.1);
 @text-white-foreground: rgb(255, 255, 255);
 @background-illustration: transparent;
 @border-radius-circle: 50%;
@@ -794,7 +868,8 @@
 @space-x-large: 32;
 @space-x-x-large: 40;
 @space-x-x-x-large: 52;
-@font-family: 'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+@font-family: "Roboto", -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI",
+  "Helvetica Neue", "Lucida Grande", sans-serif;
 @font-size-text-small: 13;
 @font-size-text-normal: 15;
 @font-size-text-large: 16;

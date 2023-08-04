@@ -1,1391 +1,2035 @@
 {
   "paddingAlert": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "paddingAlertWithIcon": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "paddingBadge": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonLarge": {
-    "version": "1.0.0"
+    "replacement": "buttonLargePadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonLargeWithIcons": {
-    "version": "1.0.0"
+    "replacement": "buttonLargeBothIconsPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonLargeWithLeftIcon": {
-    "version": "1.0.0"
+    "replacement": "buttonLargeLeftIconPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonLargeWithRightIcon": {
-    "version": "1.0.0"
+    "replacement": "buttonLargeRightIconPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonNormal": {
-    "version": "1.0.0"
+    "replacement": "buttonNormalPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonNormalWithIcons": {
-    "version": "1.0.0"
+    "replacement": "buttonNormalBothIconsPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonNormalWithLeftIcon": {
-    "version": "1.0.0"
+    "replacement": "buttonNormalLeftIconPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonNormalWithRightIcon": {
-    "version": "1.0.0"
+    "replacement": "buttonNormalRightIconPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonWithoutText": {
-    "version": "1.0.0"
+    "replacement": "buttonWithoutTextPadding",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "paddingButtonSmall": {
-    "version": "1.0.0"
+    "replacement": "buttonSmallPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonSmallWithIcons": {
-    "version": "1.0.0"
+    "replacement": "buttonSmallBothIconsPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonSmallWithLeftIcon": {
-    "version": "1.0.0"
+    "replacement": "buttonSmallLeftIconPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingButtonSmallWithRightIcon": {
-    "version": "1.0.0"
+    "replacement": "buttonSmallRightIconPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingInputSmall": {
-    "version": "1.0.0"
+    "replacement": "formElementSmallPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingInputNormal": {
-    "version": "1.0.0"
+    "replacement": "formElementNormalPadding",
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingInputFile": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingLoading": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "paddingTable": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingTableCompact": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingTag": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingTagRemovable": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingTagRemovableWithIcon": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "paddingTagWithIcon": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingTextareaSmall": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "paddingTextareaNormal": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "backgroundAlertCritical": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundAlertInfo": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundAlertSuccess": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundAlertWarning": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeCritical": {
-    "version": "1.0.0"
+    "replacement": "badgeCriticalBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeCriticalSubtle": {
-    "version": "1.0.0"
+    "replacement": "badgeCriticalSubtleBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeDark": {
-    "version": "1.0.0"
+    "replacement": "badgeDarkBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeInfo": {
-    "version": "1.0.0"
+    "replacement": "badgeInfoBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeInfoSubtle": {
-    "version": "1.0.0"
+    "replacement": "badgeInfoSubtleBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeNeutral": {
-    "version": "1.0.0"
+    "replacement": "badgeNeutralBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeSuccess": {
-    "version": "1.0.0"
+    "replacement": "badgeSuccessBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeSuccessSubtle": {
-    "version": "1.0.0"
+    "replacement": "badgeSuccessSubtleBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeWarning": {
-    "version": "1.0.0"
+    "replacement": "badgeWarningBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeWarningSubtle": {
-    "version": "1.0.0"
+    "replacement": "badgeWarningSubtleBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundBadgeWhite": {
-    "version": "1.0.0"
+    "replacement": "badgeWhiteBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkCritical": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkCriticalBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkCriticalHover": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkCriticalBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkCriticalActive": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkCriticalBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkPrimary": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkPrimaryBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkPrimaryHover": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkPrimaryBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkPrimaryActive": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkPrimaryBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkSecondary": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkSecondaryBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkSecondaryHover": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkSecondaryBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonLinkSecondaryActive": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkSecondaryBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonBundleBasic": {
-    "version": "1.0.0"
+    "replacement": "buttonBundleBasicBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonBundleBasicHover": {
-    "version": "1.0.0"
+    "replacement": "buttonBundleBasicBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonBundleBasicActive": {
-    "version": "1.0.0"
+    "replacement": "buttonBundleBasicBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonBundleMedium": {
+    "replacement": "buttonBundleMediumBackground",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleMediumHover": {
+    "replacement": "buttonBundleMediumBackgroundHover",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleMediumActive": {
+    "replacement": "buttonBundleMediumBackgroundActive",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleTop": {
+    "replacement": "buttonBundleTopBackground",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleTopHover": {
+    "replacement": "buttonBundleTopBackgroundHover",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonBundleTopActive": {
+    "replacement": "buttonBundleTopBackgroundActive",
+    "category": "Background colors",
     "version": "1.0.0"
   },
   "backgroundButtonCriticalSubtle": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalSubtleBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonCriticalSubtleHover": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalSubtleBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonCriticalSubtleActive": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalSubtleBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonCriticalSubtleFocus": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonCritical": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonCriticalHover": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonCriticalActive": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonInfo": {
-    "version": "1.0.0"
+    "replacement": "buttonInfoBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonInfoHover": {
-    "version": "1.0.0"
+    "replacement": "buttonInfoBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonInfoActive": {
-    "version": "1.0.0"
+    "replacement": "buttonInfoBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonPrimarySubtle": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimarySubtleBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonPrimarySubtleHover": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimarySubtleBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonPrimarySubtleActive": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimarySubtleBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonPrimarySubtleFocus": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimarySubtleBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonPrimary": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimaryBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonPrimaryHover": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimaryBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonPrimaryActive": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimaryBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonSecondary": {
-    "version": "1.0.0"
+    "replacement": "buttonSecondaryBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonSecondaryHover": {
-    "version": "1.0.0"
+    "replacement": "buttonSecondaryBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonSecondaryActive": {
-    "version": "1.0.0"
+    "replacement": "buttonSecondaryBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonSuccess": {
-    "version": "1.0.0"
+    "replacement": "buttonSuccessBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonSuccessHover": {
-    "version": "1.0.0"
+    "replacement": "buttonSuccessBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonSuccessActive": {
-    "version": "1.0.0"
+    "replacement": "buttonSuccessBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWarning": {
-    "version": "1.0.0"
+    "replacement": "buttonWarningBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWarningHover": {
-    "version": "1.0.0"
+    "replacement": "buttonWarningBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWarningActive": {
-    "version": "1.0.0"
+    "replacement": "buttonWarningBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWhite": {
-    "version": "1.0.0"
+    "replacement": "buttonWhiteBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWhiteHover": {
-    "version": "1.0.0"
+    "replacement": "buttonWhiteBackgroundHover",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWhiteActive": {
-    "version": "1.0.0"
+    "replacement": "buttonWhiteBackgroundActive",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWhiteBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWhiteBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonWhiteBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonFacebook": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonFacebookHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonFacebookActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonGoogle": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonGoogleHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundButtonGoogleActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundCard": {
-    "version": "1.0.0"
+    "replacement": "elevationFlatBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundCarrierLogo": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundCountryFlag": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundServiceLogo": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTooltip": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTooltipLargeMobile": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundSeparator": {
-    "version": "1.0.0"
+    "replacement": "elevationFlatBorderColor",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundSwitch": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundSwitchChecked": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundInput": {
-    "version": "1.0.0"
+    "replacement": "formElementBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundInputDisabled": {
-    "version": "1.0.0"
+    "replacement": "formElementDisabledBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundModal": {
-    "version": "1.0.0"
+    "replacement": "elevationFlatBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTable": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTableEven": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTableHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTag": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTagHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTagActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTagSelected": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTagSelectedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "backgroundTagSelectedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "colorAlertIconCritical": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorAlertIconInfo": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorAlertIconSuccess": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorAlertIconWarning": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorFormLabel": {
-    "version": "1.0.0"
+    "replacement": "formElementLabelForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorFormLabelFilled": {
-    "version": "1.0.0"
+    "replacement": "formElementLabelFilled",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconCheckboxRadio": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconCheckboxRadioDisabled": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconInput": {
-    "version": "1.0.0"
+    "replacement": "iconTertiaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconRadioButton": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconRadioButtonDisabled": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorInfoCheckBoxRadio": {
-    "version": "1.0.0"
+    "replacement": "textSecondaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorPlaceholderInput": {
-    "version": "1.0.0"
+    "replacement": "formElementForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorPlaceholderInputError": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorPlaceholderInputFile": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorPlaceholderInputFileError": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextInput": {
-    "version": "1.0.0"
+    "replacement": "formElementFilledForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextInputDisabled": {
-    "version": "1.0.0"
+    "replacement": "formElementDisabledForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextInputPrefix": {
-    "version": "1.0.0"
+    "replacement": "formElementPrefixForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorHeading": {
-    "version": "1.0.0"
+    "replacement": "headingForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorHeadingInverted": {
-    "version": "1.0.0"
+    "replacement": "headingForegroundInverted",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconPrimary": {
-    "version": "1.0.0"
+    "replacement": "iconPrimaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconSecondary": {
-    "version": "1.0.0"
+    "replacement": "iconSecondaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconTertiary": {
-    "version": "1.0.0"
+    "replacement": "iconTertiaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconInfo": {
-    "version": "1.0.0"
+    "replacement": "iconInfoForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconSuccess": {
-    "version": "1.0.0"
+    "replacement": "iconSuccessForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconWarning": {
-    "version": "1.0.0"
+    "replacement": "iconWarningForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorIconCritical": {
-    "version": "1.0.0"
+    "replacement": "iconCriticalForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorStopoverArrow": {
-    "version": "1.0.0"
+    "replacement": "iconSecondaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextLinkPrimary": {
-    "version": "1.0.0"
+    "replacement": "textLinkPrimaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextLinkPrimaryHover": {
-    "version": "1.0.0"
+    "replacement": "textLinkForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextLinkSecondary": {
-    "version": "1.0.0"
+    "replacement": "textLinkSecondaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextLinkSecondaryHover": {
-    "version": "1.0.0"
+    "replacement": "textLinkForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextPrimary": {
-    "version": "1.0.0"
+    "replacement": "textPrimaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextSecondary": {
-    "version": "1.0.0"
+    "replacement": "textSecondaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextInfo": {
-    "version": "1.0.0"
+    "replacement": "textInfoForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextSuccess": {
-    "version": "1.0.0"
+    "replacement": "textSuccessForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextWarning": {
-    "version": "1.0.0"
+    "replacement": "textWarningForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextCritical": {
-    "version": "1.0.0"
+    "replacement": "textCriticalForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextWhite": {
-    "version": "1.0.0"
+    "replacement": "textWhiteForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextError": {
-    "version": "1.0.0"
+    "replacement": "textCriticalForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextAlertCritical": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextAlertInfo": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextAlertSuccess": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextAlertWarning": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextAlertLink": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextBadgeCritical": {
-    "version": "1.0.0"
+    "replacement": "badgeCriticalForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextBadgeDark": {
-    "version": "1.0.0"
+    "replacement": "badgeDarkForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextBadgeInfo": {
-    "version": "1.0.0"
+    "replacement": "badgeInfoForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextBadgeNeutral": {
-    "version": "1.0.0"
+    "replacement": "badgeNeutralForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextBadgeSuccess": {
-    "version": "1.0.0"
+    "replacement": "badgeSuccessForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextBadgeWarning": {
-    "version": "1.0.0"
+    "replacement": "badgeWarningForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextBadgeWhite": {
-    "version": "1.0.0"
+    "replacement": "badgeWhiteForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkCritical": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkCriticalForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkCriticalHover": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkCriticalForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkCriticalActive": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkCriticalForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkPrimary": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkPrimaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkPrimaryHover": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkPrimaryForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkPrimaryActive": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkPrimaryForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkSecondary": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkSecondaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkSecondaryHover": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkSecondaryForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkSecondaryActive": {
-    "version": "1.0.0"
+    "replacement": "buttonLinkSecondaryForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonLinkSecondaryCompactHover": {
-    "replaceForToken": null
+    "replacement": null,
+    "category": "Colors"
   },
   "colorTextButtonLinkSecondaryCompactActive": {
-    "replaceForToken": null
+    "replacement": null,
+    "category": "Colors"
   },
   "colorTextButtonCriticalSubtle": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalSubtleForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonCriticalSubtleHover": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalSubtleForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonCriticalSubtleActive": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalSubtleForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonCritical": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonCriticalHover": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonCriticalActive": {
-    "version": "1.0.0"
+    "replacement": "buttonCriticalForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonCriticalBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonCriticalBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonCriticalBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFilled": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFilledHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFilledActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonInfo": {
-    "version": "1.0.0"
+    "replacement": "buttonInfoForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonInfoHover": {
-    "version": "1.0.0"
+    "replacement": "buttonInfoForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonInfoActive": {
-    "version": "1.0.0"
+    "replacement": "buttonInfoForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonInfoBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonInfoBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonInfoBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimarySubtle": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimarySubtleForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimarySubtleHover": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimarySubtleForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimarySubtleActive": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimarySubtleForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimary": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimaryHover": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimaryForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimaryActive": {
-    "version": "1.0.0"
+    "replacement": "buttonPrimaryForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimaryBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimaryBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonPrimaryBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSecondary": {
-    "version": "1.0.0"
+    "replacement": "buttonSecondaryForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSecondaryHover": {
-    "version": "1.0.0"
+    "replacement": "buttonSecondaryForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSecondaryActive": {
-    "version": "1.0.0"
+    "replacement": "buttonSecondaryForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSecondaryBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSecondaryBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSecondaryBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSuccess": {
-    "version": "1.0.0"
+    "replacement": "buttonSuccessForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSuccessHover": {
-    "version": "1.0.0"
+    "replacement": "buttonSuccessForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSuccessActive": {
-    "version": "1.0.0"
+    "replacement": "buttonSuccessForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSuccessBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSuccessBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonSuccessBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWarning": {
-    "version": "1.0.0"
+    "replacement": "buttonWarningForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWarningHover": {
-    "version": "1.0.0"
+    "replacement": "buttonWarningForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWarningActive": {
-    "version": "1.0.0"
+    "replacement": "buttonWarningForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWarningBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWarningBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWarningBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWhite": {
-    "version": "1.0.0"
+    "replacement": "buttonWhiteForeground",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWhiteHover": {
-    "version": "1.0.0"
+    "replacement": "buttonWhiteForegroundHover",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWhiteActive": {
-    "version": "1.0.0"
+    "replacement": "buttonWhiteForegroundActive",
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWhiteBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWhiteBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonWhiteBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFacebook": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFacebookHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFacebookActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFacebookBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFacebookBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonFacebookBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonGoogle": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonGoogleHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonGoogleActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonGoogleBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonGoogleBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextButtonGoogleBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextLoading": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextTable": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextTag": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "colorTextTagSelected": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Colors",
+    "version": "6.0.0"
   },
   "borderRadiusBadge": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border radius",
+    "version": "6.0.0"
   },
   "marginBadgeIcon": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "marginButtonGroup": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
   },
   "marginButtonIcon": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "boxShadowButtonFocus": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Box shadow",
+    "version": "6.0.0"
   },
   "borderColorButtonPrimaryBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonPrimaryBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonPrimaryBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonSecondaryBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonSecondaryBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonSecondaryBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonFacebookBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonFacebookBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonFacebookBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonGoogleBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonGoogleBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonGoogleBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonInfoBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonInfoBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonInfoBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonSuccessBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonSuccessBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonSuccessBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonWarningBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonWarningBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonWarningBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonCriticalBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonCriticalBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonCriticalBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonWhiteBordered": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonWhiteBorderedHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorButtonWhiteBorderedActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorCard": {
-    "version": "1.0.0"
+    "replacement": "elevationFlatBorderColor",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorCheckboxRadio": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColor",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorCheckboxRadioActive": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColorFocus",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorCheckboxRadioError": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColorError",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorCheckboxRadioFocus": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColorFocus",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorCheckboxRadioHover": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColorHover",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorInput": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColor",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorInputActive": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColorFocus",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorInputError": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColorError",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorInputErrorFocus": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorInputErrorHover": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorInputFocus": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColorFocus",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorInputHover": {
-    "version": "1.0.0"
+    "replacement": "formElementBorderColorHover",
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorTable": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorTableCell": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorTableHead": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorTag": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "borderColorTagFocus": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Border color",
+    "version": "6.0.0"
   },
   "modifierScaleButtonActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": null,
+    "version": "6.0.0"
   },
   "modifierScaleCheckboxRadioActive": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": null,
+    "version": "6.0.0"
   },
   "fontSizeButtonSmall": {
-    "version": "1.0.0"
+    "replacement": "buttonSmallFontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeButtonNormal": {
-    "version": "1.0.0"
+    "replacement": "buttonNormalFontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeButtonLarge": {
-    "version": "1.0.0"
+    "replacement": "buttonLargeFontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeInputSmall": {
-    "version": "1.0.0"
+    "replacement": "formElementSmallFontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeInputNormal": {
-    "version": "1.0.0"
+    "replacement": "formElementNormalFontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeFormFeedback": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeFormLabel": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeMessage": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeHeadingDisplay": {
-    "version": "1.0.0"
+    "replacement": "headingDisplayFontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeHeadingDisplaySubtitle": {
-    "version": "1.0.0"
+    "replacement": "headingDisplaySubtitleFontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeHeadingTitle1": {
-    "version": "1.0.0"
+    "replacement": "headingTitle1FontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeHeadingTitle2": {
-    "version": "1.0.0"
+    "replacement": "headingTitle2FontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeHeadingTitle3": {
-    "version": "1.0.0"
+    "replacement": "headingTitle3FontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeHeadingTitle4": {
-    "version": "1.0.0"
+    "replacement": "headingTitle4FontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeHeadingTitle5": {
-    "version": "1.0.0"
+    "replacement": "headingTitle5FontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontSizeHeadingTitle6": {
-    "version": "1.0.0"
+    "replacement": "headingTitle6FontSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "opacityButtonDisabled": {
-    "version": "1.0.0"
+    "replacement": "buttonDisabledOpacity",
+    "category": "Opacity",
+    "version": "6.0.0"
   },
   "opacityCheckboxDisabled": {
-    "version": "1.0.0"
+    "replacement": "formElementDisabledOpacity",
+    "category": "Opacity",
+    "version": "6.0.0"
   },
   "opacityRadioButtonDisabled": {
-    "version": "1.0.0"
+    "replacement": "formElementDisabledOpacity",
+    "category": "Opacity",
+    "version": "6.0.0"
   },
   "borderStyleCard": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": null,
+    "version": "6.0.0"
   },
   "borderStyleInput": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": null,
+    "version": "6.0.0"
   },
   "borderWidthCard": {
-    "version": "1.0.0"
+    "replacement": "elevationFlatBorderSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "borderWidthInput": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "borderWidthInputFocus": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthCarrierLogo": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthIconSmall": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthIconMedium": {
-    "version": "1.0.0"
+    "replacement": "iconMediumSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthIconLarge": {
-    "version": "1.0.0"
+    "replacement": "iconLargeSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthBadgeCircled": {
-    "version": "1.0.0"
+    "replacement": "iconLargeSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthCheckbox": {
-    "version": "1.0.0"
+    "replacement": "iconSmallSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthRadioButton": {
-    "version": "1.0.0"
+    "replacement": "iconSmallSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthStopoverArrow": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthCountryFlag": {
-    "version": "1.0.0"
+    "replacement": "iconLargeSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthModalSmall": {
-    "version": "1.0.0"
+    "replacement": "modalSmallWidth",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthModalNormal": {
-    "version": "1.0.0"
+    "replacement": "modalNormalWidth",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthModalLarge": {
-    "version": "1.0.0"
+    "replacement": "modalLargeWidth",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "widthModalExtraLarge": {
-    "version": "1.0.0"
+    "replacement": "modalExtraLargeWidth",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightCarrierLogo": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightButtonSmall": {
-    "version": "1.0.0"
+    "replacement": "formBoxSmallHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightButtonNormal": {
-    "version": "1.0.0"
+    "replacement": "formBoxNormalHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightButtonLarge": {
-    "version": "1.0.0"
+    "replacement": "formBoxLargeHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightInputSmall": {
-    "version": "1.0.0"
+    "replacement": "formBoxSmallHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightInputNormal": {
-    "version": "1.0.0"
+    "replacement": "formBoxNormalHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightInputLarge": {
-    "version": "1.0.0"
+    "replacement": "formBoxLargeHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightIconSmall": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightIconMedium": {
-    "version": "1.0.0"
+    "replacement": "iconMediumSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightIconLarge": {
-    "version": "1.0.0"
+    "replacement": "iconLargeSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightBadge": {
-    "version": "1.0.0"
+    "replacement": "iconMediumSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightCheckbox": {
-    "version": "1.0.0"
+    "replacement": "iconSmallSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightRadioButton": {
-    "version": "1.0.0"
+    "replacement": "iconSmallSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightStopoverArrow": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightCountryFlag": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightServiceLogoSmall": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightServiceLogoMedium": {
-    "version": "1.0.0"
+    "replacement": "iconMediumSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightServiceLogoLarge": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightSeparator": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightInputGroupSeparatorSmall": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightInputGroupSeparatorNormal": {
-    "version": "1.0.0"
+    "replacement": "iconMediumSize",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightIllustrationSmall": {
-    "version": "1.0.0"
+    "replacement": "illustrationExtraSmallHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "heightIllustrationMedium": {
-    "version": "1.0.0"
+    "replacement": "illustrationMediumHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "marginTopFormFeedback": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "fontWeightHeadingDisplay": {
-    "version": "1.0.0"
+    "replacement": "headingDisplayFontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightHeadingDisplaySubtitle": {
-    "version": "1.0.0"
+    "replacement": "headingDisplaySubtitleFontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightHeadingTitle1": {
-    "version": "1.0.0"
+    "replacement": "headingTitle1FontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightHeadingTitle2": {
-    "version": "1.0.0"
+    "replacement": "headingTitle2FontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightHeadingTitle3": {
-    "version": "1.0.0"
+    "replacement": "headingTitle3FontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightHeadingTitle4": {
-    "version": "1.0.0"
+    "replacement": "headingTitle4FontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightHeadingTitle5": {
-    "version": "1.0.0"
+    "replacement": "headingTitle5FontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightHeadingTitle6": {
-    "version": "1.0.0"
+    "replacement": "headingTitle6FontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightTableHead": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": null,
+    "version": "6.0.0"
   },
   "fontWeightLinks": {
-    "version": "1.0.0"
+    "replacement": "textLinkFontWeight",
+    "category": null,
+    "version": "6.0.0"
   },
   "lineHeightHeading": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": null,
+    "version": "6.0.0"
   },
   "lineHeightHeadingDisplay": {
-    "version": "1.0.0"
+    "replacement": "headingDisplayLineHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "lineHeightHeadingDisplaySubtitle": {
-    "version": "1.0.0"
+    "replacement": "headingDisplaySubtitleLineHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "lineHeightHeadingTitle1": {
-    "version": "1.0.0"
+    "replacement": "headingTitle1LineHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "lineHeightHeadingTitle2": {
-    "version": "1.0.0"
+    "replacement": "headingTitle2LineHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "lineHeightHeadingTitle3": {
-    "version": "1.0.0"
+    "replacement": "headingTitle3LineHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "lineHeightHeadingTitle4": {
-    "version": "1.0.0"
+    "replacement": "headingTitle4LineHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "lineHeightHeadingTitle5": {
-    "version": "1.0.0"
+    "replacement": "headingTitle5LineHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "lineHeightHeadingTitle6": {
-    "version": "1.0.0"
+    "replacement": "headingTitle6LineHeight",
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "marginBottomSelectSuffix": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "paddingLeftSelectPrefix": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "6.0.0"
   },
   "textDecorationTextLinkPrimary": {
-    "version": "1.0.0"
+    "replacement": "textLinkTextDecoration",
+    "category": "Text decoration",
+    "version": "6.0.0"
   },
   "textDecorationTextLinkPrimaryHover": {
-    "version": "1.0.0"
+    "replacement": "textLinkTextDecorationHover",
+    "category": "Text decoration",
+    "version": "6.0.0"
   },
   "textDecorationTextLinkSecondary": {
-    "version": "1.0.0"
+    "replacement": "textLinkTextDecoration",
+    "category": "Text decoration",
+    "version": "6.0.0"
   },
   "textDecorationTextLinkSecondaryHover": {
-    "version": "1.0.0"
+    "replacement": "textLinkTextDecorationHover",
+    "category": "Text decoration",
+    "version": "6.0.0"
   },
   "backgroundIllustration": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "widthBreakpointMediumMobile": {
-    "version": "1.0.0"
+    "replacement": "breakpointMediumMobile",
+    "category": "Breakpoints",
+    "version": "6.0.0"
   },
   "widthBreakpointLargeMobile": {
-    "version": "1.0.0"
+    "replacement": "breakpointLargeMobile",
+    "category": "Breakpoints",
+    "version": "6.0.0"
   },
   "widthBreakpointTablet": {
-    "version": "1.0.0"
+    "replacement": "breakpointTablet",
+    "category": "Breakpoints",
+    "version": "6.0.0"
   },
   "widthBreakpointDesktop": {
-    "version": "1.0.0"
+    "replacement": "breakpointDesktop",
+    "category": "Breakpoints",
+    "version": "6.0.0"
   },
   "widthBreakpointLargeDesktop": {
-    "version": "1.0.0"
+    "replacement": "breakpointLargeDesktop",
+    "category": "Breakpoints",
+    "version": "6.0.0"
   },
   "backgroundBody": {
-    "version": "1.0.0"
+    "replacement": "elevationSuppressedBackground",
+    "category": "Background colors",
+    "version": "6.0.0"
   },
   "boxShadowAction": {
-    "version": "1.0.0"
+    "replacement": "elevationActionBoxShadow",
+    "category": "Box shadow",
+    "version": "6.0.0"
   },
   "boxShadowActionActive": {
-    "version": "1.0.0"
+    "replacement": "elevationActionActiveBoxShadow",
+    "category": "Box shadow",
+    "version": "6.0.0"
   },
   "boxShadowFixed": {
-    "version": "1.0.0"
+    "replacement": "elevationFixedBoxShadow",
+    "category": "Box shadow",
+    "version": "6.0.0"
   },
   "boxShadowFixedReverse": {
-    "version": "1.0.0"
+    "replacement": "elevationFixedReverseBoxShadow",
+    "category": "Box shadow",
+    "version": "6.0.0"
   },
   "boxShadowOverlay": {
-    "version": "1.0.0"
+    "replacement": "elevationOverlayBoxShadow",
+    "category": "Box shadow",
+    "version": "6.0.0"
   },
   "boxShadowRaised": {
-    "version": "1.0.0"
+    "replacement": "elevationRaisedBoxShadow",
+    "category": "Box shadow",
+    "version": "6.0.0"
   },
   "boxShadowRaisedReverse": {
-    "version": "1.0.0"
+    "replacement": "elevationRaisedReverseBoxShadow",
+    "category": "Box shadow",
+    "version": "6.0.0"
   },
   "opacityOverlay": {
-    "replaceForToken": null,
-    "version": "1.0.0"
+    "replacement": null,
+    "category": "Opacity",
+    "version": "6.0.0"
   }
 }

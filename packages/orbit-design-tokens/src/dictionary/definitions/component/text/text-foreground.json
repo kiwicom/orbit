@@ -51,56 +51,56 @@
           "value": "{foundation.palette.ink.dark}",
           "deprecated": true,
           "deprecated-replace": "{component.text.primary.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "secondary": {
           "type": "color",
           "value": "{foundation.palette.ink.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.text.secondary.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "info": {
           "type": "color",
           "value": "{foundation.palette.blue.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.text.info.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "success": {
           "type": "color",
           "value": "{foundation.palette.green.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.text.success.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "warning": {
           "type": "color",
           "value": "{foundation.palette.orange.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.text.warning.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "critical": {
           "type": "color",
           "value": "{foundation.palette.red.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.text.critical.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "white": {
           "type": "color",
           "value": "{foundation.palette.white.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.text.white.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "error": {
           "type": "color",
           "value": "{foundation.palette.red.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.text.critical.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

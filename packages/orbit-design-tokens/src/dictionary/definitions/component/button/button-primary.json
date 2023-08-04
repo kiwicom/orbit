@@ -44,21 +44,21 @@
           "value": "{foundation.palette.product.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.button.primary.background}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "primary-hover": {
           "type": "color",
           "value": "{foundation.palette.product.normal-hover}",
           "deprecated": true,
           "deprecated-replace": "{component.button.primary.background-hover}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "primary-active": {
           "type": "color",
           "value": "{foundation.palette.product.normal-active}",
           "deprecated": true,
           "deprecated-replace": "{component.button.primary.background-active}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     },
@@ -70,7 +70,7 @@
           "value": "{foundation.palette.white.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.button.primary.foreground}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "primary-hover": {
           "type": "color",
@@ -78,7 +78,7 @@
           "value": "{foundation.palette.white.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.button.primary.foreground-hover}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "primary-active": {
           "type": "color",
@@ -86,28 +86,28 @@
           "value": "{foundation.palette.white.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.button.primary.foreground-active}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "primary-bordered": {
           "type": "color",
           "category": "foreground",
           "value": "{foundation.palette.product.normal}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "primary-bordered-hover": {
           "type": "color",
           "category": "foreground",
           "value": "{foundation.palette.product.normal-hover}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "primary-bordered-active": {
           "type": "color",
           "category": "foreground",
           "value": "{foundation.palette.product.normal-active}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

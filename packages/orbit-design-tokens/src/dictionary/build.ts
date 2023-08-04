@@ -67,7 +67,7 @@ const build = () => {
     source: ["src/dictionary/definitions/**/*.json"],
     platforms: {
       "json/deprecated-tokens": {
-        transformGroup: "javascript/tokens",
+        transforms: ["attribute/nov", "attribute/nov/camelCase", "name/ti/camel"],
         buildPath: "output/",
         files: [
           {
@@ -95,17 +95,6 @@ const build = () => {
             destination: "docs-components.json",
             format: "json/documentation-categories",
             filter: _.overEvery([isNotInternal, isNotDeprecated, isComponentSpecific]),
-          },
-        ],
-      },
-      json: {
-        buildPath: "dist/",
-        transforms: ["attribute/nov", "name/ti/camel", "value/color/rgb"],
-        files: [
-          {
-            destination: "tokens.json",
-            format: "json/output-old",
-            filter: isNotInternal,
           },
         ],
       },

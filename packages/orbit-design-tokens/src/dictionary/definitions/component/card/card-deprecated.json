@@ -6,7 +6,7 @@
         "value": "{foundation.palette.white.normal}",
         "deprecated": true,
         "deprecated-replace": "{global.elevation.flat.background}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "border-color": {
@@ -15,7 +15,7 @@
         "value": "{foundation.palette.cloud.normal}",
         "deprecated": true,
         "deprecated-replace": "{global.elevation.flat.border-color}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "border-style": {
@@ -23,7 +23,7 @@
         "type": "border-style",
         "value": "solid",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "border-width": {
@@ -32,7 +32,7 @@
         "value": 1,
         "deprecated": true,
         "deprecated-replace": "{global.elevation.flat.border-size}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     }
   }

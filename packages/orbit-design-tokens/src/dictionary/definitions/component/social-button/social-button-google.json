@@ -39,19 +39,19 @@
           "type": "color",
           "value": "{foundation.palette.cloud.light}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "google-hover": {
           "type": "color",
           "value": "{foundation.palette.cloud.light-hover}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "google-active": {
           "type": "color",
           "value": "{foundation.palette.cloud.light-active}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     },
@@ -61,37 +61,37 @@
           "type": "color",
           "value": "{foundation.palette.ink.dark}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "google-hover": {
           "type": "color",
           "value": "{foundation.palette.ink.dark-hover}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "google-active": {
           "type": "color",
           "value": "{foundation.palette.ink.dark-active}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "google-bordered": {
           "type": "color",
           "value": "{foundation.palette.ink.dark}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "google-bordered-hover": {
           "type": "color",
           "value": "{foundation.palette.ink.dark-hover}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "google-bordered-active": {
           "type": "color",
           "value": "{foundation.palette.ink.dark-active}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

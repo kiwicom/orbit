@@ -30,82 +30,82 @@
         "value": "{foundation.palette.cloud.dark}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "checkbox-radio-active": {
         "type": "color",
         "value": "{foundation.palette.ink.dark}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color-focus}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "checkbox-radio-error": {
         "type": "color",
         "value": "{foundation.palette.red.normal}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color-error}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "checkbox-radio-focus": {
         "type": "color",
         "value": "{foundation.palette.blue.normal}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color-focus}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "checkbox-radio-hover": {
         "type": "color",
         "value": "{foundation.palette.ink.normal}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color-hover}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input": {
         "type": "color",
         "value": "{foundation.palette.cloud.dark}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input-active": {
         "type": "color",
         "value": "{foundation.palette.cloud.dark-active}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color-focus}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input-error": {
         "type": "color",
         "value": "{foundation.palette.red.normal}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color-error}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input-error-focus": {
         "type": "color",
         "value": "{foundation.palette.red.normal}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input-error-hover": {
         "type": "color",
         "value": "{foundation.palette.red.normal-hover}",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input-focus": {
         "type": "color",
         "value": "{foundation.palette.blue.normal}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color-focus}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input-hover": {
         "type": "color",
         "value": "{foundation.palette.cloud.dark-hover}",
         "deprecated": true,
         "deprecated-replace": "{component.form-element.border-color-hover}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "border-width": {
@@ -113,13 +113,13 @@
         "type": "size",
         "value": 1,
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input-focus": {
         "type": "size",
         "value": 2,
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     }
   }

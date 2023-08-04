@@ -41,7 +41,7 @@ module.exports = {
   presets: [
     orbitComponentsPreset({
       // Enable normalizing of the browser's default styles, which is disabled by default
-      disabledPreflight: false,
+      disablePreflight: false,
     }),
   ],
 };

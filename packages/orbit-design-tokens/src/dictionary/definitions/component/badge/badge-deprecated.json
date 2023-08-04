@@ -12,7 +12,7 @@
           }
         },
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     }
   }

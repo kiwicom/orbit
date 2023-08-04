@@ -97,7 +97,7 @@ For instance, if we want to deprecate the `component.button.large.height` design
           "value": "{foundation.size.extra-large}",
           "deprecated": true,
           "deprecated-replace": "{optional.alias.to.specify.the.replacement.token}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

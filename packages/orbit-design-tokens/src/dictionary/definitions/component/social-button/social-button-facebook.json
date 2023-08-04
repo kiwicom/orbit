@@ -38,19 +38,19 @@
           "type": "color",
           "value": "#3B5998",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "facebook-hover": {
           "type": "color",
           "value": "#385490",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "facebook-active": {
           "type": "color",
           "value": "#354F88",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     },
@@ -60,37 +60,37 @@
           "type": "color",
           "value": "{foundation.palette.white.normal}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "facebook-hover": {
           "type": "color",
           "value": "{foundation.palette.white.normal}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "facebook-active": {
           "type": "color",
           "value": "{foundation.palette.white.normal}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "facebook-bordered": {
           "type": "color",
           "value": "#3B5998",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "facebook-bordered-hover": {
           "type": "color",
           "value": "#385490",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "facebook-bordered-active": {
           "type": "color",
           "value": "#354F88",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

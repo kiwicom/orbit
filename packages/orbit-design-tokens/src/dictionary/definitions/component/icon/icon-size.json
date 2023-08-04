@@ -32,21 +32,21 @@
           "type": "size",
           "value": "{foundation.size.small}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "medium": {
           "type": "size",
           "value": 20,
           "deprecated": true,
           "deprecated-replace": "{component.icon.medium.size}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large": {
           "type": "size",
           "value": 24,
           "deprecated": true,
           "deprecated-replace": "{component.icon.large.size}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       },
       "badge": {
@@ -55,7 +55,7 @@
           "value": 24,
           "deprecated": true,
           "deprecated-replace": "{component.icon.large.size}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       },
       "checkbox": {
@@ -63,28 +63,28 @@
         "value": 20,
         "deprecated": true,
         "deprecated-replace": "{component.icon.small.size}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "radio-button": {
         "type": "size",
         "value": 20,
         "deprecated": true,
         "deprecated-replace": "{component.icon.small.size}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "stopover-arrow": {
         "type": "size",
         "value": 36,
         "internal-comment": "Let's define the size of StopoverArrow directly in the component. It has not similarity right now.",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "country-flag": {
         "type": "size",
         "value": 24,
         "deprecated": true,
         "deprecated-replace": "{component.icon.large.size}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     },
     "height": {
@@ -93,21 +93,21 @@
           "type": "size",
           "value": "{foundation.size.small}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "medium": {
           "type": "size",
           "value": 20,
           "deprecated": true,
           "deprecated-replace": "{component.icon.medium.size}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large": {
           "type": "size",
           "value": 24,
           "deprecated": true,
           "deprecated-replace": "{component.icon.large.size}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       },
       "badge": {
@@ -115,76 +115,76 @@
         "value": 20,
         "deprecated": true,
         "deprecated-replace": "{component.icon.medium.size}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "checkbox": {
         "type": "size",
         "value": 20,
         "deprecated": true,
         "deprecated-replace": "{component.icon.small.size}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "radio-button": {
         "type": "size",
         "value": 20,
         "deprecated": true,
         "deprecated-replace": "{component.icon.small.size}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "stopover-arrow": {
         "type": "size",
         "value": 7,
         "internal-comment": "Let's define the size of StopoverArrow directly in the component. It has not similarity right now.",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "country-flag": {
         "type": "size",
         "value": "auto",
         "internal-comment": "Height of CountryFlag for all sizes should be calculated by the image ratio.",
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "service-logo": {
         "small": {
           "type": "size",
           "value": 12,
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "medium": {
           "type": "size",
           "value": 20,
           "deprecated": true,
           "deprecated-replace": "{component.icon.medium.size}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large": {
           "type": "size",
           "value": 48,
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       },
       "separator": {
         "type": "size",
         "value": 1,
         "deprecated": true,
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       },
       "input-group-separator": {
         "small": {
           "type": "size",
           "value": "{foundation.size.small}",
           "deprecated": true,
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "normal": {
           "type": "size",
           "value": 20,
           "deprecated": true,
           "deprecated-replace": "{component.icon.medium.size}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

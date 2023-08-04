@@ -66,7 +66,7 @@
           },
           "deprecated": true,
           "deprecated-replace": "{component.button.large.padding}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large-with-icons": {
           "type": "size",
@@ -80,7 +80,7 @@
           },
           "deprecated": true,
           "deprecated-replace": "{component.button.large.both-icons-padding}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large-with-left-icon": {
           "type": "size",
@@ -96,7 +96,7 @@
           },
           "deprecated": true,
           "deprecated-replace": "{component.button.large.left-icon-padding}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "large-with-right-icon": {
           "type": "size",
@@ -112,7 +112,7 @@
           },
           "deprecated": true,
           "deprecated-replace": "{component.button.large.right-icon-padding}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

@@ -42,7 +42,7 @@
           },
           "deprecated": true,
           "deprecated-replace": "{component.form-element.small.padding}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "normal": {
           "type": "size",
@@ -56,7 +56,7 @@
           },
           "deprecated": true,
           "deprecated-replace": "{component.form-element.normal.padding}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

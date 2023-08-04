@@ -6,7 +6,7 @@
         "value": "{foundation.palette.white.normal}",
         "deprecated": true,
         "deprecated-replace": "{global.elevation.flat.background}",
-        "deprecated-version": "1.0.0"
+        "deprecated-version": "6.0.0"
       }
     }
   }

@@ -57,56 +57,56 @@
           "value": "{foundation.font-weight.bold}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.display.font-weight}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "display-subtitle": {
           "type": "font-weight",
           "value": "{foundation.font-weight.normal}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.display-subtitle.font-weight}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "title-1": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.title-1.font-weight}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "title-2": {
           "type": "font-weight",
           "value": "{foundation.font-weight.medium}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.title-2.font-weight}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "title-3": {
           "type": "font-weight",
           "value": "{foundation.font-weight.medium}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.title-3.font-weight}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "title-4": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.title-4.font-weight}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "title-5": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.title-5.font-weight}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         },
         "title-6": {
           "type": "font-weight",
           "value": "{foundation.font-weight.bold}",
           "deprecated": true,
           "deprecated-replace": "{component.heading.title-6.font-weight}",
-          "deprecated-version": "1.0.0"
+          "deprecated-version": "6.0.0"
         }
       }
     }

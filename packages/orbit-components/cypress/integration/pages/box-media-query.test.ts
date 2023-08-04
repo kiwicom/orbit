@@ -13,6 +13,7 @@ describe("Box media query", () => {
     element.should("have.css", "min-width", "42px");
     element.should("not.have.css", "text-align", "center"); // Assertion of next media query style
   });
+
   it("should have correct styles for large mobile", () => {
     cy.visit("/box-media-props");
     cy.viewport(defaultTokens.widthBreakpointLargeMobile, 600);
@@ -28,6 +29,7 @@ describe("Box media query", () => {
     );
     element.should("not.have.css", "flex-grow", "1"); // Assertion of next media query style
   });
+
   it("should have correct styles for tablet", () => {
     cy.visit("/box-media-props");
     cy.viewport(defaultTokens.widthBreakpointTablet, 600);
@@ -38,6 +40,7 @@ describe("Box media query", () => {
     element.should("have.css", "justify-content", "space-between");
     element.should("not.have.css", "align-items", "flex-end"); // Assertion of next media query style
   });
+
   it("should have correct styles for desktop", () => {
     cy.visit("/box-media-props");
     cy.viewport(defaultTokens.widthBreakpointDesktop, 600);
@@ -49,6 +52,7 @@ describe("Box media query", () => {
     element.should("have.css", "right", "0px");
     element.should("have.css", "bottom", "-1px");
   });
+
   it("should have correct styles for large desktop", () => {
     cy.visit("/box-media-props");
     cy.viewport(defaultTokens.widthBreakpointLargeDesktop, 600);

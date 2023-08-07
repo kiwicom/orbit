@@ -1,6 +1,6 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
-enum DIRECTION {
+export enum DIRECTION {
   ROW = "row",
   COLUMN = "column",
   ROW_REVERSE = "row-reverse",

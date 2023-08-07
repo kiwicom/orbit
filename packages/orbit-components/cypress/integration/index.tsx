@@ -7,11 +7,13 @@ import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 import LockScrolling from "./pages/lock-scrolling";
 import MediaQueries from "./pages/media-queries";
 import ModalFooter from "./pages/modal-footer";
+import BoxMediaProps from "./pages/box-mediaquery-props";
 
 const router = createRouter({
   lockScrolling: "/lock-scrolling",
   mediaQueries: "/media-queries",
   modalFooter: "/modal-footer",
+  boxMediaProps: "/box-media-props",
 });
 
 function PageNotFound() {
@@ -49,6 +51,12 @@ function App() {
       return (
         <OrbitProvider theme={defaultTheme}>
           <ModalFooter />
+        </OrbitProvider>
+      );
+    case "boxMediaProps":
+      return (
+        <OrbitProvider theme={defaultTheme}>
+          <BoxMediaProps />
         </OrbitProvider>
       );
     default:

@@ -2754,11 +2754,6 @@
   resolved "https://registry.npmjs.org/@juggle/resize-observer/-/resize-observer-3.4.0.tgz"
   integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
 
-"@kiwicom/babel-plugin-orbit-components@^3.5.2":
-  version "3.6.6"
-  resolved "https://registry.npmjs.org/@kiwicom/babel-plugin-orbit-components/-/babel-plugin-orbit-components-3.6.6.tgz"
-  integrity sha512-t278JTrEmwVoutWHBNpAjebmRAkvZuDx6Yq857lL68KU/tc3w91VgDhY+FY8yM1X1FURCcyyhdun0YOIkQPUgQ==
-
 "@kiwicom/browserslist-config@^4.0.0":
   version "4.0.0"
   resolved "https://registry.npmjs.org/@kiwicom/browserslist-config/-/browserslist-config-4.0.0.tgz"
@@ -20534,10 +20529,13 @@ prism-react-renderer@2.0.5:
     "@types/prismjs" "^1.26.0"
     clsx "^1.2.1"
 
-prism-react-renderer@^1.2.1, prism-react-renderer@^1.3.5:
-  version "1.3.5"
-  resolved "https://registry.npmjs.org/prism-react-renderer/-/prism-react-renderer-1.3.5.tgz"
-  integrity sha512-IJ+MSwBWKG+SM3b2SUfdrhC+gu01QkV2KmRQgREThBfSQRoufqRfxfHUxpG1WcaFjP+kojcFyO9Qqtpgt3qLCg==
+prism-react-renderer@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-2.3.1.tgz#e59e5450052ede17488f6bc85de1553f584ff8d5"
+  integrity sha512-Rdf+HzBLR7KYjzpJ1rSoxT9ioO85nZngQEoFIhL07XhtJHlCU3SOz0GJ6+qvMyQe0Se+BV3qpe6Yd/NmQF5Juw==
+  dependencies:
+    "@types/prismjs" "^1.26.0"
+    clsx "^2.0.0"
 
 prismjs@~1.27.0:
   version "1.27.0"

@@ -1,5 +1,6 @@
 import { orbitComponentsPreset } from "@kiwicom/orbit-tailwind-preset";
 import type { Config } from "tailwindcss";
+import path from "path";
 
 export default {
   content: [

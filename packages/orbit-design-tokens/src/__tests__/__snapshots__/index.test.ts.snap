@@ -566,7 +566,7 @@ Object {
   "heightRadioButton": "20px",
   "heightSeparator": "1px",
   "heightServiceLogoLarge": "48px",
-  "heightServiceLogoMedium": "20px",
+  "heightServiceLogoMedium": "24px",
   "heightServiceLogoSmall": "12px",
   "heightStopoverArrow": "7px",
   "iconCriticalForeground": "#D21C1C",

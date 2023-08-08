@@ -1341,7 +1341,7 @@ const createTokens: CreateTokens = foundation => ({
   heightStopoverArrow: "7px",
   heightCountryFlag: "auto",
   heightServiceLogoSmall: "12px",
-  heightServiceLogoMedium: "20px",
+  heightServiceLogoMedium: "24px",
   heightServiceLogoLarge: "48px",
   heightSeparator: "1px",
   heightInputGroupSeparatorSmall: foundation.size.small,

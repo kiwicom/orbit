@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [8.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@8.1.0...@kiwicom/orbit-components@8.1.1) (2023-08-08)
+
+**Note:** Version bump only for package @kiwicom/orbit-components
+
 ## [8.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@8.0.0...@kiwicom/orbit-components@8.1.0) (2023-08-03)
 
 #### Bug Fixes

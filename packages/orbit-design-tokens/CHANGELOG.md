@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@5.0.0-beta.4...@kiwicom/orbit-design-tokens@5.0.0) (2023-08-08)
+
+
+### Bug Fixes
+
+* **tokens:** fix heightServiceLogoMedium token value ([8825bf8](https://github.com/kiwicom/orbit/commit/8825bf86b307d831c7383df96b91f1ae69599e67))
+
+
+
+
+
 # [5.0.0-beta.4](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@5.0.0-beta.2...@kiwicom/orbit-design-tokens@5.0.0-beta.4) (2023-08-03)
 
 

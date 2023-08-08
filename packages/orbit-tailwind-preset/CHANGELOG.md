@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@1.0.0-beta.8...@kiwicom/orbit-tailwind-preset@1.0.0) (2023-08-08)
+
+**Note:** Version bump only for package @kiwicom/orbit-tailwind-preset
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@1.0.0-beta.7...@kiwicom/orbit-tailwind-preset@1.0.0-beta.8) (2023-08-03)
 
 

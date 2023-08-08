@@ -11650,7 +11650,7 @@
     },
     "javascript": {
       "name": "heightServiceLogoMedium",
-      "value": "20px"
+      "value": "24px"
     },
     "foundation": {
       "name": "heightServiceLogoMedium",
@@ -11658,7 +11658,7 @@
     },
     "scss": {
       "name": "heightServiceLogoMedium",
-      "value": "20px"
+      "value": "24px"
     }
   },
   "heightServiceLogoLarge": {

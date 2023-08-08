@@ -105,21 +105,25 @@ const build = () => {
           {
             destination: "tokens.scss",
             format: "css/tokens",
+            options: { showFileHeader: false },
             filter: isNotInternal,
           },
           {
             destination: "tokens.css",
             format: "css/variables",
+            options: { showFileHeader: false },
             filter: isNotInternal,
           },
           {
             destination: "tokens.less",
             format: "less/variables",
+            options: { showFileHeader: false },
             filter: isNotInternal,
           },
           {
             destination: "tokens.styl",
             format: "stylus/variables",
+            options: { showFileHeader: false },
             filter: isNotInternal,
           },
         ],
@@ -164,6 +168,7 @@ const build = () => {
           {
             destination: "tokens.xml",
             format: "xml/tokens",
+            options: { showFileHeader: false },
             filter: isNotInternal,
           },
         ],

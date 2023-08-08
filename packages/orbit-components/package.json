@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "8.1.1",
+  "version": "8.1.2",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,
   "author": "Kiwi.com",
@@ -72,8 +72,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^5.0.0",
-    "@kiwicom/orbit-tailwind-preset": "^1.0.0",
+    "@kiwicom/orbit-design-tokens": "^5.0.1",
+    "@kiwicom/orbit-tailwind-preset": "^1.0.1",
     "@popperjs/core": "^2.9.2",
     "clsx": "^2.0.0",
     "react-hot-toast": "^2.4.0",

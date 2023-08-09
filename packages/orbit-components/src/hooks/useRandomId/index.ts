@@ -1,14 +1,17 @@
-import { useUIDSeed, useUID } from "react-uid";
+import { useRandomId as useRandomIdContext } from "../../OrbitProvider/RandomId/Provider";
 
 type UseRandomIdSeed = () => (id: string) => string;
 type UseRandomId = () => string;
 
-export const useRandomIdSeed: UseRandomIdSeed = () => {
-  return useUIDSeed();
+export const useRandomId: UseRandomId = () => {
+  const useId = useRandomIdContext();
+  return useId();
 };
 
-const useRandomId: UseRandomId = () => {
-  return useUID();
+export const useRandomIdSeed: UseRandomIdSeed = () => {
+  const useId = useRandomIdContext();
+  const prefix = useId();
+  return (seed: string) => `${prefix}-${seed}`;
 };
 
 export default useRandomId;

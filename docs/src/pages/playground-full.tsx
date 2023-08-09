@@ -28,7 +28,7 @@ const PlaygroundIframe = () => {
   const { code } = useSandbox("playground", "() => <Button>Hello world!</Button>");
 
   return (
-    <OrbitProvider theme={defaultTheme}>
+    <OrbitProvider useId={React.useId} theme={defaultTheme}>
       <Orbit>
         {orbit => {
           const { Icons, ...components } = orbit;

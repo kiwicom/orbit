@@ -25,7 +25,7 @@ export default {
     return (
       <Stack>
         <Button type="primary">Primary Button</Button>
-        <OrbitProvider theme={{ orbit: customTokens }}>
+        <OrbitProvider useId={React.useId} theme={{ orbit: customTokens }}>
           <Button type="primary">Primary Button (themed)</Button>
         </OrbitProvider>
       </Stack>

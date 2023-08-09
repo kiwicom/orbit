@@ -38,6 +38,7 @@ It's actually not much harder, just a few more steps .
 #### 2. Change theme object
 
 ```jsx
+import React from "react"
 import getTokens from "@kiwicom/orbit-components/lib/getTokens"
 import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider"
 const customTokens = getTokens({
@@ -47,7 +48,7 @@ const customTokens = getTokens({
   }
 })
 
-<OrbitProvider theme={{orbit: customTokens}}>
+<OrbitProvider useId={React.useId} theme={{orbit: customTokens}}>
   <App />
 </OrbitProvider>
 ```

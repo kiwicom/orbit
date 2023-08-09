@@ -56,6 +56,7 @@ const App = () => {
       <ColorContext.Provider value={value}>
         <>
           <OrbitProvider
+            useId={React.useId}
             theme={{
               orbit: getTokens({
                 fontFamily: {
@@ -67,6 +68,7 @@ const App = () => {
             <Tabs />
           </OrbitProvider>
           <OrbitProvider
+            useId={React.useId}
             theme={{
               orbit: getTokens({
                 palette: colors,

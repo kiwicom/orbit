@@ -31,7 +31,7 @@ afterAll(() => {
 describe(TableOfContents.name, () => {
   it("should generate table of contents from headings", async () => {
     render(
-      <OrbitProvider theme={defaultTheme}>
+      <OrbitProvider useId={React.useId} theme={defaultTheme}>
         <TableOfContentsProvider>
           <main>
             <H2>General guidelines</H2>

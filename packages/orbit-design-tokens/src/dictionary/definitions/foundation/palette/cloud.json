@@ -2,15 +2,51 @@
   "foundation": {
     "palette": {
       "cloud": {
-        "dark": { "value": "#BAC7D5", "internal": true, "type": "color" },
-        "dark-active": { "value": "#94A8BE", "internal": true, "type": "color" },
-        "dark-hover": { "value": "#A6B6C8", "internal": true, "type": "color" },
-        "light": { "value": "#F5F7F9", "internal": true, "type": "color" },
-        "light-active": { "value": "#D6DEE6", "internal": true, "type": "color" },
-        "light-hover": { "value": "#E5EAEF", "internal": true, "type": "color" },
-        "normal": { "value": "#E8EDF1", "internal": true, "type": "color" },
-        "normal-active": { "value": "#CAD4DE", "internal": true, "type": "color" },
-        "normal-hover": { "value": "#DCE3E9", "internal": true, "type": "color" }
+        "dark": {
+          "value": "#BAC7D5",
+          "internal": true,
+          "type": "color"
+        },
+        "dark-active": {
+          "value": "#94A8BE",
+          "internal": true,
+          "type": "color"
+        },
+        "dark-hover": {
+          "value": "#A6B6C8",
+          "internal": true,
+          "type": "color"
+        },
+        "light": {
+          "value": "#F5F7F9",
+          "internal": true,
+          "type": "color"
+        },
+        "light-active": {
+          "value": "#D6DEE6",
+          "internal": true,
+          "type": "color"
+        },
+        "light-hover": {
+          "value": "#E5EAEF",
+          "internal": true,
+          "type": "color"
+        },
+        "normal": {
+          "value": "#E8EDF1",
+          "internal": true,
+          "type": "color"
+        },
+        "normal-active": {
+          "value": "#CAD4DE",
+          "internal": true,
+          "type": "color"
+        },
+        "normal-hover": {
+          "value": "#DCE3E9",
+          "internal": true,
+          "type": "color"
+        }
       }
     }
   }

@@ -26,6 +26,7 @@ const customTokens = getTokens({
 
 const App = () => (
   <OrbitProvider
+    useId={React.useId}
     theme={{
       yourCustomTheme: { black: "#000" },
       orbit: customTokens,

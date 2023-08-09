@@ -38,7 +38,7 @@ const StyledComponent = styled.div`
 `;
 function App() {
   return (
-    <OrbitProvider theme={defaultTheme}>
+    <OrbitProvider useId={React.useId} theme={defaultTheme}>
       <StyledComponent>This div will be styled.</StyledComponent>
     </OrbitProvider>
   );

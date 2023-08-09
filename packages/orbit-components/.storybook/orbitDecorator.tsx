@@ -20,7 +20,7 @@ const orbitDecorator = (storyFn, context) => {
   const inverted = globals.backgrounds ? globals.backgrounds.value === "#333333" : undefined;
 
   return (
-    <OrbitProvider theme={{ ...defaultTheme }}>
+    <OrbitProvider useId={React.useId} theme={{ ...defaultTheme }}>
       <div style={{ padding: "20px" }}>
         <Heading spaceAfter="medium" inverted={inverted}>
           {context.kind}

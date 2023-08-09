@@ -31,7 +31,7 @@ const PureSandbox = ({ data }) => {
   const modules = getModules(scope);
 
   return (
-    <OrbitProvider theme={defaultTheme}>
+    <OrbitProvider useId={React.useId} theme={defaultTheme}>
       <LiveProvider
         code={code || example}
         scope={{ ...modules, styled, Icons, css }}

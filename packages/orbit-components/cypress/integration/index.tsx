@@ -29,6 +29,7 @@ function App() {
     case "lockScrolling":
       return (
         <OrbitProvider
+          useId={React.useId}
           theme={{
             ...defaultTheme,
             lockScrollingBarGap: true,
@@ -41,13 +42,13 @@ function App() {
       );
     case "mediaQueries":
       return (
-        <OrbitProvider theme={defaultTheme}>
+        <OrbitProvider useId={React.useId} theme={defaultTheme}>
           <MediaQueries />
         </OrbitProvider>
       );
     case "modalFooter":
       return (
-        <OrbitProvider theme={defaultTheme}>
+        <OrbitProvider useId={React.useId} theme={defaultTheme}>
           <ModalFooter />
         </OrbitProvider>
       );

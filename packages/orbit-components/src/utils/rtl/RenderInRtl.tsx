@@ -8,8 +8,6 @@ interface Props {
 }
 
 class RenderInRtl extends React.PureComponent<Props> {
-  html: null | HTMLHtmlElement = document.querySelector("html");
-
   componentDidMount() {
     if (this.html) {
       this.html.setAttribute("dir", "rtl");
@@ -22,9 +20,11 @@ class RenderInRtl extends React.PureComponent<Props> {
     }
   }
 
+  html: null | HTMLHtmlElement = document.querySelector("html");
+
   render() {
     return (
-      <OrbitProvider theme={{ orbit: defaultTokens, rtl: true }}>
+      <OrbitProvider theme={{ orbit: defaultTokens, rtl: true }} useId={React.useId}>
         {this.props.children}
       </OrbitProvider>
     );

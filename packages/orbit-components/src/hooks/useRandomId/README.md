@@ -1,5 +1,6 @@
 #useRandomId
 
+**If you are using version 18 (or above) of React, you should use the native React.useId hook instead of this one.**
 The `useRandomId` generates unique random id.
 
 In order to use the hook, you can simply import it like:

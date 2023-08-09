@@ -22532,13 +22532,6 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-uid@^2.3.2:
-  version "2.3.3"
-  resolved "https://registry.npmjs.org/react-uid/-/react-uid-2.3.3.tgz"
-  integrity sha512-iNpDovcb9qBpBTo8iUgqRSQOS8GV3bWoNaTaUptHkXtAooXSo0OWe7vN6TqqB8x3x0bNBbQx96kkmSltQ5h9kQ==
-  dependencies:
-    tslib "^2.0.0"
-
 react-window@^1.8.6:
   version "1.8.9"
   resolved "https://registry.npmjs.org/react-window/-/react-window-1.8.9.tgz"

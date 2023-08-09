@@ -80,8 +80,7 @@
     "@popperjs/core": "^2.9.2",
     "clsx": "^2.0.0",
     "react-hot-toast": "^2.4.0",
-    "react-popper": "^2.3.0",
-    "react-uid": "^2.3.2"
+    "react-popper": "^2.3.0"
   },
   "devDependencies": {
     "@babel/helper-get-function-arity": "^7.16.7",

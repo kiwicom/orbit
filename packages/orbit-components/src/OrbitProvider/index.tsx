@@ -2,20 +2,32 @@
 
 import * as React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { UIDReset, UIDFork } from "react-uid";
 
 import QueryContextProvider from "./QueryContext/Provider";
+import RandomIdProvider from "./RandomId/Provider";
 import type { Props } from "./types";
 
-const OrbitProvider = ({ theme, children }: Props) => {
-  return (
+/**
+ *
+ * Use OrbitProvider with useId prop as follows to still use `react-uid`:
+ * ```jsx
     <UIDReset>
       <UIDFork>
-        <StyledThemeProvider theme={theme}>
-          <QueryContextProvider>{React.Children.only(children)}</QueryContextProvider>
-        </StyledThemeProvider>
+        <OrbitProvider theme={theme} useId={useUID}>
+          {children}
+        </OrbitProvider>
       </UIDFork>
     </UIDReset>
+ * ```
+ *
+ */
+const OrbitProvider = ({ theme, children, useId }: Props) => {
+  return (
+    <RandomIdProvider useId={useId}>
+      <StyledThemeProvider theme={theme}>
+        <QueryContextProvider>{React.Children.only(children)}</QueryContextProvider>
+      </StyledThemeProvider>
+    </RandomIdProvider>
   );
 };
 

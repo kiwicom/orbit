@@ -32,7 +32,7 @@ describe("useRandomId", () => {
     const container = document.createElement("div");
 
     container.innerHTML = renderToString(
-      <OrbitProvider theme={{ ...theme }}>
+      <OrbitProvider theme={{ ...theme }} useId={React.useId}>
         <Component />
       </OrbitProvider>,
     );
@@ -40,7 +40,7 @@ describe("useRandomId", () => {
     document.body?.appendChild(container);
 
     const { container: clientContainer } = render(
-      <OrbitProvider theme={{ ...theme }}>
+      <OrbitProvider theme={{ ...theme }} useId={React.useId}>
         <Component />
       </OrbitProvider>,
       { container, hydrate: true },

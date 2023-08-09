@@ -39,7 +39,7 @@ describe("useMediaQuery", () => {
 
     function App() {
       return (
-        <OrbitProvider theme={theme}>
+        <OrbitProvider theme={theme} useId={React.useId}>
           <MediaQuery
             onChange={query => {
               result = query;
@@ -117,6 +117,7 @@ describe("useMediaQuery", () => {
             widthBreakpointMediumMobile,
           },
         }}
+        useId={React.useId}
       >
         <MediaQuery
           onChange={query => {
@@ -176,7 +177,7 @@ describe("useMediaQuery", () => {
       const matchMedia = new MatchMediaMock();
 
       const { rerender } = render(
-        <OrbitProvider theme={theme}>
+        <OrbitProvider theme={theme} useId={React.useId}>
           <UpdateCounter />
         </OrbitProvider>,
       );
@@ -185,7 +186,7 @@ describe("useMediaQuery", () => {
 
       rerender(
         // change theme object reference to trigger re-render
-        <OrbitProvider theme={{ ...theme }}>
+        <OrbitProvider theme={{ ...theme }} useId={React.useId}>
           <UpdateCounter />
         </OrbitProvider>,
       );
@@ -198,7 +199,7 @@ describe("useMediaQuery", () => {
       });
 
       rerender(
-        <OrbitProvider theme={{ ...theme }}>
+        <OrbitProvider theme={{ ...theme }} useId={React.useId}>
           <UpdateCounter />
         </OrbitProvider>,
       );
@@ -215,6 +216,7 @@ describe("useMediaQuery", () => {
               widthBreakpointMediumMobile: theme.orbit.widthBreakpointMediumMobile + 1,
             },
           }}
+          useId={React.useId}
         >
           <UpdateCounter />
         </OrbitProvider>,

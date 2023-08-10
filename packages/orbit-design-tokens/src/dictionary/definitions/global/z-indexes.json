@@ -9,6 +9,10 @@
         "type": "z-index",
         "value": 100
       },
+      "navigation-bar": {
+        "type": "z-index",
+        "value": 700
+      },
       "modal-overlay": {
         "type": "z-index",
         "value": 800

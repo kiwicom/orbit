@@ -11,6 +11,7 @@ import BoxMediaProps from "./pages/box-mediaquery-props";
 import StackMediaProps from "./pages/stack-mediaquery-props";
 import TextStyles from "./pages/text-styles";
 import TextLinkStyles from "./pages/text-link-styles";
+import NavigationBar from "./pages/navigation-bar";
 
 const router = createRouter({
   lockScrolling: "/lock-scrolling",
@@ -20,6 +21,7 @@ const router = createRouter({
   stackMediaProps: "/stack-media-props",
   textStyles: "/text-styles",
   textLinkStyles: "/text-link-styles",
+  navigationBar: "/navigation-bar",
 });
 
 function PageNotFound() {
@@ -81,6 +83,12 @@ function App() {
       return (
         <OrbitProvider theme={defaultTheme}>
           <TextLinkStyles />
+        </OrbitProvider>
+      );
+    case "navigationBar":
+      return (
+        <OrbitProvider theme={defaultTheme}>
+          <NavigationBar />
         </OrbitProvider>
       );
     default:

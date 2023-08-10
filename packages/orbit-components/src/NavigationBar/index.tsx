@@ -1,56 +1,12 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import { right } from "../utils/rtl";
-import transition from "../utils/transition";
-import defaultTheme from "../defaultTheme";
 import MenuHamburger from "../icons/MenuHamburger";
 import ButtonLink from "../ButtonLink";
 import useStateWithCallback from "../hooks/useStateWithCallback";
-import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
 const NAVBAR_HEIGHT = { MOBILE: 52, DESKTOP: 64 };
-
-const StyledNavigationBarContent = styled.div`
-  ${({ theme }) => css`
-    display: block;
-    width: 100%;
-    margin-${right}: ${theme.orbit.spaceXSmall};
-  `}
-`;
-
-StyledNavigationBarContent.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledNavigationBar = styled.nav<{ shown: boolean }>`
-  ${({ theme, shown }) => css`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: ${NAVBAR_HEIGHT.MOBILE}px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background: ${theme.orbit.paletteWhite};
-    box-shadow: ${theme.orbit.boxShadowFixed};
-    padding: ${theme.orbit.spaceSmall};
-    box-sizing: border-box;
-    z-index: 700;
-    transition: ${transition(["transform"], "normal", "ease-in-out")};
-    transform: translate3d(0, ${shown ? "0" : `-${NAVBAR_HEIGHT.MOBILE}px`}, 0);
-    ${mq.tablet(css`
-      height: ${NAVBAR_HEIGHT.DESKTOP}px;
-      transform: translate3d(0, ${shown ? "0" : `-${NAVBAR_HEIGHT.DESKTOP}px`}, 0);
-    `)};
-  `}
-`;
-
-StyledNavigationBar.defaultProps = {
-  theme: defaultTheme,
-};
 
 const NavigationBar = ({
   onMenuOpen,
@@ -101,8 +57,17 @@ const NavigationBar = ({
   });
 
   return (
-    <StyledNavigationBar data-test={dataTest} id={id} shown={shown}>
-      <StyledNavigationBarContent>{children}</StyledNavigationBarContent>
+    <nav
+      data-test={dataTest}
+      id={id}
+      className={cx(
+        "bg-white-normal shadow-fixed p-sm z-navigation-bar fixed left-0 right-0 top-0 box-border flex w-full translate-x-0 items-center",
+        "duration-normal transform-gpu transition-transform ease-in-out",
+        "tb:h-[64px] h-[52px]", // As defined on the const above
+        shown ? "translate-y-0" : "tb:translate-y-[-64px] translate-y-[-52px]", // As defined on the const above
+      )}
+    >
+      <div className="me-xs block w-full">{children}</div>
       {onMenuOpen && (
         <ButtonLink
           type="secondary"
@@ -111,7 +76,7 @@ const NavigationBar = ({
           title={openTitle}
         />
       )}
-    </StyledNavigationBar>
+    </nav>
   );
 };
 

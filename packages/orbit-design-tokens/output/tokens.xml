@@ -3348,6 +3348,10 @@
     <value>100</value>
   </token>
   <token>
+    <name>zIndexNavigationBar</name>
+    <value>700</value>
+  </token>
+  <token>
     <name>zIndexModalOverlay</name>
     <value>800</value>
   </token>

@@ -19279,6 +19279,28 @@
       "value": 100
     }
   },
+  "zIndexNavigationBar": {
+    "type": "z-index",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "z-index",
+      "variant": "navigation-bar"
+    },
+    "javascript": {
+      "name": "zIndexNavigationBar",
+      "value": 700
+    },
+    "foundation": {
+      "name": "zIndexNavigationBar",
+      "value": "none"
+    },
+    "scss": {
+      "name": "zIndexNavigationBar",
+      "value": 700
+    }
+  },
   "zIndexModalOverlay": {
     "type": "z-index",
     "deprecated": false,

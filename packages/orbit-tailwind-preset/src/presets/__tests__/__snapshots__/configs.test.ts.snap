@@ -2223,6 +2223,7 @@ Object {
       "large": "24px",
       "normal": "20px",
       "small": "16px",
+      "text": "1.4",
     },
     "listStyleImage": Object {
       "none": "none",

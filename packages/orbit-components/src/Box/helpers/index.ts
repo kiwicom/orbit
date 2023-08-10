@@ -15,7 +15,10 @@ import getBackgroundClass from "./getBackground";
 import getPaddingClass from "./getPadding";
 import getMarginClass from "./getMargin";
 
-const getTailwindClasses = (props: Props, viewport?: QUERIES) => {
+const getTailwindClasses = (
+  props: Props,
+  viewport?: QUERIES,
+): (string | null | undefined | (string | boolean)[])[] => {
   const {
     display,
     wrap,

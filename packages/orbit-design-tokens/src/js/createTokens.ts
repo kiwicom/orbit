@@ -851,6 +851,7 @@ export type Tokens = {
   fontWeightBold: string;
   zIndexDefault: number;
   zIndexSticky: number;
+  zIndexNavigationBar: number;
   zIndexModalOverlay: number;
   zIndexDrawer: number;
   zIndexModal: number;
@@ -1877,6 +1878,7 @@ const createTokens: CreateTokens = foundation => ({
   fontWeightBold: foundation.fontWeight.bold,
   zIndexDefault: 1,
   zIndexSticky: 100,
+  zIndexNavigationBar: 700,
   zIndexModalOverlay: 800,
   zIndexDrawer: 815,
   zIndexModal: 825,

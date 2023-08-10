@@ -841,6 +841,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "zIndexDrawer": 815,
   "zIndexModal": 825,
   "zIndexModalOverlay": 800,
+  "zIndexNavigationBar": 700,
   "zIndexOnTheTop": 900,
   "zIndexSticky": 100,
 }

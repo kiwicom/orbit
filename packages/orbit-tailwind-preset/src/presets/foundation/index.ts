@@ -22,6 +22,7 @@ const config: Config = {
       zIndex: {
         default: String(defaultTokens.zIndexDefault),
         sticky: String(defaultTokens.zIndexSticky),
+        "navigation-bar": String(defaultTokens.zIndexNavigationBar),
         modal: String(defaultTokens.zIndexModal),
         overlay: String(defaultTokens.zIndexModalOverlay),
         drawer: String(defaultTokens.zIndexDrawer),

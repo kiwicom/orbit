@@ -6,27 +6,52 @@ import NavigationBar from "..";
 
 describe("NavigationBar", () => {
   const user = userEvent.setup();
+  const children = "Content";
 
   it("should have expected DOM output", async () => {
     const onMenuOpen = jest.fn();
-    const children = "Content";
+    const openTitle = "open title";
     const dataTest = "test";
+    const id = "id";
+
     render(
-      <NavigationBar onMenuOpen={onMenuOpen} dataTest={dataTest}>
+      <NavigationBar id={id} onMenuOpen={onMenuOpen} dataTest={dataTest} openTitle={openTitle}>
         {children}
       </NavigationBar>,
     );
 
-    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    const button = screen.getByRole("button");
+    const nav = screen.getByTestId(dataTest);
+
+    expect(nav).toBeInTheDocument();
+    expect(nav).toHaveAttribute("id", id);
     expect(screen.getByText(children)).toBeInTheDocument();
-    await user.click(screen.getByRole("button"));
+    expect(button).toBeInTheDocument();
+    expect(screen.getByLabelText(openTitle)).toBeInTheDocument();
+    await user.click(button);
     expect(onMenuOpen).toHaveBeenCalled();
   });
 
-  it("should disappear on scoll", () => {
-    render(<NavigationBar dataTest="bur">kek</NavigationBar>);
-    expect(screen.getByTestId("bur")).toHaveStyle({ transform: "translate3d(0,0,0)" });
+  it("should not render hamburger button if onMenuOpen is not provided", () => {
+    render(<NavigationBar>{children}</NavigationBar>);
+
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+  });
+
+  it("should call onHide and onShow", () => {
+    const onHide = jest.fn();
+    const onShow = jest.fn();
+
+    render(
+      <NavigationBar onHide={onHide} onShow={onShow}>
+        kek
+      </NavigationBar>,
+    );
+
     fireEvent.scroll(window, { target: { scrollY: 120 } });
-    expect(screen.getByTestId("bur")).toHaveStyle({ transform: "translate3d(0,-52px,0)" });
+    expect(onHide).toHaveBeenCalled();
+
+    fireEvent.scroll(window, { target: { scrollY: 1 } });
+    expect(onShow).toHaveBeenCalled();
   });
 });

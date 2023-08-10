@@ -3208,6 +3208,22 @@
     <value>1.4</value>
   </token>
   <token>
+    <name>lineHeightSmall</name>
+    <value>16</value>
+  </token>
+  <token>
+    <name>lineHeightNormal</name>
+    <value>20</value>
+  </token>
+  <token>
+    <name>lineHeightLarge</name>
+    <value>24</value>
+  </token>
+  <token>
+    <name>lineHeightExtraLarge</name>
+    <value>24</value>
+  </token>
+  <token>
     <name>lineHeightTextSmall</name>
     <value>16</value>
   </token>

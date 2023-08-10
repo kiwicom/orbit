@@ -2031,5 +2031,21 @@
     "replacement": null,
     "category": "Opacity",
     "version": "6.0.0"
+  },
+  "lineHeightTextSmall": {
+    "replacement": "lineHeightSmall",
+    "category": "Font size"
+  },
+  "lineHeightTextNormal": {
+    "replacement": "lineHeightNormal",
+    "category": "Font size"
+  },
+  "lineHeightTextLarge": {
+    "replacement": "lineHeightLarge",
+    "category": "Font size"
+  },
+  "lineHeightTextExtraLarge": {
+    "replacement": "lineHeightExtraLarge",
+    "category": "Font size"
   }
 }

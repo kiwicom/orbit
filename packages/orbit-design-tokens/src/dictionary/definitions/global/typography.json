@@ -35,24 +35,52 @@
         "category": "typography",
         "value": 1.4
       },
+      "small": {
+        "type": "size",
+        "category": "typography",
+        "value": "{foundation.line-height.small}"
+      },
+      "normal": {
+        "type": "size",
+        "category": "typography",
+        "value": "{foundation.line-height.normal}"
+      },
+      "large": {
+        "type": "size",
+        "category": "typography",
+        "value": "{foundation.line-height.large}"
+      },
+      "extra-large": {
+        "type": "size",
+        "category": "typography",
+        "value": "{foundation.line-height.extra-large}"
+      },
       "text-small": {
         "type": "size",
+        "deprecated": true,
+        "deprecated-replace": "{global.line-height.small}",
         "category": "typography",
         "value": "{foundation.line-height.small}"
       },
       "text-normal": {
         "type": "size",
+        "deprecated": true,
+        "deprecated-replace": "{global.line-height.normal}",
         "category": "typography",
         "value": "{foundation.line-height.normal}"
       },
       "text-large": {
         "type": "size",
+        "deprecated": true,
+        "deprecated-replace": "{global.line-height.large}",
         "category": "typography",
         "value": "{foundation.line-height.large}"
       },
       "text-extra-large": {
         "type": "size",
+        "deprecated": true,
         "category": "typography",
+        "deprecated-replace": "{global.line-height.extra-large}",
         "value": "{foundation.line-height.extra-large}"
       }
     },

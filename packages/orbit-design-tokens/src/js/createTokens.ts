@@ -816,6 +816,10 @@ export type Tokens = {
   fontSizeTextLarge: string;
   fontSizeTextExtraLarge: string;
   lineHeightText: string;
+  lineHeightSmall: string;
+  lineHeightNormal: string;
+  lineHeightLarge: string;
+  lineHeightExtraLarge: string;
   lineHeightTextSmall: string;
   lineHeightTextNormal: string;
   lineHeightTextLarge: string;
@@ -1816,6 +1820,10 @@ const createTokens: CreateTokens = foundation => ({
   fontSizeTextLarge: foundation.fontSize.large,
   fontSizeTextExtraLarge: foundation.fontSize.extraLarge,
   lineHeightText: "1.4",
+  lineHeightSmall: foundation.lineHeight.small,
+  lineHeightNormal: foundation.lineHeight.normal,
+  lineHeightLarge: foundation.lineHeight.large,
+  lineHeightExtraLarge: foundation.lineHeight.extraLarge,
   lineHeightTextSmall: foundation.lineHeight.small,
   lineHeightTextNormal: foundation.lineHeight.normal,
   lineHeightTextLarge: foundation.lineHeight.large,

@@ -18472,11 +18472,103 @@
       "value": "1.4"
     }
   },
-  "lineHeightTextSmall": {
+  "lineHeightSmall": {
     "type": "size",
     "category": "typography",
     "deprecated": false,
     "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "line-height",
+      "variant": "small"
+    },
+    "javascript": {
+      "name": "lineHeightSmall",
+      "value": "16px"
+    },
+    "foundation": {
+      "name": "lineHeightSmall",
+      "value": "foundation.lineHeight.small"
+    },
+    "scss": {
+      "name": "lineHeightSmall",
+      "value": "16px"
+    }
+  },
+  "lineHeightNormal": {
+    "type": "size",
+    "category": "typography",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "line-height",
+      "variant": "normal"
+    },
+    "javascript": {
+      "name": "lineHeightNormal",
+      "value": "20px"
+    },
+    "foundation": {
+      "name": "lineHeightNormal",
+      "value": "foundation.lineHeight.normal"
+    },
+    "scss": {
+      "name": "lineHeightNormal",
+      "value": "20px"
+    }
+  },
+  "lineHeightLarge": {
+    "type": "size",
+    "category": "typography",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "line-height",
+      "variant": "large"
+    },
+    "javascript": {
+      "name": "lineHeightLarge",
+      "value": "24px"
+    },
+    "foundation": {
+      "name": "lineHeightLarge",
+      "value": "foundation.lineHeight.large"
+    },
+    "scss": {
+      "name": "lineHeightLarge",
+      "value": "24px"
+    }
+  },
+  "lineHeightExtraLarge": {
+    "type": "size",
+    "category": "typography",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "line-height",
+      "variant": "extra-large"
+    },
+    "javascript": {
+      "name": "lineHeightExtraLarge",
+      "value": "24px"
+    },
+    "foundation": {
+      "name": "lineHeightExtraLarge",
+      "value": "foundation.lineHeight.extraLarge"
+    },
+    "scss": {
+      "name": "lineHeightExtraLarge",
+      "value": "24px"
+    }
+  },
+  "lineHeightTextSmall": {
+    "type": "size",
+    "category": "typography",
+    "deprecated": true,
+    "replacement": "lineHeightSmall",
     "schema": {
       "namespace": "global",
       "object": "line-height",
@@ -18498,8 +18590,8 @@
   "lineHeightTextNormal": {
     "type": "size",
     "category": "typography",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "lineHeightNormal",
     "schema": {
       "namespace": "global",
       "object": "line-height",
@@ -18521,8 +18613,8 @@
   "lineHeightTextLarge": {
     "type": "size",
     "category": "typography",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "lineHeightLarge",
     "schema": {
       "namespace": "global",
       "object": "line-height",
@@ -18544,8 +18636,8 @@
   "lineHeightTextExtraLarge": {
     "type": "size",
     "category": "typography",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "lineHeightExtraLarge",
     "schema": {
       "namespace": "global",
       "object": "line-height",

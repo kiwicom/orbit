@@ -92,8 +92,8 @@ We are working on making this project a fully open source. We appreciate any con
 
 [Bug reports](https://github.com/kiwicom/orbit/issues/new?template=bug_report.md) and [feature requests](https://github.com/kiwicom/orbit/issues/new?template=feature_request.md) are welcome but, please use the correct template.
 
-Please check out our [Contribution Guide](https://github.com/kiwicom/orbit/tree/master/.github/contribution/README.md). It includes contribution guidelines and information on how to run and develop the project.
+Please check out our [Contribution Guide](https://github.com/kiwicom/orbit/tree/master/.github/CONTRIBUTING.md). It includes contribution guidelines and information on how to run and develop the project.
 
 ## Feedback
 
-We want to provide only components of the highest quality. We can’t do that without your feedback. If you have any suggestions about what we can do to improve components, please report it directly as an [issue](https://github.com/kiwicom/orbit/issues/new/choose) or write to us at **#orbit-components** on Slack.
+We want to provide only components of the highest quality. We can’t do that without your feedback. If you have any suggestions about what we can do to improve components, please report it directly as an [issue](https://github.com/kiwicom/orbit/issues/new/choose).

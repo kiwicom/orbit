@@ -7,7 +7,15 @@ import OrbitProvider from "../src/OrbitProvider";
 import Heading from "../src/Heading";
 import Text from "../src/Text";
 
-const orbitDecorator = (storyFn, context) => {
+const OrbitDecorator = (storyFn, context) => {
+  React.useEffect(() => {
+    const html = document.querySelector("html");
+    if (html && !html.getAttribute("dir")) html.setAttribute("dir", "ltr");
+    return () => {
+      if (html) html.removeAttribute("dir");
+    };
+  }, []);
+
   const children = storyFn(context);
   const { globals } = context;
   const options = {
@@ -39,4 +47,4 @@ const orbitDecorator = (storyFn, context) => {
   );
 };
 
-export default orbitDecorator;
+export default OrbitDecorator;

@@ -1,76 +1,44 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import type * as Common from "../common/types";
-import type { Theme } from "../defaultTheme";
-import defaultTheme from "../defaultTheme";
 import { SIZES, TYPES } from "./consts";
-import getSpacingToken from "../common/getSpacingToken";
-import { getLineHeightToken } from "./ListItem";
-import ListContext from "./ListContext";
-import type { Type, Props } from "./types";
+import type { Props } from "./types";
+import { spaceAfterClasses } from "../common/tailwind";
 
-const getSizeToken = ({ theme, size }: { theme: Theme; size?: Common.Size }): string | null => {
-  const sizeTokens = {
-    [SIZES.SMALL]: theme.orbit.fontSizeTextSmall,
-    [SIZES.NORMAL]: theme.orbit.fontSizeTextNormal,
-    [SIZES.LARGE]: theme.orbit.fontSizeTextLarge,
-  };
-
-  if (!size) return null;
-
-  return sizeTokens[size];
+const sizeTokens = {
+  [SIZES.SMALL]: "text-small leading-small [&_.orbit-list-item-icon]:h-icon-small",
+  [SIZES.NORMAL]:
+    "text-normal leading-normal [&_.orbit-list-item-icon]:h-icon-medium [&_.orbit-list-item-label]:text-small",
+  [SIZES.LARGE]:
+    "text-large leading-large [&_.orbit-list-item-icon]:h-icon-large [&_.orbit-list-item-label]:text-normal",
 };
 
-const getTypeToken = ({ theme, type }: { theme: Theme; type?: Type }): string | null => {
-  const typeTokens = {
-    [TYPES.PRIMARY]: theme.orbit.colorTextPrimary,
-    [TYPES.SECONDARY]: theme.orbit.colorTextSecondary,
-  };
-
-  if (!type) return null;
-
-  return typeTokens[type];
-};
-
-const StyledList = styled.ul<{
-  size?: Common.Size | null;
-  type?: Type | null;
-  spaceAfter?: Common.SpaceAfterSizes;
-}>`
-  ${({ theme }) => css`
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    font-family: ${theme.orbit.fontFamily};
-    font-size: ${getSizeToken};
-    line-height: ${getLineHeightToken};
-    color: ${getTypeToken};
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: ${getSpacingToken};
-  `};
-`;
-
-StyledList.defaultProps = {
-  theme: defaultTheme,
+const typeTokens = {
+  [TYPES.PRIMARY]: "text-primary-foreground",
+  [TYPES.SECONDARY]: "text-secondary-foreground",
 };
 
 const List = ({
   children,
-  size = SIZES.NORMAL,
-  type = TYPES.PRIMARY,
   dataTest,
   id,
+  size = SIZES.NORMAL,
+  type = TYPES.PRIMARY,
   spaceAfter,
 }: Props) => {
-  const value = React.useMemo(() => ({ size, type }), [size, type]);
-
   return (
-    <StyledList type={type} size={size} data-test={dataTest} id={id} spaceAfter={spaceAfter}>
-      <ListContext.Provider value={value}>{children}</ListContext.Provider>
-    </StyledList>
+    <ul
+      data-test={dataTest}
+      id={id}
+      className={cx(
+        "orbit-list font-base m-0 flex w-full list-none flex-col p-0",
+        sizeTokens[size],
+        typeTokens[type],
+        spaceAfter != null && spaceAfterClasses[spaceAfter],
+      )}
+    >
+      {children}
+    </ul>
   );
 };
 

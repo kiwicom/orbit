@@ -448,6 +448,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "countryFlagShadow": "inset 0 0 0 1px rgba(37, 42, 49, 0.1)",
   "countryFlagSmallHeight": "9px",
   "countryFlagSmallWidth": "16px",
+  "drawerOverlayBackground": "rgba(37, 42, 49, 0.5)",
   "durationFast": "0.15s",
   "durationNormal": "0.3s",
   "durationSlow": "0.4s",

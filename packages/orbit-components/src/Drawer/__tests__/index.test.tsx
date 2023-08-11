@@ -18,6 +18,7 @@ describe("Drawer", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("content"));
   });
+
   it("should be able to toggle visibility", () => {
     jest.useFakeTimers();
     const { rerender } = render(<Drawer shown={false}>content</Drawer>);

@@ -4,7 +4,8 @@
       "overlay": {
         "background": {
           "type": "color",
-          "value": "rgba(37, 42, 49, 0.5)"
+          "value": "{foundation.palette.ink.dark}",
+          "opacity": "50"
         }
       }
     }

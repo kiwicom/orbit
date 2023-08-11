@@ -11800,8 +11800,6 @@
   },
   "countryFlagShadow": {
     "type": "box-shadow",
-  "drawerOverlayBackground": {
-    "type": "color",
     "deprecated": false,
     "replacement": null,
     "schema": {
@@ -11934,17 +11932,25 @@
     "scss": {
       "name": "countryFlagMediumWidth",
       "value": "24px"
+    }
+  },
+  "drawerOverlayBackground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
       "object": "drawer",
       "variant": "overlay",
       "subVariant": "background"
     },
     "javascript": {
       "name": "drawerOverlayBackground",
-      "value": "rgba(37, 42, 49, 0.5)"
+      "value": "#252A3180"
     },
     "foundation": {
       "name": "drawerOverlayBackground",
-      "value": "none"
+      "value": "foundation.palette.ink.dark"
     },
     "scss": {
       "name": "drawerOverlayBackground",

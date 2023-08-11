@@ -12,6 +12,7 @@ import {
 const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "button",
   "buttonLink",
+  "drawer",
   "socialButton",
   "alert",
   "icon",

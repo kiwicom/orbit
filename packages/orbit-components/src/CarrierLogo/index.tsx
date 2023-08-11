@@ -138,6 +138,7 @@ const CarrierLogo = ({
       data-test={dataTest}
       id={id}
       inlineStacked={inlineStacked}
+      className="orbit-carrier-logo"
     >
       {carriers.slice(0, 4).map((carrierImage, idx) => (
         <StyledImage

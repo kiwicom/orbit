@@ -98,6 +98,7 @@ const cfg = (options?: Options): Config => {
           "table-head": String(defaultTokens.fontWeightTableHead),
         },
         lineHeight: {
+          text: defaultTokens.lineHeightText,
           heading: defaultTokens.lineHeightHeading,
           "heading-display": defaultTokens.headingDisplayLineHeight,
           "heading-display-subtitle": defaultTokens.headingDisplaySubtitleLineHeight,

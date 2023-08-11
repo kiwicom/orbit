@@ -801,6 +801,10 @@
   --font-size-text-large: 16;
   --font-size-text-extra-large: 18;
   --line-height-text: 1.4;
+  --line-height-small: 16;
+  --line-height-normal: 20;
+  --line-height-large: 24;
+  --line-height-extra-large: 24;
   --line-height-text-small: 16;
   --line-height-text-normal: 20;
   --line-height-text-large: 24;

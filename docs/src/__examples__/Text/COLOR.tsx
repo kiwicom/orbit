@@ -18,7 +18,7 @@ export default {
     },
     {
       name: "Success",
-      code: `() => <Text type="Success">Success text</Text>`,
+      code: `() => <Text type="success">Success text</Text>`,
     },
     {
       name: "Warning",

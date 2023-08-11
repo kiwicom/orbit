@@ -8,7 +8,6 @@ import handleKeyDown from "../../utils/handleKeyDown";
 import defaultTheme from "../../defaultTheme";
 import media from "../../utils/mediaQuery";
 import { StyledText } from "../../Text";
-import { Item } from "../../List/ListItem";
 import CloseIc from "../../icons/Close";
 import { rtlSpacing, right } from "../../utils/rtl";
 import resolveColor from "./helpers/resolveColor";
@@ -25,6 +24,7 @@ const StyledArrow = styled.div<{
 }>`
   position: absolute;
   ${resolvePlacement};
+
   &:before {
     content: "";
     background: ${resolveColor};
@@ -62,7 +62,7 @@ const StyledFormFeedbackTooltip = styled.div<{
     visibility: ${shown ? "visible" : "hidden"};
     opacity: ${shown ? "1" : "0"};
     transition: opacity ${theme.orbit.durationFast} ease-in-out,
-      visibility ${theme.orbit.durationFast} ease-in-out;
+    visibility ${theme.orbit.durationFast} ease-in-out;
     position: ${position};
     top: ${top};
     left: ${left};
@@ -81,7 +81,7 @@ const StyledFormFeedbackTooltip = styled.div<{
     ${media.tablet(css`
       border-radius: ${theme.orbit.borderRadiusNormal};
     `)}
-`}
+  `}
 `;
 
 StyledArrow.defaultProps = {
@@ -103,10 +103,12 @@ const StyledTooltipContent = styled.div`
     line-height: ${theme.orbit.lineHeightTextSmall};
     color: ${theme.orbit.paletteWhite};
 
-    & ${StyledText}, ${Item}, a {
+    & ${StyledText}, .orbit-list-item,
+    a {
       color: ${theme.orbit.paletteWhite};
       font-size: ${theme.orbit.fontSizeTextNormal};
       font-weight: ${theme.orbit.fontWeightNormal};
+
       &:hover,
       &:focus {
         color: ${theme.orbit.paletteWhite};

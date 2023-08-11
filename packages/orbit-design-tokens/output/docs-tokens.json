@@ -11800,6 +11800,8 @@
   },
   "countryFlagShadow": {
     "type": "box-shadow",
+  "drawerOverlayBackground": {
+    "type": "color",
     "deprecated": false,
     "replacement": null,
     "schema": {
@@ -11932,6 +11934,21 @@
     "scss": {
       "name": "countryFlagMediumWidth",
       "value": "24px"
+      "object": "drawer",
+      "variant": "overlay",
+      "subVariant": "background"
+    },
+    "javascript": {
+      "name": "drawerOverlayBackground",
+      "value": "rgba(37, 42, 49, 0.5)"
+    },
+    "foundation": {
+      "name": "drawerOverlayBackground",
+      "value": "none"
+    },
+    "scss": {
+      "name": "drawerOverlayBackground",
+      "value": "rgba(37, 42, 49, 0.5)"
     }
   },
   "formBoxSmallHeight": {

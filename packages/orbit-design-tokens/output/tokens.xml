@@ -2064,6 +2064,10 @@
     <value>24px</value>
   </token>
   <token>
+    <name>drawerOverlayBackground</name>
+    <value>#252A3180</value>
+  </token>
+  <token>
     <name>formBoxSmallHeight</name>
     <value>32</value>
   </token>

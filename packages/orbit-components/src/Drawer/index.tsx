@@ -1,156 +1,25 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import cx from "clsx";
 
 import KEY_CODE_MAP from "../common/keyMaps";
 import useFocusTrap from "../hooks/useFocusTrap";
 import useLockScrolling from "../hooks/useLockScrolling";
-import transition from "../utils/transition";
-import mq from "../utils/mediaQuery";
-import type { Theme } from "../defaultTheme";
-import defaultTheme from "../defaultTheme";
 import DrawerClose from "./components/DrawerClose";
 import POSITIONS from "./consts";
-import getPosition from "./helpers/getPosition";
-import getTransitionAnimation from "./helpers/getTransitionAnimation";
-import useTheme from "../hooks/useTheme";
 import Stack from "../Stack";
-import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import Heading from "../Heading";
-import { rtlSpacing } from "../utils/rtl";
 import type { Props } from "./types";
+import theme from "../defaultTheme";
+import useStateWithTimeout from "../hooks/useStateWithTimeout";
 
-const getPadding = ({
-  noPadding,
-  theme,
-  hasTopPadding,
-}: {
-  noPadding?: boolean;
-  theme: Theme;
-  hasTopPadding?: boolean;
-}) => {
-  const padding = (space: string) => (!hasTopPadding ? rtlSpacing(`0 ${space} ${space}`) : space);
-  return (
-    !noPadding &&
-    css`
-      padding: ${padding(theme.orbit.spaceMedium)};
-      ${mq.largeMobile(css`
-        padding: ${padding(theme.orbit.spaceXLarge)};
-      `)};
-    `
-  );
-};
+const getTransitionClasses = (shown: boolean, position: string) => {
+  if (shown) return "translate-x-0";
 
-const StyledDrawer = styled.div<{ overlayShown?: boolean; shown?: boolean }>`
-  ${({ theme, overlayShown, shown }) => css`
-    display: flex;
-    visibility: ${overlayShown ? "visible" : "hidden"};
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: ${shown ? convertHexToRgba(theme.orbit.paletteInkDark, 50) : "transparent"};
-    z-index: ${theme.orbit.zIndexDrawer};
-    transition: ${transition(["background-color"], "fast", "ease-in-out")};
-  `}
-`;
-
-StyledDrawer.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledDrawerSide = styled.aside`
-  ${({
-    theme,
-    suppressed,
-    width,
-  }: {
-    theme: Theme;
-    suppressed?: boolean;
-    width: string;
-    position: "right" | "left";
-    shown?: boolean;
-  }) => css`
-    display: block;
-    position: absolute;
-    box-sizing: border-box;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    font-family: ${theme.orbit.fontFamily};
-    overflow-y: auto;
-    box-shadow: ${theme.orbit.boxShadowRaised};
-    background: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
-    transition: ${transition(["transform"], "normal", "ease-in-out")};
-    width: 100%;
-    ${mq.largeMobile(css`
-      max-width: ${width};
-    `)};
-    ${getPosition};
-    ${getTransitionAnimation};
-  `}
-`;
-
-StyledDrawerSide.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledDrawerContent = styled.div<{
-  hasClose?: boolean;
-  noPadding?: boolean;
-  hasTopPadding?: boolean;
-}>`
-  ${({ theme, noPadding, hasClose, hasTopPadding }) => css`
-    ${getPadding({ noPadding, hasTopPadding, theme })};
-    margin-bottom: ${noPadding && theme.orbit.spaceLarge};
-    margin-top: ${!hasClose && noPadding && theme.orbit.spaceLarge};
-  `}
-`;
-
-StyledDrawerContent.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledDrawerHeader = styled.div<{
-  fixedHeader?: boolean;
-  suppressed?: boolean;
-  bordered?: boolean;
-  noPadding?: boolean;
-  onlyIcon?: boolean;
-}>`
-  ${({ theme, fixedHeader, suppressed, bordered, noPadding, onlyIcon }) => css`
-    display: flex;
-    ${fixedHeader &&
-    css`
-      position: sticky;
-      top: 0;
-      z-index: ${theme.orbit.zIndexSticky};
-    `}
-    justify-content: ${onlyIcon ? "flex-end" : "space-between"};
-    align-items: center;
-    background: ${suppressed && !bordered
-      ? theme.orbit.paletteCloudLight
-      : theme.orbit.paletteWhite};
-    height: 64px;
-    box-sizing: border-box;
-    border-bottom: ${bordered && `1px solid ${theme.orbit.paletteCloudNormal}`};
-    ${!noPadding &&
-    css`
-      padding: 0 ${theme.orbit.spaceMedium};
-      ${mq.largeMobile(css`
-        padding: ${rtlSpacing(`0 ${theme.orbit.spaceLarge} 0 ${theme.orbit.spaceXLarge}`)};
-      `)};
-    `};
-  `}
-`;
-
-StyledDrawerHeader.defaultProps = {
-  theme: defaultTheme,
+  return position === POSITIONS.RIGHT
+    ? "ltr:lm:translate-x-[var(--lm-drawer-width)] rtl:lm:-translate-x-[var(--lm-drawer-width)] ltr:translate-x-full rtl:-translate-x-full"
+    : "ltr:lm:-translate-x-[var(--lm-drawer-width)] rtl:lm:-translate-x-[var(--lm-drawer-width)] ltr:-translate-x-full rtl:translate-x-full";
 };
 
 const Drawer = ({
@@ -169,7 +38,6 @@ const Drawer = ({
   title,
   actions,
 }: Props) => {
-  const theme = useTheme();
   const overlayRef = React.useRef(null);
   const closeButtonRef = React.useRef<HTMLButtonElement | null>(null);
   const scrollableRef = React.useRef<HTMLElement | null>(null);
@@ -180,7 +48,7 @@ const Drawer = ({
   );
 
   const handleOnClose = React.useCallback(
-    ev => {
+    (ev: React.MouseEvent<HTMLDivElement>) => {
       if (onClose && ev.target === overlayRef.current) {
         onClose();
       }
@@ -190,6 +58,15 @@ const Drawer = ({
 
   useFocusTrap(scrollableRef);
   useLockScrolling(scrollableRef, lockScrolling && overlayShown);
+
+  const handleKeyDown = React.useCallback(
+    (ev: React.KeyboardEvent<HTMLDivElement> | KeyboardEvent) => {
+      if (ev.keyCode === KEY_CODE_MAP.ESC && onClose) {
+        onClose();
+      }
+    },
+    [onClose],
+  );
 
   React.useEffect(() => {
     closeButtonRef.current?.focus();
@@ -201,42 +78,71 @@ const Drawer = ({
         setOverlayShownWithTimeout(false);
       }
     }
+  }, [overlayShown, setOverlayShown, shown, setOverlayShownWithTimeout, onClose]);
 
-    const handleKeyDown = ev => {
-      if (ev.keyCode === KEY_CODE_MAP.ESC && onClose) {
-        onClose();
-      }
-    };
+  const vars = {
+    "--lm-drawer-width": width,
+  };
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [overlayShown, setOverlayShown, setOverlayShownWithTimeout, shown, onClose]);
+  const varClasses = [vars["--lm-drawer-width"] != null && "lm:max-w-[var(--lm-drawer-width)]"];
+
+  const onlyIcon = !title && !actions;
+  const bordered = !!(title || actions);
 
   return (
-    <StyledDrawer
+    <div
       role="button"
-      overlayShown={overlayShown}
-      shown={shown}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      className={cx(
+        "orbit-drawer",
+        "flex",
+        "fixed inset-0",
+        "h-full w-full",
+        "z-drawer",
+        "duration-fast transition-colors ease-in-out",
+        overlayShown ? "visible" : "invisible",
+        shown ? "bg-drawer-overlay-background" : "transparent",
+      )}
       onClick={handleOnClose}
       data-test={dataTest}
       id={id}
       aria-hidden={!shown}
       ref={overlayRef}
     >
-      <StyledDrawerSide
+      <aside
+        className={cx(
+          "box-border block",
+          "absolute bottom-0 top-0",
+          "h-full w-full",
+          "font-base",
+          "overflow-y-auto",
+          "overflow-x-hidden",
+          "shadow-raised",
+          "duration-normal transform-gpu transition-transform ease-in-out",
+          getTransitionClasses(shown, position),
+          suppressed ? "bg-cloud-light" : "bg-white-normal",
+          position === POSITIONS.RIGHT ? "end-0" : "start-0",
+          ...varClasses,
+        )}
+        style={vars as React.CSSProperties}
         ref={scrollableRef}
-        shown={shown}
-        width={width}
-        position={position}
         role="navigation"
-        suppressed={suppressed}
       >
         {(title || actions || onClose) && (
-          <StyledDrawerHeader
-            onlyIcon={!title && !actions}
-            bordered={!!(title || actions)}
-            suppressed={!!suppressed}
-            fixedHeader={!!fixedHeader}
+          <div
+            className={cx(
+              "flex",
+              "items-center",
+              "h-[64px]",
+              "box-border",
+              suppressed && !bordered ? "bg-cloud-light" : "bg-white-normal",
+              fixedHeader && "z-sticky sticky top-0",
+              onlyIcon ? "justify-end" : "justify-between",
+              bordered &&
+                "border-cloud-normal border-b border-l-0 border-r-0 border-t-0 border-solid",
+              !noPadding && "px-md lm:ps-xl lm:pe-lg py-0",
+            )}
           >
             {title && <Heading type="title2">{title}</Heading>}
             {actions && (
@@ -245,17 +151,19 @@ const Drawer = ({
               </Stack>
             )}
             {onClose && <DrawerClose onClick={onClose} ref={closeButtonRef} title={labelHide} />}
-          </StyledDrawerHeader>
+          </div>
         )}
-        <StyledDrawerContent
-          noPadding={noPadding}
-          hasClose={!!onClose}
-          hasTopPadding={!!(title || actions)}
+        <div
+          className={cx(
+            !onClose && noPadding && "mt-lg",
+            noPadding && "mb-lg",
+            !noPadding && (bordered ? "p-md lm:p-xl" : "px-md pb-md lm:px-xl lm:pb-xl"),
+          )}
         >
           {children}
-        </StyledDrawerContent>
-      </StyledDrawerSide>
-    </StyledDrawer>
+        </div>
+      </aside>
+    </div>
   );
 };
 

@@ -1,0 +1,12 @@
+{
+  "component": {
+    "drawer": {
+      "overlay": {
+        "background": {
+          "type": "color",
+          "value": "rgba(37, 42, 49, 0.5)"
+        }
+      }
+    }
+  }
+}

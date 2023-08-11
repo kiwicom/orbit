@@ -530,6 +530,7 @@ export interface Tokens {
   countryFlagSmallWidth: string;
   countryFlagMediumHeight: string;
   countryFlagMediumWidth: string;
+  drawerOverlayBackground: string;
   formBoxSmallHeight: string;
   formBoxNormalHeight: string;
   formBoxLargeHeight: string;
@@ -1393,6 +1394,7 @@ const createTokens: CreateTokens = foundation => ({
   countryFlagSmallWidth: "16px",
   countryFlagMediumHeight: "13px",
   countryFlagMediumWidth: "24px",
+  drawerOverlayBackground: transparentColor(foundation.palette.ink.dark, 50),
   formBoxSmallHeight: foundation.size.large,
   formBoxNormalHeight: foundation.size.extraLarge,
   formBoxLargeHeight: foundation.size.extraExtraLarge,

@@ -673,6 +673,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-hover": "#DCE3E9",
       },
       "country-flag-background": "transparent",
+      "drawer-overlay-background": "rgba(37, 42, 49, 0.5)",
       "form-element-background": "#FFFFFF",
       "form-element-disabled-background": "#E8EDF1",
       "green": {

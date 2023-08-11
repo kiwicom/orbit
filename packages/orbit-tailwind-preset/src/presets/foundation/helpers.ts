@@ -18,6 +18,7 @@ export type ExportedComponentLevelTokens =
   | "buttonLink"
   | "badge"
   | "icon"
+  | "drawer"
   | "tag"
   | "loading"
   | "textLink"

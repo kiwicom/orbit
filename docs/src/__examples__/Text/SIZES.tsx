@@ -9,8 +9,8 @@ export default {
       code: `() => <Text size="small>Small text</Text>`,
     },
     {
-      name: "Medium",
-      code: `() => <Text size="medium">Medium text</Text>`,
+      name: "Normal",
+      code: `() => <Text size="normal">Medium text</Text>`,
     },
     {
       name: "Large",

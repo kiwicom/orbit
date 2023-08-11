@@ -19,7 +19,6 @@ import { StyledTextLink, getLinkStyle } from "../TextLink";
 import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import { rtlSpacing, right, left } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
-import { Item } from "../List/ListItem";
 import { StyledText } from "../Text";
 import { StyledHeading } from "../Heading";
 import media from "../utils/mediaQuery";
@@ -218,7 +217,8 @@ const StyledContent = styled.div<{ inlineActions?: boolean; $type: Type; $noUnde
       ${getLinkStyle};
     }
 
-    & ${Item}, ${StyledText}, ${StyledHeading} {
+    & .orbit-list-item,
+    ${StyledText}, ${StyledHeading} {
       color: ${theme.orbit.paletteInkDark};
     }
   `}

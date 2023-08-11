@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 
 import type * as Common from "../../../common/types";
 import { StyledText } from "../../../Text";
-import { Item } from "../../../List/ListItem";
 import defaultTheme from "../../../defaultTheme";
 import Button from "../../../Button";
 import { StyledTextLink } from "../../../TextLink";
@@ -65,7 +64,7 @@ const StyledTooltipContent = styled.div`
   color: ${({ theme }) => theme.orbit.paletteWhite};
   margin-bottom: ${({ theme }) => theme.orbit.spaceMedium};
 
-  & ${StyledText}, ${Item} {
+  & ${StyledText}, .orbit-list-item {
     font-size: ${({ theme }) => theme.orbit.fontSizeTextNormal};
     font-weight: ${({ theme }) => theme.orbit.fontWeightNormal};
     color: ${({ theme }) => theme.orbit.paletteWhite};

@@ -6,7 +6,6 @@ import type { Placement } from "@popperjs/core/lib/enums";
 import { PLACEMENTS } from "../../../common/consts";
 import tooltipSize from "../helpers/tooltipSize";
 import { StyledText } from "../../../Text";
-import { Item } from "../../../List/ListItem";
 import resolveBackgroundColor from "../helpers/resolveBackgroundColor";
 import { resolveArrowStyle, resolveArrowPlacement } from "../helpers/resolveArrow";
 import tooltipPadding from "../helpers/tooltipPadding";
@@ -33,6 +32,7 @@ const StyledTooltipArrow = styled.div<{
     position: ${position};
     transform: ${transform};
     ${resolveArrowPlacement};
+
     &:after {
       position: absolute;
       content: "";
@@ -93,7 +93,7 @@ const StyledTooltipContent = styled.div`
     color: ${theme.orbit.paletteWhite};
     margin-bottom: 0;
 
-    & ${StyledText}, ${Item} {
+    & ${StyledText}, .orbit-list-item {
       font-size: ${theme.orbit.fontSizeTextSmall};
       font-weight: ${theme.orbit.fontWeightMedium};
       color: ${theme.orbit.paletteWhite};

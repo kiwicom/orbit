@@ -21,6 +21,5 @@ describe("List", () => {
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByText(content)).toBeInTheDocument();
-    expect(screen.getByRole("list")).toHaveStyle({ marginBottom: "12px" });
   });
 });

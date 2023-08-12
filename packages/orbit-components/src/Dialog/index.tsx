@@ -1,116 +1,27 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import useFocusTrap from "../hooks/useFocusTrap";
 import Portal from "../Portal";
 import useTheme from "../hooks/useTheme";
-import defaultTheme from "../defaultTheme";
 import Heading from "../Heading";
 import Text from "../Text";
 import Stack from "../Stack";
 import useLockScrolling from "../hooks/useLockScrolling";
-import mq from "../utils/mediaQuery";
-import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import KEY_CODE_MAP from "../common/keyMaps";
+import useClickOutside from "../hooks/useClickOutside";
 import useRandomId from "../hooks/useRandomId";
-import { left } from "../utils/rtl";
 import type { Props } from "./types";
 
-const StyledDialog = styled.div`
-  ${({ theme }) => css`
-    font-family: ${theme.orbit.fontFamily};
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: ${theme.orbit.spaceMedium};
-    z-index: ${theme.orbit.zIndexModalOverlay};
-    box-sizing: border-box;
-    outline: none;
-    overflow-x: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: opacity ${theme.orbit.durationFast} ease-in-out;
-    ${mq.largeMobile(css`
-      opacity: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `)};
-  `}
-`;
-
-StyledDialog.defaultProps = {
-  theme: defaultTheme,
+const ActionButtonWrapper = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="lm:w-auto lm:[&>button]:flex-none lm:[&>button]:w-auto w-full [&>button]:w-full [&>button]:flex-auto">
+      {children}
+    </div>
+  );
 };
-
-const StyledDialogCenterWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  min-height: 100%;
-`;
-
-const StyledDialogContent = styled.div<{ $maxWidth?: number; shown?: boolean }>`
-  ${({ theme, $maxWidth, shown }) => css`
-    display: block;
-    width: 100%;
-    max-width: ${$maxWidth}px;
-    box-sizing: border-box;
-    padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`};
-    background: ${theme.orbit.paletteWhite};
-    border-radius: 12px;
-    bottom: ${shown ? "0" : "-100%"};
-    box-shadow: ${theme.orbit.boxShadowOverlay};
-    text-align: center;
-    .orbit-text {
-      text-align: center;
-    }
-    ${mq.largeMobile(css`
-      min-width: ${theme.orbit.widthModalSmall};
-      border-radius: 9px;
-      padding: ${theme.orbit.spaceLarge};
-      text-align: ${left};
-      .orbit-text {
-        text-align: ${left};
-      }
-    `)};
-  `}
-`;
-
-StyledDialogContent.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledAction = styled.div`
-  width: 100%;
-
-  ${StyledButtonPrimitive} {
-    width: 100%;
-    flex: 1 1 auto;
-  }
-
-  ${mq.largeMobile(
-    css`
-      width: auto;
-      ${StyledButtonPrimitive} {
-        width: auto;
-        flex: 0 0 auto;
-      }
-    `,
-  )};
-`;
-
-StyledAction.defaultProps = {
-  theme: defaultTheme,
-};
-
-const IllustrationContainer = styled.div`
-  margin-bottom: 16px;
-`;
 
 const Dialog = ({
   dataTest,
@@ -141,60 +52,84 @@ const Dialog = ({
         ref.current.focus();
       }
     }, transitionLength);
-    return () => clearTimeout(timer);
-  }, [theme.orbit.durationFast]);
 
-  const handleClose = (ev: React.MouseEvent<HTMLDivElement>) => {
-    if (ref.current && onClose) {
-      if (ref.current && !ref.current.contains(ev.currentTarget)) onClose();
-    }
-  };
-
-  React.useEffect(() => {
-    const handleKeyDown = ev => {
+    const handleKeyDown = (ev: KeyboardEvent) => {
       if (ev.keyCode === KEY_CODE_MAP.ESC && onClose) {
         onClose();
       }
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      clearTimeout(timer);
+    };
+  }, [theme.orbit.durationFast, onClose]);
+
+  const handleClose = (ev: MouseEvent) => {
+    if (ref && ref.current && onClose) {
+      if (ref.current && !ref.current.contains(ev.target as Node)) onClose();
+    }
+  };
+
+  useClickOutside(ref, handleClose);
 
   const dialogID = useRandomId();
+  const descriptionId = useRandomId();
 
   const dialog = (
-    <StyledDialog
-      ref={wrapperRef}
-      data-test={dataTest}
-      id={id}
-      onClick={handleClose}
-      tabIndex={0}
+    <div
       role="dialog"
       aria-modal="true"
       aria-labelledby={dialogID}
+      aria-describedby={descriptionId}
+      ref={wrapperRef}
+      data-test={dataTest}
+      id={id}
+      className={cx([
+        "font-base",
+        "h-full w-full",
+        "p-md z-overlay box-border overflow-x-hidden bg-[rgba(0,0,0,0.5)]",
+        "fixed inset-0",
+        "duration-fast transition-opacity ease-in-out",
+        "lm:opacity-100 lm:flex lm:items-center lm:justify-center",
+      ])}
     >
-      <StyledDialogCenterWrapper>
-        <StyledDialogContent shown={shown} ref={ref} id={dialogID} $maxWidth={maxWidth}>
-          {illustration && <IllustrationContainer>{illustration}</IllustrationContainer>}
-          <Stack spacing="XSmall" spaceAfter="medium">
+      <div className="flex min-h-full items-center">
+        <div
+          id={dialogID}
+          ref={ref}
+          style={{ maxWidth }}
+          className={cx([
+            "shadow-overlay pt-lg px-md pb-md bg-white-normal rounded-dialog-mobile box-border block w-full",
+            shown ? "bottom-0" : "-bottom-full",
+            "lm:min-w-dialog-width lm:p-lg lm:rounded-dialog-desktop",
+          ])}
+        >
+          {illustration && <div className="mb-md lm:text-start text-center">{illustration}</div>}
+          <div className="mb-md gap-xs lm:text-start lm:[&>.orbit-text]:text-start flex flex-col text-center [&>.orbit-text]:text-center">
             {title && (
               <Heading type="title3" align="center" largeMobile={{ align: "start" }}>
                 {title}
               </Heading>
             )}
-            {description && <Text type="secondary">{description}</Text>}
-          </Stack>
+            {description && (
+              <Text type="secondary" id={descriptionId}>
+                {description}
+              </Text>
+            )}
+          </div>
           <Stack
             direction="column-reverse"
             spacing="XSmall"
             largeMobile={{ direction: "row", justify: "end" }}
           >
-            {secondaryAction && <StyledAction>{secondaryAction}</StyledAction>}
-            <StyledAction>{primaryAction}</StyledAction>
+            {secondaryAction && <ActionButtonWrapper>{secondaryAction}</ActionButtonWrapper>}
+            <ActionButtonWrapper>{primaryAction}</ActionButtonWrapper>
           </Stack>
-        </StyledDialogContent>
-      </StyledDialogCenterWrapper>
-    </StyledDialog>
+        </div>
+      </div>
+    </div>
   );
 
   return renderInPortal ? <Portal renderInto="modals">{dialog}</Portal> : dialog;

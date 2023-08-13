@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/rest";
-import "make-runnable";
+import { argv } from "zx";
 
 const repo = "orbit";
 
@@ -8,12 +8,8 @@ const parseDescription = (body: string | null, str: string) => {
   return (body && body.concat(`\n ${str}`)) || "";
 };
 
-export const updateLiveURL = async (
-  pr: number,
-  lastUrl: string,
-  token: string,
-  urlName = "LiveURL",
-) => {
+(async () => {
+  const { pr, lastUrl, token, urlName = "LiveUrl" } = argv;
   if (!pr) throw new Error("Missing PR number");
 
   const octokit = new Octokit({ log: console, auth: token });
@@ -30,4 +26,4 @@ export const updateLiveURL = async (
     pull_number: pr,
     body: parseDescription(data.body, `${urlName}: ${lastUrl}`),
   });
-};
+})();

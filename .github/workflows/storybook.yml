@@ -6,7 +6,7 @@ on:
       - master
   pull_request:
     branches:
-      - master
+      - "**"
 
 env: # Set environment variables for every job and step in this workflow
   CLICOLOR: "1" # Enable colors for *NIX commands
@@ -52,7 +52,7 @@ jobs:
         # we're adding to the domain name the username of the current owner of SURGE_TOKEN
         run: |
           yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
-          yarn components deploy:updateURL ${PR_NUMBER} ${DOMAIN} ${{ secrets.OCTO_TOKEN }} Storybook
+          yarn components deploy:updateURL --pr=${PR_NUMBER} --lastUrl=${DOMAIN} --token=${{ secrets.OCTO_TOKEN }} --urlName=Storybook
         env:
           PR_NUMBER: ${{ github.event.number }}
 

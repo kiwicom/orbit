@@ -20,16 +20,17 @@ export const Default = () => {
     <Wizard
       id="wizard"
       direction={direction}
-      completedSteps={3}
-      activeStep={3}
+      completedSteps={2}
+      activeStep={1}
       labelClose={labelClose}
-      labelProgress={`3 ${labelProgress} 3`}
+      labelProgress={`2 ${labelProgress} 6`}
       onChangeStep={action("onChangeStep")}
     >
       <WizardStep title="Search" />
       <WizardStep title="Passenger details" />
       <WizardStep title="Ticket fare" />
-      <WizardStep title="Customize your trip" />
+      <WizardStep title="Kiwi.com guarantee" isCompleted />
+      <WizardStep title="Seating" />
       <WizardStep title="Overview & Payment" />
     </Wizard>
   );

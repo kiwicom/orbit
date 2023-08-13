@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import Text from "../Text";
-import CheckCircle from "./CheckCircle";
+import Check from "../icons/Check";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import { WizardStepContext } from "./WizardContext";
@@ -33,17 +33,20 @@ StyledStepIconContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const WizardStepIcon = () => {
+const WizardStepIcon = ({ isCompleted }: { isCompleted?: boolean }) => {
   const { index, status, isCompact, isActive } = React.useContext(WizardStepContext);
   const theme = useTheme();
 
   return (
     <StyledStepIconContainer $disabled={status === "disabled"} $glow={isActive && !isCompact}>
-      {status === "completed" ? (
-        <CheckCircle
-          ariaLabel="completed"
+      {isCompleted || status === "completed" ? (
+        <Check
           size="small"
-          customColor={theme.orbit.paletteProductNormal}
+          customColor={
+            isCompleted && status !== "completed" && status !== "available"
+              ? theme.orbit.paletteInkDark
+              : theme.orbit.paletteWhiteNormal
+          }
         />
       ) : (
         <Text

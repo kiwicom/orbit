@@ -7,6 +7,10 @@ const InnerStyled = styled.div`
   width: 100%;
 `;
 
+/**
+ * @deprecated use useClickOutside hook instead
+ */
+
 export default function ClickOutside({ children, onClickOutside }: Props) {
   const ref = React.useRef<HTMLDivElement>(null);
 

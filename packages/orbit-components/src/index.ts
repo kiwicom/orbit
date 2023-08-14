@@ -34,7 +34,7 @@ export { default as Accordion, AccordionSection } from "./Accordion";
 
 // Modal
 export { default as Portal } from "./Portal";
-export { default as ClickOutside } from "./ClickOutside";
+export { default as ClickOutside } from "./deprecated/ClickOutside";
 
 export { default as Modal, ModalHeader, ModalSection, ModalFooter } from "./Modal";
 

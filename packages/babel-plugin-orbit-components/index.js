@@ -17,7 +17,6 @@ const pathOverwrites = {
   BadgeListItem: "BadgeList/BadgeListItem",
   BreadcrumbsItem: "Breadcrumbs/BreadcrumbsItem",
   ButtonPrimitive: "primitives/ButtonPrimitive",
-  CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
   ToastRoot: "Toast",
@@ -29,6 +28,7 @@ const pathOverwrites = {
   Icons: "icons",
   IllustrationPrimitive: "primitives/IllustrationPrimitive",
   InputStepperStateless: "deprecated/InputStepper/InputStepperStateless",
+  ClickOutside: "deprecated/ClickOutside",
   InputStepper: "deprecated/InputStepper",
   ItinerarySegment: "Itinerary/ItinerarySegment",
   ItinerarySeparator: "Itinerary/ItinerarySeparator",

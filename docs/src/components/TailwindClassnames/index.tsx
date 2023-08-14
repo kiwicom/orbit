@@ -13,9 +13,7 @@ import {
 import styled from "styled-components";
 import { merge, upperFirst, transform, omit } from "lodash";
 
-import DesignTokenName from "../DesignTokensList/components/DesignTokenName";
-import DesignTokenValue from "../DesignTokensList/components/DesignTokenValue";
-import DesignTokenIcon from "../DesignTokensList/components/DesignTokenIcon";
+import { DesignTokenName, DesignTokenValue, DesignTokenIcon } from "../DesignTokensList";
 
 const StyledTableWrapper = styled.div`
   table {
@@ -119,7 +117,7 @@ const TailwindClassnames = () => {
                       <TableCell>
                         <Stack flex align="center">
                           <DesignTokenIcon value={String(value)} type={getCategory(group)} />
-                          <DesignTokenName>
+                          <DesignTokenName tooltipText="Click to copy the classname.">
                             {["Screens", "Spacing"].includes(group)
                               ? name
                               : `${tailwindPrefixes[group]}-${name}`}

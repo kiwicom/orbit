@@ -139,7 +139,7 @@ StyledButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-const WizardStep = ({ dataTest, title, onClick }: WizardStepProps) => {
+const WizardStep = ({ dataTest, title, onClick, isCompleted }: WizardStepProps) => {
   const theme = useTheme();
   const {
     index,
@@ -192,7 +192,7 @@ const WizardStep = ({ dataTest, title, onClick }: WizardStepProps) => {
       spacing="XSmall"
       spaceAfter={isColumnOnDesktop ? "large" : "none"}
     >
-      <WizardStepIcon />
+      <WizardStepIcon isCompleted={isCompleted} />
       <div
         css={css`
           padding: ${theme.orbit.paddingBadge};

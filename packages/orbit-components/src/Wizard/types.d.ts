@@ -16,5 +16,6 @@ export interface Props extends Common.Globals {
 
 export interface WizardStepProps extends Common.Globals {
   readonly title: string;
+  readonly isCompleted?: boolean;
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLElement>>;
 }

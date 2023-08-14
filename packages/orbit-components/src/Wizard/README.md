@@ -36,7 +36,8 @@ Then use `Wizard` as the container for multiple `WizardStep`s:
 
 ## WizardStep props
 
-| Name      | Type                            | Default | Description                         |
-| :-------- | :------------------------------ | :------ | :---------------------------------- |
-| `title`   | `string`                        |         | Name of the step.                   |
-| `onClick` | `event => void \| Promise<any>` |         | Function which handles click event. |
+| Name          | Type                            | Default | Description                         |
+| :------------ | :------------------------------ | :------ | :---------------------------------- |
+| `title`       | `string`                        |         | Name of the step.                   |
+| `onClick`     | `event => void \| Promise<any>` |         | Function which handles click event. |
+| `isCompleted` | `boolean`                       |         | Marks current step as completed.    |

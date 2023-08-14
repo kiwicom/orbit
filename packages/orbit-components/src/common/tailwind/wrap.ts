@@ -31,3 +31,11 @@ export const wrapClasses: {
     [WRAP.NO_WRAP]: "mm:flex-nowrap",
   },
 };
+
+const getWrapClasses = (wrap: boolean, viewport?: QUERIES): string => {
+  const root = viewport ? wrapClasses[viewport] : wrapClasses;
+
+  return wrap ? root.wrap : root.nowrap;
+};
+
+export default getWrapClasses;

@@ -52,3 +52,11 @@ export const justifyClasses: {
     [JUSTIFY.AROUND]: "mm:justify-around",
   },
 };
+
+export const getJustifyClasses = (justify: `${JUSTIFY}`, viewport?: QUERIES): string => {
+  const root = viewport ? justifyClasses[viewport] : justifyClasses;
+
+  return root[justify];
+};
+
+export default getJustifyClasses;

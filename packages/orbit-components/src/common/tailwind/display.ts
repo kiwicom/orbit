@@ -10,6 +10,8 @@ export enum DISPLAY {
   LIST_ITEM = "list-item",
 }
 
+type Display = `${DISPLAY}`;
+
 export const displayClasses: {
   [K in QUERIES | DISPLAY]: K extends QUERIES ? Record<DISPLAY, string> : string;
 } = {
@@ -66,3 +68,15 @@ export const displayClasses: {
     [DISPLAY.LIST_ITEM]: "mm:list-item",
   },
 };
+
+const getDisplayClasses = (display: Display, viewport?: QUERIES): string => {
+  return viewport ? displayClasses[viewport][display] : displayClasses[display];
+};
+
+export const getDisplayInlineClass = (inline: boolean, viewport?: QUERIES): string => {
+  return inline
+    ? getDisplayClasses(DISPLAY.INLINE_FLEX, viewport)
+    : getDisplayClasses(DISPLAY.BLOCK, viewport);
+};
+
+export default getDisplayClasses;

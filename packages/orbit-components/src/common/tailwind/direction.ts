@@ -45,3 +45,9 @@ export const directionClasses: {
     [DIRECTION.COLUMN_REVERSE]: "mm:flex-col-reverse",
   },
 };
+
+const getDirectionToken = (direction: `${DIRECTION}`, viewport?: QUERIES): string => {
+  return viewport ? directionClasses[viewport][direction] : directionClasses[direction];
+};
+
+export default getDirectionToken;

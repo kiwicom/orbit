@@ -1,5 +1,6 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import { SPACINGS_AFTER } from "../getSpacingToken";
+import type { SpaceAfterSizes as SpaceAfter } from "../types";
 
 export const spaceAfterClasses: {
   [K in QUERIES | SPACINGS_AFTER]: K extends QUERIES ? Record<SPACINGS_AFTER, string> : string;
@@ -57,3 +58,9 @@ export const spaceAfterClasses: {
     [SPACINGS_AFTER.LARGEST]: "ld:mb-xl",
   },
 };
+
+const getSpaceAfterClasses = (spaceAfter: SpaceAfter, viewport?: QUERIES): string => {
+  return viewport ? spaceAfterClasses[viewport][spaceAfter] : spaceAfterClasses[spaceAfter];
+};
+
+export default getSpaceAfterClasses;

@@ -1,100 +1,137 @@
-import * as React from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import cx from "clsx";
 
-import defaultTheme from "../defaultTheme";
-import mediaQueries from "../utils/mediaQuery";
-import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "../utils/layout/consts";
-import { DEVICES } from "../utils/mediaQuery/consts";
-import { isDefined } from "../utils/layout";
-import getGap from "./helpers/getGap";
-import shouldUseFlex from "./helpers/shouldUseFlex";
-import getChildrenMargin from "./helpers/getChildrenMargin";
-import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
-import type { Props } from "./types";
+import type { Props, CommonProps } from "./types";
+import type * as Common from "../common/types";
+import {
+  getDisplayInlineClass,
+  getDirectionClasses,
+  getAlignItemsClasses,
+  getWrapClasses,
+  getGrowClasses,
+  getShrinkClasses,
+  getAlignContentClasses,
+  getJustifyClasses,
+  getSpacingClasses,
+  getSpaceAfterClasses,
+} from "../common/tailwind";
+import { QUERIES } from "../utils/mediaQuery/consts";
+import { ALIGN } from "../common/tailwind/alignItems";
+import { JUSTIFY } from "../common/tailwind/justify";
+import { SPACING } from "../common/tailwind/spacing";
+import { DIRECTION } from "../common/tailwind/direction";
 
-// just apply all mediaQueries
-// smallMobile - default values are not mediaQuery and needs to be rendered differently
-const StyledStack = styled(({ className, element: Element, children, dataTest }) => (
-  <Element className={className} data-test={dataTest}>
-    {children}
-  </Element>
-))`
-  ${props =>
-    Object.values(DEVICES).map((viewport, index, devices) =>
-      viewport in mediaQueries
-        ? mediaQueries[viewport](css`
-            ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
-            ${props.legacy
-              ? getChildrenMargin({ viewport, index, devices })
-              : getGap({ index, devices })};
-          `)
-        : viewport === "smallMobile" &&
-          css`
-            ${getViewportFlexStyles(viewport)};
-            ${props.legacy
-              ? getChildrenMargin({ viewport, index, devices })
-              : getGap({ index, devices })};
-          `,
-    )};
-`;
-
-StyledStack.defaultProps = {
-  theme: defaultTheme,
-};
+const shouldUseFlex = (props: CommonProps & Common.SpaceAfter) =>
+  props.flex ||
+  Object.keys(props)
+    .map(prop => ["spacing", "spaceAfter", "dataTest", "children"].includes(prop))
+    .includes(false);
 
 const Stack = (props: Props) => {
   const {
-    dataTest,
-    inline = false,
-    spacing = SPACINGS.MEDIUM,
-    align = ALIGNS.START,
-    legacy = false,
-    justify = JUSTIFY.START,
-    grow = true,
-    wrap = false,
-    shrink = false,
-    basis,
-    spaceAfter,
     children,
+    as: ComponentTag = "div",
+    dataTest,
+    basis,
     mediumMobile,
     largeMobile,
     tablet,
     desktop,
     largeDesktop,
-    as = "div",
+    ...restProps
   } = props;
 
-  const isFlex = shouldUseFlex(props);
-  const direction = props.direction || (isFlex ? DIRECTIONS.ROW : DIRECTIONS.COLUMN);
+  const viewportProps = { mediumMobile, largeMobile, tablet, desktop, largeDesktop };
 
-  const smallMobile = {
-    direction,
-    align,
-    justify,
-    wrap,
-    grow,
-    basis,
-    inline,
-    shrink,
-    spacing,
-    spaceAfter,
+  const defaultMediaProps = () => {
+    const {
+      spacing = SPACING.medium,
+      direction,
+      grow = true,
+      inline = false,
+      justify = JUSTIFY.START,
+      shrink = false,
+      wrap = false,
+      align = ALIGN.START,
+      spaceAfter,
+    } = restProps;
+
+    const isFlex = shouldUseFlex({ spacing, spaceAfter, ...restProps }) || inline;
+    const flexDirection = direction || (isFlex ? DIRECTION.ROW : DIRECTION.COLUMN);
+
+    return {
+      flex: isFlex,
+      direction: flexDirection,
+      spacing,
+      grow,
+      inline,
+      justify,
+      align,
+      shrink,
+      wrap,
+      spaceAfter,
+    };
+  };
+
+  const vars = {
+    "--basis": basis,
+    "--mm-basis": mediumMobile?.basis,
+    "--lm-basis": largeMobile?.basis,
+    "--tb-basis": tablet?.basis,
+    "--de-basis": desktop?.basis,
+    "--ld-basis": largeDesktop?.basis,
+  };
+
+  const varClasses = [
+    vars["--basis"] != null && "basis-[var(--basis)]",
+    vars["--mm-basis"] != null && "mm:basis-[var(--mm-basis)]",
+    vars["--lm-basis"] != null && "lm:basis-[var(--lm-basis)]",
+    vars["--tb-basis"] != null && "tb:basis-[var(--tb-basis)]",
+    vars["--de:basis"] != null && "de:basis-[var(--de-basis)]",
+    vars["--ld:basis"] != null && "ld:basis-[var(--ld-basis)]",
+  ];
+
+  const getTailwindTokensForMedia = (
+    properties?: CommonProps & Common.SpaceAfter,
+    viewport?: QUERIES,
+  ): string => {
+    if (!properties) return "";
+
+    const { flex, direction, spaceAfter, inline, wrap, grow, shrink, align, justify, spacing } =
+      properties;
+
+    return cx(
+      typeof spaceAfter !== "undefined" && getSpaceAfterClasses(spaceAfter, viewport),
+      typeof spacing !== "undefined" && getSpacingClasses(spacing, viewport, direction),
+      typeof direction !== "undefined" && getDirectionClasses(direction, viewport),
+      typeof align !== "undefined" && getAlignItemsClasses(align, viewport),
+      typeof align !== "undefined" && getAlignContentClasses(align, viewport),
+      typeof wrap !== "undefined" && getWrapClasses(wrap, viewport),
+      typeof grow !== "undefined" && getGrowClasses(grow, viewport),
+      typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
+      typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
+      inline && [getDisplayInlineClass(inline, viewport), "w-full"],
+      flex && "flex",
+    );
   };
 
   return (
-    <StyledStack
-      dataTest={dataTest}
-      legacy={legacy}
-      flex={isFlex}
-      smallMobile={smallMobile}
-      mediumMobile={mediumMobile}
-      largeMobile={largeMobile}
-      tablet={tablet}
-      desktop={desktop}
-      largeDesktop={largeDesktop}
-      element={as}
+    // @ts-expect-error orbit string as
+    <ComponentTag
+      data-test={dataTest}
+      style={vars}
+      className={cx(
+        getTailwindTokensForMedia(defaultMediaProps()),
+        ...varClasses,
+        Object.values(QUERIES).map(viewport => {
+          if (!viewportProps[viewport]) return null;
+          return getTailwindTokensForMedia(viewportProps[viewport], viewport);
+        }),
+      )}
     >
       {children}
-    </StyledStack>
+    </ComponentTag>
   );
 };
+
 export default Stack;

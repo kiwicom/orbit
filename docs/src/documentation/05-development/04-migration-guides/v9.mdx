@@ -62,3 +62,46 @@ Orbit v9 introduces a new prop on `OrbitProvider` called `useId`.
   ```
 
 One more note: the underlying implementation for how ids are generated is slightly different now. In particular, Orbit's `useRandomIdSeed` no longer relies on `react-uid`'s `useUIDSeed`.
+
+## Deprecations
+
+### ClickOutside
+
+The ClickOutside component is now deprecated and its usage should be replaced by the `useClickOutside` hook, already available in Orbit and documented [here](/utilities/useClickOutside/).
+
+**Before:**
+
+```jsx
+<ClickOutside onClickOuside={...}>
+  <div>
+    Some content
+  </div>
+</ClickOutside>
+```
+
+**Now:**
+
+```jsx
+useClickOutside(ref, ev => ...);
+
+<div ref={ref}>
+  Some content
+</div>
+```
+
+### Flow types
+
+Flow types are being deprecated in favor of TypeScript types. The Flow types definitions will be removed in a future version of Orbit.
+
+### Removed previously deprecated components
+
+The following deprecated components were removed in this version:
+
+- FormFeedback
+- InputField
+- InputFile
+- InputGroup
+- Select
+- Textarea
+
+Notice that for most of them there are already replacements available in Orbit, with the same name. The removed components were only the deprecated versions.

@@ -4,7 +4,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../defaultTheme";
-import Loading, { StyledSpinner } from "../../Loading";
+import Loading from "../../Loading";
 import getSpacingToken from "../../common/getSpacingToken";
 import ButtonPrimitiveContent from "./components/ButtonPrimitiveContent";
 import ButtonPrimitiveIconContainer, {
@@ -152,9 +152,10 @@ export const StyledButtonPrimitive = styled(
 
     ${icons && icons.foreground && iconContainerColor(icons.foreground, false)};
 
-    ${StyledSpinner} {
+    & .orbit-loading-spinner {
       width: ${icons && icons.width};
       height: ${icons && icons.height};
+      stroke: ${theme.orbit.paletteWhite};
     }
 
     &:hover {

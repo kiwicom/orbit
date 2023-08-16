@@ -3,7 +3,6 @@
   DOCUMENTATION: https://orbit.kiwi/components/loading/
 */
 import * as React from "react";
-import type { StyledComponent } from "styled-components";
 
 import type { Globals, Translation } from "../common/common.js.flow";
 
@@ -17,8 +16,5 @@ export type Props = {|
   +text?: Translation,
   ...Globals,
 |};
-
-declare export var StyledSpinner: StyledComponent<any, any, HTMLElement>;
-declare export var StyledLoading: StyledComponent<any, any, HTMLElement>;
 
 declare export default React.ComponentType<Props>;

@@ -9,6 +9,8 @@ import MediaQueries from "./pages/media-queries";
 import ModalFooter from "./pages/modal-footer";
 import BoxMediaProps from "./pages/box-mediaquery-props";
 import StackMediaProps from "./pages/stack-mediaquery-props";
+import TextStyles from "./pages/text-styles";
+import TextLinkStyles from "./pages/text-link-styles";
 
 const router = createRouter({
   lockScrolling: "/lock-scrolling",
@@ -16,6 +18,8 @@ const router = createRouter({
   modalFooter: "/modal-footer",
   boxMediaProps: "/box-media-props",
   stackMediaProps: "/stack-media-props",
+  textStyles: "/text-styles",
+  textLinkStyles: "/text-link-styles",
 });
 
 function PageNotFound() {
@@ -65,6 +69,18 @@ function App() {
       return (
         <OrbitProvider theme={defaultTheme}>
           <StackMediaProps />
+        </OrbitProvider>
+      );
+    case "textStyles":
+      return (
+        <OrbitProvider theme={defaultTheme}>
+          <TextStyles />
+        </OrbitProvider>
+      );
+    case "textLinkStyles":
+      return (
+        <OrbitProvider theme={defaultTheme}>
+          <TextLinkStyles />
         </OrbitProvider>
       );
     default:

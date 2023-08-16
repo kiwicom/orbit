@@ -6,7 +6,7 @@ import Portal from "../Portal";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import Heading from "../Heading";
-import Text, { StyledText } from "../Text";
+import Text from "../Text";
 import Stack from "../Stack";
 import useLockScrolling from "../hooks/useLockScrolling";
 import mq from "../utils/mediaQuery";
@@ -64,7 +64,7 @@ const StyledDialogContent = styled.div<{ $maxWidth?: number; shown?: boolean }>`
     bottom: ${shown ? "0" : "-100%"};
     box-shadow: ${theme.orbit.boxShadowOverlay};
     text-align: center;
-    ${StyledText} {
+    .orbit-text {
       text-align: center;
     }
     ${mq.largeMobile(css`
@@ -72,7 +72,7 @@ const StyledDialogContent = styled.div<{ $maxWidth?: number; shown?: boolean }>`
       border-radius: 9px;
       padding: ${theme.orbit.spaceLarge};
       text-align: ${left};
-      ${StyledText} {
+      .orbit-text {
         text-align: ${left};
       }
     `)};

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import Text, { StyledText } from "../../Text";
+import Text from "../../Text";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "../consts";
 import defaultTheme from "../../defaultTheme";
 import { ICON_COLORS } from "../../Icon/consts";
@@ -71,7 +71,7 @@ export const StyledBadgeContent = styled.div`
     display: inline-flex;
     align-items: center;
 
-    ${StyledTooltipChildren} ${StyledText} {
+    ${StyledTooltipChildren} .orbit-text {
       font-weight: ${theme.orbit.fontWeightMedium};
     }
   `};

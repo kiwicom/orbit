@@ -7,28 +7,24 @@ interface Props {
   readonly children: React.ReactNode;
 }
 
-class RenderInRtl extends React.PureComponent<Props> {
-  componentDidMount() {
-    if (this.html) {
-      this.html.setAttribute("dir", "rtl");
+const RenderInRtl = ({ children }: Props) => {
+  React.useEffect(() => {
+    if (document) {
+      document.documentElement.setAttribute("dir", "rtl");
     }
-  }
 
-  componentWillUnmount() {
-    if (this.html) {
-      this.html.removeAttribute("dir");
-    }
-  }
+    return () => {
+      if (document) {
+        document.documentElement.removeAttribute("dir");
+      }
+    };
+  }, []);
 
-  html: null | HTMLHtmlElement = document.querySelector("html");
-
-  render() {
-    return (
-      <OrbitProvider theme={{ orbit: defaultTokens, rtl: true }} useId={React.useId}>
-        {this.props.children}
-      </OrbitProvider>
-    );
-  }
-}
+  return (
+    <OrbitProvider theme={{ orbit: defaultTokens, rtl: true }} useId={React.useId}>
+      {children}
+    </OrbitProvider>
+  );
+};
 
 export default RenderInRtl;

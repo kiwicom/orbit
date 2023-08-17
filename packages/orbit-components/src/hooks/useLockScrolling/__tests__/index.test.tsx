@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render } from "@testing-library/react";
 import MatchMediaMock from "jest-matchmedia-mock";
 
+import { render } from "../../../test-utils";
 import OrbitProvider from "../../../OrbitProvider";
 import defaultTheme from "../../../defaultTheme";
 import useLockScrolling from "..";

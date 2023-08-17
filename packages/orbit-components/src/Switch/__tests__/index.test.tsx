@@ -1,7 +1,7 @@
 import * as React from "react";
-import { screen, render, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { screen, render, fireEvent } from "../../test-utils";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import Switch from "..";
 

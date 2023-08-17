@@ -1,8 +1,8 @@
 /* eslint-disable no-restricted-syntax */
 import * as React from "react";
-import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, cleanup } from "../../test-utils";
 import Breadcrumbs from "..";
 import BreadcrumbsItem from "../BreadcrumbsItem";
 

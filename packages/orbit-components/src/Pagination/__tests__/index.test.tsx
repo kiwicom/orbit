@@ -1,7 +1,7 @@
 import * as React from "react";
-import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { screen, render } from "../../test-utils";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import Pagination from "..";
 

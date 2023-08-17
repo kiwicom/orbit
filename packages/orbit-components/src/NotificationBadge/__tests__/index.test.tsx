@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
 import { convertRgbaToHex } from "@kiwicom/orbit-design-tokens";
 
+import { render, screen } from "../../test-utils";
 import theme from "../../defaultTheme";
 import NotificationBadge from "..";
 import Sightseeing from "../../icons/Sightseeing";

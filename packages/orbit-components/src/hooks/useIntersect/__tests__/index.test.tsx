@@ -1,6 +1,6 @@
 import * as React from "react";
-import { render, screen, act, renderHook } from "@testing-library/react";
 
+import { render, screen, act, renderHook } from "../../../test-utils";
 import useIntersect from "..";
 
 const LazyImage = ({ src, placeholder, threshold }) => {

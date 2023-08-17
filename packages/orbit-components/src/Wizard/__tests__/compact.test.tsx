@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, screen, within, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, within, act } from "../../test-utils";
 import Wizard, { WizardStep } from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => () => ({ isLargeMobile: false }));

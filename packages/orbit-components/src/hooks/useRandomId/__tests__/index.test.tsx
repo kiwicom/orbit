@@ -1,8 +1,8 @@
 import * as React from "react";
-import { render } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import MatchMediaMock from "jest-matchmedia-mock";
 
+import { render } from "../../../test-utils";
 import OrbitProvider from "../../../OrbitProvider";
 import theme from "../../../defaultTheme";
 import useRandomId from "..";

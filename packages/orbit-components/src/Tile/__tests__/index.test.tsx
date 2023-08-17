@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, fireEvent } from "../../test-utils";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import theme from "../../defaultTheme";
 import Tile from "..";

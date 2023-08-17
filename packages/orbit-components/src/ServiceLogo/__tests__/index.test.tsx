@@ -1,6 +1,6 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
 
+import { render, screen } from "../../test-utils";
 import { NAME_OPTIONS, SIZE_OPTIONS, baseURL } from "../consts";
 import ServiceLogo from "..";
 

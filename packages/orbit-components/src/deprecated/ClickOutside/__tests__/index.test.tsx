@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, cleanup, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, cleanup, act } from "../../../test-utils";
 import ClickOutside from "..";
 
 describe("ClickOutside", () => {

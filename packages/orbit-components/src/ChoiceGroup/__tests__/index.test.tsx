@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen } from "../../test-utils";
 import { LABEL_ELEMENTS, LABEL_SIZES } from "../consts";
 import Radio from "../../Radio";
 import Checkbox from "../../Checkbox";

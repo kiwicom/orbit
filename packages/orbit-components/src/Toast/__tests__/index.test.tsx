@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, fireEvent, act } from "../../test-utils";
 import { ToastRoot, createToast } from "..";
 import { Airplane } from "../../icons";
 import Toast from "../ToastMessage";

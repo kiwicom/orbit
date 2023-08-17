@@ -1,6 +1,6 @@
 import * as React from "react";
-import { screen, render } from "@testing-library/react";
 
+import { screen, render } from "../../test-utils";
 import theme from "../../defaultTheme";
 import type { SpacingToken } from "../types";
 import Inline from "..";

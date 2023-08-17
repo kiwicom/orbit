@@ -1,5 +1,4 @@
-import { renderHook, act } from "@testing-library/react";
-
+import { renderHook, act } from "../../test-utils";
 import useErrorTooltip from "../hooks/useErrorTooltip";
 
 describe("useErrorTooltip hook", () => {

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { screen, render, act, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { screen, render, act } from "../../test-utils";
 import Tooltip from "../../Tooltip";
 import Popover from "..";
 import Button from "../../Button";

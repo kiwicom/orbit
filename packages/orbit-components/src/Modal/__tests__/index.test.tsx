@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, screen, act, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, act, fireEvent } from "../../test-utils";
 import Modal from "..";
 import { CLOSE_BUTTON_DATA_TEST } from "../consts";
 import ModalHeader from "../ModalHeader";

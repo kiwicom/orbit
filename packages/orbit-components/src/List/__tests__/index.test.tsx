@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
 
+import { render, screen } from "../../test-utils";
 import List from "..";
 import ListItem from "../ListItem";
 import Check from "../../icons/Check";

@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@8.1.2...@kiwicom/orbit-components@9.0.0) (2023-08-22)
+
+
+### Features
+
+* abstract away react-uid and remove it from deps ([48f1473](https://github.com/kiwicom/orbit/commit/48f1473ac9e619fe0565cdbd884d0e9d9499e372))
+* all components now have use client directive ([4b6598b](https://github.com/kiwicom/orbit/commit/4b6598be12105824883182a6bfd890bc30e72a0a))
+* **ClickOutside:** deprecated ([#3960](https://github.com/kiwicom/orbit/issues/3960)) ([8baf829](https://github.com/kiwicom/orbit/commit/8baf8291f93c0d5360101b76883b0a628413aef2))
+* **icons:** update icons from figma ([#3955](https://github.com/kiwicom/orbit/issues/3955)) ([fb2c88a](https://github.com/kiwicom/orbit/commit/fb2c88abea266489c34c0070a416b8304d9e45f4))
+* **icons:** update icons from figma ([#3964](https://github.com/kiwicom/orbit/issues/3964)) ([a878b10](https://github.com/kiwicom/orbit/commit/a878b104a21a9b0865dbbc034ddfb43224a064fd))
+* **icons:** update icons from figma ([#3967](https://github.com/kiwicom/orbit/issues/3967)) ([9686366](https://github.com/kiwicom/orbit/commit/9686366668137aad34e6f9d7638b1893333f59e1))
+* **icons:** update icons from figma ([#3968](https://github.com/kiwicom/orbit/issues/3968)) ([ed6739a](https://github.com/kiwicom/orbit/commit/ed6739acde985c7123237a987ebe61d010de4da5))
+* remove deprecated FormFeedback ([f84c526](https://github.com/kiwicom/orbit/commit/f84c526b09666e882ab49f3d45a6336d48b8a4e1))
+* remove deprecated InputField ([939bf7f](https://github.com/kiwicom/orbit/commit/939bf7fc7db61f838401f6c6afbae181c365adc3))
+* remove deprecated InputFile ([957f724](https://github.com/kiwicom/orbit/commit/957f7242ad594334d7e7e528195d5bc14548963c))
+* remove deprecated InputGroup ([5a5b37d](https://github.com/kiwicom/orbit/commit/5a5b37db03706912d0688a155490ed2e88c757fb))
+* remove deprecated Select ([d590716](https://github.com/kiwicom/orbit/commit/d59071694b937e1ff00d55e834c360c755fcd3f1))
+* remove deprecated Textarea ([cc971ff](https://github.com/kiwicom/orbit/commit/cc971ffe165e3a250d131c875f1c01e62b512cef))
+* update to React 18 ([45be262](https://github.com/kiwicom/orbit/commit/45be2624ecce8097d95bfebc41f6686b2c735ebc))
+* upgrade to node 18 ([d7eafbf](https://github.com/kiwicom/orbit/commit/d7eafbf557fa485658d9d66e07b6839bf96a197d))
+* **Wizard:** add isCompleted to WizardStep ([#3958](https://github.com/kiwicom/orbit/issues/3958)) ([75ab7c6](https://github.com/kiwicom/orbit/commit/75ab7c6f8fc927f11502dc2729a6c48af62a3828))
+
+
+### BREAKING CHANGES
+
+* OrbitProvider now requires useId prop for random ID generator hook
+* Node version required is now >=18
+* remove deprecated InputGroup
+* remove deprecated Textarea
+* remove deprecated InputFile
+* removed deprecated InputField
+* remove deprecated FormFeedback
+
+
+
+
+
 ## [8.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@8.1.1...@kiwicom/orbit-components@8.1.2) (2023-08-08)
 
 **Note:** Version bump only for package @kiwicom/orbit-components

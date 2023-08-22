@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@5.0.1...@kiwicom/orbit-design-tokens@6.0.0) (2023-08-22)
+
+
+### Features
+
+* **tailwind:** add leading-text ([d926a8a](https://github.com/kiwicom/orbit/commit/d926a8a81bce055bee02f205275482676565277a))
+* update to React 18 ([45be262](https://github.com/kiwicom/orbit/commit/45be2624ecce8097d95bfebc41f6686b2c735ebc))
+* upgrade to node 18 ([d7eafbf](https://github.com/kiwicom/orbit/commit/d7eafbf557fa485658d9d66e07b6839bf96a197d))
+
+
+### BREAKING CHANGES
+
+* Node version required is now >=18
+
+
+
+
+
 ## [5.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@5.0.0...@kiwicom/orbit-design-tokens@5.0.1) (2023-08-08)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

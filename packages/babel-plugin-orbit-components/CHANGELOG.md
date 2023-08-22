@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@4.1.23...@kiwicom/babel-plugin-orbit-components@4.2.0) (2023-08-22)
+
+
+### Features
+
+* **ClickOutside:** deprecated ([#3960](https://github.com/kiwicom/orbit/issues/3960)) ([8baf829](https://github.com/kiwicom/orbit/commit/8baf8291f93c0d5360101b76883b0a628413aef2))
+
+
+
+
+
 ## [4.1.23](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@4.1.22...@kiwicom/babel-plugin-orbit-components@4.1.23) (2023-08-08)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

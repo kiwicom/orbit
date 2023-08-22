@@ -23,6 +23,9 @@ const colors = [
   ["cloud-dark", defaultTokens.paletteCloudDark],
   ["ink-dark", defaultTokens.paletteInkDark],
   ["product-dark", defaultTokens.paletteProductDark],
+  ["product-light", defaultTokens.paletteProductLight],
+  ["product-normal", defaultTokens.paletteProductNormal],
+  ["product-darker", defaultTokens.paletteProductDarker],
 ];
 
 async function generateIcon(pathToFile: string, size: number, color: string, extraDir: string) {

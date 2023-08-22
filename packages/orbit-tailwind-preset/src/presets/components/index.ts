@@ -2,7 +2,7 @@ import plugin from "tailwindcss/plugin";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import type { Config } from "tailwindcss";
 
-import orbitFoundationPreset from "../..";
+import orbitFoundationPreset from "../foundation";
 import {
   kebabCase,
   getComponentLevelToken,

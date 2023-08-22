@@ -1,4 +1,4 @@
-import { orbitComponentsPreset } from "./dist";
+import orbitComponentsPreset from "./dist";
 
 export default {
   // include only for testing purposes

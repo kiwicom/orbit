@@ -48,15 +48,29 @@ const getBackground =
     return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
   };
 
-const Glyph = styled.span<{ disabled?: boolean }>`
-  ${({ theme, disabled }) => css`
+const getGlyphBackground = ({
+  theme,
+  checked,
+  disabled,
+}: {
+  theme: typeof defaultTheme;
+  checked: Props["checked"];
+  disabled: Props["disabled"];
+}) => {
+  if (disabled && checked) return theme.orbit.paletteCloudLight;
+  if (disabled) return theme.orbit.paletteCloudNormal;
+  return theme.orbit.paletteWhite;
+};
+
+const Glyph = styled.span<{ disabled?: boolean; checked?: boolean }>`
+  ${({ theme, checked, disabled }) => css`
     visibility: hidden;
     width: 8px;
     height: 8px;
-    background-color: ${disabled ? theme.orbit.paletteCloudNormal : theme.orbit.paletteWhite};
+    background-color: ${getGlyphBackground({ theme, disabled, checked })};
     border-radius: ${theme.orbit.borderRadiusCircle};
     flex-shrink: 0;
-  `}
+  `};
 `;
 
 Glyph.defaultProps = {
@@ -77,7 +91,7 @@ const StyledIconContainer = styled.div<{ disabled?: boolean; checked?: boolean }
     border-radius: ${theme.orbit.borderRadiusCircle};
     transform: scale(1);
     transition: all ${theme.orbit.durationFast} ease-in-out;
-  `}
+  `};
 `;
 
 StyledIconContainer.defaultProps = {
@@ -92,7 +106,7 @@ const StyledTextContainer = styled.div<{ disabled?: boolean }>`
     margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
     flex: 1;
     opacity: ${disabled ? theme.orbit.opacityRadioButtonDisabled : "1"};
-  `}
+  `};
 `;
 
 StyledTextContainer.defaultProps = {
@@ -104,7 +118,7 @@ const StyledInfo = styled.span`
     font-size: ${theme.orbit.fontSizeFormFeedback};
     color: ${theme.orbit.colorInfoCheckBoxRadio};
     line-height: ${theme.orbit.lineHeightTextSmall};
-  `}
+  `};
 `;
 
 StyledInfo.defaultProps = {
@@ -124,7 +138,7 @@ const StyledLabelText = styled.span`
       color: ${theme.orbit.colorFormLabel};
       line-height: ${theme.orbit.heightCheckbox};
     }
-  `}
+  `};
 `;
 
 StyledLabelText.defaultProps = {
@@ -182,7 +196,7 @@ export const StyledLabel = styled(({ disabled, theme, type, hasError, ...props }
         border: 1px solid ${getBorderColor};
       }
     `)}
-  `}
+  `};
 `;
 
 StyledLabel.defaultProps = {
@@ -224,7 +238,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       {cloneWithTooltip(
         tooltip,
         <StyledIconContainer disabled={disabled} checked={checked}>
-          <Glyph disabled={disabled} />
+          <Glyph disabled={disabled} checked={checked} />
         </StyledIconContainer>,
       )}
       {(label || info) && (

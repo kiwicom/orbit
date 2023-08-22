@@ -1,12 +1,8 @@
 # Orbit tailwind preset
 
-This package contains the Orbit Tailwind presets.
+This package contains the Orbit Tailwind preset.
 
-Currently, there are two presets available:
-
-- `orbitPreset` **(default export)** - Orbit's foundation styles, including typography, colors, spacing, etc.
-- `orbitComponentsPreset` - Orbit's component tokens. This preset is mainly for Orbit's internal usage and
-  migration to Tailwind. It already includes the `orbitPreset` and adds component-level tokens.
+The default exported preset includes all of the Orbit's foundation styles (typography, colors, spacing, etc…) and all the needed configuration for component-specific classes used internally.
 
 ## Installation
 
@@ -22,20 +18,10 @@ npm install --save-dev @kiwicom/orbit-tailwind-preset
 
 ## Usage
 
-In your `tailwind.config.js` file, add the following:
+In your `tailwind.config.js` file (or equivalent), add the following:
 
 ```js
-const orbitPreset = require("@kiwicom/orbit-tailwind-preset");
-
-module.exports = {
-  presets: [orbitPreset],
-};
-```
-
-We also have a preset with component tokens, which is meant to be used inside Orbit components. In case you need to use our component-level tokens, add the `orbitComponentsPreset` to your `tailwind.config.js` file:
-
-```js
-const { orbitComponentsPreset } = require("@kiwicom/orbit-tailwind-preset");
+const orbitComponentsPreset = require("@kiwicom/orbit-tailwind-preset");
 
 module.exports = {
   presets: [
@@ -47,6 +33,10 @@ module.exports = {
 };
 ```
 
+As an example, the classes applied below become available right away. They apply, respectively, the CSS properties `color` with the value of the palette token `blueNormal` and `padding` with the value of the spacing token `small`. Both tokens are available on the `@kiwicom/orbit-design-tokens` package.
+
 ```html
-<p class="text-blue-normal">...</p>
+<p class="text-blue-normal p-sm">...</p>
 ```
+
+Notice that other component-specific classes will also be available. However, they are not expected to be used outside of Orbit's internal development. They are not documented and Orbit is not responsible for possible breaking changes that might occur by its usage in other projects.

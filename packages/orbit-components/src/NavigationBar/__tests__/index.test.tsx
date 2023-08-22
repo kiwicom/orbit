@@ -1,11 +1,13 @@
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, fireEvent } from "../../test-utils";
 import NavigationBar from "..";
 
 describe("NavigationBar", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const onMenuOpen = jest.fn();
     const children = "Content";
     const dataTest = "test";
@@ -17,7 +19,7 @@ describe("NavigationBar", () => {
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByText(children)).toBeInTheDocument();
-    userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
     expect(onMenuOpen).toHaveBeenCalled();
   });
 

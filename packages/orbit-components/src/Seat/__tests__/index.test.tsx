@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen } from "../../test-utils";
 import Seat from "..";
 import { SIZE_OPTIONS, TYPES } from "../consts";
 
@@ -16,9 +16,11 @@ const width = {
 };
 
 describe("Seat", () => {
+  const user = userEvent.setup();
+
   const dataTest = "test";
   const onClick = jest.fn();
-  it("should have expected DOM output", () => {
+  it("should have expected DOM output", async () => {
     render(
       <Seat
         type={TYPES.DEFAULT}
@@ -30,7 +32,7 @@ describe("Seat", () => {
       />,
     );
 
-    userEvent.click(screen.getByTestId(dataTest));
+    await user.click(screen.getByTestId(dataTest));
     expect(onClick).toHaveBeenCalled();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByTitle("kek")).toBeInTheDocument();

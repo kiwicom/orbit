@@ -1,11 +1,13 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen } from "../../test-utils";
 import CheckBox from "..";
 
 describe("CheckBox", () => {
-  it("default", () => {
+  const user = userEvent.setup();
+
+  it("default", async () => {
     const onChange = jest.fn();
     render(
       <CheckBox
@@ -22,7 +24,7 @@ describe("CheckBox", () => {
     expect(checkbox).toHaveAttribute("value", "option");
     expect(checkbox).toHaveAttribute("name", "name");
     expect(checkbox).toHaveAttribute("tabIndex", "-1");
-    userEvent.click(checkbox);
+    await user.click(checkbox);
     expect(onChange).toHaveBeenCalled();
   });
 });

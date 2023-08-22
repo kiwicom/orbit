@@ -1,11 +1,13 @@
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, fireEvent } from "../../test-utils";
 import BaggageStepper from "../Stepper";
 
 describe("BaggageStepper", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const defaultValue = 2;
     const name = "name";
     const maxValue = 100;
@@ -43,14 +45,14 @@ describe("BaggageStepper", () => {
     fireEvent.keyDown(input, { keyCode: 38 });
     expect(onKeyDown).toHaveBeenCalledTimes(2);
 
-    userEvent.click(screen.getByLabelText(IncrementLabel));
+    await user.click(screen.getByLabelText(IncrementLabel));
     expect(onIncrement).toHaveBeenCalled();
-    userEvent.click(screen.getByLabelText(DecrementLabel));
+    await user.click(screen.getByLabelText(DecrementLabel));
     expect(onDecrement).toHaveBeenCalled();
 
-    userEvent.tab();
+    await user.tab();
     expect(onFocus).toHaveBeenCalled();
-    userEvent.tab();
+    await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 

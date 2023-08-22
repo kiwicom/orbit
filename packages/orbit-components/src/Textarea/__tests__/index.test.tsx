@@ -1,11 +1,13 @@
 import * as React from "react";
-import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, act } from "../../test-utils";
 import Textarea from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
 describe("Textarea", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", async () => {
     const name = "name";
     const label = "Label";
@@ -43,7 +45,7 @@ describe("Textarea", () => {
     expect(screen.getByDisplayValue(value)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(placeholder)).toBeInTheDocument();
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("Something useful.")).toBeInTheDocument();
     expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
     expect(textarea).toHaveAttribute("rows", "4");
@@ -53,18 +55,18 @@ describe("Textarea", () => {
     expect(textarea.parentElement).toHaveStyle({ marginBottom: "12px" });
     expect(textarea).toHaveStyle({ padding: "12px" });
 
-    userEvent.type(textarea, "kek");
+    await act(() => user.type(textarea, "kek"));
     expect(onChange).toHaveBeenCalled();
   });
 
-  it("should have focus and blur", () => {
+  it("should have focus and blur", async () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
 
     render(<Textarea onFocus={onFocus} onBlur={onBlur} />);
-    userEvent.tab();
+    await user.tab();
     expect(onFocus).toHaveBeenCalled();
-    userEvent.tab();
+    await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 
@@ -72,11 +74,11 @@ describe("Textarea", () => {
     render(<Textarea error="error" size="small" />);
     const textarea = screen.getByRole("textbox");
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(textarea).toHaveStyle({ padding: "8px 12px" });
     expect(textarea).toBeInvalid();
-    expect(textarea).toHaveDescription("error");
+    expect(textarea).toHaveAccessibleDescription("error");
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
     await act(async () => {});

@@ -26,7 +26,10 @@ export function OwnTheme() {
   });
   const customTheme = object("customTheme", { black: "#000" });
   return (
-    <OrbitProvider theme={{ orbit: { ...getTokens(orbitTheme), ...customTheme } }}>
+    <OrbitProvider
+      theme={{ orbit: { ...getTokens(orbitTheme), ...customTheme } }}
+      useId={React.useId}
+    >
       <Button onClick={action("onClick")}>Hello World!</Button>
     </OrbitProvider>
   );

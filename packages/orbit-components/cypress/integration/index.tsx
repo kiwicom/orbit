@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { createRouter } from "@nanostores/router";
 import { useStore } from "@nanostores/react";
 import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
@@ -29,6 +29,7 @@ function App() {
     case "lockScrolling":
       return (
         <OrbitProvider
+          useId={React.useId}
           theme={{
             ...defaultTheme,
             lockScrollingBarGap: true,
@@ -41,13 +42,13 @@ function App() {
       );
     case "mediaQueries":
       return (
-        <OrbitProvider theme={defaultTheme}>
+        <OrbitProvider useId={React.useId} theme={defaultTheme}>
           <MediaQueries />
         </OrbitProvider>
       );
     case "modalFooter":
       return (
-        <OrbitProvider theme={defaultTheme}>
+        <OrbitProvider useId={React.useId} theme={defaultTheme}>
           <ModalFooter />
         </OrbitProvider>
       );
@@ -56,4 +57,7 @@ function App() {
   }
 }
 
-render(<App />, document.querySelector("#app"));
+const container = document.getElementById("app");
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const root = createRoot(container!); // createRoot(container!) if you use TypeScript
+root.render(<App />);

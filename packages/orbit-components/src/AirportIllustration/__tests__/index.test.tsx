@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
 
+import { render, screen } from "../../test-utils";
 import AirportIllustration from "..";
 import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";

@@ -38,13 +38,13 @@ describe("sandbox transform", () => {
         `() => <Component label="kek">kek</Component>;`,
         setKnob("label", "bur"),
       ),
-    ).toMatchInlineSnapshot(`"() => <Component label=\\"bur\\">kek</Component>;"`);
+    ).toMatchInlineSnapshot(`"() => <Component label="bur">kek</Component>;"`);
   });
 
   it("should add string prop", () => {
     expect(
       transform("TEST.tsx", `() => <Component>kek</Component>;`, setKnob("label", "bur")),
-    ).toMatchInlineSnapshot(`"() => <Component label=\\"bur\\">kek</Component>;"`);
+    ).toMatchInlineSnapshot(`"() => <Component label="bur">kek</Component>;"`);
   });
 
   it("should transform number prop", () => {
@@ -74,9 +74,9 @@ describe("sandbox transform", () => {
       ),
     ).toMatchInlineSnapshot(`
       "() => <Component options={[{
-        \\"kek\\": \\"bur\\",
-        \\"blin\\": \\"cheburek\\"
-      }]} disabled={true} fullWidth={true} title=\\"kek\\">children</Component>;"
+        "kek": "bur",
+        "blin": "cheburek"
+      }]} disabled={true} fullWidth={true} title="kek">children</Component>;"
     `);
   });
 });

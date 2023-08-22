@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render } from "@testing-library/react";
 import MatchMediaMock from "jest-matchmedia-mock";
 
+import { render } from "../../../test-utils";
 import OrbitProvider from "../../../OrbitProvider";
 import defaultTheme from "../../../defaultTheme";
 import useLockScrolling from "..";
@@ -94,7 +94,7 @@ describe("useLockScrolling", () => {
     expect(document.body).toHaveStyle({ overflow: "hidden" });
 
     rerender(
-      <OrbitProvider theme={{ ...defaultTheme, lockScrolling: false }}>
+      <OrbitProvider theme={{ ...defaultTheme, lockScrolling: false }} useId={React.useId}>
         <>
           <LockFoo>
             <LockBar lock={false} />
@@ -107,7 +107,10 @@ describe("useLockScrolling", () => {
     expect(document.body).not.toHaveStyle({ overflow: "hidden" });
 
     rerender(
-      <OrbitProvider theme={{ ...defaultTheme, lockScrolling: true, lockScrollingBarGap: true }}>
+      <OrbitProvider
+        theme={{ ...defaultTheme, lockScrolling: true, lockScrollingBarGap: true }}
+        useId={React.useId}
+      >
         <LockBaz switchRefs />
       </OrbitProvider>,
     );

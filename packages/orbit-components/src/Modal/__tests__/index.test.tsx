@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, screen, act, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, act, fireEvent } from "../../test-utils";
 import Modal from "..";
 import { CLOSE_BUTTON_DATA_TEST } from "../consts";
 import ModalHeader from "../ModalHeader";
@@ -10,19 +10,15 @@ import ModalFooter from "../ModalFooter";
 import Illustration from "../../Illustration";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-jest.useFakeTimers();
-
 jest.mock("../../hooks/useMediaQuery", () => {
   return jest.fn(() => ({ isLargeMobile: true }));
 });
 
 const mockUseMediaQuery = useMediaQuery;
 
-beforeEach(() => {
-  jest.clearAllTimers();
-});
-
 describe("Modal", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", () => {
     render(
       <Modal dataTest="container">
@@ -56,6 +52,8 @@ describe("Modal", () => {
   });
 
   it("should be able to focus content", async () => {
+    jest.useFakeTimers();
+
     render(
       <Modal>
         <input />
@@ -66,10 +64,9 @@ describe("Modal", () => {
       jest.runOnlyPendingTimers();
     });
     expect(screen.getByRole("dialog")).toHaveFocus();
-    userEvent.tab();
-    act(() => {
-      jest.runOnlyPendingTimers();
-    });
+    jest.useRealTimers();
+
+    await user.tab();
     expect(screen.getByRole("textbox")).toHaveFocus();
   });
 
@@ -129,7 +126,7 @@ describe("Modal", () => {
     mockUseMediaQuery.mockImplementation(() => ({ isLargeMobile: true }));
   });
 
-  it("should call callback function when clicking on close button", () => {
+  it("should call callback function when clicking on close button", async () => {
     const onClose = jest.fn();
     render(
       <Modal hasCloseButton onClose={onClose}>
@@ -137,7 +134,7 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    userEvent.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
+    await user.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
     expect(onClose).toBeCalled();
   });
 

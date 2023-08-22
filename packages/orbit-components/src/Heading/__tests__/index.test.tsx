@@ -1,6 +1,6 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
 
+import { render, screen } from "../../test-utils";
 import theme from "../../defaultTheme";
 import Heading from "..";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS } from "../consts";

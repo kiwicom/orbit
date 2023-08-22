@@ -1,10 +1,12 @@
 import React from "react";
-import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, act } from "../../test-utils";
 import SegmentedSwitch from "..";
 
 describe("SegmentedSwitch", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", async () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
@@ -27,15 +29,12 @@ describe("SegmentedSwitch", () => {
     expect(screen.getByText(label)).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
 
-    userEvent.tab();
+    await act(() => user.tab());
     expect(onFocus).toHaveBeenCalled();
 
-    userEvent.click(screen.getByLabelText("Female"));
+    await act(() => user.click(screen.getByLabelText("Female")));
     expect(screen.getByDisplayValue("Female")).toBeInTheDocument();
     expect(onChange).toHaveBeenCalled();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
 
   it("should have error", async () => {
@@ -54,12 +53,9 @@ describe("SegmentedSwitch", () => {
       />,
     );
 
-    userEvent.hover(screen.getByText(label));
+    await act(() => user.hover(screen.getByText(label)));
     expect(screen.getByText(error)).toBeInTheDocument();
     expect(screen.getByLabelText("Female")).toBeDisabled();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
 
   it("should have help", async () => {
@@ -77,10 +73,7 @@ describe("SegmentedSwitch", () => {
       />,
     );
 
-    userEvent.hover(screen.getByText("Gender"));
+    await act(() => user.hover(screen.getByText("Gender")));
     expect(screen.getByText(help)).toBeInTheDocument();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
 });

@@ -115,9 +115,9 @@ describe("gatsby-node", () => {
       // @ts-expect-error TODO
       await onCreateNode({ cache, node, reporter });
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
-        Array [
-          Array [
-            "Expected meta.yml file to exist in \\"docs/src/documentation/01-getting-started\\", every directory in \\"src/documentation\\" should have one",
+        [
+          [
+            "Expected meta.yml file to exist in "docs/src/documentation/01-getting-started", every directory in "src/documentation" should have one",
           ],
         ]
       `);
@@ -138,9 +138,9 @@ describe("gatsby-node", () => {
       await onCreateNode({ cache, node, reporter });
       // first time for "title", second for "type"
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
-        Array [
-          Array [
-            "Expected \\"docs/src/documentation/01-getting-started/meta.yml\\" to contain fields: title, type",
+        [
+          [
+            "Expected "docs/src/documentation/01-getting-started/meta.yml" to contain fields: title, type",
           ],
         ]
       `);
@@ -162,9 +162,9 @@ describe("gatsby-node", () => {
       await onCreateNode({ cache, node, reporter });
       // first time for "title", second for "type"
       expect(reporter.panicOnBuild.mock.calls).toMatchInlineSnapshot(`
-        Array [
-          Array [
-            "Expected the value of \\"type\\" in \\"docs/src/documentation/01-getting-started/meta.yml\\" to be one of: folder, tabs",
+        [
+          [
+            "Expected the value of "type" in "docs/src/documentation/01-getting-started/meta.yml" to be one of: folder, tabs",
           ],
         ]
       `);
@@ -263,27 +263,27 @@ describe("gatsby-node", () => {
       });
 
       expect(createPage.mock.calls).toMatchInlineSnapshot(`
-        Array [
-          Array [
-            Object {
+        [
+          [
+            {
               "component": "docs/src/templates/Overview.tsx",
-              "context": Object {
-                "breadcrumbs": Array [
-                  Object {
+              "context": {
+                "breadcrumbs": [
+                  {
                     "name": "Getting started",
                     "url": "/getting-started/",
                   },
                 ],
                 "description": undefined,
                 "idx": 1,
-                "pages": Array [
-                  Object {
+                "pages": [
+                  {
                     "description": "Our components are served as an npm package.",
                     "idx": 1,
                     "slug": "/getting-started/for-developers/",
                     "title": "For developers",
                   },
-                  Object {
+                  {
                     "description": undefined,
                     "hasReactTab": false,
                     "idx": 1,
@@ -297,20 +297,20 @@ describe("gatsby-node", () => {
               "path": "/getting-started/",
             },
           ],
-          Array [
-            Object {
+          [
+            {
               "component": "docs/src/templates/Overview.tsx",
-              "context": Object {
-                "breadcrumbs": Array [
-                  Object {
+              "context": {
+                "breadcrumbs": [
+                  {
                     "name": "Components",
                     "url": "/components/",
                   },
                 ],
                 "description": undefined,
                 "idx": 3,
-                "pages": Array [
-                  Object {
+                "pages": [
+                  {
                     "description": undefined,
                     "idx": 4,
                     "slug": "/components/overlay/",
@@ -323,24 +323,24 @@ describe("gatsby-node", () => {
               "path": "/components/",
             },
           ],
-          Array [
-            Object {
+          [
+            {
               "component": "docs/src/templates/Overview.tsx",
-              "context": Object {
-                "breadcrumbs": Array [
-                  Object {
+              "context": {
+                "breadcrumbs": [
+                  {
                     "name": "Components",
                     "url": "/components/",
                   },
-                  Object {
+                  {
                     "name": "Overlay",
                     "url": "/components/overlay/",
                   },
                 ],
                 "description": undefined,
                 "idx": 4,
-                "pages": Array [
-                  Object {
+                "pages": [
+                  {
                     "description": "Prompts users to take or complete an action.",
                     "hasReactTab": false,
                     "idx": 0,

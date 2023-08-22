@@ -1,8 +1,8 @@
 import * as React from "react";
-import { render } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import MatchMediaMock from "jest-matchmedia-mock";
 
+import { render } from "../../../test-utils";
 import OrbitProvider from "../../../OrbitProvider";
 import theme from "../../../defaultTheme";
 import useRandomId from "..";
@@ -32,7 +32,7 @@ describe("useRandomId", () => {
     const container = document.createElement("div");
 
     container.innerHTML = renderToString(
-      <OrbitProvider theme={{ ...theme }}>
+      <OrbitProvider theme={{ ...theme }} useId={React.useId}>
         <Component />
       </OrbitProvider>,
     );
@@ -40,7 +40,7 @@ describe("useRandomId", () => {
     document.body?.appendChild(container);
 
     const { container: clientContainer } = render(
-      <OrbitProvider theme={{ ...theme }}>
+      <OrbitProvider theme={{ ...theme }} useId={React.useId}>
         <Component />
       </OrbitProvider>,
       { container, hydrate: true },

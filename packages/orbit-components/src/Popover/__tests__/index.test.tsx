@@ -1,7 +1,7 @@
 import * as React from "react";
-import { screen, render, act, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { screen, render, act } from "../../test-utils";
 import Tooltip from "../../Tooltip";
 import Popover from "..";
 import Button from "../../Button";
@@ -16,6 +16,8 @@ jest.mock("../../hooks/useMediaQuery", () => {
 });
 
 describe("Popover", () => {
+  const user = userEvent.setup();
+
   it("should have expected DOM output", async () => {
     const content = "Message for a user";
     const position = "bottom";
@@ -36,15 +38,12 @@ describe("Popover", () => {
     );
 
     const openButton = screen.getByRole("button", { name: "Open" });
-    userEvent.click(openButton);
+    await act(() => user.click(openButton));
     expect(onOpen).toHaveBeenCalled();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     const closeButton = screen.getByRole("button", { name: "Close" });
-    userEvent.click(closeButton);
+    await act(() => user.click(closeButton));
     expect(onClose).toHaveBeenCalled();
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
   });
 
   it("should have actions", async () => {
@@ -101,13 +100,10 @@ describe("Popover", () => {
         <Button>Open popover</Button>
       </Popover>,
     );
-    userEvent.click(screen.getByRole("button"));
+    await act(() => user.click(screen.getByRole("button")));
     const overlay = (await screen.findByTestId("popover")).previousElementSibling;
     expect(overlay).toBeInTheDocument();
-    if (overlay) userEvent.click(overlay);
-    await waitForElementToBeRemoved(screen.queryByTestId("popover"));
-    // Needs to flush async `floating-ui` hooks
-    // https://github.com/floating-ui/floating-ui/issues/1520
-    await act(async () => {});
+    if (overlay) await act(() => user.click(overlay));
+    expect(screen.queryByTestId("popover")).not.toBeInTheDocument();
   });
 });

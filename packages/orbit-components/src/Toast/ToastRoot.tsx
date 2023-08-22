@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { useToaster, toast as notify } from "react-hot-toast";
 import styled, { css } from "styled-components";
@@ -70,7 +72,7 @@ const ToastRoot = ({
             onDismiss={notify.dismiss}
             ariaLive={ariaProps["aria-live"]}
           >
-            {message}
+            {message as React.ReactNode}
           </ToastMessage>
         );
       })}

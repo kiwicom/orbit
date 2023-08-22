@@ -1,7 +1,7 @@
 import * as React from "react";
-import { screen, render } from "@testing-library/react";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
+import { screen, render } from "../../test-utils";
 import { getJustify, getAlign } from "../../utils/layout";
 import theme from "../../defaultTheme";
 import { TOKENS } from "../../utils/layout/consts";

@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen, cleanup } from "@testing-library/react";
 
+import { render, screen, cleanup } from "../../test-utils";
 import CountryFlag from "..";
 import { baseURL } from "../consts";
 

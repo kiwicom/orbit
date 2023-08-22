@@ -1,14 +1,16 @@
 import * as React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { render, screen, fireEvent } from "../../test-utils";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import theme from "../../defaultTheme";
 import Tile from "..";
 import Airplane from "../../icons/Airplane";
 
 describe("Tile", () => {
-  it("should have expected DOM output", () => {
+  const user = userEvent.setup();
+
+  it("should have expected DOM output", async () => {
     const dataTest = "test";
     const title = "title";
     const description = "description";
@@ -36,7 +38,7 @@ describe("Tile", () => {
       borderTop: `1px solid ${theme.orbit.paletteCloudNormal}`,
     });
 
-    userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
     fireEvent.keyDown(screen.getByRole("button"), { keyCode: KEY_CODE_MAP.ENTER });
     fireEvent.keyDown(screen.getByRole("button"), { keyCode: KEY_CODE_MAP.SPACE });
 

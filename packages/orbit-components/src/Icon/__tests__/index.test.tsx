@@ -1,6 +1,6 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
 
+import { render, screen } from "../../test-utils";
 import Accommodation from "../../icons/Accommodation";
 import { ICON_SIZES, ICON_COLORS } from "../consts";
 import defaultTheme from "../../defaultTheme";

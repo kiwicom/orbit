@@ -28,6 +28,6 @@ describe("Stack media properties and spacing", () => {
   it("should have correct spacing for largeDesktop", () => {
     cy.visit("/stack-media-props");
     cy.viewport(defaultTokens.widthBreakpointLargeDesktop, 600);
-    cy.findByText("2").should("have.css", "margin-left", defaultTokens.spaceMedium);
+    cy.findByTestId("test").should("have.css", "gap", defaultTokens.spaceMedium);
   });
 });

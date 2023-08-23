@@ -55,12 +55,15 @@ const Stack = (props: Props) => {
       justify = JUSTIFY.START,
       shrink = false,
       wrap = false,
+      flex = true,
+      legacy = false,
       align = ALIGN.START,
       inline = false,
     } = props;
 
     return {
-      flex: isFlex,
+      flex: flex || isFlex,
+      legacy,
       direction,
       spacing,
       grow,
@@ -92,7 +95,7 @@ const Stack = (props: Props) => {
   ];
 
   const getProperty = React.useCallback(
-    (property, viewports, index) => {
+    (property: string, viewports: string[], index: number) => {
       const viewport = viewports[index];
       const found = props[viewport]?.[property];
 
@@ -113,8 +116,19 @@ const Stack = (props: Props) => {
   ): string => {
     if (!opts) return "";
 
-    const { spaceAfter, align, wrap, grow, shrink, justify, direction, spacing, inline, flex } =
-      opts;
+    const {
+      spaceAfter,
+      align,
+      wrap,
+      grow,
+      shrink,
+      justify,
+      direction,
+      spacing,
+      inline,
+      flex,
+      legacy,
+    } = opts;
 
     return cx(
       typeof spaceAfter !== "undefined" && getSpaceAfterClasses(spaceAfter, viewport),
@@ -125,7 +139,7 @@ const Stack = (props: Props) => {
       typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
       typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
       getDirectionClasses(direction, viewport),
-      getSpacingClasses(spacing, viewport, direction),
+      getSpacingClasses(spacing, viewport, direction, legacy),
       inline && getDisplayInlineClass(inline, viewport),
       inline === false && "w-full",
       flex && "flex",
@@ -147,6 +161,7 @@ const Stack = (props: Props) => {
               ...props[viewport],
               direction: getProperty("direction", viewports, index),
               spacing: getProperty("spacing", viewports, index),
+              legacy: getProperty("legacy", viewports, index),
             },
             viewport,
           );

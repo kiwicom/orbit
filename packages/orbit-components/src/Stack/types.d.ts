@@ -34,6 +34,7 @@ export interface CommonProps extends Common.SpaceAfter {
   readonly align?: Align;
   readonly justify?: Justify;
   readonly spacing?: Spacing;
+  readonly legacy?: boolean;
 }
 
 export interface Props extends CommonProps, Common.Globals {

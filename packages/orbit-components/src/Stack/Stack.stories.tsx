@@ -336,6 +336,7 @@ export const Playground = () => {
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
+  const legacy = boolean("legacy", false);
   const basis = text("Basis", "");
   const align = select("Align", Object.values(ALIGNS), ALIGNS.START);
   const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
@@ -345,17 +346,21 @@ export const Playground = () => {
   const mediumMobile = object("mediumMobile", {
     direction: DIRECTIONS.COLUMN,
   });
+
   const largeMobile = object("largeMobile", {
     align: ALIGNS.END,
   });
+
   const tablet = object("tablet", {
     spacing: SPACINGS.XSMALL,
   });
+
   const desktop = object("desktop", {
     justify: JUSTIFY.BETWEEN,
     direction: DIRECTIONS.ROW,
     align: ALIGNS.START,
   });
+
   const largeDesktop = object("largeDesktop", {
     spacing: SPACINGS.XLARGE,
   });
@@ -373,6 +378,7 @@ export const Playground = () => {
       inline={inline}
       shrink={shrink}
       spacing={spacing}
+      legacy={legacy}
       spaceAfter={spaceAfter}
       mediumMobile={mediumMobile}
       largeMobile={largeMobile}

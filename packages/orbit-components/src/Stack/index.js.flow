@@ -38,6 +38,7 @@ export type MediaQuery = {|
   +align?: Align,
   +justify?: Justify,
   +spacing?: Spacing,
+  +legacty?: boolean,
 |};
 
 export type SmallMobile = {|

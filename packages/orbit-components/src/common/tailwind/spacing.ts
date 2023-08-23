@@ -177,29 +177,107 @@ export const verticalTokens = {
   },
 };
 
+export const gapTokens = {
+  [SPACING.none]: "gap-none",
+  [SPACING.XXXSmall]: "gap-xxxs",
+  [SPACING.XXSmall]: "gap-xxs",
+  [SPACING.XSmall]: "gap-xs",
+  [SPACING.small]: "gap-sm",
+  [SPACING.medium]: "gap-md",
+  [SPACING.large]: "gap-lg",
+  [SPACING.XLarge]: "gap-xl",
+  [SPACING.XXLarge]: "gap-xxl",
+  [SPACING.XXXLarge]: "gap-xxxl",
+  [QUERIES.MEDIUMMOBILE]: {
+    [SPACING.none]: "mm:gap-none",
+    [SPACING.XXXSmall]: "mm:gap-xxxs",
+    [SPACING.XXSmall]: "mm:gap-xxs",
+    [SPACING.XSmall]: "mm:gap-xs",
+    [SPACING.small]: "mm:gap-sm",
+    [SPACING.medium]: "mm:gap-md",
+    [SPACING.large]: "mm:gap-lg",
+    [SPACING.XLarge]: "mm:gap-xl",
+    [SPACING.XXLarge]: "mm:gap-xxl",
+    [SPACING.XXXLarge]: "mm:gap-xxxl",
+  },
+  largeMobile: {
+    [SPACING.none]: "lm:gap-none",
+    [SPACING.XXXSmall]: "lm:gap-xxxs",
+    [SPACING.XXSmall]: "lm:gap-xxs",
+    [SPACING.XSmall]: "lm:gap-xs",
+    [SPACING.small]: "lm:gap-sm",
+    [SPACING.medium]: "lm:gap-md",
+    [SPACING.large]: "lm:gap-lg",
+    [SPACING.XLarge]: "lm:gap-xl",
+    [SPACING.XXLarge]: "lm:gap-xxl",
+    [SPACING.XXXLarge]: "lm:gap-xxxl",
+  },
+  tablet: {
+    [SPACING.none]: "tb:gap-none",
+    [SPACING.XXXSmall]: "tb:gap-xxxs",
+    [SPACING.XXSmall]: "tb:gap-xxs",
+    [SPACING.XSmall]: "tb:gap-xs",
+    [SPACING.small]: "tb:gap-sm",
+    [SPACING.medium]: "tb:gap-md",
+    [SPACING.large]: "tb:gap-lg",
+    [SPACING.XLarge]: "tb:gap-xl",
+    [SPACING.XXLarge]: "tb:gap-xxl",
+    [SPACING.XXXLarge]: "tb:gap-xxxl",
+  },
+  [QUERIES.DESKTOP]: {
+    [SPACING.none]: "de:gap-none",
+    [SPACING.XXXSmall]: "de:gap-xxxs",
+    [SPACING.XXSmall]: "de:gap-xxs",
+    [SPACING.XSmall]: "de:gap-xs",
+    [SPACING.small]: "de:gap-sm",
+    [SPACING.medium]: "de:gap-md",
+    [SPACING.large]: "de:gap-lg",
+    [SPACING.XLarge]: "de:gap-xl",
+    [SPACING.XXLarge]: "de:gap-xxl",
+    [SPACING.XXXLarge]: "de:gap-xxxl",
+  },
+  [QUERIES.LARGEDESKTOP]: {
+    [SPACING.none]: "ld:gap-none",
+    [SPACING.XXXSmall]: "ld:gap-xxxs",
+    [SPACING.XXSmall]: "ld:gap-xxs",
+    [SPACING.XSmall]: "ld:gap-xs",
+    [SPACING.small]: "ld:gap-sm",
+    [SPACING.medium]: "ld:gap-md",
+    [SPACING.large]: "ld:gap-lg",
+    [SPACING.XLarge]: "ld:gap-xl",
+    [SPACING.XXLarge]: "ld:gap-xxl",
+    [SPACING.XXXLarge]: "ld:gap-xxxl",
+  },
+};
+
 const getSpacingClasses = (
   spacing: `${SPACING}`,
   viewport?: QUERIES,
   direction: Direction = "row",
+  legacy = false,
 ): string => {
-  const horizontalRoot = viewport ? horizontalTokens[viewport] : horizontalTokens;
-  const verticalRoot = viewport ? verticalTokens[viewport] : verticalTokens;
+  if (legacy) {
+    const horizontalRoot = viewport ? horizontalTokens[viewport] : horizontalTokens;
+    const verticalRoot = viewport ? verticalTokens[viewport] : verticalTokens;
 
-  const tokens = cx(
-    (direction === "row" || direction === "row-reverse") && [
-      horizontalRoot[spacing],
-      verticalRoot.none,
-      "rtl:space-x-reverse",
-    ],
-    direction === "row-reverse" && horizontalRoot.reverse,
-    (direction === "column" || direction === "column-reverse") && [
-      verticalRoot[spacing],
-      horizontalRoot.none,
-    ],
-    direction === "column-reverse" && verticalRoot.reverse,
-  );
+    const tokens = cx(
+      (direction === "row" || direction === "row-reverse") && [
+        horizontalRoot[spacing],
+        verticalRoot.none,
+        "rtl:space-x-reverse",
+      ],
+      direction === "row-reverse" && horizontalRoot.reverse,
+      (direction === "column" || direction === "column-reverse") && [
+        verticalRoot[spacing],
+        horizontalRoot.none,
+      ],
+      direction === "column-reverse" && verticalRoot.reverse,
+    );
 
-  return tokens;
+    return tokens;
+  }
+
+  return viewport ? gapTokens[viewport][spacing] : gapTokens[spacing];
 };
 
 export default getSpacingClasses;

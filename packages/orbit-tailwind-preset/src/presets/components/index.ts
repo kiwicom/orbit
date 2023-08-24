@@ -219,7 +219,11 @@ const cfg = (options?: Options): Config => {
           addVariant("not-first", "&:not(:first-child)"),
           addVariant("type-even", "&:nth-of-type(even)"),
           addVariant("type-odd", "&:nth-of-type(odd)"),
-          addVariant("target-blank", "&[target='_blank']")
+          addVariant("target-blank", "&[target='_blank']"),
+          addVariant(
+            "safari",
+            "@supports (-webkit-touch-callout: none) and (not (translate: none))",
+          )
         );
       }),
     ],

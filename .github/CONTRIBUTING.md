@@ -8,12 +8,13 @@
     - [Requirements](#requirements)
     - [Technologies we use](#technologies-we-use)
     - [Repository Structure](#repository-structure)
-      - [`@kiwicom/orbit-components`](#kiwicomorbit-components-)
-      - [`@kiwicom/babel-plugin-orbit-components`](#kiwicombabel-plugin-orbit-components-)
-      - [`@kiwicom/orbit-design-tokens`](#kiwicomorbit-design-tokens-)
-      - [`@kiwicom/orbit-tailwind-preset`](#kiwicomorbit-tailwind-preset-)
+      - [`@kiwicom/orbit-components`](#kiwicomorbit-components)
+      - [`@kiwicom/babel-plugin-orbit-components`](#kiwicombabel-plugin-orbit-components)
+      - [`@kiwicom/orbit-design-tokens`](#kiwicomorbit-design-tokens)
+      - [`@kiwicom/orbit-tailwind-preset`](#kiwicomorbit-tailwind-preset)
       - [Root](#root)
     - [How to develop](#how-to-develop)
+    - [How to add new tokens](#how-to-add-new-tokens)
     - [Testing](#testing)
     - [Unit tests](#unit-tests)
     - [Visual regression test](#visual-regression-test)
@@ -118,6 +119,52 @@ yalc push
 ```
 
 This is a shortcut for `yalc publish --push`, which "publishes" the package again and updates it in every project that installed it.
+
+### How to add new tokens
+
+To introduce new design tokens to the Orbit design system, we rely on the versatile capabilities of style-dictionary. Whether you're enhancing specific components or introducing global tokens, the process is straightforward and consistent.
+
+Follow these steps to seamlessly integrate new tokens:
+
+Navigate to Token Definitions: Begin by creating or editing a JSON file within the [dictionary/definitions folder](https://github.com/kiwicom/orbit/tree/master/packages/orbit-design-tokens/src/dictionary/definitions). This is where the token definitions reside.
+
+Craft Token Entries: Craft your new token entries within the JSON file. For instance, if you're adding a token to the Button component, structure it like the following example:
+
+```json
+{
+  "component": {
+    "button": {
+      "stone": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.stone.normal}"
+        }
+        // ... other properties
+      }
+    }
+  }
+}
+```
+
+More about token schema you can read in [SCHEMA documentation](https://github.com/kiwicom/orbit/blob/master/packages/orbit-design-tokens/docs/SCHEMA.md)
+
+Refer to the token schema documentation for a comprehensive understanding of token properties.
+
+- Categorize Tokens: Organize your tokens under appropriate categories, either globally or component-specific. This structure ensures clarity and maintainability.
+
+- Generate Tokens: Once your token schema is ready, execute command:
+
+```bash
+yarn tokens build
+```
+
+This triggers style-dictionary to transform your definitions into a usable output.
+
+- Validation and Usage: A successful build, without errors, signifies the readiness of your tokens. They can now be effectively utilized within other packages such as _@kiwicom/orbit-components_, _@kiwicom/tailwind-preset_, or _@kiwicom/orbit.kiwi_.
+
+By adhering to these steps and embracing the style-dictionary workflow, you'll seamlessly extend the design vocabulary of the Orbit design system, fostering consistency and efficiency in design and development.
+
+Feel free to seek further assistance or clarity if needed. Your contributions continue to shape the cohesive Orbit ecosystem.
 
 ### Testing
 

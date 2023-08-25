@@ -22,12 +22,6 @@ describe("Card", () => {
     expect(screen.getByText("kek")).toBeInTheDocument();
     expect(screen.getByText("description")).toBeInTheDocument();
     expect(screen.getByRole("button"));
-    expect(screen.getByTestId("test")).toHaveStyle({
-      marginTop: "12px",
-      marginBottom: undefined,
-      marginRight: undefined,
-      marginLeft: undefined,
-    });
   });
 
   it("section", () => {

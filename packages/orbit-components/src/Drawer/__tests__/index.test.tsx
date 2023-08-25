@@ -7,7 +7,7 @@ import Drawer from "..";
 jest.useFakeTimers();
 
 describe("Drawer", () => {
-  const user = userEvent.setup();
+  const user = userEvent.setup({ delay: null });
 
   it("should have expected DOM output", () => {
     render(

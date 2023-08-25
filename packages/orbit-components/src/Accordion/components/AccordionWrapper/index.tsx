@@ -1,10 +1,31 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import React from "react";
 
-import { CardElement } from "../../../Card/helpers/mixins";
-import { getBorder, getBorderRadius } from "../../../Card/helpers/borders";
 import type { Props } from "./types";
-import defaultTheme from "../../../defaultTheme";
+import type { Theme } from "../../../defaultTheme";
+import defaultTheme, { ThemeProps } from "../../../defaultTheme";
+import mq from "../../../utils/mediaQuery";
+
+export const getBorder = ({ theme }: ThemeProps): string =>
+  `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
+
+export const getBorderRadius = ({ theme }: ThemeProps): string =>
+  `${theme.orbit.borderRadiusNormal}`;
+
+const CardElement = css`
+  ${({ theme, expanded }: { theme: Theme; expanded?: boolean }) => css`
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: ${expanded && theme.orbit.boxShadowActionActive};
+    border-top: ${!expanded && getBorder};
+    background: ${theme.orbit.backgroundCard};
+    ${mq.largeMobile(css`
+      border-left: ${!expanded && getBorder};
+      border-right: ${!expanded && getBorder};
+    `)};
+  `};
+`;
 
 const StyledAccordionWrapper = styled.div<{ expanded?: boolean }>`
   ${CardElement};

@@ -1,38 +1,17 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import Loading from "../Loading";
-import CardWrapper from "./components/CardWrapper";
-import { Provider as SectionProvider } from "./CardContext";
-import defaultTheme from "../defaultTheme";
-import getSpacingToken from "../common/getSpacingToken";
-import Header from "./components/Header";
-import { ELEMENT_OPTIONS } from "../Heading/consts";
 import type { Props } from "./types";
-import type * as Common from "../common/types";
-import useTheme from "../hooks/useTheme";
-import { spacingUtility } from "../utils/common";
+import { ELEMENT_OPTIONS } from "../Heading/consts";
+import Header from "./components/Header";
+import { spaceAfterClasses } from "../common/tailwind";
+import Loading from "../Loading";
 
-export const StyledCard = styled.div<{
-  spaceAfter?: Common.SpaceAfterSizes;
-  margin?: Props["margin"];
-}>`
-  ${({ margin, theme }) => css`
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    font-family: ${theme.orbit.fontFamily};
-    ${spacingUtility(margin)}
-  `};
-`;
+export { default as CardSection } from "./CardSection";
 
-StyledCard.defaultProps = {
-  theme: defaultTheme,
-};
-
-const Card = ({
+export default function Card({
   title,
   titleAs = ELEMENT_OPTIONS.H2,
   icon,
@@ -48,46 +27,34 @@ const Card = ({
   header,
   spaceAfter,
   dataA11ySection,
-}: Props) => {
-  const [expandedSections, setExpandedSections] = React.useState<number[]>([]);
-  const theme = useTheme();
-
-  // handles array of expanded sections
-  const addSection = React.useCallback((index: number) => {
-    setExpandedSections(prev => (prev.indexOf(index) === -1 ? [...prev, index] : prev));
-  }, []);
-
-  const removeSection = React.useCallback((index: number) => {
-    setExpandedSections(prev =>
-      prev.indexOf(index) !== -1 ? prev.filter(val => val !== index) : prev,
-    );
-  }, []);
-
-  // Currently disable that code, becuase of IE 11, where it does not work
-  // It will be fixed later, when we'll find solution
-  const renderSection = item => {
-    if (React.isValidElement(item)) {
-      // if (item.props.children && item.type.name !== "CardSection") {
-      //   return React.createElement(CardSection, {
-      //     ...item.props.children.props,
-      //     key: index,
-      //   });
-
-      return React.cloneElement(item);
+}: Props) {
+  const marginStyles = (() => {
+    if (margin == null) {
+      return {};
     }
-
-    return null;
-  };
+    if (typeof margin === "string" || typeof margin === "number") {
+      return { margin };
+    }
+    return {
+      marginTop: margin.top,
+      marginRight: margin.right,
+      marginBottom: margin.bottom,
+      marginLeft: margin.left,
+    };
+  })();
 
   return (
-    <StyledCard
-      // TODO: remove spaceAfter in the next major version
-      margin={spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin}
-      data-test={dataTest}
+    <div
       id={id}
+      className={cx(
+        "font-base [&>*]:border-elevation-flat-border-color [&>*:first-child]:rounded-t-normal [&>*:last-child]:rounded-b-normal [&>*:first-child]:border-t",
+        spaceAfter != null && spaceAfterClasses[spaceAfter],
+      )}
+      data-test={dataTest}
+      style={marginStyles}
     >
-      {(title || header) && !loading && (
-        <CardWrapper bottomBorder={!children || expandedSections.some(val => val === 0)}>
+      {(title != null || header != null) && !loading && (
+        <div className="p-md lm:p-lg lm:border-x relative border-b">
           <Header
             icon={icon}
             description={description}
@@ -99,52 +66,16 @@ const Card = ({
             onClose={onClose}
             header={header}
           />
-        </CardWrapper>
+        </div>
       )}
 
-      {children
-        ? React.Children.map(children, (item, key) => {
-            if (!item) return null;
-            const topRoundedBorder =
-              expandedSections.indexOf(key - 1) !== -1 || expandedSections.indexOf(key) !== -1;
-            const bottomRounderBorder =
-              expandedSections.indexOf(key + 1) !== -1 || expandedSections.indexOf(key) !== -1;
+      {!loading && children}
 
-            // This is used for the case when user wants to map sections and change their order
-            // related issue: #1005
-            // @ts-expect-error TODO
-            const index = Number(item.key) || key;
-
-            return (
-              <SectionProvider
-                value={{
-                  addSection,
-                  removeSection,
-                  roundedBorders: {
-                    top: topRoundedBorder,
-                    bottom: bottomRounderBorder,
-                  },
-                  index,
-                  noBorderTop: index === 0 && Boolean(title),
-                  isOpened: expandedSections.some(val => val === index),
-                }}
-              >
-                {loading ? (
-                  <CardWrapper noPadding>
-                    <Loading loading={loading} type="boxLoader">
-                      {renderSection(item)}
-                    </Loading>
-                  </CardWrapper>
-                ) : (
-                  renderSection(item)
-                )}
-              </SectionProvider>
-            );
-          })
-        : null}
-    </StyledCard>
+      {loading && (
+        <div className="lm:border-x border-b">
+          <Loading loading={loading} type="boxLoader" />
+        </div>
+      )}
+    </div>
   );
-};
-
-export default Card;
-export { default as CardSection } from "./CardSection";
+}

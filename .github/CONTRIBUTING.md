@@ -152,7 +152,7 @@ Refer to the token schema documentation for a comprehensive understanding of tok
 
 - Categorize Tokens: Organize your tokens under appropriate categories, either globally or component-specific. This structure ensures clarity and maintainability.
 
-- Generate Tokens: Once your token schema is ready, execute command:
+Generate Tokens: Once your token schema is ready, execute the `yarn tokens build` command. This triggers style-dictionary to transform your definitions into a usable output.
 
 ```bash
 yarn tokens build

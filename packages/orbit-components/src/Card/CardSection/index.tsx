@@ -1,17 +1,16 @@
 "use client";
 
 import * as React from "react";
+import cx from "clsx";
 
-import KEY_CODE_MAP from "../../common/keyMaps";
-import CardWrapper from "../components/CardWrapper";
-import { useCard } from "../CardContext";
-import SectionHeader from "./components/SectionHeader";
-import SectionContent from "./components/SectionContent";
 import useRandomId from "../../hooks/useRandomId";
 import { ELEMENT_OPTIONS } from "../../Heading/consts";
 import type { Props } from "./types";
+import Header from "../components/Header";
+import Expandable from "./components/Expandable";
+import handleKeyDown from "../../utils/handleKeyDown";
 
-const CardSection = ({
+export default function CardSection({
   title,
   titleAs = ELEMENT_OPTIONS.DIV,
   icon,
@@ -26,108 +25,106 @@ const CardSection = ({
   onExpand,
   dataTest,
   actions,
-  noSeparator,
-}: Props) => {
-  const { addSection, removeSection, index, roundedBorders, noBorderTop, isOpened } = useCard();
-  const [opened, setOpened] = React.useState(isOpened || initialExpanded);
+}: Props) {
+  const [opened, setOpened] = React.useState(initialExpanded);
 
   const isControlled = expanded != null;
 
-  // effect that solves controlled component
   React.useEffect(() => {
     if (isControlled) {
-      if (expanded) {
-        addSection(index);
-        setOpened(true);
-      } else {
-        removeSection(index);
-        setOpened(false);
-      }
+      setOpened(expanded);
     }
-  }, [addSection, expanded, index, isControlled, removeSection]);
+  }, [isControlled, expanded]);
 
-  // effect that solves initialExpanded behavior
-  React.useEffect(() => {
-    if (initialExpanded) {
-      addSection(index);
-      setOpened(true);
-    }
-  }, [addSection, index, initialExpanded]);
-
-  const handleClick = () => {
+  function handleClick() {
     if (!isControlled) {
-      if (!opened) {
-        addSection(index);
-        setOpened(true);
-      } else {
-        removeSection(index);
-        setOpened(false);
-      }
+      setOpened(state => !state);
     }
 
-    if (opened && onClose) {
-      onClose();
+    if (opened) {
+      onClose?.();
+    } else {
+      onExpand?.();
     }
-
-    if (!opened && onExpand) {
-      onExpand();
-    }
-  };
-
-  const handleKeyDown = (ev: React.KeyboardEvent<HTMLDivElement>) => {
-    if (ev.keyCode === KEY_CODE_MAP.SPACE) {
-      ev.preventDefault();
-    }
-
-    if (ev.keyCode === KEY_CODE_MAP.ENTER || ev.keyCode === KEY_CODE_MAP.SPACE) {
-      handleClick();
-    }
-  };
+  }
 
   const slideID = useRandomId();
 
   return (
-    <CardWrapper
-      dataTest={dataTest}
-      roundedTop={roundedBorders.top}
-      roundedBottom={roundedBorders.bottom}
-      expanded={opened}
+    // Needs to capture bubbled click events from the <button> below
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div
+      className={cx(
+        "duration-fast lm:border-x border-b transition-all ease-in-out",
+        opened && "my-xs rounded-normal shadow-action-active [&+*]:border-t",
+        onClick != null && "hover:bg-white-normal-hover cursor-pointer",
+      )}
+      data-test={dataTest}
+      role={onClick == null ? undefined : "button"}
+      // See comment above
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={onClick == null ? undefined : 0}
       onClick={onClick}
-      expandable={expandable}
-      noBorderTop={noBorderTop}
+      // Not needed once we can use <button> or <a> like we should
+      onKeyDown={handleKeyDown(onClick)}
     >
-      {(title || header) && (
-        <SectionHeader
-          title={title}
-          titleAs={titleAs}
-          icon={icon}
-          slideID={slideID}
-          labelID={slideID}
-          header={header}
-          expandable={expandable}
-          expanded={opened}
-          actions={actions}
-          isContent={!!children}
-          onClick={expandable ? handleClick : undefined}
-          description={description}
-          handleKeyDown={handleKeyDown}
-        />
+      {(title != null || header != null) && expandable && (
+        <button
+          type="button"
+          className="p-md lm:p-lg hover:bg-white-normal-hover w-full"
+          aria-expanded={opened}
+          aria-controls={slideID}
+          onClick={handleClick}
+        >
+          <Header
+            title={title}
+            titleAs={titleAs}
+            icon={icon}
+            description={description}
+            expandable={expandable}
+            header={header}
+            expanded={opened}
+            actions={actions}
+            isSection
+          />
+        </button>
       )}
 
-      {children ? (
-        <SectionContent
-          expanded={opened}
-          slideID={slideID}
-          labelID={slideID}
-          hasPaddingTop={!!(title != null || header != null || expanded)}
-          noSeparator={noSeparator}
-          expandable={expandable}
+      {(title != null || header != null) && !expandable && (
+        <div className="p-md lm:p-lg w-full">
+          <Header
+            title={title}
+            titleAs={titleAs}
+            description={description}
+            expandable={expandable}
+            header={header}
+            expanded={opened}
+            actions={actions}
+            isSection
+          />
+        </div>
+      )}
+
+      {children != null && expandable && (
+        <Expandable expanded={opened} slideID={slideID} labelID={slideID}>
+          <div className="font-base text-normal text-primary-foreground px-md lm:px-lg w-full leading-normal">
+            <div className="py-md lm:py-lg border-elevation-flat-border-color border-t">
+              {children}
+            </div>
+          </div>
+        </Expandable>
+      )}
+
+      {children != null && !expandable && (
+        <div
+          className={cx(
+            "font-base text-normal text-primary-foreground px-md lm:px-lg pb-md lm:pb-lg w-full leading-normal",
+            title == null && header == null && "pt-md lm:pt-lg",
+          )}
         >
           {children}
-        </SectionContent>
-      ) : null}
-    </CardWrapper>
+        </div>
+      )}
+    </div>
   );
-};
-
-export default CardSection;
+}

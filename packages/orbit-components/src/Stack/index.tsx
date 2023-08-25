@@ -3,7 +3,7 @@
 import React from "react";
 import cx from "clsx";
 
-import type { Props, CommonProps } from "./types";
+import type { Props, CommonProps, Direction, Spacing } from "./types";
 import type * as Common from "../common/types";
 import {
   getDisplayInlineClass,
@@ -18,10 +18,10 @@ import {
   getSpaceAfterClasses,
 } from "../common/tailwind";
 import { QUERIES } from "../utils/mediaQuery/consts";
+import { DIRECTION } from "../common/tailwind/direction";
+import { SPACING } from "../common/tailwind/spacing";
 import { ALIGN } from "../common/tailwind/alignItems";
 import { JUSTIFY } from "../common/tailwind/justify";
-import { SPACING } from "../common/tailwind/spacing";
-import { DIRECTION } from "../common/tailwind/direction";
 
 const shouldUseFlex = (props: CommonProps & Common.SpaceAfter) =>
   props.flex ||
@@ -40,30 +40,28 @@ const Stack = (props: Props) => {
     tablet,
     desktop,
     largeDesktop,
-    ...restProps
   } = props;
 
   const viewportProps = { mediumMobile, largeMobile, tablet, desktop, largeDesktop };
 
-  const defaultMediaProps = () => {
+  const defaultMediaProps = React.useMemo(() => {
+    const isFlex = shouldUseFlex(props) || props.inline;
+
     const {
       spacing = SPACING.medium,
-      direction,
+      spaceAfter,
+      direction = isFlex ? DIRECTION.ROW : DIRECTION.COLUMN,
       grow = true,
-      inline = false,
       justify = JUSTIFY.START,
       shrink = false,
       wrap = false,
       align = ALIGN.START,
-      spaceAfter,
-    } = restProps;
-
-    const isFlex = shouldUseFlex({ spacing, spaceAfter, ...restProps }) || inline;
-    const flexDirection = direction || (isFlex ? DIRECTION.ROW : DIRECTION.COLUMN);
+      inline = false,
+    } = props;
 
     return {
       flex: isFlex,
-      direction: flexDirection,
+      direction,
       spacing,
       grow,
       inline,
@@ -73,7 +71,7 @@ const Stack = (props: Props) => {
       wrap,
       spaceAfter,
     };
-  };
+  }, [props]);
 
   const vars = {
     "--basis": basis,
@@ -93,26 +91,43 @@ const Stack = (props: Props) => {
     vars["--ld:basis"] != null && "ld:basis-[var(--ld-basis)]",
   ];
 
+  const getProperty = React.useCallback(
+    (property, viewports, index) => {
+      const viewport = viewports[index];
+      const found = props[viewport]?.[property];
+
+      if (typeof found !== "undefined") return found;
+      if (index > 0) return getProperty(property, viewports, index - 1);
+
+      return defaultMediaProps[property];
+    },
+    [props, defaultMediaProps],
+  );
+
   const getTailwindTokensForMedia = (
-    properties?: CommonProps & Common.SpaceAfter,
+    opts?: CommonProps & {
+      direction: Direction;
+      spacing: Spacing;
+    },
     viewport?: QUERIES,
   ): string => {
-    if (!properties) return "";
+    if (!opts) return "";
 
-    const { flex, direction, spaceAfter, inline, wrap, grow, shrink, align, justify, spacing } =
-      properties;
+    const { spaceAfter, align, wrap, grow, shrink, justify, direction, spacing, inline, flex } =
+      opts;
 
     return cx(
       typeof spaceAfter !== "undefined" && getSpaceAfterClasses(spaceAfter, viewport),
-      typeof spacing !== "undefined" && getSpacingClasses(spacing, viewport, direction),
-      typeof direction !== "undefined" && getDirectionClasses(direction, viewport),
       typeof align !== "undefined" && getAlignItemsClasses(align, viewport),
       typeof align !== "undefined" && getAlignContentClasses(align, viewport),
       typeof wrap !== "undefined" && getWrapClasses(wrap, viewport),
       typeof grow !== "undefined" && getGrowClasses(grow, viewport),
       typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
       typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
-      inline && [getDisplayInlineClass(inline, viewport), "w-full"],
+      getDirectionClasses(direction, viewport),
+      getSpacingClasses(spacing, viewport, direction),
+      inline && getDisplayInlineClass(inline, viewport),
+      inline === false && "w-full",
       flex && "flex",
     );
   };
@@ -123,11 +138,18 @@ const Stack = (props: Props) => {
       data-test={dataTest}
       style={vars}
       className={cx(
-        getTailwindTokensForMedia(defaultMediaProps()),
+        getTailwindTokensForMedia(defaultMediaProps),
         ...varClasses,
-        Object.values(QUERIES).map(viewport => {
+        Object.values(QUERIES).map((viewport, index, viewports) => {
           if (!viewportProps[viewport]) return null;
-          return getTailwindTokensForMedia(viewportProps[viewport], viewport);
+          return getTailwindTokensForMedia(
+            {
+              ...props[viewport],
+              direction: getProperty("direction", viewports, index),
+              spacing: getProperty("spacing", viewports, index),
+            },
+            viewport,
+          );
         }),
       )}
     >

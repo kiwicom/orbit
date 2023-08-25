@@ -141,7 +141,7 @@ MediumMobileProperties.story = {
 
 export const LargeMobileProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.COLUMN);
+  const direction = select("Direction", Object.values(DIRECTIONS), undefined);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);

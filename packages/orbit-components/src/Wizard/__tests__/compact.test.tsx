@@ -7,7 +7,7 @@ import Wizard, { WizardStep } from "..";
 jest.mock("../../hooks/useMediaQuery", () => () => ({ isLargeMobile: false }));
 
 describe("Wizard", () => {
-  const user = userEvent.setup();
+  const user = userEvent.setup({ delay: null });
 
   describe("compact", () => {
     it("shows the current position", () => {
@@ -97,7 +97,7 @@ describe("Wizard", () => {
         </Wizard>,
       );
       await act(() => user.click(screen.getByRole("button")));
-      await act(() => user.click(screen.getByRole("button", { name: "Close" })));
+      await act(() => user.click(screen.getByText("Close")));
       expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     });
   });

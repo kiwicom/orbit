@@ -8,9 +8,9 @@ export enum DEVICES {
 }
 
 export enum QUERIES {
-  LARGEDESKTOP = "largeDesktop",
-  DESKTOP = "desktop",
-  TABLET = "tablet",
-  LARGEMOBILE = "largeMobile",
   MEDIUMMOBILE = "mediumMobile",
+  LARGEMOBILE = "largeMobile",
+  TABLET = "tablet",
+  DESKTOP = "desktop",
+  LARGEDESKTOP = "largeDesktop",
 }

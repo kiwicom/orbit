@@ -182,7 +182,6 @@ const getSpacingClasses = (
   viewport?: QUERIES,
   direction: Direction = "row",
 ): string => {
-  if (spacing === "none") return "";
   const horizontalRoot = viewport ? horizontalTokens[viewport] : horizontalTokens;
   const verticalRoot = viewport ? verticalTokens[viewport] : verticalTokens;
 

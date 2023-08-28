@@ -202,7 +202,7 @@ const cfg = (options?: Options): Config => {
         animation: {
           "pulse-slow": "slow-pulse 2s ease-in-out 0.5s infinite",
           spinner: "spinner 0.75s linear infinite",
-          loader: "loader 1s 1.25s infinite ease-in-out",
+          loader: "loader 1.25s infinite ease-in-out",
           pulse: "pulse 1.5s infinite",
         },
         textColor: Object.entries(getForegroundColors()).reduce((acc, [key, value]) => {

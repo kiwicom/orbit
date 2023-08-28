@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
+import { render, screen, act } from "@testing-library/react";
 
-import { render, screen, act } from "../../test-utils";
 import Wizard, { WizardStep } from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => () => ({ isLargeMobile: true }));
@@ -13,6 +13,7 @@ describe("Wizard", () => {
     it("can navigate through steps", async () => {
       const MyApp = () => {
         const [activeStep, setActiveStep] = React.useState(3);
+
         return (
           <Wizard
             id="wizard"
@@ -28,11 +29,12 @@ describe("Wizard", () => {
           </Wizard>
         );
       };
+
       render(<MyApp />);
       const customizeYourTripStep = screen.getByRole("button", { name: /Customize your trip/ });
       expect(customizeYourTripStep).toHaveAttribute("aria-current", "step");
       const ticketFareStep = screen.getByRole("button", { name: /Ticket fare/ });
-      await act(() => user.click(ticketFareStep));
+      await user.click(ticketFareStep);
       expect(ticketFareStep).toHaveAttribute("aria-current", "step");
     });
 

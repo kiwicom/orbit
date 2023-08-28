@@ -484,7 +484,7 @@ exports[`orbitPreset should match snapshot 1`] = `
     },
     "animation": {
       "bounce": "bounce 1s infinite",
-      "loader": "loader 1s 1.25s infinite ease-in-out",
+      "loader": "loader 1.25s infinite ease-in-out",
       "none": "none",
       "ping": "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
       "pulse": "pulse 1.5s infinite",

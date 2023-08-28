@@ -10,7 +10,7 @@ import useTheme from "../hooks/useTheme";
 const CircleLoader = ({ animationDelay }: { animationDelay?: string }) => {
   return (
     <div
-      className="animate-loader rounded-circle bg-cloud-dark h-xs w-xs me-[6px] [&>*:nth-child(3)]:my-0"
+      className="animate-loader rounded-circle bg-cloud-dark h-xs w-xs me-[6px] [&:nth-child(3)]:m-0"
       style={{ animationDelay }}
     />
   );
@@ -99,7 +99,7 @@ const Loading = ({
             type === TYPE_OPTIONS.BOX_LOADER && "h-[80px] justify-center",
             type === TYPE_OPTIONS.PAGE_LOADER && "h-[120px] flex-col justify-center",
           ])}
-          style={{ height: `${customSize}px` }}
+          style={{ height: customSize }}
           data-test={dataTest}
           id={id}
         >

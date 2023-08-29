@@ -125,6 +125,9 @@ const cfg = (options?: Options): Config => {
           "country-flag-small": defaultTokens.countryFlagSmallHeight,
           "country-flag-medium": defaultTokens.countryFlagMediumHeight,
         },
+        minWidth: {
+          "dialog-width": defaultTokens.dialogWidth,
+        },
         width: {
           "icon-small": defaultTokens.widthIconSmall,
           "icon-medium": defaultTokens.widthIconMedium,

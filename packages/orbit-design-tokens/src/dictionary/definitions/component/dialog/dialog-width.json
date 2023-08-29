@@ -1,0 +1,10 @@
+{
+  "component": {
+    "dialog": {
+      "width": {
+        "type": "size",
+        "value": "540px"
+      }
+    }
+  }
+}

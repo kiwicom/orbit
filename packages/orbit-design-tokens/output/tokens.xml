@@ -2064,6 +2064,18 @@
     <value>24px</value>
   </token>
   <token>
+    <name>dialogBorderRadiusDesktop</name>
+    <value>9px</value>
+  </token>
+  <token>
+    <name>dialogBorderRadiusMobile</name>
+    <value>12px</value>
+  </token>
+  <token>
+    <name>dialogWidth</name>
+    <value>540px</value>
+  </token>
+  <token>
     <name>drawerOverlayBackground</name>
     <value>#252A3180</value>
   </token>

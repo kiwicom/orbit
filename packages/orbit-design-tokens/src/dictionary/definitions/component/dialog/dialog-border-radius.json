@@ -1,0 +1,16 @@
+{
+  "component": {
+    "dialog": {
+      "border-radius": {
+        "desktop": {
+          "type": "border-radius",
+          "value": "9px"
+        },
+        "mobile": {
+          "type": "border-radius",
+          "value": "12px"
+        }
+      }
+    }
+  }
+}

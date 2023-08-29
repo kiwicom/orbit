@@ -996,6 +996,8 @@ exports[`orbitPreset should match snapshot 1`] = `
     },
     "borderRadius": {
       "circle": "50%",
+      "dialog-desktop": "9px",
+      "dialog-mobile": "12px",
       "large": "6px",
       "normal": "3px",
       "small": "2px",

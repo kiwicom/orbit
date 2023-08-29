@@ -146,6 +146,10 @@ const cfg = (options?: Options): Config => {
           ...getComponentLevelToken("formElement", "padding"),
           table: defaultTokens.paddingTable,
         },
+        borderRadius: {
+          "dialog-desktop": defaultTokens.dialogBorderRadiusDesktop,
+          "dialog-mobile": defaultTokens.dialogBorderRadiusMobile,
+        },
         borderColor: {
           ...Object.keys(defaultTokens).reduce((acc, token) => {
             if (token.startsWith("borderColor")) {

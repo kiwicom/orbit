@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Dialog, ButtonLink } from "@kiwicom/orbit-components";
+import { Button, Dialog, ButtonLink, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
     const [showDialog, setShowDialog] = React.useState(false);
 
     return (
-      <>
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
         {showDialog && (
           <Dialog
             title="Accept notifications?"
@@ -42,7 +42,7 @@ export default {
             Show dialog
           </Button>
         )}
-      </>
+      </OrbitProvider>
     );
   },
   exampleKnobs: [

@@ -1,22 +1,24 @@
 import React from "react";
-import { Select } from "@kiwicom/orbit-components";
+import { Select, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
     return (
-      <Select
-        value=""
-        placeholder="Choose your country"
-        options={[
-          { label: "Algeria", value: "dz" },
-          { label: "Bolivia", value: "bo" },
-          { label: "Croatia", value: "hr" },
-          { label: "Indonesia", value: "id" },
-          { label: "Mexico", value: "mx" },
-        ]}
-        label="Nationality"
-        error="Please select a country"
-      />
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+        <Select
+          value=""
+          placeholder="Choose your country"
+          options={[
+            { label: "Algeria", value: "dz" },
+            { label: "Bolivia", value: "bo" },
+            { label: "Croatia", value: "hr" },
+            { label: "Indonesia", value: "id" },
+            { label: "Mexico", value: "mx" },
+          ]}
+          label="Nationality"
+          error="Please select a country"
+        />
+      </OrbitProvider>
     );
   },
   exampleVariants: [

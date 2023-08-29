@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, Stack, ModalSection, Modal } from "@kiwicom/orbit-components";
+import {
+  Button,
+  Stack,
+  ModalSection,
+  Modal,
+  OrbitProvider,
+  defaultTheme,
+} from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
@@ -10,7 +17,7 @@ export default {
     const [showModalExtraLarge, setShowModalExtraLarge] = React.useState(false);
 
     return (
-      <>
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
         {showModalExtraSmall && (
           <Modal
             size="extraSmall"
@@ -107,7 +114,7 @@ export default {
             Show extra large modal
           </Button>
         </Stack>
-      </>
+      </OrbitProvider>
     );
   },
 };

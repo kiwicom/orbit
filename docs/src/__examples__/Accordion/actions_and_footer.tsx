@@ -10,6 +10,8 @@ import {
   Seat,
   Stack,
   Text,
+  OrbitProvider,
+  defaultTheme,
 } from "@kiwicom/orbit-components";
 
 export default {
@@ -81,60 +83,65 @@ export default {
     );
 
     return (
-      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
-        <AccordionSection
-          actions={
-            <Button type="secondary" onClick={() => setExpandedSection("outbound")}>
-              Show seats to Boston
-            </Button>
-          }
-          id="outbound"
-          header={
-            <Heading as="h3" type="title3">
-              <Inline>
-                Seating for Barcelona
-                <FlightDirect ariaLabel=" to " />
-                Boston
-              </Inline>
-            </Heading>
-          }
-          footer={
-            <Stack justify="center">
-              <ButtonLink type="primary" onClick={() => setExpandedSection("inbound")}>
-                Continue to next segment
-              </ButtonLink>
-            </Stack>
-          }
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+        <Accordion
+          expandedSection={expandedSection}
+          onExpand={id => setExpandedSection(String(id))}
         >
-          <SeatMap direction="outbound" />
-        </AccordionSection>
-        <AccordionSection
-          actions={
-            <Button type="secondary" onClick={() => setExpandedSection("inbound")}>
-              Show seats to Barcelona
-            </Button>
-          }
-          id="inbound"
-          header={
-            <Heading as="h3" type="title3">
-              <Inline>
-                Seating for Boston
-                <FlightDirect ariaLabel=" to " />
-                Barcelona
-              </Inline>
-            </Heading>
-          }
-          footer={
-            <Stack justify="center">
-              <ButtonLink type="secondary" onClick={() => setExpandedSection("outbound")}>
-                Back to previous segment
-              </ButtonLink>
-            </Stack>
-          }
-        >
-          <SeatMap direction="inbound" />
-        </AccordionSection>
-      </Accordion>
+          <AccordionSection
+            actions={
+              <Button type="secondary" onClick={() => setExpandedSection("outbound")}>
+                Show seats to Boston
+              </Button>
+            }
+            id="outbound"
+            header={
+              <Heading as="h3" type="title3">
+                <Inline>
+                  Seating for Barcelona
+                  <FlightDirect ariaLabel=" to " />
+                  Boston
+                </Inline>
+              </Heading>
+            }
+            footer={
+              <Stack justify="center">
+                <ButtonLink type="primary" onClick={() => setExpandedSection("inbound")}>
+                  Continue to next segment
+                </ButtonLink>
+              </Stack>
+            }
+          >
+            <SeatMap direction="outbound" />
+          </AccordionSection>
+          <AccordionSection
+            actions={
+              <Button type="secondary" onClick={() => setExpandedSection("inbound")}>
+                Show seats to Barcelona
+              </Button>
+            }
+            id="inbound"
+            header={
+              <Heading as="h3" type="title3">
+                <Inline>
+                  Seating for Boston
+                  <FlightDirect ariaLabel=" to " />
+                  Barcelona
+                </Inline>
+              </Heading>
+            }
+            footer={
+              <Stack justify="center">
+                <ButtonLink type="secondary" onClick={() => setExpandedSection("outbound")}>
+                  Back to previous segment
+                </ButtonLink>
+              </Stack>
+            }
+          >
+            <SeatMap direction="inbound" />
+          </AccordionSection>
+        </Accordion>
+      </OrbitProvider>
     );
   },
 };

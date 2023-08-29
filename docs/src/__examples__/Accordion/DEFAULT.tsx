@@ -8,6 +8,8 @@ import {
   Seat,
   Stack,
   Text,
+  OrbitProvider,
+  defaultTheme,
 } from "@kiwicom/orbit-components";
 import { FlightDirect } from "@kiwicom/orbit-components/icons";
 
@@ -79,36 +81,41 @@ export default {
       </Stack>
     );
     return (
-      <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
-        <AccordionSection
-          id="outbound"
-          header={
-            <Heading as="h3" type="title3">
-              <Inline>
-                Seating for Barcelona
-                <FlightDirect ariaLabel=" to " />
-                Boston
-              </Inline>
-            </Heading>
-          }
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+        <Accordion
+          expandedSection={expandedSection}
+          onExpand={id => setExpandedSection(String(id))}
         >
-          <SeatMap direction="outbound" />
-        </AccordionSection>
-        <AccordionSection
-          id="inbound"
-          header={
-            <Heading as="h3" type="title3">
-              <Inline>
-                Seating for Boston
-                <FlightDirect ariaLabel=" to " />
-                Barcelona
-              </Inline>
-            </Heading>
-          }
-        >
-          <SeatMap direction="inbound" />
-        </AccordionSection>
-      </Accordion>
+          <AccordionSection
+            id="outbound"
+            header={
+              <Heading as="h3" type="title3">
+                <Inline>
+                  Seating for Barcelona
+                  <FlightDirect ariaLabel=" to " />
+                  Boston
+                </Inline>
+              </Heading>
+            }
+          >
+            <SeatMap direction="outbound" />
+          </AccordionSection>
+          <AccordionSection
+            id="inbound"
+            header={
+              <Heading as="h3" type="title3">
+                <Inline>
+                  Seating for Boston
+                  <FlightDirect ariaLabel=" to " />
+                  Barcelona
+                </Inline>
+              </Heading>
+            }
+          >
+            <SeatMap direction="inbound" />
+          </AccordionSection>
+        </Accordion>
+      </OrbitProvider>
     );
   },
   exampleKnobs: [

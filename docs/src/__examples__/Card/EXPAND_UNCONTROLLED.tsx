@@ -1,16 +1,25 @@
 import React from "react";
-import { Card, CardSection, Stack, Text } from "@kiwicom/orbit-components";
+import {
+  Card,
+  CardSection,
+  OrbitProvider,
+  Stack,
+  Text,
+  defaultTheme,
+} from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Card title="Passenger info">
-      <CardSection expandable title="Yasmin Karenth">
-        <Stack direction="column" spacing="XSmall">
-          <Text type="secondary">January 20, 1978</Text>
-          <Text type="secondary">yas.karenth@example.com</Text>
-        </Stack>
-      </CardSection>
-    </Card>
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <Card title="Passenger info">
+        <CardSection expandable title="Yasmin Karenth">
+          <Stack direction="column" spacing="XSmall">
+            <Text type="secondary">January 20, 1978</Text>
+            <Text type="secondary">yas.karenth@example.com</Text>
+          </Stack>
+        </CardSection>
+      </Card>
+    </OrbitProvider>
   ),
   exampleKnobs: [
     {

@@ -11934,6 +11934,74 @@
       "value": "24px"
     }
   },
+  "dialogBorderRadiusDesktop": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "dialog",
+      "variant": "border-radius",
+      "subVariant": "desktop"
+    },
+    "javascript": {
+      "name": "dialogBorderRadiusDesktop",
+      "value": "9px"
+    },
+    "foundation": {
+      "name": "dialogBorderRadiusDesktop",
+      "value": "none"
+    },
+    "scss": {
+      "name": "dialogBorderRadiusDesktop",
+      "value": "9px"
+    }
+  },
+  "dialogBorderRadiusMobile": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "dialog",
+      "variant": "border-radius",
+      "subVariant": "mobile"
+    },
+    "javascript": {
+      "name": "dialogBorderRadiusMobile",
+      "value": "12px"
+    },
+    "foundation": {
+      "name": "dialogBorderRadiusMobile",
+      "value": "none"
+    },
+    "scss": {
+      "name": "dialogBorderRadiusMobile",
+      "value": "12px"
+    }
+  },
+  "dialogWidth": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "dialog",
+      "variant": "width"
+    },
+    "javascript": {
+      "name": "dialogWidth",
+      "value": "540px"
+    },
+    "foundation": {
+      "name": "dialogWidth",
+      "value": "none"
+    },
+    "scss": {
+      "name": "dialogWidth",
+      "value": "540px"
+    }
+  },
   "drawerOverlayBackground": {
     "type": "color",
     "deprecated": false,

@@ -1,8 +1,12 @@
 import React from "react";
-import { InputField } from "@kiwicom/orbit-components";
+import { InputField, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <InputField label="Given names" placeholder="Sofia Cruz" />,
+  Example: () => (
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <InputField label="Given names" placeholder="Sofia Cruz" />
+    </OrbitProvider>
+  ),
   exampleKnobs: [
     {
       component: "InputField",

@@ -1,5 +1,15 @@
 import React from "react";
-import { Button, Heading, Stack, WizardStep, Wizard, Box, Text } from "@kiwicom/orbit-components";
+import {
+  Button,
+  Heading,
+  Stack,
+  WizardStep,
+  Wizard,
+  Box,
+  Text,
+  OrbitProvider,
+  defaultTheme,
+} from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
@@ -43,7 +53,7 @@ export default {
       }
     };
     return (
-      <>
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
         <Wizard
           id="wizard"
           completedSteps={activeStep}
@@ -65,7 +75,7 @@ export default {
             )}
           </Stack>
         </Box>
-      </>
+      </OrbitProvider>
     );
   },
   exampleKnobs: [

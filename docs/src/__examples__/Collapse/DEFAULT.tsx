@@ -1,18 +1,20 @@
 import React from "react";
-import { Collapse, Text, TextLink } from "@kiwicom/orbit-components";
+import { Collapse, OrbitProvider, Text, TextLink, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Collapse label="Principle for collapses">
-      <Text>
-        Collapse components help with{" "}
-        <TextLink external href="https://orbit.kiwi/guides/progressive-disclosure/">
-          progressive disclosure
-        </TextLink>
-        , ensuring users don&apos;t get overwhelmed by too much information or too many choices at
-        once.
-      </Text>
-    </Collapse>
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <Collapse label="Principle for collapses">
+        <Text>
+          Collapse components help with{" "}
+          <TextLink external href="https://orbit.kiwi/guides/progressive-disclosure/">
+            progressive disclosure
+          </TextLink>
+          , ensuring users don&apos;t get overwhelmed by too much information or too many choices at
+          once.
+        </Text>
+      </Collapse>
+    </OrbitProvider>
   ),
   exampleKnobs: [
     {

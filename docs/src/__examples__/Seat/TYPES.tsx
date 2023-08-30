@@ -1,8 +1,12 @@
 import React from "react";
-import { Seat } from "@kiwicom/orbit-components";
+import { OrbitProvider, Seat, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <Seat />,
+  Example: () => (
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <Seat />
+    </OrbitProvider>
+  ),
   exampleVariants: [
     {
       name: "default",

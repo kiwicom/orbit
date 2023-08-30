@@ -1,16 +1,18 @@
 import React from "react";
-import { Textarea } from "@kiwicom/orbit-components";
+import { Textarea, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
     return (
-      <Textarea
-        error="Please enter some feedback"
-        value=""
-        help="Tell us what you liked about your booking experience and what could change."
-        label="Your feedback"
-        placeholder="What I liked about booking with Kiwi.com was ..."
-      />
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+        <Textarea
+          error="Please enter some feedback"
+          value=""
+          help="Tell us what you liked about your booking experience and what could change."
+          label="Your feedback"
+          placeholder="What I liked about booking with Kiwi.com was ..."
+        />
+      </OrbitProvider>
     );
   },
   exampleVariants: [

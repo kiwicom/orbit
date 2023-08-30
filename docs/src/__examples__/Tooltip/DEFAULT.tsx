@@ -1,11 +1,13 @@
 import React from "react";
-import { Button, Text, Tooltip } from "@kiwicom/orbit-components";
+import { Button, OrbitProvider, Text, Tooltip, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Tooltip content={<Text>Select a flight before continuing.</Text>}>
-      <Button>Book</Button>
-    </Tooltip>
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <Tooltip content={<Text>Select a flight before continuing.</Text>}>
+        <Button>Book</Button>
+      </Tooltip>
+    </OrbitProvider>
   ),
   exampleKnobs: [
     {

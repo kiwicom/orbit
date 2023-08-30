@@ -25,7 +25,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const PlaygroundIframe = () => {
-  const { code } = useSandbox("playground", "() => <Button>Hello world!</Button>");
+  const { code } = useSandbox(
+    "playground",
+    "() => <OrbitProvider theme={defaultTheme} useId={React.useId}><Button>Hello world!</Button></OrbitProvider>",
+  );
 
   return (
     <OrbitProvider useId={React.useId} theme={defaultTheme}>
@@ -33,7 +36,11 @@ const PlaygroundIframe = () => {
         {orbit => {
           const { Icons, ...components } = orbit;
           return (
-            <LiveProvider code={code} theme={shadesOfPurple} scope={{ ...Icons, ...components }}>
+            <LiveProvider
+              code={code}
+              theme={shadesOfPurple}
+              scope={{ ...Icons, ...components, defaultTheme }}
+            >
               <LiveError />
               <GlobalStyle />
               <section

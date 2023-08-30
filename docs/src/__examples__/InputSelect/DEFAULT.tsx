@@ -1,5 +1,5 @@
 import React from "react";
-import { InputSelect } from "@kiwicom/orbit-components";
+import { InputSelect, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
@@ -34,11 +34,13 @@ export default {
     ];
 
     return (
-      <InputSelect
-        placeholder="Search currency"
-        options={currencyOptions}
-        emptyState="No results found"
-      />
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+        <InputSelect
+          placeholder="Search currency"
+          options={currencyOptions}
+          emptyState="No results found"
+        />
+      </OrbitProvider>
     );
   },
   exampleKnobs: [

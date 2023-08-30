@@ -9,13 +9,15 @@ import {
   Text,
   TextLink,
   Tooltip,
+  OrbitProvider,
+  defaultTheme,
 } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
     const [showDrawer, setShowDrawer] = React.useState(false);
     return (
-      <>
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
         {showDrawer && (
           <Drawer
             onClose={() => {
@@ -49,7 +51,7 @@ export default {
             </Tooltip>
           </BadgeListItem>
         </BadgeList>
-      </>
+      </OrbitProvider>
     );
   },
 };

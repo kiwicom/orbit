@@ -1,11 +1,19 @@
 import React from "react";
-import { Button, Illustration, Modal, ModalFooter, ModalHeader } from "@kiwicom/orbit-components";
+import {
+  Button,
+  Illustration,
+  Modal,
+  ModalFooter,
+  ModalHeader,
+  OrbitProvider,
+  defaultTheme,
+} from "@kiwicom/orbit-components";
 
 export default {
   Example: () => {
     const [showModal, setShowModal] = React.useState(false);
     return (
-      <>
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
         {showModal && (
           <Modal
             onClose={() => {
@@ -31,7 +39,7 @@ export default {
             Show modal
           </Button>
         )}
-      </>
+      </OrbitProvider>
     );
   },
 };

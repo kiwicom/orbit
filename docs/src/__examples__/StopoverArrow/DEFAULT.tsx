@@ -1,8 +1,12 @@
 import React from "react";
-import { StopoverArrow } from "@kiwicom/orbit-components";
+import { OrbitProvider, StopoverArrow, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <StopoverArrow stops="2" />,
+  Example: () => (
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <StopoverArrow stops="2" />
+    </OrbitProvider>
+  ),
   exampleKnobs: [
     {
       component: "StopoverArrow",

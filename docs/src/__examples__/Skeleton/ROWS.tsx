@@ -1,8 +1,12 @@
 import React from "react";
-import { Skeleton } from "@kiwicom/orbit-components";
+import { Skeleton, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <Skeleton rows={6} rowOffset={30} rowHeight={21} />,
+  Example: () => (
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <Skeleton rows={6} rowOffset={30} rowHeight={21} />
+    </OrbitProvider>
+  ),
   exampleKnobs: [
     {
       component: "Skeleton",

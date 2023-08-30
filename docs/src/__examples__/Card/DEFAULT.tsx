@@ -1,11 +1,13 @@
 import React from "react";
-import { Card, CardSection } from "@kiwicom/orbit-components";
+import { Card, CardSection, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Card title="Passenger info" description="All passengers in this itinerary">
-      <CardSection title="Yasmin Karenth" expandable description="1st class" />
-    </Card>
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <Card title="Passenger info" description="All passengers in this itinerary">
+        <CardSection title="Yasmin Karenth" expandable description="1st class" />
+      </Card>
+    </OrbitProvider>
   ),
   exampleKnobs: [
     {

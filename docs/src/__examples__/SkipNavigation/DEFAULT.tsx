@@ -7,11 +7,13 @@ import {
   TextLink,
   Card,
   CardSection,
+  OrbitProvider,
+  defaultTheme,
 } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <>
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
       <SkipNavigation />
       <Stack>
         <Stack spacing="small">
@@ -57,6 +59,6 @@ export default {
           </Text>
         </Stack>
       </Stack>
-    </>
+    </OrbitProvider>
   ),
 };

@@ -139,11 +139,15 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
-  <RenderInRtl>
-    <Text align="left">Lorem ipsum dolor sit amet</Text>
-  </RenderInRtl>
-);
+export const Rtl = () => {
+  const align = select("Align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.START);
+
+  return (
+    <RenderInRtl>
+      <Text align={align}>Lorem ipsum dolor sit amet</Text>
+    </RenderInRtl>
+  );
+};
 
 Rtl.story = {
   name: "RTL",

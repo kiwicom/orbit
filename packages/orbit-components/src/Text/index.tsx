@@ -26,7 +26,7 @@ const Text = ({
   type = TYPE_OPTIONS.PRIMARY,
   size = SIZE_OPTIONS.NORMAL,
   weight = WEIGHT_OPTIONS.NORMAL,
-  align = ALIGN_OPTIONS.LEFT,
+  align = ALIGN_OPTIONS.START,
   margin,
   as: Component = ELEMENT_OPTIONS.P,
   uppercase,

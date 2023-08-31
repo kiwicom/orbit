@@ -61,7 +61,7 @@ describe("Text", () => {
       "font-family": theme.orbit.fontFamily,
       "font-size": theme.orbit.fontSizeTextNormal,
       "line-height": theme.orbit.lineHeightTextNormal,
-      "text-align": "left",
+      "text-align": "start",
     });
   });
 

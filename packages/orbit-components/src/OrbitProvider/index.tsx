@@ -25,7 +25,7 @@ const OrbitProvider = ({ theme, children, useId }: Props) => {
   return (
     <RandomIdProvider useId={useId}>
       <StyledThemeProvider theme={theme}>
-        <QueryContextProvider>{React.Children.only(children)}</QueryContextProvider>
+        <QueryContextProvider>{children}</QueryContextProvider>
       </StyledThemeProvider>
     </RandomIdProvider>
   );

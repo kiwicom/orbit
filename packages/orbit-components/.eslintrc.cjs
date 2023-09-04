@@ -26,10 +26,11 @@ module.exports = {
         "flowtype/require-valid-file-annotation": ["error", "always"],
       },
     },
+    // TODO: temporary disabled because of the issue: https://github.com/typescript-eslint/typescript-eslint/issues/4608
     {
       files: ["src/**/*.ts?(x)"],
       rules: {
-        "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/consistent-type-imports": "warn",
       },
     },
     {
@@ -71,6 +72,7 @@ module.exports = {
     {
       files: ["src/**/*.test.ts?(x)", "src/test-utils.tsx"],
       rules: {
+        "orbit-components/unique-id": "off",
         "import/no-extraneous-dependencies": [
           "error",
           {

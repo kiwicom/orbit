@@ -1,14 +1,19 @@
-import { RuleTester } from "eslint";
+import { RuleTester } from "@typescript-eslint/rule-tester";
+import path from "path";
+import filedirname from "filedirname";
+
+const [_, __dirname] = filedirname();
 
 const ruleTester = new RuleTester({
-  parser: require.resolve("@babel/eslint-parser"),
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2020,
-    babelOptions: {
-      configFile: require.resolve("../babel.config.cjs"),
-      presets: ["@babel/preset-react", "@babel/preset-env"],
+    ecmaFeatures: {
+      jsx: true,
     },
+    tsconfigRootDir: path.resolve(__dirname, "__fixtures__"),
+    project: path.resolve(__dirname, "..", "tsconfig.json"),
   },
 });
 

@@ -1,12 +1,12 @@
 import React from "react";
 import { select, text } from "@storybook/addon-knobs";
 
-// @ts-expect-error TODO
 import { NAMES } from "./consts.mts";
 import { allModes } from "../../.storybook/modes";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
+import type { Name } from "./types";
 
 import AirportIllustration from ".";
 
@@ -16,7 +16,7 @@ export default {
 
 export const Playground = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const name = select("Name", NAMES, "BGYFastTrack");
+  const name = select("Name", NAMES, "BGYFastTrack") as Name;
   const dataTest = text("dataTest", "test");
   const alt = text("alt", "null");
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);

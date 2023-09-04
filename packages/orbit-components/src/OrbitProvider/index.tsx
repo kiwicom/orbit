@@ -36,6 +36,7 @@ const getCssVarsForWL = (theme: typeof defaultTokens) =>
 const OrbitProvider = ({ theme, children, useId }: Props) => {
   return (
     <RandomIdProvider useId={useId}>
+      {/* eslint-disable-next-line orbit-components/unique-id */}
       <style id="orbit-theme-css-vars">
         {tokensToCssVars({ tokens: getCssVarsForWL(theme.orbit), cssClass: ":root" })}
       </style>

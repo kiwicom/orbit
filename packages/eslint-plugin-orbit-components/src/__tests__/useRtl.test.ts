@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import useRtl, { ERROR_RTL_SPACING, ERROR_BORDER_RADIUS, errorBasic } from "../rules/useRtl";
+import useRtl from "../rules/useRtl";
 
 describe("use-rtl", () => {
   ruleTester.run("use-rtl", useRtl, {
@@ -101,7 +101,7 @@ describe("use-rtl", () => {
               margin: 10px 15px 0 10px;
             \`
           `,
-        errors: [ERROR_RTL_SPACING],
+        errors: [{ messageId: "ERROR_RTL_SPACING" }],
       },
       {
         code: `
@@ -111,7 +111,7 @@ describe("use-rtl", () => {
               margin: 10px 15px 0 10px;
             \`
           `,
-        errors: [ERROR_RTL_SPACING],
+        errors: [{ messageId: "ERROR_RTL_SPACING" }],
       },
       {
         code: `
@@ -121,7 +121,7 @@ describe("use-rtl", () => {
             padding: 0 15px 3px 5px;
           \`
         `,
-        errors: [ERROR_RTL_SPACING],
+        errors: [{ messageId: "ERROR_RTL_SPACING" }],
       },
       {
         code: `
@@ -131,7 +131,7 @@ describe("use-rtl", () => {
             border-radius: 3px 5px 4px 5px;
           \`
         `,
-        errors: [ERROR_BORDER_RADIUS],
+        errors: [{ messageId: "ERROR_BORDER_RADIUS" }],
       },
       {
         code: `
@@ -141,7 +141,7 @@ describe("use-rtl", () => {
             border-radius: 3px 3px 4px 5px;
           \`
         `,
-        errors: [ERROR_BORDER_RADIUS],
+        errors: [{ messageId: "ERROR_BORDER_RADIUS" }],
       },
       {
         code: `
@@ -151,7 +151,7 @@ describe("use-rtl", () => {
             text-align: left;
           \`
         `,
-        errors: [errorBasic],
+        errors: [{ messageId: "errorBasic" }],
       },
       {
         code: `
@@ -161,7 +161,7 @@ describe("use-rtl", () => {
             right: 0;
           \`
         `,
-        errors: [errorBasic],
+        errors: [{ messageId: "errorBasic" }],
       },
       {
         code: `
@@ -171,7 +171,7 @@ describe("use-rtl", () => {
             left: 0;
           \`
         `,
-        errors: [errorBasic],
+        errors: [{ messageId: "errorBasic" }],
       },
       {
         code: `
@@ -181,7 +181,7 @@ describe("use-rtl", () => {
             transform: translate3d("400px, 0, 0");
           \`
         `,
-        errors: [errorBasic],
+        errors: [{ messageId: "errorBasic" }],
       },
     ],
   });

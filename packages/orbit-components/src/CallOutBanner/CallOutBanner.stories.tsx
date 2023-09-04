@@ -4,7 +4,6 @@ import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Illustration from "../Illustration";
-// @ts-expect-error currently can't resolve mts properly
 import { NAMES } from "../Illustration/consts.mts";
 import Button from "../Button";
 import List from "../List";

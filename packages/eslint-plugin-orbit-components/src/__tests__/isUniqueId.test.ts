@@ -24,8 +24,12 @@ describe("unique id", () => {
           </svg>
         )`,
         errors: [
-          `id="1", do not use literal value as ID, you should use randomID utility function`,
-          `id="2", do not use literal value as ID, you should use randomID utility function`,
+          {
+            messageId: "error",
+          },
+          {
+            messageId: "error",
+          },
         ],
       },
     ],

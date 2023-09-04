@@ -1,33 +1,43 @@
-import { Rule } from "eslint";
-import * as t from "@babel/types";
+import { AST_NODE_TYPES, TSESTree as t } from "@typescript-eslint/utils";
 
-const uniqueId: Rule.RuleModule = {
+import ruleCreator from "../utils/ruleCreator";
+
+const uniqueId = ruleCreator({
+  name: "unique-id",
   meta: {
     type: "problem",
     docs: {
       description: "Prevents id namespace collisions",
-      category: "Possible Errors",
-      recommended: true,
     },
+    messages: {
+      error: `{{ name }}="{{ value }}", do not use literal value as ID, you should use randomID utility function`,
+    },
+    schema: [],
   },
+  defaultOptions: [],
 
-  // @ts-expect-error node
-  create: (context: Rule.RuleContext) => {
+  create: context => {
     return {
       JSXAttribute(node: t.JSXAttribute) {
         if (node.value) {
-          if (node.name.name === "id" && !t.isJSXExpressionContainer(node.value)) {
+          if (
+            node.name.name === "id" &&
+            node.value.type !== AST_NODE_TYPES.JSXExpressionContainer &&
+            node.value.type !== AST_NODE_TYPES.JSXSpreadChild
+          ) {
             context.report({
-              // @ts-expect-error node
               node,
-              // @ts-expect-error node
-              message: `${node.name.name}="${node.value.value}", do not use literal value as ID, you should use randomID utility function`,
+              messageId: "error",
+              data: {
+                name: node.name.name,
+                value: node.value.value,
+              },
             });
           }
         }
       },
     };
   },
-};
+});
 
 export default uniqueId;

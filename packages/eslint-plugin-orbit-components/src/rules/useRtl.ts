@@ -1,5 +1,6 @@
-import * as t from "@babel/types";
-import { Rule } from "eslint";
+import { TSESTree as t } from "@typescript-eslint/utils";
+
+import ruleCreator from "../utils/ruleCreator";
 
 export const ERROR_RTL_SPACING =
   "Use Orbit's rtlSpacing utility because values for right and left edges are different. https://orbit.kiwi/utilities/right-to-left-languages/#rtlspacing";
@@ -10,7 +11,7 @@ export const ERROR_BORDER_RADIUS =
 export const errorBasic =
   "Values for right and left edges are different. Use Orbit's rtl utility. https://orbit.kiwi/utilities/right-to-left-languages";
 
-const parseVals = str =>
+const parseVals = (str: string) =>
   str
     .trim()
     .split(" ")
@@ -45,18 +46,24 @@ const borderRadiusCheck = (str: string) => {
   return undefined;
 };
 
-const useRtl: Rule.RuleModule = {
+const useRtl = ruleCreator({
+  name: "use-rtl",
   meta: {
     type: "problem",
+    deprecated: true,
     docs: {
       description: "Checks if the static literal values require RTL function",
-      category: "Possible Errors",
-      recommended: true,
     },
+    messages: {
+      ERROR_RTL_SPACING,
+      ERROR_BORDER_RADIUS,
+      errorBasic,
+    },
+    schema: [],
   },
+  defaultOptions: [],
 
-  // @ts-expect-error TODO
-  create: (context: Rule.RuleContext) => {
+  create: context => {
     const basic = [
       "right",
       "left",
@@ -84,9 +91,8 @@ const useRtl: Rule.RuleModule = {
             if (prop === "margin" || prop === "padding") {
               if (rtlSpacingCheck(value)) {
                 context.report({
-                  // @ts-expect-error todo
                   node,
-                  message: ERROR_RTL_SPACING,
+                  messageId: "ERROR_RTL_SPACING",
                 });
               }
             }
@@ -94,26 +100,23 @@ const useRtl: Rule.RuleModule = {
             if (prop === "border-radius") {
               if (borderRadiusCheck(value)) {
                 context.report({
-                  // @ts-expect-error todo
                   node,
-                  message: ERROR_BORDER_RADIUS,
+                  messageId: "ERROR_BORDER_RADIUS",
                 });
               }
             }
 
             if (prop === "transform" && value.match(/translate3d/)) {
               context.report({
-                // @ts-expect-error todo
                 node,
-                message: errorBasic,
+                messageId: "errorBasic",
               });
             }
 
             if (basic.includes(prop) && value) {
               context.report({
-                // @ts-expect-error todo
                 node,
-                message: errorBasic,
+                messageId: "errorBasic",
               });
             }
           });
@@ -121,6 +124,6 @@ const useRtl: Rule.RuleModule = {
       },
     };
   },
-};
+});
 
 export default useRtl;

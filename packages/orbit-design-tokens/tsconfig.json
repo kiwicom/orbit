@@ -7,7 +7,8 @@
     "allowJs": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "ignoreDeprecations": "5.0"
   },
   "include": ["src/**/*.ts", "scripts/**/*.ts"],
   "exclude": ["src/__tests__/**/*", "node_modules"]

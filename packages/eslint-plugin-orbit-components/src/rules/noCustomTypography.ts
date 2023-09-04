@@ -1,18 +1,25 @@
-import * as t from "@babel/types";
-import type { Rule } from "eslint";
+import { TSESTree as t } from "@typescript-eslint/utils";
 
-export default {
+import ruleCreator from "../utils/ruleCreator";
+
+export default ruleCreator({
+  name: "no-custom-typography",
   meta: {
     type: "suggestion",
+    deprecated: true,
     docs: {
       description:
         "The aim of this rule is to prevent usage of custom values for font-size, font-family and line-height CSS properties. Only some of design tokens from @kiwicom/orbit-design-tokens should be used as value.",
-      category: "Possible Errors",
-      recommended: true,
     },
+    messages: {
+      error:
+        "The value {{value}} used for CSS property {{property}} should be replaced with an existing design token. Check orbit.kiwi/design-tokens to find which token you might use.",
+    },
+    schema: [],
   },
+  defaultOptions: [],
 
-  create: (context: Rule.RuleContext) => {
+  create: context => {
     const ALLOWED_PROPS = ["font-size", "font-family", "line-height"];
     const ALLOWED_VALUES = ["inherit", "initial", "unset"];
 
@@ -31,11 +38,12 @@ export default {
           properties.forEach(p => {
             if (p[1] && !ALLOWED_VALUES.includes(p[1].trim())) {
               context.report({
-                // @ts-expect-error TODO
                 node,
-                message: `The value ${p[1].trim()} used for CSS property ${
-                  p[0]
-                } should be replaced with an existing design token. Check orbit.kiwi/design-tokens to find which token you might use.`,
+                messageId: "error",
+                data: {
+                  value: p[1].trim(),
+                  property: p[0].trim(),
+                },
               });
             }
           });
@@ -43,4 +51,4 @@ export default {
       },
     };
   },
-};
+});

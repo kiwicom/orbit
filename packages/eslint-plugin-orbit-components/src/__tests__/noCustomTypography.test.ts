@@ -2,7 +2,6 @@ import ruleTester from "../ruleTester";
 import noCustomTypography from "../rules/noCustomTypography";
 
 describe("no-custom-typography", () => {
-  // @ts-expect-error TODO
   ruleTester.run("no-custom-typography", noCustomTypography, {
     valid: [
       {
@@ -40,11 +39,7 @@ describe("no-custom-typography", () => {
               line-height: 1.2;
               \`
           `,
-        errors: [
-          "The value 16px used for CSS property font-size should be replaced with an existing design token. Check orbit.kiwi/design-tokens to find which token you might use.",
-          "The value 'Roboto', sans-serif used for CSS property font-family should be replaced with an existing design token. Check orbit.kiwi/design-tokens to find which token you might use.",
-          "The value 1.2 used for CSS property line-height should be replaced with an existing design token. Check orbit.kiwi/design-tokens to find which token you might use.",
-        ],
+        errors: [{ messageId: "error" }, { messageId: "error" }, { messageId: "error" }],
       },
       {
         code: `
@@ -54,10 +49,7 @@ describe("no-custom-typography", () => {
               line-height: 1.2;
               \`
           `,
-        errors: [
-          "The value 'Roboto', sans-serif used for CSS property font-family should be replaced with an existing design token. Check orbit.kiwi/design-tokens to find which token you might use.",
-          "The value 1.2 used for CSS property line-height should be replaced with an existing design token. Check orbit.kiwi/design-tokens to find which token you might use.",
-        ],
+        errors: [{ messageId: "error" }, { messageId: "error" }],
       },
     ],
   });

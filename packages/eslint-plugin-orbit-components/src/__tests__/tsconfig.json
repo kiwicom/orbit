@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "strict": true,
-    "module": "ESNext",
-    "noEmit": true,
-    "moduleResolution": "node"
-  },
-  "include": ["*.test.ts", "../__fixtures__"]
-}

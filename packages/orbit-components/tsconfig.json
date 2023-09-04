@@ -6,7 +6,10 @@
     "skipLibCheck": true,
     "noEmit": true,
     "moduleResolution": "node",
-    "importsNotUsedAsValues": "error"
+    // use verbatimModuleSyntax instead, but after enforcing ESM as default
+    "allowImportingTsExtensions": true,
+    "importsNotUsedAsValues": "error",
+    "ignoreDeprecations": "5.0"
   },
-  "include": ["src/**/*", "css-prop.d.ts", "typings/**/*.d.ts"]
+  "include": ["src/**/*", "css-prop.d.ts", "typings/**/*.d.ts", "config/**/*"]
 }

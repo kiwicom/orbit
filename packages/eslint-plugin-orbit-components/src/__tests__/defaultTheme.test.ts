@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import defaultTheme, { ERRORS } from "../rules/defaultTheme";
+import defaultTheme from "../rules/defaultTheme";
 
 describe("defaultTheme", () => {
   ruleTester.run("defaultTheme", defaultTheme, {
@@ -58,7 +58,11 @@ describe("defaultTheme", () => {
             content: getContentPerStatus(activeStatus, true),
           }
         `,
-        errors: [ERRORS.variableDeclaration],
+        errors: [
+          {
+            messageId: "variableDeclaration",
+          },
+        ],
       },
       {
         code: `
@@ -68,11 +72,19 @@ describe("defaultTheme", () => {
             color: $\{defaultTheme.orbit.paletteProductNormal};
           \`
         `,
-        errors: [ERRORS.styled],
+        errors: [
+          {
+            messageId: "styled",
+          },
+        ],
       },
       {
         code: `import theme from "@kiwicom/orbit-components/lib/defaultTheme";`,
-        errors: [ERRORS.import],
+        errors: [
+          {
+            messageId: "import",
+          },
+        ],
       },
       {
         code: `
@@ -86,7 +98,11 @@ describe("defaultTheme", () => {
             spaceMedium,
           } = defaultTheme.orbit;
         `,
-        errors: [ERRORS.destructured],
+        errors: [
+          {
+            messageId: "destructured",
+          },
+        ],
       },
     ],
   });

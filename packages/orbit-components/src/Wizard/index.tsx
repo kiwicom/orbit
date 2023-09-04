@@ -99,7 +99,7 @@ const Wizard = ({
           }}
         >
           <Stack as="span" inline>
-            <b>{labelProgress}</b>
+            {typeof labelProgress !== "undefined" && <b>{labelProgress}</b>}
             <span
               css={css`
                 font-weight: normal;

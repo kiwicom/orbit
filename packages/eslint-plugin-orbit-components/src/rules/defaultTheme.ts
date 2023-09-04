@@ -1,5 +1,6 @@
-import * as t from "@babel/types";
-import { Rule } from "eslint";
+import { TSESTree as t, AST_NODE_TYPES } from "@typescript-eslint/utils";
+
+import ruleCreator from "../utils/ruleCreator";
 
 export const ERRORS = {
   variableDeclaration: "Do not use defaultTheme as value, use useTheme() hook or ThemeConsumer",
@@ -9,32 +10,33 @@ export const ERRORS = {
   destructured: "Do not destructured defaultTheme, use useTheme() hook or ThemeConsumer",
 };
 
-const defaultThemeRule: Rule.RuleModule = {
+const defaultThemeRule = ruleCreator({
+  name: "default-theme",
   meta: {
     type: "problem",
+    deprecated: true,
     docs: {
       description: "Rule helps to avoid bad patterns of defaultTheme usage",
-      category: "Possible errors",
-      recommended: true,
     },
+    messages: ERRORS,
+    schema: [],
   },
+  defaultOptions: [],
 
-  // @ts-expect-error todo
-  create: (context: Rule.RuleContext) => {
+  create: context => {
     let specifier = "";
 
     return {
       ImportDeclaration(node: t.ImportDeclaration) {
         if (node.source.value === "@kiwicom/orbit-components/lib/defaultTheme") {
           node.specifiers.forEach(s => {
-            if (t.isImportDefaultSpecifier(s)) {
+            if (s.type === AST_NODE_TYPES.ImportDefaultSpecifier) {
               if (s.local.name === "theme") {
                 context.report({
-                  // @ts-expect-error TODO
                   node,
-                  message: ERRORS.import,
+                  messageId: "import",
                 });
-              } else if (t.isImportDefaultSpecifier(s)) {
+              } else if (s.type === AST_NODE_TYPES.ImportDefaultSpecifier) {
                 specifier = s.local.name;
               }
             }
@@ -52,20 +54,19 @@ const defaultThemeRule: Rule.RuleModule = {
 
       VariableDeclaration(node: t.VariableDeclaration) {
         node.declarations.forEach(n => {
-          if (t.isVariableDeclarator(n)) {
-            if (t.isObjectExpression(n.init)) {
+          if (n.type === AST_NODE_TYPES.VariableDeclarator && n.init != null) {
+            if (n.init.type === AST_NODE_TYPES.ObjectExpression) {
               n.init.properties.forEach(p => {
-                if (t.isProperty(p)) {
-                  if (t.isMemberExpression(p.value)) {
+                if (p.type === AST_NODE_TYPES.Property && p.value != null) {
+                  if (p.value.type === AST_NODE_TYPES.MemberExpression) {
                     if (
-                      t.isMemberExpression(p.value.object) &&
-                      t.isIdentifier(p.value.object.object)
+                      p.value.object.type === AST_NODE_TYPES.MemberExpression &&
+                      p.value.object.object.type === AST_NODE_TYPES.Identifier
                     ) {
                       if (specifier === p.value.object.object.name) {
                         context.report({
-                          // @ts-expect-error TODO
                           node: p,
-                          message: ERRORS.variableDeclaration,
+                          messageId: "variableDeclaration",
                         });
                       }
                     }
@@ -85,13 +86,15 @@ const defaultThemeRule: Rule.RuleModule = {
                 } = defaultTheme.orbit;
              */
 
-            if (t.isMemberExpression(n.init) && t.isObjectPattern(n.id)) {
-              if (t.isIdentifier(n.init.object)) {
+            if (
+              n.init.type === AST_NODE_TYPES.MemberExpression &&
+              n.id.type === AST_NODE_TYPES.ObjectPattern
+            ) {
+              if (n.init.object.type === AST_NODE_TYPES.Identifier) {
                 if (specifier === n.init.object.name) {
                   context.report({
-                    // @ts-expect-error TODO
                     node,
-                    message: ERRORS.destructured,
+                    messageId: "destructured",
                   });
                 }
               }
@@ -109,13 +112,15 @@ const defaultThemeRule: Rule.RuleModule = {
 
       TemplateLiteral(node: t.TemplateLiteral) {
         node.expressions.forEach(exp => {
-          if (t.isMemberExpression(exp)) {
-            if (t.isMemberExpression(exp.object) && t.isIdentifier(exp.object.object)) {
+          if (exp.type === AST_NODE_TYPES.MemberExpression) {
+            if (
+              exp.object.type === AST_NODE_TYPES.MemberExpression &&
+              exp.object.object.type === AST_NODE_TYPES.Identifier
+            ) {
               if (specifier === exp.object.object.name) {
                 context.report({
-                  // @ts-expect-error TODO
                   node: exp,
-                  message: ERRORS.styled,
+                  messageId: "styled",
                 });
               }
             }
@@ -124,6 +129,6 @@ const defaultThemeRule: Rule.RuleModule = {
       },
     };
   },
-};
+});
 
 export default defaultThemeRule;

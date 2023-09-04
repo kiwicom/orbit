@@ -5,7 +5,6 @@ import { action } from "@storybook/addon-actions";
 import Button from "../Button";
 import ButtonLink from "../ButtonLink";
 import Illustration from "../Illustration";
-// @ts-expect-error currently can't resolve properly mts
 import { NAMES } from "../Illustration/consts.mts";
 
 import Dialog from ".";

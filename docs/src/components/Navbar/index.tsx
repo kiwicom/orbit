@@ -223,7 +223,6 @@ const Navbar = ({ location, docNavigation }: Props) => {
                                     role="tab"
                                     aria-selected={activeTab === "navigation"}
                                     aria-controls="navbar-tabpanel-navigation"
-                                    id="navbar-tab-navigation"
                                     type="button"
                                     onClick={() => setActiveTab("navigation")}
                                   >
@@ -233,7 +232,6 @@ const Navbar = ({ location, docNavigation }: Props) => {
                                     role="tab"
                                     aria-selected={activeTab === "bookmarks"}
                                     aria-controls="navbar-tabpanel-bookmarks"
-                                    id="navbar-tab-bookmarks"
                                     type="button"
                                     onClick={() => setActiveTab("bookmarks")}
                                   >
@@ -276,7 +274,6 @@ const Navbar = ({ location, docNavigation }: Props) => {
                             <div
                               tabIndex={0}
                               role="tabpanel"
-                              id="navbar-tabpanel-navigation"
                               aria-labelledby="navbar-tab-navigation"
                             >
                               {docNavigation}

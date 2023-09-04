@@ -2,7 +2,6 @@ import ruleTester from "../ruleTester";
 import noCustomColors from "../rules/noCustomColors";
 
 describe("no-custom-colors", () => {
-  // @ts-expect-error TODO
   ruleTester.run("no-custom-colors", noCustomColors, {
     valid: [
       {
@@ -22,10 +21,7 @@ describe("no-custom-colors", () => {
               background: #808080;
               \`
           `,
-        errors: [
-          "color should be replaced with Orbit design token",
-          "background should be replaced with Orbit design token",
-        ],
+        errors: [{ messageId: "replace" }, { messageId: "replace" }],
       },
     ],
   });

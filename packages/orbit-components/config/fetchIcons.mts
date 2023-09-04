@@ -41,6 +41,10 @@ interface FigmaComponents {
   i18n: null;
 }
 
+interface Images {
+  images: Record<string, string>;
+}
+
 const FILTERED_FRAMES = ["All icons", "Social Colored", "Social", "Navigation icons"];
 const ICONS_ID = "wjYAT0sNBXtirEoyKgXUwr";
 const FIGMA_FILE_URI = `https://api.figma.com/v1/files/${ICONS_ID}`;
@@ -69,7 +73,8 @@ const getId = (str: string) => {
 };
 // helper functions
 const isCorrectSize = (name: string) => {
-  const size = argv.size || "normal";
+  const argvSize = argv.size as string;
+  const size = argvSize || "normal";
   return name === `size=${size}`;
 };
 
@@ -81,11 +86,12 @@ try {
     path: `${process.cwd()}/../../.env`,
   });
 } catch (err) {
-  if (err.missing.includes("FIGMA_TOKEN")) {
+  const errorObj = err as { missing: string[] };
+  if (errorObj.missing.includes("FIGMA_TOKEN")) {
     throw new Error(
       dedent`
         Figma token is missing in the .env file:
-        ${err.missing.join("\n")}
+        ${errorObj.missing.join("\n")}
         You can generate one in your Figma account settings
       `,
     );
@@ -176,7 +182,7 @@ async function saveOrbitIcons(data: { name: string; svg: string; id: string }[])
   }
 }
 
-const fetchOrbitIcons = async () => {
+(async () => {
   try {
     $.verbose = false;
     const filesSpinner = ora(chalk.bold.underline.magenta("Fetching file ids...")).start();
@@ -211,16 +217,15 @@ const fetchOrbitIcons = async () => {
         chalk.bold.underline.magenta("Fetching and savings svgs..."),
       ).start();
 
-      const { images } = await api<{ images: Record<string, string> }>(
-        `${FIGMA_IMAGE_URI}?${params.toString()}`,
-      );
+      const { images } = await api<Images>(`${FIGMA_IMAGE_URI}?${params.toString()}`);
 
       await Promise.all(
         Object.keys(images).map(id =>
           fetch(images[id]).then(async res => {
+            const nodeId = nodes[id] as string;
             return {
               id,
-              name: nodes[id].toLowerCase().replace(/\+kg/, "").replace(/\s+/g, "-"),
+              name: nodeId.toLowerCase().replace(/\+kg/, "").replace(/\s+/g, "-"),
               svg: await res.text(),
             };
           }),
@@ -251,6 +256,4 @@ const fetchOrbitIcons = async () => {
   } catch (err) {
     console.error(err);
   }
-};
-
-fetchOrbitIcons();
+})();

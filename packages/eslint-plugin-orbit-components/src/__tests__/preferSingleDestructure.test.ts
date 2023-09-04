@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import preferSingleDestructure, { ERROR } from "../rules/preferSingleDestructure";
+import preferSingleDestructure from "../rules/preferSingleDestructure";
 
 describe("prefer-single-destructure", () => {
   ruleTester.run("prefer-single-destructure", preferSingleDestructure, {
@@ -33,7 +33,11 @@ describe("prefer-single-destructure", () => {
             font-family: \${({theme}) => theme.orbit.fontFamily};
           \`
       `,
-        errors: [ERROR],
+        errors: [
+          {
+            messageId: "error",
+          },
+        ],
       },
     ],
   });

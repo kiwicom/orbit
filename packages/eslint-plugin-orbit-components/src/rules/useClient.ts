@@ -1,4 +1,5 @@
-import { AST_NODE_TYPES, TSESTree as t, TSESLint } from "@typescript-eslint/utils";
+import { AST_NODE_TYPES, TSESTree as t } from "@typescript-eslint/utils";
+
 import ruleCreator from "../utils/ruleCreator";
 
 const useClient = ruleCreator({

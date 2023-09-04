@@ -1,17 +1,23 @@
-import * as t from "@babel/types";
-import { Rule } from "eslint";
+import { TSESTree as t } from "@typescript-eslint/utils";
 
-export default {
+import ruleCreator from "../utils/ruleCreator";
+
+export default ruleCreator({
+  name: "no-custom-colors",
   meta: {
     type: "suggestion",
+    deprecated: true,
     docs: {
       description: "Prevents inconsistencies between Orbit and custom written colors",
-      category: "Possible Errors",
-      recommended: true,
     },
+    messages: {
+      replace: "{{name}} should be replaced with Orbit design token",
+    },
+    schema: [],
   },
+  defaultOptions: [],
 
-  create: (context: Rule.RuleContext) => {
+  create: context => {
     const allowed = ["background", "background-color", "color"];
 
     return {
@@ -29,9 +35,11 @@ export default {
           properties.forEach(p => {
             if (p[1]) {
               context.report({
-                // @ts-expect-error TODO
                 node,
-                message: `${p[0]} should be replaced with Orbit design token`,
+                messageId: "replace",
+                data: {
+                  name: p[0].trim(),
+                },
               });
             }
           });
@@ -39,4 +47,4 @@ export default {
       },
     };
   },
-};
+});

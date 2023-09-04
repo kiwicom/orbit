@@ -1,4 +1,5 @@
 import dedent from "dedent";
+
 import ruleTester from "../ruleTester";
 import useClient from "../rules/useClient";
 

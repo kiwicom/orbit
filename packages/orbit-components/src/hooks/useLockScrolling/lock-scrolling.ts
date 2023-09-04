@@ -20,7 +20,6 @@ interface Lock {
 let hasPassiveEvents = false;
 if (typeof window !== "undefined") {
   const passiveTestOptions = {
-    // @ts-expect-error TODO
     get passive() {
       hasPassiveEvents = true;
       return undefined;

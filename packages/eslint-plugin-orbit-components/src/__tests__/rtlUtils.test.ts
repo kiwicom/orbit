@@ -1,5 +1,5 @@
 import ruleTester from "../ruleTester";
-import rtlUtils, { RightOrLeftError, SpacingError } from "../rules/rtlUtils";
+import rtlUtils from "../rules/rtlUtils";
 
 describe("rtl-utils", () => {
   ruleTester.run("rtl-utils", rtlUtils, {
@@ -69,7 +69,11 @@ describe("rtl-utils", () => {
             \`)};
           \`
           `,
-        errors: [RightOrLeftError],
+        errors: [
+          {
+            messageId: "RightOrLeftError",
+          },
+        ],
       },
       {
         code: `
@@ -78,7 +82,11 @@ describe("rtl-utils", () => {
             \${({ theme }) => (theme.rtl ? "margin-right:" : "margin-left:")} 7px;
           \`
           `,
-        errors: [RightOrLeftError],
+        errors: [
+          {
+            messageId: "RightOrLeftError",
+          },
+        ],
       },
       {
         code: `
@@ -87,7 +95,11 @@ describe("rtl-utils", () => {
             \${({ theme }) => (theme.rtl ? "padding-right:" : "padding-left:")} 10px;
           \`
           `,
-        errors: [RightOrLeftError],
+        errors: [
+          {
+            messageId: "RightOrLeftError",
+          },
+        ],
       },
       {
         code: `
@@ -96,7 +108,11 @@ describe("rtl-utils", () => {
               padding: \${({ theme }) => (theme.rtl ? "0 10px 0 0" : \`\${theme.orbit.spaceLarge} 0 0 0\`)};
           \`
           `,
-        errors: [SpacingError],
+        errors: [
+          {
+            messageId: "SpacingError",
+          },
+        ],
       },
       {
         code: `
@@ -106,7 +122,11 @@ describe("rtl-utils", () => {
               padding: \${({ theme }) => theme.rtl ? \`\${theme.orbit.spaceXLarge} 0 0 0px\` : "0 0 10px 0"};
             \`;
           `,
-        errors: [SpacingError],
+        errors: [
+          {
+            messageId: "SpacingError",
+          },
+        ],
       },
     ],
   });

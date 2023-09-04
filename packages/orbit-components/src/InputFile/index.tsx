@@ -54,7 +54,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
   const shown = tooltipShown || tooltipShownHover;
 
-  const onClick = e => {
+  const onClick = (e: React.MouseEvent<HTMLLabelElement>) => {
     if (iconRef && iconRef.current && iconRef.current.contains(e.target as Node)) {
       e.preventDefault();
       e.stopPropagation();

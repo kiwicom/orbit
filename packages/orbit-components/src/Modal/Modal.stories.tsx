@@ -6,7 +6,6 @@ import Button from "../Button";
 import { SIZES } from "./consts";
 import Illustration from "../Illustration";
 import Text from "../Text";
-// @ts-expect-error currently not resolving mts properly
 import { NAMES } from "../Illustration/consts.mts";
 import ChevronBackward from "../icons/ChevronBackward";
 import FlightDirect from "../icons/FlightDirect";

@@ -5,6 +5,7 @@ const CONFIGS = [
   "plugin:react-hooks/recommended",
   "plugin:prettier/recommended",
   "plugin:tailwindcss/recommended",
+  "plugin:orbit-components/internal",
 ];
 
 module.exports = {
@@ -48,6 +49,8 @@ module.exports = {
     "no-await-in-loop": "off",
     "tailwindcss/classnames-order": "off",
     "tailwindcss/no-custom-classname": [1, { whitelist: ["(orbit\\-).*", "chromatic-ignore"] }],
+    // to improve performance locally
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#my-linting-feels-really-slow
     ...(!process.env.CI
       ? {
           "import/no-named-as-default": "off",
@@ -72,9 +75,12 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "prettier",
       ],
+      plugins: ["@typescript-eslint"],
+      parser: "@typescript-eslint/parser",
       parserOptions: {
         extraFileExtensions: [".mts"],
         tsconfigRootDir: __dirname,
+        // https://typescript-eslint.io/linting/typed-linting/
         project: [
           "./tsconfig.scripts.json",
           "./tsconfig.json",
@@ -98,7 +104,13 @@ module.exports = {
         "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/no-unsafe-argument": "warn",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-duplicate-enum-values": "warn",
         "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": [
           "error",

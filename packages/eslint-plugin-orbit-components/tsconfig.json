@@ -2,10 +2,14 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist",
+    "module": "esnext",
     "noEmit": true,
-    "moduleResolution": "node"
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["**/*.test.ts"]
+    "paths": {
+      // fix the path to utils module to prevent build from failing
+      "@typescript-eslint/utils": [
+        "../../node_modules/@typescript-eslint/utils/dist/ts-eslint/Rule.js"
+      ]
+    },
+    "moduleResolution": "bundler"
+  }
 }

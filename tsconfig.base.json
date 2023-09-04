@@ -7,7 +7,8 @@
     "resolveJsonModule": true,
     "noImplicitAny": false,
     "useUnknownInCatchVariables": false,
-    "types": ["node", "jest", "jest-styled-components", "@testing-library/jest-dom"]
+    "types": ["node", "jest", "jest-styled-components", "@testing-library/jest-dom"],
+    "ignoreDeprecations": "5.0"
   },
   "ts-node": {
     "compilerOptions": {

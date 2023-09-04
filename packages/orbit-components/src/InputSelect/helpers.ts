@@ -1,13 +1,15 @@
 import type { Option } from "./types";
 
+interface Groups {
+  groups: Record<string, Option[]>;
+  ungrouped: Option[];
+}
+
 function separateGroupedAndUngrouped(options: Option[]): {
   grouped: Option[][];
   ungrouped: Option[];
 } {
-  const { groups, ungrouped } = options.reduce<{
-    groups: { [group: string]: Option[] };
-    ungrouped: Option[];
-  }>(
+  const { groups, ungrouped } = options.reduce<Groups>(
     (acc, option) => {
       const { group } = option;
 

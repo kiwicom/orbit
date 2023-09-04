@@ -4,7 +4,6 @@ import { text, boolean, select, number, object } from "@storybook/addon-knobs";
 
 import * as Icons from "../../icons";
 import { TYPE_OPTIONS, INPUTMODE } from "../../InputField/consts";
-// @ts-expect-error TODO
 import { NAME_OPTIONS } from "../../ServiceLogo/consts.mts";
 import ButtonLink from "../../ButtonLink";
 import TextLink from "../../TextLink";

@@ -2,7 +2,6 @@ import ruleTester from "../ruleTester";
 import buttonHasTitle from "../rules/buttonHasTitle";
 
 describe("Button has title", () => {
-  // @ts-expect-error TODO
   ruleTester.run("button-has-title", buttonHasTitle, {
     valid: [
       {
@@ -48,30 +47,22 @@ describe("Button has title", () => {
       {
         code: `import Button from "@kiwicom/orbit-components/lib/Button";\
                const App = () => <Button iconLeft="something" />`,
-        errors: [
-          "Button doesn't have children. Please provide title property to add aria-label, so it's accessible for screen readers.",
-        ],
+        errors: [{ messageId: "error" }],
       },
       {
         code: `import { Button as OrbitButton } from "@kiwicom/orbit-components/";\
                const App = () => <OrbitButton fullWidth />`,
-        errors: [
-          "OrbitButton doesn't have children. Please provide title property to add aria-label, so it's accessible for screen readers.",
-        ],
+        errors: [{ messageId: "error" }],
       },
       {
         code: `import ButtonLink from "@kiwicom/orbit-components/lib/ButtonLink";\
                const App = () => <ButtonLink iconLeft="something" />`,
-        errors: [
-          "ButtonLink doesn't have children. Please provide title property to add aria-label, so it's accessible for screen readers.",
-        ],
+        errors: [{ messageId: "error" }],
       },
       {
         code: `import { ButtonLink as OrbitButtonLink } from "@kiwicom/orbit-components/";\
                const App = () => <OrbitButtonLink fullWidth />`,
-        errors: [
-          "OrbitButtonLink doesn't have children. Please provide title property to add aria-label, so it's accessible for screen readers.",
-        ],
+        errors: [{ messageId: "error" }],
       },
       {
         code: `import Button from "@kiwicom/orbit-components/lib/Button";
@@ -81,9 +72,7 @@ describe("Button has title", () => {
                const App = () => {\
                   return <Button {...rest} />
                }`,
-        errors: [
-          "Button doesn't have children. Please provide title property to add aria-label, so it's accessible for screen readers.",
-        ],
+        errors: [{ messageId: "error" }],
       },
       {
         code: `import Button from "@kiwicom/orbit-components/lib/Button";
@@ -93,9 +82,7 @@ describe("Button has title", () => {
                   }
                   return <Button {...rest} />
                }`,
-        errors: [
-          "Button doesn't have children. Please provide title property to add aria-label, so it's accessible for screen readers.",
-        ],
+        errors: [{ messageId: "error" }],
       },
     ],
   });

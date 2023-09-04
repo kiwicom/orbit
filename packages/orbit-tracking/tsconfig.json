@@ -12,7 +12,8 @@
     "noImplicitReturns": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["@testing-library/jest-dom"]
+    "types": ["@testing-library/jest-dom"],
+    "ignoreDeprecations": "5.0"
   },
   "include": ["src/**/*.ts"]
 }

@@ -43,16 +43,16 @@ Orbit v9 introduces a new prop on `OrbitProvider` called `useId`.
 - **React 17**: if you are using React 17, you will need to:
 
   - install `react-uid` in your dependencies (`yarn add react-uid`)
-  - pass `react-uid`'s `useRandomId` export in the `useId` prop, as well as mounting two providers (`UIDReset` and `UIDFork`), like so
+  - pass `react-uid`'s `useUID` export in the `useId` prop, as well as mounting two providers (`UIDReset` and `UIDFork`), like so
 
   ```tsx
-  import { useRandomId, UIDReset, UIDFork } from "react-uid";
+  import { useUID, UIDReset, UIDFork } from "react-uid";
 
   export const Root = (props: Props) => {
     return (
       <UIDReset>
         <UIDFork>
-          <OrbitProvider theme={theme} useId={useRandomId}>
+          <OrbitProvider theme={theme} useId={useUID}>
             {children}
           </OrbitProvider>
         </UIDFork>

@@ -15,7 +15,7 @@
     "cy:run": "start-server-and-test cy:dev http-get://localhost:3000 'cypress run'",
     "cy:open": "start-server-and-test cy:dev http-get://localhost:3000 'cypress open'",
     "build": "ts-node --esm config/build/index.mts",
-    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./lib/tailwind.css",
+    "tailwind": "cross-env NODE_ENV=test npx tailwindcss -i ./src/tailwind.css -o ./lib/tailwind.css",
     "prepublishOnly": "yarn build",
     "size:build": "yarn build --size",
     "size": "size-limit",

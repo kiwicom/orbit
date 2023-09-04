@@ -6,7 +6,7 @@ export default {
   content: ["./src/**/*.{ts,tsx}"],
   presets: [
     orbitPreset({
-      disabledPreflight: false,
+      disablePreflight: process.env.NODE_ENV === "test",
     }),
   ],
 } satisfies Config;

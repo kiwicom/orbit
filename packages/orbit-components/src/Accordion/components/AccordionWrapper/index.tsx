@@ -2,8 +2,8 @@ import styled, { css } from "styled-components";
 import React from "react";
 
 import type { Props } from "./types";
-import type { Theme } from "../../../defaultTheme";
-import defaultTheme, { ThemeProps } from "../../../defaultTheme";
+import defaultTheme from "../../../defaultTheme";
+import type { Theme, ThemeProps } from "../../../defaultTheme";
 import mq from "../../../utils/mediaQuery";
 
 export const getBorder = ({ theme }: ThemeProps): string =>

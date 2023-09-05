@@ -319,6 +319,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     help,
     helpClosable = true,
     value,
+    defaultValue,
     tags,
     tabIndex,
     readOnly,
@@ -433,6 +434,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           name={name}
           type={getDOMType(type)}
           value={value}
+          defaultValue={defaultValue}
           placeholder={placeholder}
           disabled={disabled}
           min={minValue}

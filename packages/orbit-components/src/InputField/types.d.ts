@@ -19,6 +19,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly label?: Common.Translation;
   readonly inlineLabel?: boolean;
   readonly value?: string | number;
+  readonly defaultValue?: string | number;
   readonly placeholder?: string;
   readonly prefix?: React.ReactNode;
   readonly suffix?: React.ReactNode;

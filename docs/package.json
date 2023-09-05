@@ -1,5 +1,5 @@
 {
-  "name": "@kiwicom/orbit.kiwi",
+  "name": "@mvidalgarcia/orbit.kiwi",
   "version": "0.17.0",
   "private": true,
   "engines": {
@@ -30,11 +30,11 @@
     "@csstools/convert-colors": "^2.0.0",
     "@icons-pack/react-simple-icons": "^8.0.1",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
-    "@kiwicom/babel-plugin-orbit-components": "*",
-    "@kiwicom/orbit-components": "*",
-    "@kiwicom/orbit-design-tokens": "*",
-    "@kiwicom/orbit-themer": "*",
-    "@kiwicom/orbit-tailwind-preset": "*",
+    "@mvidalgarcia/babel-plugin-orbit-components": "*",
+    "@mvidalgarcia/orbit-components": "*",
+    "@mvidalgarcia/orbit-design-tokens": "*",
+    "@mvidalgarcia/orbit-themer": "*",
+    "@mvidalgarcia/orbit-tailwind-preset": "*",
     "@loadable/component": "^5.15.3",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/mdx": "^1.6.22",

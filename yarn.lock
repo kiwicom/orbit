@@ -2570,6 +2570,32 @@
   resolved "https://registry.npmjs.org/@kiwicom/browserslist-config/-/browserslist-config-4.0.0.tgz"
   integrity sha512-CkBXOf5noNBSh8nOQl6/qMBEz1GwYQpIxDTyImqJDwSiXgY/lWHgW9TQT8n9akhFMd4uB9tAFsWFPk8EhzogfA==
 
+"@kiwicom/orbit-components@*", "@kiwicom/orbit-components@^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-components/-/orbit-components-9.0.0.tgz#ab50fd22b9508a576d91827ebdfd0014170d5743"
+  integrity sha512-QWVNendKGlplGxZPV1nTMy7uoauz4k4zvze5vU2cI51BwWFVpKeg5yozLthhNaTBOuLGhLHfAaxzqELHglqRng==
+  dependencies:
+    "@kiwicom/orbit-design-tokens" "^6.0.0"
+    "@kiwicom/orbit-tailwind-preset" "^1.1.0"
+    "@popperjs/core" "^2.9.2"
+    clsx "^2.0.0"
+    react-hot-toast "^2.4.0"
+    react-popper "^2.3.0"
+
+"@kiwicom/orbit-design-tokens@*", "@kiwicom/orbit-design-tokens@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-design-tokens/-/orbit-design-tokens-6.0.0.tgz#885d6dd3eff30159dcb68e0ccf7814fea6d76b80"
+  integrity sha512-CWdcA0vDC7g80oFu+3V482v78qtU7L38vSo7PR+BNN27a4gCnrmZg0GD4bnxGIYRjXCvsPanI4X1SF+ErFWZbA==
+  dependencies:
+    color2k "^2.0.2"
+
+"@kiwicom/orbit-tailwind-preset@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/orbit-tailwind-preset/-/orbit-tailwind-preset-1.1.0.tgz#875c65dd87b5f1711e6e2a815caec8bbc1466aaf"
+  integrity sha512-bk/K2tQQ0L0EWZfcm+GH1ZhRBVtPoKB3DdkidgwEW3lzZ4fshmhv1fniiLNHV643FxgJ0JvNvEqX8xKYDOfiNA==
+  dependencies:
+    "@kiwicom/orbit-design-tokens" "^6.0.0"
+
 "@lerna/add@5.2.0":
   version "5.2.0"
   resolved "https://registry.npmjs.org/@lerna/add/-/add-5.2.0.tgz"

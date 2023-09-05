@@ -1,5 +1,5 @@
 {
-  "name": "@kiwicom/orbit",
+  "name": "@mvidalgarcia/orbit",
   "private": true,
   "workspaces": [
     "packages/*",

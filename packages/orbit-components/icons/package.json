@@ -1,5 +1,5 @@
 {
-  "name": "@kiwicom/orbit-components/icons",
+  "name": "@mvidalgarcia/orbit-components/icons",
   "private": true,
   "main": "../lib/icons/index.js",
   "module": "../es/icons/index.js"

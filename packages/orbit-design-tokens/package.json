@@ -1,5 +1,5 @@
 {
-  "name": "@kiwicom/orbit-design-tokens",
+  "name": "@mvidalgarcia/orbit-design-tokens",
   "version": "6.0.0",
   "description": "Design tokens for Kiwi.com.",
   "main": "dist/index.cjs",

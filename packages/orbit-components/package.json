@@ -1,5 +1,5 @@
 {
-  "name": "@kiwicom/orbit-components",
+  "name": "@mvidalgarcia/orbit-components",
   "version": "9.0.0",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,

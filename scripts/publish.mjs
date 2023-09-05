@@ -3,20 +3,20 @@ import dotenv from "dotenv-safe";
 import conventionalChangelog from "conventional-changelog";
 import { getPackages } from "@lerna/project";
 import slackify from "slackify-markdown";
-import { Octokit } from "@octokit/rest";
+// import { Octokit } from "@octokit/rest";
 
-import { parseSlackMessages } from "./helpers.mjs";
+// import { parseSlackMessages } from "./helpers.mjs";
 
 /* eslint-disable no-console */
 
 const TITLE = `New orbit release 🚀`;
 const CHANNEL = `orbit-react`;
 const COLOR_CORE = `#00A58E`;
-const COLOR_PING = `#0172CB`;
+// const COLOR_PING = `#0172CB`;
 
-const octokit = new Octokit({
-  auth: process.env.GH_TOKEN,
-});
+// const octokit = new Octokit({
+//   auth: process.env.GH_TOKEN,
+// });
 
 const apiRequest = async ({ method = "GET", url, body }) =>
   fetch(url, {
@@ -29,14 +29,14 @@ const apiRequest = async ({ method = "GET", url, body }) =>
     },
   }).then(res => res.json());
 
-async function getLatestReleaseTime() {
-  const res = await octokit.rest.repos.getLatestRelease({
-    owner: "kiwicom",
-    repo: "orbit",
-  });
+// async function getLatestReleaseTime() {
+//   const res = await octokit.rest.repos.getLatestRelease({
+//     owner: "kiwicom",
+//     repo: "orbit",
+//   });
 
-  return new Date(res.data.published_at).getTime() / 1000;
-}
+//   return new Date(res.data.published_at).getTime() / 1000;
+// }
 
 function adjustChangelog(str) {
   const output = str
@@ -48,22 +48,22 @@ function adjustChangelog(str) {
   return output;
 }
 
-async function getUserNames(timestamp) {
-  try {
-    $.verbose = false;
-    const res = await apiRequest({
-      url: `${process.env.SLACK_API_READ_PLZ_ORBIT}&oldest=${timestamp}`,
-    });
+// async function getUserNames(timestamp) {
+//   try {
+//     $.verbose = false;
+//     const res = await apiRequest({
+//       url: `${process.env.SLACK_API_READ_PLZ_ORBIT}&oldest=${timestamp}`,
+//     });
 
-    return parseSlackMessages(res.messages);
-  } catch (err) {
-    console.error(err);
-  }
+//     return parseSlackMessages(res.messages);
+//   } catch (err) {
+//     console.error(err);
+//   }
 
-  return undefined;
-}
+//   return undefined;
+// }
 
-async function postSlackNotification(changelog, names) {
+async function postSlackNotification(changelog) {
   try {
     $.verbose = false;
     const res = await apiRequest({
@@ -77,10 +77,10 @@ async function postSlackNotification(changelog, names) {
             text: changelog,
             color: COLOR_CORE,
           },
-          {
-            text: names ? [...new Set(names)].join(",") : "",
-            color: COLOR_PING,
-          },
+          // {
+          //   text: names ? [...new Set(names)].join(",") : "",
+          //   color: COLOR_PING,
+          // },
         ],
       }),
     });
@@ -163,9 +163,10 @@ async function getChangelogMessage() {
       await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
       await $`yarn docs changelog`;
       await $`git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push`;
-      const timestamp = await getLatestReleaseTime();
-      const names = await getUserNames(timestamp);
-      await postSlackNotification(changelog, names);
+      // const timestamp = await getLatestReleaseTime();
+      // const names = await getUserNames(timestamp);
+      // await postSlackNotification(changelog, names);
+      await postSlackNotification(changelog);
     }
   } catch (err) {
     console.error(err);

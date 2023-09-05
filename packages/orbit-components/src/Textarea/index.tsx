@@ -133,6 +133,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     id,
     spaceAfter,
     fullHeight,
+    defaultValue,
     value,
     label,
     name,
@@ -192,6 +193,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         id={inputId}
         name={name}
         value={value}
+        defaultValue={defaultValue}
         size={size}
         fullHeight={fullHeight}
         disabled={disabled}

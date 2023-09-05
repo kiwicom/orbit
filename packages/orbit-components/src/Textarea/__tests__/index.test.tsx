@@ -11,12 +11,10 @@ describe("Textarea", () => {
   it("should have expected DOM output", async () => {
     const name = "name";
     const label = "Label";
-    const value = "value";
     const placeholder = "placeholder";
     const dataTest = "test";
     const maxLength = 200;
     const fullHeight = true;
-    const onChange = jest.fn();
     const spaceAfter = SPACINGS_AFTER.NORMAL;
     const dataAttrs = {
       "data-sample": "Sample",
@@ -26,13 +24,12 @@ describe("Textarea", () => {
       <Textarea
         name={name}
         label={label}
-        value={value}
+        defaultValue="value"
         rows={4}
         fullHeight={fullHeight}
         placeholder={placeholder}
         maxLength={maxLength}
         help={<div>Something useful.</div>}
-        onChange={onChange}
         dataTest={dataTest}
         spaceAfter={spaceAfter}
         dataAttrs={dataAttrs}
@@ -42,7 +39,7 @@ describe("Textarea", () => {
     const textarea = screen.getByRole("textbox");
 
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-    expect(screen.getByDisplayValue(value)).toBeInTheDocument();
+    expect(screen.getByDisplayValue("value")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(placeholder)).toBeInTheDocument();
 
     await act(() => user.tab());
@@ -54,20 +51,23 @@ describe("Textarea", () => {
     expect(textarea).not.toBeInvalid();
     expect(textarea.parentElement).toHaveStyle({ marginBottom: "12px" });
     expect(textarea).toHaveStyle({ padding: "12px" });
-
-    await act(() => user.type(textarea, "kek"));
-    expect(onChange).toHaveBeenCalled();
   });
 
-  it("should have focus and blur", async () => {
+  it("should trigger event handlers", async () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
+    const onChange = jest.fn();
 
-    render(<Textarea onFocus={onFocus} onBlur={onBlur} />);
+    render(<Textarea onFocus={onFocus} onBlur={onBlur} onChange={onChange} />);
+
+    const textarea = screen.getByRole("textbox");
+
     await user.tab();
     expect(onFocus).toHaveBeenCalled();
     await user.tab();
     expect(onBlur).toHaveBeenCalled();
+    await act(() => user.type(textarea, "kek"));
+    expect(onChange).toHaveBeenCalled();
   });
 
   it("should have error", async () => {

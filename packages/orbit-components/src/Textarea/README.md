@@ -21,6 +21,7 @@ Table below contains all types of the props available in Textarea component.
 | dataAttrs    | `Object`                   |              | Optional prop for passing `data-*` attributes to the `textarea` DOM element.                                                                                   |
 | dataTest     | `string`                   |              | Optional prop for testing purposes.                                                                                                                            |
 | id           | `string`                   |              | Set `id` for `Textarea`                                                                                                                                        |
+| defaultValue | `string`                   |              | Specifies the default value of the Textarea. To be used with uncontrolled usage.                                                                               |
 | disabled     | `boolean`                  |              | If `true`, the Textarea will be disabled.                                                                                                                      |
 | error        | `React.Node`               |              | The error to display beneath the Textarea. [See Functional specs](#functional-specs)                                                                           |
 | fullHeight   | `boolean`                  | `false`      | If `true`, the Textarea will take 100 % of parent's height.                                                                                                    |
@@ -40,7 +41,7 @@ Table below contains all types of the props available in Textarea component.
 | size         | [`enum`](#enum)            | `"normal"`   | The size of the Textarea.                                                                                                                                      |
 | spaceAfter   | `enum`                     |              | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | tabIndex     | `string \| number`         |              | Specifies the tab order of an element                                                                                                                          |
-| value        | `string`                   |              | Specifies the value of the Textarea.                                                                                                                           |
+| value        | `string`                   |              | Specifies the value of the Textarea. To be used with controlled usage.                                                                                         |
 | helpClosable | `boolean`                  | `true`       | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                 |
 
 ### enum

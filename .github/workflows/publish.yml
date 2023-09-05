@@ -1,10 +1,51 @@
 name: Publish
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      dryrun:
+        description: "Dry run"
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # create commits and releases
     steps:
-      - name: Publish dummy job
-        run: echo "Hello publish dummy job!"
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # fetch tags
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: Dry run
+        if: ${{ github.event.inputs.dryrun == 'true' }}
+        run: |
+          yarn lerna version --no-private --no-push --no-git-tag-version --yes
+          git diff
+          yarn zx scripts/post-changelog.mjs --dry
+
+      - name: Publish
+        if: ${{ github.event.inputs.dryrun == 'false' }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # must be of type Automation to create releases
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "scope=@kiwicom" > ~/.npmrc
+          echo "access=public" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+          echo "//registry.npmjs.org/:always-auth=true" >> ~/.npmrc
+          yarn lerna publish --no-private --conventional-commits --create-release github --yes
+          yarn docs changelog
+          git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push
+          yarn zx scripts/post-changelog.mjs

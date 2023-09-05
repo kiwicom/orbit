@@ -3,21 +3,20 @@ import dotenv from "dotenv-safe";
 import conventionalChangelog from "conventional-changelog";
 import { getPackages } from "@lerna/project";
 import slackify from "slackify-markdown";
-import { Octokit } from "@octokit/rest";
-
-import { parseSlackMessages } from "./helpers.mjs";
+import { simpleGit } from "simple-git";
+import gitDiffParser from "gitdiff-parser";
 
 /* eslint-disable no-console */
 
-const TITLE = `New orbit release 🚀`;
 const CHANNEL = `orbit-react`;
 const COLOR_CORE = `#00A58E`;
-const COLOR_PING = `#0172CB`;
+const PACKAGES = ["orbit-components", "orbit-tailwind-preset"];
+const PACKAGE_PREFIX = "@kiwicom";
 const SLACK_API_POST_RELEASE_MESSAGE = "https://slack.com/api/chat.postMessage";
 
-const octokit = new Octokit({
-  auth: process.env.GH_TOKEN,
-});
+function getTitle(pkg) {
+  return `New ${pkg} release 🚀`;
+}
 
 const apiRequest = async ({ method = "GET", url, body }) =>
   fetch(url, {
@@ -28,16 +27,7 @@ const apiRequest = async ({ method = "GET", url, body }) =>
       Authorization: `Bearer ${process.env.SLACK_TOKEN}`,
       Accept: "application/json",
     },
-  }).then(res => res.json());
-
-async function getLatestReleaseTime() {
-  const res = await octokit.rest.repos.getLatestRelease({
-    owner: "kiwicom",
-    repo: "orbit",
   });
-
-  return new Date(res.data.published_at).getTime() / 1000;
-}
 
 function adjustChangelog(str) {
   const output = str
@@ -49,22 +39,15 @@ function adjustChangelog(str) {
   return output;
 }
 
-async function getUserNames(timestamp) {
-  try {
-    $.verbose = false;
-    const res = await apiRequest({
-      url: `${process.env.SLACK_API_READ_PLZ_ORBIT}&oldest=${timestamp}`,
-    });
-
-    return parseSlackMessages(res.messages);
-  } catch (err) {
-    console.error(err);
-  }
-
-  return undefined;
+function getDiff(tag, path) {
+  return simpleGit().show([tag, path]);
 }
 
-async function postSlackNotification(changelog, names) {
+function changelogPath(package_) {
+  return `packages/${package_}/CHANGELOG.md`;
+}
+
+async function postSlackNotification(changelog, package_) {
   try {
     $.verbose = false;
     const res = await apiRequest({
@@ -74,27 +57,23 @@ async function postSlackNotification(changelog, names) {
         channel: CHANNEL,
         attachments: [
           {
-            title: TITLE,
+            title: getTitle(package_),
             text: changelog,
             color: COLOR_CORE,
-          },
-          {
-            text: names ? [...new Set(names)].join(",") : "",
-            color: COLOR_PING,
           },
         ],
       }),
     });
-
     return res;
   } catch (err) {
+    console.log("Error posting to Slack");
     console.error(err);
   }
 
   return undefined;
 }
 
-async function configureGitHubToken() {
+async function configureSlackToken() {
   try {
     dotenv.config({
       allowEmptyValues: true,
@@ -106,21 +85,16 @@ async function configureGitHubToken() {
         "Slack token is missing in the .env file, please add it.\nLearn how to create one: https://slack.com/intl/en-cz/help/articles/215770388-Create-and-regenerate-API-tokens",
       );
     }
-
-    if (/GH_TOKEN/g.test(err.message)) {
-      throw new Error(
-        "GitHub token is missing in the .env file, Lerna needs it to create GitHub releases.\nLearn how to create one: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token.",
-      );
-    }
   }
 }
 
-async function getChangelogMessage() {
+async function getChangelogMessage(package_) {
   const packages = await getPackages();
 
   return new Promise((resolve, reject) => {
     let changelog = "";
-    const pkg = packages.find(p => p.name === "@kiwicom/orbit-components");
+    const pkg = packages.find(p => p.name === package_);
+
     const stream = conventionalChangelog(
       {
         lernaPackage: pkg.name,
@@ -128,12 +102,13 @@ async function getChangelogMessage() {
       },
       {
         host: "https://github.com",
-        title: "@kiwicom/orbit-components",
+        title: package_,
         owner: "kiwicom",
         repository: "orbit",
         linkCompare: true,
         version: pkg.version,
       },
+      { path: pkg.location },
     );
 
     stream.on("data", data => {
@@ -151,25 +126,36 @@ async function getChangelogMessage() {
   });
 }
 
-(async () => {
+async function publishChangelog(package_) {
   try {
-    await configureGitHubToken();
-    const changelog = await getChangelogMessage();
+    const changelog = await getChangelogMessage(`${PACKAGE_PREFIX}/${package_}`);
+
+    await simpleGit().fetch(["origin", "master", "--tags"]);
+    const tags = await simpleGit().tags();
+    const diff = await getDiff(tags.latest ?? "", changelogPath(package_));
+    const files = gitDiffParser.parse(diff);
+    if (files.length === 0) {
+      console.log(`No changes in ${package_}`);
+      return;
+    }
 
     if (argv.dry) {
       console.info(changelog);
-      process.exit(0);
     } else {
-      await $`yarn install`;
-      await $`yarn lerna publish --no-private --conventional-commits --create-release github`;
-      await $`yarn docs changelog`;
-      await $`git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push`;
-      const timestamp = await getLatestReleaseTime();
-      const names = await getUserNames(timestamp);
-      await postSlackNotification(changelog, names);
+      await configureSlackToken();
+      await postSlackNotification(changelog, package_);
     }
   } catch (err) {
     console.error(err);
     process.exit(1);
   }
+}
+
+(async () => {
+  await Promise.all(
+    PACKAGES.map(async package_ => {
+      await publishChangelog(package_);
+    }),
+  );
+  process.exit(0);
 })();

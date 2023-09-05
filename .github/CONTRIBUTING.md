@@ -23,6 +23,7 @@
   - [Props naming convention](#props-naming-convention)
   - [Component design](#component-design)
   - [Commits](#commits)
+  - [Publish releases](#publish-releases)
   - [Versioning](#versioning)
 
 ---
@@ -211,6 +212,12 @@ Check [this section](contribution/component-design.md) for a complete descriptio
 ## Commits
 
 Please read our [guidelines for authoring commits](contribution/commits.md).
+
+## Publish releases
+
+We use Lerna to publish new versions of Orbit packages. To publish a new version we use a GitHub Action workflow which is triggered **manually** from the GitHub UI. The workflow is called `Publish` and it's located in the `Actions` tab of the repository, see [here](https://github.com/kiwicom/orbit/actions/workflows/publish.yml). To trigger the workflow, click on the `Run workflow` button, leave the `master` branch selected and click on the `Run workflow` button again. The workflow will then run and publish the new versions of the packages to NPM as well as create GitHub releases for each package.
+
+If you want to have a preview of the changes that Lerna will make, you can select the `Dry run` checkbox. This will run the workflow in a dry run mode and it will not publish anything. Instead, it will print out the versions that will be published and the diffs of the changelogs. This is useful if you want to check what will be published before actually publishing it.
 
 ## Versioning
 

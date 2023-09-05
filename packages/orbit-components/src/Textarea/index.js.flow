@@ -19,6 +19,7 @@ export type Props = {|
   +required?: boolean,
   +label?: Translation,
   +value?: string,
+  +defaultValue?: string,
   +fullHeight?: boolean,
   +placeholder?: TranslationString,
   +help?: React.Node,

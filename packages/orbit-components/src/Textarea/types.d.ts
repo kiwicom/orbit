@@ -15,6 +15,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly readOnly?: boolean;
   readonly required?: boolean;
   readonly label?: Common.Translation;
+  readonly defaultValue?: string;
   readonly value?: string;
   readonly fullHeight?: boolean;
   readonly placeholder?: Common.Translation;

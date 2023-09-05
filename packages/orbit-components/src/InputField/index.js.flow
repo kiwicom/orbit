@@ -21,6 +21,7 @@ export type Props = {|
   +label?: Translation,
   +inlineLabel?: boolean,
   +value?: (() => string | number) | string | number,
+  +defaultValue?: (() => string | number) | string | number,
   +placeholder?: string | (() => string),
   +prefix?: React.Node,
   +suffix?: React.Node,

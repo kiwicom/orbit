@@ -11,7 +11,7 @@ import {
   SIZE_OPTIONS,
 } from "./consts";
 import type { Props } from "./types";
-import { spaceAfterClasses } from "../common/tailwind/spaceAfter";
+import { spaceAfterClasses, textAlignClasses, getMargin } from "../common/tailwind";
 import {
   backgroundClasses,
   sizeClasses,
@@ -19,8 +19,6 @@ import {
   typeClasses,
   weightClasses,
 } from "./helpers/twClasses";
-import { textAlignClasses } from "../common/tailwind/textAlign";
-import getMargin from "./helpers/getMargin";
 
 const Text = ({
   type = TYPE_OPTIONS.PRIMARY,
@@ -38,7 +36,7 @@ const Text = ({
   withBackground,
   id,
 }: Props) => {
-  const { vars: cssVar, classes: marginClasses } = getMargin(margin);
+  const { vars: cssVars, classes: marginClasses } = getMargin(margin);
 
   return (
     <Component
@@ -58,7 +56,7 @@ const Text = ({
         ...marginClasses,
         ...textLinkCommonClasses,
       )}
-      style={cssVar}
+      style={cssVars}
     >
       {children}
     </Component>

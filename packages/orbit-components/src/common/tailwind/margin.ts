@@ -1,3 +1,6 @@
+import type { CSSProperties } from "react";
+
+import type { ObjectProperty } from "../types";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 
 export enum SIZES {
@@ -387,3 +390,41 @@ export const marginLeftClasses: {
     [SIZES.XXXLARGE]: "mm:ml-xxxl",
   },
 };
+
+const getMarginValue = (margin: string | number): string =>
+  typeof margin === "number" ? `${margin}px` : margin;
+
+export const getMargin = (
+  margin: CSSProperties["margin"] | ObjectProperty,
+): { vars: object; classes: string[] } => {
+  if (typeof margin === "number" || typeof margin === "string")
+    return {
+      vars: { "--text-margin": getMarginValue(margin) },
+      classes: ["m-[var(--text-margin)]"],
+    };
+
+  const { top, bottom, left, right } = margin || {};
+  const cssVar = {};
+  const classes: string[] = ["m-0"];
+
+  if (top) {
+    classes.push("mt-[var(--text-margin-top)]");
+    cssVar["--text-margin-top"] = getMarginValue(top);
+  }
+  if (bottom) {
+    classes.push("mb-[var(--text-margin-bottom)]");
+    cssVar["--text-margin-bottom"] = getMarginValue(bottom);
+  }
+  if (left) {
+    classes.push("ml-[var(--text-margin-left)]");
+    cssVar["--text-margin-left"] = getMarginValue(left);
+  }
+  if (right) {
+    classes.push("mr-[var(--text-margin-right)]");
+    cssVar["--text-margin-right"] = getMarginValue(right);
+  }
+
+  return { vars: cssVar, classes };
+};
+
+export default getMargin;

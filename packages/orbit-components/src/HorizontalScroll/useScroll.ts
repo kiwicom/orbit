@@ -6,8 +6,6 @@ const timing = (1 / 60) * 1000;
 // eslint-disable-next-line no-bitwise
 const decay = (v: number) => -0.1 * ((1 / timing) ^ 4) + v;
 
-const TRIGGER_OFFSET = 50;
-
 type UseScroll = (ref: React.RefObject<HTMLElement>) => {
   isDragging: boolean;
   clickStartX: number | undefined;
@@ -50,6 +48,8 @@ const useScroll: UseScroll = ref => {
     }
   }, [momentum, isDragging, speed, direction, handleMomentum]);
 
+  // We only need to clean up the effect in case we add event listeners
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const currentRef = ref.current;
 
@@ -64,36 +64,50 @@ const useScroll: UseScroll = ref => {
         e.preventDefault();
         e.stopPropagation();
 
-        if (clickStartX !== undefined && scrollStartX !== undefined && currentRef) {
-          const touchDelta = clickStartX - e.screenX;
-          currentRef.scrollLeft = scrollStartX + touchDelta;
+        if (clickStartX === undefined || scrollStartX === undefined) {
+          return;
+        }
 
-          if (Math.abs(touchDelta) > 1) {
-            setIsDragging(true);
-            setDirection(touchDelta / Math.abs(touchDelta));
-            setSpeed(Math.abs((lastScrollX - e.screenX) / timing));
-            handleLastScrollX(e.screenX);
-          }
+        const touchDelta = clickStartX - e.screenX;
+        currentRef.scrollLeft = scrollStartX + touchDelta;
+
+        if (Math.abs(touchDelta) > 1) {
+          setIsDragging(true);
+          setDirection(touchDelta / Math.abs(touchDelta));
+          setSpeed(Math.abs((lastScrollX - e.screenX) / timing));
+          handleLastScrollX(e.screenX);
         }
       };
 
       const handleDragEnd = () => {
-        if (isDragging && clickStartX !== undefined) {
-          setClickStartX(undefined);
-          setScrollStartX(undefined);
-          setIsDragging(false);
-        }
+        setClickStartX(undefined);
+        setScrollStartX(undefined);
+        setIsDragging(false);
       };
 
       // on mobile browser is null, on desktop is undefined
-      if (currentRef && currentRef.ontouchstart === undefined) {
-        currentRef.onmousedown = handleDragStart;
-        currentRef.onmousemove = handleDragMove;
-        currentRef.onmouseup = handleDragEnd;
-        currentRef.onmouseleave = handleDragEnd;
+      if (currentRef.ontouchstart === undefined) {
+        currentRef.addEventListener("mousedown", handleDragStart);
+        currentRef.addEventListener("mousemove", handleDragMove);
+        currentRef.addEventListener("mouseup", handleDragEnd);
+        currentRef.addEventListener("mouseleave", handleDragEnd);
+        return () => {
+          currentRef.removeEventListener("mousedown", handleDragStart);
+          currentRef.removeEventListener("mousemove", handleDragMove);
+          currentRef.removeEventListener("mouseup", handleDragEnd);
+          currentRef.removeEventListener("mouseleave", handleDragEnd);
+        };
       }
     }
-  }, [scrollWrapperCurrent, clickStartX, isDragging, scrollStartX, handleLastScrollX, lastScrollX]);
+  }, [
+    scrollWrapperCurrent,
+    clickStartX,
+    isDragging,
+    scrollStartX,
+    handleLastScrollX,
+    lastScrollX,
+    ref,
+  ]);
 
   return {
     clickStartX,

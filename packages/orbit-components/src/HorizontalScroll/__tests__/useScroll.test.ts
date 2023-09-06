@@ -23,6 +23,24 @@ describe("useScroll", () => {
 
     expect(result.current).toEqual(DEFAULT_VALUES);
   });
+
+  it("should not drag after clicking", async () => {
+    const elem = document.createElement("div");
+    const ref = {
+      current: elem,
+    };
+
+    const { result } = renderHook(() => useScroll(ref));
+
+    if (ref.current) {
+      fireEvent.mouseDown(ref.current);
+      fireEvent.mouseUp(ref.current);
+      fireEvent.mouseMove(ref.current, { screenX: 8 });
+    }
+
+    expect(result.current).toEqual(DEFAULT_VALUES);
+  });
+
   it("should drag", () => {
     const elem = document.createElement("div");
     const ref = {

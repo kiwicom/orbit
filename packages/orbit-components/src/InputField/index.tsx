@@ -23,7 +23,7 @@ import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitiv
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
-const getDOMType = type => {
+const getDOMType = (type: Lowercase<keyof typeof TYPE_OPTIONS>) => {
   if (type === TYPE_OPTIONS.PASSPORTID) return TYPE_OPTIONS.TEXT;
   return type;
 };
@@ -41,6 +41,7 @@ interface StyledFieldProps extends React.PropsWithChildren<Partial<Props>> {
 
 export const Field = styled(
   React.forwardRef<HTMLElement, StyledFieldProps>(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ({ component: Component, className, children, spaceAfter, theme, $width, ...props }, ref) => {
       return (
         // @ts-expect-error TODO

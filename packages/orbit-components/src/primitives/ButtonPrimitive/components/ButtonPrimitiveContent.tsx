@@ -8,9 +8,7 @@ interface Props {
   contentAlign: string | null;
 }
 
-const StyledButtonPrimitiveContent = styled(
-  ({ theme, loading, hasCenteredContent, onlyIcon, contentAlign, ...props }) => <div {...props} />,
-)`
+const StyledButtonPrimitiveContent = styled.div<Pick<Props, "contentAlign" | "loading">>`
   ${({ contentAlign, loading }) => css`
     visibility: ${loading && "hidden"};
     height: 100%;

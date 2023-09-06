@@ -1,6 +1,6 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, array, select, boolean } from "@storybook/addon-knobs";
+import { text, array, select } from "@storybook/addon-knobs";
 
 import Stack from "../Stack";
 import InputField from "../InputField";

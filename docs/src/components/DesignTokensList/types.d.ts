@@ -31,12 +31,12 @@ export enum TypographyCategories {
 
 type TokenExactValue = string | number;
 
-type PlatformValue = {
+interface PlatformValue {
   name: string;
   value: TokenExactValue;
-};
+}
 
-export type TokenValue = {
+export interface TokenValue {
   type: string;
   category: string;
   replacement: string | null;
@@ -44,7 +44,7 @@ export type TokenValue = {
   javascript: PlatformValue;
   foundation: PlatformValue;
   schema: TokenSchema;
-};
+}
 
 export interface Token {
   name: string;

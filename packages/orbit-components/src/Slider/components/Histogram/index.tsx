@@ -24,6 +24,7 @@ const StyledLoadingContainer = styled.div`
   justify-content: center;
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (
   <div {...props} />
 )).attrs(({ height }) => {

@@ -23,9 +23,9 @@ enum SORTING_ORDER {
   DESCENDING = 2,
 }
 
-type TableData = {
+interface TableData {
   [x: string]: ReactElement | string;
-};
+}
 
 const SORTABLE_COLUMNS = ["Name"];
 

@@ -27,9 +27,9 @@ export interface Props extends Common.Globals {
   readonly labelClose?: string;
 }
 
-export type Instance = {
+export interface Instance {
   getScrollPosition: () => number | null;
   setScrollPosition: (value: number) => void;
   modalBody: React.RefObject<HTMLElement>;
   modalContent: React.RefObject<HTMLElement>;
-};
+}

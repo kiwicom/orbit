@@ -144,7 +144,6 @@ const DesignTokensTable = ({
                       />
                       <DesignTokenValue
                         value={name}
-                        replacement={replacement}
                         deprecated={!!deprecated}
                         hasStrikeThrough
                         width="280px"
@@ -154,27 +153,18 @@ const DesignTokensTable = ({
                   </TableCell>
                   {showVariantColumn && (
                     <TableCell verticalAlign="middle" align="left">
-                      <DesignTokenValue
-                        width="120px"
-                        value={String(camelCase(variant))}
-                        replacement={replacement}
-                      />
+                      <DesignTokenValue width="120px" value={String(camelCase(variant))} />
                     </TableCell>
                   )}
                   {showReplacement && (
                     <TableCell verticalAlign="middle" align="left">
-                      <DesignTokenValue
-                        width="300px"
-                        value={replacement || "none"}
-                        replacement={replacement}
-                      />
+                      <DesignTokenValue width="300px" value={replacement || "none"} />
                     </TableCell>
                   )}
                   <TableCell verticalAlign="middle" align="left">
                     <Stack direction="row" spacing="none" align="center">
                       <DesignTokenValue
                         value={tokenValue}
-                        replacement={replacement}
                         deprecated={!!deprecated}
                         width="200px"
                         showCopyButton

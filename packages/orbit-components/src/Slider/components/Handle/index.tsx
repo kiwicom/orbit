@@ -47,6 +47,7 @@ export const isFirst: IsFirst = (value, valueNow, index, hasHistogram) => {
   return !hasHistogram;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
   ({ left, onTop, theme }) => {
     return {

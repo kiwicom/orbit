@@ -35,6 +35,7 @@ export const calculateBarPosition = (
   };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const StyledBarPart = styled(({ width, left, theme, active, ...props }) => (
   <div {...props} />
 )).attrs(({ width, left, theme }) => {

@@ -39,12 +39,10 @@ const DesignTokenValue = ({
   value,
   deprecated,
   hasStrikeThrough,
-  replacement,
   showCopyButton,
   width = "200px",
 }: {
   value: string | number;
-  replacement?: string | null;
   deprecated?: boolean;
   hasStrikeThrough?: boolean;
   showCopyButton?: boolean;

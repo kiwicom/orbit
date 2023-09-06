@@ -2,7 +2,7 @@ import * as React from "react";
 
 type inexactNumber = number | null;
 
-export type Dimensions = {
+export interface Dimensions {
   x: inexactNumber;
   y: inexactNumber;
   width: inexactNumber;
@@ -11,7 +11,7 @@ export type Dimensions = {
   right: inexactNumber;
   bottom: inexactNumber;
   left: inexactNumber;
-};
+}
 
 const useBoundingRect = <T extends HTMLElement>(
   initialValue: Partial<Dimensions> | undefined | null,

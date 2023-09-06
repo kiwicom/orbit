@@ -10,7 +10,7 @@ const config: Config = {
     preflight: false,
   },
   theme: {
-    colors: defaultFoundation.palette,
+    colors: { ...defaultFoundation.palette, transparent: "transparent" },
     borderRadius: defaultFoundation["border-radius"],
     screens,
     lineHeight: defaultFoundation["line-height"],

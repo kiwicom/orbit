@@ -105,7 +105,7 @@ export const MediumMobileProperties = () => {
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), undefined);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
   const justify = select("Justify", Object.values(JUSTIFY), undefined);
   const spacing = select("Spacing", Object.values(SPACINGS), undefined);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
@@ -146,7 +146,7 @@ export const LargeMobileProperties = () => {
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), undefined);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
   const justify = select("Justify", Object.values(JUSTIFY), undefined);
   const spacing = select("Spacing", Object.values(SPACINGS), undefined);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
@@ -187,7 +187,7 @@ export const TabletProperties = () => {
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), undefined);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
   const justify = select("Justify", Object.values(JUSTIFY), undefined);
   const spacing = select("Spacing", Object.values(SPACINGS), undefined);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
@@ -202,6 +202,7 @@ export const TabletProperties = () => {
     align,
     justify,
     spacing,
+    spaceAfter,
   };
 
   return (
@@ -227,7 +228,7 @@ export const DesktopProperties = () => {
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), undefined);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
   const justify = select("Justify", Object.values(JUSTIFY), undefined);
   const spacing = select("Spacing", Object.values(SPACINGS), undefined);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
@@ -268,7 +269,7 @@ export const LargeDesktopProperties = () => {
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), undefined);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
   const justify = select("Justify", Object.values(JUSTIFY), undefined);
   const spacing = select("Spacing", Object.values(SPACINGS), undefined);
   const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);

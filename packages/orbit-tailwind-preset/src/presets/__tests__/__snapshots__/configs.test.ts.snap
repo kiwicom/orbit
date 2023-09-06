@@ -313,6 +313,7 @@ exports[`orbitPreset should match snapshot 1`] = `
             "facebook-active": "#354F88",
             "facebook-hover": "#385490",
           },
+          "transparent": "transparent",
           "white": {
             "normal": "#FFFFFF",
             "normal-active": "#E7ECF1",
@@ -476,6 +477,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -765,6 +767,7 @@ exports[`orbitPreset should match snapshot 1`] = `
       "text-success-background": "rgba(40, 161, 56, 0.1)",
       "text-warning-background": "rgba(223, 123, 0, 0.1)",
       "text-white-background": "rgba(255, 255, 255, 0.1)",
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -975,6 +978,7 @@ exports[`orbitPreset should match snapshot 1`] = `
       "table-head": "#BAC7D5",
       "tag": "#BAC7D5",
       "tag-focus": "#0172CB",
+      "transparent": "transparent",
       "white": "#FFFFFF",
     },
     "borderOpacity": {
@@ -1126,6 +1130,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -1237,6 +1242,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -1335,6 +1341,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -1570,6 +1577,7 @@ exports[`orbitPreset should match snapshot 1`] = `
       "table-head": "#BAC7D5",
       "tag": "#BAC7D5",
       "tag-focus": "#0172CB",
+      "transparent": "transparent",
       "white": "#FFFFFF",
     },
     "divideOpacity": {
@@ -1710,6 +1718,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -1937,6 +1946,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -2484,6 +2494,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -2626,6 +2637,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -2742,6 +2754,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -2840,6 +2853,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -3078,6 +3092,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",
@@ -3292,6 +3307,7 @@ exports[`orbitPreset should match snapshot 1`] = `
       "success-foreground": "#28A138",
       "tag-colored-foreground": "#004680",
       "tag-neutral-foreground": "#252A31",
+      "transparent": "transparent",
       "warning-foreground": "#DF7B00",
       "white": {
         "normal": "#FFFFFF",
@@ -3392,6 +3408,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "facebook-active": "#354F88",
         "facebook-hover": "#385490",
       },
+      "transparent": "transparent",
       "white": {
         "normal": "#FFFFFF",
         "normal-active": "#E7ECF1",

@@ -5,7 +5,7 @@ import { colorClasses } from "./color";
 import getDisplayClasses, { displayClasses, getDisplayInlineClass } from "./display";
 import getDirectionClasses, { directionClasses } from "./direction";
 import getJustifyClasses, { justifyClasses } from "./justify";
-import { marginClasses } from "./margin";
+import { marginClasses, getMargin } from "./margin";
 import { paddingClasses } from "./padding";
 import { textAlignClasses } from "./textAlign";
 import getWrapClasses, { wrapClasses } from "./wrap";
@@ -38,6 +38,7 @@ export {
   displayClasses,
   justifyClasses,
   marginClasses,
+  getMargin,
   paddingClasses,
   spaceAfterClasses,
   wrapClasses,

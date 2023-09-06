@@ -82,24 +82,37 @@ const resolveUnderline = ({
 /**
  * @deprecated kept until Alert is refactored to TW
  */
-export const getLinkStyle = ({ theme, $type }: { theme: Theme; $type: Props["type"] }) => css`
-  &,
-  &:link,
-  &:visited {
-    color: ${getColor} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
-    text-decoration: ${resolveUnderline} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
-    font-weight: ${theme.orbit.fontWeightLinks} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
-  }
+export const getLinkStyle = ({
+  theme,
+  $type,
+  includeBase = true,
+}: {
+  theme: Theme;
+  $type: Props["type"];
+  includeBase?: boolean;
+}) => {
+  const baseStyles = css`
+    &,
+    &:link,
+    &:visited {
+      color: ${getColor} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
+      text-decoration: ${resolveUnderline} ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
+      font-weight: ${theme.orbit.fontWeightLinks}
+        ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
+    }
+  `;
+  return css`
+    ${includeBase && baseStyles};
+    &:hover {
+      outline: none;
+      text-decoration: none;
+      color: ${getHoverColor};
+    }
 
-  &:hover {
-    outline: none;
-    text-decoration: none;
-    color: ${getHoverColor};
-  }
-
-  &:active {
-    outline: none;
-    text-decoration: none;
-    color: ${getActiveColor};
-  }
-`;
+    &:active {
+      outline: none;
+      text-decoration: none;
+      color: ${getActiveColor};
+    }
+  `;
+};

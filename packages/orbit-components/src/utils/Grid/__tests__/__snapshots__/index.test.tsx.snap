@@ -1,50 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid should match snapshot 1`] = `
-.c0 {
-  display: inline-grid;
-  max-width: 1440px;
-  width: 100%;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(2,minmax(30px,100px));
-  grid-column-gap: 10px;
-  grid-row-gap: 20px;
-}
-
-@media (min-width:414px) {
-  .c0 {
-    max-width: 600px;
-  }
-}
-
-@media (min-width:576px) {
-  .c0 {
-    max-width: 700px;
-  }
-}
-
-@media (min-width:768px) {
-  .c0 {
-    max-width: 800px;
-  }
-}
-
-@media (min-width:992px) {
-  .c0 {
-    max-width: 900px;
-  }
-}
-
-@media (min-width:1200px) {
-  .c0 {
-    max-width: 1000px;
-  }
-}
-
 <div>
   <div
-    class="c0"
+    class="inline-grid w-[var(--grid-width)] max-w-[var(--grid-max-width)] mm:max-w-[var(--mm-grid-max-width)] lm:max-w-[var(--lm-grid-max-width)] tb:max-w-[var(--tb-grid-max-width)] de:max-w-[var(--de-grid-max-width)] ld:max-w-[var(--ld-grid-max-width)] grid-cols-[var(--grid-columns)] grid-rows-[var(--grid-rows)] gap-x-[var(--grid-column-gap)] gap-y-[var(--grid-row-gap)]"
     data-test="test"
+    style="--grid-width: 100%; --grid-max-width: 1440px; --mm-grid-max-width: 600px; --lm-grid-max-width: 700px; --tb-grid-max-width: 800px; --de-grid-max-width: 900px; --ld-grid-max-width: 1000px; --grid-columns: repeat(2, 1fr); --grid-rows: repeat(2, minmax(30px, 100px)); --grid-column-gap: 10px; --grid-row-gap: 20px;"
   >
     <div>
       1

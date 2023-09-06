@@ -203,7 +203,6 @@ export const TabletProperties = () => {
     align,
     justify,
     spacing,
-    spaceAfter,
   };
 
   return (

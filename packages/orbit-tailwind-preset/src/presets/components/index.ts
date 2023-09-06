@@ -135,6 +135,16 @@ const cfg = (options?: Options): Config => {
           "button-large": defaultTokens.formBoxLargeHeight,
           checkbox: defaultTokens.iconSmallSize,
         },
+        maxHeight: {
+          "illustration-extra-small": defaultTokens.illustrationExtraSmallHeight,
+          "illustration-small": defaultTokens.illustrationSmallHeight,
+          "illustration-medium": defaultTokens.illustrationMediumHeight,
+          "illustration-large": defaultTokens.illustrationLargeHeight,
+          "illustration-display": defaultTokens.illustrationDisplayHeight,
+        },
+        minWidth: {
+          "dialog-width": defaultTokens.dialogWidth,
+        },
         width: {
           "icon-small": defaultTokens.iconSmallSize,
           "icon-medium": defaultTokens.iconMediumSize,

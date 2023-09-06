@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import theme from "../../defaultTheme";
-import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
+import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive";
 import type { Props } from "../types";
 
 const tokens = {

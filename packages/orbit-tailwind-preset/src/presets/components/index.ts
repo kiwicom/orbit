@@ -142,9 +142,6 @@ const cfg = (options?: Options): Config => {
           "illustration-large": defaultTokens.illustrationLargeHeight,
           "illustration-display": defaultTokens.illustrationDisplayHeight,
         },
-        minWidth: {
-          "dialog-width": defaultTokens.dialogWidth,
-        },
         width: {
           "icon-small": defaultTokens.iconSmallSize,
           "icon-medium": defaultTokens.iconMediumSize,

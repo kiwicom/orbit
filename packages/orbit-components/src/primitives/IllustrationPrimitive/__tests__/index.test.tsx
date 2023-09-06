@@ -2,7 +2,6 @@ import React from "react";
 
 import { render, screen } from "../../../test-utils";
 import IllustrationPrimitive from "..";
-import { SIZE_OPTIONS } from "../consts";
 import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
 import defaultTheme from "../../../defaultTheme";
 
@@ -13,7 +12,7 @@ describe("IllustrationPrimitive", () => {
   it("should have expected DOM output", () => {
     render(
       <IllustrationPrimitive
-        size={SIZE_OPTIONS.EXTRASMALL}
+        size="extraSmall"
         name="Accommodation"
         alt="Alternative text"
         dataTest="test"

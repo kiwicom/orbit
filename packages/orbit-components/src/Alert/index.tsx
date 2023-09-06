@@ -204,15 +204,19 @@ StyledTitle.defaultProps = {
 };
 
 const StyledContent = styled.div<{ inlineActions?: boolean; $type: Type; $noUnderline: boolean }>`
-  ${({ inlineActions, theme }) => css`
+  ${({ inlineActions, theme, $type }) => css`
     display: flex;
     align-items: center;
     min-height: 20px;
     width: ${!inlineActions && "100%"};
 
     & a:not([class]),
-    & .orbit-text-link {
-      ${getLinkStyle};
+    & .orbit-text-link:not(.orbit-text-link--secondary) {
+      ${getLinkStyle({ theme, $type, includeBase: true })};
+    }
+
+    & .orbit-text-link.orbit-text-link--secondary {
+      ${getLinkStyle({ theme, $type, includeBase: false })};
     }
 
     & .orbit-list-item,

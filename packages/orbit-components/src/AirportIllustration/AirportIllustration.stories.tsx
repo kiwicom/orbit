@@ -3,7 +3,7 @@ import { select, text } from "@storybook/addon-knobs";
 
 // @ts-expect-error TODO
 import { NAMES } from "./consts.mts";
-import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
+import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
 

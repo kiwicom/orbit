@@ -70,6 +70,7 @@ const TextLink = ({
       download={download}
       className={cx(
         "orbit-text-link font-base duration-fast inline-flex cursor-pointer items-center font-medium transition-colors delay-0 ease-in-out hover:no-underline hover:outline-none active:no-underline active:outline-none",
+        type === "secondary" && "orbit-text-link--secondary",
         standAlone && "h-button-normal",
         typeClasses[type],
         size != null && sizeClasses[size],

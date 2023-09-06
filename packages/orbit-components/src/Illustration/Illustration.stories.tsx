@@ -3,7 +3,7 @@ import { select, text } from "@storybook/addon-knobs";
 
 // @ts-expect-error currently not resolving mts properly
 import { NAMES } from "./consts.mts";
-import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
+import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
 import type { Name } from "./types";
 

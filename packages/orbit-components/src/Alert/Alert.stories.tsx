@@ -13,6 +13,7 @@ import Text from "../Text";
 import Stack from "../Stack";
 import Heading from "../Heading";
 import CountryFlag from "../CountryFlag";
+import TextLink from "../TextLink";
 
 import Alert, { AlertButton } from ".";
 
@@ -155,6 +156,26 @@ export const InlineActions = () => {
 };
 
 InlineActions.story = {
+  parameters: {
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export const WithTextLink = () => {
+  const type = select("Type", Object.values(TYPE_OPTIONS), "info");
+
+  return (
+    <Alert type={type}>
+      <p>
+        <TextLink type="primary">This is</TextLink> a primary textlink.
+        <br />
+        <TextLink type="secondary">This is</TextLink> a secondary textlink.
+      </p>
+    </Alert>
+  );
+};
+
+WithTextLink.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },

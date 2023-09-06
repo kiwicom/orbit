@@ -1,62 +1,40 @@
 "use client";
 
 import React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../../defaultTheme";
-import { SIZE_OPTIONS, baseURL } from "./consts";
-import getSpacingToken from "../../common/getSpacingToken";
-import type { Size, Props } from "./types";
-import { spacingUtility } from "../../utils/common";
+import type { Props } from "./types";
 import useTheme from "../../hooks/useTheme";
+import { spaceAfterClasses, getMargin } from "../../common/tailwind";
+
+export enum SIZE_OPTIONS {
+  EXTRASMALL = "extraSmall",
+  SMALL = "small",
+  MEDIUM = "medium",
+  LARGE = "large",
+  DISPLAY = "display",
+}
 
 const getHeightToken = ({ theme, size }) => {
-  const tokens = {
-    [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.heightIllustrationSmall,
-    [SIZE_OPTIONS.SMALL]: "120px", // TODO: add token
-    [SIZE_OPTIONS.MEDIUM]: theme.orbit.heightIllustrationMedium,
-    [SIZE_OPTIONS.LARGE]: "280px", // TODO: create token heightIllustrationLarge
-    [SIZE_OPTIONS.DISPLAY]: "460px", // TODO: create token heightIllustrationDisplay
+  const tokens: Record<SIZE_OPTIONS, string> = {
+    [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.illustrationExtraSmallHeight,
+    [SIZE_OPTIONS.SMALL]: theme.orbit.illustrationSmallHeight,
+    [SIZE_OPTIONS.MEDIUM]: theme.orbit.illustrationMediumHeight,
+    [SIZE_OPTIONS.LARGE]: theme.orbit.illustrationLargeHeight,
+    [SIZE_OPTIONS.DISPLAY]: theme.orbit.illustrationDisplayHeight,
   };
-  return tokens[size];
+  return parseInt(tokens[size], 10);
 };
 
-export const StyledImage = styled.img.attrs<{
-  size: Size;
-  illustrationName: string;
-}>(({ theme, size, illustrationName }) => {
-  const height = parseInt(getHeightToken({ theme, size }), 10);
-  const illustrationPath = `${illustrationName}-Q85.png`;
-  return {
-    src: `${baseURL}/illustrations/0x${height}/${illustrationPath}`,
-    srcSet: `${baseURL}/illustrations/0x${
-      height * 2
-    }/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`,
-  };
-})`
-  ${({
-    theme,
-    margin,
-    size,
-  }: {
-    theme: typeof defaultTheme;
-    illustrationName: string;
-    margin: Props["margin"];
-    size: Props["size"];
-  }) => css`
-    display: inline-block;
-    margin: auto 0;
-    max-height: ${getHeightToken({ theme, size })};
-    max-width: 100%;
-    background-color: ${theme.orbit.backgroundIllustration};
-    flex-shrink: 0;
-    ${spacingUtility(margin)};
-  `};
-`;
-
-StyledImage.defaultProps = {
-  theme: defaultTheme,
+const maxHeightClasses: Record<SIZE_OPTIONS, string> = {
+  [SIZE_OPTIONS.EXTRASMALL]: "max-h-illustration-extra-small",
+  [SIZE_OPTIONS.SMALL]: "max-h-illustration-small",
+  [SIZE_OPTIONS.MEDIUM]: "max-h-illustration-medium",
+  [SIZE_OPTIONS.LARGE]: "max-h-illustration-large",
+  [SIZE_OPTIONS.DISPLAY]: "max-h-illustration-display",
 };
+
+const baseURL = "//images.kiwi.com";
 
 const IllustrationPrimitive = ({
   name,
@@ -69,15 +47,26 @@ const IllustrationPrimitive = ({
   spaceAfter,
 }: Props) => {
   const theme = useTheme();
+  const illustrationPath = `${name}-Q85.png`;
+  const height = getHeightToken({ theme, size });
+  const { vars: cssVars, classes: marginClasses } = getMargin(margin);
 
   return (
-    <StyledImage
-      illustrationName={name}
+    <img
+      className={cx(
+        "mx-0 my-auto inline-block max-w-full shrink-0 bg-transparent",
+        maxHeightClasses[size],
+        spaceAfter && spaceAfterClasses[spaceAfter],
+        ...marginClasses,
+      )}
+      src={`${baseURL}/illustrations/0x${height}/${illustrationPath}`}
+      srcSet={`${baseURL}/illustrations/0x${
+        height * 2
+      }/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`}
       alt={typeof alt === "string" ? alt : name}
-      size={size}
-      id={id}
-      margin={spaceAfter ? { bottom: getSpacingToken({ spaceAfter, theme }) } : margin}
       data-test={dataTest}
+      id={id}
+      style={cssVars}
     />
   );
 };

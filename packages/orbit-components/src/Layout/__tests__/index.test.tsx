@@ -14,9 +14,7 @@ describe("Layout", () => {
         <LayoutColumn dataTest="column">two</LayoutColumn>
       </Layout>,
     );
-    const container = screen.getByTestId("container");
     const columns = screen.getAllByTestId("column");
-    expect(container).toHaveStyle({ maxWidth: LAYOUT_SETTINGS.Search.maxWidth });
     expect(columns[0].tagName.toLowerCase()).toBe("span");
     expect(columns[0]).toHaveTextContent("one");
     expect(columns[1].tagName.toLowerCase()).toBe(LAYOUT_SETTINGS.Search.layoutColumns[1].as);

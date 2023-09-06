@@ -1,0 +1,10 @@
+name: Publish
+
+on: workflow_dispatch
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish dummy job
+        run: echo "Hello publish dummy job!"

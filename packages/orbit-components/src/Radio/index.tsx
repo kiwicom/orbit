@@ -166,6 +166,7 @@ StyledInput.defaultProps = {
   theme: defaultTheme,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const StyledLabel = styled(({ disabled, theme, type, hasError, ...props }) => (
   <label {...props}>{props.children}</label>
 ))`

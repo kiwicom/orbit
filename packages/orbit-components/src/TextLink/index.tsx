@@ -142,6 +142,7 @@ export const getLinkStyle = ({ theme, $type }: { theme: Theme; $type: Props["typ
   }
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const StyledTextLink = styled(({ asComponent: Component, theme, ...props }) => (
   <Component {...props}>{props.children}</Component>
 ))`

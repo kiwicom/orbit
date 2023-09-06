@@ -18,7 +18,7 @@ StyledListChoiceWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-type InputSelectOptionProps = {
+interface InputSelectOptionProps {
   id: Props["id"];
   active: boolean;
   isSelected: boolean;
@@ -26,7 +26,7 @@ type InputSelectOptionProps = {
   description: Option["description"];
   prefix: Option["prefix"];
   onClick: (ev: React.SyntheticEvent) => void;
-};
+}
 
 const InputSelectOption = React.forwardRef<HTMLDivElement, InputSelectOptionProps>(
   ({ active, id, onClick, isSelected, title, description, prefix }, ref) => {

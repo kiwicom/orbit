@@ -7,7 +7,7 @@ import jsxPlugin from "@svgr/plugin-jsx";
 import prettierPlugin from "@svgr/plugin-prettier";
 import filedirname from "filedirname";
 
-import { Attr, getProperty, getHTMLComments } from "../checkIcons.mjs";
+import { getProperty, getHTMLComments } from "../checkIcons.mjs";
 import { NAMES as ILLUSTRATION_NAMES } from "../../src/Illustration/consts.mjs";
 import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustration/consts.mjs";
 
@@ -49,7 +49,7 @@ const firstToUpper = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
     return tpl`
     /* eslint-disable */
     "use client";
-    
+
     import * as React from "react";
 
     import createIcon from "../Icon/createIcon";

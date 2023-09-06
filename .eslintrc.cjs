@@ -21,10 +21,7 @@ module.exports = {
       "error",
       {
         groups: [["builtin", "external"], ["parent", "sibling"], "index"],
-        pathGroups: [
-          { pattern: "@kiwicom/**", group: "external" },
-          { pattern: "eslint-plugin-orbit-components", group: "external" },
-        ],
+        pathGroups: [{ pattern: "@kiwicom/**", group: "external" }],
         "newlines-between": "always",
       },
     ],
@@ -51,16 +48,6 @@ module.exports = {
     "no-await-in-loop": "off",
     "tailwindcss/classnames-order": "off",
     "tailwindcss/no-custom-classname": [1, { whitelist: ["(orbit\\-).*"] }],
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        argsIgnorePattern: "^_",
-        varsIgnorePattern: "^_",
-        caughtErrorsIgnorePattern: "^_",
-      },
-    ],
-    // to improve performance locally
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#my-linting-feels-really-slow
     ...(!process.env.CI
       ? {
           "import/no-named-as-default": "off",
@@ -108,9 +95,17 @@ module.exports = {
         },
       },
       rules: {
+        "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "@typescript-eslint/no-empty-function": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            varsIgnorePattern: "^_",
+          },
+        ],
         "no-restricted-exports": "off",
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": "error",

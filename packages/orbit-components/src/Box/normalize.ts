@@ -3,7 +3,7 @@ import { TOKENS } from "../utils/layout/consts";
 import type { ThemeProps, Theme } from "../defaultTheme";
 import { firstToUpper } from "../utils/common";
 import { getJustify, getAlign, formatCSS, getDirection, isDefined } from "../utils/layout";
-import type { MediaQueryObject, Elevation, SpacingToken, SpacingObject, Props } from "./types";
+import type { MediaQueryObject, Elevation, SpacingToken, SpacingObject } from "./types";
 
 const normalizeSpacing = (
   el: SpacingToken | SpacingObject,

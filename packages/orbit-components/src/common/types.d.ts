@@ -21,21 +21,21 @@ export type Component =
 export type Size = "small" | "normal" | "large" | "extraLarge";
 export type InputSize = "small" | "normal";
 
-export type Carrier = {
+export interface Carrier {
   code: string;
   name: string;
   type?: "airline" | "bus" | "train" | "ferry" | "private_transfer" | "kiwicom";
-};
+}
 
-export type DataAttrs = {
+export interface DataAttrs {
   readonly dataAttrs?: {
     [key: string]: (string | null | undefined) | (boolean | null | undefined);
   };
-};
+}
 
-export type Translations = {
+export interface Translations {
   [key: string]: string;
-};
+}
 
 export interface Globals {
   readonly dataTest?: string;

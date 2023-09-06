@@ -2,7 +2,7 @@ import React from "react";
 
 import { render, screen } from "../../test-utils";
 import AirportIllustration from "..";
-import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
+import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 import defaultTheme from "../../defaultTheme";
 

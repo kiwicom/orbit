@@ -13,6 +13,7 @@ import TextStyles from "./pages/text-styles";
 import TextLinkStyles from "./pages/text-link-styles";
 import NavigationBar from "./pages/navigation-bar";
 import HeadingMediaProps from "./pages/heading-media-query-props";
+import GridMediaProps from "./pages/grid-mediaquery-props";
 
 const router = createRouter({
   lockScrolling: "/lock-scrolling",
@@ -24,85 +25,45 @@ const router = createRouter({
   textLinkStyles: "/text-link-styles",
   navigationBar: "/navigation-bar",
   headingMediaProps: "/heading-media-props",
+  gridMediaProps: "/grid-media-props",
 });
 
 function PageNotFound() {
   return <div>404</div>;
 }
 
+const Tests = ({ route }: { route: string }) => {
+  if (route === "lockScrolling") return <LockScrolling />;
+  if (route === "mediaQueries") return <MediaQueries />;
+  if (route === "modalFooter") return <ModalFooter />;
+  if (route === "boxMediaProps") return <BoxMediaProps />;
+  if (route === "stackMediaProps") return <StackMediaProps />;
+  if (route === "gridMediaProps") return <GridMediaProps />;
+  if (route === "navigationBar") return <NavigationBar />;
+  if (route === "textStyles") return <TextStyles />;
+  if (route === "textLinkStyles") return <TextLinkStyles />;
+  if (route === "headingMediaProps") return <HeadingMediaProps />;
+
+  return <PageNotFound />;
+};
+
 function App() {
   const page = useStore(router);
 
-  if (!page) {
-    return <PageNotFound />;
-  }
+  if (!page) return <PageNotFound />;
 
-  switch (page.route) {
-    case "lockScrolling":
-      return (
-        <OrbitProvider
-          useId={React.useId}
-          theme={{
-            ...defaultTheme,
-            lockScrollingBarGap: true,
-            // eslint-disable-next-line no-restricted-globals
-            lockScrolling: location.search === "?disabled" ? false : undefined,
-          }}
-        >
-          <LockScrolling />
-        </OrbitProvider>
-      );
-    case "mediaQueries":
-      return (
-        <OrbitProvider useId={React.useId} theme={defaultTheme}>
-          <MediaQueries />
-        </OrbitProvider>
-      );
-    case "modalFooter":
-      return (
-        <OrbitProvider useId={React.useId} theme={defaultTheme}>
-          <ModalFooter />
-        </OrbitProvider>
-      );
-    case "boxMediaProps":
-      return (
-        <OrbitProvider theme={defaultTheme}>
-          <BoxMediaProps />
-        </OrbitProvider>
-      );
-    case "stackMediaProps":
-      return (
-        <OrbitProvider theme={defaultTheme}>
-          <StackMediaProps />
-        </OrbitProvider>
-      );
-    case "textStyles":
-      return (
-        <OrbitProvider theme={defaultTheme}>
-          <TextStyles />
-        </OrbitProvider>
-      );
-    case "textLinkStyles":
-      return (
-        <OrbitProvider theme={defaultTheme}>
-          <TextLinkStyles />
-        </OrbitProvider>
-      );
-    case "navigationBar":
-      return (
-        <OrbitProvider theme={defaultTheme}>
-          <NavigationBar />
-        </OrbitProvider>
-      );
-    case "headingMediaProps":
-      return (
-        <OrbitProvider theme={defaultTheme}>
-          <HeadingMediaProps />
-        </OrbitProvider>
-      );
-    default:
-      return <PageNotFound />;
-  }
+  return (
+    <OrbitProvider
+      useId={React.useId}
+      theme={{
+        ...defaultTheme,
+        lockScrollingBarGap: page.route === "lockScrolling",
+        lockScrolling: window.location.search === "?disabled" ? false : undefined,
+      }}
+    >
+      <Tests route={page.route} />
+    </OrbitProvider>
+  );
 }
 
 const container = document.getElementById("app");

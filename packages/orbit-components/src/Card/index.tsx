@@ -14,7 +14,6 @@ export { default as CardSection } from "./CardSection";
 export default function Card({
   title,
   titleAs = ELEMENT_OPTIONS.H2,
-  icon,
   actions,
   description,
   children,
@@ -56,7 +55,6 @@ export default function Card({
       {(title != null || header != null) && !loading && (
         <div className="p-md lm:p-lg lm:border-x relative border-b">
           <Header
-            icon={icon}
             description={description}
             dataA11ySection={dataA11ySection}
             actions={actions}

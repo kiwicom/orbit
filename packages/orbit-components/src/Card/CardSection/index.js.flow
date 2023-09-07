@@ -7,7 +7,6 @@ import type { As } from "../../Heading/index.js.flow";
 export type Props = {|
   +title?: React.Node,
   +titleAs?: As,
-  +icon?: React.Node,
   +description?: React.Node,
   +children?: React.Node,
   +expandable?: boolean,

@@ -13,7 +13,6 @@ import handleKeyDown from "../../utils/handleKeyDown";
 export default function CardSection({
   title,
   titleAs = ELEMENT_OPTIONS.DIV,
-  icon,
   description,
   onClick,
   children,
@@ -79,7 +78,6 @@ export default function CardSection({
           <Header
             title={title}
             titleAs={titleAs}
-            icon={icon}
             description={description}
             expandable={expandable}
             header={header}

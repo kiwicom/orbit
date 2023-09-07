@@ -12,7 +12,6 @@ import ButtonLink from "../../ButtonLink";
 
 type Props = {
   description?: React.ReactNode;
-  icon?: React.ReactNode;
   actions?: React.ReactNode;
   onClose?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
   title?: React.ReactNode;
@@ -27,7 +26,6 @@ type Props = {
 
 const Header = ({
   description,
-  icon,
   title,
   titleAs,
   isSection,
@@ -40,7 +38,7 @@ const Header = ({
   expanded,
 }: Props) => (
   <Stack align="center" spacing="small">
-    {(title || description || icon) && !header && (
+    {(title || description) && !header && (
       <Stack
         flex
         shrink={!!actions || expandable}
@@ -49,7 +47,6 @@ const Header = ({
         spacing={isSection ? "none" : "XXSmall"}
       >
         <Stack inline spacing="small" align="center">
-          {icon}
           {title && (
             <Heading
               type={isSection ? "title4" : "title3"}
@@ -63,7 +60,6 @@ const Header = ({
         {description && <Text as="div">{description}</Text>}
       </Stack>
     )}
-    {header && icon}
     {header}
     {expandable && !actions && (
       <ChevronDown

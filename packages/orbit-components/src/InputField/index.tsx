@@ -68,7 +68,7 @@ Field.defaultProps = {
 export const FakeInput = styled(({ children, className }) => (
   <div className={className}>{children}</div>
 ))`
-  ${({ theme, error, disabled }) => css`
+  ${({ theme, error, disabled, readOnly }) => css`
     width: 100%;
     position: absolute;
     z-index: 1;
@@ -80,7 +80,7 @@ export const FakeInput = styled(({ children, className }) => (
       ${`${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
       }`};
-    background-color: ${disabled
+    background-color: ${disabled || readOnly
       ? theme.orbit.backgroundInputDisabled
       : theme.orbit.backgroundInput};
     font-size: ${theme.orbit.fontSizeInputNormal};
@@ -101,7 +101,7 @@ export const InputContainer = styled(({ children, className, labelRef }) => (
     {children}
   </div>
 ))`
-  ${({ theme, disabled, error }) => css`
+  ${({ theme, disabled, readOnly, error }) => css`
     display: flex;
     position: relative;
     flex-direction: row;
@@ -109,12 +109,14 @@ export const InputContainer = styled(({ children, className, labelRef }) => (
     justify-content: space-between;
     box-sizing: border-box;
     height: ${theme.orbit.heightInputNormal};
-    color: ${disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    color: ${disabled || readOnly
+      ? theme.orbit.colorTextInputDisabled
+      : theme.orbit.colorTextInput};
     font-size: ${theme.orbit.fontSizeInputNormal};
     cursor: ${disabled ? "not-allowed" : "text"};
 
     &:hover > ${FakeInput} {
-      ${!disabled &&
+      ${!(disabled || readOnly) &&
       `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};
@@ -227,9 +229,9 @@ interface StyledInputProps extends Partial<Props> {
 }
 
 export const Input = styled.input<StyledInputProps>`
-  ${({ theme, disabled, inlineLabel, type }) => css`
+  ${({ theme, disabled, readOnly, inlineLabel, type }) => css`
     appearance: none;
-    -webkit-text-fill-color: ${disabled && theme.orbit.colorTextInputDisabled};
+    -webkit-text-fill-color: ${(disabled || readOnly) && theme.orbit.colorTextInputDisabled};
     font-family: ${theme.orbit.fontFamily};
     border: none;
     padding: ${theme.orbit.paddingInputNormal};
@@ -383,7 +385,12 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           {label}
         </FormLabel>
       )}
-      <InputContainer disabled={disabled} error={error} labelRef={label ? null : labelRef}>
+      <InputContainer
+        readOnly={readOnly}
+        disabled={disabled}
+        error={error}
+        labelRef={label ? null : labelRef}
+      >
         {inlineLabel && !tags && (error || help) ? (
           <Prefix>
             {help && !error && (
@@ -463,7 +470,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           {...dataAttrs}
         />
         {suffix && <Suffix>{suffix}</Suffix>}
-        <FakeInput disabled={disabled} error={error} />
+        <FakeInput readOnly={readOnly} disabled={disabled} error={error} />
       </InputContainer>
       {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip

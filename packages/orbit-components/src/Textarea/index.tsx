@@ -74,7 +74,7 @@ interface StyledTextAreaProps extends Partial<Props> {
 }
 
 const StyledTextArea = styled.textarea<StyledTextAreaProps>`
-  ${({ theme, resize, fullHeight, error, disabled }) => css`
+  ${({ theme, resize, fullHeight, error, disabled, readOnly }) => css`
     appearance: none;
     box-sizing: border-box;
     display: block;
@@ -83,10 +83,12 @@ const StyledTextArea = styled.textarea<StyledTextAreaProps>`
     padding: ${getPadding};
     box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput}
       ${error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
-    background-color: ${disabled
+    background-color: ${disabled || readOnly
       ? theme.orbit.backgroundInputDisabled
       : theme.orbit.backgroundInput};
-    color: ${disabled ? theme.orbit.colorTextInputDisabled : theme.orbit.colorTextInput};
+    color: ${disabled || readOnly
+      ? theme.orbit.colorTextInputDisabled
+      : theme.orbit.colorTextInput};
     font-size: ${getFontSize};
     line-height: ${getLineHeight};
     cursor: ${disabled ? "not-allowed" : "text"};
@@ -110,7 +112,7 @@ const StyledTextArea = styled.textarea<StyledTextAreaProps>`
     }
 
     &:hover {
-      box-shadow: ${!disabled &&
+      box-shadow: ${!(disabled || readOnly) &&
       css`inset 0 0 0 ${theme.orbit.borderWidthInput} ${
         error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
       }`};

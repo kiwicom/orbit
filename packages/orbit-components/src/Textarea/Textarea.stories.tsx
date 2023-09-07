@@ -108,6 +108,7 @@ export const Playground = () => {
   const help = text("Help", "");
   const error = text("Error", "Something went wrong.");
   const disabled = boolean("Disabled", false);
+  const readOnly = boolean("Read-only", false);
   const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
   const maxLength = number("maxLength", Infinity);
   const dataTest = text("dataTest", "test");
@@ -127,6 +128,7 @@ export const Playground = () => {
       rows={rows}
       required={required}
       disabled={disabled}
+      readOnly={readOnly}
       maxLength={maxLength}
       resize={resize}
       onChange={action("change")}

@@ -20,7 +20,6 @@ import InputField from "../InputField";
 import Select from "../Select";
 import CountryFlag from "../CountryFlag";
 import InputGroup from "../InputGroup";
-import Airplane from "../icons/Airplane";
 import TextLink from "../TextLink";
 import Checkbox from "../Checkbox";
 import Radio from "../Radio";
@@ -214,7 +213,7 @@ export const WithForm = () => {
         <ModalHeader title="Refund" description="Reservation number: 123456789" />
         <ModalSection>
           <Stack>
-            <Card title="Cancellation" icon={<Airplane />} />
+            <Card title="Cancellation" />
             <Text size="small" weight="bold">
               Contact information
             </Text>
@@ -287,7 +286,6 @@ export const WithFixedFooter = () => {
               <CardSection
                 expandable
                 noSeparator
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
                 title={
                   <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <Stack spacing="XXSmall">
@@ -311,7 +309,6 @@ export const WithFixedFooter = () => {
               <CardSection
                 expandable
                 noSeparator
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
                 title={
                   <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <Stack spacing="XXSmall">
@@ -334,7 +331,6 @@ export const WithFixedFooter = () => {
               />
               <CardSection
                 expandable
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
                 title={
                   <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <Stack spacing="XXSmall">
@@ -365,7 +361,6 @@ export const WithFixedFooter = () => {
             </Text>
             <Card>
               <CardSection
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
                 title={
                   <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <Stack spacing="XXSmall">
@@ -389,7 +384,6 @@ export const WithFixedFooter = () => {
               />
               <CardSection
                 expandable
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
                 title={
                   <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <Stack spacing="XXSmall">
@@ -412,7 +406,6 @@ export const WithFixedFooter = () => {
               />
               <CardSection
                 expandable
-                icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} size="large" />}
                 title={
                   <Stack direction="row" align="center" justify="between" spacing="XSmall">
                     <Stack spacing="XXSmall">

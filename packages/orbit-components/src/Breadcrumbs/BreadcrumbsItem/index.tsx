@@ -1,63 +1,48 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../../defaultTheme";
-import ChevronForward from "../../icons/ChevronForward";
 import type { Props } from "./types";
+import ChevronForward from "../../icons/ChevronForward";
 
-const StyledBreadcrumbsItem = styled.li`
-  display: flex;
-  align-items: center;
-`;
+const Component = ({
+  href,
+  onClick,
+  component: Comp,
+  children,
+  ...props
+}: Props &
+  Pick<
+    React.HTMLAttributes<HTMLDivElement | HTMLAnchorElement | HTMLButtonElement>,
+    "itemScope" | "itemType" | "itemProp" | "itemID" | "className"
+  >) => {
+  const isClickable = onClick != null || href != null;
+  if (!isClickable) return <div {...props}>{children}</div>;
 
-const StyledBreadcrumbsItemAnchor = styled(({ component, children, isClickable, ...props }) => {
-  const Component = isClickable ? component : "div";
-  return <Component {...props}>{children}</Component>;
-})`
-  ${({ theme, $active, isClickable }) => css`
-    font-weight: ${$active ? theme.orbit.fontWeightBold : theme.orbit.fontWeightMedium};
-    color: ${theme.orbit.paletteInkDark};
-    text-decoration: ${isClickable && !$active ? "underline" : "none"};
+  if (Comp != null)
+    return (
+      <Comp {...props} onClick={onClick} href={href}>
+        {children}
+      </Comp>
+    );
 
-    ${isClickable &&
-    css`
-      transition: color ${theme.orbit.durationFast} ease-in-out;
-      cursor: pointer;
-      border: none;
-      padding: 0;
-      outline-offset: 1px;
+  if (href == null)
+    return (
+      <button type="button" {...props} onClick={onClick}>
+        {children}
+      </button>
+    );
 
-      &:hover {
-        text-decoration: none;
-        color: ${theme.orbit.paletteProductNormalHover};
-      }
-    `};
-  `}
-`;
-
-StyledBreadcrumbsItemAnchor.defaultProps = {
-  theme: defaultTheme,
+  return (
+    <a href={href} onClick={onClick} {...props}>
+      {children}
+    </a>
+  );
 };
-
-const StyledBreadcrumbsItemIcon = styled(ChevronForward)`
-  ${({ theme }) => css`
-    margin: 0 ${theme.orbit.spaceXXSmall};
-  `}
-`;
-
-StyledBreadcrumbsItemIcon.defaultProps = {
-  theme: defaultTheme,
-};
-
-const DefaultComponent = (props: Props) =>
-  // @ts-expect-error TODO
-  // eslint-disable-next-line jsx-a11y/anchor-has-content
-  props.onClick && !props.href ? <button {...props} type="button" /> : <a {...props} />;
 
 const BreadcrumbsItem = ({
-  active,
+  active = false,
   children,
   dataTest,
   onClick,
@@ -68,32 +53,53 @@ const BreadcrumbsItem = ({
   ...props
 }: Props) => {
   return (
-    <StyledBreadcrumbsItem
+    <li
       data-test={dataTest}
       aria-current={active ? "page" : undefined}
       itemProp="itemListElement"
       itemScope
       itemType="http://schema.org/ListItem"
+      className="flex items-center"
     >
-      <StyledBreadcrumbsItemAnchor
-        isClickable={href || onClick}
+      <Component
         href={href}
-        component={component || DefaultComponent}
-        $active={active}
+        component={component}
         onClick={onClick}
         itemScope
         itemType="http://schema.org/WebPage"
         itemProp="item"
-        itemID={id || href}
+        itemID={id ?? href}
         {...props}
+        className={cx(
+          "text-ink-dark",
+          active ? "font-bold" : "font-medium",
+          (onClick != null || href != null) && [
+            active ? "no-underline" : "underline",
+            "cursor-pointer",
+            "border-none",
+            "p-0",
+            "outline-offset-1",
+            "duration-fast transition-colors ease-in-out",
+            "hover:no-underline",
+            "hover:text-product-normal-hover",
+          ],
+        )}
       >
         <span itemProp="name">{children}</span>
-      </StyledBreadcrumbsItemAnchor>
+      </Component>
+
       <meta itemProp="position" content={String(contentKey)} />
+
       {!active && (
-        <StyledBreadcrumbsItemIcon ariaHidden reverseOnRtl size="small" color="tertiary" />
+        <ChevronForward
+          ariaHidden
+          reverseOnRtl
+          size="small"
+          color="tertiary"
+          className="mx-xxs my-0"
+        />
       )}
-    </StyledBreadcrumbsItem>
+    </li>
   );
 };
 

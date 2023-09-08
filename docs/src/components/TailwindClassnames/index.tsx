@@ -1,5 +1,5 @@
 import React from "react";
-import orbitFoundation from "@kiwicom/orbit-tailwind-preset";
+import orbitFoundation, { orbitComponentsPreset } from "@kiwicom/orbit-tailwind-preset";
 import {
   Table,
   TableHead,
@@ -11,7 +11,7 @@ import {
   Heading,
 } from "@kiwicom/orbit-components";
 import styled from "styled-components";
-import { upperFirst, transform, omit } from "lodash";
+import { merge, upperFirst, transform, omit } from "lodash";
 
 import { DesignTokenName, DesignTokenValue, DesignTokenIcon } from "../DesignTokensList";
 
@@ -53,13 +53,12 @@ const getCategory = (name: string) => {
 };
 
 const TailwindClassnames = () => {
-  const orbitPreset = orbitFoundation().presets?.at(0)?.theme;
-  const transformedConfig = omit(
+  const mergedConfigs = omit(
     transform(
-      {
-        ...orbitPreset,
-        zIndex: orbitPreset?.extend?.zIndex,
-      },
+      merge(orbitComponentsPreset()?.theme?.extend, {
+        ...orbitFoundation.theme,
+        zIndex: orbitFoundation.theme?.extend?.zIndex,
+      }),
       (r, v, k) => {
         // eslint-disable-next-line no-param-reassign
         r[upperFirst(k)] = v;
@@ -70,14 +69,14 @@ const TailwindClassnames = () => {
     ["Keyframes", "Colors", "Extend"],
   );
 
-  const [listOfClassnames, setListOfClassnames] = React.useState(transformedConfig);
+  const [listOfClassnames, setListOfClassnames] = React.useState(mergedConfigs);
 
   const [selectedGroup, setSelectedGroup] = React.useState<string>();
 
   return (
     <Stack direction="column" shrink spacing="XLarge">
       <Stack inline spacing="small" wrap>
-        {Object.keys(transformedConfig).map(grp => {
+        {Object.keys(mergedConfigs).map(grp => {
           return (
             <Button
               type={selectedGroup === grp ? "primary" : "secondary"}
@@ -87,7 +86,7 @@ const TailwindClassnames = () => {
                 setListOfClassnames(() => {
                   return {
                     [grp]: {
-                      ...transformedConfig[grp],
+                      ...mergedConfigs[grp],
                     },
                   };
                 });

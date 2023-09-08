@@ -1,6 +1,7 @@
+import orbitFoundationPreset from "./presets/foundation";
 import orbitComponentsPreset from "./presets/components";
 import defaultFoundation from "./presets/foundation/theme/defaultFoundation";
 
-export { defaultFoundation };
+export { orbitComponentsPreset, defaultFoundation };
 
-export default orbitComponentsPreset;
+export default orbitFoundationPreset;

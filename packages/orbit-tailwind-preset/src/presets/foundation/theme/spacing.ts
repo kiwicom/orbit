@@ -3,6 +3,7 @@ import foundation from "./defaultFoundation";
 const spacings = {
   none: "0px",
   0: "0px",
+  px: "1px",
   xxxs: foundation.space.xxxsmall,
   xxs: foundation.space.xxsmall,
   xs: foundation.space.xsmall,

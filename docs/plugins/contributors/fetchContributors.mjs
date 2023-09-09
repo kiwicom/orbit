@@ -1,10 +1,9 @@
 import { Octokit } from "@octokit/rest";
-import path from "path";
-import fs from "fs-extra";
 import dotenv from "dotenv-safe";
 import prettier from "prettier";
 import _ from "lodash";
 import filedirname from "filedirname";
+import { fs, path } from "zx";
 
 const [, __dirname] = filedirname();
 
@@ -33,24 +32,30 @@ async function fetchUsers() {
 
     const requests = usernames.map(username => octokit.users.getByUsername({ username }));
     const users = _.sortBy(
-      (await Promise.all(requests)).map(n => {
-        const { login, id, name, twitter_username, blog, bio, avatar_url, html_url } = n.data;
-        return {
-          id,
-          name,
-          username: login,
-          error: "",
-          twitter: twitter_username,
-          website: blog,
-          info: bio,
-          core: false,
-          active: false,
-          dribble: "",
-          avatar_url,
-          position: "",
-          github: html_url,
-        };
-      }),
+      (await Promise.all(requests))
+        .map(n => {
+          const { login, id, name, twitter_username, blog, bio, avatar_url, company, html_url } =
+            n.data;
+
+          if (company === "@actions") return null;
+
+          return {
+            id,
+            name,
+            username: login,
+            error: "",
+            twitter: twitter_username,
+            website: blog,
+            info: bio,
+            core: false,
+            active: false,
+            dribble: "",
+            avatar_url,
+            position: "",
+            github: html_url,
+          };
+        })
+        .filter(Boolean),
       "name",
     );
 

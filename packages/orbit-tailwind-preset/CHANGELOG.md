@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@1.1.0...@kiwicom/orbit-tailwind-preset@2.0.0) (2023-09-11)
+
+
+* feat(tailwind)!: change default exported config ([5118a98](https://github.com/kiwicom/orbit/commit/5118a986354108156687e6b53e45a3e6093f58d5))
+
+
+### Features
+
+* **tailwind:** add px (1px) spacing ([fd9253f](https://github.com/kiwicom/orbit/commit/fd9253fcb5e46695e2cb0fc84cf4caf5cad7fb4f))
+
+
+### BREAKING CHANGES
+
+* default export is now orbitComponentsPreset
+
+
+
+
+
 # [1.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@1.0.1...@kiwicom/orbit-tailwind-preset@1.1.0) (2023-08-22)
 
 

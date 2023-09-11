@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [9.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.0.0...@kiwicom/orbit-components@9.1.0) (2023-09-11)
+
+#### Bug Fixes
+
+*   **Card:** header actions are now vertically center aligned ([2679f54](https://github.com/kiwicom/orbit/commit/2679f5410e6c7bc1f9cebbb092e4da6cd20e5709))
+*   **HorizontalScroll:** prevent click to induce scrolling ([1eec4d2](https://github.com/kiwicom/orbit/commit/1eec4d212ddc05f686ab5e304bd11d3538f9e537))
+*   **InputField:** show 'readOnly' as 'disabled' visually ([594a642](https://github.com/kiwicom/orbit/commit/594a642a27ba3026d804421a493c7c479bb53a95))
+*   **Radio:** add visible indication of checked state when disabled ([#3970](https://github.com/kiwicom/orbit/issues/3970)) ([8cc1f62](https://github.com/kiwicom/orbit/commit/8cc1f62d2790fc4422e2aa3a00588d6c8cf90d0b))
+*   **Textarea:** show 'readOnly' as 'disabled' visually ([68a25bc](https://github.com/kiwicom/orbit/commit/68a25bcf11324e980503e2a1744dc860aa24859b))
+*   **Wizard:** title now renders correctly even without labelProgress ([9cd2503](https://github.com/kiwicom/orbit/commit/9cd25034b4d08f7a4b61f3161bfc4bfba558040f))
+
+#### Features
+
+*   **icons:** update icons from figma ([6db1846](https://github.com/kiwicom/orbit/commit/6db18463a0038ae54c009177018bfc909c9d4608))
+*   **icons:** update icons from figma ([0191293](https://github.com/kiwicom/orbit/commit/01912933e33941e0ffec5a3f63db7ee3ec09884c))
+*   **icons:** update icons from figma ([#3971](https://github.com/kiwicom/orbit/issues/3971)) ([1493315](https://github.com/kiwicom/orbit/commit/149331518258febba782caf34991448f03febf06))
+*   **icons:** update icons from figma ([#3983](https://github.com/kiwicom/orbit/issues/3983)) ([69e68e0](https://github.com/kiwicom/orbit/commit/69e68e0c3c681318fd7e8b10eb04cf9b65c531e7))
+*   **icons:** update icons from figma ([#3988](https://github.com/kiwicom/orbit/issues/3988)) ([32febf0](https://github.com/kiwicom/orbit/commit/32febf0701085be4cd41de1e1eafe74672f67e4c))
+*   **icons:** update icons from figma ([#3993](https://github.com/kiwicom/orbit/issues/3993)) ([1092efd](https://github.com/kiwicom/orbit/commit/1092efdde90b5d0286afbf56dd76a771a96cc88d))
+*   **InputField:** add defaultValue prop ([269928c](https://github.com/kiwicom/orbit/commit/269928c289a6864c4e7138c37df0057923f3123a))
+*   **OrbitProvider:** no longer require single child ([5aed201](https://github.com/kiwicom/orbit/commit/5aed2014f5dc5de5c7a4a55884bb4eebaa0ec85c))
+*   **Textarea:** add defaultValue prop ([0da689f](https://github.com/kiwicom/orbit/commit/0da689f3cf90ef8e4b5eee894c5b8987657f4bc2))
+
 ## [9.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@8.1.2...@kiwicom/orbit-components@9.0.0) (2023-08-22)
 
 #### Features

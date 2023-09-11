@@ -240,21 +240,6 @@
     "github": "https://github.com/infi-pc"
   },
   {
-    "id": 2528846,
-    "name": "Michal Sänger",
-    "username": "michalsanger",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": null,
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/2528846?v=4",
-    "position": "",
-    "github": "https://github.com/michalsanger"
-  },
-  {
     "id": 1737335,
     "name": "Petr Šnobelt",
     "username": "PetrSnobelt",
@@ -433,6 +418,21 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/3984338?v=4",
     "position": "",
     "github": "https://github.com/williamkolmacka"
+  },
+  {
+    "id": 65916846,
+    "name": null,
+    "username": "actions-user",
+    "error": "",
+    "twitter": null,
+    "website": "https://github.com/actions",
+    "info": null,
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/65916846?v=4",
+    "position": "",
+    "github": "https://github.com/actions-user"
   },
   {
     "id": 5772786,

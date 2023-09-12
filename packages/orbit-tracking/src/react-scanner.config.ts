@@ -4,8 +4,8 @@ import processor from "./orbitProcessor";
 export default {
   crawlFrom: TMP_FOLDER,
   includeSubComponents: true,
-  deprecated: ["InputStepper"],
-  globs: ["**/!(*.test|*.spec|*.d).@(js|jsx)?(x)"],
+  deprecated: [],
+  globs: ["**/!(*.test|*.spec|*.d).@(js|ts)?(x)"],
   importedFrom: /@kiwicom\/orbit-components/,
   exclude: [
     "node_modules",

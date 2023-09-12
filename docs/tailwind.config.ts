@@ -7,6 +7,13 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
     path.join(path.dirname(require.resolve("@kiwicom/orbit-components")), "**/*.js"),
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        base: "Dm Sans, sans-serif",
+      },
+    },
+  },
   presets: [
     orbitComponentsPreset({
       disablePreflight: false,

@@ -1,0 +1,129 @@
+---
+title: v10
+description: How to migrate to Orbit 10.0.0
+redirect_from:
+  - /migration-guides/v10/
+---
+
+# Orbit Migration Guide v10
+
+This migration guide focuses on the process of migrating from Orbit v9.1 to v10.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+This version of Orbit includes the first batch of components styled with Tailwind, instead of Styled Components. Note that you can keep using Styled Components, especially on your custom components. But we recommend start migrating them to Tailwind as well.
+
+Components in Tailwind should have the same API as before, so no breaking changes are expected in that regard. However, since some of the migrated components went through deep refactoring, we recommend being vigilant for unexpected and undocumented changes. Those should be reported so that we can fix them.
+
+## Breaking changes
+
+### Tailwind requirement
+
+As mentioned before, this version of Orbit includes the first batch of components styled with Tailwind. Therefore, Tailwind must be installed and configured in your project for you to be able to use these components.
+Please refer to the [official Tailwind documentation](https://tailwindcss.com/docs/installation) and the [Orbit's Tailwind setup documentation](/foundation/tailwind/installation) for more information on how to do that.
+
+As a summary, you should have Tailwind installed and configured in your project, as well as the Orbit preset for Tailwind included on the config file.
+
+### StyledBox removed
+
+The `StyledBox` component is no longer exported. This allowed custom Styled Components to target the `Box` components from Orbit and apply styles to it. Therefore, things like the following code will no longer work:
+
+```jsx
+import { StyledBox } from "@kiwicom/orbit-components";
+
+const SomeWrapper = styled.div`
+  height: 100%;
+
+  ${StyledBox} {
+    padding: 10px;
+  }
+`;
+```
+
+This could be used to add custom styles to the `Box` component, one of the exceptions we have in Orbit Design System.
+Instead of using `StyledBox`, you can now target the components by using the `.orbit-box` selector:
+
+```jsx
+const SomeWrapper = styled.div`
+  height: 100%;
+
+  .orbit-box {
+    padding: 10px;
+  }
+`;
+```
+
+### Using the styled function
+
+If you are using the `styled` function from Styled Components to wrap and overwrite the styles of Orbit components, we recommend ensuring that your custom styles are not being overwritten by the Tailwind classes. We don't provide support for such scenarios, so we recommend reevaluating the need to overwrite the styles of Orbit components.
+
+Exceptionally, the `Box` component accepts Tailwind classes to customize its styles, via the `className` prop. This is only recommended for styles that are not achievable with the props available on the component.
+
+**Before:**
+
+```jsx
+import styled from "styled-components";
+import { Box } from "@kiwicom/orbit-components";
+
+const CustomBox = styled(Box)`
+  ${({theme})} => css`
+    line-height: ${theme.orbit.lineHeightNormal};
+    padding: ${theme.orbit.spaceSmall};
+  `};
+`;
+```
+
+**Now:**
+
+```jsx
+import { Box } from "@kiwicom/orbit-components";
+
+const CustomBox = props => <Box className="leading-normal" padding="small" {...props} />;
+```
+
+### Align prop in Text
+
+The `Text` component features an `align` prop that directly matches the `text-align` CSS property. This property used to have a default value of `"left"` and Styled Components was automatically dealing with RTL and converting `"left"` to `"right"` when the browser was presenting a page in RTL.
+
+Now, this is no longer the case. Therefore, we have changed the default value to be `"start"` so that it keeps the same behavior as before. However, if you were using the `align` prop with the value `"left"` or `"right"` and relying on an automatic RTL conversion, you should now use `"start"` instead.
+
+Notice that `"left"` and `"right"` are still valid values, but they will not adjust to RTL anymore.
+
+### Icon prop in Card
+
+The `icon` prop was already deprecated in the `Card` and `CardSection` components and has finally been removed in this version.
+
+If needed, it is still possible to apply an icon (or similar) using layout components. For example:
+
+**Before:**
+
+```jsx
+<CardSection
+  icon={<CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />}
+  title={
+    <Stack direction="row" spacing="XXSmall" align="center">
+      <Text weight="bold">Cairo CAI</Text>
+      <FlightDirect size="small" />
+      <Text weight="bold">Dubai SHJ</Text>
+    </Stack>
+  }
+/>
+```
+
+**Now:**
+
+```jsx
+<CardSection
+  title={
+    <Stack direction="row" spacing="XSmall" align="center">
+      <Box>
+        <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
+      </Box>
+      <Stack direction="row" spacing="XXSmall" align="center">
+        <Text weight="bold">Cairo CAI</Text>
+        <FlightDirect size="small" />
+        <Text weight="bold">Dubai SHJ</Text>
+      </Stack>
+    </Stack>
+  }
+/>
+```

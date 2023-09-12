@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Portal } from "@kiwicom/orbit-components";
 import { format } from "prettier/standalone";
-import parserBabel from "prettier/parser-babel";
+import * as prettierPluginBabel from "prettier/plugins/babel";
 
 import { StyledAnchor } from "../HeadingWithLink";
 import Editor from "./components/Editor";
@@ -162,11 +162,13 @@ const Example = ({
         isVariantsOpened={isVariantsOpened}
         onSelectBackground={value => setSelectedBackground(value)}
         onOpenFullScreen={() => setFullScreen(!isFullScreen)}
-        onOpenEditor={() => {
+        onOpenEditor={async () => {
           setOpenEditor(prev => !prev);
           setRestored(false);
           setPlaygroundOpened(false);
-          updateLocalStorage(format(code, { parser: "babel", plugins: [parserBabel] }));
+          updateLocalStorage(
+            await format(code, { parser: "babel", plugins: [prettierPluginBabel] }),
+          );
           setVariantsOpened(false);
         }}
         onOpenPlayground={() => {

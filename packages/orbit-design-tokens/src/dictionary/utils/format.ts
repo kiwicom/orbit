@@ -7,15 +7,22 @@ const getParserOption = (platform: string) => {
 };
 
 function resolveConfig() {
-  const config = prettier.resolveConfig.sync("");
+  const config = prettier.resolveConfig("");
   if (!config) throw new Error("Can't find prettier config.");
   return config;
 }
 
-const formatCode = (code: (string | undefined)[], platform: string): string =>
-  prettier.format(Array.isArray(code) ? code.join("\n") : code, {
-    ...resolveConfig(),
-    parser: getParserOption(platform),
-  });
+const formatCode = async (code: (string | undefined)[], platform: string): Promise<string> => {
+  const res = await prettier
+    .format(Array.isArray(code) ? code.join("\n") : code, {
+      ...resolveConfig(),
+      parser: getParserOption(platform),
+    })
+    .then(formattedCode => {
+      return formattedCode;
+    });
+
+  return res;
+};
 
 export default formatCode;

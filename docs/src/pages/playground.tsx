@@ -10,7 +10,7 @@ import Check from "@kiwicom/orbit-components/lib/icons/Check";
 import { ToastRoot, createToast } from "@kiwicom/orbit-components/lib/Toast";
 import Sun from "@kiwicom/orbit-components/lib/icons/Sun";
 import prettier from "prettier/standalone";
-import parserBabel from "prettier/parser-babel";
+import * as parserBabel from "prettier/plugins/babel";
 import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple";
 
 import useCopyToClipboard from "../hooks/useCopyToClipboard";
@@ -72,9 +72,6 @@ const getDirection = (layout: Layout) => {
   return "row";
 };
 
-const formatWithPrettier = (code: string) =>
-  prettier.format(code, { parser: "babel", plugins: [parserBabel] });
-
 const Playground = ({ location }: Props) => {
   const { updateLocalStorage, setCode, code } = useSandbox("playground", DEFAULT_CODE);
 
@@ -85,7 +82,9 @@ const Playground = ({ location }: Props) => {
 
   React.useEffect(() => {
     const timerId = setTimeout(() => {
-      setCode(formatWithPrettier(code));
+      prettier.format(code, { parser: "babel", plugins: [parserBabel] }).then(formattedCode => {
+        setCode(formattedCode);
+      });
     }, 5000);
 
     return () => clearTimeout(timerId);

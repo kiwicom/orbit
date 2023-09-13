@@ -47,15 +47,15 @@ describe("line heights", () => {
     render(<LineHeight />);
 
     expect(screen.getByText("leading-small")).toHaveStyle({
-      lineHeight: defaultTokens.lineHeightTextSmall,
+      lineHeight: defaultTokens.lineHeightSmall,
     });
 
     expect(screen.getByText("leading-normal")).toHaveStyle({
-      lineHeight: defaultTokens.lineHeightTextNormal,
+      lineHeight: defaultTokens.lineHeightNormal,
     });
 
     expect(screen.getByText("leading-large")).toHaveStyle({
-      lineHeight: defaultTokens.lineHeightTextLarge,
+      lineHeight: defaultTokens.lineHeightLarge,
     });
   });
 });

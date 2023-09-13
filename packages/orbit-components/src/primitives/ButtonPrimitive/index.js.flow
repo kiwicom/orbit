@@ -3,7 +3,6 @@
   DOCUMENTATION: https://orbit.kiwi/utilities/buttonprimitive/
 */
 import * as React from "react";
-import type { StyledComponent } from "styled-components";
 
 import type { Globals, Component } from "../../common/common.js.flow";
 import type { spaceAfter } from "../../common/getSpacingToken/index.js.flow";
@@ -109,7 +108,5 @@ export type Props = {|
   ...ButtonCommonProps,
   ...PrimitiveTypes,
 |};
-
-declare export var StyledButtonPrimitive: StyledComponent<any, any, HTMLElement>;
 
 declare export default React.AbstractComponent<Props, HTMLButtonElement>;

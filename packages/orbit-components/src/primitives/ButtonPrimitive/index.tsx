@@ -1,263 +1,297 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../../defaultTheme";
 import Loading from "../../Loading";
-import getSpacingToken from "../../common/getSpacingToken";
-import ButtonPrimitiveContent from "./components/ButtonPrimitiveContent";
-import ButtonPrimitiveIconContainer, {
-  StyledButtonPrimitiveIconContainer,
-} from "./components/ButtonPrimitiveIconContainer";
-import ButtonPrimitiveContentChildren from "./components/ButtonPrimitiveContentChildren";
-import mq from "../../utils/mediaQuery";
 import createRel from "./common/createRel";
 import onKeyDown from "../../utils/handleKeyDown";
+import { getSpaceAfterClasses } from "../../common/tailwind";
 import type { Props } from "./types";
 
-const iconContainerColor = (color: string, important = true) => css`
-  ${StyledButtonPrimitiveIconContainer} {
-    color: ${color} ${important && "!important"};
-  }
-`;
-
-interface StyleProps extends Props {
-  onlyIcon: boolean;
+interface ComponentProps extends Props {
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export const StyledButtonPrimitive = styled(
-  React.forwardRef<HTMLButtonElement | HTMLAnchorElement, StyleProps>(
-    (
-      {
-        asComponent = "button",
-        id,
-        dataTest,
-        submit,
-        disabled,
-        ariaControls,
-        ariaExpanded,
-        ariaLabelledby,
-        ariaCurrent,
-        title,
-        className,
-        rel,
-        href,
-        external,
-        tabIndex,
-        onClick,
-        role,
-        download,
-        ...props
-      },
-      ref,
-    ) => {
-      const isButtonWithHref = asComponent === "button" && href;
-      const Component = isButtonWithHref ? "a" : asComponent;
-      const buttonType = submit ? "submit" : "button";
-
-      const handleKeyDown = (ev: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) =>
-        asComponent === "div" ? onKeyDown(onClick)(ev) : undefined;
-
-      return (
-        <Component
-          ref={ref}
-          id={id}
-          data-test={dataTest}
-          aria-controls={ariaControls}
-          aria-current={ariaCurrent}
-          aria-expanded={ariaExpanded}
-          aria-label={title}
-          aria-labelledby={ariaLabelledby}
-          type={!isButtonWithHref ? buttonType : undefined}
-          className={className}
-          disabled={disabled}
-          onKeyDown={handleKeyDown}
-          href={!disabled ? href : null}
-          target={!disabled && href && external ? "_blank" : undefined}
-          rel={createRel({ external, href, rel })}
-          tabIndex={tabIndex}
-          onClick={!disabled ? onClick : null}
-          role={role}
-          download={download}
-        >
-          {props.children}
-        </Component>
-      );
-    },
-  ),
-)`
-  ${({
-    foreground,
+const ButtonPrimitiveComponent = React.forwardRef(function Component(
+  {
+    asComponent = "button",
+    dataTest,
+    submit,
     disabled,
-    fullWidth,
+    ariaControls,
+    ariaExpanded,
+    ariaLabelledby,
+    ariaCurrent,
+    title,
+    rel,
     href,
-    theme,
-    asComponent,
-    circled,
-    padding,
-    background,
-    fontWeight,
-    fontSize,
-    height,
-    width,
-    onlyIcon,
-    icons,
-    foregroundHover,
-    foregroundActive,
-    foregroundFocus,
-    backgroundHover,
-    backgroundActive,
-    backgroundFocus,
-    boxShadow,
-    boxShadowHover,
-    boxShadowFocus,
-    boxShadowActive,
-    underlined,
-  }) => css`
-    height: ${height};
-    position: relative;
-    display: ${href || asComponent === "a" ? "inline-flex" : "flex"};
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    appearance: none !important;
-    text-align: center;
-    text-decoration: ${underlined ? "underline" : "none"};
-    flex: ${fullWidth ? "1 1 auto" : "0 0 auto"};
-    max-width: 100%;
-    background: ${background};
-    color: ${foreground}!important;
-    border: 0;
-    outline: ${boxShadowFocus && "0"};
-    padding: ${padding};
-    border-radius: ${circled ? height : "6px"};
-    font-family: ${theme.orbit.fontFamily};
-    font-weight: ${fontWeight || theme.orbit.fontWeightMedium};
-    font-size: ${fontSize};
-    cursor: ${disabled ? "not-allowed" : "pointer"};
-    transition: all ${theme.orbit.durationFast} ease-in-out !important;
-    opacity: ${disabled && theme.orbit.opacityButtonDisabled};
-    margin-bottom: ${getSpacingToken};
-    width: ${fullWidth ? "100%" : width || (onlyIcon && height) || "auto"};
-    box-shadow: ${boxShadow};
-    & > * {
-      vertical-align: middle;
-    }
+    external,
+    onClick,
+    children,
+    ...props
+  }: ComponentProps,
+  ref: React.ForwardedRef<HTMLButtonElement | HTMLAnchorElement>,
+) {
+  const isButtonWithHref = asComponent === "button" && href;
+  const Element = isButtonWithHref ? "a" : asComponent;
+  const buttonType = submit ? "submit" : "button";
 
-    ${mq.tablet(css`
-      border-radius: ${circled ? height : theme.orbit.borderRadiusNormal};
-    `)}
+  const handleKeyDown = (ev: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) =>
+    asComponent === "div" ? onKeyDown(onClick)(ev) : undefined;
 
-    ${icons && icons.foreground && iconContainerColor(icons.foreground, false)};
+  return (
+    <Element
+      ref={ref}
+      data-test={dataTest}
+      aria-controls={ariaControls}
+      aria-current={ariaCurrent}
+      aria-expanded={ariaExpanded}
+      aria-label={title}
+      aria-labelledby={ariaLabelledby}
+      type={!isButtonWithHref ? buttonType : undefined}
+      disabled={disabled}
+      onKeyDown={handleKeyDown}
+      href={!disabled ? href : null}
+      target={!disabled && href && external ? "_blank" : undefined}
+      rel={createRel({ external, href, rel })}
+      // Needs to be here for non <button> elements
+      onClick={disabled ? undefined : onClick}
+      {...props}
+    >
+      {children}
+    </Element>
+  );
+});
 
-    & .orbit-loading-spinner {
-      width: ${icons && icons.width};
-      height: ${icons && icons.height};
-      stroke: ${theme.orbit.paletteWhite};
-    }
-
-    &:hover {
-      ${!disabled &&
-      css`
-        background: ${backgroundHover};
-        color: ${foregroundHover}!important;
-        box-shadow: ${boxShadowHover};
-        text-decoration: none;
-        ${icons && icons.foregroundHover && iconContainerColor(icons.foregroundHover)};
-      `};
-    }
-
-    :focus {
-      box-shadow: ${boxShadowFocus};
-      background: ${backgroundFocus};
-      color: ${foregroundFocus}!important;
-      text-decoration: none;
-      ${icons && icons.foregroundFocus && iconContainerColor(icons.foregroundFocus)};
-    }
-
-    :focus:not(:focus-visible) {
-      box-shadow: none;
-      background: ${background};
-      color: ${foregroundFocus}!important;
-      text-decoration: none;
-      ${icons && icons.foregroundFocus && iconContainerColor(icons.foregroundFocus)};
-    }
-    :-moz-focusring,
-    :focus-visible {
-      box-shadow: ${boxShadowFocus};
-      background: ${backgroundFocus};
-      color: ${foregroundFocus}!important;
-      text-decoration: none;
-      ${icons && icons.foregroundFocus && iconContainerColor(icons.foregroundFocus)};
-    }
-
-    &:hover:focus {
-      background: ${backgroundHover};
-    }
-    &:active,
-    &:active:focus {
-      ${!disabled &&
-      css`
-        background: ${backgroundActive};
-        box-shadow: ${boxShadowActive};
-        color: ${foregroundActive}!important;
-        text-decoration: none;
-        ${icons && icons.foregroundActive && iconContainerColor(icons.foregroundActive)};
-      `};
-    }
-  `};
-`;
-
-StyledButtonPrimitive.defaultProps = {
-  theme: defaultTheme,
-};
+ButtonPrimitiveComponent.displayName = "ButtonPrimitiveComponent";
 
 const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
-  (props, ref) => {
-    const {
-      loading,
-      disabled,
+  (
+    {
+      // Elements
       children,
       iconLeft,
       iconRight,
-      // Need to setup null values so the object exits by default
-      icons = { width: null, height: null, leftMargin: null, rightMargin: null },
+      // Container vars
+      height,
+      padding,
       contentAlign = "center",
+      fontWeight,
+      fontSize,
+      foreground,
+      foregroundHover,
+      foregroundActive,
+      foregroundFocus,
+      background,
+      backgroundHover,
+      backgroundActive,
+      backgroundFocus,
+      boxShadow,
+      boxShadowHover,
+      boxShadowFocus,
+      boxShadowActive,
+      // Content vars
       contentWidth,
+      // Icon vars
+      icons,
+      // Modificators
       fullWidth,
       centered,
-    } = props;
-    const { width, height, leftMargin, rightMargin } = icons;
-    const isDisabled = loading || disabled;
-    const onlyIcon = Boolean(iconLeft && !children);
+      underlined,
+      circled,
+      spaceAfter,
+      // Status
+      loading,
+      disabled,
+      // Rest
+      className,
+      ...props
+    }: Props,
+    ref,
+  ) => {
+    const isLink = props.href != null || props.asComponent === "a";
+    const isDisabled = loading === true || disabled === true;
+
+    const varsButton = {
+      "--button-height": height,
+      "--button-padding": padding,
+      "--button-content-align": contentAlign,
+      "--button-font-weight": fontWeight,
+      "--button-font-size": fontSize,
+      "--button-foreground": foreground,
+      "--button-foreground-hover": foregroundHover,
+      "--button-foreground-active": foregroundActive,
+      "--button-foreground-focus": foregroundFocus,
+      "--button-background": background,
+      "--button-background-hover": backgroundHover,
+      "--button-background-active": backgroundActive,
+      "--button-background-focus": backgroundFocus,
+      "--button-box-shadow": boxShadow,
+      "--button-box-shadow-hover": boxShadowHover,
+      "--button-box-shadow-focus": boxShadowFocus,
+      "--button-box-shadow-active": boxShadowActive,
+      // loader
+      "--button-icon-width": icons?.width,
+      "--button-icon-height": icons?.height,
+    } as React.CSSProperties;
+
+    const varsContent = {
+      "--button-content-width": contentWidth,
+    } as React.CSSProperties;
+
+    const varsIcons = {
+      "--button-icon-width": icons?.width,
+      "--button-icon-height": icons?.height,
+      "--button-icon-left-margin": icons?.leftMargin,
+      "--button-icon-right-margin": icons?.rightMargin,
+      "--button-icon-foreground": icons?.foreground,
+      "--button-icon-foreground-focus": icons?.foregroundFocus,
+      "--button-icon-foreground-hover": icons?.foregroundHover,
+      "--button-icon-foreground-active": icons?.foregroundActive,
+    } as React.CSSProperties;
 
     return (
-      <StyledButtonPrimitive ref={ref} onlyIcon={onlyIcon} {...props} disabled={isDisabled}>
+      <ButtonPrimitiveComponent
+        ref={ref}
+        {...props}
+        disabled={isDisabled}
+        className={cx(
+          className,
+          "orbit-button-primitive font-base duration-fast group relative max-w-full cursor-pointer items-center border-none text-center transition-all [&>*]:align-middle [&_.orbit-loading-spinner]:stroke-[currentColor]",
+          fullWidth && "w-full",
+          centered || children == null ? "justify-center" : "justify-[var(--button-content-align)]",
+          circled !== true && "rounded-large tb:rounded-normal",
+          isDisabled
+            ? "cursor-not-allowed opacity-30"
+            : "hover:no-underline focus:no-underline active:no-underline",
+          isLink ? "inline-flex" : "flex",
+          underlined && "underline",
+          boxShadowFocus != null && "outline-none",
+          spaceAfter != null && getSpaceAfterClasses(spaceAfter),
+          // loader
+          varsButton["--button-icon-height"] != null &&
+            "[&_.orbit-loading-spinner]:h-[var(--button-icon-height)]",
+          varsButton["--button-icon-width"] != null &&
+            "[&_.orbit-loading-spinner]:w-[var(--button-icon-width)]",
+          // button vars
+          varsButton["--button-height"] != null && "h-[var(--button-height)]",
+          varsButton["--button-height"] != null &&
+            circled === true &&
+            "rounded-[var(--button-height)]",
+          varsButton["--button-height"] != null && children == null && "w-[var(--button-height)]",
+          varsButton["--button-padding"] != null && "p-[var(--button-padding)]",
+          varsButton["--button-font-weight"] == null
+            ? "font-medium"
+            : "font-[var(--button-font-weight)]",
+          varsButton["--button-font-size"] != null && "text-[length:var(--button-font-size)]",
+          varsButton["--button-foreground"] != null && "text-[color:var(--button-foreground)]",
+          varsButton["--button-foreground-hover"] != null &&
+            !isDisabled &&
+            "hover:text-[color:var(--button-foreground-hover)]",
+          varsButton["--button-foreground-active"] != null &&
+            !isDisabled &&
+            "active:text-[color:var(--button-foreground-active)] active:focus:text-[color:var(--button-foreground-active)]",
+          varsButton["--button-foreground-focus"] != null &&
+            !isDisabled &&
+            "focus:text-[color:var(--button-foreground-focus)]",
+          varsButton["--button-background"] != null && "bg-[var(--button-background)]",
+          varsButton["--button-background-hover"] != null &&
+            !isDisabled &&
+            "hover:bg-[var(--button-background-hover)] hover:focus:bg-[var(--button-background-hover)]",
+          varsButton["--button-background-active"] != null &&
+            !isDisabled &&
+            "active:bg-[var(--button-background-active)] active:focus:bg-[var(--button-background-active)]",
+          varsButton["--button-background-focus"] != null &&
+            !isDisabled &&
+            "focus:bg-[var(--button-background-focus)]",
+          varsButton["--button-box-shadow"] != null && "[box-shadow:var(--button-box-shadow)]",
+          varsButton["--button-box-shadow-hover"] != null &&
+            !isDisabled &&
+            "hover:[box-shadow:var(--button-box-shadow-hover)]",
+          varsButton["--button-box-shadow-focus"] != null &&
+            !isDisabled &&
+            "focus:[box-shadow:var(--button-box-shadow-focus)]",
+          varsButton["--button-box-shadow-active"] != null &&
+            !isDisabled &&
+            "active:[box-shadow:var(--button-box-shadow-active)] active:focus:[box-shadow:var(--button-box-shadow-active)]",
+        )}
+        style={varsButton}
+      >
         {loading && <Loading type="buttonLoader" />}
-        <ButtonPrimitiveContent loading={loading} contentAlign={contentAlign}>
-          {iconLeft && (
-            <ButtonPrimitiveIconContainer width={width} height={height} margin={leftMargin}>
-              {iconLeft}
-            </ButtonPrimitiveIconContainer>
-          )}
-          {children && (
-            <ButtonPrimitiveContentChildren
-              hasIcon={Boolean(iconLeft || iconRight)}
-              contentWidth={contentWidth}
-              centered={fullWidth && centered}
-            >
-              {children}
-            </ButtonPrimitiveContentChildren>
-          )}
-          {iconRight && (
-            <ButtonPrimitiveIconContainer width={width} height={height} margin={rightMargin}>
-              {iconRight}
-            </ButtonPrimitiveIconContainer>
-          )}
-        </ButtonPrimitiveContent>
-      </StyledButtonPrimitive>
+
+        {iconLeft != null && (
+          <div
+            className={cx(
+              "orbit-button-primitive-icon flex items-center justify-center",
+              loading === true && "invisible",
+              // icon vars
+              varsIcons["--button-icon-height"] != null && "[&>svg]:h-[var(--button-icon-height)]",
+              varsIcons["--button-icon-width"] != null && "[&>svg]:w-[var(--button-icon-width)]",
+              varsIcons["--button-icon-left-margin"] != null &&
+                children != null &&
+                "m-[var(--button-icon-left-margin)]",
+              varsIcons["--button-icon-foreground"] != null &&
+                "text-[color:var(--button-icon-foreground)]",
+              varsIcons["--button-icon-foreground-hover"] != null &&
+                !isDisabled &&
+                "group-hover:text-[color:var(--button-icon-foreground-hover)]",
+              varsIcons["--button-icon-foreground-focus"] != null &&
+                !isDisabled &&
+                "group-focus:text-[color:var(--button-icon-foreground-focus)]",
+              varsIcons["--button-icon-foreground-active"] != null &&
+                !isDisabled &&
+                "group-active:text-[color:var(--button-icon-foreground-active)] group-active:group-focus:text-[color:var(--button-icon-foreground-active)]",
+            )}
+            style={varsIcons}
+          >
+            {iconLeft}
+          </div>
+        )}
+        {children != null && (
+          <div
+            className={cx(
+              "orbit-button-primitive-content inline-block",
+              (iconLeft != null || iconRight != null) && "text-start",
+              loading === true && "invisible",
+              centered !== true && "flex-1",
+              // content vars
+              varsContent["--button-content-width"] != null && "w-[var(--button-content-width)]",
+            )}
+            style={varsContent}
+          >
+            {children}
+          </div>
+        )}
+        {iconRight != null && (
+          <div
+            className={cx(
+              "orbit-button-primitive-icon flex items-center justify-center",
+              loading === true && "invisible",
+              // icon vars
+              varsIcons["--button-icon-height"] != null && "[&>svg]:h-[var(--button-icon-height)]",
+              varsIcons["--button-icon-width"] != null && "[&>svg]:w-[var(--button-icon-width)]",
+              varsIcons["--button-icon-right-margin"] != null &&
+                "m-[var(--button-icon-right-margin)]",
+              varsIcons["--button-icon-foreground"] != null &&
+                "text-[color:var(--button-icon-foreground)]",
+              varsIcons["--button-icon-foreground-hover"] != null &&
+                !isDisabled &&
+                "group-hover:text-[color:var(--button-icon-foreground-hover)]",
+              varsIcons["--button-icon-foreground-focus"] != null &&
+                !isDisabled &&
+                "group-focus:text-[color:var(--button-icon-foreground-focus)]",
+              varsIcons["--button-icon-foreground-active"] != null &&
+                !isDisabled &&
+                "group-active:text-[color:var(--button-icon-foreground-active)] group-active:group-focus:text-[color:var(--button-icon-foreground-active)]",
+            )}
+            style={varsIcons}
+          >
+            {iconRight}
+          </div>
+        )}
+      </ButtonPrimitiveComponent>
     );
   },
 );

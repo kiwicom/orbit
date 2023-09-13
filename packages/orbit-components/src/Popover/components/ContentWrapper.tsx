@@ -13,7 +13,6 @@ import transition from "../../utils/transition";
 import useClickOutside from "../../hooks/useClickOutside";
 import useLockScrolling from "../../hooks/useLockScrolling";
 import { ModalContext } from "../../Modal/ModalContext";
-import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import { PLACEMENTS } from "../../common/consts";
 import boundingClientRect from "../../utils/boundingClientRect";
 import type { Offset } from "../types";
@@ -82,7 +81,7 @@ const StyledActions = styled.div`
     padding: ${popoverPadding};
     padding-top: ${theme.orbit.spaceSmall};
     background-color: ${theme.orbit.paletteWhite};
-    ${StyledButtonPrimitive} {
+    .orbit-button-primitive {
       width: 100%;
       flex: 1 1 auto;
     }
@@ -92,7 +91,7 @@ const StyledActions = styled.div`
       left: auto;
       border-bottom-left-radius: ${theme.orbit.borderRadiusNormal};
       border-bottom-right-radius: 3px;
-      ${StyledButtonPrimitive} {
+      .orbit-button-primitive {
         width: auto;
         flex-grow: 0;
       }

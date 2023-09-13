@@ -52,10 +52,10 @@
   --background-button-link-secondary-hover: rgb(229, 234, 239);
   --background-button-link-secondary-active: rgb(214, 222, 230);
   --background-button-bundle-basic: linear-gradient(to top right, #E13E3B 0%, #E87E09 100%);
-  --background-button-bundle-basic-hover: linear-gradient(to top right, #2D1393 0%, #7343AA 100%);
+  --background-button-bundle-basic-hover: linear-gradient(to top right, #BD2825 0%, #D67000 100%);
   --background-button-bundle-basic-active: linear-gradient(to top right, #9F1816 0%, #C36802 100%);
   --background-button-bundle-medium: linear-gradient(to top right, #3719AB 0%, #8539DB 100%);
-  --background-button-bundle-medium-hover: linear-gradient(to top right, #BD2825 0%, #D67000 100%);
+  --background-button-bundle-medium-hover: linear-gradient(to top right, #2D1393 0%, #7343AA 100%);
   --background-button-bundle-medium-active: linear-gradient(to top right, #250F79 0%, #5A3485 100%);
   --background-button-bundle-top: linear-gradient(to top right, #2D2D2E 0%, #696E73 100%);
   --background-button-bundle-top-hover: linear-gradient(to top right, #171718 0%, #51575C 100%);

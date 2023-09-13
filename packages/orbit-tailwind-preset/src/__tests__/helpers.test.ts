@@ -202,9 +202,6 @@ describe("orbit-tailwind-preset", () => {
 
     expect(getComponentLevelToken("button", "background")).toMatchInlineSnapshot(`
       {
-        "button-bundle-basic-background": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
-        "button-bundle-medium-background": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
-        "button-bundle-top-background": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
         "button-critical-background": "#D21C1C",
         "button-critical-subtle-background": "#FAEAEA",
         "button-info-background": "#0172CB",
@@ -222,9 +219,6 @@ describe("orbit-tailwind-preset", () => {
 
     expect(getComponentLevelToken("button", "backgroundHover")).toMatchInlineSnapshot(`
       {
-        "button-bundle-basic-background-hover": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
-        "button-bundle-medium-background-hover": "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)",
-        "button-bundle-top-background-hover": "linear-gradient(to top right, #171718 0%, #51575C 100%)",
         "button-critical-background-hover": "#B91919",
         "button-critical-subtle-background-hover": "#F8E2E2",
         "button-info-background-hover": "#0161AC",

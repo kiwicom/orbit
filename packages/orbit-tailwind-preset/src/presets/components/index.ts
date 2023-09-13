@@ -1,5 +1,5 @@
 import plugin from "tailwindcss/plugin";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { convertHexToRgba, defaultTokens } from "@kiwicom/orbit-design-tokens";
 import type { Config } from "tailwindcss";
 
 import orbitFoundationPreset from "../foundation";
@@ -151,6 +151,9 @@ const cfg = (options?: Options): Config => {
           "modal-normal-width": defaultTokens.modalNormalWidth,
           "modal-large-width": defaultTokens.modalLargeWidth,
           "modal-extra-large-width": defaultTokens.modalExtraLargeWidth,
+          "button-small": defaultTokens.heightButtonSmall,
+          "button-normal": defaultTokens.heightButtonNormal,
+          "button-large": defaultTokens.heightButtonLarge,
           checkbox: defaultTokens.widthCheckbox,
           "country-flag-small": defaultTokens.countryFlagSmallWidth,
           "country-flag-medium": defaultTokens.countryFlagMediumWidth,
@@ -166,10 +169,18 @@ const cfg = (options?: Options): Config => {
           ...getComponentLevelToken("button", "padding"),
           ...getComponentLevelToken("formElement", "padding"),
           table: defaultTokens.paddingTable,
+          "button-padding-xs": defaultTokens.buttonPaddingXSmall,
+          "button-padding-sm": defaultTokens.buttonPaddingSmall,
+          "button-padding-md": defaultTokens.buttonPaddingNormal,
+          "button-padding-lg": defaultTokens.buttonPaddingLarge,
+          "button-padding-xl": defaultTokens.buttonPaddingXLarge,
         },
         borderRadius: {
           "dialog-desktop": defaultTokens.dialogBorderRadiusDesktop,
           "dialog-mobile": defaultTokens.dialogBorderRadiusMobile,
+          "button-circled-small": defaultTokens.heightButtonSmall,
+          "button-circled-normal": defaultTokens.heightButtonNormal,
+          "button-circled-large": defaultTokens.heightButtonLarge,
         },
         borderColor: {
           ...Object.keys(defaultTokens).reduce((acc, token) => {
@@ -195,7 +206,28 @@ const cfg = (options?: Options): Config => {
           "form-element-focus": defaultTokens.formElementBorderColorFocus,
           "form-element-error": defaultTokens.formElementBorderColorError,
         },
+        backgroundImage: {
+          "button-bundle-basic-background": defaultTokens.buttonBundleBasicBackground,
+          "button-bundle-basic-background-hover": defaultTokens.buttonBundleBasicBackgroundHover,
+          "button-bundle-basic-background-active": defaultTokens.buttonBundleBasicBackgroundActive,
+          "button-bundle-medium-background": defaultTokens.buttonBundleMediumBackground,
+          "button-bundle-medium-background-hover": defaultTokens.buttonBundleMediumBackgroundHover,
+          "button-bundle-medium-background-active":
+            defaultTokens.buttonBundleMediumBackgroundActive,
+          "button-bundle-top-background": defaultTokens.buttonBundleTopBackground,
+          "button-bundle-top-background-hover": defaultTokens.buttonBundleTopBackgroundHover,
+          "button-bundle-top-background-active": defaultTokens.buttonBundleTopBackgroundActive,
+        },
         boxShadow: {
+          "button-focus": defaultTokens.boxShadowButtonFocus,
+          "button-active": `inset 0 0 6px 3px ${convertHexToRgba(
+            defaultTokens.paletteInkDark,
+            15,
+          )}`,
+          "button-active-pale": `inset 0 0 6px 3px ${convertHexToRgba(
+            defaultTokens.paletteInkDark,
+            8,
+          )}`,
           "country-flag": defaultTokens.countryFlagShadow,
         },
         keyframes: {

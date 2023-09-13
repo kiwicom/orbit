@@ -88,6 +88,11 @@ export const getComponentLevelToken = (
     const t = type.toLowerCase();
 
     if (k.startsWith(c) && k.endsWith(t)) {
+      // Button bundles are linear gradients
+      if (key.includes("buttonBundle")) {
+        return acc;
+      }
+
       if (defaultTokens[key]) {
         acc[kebabCase(key)] = defaultTokens[key];
       }

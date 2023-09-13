@@ -1,6 +1,5 @@
 import React from "react";
 import { Heading, Stack, Button, mediaQueries as mq } from "@kiwicom/orbit-components";
-import { StyledButtonPrimitive } from "@kiwicom/orbit-components/lib/primitives/ButtonPrimitive";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
 
@@ -40,18 +39,18 @@ const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"
       ${boxShadowActive};
     }
 
-    ${StyledButtonPrimitive} {
+    .orbit-button-primitive {
       pointer-events: none;
       background: ${getBgColor({ theme, type, color })};
     }
 
-    &:hover ${StyledButtonPrimitive} {
+    &:hover .orbit-button-primitive {
       background: ${getBgColorHover({ theme, type, color })}
     }
-    &:focus ${StyledButtonPrimitive} {
+    &:focus .orbit-button-primitive {
       background: ${getBgColor({ theme, type, color })}
     }
-    &:active ${StyledButtonPrimitive} {
+    &:active .orbit-button-primitive {
       background: ${getBgColorActive({ theme, type, color })}
     }
   `};

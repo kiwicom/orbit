@@ -19,7 +19,6 @@ import InformationCircle from "../icons/InformationCircle";
 import FormLabel from "../FormLabel";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
-import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
@@ -187,7 +186,7 @@ export const Prefix = styled(({ children, className, iconRef }) => (
       height: ${theme.orbit.heightIconNormal};
     }
 
-    ${StyledButtonPrimitiveIconContainer} {
+    .orbit-button-primitive-icon {
       color: ${theme.orbit.colorIconSecondary};
     }
   `}
@@ -208,7 +207,7 @@ const Suffix = styled(({ children, className }) => <div className={className}>{c
     pointer-events: ${disabled && "none"};
     z-index: 3;
 
-    ${StyledButtonPrimitiveIconContainer} {
+    .orbit-button-primitive-icon {
       color: ${theme.orbit.colorIconSecondary};
     }
 

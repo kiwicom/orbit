@@ -5,14 +5,13 @@ import styled, { css } from "styled-components";
 
 import defaultTheme from "../defaultTheme";
 import { borderRadius, rtlSpacing } from "../utils/rtl";
-import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
 const StyledButtonGroup = styled.div`
   display: flex;
 
-  ${StyledButtonPrimitive} {
+  .orbit-button-primitive {
     border-radius: 0;
     margin: ${({ theme }) => rtlSpacing(theme.orbit.marginButtonGroup)};
 
@@ -26,7 +25,7 @@ const StyledButtonGroup = styled.div`
     }
   }
   ${mq.tablet(css`
-    ${StyledButtonPrimitive} {
+    .orbit-button-primitive {
       :first-child {
         border-radius: ${({ theme }) =>
           borderRadius(`${theme.orbit.borderRadiusNormal} 0 0 ${theme.orbit.borderRadiusNormal}`)};

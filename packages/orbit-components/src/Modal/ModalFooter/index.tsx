@@ -10,7 +10,6 @@ import { rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
-import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import type { Props } from "./types";
 
 const StyledChild = styled.div<{ flex?: Props["flex"] }>`
@@ -38,7 +37,7 @@ export const StyledModalFooter = styled.div<{
     box-sizing: border-box;
     transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
     @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
-      ${StyledButtonPrimitive} {
+      .orbit-button-primitive {
         font-size: ${theme.orbit.fontSizeButtonNormal};
         height: ${theme.orbit.heightButtonNormal};
       }

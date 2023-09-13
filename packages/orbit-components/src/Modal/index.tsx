@@ -11,7 +11,6 @@ import ModalCloseButton from "./ModalCloseButton";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import defaultTheme from "../defaultTheme";
-import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import media from "../utils/mediaQuery";
 import { right } from "../utils/rtl";
 import transition from "../utils/transition";
@@ -151,7 +150,7 @@ const CloseContainer = styled.div<{
       margin: 0;
     }
 
-    ${StyledButtonPrimitive} {
+    .orbit-button-primitive {
       pointer-events: auto;
       margin-${right}: ${theme.orbit.spaceXXSmall};
 

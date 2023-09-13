@@ -223,7 +223,7 @@ describe("orbit-tailwind-preset", () => {
     expect(getComponentLevelToken("button", "backgroundHover")).toMatchInlineSnapshot(`
       {
         "button-bundle-basic-background-hover": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
-        "button-bundle-medium-background-hover": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
+        "button-bundle-medium-background-hover": "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)",
         "button-bundle-top-background-hover": "linear-gradient(to top right, #171718 0%, #51575C 100%)",
         "button-critical-background-hover": "#B91919",
         "button-critical-subtle-background-hover": "#F8E2E2",

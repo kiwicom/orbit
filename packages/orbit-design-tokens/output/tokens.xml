@@ -213,7 +213,7 @@
   </token>
   <token>
     <name>backgroundButtonBundleBasicHover</name>
-    <value>linear-gradient(to top right, #BD2825 0%, #D67000 100%)</value>
+    <value>linear-gradient(to top right, #2D1393 0%, #7343AA 100%)</value>
   </token>
   <token>
     <name>backgroundButtonBundleBasicActive</name>
@@ -1293,7 +1293,7 @@
   </token>
   <token>
     <name>buttonBundleMediumBackgroundHover</name>
-    <value>linear-gradient(to top right, #BD2825 0%, #D67000 100%)</value>
+    <value>linear-gradient(to top right, #2D1393 0%, #7343AA 100%)</value>
   </token>
   <token>
     <name>buttonBundleMediumBackgroundActive</name>

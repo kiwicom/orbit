@@ -22,7 +22,7 @@
         },
         "background-hover": {
           "type": "color",
-          "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)"
+          "value": "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)"
         },
         "background-active": {
           "type": "color",
@@ -58,7 +58,7 @@
           "deprecated": true,
           "deprecated-version": "6.0.0",
           "deprecated-replace": "{component.button.bundle-basic.background-hover}",
-          "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)"
+          "value": "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)"
         },
         "bundle-basic-active": {
           "type": "color",

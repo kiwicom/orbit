@@ -17,7 +17,7 @@ export default async function generateTypeDeclarations() {
   await $`cpy "**/types.d.ts" ../es --cwd src --parents`;
 
   await $`del tsconfig.tsbuildinfo`; // reset potential incremental compilation information
-  await $`tsc --p tsconfig-build.json `;
+  await $`tsc --p tsconfig-build.json`;
   await $`tsc --p tsconfig-build.json --rootDir src --outDir es --declaration --emitDeclarationOnly --moduleResolution node`;
 
   console.log(chalk.greenBright.bold("Generating flow declarations..."));

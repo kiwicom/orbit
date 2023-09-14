@@ -11,6 +11,8 @@ export const OUTPUT_PATTERNS = [
 
 export const COMPILE_IGNORE_PATTERNS = [
   "**/RenderInRtl.tsx",
+  // TODO: remove that after TW migration, tailwind is temporary folder
+  "**/tmp-tailwind/**/*.{ts?(x),d.ts}",
   "**/*.d.ts",
   "**/*.stories.*",
   "**/*.test.*",
@@ -19,4 +21,9 @@ export const COMPILE_IGNORE_PATTERNS = [
   "**/test-utils.tsx",
 ];
 
-export const DECLARATIONS_IGNORE_PATTERN = ["**/RenderInRtl.{tsx,d.ts}", "**/test-utils.d.ts"];
+export const DECLARATIONS_IGNORE_PATTERN = [
+  "**/RenderInRtl.{tsx,d.ts}",
+  "**/test-utils.d.ts",
+  // TODO: remove that after TW migration, tailwind is temporary folder
+  "**/tmp-tailwind/**/*.{ts?(x),d.ts}",
+];

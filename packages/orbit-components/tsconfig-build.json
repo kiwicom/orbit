@@ -15,6 +15,7 @@
     "**/__tests__/**/*",
     "**/__typetests__/**/*",
     "**/*.stories.*",
+    "**/tmp-tailwind/**",
     "**/RenderInRtl.tsx"
   ]
 }

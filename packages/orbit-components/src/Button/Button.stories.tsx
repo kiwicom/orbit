@@ -11,9 +11,9 @@ import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import Button from ".";
 
 const getIcons = (name: string, defaultIcon: string) =>
-  select(name, Object.keys(Icons), defaultIcon);
+  select(name, ["none", ...Object.keys(Icons)], defaultIcon);
 
-const getIcon = (source: string | null) => (source ? Icons[source] : null);
+const getIcon = (source: string) => (source in Icons ? Icons[source] : null);
 
 export default {
   title: "Button",

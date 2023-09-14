@@ -15,24 +15,3 @@ export enum SIZE_OPTIONS {
   NORMAL = "normal",
   LARGE = "large",
 }
-
-export enum TOKENS {
-  // Size tokens
-  heightButton = "heightButton",
-  loadingWidth = "loadingWidth",
-  loadingHeight = "loadingHeight",
-  fontSizeButton = "fontSizeButton",
-  paddingButton = "paddingButton",
-  paddingButtonWithIcons = "paddingButtonWithIcons",
-  paddingButtonWithLeftIcon = "paddingButtonWithLeftIcon",
-  paddingButtonWithRightIcon = "paddingButtonWithRightIcon",
-  // Type tokens
-  backgroundButton = "backgroundButton",
-  backgroundButtonHover = "backgroundButtonHover",
-  backgroundButtonActive = "backgroundButtonActive",
-  backgroundButtonFocus = "backgroundButtonFocus",
-  colorTextButton = "colorTextButton",
-  colorTextButtonHover = "colorTextButtonHover",
-  colorTextButtonActive = "colorTextButtonActive",
-  borderColorButtonFocus = "borderColorButtonFocus",
-}

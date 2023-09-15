@@ -32,7 +32,7 @@ jobs:
         run: yarn tailwind-preset build
 
       - name: Build Storybook
-        run: yarn components build:storybook
+        run: NODE_ENV=loki yarn components build:storybook
 
       # TODO: find an alternative to using "if" statements for so many steps
 
@@ -53,8 +53,16 @@ jobs:
         run: |
           yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
           yarn components deploy:updateURL --pr=${PR_NUMBER} --lastUrl=${DOMAIN} --token=${{ secrets.OCTO_TOKEN }} --urlName=Storybook
+          echo "orbit-mainframev-${BRANCH_URL}.surge.sh" > host.txt
         env:
           PR_NUMBER: ${{ github.event.number }}
+
+      - name: Save host.txt on disk
+        if: github.ref != 'refs/heads/master'
+        uses: actions/upload-artifact@v3
+        with:
+          name: host
+          path: host.txt
 
       - name: Deploy to production
         # run on master branch
@@ -62,3 +70,24 @@ jobs:
         run: yarn components deploy:storybook --ci
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+
+  loki-test:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Download host.txt from disk
+        uses: actions/download-artifact@v3
+        with:
+          name: host
+
+      - name: Loki test
+        run: |
+          ls -al
+          cat host.txt
+          yarn loki:test --host $(cat host.txt) --port 80

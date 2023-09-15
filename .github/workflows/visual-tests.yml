@@ -1,0 +1,22 @@
+name: Visual regression test
+
+on:
+  workflow_run:
+    workflows: [Storybook]
+    types:
+      - completed
+    branches-ignore:
+      - master
+
+jobs:
+  loki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Loki test
+        run: yarn loki:test --host https://orbit-mainframev-${BRANCH_URL}.surge.sh

@@ -1103,15 +1103,15 @@
     },
     "javascript": {
       "name": "backgroundButtonLinkPrimaryHover",
-      "value": "#E5EAEF"
+      "value": "#D6F0EC"
     },
     "foundation": {
       "name": "backgroundButtonLinkPrimaryHover",
-      "value": "foundation.palette.cloud.lightHover"
+      "value": "foundation.palette.product.lightHover"
     },
     "scss": {
       "name": "backgroundButtonLinkPrimaryHover",
-      "value": "rgb(229, 234, 239)"
+      "value": "rgb(214, 240, 236)"
     }
   },
   "backgroundButtonLinkPrimaryActive": {
@@ -1126,15 +1126,15 @@
     },
     "javascript": {
       "name": "backgroundButtonLinkPrimaryActive",
-      "value": "#D6DEE6"
+      "value": "#BFE8E2"
     },
     "foundation": {
       "name": "backgroundButtonLinkPrimaryActive",
-      "value": "foundation.palette.cloud.lightActive"
+      "value": "foundation.palette.product.lightActive"
     },
     "scss": {
       "name": "backgroundButtonLinkPrimaryActive",
-      "value": "rgb(214, 222, 230)"
+      "value": "rgb(191, 232, 226)"
     }
   },
   "backgroundButtonLinkSecondary": {

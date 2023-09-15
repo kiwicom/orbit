@@ -46,8 +46,8 @@
   --background-button-link-critical-hover: rgb(248, 226, 226);
   --background-button-link-critical-active: rgb(243, 206, 206);
   --background-button-link-primary: transparent;
-  --background-button-link-primary-hover: rgb(229, 234, 239);
-  --background-button-link-primary-active: rgb(214, 222, 230);
+  --background-button-link-primary-hover: rgb(214, 240, 236);
+  --background-button-link-primary-active: rgb(191, 232, 226);
   --background-button-link-secondary: transparent;
   --background-button-link-secondary-hover: rgb(229, 234, 239);
   --background-button-link-secondary-active: rgb(214, 222, 230);

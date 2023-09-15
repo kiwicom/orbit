@@ -9,7 +9,7 @@ If you want to update some tokens:
 - please do so in /definitions folder
 - run @kiwicom/orbit-design-tokens "build" script
 */
-export type Tokens = {
+export interface Tokens {
   blueLight: string;
   blueLightHover: string;
   blueLightActive: string;
@@ -87,4 +87,4 @@ export type Tokens = {
   whiteNormal: string;
   whiteHover: string;
   whiteActive: string;
-};
+}

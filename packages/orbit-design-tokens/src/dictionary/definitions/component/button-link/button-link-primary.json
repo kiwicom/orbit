@@ -48,7 +48,7 @@
         },
         "primary-hover": {
           "type": "color",
-          "value": "{foundation.palette.cloud.light-hover}",
+          "value": "{foundation.palette.product.light-hover}",
           "deprecated": true,
           "deprecated-replace": "{component.button-link.primary.background-hover}",
           "deprecated-different": true,
@@ -56,7 +56,7 @@
         },
         "primary-active": {
           "type": "color",
-          "value": "{foundation.palette.cloud.light-active}",
+          "value": "{foundation.palette.product.light-active}",
           "deprecated": true,
           "deprecated-replace": "{component.button-link.primary.background-active}",
           "deprecated-different": true,

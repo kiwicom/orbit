@@ -123,7 +123,7 @@
     "jest-styled-components": "^7.0.5",
     "jscodeshift": "^0.13.1",
     "jsdom": "^20.0.3",
-    "loki": "^0.30.3",
+    "loki": "^0.32.0",
     "monstra": "^0.9.2",
     "nanostores": "^0.5.12",
     "ora": "^6.1.0",

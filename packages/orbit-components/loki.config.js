@@ -1,7 +1,7 @@
 // @noflow
 
 module.exports = {
-  diffingEngine: "looks-same",
+  diffingEngine: "pixelmatch",
   configurations: {
     "chrome.laptop": {
       target: "chrome.docker",

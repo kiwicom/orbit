@@ -5,34 +5,34 @@ import type { Theme } from "../../defaultTheme";
 const getButtonLinkTypeToken = (name: string, type: Type, theme: Theme): string => {
   const tokens = {
     [TOKENS.background]: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimary,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondary,
-      [TYPES.CRITICAL]: theme.orbit.backgroundButtonLinkCritical,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryBackground,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryBackground,
+      [TYPES.CRITICAL]: theme.orbit.buttonLinkCriticalBackground,
     },
     [TOKENS.backgroundHover]: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondaryHover,
-      [TYPES.CRITICAL]: theme.orbit.backgroundButtonLinkCriticalHover,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryBackgroundHover,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryBackgroundHover,
+      [TYPES.CRITICAL]: theme.orbit.buttonLinkCriticalBackgroundHover,
     },
     [TOKENS.backgroundActive]: {
-      [TYPES.PRIMARY]: theme.orbit.backgroundButtonLinkPrimaryActive,
-      [TYPES.SECONDARY]: theme.orbit.backgroundButtonLinkSecondaryActive,
-      [TYPES.CRITICAL]: theme.orbit.backgroundButtonLinkCriticalActive,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryBackgroundActive,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryBackgroundActive,
+      [TYPES.CRITICAL]: theme.orbit.buttonLinkCriticalBackgroundActive,
     },
     [TOKENS.foreground]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimary,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondary,
-      [TYPES.CRITICAL]: theme.orbit.colorTextButtonLinkCritical,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryForeground,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryForeground,
+      [TYPES.CRITICAL]: theme.orbit.buttonLinkCriticalForeground,
     },
     [TOKENS.foregroundHover]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryHover,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryHover,
-      [TYPES.CRITICAL]: theme.orbit.colorTextButtonLinkCriticalHover,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryForegroundHover,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryForegroundHover,
+      [TYPES.CRITICAL]: theme.orbit.buttonLinkCriticalForegroundHover,
     },
     [TOKENS.foregroundActive]: {
-      [TYPES.PRIMARY]: theme.orbit.colorTextButtonLinkPrimaryActive,
-      [TYPES.SECONDARY]: theme.orbit.colorTextButtonLinkSecondaryActive,
-      [TYPES.CRITICAL]: theme.orbit.colorTextButtonLinkCriticalActive,
+      [TYPES.PRIMARY]: theme.orbit.buttonLinkPrimaryForegroundActive,
+      [TYPES.SECONDARY]: theme.orbit.buttonLinkSecondaryForegroundActive,
+      [TYPES.CRITICAL]: theme.orbit.buttonLinkCriticalForegroundActive,
     },
   };
   return tokens[name][type];

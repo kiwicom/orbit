@@ -9,7 +9,7 @@ If you want to update some tokens:
 - please do so in /definitions folder
 - run @kiwicom/orbit-design-tokens "build" script
 */
-export type Blue = {
+export interface Blue {
   dark: string;
   darkActive: string;
   darkHover: string;
@@ -20,9 +20,12 @@ export type Blue = {
   normal: string;
   normalActive: string;
   normalHover: string;
-};
-export type Bundle = { basic: string; medium: string };
-export type Cloud = {
+}
+export interface Bundle {
+  basic: string;
+  medium: string;
+}
+export interface Cloud {
   dark: string;
   darkActive: string;
   darkHover: string;
@@ -32,31 +35,8 @@ export type Cloud = {
   normal: string;
   normalActive: string;
   normalHover: string;
-};
-export type Green = {
-  dark: string;
-  darkActive: string;
-  darkHover: string;
-  darker: string;
-  light: string;
-  lightActive: string;
-  lightHover: string;
-  normal: string;
-  normalActive: string;
-  normalHover: string;
-};
-export type Ink = {
-  dark: string;
-  darkActive: string;
-  darkHover: string;
-  light: string;
-  lightActive: string;
-  lightHover: string;
-  normal: string;
-  normalActive: string;
-  normalHover: string;
-};
-export type Orange = {
+}
+export interface Green {
   dark: string;
   darkActive: string;
   darkHover: string;
@@ -67,8 +47,19 @@ export type Orange = {
   normal: string;
   normalActive: string;
   normalHover: string;
-};
-export type Product = {
+}
+export interface Ink {
+  dark: string;
+  darkActive: string;
+  darkHover: string;
+  light: string;
+  lightActive: string;
+  lightHover: string;
+  normal: string;
+  normalActive: string;
+  normalHover: string;
+}
+export interface Orange {
   dark: string;
   darkActive: string;
   darkHover: string;
@@ -79,8 +70,8 @@ export type Product = {
   normal: string;
   normalActive: string;
   normalHover: string;
-};
-export type Red = {
+}
+export interface Product {
   dark: string;
   darkActive: string;
   darkHover: string;
@@ -91,26 +82,51 @@ export type Red = {
   normal: string;
   normalActive: string;
   normalHover: string;
-};
-export type Social = { facebook: string; facebookHover: string; facebookActive: string };
-export type White = { normal: string; normalActive: string; normalHover: string };
-export type BorderRadius = { circle: string; small: string; normal: string; large: string };
-export type Breakpoint = {
+}
+export interface Red {
+  dark: string;
+  darkActive: string;
+  darkHover: string;
+  darker: string;
+  light: string;
+  lightActive: string;
+  lightHover: string;
+  normal: string;
+  normalActive: string;
+  normalHover: string;
+}
+export interface Social {
+  facebook: string;
+  facebookHover: string;
+  facebookActive: string;
+}
+export interface White {
+  normal: string;
+  normalActive: string;
+  normalHover: string;
+}
+export interface BorderRadius {
+  circle: string;
+  small: string;
+  normal: string;
+  large: string;
+}
+export interface Breakpoint {
   smallMobile: number;
   mediumMobile: number;
   largeMobile: number;
   tablet: number;
   desktop: number;
   largeDesktop: number;
-};
-export type Size = {
+}
+export interface Size {
   small: string;
   medium: string;
   large: string;
   extraLarge: string;
   extraExtraLarge: string;
-};
-export type Space = {
+}
+export interface Space {
   XXXSmall: string;
   XXSmall: string;
   XSmall: string;
@@ -120,12 +136,28 @@ export type Space = {
   XLarge: string;
   XXLarge: string;
   XXXLarge: string;
-};
-export type FontFamily = { base: string };
-export type FontSize = { small: string; normal: string; large: string; extraLarge: string };
-export type LineHeight = { small: string; normal: string; large: string; extraLarge: string };
-export type FontWeight = { normal: string; medium: string; bold: string };
-export type Palette = {
+}
+export interface FontFamily {
+  base: string;
+}
+export interface FontSize {
+  small: string;
+  normal: string;
+  large: string;
+  extraLarge: string;
+}
+export interface LineHeight {
+  small: string;
+  normal: string;
+  large: string;
+  extraLarge: string;
+}
+export interface FontWeight {
+  normal: string;
+  medium: string;
+  bold: string;
+}
+export interface Palette {
   blue: Blue;
   bundle: Bundle;
   cloud: Cloud;
@@ -136,8 +168,8 @@ export type Palette = {
   red: Red;
   social: Social;
   white: White;
-};
-export type Foundation = {
+}
+export interface Foundation {
   palette: Palette;
   borderRadius: BorderRadius;
   breakpoint: Breakpoint;
@@ -147,8 +179,8 @@ export type Foundation = {
   fontSize: FontSize;
   lineHeight: LineHeight;
   fontWeight: FontWeight;
-};
-export type CustomFoundation = {
+}
+export interface CustomFoundation {
   palette?: Partial<{
     blue?: Partial<Blue>;
     bundle?: Partial<Bundle>;
@@ -169,7 +201,7 @@ export type CustomFoundation = {
   fontSize?: Partial<FontSize>;
   lineHeight?: Partial<LineHeight>;
   fontWeight?: Partial<FontWeight>;
-};
+}
 const blue = {
   dark: "#005AA3",
   darkActive: "#003E70",

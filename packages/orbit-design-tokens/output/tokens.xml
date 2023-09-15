@@ -189,11 +189,11 @@
   </token>
   <token>
     <name>backgroundButtonLinkPrimaryHover</name>
-    <value>#E5EAEF</value>
+    <value>#D6F0EC</value>
   </token>
   <token>
     <name>backgroundButtonLinkPrimaryActive</name>
-    <value>#D6DEE6</value>
+    <value>#BFE8E2</value>
   </token>
   <token>
     <name>backgroundButtonLinkSecondary</name>

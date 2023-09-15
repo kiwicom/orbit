@@ -1,8 +1,8 @@
-type BoxShadowDefinition = {
+interface BoxShadowDefinition {
   def: [string, string, string?, string?];
   color: string;
   inset?: boolean;
-};
+}
 
 const boxShadow = (definitions: Array<BoxShadowDefinition> | BoxShadowDefinition): string =>
   (Array.isArray(definitions) ? definitions : [definitions])

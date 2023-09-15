@@ -13,7 +13,7 @@ import transparentColor from "./transparentColor";
 import boxShadow from "./boxShadow";
 import type { Foundation } from "./defaultFoundation";
 
-export type Tokens = {
+export interface Tokens {
   paddingAlert: string;
   paddingAlertWithIcon: string;
   paddingBadge: string;
@@ -833,7 +833,7 @@ export type Tokens = {
   zIndexDrawer: number;
   zIndexModal: number;
   zIndexOnTheTop: number;
-};
+}
 export type CreateTokens = (foundation: Foundation) => Tokens;
 const createTokens: CreateTokens = foundation => ({
   paddingAlert: foundation.space.medium,
@@ -883,8 +883,8 @@ const createTokens: CreateTokens = foundation => ({
   backgroundButtonLinkCriticalHover: foundation.palette.red.lightHover,
   backgroundButtonLinkCriticalActive: foundation.palette.red.lightActive,
   backgroundButtonLinkPrimary: "transparent",
-  backgroundButtonLinkPrimaryHover: foundation.palette.cloud.lightHover,
-  backgroundButtonLinkPrimaryActive: foundation.palette.cloud.lightActive,
+  backgroundButtonLinkPrimaryHover: foundation.palette.product.lightHover,
+  backgroundButtonLinkPrimaryActive: foundation.palette.product.lightActive,
   backgroundButtonLinkSecondary: "transparent",
   backgroundButtonLinkSecondaryHover: foundation.palette.cloud.lightHover,
   backgroundButtonLinkSecondaryActive: foundation.palette.cloud.lightActive,

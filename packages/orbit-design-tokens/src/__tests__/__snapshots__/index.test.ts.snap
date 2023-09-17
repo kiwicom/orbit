@@ -114,6 +114,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "backgroundTagSelectedHover": "#181B20",
   "backgroundTooltip": "#FFFFFF",
   "backgroundTooltipLargeMobile": "#005AA3",
+  "badgeBorderRadius": "12px",
   "badgeBundleBasicBackground": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
   "badgeBundleBasicForeground": "#FFFFFF",
   "badgeBundleMediumBackground": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",

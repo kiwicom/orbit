@@ -6207,25 +6207,25 @@
       "value": "rgb(79, 94, 113)"
     }
   },
-  "borderRadiusBadge": {
+  "badgeBorderRadius": {
     "type": "border-radius",
-    "deprecated": true,
+    "deprecated": false,
     "replacement": null,
     "schema": {
       "namespace": "component",
-      "object": "border-radius",
-      "variant": "badge"
+      "object": "badge",
+      "variant": "border-radius"
     },
     "javascript": {
-      "name": "borderRadiusBadge",
+      "name": "badgeBorderRadius",
       "value": "12px"
     },
     "foundation": {
-      "name": "borderRadiusBadge",
+      "name": "badgeBorderRadius",
       "value": "none"
     },
     "scss": {
-      "name": "borderRadiusBadge",
+      "name": "badgeBorderRadius",
       "value": "12px"
     }
   },
@@ -6871,6 +6871,28 @@
     "scss": {
       "name": "badgeWhiteForeground",
       "value": "rgb(37, 42, 49)"
+    }
+  },
+  "borderRadiusBadge": {
+    "type": "border-radius",
+    "deprecated": true,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "border-radius",
+      "variant": "badge"
+    },
+    "javascript": {
+      "name": "borderRadiusBadge",
+      "value": "12px"
+    },
+    "foundation": {
+      "name": "borderRadiusBadge",
+      "value": "none"
+    },
+    "scss": {
+      "name": "borderRadiusBadge",
+      "value": "12px"
     }
   },
   "marginBadgeIcon": {

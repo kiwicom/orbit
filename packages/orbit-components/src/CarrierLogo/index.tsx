@@ -133,6 +133,7 @@ const CarrierLogo = ({
 
   return (
     <StyledCarrierLogo
+      className="orbit-carrier-logo"
       carriers={carriers}
       size={size}
       data-test={dataTest}

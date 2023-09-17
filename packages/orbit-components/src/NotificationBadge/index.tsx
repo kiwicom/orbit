@@ -4,12 +4,11 @@ import * as React from "react";
 import styled from "styled-components";
 
 import Badge from "../Badge";
-import { StyledBadge } from "../primitives/BadgePrimitive";
 import defaultTheme from "../defaultTheme";
 import type { Props } from "./types";
 
 const StyledNotificationBadge = styled.div`
-  ${StyledBadge} {
+  .orbit-badge-primitive {
     width: ${({ theme }) => theme.orbit.widthBadgeCircled};
     padding: 0;
   }

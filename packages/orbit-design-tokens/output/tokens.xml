@@ -1076,7 +1076,7 @@
     <value>#4F5E71</value>
   </token>
   <token>
-    <name>borderRadiusBadge</name>
+    <name>badgeBorderRadius</name>
     <value>12</value>
   </token>
   <token>
@@ -1190,6 +1190,10 @@
   <token>
     <name>badgeWhiteForeground</name>
     <value>#252A31</value>
+  </token>
+  <token>
+    <name>borderRadiusBadge</name>
+    <value>12</value>
   </token>
   <token>
     <name>marginBadgeIcon</name>

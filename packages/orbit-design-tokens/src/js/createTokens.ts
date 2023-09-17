@@ -283,7 +283,7 @@ export interface Tokens {
   alertColorTextSuccess: string;
   alertColorTextWarning: string;
   alertColorTextLink: string;
-  borderRadiusBadge: string;
+  badgeBorderRadius: string;
   badgeBundleBasicBackground: string;
   badgeBundleBasicForeground: string;
   badgeBundleMediumBackground: string;
@@ -312,6 +312,7 @@ export interface Tokens {
   badgeWarningSubtleForeground: string;
   badgeWhiteBackground: string;
   badgeWhiteForeground: string;
+  borderRadiusBadge: string;
   marginBadgeIcon: string;
   marginButtonGroup: string;
   marginButtonIcon: string;
@@ -1141,7 +1142,7 @@ const createTokens: CreateTokens = foundation => ({
   alertColorTextSuccess: foundation.palette.green.dark,
   alertColorTextWarning: foundation.palette.orange.dark,
   alertColorTextLink: foundation.palette.ink.normal,
-  borderRadiusBadge: "12px",
+  badgeBorderRadius: "12px",
   badgeBundleBasicBackground: "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
   badgeBundleBasicForeground: foundation.palette.white.normal,
   badgeBundleMediumBackground: "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
@@ -1170,6 +1171,7 @@ const createTokens: CreateTokens = foundation => ({
   badgeWarningSubtleForeground: foundation.palette.orange.dark,
   badgeWhiteBackground: foundation.palette.white.normal,
   badgeWhiteForeground: foundation.palette.ink.dark,
+  borderRadiusBadge: "12px",
   marginBadgeIcon: `0 ${foundation.space.XXSmall} 0 0`,
   marginButtonGroup: `0 1px 0 0`,
   marginButtonIcon: foundation.space.XSmall,

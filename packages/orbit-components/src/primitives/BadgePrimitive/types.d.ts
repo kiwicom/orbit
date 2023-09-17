@@ -11,7 +11,5 @@ export interface Props extends Common.Globals {
   readonly icon?: React.ReactNode;
   readonly carriers?: Carrier[];
   readonly ariaLabel?: string;
-  readonly background?: string | undefined | null;
-  readonly foregroundColor?: string | undefined | null;
-  readonly borderColor?: string | undefined | null;
+  readonly className?: string;
 }

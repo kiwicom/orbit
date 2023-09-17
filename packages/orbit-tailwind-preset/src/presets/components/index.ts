@@ -13,6 +13,7 @@ const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "button",
   "buttonLink",
   "drawer",
+  "badge",
   "socialButton",
   "alert",
   "icon",
@@ -100,6 +101,7 @@ const cfg = (options?: Options): Config => {
           "table-head": String(defaultTokens.fontWeightTableHead),
         },
         lineHeight: {
+          none: "1",
           text: defaultTokens.lineHeightText,
           heading: defaultTokens.lineHeightHeading,
           "heading-display": defaultTokens.headingDisplayLineHeight,
@@ -181,6 +183,7 @@ const cfg = (options?: Options): Config => {
           "button-circled-small": defaultTokens.heightButtonSmall,
           "button-circled-normal": defaultTokens.heightButtonNormal,
           "button-circled-large": defaultTokens.heightButtonLarge,
+          badge: defaultTokens.badgeBorderRadius,
         },
         borderColor: {
           ...Object.keys(defaultTokens).reduce((acc, token) => {

@@ -13,8 +13,7 @@ export type Props = {|
   +icon?: React.Node,
   +carriers?: Carrier[],
   +ariaLabel?: string,
-  +background?: ?string,
-  +foregroundColor?: ?string,
+  +className?: string,
   ...Globals,
 |};
 

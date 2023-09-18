@@ -53,6 +53,7 @@ The table below contains all types of props available in the Illustration compon
 | `"Cancelled"`                   |
 | `"CompassTravelPlan"`           |
 | `"CompassSaveOnBooking"`        |
+| `"Damage"`                      |
 | `"DesktopSearch"`               |
 | `"EnjoyApp"`                    |
 | `"EVisa"`                       |
@@ -113,4 +114,5 @@ The table below contains all types of props available in the Illustration compon
 | `"Train"`                       |
 | `"TransportBus"`                |
 | `"TransportTaxi"`               |
+| `"Wheelchair"`                  |
 | `"WomanWithPhone"`              |

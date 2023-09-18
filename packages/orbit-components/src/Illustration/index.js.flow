@@ -32,6 +32,7 @@ type Name =
   | "CompassPoints"
   | "CompassSaveOnBooking"
   | "CompassTravelPlan"
+  | "Damage"
   | "DesktopSearch"
   | "EnjoyApp"
   | "Error"
@@ -92,6 +93,7 @@ type Name =
   | "Train"
   | "TransportBus"
   | "TransportTaxi"
+  | "Wheelchair"
   | "WomanWithPhone";
 
 export type Props = {|

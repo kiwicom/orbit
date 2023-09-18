@@ -26,6 +26,7 @@ export const NAMES: Name[] = [
   "CompassPoints",
   "CompassSaveOnBooking",
   "CompassTravelPlan",
+  "Damage",
   "DesktopSearch",
   "EnjoyApp",
   "Error",
@@ -88,5 +89,6 @@ export const NAMES: Name[] = [
   "Train",
   "TransportBus",
   "TransportTaxi",
+  "Wheelchair",
   "WomanWithPhone",
 ];

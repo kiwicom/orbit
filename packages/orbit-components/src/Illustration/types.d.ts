@@ -31,6 +31,7 @@ export type Name =
   | "CompassPoints"
   | "CompassSaveOnBooking"
   | "CompassTravelPlan"
+  | "Damage"
   | "DesktopSearch"
   | "EnjoyApp"
   | "Error"
@@ -93,6 +94,7 @@ export type Name =
   | "Train"
   | "TransportBus"
   | "TransportTaxi"
+  | "Wheelchair"
   | "WomanWithPhone";
 
 // TODO: remove spaceAfter in the next major version

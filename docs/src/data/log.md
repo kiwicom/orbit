@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [9.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.1.0...@kiwicom/orbit-components@9.2.0) (2023-09-18)
+
+#### Bug Fixes
+
+*   **ButtonLink:** fix incorrect hover backgroud color on primary ([fdc4c32](https://github.com/kiwicom/orbit/commit/fdc4c32913d026b796903b3f8fdd421302d35373))
+
+#### Features
+
+*   **icons:** update icons from figma ([f234800](https://github.com/kiwicom/orbit/commit/f2348001c23563e4e22711dd6d692b2f63586dfa))
+*   **icons:** update icons from figma ([225f77e](https://github.com/kiwicom/orbit/commit/225f77eafd00086097d19a6557811da5f87d2d08))
+*   **icons:** update icons from figma ([7279080](https://github.com/kiwicom/orbit/commit/727908001529ff0985e4daa04edfc84032d1a31d))
+
 ## [9.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.0.0...@kiwicom/orbit-components@9.1.0) (2023-09-11)
 
 #### Bug Fixes

@@ -147,7 +147,7 @@ const StyledInlineLabel = styled.div`
       `0 0 0 ${!hasTags && hasFeedback ? theme.orbit.spaceXXSmall : theme.orbit.spaceSmall}`,
     )};
 
-    ${FormLabel} {
+    .orbit-form-label {
       margin-bottom: 0;
       font-size: ${theme.orbit.fontSizeInputNormal};
       line-height: ${theme.orbit.lineHeightTextNormal};

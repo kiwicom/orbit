@@ -10,7 +10,7 @@ import Text from "../../Text";
 import Close from "../../icons/Close";
 import ButtonLink from "../../ButtonLink";
 
-type Props = {
+interface Props {
   description?: React.ReactNode;
   actions?: React.ReactNode;
   onClose?: Common.Event<React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>>;
@@ -22,7 +22,7 @@ type Props = {
   expandable?: boolean;
   expanded?: boolean;
   header?: React.ReactNode;
-};
+}
 
 const Header = ({
   description,

@@ -1,95 +1,61 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../defaultTheme";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
-import { rtlSpacing, left } from "../utils/rtl";
-import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
 
-const StyledAsterisk = styled.span<{ filled?: boolean }>`
-  ${({ theme, filled }) => css`
-    font-weight: ${theme.orbit.fontWeightBold};
-    color: ${!filled ? theme.orbit.colorTextError : theme.orbit.colorFormLabelFilled};
-    font-size: ${theme.orbit.fontSizeFormLabel};
-    vertical-align: top;
-  `}
-`;
+const FormLabel = ({
+  className,
+  children,
+  required,
+  filled,
+  dataTest,
+  id,
+  error,
+  help,
+  onMouseEnter,
+  onMouseLeave,
+  iconRef,
+  inlineLabel,
+  labelRef,
+  disabled,
+}: Props) => (
+  <span
+    className={cx(
+      className,
+      "orbit-form-label",
+      "font-base text-normal mb-xxs ms-xxs de:ms-0 inline-flex font-medium leading-normal",
+      !filled || disabled
+        ? "text-form-element-label-foreground"
+        : "text-form-element-label-filled-foreground",
+    )}
+    data-test={dataTest}
+    id={id}
+    ref={labelRef}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+  >
+    {!inlineLabel && (error || help) && (
+      <span className="me-xxs inline-flex items-center" ref={iconRef}>
+        {error && <AlertCircle ariaLabel="error" color="critical" size="small" />}
+        {!error && help && <InformationCircle ariaLabel="help" color="info" size="small" />}
+      </span>
+    )}
 
-StyledAsterisk.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInputErrorIcWrapper = styled.span`
-  ${({ theme }) => css`
-    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXXSmall} 0 0`)};
-    display: inline-flex;
-    align-items: center;
-  `};
-`;
-
-StyledInputErrorIcWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const FormLabel = styled(
-  ({
-    className,
-    children,
-    required,
-    filled,
-    dataTest,
-    id,
-    error,
-    help,
-    onMouseEnter,
-    onMouseLeave,
-    iconRef,
-    inlineLabel,
-    labelRef,
-  }: Props) => (
-    <span
-      className={className}
-      data-test={dataTest}
-      id={id}
-      ref={labelRef}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      {!inlineLabel && (error || help) && (
-        <StyledInputErrorIcWrapper ref={iconRef}>
-          {error && <AlertCircle ariaLabel="error" color="critical" size="small" />}
-          {!error && help && <InformationCircle ariaLabel="help" color="info" size="small" />}
-        </StyledInputErrorIcWrapper>
-      )}
-
-      {required && !error && (
-        <StyledAsterisk aria-hidden="true" filled={filled}>
-          *
-        </StyledAsterisk>
-      )}
-      <span>{children}</span>
-    </span>
-  ),
-)`
-  ${({ theme, filled, disabled }) => css`
-    display: inline-flex;
-    font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeFormLabel};
-    font-weight: ${theme.orbit.fontWeightMedium};
-    color: ${!filled || disabled ? theme.orbit.colorFormLabel : theme.orbit.colorFormLabelFilled};
-    line-height: ${theme.orbit.lineHeightTextNormal};
-    margin-bottom: ${theme.orbit.spaceXXSmall};
-    margin-${left}: ${theme.orbit.spaceXXSmall};
-    ${mq.desktop(css`
-      margin-${left}: 0;
-    `)}
-  `}
-`;
-
-FormLabel.defaultProps = {
-  theme: defaultTheme,
-};
+    {required && !error && (
+      <span
+        className={cx(
+          "text-normal align-top font-bold",
+          filled ? "text-form-element-label-filled-foreground" : "text-critical-foreground",
+        )}
+        aria-hidden="true"
+      >
+        *
+      </span>
+    )}
+    <span>{children}</span>
+  </span>
+);
 
 export default FormLabel;

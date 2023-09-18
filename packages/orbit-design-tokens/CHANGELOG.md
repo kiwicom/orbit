@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.0.0...@kiwicom/orbit-design-tokens@6.0.1) (2023-09-18)
+
+
+### Bug Fixes
+
+* **ButtonLink:** fix incorrect hover backgroud color on primary ([fdc4c32](https://github.com/kiwicom/orbit/commit/fdc4c32913d026b796903b3f8fdd421302d35373))
+* **Button:** type BundleMedium had wrong color on hover ([6ff41ba](https://github.com/kiwicom/orbit/commit/6ff41bace2f0740d7efd5c9859b53b8fde233288))
+* **tokens:** backgroundButtonBundleBasicHover had incorrect value ([0a72fc1](https://github.com/kiwicom/orbit/commit/0a72fc173f4ffa4fe3018ff56e9d7f9c27eab717))
+
+
+
+
+
 # [6.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@5.0.1...@kiwicom/orbit-design-tokens@6.0.0) (2023-08-22)
 
 

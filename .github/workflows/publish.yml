@@ -29,6 +29,15 @@ jobs:
           git config user.name "mainframev"
           git config user.email "vgenaev@gmail.com"
 
+      - name: Build
+        run: |
+          # we need to build packages in the right order
+          # lerna won't run build due to --ignore-prepublish flag
+          yarn tokens build
+          yarn tailwind-preset build
+          yarn components build
+          yarn workspace @kiwicom/eslint-plugin-orbit-components build
+
       - name: Dry run
         if: ${{ github.event.inputs.dryrun == 'true' }}
         run: |
@@ -46,7 +55,7 @@ jobs:
           echo "access=public" >> ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
           echo "//registry.npmjs.org/:always-auth=true" >> ~/.npmrc
-          yarn lerna publish --no-private --conventional-commits --create-release github --yes
+          yarn lerna publish --no-private --conventional-commits --create-release github --ignore-prepublish --yes
           yarn docs changelog
           git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push
           yarn zx scripts/post-changelog.mjs

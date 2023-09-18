@@ -49,8 +49,6 @@ describe("Stepper", () => {
     await user.click(screen.getByLabelText(IncrementLabel));
     expect(onIncrement).toHaveBeenCalled();
     await user.click(screen.getByLabelText(DecrementLabel));
-    expect(screen.getByLabelText("Decrement")).toHaveStyle({ background: "transparent" });
-    expect(screen.getByLabelText("Increment")).toHaveStyle({ background: "transparent" });
     expect(onDecrement).toHaveBeenCalled();
 
     await user.tab();

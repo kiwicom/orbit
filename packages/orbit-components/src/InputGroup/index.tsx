@@ -157,7 +157,7 @@ const StyledInputGroup = styled(
     }
   }
 
-  ${StyledChild} ${FormLabel} {
+  ${StyledChild} .orbit-form-label {
     display: ${({ label }) => label && "none"};
   }
 

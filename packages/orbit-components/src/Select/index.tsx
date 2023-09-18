@@ -45,7 +45,7 @@ const StyledInlineLabel = styled.div<{ hasFeedback?: boolean }>`
       `0 0 0 ${hasFeedback ? theme.orbit.spaceXXSmall : theme.orbit.spaceSmall}`,
     )};
 
-    ${FormLabel} {
+    .orbit-form-label {
       display: inline-block;
       margin-bottom: 0;
       font-size: ${theme.orbit.fontSizeInputNormal};

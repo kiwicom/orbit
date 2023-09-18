@@ -50,6 +50,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # must be of type Automation to create releases
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         run: |
           echo "scope=@kiwicom" > ~/.npmrc
           echo "access=public" >> ~/.npmrc

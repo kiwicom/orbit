@@ -1268,7 +1268,7 @@
     "version": "6.0.0"
   },
   "borderRadiusBadge": {
-    "replacement": null,
+    "replacement": "badgeBorderRadius",
     "category": "Border radius",
     "version": "6.0.0"
   },

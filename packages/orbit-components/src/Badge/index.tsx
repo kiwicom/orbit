@@ -1,46 +1,46 @@
 "use client";
 
 import React from "react";
-import clsx from "clsx";
 
 import BadgePrimitive from "../primitives/BadgePrimitive";
 import { TYPE_OPTIONS, TOKENS } from "./consts";
+import useTheme from "../hooks/useTheme";
+import type { Theme } from "../defaultTheme";
 import type { Props, Type } from "./types";
 
-const getTypeToken = ({ name, type }: { name: string; type: Type }) => {
+const getTypeToken = ({ name, theme, type }: { name: string; theme: Theme; type: Type }) => {
   const tokens = {
     [TOKENS.background]: {
-      [TYPE_OPTIONS.NEUTRAL]: "bg-badge-neutral-background",
-      [TYPE_OPTIONS.INFO_SUBTLE]: "bg-badge-info-subtle-background",
-      [TYPE_OPTIONS.SUCCESS_SUBTLE]: "bg-badge-success-subtle-background",
-      [TYPE_OPTIONS.WARNING_SUBTLE]: "bg-badge-warning-subtle-background",
-      [TYPE_OPTIONS.CRITICAL_SUBTLE]: "bg-badge-critical-subtle-background",
-      [TYPE_OPTIONS.DARK]: "bg-badge-dark-background",
-      [TYPE_OPTIONS.WHITE]: "bg-badge-white-background",
-      [TYPE_OPTIONS.INFO]: "bg-badge-info-background",
-      [TYPE_OPTIONS.CRITICAL]: "bg-badge-critical-background",
-      [TYPE_OPTIONS.SUCCESS]: "bg-badge-success-background",
-      [TYPE_OPTIONS.WARNING]: "bg-badge-warning-background",
-      // TODO: repalce with proper granular tokens for gradients
-      [TYPE_OPTIONS.BUNDLE_BASIC]: "bg-badge-bundle-basic-background",
-      [TYPE_OPTIONS.BUNDLE_MEDIUM]: "bg-badge-bundle-medium-background",
-      [TYPE_OPTIONS.BUNDLE_TOP]: "bg-badge-bundle-top-background",
+      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.badgeNeutralBackground,
+      [TYPE_OPTIONS.INFO_SUBTLE]: theme.orbit.badgeInfoSubtleBackground,
+      [TYPE_OPTIONS.SUCCESS_SUBTLE]: theme.orbit.badgeSuccessSubtleBackground,
+      [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.badgeWarningSubtleBackground,
+      [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.badgeCriticalSubtleBackground,
+      [TYPE_OPTIONS.DARK]: theme.orbit.badgeDarkBackground,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.badgeWhiteBackground,
+      [TYPE_OPTIONS.INFO]: theme.orbit.badgeInfoBackground,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.badgeCriticalBackground,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.badgeSuccessBackground,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.badgeWarningBackground,
+      [TYPE_OPTIONS.BUNDLE_BASIC]: theme.orbit.badgeBundleBasicBackground,
+      [TYPE_OPTIONS.BUNDLE_MEDIUM]: theme.orbit.badgeBundleMediumBackground,
+      [TYPE_OPTIONS.BUNDLE_TOP]: theme.orbit.badgeBundleTopBackground,
     },
     [TOKENS.color]: {
-      [TYPE_OPTIONS.NEUTRAL]: "text-badge-neutral-foreground",
-      [TYPE_OPTIONS.INFO_SUBTLE]: "text-badge-info-subtle-foreground",
-      [TYPE_OPTIONS.SUCCESS_SUBTLE]: "text-badge-success-subtle-foreground",
-      [TYPE_OPTIONS.WARNING_SUBTLE]: "text-badge-warning-subtle-foreground",
-      [TYPE_OPTIONS.CRITICAL_SUBTLE]: "text-badge-critical-subtle-foreground",
-      [TYPE_OPTIONS.DARK]: "text-badge-dark-foreground",
-      [TYPE_OPTIONS.WHITE]: "text-badge-white-foreground",
-      [TYPE_OPTIONS.INFO]: "text-badge-info-foreground",
-      [TYPE_OPTIONS.CRITICAL]: "text-badge-critical-foreground",
-      [TYPE_OPTIONS.SUCCESS]: "text-badge-success-foreground",
-      [TYPE_OPTIONS.WARNING]: "text-badge-warning-foreground",
-      [TYPE_OPTIONS.BUNDLE_BASIC]: "text-badge-bundle-basic-foreground",
-      [TYPE_OPTIONS.BUNDLE_MEDIUM]: "text-badge-bundle-medium-foreground",
-      [TYPE_OPTIONS.BUNDLE_TOP]: "text-badge-bundle-top-foreground",
+      [TYPE_OPTIONS.NEUTRAL]: theme.orbit.badgeNeutralForeground,
+      [TYPE_OPTIONS.INFO_SUBTLE]: theme.orbit.badgeInfoSubtleForeground,
+      [TYPE_OPTIONS.SUCCESS_SUBTLE]: theme.orbit.badgeSuccessSubtleForeground,
+      [TYPE_OPTIONS.WARNING_SUBTLE]: theme.orbit.badgeWarningSubtleForeground,
+      [TYPE_OPTIONS.CRITICAL_SUBTLE]: theme.orbit.badgeCriticalSubtleForeground,
+      [TYPE_OPTIONS.DARK]: theme.orbit.badgeDarkForeground,
+      [TYPE_OPTIONS.WHITE]: theme.orbit.badgeWhiteForeground,
+      [TYPE_OPTIONS.INFO]: theme.orbit.badgeInfoForeground,
+      [TYPE_OPTIONS.CRITICAL]: theme.orbit.badgeCriticalForeground,
+      [TYPE_OPTIONS.SUCCESS]: theme.orbit.badgeSuccessForeground,
+      [TYPE_OPTIONS.WARNING]: theme.orbit.badgeWarningForeground,
+      [TYPE_OPTIONS.BUNDLE_BASIC]: theme.orbit.badgeBundleBasicForeground,
+      [TYPE_OPTIONS.BUNDLE_MEDIUM]: theme.orbit.badgeBundleMediumForeground,
+      [TYPE_OPTIONS.BUNDLE_TOP]: theme.orbit.badgeBundleTopForeground,
     },
   };
   return tokens[name][type];
@@ -55,14 +55,13 @@ const Badge = ({
   id,
   carriers,
 }: Props) => {
+  const theme = useTheme();
+
   return (
     <BadgePrimitive
       carriers={carriers}
-      className={clsx(
-        "orbit-badge",
-        getTypeToken({ name: TOKENS.background, type }),
-        getTypeToken({ name: TOKENS.color, type }),
-      )}
+      background={getTypeToken({ name: TOKENS.background, theme, type })}
+      foregroundColor={getTypeToken({ name: TOKENS.color, theme, type })}
       icon={icon}
       id={id}
       ariaLabel={ariaLabel}

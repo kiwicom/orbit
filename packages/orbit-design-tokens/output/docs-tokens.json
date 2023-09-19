@@ -6876,7 +6876,7 @@
   "borderRadiusBadge": {
     "type": "border-radius",
     "deprecated": true,
-    "replacement": null,
+    "replacement": "badgeBorderRadius",
     "schema": {
       "namespace": "component",
       "object": "border-radius",

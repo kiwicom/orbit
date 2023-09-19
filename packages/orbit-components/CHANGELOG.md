@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.2.0...@kiwicom/orbit-components@9.3.0) (2023-09-19)
+
+
+### Features
+
+* **Illustration:** add Damage and Wheelchair illustrations ([04c78b6](https://github.com/kiwicom/orbit/commit/04c78b6bfadf8f90df297a7daddaf4182601e354))
+
+
+
+
+
 # [9.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.1.0...@kiwicom/orbit-components@9.2.0) (2023-09-18)
 
 

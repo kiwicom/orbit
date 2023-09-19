@@ -1,138 +1,14 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 import { usePopper } from "react-popper";
 
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
-import defaultTheme from "../../defaultTheme";
-import media from "../../utils/mediaQuery";
-import CloseIc from "../../icons/Close";
-import { rtlSpacing, right } from "../../utils/rtl";
-import resolveColor from "./helpers/resolveColor";
-import resolvePlacement from "./helpers/resolvePlacement";
-import { SIDE_NUDGE } from "./consts";
+import CloseIcon from "../../icons/Close";
 import useTheme from "../../hooks/useTheme";
 import type { Props } from "./types";
 import useMediaQuery from "../../hooks/useMediaQuery";
-
-const StyledArrow = styled.div<{
-  inlineLabel?: boolean;
-  isHelp?: boolean;
-  placement?: string;
-}>`
-  position: absolute;
-  ${resolvePlacement};
-
-  &:before {
-    content: "";
-    background: ${resolveColor};
-    width: 8px;
-    height: 8px;
-    transform: translate(-50%, -50%) rotate(45deg);
-    position: absolute;
-  }
-`;
-
-const StyledFormFeedbackTooltip = styled.div<{
-  isHelp?: boolean;
-  shown?: boolean;
-  inlineLabel?: boolean;
-  placement?: string;
-  top?: string | number;
-  left?: string | number;
-  position?: string | number;
-  bottom?: string | number;
-  right?: string | number;
-  transform?: string;
-}>`
-  ${({ theme, isHelp, shown, top, left, position, bottom, right: popperRight, transform }) => css`
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    border-radius: ${theme.orbit.borderRadiusLarge};
-    padding: ${theme.orbit.spaceXSmall} ${theme.orbit.spaceSmall};
-    padding-${right}: ${isHelp && theme.orbit.spaceSmall};
-    z-index: 10;
-    max-height: none;
-    overflow: visible;
-    width: min(${`calc(100% - ${SIDE_NUDGE * 2}px)`}, 100vw);
-    background: ${resolveColor};
-    visibility: ${shown ? "visible" : "hidden"};
-    opacity: ${shown ? "1" : "0"};
-    transition: opacity ${theme.orbit.durationFast} ease-in-out,
-    visibility ${theme.orbit.durationFast} ease-in-out;
-    position: ${position};
-    top: ${top};
-    left: ${left};
-    bottom: ${bottom};
-    right: ${popperRight};
-    transform: ${transform};
-
-    img {
-      max-width: 100%;
-    }
-
-    ${media.largeMobile(css`
-      width: auto;
-    `)};
-
-    ${media.tablet(css`
-      border-radius: ${theme.orbit.borderRadiusNormal};
-    `)}
-  `}
-`;
-
-StyledArrow.defaultProps = {
-  theme: defaultTheme,
-};
-
-StyledFormFeedbackTooltip.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTooltipContent = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    height: 100%;
-    font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextNormal};
-    font-weight: ${theme.orbit.fontWeightNormal};
-    line-height: ${theme.orbit.lineHeightTextSmall};
-    color: ${theme.orbit.paletteWhite};
-
-    & .orbit-text,
-    .orbit-list-item,
-    a {
-      color: ${theme.orbit.paletteWhite};
-      font-size: ${theme.orbit.fontSizeTextNormal};
-      font-weight: ${theme.orbit.fontWeightNormal};
-
-      &:hover,
-      &:focus {
-        color: ${theme.orbit.paletteWhite};
-      }
-    }
-  `}
-`;
-
-StyledTooltipContent.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledCloseButton = styled.a`
-  ${({ theme }) => css`
-    color: ${theme.orbit.paletteWhite};
-    cursor: pointer;
-    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-    display: flex;
-  `}
-`;
-
-StyledCloseButton.defaultProps = {
-  theme: defaultTheme,
-};
 
 const ErrorFormTooltip = ({
   onShown,
@@ -213,32 +89,66 @@ const ErrorFormTooltip = ({
     };
   }, [onShown, isHelp, helpClosable]);
 
+  const isVertical =
+    attrs.popper &&
+    (attrs.popper["data-popper-placement"] === "top-start" ||
+      attrs.popper["data-popper-placement"] === "top-end")
+      ? "bottom"
+      : "top";
+
+  const cssVars = {
+    "--error-form-tooltip-position": popper.position,
+    "--error-form-tooltip-top": popper.top,
+    "--error-form-tooltip-left": popper.left,
+    "--error-form-tooltip-right": popper.right,
+    "--error-form-tooltip-bottom": popper.bottom,
+    "--error-form-tooltip-transform": popper.transform,
+  };
+
   return (
-    <StyledFormFeedbackTooltip
+    <div
       id={id}
       ref={tooltipRef}
-      shown={shown}
-      isHelp={isHelp}
-      data-test={dataTest}
       aria-live="polite"
-      inlineLabel={inlineLabel}
-      placement={attrs.popper && attrs.popper["data-popper-placement"]}
-      position={popper.position}
-      top={popper.top}
-      left={popper.left}
-      right={popper.right}
-      bottom={popper.bottom}
-      transform={popper.transform}
+      data-test={dataTest}
+      className={cx(
+        "flex justify-between overflow-visible",
+        "rounded-large py-xs px-sm z-10 box-border",
+        "max-h-none w-[min(calc(100%-20px),_100vw)]",
+        isHelp ? "pe-sm bg-blue-normal" : "bg-red-normal",
+        shown ? "visible opacity-100" : "invisible opacity-0",
+        "duration-fast transition-[opacity,visibility] ease-in-out",
+        "bottom-[var(--error-form-tooltip-bottom)] left-[var(--error-form-tooltip-left)] right-[var(--error-form-tooltip-right)] top-[var(--error-form-tooltip-top)] [position:var(--error-form-tooltip-position)] [transform:var(--error-form-tooltip-transform)]",
+        "lm:w-auto tb:rounded-normal",
+        "[&>img]:max-w-full",
+      )}
+      style={cssVars as React.CSSProperties}
     >
-      <StyledArrow
-        isHelp={isHelp}
+      <div
+        className={cx(
+          "start-xs de:start-0 absolute",
+          isVertical ? "bottom-xxxs" : "top-xxxs",
+          inlineLabel && "rtl:start-0",
+          isHelp ? "before:bg-blue-normal" : "before:bg-red-normal",
+          "before:h-xs before:w-xs before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45",
+        )}
         ref={setArrowRef}
-        inlineLabel={inlineLabel}
-        placement={attrs.popper && attrs.popper["data-popper-placement"]}
       />
-      <StyledTooltipContent ref={contentRef}>{children}</StyledTooltipContent>
+      <div
+        className={cx(
+          "font-base text-normal leading-small text-white-normal flex h-full items-center font-normal",
+          "[&_.orbit-text]:text-white-normal [&_.orbit-text]:text-normal hover:[&_.orbit-text]:text-white-normal focus:[&_.orbit-text]:text-white-normal [&_.orbit-text]:font-normal",
+          "[&_.orbit-list-item]:text-white-normal [&_.orbit-list-item]:text-normal hover:[&_.orbit-list-item]:text-white-normal focus:[&_.orbit-list-item]:text-white-normal [&_.orbit-list-item]:font-normal",
+          "[&_a]:text-white-normal [&_a]:text-normal hover:[&_a]:text-white-normal focus:[&_a]:text-white-normal [&_a]:font-normal",
+        )}
+        ref={contentRef}
+      >
+        {children}
+      </div>
       {isHelp && helpClosable && (
-        <StyledCloseButton
+        <button
+          type="button"
+          className="text-white-normal ms-sm flex cursor-pointer"
           tabIndex={0}
           // @ts-expect-error TODO
           onKeyDown={handleKeyDown<HTMLAnchorElement>(onShown)}
@@ -247,10 +157,10 @@ const ErrorFormTooltip = ({
             if (shown) onShown(false);
           }}
         >
-          <CloseIc ariaLabel="close" />
-        </StyledCloseButton>
+          <CloseIcon ariaLabel="close" />
+        </button>
       )}
-    </StyledFormFeedbackTooltip>
+    </div>
   );
 };
 

@@ -11,7 +11,8 @@
         "type": "border-radius",
         "value": 12,
         "deprecated": true,
-        "deprecated-version": "6.0.0"
+        "deprecated-version": "6.0.0",
+        "deprecated-replace": "{component.badge.border-radius}"
       }
     }
   }

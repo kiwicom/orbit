@@ -1287,6 +1287,66 @@
     "category": "Size (width, height)",
     "version": "6.0.0"
   },
+  "buttonSmallPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonSmallBothIconsPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonSmallLeftIconPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonSmallRightIconPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonNormalPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonNormalBothIconsPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonNormalLeftIconPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonNormalRightIconPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonLargePadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonLargeBothIconsPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonLargeLeftIconPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
+  "buttonLargeRightIconPadding": {
+    "replacement": null,
+    "category": "Spacing",
+    "version": "6.0.0"
+  },
   "boxShadowButtonFocus": {
     "replacement": null,
     "category": "Box shadow",
@@ -1607,21 +1667,6 @@
     "category": "Size (width, height)",
     "version": "6.0.0"
   },
-  "opacityButtonDisabled": {
-    "replacement": "buttonDisabledOpacity",
-    "category": "Opacity",
-    "version": "6.0.0"
-  },
-  "opacityCheckboxDisabled": {
-    "replacement": "formElementDisabledOpacity",
-    "category": "Opacity",
-    "version": "6.0.0"
-  },
-  "opacityRadioButtonDisabled": {
-    "replacement": "formElementDisabledOpacity",
-    "category": "Opacity",
-    "version": "6.0.0"
-  },
   "borderStyleCard": {
     "replacement": null,
     "category": null,
@@ -1830,6 +1875,16 @@
   "marginTopFormFeedback": {
     "replacement": null,
     "category": "Size (width, height)",
+    "version": "6.0.0"
+  },
+  "opacityCheckboxDisabled": {
+    "replacement": "formElementDisabledOpacity",
+    "category": "Opacity",
+    "version": "6.0.0"
+  },
+  "opacityRadioButtonDisabled": {
+    "replacement": "formElementDisabledOpacity",
+    "category": "Opacity",
     "version": "6.0.0"
   },
   "fontWeightHeadingDisplay": {

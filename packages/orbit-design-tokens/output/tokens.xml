@@ -1444,12 +1444,28 @@
     <value>#FFFFFF</value>
   </token>
   <token>
-    <name>buttonDisabledOpacity</name>
-    <value>30</value>
-  </token>
-  <token>
     <name>buttonWithoutTextPadding</name>
     <value>0</value>
+  </token>
+  <token>
+    <name>buttonPaddingXSmall</name>
+    <value>8</value>
+  </token>
+  <token>
+    <name>buttonPaddingSmall</name>
+    <value>12</value>
+  </token>
+  <token>
+    <name>buttonPaddingNormal</name>
+    <value>16</value>
+  </token>
+  <token>
+    <name>buttonPaddingLarge</name>
+    <value>24</value>
+  </token>
+  <token>
+    <name>buttonPaddingXLarge</name>
+    <value>28</value>
   </token>
   <token>
     <name>buttonPrimarySubtleBackground</name>
@@ -1864,18 +1880,6 @@
     <value>13</value>
   </token>
   <token>
-    <name>opacityButtonDisabled</name>
-    <value>30</value>
-  </token>
-  <token>
-    <name>opacityCheckboxDisabled</name>
-    <value>50</value>
-  </token>
-  <token>
-    <name>opacityRadioButtonDisabled</name>
-    <value>50</value>
-  </token>
-  <token>
     <name>borderStyleCard</name>
     <value>solid</value>
   </token>
@@ -2174,6 +2178,14 @@
   <token>
     <name>marginTopFormFeedback</name>
     <value>2</value>
+  </token>
+  <token>
+    <name>opacityCheckboxDisabled</name>
+    <value>50</value>
+  </token>
+  <token>
+    <name>opacityRadioButtonDisabled</name>
+    <value>50</value>
   </token>
   <token>
     <name>headingDisplayFontSize</name>

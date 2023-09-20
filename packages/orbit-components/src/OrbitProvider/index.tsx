@@ -21,7 +21,7 @@ import type { Props } from "./types";
  * ```
  *
  */
-const OrbitProvider = ({ theme, children, useId }: Props) => {
+const OrbitProvider = ({ theme, children, useId = React.useId }: Props) => {
   return (
     <RandomIdProvider useId={useId}>
       <StyledThemeProvider theme={theme}>

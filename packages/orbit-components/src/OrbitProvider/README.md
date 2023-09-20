@@ -18,8 +18,8 @@ After adding import please wrap your application into `OrbitProvider` and you ca
 
 Table below contains all types of the props available in the OrbitProvider component.
 
-| Name         | Type         | Default | Description                                                                                                                           |
-| :----------- | :----------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------ |
-| **children** | `React.Node` |         | Your app                                                                                                                              |
-| theme        | `[Object]`   |         | See [`theming`](https://github.com/kiwicom/orbit/blob/master/.github/theming.md)                                                      |
-| useId        | `[Object]`   |         | If using React 18 or above, use `React.useId`. If not, use `useRandomId` from [`react-uid`](https://www.npmjs.com/package/react-uid). |
+| Name         | Type           | Default                                   | Description                                                                                                                           |
+| :----------- | :------------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| **children** | `React.Node`   |                                           | Your app                                                                                                                              |
+| theme        | `[Object]`     |                                           | See [`theming`](https://github.com/kiwicom/orbit/blob/master/.github/theming.md)                                                      |
+| useId        | `() => string` | `React.useId` (`undefined` for React ≤17) | If using React 18 or above, use `React.useId`. If not, use `useRandomId` from [`react-uid`](https://www.npmjs.com/package/react-uid). |

@@ -13,7 +13,7 @@ const config: Config = {
     colors: { ...defaultFoundation.palette, transparent: "transparent" },
     borderRadius: defaultFoundation["border-radius"],
     screens,
-    lineHeight: defaultFoundation["line-height"],
+    lineHeight: { ...defaultFoundation["line-height"], none: "1" },
     boxShadow,
     transitionDuration: duration,
     spacing,

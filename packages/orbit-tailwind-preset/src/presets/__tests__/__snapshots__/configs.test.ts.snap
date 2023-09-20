@@ -348,6 +348,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "lineHeight": {
           "extra-large": "24px",
           "large": "24px",
+          "none": "1",
           "normal": "20px",
           "small": "16px",
         },

@@ -8,8 +8,6 @@ import type {
   FullWidthConditionalProps,
 } from "../primitives/ButtonPrimitive/types";
 
-export type { Size };
-
 export type Type =
   | "primary"
   | "secondary"

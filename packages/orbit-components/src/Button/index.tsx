@@ -4,49 +4,16 @@ import * as React from "react";
 import cx from "clsx";
 
 import ButtonPrimitive from "../primitives/ButtonPrimitive";
-import type { Props, Size, Type } from "./types";
-
-const sizeStyles: Record<Size, string> = {
-  small: "h-button-small text-small [&_svg]:h-icon-small [&_svg]:w-icon-small",
-  normal: "h-button-normal text-normal [&_svg]:h-icon-medium [&_svg]:w-icon-medium",
-  large: "h-button-large text-large [&_svg]:h-icon-large [&_svg]:w-icon-large",
-};
-
-const paddingNoIconsStyles: Record<Size, string> = {
-  small: "px-button-padding-sm",
-  normal: "px-button-padding-md",
-  large: "px-button-padding-xl",
-};
-
-const paddingLeftIconStyles: Record<Size, string> = {
-  small: "ps-button-padding-xs pe-button-padding-sm",
-  normal: "ps-button-padding-sm pe-button-padding-md",
-  large: "ps-button-padding-lg pe-button-padding-xl",
-};
-
-const paddingRightIconStyles: Record<Size, string> = {
-  small: "ps-button-padding-sm pe-button-padding-xs",
-  normal: "ps-button-padding-md pe-button-padding-sm",
-  large: "ps-button-padding-xl pe-button-padding-lg",
-};
-
-const paddingBothIconsStyles: Record<Size, string> = {
-  small: "px-button-padding-xs",
-  normal: "px-button-padding-sm",
-  large: "px-button-padding-lg",
-};
-
-const circledStyles: Record<Size, string> = {
-  small: "rounded-button-circled-small",
-  normal: "rounded-button-circled-normal",
-  large: "rounded-button-circled-large",
-};
-
-const circledIconOnlyStyles: Record<Size, string> = {
-  small: "w-button-small",
-  normal: "w-button-normal",
-  large: "w-button-large",
-};
+import {
+  iconOnlyStyles,
+  circledStyles,
+  paddingBothIconsStyles,
+  paddingLeftIconStyles,
+  paddingNoIconsStyles,
+  paddingRightIconStyles,
+  sizeStyles,
+} from "../primitives/ButtonPrimitive/sizes";
+import type { Props, Type } from "./types";
 
 const typeStyles: Record<Type, string> = {
   primary:
@@ -97,15 +64,15 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
         disabled={disabled}
         {...props}
         className={cx(
-          "orbit-button space-x-xs rtl:space-x-reverse",
+          "space-x-xs rtl:space-x-reverse",
           sizeStyles[size],
+          children == null && iconOnlyStyles[size],
           disabled === true ? typeDisabledStyled[type] : typeStyles[type],
           children != null && iconLeft == null && iconRight == null && paddingNoIconsStyles[size],
           children != null && iconLeft != null && iconRight == null && paddingLeftIconStyles[size],
           children != null && iconLeft == null && iconRight != null && paddingRightIconStyles[size],
           children != null && iconLeft != null && iconRight != null && paddingBothIconsStyles[size],
           props.circled === true && circledStyles[size],
-          props.circled === true && children == null && circledIconOnlyStyles[size],
         )}
       >
         {children}

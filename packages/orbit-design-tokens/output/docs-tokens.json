@@ -7898,7 +7898,7 @@
   "buttonSmallPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -7922,7 +7922,7 @@
   "buttonSmallBothIconsPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -7946,7 +7946,7 @@
   "buttonSmallLeftIconPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -7970,7 +7970,7 @@
   "buttonSmallRightIconPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8017,7 +8017,7 @@
   "buttonNormalPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8041,7 +8041,7 @@
   "buttonNormalBothIconsPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8065,7 +8065,7 @@
   "buttonNormalLeftIconPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8089,7 +8089,7 @@
   "buttonNormalRightIconPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8136,7 +8136,7 @@
   "buttonLargePadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8160,7 +8160,7 @@
   "buttonLargeBothIconsPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8184,7 +8184,7 @@
   "buttonLargeLeftIconPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8208,7 +8208,7 @@
   "buttonLargeRightIconPadding": {
     "type": "size",
     "category": "spacing",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "component",
@@ -8370,29 +8370,6 @@
       "value": "rgb(255, 255, 255)"
     }
   },
-  "buttonDisabledOpacity": {
-    "type": "opacity",
-    "deprecated": false,
-    "replacement": null,
-    "schema": {
-      "namespace": "component",
-      "object": "button",
-      "variant": "disabled",
-      "subVariant": "opacity"
-    },
-    "javascript": {
-      "name": "buttonDisabledOpacity",
-      "value": "0.3"
-    },
-    "foundation": {
-      "name": "buttonDisabledOpacity",
-      "value": "none"
-    },
-    "scss": {
-      "name": "buttonDisabledOpacity",
-      "value": "0.3"
-    }
-  },
   "buttonWithoutTextPadding": {
     "type": "size",
     "deprecated": false,
@@ -8414,6 +8391,121 @@
     "scss": {
       "name": "buttonWithoutTextPadding",
       "value": "0"
+    }
+  },
+  "buttonPaddingXSmall": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "button",
+      "variant": "padding",
+      "subVariant": "x-small"
+    },
+    "javascript": {
+      "name": "buttonPaddingXSmall",
+      "value": "8px"
+    },
+    "foundation": {
+      "name": "buttonPaddingXSmall",
+      "value": "foundation.space.xSmall"
+    },
+    "scss": {
+      "name": "buttonPaddingXSmall",
+      "value": "8px"
+    }
+  },
+  "buttonPaddingSmall": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "button",
+      "variant": "padding",
+      "subVariant": "small"
+    },
+    "javascript": {
+      "name": "buttonPaddingSmall",
+      "value": "12px"
+    },
+    "foundation": {
+      "name": "buttonPaddingSmall",
+      "value": "foundation.space.small"
+    },
+    "scss": {
+      "name": "buttonPaddingSmall",
+      "value": "12px"
+    }
+  },
+  "buttonPaddingNormal": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "button",
+      "variant": "padding",
+      "subVariant": "normal"
+    },
+    "javascript": {
+      "name": "buttonPaddingNormal",
+      "value": "16px"
+    },
+    "foundation": {
+      "name": "buttonPaddingNormal",
+      "value": "foundation.space.medium"
+    },
+    "scss": {
+      "name": "buttonPaddingNormal",
+      "value": "16px"
+    }
+  },
+  "buttonPaddingLarge": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "button",
+      "variant": "padding",
+      "subVariant": "large"
+    },
+    "javascript": {
+      "name": "buttonPaddingLarge",
+      "value": "24px"
+    },
+    "foundation": {
+      "name": "buttonPaddingLarge",
+      "value": "foundation.space.large"
+    },
+    "scss": {
+      "name": "buttonPaddingLarge",
+      "value": "24px"
+    }
+  },
+  "buttonPaddingXLarge": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "button",
+      "variant": "padding",
+      "subVariant": "x-large"
+    },
+    "javascript": {
+      "name": "buttonPaddingXLarge",
+      "value": "28px"
+    },
+    "foundation": {
+      "name": "buttonPaddingXLarge",
+      "value": "none"
+    },
+    "scss": {
+      "name": "buttonPaddingXLarge",
+      "value": "28px"
     }
   },
   "buttonPrimarySubtleBackground": {
@@ -10803,75 +10895,6 @@
       "value": "13px"
     }
   },
-  "opacityButtonDisabled": {
-    "type": "opacity",
-    "deprecated": true,
-    "replacement": "buttonDisabledOpacity",
-    "schema": {
-      "namespace": "component",
-      "object": "opacity",
-      "variant": "button",
-      "subVariant": "disabled"
-    },
-    "javascript": {
-      "name": "opacityButtonDisabled",
-      "value": "0.3"
-    },
-    "foundation": {
-      "name": "opacityButtonDisabled",
-      "value": "none"
-    },
-    "scss": {
-      "name": "opacityButtonDisabled",
-      "value": "0.3"
-    }
-  },
-  "opacityCheckboxDisabled": {
-    "type": "opacity",
-    "deprecated": true,
-    "replacement": "formElementDisabledOpacity",
-    "schema": {
-      "namespace": "component",
-      "object": "opacity",
-      "variant": "checkbox",
-      "subVariant": "disabled"
-    },
-    "javascript": {
-      "name": "opacityCheckboxDisabled",
-      "value": "0.5"
-    },
-    "foundation": {
-      "name": "opacityCheckboxDisabled",
-      "value": "none"
-    },
-    "scss": {
-      "name": "opacityCheckboxDisabled",
-      "value": "0.5"
-    }
-  },
-  "opacityRadioButtonDisabled": {
-    "type": "opacity",
-    "deprecated": true,
-    "replacement": "formElementDisabledOpacity",
-    "schema": {
-      "namespace": "component",
-      "object": "opacity",
-      "variant": "radio-button",
-      "subVariant": "disabled"
-    },
-    "javascript": {
-      "name": "opacityRadioButtonDisabled",
-      "value": "0.5"
-    },
-    "foundation": {
-      "name": "opacityRadioButtonDisabled",
-      "value": "none"
-    },
-    "scss": {
-      "name": "opacityRadioButtonDisabled",
-      "value": "0.5"
-    }
-  },
   "borderStyleCard": {
     "type": "border-style",
     "deprecated": true,
@@ -12572,6 +12595,52 @@
     "scss": {
       "name": "marginTopFormFeedback",
       "value": "2px"
+    }
+  },
+  "opacityCheckboxDisabled": {
+    "type": "opacity",
+    "deprecated": true,
+    "replacement": "formElementDisabledOpacity",
+    "schema": {
+      "namespace": "component",
+      "object": "opacity",
+      "variant": "checkbox",
+      "subVariant": "disabled"
+    },
+    "javascript": {
+      "name": "opacityCheckboxDisabled",
+      "value": "0.5"
+    },
+    "foundation": {
+      "name": "opacityCheckboxDisabled",
+      "value": "none"
+    },
+    "scss": {
+      "name": "opacityCheckboxDisabled",
+      "value": "0.5"
+    }
+  },
+  "opacityRadioButtonDisabled": {
+    "type": "opacity",
+    "deprecated": true,
+    "replacement": "formElementDisabledOpacity",
+    "schema": {
+      "namespace": "component",
+      "object": "opacity",
+      "variant": "radio-button",
+      "subVariant": "disabled"
+    },
+    "javascript": {
+      "name": "opacityRadioButtonDisabled",
+      "value": "0.5"
+    },
+    "foundation": {
+      "name": "opacityRadioButtonDisabled",
+      "value": "none"
+    },
+    "scss": {
+      "name": "opacityRadioButtonDisabled",
+      "value": "0.5"
     }
   },
   "headingDisplayFontSize": {

@@ -509,7 +509,6 @@ const oldTokens = () => {
     // category:Opacity
     // description:
     opacityOverlay: theme.base.opacityLarge,
-    opacityButtonDisabled: theme.base.opacitySmall,
     opacityRadioButtonDisabled: theme.base.opacityMedium,
     opacityCheckboxDisabled: theme.base.opacityMedium,
     // category:Font weight

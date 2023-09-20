@@ -1,17 +1,14 @@
 import { $, fetch, argv } from "zx";
 import dotenv from "dotenv-safe";
-import conventionalChangelog from "conventional-changelog";
-import { getPackages } from "@lerna/project";
-import slackify from "slackify-markdown";
+import slackifyMarkdown from "slackify-markdown";
 import { simpleGit } from "simple-git";
 import gitDiffParser from "gitdiff-parser";
 
 /* eslint-disable no-console */
 
-const CHANNEL = `orbit-react`;
-const COLOR_CORE = `#00A58E`;
-const PACKAGES = ["orbit-components", "orbit-tailwind-preset"];
-const PACKAGE_PREFIX = "@kiwicom";
+const CHANNEL = "orbit-react";
+const COLOR_CORE = "#00A58E";
+const PACKAGES = ["orbit-components", "orbit-tailwind-preset", "orbit-design-tokens"];
 const SLACK_API_POST_RELEASE_MESSAGE = "https://slack.com/api/chat.postMessage";
 
 function getTitle(pkg) {
@@ -29,14 +26,25 @@ const apiRequest = async ({ method = "GET", url, body }) =>
     },
   });
 
-function adjustChangelog(str) {
+function format(str, package_, prefix = "@kiwicom") {
   const output = str
+    .replace(/^#+ /, `# _${prefix}/${package_}_ `)
     .replace("Bug Fixes", "Bug Fixes 🐛")
     .replace("Features", "Features 🆕")
     .replace("BREAKING CHANGES", "BREAKING CHANGES 🚨")
     .replace("Reverts", "Reverts 🔄");
 
   return output;
+}
+
+function getChangelogFromDiff(files) {
+  // Only one file as we're only looking at the changelog
+  const [changelogFile] = files;
+  const changelog = changelogFile.hunks
+    .flatMap(hunk => hunk.changes.filter(({ isInsert }) => isInsert).map(({ content }) => content))
+    .join("\n")
+    .trim();
+  return changelog;
 }
 
 function getDiff(tag, path) {
@@ -88,48 +96,8 @@ async function configureSlackToken() {
   }
 }
 
-async function getChangelogMessage(package_) {
-  const packages = await getPackages();
-
-  return new Promise((resolve, reject) => {
-    let changelog = "";
-    const pkg = packages.find(p => p.name === package_);
-
-    const stream = conventionalChangelog(
-      {
-        lernaPackage: pkg.name,
-        preset: "angular",
-      },
-      {
-        host: "https://github.com",
-        title: package_,
-        owner: "kiwicom",
-        repository: "orbit",
-        linkCompare: true,
-        version: pkg.version,
-      },
-      { path: pkg.location },
-    );
-
-    stream.on("data", data => {
-      changelog += data.toString();
-    });
-
-    stream.on("end", () => {
-      changelog = slackify(adjustChangelog(changelog));
-      resolve(changelog);
-    });
-
-    stream.on("error", err => {
-      reject(err);
-    });
-  });
-}
-
 async function publishChangelog(package_) {
   try {
-    const changelog = await getChangelogMessage(`${PACKAGE_PREFIX}/${package_}`);
-
     await simpleGit().fetch(["origin", "master", "--tags"]);
     const tags = await simpleGit().tags();
     const diff = await getDiff(tags.latest ?? "", changelogPath(package_));
@@ -138,12 +106,15 @@ async function publishChangelog(package_) {
       console.log(`No changes in ${package_}`);
       return;
     }
+    const changelog = getChangelogFromDiff(files);
+    const formattedChangelog = format(changelog, package_);
+    const slackifiedChangelog = slackifyMarkdown(formattedChangelog);
 
     if (argv.dry) {
-      console.info(changelog);
+      console.info(formattedChangelog);
     } else {
       await configureSlackToken();
-      await postSlackNotification(changelog, package_);
+      await postSlackNotification(slackifiedChangelog, package_);
     }
   } catch (err) {
     console.error(err);

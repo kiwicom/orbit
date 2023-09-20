@@ -6,6 +6,28 @@
           "type": "size",
           "value": "0"
         }
+      },
+      "padding": {
+        "x-small": {
+          "type": "size",
+          "value": "{foundation.space.x-small}"
+        },
+        "small": {
+          "type": "size",
+          "value": "{foundation.space.small}"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.space.medium}"
+        },
+        "large": {
+          "type": "size",
+          "value": "{foundation.space.large}"
+        },
+        "x-large": {
+          "type": "size",
+          "value": 28
+        }
       }
     },
     "padding": {

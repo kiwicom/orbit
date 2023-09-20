@@ -375,8 +375,12 @@ export interface Tokens {
   buttonInfoForeground: string;
   buttonInfoForegroundHover: string;
   buttonInfoForegroundActive: string;
-  buttonDisabledOpacity: string;
   buttonWithoutTextPadding: string;
+  buttonPaddingXSmall: string;
+  buttonPaddingSmall: string;
+  buttonPaddingNormal: string;
+  buttonPaddingLarge: string;
+  buttonPaddingXLarge: string;
   buttonPrimarySubtleBackground: string;
   buttonPrimarySubtleBackgroundHover: string;
   buttonPrimarySubtleBackgroundActive: string;
@@ -480,9 +484,6 @@ export interface Tokens {
   fontSizeHeadingTitle4: string;
   fontSizeHeadingTitle5: string;
   fontSizeHeadingTitle6: string;
-  opacityButtonDisabled: string;
-  opacityCheckboxDisabled: string;
-  opacityRadioButtonDisabled: string;
   borderStyleCard: string;
   borderStyleInput: string;
   borderWidthCard: string;
@@ -558,6 +559,8 @@ export interface Tokens {
   formElementLabelFilledForeground: string;
   formElementPrefixForeground: string;
   marginTopFormFeedback: string;
+  opacityCheckboxDisabled: string;
+  opacityRadioButtonDisabled: string;
   headingDisplayFontSize: string;
   headingDisplayFontWeight: string;
   headingDisplayLineHeight: string;
@@ -1230,8 +1233,12 @@ const createTokens: CreateTokens = foundation => ({
   buttonInfoForeground: foundation.palette.white.normal,
   buttonInfoForegroundHover: foundation.palette.white.normal,
   buttonInfoForegroundActive: foundation.palette.white.normal,
-  buttonDisabledOpacity: "0.3",
   buttonWithoutTextPadding: "0",
+  buttonPaddingXSmall: foundation.space.XSmall,
+  buttonPaddingSmall: foundation.space.small,
+  buttonPaddingNormal: foundation.space.medium,
+  buttonPaddingLarge: foundation.space.large,
+  buttonPaddingXLarge: "28px",
   buttonPrimarySubtleBackground: foundation.palette.product.light,
   buttonPrimarySubtleBackgroundHover: foundation.palette.product.lightHover,
   buttonPrimarySubtleBackgroundActive: foundation.palette.product.lightActive,
@@ -1341,9 +1348,6 @@ const createTokens: CreateTokens = foundation => ({
   fontSizeHeadingTitle4: foundation.fontSize.large,
   fontSizeHeadingTitle5: foundation.fontSize.normal,
   fontSizeHeadingTitle6: foundation.fontSize.small,
-  opacityButtonDisabled: "0.3",
-  opacityCheckboxDisabled: "0.5",
-  opacityRadioButtonDisabled: "0.5",
   borderStyleCard: "solid",
   borderStyleInput: "solid",
   borderWidthCard: "1px",
@@ -1447,6 +1451,8 @@ const createTokens: CreateTokens = foundation => ({
   formElementLabelFilledForeground: foundation.palette.ink.light,
   formElementPrefixForeground: foundation.palette.ink.light,
   marginTopFormFeedback: foundation.space.XXXSmall,
+  opacityCheckboxDisabled: "0.5",
+  opacityRadioButtonDisabled: "0.5",
   headingDisplayFontSize: "40px",
   headingDisplayFontWeight: foundation.fontWeight.bold,
   headingDisplayLineHeight: "44px",

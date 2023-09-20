@@ -1,6 +1,5 @@
 name: Test
 
-#TODO remove the all branches condition later
 on:
   push:
     branches:
@@ -17,7 +16,7 @@ env: # Set environment variables for every job and step in this workflow
   STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
 
 jobs:
-  general:
+  types:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,13 +38,51 @@ jobs:
       - name: Type checks
         run: yarn check:types && yarn flow check
 
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Build
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          yarn tokens build
+          yarn tailwind-preset build
+          yarn components build
+          yarn tracking build
+          yarn themer build
+
       - name: Lint
         run: |
           yarn eslint:ci
           yarn prettier:test
           yarn check:css
 
-      - name: Test
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Build
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          yarn tokens build
+          yarn tailwind-preset build
+          yarn components build
+          yarn tracking build
+          yarn themer build
+
+      - name: Unit tests
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
         run: |

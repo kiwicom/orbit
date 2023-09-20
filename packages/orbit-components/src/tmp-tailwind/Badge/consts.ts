@@ -16,9 +16,3 @@ export const TYPE_OPTIONS: Record<string, Type> = {
   BUNDLE_MEDIUM: "bundleMedium",
   BUNDLE_TOP: "bundleTop",
 };
-
-export const TOKENS = {
-  background: "background",
-  color: "color",
-  border: "border",
-};

@@ -588,9 +588,6 @@ exports[`orbitPreset should match snapshot 1`] = `
       "DEFAULT": "100%",
     },
     "backgroundColor": {
-      "badge-bundle-basic-background": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
-      "badge-bundle-medium-background": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
-      "badge-bundle-top-background": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
       "badge-critical-background": "#D21C1C",
       "badge-critical-subtle-background": "#FAEAEA",
       "badge-dark-background": "#252A31",
@@ -766,6 +763,9 @@ exports[`orbitPreset should match snapshot 1`] = `
       },
     },
     "backgroundImage": {
+      "badge-bundle-basic-background": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
+      "badge-bundle-medium-background": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
+      "badge-bundle-top-background": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
       "button-bundle-basic-background": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
       "button-bundle-basic-background-active": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)",
       "button-bundle-basic-background-hover": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
@@ -999,10 +999,10 @@ exports[`orbitPreset should match snapshot 1`] = `
       "95": "0.95",
     },
     "borderRadius": {
+      "badge": "12px",
       "button-circled-large": "52px",
       "button-circled-normal": "44px",
       "button-circled-small": "32px",
-      "badge": "12px",
       "circle": "50%",
       "dialog-desktop": "9px",
       "dialog-mobile": "12px",

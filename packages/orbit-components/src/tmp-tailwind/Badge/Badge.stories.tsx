@@ -1,5 +1,3 @@
-// TODO: rename before migration to master to Badge.stories.tsx
-
 import React from "react";
 import { text, select } from "@storybook/addon-knobs";
 
@@ -14,7 +12,7 @@ const getIcons = (defaultIcon: string | null) =>
 const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
-  title: "Tailwind/TailwindBadge",
+  title: "Tailwind/Badge",
 };
 
 export const Default = () => {

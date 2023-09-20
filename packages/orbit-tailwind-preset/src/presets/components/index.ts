@@ -219,6 +219,9 @@ const cfg = (options?: Options): Config => {
           "button-bundle-top-background": defaultTokens.buttonBundleTopBackground,
           "button-bundle-top-background-hover": defaultTokens.buttonBundleTopBackgroundHover,
           "button-bundle-top-background-active": defaultTokens.buttonBundleTopBackgroundActive,
+          "badge-bundle-basic-background": defaultTokens.badgeBundleBasicBackground,
+          "badge-bundle-medium-background": defaultTokens.badgeBundleMediumBackground,
+          "badge-bundle-top-background": defaultTokens.badgeBundleTopBackground,
         },
         boxShadow: {
           "button-focus": defaultTokens.boxShadowButtonFocus,

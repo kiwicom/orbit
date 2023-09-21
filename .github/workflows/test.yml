@@ -140,7 +140,7 @@ jobs:
           yarn components build
 
       - name: Cypress
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           browser: chrome
           install: false

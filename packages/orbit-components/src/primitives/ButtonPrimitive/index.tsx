@@ -159,13 +159,13 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
         disabled={isDisabled}
         className={cx(
           className,
-          "orbit-button-primitive font-base duration-fast group relative max-w-full cursor-pointer items-center border-none text-center transition-all [&>*]:align-middle [&_.orbit-loading-spinner]:stroke-[currentColor]",
+          "orbit-button-primitive font-base duration-fast group relative max-w-full items-center border-none text-center leading-none transition-all [&>*]:align-middle [&_.orbit-loading-spinner]:stroke-[currentColor]",
           fullWidth && "w-full",
           centered || children == null ? "justify-center" : "justify-[var(--button-content-align)]",
           circled !== true && "rounded-large tb:rounded-normal",
           isDisabled
             ? "cursor-not-allowed opacity-30"
-            : "hover:no-underline focus:no-underline active:no-underline",
+            : "cursor-pointer hover:no-underline focus:no-underline active:no-underline",
           isLink ? "inline-flex" : "flex",
           underlined && "underline",
           boxShadowFocus != null && "outline-none",

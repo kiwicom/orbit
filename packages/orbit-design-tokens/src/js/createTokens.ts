@@ -381,7 +381,6 @@ export interface Tokens {
   buttonPaddingSmall: string;
   buttonPaddingNormal: string;
   buttonPaddingLarge: string;
-  buttonPaddingXLarge: string;
   buttonPrimarySubtleBackground: string;
   buttonPrimarySubtleBackgroundHover: string;
   buttonPrimarySubtleBackgroundActive: string;
@@ -1239,8 +1238,7 @@ const createTokens: CreateTokens = foundation => ({
   buttonPaddingXSmall: foundation.space.XSmall,
   buttonPaddingSmall: foundation.space.small,
   buttonPaddingNormal: foundation.space.medium,
-  buttonPaddingLarge: foundation.space.large,
-  buttonPaddingXLarge: "28px",
+  buttonPaddingLarge: "28px",
   buttonPrimarySubtleBackground: foundation.palette.product.light,
   buttonPrimarySubtleBackgroundHover: foundation.palette.product.lightHover,
   buttonPrimarySubtleBackgroundActive: foundation.palette.product.lightActive,

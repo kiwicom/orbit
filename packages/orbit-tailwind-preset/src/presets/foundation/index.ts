@@ -11,7 +11,7 @@ const config: Config = {
   },
   theme: {
     colors: { ...defaultFoundation.palette, transparent: "transparent" },
-    borderRadius: defaultFoundation["border-radius"],
+    borderRadius: { ...defaultFoundation["border-radius"], none: "0" },
     screens,
     lineHeight: { ...defaultFoundation["line-height"], none: "1" },
     boxShadow,

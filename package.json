@@ -67,7 +67,7 @@
     "@size-limit/webpack": "^8.0.0",
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "@testing-library/cypress": "^8.0.0",
-    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^13.4.0",
     "@testing-library/react-hooks": "^7.0.0",
     "@testing-library/user-event": "^14.4.0",

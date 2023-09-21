@@ -1465,10 +1465,6 @@
   </token>
   <token>
     <name>buttonPaddingLarge</name>
-    <value>24</value>
-  </token>
-  <token>
-    <name>buttonPaddingXLarge</name>
     <value>28</value>
   </token>
   <token>

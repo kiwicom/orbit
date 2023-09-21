@@ -4,8 +4,6 @@ import { devServer } from "@cypress/vite-dev-server";
 export default defineConfig({
   pageLoadTimeout: 120000,
   defaultCommandTimeout: 120000,
-  videoCompression: false,
-  video: false,
   screenshotOnRunFailure: false,
   e2e: {
     baseUrl: "http://localhost:3000",
@@ -19,8 +17,6 @@ export default defineConfig({
       return devServer({
         ...devServerConfig,
         framework: "react",
-        spec: "cypress/component/**/*.test.*",
-        // @ts-expect-error TODO
         viteConfig: async () => {
           const config = await import("./cypress/integration/vite.config");
           return config.default;

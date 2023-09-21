@@ -7,7 +7,7 @@ import Wizard, { WizardStep } from "..";
 jest.mock("../../hooks/useMediaQuery", () => () => ({ isLargeMobile: false }));
 
 describe("Wizard", () => {
-  const user = userEvent.setup({ delay: null });
+  const user = userEvent.setup();
 
   describe("compact", () => {
     it("shows the current position", () => {

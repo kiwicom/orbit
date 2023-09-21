@@ -8496,37 +8496,14 @@
     },
     "javascript": {
       "name": "buttonPaddingLarge",
-      "value": "24px"
-    },
-    "foundation": {
-      "name": "buttonPaddingLarge",
-      "value": "foundation.space.large"
-    },
-    "scss": {
-      "name": "buttonPaddingLarge",
-      "value": "24px"
-    }
-  },
-  "buttonPaddingXLarge": {
-    "type": "size",
-    "deprecated": false,
-    "replacement": null,
-    "schema": {
-      "namespace": "component",
-      "object": "button",
-      "variant": "padding",
-      "subVariant": "x-large"
-    },
-    "javascript": {
-      "name": "buttonPaddingXLarge",
       "value": "28px"
     },
     "foundation": {
-      "name": "buttonPaddingXLarge",
+      "name": "buttonPaddingLarge",
       "value": "none"
     },
     "scss": {
-      "name": "buttonPaddingXLarge",
+      "name": "buttonPaddingLarge",
       "value": "28px"
     }
   },

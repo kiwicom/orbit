@@ -22,10 +22,6 @@
         },
         "large": {
           "type": "size",
-          "value": "{foundation.space.large}"
-        },
-        "x-large": {
-          "type": "size",
           "value": 28
         }
       }

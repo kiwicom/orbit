@@ -174,7 +174,6 @@ const cfg = (options?: Options): Config => {
           "button-padding-sm": defaultTokens.buttonPaddingSmall,
           "button-padding-md": defaultTokens.buttonPaddingNormal,
           "button-padding-lg": defaultTokens.buttonPaddingLarge,
-          "button-padding-xl": defaultTokens.buttonPaddingXLarge,
         },
         borderRadius: {
           "dialog-desktop": defaultTokens.dialogBorderRadiusDesktop,

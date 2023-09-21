@@ -9,25 +9,25 @@ export const sizeStyles: Record<Size, string> = {
 export const paddingNoIconsStyles: Record<Size, string> = {
   small: "px-button-padding-sm",
   normal: "px-button-padding-md",
-  large: "px-button-padding-xl",
+  large: "px-button-padding-lg",
 };
 
 export const paddingLeftIconStyles: Record<Size, string> = {
   small: "ps-button-padding-xs pe-button-padding-sm",
   normal: "ps-button-padding-sm pe-button-padding-md",
-  large: "ps-button-padding-lg pe-button-padding-xl",
+  large: "ps-button-padding-md pe-button-padding-lg",
 };
 
 export const paddingRightIconStyles: Record<Size, string> = {
   small: "ps-button-padding-sm pe-button-padding-xs",
   normal: "ps-button-padding-md pe-button-padding-sm",
-  large: "ps-button-padding-xl pe-button-padding-lg",
+  large: "ps-button-padding-lg pe-button-padding-md",
 };
 
 export const paddingBothIconsStyles: Record<Size, string> = {
   small: "px-button-padding-xs",
   normal: "px-button-padding-sm",
-  large: "px-button-padding-lg",
+  large: "px-button-padding-md",
 };
 
 export const circledStyles: Record<Size, string> = {
@@ -36,7 +36,7 @@ export const circledStyles: Record<Size, string> = {
   large: "rounded-button-circled-large",
 };
 
-export const circledIconOnlyStyles: Record<Size, string> = {
+export const iconOnlyStyles: Record<Size, string> = {
   small: "w-button-small",
   normal: "w-button-normal",
   large: "w-button-large",

@@ -234,6 +234,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
   ) => {
     return (
       <StyledTag
+        className="orbit-tag"
         actionable={!!(onClick || onRemove)}
         data-test={dataTest}
         id={id}

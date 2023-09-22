@@ -26,7 +26,7 @@ const getColor = (greyScale: boolean) => (greyScale ? "logos-grayscale" : "logos
 export const StyledServiceLogo = styled(
   ({ className, name, size, grayScale, theme, dataTest, id }) => (
     <img
-      className={className}
+      className={`orbit-service-logo ${className}`}
       src={`${baseURL}/${getColor(grayScale)}/0x${parseInt(
         getHeight(theme, size),
         10,

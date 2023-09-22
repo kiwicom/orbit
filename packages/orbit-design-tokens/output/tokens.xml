@@ -2165,11 +2165,11 @@
   </token>
   <token>
     <name>formElementLabelForeground</name>
-    <value>#4F5E71</value>
+    <value>#252A31</value>
   </token>
   <token>
     <name>formElementLabelFilledForeground</name>
-    <value>#697D95</value>
+    <value>#4F5E71</value>
   </token>
   <token>
     <name>formElementPrefixForeground</name>

@@ -21,12 +21,12 @@
       "label": {
         "foreground": {
           "type": "color",
-          "value": "{foundation.palette.ink.normal}"
+          "value": "{foundation.palette.ink.dark}"
         },
         "filled": {
           "foreground": {
             "type": "color",
-            "value": "{foundation.palette.ink.light}"
+            "value": "{foundation.palette.ink.normal}"
           }
         }
       },

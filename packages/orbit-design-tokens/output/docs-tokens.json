@@ -12518,15 +12518,15 @@
     },
     "javascript": {
       "name": "formElementLabelForeground",
-      "value": "#4F5E71"
+      "value": "#252A31"
     },
     "foundation": {
       "name": "formElementLabelForeground",
-      "value": "foundation.palette.ink.normal"
+      "value": "foundation.palette.ink.dark"
     },
     "scss": {
       "name": "formElementLabelForeground",
-      "value": "rgb(79, 94, 113)"
+      "value": "rgb(37, 42, 49)"
     }
   },
   "formElementLabelFilledForeground": {
@@ -12541,15 +12541,15 @@
     },
     "javascript": {
       "name": "formElementLabelFilledForeground",
-      "value": "#697D95"
+      "value": "#4F5E71"
     },
     "foundation": {
       "name": "formElementLabelFilledForeground",
-      "value": "foundation.palette.ink.light"
+      "value": "foundation.palette.ink.normal"
     },
     "scss": {
       "name": "formElementLabelFilledForeground",
-      "value": "rgb(105, 125, 149)"
+      "value": "rgb(79, 94, 113)"
     }
   },
   "formElementPrefixForeground": {

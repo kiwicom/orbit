@@ -3198,8 +3198,8 @@ exports[`orbitPreset should match snapshot 1`] = `
       "form-element-disabled-foreground": "#4F5E71",
       "form-element-filled-foreground": "#4F5E71",
       "form-element-foreground": "#BAC7D5",
-      "form-element-label-filled-foreground": "#697D95",
-      "form-element-label-foreground": "#4F5E71",
+      "form-element-label-filled-foreground": "#4F5E71",
+      "form-element-label-foreground": "#252A31",
       "form-element-prefix-foreground": "#697D95",
       "green": {
         "dark": "#2D7738",

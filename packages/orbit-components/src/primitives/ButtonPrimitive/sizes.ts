@@ -1,9 +1,9 @@
 import type { Size } from "./types";
 
 export const sizeStyles: Record<Size, string> = {
-  small: "h-button-small text-small [&_svg]:h-icon-small [&_svg]:w-icon-small",
-  normal: "h-button-normal text-normal [&_svg]:h-icon-medium [&_svg]:w-icon-medium",
-  large: "h-button-large text-large [&_svg]:h-icon-large [&_svg]:w-icon-large",
+  small: "h-form-box-small text-small [&_svg]:h-icon-small [&_svg]:w-icon-small",
+  normal: "h-form-box-normal text-normal [&_svg]:h-icon-medium [&_svg]:w-icon-medium",
+  large: "h-form-box-large text-large [&_svg]:h-icon-large [&_svg]:w-icon-large",
 };
 
 export const paddingNoIconsStyles: Record<Size, string> = {
@@ -31,13 +31,13 @@ export const paddingBothIconsStyles: Record<Size, string> = {
 };
 
 export const circledStyles: Record<Size, string> = {
-  small: "rounded-button-circled-small",
-  normal: "rounded-button-circled-normal",
-  large: "rounded-button-circled-large",
+  small: "rounded-form-box-small",
+  normal: "rounded-form-box-normal",
+  large: "rounded-form-box-large",
 };
 
 export const iconOnlyStyles: Record<Size, string> = {
-  small: "w-button-small",
-  normal: "w-button-normal",
-  large: "w-button-large",
+  small: "w-form-box-small",
+  normal: "w-form-box-normal",
+  large: "w-form-box-large",
 };

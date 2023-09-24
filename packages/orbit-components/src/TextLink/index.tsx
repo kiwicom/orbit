@@ -71,7 +71,7 @@ const TextLink = ({
       className={cx(
         "orbit-text-link font-base duration-fast inline-flex cursor-pointer items-center font-medium transition-colors delay-0 ease-in-out hover:no-underline hover:outline-none active:no-underline active:outline-none",
         type === "secondary" && "orbit-text-link--secondary",
-        standAlone && "h-button-normal",
+        standAlone && "h-form-box-normal",
         typeClasses[type],
         size != null && sizeClasses[size],
         noUnderline ? "no-underline" : "underline",

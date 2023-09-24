@@ -22,6 +22,11 @@
         "type": "color",
         "value": "{foundation.palette.red.normal}",
         "comment": "Should be used for all form-elements when the component has error state and it's needed to render border attribute, or combined with shadows."
+      },
+      "border-color-error-hover": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal-hover}",
+        "comment": "Should be used for all form-elements when the component has error and hover state and it's needed to render border attribute, or combined with shadows."
       }
     },
     "border-color": {

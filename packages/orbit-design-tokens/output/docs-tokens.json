@@ -12319,6 +12319,117 @@
       "value": "rgb(210, 28, 28)"
     }
   },
+  "formElementBorderColorErrorHover": {
+    "type": "color",
+    "comment": "Should be used for all form-elements when the component has error and hover state and it's needed to render border attribute, or combined with shadows.",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "form-element",
+      "variant": "border-color-error-hover"
+    },
+    "javascript": {
+      "name": "formElementBorderColorErrorHover",
+      "value": "#B91919"
+    },
+    "foundation": {
+      "name": "formElementBorderColorErrorHover",
+      "value": "foundation.palette.red.normalHover"
+    },
+    "scss": {
+      "name": "formElementBorderColorErrorHover",
+      "value": "rgb(185, 25, 25)"
+    }
+  },
+  "formElementBoxShadow": {
+    "type": "box-shadow",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "form-element",
+      "variant": "box-shadow"
+    },
+    "javascript": {
+      "name": "formElementBoxShadow",
+      "value": "inset 0 0 0 1px rgba(186, 199, 213, 1)"
+    },
+    "foundation": {
+      "name": "formElementBoxShadow",
+      "value": "inset 0 0 0 1px color(#BAC7D5, opacity: 100)"
+    },
+    "scss": {
+      "name": "formElementBoxShadow",
+      "value": "inset 0 0 0 1px rgba(186, 199, 213, 1)"
+    }
+  },
+  "formElementBoxShadowError": {
+    "type": "box-shadow",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "form-element",
+      "variant": "box-shadow-error"
+    },
+    "javascript": {
+      "name": "formElementBoxShadowError",
+      "value": "inset 0 0 0 1px rgba(210, 28, 28, 1)"
+    },
+    "foundation": {
+      "name": "formElementBoxShadowError",
+      "value": "inset 0 0 0 1px color(#D21C1C, opacity: 100)"
+    },
+    "scss": {
+      "name": "formElementBoxShadowError",
+      "value": "inset 0 0 0 1px rgba(210, 28, 28, 1)"
+    }
+  },
+  "formElementBoxShadowHover": {
+    "type": "box-shadow",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "form-element",
+      "variant": "box-shadow-hover"
+    },
+    "javascript": {
+      "name": "formElementBoxShadowHover",
+      "value": "inset 0 0 0 1px rgba(166, 182, 200, 1)"
+    },
+    "foundation": {
+      "name": "formElementBoxShadowHover",
+      "value": "inset 0 0 0 1px color(#A6B6C8, opacity: 100)"
+    },
+    "scss": {
+      "name": "formElementBoxShadowHover",
+      "value": "inset 0 0 0 1px rgba(166, 182, 200, 1)"
+    }
+  },
+  "formElementBoxShadowErrorHover": {
+    "type": "box-shadow",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "form-element",
+      "variant": "box-shadow-error-hover"
+    },
+    "javascript": {
+      "name": "formElementBoxShadowErrorHover",
+      "value": "inset 0 0 0 1px rgba(185, 25, 25, 1)"
+    },
+    "foundation": {
+      "name": "formElementBoxShadowErrorHover",
+      "value": "inset 0 0 0 1px color(#B91919, opacity: 100)"
+    },
+    "scss": {
+      "name": "formElementBoxShadowErrorHover",
+      "value": "inset 0 0 0 1px rgba(185, 25, 25, 1)"
+    }
+  },
   "formElementFocusBoxShadow": {
     "type": "box-shadow",
     "deprecated": false,
@@ -12461,7 +12572,7 @@
   },
   "formElementForeground": {
     "type": "color",
-    "comment": "Should be used for the text when they value is not filled.",
+    "comment": "Should be used for the text when the value is not filled.",
     "deprecated": false,
     "replacement": null,
     "schema": {
@@ -12471,15 +12582,15 @@
     },
     "javascript": {
       "name": "formElementForeground",
-      "value": "#BAC7D5"
+      "value": "#697D95"
     },
     "foundation": {
       "name": "formElementForeground",
-      "value": "foundation.palette.cloud.dark"
+      "value": "foundation.palette.ink.light"
     },
     "scss": {
       "name": "formElementForeground",
-      "value": "rgb(186, 199, 213)"
+      "value": "rgb(105, 125, 149)"
     }
   },
   "formElementFilledForeground": {
@@ -12494,15 +12605,15 @@
     },
     "javascript": {
       "name": "formElementFilledForeground",
-      "value": "#4F5E71"
+      "value": "#252A31"
     },
     "foundation": {
       "name": "formElementFilledForeground",
-      "value": "foundation.palette.ink.normal"
+      "value": "foundation.palette.ink.dark"
     },
     "scss": {
       "name": "formElementFilledForeground",
-      "value": "rgb(79, 94, 113)"
+      "value": "rgb(37, 42, 49)"
     }
   },
   "formElementLabelForeground": {
@@ -12563,15 +12674,15 @@
     },
     "javascript": {
       "name": "formElementPrefixForeground",
-      "value": "#697D95"
+      "value": "#4F5E71"
     },
     "foundation": {
       "name": "formElementPrefixForeground",
-      "value": "foundation.palette.ink.light"
+      "value": "foundation.palette.ink.normal"
     },
     "scss": {
       "name": "formElementPrefixForeground",
-      "value": "rgb(105, 125, 149)"
+      "value": "rgb(79, 94, 113)"
     }
   },
   "marginTopFormFeedback": {

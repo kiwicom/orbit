@@ -2,6 +2,9 @@ import dotenv from "dotenv-safe";
 import dedent from "dedent";
 import ora from "ora";
 import { path, argv, fs, globby, chalk, fetch, $ } from "zx";
+import pixelmatch from "pixelmatch";
+import { PNG } from "pngjs";
+import sharp from "sharp";
 
 interface User {
   id: string;
@@ -43,6 +46,12 @@ const ICONS_ID = "wjYAT0sNBXtirEoyKgXUwr";
 const FIGMA_FILE_URI = `https://api.figma.com/v1/files/${ICONS_ID}`;
 const FIGMA_IMAGE_URI = `https://api.figma.com/v1/images/${ICONS_ID}`;
 const SVG_FOLDER = path.resolve(process.cwd(), "src/icons/svg");
+
+const svgToPng = async (svg: string) => {
+  const svgBuffer = Buffer.from(svg, "utf8");
+  const pngBuffer = await sharp(svgBuffer, { density: 300 }).png().toBuffer();
+  return PNG.sync.read(pngBuffer);
+};
 
 const sliceIntoChunks = (arr: string[], chunkSize: number) =>
   arr.reduce<string[][]>((acc, _, i) => {
@@ -121,7 +130,7 @@ const setSvgContent = (name: string, content: string, id: string) => {
   `;
 };
 
-async function saveOrbitIcons(data) {
+async function saveOrbitIcons(data: { name: string; svg: string; id: string }[]) {
   const savedIds: string[] = [];
 
   for (const { name, svg } of data) {
@@ -137,11 +146,30 @@ async function saveOrbitIcons(data) {
         console.log(chalk.green.bold(`saved ${parsedName}`));
       });
     } else if (removeCommentId(content) !== removeCommentId(fs.readFileSync(filePath, "utf-8"))) {
+      // convert to PNG and compare via pixelmatch
+      const upcomingDiff = await svgToPng(content);
+      const existingDiff = await svgToPng(fs.readFileSync(filePath, "utf-8"));
+      const { width, height } = upcomingDiff;
+      const diff = new PNG({ width, height });
       const match = getId(fs.readFileSync(filePath, "utf-8"));
-      currentId = match;
-      await fs.writeFile(filePath, content, "utf-8").then(() => {
-        console.log(chalk.yellow.bold(`file was changed, updated the content for: ${parsedName}`));
-      });
+      const numDiffPixels = pixelmatch(
+        upcomingDiff.data,
+        existingDiff.data,
+        diff.data,
+        width,
+        height,
+        { threshold: 0.1 },
+      );
+
+      // update the content only if the diff is bigger than 0
+      if (numDiffPixels > 0) {
+        currentId = match;
+        await fs.writeFile(filePath, content, "utf-8").then(() => {
+          console.log(
+            chalk.yellow.bold(`file was changed, updated the content for: ${parsedName}`),
+          );
+        });
+      }
     }
 
     savedIds.push(currentId);

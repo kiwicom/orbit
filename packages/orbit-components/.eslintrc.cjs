@@ -15,7 +15,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["cypress/**/*.ts?(x)"],
+      files: ["cypress/**/*.ts?(x)", "config/**/*.mts"],
       rules: {
         "import/no-extraneous-dependencies": "off",
       },

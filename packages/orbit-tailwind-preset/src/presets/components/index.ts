@@ -226,8 +226,8 @@ const cfg = (options?: Options): Config => {
           "country-flag": defaultTokens.countryFlagShadow,
           "form-element": defaultTokens.formElementBoxShadow,
           "form-element-error": defaultTokens.formElementBoxShadowError,
-          "form-element-hover": defaultTokens.formElementBoxShadowHover,
           "form-element-error-hover": defaultTokens.formElementBoxShadowErrorHover,
+          "form-element-hover": defaultTokens.formElementBoxShadowHover,
           "form-element-focus": defaultTokens.formElementFocusBoxShadow,
           switch: `inset 0 0 1px 0 rgba(7, 64, 92, 0.1),${defaultTokens.boxShadowAction}`,
         },
@@ -267,7 +267,7 @@ const cfg = (options?: Options): Config => {
       },
     },
     plugins: [
-      plugin(({ addVariant }) => {
+      plugin(({ addVariant, addUtilities }) => {
         return (
           addVariant("not-last", "&:not(:last-child)"),
           addVariant("not-first", "&:not(:first-child)"),
@@ -277,7 +277,16 @@ const cfg = (options?: Options): Config => {
           addVariant(
             "safari",
             "@supports (-webkit-touch-callout: none) and (not (translate: none))",
-          )
+          ),
+          addUtilities({
+            ".scrollbar-none": {
+              "-ms-overflow-style": "none",
+              "scrollbar-width": "none",
+              "&::-webkit-scrollbar": {
+                display: "none",
+              },
+            },
+          })
         );
       }),
     ],

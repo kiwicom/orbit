@@ -536,8 +536,8 @@
   --form-element-border-color-error-hover: rgb(185, 25, 25); /* Should be used for all form-elements when the component has error and hover state and it's needed to render border attribute, or combined with shadows. */
   --form-element-box-shadow: rgb(186, 199, 213);
   --form-element-box-shadow-error: rgb(210, 28, 28);
-  --form-element-box-shadow-hover: rgb(166, 182, 200);
   --form-element-box-shadow-error-hover: rgb(185, 25, 25);
+  --form-element-box-shadow-hover: rgb(166, 182, 200);
   --form-element-focus-box-shadow: rgb(1, 114, 203);
   --form-element-error-focus-box-shadow: rgb(210, 28, 28);
   --form-element-normal-font-size: 15;

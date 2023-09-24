@@ -35,23 +35,6 @@
           ]
         }
       },
-      "box-shadow-hover": {
-        "type": "box-shadow",
-        "value": "{component.form-element.border-color-hover}",
-        "attributes": {
-          "box-shadow": [
-            {
-              "x": 0,
-              "y": 0,
-              "blur": 0,
-              "spread": 1,
-              "color": "{component.form-element.border-color-hover}",
-              "opacity": 100,
-              "inset": true
-            }
-          ]
-        }
-      },
       "box-shadow-error-hover": {
         "type": "box-shadow",
         "value": "{component.form-element.border-color-error-hover}",
@@ -63,6 +46,23 @@
               "blur": 0,
               "spread": 1,
               "color": "{component.form-element.border-color-error-hover}",
+              "opacity": 100,
+              "inset": true
+            }
+          ]
+        }
+      },
+      "box-shadow-hover": {
+        "type": "box-shadow",
+        "value": "{component.form-element.border-color-hover}",
+        "attributes": {
+          "box-shadow": [
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 0,
+              "spread": 1,
+              "color": "{component.form-element.border-color-hover}",
               "opacity": 100,
               "inset": true
             }

@@ -547,6 +547,11 @@ export interface Tokens {
   formElementBorderColorActive: string;
   formElementBorderColorFocus: string;
   formElementBorderColorError: string;
+  formElementBorderColorErrorHover: string;
+  formElementBoxShadow: string;
+  formElementBoxShadowError: string;
+  formElementBoxShadowHover: string;
+  formElementBoxShadowErrorHover: string;
   formElementFocusBoxShadow: string;
   formElementErrorFocusBoxShadow: string;
   formElementSmallFontSize: string;
@@ -1417,6 +1422,35 @@ const createTokens: CreateTokens = foundation => ({
   formElementBorderColorActive: foundation.palette.cloud.darkActive,
   formElementBorderColorFocus: foundation.palette.blue.normal,
   formElementBorderColorError: foundation.palette.red.normal,
+  formElementBorderColorErrorHover: foundation.palette.red.normalHover,
+  formElementBoxShadow: boxShadow([
+    {
+      def: ["0", "0", "0", "1px"],
+      color: transparentColor(foundation.palette.cloud.dark, 100),
+      inset: true,
+    },
+  ]),
+  formElementBoxShadowError: boxShadow([
+    {
+      def: ["0", "0", "0", "1px"],
+      color: transparentColor(foundation.palette.red.normal, 100),
+      inset: true,
+    },
+  ]),
+  formElementBoxShadowHover: boxShadow([
+    {
+      def: ["0", "0", "0", "1px"],
+      color: transparentColor(foundation.palette.cloud.darkHover, 100),
+      inset: true,
+    },
+  ]),
+  formElementBoxShadowErrorHover: boxShadow([
+    {
+      def: ["0", "0", "0", "1px"],
+      color: transparentColor(foundation.palette.red.normalHover, 100),
+      inset: true,
+    },
+  ]),
   formElementFocusBoxShadow: boxShadow([
     {
       def: ["0", "0", "0", "1px"],
@@ -1445,11 +1479,11 @@ const createTokens: CreateTokens = foundation => ({
   formElementSmallPadding: `0 ${foundation.space.small}`,
   formElementNormalFontSize: foundation.fontSize.normal,
   formElementNormalPadding: `0 ${foundation.space.small}`,
-  formElementForeground: foundation.palette.cloud.dark,
-  formElementFilledForeground: foundation.palette.ink.normal,
+  formElementForeground: foundation.palette.ink.light,
+  formElementFilledForeground: foundation.palette.ink.dark,
   formElementLabelForeground: foundation.palette.ink.dark,
   formElementLabelFilledForeground: foundation.palette.ink.normal,
-  formElementPrefixForeground: foundation.palette.ink.light,
+  formElementPrefixForeground: foundation.palette.ink.normal,
   marginTopFormFeedback: foundation.space.XXXSmall,
   opacityCheckboxDisabled: "0.5",
   opacityRadioButtonDisabled: "0.5",

@@ -2132,6 +2132,26 @@
     <value>#D21C1C</value>
   </token>
   <token>
+    <name>formElementBorderColorErrorHover</name>
+    <value>#B91919</value>
+  </token>
+  <token>
+    <name>formElementBoxShadow</name>
+    <value>#BAC7D5</value>
+  </token>
+  <token>
+    <name>formElementBoxShadowError</name>
+    <value>#D21C1C</value>
+  </token>
+  <token>
+    <name>formElementBoxShadowHover</name>
+    <value>#A6B6C8</value>
+  </token>
+  <token>
+    <name>formElementBoxShadowErrorHover</name>
+    <value>#B91919</value>
+  </token>
+  <token>
     <name>formElementFocusBoxShadow</name>
     <value>#0172CB</value>
   </token>
@@ -2157,11 +2177,11 @@
   </token>
   <token>
     <name>formElementForeground</name>
-    <value>#BAC7D5</value>
+    <value>#697D95</value>
   </token>
   <token>
     <name>formElementFilledForeground</name>
-    <value>#4F5E71</value>
+    <value>#252A31</value>
   </token>
   <token>
     <name>formElementLabelForeground</name>
@@ -2173,7 +2193,7 @@
   </token>
   <token>
     <name>formElementPrefixForeground</name>
-    <value>#697D95</value>
+    <value>#4F5E71</value>
   </token>
   <token>
     <name>marginTopFormFeedback</name>

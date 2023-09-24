@@ -3,13 +3,13 @@
     "form-element": {
       "foreground": {
         "type": "color",
-        "value": "{foundation.palette.cloud.dark}",
-        "comment": "Should be used for the text when they value is not filled."
+        "value": "{foundation.palette.ink.light}",
+        "comment": "Should be used for the text when the value is not filled."
       },
       "filled": {
         "foreground": {
           "type": "color",
-          "value": "{foundation.palette.ink.normal}"
+          "value": "{foundation.palette.ink.dark}"
         }
       },
       "disabled": {
@@ -33,7 +33,7 @@
       "prefix": {
         "foreground": {
           "type": "color",
-          "value": "{foundation.palette.ink.light}"
+          "value": "{foundation.palette.ink.normal}"
         }
       }
     },

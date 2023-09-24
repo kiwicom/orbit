@@ -542,6 +542,11 @@ $form-element-border-color-hover: rgb(166, 182, 200);
 $form-element-border-color-active: rgb(148, 168, 190);
 $form-element-border-color-focus: rgb(1, 114, 203);
 $form-element-border-color-error: rgb(210, 28, 28);
+$form-element-border-color-error-hover: rgb(185, 25, 25);
+$form-element-box-shadow: inset 0 0 0 1px rgba(186, 199, 213, 1);
+$form-element-box-shadow-error: inset 0 0 0 1px rgba(210, 28, 28, 1);
+$form-element-box-shadow-hover: inset 0 0 0 1px rgba(166, 182, 200, 1);
+$form-element-box-shadow-error-hover: inset 0 0 0 1px rgba(185, 25, 25, 1);
 $form-element-focus-box-shadow: inset 0 0 0 1px rgba(1, 114, 203, 1),
   inset 0 0 0 3px rgba(1, 114, 203, 0.15);
 $form-element-error-focus-box-shadow: inset 0 0 0 1px rgba(210, 28, 28, 1),
@@ -550,11 +555,11 @@ $form-element-small-font-size: 15px;
 $form-element-small-padding: 0 12px;
 $form-element-normal-font-size: 15px;
 $form-element-normal-padding: 0 12px;
-$form-element-foreground: rgb(186, 199, 213);
-$form-element-filled-foreground: rgb(79, 94, 113);
+$form-element-foreground: rgb(105, 125, 149);
+$form-element-filled-foreground: rgb(37, 42, 49);
 $form-element-label-foreground: rgb(37, 42, 49);
 $form-element-label-filled: rgb(79, 94, 113);
-$form-element-prefix-foreground: rgb(105, 125, 149);
+$form-element-prefix-foreground: rgb(79, 94, 113);
 $margin-top-form-feedback: 2px;
 $opacity-checkbox-disabled: 0.5;
 $opacity-radio-button-disabled: 0.5;

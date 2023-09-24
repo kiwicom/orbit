@@ -2148,12 +2148,12 @@
     <value>#D21C1C</value>
   </token>
   <token>
-    <name>formElementBoxShadowHover</name>
-    <value>#A6B6C8</value>
-  </token>
-  <token>
     <name>formElementBoxShadowErrorHover</name>
     <value>#B91919</value>
+  </token>
+  <token>
+    <name>formElementBoxShadowHover</name>
+    <value>#A6B6C8</value>
   </token>
   <token>
     <name>formElementFocusBoxShadow</name>

@@ -551,8 +551,8 @@ export interface Tokens {
   formElementBorderColorErrorHover: string;
   formElementBoxShadow: string;
   formElementBoxShadowError: string;
-  formElementBoxShadowHover: string;
   formElementBoxShadowErrorHover: string;
+  formElementBoxShadowHover: string;
   formElementFocusBoxShadow: string;
   formElementErrorFocusBoxShadow: string;
   formElementNormalFontSize: string;
@@ -1438,17 +1438,17 @@ const createTokens: CreateTokens = foundation => ({
       inset: true,
     },
   ]),
-  formElementBoxShadowHover: boxShadow([
-    {
-      def: ["0", "0", "0", "1px"],
-      color: transparentColor(foundation.palette.cloud.darkHover, 100),
-      inset: true,
-    },
-  ]),
   formElementBoxShadowErrorHover: boxShadow([
     {
       def: ["0", "0", "0", "1px"],
       color: transparentColor(foundation.palette.red.normalHover, 100),
+      inset: true,
+    },
+  ]),
+  formElementBoxShadowHover: boxShadow([
+    {
+      def: ["0", "0", "0", "1px"],
+      color: transparentColor(foundation.palette.cloud.darkHover, 100),
       inset: true,
     },
   ]),

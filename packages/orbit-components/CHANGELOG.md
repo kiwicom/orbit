@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [9.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.3.0...@kiwicom/orbit-components@9.3.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** do not let 'loading' prop be rendered in the DOM ([a0e6406](https://github.com/kiwicom/orbit/commit/a0e64061d9006e7f02e370064d980910092fbd63))
+
+
+
+
+
 # [9.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.2.0...@kiwicom/orbit-components@9.3.0) (2023-09-19)
 
 

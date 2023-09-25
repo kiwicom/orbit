@@ -1,7 +1,7 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, fireEvent, act } from "../../test-utils";
+import { render, screen, fireEvent } from "../../test-utils";
 import InputSelect from "..";
 
 const jetLiOption = {
@@ -63,7 +63,7 @@ describe("InputSelect", () => {
       />,
     );
 
-    await act(() => user.tab());
+    await user.tab();
 
     const input = screen.getByRole("combobox");
     const dropdown = screen.getByRole("listbox");
@@ -87,15 +87,15 @@ describe("InputSelect", () => {
     expect(input).toHaveAttribute("id", id);
 
     // clear current value
-    await act(() => user.clear(input));
+    await user.clear(input);
 
     // test empty message
-    await act(() => user.type(input, "Arnold"));
+    await user.type(input, "Arnold");
     expect(screen.getByText(emptyMessage)).toBeInTheDocument();
 
     // test dropdown result filtering
-    await act(() => user.clear(input));
-    await act(() => user.type(input, "J"));
+    await user.clear(input);
+    await user.type(input, "J");
     expect(onChange).toHaveBeenCalled();
 
     expect(screen.getAllByRole("option")).toHaveLength(2);
@@ -108,7 +108,7 @@ describe("InputSelect", () => {
     expect(onKeyDown).toHaveBeenCalled();
 
     // should select by click
-    await act(() => user.click(screen.getByText("Jet Li")));
+    await user.click(screen.getByText("Jet Li"));
 
     expect(onOptionSelect).toHaveBeenCalledWith(jetLiOption);
 
@@ -125,8 +125,8 @@ describe("InputSelect", () => {
     expect(onClose).toHaveBeenCalledWith(jetLiOption);
 
     // test clear of the input by button and reset of filtered options
-    await act(() => user.tab());
-    await act(() => user.click(screen.getByLabelText("Clear")));
+    await user.tab();
+    await user.click(screen.getByLabelText("Clear"));
     expect(onOptionSelect).toBeCalledWith(null);
     expect(screen.getByRole("textbox")).toHaveValue("");
     expect(screen.getAllByRole("option")).toHaveLength(totalOptions);
@@ -148,7 +148,7 @@ describe("InputSelect", () => {
       />,
     );
 
-    await act(() => user.tab());
+    await user.tab();
 
     const input = screen.getByRole("combobox");
 
@@ -159,7 +159,7 @@ describe("InputSelect", () => {
     expect(onClose).toHaveBeenCalledWith(jetLiOption);
 
     // Simulate changing the input without selecting anything to assert the previous selected option remains selected
-    await act(() => user.type(input, "Random unexisting option"));
+    await user.type(input, "Random unexisting option");
     fireEvent.keyDown(input, { key: "Escape" });
     expect(onClose).toHaveBeenLastCalledWith(jetLiOption);
     expect(onOptionSelect).not.toHaveBeenCalled();
@@ -182,11 +182,11 @@ describe("InputSelect", () => {
       />,
     );
 
-    await act(() => user.tab());
+    await user.tab();
 
     const input = screen.getByRole("combobox");
 
-    user.clear(input);
+    await user.clear(input);
     fireEvent.keyDown(input, { key: "Escape" });
     expect(onClose).toHaveBeenCalledWith(null);
     expect(onOptionSelect).toHaveBeenCalledWith(null);
@@ -206,7 +206,7 @@ describe("InputSelect", () => {
       />,
     );
 
-    await act(() => user.tab());
+    await user.tab();
 
     expect(screen.queryByText("Previously selected")).not.toBeInTheDocument();
     expect(screen.queryByText(prevSelectedLabel)).toBeInTheDocument();
@@ -217,7 +217,7 @@ describe("InputSelect", () => {
     it("should not render repeated options", async () => {
       const showAllLabel = "Those without a group";
       render(<InputSelect options={options} showAll={false} showAllLabel={showAllLabel} />);
-      await act(() => user.tab());
+      await user.tab();
 
       // after focus dropdown should have all options grouped and then show only the ones without a group
       expect(screen.getAllByRole("option")).toHaveLength(2 + 1 + 1); // (2 asian, 1 american, 1 ungrouped)

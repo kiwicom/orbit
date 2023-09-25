@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import Wizard, { WizardStep } from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => () => ({ isLargeMobile: true }));
@@ -32,7 +32,7 @@ describe("Wizard", () => {
       const customizeYourTripStep = screen.getByRole("button", { name: /Customize your trip/ });
       expect(customizeYourTripStep).toHaveAttribute("aria-current", "step");
       const ticketFareStep = screen.getByRole("button", { name: /Ticket fare/ });
-      await act(() => user.click(ticketFareStep));
+      await user.click(ticketFareStep);
       expect(ticketFareStep).toHaveAttribute("aria-current", "step");
     });
 
@@ -47,7 +47,7 @@ describe("Wizard", () => {
           <WizardStep title="Overview & payment" onClick={onClick} />
         </Wizard>,
       );
-      await act(() => user.click(screen.getByText("Overview & payment")));
+      await user.click(screen.getByText("Overview & payment"));
       expect(onClick).not.toHaveBeenCalled();
     });
   });

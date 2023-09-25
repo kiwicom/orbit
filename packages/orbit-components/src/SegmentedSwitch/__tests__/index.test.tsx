@@ -1,7 +1,7 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import SegmentedSwitch from "..";
 
 describe("SegmentedSwitch", () => {
@@ -29,10 +29,10 @@ describe("SegmentedSwitch", () => {
     expect(screen.getByText(label)).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
 
-    await act(() => user.tab());
+    await user.tab();
     expect(onFocus).toHaveBeenCalled();
 
-    await act(() => user.click(screen.getByLabelText("Female")));
+    await user.click(screen.getByLabelText("Female"));
     expect(screen.getByDisplayValue("Female")).toBeInTheDocument();
     expect(onChange).toHaveBeenCalled();
   });
@@ -53,7 +53,7 @@ describe("SegmentedSwitch", () => {
       />,
     );
 
-    await act(() => user.hover(screen.getByText(label)));
+    await user.hover(screen.getByText(label));
     expect(screen.getByText(error)).toBeInTheDocument();
     expect(screen.getByLabelText("Female")).toBeDisabled();
   });
@@ -73,7 +73,7 @@ describe("SegmentedSwitch", () => {
       />,
     );
 
-    await act(() => user.hover(screen.getByText("Gender")));
+    await user.hover(screen.getByText("Gender"));
     expect(screen.getByText(help)).toBeInTheDocument();
   });
 });

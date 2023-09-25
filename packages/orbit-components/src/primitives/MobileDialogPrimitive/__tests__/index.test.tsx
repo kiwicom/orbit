@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../../test-utils";
+import { render, screen } from "../../../test-utils";
 import MobileDialog from "..";
 
 let dialogs: HTMLElement;
@@ -28,7 +28,7 @@ describe("MobileDialogPrimitive", () => {
     );
     const children = screen.getByText("children");
     expect(children).toHaveAttribute("tabindex", "1");
-    await act(() => user.click(children));
+    await user.click(children);
     expect(onShown).toHaveBeenCalledTimes(1);
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(screen.getByTestId("test")).toBeInTheDocument();

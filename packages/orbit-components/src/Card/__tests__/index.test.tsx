@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import Card, { CardSection } from "..";
 import Button from "../../Button";
 
@@ -103,7 +103,7 @@ describe("Card", () => {
       );
       const content = document.querySelector("[aria-hidden]");
       expect(content).toHaveAttribute("aria-hidden", "true");
-      await act(() => user.click(screen.getByText("kek")));
+      await user.click(screen.getByText("kek"));
       expect(content).toHaveAttribute("aria-hidden", "false");
     });
   });

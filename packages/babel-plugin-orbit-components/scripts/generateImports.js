@@ -23,7 +23,6 @@ if (!fs.existsSync(fixturePath)) {
   fs.mkdirSync(fixturePath, { recursive: true });
 }
 
-fs.writeFileSync(
-  path.join(fixturePath, "index.js"),
-  prettier.format(fileContent, { filepath: "index.js" }),
-);
+prettier.format(fileContent, { filepath: "index.js" }).then(formatted => {
+  fs.writeFileSync(path.join(fixturePath, "index.js"), formatted);
+});

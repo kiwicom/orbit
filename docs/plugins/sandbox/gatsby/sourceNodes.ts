@@ -2,7 +2,7 @@ import globby from "globby";
 import fs from "fs-extra";
 import path from "path";
 import { format } from "prettier";
-import parserTypescript from "prettier/parser-typescript";
+import * as parserTypescript from "prettier/plugins/typescript";
 
 import { getScope, getByName, getAst } from "./helpers";
 
@@ -14,7 +14,7 @@ export default async (
     const { createNode } = actions;
     const files = await globby(`${folder}/**/*.tsx`);
 
-    files.forEach((file: string) => {
+    files.forEach(async (file: string) => {
       const { name } = path.parse(file);
       const getProperty = (content: string, prop: string) => getByName(getAst(content, file), prop);
 
@@ -25,13 +25,18 @@ export default async (
       const example = getProperty(content, "Example");
       const knobCode = getProperty(content, "exampleKnobs");
       const variants = getProperty(content, "exampleVariants");
+
       const formatSource = (source: string) =>
-        format(source, { parser: "json-stringify", quoteProps: "consistent" });
+        format(source, { parser: "json-stringify", quoteProps: "consistent" }).then(res => {
+          return res;
+        });
+
+      const formattedCode = await formatSource(knobCode);
 
       // eslint-disable-next-line no-eval
-      const knobs = knobCode ? eval(formatSource(knobCode)) : [];
+      const knobs = knobCode ? eval(formattedCode) : [];
 
-      const code = format(example, {
+      const code = await format(example, {
         parser: "typescript",
         plugins: [parserTypescript],
       });

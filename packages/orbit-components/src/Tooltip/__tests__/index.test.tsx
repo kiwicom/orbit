@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import Tooltip from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => {
@@ -26,7 +26,7 @@ describe("Tooltip", () => {
     );
 
     expect(screen.getByText("kek")).toBeInTheDocument();
-    await act(() => user.hover(screen.getByText("kek")));
+    await user.hover(screen.getByText("kek"));
     expect(onShow).toHaveBeenCalled();
   });
 });

@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../../test-utils";
+import { render, screen } from "../../../test-utils";
 import Tooltip from "..";
 
 describe("Tooltip", () => {
@@ -37,8 +37,8 @@ describe("Tooltip", () => {
       </div>,
     );
 
-    await act(() => user.hover(screen.getByText("kek")));
-    await act(() => user.click(screen.getByText(content)));
+    await user.hover(screen.getByText("kek"));
+    await user.click(screen.getByText(content));
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
@@ -61,8 +61,8 @@ describe("Tooltip", () => {
       </div>,
     );
 
-    await act(() => user.hover(screen.getByText("kek")));
-    await act(() => user.click(screen.getByText(content)));
+    await user.hover(screen.getByText("kek"));
+    await user.click(screen.getByText(content));
 
     expect(onClick).toHaveBeenCalledTimes(2);
   });

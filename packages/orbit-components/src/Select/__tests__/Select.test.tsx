@@ -95,7 +95,7 @@ describe("Select", () => {
     );
     const select = screen.getByTestId("error-select");
 
-    await act(() => user.tab());
+    await user.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(select).toBeInvalid();
     expect(select).toHaveAccessibleDescription("error");
@@ -113,7 +113,7 @@ describe("Select", () => {
     );
     const select = screen.getByTestId("help-select");
 
-    await act(() => user.tab());
+    await user.tab();
     expect(screen.getByText("help")).toBeInTheDocument();
     expect(select).toHaveAccessibleDescription("help");
     await act(async () => {});

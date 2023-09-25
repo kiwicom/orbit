@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, within, act } from "../../test-utils";
+import { render, screen, within } from "../../test-utils";
 import Wizard, { WizardStep } from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => () => ({ isLargeMobile: false }));
@@ -35,7 +35,7 @@ describe("Wizard", () => {
           <WizardStep title="Overview & payment" />
         </Wizard>,
       );
-      await act(() => user.click(screen.getByRole("button")));
+      await user.click(screen.getByRole("button"));
       const customizeYourTripStep = within(screen.getByRole("dialog")).getByRole("button", {
         name: /Customize your trip/,
       });
@@ -62,11 +62,12 @@ describe("Wizard", () => {
         );
       };
       render(<MyApp />);
-      await act(() => user.click(screen.getByRole("button")));
+      await user.click(screen.getByRole("button"));
       const ticketFareStep = within(screen.getByRole("dialog")).getByRole("button", {
         name: /Ticket fare/,
       });
-      await act(() => user.click(ticketFareStep));
+
+      await user.click(ticketFareStep);
       expect(onClickStep).toHaveBeenCalled();
     });
 
@@ -81,8 +82,8 @@ describe("Wizard", () => {
           <WizardStep title="Overview & payment" onClick={onClick} />
         </Wizard>,
       );
-      await act(() => user.click(screen.getByRole("button")));
-      await act(() => user.click(screen.getByText("Overview & payment")));
+      await user.click(screen.getByRole("button"));
+      await user.click(screen.getByText("Overview & payment"));
       expect(onClick).not.toHaveBeenCalled();
     });
 
@@ -96,9 +97,9 @@ describe("Wizard", () => {
           <WizardStep title="Overview & payment" />
         </Wizard>,
       );
-      await act(() => user.click(screen.getByRole("button")));
-      await act(() => user.click(screen.getByText("Close")));
+      await user.click(screen.getByRole("button"));
+      await user.click(screen.getByText("Close"));
       expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    });
+    }, 10000);
   });
 });

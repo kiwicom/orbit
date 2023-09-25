@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent, { PointerEventsCheckLevel } from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import InputFile from "..";
 import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
 
@@ -92,12 +92,12 @@ describe("InputFile", () => {
       />,
     );
 
-    await act(() => user.tab());
+    await user.tab();
     expect(onFocus).toHaveBeenCalled();
 
     expect(screen.getByText("chuck norris counted to infinity twice")).toBeInTheDocument();
 
-    await act(() => user.tab());
+    await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 });

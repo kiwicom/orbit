@@ -16,7 +16,7 @@ import Button from "../";
 describe("Button", () => {
   const user = userEvent.setup();
 
-  it("should be accessible", () => {
+  it("should be accessible", async () => {
     render(<Button>Click me</Button>);
     expect(screen.getByRole("button", { name: "Click me" })).toBeInTheDocument();
   });
@@ -24,7 +24,7 @@ describe("Button", () => {
     const onClick = jest.fn();
     render(<Button onClick={onClick}>Click me</Button>);
 
-    act(() => user.click(screen.getByRole("button", { name: "Click me" })));
+    await user.click(screen.getByRole("button", { name: "Click me" }));
     expect(onClick).toHaveBeenCalled();
   });
   describe("when disabled", () => {
@@ -36,7 +36,7 @@ describe("Button", () => {
         </Button>,
       );
 
-      act(() => user.click(screen.getByRole("button", { name: "Click me" })));
+      await user.click(screen.getByRole("button", { name: "Click me" }));
       expect(onClick).not.toHaveBeenCalled();
     });
   });
@@ -58,7 +58,7 @@ import userEvent from "@testing-library/user-event";
 
 import Button from "../";
 
-describe("Button", () => {
+describe("Button", async () => {
   const user = userEvent.setup();
 
   it("default", () => {
@@ -70,7 +70,7 @@ describe("Button", () => {
     );
 
     const button = screen.getByRole("button");
-    act(() => user.click(button));
+    await user.click(button);
     expect(button).toHaveTextContent("Click me"); // you can just repeat it
     expect(onClick).toHaveBeenCalled();
   });

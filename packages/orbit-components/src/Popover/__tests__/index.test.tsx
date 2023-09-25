@@ -38,11 +38,11 @@ describe("Popover", () => {
     );
 
     const openButton = screen.getByRole("button", { name: "Open" });
-    await act(() => user.click(openButton));
+    await user.click(openButton);
     expect(onOpen).toHaveBeenCalled();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     const closeButton = screen.getByRole("button", { name: "Close" });
-    await act(() => user.click(closeButton));
+    await user.click(closeButton);
     expect(onClose).toHaveBeenCalled();
   });
 
@@ -100,10 +100,10 @@ describe("Popover", () => {
         <Button>Open popover</Button>
       </Popover>,
     );
-    await act(() => user.click(screen.getByRole("button")));
+    await user.click(screen.getByRole("button"));
     const overlay = (await screen.findByTestId("popover")).previousElementSibling;
     expect(overlay).toBeInTheDocument();
-    if (overlay) await act(() => user.click(overlay));
+    if (overlay) await user.click(overlay);
     expect(screen.queryByTestId("popover")).not.toBeInTheDocument();
   });
 });

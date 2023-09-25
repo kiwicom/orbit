@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import InputGroup from "..";
 import InputField from "../../InputField";
 import defaultTheme from "../../defaultTheme";
@@ -40,7 +40,7 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
 
-    await act(() => user.tab());
+    await user.tab();
     expect(screen.getByText("help message")).toBeInTheDocument();
   });
   it("should render error message", async () => {
@@ -50,7 +50,7 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
 
-    await act(() => user.tab());
+    await user.tab();
     expect(screen.getByText("error message")).toBeInTheDocument();
   });
 
@@ -64,10 +64,10 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
     const input = screen.getByRole("textbox");
-    await act(() => user.type(input, "text"));
+    await user.type(input, "text");
     expect(onChange).toHaveBeenCalled();
     expect(onFocus).toHaveBeenCalled();
-    await act(() => user.tab());
+    await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
   it("should be able to disable children", () => {

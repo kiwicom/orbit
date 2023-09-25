@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { act, render, screen } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import Tabs, { TabList, Tab, TabPanels, TabPanel } from "..";
 
 describe("Tabs", () => {
@@ -29,7 +29,7 @@ describe("Tabs", () => {
     expect(screen.getByTestId("panel")).toBeInTheDocument();
     expect(screen.getByTestId("panel1")).toBeInTheDocument();
 
-    await act(() => user.click(screen.getByText("Tab 2")));
+    await user.click(screen.getByText("Tab 2"));
 
     expect(onChange).toHaveBeenCalled();
     expect(screen.getByTestId("first-tab")).toHaveAttribute("aria-selected", "false");
@@ -82,7 +82,7 @@ describe("Tabs", () => {
 
     expect(screen.getByTestId("first-tab")).toHaveAttribute("aria-selected", "true");
     expect(screen.getByText("1")).toBeInTheDocument();
-    await act(() => user.click(screen.getByText("second tab")));
+    await user.click(screen.getByText("second tab"));
     expect(onClick).toHaveBeenCalled();
     expect(onChange).not.toHaveBeenCalled();
     expect(screen.getByTestId("second-tab")).toHaveAttribute("aria-selected", "true");

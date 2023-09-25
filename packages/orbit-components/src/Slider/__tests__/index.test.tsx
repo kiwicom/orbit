@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, fireEvent, act } from "../../test-utils";
+import { render, screen, fireEvent } from "../../test-utils";
 import Slider from "..";
 
 const MOUSE_MOVE_STEP = 10;
@@ -74,9 +74,9 @@ describe("Slider", () => {
     expect(slider).toHaveAttribute("aria-valuenow", defaultValue.toString());
     expect(slider).toHaveAttribute("aria-valuetext", ariaValueText.toString());
 
-    await act(() => user.tab());
+    await user.tab();
     expect(onChangeBefore).toHaveBeenCalled();
-    await act(() => user.tab());
+    await user.tab();
     expect(onChangeAfter).toHaveBeenCalled();
     expect(onChangeAfter).toHaveBeenCalledWith(2);
 

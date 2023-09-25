@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import ErrorFormTooltip from "..";
 
 describe("ErrorFormTooltip", () => {
@@ -15,7 +15,7 @@ describe("ErrorFormTooltip", () => {
 
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("error")).toBeInTheDocument();
-    await act(() => user.click(container));
+    await user.click(container);
     expect(onShown).toHaveBeenCalled();
   });
 
@@ -26,7 +26,7 @@ describe("ErrorFormTooltip", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("help")).toBeInTheDocument();
 
-    await act(() => user.click(screen.getByLabelText("close")));
+    await user.click(screen.getByLabelText("close"));
     expect(onShown).toHaveBeenCalled();
   });
 });

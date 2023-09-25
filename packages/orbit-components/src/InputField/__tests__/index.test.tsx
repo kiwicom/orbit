@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import InputField from "..";
 import ButtonLink from "../../ButtonLink";
 import TextLink from "../../TextLink";
@@ -64,7 +64,7 @@ describe("InputField", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByTestId("prefix")).toBeInTheDocument();
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
-    await act(() => user.tab());
+    await user.tab();
     expect(screen.getByTestId("help")).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
@@ -142,7 +142,7 @@ describe("InputField", () => {
       expect(input).toHaveAttribute("data-state", "error");
       expect(input).toBeInvalid();
 
-      await act(() => user.tab());
+      await user.tab();
       expect(screen.queryByTestId("help")).not.toBeInTheDocument();
       expect(screen.getByTestId("error")).toBeInTheDocument();
     });
@@ -158,9 +158,9 @@ describe("InputField", () => {
       );
 
       expect(screen.queryByText("First")).not.toBeInTheDocument();
-      await act(() => user.tab());
+      await user.tab();
       expect(screen.getByText("First")).toBeVisible();
-      await act(() => user.tab());
+      await user.tab();
       expect(screen.queryByText("First")).not.toBeInTheDocument();
       expect(screen.getByText("Second")).toBeVisible();
     });
@@ -168,13 +168,13 @@ describe("InputField", () => {
     it("should close tooltip when tabbing away from its content", async () => {
       render(<InputField error={<a href="/">Second</a>} />);
 
-      await act(() => user.tab());
+      await user.tab();
       expect(screen.getByText("Second")).toBeVisible();
 
       screen.getByRole("link").focus();
       expect(screen.getByRole("link")).toHaveFocus();
 
-      await act(() => user.tab());
+      await user.tab();
       expect(screen.queryByText("Second")).not.toBeInTheDocument();
     });
   });

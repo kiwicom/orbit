@@ -40,10 +40,10 @@ describe("Toast", () => {
 
     const toast = screen.getByText("kek");
 
-    await act(() => user.hover(toast));
+    await user.hover(toast);
     expect(onMouseEnter).toHaveBeenCalled();
 
-    await act(() => user.unhover(toast));
+    await user.unhover(toast);
     expect(onMouseLeave).toHaveBeenCalled();
 
     jest.useFakeTimers();
@@ -80,7 +80,7 @@ describe("Toast", () => {
       </>,
     );
 
-    await act(() => user.click(screen.getByRole("button")));
+    await user.click(screen.getByRole("button"));
 
     expect(screen.getByTestId("test")).toHaveStyle({
       top: "30px",

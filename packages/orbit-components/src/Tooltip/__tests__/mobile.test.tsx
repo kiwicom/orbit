@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import Button from "../../Button";
 import Tooltip from "..";
 
@@ -28,9 +28,9 @@ describe("Tooltip mobile", () => {
     );
 
     // Open the tooltip
-    await act(() => user.click(screen.getByText("kek")));
+    await user.click(screen.getByText("kek"));
     // Close the tooltip
-    await act(() => user.click(screen.getByText("Close")));
+    await user.click(screen.getByText("Close"));
 
     expect(onClick).not.toHaveBeenCalled();
   });

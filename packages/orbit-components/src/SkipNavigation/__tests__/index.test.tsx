@@ -1,7 +1,7 @@
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../test-utils";
+import { render, screen } from "../../test-utils";
 import SkipNavigation from "..";
 
 describe("SkipNavigation", () => {
@@ -39,7 +39,7 @@ describe("SkipNavigation", () => {
     );
 
     expect(container).toHaveStyle({ clip: "rect(0 0 0 0)" });
-    await act(() => user.tab());
+    await user.tab();
     expect(container).toHaveStyle({ clip: "" });
   });
 });

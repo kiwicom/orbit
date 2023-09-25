@@ -57,7 +57,7 @@ describe("ComponentStructure", () => {
       />,
     );
 
-    await act(() => user.click(screen.getByRole("tab", { name: "iOS" })));
+    await user.click(screen.getByRole("tab", { name: "iOS" }));
     screen.getByText(/iOSOne/);
   });
 
@@ -75,7 +75,7 @@ describe("ComponentStructure", () => {
     const tabIOS = screen.getByRole("tab", { name: "iOS" });
     const tabAndroid = screen.getByRole("tab", { name: "Android" });
 
-    await act(() => user.tab());
+    await user.tab();
     expect(tabWeb).toHaveFocus();
 
     await act(async () => {

@@ -42,7 +42,7 @@ describe("Textarea", () => {
     expect(screen.getByDisplayValue("value")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(placeholder)).toBeInTheDocument();
 
-    await act(() => user.tab());
+    await user.tab();
     expect(screen.getByText("Something useful.")).toBeInTheDocument();
     expect(textarea).toHaveAttribute("maxlength", maxLength.toString());
     expect(textarea).toHaveAttribute("rows", "4");
@@ -66,7 +66,7 @@ describe("Textarea", () => {
     expect(onFocus).toHaveBeenCalled();
     await user.tab();
     expect(onBlur).toHaveBeenCalled();
-    await act(() => user.type(textarea, "kek"));
+    await user.type(textarea, "kek");
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -74,7 +74,7 @@ describe("Textarea", () => {
     render(<Textarea error="error" size="small" />);
     const textarea = screen.getByRole("textbox");
 
-    await act(() => user.tab());
+    await user.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
     expect(textarea).toHaveStyle({ padding: "8px 12px" });
     expect(textarea).toBeInvalid();

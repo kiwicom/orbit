@@ -8,7 +8,10 @@ interface Props {
   contentAlign: string | null;
 }
 
-const StyledButtonPrimitiveContent = styled.div<Pick<Props, "contentAlign" | "loading">>`
+const StyledButtonPrimitiveContent = styled(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ({ theme, loading, hasCenteredContent, onlyIcon, contentAlign, ...props }) => <div {...props} />,
+)`
   ${({ contentAlign, loading }) => css`
     visibility: ${loading && "hidden"};
     height: 100%;

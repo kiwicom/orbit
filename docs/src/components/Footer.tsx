@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Text, Desktop, Stack, mediaQueries } from "@kiwicom/orbit-components";
+import { Text, Stack, Hide, mediaQueries } from "@kiwicom/orbit-components";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Switch from "./Switch";
@@ -61,7 +61,7 @@ const StyledFooterLink = styled(Link)`
 `;
 
 function Dot() {
-  return <Desktop>·</Desktop>;
+  return <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>·</Hide>;
 }
 
 export default function Footer() {

@@ -3,7 +3,7 @@
 To implement Mobile component into your project you'll need to add the import:
 
 ```jsx
-import Mobile from "@kiwicom/orbit-components/lib/Mobile";
+import Mobile from "@kiwicom/orbit-components/lib/deprecated/Mobile";
 ```
 
 After adding import into your project you can use it simply like:

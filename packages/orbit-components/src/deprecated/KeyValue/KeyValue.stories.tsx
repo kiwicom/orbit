@@ -1,9 +1,9 @@
 import * as React from "react";
 import { text, select } from "@storybook/addon-knobs";
 
-import Clock from "../icons/Clock";
-import Stack from "../Stack";
-import { SPACINGS } from "../utils/layout/consts";
+import Clock from "../../icons/Clock";
+import Stack from "../../Stack";
+import { SPACINGS } from "../../utils/layout/consts";
 
 import KeyValue from ".";
 

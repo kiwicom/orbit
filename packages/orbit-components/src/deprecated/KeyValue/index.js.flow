@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
 
-import type { Globals } from "../common/common.js.flow";
-import type { Spacing } from "../Stack/index.js.flow";
+import type { Globals } from "../../common/common.js.flow";
+import type { Spacing } from "../../Stack/index.js.flow";
 
 export type Props = {|
   +label?: React.Node,

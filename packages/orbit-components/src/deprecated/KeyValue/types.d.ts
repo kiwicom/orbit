@@ -2,8 +2,8 @@
 // Project: http://github.com/kiwicom/orbit
 import type * as React from "react";
 
-import type * as Common from "../common/types";
-import type { Spacing } from "../Stack/types";
+import type * as Common from "../../common/types";
+import type { Spacing } from "../../Stack/types";
 
 export interface Props extends Common.Globals {
   readonly label?: React.ReactNode;

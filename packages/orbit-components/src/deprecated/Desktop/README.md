@@ -3,7 +3,7 @@
 To implement Desktop component into your project you'll need to add the import:
 
 ```jsx
-import Desktop from "@kiwicom/orbit-components/lib/Desktop";
+import Desktop from "@kiwicom/orbit-components/lib/deprecated/Desktop";
 ```
 
 After adding import into your project you can use it simply like:

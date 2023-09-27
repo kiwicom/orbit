@@ -3,9 +3,9 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { SPACINGS } from "../utils/layout/consts";
-import Text from "../Text";
+import defaultTheme from "../../defaultTheme";
+import { SPACINGS } from "../../utils/layout/consts";
+import Text from "../../Text";
 import type { Props } from "./types";
 
 const getSpacing = ({ theme }) => ({

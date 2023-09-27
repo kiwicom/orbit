@@ -3,7 +3,7 @@
 To implement KeyValue component into your project you'll need to add the import:
 
 ```jsx
-import KeyValue from "@kiwicom/orbit-components/lib/KeyValue";
+import KeyValue from "@kiwicom/orbit-components/lib/deprecated/KeyValue";
 ```
 
 After adding import into your project you can use it simply like:

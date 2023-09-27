@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { render, screen } from "../../test-utils";
+import { render, screen } from "../../../test-utils";
 import KeyValue from "..";
 
 describe("KeyValue", () => {

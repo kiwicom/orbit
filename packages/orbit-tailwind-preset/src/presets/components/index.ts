@@ -227,6 +227,11 @@ const cfg = (options?: Options): Config => {
             8,
           )}`,
           "country-flag": defaultTokens.countryFlagShadow,
+          "form-element": defaultTokens.formElementBoxShadow,
+          "form-element-error": defaultTokens.formElementBoxShadowError,
+          "form-element-hover": defaultTokens.formElementBoxShadowHover,
+          "form-element-error-hover": defaultTokens.formElementBoxShadowErrorHover,
+          "form-element-focus": defaultTokens.formElementFocusBoxShadow,
         },
         keyframes: {
           "slow-pulse": {

@@ -7,15 +7,17 @@ import Tooltip from "..";
 describe("Tooltip", () => {
   const user = userEvent.setup();
 
-  it("it should match snapshot", async () => {
+  it("it should render on hover", async () => {
     const content = "Write some message to the user";
-    const { container } = render(
+    render(
       <Tooltip content={content}>
         <p>Some text</p>
       </Tooltip>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(screen.queryByText(content)).not.toBeInTheDocument();
+    await user.hover(screen.getByText("Some text"));
+    expect(screen.queryByText(content)).toBeInTheDocument();
   });
 
   it("should call onClick 1 time", async () => {

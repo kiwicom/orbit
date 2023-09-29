@@ -2,7 +2,6 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/primitives/tooltipPrimitive/
 */
-import type { StyledComponent } from "styled-components";
 import * as React from "react";
 import type { Placement } from "@popperjs/core/lib/enums";
 
@@ -37,7 +36,5 @@ export type Props = {|
   +block?: boolean,
   ...Popper,
 |};
-
-declare export var StyledTooltipChildren: StyledComponent<any, any, HTMLElement>;
 
 declare export default React.ComponentType<Props>;

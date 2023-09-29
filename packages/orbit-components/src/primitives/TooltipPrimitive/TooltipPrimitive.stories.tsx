@@ -2,7 +2,6 @@ import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../../icons";
-import { SIZE_OPTIONS } from "./consts";
 import Stack from "../../Stack";
 import Alert from "../../Alert";
 import Text from "../../Text";
@@ -15,6 +14,11 @@ import RenderInRtl from "../../utils/rtl/RenderInRtl";
 import { PLACEMENTS } from "../../common/consts";
 
 import TooltipPrimitive from ".";
+
+enum SIZE_OPTIONS {
+  SMALL = "small",
+  MEDIUM = "medium",
+}
 
 const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];

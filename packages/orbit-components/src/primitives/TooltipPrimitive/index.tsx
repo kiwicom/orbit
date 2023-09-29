@@ -1,38 +1,37 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import { SIZE_OPTIONS } from "./consts";
 import Portal from "../../Portal";
 import useRandomId from "../../hooks/useRandomId";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import type { Props } from "./types";
 
-export const StyledTooltipChildren = styled.span<{
-  block?: Props["block"];
-  enabled?: Props["enabled"];
-  removeUnderlinedText?: Props["removeUnderlinedText"];
-}>`
-  ${({ block, enabled, removeUnderlinedText }) => css`
-    display: ${block ? "flex" : "inline-flex"};
-    max-width: 100%;
-    &:focus:active {
-      outline: none;
-    }
-    ${enabled &&
-    !removeUnderlinedText &&
-    css`
-      .orbit-text {
-        display: inline-block;
-        text-decoration: underline;
-        text-decoration: underline currentColor dotted;
-      }
-    `};
-    [disabled] {
-      pointer-events: none;
-    }
-  `}
-`;
+export const TooltipWrapper = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLProps<HTMLSpanElement> & {
+    block?: Props["block"];
+    enabled?: Props["enabled"];
+    removeUnderlinedText?: Props["removeUnderlinedText"];
+  }
+>(({ block, enabled, removeUnderlinedText, ...props }, ref) => {
+  return (
+    <span
+      className={cx(
+        "orbit-tooltip-wrapper",
+        "max-w-full cursor-auto",
+        "focus:outline-none active:outline-none [&_:disabled]:pointer-events-none",
+        block ? "flex" : "inline-flex",
+        enabled &&
+          !removeUnderlinedText &&
+          "[&_.orbit-text]:inline-block [&_.orbit-text]:underline [&_.orbit-text]:decoration-current [&_.orbit-text]:decoration-dotted",
+      )}
+      ref={ref}
+      role="button"
+      {...props}
+    />
+  );
+});
 
 const TooltipPrimitive = ({
   children,
@@ -43,7 +42,7 @@ const TooltipPrimitive = ({
   dataTest,
   id,
   renderInPortal = true,
-  size = SIZE_OPTIONS.SMALL,
+  size = "small",
   content,
   error,
   help,
@@ -73,7 +72,7 @@ const TooltipPrimitive = ({
   }, [setRenderWithTimeout]);
 
   const handleClick = React.useCallback(
-    (ev: React.MouseEvent<HTMLDivElement>) => {
+    (ev: React.MouseEvent<HTMLSpanElement | HTMLDivElement>) => {
       if (stopPropagation) {
         ev.stopPropagation();
       }
@@ -118,8 +117,7 @@ const TooltipPrimitive = ({
 
   return (
     <>
-      <StyledTooltipChildren
-        as={block ? "div" : "span"}
+      <TooltipWrapper
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
         onClick={handleClick}
@@ -133,7 +131,7 @@ const TooltipPrimitive = ({
         block={block}
       >
         {children}
-      </StyledTooltipChildren>
+      </TooltipWrapper>
       {enabled &&
         render &&
         (renderInPortal ? <Portal renderInto="tooltips">{tooltip}</Portal> : tooltip)}

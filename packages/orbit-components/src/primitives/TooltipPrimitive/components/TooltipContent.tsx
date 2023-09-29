@@ -1,111 +1,67 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 import { usePopper } from "react-popper";
 import type { Placement } from "@popperjs/core/lib/enums";
 
 import { PLACEMENTS } from "../../../common/consts";
-import tooltipSize from "../helpers/tooltipSize";
-import resolveBackgroundColor from "../helpers/resolveBackgroundColor";
-import { resolveArrowStyle, resolveArrowPlacement } from "../helpers/resolveArrow";
-import tooltipPadding from "../helpers/tooltipPadding";
-import defaultTheme from "../../../defaultTheme";
-import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
 import type { Props } from "./types";
-import type { Size } from "../types";
+import useTheme from "../../../hooks/useTheme";
 
-const StyledTooltip = styled.div`
-  width: 100%;
-`;
+const arrowPlacementClasses = {
+  top: "bottom-0 left-[-6px] rtl:left-[6px]",
+  left: "top-[-6px] rtl:right-[-6px] right-px",
+  right: "top-[-6px] rtl:left-0 left-[-6px]",
+  bottom: "top-[-6px] rtl:left-[6px] left-[-6px]",
+  auto: "top-[-6px] rtl:left-[6px] left-[-6px]",
+};
 
-const StyledTooltipArrow = styled.div<{
-  transform?: string;
-  position?: string;
-  error?: boolean;
-  contentHeight: number;
-  help?: boolean;
+const arrowBorderClasses = {
+  error: {
+    top: "after:border-t-red-normal after:border-b-0",
+    left: "after:border-l-red-normal after:border-r-0",
+    right: "after:border-r-red-normal after:border-l-0",
+    bottom: "after:border-b-red-normal after:border-t-0",
+    auto: "after:border-b-red-normal after:border-t-0",
+  },
+  help: {
+    top: "after:border-t-blue-normal after:border-b-0",
+    left: "after:border-l-blue-normal after:border-r-0",
+    right: "after:border-r-blue-normal after:border-l-0",
+    bottom: "after:border-b-blue-normal after:border-t-0",
+    auto: "after:border-b-blue-normal after:border-t-0",
+  },
+  top: "after:border-t-ink-dark after:border-b-0",
+  left: "after:border-l-ink-dark after:border-r-0",
+  right: "after:border-r-ink-dark after:border-l-0",
+  bottom: "after:border-b-ink-dark after:border-t-0",
+  auto: "after:border-b-ink-dark after:border-t-0",
+};
+
+const resolveArrowStyles = ({
+  placement,
+  error,
+  help,
+}: {
   placement?: Placement;
-}>`
-  ${({ transform, position }) => css`
-    position: ${position};
-    transform: ${transform};
-    ${resolveArrowPlacement};
-
-    &:after {
-      position: absolute;
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      ${resolveArrowStyle};
-    }
-  `}
-`;
-
-StyledTooltipArrow.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTooltipWrapper = styled.div<{
-  shown?: boolean;
-  popper: React.CSSProperties;
-  contentHeight: number;
   error?: boolean;
   help?: boolean;
-  size: Size;
-}>`
-  ${({ theme, shown, popper, contentHeight, error, help, size }) => css`
-    display: block;
-    ${{ ...popper }};
-    width: auto;
-    max-width: ${tooltipSize({ size })};
-    box-sizing: border-box;
-    transition: ${transition(["opacity", "visibility"], "fast", "ease-in-out")({ theme })};
-    padding: ${tooltipPadding({ theme, contentHeight })};
-    border-radius: ${theme.orbit.borderRadiusNormal};
-    background: ${resolveBackgroundColor({ theme, error, help })};
-    box-shadow: ${theme.orbit.boxShadowRaised};
-    visibility: ${shown ? "visible" : "hidden"};
-    opacity: ${shown ? "1" : "0"};
-    transition: ${transition(["opacity", "visibility"], "fast", "ease-in-out")};
-    z-index: 10012;
-    overflow-y: scroll;
-    overflow: visible;
+}): string => {
+  if (placement) {
+    const commonBorderClasses = "after:border-[6px] after:border-transparent";
+    const formattedPlacement = placement.split("-")[0];
+    const placementClasses = arrowPlacementClasses[formattedPlacement];
 
-    img {
-      max-width: 100%;
-    }
-  `}
-`;
+    if (error)
+      return `${placementClasses} ${commonBorderClasses} ${arrowBorderClasses.error[formattedPlacement]}`;
 
-StyledTooltipWrapper.defaultProps = {
-  theme: defaultTheme,
-};
+    if (help)
+      return `${placementClasses} ${commonBorderClasses} ${arrowBorderClasses.help[formattedPlacement]}`;
 
-const StyledTooltipContent = styled.div`
-  ${({ theme }) => css`
-    font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextSmall};
-    font-weight: ${theme.orbit.fontWeightMedium};
-    line-height: ${theme.orbit.lineHeightTextNormal};
-    color: ${theme.orbit.paletteWhite};
-    margin-bottom: 0;
+    return `${placementClasses} ${commonBorderClasses} ${arrowBorderClasses[formattedPlacement]}`;
+  }
 
-    & .orbit-text,
-    .orbit-list-item {
-      font-size: ${theme.orbit.fontSizeTextSmall};
-      font-weight: ${theme.orbit.fontWeightMedium};
-      color: ${theme.orbit.paletteWhite};
-    }
-
-    & .orbit-text-link {
-      color: ${theme.orbit.paletteWhite};
-    }
-  `}
-`;
-
-StyledTooltipContent.defaultProps = {
-  theme: defaultTheme,
+  return "";
 };
 
 const TooltipContent = ({
@@ -163,6 +119,8 @@ const TooltipContent = ({
 
   const { popper, arrow } = styles;
 
+  const theme = useTheme();
+
   const handleInnerClick = React.useCallback(
     ev => {
       if (tooltip) {
@@ -177,31 +135,57 @@ const TooltipContent = ({
   );
 
   return (
-    <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest} onClick={onClick}>
-      <StyledTooltipWrapper
-        shown={shown}
-        size={size}
+    // Disabling because the onClick exists just to stop propagation of events
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+    <div className="w-full" role="tooltip" id={tooltipId} data-test={dataTest} onClick={onClick}>
+      {/* Disabling because the onClick exists to close tooltip when clicking in interactibe elements, which should not happen with keyboard */}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+      <div
+        className={cx(
+          "rounded-normal px-sm shadow-raised z-[10012] box-border block w-auto overflow-visible",
+          "duration-fast transition-[visibility,_opacity] ease-in-out",
+          "[&_img]:max-w-full]",
+          contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal)) ? "py-xs" : "py-sm",
+          shown ? "visible opacity-100" : "invisible opacity-0",
+          size === "small" && "max-w-[240px]",
+          size === "medium" && "max-w-[380px]",
+          error && "bg-red-normal",
+          !error && help && "bg-blue-normal",
+          !error && !help && "bg-ink-dark",
+        )}
         ref={setTooltipRef}
-        error={error}
-        help={help}
         role="tooltip"
         aria-hidden={!shown}
         onMouseEnter={onEnter}
         onMouseLeave={onClose}
-        contentHeight={contentHeight}
         onClick={handleInnerClick}
-        popper={popper}
+        style={{ ...popper }}
       >
-        <StyledTooltipContent ref={content}>{children}</StyledTooltipContent>
-        <StyledTooltipArrow
+        <div
+          className={cx(
+            "font-base text-small text-white-normal mb-0 font-medium leading-normal",
+            "[&_.orbit-text]:text-small [&_.orbit-text]:text-white-normal [&_.orbit-text]:font-medium",
+            "[&_.orbit-list-item]:text-small [&_.orbit-list-item]:text-white-normal [&_.orbit-list-item]:font-medium",
+            "[&_.orbit-text-link]:text-white-normal",
+          )}
+          ref={content}
+        >
+          {children}
+        </div>
+        <div
+          className={cx(
+            "after:absolute after:h-0 after:w-0 after:border-solid",
+            resolveArrowStyles({
+              error,
+              help,
+              placement: (attrs.popper && attrs.popper["data-popper-placement"]) as Placement,
+            }),
+          )}
           ref={setArrowRef}
-          position={arrow.position}
-          transform={arrow.transform}
-          contentHeight={contentHeight}
-          placement={attrs.popper && (attrs.popper["data-popper-placement"] as Placement)}
+          style={{ position: arrow.position, transform: arrow.transform }}
         />
-      </StyledTooltipWrapper>
-    </StyledTooltip>
+      </div>
+    </div>
   );
 };
 

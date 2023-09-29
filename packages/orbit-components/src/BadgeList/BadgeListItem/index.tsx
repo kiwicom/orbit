@@ -7,7 +7,6 @@ import Text from "../../Text";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "../consts";
 import defaultTheme from "../../defaultTheme";
 import { ICON_COLORS } from "../../Icon/consts";
-import { StyledTooltipChildren } from "../../primitives/TooltipPrimitive";
 import { right } from "../../utils/rtl";
 import type { Props, Type } from "./types";
 import type { Props as IconProps } from "../../Icon/types";
@@ -73,7 +72,7 @@ export const StyledBadgeContent = styled.div`
     display: inline-flex;
     align-items: center;
 
-    ${StyledTooltipChildren} .orbit-text {
+    .orbit-tooltip-wrapper .orbit-text {
       font-weight: ${theme.orbit.fontWeightMedium};
     }
   `};

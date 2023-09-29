@@ -3,7 +3,7 @@ import * as React from "react";
 import useRandomId from "../../hooks/useRandomId";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import Portal from "../../Portal";
-import { StyledTooltipChildren } from "../TooltipPrimitive";
+import { TooltipWrapper } from "../TooltipPrimitive";
 import DialogContent from "./components/DialogContent";
 import type { Props } from "./types";
 
@@ -69,7 +69,7 @@ const MobileDialog = ({
 
   return (
     <>
-      <StyledTooltipChildren
+      <TooltipWrapper
         onClick={handleInMobile}
         aria-describedby={enabled ? mobileDialogID : undefined}
         tabIndex={enabled ? Number(tabIndex) : undefined}
@@ -78,7 +78,7 @@ const MobileDialog = ({
         block={block}
       >
         {children}
-      </StyledTooltipChildren>
+      </TooltipWrapper>
       {enabled &&
         render &&
         (renderInPortal ? <Portal renderInto="dialogs">{dialog}</Portal> : dialog)}

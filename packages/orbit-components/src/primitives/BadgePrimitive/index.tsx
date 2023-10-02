@@ -1,77 +1,10 @@
 "use client";
 
-import * as React from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import cx from "clsx";
 
-import CarrierLogo, { StyledCarrierLogo } from "../../CarrierLogo";
-import defaultTheme from "../../defaultTheme";
-import { rtlSpacing, left } from "../../utils/rtl";
+import CarrierLogo from "../../CarrierLogo";
 import type { Props } from "./types";
-
-export const StyledBadge = styled(({ className, children, dataTest, ariaLabel, id }) => (
-  <div className={className} id={id} data-test={dataTest} aria-label={ariaLabel}>
-    {children}
-  </div>
-))`
-  ${({ theme, background, foregroundColor }) => css`
-    position: relative;
-    font-family: ${theme.orbit.fontFamily};
-    display: inline-flex;
-    flex: 0 0 auto;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-    min-height: ${theme.orbit.heightBadge};
-    line-height: 14px;
-    font-size: ${theme.orbit.fontSizeTextSmall};
-    font-weight: ${theme.orbit.fontWeightMedium};
-    background: ${background};
-    color: ${foregroundColor};
-    border-radius: ${theme.orbit.borderRadiusBadge};
-    padding: ${theme.orbit.paddingBadge};
-    ${StyledCarrierLogo} {
-      position: absolute;
-      ${left}: 0px;
-    }
-  `}
-`;
-
-StyledBadge.defaultProps = {
-  theme: defaultTheme,
-};
-
-const IconContainer = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
-  ${({ theme, hasContent }) => css`
-    display: flex;
-    flex-shrink: 0;
-    margin: ${hasContent && rtlSpacing(theme.orbit.marginBadgeIcon)};
-
-    svg {
-      height: ${theme.orbit.widthIconSmall};
-      width: ${theme.orbit.heightIconSmall};
-    }
-  `}
-`;
-
-IconContainer.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledBadgeContent = styled.div<{ $isCarrier?: boolean }>`
-  ${({ theme, $isCarrier }) => css`
-    padding: ${theme.orbit.spaceXXSmall} 0;
-    line-height: 1;
-    margin-${left}: ${
-    $isCarrier && parseInt(theme.orbit.widthIconMedium, 10) - parseInt(theme.orbit.spaceXXSmall, 10)
-  }px;
-  `}
-`;
-
-StyledBadgeContent.defaultProps = {
-  theme: defaultTheme,
-};
 
 const BadgePrimitive = ({
   icon,
@@ -79,24 +12,39 @@ const BadgePrimitive = ({
   ariaLabel,
   dataTest,
   id,
-  background,
-  foregroundColor,
   carriers,
+  className,
 }: Props) => {
+  const isCarrier = carriers && carriers.length > 0;
+
   return (
-    <StyledBadge
-      background={background}
-      foregroundColor={foregroundColor}
+    <div
+      className={cx(
+        className,
+        "orbit-badge-primitive",
+        "font-base text-small font-medium leading-[14px]",
+        "inline-flex shrink-0 grow-0 basis-auto items-center justify-center",
+        "rounded-badge min-h-icon-medium relative box-border",
+        "px-xs py-0",
+        "[&>.orbit-carrier-logo]:absolute [&>.orbit-carrier-logo]:start-0",
+      )}
       id={id}
-      dataTest={dataTest}
-      ariaLabel={ariaLabel}
+      data-test={dataTest}
+      aria-label={ariaLabel}
     >
       {carriers && <CarrierLogo carriers={carriers} rounded size="medium" />}
-      {icon && <IconContainer hasContent={!!children}>{icon}</IconContainer>}
-      <StyledBadgeContent $isCarrier={carriers && carriers.length > 0}>
-        {children}
-      </StyledBadgeContent>
-    </StyledBadge>
+      {icon && (
+        <div
+          className={cx(
+            "[&>svg]:h-icon-small [&>svg]:w-icon-small flex shrink-0",
+            Boolean(children) && "me-xxs",
+          )}
+        >
+          {icon}
+        </div>
+      )}
+      <div className={cx("py-xxs px-0 leading-none", isCarrier && "ms-md")}>{children}</div>
+    </div>
   );
 };
 

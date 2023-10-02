@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.3.0...@kiwicom/orbit-components@10.0.0) (2023-10-02)
+
+
+### Bug Fixes
+
+* **tailwind:** fix animation-loader class ([c33ea88](https://github.com/kiwicom/orbit/commit/c33ea883f835f326d620d142bbaa12e5e5b65518))
+* **tailwind:** remove redundant classes ([6fe0c97](https://github.com/kiwicom/orbit/commit/6fe0c979fb9fd74f15163f30146dcef34ae32a31))
+
+
+### Features
+
+* **Badge:** migrate to Tailwind ([1e67630](https://github.com/kiwicom/orbit/commit/1e6763063187d72d20873788d22ee24ca9e4c77a))
+* **BadgePrimitive:** migrate to Tailwind ([85de2df](https://github.com/kiwicom/orbit/commit/85de2df41b9aeb97d8c8cdce67caaead269ace90))
+* **Box:** migrate to Tailwind ([08a68ed](https://github.com/kiwicom/orbit/commit/08a68ed39a30b2ab9d732971294519e2f7fc842d))
+* **Breadcrumbs:** migrate to Tailwind ([c2c7935](https://github.com/kiwicom/orbit/commit/c2c7935f7a85205c0be1a4857ddd0fe7b2739bc7))
+* **ButtonGroup:** migrate to Tailwind ([2510a42](https://github.com/kiwicom/orbit/commit/2510a42b2f36532d12a30c764dd267c4aabbddc3))
+* **ButtonLink:** migrate to Tailwind ([8787569](https://github.com/kiwicom/orbit/commit/8787569a7c5a1d471e5a358974a5ea96d1b841d8))
+* **Button:** migrate to Tailwind ([25687b3](https://github.com/kiwicom/orbit/commit/25687b363aa9b6a26b2528433b48b791410ea710))
+* **ButtonPrimitive:** migrate to Tailwind ([4ea8178](https://github.com/kiwicom/orbit/commit/4ea817824fe89dd7ea08c2b48673065c5a2f1ebf))
+* **Card:** remove icon prop ([332f58e](https://github.com/kiwicom/orbit/commit/332f58e4b4ba0d8b274ec7409f25e78f9e8adfa8))
+* **Card:** rewrite to Tailwind ([1e19342](https://github.com/kiwicom/orbit/commit/1e19342427f934701d90480f19a01ce08b90b56a))
+* **CarrierLogo:** add orbit-carrier-logo class ([95eb530](https://github.com/kiwicom/orbit/commit/95eb530424f0cfecf1e214bed8ed77a92325127f))
+* **CountryFlag:** migrate to Tailwind ([e054877](https://github.com/kiwicom/orbit/commit/e05487761e984a8fae3709798316fd965c741617))
+* **Desktop:** deprecate component ([9102bfb](https://github.com/kiwicom/orbit/commit/9102bfb72341065ff50b3307c70843d2d63eaa91))
+* **Dialog:** refactor to tailwind ([4f3525d](https://github.com/kiwicom/orbit/commit/4f3525d84dd3bda89ec5b4f5523bf04268f2729f))
+* **Drawer:** refactor to tailwind ([b59a328](https://github.com/kiwicom/orbit/commit/b59a3281de93ce9c362f0edd49c010ccf0e8fedf))
+* **ErrorFormTooltip:** migrate to Tailwind ([7067f3c](https://github.com/kiwicom/orbit/commit/7067f3ca3a52e14835610ce6329070415524f509))
+* **FormLabel:** migrate to Tailwind ([95aaa6b](https://github.com/kiwicom/orbit/commit/95aaa6bb4eca17e12f23f0f5adea74dfcfca0d5c))
+* **Grid:** migrate Grid to tailwind ([#3965](https://github.com/kiwicom/orbit/issues/3965)) ([e19c2ae](https://github.com/kiwicom/orbit/commit/e19c2ae0d85a250606dc7840dc2586aa6055a2e6))
+* **Heading:** migrate to Tailwind ([8244913](https://github.com/kiwicom/orbit/commit/82449133c564eff65f0dceadd73fd10b56e3539b))
+* **icons:** update icons from Figma ([eabe36e](https://github.com/kiwicom/orbit/commit/eabe36ee734c1a72fb28c36211084cfd08249ebd))
+* **IllustrationPrimitive:** migrate to Tailwind ([e436905](https://github.com/kiwicom/orbit/commit/e4369055308ce8c0238e4bc546d1efe2dcec6c3c))
+* **InputFile:** migrate to Tailwind ([960c846](https://github.com/kiwicom/orbit/commit/960c84660f033d3cfb067cff72be27390f7a6ebb))
+* **KeyValue:** deprecate component ([8b30a98](https://github.com/kiwicom/orbit/commit/8b30a98a8af5c0dddf2e07aa49c2c9727dbdc8c3))
+* **List:** rewrite to Tailwind ([b8790bc](https://github.com/kiwicom/orbit/commit/b8790bc18f2b84ec10914f846466c8f8cd995463))
+* **Loading:** migrate to Tailwind ([53aa0df](https://github.com/kiwicom/orbit/commit/53aa0dfc69a58b5bb1503c2b69ffaf3aea36b52d))
+* **Mobile:** deprecate component ([24c834c](https://github.com/kiwicom/orbit/commit/24c834c92c34fbaa88a76ea71ed49d17c415ad86))
+* **NavigationBar:** migrate to Tailwind ([70ca749](https://github.com/kiwicom/orbit/commit/70ca7492ebceee5f972eee6a1bce64b1b31fbe43))
+* **Stack:** rewrite Stack to tailwind ([401b264](https://github.com/kiwicom/orbit/commit/401b2644a9a94da4a858680d63cda89076ecd92b))
+* **tailwind:** add bundle classenames for Badge ([3874b70](https://github.com/kiwicom/orbit/commit/3874b706b93612ee008ab35a37b546a396efbc89))
+* **tailwind:** add minHeight icon classes ([bcc0063](https://github.com/kiwicom/orbit/commit/bcc0063e4a8e52e50c112af69b09b7752cd085ad))
+* **tailwind:** add transparent to available colors ([47394c9](https://github.com/kiwicom/orbit/commit/47394c9bbd36247d664f806c6b0883ab04384241))
+* **Text:** default value for align is now start ([137026a](https://github.com/kiwicom/orbit/commit/137026a1c0dc16a8d1eaccae3e4b3a44bb1e9dbe))
+* **TextLink:** migrate to Tailwind ([d7697e4](https://github.com/kiwicom/orbit/commit/d7697e4a49dd39852d8bd12676b4083379e93100))
+* **Text:** migrate to Tailwind ([225f29b](https://github.com/kiwicom/orbit/commit/225f29bd4dc2244b482e55fe57c708cf962ba62a))
+
+
+### BREAKING CHANGES
+
+* **BadgePrimitive:** background and foregroundColor props were removed
+* **Card:** Card no longer has the `icon` prop
+* **Text:** align left and right on Text no longer adjust to RTL. Use start or end instead.
+* **Box:** StyledBox removed. `.orbit-box` selector should be used
+
+
+
+
+
 ## [9.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.3.0...@kiwicom/orbit-components@9.3.1) (2023-09-25)
 
 

@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.0.1...@kiwicom/orbit-design-tokens@6.1.0) (2023-10-02)
+
+
+### Features
+
+* **Dialog:** refactor to tailwind ([4f3525d](https://github.com/kiwicom/orbit/commit/4f3525d84dd3bda89ec5b4f5523bf04268f2729f))
+* **Drawer:** refactor to tailwind ([b59a328](https://github.com/kiwicom/orbit/commit/b59a3281de93ce9c362f0edd49c010ccf0e8fedf))
+* **tailwind:** add Dialog rounded and min-w classes ([4010319](https://github.com/kiwicom/orbit/commit/40103199f359c8a01c91786e2cbe6be20e28a9d7))
+* **tailwind:** add minHeight icon classes ([bcc0063](https://github.com/kiwicom/orbit/commit/bcc0063e4a8e52e50c112af69b09b7752cd085ad))
+* **TextLink:** migrate to Tailwind ([d7697e4](https://github.com/kiwicom/orbit/commit/d7697e4a49dd39852d8bd12676b4083379e93100))
+* **tokens:** add atomic button padding ([af24d96](https://github.com/kiwicom/orbit/commit/af24d9688764ab5c4ce1477665cbd94d8bda11f1))
+* **tokens:** add Badge padding token ([0b46edd](https://github.com/kiwicom/orbit/commit/0b46edd960a2d45886a0190a7f0e5ca400f34cfd))
+* **tokens:** add boxShadow formElement tokens ([f3e527f](https://github.com/kiwicom/orbit/commit/f3e527f5e5812b7b42064d61c879b33287e80ced))
+* **tokens:** add CountryFlag tokens ([8f2d038](https://github.com/kiwicom/orbit/commit/8f2d03802feee4621d1da0b7fcf594c0bb3b2408))
+* **tokens:** add Dialog border-radius and width tokens ([ae8ba90](https://github.com/kiwicom/orbit/commit/ae8ba904a3afbb6c547494cd9c528744e41d92bc))
+* **tokens:** add drawer background overlay token ([2b6d271](https://github.com/kiwicom/orbit/commit/2b6d2713cfc7b946e942b1e5506aef9ffcaf98d6))
+* **tokens:** add Text and TextLink related tokens ([ecdb633](https://github.com/kiwicom/orbit/commit/ecdb6337bd0c14a284568d5498a7b1adf9153f09))
+* **tokens:** add zIndexNavigationBar token ([b9026ba](https://github.com/kiwicom/orbit/commit/b9026ba66f8d5a06e2cedf2f5ea63eab68630519))
+
+
+
+
+
 ## [6.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.0.0...@kiwicom/orbit-design-tokens@6.0.1) (2023-09-18)
 
 

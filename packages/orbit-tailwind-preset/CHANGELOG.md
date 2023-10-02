@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@2.0.1...@kiwicom/orbit-tailwind-preset@2.1.0) (2023-10-02)
+
+
+### Bug Fixes
+
+* **tailwind:** fix animation-loader class ([c33ea88](https://github.com/kiwicom/orbit/commit/c33ea883f835f326d620d142bbaa12e5e5b65518))
+* **tailwind:** remove redundant classes ([6fe0c97](https://github.com/kiwicom/orbit/commit/6fe0c979fb9fd74f15163f30146dcef34ae32a31))
+
+
+### Features
+
+* **Dialog:** refactor to tailwind ([4f3525d](https://github.com/kiwicom/orbit/commit/4f3525d84dd3bda89ec5b4f5523bf04268f2729f))
+* **Drawer:** refactor to tailwind ([b59a328](https://github.com/kiwicom/orbit/commit/b59a3281de93ce9c362f0edd49c010ccf0e8fedf))
+* **IllustrationPrimitive:** migrate to Tailwind ([e436905](https://github.com/kiwicom/orbit/commit/e4369055308ce8c0238e4bc546d1efe2dcec6c3c))
+* **tailwind:** add badge classnames ([82dd86d](https://github.com/kiwicom/orbit/commit/82dd86dc692b55d10a76147e66847eab81337244))
+* **tailwind:** add boxShadow formElement tokens ([ff229dd](https://github.com/kiwicom/orbit/commit/ff229dd90f62dba897c2ffb531b5cbd1089b3b14))
+* **tailwind:** add bundle classenames for Badge ([3874b70](https://github.com/kiwicom/orbit/commit/3874b706b93612ee008ab35a37b546a396efbc89))
+* **tailwind:** add button tokens ([5faa7bd](https://github.com/kiwicom/orbit/commit/5faa7bd1af8f1dc861945fdbfb334fda8407f91f))
+* **tailwind:** add CountryFlag definitions ([1e04a7d](https://github.com/kiwicom/orbit/commit/1e04a7da093fe2f5a09f7334a5fa91381a5c6025))
+* **tailwind:** add Dialog rounded and min-w classes ([4010319](https://github.com/kiwicom/orbit/commit/40103199f359c8a01c91786e2cbe6be20e28a9d7))
+* **tailwind:** add drawer background overlay class ([e36596a](https://github.com/kiwicom/orbit/commit/e36596aeeb548ce92b527f065ca5c59223c8ab3e))
+* **tailwind:** add maxHeight illustration values ([8aede8d](https://github.com/kiwicom/orbit/commit/8aede8d965e123ac3465495521c221d3ab36876c))
+* **tailwind:** add min-height and min-width ([acb1c5f](https://github.com/kiwicom/orbit/commit/acb1c5f789f31b0ed7d881b25827dd341fbaa29c))
+* **tailwind:** add minHeight icon classes ([bcc0063](https://github.com/kiwicom/orbit/commit/bcc0063e4a8e52e50c112af69b09b7752cd085ad))
+* **tailwind:** add modal width classes ([011310c](https://github.com/kiwicom/orbit/commit/011310c5d89eb2cc7b77d98699405e091a31c039))
+* **tailwind:** add navigation-bar zIndex property ([d384597](https://github.com/kiwicom/orbit/commit/d38459711d682dad76e6c44a309d6cb9844921cc))
+* **tailwind:** add rounded-none ([c4c87fa](https://github.com/kiwicom/orbit/commit/c4c87fa118478c20e70cf4dbb1337c47ad44d522))
+* **tailwind:** add safari variant ([09e26ac](https://github.com/kiwicom/orbit/commit/09e26ac185d32718079654e15806a7bb0665617f))
+* **tailwind:** add transparent to available colors ([47394c9](https://github.com/kiwicom/orbit/commit/47394c9bbd36247d664f806c6b0883ab04384241))
+* **TextLink:** migrate to Tailwind ([d7697e4](https://github.com/kiwicom/orbit/commit/d7697e4a49dd39852d8bd12676b4083379e93100))
+* **tokens:** add Dialog border-radius and width tokens ([ae8ba90](https://github.com/kiwicom/orbit/commit/ae8ba904a3afbb6c547494cd9c528744e41d92bc))
+
+
+
+
+
 ## [2.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@2.0.0...@kiwicom/orbit-tailwind-preset@2.0.1) (2023-09-18)
 
 **Note:** Version bump only for package @kiwicom/orbit-tailwind-preset

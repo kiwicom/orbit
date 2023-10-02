@@ -15,18 +15,15 @@ export default {
   title: "Primitives",
 };
 
-// TODO: TW: update before releasing Badge with Tailwind
 export const BadgePrimitive = () => {
   const Icon = getIcon(getIcons("icon", "Airplane"));
-  const background = text("Background", "linear-gradient(#fd1d1d, #ffae28)");
-  const foregroundColor = text("ForegroundColor", "#fff");
+  const className = text(
+    "className",
+    "bg-gradient-to-r from-[#fd1d1d] to-[#ffae28] text-white-normal",
+  );
 
   return (
-    <BadgePrimitiveComponent
-      background={background}
-      foregroundColor={foregroundColor}
-      icon={Icon && <Icon />}
-    >
+    <BadgePrimitiveComponent className={className} icon={Icon && <Icon />}>
       BadgePrimitive
     </BadgePrimitiveComponent>
   );

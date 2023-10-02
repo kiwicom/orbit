@@ -7,12 +7,12 @@ redirect_from:
 
 # Orbit Migration Guide v10
 
-This migration guide focuses on the process of migrating from Orbit v9.1 to v10.0, as some breaking changes were introduced.
+This migration guide focuses on the process of migrating from Orbit v9.3 to v10.0, as some breaking changes were introduced.
 With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
 
 This version of Orbit includes the first batch of components styled with Tailwind, instead of Styled Components. Note that you can keep using Styled Components, especially on your custom components. But we recommend start migrating them to Tailwind as well.
 
-Components in Tailwind should have the same API as before, so no breaking changes are expected in that regard. However, since some of the migrated components went through deep refactoring, we recommend being vigilant for unexpected and undocumented changes. Those should be reported so that we can fix them.
+Components in Tailwind should have almost the same API as before, so few breaking changes are expected in that regard, and they are all documented here. However, since some of the migrated components went through deep refactoring, we recommend being vigilant for unexpected and undocumented changes. Those should be reported so that we can fix them.
 
 ## Breaking changes
 
@@ -79,6 +79,24 @@ import { Box } from "@kiwicom/orbit-components";
 
 const CustomBox = props => <Box className="leading-normal" padding="small" {...props} />;
 ```
+
+### Color props in BadgePrimitive (`background` and `foregroundColor`)
+
+The `BadgePrimitive` component no longer accepts `background` nor `foregroundColor` props. Instead, it accepts the `className` that can be used to apply Tailwind classes to the component to customize the foreground and / or background colors.
+
+**Before:**
+
+```jsx
+<BadgePrimitive background="#005AA3" foregroundColor="#fff" />
+```
+
+**Now:**
+
+```jsx
+<BadgePrimitive className="bg-blue-dark text-white-normal" />
+```
+
+Although the className prop can accept any class, we recommend using this prop only with Tailwind classes for customizing colors, and using the Orbit tokens.
 
 ### Align prop in Text
 

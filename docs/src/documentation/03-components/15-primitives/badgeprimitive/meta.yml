@@ -1,3 +1,4 @@
 title: BadgePrimitive
 description: A basic type that allows you to choose colors to fit any need.
 type: tabs
+storybook: primitives--badge-primitive

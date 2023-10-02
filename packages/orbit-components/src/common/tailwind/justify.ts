@@ -1,6 +1,8 @@
 import { QUERIES } from "../../utils/mediaQuery/consts";
+import type { Justify } from "../../Stack/types";
+import type { Devices } from "../../utils/mediaQuery/types";
 
-enum JUSTIFY {
+export enum JUSTIFY {
   START = "start",
   CENTER = "center",
   END = "end",
@@ -52,3 +54,11 @@ export const justifyClasses: {
     [JUSTIFY.AROUND]: "mm:justify-around",
   },
 };
+
+export const getJustifyClasses = (justify: Justify, viewport?: Devices) => {
+  const root = viewport ? justifyClasses[viewport] : justifyClasses;
+
+  return root[justify];
+};
+
+export default getJustifyClasses;

@@ -99,7 +99,7 @@ async function configureSlackToken() {
 async function publishChangelog(package_) {
   try {
     await simpleGit().fetch(["origin", "master", "--tags"]);
-    const tags = await simpleGit().tags();
+    const tags = await simpleGit().tags({ "--sort": "-taggerdate" });
     const diff = await getDiff(tags.latest ?? "", changelogPath(package_));
     const files = gitDiffParser.parse(diff);
     if (files.length === 0) {

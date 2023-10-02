@@ -145,3 +145,49 @@ If needed, it is still possible to apply an icon (or similar) using layout compo
   }
 />
 ```
+
+## Deprecations
+
+### Desktop
+
+The `Desktop` component is now deprecated and its usage should be replaced by using the `Hide` component.
+
+**Before:**
+
+```jsx
+<Desktop>
+  <Text>Only visible on desktop</Text>
+</Desktop>
+```
+
+**Now:**
+
+```jsx
+<Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet"]}>
+  <Text>Only visible on desktop</Text>
+</Hide>
+```
+
+### Mobile
+
+The `Mobile` component is now deprecated and its usage should be replaced by using the `Hide` component.
+
+**Before:**
+
+```jsx
+<Desktop>
+  <Text>Only visible on mobile</Text>
+</Desktop>
+```
+
+**Now:**
+
+```jsx
+<Hide on={["desktop", "largeDesktop"]}>
+  <Text>Only visible on mobile</Text>
+</Hide>
+```
+
+### KeyValue
+
+The `KeyValue` component is now deprecated and its usage should be replaced by using a composition of text and layout components. Its usage is no longer supported.

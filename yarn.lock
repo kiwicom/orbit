@@ -5573,18 +5573,10 @@
     "@types/eslint" "*"
     "@types/estree" "*"
 
-"@types/eslint@*":
-  version "8.44.2"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.44.2.tgz#0d21c505f98a89b8dd4d37fa162b09da6089199a"
-  integrity sha512-sdPRb9K6iL5XZOmBubg8yiFp5yS/JdUDQsq5e6h95km91MCYMuvp7mh1fjPEYUhvHepKpZOjnEaMBR4PxjWDzg==
-  dependencies:
-    "@types/estree" "*"
-    "@types/json-schema" "*"
-
-"@types/eslint@^7.29.0":
-  version "7.29.0"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.29.0.tgz#e56ddc8e542815272720bb0b4ccc2aff9c3e1c78"
-  integrity sha512-VNcvioYDH8/FxaeTKkM4/TiTwt6pBV9E3OfGmvaw8tPl0rrHCJ4Ll15HRT+pMiFAf/MLQvAzC+6RzUMEL9Ceng==
+"@types/eslint@*", "@types/eslint@^7.29.0", "@types/eslint@^8.37.0":
+  version "8.44.3"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.44.3.tgz#96614fae4875ea6328f56de38666f582d911d962"
+  integrity sha512-iM/WfkwAhwmPff3wZuPLYiHX18HI24jU8k1ZSH7P8FHwxTjZ2P6CoX2wnF43oprR+YXJM6UUxATkNvyv/JHd+g==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"

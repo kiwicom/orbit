@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import type * as Common from "../common/types";
 import type { Theme } from "../defaultTheme";
@@ -66,7 +67,7 @@ Field.defaultProps = {
 };
 
 export const FakeInput = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
+  <div className={cx("orbit-input-field-fake-input", className)}>{children}</div>
 ))`
   ${({ theme, error, disabled, readOnly }) => css`
     width: 100%;
@@ -97,7 +98,7 @@ FakeInput.defaultProps = {
 };
 
 export const InputContainer = styled(({ children, className, labelRef }) => (
-  <div ref={labelRef} className={className}>
+  <div ref={labelRef} className={cx("orbit-input-field-input-container", className)}>
     {children}
   </div>
 ))`
@@ -263,6 +264,7 @@ export const Input = styled.input<StyledInputProps>`
 
     &:focus {
       outline: none;
+
       & ~ ${FakeInput} {
         ${formElementFocus}
       }
@@ -469,6 +471,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           autoFocus={autoFocus}
           id={inputId}
           inputMode={inputMode}
+          className="orbit-input-field-input"
           {...dataAttrs}
         />
         {suffix && <Suffix>{suffix}</Suffix>}

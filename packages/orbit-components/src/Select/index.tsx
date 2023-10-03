@@ -352,7 +352,12 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           {label}
         </FormLabel>
       )}
-      <SelectContainer ref={label ? null : labelRef} disabled={disabled} error={!!error}>
+      <SelectContainer
+        className="orbit-select-container"
+        ref={label ? null : labelRef}
+        disabled={disabled}
+        error={!!error}
+      >
         {label && inlineLabel && (
           <StyledInlineLabel hasFeedback={!!(error || help)} ref={labelRef}>
             {help && !error && (

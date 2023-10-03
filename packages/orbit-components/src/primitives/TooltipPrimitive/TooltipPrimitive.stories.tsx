@@ -151,7 +151,7 @@ export const WithImageInside = () => {
       content={
         <Stack>
           <img
-            src="/tooltipPrimitive_card_preview.png"
+            src="https://images.kiwi.com/illustrations/0x200/Rating-Q85.png"
             alt="Preview
             of card help in TooltipPrimitive component"
           />
@@ -190,6 +190,8 @@ export const Playground = () => {
   const Icon = getIcon(getIcons("Airplane"));
   const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const tabIndex = text("TabIndex", "0");
+  const error = boolean("error", false);
+  const help = boolean("help", false);
   const enabled = boolean("enabled", true);
   const removeUnderlinedText = boolean("removeUnderlinedText", false);
   const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
@@ -204,6 +206,8 @@ export const Playground = () => {
         tabIndex={tabIndex}
         enabled={enabled}
         removeUnderlinedText={removeUnderlinedText}
+        error={error}
+        help={help}
       >
         <Icon />
       </TooltipPrimitive>

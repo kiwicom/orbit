@@ -143,7 +143,7 @@ export const WithImageInside = () => {
       content={
         <Stack>
           <img
-            src="/tooltip_card_preview.png"
+            src="https://images.kiwi.com/illustrations/0x200/Rating-Q85.png"
             alt="Preview
             of card help in Tooltip component"
           />

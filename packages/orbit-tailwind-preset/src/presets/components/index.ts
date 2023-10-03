@@ -232,6 +232,7 @@ const cfg = (options?: Options): Config => {
           "form-element-hover": defaultTokens.formElementBoxShadowHover,
           "form-element-error-hover": defaultTokens.formElementBoxShadowErrorHover,
           "form-element-focus": defaultTokens.formElementFocusBoxShadow,
+          switch: `inset 0 0 1px 0 rgba(7, 64, 92, 0.1),${defaultTokens.boxShadowAction}`,
         },
         keyframes: {
           "slow-pulse": {

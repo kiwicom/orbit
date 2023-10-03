@@ -44,6 +44,12 @@ const StyledDialogWrapper = styled.div<{ shown?: boolean }>`
   right: ${({ theme }) => theme.orbit.spaceMedium};
   max-height: ${({ theme }) => `calc(100% - ${theme.orbit.spaceXLarge})`};
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   img {
     max-width: 100%;

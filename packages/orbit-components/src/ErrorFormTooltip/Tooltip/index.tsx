@@ -126,7 +126,7 @@ const ErrorFormTooltip = ({
     >
       <div
         className={cx(
-          "start-xs de:start-0 absolute",
+          "start-xs rtl:de:start-0 absolute",
           isVertical ? "bottom-xxxs" : "top-xxxs",
           inlineLabel && "rtl:start-0",
           isHelp ? "before:bg-blue-normal" : "before:bg-red-normal",

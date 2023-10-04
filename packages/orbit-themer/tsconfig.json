@@ -16,7 +16,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "declaration": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "types": ["@testing-library/jest-dom"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

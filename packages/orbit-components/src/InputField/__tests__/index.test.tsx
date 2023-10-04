@@ -149,7 +149,7 @@ describe("InputField", () => {
   });
 
   describe("error forms", () => {
-    it("shold show the correct error tooltips while tabbing between fields", async () => {
+    it("should show the correct error tooltips while tabbing between fields", async () => {
       render(
         <>
           <InputField error="First" />

@@ -69,7 +69,7 @@ module.exports = {
       },
     },
     {
-      files: ["src/**/*.test.ts?(x)"],
+      files: ["src/**/*.test.ts?(x)", "src/test-utils.tsx"],
       rules: {
         "import/no-extraneous-dependencies": [
           "error",

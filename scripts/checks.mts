@@ -9,7 +9,7 @@ import { $, argv } from "zx";
   // Check links
   if (argv.links) {
     await $`remark -e '.mdx' -q -u validate-links docs/src/documentation --no-config`;
-    await $`tsc docs/services/checkLinks.ts --noEmit --skipLibCheck --esModuleInterop --moduleResolution node --downlevelIteration`;
+    await $`tsc docs/services/checkLinks.mts --moduleResolution node16 --downlevelIteration --esModuleInterop --resolveJsonModule --noEmit --skipLibCheck`;
   }
   // Check component statuses for update
   if (argv.statuses) {

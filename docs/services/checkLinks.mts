@@ -8,10 +8,14 @@ import stringify from "rehype-stringify";
 import reporter from "vfile-reporter";
 import fsx from "fs-extra";
 import dotenv from "dotenv-safe";
-import toVFile from "to-vfile";
+import { readSync } from "to-vfile";
 import { VFile } from "vfile-reporter/lib";
+import filedirname from "filedirname";
 
-import { warnMissingAccessToken } from "../utils/warnings";
+// @ts-expect-error TODO support from v5
+import { warnMissingAccessToken } from "../utils/warnings.mts";
+
+const [_, __dirname] = filedirname();
 
 try {
   dotenv.config({
@@ -50,14 +54,10 @@ const checkForDeadUrls = async () => {
     // @ts-expect-error TODO
     .use(inspectUrls, {
       inspectEach({ file, node, url }) {
+        const properties = node.properties as { rel: string[] };
         // filter out preconnect links: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect
         // Otherwise was failing on preconnect links to fonts.gstatic.com (to prepare to load fonts)
-        if (
-          node.tagName === "link" &&
-          // @ts-expect-error TODO
-          node.properties.rel.find(e => e === "preconnect")
-        )
-          return;
+        if (node.tagName === "link" && properties.rel.find(e => e === "preconnect")) return;
 
         if (!urls.has(url)) {
           urls.set(url, { sources: [file] });
@@ -70,7 +70,7 @@ const checkForDeadUrls = async () => {
 
   files.forEach(file => {
     // Read the example HTML file
-    const virtualFile = toVFile.readSync(file);
+    const virtualFile = readSync(file);
 
     // Crawl the HTML files and find all the URLs
     processor.process(virtualFile);

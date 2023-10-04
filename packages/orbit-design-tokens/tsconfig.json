@@ -2,6 +2,7 @@
   "compilerOptions": {
     "noEmit": true,
     "target": "esnext",
+    "types": ["@testing-library/jest-dom"],
     "module": "esnext",
     "allowJs": true,
     "moduleResolution": "node",

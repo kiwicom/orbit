@@ -7,4 +7,7 @@ configure({
   testIdAttribute: "data-test",
 });
 
+// increasing the timeout for the tests
+jest.setTimeout(20000);
+
 global.TextEncoder = TextEncoder;

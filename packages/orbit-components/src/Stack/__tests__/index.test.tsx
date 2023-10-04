@@ -42,7 +42,7 @@ describe("Stack", () => {
 
   it("should turn off grow", () => {
     render(
-      <Stack grow={false} dataTest="test">
+      <Stack flex grow={false} dataTest="test">
         <div>kek</div>
         <div>bur</div>
       </Stack>,
@@ -51,9 +51,21 @@ describe("Stack", () => {
     expect(screen.getByTestId("test")).toHaveStyle(`flex-grow: 0`);
   });
 
+  it("should be block with spacing", () => {
+    render(
+      <Stack spacing="XLarge" dataTest="test">
+        <div>1</div>
+        <div>2</div>
+      </Stack>,
+    );
+
+    expect(screen.getByTestId("test")).toHaveStyle(`display: block`);
+    expect(screen.getByTestId("test")).toHaveClass("space-y-xl space-x-none block w-full");
+  });
+
   it("should turn on shrink", () => {
     render(
-      <Stack shrink dataTest="test">
+      <Stack flex shrink dataTest="test">
         <div>kek</div>
         <div>bur</div>
       </Stack>,

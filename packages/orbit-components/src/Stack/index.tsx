@@ -6,7 +6,7 @@ import cx from "clsx";
 import type { Props, CommonProps, Direction, Spacing } from "./types";
 import type * as Common from "../common/types";
 import {
-  getDisplayInlineClass,
+  getDisplayClasses,
   getDirectionClasses,
   getAlignItemsClasses,
   getWrapClasses,
@@ -29,6 +29,13 @@ const shouldUseFlex = (props: CommonProps & Common.SpaceAfter) =>
     .map(prop => ["spacing", "spaceAfter", "dataTest", "children"].includes(prop))
     .includes(false);
 
+// use margins instead of gap, works with block
+const shouldUseLegacy = (props: CommonProps & Common.SpaceAfter) => {
+  if (props.legacy) return true;
+  if (!shouldUseFlex(props) && Boolean(props.spacing)) return true;
+  return false;
+};
+
 const Stack = (props: Props) => {
   const {
     children,
@@ -45,7 +52,7 @@ const Stack = (props: Props) => {
   const viewportProps = { mediumMobile, largeMobile, tablet, desktop, largeDesktop };
 
   const defaultMediaProps = React.useMemo(() => {
-    const isFlex = shouldUseFlex(props) || props.inline;
+    const isFlex = shouldUseFlex(props);
 
     const {
       spacing = SPACING.medium,
@@ -55,8 +62,8 @@ const Stack = (props: Props) => {
       justify = JUSTIFY.START,
       shrink = false,
       wrap = false,
-      flex = true,
-      legacy = false,
+      flex,
+      legacy = shouldUseLegacy({ ...props, spacing }),
       align = ALIGN.START,
       inline = false,
     } = props;
@@ -132,17 +139,20 @@ const Stack = (props: Props) => {
 
     return cx(
       typeof spaceAfter !== "undefined" && getSpaceAfterClasses(spaceAfter, viewport),
-      typeof align !== "undefined" && getAlignItemsClasses(align, viewport),
-      typeof align !== "undefined" && getAlignContentClasses(align, viewport),
-      typeof wrap !== "undefined" && getWrapClasses(wrap, viewport),
-      typeof grow !== "undefined" && getGrowClasses(grow, viewport),
-      typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
-      typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
-      getDirectionClasses(direction, viewport),
+      flex || inline
+        ? [
+            getDisplayClasses(inline ? "inline-flex" : "flex", viewport),
+            typeof align !== "undefined" && getAlignItemsClasses(align, viewport),
+            typeof align !== "undefined" && getAlignContentClasses(align, viewport),
+            typeof wrap !== "undefined" && getWrapClasses(wrap, viewport),
+            typeof grow !== "undefined" && getGrowClasses(grow, viewport),
+            typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
+            typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
+            getDirectionClasses(direction, viewport),
+          ]
+        : "block",
       getSpacingClasses(spacing, viewport, direction, legacy),
-      inline && getDisplayInlineClass(inline, viewport),
       inline === false && "w-full",
-      flex && "flex",
     );
   };
 

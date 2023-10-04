@@ -3,10 +3,7 @@
     "rootDir": "./src",
     "moduleResolution": "node",
     "baseUrl": "./",
-    "outDir": "./dist",
     "noEmit": true,
-    "removeComments": true,
-    "noEmitOnError": true,
     "forceConsistentCasingInFileNames": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -14,7 +11,8 @@
     "alwaysStrict": true,
     "noImplicitReturns": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["@testing-library/jest-dom"]
   },
   "include": ["src/**/*.ts"]
 }

@@ -6,7 +6,8 @@
     "strict": true,
     "resolveJsonModule": true,
     "noImplicitAny": false,
-    "useUnknownInCatchVariables": false
+    "useUnknownInCatchVariables": false,
+    "types": ["node", "jest", "jest-styled-components", "@testing-library/jest-dom"]
   },
   "ts-node": {
     "compilerOptions": {
@@ -16,6 +17,7 @@
       "skipLibCheck": true,
       "resolveJsonModule": true,
       "esModuleInterop": true,
+      "types": ["node", "jest", "jest-styled-components", "@testing-library/jest-dom"],
       "useUnknownInCatchVariables": false
     }
   }

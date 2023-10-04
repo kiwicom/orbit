@@ -44,24 +44,20 @@ describe("Collapse", () => {
   });
 
   describe("uncontrolled", () => {
-    it.each(toggleButtons)(
-      "should expand/collapse when clicking on %s",
-      async buttonIndex => {
-        render(
-          <Collapse label="Collapse">
-            <article>children</article>
-          </Collapse>,
-        );
-        const toggleButton = screen.getAllByRole("button", { name: "Collapse" })[buttonIndex];
-        // with ByRole we can test whether the content is visible because of aria-hidden
-        expect(screen.queryByRole("article")).not.toBeInTheDocument();
-        await user.click(toggleButton);
-        expect(screen.getByRole("article")).toBeInTheDocument();
-        await user.click(toggleButton);
-        expect(screen.queryByRole("article")).not.toBeInTheDocument();
-      },
-      10000,
-    );
+    it.each(toggleButtons)("should expand/collapse when clicking on %s", async buttonIndex => {
+      render(
+        <Collapse label="Collapse">
+          <article>children</article>
+        </Collapse>,
+      );
+      const toggleButton = screen.getAllByRole("button", { name: "Collapse" })[buttonIndex];
+      // with ByRole we can test whether the content is visible because of aria-hidden
+      expect(screen.queryByRole("article")).not.toBeInTheDocument();
+      await user.click(toggleButton);
+      expect(screen.getByRole("article")).toBeInTheDocument();
+      await user.click(toggleButton);
+      expect(screen.queryByRole("article")).not.toBeInTheDocument();
+    });
   });
 
   describe("controlled", () => {

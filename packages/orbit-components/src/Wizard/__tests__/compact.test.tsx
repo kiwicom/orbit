@@ -53,11 +53,7 @@ describe("Wizard", () => {
             activeStep={activeStep}
             onChangeStep={setActiveStep}
           >
-            <WizardStep title="Search" />
-            <WizardStep title="Passenger details" />
             <WizardStep title="Ticket fare" onClick={onClickStep} />
-            <WizardStep title="Customize your trip" />
-            <WizardStep title="Overview & payment" />
           </Wizard>
         );
       };
@@ -100,6 +96,6 @@ describe("Wizard", () => {
       await user.click(screen.getByRole("button"));
       await user.click(screen.getByText("Close"));
       expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    }, 10000);
+    });
   });
 });

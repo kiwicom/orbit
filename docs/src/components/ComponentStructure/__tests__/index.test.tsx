@@ -1,7 +1,7 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 
-import { render, screen, act } from "../../../test-utils";
+import { render, screen } from "../../../test-utils";
 import ComponentStructure from "..";
 
 const structure = (platform: string) => ({
@@ -78,36 +78,28 @@ describe("ComponentStructure", () => {
     await user.tab();
     expect(tabWeb).toHaveFocus();
 
-    await act(async () => {
-      await user.keyboard("{ArrowRight}");
-    });
+    await user.keyboard("{ArrowRight}");
     expect(tabIOS).toHaveFocus();
 
     expect(tabWeb).toHaveAttribute("tabindex", "-1");
     expect(tabIOS).toHaveAttribute("tabindex", "0");
     expect(tabAndroid).toHaveAttribute("tabindex", "-1");
 
-    await act(async () => {
-      await user.keyboard("{ArrowLeft}");
-    });
+    await user.keyboard("{ArrowLeft}");
     expect(tabWeb).toHaveFocus();
 
     expect(tabWeb).toHaveAttribute("tabindex", "0");
     expect(tabIOS).toHaveAttribute("tabindex", "-1");
     expect(tabAndroid).toHaveAttribute("tabindex", "-1");
 
-    await act(async () => {
-      await user.keyboard("{ArrowLeft}");
-    });
+    await user.keyboard("{ArrowLeft}");
     expect(tabAndroid).toHaveFocus();
 
     expect(tabWeb).toHaveAttribute("tabindex", "-1");
     expect(tabIOS).toHaveAttribute("tabindex", "-1");
     expect(tabAndroid).toHaveAttribute("tabindex", "0");
 
-    await act(async () => {
-      await user.keyboard("{ArrowRight}");
-    });
+    await user.keyboard("{ArrowRight}");
     expect(tabWeb).toHaveFocus();
 
     expect(tabWeb).toHaveAttribute("tabindex", "0");

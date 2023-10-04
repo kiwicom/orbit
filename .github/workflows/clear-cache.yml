@@ -1,0 +1,34 @@
+name: Clear cache
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number"
+        required: true
+      list_cache:
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  clear-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List cache
+        if: ${{ github.event.inputs.list_cache == 'true' }}
+        run: |
+          gh extension install actions/gh-actions-cache
+          echo "List of cached items:"
+          gh actions-cache list -R kiwicom/orbit -B refs/pull/${{ github.event.inputs.pr_number }}/merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cleanup
+        run: |
+          gh extension install actions/gh-actions-cache
+          echo "Deleting cached items:"
+          gh actions-cache delete refs/pull/${{ github.event.inputs.pr_number }}/merge
+          echo "Done"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

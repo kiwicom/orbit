@@ -182,7 +182,7 @@ const content = [
 
 export const Segment = () => {
   return (
-    <Stack spacing="large">
+    <div className="space-y-xl">
       <Itinerary>
         <ItinerarySegment>
           <ItinerarySegmentStop
@@ -240,7 +240,7 @@ export const Segment = () => {
           />
         </ItinerarySegment>
       </Itinerary>
-    </Stack>
+    </div>
   );
 };
 

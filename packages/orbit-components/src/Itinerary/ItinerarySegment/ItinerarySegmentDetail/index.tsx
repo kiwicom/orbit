@@ -21,7 +21,9 @@ import { usePart } from "../context";
 import { useWidth } from "../../context";
 import AirplaneDown from "../../../icons/AirplaneDown";
 import type { Props } from "./types";
+import type { SpaceAfterSizes } from "../../../common/types";
 import ItineraryIcon from "../ItineraryIcon";
+import getSpacingToken from "../../../common/getSpacingToken";
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -79,7 +81,7 @@ const StyledExpandableContent = styled.div<{ $offset: number }>`
     padding: 0 ${theme.orbit.spaceSmall};
     position: relative;
     z-index: 1;
-    margin-${left}: ${parseInt(theme.orbit.spaceXSmall, 10) + $offset}px;
+    ${left}: ${parseInt(theme.orbit.spaceXSmall, 10) + $offset}px;
   `}
 `;
 
@@ -127,6 +129,20 @@ const StyledIcon = styled.div<{ isFirst?: boolean; isLast?: boolean }>`
     }
   `}
 `;
+
+const StyledItemWrapper = styled.div<{ $offset: number; spaceAfter: SpaceAfterSizes }>`
+  ${({ theme, $offset }) => css`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% - ${parseInt(theme.orbit.spaceXSmall, 10) + $offset}px);
+    margin-bottom: ${getSpacingToken};
+  `};
+`;
+
+StyledItemWrapper.defaultProps = {
+  theme: themeDefault,
+};
 
 StyledIcon.defaultProps = {
   theme: themeDefault,
@@ -199,9 +215,8 @@ const ItinerarySegmentDetail = ({
                         {title}
                       </TemporaryText>
                     </StyledHeadingOffset>
-                    <Stack
-                      direction="column"
-                      spacing="none"
+                    <StyledItemWrapper
+                      $offset={calculatedWidth}
                       spaceAfter={idx === content.length - 1 ? "none" : "medium"}
                     >
                       {items.map(({ icon: itemIcon, name, value }, id) => {
@@ -222,7 +237,7 @@ const ItinerarySegmentDetail = ({
                           </Stack>
                         );
                       })}
-                    </Stack>
+                    </StyledItemWrapper>
                   </React.Fragment>
                 );
               })}

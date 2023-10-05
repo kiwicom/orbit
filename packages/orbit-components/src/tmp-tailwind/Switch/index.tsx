@@ -14,7 +14,7 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
         <div
           className={cx(
             "duration-fast relative flex h-[20px] w-[40px] items-center justify-between rounded-[100px] transition-colors",
-            disabled ? "opacity-50" : "cursor-pointer",
+            disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer",
             checked ? "bg-blue-normal" : "bg-cloud-dark",
           )}
         >
@@ -38,7 +38,7 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
             className={cx(
               "rounded-circle bg-white-normal duration-fast shadow-switch absolute box-border inline-flex h-[24px] w-[24px] items-center justify-center",
               "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
-              "[&_svg]:h-[12px] [&_svg]:w-[12px]",
+              "[&_svg]:h-icon-small [&_svg]:w-icon-small",
               !disabled && "active:shadow-action-active",
               !checked && (icon ? "[&_svg]:text-ink-normal" : "[&_svg]:text-cloud-dark"),
               checked
@@ -46,7 +46,7 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
                 : "left-[-3px]",
             )}
           >
-            {icon || <Circle />}
+            {icon || <Circle size="small" />}
           </div>
         </div>
       </label>

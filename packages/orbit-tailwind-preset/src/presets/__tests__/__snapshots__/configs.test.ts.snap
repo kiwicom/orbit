@@ -897,7 +897,9 @@ exports[`orbitPreset should match snapshot 1`] = `
       "form-element": "#BAC7D5",
       "form-element-active": "#94A8BE",
       "form-element-border-color": "#BAC7D5",
+      "form-element-disabled": "transparent",
       "form-element-error": "#D21C1C",
+      "form-element-error-hover": "#B91919",
       "form-element-focus": "#0172CB",
       "form-element-hover": "#A6B6C8",
       "green": {
@@ -955,9 +957,6 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "radio-active": "#0172CB",
-      "radio-disabled": "#E8EDF1",
-      "radio-hover": "#C7E4FA",
       "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
@@ -1510,7 +1509,9 @@ exports[`orbitPreset should match snapshot 1`] = `
       "form-element": "#BAC7D5",
       "form-element-active": "#94A8BE",
       "form-element-border-color": "#BAC7D5",
+      "form-element-disabled": "transparent",
       "form-element-error": "#D21C1C",
+      "form-element-error-hover": "#B91919",
       "form-element-focus": "#0172CB",
       "form-element-hover": "#A6B6C8",
       "green": {
@@ -1568,9 +1569,6 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "#008472",
         "normal-hover": "#009580",
       },
-      "radio-active": "#0172CB",
-      "radio-disabled": "#E8EDF1",
-      "radio-hover": "#C7E4FA",
       "red": {
         "dark": "#970C0C",
         "dark-active": "#6D0909",
@@ -1806,7 +1804,6 @@ exports[`orbitPreset should match snapshot 1`] = `
       "button-small": "13px",
       "extra-large": "18px",
       "form-element-normal": "15px",
-      "form-element-small": "15px",
       "heading-display": "40px",
       "heading-display-subtitle": "22px",
       "heading-title1": "28px",
@@ -2254,7 +2251,6 @@ exports[`orbitPreset should match snapshot 1`] = `
       "6": "6",
     },
     "lineHeight": {
-      "checkbox": "20px",
       "extra-large": "24px",
       "heading": "1.2",
       "heading-display": "44px",

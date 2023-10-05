@@ -86,7 +86,6 @@ const cfg = (options?: Options): Config => {
           "button-normal": defaultTokens.buttonNormalFontSize,
           "button-small": defaultTokens.buttonSmallFontSize,
           "form-element-normal": defaultTokens.formElementNormalFontSize,
-          "form-element-small": defaultTokens.formElementSmallFontSize,
         },
         fontWeight: {
           "heading-display": defaultTokens.headingDisplayFontWeight,
@@ -111,7 +110,6 @@ const cfg = (options?: Options): Config => {
           "heading-title4": defaultTokens.headingTitle4LineHeight,
           "heading-title5": defaultTokens.headingTitle5LineHeight,
           "heading-title6": defaultTokens.headingTitle6LineHeight,
-          checkbox: defaultTokens.heightCheckbox,
         },
         height: {
           "icon-small": defaultTokens.iconSmallSize,
@@ -191,15 +189,14 @@ const cfg = (options?: Options): Config => {
 
             return acc;
           }, {}),
-          "radio-disabled": defaultTokens.paletteCloudNormal,
           white: defaultTokens.paletteWhite,
-          "radio-hover": defaultTokens.paletteBlueLightActive,
-          "radio-active": defaultTokens.paletteBlueNormal,
           "form-element": defaultTokens.formElementBorderColor,
+          "form-element-disabled": defaultTokens.formElementBorderColorDisabled,
           "form-element-hover": defaultTokens.formElementBorderColorHover,
           "form-element-active": defaultTokens.formElementBorderColorActive,
           "form-element-focus": defaultTokens.formElementBorderColorFocus,
           "form-element-error": defaultTokens.formElementBorderColorError,
+          "form-element-error-hover": defaultTokens.formElementBorderColorErrorHover,
         },
         backgroundImage: {
           "button-bundle-basic-background": defaultTokens.buttonBundleBasicBackground,

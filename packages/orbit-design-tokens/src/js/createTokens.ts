@@ -542,6 +542,7 @@ export interface Tokens {
   formElementDisabledBackground: string;
   formElementDisabledForeground: string;
   formElementDisabledOpacity: string;
+  formElementBorderColorDisabled: string;
   formElementBorderColor: string;
   formElementBorderColorHover: string;
   formElementBorderColorActive: string;
@@ -554,8 +555,6 @@ export interface Tokens {
   formElementBoxShadowErrorHover: string;
   formElementFocusBoxShadow: string;
   formElementErrorFocusBoxShadow: string;
-  formElementSmallFontSize: string;
-  formElementSmallPadding: string;
   formElementNormalFontSize: string;
   formElementNormalPadding: string;
   formElementForeground: string;
@@ -563,6 +562,7 @@ export interface Tokens {
   formElementLabelForeground: string;
   formElementLabelFilledForeground: string;
   formElementPrefixForeground: string;
+  formElementSmallPadding: string;
   marginTopFormFeedback: string;
   opacityCheckboxDisabled: string;
   opacityRadioButtonDisabled: string;
@@ -1417,6 +1417,7 @@ const createTokens: CreateTokens = foundation => ({
   formElementDisabledBackground: foundation.palette.cloud.normal,
   formElementDisabledForeground: foundation.palette.ink.normal,
   formElementDisabledOpacity: "0.5",
+  formElementBorderColorDisabled: "transparent",
   formElementBorderColor: foundation.palette.cloud.dark,
   formElementBorderColorHover: foundation.palette.cloud.darkHover,
   formElementBorderColorActive: foundation.palette.cloud.darkActive,
@@ -1475,8 +1476,6 @@ const createTokens: CreateTokens = foundation => ({
       inset: true,
     },
   ]),
-  formElementSmallFontSize: foundation.fontSize.normal,
-  formElementSmallPadding: `0 ${foundation.space.small}`,
   formElementNormalFontSize: foundation.fontSize.normal,
   formElementNormalPadding: `0 ${foundation.space.small}`,
   formElementForeground: foundation.palette.ink.light,
@@ -1484,6 +1483,7 @@ const createTokens: CreateTokens = foundation => ({
   formElementLabelForeground: foundation.palette.ink.dark,
   formElementLabelFilledForeground: foundation.palette.ink.normal,
   formElementPrefixForeground: foundation.palette.ink.normal,
+  formElementSmallPadding: `0 ${foundation.space.small}`,
   marginTopFormFeedback: foundation.space.XXXSmall,
   opacityCheckboxDisabled: "0.5",
   opacityRadioButtonDisabled: "0.5",

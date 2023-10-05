@@ -2112,6 +2112,10 @@
     <value>50</value>
   </token>
   <token>
+    <name>formElementBorderColorDisabled</name>
+    <value>transparent</value>
+  </token>
+  <token>
     <name>formElementBorderColor</name>
     <value>#BAC7D5</value>
   </token>
@@ -2160,14 +2164,6 @@
     <value>#D21C1C</value>
   </token>
   <token>
-    <name>formElementSmallFontSize</name>
-    <value>15</value>
-  </token>
-  <token>
-    <name>formElementSmallPadding</name>
-    <value>0 12</value>
-  </token>
-  <token>
     <name>formElementNormalFontSize</name>
     <value>15</value>
   </token>
@@ -2194,6 +2190,10 @@
   <token>
     <name>formElementPrefixForeground</name>
     <value>#4F5E71</value>
+  </token>
+  <token>
+    <name>formElementSmallPadding</name>
+    <value>0 12</value>
   </token>
   <token>
     <name>marginTopFormFeedback</name>

@@ -10601,7 +10601,7 @@
   "fontSizeInputSmall": {
     "type": "size",
     "deprecated": true,
-    "replacement": "formElementSmallFontSize",
+    "replacement": "formElementNormalFontSize",
     "schema": {
       "namespace": "component",
       "object": "font-size",
@@ -12207,6 +12207,28 @@
       "value": "0.5"
     }
   },
+  "formElementBorderColorDisabled": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "form-element",
+      "variant": "border-color-disabled"
+    },
+    "javascript": {
+      "name": "formElementBorderColorDisabled",
+      "value": "transparent"
+    },
+    "foundation": {
+      "name": "formElementBorderColorDisabled",
+      "value": "none"
+    },
+    "scss": {
+      "name": "formElementBorderColorDisabled",
+      "value": "transparent"
+    }
+  },
   "formElementBorderColor": {
     "type": "color",
     "deprecated": false,
@@ -12476,53 +12498,6 @@
       "value": "inset 0 0 0 1px rgba(210, 28, 28, 1), inset 0 0 0 3px rgba(210, 28, 28, 0.15)"
     }
   },
-  "formElementSmallFontSize": {
-    "type": "size",
-    "deprecated": false,
-    "replacement": null,
-    "schema": {
-      "namespace": "component",
-      "object": "form-element",
-      "variant": "small",
-      "subVariant": "font-size"
-    },
-    "javascript": {
-      "name": "formElementSmallFontSize",
-      "value": "15px"
-    },
-    "foundation": {
-      "name": "formElementSmallFontSize",
-      "value": "foundation.fontSize.normal"
-    },
-    "scss": {
-      "name": "formElementSmallFontSize",
-      "value": "15px"
-    }
-  },
-  "formElementSmallPadding": {
-    "type": "size",
-    "category": "spacing",
-    "deprecated": false,
-    "replacement": null,
-    "schema": {
-      "namespace": "component",
-      "object": "form-element",
-      "variant": "small",
-      "subVariant": "padding"
-    },
-    "javascript": {
-      "name": "formElementSmallPadding",
-      "value": "0 12px"
-    },
-    "foundation": {
-      "name": "formElementSmallPadding",
-      "value": "0 12px"
-    },
-    "scss": {
-      "name": "formElementSmallPadding",
-      "value": "0 12px"
-    }
-  },
   "formElementNormalFontSize": {
     "type": "size",
     "deprecated": false,
@@ -12683,6 +12658,30 @@
     "scss": {
       "name": "formElementPrefixForeground",
       "value": "rgb(79, 94, 113)"
+    }
+  },
+  "formElementSmallPadding": {
+    "type": "size",
+    "category": "spacing",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "form-element",
+      "variant": "small",
+      "subVariant": "padding"
+    },
+    "javascript": {
+      "name": "formElementSmallPadding",
+      "value": "0 12px"
+    },
+    "foundation": {
+      "name": "formElementSmallPadding",
+      "value": "0 12px"
+    },
+    "scss": {
+      "name": "formElementSmallPadding",
+      "value": "0 12px"
     }
   },
   "marginTopFormFeedback": {

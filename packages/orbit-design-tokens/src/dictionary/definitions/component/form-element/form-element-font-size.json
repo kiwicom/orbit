@@ -1,12 +1,6 @@
 {
   "component": {
     "form-element": {
-      "small": {
-        "font-size": {
-          "type": "size",
-          "value": "{foundation.font-size.small}"
-        }
-      },
       "normal": {
         "font-size": {
           "type": "size",
@@ -20,7 +14,7 @@
           "type": "size",
           "value": "{foundation.font-size.normal}",
           "deprecated": true,
-          "deprecated-replace": "{component.form-element.small.font-size}",
+          "deprecated-replace": "{component.form-element.normal.font-size}",
           "deprecated-version": "6.0.0"
         },
         "normal": {

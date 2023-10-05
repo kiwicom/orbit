@@ -1,6 +1,10 @@
 {
   "component": {
     "form-element": {
+      "border-color-disabled": {
+        "type": "color",
+        "value": "transparent"
+      },
       "border-color": {
         "type": "color",
         "value": "{foundation.palette.cloud.dark}"

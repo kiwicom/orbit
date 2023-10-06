@@ -159,6 +159,8 @@ export const Playground = () => {
   const width = text("width", "");
   const label = text("Label", "Label");
   const inlineLabel = boolean("inlineLabel", false);
+  const error = text("Error", "");
+  const help = text("Help", "");
 
   return (
     <Select
@@ -179,6 +181,8 @@ export const Playground = () => {
       customValueText={customValueText}
       spaceAfter={spaceAfter}
       dataAttrs={dataAttrs}
+      error={error}
+      help={help}
     />
   );
 };

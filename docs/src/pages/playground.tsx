@@ -4,6 +4,7 @@ import { LiveEditor } from "react-live";
 import styled from "styled-components";
 import { Button, Stack, Tooltip, Popover, Radio } from "@kiwicom/orbit-components";
 import Search from "@kiwicom/orbit-components/lib/icons/Search";
+import Reload from "@kiwicom/orbit-components/lib/icons/Reload";
 import Copy from "@kiwicom/orbit-components/lib/icons/Copy";
 import GridIcon from "@kiwicom/orbit-components/lib/icons/Grid";
 import Check from "@kiwicom/orbit-components/lib/icons/Check";
@@ -76,7 +77,10 @@ const formatWithPrettier = (code: string) =>
   prettier.format(code, { parser: "babel", plugins: [parserBabel] });
 
 const Playground = ({ location }: Props) => {
-  const { updateLocalStorage, setCode, code } = useSandbox("playground", DEFAULT_CODE);
+  const { updateLocalStorage, restoreLocalStorage, setCode, code } = useSandbox(
+    "playground",
+    DEFAULT_CODE,
+  );
 
   const [layout, setLayout] = React.useState<Layout>("left");
   const [isSearchOpen, setSearchOpen] = React.useState(false);
@@ -131,6 +135,9 @@ const Playground = ({ location }: Props) => {
         </Tooltip>
         <Tooltip content="Search from examples">
           <Button onClick={() => setSearchOpen(true)} iconLeft={<Search />} circled />
+        </Tooltip>
+        <Tooltip content="Restore to default">
+          <Button onClick={() => restoreLocalStorage()} iconLeft={<Reload />} circled />
         </Tooltip>
         <Popover
           content={

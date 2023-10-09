@@ -13,6 +13,9 @@ import BadgeList, { BadgeListItem } from ".";
 
 export default {
   title: "BadgeList",
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
 };
 
 export const Default = () => {

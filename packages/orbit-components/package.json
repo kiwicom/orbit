@@ -30,7 +30,8 @@
     "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",
     "deploy:surge": "yarn surge .out/",
     "deploy:updateURL": "ts-node --esm config/deploymentUtils.mts updateLiveURL",
-    "docs-gen": "monstra docs"
+    "docs-gen": "monstra docs",
+    "chromatic": "npx chromatic --project-token=chpt_3eada1d8ef4d0b8 -b build:storybook"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",

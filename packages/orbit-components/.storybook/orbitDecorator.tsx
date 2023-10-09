@@ -38,7 +38,7 @@ const OrbitDecorator = (storyFn, context) => {
         </Text>
         {children}
         {process.env.NODE_ENV !== "loki" ? (
-          <div style={{ marginTop: 20 }}>
+          <div data-chromatic="ignore" style={{ marginTop: 20 }}>
             <Source code={jsxToString(children, options)} language="jsx" format={false} />
           </div>
         ) : null}

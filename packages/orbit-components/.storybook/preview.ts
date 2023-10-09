@@ -34,6 +34,9 @@ export const parameters = {
 
 const preview: Preview = {
   decorators: [orbitDecorator],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 export default preview;

@@ -11,42 +11,8 @@ describe("Hide", () => {
       </Hide>,
     );
     expect(container.firstChild).toMatchInlineSnapshot(`
-      .c0 {
-        display: none;
-      }
-
-      @media (min-width:414px) {
-        .c0 {
-          display: inline-block;
-        }
-      }
-
-      @media (min-width:576px) {
-        .c0 {
-          display: none;
-        }
-      }
-
-      @media (min-width:768px) {
-        .c0 {
-          display: inline-block;
-        }
-      }
-
-      @media (min-width:992px) {
-        .c0 {
-          display: inline-block;
-        }
-      }
-
-      @media (min-width:1200px) {
-        .c0 {
-          display: none;
-        }
-      }
-
       <div
-        class="c0"
+        class="inline-block sm-mm:hidden lm-tb:hidden ld:hidden"
       >
         content
       </div>

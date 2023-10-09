@@ -2937,11 +2937,30 @@ exports[`orbitPreset should match snapshot 1`] = `
     },
     "screens": {
       "de": "992px",
+      "de-ld": {
+        "max": "1199px",
+        "min": "992px",
+      },
       "ld": "1200px",
       "lm": "576px",
+      "lm-tb": {
+        "max": "767px",
+        "min": "576px",
+      },
       "mm": "414px",
+      "mm-lm": {
+        "max": "575px",
+        "min": "414px",
+      },
       "sm": "320px",
+      "sm-mm": {
+        "max": "413px",
+      },
       "tb": "768px",
+      "tb-de": {
+        "max": "991px",
+        "min": "768px",
+      },
     },
     "scrollMargin": {
       "0": "0px",

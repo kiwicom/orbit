@@ -40,7 +40,6 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     customValueText,
     insideInputGroup,
     dataAttrs,
-    readOnly,
   } = props;
   const filled = !(value == null || value === "");
 
@@ -169,7 +168,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             )}
             data-test={dataTest}
             data-state={getFieldDataState(!!error)}
-            disabled={disabled || readOnly}
+            disabled={disabled}
             value={value == null ? "" : value}
             name={name}
             onFocus={handleFocus}

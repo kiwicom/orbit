@@ -44,7 +44,6 @@ describe("Select", () => {
         dataTest={dataTest}
         onFocus={onFocus}
         onBlur={onBlur}
-        readOnly
         spaceAfter={spaceAfter}
         dataAttrs={dataAttrs}
       />,
@@ -71,26 +70,19 @@ describe("Select", () => {
   });
 
   it("should have custom value text", () => {
-    render(<Select customValueText="blin" readOnly options={[{ value: "1", label: "One" }]} />);
+    render(<Select customValueText="blin" options={[{ value: "1", label: "One" }]} />);
     expect(screen.getByText("blin")).toBeInTheDocument();
   });
 
   it("should have passed width", () => {
     const width = "100px";
-    render(
-      <Select width={width} label="label" readOnly options={[{ value: "1", label: "One" }]} />,
-    );
+    render(<Select width={width} label="label" options={[{ value: "1", label: "One" }]} />);
     expect(document.querySelector("label")).toHaveStyle({ width });
   });
 
   it("should have error message", async () => {
     render(
-      <Select
-        dataTest="error-select"
-        error="error"
-        readOnly
-        options={[{ value: "1", label: "One" }]}
-      />,
+      <Select dataTest="error-select" error="error" options={[{ value: "1", label: "One" }]} />,
     );
     const select = screen.getByTestId("error-select");
 
@@ -102,14 +94,7 @@ describe("Select", () => {
   });
 
   it("should have help message", async () => {
-    render(
-      <Select
-        dataTest="help-select"
-        help="help"
-        readOnly
-        options={[{ value: "1", label: "One" }]}
-      />,
-    );
+    render(<Select dataTest="help-select" help="help" options={[{ value: "1", label: "One" }]} />);
     const select = screen.getByTestId("help-select");
 
     await user.tab();
@@ -119,7 +104,7 @@ describe("Select", () => {
   });
 
   it("should be disabled", () => {
-    render(<Select options={[{ value: "1", label: "One" }]} readOnly disabled />);
+    render(<Select options={[{ value: "1", label: "One" }]} disabled />);
     expect(screen.getByRole("combobox")).toBeDisabled();
   });
 });

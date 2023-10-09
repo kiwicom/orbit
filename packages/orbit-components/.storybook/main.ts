@@ -8,6 +8,7 @@ const config: StorybookConfig = {
   framework: "@storybook/react-webpack5",
   addons: [
     "@storybook/addon-knobs",
+    "storybook-addon-pseudo-states",
     {
       name: "@storybook/addon-essentials",
       options: {

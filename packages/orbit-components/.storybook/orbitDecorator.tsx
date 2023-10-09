@@ -30,15 +30,17 @@ const OrbitDecorator = (storyFn, context) => {
   return (
     <OrbitProvider useId={React.useId} theme={{ ...defaultTheme }}>
       <div style={{ padding: "20px" }}>
-        <Heading spaceAfter="medium" inverted={inverted}>
-          {context.kind}
-        </Heading>
-        <Text spaceAfter="largest" type={inverted ? "white" : "primary"}>
-          {context.parameters?.info}
-        </Text>
+        <div data-chromatic="ignore">
+          <Heading spaceAfter="medium" inverted={inverted}>
+            {context.kind}
+          </Heading>
+          <Text spaceAfter="largest" type={inverted ? "white" : "primary"}>
+            {context.parameters?.info}
+          </Text>
+        </div>
         {children}
         {process.env.NODE_ENV !== "loki" ? (
-          <div style={{ marginTop: 20 }}>
+          <div data-chromatic="ignore" style={{ marginTop: 20 }}>
             <Source code={jsxToString(children, options)} language="jsx" format={false} />
           </div>
         ) : null}

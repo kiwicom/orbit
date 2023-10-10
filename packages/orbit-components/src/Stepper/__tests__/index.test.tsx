@@ -2,7 +2,6 @@ import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
 import { render, screen, fireEvent } from "../../test-utils";
-import defaultTheme from "../../defaultTheme";
 import StepperStateless from "../StepperStateless";
 
 describe("Stepper", () => {
@@ -55,14 +54,6 @@ describe("Stepper", () => {
     expect(onFocus).toHaveBeenCalled();
     await user.tab();
     expect(onBlur).toHaveBeenCalled();
-  });
-
-  it("should have active state", () => {
-    render(<StepperStateless value="kek" active />);
-
-    expect(document.querySelector("svg")).toHaveStyle({
-      background: defaultTheme.orbit.paletteBlueNormal,
-    });
   });
 
   it("should have maxWidth", () => {

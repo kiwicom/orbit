@@ -1,118 +1,33 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import mq from "../../utils/mediaQuery";
 import Minus from "../../icons/Minus";
 import Plus from "../../icons/Plus";
-import defaultTheme from "../../defaultTheme";
-import Button from "../../primitives/ButtonPrimitive";
+import ButtonPrimitive from "../../primitives/ButtonPrimitive";
 import useTheme from "../../hooks/useTheme";
-import { defaultFocus } from "../../utils/common";
 import type { Props } from "./types";
 
-const getMaxWidth = ({ maxWidth }) => {
+const getMaxWidth = ({ maxWidth }: { maxWidth: string | number }) => {
   if (typeof maxWidth === "string") return maxWidth;
-  return `${parseInt(maxWidth, 10)}px`;
+  return `${parseInt(maxWidth.toString(), 10)}px`;
 };
 
-const StyledStepper = styled.div`
-  display: flex;
-  width: 100%;
-  max-width: ${getMaxWidth};
-  flex: 1 1 auto;
-`;
-
-const iconMixin = css<{ isActive?: boolean; isDisabled?: boolean }>`
-  ${({ theme, isActive, isDisabled }) => css`
-    padding: 2px;
-    height: 20px;
-    width: 20px;
-    background: ${isActive ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudNormal};
-    border-radius: ${theme.orbit.borderRadiusCircle};
-    ${mq.desktop(css`
-      height: 16px;
-      width: 16px;
-    `)};
-
-    ${!isDisabled &&
-    css`
-      &:hover {
-        background: ${isActive
-          ? theme.orbit.paletteBlueNormalHover
-          : theme.orbit.paletteCloudNormalHover};
-      }
-
-      &:focus,
-      &:active {
-        box-shadow: inset 0 0 0 2px
-          ${isActive ? theme.orbit.paletteBlueLightActive : theme.orbit.paletteCloudNormalActive};
-      }
-    `};
-  `}
-`;
-
-const StyledMinusIcon = styled(Minus)`
-  ${iconMixin};
-`;
-
-StyledMinusIcon.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledPlusIcon = styled(Plus)`
-  ${iconMixin};
-`;
-
-StyledPlusIcon.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledStepperInput = styled.input`
-  ${({ theme, disabled }) => css`
-    width: 100%;
-    height: 44px;
-    padding: 0;
-    border: 0;
-    font-size: ${theme.orbit.fontSizeTextLarge};
-    font-weight: ${theme.orbit.fontWeightMedium};
-    color: ${theme.orbit.paletteInkDark};
-    text-align: center;
-    min-width: 0;
-    opacity: ${disabled ? "0.5" : "1"};
-    background-color: ${disabled && "transparent"};
-
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    &:focus {
-      outline: none;
-    }
-  `}
-`;
-
-StyledStepperInput.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledStepperButton = styled(Button)`
-  &:focus {
-    outline: none;
-
-    ${StyledMinusIcon},
-    ${StyledPlusIcon} {
-      ${defaultFocus}
-    }
-  }
-`;
-
-StyledStepperButton.defaultProps = {
-  theme: defaultTheme,
-};
+const stepperButtonMixin = ({ disabled, active }: { disabled: boolean; active?: boolean }) =>
+  cx(
+    "[&_svg]:p-xxxs",
+    "de:[&_svg]:h-icon-small de:[&_svg]:w-icon-small [&_svg]:h-icon-medium [&_svg]:w-icon-medium",
+    "[&_svg]:rounded-circle",
+    "focus:outline-0",
+    "[&_svg]:focus:outline-blue-normal [&_svg]:focus:outline [&_svg]:focus:outline-2",
+    !disabled && [
+      active
+        ? "[&_svg]:bg-blue-normal hover:[&_svg]:bg-blue-normal-hover [&_svg]:active:focus:shadow-[inset_0_0_0_2px_var(--palette-blue-light-active)]"
+        : "[&_svg]:bg-cloud-normal hover:[&_svg]:bg-cloud-normal-hover [&_svg]:active:focus:shadow-[inset_0_0_0_2px_var(--palette-cloud-normal-active)]",
+    ],
+    disabled && "[&_svg]:bg-cloud-normal",
+  );
 
 const StepperStateless = ({
   maxWidth = "120px",
@@ -136,11 +51,6 @@ const StepperStateless = ({
 }: Props) => {
   const theme = useTheme();
 
-  const commonButtonStyles = {
-    background: "transparent",
-    width: "44px",
-  };
-
   const iconStyles = {
     foreground: active ? theme.orbit.paletteWhite : theme.orbit.paletteInkDark,
   };
@@ -151,10 +61,16 @@ const StepperStateless = ({
     disabled || disabledIncrement || (typeof value === "number" && value >= +maxValue);
 
   return (
-    <StyledStepper data-test={dataTest} id={id} maxWidth={maxWidth}>
-      <StyledStepperButton
+    <div
+      data-test={dataTest}
+      id={id}
+      className="flex w-full flex-auto"
+      style={{ maxWidth: getMaxWidth({ maxWidth }) }}
+    >
+      <ButtonPrimitive
+        className={stepperButtonMixin({ disabled: isMinusDisabled, active })}
         disabled={isMinusDisabled}
-        iconLeft={<StyledMinusIcon size="small" isActive={active} isDisabled={isMinusDisabled} />}
+        iconLeft={<Minus size="small" />}
         onClick={ev => {
           if (onDecrement && !disabled) {
             onDecrement(ev);
@@ -162,9 +78,17 @@ const StepperStateless = ({
         }}
         title={titleDecrement}
         icons={iconStyles}
-        {...commonButtonStyles}
       />
-      <StyledStepperInput
+      <input
+        className={cx(
+          "h-form-box-normal w-full min-w-0 border-0",
+          "p-0 text-center",
+          "text-large text-form-element-filled-foreground font-medium",
+          "[&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",
+          "[&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:m-0",
+          disabled ? "bg-transparent opacity-50" : "opacity-100",
+          "focus:outline-0",
+        )}
         name={name}
         disabled={disabled}
         type="text"
@@ -180,9 +104,10 @@ const StepperStateless = ({
         onFocus={onFocus}
         readOnly
       />
-      <StyledStepperButton
+      <ButtonPrimitive
+        className={stepperButtonMixin({ disabled: isPlusDisabled, active })}
         disabled={isPlusDisabled}
-        iconLeft={<StyledPlusIcon size="small" isActive={active} isDisabled={isPlusDisabled} />}
+        iconLeft={<Plus size="small" />}
         onClick={ev => {
           if (onIncrement && !disabled) {
             onIncrement(ev);
@@ -190,9 +115,8 @@ const StepperStateless = ({
         }}
         title={titleIncrement}
         icons={iconStyles}
-        {...commonButtonStyles}
       />
-    </StyledStepper>
+    </div>
   );
 };
 

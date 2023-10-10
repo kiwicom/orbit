@@ -1,95 +1,11 @@
 "use client";
 
 import * as React from "react";
-import type { FlattenSimpleInterpolation } from "styled-components";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import { left, rtlSpacing } from "../utils/rtl";
-import mq from "../utils/mediaQuery";
-import defaultTheme from "../defaultTheme";
 import { SPACINGS } from "../utils/layout/consts";
-import getSpacing from "../Stack/helpers/getSpacing";
-import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
 import type { Props } from "./types";
-
-const StyledLinkList = styled.ul<{
-  $indent?: Props["indent"];
-  $direction: Props["direction"];
-  $legacy?: Props["legacy"];
-  $spacing: Props["spacing"];
-}>`
-  ${({ $indent, $direction, theme, $legacy, $spacing }) => css`
-    display: flex;
-    flex-direction: ${$direction};
-    width: 100%;
-    margin: 0;
-    gap: ${!$legacy && $spacing && getSpacing(theme)[$spacing]};
-    padding: 0;
-    padding-${left}: ${$indent && theme.orbit.spaceXXSmall};
-    list-style: none;
-    font-size: ${theme.orbit.fontSizeTextNormal};
-  `};
-`;
-
-StyledLinkList.defaultProps = {
-  theme: defaultTheme,
-};
-
-const resolveSpacings = ({
-  $legacy,
-  $direction,
-  theme,
-  $spacing,
-}): FlattenSimpleInterpolation | null => {
-  const margin =
-    $spacing &&
-    $direction &&
-    String(getDirectionSpacingTemplate($direction)).replace(
-      "__spacing__",
-      getSpacing(theme)[$spacing],
-    );
-
-  if (!$legacy) return null;
-
-  return css`
-    margin: ${margin && rtlSpacing(margin)};
-    &:last-child {
-      margin: 0;
-    }
-  `;
-};
-
-const StyledNavigationLinkListChild = styled.li<{
-  $indent?: Props["indent"];
-  $direction: Props["direction"];
-  $legacy?: Props["legacy"];
-  $spacing: Props["spacing"];
-}>`
-  ${({ $direction, $spacing, $legacy, theme }) => css`
-    .orbit-text-link {
-      text-decoration: none;
-    }
-
-    ${resolveSpacings({ $direction, $spacing, $legacy, theme })};
-
-    ${$direction === "column" &&
-    css`
-      width: 100%;
-      .orbit-text-link {
-        width: 100%;
-        ${mq.tablet(
-          css`
-            width: auto;
-          `,
-        )};
-      }
-    `};
-  `}
-`;
-
-StyledNavigationLinkListChild.defaultProps = {
-  theme: defaultTheme,
-};
+import { getDirectionClasses, getSpacingClasses } from "../common/tailwind";
 
 const LinkList = ({
   direction = "column",
@@ -99,24 +15,34 @@ const LinkList = ({
   children,
   dataTest,
 }: Props) => (
-  <StyledLinkList
-    $indent={indent}
-    $direction={direction}
+  <ul
     data-test={dataTest}
-    $legacy={legacy}
-    $spacing={spacing}
+    className={cx(
+      "flex",
+      "w-full",
+      "m-0",
+      "list-none",
+      "text-normal",
+      indent && "ps-xxs p-0",
+      direction && getDirectionClasses(direction),
+      spacing && getSpacingClasses(spacing, undefined, direction, legacy),
+    )}
   >
     {React.Children.map(children, item => {
-      if (React.isValidElement(item)) {
-        return (
-          <StyledNavigationLinkListChild $direction={direction} $spacing={spacing} $legacy={legacy}>
-            {item}
-          </StyledNavigationLinkListChild>
-        );
-      }
-      return null;
+      if (!React.isValidElement(item)) return null;
+      return (
+        <li
+          className={cx(
+            "[&_.orbit-text-link]:no-underline",
+            direction === "column" &&
+              "tb:[&_.orbit-text-link]:w-auto w-full [&_.orbit-text-link]:w-full",
+          )}
+        >
+          {item}
+        </li>
+      );
     })}
-  </StyledLinkList>
+  </ul>
 );
 
 export default LinkList;

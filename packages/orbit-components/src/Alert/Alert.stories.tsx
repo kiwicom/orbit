@@ -271,3 +271,56 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const AlertVisualTest = () => {
+  return (
+    <div className="space-y-xs">
+      <div className="space-x-xs flex">
+        {Object.values(TYPE_OPTIONS).map(type => (
+          <div className="space-y-xs">
+            <Alert type={type} title="Title">
+              <Text type="primary">No icon and some reasonably long text</Text>
+            </Alert>
+
+            <Alert type={type} icon title="Title">
+              <Text type="primary">With icon and some reasonably long text</Text>
+            </Alert>
+          </div>
+        ))}
+      </div>
+
+      <div className="space-x-xs flex">
+        {Object.values(BUTTON_TYPE_OPTIONS).map(type => (
+          <AlertButton type={type}>Button</AlertButton>
+        ))}
+      </div>
+
+      <div className="space-x-xs flex">
+        <Alert type="info" title="Title" closable onClose={action("Close")}>
+          <Text type="primary">Closable and some reasonably long text</Text>
+        </Alert>
+
+        <Alert type="info" icon={<Icons.Airplane />} title="Title">
+          <Text type="primary">Custom icon and some reasonably long text</Text>
+        </Alert>
+
+        <Alert
+          type="info"
+          inlineActions={
+            <AlertButton href="#" type="info">
+              Inline action
+            </AlertButton>
+          }
+          title="Title and no children"
+        />
+      </div>
+    </div>
+  );
+};
+
+AlertVisualTest.story = {
+  name: "Alert visual test",
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

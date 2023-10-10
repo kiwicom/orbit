@@ -36,14 +36,15 @@ Playground.story = {
   },
 };
 
-export const ListOfAllAirportIllustrations = () => {
+export const AirportIllustrationVisualTest = () => {
   return <IllustrationPrimitiveList nameOfComponent="AirportIllustration" images={NAMES} />;
 };
 
-ListOfAllAirportIllustrations.story = {
+AirportIllustrationVisualTest.story = {
   name: "List of all AirportIllustrations",
 
   parameters: {
     info: "Explore our new set of Airportillustrations for Kiwi.com.",
+    chromatic: { disableSnapshot: false },
   },
 };

@@ -62,3 +62,19 @@ Playground.story = {
     info: "Here you can try BaggageStepper component with additional functionality.",
   },
 };
+
+export const VisualTest = () => {
+  return (
+    <BaggageStepper
+      titleIncrement="Add stuff"
+      titleDecrement="Remove stuff"
+      onChange={action("change")}
+    />
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

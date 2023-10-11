@@ -260,3 +260,22 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const BadgeVisualTest = () => {
+  return (
+    <div className="space-x-xs">
+      {Object.values(TYPE_OPTIONS).map(type => (
+        <Badge type={type} icon={<Icons.Airplane />}>
+          Badge
+        </Badge>
+      ))}
+    </div>
+  );
+};
+
+BadgeVisualTest.story = {
+  name: "Badge visual test",
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

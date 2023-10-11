@@ -40,3 +40,28 @@ Default.story = {
     info: "This is the default configuration of this component.",
   },
 };
+
+export const VisualTest = () => {
+  return (
+    <div className="space-x-xs flex">
+      <ButtonMobileStore
+        onClick={action("clicked")}
+        href="#"
+        type="appStore"
+        alt="Download on the App Store"
+      />
+      <ButtonMobileStore
+        onClick={action("clicked")}
+        href="#"
+        type="googlePlay"
+        alt="Download on the Google Play"
+      />
+    </div>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

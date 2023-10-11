@@ -340,3 +340,112 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const VisualTest = () => {
+  return (
+    <div className="space-y-sm">
+      <div className="space-x-xs flex">
+        {Object.values(TYPE_OPTIONS).map(type => (
+          <Button
+            iconLeft={<Icons.Airplane />}
+            iconRight={<Icons.ChevronDown />}
+            key={type}
+            type={type}
+          >
+            {type}
+          </Button>
+        ))}
+      </div>
+
+      <div className="space-x-xs flex">
+        {Object.values(TYPE_OPTIONS).map(type => (
+          <Button
+            iconLeft={<Icons.Airplane />}
+            iconRight={<Icons.ChevronDown />}
+            key={type}
+            type={type}
+            loading
+          >
+            {type}
+          </Button>
+        ))}
+      </div>
+
+      <div className="space-x-xs flex">
+        {Object.values(TYPE_OPTIONS).map(type => (
+          <Button
+            iconLeft={<Icons.Airplane />}
+            iconRight={<Icons.ChevronDown />}
+            key={type}
+            type={type}
+            disabled
+          >
+            {type}
+          </Button>
+        ))}
+      </div>
+
+      <div className="space-x-xs flex">
+        {Object.values(SIZE_OPTIONS).map(size => (
+          <Button
+            iconLeft={<Icons.Airplane />}
+            iconRight={<Icons.ChevronDown />}
+            key={size}
+            size={size}
+          >
+            {size}
+          </Button>
+        ))}
+      </div>
+
+      <div className="space-x-xs flex">
+        {Object.values(SIZE_OPTIONS).map(size => (
+          <Button
+            iconLeft={<Icons.Airplane />}
+            iconRight={<Icons.ChevronDown />}
+            key={size}
+            size={size}
+            loading
+          >
+            {size}
+          </Button>
+        ))}
+      </div>
+
+      <div className="space-x-xs flex">
+        <Button iconLeft={<Icons.Airplane />}>Button</Button>
+        <Button iconRight={<Icons.ChevronDown />}>Button</Button>
+        <Button iconLeft={<Icons.Airplane />} iconRight={<Icons.ChevronDown />}>
+          Button
+        </Button>
+        <Button iconLeft={<Icons.Airplane />} />
+      </div>
+
+      <div className="space-x-xs flex">
+        <Button circled iconLeft={<Icons.Airplane />}>
+          Button
+        </Button>
+        <Button circled iconLeft={<Icons.Airplane />} />
+      </div>
+
+      <Button fullWidth iconLeft={<Icons.Airplane />}>
+        Button
+      </Button>
+      <Button fullWidth iconRight={<Icons.ChevronDown />}>
+        Button
+      </Button>
+      <Button fullWidth iconLeft={<Icons.Airplane />} iconRight={<Icons.ChevronDown />}>
+        Button
+      </Button>
+      <Button fullWidth centered iconLeft={<Icons.Airplane />} iconRight={<Icons.ChevronDown />}>
+        Button
+      </Button>
+    </div>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

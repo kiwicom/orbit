@@ -64,3 +64,18 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const VisualTest = () => {
+  return (
+    <ButtonGroup>
+      <Button iconLeft={<Icons.Airplane />}>Button</Button>
+      <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
+    </ButtonGroup>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

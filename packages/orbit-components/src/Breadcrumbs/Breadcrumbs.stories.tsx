@@ -105,3 +105,25 @@ BackLink.story = {
     info: "Render the back button as a link. ",
   },
 };
+
+export const VisualTest = () => {
+  return (
+    <Breadcrumbs onGoBack={action("onGoBack")}>
+      <BreadcrumbsItem href="https://kiwi.com" onClick={action("clicked")}>
+        Kiwi.com
+      </BreadcrumbsItem>
+      <BreadcrumbsItem href="#1" onClick={action("clicked")}>
+        1. Level
+      </BreadcrumbsItem>
+      <BreadcrumbsItem onClick={action("clicked")}>2. Level</BreadcrumbsItem>
+      <BreadcrumbsItem href="#3">3. Level</BreadcrumbsItem>
+      <BreadcrumbsItem>4. Level</BreadcrumbsItem>
+    </Breadcrumbs>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

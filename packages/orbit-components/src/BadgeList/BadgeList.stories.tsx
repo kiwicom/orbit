@@ -130,3 +130,40 @@ export const RTL = () => {
     </RenderInRtl>
   );
 };
+
+export const BadgeListVisualTest = () => {
+  return (
+    <div className="space-y-md">
+      <div className="space-y-xs">
+        {Object.values(TYPE_OPTIONS).map(type => (
+          <BadgeList>
+            <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type}>
+              List type {type} item #1
+            </BadgeListItem>
+            <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type}>
+              List type {type} item #2
+            </BadgeListItem>
+          </BadgeList>
+        ))}
+      </div>
+
+      {Object.values(SIZE_OPTIONS).map(size => (
+        <BadgeList>
+          <BadgeListItem icon={<Icons.KiwicomGuarantee />} size={size}>
+            List size {size} item #1
+          </BadgeListItem>
+          <BadgeListItem icon={<Icons.KiwicomGuarantee />} size={size}>
+            List size {size} item #2
+          </BadgeListItem>
+        </BadgeList>
+      ))}
+    </div>
+  );
+};
+
+BadgeListVisualTest.story = {
+  name: "BadgeList visual test",
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

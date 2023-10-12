@@ -155,3 +155,76 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const VisualTest = () => {
+  const single = [{ code: "FR", name: "Ryanair", type: "airline" as const }];
+  const two = [
+    { code: "FR", name: "Ryanair" },
+    { code: "TO", name: "Transavia France" },
+  ];
+  const three = [
+    { code: "FR", name: "Ryanair" },
+    { code: "TO", name: "Transavia France" },
+    { code: "VY", name: "Vueling" },
+  ];
+  const four = [
+    { code: "FR", name: "Ryanair" },
+    { code: "TO", name: "Transavia France" },
+    { code: "VY", name: "Vueling" },
+    { code: "OK", name: "Czech Airlines" },
+  ];
+  const types1 = [
+    { code: "KEK1", name: "Mount", type: "airline" as const },
+    { code: "KEK2", name: "Mount", type: "bus" as const },
+    { code: "KEK3", name: "Mount", type: "train" as const },
+    { code: "KEK4", name: "Mount", type: "ferry" as const },
+  ];
+  const types2 = [
+    { code: "KEK1", name: "Mount", type: "private_transfer" as const },
+    { code: "KEK2", name: "Mount", type: "kiwicom" as const },
+    { code: "KEK3", name: "Mount" },
+  ];
+
+  return (
+    <div className="space-y-xs">
+      <div className="space-x-lg flex">
+        {Object.values(SIZE_OPTIONS).map(size => (
+          <div className="space-x-xs flex">
+            <CarrierLogo size={size} carriers={single} />
+            <CarrierLogo rounded size={size} carriers={single} />
+            <CarrierLogo inlineStacked size={size} carriers={single} />
+          </div>
+        ))}
+      </div>
+
+      <div className="space-x-xs flex">
+        <CarrierLogo carriers={two} />
+        <CarrierLogo rounded carriers={two} />
+        <CarrierLogo inlineStacked carriers={two} />
+      </div>
+
+      <div className="space-x-xs flex">
+        <CarrierLogo carriers={three} />
+        <CarrierLogo rounded carriers={three} />
+        <CarrierLogo inlineStacked carriers={three} />
+      </div>
+
+      <div className="space-x-xs flex">
+        <CarrierLogo carriers={four} />
+        <CarrierLogo rounded carriers={four} />
+        <CarrierLogo inlineStacked carriers={four} />
+      </div>
+
+      <div className="space-x-xs flex">
+        <CarrierLogo carriers={types1} />
+        <CarrierLogo carriers={types2} />
+      </div>
+    </div>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

@@ -49,3 +49,13 @@ Playground.story = {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
+
+export const VisualTest = () => {
+  return <Coupon>1337420</Coupon>;
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

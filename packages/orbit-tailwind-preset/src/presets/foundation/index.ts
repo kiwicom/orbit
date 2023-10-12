@@ -21,7 +21,9 @@ const config = (options: Options): Config => {
       preflight: false,
     },
     theme: {
-      colors: palette,
+      colors: {
+        ...palette,
+      },
       borderRadius,
       screens,
       lineHeight,

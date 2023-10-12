@@ -9,7 +9,7 @@ import type { Config } from "tailwindcss";
 import type { CustomFoundation } from "@kiwicom/orbit-design-tokens/src/js/defaultFoundation";
 
 import orbitFoundationPreset from "../foundation";
-import { kebabCase } from "../fns";
+import { kebabCase } from "../utils";
 import { getComponentLevelToken, ExportedComponentLevelTokens } from "./getComponentLevelToken";
 
 const COLORS: Partial<ExportedComponentLevelTokens>[] = [
@@ -36,6 +36,7 @@ interface Options {
   disablePreflight?: boolean;
   /** default: [] */
   content?: Config["content"];
+  /** default: Orbit default theme */
   foundation?: CustomFoundation;
 }
 

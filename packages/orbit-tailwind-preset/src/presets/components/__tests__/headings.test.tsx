@@ -3,7 +3,7 @@ import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import Headings from "../../__fixtures__/Headings";
 import { render, screen } from "../../../testUtils";
-import { firstToUpper } from "../../fns";
+import { firstToUpper } from "../../utils";
 
 const HEADINGS = [
   "title1",

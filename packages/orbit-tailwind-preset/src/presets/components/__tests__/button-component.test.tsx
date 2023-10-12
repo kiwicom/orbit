@@ -3,7 +3,7 @@ import { defaultTokens, convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import Button from "../../__fixtures__/Button";
 import { render, screen } from "../../../testUtils";
-import { firstToUpper } from "../../fns";
+import { firstToUpper } from "../../utils";
 
 const testIds = ["primary", "secondary", "info", "success", "warning", "critical"];
 

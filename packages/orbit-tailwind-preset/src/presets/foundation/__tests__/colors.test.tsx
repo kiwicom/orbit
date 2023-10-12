@@ -4,7 +4,7 @@ import { convertHexToRgba, defaultFoundation } from "@kiwicom/orbit-design-token
 import { render, screen } from "../../../testUtils";
 import Colors from "../../__fixtures__/Colors";
 import getTailwindFoundation from "../getTailwindFoundation";
-import { camelCase } from "../../fns";
+import { camelCase } from "../../utils";
 
 describe("colors", () => {
   it("should generate correct styles", () => {

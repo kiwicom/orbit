@@ -33,6 +33,20 @@ module.exports = {
   presets: [
     orbitComponentsPreset({
       disablePreflight: false, // default value
+      // custom theme configuration, defaults to Orbit's theme
+      foundation: {
+        palette: {
+          product: {
+            light: "#9ae5da",
+            lightHover: "#7fded0",
+            lightActive: "#64d7c6",
+            normal: "#00a991",
+            normalHover: "#009882",
+            normalActive: "#008f7b",
+            dark: "#005448",
+          },
+        },
+      },
     }),
   ],
 };
@@ -41,6 +55,8 @@ module.exports = {
 The `content` property is required for Tailwind to [know which files to scan for classes](https://tailwindcss.com/docs/content-configuration). It should include the path to all your source files that use Tailwind classes. The path to the `@kiwicom/orbit-components` package is required for the component-specific classes to be scanned and built into the final CSS.
 
 The `presets` property is required for Tailwind to [know which presets to use](https://tailwindcss.com/docs/presets). It should include the `orbitComponentsPreset` function, which returns the Orbit Tailwind preset.
+
+The `foundation` option is optional and needed only in case you want use your custom theme configuration. It accepts an object with the same structure as Orbit foundation.
 
 ## Usage
 

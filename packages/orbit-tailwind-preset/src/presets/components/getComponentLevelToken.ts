@@ -1,6 +1,6 @@
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-import { kebabCase } from "../fns";
+import { kebabCase } from "../utils";
 
 export type ExportedComponentLevelTokens =
   | "alert"

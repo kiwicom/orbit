@@ -161,3 +161,23 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const VisualTest = () => {
+  return (
+    <div className="space-y-xs">
+      <Checkbox label="Check this box" />
+      <Checkbox label="Check this box" info="I will find you and will tick you" />
+      <Checkbox label="Check this box" checked />
+      <Checkbox label="Check this box" disabled />
+      <Checkbox label="Check this box" disabled checked />
+      <Checkbox label="Check this box" disabled tooltip={<Text>Tooltip</Text>} />
+      <Checkbox label="Check this box" hasError />
+    </div>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

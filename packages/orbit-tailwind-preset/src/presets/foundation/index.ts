@@ -1,35 +1,62 @@
 import type { Config } from "tailwindcss";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultFoundation, defaultTokens } from "@kiwicom/orbit-design-tokens";
+import type { CustomFoundation } from "@kiwicom/orbit-design-tokens/src/js/defaultFoundation";
 
-import defaultFoundation from "./theme/defaultFoundation";
-import { spacing, screens, font, boxShadow, duration } from "./theme";
+import getTailwindFoundation from "./getTailwindFoundation";
+import { createCustomFoundation } from "./createCustomFoundation";
 
-const config: Config = {
-  content: ["auto"],
-  corePlugins: {
-    preflight: false,
-  },
-  theme: {
-    colors: { ...defaultFoundation.palette, transparent: "transparent" },
-    borderRadius: { ...defaultFoundation["border-radius"], none: "0" },
-    screens,
-    lineHeight: { ...defaultFoundation["line-height"], none: "1" },
-    boxShadow,
-    transitionDuration: duration,
-    spacing,
-    ...font,
-    extend: {
-      zIndex: {
-        default: String(defaultTokens.zIndexDefault),
-        sticky: String(defaultTokens.zIndexSticky),
-        "navigation-bar": String(defaultTokens.zIndexNavigationBar),
-        modal: String(defaultTokens.zIndexModal),
-        overlay: String(defaultTokens.zIndexModalOverlay),
-        drawer: String(defaultTokens.zIndexDrawer),
-        onTop: String(defaultTokens.zIndexOnTheTop),
+interface Options {
+  foundation: CustomFoundation;
+}
+
+const config = (options: Options): Config => {
+  const { foundation } = options;
+  const resolveFoundation = createCustomFoundation(defaultFoundation, foundation);
+  const { screens, spacing, lineHeight, borderRadius, palette, fontFamily, fontSize, fontWeight } =
+    getTailwindFoundation(resolveFoundation);
+
+  return {
+    content: ["auto"],
+    corePlugins: {
+      preflight: false,
+    },
+    theme: {
+      colors: palette,
+      borderRadius,
+      screens,
+      lineHeight,
+      boxShadow: {
+        none: "none",
+        fixed: defaultTokens.elevationFixedBoxShadow,
+        "fixed-reverse": defaultTokens.elevationFixedReverseBoxShadow,
+        raised: defaultTokens.elevationRaisedBoxShadow,
+        "raised-reverse": defaultTokens.elevationRaisedReverseBoxShadow,
+        action: defaultTokens.elevationActionBoxShadow,
+        "action-active": defaultTokens.elevationActionActiveBoxShadow,
+        overlay: defaultTokens.elevationOverlayBoxShadow,
+      },
+      transitionDuration: {
+        fast: defaultTokens.durationFast,
+        normal: defaultTokens.durationNormal,
+        slow: defaultTokens.durationSlow,
+      },
+      spacing,
+      fontFamily,
+      fontSize,
+      fontWeight,
+      extend: {
+        zIndex: {
+          default: String(defaultTokens.zIndexDefault),
+          sticky: String(defaultTokens.zIndexSticky),
+          "navigation-bar": String(defaultTokens.zIndexNavigationBar),
+          modal: String(defaultTokens.zIndexModal),
+          overlay: String(defaultTokens.zIndexModalOverlay),
+          drawer: String(defaultTokens.zIndexDrawer),
+          onTop: String(defaultTokens.zIndexOnTheTop),
+        },
       },
     },
-  },
+  };
 };
 
 export default config;

@@ -1,13 +1,16 @@
 import plugin from "tailwindcss/plugin";
-import { convertHexToRgba, defaultTokens } from "@kiwicom/orbit-design-tokens";
+import {
+  convertHexToRgba,
+  defaultFoundation,
+  defaultTokens,
+  getTokens,
+} from "@kiwicom/orbit-design-tokens";
 import type { Config } from "tailwindcss";
+import type { CustomFoundation } from "@kiwicom/orbit-design-tokens/src/js/defaultFoundation";
 
 import orbitFoundationPreset from "../foundation";
-import {
-  kebabCase,
-  getComponentLevelToken,
-  ExportedComponentLevelTokens,
-} from "../foundation/helpers";
+import { kebabCase } from "../fns";
+import { getComponentLevelToken, ExportedComponentLevelTokens } from "./getComponentLevelToken";
 
 const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "button",
@@ -33,31 +36,36 @@ interface Options {
   disablePreflight?: boolean;
   /** default: [] */
   content?: Config["content"];
+  foundation?: CustomFoundation;
 }
 
-const getForegroundColors = () => {
+const getForegroundColors = (theme: typeof defaultTokens) => {
+  const getComponentToken = getComponentLevelToken(theme);
+
   return COLORS.reduce((acc, name) => {
     // eslint-disable-next-line no-param-reassign
     acc = {
       ...acc,
-      ...getComponentLevelToken(name, "foreground"),
-      ...getComponentLevelToken(name, "foregroundInverted"),
-      ...getComponentLevelToken(name, "foregroundHover"),
-      ...getComponentLevelToken(name, "foregroundActive"),
+      ...getComponentToken(name, "foreground"),
+      ...getComponentToken(name, "foregroundInverted"),
+      ...getComponentToken(name, "foregroundHover"),
+      ...getComponentToken(name, "foregroundActive"),
     };
 
     return acc;
   }, {});
 };
 
-const getBackgroundColors = () => {
+const getBackgroundColors = (theme: typeof defaultTokens) => {
+  const getComponentToken = getComponentLevelToken(theme);
+
   return COLORS.reduce((acc, name) => {
     // eslint-disable-next-line no-param-reassign
     acc = {
       ...acc,
-      ...getComponentLevelToken(name, "background"),
-      ...getComponentLevelToken(name, "backgroundHover"),
-      ...getComponentLevelToken(name, "backgroundActive"),
+      ...getComponentToken(name, "background"),
+      ...getComponentToken(name, "backgroundHover"),
+      ...getComponentToken(name, "backgroundActive"),
     };
 
     return acc;
@@ -65,11 +73,13 @@ const getBackgroundColors = () => {
 };
 
 const cfg = (options?: Options): Config => {
-  const { disablePreflight = true } = options || {};
+  const { disablePreflight = true, foundation = defaultFoundation } = options || {};
+  const theme = getTokens(foundation);
+  const getComponentToken = getComponentLevelToken(theme);
 
   return {
     content: ["auto"],
-    presets: [orbitFoundationPreset],
+    presets: [orbitFoundationPreset({ foundation })],
     corePlugins: {
       preflight: disablePreflight ? false : undefined,
     },
@@ -95,162 +105,155 @@ const cfg = (options?: Options): Config => {
           },
         },
         fontSize: {
-          "heading-display": defaultTokens.headingDisplayFontSize,
-          "heading-display-subtitle": defaultTokens.headingDisplaySubtitleFontSize,
-          "heading-title1": defaultTokens.headingTitle1FontSize,
-          "heading-title2": defaultTokens.headingTitle2FontSize,
-          "heading-title3": defaultTokens.headingTitle3FontSize,
-          "heading-title4": defaultTokens.headingTitle4FontSize,
-          "heading-title5": defaultTokens.headingTitle5FontSize,
-          "heading-title6": defaultTokens.headingTitle6FontSize,
-          "button-large": defaultTokens.buttonLargeFontSize,
-          "button-normal": defaultTokens.buttonNormalFontSize,
-          "button-small": defaultTokens.buttonSmallFontSize,
-          "form-element-normal": defaultTokens.formElementNormalFontSize,
+          "heading-display": theme.headingDisplayFontSize,
+          "heading-display-subtitle": theme.headingDisplaySubtitleFontSize,
+          "heading-title1": theme.headingTitle1FontSize,
+          "heading-title2": theme.headingTitle2FontSize,
+          "heading-title3": theme.headingTitle3FontSize,
+          "heading-title4": theme.headingTitle4FontSize,
+          "heading-title5": theme.headingTitle5FontSize,
+          "heading-title6": theme.headingTitle6FontSize,
+          "button-large": theme.buttonLargeFontSize,
+          "button-normal": theme.buttonNormalFontSize,
+          "button-small": theme.buttonSmallFontSize,
+          "form-element-normal": theme.formElementNormalFontSize,
         },
         fontWeight: {
-          "heading-display": defaultTokens.headingDisplayFontWeight,
-          "heading-display-subtitle": defaultTokens.headingDisplaySubtitleFontWeight,
-          "heading-title1": defaultTokens.headingTitle1FontWeight,
-          "heading-title2": defaultTokens.headingTitle2FontWeight,
-          "heading-title3": defaultTokens.headingTitle3FontWeight,
-          "heading-title4": defaultTokens.headingTitle4FontWeight,
-          "heading-title5": defaultTokens.headingTitle5FontWeight,
-          "heading-title6": defaultTokens.headingTitle6FontWeight,
-          "table-head": String(defaultTokens.fontWeightTableHead),
+          "heading-display": theme.headingDisplayFontWeight,
+          "heading-display-subtitle": theme.headingDisplaySubtitleFontWeight,
+          "heading-title1": theme.headingTitle1FontWeight,
+          "heading-title2": theme.headingTitle2FontWeight,
+          "heading-title3": theme.headingTitle3FontWeight,
+          "heading-title4": theme.headingTitle4FontWeight,
+          "heading-title5": theme.headingTitle5FontWeight,
+          "heading-title6": theme.headingTitle6FontWeight,
+          "table-head": String(theme.fontWeightTableHead),
         },
         lineHeight: {
           none: "1",
-          text: defaultTokens.lineHeightText,
-          heading: defaultTokens.lineHeightHeading,
-          "heading-display": defaultTokens.headingDisplayLineHeight,
-          "heading-display-subtitle": defaultTokens.headingDisplaySubtitleLineHeight,
-          "heading-title1": defaultTokens.headingTitle1LineHeight,
-          "heading-title2": defaultTokens.headingTitle2LineHeight,
-          "heading-title3": defaultTokens.headingTitle3LineHeight,
-          "heading-title4": defaultTokens.headingTitle4LineHeight,
-          "heading-title5": defaultTokens.headingTitle5LineHeight,
-          "heading-title6": defaultTokens.headingTitle6LineHeight,
+          text: theme.lineHeightText,
+          heading: theme.lineHeightHeading,
+          "heading-display": theme.headingDisplayLineHeight,
+          "heading-display-subtitle": theme.headingDisplaySubtitleLineHeight,
+          "heading-title1": theme.headingTitle1LineHeight,
+          "heading-title2": theme.headingTitle2LineHeight,
+          "heading-title3": theme.headingTitle3LineHeight,
+          "heading-title4": theme.headingTitle4LineHeight,
+          "heading-title5": theme.headingTitle5LineHeight,
+          "heading-title6": theme.headingTitle6LineHeight,
         },
         height: {
-          "icon-small": defaultTokens.iconSmallSize,
-          "icon-medium": defaultTokens.iconMediumSize,
-          "icon-large": defaultTokens.iconLargeSize,
-          separator: defaultTokens.heightSeparator,
-          "form-box-small": defaultTokens.formBoxSmallHeight,
-          "form-box-normal": defaultTokens.formBoxNormalHeight,
-          "form-box-large": defaultTokens.formBoxLargeHeight,
-          "country-flag-small": defaultTokens.countryFlagSmallHeight,
-          "country-flag-medium": defaultTokens.countryFlagMediumHeight,
+          "icon-small": theme.iconSmallSize,
+          "icon-medium": theme.iconMediumSize,
+          "icon-large": theme.iconLargeSize,
+          separator: theme.heightSeparator,
+          "form-box-small": theme.formBoxSmallHeight,
+          "form-box-normal": theme.formBoxNormalHeight,
+          "form-box-large": theme.formBoxLargeHeight,
+          "country-flag-small": theme.countryFlagSmallHeight,
+          "country-flag-medium": theme.countryFlagMediumHeight,
         },
         minHeight: {
-          "icon-small": defaultTokens.iconSmallSize,
-          "icon-medium": defaultTokens.iconMediumSize,
-          "icon-large": defaultTokens.iconLargeSize,
-          "form-box-small": defaultTokens.formBoxSmallHeight,
-          "form-box-normal": defaultTokens.formBoxNormalHeight,
-          "form-box-large": defaultTokens.formBoxLargeHeight,
+          "icon-small": theme.iconSmallSize,
+          "icon-medium": theme.iconMediumSize,
+          "icon-large": theme.iconLargeSize,
+          "form-box-small": theme.formBoxSmallHeight,
+          "form-box-normal": theme.formBoxNormalHeight,
+          "form-box-large": theme.formBoxLargeHeight,
         },
         maxHeight: {
-          "illustration-extra-small": defaultTokens.illustrationExtraSmallHeight,
-          "illustration-small": defaultTokens.illustrationSmallHeight,
-          "illustration-medium": defaultTokens.illustrationMediumHeight,
-          "illustration-large": defaultTokens.illustrationLargeHeight,
-          "illustration-display": defaultTokens.illustrationDisplayHeight,
+          "illustration-extra-small": theme.illustrationExtraSmallHeight,
+          "illustration-small": theme.illustrationSmallHeight,
+          "illustration-medium": theme.illustrationMediumHeight,
+          "illustration-large": theme.illustrationLargeHeight,
+          "illustration-display": theme.illustrationDisplayHeight,
         },
         width: {
-          "icon-small": defaultTokens.iconSmallSize,
-          "icon-medium": defaultTokens.iconMediumSize,
-          "icon-large": defaultTokens.iconLargeSize,
-          "modal-extra-small-width": defaultTokens.modalExtraSmallWidth,
-          "modal-small-width": defaultTokens.modalSmallWidth,
-          "modal-normal-width": defaultTokens.modalNormalWidth,
-          "modal-large-width": defaultTokens.modalLargeWidth,
-          "modal-extra-large-width": defaultTokens.modalExtraLargeWidth,
-          "form-box-small": defaultTokens.formBoxSmallHeight,
-          "form-box-normal": defaultTokens.formBoxNormalHeight,
-          "form-box-large": defaultTokens.formBoxLargeHeight,
-          "country-flag-small": defaultTokens.countryFlagSmallWidth,
-          "country-flag-medium": defaultTokens.countryFlagMediumWidth,
+          "icon-small": theme.iconSmallSize,
+          "icon-medium": theme.iconMediumSize,
+          "icon-large": theme.iconLargeSize,
+          "modal-extra-small-width": theme.modalExtraSmallWidth,
+          "modal-small-width": theme.modalSmallWidth,
+          "modal-normal-width": theme.modalNormalWidth,
+          "modal-large-width": theme.modalLargeWidth,
+          "modal-extra-large-width": theme.modalExtraLargeWidth,
+          "form-box-small": theme.formBoxSmallHeight,
+          "form-box-normal": theme.formBoxNormalHeight,
+          "form-box-large": theme.formBoxLargeHeight,
+          "country-flag-small": theme.countryFlagSmallWidth,
+          "country-flag-medium": theme.countryFlagMediumWidth,
         },
         minWidth: {
-          "icon-small": defaultTokens.iconSmallSize,
-          "icon-medium": defaultTokens.iconMediumSize,
-          "icon-large": defaultTokens.iconLargeSize,
-          "dialog-width": defaultTokens.dialogWidth,
+          "icon-small": theme.iconSmallSize,
+          "icon-medium": theme.iconMediumSize,
+          "icon-large": theme.iconLargeSize,
+          "dialog-width": theme.dialogWidth,
         },
         padding: {
-          ...getComponentLevelToken("button", "padding"),
-          ...getComponentLevelToken("formElement", "padding"),
-          table: defaultTokens.paddingTable,
-          "button-padding-xs": defaultTokens.buttonPaddingXSmall,
-          "button-padding-sm": defaultTokens.buttonPaddingSmall,
-          "button-padding-md": defaultTokens.buttonPaddingNormal,
-          "button-padding-lg": defaultTokens.buttonPaddingLarge,
+          ...getComponentToken("button", "padding"),
+          ...getComponentToken("formElement", "padding"),
+          table: theme.paddingTable,
+          "button-padding-xs": theme.buttonPaddingXSmall,
+          "button-padding-sm": theme.buttonPaddingSmall,
+          "button-padding-md": theme.buttonPaddingNormal,
+          "button-padding-lg": theme.buttonPaddingLarge,
         },
         borderRadius: {
-          "dialog-desktop": defaultTokens.dialogBorderRadiusDesktop,
-          "dialog-mobile": defaultTokens.dialogBorderRadiusMobile,
-          "form-box-small": defaultTokens.formBoxSmallHeight,
-          "form-box-normal": defaultTokens.formBoxNormalHeight,
-          "form-box-large": defaultTokens.formBoxLargeHeight,
-          badge: defaultTokens.badgeBorderRadius,
+          "dialog-desktop": theme.dialogBorderRadiusDesktop,
+          "dialog-mobile": theme.dialogBorderRadiusMobile,
+          "form-box-small": theme.formBoxSmallHeight,
+          "form-box-normal": theme.formBoxNormalHeight,
+          "form-box-large": theme.formBoxLargeHeight,
+          badge: theme.badgeBorderRadius,
         },
         borderColor: {
-          ...Object.keys(defaultTokens).reduce((acc, token) => {
+          ...Object.keys(theme).reduce((acc, token) => {
             if (token.startsWith("borderColor")) {
               const name = kebabCase(token).replace("border-color-", "");
-              return { ...acc, [name]: defaultTokens[token] };
+              return { ...acc, [name]: theme[token] };
             }
             // eslint-disable-next-line no-param-reassign
             acc = {
               ...acc,
-              ...getComponentLevelToken(token as ExportedComponentLevelTokens, "borderColor"),
+              ...getComponentToken(token as ExportedComponentLevelTokens, "borderColor"),
             };
 
             return acc;
           }, {}),
-          white: defaultTokens.paletteWhite,
-          "form-element": defaultTokens.formElementBorderColor,
-          "form-element-disabled": defaultTokens.formElementBorderColorDisabled,
-          "form-element-hover": defaultTokens.formElementBorderColorHover,
-          "form-element-active": defaultTokens.formElementBorderColorActive,
-          "form-element-focus": defaultTokens.formElementBorderColorFocus,
-          "form-element-error": defaultTokens.formElementBorderColorError,
-          "form-element-error-hover": defaultTokens.formElementBorderColorErrorHover,
+          white: theme.paletteWhite,
+          "form-element": theme.formElementBorderColor,
+          "form-element-disabled": theme.formElementBorderColorDisabled,
+          "form-element-hover": theme.formElementBorderColorHover,
+          "form-element-active": theme.formElementBorderColorActive,
+          "form-element-focus": theme.formElementBorderColorFocus,
+          "form-element-error": theme.formElementBorderColorError,
+          "form-element-error-hover": theme.formElementBorderColorErrorHover,
         },
         backgroundImage: {
-          "button-bundle-basic-background": defaultTokens.buttonBundleBasicBackground,
-          "button-bundle-basic-background-hover": defaultTokens.buttonBundleBasicBackgroundHover,
-          "button-bundle-basic-background-active": defaultTokens.buttonBundleBasicBackgroundActive,
-          "button-bundle-medium-background": defaultTokens.buttonBundleMediumBackground,
-          "button-bundle-medium-background-hover": defaultTokens.buttonBundleMediumBackgroundHover,
-          "button-bundle-medium-background-active":
-            defaultTokens.buttonBundleMediumBackgroundActive,
-          "button-bundle-top-background": defaultTokens.buttonBundleTopBackground,
-          "button-bundle-top-background-hover": defaultTokens.buttonBundleTopBackgroundHover,
-          "button-bundle-top-background-active": defaultTokens.buttonBundleTopBackgroundActive,
-          "badge-bundle-basic-background": defaultTokens.badgeBundleBasicBackground,
-          "badge-bundle-medium-background": defaultTokens.badgeBundleMediumBackground,
-          "badge-bundle-top-background": defaultTokens.badgeBundleTopBackground,
+          "button-bundle-basic-background": theme.buttonBundleBasicBackground,
+          "button-bundle-basic-background-hover": theme.buttonBundleBasicBackgroundHover,
+          "button-bundle-basic-background-active": theme.buttonBundleBasicBackgroundActive,
+          "button-bundle-medium-background": theme.buttonBundleMediumBackground,
+          "button-bundle-medium-background-hover": theme.buttonBundleMediumBackgroundHover,
+          "button-bundle-medium-background-active": theme.buttonBundleMediumBackgroundActive,
+          "button-bundle-top-background": theme.buttonBundleTopBackground,
+          "button-bundle-top-background-hover": theme.buttonBundleTopBackgroundHover,
+          "button-bundle-top-background-active": theme.buttonBundleTopBackgroundActive,
+          "badge-bundle-basic-background": theme.badgeBundleBasicBackground,
+          "badge-bundle-medium-background": theme.badgeBundleMediumBackground,
+          "badge-bundle-top-background": theme.badgeBundleTopBackground,
         },
         boxShadow: {
-          "button-focus": defaultTokens.boxShadowButtonFocus,
-          "button-active": `inset 0 0 6px 3px ${convertHexToRgba(
-            defaultTokens.paletteInkDark,
-            15,
-          )}`,
-          "button-active-pale": `inset 0 0 6px 3px ${convertHexToRgba(
-            defaultTokens.paletteInkDark,
-            8,
-          )}`,
-          "country-flag": defaultTokens.countryFlagShadow,
-          "form-element": defaultTokens.formElementBoxShadow,
-          "form-element-error": defaultTokens.formElementBoxShadowError,
-          "form-element-error-hover": defaultTokens.formElementBoxShadowErrorHover,
-          "form-element-hover": defaultTokens.formElementBoxShadowHover,
-          "form-element-focus": defaultTokens.formElementFocusBoxShadow,
-          switch: `inset 0 0 1px 0 rgba(7, 64, 92, 0.1),${defaultTokens.boxShadowAction}`,
+          "button-focus": theme.boxShadowButtonFocus,
+          "button-active": `inset 0 0 6px 3px ${convertHexToRgba(theme.paletteInkDark, 15)}`,
+          "button-active-pale": `inset 0 0 6px 3px ${convertHexToRgba(theme.paletteInkDark, 8)}`,
+          "country-flag": theme.countryFlagShadow,
+          "form-element": theme.formElementBoxShadow,
+          "form-element-error": theme.formElementBoxShadowError,
+          "form-element-error-hover": theme.formElementBoxShadowErrorHover,
+          "form-element-hover": theme.formElementBoxShadowHover,
+          "form-element-focus": theme.formElementFocusBoxShadow,
+          switch: `inset 0 0 1px 0 rgba(7, 64, 92, 0.1),${theme.boxShadowAction}`,
         },
         keyframes: {
           "slow-pulse": {
@@ -280,11 +283,11 @@ const cfg = (options?: Options): Config => {
           loader: "loader 1.25s infinite ease-in-out",
           pulse: "pulse 1.5s infinite",
         },
-        textColor: Object.entries(getForegroundColors()).reduce((acc, [key, value]) => {
+        textColor: Object.entries(getForegroundColors(theme)).reduce((acc, [key, value]) => {
           const name = key.replace("text-", "");
           return { ...acc, [name]: value };
         }, {}),
-        backgroundColor: getBackgroundColors(),
+        backgroundColor: getBackgroundColors(theme),
       },
     },
     plugins: [

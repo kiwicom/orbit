@@ -1,9 +1,9 @@
 import React from "react";
 import { defaultTokens, convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
-import Button from "../__fixtures__/Button";
-import { render, screen } from "../../testUtils";
-import { firstToUpper } from "../foundation/helpers";
+import Button from "../../__fixtures__/Button";
+import { render, screen } from "../../../testUtils";
+import { firstToUpper } from "../../fns";
 
 const testIds = ["primary", "secondary", "info", "success", "warning", "critical"];
 

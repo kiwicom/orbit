@@ -1,5 +1,6 @@
 import createTheme from "./js/createTheme";
 import { Tokens as PaletteColors } from "./js/paletteColors.d";
+import tokensToCssVars from "./utils/tokensToCssVars";
 
 export const defaultTokens = createTheme();
 export const defaultTheme = createTheme();
@@ -10,4 +11,4 @@ export { default as getTokens } from "./getTokens";
 export { default as defaultFoundation } from "./js/defaultFoundation";
 export { default as convertHexToRgba } from "./js/convertHexToRgba";
 export { default as convertRgbaToHex } from "./js/convertRgbaToHex";
-export { createTheme, PaletteColors };
+export { createTheme, PaletteColors, tokensToCssVars };

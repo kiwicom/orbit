@@ -31,6 +31,8 @@ jobs:
 
       - name: Publish to Chromatic
         uses: chromaui/action@v1
+        env:
+          NODE_ENV: chromatic
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: packages/orbit-components

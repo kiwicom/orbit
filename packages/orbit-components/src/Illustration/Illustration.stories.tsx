@@ -40,3 +40,25 @@ ListOfAllIllustrations.story = {
     info: "Explore our new set of illustrations for Kiwi.com.",
   },
 };
+
+export const VisualTest = () => {
+  return (
+    <div className="space-y-xs">
+      <div className="space-x-xs flex">
+        {Object.values(SIZE_OPTIONS).map(size => (
+          <Illustration name="Accommodation" size={size} />
+        ))}
+      </div>
+
+      {NAMES.map(name => (
+        <Illustration name={name} />
+      ))}
+    </div>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

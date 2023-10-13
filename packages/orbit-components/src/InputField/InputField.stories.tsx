@@ -632,3 +632,59 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const VisualTest = () => {
+  return (
+    <div className="space-y-xs">
+      <InputField label="Label" inlineLabel />
+      <InputField label="Label" />
+      <InputField label="Label" placeholder="Placeholder" />
+      <InputField label="Label" value="Value" />
+      <InputField label="Label" required />
+      <InputField label="Label" help="Help" />
+      <InputField label="Label" error="Error" />
+      <InputField label="Label" prefix="$" />
+      <InputField label="Label" suffix={<span className="pe-sm">kg</span>} />
+      <InputField
+        label="Label"
+        tags={[
+          <Tag selected>Snake 🐍</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Badger 🦡</Tag>,
+          <Tag>Mushroom 🍄</Tag>,
+          <Tag>Mushroom 🍄</Tag>,
+        ]}
+      />
+    </div>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};
+
+export const VisualTestRTL = () => {
+  return (
+    <RenderInRtl>
+      <VisualTest />
+    </RenderInRtl>
+  );
+};
+
+VisualTestRTL.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

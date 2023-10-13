@@ -47,7 +47,7 @@ module.exports = {
     "jsx-a11y/label-has-associated-control": "off",
     "no-await-in-loop": "off",
     "tailwindcss/classnames-order": "off",
-    "tailwindcss/no-custom-classname": [1, { whitelist: ["(orbit\\-).*"] }],
+    "tailwindcss/no-custom-classname": [1, { whitelist: ["(orbit\\-).*", "chromatic-ignore"] }],
     ...(!process.env.CI
       ? {
           "import/no-named-as-default": "off",

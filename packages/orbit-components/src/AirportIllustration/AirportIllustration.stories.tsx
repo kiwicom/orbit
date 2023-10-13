@@ -3,6 +3,7 @@ import { select, text } from "@storybook/addon-knobs";
 
 // @ts-expect-error TODO
 import { NAMES } from "./consts.mts";
+import { allModes } from "../../.storybook/modes";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
@@ -45,6 +46,11 @@ AirportIllustrationVisualTest.story = {
 
   parameters: {
     info: "Explore our new set of Airportillustrations for Kiwi.com.",
-    chromatic: { disableSnapshot: false },
+    chromatic: {
+      disableSnapshot: false,
+      modes: {
+        largeDesktop: allModes.largeDesktop,
+      },
+    },
   },
 };

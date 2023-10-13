@@ -285,15 +285,43 @@ export const AlertVisualTest = () => {
             <Alert type={type} icon title="Title">
               <Text type="primary">With icon and some reasonably long text</Text>
             </Alert>
+
+            <Alert type={type} title="Title">
+              <div className="space-x-xs">
+                <TextLink>Same type link</TextLink>
+                <TextLink dataTest="TextLinkHover">Same type link hover</TextLink>
+                <TextLink dataTest="TextLinkActive">Same type link active</TextLink>
+                <TextLink type="secondary">Secondary type link</TextLink>
+                <TextLink dataTest="TextLinkHover" type="secondary">
+                  Secondary type link hover
+                </TextLink>
+                <TextLink dataTest="TextLinkActive" type="secondary">
+                  Secondary type link active
+                </TextLink>
+              </div>
+            </Alert>
           </div>
         ))}
       </div>
 
       <div className="space-x-xs flex">
         {Object.values(BUTTON_TYPE_OPTIONS).map(type => (
-          <AlertButton type={type}>Button</AlertButton>
+          <>
+            <AlertButton type={type}>Button</AlertButton>
+            <AlertButton dataTest="AlertButtonHover" type={type}>
+              Hover
+            </AlertButton>
+            <AlertButton dataTest="AlertButtonFocus" type={type}>
+              Focus
+            </AlertButton>
+            <AlertButton dataTest="AlertButtonActive" type={type}>
+              Active
+            </AlertButton>
+          </>
         ))}
       </div>
+
+      <Alert type="info" title="Closable and only Title" closable />
 
       <div className="space-x-xs flex">
         <Alert type="info" title="Title" closable onClose={action("Close")}>
@@ -321,6 +349,35 @@ export const AlertVisualTest = () => {
 AlertVisualTest.story = {
   name: "Alert visual test",
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: {
+      disableSnapshot: false,
+    },
+    pseudo: {
+      hover: ["[data-test='AlertButtonHover']", "[data-test='TextLinkHover']"],
+      focus: ["[data-test='AlertButtonFocus']"],
+      active: ["[data-test='AlertButtonActive']", "[data-test='TextLinkActive']"],
+    },
+  },
+};
+
+export const AlertVisualTestRtl = () => {
+  return (
+    <RenderInRtl>
+      <AlertVisualTest />
+    </RenderInRtl>
+  );
+};
+
+AlertVisualTestRtl.story = {
+  name: "Alert visual test RTL",
+  parameters: {
+    chromatic: {
+      disableSnapshot: false,
+    },
+    pseudo: {
+      hover: ["[data-test='AlertButtonHover']", "[data-test='TextLinkHover']"],
+      focus: ["[data-test='AlertButtonFocus']"],
+      active: ["[data-test='AlertButtonActive']", "[data-test='TextLinkActive']"],
+    },
   },
 };

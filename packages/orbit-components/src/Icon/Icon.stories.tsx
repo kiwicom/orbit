@@ -75,3 +75,33 @@ ListOfAllIcons.story = {
   name: "List of all icons",
   parameters: { loki: { skip: true } },
 };
+
+export const VisualTest = () => {
+  return (
+    <div className="space-y-lg">
+      <div className="space-x-xs">
+        {Object.values(ICON_COLORS).map(color => (
+          <Icons.Airplane color={color} />
+        ))}
+      </div>
+
+      <div className="space-x-xs">
+        {Object.values(ICON_SIZES).map(size => (
+          <Icons.Airplane size={size} />
+        ))}
+      </div>
+
+      <div className="space-x-xs first:[&>*]:me-xs space-x-reverse">
+        {Object.entries(Icons).map(([name, Icon]) => (
+          <Icon key={name} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

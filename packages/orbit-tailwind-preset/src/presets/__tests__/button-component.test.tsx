@@ -1,23 +1,22 @@
 import React from "react";
-import { defaultTokens, convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import { getTokens } from "@kiwicom/orbit-design-tokens";
 
 import Button from "../__fixtures__/Button";
 import { render, screen } from "../../testUtils";
 import { firstToUpper } from "../foundation/helpers";
+import cssVarsFoundation from "../foundation/cssVarsFoundation";
 
 const testIds = ["primary", "secondary", "info", "success", "warning", "critical"];
 
 describe("Button", () => {
+  const tokens = getTokens(cssVarsFoundation);
+
   it.each(testIds)("should have correct styles for %s", testId => {
     render(<Button />);
 
     const button = screen.getByText(testId);
-
     expect(button).toHaveStyle({
-      backgroundColor: convertHexToRgba(
-        defaultTokens[`button${firstToUpper(testId)}Background`],
-        0,
-      ).replace("rgba", "rgb"),
+      backgroundColor: tokens[`button${firstToUpper(testId)}Background`],
     });
   });
 });

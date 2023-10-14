@@ -10,5 +10,6 @@ describe("transparentColor", () => {
     expect(transparentColor("#00A991", 99)).toBe(testColor(0, 169, 145, 0.99));
     expect(transparentColor(testColor(0, 169, 145, 0.99), 10)).toBe(testColor(0, 169, 145, 0.1));
     expect(transparentColor(testColor(0, 169, 145), 10)).toBe(testColor(0, 169, 145, 0.1));
+    expect(transparentColor("var(--palette-white, #FFFFFF)", 90)).toBe("rgba(255, 255, 255, 0.9)");
   });
 });

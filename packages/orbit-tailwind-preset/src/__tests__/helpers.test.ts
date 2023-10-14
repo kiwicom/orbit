@@ -1,167 +1,8 @@
-import { defaultFoundation } from "@kiwicom/orbit-design-tokens";
-
-import { transformToKebabCase, getComponentLevelToken } from "../presets/foundation/helpers";
+import { getComponentLevelTokens } from "../presets/foundation/helpers";
 
 describe("orbit-tailwind-preset", () => {
-  it("should transform foundation to kebab case", () => {
-    expect(transformToKebabCase(defaultFoundation)).toMatchInlineSnapshot(`
-      {
-        "border-radius": {
-          "circle": "50%",
-          "large": "6px",
-          "normal": "3px",
-          "small": "2px",
-        },
-        "breakpoint": {
-          "desktop": 992,
-          "large-desktop": 1200,
-          "large-mobile": 576,
-          "medium-mobile": 414,
-          "small-mobile": 320,
-          "tablet": 768,
-        },
-        "font-family": {
-          "base": "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
-        },
-        "font-size": {
-          "extra-large": "18px",
-          "large": "16px",
-          "normal": "15px",
-          "small": "13px",
-        },
-        "font-weight": {
-          "bold": "700",
-          "medium": "500",
-          "normal": "400",
-        },
-        "line-height": {
-          "extra-large": "24px",
-          "large": "24px",
-          "normal": "20px",
-          "small": "16px",
-        },
-        "palette": {
-          "blue": {
-            "dark": "#005AA3",
-            "dark-active": "#003E70",
-            "dark-hover": "#004F8F",
-            "darker": "#004680",
-            "light": "#E8F4FD",
-            "light-active": "#C7E4FA",
-            "light-hover": "#DEF0FC",
-            "normal": "#0172CB",
-            "normal-active": "#01508E",
-            "normal-hover": "#0161AC",
-          },
-          "bundle": {
-            "basic": "#D7331C",
-            "medium": "#3B1EB0",
-          },
-          "cloud": {
-            "dark": "#BAC7D5",
-            "dark-active": "#94A8BE",
-            "dark-hover": "#A6B6C8",
-            "light": "#F5F7F9",
-            "light-active": "#D6DEE6",
-            "light-hover": "#E5EAEF",
-            "normal": "#E8EDF1",
-            "normal-active": "#CAD4DE",
-            "normal-hover": "#DCE3E9",
-          },
-          "green": {
-            "dark": "#2D7738",
-            "dark-active": "#1F5126",
-            "dark-hover": "#276831",
-            "darker": "#235C2B",
-            "light": "#EAF5EA",
-            "light-active": "#CDE4CF",
-            "light-hover": "#E1EFE2",
-            "normal": "#28A138",
-            "normal-active": "#1D7228",
-            "normal-hover": "#238B31",
-          },
-          "ink": {
-            "dark": "#252A31",
-            "dark-active": "#0B0C0F",
-            "dark-hover": "#181B20",
-            "light": "#697D95",
-            "light-active": "#4A617C",
-            "light-hover": "#5D738E",
-            "normal": "#4F5E71",
-            "normal-active": "#324256",
-            "normal-hover": "#3E4E63",
-          },
-          "orange": {
-            "dark": "#AD5700",
-            "dark-active": "#954A00",
-            "dark-hover": "#A75400",
-            "darker": "#803F00",
-            "light": "#FEF2E6",
-            "light-active": "#FAE2C6",
-            "light-hover": "#FCECDA",
-            "normal": "#DF7B00",
-            "normal-active": "#B26200",
-            "normal-hover": "#C96F00",
-          },
-          "product": {
-            "dark": "#007A69",
-            "dark-active": "#006657",
-            "dark-hover": "#007060",
-            "darker": "#005C4E",
-            "light": "#E1F4F3",
-            "light-active": "#BFE8E2",
-            "light-hover": "#D6F0EC",
-            "normal": "#00A58E",
-            "normal-active": "#008472",
-            "normal-hover": "#009580",
-          },
-          "red": {
-            "dark": "#970C0C",
-            "dark-active": "#6D0909",
-            "dark-hover": "#890B0B",
-            "darker": "#760909",
-            "light": "#FAEAEA",
-            "light-active": "#F3CECE",
-            "light-hover": "#F8E2E2",
-            "normal": "#D21C1C",
-            "normal-active": "#9D1515",
-            "normal-hover": "#B91919",
-          },
-          "social": {
-            "facebook": "#3B5998",
-            "facebook-active": "#354F88",
-            "facebook-hover": "#385490",
-          },
-          "white": {
-            "normal": "#FFFFFF",
-            "normal-active": "#E7ECF1",
-            "normal-hover": "#F1F4F7",
-          },
-        },
-        "size": {
-          "extra-extra-large": "52px",
-          "extra-large": "44px",
-          "large": "32px",
-          "medium": "24px",
-          "small": "16px",
-        },
-        "space": {
-          "large": "24px",
-          "medium": "16px",
-          "small": "12px",
-          "xlarge": "32px",
-          "xsmall": "8px",
-          "xxlarge": "40px",
-          "xxsmall": "4px",
-          "xxxlarge": "52px",
-          "xxxsmall": "2px",
-        },
-      }
-    `);
-  });
-
   it("should get component level token", () => {
-    expect(getComponentLevelToken("heading", "fontSize")).toMatchInlineSnapshot(`
+    expect(getComponentLevelTokens()("heading", "fontSize")).toMatchInlineSnapshot(`
       {
         "heading-display-font-size": "40px",
         "heading-display-subtitle-font-size": "22px",
@@ -174,7 +15,7 @@ describe("orbit-tailwind-preset", () => {
       }
     `);
 
-    expect(getComponentLevelToken("heading", "lineHeight")).toMatchInlineSnapshot(`
+    expect(getComponentLevelTokens()("heading", "lineHeight")).toMatchInlineSnapshot(`
       {
         "heading-display-line-height": "44px",
         "heading-display-subtitle-line-height": "28px",
@@ -187,7 +28,7 @@ describe("orbit-tailwind-preset", () => {
       }
     `);
 
-    expect(getComponentLevelToken("heading", "fontWeight")).toMatchInlineSnapshot(`
+    expect(getComponentLevelTokens()("heading", "fontWeight")).toMatchInlineSnapshot(`
       {
         "heading-display-font-weight": "700",
         "heading-display-subtitle-font-weight": "400",
@@ -200,7 +41,7 @@ describe("orbit-tailwind-preset", () => {
       }
     `);
 
-    expect(getComponentLevelToken("button", "background")).toMatchInlineSnapshot(`
+    expect(getComponentLevelTokens()("button", "background")).toMatchInlineSnapshot(`
       {
         "button-critical-background": "#D21C1C",
         "button-critical-subtle-background": "#FAEAEA",
@@ -217,7 +58,7 @@ describe("orbit-tailwind-preset", () => {
       }
     `);
 
-    expect(getComponentLevelToken("button", "backgroundHover")).toMatchInlineSnapshot(`
+    expect(getComponentLevelTokens()("button", "backgroundHover")).toMatchInlineSnapshot(`
       {
         "button-critical-background-hover": "#B91919",
         "button-critical-subtle-background-hover": "#F8E2E2",

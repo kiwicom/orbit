@@ -1,12 +1,4 @@
-import type { defaultFoundation } from "@kiwicom/orbit-design-tokens";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
-
-export interface Options {
-  /** default: `true` eg does not include the tailwind preflight */
-  disablePreflight?: boolean;
-  /** default: [] */
-  content: [];
-}
 
 export const kebabCase = (str: string) => str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 
@@ -50,56 +42,27 @@ type ExportedComponentLevelTypes =
   | "fontWeight"
   | "lineHeight";
 
-type KebabCase<S extends string> = S extends `${infer T}${infer U}`
-  ? U extends Uncapitalize<U>
-    ? `${Uncapitalize<T>}${KebabCase<U>}`
-    : `${Uncapitalize<T>}-${KebabCase<U>}`
-  : S;
+export const getComponentLevelTokens =
+  (tokens: typeof defaultTokens = defaultTokens) =>
+  (component: ExportedComponentLevelTokens, type: ExportedComponentLevelTypes) => {
+    return Object.keys(tokens).reduce((acc, key) => {
+      const k = key.toLowerCase();
+      const c = component.toLowerCase();
+      const t = type.toLowerCase();
 
-type TransformedTokens = Record<
-  KebabCase<keyof typeof defaultFoundation>,
-  Record<KebabCase<string>, string>
->;
+      if (k.startsWith(c) && k.endsWith(t)) {
+        // Button bundles are linear gradients
+        if (
+          key.includes("buttonBundle") ||
+          (key.includes("badgeBundle") && !type.includes("foreground"))
+        )
+          return acc;
 
-export const transformToKebabCase = (tokens: typeof defaultFoundation) => {
-  if (typeof tokens !== "object") return tokens;
-
-  return Object.keys(tokens).reduce((acc, key) => {
-    const kebabKey = kebabCase(key);
-    const value = tokens[key];
-
-    if (typeof value === "object") {
-      acc[kebabKey] = transformToKebabCase(value);
-    } else {
-      acc[kebabKey] = value;
-    }
-
-    return acc;
-  }, {} as TransformedTokens);
-};
-
-export const getComponentLevelToken = (
-  component: ExportedComponentLevelTokens,
-  type: ExportedComponentLevelTypes,
-) => {
-  return Object.keys(defaultTokens).reduce((acc, key) => {
-    const k = key.toLowerCase();
-    const c = component.toLowerCase();
-    const t = type.toLowerCase();
-
-    if (k.startsWith(c) && k.endsWith(t)) {
-      // Button bundles are linear gradients
-      if (
-        key.includes("buttonBundle") ||
-        (key.includes("badgeBundle") && !type.includes("foreground"))
-      )
-        return acc;
-
-      if (defaultTokens[key]) {
-        acc[kebabCase(key)] = defaultTokens[key];
+        if (tokens[key]) {
+          acc[kebabCase(key)] = tokens[key];
+        }
       }
-    }
 
-    return acc;
-  }, {});
-};
+      return acc;
+    }, {});
+  };

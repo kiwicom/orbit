@@ -2,10 +2,21 @@
 
 import * as React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { tokensToCssVars } from "@kiwicom/orbit-design-tokens";
+import type { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import QueryContextProvider from "./QueryContext/Provider";
 import RandomIdProvider from "./RandomId/Provider";
 import type { Props } from "./types";
+
+// we need only palette tokens for whitelables
+const getCssVarsForWL = (theme: typeof defaultTokens) =>
+  Object.keys(theme).reduce((acc, key) => {
+    if (key.startsWith("palette")) {
+      acc[key] = theme[key];
+    }
+    return acc;
+  }, {});
 
 /**
  *
@@ -21,7 +32,19 @@ import type { Props } from "./types";
  * ```
  *
  */
+
 const OrbitProvider = ({ theme, children, useId }: Props) => {
+  React.useEffect(() => {
+    const ID = "orbit-theme-css-vars";
+    const style = document.createElement("style");
+    style.setAttribute("id", ID);
+    style.innerText = tokensToCssVars({ tokens: getCssVarsForWL(theme.orbit), cssClass: ":root" });
+    const head = document.getElementsByTagName("head")[0];
+    if (!document.getElementById(ID)) {
+      head.appendChild(style);
+    }
+  }, [theme]);
+
   return (
     <RandomIdProvider useId={useId}>
       <StyledThemeProvider theme={theme}>

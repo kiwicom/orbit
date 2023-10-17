@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import defaultTheme from "../defaultTheme";
 import TOKENS from "./consts";
@@ -169,7 +170,7 @@ StyledInput.defaultProps = {
 };
 
 export const StyledLabel = styled(({ className, children, dataTest }) => (
-  <label className={className} data-test={dataTest}>
+  <label className={cx("orbit-checkbox-label", className)} data-test={dataTest}>
     {children}
   </label>
 ))`

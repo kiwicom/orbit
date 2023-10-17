@@ -2,13 +2,13 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import type { Props, Option } from "../types";
-import ListChoice, { StyledListChoice } from "../../ListChoice";
+import ListChoice from "../../ListChoice";
 import defaultTheme from "../../defaultTheme";
 import CheckCircle from "../../icons/CheckCircle";
 
 const StyledListChoiceWrapper = styled.li<{ $active: boolean }>`
   ${({ theme, $active }) => css`
-    ${StyledListChoice} {
+    .orbit-list-choice {
       background: ${$active && theme.orbit.paletteCloudLight};
     }
   `};

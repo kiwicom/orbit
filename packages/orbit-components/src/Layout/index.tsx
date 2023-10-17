@@ -1,12 +1,9 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
 import Grid from "../utils/Grid";
 import { LAYOUT_SETTINGS } from "./consts";
-import mq from "../utils/mediaQuery";
 import type { Props, Type } from "./types";
 import type { Props as LayoutColumnProps } from "./LayoutColumn/types";
 
@@ -18,30 +15,19 @@ const getChildrenProps = (type: Type, key: string) => {
   return null;
 };
 
-const StyledLayout = styled(Grid)`
-  box-sizing: border-box;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 ${({ theme }) => theme.orbit.spaceMedium};
-
-  ${mq.desktop(css`
-    padding: ${({ theme }) => theme.orbit.spaceLarge};
-  `)};
-`;
-
-StyledLayout.defaultProps = {
-  theme: defaultTheme,
-};
-
 const Layout = ({ children, type, dataTest }: Props) => (
-  <StyledLayout {...LAYOUT_SETTINGS[type]} dataTest={dataTest}>
+  <Grid
+    {...LAYOUT_SETTINGS[type]}
+    className="px-md de:p-lg mx-auto my-0 box-border w-full py-0"
+    dataTest={dataTest}
+  >
     {React.Children.map(children as React.ReactElement<LayoutColumnProps>, (item, key) => {
       return React.cloneElement(item, {
         ...getChildrenProps(type, key.toString()),
         ...item.props,
       });
     })}
-  </StyledLayout>
+  </Grid>
 );
 
 export default Layout;

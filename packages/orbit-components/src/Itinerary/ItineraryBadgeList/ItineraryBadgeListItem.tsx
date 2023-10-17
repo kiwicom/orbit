@@ -1,13 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { css } from "styled-components";
 
 import {
-  StyledBadgeListItem,
+  ItemWrapper,
   getIconColor,
-  StyledVerticalBadge,
-  StyledBadgeContent,
+  VerticalBadge,
+  BadgeContent,
 } from "../../BadgeList/BadgeListItem";
 import Stack from "../../Stack";
 // TODO: remove after designers will resolve status colors
@@ -25,15 +24,15 @@ const ItineraryBadgeListItem = ({
   strikeThrough,
 }: Props) => {
   return (
-    <StyledBadgeListItem data-test={dataTest}>
-      <StyledVerticalBadge $type={type} aria-hidden>
+    <ItemWrapper dataTest={dataTest}>
+      <VerticalBadge type={type}>
         {/* @ts-expect-error TODO */}
         {React.isValidElement(icon) && React.cloneElement(icon, { color: getIconColor(type) })}
-      </StyledVerticalBadge>
-      <StyledBadgeContent
-        css={css`
-          margin-top: ${cancelledValue ? `4px` : ""};
-        `}
+      </VerticalBadge>
+      <BadgeContent
+        style={{
+          marginTop: cancelledValue ? `4px` : "",
+        }}
       >
         <Stack direction="column" spacing="XXSmall">
           <Text
@@ -52,8 +51,8 @@ const ItineraryBadgeListItem = ({
             </Text>
           )}
         </Stack>
-      </StyledBadgeContent>
-    </StyledBadgeListItem>
+      </BadgeContent>
+    </ItemWrapper>
   );
 };
 

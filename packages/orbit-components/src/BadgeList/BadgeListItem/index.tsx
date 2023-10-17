@@ -1,28 +1,20 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import Text from "../../Text";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "../consts";
-import defaultTheme from "../../defaultTheme";
 import { ICON_COLORS } from "../../Icon/consts";
-import { right } from "../../utils/rtl";
 import type { Props, Type } from "./types";
 import type { Props as IconProps } from "../../Icon/types";
 
-const getBackground = ({ theme, $type }: { theme: typeof defaultTheme; $type?: Type }) => {
-  const tokens = {
-    [TYPE_OPTIONS.NEUTRAL]: theme.orbit.paletteCloudLight,
-    [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueLight,
-    [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenLight,
-    [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeLight,
-    [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedLight,
-  };
-
-  if (!$type) return null;
-
-  return tokens[$type];
+const BACKGROUND = {
+  [TYPE_OPTIONS.NEUTRAL]: "bg-badge-neutral-background",
+  [TYPE_OPTIONS.INFO]: "bg-badge-info-subtle-background",
+  [TYPE_OPTIONS.SUCCESS]: "bg-badge-success-subtle-background",
+  [TYPE_OPTIONS.WARNING]: "bg-badge-warning-subtle-background",
+  [TYPE_OPTIONS.CRITICAL]: "bg-badge-critical-subtle-background",
 };
 
 export const getIconColor = (type: Type) => {
@@ -30,57 +22,47 @@ export const getIconColor = (type: Type) => {
   return type;
 };
 
-export const StyledBadgeListItem = styled.li`
-  ${({ theme }) => css`
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    & + & {
-      margin-top: ${theme.orbit.spaceXXSmall};
-    }
-  `};
-`;
+export const ItemWrapper = ({ children, dataTest }) => (
+  <li className="[&_+_&]:mt-xxs flex w-full flex-row" data-test={dataTest}>
+    {children}
+  </li>
+);
 
-StyledBadgeListItem.defaultProps = {
-  theme: defaultTheme,
+export const VerticalBadge = ({
+  children,
+  type,
+}: {
+  children: React.ReactNode;
+  type: Props["type"];
+}) => {
+  return (
+    <div
+      className={cx(
+        "me-xs h-icon-large w-icon-large rounded-circle flex flex-shrink-0 items-center justify-center",
+        "[&_svg]:h-icon-small [&_svg]:w-icon-small",
+        type && BACKGROUND[type],
+      )}
+      aria-hidden
+    >
+      {children}
+    </div>
+  );
 };
 
-export const StyledVerticalBadge = styled.div<{ $type?: Props["type"] }>`
-  ${({ theme, $type }) => css`
-    background: ${getBackground({ theme, $type })};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-${right}: ${theme.orbit.spaceXSmall};
-    flex-shrink: 0;
-    height: ${theme.orbit.heightIconLarge};
-    width: ${theme.orbit.widthIconLarge};
-    border-radius: ${theme.orbit.borderRadiusCircle};
-    svg {
-      height: ${theme.orbit.heightIconSmall};
-      width: ${theme.orbit.widthIconSmall};
-    }
-  `};
-`;
-
-StyledVerticalBadge.defaultProps = {
-  theme: defaultTheme,
-};
-
-export const StyledBadgeContent = styled.div`
-  ${({ theme }) => css`
-    display: inline-flex;
-    align-items: center;
-
-    .orbit-tooltip-wrapper .orbit-text {
-      font-weight: ${theme.orbit.fontWeightMedium};
-    }
-  `};
-`;
-
-StyledBadgeContent.defaultProps = {
-  theme: defaultTheme,
-};
+export const BadgeContent = ({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+}) => (
+  <div
+    className="inline-flex items-center [&_.orbit-tooltip-wrapper_.orbit-text]:font-medium"
+    style={style}
+  >
+    {children}
+  </div>
+);
 
 const BadgeListItem = ({
   icon,
@@ -91,19 +73,19 @@ const BadgeListItem = ({
   children,
 }: Props) => {
   return (
-    <StyledBadgeListItem data-test={dataTest}>
-      <StyledVerticalBadge $type={type} aria-hidden>
+    <ItemWrapper dataTest={dataTest}>
+      <VerticalBadge type={type}>
         {React.isValidElement(icon) &&
           React.cloneElement(icon as React.ReactElement<IconProps>, {
             color: getIconColor(type),
           })}
-      </StyledVerticalBadge>
-      <StyledBadgeContent>
+      </VerticalBadge>
+      <BadgeContent>
         <Text type="secondary" size={size} as="span" strikeThrough={strikeThrough}>
           {children}
         </Text>
-      </StyledBadgeContent>
-    </StyledBadgeListItem>
+      </BadgeContent>
+    </ItemWrapper>
   );
 };
 

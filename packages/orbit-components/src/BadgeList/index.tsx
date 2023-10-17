@@ -1,22 +1,14 @@
 "use client";
 
 import * as React from "react";
-import styled from "styled-components";
 
 import type { Props } from "./types";
 
-const StyledBadgeList = styled.ul`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-`;
-
 const BadgeList = ({ children, dataTest, id }: Props) => {
   return (
-    <StyledBadgeList data-test={dataTest} id={id}>
+    <ul className="m-0 flex flex-col p-0" data-test={dataTest} id={id}>
       {children}
-    </StyledBadgeList>
+    </ul>
   );
 };
 

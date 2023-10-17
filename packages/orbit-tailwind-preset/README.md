@@ -23,12 +23,17 @@ The `orbitComponentsPreset` function accepts an optional object with one propert
 In your `tailwind.config.js` file (or equivalent), add the following:
 
 ```js
+const path = require("node:path");
 const orbitComponentsPreset = require("@kiwicom/orbit-tailwind-preset");
+// the following ensures the correct path is found (especially within monorepos)
+const orbitComponentsPath = require
+  .resolve("@kiwicom/orbit-components")
+  .replace("/lib/index.js", "");
 
 module.exports = {
   content: [
     // ...
-    "./node_modules/@kiwicom/orbit-components/**/*.js",
+    path.join(orbitComponentsPath, "**", "*.js"),
   ],
   presets: [
     orbitComponentsPreset({
@@ -38,7 +43,7 @@ module.exports = {
 };
 ```
 
-The `content` property is required for Tailwind to [know which files to scan for classes](https://tailwindcss.com/docs/content-configuration). It should include the path to all your source files that use Tailwind classes. The path to the `@kiwicom/orbit-components` package is required for the component-specific classes to be scanned and built into the final CSS.
+The `content` property is required for Tailwind to [know which files to scan for classes](https://tailwindcss.com/docs/content-configuration). It should include the path to all your source files that use Tailwind classes. The path to the `@kiwicom/orbit-components` package is required for the component-specific classes to be scanned and built into the final CSS. (The `require.resolve` ensures it works inside of monorepos too).
 
 The `presets` property is required for Tailwind to [know which presets to use](https://tailwindcss.com/docs/presets). It should include the `orbitComponentsPreset` function, which returns the Orbit Tailwind preset.
 

@@ -24,6 +24,7 @@ export type Props = {|
   ...BasicProps,
   ...Globals,
   +as?: string,
+  +className?: string,
   +mediumMobile?: MediaQuery,
   +largeMobile?: MediaQuery,
   +tablet?: MediaQuery,

@@ -17,6 +17,7 @@ const inlineClasses: Record<QUERIES, { inline: string; grid: string }> = {
 
 const Grid = ({
   children,
+  className,
   as: ComponentTag = "div",
   dataTest,
   width,
@@ -92,7 +93,7 @@ const Grid = ({
     // @ts-expect-error orbit string as
     <ComponentTag
       data-test={dataTest}
-      className={cx([
+      className={cx(className, [
         inline ? "inline-grid" : "grid",
         spaceAfter && spaceAfterClasses[spaceAfter],
         vars["--grid-width"] != null && "w-[var(--grid-width)]",

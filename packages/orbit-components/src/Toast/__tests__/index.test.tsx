@@ -9,7 +9,9 @@ import Button from "../../Button";
 import { EXPIRE_DISMISS_DELAY, SWIPE_DISMISS_DELAY } from "../consts";
 
 describe("Toast", () => {
-  const user = userEvent.setup();
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
 
   afterEach(done => {
     act(() => {
@@ -22,6 +24,9 @@ describe("Toast", () => {
     const onMouseEnter = jest.fn();
     const onMouseLeave = jest.fn();
     const onDismiss = jest.fn();
+    const user = userEvent.setup({
+      advanceTimers: jest.advanceTimersByTime,
+    });
 
     render(
       <Toast
@@ -46,8 +51,6 @@ describe("Toast", () => {
     await user.unhover(toast);
     expect(onMouseLeave).toHaveBeenCalled();
 
-    jest.useFakeTimers();
-
     // test dismiss on swipe
     fireEvent.mouseDown(toast, { screenX: 10 });
     fireEvent.mouseMove(toast, { screenX: 300 });
@@ -61,6 +64,10 @@ describe("Toast", () => {
   });
 
   it(`should have expected DOM output with ToastRoot`, async () => {
+    const user = userEvent.setup({
+      advanceTimers: jest.advanceTimersByTime,
+    });
+
     render(
       <>
         <ToastRoot
@@ -96,7 +103,6 @@ describe("Toast", () => {
   it("should be removed from DOM on dismiss", () => {
     const dismissTimeout = 300;
     render(<ToastRoot dismissTimeout={dismissTimeout} />);
-    jest.useFakeTimers();
     act(() => createToast("kek", { icon: <Airplane /> }));
     // TODO: find out why it needs an additional millisecond
     act(() => jest.advanceTimersByTime(dismissTimeout + EXPIRE_DISMISS_DELAY + 1));

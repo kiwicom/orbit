@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import type { StyledComponent } from "styled-components";
 
 import type { Globals } from "../../common/common.js.flow";
 
@@ -17,8 +16,5 @@ export type Props = {|
 |};
 
 declare export var getIconColor: (type: Type) => string;
-declare export var StyledBadgeListItem: StyledComponent<any, any, HTMLDivElement>;
-declare export var StyledVerticalBadge: StyledComponent<any, any, HTMLDivElement>;
-declare export var StyledBadgeContent: StyledComponent<any, any, HTMLDivElement>;
 
 declare export default React.ComponentType<Props>;

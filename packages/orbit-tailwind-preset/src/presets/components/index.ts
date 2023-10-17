@@ -80,12 +80,6 @@ const cfg = (options?: Options): Config => {
       preflight: disablePreflight ? false : undefined,
     },
     theme: {
-      variables: {
-        DEFAULT: Object.entries(tokens).reduce((acc, [key, value]) => {
-          acc[kebabCase(key)] = value;
-          return acc;
-        }, {}),
-      },
       extend: {
         screens: {
           "sm-mm": { max: px(tokens.breakpointMediumMobile - 1) },
@@ -285,11 +279,26 @@ const cfg = (options?: Options): Config => {
           loader: "loader 1.25s infinite ease-in-out",
           pulse: "pulse 1.5s infinite",
         },
-        textColor: Object.entries(getForegroundColors(tokens)).reduce((acc, [key, value]) => {
-          const name = key.replace("text-", "");
-          return { ...acc, [name]: value };
-        }, {}),
-        backgroundColor: getBackgroundColors(tokens),
+        textColor: {
+          ...Object.entries(getForegroundColors(tokens)).reduce((acc, [key, value]) => {
+            const name = key.replace("text-", "");
+            return { ...acc, [name]: value };
+          }, {}),
+          // overrides for specific WL
+          "button-primary-foreground": `var(--button-primary-foreground, ${tokens.buttonPrimaryForeground})`,
+          "button-primary-foreground-hover": `var(--button-primary-foreground-hover, ${tokens.buttonPrimaryForegroundHover})`,
+          "button-primary-foreground-active": `var(--button-primary-foreground-active, ${tokens.buttonPrimaryForegroundActive})`,
+          "button-primary-subtle-foreground": `var(--button-primary-subtle-foreground, ${tokens.buttonPrimarySubtleForeground})`,
+          "button-primary-subtle-foreground-hover": `var(--button-primary-subtle-foreground-hover, ${tokens.buttonPrimarySubtleForegroundHover})`,
+          "button-primary-subtle-foreground-active": `var(--button-primary-subtle-foreground-active, ${tokens.buttonPrimarySubtleForegroundActive})`,
+        },
+        backgroundColor: {
+          ...getBackgroundColors(tokens),
+          // overrides for specific WL
+          "button-primary-background": `var(--button-primary-background, ${tokens.buttonPrimaryBackground})`,
+          "button-primary-background-hover": `var(--button-primary-background-hover, ${tokens.buttonPrimaryBackgroundHover})`,
+          "button-primary-background-active": `var(--button-primary-background-active, ${tokens.buttonPrimaryBackgroundActive})`,
+        },
       },
     },
     plugins: [

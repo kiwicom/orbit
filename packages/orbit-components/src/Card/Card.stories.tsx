@@ -333,7 +333,7 @@ Accessibility.story = {
 
 export const VisualTest = () => {
   return (
-    <div className="space-y-xs">
+    <div className="space-y-xs bg-ink-light">
       <Card title="Somebody once" />
       <Card title="Somebody once" description="Told me the world is gonna roll me" />
       <Card

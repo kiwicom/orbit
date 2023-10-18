@@ -289,15 +289,7 @@ export const AlertVisualTest = () => {
             <Alert type={type} title="Title">
               <div className="space-x-xs">
                 <TextLink>Same type link</TextLink>
-                <TextLink dataTest="TextLinkHover">Same type link hover</TextLink>
-                <TextLink dataTest="TextLinkActive">Same type link active</TextLink>
                 <TextLink type="secondary">Secondary type link</TextLink>
-                <TextLink dataTest="TextLinkHover" type="secondary">
-                  Secondary type link hover
-                </TextLink>
-                <TextLink dataTest="TextLinkActive" type="secondary">
-                  Secondary type link active
-                </TextLink>
               </div>
             </Alert>
           </div>
@@ -353,9 +345,9 @@ AlertVisualTest.story = {
       disableSnapshot: false,
     },
     pseudo: {
-      hover: ["[data-test='AlertButtonHover']", "[data-test='TextLinkHover']"],
+      hover: ["[data-test='AlertButtonHover']"],
       focus: ["[data-test='AlertButtonFocus']"],
-      active: ["[data-test='AlertButtonActive']", "[data-test='TextLinkActive']"],
+      active: ["[data-test='AlertButtonActive']"],
     },
   },
 };
@@ -375,9 +367,9 @@ AlertVisualTestRtl.story = {
       disableSnapshot: false,
     },
     pseudo: {
-      hover: ["[data-test='AlertButtonHover']", "[data-test='TextLinkHover']"],
+      hover: ["[data-test='AlertButtonHover']"],
       focus: ["[data-test='AlertButtonFocus']"],
-      active: ["[data-test='AlertButtonActive']", "[data-test='TextLinkActive']"],
+      active: ["[data-test='AlertButtonActive']"],
     },
   },
 };

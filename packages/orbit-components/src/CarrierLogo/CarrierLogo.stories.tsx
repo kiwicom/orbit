@@ -201,18 +201,21 @@ export const VisualTest = () => {
         <CarrierLogo carriers={two} />
         <CarrierLogo rounded carriers={two} />
         <CarrierLogo inlineStacked carriers={two} />
+        <CarrierLogo inlineStacked rounded carriers={two} />
       </div>
 
       <div className="space-x-xs flex">
         <CarrierLogo carriers={three} />
         <CarrierLogo rounded carriers={three} />
         <CarrierLogo inlineStacked carriers={three} />
+        <CarrierLogo inlineStacked rounded carriers={three} />
       </div>
 
       <div className="space-x-xs flex">
         <CarrierLogo carriers={four} />
         <CarrierLogo rounded carriers={four} />
         <CarrierLogo inlineStacked carriers={four} />
+        <CarrierLogo inlineStacked rounded carriers={four} />
       </div>
 
       <div className="space-x-xs flex">

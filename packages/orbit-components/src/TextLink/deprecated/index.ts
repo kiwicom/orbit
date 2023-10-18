@@ -80,18 +80,10 @@ const resolveUnderline = ({
 };
 
 /**
- * @deprecated kept until Alert is refactored to TW
+ * @deprecated kept until StyledText is removed
  */
-export const getLinkStyle = ({
-  theme,
-  $type,
-  includeBase = true,
-}: {
-  theme: Theme;
-  $type: Props["type"];
-  includeBase?: boolean;
-}) => {
-  const baseStyles = css`
+export const getLinkStyle = ({ theme, $type }: { theme: Theme; $type: Props["type"] }) => {
+  return css`
     &,
     &:link,
     &:visited {
@@ -100,9 +92,7 @@ export const getLinkStyle = ({
       font-weight: ${theme.orbit.fontWeightLinks}
         ${$type === TYPE_OPTIONS.SECONDARY && `!important`};
     }
-  `;
-  return css`
-    ${includeBase && baseStyles};
+
     &:hover {
       outline: none;
       text-decoration: none;

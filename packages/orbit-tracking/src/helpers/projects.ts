@@ -25,7 +25,7 @@ export const mapProjects = (data: ProjectNode[], folderName: string) =>
       // retrieve name from url, because repository name can be the same twice (balkan has just `Frontend`)
       const name = url.split("/").slice(-1)[0].replace(".git", "");
       return {
-        cmd: `git clone -b master ${ssh} --depth=1 --single-branch ${path.join(
+        cmd: `git clone ${ssh} --depth=1 --single-branch ${path.join(
           folderName,
           `${name}-${projectId}`,
         )}`,

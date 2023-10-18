@@ -1,88 +1,41 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import cx from "clsx";
 
 import type { Props as IconProps } from "../Icon/types";
 import type * as Common from "../common/types";
 import type { Type, Props } from "./types";
-import type { Theme } from "../defaultTheme";
-import defaultTheme from "../defaultTheme";
 import InformationCircle from "../icons/InformationCircle";
 import Check from "../icons/Check";
 import AlertTriangle from "../icons/Alert";
 import AlertCircle from "../icons/AlertCircle";
 import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
-import { getLinkStyle } from "../TextLink/deprecated";
-import { TYPE_OPTIONS, TOKENS, CLOSE_BUTTON_DATA_TEST } from "./consts";
-import { rtlSpacing, right, left } from "../utils/rtl";
-import getSpacingToken from "../common/getSpacingToken";
-import media from "../utils/mediaQuery";
+import { TYPE_OPTIONS, CLOSE_BUTTON_DATA_TEST } from "./consts";
+import { spaceAfterClasses } from "../common/tailwind";
+import { alertDescendantClasses } from "../TextLink/helpers/twClasses";
 
-const getTypeToken =
-  (name: string) =>
-  ({ theme, type, suppressed }: { theme: Theme; type: Type; suppressed?: boolean }) => {
-    const tokens = {
-      [TOKENS.colorIconAlert]: {
-        [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
-        [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
-        [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
-        [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
-      },
-      [TOKENS.backgroundAlert]: {
-        [TYPE_OPTIONS.INFO]: suppressed
-          ? theme.orbit.paletteCloudLight
-          : theme.orbit.backgroundAlertInfo,
-        [TYPE_OPTIONS.SUCCESS]: suppressed
-          ? theme.orbit.paletteCloudLight
-          : theme.orbit.backgroundAlertSuccess,
-        [TYPE_OPTIONS.WARNING]: suppressed
-          ? theme.orbit.paletteCloudLight
-          : theme.orbit.backgroundAlertWarning,
-        [TYPE_OPTIONS.CRITICAL]: suppressed
-          ? theme.orbit.paletteCloudLight
-          : theme.orbit.backgroundAlertCritical,
-      },
-      // TODO: create token
-      [TOKENS.colorTextLinkAlertHover]: {
-        [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueDarkHover,
-        [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenDarkHover,
-        [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeDarkHover,
-        [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedDarkActive,
-      },
-      // TODO: create token
-      [TOKENS.colorTextLinkAlertFocus]: {
-        [TYPE_OPTIONS.INFO]: convertHexToRgba(theme.orbit.paletteBlueDarkHover, 10),
-        [TYPE_OPTIONS.SUCCESS]: convertHexToRgba(theme.orbit.paletteGreenDarkHover, 10),
-        [TYPE_OPTIONS.WARNING]: convertHexToRgba(theme.orbit.paletteOrangeDarkHover, 10),
-        [TYPE_OPTIONS.CRITICAL]: convertHexToRgba(theme.orbit.paletteRedDarkActive, 10),
-      },
-      [TOKENS.colorBorderAlert]: {
-        [TYPE_OPTIONS.INFO]: suppressed
-          ? theme.orbit.paletteCloudNormal
-          : theme.orbit.paletteBlueLightHover,
-        [TYPE_OPTIONS.SUCCESS]: suppressed
-          ? theme.orbit.paletteCloudNormal
-          : theme.orbit.paletteGreenLightHover,
-        [TYPE_OPTIONS.WARNING]: suppressed
-          ? theme.orbit.paletteCloudNormal
-          : theme.orbit.paletteOrangeLightHover,
-        [TYPE_OPTIONS.CRITICAL]: suppressed
-          ? theme.orbit.paletteCloudNormal
-          : theme.orbit.paletteRedLightHover,
-      },
-      [TOKENS.colorAccentBorder]: {
-        [TYPE_OPTIONS.INFO]: theme.orbit.paletteBlueNormal,
-        [TYPE_OPTIONS.SUCCESS]: theme.orbit.paletteGreenNormal,
-        [TYPE_OPTIONS.WARNING]: theme.orbit.paletteOrangeNormal,
-        [TYPE_OPTIONS.CRITICAL]: theme.orbit.paletteRedNormal,
-      },
-    };
+const COLORS: Record<Type, string> = {
+  info: "bg-blue-light border-blue-light-hover lm:border-t-blue-light-hover",
+  success: "bg-green-light border-green-light-hover lm:border-t-green-light-hover",
+  warning: "bg-orange-light border-orange-light-hover lm:border-t-orange-light-hover",
+  critical: "bg-red-light border-red-light-hover lm:border-t-red-light-hover",
+};
 
-    return tokens[name][type];
-  };
+const ACCENT_BORDER: Record<Type, string> = {
+  info: "border-t-blue-normal lm:border-s-blue-normal",
+  success: "border-t-green-normal lm:border-s-green-normal",
+  warning: "border-t-orange-normal lm:border-s-orange-normal",
+  critical: "border-t-red-normal lm:border-s-red-normal",
+};
+
+const ICON_COLOR: Record<Type, string> = {
+  info: "text-blue-normal",
+  success: "text-green-normal",
+  warning: "text-orange-normal",
+  critical: "text-red-normal",
+};
 
 const StyledIcon = ({ icon, type }: Pick<Props, "icon" | "type">) => {
   // Icon should be boolean and TRUE
@@ -109,142 +62,27 @@ const StyledIcon = ({ icon, type }: Pick<Props, "icon" | "type">) => {
   return <>{icon}</>;
 };
 
-const StyledAlert = styled.div<{
-  closable?: boolean;
-  spaceAfter?: Common.SpaceAfterSizes;
-  icon?: React.ReactNode;
-  suppressed?: boolean;
+const ContentWrapper = ({
+  type,
+  inlineActions,
+  children,
+}: {
+  inlineActions?: boolean;
   type: Type;
-}>`
-  ${({ theme, closable }) => css`
-    position: relative;
-    display: flex;
-    width: 100%;
-    border-radius: ${theme.orbit.borderRadiusLarge};
-    border: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
-    background: ${getTypeToken(TOKENS.backgroundAlert)};
-    color: ${theme.orbit.paletteInkDark};
-    font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextNormal};
-    line-height: ${theme.orbit.lineHeightTextNormal};
-    box-sizing: border-box;
-    margin-bottom: ${getSpacingToken};
-    border-top: 3px solid ${getTypeToken(TOKENS.colorAccentBorder)};
-
-    padding: ${closable
-      ? rtlSpacing(
-          `${theme.orbit.spaceSmall} ${theme.orbit.spaceLarge} ${theme.orbit.spaceSmall} ${theme.orbit.spaceSmall}`,
-        )
-      : theme.orbit.spaceSmall};
-
-    ${media.largeMobile(css`
-      border-top: 1px solid ${getTypeToken(TOKENS.colorBorderAlert)};
-      border-${left}: 3px solid ${getTypeToken(TOKENS.colorAccentBorder)};
-    `)}
-
-    ${media.tablet(css`
-      border-radius: ${theme.orbit.borderRadiusNormal};
-    `)}
-  `}
-`;
-
-StyledAlert.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledIconContainer = styled.div<{ inlineActions: boolean; type: Type }>`
-  ${({ theme, inlineActions }) => css`
-    flex-shrink: 0;
-    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-    color: ${getTypeToken(TOKENS.colorIconAlert)};
-    display: ${inlineActions && "flex"};
-    align-items: ${inlineActions && "center"};
-    line-height: 1;
-
-    ${media.tablet(css`
-      margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)({ theme })};
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    `)}
-  `}
-`;
-
-StyledIconContainer.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledContentWrapper = styled.div<{
-  hasTitle: boolean;
-  inlineActions: boolean;
-}>`
-  ${({ hasTitle, inlineActions }) => css`
-    flex: 1;
-    display: flex;
-    flex-direction: ${hasTitle && inlineActions ? "row" : "column"};
-    align-items: ${!hasTitle && "center"};
-    justify-content: ${inlineActions && "space-between"};
-  `}
-`;
-
-const StyledTitle = styled.div<{ inlineActions?: boolean; hasChildren: boolean }>`
-  ${({ theme, hasChildren, inlineActions }) => css`
-    color: ${theme.orbit.paletteInkDark};
-    display: flex;
-    align-items: center;
-    min-height: 20px;
-    margin-bottom: ${hasChildren && (inlineActions ? "0" : theme.orbit.spaceXXSmall)};
-    font-weight: ${theme.orbit.fontWeightBold};
-  `}
-`;
-
-StyledTitle.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledContent = styled.div<{ inlineActions?: boolean; $type: Type; $noUnderline: boolean }>`
-  ${({ inlineActions, theme, $type }) => css`
-    display: flex;
-    align-items: center;
-    min-height: 20px;
-    width: ${!inlineActions && "100%"};
-
-    & a:not([class]),
-    & .orbit-text-link:not(.orbit-text-link--secondary) {
-      ${getLinkStyle({ theme, $type, includeBase: true })};
-    }
-
-    & .orbit-text-link.orbit-text-link--secondary {
-      ${getLinkStyle({ theme, $type, includeBase: false })};
-    }
-
-    & .orbit-list-item,
-    .orbit-text,
-    .orbit-heading {
-      color: ${theme.orbit.paletteInkDark};
-    }
-  `}
-`;
-
-StyledContent.defaultProps = {
-  theme: defaultTheme,
-};
-
-const CloseContainer = styled.div<{
-  hasChildren: boolean;
-}>`
-  ${({ theme, hasChildren }) => css`
-    position: absolute;
-    top: ${hasChildren ? 0 : "50%"};
-    margin-top: ${!hasChildren && `-${theme.orbit.widthIconSmall}`};
-    ${right}: 0;
-    margin-${right}: ${!hasChildren && theme.orbit.spaceXSmall};
-  `}
-`;
-
-CloseContainer.defaultProps = {
-  theme: defaultTheme,
+  children: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cx(
+        "flex min-h-[20px] items-center",
+        !inlineActions && "w-full",
+        "[&_.orbit-list-item]:text-ink-dark [&_.orbit-text]:text-ink-dark [&_.orbit-heading]:text-ink-dark",
+        ...alertDescendantClasses[type],
+      )}
+    >
+      {children}
+    </div>
+  );
 };
 
 const AlertCloseButton = ({
@@ -261,7 +99,7 @@ const AlertCloseButton = ({
   icon: React.ReactNode;
 }) => {
   return (
-    <CloseContainer hasChildren={hasChildren}>
+    <div className={cx("absolute end-0", hasChildren ? "top-0" : "me-xs top-1/2 -translate-y-1/2")}>
       <ButtonLink
         dataTest={dataTest}
         onClick={onClick}
@@ -270,7 +108,7 @@ const AlertCloseButton = ({
         type="secondary"
         title={labelClose}
       />
-    </CloseContainer>
+    </div>
   );
 };
 
@@ -290,37 +128,56 @@ const Alert = (props: Props) => {
     labelClose,
   } = props;
   return (
-    <StyledAlert
-      type={type}
-      icon={icon}
+    <div
+      className={cx(
+        "rounded-large text-ink-dark font-base text-normal p-sm relative box-border flex w-full border border-t-[3px] leading-normal",
+        closable && "pe-lg",
+        "lm:border-s-[3px] lm:border-t",
+        "tb:rounded-normal",
+        suppressed ? "bg-cloud-light border-cloud-normal lm:border-t-cloud-normal" : COLORS[type],
+        ACCENT_BORDER[type],
+        spaceAfter && spaceAfterClasses[spaceAfter],
+      )}
       id={id}
-      suppressed={suppressed}
-      closable={closable}
       data-test={dataTest}
-      spaceAfter={spaceAfter}
     >
       {icon && (
-        <StyledIconContainer type={type} inlineActions={!!inlineActions}>
+        <div
+          className={cx(
+            "me-xs m-0 shrink-0 leading-none",
+            inlineActions && "flex items-center",
+            ICON_COLOR[type],
+            "tb:me-xs tb:[&_svg]:w-icon-medium tb:[&_svg]:h-icon-medium",
+          )}
+        >
           <StyledIcon type={type} icon={icon} />
-        </StyledIconContainer>
+        </div>
       )}
-      <StyledContentWrapper hasTitle={!!title} inlineActions={!!inlineActions}>
+      <div
+        className={cx(
+          "flex flex-1",
+          title && inlineActions ? "flex-row" : "flex-col",
+          !title && "items-center",
+          inlineActions && "justify-between",
+        )}
+      >
         {title && (
-          <StyledTitle hasChildren={!!children} inlineActions={!!inlineActions}>
+          <div
+            className={cx(
+              "text-ink-dark flex min-h-[20px] items-center font-bold",
+              !!children && (inlineActions ? "mb-0" : "mb-xxs"),
+            )}
+          >
             {title}
-          </StyledTitle>
+          </div>
         )}
-        {children && !inlineActions && (
-          <StyledContent $type={type} $noUnderline>
-            {children}
-          </StyledContent>
-        )}
+        {children && !inlineActions && <ContentWrapper type={type}>{children}</ContentWrapper>}
         {inlineActions && (
-          <StyledContent $type={type} inlineActions={!!inlineActions} $noUnderline>
+          <ContentWrapper type={type} inlineActions={!!inlineActions}>
             {inlineActions}
-          </StyledContent>
+          </ContentWrapper>
         )}
-      </StyledContentWrapper>
+      </div>
       {closable && (
         <AlertCloseButton
           hasChildren={!!children}
@@ -330,7 +187,7 @@ const Alert = (props: Props) => {
           icon={<Close size="small" color={type} />}
         />
       )}
-    </StyledAlert>
+    </div>
   );
 };
 

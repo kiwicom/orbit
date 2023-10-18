@@ -561,3 +561,48 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const VisualTest = () => {
+  const { Container, onClose } = useModal();
+  const content = "Lorem ispum dolor sit amet.";
+
+  return (
+    <Container>
+      <Modal onClose={onClose} mobileHeader size={SIZES.NORMAL}>
+        <ModalHeader
+          title="Normal header"
+          illustration={<Illustration name={NAMES[0]} size="small" />}
+          description="Lorem ispum dolor sit amet"
+        />
+        <ModalHeader
+          title="Suppressed header"
+          illustration={<Illustration name={NAMES[0]} size="small" />}
+          suppressed
+        />
+        <ModalSection>
+          <Text>{content}</Text>
+        </ModalSection>
+        <ModalSection suppressed>
+          <Text>{content}</Text>
+        </ModalSection>
+        <ModalSection>
+          <Text>{content}</Text>
+        </ModalSection>
+        <ModalFooter flex={["0 auto", "1 100%"]}>
+          <Button type="secondary" iconLeft={<ChevronBackward />}>
+            Back
+          </Button>
+          <Box justify="end" display="flex">
+            <Button>Continue</Button>
+          </Box>
+        </ModalFooter>
+      </Modal>
+    </Container>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+};

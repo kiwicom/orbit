@@ -6,6 +6,8 @@ export const PROJECTS: Record<Scope, string> = {
   booking: "3993",
   frontend: "104",
   search: "1483",
+  home: "5369",
+  "mobile-landing": "3994",
   account: "2127",
   mmb: "2788",
   core: "3371",

@@ -9,6 +9,8 @@ type AccessLevel =
 
 export type Scope =
   | "booking"
+  | "home"
+  | "mobile-landing"
   | "smart-faq"
   | "search"
   | "frontend"

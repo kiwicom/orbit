@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [9.3.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.3.1...@kiwicom/orbit-components@9.3.2) (2023-10-18)
+
+
+### Bug Fixes
+
+* **ItinerarySegmentDetail:** fix overflowing content issue ([14ee7ef](https://github.com/kiwicom/orbit/commit/14ee7eff555e98bee275657070569b3086f12a35))
+
+
+
+
+
 ## [9.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.3.0...@kiwicom/orbit-components@9.3.1) (2023-09-25)
 
 

@@ -14,7 +14,7 @@ describe("Truncate", () => {
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("children")).toBeInTheDocument();
-    expect(container.firstChild).toHaveStyle({
+    expect(container.childNodes[1]).toHaveStyle({
       minWidth: 0,
       maxWidth: "10rem",
     });

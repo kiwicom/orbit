@@ -23,7 +23,7 @@ describe("Alert", () => {
   it("should have margin-bottom", () => {
     const { container } = render(<Alert spaceAfter={SPACINGS_AFTER.NORMAL}>{message}</Alert>);
     // @ts-expect-error TODO
-    expect(getComputedStyle(container.firstChild)).toHaveProperty(
+    expect(getComputedStyle(container.childNodes[1])).toHaveProperty(
       "margin-bottom",
       defaultTheme.orbit.spaceSmall,
     );

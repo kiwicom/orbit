@@ -15,7 +15,7 @@ describe("Slider/Bar", () => {
     );
 
     expect(ref.current).toBeDefined();
-    fireEvent.mouseDown(container.firstChild as HTMLElement, { pageX: 100 });
+    fireEvent.mouseDown(container.childNodes[1] as HTMLElement, { pageX: 100 });
     expect(onMouseDown).toHaveBeenCalled();
   });
 });

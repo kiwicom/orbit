@@ -66,7 +66,7 @@ describe("InputField", () => {
     expect(screen.getByTestId("suffix")).toBeInTheDocument();
     await act(() => user.tab());
     expect(screen.getByTestId("help")).toBeInTheDocument();
-    expect(container.firstChild).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
+    expect(container.childNodes[1]).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
 
   it("should trigger given event handlers", async () => {

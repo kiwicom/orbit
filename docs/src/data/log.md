@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.0.0...@kiwicom/orbit-components@10.1.0) (2023-10-19)
+
+#### Bug Fixes
+
+*   **Card:** add missing white background ([ec18790](https://github.com/kiwicom/orbit/commit/ec1879068e6f7921fd3706b41b54d52074c0570d))
+*   **Dialog:** hide scroll bar, but keep scrolling behaviour ([73fc50e](https://github.com/kiwicom/orbit/commit/73fc50ec9e86948a5530527d7ba017501b46489c))
+*   **ErrorFormTooltip:** arrow was misplaced ([e346e90](https://github.com/kiwicom/orbit/commit/e346e90b13a830818ee1e9d041e93537976c1ce7))
+*   **ItinerarySegmentDetail:** fix overflowing content issue ([bac87db](https://github.com/kiwicom/orbit/commit/bac87db66a7f55e6c8661b2e34c2660c6f467d7d))
+*   **OrbitProvider:** fix whitelables themingissue with css variables ([6ee3bee](https://github.com/kiwicom/orbit/commit/6ee3bee21ef334bc2a01368cf80302b33f132faa))
+
+#### Features
+
+*   **Grid:** add classname prop ([036eb85](https://github.com/kiwicom/orbit/commit/036eb85e036d57b5e597b1d26a55d69f88f1183f))
+*   **Hide:** migrate to Tailwind ([302e0dd](https://github.com/kiwicom/orbit/commit/302e0dd259c1eac3a14853298f03605399da2cd7))
+*   **Layout:** migrate to Tailwind ([26e85ec](https://github.com/kiwicom/orbit/commit/26e85ece508e054747066d70b8dcac0d30d8a4d4))
+
 ## [10.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.3.0...@kiwicom/orbit-components@10.0.0) (2023-10-02)
 
 #### Bug Fixes

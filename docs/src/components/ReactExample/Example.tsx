@@ -179,7 +179,6 @@ const Example = ({
           restoreLocalStorage();
           setPlaygroundOpened(false);
           setOpenEditor(true);
-          updateLocalStorage(defaultCode);
         }}
         knobs={exampleKnobs.length > 0}
         variants={exampleVariants}

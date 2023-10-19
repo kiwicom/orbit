@@ -44,6 +44,7 @@ export type Name =
   | "FareLockSuccess"
   | "Feedback"
   | "FlexibleDates"
+  | "FlightDisruptions"
   | "GroundTransport404"
   | "Help"
   | "Improve"

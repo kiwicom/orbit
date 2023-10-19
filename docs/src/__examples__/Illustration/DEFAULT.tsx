@@ -47,6 +47,7 @@ export default {
             "FareLockSuccess",
             "Feedback",
             "FlexibleDates",
+            "FlightDisruptions",
             "Help",
             "Improve",
             "Insurance",

@@ -16,7 +16,7 @@ jest.mock("../../hooks/useMediaQuery", () => {
 describe("#Timeline", () => {
   it("should have spaceAfter", () => {
     const { container } = render(<Timeline spaceAfter={SPACINGS_AFTER.NORMAL}>kek</Timeline>);
-    expect(getComputedStyle(container.firstChild as HTMLElement)).toHaveProperty(
+    expect(getComputedStyle(container.childNodes[1] as HTMLElement)).toHaveProperty(
       "margin-bottom",
       defaultTheme.orbit.spaceSmall,
     );

@@ -34,19 +34,11 @@ const getCssVarsForWL = (theme: typeof defaultTokens) =>
  */
 
 const OrbitProvider = ({ theme, children, useId }: Props) => {
-  React.useEffect(() => {
-    const ID = "orbit-theme-css-vars";
-    const style = document.createElement("style");
-    style.setAttribute("id", ID);
-    style.innerText = tokensToCssVars({ tokens: getCssVarsForWL(theme.orbit), cssClass: ":root" });
-    const head = document.getElementsByTagName("head")[0];
-    if (!document.getElementById(ID)) {
-      head.appendChild(style);
-    }
-  }, [theme]);
-
   return (
     <RandomIdProvider useId={useId}>
+      <style id="orbit-theme-css-vars">
+        {tokensToCssVars({ tokens: getCssVarsForWL(theme.orbit), cssClass: ":root" })}
+      </style>
       <StyledThemeProvider theme={theme}>
         <QueryContextProvider>{children}</QueryContextProvider>
       </StyledThemeProvider>

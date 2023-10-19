@@ -1,18 +1,9 @@
 import React from "react";
 
-import { load, save } from "../utils/storage";
+import { save } from "../utils/storage";
 
 const useSandbox = (exampleId: string, initialCode: string) => {
-  const [code, setCode] = React.useState(() => {
-    try {
-      const storedCode = load(exampleId);
-      return storedCode || initialCode;
-    } catch (err) {
-      console.error(err);
-      return initialCode;
-    }
-  });
-
+  const [code, setCode] = React.useState(initialCode);
   const [origin, setOrigin] = React.useState("");
 
   React.useEffect(() => {
@@ -23,6 +14,10 @@ const useSandbox = (exampleId: string, initialCode: string) => {
         setCode(e.newValue);
       }
     });
+
+    return () => {
+      window.removeEventListener("storage", () => {});
+    };
   }, [exampleId]);
 
   const updateLocalStorage = (newCode: string) => {

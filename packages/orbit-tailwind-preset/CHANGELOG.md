@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@2.1.0...@kiwicom/orbit-tailwind-preset@3.0.0) (2023-10-19)
+
+
+### Features
+
+* **Hide:** migrate to Tailwind ([302e0dd](https://github.com/kiwicom/orbit/commit/302e0dd259c1eac3a14853298f03605399da2cd7))
+* **tailwind:** remove defaultFoundation export ([41c5651](https://github.com/kiwicom/orbit/commit/41c5651538fcb605befbc28aefb4742bc0767452))
+
+
+### BREAKING CHANGES
+
+* **tailwind:** defaultFoundation export is removed
+
+
+
+
+
 # [2.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@2.0.1...@kiwicom/orbit-tailwind-preset@2.1.0) (2023-10-02)
 
 

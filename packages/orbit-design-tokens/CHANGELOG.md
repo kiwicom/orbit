@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.1.0...@kiwicom/orbit-design-tokens@6.2.0) (2023-10-19)
+
+
+### Features
+
+* **tokens:** add borderColorDisabled ([93f2ff7](https://github.com/kiwicom/orbit/commit/93f2ff75e83c37ba225e755a1b12d88d08ecb73a))
+
+
+
+
+
 # [6.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.0.1...@kiwicom/orbit-design-tokens@6.1.0) (2023-10-02)
 
 

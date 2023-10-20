@@ -1552,6 +1552,11 @@
     "category": "Border color",
     "version": "6.0.0"
   },
+  "borderColorModal": {
+    "replacement": "elevationFlatBorderColor",
+    "category": "Border color",
+    "version": "6.0.0"
+  },
   "borderColorTable": {
     "replacement": null,
     "category": "Border color",

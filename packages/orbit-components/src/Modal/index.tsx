@@ -1,296 +1,42 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import { ModalContext } from "./ModalContext";
-import { MobileHeader, StyledModalHeader, ModalHeading } from "./ModalHeader";
-import { StyledModalFooter } from "./ModalFooter";
-import { StyledModalSection } from "./ModalSection";
 import ModalCloseButton from "./ModalCloseButton";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
-import defaultTheme from "../defaultTheme";
-import media from "../utils/mediaQuery";
-import { right } from "../utils/rtl";
-import transition from "../utils/transition";
 import useRandomId from "../hooks/useRandomId";
 import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import usePrevious from "../hooks/usePrevious";
 import useLockScrolling from "../hooks/useLockScrolling";
 import type { Instance, Props } from "./types";
+import useTheme from "../hooks/useTheme";
 
-const getSizeToken = ({ size, theme }: { size: Props["size"]; theme: typeof defaultTheme }) => {
-  const tokens = {
-    [SIZES.EXTRASMALL]: "360px",
-    [SIZES.SMALL]: theme.orbit.widthModalSmall,
-    [SIZES.NORMAL]: theme.orbit.widthModalNormal,
-    [SIZES.LARGE]: theme.orbit.widthModalLarge,
-    [SIZES.EXTRALARGE]: theme.orbit.widthModalExtraLarge,
-  };
-
-  if (!size) return null;
-
-  return tokens[size];
-};
-
-const ModalBody = styled.div<{ autoFocus?: boolean; isMobileFullPage: Props["isMobileFullPage"] }>`
-  ${({ theme, isMobileFullPage }) => css`
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: ${theme.orbit.zIndexModalOverlay};
-    box-sizing: border-box;
-    outline: none;
-    overflow-x: hidden;
-    background-color: ${!isMobileFullPage && "rgba(0, 0, 0, 0.5)"};
-    font-family: ${theme.orbit.fontFamily};
-    -webkit-overflow-scrolling: auto;
-    ${media.largeMobile(css`
-      overflow-y: auto;
-      padding: ${theme.orbit.spaceXXLarge};
-      background-color: rgba(0, 0, 0, 0.5);
-    `)};
-  `}
-`;
-
-ModalBody.defaultProps = {
-  theme: defaultTheme,
-};
-
-const ModalWrapper = styled.div<{
-  isMobileFullPage: Props["isMobileFullPage"];
-  disableAnimation?: boolean;
-  loaded: boolean;
-  fixedFooter: Props["fixedFooter"];
-  size: Props["size"];
-}>`
-  ${({ isMobileFullPage, disableAnimation, loaded }) => css`
-    box-sizing: border-box;
-    min-height: 100%;
-    display: flex;
-    align-items: flex-start;
-    margin: 0 auto;
-    position: fixed;
-    width: 100%;
-    border-top-left-radius: ${!isMobileFullPage && "12px"};
-    border-top-right-radius: ${!isMobileFullPage && "12px"};
-    ${disableAnimation
-      ? css`
-          top: ${!isMobileFullPage && "32px"};
-        `
-      : css`
-          transition: ${transition(["top"], "normal", "ease-in-out")};
-          top: ${loaded ? !isMobileFullPage && "32px" : "100%"};
-        `}
-
-    ${media.largeMobile(css`
-      position: relative;
-      top: 0;
-      max-width: ${getSizeToken};
-      align-items: center;
-    `)};
-  `}
-`;
-
-ModalWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const CloseContainer = styled.div<{
-  scrolled?: boolean;
-  fixedClose?: boolean;
-  size?: Props["size"];
-  isMobileFullPage?: Props["isMobileFullPage"];
-  modalWidth?: number;
-}>`
-  ${({ theme, scrolled, fixedClose, isMobileFullPage, modalWidth, size }) => css`
-    display: flex;
-    ${
-      fixedClose || scrolled
-        ? css`
-            position: fixed;
-          `
-        : css`
-            position: absolute;
-          `
-    };
-    position: ${fixedClose || scrolled ? "fixed" : "absolute"};
-    top: ${!isMobileFullPage && (fixedClose || scrolled) ? "32px" : "0"};
-    right: 0;
-    z-index: 800;
-    justify-content: flex-end;
-    align-items: center;
-    box-sizing: border-box;
-    height: 52px;
-    width: 100%;
-    max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken({ size, theme })};
-    box-shadow: ${scrolled && theme.orbit.boxShadowFixed};
-    background-color: ${scrolled && theme.orbit.paletteWhite};
-    border-top-left-radius: ${!isMobileFullPage && "12px"};
-    border-top-right-radius: ${!isMobileFullPage && "12px"};
-    transition: ${transition(["box-shadow", "background-color"], "fast", "ease-in-out")};
-    pointer-events: none;
-
-
-    ${media.largeMobile(css`
-      top: ${(fixedClose || scrolled) && "0"};
-      right: ${(fixedClose || scrolled) && "auto"};
-      border-radius: 0;
-    `)};
-
-    & + ${StyledModalSection}:first-of-type {
-      padding-top: 52px;
-      border-top: 0;
-      margin: 0;
-    }
-
-    .orbit-button-primitive {
-      pointer-events: auto;
-      margin-${right}: ${theme.orbit.spaceXXSmall};
-
-      & svg {
-        transition: ${transition(["color"], "fast", "ease-in-out")};
-        color: ${theme.orbit.paletteInkNormal};
-      }
-
-      &:hover svg {
-        color: ${theme.orbit.paletteInkLightHover};
-      }
-
-      &:active svg {
-        color: ${theme.orbit.paletteInkLightActive};
-      }
-    }
-`}
-`;
-
-CloseContainer.defaultProps = {
-  theme: defaultTheme,
-};
-
-export const ModalWrapperContent = styled.div<{
-  isMobileFullPage: Props["isMobileFullPage"];
-  fixedFooter: Props["fixedFooter"];
-  footerHeight: number;
-  fullyScrolled?: boolean;
-  scrolled?: boolean;
-  fixedClose?: boolean;
-  size: Props["size"];
-  modalWidth: number;
-  hasModalSection?: boolean;
-}>`
-  ${({
-    theme,
-    isMobileFullPage,
-    fixedFooter,
-    footerHeight,
-    size,
-    fullyScrolled,
-    scrolled,
-    modalWidth,
-    hasModalSection,
-  }) => css`
-    position: absolute;
-    box-sizing: border-box;
-    border-top-left-radius: ${!isMobileFullPage && "12px"};
-    border-top-right-radius: ${!isMobileFullPage && "12px"};
-    background-color: ${theme.orbit.backgroundModal};
-    font-family: ${theme.orbit.fontFamily};
-    width: 100%;
-    ${isMobileFullPage
-      ? css`
-          max-height: 100%;
-          top: 0;
-        `
-      : css`
-          max-height: calc(
-            100% - ${theme.orbit.spaceXLarge} -
-              ${`${fixedFooter && Boolean(footerHeight) ? footerHeight : 0}px`}
-          );
-        `};
-    bottom: ${`${
-      (!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
-      (fixedFooter && Boolean(footerHeight) ? footerHeight : 0)
-    }px`};
-    box-shadow: ${theme.orbit.boxShadowOverlay};
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    ${fixedFooter &&
-    footerHeight &&
-    css`
-      ${StyledModalFooter} {
-        bottom: 0;
-        padding: ${theme.orbit.spaceMedium};
-        box-shadow: ${fullyScrolled
-          ? `inset 0 1px 0 ${theme.orbit.paletteCloudNormal}, ${theme.orbit.boxShadowFixedReverse}`
-          : `inset 0 0 0 transparent, ${theme.orbit.boxShadowFixedReverse}`};
-        position: fixed;
-        transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
-      }
-      ${StyledModalSection}:last-of-type {
-        padding-bottom: ${theme.orbit.spaceLarge};
-        margin-bottom: 0;
-      }
-    `};
-
-    ${MobileHeader} {
-      top: ${!isMobileFullPage && scrolled && theme.orbit.spaceXLarge};
-      opacity: ${scrolled && "1"};
-      visibility: ${scrolled && "visible"};
-      transition: ${scrolled &&
-      css`
-        ${transition(["top"], "normal", "ease-in-out")},
-        ${transition(["opacity", "visibility"], "fast", "ease-in-out")}
-      `};
-    }
-
-    ${StyledModalHeader} {
-      margin-bottom: ${!hasModalSection && theme.orbit.spaceXLarge};
-    }
-
-    ${media.largeMobile(css`
-      position: relative;
-      bottom: auto;
-      border-radius: ${!isMobileFullPage && "9px"};
-      padding-bottom: 0;
-      height: auto;
-      overflow: visible;
-      max-height: 100%;
-      ${StyledModalSection}:last-of-type {
-        padding-bottom: ${theme.orbit.spaceXXLarge};
-        margin-bottom: ${fixedFooter ? `${footerHeight}px` : "0"};
-        &::after {
-          content: none;
-        }
-      }
-      ${StyledModalHeader} {
-        margin-bottom: ${!hasModalSection && fixedFooter ? `${footerHeight}px` : "0"};
-      }
-      ${StyledModalFooter} {
-        padding: ${fixedFooter
-          ? `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXLarge}!important`
-          : theme.orbit.spaceXLarge};
-        max-width: ${modalWidth ? `${modalWidth}px` : getSizeToken({ size, theme })};
-        position: ${fixedFooter && fullyScrolled && "absolute"};
-        box-shadow: ${fullyScrolled && "none"};
-      }
-      ${MobileHeader} {
-        top: ${scrolled ? "0" : `-${theme.orbit.spaceXXLarge}`};
-        width: ${`calc(${modalWidth}px - 48px - ${theme.orbit.spaceXXLarge})`};
-      }
-    `)};
-  `}
-`;
-
-ModalWrapperContent.defaultProps = {
-  theme: defaultTheme,
+const maxWidthClasses: {
+  [K in SIZES | "largeMobile" | "footer"]: K extends SIZES ? string : Record<SIZES, string>;
+} = {
+  [SIZES.EXTRASMALL]: "max-w-modal-extra-small",
+  [SIZES.SMALL]: "max-w-modal-small",
+  [SIZES.NORMAL]: "max-w-modal-normal",
+  [SIZES.LARGE]: "max-w-modal-large",
+  [SIZES.EXTRALARGE]: "max-w-modal-extra-large",
+  largeMobile: {
+    [SIZES.EXTRASMALL]: "lm:max-w-modal-extra-small",
+    [SIZES.SMALL]: "lm:max-w-modal-small",
+    [SIZES.NORMAL]: "lm:max-w-modal-normal",
+    [SIZES.LARGE]: "lm:max-w-modal-large",
+    [SIZES.EXTRALARGE]: "lm:max-w-modal-extra-large",
+  },
+  footer: {
+    [SIZES.EXTRASMALL]: "lm:[&_.orbit-modal-footer]:max-w-modal-extra-small",
+    [SIZES.SMALL]: "lm:[&_.orbit-modal-footer]:max-w-modal-small",
+    [SIZES.NORMAL]: "lm:[&_.orbit-modal-footer]:max-w-modal-normal",
+    [SIZES.LARGE]: "lm:[&_.orbit-modal-footer]:max-w-modal-large",
+    [SIZES.EXTRALARGE]: "lm:[&_.orbit-modal-footer]:max-w-modal-extra-large",
+  },
 };
 
 const OFFSET = 40;
@@ -333,6 +79,7 @@ const Modal = React.forwardRef<Instance, Props>(
     const modalContent = React.useRef<HTMLElement | null>(null);
     const modalBody = React.useRef<HTMLElement | null>(null);
     const modalTitleID = useRandomId();
+    const theme = useTheme();
 
     const { isLargeMobile } = useMediaQuery();
     const scrollingElement = React.useRef<HTMLElement | null>(null);
@@ -376,8 +123,7 @@ const Modal = React.forwardRef<Instance, Props>(
 
       if (!content) return;
 
-      // added in 4.0.3, interpolation of styled component return static className
-      const footerEl = content.querySelector(`${StyledModalFooter}`);
+      const footerEl = content.querySelector(".orbit-modal-footer");
       const contentDimensions = content.getBoundingClientRect();
 
       setModalWidth(contentDimensions.width);
@@ -458,7 +204,8 @@ const Modal = React.forwardRef<Instance, Props>(
         modalContent.current &&
         event.target instanceof Element &&
         !modalContent.current.contains(event.target) &&
-        /ModalBody|ModalWrapper/.test(event.target.className);
+        (event.target.className.includes("orbit-modal-wrapper") ||
+          event.target.className.includes("orbit-modal-body"));
 
       if (clickedOutside && onClose) onClose(event);
 
@@ -487,8 +234,7 @@ const Modal = React.forwardRef<Instance, Props>(
           ? contentHeight + 80
           : target.scrollHeight;
 
-      // @ts-expect-error TODO
-      setScrolled(target.scrollTop >= scrollBegin + (!mobile ? target.scrollTop : 0));
+      setScrolled(target.scrollTop >= Number(scrollBegin) + (!mobile ? target.scrollTop : 0));
       setFixedClose(target.scrollTop >= fixCloseOffset);
       // set fullyScrolled state sooner than the exact end of the scroll (with fullScrollOffset value)
       setFullyScrolled(
@@ -501,7 +247,7 @@ const Modal = React.forwardRef<Instance, Props>(
 
       if (!content) return null;
 
-      const headingEl = content.querySelector(`${ModalHeading}`);
+      const headingEl = content.querySelector(".orbit-modal-heading");
 
       if (headingEl) {
         const { top } = headingEl.getBoundingClientRect();
@@ -629,8 +375,35 @@ const Modal = React.forwardRef<Instance, Props>(
       ],
     );
 
+    const cssVars = {
+      ...(!isLargeMobile
+        ? {
+            maxHeight: isMobileFullPage
+              ? "100%"
+              : `calc(100% - ${theme.orbit.spaceXLarge} - ${
+                  fixedFooter && Boolean(footerHeight) ? footerHeight : 0
+                }px)`,
+            bottom: `${
+              (!isMobileFullPage ? parseInt(theme.orbit.spaceXLarge, 10) : 0) +
+              (fixedFooter && Boolean(footerHeight) ? footerHeight : 0)
+            }px`,
+          }
+        : {
+            "--orbit-modal-footer-height": fixedFooter ? `${footerHeight}px` : "0",
+          }),
+      "--orbit-modal-width": `${modalWidth}px`,
+    };
+
     return (
-      <ModalBody
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+      <div
+        className={cx(
+          "orbit-modal-body",
+          "z-overlay font-base fixed inset-0 box-border h-full w-full overflow-x-hidden outline-none",
+          !isMobileFullPage && "bg-[black] bg-opacity-50",
+          "lm:overflow-y-auto lm:p-xxl lm:bg-[black] lm:bg-opacity-50",
+        )}
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={0}
         onKeyDown={handleKeyDown}
         onScroll={handleScroll}
@@ -639,40 +412,92 @@ const Modal = React.forwardRef<Instance, Props>(
         id={id}
         ref={modalBodyRef}
         role="dialog"
-        isMobileFullPage={isMobileFullPage}
+        // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus={autoFocus}
         aria-modal="true"
         aria-labelledby={hasModalTitle ? modalTitleID : ""}
       >
-        <ModalWrapper
-          size={size}
-          loaded={loaded}
-          fixedFooter={fixedFooter}
-          isMobileFullPage={isMobileFullPage}
-          disableAnimation={disableAnimation}
+        <div
+          className={cx(
+            "orbit-modal-wrapper",
+            "fixed mx-auto my-0 box-border flex min-h-full w-full items-start",
+            !isMobileFullPage && "rounded-t-modal-mobile",
+            disableAnimation
+              ? !isMobileFullPage && "top-[32px]"
+              : [
+                  "duration-normal transition-[top] ease-in-out",
+                  loaded ? !isMobileFullPage && "top-[32px]" : "top-full",
+                ],
+            "lm:relative lm:top-0 lm:items-center",
+            maxWidthClasses.largeMobile[size],
+          )}
         >
-          <ModalWrapperContent
-            size={size}
-            fixedFooter={fixedFooter}
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+          <div
+            className={cx(
+              "orbit-modal-wrapper-content",
+              "font-base bg-elevation-flat shadow-overlay absolute box-border w-full overflow-y-auto overflow-x-hidden",
+              "lm:relative lm:bottom-auto lm:pb-0 lm:overflow-visible",
+              "lm:[&_.orbit-modal-section:last-of-type]:pb-xxl lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
+              "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-theme(spacing.xxl))]",
+              !hasModalSection &&
+                "[&_.orbit-modal-header-container]:mb-xl lm:[&_.orbit-modal-header-container]:mb-[var(--orbit-modal-footer-height,0px)]",
+              isMobileFullPage
+                ? "top-0 max-h-full"
+                : [
+                    "rounded-t-modal-mobile",
+                    "lm:rounded-modal",
+                    scrolled && "[&_.orbit-modal-mobile-header]:top-xl",
+                  ],
+              fixedFooter &&
+                footerHeight && [
+                  "[&_.orbit-modal-footer]:p-md [&_.orbit-modal-footer]:fixed [&_.orbit-modal-footer]:bottom-0",
+                  "[&_.orbit-modal-footer]:duration-fast [&_.orbit-modal-footer]:transition-shadow [&_.orbit-modal-footer]:ease-in-out",
+                  fullyScrolled
+                    ? "[&_.orbit-modal-footer]:shadow-modal-scrolled"
+                    : "[&_.orbit-modal-footer]:shadow-modal",
+                  "[&_.orbit-modal-section:last-of-type]:pb-lg [&_.orbit-modal-section:last-of-type]:mb-0",
+                ],
+              fixedFooter
+                ? [
+                    "lm:[&_.orbit-modal-footer]:!p-xl",
+                    fullyScrolled && "lm:[&_.orbit-modal-footer]:absolute",
+                  ]
+                : "lm[&_.orbit-modal-footer]:p-xl]",
+              fullyScrolled && "lm:[&_.orbit-modal-footer]:shadow-none",
+              scrolled
+                ? [
+                    "[&_.orbit-modal-mobile-header]:visible [&_.orbit-modal-mobile-header]:opacity-100",
+                    "[&_.orbit-modal-mobile-header]:ease-in-out [&_.orbit-modal-mobile-header]:[transition:visibility_theme(transitionDuration.fast),_opacity_theme(transitionDuration.fast),_top_theme(transitionDuration.normal)]",
+                    "lm:[&_.orbit-modal-mobile-header]:top-0",
+                  ]
+                : "lm:[&_.orbit-modal-mobile-header]:-top-xxl",
+              modalWidth
+                ? "lm:[&_.orbit-modal-footer]:max-w-[var(--orbit-modal-width)]"
+                : maxWidthClasses.footer[size],
+            )}
+            style={cssVars as React.CSSProperties}
             onScroll={handleMobileScroll}
-            scrolled={scrolled}
             ref={modalContentRef}
-            fixedClose={fixedClose}
-            fullyScrolled={fullyScrolled}
-            modalWidth={modalWidth}
-            footerHeight={footerHeight}
-            hasModalSection={hasModalSection}
-            isMobileFullPage={isMobileFullPage}
             onMouseDown={handleMouseDown}
           >
             {hasCloseContainer && (
-              <CloseContainer
+              <div
+                className={cx(
+                  "z-modal-overlay h-form-box-large pointer-events-none right-0 box-border flex w-full items-center justify-end",
+                  "duration-fast transition-[shadow,_background-color] ease-in-out",
+                  "lm:rounded-none",
+                  fixedClose || scrolled ? "lm:top-0 lm:right-auto fixed" : "absolute",
+                  !isMobileFullPage && (fixedClose || scrolled) ? "top-[32px]" : "top-0",
+                  !isMobileFullPage && "rounded-t-modal-mobile",
+                  modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
+                  scrolled && "shadow-fixed bg-white-normal",
+                  "[&_+_.orbit-modal-section:first-of-type]:pt-xxxl [&_+_.orbit-modal-section:first-of-type]:bt-0 [&_+_.orbit-modal-section:first-of-type]:m-0",
+                  "[&_.orbit-button-primitive]:me-xxs [&_.orbit-button-primitive]:pointer-events-auto",
+                  "[&_.orbit-button-primitive_svg]:transition-color [&_.orbit-button-primitive_svg]:duration-fast [&_.orbit-button-primitive_svg]:text-ink-normal [&_.orbit-button-primitive_svg]:ease-in-out",
+                  "[&_.orbit-button-primitive:hover_svg]:text-ink-light-hover [&_.orbit-button-primitive:active_svg]:text-ink-light-active",
+                )}
                 data-test="CloseContainer"
-                modalWidth={modalWidth}
-                size={size}
-                scrolled={scrolled}
-                fixedClose={fixedClose}
-                isMobileFullPage={isMobileFullPage}
               >
                 {onClose && hasCloseButton && (
                   <ModalCloseButton
@@ -681,12 +506,12 @@ const Modal = React.forwardRef<Instance, Props>(
                     title={labelClose}
                   />
                 )}
-              </CloseContainer>
+              </div>
             )}
             <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
-          </ModalWrapperContent>
-        </ModalWrapper>
-      </ModalBody>
+          </div>
+        </div>
+      </div>
     );
   },
 );
@@ -694,6 +519,6 @@ const Modal = React.forwardRef<Instance, Props>(
 Modal.displayName = "Modal";
 export default Modal;
 
-export { default as ModalHeader, ModalHeading } from "./ModalHeader";
+export { default as ModalHeader } from "./ModalHeader";
 export { default as ModalSection } from "./ModalSection";
 export { default as ModalFooter } from "./ModalFooter";

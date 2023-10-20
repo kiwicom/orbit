@@ -17,8 +17,6 @@ jest.mock("../../hooks/useMediaQuery", () => {
 const mockUseMediaQuery = useMediaQuery;
 
 describe("Modal", () => {
-  const user = userEvent.setup();
-
   it("should have expected DOM output", () => {
     render(
       <Modal dataTest="container">
@@ -52,6 +50,7 @@ describe("Modal", () => {
   });
 
   it("should be able to focus content", async () => {
+    const user = userEvent.setup();
     jest.useFakeTimers();
 
     render(
@@ -127,7 +126,10 @@ describe("Modal", () => {
   });
 
   it("should call callback function when clicking on close button", async () => {
+    // Needed the pointerEventsCheck to be 0 because of JestDOM not being able to detect pointer events definition on ModalCloseButton
+    const user = userEvent.setup({ pointerEventsCheck: 0 });
     const onClose = jest.fn();
+
     render(
       <Modal hasCloseButton onClose={onClose}>
         content

@@ -1,70 +1,56 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../../defaultTheme";
-import media from "../../utils/mediaQuery";
-import { StyledModalFooter } from "../ModalFooter";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import type { Props } from "./types";
 
-export const StyledModalSection = styled.section<{
+export const ModalSectionWrapper = ({
+  className,
+  children,
+  suppressed,
+  closable,
+  isMobileFullPage,
+  dataTest,
+}: {
+  className?: string;
+  children: React.ReactNode;
   suppressed?: boolean;
   closable?: boolean;
   isMobileFullPage?: boolean;
-}>`
-  ${({ theme, suppressed, closable, isMobileFullPage }) => css`
-    width: 100%;
-    padding: ${`${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium}`};
-    background-color: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
-    border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
-    box-sizing: border-box;
-
-    &:first-of-type {
-      border-top: ${suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
-      border-top-left-radius: ${!isMobileFullPage && "12px"};
-      border-top-right-radius: ${!isMobileFullPage && "12px"};
-      margin-top: ${suppressed && closable && theme.orbit.spaceLarge};
-    }
-
-    &:last-of-type {
-      border-bottom: ${suppressed ? `1px solid ${theme.orbit.paletteCloudNormal}` : "0"};
-      border-bottom-left-radius: ${!isMobileFullPage && "12px"};
-      border-bottom-right-radius: ${!isMobileFullPage && "12px"};
-      & ~ ${StyledModalFooter} {
-        margin-top: ${suppressed && theme.orbit.spaceMedium};
-      }
-      &:not(:last-child) {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-    }
-
-    ${media.largeMobile(css`
-      padding: ${theme.orbit.spaceXLarge};
-
-      &:first-of-type {
-        margin-top: ${((suppressed && closable) || suppressed) && theme.orbit.spaceXXLarge};
-        border-top-left-radius: ${!isMobileFullPage && "9px"};
-        border-top-right-radius: ${!isMobileFullPage && "9px"};
-      }
-
-      &:last-of-type {
-        border-bottom-left-radius: ${!isMobileFullPage && "9px"};
-        border-bottom-right-radius: ${!isMobileFullPage && "9px"};
-        & ~ ${StyledModalFooter} {
-          padding-top: ${!suppressed && "0"};
-          margin-top: 0;
-        }
-      }
-    `)};
-  `}
-`;
-
-StyledModalSection.defaultProps = {
-  theme: defaultTheme,
+  dataTest?: string;
+}) => {
+  return (
+    <section
+      className={cx(
+        className,
+        "orbit-modal-section",
+        "py-lg px-md lm:p-xl box-border w-full",
+        "border-b-solid border-b-elevation-flat-border-color border-b",
+        "last-of-type:[&:not(:last-child)]:rounded-b-none",
+        suppressed
+          ? [
+              "bg-cloud-light",
+              "first-of-type:border-t-solid first-of-type:border-t-elevation-flat-border-color lm:first-of-type:mt-xxl first-of-type:border-t",
+              "last-of-type:border-b-solid last-of-type:border-b-elevation-flat-border-color [&_~_.orbit-modal-footer]:last-of-type:mt-md last-of-type:border-b",
+              closable && "first-of-type:mt-lg",
+            ]
+          : [
+              "bg-white-normal",
+              "lm:[&_~_.orbit-modal-footer]:last-of-type:pt-0 last-of-type:border-b-0",
+            ],
+        !isMobileFullPage && [
+          "first-of-type:rounded-t-modal-mobile lm:first-of-type:rounded-t-modal",
+          "last-of-type:rounded-b-modal-mobile lm:last-of-type:rounded-t-modal lm:[&_~_.orbit-modal-footer]:last-of-type:mt-0",
+        ],
+      )}
+      data-test={dataTest}
+    >
+      {children}
+    </section>
+  );
 };
 
 const ModalSection = ({ children, suppressed, dataTest }: Props) => {
@@ -87,14 +73,14 @@ const ModalSection = ({ children, suppressed, dataTest }: Props) => {
   }, [removeHasModalSection]);
 
   return (
-    <StyledModalSection
+    <ModalSectionWrapper
+      dataTest={dataTest}
       suppressed={suppressed}
-      data-test={dataTest}
       closable={closable}
       isMobileFullPage={isMobileFullPage}
     >
       {children}
-    </StyledModalSection>
+    </ModalSectionWrapper>
   );
 };
 

@@ -11,8 +11,9 @@ import {
   TableRow,
   TableCell,
 } from "@kiwicom/orbit-components";
-import { ChevronDown, ChevronUp } from "@kiwicom/orbit-components/icons";
+import { CheckCircle, ChevronDown, ChevronUp } from "@kiwicom/orbit-components/icons";
 
+import tailwindMigrationData from "../../../data/tailwind-migration-status.yaml";
 import { TrackedData } from "../interfaces";
 
 type ComponentData = Pick<TrackedData, "name" | "instances" | "category" | "isDeprecated" | "slug">;
@@ -40,12 +41,8 @@ const Sort = ({
 );
 
 const ComponentList = ({ components, unused }: Props) => {
-  const [data, setData] = React.useState<ComponentData[]>([]);
+  const [data, setData] = React.useState<ComponentData[]>(components);
   const [isSorted, setSorted] = React.useState(false);
-
-  React.useEffect(() => {
-    setData(components);
-  }, [setData, components]);
 
   const mappedUnused = unused
     ? unused.map(name => ({
@@ -90,11 +87,12 @@ const ComponentList = ({ components, unused }: Props) => {
                   }
                 }}
               >
-                Number of instances
+                # of instances
               </Sort>
             </TableCell>
             <TableCell>Category</TableCell>
             <TableCell>Deprecated</TableCell>
+            <TableCell>Migrated to Tailwind</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -115,6 +113,9 @@ const ComponentList = ({ components, unused }: Props) => {
                     {"\u{2705}"}
                   </span>
                 )}
+              </TableCell>
+              <TableCell align="center">
+                {tailwindMigrationData[name] && <CheckCircle color="success" />}
               </TableCell>
             </TableRow>
           ))}

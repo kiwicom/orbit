@@ -1,8 +1,5 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
-
-import mq from "../../../utils/mediaQuery";
-import defaultTheme from "../../../defaultTheme";
+import cx from "clsx";
 
 interface Props {
   noPadding: boolean;
@@ -11,70 +8,21 @@ interface Props {
   useMargins?: boolean;
 }
 
-const getPadding = ({
-  noPadding,
-  useMargins,
-  theme,
-}: {
-  noPadding?: Props["noPadding"];
-  useMargins?: Props["useMargins"];
-  theme: typeof defaultTheme;
-}) => {
-  if (noPadding) return null;
-
-  if (!useMargins) {
-    return css`
-      padding: ${theme.orbit.spaceMedium};
-
-      ${mq.largeMobile(css`
-        padding: ${theme.orbit.spaceLarge};
-      `)}
-    `;
-  }
-
-  return css`
-    padding: ${theme.orbit.spaceMedium} 0;
-    margin: 0 ${theme.orbit.spaceMedium};
-
-    ${mq.largeMobile(css`
-      padding: ${theme.orbit.spaceLarge} 0;
-      margin: 0 ${theme.orbit.spaceLarge};
-    `)}
-  `;
-};
-
-const StyledTileContent = styled.div<Props>`
-  ${({ theme, withBorder, withPointer }) => css`
-    font-size: ${theme.orbit.fontSizeTextNormal};
-    line-height: ${theme.orbit.lineHeightTextNormal};
-    ${withPointer &&
-    css`
-      cursor: pointer;
-    `};
-    ${withBorder &&
-    css`
-      border-top: 1px solid ${theme.orbit.paletteCloudNormal};
-    `};
-    ${getPadding};
-  `}
-`;
-
-StyledTileContent.defaultProps = {
-  theme: defaultTheme,
-};
-
 const TileContent = React.forwardRef<HTMLDivElement, React.PropsWithChildren<Props>>(
   ({ children, noPadding, withPointer, withBorder, useMargins = true }, ref) => {
     return (
-      <StyledTileContent
-        noPadding={noPadding}
+      <div
         ref={ref}
-        withPointer={withPointer}
-        withBorder={withBorder}
-        useMargins={useMargins}
+        className={cx(
+          "text-normal leading-normal",
+          withPointer === true && "cursor-pointer",
+          withBorder === true && "border-cloud-normal border-t",
+          !noPadding && !useMargins && "p-md lm:p-lg",
+          !noPadding && useMargins && "py-md mx-md lm:py-lg lm:mx-lg",
+        )}
       >
         {children}
-      </StyledTileContent>
+      </div>
     );
   },
 );

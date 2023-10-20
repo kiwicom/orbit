@@ -1,166 +1,47 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import transition from "../../utils/transition";
 import Text from "../../Text";
-import defaultTheme from "../../defaultTheme";
-import media from "../../utils/mediaQuery";
-import { StyledModalSection } from "../ModalSection";
-import { left, right, rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import type { Props } from "./types";
 
-export const ModalHeading = styled.h2`
-  ${({ theme }) => css`
-    margin: 0;
-    font-size: ${theme.orbit.fontSizeHeadingTitle2};
-    font-weight: ${theme.orbit.fontWeightHeadingTitle2};
-    line-height: ${theme.orbit.lineHeightHeadingTitle2};
-    color: ${theme.orbit.colorHeading};
-    ${media.largeMobile(css`
-      font-size: ${theme.orbit.fontSizeHeadingTitle1};
-      font-weight: ${theme.orbit.fontWeightHeadingTitle1};
-      line-height: ${theme.orbit.lineHeightHeadingTitle1};
-    `)};
-  `}
-`;
-
-ModalHeading.defaultProps = {
-  theme: defaultTheme,
-};
-
-// TODO: create token marginModalTitle and marginModalTitleWithIllustration
-const ModalTitle = styled.div<{ illustration?: boolean }>`
-  ${({ theme, illustration }) => css`
-    margin-top: ${illustration && theme.orbit.spaceMedium};
-
-    ${ModalHeading} {
-      padding-${right}: ${theme.orbit.spaceXLarge};
-    }
-
-    ${media.desktop(css`
-      ${ModalHeading} {
-        padding: 0;
-      }
-    `)};
-  `}
-`;
-
-ModalTitle.defaultProps = {
-  theme: defaultTheme,
-};
-
-const ModalDescription = styled.div`
-  margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
-`;
-
-ModalDescription.defaultProps = {
-  theme: defaultTheme,
-};
-
-const getModalHeaderPadding =
-  (desktop = false) =>
-  ({ theme, suppressed }) => {
-    if (desktop) {
-      if (suppressed) {
-        return theme.orbit.spaceXLarge;
-      }
-      return `${theme.orbit.spaceXLarge} ${theme.orbit.spaceXLarge} 0 ${theme.orbit.spaceXLarge}`;
-    }
-    if (suppressed) {
-      return `${theme.orbit.spaceXLarge} ${theme.orbit.spaceMedium}`;
-    }
-    return `${theme.orbit.spaceLarge} ${theme.orbit.spaceMedium} 0 ${theme.orbit.spaceMedium}`;
-  };
-
-export const StyledModalHeader = styled.div<{
-  suppressed?: Props["suppressed"];
+export const ModalHeaderWrapper = ({
+  className,
+  suppressed,
+  isMobileFullPage,
+  dataTest,
+  children,
+}: {
+  className?: string;
+  suppressed?: boolean;
   isMobileFullPage?: boolean;
-  illustration?: boolean;
-}>`
-  ${({ theme, suppressed, isMobileFullPage }) => css`
-    width: 100%;
-    display: block;
-    padding: ${rtlSpacing(getModalHeaderPadding()({ theme, suppressed }))};
-    border-top-left-radius: ${!isMobileFullPage && "12px"};
-    border-top-right-radius: ${!isMobileFullPage && "12px"};
-    box-sizing: border-box;
-    background-color: ${suppressed ? theme.orbit.paletteCloudLight : theme.orbit.paletteWhite};
-
-    & ~ ${StyledModalSection}:first-of-type {
-      border-top: ${suppressed && `1px solid ${theme.orbit.paletteCloudNormal}`};
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      margin-top: ${suppressed && "0!important"};
-    }
-
-    ${media.largeMobile(css`
-      padding: ${rtlSpacing(getModalHeaderPadding(true)({ theme, suppressed }))};
-
-      & ~ ${StyledModalSection}:first-of-type {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-      }
-    `)};
-  `}
-`;
-
-StyledModalHeader.defaultProps = {
-  theme: defaultTheme,
+  dataTest?: string;
+  children?: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cx(
+        className,
+        "orbit-modal-header-container",
+        "box-border block w-full",
+        suppressed
+          ? [
+              "bg-cloud-light py-xl px-md lm:p-xl",
+              "[&_~_.orbit-modal-section:first-of-type]:border-t-solid [&_~_.orbit-modal-section:first-of-type]:border-t-elevation-flat-border-color [&_~_.orbit-modal-section:first-of-type]:!mt-0 [&_~_.orbit-modal-section:first-of-type]:border-t",
+            ]
+          : ["bg-white-normal pt-lg px-md lm:pt-xl lm:px-xl lm:pb-0 pb-0"],
+        !isMobileFullPage && "rounded-t-modal-mobile",
+        "lm:[&_~_.orbit-modal-section:first-of-type]:rounded-t-none [&_~_.orbit-modal-section:first-of-type]:rounded-t-none",
+      )}
+      data-test={dataTest}
+    >
+      {children}
+    </div>
+  );
 };
-
-export const MobileHeader = styled.div<{ isMobileFullPage?: boolean }>`
-  ${({ theme, isMobileFullPage }) => css`
-    display: inline-block;
-    position: fixed;
-    visibility: hidden;
-    height: 52px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    top: ${isMobileFullPage ? "0" : "16px"};
-    ${right}: 48px;
-    ${left}: 0;
-    font-family: ${theme.orbit.fontFamily};
-    font-weight: ${theme.orbit.fontWeightHeadingDisplay};
-    font-size: 18px;
-    color: ${theme.orbit.colorHeading};
-    line-height: 52px;
-    box-sizing: border-box;
-    padding: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceLarge}`)};
-    opacity: 0;
-    transition: ${transition(["top", "opacity", "visibility"], "fast", "ease-in-out")};
-    z-index: 800;
-
-    ${media.largeMobile(css`
-      left: auto;
-      right: auto;
-      padding: 0;
-    `)};
-  `}
-`;
-
-MobileHeader.defaultProps = {
-  theme: defaultTheme,
-};
-
-const getModalHeaderContentMargin = ({ hasHeader, hasDescription, hasChildren }) => {
-  if (!hasHeader && hasChildren) return "0";
-
-  return hasDescription ? "32px" : "16px";
-};
-
-const StyledModalHeaderContent = styled.div<{
-  hasHeader: boolean;
-  hasDescription: boolean;
-  hasChildren: boolean;
-}>`
-  margin-top: ${({ hasHeader, hasDescription, hasChildren }) =>
-    getModalHeaderContentMargin({ hasHeader, hasDescription, hasChildren })};
-`;
 
 const ModalHeader = ({
   illustration,
@@ -182,43 +63,59 @@ const ModalHeader = ({
     };
   }, [title, setHasModalTitle]);
 
-  const hasHeader = title || description;
+  const hasHeader = Boolean(title || description);
 
   return (
-    <StyledModalHeader
-      illustration={!!illustration}
+    <ModalHeaderWrapper
       suppressed={suppressed}
-      data-test={dataTest}
+      dataTest={dataTest}
       isMobileFullPage={isMobileFullPage}
     >
       {illustration}
       {hasHeader && (
-        <ModalTitle illustration={!!illustration}>
-          {title && <ModalHeading id={titleID}>{title}</ModalHeading>}
+        <div
+          className={cx(
+            !!illustration && "mt-md",
+            "[&_.orbit-modal-heading]:pe-xl de:[&_.orbit-modal-heading]:p-0",
+          )}
+        >
+          {title && (
+            <h2
+              className="orbit-modal-heading text-heading-title2 font-heading-title2 leading-heading-title2 text-heading-foreground lm:text-heading-title1 lm:font-heading-title1 lm:leading-heading-title1 m-0"
+              id={titleID}
+            >
+              {title}
+            </h2>
+          )}
           {description && (
-            <ModalDescription>
+            <div className="mt-xs">
               <Text size="large" as="div">
                 {description}
               </Text>
-            </ModalDescription>
+            </div>
           )}
-        </ModalTitle>
+        </div>
       )}
       {children && (
-        <StyledModalHeaderContent
-          hasHeader={!!hasHeader}
-          hasChildren={!!children}
-          hasDescription={!!description}
-        >
+        <div className={cx(!hasHeader && !!children ? "mt-0" : [description ? "mt-xl" : "mt-md"])}>
           {children}
-        </StyledModalHeaderContent>
+        </div>
       )}
       {title && hasMobileHeader && (
-        <MobileHeader role="presentation" isMobileFullPage={isMobileFullPage}>
+        <div
+          className={cx(
+            "orbit-modal-mobile-header",
+            "font-base font-heading-display text-extra-large text-heading-foreground ps-lg z-overlay invisible fixed end-[48px] start-0 box-border inline-block h-[52px] truncate py-0 pe-0 leading-[52px] opacity-0",
+            "duration-fast transition-[top,opacity,visibility] ease-in-out",
+            "lm:start-auto lm:end-auto lm:p-0",
+            isMobileFullPage ? "top-0" : "top-[16px]",
+          )}
+          role="presentation"
+        >
           {title}
-        </MobileHeader>
+        </div>
       )}
-    </StyledModalHeader>
+    </ModalHeaderWrapper>
   );
 };
 

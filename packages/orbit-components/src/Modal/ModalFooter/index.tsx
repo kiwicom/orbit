@@ -1,69 +1,19 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import transition from "../../utils/transition";
-import media, { getBreakpointWidth } from "../../utils/mediaQuery";
-import defaultTheme from "../../defaultTheme";
-import { rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
-import { QUERIES } from "../../utils/mediaQuery/consts";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import type { Props } from "./types";
 
-const StyledChild = styled.div<{ flex?: Props["flex"] }>`
-  ${({ theme, flex }) => css`
-    flex: ${flex};
-    box-sizing: border-box;
-    padding: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-  `};
-`;
+const getChildFlex = (flex: Props["flex"], key: number) => {
+  if (Array.isArray(flex)) {
+    return flex.length !== 1 ? flex[key] || flex[0] : flex[0];
+  }
 
-StyledChild.defaultProps = {
-  theme: defaultTheme,
+  return flex;
 };
-
-export const StyledModalFooter = styled.div<{
-  isMobileFullPage?: boolean;
-  childrenLength: number;
-}>`
-  ${({ theme, childrenLength, isMobileFullPage }) => css`
-    display: flex;
-    z-index: 800;
-    width: 100%;
-    background-color: ${theme.orbit.paletteWhite};
-    padding: ${rtlSpacing(`0 ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium}`)};
-    box-sizing: border-box;
-    transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
-    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
-      .orbit-button-primitive {
-        font-size: ${theme.orbit.fontSizeButtonNormal};
-        height: ${theme.orbit.heightButtonNormal};
-      }
-    }
-
-    ${media.largeMobile(css`
-      justify-content: ${childrenLength > 1 ? "space-between" : "flex-end"};
-      ${!isMobileFullPage &&
-      css`
-        border-bottom-left-radius: 9px;
-        border-bottom-right-radius: 9px;
-      `};
-    `)};
-
-    ${StyledChild}:last-of-type {
-      padding: 0;
-    }
-  `}
-`;
-
-StyledModalFooter.defaultProps = {
-  theme: defaultTheme,
-};
-
-const getChildFlex = (flex: Props["flex"], key: number) =>
-  Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
 
 const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
   if (!Array.isArray(children)) return children;
@@ -71,7 +21,11 @@ const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
   return React.Children.map(children, (child, key) => {
     if (!React.isValidElement(child)) return null;
     return (
-      <StyledChild flex={getChildFlex(flex, key)} data-test="footer-el-wrapper">
+      <div
+        className="orbit-modal-footer-child pe-xs box-border p-0"
+        style={{ flex: getChildFlex(flex, key) }}
+        data-test="footer-el-wrapper"
+      >
         {React.cloneElement(child, {
           // @ts-expect-error React.cloneElement  issue
           ref: child.ref
@@ -87,7 +41,7 @@ const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
               }
             : null,
         })}
-      </StyledChild>
+      </div>
     );
   });
 };
@@ -95,6 +49,7 @@ const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
 const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
   const { isMobileFullPage, setFooterHeight } = React.useContext(ModalContext);
   const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const childrenLength = React.Children.toArray(children).length;
 
   useModalContextFunctions();
 
@@ -112,14 +67,21 @@ const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
   }, [setFooterHeight]);
 
   return (
-    <StyledModalFooter
+    <div
+      className={cx(
+        "orbit-modal-footer",
+        "z-overlay bg-white-normal px-md pb-md box-border flex w-full pt-0",
+        "duration-fast transition-shadow ease-in-out",
+        "sm-lm:[&_.orbit-button-primitive]:h-form-box-normal sm-lm:[&_.orbit-button-primitive]:text-button-normal",
+        childrenLength > 1 ? "lm:justify-between" : "lm:justify-end",
+        !isMobileFullPage && "lm:rounded-b-modal",
+        "[&_.orbit-modal-footer-child:last-of-type]:p-0",
+      )}
       ref={containerRef}
       data-test={dataTest}
-      isMobileFullPage={isMobileFullPage}
-      childrenLength={React.Children.toArray(children).length}
     >
       {flex && wrappedChildren(children, flex)}
-    </StyledModalFooter>
+    </div>
   );
 };
 

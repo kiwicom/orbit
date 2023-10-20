@@ -11029,7 +11029,7 @@
   "widthIconSmall": {
     "type": "size",
     "deprecated": true,
-    "replacement": null,
+    "replacement": "iconSmallSize",
     "schema": {
       "namespace": "component",
       "object": "width",
@@ -11461,7 +11461,7 @@
   "heightIconSmall": {
     "type": "size",
     "deprecated": true,
-    "replacement": null,
+    "replacement": "iconSmallSize",
     "schema": {
       "namespace": "component",
       "object": "height",

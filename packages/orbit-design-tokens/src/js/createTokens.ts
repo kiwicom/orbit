@@ -628,6 +628,8 @@ export interface Tokens {
   illustrationLargeHeight: string;
   illustrationDisplayHeight: string;
   loadingForeground: string;
+  modalBorderRadiusMobile: string;
+  modalBorderRadius: string;
   modalExtraSmallWidth: string;
   modalSmallWidth: string;
   modalNormalWidth: string;
@@ -1549,6 +1551,8 @@ const createTokens: CreateTokens = foundation => ({
   illustrationLargeHeight: "280px",
   illustrationDisplayHeight: "460px",
   loadingForeground: foundation.palette.cloud.dark,
+  modalBorderRadiusMobile: "12px",
+  modalBorderRadius: "9px",
   modalExtraSmallWidth: "360px",
   modalSmallWidth: "540px",
   modalNormalWidth: "740px",

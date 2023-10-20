@@ -2456,6 +2456,14 @@
     <value>#BAC7D5</value>
   </token>
   <token>
+    <name>modalBorderRadiusMobile</name>
+    <value>12</value>
+  </token>
+  <token>
+    <name>modalBorderRadius</name>
+    <value>9</value>
+  </token>
+  <token>
     <name>modalExtraSmallWidth</name>
     <value>360</value>
   </token>

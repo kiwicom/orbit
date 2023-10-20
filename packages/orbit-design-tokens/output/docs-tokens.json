@@ -10353,8 +10353,8 @@
   },
   "borderColorModal": {
     "type": "color",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "elevationFlatBorderColor",
     "schema": {
       "namespace": "component",
       "object": "border-color",
@@ -14162,6 +14162,50 @@
     "scss": {
       "name": "loadingForeground",
       "value": "rgb(186, 199, 213)"
+    }
+  },
+  "modalBorderRadiusMobile": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "modal",
+      "variant": "border-radius-mobile"
+    },
+    "javascript": {
+      "name": "modalBorderRadiusMobile",
+      "value": "12px"
+    },
+    "foundation": {
+      "name": "modalBorderRadiusMobile",
+      "value": "none"
+    },
+    "scss": {
+      "name": "modalBorderRadiusMobile",
+      "value": "12px"
+    }
+  },
+  "modalBorderRadius": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "modal",
+      "variant": "border-radius"
+    },
+    "javascript": {
+      "name": "modalBorderRadius",
+      "value": "9px"
+    },
+    "foundation": {
+      "name": "modalBorderRadius",
+      "value": "none"
+    },
+    "scss": {
+      "name": "modalBorderRadius",
+      "value": "9px"
     }
   },
   "modalExtraSmallWidth": {

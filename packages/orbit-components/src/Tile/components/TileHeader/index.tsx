@@ -1,16 +1,12 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import type * as Common from "../../../common/types";
-import defaultTheme from "../../../defaultTheme";
-import { rtlSpacing } from "../../../utils/rtl";
 import Stack from "../../../Stack";
 import Heading from "../../../Heading";
 import ChevronDown from "../../../icons/ChevronDown";
 import NewWindow from "../../../icons/NewWindow";
 import ChevronForward from "../../../icons/ChevronForward";
-import transition from "../../../utils/transition";
-import mq from "../../../utils/mediaQuery";
 
 interface Props {
   icon?: React.ReactNode;
@@ -32,71 +28,6 @@ interface Props {
   noHeaderIcon?: boolean;
 }
 
-const StyledTileHeader = styled.div`
-  ${({ theme }) => css`
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-    padding: ${theme.orbit.spaceMedium};
-    font-size: ${theme.orbit.fontSizeTextNormal};
-    line-height: ${theme.orbit.lineHeightTextNormal};
-    transition: ${transition(["background-color"], "fast", "ease-in-out")};
-
-    ${mq.largeMobile(css`
-      padding: ${theme.orbit.spaceLarge};
-    `)}
-  `}
-`;
-
-StyledTileHeader.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTileIcon = styled.div`
-  ${({ theme }) => css`
-    color: ${theme.orbit.colorIconPrimary};
-    flex-shrink: 0;
-    align-items: center;
-    align-self: flex-start;
-    margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-  `}
-`;
-
-StyledTileIcon.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTileTitle = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-`;
-
-StyledTileTitle.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTileDescription = styled.div<{ hasTitle?: boolean }>`
-  ${({ theme, hasTitle }) => css`
-    font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextNormal};
-    color: ${theme.orbit.colorTextPrimary};
-    line-height: ${theme.orbit.lineHeightTextNormal};
-    font-weight: ${theme.orbit.fontWeightNormal};
-    -webkit-text-size-adjust: 100%;
-    width: 100%;
-    ${hasTitle &&
-    css`
-      margin-top: ${theme.orbit.spaceXXSmall};
-    `};
-  `}
-`;
-
-StyledTileDescription.defaultProps = {
-  theme: defaultTheme,
-};
-
 const IconRight = ({
   external,
   expandable,
@@ -112,29 +43,6 @@ const IconRight = ({
   if (external) return <NewWindow className={className} />;
 
   return <ChevronForward color="secondary" className={className} reverseOnRtl />;
-};
-
-export const StyledIconRight = styled(IconRight)`
-  ${({
-    theme,
-    expanded,
-  }: {
-    theme: typeof defaultTheme;
-    expanded?: Props["expanded"];
-    expandable?: Props["expandable"];
-  }) => css`
-    color: ${theme.orbit.colorIconSecondary};
-    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-    transition: ${transition(["color", "transform"], "fast", "ease-in-out")};
-    ${expanded &&
-    css`
-      transform: rotate(-180deg);
-    `};
-  `}
-`;
-
-StyledIconRight.defaultProps = {
-  theme: defaultTheme,
 };
 
 const TileHeader = ({
@@ -154,7 +62,9 @@ const TileHeader = ({
   onKeyDown,
   noHeaderIcon,
 }: React.PropsWithChildren<Props>) => (
-  <StyledTileHeader
+  // eslint-disable-next-line jsx-a11y/no-static-element-interactions -- has been like this before
+  <div
+    className="p-md text-normal duration-fast lm:p-lg w-full cursor-pointer leading-normal transition-colors ease-in-out"
     onClick={onClick}
     onKeyDown={onKeyDown}
     role={role}
@@ -164,27 +74,46 @@ const TileHeader = ({
     tabIndex={tabIndex ? Number(tabIndex) : undefined}
   >
     <Stack align="center" justify="between" shrink spacing="none">
-      {icon && <StyledTileIcon>{icon}</StyledTileIcon>}
+      {icon && (
+        <div className="text-icon-primary-foreground me-xs shrink-0 items-center self-start">
+          {icon}
+        </div>
+      )}
       {header ||
         ((title || description) && (
           <Stack spacing="none" direction="column" shrink>
             {title && (
-              <StyledTileTitle>
+              <div className="flex w-full items-center">
                 <Heading type="title4" as="h3">
                   {title}
                 </Heading>
-              </StyledTileTitle>
+              </div>
             )}
             {description && (
-              <StyledTileDescription hasTitle={!!title}>{description}</StyledTileDescription>
+              <div
+                className={cx(
+                  "font-base text-normal text-primary-foreground w-full font-normal leading-normal",
+                  title != null && "mt-xxs",
+                )}
+              >
+                {description}
+              </div>
             )}
           </Stack>
         ))}
       {!noHeaderIcon && (
-        <StyledIconRight external={external} expandable={expandable} expanded={expanded} />
+        <IconRight
+          className={cx(
+            "orbit-tile-header-icon-right text-icon-secondary-foreground ms-sm duration-fast transition-all ease-in-out",
+            expanded === true && "-rotate-180",
+          )}
+          external={external}
+          expandable={expandable}
+          expanded={expanded}
+        />
       )}
     </Stack>
-  </StyledTileHeader>
+  </div>
 );
 
 export default TileHeader;

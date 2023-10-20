@@ -38,33 +38,40 @@ const getForegroundColors = (tokens: typeof defaultTokens) => {
   const componentTokens = getComponentLevelTokens(tokens);
 
   return COLORS.reduce((acc, name) => {
-    // eslint-disable-next-line no-param-reassign
-    acc = {
+    return {
       ...acc,
       ...componentTokens(name, "foreground"),
       ...componentTokens(name, "foregroundInverted"),
       ...componentTokens(name, "foregroundHover"),
       ...componentTokens(name, "foregroundActive"),
     };
-
-    return acc;
   }, {});
 };
 
 const getBackgroundColors = (tokens: typeof defaultTokens) => {
   const componentTokens = getComponentLevelTokens(tokens);
 
-  return COLORS.reduce((acc, name) => {
-    // eslint-disable-next-line no-param-reassign
-    acc = {
-      ...acc,
-      ...componentTokens(name, "background"),
-      ...componentTokens(name, "backgroundHover"),
-      ...componentTokens(name, "backgroundActive"),
-    };
-
-    return acc;
-  }, {});
+  return COLORS.reduce(
+    (acc, name) => {
+      return {
+        ...acc,
+        ...componentTokens(name, "background"),
+        ...componentTokens(name, "backgroundHover"),
+        ...componentTokens(name, "backgroundActive"),
+      };
+    },
+    {
+      "elevation-flat": tokens.elevationFlatBackground,
+      "elevation-suppressed": tokens.elevationSuppressedBackground,
+      "elevation-action": tokens.elevationActionBackground,
+      "elevation-action-active": tokens.elevationActionActiveBackground,
+      "elevation-fixed": tokens.elevationFixedBackground,
+      "elevation-fixed-reverse": tokens.elevationFixedReverseBackground,
+      "elevation-raised": tokens.elevationRaisedBackground,
+      "elevation-raised-reverse": tokens.elevationRaisedReverseBackground,
+      "elevation-overlay": tokens.elevationOverlayBackground,
+    },
+  );
 };
 
 const cfg = (options?: Options): Config => {
@@ -83,6 +90,9 @@ const cfg = (options?: Options): Config => {
       extend: {
         screens: {
           "sm-mm": { max: px(tokens.breakpointMediumMobile - 1) },
+          "sm-lm": {
+            max: px(tokens.breakpointLargeMobile - 1),
+          },
           "mm-lm": {
             min: px(tokens.breakpointMediumMobile),
             max: px(tokens.breakpointLargeMobile - 1),
@@ -168,11 +178,6 @@ const cfg = (options?: Options): Config => {
           "icon-small": tokens.iconSmallSize,
           "icon-medium": tokens.iconMediumSize,
           "icon-large": tokens.iconLargeSize,
-          "modal-extra-small-width": tokens.modalExtraSmallWidth,
-          "modal-small-width": tokens.modalSmallWidth,
-          "modal-normal-width": tokens.modalNormalWidth,
-          "modal-large-width": tokens.modalLargeWidth,
-          "modal-extra-large-width": tokens.modalExtraLargeWidth,
           "form-box-small": tokens.formBoxSmallHeight,
           "form-box-normal": tokens.formBoxNormalHeight,
           "form-box-large": tokens.formBoxLargeHeight,
@@ -184,6 +189,13 @@ const cfg = (options?: Options): Config => {
           "icon-medium": tokens.iconMediumSize,
           "icon-large": tokens.iconLargeSize,
           "dialog-width": tokens.dialogWidth,
+        },
+        maxWidth: {
+          "modal-extra-small": defaultTokens.modalExtraSmallWidth,
+          "modal-small": defaultTokens.modalSmallWidth,
+          "modal-normal": defaultTokens.modalNormalWidth,
+          "modal-large": defaultTokens.modalLargeWidth,
+          "modal-extra-large": defaultTokens.modalExtraLargeWidth,
         },
         padding: {
           ...componentTokens("button", "padding"),
@@ -201,6 +213,8 @@ const cfg = (options?: Options): Config => {
           "form-box-normal": tokens.formBoxNormalHeight,
           "form-box-large": tokens.formBoxLargeHeight,
           badge: tokens.badgeBorderRadius,
+          modal: tokens.modalBorderRadius,
+          "modal-mobile": tokens.modalBorderRadiusMobile,
         },
         borderColor: {
           ...Object.keys(tokens).reduce((acc, token) => {
@@ -250,6 +264,8 @@ const cfg = (options?: Options): Config => {
           "form-element-hover": tokens.formElementBoxShadowHover,
           "form-element-focus": tokens.formElementFocusBoxShadow,
           switch: `inset 0 0 1px 0 rgba(7, 64, 92, 0.1),${tokens.boxShadowAction}`,
+          "modal-scrolled": `inset 0 1px 0 ${tokens.paletteCloudNormal}, ${tokens.boxShadowFixedReverse}`,
+          modal: `inset 0 0 0 transparent, ${tokens.boxShadowFixedReverse}`,
         },
         keyframes: {
           "slow-pulse": {

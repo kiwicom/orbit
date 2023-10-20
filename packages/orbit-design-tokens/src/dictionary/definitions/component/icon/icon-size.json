@@ -32,6 +32,7 @@
           "type": "size",
           "value": "{foundation.size.small}",
           "deprecated": true,
+          "deprecated-replace": "{component.icon.small.size}",
           "deprecated-version": "6.0.0"
         },
         "medium": {
@@ -93,6 +94,7 @@
           "type": "size",
           "value": "{foundation.size.small}",
           "deprecated": true,
+          "deprecated-replace": "{component.icon.small.size}",
           "deprecated-version": "6.0.0"
         },
         "medium": {

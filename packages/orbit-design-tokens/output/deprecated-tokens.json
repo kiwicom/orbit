@@ -1698,7 +1698,7 @@
     "version": "6.0.0"
   },
   "widthIconSmall": {
-    "replacement": null,
+    "replacement": "iconSmallSize",
     "category": "Size (width, height)",
     "version": "6.0.0"
   },
@@ -1793,7 +1793,7 @@
     "version": "6.0.0"
   },
   "heightIconSmall": {
-    "replacement": null,
+    "replacement": "iconSmallSize",
     "category": "Size (width, height)",
     "version": "6.0.0"
   },

@@ -25,8 +25,8 @@ import Modal, { ModalFooter } from "../Modal";
 import ModalCloseButton from "../Modal/ModalCloseButton";
 import Button from "../Button";
 import Heading from "../Heading";
-import { StyledModalSection as ModalSection } from "../Modal/ModalSection";
-import { StyledModalHeader as ModalHeader } from "../Modal/ModalHeader";
+import { ModalSectionWrapper as ModalSection } from "../Modal/ModalSection";
+import { ModalHeaderWrapper as ModalHeader } from "../Modal/ModalHeader";
 
 const StyledModalSection = styled(ModalSection)`
   padding: 0;

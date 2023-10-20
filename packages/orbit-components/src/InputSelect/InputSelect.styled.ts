@@ -5,10 +5,6 @@ import mq from "../utils/mediaQuery";
 import { right, left } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import defaultTheme from "../defaultTheme";
-import { ModalWrapperContent } from "../Modal";
-import { StyledModalHeader } from "../Modal/ModalHeader";
-import { StyledModalSection } from "../Modal/ModalSection";
-import { StyledModalFooter } from "../Modal/ModalFooter";
 import { Field } from "../InputField";
 
 export const StyledLabel = styled.label<{ spaceAfter?: Props["spaceAfter"] }>`
@@ -25,7 +21,7 @@ export const StyledModalWrapper = styled.div<{
   isScrolled?: boolean;
 }>`
   ${({ theme, isScrolled }) => css`
-    ${StyledModalSection} {
+    .orbit-modal-section {
       padding-left: 0;
       padding-right: 0;
     }
@@ -34,18 +30,18 @@ export const StyledModalWrapper = styled.div<{
       margin-top: ${theme.orbit.spaceXSmall};
     }
 
-    ${StyledModalFooter} {
+    .orbit-modal-footer {
       box-shadow: none;
     }
 
-    ${StyledModalHeader} {
+    .orbit-modal-header-container {
       position: sticky;
       padding-bottom: ${isScrolled && theme.orbit.spaceMedium};
       box-shadow: ${isScrolled && theme.orbit.boxShadowFixed};
       top: 0px;
     }
 
-    ${ModalWrapperContent} {
+    .orbit-modal-wrapper-content {
       height: 100%;
     }
   `};

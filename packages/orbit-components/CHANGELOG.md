@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.1.0...@kiwicom/orbit-components@10.2.0) (2023-10-20)
+
+
+### Bug Fixes
+
+* **OrbitProvider:** use style tag directly without useEffect ([26a6ac5](https://github.com/kiwicom/orbit/commit/26a6ac5223aa6c68f0558673cdeb813f49ca2127))
+
+
+### Features
+
+* **Alert:** migrate to Tailwind ([ec3d104](https://github.com/kiwicom/orbit/commit/ec3d10433497b34cd728ce7e81c8c071a52372f3))
+* **Illustration:** add FlightDisruptions illustration ([37ad131](https://github.com/kiwicom/orbit/commit/37ad13101c22c2dc0ec227fe1db78a6146ea2f52))
+
+
+
+
+
 # [10.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.0.0...@kiwicom/orbit-components@10.1.0) (2023-10-19)
 
 

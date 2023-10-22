@@ -13,7 +13,7 @@ import { SchemeTrackingNode } from "./interfaces";
 export default function Tracking({ location }: PageRendererProps) {
   const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
     query TrackingDataQuery {
-      allTracking(sort: { fields: createdAt, order: DESC }, limit: 8) {
+      allTracking(sort: { fields: createdAt, order: DESC }, limit: 11) {
         nodes {
           id
           name

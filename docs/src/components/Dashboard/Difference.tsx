@@ -49,8 +49,9 @@ const DataDiffTemplate = ({ location }: PageRendererProps) => {
   `);
 
   const { nodes } = allTracking;
-  const first = nodes.slice(0, 8);
-  const last = nodes.slice(-8);
+  const TRACKED_REPOSITORIES_COUNT = 11;
+  const first = nodes.slice(0, TRACKED_REPOSITORIES_COUNT);
+  const last = nodes.slice(-TRACKED_REPOSITORIES_COUNT);
 
   const getSum = (data: TrackingNode[]) =>
     data.reduce((acc, cur) => {

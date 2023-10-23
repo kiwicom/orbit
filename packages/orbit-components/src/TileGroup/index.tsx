@@ -3,7 +3,6 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { StyledTileWrapper } from "../Tile/components/TileWrapper";
 import defaultTheme from "../defaultTheme";
 import { StyledSlide } from "../utils/Slide";
 import type { Props } from "./types";
@@ -18,7 +17,7 @@ const StyledTileGroup = styled.div`
     ${StyledSlide} {
       background: ${theme.orbit.paletteWhite};
     }
-    ${StyledTileWrapper} {
+    .orbit-tile-wrapper {
       border-radius: 0;
       :first-child {
         border-top-left-radius: ${theme.orbit.borderRadiusNormal};

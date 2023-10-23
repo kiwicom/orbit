@@ -1,12 +1,6 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
 
 import type * as Common from "../../../common/types";
-import transition from "../../../utils/transition";
-import { StyledIconRight } from "../TileHeader";
-import defaultTheme from "../../../defaultTheme";
-import { defaultFocus } from "../../../utils/common";
-import mq from "../../../utils/mediaQuery";
 
 interface Props extends Common.Globals {
   href?: string;
@@ -24,62 +18,6 @@ interface Props extends Common.Globals {
   id?: string;
 }
 
-export const StyledTileWrapper: any = styled.div`
-  ${({ theme }) => css`
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: ${theme.orbit.fontFamily};
-    color: ${theme.orbit.paletteInkDark};
-    text-decoration: none;
-    background: ${theme.orbit.paletteWhite};
-    border-radius: ${theme.orbit.borderRadiusLarge};
-    box-shadow: ${theme.orbit.boxShadowAction};
-    transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
-
-    :hover {
-      box-shadow: ${theme.orbit.boxShadowActionActive};
-      ${StyledIconRight} {
-        color: ${theme.orbit.paletteInkLightHover};
-      }
-    }
-
-    ${mq.desktop(css`
-      border-radius: ${theme.orbit.borderRadiusNormal};
-    `)}
-  `}
-`;
-
-StyledTileWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTileAnchor = styled.a`
-  ${({ theme }) => css`
-    display: block;
-    height: 100%;
-    width: 100%;
-    outline: none;
-    text-decoration: none;
-    color: ${theme.orbit.paletteInkDark};
-    &:focus {
-      ${defaultFocus};
-      ${StyledIconRight} {
-        color: ${theme.orbit.paletteInkLightHover};
-      }
-    }
-    &:link,
-    &:visited {
-      color: ${theme.orbit.paletteInkDark};
-      font-weight: ${theme.orbit.fontWeightLinks};
-    }
-  `}
-`;
-
-StyledTileAnchor.defaultProps = {
-  theme: defaultTheme,
-};
-
 const TileWrapper = ({
   href,
   external,
@@ -94,31 +32,37 @@ const TileWrapper = ({
   ariaControls,
   id,
   htmlTitle,
-}: React.PropsWithChildren<Props>) => (
-  <StyledTileWrapper
-    data-test={dataTest}
-    onClick={onClick}
-    onKeyDown={onKeyDown}
-    as={as}
-    tabIndex={tabIndex}
-    role={role}
-    aria-expanded={ariaExpanded}
-    aria-controls={ariaControls}
-    id={id}
-  >
-    {href ? (
-      <StyledTileAnchor
-        target={href && external ? "_blank" : undefined}
-        rel={href && external ? "noopener" : undefined}
-        href={href || undefined}
-        title={htmlTitle}
-      >
-        {children}
-      </StyledTileAnchor>
-    ) : (
-      children
-    )}
-  </StyledTileWrapper>
-);
+}: React.PropsWithChildren<Props>) => {
+  const WrapperComponent = (as ?? "div") as React.ElementType;
+
+  return (
+    <WrapperComponent
+      className="orbit-tile-wrapper [&_.orbit-tile-header-icon-right]:hover:text-ink-light-hover font-base text-ink-dark shadow-action duration-fast hover:shadow-action-active rounded-large bg-white-normal de:rounded-normal box-border block w-full no-underline transition-shadow ease-in-out"
+      data-test={dataTest}
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+      as={as}
+      tabIndex={tabIndex}
+      role={role}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
+      id={id}
+    >
+      {href ? (
+        <a
+          className="text-ink-dark focus:outline-blue-normal focus:[&_.orbit-tile-header-icon-right]:text-ink-light-hover link:text-ink-dark link:font-medium visited:text-ink-dark block h-full w-full no-underline outline-none visited:font-medium focus:outline-2"
+          target={href && external ? "_blank" : undefined}
+          rel={href && external ? "noopener noreferrer" : undefined}
+          href={href || undefined}
+          title={htmlTitle}
+        >
+          {children}
+        </a>
+      ) : (
+        children
+      )}
+    </WrapperComponent>
+  );
+};
 
 export default TileWrapper;

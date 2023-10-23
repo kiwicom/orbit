@@ -26,7 +26,7 @@ export const DefaultJustWrapper = () => {
   const as = text("as", "");
 
   return (
-    <Tile as={as} onClick={action("clicked")} noPadding={noPadding}>
+    <Tile as={as === "" ? undefined : "div"} onClick={action("clicked")} noPadding={noPadding}>
       {content}
     </Tile>
   );
@@ -185,7 +185,7 @@ export const Playground = () => {
   return (
     <Tile
       href={href}
-      as={as}
+      as={as === "" ? undefined : "div"}
       onClick={action("clicked")}
       icon={Icon && <Icon />}
       expanded={expanded}

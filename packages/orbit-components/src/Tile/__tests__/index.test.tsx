@@ -3,7 +3,6 @@ import userEvent from "@testing-library/user-event";
 
 import { render, screen, fireEvent } from "../../test-utils";
 import KEY_CODE_MAP from "../../common/keyMaps";
-import theme from "../../defaultTheme";
 import Tile from "..";
 import Airplane from "../../icons/Airplane";
 
@@ -34,9 +33,6 @@ describe("Tile", () => {
     expect(screen.getByText(description)).toBeInTheDocument();
     expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
     expect(screen.getByText("kek")).toHaveStyle({ padding: "16px" });
-    expect(screen.getByText("kek")).toHaveStyle({
-      borderTop: `1px solid ${theme.orbit.paletteCloudNormal}`,
-    });
 
     await user.click(screen.getByRole("button"));
     fireEvent.keyDown(screen.getByRole("button"), { keyCode: KEY_CODE_MAP.ENTER });

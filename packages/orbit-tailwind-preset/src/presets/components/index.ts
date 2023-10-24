@@ -1,6 +1,12 @@
 import plugin from "tailwindcss/plugin";
-import { convertHexToRgba, defaultTokens, getTokens } from "@kiwicom/orbit-design-tokens";
+import {
+  convertHexToRgba,
+  defaultFoundation,
+  defaultTokens,
+  getTokens,
+} from "@kiwicom/orbit-design-tokens";
 import type { Config } from "tailwindcss";
+import type { CustomFoundation } from "@kiwicom/orbit-design-tokens/src/js/defaultFoundation";
 
 import orbitFoundationPreset from "../foundation";
 import {
@@ -8,7 +14,7 @@ import {
   getComponentLevelTokens,
   ExportedComponentLevelTokens,
 } from "../foundation/helpers";
-import cssVarsFoundation from "../foundation/cssVarsFoundation";
+import getCssVarsFoundation from "../foundation/getCssVarsFoundation";
 
 const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "button",
@@ -27,11 +33,10 @@ const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "countryFlag",
 ];
 
-const px = (n: number) => `${n}px`;
-
 interface Options {
   /** default: true e.g. does not include default normalize styles */
   disablePreflight?: boolean;
+  foundation?: CustomFoundation;
 }
 
 const getForegroundColors = (tokens: typeof defaultTokens) => {
@@ -68,36 +73,38 @@ const getBackgroundColors = (tokens: typeof defaultTokens) => {
 };
 
 const cfg = (options?: Options): Config => {
-  const { disablePreflight = true } = options || {};
+  const { disablePreflight = true, foundation = defaultFoundation } = options || {};
   // make palette colors (foundation colors) defined as css vars and make components tokens inherit it
-  const tokens = getTokens(cssVarsFoundation);
+  const cssVarsFoundation = getCssVarsFoundation(foundation);
+  // @ts-expect-error TODO fix breakpoint types in tokens package
+  const tokens = getTokens(cssVarsFoundation) as Tokens;
   const componentTokens = getComponentLevelTokens(tokens);
 
   return {
     content: ["auto"],
-    presets: [orbitFoundationPreset(tokens)],
+    presets: [orbitFoundationPreset(tokens, cssVarsFoundation)],
     corePlugins: {
       preflight: disablePreflight ? false : undefined,
     },
     theme: {
       extend: {
         screens: {
-          "sm-mm": { max: px(tokens.breakpointMediumMobile - 1) },
+          "sm-mm": { max: `calc(${tokens.breakpointMediumMobile} - 1px)` },
           "mm-lm": {
-            min: px(tokens.breakpointMediumMobile),
-            max: px(tokens.breakpointLargeMobile - 1),
+            min: tokens.breakpointMediumMobile,
+            max: `calc(${tokens.breakpointLargeMobile} - 1px)`,
           },
           "lm-tb": {
-            min: px(tokens.breakpointLargeMobile),
-            max: px(tokens.breakpointTablet - 1),
+            min: tokens.breakpointLargeMobile,
+            max: `calc(${tokens.breakpointTablet} - 1px)`,
           },
           "tb-de": {
-            min: px(tokens.breakpointTablet),
-            max: px(tokens.breakpointDesktop - 1),
+            min: tokens.breakpointTablet,
+            max: `calc(${tokens.breakpointDesktop} - 1px)`,
           },
           "de-ld": {
-            min: px(tokens.breakpointDesktop),
-            max: px(tokens.breakpointLargeDesktop - 1),
+            min: tokens.breakpointDesktop,
+            max: `calc(${tokens.breakpointLargeDesktop} - 1px)`,
           },
         },
         fontSize: {

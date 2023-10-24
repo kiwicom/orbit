@@ -1,10 +1,14 @@
 import type { Config } from "tailwindcss";
-import type { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import type { defaultFoundation, defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import getTailwindTheme from "./getTailwindTheme";
 
-const config = (tokens: typeof defaultTokens): Config => {
-  const theme = getTailwindTheme(tokens);
+export interface CSSVarsFoundation extends Omit<typeof defaultFoundation, "breakpoint"> {
+  breakpoint: Record<keyof (typeof defaultFoundation)["breakpoint"], string>;
+}
+
+const config = (tokens: typeof defaultTokens, cssVarsFoundation: CSSVarsFoundation): Config => {
+  const theme = getTailwindTheme(cssVarsFoundation);
 
   return {
     content: ["auto"],

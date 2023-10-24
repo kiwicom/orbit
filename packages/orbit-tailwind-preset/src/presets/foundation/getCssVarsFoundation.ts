@@ -1,0 +1,162 @@
+import { defaultFoundation, mergeDeep } from "@kiwicom/orbit-design-tokens";
+import type { CustomFoundation } from "@kiwicom/orbit-design-tokens/src/js/defaultFoundation";
+
+import { toPx } from "./helpers";
+
+const cssVarsFoundation = (foundation: CustomFoundation) => {
+  const theme = mergeDeep(defaultFoundation, foundation);
+  return {
+    palette: {
+      product: {
+        normal: `var(--palette-product-normal, ${theme.palette.product.normal})`,
+        normalHover: `var(--palette-product-normal-hover, ${theme.palette.product.normalHover})`,
+        normalActive: `var(--palette-product-normal-active, ${theme.palette.product.normalActive})`,
+        light: `var(--palette-product-light, ${theme.palette.product.light})`,
+        lightHover: `var(--palette-product-light-hover, ${theme.palette.product.lightHover})`,
+        lightActive: `var(--palette-product-light-active, ${theme.palette.product.lightActive})`,
+        dark: `var(--palette-product-dark, ${theme.palette.product.dark})`,
+        darkHover: `var(--palette-product-dark-hover, ${theme.palette.product.darkHover})`,
+        darkActive: `var(--palette-product-dark-active, ${theme.palette.product.darkActive})`,
+        darker: `var(--palette-product-darker, ${theme.palette.product.darker})`,
+      },
+      blue: {
+        normal: `var(--palette-blue-normal, ${theme.palette.blue.normal})`,
+        normalHover: `var(--palette-blue-normal-hover, ${theme.palette.blue.normalHover})`,
+        normalActive: `var(--palette-blue-normal-active, ${theme.palette.blue.normalActive})`,
+        light: `var(--palette-blue-light, ${theme.palette.blue.light})`,
+        lightHover: `var(--palette-blue-light-hover, ${theme.palette.blue.lightHover})`,
+        lightActive: `var(--palette-blue-light-active, ${theme.palette.blue.lightActive})`,
+        dark: `var(--palette-blue-dark, ${theme.palette.blue.dark})`,
+        darkHover: `var(--palette-blue-dark-hover, ${theme.palette.blue.darkHover})`,
+        darkActive: `var(--palette-blue-dark-active, ${theme.palette.blue.darkActive})`,
+        darker: `var(--palette-blue-darker, ${theme.palette.blue.darker})`,
+      },
+      bundle: {
+        basic: `var(--palette-bundle-basic, ${theme.palette.bundle.basic})`,
+        medium: `var(--palette-bundle-medium, ${theme.palette.bundle.medium})`,
+      },
+      cloud: {
+        normal: `var(--palette-cloud-normal, ${theme.palette.cloud.normal})`,
+        normalHover: `var(--palette-cloud-normal-hover, ${theme.palette.cloud.normalHover})`,
+        normalActive: `var(--palette-cloud-normal-active, ${theme.palette.cloud.normalActive})`,
+        light: `var(--palette-cloud-light, ${theme.palette.cloud.light})`,
+        lightHover: `var(--palette-cloud-light-hover, ${theme.palette.cloud.lightHover})`,
+        lightActive: `var(--palette-cloud-light-active, ${theme.palette.cloud.lightActive})`,
+        dark: `var(--palette-cloud-dark, ${theme.palette.cloud.dark})`,
+        darkHover: `var(--palette-cloud-dark-hover, ${theme.palette.cloud.darkHover})`,
+        darkActive: `var(--palette-cloud-dark-active, ${theme.palette.cloud.darkActive})`,
+      },
+      green: {
+        normal: `var(--palette-green-normal, ${theme.palette.green.normal})`,
+        normalHover: `var(--palette-green-normal-hover, ${theme.palette.green.normalHover})`,
+        normalActive: `var(--palette-green-normal-active, ${theme.palette.green.normalActive})`,
+        light: `var(--palette-green-light, ${theme.palette.green.light})`,
+        lightHover: `var(--palette-green-light-hover, ${theme.palette.green.lightHover})`,
+        lightActive: `var(--palette-green-light-active, ${theme.palette.green.lightActive})`,
+        dark: `var(--palette-green-dark, ${theme.palette.green.dark})`,
+        darkHover: `var(--palette-green-dark-hover, ${theme.palette.green.darkHover})`,
+        darkActive: `var(--palette-green-dark-active, ${theme.palette.green.darkActive})`,
+        darker: `var(--palette-green-darker, ${theme.palette.green.darker})`,
+      },
+      ink: {
+        normal: `var(--palette-ink-normal, ${theme.palette.ink.normal})`,
+        normalHover: `var(--palette-ink-normal-hover, ${theme.palette.ink.normalHover})`,
+        normalActive: `var(--palette-ink-normal-active, ${theme.palette.ink.normalActive})`,
+        light: `var(--palette-ink-light, ${theme.palette.ink.light})`,
+        lightHover: `var(--palette-ink-light-hover, ${theme.palette.ink.lightHover})`,
+        lightActive: `var(--palette-ink-light-active, ${theme.palette.ink.lightActive})`,
+        dark: `var(--palette-ink-dark, ${theme.palette.ink.dark})`,
+        darkHover: `var(--palette-ink-dark-hover, ${theme.palette.ink.darkHover})`,
+        darkActive: `var(--palette-ink-dark-active, ${theme.palette.ink.darkActive})`,
+      },
+      orange: {
+        normal: `var(--palette-orange-normal, ${theme.palette.orange.normal})`,
+        normalHover: `var(--palette-orange-normal-hover, ${theme.palette.orange.normalHover})`,
+        normalActive: `var(--palette-orange-normal-active, ${theme.palette.orange.normalActive})`,
+        light: `var(--palette-orange-light, ${theme.palette.orange.light})`,
+        lightHover: `var(--palette-orange-light-hover, ${theme.palette.orange.lightHover})`,
+        lightActive: `var(--palette-orange-light-active, ${theme.palette.orange.lightActive})`,
+        dark: `var(--palette-orange-dark, ${theme.palette.orange.dark})`,
+        darkHover: `var(--palette-orange-dark-hover, ${theme.palette.orange.darkHover})`,
+        darkActive: `var(--palette-orange-dark-active, ${theme.palette.orange.darkActive})`,
+        darker: `var(--palette-orange-darker, ${theme.palette.orange.darker})`,
+      },
+      red: {
+        normal: `var(--palette-red-normal, ${theme.palette.red.normal})`,
+        normalHover: `var(--palette-red-normal-hover, ${theme.palette.red.normalHover})`,
+        normalActive: `var(--palette-red-normal-active, ${theme.palette.red.normalActive})`,
+        light: `var(--palette-red-light, ${theme.palette.red.light})`,
+        lightHover: `var(--palette-red-light-hover, ${theme.palette.red.lightHover})`,
+        lightActive: `var(--palette-red-light-active, ${theme.palette.red.lightActive})`,
+        dark: `var(--palette-red-dark, ${theme.palette.red.dark})`,
+        darkHover: `var(--palette-red-dark-hover, ${theme.palette.red.darkHover})`,
+        darkActive: `var(--palette-red-dark-active, ${theme.palette.red.darkActive})`,
+        darker: `var(--palette-red-darker, ${theme.palette.red.darker})`,
+      },
+      social: {
+        facebook: `var(--palette-social-facebook, ${theme.palette.social.facebook})`,
+        facebookHover: `var(--palette-social-facebook-hover, ${theme.palette.social.facebookHover})`,
+        facebookActive: `var(--palette-social-facebook-active, ${theme.palette.social.facebookActive})`,
+      },
+      white: {
+        normal: `var(--palette-white-normal, ${theme.palette.white.normal})`,
+        normalHover: `var(--palette-white-normal-hover, ${theme.palette.white.normalHover})`,
+        normalActive: `var(--palette-white-normal-active, ${theme.palette.white.normalActive})`,
+      },
+    },
+    borderRadius: {
+      small: `var(--border-radius-small, ${theme.borderRadius.small})`,
+      normal: `var(--border-radius-normal, ${theme.borderRadius.normal})`,
+      large: `var(--border-radius-large, ${theme.borderRadius.large})`,
+      circle: `var(--border-radius-circle, ${theme.borderRadius.circle})`,
+    },
+    breakpoint: {
+      smallMobile: toPx(theme.breakpoint.smallMobile),
+      mediumMobile: toPx(theme.breakpoint.mediumMobile),
+      largeMobile: toPx(theme.breakpoint.largeMobile),
+      tablet: toPx(theme.breakpoint.tablet),
+      desktop: toPx(theme.breakpoint.desktop),
+      largeDesktop: toPx(theme.breakpoint.largeDesktop),
+    },
+    size: {
+      small: `var(--size-small, ${theme.size.small})`,
+      medium: `var(--size-medium, ${theme.size.medium})`,
+      large: `var(--size-large, ${theme.size.large})`,
+      extraLarge: `var(--size-xlarge, ${theme.size.extraLarge})`,
+      extraExtraLarge: `var(--size-xxxlarge, ${theme.size.extraExtraLarge})`,
+    },
+    space: {
+      XXXSmall: `var(--space-xxxsmall, ${theme.space.XXXSmall})`,
+      XXSmall: `var(--space-xxsmall, ${theme.space.XXSmall})`,
+      XSmall: `var(--space-xsmall, ${theme.space.XSmall})`,
+      small: `var(--space-small, ${theme.space.small})`,
+      medium: `var(--space-medium, ${theme.space.medium})`,
+      large: `var(--space-large, ${theme.space.large})`,
+      XLarge: `var(--space-xlarge, ${theme.space.XLarge})`,
+      XXLarge: `var(--space-xxlarge, ${theme.space.XXLarge})`,
+      XXXLarge: `var(--space-xxxlarge, ${theme.space.XXXLarge})`,
+    },
+    fontFamily: {
+      base: `var(--font-family-base, ${theme.fontFamily.base})`,
+    },
+    fontWeight: {
+      normal: `var(--font-weight-normal, ${theme.fontWeight.normal})`,
+      medium: `var(--font-weight-medium, ${theme.fontWeight.medium})`,
+      bold: `var(--font-weight-bold, ${theme.fontWeight.bold})`,
+    },
+    fontSize: {
+      small: `var(--font-size-small, ${theme.fontSize.small})`,
+      normal: `var(--font-size-normal, ${theme.fontSize.normal})`,
+      large: `var(--font-size-large, ${theme.fontSize.large})`,
+      extraLarge: `var(--font-size-xlarge, ${theme.fontSize.extraLarge})`,
+    },
+    lineHeight: {
+      small: `var(--line-height-small, ${theme.lineHeight.small})`,
+      normal: `var(--line-height-normal, ${theme.lineHeight.normal})`,
+      large: `var(--line-height-large, ${theme.lineHeight.large})`,
+      extraLarge: `var(--line-height-xlarge, ${theme.lineHeight.extraLarge})`,
+    },
+  };
+};
+
+export default cssVarsFoundation;

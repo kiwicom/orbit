@@ -1,14 +1,14 @@
 import React from "react";
-import { getTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultFoundation } from "@kiwicom/orbit-design-tokens";
 
-import cssVariablesFoundation from "../foundation/cssVarsFoundation";
+import getCssVariablesFoundation from "../foundation/getCssVarsFoundation";
 import getTailwindTheme from "../foundation/getTailwindTheme";
 import { render, screen } from "../../testUtils";
 import Colors from "../__fixtures__/Colors";
 
 describe("colors", () => {
   it("should generate correct styles", () => {
-    const theme = getTailwindTheme(getTokens(cssVariablesFoundation));
+    const theme = getTailwindTheme(getCssVariablesFoundation(defaultFoundation));
     render(<Colors />);
 
     Object.entries(theme.colors).forEach(([cat, values]) => {

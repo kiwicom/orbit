@@ -1,6 +1,7 @@
 import React from "react";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultFoundation, getTokens } from "@kiwicom/orbit-design-tokens";
 
+import getCssVarsFoundation from "../foundation/getCssVarsFoundation";
 import { render, screen } from "../../testUtils";
 import Spacings from "../__fixtures__/Spacings";
 
@@ -18,11 +19,12 @@ const SPACINGS = [
 
 describe("Spacings", () => {
   it("should generate correct styles", () => {
+    const tokens = getTokens(getCssVarsFoundation(defaultFoundation));
     render(<Spacings />);
 
     SPACINGS.forEach(spacing => {
       expect(screen.getByText(spacing)).toHaveStyle({
-        paddingLeft: defaultTokens[spacing],
+        paddingLeft: tokens[spacing],
       });
     });
   });

@@ -1,61 +1,67 @@
 import React from "react";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultFoundation, getTokens } from "@kiwicom/orbit-design-tokens";
 
 import { render, screen } from "../../testUtils";
 import FontSizes from "../__fixtures__/FontSizes";
 import FontWeight from "../__fixtures__/FontWeight";
 import LineHeight from "../__fixtures__/LineHeight";
+import getCssVarsFoundation from "../foundation/getCssVarsFoundation";
 
 describe("font sizes", () => {
   it("should generate correct styles", () => {
     render(<FontSizes />);
+    const tokens = getTokens(getCssVarsFoundation(defaultFoundation));
 
     expect(screen.getByText("Text small")).toHaveStyle({
-      fontSize: defaultTokens.fontSizeTextSmall,
+      fontSize: tokens.fontSizeTextSmall,
     });
 
     expect(screen.getByText("Text normal")).toHaveStyle({
-      fontSize: defaultTokens.fontSizeTextNormal,
+      fontSize: tokens.fontSizeTextNormal,
     });
 
     expect(screen.getByText("Text large")).toHaveStyle({
-      fontSize: defaultTokens.fontSizeTextLarge,
+      fontSize: tokens.fontSizeTextLarge,
     });
   });
 });
 
 describe("font weights", () => {
   it("should generate correct styles", () => {
+    const tokens = getTokens(getCssVarsFoundation(defaultFoundation));
+
     render(<FontWeight />);
 
     expect(screen.getByText("bold")).toHaveStyle({
-      fontWeight: defaultTokens.fontWeightBold,
+      fontWeight: tokens.fontWeightBold,
     });
 
     expect(screen.getByText("normal")).toHaveStyle({
-      fontWeight: defaultTokens.fontWeightNormal,
+      fontWeight: tokens.fontWeightNormal,
     });
 
     expect(screen.getByText("medium")).toHaveStyle({
-      fontWeight: defaultTokens.fontWeightMedium,
+      fontWeight: tokens.fontWeightMedium,
     });
   });
 });
 
 describe("line heights", () => {
   it("should generate correct styles", () => {
+    const tokens = getTokens(getCssVarsFoundation(defaultFoundation));
+
     render(<LineHeight />);
 
     expect(screen.getByText("leading-small")).toHaveStyle({
-      lineHeight: defaultTokens.lineHeightSmall,
+      lineHeight: tokens.lineHeightSmall,
     });
 
     expect(screen.getByText("leading-normal")).toHaveStyle({
-      lineHeight: defaultTokens.lineHeightNormal,
+      lineHeight: tokens.lineHeightNormal,
     });
 
     expect(screen.getByText("leading-large")).toHaveStyle({
-      lineHeight: defaultTokens.lineHeightLarge,
+      lineHeight: tokens.lineHeightLarge,
     });
   });
 });

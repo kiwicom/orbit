@@ -1,15 +1,15 @@
 import React from "react";
-import { getTokens } from "@kiwicom/orbit-design-tokens";
+import { defaultFoundation, getTokens } from "@kiwicom/orbit-design-tokens";
 
 import Button from "../__fixtures__/Button";
 import { render, screen } from "../../testUtils";
 import { firstToUpper } from "../foundation/helpers";
-import cssVarsFoundation from "../foundation/cssVarsFoundation";
+import getCssVarsFoundation from "../foundation/getCssVarsFoundation";
 
 const testIds = ["primary", "secondary", "info", "success", "warning", "critical"];
 
 describe("Button", () => {
-  const tokens = getTokens(cssVarsFoundation);
+  const tokens = getTokens(getCssVarsFoundation(defaultFoundation));
 
   it.each(testIds)("should have correct styles for %s", testId => {
     render(<Button />);

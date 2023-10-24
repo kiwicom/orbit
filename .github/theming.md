@@ -46,6 +46,35 @@ const App = () => (
 
 **Note: This approach is recommended only if you are not using OrbitProvider. We manage the addition of CSS variables within OrbitProvider until the migration to Tailwind is complete**.
 
+We provide two different ways of customizing the Orbit Tailwind foundation. You can either use the
+`foundation` parameter of the `orbitPreset` function inside your tailwind config file or you can use the `tokensToCssVars` from the `@kiwicom/orbit-design-tokens` package to add css variables on your page. That might be useful, if you need to change the foundation values dynamically in runtime.
+
+## Customizing the Orbit Tailwind foundation with `orbitPreset`
+
+The [orbitPreset](https://github.com/kiwicom/orbit/blob/master/packages/orbit-tailwind-preset/README.md)
+accepts `foundation` parameter, which allows you to customize the foundation values used by the preset.
+
+```js
+module.exports = {
+  presets: [orbitPreset({ foundation: palette: {
+    product: {
+      light: "#9ae5da",
+      lightHover: "#7fded0",
+      lightActive: "#64d7c6",
+      normal: "#00a991",
+      normalHover: "#009882",
+      normalActive: "#008f7b",
+      dark: "#005448",
+    },
+    }})],
+  ]
+}
+```
+
+Except `palette` colors you can define your own values for other foundation values: `fontWeight`, `fontSize`, `fontFamily`, `lineHeight`, `breakpoint`, `size`, `space`, `borderRadius`. You can look at the example of foundation object [here](https://github.com/kiwicom/orbit/blob/master/.github/foundation.md)
+
+## Customizing the Orbit Tailwind foundation with `tokensToCssVars`
+
 Our Tailwind CSS preset package utilizes CSS variables for the theme,
 making it easy for you to customize the default palette with your own colors.
 To simplify this process, our tokens package includes a utility function that converts a theme object into a CSS variables string,

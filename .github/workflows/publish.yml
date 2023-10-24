@@ -1,10 +1,16 @@
 name: Publish
+run-name: Publish, prerelease:${{ inputs.prerelease }}, dry-run:${{ inputs.dryrun }}
 
 on:
   workflow_dispatch:
     inputs:
       dryrun:
         description: "Dry run"
+        required: false
+        default: false
+        type: boolean
+      prerelease:
+        description: "Prerelease"
         required: false
         default: false
         type: boolean
@@ -41,7 +47,11 @@ jobs:
       - name: Dry run
         if: ${{ github.event.inputs.dryrun == 'true' }}
         run: |
-          yarn lerna version --no-private --no-push --no-git-tag-version --yes
+          if ${{ github.event.inputs.prerelease == 'true' }}; then
+            yarn lerna version --no-private --no-push --no-git-tag-version --conventional-prerelease --yes
+          else
+            yarn lerna version --no-private --no-push --no-git-tag-version --yes
+          fi
           git diff
           yarn zx scripts/post-changelog.mjs --dry
 
@@ -56,7 +66,11 @@ jobs:
           echo "access=public" >> ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
           echo "//registry.npmjs.org/:always-auth=true" >> ~/.npmrc
-          yarn lerna publish --no-private --conventional-commits --create-release github --ignore-prepublish --yes
+          if ${{ github.event.inputs.prerelease == 'true' }}; then
+            yarn lerna publish --no-private --conventional-commits --create-release github --ignore-prepublish --conventional-prerelease --yes
+          else
+            yarn lerna publish --no-private --conventional-commits --create-release github --ignore-prepublish --yes
+          fi
           yarn docs changelog
           git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push
           yarn zx scripts/post-changelog.mjs

@@ -35,6 +35,14 @@ module.exports = {
     // ...
     path.join(orbitComponentsPath, "**", "*.js"),
   ],
+  // If you need, customize the base font family, e.g. with the System UI font stack (https://github.com/system-fonts/modern-font-stacks#system-ui)
+  theme: {
+    extend: {
+      fontFamily: {
+        base: "system-ui, sans-serif",
+      },
+    },
+  },
   presets: [
     orbitComponentsPreset({
       disablePreflight: false, // default value
@@ -44,6 +52,8 @@ module.exports = {
 ```
 
 The `content` property is required for Tailwind to [know which files to scan for classes](https://tailwindcss.com/docs/content-configuration). It should include the path to all your source files that use Tailwind classes. The path to the `@kiwicom/orbit-components` package is required for the component-specific classes to be scanned and built into the final CSS. (The `require.resolve` ensures it works inside of monorepos too).
+
+The `theme` property allows you to override some specific values of the default theme. In particular, if you need to customize the font family, you can change the `base` font family like in the example above.
 
 The `presets` property is required for Tailwind to [know which presets to use](https://tailwindcss.com/docs/presets). It should include the `orbitComponentsPreset` function, which returns the Orbit Tailwind preset.
 

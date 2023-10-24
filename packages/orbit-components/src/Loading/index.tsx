@@ -107,7 +107,7 @@ const Loading = ({
           {type !== TYPE_OPTIONS.BUTTON_LOADER && Boolean(text) && (
             <div
               className={cx([
-                "font-text text-normal text-cloud-dark leading-normal",
+                "font-base text-normal text-cloud-dark leading-normal",
                 type === TYPE_OPTIONS.PAGE_LOADER ? "mt-md" : "ms-sm",
               ])}
             >

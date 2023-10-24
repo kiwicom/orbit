@@ -25,10 +25,7 @@ const Breadcrumbs = ({
     <>
       <Hide on={["smallMobile", "mediumMobile"]}>
         <nav
-          className={cx(
-            "font-base font-text text-small",
-            spaceAfter && spaceAfterClasses[spaceAfter],
-          )}
+          className={cx("font-base text-small", spaceAfter && spaceAfterClasses[spaceAfter])}
           aria-label="Breadcrumb"
           id={id}
           data-test={dataTest}

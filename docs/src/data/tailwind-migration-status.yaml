@@ -62,7 +62,7 @@ ModalFooter: true
 ModalHeader: true
 ModalSection: true
 NavigationBar: true
-NotificationBadge: false
+NotificationBadge: true
 OrbitProvider: true
 Pagination: false
 Popover: false

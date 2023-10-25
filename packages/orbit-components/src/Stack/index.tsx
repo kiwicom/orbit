@@ -139,18 +139,14 @@ const Stack = (props: Props) => {
 
     return cx(
       typeof spaceAfter !== "undefined" && getSpaceAfterClasses(spaceAfter, viewport),
-      flex || inline
-        ? [
-            getDisplayClasses(inline ? "inline-flex" : "flex", viewport),
-            typeof align !== "undefined" && getAlignItemsClasses(align, viewport),
-            typeof align !== "undefined" && getAlignContentClasses(align, viewport),
-            typeof wrap !== "undefined" && getWrapClasses(wrap, viewport),
-            typeof grow !== "undefined" && getGrowClasses(grow, viewport),
-            typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
-            typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
-            getDirectionClasses(direction, viewport),
-          ]
-        : "block",
+      typeof align !== "undefined" && getAlignItemsClasses(align, viewport),
+      typeof align !== "undefined" && getAlignContentClasses(align, viewport),
+      typeof wrap !== "undefined" && getWrapClasses(wrap, viewport),
+      typeof grow !== "undefined" && getGrowClasses(grow, viewport),
+      typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
+      typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
+      getDirectionClasses(direction, viewport),
+      flex || inline ? getDisplayClasses(inline ? "inline-flex" : "flex", viewport) : "block",
       getSpacingClasses(spacing, viewport, direction, legacy),
       inline === false && "w-full",
     );

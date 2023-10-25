@@ -1,46 +1,5 @@
-import * as React from "react";
-import styled from "styled-components";
-
-import { rtlSpacing } from "../../utils/rtl";
-import defaultTheme from "../../defaultTheme";
-import { StyledTag } from "../../Tag";
-
-const StyledInputTags = styled.div`
-  position: relative;
-  margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-  display: flex;
-  align-items: center;
-  flex: 0 1 auto;
-  height: 100%;
-  z-index: 2;
-  min-width: 50px;
-  overflow: hidden;
-`;
-
-StyledInputTags.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInputTagsInner = styled.div`
-  overflow-x: scroll;
-  white-space: nowrap;
-  -ms-overflow-style: none; /* IE 11 */
-  scrollbar-width: none; /* Firefox 64 */
-  display: flex;
-  align-items: center;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  ${StyledTag} + ${StyledTag} {
-    margin: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-  }
-`;
-
-StyledInputTagsInner.defaultProps = {
-  theme: defaultTheme,
-};
+import React from "react";
+import cx from "clsx";
 
 const InputTags = ({ children }: { children: React.ReactNode }) => {
   const tagsRef = React.useRef<HTMLDivElement | null>(null);
@@ -83,8 +42,23 @@ const InputTags = ({ children }: { children: React.ReactNode }) => {
   }, [tagsRef]);
 
   return (
-    <StyledInputTags>
-      <StyledInputTagsInner
+    <div
+      className={cx(
+        "relative",
+        "ms-sm",
+        "flex flex-initial items-center",
+        "h-full min-w-[50px]",
+        "overflow-hidden",
+        "z-[2]",
+      )}
+    >
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+      <div
+        className={cx(
+          "white-space-nowrap overflow-x-scroll",
+          "space-x-xs flex items-center",
+          "scrollbar-none",
+        )}
         ref={tagsRef}
         onMouseDown={() => {
           if (tagsRef && tagsRef.current) {
@@ -94,8 +68,8 @@ const InputTags = ({ children }: { children: React.ReactNode }) => {
         }}
       >
         {children}
-      </StyledInputTagsInner>
-    </StyledInputTags>
+      </div>
+    </div>
   );
 };
 

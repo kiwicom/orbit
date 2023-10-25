@@ -5,7 +5,6 @@ import mq from "../utils/mediaQuery";
 import { right, left } from "../utils/rtl";
 import getSpacingToken from "../common/getSpacingToken";
 import defaultTheme from "../defaultTheme";
-import { Field } from "../InputField";
 
 export const StyledLabel = styled.label<{ spaceAfter?: Props["spaceAfter"] }>`
   position: relative;
@@ -27,7 +26,7 @@ export const StyledModalWrapper = styled.div<{
       padding-right: 0;
     }
 
-    ${Field} {
+    .orbit-input-field-field {
       margin-top: ${theme.orbit.spaceXSmall};
     }
 

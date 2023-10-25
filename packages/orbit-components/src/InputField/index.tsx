@@ -1,17 +1,10 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
 import cx from "clsx";
 
-import type * as Common from "../common/types";
-import type { Theme } from "../defaultTheme";
-import defaultTheme from "../defaultTheme";
 import { TYPE_OPTIONS } from "./consts";
-import { StyledServiceLogo } from "../ServiceLogo";
-import { rtlSpacing } from "../utils/rtl";
 import InputTags from "./InputTags";
-import getSpacingToken from "../common/getSpacingToken";
 import getFieldDataState from "../common/getFieldDataState";
 import useRandomId from "../hooks/useRandomId";
 import ErrorFormTooltip from "../ErrorFormTooltip";
@@ -19,281 +12,74 @@ import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import FormLabel from "../FormLabel";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
-import formElementFocus from "./helpers/formElementFocus";
-import mq from "../utils/mediaQuery";
 import type { Props } from "./types";
+import { spaceAfterClasses } from "../common/tailwind";
 
 const getDOMType = (type: Lowercase<keyof typeof TYPE_OPTIONS>) => {
   if (type === TYPE_OPTIONS.PASSPORTID) return TYPE_OPTIONS.TEXT;
   return type;
 };
 
-interface StyledFieldProps extends React.PropsWithChildren<Partial<Props>> {
-  component: string;
-  className?: string;
-  spaceAfter?: Common.SpaceAfterSizes;
-  theme: Theme;
-  htmlFor?: string;
-  $width?: string;
-  onMouseEnter?: (e: React.MouseEvent<HTMLInputElement>) => void;
-  onMouseLeave?: (e: React.MouseEvent<HTMLInputElement>) => void;
-}
+export const FakeInput = ({
+  error,
+  disabled,
+  readOnly,
+}: Pick<Props, "error" | "disabled" | "readOnly">) => (
+  <div
+    className={cx(
+      "orbit-input-field-fake-input",
+      "h-form-box-normal text-form-element-normal-font-size z-[1]",
+      "absolute left-0 top-0",
+      "duration-fast transition-all ease-in-out",
+      "rounded-large tb:rounded-normal box-border w-full",
+      "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
+      error ? "shadow-form-element-error" : "shadow-form-element",
+      disabled || readOnly
+        ? "bg-form-element-disabled-background"
+        : [
+            "bg-transparent",
+            error
+              ? "peer-hover:shadow-form-element-error-hover"
+              : "peer-hover:shadow-form-element-hover",
+          ],
+    )}
+  />
+);
 
-export const Field = styled(
-  React.forwardRef<HTMLElement, StyledFieldProps>(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    ({ component: Component, className, children, spaceAfter, theme, $width, ...props }, ref) => {
-      return (
-        // @ts-expect-error TODO
-        <Component className={className} ref={ref} {...props}>
-          {children}
-        </Component>
-      );
-    },
-  ),
-)`
-  ${({ theme, $width }) => css`
-    font-family: ${theme.orbit.fontFamily};
-    position: relative;
-    display: block;
-    flex: 1 1 100%;
-    width: ${$width};
-    margin-bottom: ${getSpacingToken};
-  `}
-`;
-
-Field.defaultProps = {
-  theme: defaultTheme,
-};
-
-export const FakeInput = styled(({ children, className }) => (
-  <div className={cx("orbit-input-field-fake-input", className)}>{children}</div>
-))`
-  ${({ theme, error, disabled, readOnly }) => css`
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    height: ${theme.orbit.heightInputNormal};
-    box-shadow: inset 0 0 0
-      ${`${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
-      }`};
-    background-color: ${disabled || readOnly
-      ? theme.orbit.backgroundInputDisabled
-      : theme.orbit.backgroundInput};
-    font-size: ${theme.orbit.fontSizeInputNormal};
-    transition: all ${theme.orbit.durationFast} ease-in-out;
-    border-radius: ${theme.orbit.borderRadiusLarge};
-    ${mq.tablet(css`
-      border-radius: ${theme.orbit.borderRadiusNormal};
-    `)};
-  `}
-`;
-
-FakeInput.defaultProps = {
-  theme: defaultTheme,
-};
-
-export const InputContainer = styled(({ children, className, labelRef }) => (
-  <div ref={labelRef} className={cx("orbit-input-field-input-container", className)}>
+const Prefix = ({ children }: { children: React.ReactNode }) => (
+  <div
+    className={cx(
+      "text-form-element-prefix-foreground",
+      "ps-sm pointer-events-none z-[3] flex h-full items-center justify-center",
+      "[&>svg]:text-icon-tertiary-foreground",
+      "[&_*_svg]:w-icon-medium [&>svg]:w-icon-medium",
+      "[&_*_svg]:h-icon-medium [&>svg]:h-icon-medium",
+      "[&_.orbit-button-primitive-icon]:text-icon-secondary-foreground",
+    )}
+  >
     {children}
   </div>
-))`
-  ${({ theme, disabled, readOnly, error }) => css`
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    height: ${theme.orbit.heightInputNormal};
-    color: ${disabled || readOnly
-      ? theme.orbit.colorTextInputDisabled
-      : theme.orbit.colorTextInput};
-    font-size: ${theme.orbit.fontSizeInputNormal};
-    cursor: ${disabled ? "not-allowed" : "text"};
+);
 
-    &:hover > ${FakeInput} {
-      ${!(disabled || readOnly) &&
-      `box-shadow: inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-        error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
-      }`};
-    }
-  `}
-`;
-
-InputContainer.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInlineLabel = styled.div`
-  ${({
-    theme,
-    hasTags,
-    hasFeedback,
-  }: {
-    theme: Theme;
-    hasTags: boolean;
-    hasFeedback?: boolean;
-  }) => css`
-    height: 100%;
-    display: flex;
-    align-items: center;
-    pointer-events: none;
-    justify-content: center;
-    padding: ${rtlSpacing(
-      `0 0 0 ${!hasTags && hasFeedback ? theme.orbit.spaceXXSmall : theme.orbit.spaceSmall}`,
-    )};
-
-    .orbit-form-label {
-      margin-bottom: 0;
-      font-size: ${theme.orbit.fontSizeInputNormal};
-      line-height: ${theme.orbit.lineHeightTextNormal};
-      z-index: 3;
-      white-space: nowrap;
-    }
-  `}
-`;
-
-StyledInlineLabel.defaultProps = {
-  theme: defaultTheme,
-};
-
-export const Prefix = styled(({ children, className, iconRef }) => (
-  <div className={className} ref={iconRef}>
+const Suffix = ({
+  disabled,
+  children,
+}: {
+  disabled: Props["disabled"];
+  children: React.ReactNode;
+}) => (
+  <div
+    className={cx(
+      "h-form-box-normal text-form-element-prefix-foreground",
+      "z-[3] flex shrink-0 items-center justify-center",
+      "[&_.orbit-button-primitive-icon]:text-icon-secondary-foreground",
+      "[&_.orbit-service-logo]:pe-sm [&_.orbit-service-logo]:h-md",
+      disabled && "pointer-events-none",
+    )}
+  >
     {children}
   </div>
-))`
-  ${({ theme }) => css`
-    height: 100%;
-    color: ${theme.orbit.colorTextInputPrefix};
-    display: flex;
-    align-items: center;
-    pointer-events: none;
-    justify-content: center;
-    padding: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
-    z-index: 3;
-
-    & > svg {
-      color: ${theme.orbit.colorIconInput};
-    }
-
-    & * svg,
-    & > svg {
-      width: ${theme.orbit.widthIconNormal};
-      height: ${theme.orbit.heightIconNormal};
-    }
-
-    .orbit-button-primitive-icon {
-      color: ${theme.orbit.colorIconSecondary};
-    }
-  `}
-`;
-
-Prefix.defaultProps = {
-  theme: defaultTheme,
-};
-
-const Suffix = styled(({ children, className }) => <div className={className}>{children}</div>)`
-  ${({ theme, disabled }) => css`
-    height: ${theme.orbit.heightInputNormal};
-    color: ${theme.orbit.colorTextInputPrefix};
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    pointer-events: ${disabled && "none"};
-    z-index: 3;
-
-    .orbit-button-primitive-icon {
-      color: ${theme.orbit.colorIconSecondary};
-    }
-
-    ${StyledServiceLogo} {
-      height: 16px;
-      padding: ${rtlSpacing(`0 ${theme.orbit.spaceSmall} 0 0`)};
-    }
-  `}
-`;
-
-Suffix.defaultProps = {
-  theme: defaultTheme,
-};
-
-interface StyledInputProps extends Partial<Props> {
-  min: number;
-  max: number;
-  theme: typeof defaultTheme;
-}
-
-export const Input = styled.input<StyledInputProps>`
-  ${({ theme, disabled, readOnly, inlineLabel, type }) => css`
-    appearance: none;
-    -webkit-text-fill-color: ${(disabled || readOnly) && theme.orbit.colorTextInputDisabled};
-    font-family: ${theme.orbit.fontFamily};
-    border: none;
-    padding: ${theme.orbit.paddingInputNormal};
-    font-size: inherit;
-    font-weight: ${inlineLabel ? theme.orbit.fontWeightMedium : theme.orbit.fontWeightNormal};
-    color: inherit;
-    background-color: transparent;
-    cursor: inherit;
-    flex: 1 1 20%;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    z-index: 2;
-    box-shadow: none;
-    min-width: 0;
-
-    font-variant-numeric: ${type === TYPE_OPTIONS.PASSPORTID && "tabular-nums"};
-    letter-spacing: ${type === TYPE_OPTIONS.PASSPORTID && "2px"};
-
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    &[data-com-onepassword-filled] {
-      background-color: inherit !important;
-    }
-
-    &:focus {
-      outline: none;
-
-      & ~ ${FakeInput} {
-        ${formElementFocus}
-      }
-    }
-
-    &::placeholder {
-      color: ${theme.orbit.colorPlaceholderInput};
-      /* Firefox */
-      opacity: 1;
-    }
-
-    &::-ms-input-placeholder {
-      color: ${theme.orbit.colorPlaceholderInput};
-    }
-
-    &::-ms-clear,
-    &::-ms-reveal {
-      display: none;
-    }
-  `}
-`;
-
-Input.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledIconWrapper = styled.span`
-  display: flex;
-`;
+);
 
 const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const {
@@ -325,7 +111,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     value,
     defaultValue,
     tags,
-    tabIndex,
+    tabIndex = 0,
     readOnly,
     list,
     autoComplete,
@@ -360,16 +146,18 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   } = useErrorTooltip<HTMLInputElement, HTMLDivElement>({ onFocus, hasTooltip });
 
   const shown = tooltipShown || tooltipShownHover;
-  const fieldRef = React.useRef<HTMLElement | null>(null);
+  const fieldRef = React.useRef(null);
+  const Component = label ? "label" : "div";
 
   return (
-    <Field
-      component={label ? "label" : "div"}
-      $width={width}
-      spaceAfter={spaceAfter}
+    <Component
+      className={cx(
+        "orbit-input-field-field font-base relative block flex-1 basis-full",
+        spaceAfter && spaceAfterClasses[spaceAfter],
+      )}
+      style={{ width }}
       ref={fieldRef}
       htmlFor={label ? inputId : undefined}
-      // enable tooltip on hover, if it's disabled
       onMouseEnter={() => (disabled && inlineLabel ? setTooltipShownHover(true) : undefined)}
       onMouseLeave={() => (disabled && inlineLabel ? setTooltipShownHover(false) : undefined)}
     >
@@ -388,30 +176,47 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           {label}
         </FormLabel>
       )}
-      <InputContainer
-        readOnly={readOnly}
-        disabled={disabled}
-        error={error}
-        labelRef={label ? null : labelRef}
+      <div
+        className={cx(
+          "orbit-input-field-input-container",
+          "flex flex-row items-center justify-between",
+          "relative box-border",
+          "h-form-box-normal text-form-element-normal",
+          disabled ? "cursor-not-allowed" : "cursor-text",
+          disabled || readOnly
+            ? "text-form-element-disabled-foreground"
+            : "text-form-element-filled-foreground",
+        )}
+        ref={label ? null : labelRef}
       >
         {inlineLabel && !tags && (error || help) ? (
           <Prefix>
             {help && !error && (
-              <StyledIconWrapper ref={iconRef}>
+              <div className="flex" ref={iconRef}>
                 <InformationCircle color="info" size="small" />
-              </StyledIconWrapper>
+              </div>
             )}
             {error && (
-              <StyledIconWrapper ref={iconRef}>
+              <div className="flex" ref={iconRef}>
                 <AlertCircle color="critical" size="small" />
-              </StyledIconWrapper>
+              </div>
             )}
           </Prefix>
         ) : (
           prefix && <Prefix>{prefix}</Prefix>
         )}
         {label && inlineLabel && (
-          <StyledInlineLabel hasTags={!!tags} hasFeedback={!!(error || help)} ref={labelRef}>
+          <div
+            className={cx(
+              "flex items-center justify-center",
+              "pointer-events-none h-full",
+              "[&>.orbit-form-label]:mb-0",
+              "[&>.orbit-form-label]:text-form-box-normal [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
+              "[&>.orbit-form-label]:z-[3]",
+              !tags && (error || help) ? "ps-xxs" : "ps-sm",
+            )}
+            ref={labelRef}
+          >
             <FormLabel
               filled={!!value}
               required={required}
@@ -421,10 +226,33 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             >
               {label}
             </FormLabel>
-          </StyledInlineLabel>
+          </div>
         )}
         {tags && <InputTags>{tags}</InputTags>}
-        <Input
+        {/* the rule is working weird, it passes only if the value is number, eg not even prop including number } */}
+        {/* eslint-disable-next-line jsx-a11y/aria-activedescendant-has-tabindex */}
+        <input
+          className={cx(
+            "orbit-input-field-input",
+            "font-base p-form-element-normal-padding",
+            "z-[2] appearance-none border-none shadow-none",
+            "box-border h-full w-full min-w-0",
+            "bg-transparent",
+            "flex-1 basis-1/5",
+            "[&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",
+            "[&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:m-0",
+            "[&[data-com-onepassword-filled]]:!bg-inherit",
+            "peer focus:outline-none",
+            "[&::placeholder]:opacity-100",
+            "[&::placeholder]:text-form-element-foreground",
+            "[&::-ms-input-placeholder]:text-form-element-foreground",
+            "[&::-ms-clear]:hidden [&::-ms-reveal]:hidden",
+            disabled && "cursor-not-allowed",
+            (disabled || readOnly) &&
+              "[-webkit-text-fill-color:theme(textColor.form-element-disabled-foreground)]",
+            inlineLabel ? "font-medium" : "font-normal",
+            type === TYPE_OPTIONS.PASSPORTID && "tabular-nums tracking-[2px]",
+          )}
           data-test={dataTest}
           required={required}
           data-state={
@@ -450,7 +278,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           max={maxValue}
           minLength={minLength}
           maxLength={maxLength}
-          error={insideInputGroup ? undefined : error}
           ref={ref}
           tabIndex={tabIndex !== undefined ? Number(tabIndex) : undefined}
           list={list}
@@ -462,21 +289,20 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           aria-expanded={ariaExpanded}
           aria-controls={ariaControls}
           aria-activedescendant={ariaActiveDescendant}
-          inlineLabel={inlineLabel}
           readOnly={readOnly}
           autoCapitalize="off"
           autoCorrect="off"
           role={role}
           autoComplete={autoComplete}
+          // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
           id={inputId}
           inputMode={inputMode}
-          className="orbit-input-field-input"
           {...dataAttrs}
         />
-        {suffix && <Suffix>{suffix}</Suffix>}
-        <FakeInput readOnly={readOnly} disabled={disabled} error={error} />
-      </InputContainer>
+        {suffix && <Suffix disabled={disabled}>{suffix}</Suffix>}
+        <FakeInput error={error} disabled={disabled} readOnly={readOnly} />
+      </div>
       {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip
           help={help}
@@ -489,7 +315,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           referenceElement={inlineLabel && !tags ? iconRef : fieldRef}
         />
       )}
-    </Field>
+    </Component>
   );
 });
 

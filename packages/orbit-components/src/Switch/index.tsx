@@ -1,113 +1,25 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../defaultTheme";
 import Circle from "../icons/Circle";
 import handleKeyDown from "../utils/handleKeyDown";
-import { defaultFocus } from "../utils/common";
 import type { Props } from "./types";
-
-const StyledSwitch = styled.label`
-  display: inline-block;
-`;
-
-const StyledSwitchBase = styled.div<{ checked?: boolean; disabled?: boolean }>`
-  ${({ theme, checked, disabled }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: ${!disabled && "pointer"};
-    width: 40px;
-    height: 20px;
-    background-color: ${theme.orbit.backgroundSwitch};
-    border-radius: 100px;
-    position: relative;
-    transition: background-color ${theme.orbit.durationFast};
-    opacity: ${disabled && "0.5"};
-
-    ${checked &&
-    css`
-      background-color: ${theme.orbit.backgroundSwitchChecked};
-    `};
-  `};
-`;
-
-const StyledSwitchButton = styled.div<{
-  checked?: boolean;
-  hasCustomIcon?: boolean;
-  disabled?: boolean;
-}>`
-  ${({ theme, checked, hasCustomIcon, disabled }) => css`
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: -3px;
-    width: 24px;
-    height: 24px;
-    border-radius: ${theme.orbit.borderRadiusCircle};
-    background: ${theme.orbit.paletteWhite};
-    transition: ${theme.orbit.durationFast};
-    box-shadow: inset 0 0 1px 0 rgba(7, 64, 92, 0.1), ${theme.orbit.boxShadowAction};
-
-    &:active {
-      box-shadow: ${!disabled && theme.orbit.boxShadowActionActive};
-    }
-
-    svg {
-      height: 12px;
-      width: 12px;
-      color: ${hasCustomIcon ? theme.orbit.paletteInkNormal : theme.orbit.backgroundSwitch};
-    }
-
-    ${checked &&
-    css`
-      left: calc(100% + 2px);
-      transform: translateX(-100%);
-      svg {
-        color: ${theme.orbit.backgroundSwitchChecked};
-      }
-    `};
-  `};
-`;
-
-const StyledSwitchInput = styled.input`
-  cursor: inherit;
-  position: absolute;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-
-  &:focus + ${StyledSwitchButton} {
-    ${defaultFocus};
-  }
-`;
-
-StyledSwitchInput.defaultProps = {
-  theme: defaultTheme,
-};
-
-StyledSwitchBase.defaultProps = {
-  theme: defaultTheme,
-};
-
-StyledSwitchButton.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Switch = React.forwardRef<HTMLInputElement, Props>(
   ({ onChange, checked, dataTest, id, icon, onBlur, onFocus, disabled, ariaLabelledby }, ref) => {
     return (
-      <StyledSwitch>
-        <StyledSwitchBase checked={checked} disabled={disabled}>
-          <StyledSwitchInput
+      <label className="inline-block">
+        <div
+          className={cx(
+            "duration-fast relative flex h-[20px] w-[40px] items-center justify-between rounded-[100px] transition-colors",
+            disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer",
+            checked ? "bg-blue-normal" : "bg-cloud-dark",
+          )}
+        >
+          <input
+            className="peer absolute inset-0 m-0 h-full w-full p-0 opacity-0"
             ref={ref}
             checked={checked}
             disabled={disabled}
@@ -122,11 +34,22 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
             data-test={dataTest}
             id={id}
           />
-          <StyledSwitchButton checked={checked} disabled={disabled} hasCustomIcon={!!icon}>
-            {icon || <Circle />}
-          </StyledSwitchButton>
-        </StyledSwitchBase>
-      </StyledSwitch>
+          <div
+            className={cx(
+              "rounded-circle bg-white-normal duration-fast shadow-switch absolute box-border inline-flex h-[24px] w-[24px] items-center justify-center",
+              "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
+              "[&_svg]:h-icon-small [&_svg]:w-icon-small",
+              !disabled && "active:shadow-action-active",
+              !checked && (icon ? "[&_svg]:text-ink-normal" : "[&_svg]:text-cloud-dark"),
+              checked
+                ? "[&_svg]:text-blue-normal left-[calc(100%+2px)] -translate-x-full"
+                : "left-[-3px]",
+            )}
+          >
+            {icon || <Circle size="small" />}
+          </div>
+        </div>
+      </label>
     );
   },
 );

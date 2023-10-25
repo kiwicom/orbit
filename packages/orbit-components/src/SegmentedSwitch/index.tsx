@@ -1,49 +1,15 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import getSpacingToken from "../common/getSpacingToken";
 import FormLabel from "../FormLabel";
-import defaultTheme from "../defaultTheme";
 import Stack from "../Stack";
-import SwitchSegment, { StyledText, StyledLabel } from "./SwitchSegment";
+import SwitchSegment from "./SwitchSegment";
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
+import { spaceAfterClasses } from "../common/tailwind/spaceAfter";
 import type { Props } from "./types";
-
-const StyledWrapper = styled.label<{
-  $maxWidth?: Props["maxWidth"];
-  spaceAfter?: Props["spaceAfter"];
-}>`
-  ${({ theme, $maxWidth }) => css`
-    display: flex;
-    width: 100%;
-    position: relative;
-    flex-direction: column;
-    max-width: ${$maxWidth};
-    margin-bottom: ${getSpacingToken};
-    gap: ${theme.orbit.spaceXXXSmall};
-
-    ${StyledLabel} {
-      &:nth-child(odd) {
-        ${StyledText} {
-          border-radius: 5px 0 0 5px;
-        }
-      }
-
-      &:nth-child(even) {
-        ${StyledText} {
-          border-radius: 0 5px 5px 0;
-        }
-      }
-    }
-  `};
-`;
-
-StyledWrapper.defaultProps = {
-  theme: defaultTheme,
-};
 
 const SegmentedSwitch = ({
   options,
@@ -70,7 +36,17 @@ const SegmentedSwitch = ({
   }, [showTooltip, hasTooltip, setTooltipShown]);
 
   return (
-    <StyledWrapper spaceAfter={spaceAfter} data-test={dataTest} $maxWidth={maxWidth} ref={labelRef}>
+    <label
+      data-test={dataTest}
+      ref={labelRef}
+      className={cx(
+        "gap-xxxs relative flex w-full flex-col",
+        spaceAfter && spaceAfterClasses[spaceAfter],
+        "[&_.orbit-switch-segment-label:nth-child(odd)_.orbit-switch-segment-text]:rounded-[5px_0_0_5px]",
+        "[&_.orbit-switch-segment-label:nth-child(even)_.orbit-switch-segment-text]:rounded-[0_5px_5px_0]",
+      )}
+      style={{ maxWidth }}
+    >
       {label && (
         <FormLabel
           help={!!help}
@@ -104,7 +80,7 @@ const SegmentedSwitch = ({
           referenceElement={labelRef}
         />
       )}
-    </StyledWrapper>
+    </label>
   );
 };
 

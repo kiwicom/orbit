@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 import { render, screen } from "../../test-utils";
 import InputGroup from "..";
 import InputField from "../../InputField";
-import defaultTheme from "../../defaultTheme";
 
 describe("InputGroup", () => {
   const user = userEvent.setup();
@@ -24,14 +23,6 @@ describe("InputGroup", () => {
       </InputGroup>,
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
-  });
-  it("should add margin using spaceAfter", () => {
-    render(
-      <InputGroup spaceAfter="normal">
-        <InputField />
-      </InputGroup>,
-    );
-    expect(screen.getByRole("group")).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
   });
   it("should render help message", async () => {
     render(

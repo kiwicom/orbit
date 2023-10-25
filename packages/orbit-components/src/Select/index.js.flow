@@ -35,7 +35,6 @@ export type Props = {|
   +onChange?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onBlur?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
-  +readOnly?: boolean,
   +options: Option[],
   +prefix?: React.Node,
   +customValueText?: Translation,

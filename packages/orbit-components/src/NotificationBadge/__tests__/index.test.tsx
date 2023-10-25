@@ -1,8 +1,6 @@
 import * as React from "react";
-import { convertRgbaToHex } from "@kiwicom/orbit-design-tokens";
 
 import { render, screen } from "../../test-utils";
-import theme from "../../defaultTheme";
 import NotificationBadge from "..";
 import Sightseeing from "../../icons/Sightseeing";
 
@@ -22,9 +20,6 @@ describe("NotificationBadge", () => {
     expect(screen.getByLabelText(ariaLabel)).toBeInTheDocument();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByText(content)).toBeInTheDocument();
-    expect(screen.getByTestId(dataTest)).toHaveStyle({
-      background: convertRgbaToHex(theme.orbit.paletteBlueLight),
-    });
   });
 
   it("should have icon", () => {

@@ -1,74 +1,9 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import useClickOutside from "../../hooks/useClickOutside";
-import defaultTheme from "../../defaultTheme";
-import { defaultFocus } from "../../utils/common";
 import type { Props } from "./types";
-
-export const StyledLabel = styled.label`
-  display: flex;
-  position: relative;
-  width: 100%;
-`;
-
-export const StyledText = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    text-align: center;
-    max-width: 100%;
-    background: ${theme.orbit.paletteWhite};
-    color: ${theme.orbit.paletteInkNormal};
-    border: 0;
-    padding: ${theme.orbit.spaceSmall};
-    color: ${theme.orbit.paletteInkLight};
-    font-family: ${theme.orbit.fontFamily};
-    font-weight: ${theme.orbit.fontWeightMedium};
-    font-size: ${theme.orbit.fontSizeTextNormal};
-    line-height: ${theme.orbit.lineHeightTextNormal};
-    cursor: pointer;
-    transition: color ${theme.orbit.durationFast} ease-in-out;
-    width: 100%;
-    box-shadow: 0 0 0 1px ${theme.orbit.paletteCloudDark};
-
-    &:hover {
-      color: ${theme.orbit.paletteInkNormal};
-    }
-  `}
-`;
-
-StyledText.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInput = styled.input`
-  ${({ theme }) => css`
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-
-    &:checked + div,
-    &:focus + div {
-      z-index: 10;
-      border-radius: 5px !important;
-      color: ${theme.orbit.paletteInkNormal};
-      ${defaultFocus};
-    }
-  `};
-`;
-
-StyledInput.defaultProps = {
-  theme: defaultTheme,
-};
+import useTheme from "../../hooks/useTheme";
 
 const SwitchSegment = ({
   value,
@@ -80,12 +15,17 @@ const SwitchSegment = ({
   defaultChecked,
   name,
 }: Props) => {
+  const theme = useTheme();
   const ref = React.useRef<HTMLInputElement | null>(null);
   useClickOutside(ref, () => setTooltipShown(false));
 
   return (
-    <StyledLabel>
-      <StyledInput
+    <label className="orbit-switch-segment-label relative flex w-full">
+      <input
+        className={cx(
+          "sr-only absolute m-[-1px] h-[1px] w-[1px] overflow-hidden whitespace-nowrap border-0 p-0 focus:outline-none",
+          "peer",
+        )}
         name={name || "switch-segment"}
         defaultChecked={defaultChecked}
         type="radio"
@@ -97,8 +37,19 @@ const SwitchSegment = ({
         disabled={disabled}
         value={value}
       />
-      <StyledText>{label}</StyledText>
-    </StyledLabel>
+      <div
+        className={cx(
+          "orbit-switch-segment-text",
+          "peer-checked:text-form-element-label-filled-foreground peer-checked:outline-blue-normal peer-checked:z-10 peer-checked:!rounded-[5px] peer-checked:outline peer-checked:outline-2 ",
+          "peer-focus:text-form-element-label-filled-foreground peer-focus:outline-blue-normal peer-focus:z-10 peer-focus:!rounded-[5px] peer-focus:outline peer-focus:outline-2 ",
+          "p-sm font-base text-normal duration-fast box-border flex w-full max-w-full cursor-pointer items-center justify-center border-0 text-center font-medium leading-normal transition-colors ease-in-out",
+          "bg-form-element-background text-form-element-foreground hover:text-form-element-label-filled-foreground",
+        )}
+        style={{ boxShadow: `0 0 0 1px ${theme.orbit.paletteCloudDark}` }}
+      >
+        {label}
+      </div>
+    </label>
   );
 };
 

@@ -186,3 +186,30 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+export const VisualTest = () => {
+  const Icon = getIcon(getIcons("Airplane"));
+  const types = Object.values(TYPE_OPTIONS);
+
+  return (
+    <div className="space-x-xs flex items-center">
+      {types.map(type => (
+        <React.Fragment key={type}>
+          <NotificationBadge type={type}>1</NotificationBadge>
+          <NotificationBadge type={type}>10</NotificationBadge>
+          <NotificationBadge type={type} icon={<Icon />}>
+            10
+          </NotificationBadge>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: {
+      disableSnapshot: false,
+    },
+  },
+};

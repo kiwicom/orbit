@@ -1,174 +1,15 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../defaultTheme";
-import FormLabel from "../FormLabel";
-import { FakeInput, Input, InputContainer } from "../InputField";
-import { SelectContainer } from "../Select";
-import ErrorFormTooltip from "../ErrorFormTooltip";
-import { SIZE_OPTIONS, TOKENS } from "./consts";
-import { right, rtlSpacing } from "../utils/rtl";
-import getSpacingToken from "../common/getSpacingToken";
-import useRandomId, { useRandomIdSeed } from "../hooks/useRandomId";
-import formElementFocus from "../InputField/helpers/formElementFocus";
-import getFieldDataState from "../common/getFieldDataState";
-import mq from "../utils/mediaQuery";
+import { SIZE_OPTIONS } from "./consts";
 import type { Props } from "./types";
-
-const getToken =
-  (name: string) =>
-  ({ theme, size }: { theme: typeof defaultTheme; size?: Props["size"] }): string | null => {
-    const tokens = {
-      [TOKENS.height]: {
-        [SIZE_OPTIONS.SMALL]: theme.orbit.heightInputSmall,
-        [SIZE_OPTIONS.NORMAL]: theme.orbit.heightInputNormal,
-      },
-      [TOKENS.heightLine]: {
-        [SIZE_OPTIONS.SMALL]: "16px",
-        [SIZE_OPTIONS.NORMAL]: "24px",
-      },
-    };
-
-    if (!size) return null;
-
-    return tokens[name][size];
-  };
-
-const FakeGroup = styled.span<{
-  $error?: Props["error"];
-  $label?: Props["label"];
-  $disabled?: Props["disabled"];
-  $size?: Props["size"];
-  $active: boolean;
-}>`
-  ${({ theme, $error, $disabled, $active }) => css`
-    width: 100%;
-    display: block;
-    z-index: 1;
-    box-sizing: border-box;
-    height: ${getToken(TOKENS.height)};
-    box-shadow: ${`inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInput}`};
-    box-shadow: ${$error &&
-    `inset 0 0 0 ${theme.orbit.borderWidthInput} ${theme.orbit.borderColorInputError}`};
-    ${$active && formElementFocus};
-    background-color: ${$disabled
-      ? theme.orbit.backgroundInputDisabled
-      : theme.orbit.backgroundInput};
-    font-size: ${theme.orbit.fontSizeInputNormal};
-    transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
-
-    border-radius: 6px;
-    ${mq.tablet(css`
-      border-radius: ${theme.orbit.borderRadiusNormal};
-    `)};
-
-    &:hover {
-      box-shadow: ${!$disabled &&
-      `inset 0 0 0 ${theme.orbit.borderWidthInput} ${
-        $error ? theme.orbit.borderColorInputErrorHover : theme.orbit.borderColorInputHover
-      }`};
-    }
-  `}
-`;
-
-FakeGroup.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledChildren = styled.div`
-  display: flex;
-  position: relative;
-`;
-
-const StyledChild = styled.div<{ flex: Props["flex"] }>`
-  flex: ${({ flex }) => flex};
-  padding: ${({ theme }) => rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-  :last-child {
-    padding: 0;
-  }
-`;
-
-StyledChild.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInputGroup = styled(
-  ({ children, className, dataTest, id, role, ariaLabelledby, forwardRef, dataState }) => (
-    <div
-      data-state={dataState}
-      ref={forwardRef}
-      id={id}
-      className={className}
-      data-test={dataTest}
-      role={role}
-      aria-labelledby={ariaLabelledby}
-    >
-      {children}
-    </div>
-  ),
-)`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  position: relative;
-  margin-bottom: ${getSpacingToken};
-
-  ${StyledChild} {
-    ${FakeInput} {
-      box-shadow: none;
-      background-color: transparent;
-      display: none;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    ${SelectContainer} {
-      background-color: transparent;
-      > select {
-        box-shadow: none;
-        background-color: transparent;
-        &:focus {
-          outline: none;
-        }
-      }
-    }
-
-    ${InputContainer}:after, ${SelectContainer}:after {
-      content: " ";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      ${right}: 0;
-      height: ${getToken(TOKENS.heightLine)};
-      width: 1px;
-      background-color: ${({ theme, error, active }) =>
-        error && !active ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput};
-      transition: background-color ${({ theme }) => theme.orbit.durationFast} ease-in-out;
-      display: block;
-      z-index: 2;
-    }
-
-    &:last-of-type {
-      ${InputContainer}:after, ${SelectContainer}:after {
-        content: none;
-      }
-    }
-  }
-
-  ${StyledChild} .orbit-form-label {
-    display: ${({ label }) => label && "none"};
-  }
-
-  ${Input}:focus ~ ${FakeInput} {
-    box-shadow: none;
-  }
-`;
-
-StyledInputGroup.defaultProps = {
-  theme: defaultTheme,
-};
+import FormLabel from "../FormLabel";
+import ErrorFormTooltip from "../ErrorFormTooltip";
+import useRandomId, { useRandomIdSeed } from "../hooks/useRandomId";
+import getFieldDataState from "../common/getFieldDataState";
+import { getSpaceAfterClasses } from "../common/tailwind";
 
 const findPropInChild = (propToFind, children) =>
   React.Children.map(children, el => {
@@ -262,18 +103,17 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
     };
 
     return (
-      <StyledInputGroup
-        label={label}
-        error={errorReal}
-        active={active}
-        size={size}
-        forwardRef={ref}
-        dataTest={dataTest}
+      <div
+        ref={ref}
         id={id}
-        dataState={getFieldDataState(!!errorReal)}
-        spaceAfter={spaceAfter}
+        data-test={dataTest}
+        data-state={getFieldDataState(!!errorReal)}
+        aria-labelledby={label != null ? inputID : undefined}
         role="group"
-        ariaLabelledby={label && inputID}
+        className={cx(
+          "relative flex w-full flex-col",
+          spaceAfter != null && getSpaceAfterClasses(spaceAfter),
+        )}
       >
         {label && (
           <FormLabel
@@ -290,20 +130,43 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
           </FormLabel>
         )}
 
-        <FakeGroup
-          $label={label}
-          $error={errorReal}
-          $active={active}
-          $size={size}
-          $disabled={disabled}
+        <div
+          className={cx(
+            "text-normal h-form-box-normal duration-fast rounded-large tb:rounded-normal z-[1] w-full transition-shadow ease-in-out",
+            active && "outline-blue-normal outline outline-2",
+            disabled ? "bg-form-element-disabled-background" : "bg-form-element-background",
+            !errorReal && "shadow-form-element",
+            !errorReal && !disabled && "hover:shadow-form-element-hover",
+            Boolean(errorReal) && "shadow-form-element-error",
+            Boolean(errorReal) && !disabled && "hover:shadow-form-element-error-hover",
+          )}
         >
-          <StyledChildren onBlur={handleBlurGroup}>
+          <div className="relative flex" onBlur={handleBlurGroup}>
             {React.Children.toArray(children).map((child, key) => {
-              const childFlex =
-                Array.isArray(flex) && flex.length !== 1 ? flex[key] || flex[0] : flex;
+              // TODO: next cleanup iteration just remove this whole `flex` prop thing
+              // and cloning elements, and make children take care of their sizing themselves
+
+              const childFlex = (
+                Array.isArray(flex) && flex.length !== 1 ? flex[key] ?? flex[0] : flex
+              ) as string | undefined;
+
               const item = child as React.ReactElement<Props>;
               return (
-                <StyledChild flex={childFlex || "0 1 auto"} key={randomId(String(key))}>
+                <div
+                  key={randomId(String(key))}
+                  className={cx(
+                    "orbit-input-group-child pe-xs last:p-0 [&_.orbit-input-field-fake-input]:hidden [&_.orbit-input-field-fake-input]:bg-transparent [&_.orbit-input-field-input~.orbit-input-field-fake-input]:shadow-none [&_.orbit-select-container_select]:bg-transparent [&_.orbit-select-container_select]:shadow-none [&_.orbit-select-container_select]:focus:outline-none",
+                    // InputField:after
+                    "[&_.orbit-input-field-input-container]:after:duration-fast [&_.orbit-input-field-input-container]:after:absolute [&_.orbit-input-field-input-container]:after:end-0 [&_.orbit-input-field-input-container]:after:top-1/2 [&_.orbit-input-field-input-container]:after:z-[1] [&_.orbit-input-field-input-container]:after:block [&_.orbit-input-field-input-container]:after:h-[24px] [&_.orbit-input-field-input-container]:after:-translate-y-1/2 [&_.orbit-input-field-input-container]:after:border-r [&_.orbit-input-field-input-container]:after:transition-colors [&_.orbit-input-field-input-container]:after:ease-in-out [&_.orbit-input-field-input-container]:last-of-type:after:content-none",
+                    // Select:after
+                    "[&_.orbit-select-container]:after:duration-fast [&_.orbit-select-container]:bg-transparent [&_.orbit-select-container]:after:absolute [&_.orbit-select-container]:after:end-0 [&_.orbit-select-container]:after:top-1/2 [&_.orbit-select-container]:after:z-[2] [&_.orbit-select-container]:after:block [&_.orbit-select-container]:after:h-[24px] [&_.orbit-select-container]:after:-translate-y-1/2 [&_.orbit-select-container]:after:border-r [&_.orbit-select-container]:after:transition-colors [&_.orbit-select-container]:after:ease-in-out [&_.orbit-select-container]:last-of-type:after:content-none",
+                    Boolean(errorReal) && !active
+                      ? "[&_.orbit-select-container]:after:border-input-error [&_.orbit-input-field-input-container]:after:border-input-error"
+                      : "[&_.orbit-select-container]:after:border-input [&_.orbit-input-field-input-container]:after:border-input",
+                    label != null && "[&_.orbit-form-label]:hidden",
+                  )}
+                  style={{ flex: childFlex }}
+                >
                   {React.cloneElement(item, {
                     disabled: item.props.disabled || disabled,
                     size,
@@ -314,11 +177,11 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
                     // @ts-expect-error custom prop
                     insideInputGroup: true,
                   })}
-                </StyledChild>
+                </div>
               );
             })}
-          </StyledChildren>
-        </FakeGroup>
+          </div>
+        </div>
         <ErrorFormTooltip
           help={helpReal}
           error={errorReal}
@@ -328,7 +191,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
           shown={tooltipShown || tooltipShownHover}
           referenceElement={labelRef}
         />
-      </StyledInputGroup>
+      </div>
     );
   },
 );

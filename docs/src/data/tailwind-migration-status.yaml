@@ -13,7 +13,7 @@ OrbitButton: true
 Button: true
 ButtonGroup: true
 ButtonLink: true
-ButtonMobileStore: false
+ButtonMobileStore: true
 ButtonPrimitive: true
 CallOutBanner: false
 Card: true

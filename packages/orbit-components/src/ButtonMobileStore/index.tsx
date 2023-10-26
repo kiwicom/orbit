@@ -1,20 +1,9 @@
 "use client";
 
 import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
-import { HEIGHT, TYPE_OPTIONS, LANGUAGE } from "./consts";
+import { TYPE_OPTIONS, LANGUAGE } from "./consts";
 import type { Props, Type } from "./types";
-
-const StyledButtonMobileStore = styled.a`
-  display: inline-block;
-  height: ${HEIGHT};
-`;
-
-StyledButtonMobileStore.defaultProps = {
-  theme: defaultTheme,
-};
 
 const getSrc = (type: Type, lang: string) => {
   if (type === "appStore")
@@ -41,16 +30,17 @@ const ButtonMobileStore = ({
   };
 
   return (
-    <StyledButtonMobileStore
+    <a
+      className="inline-block h-[40px]"
       href={href}
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       onClick={onClickHandler}
       data-test={dataTest}
       id={id}
     >
-      <img srcSet={getSrc(type, lang)} height={HEIGHT} alt={alt} />
-    </StyledButtonMobileStore>
+      <img srcSet={getSrc(type, lang)} height="40px" alt={alt} />
+    </a>
   );
 };
 

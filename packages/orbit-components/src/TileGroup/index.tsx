@@ -1,57 +1,25 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../defaultTheme";
-import { StyledSlide } from "../utils/Slide";
 import type { Props } from "./types";
 
-const StyledTileGroup = styled.div`
-  ${({ theme }) => css`
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    box-shadow: ${theme.orbit.boxShadowAction};
-    border-radius: ${theme.orbit.borderRadiusNormal};
-    ${StyledSlide} {
-      background: ${theme.orbit.paletteWhite};
-    }
-    .orbit-tile-wrapper {
-      border-radius: 0;
-      :first-child {
-        border-top-left-radius: ${theme.orbit.borderRadiusNormal};
-        border-top-right-radius: ${theme.orbit.borderRadiusNormal};
-      }
-      :last-child {
-        border-bottom-left-radius: ${theme.orbit.borderRadiusNormal};
-        border-bottom-right-radius: ${theme.orbit.borderRadiusNormal};
-      }
-      :not(:last-child) {
-        border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
-      }
-      box-shadow: none;
-      transition: background ${theme.orbit.durationFast} ease-in-out,
-        box-shadow ${theme.orbit.durationFast} ease-in-out,
-        border-color ${theme.orbit.durationFast} ease-in-out;
-      :hover,
-      :focus {
-        background: ${theme.orbit.paletteCloudNormal};
-      }
-    }
-  `}
-`;
-
-StyledTileGroup.defaultProps = {
-  theme: defaultTheme,
-};
-
 const TileGroup = ({ children, dataTest, id, as }: Props) => {
+  const Component = (as ?? "div") as React.ElementType;
+
   return (
-    // @ts-expect-error FIXME: ts-migrate
-    <StyledTileGroup data-test={dataTest} as={as} id={id}>
+    <Component
+      className={cx(
+        "shadow-action rounded-normal [&_.orbit-slide]:bg-white-normal m-0 w-full p-0",
+        "[&_.orbit-tile-wrapper]:first:rounded-t-normal [&_.orbit-tile-wrapper]:last:rounded-b-normal [&_.orbit-tile-wrapper]:not-last:border-b [&_.orbit-tile-wrapper]:not-last:border-cloud-normal",
+        "[&_.orbit-tile-wrapper]:duration-fast [&_.orbit-tile-wrapper]:hover:bg-white-normal [&_.orbit-tile-wrapper]:focus:bg-white-normal [&_.orbit-tile-wrapper]:rounded-none [&_.orbit-tile-wrapper]:shadow-none [&_.orbit-tile-wrapper]:transition-colors [&_.orbit-tile-wrapper]:ease-in-out",
+      )}
+      data-test={dataTest}
+      id={id}
+    >
       {children}
-    </StyledTileGroup>
+    </Component>
   );
 };
 

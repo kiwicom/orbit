@@ -147,6 +147,7 @@ class Slide extends React.Component<Props, State> {
     const { transitionFinished, maxHeight, visible } = this.state;
     return (
       <StyledSlide
+        className="orbit-slide"
         maxHeight={maxHeight}
         expanded={expanded}
         transitionFinished={transitionFinished}

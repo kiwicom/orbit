@@ -12,7 +12,7 @@ const Tracking = ({ location }: PageRendererProps) => {
   const [devMode] = useDevMode();
   const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
     query TrackingPageQuery {
-      allTracking(sort: { fields: createdAt, order: DESC }, limit: 11) {
+      allTracking(sort: { fields: createdAt, order: DESC }, limit: 21) {
         nodes {
           name
           createdAt

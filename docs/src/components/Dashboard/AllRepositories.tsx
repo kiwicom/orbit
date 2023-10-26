@@ -10,7 +10,7 @@ const AllRepositories = ({ location }: PageRendererProps) => {
   const { allTracking }: SchemeTrackingNode = useStaticQuery(graphql`
     query AllRepositoriesTracking {
       # get only the latest
-      allTracking(sort: { fields: createdAt, order: DESC }, limit: 11) {
+      allTracking(sort: { fields: createdAt, order: DESC }, limit: 21) {
         nodes {
           fields {
             currentComponents

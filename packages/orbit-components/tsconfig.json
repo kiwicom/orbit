@@ -3,6 +3,7 @@
   "compilerOptions": {
     "rootDirs": ["./src", "./.storybook"],
     "outDir": "lib",
+    "jsx": "react",
     "skipLibCheck": true,
     "noEmit": true,
     "moduleResolution": "node",

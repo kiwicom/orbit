@@ -8,17 +8,27 @@ type AccessLevel =
   | "OWNER";
 
 export type Scope =
-  | "booking"
-  | "home"
-  | "mobile-landing"
-  | "smart-faq"
-  | "search"
-  | "frontend"
   | "account"
-  | "mmb"
+  | "balkan/alternative-search"
+  | "balkan/bookie-frontend"
+  | "balkan/carrier-refunds"
+  | "balkan/check-in"
+  | "balkan/cs-components"
+  | "balkan/disruptions-frontend"
+  | "balkan/frontend"
+  | "balkan/rta-frontend"
+  | "balkan/skywalker"
+  | "balkan/workforce-frontend"
+  | "booking"
   | "core"
-  | "balkan"
-  | "handbook";
+  | "frontend"
+  | "handbook"
+  | "home"
+  | "mmb"
+  | "mobile-landing"
+  | "search"
+  | "smart-faq"
+  | "split/widget";
 
 export interface User {
   id?: string;

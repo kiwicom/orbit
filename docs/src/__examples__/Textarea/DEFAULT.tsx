@@ -65,12 +65,6 @@ export default {
           options: ["none", "vertical"],
           defaultValue: "none",
         },
-        {
-          name: "size",
-          type: "select",
-          options: ["small", "normal"],
-          defaultValue: "normal",
-        },
       ],
     },
   ],

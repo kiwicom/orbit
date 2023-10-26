@@ -71,12 +71,12 @@ describe("Textarea", () => {
   });
 
   it("should have error", async () => {
-    render(<Textarea error="error" size="small" />);
+    render(<Textarea error="error" />);
     const textarea = screen.getByRole("textbox");
 
     await user.tab();
     expect(screen.getByText("error")).toBeInTheDocument();
-    expect(textarea).toHaveStyle({ padding: "8px 12px 8px 12px" });
+    expect(textarea).toHaveStyle({ padding: "12px" });
     expect(textarea).toBeInvalid();
     expect(textarea).toHaveAccessibleDescription("error");
     // Needs to flush async `floating-ui` hooks

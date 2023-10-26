@@ -57,10 +57,10 @@ ListItem: true
 ListChoice: true
 Loading: true
 Mobile: true
-Modal: false
-ModalFooter: false
-ModalHeader: false
-ModalSection: false
+Modal: true
+ModalFooter: true
+ModalHeader: true
+ModalSection: true
 NavigationBar: true
 NotificationBadge: false
 OrbitProvider: true

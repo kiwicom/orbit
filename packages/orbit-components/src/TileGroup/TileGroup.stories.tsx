@@ -22,7 +22,7 @@ export default {
 
 export const DefaultJustWrapper = () => {
   const dataTest = text("dataTest", "test");
-  const as = text("as", "");
+  const as = text("as", "div");
 
   const content = text("content", "Lorem ipsum dolor sit amet");
   return (
@@ -257,5 +257,29 @@ Rtl.story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+  },
+};
+
+export const VisualTest = () => {
+  return (
+    <TileGroup>
+      <Tile expandable title="Tile">
+        Tile expandable
+      </Tile>
+      <Tile expandable title="Tile">
+        Tile expandable
+      </Tile>
+      <Tile expandable title="Tile">
+        Tile expandable
+      </Tile>
+    </TileGroup>
+  );
+};
+
+VisualTest.story = {
+  parameters: {
+    chromatic: {
+      disableSnapshot: false,
+    },
   },
 };

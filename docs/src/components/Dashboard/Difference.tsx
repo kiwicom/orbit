@@ -49,7 +49,7 @@ const DataDiffTemplate = ({ location }: PageRendererProps) => {
   `);
 
   const { nodes } = allTracking;
-  const TRACKED_REPOSITORIES_COUNT = 11;
+  const TRACKED_REPOSITORIES_COUNT = 21;
   const first = nodes.slice(0, TRACKED_REPOSITORIES_COUNT);
   const last = nodes.slice(-TRACKED_REPOSITORIES_COUNT);
 

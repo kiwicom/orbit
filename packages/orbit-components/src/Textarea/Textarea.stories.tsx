@@ -2,7 +2,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select, number } from "@storybook/addon-knobs";
 
-import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
+import { RESIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 
@@ -23,23 +23,6 @@ export const Default = () => {
 };
 
 Default.story = {
-  parameters: {
-    info: "Some description about this type of textarea in general.",
-  },
-};
-
-export const SmallSize = () => {
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-
-  return (
-    <Textarea size="small" placeholder={placeholder} onChange={action("change")} value={value} />
-  );
-};
-
-SmallSize.story = {
-  name: "Small size",
-
   parameters: {
     info: "Some description about this type of textarea in general.",
   },
@@ -100,7 +83,6 @@ WithError.story = {
 };
 
 export const Playground = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
   const label = text("Label", "Label");
   const value = text("Value", "");
   const fullHeight = boolean("fullHeight", true);
@@ -118,7 +100,6 @@ export const Playground = () => {
 
   return (
     <Textarea
-      size={size}
       label={label}
       value={value}
       fullHeight={fullHeight}

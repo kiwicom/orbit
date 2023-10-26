@@ -5,16 +5,15 @@ import cx from "clsx";
 
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import FormLabel from "../FormLabel";
-import { SIZE_OPTIONS, RESIZE_OPTIONS } from "./consts";
+import { RESIZE_OPTIONS } from "./consts";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import getFieldDataState from "../common/getFieldDataState";
-import type { Props } from "./types";
 import useRandomId from "../hooks/useRandomId";
 import { getSpaceAfterClasses } from "../common/tailwind";
+import type { Props } from "./types";
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
   const {
-    size = SIZE_OPTIONS.NORMAL,
     disabled,
     resize = RESIZE_OPTIONS.VERTICAL,
     dataTest,
@@ -84,15 +83,14 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
       <textarea
         className={cx(
           "w-full appearance-none",
-          "font-base",
+          "font-base text-normal p-sm leading-normal",
           "rounded-normal relative box-border block overflow-auto",
           "min-h-form-box-normal",
           "duration-fast transition-shadow ease-in-out",
           "border border-transparent",
           // TODO: remove when will be migrated from tmp-folder
-          size === SIZE_OPTIONS.SMALL && "text-normal px-sm py-xs leading-normal",
           resize === RESIZE_OPTIONS.VERTICAL ? "resize-y" : "resize-none",
-          size === SIZE_OPTIONS.NORMAL && "text-normal p-sm leading-normal",
+          "text-normal p-sm leading-normal",
           error ? "shadow-form-element-error" : "shadow-form-element",
           disabled ? "cursor-not-allowed" : "cursor-text",
           fullHeight && "h-full flex-1",
@@ -129,7 +127,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         <ErrorFormTooltip
           id={`${inputId}-feedback`}
           help={help}
-          inputSize={size}
           helpClosable={helpClosable}
           error={error}
           onShown={setTooltipShown}

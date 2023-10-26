@@ -9,7 +9,6 @@ type Resize = "vertical" | "none";
 
 export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAttrs {
   readonly ref?: React.ForwardedRef<HTMLTextAreaElement>;
-  readonly size?: Common.InputSize;
   readonly name?: string;
   readonly rows?: number;
   readonly readOnly?: boolean;

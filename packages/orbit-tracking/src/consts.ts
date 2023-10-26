@@ -3,17 +3,27 @@ import { os, path } from "zx";
 import { Scope } from "./interfaces";
 
 export const PROJECTS: Record<Scope, string> = {
-  booking: "3993",
-  frontend: "104",
-  search: "1483",
-  home: "5369",
+  "balkan/alternative-search": "5310",
+  "balkan/bookie-frontend": "3754",
+  "balkan/carrier-refunds": "3719",
+  "balkan/check-in": "5132",
+  "balkan/cs-components": "3718",
+  "balkan/disruptions-frontend": "3756",
+  "balkan/frontend": "616",
+  "balkan/rta-frontend": "4562",
+  "balkan/skywalker": "4964",
+  "balkan/workforce-frontend": "5184",
   "mobile-landing": "3994",
-  account: "2127",
-  mmb: "2788",
-  core: "3371",
-  balkan: "616",
   "smart-faq": "1399",
+  "split/widget": "3112",
+  account: "2127",
+  booking: "3993",
+  core: "3371",
+  frontend: "104",
   handbook: "3090",
+  home: "5369",
+  mmb: "2788",
+  search: "1483",
 };
 
 export const SCOPE = Object.keys(PROJECTS) as Scope[];

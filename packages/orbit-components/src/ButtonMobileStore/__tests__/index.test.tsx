@@ -17,6 +17,7 @@ describe("ButtonMobileStore", () => {
     const link = screen.getByRole("link");
     expect(link).toHaveAttribute("href", "#");
     expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
+    expect(link).toHaveAttribute("rel", expect.stringContaining("noreferrer"));
     expect(link).toHaveAttribute("target", "_blank");
     await user.click(link);
     expect(onClick).toHaveBeenCalled();

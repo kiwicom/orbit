@@ -27,5 +27,3 @@ export enum LANGUAGE {
   TR = "TR",
   ZH = "ZH",
 }
-
-export const HEIGHT = "40px";

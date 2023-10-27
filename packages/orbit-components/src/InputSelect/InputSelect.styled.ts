@@ -10,6 +10,7 @@ import { Field } from "../InputField";
 export const StyledLabel = styled.label<{ spaceAfter?: Props["spaceAfter"] }>`
   position: relative;
   margin-bottom: ${getSpacingToken};
+  display: block;
 `;
 
 StyledLabel.defaultProps = {

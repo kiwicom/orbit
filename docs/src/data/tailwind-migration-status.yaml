@@ -96,7 +96,7 @@ TableRow: false
 Tabs: false
 Tag: false
 Tile: true
-TileGroup: false
+TileGroup: true
 OrbitText: true
 TextOrbit: true
 Text: true

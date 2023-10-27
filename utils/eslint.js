@@ -19,5 +19,6 @@ exports.DEV_DEPENDENCIES = [
   "packages/eslint-plugin-orbit-components/**",
   "packages/orbit-design-tokens/src/theo/**",
   "packages/orbit-components/cypress.config.ts",
+  "packages/orbit-components/playwright-ct.config.ts",
   "packages/orbit-components/config/**/*.mts",
 ];

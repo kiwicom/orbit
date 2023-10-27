@@ -15,6 +15,8 @@ export const COMPILE_IGNORE_PATTERNS = [
   "**/tmp-tailwind/**/*.{ts?(x),d.ts}",
   "**/*.d.ts",
   "**/*.stories.*",
+  "**/*.ct.*",
+  "**/*.ct-story.*",
   "**/*.test.*",
   "**/__tests__/**/*",
   "**/__typetests__/**/*",
@@ -24,6 +26,8 @@ export const COMPILE_IGNORE_PATTERNS = [
 export const DECLARATIONS_IGNORE_PATTERN = [
   "**/RenderInRtl.{tsx,d.ts}",
   "**/test-utils.d.ts",
+  "**/*.ct.d.ts",
+  "**/*.ct-story.d.ts",
   // TODO: remove that after TW migration, tailwind is temporary folder
   "**/tmp-tailwind/**/*.{ts?(x),d.ts}",
 ];

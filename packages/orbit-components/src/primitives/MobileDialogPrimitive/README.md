@@ -3,7 +3,7 @@
 To implement MobileDialogPrimitive component into your project you'll need to add the import:
 
 ```jsx
-import MobileDialogPrimitive from "@kiwicom/orbit-components/lib/primtives/MobileDialogPrimitive";
+import MobileDialogPrimitive from "@kiwicom/orbit-components/lib/primitives/MobileDialogPrimitive";
 ```
 
 After adding import into your project you can use it simply like:

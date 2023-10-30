@@ -225,3 +225,30 @@ Rtl.story = {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
+
+export const VisualTest = () => (
+  <>
+    <Collapse
+      label="Collapsed"
+      customLabel={<Badge>Custom Label - Collapsed</Badge>}
+      actions={
+        <TextLink type="secondary" size="small" onClick={action("clear")}>
+          Action
+        </TextLink>
+      }
+    >
+      <p>Collapsed content</p>
+    </Collapse>
+    <Collapse label="Expanded" initialExpanded>
+      <p>Expanded content</p>
+    </Collapse>
+  </>
+);
+
+VisualTest.story = {
+  parameters: {
+    chromatic: {
+      disableSnapshot: false,
+    },
+  },
+};

@@ -48,10 +48,6 @@ const templateIllustrationFiles = [
 
 const templateTokensColors = [
   {
-    path: path.join(__dirname, "..", "src", "Separator", "TYPESCRIPT_TEMPLATE.template"),
-    tokens: Object.values(PALETTE_TOKENS),
-  },
-  {
     path: path.join(__dirname, "..", "src", "Box", "TYPESCRIPT_TEMPLATE.template"),
     tokens: Object.values(PALETTE_TOKENS).map(token => removePalettePrefix(token)),
   },

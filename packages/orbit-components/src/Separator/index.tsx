@@ -1,77 +1,78 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import type * as Common from "../common/types";
-import type { Theme } from "../defaultTheme";
-import defaultTheme from "../defaultTheme";
-import getSpacingToken from "../common/getSpacingToken";
-import { left, right } from "../utils/rtl";
-import type { Props, Indent, Align } from "./types";
-import useTheme from "../hooks/useTheme";
+import type { Props, Align } from "./types";
+import { getSpaceAfterClasses } from "../common/tailwind";
 
-function capitalize(string: string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+const BORDER_TYPE_CLASSES = {
+  none: "border-none",
+  solid: "border-solid",
+  dashed: "border-dashed",
+  dotted: "border-dotted",
+  double: "border-double",
+} as const;
+
+const enum Indent {
+  none = "none",
+  small = "small",
+  medium = "medium",
+  large = "large",
+  XLarge = "XLarge",
+  XXLarge = "XXLarge",
 }
 
-function getIndentAmount({
-  theme,
-  $indent,
-}: // StyledContainer takes more props, so this shouldn't be exact
-{
-  theme: Theme;
-  $indent: Indent;
-}) {
-  return $indent === "none" ? 0 : theme.orbit[`space${capitalize($indent)}`];
+function getSideOffsetAmount(indent: keyof typeof Indent, align: Align) {
+  const classes = {
+    left: {
+      [Indent.none]: "pe-0",
+      [Indent.small]: "pe-sm",
+      [Indent.medium]: "pe-md",
+      [Indent.large]: "pe-lg",
+      [Indent.XLarge]: "pe-xl",
+      [Indent.XXLarge]: "pe-xxl",
+    },
+    right: {
+      [Indent.none]: "ps-0",
+      [Indent.small]: "ps-sm",
+      [Indent.medium]: "ps-md",
+      [Indent.large]: "ps-lg",
+      [Indent.XLarge]: "ps-xl",
+      [Indent.XXLarge]: "ps-xxl",
+    },
+    center: {
+      [Indent.none]: "px-0",
+      [Indent.small]: "px-sm",
+      [Indent.medium]: "px-md",
+      [Indent.large]: "px-lg",
+      [Indent.XLarge]: "px-xl",
+      [Indent.XXLarge]: "px-xxl",
+    },
+  };
+
+  return classes[align][indent];
 }
-
-const StyledContainer = styled.div<{ $align: Align; $indent: Indent }>`
-  ${({ $align }) => css`
-    box-sizing: border-box;
-    width: 100%;
-    padding-${right}: ${$align === "left" && getIndentAmount};
-    padding-${left}: ${$align === "right" && getIndentAmount};
-    padding: ${$align === "center" && `0 ${getIndentAmount}`};
-  `};
-`;
-
-export const StyledSeparator = styled.hr<{
-  spaceAfter?: Common.SpaceAfterSizes;
-  $type: Props["type"];
-  $color?: Props["color"];
-}>`
-  ${({ theme, $type, $color }) => css`
-    height: ${theme.orbit.heightSeparator};
-    background: ${!$color && theme.orbit.backgroundSeparator};
-    box-sizing: border-box;
-    border-style: ${$type};
-    border-color: ${$color};
-    margin-top: 0;
-    margin-bottom: ${getSpacingToken};
-  `};
-`;
-
-StyledSeparator.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Separator = ({
   align = "left",
-  indent = "none",
+  sideOffset = "none",
   spaceAfter,
-  type = "none",
+  type = "solid",
   color,
 }: Props) => {
-  const theme = useTheme();
   return (
-    <StyledContainer $align={align} $indent={indent}>
-      <StyledSeparator
-        $type={type}
-        spaceAfter={spaceAfter}
-        $color={color && (theme.orbit[color] as Props["color"])}
+    <div className={cx("box-border w-full", getSideOffsetAmount(sideOffset, align))}>
+      <hr
+        className={cx(
+          "orbit-separator",
+          "mt-0 box-border h-0 border-t",
+          color || "border-elevation-flat-border-color",
+          BORDER_TYPE_CLASSES[type],
+          spaceAfter && getSpaceAfterClasses(spaceAfter),
+        )}
       />
-    </StyledContainer>
+    </div>
   );
 };
 

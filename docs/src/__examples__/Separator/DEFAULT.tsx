@@ -43,7 +43,7 @@ export default {
         {
           name: "type",
           type: "select",
-          defaultValue: "none",
+          defaultValue: "solid",
           options: ["none", "solid", "dashed", "dotted", "double"],
         },
         {
@@ -52,7 +52,7 @@ export default {
           defaultValue: "",
         },
         {
-          name: "indent",
+          name: "sideOffset",
           type: "select",
           defaultValue: "none",
           options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],

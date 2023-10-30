@@ -288,6 +288,22 @@ const cfg = (options?: Options): Config => {
             "50%": { transform: "scale(2)" },
             "100%": { transform: "scale(1)" },
           },
+          "toast-fade-in": {
+            "0%": { opacity: "0", transform: "translateY(-20px)" },
+            "100%": { opacity: "1", transform: "translateY(0)" },
+          },
+          "toast-fade-out": {
+            "0%": { opacity: "1", transform: "translateY(0)" },
+            "100%": { opacity: "0", transform: "translateY(-20px)" },
+          },
+          "toast-light": {
+            "0%": { transform: "translateX(-100%)" },
+            "100%": { transform: "translateX(0%)" },
+          },
+          "toast-light-rtl": {
+            "0%": { transform: "translateX(100%)" },
+            "100%": { transform: "translateX(0%)" },
+          },
         },
         animation: {
           "pulse-slow": "slow-pulse 2s ease-in-out 0.5s infinite",

@@ -2253,6 +2253,42 @@ exports[`orbitPreset should match snapshot 1`] = `
           "transform": "rotate(360deg)",
         },
       },
+      "toast-fade-in": {
+        "0%": {
+          "opacity": "0",
+          "transform": "translateY(-20px)",
+        },
+        "100%": {
+          "opacity": "1",
+          "transform": "translateY(0)",
+        },
+      },
+      "toast-fade-out": {
+        "0%": {
+          "opacity": "1",
+          "transform": "translateY(0)",
+        },
+        "100%": {
+          "opacity": "0",
+          "transform": "translateY(-20px)",
+        },
+      },
+      "toast-light": {
+        "0%": {
+          "transform": "translateX(-100%)",
+        },
+        "100%": {
+          "transform": "translateX(0%)",
+        },
+      },
+      "toast-light-rtl": {
+        "0%": {
+          "transform": "translateX(100%)",
+        },
+        "100%": {
+          "transform": "translateX(0%)",
+        },
+      },
     },
     "letterSpacing": {
       "normal": "0em",

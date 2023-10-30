@@ -1,80 +1,19 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import mq from "../utils/mediaQuery";
 import Stack from "../Stack";
-import defaultTheme from "../defaultTheme";
 import Text from "../Text";
-import { fadeIn, fadeOut, lightAnimation, getPositionStyle } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import useSwipe from "./hooks/useSwipe";
 import type { Toast as Props } from "./types";
 
-const StyledWrapper = styled(({ className, children, ariaLive }) => (
-  <div className={className} aria-live={ariaLive} role="status">
-    {children}
-  </div>
-))`
-  ${({ theme, placement, offsetY, offsetX, opacity }) => css`
-    z-index: ${theme.orbit.zIndexOnTheTop};
-    will-change: transform;
-    cursor: grab;
-    opacity: ${opacity};
-    transition: all ${theme.orbit.durationNormal} ease-in-out;
-    transform: translate(${offsetX}px, ${offsetY}px);
-    ${getPositionStyle(placement)};
-  `}
-`;
-
-StyledWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInnerWrapper = styled.div<{ visible?: boolean; duration?: number; isPaused?: boolean }>`
-  ${({ theme, visible, duration, isPaused }) => css`
-    position: relative;
-    border-radius: ${theme.orbit.borderRadiusLarge};
-    background: ${theme.orbit.paletteInkDark};
-    padding: ${theme.orbit.spaceXSmall};
-    width: 100%;
-    overflow: hidden;
-    will-change: transform;
-    pointer-events: ${visible ? "auto" : "none"};
-    animation: ${visible ? fadeIn : fadeOut} ${theme.orbit.durationNormal} forwards;
-    animation-play-state: ${isPaused ? "paused" : "running"};
-
-    svg {
-      min-height: 20px;
-    }
-
-    ${mq.largeMobile(css`
-      max-width: 360px;
-      width: initial;
-      padding: ${theme.orbit.spaceSmall};
-    `)}
-
-    ${css`
-      &:before {
-        content: "";
-        will-change: transform;
-        position: absolute;
-        border-radius: ${theme.orbit.borderRadiusLarge};
-        top: 0;
-        z-index: 1;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: ${theme.orbit.paletteWhite};
-        opacity: 0.1;
-        animation: ${lightAnimation} ${duration}ms linear;
-        animation-play-state: ${isPaused ? "paused" : "running"};
-      }
-    `}
-  `}
-`;
-
-StyledInnerWrapper.defaultProps = {
-  theme: defaultTheme,
+const placements = {
+  "top-right": "justify-end top-0",
+  "top-center": "justify-center top-0",
+  "top-left": "justify-start top-0",
+  "bottom-right": "justify-end bottom-0",
+  "bottom-center": "justify-center bottom-0",
+  "bottom-left": "justify-start bottom-0",
 };
 
 const ToastMessage = ({
@@ -96,23 +35,42 @@ const ToastMessage = ({
     ref,
     onDismiss,
     50,
-    placement.match(/right|center/) ? "right" : "left",
+    placement === "top-left" || placement === "bottom-left" ? "left" : "right",
   );
 
   return (
-    <StyledWrapper
-      ariaLive={ariaLive}
-      opacity={swipeOpacity}
-      visible={visible}
-      offsetY={offset}
-      offsetX={swipeOffset}
-      placement={placement}
+    <div
+      aria-live={ariaLive}
+      role="status"
+      className={cx(
+        "z-onTop duration-normal absolute left-0 right-0 flex cursor-grab transition-all ease-in-out will-change-transform",
+        "translate-x-[var(--toast-message-offset-x)] translate-y-[var(--toast-message-offset-y)] opacity-[var(--toast-message-opacity)]",
+        placements[placement],
+      )}
+      style={
+        {
+          "--toast-message-offset-x": `${swipeOffset}px`,
+          "--toast-message-offset-y": `${offset}px`,
+          "--toast-message-opacity": swipeOpacity,
+        } as React.CSSProperties
+      }
     >
-      <StyledInnerWrapper
-        visible={visible}
+      <div
+        className={cx(
+          "rounded-large bg-ink-dark p-xs relative w-full overflow-hidden will-change-transform",
+          "lm:max-w-[360px] lm:w-auto lm:p-sm [&_svg]:min-h-[20px]",
+          visible &&
+            "pointer-events-auto animate-[toast-fade-in_theme(transitionDuration.normal)_forwards]",
+          !visible &&
+            "pointer-events-none animate-[toast-fade-out_theme(transitionDuration.normal)_forwards]",
+        )}
+        style={
+          {
+            // Tailwind has no class for this yet
+            animationPlayState: isPaused ? "paused" : "running",
+          } as React.CSSProperties
+        }
         ref={ref}
-        isPaused={isPaused}
-        duration={dismissTimeout}
         onMouseEnter={() => {
           onMouseEnter();
           setPaused(true);
@@ -122,6 +80,17 @@ const ToastMessage = ({
           setPaused(false);
         }}
       >
+        <div
+          className="rounded-large bg-white-normal absolute left-0 top-0 z-[1] h-full w-full animate-[toast-light_var(--toast-message-duration)_linear] opacity-10 will-change-transform rtl:animate-[toast-light-rtl_var(--toast-message-duration)_linear]"
+          style={
+            {
+              "--toast-message-duration": `${dismissTimeout}ms`,
+              // Tailwind has no class for this yet
+              animationPlayState: isPaused ? "paused" : "running",
+            } as React.CSSProperties
+          }
+        />
+
         <Stack flex shrink spacing="XSmall">
           {icon &&
             React.isValidElement(icon) &&
@@ -129,8 +98,8 @@ const ToastMessage = ({
             React.cloneElement(icon, { size: "small", customColor: theme.orbit.paletteWhite })}
           <Text type="white">{children}</Text>
         </Stack>
-      </StyledInnerWrapper>
-    </StyledWrapper>
+      </div>
+    </div>
   );
 };
 

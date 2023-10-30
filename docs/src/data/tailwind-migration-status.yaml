@@ -21,7 +21,7 @@ CardSection: true
 CarrierLogo: true
 Checkbox: false
 ChoiceGroup: false
-Collapse: false
+Collapse: true
 Coupon: false
 CountryFlag: true
 Desktop: true

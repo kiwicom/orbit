@@ -1,75 +1,25 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import Heading from "../Heading";
 import Stack from "../Stack";
 import ButtonLink from "../ButtonLink";
 import ChevronDown from "../icons/ChevronDown";
 import Slide from "../utils/Slide";
-import defaultTheme from "../defaultTheme";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import useBoundingRect from "../hooks/useBoundingRect";
 import type { Props } from "./types";
 
-const AnimatedIcon = styled(ChevronDown)<{ expanded?: boolean }>`
-  ${({ theme, expanded }) => css`
-    transition: transform ${theme.orbit.durationFast} ease-in-out;
-    ${expanded &&
-    css`
-      transform: rotate(180deg);
-    `};
-  `}
-`;
-
-AnimatedIcon.defaultProps = {
-  theme: defaultTheme,
+const AnimatedIcon = ({ expanded }: { expanded?: boolean }) => {
+  return (
+    <ChevronDown
+      className={cx("duration-fast transition-transform ease-in-out", expanded && "rotate-180	")}
+      color="secondary"
+    />
+  );
 };
-
-const StyledCollapse = styled.div`
-  ${({ theme }) => css`
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
-    padding-bottom: ${theme.orbit.spaceSmall};
-    margin-bottom: ${theme.orbit.spaceMedium};
-    :last-child,
-    :only-child {
-      border: 0;
-      margin: 0;
-    }
-  `}
-`;
-
-StyledCollapse.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledCollapseLabel = styled.div`
-  width: 100%;
-  display: block;
-  cursor: pointer;
-`;
-
-StyledCollapseLabel.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledCollapseChildren: any = styled.div`
-  ${({ theme }) => css`
-    margin: ${theme.orbit.spaceSmall} 0;
-  `}
-`;
-
-StyledCollapseChildren.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledActionsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
 
 const Collapse = ({
   initialExpanded = false,
@@ -109,21 +59,34 @@ const Collapse = ({
   );
 
   return (
-    <StyledCollapse data-test={dataTest} id={id}>
-      <StyledCollapseLabel onClick={handleClick} role="button" id={labelID}>
+    <div
+      className="border-b-cloud-normal pb-sm mb-md block w-full border-b border-solid last:m-0 last:border-none"
+      data-test={dataTest}
+      id={id}
+    >
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+      <div
+        className="block w-full cursor-pointer"
+        onClick={handleClick}
+        role="button"
+        tabIndex={-1}
+        id={labelID}
+      >
         <Stack justify="between" align="center">
           {label && !customLabel && <Heading type="title4">{label}</Heading>}
           {customLabel}
           <Stack inline grow={false} align="center" spacing="small">
-            <StyledActionsWrapper
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+            <div
+              className="flex items-center"
               onClick={ev => {
                 ev.stopPropagation();
               }}
             >
               {actions}
-            </StyledActionsWrapper>
+            </div>
             <ButtonLink
-              iconLeft={<AnimatedIcon color="secondary" expanded={expanded} />}
+              iconLeft={<AnimatedIcon expanded={expanded} />}
               size="small"
               type="secondary"
               ariaLabelledby={labelID}
@@ -132,11 +95,13 @@ const Collapse = ({
             />
           </Stack>
         </Stack>
-      </StyledCollapseLabel>
+      </div>
       <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
-        <StyledCollapseChildren ref={node}>{children}</StyledCollapseChildren>
+        <div className="my-sm mx-0" ref={node}>
+          {children}
+        </div>
       </Slide>
-    </StyledCollapse>
+    </div>
   );
 };
 

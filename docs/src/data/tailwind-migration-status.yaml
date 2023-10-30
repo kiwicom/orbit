@@ -73,7 +73,7 @@ Seat: false
 SeatLegend: true
 SegmentedSwitch: true
 Select: true
-Separator: false
+Separator: true
 ServiceLogo: false
 Skeleton: false
 SkipLink: false

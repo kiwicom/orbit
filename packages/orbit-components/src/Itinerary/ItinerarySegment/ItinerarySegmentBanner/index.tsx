@@ -4,7 +4,6 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 import defaultTheme from "../../../defaultTheme";
-import { StyledSeparator } from "../../../Separator";
 import ChevronForward from "../../../icons/ChevronForward";
 import { StyledWrapper as StyledBadgeListWrapper } from "../../ItineraryBadgeList";
 import type { Props } from "./types";
@@ -25,7 +24,7 @@ const StyledBannerWrapper = styled.div<{ $actionable?: boolean }>`
       margin-${left}: 0 !important;
     }
 
-    ${StyledSeparator} {
+    .orbit-separator {
       width: 150% !important;
       margin-left: -${theme.orbit.spaceMedium};
     }

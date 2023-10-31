@@ -1,209 +1,12 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
 import cx from "clsx";
 
-import defaultTheme from "../defaultTheme";
-import TOKENS from "./consts";
 import Check from "../icons/Check";
-import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
-import media from "../utils/mediaQuery";
-import { defaultFocus } from "../utils/common";
 import type { Props } from "./types";
-
-interface StyledInputProps extends Props {
-  error: boolean;
-}
-
-const getToken =
-  (name: keyof typeof TOKENS) =>
-  ({
-    theme,
-    hasError,
-    disabled,
-    checked,
-  }: {
-    theme: typeof defaultTheme;
-    hasError?: boolean;
-    disabled?: boolean;
-    checked?: boolean;
-  }): string => {
-    const resolveBorderColor = () => {
-      if (disabled) {
-        return theme.orbit.paletteCloudDark;
-      }
-      if (checked) {
-        return theme.orbit.paletteBlueNormal;
-      }
-      if (hasError && !disabled && !checked) {
-        return theme.orbit.borderColorCheckboxRadioError;
-      }
-
-      return theme.orbit.borderColorCheckboxRadio;
-    };
-
-    const getBackground = () => {
-      if (disabled && checked) {
-        return theme.orbit.paletteCloudDark;
-      }
-      if (disabled && !checked) {
-        return theme.orbit.paletteCloudNormal;
-      }
-      return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
-    };
-
-    const tokens = {
-      [TOKENS.background]: getBackground(),
-      [TOKENS.borderColor]: resolveBorderColor(),
-      [TOKENS.iconColor]: disabled
-        ? theme.orbit.paletteCloudDark
-        : theme.orbit.colorIconCheckboxRadio,
-    };
-
-    return tokens[name];
-  };
-
-const StyledIconContainer = styled.div<{ checked: boolean; disabled: boolean }>`
-  ${({ theme, checked, disabled }) => css`
-    position: relative;
-    box-sizing: border-box;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: ${getToken(TOKENS.background)};
-    height: ${theme.orbit.heightCheckbox};
-    width: ${theme.orbit.widthCheckbox};
-    border-radius: ${theme.orbit.borderRadiusLarge};
-    transform: scale(1);
-    transition: all ${theme.orbit.durationFast} ease-in-out;
-
-    & > svg {
-      visibility: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 16px;
-      height: 16px;
-    }
-
-    &:hover {
-      background-color: ${!disabled &&
-      (checked ? theme.orbit.paletteBlueDark : theme.orbit.backgroundInput)};
-    }
-
-    ${media.desktop(css`
-      border-radius: ${theme.orbit.borderRadiusNormal};
-    `)}
-  `};
-`;
-
-StyledIconContainer.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTextContainer = styled.div<{ disabled?: boolean }>`
-  ${({ disabled, theme }) => css`
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin: ${rtlSpacing(`0 0 0 ${theme.orbit.spaceXSmall}`)};
-    opacity: ${disabled ? theme.orbit.opacityCheckboxDisabled : "1"};
-  `}
-`;
-
-StyledTextContainer.defaultProps = {
-  theme: defaultTheme,
-};
-
-const Info = styled.span`
-  ${({ theme }) => css`
-    font-size: ${theme.orbit.fontSizeFormFeedback};
-    color: ${theme.orbit.colorInfoCheckBoxRadio};
-    line-height: ${theme.orbit.lineHeightTextSmall};
-  `};
-`;
-
-Info.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledLabelText = styled.span`
-  ${({ theme }) => css`
-    font-family: ${theme.orbit.fontFamily};
-    font-weight: ${theme.orbit.fontWeightMedium};
-    font-size: ${theme.orbit.fontSizeFormLabel};
-    color: ${theme.orbit.colorFormLabel};
-    line-height: ${theme.orbit.heightCheckbox};
-
-    .orbit-text {
-      font-weight: ${theme.orbit.fontWeightMedium};
-      font-size: ${theme.orbit.fontSizeFormLabel};
-      color: ${theme.orbit.colorFormLabel};
-      line-height: ${theme.orbit.heightCheckbox};
-    }
-  `}
-`;
-
-StyledLabelText.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledInput = styled.input<StyledInputProps>`
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-  &:checked + ${StyledIconContainer} > svg {
-    visibility: visible;
-  }
-
-  &:focus + ${StyledIconContainer} {
-    ${defaultFocus};
-  }
-`;
-
-StyledInput.defaultProps = {
-  theme: defaultTheme,
-};
-
-export const StyledLabel = styled(({ className, children, dataTest }) => (
-  <label className={cx("orbit-checkbox-label", className)} data-test={dataTest}>
-    {children}
-  </label>
-))`
-  ${({ theme, disabled, checked }) => css`
-    font-family: ${theme.orbit.fontFamily};
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: self-start;
-    cursor: ${disabled ? "not-allowed" : "pointer"};
-    position: relative;
-
-    ${StyledIconContainer} {
-      color: ${getToken(TOKENS.iconColor)};
-      border: 1px solid ${getToken(TOKENS.borderColor)};
-    }
-
-    &:hover ${StyledIconContainer} {
-      border-color: ${!disabled &&
-      (checked ? theme.orbit.paletteBlueDark : theme.orbit.paletteBlueLightActive)};
-      box-shadow: none;
-    }
-
-    &:active ${StyledIconContainer} {
-      border-color: ${disabled ? getToken(TOKENS.borderColor) : theme.orbit.paletteBlueNormal};
-      transform: ${!disabled && `scale(${theme.orbit.modifierScaleCheckboxRadioActive})`};
-    }
-  `}
-`;
-
-StyledLabel.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const {
@@ -222,11 +25,19 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     tooltip,
   } = props;
 
-  const preventOnClick: React.MouseEventHandler<HTMLDivElement> = ev => ev.preventDefault();
-
   return (
-    <StyledLabel disabled={disabled} hasError={hasError} checked={checked}>
-      <StyledInput
+    <label
+      className={cx(
+        "orbit-checkbox-label",
+        "font-base",
+        "flex flex-row",
+        "relative w-full",
+        "hover:[&_.orbit-checkbox-icon-container]:shadow-none",
+        disabled ? "cursor-not-allowed" : "cursor-pointer",
+      )}
+    >
+      <input
+        className="peer absolute z-[-1] opacity-0"
         data-test={dataTest}
         id={id}
         data-state={getFieldDataState(!!hasError)}
@@ -239,25 +50,56 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         onChange={onChange}
         ref={ref}
         readOnly={readOnly}
-        error={hasError}
       />
       {cloneWithTooltip(
         tooltip,
-        <StyledIconContainer
-          disabled={disabled}
-          checked={checked}
-          onClick={readOnly ? preventOnClick : undefined}
+        <div
+          className={cx(
+            "orbit-checkbox-icon-container",
+            "relative box-border",
+            "border border-solid",
+            "flex shrink-0 grow-0 basis-auto items-center justify-center",
+            "h-icon-medium w-icon-medium",
+            "rounded-large de:rounded-normal",
+            "duration-fast transition-all ease-in-out",
+            "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
+            "[&_>_svg]:w-icon-small [&_>_svg]:h-icon-small [&_>_svg]:invisible peer-checked:[&_>_svg]:visible",
+            "[&_>_svg]:flex [&_>_svg]:items-center [&_>_svg]:justify-center",
+            "active:scale-95",
+            disabled
+              ? [
+                  "border-cloud-dark",
+                  checked && "bg-cloud-dark",
+                  !checked && "bg-form-element-disabled-background",
+                ]
+              : [
+                  checked &&
+                    "bg-blue-normal hover:bg-blue-dark border-blue-normal hover:border-blue-dark",
+                  !checked && [
+                    "bg-form-element-background",
+                    hasError
+                      ? "border-form-element-error"
+                      : " border-form-element-border-color hover:border-blue-light-active active:border-form-element-focus",
+                  ],
+                ],
+          )}
         >
           <Check customColor="white" />
-        </StyledIconContainer>,
+        </div>,
       )}
       {(label || info) && (
-        <StyledTextContainer disabled={disabled}>
-          {label && <StyledLabelText>{label}</StyledLabelText>}
-          {info && <Info>{info}</Info>}
-        </StyledTextContainer>
+        <div className={cx("ms-xs flex flex-1 flex-col", disabled ? "opacity-50" : "opacity-1")}>
+          {label && (
+            <span className="font-base text-form-element-normal text-form-element-label-foreground [&_.orbit-text]:text-form-element-normal [&_.orbit-text]:text-form-element-label-foreground [&_.orbit-text]:leading-small font-medium leading-normal [&_.orbit-text]:font-medium">
+              {label}
+            </span>
+          )}
+          {info && (
+            <span className="text-small leading-small text-secondary-foreground">{info}</span>
+          )}
+        </div>
       )}
-    </StyledLabel>
+    </label>
   );
 });
 

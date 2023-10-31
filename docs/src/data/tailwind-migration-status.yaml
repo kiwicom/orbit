@@ -104,7 +104,7 @@ TextLink: true
 Textarea: true
 Timeline: false
 TimelineStep: false
-Toast: false
+Toast: true
 ToastRoot: false
 Tooltip: false
 Truncate: false

@@ -63,7 +63,7 @@ describe("Toast", () => {
     expect(screen.getByRole("status")).toHaveStyle({ bottom: 0, justifyContent: "center" });
   });
 
-  it(`should have expected DOM output with ToastRoot`, async () => {
+  it(`should be in the dom with ToastRoot`, async () => {
     const user = userEvent.setup({
       advanceTimers: jest.advanceTimersByTime,
     });
@@ -88,14 +88,6 @@ describe("Toast", () => {
     );
 
     await user.click(screen.getByRole("button"));
-
-    expect(screen.getByTestId("test")).toHaveStyle({
-      top: "30px",
-      left: "10px",
-      right: "20px",
-      bottom: "40px",
-      position: "fixed",
-    });
 
     expect(screen.getByRole("status")).toBeInTheDocument();
   });

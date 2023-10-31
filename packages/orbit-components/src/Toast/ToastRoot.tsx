@@ -1,29 +1,11 @@
 "use client";
 
 import * as React from "react";
+import cx from "clsx";
 import { useToaster, toast as notify } from "react-hot-toast";
-import styled, { css } from "styled-components";
 
 import ToastMessage from "./ToastMessage";
-import defaultTheme from "../defaultTheme";
-import { left, right } from "../utils/rtl";
 import type { Props } from "./types";
-
-const StyledWrapper = styled.div<{ $top: number; $left: number; $right: number; $bottom: number }>`
-  ${({ theme, $top, $left, $right, $bottom }) => css`
-    position: fixed;
-    z-index: ${theme.orbit.zIndexOnTheTop};
-    pointer-events: none;
-    top: ${$top}px;
-    bottom: ${$bottom}px;
-    ${left}: ${$left}px;
-    ${right}: ${$right}px;
-  `}
-`;
-
-StyledWrapper.defaultProps = {
-  theme: defaultTheme,
-};
 
 const ToastRoot = ({
   dataTest,
@@ -43,13 +25,21 @@ const ToastRoot = ({
   const { startPause, endPause, calculateOffset } = handlers;
 
   return (
-    <StyledWrapper
+    <div
       data-test={dataTest}
       id={wrapperId}
-      $top={topOffset}
-      $bottom={bottomOffset}
-      $left={leftOffset}
-      $right={rightOffset}
+      className={cx(
+        "z-onTop pointer-events-none fixed",
+        "bottom-[var(--toast-root-bottom)] end-[var(--toast-root-end)] start-[var(--toast-root-start)] top-[var(--toast-root-top)]",
+      )}
+      style={
+        {
+          "--toast-root-top": `${topOffset}px`,
+          "--toast-root-bottom": `${bottomOffset}px`,
+          "--toast-root-start": `${leftOffset}px`,
+          "--toast-root-end": `${rightOffset}px`,
+        } as React.CSSProperties
+      }
     >
       {toasts.map(toast => {
         const { id, message, ariaProps, visible, icon } = toast;
@@ -76,7 +66,7 @@ const ToastRoot = ({
           </ToastMessage>
         );
       })}
-    </StyledWrapper>
+    </div>
   );
 };
 

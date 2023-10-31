@@ -1,55 +1,16 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import type * as Common from "../common/types";
 import { useRandomIdSeed } from "../hooks/useRandomId";
-import { resolveHeight, resolveValue, resolvePulseAnimation } from "./helpers";
 import useTheme from "../hooks/useTheme";
-import defaultTheme from "../defaultTheme";
-import getSpacingToken from "../common/getSpacingToken";
+import { spaceAfterClasses } from "../common/tailwind";
 import type { Props } from "./types";
 
-const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, id, viewBox }) => (
-  <svg
-    aria-labelledby={ariaLabelledby}
-    data-test={dataTest}
-    id={id}
-    className={className}
-    role="img"
-    viewBox={viewBox}
-  >
-    {children}
-  </svg>
-))`
-  ${({
-    rtl,
-    width,
-    duration,
-    animate,
-    interval,
-    maxHeight,
-  }: {
-    calculatedHeight: number;
-    width: string | number;
-    height: string | number;
-    maxHeight: number;
-    rtl: boolean;
-    duration?: string;
-    interval?: string;
-    animate?: boolean;
-    spaceAfter?: Common.SpaceAfterSizes;
-  }) => css`
-    height: ${resolveHeight};
-    max-height: ${resolveValue(maxHeight)};
-    width: ${resolveValue(width)};
-    transform: ${rtl && `scaleX(-1)`};
-    margin-bottom: ${getSpacingToken};
-    ${resolvePulseAnimation({ duration, interval, animate })};
-  `}
-`;
+const resolveValue = (value: string | number | undefined): string => {
+  if (typeof value === "string") return value;
+  if (typeof value === "number") return `${value}px`;
 
-StyledSvg.defaultProps = {
-  theme: defaultTheme,
+  return "100%";
 };
 
 const Rows = ({ count, height, offset, rowBorderRadius }) => {
@@ -80,36 +41,41 @@ const Svg = ({
   color = "paletteCloudNormal",
   title = "loading",
   viewBox,
-  height,
+  height = "100%",
   maxHeight,
   width = "100%",
+  id,
+  dataTest,
+  spaceAfter,
   ...props
 }: Props) => {
-  const [calculatedHeight, setCalculatedHeight] = React.useState(0);
-  const { rtl, orbit } = useTheme();
-  const duration = `${2}s`;
-  const interval = `${0.5}s`;
-  const id = useRandomIdSeed();
-  const idClip = `${id("clip")}-clip`;
-  const titleId = id("title");
+  const [calculatedRowsHeight, setCalculatedRowsHeight] = React.useState(0);
+  const { orbit } = useTheme();
+  const randomId = useRandomIdSeed();
+  const idClip = `${randomId("clip")}-clip`;
+  const titleId = randomId("title");
 
   React.useEffect(() => {
-    if (!children && rows && rowOffset) setCalculatedHeight(rows * rowOffset);
-  }, [rowOffset, rows, setCalculatedHeight, maxHeight]);
+    if (!children && rows && rowOffset) setCalculatedRowsHeight(rows * rowOffset);
+  }, [rowOffset, rows, setCalculatedRowsHeight, maxHeight]);
 
   return (
-    <StyledSvg
-      ariaLabelledby={titleId}
-      maxHeight={maxHeight}
+    <svg
+      aria-labelledby={titleId}
+      data-test={dataTest}
+      id={id}
+      className={cx(
+        animate && "animate-pulse-slow",
+        "rtl:-scale-x-100",
+        spaceAfter && spaceAfterClasses[spaceAfter],
+      )}
       role="img"
-      rtl={rtl}
       viewBox={viewBox}
-      calculatedHeight={calculatedHeight}
-      duration={duration}
-      interval={interval}
-      animate={animate}
-      height={height}
-      width={width}
+      style={{
+        height: calculatedRowsHeight > 0 ? `${setCalculatedRowsHeight}px` : resolveValue(height),
+        maxHeight: resolveValue(maxHeight),
+        width: resolveValue(width),
+      }}
       {...props}
     >
       <title id={titleId}>{title}</title>
@@ -144,7 +110,7 @@ const Svg = ({
             ))}
         </clipPath>
       </defs>
-    </StyledSvg>
+    </svg>
   );
 };
 

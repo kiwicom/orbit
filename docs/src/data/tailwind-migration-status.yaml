@@ -75,7 +75,7 @@ SegmentedSwitch: true
 Select: true
 Separator: false
 ServiceLogo: false
-Skeleton: false
+Skeleton: true
 SkipLink: false
 SkipNavigation: false
 Slide: false

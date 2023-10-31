@@ -19,7 +19,7 @@ CallOutBanner: false
 Card: true
 CardSection: true
 CarrierLogo: true
-Checkbox: false
+Checkbox: true
 ChoiceGroup: false
 Collapse: true
 Coupon: false

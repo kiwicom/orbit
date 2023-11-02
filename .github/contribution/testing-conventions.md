@@ -79,36 +79,40 @@ describe("Button", async () => {
 
 ## Visual regression testing
 
-We use [Loki](https://loki.js.org/) for visual regression testing, it takes screenshots of our stories and compares them against existing references. Those that don't match are stored as images with differences marked for us to decide whether the regressions are expected, or bugs that need investigating. All images that Loki produces are in `packages/orbit-components/.loki`, however, only `references` are included in source control, `current` and `differences` are ignored.
+We use [Playwright component testing](https://playwright.dev/docs/test-components) for visual
+regression testing, it takes screenshots of components and compares them against existing
+references. See [Playwright docs](https://playwright.dev/docs/test-snapshots) for more information.
 
-To start testing with Loki you first need to have the following processes running:
+Commands:
 
-- Docker Engine, e.g. via [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- `yarn dev:test` to start Storybook in test mode
+- `yarn components test-ct` - test components, both behaviour and screenshots
+- `yarn components test-ct --update-snapshots` - update screenshots
 
-Now run `yarn loki:test`, which takes a screenshot of every story and compares it to the existing reference, and think about what you're going to do for the next 20 minutes because that's usually how long this takes, which is why we usually do this only before releasing.
+### CI
 
-Once it's over, first run `git status` to see if there are any new untracked Loki references, then check whether they look as expected and commit them as new references. Next, if the tests failed, that means that there are images in the `differences` directory that require your attention, check each one of them and decide whether the regressions are expected.
+Screenshots are OS-specific. CI runs Linux on its machines. In order to generate CI-compatible
+screenshots, you need to run the tests on Linux. You can do that by running the tests in Docker:
 
-### Test a specific story
+- `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.39.0-jammy /bin/bash`
+- `rm -rf playwright/.cache`
+- `yarn install --frozen-lockfile`
+- `yarn components test-ct --update-snapshots`
 
-If you fixed a bug that caused a specific visual regression and you want to test it again, first **save all your differences somewhere else**, e.g. temporarily rename the `differences` directory, then run:
+After you're done, reset the environment:
 
-```sh
-yarn loki:test --storiesFilter '<kind> <story>' --configurationFilter <target>
-```
+- `rm -rf playwright/.cache`
+- `yarn install --frozen-lockfile`
 
-So if your file is named `chrome_iphone7_Breadcrumbs_Back_link.png`, the command should be:
+Both `darwin` and `linux` screenshots are kept:
 
-```sh
-yarn loki:test --storiesFilter 'Breadcrumbs Back link' --configurationFilter chrome.iphone7
-```
-
-Very nice! But this has the side-effect of deleting all other differences from `differences`, so if you hadn't saved them elsewhere, you'd lose them and had to run all the tests again, so keep that in mind. 😅
+- `darwin` screenshots are for fast local development experience
+- `linux` screenshots are for CI
 
 ### Track down the regression with `git bisect`
 
-If you aren't sure where the visual regression came from, which is often the case for this workflow because the tests are being run only before releasing, you can instruct git to automatically find out which commit caused it using `git bisect`.
+If you aren't sure where the visual regression came from, which is often the case for this workflow
+because the tests are being run only before releasing, you can instruct git to automatically find
+out which commit caused it using `git bisect`.
 
 Make sure that Docker Engine and Storybook are still running, and run:
 
@@ -117,16 +121,10 @@ Make sure that Docker Engine and Storybook are still running, and run:
 # and which doesn't (e.g. when the reference was added)
 git bisect start <bad commit> <good commit>
 # this starts the search, kick back and relax, drink some tea
-git bisect run yarn loki:test --storiesFilter '<kind> <story>' --configurationFilter <target>
+git bisect run yarn components test-ct
 # once git finds the commit, it will stop there
 # run the following to return to your starting position
 git bisect reset
-```
-
-To find out when the reference was added, run `git log <path>`, for example:
-
-```sh
-git log packages/orbit-components/.loki/reference/chrome_iphone7_Breadcrumbs_Back_link.png
 ```
 
 Keep in mind that the wider the range between bad and good commit is, the longer the search will take.

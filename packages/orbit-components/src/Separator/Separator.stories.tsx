@@ -43,6 +43,42 @@ export const Rtl = () => (
   </RenderInRtl>
 );
 
+export const VisualTest = () => {
+  return (
+    <div className="space-y-md flex flex-col">
+      <Separator />
+      <Separator type="dotted" />
+      <Separator type="dashed" />
+      <Separator type="double" />
+      <Separator color="paletteRedNormal" type="solid" />
+      <Separator color="paletteBlueNormal" type="solid" />
+      <Separator color="paletteProductNormal" indent="small" type="solid" />
+      <Separator color="paletteProductNormal" indent="medium" type="solid" />
+      <Separator color="paletteProductNormal" indent="large" type="solid" />
+      <Separator color="paletteProductNormal" indent="XLarge" type="solid" />
+      <Separator color="paletteProductNormal" indent="XXLarge" type="solid" />
+      <Separator align="left" indent="large" color="paletteBundleBasic" type="solid" />
+      <Separator align="right" indent="large" color="paletteBundleBasic" type="solid" />
+      <Separator align="center" indent="XXLarge" color="paletteBundleBasic" type="solid" />
+      <Separator spaceAfter="smallest" />
+      <Separator spaceAfter="small" />
+      <Separator spaceAfter="medium" />
+      <Separator spaceAfter="medium" />
+      <Separator spaceAfter="large" />
+      <Separator spaceAfter="largest" />
+    </div>
+  );
+};
+
+VisualTest.story = {
+  name: "Separator visual story",
+  parameters: {
+    chromatic: {
+      disableSnapshot: false,
+    },
+  },
+};
+
 Rtl.story = {
   name: "RTL",
 

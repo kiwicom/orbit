@@ -1,61 +1,49 @@
-"use client";
-
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import type { Theme } from "../../defaultTheme";
-import defaultTheme from "../../defaultTheme";
 import { ALIGN_OPTIONS } from "./consts";
 import { TYPE_AS } from "../consts";
-import { textAlign } from "../../utils/rtl";
-import type { Props } from "./types";
+import type { Props, VerticalAlign, WhiteSpace } from "./types";
 
-interface StyledProps extends Partial<Props> {
-  theme: Theme;
-}
+const verticalAlignStyles: Record<VerticalAlign, string> = {
+  baseline: "align-baseline",
+  middle: "align-middle",
+  top: "align-top",
+  bottom: "align-bottom",
+};
 
-export const StyledTableCell = styled(
-  ({ element: Component, children, className, dataTest, scope }) => (
-    <Component className={className} data-test={dataTest} scope={scope}>
-      {children}
-    </Component>
-  ),
-)`
-  ${({ theme, whiteSpace, verticalAlign, align }: StyledProps) => css`
-    box-sizing: border-box;
-    font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeTextNormal};
-    color: ${theme.orbit.paletteInkDark};
-    text-align: ${align && textAlign(align)};
-    white-space: ${whiteSpace};
-    vertical-align: ${verticalAlign};
-  `}
-`;
-
-StyledTableCell.defaultProps = {
-  theme: defaultTheme,
+const whitespaceStyles: Record<WhiteSpace, string> = {
+  normal: "whitespace-normal",
+  nowrap: "whitespace-nowrap",
+  pre: "whitespace-pre",
+  "pre-line": "whitespace-pre-line",
+  "pre-wrap": "whitespace-pre-wrap",
 };
 
 const TableCell = ({
   align = ALIGN_OPTIONS.LEFT,
   scope,
-  as = TYPE_AS.TD,
+  as: Component = TYPE_AS.TD,
   verticalAlign,
   whiteSpace,
   dataTest,
   children,
 }: Props) => {
   return (
-    <StyledTableCell
-      verticalAlign={verticalAlign}
-      whiteSpace={whiteSpace}
-      align={align}
-      dataTest={dataTest}
+    <Component
+      className={cx(
+        "font-base text-normal text-ink-dark box-border",
+        verticalAlign != null && verticalAlignStyles[verticalAlign],
+        whiteSpace != null && whitespaceStyles[whiteSpace],
+        (align === ALIGN_OPTIONS.START || ALIGN_OPTIONS.LEFT) && "text-start",
+        align === ALIGN_OPTIONS.CENTER && "text-center",
+        (align === ALIGN_OPTIONS.END || ALIGN_OPTIONS.RIGHT) && "text-end",
+      )}
+      data-test={dataTest}
       scope={scope}
-      element={as}
     >
       {children}
-    </StyledTableCell>
+    </Component>
   );
 };
 

@@ -1,107 +1,10 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import { StyledTableRow } from "./TableRow";
-import { StyledTableCell } from "./TableCell";
-import { StyledTableBody } from "./TableBody";
-import { StyledTableHead } from "./TableHead";
 import { TYPE_OPTIONS } from "./consts";
-import defaultTheme from "../defaultTheme";
-import type { Props, Type } from "./types";
-
-const StyledTableOuter = styled.div<{
-  showShadows?: boolean;
-  showLeft?: boolean;
-  showRight?: boolean;
-}>`
-  ${({ showShadows, showLeft, showRight, theme }) => css`
-    max-width: 100%;
-    width: 100%;
-    position: relative;
-
-    &::after,
-    &::before {
-      content: " ";
-      display: ${showShadows ? "block" : "none"};
-      position: absolute;
-      width: 16px;
-      height: 100%;
-      top: 0;
-      transition: opacity ${theme.orbit.durationNormal} ease-in-out;
-    }
-
-    &::after {
-      opacity: ${showRight ? "1" : "0"};
-      background-image: ${theme.orbit.backgroundTableShadowRight};
-      right: 0;
-    }
-
-    &::before {
-      opacity: ${showLeft ? "1" : "0"};
-      left: 0;
-      background-image: ${theme.orbit.backgroundTableShadowLeft};
-    }
-  `}
-`;
-
-StyledTableOuter.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTableInner = styled.div<{ showShadows?: boolean }>`
-  ${({ showShadows }) => css`
-    width: 100%;
-    ${showShadows &&
-    css`
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    `};
-  `}
-`;
-
-const StyledTable = styled.table<{ type: Type; striped?: boolean; compact?: boolean }>`
-  ${({ theme, type, striped, compact }) => css`
-    display: table;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    white-space: nowrap;
-
-    & ${StyledTableBody} > ${StyledTableRow} {
-      background-color: ${theme.orbit.backgroundTable};
-      border-bottom: 1px solid ${theme.orbit.borderColorTable};
-      transition: background-color ${theme.orbit.durationFast} ease-in-out;
-
-      ${striped &&
-      css`
-        &:nth-of-type(even) {
-          background-color: ${theme.orbit.backgroundTableEven};
-        }
-      `}
-
-      &:last-child {
-        border: 0;
-      }
-      &:hover {
-        background-color: ${theme.orbit.backgroundTableHover};
-      }
-    }
-    & ${StyledTableCell} {
-      height: ${compact ? theme.orbit.spaceXLarge : theme.orbit.spaceXXLarge};
-      padding: ${compact
-        ? `6px ${theme.orbit.spaceSmall}`
-        : `10px ${theme.orbit.spaceSmall}`}; /* TODO: remove 10px and 6px with new tokens */
-      line-height: ${theme.orbit.lineHeightTextNormal};
-      color: ${type === TYPE_OPTIONS.SECONDARY && theme.orbit.paletteInkNormal};
-    }
-  `};
-`;
-
-StyledTable.defaultProps = {
-  theme: defaultTheme,
-};
+import type { Props } from "./types";
 
 const Table = ({
   children,
@@ -144,20 +47,42 @@ const Table = ({
   }, [handleResize]);
 
   return (
-    <StyledTableOuter
-      ref={outer}
-      showShadows={shadows}
-      showLeft={left}
-      showRight={right}
+    <div
+      className={cx(
+        "relative w-full max-w-full",
+        "before:duration-normal before:bg-table-shadow-left before:absolute before:left-0 before:top-0 before:h-full before:w-[16px] before:transition-opacity before:ease-in-out",
+        !left && "before:opacity-0",
+        "after:duration-normal after:bg-table-shadow-right after:absolute after:right-0 after:top-0 after:h-full after:w-[16px] after:transition-opacity after:ease-in-out",
+        !right && "after:opacity-0",
+        shadows ? "before:block after:block" : "before:hidden after:hidden",
+      )}
       data-test={dataTest}
       id={id}
+      ref={outer}
     >
-      <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
-        <StyledTable striped={striped} compact={compact} type={type} ref={table}>
+      <div
+        className={cx("w-full", shadows && "overflow-x-auto")}
+        onScroll={handleScroll}
+        ref={inner}
+      >
+        <table
+          className={cx(
+            "w-full border-collapse border-spacing-0 whitespace-nowrap",
+            "[&_tbody>tr]:bg-white-normal hover:[&_tbody>tr]:bg-cloud-light [&_tbody>tr]:border-b-cloud-normal [&_tbody>tr]:duration-fast [&_tbody>tr]:border-b [&_tbody>tr]:transition-colors [&_tbody>tr]:ease-in-out last:[&_tbody>tr]:border-b-0",
+            striped === true && "type-even:[&_tbody>tr]:bg-cloud-normal",
+            "[&_td]:px-sm [&_th]:px-sm [&_td]:leading-normal [&_th]:leading-normal",
+            compact === true
+              ? // TODO: remove 10px and 6px with new tokens
+                "[&_th]:h-xl [&_td]:h-xl [&_td]:py-[6px] [&_th]:py-[6px]"
+              : "[&_th]:h-xxl [&_td]:h-xxl [&_td]:py-[10px] [&_th]:py-[10px]",
+            type === TYPE_OPTIONS.SECONDARY && "[&_td]:text-ink-normal [&_th]:text-ink-normal",
+          )}
+          ref={table}
+        >
           {children}
-        </StyledTable>
-      </StyledTableInner>
-    </StyledTableOuter>
+        </table>
+      </div>
+    </div>
   );
 };
 
@@ -168,4 +93,3 @@ export { default as TableBody } from "./TableBody";
 export { default as TableFooter } from "./TableFooter";
 export { default as TableRow } from "./TableRow";
 export { default as TableCell } from "./TableCell";
-export { StyledTable, StyledTableCell, StyledTableBody, StyledTableRow, StyledTableHead };

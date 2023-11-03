@@ -88,11 +88,11 @@ StopoverArrow: false
 Switch: true
 Tab: false
 TabPanel: false
-Table: false
-TableBody: false
-TableCell: false
-TableHead: false
-TableRow: false
+Table: true
+TableBody: true
+TableCell: true
+TableHead: true
+TableRow: true
 Tabs: false
 Tag: false
 Tile: true

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/eslint-plugin-orbit-components@0.7.1...@kiwicom/eslint-plugin-orbit-components@0.8.0) (2023-11-03)
+
+
+### Features
+
+* **eslint-plugin:** add new use-client-directive rule ([744c368](https://github.com/kiwicom/orbit/commit/744c3682a6b3b467f6f320856fca686a966ea505))
+
+
+
+
+
 ## [0.7.1](https://github.com/kiwicom/orbit/compare/@kiwicom/eslint-plugin-orbit-components@0.7.0...@kiwicom/eslint-plugin-orbit-components@0.7.1) (2023-09-18)
 
 **Note:** Version bump only for package @kiwicom/eslint-plugin-orbit-components

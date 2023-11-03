@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.2.0...@kiwicom/orbit-design-tokens@6.3.0) (2023-11-03)
+
+
+### Features
+
+* **tokens:** add modal border tokens; deprecate borderColorModal ([792ac8b](https://github.com/kiwicom/orbit/commit/792ac8bad3894c6da1d6a092f45bcdc1fdca56c6))
+
+
+
+
+
 # [6.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.1.0...@kiwicom/orbit-design-tokens@6.2.0) (2023-10-19)
 
 

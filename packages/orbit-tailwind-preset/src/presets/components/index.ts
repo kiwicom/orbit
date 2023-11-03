@@ -133,7 +133,6 @@ const cfg = (options?: Options): Config => {
           "heading-title4": tokens.headingTitle4FontWeight,
           "heading-title5": tokens.headingTitle5FontWeight,
           "heading-title6": tokens.headingTitle6FontWeight,
-          "table-head": String(tokens.fontWeightTableHead),
         },
         lineHeight: {
           none: "1",
@@ -252,6 +251,8 @@ const cfg = (options?: Options): Config => {
           "badge-bundle-basic-background": tokens.badgeBundleBasicBackground,
           "badge-bundle-medium-background": tokens.badgeBundleMediumBackground,
           "badge-bundle-top-background": tokens.badgeBundleTopBackground,
+          "table-shadow-right": tokens.backgroundTableShadowRight,
+          "table-shadow-left": tokens.backgroundTableShadowLeft,
         },
         boxShadow: {
           "button-focus": tokens.boxShadowButtonFocus,

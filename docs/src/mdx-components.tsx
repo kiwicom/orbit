@@ -22,7 +22,7 @@ import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
 import { getTextFromChildren } from "./utils/common";
 import { useTableOfContentsRegister } from "./services/table-of-contents";
-import PropsTable, { TableHeadCell } from "./docs-table";
+import PropsTable from "./docs-table";
 
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
@@ -68,6 +68,7 @@ export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
     css={css`
       list-style: decimal none outside;
       margin-left: ${({ theme }) => theme.orbit.spaceMedium};
+
       ol,
       ul {
         margin: ${({ theme }) => theme.orbit.spaceSmall};
@@ -108,7 +109,7 @@ export const td = ({ children, align, valign }: React.TdHTMLAttributes<HTMLTable
 );
 
 export const th = ({ children }: React.ThHTMLAttributes<HTMLTableCellElement>) => (
-  <TableHeadCell as="th">{children}</TableHeadCell>
+  <TableCell as="th">{children}</TableCell>
 );
 
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
@@ -116,6 +117,7 @@ export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
     css={css`
       list-style: disc none outside;
       margin-left: ${({ theme }) => theme.orbit.spaceMedium};
+
       ol,
       ul {
         margin: ${({ theme }) => theme.orbit.spaceSmall};

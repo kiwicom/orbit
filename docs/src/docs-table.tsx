@@ -1,17 +1,13 @@
 import React, { ReactElement } from "react";
 import styled, { css } from "styled-components";
 import {
+  Table,
   TableHead,
   TableBody,
   TableRow,
   TableCell,
   mediaQueries as mq,
 } from "@kiwicom/orbit-components";
-import { StyledTable } from "@kiwicom/orbit-components/lib/Table";
-import { StyledTableCell } from "@kiwicom/orbit-components/lib/Table/TableCell";
-import { StyledTableRow } from "@kiwicom/orbit-components/lib/Table/TableRow";
-import { StyledTableBody } from "@kiwicom/orbit-components/lib/Table/TableBody";
-import { StyledTableHead } from "@kiwicom/orbit-components/lib/Table/TableHead";
 
 import { ArrowUp } from "./images/icons/ArrowUp.svg";
 import { ArrowDown } from "./images/icons/ArrowDown.svg";
@@ -41,70 +37,71 @@ const sortingIcon = (sortingStatus: SORTING_ORDER) => {
   }
 };
 
-export const TableHeadCell = styled(StyledTableCell)`
+const TableWrap = styled.div`
   ${({ theme }) => css`
-    background-color: ${theme.orbit.paletteCloudLight};
-    text-align: left;
-  `}
-`;
+    table {
+      td,
+      th {
+        background-color: ${theme.orbit.paletteCloudLight};
+        text-align: left;
+      }
 
-const Table = styled(StyledTable)`
-  ${({ theme }) => css`
-    ${StyledTableHead} {
-      box-shadow: 0 0 0 1px ${theme.orbit.borderColorTable};
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
-      border: none;
-    }
-
-    ${TableHeadCell} {
-      &:first-child {
+      thead {
+        box-shadow: 0 0 0 1px ${theme.orbit.borderColorTable};
         border-top-left-radius: 6px;
-      }
-
-      &:last-child {
         border-top-right-radius: 6px;
+        border: none;
       }
-    }
 
-    ${StyledTableBody} {
-      box-shadow: 0 0 0 1px ${theme.orbit.borderColorTable};
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px;
-      border: none;
-
-      > ${StyledTableRow} {
-        transition: all ease-in-out ${theme.orbit.durationFast};
-
-        &:hover {
-          background-color: ${theme.orbit.paletteWhite};
-
-          ${mq.desktop(css`
-            border-radius: 6px;
-            transform: scale(1.025);
-            box-shadow: 0px 4px 8px 0px #252a311f, 0px 1px 4px 0px #252a3129,
-              0 0 0 1px ${theme.orbit.borderColorTable};
-
-            ${StyledTableCell} {
-              &:first-child {
-                border-radius: 6px 0 0 6px;
-              }
-
-              &:last-child {
-                border-radius: 0 6px 6px 0;
-              }
-            }
-          `)}
+      th {
+        &:first-child {
+          border-top-left-radius: 6px;
         }
 
         &:last-child {
-          ${StyledTableCell} {
-            &:first-child {
-              border-bottom-left-radius: 6px;
-            }
+          border-top-right-radius: 6px;
+        }
+      }
 
-            &:last-child {
-              border-bottom-right-radius: 6px;
+      tbody {
+        box-shadow: 0 0 0 1px ${theme.orbit.borderColorTable};
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border: none;
+
+        > tr {
+          transition: all ease-in-out ${theme.orbit.durationFast};
+
+          &:hover {
+            background-color: ${theme.orbit.paletteWhite};
+
+            ${mq.desktop(css`
+              border-radius: 6px;
+              transform: scale(1.025);
+              box-shadow: 0px 4px 8px 0px #252a311f, 0px 1px 4px 0px #252a3129,
+                0 0 0 1px ${theme.orbit.borderColorTable};
+
+              td {
+                &:first-child {
+                  border-radius: 6px 0 0 6px;
+                }
+
+                &:last-child {
+                  border-radius: 0 6px 6px 0;
+                }
+              }
+            `)}
+          }
+
+          &:last-child {
+            td {
+              &:first-child {
+                border-bottom-left-radius: 6px;
+              }
+
+              &:last-child {
+                border-bottom-right-radius: 6px;
+              }
             }
           }
         }
@@ -121,14 +118,14 @@ const PropsTableHead = ({ tableHeaders, handleSortingChange, sortOrder }) => {
           const isSortable = typeof th === "string" && SORTABLE_COLUMNS.includes(th);
 
           return (
-            <TableHeadCell element="th">
+            <TableCell as="th">
               {th}
               {isSortable ? (
                 <button type="button" onClick={handleSortingChange} style={{ padding: "2px" }}>
                   {sortingIcon(sortOrder)}
                 </button>
               ) : null}
-            </TableHeadCell>
+            </TableCell>
           );
         })}
       </TableRow>
@@ -284,18 +281,28 @@ const PropsTable = ({ children }) => {
 
   const outer = React.useRef<HTMLDivElement>(null);
   const inner = React.useRef<HTMLDivElement>(null);
-  const table = React.useRef<HTMLTableElement>(null);
+  const tableWrap = React.useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
-    if (shadows && inner && table && outer && inner.current && table.current && outer.current) {
+    if (
+      shadows &&
+      inner &&
+      tableWrap &&
+      outer &&
+      inner.current &&
+      tableWrap.current &&
+      outer.current
+    ) {
       setLeft(inner.current.scrollLeft >= 5);
-      setRight(inner.current.scrollLeft + outer.current.clientWidth < table.current.clientWidth);
+      setRight(
+        inner.current.scrollLeft + outer.current.clientWidth < tableWrap.current.clientWidth,
+      );
     }
   };
 
   const handleResize = React.useCallback(() => {
-    if (table && outer && table.current && outer.current) {
-      const showShadows = table.current?.clientWidth > outer.current?.clientWidth;
+    if (tableWrap && outer && tableWrap.current && outer.current) {
+      const showShadows = tableWrap.current?.clientWidth > outer.current?.clientWidth;
       setShadows(showShadows);
       setRight(showShadows);
     }
@@ -319,14 +326,16 @@ const PropsTable = ({ children }) => {
   return (
     <StyledTableOuter ref={outer} showShadows={shadows} showLeft={left} showRight={right}>
       <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
-        <Table ref={table} type="primary">
-          <PropsTableHead
-            tableHeaders={tableHeaders}
-            handleSortingChange={handleSortingChange}
-            sortOrder={sortOrder}
-          />
-          <PropsTableBody tableHeaders={tableHeaders} tableData={tableData} />
-        </Table>
+        <TableWrap ref={tableWrap}>
+          <Table type="primary">
+            <PropsTableHead
+              tableHeaders={tableHeaders}
+              handleSortingChange={handleSortingChange}
+              sortOrder={sortOrder}
+            />
+            <PropsTableBody tableHeaders={tableHeaders} tableData={tableData} />
+          </Table>
+        </TableWrap>
       </StyledTableInner>
     </StyledTableOuter>
   );

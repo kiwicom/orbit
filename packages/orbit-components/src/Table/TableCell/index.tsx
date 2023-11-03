@@ -35,9 +35,9 @@ const TableCell = ({
         "font-base text-normal text-ink-dark box-border",
         verticalAlign != null && verticalAlignStyles[verticalAlign],
         whiteSpace != null && whitespaceStyles[whiteSpace],
-        (align === ALIGN_OPTIONS.START || ALIGN_OPTIONS.LEFT) && "text-start",
+        (align === ALIGN_OPTIONS.START || align === ALIGN_OPTIONS.LEFT) && "text-start",
         align === ALIGN_OPTIONS.CENTER && "text-center",
-        (align === ALIGN_OPTIONS.END || ALIGN_OPTIONS.RIGHT) && "text-end",
+        (align === ALIGN_OPTIONS.END || align === ALIGN_OPTIONS.RIGHT) && "text-end",
       )}
       data-test={dataTest}
       scope={scope}

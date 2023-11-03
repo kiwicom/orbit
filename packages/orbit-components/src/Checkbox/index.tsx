@@ -32,8 +32,21 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         "font-base",
         "flex flex-row",
         "relative w-full",
-        "hover:[&_.orbit-checkbox-icon-container]:shadow-none",
-        disabled ? "cursor-not-allowed" : "cursor-pointer",
+        "[&_.orbit-checkbox-icon-container]:hover:shadow-none",
+        disabled
+          ? "cursor-not-allowed"
+          : [
+              "cursor-pointer",
+              checked &&
+                "[&_.orbit-checkbox-icon-container]:bg-blue-normal [&_.orbit-checkbox-icon-container]:border-blue-normal [&_.orbit-checkbox-icon-container]:hover:bg-blue-dark [&_.orbit-checkbox-icon-container]:hover:border-blue-dark",
+              !checked && "[&_.orbit-checkbox-icon-container]:bg-form-element-background",
+              !checked &&
+                hasError &&
+                "[&_.orbit-checkbox-icon-container]:border-form-element-error",
+              !checked &&
+                !hasError &&
+                "[&_.orbit-checkbox-icon-container]:border-form-element-border-color [&_.orbit-checkbox-icon-container]:hover:border-blue-light-active [&_.orbit-checkbox-icon-container]:active:border-form-element-focus",
+            ],
       )}
     >
       <input
@@ -63,25 +76,14 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "rounded-large de:rounded-normal",
             "duration-fast transition-all ease-in-out",
             "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
-            "[&_>_svg]:w-icon-small [&_>_svg]:h-icon-small [&_>_svg]:invisible peer-checked:[&_>_svg]:visible",
-            "[&_>_svg]:flex [&_>_svg]:items-center [&_>_svg]:justify-center",
+            "[&>svg]:w-icon-small [&>svg]:h-icon-small [&>svg]:invisible peer-checked:[&>svg]:visible",
+            "[&>svg]:flex [&>svg]:items-center [&>svg]:justify-center",
             "active:scale-95",
-            disabled
-              ? [
-                  "border-cloud-dark",
-                  checked && "bg-cloud-dark",
-                  !checked && "bg-form-element-disabled-background",
-                ]
-              : [
-                  checked &&
-                    "bg-blue-normal hover:bg-blue-dark border-blue-normal hover:border-blue-dark",
-                  !checked && [
-                    "bg-form-element-background",
-                    hasError
-                      ? "border-form-element-error"
-                      : " border-form-element-border-color hover:border-blue-light-active active:border-form-element-focus",
-                  ],
-                ],
+            disabled && [
+              "border-cloud-dark",
+              checked && "bg-cloud-dark",
+              !checked && "bg-form-element-disabled-background",
+            ],
           )}
         >
           <Check customColor="white" />

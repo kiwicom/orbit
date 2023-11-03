@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.2.0...@kiwicom/orbit-components@10.3.0) (2023-11-03)
+
+#### Bug Fixes
+
+*   **InputSelect:** make root label block ([9326e59](https://github.com/kiwicom/orbit/commit/9326e59a1e477b986059fd53c7afcea30fae7c4f))
+*   **Loading:** use correct font family class ([7e53285](https://github.com/kiwicom/orbit/commit/7e53285219f1ddafb9e73eb1c996d176529e1068))
+*   **Stack:** flex prop by default false ([e68297b](https://github.com/kiwicom/orbit/commit/e68297bc710e74edb2b40ec81a230e2446d59537))
+
+#### Features
+
+*   **BadgeList:** migrate to Tailwind ([4a28842](https://github.com/kiwicom/orbit/commit/4a288428402ac9518626fc2e4550b090162e2064))
+*   **CarrierLogo:** migrate to Tailwind ([7fa5aff](https://github.com/kiwicom/orbit/commit/7fa5affc84a08db2e4ff148b5476fe3e192a0b94))
+*   **Collapse:** migrate to tailwind ([969ac40](https://github.com/kiwicom/orbit/commit/969ac407b18c3ef2f35a33c3db19b64f2bcc3a42))
+*   **LinkList:** migrate to tailwind ([84be8c2](https://github.com/kiwicom/orbit/commit/84be8c2c3d9e7a7473d0074f6e8c87cc4aae4030))
+*   **ListChoice:** migrate to Tailwind ([bf449fa](https://github.com/kiwicom/orbit/commit/bf449fab534721cdb7fe9f06a065b514f172fe1f))
+*   **Modal:** migrate to Tailwind ([4dcd634](https://github.com/kiwicom/orbit/commit/4dcd63459926ef0d4aff1fc6ee959f3641434ca8))
+*   **NotificationBadge:** migrate to Tailwind ([2f2344d](https://github.com/kiwicom/orbit/commit/2f2344da4e14813f14fce351fcc22d2c23037178))
+*   **Stepper:** migrate to Tailwind ([e305def](https://github.com/kiwicom/orbit/commit/e305defd606a0b8afeac16725e173a9a8d9d0cf2))
+*   **TileGroup:** migrate to Tailwind ([368bc76](https://github.com/kiwicom/orbit/commit/368bc7629b54514751d3d608709d6aea7e7af3f0))
+*   **Tile:** migrate TileContent to Tailwind ([9e8914b](https://github.com/kiwicom/orbit/commit/9e8914bb13e4ed5bac4cf662dbf54a09369de12f))
+*   **Tile:** migrate TileHeader to Tailwind ([31151ff](https://github.com/kiwicom/orbit/commit/31151fff0075a5c4cd1d8341fa5c2baaa0692080))
+*   **Tile:** migrate TileWrapper to Tailwind ([bf14d59](https://github.com/kiwicom/orbit/commit/bf14d59a4fc525fe31f3f2653fe3b48daf78de31))
+
 ## [10.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.1.0...@kiwicom/orbit-components@10.2.0) (2023-10-20)
 
 #### Bug Fixes

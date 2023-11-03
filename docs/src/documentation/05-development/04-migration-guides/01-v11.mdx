@@ -1,0 +1,56 @@
+---
+title: v11
+description: How to migrate to Orbit 11.0.0
+redirect_from:
+  - /migration-guides/v11/
+---
+
+# Orbit Migration Guide v11
+
+This migration guide focuses on the process of migrating from Orbit v10.3.0 to v11.0, as some breaking changes were introduced.
+The best part is, migrating to v11 is incredibly simple!
+We've streamlined the process to ensure a smooth transition, making it easier than ever to benefit from the latest enhancements.
+
+## Breaking changes
+
+### Select has no longer `readOnly` property
+
+The `readOnly` property was passed directly to the native HTML select element as an
+attribute, which is not supported:
+
+> The attribute is not supported or relevant to select or input types that are already not mutable, such as checkbox and radio. [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly))
+
+### Textarea has no longer `size` property
+
+The `size` property has been removed from the `Textarea` component to align it with other input
+components that have also had the `size` property removed.
+
+### Separator updates
+
+#### `color` property now accept Tailwind color class
+
+The `color` property of `Separator` component now accepts only Tailwind color classes, e.g. **color="border-blue-normal"**, **color="border-product-normal"**, etc.
+Before it was accepting string values in form of Orbit palette tokens, e.g. **color="paletteProductNormal"**.
+
+```jsx
+// before
+<Separator color="paletteProductNormal" type="solid" />
+// after
+<Separator color="border-product-normal" />
+```
+
+#### `indent` property renamed to `sideOffset`
+
+The `indent` property of `Separator` component was renamed to `sideOffset` to better reflect its behaviour.
+
+```jsx
+// before
+<Separator indent="large" align="left" />
+// after
+<Separator sideOffset="large" align="left" />
+```
+
+#### `type` property is now set to "solid" by default
+
+Previously, you had to explicitly set the `type` property to "solid" to use a custom color for the Separator.
+Now, it's no longer required as the `type` property defaults to "solid".

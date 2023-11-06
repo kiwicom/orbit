@@ -1,109 +1,11 @@
 "use client";
 
 import React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import { useTabs, useTab } from "../../TabContext";
 import type { Props } from "./types";
 import { TYPE_OPTIONS } from "./consts";
-import defaultTheme from "../../../defaultTheme";
-
-const getBundleColor = ({ type, theme }) => {
-  if (type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackground;
-  if (type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackground;
-
-  return theme.orbit.tabBundleTopBackground;
-};
-
-const getBackgroundType =
-  (state?: "hover" | "active") =>
-  ({ theme, $type }: { theme: typeof defaultTheme; $type: Props["type"] }) => {
-    if (state === "hover") {
-      if ($type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackgroundHover;
-      if ($type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackgroundHover;
-      return theme.orbit.paletteWhiteHover;
-    }
-
-    if (state === "active") {
-      if ($type === TYPE_OPTIONS.MEDIUM) return theme.orbit.tabBundleMediumBackgroundActive;
-      if ($type === TYPE_OPTIONS.BASIC) return theme.orbit.tabBundleBasicBackgroundActive;
-
-      return theme.orbit.paletteWhiteActive;
-    }
-
-    return "none";
-  };
-
-const StyledTab = styled.button<{
-  $type: Props["type"];
-  active?: Props["active"];
-  compact: boolean;
-}>`
-  ${({ theme, active, $type, compact, disabled }) => css`
-    display: flex;
-    border: 0;
-    flex: 1;
-    min-width: fit-content;
-    position: relative;
-    appearance: none;
-    flex-direction: row;
-    justify-content: space-between;
-    box-sizing: border-box;
-    align-items: center;
-    font-family: ${theme.orbit.fontFamily};
-    cursor: ${!disabled && "pointer"};
-    opacity: ${disabled && "0.5"};
-    padding: ${compact ? "5px 16px" : "9px 16px"};
-    background: ${getBackgroundType()};
-    font-weight: ${theme.orbit.fontWeightMedium};
-    line-height: ${compact ? theme.orbit.lineHeightTextNormal : theme.orbit.lineHeightTextLarge};
-    font-size: ${compact ? theme.orbit.fontSizeTextNormal : theme.orbit.fontSizeTextLarge};
-    border-radius: ${theme.orbit.borderRadiusNormal} ${theme.orbit.borderRadiusNormal} 0 0;
-    transition: background ${theme.orbit.durationFast} ease-in-out;
-    border-bottom-width: 2px;
-    border-style: solid;
-    border-image-slice: 1;
-    border-image-source: ${!disabled &&
-    active &&
-    $type !== TYPE_OPTIONS.DEFAULT &&
-    getBundleColor({ type: $type, theme })};
-    border-bottom-color: ${!disabled && active && $type === TYPE_OPTIONS.DEFAULT
-      ? `${theme.orbit.paletteProductNormal}`
-      : "transparent"};
-
-    &:hover {
-      background: ${!disabled && getBackgroundType("hover")};
-    }
-
-    &:focus,
-    &:active {
-      background: ${!disabled && getBackgroundType("active")};
-    }
-  `};
-`;
-
-StyledTab.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledTabText = styled.span<{ type: Props["type"] }>`
-  ${({ theme, type }) => css`
-    color: ${theme.orbit.paletteInkDark};
-    width: 100%;
-
-    ${type !== TYPE_OPTIONS.DEFAULT &&
-    css`
-      background: ${getBundleColor};
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    `};
-  `};
-`;
-
-StyledTabText.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Tab = ({
   children,
@@ -123,8 +25,44 @@ const Tab = ({
   }, [onChange, selected, setSelected]);
 
   return (
-    <StyledTab
+    <button
       data-test={dataTest}
+      className={cx(
+        "flex flex-1 flex-row items-center justify-between",
+        "appearance-none flex-row border-0",
+        "min-w-fit",
+        "relative box-border",
+        "font-base font-medium",
+        "rounded-t-normal",
+        "duration-fast transition-colors ease-in-out",
+        "px-md",
+        compact ? "text-normal py-[5px] leading-normal" : "text-large leading-large py-[9px]",
+        disabled && "cursor-not-allowed opacity-50",
+        !disabled && [
+          "cursor-pointer",
+          !isSelected && "border-0",
+          isSelected && type === TYPE_OPTIONS.DEFAULT && "border-product-normal border-b-2",
+          isSelected &&
+            type !== TYPE_OPTIONS.DEFAULT &&
+            type === TYPE_OPTIONS.BASIC &&
+            "border-b-2 [border-image-slice:1] [border-image-source:theme(backgroundImage.tab-bundle-basic-foreground)]",
+          isSelected &&
+            type !== TYPE_OPTIONS.DEFAULT &&
+            type === TYPE_OPTIONS.MEDIUM &&
+            "border-b-2 [border-image-slice:1] [border-image-source:theme(backgroundImage.tab-bundle-medium-foreground)]",
+          isSelected &&
+            type !== TYPE_OPTIONS.DEFAULT &&
+            type === TYPE_OPTIONS.TOP &&
+            "border-b-2 [border-image-slice:1] [border-image-source:theme(backgroundImage.tab-bundle-top-foreground)]",
+        ],
+        type === TYPE_OPTIONS.DEFAULT && "bg-white-normal hover:bg-white-normal-hover ",
+        type === TYPE_OPTIONS.BASIC &&
+          "bg-tab-bundle-basic-background hover:bg-tab-bundle-basic-background-hover active:bg-tab-bundle-basic-background-active",
+        type === TYPE_OPTIONS.MEDIUM &&
+          "bg-tab-bundle-medium-background hover:bg-tab-bundle-medium-background-hover active:bg-tab-bundle-medium-background-active",
+        type === TYPE_OPTIONS.TOP &&
+          "bg-tab-bundle-top-background hover:bg-tab-bundle-top-background-hover",
+      )}
       onClick={ev => {
         if (onClick) {
           onClick(ev);
@@ -132,16 +70,25 @@ const Tab = ({
       }}
       type="button"
       disabled={disabled}
-      $type={type}
       role="tab"
       aria-selected={isSelected}
       aria-disabled={disabled}
       aria-controls={`panel-${index}`}
-      compact={compact}
-      active={isSelected}
     >
-      <StyledTabText type={type}>{children}</StyledTabText>
-    </StyledTab>
+      <span
+        className={cx(
+          "text-ink-dark w-full",
+          type !== TYPE_OPTIONS.DEFAULT && [
+            "bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]",
+            type === TYPE_OPTIONS.BASIC && "bg-tab-bundle-basic-foreground",
+            type === TYPE_OPTIONS.MEDIUM && "bg-tab-bundle-medium-foreground",
+            type === TYPE_OPTIONS.TOP && "bg-tab-bundle-top-foreground",
+          ],
+        )}
+      >
+        {children}
+      </span>
+    </button>
   );
 };
 

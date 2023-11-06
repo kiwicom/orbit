@@ -20,6 +20,7 @@ const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "formElement",
   "badge",
   "tag",
+  "tab",
   "textLink",
   "text",
   "loading",
@@ -36,6 +37,8 @@ const getForegroundColors = (tokens: typeof defaultTokens) => {
   const componentTokens = getComponentLevelTokens(tokens);
 
   return COLORS.reduce((acc, name) => {
+    if (name === "tab") return acc;
+
     return {
       ...acc,
       ...componentTokens(name, "foreground"),
@@ -215,6 +218,7 @@ const cfg = (options?: Options): Config => {
           "form-element-error-hover": tokens.formElementBorderColorErrorHover,
         },
         backgroundImage: {
+          // TODO: remove component prefix and left only bundle-*
           "button-bundle-basic-background": tokens.buttonBundleBasicBackground,
           "button-bundle-basic-background-hover": tokens.buttonBundleBasicBackgroundHover,
           "button-bundle-basic-background-active": tokens.buttonBundleBasicBackgroundActive,
@@ -229,6 +233,9 @@ const cfg = (options?: Options): Config => {
           "badge-bundle-top-background": tokens.badgeBundleTopBackground,
           "table-shadow-right": tokens.backgroundTableShadowRight,
           "table-shadow-left": tokens.backgroundTableShadowLeft,
+          "tab-bundle-basic-foreground": tokens.tabBundleBasicForeground,
+          "tab-bundle-medium-foreground": tokens.tabBundleMediumForeground,
+          "tab-bundle-top-foreground": tokens.tabBundleTopForeground,
         },
         boxShadow: {
           "button-focus": tokens.boxShadowButtonFocus,

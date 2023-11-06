@@ -12,6 +12,7 @@ export type ExportedComponentLevelTokens =
   | "icon"
   | "drawer"
   | "tag"
+  | "tab"
   | "loading"
   | "textLink"
   | "text"

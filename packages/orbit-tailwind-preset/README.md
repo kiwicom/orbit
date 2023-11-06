@@ -16,7 +16,7 @@ npm install --save-dev @kiwicom/orbit-tailwind-preset
 
 The default exported preset (`orbitComponentsPreset`) includes all of the Orbit's foundation styles (typography, colors, spacing, etc…) and all the needed configuration for component-specific classes used internally.
 
-The `orbitComponentsPreset` function accepts an optional object with one property, `disablePreflight`, which is `false` by default. When set to `true`, it disables the normalization of the browser's default styles. We recommend leaving it enabled, as it avoids the need to reset the browser's default styles manually. The normalization is done by the [Tailwind CSS Preflight](https://tailwindcss.com/docs/preflight) plugin.
+The `orbitComponentsPreset` function accepts an optional object with one property, `disablePreflight`, which is `false` by default. When set to `true`, it disables the normalization of the browser's default styles. We recommend leaving it enabled, as it avoids the need to reset the browser's default styles manually. Please note that disabling it can also cause unexpected visual regressions, so disable it at your own risk. The normalization is done by the [Tailwind CSS Preflight](https://tailwindcss.com/docs/preflight) plugin.
 
 ## Configuration
 

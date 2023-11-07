@@ -667,13 +667,17 @@ export interface Tokens {
   socialButtonTwitterForegroundActive: string;
   socialButtonTwitterBorderColorFocus: string;
   socialButtonTwitterIconForeground: string;
+  tabBundleBasicForeground: string;
   tabBundleBasicBackground: string;
   tabBundleBasicBackgroundHover: string;
   tabBundleBasicBackgroundActive: string;
+  tabBundleMediumForeground: string;
   tabBundleMediumBackground: string;
   tabBundleMediumBackgroundHover: string;
   tabBundleMediumBackgroundActive: string;
   tabBundleTopBackground: string;
+  tabBundleTopBackgroundHover: string;
+  tabBundleTopForeground: string;
   tagColoredBackground: string;
   tagColoredBackgroundHover: string;
   tagColoredBackgroundActive: string;
@@ -1590,13 +1594,17 @@ const createTokens: CreateTokens = foundation => ({
   socialButtonTwitterForegroundActive: foundation.palette.ink.normal,
   socialButtonTwitterBorderColorFocus: transparentColor(foundation.palette.ink.light, 50),
   socialButtonTwitterIconForeground: "#00ACEE",
-  tabBundleBasicBackground: "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)",
+  tabBundleBasicForeground: "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)",
+  tabBundleBasicBackground: foundation.palette.white.normal,
   tabBundleBasicBackgroundHover: "rgba(215, 51, 28, 0.08)",
   tabBundleBasicBackgroundActive: "rgba(215, 51, 28, 0.12)",
-  tabBundleMediumBackground: "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)",
+  tabBundleMediumForeground: "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)",
+  tabBundleMediumBackground: foundation.palette.white.normal,
   tabBundleMediumBackgroundHover: "rgba(59, 30, 176, 0.08)",
   tabBundleMediumBackgroundActive: "rgba(59, 30, 176, 0.12)",
-  tabBundleTopBackground: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
+  tabBundleTopBackground: foundation.palette.white.normal,
+  tabBundleTopBackgroundHover: foundation.palette.white.normalHover,
+  tabBundleTopForeground: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
   tagColoredBackground: foundation.palette.blue.light,
   tagColoredBackgroundHover: foundation.palette.blue.lightHover,
   tagColoredBackgroundActive: foundation.palette.blue.lightActive,

@@ -15057,6 +15057,29 @@
       "value": "rgb(0, 172, 238)"
     }
   },
+  "tabBundleBasicForeground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "tab",
+      "variant": "bundle-basic",
+      "subVariant": "foreground"
+    },
+    "javascript": {
+      "name": "tabBundleBasicForeground",
+      "value": "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)"
+    },
+    "foundation": {
+      "name": "tabBundleBasicForeground",
+      "value": "none"
+    },
+    "scss": {
+      "name": "tabBundleBasicForeground",
+      "value": "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)"
+    }
+  },
   "tabBundleBasicBackground": {
     "type": "color",
     "deprecated": false,
@@ -15069,15 +15092,15 @@
     },
     "javascript": {
       "name": "tabBundleBasicBackground",
-      "value": "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)"
+      "value": "#FFFFFF"
     },
     "foundation": {
       "name": "tabBundleBasicBackground",
-      "value": "none"
+      "value": "foundation.palette.white.normal"
     },
     "scss": {
       "name": "tabBundleBasicBackground",
-      "value": "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)"
+      "value": "rgb(255, 255, 255)"
     }
   },
   "tabBundleBasicBackgroundHover": {
@@ -15126,6 +15149,29 @@
       "value": "rgba(215, 51, 28, 0.12)"
     }
   },
+  "tabBundleMediumForeground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "tab",
+      "variant": "bundle-medium",
+      "subVariant": "foreground"
+    },
+    "javascript": {
+      "name": "tabBundleMediumForeground",
+      "value": "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)"
+    },
+    "foundation": {
+      "name": "tabBundleMediumForeground",
+      "value": "none"
+    },
+    "scss": {
+      "name": "tabBundleMediumForeground",
+      "value": "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)"
+    }
+  },
   "tabBundleMediumBackground": {
     "type": "color",
     "deprecated": false,
@@ -15138,15 +15184,15 @@
     },
     "javascript": {
       "name": "tabBundleMediumBackground",
-      "value": "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)"
+      "value": "#FFFFFF"
     },
     "foundation": {
       "name": "tabBundleMediumBackground",
-      "value": "none"
+      "value": "foundation.palette.white.normal"
     },
     "scss": {
       "name": "tabBundleMediumBackground",
-      "value": "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)"
+      "value": "rgb(255, 255, 255)"
     }
   },
   "tabBundleMediumBackgroundHover": {
@@ -15207,14 +15253,60 @@
     },
     "javascript": {
       "name": "tabBundleTopBackground",
-      "value": "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)"
+      "value": "#FFFFFF"
     },
     "foundation": {
       "name": "tabBundleTopBackground",
-      "value": "none"
+      "value": "foundation.palette.white.normal"
     },
     "scss": {
       "name": "tabBundleTopBackground",
+      "value": "rgb(255, 255, 255)"
+    }
+  },
+  "tabBundleTopBackgroundHover": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "tab",
+      "variant": "bundle-top",
+      "subVariant": "background-hover"
+    },
+    "javascript": {
+      "name": "tabBundleTopBackgroundHover",
+      "value": "#F1F4F7"
+    },
+    "foundation": {
+      "name": "tabBundleTopBackgroundHover",
+      "value": "foundation.palette.white.normalHover"
+    },
+    "scss": {
+      "name": "tabBundleTopBackgroundHover",
+      "value": "rgb(241, 244, 247)"
+    }
+  },
+  "tabBundleTopForeground": {
+    "type": "color",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "tab",
+      "variant": "bundle-top",
+      "subVariant": "foreground"
+    },
+    "javascript": {
+      "name": "tabBundleTopForeground",
+      "value": "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)"
+    },
+    "foundation": {
+      "name": "tabBundleTopForeground",
+      "value": "none"
+    },
+    "scss": {
+      "name": "tabBundleTopForeground",
       "value": "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)"
     }
   },

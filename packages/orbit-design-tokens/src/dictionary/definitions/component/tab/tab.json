@@ -2,9 +2,13 @@
   "component": {
     "tab": {
       "bundle-basic": {
-        "background": {
+        "foreground": {
           "type": "color",
           "value": "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)"
+        },
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
         },
         "background-hover": {
           "type": "color",
@@ -16,9 +20,13 @@
         }
       },
       "bundle-medium": {
-        "background": {
+        "foreground": {
           "type": "color",
           "value": "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)"
+        },
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
         },
         "background-hover": {
           "type": "color",
@@ -31,6 +39,14 @@
       },
       "bundle-top": {
         "background": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.white.normal-hover}"
+        },
+        "foreground": {
           "type": "color",
           "value": "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)"
         }

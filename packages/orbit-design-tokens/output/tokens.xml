@@ -2612,8 +2612,12 @@
     <value>#00ACEE</value>
   </token>
   <token>
-    <name>tabBundleBasicBackground</name>
+    <name>tabBundleBasicForeground</name>
     <value>linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)</value>
+  </token>
+  <token>
+    <name>tabBundleBasicBackground</name>
+    <value>#FFFFFF</value>
   </token>
   <token>
     <name>tabBundleBasicBackgroundHover</name>
@@ -2624,8 +2628,12 @@
     <value>rgba(215, 51, 28, 0.12)</value>
   </token>
   <token>
-    <name>tabBundleMediumBackground</name>
+    <name>tabBundleMediumForeground</name>
     <value>linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)</value>
+  </token>
+  <token>
+    <name>tabBundleMediumBackground</name>
+    <value>#FFFFFF</value>
   </token>
   <token>
     <name>tabBundleMediumBackgroundHover</name>
@@ -2637,6 +2645,14 @@
   </token>
   <token>
     <name>tabBundleTopBackground</name>
+    <value>#FFFFFF</value>
+  </token>
+  <token>
+    <name>tabBundleTopBackgroundHover</name>
+    <value>#F1F4F7</value>
+  </token>
+  <token>
+    <name>tabBundleTopForeground</name>
     <value>linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)</value>
   </token>
   <token>

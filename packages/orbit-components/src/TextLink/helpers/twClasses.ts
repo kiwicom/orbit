@@ -2,10 +2,10 @@ import { SIZE_OPTIONS, TYPE_OPTIONS } from "../consts";
 import type { Type as ALERT_TYPE } from "../../Alert/types";
 
 export const sizeClasses: Record<SIZE_OPTIONS, string> = {
-  [SIZE_OPTIONS.SMALL]: "text-small",
-  [SIZE_OPTIONS.NORMAL]: "text-normal",
-  [SIZE_OPTIONS.LARGE]: "text-large",
-  [SIZE_OPTIONS.EXTRA_LARGE]: "text-extra-large",
+  [SIZE_OPTIONS.SMALL]: "text-small leading-small",
+  [SIZE_OPTIONS.NORMAL]: "text-normal leading-normal",
+  [SIZE_OPTIONS.LARGE]: "text-large leading-large",
+  [SIZE_OPTIONS.EXTRA_LARGE]: "text-extra-large leading-extra-large",
 };
 
 export const typeClasses: Record<TYPE_OPTIONS, string> = {

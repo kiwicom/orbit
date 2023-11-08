@@ -46,7 +46,7 @@ export default function Card({
     <div
       id={id}
       className={cx(
-        "font-base bg-white-normal [&>*]:border-elevation-flat-border-color [&>*:first-child]:rounded-t-normal [&>*:last-child]:rounded-b-normal [&>*:first-child]:border-t",
+        "font-base bg-white-normal [&>*]:border-elevation-flat-border-color [&>*:first-child]:rounded-t-normal [&>*:last-child]:rounded-b-normal w-full [&>*:first-child]:border-t",
         spaceAfter != null && spaceAfterClasses[spaceAfter],
       )}
       data-test={dataTest}

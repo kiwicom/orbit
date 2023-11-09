@@ -1,5 +1,4 @@
 // @flow
-import type { StyledComponent } from "styled-components";
 import * as React from "react";
 
 import type { Globals } from "../../common/common.js.flow";
@@ -10,5 +9,3 @@ export type Props = {|
 |};
 
 declare export default React.ComponentType<Props>;
-
-declare export var StyledFormFeedback: StyledComponent<any, any, HTMLElement>;

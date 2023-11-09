@@ -20,7 +20,7 @@ Card: true
 CardSection: true
 CarrierLogo: true
 Checkbox: true
-ChoiceGroup: false
+ChoiceGroup: true
 Collapse: true
 Coupon: false
 CountryFlag: true

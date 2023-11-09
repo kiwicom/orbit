@@ -1,10 +1,7 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../../defaultTheme";
 import ButtonLink from "../../ButtonLink";
-
-const StyledOnlyButton = styled.div``;
 
 interface Props {
   readonly child: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
@@ -16,67 +13,28 @@ interface Props {
   ) => void | Promise<void>;
 }
 
-const hoverAndFocus = () => css`
-  background-color: ${({ theme }) => theme.orbit.paletteBlueLight};
-
-  ${StyledOnlyButton} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-const StyledContentWrapper = styled.div<{ disabled: boolean }>`
-  ${({ disabled }) => css`
-    box-sizing: border-box;
-    width: 100%;
-    padding-left: 4px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    height: ${({ theme }) => theme.orbit.heightButtonSmall};
-
-    ${StyledOnlyButton} {
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    ${!disabled &&
-    css`
-      @media (hover: none) {
-        ${StyledOnlyButton} {
-          visibility: visible;
-          opacity: 0.3;
-          &:hover {
-            opacity: 1;
-          }
-        }
-      }
-
-      @media (hover) and (pointer: fine) {
-        &:hover {
-          ${hoverAndFocus};
-        }
-
-        &:focus-within {
-          ${hoverAndFocus}
-        }
-      }
-    `};
-  `}
-`;
-
-StyledContentWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
 const FilterWrapper = ({ child, children, onOnlySelection, onlySelectionText }: Props) => {
   const { value, label, disabled } = child.props;
 
   return (
-    <StyledContentWrapper disabled={disabled}>
+    <div
+      className={cx(
+        "h-form-box-small pl-xxs box-border flex w-full items-center rounded-[4px]",
+        !disabled &&
+          "hover:[@media(hover)_and_(pointer:fine)]:bg-blue-light focus-within:[@media(hover)_and_(pointer:fine)]:bg-blue-light group",
+      )}
+    >
       {children}
       {onOnlySelection && !disabled && (
-        <StyledOnlyButton>
+        <div
+          className={cx(
+            "orbit-choice-group-filter-wrapper",
+            "[@media(hover)_and_(pointer:fine)]:invisible [@media(hover)_and_(pointer:fine)]:opacity-0",
+            "[@media(hover:none)]:visible [@media(hover:none)]:opacity-30 hover:[@media(hover:none)]:opacity-100",
+            "group-hover:[@media(hover)_and_(pointer:fine)]:visible group-hover:[@media(hover)_and_(pointer:fine)]:opacity-100",
+            "group-focus-within:[@media(hover)_and_(pointer:fine)]:visible group-focus-within:[@media(hover)_and_(pointer:fine)]:opacity-100",
+          )}
+        >
           <ButtonLink
             type="secondary"
             size="small"
@@ -86,9 +44,9 @@ const FilterWrapper = ({ child, children, onOnlySelection, onlySelectionText }: 
           >
             {onlySelectionText}
           </ButtonLink>
-        </StyledOnlyButton>
+        </div>
       )}
-    </StyledContentWrapper>
+    </div>
   );
 };
 

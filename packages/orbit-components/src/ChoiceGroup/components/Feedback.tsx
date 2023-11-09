@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import defaultTheme from "../../defaultTheme";
 
@@ -8,44 +8,30 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const StyledFormFeedback = styled(props => <div {...props} />)`
-  ${({ theme }) => css`
-    color: ${theme.orbit.colorTextError};
-    font-family: ${theme.orbit.fontFamily};
-    font-size: ${theme.orbit.fontSizeFormFeedback};
-    font-weight: ${theme.orbit.fontWeightMedium};
-    line-height: ${theme.orbit.lineHeightTextSmall};
-    width: 100%;
-    margin-top: 2px;
-    position: absolute;
-    top: 100%;
-    max-height: ${Math.floor(
-      theme.orbit.lineHeightText * parseInt(theme.orbit.fontSizeFormFeedback, 10),
-    )}px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    & a {
-      color: ${theme.orbit.colorTextError};
-      font-weight: ${theme.orbit.fontWeightMedium};
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    strong,
-    b {
-      font-weight: ${theme.fontWeightMedium};
-      color: ${theme.paletteInkDark};
-    }
-  `}
-`;
-
-StyledFormFeedback.defaultProps = {
-  theme: defaultTheme,
-};
-
 const FormFeedback = (props: Props) => {
   const { children, dataTest } = props;
-  return <StyledFormFeedback data-test={dataTest}>{children}</StyledFormFeedback>;
+  return (
+    <div
+      className={cx(
+        "orbit-choice-group-feedback",
+        "text-critical-foreground font-base leading-small text-small font-medium",
+        "mt-xxxs relative top-full max-h-[--max-height] w-full overflow-hidden overflow-ellipsis whitespace-nowrap",
+        "[&_a]:cursor-pointer [&_a]:underline",
+        "[&_strong]:text-ink-dark [&_b]:text-ink-dark [&_b]:font-medium [&_strong]:font-medium",
+      )}
+      style={
+        {
+          "--max-height": Math.floor(
+            parseFloat(defaultTheme.orbit.lineHeightText) *
+              parseInt(defaultTheme.orbit.fontSizeFormFeedback, 10),
+          ),
+        } as React.CSSProperties
+      }
+      data-test={dataTest}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default FormFeedback;

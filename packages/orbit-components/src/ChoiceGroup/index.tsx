@@ -1,14 +1,13 @@
 "use client";
 
 import * as React from "react";
-import styled from "styled-components";
+import cx from "clsx";
 
 import Heading from "../Heading";
 import type { Type } from "../Heading/types";
 import Stack from "../Stack";
 import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
-import Feedback, { StyledFormFeedback } from "./components/Feedback";
-import defaultTheme from "../defaultTheme";
+import Feedback from "./components/Feedback";
 import FilterWrapper from "./components/FilterWrapper";
 import useRandomId from "../hooks/useRandomId";
 import useTheme from "../hooks/useTheme";
@@ -21,22 +20,6 @@ const getHeadingSize = (size: Size): Type => {
   };
 
   return SIZES[size];
-};
-
-const StyledChoiceGroup = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  ${StyledFormFeedback} {
-    position: relative;
-    margin-top: ${({ theme }) => theme.orbit.spaceXSmall};
-    top: initial;
-  }
-`;
-
-StyledChoiceGroup.defaultProps = {
-  theme: defaultTheme,
 };
 
 const ItemContainer =
@@ -87,12 +70,16 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
     };
 
     return (
-      <StyledChoiceGroup
+      <div
         ref={ref}
         data-test={dataTest}
         role="group"
         aria-labelledby={groupID}
         id={id}
+        className={cx(
+          "flex w-full flex-col",
+          "[&_.orbit-choice-group-feedback]:mt-xs [&_.orbit-choice-group-feedback]:relative [&_.orbit-choice-group-feedback]:top-[initial]",
+        )}
       >
         {label && (
           <Heading id={groupID} type={getHeadingSize(labelSize)} as={labelAs} spaceAfter="medium">
@@ -128,7 +115,7 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
           </Stack>
         )}
         {error && <Feedback>{error}</Feedback>}
-      </StyledChoiceGroup>
+      </div>
     );
   },
 );

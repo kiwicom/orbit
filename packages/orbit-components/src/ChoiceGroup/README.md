@@ -77,7 +77,7 @@ For more realistic usage you can check out the "Render prop" example in Storyboo
 
 ## Functional specs
 
-- onChange props in `<Radio />` or `<Checkbox />` will be overrode by internal onChange function
+- onChange props in `<Radio />` or `<Checkbox />` will be overridden by internal onChange function
 - If you want to handle selecting field, pass `onChange` to `<ChoiceGroup />` and it will be always triggered when `<Radio />` or `<Checkbox />` should change
 - `onChange` will return `SyntheticEvent` of field that should change
 

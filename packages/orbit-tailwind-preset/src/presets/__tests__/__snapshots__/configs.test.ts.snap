@@ -810,11 +810,11 @@ exports[`orbitPreset should match snapshot 1`] = `
       "gradient-to-tl": "linear-gradient(to top left, var(--tw-gradient-stops))",
       "gradient-to-tr": "linear-gradient(to top right, var(--tw-gradient-stops))",
       "none": "none",
-      "table-shadow-left": "linear-gradient(to left, transparent, rgba(186, 199, 213, 23))",
-      "table-shadow-right": "linear-gradient(to right, transparent, rgba(186, 199, 213, 23))",
       "tab-bundle-basic-foreground": "linear-gradient(80.91deg, #E13E3B 0%, #E87E09 100%)",
       "tab-bundle-medium-foreground": "linear-gradient(80.91deg, #3719AB  0%, #8539DB 100%)",
       "tab-bundle-top-foreground": "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
+      "table-shadow-left": "linear-gradient(to left, transparent, rgba(186, 199, 213, 23))",
+      "table-shadow-right": "linear-gradient(to right, transparent, rgba(186, 199, 213, 23))",
     },
     "backgroundOpacity": {
       "0": "0",

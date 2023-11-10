@@ -1,32 +1,23 @@
 "use client";
 
 import * as React from "react";
-import styled from "styled-components";
+import cx from "clsx";
 
 import type { Props } from "./types";
 
-const StyledTruncate = styled.div<{ maxWidth?: string }>`
-  ${({ maxWidth }) => `
-    min-width: 0;
-    flex: 0 1 ${maxWidth === "none" ? "100%" : maxWidth};
-    max-width: ${maxWidth};
-  `};
-`;
-
-const StyledTruncateContent = styled.div`
-  &,
-  .orbit-text,
-  .orbit-heading {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-`;
-
 const Truncate = ({ children, maxWidth = "100%", dataTest }: Props) => (
-  <StyledTruncate maxWidth={maxWidth} data-test={dataTest}>
-    <StyledTruncateContent>{children}</StyledTruncateContent>
-  </StyledTruncate>
+  <div
+    data-test={dataTest}
+    className={cx(
+      "min-w-0 max-w-[--truncate-max-width] shrink grow-0",
+      maxWidth === "none" ? "basis-full" : "basis-[--truncate-max-width]",
+    )}
+    style={{ "--truncate-max-width": maxWidth } as React.CSSProperties}
+  >
+    <div className={cx("truncate [&_.orbit-heading]:truncate [&_.orbit-text]:truncate")}>
+      {children}
+    </div>
+  </div>
 );
 
 export default Truncate;

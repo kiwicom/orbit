@@ -65,7 +65,7 @@ export default function CardSection({
       tabIndex={onClick == null ? undefined : 0}
       onClick={onClick}
       // Not needed once we can use <button> or <a> like we should
-      onKeyDown={handleKeyDown(onClick)}
+      onKeyDown={onClick == null ? undefined : handleKeyDown(onClick)}
     >
       {(title != null || header != null) && expandable && (
         <button

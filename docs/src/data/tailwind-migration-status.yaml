@@ -107,6 +107,6 @@ TimelineStep: false
 Toast: true
 ToastRoot: false
 Tooltip: true
-Truncate: false
+Truncate: true
 Wizard: false
 WizardStep: false

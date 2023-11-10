@@ -135,22 +135,46 @@ This part of testing is often abandoned by people, but we are aware of how impor
 
 <!-- AUTO-GENERATED-CONTENT:START (SUPPORTED_BROWSERS) -->
 
-- Chrome for Android 105
-- Chrome 104
-- Chrome 103
-- Edge 104
-- Edge 103
-- Firefox 103
+- Chrome for Android 114
+- Chrome 114
+- Chrome 113
+- Chrome 112
+- Chrome 111
+- Chrome 109
+- Edge 114
+- Edge 113
+- Edge 112
+- Firefox 114
+- Firefox 113
+- Safari on iOS 16.5
+- Safari on iOS 16.4
+- Safari on iOS 16.3
+- Safari on iOS 16.2
+- Safari on iOS 16.1
+- Safari on iOS 16.0
 - Safari on iOS 15.6
 - Safari on iOS 15.5
 - Safari on iOS 15.4
+- Safari on iOS 15.2-15.3
+- Safari on iOS 15.0-15.1
 - Safari on iOS 14.5-14.8
 - Safari on iOS 14.0-14.4
-- Safari on iOS 12.2-12.5
-- Opera 89
+- Opera 99
+- Opera 98
+- Safari 16.5
+- Safari 16.4
+- Safari 16.3
+- Safari 16.2
+- Safari 16.1
+- Safari 16.0
 - Safari 15.6
 - Safari 15.5
-- Samsung Internet 18.0
-- Samsung Internet 17.0
+- Safari 15.4
+- Safari 15.2-15.3
+- Safari 15.1
+- Safari 15
+- Safari 14.1
+- Safari 14
+- Samsung Internet 21
 
 <!-- AUTO-GENERATED-CONTENT:END -->

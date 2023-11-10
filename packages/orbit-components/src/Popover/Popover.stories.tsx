@@ -34,22 +34,22 @@ const ScrollWrapper = styled.div`
 `;
 
 const selects = (
-  <>
-    <Stack align="center">
-      <Stack spacing="none">
+  <Stack direction="column">
+    <Stack flex shrink align="center" justify="between">
+      <Stack inline direction="column" spacing="none">
         <Text>Adult</Text>
         <Text type="secondary">11+</Text>
       </Stack>
       <Stepper minValue={0} />
     </Stack>
-    <Stack align="center">
-      <Stack spacing="none">
+    <Stack flex shrink align="center" justify="between">
+      <Stack inline direction="column" spacing="none">
         <Text>Child</Text>
         <Text type="secondary">2-11</Text>
       </Stack>
       <Stepper minValue={0} />
     </Stack>
-  </>
+  </Stack>
 );
 
 const content = <Stack>{selects}</Stack>;

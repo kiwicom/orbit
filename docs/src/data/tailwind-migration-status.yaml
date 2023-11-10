@@ -106,7 +106,7 @@ Timeline: false
 TimelineStep: false
 Toast: true
 ToastRoot: false
-Tooltip: false
+Tooltip: true
 Truncate: false
 Wizard: false
 WizardStep: false

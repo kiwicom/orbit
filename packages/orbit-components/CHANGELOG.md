@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.3.0...@kiwicom/orbit-components@10.3.1) (2023-11-12)
+
+**Note:** Version bump only for package @kiwicom/orbit-components
+
+
+
+
+
 # [10.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.2.0...@kiwicom/orbit-components@10.3.0) (2023-11-03)
 
 

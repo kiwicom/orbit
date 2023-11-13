@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [9.3.4](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.3.2...@kiwicom/orbit-components@9.3.4) (2023-11-13)
+
+
+### Bug Fixes
+
+* update the browserlist in package.json ([074a04f](https://github.com/kiwicom/orbit/commit/074a04f3c729ba3ac1f565db77dda8ad97fd22a9))
+
+
+
+
+
 ## [9.3.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@9.3.2...@kiwicom/orbit-components@9.3.3) (2023-11-10)
 
 **Note:** Version bump only for package @kiwicom/orbit-components

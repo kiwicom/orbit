@@ -51,7 +51,9 @@
     "component"
   ],
   "browserslist": [
-    "extends @kiwicom/browserslist-config"
+    "extends @kiwicom/browserslist-config",
+    "iOS >= 14",
+    "Safari >= 14"
   ],
   "files": [
     "es",

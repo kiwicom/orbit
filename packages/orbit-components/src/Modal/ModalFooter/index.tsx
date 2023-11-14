@@ -72,7 +72,7 @@ const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
         "orbit-modal-footer",
         "z-overlay bg-white-normal px-md pb-md box-border flex w-full pt-0",
         "duration-fast transition-shadow ease-in-out",
-        "sm-lm:[&_.orbit-button-primitive]:h-form-box-normal sm-lm:[&_.orbit-button-primitive]:text-button-normal",
+        "sm:max-lm:[&_.orbit-button-primitive]:h-form-box-normal sm:max-lm:[&_.orbit-button-primitive]:text-button-normal",
         childrenLength > 1 ? "lm:justify-between" : "lm:justify-end",
         !isMobileFullPage && "lm:rounded-b-modal",
         "[&_.orbit-modal-footer-child:last-of-type]:p-0",

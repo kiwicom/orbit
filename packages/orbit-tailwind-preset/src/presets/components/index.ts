@@ -27,8 +27,6 @@ const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "countryFlag",
 ];
 
-const px = (n: number) => `${n}px`;
-
 interface Options {
   /** default: true e.g. does not include default normalize styles */
   disablePreflight?: boolean;
@@ -88,28 +86,6 @@ const cfg = (options?: Options): Config => {
     },
     theme: {
       extend: {
-        screens: {
-          "sm-mm": { max: px(tokens.breakpointMediumMobile - 1) },
-          "sm-lm": {
-            max: px(tokens.breakpointLargeMobile - 1),
-          },
-          "mm-lm": {
-            min: px(tokens.breakpointMediumMobile),
-            max: px(tokens.breakpointLargeMobile - 1),
-          },
-          "lm-tb": {
-            min: px(tokens.breakpointLargeMobile),
-            max: px(tokens.breakpointTablet - 1),
-          },
-          "tb-de": {
-            min: px(tokens.breakpointTablet),
-            max: px(tokens.breakpointDesktop - 1),
-          },
-          "de-ld": {
-            min: px(tokens.breakpointDesktop),
-            max: px(tokens.breakpointLargeDesktop - 1),
-          },
-        },
         fontSize: {
           "heading-display": tokens.headingDisplayFontSize,
           "heading-display-subtitle": tokens.headingDisplaySubtitleFontSize,

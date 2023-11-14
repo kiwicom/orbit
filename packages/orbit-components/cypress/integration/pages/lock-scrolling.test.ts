@@ -6,7 +6,7 @@ describe("useLockScrolling", () => {
   it("should listen for viewport resize", () => {
     cy.viewport(breakpoint - 1, 600);
     cy.visit("/lock-scrolling");
-    cy.findByRole("button", { name: "Open" }).click();
+    cy.findAllByRole("button", { name: "Open" }).eq(1).click();
     cy.get("body").should("have.css", "overflow-y", "hidden");
     // cy.get("body").should("have.css", "padding-right", "15px");
     cy.viewport(breakpoint, 600);
@@ -20,8 +20,8 @@ describe("useLockScrolling", () => {
   it("should unlock scrolling after last lock is cleared", () => {
     cy.viewport(breakpoint - 1, 600);
     cy.visit("/lock-scrolling");
-    cy.findByRole("button", { name: "Open" }).click();
-    cy.findByRole("button", { name: "Open nested" }).click();
+    cy.findAllByRole("button", { name: "Open" }).eq(1).click();
+    cy.findAllByRole("button", { name: "Open nested" }).eq(1).click();
     cy.findByRole("button", { name: "Close nested" }).click();
     cy.get("body").should("have.css", "overflow-y", "hidden");
     cy.findByRole("button", { name: "Close" }).click();

@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import styled from "styled-components";
 
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import { PLACEMENTS } from "../common/consts";
@@ -9,10 +8,6 @@ import PopoverContent from "./components/ContentWrapper";
 import Portal from "../Portal";
 import handleKeyDown from "../utils/handleKeyDown";
 import type { Props } from "./types";
-
-const StyledPopoverChild = styled.div`
-  position: relative;
-`;
 
 const Popover = ({
   children,
@@ -39,6 +34,7 @@ const Popover = ({
   dataTest,
 }: Props) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
+  const popoverId = React.useId();
 
   const [shown, setShown, setShownWithTimeout, clearShownTimeout] = useStateWithTimeout<boolean>(
     false,
@@ -128,7 +124,7 @@ const Popover = ({
   const popover = (
     <PopoverContent
       shown={shown}
-      id={id}
+      id={id || popoverId}
       labelClose={labelClose}
       dataTest={dataTest}
       zIndex={zIndex}
@@ -152,13 +148,22 @@ const Popover = ({
 
   return (
     <>
-      <StyledPopoverChild
+      <div
+        className="relative max-w-fit"
         ref={ref}
+        role="button"
+        // https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using
+        // @ts-expect-error expected
+        // eslint-disable-next-line react/no-unknown-property
+        popovertarget={id || popoverId}
+        // according to our docs button should be used for opening popover inside children (uncontrolled behavior),
+        // that's why this div shouldn't be focusable in order to avoid double focus
+        tabIndex={-1}
         onClick={handleClick}
         onKeyDown={handleKeyDown<HTMLDivElement>(handleClick)}
       >
         {children}
-      </StyledPopoverChild>
+      </div>
       {render && (renderInPortal ? <Portal renderInto="popovers">{popover}</Portal> : popover)}
     </>
   );

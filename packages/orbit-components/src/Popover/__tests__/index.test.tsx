@@ -37,7 +37,7 @@ describe("Popover", () => {
       </Popover>,
     );
 
-    const openButton = screen.getByRole("button", { name: "Open" });
+    const openButton = screen.getAllByRole("button", { name: "Open" })[1];
     await user.click(openButton);
     expect(onOpen).toHaveBeenCalled();
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
@@ -88,7 +88,7 @@ describe("Popover", () => {
     );
 
     // default is 4px
-    expect(screen.getByRole("tooltip")).toHaveStyle({ top: "10" });
+    expect(screen.getByRole("dialog")).toHaveStyle({ top: "10" });
     // Needs to flush async `floating-ui` hooks
     // https://github.com/floating-ui/floating-ui/issues/1520
     await act(async () => {});
@@ -100,10 +100,11 @@ describe("Popover", () => {
         <Button>Open popover</Button>
       </Popover>,
     );
-    await user.click(screen.getByRole("button"));
+
+    await user.click(screen.getAllByRole("button")[1]);
     const overlay = (await screen.findByTestId("popover")).previousElementSibling;
     expect(overlay).toBeInTheDocument();
     if (overlay) await user.click(overlay);
-    expect(screen.queryByTestId("popover")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("dialog")).not.toBeInTheDocument();
   });
 });

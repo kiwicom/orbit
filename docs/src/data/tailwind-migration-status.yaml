@@ -65,7 +65,7 @@ NavigationBar: true
 NotificationBadge: true
 OrbitProvider: true
 Pagination: false
-Popover: false
+Popover: true
 Portal: true
 Radio: true
 NewSeatIcon: false

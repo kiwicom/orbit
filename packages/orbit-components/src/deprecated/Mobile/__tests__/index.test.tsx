@@ -8,7 +8,7 @@ describe("Mobile", () => {
     render(<Mobile>kek</Mobile>);
     expect(screen.getByText("kek")).toMatchInlineSnapshot(`
       <div
-        class="inline-block de-ld:hidden ld:hidden"
+        class="inline-block de:max-ld:hidden ld:hidden"
       >
         kek
       </div>

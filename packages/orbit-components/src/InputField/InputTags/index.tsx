@@ -55,7 +55,7 @@ const InputTags = ({ children }: { children: React.ReactNode }) => {
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
         className={cx(
-          "white-space-nowrap overflow-x-scroll",
+          "overflow-x-scroll whitespace-nowrap",
           "space-x-xs flex items-center",
           "scrollbar-none",
         )}

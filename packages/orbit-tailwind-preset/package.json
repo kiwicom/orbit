@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-tailwind-preset",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Orbit tailwind preset which is based on orbit-design-tokens",
   "author": "Kiwi.com",
   "license": "MIT",

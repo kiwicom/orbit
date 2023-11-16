@@ -56,7 +56,7 @@ const InputTags = ({ children }: { children: React.ReactNode }) => {
       <div
         className={cx(
           "overflow-x-scroll whitespace-nowrap",
-          "space-x-xs flex items-center",
+          "space-x-xs flex items-center rtl:space-x-reverse",
           "scrollbar-none",
         )}
         ref={tagsRef}

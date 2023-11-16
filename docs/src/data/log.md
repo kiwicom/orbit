@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.3.0...@kiwicom/orbit-components@11.0.0) (2023-11-16)
+
+#### Bug Fixes
+
+*   **Card:** add missing w-full ([552e1d4](https://github.com/kiwicom/orbit/commit/552e1d410d919066a91455efd1ca8f344e69dbb3))
+*   **Card:** only capture keys on expandable sections ([d536470](https://github.com/kiwicom/orbit/commit/d53647018cfd6bb95e9651bdfeac5f3a0d9139f4))
+*   **TextLink:** add missing line-height ([58079b6](https://github.com/kiwicom/orbit/commit/58079b6a7321ab2611aee3b0d1b13018baed9664))
+*   update the browserlist in package.json ([d692f47](https://github.com/kiwicom/orbit/commit/d692f47bd413705d7145ed7c5db8c36b25048e08))
+
+#### Features
+
+*   **ButtonMobileStore:** migrate to Tailwind ([74b5e27](https://github.com/kiwicom/orbit/commit/74b5e2744eb004ec4723d3daf049df2944b44652))
+*   **Checkbox:** migrate to Tailwind ([1e1b944](https://github.com/kiwicom/orbit/commit/1e1b94401511489fb59cd49488fe9eb94d932bc5))
+*   **ChoiceGroup:** migrate to Tailwind ([ee340dc](https://github.com/kiwicom/orbit/commit/ee340dce492b668a54f405fbde133c21057109b9))
+*   **InputField:** migrate to Tailwind ([37a5719](https://github.com/kiwicom/orbit/commit/37a57198e698a696463a07028dc7af8b7197f3f4))
+*   **InputGroup:** migrate to Tailwind ([b4aa75c](https://github.com/kiwicom/orbit/commit/b4aa75cc3061fc11774586e3c653577f140ec003))
+*   **Radio:** migrate to Tailwind ([4178852](https://github.com/kiwicom/orbit/commit/4178852c615480a55ae4a44774bec651c8cac918))
+*   **SegmentedSwitch:** migrate to Tailwind ([5930ffd](https://github.com/kiwicom/orbit/commit/5930ffdc37271832f15d6a80b192f02c45423cf1))
+*   **Select:** migrate to Tailwind ([5b731ab](https://github.com/kiwicom/orbit/commit/5b731ab4382a9c21f246485510e64e54e2288cdd))
+*   **Separator:** migrate to Tailwind ([23474b3](https://github.com/kiwicom/orbit/commit/23474b3156e22a17aec21317aa1185beef0b3757))
+*   **Skeleton:** migrate to Tailwind ([dbdd6cc](https://github.com/kiwicom/orbit/commit/dbdd6cc81772df9f21420649ca1ea81929bd5944))
+*   **Switch:** migrate to Tailwind ([5a3f3cc](https://github.com/kiwicom/orbit/commit/5a3f3cc23a9ac05bb78b9f9cbdf9dd4139546a1d))
+*   **Table:** migrate TableBody to Tailwind ([0663ffb](https://github.com/kiwicom/orbit/commit/0663ffb65083a7888dc9ca4a9b52dbb9198872d7))
+*   **Table:** migrate TableCell to Tailwind ([e0b16cb](https://github.com/kiwicom/orbit/commit/e0b16cb2a7044143a102a4245a05c0f6846d6e89))
+*   **Table:** migrate TableFooter to Tailwind ([f18a75c](https://github.com/kiwicom/orbit/commit/f18a75c7cb7c853c4685d58e918d2eb050b0cd51))
+*   **Table:** migrate TableHead to Tailwind ([ef0a54e](https://github.com/kiwicom/orbit/commit/ef0a54e2ce7641497a2e2c5ab5a58926a32ebe8f))
+*   **Table:** migrate TableRow to Tailwind ([89b9576](https://github.com/kiwicom/orbit/commit/89b95763fe69086ceb208ddd42a1030fae58e022))
+*   **Table:** migrate to Tailwind ([3cce4e2](https://github.com/kiwicom/orbit/commit/3cce4e2c584c710c4a7a1ca082fb833a88984268))
+*   **Textarea:** migrate to Tailwind ([14d6abc](https://github.com/kiwicom/orbit/commit/14d6abc045cea374b74dd478dc3709860dfaae7c))
+*   **Textarea:** remove size prop ([370e768](https://github.com/kiwicom/orbit/commit/370e768ebafd300b7974cb53b87a62a61448871b))
+*   **Toast:** migrate ToastMessage to Tailwind ([fdef9fb](https://github.com/kiwicom/orbit/commit/fdef9fb20cae4a24a7d13f1c8b87d75478a32861))
+*   **Toast:** migrate ToastRoot to Tailwind ([541336e](https://github.com/kiwicom/orbit/commit/541336e01c4965332585db10bb54e0fa3e625116))
+*   **Truncate:** migrate to Tailwind ([af04dd4](https://github.com/kiwicom/orbit/commit/af04dd4d060cdecbcfd1a11d74bf495abb546bd4))
+
+#### BREAKING CHANGES
+
+*   **Textarea:** Textarea component no longer has the `size` prop.
+*   **Select:** Select component no longer has the `readOnly` prop.
+    The `readOnly` prop was passed directly to the native HTML select element as an
+    attribute, which is not supported.
+
+> The attribute is not supported or relevant to <select> or input types that ...
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly
+
+*   **Separator:** 'color' prop now accepts Tailwind classname instead of a token,
+    e.g. 'paletteBlueNormal' -> 'border-blue-normal'
+
+'indent' prop renamed to 'sideOffset'
+
+'type' prop now by default is 'solid', instead of 'none'
+
 ## [10.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.2.0...@kiwicom/orbit-components@10.3.0) (2023-11-03)
 
 #### Bug Fixes

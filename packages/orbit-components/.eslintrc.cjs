@@ -1,4 +1,5 @@
 const path = require("path");
+const orbitPreset = require("@kiwicom/orbit-tailwind-preset");
 
 module.exports = {
   extends: ["../../.eslintrc.cjs", "plugin:storybook/recommended"],
@@ -12,6 +13,11 @@ module.exports = {
   },
   env: {
     browser: true,
+  },
+  settings: {
+    tailwindcss: {
+      config: orbitPreset(),
+    },
   },
   overrides: [
     {

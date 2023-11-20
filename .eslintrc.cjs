@@ -13,6 +13,11 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   extends: CONFIGS,
   plugins: ["@babel"],
+  settings: {
+    tailwindcss: {
+      callees: ["cx", "clsx"],
+    },
+  },
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-unused-expressions": "off",

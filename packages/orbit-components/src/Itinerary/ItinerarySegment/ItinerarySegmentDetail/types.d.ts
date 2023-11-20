@@ -13,9 +13,9 @@ interface ContentItem {
   readonly items: Detail[];
 }
 export interface Props {
-  /** The content of ItineraryDetail component, when it's not expanded */
+  /** The content of ItinerarySegmentDetail component, when it's not expanded */
   readonly summary: React.ReactNode;
-  /** The content of ItineraryDetail component, shown when it's expanded */
+  /** The content of ItinerarySegmentDetail component, shown when it's expanded */
   readonly content?: ContentItem[];
   /** The duration between two Itinerary parts  */
   readonly duration: string;

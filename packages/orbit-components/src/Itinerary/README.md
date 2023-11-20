@@ -104,19 +104,38 @@ ItinerarySegmentDetail serves as a connection between two ItinerarySegmentStop c
 
 ### Props
 
-| Name     | Type              | Required           | Default        | Description                                                        |
-| -------- | ----------------- | ------------------ | -------------- | ------------------------------------------------------------------ |
-| summary  | `React.ReactNode` | :heavy_check_mark: |                | The content of ItineraryDetail component, when it's not expanded   |
-| duration | `string`          | :heavy_check_mark: |                | The duration between two ItinerarySegmentStop components           |
-| children | `React.ReactNode` | :heavy_check_mark: |                | The content of ItineraryDetail component, shown when it's expanded |
-| icon     | `React.ReactNode` |                    | `<Airplane />` | The icon of ItineraryDetail component                              |
+| Name     | Type              | Required           | Default        | Description                                                               |
+| -------- | ----------------- | ------------------ | -------------- | ------------------------------------------------------------------------- |
+| summary  | `React.ReactNode` | :heavy_check_mark: |                | The content of ItinerarySegmentDetail component, when it's not expanded   |
+| duration | `string`          | :heavy_check_mark: |                | The duration between two ItinerarySegmentStop components                  |
+| content  | `ContentItem[]`   |                    |                | The content of ItinerarySegmentDetail component, shown when it's expanded |
+| icon     | `React.ReactNode` |                    | `<Airplane />` | The icon of ItinerarySegmentDetail component                              |
+
+### ContentItem
+
+The table below contains the types of props of objects of type `ContentItem`.
+
+| Name  | Type              | Description                   |
+| :---- | :---------------- | :---------------------------- |
+| title | `React.Node`      | The title of the content item |
+| items | `ContentDetail[]` | The items of the content item |
+
+### ContentDetail
+
+The table below contains the types of props of objects of type `ContentDetail`.
+
+| Name  | Type         | Description |
+| :---- | :----------- | :---------- |
+| icon  | `React.Node` |             |
+| name  | `React.Node` |             |
+| value | `React.Node` |             |
 
 ## ItinerarySegmentBanner
 
-| Name     | Type              | Required           | Default | Description                                                        |
-| -------- | ----------------- | ------------------ | ------- | ------------------------------------------------------------------ |
-| children | `React.ReactNode` | :heavy_check_mark: |         | The content of ItineraryDetail component, shown when it's expanded |
-| onClick  | `React.ReactNode` |                    |         | for handling `onClick` callback in`ItinerarySegmentBanner`         |
+| Name     | Type              | Required           | Default | Description                                                |
+| -------- | ----------------- | ------------------ | ------- | ---------------------------------------------------------- |
+| children | `React.ReactNode` | :heavy_check_mark: |         | The content of ItinerarySegmentBanner component,           |
+| onClick  | `React.ReactNode` |                    |         | for handling `onClick` callback in`ItinerarySegmentBanner` |
 
 ## ItinerarySeparator
 

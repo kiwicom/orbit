@@ -44,7 +44,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
     The `readOnly` prop was passed directly to the native HTML select element as an
     attribute, which is not supported.
 
-> The attribute is not supported or relevant to <select> or input types that ...
+> The attribute is not supported or relevant to select or input types that ...
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly
 

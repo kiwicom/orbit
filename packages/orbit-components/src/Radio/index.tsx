@@ -31,7 +31,6 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         "font-base items-self-start text-form-element-label-foreground relative flex w-full",
         disabled ? "cursor-not-allowed" : "cursor-pointer",
         !disabled && [
-          !checked && "bg-form-element-background",
           !checked &&
             (hasError
               ? "[&>.orbit-radio-icon-container]:border-form-element-error [&>.orbit-radio-icon-container]:hover:border-form-element-error-hover [&>.orbit-radio-icon-container]:active:border-form-element-error "
@@ -68,7 +67,9 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "lm:border border-[2px] border-solid",
             "active:scale-95",
             "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
-            disabled && "bg-form-element-disabled-background border-transparent",
+            disabled
+              ? "bg-form-element-disabled-background border-transparent"
+              : "bg-form-element-background",
           )}
         >
           <span

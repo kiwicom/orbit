@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/experimental-ct-react";
 
 import { Test, TestError, TestHelp, TestSuffix, TestTags } from "./InputField.ct-story";
 
-test.describe.only("visual InputField", () => {
+test.describe("visual InputField", () => {
   test("screenshot", async ({ mount }) => {
     const component = await mount(<Test />);
 

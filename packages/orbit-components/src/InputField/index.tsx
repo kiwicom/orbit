@@ -37,7 +37,7 @@ export const FakeInput = ({
       disabled || readOnly
         ? "bg-form-element-disabled-background"
         : [
-            "bg-transparent",
+            "bg-form-element-background",
             error
               ? "peer-hover:shadow-form-element-error-hover"
               : "peer-hover:shadow-form-element-hover",

@@ -94,14 +94,12 @@ Screenshots are OS-specific. CI runs Linux on its machines. In order to generate
 screenshots, you need to run the tests on Linux. You can do that by running the tests in Docker:
 
 - `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.39.0-jammy /bin/bash`
-- `rm -rf packages/orbit-components/playwright/.cache`
-- `yarn install --frozen-lockfile`
+- `yarn run docker:reset`
 - `yarn components test-ct --update-snapshots`
 
 After you're done, reset the environment:
 
-- `rm -rf packages/orbit-components/playwright/.cache`
-- `yarn install --frozen-lockfile`
+- `yarn run docker:reset`
 
 Both `darwin` and `linux` screenshots are kept:
 

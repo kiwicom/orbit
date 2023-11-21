@@ -33,7 +33,8 @@
     "tailwind-preset": "yarn workspace @kiwicom/orbit-tailwind-preset",
     "tokens": "yarn workspace @kiwicom/orbit-design-tokens",
     "tracking": "yarn workspace @kiwicom/orbit-tracking",
-    "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md"
+    "update-supported-browsers": "markdown --path .github/contribution/testing-conventions.md && git add .github/contribution/testing-conventions.md",
+    "docker:reset": "rm -rf packages/orbit-components/playwright/.cache && yarn install --frozen-lockfile"
   },
   "engines": {
     "yarn": ">=1.19.1"

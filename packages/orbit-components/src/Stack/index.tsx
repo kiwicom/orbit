@@ -139,16 +139,19 @@ const Stack = (props: Props) => {
 
     return cx(
       typeof spaceAfter !== "undefined" && getSpaceAfterClasses(spaceAfter, viewport),
-      typeof align !== "undefined" && getAlignItemsClasses(align, viewport),
-      typeof align !== "undefined" && getAlignContentClasses(align, viewport),
-      typeof wrap !== "undefined" && getWrapClasses(wrap, viewport),
-      typeof grow !== "undefined" && getGrowClasses(grow, viewport),
-      typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
-      typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
-      getDirectionClasses(direction, viewport),
+      flex && [
+        typeof align !== "undefined" && getAlignItemsClasses(align, viewport),
+        typeof align !== "undefined" && getAlignContentClasses(align, viewport),
+        typeof wrap !== "undefined" && getWrapClasses(wrap, viewport),
+        typeof grow !== "undefined" && getGrowClasses(grow, viewport),
+        typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
+        typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
+        getDirectionClasses(direction, viewport),
+      ],
       flex || inline ? getDisplayClasses(inline ? "inline-flex" : "flex", viewport) : "block",
       getSpacingClasses(spacing, viewport, direction, legacy),
       inline === false && "w-full",
+      !inline && direction === DIRECTION.COLUMN && "h-full",
     );
   };
 
@@ -165,6 +168,7 @@ const Stack = (props: Props) => {
           return getTailwindTokensForMedia(
             {
               ...props[viewport],
+              flex: getProperty("flex", viewports, index),
               direction: getProperty("direction", viewports, index),
               spacing: getProperty("spacing", viewports, index),
               legacy: getProperty("legacy", viewports, index),

@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/experimental-ct-react";
 
 import { Test } from "./Radio.ct-story";
 
-test.describe.only("visual Radio", () => {
+test.describe("visual Radio", () => {
   test("screenshot", async ({ mount }) => {
     const component = await mount(<Test />);
 

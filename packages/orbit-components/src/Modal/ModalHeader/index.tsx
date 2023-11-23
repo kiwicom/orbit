@@ -104,7 +104,7 @@ const ModalHeader = ({
       {title && hasMobileHeader && (
         <div
           className={cx(
-            "orbit-modal-mobile-header",
+            "orbit-modal-mobile-header bg-white-normal",
             "font-base font-heading-display text-extra-large text-heading-foreground ps-lg z-overlay invisible fixed end-[48px] start-0 box-border inline-block h-[52px] truncate py-0 pe-0 leading-[52px] opacity-0",
             "duration-fast transition-[top,opacity,visibility] ease-in-out",
             "lm:start-auto lm:end-auto lm:p-0",

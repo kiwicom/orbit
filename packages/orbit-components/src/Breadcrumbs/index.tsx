@@ -8,7 +8,7 @@ import type { Props as BreadcrumbsItemProps } from "./BreadcrumbsItem/types";
 import ChevronBackward from "../icons/ChevronBackward";
 import Hide from "../Hide";
 import TextLink from "../TextLink";
-import spaceAfterClasses from "../common/tailwind/spaceAfter";
+import { spaceAfterClasses } from "../common/tailwind";
 
 const Breadcrumbs = ({
   children,

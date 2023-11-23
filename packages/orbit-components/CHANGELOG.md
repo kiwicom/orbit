@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.0.0...@kiwicom/orbit-components@11.1.0) (2023-11-23)
+
+
+### Bug Fixes
+
+* **Breadcrumbs:** the spaceAfter prop ([87f574a](https://github.com/kiwicom/orbit/commit/87f574ad1316d7fafd90ae296c7547880da9c193))
+* **Hide:** use native tailwind breakpoint range ([39aedd9](https://github.com/kiwicom/orbit/commit/39aedd9b6d3bc1fe78f77dde9821f0e36bcc2e36))
+* **InputField:** add white background ([a0b40a8](https://github.com/kiwicom/orbit/commit/a0b40a809f594e18f521403a309c73dc36aae340))
+* **ModalHeader:** mobile scroll header background ([93efe38](https://github.com/kiwicom/orbit/commit/93efe38ba30a3875b2eb6ac2d2c76a314e46ef23))
+* **Radio:** background only on circle, not label ([564ee17](https://github.com/kiwicom/orbit/commit/564ee17bdf3e7cfdb60fbb3c1ce6fe177a7da0f7))
+* **Stack:** do not apply flex styles, when not needed ([56983c1](https://github.com/kiwicom/orbit/commit/56983c1165afd0953394b6f9168cb30e9fae5734))
+
+
+### Features
+
+* **Popover:** migrate to Tailwind ([49a619f](https://github.com/kiwicom/orbit/commit/49a619f6c5cf15e88dbd71290f391e1b04568087))
+* **Tabs:** migrate to Tailwind ([b5fa16d](https://github.com/kiwicom/orbit/commit/b5fa16dab6fb713d397191adbf88ad8ca1a6626e))
+
+
+
+
+
 # [11.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@10.3.0...@kiwicom/orbit-components@11.0.0) (2023-11-16)
 
 

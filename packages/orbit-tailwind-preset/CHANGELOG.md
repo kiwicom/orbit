@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.0.2...@kiwicom/orbit-tailwind-preset@3.0.3) (2023-11-23)
+
+
+### Bug Fixes
+
+* **tailwind:** define colors as rgba with alpha placeholder ([f8e5798](https://github.com/kiwicom/orbit/commit/f8e57981c153ab448923f8892e4342aa106c88d7))
+
+
+
+
+
 ## [3.0.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.0.1...@kiwicom/orbit-tailwind-preset@3.0.2) (2023-11-16)
 
 **Note:** Version bump only for package @kiwicom/orbit-tailwind-preset

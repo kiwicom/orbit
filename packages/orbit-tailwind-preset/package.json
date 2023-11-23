@@ -34,7 +34,8 @@
     "tailwindcss": ">=3.3.2"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^6.3.0"
+    "@kiwicom/orbit-design-tokens": "^6.3.0",
+    "color2k": "^2.0.2"
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0"

@@ -7,9 +7,24 @@ import StackStory from "./Stack.ct-story";
 import { JUSTIFY } from "../common/tailwind/justify";
 import Box from "../Box";
 
+import Stack from ".";
+
 test.describe("visual Stack", () => {
   test(`Stack default`, async ({ mount }) => {
     const component = await mount(<StackStory />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test(`Nested Stack shouldn't have full height`, async ({ mount }) => {
+    const component = await mount(
+      <Box height="900px" background="productNormal">
+        <Stack flex direction="column">
+          <StackStory />
+          <StackStory />
+        </Stack>
+      </Box>,
+    );
 
     await expect(component).toHaveScreenshot();
   });

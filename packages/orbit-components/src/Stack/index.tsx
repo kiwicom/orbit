@@ -147,11 +147,11 @@ const Stack = (props: Props) => {
         typeof shrink !== "undefined" && getShrinkClasses(shrink, viewport),
         typeof justify !== "undefined" && getJustifyClasses(justify, viewport),
         getDirectionClasses(direction, viewport),
+        !inline && direction === DIRECTION.COLUMN && justify != null && "h-full",
       ],
       flex || inline ? getDisplayClasses(inline ? "inline-flex" : "flex", viewport) : "block",
       getSpacingClasses(spacing, viewport, direction, legacy),
       inline === false && "w-full",
-      !inline && direction === DIRECTION.COLUMN && "h-full",
     );
   };
 

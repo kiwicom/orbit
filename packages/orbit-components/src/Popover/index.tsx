@@ -5,6 +5,7 @@ import * as React from "react";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import { PLACEMENTS } from "../common/consts";
 import PopoverContent from "./components/ContentWrapper";
+import useRandomId from "../hooks/useRandomId";
 import Portal from "../Portal";
 import handleKeyDown from "../utils/handleKeyDown";
 import type { Props } from "./types";
@@ -34,7 +35,7 @@ const Popover = ({
   dataTest,
 }: Props) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
-  const popoverId = React.useId();
+  const popoverId = useRandomId();
 
   const [shown, setShown, setShownWithTimeout, clearShownTimeout] = useStateWithTimeout<boolean>(
     false,

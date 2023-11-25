@@ -151,7 +151,6 @@ const Stack = (props: Props) => {
       flex || inline ? getDisplayClasses(inline ? "inline-flex" : "flex", viewport) : "block",
       getSpacingClasses(spacing, viewport, direction, legacy),
       inline === false && "w-full",
-      !inline && direction === DIRECTION.COLUMN && "h-full",
     );
   };
 

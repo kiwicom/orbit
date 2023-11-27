@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.1.0...@kiwicom/orbit-components@11.1.1) (2023-11-27)
+
+
+### Bug Fixes
+
+* **Popover:** use useRandomId hook instead of React.useId directly ([3b49d18](https://github.com/kiwicom/orbit/commit/3b49d1890826229f76f6041da4d9f268962e6d33))
+* **Stack:** remove height: 100% for justify and column ([c119130](https://github.com/kiwicom/orbit/commit/c1191306a477fecc2c35ed7eac0428ec43f74c26))
+
+
+
+
+
 # [11.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.0.0...@kiwicom/orbit-components@11.1.0) (2023-11-23)
 
 

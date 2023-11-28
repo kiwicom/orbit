@@ -540,7 +540,7 @@
 - component: Textarea
   figma: Planned
   react: Released
-  ios: N/A
+  ios: Released
   android: Released
   docs: Released
   group: Input

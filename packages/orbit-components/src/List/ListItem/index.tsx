@@ -12,7 +12,7 @@ const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) 
       className="orbit-list-item font-base mb-xxs flex last:m-0 last-of-type:m-0"
     >
       {icon && (
-        <div className="orbit-list-item-icon me-xs [&>svg]:h-icon-small [&>svg]:w-icon-small [&>.orbit-carrier-logo]:h-icon-small [&>.orbit-carrier-logo]:w-icon-small [&>.orbit-carrier-logo>img]:h-icon-small [&>.orbit-carrier-logo>img]:w-icon-small flex flex-none items-center">
+        <div className="orbit-list-item-icon me-xs [&>.orbit-carrier-logo]:h-icon-small [&>.orbit-carrier-logo]:w-icon-small [&>.orbit-carrier-logo>img]:h-icon-small [&>.orbit-carrier-logo>img]:w-icon-small flex flex-none items-center">
           {icon}
         </div>
       )}

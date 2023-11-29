@@ -15,20 +15,25 @@ const getChildrenProps = (type: Type, key: string) => {
   return null;
 };
 
-const Layout = ({ children, type, dataTest }: Props) => (
-  <Grid
-    {...LAYOUT_SETTINGS[type]}
-    className="px-md de:p-lg mx-auto my-0 box-border w-full py-0"
-    dataTest={dataTest}
-  >
-    {React.Children.map(children as React.ReactElement<LayoutColumnProps>, (item, key) => {
-      return React.cloneElement(item, {
-        ...getChildrenProps(type, key.toString()),
-        ...item.props,
-      });
-    })}
-  </Grid>
-);
+const Layout = ({ children, type, dataTest }: Props) => {
+  // Removes unwanted props from Grid
+  const { layoutColumns: _, ...props } = LAYOUT_SETTINGS[type];
+
+  return (
+    <Grid
+      {...props}
+      className="px-md de:p-lg mx-auto my-0 box-border w-full py-0"
+      dataTest={dataTest}
+    >
+      {React.Children.map(children as React.ReactElement<LayoutColumnProps>, (item, key) => {
+        return React.cloneElement(item, {
+          ...getChildrenProps(type, key.toString()),
+          ...item.props,
+        });
+      })}
+    </Grid>
+  );
+};
 
 export default Layout;
 

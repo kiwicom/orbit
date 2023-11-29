@@ -8,11 +8,12 @@ import type { Props } from "./types";
 import { spaceAfterClasses } from "../common/tailwind";
 
 const sizeTokens = {
-  [SIZES.SMALL]: "text-small leading-small [&_.orbit-list-item-icon]:h-icon-small",
+  [SIZES.SMALL]:
+    "text-small leading-small [&_.orbit-list-item-icon>svg]:h-icon-small [&_.orbit-list-item-icon>svg]:w-icon-small",
   [SIZES.NORMAL]:
-    "text-normal leading-normal [&_.orbit-list-item-icon]:h-icon-medium [&_.orbit-list-item-label]:text-small",
+    "text-normal leading-normal [&_.orbit-list-item-icon>svg]:h-icon-medium [&_.orbit-list-item-icon>svg]:w-icon-medium [&_.orbit-list-item-label]:text-small",
   [SIZES.LARGE]:
-    "text-large leading-large [&_.orbit-list-item-icon]:h-icon-large [&_.orbit-list-item-label]:text-normal",
+    "text-large leading-large [&_.orbit-list-item-icon>svg]:h-icon-large [&_.orbit-list-item-icon>svg]:w-icon-large [&_.orbit-list-item-label]:text-normal",
 };
 
 const typeTokens = {

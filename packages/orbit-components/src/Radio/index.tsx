@@ -28,7 +28,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     <label
       htmlFor={id}
       className={cx(
-        "font-base items-self-start text-form-element-label-foreground relative flex w-full",
+        "font-base text-form-element-label-foreground relative flex w-full [align-items:self-start]",
         disabled ? "cursor-not-allowed" : "cursor-pointer",
         !disabled && [
           !checked &&
@@ -85,7 +85,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         <div
           className={cx(
             "ms-xs flex flex-1 flex-col font-medium",
-            disabled ? "opacity-50" : "opacity-1",
+            disabled ? "opacity-50" : "opacity-100",
           )}
         >
           {label && (

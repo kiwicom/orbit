@@ -90,7 +90,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
           "border border-transparent",
           // TODO: remove when will be migrated from tmp-folder
           resize === RESIZE_OPTIONS.VERTICAL ? "resize-y" : "resize-none",
-          "text-normal p-sm leading-normal",
           error ? "shadow-form-element-error" : "shadow-form-element",
           disabled ? "cursor-not-allowed" : "cursor-text",
           fullHeight && "h-full flex-1",
@@ -98,7 +97,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
             ? "bg-form-element-disabled-background"
             : [
                 "bg-form-element-background",
-                error ? "hover:shadow-form-element-error-hover" : "hover:bg-form-element-hover",
+                error ? "hover:shadow-form-element-error-hover" : "hover:shadow-form-element-hover",
               ],
           "[&::placeholder]:text-form-element-foreground",
         )}

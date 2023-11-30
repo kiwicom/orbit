@@ -36,7 +36,7 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
         className={cx(
           "orbit-list-choice",
           "py-sm px-md box-border flex w-full items-center",
-          "border-b-cloud-normal bg-white-normal border-b-solid border-b",
+          "border-b-cloud-normal bg-white-normal border-b border-solid",
           "duration-fast transition-[background-color] ease-in-out",
           disabled ? "cursor-not-allowed" : "hover:bg-cloud-light cursor-pointer",
           "hover:outline-none [&_button]:hover:bg-transparent",

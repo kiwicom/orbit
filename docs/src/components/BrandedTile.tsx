@@ -108,7 +108,6 @@ export default function BrandedTile({
 
   return (
     <StyledWrapper
-      className="BrandedTile"
       href={href}
       target="_blank"
       rel="noopener noreferrer"

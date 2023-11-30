@@ -91,7 +91,7 @@ const Loading = ({
             "overflow-hidden",
             "box-border",
             type === TYPE_OPTIONS.BUTTON_LOADER &&
-              "t-0 absolute start-0 h-full w-full justify-center",
+              "absolute start-0 top-0 h-full w-full justify-center",
             type === TYPE_OPTIONS.SEARCH_LOADER && "h-[40px] justify-start",
             type === TYPE_OPTIONS.INLINE_LOADER
               ? "inline-flex min-h-[19px] justify-center"

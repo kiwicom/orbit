@@ -28,7 +28,7 @@ export const FakeInput = ({
   <div
     className={cx(
       "orbit-input-field-fake-input",
-      "h-form-box-normal text-form-element-normal-font-size z-[1]",
+      "h-form-box-normal text-form-element-normal z-[1]",
       "absolute left-0 top-0",
       "duration-fast transition-all ease-in-out",
       "rounded-large tb:rounded-normal box-border w-full",
@@ -211,7 +211,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
               "flex items-center justify-center",
               "pointer-events-none h-full",
               "[&>.orbit-form-label]:mb-0",
-              "[&>.orbit-form-label]:text-form-box-normal [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
+              "[&>.orbit-form-label]:text-form-element-normal [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
               "[&>.orbit-form-label]:z-[3]",
               !tags && (error || help) ? "ps-xxs" : "ps-sm",
             )}

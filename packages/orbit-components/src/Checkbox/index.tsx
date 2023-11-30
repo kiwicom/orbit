@@ -90,7 +90,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         </div>,
       )}
       {(label || info) && (
-        <div className={cx("ms-xs flex flex-1 flex-col", disabled ? "opacity-50" : "opacity-1")}>
+        <div className={cx("ms-xs flex flex-1 flex-col", disabled ? "opacity-50" : "opacity-100")}>
           {label && (
             <span className="font-base text-form-element-normal text-form-element-label-foreground [&_.orbit-text]:text-form-element-normal [&_.orbit-text]:text-form-element-label-foreground [&_.orbit-text]:leading-small font-medium leading-normal [&_.orbit-text]:font-medium">
               {label}

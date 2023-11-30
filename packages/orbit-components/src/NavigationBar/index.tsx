@@ -63,7 +63,7 @@ const NavigationBar = ({
       data-test={dataTest}
       id={id}
       className={cx(
-        "bg-white-normal shadow-fixed p-sm z-navigation-bar fixed left-0 right-0 top-0 box-border flex w-full translate-x-0 items-center",
+        "bg-white-normal shadow-fixed p-sm z-navigation-bar fixed inset-x-0 top-0 box-border flex w-full translate-x-0 items-center",
         "duration-normal transform-gpu transition-transform ease-in-out",
         "tb:h-[64px] h-[52px]", // As defined on the const above
         shown ? "translate-y-0" : "tb:translate-y-[-64px] translate-y-[-52px]", // As defined on the const above

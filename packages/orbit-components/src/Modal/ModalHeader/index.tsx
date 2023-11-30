@@ -30,7 +30,7 @@ export const ModalHeaderWrapper = ({
         suppressed
           ? [
               "bg-cloud-light py-xl px-md lm:p-xl",
-              "[&_~_.orbit-modal-section:first-of-type]:border-t-solid [&_~_.orbit-modal-section:first-of-type]:border-t-elevation-flat-border-color [&_~_.orbit-modal-section:first-of-type]:!mt-0 [&_~_.orbit-modal-section:first-of-type]:border-t",
+              "[&_~_.orbit-modal-section:first-of-type]:border-t-elevation-flat-border-color [&_~_.orbit-modal-section:first-of-type]:!mt-0 [&_~_.orbit-modal-section:first-of-type]:border-t [&_~_.orbit-modal-section:first-of-type]:border-solid",
             ]
           : ["bg-white-normal pt-lg px-md lm:pt-xl lm:px-xl lm:pb-0 pb-0"],
         !isMobileFullPage && "rounded-t-modal-mobile",

@@ -17,7 +17,7 @@ const getMaxWidth = ({ maxWidth }: { maxWidth: string | number }) => {
 const stepperButtonMixin = ({ disabled, active }: { disabled: boolean; active?: boolean }) =>
   cx(
     "[&_svg]:p-xxxs",
-    "de:[&_svg]:h-icon-small de:[&_svg]:w-icon-small [&_svg]:h-icon-medium [&_svg]:w-icon-medium",
+    "de:[&_svg]:h-icon-medium de:[&_svg]:w-icon-medium [&_svg]:h-icon-large [&_svg]:w-icon-large",
     "[&_svg]:rounded-circle",
     "focus:outline-0",
     "[&_svg]:focus:outline-blue-normal [&_svg]:focus:outline [&_svg]:focus:outline-2",
@@ -68,6 +68,7 @@ const StepperStateless = ({
       style={{ maxWidth: getMaxWidth({ maxWidth }) }}
     >
       <ButtonPrimitive
+        width="44px"
         className={stepperButtonMixin({ disabled: isMinusDisabled, active })}
         disabled={isMinusDisabled}
         iconLeft={<Minus size="small" />}
@@ -105,6 +106,7 @@ const StepperStateless = ({
         readOnly
       />
       <ButtonPrimitive
+        width="44px"
         className={stepperButtonMixin({ disabled: isPlusDisabled, active })}
         disabled={isPlusDisabled}
         iconLeft={<Plus size="small" />}

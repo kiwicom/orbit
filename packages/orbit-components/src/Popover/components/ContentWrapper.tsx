@@ -138,7 +138,7 @@ const PopoverContentWrapper = ({
         className={cx(
           "block",
           "fixed",
-          "left-0 right-0 top-0",
+          "inset-x-0 top-0",
           "h-full w-full",
           // TODO: use bg-ink-dark/60 tw class
           "bg-[rgba(37,42,49,.6)]",
@@ -159,7 +159,7 @@ const PopoverContentWrapper = ({
         id={id}
         className={cx(
           "fixed",
-          "bottom-0 left-0 right-0",
+          "inset-x-0 bottom-0",
           "h-auto w-full",
           "z-[1000]",
           "box-border",
@@ -190,7 +190,7 @@ const PopoverContentWrapper = ({
             "will-change-transform",
             "duration-fast transition-[opacity,transform] ease-in-out",
             "lm:transform-none",
-            "lm-transition-none",
+            "lm:transition-none",
           )}
         >
           <div

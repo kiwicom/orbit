@@ -102,7 +102,7 @@ const Drawer = ({
         "z-drawer",
         "duration-fast transition-colors ease-in-out",
         overlayShown ? "visible" : "invisible",
-        shown ? "bg-drawer-overlay-background" : "transparent",
+        shown ? "bg-drawer-overlay-background" : "bg-transparent",
       )}
       onClick={handleOnClose}
       data-test={dataTest}
@@ -113,7 +113,7 @@ const Drawer = ({
       <aside
         className={cx(
           "box-border block",
-          "absolute bottom-0 top-0",
+          "absolute inset-y-0",
           "h-full w-full",
           "font-base",
           "overflow-y-auto",
@@ -139,8 +139,7 @@ const Drawer = ({
               suppressed && !bordered ? "bg-cloud-light" : "bg-white-normal",
               fixedHeader && "z-sticky sticky top-0",
               onlyIcon ? "justify-end" : "justify-between",
-              bordered &&
-                "border-cloud-normal border-b border-l-0 border-r-0 border-t-0 border-solid",
+              bordered && "border-cloud-normal border-x-0 border-b border-t-0 border-solid",
               !noPadding && "px-md lm:ps-xl lm:pe-lg py-0",
             )}
           >

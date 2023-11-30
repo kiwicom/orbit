@@ -105,7 +105,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             className={cx(
               "pointer-events-none z-[3] flex h-full items-center justify-center",
               error || help ? "ps-xxs" : "ps-sm",
-              "[&_.orbit-form-label]:text-normal [&_.orbit-form-label]:mb-0 [&_.orbit-form-label]:inline-block [&_.orbit-form-label]:max-w-[20ch] [&_.orbit-form-label]:overflow-hidden [&_.orbit-form-label]:text-ellipsis [&_.orbit-form-label]:whitespace-nowrap [&_.orbit-form-label]:leading-normal",
+              "[&_.orbit-form-label]:text-normal [&_.orbit-form-label]:mb-0 [&_.orbit-form-label]:inline-block [&_.orbit-form-label]:max-w-[20ch] [&_.orbit-form-label]:truncate [&_.orbit-form-label]:leading-normal",
             )}
             ref={labelRef}
           >
@@ -143,7 +143,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                 (disabled && "text-form-element-disabled-foreground") || filled
                   ? "text-form-element-filled-foreground"
                   : "text-form-element-foreground",
-                "text-form-element-normal font-base pointer-events-none absolute bottom-0 top-0 z-[3] flex items-center",
+                "text-form-element-normal font-base pointer-events-none absolute inset-y-0 z-[3] flex items-center",
                 prefix ? "ps-[48px]" : "ps-sm",
               )}
             >

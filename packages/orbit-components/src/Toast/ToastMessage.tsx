@@ -43,7 +43,7 @@ const ToastMessage = ({
       aria-live={ariaLive}
       role="status"
       className={cx(
-        "z-onTop duration-normal absolute left-0 right-0 flex cursor-grab transition-all ease-in-out will-change-transform",
+        "z-onTop duration-normal absolute inset-x-0 flex cursor-grab transition-all ease-in-out will-change-transform",
         "translate-x-[var(--toast-message-offset-x)] translate-y-[var(--toast-message-offset-y)] opacity-[var(--toast-message-opacity)]",
         placements[placement],
       )}

@@ -29,7 +29,7 @@ const Tab = ({
       data-test={dataTest}
       className={cx(
         "flex flex-1 flex-row items-center justify-between",
-        "appearance-none flex-row border-0",
+        "appearance-none border-0",
         "min-w-fit",
         "relative box-border",
         "font-base font-medium",

@@ -38,7 +38,7 @@ export const VerticalBadge = ({
   return (
     <div
       className={cx(
-        "me-xs h-icon-large w-icon-large rounded-circle flex flex-shrink-0 items-center justify-center",
+        "me-xs h-icon-large w-icon-large rounded-circle flex shrink-0 items-center justify-center",
         "[&_svg]:h-icon-small [&_svg]:w-icon-small",
         type && BACKGROUND[type],
       )}

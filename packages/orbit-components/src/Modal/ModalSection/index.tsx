@@ -28,13 +28,13 @@ export const ModalSectionWrapper = ({
         className,
         "orbit-modal-section",
         "py-lg px-md lm:p-xl box-border w-full",
-        "border-b-solid border-b-elevation-flat-border-color border-b",
+        "border-b-elevation-flat-border-color border-b border-solid",
         "last-of-type:[&:not(:last-child)]:rounded-b-none",
         suppressed
           ? [
               "bg-cloud-light",
-              "first-of-type:border-t-solid first-of-type:border-t-elevation-flat-border-color lm:first-of-type:mt-xxl first-of-type:border-t",
-              "last-of-type:border-b-solid last-of-type:border-b-elevation-flat-border-color [&_~_.orbit-modal-footer]:last-of-type:mt-md last-of-type:border-b",
+              "first-of-type:border-t-elevation-flat-border-color lm:first-of-type:mt-xxl first-of-type:border-t first-of-type:border-solid",
+              "last-of-type:border-b-elevation-flat-border-color [&_~_.orbit-modal-footer]:last-of-type:mt-md last-of-type:border-b last-of-type:border-solid",
               closable && "first-of-type:mt-lg",
             ]
           : [

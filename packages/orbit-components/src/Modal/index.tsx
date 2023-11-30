@@ -400,8 +400,8 @@ const Modal = React.forwardRef<Instance, Props>(
         className={cx(
           "orbit-modal-body",
           "z-overlay font-base fixed inset-0 box-border h-full w-full overflow-x-hidden outline-none",
-          !isMobileFullPage && "bg-[black] bg-opacity-50",
-          "lm:overflow-y-auto lm:p-xxl lm:bg-[black] lm:bg-opacity-50",
+          !isMobileFullPage && "bg-[black]/50",
+          "lm:overflow-y-auto lm:p-xxl lm:bg-[black]/50",
         )}
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={0}
@@ -463,7 +463,7 @@ const Modal = React.forwardRef<Instance, Props>(
                     "lm:[&_.orbit-modal-footer]:!p-xl",
                     fullyScrolled && "lm:[&_.orbit-modal-footer]:absolute",
                   ]
-                : "lm[&_.orbit-modal-footer]:p-xl]",
+                : "lm:[&_.orbit-modal-footer]:p-xl",
               fullyScrolled && "lm:[&_.orbit-modal-footer]:shadow-none",
               scrolled
                 ? [
@@ -484,7 +484,7 @@ const Modal = React.forwardRef<Instance, Props>(
             {hasCloseContainer && (
               <div
                 className={cx(
-                  "z-modal-overlay h-form-box-large pointer-events-none right-0 box-border flex w-full items-center justify-end",
+                  "z-overlay h-form-box-large pointer-events-none right-0 box-border flex w-full items-center justify-end",
                   "duration-fast transition-[shadow,_background-color] ease-in-out",
                   "lm:rounded-none",
                   fixedClose || scrolled ? "lm:top-0 lm:right-auto fixed" : "absolute",
@@ -492,9 +492,9 @@ const Modal = React.forwardRef<Instance, Props>(
                   !isMobileFullPage && "rounded-t-modal-mobile",
                   modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
                   scrolled && "shadow-fixed bg-white-normal",
-                  "[&_+_.orbit-modal-section:first-of-type]:pt-xxxl [&_+_.orbit-modal-section:first-of-type]:bt-0 [&_+_.orbit-modal-section:first-of-type]:m-0",
+                  "[&_+_.orbit-modal-section:first-of-type]:pt-xxxl [&_+_.orbit-modal-section:first-of-type]:m-0 [&_+_.orbit-modal-section:first-of-type]:border-t-0",
                   "[&_.orbit-button-primitive]:me-xxs [&_.orbit-button-primitive]:pointer-events-auto",
-                  "[&_.orbit-button-primitive_svg]:transition-color [&_.orbit-button-primitive_svg]:duration-fast [&_.orbit-button-primitive_svg]:text-ink-normal [&_.orbit-button-primitive_svg]:ease-in-out",
+                  "[&_.orbit-button-primitive_svg]:duration-fast [&_.orbit-button-primitive_svg]:text-ink-normal [&_.orbit-button-primitive_svg]:transition-[color] [&_.orbit-button-primitive_svg]:ease-in-out",
                   "[&_.orbit-button-primitive:hover_svg]:text-ink-light-hover [&_.orbit-button-primitive:active_svg]:text-ink-light-active",
                 )}
                 data-test="CloseContainer"

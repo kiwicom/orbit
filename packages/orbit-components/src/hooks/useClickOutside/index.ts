@@ -5,7 +5,7 @@ import useEventListener from "../useEventListener";
 const useClickOutside = <T extends HTMLElement>(
   ref: React.RefObject<T>,
   handler: (ev: MouseEvent) => void,
-  mouseEvent: "mousedown" | "mouseup" = "mousedown",
+  mouseEvent: "mousedown" | "mouseup" | "click" = "mousedown",
 ): void => {
   useEventListener(mouseEvent, event => {
     const el = ref?.current;

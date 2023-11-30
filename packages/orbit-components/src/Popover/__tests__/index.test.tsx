@@ -107,4 +107,39 @@ describe("Popover", () => {
     if (overlay) await user.click(overlay);
     expect(screen.queryByTestId("dialog")).not.toBeInTheDocument();
   });
+
+  it("should allow interacting with nested elements", async () => {
+    const nestedOnClick = jest.fn();
+    const contentOnClick = jest.fn();
+
+    render(
+      <Popover
+        content={
+          <>
+            <Tooltip
+              content={
+                <Button dataTest="nested-button" onClick={nestedOnClick}>
+                  Nested button
+                </Button>
+              }
+            >
+              <span data-test="tooltip-trigger">Hover me</span>
+            </Tooltip>
+            <Button dataTest="content-button" onClick={contentOnClick}>
+              Content button
+            </Button>
+          </>
+        }
+      >
+        <Button dataTest="popover-trigger">Open popover</Button>
+      </Popover>,
+    );
+
+    await user.click(screen.getByTestId("popover-trigger"));
+    await user.click(screen.getByTestId("tooltip-trigger"));
+    await user.click(screen.getByTestId("nested-button"));
+    expect(nestedOnClick).toHaveBeenCalled();
+    await user.click(screen.getByTestId("content-button"));
+    expect(contentOnClick).toHaveBeenCalled();
+  });
 });

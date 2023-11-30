@@ -116,9 +116,13 @@ const PopoverContentWrapper = ({
     };
   }, [update, actions, setActionsHeight, onClose]);
 
-  useClickOutside(content, ev => {
-    if (isLargeMobile) onClose(ev);
-  });
+  useClickOutside(
+    content,
+    ev => {
+      if (isLargeMobile) onClose(ev);
+    },
+    "click",
+  );
 
   const cssVars = {
     "--popper-top": popper.top,

@@ -6,6 +6,8 @@ const getTailwindTheme = (theme: typeof defaultTokens) => {
   return {
     colors: {
       transparent: "transparent",
+      current: "currentColor",
+      inherit: "inherit",
       blue: {
         dark: theme.paletteBlueDark,
         "dark-active": theme.paletteBlueDarkActive,

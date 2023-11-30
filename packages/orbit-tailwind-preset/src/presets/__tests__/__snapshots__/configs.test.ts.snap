@@ -250,6 +250,7 @@ exports[`orbitPreset should match snapshot 1`] = `
             "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
             "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
           },
+          "current": "currentColor",
           "green": {
             "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
             "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -262,6 +263,7 @@ exports[`orbitPreset should match snapshot 1`] = `
             "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
             "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
           },
+          "inherit": "inherit",
           "ink": {
             "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
             "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -422,6 +424,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -434,6 +437,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -672,6 +676,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
       "country-flag-background": "transparent",
+      "current": "currentColor",
       "drawer-overlay-background": "rgba(37, 42, 49, 0.5)",
       "elevation-action": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",
       "elevation-action-active": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",
@@ -696,6 +701,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -922,6 +928,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "elevation-flat-border-color": "rgba(var(--palette-cloud-normal, 232, 237, 241), <alpha-value>)",
       "form-element": "rgba(var(--palette-cloud-dark, 186, 199, 213), <alpha-value>)",
       "form-element-active": "rgba(var(--palette-cloud-dark-active, 148, 168, 190), <alpha-value>)",
@@ -943,6 +950,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -1114,6 +1122,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -1126,6 +1135,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -1226,6 +1236,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -1238,6 +1249,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -1325,6 +1337,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -1337,6 +1350,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -1538,6 +1552,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "elevation-flat-border-color": "rgba(var(--palette-cloud-normal, 232, 237, 241), <alpha-value>)",
       "form-element": "rgba(var(--palette-cloud-dark, 186, 199, 213), <alpha-value>)",
       "form-element-active": "rgba(var(--palette-cloud-dark-active, 148, 168, 190), <alpha-value>)",
@@ -1559,6 +1574,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -1700,6 +1716,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -1712,6 +1729,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -1927,6 +1945,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -1939,6 +1958,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -2511,6 +2531,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -2523,6 +2544,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -2658,6 +2680,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -2670,6 +2693,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -2775,6 +2799,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -2787,6 +2812,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -2874,6 +2900,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -2886,6 +2913,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -3119,6 +3147,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -3131,6 +3160,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -3276,6 +3306,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
       "critical-foreground": "rgba(var(--palette-red-normal, 210, 28, 28), <alpha-value>)",
+      "current": "currentColor",
       "form-element-disabled-foreground": "rgba(var(--palette-ink-normal, 79, 94, 113), <alpha-value>)",
       "form-element-filled-foreground": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
       "form-element-foreground": "rgba(var(--palette-ink-light, 105, 125, 149), <alpha-value>)",
@@ -3304,6 +3335,7 @@ exports[`orbitPreset should match snapshot 1`] = `
       "icon-tertiary-foreground": "rgba(var(--palette-cloud-dark, 186, 199, 213), <alpha-value>)",
       "icon-warning-foreground": "rgba(var(--palette-orange-normal, 223, 123, 0), <alpha-value>)",
       "info-foreground": "rgba(var(--palette-blue-normal, 1, 114, 203), <alpha-value>)",
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",
@@ -3436,6 +3468,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-cloud-normal-active, 202, 212, 222), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-cloud-normal-hover, 220, 227, 233), <alpha-value>)",
       },
+      "current": "currentColor",
       "green": {
         "dark": "rgba(var(--palette-green-dark, 45, 119, 56), <alpha-value>)",
         "dark-active": "rgba(var(--palette-green-dark-active, 31, 81, 38), <alpha-value>)",
@@ -3448,6 +3481,7 @@ exports[`orbitPreset should match snapshot 1`] = `
         "normal-active": "rgba(var(--palette-green-normal-active, 29, 114, 40), <alpha-value>)",
         "normal-hover": "rgba(var(--palette-green-normal-hover, 35, 139, 49), <alpha-value>)",
       },
+      "inherit": "inherit",
       "ink": {
         "dark": "rgba(var(--palette-ink-dark, 37, 42, 49), <alpha-value>)",
         "dark-active": "rgba(var(--palette-ink-dark-active, 11, 12, 15), <alpha-value>)",

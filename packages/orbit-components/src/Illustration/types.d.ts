@@ -70,6 +70,7 @@ export type Name =
   | "OnlineCheckIn"
   | "OpenSearch"
   | "Parking"
+  | "PassportUpdate"
   | "Pets"
   | "PlaceholderAirport"
   | "PlaceholderDestination"

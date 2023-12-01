@@ -65,6 +65,7 @@ export const NAMES: Name[] = [
   "OnlineCheckIn",
   "OpenSearch",
   "Parking",
+  "PassportUpdate",
   "Pets",
   "PlaceholderAirport",
   "PlaceholderDestination",

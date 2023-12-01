@@ -90,6 +90,7 @@ The table below contains all types of props available in the Illustration compon
 | `"OnlineCheckIn"`               |
 | `"OpenSearch"`                  |
 | `"Parking"`                     |
+| `"PassportUpdate"`              |
 | `"Pets"`                        |
 | `"PlaceholderAirport"`          |
 | `"PlaceholderDestination"`      |

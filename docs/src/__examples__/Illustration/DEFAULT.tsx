@@ -71,6 +71,7 @@ export default {
             "OnlineCheckIn",
             "OpenSearch",
             "Parking",
+            "PassportUpdate",
             "Pets",
             "PlaceholderAirport",
             "PlaceholderDestination",

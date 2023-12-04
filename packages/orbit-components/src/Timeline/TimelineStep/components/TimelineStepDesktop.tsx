@@ -64,9 +64,11 @@ const TimelineStepDesktop = ({
             {label}
           </Text>
         </StyledText>
-        <StyledDescription active={active || (last && type === "success")}>
-          <Text align="center">{children}</Text>
-        </StyledDescription>
+        {children && (
+          <StyledDescription active={active || (last && type === "success")}>
+            <Text align="center">{children}</Text>
+          </StyledDescription>
+        )}
       </Stack>
     </Stack>
   );

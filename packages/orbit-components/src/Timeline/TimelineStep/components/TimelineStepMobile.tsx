@@ -30,9 +30,11 @@ const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active,
               </StyledText>
             )}
           </Stack>
-          <StyledText active={active || (last && type === "success")}>
-            <Text>{children}</Text>
-          </StyledText>
+          {children && (
+            <StyledText active={active || (last && type === "success")}>
+              <Text>{children}</Text>
+            </StyledText>
+          )}
         </Stack>
       </Stack>
     </StyledRelative>

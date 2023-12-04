@@ -45,6 +45,17 @@ export const Default = () => {
   );
 };
 
+export const DefaultWithOptionalChildren = () => {
+  return (
+    <Timeline>
+      <TimelineStep label="Waiting for your passport or ID details" type="success" />
+      <TimelineStep label="Waiting for check-in" />
+      <TimelineStep label="Processing check-in" />
+      <TimelineStep label="Boarding pass ready" />
+    </Timeline>
+  );
+};
+
 export const AllSuccessfull = () => {
   return (
     <Timeline>

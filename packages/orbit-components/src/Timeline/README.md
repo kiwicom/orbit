@@ -1,12 +1,12 @@
 # Timeline
 
-To implement Timeline component into your project you'll need to add the import:
+To implement the `Timeline` component into your project you'll need to add the import:
 
 ```jsx
 import Timeline, { TimelineStep } from "@kiwicom/orbit-components/lib/Timeline";
 ```
 
-After adding import into your project you can use it simply like:
+After adding import to your project you can use it simply like:
 
 ```jsx
 <Timeline>
@@ -18,7 +18,7 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-Table below contains all types of the props available in the **Timeline** component.
+The table below contains all types of props available in the **Timeline** component.
 
 | Name         | Type                | Default | Description                                                                                                                                                     |
 | :----------- | :------------------ | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -38,15 +38,15 @@ import TimelineStep from "@kiwicom/orbit-components/lib/Timeline/TimelineStep";
 
 #### Props
 
-Table below contains all types of the props in **TimelineStep** component.
+The table below contains all types of the props in **TimelineStep** component.
 
-| Name         | Type            | Default | Description                          |
-| :----------- | :-------------- | :------ | :----------------------------------- |
-| **children** | `React.Node`    |         | The content of the component         |
-| label        | `React.Node`    |         | Text for `label` component inside    |
-| subLabel     | `React.Node`    |         | Text for `subLabel` component inside |
-| type         | [`enum`](#enum) |         | Type of current process step         |
-| active       | `boolean`       |         | Controlled state of the step         |
+| Name         | Type            | Default | Description                                 |
+| :----------- | :-------------- | :------ | :------------------------------------------ |
+| **children** | `React.Node`    |         | Optional. The content of the `TimelineStep` |
+| label        | `React.Node`    |         | Text for `label` component inside.          |
+| subLabel     | `React.Node`    |         | Text for `subLabel` component inside.       |
+| type         | [`enum`](#enum) |         | Type of current process step.               |
+| active       | `boolean`       |         | Controlled state of the step.               |
 
 ### enum
 

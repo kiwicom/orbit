@@ -21,6 +21,7 @@ export default {
             "ChinaUnionPay",
             "DinersClub",
             "Discover",
+            "GetYourGuide",
             "IATA",
             "JCB",
             "MailOnline",

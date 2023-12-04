@@ -40,6 +40,7 @@ Table below contains all types of the props available in ServiceLogo component.
 | `"DinersClub"`          |
 | `"Discover"`            |
 | `"Elo"`                 |
+| `"GetYourGuide"`        |
 | `"JCB"`                 |
 | `"MailOnline"`          |
 | `"Maestro"`             |

@@ -38,7 +38,7 @@ export const Default = () => {
       <TimelineStep label="Carrier is refunding" subLabel="6th May 20:50">
         The carrier has sent us a refund. There might be more depending on their policy.
       </TimelineStep>
-      <TimelineStep label="Refunded" subLabel="7th May 10:30">
+      <TimelineStep label="Refunded">
         We’ll forward you all refunds from the carrier(s) after we receive it.
       </TimelineStep>
     </Timeline>

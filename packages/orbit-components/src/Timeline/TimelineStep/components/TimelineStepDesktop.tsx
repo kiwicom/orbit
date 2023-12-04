@@ -42,13 +42,11 @@ const TimelineStepDesktop = ({
 }: Props) => {
   return (
     <Stack inline shrink direction="column" align="center" spaceAfter="large">
-      {subLabel && (
-        <StyledText>
-          <Text align="center" size="small">
-            {subLabel}
-          </Text>
-        </StyledText>
-      )}
+      <StyledText>
+        <Text align="center" size="small">
+          {subLabel}
+        </Text>
+      </StyledText>
       <StyledRelative inner>
         <StyledProgressLine desktop status={type} prevStatus={prevType} nextStatus={nextType} />
         <TypeIcon type={type} active={!!active} />

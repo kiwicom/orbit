@@ -3,7 +3,7 @@ import * as React from "react";
 
 export type Type = "success" | "warning" | "critical" | "info";
 export type Props = {|
-  +children: React.Node,
+  +children?: React.Node,
   +subLabel?: React.Node,
   +label: React.Node,
   +active?: boolean,

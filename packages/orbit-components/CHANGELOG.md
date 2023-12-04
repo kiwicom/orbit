@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.1.1...@kiwicom/orbit-components@11.2.0) (2023-12-04)
+
+
+### Bug Fixes
+
+* **Layout:** remove accidental props pass to Grid ([e7f47d2](https://github.com/kiwicom/orbit/commit/e7f47d25f16ca5cda5d07a308245e87b823185b5))
+* **List:** fix ListItem icon size ([6afd3b9](https://github.com/kiwicom/orbit/commit/6afd3b9bdbe0f83fad13db7532023a5db1029f2a))
+* **Popover:** links inside tooltips inside content are now clickable ([b7114a6](https://github.com/kiwicom/orbit/commit/b7114a65c0a44f4538df2e7d1dc3a3b715dd4e68))
+* **Stepper:** fix icon circle accoring to Figma ([9411b3e](https://github.com/kiwicom/orbit/commit/9411b3ed06e073d11de199c2c6820294b2a5e361))
+
+
+### Features
+
+* **Illustration:** add PassportUpdate ([e1d021d](https://github.com/kiwicom/orbit/commit/e1d021df047f8bcf2b7d835ac5bfa3ea5059fe9f))
+
+
+
+
+
 ## [11.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.1.0...@kiwicom/orbit-components@11.1.1) (2023-11-27)
 
 

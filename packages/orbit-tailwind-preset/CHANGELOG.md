@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.0.3...@kiwicom/orbit-tailwind-preset@3.1.0) (2023-12-04)
+
+
+### Features
+
+* **tailwind:** add inherit and current as valid color values ([3aa3a3e](https://github.com/kiwicom/orbit/commit/3aa3a3e0f5755494adaf282bbbec32afabf82274))
+
+
+
+
+
 ## [3.0.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.0.2...@kiwicom/orbit-tailwind-preset@3.0.3) (2023-11-23)
 
 

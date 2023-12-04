@@ -41,7 +41,7 @@ const TimelineStepDesktop = ({
   subLabel,
 }: Props) => {
   return (
-    <Stack inline shrink direction="column" align="center" spaceAfter="large">
+    <Stack inline shrink direction="column" align="center">
       <StyledText>
         <Text align="center" size="small">
           {subLabel}

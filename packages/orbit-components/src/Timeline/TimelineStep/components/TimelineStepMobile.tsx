@@ -16,7 +16,12 @@ interface Props extends StepProps {
 const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active, last }: Props) => {
   return (
     <StyledRelative>
-      <Stack flex spaceAfter="large" align="stretch" desktop={{ align: "start" }}>
+      <Stack
+        flex
+        spaceAfter={last ? undefined : "large"}
+        align="stretch"
+        desktop={{ align: "start" }}
+      >
         <TypeIcon type={type} active={!!active} mobile />
         {!last && <StyledProgressLine status={nextType} prevStatus={type} />}
         <Stack flex shrink direction="column" spacing="XXSmall">

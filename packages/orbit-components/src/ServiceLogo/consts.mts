@@ -11,6 +11,7 @@ export enum NAME_OPTIONS {
   DAILYEXPRESS = "DailyExpress",
   DINERSCLUB = "DinersClub",
   DISCOVER = "Discover",
+  GETYOURGUIDE = "GetYourGuide",
   IATA = "IATA",
   JCB = "JCB",
   MAILONLINE = "MailOnline",

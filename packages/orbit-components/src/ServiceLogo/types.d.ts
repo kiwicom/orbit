@@ -16,6 +16,7 @@ type Name =
   | "DailyExpress"
   | "DinersClub"
   | "Discover"
+  | "GetYourGuide"
   | "IATA"
   | "JCB"
   | "MailOnline"

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.2.0...@kiwicom/orbit-components@11.3.0) (2023-12-05)
+
+#### Bug Fixes
+
+*   **TimelineStep:** remove redundant spaceAfter ([f6fcd90](https://github.com/kiwicom/orbit/commit/f6fcd904d34ad9e19e07489478446cb362388c29))
+*   **Timeline:** timeline and subLabel height issue ([afc018a](https://github.com/kiwicom/orbit/commit/afc018a2059b2063dc33f48f60ff35808c0b0e02))
+
+#### Features
+
+*   **ServiceLogo:** add GetYourGuide logo ([c883823](https://github.com/kiwicom/orbit/commit/c8838239009c753ddfe147dca6057f4eece059fb))
+*   **TimelineStep:** make children optional ([59d03fc](https://github.com/kiwicom/orbit/commit/59d03fc27685028ae1067038a46f00347fd5c3f7))
+
 ## [11.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.1.1...@kiwicom/orbit-components@11.2.0) (2023-12-04)
 
 #### Bug Fixes

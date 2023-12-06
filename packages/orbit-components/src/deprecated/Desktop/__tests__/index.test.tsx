@@ -8,7 +8,7 @@ describe("Desktop", () => {
     render(<Desktop>kek</Desktop>);
     expect(screen.getByText("kek")).toMatchInlineSnapshot(`
       <div
-        class="inline-block sm:max-mm:hidden mm:max-lm:hidden lm:max-tb:hidden tb:max-de:hidden"
+        class="inline-block max-mm:hidden mm:max-lm:hidden lm:max-tb:hidden tb:max-de:hidden"
       >
         kek
       </div>

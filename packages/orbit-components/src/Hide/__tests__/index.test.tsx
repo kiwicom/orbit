@@ -12,7 +12,7 @@ describe("Hide", () => {
     );
     expect(container.childNodes[1]).toMatchInlineSnapshot(`
       <div
-        class="inline-block sm:max-mm:hidden lm:max-tb:hidden ld:hidden"
+        class="inline-block max-mm:hidden lm:max-tb:hidden ld:hidden"
       >
         content
       </div>

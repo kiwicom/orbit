@@ -1,9 +1,9 @@
 import type { Size } from "./types";
 
 export const sizeStyles: Record<Size, string> = {
-  small: "h-form-box-small text-small [&_svg]:h-icon-small [&_svg]:w-icon-small",
-  normal: "h-form-box-normal text-normal [&_svg]:h-icon-medium [&_svg]:w-icon-medium",
-  large: "h-form-box-large text-large [&_svg]:h-icon-large [&_svg]:w-icon-large",
+  small: "h-form-box-small text-small",
+  normal: "h-form-box-normal text-normal",
+  large: "h-form-box-large text-large",
 };
 
 export const paddingNoIconsStyles: Record<Size, string> = {

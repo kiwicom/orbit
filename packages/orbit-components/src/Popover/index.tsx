@@ -150,7 +150,7 @@ const Popover = ({
   return (
     <>
       <div
-        className="relative max-w-fit"
+        className="relative inline-block"
         ref={ref}
         role="button"
         // https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using

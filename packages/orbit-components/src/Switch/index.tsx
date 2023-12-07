@@ -19,7 +19,10 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
           )}
         >
           <input
-            className="peer absolute inset-0 m-0 h-full w-full p-0 opacity-0"
+            className={cx(
+              "peer absolute inset-0 m-0 h-full w-full p-0 opacity-0",
+              !disabled && "cursor-pointer",
+            )}
             ref={ref}
             checked={checked}
             disabled={disabled}

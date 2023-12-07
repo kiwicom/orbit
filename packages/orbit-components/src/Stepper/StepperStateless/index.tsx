@@ -21,12 +21,12 @@ const stepperButtonMixin = ({ disabled, active }: { disabled: boolean; active?: 
     "[&_svg]:rounded-circle",
     "focus:outline-0",
     "[&_svg]:focus:outline-blue-normal [&_svg]:focus:outline [&_svg]:focus:outline-2",
+    active ? "[&_svg]:bg-blue-normal" : "[&_svg]:bg-cloud-normal",
     !disabled && [
       active
-        ? "[&_svg]:bg-blue-normal hover:[&_svg]:bg-blue-normal-hover [&_svg]:active:focus:shadow-[inset_0_0_0_2px_var(--palette-blue-light-active)]"
-        : "[&_svg]:bg-cloud-normal hover:[&_svg]:bg-cloud-normal-hover [&_svg]:active:focus:shadow-[inset_0_0_0_2px_var(--palette-cloud-normal-active)]",
+        ? "hover:[&_svg]:bg-blue-normal-hover [&_svg]:active:focus:shadow-[inset_0_0_0_2px_var(--palette-blue-light-active)]"
+        : "hover:[&_svg]:bg-cloud-normal-hover [&_svg]:active:focus:shadow-[inset_0_0_0_2px_var(--palette-cloud-normal-active)]",
     ],
-    disabled && "[&_svg]:bg-cloud-normal",
   );
 
 const StepperStateless = ({

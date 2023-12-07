@@ -144,8 +144,7 @@ const PopoverContentWrapper = ({
           "fixed",
           "inset-x-0 top-0",
           "h-full w-full",
-          // TODO: use bg-ink-dark/60 tw class
-          "bg-[rgba(37,42,49,.6)]",
+          "bg-ink-dark/60",
           "duration-normal transition-[opacity,transform] ease-in-out",
           "z-[999]",
           "lm:hidden",

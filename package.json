@@ -8,7 +8,7 @@
   "scripts": {
     "build-ci": "yarn size:build",
     "components": "yarn workspace @kiwicom/orbit-components",
-    "checks": "ts-node --esm scripts/checks.mts",
+    "checks": "node --loader ts-node/esm scripts/checks.mts",
     "check:types": "yarn checks --types",
     "check:links": "yarn checks --links",
     "check:css": "yarn checks --css",

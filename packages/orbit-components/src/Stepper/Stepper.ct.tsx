@@ -20,6 +20,22 @@ test.describe("visual Stepper", () => {
     await expect(component).toHaveScreenshot();
   });
 
+  test("Stepper disabled with active", async ({ mount }) => {
+    const component = await mount(
+      <StepperStory titleIncrement="increment" titleDecrement="decrement" disabled active />,
+    );
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("Stepper with active", async ({ mount }) => {
+    const component = await mount(
+      <StepperStory titleIncrement="increment" titleDecrement="decrement" active />,
+    );
+
+    await expect(component).toHaveScreenshot();
+  });
+
   test("Stepper disabled increment", async ({ mount }) => {
     const component = await mount(
       <StepperStory
@@ -34,6 +50,21 @@ test.describe("visual Stepper", () => {
     await expect(component).toHaveScreenshot();
   });
 
+  test("Stepper disabled increment with active", async ({ mount }) => {
+    const component = await mount(
+      <StepperStory
+        titleIncrement="increment"
+        titleDecrement="decrement"
+        maxValue={10}
+        defaultValue={10}
+        minValue={0}
+        active
+      />,
+    );
+
+    await expect(component).toHaveScreenshot();
+  });
+
   test("Stepper disabled decrement", async ({ mount }) => {
     const component = await mount(
       <StepperStory
@@ -42,6 +73,21 @@ test.describe("visual Stepper", () => {
         maxValue={10}
         defaultValue={0}
         minValue={0}
+      />,
+    );
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("Stepper disabled decrement with active", async ({ mount }) => {
+    const component = await mount(
+      <StepperStory
+        titleIncrement="increment"
+        titleDecrement="decrement"
+        maxValue={10}
+        defaultValue={0}
+        minValue={0}
+        active
       />,
     );
 

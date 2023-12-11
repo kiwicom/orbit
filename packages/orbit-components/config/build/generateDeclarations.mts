@@ -8,7 +8,7 @@ import { DECLARATIONS_IGNORE_PATTERN } from "./consts.mjs";
 const [, __dirname] = filedirname();
 
 export default async function generateTypeDeclarations() {
-  await $`ts-node --esm config/typeFiles.mts`;
+  await $`node --loader ts-node/esm config/typeFiles.mts`;
 
   console.log(chalk.greenBright.bold("Generating type declarations..."));
   await $`cpy "**/*.js.flow" ../lib --cwd src --parents`;

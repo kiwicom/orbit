@@ -17,7 +17,7 @@ import buildSize from "./buildSize.mjs";
 
   logStep("Building icons");
 
-  await $`ts-node --esm config/build/buildIcons.mts`;
+  await $`node --loader ts-node/esm config/build/buildIcons.mts`;
 
   if (argv.size) {
     console.log(
@@ -28,7 +28,7 @@ import buildSize from "./buildSize.mjs";
   }
 
   if (!argv.size) {
-    await $`ts-node --esm config/createSVGFont.mts`;
+    await $`node --loader ts-node/esm config/createSVGFont.mts`;
     await $`cd src/icons; zip -r ../../orbit-svgs.zip ./svg; cd -`;
     await $`zip -j orbit-svgs.zip orbit-icons-font/orbit-icons.svg`;
     await $`zip -r orbit-icons-font.zip orbit-icons-font`;

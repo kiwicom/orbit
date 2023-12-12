@@ -29,6 +29,6 @@ Table below contains all types of the props available in Dialog component.
 | **primaryAction** | `React.Node`            |         | Primary and required action that user can do with the Dialog.                                                                         |
 | secondaryAction   | `React.Node`            |         | Optional, secondary action that user can perform - possibility to close the Dialog most of the time.                                  |
 | lockScrolling     | `boolean`               | `true`  | Whether to prevent scrolling of the rest of the page while Dialog is open. This is on by default to provide a better user experience. |
-| onClose           | `() => void \| Promise` |         | The title of the Dialog - preferably the purpose of the main action.                                                                  |
+| onClose           | `() => void \| Promise` |         | Callback that is triggered when the dialog is closed.                                                                                 |
 | **title**         | `React.Node`            |         | The title of the Dialog - preferably the purpose of the main action.                                                                  |
 | maxWidth          | `number`                |         | Set `max-width` for Dialog                                                                                                            |

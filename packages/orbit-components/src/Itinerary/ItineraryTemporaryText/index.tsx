@@ -45,6 +45,7 @@ const TemporaryText = ({
 }: TextProps) => {
   return (
     <StyledTemporaryText
+      className="orbit-text"
       $type={type}
       size={size}
       weight={weight}

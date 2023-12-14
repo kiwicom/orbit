@@ -2,9 +2,8 @@
 
 import * as React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { tokensToCssVars } from "@kiwicom/orbit-design-tokens";
+import { tokensToCssVars, defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { parseToRgba } from "color2k";
-import type { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import QueryContextProvider from "./QueryContext/Provider";
 import RandomIdProvider from "./RandomId/Provider";
@@ -14,9 +13,18 @@ import type { Props } from "./types";
 const getCssVarsForWL = (theme: typeof defaultTokens) =>
   Object.keys(theme).reduce((acc, key) => {
     if (key.startsWith("palette")) {
-      acc[key] = parseToRgba(theme[key] as string)
-        .slice(0, -1)
-        .join(", ");
+      try {
+        acc[key] = parseToRgba(theme[key] as string)
+          .slice(0, -1)
+          .join(", ");
+      } catch (e) {
+        console.error(
+          "OrbitProvider-getCssVarsForWL: couldn't parse palette color, using fallback value from defaultTheme",
+          key,
+          e,
+        );
+        acc[key] = parseToRgba(defaultTokens[key]).slice(0, -1).join(", ");
+      }
     }
     return acc;
   }, {});

@@ -140,7 +140,7 @@ const Drawer = ({
               fixedHeader && "z-sticky sticky top-0",
               onlyIcon ? "justify-end" : "justify-between",
               bordered && "border-cloud-normal border-x-0 border-b border-t-0 border-solid",
-              !noPadding && "px-md lm:ps-xl lm:pe-lg py-0",
+              "px-md lm:ps-xl lm:pe-lg py-0",
             )}
           >
             {title && <Heading type="title2">{title}</Heading>}

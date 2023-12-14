@@ -29,9 +29,11 @@ export const SideNavigation = () => {
   const dataTest = text("dataTest", "test");
   const width = text("width", "320px");
   const fixedHeader = boolean("fixedHeader", false);
+  const noPadding = boolean("noPadding", false);
 
   return (
     <Drawer
+      noPadding={noPadding}
       dataTest={dataTest}
       width={width}
       shown={shown}

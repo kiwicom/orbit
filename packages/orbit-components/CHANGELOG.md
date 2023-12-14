@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.3.0...@kiwicom/orbit-components@11.3.1) (2023-12-14)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** do not force icon sizes in children ([5b865ae](https://github.com/kiwicom/orbit/commit/5b865ae5c914df7436d80dae60f575ec7bf282ab))
+* **Drawer:** noPadding should affect only wrapper ([11c2ce0](https://github.com/kiwicom/orbit/commit/11c2ce0eaefffa7012c39b7031e4bccaa0a1c054))
+* **Hide:** fix "smallMobile" for screens of size 0-320px ([af5a84c](https://github.com/kiwicom/orbit/commit/af5a84ca3c7ea8a5eba60a503edfbcb8df7c5fa9))
+* **List:** fix ListItem centering bug ([ff172eb](https://github.com/kiwicom/orbit/commit/ff172ebd85e654d4491df0b4a6de98a4c905ee91))
+* **OrbitProvider:** be more defensive when transforming palette colors to RGBA ([0209a65](https://github.com/kiwicom/orbit/commit/0209a656c0c5c43de11999b08e98a4840130666c))
+* **Popover:** remove redundant max-w-fit class ([8247324](https://github.com/kiwicom/orbit/commit/8247324c5070106f3e383d9ba8caa7c8ba70d32e))
+* **Stepper:** fix disabled background color ([4a61be6](https://github.com/kiwicom/orbit/commit/4a61be6e934dd1baf0ff2491fb6f6e30a947d594))
+* **Switch:** cursor not applied on input ([edfc88b](https://github.com/kiwicom/orbit/commit/edfc88b8abade5053f1710a2f0a1a71575b3994d))
+
+
+
+
+
 # [11.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.2.0...@kiwicom/orbit-components@11.3.0) (2023-12-05)
 
 

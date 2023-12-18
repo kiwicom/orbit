@@ -40,7 +40,6 @@ const sortingIcon = (sortingStatus: SORTING_ORDER) => {
 const TableWrap = styled.div`
   ${({ theme }) => css`
     table {
-      td,
       th {
         background-color: ${theme.orbit.paletteCloudLight};
         text-align: left;
@@ -327,7 +326,7 @@ const PropsTable = ({ children }) => {
     <StyledTableOuter ref={outer} showShadows={shadows} showLeft={left} showRight={right}>
       <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
         <TableWrap ref={tableWrap}>
-          <Table type="primary">
+          <Table type="primary" striped={false}>
             <PropsTableHead
               tableHeaders={tableHeaders}
               handleSortingChange={handleSortingChange}

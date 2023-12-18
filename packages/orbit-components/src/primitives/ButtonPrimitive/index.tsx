@@ -160,6 +160,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
         className={cx(
           className,
           "orbit-button-primitive font-base duration-fast group relative max-w-full items-center border-none text-center leading-none transition-all [&>*]:align-middle [&_.orbit-loading-spinner]:stroke-[currentColor]",
+          "flex-none",
           fullWidth && "w-full",
           centered || children == null
             ? "justify-center"

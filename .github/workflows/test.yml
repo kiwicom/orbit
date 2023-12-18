@@ -148,7 +148,7 @@ jobs:
       - name: Test Components
         run: yarn components test-ct --shard ${{ matrix.shard }}
       - name: Upload Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: test-results

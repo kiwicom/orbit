@@ -76,6 +76,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
       iconRight,
       // Container vars
       height,
+      width,
       padding,
       contentAlign = "center",
       fontWeight,
@@ -116,6 +117,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
 
     const varsButton = {
       "--button-height": height,
+      "--button-width": width,
       "--button-padding": padding,
       "--button-content-align": contentAlign,
       "--button-font-weight": fontWeight,
@@ -159,12 +161,9 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
         disabled={isDisabled}
         className={cx(
           className,
-          "orbit-button-primitive font-base duration-fast group relative max-w-full items-center border-none text-center leading-none transition-all [&>*]:align-middle [&_.orbit-loading-spinner]:stroke-[currentColor]",
+          "orbit-button-primitive font-base duration-fast group relative max-w-full items-center justify-center border-none text-center leading-none transition-all [&>*]:align-middle [&_.orbit-loading-spinner]:stroke-[currentColor]",
           "flex-none",
           fullWidth && "w-full",
-          centered || children == null
-            ? "justify-center"
-            : "[justify-content:var(--button-content-align)]",
           circled !== true && "rounded-large tb:rounded-normal",
           isDisabled
             ? "cursor-not-allowed opacity-30"
@@ -179,6 +178,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
           varsButton["--button-icon-width"] != null &&
             "[&_.orbit-loading-spinner]:w-[var(--button-icon-width)]",
           // button vars
+          varsButton["--button-width"] != null && "w-[var(--button-width)]",
           varsButton["--button-height"] != null && "h-[var(--button-height)]",
           varsButton["--button-height"] != null &&
             circled === true &&
@@ -255,7 +255,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
         {children != null && (
           <div
             className={cx(
-              "orbit-button-primitive-content inline-block",
+              "orbit-button-primitive-content inline-block [justify-content:var(--button-content-align)]",
               (iconLeft != null || iconRight != null) && "text-start",
               loading === true && "invisible",
               centered !== true && "flex-1",

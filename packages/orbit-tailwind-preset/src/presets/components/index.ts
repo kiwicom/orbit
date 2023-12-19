@@ -76,7 +76,7 @@ const getBackgroundColors = (tokens: typeof defaultTokens) => {
 };
 
 const cfg = (options?: Options): Config => {
-  const { disablePreflight = true } = options || {};
+  const { disablePreflight = false } = options || {};
   // make palette colors (foundation colors) defined as css vars and make components tokens inherit it
   const tokens = getTokens(cssVarsFoundation);
   const componentTokens = getComponentLevelTokens(tokens);
@@ -85,7 +85,7 @@ const cfg = (options?: Options): Config => {
     content: ["auto"],
     presets: [orbitFoundationPreset(tokens)],
     corePlugins: {
-      preflight: disablePreflight ? false : undefined,
+      preflight: !disablePreflight,
     },
     theme: {
       extend: {

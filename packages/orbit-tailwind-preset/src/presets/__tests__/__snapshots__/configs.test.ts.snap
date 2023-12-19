@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`orbitPreset should match snapshot 1`] = `
+exports[`orbitPreset should have preflight disabled 1`] = `
 {
   "blocklist": [],
   "content": {

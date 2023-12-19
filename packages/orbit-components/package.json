@@ -144,7 +144,7 @@
     "svgicons2svgfont": "^10.0.0",
     "tailwindcss": "^3.3.2",
     "ttf2woff2": "^4.0.1",
-    "vite": "^4.3.9",
+    "vite": "^4.4.12",
     "webpack": "^5.76.0",
     "webpack-cli": "^5.1.4"
   }

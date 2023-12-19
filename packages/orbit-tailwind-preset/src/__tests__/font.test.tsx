@@ -1,7 +1,7 @@
 import React from "react";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-import { render, screen } from "../../testUtils";
+import { render, screen } from "../testUtils";
 import FontSizes from "../__fixtures__/FontSizes";
 import FontWeight from "../__fixtures__/FontWeight";
 import LineHeight from "../__fixtures__/LineHeight";

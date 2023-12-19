@@ -2,8 +2,8 @@ import React from "react";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import Headings from "../__fixtures__/Headings";
-import { render, screen } from "../../testUtils";
-import { firstToUpper } from "../foundation/helpers";
+import { render, screen } from "../testUtils";
+import firstToUpper from "../utils/firstToUpper";
 
 const HEADINGS = [
   "title1",

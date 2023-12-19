@@ -1,8 +1,6 @@
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-export const kebabCase = (str: string) => str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
-
-export const firstToUpper = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+import kebabCase from "./utils/kebabCase";
 
 export type ExportedComponentLevelTokens =
   | "alert"
@@ -43,7 +41,7 @@ type ExportedComponentLevelTypes =
   | "fontWeight"
   | "lineHeight";
 
-export const getComponentLevelTokens =
+const getComponentLevelTokens =
   (tokens: typeof defaultTokens = defaultTokens) =>
   (component: ExportedComponentLevelTokens, type: ExportedComponentLevelTypes) => {
     return Object.keys(tokens).reduce((acc, key) => {
@@ -67,3 +65,5 @@ export const getComponentLevelTokens =
       return acc;
     }, {});
   };
+
+export default getComponentLevelTokens;

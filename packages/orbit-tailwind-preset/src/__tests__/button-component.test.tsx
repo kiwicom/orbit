@@ -2,8 +2,8 @@ import React from "react";
 import { getTokens } from "@kiwicom/orbit-design-tokens";
 
 import Button from "../__fixtures__/Button";
-import { render, screen } from "../../testUtils";
-import { firstToUpper } from "../foundation/helpers";
+import { render, screen } from "../testUtils";
+import firstToUpper from "../utils/firstToUpper";
 import cssVarsFoundation from "../foundation/cssVarsFoundation";
 
 const testIds = ["primary", "secondary", "info", "success", "warning", "critical"];

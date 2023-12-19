@@ -1,7 +1,7 @@
 import React from "react";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-import { render, screen } from "../../testUtils";
+import { render, screen } from "../testUtils";
 import Spacings from "../__fixtures__/Spacings";
 
 const SPACINGS = [

@@ -1,4 +1,4 @@
-import { getComponentLevelTokens } from "../presets/foundation/helpers";
+import getComponentLevelTokens from "../getComponentLevelTokens";
 
 describe("orbit-tailwind-preset", () => {
   it("should get component level token", () => {

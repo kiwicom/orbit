@@ -13,6 +13,7 @@ interface Context {
 interface StepContext {
   index: number;
   last: boolean;
+  hasSubLabelMargin?: boolean;
 }
 
 export const TimelineStatusContext = React.createContext<Context>({
@@ -24,6 +25,7 @@ export const TimelineStatusContext = React.createContext<Context>({
 export const TimelineStepContext = React.createContext<StepContext>({
   index: 0,
   last: false,
+  hasSubLabelMargin: false,
 });
 
 export const TimelineStatusProvider = ({ children, direction }) => {
@@ -37,8 +39,11 @@ export const TimelineStatusProvider = ({ children, direction }) => {
   return <TimelineStatusContext.Provider value={value}>{children}</TimelineStatusContext.Provider>;
 };
 
-export const TimelineStepProvider = ({ children, index, last }) => {
-  const value = React.useMemo(() => ({ index, last }), [index, last]);
+export const TimelineStepProvider = ({ children, index, last, hasSubLabelMargin }) => {
+  const value = React.useMemo(
+    () => ({ index, last, hasSubLabelMargin }),
+    [index, last, hasSubLabelMargin],
+  );
   return <TimelineStepContext.Provider value={value}>{children}</TimelineStepContext.Provider>;
 };
 

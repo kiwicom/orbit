@@ -9,6 +9,7 @@ import Text from "../../../Text";
 import Stack from "../../../Stack";
 import defaultTheme from "../../../defaultTheme";
 import type { Props as StepProps, Type } from "../types";
+import useTheme from "../../../hooks/useTheme";
 
 const StyledDescription = styled.div<{ active?: boolean }>`
   ${({ theme, active }) => css`
@@ -28,6 +29,7 @@ interface Props extends StepProps {
   last: boolean;
   prevType: Type;
   nextType: Type;
+  hasSubLabelMargin?: boolean;
 }
 
 const TimelineStepDesktop = ({
@@ -39,14 +41,12 @@ const TimelineStepDesktop = ({
   active,
   label,
   subLabel,
+  hasSubLabelMargin,
 }: Props) => {
+  const theme = useTheme();
+
   return (
     <Stack inline shrink direction="column" align="center">
-      <StyledText>
-        <Text align="center" size="small">
-          {subLabel}
-        </Text>
-      </StyledText>
       <StyledRelative inner>
         <StyledProgressLine desktop status={type} prevStatus={prevType} nextStatus={nextType} />
         <TypeIcon type={type} active={!!active} />
@@ -59,8 +59,19 @@ const TimelineStepDesktop = ({
         />
       </StyledRelative>
       <Stack flex align="center" spacing="XSmall" direction="column">
+        {subLabel && (
+          <StyledText>
+            <Text align="center" size="small">
+              {subLabel}
+            </Text>
+          </StyledText>
+        )}
         <StyledText active={active || (last && type === "success")}>
-          <Text align="center" weight="bold">
+          <Text
+            align="center"
+            weight="bold"
+            margin={{ top: !subLabel && hasSubLabelMargin ? theme.orbit.spaceLarge : 0 }}
+          >
             {label}
           </Text>
         </StyledText>

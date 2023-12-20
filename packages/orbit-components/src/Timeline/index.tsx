@@ -30,6 +30,11 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
     return isDesktop ? "row" : "column";
   };
 
+  const hasSubLabelMargin = React.useMemo(
+    () => childrenArr.some(child => React.isValidElement(child) && child.props.subLabel),
+    [childrenArr],
+  );
+
   return childrenArr && childrenArr.length > 0 ? (
     <WrapperStyled spaceAfter={spaceAfter} data-test={dataTest} id={id}>
       <Stack flex shrink direction={getDirection()}>
@@ -37,7 +42,11 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
           {React.Children.map(childrenArr, (child, i) => {
             if (React.isValidElement(child)) {
               return (
-                <TimelineStepProvider index={i} last={i + 1 === childrenArr.length}>
+                <TimelineStepProvider
+                  index={i}
+                  last={i + 1 === childrenArr.length}
+                  hasSubLabelMargin={hasSubLabelMargin}
+                >
                   {child}
                 </TimelineStepProvider>
               );

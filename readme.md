@@ -67,9 +67,10 @@ For live preview check out [Storybook](https://kiwicom.github.io/orbit/) or [orb
 
 You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io/s/github/designkiwicom/orbit-sandbox).
 
-## Types
+## Typescript
 
-Orbit comes with both Flow and Typescript definitions files, so you can choose what fits your project. However, if you work with Typescript, you need to add type for `styled-components`.
+Orbit comes with Typescript definitions files.
+If you work with Typescript, you need to add type for `styled-components`.
 
 ```
 // with npm

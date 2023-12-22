@@ -1,6 +1,6 @@
 ---
 title: Using component types
-description: Guidelines on how to use and make the most out of exported component types in Typescript and Flow.
+description: Guidelines on how to use and make the most out of exported component types in Typescript.
 redirect_from:
   - /guides/using-component-types/
 ---
@@ -44,25 +44,6 @@ import Text, { Props as TextProps } from "@kiwicom/orbit-components/lib/Text";
 interface Props {
   type: TextProps["type"];
 }
-
-const WrappedText = ({ children, type }) => <Text type={type}>{children}</Text>;
-
-export default WrappedText;
-```
-
-## Flow
-
-In `Flow`,
-you can access the fields using [`$PropertyType`](https://flow.org/en/docs/types/utilities/#toc-propertytype),
-so the example would be fixed as follows:
-
-```jsx
-import Text from "@kiwicom/orbit-components/lib/Text";
-import type { Props as TextProps } from "@kiwicom/orbit-components/lib/Text";
-
-type Props = {|
-  type: $PropertyType<TextProps, "type">,
-|};
 
 const WrappedText = ({ children, type }) => <Text type={type}>{children}</Text>;
 

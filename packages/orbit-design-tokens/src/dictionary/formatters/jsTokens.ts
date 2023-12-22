@@ -155,7 +155,7 @@ const typescriptFactory = (allProperties: Dictionary["allProperties"], complete 
 };
 
 /*
-  Used for generating flow and typescript. Javascript is separate - it has way to many differences.
+  Used for generating typescript. Javascript is separate - it has way to many differences.
  */
 
 const typescriptTokens: Format = {

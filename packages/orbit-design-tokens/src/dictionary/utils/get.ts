@@ -62,7 +62,7 @@ export const getFoundationVariantOnlyProperties = (
 /**
   Based on platform we need to return different name and value.
   Because "attribute/foundation" is used, we can use foundationName and foundationValue
-  for the flow and typescript platform. Otherwise basic name and value of the property.
+  for the typescript platform. Otherwise basic name and value of the property.
  */
 
 export const getFoundationNameValue = (platform: string): NameValueSelector => {

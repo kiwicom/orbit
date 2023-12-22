@@ -23,9 +23,8 @@
     "fetch:colors": "zx ./scripts/fetchBaseTokens.mjs",
     "check:types": "tsc",
     "test": "jest",
-    "build": "yarn clean && yarn build:dictionary && tsup && yarn generate:flow && yarn eslint --fix src/js/*.ts",
+    "build": "yarn clean && yarn build:dictionary && tsup && yarn eslint --fix src/js/*.ts",
     "build:dictionary": "node --loader ts-node/esm ./src/dictionary/build.ts",
-    "generate:flow": "npx flowgen --output-file ./dist/index.js.flow ./dist/index.d.ts --add-flow-header",
     "prepublishOnly": "yarn build",
     "clean": "del-cli dist output src/js/createTokens.* src/js/defaultFoundation.*"
   },

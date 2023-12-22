@@ -1,4 +1,3 @@
-// @noflow
 module.exports = {
   displayName: "orbit-components",
   testEnvironment: "jsdom",

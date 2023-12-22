@@ -1,6 +1,0 @@
-// @flow
-import type { Theme } from "../../defaultTheme.js.flow";
-
-export type UseTheme = () => Theme;
-
-declare export default UseTheme;

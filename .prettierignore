@@ -2,7 +2,6 @@ packages/*/es
 packages/*/lib
 packages/*/umd
 packages/orbit-design-tokens/output
-flow-typed
 **/package.json
 CHANGELOG.md
 log.md

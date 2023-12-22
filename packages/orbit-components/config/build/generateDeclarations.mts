@@ -1,53 +1,13 @@
-import { $, chalk, fs, globby } from "zx";
-import flowgen, { beautify } from "flowgen";
-import filedirname from "filedirname";
-import dedent from "dedent";
-
-import { DECLARATIONS_IGNORE_PATTERN } from "./consts.mjs";
-
-const [, __dirname] = filedirname();
+import { $, chalk } from "zx";
 
 export default async function generateTypeDeclarations() {
   await $`node --loader ts-node/esm config/typeFiles.mts`;
 
   console.log(chalk.greenBright.bold("Generating type declarations..."));
-  await $`cpy "**/*.js.flow" ../lib --cwd src --parents`;
-  await $`cpy "**/*.js.flow" ../es --cwd src --parents`;
   await $`cpy "**/types.d.ts" ../lib --cwd src --parents`;
   await $`cpy "**/types.d.ts" ../es --cwd src --parents`;
 
   await $`del tsconfig.tsbuildinfo`; // reset potential incremental compilation information
   await $`tsc --p tsconfig-build.json`;
   await $`tsc --p tsconfig-build.json --rootDir src --outDir es --declaration --emitDeclarationOnly --moduleResolution node`;
-
-  console.log(chalk.greenBright.bold("Generating flow declarations..."));
-
-  const tsDeclarations = await globby("{lib,es}/*.d.ts", {
-    ignore: DECLARATIONS_IGNORE_PATTERN,
-  });
-
-  await Promise.all(
-    tsDeclarations.map(async declaration => {
-      const flowDeclPath = declaration.replace(".d.ts", ".js.flow");
-      try {
-        if (await fs.pathExists(flowDeclPath)) return;
-        const flowDecl = beautify(
-          flowgen.compiler.compileDefinitionFile(declaration, {
-            interfaceRecords: true,
-          }),
-        );
-        const content = ["// @flow", flowDecl].join("\n");
-        await fs.writeFile(flowDeclPath, content);
-      } catch (err) {
-        if (err instanceof Error) {
-          err.message = dedent`
-              Failed to create a Flow libdef
-              ${__dirname}/${flowDeclPath}
-              ${err.message}
-            `;
-          throw err;
-        }
-      }
-    }),
-  );
 }

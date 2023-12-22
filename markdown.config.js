@@ -1,4 +1,3 @@
-// @noflow
 const browserslist = require("browserslist");
 // the recommended command `npx browserslist@latest --update-db` removes caniuse-lite from package.json
 // so we're going to use it as a transitive dependency

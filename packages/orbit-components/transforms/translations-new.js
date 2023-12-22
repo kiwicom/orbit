@@ -1,4 +1,3 @@
-// @noflow
 /* eslint-disable no-param-reassign */
 const COMPONENTS = [
   "Popover",

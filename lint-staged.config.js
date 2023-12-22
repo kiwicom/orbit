@@ -1,7 +1,5 @@
-// @noflow
-
 module.exports = {
-  "*.{js,flow,ts,tsx}": "eslint --fix --report-unused-disable-directives",
+  "*.{js,ts,tsx}": "eslint --fix --report-unused-disable-directives",
   "*.{ts,tsx,d.ts}": () => "tsc-files --noEmit",
   "*.{md,json,yaml,yml}": "prettier --write",
   "*.mdx": "eslint --report-unused-disable-directives",

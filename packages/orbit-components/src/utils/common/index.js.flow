@@ -1,3 +1,0 @@
-// @flow
-declare export var firstToUpper: (str: string) => string;
-declare export var defaultFocus: () => any;

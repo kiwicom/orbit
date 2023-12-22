@@ -36,7 +36,7 @@ jobs:
           yarn themer build
 
       - name: Type checks
-        run: yarn check:types && yarn flow check
+        run: yarn check:types
 
   lint:
     runs-on: ubuntu-latest

@@ -1,4 +1,3 @@
-// @noflow
 /* eslint-disable no-param-reassign */
 function palette(fileInfo, api) {
   const j = api.jscodeshift;

@@ -14,6 +14,7 @@ const List = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  gap: ${defaultTokens.spaceLarge};
   justify-content: flex-start;
   align-items: center;
   align-content: center;
@@ -24,7 +25,7 @@ const Container = styled.div`
   border-radius: ${defaultTokens.borderRadiusLarge};
   border: ${defaultTokens.borderWidthCard} ${defaultTokens.borderStyleCard}
     ${defaultTokens.paletteCloudNormal};
-  padding-right: ${defaultTokens.spaceLarge};
+  padding: 0 ${defaultTokens.spaceLarge};
 `;
 
 const IconImport = styled.div`
@@ -43,10 +44,7 @@ const IconList = () => (
     {Object.keys(Icons)
       .filter(n => n !== "__namedExportsOrder")
       .map(icon => {
-        const Icon = styled(Icons[icon])`
-          padding: 0 ${defaultTokens.spaceLarge};
-          flex-shrink: 0;
-        `;
+        const Icon = Icons[icon];
 
         const iconName = `${icon}`;
         return (

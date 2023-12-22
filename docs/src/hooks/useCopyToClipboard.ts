@@ -1,4 +1,3 @@
-// @flow
 import { useEffect, useState, useCallback } from "react";
 import copy from "copy-to-clipboard";
 

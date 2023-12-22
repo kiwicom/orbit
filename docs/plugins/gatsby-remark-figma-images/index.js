@@ -1,5 +1,3 @@
-// @noflow
-
 const visit = require("unist-util-visit");
 const path = require("path");
 const fs = require("fs");

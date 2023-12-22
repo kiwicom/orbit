@@ -6,11 +6,11 @@ Structure of the directory where the necessary files for a Component are located
 
 <pre>
 <strong>├─ _tests_</strong>
-<strong>  └── index.test.js</strong> ........... Component's tests
-<strong>├─ index.js</strong> .................... Component's logic
-<strong>├─ index.js.flow</strong> ............... Component's types
-<strong>├─ Component.stories.js</strong> ........ Component's Storybook
-<strong>├─ consts.js</strong> ................... Component's constants
+<strong>  └── index.test.tsx</strong> ........... Component's tests
+<strong>├─ index.tsx</strong> ................... Component's logic and rendering
+<strong>├─ index.d.ts</strong> .................. Component's types
+<strong>├─ Component.stories.tsx</strong> ....... Component's Storybook
+<strong>├─ consts.ts</strong> ................... Component's constants
 <strong>└─ README.md</strong> ................... Component's documentation
 </pre>
 
@@ -40,7 +40,7 @@ StyledComponent.defaultProps = {
 
 ### Render
 
-Set up `defaultProps` by assigning default values to the props. Destructurize them and finally return the Component.
+Set up `defaultProps` by assigning default values to the props. Destructure them and finally return the Component.
 
 ```jsx
 const Component = (props: Props) => {
@@ -49,23 +49,19 @@ const Component = (props: Props) => {
 };
 ```
 
-## Component Flow typing
+## Component types
 
-For static typing we use [Flow](https://flow.org/en/docs/react/). Always create `index.js.flow` file, where the declaration of types is stored. We use `strict` and `read-only` types to be more strict in setting up values of the props, `optional` types are used only when the purpose of the prop is really optional.
+For component typing we use [Typescript](https://www.typescriptlang.org/). Always create `index.d.ts` file, where the declaration of types is stored. We use `readonly` types to be more strict in setting up values of the props. When the purpose of the prop is really optional, its type should me marked as optional (`?`).
 
-Every component should have `dataTest` prop. For this cases, we are using `globals` flow type.
+Every component should accept `dataTest` and `id` props. For this, we extend the `Globals` type.
 
-```jsx
-// @flow
-import type { Globals } from "../common/common.js.flow";
+```ts
+import type * as Common from "../common/types";
 
-export type Props = {|
-  +size?: "small" | "medium" | "large",
-  +children: React$Node,
-  ...Globals,
-|};
-
-declare export default React$ComponentType<Props>;
+export interface Props extends Common.Globals {
+  readonly size?: "small" | "medium" | "large";
+  readonly children: React.ReactNode;
+}
 ```
 
 ## Component constants
@@ -73,7 +69,6 @@ declare export default React$ComponentType<Props>;
 We use constants for props that have options. In this way, we can easily maintain consistency. Just export your options as objects with `uppercase`.
 
 ```jsx
-// @flow
 export const SIZE_OPTIONS = {
   SMALL: "small",
   MEDIUM: "medium",

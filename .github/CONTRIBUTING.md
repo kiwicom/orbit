@@ -74,7 +74,6 @@ This is a monorepo containing a few Orbit packages:
 
 #### Root
 
-- `/flow-typed` – Flow library definitions
 - `/scripts` – Scripts for development and publishing
 
 ### How to develop

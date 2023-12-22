@@ -10,4 +10,4 @@
 
 - [ ] Tests have been added/adjusted for my new feature
 - [ ] New Components are registered in index.js of my project
-- [ ] New Components have both `.flow` and `d.ts` files and are exported in `index.js.flow` and `index.d.ts`
+- [ ] New Components have `d.ts` files and are exported in `index.d.ts`

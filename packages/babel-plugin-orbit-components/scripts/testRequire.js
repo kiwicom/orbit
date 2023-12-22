@@ -1,5 +1,3 @@
-// @noflow
-
 // to avoid an ESLint issue with --report-unused-disable-directives
 const path = "../dist";
 

@@ -1,5 +1,3 @@
-// @flow
-
 const os = require("os");
 const { transform: babelTransform } = require("@babel/core");
 

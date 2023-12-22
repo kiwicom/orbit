@@ -1,4 +1,0 @@
-// @flow
-import { KeyFrames } from "styled-components";
-
-declare export default function toggleDown(contentHeight: number): KeyFrames;

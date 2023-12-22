@@ -1,5 +1,3 @@
-// @noflow
-
 module.exports = {
   diffingEngine: "looks-same",
   configurations: {

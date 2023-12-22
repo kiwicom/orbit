@@ -58,16 +58,6 @@ const firstToUpper = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
     `;
   };
 
-  const flowTemplate = (functionName: string) => `// @flow
-import * as React from "react";
-
-import type { Props } from "../Icon";
-
-export type ${functionName}Type = React.ComponentType<Props>;
-
-declare export default ${functionName}Type;
-  `;
-
   const typescriptTemplate = (functionName: string) => `
 import * as React from "react";
 
@@ -101,12 +91,6 @@ export { ${functionName}, ${functionName} as default };
         .catch(err => console.error(err));
     }
 
-    // write Flow declaration for every icon
-    fs.writeFileSync(
-      path.join(componentPath, `${outputComponentFileName.replace(/\.tsx?/, ".js")}.flow`),
-      flowTemplate(functionName),
-    );
-
     // write TypeScript declaration for every icon
     fs.writeFileSync(
       path.join(componentPath, `${outputComponentFileName.replace(/\.tsx?/, "")}.d.ts`),
@@ -123,21 +107,11 @@ export { ${functionName}, ${functionName} as default };
 
   fs.writeFileSync(path.join(componentPath, "index.ts"), index);
 
-  const flow = `// @flow
-import * as React from "react";\n\n`;
-
   const TSHeader = `// Type definitions for @kiwicom/orbit-components
 // Project: https://github.com/kiwicom/orbit/\n`;
 
   const iconMapper = (interpolation: (param: string) => string) =>
     names.map(({ functionName }) => interpolation(functionName)).join("");
-
-  fs.writeFileSync(
-    path.join(componentPath, "index.js.flow"),
-    flow +
-      iconMapper((name: string) => `import type { ${name}Type } from "./${name}";\n`) +
-      iconMapper((name: string) => `declare export var ${name}: ${name}Type;\n`),
-  );
 
   fs.writeFileSync(
     path.join(componentPath, "index.d.ts"),

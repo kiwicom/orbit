@@ -26,31 +26,11 @@ module.exports = {
         "import/no-extraneous-dependencies": "off",
       },
     },
-    {
-      files: ["{src,es,lib}/**/*.js?(x)", "*.js?(x).flow"],
-      rules: {
-        "flowtype/require-valid-file-annotation": ["error", "always"],
-      },
-    },
     // TODO: temporary disabled because of the issue: https://github.com/typescript-eslint/typescript-eslint/issues/4608
     {
       files: ["src/**/*.ts?(x)"],
       rules: {
         "@typescript-eslint/consistent-type-imports": "warn",
-      },
-    },
-    {
-      files: ["*.js?(x)", "*.js?(x).flow"],
-      parser: "@babel/eslint-parser",
-      extends: ["plugin:flowtype/recommended", "prettier"],
-      parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: "module",
-        requireConfigFile: false,
-      },
-      rules: {
-        "flowtype/require-exact-type": "error",
-        "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint
       },
     },
     {

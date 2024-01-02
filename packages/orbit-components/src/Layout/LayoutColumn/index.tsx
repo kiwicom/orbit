@@ -6,11 +6,11 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import type { Props } from "./types";
 import type { Devices } from "../../utils/mediaQuery/types";
-import { DEVICES } from "../../utils/mediaQuery/consts";
-import mq from "../../utils/mediaQuery";
+import { DEVICES, QUERIES } from "../../utils/mediaQuery/consts";
+import mq, { getBreakpointWidth } from "../../utils/mediaQuery";
 
 const StyledColumn = styled.div<{ spanEntireRow?: boolean; hideOn: Devices[] }>`
-  ${({ spanEntireRow, hideOn }) => css`
+  ${({ spanEntireRow, hideOn, theme }) => css`
     ${Boolean(hideOn) &&
     hideOn.length > 0 &&
     Object.values(DEVICES).map(viewport =>
@@ -32,6 +32,14 @@ const StyledColumn = styled.div<{ spanEntireRow?: boolean; hideOn: Devices[] }>`
     css`
       grid-column: 1 / -1;
     `};
+
+    @media (max-width: ${+getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true) - 1}px) {
+      .orbit-card {
+        margin-right: -${theme.orbit.spaceMedium};
+        margin-left: -${theme.orbit.spaceMedium};
+        width: auto;
+      }
+    }
   `}
 `;
 

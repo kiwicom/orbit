@@ -207,7 +207,7 @@ const PopoverContentWrapper = ({
               "bottom-[var(--actions-height)]",
               windowHeight &&
                 actionsHeight &&
-                "max-h-[calc(var(--window-height)-var(--actions-height)-32)]",
+                "max-h-[calc(var(--window-height)-var(--actions-height)-32px)]",
               noPadding ? "p-0" : "p-md",
               "lm:max-h-[var(--max-height)]",
               "lm:rounded-normal",

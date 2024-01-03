@@ -120,6 +120,21 @@
     "github": "https://github.com/janpanschab"
   },
   {
+    "id": 284263,
+    "name": "Jan Škrášek",
+    "username": "hrach",
+    "error": "",
+    "twitter": "hrachcz",
+    "website": "https://hrach.dev",
+    "info": "Staff Engineer in Kiwi.com • Kotlin and Android • JetPack Compose in Orbit Design System • Nextras Orm",
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/284263?v=4",
+    "position": "",
+    "github": "https://github.com/hrach"
+  },
+  {
     "id": 2174629,
     "name": "Jaroslav Kubíček",
     "username": "jaroslav-kubicek",
@@ -133,21 +148,6 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/2174629?v=4",
     "position": "",
     "github": "https://github.com/jaroslav-kubicek"
-  },
-  {
-    "id": 2660330,
-    "name": "Josef Duda",
-    "username": "JosefDuda",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": "Digital Clown",
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/2660330?v=4",
-    "position": "",
-    "github": "https://github.com/JosefDuda"
   },
   {
     "id": 7254437,
@@ -225,19 +225,19 @@
     "github": "https://github.com/silvenon"
   },
   {
-    "id": 2264725,
-    "name": "Michael Musil",
-    "username": "infi-pc",
+    "id": 2528846,
+    "name": "Michal Sänger",
+    "username": "michalsanger",
     "error": "",
-    "twitter": "_MichaelMusil",
+    "twitter": null,
     "website": "",
     "info": null,
     "core": false,
     "active": false,
     "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/2264725?v=4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2528846?v=4",
     "position": "",
-    "github": "https://github.com/infi-pc"
+    "github": "https://github.com/michalsanger"
   },
   {
     "id": 1737335,
@@ -345,21 +345,6 @@
     "github": "https://github.com/mainframev"
   },
   {
-    "id": 18072606,
-    "name": "Viktor Borszéki",
-    "username": "vborszeki",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": null,
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/18072606?v=4",
-    "position": "",
-    "github": "https://github.com/vborszeki"
-  },
-  {
     "id": 1473642,
     "name": "Václav Šír",
     "username": "VaclavSir",
@@ -433,5 +418,20 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/129299274?v=4",
     "position": "",
     "github": "https://github.com/jozef-mikusinec-kiwicom"
+  },
+  {
+    "id": 5772786,
+    "name": null,
+    "username": "majlan",
+    "error": "",
+    "twitter": "milanseitler",
+    "website": "seitler.cz",
+    "info": "Designer & ex-developer",
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5772786?v=4",
+    "position": "",
+    "github": "https://github.com/majlan"
   }
 ]

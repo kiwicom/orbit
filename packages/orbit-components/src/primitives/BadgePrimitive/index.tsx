@@ -24,7 +24,7 @@ const BadgePrimitive = ({
         "orbit-badge-primitive",
         "font-base text-small font-medium leading-[14px]",
         "inline-flex shrink-0 grow-0 basis-auto items-center justify-center",
-        "rounded-badge min-h-icon-medium relative box-border",
+        "rounded-badge min-h-icon-large relative box-border",
         "px-xs py-0",
         "[&>.orbit-carrier-logo]:absolute [&>.orbit-carrier-logo]:start-0",
       )}

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.1.1...@kiwicom/orbit-tailwind-preset@3.1.2) (2024-01-04)
+
+
+### Bug Fixes
+
+* **tailwind:** set disablePreflight to false by default ([861ac5b](https://github.com/kiwicom/orbit/commit/861ac5bed3d27cdd56847ab34e32a4fb187eecbc))
+
+
+
+
+
 ## [3.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.1.0...@kiwicom/orbit-tailwind-preset@3.1.1) (2023-12-14)
 
 **Note:** Version bump only for package @kiwicom/orbit-tailwind-preset

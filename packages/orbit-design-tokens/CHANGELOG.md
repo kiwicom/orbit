@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.3.2...@kiwicom/orbit-design-tokens@6.3.3) (2024-01-04)
+
+
+### Bug Fixes
+
+* **tokens:** fix heightBadge token replacement ([81e54b5](https://github.com/kiwicom/orbit/commit/81e54b516082909ac33aef4b56550f0c494c8b4a))
+
+
+
+
+
 ## [6.3.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.3.1...@kiwicom/orbit-design-tokens@6.3.2) (2023-12-14)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

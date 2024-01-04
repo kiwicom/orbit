@@ -1387,7 +1387,7 @@ const createTokens: CreateTokens = foundation => ({
   heightIconSmall: foundation.size.small,
   heightIconMedium: "20px",
   heightIconLarge: "24px",
-  heightBadge: "20px",
+  heightBadge: "24px",
   heightCheckbox: "20px",
   heightRadioButton: "20px",
   heightStopoverArrow: "7px",

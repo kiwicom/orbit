@@ -565,7 +565,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "headingTitle6FontSize": "13px",
   "headingTitle6FontWeight": "700",
   "headingTitle6LineHeight": "16px",
-  "heightBadge": "20px",
+  "heightBadge": "24px",
   "heightButtonLarge": "52px",
   "heightButtonNormal": "44px",
   "heightButtonSmall": "32px",

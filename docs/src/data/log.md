@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [11.3.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.3.1...@kiwicom/orbit-components@11.3.2) (2024-01-04)
+
+#### Bug Fixes
+
+*   **BadgePrimitive:** fix min height ([13fa300](https://github.com/kiwicom/orbit/commit/13fa30046afa8b81b4cf9931e2116dafb8203149))
+*   **ButtonPrimitive:** add missing shrink-0 and grow-0 ([1b1444c](https://github.com/kiwicom/orbit/commit/1b1444ca5eb5284f45e76793a5f081c04bcbc164))
+*   **ButtonPrimitive:** width prop now works as expected ([88b5047](https://github.com/kiwicom/orbit/commit/88b5047eaee3de9ab639ce49d38afd55ea9c7b3f))
+*   **Itinerary:** some text wasn't truncating properly ([e6157ea](https://github.com/kiwicom/orbit/commit/e6157ea6131c7a00790fead9de1780b4ef5a2be9))
+*   **Layout:** get back correct spacing for Card on Mobile ([e0d4e50](https://github.com/kiwicom/orbit/commit/e0d4e50ae2039805937321d1b0a40df1b2b40975))
+*   **Popover:** fix max-height when content has actions ([798d7c4](https://github.com/kiwicom/orbit/commit/798d7c4d92532c882e4fc5dd70bfc0f362f80b27))
+*   **TimelineStep:** move subLabel below timeline ([660387a](https://github.com/kiwicom/orbit/commit/660387a338320f5401be1f49e27da8cb1292a444))
+
 ### [11.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.3.0...@kiwicom/orbit-components@11.3.1) (2023-12-14)
 
 #### Bug Fixes

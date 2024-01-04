@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.3.3...@kiwicom/orbit-design-tokens@7.0.0) (2024-01-04)
+
+
+### Features
+
+* flow type file no longer built ([a5078b8](https://github.com/kiwicom/orbit/commit/a5078b8e008c756386290feb12c9780b0d6a0f4b))
+
+
+### BREAKING CHANGES
+
+* a flow types file is no longer exported. Only Typescript is supported
+
+
+
+
+
 ## [6.3.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.3.2...@kiwicom/orbit-design-tokens@6.3.3) (2024-01-04)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@4.2.15...@kiwicom/babel-plugin-orbit-components@5.0.0) (2024-01-04)
+
+
+### Features
+
+* flow support removed ([9ef3264](https://github.com/kiwicom/orbit/commit/9ef32642137e0aae8e489838c42b5afd986b139d))
+
+
+### BREAKING CHANGES
+
+* flow annotation is no longer included in file content
+
+
+
+
+
 ## [4.2.15](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@4.2.14...@kiwicom/babel-plugin-orbit-components@4.2.15) (2024-01-04)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

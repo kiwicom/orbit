@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.3.2...@kiwicom/orbit-components@12.0.0) (2024-01-04)
+
+
+### Features
+
+* remove flow types ([336137a](https://github.com/kiwicom/orbit/commit/336137a49847531824c4edca61265b5ade58da5b))
+
+
+### BREAKING CHANGES
+
+* deprecated flow types removed. Typescript is the only typing solution supported now.
+
+
+
+
+
 ## [11.3.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.3.1...@kiwicom/orbit-components@11.3.2) (2024-01-04)
 
 

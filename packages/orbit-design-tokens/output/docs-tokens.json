@@ -11530,7 +11530,7 @@
   "heightBadge": {
     "type": "size",
     "deprecated": true,
-    "replacement": "iconMediumSize",
+    "replacement": "iconLargeSize",
     "schema": {
       "namespace": "component",
       "object": "height",
@@ -11538,7 +11538,7 @@
     },
     "javascript": {
       "name": "heightBadge",
-      "value": "20px"
+      "value": "24px"
     },
     "foundation": {
       "name": "heightBadge",
@@ -11546,7 +11546,7 @@
     },
     "scss": {
       "name": "heightBadge",
-      "value": "20px"
+      "value": "24px"
     }
   },
   "heightCheckbox": {

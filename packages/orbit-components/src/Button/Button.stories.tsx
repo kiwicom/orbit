@@ -51,6 +51,23 @@ BasicButtons.story = {
   },
 };
 
+export const MultipleFullWidthButtonsInContainer = () => {
+  return (
+    <div style={{ width: 300, backgroundColor: "lightgray" }}>
+      Your privacy, your choice
+      <Stack direction="row">
+        <Button type="secondary" fullWidth>
+          Customize
+        </Button>
+        <Button type="secondary" fullWidth>
+          Reject all
+        </Button>
+        <Button fullWidth>Accept</Button>
+      </Stack>
+    </div>
+  );
+};
+
 export const ButtonWithIcons = () => {
   const children = text("Children", "Button");
   const fullWidth = boolean("fullWidth", false);

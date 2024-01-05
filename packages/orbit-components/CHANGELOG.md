@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.0.0...@kiwicom/orbit-components@12.0.1) (2024-01-05)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** add missing flex-auto ([70dcfcd](https://github.com/kiwicom/orbit/commit/70dcfcdc2dc82204ddfd5040f729507f95bd31e9))
+
+
+
+
+
 # [12.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@11.3.2...@kiwicom/orbit-components@12.0.0) (2024-01-04)
 
 

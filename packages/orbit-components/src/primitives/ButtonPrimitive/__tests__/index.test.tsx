@@ -87,16 +87,15 @@ describe("ButtonPrimitive", () => {
 
   it("should behave as button", async () => {
     const children = "Lorem ipsum";
-    const dataTest = "test";
     const onClick = jest.fn();
 
     render(
-      <ButtonPrimitive dataTest={dataTest} onClick={onClick} tabIndex={0} asComponent="div">
+      <ButtonPrimitive onClick={onClick} tabIndex={0} asComponent="div">
         {children}
       </ButtonPrimitive>,
     );
 
-    const button = screen.getByTestId(dataTest);
+    const button = screen.getByRole("button");
 
     await user.tab();
     fireEvent.keyDown(button, { keyCode: 13 });

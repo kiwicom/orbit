@@ -34,8 +34,7 @@ const ButtonPrimitiveComponent = React.forwardRef(function Component(
   }: ComponentProps,
   ref: React.ForwardedRef<HTMLButtonElement | HTMLAnchorElement>,
 ) {
-  const isButtonWithHref = asComponent === "button" && href;
-  const Element = isButtonWithHref ? "a" : asComponent;
+  const Element = asComponent === "button" && href ? "a" : asComponent;
   const buttonType = submit ? "submit" : "button";
 
   const handleKeyDown = (ev: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) =>
@@ -50,7 +49,8 @@ const ButtonPrimitiveComponent = React.forwardRef(function Component(
       aria-expanded={ariaExpanded}
       aria-label={title}
       aria-labelledby={ariaLabelledby}
-      type={!isButtonWithHref ? buttonType : undefined}
+      type={asComponent === "button" && !href ? buttonType : undefined}
+      role={!href && onClick ? "button" : undefined}
       disabled={disabled}
       onKeyDown={handleKeyDown}
       href={!disabled ? href : null}

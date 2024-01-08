@@ -22,7 +22,7 @@ const Breadcrumbs = ({
   const childEls = React.Children.toArray(children) as React.ReactElement<BreadcrumbsItemProps>[];
 
   return (
-    <>
+    <div>
       <Hide on={["smallMobile", "mediumMobile"]}>
         <nav
           className={cx("font-base text-small", spaceAfter && spaceAfterClasses[spaceAfter])}
@@ -60,7 +60,7 @@ const Breadcrumbs = ({
           </TextLink>
         ) : null}
       </Hide>
-    </>
+    </div>
   );
 };
 

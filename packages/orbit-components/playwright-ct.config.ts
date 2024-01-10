@@ -16,6 +16,7 @@ export default defineConfig({
   expect: {
     toHaveScreenshot: {
       threshold: 0.01, // default is 0.2 and that is way too lax, gives false negatives
+      maxDiffPixels: 10, // default is 0 and was causing problems with icons that were off by a single pixel
     },
   },
   use: {

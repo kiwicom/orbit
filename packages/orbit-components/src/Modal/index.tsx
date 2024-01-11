@@ -204,6 +204,7 @@ const Modal = React.forwardRef<Instance, Props>(
         modalContent.current &&
         event.target instanceof Element &&
         !modalContent.current.contains(event.target) &&
+        event.target.className &&
         (event.target.className.includes("orbit-modal-wrapper") ||
           event.target.className.includes("orbit-modal-body"));
 

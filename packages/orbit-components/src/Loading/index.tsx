@@ -56,7 +56,11 @@ const Loader = ({ type, customSize }) => {
   }
 
   return (
-    <svg viewBox="0 0 40 40" className="orbit-loading-spinner animate-spinner h-xxl w-xxl">
+    <svg
+      viewBox="0 0 40 40"
+      className="orbit-loading-spinner animate-spinner h-xxl w-xxl"
+      stroke={type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteCloudDark}
+    >
       <circle
         cx="50%"
         cy="50%"
@@ -91,11 +95,10 @@ const Loading = ({
             "overflow-hidden",
             "box-border",
             type === TYPE_OPTIONS.BUTTON_LOADER &&
-              "absolute start-0 top-0 h-full w-full justify-center",
+              "[&_.orbit-loading-spinner]:h-icon-medium [&_.orbit-loading-spinner]:w-icon-medium absolute start-0 top-0 h-full w-full justify-center",
             type === TYPE_OPTIONS.SEARCH_LOADER && "h-[40px] justify-start",
-            type === TYPE_OPTIONS.INLINE_LOADER
-              ? "inline-flex min-h-[19px] justify-center"
-              : "p-sm flex",
+            type === TYPE_OPTIONS.INLINE_LOADER && "inline-flex min-h-[19px] justify-center",
+            type !== TYPE_OPTIONS.INLINE_LOADER && "flex",
             type === TYPE_OPTIONS.BOX_LOADER && "h-[80px] justify-center",
             type === TYPE_OPTIONS.PAGE_LOADER && "h-[120px] flex-col justify-center",
           ])}

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.0.1...@kiwicom/orbit-components@12.1.0) (2024-01-11)
+
+#### Bug Fixes
+
+*   **Breadcrumbs:** remove extra top spacing on mobile ([007b1c2](https://github.com/kiwicom/orbit/commit/007b1c2fd18cb2f5ce985e6b0a96a067b78f10f4))
+*   **Card:** border radius incorrectly set on mobile ([ed222eb](https://github.com/kiwicom/orbit/commit/ed222ebbf8637fec6f6332555c0c65d09dd7c921))
+
+#### Features
+
+*   **ButtonPrimitive:** improve accessibility by using type and role ([ca2e5d9](https://github.com/kiwicom/orbit/commit/ca2e5d9606a0a60c459ea0da72e2de9ac7c97e0f))
+
 ### [12.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.0.0...@kiwicom/orbit-components@12.0.1) (2024-01-05)
 
 #### Bug Fixes

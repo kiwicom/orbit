@@ -98,11 +98,19 @@ const StyledIcon = styled.div<{ isFirst?: boolean; isLast?: boolean }>`
     align-items: center;
     position: relative;
     box-sizing: border-box;
-    padding: ${theme.orbit.spaceXXSmall};
+    padding: ${isFirst || isLast ? "0" : theme.orbit.spaceXXSmall} ${theme.orbit.spaceXXSmall};
     z-index: 3;
     svg {
-      padding-top: ${isFirst && theme.orbit.spaceXXSmall};
-      padding-bottom: ${isLast && theme.orbit.spaceXXSmall};
+      ${isFirst &&
+      `
+        margin-top: ${theme.orbit.spaceXSmall};
+        margin-bottom: ${theme.orbit.spaceXXSmall};
+      `}
+      ${isLast &&
+      `
+        margin-top: ${theme.orbit.spaceXXSmall};
+        margin-bottom: ${theme.orbit.spaceXSmall};
+      `}
     }
     &:after {
       content: "";

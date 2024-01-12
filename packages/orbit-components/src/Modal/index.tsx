@@ -469,7 +469,6 @@ const Modal = React.forwardRef<Instance, Props>(
               scrolled
                 ? [
                     "[&_.orbit-modal-mobile-header]:visible [&_.orbit-modal-mobile-header]:opacity-100",
-                    "[&_.orbit-modal-mobile-header]:ease-in-out [&_.orbit-modal-mobile-header]:[transition:visibility_theme(transitionDuration.fast),_opacity_theme(transitionDuration.fast),_top_theme(transitionDuration.normal)]",
                     "lm:[&_.orbit-modal-mobile-header]:top-0",
                   ]
                 : "lm:[&_.orbit-modal-mobile-header]:-top-xxl",

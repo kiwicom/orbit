@@ -39,7 +39,7 @@ const PlaygroundIframe = () => {
             <LiveProvider
               code={code}
               theme={shadesOfPurple}
-              scope={{ ...Icons, ...components, defaultTheme }}
+              scope={{ ...Icons, Icons, ...components, defaultTheme }}
             >
               <LiveError />
               <GlobalStyle />

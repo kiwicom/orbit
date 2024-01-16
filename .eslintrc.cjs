@@ -53,7 +53,7 @@ module.exports = {
     "jsx-a11y/label-has-associated-control": "off",
     "no-await-in-loop": "off",
     "tailwindcss/classnames-order": "off",
-    "tailwindcss/no-custom-classname": [1, { whitelist: ["(orbit\\-).*", "chromatic-ignore"] }],
+    "tailwindcss/no-custom-classname": [1, { whitelist: ["(orbit\\-).*"] }],
     // to improve performance locally
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#my-linting-feels-really-slow
     ...(!process.env.CI

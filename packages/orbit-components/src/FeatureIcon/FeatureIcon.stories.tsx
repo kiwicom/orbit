@@ -20,19 +20,3 @@ Playground.story = {
     info: "Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
-
-export const VisualTest = () => {
-  return (
-    <div className="space-x-xs flex">
-      {Object.values(NAME_OPTIONS).map(name => (
-        <FeatureIcon name={name} />
-      ))}
-    </div>
-  );
-};
-
-VisualTest.story = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
-};

@@ -261,23 +261,3 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
-
-export const VisualTest = () => {
-  return (
-    <div className="space-y-xs">
-      {Object.values(TYPE_OPTIONS).map(type => (
-        <Heading type={type}>Type {type}</Heading>
-      ))}
-
-      {Object.values(ALIGN).map(align => (
-        <Heading align={align}>Align {align}</Heading>
-      ))}
-    </div>
-  );
-};
-
-VisualTest.story = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
-};

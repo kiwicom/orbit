@@ -470,17 +470,3 @@ SmartFaqSearchInRtl.story = {
     info: "Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
-
-export const VisualTest = () => {
-  return (
-    <Drawer title="Drawer" shown onClose={action("onClose")} actions={<Button>Button</Button>}>
-      Stuffs
-    </Drawer>
-  );
-};
-
-VisualTest.story = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
-};

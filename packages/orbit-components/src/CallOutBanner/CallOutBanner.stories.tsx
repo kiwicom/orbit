@@ -7,7 +7,6 @@ import Illustration from "../Illustration";
 import { NAMES } from "../Illustration/consts.mts";
 import Button from "../Button";
 import List from "../List";
-import Text from "../Text";
 import ListItem from "../List/ListItem";
 
 import CallOutBanner from ".";
@@ -136,33 +135,5 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "This is the default configuration of this component.",
-  },
-};
-
-export const VisualTest = () => {
-  return (
-    <CallOutBanner
-      title="Call out banner"
-      description="Description worth testing"
-      illustration={<Illustration size="small" name="Money" />}
-      actions={
-        <Button
-          type="secondary"
-          size="small"
-          onClick={action("onClick")}
-          iconRight={<Icons.NewWindow />}
-        >
-          Find a Room
-        </Button>
-      }
-    >
-      <Text>Some children</Text>
-    </CallOutBanner>
-  );
-};
-
-VisualTest.story = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
   },
 };

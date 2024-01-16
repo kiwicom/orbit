@@ -1,4 +1,3 @@
-import "loki/configure-react";
 import { Preview } from "@storybook/react";
 
 import "../src/tailwind.css";

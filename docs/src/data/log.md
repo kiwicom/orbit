@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.1.0...@kiwicom/orbit-components@12.1.1) (2024-01-16)
+
+#### Bug Fixes
+
+*   **Itinerary:** add overflow:hidden to ItinerarySegmentDetail ([c4f2e3c](https://github.com/kiwicom/orbit/commit/c4f2e3ce22735123ef83b374a77139caa5af18be))
+*   **Itinerary:** icon sizes were incorrect inside SegmentDetail ([7658f45](https://github.com/kiwicom/orbit/commit/7658f456c328faea6fefa35ee658e64014929d51))
+*   **Loading:** remove redundant padding and get back icon 20px size ([3f17fcd](https://github.com/kiwicom/orbit/commit/3f17fcd3a608f2f732c8e1554a62785020e57540))
+*   **Modal:** check if e.target.className exists ([4d33c99](https://github.com/kiwicom/orbit/commit/4d33c991d46782b4d4304dc36b524486d2a7ac24))
+*   **Modal:** remove modal header transition on mobile ([7c10d8d](https://github.com/kiwicom/orbit/commit/7c10d8deaa81c1e02886842849fdb8aa7fda6b22))
+
 ## [12.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.0.1...@kiwicom/orbit-components@12.1.0) (2024-01-11)
 
 #### Bug Fixes

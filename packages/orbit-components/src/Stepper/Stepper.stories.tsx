@@ -106,19 +106,3 @@ Playground.story = {
     info: "Here you can try Stepper component with additional functionality.",
   },
 };
-
-export const VisualTest = () => {
-  return (
-    <div className="space-y-md flex flex-col">
-      <Stepper minValue={1} maxValue={10} defaultValue={2} />
-      <Stepper minValue={1} maxValue={10} defaultValue={2} active />
-      <Stepper minValue={1} maxValue={10} defaultValue={10} disabled />
-    </div>
-  );
-};
-
-VisualTest.story = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
-};

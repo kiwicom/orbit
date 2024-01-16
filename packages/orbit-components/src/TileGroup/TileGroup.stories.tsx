@@ -259,27 +259,3 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
-
-export const VisualTest = () => {
-  return (
-    <TileGroup>
-      <Tile expandable title="Tile">
-        Tile expandable
-      </Tile>
-      <Tile expandable title="Tile">
-        Tile expandable
-      </Tile>
-      <Tile expandable title="Tile">
-        Tile expandable
-      </Tile>
-    </TileGroup>
-  );
-};
-
-VisualTest.story = {
-  parameters: {
-    chromatic: {
-      disableSnapshot: false,
-    },
-  },
-};

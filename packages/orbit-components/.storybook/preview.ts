@@ -1,7 +1,6 @@
 import { Preview } from "@storybook/react";
 
 import "../src/tailwind.css";
-import { allModes } from "./modes";
 import { QUERIES } from "../src/utils/mediaQuery/consts";
 import orbitDecorator from "./orbitDecorator";
 import theme from "../src/defaultTheme";
@@ -29,14 +28,6 @@ const viewports = Object.entries(tokens).reduce((acc, [viewport, width]) => {
 const preview: Preview = {
   decorators: [orbitDecorator],
   parameters: {
-    chromatic: {
-      disableSnapshot: true,
-      modes: {
-        smallMobile: allModes.smallMobile,
-        tablet: allModes.tablet,
-        largeDesktop: allModes.largeDesktop,
-      },
-    },
     viewport: { viewports },
   },
 };

@@ -40,35 +40,3 @@ Default.story = {
     info: "This is the default configuration of this component.",
   },
 };
-
-export const VisualTest = () => {
-  const languages = Object.values(LANGUAGE);
-  return (
-    <div className="space-x-xs">
-      {languages.map(lang => (
-        <React.Fragment key={lang}>
-          <ButtonMobileStore
-            onClick={action("clicked")}
-            lang={lang}
-            href="#"
-            type="appStore"
-            alt="Download on the App Store"
-          />
-          <ButtonMobileStore
-            onClick={action("clicked")}
-            lang={lang}
-            href="#"
-            type="googlePlay"
-            alt="Download on the Google Play"
-          />
-        </React.Fragment>
-      ))}
-    </div>
-  );
-};
-
-VisualTest.story = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
-};

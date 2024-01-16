@@ -61,20 +61,3 @@ Playground.story = {
     info: "Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
-
-export const VisualTest = () => {
-  return (
-    <Dialog
-      title="Dialogue"
-      description="Our lord and saviour Kek"
-      primaryAction={<Button type="critical">Bröther</Button>}
-      renderInPortal={false}
-    />
-  );
-};
-
-VisualTest.story = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
-};

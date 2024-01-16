@@ -103,7 +103,7 @@ export default function CardSection({
         </div>
       )}
 
-      {children != null && expandable && (
+      {children && expandable && (
         <Expandable expanded={opened} slideID={slideID} labelID={slideID}>
           <div className="font-base text-normal text-primary-foreground px-md lm:px-lg w-full leading-normal">
             <div className="py-md lm:py-lg border-elevation-flat-border-color border-t">
@@ -113,7 +113,7 @@ export default function CardSection({
         </Expandable>
       )}
 
-      {children != null && !expandable && (
+      {children && !expandable && (
         <div
           className={cx(
             "font-base text-normal text-primary-foreground px-md lm:px-lg pb-md lm:pb-lg w-full leading-normal",

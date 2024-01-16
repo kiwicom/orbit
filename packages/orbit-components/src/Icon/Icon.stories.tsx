@@ -73,7 +73,6 @@ export const ListOfAllIcons = () => <IconList />;
 
 ListOfAllIcons.story = {
   name: "List of all icons",
-  parameters: { loki: { skip: true } },
 };
 
 export const VisualTest = () => {

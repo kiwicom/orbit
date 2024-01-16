@@ -69,7 +69,8 @@ const StyledDuration = styled.div<{ $minWidth?: number }>`
 const StyledExpandable = styled.div`
   ${({ theme }) => css`
     padding-top: ${theme.orbit.spaceSmall};
-  `}
+    overflow: hidden;
+  `};
 `;
 
 StyledExpandable.defaultProps = {

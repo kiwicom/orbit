@@ -205,8 +205,7 @@ const Modal = React.forwardRef<Instance, Props>(
         event.target instanceof Element &&
         !modalContent.current.contains(event.target) &&
         event.target.className &&
-        (event.target.className.includes("orbit-modal-wrapper") ||
-          event.target.className.includes("orbit-modal-body"));
+        /orbit-modal-wrapper|orbit-modal-body/.test(event.target.className);
 
       if (clickedOutside && onClose) onClose(event);
 

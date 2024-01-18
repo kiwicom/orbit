@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.1.1...@kiwicom/orbit-components@12.1.2) (2024-01-18)
+
+#### Bug Fixes
+
+*   **Card:** remove loosy equality check for children in CardSection ([8eb5e6f](https://github.com/kiwicom/orbit/commit/8eb5e6f7d36c33fd7169cbaa119759f8625a3ee9))
+
 ### [12.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.1.0...@kiwicom/orbit-components@12.1.1) (2024-01-16)
 
 #### Bug Fixes

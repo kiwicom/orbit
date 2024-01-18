@@ -8,7 +8,7 @@ import Radio from ".";
 
 export function Test(props: Props) {
   return (
-    <div className="p-xxs bg-[#CFC]">
+    <div className="bg-[#CFC]">
       <Radio label="Label" {...props} />
     </div>
   );

@@ -97,6 +97,9 @@ screenshots, you need to run the tests on Linux. You can do that by running the 
 - `yarn run docker:reset`
 - `yarn components test-ct --update-snapshots`
 
+> Note: you may encounter some installation script errors. This is normal and can be ignored. The
+> same applies to running the tests the first time.
+
 After you're done, reset the environment:
 
 - `yarn run docker:reset`
@@ -105,6 +108,25 @@ Both `darwin` and `linux` screenshots are kept:
 
 - `darwin` screenshots are for fast local development experience
 - `linux` screenshots are for CI
+
+#### Colima
+
+To use [Colima](https://github.com/abiosoft/colima) as your Docker engine, set it up as so:
+
+```shell
+brew install colima
+brew install docker docker-compose
+mkdir -p ~/.docker/cli-plugins
+ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+brew install docker-buildx
+ln -sfn $(brew --prefix)/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
+colima start --cpu 4 --memory 4 --disk 100
+```
+
+#### Reviewing the changes
+
+If you're satisfied with the changes, commit them and push them to the repository. In GitHub, the
+reviewer can conveniently see difference in before/after images when checking side-by-side.
 
 ### Track down the regression with `git bisect`
 

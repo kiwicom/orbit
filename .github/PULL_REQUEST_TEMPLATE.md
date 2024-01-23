@@ -1,10 +1,9 @@
 # This Pull Request meets the following criteria:
 
-### For tailwind migrations:
+### For Tailwind migrations:
 
-- [ ] Visual regression test suite has been added and run before the migration.
+- [ ] Visual regression test suite has been added if does not exist.
 - [ ] `tailwind-migration-status.yaml` file has been updated with the migrated component(s).
-- [ ] Visual regression test suite has been run after the PR approval and no visual changes were identified.
 
 ### For new components:
 

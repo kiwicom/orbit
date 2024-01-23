@@ -28,7 +28,7 @@ Desktop: true
 Dialog: true
 Drawer: true
 ErrorFormTooltip: true
-FeatureIcon: false
+FeatureIcon: true
 FormLabel: true
 Grid: true
 Heading: true

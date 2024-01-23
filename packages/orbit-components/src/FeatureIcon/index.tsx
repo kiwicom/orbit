@@ -1,13 +1,12 @@
 "use client";
 
 import * as React from "react";
-import styled from "styled-components";
 
-import defaultTheme from "../defaultTheme";
 import { baseURL } from "./consts";
 import type { Props } from "./types";
 
 const baseSize = 52;
+const heightClass = `h-[${baseSize}px]`;
 
 const getURL =
   (name: string) =>
@@ -24,20 +23,14 @@ const generateURL = (name: string) => {
   return { src: urlWithName(), srcSet: [urlWithName(2), urlWithName(3)].join(",") };
 };
 
-export const StyledFeatureIcon = styled(({ className, name, alt, dataTest, id }) => (
-  <img className={className} alt={alt} data-test={dataTest} id={id} {...generateURL(name)} />
-))`
-  height: ${baseSize}px;
-  width: auto;
-  background-color: transparent;
-`;
-
-StyledFeatureIcon.defaultProps = {
-  theme: defaultTheme,
-};
-
 const FeatureIcon = ({ alt = "", name, dataTest, id }: Props) => (
-  <StyledFeatureIcon alt={alt} name={name} dataTest={dataTest} id={id} />
+  <img
+    className={`${heightClass} w-auto bg-transparent`}
+    alt={alt}
+    data-test={dataTest}
+    id={id}
+    {...generateURL(name)}
+  />
 );
 
 export default FeatureIcon;

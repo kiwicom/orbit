@@ -78,6 +78,18 @@ export default function orbitTailwindPreset(options?: Options): Config {
   const tokens = getTokens(cssVarsFoundation);
   const componentTokens = getComponentLevelTokens(tokens);
 
+  const sizeTokens = {
+    "icon-small": tokens.iconSmallSize,
+    "icon-medium": tokens.iconMediumSize,
+    "icon-large": tokens.iconLargeSize,
+    separator: tokens.heightSeparator,
+    "form-box-small": tokens.formBoxSmallHeight,
+    "form-box-normal": tokens.formBoxNormalHeight,
+    "form-box-large": tokens.formBoxLargeHeight,
+    "country-flag-small": tokens.countryFlagSmallHeight,
+    "country-flag-medium": tokens.countryFlagMediumHeight,
+  };
+
   return {
     content: ["auto"],
     presets: [orbitFoundationPreset(tokens)],
@@ -123,16 +135,11 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "heading-title5": tokens.headingTitle5LineHeight,
           "heading-title6": tokens.headingTitle6LineHeight,
         },
+        size: {
+          ...sizeTokens,
+        },
         height: {
-          "icon-small": tokens.iconSmallSize,
-          "icon-medium": tokens.iconMediumSize,
-          "icon-large": tokens.iconLargeSize,
-          separator: tokens.heightSeparator,
-          "form-box-small": tokens.formBoxSmallHeight,
-          "form-box-normal": tokens.formBoxNormalHeight,
-          "form-box-large": tokens.formBoxLargeHeight,
-          "country-flag-small": tokens.countryFlagSmallHeight,
-          "country-flag-medium": tokens.countryFlagMediumHeight,
+          ...sizeTokens,
         },
         minHeight: {
           "icon-small": tokens.iconSmallSize,
@@ -150,12 +157,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "illustration-display": tokens.illustrationDisplayHeight,
         },
         width: {
-          "icon-small": tokens.iconSmallSize,
-          "icon-medium": tokens.iconMediumSize,
-          "icon-large": tokens.iconLargeSize,
-          "form-box-small": tokens.formBoxSmallHeight,
-          "form-box-normal": tokens.formBoxNormalHeight,
-          "form-box-large": tokens.formBoxLargeHeight,
+          ...sizeTokens,
           "country-flag-small": tokens.countryFlagSmallWidth,
           "country-flag-medium": tokens.countryFlagMediumWidth,
         },

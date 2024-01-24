@@ -88,7 +88,7 @@ const Dialog = ({
       id={id}
       className={cx([
         "font-base",
-        "h-full w-full",
+        "size-full",
         "p-md z-overlay box-border overflow-x-hidden bg-[rgba(0,0,0,0.5)]",
         "fixed inset-0",
         "duration-fast transition-opacity ease-in-out",

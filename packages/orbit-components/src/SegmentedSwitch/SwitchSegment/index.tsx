@@ -23,7 +23,7 @@ const SwitchSegment = ({
     <label className="orbit-switch-segment-label relative flex w-full">
       <input
         className={cx(
-          "sr-only absolute m-[-1px] h-[1px] w-[1px] overflow-hidden whitespace-nowrap border-0 p-0 focus:outline-none",
+          "sr-only absolute -m-px size-px overflow-hidden whitespace-nowrap border-0 p-0 focus:outline-none",
           "peer",
         )}
         name={name || "switch-segment"}

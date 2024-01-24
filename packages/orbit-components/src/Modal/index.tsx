@@ -399,7 +399,7 @@ const Modal = React.forwardRef<Instance, Props>(
       <div
         className={cx(
           "orbit-modal-body",
-          "z-overlay font-base fixed inset-0 box-border h-full w-full overflow-x-hidden outline-none",
+          "z-overlay font-base fixed inset-0 box-border size-full overflow-x-hidden outline-none",
           !isMobileFullPage && "bg-[black]/50",
           "lm:overflow-y-auto lm:p-xxl lm:bg-[black]/50",
         )}

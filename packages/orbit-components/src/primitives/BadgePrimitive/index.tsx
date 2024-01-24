@@ -34,12 +34,7 @@ const BadgePrimitive = ({
     >
       {carriers && <CarrierLogo carriers={carriers} rounded size="medium" />}
       {icon && (
-        <div
-          className={cx(
-            "[&>svg]:h-icon-small [&>svg]:w-icon-small flex shrink-0",
-            Boolean(children) && "me-xxs",
-          )}
-        >
+        <div className={cx("[&>svg]:size-icon-small flex shrink-0", Boolean(children) && "me-xxs")}>
           {icon}
         </div>
       )}

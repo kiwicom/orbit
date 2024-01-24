@@ -52,8 +52,7 @@ const Prefix = ({ children }: { children: React.ReactNode }) => (
       "text-form-element-prefix-foreground",
       "ps-sm pointer-events-none z-[3] flex h-full items-center justify-center",
       "[&>svg]:text-icon-tertiary-foreground",
-      "[&_*_svg]:w-icon-medium [&>svg]:w-icon-medium",
-      "[&_*_svg]:h-icon-medium [&>svg]:h-icon-medium",
+      "[&_svg]:size-icon-medium",
       "[&_.orbit-button-primitive-icon]:text-icon-secondary-foreground",
     )}
   >
@@ -236,7 +235,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "orbit-input-field-input",
             "font-base p-form-element-normal-padding",
             "z-[2] appearance-none border-none shadow-none",
-            "box-border h-full w-full min-w-0",
+            "box-border size-full min-w-0",
             "bg-transparent",
             "flex-1 basis-1/5",
             "[&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",

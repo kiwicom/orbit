@@ -174,7 +174,7 @@ const TooltipContent = ({
         </div>
         <div
           className={cx(
-            "after:absolute after:h-0 after:w-0 after:border-solid",
+            "after:absolute after:size-0 after:border-solid",
             resolveArrowStyles({
               error,
               help,

@@ -62,7 +62,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "orbit-radio-icon-container",
             "relative box-border",
             "flex flex-none items-center justify-center",
-            "rounded-circle h-icon-medium w-icon-medium",
+            "rounded-circle size-icon-medium",
             "duration-fast scale-100 transition-all ease-in-out",
             "lm:border border-[2px] border-solid",
             "active:scale-95",
@@ -74,7 +74,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         >
           <span
             className={cx(
-              "h-xs w-xs rounded-circle",
+              "size-xs rounded-circle",
               disabled ? "bg-cloud-light" : "bg-form-element-background",
               checked ? "visible" : "invisible",
             )}

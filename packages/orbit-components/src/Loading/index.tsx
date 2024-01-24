@@ -10,7 +10,7 @@ import useTheme from "../hooks/useTheme";
 const CircleLoader = ({ animationDelay }: { animationDelay?: string }) => {
   return (
     <div
-      className="animate-loader rounded-circle bg-cloud-dark h-xs w-xs me-[6px] [&:nth-child(3)]:m-0"
+      className="animate-loader rounded-circle bg-cloud-dark size-xs me-[6px] [&:nth-child(3)]:m-0"
       style={{ animationDelay }}
     />
   );
@@ -58,7 +58,7 @@ const Loader = ({ type, customSize }) => {
   return (
     <svg
       viewBox="0 0 40 40"
-      className="orbit-loading-spinner animate-spinner h-xxl w-xxl"
+      className="orbit-loading-spinner animate-spinner size-xxl"
       stroke={type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteCloudDark}
     >
       <circle
@@ -95,7 +95,7 @@ const Loading = ({
             "overflow-hidden",
             "box-border",
             type === TYPE_OPTIONS.BUTTON_LOADER &&
-              "[&_.orbit-loading-spinner]:h-icon-medium [&_.orbit-loading-spinner]:w-icon-medium absolute start-0 top-0 h-full w-full justify-center",
+              "[&_.orbit-loading-spinner]:size-icon-medium absolute start-0 top-0 size-full justify-center",
             type === TYPE_OPTIONS.SEARCH_LOADER && "h-[40px] justify-start",
             type === TYPE_OPTIONS.INLINE_LOADER && "inline-flex min-h-[19px] justify-center",
             type !== TYPE_OPTIONS.INLINE_LOADER && "flex",

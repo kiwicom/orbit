@@ -81,7 +81,7 @@ const ToastMessage = ({
         }}
       >
         <div
-          className="rounded-large bg-white-normal absolute left-0 top-0 z-[1] h-full w-full animate-[toast-light_var(--toast-message-duration)_linear] opacity-10 will-change-transform rtl:animate-[toast-light-rtl_var(--toast-message-duration)_linear]"
+          className="rounded-large bg-white-normal absolute left-0 top-0 z-[1] size-full animate-[toast-light_var(--toast-message-duration)_linear] opacity-10 will-change-transform rtl:animate-[toast-light-rtl_var(--toast-message-duration)_linear]"
           style={
             {
               "--toast-message-duration": `${dismissTimeout}ms`,

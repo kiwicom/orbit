@@ -130,7 +130,7 @@ const ErrorFormTooltip = ({
           isVertical ? "bottom-xxxs" : "top-xxxs",
           inlineLabel && "rtl:start-0",
           isHelp ? "before:bg-blue-normal" : "before:bg-red-normal",
-          "before:h-xs before:w-xs before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45",
+          "before:size-xs before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45",
         )}
         ref={setArrowRef}
       />

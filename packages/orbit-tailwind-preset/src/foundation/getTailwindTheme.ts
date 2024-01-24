@@ -155,13 +155,6 @@ const getTailwindTheme = (theme: typeof defaultTokens) => {
       de: toPx(defaultFoundation.breakpoint.desktop),
       ld: toPx(defaultFoundation.breakpoint.largeDesktop),
     },
-    size: {
-      small: defaultFoundation.size.small,
-      medium: defaultFoundation.size.medium,
-      large: defaultFoundation.size.large,
-      "extra-large": defaultFoundation.size.extraLarge,
-      "extra-extra-large": defaultFoundation.size.extraExtraLarge,
-    },
   };
 };
 

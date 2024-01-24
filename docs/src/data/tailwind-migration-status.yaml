@@ -96,7 +96,7 @@ TableRow: true
 Tabs: true
 TabPanels: true
 TabList: true
-Tag: false
+Tag: true
 Tile: true
 TileGroup: true
 OrbitText: true

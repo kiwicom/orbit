@@ -32,7 +32,7 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props) => 
       })}
     >
       <img
-        className="block h-full w-full shrink-0"
+        className="block size-full shrink-0"
         key={code}
         alt={name}
         title={name}
@@ -41,7 +41,7 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props) => 
         src={src}
         srcSet={srcSet}
       />
-      <div className="rounded-small shadow-country-flag absolute inset-0 block h-full w-full" />
+      <div className="rounded-small shadow-country-flag absolute inset-0 block size-full" />
     </div>
   );
 };

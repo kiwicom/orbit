@@ -147,7 +147,7 @@ const Alert = (props: Props) => {
             "me-xs m-0 shrink-0 leading-none",
             inlineActions && "flex items-center",
             ICON_COLOR[type],
-            "tb:me-xs tb:[&_svg]:w-icon-medium tb:[&_svg]:h-icon-medium",
+            "tb:me-xs tb:[&_svg]:size-icon-medium",
           )}
         >
           <StyledIcon type={type} icon={icon} />

@@ -143,7 +143,7 @@ const PopoverContentWrapper = ({
           "block",
           "fixed",
           "inset-x-0 top-0",
-          "h-full w-full",
+          "size-full",
           "bg-ink-dark/60",
           "duration-normal transition-[opacity,transform] ease-in-out",
           "z-[999]",

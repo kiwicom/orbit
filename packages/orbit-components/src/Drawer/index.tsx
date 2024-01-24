@@ -98,7 +98,7 @@ const Drawer = ({
         "orbit-drawer",
         "flex",
         "fixed inset-0",
-        "h-full w-full",
+        "size-full",
         "z-drawer",
         "duration-fast transition-colors ease-in-out",
         overlayShown ? "visible" : "invisible",
@@ -114,7 +114,7 @@ const Drawer = ({
         className={cx(
           "box-border block",
           "absolute inset-y-0",
-          "h-full w-full",
+          "size-full",
           "font-base",
           "overflow-y-auto",
           "overflow-x-hidden",

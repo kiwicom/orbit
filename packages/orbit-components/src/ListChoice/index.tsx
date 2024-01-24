@@ -58,7 +58,7 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
           <div
             className={cx(
               "me-xs h-icon-medium flex flex-none items-center self-start",
-              "[&_svg]:w-icon-medium [&_svg]:h-icon-medium [&_svg]:text-icon-primary-foreground [&_svg]:self-center",
+              "[&_svg]:size-icon-medium [&_svg]:text-icon-primary-foreground [&_svg]:self-center",
               "[&_svg]:duration-fast [&_svg]:transition-[color] [&_svg]:ease-in-out",
             )}
           >

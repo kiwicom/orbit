@@ -131,7 +131,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           </div>
         )}
 
-        <div className="relative z-[3] h-full w-full">
+        <div className="relative z-[3] size-full">
           {prefix && (
             <div className="px-sm pointer-events-none absolute top-0 z-[3] flex h-full items-center">
               {prefix}
@@ -158,7 +158,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
               "pe-xxl",
               prefix ? "ps-[48px]" : "ps-sm",
               "shrink grow basis-1/5",
-              "h-full w-full",
+              "size-full",
               "border-0",
               customValueText && "!text-transparent",
               "duration-fast transition-shadow ease-in-out",

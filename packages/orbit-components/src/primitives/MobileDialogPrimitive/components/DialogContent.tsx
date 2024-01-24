@@ -52,7 +52,7 @@ const DialogContent = ({
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
       <div
         className={cx(
-          "fixed inset-0 z-[10011] h-full w-full bg-[rgba(23,27,30,0.6)]",
+          "fixed inset-0 z-[10011] size-full bg-[rgba(23,27,30,0.6)]",
           "[transition:opacity_theme(transitionDuration.normal)_ease-in-out,_visibility_theme(transitionDuration.fast)_linear]",
           shown ? "visible opacity-100" : "duration-normal invisible opacity-0",
         )}

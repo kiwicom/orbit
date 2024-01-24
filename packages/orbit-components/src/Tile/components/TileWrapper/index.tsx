@@ -50,7 +50,7 @@ const TileWrapper = ({
     >
       {href ? (
         <a
-          className="text-ink-dark focus:outline-blue-normal focus:[&_.orbit-tile-header-icon-right]:text-ink-light-hover link:text-ink-dark link:font-medium visited:text-ink-dark block h-full w-full no-underline outline-none visited:font-medium focus:outline-2"
+          className="text-ink-dark focus:outline-blue-normal focus:[&_.orbit-tile-header-icon-right]:text-ink-light-hover link:text-ink-dark link:font-medium visited:text-ink-dark block size-full no-underline outline-none visited:font-medium focus:outline-2"
           target={href && external ? "_blank" : undefined}
           rel={href && external ? "noopener noreferrer" : undefined}
           href={href || undefined}

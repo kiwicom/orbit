@@ -72,11 +72,11 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "relative box-border",
             "border border-solid",
             "flex shrink-0 grow-0 basis-auto items-center justify-center",
-            "h-icon-medium w-icon-medium",
+            "size-icon-medium",
             "rounded-large de:rounded-normal",
             "duration-fast transition-all ease-in-out",
             "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
-            "[&>svg]:w-icon-small [&>svg]:h-icon-small [&>svg]:invisible peer-checked:[&>svg]:visible",
+            "[&>svg]:size-icon-small [&>svg]:invisible peer-checked:[&>svg]:visible",
             "[&>svg]:flex [&>svg]:items-center [&>svg]:justify-center",
             "active:scale-95",
             disabled && [

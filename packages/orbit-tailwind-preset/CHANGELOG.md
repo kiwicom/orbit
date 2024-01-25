@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.1.3...@kiwicom/orbit-tailwind-preset@4.0.0) (2024-01-25)
+
+
+### Features
+
+* update Tailwind version ([014a88c](https://github.com/kiwicom/orbit/commit/014a88c3f2e932b70a3388d7e4972aa4bc955b05))
+
+
+### BREAKING CHANGES
+
+* Minimum Tailwind version required is now 3.14.0
+
+
+
+
+
 ## [3.1.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.1.2...@kiwicom/orbit-tailwind-preset@3.1.3) (2024-01-04)
 
 **Note:** Version bump only for package @kiwicom/orbit-tailwind-preset

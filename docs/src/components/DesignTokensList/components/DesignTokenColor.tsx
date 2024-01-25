@@ -61,9 +61,13 @@ const StyledDesignTokenCircleShape = styled(StyledDesignTokenBase)<ColorProps>`
     `};
 `;
 
+/**
+ * We replace <alpha-value> by 1 to ensure the colors render properly
+ * in the documentation page.
+ */
 export const StyledDesignTokenColor = styled(StyledDesignTokenBase)<ColorProps>`
   ${({ $color, theme, size }) => css`
-    background: ${$color};
+    background: ${typeof $color === "string" ? $color.replace("<alpha-value>", "1") : $color};
     border-radius: ${theme.orbit.borderRadiusCircle};
     box-shadow: 0 0 0 1px ${theme.orbit.paletteCloudLight};
     ${size !== "small" &&

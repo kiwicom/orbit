@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.1.2...@kiwicom/orbit-components@12.2.0) (2024-01-25)
+
+#### Features
+
+*   **FeatureIcon:** migrate to Tailwind ([0ed3ae6](https://github.com/kiwicom/orbit/commit/0ed3ae61475c9d62269453b0c2ae42195a920c67))
+*   **Illustration:** add DepartureBoard, DepartureBoardBadge and DepartureBoardLounge illustrations ([cae7bd7](https://github.com/kiwicom/orbit/commit/cae7bd7eb0bd29f99938adde13d771a8a001f018))
+
 ### [12.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.1.1...@kiwicom/orbit-components@12.1.2) (2024-01-18)
 
 #### Bug Fixes

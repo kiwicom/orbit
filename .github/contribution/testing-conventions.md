@@ -87,6 +87,65 @@ Commands:
 
 - `yarn components test-ct` - test components, both behaviour and screenshots
 - `yarn components test-ct --update-snapshots` - update screenshots
+- `yarn components test-ct path/to/a/component` - test a single component
+
+### Writing the tests
+
+The tests are written in `*.ct.tsx` files next to the component. The test file should have the
+following structure:
+
+```tsx
+// src/components/Component/Component.ct.tsx
+
+import * as React from "react";
+import { test, expect } from "@playwright/experimental-ct-react";
+
+import { ComponentStoryTest } from "./Component.ct-story";
+
+import { Component } from ".";
+
+test("<meaningful name>", async ({ mount }) => {
+  const component = await mount(<Component />);
+
+  await expect(component).toMatchScreenshot();
+});
+
+test("<another meaningful name>", async ({ mount }) => {
+  const component = await mount(<ComponentStoryTest />);
+
+  await expect(component).toMatchScreenshot();
+});
+```
+
+You may have noticed that we are importing `ComponentStoryTest` from the same file. This is because
+it is not possible to mount components with other JSX elements as props. This is a limitation of
+Playwright that is documented in their [official documentation](https://playwright.dev/docs/test-components#test-stories).
+While using the component directly is possible, we recommend using the story instead, as it is
+more versatile.
+
+A test story file should have the following structure:
+
+```tsx
+// src/components/Component/Component.ct-story.tsx
+
+import * as React from "react";
+
+import * as Icons from "../icons";
+
+import { Component } from ".";
+
+export function TestComponentStory() {
+  return (
+    <div className="p-xss inline-block">
+      <Component
+        icon={<Icons.Airplane />}
+        title="Lorem ipsum dolor"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae magna eget odio euismod aliquam."
+      />
+    </div>
+  );
+}
+```
 
 ### CI
 
@@ -125,7 +184,10 @@ colima start --cpu 4 --memory 4 --disk 100
 
 #### Reviewing the changes
 
-If you're satisfied with the changes, commit them and push them to the repository. In GitHub, the
+If some tests fail, you can see the difference in the `test-results` folder, that should be inside the src folder.
+If the changes are expected, re-run the script to update the snapshots.
+
+After you're satisfied with the results, commit any changes and push them to the repository. In GitHub, the
 reviewer can conveniently see difference in before/after images when checking side-by-side.
 
 ### Track down the regression with `git bisect`

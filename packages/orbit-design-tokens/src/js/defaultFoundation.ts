@@ -110,6 +110,7 @@ export interface BorderRadius {
   small: string;
   normal: string;
   large: string;
+  full: string;
 }
 export interface Breakpoint {
   smallMobile: number;
@@ -287,7 +288,7 @@ const red = {
 };
 const social = { facebook: "#3B5998", facebookHover: "#385490", facebookActive: "#354F88" };
 const white = { normal: "#FFFFFF", normalActive: "#E7ECF1", normalHover: "#F1F4F7" };
-const borderRadius = { circle: "50%", small: "2px", normal: "3px", large: "6px" };
+const borderRadius = { circle: "50%", small: "2px", normal: "3px", large: "6px", full: "9999px" };
 const breakpoint = {
   smallMobile: 320,
   mediumMobile: 414,

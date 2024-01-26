@@ -3,7 +3,10 @@
     "border-radius": {
       "circle": {
         "type": "border-radius",
-        "value": "{foundation.border-radius.circle}"
+        "value": "{foundation.border-radius.circle}",
+        "deprecated": true,
+        "deprecated-replace": "{global.border-radius.full}",
+        "deprecated-version": "8.0.0"
       },
       "small": {
         "type": "border-radius",
@@ -16,6 +19,10 @@
       "large": {
         "type": "border-radius",
         "value": "{foundation.border-radius.large}"
+      },
+      "full": {
+        "type": "border-radius",
+        "value": "{foundation.border-radius.full}"
       }
     }
   }

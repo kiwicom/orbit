@@ -2864,6 +2864,10 @@
     <value>6</value>
   </token>
   <token>
+    <name>borderRadiusFull</name>
+    <value>9999</value>
+  </token>
+  <token>
     <name>breakpointMediumMobile</name>
     <value>414</value>
   </token>

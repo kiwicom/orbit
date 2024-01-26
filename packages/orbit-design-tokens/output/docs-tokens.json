@@ -16415,8 +16415,8 @@
   },
   "borderRadiusCircle": {
     "type": "border-radius",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "borderRadiusFull",
     "schema": {
       "namespace": "global",
       "object": "border-radius",
@@ -16499,6 +16499,28 @@
     "scss": {
       "name": "borderRadiusLarge",
       "value": "6px"
+    }
+  },
+  "borderRadiusFull": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "border-radius",
+      "variant": "full"
+    },
+    "javascript": {
+      "name": "borderRadiusFull",
+      "value": "9999px"
+    },
+    "foundation": {
+      "name": "borderRadiusFull",
+      "value": "foundation.borderRadius.full"
+    },
+    "scss": {
+      "name": "borderRadiusFull",
+      "value": "9999px"
     }
   },
   "breakpointMediumMobile": {

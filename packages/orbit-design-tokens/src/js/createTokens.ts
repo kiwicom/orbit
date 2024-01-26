@@ -730,6 +730,7 @@ export interface Tokens {
   borderRadiusSmall: string;
   borderRadiusNormal: string;
   borderRadiusLarge: string;
+  borderRadiusFull: string;
   breakpointMediumMobile: number;
   breakpointLargeMobile: number;
   breakpointTablet: number;
@@ -1657,6 +1658,7 @@ const createTokens: CreateTokens = foundation => ({
   borderRadiusSmall: foundation.borderRadius.small,
   borderRadiusNormal: foundation.borderRadius.normal,
   borderRadiusLarge: foundation.borderRadius.large,
+  borderRadiusFull: foundation.borderRadius.full,
   breakpointMediumMobile: foundation.breakpoint.mediumMobile,
   breakpointLargeMobile: foundation.breakpoint.largeMobile,
   breakpointTablet: foundation.breakpoint.tablet,

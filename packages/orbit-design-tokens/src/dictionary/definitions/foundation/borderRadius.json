@@ -20,6 +20,11 @@
         "type": "border-radius",
         "value": 6,
         "internal": true
+      },
+      "full": {
+        "type": "border-radius",
+        "value": 9999,
+        "internal": true
       }
     }
   }

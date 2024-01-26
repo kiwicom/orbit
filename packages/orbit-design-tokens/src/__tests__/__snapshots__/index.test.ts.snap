@@ -191,6 +191,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "borderColorTagFocus": "#0172CB",
   "borderRadiusBadge": "12px",
   "borderRadiusCircle": "50%",
+  "borderRadiusFull": "9999px",
   "borderRadiusLarge": "6px",
   "borderRadiusNormal": "3px",
   "borderRadiusSmall": "2px",

@@ -6,7 +6,6 @@ import cx from "clsx";
 import ButtonPrimitive from "../primitives/ButtonPrimitive";
 import {
   iconOnlyStyles,
-  circledStyles,
   paddingBothIconsStyles,
   paddingLeftIconStyles,
   paddingNoIconsStyles,
@@ -81,7 +80,7 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, Props>(
               iconLeft == null && iconRight != null && paddingRightIconStyles[size],
               iconLeft != null && iconRight != null && paddingBothIconsStyles[size],
             ],
-          props.circled === true && circledStyles[size],
+          props.circled === true && "rounded-full",
         )}
       >
         {children}

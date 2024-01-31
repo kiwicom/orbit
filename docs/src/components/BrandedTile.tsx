@@ -64,7 +64,7 @@ const StyledIcon = styled.div<{ secondary: string }>`
     height: ${ICON_SIZE};
     display: none;
     background: ${secondary};
-    border-radius: ${theme.orbit.borderRadiusCircle};
+    border-radius: ${theme.orbit.borderRadiusFull};
     ${mq.largeMobile(`
       display: grid;
       align-content: center;

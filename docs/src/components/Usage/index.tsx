@@ -69,7 +69,7 @@ const StyledHeadingIcon = styled.div<{ $color: string }>`
     width: ${theme.orbit.widthIconMedium};
     height: ${theme.orbit.heightIconMedium};
     background-color: ${$color};
-    border-radius: ${theme.orbit.borderRadiusCircle};
+    border-radius: ${theme.orbit.borderRadiusFull};
     padding: 2px;
     svg {
       width: 100%;

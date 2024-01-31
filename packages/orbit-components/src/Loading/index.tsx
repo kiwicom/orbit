@@ -10,7 +10,7 @@ import useTheme from "../hooks/useTheme";
 const CircleLoader = ({ animationDelay }: { animationDelay?: string }) => {
   return (
     <div
-      className="animate-loader rounded-circle bg-cloud-dark size-xs me-[6px] [&:nth-child(3)]:m-0"
+      className="animate-loader bg-cloud-dark size-xs me-[6px] rounded-full [&:nth-child(3)]:m-0"
       style={{ animationDelay }}
     />
   );

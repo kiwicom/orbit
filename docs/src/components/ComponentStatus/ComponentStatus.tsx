@@ -90,7 +90,7 @@ export const StyledStatusDot = styled.div<{ status: Status }>`
   ${({ theme, status }) => css`
     width: ${theme.orbit.spaceXSmall};
     height: ${theme.orbit.spaceXSmall};
-    border-radius: ${theme.orbit.borderRadiusCircle};
+    border-radius: ${theme.orbit.borderRadiusFull};
     background: ${theme.orbit[STATUS_COLOR[status]]};
   `};
 `;

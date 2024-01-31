@@ -34,7 +34,7 @@ const StyledIconLink = styled.a.attrs(() => ({
     display: block;
     padding: ${theme.orbit.spaceXSmall};
     margin-right: -${theme.orbit.spaceXSmall};
-    border-radius: ${theme.orbit.borderRadiusCircle};
+    border-radius: ${theme.orbit.borderRadiusFull};
     color: ${theme.orbit.paletteInkDark};
     &:hover,
     &:focus {

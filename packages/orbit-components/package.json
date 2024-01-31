@@ -29,7 +29,6 @@
     "test-ct": "playwright test -c playwright-ct.config.ts",
     "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",
     "deploy:surge": "yarn surge .out/",
-    "deploy:updateURL": "node --loader ts-node/esm config/deploymentUtils.mts updateLiveURL",
     "docs-gen": "monstra docs"
   },
   "storybook-deployer": {

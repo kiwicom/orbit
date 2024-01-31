@@ -34,8 +34,6 @@ jobs:
       - name: Build Storybook
         run: yarn components build:storybook
 
-      # TODO: find an alternative to using "if" statements for so many steps
-
       - name: Get BRANCH_URL
         # do not run on master branch
         if: github.ref != 'refs/heads/master'
@@ -45,16 +43,42 @@ jobs:
 
       - name: Get DOMAIN
         if: github.ref != 'refs/heads/master'
-        run: echo "DOMAIN=https://orbit-mainframev-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
+        run: echo "DOMAIN=https://kiwicom-orbit-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
 
       - name: Deploy to staging
         if: github.ref != 'refs/heads/master'
-        # we're adding to the domain name the username of the current owner of SURGE_TOKEN
-        run: |
-          yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
-          yarn components deploy:updateURL --pr=${PR_NUMBER} --lastUrl=${DOMAIN} --token=${{ secrets.OCTO_TOKEN }} --urlName=Storybook
-        env:
-          PR_NUMBER: ${{ github.event.number }}
+        run: yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
+
+      - name: Add comment to PR
+        if: github.ref != 'refs/heads/master'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const commentBody = `Storybook staging is available at ${process.env.DOMAIN}`;
+
+            const commentsList = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+
+            const comment = commentsList.data.find((comment) => comment.body.includes(commentBody));
+
+            if (!comment) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: commentBody,
+              })
+            } else {
+              github.rest.issues.updateComment({
+                comment_id: comment.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: commentBody,
+              })
+            }
 
       - name: Deploy to production
         # run on master branch

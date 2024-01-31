@@ -6,7 +6,7 @@ const BorderRadius = () => {
       <div className="rounded-small">small</div>
       <div className="rounded-normal">normal</div>
       <div className="rounded-large">large</div>
-      <div className="rounded-circle">circle</div>
+      <div className="rounded-full">full</div>
     </div>
   );
 };

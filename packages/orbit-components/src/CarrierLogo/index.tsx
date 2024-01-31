@@ -131,7 +131,7 @@ const CarrierLogo = ({
         <img
           className={cx(
             "max-w-none bg-transparent",
-            rounded ? "rounded-circle" : "rounded-normal",
+            rounded ? "rounded-full" : "rounded-normal",
             inlineStacked ? "not-first:-ms-xs border border-solid border-white" : "last:self-end",
             carriers.length > 1 && !inlineStacked
               ? [

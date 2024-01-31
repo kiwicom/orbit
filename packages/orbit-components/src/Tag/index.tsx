@@ -98,7 +98,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
           <div
             className={cx(
               "orbit-tag-close-container",
-              "ms-xs rounded-circle flex",
+              "ms-xs flex rounded-full",
               "duration-fast transition-[color,_opacity] ease-in-out",
               "focus:opacity-100",
               !selected &&

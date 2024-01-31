@@ -39,7 +39,7 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
           />
           <div
             className={cx(
-              "rounded-circle bg-white-normal duration-fast shadow-switch absolute box-border inline-flex size-[24px] items-center justify-center",
+              "bg-white-normal duration-fast shadow-switch absolute box-border inline-flex size-[24px] items-center justify-center rounded-full",
               "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
               "[&_svg]:size-icon-small",
               !disabled && "active:shadow-action-active",

@@ -112,36 +112,36 @@ export const borderRadiusClasses: {
   [BORDER_RADIUS.SMALL]: "rounded-small",
   [BORDER_RADIUS.NORMAL]: "rounded-normal",
   [BORDER_RADIUS.LARGE]: "rounded-large",
-  [BORDER_RADIUS.CIRCLE]: "rounded-circle",
+  [BORDER_RADIUS.CIRCLE]: "rounded-full",
   [QUERIES.LARGEDESKTOP]: {
     [BORDER_RADIUS.SMALL]: "ld:rounded-small",
     [BORDER_RADIUS.NORMAL]: "ld:rounded-normal",
     [BORDER_RADIUS.LARGE]: "ld:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "ld:rounded-circle",
+    [BORDER_RADIUS.CIRCLE]: "ld:rounded-full",
   },
   [QUERIES.DESKTOP]: {
     [BORDER_RADIUS.SMALL]: "de:rounded-small",
     [BORDER_RADIUS.NORMAL]: "de:rounded-normal",
     [BORDER_RADIUS.LARGE]: "de:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "de:rounded-circle",
+    [BORDER_RADIUS.CIRCLE]: "de:rounded-full",
   },
   [QUERIES.TABLET]: {
     [BORDER_RADIUS.SMALL]: "tb:rounded-small",
     [BORDER_RADIUS.NORMAL]: "tb:rounded-normal",
     [BORDER_RADIUS.LARGE]: "tb:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "tb:rounded-circle",
+    [BORDER_RADIUS.CIRCLE]: "tb:rounded-full",
   },
   [QUERIES.LARGEMOBILE]: {
     [BORDER_RADIUS.SMALL]: "lm:rounded-small",
     [BORDER_RADIUS.NORMAL]: "lm:rounded-normal",
     [BORDER_RADIUS.LARGE]: "lm:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "lm:rounded-circle",
+    [BORDER_RADIUS.CIRCLE]: "lm:rounded-full",
   },
   [QUERIES.MEDIUMMOBILE]: {
     [BORDER_RADIUS.SMALL]: "mm:rounded-small",
     [BORDER_RADIUS.NORMAL]: "mm:rounded-normal",
     [BORDER_RADIUS.LARGE]: "mm:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "mm:rounded-circle",
+    [BORDER_RADIUS.CIRCLE]: "mm:rounded-full",
   },
 };
 

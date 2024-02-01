@@ -29,16 +29,15 @@ jobs:
           git diff-index --quiet HEAD || git commit -m "chore: update component statuses"
 
       - name: Create PR
-        uses: peter-evans/create-pull-request@v5
+        uses: actions/github-script@v6
         with:
-          base: master
-          branch: chore/update-icons-and-svgs
-          token: ${{ secrets.PAT }}
-          delete-branch: true
-          title: "chore: update component statuses"
-          body: |
-            - Automatically generated PR on ${{ env.TODAY }}.
-            - Updates component statuses
-          assignees: mainframev
-          reviewers: mainframev
-          draft: false
+          script: |
+            github.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: 'chore/update-icons-and-svgs',
+              base: 'master',
+              title: 'chore: update component statuses',
+              body: `- Automatically generated PR on ${process.env.TODAY}.\n- Updates component statuses`,
+              maintainer_can_modify: true,
+            });

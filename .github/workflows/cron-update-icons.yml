@@ -31,17 +31,15 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Create PR
-        uses: peter-evans/create-pull-request@v5
+        uses: actions/github-script@v6
         with:
-          base: master
-          branch: feat/update-icons-and-svgs
-          token: ${{ secrets.PAT }}
-          delete-branch: true
-          title: "feat(icons): update icons from Figma"
-          labels: Icons
-          body: |
-            - Automatically generated PR on ${{ env.TODAY }}.
-            - Updates icons from Figma
-          assignees: mainframev
-          reviewers: mainframev
-          draft: false
+          script: |
+            github.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: 'feat/update-icons-and-svgs',
+              base: 'master',
+              title: 'feat(icons): update icons from Figma',
+              body: `- Automatically generated PR on ${process.env.TODAY}.\n- Updates icons from Figma`,
+              maintainer_can_modify: true,
+            });

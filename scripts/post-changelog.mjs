@@ -9,22 +9,26 @@ import gitDiffParser from "gitdiff-parser";
 const CHANNEL = "orbit-react";
 const COLOR_CORE = "#00A58E";
 const PACKAGES = ["orbit-components", "orbit-tailwind-preset", "orbit-design-tokens"];
-const SLACK_API_POST_RELEASE_MESSAGE = "https://slack.com/api/chat.postMessage";
+const SLACK_CHANGELOG_WEBHOOK_URL = process.env.SLACK_CHANGELOG_WEBHOOK_URL ?? "";
 
 function getTitle(pkg) {
   return `New ${pkg} release 🚀`;
 }
-
-const apiRequest = async ({ method = "GET", url, body }) =>
-  fetch(url, {
-    method,
-    body,
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      Authorization: `Bearer ${process.env.SLACK_TOKEN}`,
-      Accept: "application/json",
-    },
-  });
+async function sendToWebhook({ content, webhookUrl }) {
+  await fetch(webhookUrl, {
+    method: "POST",
+    body: JSON.stringify(content),
+  })
+    .then(res => {
+      if (res.status !== 200) {
+        throw new Error(`${res.status} ${res.statusText}`);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      process.exit(1);
+    });
+}
 
 function format(str, package_, prefix = "@kiwicom") {
   const output = str
@@ -58,11 +62,9 @@ function changelogPath(package_) {
 async function postSlackNotification(changelog, package_) {
   try {
     $.verbose = false;
-    const res = await apiRequest({
-      url: SLACK_API_POST_RELEASE_MESSAGE,
-      method: "POST",
-      body: JSON.stringify({
-        channel: CHANNEL,
+    const res = await sendToWebhook({
+      webhookUrl: SLACK_CHANGELOG_WEBHOOK_URL,
+      content: {
         attachments: [
           {
             title: getTitle(package_),
@@ -70,7 +72,7 @@ async function postSlackNotification(changelog, package_) {
             color: COLOR_CORE,
           },
         ],
-      }),
+      },
     });
     return res;
   } catch (err) {
@@ -81,17 +83,15 @@ async function postSlackNotification(changelog, package_) {
   return undefined;
 }
 
-async function configureSlackToken() {
+async function configureWebhookURL() {
   try {
     dotenv.config({
       allowEmptyValues: true,
       example: ".env.example",
     });
   } catch (err) {
-    if (/SLACK_TOKEN/g.test(err.message)) {
-      throw new Error(
-        "Slack token is missing in the .env file, please add it.\nLearn how to create one: https://slack.com/intl/en-cz/help/articles/215770388-Create-and-regenerate-API-tokens",
-      );
+    if (/SLACK_CHANGELOG_WEBHOOK_URL/g.test(err.message)) {
+      throw new Error("SLACK_CHANGELOG_WEBHOOK_URL is not set");
     }
   }
 }
@@ -113,7 +113,7 @@ async function publishChangelog(package_) {
     if (argv.dry) {
       console.info(formattedChangelog);
     } else {
-      await configureSlackToken();
+      await configureWebhookURL();
       await postSlackNotification(slackifiedChangelog, package_);
     }
   } catch (err) {

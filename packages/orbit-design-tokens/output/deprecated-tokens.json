@@ -2022,6 +2022,11 @@
     "category": "Background colors",
     "version": "6.0.0"
   },
+  "borderRadiusCircle": {
+    "replacement": "borderRadiusFull",
+    "category": "Border radius",
+    "version": "8.0.0"
+  },
   "widthBreakpointMediumMobile": {
     "replacement": "breakpointMediumMobile",
     "category": "Breakpoints",

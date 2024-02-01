@@ -104,7 +104,7 @@ const StyledIcon = styled.div<{ isBookmark?: boolean }>`
     width: ${ICON_SIZE};
     height: ${ICON_SIZE};
     background: ${isBookmark ? theme.orbit.paletteOrangeLight : theme.orbit.paletteProductLight};
-    border-radius: ${theme.orbit.borderRadiusCircle};
+    border-radius: ${theme.orbit.borderRadiusFull};
     color: ${isBookmark ? theme.orbit.paletteOrangeNormal : theme.orbit.paletteProductDark};
 
     svg {

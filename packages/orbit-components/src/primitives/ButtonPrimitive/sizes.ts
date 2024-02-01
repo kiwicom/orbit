@@ -30,12 +30,6 @@ export const paddingBothIconsStyles: Record<Size, string> = {
   large: "px-button-padding-md",
 };
 
-export const circledStyles: Record<Size, string> = {
-  small: "rounded-form-box-small",
-  normal: "rounded-form-box-normal",
-  large: "rounded-form-box-large",
-};
-
 export const iconOnlyStyles: Record<Size, string> = {
   small: "w-form-box-small",
   normal: "w-form-box-normal",

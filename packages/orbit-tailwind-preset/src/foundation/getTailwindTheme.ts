@@ -146,6 +146,7 @@ const getTailwindTheme = (theme: typeof defaultTokens) => {
       normal: defaultFoundation.borderRadius.normal,
       large: defaultFoundation.borderRadius.large,
       circle: defaultFoundation.borderRadius.circle,
+      full: defaultFoundation.borderRadius.full,
     },
     screens: {
       sm: toPx(defaultFoundation.breakpoint.smallMobile),

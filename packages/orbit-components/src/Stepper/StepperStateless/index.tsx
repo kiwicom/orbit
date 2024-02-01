@@ -18,7 +18,7 @@ const stepperButtonMixin = ({ disabled, active }: { disabled: boolean; active?: 
   cx(
     "[&_svg]:p-xxxs",
     "de:[&_svg]:size-icon-medium [&_svg]:size-icon-large",
-    "[&_svg]:rounded-circle",
+    "[&_svg]:rounded-full",
     "focus:outline-0",
     "[&_svg]:focus:outline-blue-normal [&_svg]:focus:outline [&_svg]:focus:outline-2",
     active ? "[&_svg]:bg-blue-normal" : "[&_svg]:bg-cloud-normal",

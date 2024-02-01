@@ -56,7 +56,7 @@ const StyledDesignTokenCircleShape = styled(StyledDesignTokenBase)<ColorProps>`
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: ${theme.orbit.borderRadiusCircle};
+      border-radius: ${theme.orbit.borderRadiusFull};
       background-color: ${theme.orbit.paletteCloudDark};
     `};
 `;
@@ -68,7 +68,7 @@ const StyledDesignTokenCircleShape = styled(StyledDesignTokenBase)<ColorProps>`
 export const StyledDesignTokenColor = styled(StyledDesignTokenBase)<ColorProps>`
   ${({ $color, theme, size }) => css`
     background: ${typeof $color === "string" ? $color.replace("<alpha-value>", "1") : $color};
-    border-radius: ${theme.orbit.borderRadiusCircle};
+    border-radius: ${theme.orbit.borderRadiusFull};
     box-shadow: 0 0 0 1px ${theme.orbit.paletteCloudLight};
     ${size !== "small" &&
     css`

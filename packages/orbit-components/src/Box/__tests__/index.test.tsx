@@ -20,7 +20,7 @@ const BORDER_RADIUS: { [K in BORDER_RADIUS_KEYS]: string } = {
   small: theme.orbit.borderRadiusSmall,
   normal: theme.orbit.borderRadiusNormal,
   large: theme.orbit.borderRadiusLarge,
-  circle: theme.orbit.borderRadiusCircle,
+  circle: theme.orbit.borderRadiusFull,
 };
 
 describe("#Box", () => {

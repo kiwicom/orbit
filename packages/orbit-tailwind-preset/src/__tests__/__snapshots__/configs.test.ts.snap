@@ -210,6 +210,7 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "theme": {
         "borderRadius": {
           "circle": "50%",
+          "full": "9999px",
           "large": "6px",
           "none": "0",
           "normal": "3px",
@@ -1058,6 +1059,7 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "form-box-large": "52px",
       "form-box-normal": "44px",
       "form-box-small": "32px",
+      "full": "9999px",
       "large": "6px",
       "modal": "9px",
       "modal-mobile": "12px",

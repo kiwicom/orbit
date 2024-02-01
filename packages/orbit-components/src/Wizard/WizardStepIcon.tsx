@@ -15,7 +15,7 @@ export const StyledStepIconContainer = styled.div<{ $disabled?: boolean; $glow?:
     justify-content: center;
     width: 20px;
     height: 20px;
-    border-radius: ${theme.orbit.borderRadiusCircle};
+    border-radius: ${theme.orbit.borderRadiusFull};
     background: ${$disabled
       ? theme.orbit.paletteCloudNormalHover
       : theme.orbit.paletteProductNormal};

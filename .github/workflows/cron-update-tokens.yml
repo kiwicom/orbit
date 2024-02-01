@@ -33,17 +33,15 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Create PR
-        uses: peter-evans/create-pull-request@v5
+        uses: actions/github-script@v6
         with:
-          base: master
-          branch: feat/update-palette-tokens
-          token: ${{ secrets.PAT }}
-          delete-branch: true
-          title: "feat(tokens): update palette tokens from figma"
-          body: |
-            - Automatically generated PR on ${{ env.TODAY }}.
-            - Updates palette tokens from Figma
-          labels: Tokens
-          assignees: mainframev
-          reviewers: mainframev
-          draft: false
+          script: |
+            github.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: 'feat/update-palette-tokens',
+              base: 'master',
+              title: 'feat(tokens): update palette tokens from figma',
+              body: `- Automatically generated PR on ${process.env.TODAY }.\n- Updates palette tokens from Figma`,
+              maintainer_can_modify: true,
+            });

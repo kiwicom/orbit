@@ -31,17 +31,15 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Create PR
-        uses: peter-evans/create-pull-request@v5
+        uses: actions/github-script@v6
         with:
-          base: master
-          branch: docs/update-contributors
-          token: ${{ secrets.PAT }}
-          delete-branch: true
-          title: "chore: update contributors"
-          labels: Documentation
-          body: |
-            - Automatically generated PR on ${{ env.TODAY }}.
-            - Updates contributors for docs
-          assignees: mainframev
-          reviewers: mainframev
-          draft: false
+          script: |
+            github.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "chore: update contributors",
+              body: `- Automatically generated PR on ${process.env.TODAY}.\n- Updates contributors for docs`,
+              head: "docs/update-contributors",
+              base: "master",
+              maintainer_can_modify: true,
+            });

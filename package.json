@@ -21,7 +21,6 @@
     "postinstall": "lerna run postinstall --stream",
     "prepare": "husky install",
     "prettier:test": "prettier --check '**/*.md'",
-    "publish-packages": "zx scripts/publish.mjs",
     "size:build": "yarn tokens build && yarn tailwind-preset build && yarn components size:build",
     "size": "yarn size:build && size-limit",
     "test-ci": "jest --ci --maxWorkers=2 && lerna run test",

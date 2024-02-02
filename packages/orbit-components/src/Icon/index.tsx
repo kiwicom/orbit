@@ -1,74 +1,25 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
-import defaultTheme from "../defaultTheme";
 import type { GetSize, FactoryProps } from "./types";
 
 export const getSize: GetSize =
   size =>
   ({ theme }) => {
     const tokens = {
-      [ICON_SIZES.SMALL]: theme.orbit.widthIconSmall,
-      [ICON_SIZES.MEDIUM]: theme.orbit.widthIconMedium,
-      [ICON_SIZES.LARGE]: theme.orbit.widthIconLarge,
+      [ICON_SIZES.SMALL]: theme.orbit.iconSmallSize,
+      [ICON_SIZES.MEDIUM]: theme.orbit.iconMediumSize,
+      [ICON_SIZES.LARGE]: theme.orbit.iconLargeSize,
     };
     return tokens[size] || tokens[ICON_SIZES.MEDIUM];
   };
 
-const getColor =
-  () =>
-  ({ theme, color }) => {
-    const tokens = {
-      [ICON_COLORS.PRIMARY]: theme.orbit.colorIconPrimary,
-      [ICON_COLORS.SECONDARY]: theme.orbit.colorIconSecondary,
-      [ICON_COLORS.TERTIARY]: theme.orbit.colorIconTertiary,
-      [ICON_COLORS.INFO]: theme.orbit.colorIconInfo,
-      [ICON_COLORS.SUCCESS]: theme.orbit.colorIconSuccess,
-      [ICON_COLORS.WARNING]: theme.orbit.colorIconWarning,
-      [ICON_COLORS.CRITICAL]: theme.orbit.colorIconCritical,
-    };
-    return tokens[color];
-  };
-
-const reverse = ({ reverseOnRtl, theme }) =>
-  reverseOnRtl &&
-  theme.rtl &&
-  css`
-    transform: scale(-1, 1);
-  `;
-
-const StyledIcon = styled(({ className, viewBox, dataTest, children, ariaHidden, ariaLabel }) => (
-  <svg
-    className={className}
-    viewBox={viewBox}
-    data-test={dataTest}
-    preserveAspectRatio="xMidYMid meet"
-    aria-hidden={ariaHidden ? "true" : undefined}
-    aria-label={ariaLabel}
-  >
-    {children}
-  </svg>
-))`
-  display: inline-block;
-  width: ${({ size }) => getSize(size)};
-  height: ${({ size }) => getSize(size)};
-  flex-shrink: 0;
-  vertical-align: middle;
-  fill: currentColor;
-  color: ${({ color, customColor }) => customColor || (color && getColor())};
-  ${reverse};
-`;
-
-StyledIcon.defaultProps = {
-  theme: defaultTheme,
-};
-
 const OrbitIcon = (props: FactoryProps) => {
   const {
-    size,
+    size = ICON_SIZES.MEDIUM,
     color,
     customColor,
     className,
@@ -80,19 +31,34 @@ const OrbitIcon = (props: FactoryProps) => {
     ariaLabel,
   } = props;
   return (
-    <StyledIcon
+    <svg
+      className={cx(
+        className,
+        "orbit-icon",
+        "inline-block shrink-0 fill-current align-middle",
+        reverseOnRtl && "rtl:-scale-x-100",
+        size === ICON_SIZES.SMALL && "size-icon-small",
+        size === ICON_SIZES.MEDIUM && "size-icon-medium",
+        size === ICON_SIZES.LARGE && "size-icon-large",
+        !customColor && [
+          color === ICON_COLORS.PRIMARY && "text-icon-primary-foreground",
+          color === ICON_COLORS.SECONDARY && "text-icon-secondary-foreground",
+          color === ICON_COLORS.TERTIARY && "text-icon-tertiary-foreground",
+          color === ICON_COLORS.INFO && "text-icon-info-foreground",
+          color === ICON_COLORS.SUCCESS && "text-icon-success-foreground",
+          color === ICON_COLORS.WARNING && "text-icon-warning-foreground",
+          color === ICON_COLORS.CRITICAL && "text-icon-critical-foreground",
+        ],
+      )}
       viewBox={viewBox}
-      size={size}
-      className={className}
-      dataTest={dataTest}
-      customColor={customColor}
-      color={color}
-      ariaHidden={ariaHidden}
-      reverseOnRtl={reverseOnRtl}
-      ariaLabel={ariaLabel}
+      preserveAspectRatio="xMidYMid meet"
+      data-test={dataTest}
+      aria-hidden={ariaHidden ? "true" : undefined}
+      aria-label={ariaLabel}
+      style={customColor ? { color: customColor } : {}}
     >
       {children}
-    </StyledIcon>
+    </svg>
   );
 };
 

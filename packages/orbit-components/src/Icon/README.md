@@ -16,16 +16,16 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available for icons in general.
 
-| Name         | Type            | Default        | Description                                                            |
-| :----------- | :-------------- | :------------- | :--------------------------------------------------------------------- |
-| className    | `string`        |                | The optional className of Icon.                                        |
-| color        | [`enum`](#enum) | `currentColor` | The color of the Icon.                                                 |
-| customColor  | `string`        |                | The customColor of the Icon. [See Functional specs](#functional-specs) |
-| dataTest     | `string`        |                | Optional prop for testing purposes.                                    |
-| **size**     | [`enum`](#enum) | `"medium"`     | The size of the Icon.                                                  |
-| reverseOnRtl | `boolean`       | `false`        | If `true`, the icon will be reversed if `theme.rtl` is set to `true`.  |
-| ariaHidden   | `boolean`       |                | Adds prop `aria-hidden` to an element, useful for screenreaders.       |
-| ariaLabel    | `string`        |                | Adds prop `aria-label` to an element, useful for screenreaders.        |
+| Name         | Type            | Default        | Description                                                                                |
+| :----------- | :-------------- | :------------- | :----------------------------------------------------------------------------------------- |
+| className    | `string`        |                | The optional className of Icon.                                                            |
+| color        | [`enum`](#enum) | `currentColor` | The color of the Icon.                                                                     |
+| customColor  | `string`        |                | The customColor of the Icon, as valid CSS value. [See Functional specs](#functional-specs) |
+| dataTest     | `string`        |                | Optional prop for testing purposes.                                                        |
+| **size**     | [`enum`](#enum) | `"medium"`     | The size of the Icon.                                                                      |
+| reverseOnRtl | `boolean`       | `false`        | If `true`, the icon will be reversed if `theme.rtl` is set to `true`.                      |
+| ariaHidden   | `boolean`       |                | Adds prop `aria-hidden` to an element, useful for screenreaders.                           |
+| ariaLabel    | `string`        |                | Adds prop `aria-label` to an element, useful for screenreaders.                            |
 
 ### enum
 

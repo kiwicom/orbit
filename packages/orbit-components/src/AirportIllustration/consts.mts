@@ -5,4 +5,4 @@ export const NAMES = [
   "NCEFastTrack",
   "PRGSmartPass",
   "VCESmartPass",
-];
+] as const;

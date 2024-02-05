@@ -32,8 +32,8 @@ jobs:
 
       - name: Setup git config
         run: |
-          git config user.name "mainframev"
-          git config user.email "vgenaev@gmail.com"
+          git config user.name "kiwicom-orbit-bot"
+          git config user.email "frontend-platform@kiwi.com"
 
       - name: Build
         run: |

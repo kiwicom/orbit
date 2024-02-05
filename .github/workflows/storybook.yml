@@ -49,7 +49,7 @@ jobs:
 
       - name: Add comment to PR
         if: github.ref != 'refs/heads/master'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const commentBody = `Storybook staging is available at ${process.env.DOMAIN}`;

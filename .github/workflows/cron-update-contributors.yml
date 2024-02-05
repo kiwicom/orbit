@@ -31,7 +31,7 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Create PR
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             github.pulls.create({

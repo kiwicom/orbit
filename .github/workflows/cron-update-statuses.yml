@@ -27,7 +27,14 @@ jobs:
         run: |
           yarn check:statuses
           git add --all
-          git diff-index --quiet HEAD || git commit -m "chore: update component statuses"
+          if git diff-index --quiet HEAD; then
+            echo "No changes to component statuses. Exiting."
+            exit 0
+          else
+            git checkout -b docs/update-component-statuses
+            git commit -m "chore: update component statuses"
+            git push origin docs/update-component-statuses
+          fi
 
       - name: Create PR
         uses: actions/github-script@v6
@@ -36,7 +43,7 @@ jobs:
             github.rest.pulls.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              head: 'chore/update-icons-and-svgs',
+              head: 'docs/update-component-statuses',
               base: 'master',
               title: 'chore: update component statuses',
               body: `- Automatically generated PR on ${process.env.TODAY}.\n- Updates component statuses`,

@@ -29,7 +29,14 @@ jobs:
           yarn tokens build
           yarn tokens jest -u
           git add --all
-          git diff-index --quiet HEAD || git commit -m "feat(tokens): update palette"
+          if git diff-index --quiet HEAD; then
+            echo "No changes to tokens. Exiting."
+            exit 0
+          else
+            git checkout -b feat/update-palette-tokens
+            git commit -m "feat(tokens): update palette"
+            git push origin feat/update-palette-tokens
+          fi
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 

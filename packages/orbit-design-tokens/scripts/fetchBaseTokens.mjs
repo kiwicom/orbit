@@ -1,4 +1,5 @@
 import { $, fetch, fs, path } from "zx";
+import prettier from "prettier";
 import dotenv from "dotenv-safe";
 import dedent from "dedent";
 import { solidPaintToWebRgb, toHex } from "figx";
@@ -150,7 +151,10 @@ async function getColorTokensFromFigma() {
           } else {
             await fs.writeFile(
               path.join(OUTPUT_PATH, `${palette}.json`),
-              JSON.stringify(saveTokens(palette, tokens), null, 2),
+              prettier.format(JSON.stringify(saveTokens(palette, tokens), null, 2), {
+                ...prettier.resolveConfig.sync(""),
+                parser: "json",
+              }),
             );
           }
         }

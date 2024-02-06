@@ -3,6 +3,7 @@ name: Update contributors
 on:
   schedule:
     - cron: "0 11 * * *"
+  workflow_dispatch:
 
 jobs:
   cron-update-contributors:
@@ -34,7 +35,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            github.pulls.create({
+            github.rest.pulls.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: "chore: update contributors",

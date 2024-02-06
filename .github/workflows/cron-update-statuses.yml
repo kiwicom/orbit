@@ -3,6 +3,7 @@ name: Update component statuses
 on:
   schedule:
     - cron: "0 9 * * *"
+  workflow_dispatch:
 
 jobs:
   cron-update-statuses:
@@ -32,7 +33,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            github.pulls.create({
+            github.rest.pulls.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               head: 'chore/update-icons-and-svgs',

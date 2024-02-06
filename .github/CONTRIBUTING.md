@@ -84,11 +84,12 @@ Install dependencies:
 yarn install
 ```
 
-Build the design tokens and the tailwind preset:
+Build the design tokens, the tailwind preset, and the components:
 
 ```sh
 yarn tokens build
 yarn tailwind-preset build
+yarn components build
 ```
 
 For developing Orbit components, run Storybook:

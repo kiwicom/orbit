@@ -27,7 +27,14 @@ jobs:
         run: |
           yarn components fetch:icons
           git add --all
-          git diff-index --quiet HEAD || git commit -m "feat(icons): update icons from figma"
+          if git diff-index --quiet HEAD; then
+            echo "No changes to icons. Exiting."
+            exit 0
+          else
+            git checkout -b feat/update-icons-and-svgs
+            git commit -m "feat(icons): update icons from figma"
+            git push origin feat/update-icons-and-svgs
+          fi
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 

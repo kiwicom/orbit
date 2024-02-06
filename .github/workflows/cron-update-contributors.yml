@@ -27,7 +27,14 @@ jobs:
         run: |
           yarn docs fetch:contributors
           git add --all
-          git diff-index --quiet HEAD || git commit -m "docs: update contributors"
+          if git diff-index --quiet HEAD; then
+            echo "No changes to contributors. Exiting."
+            exit 0
+          else
+            git checkout -b docs/update-contributors
+            git commit -m "docs: update contributors"
+            git push origin docs/update-contributors
+          fi
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 

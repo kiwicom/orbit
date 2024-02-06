@@ -440,15 +440,12 @@ const Modal = React.forwardRef<Instance, Props>(
               "lm:relative lm:bottom-auto lm:pb-0 lm:overflow-visible",
               "lm:[&_.orbit-modal-section:last-of-type]:pb-xxl lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
               "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-theme(spacing.xxl))]",
+              "lm:rounded-modal",
               !hasModalSection &&
                 "[&_.orbit-modal-header-container]:mb-xl lm:[&_.orbit-modal-header-container]:mb-[var(--orbit-modal-footer-height,0px)]",
               isMobileFullPage
                 ? "top-0 max-h-full"
-                : [
-                    "rounded-t-modal-mobile",
-                    "lm:rounded-modal",
-                    scrolled && "[&_.orbit-modal-mobile-header]:top-xl",
-                  ],
+                : ["rounded-t-modal-mobile", scrolled && "[&_.orbit-modal-mobile-header]:top-xl"],
               fixedFooter &&
                 footerHeight && [
                   "[&_.orbit-modal-footer]:p-md [&_.orbit-modal-footer]:fixed [&_.orbit-modal-footer]:bottom-0",

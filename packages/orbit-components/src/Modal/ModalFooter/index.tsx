@@ -47,7 +47,7 @@ const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
 };
 
 const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
-  const { isMobileFullPage, setFooterHeight } = React.useContext(ModalContext);
+  const { setFooterHeight } = React.useContext(ModalContext);
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const childrenLength = React.Children.toArray(children).length;
 
@@ -74,7 +74,7 @@ const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
         "duration-fast transition-shadow ease-in-out",
         "sm:max-lm:[&_.orbit-button-primitive]:h-form-box-normal sm:max-lm:[&_.orbit-button-primitive]:text-button-normal",
         childrenLength > 1 ? "lm:justify-between" : "lm:justify-end",
-        !isMobileFullPage && "lm:rounded-b-modal",
+        "lm:rounded-b-modal",
         "[&_.orbit-modal-footer-child:last-of-type]:p-0",
       )}
       ref={containerRef}

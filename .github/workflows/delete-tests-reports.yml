@@ -1,0 +1,26 @@
+name: Delete Tests Report
+
+on:
+  pull_request:
+    types: [closed]
+
+env:
+  BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+
+jobs:
+  delete-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Delete Report
+        run: |
+          echo "Deleting report for branch $BRANCH_NAME"
+          BRANCH_URL=$(echo ${BRANCH_NAME} | sed -e 's/[^a-zA-Z0-9]/-/g')
+          DOMAIN=https://kiwicom-orbit-test-report-${BRANCH_URL}.surge.sh
+          yarn surge teardown $DOMAIN --token ${{ secrets.SURGE_TOKEN }}
+        continue-on-error: true

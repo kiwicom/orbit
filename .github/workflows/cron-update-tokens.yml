@@ -5,6 +5,9 @@ on:
     - cron: "0 8 * * *"
   workflow_dispatch:
 
+env:
+  new_files: false
+
 jobs:
   cron-update-tokens:
     runs-on: ubuntu-latest
@@ -31,17 +34,19 @@ jobs:
           git add --all
           if git diff-index --quiet HEAD; then
             echo "No changes to tokens. Exiting."
-            exit 0
+            echo "new_files=false" >> $GITHUB_ENV
           else
             git checkout -b feat/update-palette-tokens
             git commit -m "feat(tokens): update palette"
             git push origin feat/update-palette-tokens
+            echo "new_files=true" >> $GITHUB_ENV
           fi
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Create PR
         uses: actions/github-script@v6
+        if: env.new_files == 'true'
         with:
           script: |
             github.rest.pulls.create({

@@ -12,7 +12,7 @@ export default defineConfig({
   forbidOnly: process.env.CI != null,
   retries: process.env.CI == null ? 0 : 2,
   workers: process.env.CI == null ? undefined : 1,
-  reporter: process.env.CI == null ? "list" : "github",
+  reporter: process.env.CI == null ? "list" : "blob",
   expect: {
     toHaveScreenshot: {
       threshold: 0.01, // default is 0.2 and that is way too lax, gives false negatives

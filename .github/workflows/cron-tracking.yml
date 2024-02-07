@@ -4,6 +4,7 @@ on:
   schedule:
     # every month at 08:00:00
     - cron: "0 8 1 * *"
+  workflow_dispatch:
 
 jobs:
   doc-updates:

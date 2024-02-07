@@ -6,20 +6,20 @@ import HorizontalScroll from ".";
 
 export default function HorizontalScrollVisualStory() {
   const children = [
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Badger 🦡",
-    "Mushroom 🍄",
-    "Mushroom 🍄",
+    "Haystack",
+    "Haystack",
+    "Haystack",
+    "Haystack",
+    "Haystack",
+    "Haystack",
+    "Haystack",
+    "Haystack",
+    "Haystack",
+    "Kiwi",
+    "Needle",
+    "Needle",
+    "Needle",
+    "Needle",
   ].map((txt, key) => (
     <div
       // eslint-disable-next-line react/no-array-index-key -- okay in constants
@@ -41,6 +41,10 @@ export default function HorizontalScrollVisualStory() {
       </HorizontalScroll>
 
       <HorizontalScroll arrows arrowColor="black">
+        {children}
+      </HorizontalScroll>
+
+      <HorizontalScroll overflowElevation elevationColor="paletteWhite" arrows arrowColor="magenta">
         {children}
       </HorizontalScroll>
     </div>

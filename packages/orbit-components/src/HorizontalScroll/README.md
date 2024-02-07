@@ -32,7 +32,7 @@ After adding import into your project you can use it simply like:
 | elevationColor    | `string`                    |          | `paletteCloudDarker` | set box-shadow color. Value must be the name of a color token from the theme. |
 | onOverflow        | `() => void`                |          |                      | callback function, fires, if content is overflowed                            |
 | arrows            | `boolean`                   |          |                      | show arrows                                                                   |
-| arrowsColor       | `string`                    |          |                      | set arrows color                                                              |
+| arrowColor        | `string`                    |          |                      | set arrows color                                                              |
 
 # ScrollSnap
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@4.0.0...@kiwicom/orbit-tailwind-preset@4.1.0) (2024-02-08)
+
+
+### Features
+
+* **tailwind:** add rounded-full class ([3cc769f](https://github.com/kiwicom/orbit/commit/3cc769fda2a07053d7771bf400f4a3a7c2cc327d))
+
+
+
+
+
 # [4.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@3.1.3...@kiwicom/orbit-tailwind-preset@4.0.0) (2024-01-25)
 
 

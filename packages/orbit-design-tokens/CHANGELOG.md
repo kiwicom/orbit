@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@7.0.0...@kiwicom/orbit-design-tokens@7.1.0) (2024-02-08)
+
+
+### Features
+
+* **tokens:** add borderRadiusFull token ([53826a8](https://github.com/kiwicom/orbit/commit/53826a837db3c6c4705132e7d219f8816fed8d7c))
+
+
+
+
+
 # [7.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@6.3.3...@kiwicom/orbit-design-tokens@7.0.0) (2024-01-04)
 
 

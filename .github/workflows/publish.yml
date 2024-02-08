@@ -53,7 +53,6 @@ jobs:
             yarn lerna version --no-private --no-push --no-git-tag-version --yes
           fi
           git diff
-          yarn zx scripts/post-changelog.mjs --dry
 
       - name: Publish
         if: ${{ github.event.inputs.dryrun == 'false' }}

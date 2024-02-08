@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.2.0...@kiwicom/orbit-components@12.3.0) (2024-02-08)
+
+#### Features
+
+*   **Icon:** migrate to Tailwind ([6ac12ec](https://github.com/kiwicom/orbit/commit/6ac12ecda9fd63e308ae67296d71160302b38fe5))
+*   **ServiceLogo:** add ApplePay and GooglePay logos ([4cd14aa](https://github.com/kiwicom/orbit/commit/4cd14aaa9417dd76e451118b71717848c64c0762))
+*   **Tag:** migrate to Tailwind ([436d54f](https://github.com/kiwicom/orbit/commit/436d54fddb7f9517b18e2a6da442ee4d002d7cfc))
+
 ## [12.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.1.2...@kiwicom/orbit-components@12.2.0) (2024-01-25)
 
 #### Features

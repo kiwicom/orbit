@@ -1,20 +1,9 @@
 import * as React from "react";
-import styled from "styled-components";
+import cx from "clsx";
 
 import type { Value } from "../../types";
 import { left as leftRight } from "../../../utils/rtl";
-import defaultTheme from "../../../defaultTheme";
-
-const StyledBar = styled.div`
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 24px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-`;
+import useTheme from "../../../hooks/useTheme";
 
 export const calculateBarPosition = (
   value: Value,
@@ -35,27 +24,13 @@ export const calculateBarPosition = (
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const StyledBarPart = styled(({ width, left, theme, active, ...props }) => (
-  <div {...props} />
-)).attrs(({ width, left, theme }) => {
-  return {
-    style: {
-      width: `${width}%`,
-      [leftRight({ theme })]: `${left}%`,
-    },
-  };
-})`
-  position: absolute;
-  height: 4px;
-  top: 10px;
-  border-radius: 4px;
-  background-color: ${({ theme, active }) =>
-    active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudNormal};
-`;
-
-StyledBarPart.defaultProps = {
-  theme: defaultTheme,
+const BarPart = ({ className, style }: { className: string; style?: React.CSSProperties }) => {
+  return (
+    <div
+      className={cx("h-xxs rounded-normal absolute top-1/2 -translate-y-1/2", className)}
+      style={style}
+    />
+  );
 };
 
 interface Props {
@@ -68,12 +43,21 @@ interface Props {
 
 const Bar = React.forwardRef<HTMLDivElement, Props>(
   ({ onMouseDown, value, max, min, hasHistogram }, ref) => {
+    const theme = useTheme();
     const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
     return (
-      <StyledBar ref={ref} onMouseDown={onMouseDown}>
-        <StyledBarPart width={100} left={0} />
-        <StyledBarPart active left={left} width={width} />
-      </StyledBar>
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+      <div
+        className="h-lg tap-color-none relative w-full cursor-pointer select-none"
+        ref={ref}
+        onMouseDown={onMouseDown}
+      >
+        <BarPart className="bg-cloud-normal left-0 w-full" />
+        <BarPart
+          className="bg-blue-normal"
+          style={{ [leftRight({ theme })]: `${left}%`, width: `${width}%` }}
+        />
+      </div>
     );
   },
 );

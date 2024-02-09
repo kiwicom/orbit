@@ -1,64 +1,9 @@
 import * as React from "react";
-import styled from "styled-components";
+import cx from "clsx";
 
 import type { Value } from "../../types";
 import type { Translation } from "../../../common/types";
-import defaultTheme from "../../../defaultTheme";
 import Loading from "../../../Loading";
-
-const StyledHistogram = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  width: 100%;
-  height: 52px;
-  padding-bottom: 3px;
-  overflow: hidden;
-`;
-
-const StyledLoadingContainer = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-`;
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const StyledHistogramColumn = styled(({ height, theme, active, ...props }) => (
-  <div {...props} />
-)).attrs(({ height }) => {
-  return {
-    style: {
-      height: `${height.toFixed(2)}%`,
-    },
-  };
-})`
-  position: relative;
-  min-width: 3px;
-  flex: 1 0 auto;
-  border-radius: 1px;
-  background-color: ${({ theme, active }) =>
-    active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteBlueLightActive};
-  margin-right: 1px;
-  :last-child {
-    margin: 0;
-  }
-  :after {
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    content: " ";
-    width: 100%;
-    height: 1px;
-    border-radius: 1px;
-    background-color: inherit;
-  }
-`;
-
-StyledHistogramColumn.defaultProps = {
-  theme: defaultTheme,
-};
 
 interface Props {
   data?: number[];
@@ -74,25 +19,35 @@ const Histogram = ({ data, value, min, loading = false, loadingText, step }: Pro
   const highlightFrom = Array.isArray(value) ? value[0] : 0;
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;
   return (
-    <StyledHistogram role="presentation">
+    <div
+      className="h-xxxl flex items-end justify-start gap-px overflow-hidden pb-[3px]"
+      role="presentation"
+    >
       {loading ? (
-        <StyledLoadingContainer>
+        <div className="flex size-full items-center justify-center">
           <Loading type="inlineLoader" text={loadingText} />
-        </StyledLoadingContainer>
+        </div>
       ) : (
         data &&
         data.map((column, index) => {
           const properIndex = (index + min) * step;
+          const active = properIndex >= highlightFrom && properIndex <= highlightTo;
+          const height = maxValue ? `${((column / maxValue) * 100).toFixed(2)}%` : 0;
           return (
-            <StyledHistogramColumn
+            <div
               key={encodeURIComponent(properIndex.toString())}
-              height={maxValue && +((column / maxValue) * 100).toFixed(1)}
-              active={properIndex >= highlightFrom && properIndex <= highlightTo}
-            />
+              className={cx(
+                "relative flex-auto rounded-[1px]",
+                active ? "bg-blue-normal" : "bg-blue-light-active",
+              )}
+              style={{ height }}
+            >
+              <div className="absolute bottom-[-3px] h-px w-full rounded-[1px] bg-inherit" />
+            </div>
           );
         })
       )}
-    </StyledHistogram>
+    </div>
   );
 };
 

@@ -336,6 +336,10 @@ export default function orbitTailwindPreset(options?: Options): Config {
                 display: "none",
               },
             },
+            ".tap-color-none": {
+              "-webkit-tap-highlight-color": "transparent",
+              "-webkit-touch-callout": "none",
+            },
           })
         );
       }),

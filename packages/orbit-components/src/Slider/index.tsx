@@ -1,9 +1,8 @@
 "use client";
 
 import * as React from "react";
-import styled, { css, withTheme } from "styled-components";
+import cx from "clsx";
 
-import transition from "../utils/transition";
 import Text from "../Text";
 import Heading from "../Heading";
 import Stack from "../Stack";
@@ -13,9 +12,6 @@ import Bar from "./components/Bar";
 import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
-import type { ThemeProps } from "../defaultTheme";
-import defaultTheme from "../defaultTheme";
-import mq from "../utils/mediaQuery";
 import type { Props, Value } from "./types";
 import {
   sortArray,
@@ -29,65 +25,13 @@ import {
   calculateValueFromPosition,
   isNotEqual,
 } from "./utils";
+import useTheme from "../hooks/useTheme";
 
-const StyledSlider = styled.div`
-  position: relative;
-`;
-
-StyledSlider.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledSliderContent = styled.div<{ focused?: boolean }>`
-  ${({ theme, focused }) => css`
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    padding-bottom: ${theme.orbit.spaceXSmall};
-
-    ${mq.tablet(css`
-      width: calc(100% + 48px);
-      position: absolute;
-      bottom: -16px;
-      left: -24px;
-      right: -24px;
-      opacity: 0;
-      visibility: hidden;
-      padding: 12px 24px 48px 24px;
-      border-radius: ${theme.orbit.borderRadiusNormal};
-      transition: ${transition(["all"], "fast", "ease-in-out")};
-
-      background: transparent;
-      ${focused &&
-      css`
-        visibility: visible;
-        opacity: 1;
-        background: ${theme.orbit.paletteWhite};
-        box-shadow: ${theme.orbit.boxShadowRaised};
-      `};
-    `)};
-  `}
-`;
-
-StyledSliderContent.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledSliderInput = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 24px;
-`;
-
-interface SliderProps extends Props, ThemeProps {}
-
-const PureSlider = ({
+const Slider = ({
   defaultValue = DEFAULT_VALUES.VALUE,
   maxValue = DEFAULT_VALUES.MAX,
   minValue = DEFAULT_VALUES.MIN,
   step = DEFAULT_VALUES.STEP,
-  theme,
   onChange,
   onChangeAfter,
   onChangeBefore,
@@ -101,13 +45,14 @@ const PureSlider = ({
   valueDescription,
   id,
   dataTest,
-}: SliderProps) => {
+}: Props) => {
   const bar = React.useRef<HTMLDivElement>(null);
   const [value, setValue] = React.useState(defaultValue);
   const valueRef = React.useRef(value);
   const defaultRef = React.useRef(defaultValue);
   const handleIndex = React.useRef<number | null>(null);
   const [focused, setFocused] = React.useState(false);
+  const theme = useTheme();
   const { rtl } = theme;
 
   const updateValue = (newValue: Value) => {
@@ -202,10 +147,10 @@ const PureSlider = ({
     }
   };
 
-  const handleOnFocus = (i: number) => (event: FocusEvent) => {
+  const handleOnFocus = (i: number) => (event: React.FocusEvent<HTMLDivElement>) => {
     handleIndex.current = i;
     setFocused(true);
-    pauseEvent(event);
+    pauseEvent(event.nativeEvent);
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("focusout", handleBlur);
     if (onChangeBefore) {
@@ -287,14 +232,14 @@ const PureSlider = ({
     }
   };
 
-  const handleMouseDown = (i: number) => (event: MouseEvent) => {
+  const handleMouseDown = (i: number) => (event: React.MouseEvent<HTMLDivElement>) => {
     // just allow left-click
     if (event.button === 0 && event.buttons !== 2) {
       setFocused(true);
       handleIndex.current = i;
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseup", handleMouseUp);
-      pauseEvent(event);
+      pauseEvent(event.nativeEvent);
       if (onChangeBefore) {
         injectCallbackAndSetState(updateValue, onChangeBefore, value);
       }
@@ -327,7 +272,7 @@ const PureSlider = ({
     }
   };
 
-  const handleOnTouchStart = (i: number) => (event: TouchEvent) => {
+  const handleOnTouchStart = (i: number) => (event: React.TouchEvent<HTMLDivElement>) => {
     if (event.touches.length <= 1) {
       setFocused(true);
       handleIndex.current = i;
@@ -335,7 +280,7 @@ const PureSlider = ({
         passive: false,
       });
       window.addEventListener("touchend", handleTouchEnd);
-      stopPropagation(event);
+      stopPropagation(event.nativeEvent);
       if (onChangeBefore) {
         injectCallbackAndSetState(updateValue, onChangeBefore, value);
       }
@@ -347,7 +292,6 @@ const PureSlider = ({
     const index = i || 0;
     return (
       <Handle
-        tabIndex="0"
         onTop={handleIndex.current === i}
         valueMax={maxValue}
         valueMin={minValue}
@@ -410,13 +354,18 @@ const PureSlider = ({
   const hasHistogram = histogramLoading || !!histogramData;
 
   return (
-    <StyledSlider data-test={dataTest} id={id}>
+    <div className="orbit-slider relative" data-test={dataTest} id={id}>
       {hasHistogram ? (
         <>
           <Hide on={["smallMobile", "mediumMobile", "largeMobile"]} block>
             {renderSliderTexts(true)}
           </Hide>
-          <StyledSliderContent focused={focused}>
+          <div
+            className={cx(
+              "pb-xs tb:w-[calc(100%+48px)] tb:absolute tb:-bottom-md tb:-inset-x-lg tb:pt-sm tb:px-lg tb:pb-[48px] tb:rounded-normal tb:transition-opacity tb:ease-in-out tb:duration-fast tb:bg-white-normal tb:shadow-raised",
+              focused ? "tb:visible tb:opacity-100" : "tb:invisible tb:opacity-0",
+            )}
+          >
             {renderSliderTexts(false)}
             <Histogram
               data={histogramData}
@@ -426,12 +375,12 @@ const PureSlider = ({
               loading={histogramLoading}
               loadingText={histogramLoadingText}
             />
-          </StyledSliderContent>
+          </div>
         </>
       ) : (
         renderSliderTexts(true)
       )}
-      <StyledSliderInput>
+      <div className="h-lg flex w-full items-center">
         <Bar
           ref={bar}
           onMouseDown={handleBarMouseDown}
@@ -441,16 +390,9 @@ const PureSlider = ({
           hasHistogram={hasHistogram}
         />
         {renderHandles()}
-      </StyledSliderInput>
-    </StyledSlider>
+      </div>
+    </div>
   );
 };
 
-PureSlider.defaultProps = {
-  theme: defaultTheme,
-};
-
-const ThemedSlider = withTheme(PureSlider);
-ThemedSlider.displayName = "Slider";
-
-export default ThemedSlider;
+export default Slider;

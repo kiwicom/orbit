@@ -1,10 +1,9 @@
 import * as React from "react";
-import styled from "styled-components";
+import cx from "clsx";
 
-import transition from "../../../utils/transition";
 import { left as leftRight } from "../../../utils/rtl";
-import defaultTheme from "../../../defaultTheme";
 import type { Value } from "../../types";
+import useTheme from "../../../hooks/useTheme";
 
 type CalculateLeftPosition = (
   valueNow: number,
@@ -47,59 +46,10 @@ export const isFirst: IsFirst = (value, valueNow, index, hasHistogram) => {
   return !hasHistogram;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const StyledHandle = styled(({ left, theme, onTop, ...props }) => <div {...props} />).attrs(
-  ({ left, onTop, theme }) => {
-    return {
-      style: {
-        // TODO: use token for deducting the half size of the Handle
-        [leftRight({ theme })]: `calc(${left}% - 12px)`,
-        zIndex: onTop ? 20 : undefined,
-      },
-    };
-  },
-)`
-  display: flex;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  flex: 0 0 24px;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  border-radius: 24px;
-  box-shadow: ${({ theme }) => theme.orbit.boxShadowAction};
-  background-color: ${({ theme }) => theme.orbit.paletteWhite};
-  cursor: pointer;
-  transition: ${transition(["box-shadow"], "fast", "ease-in-out")};
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  :after {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 8px;
-    background-color: ${({ theme }) => theme.orbit.paletteBlueNormal};
-    border-radius: 8px;
-  }
-  :hover,
-  :active {
-    box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
-  }
-`;
-
-StyledHandle.defaultProps = {
-  theme: defaultTheme,
-};
-
 interface Props {
-  tabIndex: string | number;
-  onMouseDown: (event: MouseEvent) => void;
-  onFocus: (event: FocusEvent) => void;
-  onTouchStart: (event: TouchEvent) => void;
+  onMouseDown: React.MouseEventHandler<HTMLDivElement>;
+  onFocus: React.FocusEventHandler<HTMLDivElement>;
+  onTouchStart: React.TouchEventHandler<HTMLDivElement>;
   valueMax: number;
   valueMin: number;
   onTop: boolean;
@@ -112,7 +62,6 @@ interface Props {
 }
 
 const Handle = ({
-  tabIndex,
   onMouseDown,
   onFocus,
   onTouchStart,
@@ -130,11 +79,19 @@ const Handle = ({
   const first = isFirst(value, valueNow, index, hasHistogram);
   const isSimple = !hasHistogram && !Array.isArray(value);
   const left = calculateLeftPosition(valueNow, valueMin, valueMax, first, isSimple);
+  const theme = useTheme();
   return (
-    <StyledHandle
+    <div
+      className={cx(
+        "size-lg rounded-circle shadow-action bg-white-normal duration-fast tap-color-none hover:shadow-action-active active:shadow-action-active absolute bottom-0 flex cursor-pointer select-none items-center justify-center transition-shadow ease-in-out",
+        onTop && "z-20",
+      )}
+      style={{
+        // TODO use inset-inline-start once we don’t support ios_safari 14
+        [leftRight({ theme })]: `calc(${left}% - ${theme.orbit.spaceSmall})`,
+      }}
       data-test={dataTest}
-      tabIndex={tabIndex}
-      onTop={onTop}
+      tabIndex={0}
       role="slider"
       onMouseDown={onMouseDown}
       onFocus={onFocus}
@@ -142,12 +99,11 @@ const Handle = ({
       aria-valuemax={valueMax}
       aria-valuemin={valueMin}
       aria-valuenow={valueNow}
-      aria-label={
-        Array.isArray(ariaLabel) && typeof index !== "undefined" ? ariaLabel[index] : ariaLabel
-      }
+      aria-label={Array.isArray(ariaLabel) ? ariaLabel[index] : ariaLabel}
       aria-valuetext={ariaValueText}
-      left={left}
-    />
+    >
+      <div className="size-xs bg-blue-normal rounded-circle" />
+    </div>
   );
 };
 

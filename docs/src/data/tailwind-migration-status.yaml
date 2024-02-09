@@ -79,7 +79,7 @@ Skeleton: true
 SkipLink: false
 SkipNavigation: false
 Slide: false
-Slider: false
+Slider: true
 SocialButton: true
 Stack: true
 Stepper: true

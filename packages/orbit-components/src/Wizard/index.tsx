@@ -98,8 +98,8 @@ const Wizard = ({
             setOpen(true);
           }}
         >
-          <Stack as="span" inline>
-            {typeof labelProgress !== "undefined" && <b>{labelProgress}</b>}
+          <Stack as="span" inline align="center">
+            {typeof labelProgress !== "undefined" && <b className="text-nowrap">{labelProgress}</b>}
             <span
               css={css`
                 font-weight: normal;

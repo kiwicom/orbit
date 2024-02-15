@@ -1,5 +1,4 @@
 import * as React from "react";
-import styled from "styled-components";
 
 import Card, { CardSection } from "../Card";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -7,10 +6,9 @@ import Wizard, { WizardStep } from "../Wizard";
 
 import Layout, { LayoutColumn } from ".";
 
-const CustomDiv = styled.div`
-  height: 400px;
-  background: rgba(0, 169, 145, 0.2);
-`;
+const CustomDiv = ({ children }: { children?: React.ReactNode }) => (
+  <div style={{ height: "400px", backgroundColor: "rgba(0, 169, 145, 0.2)" }}>{children}</div>
+);
 
 export default {
   title: "Layout",
@@ -99,7 +97,7 @@ export const Customized = () => (
         </CardSection>
       </Card>
     </LayoutColumn>
-    <LayoutColumn hideOn={["largeMobile"]} as="span">
+    <LayoutColumn as="span">
       <Card>
         <CardSection>
           <CustomDiv />

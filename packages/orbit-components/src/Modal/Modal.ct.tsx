@@ -7,10 +7,16 @@ import { SIZES } from "./consts";
 test.describe("visual Modal", () => {
   Object.values(SIZES).forEach(size => {
     test(`ModalVisualDefaultStory ${size}`, async ({ mount }) => {
-      const component = await mount(<ModalVisualDefaultStory />);
+      const component = await mount(<ModalVisualDefaultStory size={size} />);
 
       await expect(component).toHaveScreenshot();
     });
+  });
+
+  test(`ModalVisualDefaultStory isMobileFullPage`, async ({ mount }) => {
+    const component = await mount(<ModalVisualDefaultStory isMobileFullPage />);
+
+    await expect(component).toHaveScreenshot();
   });
 
   test("ModalVisualMobileHeader", async ({ mount }) => {

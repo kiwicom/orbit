@@ -23,7 +23,7 @@ Zeplin: -- don't forget to add Zeplin link with visual specification
 
 ## Functional specs
 
--- Describe what should be possible to do with this component, what types it use, what variation it does have
+-- Describe what should be possible to do with this component, what types it uses, what variation it has
 
 ## Storybook chapters
 
@@ -31,4 +31,4 @@ Zeplin: -- don't forget to add Zeplin link with visual specification
 
 ## Some inspiration
 
--- You can add links to other design systems for some inspiration. It's usually nice to write what do you like or why you inserted which link.
+-- You can add links to other design systems for some inspiration. It's usually nice to write what you like or why you inserted which link.

@@ -191,7 +191,6 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "form-box-large": tokens.formBoxLargeHeight,
           badge: tokens.badgeBorderRadius,
           modal: tokens.modalBorderRadius,
-          "modal-mobile": tokens.modalBorderRadiusMobile,
         },
         borderColor: {
           ...Object.keys(tokens).reduce((acc, token) => {

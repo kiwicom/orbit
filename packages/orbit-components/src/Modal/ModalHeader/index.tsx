@@ -27,7 +27,7 @@ export const ModalHeaderWrapper = ({
         className,
         "orbit-modal-header-container",
         "lm:rounded-t-modal box-border block w-full",
-        !isMobileFullPage && "rounded-t-modal-mobile",
+        !isMobileFullPage && "rounded-t-modal",
         "lm:[&_~_.orbit-modal-section:first-of-type]:rounded-t-none [&_~_.orbit-modal-section:first-of-type]:rounded-t-none",
         suppressed
           ? [

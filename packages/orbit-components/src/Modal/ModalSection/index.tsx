@@ -42,8 +42,8 @@ export const ModalSectionWrapper = ({
               "lm:[&_~_.orbit-modal-footer]:last-of-type:pt-0 last-of-type:border-b-0",
             ],
         !isMobileFullPage && [
-          "first-of-type:rounded-t-modal-mobile lm:first-of-type:rounded-t-modal",
-          "last-of-type:rounded-b-modal-mobile lm:last-of-type:rounded-t-modal lm:[&_~_.orbit-modal-footer]:last-of-type:mt-0",
+          "first-of-type:rounded-t-modal lm:first-of-type:rounded-t-modal",
+          "last-of-type:rounded-b-modal lm:last-of-type:rounded-t-modal lm:[&_~_.orbit-modal-footer]:last-of-type:mt-0",
         ],
       )}
       data-test={dataTest}

@@ -27,16 +27,15 @@ Table below contains all types of the props available in the Layout component.
 ### LayoutColumn
 
 LayoutColumn component gives us a possibility how to control all accessibility and behaviour properties globally, so you don't have to worry about it.
-**If you want to use `Layout` component in your project, use `LayoutComponent` also.**
+**If you want to use `Layout` component in your project, use `LayoutColumn` also.**
 
 Table below contains all types of the props available in the LayoutColumn component.
 
-| Name         | Type         | Default | Description                                                                                   |
-| :----------- | :----------- | :------ | :-------------------------------------------------------------------------------------------- |
-| as           | `string`     | `"div"` | The HTML element in which item will be rendered                                               |
-| **children** | `React.Node` |         | The children of the LayoutColumn.                                                             |
-| dataTest     | `string`     |         | Optional prop for testing purposes.                                                           |
-| hideOn       | `Devices[]`  |         | Array of devices - viewports to hide the children on. For more info check **Hide** component. |
+| Name         | Type         | Default | Description                                     |
+| :----------- | :----------- | :------ | :---------------------------------------------- |
+| as           | `string`     | `"div"` | The HTML element in which item will be rendered |
+| **children** | `React.Node` |         | The children of the LayoutColumn.               |
+| dataTest     | `string`     |         | Optional prop for testing purposes.             |
 
 ## Layouts
 
@@ -45,7 +44,7 @@ There is possibility to use `Search`, `Booking` or `MMB` layout.
 
 ### Search
 
-The Search layout consist of three columns. The first and third column hidden on smaller devices, so we can show the main section properly.
+The Search layout consist of three columns.
 
 To implement the Search layout into your project, you need to use this JSX markup:
 
@@ -60,11 +59,6 @@ const App = () => (
   </Layout>
 );
 ```
-
-#### Columns behaviour:
-
-- The left SideBar is going to be hidden on `mobile`, `mediumMobile` and `largeMobile` viewport.
-- The right SideBar is going to be hidden on `mobile`, `mediumMobile`, `largeMobile`, `tablet` and `desktop` viewport.
 
 ### Booking
 

@@ -12,7 +12,7 @@ export default {
       <Layout type="MMB">
         <LayoutColumn>
           <div style={style}>
-            <Text>This column is designed for the main content. It&apos;s always visible.</Text>
+            <Text>This column is designed for the main content.</Text>
           </div>
         </LayoutColumn>
       </Layout>

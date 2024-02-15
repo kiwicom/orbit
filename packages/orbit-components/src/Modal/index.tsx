@@ -421,7 +421,7 @@ const Modal = React.forwardRef<Instance, Props>(
           className={cx(
             "orbit-modal-wrapper",
             "fixed mx-auto my-0 box-border flex min-h-full w-full items-start",
-            !isMobileFullPage && "rounded-t-modal-mobile",
+            !isMobileFullPage && "rounded-t-modal",
             disableAnimation
               ? !isMobileFullPage && "top-[32px]"
               : [
@@ -445,7 +445,7 @@ const Modal = React.forwardRef<Instance, Props>(
                 "[&_.orbit-modal-header-container]:mb-xl lm:[&_.orbit-modal-header-container]:mb-[var(--orbit-modal-footer-height,0px)]",
               isMobileFullPage
                 ? "top-0 max-h-full"
-                : ["rounded-t-modal-mobile", scrolled && "[&_.orbit-modal-mobile-header]:top-xl"],
+                : ["rounded-t-modal", scrolled && "[&_.orbit-modal-mobile-header]:top-xl"],
               fixedFooter &&
                 footerHeight && [
                   "[&_.orbit-modal-footer]:p-md [&_.orbit-modal-footer]:fixed [&_.orbit-modal-footer]:bottom-0",
@@ -485,7 +485,7 @@ const Modal = React.forwardRef<Instance, Props>(
                   "lm:rounded-none",
                   fixedClose || scrolled ? "lm:top-0 lm:right-auto fixed" : "absolute",
                   !isMobileFullPage && (fixedClose || scrolled) ? "top-[32px]" : "top-0",
-                  !isMobileFullPage && "rounded-t-modal-mobile",
+                  !isMobileFullPage && "rounded-t-modal",
                   modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
                   scrolled && "shadow-fixed bg-white-normal",
                   "[&_+_.orbit-modal-section:first-of-type]:pt-xxxl [&_+_.orbit-modal-section:first-of-type]:m-0 [&_+_.orbit-modal-section:first-of-type]:border-t-0",

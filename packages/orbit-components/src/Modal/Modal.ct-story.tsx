@@ -13,9 +13,9 @@ import Modal, { ModalSection, ModalHeader, ModalFooter } from ".";
 
 const content = "Lorem ispum dolor sit amet.";
 
-export function ModalVisualDefaultStory({ size = SIZES.NORMAL }) {
+export function ModalVisualDefaultStory({ size = SIZES.NORMAL, isMobileFullPage = false }) {
   return (
-    <Modal onClose={() => {}} size={size}>
+    <Modal onClose={() => {}} size={size} isMobileFullPage={isMobileFullPage}>
       <ModalHeader
         title="Normal header"
         illustration={<Illustration name={NAMES[0]} size="small" />}

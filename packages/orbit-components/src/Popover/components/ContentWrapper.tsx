@@ -200,7 +200,7 @@ const PopoverContentWrapper = ({
             ref={scrollingElementRef}
             className={cx(
               "overflow-auto",
-              "rounded-t-modal-mobile",
+              "rounded-t-modal",
               "absolute left-0",
               "w-full",
               "bg-white-normal",

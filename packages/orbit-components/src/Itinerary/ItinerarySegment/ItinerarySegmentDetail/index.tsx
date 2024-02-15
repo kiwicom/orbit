@@ -92,6 +92,10 @@ const StyledHeadingOffset = styled.div`
   `}
 `;
 
+StyledHeadingOffset.defaultProps = {
+  theme: themeDefault,
+};
+
 const StyledIcon = styled.div<{ isFirst?: boolean; isLast?: boolean }>`
   ${({ theme, isFirst, isLast }) => css`
     display: flex;

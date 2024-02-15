@@ -14166,8 +14166,8 @@
   },
   "modalBorderRadiusMobile": {
     "type": "border-radius",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "modalBorderRadius",
     "schema": {
       "namespace": "component",
       "object": "modal",
@@ -14197,7 +14197,7 @@
     },
     "javascript": {
       "name": "modalBorderRadius",
-      "value": "9px"
+      "value": "12px"
     },
     "foundation": {
       "name": "modalBorderRadius",
@@ -14205,7 +14205,7 @@
     },
     "scss": {
       "name": "modalBorderRadius",
-      "value": "9px"
+      "value": "12px"
     }
   },
   "modalExtraSmallWidth": {

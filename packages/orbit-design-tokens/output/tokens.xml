@@ -2461,7 +2461,7 @@
   </token>
   <token>
     <name>modalBorderRadius</name>
-    <value>9</value>
+    <value>12</value>
   </token>
   <token>
     <name>modalExtraSmallWidth</name>

@@ -1557,7 +1557,7 @@ const createTokens: CreateTokens = foundation => ({
   illustrationDisplayHeight: "460px",
   loadingForeground: foundation.palette.cloud.dark,
   modalBorderRadiusMobile: "12px",
-  modalBorderRadius: "9px",
+  modalBorderRadius: "12px",
   modalExtraSmallWidth: "360px",
   modalSmallWidth: "540px",
   modalNormalWidth: "740px",

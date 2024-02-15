@@ -629,7 +629,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "marginButtonGroup": "0 1px 0 0",
   "marginButtonIcon": "8px",
   "marginTopFormFeedback": "2px",
-  "modalBorderRadius": "9px",
+  "modalBorderRadius": "12px",
   "modalBorderRadiusMobile": "12px",
   "modalExtraLargeWidth": "1280px",
   "modalExtraSmallWidth": "360px",

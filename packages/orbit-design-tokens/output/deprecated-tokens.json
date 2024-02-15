@@ -1987,6 +1987,11 @@
     "category": "Size (width, height)",
     "version": "6.0.0"
   },
+  "modalBorderRadiusMobile": {
+    "replacement": "modalBorderRadius",
+    "category": "Border radius",
+    "version": "7.0.0"
+  },
   "marginBottomSelectSuffix": {
     "replacement": null,
     "category": "Size (width, height)",

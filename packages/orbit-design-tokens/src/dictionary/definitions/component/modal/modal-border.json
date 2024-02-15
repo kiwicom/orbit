@@ -3,11 +3,14 @@
     "modal": {
       "border-radius-mobile": {
         "type": "border-radius",
-        "value": 12
+        "value": 12,
+        "deprecated": true,
+        "deprecated-replace": "{component.modal.border-radius}",
+        "deprecated-version": "7.0.0"
       },
       "border-radius": {
         "type": "border-radius",
-        "value": 9
+        "value": 12
       }
     },
     "border-color": {

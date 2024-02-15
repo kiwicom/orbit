@@ -17,6 +17,16 @@ export const getSize: GetSize =
     return tokens[size] || tokens[ICON_SIZES.MEDIUM];
   };
 
+export const iconColorClasses: Record<ICON_COLORS, string> = {
+  [ICON_COLORS.PRIMARY]: "text-icon-primary-foreground",
+  [ICON_COLORS.SECONDARY]: "text-icon-secondary-foreground",
+  [ICON_COLORS.TERTIARY]: "text-icon-tertiary-foreground",
+  [ICON_COLORS.INFO]: "text-icon-info-foreground",
+  [ICON_COLORS.SUCCESS]: "text-icon-success-foreground",
+  [ICON_COLORS.WARNING]: "text-icon-warning-foreground",
+  [ICON_COLORS.CRITICAL]: "text-icon-critical-foreground",
+};
+
 const OrbitIcon = (props: FactoryProps) => {
   const {
     size = ICON_SIZES.MEDIUM,
@@ -40,15 +50,7 @@ const OrbitIcon = (props: FactoryProps) => {
         size === ICON_SIZES.SMALL && "size-icon-small",
         size === ICON_SIZES.MEDIUM && "size-icon-medium",
         size === ICON_SIZES.LARGE && "size-icon-large",
-        !customColor && [
-          color === ICON_COLORS.PRIMARY && "text-icon-primary-foreground",
-          color === ICON_COLORS.SECONDARY && "text-icon-secondary-foreground",
-          color === ICON_COLORS.TERTIARY && "text-icon-tertiary-foreground",
-          color === ICON_COLORS.INFO && "text-icon-info-foreground",
-          color === ICON_COLORS.SUCCESS && "text-icon-success-foreground",
-          color === ICON_COLORS.WARNING && "text-icon-warning-foreground",
-          color === ICON_COLORS.CRITICAL && "text-icon-critical-foreground",
-        ],
+        !customColor && color && iconColorClasses[color],
       )}
       viewBox={viewBox}
       preserveAspectRatio="xMidYMid meet"

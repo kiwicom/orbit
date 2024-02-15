@@ -686,6 +686,7 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "elevation-fixed": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",
       "elevation-fixed-reverse": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",
       "elevation-flat": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",
+      "elevation-flat-border-color": "rgba(var(--palette-cloud-normal, 232, 237, 241), <alpha-value>)",
       "elevation-overlay": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",
       "elevation-raised": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",
       "elevation-raised-reverse": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",

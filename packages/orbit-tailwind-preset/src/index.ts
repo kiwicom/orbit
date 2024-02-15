@@ -65,6 +65,7 @@ const getBackgroundColors = (tokens: typeof defaultTokens) => {
       "elevation-action-active": tokens.elevationActionActiveBackground,
       "elevation-fixed": tokens.elevationFixedBackground,
       "elevation-fixed-reverse": tokens.elevationFixedReverseBackground,
+      "elevation-flat-border-color": tokens.elevationFlatBorderColor,
       "elevation-raised": tokens.elevationRaisedBackground,
       "elevation-raised-reverse": tokens.elevationRaisedReverseBackground,
       "elevation-overlay": tokens.elevationOverlayBackground,

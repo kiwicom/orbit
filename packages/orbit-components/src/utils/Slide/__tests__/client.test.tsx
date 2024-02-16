@@ -34,7 +34,7 @@ describe(`slide util`, () => {
       jest.runAllTimers();
     });
 
-    expect(screen.getByText("Collapsed content")).toHaveStyle("max-height: 0px");
+    expect(screen.getByText("Collapsed content")).toHaveStyle("max-height: 0");
 
     rerender(
       <Slide maxHeight={20} expanded>

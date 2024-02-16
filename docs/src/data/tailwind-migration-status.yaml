@@ -78,7 +78,7 @@ ServiceLogo: false
 Skeleton: true
 SkipLink: false
 SkipNavigation: false
-Slide: false
+Slide: true
 Slider: true
 SocialButton: true
 Stack: true

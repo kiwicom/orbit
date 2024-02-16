@@ -19,7 +19,7 @@ const getTypeToken = (type: Type) => {
       "bg-badge-critical-subtle-background text-badge-critical-subtle-foreground",
     [TYPE_OPTIONS.DARK]: "bg-badge-dark-background text-badge-dark-foreground",
     [TYPE_OPTIONS.WHITE]: "bg-badge-white-background text-badge-white-foreground",
-    [TYPE_OPTIONS.INFO]: "bg-badge-info-background text-badge-info-foreground",
+    [TYPE_OPTIONS.INFO]: "bg-blue-dark text-badge-info-foreground",
     [TYPE_OPTIONS.CRITICAL]: "bg-badge-critical-background text-badge-critical-foreground",
     [TYPE_OPTIONS.SUCCESS]: "bg-badge-success-background text-badge-success-foreground",
     [TYPE_OPTIONS.WARNING]: "bg-badge-warning-background text-badge-warning-foreground",

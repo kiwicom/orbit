@@ -1,35 +1,17 @@
 import * as React from "react";
-import styled from "styled-components";
+import cx from "clsx";
 
 import type { TransitionDuration } from "../transition";
-import transition from "../transition";
-import defaultTheme from "../../defaultTheme";
 import type { Props, State } from "./types";
 
-const getMaxHeight = ({ maxHeight }) => {
-  if (maxHeight === 0) return `0px`;
-  if (!maxHeight) return undefined;
-  return `${maxHeight}px`;
-};
+const getTransitionDurationClass = (duration: TransitionDuration) => {
+  const classes: Record<TransitionDuration, string> = {
+    slow: "duration-slow",
+    normal: "duration-normal",
+    fast: "duration-fast",
+  };
 
-export const StyledSlide = styled.div<{
-  transitionDuration?: TransitionDuration;
-  transitionFinished?: boolean;
-  visible?: boolean;
-  expanded?: boolean;
-  maxHeight: number | null;
-}>`
-  position: relative;
-  width: 100%;
-  transition: ${({ transitionDuration }) =>
-    transitionDuration && transition(["max-height"], transitionDuration, "linear")};
-  max-height: ${getMaxHeight};
-  overflow: ${({ transitionFinished }) => !transitionFinished && "hidden"};
-  visibility: ${({ visible }) => !visible && "hidden"};
-`;
-
-StyledSlide.defaultProps = {
-  theme: defaultTheme,
+  return classes[duration];
 };
 
 class Slide extends React.Component<Props, State> {
@@ -146,22 +128,25 @@ class Slide extends React.Component<Props, State> {
     const { children, expanded = false, id, ariaLabelledBy, transitionDuration } = this.props;
     const { transitionFinished, maxHeight, visible } = this.state;
     return (
-      <StyledSlide
-        className="orbit-slide"
-        maxHeight={maxHeight}
-        expanded={expanded}
-        transitionFinished={transitionFinished}
-        transitionDuration={transitionDuration}
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
+      <div
+        className={cx(
+          "orbit-slide relative w-full",
+          transitionDuration && "transition-[max-height] ease-linear",
+          transitionDuration && getTransitionDurationClass(transitionDuration),
+          !transitionFinished && "overflow-hidden",
+          !visible && "invisible",
+        )}
+        style={{ maxHeight: maxHeight ?? undefined }}
         aria-hidden={!expanded}
         id={id}
         aria-labelledby={ariaLabelledBy}
-        visible={visible}
         onClick={ev => {
           ev.stopPropagation();
         }}
       >
         {children}
-      </StyledSlide>
+      </div>
     );
   }
 }

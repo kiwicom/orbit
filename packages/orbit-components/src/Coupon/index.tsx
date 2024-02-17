@@ -1,35 +1,17 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
 
-import defaultTheme from "../defaultTheme";
 import type { Props } from "./types";
 
-const StyledCoupon = styled.mark`
-  ${({ theme }) => css`
-    display: inline;
-    background: none;
-    font-size: ${theme.orbit.fontSizeTextSmall};
-    letter-spacing: 0.75px;
-    text-transform: uppercase;
-    border: 1px dashed ${theme.orbit.paletteCloudDark};
-    padding: 2px ${theme.orbit.spaceXXSmall};
-    line-height: inherit;
-    font-weight: ${theme.orbit.fontWeightMedium};
-    border-radius: ${theme.orbit.borderRadiusNormal};
-    color: ${theme.orbit.paletteInkDark};
-  `}
-`;
-
-StyledCoupon.defaultProps = {
-  theme: defaultTheme,
-};
-
 const Coupon = ({ children, dataTest, id }: Props) => (
-  <StyledCoupon data-test={dataTest} id={id}>
+  <mark
+    className="orbit-coupon text-small border-cloud-dark py-xxxs px-xxs rounded-normal text-ink-dark inline border border-dashed bg-transparent font-medium uppercase tracking-[0.75px]"
+    data-test={dataTest}
+    id={id}
+  >
     {children}
-  </StyledCoupon>
+  </mark>
 );
 
 export default Coupon;

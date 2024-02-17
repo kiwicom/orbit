@@ -34,12 +34,16 @@ Default.story = {
 
 export const Playground = () => {
   const dataTest = text("dataTest", "test");
+  const id = text("id", "couponId");
   const content = text("content", "CODE");
 
   return (
     <Text>
-      Lorem ipsum dolor sit amet, consectetuer <Coupon dataTest={dataTest}>{content}</Coupon> elit.
-      Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo.
+      Lorem ipsum dolor sit amet, consectetuer{" "}
+      <Coupon dataTest={dataTest} id={id}>
+        {content}
+      </Coupon>{" "}
+      elit. Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo.
     </Text>
   );
 };

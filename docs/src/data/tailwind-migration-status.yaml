@@ -22,7 +22,7 @@ CarrierLogo: true
 Checkbox: true
 ChoiceGroup: true
 Collapse: true
-Coupon: false
+Coupon: true
 CountryFlag: true
 Desktop: true
 Dialog: true

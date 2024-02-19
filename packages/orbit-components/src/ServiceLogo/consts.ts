@@ -6,6 +6,7 @@ export enum NAME_OPTIONS {
   APPLEPAY = "ApplePay",
   AXA = "Axa",
   AXAASSISTANCE = "AxaAssistance",
+  AXAWHITE = "AxaWhite",
   BOOKING = "Booking",
   BUSINESSINSIDER = "BusinessInsider",
   CHINAUNIONPAY = "ChinaUnionPay",

@@ -1,0 +1,51 @@
+name: Update Visual Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      commitMessage:
+        description: "Commit message for the update"
+        required: true
+        default: "chore: update visual tests"
+
+jobs:
+  update-visual-tests:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.39.0-jammy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          ref: ${{ github.head_ref }}
+
+      - name: Install
+        uses: ./.github/actions/node
+
+      - name: Setup git config
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name "kiwicom-orbit-bot"
+          git config user.email "frontend-platform@kiwi.com"
+
+      - name: Build
+        run: |
+          apt-get update
+          apt-get install zip --yes
+          yarn tokens build
+          yarn tailwind-preset build
+          yarn components build
+
+      - name: Update Visual Tests
+        run: |
+          yarn components test-ct --update-snapshots
+          git add \*.png
+          if git diff-index --quiet HEAD; then
+            echo "No changes to visual tests. Exiting."
+            exit 0
+          else
+            echo "Commiting changes to visual tests"
+            git commit -m "${{ github.event.inputs.commitMessage || 'chore: update visual tests' }}"
+            git push
+          fi

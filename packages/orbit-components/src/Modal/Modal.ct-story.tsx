@@ -2,8 +2,6 @@ import React from "react";
 
 import { SIZES } from "./consts";
 import Illustration from "../Illustration";
-// eslint-disable-next-line import/extensions
-import { NAMES } from "../Illustration/consts.mjs";
 import Text from "../Text";
 import Button from "../Button";
 import Box from "../Box";
@@ -18,7 +16,7 @@ export function ModalVisualDefaultStory({ size = SIZES.NORMAL, isMobileFullPage 
     <Modal onClose={() => {}} size={size} isMobileFullPage={isMobileFullPage}>
       <ModalHeader
         title="Normal header"
-        illustration={<Illustration name={NAMES[0]} size="small" />}
+        illustration={<Illustration name="AppKiwi" size="small" />}
         description="Lorem ispum dolor sit amet"
       />
       <ModalSection>
@@ -41,7 +39,7 @@ export function ModalVisualMobileHeader() {
     <Modal onClose={() => {}} size={SIZES.NORMAL} mobileHeader>
       <ModalHeader
         title="Suppressed header"
-        illustration={<Illustration name={NAMES[0]} size="small" />}
+        illustration={<Illustration name="AppKiwi" size="small" />}
         suppressed
       />
       <ModalSection suppressed>

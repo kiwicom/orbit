@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.3.0...@kiwicom/orbit-components@12.4.0) (2024-02-19)
+
+#### Bug Fixes
+
+*   **Modal:** fix border radius on isMobileFullPage ([5f71d77](https://github.com/kiwicom/orbit/commit/5f71d773d5a7aac2d97a04151815d94f5b103023))
+*   **Wizard:** don't wrap progress label ([0374d19](https://github.com/kiwicom/orbit/commit/0374d1977a05e02e78c34c2ee3908c86181ee38c))
+
+#### Features
+
+*   **HorizontalScroll:** migrate to tailwind ([b80eef4](https://github.com/kiwicom/orbit/commit/b80eef42ad3545acc77ed427fb8d9cbcec415ed5))
+*   **Slider:** migrate to tailwind ([7b29005](https://github.com/kiwicom/orbit/commit/7b290058dd32f1211db3a653f4d418a1f0ed9345))
+
 ## [12.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.2.0...@kiwicom/orbit-components@12.3.0) (2024-02-08)
 
 #### Features

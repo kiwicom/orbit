@@ -6,19 +6,22 @@ import Accordion, { AccordionSection } from "..";
 describe(`Accordion`, () => {
   const expandedSection = "0X1";
   const dataTest = "Accordion";
+  const id = "accordionId";
   const sectionDataTest = "AccordionSection";
   const onExpand = jest.fn();
 
   it("should have passed props", () => {
     render(
-      <Accordion expandedSection={expandedSection} onExpand={onExpand} dataTest={dataTest}>
+      <Accordion expandedSection={expandedSection} onExpand={onExpand} dataTest={dataTest} id={id}>
         <AccordionSection id="0X1" dataTest={sectionDataTest}>
           Section
         </AccordionSection>
       </Accordion>,
     );
 
-    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    const el = screen.getByTestId(dataTest);
+    expect(el).toBeInTheDocument();
+    expect(el).toHaveAttribute("id", id);
     expect(screen.getByTestId(sectionDataTest)).toBeInTheDocument();
   });
 

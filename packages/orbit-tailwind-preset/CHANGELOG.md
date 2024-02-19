@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@4.1.0...@kiwicom/orbit-tailwind-preset@4.2.0) (2024-02-19)
+
+
+### Bug Fixes
+
+* **tailwind:** remove borderRadius modal-mobile class ([78d648e](https://github.com/kiwicom/orbit/commit/78d648ef8bf851d150d061080e8682677579605e))
+
+
+### Features
+
+* **Slider:** migrate to tailwind ([7b29005](https://github.com/kiwicom/orbit/commit/7b290058dd32f1211db3a653f4d418a1f0ed9345))
+
+
+
+
+
 # [4.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@4.0.0...@kiwicom/orbit-tailwind-preset@4.1.0) (2024-02-08)
 
 

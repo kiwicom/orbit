@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@7.1.0...@kiwicom/orbit-design-tokens@7.2.0) (2024-02-19)
+
+
+### Features
+
+* **tokens:** deprecate modalBorderRadiusMobile token ([b8fa456](https://github.com/kiwicom/orbit/commit/b8fa456fc2b0db411ad363d623c0e51afcb53266))
+
+
+
+
+
 # [7.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@7.0.0...@kiwicom/orbit-design-tokens@7.1.0) (2024-02-08)
 
 

@@ -21,17 +21,6 @@ export default function CarrierLogoStory() {
     { code: "VY", name: "Vueling" },
     { code: "OK", name: "Czech Airlines" },
   ];
-  const types1 = [
-    { code: "KEK1", name: "Mount", type: "airline" as const },
-    { code: "KEK2", name: "Mount", type: "bus" as const },
-    { code: "KEK3", name: "Mount", type: "train" as const },
-    { code: "KEK4", name: "Mount", type: "ferry" as const },
-  ];
-  const types2 = [
-    { code: "KEK1", name: "Mount", type: "private_transfer" as const },
-    { code: "KEK2", name: "Mount", type: "kiwicom" as const },
-    { code: "KEK3", name: "Mount" },
-  ];
 
   return (
     <div className="space-y-xs flex flex-col">
@@ -64,11 +53,6 @@ export default function CarrierLogoStory() {
         <CarrierLogo rounded carriers={four} />
         <CarrierLogo inlineStacked carriers={four} />
         <CarrierLogo inlineStacked rounded carriers={four} />
-      </div>
-
-      <div className="space-y-xs flex flex-col">
-        <CarrierLogo carriers={types1} />
-        <CarrierLogo carriers={types2} />
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ type Name =
   | "ApplePay"
   | "Axa"
   | "AxaAssistance"
+  | "AxaWhite"
   | "Booking"
   | "BusinessInsider"
   | "ChinaUnionPay"

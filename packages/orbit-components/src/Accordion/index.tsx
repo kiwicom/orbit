@@ -1,26 +1,11 @@
 "use client";
 
 import React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import { Provider as SectionProvider } from "./AccordionContext";
-import getSpacingToken from "../common/getSpacingToken";
 import type { Props } from "./types";
-import defaultTheme from "../defaultTheme";
-
-export const StyledAccordion = styled.div<{ spaceAfter?: Props["spaceAfter"] }>`
-  ${({ theme }) => css`
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    font-family: ${theme.orbit.fontFamily};
-    margin-bottom: ${getSpacingToken};
-  `};
-`;
-
-StyledAccordion.defaultProps = {
-  theme: defaultTheme,
-};
+import { spaceAfterClasses } from "../common/tailwind";
 
 const Accordion = ({
   children,
@@ -31,7 +16,14 @@ const Accordion = ({
   loading,
   onExpand,
 }: Props) => (
-  <StyledAccordion spaceAfter={spaceAfter} id={id} data-test={dataTest}>
+  <div
+    className={cx(
+      "orbit-accordion font-base relative w-full",
+      spaceAfter && spaceAfterClasses[spaceAfter],
+    )}
+    id={id}
+    data-test={dataTest}
+  >
     {children
       ? React.Children.map(children, item => {
           if (!item) return null;
@@ -51,7 +43,7 @@ const Accordion = ({
           );
         })
       : null}
-  </StyledAccordion>
+  </div>
 );
 
 export default Accordion;

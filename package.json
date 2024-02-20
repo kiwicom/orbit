@@ -57,7 +57,7 @@
     "@babel/types": "^7.21.4",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@kiwicom/browserslist-config": "^4.0.0",
+    "@kiwicom/browserslist-config": "^4.0.3",
     "@octokit/rest": "^19.0.5",
     "@size-limit/file": "^8.0.0",
     "@size-limit/webpack": "^8.0.0",

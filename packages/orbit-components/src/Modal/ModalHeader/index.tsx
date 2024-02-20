@@ -11,13 +11,11 @@ import type { Props } from "./types";
 export const ModalHeaderWrapper = ({
   className,
   suppressed,
-  isMobileFullPage,
   dataTest,
   children,
 }: {
   className?: string;
   suppressed?: boolean;
-  isMobileFullPage?: boolean;
   dataTest?: string;
   children?: React.ReactNode;
 }) => {
@@ -26,9 +24,7 @@ export const ModalHeaderWrapper = ({
       className={cx(
         className,
         "orbit-modal-header-container",
-        "lm:rounded-t-modal box-border block w-full",
-        !isMobileFullPage && "rounded-t-modal",
-        "lm:[&_~_.orbit-modal-section:first-of-type]:rounded-t-none [&_~_.orbit-modal-section:first-of-type]:rounded-t-none",
+        "box-border block w-full",
         suppressed
           ? [
               "bg-cloud-light py-xl px-md lm:p-xl",
@@ -66,11 +62,7 @@ const ModalHeader = ({
   const hasHeader = Boolean(title || description);
 
   return (
-    <ModalHeaderWrapper
-      suppressed={suppressed}
-      dataTest={dataTest}
-      isMobileFullPage={isMobileFullPage}
-    >
+    <ModalHeaderWrapper suppressed={suppressed} dataTest={dataTest}>
       {illustration}
       {hasHeader && (
         <div

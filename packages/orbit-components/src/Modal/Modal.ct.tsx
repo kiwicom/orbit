@@ -1,7 +1,11 @@
 import * as React from "react";
 import { test, expect } from "@playwright/experimental-ct-react";
 
-import { ModalVisualDefaultStory, ModalVisualMobileHeader } from "./Modal.ct-story";
+import {
+  ModalVisualDefaultStory,
+  ModalVisualMobileHeader,
+  ModalVisualNoHeaderNoFooter,
+} from "./Modal.ct-story";
 import { SIZES } from "./consts";
 
 test.describe("visual Modal", () => {
@@ -21,6 +25,18 @@ test.describe("visual Modal", () => {
 
   test("ModalVisualMobileHeader", async ({ mount }) => {
     const component = await mount(<ModalVisualMobileHeader />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("ModalVisualNoHeaderNoFooter", async ({ mount }) => {
+    const component = await mount(<ModalVisualNoHeaderNoFooter />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("ModalVisualNoHeaderNoFooter isMobileFullPage", async ({ mount }) => {
+    const component = await mount(<ModalVisualNoHeaderNoFooter isMobileFullPage />);
 
     await expect(component).toHaveScreenshot();
   });

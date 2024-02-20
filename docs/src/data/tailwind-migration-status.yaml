@@ -106,8 +106,8 @@ TextOrbit: true
 Text: true
 TextLink: true
 Textarea: true
-Timeline: false
-TimelineStep: false
+Timeline: true
+TimelineStep: true
 Toast: true
 ToastRoot: true
 Tooltip: true

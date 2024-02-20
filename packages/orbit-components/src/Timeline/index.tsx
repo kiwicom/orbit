@@ -1,25 +1,13 @@
 "use client";
 
 import * as React from "react";
-import styled from "styled-components";
+import cx from "clsx";
 
-import type * as Common from "../common/types";
 import Stack from "../Stack";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { TimelineStatusProvider, TimelineStepProvider } from "./TimelineContext";
-import getSpacingToken from "../common/getSpacingToken";
-import themeDefault from "../defaultTheme";
+import { spaceAfterClasses } from "../common/tailwind";
 import type { Props } from "./types";
-
-const WrapperStyled = styled.div<{ spaceAfter?: Common.SpaceAfterSizes }>`
-  position: relative;
-  overflow: hidden;
-  margin-bottom: ${getSpacingToken};
-`;
-
-WrapperStyled.defaultProps = {
-  theme: themeDefault,
-};
 
 const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
   const childrenArr = React.Children.toArray(children);
@@ -36,7 +24,14 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
   );
 
   return childrenArr && childrenArr.length > 0 ? (
-    <WrapperStyled spaceAfter={spaceAfter} data-test={dataTest} id={id}>
+    <div
+      className={cx(
+        "orbit-timeline relative overflow-hidden",
+        spaceAfter && spaceAfterClasses[spaceAfter],
+      )}
+      data-test={dataTest}
+      id={id}
+    >
       <Stack flex shrink direction={getDirection()}>
         <TimelineStatusProvider direction={direction}>
           {React.Children.map(childrenArr, (child, i) => {
@@ -55,7 +50,7 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
           })}
         </TimelineStatusProvider>
       </Stack>
-    </WrapperStyled>
+    </div>
   ) : null;
 };
 

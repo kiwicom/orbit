@@ -56,3 +56,13 @@ export function ModalVisualMobileHeader() {
     </Modal>
   );
 }
+
+export function ModalVisualNoHeaderNoFooter({ isMobileFullPage = false }) {
+  return (
+    <Modal onClose={() => {}} size={SIZES.NORMAL} isMobileFullPage={isMobileFullPage}>
+      <ModalSection>
+        <Text>No Header nor Footer modal</Text>
+      </ModalSection>
+    </Modal>
+  );
+}

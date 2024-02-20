@@ -29,7 +29,6 @@ export const ModalSectionWrapper = ({
         "orbit-modal-section",
         "py-lg px-md lm:p-xl box-border w-full",
         "border-b-elevation-flat-border-color border-b border-solid",
-        "last-of-type:[&:not(:last-child)]:rounded-b-none",
         suppressed
           ? [
               "bg-cloud-light",
@@ -41,10 +40,7 @@ export const ModalSectionWrapper = ({
               "bg-white-normal",
               "lm:[&_~_.orbit-modal-footer]:last-of-type:pt-0 last-of-type:border-b-0",
             ],
-        !isMobileFullPage && [
-          "first-of-type:rounded-t-modal lm:first-of-type:rounded-t-modal",
-          "last-of-type:rounded-b-modal lm:last-of-type:rounded-t-modal lm:[&_~_.orbit-modal-footer]:last-of-type:mt-0",
-        ],
+        !isMobileFullPage && ["lm:[&_~_.orbit-modal-footer]:last-of-type:mt-0"],
       )}
       data-test={dataTest}
     >

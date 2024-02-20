@@ -1,10 +1,5 @@
 [production]
 extends @kiwicom/browserslist-config
 
-ios_saf 14
-ios_saf 15
-safari 14
-safari 15
-
 [test]
 current node

@@ -1,10 +1,10 @@
 import * as React from "react";
+import cx from "clsx";
 
 import CheckCircle from "../../../icons/CheckCircle";
 import Circle from "../../../icons/CircleEmpty";
 import AlertCircle from "../../../icons/AlertCircle";
 import CloseCircle from "../../../icons/CloseCircle";
-import StyledIconWrapper from "../primitives/StyledIconWrapper";
 import type { Type } from "../types";
 
 const getTypeIcon = ({ type, active }: { type?: Type; active: boolean }) => {
@@ -31,11 +31,41 @@ const getTypeIcon = ({ type, active }: { type?: Type; active: boolean }) => {
   return <Circle color="tertiary" size="small" />;
 };
 
-const TypeIcon = ({ type, active, mobile }: { type?: Type; active: boolean; mobile?: boolean }) => {
+const getBackgroundClassName = (type: Type): string => {
+  const classNames = {
+    success: "bg-green-normal",
+    warning: "bg-orange-normal",
+    critical: "bg-red-normal",
+    info: "bg-blue-normal",
+  };
+
+  return classNames[type];
+};
+
+interface Props {
+  type?: Type;
+  active: boolean;
+  mobile?: boolean;
+}
+
+const TypeIcon = ({ type, active, mobile }: Props) => {
   return (
-    <StyledIconWrapper mobile={mobile} status={type} active={active}>
+    <div
+      className={cx(
+        "z-default relative flex h-[20px] items-center justify-center",
+        mobile && "min-w-lg",
+      )}
+    >
       {getTypeIcon({ type, active })}
-    </StyledIconWrapper>
+      <div
+        className={cx(
+          "rounded-circle absolute top-0 size-[20px] opacity-10",
+          mobile ? "left-xxxs" : "-left-xxxs",
+          type && getBackgroundClassName(type),
+          active && "animate-[pulse-zero_2.5s_ease-in-out_infinite]",
+        )}
+      />
+    </div>
   );
 };
 

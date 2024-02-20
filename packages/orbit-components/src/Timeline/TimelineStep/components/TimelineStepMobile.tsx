@@ -1,11 +1,10 @@
 import * as React from "react";
 
-import StyledRelative from "../primitives/StyledRelative";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
-import StyledProgressLine from "../primitives/StyledProgressLine";
+import ProgressLine from "./ProgressLine";
 import TypeIcon from "./TypeIcon";
-import StyledText from "../primitives/StyledText";
+import TextWrapper from "./TextWrapper";
 import type { Props as StepProps, Type } from "../types";
 
 interface Props extends StepProps {
@@ -15,7 +14,7 @@ interface Props extends StepProps {
 
 const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active, last }: Props) => {
   return (
-    <StyledRelative>
+    <div className="relative">
       <Stack
         flex
         spaceAfter={last ? undefined : "large"}
@@ -23,26 +22,26 @@ const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active,
         desktop={{ align: "start" }}
       >
         <TypeIcon type={type} active={!!active} mobile />
-        {!last && <StyledProgressLine status={nextType} prevStatus={type} />}
+        {!last && <ProgressLine status={nextType} prevStatus={type} />}
         <Stack flex shrink direction="column" spacing="XXSmall">
           <Stack flex direction="column" spacing="XXSmall">
-            <StyledText active={active || (last && type === "success")}>
+            <TextWrapper active={active || (last && type === "success")}>
               <Text weight="bold">{label}</Text>
-            </StyledText>
+            </TextWrapper>
             {subLabel && (
-              <StyledText active={active}>
+              <TextWrapper active={active}>
                 <Text size="small">{subLabel}</Text>
-              </StyledText>
+              </TextWrapper>
             )}
           </Stack>
           {children && (
-            <StyledText active={active || (last && type === "success")}>
+            <TextWrapper active={active || (last && type === "success")}>
               <Text>{children}</Text>
-            </StyledText>
+            </TextWrapper>
           )}
         </Stack>
       </Stack>
-    </StyledRelative>
+    </div>
   );
 };
 

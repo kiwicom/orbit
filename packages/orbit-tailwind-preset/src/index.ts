@@ -271,6 +271,11 @@ export default function orbitTailwindPreset(options?: Options): Config {
             "50%": { transform: "scale(2)" },
             "100%": { transform: "scale(1)" },
           },
+          "pulse-zero": {
+            "0%": { transform: "scale(0.01)" },
+            "50%": { transform: "scale(1)" },
+            "100%": { transform: "scale(0.01)" },
+          },
           "toast-fade-in": {
             "0%": { opacity: "0", transform: "translateY(-20px)" },
             "100%": { opacity: "1", transform: "translateY(0)" },

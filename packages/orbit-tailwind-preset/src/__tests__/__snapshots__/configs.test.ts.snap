@@ -2312,6 +2312,17 @@ exports[`orbitPreset should have preflight disabled 1`] = `
           "transform": "scale(2)",
         },
       },
+      "pulse-zero": {
+        "0%": {
+          "transform": "scale(0.01)",
+        },
+        "100%": {
+          "transform": "scale(0.01)",
+        },
+        "50%": {
+          "transform": "scale(1)",
+        },
+      },
       "slow-pulse": {
         "0%": {
           "opacity": "1",

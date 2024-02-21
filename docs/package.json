@@ -92,7 +92,7 @@
     "js-yaml": "^4.0.0",
     "jsondiffpatch": "^0.4.1",
     "memfs": "^3.2.0",
-    "prism-react-renderer": "^1.2.1",
+    "prism-react-renderer": "^2.3.1",
     "react-github-btn": "^1.2.0",
     "react-google-login": "^5.2.2",
     "react-helmet": "^6.1.0",

@@ -12,23 +12,17 @@ export default {
       <Layout type="Search">
         <LayoutColumn>
           <div style={divStyle}>
-            <Text>
-              This column is designed for filters. It&apos;s hidden on <code>largeMobile</code> and
-              smaller screens.
-            </Text>
+            <Text>This column is designed for filters.</Text>
           </div>
         </LayoutColumn>
         <LayoutColumn>
           <div style={divStyle}>
-            <Text>This column is designed for the main content. It&apos;s always visible.</Text>
+            <Text>This column is designed for the main content.</Text>
           </div>
         </LayoutColumn>
         <LayoutColumn>
           <div style={divStyle}>
-            <Text>
-              This column is designed for promotions. It&apos;s hidden on <code>desktop</code> and
-              smaller screens.
-            </Text>
+            <Text>This column is designed for promotions.</Text>
           </div>
         </LayoutColumn>
       </Layout>

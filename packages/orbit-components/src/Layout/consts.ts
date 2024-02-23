@@ -20,14 +20,10 @@ export const LAYOUT_SETTINGS = {
     },
     layoutColumns: {
       0: {
-        hideOn: ["smallMobile", "mediumMobile", "largeMobile"],
         as: "aside",
       },
       1: {
         as: "main",
-      },
-      2: {
-        hideOn: ["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"],
       },
     },
   },

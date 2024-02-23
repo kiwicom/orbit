@@ -49,7 +49,7 @@ ItinerarySegmentBanner: false
 ItinerarySegmentDetail: false
 ItinerarySegmentStop: false
 Layout: true
-LayoutColumn: false
+LayoutColumn: true
 LinkList: true
 OrbitList: true
 List: true

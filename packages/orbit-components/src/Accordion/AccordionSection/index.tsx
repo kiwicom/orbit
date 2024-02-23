@@ -7,7 +7,6 @@ import useRandomId from "../../hooks/useRandomId";
 import useBoundingRect from "../../hooks/useBoundingRect";
 import Slide from "../../utils/Slide";
 import Loading from "../../Loading";
-import AccordionWrapper from "../components/AccordionWrapper";
 import SectionHeader from "./components/SectionHeader";
 import SectionFooter from "./components/SectionFooter";
 import SectionContent from "./components/SectionContent";
@@ -29,7 +28,10 @@ const AccordionSection = ({
   const [{ height }, ref] = useBoundingRect<HTMLDivElement>({ height: isExpanded ? null : 0 });
 
   return (
-    <AccordionWrapper dataTest={dataTest}>
+    <div
+      className="border-elevation-flat-border-color rounded-normal my-xs bg-elevation-flat relative w-full border border-solid"
+      data-test={dataTest}
+    >
       <Loading loading={loading} type="boxLoader" dataTest={dataTest && `${dataTest}Loading`}>
         {header && (
           <SectionHeader
@@ -50,7 +52,7 @@ const AccordionSection = ({
           </div>
         </Slide>
       </Loading>
-    </AccordionWrapper>
+    </div>
   );
 };
 

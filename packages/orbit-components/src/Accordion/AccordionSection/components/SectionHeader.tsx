@@ -1,42 +1,8 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import Button from "../../../Button";
 import type * as Common from "../../../common/types";
-import defaultTheme from "../../../defaultTheme";
-
-const StyledWrapper = styled.div<{
-  expanded: boolean;
-  "data-test"?: string | boolean;
-}>`
-  ${({ theme, expanded }) => css`
-    display: flex;
-    padding: ${theme.orbit.spaceLarge};
-    background-color: ${theme.orbit.paletteWhite};
-    align-items: center;
-    min-height: ${expanded ? "19px" : "44px"};
-    transition: max-height ${theme.orbit.durationFast} ease-in-out;
-  `};
-`;
-
-StyledWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const HeaderContent = styled.div`
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-`;
-
-const HeaderActions = styled.div`
-  display: flex;
-  margin-left: ${({ theme }) => theme.orbit.spaceLarge};
-`;
-
-HeaderActions.defaultProps = {
-  theme: defaultTheme,
-};
 
 interface Props extends Common.Globals {
   readonly children: React.ReactNode;
@@ -54,19 +20,25 @@ const AccordionSectionHeader = ({
   expandable,
   dataTest,
 }: Props) => (
-  <StyledWrapper expanded={expanded} data-test={dataTest && `${dataTest}Header`}>
-    <HeaderContent>{children}</HeaderContent>
+  <div
+    className={cx(
+      "p-lg bg-white-normal flex items-center",
+      expanded ? "min-h-[19px]" : "min-h-[44px]",
+    )}
+    data-test={dataTest && `${dataTest}Header`}
+  >
+    <div className="flex grow items-center">{children}</div>
     {!expanded && (
-      <HeaderActions>
+      <div className="ms-lg flex">
         {expandable &&
           (actions || (
             <Button onClick={onExpand} type="secondary">
               Open
             </Button>
           ))}
-      </HeaderActions>
+      </div>
     )}
-  </StyledWrapper>
+  </div>
 );
 
 export default AccordionSectionHeader;

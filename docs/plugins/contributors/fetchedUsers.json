@@ -120,21 +120,6 @@
     "github": "https://github.com/janpanschab"
   },
   {
-    "id": 284263,
-    "name": "Jan Škrášek",
-    "username": "hrach",
-    "error": "",
-    "twitter": "hrachcz",
-    "website": "https://hrach.dev",
-    "info": "Staff Engineer in Kiwi.com • Kotlin and Android • JetPack Compose in Orbit Design System • Nextras Orm",
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/284263?v=4",
-    "position": "",
-    "github": "https://github.com/hrach"
-  },
-  {
     "id": 2174629,
     "name": "Jaroslav Kubíček",
     "username": "jaroslav-kubicek",
@@ -343,6 +328,21 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/14054752?v=4",
     "position": "",
     "github": "https://github.com/mainframev"
+  },
+  {
+    "id": 821851,
+    "name": "Vojtěch Bulant",
+    "username": "vbulant",
+    "error": "",
+    "twitter": null,
+    "website": "http://twitter.com/vbulant",
+    "info": null,
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/821851?v=4",
+    "position": "",
+    "github": "https://github.com/vbulant"
   },
   {
     "id": 1473642,

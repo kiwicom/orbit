@@ -68,6 +68,7 @@ The table below contains all types of props available in the Illustration compon
 | `"FastTrackMan"`                |
 | `"Feedback"`                    |
 | `"FlexibleDates"`               |
+| `"FlightChange"`                |
 | `"FlightDisruptions"`           |
 | `"Help"`                        |
 | `"Improve"`                     |

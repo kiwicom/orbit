@@ -43,6 +43,7 @@ export const NAMES: Name[] = [
   "FareLockSuccess",
   "Feedback",
   "FlexibleDates",
+  "FlightChange",
   "FlightDisruptions",
   "GroundTransport404",
   "Help",

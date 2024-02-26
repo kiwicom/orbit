@@ -37,10 +37,13 @@ export const Default = () => {
 };
 
 export const Rtl = () => {
+  const direction = select("direction", ["row", "column"], "row");
+
   return (
     <RenderInRtl>
       <Wizard
         id="wizard"
+        direction={direction}
         completedSteps={3}
         activeStep={3}
         onChangeStep={action("onChangeStep")}
@@ -88,6 +91,8 @@ export const Playground = () => {
     max: Math.min(completedSteps, steps.length - 1),
     step: 1,
   });
+  const direction = select("direction", ["row", "column"], "row");
+
   return (
     <Wizard
       id="wizard"
@@ -96,6 +101,7 @@ export const Playground = () => {
       completedSteps={completedSteps}
       activeStep={activeStep}
       onChangeStep={action("onChangeStep")}
+      direction={direction}
     >
       {steps.map(step => (
         <WizardStep key={step} title={step} />

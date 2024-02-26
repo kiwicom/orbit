@@ -1,44 +1,25 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
-import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
+import cx from "clsx";
 
 import Text from "../Text";
 import Check from "../icons/Check";
 import useTheme from "../hooks/useTheme";
-import defaultTheme from "../defaultTheme";
 import { WizardStepContext } from "./WizardContext";
-
-export const StyledStepIconContainer = styled.div<{ $disabled?: boolean; $glow?: boolean }>`
-  ${({ theme, $disabled, $glow }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    border-radius: ${theme.orbit.borderRadiusFull};
-    background: ${$disabled
-      ? theme.orbit.paletteCloudNormalHover
-      : theme.orbit.paletteProductNormal};
-    box-shadow: ${$glow && `0 0 0 4px ${convertHexToRgba(theme.orbit.paletteProductNormal, 20)}`};
-    position: relative;
-    top: -2px;
-
-    svg {
-      display: block;
-    }
-  `};
-`;
-
-StyledStepIconContainer.defaultProps = {
-  theme: defaultTheme,
-};
 
 const WizardStepIcon = ({ isCompleted }: { isCompleted?: boolean }) => {
   const { index, status, isCompact, isActive } = React.useContext(WizardStepContext);
   const theme = useTheme();
 
   return (
-    <StyledStepIconContainer $disabled={status === "disabled"} $glow={isActive && !isCompact}>
+    <div
+      className={cx(
+        "-top-xxxs duration-fast relative flex size-[20px] items-center justify-center rounded-full transition-shadow ease-in",
+        status === "disabled"
+          ? "bg-cloud-normal-hover"
+          : "bg-product-normal group-hover/container:shadow-wizard-step-icon-hover",
+        isActive && !isCompact && "shadow-wizard-step-icon-active",
+      )}
+    >
       {isCompleted || status === "completed" ? (
         <Check
           size="small"
@@ -58,7 +39,7 @@ const WizardStepIcon = ({ isCompleted }: { isCompleted?: boolean }) => {
           {typeof index === "number" ? index + 1 : null}
         </Text>
       )}
-    </StyledStepIconContainer>
+    </div>
   );
 };
 

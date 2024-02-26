@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import WizardStep from "./WizardStep";
 import { WizardStepContextProvider } from "./WizardContext";
@@ -12,34 +12,7 @@ import Portal from "../Portal";
 import Modal from "../Modal";
 import { CardSection } from "../Card";
 import useMediaQuery from "../hooks/useMediaQuery";
-import defaultTheme from "../defaultTheme";
-import mq from "../utils/mediaQuery";
 import type { Props, WizardStepProps } from "./types";
-
-const unstyledListMixin = css`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-`;
-
-// support column layout on desktop
-// https://github.com/kiwicom/orbit/issues/3308
-const StyledList = styled.ul<{ $direction?: "row" | "column" }>`
-  ${({ $direction }) => css`
-    display: flex;
-    ${unstyledListMixin};
-    ${mq.largeMobile(css`
-      flex-direction: ${$direction};
-      li {
-        flex: 1 1 0%;
-      }
-    `)}
-  `}
-`;
-
-StyledList.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Wizard = ({
   dataTest,
@@ -100,13 +73,7 @@ const Wizard = ({
         >
           <Stack as="span" inline align="center">
             {typeof labelProgress !== "undefined" && <b className="text-nowrap">{labelProgress}</b>}
-            <span
-              css={css`
-                font-weight: normal;
-              `}
-            >
-              {activeStepTitle}
-            </span>
+            <span className="font-normal">{activeStepTitle}</span>
           </Stack>
         </Button>
         <Portal>
@@ -119,17 +86,9 @@ const Wizard = ({
                   setOpen(false);
                 }}
               >
-                <nav
-                  css={css`
-                    /* matching this to ModalBody's border-radius */
-                    padding-top: 9px;
-                  `}
-                >
-                  <ul
-                    css={css`
-                      ${unstyledListMixin};
-                    `}
-                  >
+                {/* matching padding-top to ModalBody's border-radius */}
+                <nav className="orbit-wizard pt-[9px]">
+                  <ul>
                     {steps}
                     <li>
                       <CardSection>
@@ -155,8 +114,13 @@ const Wizard = ({
   }
 
   return (
-    <nav>
-      <StyledList $direction={direction}>{steps}</StyledList>
+    <nav className="orbit-wizard">
+      <ul
+        className={cx("flex", direction === "column" ? "flex-col" : "flex-row")}
+        data-test={dataTest}
+      >
+        {steps}
+      </ul>
     </nav>
   );
 };

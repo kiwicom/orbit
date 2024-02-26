@@ -109,5 +109,5 @@ Toast: true
 ToastRoot: true
 Tooltip: true
 Truncate: true
-Wizard: false
-WizardStep: false
+Wizard: true
+WizardStep: true

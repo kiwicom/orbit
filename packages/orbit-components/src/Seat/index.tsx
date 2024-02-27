@@ -1,101 +1,21 @@
 "use client";
 
-import styled, { css } from "styled-components";
 import * as React from "react";
+import cx from "clsx";
 
 import SeatLegend from "./components/SeatLegend";
 import Stack from "../Stack";
 import Text from "../Text";
 import { useRandomIdSeed } from "../hooks/useRandomId";
-import defaultTheme from "../defaultTheme";
-import SeatNormal, {
-  StyledPath as StyledPathNormal,
-  StyledStrokeNormal,
-} from "./components/SeatNormal";
-import SeatSmall, {
-  StyledPath as StyledPathSmall,
-  StyledStrokeSmall,
-} from "./components/SeatSmall";
-import {
-  resolveHoverColor,
-  resolveAccentColor,
-  resolveFillColor,
-  resolveFocusColor,
-  resolveCloseIconColor,
-} from "./components/helpers";
-import SeatCircle, { StyledCirclePath } from "./components/SeatCircle";
+import SeatNormal from "./components/SeatNormal";
+import SeatSmall from "./components/SeatSmall";
+import SeatCircle from "./components/SeatCircle";
 import { SIZE_OPTIONS, TYPES } from "./consts";
-import type { Props, Type, Size } from "./types";
-
-const getSize = ({ size }: { size: Size }) => {
-  const height = {
-    [SIZE_OPTIONS.SMALL]: "36px",
-    [SIZE_OPTIONS.MEDIUM]: "46px",
-  };
-
-  const width = {
-    [SIZE_OPTIONS.SMALL]: "32px",
-    [SIZE_OPTIONS.MEDIUM]: "46px",
-  };
-
-  return `width: ${width[size]}; height: ${height[size]};`;
-};
-
-const StyledSeatWrapper = styled.div<{ type: Type; selected?: boolean; size: Size }>`
-  ${({ type, selected, theme, size }) => css`
-    position: relative;
-    cursor: ${type !== TYPES.UNAVAILABLE && "pointer"};
-    ${getSize({ size })};
-    outline: none;
-    font-family: ${theme.orbit.fontFamily};
-    &:hover {
-      ${StyledPathNormal}, ${StyledPathSmall} {
-        ${type !== TYPES.UNAVAILABLE &&
-        !selected &&
-        css`
-          fill: ${resolveHoverColor};
-        `};
-      }
-      ${StyledCirclePath} {
-        fill: ${resolveCloseIconColor({ theme, type, hover: true })};
-      }
-    }
-
-    &:active,
-    &:focus {
-      outline: revert;
-      ${StyledPathNormal}, ${StyledPathSmall} {
-        fill: ${resolveFillColor({ theme, type, selected, focus: true })};
-      }
-      ${StyledStrokeNormal}, ${StyledStrokeSmall} {
-        stroke: ${resolveFocusColor};
-      }
-    }
-
-    &:focus:not(:focus-visible):not(:active) {
-      ${StyledPathNormal}, ${StyledPathSmall} {
-        fill: ${resolveFillColor};
-      }
-      ${StyledStrokeNormal}, ${StyledStrokeSmall} {
-        stroke: ${resolveAccentColor};
-      }
-    }
-  `}
-`;
-
-StyledSeatWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledSeat = styled.svg``;
-
-StyledSeat.defaultProps = {
-  theme: defaultTheme,
-};
+import type { Props } from "./types";
 
 const Seat = ({
   type = TYPES.DEFAULT,
-  selected,
+  selected = false,
   onClick,
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
@@ -112,14 +32,17 @@ const Seat = ({
 
   return (
     <Stack inline grow={false} spacing="XXXSmall" direction="column" align="center">
-      <StyledSeatWrapper
+      <button
+        className={cx(
+          "orbit-seat font-base group relative",
+          size === SIZE_OPTIONS.SMALL ? "w-xl h-[36px]" : "size-[46px]",
+        )}
         data-test={dataTest}
         id={id}
+        disabled={!clickable}
         onClick={clickable ? onClick : undefined}
         tabIndex={clickable ? 0 : -1}
-        type={type}
-        size={size}
-        selected={selected}
+        type="button"
       >
         <svg
           viewBox={size === SIZE_OPTIONS.SMALL ? "0 0 32 36" : "0 0 46 46"}
@@ -131,13 +54,13 @@ const Seat = ({
           <desc id={descrId}>{description}</desc>
 
           {size === SIZE_OPTIONS.SMALL ? (
-            <SeatSmall type={type} selected={selected} price={price} label={label} />
+            <SeatSmall type={type} selected={selected} label={label} />
           ) : (
-            <SeatNormal type={type} selected={selected} price={price} label={label} />
+            <SeatNormal type={type} selected={selected} label={label} />
           )}
         </svg>
         {selected && clickable && <SeatCircle size={size} type={type} />}
-      </StyledSeatWrapper>
+      </button>
       {price && !(selected && type === TYPES.UNAVAILABLE) && (
         <Text size="small" type="secondary">
           {price}

@@ -69,7 +69,7 @@ Popover: true
 Portal: true
 Radio: true
 NewSeatIcon: false
-Seat: false
+Seat: true
 SeatLegend: true
 SegmentedSwitch: true
 Select: true

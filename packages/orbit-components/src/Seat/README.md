@@ -24,6 +24,7 @@ Table below contains all types of the props available in Seat component.
 | type        | [`enum`](#modal-enum)   | `default`                      | Visual type of Seat                          |
 | price       | `string`                |                                | Price of Seat                                |
 | label       | `string`                |                                | Label text inside of a Seat                  |
+| selected    | `boolean`               |                                | Marks Seat as selected                       |
 | title       | `string`                | `Seat`                         | Optional prop for title of svg element       |
 | description | `string`                | `Presents options for seating` | Optional prop for Description of svg element |
 | onClick     | `() => void \| Promise` |                                | Function for handling onClick event.         |

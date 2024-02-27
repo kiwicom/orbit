@@ -8,6 +8,12 @@ import type * as Common from "../common/types";
 export type Size = "small" | "medium";
 export type Type = "default" | "legroom" | "unavailable";
 
+export interface SeatVariantProps {
+  selected: boolean;
+  type: Type;
+  label?: React.ReactNode;
+}
+
 export interface Props extends Common.Globals {
   readonly type?: Type;
   readonly size?: Size;

@@ -14,12 +14,13 @@ export const Playground = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const grayScale = boolean("GrayScale", false);
   const dataTest = text("dataTest", "test");
+  const id = text("id", "ID");
 
-  return <ServiceLogo name={name} size={size} grayScale={grayScale} dataTest={dataTest} />;
+  return <ServiceLogo name={name} size={size} grayScale={grayScale} dataTest={dataTest} id={id} />;
 };
 
 Playground.story = {
   parameters: {
-    info: "Some description about this type of component.",
+    info: "All possible options for ServiceLogo. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };

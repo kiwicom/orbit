@@ -1,52 +1,30 @@
 "use client";
 
 import React from "react";
-import styled from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../defaultTheme";
 import { SIZE_OPTIONS, baseURL } from "./consts";
-import type { Props } from "./types";
+import type { Props, Size } from "./types";
 
-const getHeight = (theme: typeof defaultTheme, size: Props["size"]) => {
-  const tokens = {
-    height: {
-      [SIZE_OPTIONS.SMALL]: theme.orbit.heightServiceLogoSmall,
-      [SIZE_OPTIONS.MEDIUM]: theme.orbit.heightServiceLogoMedium,
-      [SIZE_OPTIONS.LARGE]: theme.orbit.heightServiceLogoLarge,
-    },
-  };
+const heightClasses = {
+  [SIZE_OPTIONS.SMALL]: "h-sm",
+  [SIZE_OPTIONS.MEDIUM]: "h-lg",
+  [SIZE_OPTIONS.LARGE]: "h-[48px]",
+} as const;
 
-  if (!size || !tokens.height[size]) return "";
+const getColorUrlParam = (greyScale: boolean) => (greyScale ? "logos-grayscale" : "logos");
 
-  return tokens.height[size];
-};
+const getSizeUrlParams = (size: Size) => {
+  const sizes = {
+    [SIZE_OPTIONS.SMALL]: [12, 24],
+    [SIZE_OPTIONS.MEDIUM]: [24, 48],
+    [SIZE_OPTIONS.LARGE]: [48, 96],
+  } as const;
 
-const getColor = (greyScale: boolean) => (greyScale ? "logos-grayscale" : "logos");
-
-export const StyledServiceLogo = styled(
-  ({ className, name, size, grayScale, theme, dataTest, id }) => (
-    <img
-      className={`orbit-service-logo ${className}`}
-      src={`${baseURL}/${getColor(grayScale)}/0x${parseInt(
-        getHeight(theme, size),
-        10,
-      )}/${name}.png`}
-      srcSet={`${baseURL}/${getColor(grayScale)}/0x${
-        parseInt(getHeight(theme, size), 10) * 2
-      }/${name}.png 2x`}
-      alt={name}
-      id={id}
-      data-test={dataTest}
-    />
-  ),
-)`
-  height: ${({ theme, size }) => getHeight(theme, size)};
-  width: auto;
-  background-color: transparent;
-`;
-
-StyledServiceLogo.defaultProps = {
-  theme: defaultTheme,
+  return {
+    lowRes: `0x${sizes[size][0]}`,
+    highRes: `0x${sizes[size][1]}`,
+  } as const;
 };
 
 const ServiceLogo = ({
@@ -55,8 +33,20 @@ const ServiceLogo = ({
   grayScale = false,
   dataTest,
   id,
-}: Props) => (
-  <StyledServiceLogo name={name} size={size} grayScale={grayScale} dataTest={dataTest} id={id} />
-);
+}: Props) => {
+  const color = getColorUrlParam(grayScale);
+  const { lowRes, highRes } = getSizeUrlParams(size);
+
+  return (
+    <img
+      className={cx("orbit-service-logo w-auto bg-transparent", heightClasses[size])}
+      src={`${baseURL}/${color}/${lowRes}/${name}.png`}
+      srcSet={`${baseURL}/${color}/${highRes}/${name}.png 2x`}
+      alt={name}
+      id={id}
+      data-test={dataTest}
+    />
+  );
+};
 
 export default ServiceLogo;

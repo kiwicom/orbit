@@ -11,13 +11,16 @@ describe(`ServiceLogo`, () => {
     const IMAGE_PATH = `${baseURL}/logos/0x24/${name}.png`;
     const IMAGE_PATH_RETINA = `${baseURL}/logos/0x48/${name}.png`;
     const dataTest = "test";
+    const id = "ID";
 
-    render(<ServiceLogo dataTest={dataTest} name={name} />);
+    render(<ServiceLogo dataTest={dataTest} name={name} id={id} />);
 
     expect(screen.getByRole("img")).toHaveAttribute("src", IMAGE_PATH);
     expect(screen.getByRole("img")).toHaveAttribute("srcSet", `${IMAGE_PATH_RETINA} 2x`);
     expect(screen.getByAltText(name)).toBeInTheDocument();
-    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    const el = screen.getByTestId(dataTest);
+    expect(el).toBeInTheDocument();
+    expect(el).toHaveAttribute("id", id);
   });
 
   it("should be grayscale", () => {

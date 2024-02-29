@@ -24,6 +24,7 @@ The table below contains all types of props available in the SkipNavigation comp
 | feedbackLabel     | `React.Node`            | `Send feedback`   | Text for a feedback form.                    |
 | **actions**       | [`Actions[]`](#actions) |                   | An array specifying common actions on a page |
 | dataTest          | `string`                |                   | Optional prop for testing purposes           |
+| id                | `string`                |                   | Optional id attribute                        |
 | firstSectionLabel | `React.Node`            | `Jump to section` | Label for a first section link.              |
 | firstActionLabel  | `React.Node`            | `Jump to action`  | Label for a first action link.               |
 

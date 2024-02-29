@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.4.0...@kiwicom/orbit-components@13.0.0) (2024-02-29)
+
+
+### Features
+
+* **Accordion:** migrate to tailwind ([b378203](https://github.com/kiwicom/orbit/commit/b378203f0768641a27f2b1744a8ddfe39f8d5aec))
+* **Illustration:** add FlightChange illustration ([b90bcab](https://github.com/kiwicom/orbit/commit/b90bcab400e5e215494df203e7b4a03799a95e84))
+* **LayoutColumn:** migrate to tailwind ([db69d5d](https://github.com/kiwicom/orbit/commit/db69d5df0ecd247ae60aa506c0a8e6085056f629))
+* **ServiceLogo:** add AxaWhite logo ([3c0b3c9](https://github.com/kiwicom/orbit/commit/3c0b3c982f8f4a00c64dccfe595f161e33e9135f))
+
+
+### BREAKING CHANGES
+
+* **LayoutColumn:** removed hideOn prop from LayoutColumn
+
+
+
+
+
 # [12.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.3.0...@kiwicom/orbit-components@12.4.0) (2024-02-19)
 
 

@@ -1,29 +1,10 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
 
 import { useRandomIdSeed } from "../hooks/useRandomId";
-import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
 import type { Props } from "./types";
-
-const StyledArrow = styled.svg`
-  vertical-align: middle;
-  fill: currentColor;
-  color: ${({ theme }) => theme.orbit.colorStopoverArrow};
-  width: ${({ theme }) => theme.orbit.widthStopoverArrow};
-  height: ${({ theme }) => theme.orbit.heightStopoverArrow};
-  ${({ theme }) =>
-    theme.rtl &&
-    css`
-      transform: scale(-1, 1);
-    `};
-`;
-
-StyledArrow.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Stops = ({ stops }: Props) => {
   if (stops === STOPS.ONE) {
@@ -52,7 +33,8 @@ const StopoverArrow = ({ stops = STOPS.ZERO, dataTest, id }: Props) => {
   const descrId = randomId("descr");
 
   return (
-    <StyledArrow
+    <svg
+      className="orbit-stopover-arrow text-ink-light h-[7px] w-[36px] fill-current align-middle rtl:-scale-x-100"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 28 8"
       aria-labelledby={`${titleId} ${descrId}`}
@@ -63,7 +45,7 @@ const StopoverArrow = ({ stops = STOPS.ZERO, dataTest, id }: Props) => {
       <title id={titleId}>Stopover arrow, {stops} stops</title>
       <desc id={descrId}>Shows how many stopovers there are between two locations</desc>
       <Stops stops={stops} />
-    </StyledArrow>
+    </svg>
   );
 };
 

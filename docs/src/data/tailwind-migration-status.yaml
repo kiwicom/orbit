@@ -84,7 +84,7 @@ SocialButton: true
 Stack: true
 Stepper: true
 StepperStateless: true
-StopoverArrow: false
+StopoverArrow: true
 Switch: true
 Tab: true
 TabPanel: true

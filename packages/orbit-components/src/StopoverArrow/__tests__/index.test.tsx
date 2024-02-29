@@ -7,9 +7,12 @@ import STOPS from "../consts";
 describe("StopoverArrow", () => {
   it("should have expected DOM output", () => {
     const dataTest = "test";
+    const id = "ID";
     const stops = STOPS.THREE;
-    render(<StopoverArrow dataTest={dataTest} stops={stops} />);
+    render(<StopoverArrow dataTest={dataTest} stops={stops} id={id} />);
     expect(screen.getByTitle(`Stopover arrow, ${stops} stops`)).toBeInTheDocument();
-    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    const el = screen.getByTestId(dataTest);
+    expect(el).toBeInTheDocument();
+    expect(el).toHaveAttribute("id", id);
   });
 });

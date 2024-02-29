@@ -1,46 +1,12 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import Select from "../Select";
 import Stack from "../Stack";
 import ButtonLink from "../Button";
-import defaultTheme from "../defaultTheme";
 import type { MappedOptions, Props } from "./types";
-
-const StyledNavigation = styled.div<{ show?: boolean }>`
-  background-color: ${({ theme }) => theme.orbit.paletteCloudLight}; /* TODO: Token */
-  padding: ${({ theme }) => theme.orbit.spaceMedium}; /* TODO: Token */
-  width: 100%;
-  box-sizing: border-box;
-
-  &:focus {
-    outline: none;
-  }
-
-  ${({ show }) =>
-    !show &&
-    css`
-      border: 0;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    `};
-`;
-
-StyledNavigation.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledSelectWrapper = styled.div`
-  max-width: 800px;
-`;
 
 const SkipNavigation = ({
   actions,
@@ -48,6 +14,8 @@ const SkipNavigation = ({
   feedbackLabel = "Send feedback",
   firstSectionLabel = "Jump to section",
   firstActionLabel = "Common actions",
+  dataTest,
+  id,
 }: Props) => {
   const [links, setLinks] = React.useState<HTMLAnchorElement[]>([]);
   const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
@@ -116,21 +84,28 @@ const SkipNavigation = ({
   };
 
   return (
-    <StyledNavigation tabIndex={-1} onFocus={handleFocus} onBlur={() => setShow(false)} show={show}>
+    <div
+      className={cx("orbit-skip-navigation bg-cloud-light p-md w-full", !show && "sr-only")}
+      tabIndex={-1}
+      onFocus={handleFocus}
+      onBlur={() => setShow(false)}
+      data-test={dataTest}
+      id={id}
+    >
       <Stack justify="between">
-        <StyledSelectWrapper>
+        <div className="max-w-[800px]">
           <Stack align="center">
             <Select options={mappedLinks} onChange={handleLinksClick} />
             {innerPages.length > 0 && <Select options={innerPages} onChange={handlePageClick} />}
           </Stack>
-        </StyledSelectWrapper>
+        </div>
         {feedbackUrl && (
           <ButtonLink href={feedbackUrl} type="secondary" external size="small">
             {feedbackLabel}
           </ButtonLink>
         )}
       </Stack>
-    </StyledNavigation>
+    </div>
   );
 };
 

@@ -77,7 +77,7 @@ Separator: true
 ServiceLogo: true
 Skeleton: true
 SkipLink: true
-SkipNavigation: false
+SkipNavigation: true
 Slide: true
 Slider: true
 SocialButton: true

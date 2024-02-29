@@ -8,6 +8,8 @@ describe("SkipNavigation", () => {
   const user = userEvent.setup();
 
   it("should have expected DOM output", () => {
+    const dataTest = "test";
+    const id = "ID";
     const actions = [
       {
         link: "https://www.kiwi.com/cz/pages/content/terms",
@@ -21,9 +23,14 @@ describe("SkipNavigation", () => {
       },
     ];
     const feedbackUrl = "https://www.kiwi.com/en/";
-    render(<SkipNavigation actions={actions} feedbackUrl={feedbackUrl} />);
+    render(
+      <SkipNavigation actions={actions} feedbackUrl={feedbackUrl} dataTest={dataTest} id={id} />,
+    );
     expect(screen.getByRole("link")).toBeInTheDocument();
     expect(screen.getByRole("combobox")).toBeInTheDocument();
+    const el = screen.getByTestId(dataTest);
+    expect(el).toBeInTheDocument();
+    expect(el).toHaveAttribute("id", id);
   });
 
   it("should toggle select on focus/blur", async () => {

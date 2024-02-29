@@ -3,13 +3,15 @@
 
 import type * as React from "react";
 
+import type * as Common from "../common/types";
+
 interface Action {
   readonly name?: string;
   readonly link?: string;
   readonly onClick?: (ev?: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-export interface Props {
+export interface Props extends Common.Globals {
   readonly actions?: Action[];
   readonly feedbackUrl?: string;
   readonly firstSectionLabel?: string;

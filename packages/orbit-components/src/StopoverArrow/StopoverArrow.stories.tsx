@@ -13,8 +13,9 @@ export default {
 export const Playground = () => {
   const stops = select("stops", Object.values(STOPS), STOPS.ZERO);
   const dataTest = text("dataTest", "test");
+  const id = text("id", "ID");
 
-  return <StopoverArrow stops={stops} dataTest={dataTest} />;
+  return <StopoverArrow stops={stops} dataTest={dataTest} id={id} />;
 };
 
 Playground.story = {

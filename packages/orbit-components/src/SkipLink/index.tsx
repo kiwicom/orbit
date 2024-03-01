@@ -1,56 +1,18 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
 
 import KEY_CODE_MAP from "../common/keyMaps";
-import defaultTheme from "../defaultTheme";
 import type { Props } from "./types";
 
-const StyledNavigation = styled.nav``;
-
-const StyledLink = styled.a`
-  ${({ theme }) => css`
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    font-family: ${theme.orbit.fontFamily};
-    text-decoration: ${theme.orbit.textDecorationTextLinkPrimary};
-    font-size: ${theme.orbit.fontSizeTextLarge};
-    border-radius: ${theme.orbit.borderRadiusNormal};
-    color: ${theme.orbit.paletteInkDark};
-
-    &:focus {
-      top: 1rem;
-      left: 1rem;
-      clip: auto;
-      height: auto;
-      width: auto;
-      margin: 0;
-      overflow: visible;
-      padding: ${theme.orbit.spaceMedium};
-      background-color: ${theme.orbit.paletteWhite};
-      z-index: ${theme.orbit.zIndexOnTheTop};
-    }
-  `}
-`;
-
-StyledLink.defaultProps = {
-  theme: defaultTheme,
-};
-
-const SkipLink = ({ links, buttonLabel }: Props) => {
+const SkipLink = ({ links, buttonLabel, dataTest, id }: Props) => {
   return (
-    <StyledNavigation aria-label={buttonLabel}>
+    <nav aria-label={buttonLabel} data-test={dataTest} id={id}>
       {links &&
         links.map(({ href, name, onClick }, index) => {
           return (
-            <StyledLink
+            <a
+              className="orbit-skip-link ltr:left-md rtl:right-md top-md p-md bg-white-normal z-onTop font-base text-large rounded-normal text-ink-dark absolute underline [&:not(:focus)]:sr-only"
               key={encodeURIComponent(name + index)}
               href={href}
               tabIndex={onClick && 0}
@@ -63,10 +25,10 @@ const SkipLink = ({ links, buttonLabel }: Props) => {
               }}
             >
               {name}
-            </StyledLink>
+            </a>
           );
         })}
-    </StyledNavigation>
+    </nav>
   );
 };
 

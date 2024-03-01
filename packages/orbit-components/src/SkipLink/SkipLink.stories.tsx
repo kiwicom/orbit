@@ -62,10 +62,12 @@ export const Playground = () => {
     "buttonLabel",
     "Description for screen readers about where the user currently is or describing a more complex component.",
   );
+  const dataTest = text("dataTest", "test");
+  const id = text("id", "ID");
 
   return (
     <div>
-      <SkipLink links={links} buttonLabel={buttonLabel} />
+      <SkipLink links={links} buttonLabel={buttonLabel} dataTest={dataTest} id={id} />
       {Content}
     </div>
   );

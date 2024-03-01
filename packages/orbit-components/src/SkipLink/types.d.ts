@@ -11,7 +11,7 @@ export interface Action {
   readonly onClick?: Common.Event<React.SyntheticEvent<HTMLAnchorElement>>;
 }
 
-export interface Props {
+export interface Props extends Common.Globals {
   readonly links: Action[];
   readonly buttonLabel?: string;
 }

@@ -19,8 +19,12 @@ describe("SkipLink", () => {
         onClick,
       },
     ];
+    const dataTest = "test";
+    const id = "ID";
 
-    render(<SkipLink links={links} buttonLabel="https://www.kiwi.com/en/" />);
+    render(
+      <SkipLink links={links} buttonLabel="https://www.kiwi.com/en/" dataTest={dataTest} id={id} />,
+    );
     expect(screen.getByRole("link")).toHaveAttribute(
       "href",
       "https://www.kiwi.com/cz/pages/content/terms",
@@ -28,6 +32,9 @@ describe("SkipLink", () => {
     expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
     expect(screen.getByRole("navigation")).toBeInTheDocument();
     expect(screen.getByLabelText("https://www.kiwi.com/en/"));
+    const el = screen.getByTestId(dataTest);
+    expect(el).toBeInTheDocument();
+    expect(el).toHaveAttribute("id", id);
 
     await user.click(screen.getByRole("button"));
     expect(onClick).toHaveBeenCalled();

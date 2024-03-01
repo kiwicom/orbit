@@ -12,6 +12,7 @@ describe("CallOutBanner", () => {
     render(
       <CallOutBanner
         dataTest="test"
+        id="ID"
         title="title"
         description="description"
         tabIndex={0}
@@ -22,6 +23,7 @@ describe("CallOutBanner", () => {
     );
     const banner = screen.getByTestId("test");
     expect(banner).toHaveAttribute("tabindex", "0");
+    expect(banner).toHaveAttribute("id", "ID");
     expect(banner.textContent).toMatch("title");
     expect(banner.textContent).toMatch("description");
     expect(screen.getByTestId("illustration"));

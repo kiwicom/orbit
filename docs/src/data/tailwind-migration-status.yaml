@@ -15,7 +15,7 @@ ButtonGroup: true
 ButtonLink: true
 ButtonMobileStore: true
 ButtonPrimitive: true
-CallOutBanner: false
+CallOutBanner: true
 Card: true
 CardSection: true
 CarrierLogo: true

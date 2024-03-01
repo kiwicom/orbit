@@ -1,61 +1,12 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import mq from "../utils/mediaQuery";
-import defaultTheme from "../defaultTheme";
 import Heading from "../Heading";
 import Stack from "../Stack";
 import Text from "../Text";
 import type { Props } from "./types";
-
-const StyledCallOutBanner = styled.div<{ onClick?: Props["onClick"] }>`
-  ${({ theme, onClick }) => css`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    background: ${theme.orbit.paletteWhite};
-    border-radius: ${theme.orbit.borderRadiusSmall};
-    padding: ${theme.orbit.spaceMedium};
-    ${onClick
-      ? css`
-          box-shadow: ${theme.orbit.boxShadowAction};
-          transition: box-shadow ${theme.orbit.durationFast} ease-in-out;
-          cursor: pointer;
-          :active,
-          :hover {
-            box-shadow: ${theme.orbit.boxShadowActionActive};
-            outline: none;
-          }
-          border: 1px solid transparent;
-        `
-      : css`
-          border: 1px solid ${theme.orbit.paletteCloudNormal};
-        `};
-    ${mq.largeMobile(css`
-      flex-direction: row;
-      padding: ${theme.orbit.spaceLarge};
-    `)};
-  `};
-`;
-
-StyledCallOutBanner.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledIllustration = styled.div`
-  padding-bottom: ${({ theme }) => theme.orbit.spaceMedium};
-  ${mq.largeMobile(css`
-    padding-right: ${({ theme }) => theme.orbit.spaceLarge};
-    padding-bottom: 0;
-  `)};
-`;
-
-StyledIllustration.defaultProps = {
-  theme: defaultTheme,
-};
 
 const CallOutBanner = ({
   children,
@@ -68,13 +19,21 @@ const CallOutBanner = ({
   dataTest,
   id,
 }: Props) => (
-  <StyledCallOutBanner
+  // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+  <div
+    className={cx(
+      "orbit-call-out-banner bg-white-normal rounded-small p-md lm:flex-row lm:p-lg flex flex-col items-start justify-start border border-solid text-start",
+      onClick
+        ? "shadow-action duration-fast hover:shadow-action-active active:shadow-action-active cursor-pointer border-transparent transition-shadow ease-in-out hover:outline-none active:outline-none"
+        : "border-cloud-normal",
+    )}
+    role="button"
     onClick={onClick}
     tabIndex={(onClick || Number(tabIndex)) && (Number(tabIndex) || 0)}
     data-test={dataTest}
     id={id}
   >
-    {illustration && <StyledIllustration>{illustration}</StyledIllustration>}
+    {illustration && <div className="pb-md lm:pe-lg lm:pb-0">{illustration}</div>}
     <Stack spacing="medium">
       <Stack spacing="XSmall">
         <Stack spacing="XXSmall">
@@ -85,7 +44,7 @@ const CallOutBanner = ({
       </Stack>
       {actions}
     </Stack>
-  </StyledCallOutBanner>
+  </div>
 );
 
 export default CallOutBanner;

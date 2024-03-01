@@ -37,6 +37,8 @@ The table below contains all types of props available in the SkipLink component.
 | :---------- | :------------------ | :------------------------------------- |
 | buttonLabel | `string`            | Description for screen readers.        |
 | **links**   | [`links[]`](#links) | An array specifying links to point to. |
+| dataTest    | `string`            | Optional prop for testing.             |
+| id          | `string`            | Optional id attribute.                 |
 
 ## links
 

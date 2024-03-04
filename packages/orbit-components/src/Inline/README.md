@@ -19,7 +19,8 @@ Table below contains all types of the props available in the Inline component.
 | Name         | Type                             | Default | Description                                                     |
 | :----------- | :------------------------------- | :------ | :-------------------------------------------------------------- |
 | as           | `string`                         | `"div"` | Render as element.                                              |
-| className    | `string`                         | `"div"` | Optional className of component.                                |
+| id           | `string`                         |         | Optional id of component.                                       |
+| className    | `string`                         |         | Optional className of component.                                |
 | children     | `React.Node`                     |         | The children of the Inline.                                     |
 | dataTest     | `string`                         |         | Optional prop for testing purposes.                             |
 | spacing      | [`spacingToken`](#spacingToken)  |         | The spacing between children elements of the Inline             |

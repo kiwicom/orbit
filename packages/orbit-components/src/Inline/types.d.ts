@@ -20,7 +20,7 @@ export type SpacingToken =
 export type Align = "start" | "end" | "center";
 export type Justify = "start" | "end" | "center" | "between" | "around";
 
-interface MediaQuery {
+export interface MediaQuery {
   readonly spacing?: SpacingToken;
   readonly align?: Align;
   readonly justify?: Justify;

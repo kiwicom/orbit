@@ -41,7 +41,7 @@ InputField: true
 InputFile: true
 InputGroup: true
 InputSelect: true
-Inline: false
+Inline: true
 Itinerary: true
 ItineraryBadgeList: true
 ItinerarySegment: true

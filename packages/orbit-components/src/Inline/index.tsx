@@ -1,40 +1,11 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../defaultTheme";
-import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
-import media from "../utils/mediaQuery";
-import { normalize } from "./helpers";
+import { QUERIES } from "../utils/mediaQuery/consts";
+import { getTailwindClasses } from "./helpers";
 import type { Props } from "./types";
-
-const StyledInlineInner = styled.div<{
-  viewportSizes: Pick<
-    Props,
-    "mediumMobile" | "largeMobile" | "tablet" | "desktop" | "largeDesktop"
-  >;
-}>`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  ${({ viewportSizes }) => {
-    return Object.keys(viewportSizes).map(query => {
-      const value = viewportSizes[query];
-      if (query !== Object.values(DEVICES_CONSTS)[0] && typeof value !== "undefined") {
-        return media[query](css`
-          ${normalize(value)}
-        `);
-      }
-      return normalize(value);
-    });
-  }}
-`;
-
-StyledInlineInner.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Inline = ({
   as: Component = "div",
@@ -44,16 +15,35 @@ const Inline = ({
   tablet,
   desktop,
   largeDesktop,
+  align,
+  justify,
+  spacing,
   children,
   dataTest,
-  ...smallMobile
+  id,
 }: Props) => {
-  const viewportSizes = { smallMobile, mediumMobile, largeMobile, tablet, desktop, largeDesktop };
+  const twProps = { align, justify, spacing };
+
+  const viewportClasses = React.useMemo(() => {
+    const allViewportProps = { mediumMobile, largeMobile, tablet, desktop, largeDesktop };
+
+    return Object.values(QUERIES).map(viewport => {
+      const viewportProps = allViewportProps[viewport];
+
+      if (viewportProps == null) {
+        return null;
+      }
+
+      return getTailwindClasses(viewportProps, viewport);
+    });
+  }, [desktop, largeDesktop, largeMobile, mediumMobile, tablet]);
 
   return (
     // @ts-expect-error ts-migrate(3554) FIXME: Property 'children' does not exist on type 'IntrinsicAttributes'.ts(2322)
-    <Component className={className} data-test={dataTest}>
-      <StyledInlineInner viewportSizes={viewportSizes}>{children}</StyledInlineInner>
+    <Component className={cx("orbit-inline", className)} id={id} data-test={dataTest}>
+      <div className={cx("flex flex-wrap", ...getTailwindClasses(twProps), ...viewportClasses)}>
+        {children}
+      </div>
     </Component>
   );
 };

@@ -7,7 +7,7 @@ If a slide animation for some collapsible content is needed, the `Slide` compone
 The `Slide` component should wrap the content that collapse and expand.
 
 ```jsx
-import { Slide } from "@kiwicom/orbit-components";
+import Slide from "@kiwicom/orbit-components/lib/utils/Slide";
 
 <Slide expanded={isExpanded} maxHeight={height}>
   {collapsibleContent}
@@ -21,6 +21,6 @@ import { Slide } from "@kiwicom/orbit-components";
 | transitionDuration | `string`         | `"fast"` | Determines the duration of the animation. Can be `"slow"`, `"normal"` or `"fast`.           |
 | children           | `React.Node`     |          | The expandable content that should be animated.                                             |
 | maxHeight          | `number \| null` |          | The maximum height the animation should take. Usually it is the height of the container.    |
-| expanded           | `boolean`        | `false`  | Determines if the content is expanded of not. When changed to `true`, the animation occurs. |
+| expanded           | `boolean`        | `false`  | Determines if the content is expanded or not. When changed to `true`, the animation occurs. |
 | id                 | `string`         |          | Sets the id for the wrapper component responsible for the animation.                        |
 | ariaLabelledBy     | `string`         |          | Sets the ariaLabelledBy for the wrapper component responsible for the animation.            |

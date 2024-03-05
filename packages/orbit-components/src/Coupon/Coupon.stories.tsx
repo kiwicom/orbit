@@ -1,9 +1,8 @@
 import React from "react";
-import { select, text } from "@storybook/addon-knobs";
+import { text } from "@storybook/addon-knobs";
 
 import Text from "../Text";
 import List, { ListItem } from "../List";
-import { SIZES } from "../List/consts";
 
 import Coupon from ".";
 
@@ -13,9 +12,8 @@ export default {
 
 export const Default = () => {
   const content = text("content", "PROMOTIONCODE");
-  const size = select("Size", Object.values(SIZES), SIZES.SMALL);
   return (
-    <List size={size}>
+    <List>
       <ListItem>
         <Text>
           Lorem ipsum dolor sit amet, consectetuer <Coupon>{content}</Coupon> elit. Proin pede

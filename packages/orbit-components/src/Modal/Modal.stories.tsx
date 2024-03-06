@@ -449,6 +449,8 @@ WithFixedFooter.story = {
 
 export const FullPreview = () => {
   const { Container, onClose } = useModal();
+  const header = boolean("header", true);
+  const footer = boolean("footer", true);
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
   const description = text("Description", "Lorem ispum dolor sit amet");
@@ -477,12 +479,14 @@ export const FullPreview = () => {
         isMobileFullPage={isMobileFullPage}
         preventOverlayClose={preventOverlayClose}
       >
-        <ModalHeader
-          title={title}
-          illustration={illustration && <Illustration name={illustration} size="small" />}
-          description={description}
-          suppressed={suppressed}
-        />
+        {header && (
+          <ModalHeader
+            title={title}
+            illustration={illustration && <Illustration name={illustration} size="small" />}
+            description={description}
+            suppressed={suppressed}
+          />
+        )}
         <ModalSection suppressed={suppressed}>
           <Text>{content}</Text>
         </ModalSection>
@@ -492,19 +496,21 @@ export const FullPreview = () => {
         <ModalSection suppressed={suppressed}>
           <Text>{content}</Text>
         </ModalSection>
-        <ModalFooter flex={flex}>
-          {showBack && (
-            <Stack direction="row">
-              <Button type="secondary" iconLeft={<ChevronBackward />}>
-                Back
-              </Button>
-              <ButtonLink type="secondary">Button</ButtonLink>
-            </Stack>
-          )}
-          <Box justify="end" display="flex">
-            <Button>Continue to Payment</Button>
-          </Box>
-        </ModalFooter>
+        {footer && (
+          <ModalFooter flex={flex}>
+            {showBack && (
+              <Stack direction="row">
+                <Button type="secondary" iconLeft={<ChevronBackward />}>
+                  Back
+                </Button>
+                <ButtonLink type="secondary">Button</ButtonLink>
+              </Stack>
+            )}
+            <Box justify="end" display="flex">
+              <Button>Continue to Payment</Button>
+            </Box>
+          </ModalFooter>
+        )}
       </Modal>
     </Container>
   );

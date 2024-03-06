@@ -64,7 +64,7 @@ ModalSection: true
 NavigationBar: true
 NotificationBadge: true
 OrbitProvider: true
-Pagination: false
+Pagination: true
 Popover: true
 Portal: true
 Radio: true

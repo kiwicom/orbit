@@ -1,5 +1,4 @@
 import React from "react";
-import { css } from "styled-components";
 import { object, text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
@@ -51,11 +50,7 @@ export const Grouped = () => {
   const showAll = boolean("Show all", true);
 
   return (
-    <div
-      css={css`
-        min-height: 1000px;
-      `}
-    >
+    <div className="min-h-[1000px]">
       <InputSelect
         placeholder="Select currency"
         options={currencyOptions}
@@ -110,11 +105,7 @@ export const PreviouslySelected = () => {
   const prevSelectedLabel = text("prevSelectedLabel", "Previously selected");
 
   return (
-    <div
-      css={css`
-        min-height: 1000px;
-      `}
-    >
+    <div className="min-h-[1000px]">
       <InputSelect
         placeholder="Select currency"
         options={currencyOptions}
@@ -227,11 +218,7 @@ export const Playground = () => {
   const hasHelp = boolean("hasHelp", false);
 
   return (
-    <div
-      css={css`
-        min-height: 1000px;
-      `}
-    >
+    <div className="min-h-[1000px]">
       <InputSelect
         required={required}
         placeholder={placeholder}

@@ -1,17 +1,11 @@
 "use client";
 
 import React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import type { Props, Option } from "./types";
 import { groupOptions } from "./helpers";
 import InputSelectOption from "./InputSelectOption";
-import {
-  StyledCloseButton,
-  StyledDropdown,
-  StyledLabel,
-  StyledModalWrapper,
-} from "./InputSelect.styled";
 import CloseCircle from "../icons/CloseCircle";
 import InputField from "../InputField";
 import { useRandomIdSeed } from "../hooks/useRandomId";
@@ -27,17 +21,7 @@ import Button from "../Button";
 import Heading from "../Heading";
 import { ModalSectionWrapper as ModalSection } from "../Modal/ModalSection";
 import { ModalHeaderWrapper as ModalHeader } from "../Modal/ModalHeader";
-
-const StyledModalSection = styled(ModalSection)`
-  padding: 0;
-`;
-
-const StyledModalHeader = styled(ModalHeader)`
-  ${({ theme }) => css`
-    padding: ${theme.orbit.spaceMedium} !important;
-    margin-bottom: 0 !important;
-  `};
-`;
+import { spaceAfterClasses } from "../common/tailwind";
 
 const InputSelect = React.forwardRef<HTMLInputElement, Props>(
   (
@@ -237,7 +221,12 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         prefix={selectedOption && selectedOption.prefix}
         suffix={
           String(inputValue).length > 1 && (
-            <StyledCloseButton
+            <button
+              className={cx(
+                "me-xs appearance-none border-0 bg-transparent p-0",
+                disabled && "pointer-events-none cursor-not-allowed",
+              )}
+              type="button"
               onClick={ev => {
                 ev.preventDefault();
                 if (onOptionSelect) onOptionSelect(null);
@@ -246,10 +235,9 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                 setSelectedOption(null);
                 setActiveIdx(0);
               }}
-              $disabled={disabled}
             >
               <CloseCircle color="primary" ariaLabel="Clear" />
-            </StyledCloseButton>
+            </button>
           )
         }
         {...props}
@@ -399,74 +387,104 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       );
 
     const dropdown = isOpened && (
-      <StyledDropdown
+      <ul
+        className={cx(
+          "font-base bg-white-normal lm:absolute lm:inset-x-0 lm:overflow-y-scroll lm:shadow-action lm:rounded-normal z-[3] flex w-full flex-col",
+          label
+            ? "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.xl))]"
+            : "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.xs))]",
+        )}
+        style={
+          isLargeMobile
+            ? {
+                maxHeight,
+                maxWidth,
+              }
+            : undefined
+        }
         role="listbox"
         id={dropdownId}
         aria-labelledby={inputId}
-        $hasLabel={!!label}
-        $maxHeight={maxHeight}
-        $maxWidth={maxWidth}
         ref={dropdownRef}
       >
         {results.all.length === 0 ? noResults : renderOptions()}
-      </StyledDropdown>
+      </ul>
     );
 
-    return isLargeMobile ? (
-      <StyledLabel htmlFor={inputId} ref={labelRef} spaceAfter={spaceAfter}>
-        {input}
-        {dropdown}
-      </StyledLabel>
-    ) : (
-      <StyledLabel htmlFor={inputId} ref={labelRef} spaceAfter={spaceAfter}>
-        <InputField
-          label={label}
-          help={help}
-          error={error}
-          onFocus={() => setIsOpened(true)}
-          readOnly
-          role="textbox"
-          placeholder={placeholder}
-          value={inputValue}
-          prefix={selectedOption && selectedOption.prefix}
-        />
-        {isOpened && (
-          <StyledModalWrapper $maxHeight={maxHeight} isScrolled={isScrolled && topOffset > 50}>
-            <Modal
-              labelClose={labelClose}
-              onClose={handleCloseClick}
-              fixedFooter
-              onScroll={ev => {
-                if (!isLargeMobile) {
-                  ev.preventDefault();
-                  setIsScrolled(true);
-                  setTopOffset(ev.currentTarget.scrollTop);
-                }
-              }}
-              mobileHeader={false}
-              autoFocus
-            >
-              <StyledModalHeader>
-                {label && (
-                  <Stack align="center" justify="between">
-                    <Box>
-                      <Heading type="title2">{label}</Heading>
-                    </Box>
-                    <ModalCloseButton onClick={handleCloseClick} title={labelClose} />
-                  </Stack>
-                )}
-                {input}
-              </StyledModalHeader>
-              <StyledModalSection>{dropdown}</StyledModalSection>
-              <ModalFooter flex="100%">
-                <Button type="secondary" fullWidth onClick={handleCloseClick}>
-                  {labelClose}
-                </Button>
-              </ModalFooter>
-            </Modal>
-          </StyledModalWrapper>
+    return (
+      <label
+        className={cx(
+          "orbit-input-select relative block",
+          spaceAfter && spaceAfterClasses[spaceAfter],
         )}
-      </StyledLabel>
+        htmlFor={inputId}
+        ref={labelRef}
+      >
+        {isLargeMobile ? (
+          <>
+            {input}
+            {dropdown}
+          </>
+        ) : (
+          <>
+            <InputField
+              label={label}
+              help={help}
+              error={error}
+              onFocus={() => setIsOpened(true)}
+              readOnly
+              role="textbox"
+              placeholder={placeholder}
+              value={inputValue}
+              prefix={selectedOption && selectedOption.prefix}
+              dataTest={props.dataTest}
+            />
+            {isOpened && (
+              <div
+                className={cx(
+                  "[&_.orbit-input-field-field]:mt-xs [&_.orbit-modal-footer]:shadow-none [&_.orbit-modal-header-container]:sticky [&_.orbit-modal-header-container]:top-0 [&_.orbit-modal-wrapper-content]:h-full",
+                  isScrolled &&
+                    topOffset > 50 &&
+                    "[&_.orbit-modal-header-container]:pb-md [&_.orbit-modal-header-container]:shadow-fixed",
+                )}
+              >
+                <Modal
+                  labelClose={labelClose}
+                  onClose={handleCloseClick}
+                  fixedFooter
+                  onScroll={ev => {
+                    if (!isLargeMobile) {
+                      ev.preventDefault();
+                      setIsScrolled(true);
+                      setTopOffset(ev.currentTarget.scrollTop);
+                    }
+                  }}
+                  mobileHeader={false}
+                  autoFocus
+                >
+                  <ModalHeader className="!p-md !mb-0">
+                    {label && (
+                      <Stack align="center" justify="between">
+                        <Box>
+                          <Heading type="title2">{label}</Heading>
+                        </Box>
+                        <ModalCloseButton onClick={handleCloseClick} title={labelClose} />
+                      </Stack>
+                    )}
+                    {input}
+                  </ModalHeader>
+                  <ModalSection className="!p-0">{dropdown}</ModalSection>
+                  <ModalFooter flex="100%">
+                    <Button type="secondary" fullWidth onClick={handleCloseClick}>
+                      {labelClose}
+                    </Button>
+                  </ModalFooter>
+                </Modal>
+              </div>
+            )}
+          </>
+        )}
+      </label>
     );
   },
 );

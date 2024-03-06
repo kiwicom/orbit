@@ -1,22 +1,9 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import type { Props, Option } from "../types";
 import ListChoice from "../../ListChoice";
-import defaultTheme from "../../defaultTheme";
 import CheckCircle from "../../icons/CheckCircle";
-
-const StyledListChoiceWrapper = styled.li<{ $active: boolean }>`
-  ${({ theme, $active }) => css`
-    .orbit-list-choice {
-      background: ${$active && theme.orbit.paletteCloudLight};
-    }
-  `};
-`;
-
-StyledListChoiceWrapper.defaultProps = {
-  theme: defaultTheme,
-};
 
 interface InputSelectOptionProps {
   id: Props["id"];
@@ -31,7 +18,7 @@ interface InputSelectOptionProps {
 const InputSelectOption = React.forwardRef<HTMLDivElement, InputSelectOptionProps>(
   ({ active, id, onClick, isSelected, title, description, prefix }, ref) => {
     return (
-      <StyledListChoiceWrapper $active={active}>
+      <li className={cx(active && "[&_.orbit-list-choice]:bg-cloud-light")}>
         <ListChoice
           id={id}
           onClick={onClick}
@@ -44,7 +31,7 @@ const InputSelectOption = React.forwardRef<HTMLDivElement, InputSelectOptionProp
           description={description}
           icon={prefix}
         />
-      </StyledListChoiceWrapper>
+      </li>
     );
   },
 );

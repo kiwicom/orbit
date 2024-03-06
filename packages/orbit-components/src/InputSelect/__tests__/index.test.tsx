@@ -41,6 +41,7 @@ describe("InputSelect", () => {
   const label = "Choose your actor";
   const name = "actors";
   const id = "kek";
+  const dataTest = "TEST";
   const emptyMessage = "D'oh! No results found.";
 
   it("should render expected DOM output", async () => {
@@ -52,6 +53,7 @@ describe("InputSelect", () => {
     render(
       <InputSelect
         id={id}
+        dataTest={dataTest}
         label={label}
         options={options}
         name={name}
@@ -85,6 +87,7 @@ describe("InputSelect", () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
     expect(input).toHaveAttribute("name", name);
     expect(input).toHaveAttribute("id", id);
+    expect(input).toHaveAttribute("data-test", dataTest);
 
     // clear current value
     await user.clear(input);

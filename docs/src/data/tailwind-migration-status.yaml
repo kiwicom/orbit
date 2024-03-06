@@ -36,7 +36,7 @@ Hide: true
 HorizontalScroll: true
 Illustration: true
 IllustrationPrimitive: true
-IllustrationPrimitiveList: false
+IllustrationPrimitiveList: true
 InputField: true
 InputFile: true
 InputGroup: true

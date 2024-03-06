@@ -1,54 +1,25 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import type * as Common from "../../common/types";
 import Button from "../../Button";
-import defaultTheme from "../../defaultTheme";
+import type { Props as ButtonPrimitiveProps } from "../../primitives/ButtonPrimitive/types";
 
 interface Props {
   children: React.ReactNode;
-  transparent?: boolean;
+  className?: string;
   size?: Common.InputSize;
 }
 
-const StyledButton = styled.div<Props>`
-  ${({ theme, transparent }) => css`
-    &:hover,
-    &:active,
-    &:focus {
-      background: ${theme.orbit.backgroundButtonSecondary};
-      color: ${theme.orbit.colorTextButtonSecondary};
-      transform: none;
-      cursor: default;
-    }
-
-    ${transparent &&
-    css`
-      &&& {
-        background-color: transparent;
-        box-shadow: none;
-      }
-    `};
-  `}
-`;
-
-StyledButton.defaultProps = {
-  theme: defaultTheme,
-};
-
-const ActiveButtonAsComponent =
-  ({ transparent }) =>
-  ({ children, ...props }: Props) => {
-    return (
-      <StyledButton {...props} transparent={transparent}>
-        {children}
-      </StyledButton>
-    );
+const Component =
+  ({ className: customClassName }: { className: Props["className"] }) =>
+  ({ children, className }: ButtonPrimitiveProps) => {
+    return <div className={cx("pointer-events-none", customClassName, className)}>{children}</div>;
   };
 
-const ActiveButton = ({ children, transparent, size }: Props) => {
+const ActiveButton = ({ children, className, size }: Props) => {
   return (
-    <Button type="secondary" size={size} asComponent={ActiveButtonAsComponent({ transparent })}>
+    <Button type="secondary" size={size} asComponent={Component({ className })}>
       {children}
     </Button>
   );

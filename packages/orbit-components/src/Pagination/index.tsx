@@ -39,18 +39,18 @@ const Pagination = ({
         <>
           <ButtonLink
             onClick={() => pageChanged(selectedPage - 1)}
-            iconLeft={<ChevronBackward />}
+            iconLeft={<ChevronBackward reverseOnRtl />}
             type="secondary"
             title={labelPrev}
             size={size}
             disabled={selectedPage <= 1}
           />
-          <ActiveButton transparent size={size}>
+          <ActiveButton className="bg-transparent" size={size}>
             {labelProgress}
           </ActiveButton>
           <ButtonLink
             onClick={() => pageChanged(selectedPage + 1)}
-            iconLeft={<ChevronForward />}
+            iconLeft={<ChevronForward reverseOnRtl />}
             type="secondary"
             title={labelNext}
             size={size}
@@ -61,7 +61,7 @@ const Pagination = ({
         <>
           <ButtonLink
             onClick={() => pageChanged(selectedPage - 1)}
-            iconLeft={<ChevronBackward />}
+            iconLeft={<ChevronBackward reverseOnRtl />}
             type="secondary"
             title={hideLabels ? labelPrev : undefined}
             size={size}
@@ -88,8 +88,8 @@ const Pagination = ({
           </Stack>
           <ButtonLink
             onClick={() => pageChanged(selectedPage + 1)}
-            iconRight={!hideLabels && <ChevronForward />}
-            iconLeft={hideLabels && <ChevronForward />}
+            iconRight={!hideLabels && <ChevronForward reverseOnRtl />}
+            iconLeft={hideLabels && <ChevronForward reverseOnRtl />}
             type="secondary"
             title={hideLabels ? labelNext : undefined}
             size={size}

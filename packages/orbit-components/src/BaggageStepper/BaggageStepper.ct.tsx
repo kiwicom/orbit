@@ -1,12 +1,21 @@
 import * as React from "react";
 import { test, expect } from "@playwright/experimental-ct-react";
 
-import BaggageStepper from ".";
+import BaggageStepperStory from "./BaggageStepper.ct-story";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 test.describe("visual BaggageStepper", () => {
-  test("BaggageStepper default", async ({ mount }) => {
+  test("default", async ({ mount }) => {
+    const component = await mount(<BaggageStepperStory />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("rtl", async ({ mount }) => {
     const component = await mount(
-      <BaggageStepper titleIncrement="Add stuff" titleDecrement="Remove stuff" />,
+      <RenderInRtl>
+        <BaggageStepperStory />
+      </RenderInRtl>,
     );
 
     await expect(component).toHaveScreenshot();

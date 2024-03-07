@@ -10,6 +10,7 @@ describe("BaggageStepper", () => {
   it("should have expected DOM output", async () => {
     const defaultValue = 2;
     const name = "name";
+    const id = "ID";
     const maxValue = 100;
     const minValue = 1;
     const dataTest = "test";
@@ -27,6 +28,7 @@ describe("BaggageStepper", () => {
         name={name}
         maxValue={maxValue}
         minValue={minValue}
+        id={id}
         dataTest={dataTest}
         onDecrement={onDecrement}
         onIncrement={onIncrement}
@@ -39,7 +41,9 @@ describe("BaggageStepper", () => {
     );
 
     const input = screen.getByRole("textbox");
-    expect(screen.getByTestId(dataTest)).toBeInTheDocument();
+    const el = screen.getByTestId(dataTest);
+    expect(el).toBeInTheDocument();
+    expect(el).toHaveAttribute("id", id);
 
     fireEvent.keyDown(input, { keyCode: 40 });
     fireEvent.keyDown(input, { keyCode: 38 });

@@ -1,53 +1,14 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
 
 import Button from "./Button";
 import Minus from "../../icons/Minus";
 import Plus from "../../icons/Plus";
-import defaultTheme from "../../defaultTheme";
 import type { Props } from "./types";
-
-const StyledStepper = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex: 1 1 auto;
-`;
-
-const StyledStepperInput = styled.input`
-  ${({ theme }) => css`
-    width: 100%;
-    height: 22px;
-    padding: 0;
-    border: 0;
-    font-size: ${theme.orbit.fontSizeTextLarge};
-    font-weight: ${theme.orbit.fontWeightBold};
-    color: ${theme.orbit.paletteInkDark};
-    text-align: center;
-    min-width: 0;
-
-    &:disabled {
-      background-color: transparent;
-    }
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    &:focus {
-      outline: none;
-    }
-  `}
-`;
-
-StyledStepperInput.defaultProps = {
-  theme: defaultTheme,
-};
 
 const StepperStateless = ({
   selected,
   disabled,
+  id,
   dataTest,
   value,
   name,
@@ -64,7 +25,11 @@ const StepperStateless = ({
   disabledDecrement,
 }: Props) => {
   return (
-    <StyledStepper data-test={dataTest}>
+    <div
+      className="orbit-baggage-stepper flex w-full flex-auto items-center"
+      id={id}
+      data-test={dataTest}
+    >
       <Button
         selected={selected}
         disabled={
@@ -78,7 +43,8 @@ const StepperStateless = ({
         }}
         title={titleDecrement}
       />
-      <StyledStepperInput
+      <input
+        className="text-large text-ink-dark h-[22px] w-full min-w-0 border-0 p-0 text-center font-bold outline-none disabled:bg-transparent"
         name={name}
         disabled={disabled}
         type="text"
@@ -107,7 +73,7 @@ const StepperStateless = ({
         }}
         title={titleIncrement}
       />
-    </StyledStepper>
+    </div>
   );
 };
 

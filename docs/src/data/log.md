@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@13.0.0...@kiwicom/orbit-components@13.1.0) (2024-03-07)
+
+#### Features
+
+*   **Coupon:** migrate to tailwind ([6827ccb](https://github.com/kiwicom/orbit/commit/6827ccbfd4b37f4b7e0b41b853d0d962fd8b8c8f))
+*   **Slide:** migrate to tailwind ([aa55f45](https://github.com/kiwicom/orbit/commit/aa55f45a107c021905a964f2018b576f0847b6aa))
+*   **StopoverArrow:** migrate to tailwind ([e676cc0](https://github.com/kiwicom/orbit/commit/e676cc0f7f4ede7083edfcafc8fcb5e8f77b6566))
+
 ## [13.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@12.4.0...@kiwicom/orbit-components@13.0.0) (2024-02-29)
 
 #### Features

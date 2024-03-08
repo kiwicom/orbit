@@ -2,16 +2,9 @@
 
 import * as React from "react";
 
-import {
-  ItemWrapper,
-  getIconColor,
-  VerticalBadge,
-  BadgeContent,
-} from "../../BadgeList/BadgeListItem";
+import { ItemWrapper, VerticalBadge, BadgeContent } from "../../BadgeList/BadgeListItem";
 import Stack from "../../Stack";
-// TODO: remove after designers will resolve status colors
-// https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
-import Text from "../ItineraryTemporaryText";
+import ItineraryText from "../ItineraryText";
 import type { BadgeListItem as Props } from "./types";
 
 const ItineraryBadgeListItem = ({
@@ -25,17 +18,14 @@ const ItineraryBadgeListItem = ({
 }: Props) => {
   return (
     <ItemWrapper dataTest={dataTest}>
-      <VerticalBadge type={type}>
-        {/* @ts-expect-error TODO */}
-        {React.isValidElement(icon) && React.cloneElement(icon, { color: getIconColor(type) })}
-      </VerticalBadge>
+      <VerticalBadge type={type} icon={icon} />
       <BadgeContent
         style={{
           marginTop: cancelledValue ? `4px` : "",
         }}
       >
         <Stack direction="column" spacing="XXSmall">
-          <Text
+          <ItineraryText
             withBackground={withBackground}
             type={withBackground && type !== "neutral" ? type : "secondary"}
             weight={withBackground ? "medium" : "normal"}
@@ -44,11 +34,11 @@ const ItineraryBadgeListItem = ({
             strikeThrough={strikeThrough}
           >
             {children}
-          </Text>
+          </ItineraryText>
           {cancelledValue && (
-            <Text type="secondary" size="small" as="span" strikeThrough weight="medium">
+            <ItineraryText type="secondary" size="small" as="span" strikeThrough weight="medium">
               {cancelledValue}
-            </Text>
+            </ItineraryText>
           )}
         </Stack>
       </BadgeContent>

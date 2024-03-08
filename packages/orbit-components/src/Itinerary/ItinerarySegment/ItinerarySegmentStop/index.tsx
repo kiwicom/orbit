@@ -1,52 +1,16 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import { useWidth } from "../../context";
-import defaultTheme from "../../../defaultTheme";
 import Stack from "../../../Stack";
 // TODO: remove after designers will resolve status colors
 // https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
-import Text from "../../ItineraryTemporaryText";
+import ItineraryText from "../../ItineraryText";
 import ItineraryIcon from "../ItineraryIcon";
 import { usePart } from "../context";
 import type { Props } from "./types";
-
-const StyledWrapper = styled.div<{ isLast?: boolean; isFirst?: boolean; isBanner?: boolean }>`
-  ${({ theme, isLast, isFirst, isBanner }) => css`
-    display: flex;
-    position: relative;
-    box-sizing: border-box;
-    padding: 0 ${theme.orbit.spaceSmall};
-    margin-bottom: ${((!isLast && !isFirst) || (!isFirst && isBanner)) && theme.orbit.spaceSmall};
-  `}
-`;
-
-StyledWrapper.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledDate = styled.div<{ minWidth?: number }>`
-  ${({ minWidth }) => css`
-    white-space: nowrap;
-    min-width: ${minWidth}px;
-  `}
-`;
-
-const StyledHiddenCity = styled.p`
-  ${({ theme }) => css`
-    margin: 0;
-    font-family: ${theme.orbit.fontFamily};
-    font-weight: ${theme.orbit.fontWeightBold};
-    font-size: ${theme.orbit.fontSizeTextSmall};
-    color: ${theme.orbit.paletteOrangeNormal};
-  `};
-`;
-
-StyledHiddenCity.defaultProps = {
-  theme: defaultTheme,
-};
 
 const ItinerarySegmentStop = ({
   date,
@@ -74,22 +38,33 @@ const ItinerarySegmentStop = ({
   }, [setWidths, dateWidth, minWidth]);
 
   return (
-    <StyledWrapper isLast={last} isFirst={index === 0} isBanner={isBanner}>
+    <div
+      className={cx(
+        "px-sm relative box-border flex py-0",
+        ((!last && index !== 0) || (index !== 0 && isBanner)) && "mb-sm",
+      )}
+      data-test="SegmentStop"
+    >
       <Stack flex align="center" spacing="small">
-        <StyledDate minWidth={calculatedWidth} ref={setDateWidth} data-test="time">
+        <div
+          className="whitespace-nowrap"
+          ref={setDateWidth}
+          data-test="time"
+          style={{ minWidth: `${calculatedWidth}px` }}
+        >
           <Stack flex direction="column" spacing="none" align="end">
             {time && (
-              <Text
+              <ItineraryText
                 weight="medium"
                 as="div"
                 type={cancelledTime ? textType : "primary"}
                 withBackground={!!cancelledTime}
               >
                 {time}
-              </Text>
+              </ItineraryText>
             )}
             {date && (
-              <Text
+              <ItineraryText
                 type={cancelledDate ? textType : "secondary"}
                 size="small"
                 align="right"
@@ -97,52 +72,56 @@ const ItinerarySegmentStop = ({
                 withBackground={!!cancelledDate}
               >
                 {date}
-              </Text>
+              </ItineraryText>
             )}
             {cancelledTime && (
-              <Text type="secondary" weight="medium" strikeThrough as="div">
+              <ItineraryText type="secondary" weight="medium" strikeThrough as="div">
                 {cancelledTime}
-              </Text>
+              </ItineraryText>
             )}
             {cancelledDate && (
-              <Text type="secondary" size="small" align="right" strikeThrough as="div">
+              <ItineraryText type="secondary" size="small" align="right" strikeThrough as="div">
                 {cancelledDate}
-              </Text>
+              </ItineraryText>
             )}
           </Stack>
-        </StyledDate>
+        </div>
         <ItineraryIcon type={type}>{icon}</ItineraryIcon>
         <Stack direction="column" shrink spacing="none">
-          {hidden && hiddenCityText && <StyledHiddenCity>{hiddenCityText}</StyledHiddenCity>}
-          <Text
+          {hidden && hiddenCityText && (
+            <p className="font-base text-small text-orange-normal m-0 font-bold">
+              {hiddenCityText}
+            </p>
+          )}
+          <ItineraryText
             as="div"
             weight="medium"
             withBackground={!!cancelledCity}
             type={cancelledCity ? textType : "primary"}
           >
             {city}
-          </Text>
-          <Text
+          </ItineraryText>
+          <ItineraryText
             as="div"
             size="small"
             type={cancelledStation ? textType : "secondary"}
             withBackground={!!cancelledStation}
           >
             {station}
-          </Text>
+          </ItineraryText>
           {cancelledCity && (
-            <Text weight="medium" strikeThrough as="div">
+            <ItineraryText weight="medium" strikeThrough as="div">
               {cancelledCity}
-            </Text>
+            </ItineraryText>
           )}
           {cancelledStation && (
-            <Text type="secondary" size="small" strikeThrough as="div">
+            <ItineraryText type="secondary" size="small" strikeThrough as="div">
               {cancelledStation}
-            </Text>
+            </ItineraryText>
           )}
         </Stack>
       </Stack>
-    </StyledWrapper>
+    </div>
   );
 };
 

@@ -1,41 +1,14 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import type * as Common from "../../common/types";
 import Stack from "../../Stack";
-import getSpacingToken from "../../common/getSpacingToken";
-import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
 import Separator from "../../Separator";
 import type { Props } from "./types";
 import { ItinerarySegmentProvider } from "./context";
-
-const StyledWrapper = styled.div<{
-  noElevation?: boolean;
-  actionable?: boolean;
-  spaceAfter?: Common.SpaceAfterSizes;
-}>`
-  ${({ theme, noElevation, actionable }) => css`
-    cursor: ${actionable && "pointer"};
-    margin-bottom: ${getSpacingToken};
-    box-shadow: ${!noElevation && theme.orbit.boxShadowFixed};
-    border-radius: ${theme.orbit.borderRadiusLarge};
-    padding: ${theme.orbit.spaceSmall} 0;
-    ${actionable &&
-    css`
-      &:hover,
-      &:focus {
-        box-shadow: ${!noElevation && theme.orbit.boxShadowActionActive};
-      }
-    `}
-  `}
-`;
-
-StyledWrapper.defaultProps = {
-  theme: defaultTheme,
-};
+import { spaceAfterClasses } from "../../common/tailwind";
 
 const ItinerarySegment = ({
   children,
@@ -83,19 +56,24 @@ const ItinerarySegment = ({
   };
 
   return (
-    <StyledWrapper
-      actionable={actionable}
-      spaceAfter={spaceAfter}
-      data-test={dataTest}
+    <div
+      className={cx(
+        "rounded-large py-sm px-0",
+        actionable && "cursor-pointer",
+        spaceAfter && spaceAfterClasses[spaceAfter],
+        !noElevation && "shadow-fixed",
+        actionable && !noElevation && "hover:shadow-action-active focus:shadow-action-active",
+      )}
+      role="button"
       tabIndex={0}
       onKeyDown={handleKeyDown(() => setOpened(prev => !prev))}
       onClick={handleClick}
-      noElevation={noElevation}
+      data-test={dataTest}
     >
       {parts}
       {Boolean(banner) && <Separator spaceAfter="small" />}
       {banner}
-    </StyledWrapper>
+    </div>
   );
 };
 

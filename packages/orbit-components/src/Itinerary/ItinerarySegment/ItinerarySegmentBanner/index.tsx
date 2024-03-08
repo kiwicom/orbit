@@ -1,48 +1,25 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import defaultTheme from "../../../defaultTheme";
+import handleKeyDown from "../../../utils/handleKeyDown";
 import ChevronForward from "../../../icons/ChevronForward";
-import { StyledWrapper as StyledBadgeListWrapper } from "../../ItineraryBadgeList";
 import type { Props } from "./types";
-import { left } from "../../../utils/rtl";
-
-const StyledBannerWrapper = styled.div<{ $actionable?: boolean }>`
-  ${({ theme, $actionable }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    padding: 0 ${theme.orbit.spaceMedium};
-    cursor: ${$actionable ? "pointer" : "default"};
-
-    ${StyledBadgeListWrapper} {
-      margin-${left}: 0 !important;
-    }
-
-    .orbit-separator {
-      width: 150% !important;
-      margin-left: -${theme.orbit.spaceMedium};
-    }
-
-    & > div {
-      max-width: calc(100% - 20px);
-    }
-  `}
-`;
-
-StyledBannerWrapper.defaultProps = {
-  theme: defaultTheme,
-};
 
 const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
   return (
-    <StyledBannerWrapper
-      $actionable={!!onClick}
+    <div
+      className={cx(
+        "px-md box-border flex w-full items-center justify-between overflow-hidden py-0",
+        onClick ? "cursor-pointer" : "cursor-default",
+        "[&_.orbit-itinerary-badge-list]:!ms-0",
+        "[&_.orbit-separator]:-ml-md [&_.orbit-separator]:!w-[150%]",
+        "[&_>_div]:max-w-[calc(100%-20px)]",
+      )}
+      role="button"
+      tabIndex={-1}
+      onKeyDown={handleKeyDown(onClick)}
       onClick={ev => {
         ev.stopPropagation();
         if (onClick) onClick(ev);
@@ -50,7 +27,7 @@ const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
     >
       <div>{children}</div>
       {onClick && <ChevronForward color="secondary" />}
-    </StyledBannerWrapper>
+    </div>
   );
 };
 

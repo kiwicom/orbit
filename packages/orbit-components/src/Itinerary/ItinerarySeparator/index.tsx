@@ -1,70 +1,26 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import Divider from "./Divider";
-import defaultTheme from "../../defaultTheme";
 import type { Props } from "./types";
-
-const StyledWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-`;
-
-const StyledInner = styled.div<{ $type: Props["type"]; $color: Props["color"] }>`
-  ${({ theme, $type, $color }) => css`
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      z-index: 10;
-      width: 50%;
-      height: ${!$type && theme.orbit.heightSeparator};
-      background: ${theme.orbit.backgroundSeparator};
-      border-width: ${$type && "1px"};
-      border-color: ${$color && theme.orbit[$color]};
-      border-style: ${$type};
-    }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      right: 0;
-    }
-  `}
-`;
-
-StyledInner.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledWord = styled.div`
-  ${({ theme }) => css`
-    position: relative;
-    padding: 0 2px;
-    background: ${theme.orbit.paletteWhite};
-    z-index: 11;
-  `};
-`;
-
-StyledWord.defaultProps = {
-  theme: defaultTheme,
-};
+import useTheme from "../../hooks/useTheme";
 
 const ItinerarySeparator = ({ children, type, color }: Props) => {
+  const theme = useTheme();
   if (children || type)
     return (
-      <StyledWrapper>
-        <StyledInner $type={type} $color={color}>
-          <StyledWord>{children}</StyledWord>
-        </StyledInner>
-      </StyledWrapper>
+      <div className="relative flex w-full justify-center">
+        <div
+          className={cx(
+            "bg-elevation-flat-border-color absolute inset-x-0 top-1/2 z-10 w-full",
+            type ? "border" : "h-px",
+          )}
+          style={{ borderStyle: type, borderColor: color && theme.orbit[color] }}
+        />
+        <div className="px-xxxs bg-white-normal relative z-[11] py-0">{children}</div>
+      </div>
     );
 
   return <Divider />;

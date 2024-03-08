@@ -1,18 +1,14 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
 import HorizontalScroll from "../../../HorizontalScroll";
 import Truncate from "../../../Truncate";
-import { left, rtlSpacing } from "../../../utils/rtl";
 import ChevronUp from "../../../icons/ChevronUp";
 import ChevronDown from "../../../icons/ChevronDown";
-import themeDefault from "../../../defaultTheme";
 import Stack from "../../../Stack";
-// TODO: remove after designers will resolve status colors
-// https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
-import TemporaryText from "../../ItineraryTemporaryText";
+import ItineraryText from "../../ItineraryText";
 import Text from "../../../Text";
 import Slide from "../../../utils/Slide";
 import useBoundingRect from "../../../hooks/useBoundingRect";
@@ -21,149 +17,9 @@ import { usePart } from "../context";
 import { useWidth } from "../../context";
 import AirplaneDown from "../../../icons/AirplaneDown";
 import type { Props } from "./types";
-import type { SpaceAfterSizes } from "../../../common/types";
 import ItineraryIcon from "../ItineraryIcon";
-import getSpacingToken from "../../../common/getSpacingToken";
-
-const StyledWrapper = styled.div`
-  width: 100%;
-  position: relative;
-  padding: 10px 0;
-  box-sizing: border-box;
-`;
-
-const StyledDetailsIcon = styled.div`
-  background: transparent;
-  z-index: 1;
-`;
-
-const StyledInnerWrapper = styled.div`
-  ${({ theme }) => css`
-    padding: ${rtlSpacing(`0 ${theme.orbit.spaceSmall}`)};
-  `}
-`;
-
-StyledInnerWrapper.defaultProps = {
-  theme: themeDefault,
-};
-
-export const StyledSummary = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  overflow: hidden;
-`;
-
-StyledSummary.defaultProps = {
-  theme: themeDefault,
-};
-
-const StyledDuration = styled.div<{ $minWidth?: number }>`
-  ${({ $minWidth }) => css`
-    display: flex;
-    justify-content: flex-end;
-    min-width: ${$minWidth && `${$minWidth}px`};
-  `}
-`;
-
-const StyledExpandable = styled.div`
-  ${({ theme }) => css`
-    padding-top: ${theme.orbit.spaceSmall};
-    overflow: hidden;
-  `};
-`;
-
-StyledExpandable.defaultProps = {
-  theme: themeDefault,
-};
-
-const StyledExpandableContent = styled.div<{ $offset: number }>`
-  ${({ $offset, theme }) => css`
-    padding: 0 ${theme.orbit.spaceSmall};
-    position: relative;
-    z-index: 1;
-    ${left}: ${parseInt(theme.orbit.spaceXSmall, 10) + $offset}px;
-  `}
-`;
-
-const StyledHeadingOffset = styled.div`
-  ${({ theme }) => css`
-    margin-${left}: ${theme.orbit.spaceXLarge};
-  `}
-`;
-
-StyledHeadingOffset.defaultProps = {
-  theme: themeDefault,
-};
-
-const StyledIcon = styled.div<{ isFirst?: boolean; isLast?: boolean }>`
-  ${({ theme, isFirst, isLast }) => css`
-    display: flex;
-    align-items: center;
-    position: relative;
-    box-sizing: border-box;
-    padding: ${isFirst || isLast ? "0" : theme.orbit.spaceXXSmall} ${theme.orbit.spaceXXSmall};
-    z-index: 3;
-    svg {
-      ${isFirst &&
-      `
-        margin-top: ${theme.orbit.spaceXSmall};
-        margin-bottom: ${theme.orbit.spaceXXSmall};
-      `}
-      ${isLast &&
-      `
-        margin-top: ${theme.orbit.spaceXXSmall};
-        margin-bottom: ${theme.orbit.spaceXSmall};
-      `}
-    }
-    &:after {
-      content: "";
-      box-sizing: border-box;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      border-left: 1px solid ${theme.orbit.paletteCloudNormalActive};
-      border-right: 1px solid ${theme.orbit.paletteCloudNormalActive};
-      z-index: -1;
-      background: ${theme.orbit.paletteWhite};
-      ${isFirst &&
-      css`
-        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
-        border-bottom: transparent;
-        border-radius: ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge} 0 0;
-      `}
-      ${isLast &&
-      css`
-        border: 1px solid ${theme.orbit.paletteCloudNormalActive};
-        border-top: transparent;
-        border-radius: 0 0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge};
-      `}
-    }
-  `}
-`;
-
-const StyledItemWrapper = styled.div<{ $offset: number; spaceAfter: SpaceAfterSizes }>`
-  ${({ theme, $offset }) => css`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: calc(100% - ${parseInt(theme.orbit.spaceXSmall, 10) + $offset}px);
-    margin-bottom: ${getSpacingToken};
-  `};
-`;
-
-StyledItemWrapper.defaultProps = {
-  theme: themeDefault,
-};
-
-StyledIcon.defaultProps = {
-  theme: themeDefault,
-};
-
-StyledExpandableContent.defaultProps = {
-  theme: themeDefault,
-};
+import useTheme from "../../../hooks/useTheme";
+import { spaceAfterClasses } from "../../../common/tailwind";
 
 const ItinerarySegmentDetail = ({
   duration,
@@ -173,6 +29,7 @@ const ItinerarySegmentDetail = ({
 }: Props) => {
   const { opened, toggleOpened } = usePart();
   const { calculatedWidth } = useWidth();
+  const theme = useTheme();
   const [{ height: slideHeight }, slideRef] = useBoundingRect<HTMLDivElement>({
     height: opened ? null : 0,
   });
@@ -180,19 +37,25 @@ const ItinerarySegmentDetail = ({
   const [isOverflowed, setOverflowed] = React.useState(false);
 
   return (
-    <StyledWrapper>
-      <StyledInnerWrapper>
+    <div className="relative box-border w-full px-0 py-[10px]">
+      <div className="px-sm py-0">
         <Stack align="center" spacing="small">
-          <StyledDuration $minWidth={calculatedWidth || 60}>
-            <TemporaryText as="div" size="small" weight="medium">
+          <div className="flex justify-end" style={{ minWidth: `${calculatedWidth || 60}px` }}>
+            <ItineraryText as="div" size="small" weight="medium">
               {duration}
-            </TemporaryText>
-          </StyledDuration>
-          <StyledDetailsIcon>
+            </ItineraryText>
+          </div>
+          <div className="z-default bg-transparent">
             <ItineraryIcon>{icon}</ItineraryIcon>
-          </StyledDetailsIcon>
+          </div>
 
-          <StyledSummary
+          <div
+            className="flex w-full items-center overflow-hidden"
+            tabIndex={-1}
+            role="button"
+            onKeyDown={ev => {
+              ev.stopPropagation();
+            }}
             onClick={ev => {
               if (isOverflowed && opened) ev.stopPropagation();
             }}
@@ -205,11 +68,11 @@ const ItinerarySegmentDetail = ({
             >
               {summary}
             </HorizontalScroll>
-          </StyledSummary>
+          </div>
           {content &&
             (opened ? <ChevronUp color="secondary" /> : <ChevronDown color="secondary" />)}
         </Stack>
-      </StyledInnerWrapper>
+      </div>
       {content && (
         <Slide
           maxHeight={slideHeight || 0}
@@ -217,48 +80,81 @@ const ItinerarySegmentDetail = ({
           id={randomId("slide")}
           ariaLabelledBy={randomId("slide")}
         >
-          <StyledExpandable ref={slideRef} onClick={toggleOpened}>
-            <StyledExpandableContent $offset={calculatedWidth}>
+          <div
+            className="pt-sm overflow-hidden"
+            ref={slideRef}
+            tabIndex={-1}
+            role="button"
+            onClick={toggleOpened}
+            onKeyDown={ev => {
+              ev.stopPropagation();
+            }}
+          >
+            <div
+              className="px-sm z-default relative py-0"
+              style={{
+                insetInlineStart: `${parseInt(theme.orbit.spaceXSmall, 10) + calculatedWidth}px`,
+              }}
+            >
               {content.map(({ title, items }, idx) => {
                 return (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <React.Fragment key={idx}>
-                    <StyledHeadingOffset>
-                      <TemporaryText as="div" size="small" weight="medium" spaceAfter="small">
+                  <React.Fragment key={`${title}`}>
+                    <div className="ms-xl">
+                      <ItineraryText as="div" size="small" weight="medium" spaceAfter="small">
                         {title}
-                      </TemporaryText>
-                    </StyledHeadingOffset>
-                    <StyledItemWrapper
-                      $offset={calculatedWidth}
-                      spaceAfter={idx === content.length - 1 ? "none" : "medium"}
+                      </ItineraryText>
+                    </div>
+                    <div
+                      className={cx(
+                        "flex flex-col items-center",
+                        idx === content.length - 1
+                          ? spaceAfterClasses.none
+                          : spaceAfterClasses.medium,
+                      )}
+                      style={{
+                        width: `calc(100% - ${
+                          parseInt(theme.orbit.spaceXSmall, 10) + calculatedWidth
+                        }px)`,
+                      }}
                     >
                       {items.map(({ icon: itemIcon, name, value }, id) => {
+                        const isFirst = id === 0;
+                        const isLast = id === items.length - 1;
                         return (
-                          // eslint-disable-next-line react/no-array-index-key
-                          <Stack flex grow={false} align="center" key={id}>
-                            <StyledIcon isFirst={id === 0} isLast={id === items.length - 1}>
+                          <Stack flex grow={false} align="center" key={`${name}-${value}`}>
+                            <div
+                              className={cx(
+                                "px-xxs relative z-[3] box-border flex items-center",
+                                "after:-z-default after:bg-white-normal after:border-x-cloud-normal-active after:absolute after:left-0 after:box-border after:size-full after:border-x after:border-solid",
+                                isFirst || isLast ? "py-0" : "py-xxs",
+                                isFirst &&
+                                  "[&_svg]:mt-xs [&_svg]:mb-xxs after:border-t-cloud-normal-active after:rounded-b-none after:rounded-t-full after:border after:border-b-0",
+                                isLast &&
+                                  "[&_svg]:mt-xxs [&_svg]:mb-xs after:border-b-cloud-normal-active after:rounded-b-full after:rounded-t-none after:border after:border-t-0",
+                              )}
+                            >
                               {itemIcon}
-                            </StyledIcon>
+                            </div>
                             <Truncate>
                               <Text size="small">{name}</Text>
                             </Truncate>
                             <Truncate>
-                              <TemporaryText as="div" size="small" weight="medium" align="right">
+                              <ItineraryText as="div" size="small" weight="medium" align="end">
                                 {value}
-                              </TemporaryText>
+                              </ItineraryText>
                             </Truncate>
                           </Stack>
                         );
                       })}
-                    </StyledItemWrapper>
+                    </div>
                   </React.Fragment>
                 );
               })}
-            </StyledExpandableContent>
-          </StyledExpandable>
+            </div>
+          </div>
         </Slide>
       )}
-    </StyledWrapper>
+    </div>
   );
 };
 

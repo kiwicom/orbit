@@ -1,10 +1,8 @@
 import * as React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
-import styled, { css } from "styled-components";
 import { action } from "@storybook/addon-actions";
 
 import Modal, { ModalSection } from "../Modal";
-import * as Icons from "../icons";
 import {
   KiwicomGuarantee as Guarantee,
   Airplane,
@@ -29,7 +27,6 @@ import Text from "../Text";
 import CountryFlag from "../CountryFlag";
 import Heading from "../Heading";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import defaultTheme from "../defaultTheme";
 import Separator from "../Separator";
 
 import Itinerary, {
@@ -42,19 +39,6 @@ import Itinerary, {
   ItinerarySegmentStop,
   ItineraryStatus,
 } from ".";
-
-const StyledText = styled.span<{ type?: string; weight?: string }>`
-  ${({ theme, type }) => css`
-    font-weight: ${theme.orbit.fontWeightBold};
-    font-size: ${theme.orbit.fontSizeTextSmall};
-    font-family: ${theme.orbit.fontFamily};
-    color: ${type === "warning" ? theme.orbit.paletteOrangeNormal : theme.orbit.paletteBlueNormal};
-  `}
-`;
-
-StyledText.defaultProps = {
-  theme: defaultTheme,
-};
 
 const BadgeGroup = () => {
   const carriers = [{ code: "REGIOJETT", name: "Regiojet" }];
@@ -428,9 +412,9 @@ export const Stop = () => {
               <ItinerarySegmentBanner>
                 <ItineraryBadgeList>
                   <ItineraryBadgeListItem type="warning" icon={<StarFull color="warning" />}>
-                    <StyledText as="span" type="warning">
+                    <Text as="span" type="warning" weight="bold" size="small">
                       Hidden city hack:{" "}
-                    </StyledText>{" "}
+                    </Text>{" "}
                     This itinerary finishes in New York (United States), but you’ll get off during
                     the layover
                   </ItineraryBadgeListItem>
@@ -463,7 +447,7 @@ export const Stop = () => {
           />
           <ItinerarySegmentStop
             city="Barcelona BCN"
-            station="El Prat de LIobregat"
+            station="El Prat de Llobregat"
             hidden
             date="Mon, 30.1"
             time="20:00"
@@ -489,9 +473,9 @@ export const Stop = () => {
               <ItinerarySegmentBanner>
                 <ItineraryBadgeList>
                   <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
-                    <StyledText as="span" type="info" weight="bold">
+                    <Text as="span" type="info" weight="bold">
                       Throwaway ticketing hack:{" "}
-                    </StyledText>{" "}
+                    </Text>{" "}
                     You are saving money with this travel hack.
                   </ItineraryBadgeListItem>
                 </ItineraryBadgeList>
@@ -501,7 +485,7 @@ export const Stop = () => {
         >
           <ItinerarySegmentStop
             city="Barcelona BCN"
-            station="Brno-Tuřany"
+            station="Barcelona-Sants"
             date="Mon, 30.1"
             time="17:30"
           />
@@ -535,9 +519,6 @@ export const Detail = () => {
 };
 
 export const Default = () => {
-  const source = select("icon", Object.keys(Icons), "Airplane");
-  const Icon = Icons[source];
-
   return (
     <Itinerary>
       <ItinerarySegment spaceAfter="medium">
@@ -548,7 +529,7 @@ export const Default = () => {
           time="14:05"
         />
         <ItinerarySegmentDetail
-          icon={<Icon size="small" />}
+          icon={<Airplane size="small" />}
           duration="2h 30m"
           summary={<BadgeGroup />}
           content={content}
@@ -822,9 +803,6 @@ export const MultipleBanners = () => {
 };
 
 export const RTL = () => {
-  const source = select("icon", Object.keys(Icons), "Airplane");
-  const Icon = Icons[source];
-
   return (
     <>
       <RenderInRtl>
@@ -837,7 +815,7 @@ export const RTL = () => {
               time="14:05"
             />
             <ItinerarySegmentDetail
-              icon={<Icon size="small" />}
+              icon={<Airplane size="small" />}
               duration="2h 30m"
               summary={<BadgeGroup />}
               content={content}
@@ -880,9 +858,9 @@ export const RTL = () => {
                 <ItinerarySegmentBanner onClick={action("onClick")}>
                   <ItineraryBadgeList>
                     <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
-                      <StyledText as="span" type="info" weight="bold">
+                      <Text as="span" type="info" weight="bold">
                         Throwaway ticketing hack:{" "}
-                      </StyledText>{" "}
+                      </Text>{" "}
                       You are saving money with this travel hack.
                     </ItineraryBadgeListItem>
                   </ItineraryBadgeList>
@@ -921,17 +899,4 @@ export const RTL = () => {
 export default {
   title: "Itinerary",
   component: Itinerary,
-  includeStories: [
-    "BadgeList",
-    "CarrierBadge",
-    "Default",
-    "Detail",
-    "RTL",
-    "Segment",
-    "ItinerarySeparatorComponent",
-    "MultipleBanners",
-    "Status",
-    "Stop",
-    "InsideModal",
-  ],
 };

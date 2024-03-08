@@ -1,109 +1,40 @@
 "use client";
 
 import * as React from "react";
-import styled, { css } from "styled-components";
+import cx from "clsx";
 
-import type * as Common from "../../common/types";
-import { left, rtlSpacing } from "../../utils/rtl";
-import Text from "../ItineraryTemporaryText";
+import Text from "../ItineraryText";
 import Stack from "../../Stack";
-import type { ThemeProps } from "../../defaultTheme";
-import defaultTheme from "../../defaultTheme";
 import { STATUS } from "./consts";
-import getSpacingToken from "../../common/getSpacingToken";
+import type { Theme } from "../../defaultTheme";
 import type { Status } from "../types";
 import AlertOctagon from "../../icons/AlertOctagon";
 import Warning from "../../icons/AlertCircle";
 import Info from "../../icons/InformationCircle";
 import Check from "../../icons/CheckCircle";
 import useTheme from "../../hooks/useTheme";
+import { spaceAfterClasses } from "../../common/tailwind";
 import type { Props } from "./types";
 
-const resolveColor =
-  (status: Status, isHeader?: boolean) =>
-  ({ theme }: ThemeProps) => {
-    const border = {
-      [STATUS.WARNING]: theme.orbit.paletteOrangeNormal,
-      [STATUS.CRITICAL]: theme.orbit.paletteRedNormal,
-      [STATUS.INFO]: theme.orbit.paletteBlueNormal,
-      [STATUS.SUCCESS]: theme.orbit.paletteGreenNormal,
-      [STATUS.NEUTRAL]: theme.orbit.paletteInkDark,
-    };
-
-    const header = {
-      [STATUS.WARNING]: theme.orbit.paletteOrangeLight,
-      [STATUS.INFO]: theme.orbit.paletteBlueLight,
-      [STATUS.CRITICAL]: theme.orbit.paletteRedLight,
-      [STATUS.SUCCESS]: theme.orbit.paletteGreenLight,
-      [STATUS.NEUTRAL]: theme.orbit.paletteCloudNormal,
-    };
-
-    if (isHeader) return header[status];
-
-    return border[status];
-  };
-
-const StyledWrapper = styled.div<{
-  $type: Status;
-  spaceAfter: Common.SpaceAfterSizes;
-  actionable?: boolean;
-}>`
-  ${({ theme, $type, actionable }) => css`
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: column;
-    width: 100%;
-    border-radius: ${theme.orbit.borderRadiusLarge};
-    border-${left}: ${theme.orbit.borderRadiusNormal} solid ${$type && resolveColor($type)};
-    box-shadow: ${theme.orbit.boxShadowFixed};
-    margin-bottom: ${getSpacingToken};
-    ${
-      actionable &&
-      css`
-        &:hover {
-          box-shadow: ${theme.orbit.boxShadowActionActive};
-        }
-      `
-    }
-  `}
-`;
-
-StyledWrapper.defaultProps = {
-  theme: defaultTheme,
+const borderColorClasses: Record<STATUS, string> = {
+  [STATUS.WARNING]: "border-s-orange-normal",
+  [STATUS.CRITICAL]: "border-s-red-normal",
+  [STATUS.INFO]: "border-s-blue-normal",
+  [STATUS.SUCCESS]: "border-s-green-normal",
+  [STATUS.NEUTRAL]: "border-s-ink-dark",
 };
 
-const StyledStatusHeader = styled.div<{ $type: Status }>`
-  ${({ theme, $type }) => css`
-    display: flex;
-    align-items: center;
-    padding: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall}`)};
-    min-height: ${theme.orbit.spaceXLarge};
-    border-radius: ${theme.orbit.borderRadiusNormal} ${theme.orbit.borderRadiusLarge} 0 0;
-    background: ${$type && resolveColor($type, true)};
-  `}
-`;
-
-StyledStatusHeader.defaultProps = {
-  theme: defaultTheme,
-};
-
-// calculatedOffset + paddings
-const StyledStatusText = styled.div<{ $offset: number }>`
-  ${({ theme, $offset }) => css`
-    z-index: 2;
-    margin-${left}: ${parseInt(theme.orbit.spaceSmall, 10) + $offset}px;
-  `};
-`;
-
-StyledStatusText.defaultProps = {
-  theme: defaultTheme,
+const backgroundColor: Record<STATUS, string> = {
+  [STATUS.WARNING]: "bg-orange-light",
+  [STATUS.CRITICAL]: "bg-red-light",
+  [STATUS.INFO]: "bg-blue-light",
+  [STATUS.SUCCESS]: "bg-green-light",
+  [STATUS.NEUTRAL]: "bg-cloud-normal",
 };
 
 // TODO: refactor this after designers will resolve status colors
 // https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
-const StatusIcon = ({ type }: { type: Status }) => {
-  const theme = useTheme();
-
+const StatusIcon = ({ type, theme }: { type: Status; theme: Theme }) => {
   switch (type) {
     case "info":
       return <Info size="small" customColor={theme.orbit.paletteBlueDark} />;
@@ -126,22 +57,39 @@ const ItineraryStatus = ({
   offset = 0,
   actionable = true,
 }: Props) => {
+  const theme = useTheme();
+
   return (
-    <StyledWrapper $type={type} spaceAfter={spaceAfter} actionable={actionable}>
-      <StyledStatusHeader $type={type}>
-        <StyledStatusText $offset={offset}>
+    <div
+      className={cx(
+        "rounded-large shadow-fixed box-border flex w-full flex-col border-0 border-s-[3px] border-solid",
+        type && borderColorClasses[type],
+        spaceAfter && spaceAfterClasses[spaceAfter],
+        actionable && "hover:shadow-action-active",
+      )}
+    >
+      <div
+        className={cx(
+          "px-xs min-h-xl rounded-tl-normal rounded-tr-large flex items-center rounded-b-none py-0",
+          type && backgroundColor[type],
+        )}
+      >
+        <div
+          className="z-[2]"
+          style={{ marginInlineStart: `${parseInt(theme.orbit.spaceSmall, 10) + offset}px` }}
+        >
           <Stack flex spacing="XSmall" align="center">
-            <StatusIcon type={type} />
+            <StatusIcon type={type} theme={theme} />
             {label && (
               <Text as="div" type={type === "neutral" ? "primary" : type} weight="medium">
                 {label}
               </Text>
             )}
           </Stack>
-        </StyledStatusText>
-      </StyledStatusHeader>
+        </div>
+      </div>
       {children}
-    </StyledWrapper>
+    </div>
   );
 };
 

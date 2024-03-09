@@ -405,21 +405,6 @@
     "github": "https://github.com/williamkolmacka"
   },
   {
-    "id": 129299274,
-    "name": null,
-    "username": "jozef-mikusinec-kiwicom",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": null,
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/129299274?v=4",
-    "position": "",
-    "github": "https://github.com/jozef-mikusinec-kiwicom"
-  },
-  {
     "id": 159019920,
     "name": null,
     "username": "kiwicom-orbit-bot",
@@ -433,5 +418,20 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/159019920?v=4",
     "position": "",
     "github": "https://github.com/kiwicom-orbit-bot"
+  },
+  {
+    "id": 129299274,
+    "name": null,
+    "username": "jozef-mikusinec-kiwicom",
+    "error": "",
+    "twitter": null,
+    "website": "",
+    "info": null,
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/129299274?v=4",
+    "position": "",
+    "github": "https://github.com/jozef-mikusinec-kiwicom"
   }
 ]

@@ -1,4 +1,5 @@
 Accordion: true
+AccordionSection: true
 AirportIllustration: true
 Alert: true
 AlertButton: true
@@ -17,6 +18,7 @@ ButtonMobileStore: true
 ButtonPrimitive: true
 CallOutBanner: true
 Card: true
+CardHeader: true
 CardSection: true
 CarrierLogo: true
 Checkbox: true
@@ -48,6 +50,7 @@ ItinerarySegment: true
 ItinerarySegmentBanner: true
 ItinerarySegmentDetail: true
 ItinerarySegmentStop: true
+ItinerarySeparator: true
 Layout: true
 LayoutColumn: true
 LinkList: true
@@ -68,7 +71,6 @@ Pagination: true
 Popover: true
 Portal: true
 Radio: true
-NewSeatIcon: false
 Seat: true
 SeatLegend: true
 SegmentedSwitch: true
@@ -107,7 +109,7 @@ Textarea: true
 Timeline: false
 TimelineStep: false
 Toast: true
-ToastRoot: false
+ToastRoot: true
 Tooltip: true
 Truncate: true
 Wizard: false

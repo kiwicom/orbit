@@ -26,6 +26,7 @@ function fetchComponentDirs() {
       "**/data/",
       "**/common/",
       "**/helpers/",
+      "**/*.tsx-snapshots/",
     ],
   });
 
@@ -40,7 +41,6 @@ function fetchComponentDirs() {
     "icons",
     "tracking",
     "tailwind",
-    "icons",
   ];
 
   return dirs.reduce(filterOut, whiteListedDirs);

@@ -5,18 +5,20 @@ import CallOutBannerStory from "./CallOutBanner.ct-story";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 test.describe("visual CallOutBanner", () => {
-  test("default", async ({ mount }) => {
+  test("default", async ({ mount, page }) => {
     const component = await mount(<CallOutBannerStory />);
+    page.waitForRequest(/images.kiwi.com/);
 
     await expect(component).toHaveScreenshot();
   });
 
-  test("rtl", async ({ mount }) => {
+  test("rtl", async ({ mount, page }) => {
     const component = await mount(
       <RenderInRtl>
         <CallOutBannerStory />
       </RenderInRtl>,
     );
+    page.waitForRequest(/images.kiwi.com/);
 
     await expect(component).toHaveScreenshot();
   });

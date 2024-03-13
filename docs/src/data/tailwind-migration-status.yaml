@@ -6,7 +6,6 @@ AlertButton: true
 Badge: true
 BadgeList: true
 BadgeListItem: true
-BaggageStepper: false
 Breadcrumbs: true
 BreadcrumbsItem: true
 Box: true

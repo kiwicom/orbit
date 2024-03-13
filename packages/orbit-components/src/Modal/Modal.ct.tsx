@@ -10,21 +10,24 @@ import { SIZES } from "./consts";
 
 test.describe("visual Modal", () => {
   Object.values(SIZES).forEach(size => {
-    test(`ModalVisualDefaultStory ${size}`, async ({ mount }) => {
+    test(`ModalVisualDefaultStory ${size}`, async ({ mount, page }) => {
       const component = await mount(<ModalVisualDefaultStory size={size} />);
+      page.waitForResponse(/images.kiwi.com/);
 
       await expect(component).toHaveScreenshot();
     });
   });
 
-  test(`ModalVisualDefaultStory isMobileFullPage`, async ({ mount }) => {
+  test(`ModalVisualDefaultStory isMobileFullPage`, async ({ mount, page }) => {
     const component = await mount(<ModalVisualDefaultStory isMobileFullPage />);
+    page.waitForResponse(/images.kiwi.com/);
 
     await expect(component).toHaveScreenshot();
   });
 
-  test("ModalVisualMobileHeader", async ({ mount }) => {
+  test("ModalVisualMobileHeader", async ({ mount, page }) => {
     const component = await mount(<ModalVisualMobileHeader />);
+    page.waitForResponse(/images.kiwi.com/);
 
     await expect(component).toHaveScreenshot();
   });

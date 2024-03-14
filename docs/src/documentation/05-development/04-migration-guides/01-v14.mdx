@@ -1,0 +1,26 @@
+---
+title: v14
+description: How to migrate to Orbit 14.0.0
+redirect_from:
+  - /migration-guides/v14/
+---
+
+# Orbit Migration Guide v14
+
+This migration guide focuses on the process of migrating from Orbit v13 to v14.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### BaggageStepper component removed
+
+The `BaggageStepper` component was undocumented and had no signs of usage. It was removed. The component `Stepper` can be used to achieve the same functionality.
+
+### Removed deprecated components
+
+The components `Desktop`, `Mobile` and `KeyValue` were deprecated in v10 and are now removed. The [v10 migration guide](/migration-guides/v10/) includes the recommended alternatives for these components.
+The component `ClickOutside` was deprecated in v9 and is now removed. The [v9 migration guide](/migration-guides/v9/) includes the recommended alternative for this component.
+
+### Removed deprecated internal utilities
+
+The `toggleUp` and `toggleDown` utilities were removed. They were only meant to be used internally but are not needed anymore.

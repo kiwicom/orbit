@@ -41,7 +41,7 @@ jobs:
 
       - name: Get DOMAIN
         if: github.ref != 'refs/heads/master'
-        run: echo "DOMAIN=https://kiwicom-orbit-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
+        run: echo "DOMAIN=https://kiwicom-orbit-${BRANCH_URL}-test2.surge.sh" >> $GITHUB_ENV
 
       - name: Deploy to staging
         if: github.ref != 'refs/heads/master'

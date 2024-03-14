@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@4.2.0...@kiwicom/orbit-tailwind-preset@4.3.0) (2024-03-14)
+
+
+### Features
+
+* **tailwind:** add elevation-flat-border-color as a bg color ([b95f500](https://github.com/kiwicom/orbit/commit/b95f500c265943dde1e10873fa4dfe87a9cab6c0))
+* **Timeline:** migrate to tailwind ([6fdc700](https://github.com/kiwicom/orbit/commit/6fdc700fabcb4d43908964bd1557a94948135caf))
+
+
+
+
+
 # [4.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@4.1.0...@kiwicom/orbit-tailwind-preset@4.2.0) (2024-02-19)
 
 

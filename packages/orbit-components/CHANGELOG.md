@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [14.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@13.1.0...@kiwicom/orbit-components@14.0.0) (2024-03-14)
+
+
+### Bug Fixes
+
+* **Modal:** fix bottom border radius when isMobileFullPage ([4a402f9](https://github.com/kiwicom/orbit/commit/4a402f986c079f87fbc0911b024073046ac20e14))
+
+
+### Features
+
+* **CallOutBanner:** migrate to tailwind ([047158b](https://github.com/kiwicom/orbit/commit/047158bec7c941b10423f0684bd000a112678144))
+* delete BaggageStepper component ([74d8f55](https://github.com/kiwicom/orbit/commit/74d8f55ffd044e675784305246129e283b344fc9))
+* deprecate toggleUp and toggleDown utilities ([fe2ed30](https://github.com/kiwicom/orbit/commit/fe2ed3024a4f61c0ae08ed6273f30926fdd118c8))
+* **Inline:** migrate to tailwind ([22464a6](https://github.com/kiwicom/orbit/commit/22464a6f85e26f5a03e5a26c0833c9c70a2b621b))
+* **InputSelect:** migrate to tailwind ([3b6617b](https://github.com/kiwicom/orbit/commit/3b6617b96e850726be2ea03b7a5dc6da8dc8f741))
+* **Itinerary:** migrate to Tailwind ([4628d1c](https://github.com/kiwicom/orbit/commit/4628d1cd650892837ea0cca445c4f0e1d41db2b6))
+* **Pagination:** migrate to tailwind ([c440d74](https://github.com/kiwicom/orbit/commit/c440d74669fa74505827790add9bbe581b6187cb))
+* remove deprecated components ([277724d](https://github.com/kiwicom/orbit/commit/277724d5e1fdefcf33e4da6421beaf2bb3abc9a3))
+* **Seat:** migrate to tailwind ([079105b](https://github.com/kiwicom/orbit/commit/079105b5b6b6055d0dc1c35a9eb65024ba192f53))
+* **ServiceLogo:** migrate to tailwind ([357c5fc](https://github.com/kiwicom/orbit/commit/357c5fc9d7212bdf3ebf9e738ca651b76fd9bdab))
+* **SkipLink:** migrate to tailwind ([a2eb45f](https://github.com/kiwicom/orbit/commit/a2eb45f4787eda5fcac735e71813f0ac17457c09))
+* **SkipNavigation:** migrate to tailwind ([e89fe8c](https://github.com/kiwicom/orbit/commit/e89fe8ca95938168e92c271fde319fcdba3656e1))
+* **Timeline:** migrate to tailwind ([6fdc700](https://github.com/kiwicom/orbit/commit/6fdc700fabcb4d43908964bd1557a94948135caf))
+
+
+### BREAKING CHANGES
+
+* deprecated components were removed: ClickOutside, Desktop, Mobile and KeyValue
+* remove BaggageStepper component
+
+The BaggageStepper component has been removed as it was not being used.
+Please use the Stepper component instead.
+
+
+
+
+
 # [13.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@13.0.0...@kiwicom/orbit-components@13.1.0) (2024-03-07)
 
 

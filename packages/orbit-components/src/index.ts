@@ -19,7 +19,6 @@ export { default as Checkbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as Collapse } from "./Collapse";
 export { default as CountryFlag } from "./CountryFlag";
-export { default as Desktop } from "./deprecated/Desktop";
 export { default as Dialog } from "./Dialog";
 export { default as FeatureIcon } from "./FeatureIcon";
 export { default as NotificationBadge } from "./NotificationBadge";
@@ -34,7 +33,6 @@ export { default as Accordion, AccordionSection } from "./Accordion";
 
 // Modal
 export { default as Portal } from "./Portal";
-export { default as ClickOutside } from "./deprecated/ClickOutside";
 
 export { default as Modal, ModalHeader, ModalSection, ModalFooter } from "./Modal";
 
@@ -74,11 +72,9 @@ export {
   ItinerarySegmentStop,
   ItinerarySegmentDetail,
 } from "./Itinerary";
-export { default as KeyValue } from "./deprecated/KeyValue";
 export { default as List, ListItem } from "./List";
 export { default as ListChoice } from "./ListChoice";
 export { default as Loading } from "./Loading";
-export { default as Mobile } from "./deprecated/Mobile";
 export { default as Pagination } from "./Pagination";
 export { default as Popover } from "./Popover";
 export { default as Radio } from "./Radio";

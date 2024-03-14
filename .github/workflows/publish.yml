@@ -58,7 +58,6 @@ jobs:
         if: ${{ github.event.inputs.dryrun == 'false' }}
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # must be of type Automation to create releases
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_CHANGELOG_WEBHOOK_URL: ${{ secrets.SLACK_CHANGELOG_WEBHOOK_URL }}
         run: |
           echo "scope=@kiwicom" > ~/.npmrc

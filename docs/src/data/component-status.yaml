@@ -152,13 +152,6 @@
   android: Released
   docs: Released
   group: Visuals
-- component: Desktop
-  figma: N/A
-  react: Released
-  ios: N/A
-  android: N/A
-  docs: Released
-  group: Responsive
 - component: DestinationCard
   figma: N/A
   react: Deprecated
@@ -334,13 +327,6 @@
   android: Released
   docs: Released
   group: Progress indicators
-- component: Mobile
-  figma: N/A
-  react: Released
-  ios: N/A
-  android: N/A
-  docs: Released
-  group: Responsive
 - component: Modal
   figma: Released
   react: Released
@@ -608,11 +594,6 @@
   android: N/A
   docs: Released
   group: Progress indicators
-- component: KeyValue
-  ios: Released
-  android: Released
-  react: Released
-  docs: Planned
 - component: SegmentedSwitch
   android: Released
   ios: Released

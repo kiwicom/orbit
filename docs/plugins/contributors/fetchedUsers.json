@@ -135,21 +135,6 @@
     "github": "https://github.com/jaroslav-kubicek"
   },
   {
-    "id": 2660330,
-    "name": "Josef Duda",
-    "username": "JosefDuda",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": "Digital Clown",
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/2660330?v=4",
-    "position": "",
-    "github": "https://github.com/JosefDuda"
-  },
-  {
     "id": 7254437,
     "name": "Luděk Vepřek",
     "username": "vepor",
@@ -223,6 +208,21 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/471278?v=4",
     "position": "",
     "github": "https://github.com/silvenon"
+  },
+  {
+    "id": 2528846,
+    "name": "Michal Sänger",
+    "username": "michalsanger",
+    "error": "",
+    "twitter": null,
+    "website": "",
+    "info": null,
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2528846?v=4",
+    "position": "",
+    "github": "https://github.com/michalsanger"
   },
   {
     "id": 1737335,
@@ -320,7 +320,7 @@
     "username": "mainframev",
     "error": "",
     "twitter": null,
-    "website": "https://mainframev.com",
+    "website": "",
     "info": "Software engineer 💻 \r\nIce hockey player 🏒 \r\nMech keyboard enthusiast ⌨️ ",
     "core": false,
     "active": false,

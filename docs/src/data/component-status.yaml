@@ -601,3 +601,6 @@
   react: Released
   docs: Released
   group: Interaction
+- component: KeyValue
+  android: Released
+  ios: Released

@@ -117,7 +117,7 @@ test("<another meaningful name>", async ({ mount }) => {
 });
 ```
 
-You may have noticed that we are importing `ComponentStoryTest` from the same file. This is because
+You may have noticed that we are importing `ComponentStoryTest` from the same directory. This is because
 it is not possible to mount components with other JSX elements as props. This is a limitation of
 Playwright that is documented in their [official documentation](https://playwright.dev/docs/test-components#test-stories).
 While using the component directly is possible, we recommend using the story instead, as it is
@@ -147,10 +147,10 @@ export function TestComponentStory() {
 }
 ```
 
-### CI
+### Snapshots
 
-Screenshots are OS-specific. CI runs Linux on its machines. In order to generate CI-compatible
-screenshots, you need to run the tests on Linux. You can do that by running the tests in Docker:
+Snapshots are OS-specific. CI runs Linux on its machines. In order to generate CI-compatible
+snapshots, you need to run the tests on Linux. You can do that by running the tests in Docker:
 
 - `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.39.0-jammy /bin/bash`
 - `yarn run docker:reset`
@@ -159,14 +159,20 @@ screenshots, you need to run the tests on Linux. You can do that by running the 
 > Note: you may encounter some installation script errors. This is normal and can be ignored. The
 > same applies to running the tests the first time.
 
-After you're done, reset the environment:
+After you're done, reset the environment after exiting docker:
 
 - `yarn run docker:reset`
 
-Both `darwin` and `linux` screenshots are kept:
+Both `darwin` and `linux` snapshots are kept:
 
-- `darwin` screenshots are for fast local development experience
-- `linux` screenshots are for CI
+- `darwin` snapshots are for fast local development experience
+- `linux` snapshots are for CI
+
+The `darwin` snapshots are used for local development and are not used in CI. They are not reliable because their results can vary between different machines.
+However, they can be useful for debugging and development, so we keep them in the repository and up to date.
+When developing a new feature in a component that produces visual changes, make sure to update the `darwin` snapshots.
+It is possible that when executing the tests locally some tests fail with minimal changes. In that case, it is up to the developer to understand if it is caused by having snapshots
+generated in different machines or if it is really a visual change. If it is an actually intended visual change, the developer should update the `darwin` snapshots.
 
 #### Colima
 
@@ -182,13 +188,25 @@ ln -sfn $(brew --prefix)/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugi
 colima start --cpu 4 --memory 4 --disk 100
 ```
 
+Make sure to execute `colima stop` after you're done with the tests on the docker container.
+
 #### Reviewing the changes
 
-If some tests fail, you can see the difference in the `test-results` folder, that should be inside the src folder.
+If some tests fail locally, you can see the difference in the `test-results` folder, that should be inside the src folder.
 If the changes are expected, re-run the script to update the snapshots.
 
 After you're satisfied with the results, commit any changes and push them to the repository. In GitHub, the
 reviewer can conveniently see difference in before/after images when checking side-by-side.
+
+On the CI, the Github PR checks will show if the snapshots failed. If that is the case, a report
+is deployed, allowing to compare the actual and expected snapshots.
+The report is available in https://kiwicom-orbit-test-report-BRANCH-NAME.surge.sh
+where `BRANCH-NAME` is the name of the branch where the PR is located
+(with any eventual slash `/` replaced by a dash `-`).
+This report is deleted automatically once the PR is closed or merged.
+
+If the changes observed are expected, you can update the linux snapshots by running the Update Visual Tests job in the GitHub Actions tab.
+Don't forget to select the correct branch and, if needed, to provide an accurate commit message.
 
 ### Track down the regression with `git bisect`
 

@@ -31,6 +31,7 @@ module.exports = {
       files: ["src/**/*.ts?(x)"],
       rules: {
         "@typescript-eslint/consistent-type-imports": "warn",
+        "tailwindcss/no-custom-classname": ["error", { whitelist: ["(orbit\\-).*"] }],
       },
     },
     {

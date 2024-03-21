@@ -1,5 +1,6 @@
-import { mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
+
+import mediaQueries from "../../MediaQueries";
 
 const StyledTocWrapper = styled.div`
   ${({ theme }) => css`

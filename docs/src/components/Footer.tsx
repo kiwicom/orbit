@@ -1,8 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Text, Stack, Hide, mediaQueries } from "@kiwicom/orbit-components";
+import { Text, Stack, Hide } from "@kiwicom/orbit-components";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
+import mediaQueries from "./MediaQueries";
 import Switch from "./Switch";
 import GitHub from "../images/logos/github-circle.svg";
 import Twitter from "../images/logos/twitter-circle.svg";

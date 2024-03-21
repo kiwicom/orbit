@@ -2,7 +2,8 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled, { css } from "styled-components";
-import { mediaQueries as mq } from "@kiwicom/orbit-components";
+
+import mq from "./MediaQueries";
 
 const StyledImageWrapper = styled.div`
   display: none;

@@ -1,6 +1,6 @@
 import cx from "clsx";
 
-import { QUERIES } from "../../utils/mediaQuery/consts";
+import { QUERIES } from "../../utils/mediaQuery";
 import type { Direction } from "../../Stack/types";
 
 export enum SPACING {

@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 
 import type { ObjectProperty } from "../types";
-import { QUERIES } from "../../utils/mediaQuery/consts";
+import { QUERIES } from "../../utils/mediaQuery";
 
 export enum SIZES {
   NONE = "none",

@@ -5,7 +5,7 @@ import cx from "clsx";
 
 import type { Props, BasicProps } from "./types";
 import { spaceAfterClasses } from "../../common/tailwind";
-import { QUERIES } from "../mediaQuery/consts";
+import { QUERIES } from "../mediaQuery";
 
 const inlineClasses: Record<QUERIES, { inline: string; grid: string }> = {
   mediumMobile: { inline: "mm:inline-grid", grid: "mm:grid" },

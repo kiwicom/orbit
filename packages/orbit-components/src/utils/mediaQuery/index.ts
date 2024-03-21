@@ -1,8 +1,20 @@
-import { css } from "styled-components";
-
 import type { Theme } from "../../defaultTheme";
-import { QUERIES } from "./consts";
-import type { MediaQueries } from "./types";
+
+export type Devices =
+  | "largeDesktop"
+  | "desktop"
+  | "tablet"
+  | "largeMobile"
+  | "mediumMobile"
+  | "smallMobile";
+
+export enum QUERIES {
+  MEDIUMMOBILE = "mediumMobile",
+  LARGEMOBILE = "largeMobile",
+  TABLET = "tablet",
+  DESKTOP = "desktop",
+  LARGEDESKTOP = "largeDesktop",
+}
 
 export const TOKEN = {
   mediumMobile: "widthBreakpointMediumMobile",
@@ -10,27 +22,18 @@ export const TOKEN = {
   tablet: "widthBreakpointTablet",
   desktop: "widthBreakpointDesktop",
   largeDesktop: "widthBreakpointLargeDesktop",
-};
+} as const;
 
-export const getBreakpointWidth = (
-  name: keyof typeof TOKEN,
+export interface GetBreakpointWidth {
+  (name: keyof typeof TOKEN, theme: Theme): string;
+  (name: keyof typeof TOKEN, theme: Theme, pure: false): string;
+  (name: keyof typeof TOKEN, theme: Theme, pure: true): number;
+}
+
+export const getBreakpointWidth: GetBreakpointWidth = (
+  name: string,
   theme: Theme,
   pure?: boolean,
-): string => {
+) => {
   return pure ? theme.orbit[TOKEN[name]] : `(min-width: ${theme.orbit[TOKEN[name]]}px)`;
 };
-
-const mediaQueries = Object.values(QUERIES).reduce<MediaQueries>(
-  (acc: MediaQueries, device: keyof typeof TOKEN) => {
-    acc[device] = style => css`
-      @media ${({ theme }) => getBreakpointWidth(device, theme)} {
-        ${style};
-      }
-    `;
-
-    return acc;
-  },
-  { mediumMobile: {}, largeMobile: {}, tablet: {}, desktop: {}, largeDesktop: {} } as MediaQueries,
-);
-
-export default mediaQueries;

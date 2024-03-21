@@ -3,7 +3,7 @@ import { boolean } from "@storybook/addon-knobs";
 
 import Separator from "../Separator";
 import ChevronBackward from "../icons/ChevronBackward";
-import type { Devices } from "../utils/mediaQuery/types";
+import type { Devices } from "../utils/mediaQuery";
 
 import Hide from ".";
 

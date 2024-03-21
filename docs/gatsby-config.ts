@@ -18,9 +18,6 @@ const innerPlugins = [
       path: "src/__examples__",
     },
   },
-  {
-    resolve: path.resolve("./plugins/dashboard"),
-  },
 ];
 
 const config: GatsbyConfig = {

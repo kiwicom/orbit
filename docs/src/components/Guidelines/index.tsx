@@ -1,9 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { CheckCircle, CloseCircle } from "@kiwicom/orbit-components/icons";
-import { Stack, Text, Grid, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Stack, Text, Grid } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 
+import mq from "../MediaQueries";
 import { StyledAnchor } from "../HeadingWithLink";
 import { slugify } from "../../utils/common";
 import { extractContent, resolveBorders } from "./helpers";

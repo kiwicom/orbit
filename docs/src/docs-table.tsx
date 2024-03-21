@@ -1,14 +1,8 @@
 import React, { ReactElement } from "react";
 import styled, { css } from "styled-components";
-import {
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  mediaQueries as mq,
-} from "@kiwicom/orbit-components";
+import { Table, TableHead, TableBody, TableRow, TableCell } from "@kiwicom/orbit-components";
 
+import mq from "./components/MediaQueries";
 import { ArrowUp } from "./images/icons/ArrowUp.svg";
 import { ArrowDown } from "./images/icons/ArrowDown.svg";
 import { Sort } from "./images/icons/Sort.svg";

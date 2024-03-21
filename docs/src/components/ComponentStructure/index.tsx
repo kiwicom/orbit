@@ -1,8 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Grid, Text, useRandomIdSeed, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Grid, Text, useRandomIdSeed } from "@kiwicom/orbit-components";
 import KEY_CODE from "@kiwicom/orbit-components/lib/common/keyMaps";
 
+import mq from "../MediaQueries";
 import { StyledAnchor } from "../HeadingWithLink";
 import docsTheme from "../../theme";
 

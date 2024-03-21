@@ -1,8 +1,9 @@
 import React from "react";
 import { Search as SearchIcon } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
-import { Stack, useMediaQuery, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Stack, useMediaQuery } from "@kiwicom/orbit-components";
 
+import mq from "../MediaQueries";
 import { KeyboardShortcuts, StyledIcon } from "./SearchButton";
 
 interface Props {

@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Popover, mediaQueries } from "@kiwicom/orbit-components";
+import { Popover } from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown, ChevronForward } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 import debounce from "lodash/debounce";
 
+import mediaQueries from "../MediaQueries";
 import Tab, { TabObject } from "./Tab";
 import useFontLoaded from "../../hooks/useFontLoaded";
 import { TAB_HEIGHT, FULL_WIDTH_BREAKPOINT } from "./consts";

@@ -1,9 +1,10 @@
 import React from "react";
-import { Stack, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Stack } from "@kiwicom/orbit-components";
 import { Check, Close } from "@kiwicom/orbit-components/icons";
 import styled, { css } from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 
+import mq from "../MediaQueries";
 import { StyledAnchor } from "../HeadingWithLink";
 import * as components from "../../mdx-components";
 import docsTheme from "../../theme";

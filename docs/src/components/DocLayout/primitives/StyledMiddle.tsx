@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import { mediaQueries } from "@kiwicom/orbit-components";
+
+import mediaQueries from "../../MediaQueries";
 
 const StyledMiddle = styled.div`
   ${({ theme }) => css`

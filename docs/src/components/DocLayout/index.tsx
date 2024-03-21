@@ -1,10 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Collapse, Grid, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Collapse, Grid, Hide } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
 import * as components from "../../mdx-components";
+import mq from "../MediaQueries";
 import Head from "../Head";
 import BaseStyles from "../BaseStyles";
 import FancyLink from "../FancyLink";

@@ -81,12 +81,11 @@ import ListItem from "@kiwicom/orbit-components/lib/List/ListItem";
 
 exports[`transform imports as expected 11 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
-import { Alert, ModalSection, mediaQueries, useRandomIdSeed } from "@kiwicom/orbit-components";
+import { Alert, ModalSection, useRandomIdSeed } from "@kiwicom/orbit-components";
 import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
 import { Accommodation } from "@kiwicom/orbit-components/icons";
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
 import { useRandomIdSeed } from "@kiwicom/orbit-components/lib/hooks/useRandomId";
-import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
 import ModalSection from "@kiwicom/orbit-components/lib/Modal/ModalSection";
 import Alert from "@kiwicom/orbit-components/lib/Alert";
 import Invoice from "@kiwicom/orbit-components/lib/icons/Invoice";
@@ -96,13 +95,6 @@ import Accommodation from "@kiwicom/orbit-components/lib/icons/Accommodation";
 
 exports[`transform imports as expected 12 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
-import { mediaQueries } from "@kiwicom/orbit-components";
-~~~~~~~~~~ OUTPUT ~~~~~~~~~~
-import mediaQueries from "@kiwicom/orbit-components/lib/utils/mediaQuery";
-`;
-
-exports[`transform imports as expected 13 1`] = `
-~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { Text, Stack, Grid } from '@kiwicom/orbit-components';
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
 import Grid from "@kiwicom/orbit-components/lib/utils/Grid";
@@ -110,7 +102,7 @@ import Stack from "@kiwicom/orbit-components/lib/Stack";
 import Text from "@kiwicom/orbit-components/lib/Text";
 `;
 
-exports[`transform imports as expected 14 1`] = `
+exports[`transform imports as expected 13 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { Icon, Icons } from '@kiwicom/orbit-components'
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
@@ -118,14 +110,14 @@ import Icons from "@kiwicom/orbit-components/lib/icons";
 import Icon from "@kiwicom/orbit-components/lib/Icon";
 `;
 
-exports[`transform imports as expected 15 1`] = `
+exports[`transform imports as expected 14 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { Grid } from '@kiwicom/orbit-components/icons'
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~
 import Grid from "@kiwicom/orbit-components/lib/icons/Grid";
 `;
 
-exports[`transform imports as expected 16 1`] = `
+exports[`transform imports as expected 15 1`] = `
 ~~~~~~~~~~ INPUT ~~~~~~~~~~
 import { rtl } from "@kiwicom/orbit-components";
 ~~~~~~~~~~ OUTPUT ~~~~~~~~~~

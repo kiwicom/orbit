@@ -1,4 +1,5 @@
 import sourceNodes from "./gatsby/sourceNodes";
 import createSchemaCustomization from "./gatsby/createSchemeCustomization";
+import onCreateNode from "./gatsby/onCreateNode";
 
-export { sourceNodes, createSchemaCustomization };
+export { onCreateNode, sourceNodes, createSchemaCustomization };

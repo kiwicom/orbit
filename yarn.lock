@@ -20557,14 +20557,6 @@ react-github-btn@^1.2.0:
   dependencies:
     github-buttons "^2.22.0"
 
-react-google-login@^5.2.2:
-  version "5.2.2"
-  resolved "https://registry.npmjs.org/react-google-login/-/react-google-login-5.2.2.tgz"
-  integrity sha512-JUngfvaSMcOuV0lFff7+SzJ2qviuNMQdqlsDJkUM145xkGPVIfqWXq9Ui+2Dr6jdJWH5KYdynz9+4CzKjI5u6g==
-  dependencies:
-    "@types/react" "*"
-    prop-types "^15.6.0"
-
 react-helmet@^6.1.0:
   version "6.1.0"
   resolved "https://registry.npmjs.org/react-helmet/-/react-helmet-6.1.0.tgz"

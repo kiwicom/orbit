@@ -1,4 +1,4 @@
-import { mediaQueries } from "@kiwicom/orbit-components";
+import mediaQueries from "../MediaQueries";
 
 export const TAB_HEIGHT = "64px";
 export const BORDER_RADIUS = "12px";

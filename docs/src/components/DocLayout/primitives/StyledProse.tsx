@@ -1,6 +1,7 @@
-import { Box, mediaQueries } from "@kiwicom/orbit-components";
+import { Box } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
+import mediaQueries from "../../MediaQueries";
 import { StyledAnchor } from "../../HeadingWithLink";
 
 const StyledProse = styled(Box)`

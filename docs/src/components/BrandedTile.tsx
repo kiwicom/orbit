@@ -1,8 +1,9 @@
 import React from "react";
-import { Heading, Stack, Button, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Heading, Stack, Button } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 import styled, { css } from "styled-components";
 
+import mq from "./MediaQueries";
 import { boxShadowDefault, boxShadowActive } from "./mixins";
 import { getBgColor, getBgColorHover, getBgColorActive } from "../utils/dark-button";
 import { ICON_SIZE } from "./Tile";

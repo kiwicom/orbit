@@ -1,6 +1,6 @@
-import { mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
+import mediaQueries from "../../MediaQueries";
 import { CONTENT_PADDING } from "../../../consts";
 
 const StyledMobileOutdent = styled.div`

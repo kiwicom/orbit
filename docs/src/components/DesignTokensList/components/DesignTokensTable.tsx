@@ -7,11 +7,11 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  mediaQueries as mq,
 } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 import { camelCase, upperFirst } from "lodash";
 
+import mq from "../../MediaQueries";
 import DesignTokenIcon from "./DesignTokenIcon";
 import DesignTokenValue from "./DesignTokenValue";
 import { StyledDesignTokenBase } from "./DesignTokenColor";

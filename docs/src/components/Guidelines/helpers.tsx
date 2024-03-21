@@ -1,7 +1,8 @@
 import React from "react";
 import { imageWrapperClass } from "gatsby-remark-images/constants";
 import { css } from "styled-components";
-import { mediaQueries as mq } from "@kiwicom/orbit-components";
+
+import mq from "../MediaQueries";
 
 import { Content } from ".";
 

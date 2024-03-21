@@ -1,8 +1,8 @@
 import React from "react";
 import Scrollspy from "react-scrollspy";
 import styled, { css } from "styled-components";
-import { mediaQueries as mq } from "@kiwicom/orbit-components";
 
+import mq from "./MediaQueries";
 import { TableOfContentsItem, useTableOfContents } from "../services/table-of-contents";
 
 interface StyledAnchorProps {

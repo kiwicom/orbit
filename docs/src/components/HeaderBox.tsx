@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import { mediaQueries as mq } from "@kiwicom/orbit-components";
 
+import mq from "./MediaQueries";
 import { MAX_CONTENT_WIDTH } from "../consts";
 
 const HeaderBox = styled.div`

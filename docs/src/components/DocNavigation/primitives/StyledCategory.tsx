@@ -1,5 +1,6 @@
-import { mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
+
+import mediaQueries from "../../MediaQueries";
 
 export const StyledCategoryContainer = styled.div`
   width: 100%;

@@ -41,7 +41,6 @@ const pathOverwrites = {
   ItinerarySegmentBanner: "Itinerary/ItinerarySegment/ItinerarySegmentBanner",
   LayoutColumn: "Layout/LayoutColumn",
   ListItem: "List/ListItem",
-  mediaQueries: "utils/mediaQuery",
   ModalFooter: "Modal/ModalFooter",
   ModalHeader: "Modal/ModalHeader",
   ModalSection: "Modal/ModalSection",
@@ -71,6 +70,9 @@ const pathOverwrites = {
   useRandomId: "hooks/useRandomId",
   useRandomIdSeed: { path: "hooks/useRandomId", named: true },
   useFocusTrap: "hooks/useFocusTrap",
+  getBreakpointWidth: "utils/mediaQuery",
+  TOKEN: "utils/mediaQuery",
+  QUERIES: "utils/mediaQuery",
   rtl: { path: `utils/rtl`, namespace: true },
 };
 

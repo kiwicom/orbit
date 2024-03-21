@@ -1,5 +1,5 @@
 import type { Props } from "../types";
-import type { QUERIES } from "../../utils/mediaQuery/consts";
+import type { QUERIES } from "../../utils/mediaQuery";
 import { borderRadiusClasses } from "./tailwindClasses";
 
 const getBorderRadiusClass = (

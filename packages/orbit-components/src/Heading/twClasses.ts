@@ -1,5 +1,5 @@
 import { TYPE_OPTIONS } from "./consts";
-import { QUERIES } from "../utils/mediaQuery/consts";
+import { QUERIES } from "../utils/mediaQuery";
 
 export const typeClasses: {
   [K in QUERIES | TYPE_OPTIONS]: K extends QUERIES ? Record<TYPE_OPTIONS, string> : string;

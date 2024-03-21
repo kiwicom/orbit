@@ -1,5 +1,5 @@
 import type { Props } from "../types";
-import type { QUERIES } from "../../utils/mediaQuery/consts";
+import type { QUERIES } from "../../utils/mediaQuery";
 import { textAlignClasses } from "../../common/tailwind/textAlign";
 
 const getTextAlignClass = (textAlign: Props["textAlign"], viewport?: QUERIES): string | null => {

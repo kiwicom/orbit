@@ -1,5 +1,5 @@
 import type { Props } from "../types";
-import type { QUERIES } from "../../utils/mediaQuery/consts";
+import type { QUERIES } from "../../utils/mediaQuery";
 import { positionClasses } from "./tailwindClasses";
 
 const getPositionClass = (position: Props["position"], viewport?: QUERIES): string | null => {

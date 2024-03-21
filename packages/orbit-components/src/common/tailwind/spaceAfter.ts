@@ -1,4 +1,4 @@
-import { QUERIES } from "../../utils/mediaQuery/consts";
+import { QUERIES } from "../../utils/mediaQuery";
 import { SPACINGS_AFTER } from "../getSpacingToken";
 import type { SpaceAfterSizes as SpaceAfter } from "../types";
 

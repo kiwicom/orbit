@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { SPACINGS } from "../utils/layout/consts";
-import { QUERIES } from "../utils/mediaQuery/consts";
+import { QUERIES } from "../utils/mediaQuery";
 import type { MediaQuery } from "./types";
 
 import Inline from ".";

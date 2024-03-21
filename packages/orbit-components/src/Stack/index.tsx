@@ -17,7 +17,7 @@ import {
   getSpacingClasses,
   getSpaceAfterClasses,
 } from "../common/tailwind";
-import { QUERIES } from "../utils/mediaQuery/consts";
+import { QUERIES } from "../utils/mediaQuery";
 import { DIRECTION } from "../common/tailwind/direction";
 import { SPACING } from "../common/tailwind/spacing";
 import { ALIGN } from "../common/tailwind/alignItems";

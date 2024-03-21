@@ -1,5 +1,5 @@
 import type { Props } from "../types";
-import type { QUERIES } from "../../utils/mediaQuery/consts";
+import type { QUERIES } from "../../utils/mediaQuery";
 import { wrapClasses } from "../../common/tailwind/wrap";
 
 const getWrapClass = (wrap: Props["wrap"], viewport?: QUERIES): string | null => {

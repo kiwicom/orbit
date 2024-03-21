@@ -6,7 +6,7 @@ import cx from "clsx";
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, ALIGN } from "./consts";
 import { textAlignClasses } from "../common/tailwind/textAlign";
 import { spaceAfterClasses } from "../common/tailwind/spaceAfter";
-import { QUERIES } from "../utils/mediaQuery/consts";
+import { QUERIES } from "../utils/mediaQuery";
 import type { Props } from "./types";
 import { typeClasses } from "./twClasses";
 

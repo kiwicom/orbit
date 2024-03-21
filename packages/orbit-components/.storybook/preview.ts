@@ -1,7 +1,7 @@
 import { Preview } from "@storybook/react";
 
 import "../src/tailwind.css";
-import { QUERIES } from "../src/utils/mediaQuery/consts";
+import { QUERIES } from "../src/utils/mediaQuery";
 import orbitDecorator from "./orbitDecorator";
 import theme from "../src/defaultTheme";
 

@@ -1,5 +1,5 @@
 import type { Props } from "../types";
-import type { QUERIES } from "../../utils/mediaQuery/consts";
+import type { QUERIES } from "../../utils/mediaQuery";
 import getWrapClass from "./getWrap";
 import getPositionClass from "./getPosition";
 import getTextAlignClass from "./getTextAlign";

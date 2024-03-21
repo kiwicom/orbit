@@ -1,4 +1,4 @@
-import { QUERIES } from "../../utils/mediaQuery/consts";
+import { QUERIES } from "../../utils/mediaQuery";
 
 export enum TEXT_ALIGN {
   START = "start",

@@ -3,7 +3,7 @@
 import * as React from "react";
 import cx from "clsx";
 
-import { QUERIES } from "../utils/mediaQuery/consts";
+import { QUERIES } from "../utils/mediaQuery";
 import type { Props } from "./types";
 import getTailwindClasses from "./helpers";
 

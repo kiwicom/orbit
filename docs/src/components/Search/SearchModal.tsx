@@ -6,7 +6,6 @@ import { debounce } from "lodash";
 import { useMediaQuery } from "@kiwicom/orbit-components";
 
 import SearchModalUI from "./SearchModalUI";
-import { isLoggedIn, isBrowser } from "../../services/auth";
 import type { SearchResult, LodashDebounceFunc } from "./types";
 import { update } from "../../utils/storage";
 
@@ -34,13 +33,6 @@ interface QueryResponse {
   allSitePage: {
     nodes: Array<{ id: string; path: string }>;
   };
-  allTracking: {
-    nodes: Array<{
-      id: string;
-      name: string;
-      trackedData: Array<{ name: string; props: Array<{ name: string; used: number }> }>;
-    }>;
-  };
 }
 
 export default function SearchModal({ onClose }: Props) {
@@ -64,25 +56,8 @@ export default function SearchModal({ onClose }: Props) {
           }
         }
       }
-      allTracking {
-        nodes {
-          id
-          name
-          trackedData {
-            name
-            props {
-              name
-              used
-            }
-          }
-        }
-      }
       allSitePage(
-        filter: {
-          path: {
-            in: ["/changelog/", "/roadmap/", "/dashboard/", "/component-status/", "/components"]
-          }
-        }
+        filter: { path: { in: ["/changelog/", "/roadmap/", "/component-status/", "/components"] } }
       ) {
         nodes {
           id
@@ -104,29 +79,6 @@ export default function SearchModal({ onClose }: Props) {
       };
     });
 
-    const trackingPages =
-      isLoggedIn() && isBrowser && window.location.pathname.includes("dashboard")
-        ? data.allTracking.nodes.map(({ name: repoName, trackedData }) => {
-            const pages: SearchResult[] = [];
-
-            trackedData.forEach(({ name: componentName, props }) => {
-              props.forEach(({ name: propName }) => {
-                const fullPath = `${repoName}/${componentName.toLowerCase()}/${propName}`;
-
-                pages.push({
-                  id: componentName,
-                  description: "",
-                  name: fullPath.split("/").join(" "),
-                  path: `/dashboard/tracking/${repoName}/${componentName.toLowerCase()}/#${propName}`,
-                  breadcrumbs: fullPath.split("/"),
-                });
-              });
-            });
-
-            return pages;
-          })
-        : [];
-
     const restPages: SearchResult[] = data.allSitePage.nodes.map(node => {
       return {
         id: node.id,
@@ -137,7 +89,7 @@ export default function SearchModal({ onClose }: Props) {
       };
     });
 
-    return [...mdxPages, ...restPages].concat(...trackingPages);
+    return [...mdxPages, ...restPages];
   }, [data]);
 
   const { isTablet } = useMediaQuery();

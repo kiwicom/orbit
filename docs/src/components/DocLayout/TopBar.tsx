@@ -56,9 +56,8 @@ const TopBar = ({
   storybookLink,
 }) => {
   const hasTabs = tabs && tabs.length > 0;
-  const isDashboard = location.pathname.includes("/dashboard/");
 
-  const hasLowerLayer = hasTabs || hasHeaderLink || hasStorybook || isDashboard;
+  const hasLowerLayer = hasTabs || hasHeaderLink || hasStorybook;
 
   return custom ? (
     <StyledProse

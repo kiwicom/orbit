@@ -13,7 +13,7 @@ import {
   Modal,
   mediaQueries as mq,
 } from "@kiwicom/orbit-components";
-import { MenuHamburger, StarEmpty, Logout } from "@kiwicom/orbit-components/icons";
+import { MenuHamburger, StarEmpty } from "@kiwicom/orbit-components/icons";
 import GitHubButton from "react-github-btn";
 
 import Logo from "../../images/orbit-logo.svg";
@@ -24,7 +24,6 @@ import { useBookmarks } from "../../services/bookmarks";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../../consts";
 import { useKeyboard } from "../../services/KeyboardProvider";
 import SearchNavbarButton from "../Search/SearchNavbarButton";
-import { isLoggedIn, logout } from "../../services/auth";
 import NavigationLinks from "./Links";
 
 const StyledWrapper = styled.header`
@@ -178,9 +177,6 @@ const Navbar = ({ location, docNavigation }: Props) => {
                 title="Open bookmarks"
                 onClick={() => setMenuOpen(true)}
               />
-            )}
-            {isLoggedIn() && (
-              <Button title="logout" iconLeft={<Logout />} type="white" circled onClick={logout} />
             )}
           </Stack>
           {menuOpen && (

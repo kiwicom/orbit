@@ -249,6 +249,14 @@ export default function orbitTailwindPreset(options?: Options): Config {
           switch: `inset 0 0 1px 0 rgba(7, 64, 92, 0.1),${tokens.boxShadowAction}`,
           "modal-scrolled": `inset 0 1px 0 ${tokens.paletteCloudNormal}, ${tokens.boxShadowFixedReverse}`,
           modal: `inset 0 0 0 transparent, ${tokens.boxShadowFixedReverse}`,
+          "wizard-step-icon-hover": `0 0 0 6px ${convertHexToRgba(
+            tokens.paletteProductNormal,
+            20,
+          )}`,
+          "wizard-step-icon-active": `0 0 0 4px ${convertHexToRgba(
+            tokens.paletteProductNormal,
+            20,
+          )}`,
         },
         keyframes: {
           "slow-pulse": {

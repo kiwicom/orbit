@@ -1109,6 +1109,8 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "raised": "0 4px 8px 0 rgba(37, 42, 49, 0.16),0 8px 24px 0 rgba(37, 42, 49, 0.24)",
       "raised-reverse": "0 -4px 8px 0 rgba(37, 42, 49, 0.16),0 -8px 24px 0 rgba(37, 42, 49, 0.24)",
       "switch": "inset 0 0 1px 0 rgba(7, 64, 92, 0.1),0 0 2px 0 rgba(37, 42, 49, 0.16),0 1px 4px 0 rgba(37, 42, 49, 0.12)",
+      "wizard-step-icon-active": "0 0 0 4px rgba(0, 165, 142, 0.2)",
+      "wizard-step-icon-hover": "0 0 0 6px rgba(0, 165, 142, 0.2)",
     },
     "boxShadowColor": {
       "blue": {

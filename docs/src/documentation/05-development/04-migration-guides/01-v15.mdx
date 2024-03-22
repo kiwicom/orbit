@@ -1,0 +1,19 @@
+---
+title: v15
+description: How to migrate to Orbit 15.0.0
+redirect_from:
+  - /migration-guides/v15/
+---
+
+# Orbit Migration Guide v15
+
+This migration guide focuses on the process of migrating from Orbit v14 to v15.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### mediaQueries util function removed
+
+The `mediaQueries` function is no longer available. This was a styled-components util function that is now no longer expected to be used, as we move away from StyledComponents.
+If needed, the tokens and breakpoint values are still accessible via the `getBreakpointWidth` function and the `QUERIES` and `TOKEN` constants.
+Check [the documentation](/development/utilities/media-queries/) for more information on how to use these.

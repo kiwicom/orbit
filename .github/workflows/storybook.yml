@@ -16,8 +16,7 @@ env: # Set environment variables for every job and step in this workflow
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write # for dependabot
+    permissions: write-all # for dependabot
     steps:
       - name: Checkout
         uses: actions/checkout@v4

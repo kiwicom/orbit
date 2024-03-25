@@ -1,7 +1,6 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean } from "@storybook/addon-knobs";
-import { css } from "styled-components";
 
 import Stack from "./Stack";
 import RenderInRtl from "./utils/rtl/RenderInRtl";
@@ -518,13 +517,7 @@ export const AdvancedErrorExample = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      css={css`
-        max-width: 600px;
-        padding: 20px 0;
-      `}
-    >
+    <form onSubmit={handleSubmit} style={{ maxWidth: "600px", padding: "20px 0" }}>
       <Stack flex justify="between" spaceAfter="large">
         <InputField
           required
@@ -720,13 +713,7 @@ export const AdvancedHelpExample = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      css={css`
-        max-width: 600px;
-        padding: 20px 0;
-      `}
-    >
+    <form onSubmit={handleSubmit} style={{ maxWidth: "600px", padding: "20px 0" }}>
       <Stack flex direction="column" spaceAfter="large">
         <InputField
           name="name"

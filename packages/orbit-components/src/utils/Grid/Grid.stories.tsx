@@ -1,14 +1,9 @@
 import * as React from "react";
-import styled from "styled-components";
 import { text, boolean, number, object, select } from "@storybook/addon-knobs";
 
 import { SPACINGS_AFTER } from "../../common/consts";
 
 import Grid from ".";
-
-const CustomDiv = styled.div`
-  background: rgba(0, 169, 145, 0.2);
-`;
 
 export default {
   title: "Grid",
@@ -68,7 +63,7 @@ export const Playground = () => {
     >
       {Array(...Array(divsCount)).map((_, key) => (
         // eslint-disable-next-line
-        <CustomDiv key={key} />
+        <div key={key} style={{ background: "rgba(0, 169, 145, 0.2)" }} />
       ))}
     </Grid>
   );

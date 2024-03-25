@@ -1,5 +1,4 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
 import { withKnobs, text, select, boolean, object, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
@@ -19,19 +18,7 @@ import Modal from "../Modal";
 
 import Popover from ".";
 
-const Content = styled.div`
-  height: 2000px;
-`;
-
-const ScrolledPage = styled.div`
-  height: 2000px;
-  padding-top: 800px;
-`;
-const ScrollWrapper = styled.div`
-  height: 50vh;
-  overflow: scroll;
-  background: gray;
-`;
+const Content = () => <div style={{ height: "2000px" }} />;
 
 const selects = (
   <Stack direction="column">
@@ -396,12 +383,7 @@ export const ScrollingPage = () => {
   const labelClose = text("labelClose", "Close");
   return (
     <>
-      <div
-        css={css`
-          position: sticky;
-          top: 20px;
-        `}
-      >
+      <div className="sticky" style={{ top: "20px" }}>
         <Card>
           <Popover
             fixed
@@ -433,8 +415,8 @@ ScrollingPage.story = {
 export const ScrollingContent = () => {
   const labelClose = text("labelClose", "Close");
   return (
-    <ScrollWrapper>
-      <ScrolledPage>
+    <div className="bg-cloud-dark overflow-scroll" style={{ height: "50vh" }}>
+      <div style={{ height: "2000px", paddingTop: "800px" }}>
         <Card>
           <Popover
             content={content}
@@ -448,8 +430,8 @@ export const ScrollingContent = () => {
           </Popover>
         </Card>
         <Content />
-      </ScrolledPage>
-    </ScrollWrapper>
+      </div>
+    </div>
   );
 };
 

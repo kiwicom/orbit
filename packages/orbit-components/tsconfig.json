@@ -12,5 +12,5 @@
     "importsNotUsedAsValues": "error",
     "ignoreDeprecations": "5.0"
   },
-  "include": ["src/**/*", "css-prop.d.ts", "typings/**/*.d.ts", "config/**/*"]
+  "include": ["src/**/*", "css-prop.d.ts", "config/**/*"]
 }

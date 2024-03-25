@@ -44,19 +44,6 @@ For a live preview, check out our [Storybook](https://kiwicom.github.io/orbit/) 
 
 You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io/s/github/designkiwicom/orbit-sandbox).
 
-## Typescript
-
-Orbit comes with Typescript definition files.
-If you're working with Typescript, you need to add a type for `styled-components`.
-
-```shell
-// with npm
-npm install @types/styled-components --save-dev
-
-// with yarn
-yarn add @types/styled-components -D
-```
-
 ## Contributing
 
 We're working on making this project fully open-source.

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import Timeline, { TimelineStep } from ".";
 

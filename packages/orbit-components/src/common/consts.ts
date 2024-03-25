@@ -15,3 +15,13 @@ export enum PLACEMENTS {
   LEFT_START = "left-start",
   LEFT_END = "left-end",
 }
+
+export enum SPACINGS_AFTER {
+  NONE = "none",
+  SMALLEST = "smallest",
+  SMALL = "small",
+  NORMAL = "normal",
+  MEDIUM = "medium",
+  LARGE = "large",
+  LARGEST = "largest",
+}

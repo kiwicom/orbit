@@ -6,7 +6,7 @@ import * as Icons from "../icons";
 import { TYPES } from "./consts";
 import { SIZE_OPTIONS } from "../primitives/ButtonPrimitive/common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import ButtonLink from ".";
 

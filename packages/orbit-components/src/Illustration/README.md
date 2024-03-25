@@ -16,26 +16,26 @@ After adding import into your project you can use it simply like:
 
 The table below contains all types of props available in the Illustration component.
 
-| Name       | Type            | Default    | Description                                                                                                                                                    |
-| :--------- | :-------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| alt        | `string`        |            | Optional property for passing own `alt` attribute to the DOM image element. Bby default, the `name` of illustration is used.                                   |
-| dataTest   | `string`        |            | Optional prop for testing purposes.                                                                                                                            |
-| id         | `string`        |            | Set `id` for `Illustration`                                                                                                                                    |
-| **name**   | [`enum`](#enum) |            | Name for the displayed illustration.                                                                                                                           |
-| size       | [`enum`](#enum) | `"medium"` | The size of the Illustration.                                                                                                                                  |
-| spaceAfter | `enum`          |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| Name       | Type            | Default    | Description                                                                                                                  |
+| :--------- | :-------------- | :--------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| alt        | `string`        |            | Optional property for passing own `alt` attribute to the DOM image element. Bby default, the `name` of illustration is used. |
+| dataTest   | `string`        |            | Optional prop for testing purposes.                                                                                          |
+| id         | `string`        |            | Set `id` for `Illustration`                                                                                                  |
+| **name**   | [`enum`](#enum) |            | Name for the displayed illustration.                                                                                         |
+| size       | [`enum`](#enum) | `"medium"` | The size of the Illustration.                                                                                                |
+| spaceAfter | `enum`          |            | Additional `margin-bottom` after component.                                                                                  |
 
 ### enum
 
-| name                            | size           |
-| :------------------------------ | :------------- |
-| `"Accommodation"`               | `"extraSmall"` |
-| `"AirHelp"`                     | `"small"`      |
-| `"AirportTransport"`            | `"medium"`     |
-| `"AirportTransportTaxi"`        | `"large"`      |
-| `"AirportShuttle"`              | `"display"`    |
-| `"Ambulance"`                   |
-| `"AppQRCode"`                   |
+| name                            | size           | spaceAfter   |
+| :------------------------------ | :------------- | :----------- |
+| `"Accommodation"`               | `"extraSmall"` | `"none"`     |
+| `"AirHelp"`                     | `"small"`      | `"smallest"` |
+| `"AirportTransport"`            | `"medium"`     | `"small"`    |
+| `"AirportTransportTaxi"`        | `"large"`      | `"normal"`   |
+| `"AirportShuttle"`              | `"display"`    | `"medium"`   |
+| `"Ambulance"`                   |                | `"large"`    |
+| `"AppQRCode"`                   |                | `"largest"`  |
 | `"BaggageDrop"`                 |
 | `"Boarding"`                    |
 | `"BoardingPass"`                |

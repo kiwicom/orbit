@@ -10,7 +10,7 @@ import TextLink from "../TextLink";
 import ServiceLogo from "../ServiceLogo";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Tag from "../Tag";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import InputField from ".";
 

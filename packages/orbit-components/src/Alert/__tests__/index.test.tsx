@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { render, screen } from "../../test-utils";
 import Alert from "..";
 import defaultTheme from "../../defaultTheme";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 
 const message = "Alert message";
 

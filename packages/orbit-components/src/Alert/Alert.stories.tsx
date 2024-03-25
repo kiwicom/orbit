@@ -6,7 +6,7 @@ import * as Icons from "../icons";
 import { TYPE_OPTIONS } from "./consts";
 import { TYPE_OPTIONS as BUTTON_TYPE_OPTIONS } from "./AlertButton/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 import List from "../List";
 import ListItem from "../List/ListItem";
 import Text from "../Text";

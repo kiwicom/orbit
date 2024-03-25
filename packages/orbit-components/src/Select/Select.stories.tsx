@@ -6,7 +6,7 @@ import Airplane from "../icons/Airplane";
 import CountryFlag from "../CountryFlag";
 import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import Select from ".";
 

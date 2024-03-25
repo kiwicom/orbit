@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { text, boolean, number, object, select } from "@storybook/addon-knobs";
 
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 
 import Grid from ".";
 

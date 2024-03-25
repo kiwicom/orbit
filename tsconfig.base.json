@@ -7,7 +7,7 @@
     "resolveJsonModule": true,
     "noImplicitAny": false,
     "useUnknownInCatchVariables": false,
-    "types": ["node", "jest", "jest-styled-components", "@testing-library/jest-dom"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "ignoreDeprecations": "5.0"
   },
   "ts-node": {
@@ -18,7 +18,7 @@
       "skipLibCheck": true,
       "resolveJsonModule": true,
       "esModuleInterop": true,
-      "types": ["node", "jest", "jest-styled-components", "@testing-library/jest-dom"],
+      "types": ["node", "jest", "@testing-library/jest-dom"],
       "useUnknownInCatchVariables": false
     }
   }

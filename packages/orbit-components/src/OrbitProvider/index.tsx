@@ -1,13 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { tokensToCssVars, defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { parseToRgba } from "color2k";
 
 import QueryContextProvider from "./QueryContext/Provider";
 import RandomIdProvider from "./RandomId/Provider";
 import type { Props } from "./types";
+import ThemeProvider from "./ThemeProvider/Provider";
 
 // we need only palette tokens for whitelables
 const getCssVarsForWL = (theme: typeof defaultTokens) =>
@@ -51,9 +51,9 @@ const OrbitProvider = ({ theme, children, useId }: Props) => {
       <style id="orbit-theme-css-vars">
         {tokensToCssVars({ tokens: getCssVarsForWL(theme.orbit), cssClass: ":root" })}
       </style>
-      <StyledThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <QueryContextProvider>{children}</QueryContextProvider>
-      </StyledThemeProvider>
+      </ThemeProvider>
     </RandomIdProvider>
   );
 };

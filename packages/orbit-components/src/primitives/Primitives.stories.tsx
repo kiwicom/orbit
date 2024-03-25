@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 
 import ButtonPrimitiveComponent from "./ButtonPrimitive";
 import * as Icons from "../icons";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 import BadgePrimitiveComponent from "./BadgePrimitive";
 import IllustrationPrimitiveComponent, { SIZE_OPTIONS } from "./IllustrationPrimitive";
 

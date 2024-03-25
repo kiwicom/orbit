@@ -6,7 +6,7 @@ import * as Icons from "../icons";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Stack from "../Stack";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import Button from ".";
 

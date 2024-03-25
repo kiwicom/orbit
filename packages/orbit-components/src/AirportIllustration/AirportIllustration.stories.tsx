@@ -3,7 +3,7 @@ import { select, text } from "@storybook/addon-knobs";
 
 import { NAMES } from "./consts.mts";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 import type { Name } from "./types";
 
 import AirportIllustration from ".";

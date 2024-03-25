@@ -9,7 +9,7 @@ import InputField from "../InputField";
 import Text from "../Text";
 import TextLink from "../TextLink";
 import Airplane from "../icons/Airplane";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 import ButtonGroup from "../ButtonGroup";
 import Card from "../Card";
 import Checkbox from "../Checkbox";

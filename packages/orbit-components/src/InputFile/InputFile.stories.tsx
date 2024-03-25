@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { text, array, select, boolean } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import InputFile from ".";
 

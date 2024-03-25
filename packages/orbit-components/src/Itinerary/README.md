@@ -38,11 +38,23 @@ After adding import to your project you can use it simply like:
 
 ## Props
 
-| Name       | Type              | Required           | Default | Description                                                                                                                                                    |
-| ---------- | ----------------- | ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| children   | `React.ReactNode` | :heavy_check_mark: |         | The content of Itinerary component                                                                                                                             |
-| dataTest   | `string`          |                    |         | Optional prop for testing purposes.                                                                                                                            |
-| spaceAfter | `enum`            |                    |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| Name       | Type              | Required           | Default | Description                                 |
+| ---------- | ----------------- | ------------------ | ------- | ------------------------------------------- |
+| children   | `React.ReactNode` | :heavy_check_mark: |         | The content of Itinerary component          |
+| dataTest   | `string`          |                    |         | Optional prop for testing purposes.         |
+| spaceAfter | `enum`            |                    |         | Additional `margin-bottom` after component. |
+
+### enum
+
+| spaceAfter   |
+| :----------- |
+| `"none"`     |
+| `"smallest"` |
+| `"small"`    |
+| `"normal"`   |
+| `"medium"`   |
+| `"large"`    |
+| `"largest"`  |
 
 ## ItinerarySegment
 
@@ -50,16 +62,28 @@ The ItinerarySegment component serves as a wrapper of atomic unit `ItinerarySegm
 
 ## Props
 
-| Name        | Type              | Required           | Default | Description                                                                                                                                                    |
-| ----------- | ----------------- | ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| label       | `React.ReactNode` |                    |         | Status message of ItinerarySegment                                                                                                                             |
-| children    | `React.ReactNode` | :heavy_check_mark: |         | The content of ItinerarySegment                                                                                                                                |
-| dataTest    | `string`          |                    |         | Optional prop for testing purposes.                                                                                                                            |
-| id          | `string`          |                    |         | Set `id` for `Itinerary`                                                                                                                                       |
-| noElevation | `boolean`         |                    |         | Turn off elevation (box-shadow) for a segment.                                                                                                                 |
-| spaceAfter  | `enum`            |                    |         | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
-| actionable  | `boolean`         |                    | `true`  | Applies actionable styles for ItinerarySegment wrapper                                                                                                         |
-| banner      | `React.Node`      |                    |         | Additional information for `ItinerarySegment`                                                                                                                  |
+| Name        | Type              | Required           | Default | Description                                            |
+| ----------- | ----------------- | ------------------ | ------- | ------------------------------------------------------ |
+| label       | `React.ReactNode` |                    |         | Status message of ItinerarySegment                     |
+| children    | `React.ReactNode` | :heavy_check_mark: |         | The content of ItinerarySegment                        |
+| dataTest    | `string`          |                    |         | Optional prop for testing purposes.                    |
+| id          | `string`          |                    |         | Set `id` for `Itinerary`                               |
+| noElevation | `boolean`         |                    |         | Turn off elevation (box-shadow) for a segment.         |
+| spaceAfter  | `enum`            |                    |         | Additional `margin-bottom` after component.            |
+| actionable  | `boolean`         |                    | `true`  | Applies actionable styles for ItinerarySegment wrapper |
+| banner      | `React.Node`      |                    |         | Additional information for `ItinerarySegment`          |
+
+### enum
+
+| spaceAfter   |
+| :----------- |
+| `"none"`     |
+| `"smallest"` |
+| `"small"`    |
+| `"normal"`   |
+| `"medium"`   |
+| `"large"`    |
+| `"largest"`  |
 
 ## ItinerarySegmentStop
 

@@ -7,7 +7,7 @@ import ButtonLink from "../../ButtonLink";
 import TextLink from "../../TextLink";
 import Visibility from "../../icons/Visibility";
 import Search from "../../icons/Search";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 import { INPUTMODE } from "../consts";
 import defaultTheme from "../../defaultTheme";
 

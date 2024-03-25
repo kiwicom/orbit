@@ -18,16 +18,28 @@ After adding import to your project you can use it simply like:
 
 The Table below contains all types of props available in the Breadcrumbs component.
 
-| Name         | Type                       | Default  | Description                                                                                                                                                       |
-| :----------- | :------------------------- | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dataTest     | `string`                   |          | Optional prop for testing purposes.                                                                                                                               |
-| id           | `string`                   |          | Set `id` for `Breadcrumbs`                                                                                                                                        |
-| **children** | `React.Node`               |          | The content of the Breadcrumbs, normally [`BreadcrumbsItem`](#breadcrumbsitem).                                                                                   |
-| onGoBack     | `event => void \| Promise` |          | Callback for handling back button action. If present the back button is visible.                                                                                  |
-| backHref     | `string`                   |          | The location for the back button to direct to. Turns the back button into a link when present (renders as an `a` element).                                        |
-| goBackTitle  | `React.Node`               | `"Back"` | Translation string for the go back link on mobile, defined when onGoBack is defined.                                                                              |
+| Name         | Type                       | Default  | Description                                                                                                                |
+| :----------- | :------------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------- |
+| dataTest     | `string`                   |          | Optional prop for testing purposes.                                                                                        |
+| id           | `string`                   |          | Set `id` for `Breadcrumbs`                                                                                                 |
+| **children** | `React.Node`               |          | The content of the Breadcrumbs, normally [`BreadcrumbsItem`](#breadcrumbsitem).                                            |
+| onGoBack     | `event => void \| Promise` |          | Callback for handling back button action. If present the back button is visible.                                           |
+| backHref     | `string`                   |          | The location for the back button to direct to. Turns the back button into a link when present (renders as an `a` element). |
+| goBackTitle  | `React.Node`               | `"Back"` | Translation string for the go back link on mobile, defined when onGoBack is defined.                                       |
 |              |
-| spaceAfter   | `enum`                     |          | Additional `margin-bottom` after component. [See spacing docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
+| spaceAfter   | `enum`                     |          | Additional `margin-bottom` after component.                                                                                |
+
+### enum
+
+| spaceAfter   |
+| :----------- |
+| `"none"`     |
+| `"smallest"` |
+| `"small"`    |
+| `"normal"`   |
+| `"medium"`   |
+| `"large"`    |
+| `"largest"`  |
 
 ## Functional specs
 

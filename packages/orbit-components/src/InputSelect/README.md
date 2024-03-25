@@ -95,7 +95,19 @@ The table below contains all types of props available in the InputSelect compone
 | showAll           | `boolean`                                                                         | `true`                             | If set to true, it will display all options at the end of the list. If set to false, it will display only the options without a group at the end of the list.                     |
 | showAllLabel      | `string`                                                                          | `"All options" \| "Other options"` | The label displayed before showing the last group of options. If `showAll` is true, the default value is `"All options"`. If it is false, the default value is `"Other options"`. |
 | insideInputGroup  | `boolean`                                                                         | `false`                            | If true, the InputSelect will be rendered inside InputGroup.                                                                                                                      |
-| spaceAfter        | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |                                    | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken)                    |
+| spaceAfter        | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |                                    | Additional `margin-bottom` after component.                                                                                                                                       |
+
+### enum
+
+| spaceAfter   |
+| :----------- |
+| `"none"`     |
+| `"smallest"` |
+| `"small"`    |
+| `"normal"`   |
+| `"medium"`   |
+| `"large"`    |
+| `"largest"`  |
 
 ## Option
 

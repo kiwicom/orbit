@@ -3,7 +3,7 @@ import userEvent, { PointerEventsCheckLevel } from "@testing-library/user-event"
 
 import { render, screen } from "../../test-utils";
 import InputFile from "..";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 
 describe("InputFile", () => {
   const user = userEvent.setup({ pointerEventsCheck: PointerEventsCheckLevel.Never });

@@ -3,7 +3,7 @@ import { select, number, text, boolean } from "@storybook/addon-knobs";
 
 import defaultTheme from "../defaultTheme";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import Skeleton from ".";
 

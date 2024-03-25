@@ -2,7 +2,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { select, text, boolean } from "@storybook/addon-knobs";
 
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Breadcrumbs, { BreadcrumbsItem } from ".";

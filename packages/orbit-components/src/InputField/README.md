@@ -50,7 +50,7 @@ The table below contains all types of props available in the InputField componen
 | **prefix**           | `React.Node`                       |           | The prefix component for the InputField.                                                                                                                                         |
 | readOnly             | `boolean`                          | `"false"` | If `true`, the InputField be readOnly.                                                                                                                                           |
 | ref                  | `func`                             |           | Prop for forwarded ref of the InputField. [See Functional specs](#functional-specs)                                                                                              |
-| spaceAfter           | `enum`                             |           | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken)                   |
+| spaceAfter           | `enum`                             |           | Additional `margin-bottom` after component.                                                                                                                                      |
 | suffix               | `React.Node`                       |           | The suffix component for the InputField. [See Functional specs](#functional-specs)                                                                                               |
 | tabIndex             | `string \| number`                 |           | Specifies the tab order of an element                                                                                                                                            |
 | **type**             | [`enum`](#enum)                    | `"text"`  | The type of the InputField.                                                                                                                                                      |
@@ -66,15 +66,15 @@ The table below contains all types of props available in the InputField componen
 
 ### enum
 
-| inputMode   | type           |
-| :---------- | :------------- |
-| `"numeric"` | `"text"`       |
-| `"tel"`     | `"number"`     |
-| `"decimal"` | `"email"`      |
-| `"email"`   | `"password"`   |
-| `"url"`     | `"passportid"` |
-| `"search"`  |
-| `"text"`    |
+| inputMode   | type           | spaceAfter   |
+| :---------- | :------------- | :----------- |
+| `"numeric"` | `"text"`       | `"none"`     |
+| `"tel"`     | `"number"`     | `"smallest"` |
+| `"decimal"` | `"email"`      | `"small"`    |
+| `"email"`   | `"password"`   | `"normal"`   |
+| `"url"`     | `"passportid"` | `"medium"`   |
+| `"search"`  |                | `"large"`    |
+| `"text"`    |                | `"largest"`  |
 | `"none"`    |
 
 ## Functional specs

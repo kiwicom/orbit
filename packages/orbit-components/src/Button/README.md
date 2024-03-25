@@ -16,47 +16,47 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in Button component.
 
-| Name         | Type                       | Default     | Description                                                                                                                                                    |
-| :----------- | :------------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ariaControls | `string`                   |             | Id of the element the button controls.                                                                                                                         |
-| ariaExpanded | `boolean`                  |             | Tells screen reader the controlled element from `ariaControls` is expanded                                                                                     |
-| asComponent  | `string \| React.Element`  | `"button"`  | The component used for the root node.                                                                                                                          |
-| fullWidth    | `boolean`                  | `false`     | If `true`, the Button will grow up to the full width of its container.                                                                                         |
-| centered     | `boolean`                  | `false`     | Can only be used when `fullWidth` is true and if `iconLeft` and/or `iconRight` are defined. If `centered` prop is `true`, the Button will center everything.   |
-| circled      | `boolean`                  | `false`     | If `true`, the Button will have circular shape.                                                                                                                |
-| children     | `React.Node`               |             | The content of the Button. [See Functional specs](#functional-specs)                                                                                           |
-| dataTest     | `string`                   |             | Optional prop for testing purposes.                                                                                                                            |
-| id           | `string`                   |             | Set `id` for `Button`                                                                                                                                          |
-| disabled     | `boolean`                  | `false`     | If `true`, the Button will be disabled.                                                                                                                        |
-| download     | `boolean \| string`        |             | Can only be used when `href` is defined. Adds the `download` attribute to the the anchor element.                                                              |
-| external     | `boolean`                  | `false`     | If `true`, the Button opens link in a new tab. [See Functional specs](#functional-specs)                                                                       |
-| href         | `string`                   |             | The URL of the link to open when Button is clicked. [See Functional specs](#functional-specs)                                                                  |
-| iconLeft     | `React.Node`               |             | The displayed icon on the left.                                                                                                                                |
-| iconRight    | `React.Node`               |             | The displayed icon on the right.                                                                                                                               |
-| loading      | `boolean`                  | `false`     | If `true`, the loading glyph will be displayed.                                                                                                                |
-| onClick      | `event => void \| Promise` |             | Function for handling onClick event.                                                                                                                           |
-| ref          | `func`                     |             | Prop for forwarded ref of the Button.                                                                                                                          |
-| rel          | `string`                   |             | Specifies the rel of an element. [See Functional specs](#functional-specs)                                                                                     |
-| role         | `string`                   |             | Specifies the role of an element.                                                                                                                              |
-| **size**     | [`enum`](#enum)            | `"normal"`  | The size of the Button.                                                                                                                                        |
-| spaceAfter   | `enum`                     |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
-| submit       | `boolean`                  | `false`     | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.                                                                          |
-| tabIndex     | `string \| number`         |             | Specifies the tab order of an element.                                                                                                                         |
-| title        | `string`                   |             | Adds `aria-label`.                                                                                                                                             |
-| **type**     | [`enum`](#enum)            | `"primary"` | The type of Button.                                                                                                                                            |
-| width        | `string`                   |             | The width of the Button. Can be any string - `100px`, `20%`.                                                                                                   |
+| Name         | Type                       | Default     | Description                                                                                                                                                  |
+| :----------- | :------------------------- | :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ariaControls | `string`                   |             | Id of the element the button controls.                                                                                                                       |
+| ariaExpanded | `boolean`                  |             | Tells screen reader the controlled element from `ariaControls` is expanded                                                                                   |
+| asComponent  | `string \| React.Element`  | `"button"`  | The component used for the root node.                                                                                                                        |
+| fullWidth    | `boolean`                  | `false`     | If `true`, the Button will grow up to the full width of its container.                                                                                       |
+| centered     | `boolean`                  | `false`     | Can only be used when `fullWidth` is true and if `iconLeft` and/or `iconRight` are defined. If `centered` prop is `true`, the Button will center everything. |
+| circled      | `boolean`                  | `false`     | If `true`, the Button will have circular shape.                                                                                                              |
+| children     | `React.Node`               |             | The content of the Button. [See Functional specs](#functional-specs)                                                                                         |
+| dataTest     | `string`                   |             | Optional prop for testing purposes.                                                                                                                          |
+| id           | `string`                   |             | Set `id` for `Button`                                                                                                                                        |
+| disabled     | `boolean`                  | `false`     | If `true`, the Button will be disabled.                                                                                                                      |
+| download     | `boolean \| string`        |             | Can only be used when `href` is defined. Adds the `download` attribute to the the anchor element.                                                            |
+| external     | `boolean`                  | `false`     | If `true`, the Button opens link in a new tab. [See Functional specs](#functional-specs)                                                                     |
+| href         | `string`                   |             | The URL of the link to open when Button is clicked. [See Functional specs](#functional-specs)                                                                |
+| iconLeft     | `React.Node`               |             | The displayed icon on the left.                                                                                                                              |
+| iconRight    | `React.Node`               |             | The displayed icon on the right.                                                                                                                             |
+| loading      | `boolean`                  | `false`     | If `true`, the loading glyph will be displayed.                                                                                                              |
+| onClick      | `event => void \| Promise` |             | Function for handling onClick event.                                                                                                                         |
+| ref          | `func`                     |             | Prop for forwarded ref of the Button.                                                                                                                        |
+| rel          | `string`                   |             | Specifies the rel of an element. [See Functional specs](#functional-specs)                                                                                   |
+| role         | `string`                   |             | Specifies the role of an element.                                                                                                                            |
+| **size**     | [`enum`](#enum)            | `"normal"`  | The size of the Button.                                                                                                                                      |
+| spaceAfter   | `enum`                     |             | Additional `margin-bottom` after component.                                                                                                                  |
+| submit       | `boolean`                  | `false`     | If `true`, the Button will have `type="submit"` attribute, otherwise `type="button"`.                                                                        |
+| tabIndex     | `string \| number`         |             | Specifies the tab order of an element.                                                                                                                       |
+| title        | `string`                   |             | Adds `aria-label`.                                                                                                                                           |
+| **type**     | [`enum`](#enum)            | `"primary"` | The type of Button.                                                                                                                                          |
+| width        | `string`                   |             | The width of the Button. Can be any string - `100px`, `20%`.                                                                                                 |
 
 ### enum
 
-| type               | size       |
-| :----------------- | :--------- |
-| `"primary"`        | `"small"`  |
-| `"secondary"`      | `"normal"` |
-| `"critical"`       | `"large"`  |
-| `"white"`          |            |
-| `"primarySubtle"`  |            |
-| `"criticalSubtle"` |            |
-| `"bundleBasic"`    |            |
+| type               | size       | spaceAfter   |
+| :----------------- | :--------- | :----------- |
+| `"primary"`        | `"small"`  | `"none"`     |
+| `"secondary"`      | `"normal"` | `"smallest"` |
+| `"critical"`       | `"large"`  | `"small"`    |
+| `"white"`          |            | `"normal"`   |
+| `"primarySubtle"`  |            | `"medium"`   |
+| `"criticalSubtle"` |            | `"large"`    |
+| `"bundleBasic"`    |            | `"largest"`  |
 | `"bundleMedium"`   |            |
 | `"bundleTop"`      |            |
 

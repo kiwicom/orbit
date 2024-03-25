@@ -1,5 +1,5 @@
 import { QUERIES } from "../../utils/mediaQuery";
-import { SPACINGS_AFTER } from "../getSpacingToken";
+import { SPACINGS_AFTER } from "../consts";
 import type { SpaceAfterSizes as SpaceAfter } from "../types";
 
 export const spaceAfterClasses: {

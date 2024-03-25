@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "../../test-utils";
 import Illustration from "..";
 import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 
 describe("Illustration", () => {
   it("should have expected DOM output", () => {

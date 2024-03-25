@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import { render, screen, act } from "../../test-utils";
 import Select from "..";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 
 describe("Select", () => {
   const user = userEvent.setup();

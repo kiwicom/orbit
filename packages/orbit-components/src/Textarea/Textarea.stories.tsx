@@ -4,7 +4,7 @@ import { text, boolean, select, number } from "@storybook/addon-knobs";
 
 import { RESIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import Textarea from ".";
 

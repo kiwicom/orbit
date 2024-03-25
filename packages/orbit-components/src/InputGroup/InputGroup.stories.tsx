@@ -8,7 +8,7 @@ import Select from "../Select";
 import { SIZE_OPTIONS } from "./consts";
 import CountryFlag from "../CountryFlag";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 
 import InputGroup from ".";
 

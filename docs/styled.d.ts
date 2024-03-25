@@ -9,7 +9,7 @@ type ThemeShape = React.ComponentProps<typeof OrbitProvider>["theme"];
 declare module "styled-components" {
   export interface DefaultTheme extends ThemeShape {
     orbit: ThemeShape["orbit"] & {
-      boxShadowRaisedSubtle: string;
+      boxShadowRaisedSubtle?: string;
     };
   }
 }

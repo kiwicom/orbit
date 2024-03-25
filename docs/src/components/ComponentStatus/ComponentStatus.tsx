@@ -1,7 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Text, mediaQueries as mq } from "@kiwicom/orbit-components";
+import { Text } from "@kiwicom/orbit-components";
 
+import mq from "../MediaQueries";
 import { srOnly, notSrOnly } from "../mixins";
 import { HEADER_HEIGHT, ROW_HEIGHT, STATUS_COLOR, PLATFORMS, Status } from "./consts";
 import FigmaIcon from "../../images/statuses/figma.svg";

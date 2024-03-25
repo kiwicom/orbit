@@ -1,6 +1,6 @@
 import type { PaletteColors } from "@kiwicom/orbit-design-tokens";
 
-import { QUERIES } from "../../utils/mediaQuery/consts";
+import { QUERIES } from "../../utils/mediaQuery";
 
 export const colorClasses: {
   [K in QUERIES | keyof PaletteColors]: K extends QUERIES

@@ -1,4 +1,4 @@
-import { QUERIES } from "../../utils/mediaQuery/consts";
+import { QUERIES } from "../../utils/mediaQuery";
 
 enum WRAP {
   WRAP = "wrap",

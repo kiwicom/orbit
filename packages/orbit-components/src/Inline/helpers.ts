@@ -1,7 +1,7 @@
 import { SPACINGS } from "../utils/layout/consts";
 import type { MediaQuery } from "./types";
 import { getJustifyClasses, getAlignItemsClasses } from "../common/tailwind";
-import { QUERIES } from "../utils/mediaQuery/consts";
+import { QUERIES } from "../utils/mediaQuery";
 
 // TODO refactor to gap once we no longer support iOS Safari < 14.5
 const spacingClasses: {

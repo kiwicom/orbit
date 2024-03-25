@@ -8,7 +8,6 @@ import {
   ModalHeader,
   ModalSection,
   Text,
-  mediaQueries,
   Hide,
 } from "@kiwicom/orbit-components";
 import { Search as SearchIcon, ChevronForward } from "@kiwicom/orbit-components/icons";
@@ -19,6 +18,7 @@ import type {
   GetPropsCommonOptions,
 } from "downshift";
 
+import mediaQueries from "../MediaQueries";
 import StyledInputContainer from "./primitives/StyledInputContainer";
 import StyledPrefix from "./primitives/StyledPrefix";
 import StyledInput from "./primitives/StyledInput";

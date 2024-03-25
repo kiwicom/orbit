@@ -11,11 +11,11 @@ import {
   ModalSection,
   Badge,
   Modal,
-  mediaQueries as mq,
 } from "@kiwicom/orbit-components";
 import { MenuHamburger, StarEmpty } from "@kiwicom/orbit-components/icons";
 import GitHubButton from "react-github-btn";
 
+import mq from "../MediaQueries";
 import Logo from "../../images/orbit-logo.svg";
 import Glyph from "../../images/orbit-glyph.svg";
 import Bookmarks from "../Bookmarks";

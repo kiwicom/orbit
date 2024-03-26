@@ -2,49 +2,9 @@
 
 Our entire CSS styling for our components is based on [orbit-design-tokens](https://github.com/kiwicom/orbit-design-tokens), which contains variables with colors, sizings, spacings, etc. It also contains the functionality to create custom themes that can be used inside `orbit-components`.
 
-## With Styled Components
-
-All you need to do is pass colors into the `getTokens` function and then pass this object into `<OrbitProvider />`. The component re-exports `OrbitProvider` from `styled-components` and will do all the magic for you thanks to React's context API.
-
-**Example:**
-
-```jsx
-import getTokens from "@kiwicom/orbit-components/lib/getTokens";
-import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
-
-const customTokens = getTokens({
-  palette: {
-    product: {
-      light: "#9ae5da",
-      lightHover: "#7fded0",
-      lightActive: "#64d7c6",
-      normal: "#00a991",
-      normalHover: "#009882",
-      normalActive: "#008f7b",
-      dark: "#005448",
-    },
-  },
-});
-
-const App = () => (
-  <OrbitProvider
-    useId={React.useId}
-    theme={{
-      yourCustomTheme: { black: "#000" },
-      orbit: customTokens,
-      rtl: false,
-      transitions: false,
-      lockScrolling: false,
-    }}
-  >
-    <Button type="secondary" size="large" />
-  </OrbitProvider>
-);
-```
-
 ## With Tailwind
 
-**Note: This approach is recommended only if you are not using OrbitProvider. We manage the addition of CSS variables within OrbitProvider until the migration to Tailwind is complete**.
+**Note: This approach is recommended only if you are not using OrbitProvider.**.
 
 Our Tailwind CSS preset package utilizes CSS variables for the theme,
 making it easy for you to customize the default palette with your own colors.

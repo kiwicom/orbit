@@ -5,8 +5,10 @@
 Structure of the directory where the necessary files for a Component are located.
 
 <pre>
-<strong>├─ _tests_</strong>
+<strong>├─ __tests__</strong>
 <strong>  └── index.test.tsx</strong> ........... Component's tests
+<strong>├─ Component.ct.tsx</strong>............. Component's visual tests
+<strong>├─ Component.ct-story.tsx</strong>....... Component's story to be used in visual tests
 <strong>├─ index.tsx</strong> ................... Component's logic and rendering
 <strong>├─ index.d.ts</strong> .................. Component's types
 <strong>├─ Component.stories.tsx</strong> ....... Component's Storybook
@@ -14,40 +16,9 @@ Structure of the directory where the necessary files for a Component are located
 <strong>└─ README.md</strong> ................... Component's documentation
 </pre>
 
-## Component structure
+## Styling
 
-We want to ensure that every Component has the same structure, so it's easy to understand where all the logic and styles are.
-
-### Styling
-
-We use `styled-components` (CSS-in-JS) for styling. When you want to style something in the Component, follow the structure below. For more information about `styled-components`, please check their [docs](https://www.styled-components.com/docs).
-
-```jsx
-const StyledComponent = styled.div`
-  margin: 0;
-`;
-```
-
-### Default props
-
-It’s necessary to assign every styled component using a theme defaultProps, which contains all the tokens from `orbit-design-tokens`.
-
-```jsx
-StyledComponent.defaultProps = {
-  theme: defaultTheme,
-};
-```
-
-### Render
-
-Set up `defaultProps` by assigning default values to the props. Destructure them and finally return the Component.
-
-```jsx
-const Component = (props: Props) => {
-  const { size = SIZE_OPTIONS.LARGE } = props;
-  return <StyledComponent size={size}>...</StyledComponent>;
-};
-```
+We use [Tailwind CSS](https://tailwindcss.com/) for styling. Custom Tailwind classes can be used but should be avoided. All design tokens from `orbit-design-tokens` have classes that apply their value to the different possible CSS properties.
 
 ## Component types
 
@@ -76,38 +47,19 @@ export const SIZE_OPTIONS = {
 };
 ```
 
-## Storybook structure
+## Storybook
 
-A preview of the Component is written in the structure of the `Component.stories.js` file. We are using [storybook-chapters](https://github.com/Checkfront/react-storybook-addon-chapters) and [storybook-styles](https://www.npmjs.com/package/@sambego/storybook-styles) addons. For more informations about using Storybook check this [doc](https://storybook.js.org/basics/guide-react/).
+All components should have stories that display their different variations and behaviors.
+Stories should be written in the file `Component.stories.tsx`.
+For more information about using Storybook check the [official documentation](https://storybook.js.org/basics/guide-react/).
 
-### Stories
+## Testing
 
-You can add a new Component to storybook by adding the code below.
+All components should have unit tests and visual tests. We use [Jest](https://jestjs.io/) for unit testing and their tests should be written in the file `__tests__/index.test.tsx`.
 
-`storiesOf("Component", module)`
+Visual tests are performed using [Playwright](https://playwright.dev/). They should be written in the file `Component.ct.tsx` and should be used to test the component in different states and with different props.
 
-### Chapters
-
-At the very least, it’s necessary to have the `Default` and `Playground` chapters defined. The `Default` chapter contains a Component without any additional props. The `Playground` chapter contains a Component with the possibility to change all defined props for full customization. Follow the structure of the code below. For more information check the Chapter add-on doc.
-
-```jsx
-.addWithChapters("Default", () => {
-  const children = text("Children", "Hello World!");
-  return {
-    title: "Default",
-    info: "Info about the Component in the Default state",
-    chapters: [
-      {
-        sections: [
-          {
-            sectionFn: () => <Component>{children}</Component>,
-          },
-        ],
-      },
-    ],
-  };
-});
-```
+For more information about component testing check the [dedicated page](./testing-conventions.md).
 
 ## Component documentation
 

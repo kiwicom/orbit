@@ -22,7 +22,7 @@ Orbit aims to bring order and consistency to all of our products and processes. 
 
 ## Installation
 
-`orbit-components` are served as an [npm package](https://www.npmjs.com/package/@kiwicom/orbit-components).
+`orbit-components` is served as an [npm package](https://www.npmjs.com/package/@kiwicom/orbit-components).
 
 Add them to your project by running:
 
@@ -33,8 +33,6 @@ npm install @kiwicom/orbit-components
 // with yarn
 yarn add @kiwicom/orbit-components
 ```
-
-Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/)
 
 ## Usage
 
@@ -67,18 +65,21 @@ For live preview check out [Storybook](https://kiwicom.github.io/orbit/) or [orb
 
 You can also try `orbit-components` live on [CodeSandbox](https://codesandbox.io/s/github/designkiwicom/orbit-sandbox).
 
+## Documentation
+
+For full documentation, visit [orbit.kiwi](https://orbit.kiwi).
+
 ## Typescript
 
 Orbit comes with Typescript definitions files.
-If you work with Typescript, you need to add type for `styled-components`.
 
-```
-// with npm
-npm install @types/styled-components --save-dev
+## Tailwind CSS
 
-// with yarn
-yarn add @types/styled-components -D
-```
+Orbit uses Tailwind CSS for styling. Tailwind must be installed in your project to see Orbit components styled correctly.
+
+The `@kiwicom/orbit-tailwind-preset` package provides the Tailwind CSS configuration used in Orbit.
+
+Check the Orbit official documentation for more information on how to set up Tailwind CSS in your project.
 
 ## Main Sections
 

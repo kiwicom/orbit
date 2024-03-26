@@ -38,7 +38,7 @@
 ### Technologies we use
 
 - [React](https://react.dev/learn) for development
-- [Styled-components](https://www.styled-components.com/docs) for styling
+- [Tailwind CSS](https://tailwindcss.com/docs) for styling
 - [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for testing
 - [Cypress](https://www.cypress.io/)
 - [Storybook](https://storybook.js.org/docs/react/get-started/introduction) for development

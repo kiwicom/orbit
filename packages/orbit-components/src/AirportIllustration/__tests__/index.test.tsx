@@ -3,7 +3,7 @@ import React from "react";
 import { render, screen } from "../../test-utils";
 import AirportIllustration from "..";
 import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 import defaultTheme from "../../defaultTheme";
 
 const name = "BGYFastTrack";

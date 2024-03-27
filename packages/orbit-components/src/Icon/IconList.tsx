@@ -1,46 +1,9 @@
 import * as React from "react";
-import styled from "styled-components";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 import * as Icons from "../icons";
 
-const List = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  border-radius: ${defaultTokens.borderRadiusLarge};
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: ${defaultTokens.spaceLarge};
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  width: 100%;
-  min-height: 80px;
-  background-color: white;
-  margin-bottom: ${defaultTokens.spaceLarge};
-  border-radius: ${defaultTokens.borderRadiusLarge};
-  border: ${defaultTokens.borderWidthCard} ${defaultTokens.borderStyleCard}
-    ${defaultTokens.paletteCloudNormal};
-  padding: 0 ${defaultTokens.spaceLarge};
-`;
-
-const IconImport = styled.div`
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
-  line-height: ${defaultTokens.lineHeightTextSmall};
-  color: ${defaultTokens.paletteInkDark};
-  background-color: ${defaultTokens.paletteCloudLight};
-  border: ${defaultTokens.borderWidthCard} ${defaultTokens.borderStyleCard}
-    ${defaultTokens.paletteCloudNormal};
-  padding: ${defaultTokens.spaceXXSmall} ${defaultTokens.spaceXSmall};
-`;
-
 const IconList = () => (
-  <List>
+  <div className="rounded-large flex flex-row flex-wrap justify-between">
     {Object.keys(Icons)
       .filter(n => n !== "__namedExportsOrder")
       .map(icon => {
@@ -48,15 +11,26 @@ const IconList = () => (
 
         const iconName = `${icon}`;
         return (
-          <Container key={icon}>
+          <div
+            className="gap-lg bg-white-normal mb-lg rounded-large border-cloud-normal px-lg flex w-full flex-row content-center items-center justify-start border border-solid"
+            style={{ minHeight: "80px" }}
+            key={icon}
+          >
             <Icon size="large" color="primary" />
-            <IconImport>
+            <div
+              className="leading-small text-ink-dark bg-cloud-light border-cloud-normal py-xxs ps-xs border border-solid"
+              style={{
+                fontFamily:
+                  '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
+                fontSize: "12px",
+              }}
+            >
               {`import ${iconName} from "@kiwicom/orbit-components/lib/icons/${iconName}"`}
-            </IconImport>
-          </Container>
+            </div>
+          </div>
         );
       })}
-  </List>
+  </div>
 );
 
 export default IconList;

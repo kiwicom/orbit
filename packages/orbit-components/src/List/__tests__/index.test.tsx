@@ -4,7 +4,7 @@ import { render, screen } from "../../test-utils";
 import List from "..";
 import ListItem from "../ListItem";
 import Check from "../../icons/Check";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 
 describe("List", () => {
   it("should have expected DOM output", () => {

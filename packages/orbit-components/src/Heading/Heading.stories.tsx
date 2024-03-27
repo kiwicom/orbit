@@ -2,7 +2,7 @@ import * as React from "react";
 import { text, select, boolean, object } from "@storybook/addon-knobs";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, ALIGN } from "./consts";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Heading from ".";

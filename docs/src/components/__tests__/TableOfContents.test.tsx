@@ -1,4 +1,5 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
 import { render, screen } from "@testing-library/react";
 import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 import MatchMediaMock from "jest-matchmedia-mock";
@@ -31,25 +32,27 @@ afterAll(() => {
 describe(TableOfContents.name, () => {
   it("should generate table of contents from headings", async () => {
     render(
-      <OrbitProvider useId={React.useId} theme={defaultTheme}>
-        <TableOfContentsProvider>
-          <main>
-            <H2>General guidelines</H2>
-            <H3>Background & foreground colors</H3>
-            <H3>Interactive colors</H3>
-            <H3>Actionable colors</H3>
-            <H2>Orbit palette</H2>
-            <H3>Product</H3>
-            <H4>Product guidelines</H4>
-            <H3>Status colors</H3>
-            <H4>Green</H4>
-            <H5>Green guidelines</H5>
-          </main>
-          <aside>
-            <TableOfContents />
-          </aside>
-        </TableOfContentsProvider>
-      </OrbitProvider>,
+      <ThemeProvider theme={defaultTheme}>
+        <OrbitProvider useId={React.useId} theme={defaultTheme}>
+          <TableOfContentsProvider>
+            <main>
+              <H2>General guidelines</H2>
+              <H3>Background & foreground colors</H3>
+              <H3>Interactive colors</H3>
+              <H3>Actionable colors</H3>
+              <H2>Orbit palette</H2>
+              <H3>Product</H3>
+              <H4>Product guidelines</H4>
+              <H3>Status colors</H3>
+              <H4>Green</H4>
+              <H5>Green guidelines</H5>
+            </main>
+            <aside>
+              <TableOfContents />
+            </aside>
+          </TableOfContentsProvider>
+        </OrbitProvider>
+      </ThemeProvider>,
     );
 
     const sidebar = screen.getByRole("complementary");

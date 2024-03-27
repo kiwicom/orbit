@@ -5,7 +5,7 @@ import * as Icons from "../icons";
 import { SIZES, TYPES } from "./consts";
 import { ICON_COLORS } from "../Icon/consts";
 import CarrierLogo from "../CarrierLogo";
-import SPACINGS_AFTER from "../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import TextLink from "../TextLink";
 

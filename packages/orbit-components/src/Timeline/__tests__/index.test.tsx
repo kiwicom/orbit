@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "../../test-utils";
 import defaultTheme from "../../defaultTheme";
 import Timeline from "..";
-import SPACINGS_AFTER from "../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../common/consts";
 
 jest.mock("../../hooks/useMediaQuery", () => {
   return () => {

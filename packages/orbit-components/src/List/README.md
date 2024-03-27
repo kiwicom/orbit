@@ -18,14 +18,26 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in List component.
 
-| Name         | Type            | Default     | Description                                                                                                                                                    |
-| :----------- | :-------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **children** | `React.Node`    |             | The content of the List, normally [`ListItem`](#listitem-props).                                                                                               |
-| dataTest     | `string`        |             | Optional prop for testing purposes.                                                                                                                            |
-| id           | `string`        |             | Set `id` for `List`                                                                                                                                            |
-| size         | [`enum`](#enum) | `"normal"`  | The size of the List.                                                                                                                                          |
-| spaceAfter   | `enum`          |             | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
-| type         | [`enum`](#enum) | `"primary"` | The color type of the List.                                                                                                                                    |
+| Name         | Type            | Default     | Description                                                      |
+| :----------- | :-------------- | :---------- | :--------------------------------------------------------------- |
+| **children** | `React.Node`    |             | The content of the List, normally [`ListItem`](#listitem-props). |
+| dataTest     | `string`        |             | Optional prop for testing purposes.                              |
+| id           | `string`        |             | Set `id` for `List`                                              |
+| size         | [`enum`](#enum) | `"normal"`  | The size of the List.                                            |
+| spaceAfter   | `enum`          |             | Additional `margin-bottom` after component.                      |
+| type         | [`enum`](#enum) | `"primary"` | The color type of the List.                                      |
+
+### enum
+
+| spaceAfter   |
+| :----------- |
+| `"none"`     |
+| `"smallest"` |
+| `"small"`    |
+| `"normal"`   |
+| `"medium"`   |
+| `"large"`    |
+| `"largest"`  |
 
 ### ListItem Props
 

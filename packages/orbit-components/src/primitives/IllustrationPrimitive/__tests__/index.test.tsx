@@ -2,7 +2,7 @@ import React from "react";
 
 import { render, screen } from "../../../test-utils";
 import IllustrationPrimitive from "..";
-import SPACINGS_AFTER from "../../../common/getSpacingToken/consts";
+import { SPACINGS_AFTER } from "../../../common/consts";
 import defaultTheme from "../../../defaultTheme";
 
 const URL = "//images.kiwi.com/illustrations/0x90/Accommodation-Q85.png";

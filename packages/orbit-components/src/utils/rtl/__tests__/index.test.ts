@@ -44,36 +44,3 @@ describe("left", () => {
     expect(rtl.left(enabledRTL)).toBe("right");
   });
 });
-
-describe("textAlign", () => {
-  it("should be the same value when rtl false", () => {
-    expect(rtl.textAlign("left")(disabledRTL)).toBe("left");
-    expect(rtl.textAlign("right")(disabledRTL)).toBe("right");
-  });
-  it("should be the opposite value when rtl true", () => {
-    expect(rtl.textAlign("left")(enabledRTL)).toBe("right");
-    expect(rtl.textAlign("right")(enabledRTL)).toBe("left");
-  });
-});
-
-describe("borderRadius", () => {
-  it("should return the same values when rtl false", () => {
-    expect(rtl.borderRadius("1px 0 0 1px")(disabledRTL)).toBe("1px 0 0 1px");
-    expect(rtl.borderRadius("0 1px 1px 0")(disabledRTL)).toBe("0 1px 1px 0");
-  });
-  it("should return switched values when rtl true", () => {
-    expect(rtl.borderRadius("1px 0 0 1px")(enabledRTL)).toBe("0 1px 1px 0");
-    expect(rtl.borderRadius("0 1px 1px 0")(enabledRTL)).toBe("1px 0 0 1px");
-  });
-});
-
-describe("translate3d", () => {
-  it("should return the same values when rtl false", () => {
-    expect(rtl.translate3d("-100px, 0, 0")(disabledRTL)).toBe("translate3d(-100px, 0, 0)");
-    expect(rtl.translate3d("100px,0,0")(disabledRTL)).toBe("translate3d(100px,0,0)");
-  });
-  it("should return switched first value when rtl true", () => {
-    expect(rtl.translate3d("-100px, 0, 0")(enabledRTL)).toBe("translate3d(100px, 0, 0)");
-    expect(rtl.translate3d("100px,0,0")(enabledRTL)).toBe("translate3d(-100px,0,0)");
-  });
-});

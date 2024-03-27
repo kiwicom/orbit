@@ -67,7 +67,7 @@ const ItinerarySegmentStop = ({
               <ItineraryText
                 type={cancelledDate ? textType : "secondary"}
                 size="small"
-                align="right"
+                align="end"
                 as="div"
                 withBackground={!!cancelledDate}
               >
@@ -80,7 +80,7 @@ const ItinerarySegmentStop = ({
               </ItineraryText>
             )}
             {cancelledDate && (
-              <ItineraryText type="secondary" size="small" align="right" strikeThrough as="div">
+              <ItineraryText type="secondary" size="small" align="end" strikeThrough as="div">
                 {cancelledDate}
               </ItineraryText>
             )}

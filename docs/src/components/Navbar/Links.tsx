@@ -32,7 +32,7 @@ const LinkIcon = ({ name }: { name?: string }) => {
     case "Accessibility":
       return <IrisScanIcon {...iconStyles} />;
     case "Playground":
-      return <Code {...iconStyles} />;
+      return <Code size="medium" />;
     default:
       return <ScriptIcon {...iconStyles} />;
   }

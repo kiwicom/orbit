@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write # for dependabot
-      pages: write # for deploying to GitHub Pages on master
+      contents: write # for deploying to GitHub Pages on master
     steps:
       - name: Checkout
         uses: actions/checkout@v4

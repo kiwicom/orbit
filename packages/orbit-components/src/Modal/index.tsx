@@ -435,7 +435,7 @@ const Modal = React.forwardRef<Instance, Props>(
           <div
             className={cx(
               "orbit-modal-wrapper-content",
-              "lm:rounded-modal overflow-hidden",
+              "lm:rounded-modal overflow-y-auto overflow-x-hidden",
               "font-base bg-elevation-flat shadow-overlay absolute box-border w-full",
               "lm:relative lm:bottom-auto lm:pb-0",
               "lm:[&_.orbit-modal-section:last-of-type]:pb-xxl lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
@@ -444,7 +444,12 @@ const Modal = React.forwardRef<Instance, Props>(
                 "[&_.orbit-modal-header-container]:mb-xl lm:[&_.orbit-modal-header-container]:mb-[var(--orbit-modal-footer-height,0px)]",
               isMobileFullPage
                 ? "top-0 max-h-full"
-                : ["rounded-t-modal", scrolled && "[&_.orbit-modal-mobile-header]:top-xl"],
+                : [
+                    "rounded-t-modal",
+                    scrolled && "[&_.orbit-modal-mobile-header]:rounded-tl-modal",
+                    scrolled && "[&_.orbit-modal-mobile-header]:top-xl",
+                  ],
+
               fixedFooter &&
                 footerHeight && [
                   "[&_.orbit-modal-footer]:p-md [&_.orbit-modal-footer]:fixed [&_.orbit-modal-footer]:bottom-0",
@@ -481,8 +486,10 @@ const Modal = React.forwardRef<Instance, Props>(
                 className={cx(
                   "z-overlay h-form-box-large pointer-events-none right-0 box-border flex w-full items-center justify-end",
                   "duration-fast transition-[shadow,_background-color] ease-in-out",
+                  "lm:rounded-none",
                   fixedClose || scrolled ? "lm:top-0 lm:right-auto fixed" : "absolute",
                   !isMobileFullPage && (fixedClose || scrolled) ? "top-[32px]" : "top-0",
+                  !isMobileFullPage && "rounded-t-modal",
                   modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
                   scrolled && "shadow-fixed bg-white-normal",
                   "[&_+_.orbit-modal-section:first-of-type]:pt-xxxl [&_+_.orbit-modal-section:first-of-type]:m-0 [&_+_.orbit-modal-section:first-of-type]:border-t-0",

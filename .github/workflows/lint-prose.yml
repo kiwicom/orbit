@@ -24,7 +24,7 @@ jobs:
         run: touch docs/src/snippets/more-than-color.mdx
 
       - name: Vale
-        uses: errata-ai/vale-action@v2.0.1
+        uses: errata-ai/vale-action@v2.1.0
         with:
           files: '["docs/src/documentation", "docs/src/snippets"]'
         env:

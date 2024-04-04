@@ -24,16 +24,9 @@ export const TOKEN = {
   largeDesktop: "widthBreakpointLargeDesktop",
 } as const;
 
-export interface GetBreakpointWidth {
-  (name: keyof typeof TOKEN, theme: Theme): string;
-  (name: keyof typeof TOKEN, theme: Theme, pure: false): string;
-  (name: keyof typeof TOKEN, theme: Theme, pure: true): number;
-}
-
-export const getBreakpointWidth: GetBreakpointWidth = (
-  name: string,
-  theme: Theme,
-  pure?: boolean,
-) => {
+export function getBreakpointWidth(name: keyof typeof TOKEN, theme: Theme): string;
+export function getBreakpointWidth(name: keyof typeof TOKEN, theme: Theme, pure: false): string;
+export function getBreakpointWidth(name: keyof typeof TOKEN, theme: Theme, pure: true): number;
+export function getBreakpointWidth(name: keyof typeof TOKEN, theme: Theme, pure?: boolean) {
   return pure ? theme.orbit[TOKEN[name]] : `(min-width: ${theme.orbit[TOKEN[name]]}px)`;
-};
+}

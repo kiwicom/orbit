@@ -2,6 +2,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import { number, text, boolean, select } from "@storybook/addon-knobs";
 
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { SIZES } from "./consts";
 
 import Pagination from ".";
@@ -98,4 +99,59 @@ export const Playground = () => {
       size={size}
     />
   );
+};
+
+export const Rtl = () => {
+  const pageCount = number("pageCount", 6);
+  const selectedPage = number("selectedPage", 2);
+  const hideLabels = boolean("hideLabels", false);
+  const size = select("size", Object.values(SIZES), SIZES.NORMAL);
+  const labelProgress = text("labelProgress", "2 מתוך 6");
+
+  return (
+    <RenderInRtl>
+      <Pagination
+        labelPrev="Prev"
+        labelNext="Next"
+        labelProgress={labelProgress}
+        pageCount={pageCount}
+        selectedPage={selectedPage}
+        onPageChange={action("onPageChange")}
+        hideLabels={hideLabels}
+        size={size}
+      />
+    </RenderInRtl>
+  );
+};
+
+Rtl.story = {
+  name: "RTL",
+  parameters: {
+    info: (
+      <div dir="ltr">
+        <p className="mb-md">
+          Note that when you use bidirectional text (including both RTL and LTR words) for{" "}
+          <code>labelProgress</code> prop, it may not render properly due to how in-browser unicode
+          bidirectional algorithm works.
+        </p>
+        <p className="mb-md">
+          If that’s the case, you should wrap every given word properly to ensure correct rendering.
+          Eg.{" "}
+          <code>
+            &lt;span dir=&quot;rtl&quot;&gt;שלום &lt;span
+            dir=&quot;ltr&quot;&gt;world!&lt;/span&gt;&lt;/span&gt;
+          </code>
+        </p>
+        <p>
+          <a
+            href="https://www.w3.org/International/articles/inline-bidi-markup/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            More info
+          </a>
+        </p>
+      </div>
+    ),
+  },
 };

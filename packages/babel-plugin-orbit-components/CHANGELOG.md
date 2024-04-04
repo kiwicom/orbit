@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@5.0.11...@kiwicom/babel-plugin-orbit-components@5.1.0) (2024-04-04)
+
+
+### Features
+
+* **babel-plugin:** remove mediaQueries and add new getBreakpointWidth ([a3637ae](https://github.com/kiwicom/orbit/commit/a3637ae128edb5c81f6cb1cc8232216018239386))
+
+
+
+
+
 ## [5.0.11](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@5.0.10...@kiwicom/babel-plugin-orbit-components@5.0.11) (2024-04-04)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@14.0.0...@kiwicom/orbit-components@14.1.0) (2024-04-04)
+
+#### Bug Fixes
+
+*   **Icon:** icon components props are now correctly typed ([33cecc8](https://github.com/kiwicom/orbit/commit/33cecc87bfb1ec41c2e8449d0339e996ad60b381))
+*   **Itinerary:** fix dates alignment in RTL ([6034467](https://github.com/kiwicom/orbit/commit/603446744ef51c35a757d7b9b63996e3b8d7d452))
+*   **Itinerary:** text now wraps instead of overflowing ([482636f](https://github.com/kiwicom/orbit/commit/482636fa89d8096643ebd505b95d5cbd1289b4bd))
+*   **Modal:** ensure the Modal body can scroll ([7b1ac0b](https://github.com/kiwicom/orbit/commit/7b1ac0b564acdb76f358b528a54a4ba159375452))
+
+#### Features
+
+*   **Wizard:** migrate to tailwind ([fe12927](https://github.com/kiwicom/orbit/commit/fe129276114da710da0be22a336b3ce60b616570))
+
 ## [14.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@13.1.0...@kiwicom/orbit-components@14.0.0) (2024-03-14)
 
 #### Bug Fixes

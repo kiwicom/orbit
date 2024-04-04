@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@14.1.0...@kiwicom/orbit-components@15.0.0) (2024-04-04)
+
+#### Features
+
+*   **OrbitProvider:** replace ThemeProvider from SC by a custom one ([db0d8f4](https://github.com/kiwicom/orbit/commit/db0d8f44162e0fa6f3ca6b92f0162a384cb9ef6d))
+*   remove mediaQueries ([8861191](https://github.com/kiwicom/orbit/commit/88611916dbc9fac9bb2774f8e12e4fd96e91811e))
+*   remove rtl utils ([e76c186](https://github.com/kiwicom/orbit/commit/e76c1862a6fb008080a14e0cc7b495e360020193))
+*   remove styled-components dependency ([6b1277c](https://github.com/kiwicom/orbit/commit/6b1277c8acda5b296c9f788468e7e342dc56e33f))
+
+#### BREAKING CHANGES
+
+*   **OrbitProvider:** Styled-Components' ThemeProvider is no longer used in OrbitProvider.
+    If you still need styled-components capabilities, you should add the ThemeProvider from styled-components to your app and pass it the same theme.
+*   rtl styled-components utils removed.
+*   mediaQueries function is no longer available.
+    This was a styled-components util function that is now no longer meant to be used.
+    Tokens and breakpoint values are still accessible.
+
 ## [14.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@14.0.0...@kiwicom/orbit-components@14.1.0) (2024-04-04)
 
 #### Bug Fixes

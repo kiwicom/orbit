@@ -37,7 +37,7 @@ const OrbitDecorator = (storyFn, context) => {
           {context.parameters?.info}
         </Text>
         {children}
-        <div style={{ marginTop: 20 }}>
+        <div style={{ marginTop: 20 }} dir="ltr">
           <Source code={jsxToString(children, options)} language="jsx" format={false} />
         </div>
       </div>

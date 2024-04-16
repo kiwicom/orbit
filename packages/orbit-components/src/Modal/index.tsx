@@ -435,11 +435,12 @@ const Modal = React.forwardRef<Instance, Props>(
           <div
             className={cx(
               "orbit-modal-wrapper-content",
-              "lm:rounded-modal overflow-y-auto overflow-x-hidden",
+              "lm:rounded-modal lm:overflow-visible overflow-y-auto overflow-x-hidden",
               "font-base bg-elevation-flat shadow-overlay absolute box-border w-full",
               "lm:relative lm:bottom-auto lm:pb-0",
               "lm:[&_.orbit-modal-section:last-of-type]:pb-xxl lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
               "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-theme(spacing.xxl))]",
+              footerHeight && "lm:[&_.orbit-modal-section]:rounded-b-none",
               !hasModalSection &&
                 "[&_.orbit-modal-header-container]:mb-xl lm:[&_.orbit-modal-header-container]:mb-[var(--orbit-modal-footer-height,0px)]",
               isMobileFullPage
@@ -456,7 +457,7 @@ const Modal = React.forwardRef<Instance, Props>(
                   "[&_.orbit-modal-footer]:duration-fast [&_.orbit-modal-footer]:transition-shadow [&_.orbit-modal-footer]:ease-in-out",
                   fullyScrolled
                     ? "[&_.orbit-modal-footer]:shadow-modal-scrolled"
-                    : "[&_.orbit-modal-footer]:shadow-modal",
+                    : "[&_.orbit-modal-footer]:shadow-modal lm:[&_.orbit-modal-footer]:rounded-b-none",
                   "[&_.orbit-modal-section:last-of-type]:pb-lg [&_.orbit-modal-section:last-of-type]:mb-0",
                 ],
               fixedFooter

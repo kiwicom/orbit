@@ -24,7 +24,8 @@ export const ModalHeaderWrapper = ({
       className={cx(
         className,
         "orbit-modal-header-container",
-        "box-border block w-full",
+        "rounded-t-modal box-border block w-full",
+        "lm:[&_~_.orbit-modal-section]:rounded-t-none",
         suppressed
           ? [
               "bg-cloud-light py-xl px-md lm:p-xl",

@@ -33,6 +33,7 @@ type Name =
   | "NortonSecured"
   | "PayPal"
   | "RentalCars"
+  | "Sherpa"
   | "Sofort"
   | "TravelPulse"
   | "Trustly"

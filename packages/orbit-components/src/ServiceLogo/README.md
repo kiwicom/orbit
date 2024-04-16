@@ -52,6 +52,7 @@ Table below contains all types of the props available in ServiceLogo component.
 | `"NortonSecured"`       |
 | `"PayPal"`              |
 | `"RentalCars"`          |
+| `"Sherpa"`              |
 | `"Sofort"`              |
 | `"TravelPulse"`         |
 | `"Trustly"`             |

@@ -28,6 +28,7 @@ export enum NAME_OPTIONS {
   NORTOSECURED = "NortonSecured",
   PAYPAL = "PayPal",
   RENTALCARS = "RentalCars",
+  SHERPA = "Sherpa",
   SOFORT = "Sofort",
   TRAVELPULSE = "TravelPulse",
   TRUSTLY = "Trustly",

@@ -99,3 +99,4 @@ Please check out our [Contribution Guide](https://github.com/kiwicom/orbit/tree/
 ## Feedback
 
 We want to provide only components of the highest quality. We can’t do that without your feedback. If you have any suggestions about what we can do to improve components, please report it directly as an [issue](https://github.com/kiwicom/orbit/issues/new/choose).
+

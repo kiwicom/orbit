@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.0.0...@kiwicom/orbit-components@15.1.0) (2024-04-18)
+
+
+### Bug Fixes
+
+* **Modal:** overflow now works correctly on large mobile and bigger ([6645070](https://github.com/kiwicom/orbit/commit/6645070fc869e6b819644cfe2d9dc3e4d628ada6))
+
+
+### Features
+
+* **ServiceLogo:** add Sherpa logo ([4c9d318](https://github.com/kiwicom/orbit/commit/4c9d318485e1256efa92e818abae9acdfa3180f2))
+
+
+
+
+
 # [15.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@14.1.0...@kiwicom/orbit-components@15.0.0) (2024-04-04)
 
 

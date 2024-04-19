@@ -61,7 +61,10 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
 
     const [isOpened, setIsOpened] = React.useState(false);
     const [inputValue, setInputValue] = React.useState(
-      defaultSelected ? options.find(opt => opt.value === defaultSelected.value)?.title : "",
+      defaultSelected
+        ? options.find(opt => opt.value === defaultSelected.value)?.title ||
+            String(defaultSelected.title)
+        : "",
     );
     const [selectedOption, setSelectedOption] = React.useState<null | Option>(
       defaultSelected || null,
@@ -86,6 +89,21 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       all: Option[];
       flattened: Option[];
     }>(groupedOptions);
+
+    React.useEffect(() => {
+      if (inputValue.length === 0) {
+        setResults(groupedOptions);
+      } else {
+        const filtered = options.filter(({ title }) => {
+          return title.toLowerCase().includes(inputValue.toLowerCase());
+        });
+        setResults({
+          groups: [],
+          all: filtered,
+          flattened: filtered,
+        });
+      }
+    }, [inputValue, options, groupedOptions]);
 
     const handleClose = (selection?: Option | null) => {
       if (!selection) {
@@ -122,19 +140,6 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     const handleInputChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = ev.currentTarget;
       if (onChange) onChange(ev);
-
-      if (value.length === 0) {
-        setResults(groupedOptions);
-      } else {
-        const filtered = options.filter(({ title }) => {
-          return title.toLowerCase().includes(value.toLowerCase());
-        });
-        setResults({
-          groups: [],
-          all: filtered,
-          flattened: filtered,
-        });
-      }
 
       if (!isOpened) setIsOpened(true);
       setInputValue(value);

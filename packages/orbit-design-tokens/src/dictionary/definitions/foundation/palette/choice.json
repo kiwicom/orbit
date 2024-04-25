@@ -1,0 +1,13 @@
+{
+  "foundation": {
+    "palette": {
+      "choice": {
+        "tile-selected": {
+          "value": null,
+          "internal": true,
+          "type": "color"
+        }
+      }
+    }
+  }
+}

@@ -25,6 +25,9 @@ export interface Bundle {
   basic: string;
   medium: string;
 }
+export interface Choice {
+  tileSelected: string;
+}
 export interface Cloud {
   dark: string;
   darkActive: string;
@@ -161,6 +164,7 @@ export interface FontWeight {
 export interface Palette {
   blue: Blue;
   bundle: Bundle;
+  choice: Choice;
   cloud: Cloud;
   green: Green;
   ink: Ink;
@@ -185,6 +189,7 @@ export interface CustomFoundation {
   palette?: Partial<{
     blue?: Partial<Blue>;
     bundle?: Partial<Bundle>;
+    choice?: Partial<Choice>;
     cloud?: Partial<Cloud>;
     green?: Partial<Green>;
     ink?: Partial<Ink>;
@@ -216,6 +221,7 @@ const blue = {
   normalHover: "#0161AC",
 };
 const bundle = { basic: "#D7331C", medium: "#3B1EB0" };
+const choice = { tileSelected: "null" };
 const cloud = {
   dark: "#BAC7D5",
   darkActive: "#94A8BE",
@@ -321,7 +327,7 @@ const fontFamily = {
 const fontSize = { small: "13px", normal: "15px", large: "16px", extraLarge: "18px" };
 const lineHeight = { small: "16px", normal: "20px", large: "24px", extraLarge: "24px" };
 const fontWeight = { normal: "400", medium: "500", bold: "700" };
-const palette = { blue, bundle, cloud, green, ink, orange, product, red, social, white };
+const palette = { blue, bundle, choice, cloud, green, ink, orange, product, red, social, white };
 const foundation = {
   palette,
   borderRadius,

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [15.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.1.0...@kiwicom/orbit-components@15.1.1) (2024-04-25)
+
+#### Bug Fixes
+
+*   **InputSelect:** it now filters options when they change via props ([681634a](https://github.com/kiwicom/orbit/commit/681634a9a6ae05e985d8b9d5aaa26fe730b70520))
+
 ## [15.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.0.0...@kiwicom/orbit-components@15.1.0) (2024-04-18)
 
 #### Bug Fixes

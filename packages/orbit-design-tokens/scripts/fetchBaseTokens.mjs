@@ -94,11 +94,12 @@ const adjustName = name => {
   return name;
 };
 
+const UNSUPPORTED_TOKENS = ["Gradient", "Choice"];
+
 const createStructure = nodes =>
   nodes.reduce((acc, cur) => {
     const { name, value } = cur;
-    // TODO: gradient color tokens are not supported yet
-    if (name.includes("Gradient")) return acc;
+    if (UNSUPPORTED_TOKENS.some(tokenName => name.includes(tokenName))) return acc;
     // white does not have a Normal value in Figma
     const objPath = adjustName(name)
       .split(".")

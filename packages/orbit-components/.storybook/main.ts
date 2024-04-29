@@ -6,6 +6,12 @@ const config: StorybookConfig = {
   staticDirs: [path.resolve(__dirname, "../static")],
   stories: ["../src/**/*.stories.*"],
   framework: "@storybook/react-webpack5",
+  previewHead: head => `
+    ${head}
+    <script>
+      document.documentElement.setAttribute('manifest', './manifest.manifest');
+    </script>
+  `,
   addons: [
     "@storybook/addon-knobs",
     "storybook-addon-pseudo-states",

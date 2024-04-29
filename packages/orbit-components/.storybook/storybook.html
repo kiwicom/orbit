@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" manifest="./manifest.appcache">
+  <head>
+    <meta charset="utf-8" />
+    <title>Storybook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <% if (htmlWebpackPlugin.files.css) { %> <% htmlWebpackPlugin.files.css.forEach(file => { %>
+    <link href="<%= file %>" rel="stylesheet" />
+    <% }) %> <% } %>
+  </head>
+  <body>
+    <div id="root"></div>
+    <% if (htmlWebpackPlugin.files.js) { %> <% htmlWebpackPlugin.files.js.forEach(file => { %>
+    <script src="<%= file %>"></script>
+    <% }) %> <% } %>
+  </body>
+</html>

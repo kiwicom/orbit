@@ -24,7 +24,7 @@
     "check:icons": "node --loader ts-node/esm config/checkIconsCli.mts",
     "check:types": "tsc --p tsconfig.json",
     "build:iconsPng": "node --loader ts-node/esm config/generatePngIcons.mts",
-    "build:storybook": "node --loader ts-node/esm  config/build/buildIcons.mts && storybook build -c .storybook -o .out",
+    "build:storybook": "node --loader ts-node/esm  config/build/buildIcons.mts && storybook build -c .storybook -o .out && node --loader ts-node/esm config/buildStorybookCache.mts",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "test-ct": "playwright test -c playwright-ct.config.ts",
     "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",

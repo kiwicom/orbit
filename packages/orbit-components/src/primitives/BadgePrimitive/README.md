@@ -32,6 +32,6 @@ Table below contains all types of the props available for object in Carrier arra
 
 | Name     | Type            | Description                                                                                   |
 | :------- | :-------------- | :-------------------------------------------------------------------------------------------- |
-| **code** | `string`        | The code of the Carrier, defines which logo will be rendered.                                 |
+| **code** | `string`        | The IATA code of the Carrier, defines which logo will be rendered.                            |
 | name     | `string`        | The name of the Carrier, mainly for information.                                              |
 | type     | [`enum`](#enum) | The preferred placeholder for non-existing carrier. [See Functional specs](#functional-specs) |

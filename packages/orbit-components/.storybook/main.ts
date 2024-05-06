@@ -8,6 +8,7 @@ const config: StorybookConfig = {
   framework: "@storybook/react-webpack5",
   addons: [
     "@storybook/addon-knobs",
+    "@storybook/addon-a11y",
     "storybook-addon-pseudo-states",
     {
       name: "@storybook/addon-essentials",
@@ -39,4 +40,5 @@ const config: StorybookConfig = {
     return undefined;
   },
 };
+
 export default config;

@@ -18,7 +18,7 @@ const ItinerarySegmentBanner = ({ onClick, children }: Props) => {
         "[&_>_div]:max-w-[calc(100%-20px)]",
       )}
       role="button"
-      tabIndex={-1}
+      tabIndex={onClick ? 0 : -1}
       onKeyDown={handleKeyDown(onClick)}
       onClick={ev => {
         ev.stopPropagation();

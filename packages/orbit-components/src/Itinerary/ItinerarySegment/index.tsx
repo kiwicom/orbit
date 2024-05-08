@@ -3,7 +3,6 @@
 import * as React from "react";
 import cx from "clsx";
 
-import Stack from "../../Stack";
 import handleKeyDown from "../../utils/handleKeyDown";
 import Separator from "../../Separator";
 import type { Props } from "./types";
@@ -23,8 +22,20 @@ const ItinerarySegment = ({
 
   const [opened, setOpened] = React.useState(false);
 
+  const handleClick = (ev: React.SyntheticEvent<HTMLDivElement>) => {
+    ev.stopPropagation();
+    if (onClick) onClick(ev);
+    setOpened(prev => !prev);
+  };
+
   const parts = (
-    <Stack direction="column" spacing="none">
+    <div
+      className="pt-sm"
+      role="button"
+      tabIndex={0}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown(() => setOpened(prev => !prev))}
+    >
       {React.Children.map(children, (el, i) => {
         if (!React.isValidElement(el)) return null;
 
@@ -47,32 +58,26 @@ const ItinerarySegment = ({
           </ItinerarySegmentProvider>
         );
       })}
-    </Stack>
+    </div>
   );
-
-  const handleClick = (ev: React.SyntheticEvent<HTMLDivElement>) => {
-    if (onClick) onClick(ev);
-    setOpened(prev => !prev);
-  };
 
   return (
     <div
       className={cx(
-        "rounded-large py-sm px-0",
-        actionable && "cursor-pointer",
+        "rounded-large pb-sm px-0",
         spaceAfter && spaceAfterClasses[spaceAfter],
         !noElevation && "shadow-fixed",
         actionable && !noElevation && "hover:shadow-action-active focus:shadow-action-active",
       )}
-      role="button"
-      tabIndex={0}
-      onKeyDown={handleKeyDown(() => setOpened(prev => !prev))}
-      onClick={handleClick}
       data-test={dataTest}
     >
       {parts}
-      {Boolean(banner) && <Separator spaceAfter="small" />}
-      {banner}
+      {Boolean(banner) && (
+        <>
+          <Separator spaceAfter="small" />
+          {banner}
+        </>
+      )}
     </div>
   );
 };

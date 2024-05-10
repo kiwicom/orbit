@@ -14,6 +14,7 @@ export enum NAME_OPTIONS {
   DINERSCLUB = "DinersClub",
   DISCOVER = "Discover",
   GETYOURGUIDE = "GetYourGuide",
+  GETYOURGUIDELONG = "GetYourGuideLong",
   GOOGLEPAY = "GooglePay",
   IATA = "IATA",
   JCB = "JCB",

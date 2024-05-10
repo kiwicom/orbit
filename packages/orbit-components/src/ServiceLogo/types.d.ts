@@ -19,6 +19,7 @@ type Name =
   | "DinersClub"
   | "Discover"
   | "GetYourGuide"
+  | "GetYourGuideLong"
   | "GooglePay"
   | "IATA"
   | "JCB"

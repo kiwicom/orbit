@@ -1,6 +1,6 @@
 import React from "react";
 import { Editor } from "react-live";
-import theme from "prism-react-renderer/themes/oceanicNext";
+import { themes } from "prism-react-renderer";
 
 interface Props {
   isFullScreen: boolean;
@@ -16,7 +16,7 @@ const SandboxEditor = ({ isFullScreen, onChange, code }: Props) => {
           ? { margin: 0, borderRadius: "0 0 12px 12px", overflowY: "scroll" }
           : undefined
       }
-      theme={theme}
+      theme={themes.oceanicNext}
       onChange={onChange}
       language="jsx"
       code={code}

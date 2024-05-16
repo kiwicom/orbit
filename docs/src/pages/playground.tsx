@@ -12,7 +12,7 @@ import { ToastRoot, createToast } from "@kiwicom/orbit-components/lib/Toast";
 import Sun from "@kiwicom/orbit-components/lib/icons/Sun";
 import prettier from "prettier/standalone";
 import parserBabel from "prettier/parser-babel";
-import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple";
+import { themes } from "prism-react-renderer";
 
 import useCopyToClipboard from "../hooks/useCopyToClipboard";
 import Navbar from "../components/Navbar";
@@ -108,7 +108,7 @@ const Playground = ({ location }: Props) => {
             code={code}
             language="jsx"
             // @ts-expect-error conflict with theme prop
-            theme={shadesOfPurple}
+            theme={themes.shadesOfPurple}
             onChange={c => {
               setCode(c);
               updateLocalStorage(c);

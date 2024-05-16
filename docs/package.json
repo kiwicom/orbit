@@ -103,7 +103,7 @@
     "rehype-stringify": "^10.0.0",
     "remark-cli": "^9.0.0",
     "remark-deflist": "^0.3.0",
-    "remark-frontmatter": "^2.0.0",
+    "remark-frontmatter": "^5.0.0",
     "remark-lint": "^8.0.0",
     "remark-lint-first-heading-level": "^2.0.1",
     "remark-mdx": "^1.6.22",

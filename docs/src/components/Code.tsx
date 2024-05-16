@@ -1,6 +1,5 @@
 import React from "react";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/oceanicNext";
+import { Highlight, themes } from "prism-react-renderer";
 import styled, { css } from "styled-components";
 
 export const InlineCode = styled.code`
@@ -20,12 +19,11 @@ interface CodeBlockProps {
   className?: string;
 }
 export const CodeBlock = ({ children, className }: CodeBlockProps) => {
-  const language = className?.replace(/language-/, "");
+  const language = className?.replace(/language-/, "") || "";
   return (
     <Highlight
-      {...defaultProps}
       code={children}
-      theme={theme}
+      theme={themes.oceanicNext}
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore avoid refining the string type to supported languages
       language={language}

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { LiveProvider, LiveError, LivePreview } from "react-live";
-import dracula from "prism-react-renderer/themes/dracula";
+import { themes } from "prism-react-renderer";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/icons";
@@ -35,7 +35,8 @@ const PureSandbox = ({ data }) => {
       <LiveProvider
         code={code || example}
         scope={{ ...modules, styled, Icons, css }}
-        theme={dracula}
+        language="jsx"
+        theme={themes.dracula}
       >
         <LiveError />
         <GlobalStyle />

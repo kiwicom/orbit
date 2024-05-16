@@ -3,7 +3,7 @@ import { LiveProvider, LiveError, LivePreview } from "react-live";
 import { createGlobalStyle, css } from "styled-components";
 import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 import loadable from "@loadable/component";
-import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple";
+import { themes } from "prism-react-renderer";
 
 import useSandbox from "../hooks/useSandbox";
 import { PREVIEW_ID } from "../components/ReactExample/consts";
@@ -38,7 +38,7 @@ const PlaygroundIframe = () => {
           return (
             <LiveProvider
               code={code}
-              theme={shadesOfPurple}
+              theme={themes.shadesOfPurple}
               scope={{ ...Icons, Icons, ...components, defaultTheme }}
             >
               <LiveError />

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { diff } from "deep-object-diff";
 import copy from "copy-to-clipboard";
-import Highlight, { defaultProps } from "prism-react-renderer";
+import { Highlight } from "prism-react-renderer";
 import { Modal, ModalHeader, ModalSection, ModalFooter, Button } from "@kiwicom/orbit-components/";
 
 import { DEFAULT_COLORS } from "../consts";
@@ -53,7 +53,7 @@ const App = () =>
     <Modal onClose={onClose} size="extraLarge">
       <ModalHeader title="Export theme" />
       <ModalSection>
-        <Highlight {...defaultProps} code={code} language="jsx">
+        <Highlight code={code} language="jsx">
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <Pre className={className} style={style}>
               {tokens.map((line, i) => (

@@ -11,7 +11,11 @@
     },
     "publish": {
       "allowBranch": "master",
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "ignoreChanges": [
+        "packages/orbit-design-tokens/scripts/**",
+        "packages/orbit-components/config/**"
+      ]
     }
   }
 }

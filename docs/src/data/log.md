@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.1.1...@kiwicom/orbit-components@15.2.0) (2024-05-16)
+
+#### Bug Fixes
+
+*   **Itinerary:** clickable area is now more accurate ([1c50583](https://github.com/kiwicom/orbit/commit/1c5058331eabb4fd0c258c2cf63e1ed79b14624b))
+
+#### Features
+
+*   **ServiceLogo:** add GetYourGuideLong logo ([ace0a71](https://github.com/kiwicom/orbit/commit/ace0a713c1513fe4293370a2fc480cbb034ae28b))
+
 ### [15.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.1.0...@kiwicom/orbit-components@15.1.1) (2024-04-25)
 
 #### Bug Fixes

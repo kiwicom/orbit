@@ -35,6 +35,7 @@ type Name =
   | "PayPal"
   | "RentalCars"
   | "Sherpa"
+  | "Simtex"
   | "Sofort"
   | "TravelPulse"
   | "Trustly"

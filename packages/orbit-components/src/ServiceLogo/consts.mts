@@ -30,6 +30,7 @@ export enum NAME_OPTIONS {
   PAYPAL = "PayPal",
   RENTALCARS = "RentalCars",
   SHERPA = "Sherpa",
+  SIMTEX = "Simtex",
   SOFORT = "Sofort",
   TRAVELPULSE = "TravelPulse",
   TRUSTLY = "Trustly",

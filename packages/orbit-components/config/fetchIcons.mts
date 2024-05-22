@@ -231,7 +231,10 @@ async function saveOrbitIcons(data: { name: string; svg: string; id: string }[])
             const nodeId = nodes[id] as string;
             return {
               id,
-              name: nodeId.toLowerCase().replace(/\+kg/, "").replace(/\s+/g, "-"),
+              name: nodeId
+                .toLowerCase()
+                .replace(/\+kg|\(|\)/g, "")
+                .replace(/\s+/g, "-"),
               svg: await res.text(),
             };
           }),

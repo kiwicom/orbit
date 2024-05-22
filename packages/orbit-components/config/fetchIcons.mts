@@ -45,7 +45,13 @@ interface Images {
   images: Record<string, string>;
 }
 
-const FILTERED_FRAMES = ["All icons", "Social Colored", "Social", "Navigation icons"];
+const VALID_FRAMES = [
+  "[Main] Bold icons",
+  "[Main] Light icons",
+  "Social Colored",
+  "Social",
+  "Navigation icons",
+];
 const ICONS_ID = "wjYAT0sNBXtirEoyKgXUwr";
 const FIGMA_FILE_URI = `https://api.figma.com/v1/files/${ICONS_ID}`;
 const FIGMA_IMAGE_URI = `https://api.figma.com/v1/images/${ICONS_ID}`;
@@ -190,7 +196,7 @@ async function saveOrbitIcons(data: { name: string; svg: string; id: string }[])
     const { components } = meta;
 
     const nodes = components
-      .filter(c => FILTERED_FRAMES.includes(c.containing_frame.name))
+      .filter(c => VALID_FRAMES.includes(c.containing_frame.name))
       .reduce((acc, c) => {
         if (c.name.includes("size=") && !isCorrectSize(c.name)) return acc;
 

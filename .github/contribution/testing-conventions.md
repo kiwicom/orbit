@@ -152,7 +152,7 @@ export function TestComponentStory() {
 Snapshots are OS-specific. CI runs Linux on its machines. In order to generate CI-compatible
 snapshots, you need to run the tests on Linux. You can do that by running the tests in Docker:
 
-- `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.39.0-jammy /bin/bash`
+- `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.44.1-jammy /bin/bash`
 - `yarn run docker:reset`
 - `yarn components test-ct --update-snapshots`
 

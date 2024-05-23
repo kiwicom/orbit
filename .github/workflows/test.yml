@@ -126,7 +126,7 @@ jobs:
     name: Visual Regression Tests
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.39.0-jammy
+      image: mcr.microsoft.com/playwright:v1.44.1-jammy
     strategy:
       fail-fast: false
       matrix:

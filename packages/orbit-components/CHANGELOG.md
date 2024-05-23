@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.2.0...@kiwicom/orbit-components@15.3.0) (2024-05-23)
+
+
+### Features
+
+* **icons:** update icons from figma ([3e5821d](https://github.com/kiwicom/orbit/commit/3e5821d0ebfcc208f6e438ff2cbd583643653516))
+* **ServiceLogo:** add Simtex logo ([1de2603](https://github.com/kiwicom/orbit/commit/1de2603135bec2d7a624b3ae7308d98689001a84))
+
+
+
+
+
 # [15.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.1.1...@kiwicom/orbit-components@15.2.0) (2024-05-16)
 
 

@@ -4,7 +4,6 @@ import * as React from "react";
 import cx from "clsx";
 
 import HorizontalScroll from "../../../HorizontalScroll";
-import Truncate from "../../../Truncate";
 import ChevronUp from "../../../icons/ChevronUp";
 import ChevronDown from "../../../icons/ChevronDown";
 import Stack from "../../../Stack";
@@ -124,7 +123,7 @@ const ItinerarySegmentDetail = ({
                           <Stack flex grow={false} align="center" key={`${name}-${value}`}>
                             <div
                               className={cx(
-                                "px-xxs relative z-[3] box-border flex items-center",
+                                "px-xxs relative z-[3] box-border flex items-center self-stretch",
                                 "after:-z-default after:bg-white-normal after:border-x-cloud-normal-active after:absolute after:left-0 after:box-border after:size-full after:border-x after:border-solid",
                                 isFirst || isLast ? "py-0" : "py-xxs",
                                 isFirst &&
@@ -135,14 +134,14 @@ const ItinerarySegmentDetail = ({
                             >
                               {itemIcon}
                             </div>
-                            <Truncate>
+                            <div className="flex-1 text-wrap break-words">
                               <Text size="small">{name}</Text>
-                            </Truncate>
-                            <Truncate>
+                            </div>
+                            <div className="grow-0 text-wrap break-all">
                               <ItineraryText as="div" size="small" weight="medium" align="end">
                                 {value}
                               </ItineraryText>
-                            </Truncate>
+                            </div>
                           </Stack>
                         );
                       })}

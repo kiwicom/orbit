@@ -33,10 +33,10 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         !disabled && [
           !checked &&
             (hasError
-              ? "[&>.orbit-radio-icon-container]:border-form-element-error [&>.orbit-radio-icon-container]:hover:border-form-element-error-hover [&>.orbit-radio-icon-container]:active:border-form-element-error "
+              ? "[&>.orbit-radio-icon-container]:border-form-element-error [&>.orbit-radio-icon-container]:hover:border-form-element-error-hover [&>.orbit-radio-icon-container]:active:border-form-element-error"
               : "[&>.orbit-radio-icon-container]:border-form-element [&>.orbit-radio-icon-container]:hover:border-form-element-hover [&>.orbit-radio-icon-container]:active:border-form-element-active"),
           checked &&
-            "[&>.orbit-radio-icon-container]:border-form-element-focus [&>.orbit-radio-icon-container]:bg-blue-normal active:border-form-element-focus",
+            "[&>.orbit-radio-icon-container]:border-form-element-focus active:border-form-element-focus [&>.orbit-radio-icon-container]:bg-white-normal",
         ],
       )}
     >
@@ -64,18 +64,17 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "flex flex-none items-center justify-center",
             "size-icon-medium rounded-full",
             "duration-fast scale-100 transition-all ease-in-out",
-            "lm:border border-[2px] border-solid",
+            "border-solid",
+            checked ? "border-2" : "border",
             "active:scale-95",
             "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
-            disabled
-              ? "bg-form-element-disabled-background border-transparent"
-              : "bg-form-element-background",
+            disabled ? "bg-cloud-light border-cloud-dark" : "bg-form-element-background",
           )}
         >
           <span
             className={cx(
-              "size-xs rounded-full",
-              disabled ? "bg-cloud-light" : "bg-form-element-background",
+              "size-[10px] rounded-full",
+              disabled ? "bg-cloud-dark" : "bg-blue-normal",
               checked ? "visible" : "invisible",
             )}
           />

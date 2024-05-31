@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.3.0...@kiwicom/orbit-components@15.3.1) (2024-05-31)
+
+
+### Bug Fixes
+
+* **ItinerarySegment:** ensure text wraps instead of being truncated ([1cddf73](https://github.com/kiwicom/orbit/commit/1cddf732f9f3dd08d3cfc085ed93a3f36054e93e))
+
+
+
+
+
 # [15.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.2.0...@kiwicom/orbit-components@15.3.0) (2024-05-23)
 
 

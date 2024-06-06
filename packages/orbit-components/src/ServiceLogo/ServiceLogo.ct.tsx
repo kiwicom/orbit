@@ -20,9 +20,11 @@ test.describe("visual ServiceLogo", () => {
     await page.waitForSelector(selector);
 
     await expect(component).toHaveScreenshot({
+      // The following values were determined by trial and error to be
+      // the minimum required for the test to pass successfully.
       threshold: 0.3,
       maxDiffPixelRatio: 0.02,
-      maxDiffPixels: undefined,
+      maxDiffPixels: undefined, // overrides the global configuration
     });
   });
 });

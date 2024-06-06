@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.3.1...@kiwicom/orbit-components@15.4.0) (2024-06-06)
+
+#### Features
+
+*   **Radio:** update component visually to match latest Figma ([4ff0c15](https://github.com/kiwicom/orbit/commit/4ff0c15214af2a59bacf41c661e56ffe033d22f3))
+
 ### [15.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.3.0...@kiwicom/orbit-components@15.3.1) (2024-05-31)
 
 #### Bug Fixes

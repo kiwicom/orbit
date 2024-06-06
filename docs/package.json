@@ -58,7 +58,7 @@
     "babel-plugin-styled-components": "^2.0.7",
     "babel-preset-gatsby": "^2.17.0",
     "browser-sync": "^2.27.9",
-    "check-links": "^1.1.8",
+    "check-links": "^2.1.2",
     "copy-to-clipboard": "^3.3.1",
     "downshift": "^6.1.7",
     "eslint-plugin-mdx": "^1.17.0",

@@ -71,10 +71,8 @@ const sliceIntoChunks = (arr: string[], chunkSize: number) =>
     return acc;
   }, []);
 
-const generateId = () => String(Math.floor(Math.random() * 9000) + 1000);
-const generateUniqueId = (id: string, arr: string[]) => (arr.includes(id) ? generateId() : id);
 const getId = (str: string) => {
-  const match = str.match(/character.*?(\d+)/);
+  const match = str.match(/character.*?(\d+:\d+)/);
   return match ? match[1] : str;
 };
 // helper functions
@@ -145,13 +143,11 @@ const setSvgContent = (name: string, content: string, id: string) => {
 async function saveOrbitIcons(data: { name: string; svg: string; id: string }[]) {
   const savedIds: string[] = [];
 
-  for (const { name, svg } of data) {
+  for (const { name, svg, id } of data) {
     const parsedName = parseName(name);
-    const id = generateId();
-    const uniqueId = generateUniqueId(id, savedIds);
-    const content = setSvgContent(parsedName, svg, uniqueId);
+    const content = setSvgContent(parsedName, svg, id);
     const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
-    let currentId = uniqueId;
+    let currentId = id;
 
     if (!fs.existsSync(filePath)) {
       await fs.writeFile(filePath, content, "utf-8").then(() => {
@@ -264,5 +260,6 @@ async function saveOrbitIcons(data: { name: string; svg: string; id: string }[])
     }
   } catch (err) {
     console.error(err);
+    process.exit(1);
   }
 })();

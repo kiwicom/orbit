@@ -60,7 +60,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         name={name}
         tabIndex={tabIndex ? Number(tabIndex) : undefined}
         checked={checked}
-        onChange={onChange}
+        onChange={!readOnly ? onChange : undefined}
+        onClick={e => readOnly && e.stopPropagation()}
         ref={ref}
         readOnly={readOnly}
       />

@@ -130,6 +130,26 @@ Playground.story = {
   },
 };
 
+export const Controlled = () => {
+  const [selected, setSelected] = React.useState(false);
+
+  const Icon = getIcon(getIcons("icon", "Accommodation"));
+
+  return (
+    <ListChoice
+      title="Controlled ListChoice"
+      description="This ListChoice is controlled by React.useState"
+      icon={Icon && <Icon />}
+      selectable
+      selected={selected}
+      onClick={e => {
+        action("onClick")(e);
+        setSelected(!selected);
+      }}
+    />
+  );
+};
+
 export const Rtl = () => (
   <RenderInRtl>
     <>

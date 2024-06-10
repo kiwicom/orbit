@@ -126,7 +126,7 @@ export const Playground = () => {
       dataTest={dataTest}
       info={info}
       readOnly={readOnly}
-      onChange={!readOnly ? action("changed") : undefined}
+      onChange={action("changed")}
     />
   );
 };

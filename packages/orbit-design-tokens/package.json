@@ -45,6 +45,6 @@
     "xml": "^1.0.1"
   },
   "dependencies": {
-    "color2k": "^2.0.2"
+    "color2k": "^2.0.3"
   }
 }

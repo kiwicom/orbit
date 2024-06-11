@@ -77,7 +77,7 @@
     "@kiwicom/orbit-tailwind-preset": "^4.3.1",
     "@popperjs/core": "^2.9.2",
     "clsx": "^2.0.0",
-    "color2k": "^2.0.2",
+    "color2k": "^2.0.3",
     "react-hot-toast": "^2.4.0",
     "react-popper": "^2.3.0"
   },

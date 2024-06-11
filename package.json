@@ -107,7 +107,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-matchmedia-mock": "^1.1.0",
     "lerna": "7.2.0",
-    "lint-staged": "^12.3.2",
+    "lint-staged": "^15.2.5",
     "lodash": "^4.17.21",
     "markdown-magic": "^2.6.0",
     "postcss": "^8.4.31",

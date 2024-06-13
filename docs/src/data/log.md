@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.4.0...@kiwicom/orbit-components@15.5.0) (2024-06-13)
+
+#### Bug Fixes
+
+*   **Checkbox:** prevent changes on readOnly ([7d16638](https://github.com/kiwicom/orbit/commit/7d16638df0e2a889815b86a4ca302c7a106afd74))
+
+#### Features
+
+*   **icons:** update icons from figma ([57833af](https://github.com/kiwicom/orbit/commit/57833affaaaac10e6b05c10fc152ca3f852749cd))
+
 ## [15.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.3.1...@kiwicom/orbit-components@15.4.0) (2024-06-06)
 
 #### Features

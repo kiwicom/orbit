@@ -390,21 +390,6 @@
     "github": "https://github.com/apps/dependabot"
   },
   {
-    "id": 3984338,
-    "name": null,
-    "username": "williamkolmacka",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": null,
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/3984338?v=4",
-    "position": "",
-    "github": "https://github.com/williamkolmacka"
-  },
-  {
     "id": 159019920,
     "name": null,
     "username": "kiwicom-orbit-bot",
@@ -418,6 +403,21 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/159019920?v=4",
     "position": "",
     "github": "https://github.com/kiwicom-orbit-bot"
+  },
+  {
+    "id": 3984338,
+    "name": null,
+    "username": "williamkolmacka",
+    "error": "",
+    "twitter": null,
+    "website": "",
+    "info": null,
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/3984338?v=4",
+    "position": "",
+    "github": "https://github.com/williamkolmacka"
   },
   {
     "id": 129299274,

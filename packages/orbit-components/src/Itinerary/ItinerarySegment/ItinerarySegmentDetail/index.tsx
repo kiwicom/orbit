@@ -97,7 +97,7 @@ const ItinerarySegmentDetail = ({
             >
               {content.map(({ title, items }, idx) => {
                 return (
-                  <React.Fragment key={`${title}`}>
+                  <React.Fragment key={typeof title === "string" ? title : idx}>
                     <div className="ms-xl">
                       <ItineraryText as="div" size="small" weight="medium" spaceAfter="small">
                         {title}
@@ -119,8 +119,12 @@ const ItinerarySegmentDetail = ({
                       {items.map(({ icon: itemIcon, name, value }, id) => {
                         const isFirst = id === 0;
                         const isLast = id === items.length - 1;
+                        const key =
+                          typeof name === "string" && typeof value === "string"
+                            ? `${name}-${value}`
+                            : id;
                         return (
-                          <Stack flex grow={false} align="center" key={`${name}-${value}`}>
+                          <Stack flex grow={false} align="center" key={key}>
                             <div
                               className={cx(
                                 "px-xxs relative z-[3] box-border flex items-center self-stretch",

@@ -27,15 +27,21 @@ const ItinerarySegmentStop = ({
   minWidth = 70,
   type,
 }: Props) => {
-  const { calculatedWidth, setWidths } = useWidth();
+  const { calculatedWidth, setWidth } = useWidth();
   const { last, isBanner, index } = usePart();
   const [dateWidth, setDateWidth] = React.useState<HTMLDivElement | null>(null);
 
   const textType = type === "neutral" ? "primary" : type;
 
   React.useEffect(() => {
-    setWidths(prev => (dateWidth?.clientWidth ? [...prev, minWidth, dateWidth.clientWidth] : prev));
-  }, [setWidths, dateWidth, minWidth]);
+    setWidth(minWidth);
+  }, [setWidth, minWidth]);
+
+  React.useEffect(() => {
+    if (dateWidth?.clientWidth) {
+      setWidth(dateWidth.clientWidth);
+    }
+  }, [setWidth, dateWidth]);
 
   return (
     <div

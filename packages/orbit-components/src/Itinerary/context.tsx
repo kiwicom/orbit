@@ -1,12 +1,12 @@
 import * as React from "react";
 
 interface Context {
-  setWidths: React.Dispatch<React.SetStateAction<number[]>>;
+  setWidth: (width: number) => void;
   calculatedWidth: number;
 }
 
 export const ItineraryContext = React.createContext<Context>({
-  setWidths: () => {},
+  setWidth: () => {},
   calculatedWidth: 0,
 });
 
@@ -15,19 +15,21 @@ export const ItineraryProvider = ({
 }: {
   children: React.ReactNode;
 }): React.ReactElement<Context> => {
-  const [widths, setWidths] = React.useState([70]);
-  const [calculatedWidth, setCalculatedWidth] = React.useState(0);
+  const [calculatedWidth, setCalculatedWidth] = React.useState(70);
 
-  React.useEffect(() => {
-    setCalculatedWidth(Math.max(...widths));
-  }, [widths]);
+  const setWidth = React.useCallback(
+    (val: number) => {
+      setCalculatedWidth(prev => Math.max(prev, val));
+    },
+    [setCalculatedWidth],
+  );
 
   const value = React.useMemo(
     () => ({
-      setWidths,
+      setWidth,
       calculatedWidth,
     }),
-    [calculatedWidth],
+    [setWidth, calculatedWidth],
   );
 
   return <ItineraryContext.Provider value={value}>{children}</ItineraryContext.Provider>;

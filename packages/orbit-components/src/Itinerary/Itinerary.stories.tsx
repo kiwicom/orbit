@@ -396,14 +396,16 @@ export const Stop = () => {
   return (
     <Stack spacing="large">
       <Heading type="title2">Regular stop</Heading>
-      <ItinerarySegmentStop
-        city={city}
-        station={station}
-        hidden={hidden}
-        date={date}
-        type={type}
-        time={time}
-      />
+      <Itinerary>
+        <ItinerarySegmentStop
+          city={city}
+          station={station}
+          hidden={hidden}
+          date={date}
+          type={type}
+          time={time}
+        />
+      </Itinerary>
       <Heading type="title2">Hidden city example</Heading>
       <Itinerary>
         <ItinerarySegment

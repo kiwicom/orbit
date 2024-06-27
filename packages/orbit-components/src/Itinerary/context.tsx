@@ -1,13 +1,13 @@
 import * as React from "react";
 
 interface Context {
-  setWidth: (width: number) => void;
-  calculatedWidth: number;
+  setItinerarySegmentMinimalColumnWidth: (width: number) => void;
+  itinerarySegmentMinimalColumnWidth: number;
 }
 
 export const ItineraryContext = React.createContext<Context>({
-  setWidth: () => {},
-  calculatedWidth: 0,
+  setItinerarySegmentMinimalColumnWidth: () => {},
+  itinerarySegmentMinimalColumnWidth: 0,
 });
 
 export const ItineraryProvider = ({
@@ -15,24 +15,25 @@ export const ItineraryProvider = ({
 }: {
   children: React.ReactNode;
 }): React.ReactElement<Context> => {
-  const [calculatedWidth, setCalculatedWidth] = React.useState(70);
+  const [minWidth, setMinWidth] = React.useState(70);
 
-  const setWidth = React.useCallback(
+  const setItinerarySegmentMinimalColumnWidth = React.useCallback(
     (val: number) => {
-      setCalculatedWidth(prev => Math.max(prev, val));
+      setMinWidth(prev => Math.max(prev, val));
     },
-    [setCalculatedWidth],
+    [setMinWidth],
   );
 
   const value = React.useMemo(
     () => ({
-      setWidth,
-      calculatedWidth,
+      setItinerarySegmentMinimalColumnWidth,
+      itinerarySegmentMinimalColumnWidth: minWidth,
     }),
-    [setWidth, calculatedWidth],
+    [setItinerarySegmentMinimalColumnWidth, minWidth],
   );
 
   return <ItineraryContext.Provider value={value}>{children}</ItineraryContext.Provider>;
 };
 
-export const useWidth = (): Context => React.useContext(ItineraryContext);
+export const useItinerarySegmentMinimalColumnWidth = (): Context =>
+  React.useContext(ItineraryContext);

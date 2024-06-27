@@ -3,7 +3,7 @@
 import * as React from "react";
 import cx from "clsx";
 
-import { useWidth } from "../../context";
+import { useItinerarySegmentMinimalColumnWidth } from "../../context";
 import Stack from "../../../Stack";
 // TODO: remove after designers will resolve status colors
 // https://skypicker.slack.com/archives/GSGN9BN6Q/p1674568716519889
@@ -27,21 +27,22 @@ const ItinerarySegmentStop = ({
   minWidth = 70,
   type,
 }: Props) => {
-  const { calculatedWidth, setWidth } = useWidth();
+  const { itinerarySegmentMinimalColumnWidth, setItinerarySegmentMinimalColumnWidth } =
+    useItinerarySegmentMinimalColumnWidth();
   const { last, isBanner, index } = usePart();
   const [dateWidth, setDateWidth] = React.useState<HTMLDivElement | null>(null);
 
   const textType = type === "neutral" ? "primary" : type;
 
   React.useEffect(() => {
-    setWidth(minWidth);
-  }, [setWidth, minWidth]);
+    setItinerarySegmentMinimalColumnWidth(minWidth);
+  }, [setItinerarySegmentMinimalColumnWidth, minWidth]);
 
   React.useEffect(() => {
     if (dateWidth?.clientWidth) {
-      setWidth(dateWidth.clientWidth);
+      setItinerarySegmentMinimalColumnWidth(dateWidth.clientWidth);
     }
-  }, [setWidth, dateWidth]);
+  }, [setItinerarySegmentMinimalColumnWidth, dateWidth]);
 
   return (
     <div
@@ -56,7 +57,7 @@ const ItinerarySegmentStop = ({
           className="whitespace-nowrap"
           ref={setDateWidth}
           data-test="time"
-          style={{ minWidth: `${calculatedWidth}px` }}
+          style={{ minWidth: `${itinerarySegmentMinimalColumnWidth}px` }}
         >
           <Stack flex direction="column" spacing="none" align="end">
             {time && (

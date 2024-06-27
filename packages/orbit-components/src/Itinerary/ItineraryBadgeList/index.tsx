@@ -4,14 +4,14 @@ import * as React from "react";
 import cx from "clsx";
 
 import BadgeList from "../../BadgeList";
-import { useWidth } from "../context";
+import { useItinerarySegmentMinimalColumnWidth } from "../context";
 import ItineraryBadgeListItem from "./ItineraryBadgeListItem";
 import type { Props } from "./types";
 import { spaceAfterClasses } from "../../common/tailwind";
 import useTheme from "../../hooks/useTheme";
 
 const ItineraryBadgeList = ({ children, spaceAfter, ...props }: Props) => {
-  const { calculatedWidth: offset } = useWidth();
+  const { itinerarySegmentMinimalColumnWidth: offset } = useItinerarySegmentMinimalColumnWidth();
   const theme = useTheme();
   return (
     <div

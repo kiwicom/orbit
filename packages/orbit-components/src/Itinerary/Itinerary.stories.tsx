@@ -168,7 +168,11 @@ export const Segment = () => {
   return (
     <div className="space-y-xl">
       <Itinerary>
-        <ItinerarySegment>
+        <ItinerarySegment
+          onClick={action("clicked")}
+          onCollapse={action("collapsed")}
+          onExpand={action("expanded")}
+        >
           <ItinerarySegmentStop
             city="Prague"
             station="Václav Havel Airport Prague (PRG)"
@@ -514,7 +518,12 @@ export const Stop = () => {
 
 export const Detail = () => {
   return (
-    <ItinerarySegment noElevation>
+    <ItinerarySegment
+      noElevation
+      onClick={action("clicked")}
+      onCollapse={action("collapsed")}
+      onExpand={action("expanded")}
+    >
       <ItinerarySegmentDetail duration="2h 30m" summary={<BadgeGroup />} content={content} />
     </ItinerarySegment>
   );

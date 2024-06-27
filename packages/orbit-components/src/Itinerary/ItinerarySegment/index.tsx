@@ -15,8 +15,10 @@ const ItinerarySegment = ({
   dataTest,
   noElevation,
   actionable = true,
-  onClick,
   banner,
+  onClick,
+  onExpand,
+  onCollapse,
 }: Props) => {
   const content = React.Children.toArray(children) as React.ReactElement[];
 
@@ -25,6 +27,9 @@ const ItinerarySegment = ({
   const handleClick = (ev: React.SyntheticEvent<HTMLDivElement>) => {
     ev.stopPropagation();
     if (onClick) onClick(ev);
+    if (!opened && onExpand) onExpand(ev);
+    if (opened && onCollapse) onCollapse(ev);
+
     setOpened(prev => !prev);
   };
 
@@ -43,8 +48,8 @@ const ItinerarySegment = ({
           <ItinerarySegmentProvider
             index={i}
             opened={opened}
-            toggleOpened={() => {
-              if (document && document.getSelection()?.type !== "Range") setOpened(prev => !prev);
+            toggleOpened={ev => {
+              if (document && document.getSelection()?.type !== "Range") handleClick(ev);
             }}
             last={i === content.length - 1}
             isNextHidden={Boolean(content[i + 1]?.props?.hidden)}

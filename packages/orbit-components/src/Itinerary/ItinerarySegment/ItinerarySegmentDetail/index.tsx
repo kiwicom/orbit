@@ -13,7 +13,7 @@ import Slide from "../../../utils/Slide";
 import useBoundingRect from "../../../hooks/useBoundingRect";
 import { useRandomIdSeed } from "../../../hooks/useRandomId";
 import { usePart } from "../context";
-import { useWidth } from "../../context";
+import { useItinerarySegmentMinimalColumnWidth } from "../../context";
 import AirplaneDown from "../../../icons/AirplaneDown";
 import type { Props } from "./types";
 import ItineraryIcon from "../ItineraryIcon";
@@ -27,7 +27,7 @@ const ItinerarySegmentDetail = ({
   icon = <AirplaneDown size="small" />,
 }: Props) => {
   const { opened, toggleOpened } = usePart();
-  const { calculatedWidth } = useWidth();
+  const { itinerarySegmentMinimalColumnWidth } = useItinerarySegmentMinimalColumnWidth();
   const theme = useTheme();
   const [{ height: slideHeight }, slideRef] = useBoundingRect<HTMLDivElement>({
     height: opened ? null : 0,
@@ -39,7 +39,10 @@ const ItinerarySegmentDetail = ({
     <div className="relative box-border w-full px-0 py-[10px]">
       <div className="px-sm py-0">
         <Stack align="center" spacing="small">
-          <div className="flex justify-end" style={{ minWidth: `${calculatedWidth || 60}px` }}>
+          <div
+            className="flex justify-end"
+            style={{ minWidth: `${itinerarySegmentMinimalColumnWidth || 60}px` }}
+          >
             <ItineraryText as="div" size="small" weight="medium">
               {duration}
             </ItineraryText>
@@ -92,7 +95,9 @@ const ItinerarySegmentDetail = ({
             <div
               className="px-sm z-default relative py-0"
               style={{
-                insetInlineStart: `${parseInt(theme.orbit.spaceXSmall, 10) + calculatedWidth}px`,
+                insetInlineStart: `${
+                  parseInt(theme.orbit.spaceXSmall, 10) + itinerarySegmentMinimalColumnWidth
+                }px`,
               }}
             >
               {content.map(({ title, items }, idx) => {
@@ -112,7 +117,7 @@ const ItinerarySegmentDetail = ({
                       )}
                       style={{
                         width: `calc(100% - ${
-                          parseInt(theme.orbit.spaceXSmall, 10) + calculatedWidth
+                          parseInt(theme.orbit.spaceXSmall, 10) + itinerarySegmentMinimalColumnWidth
                         }px)`,
                       }}
                     >

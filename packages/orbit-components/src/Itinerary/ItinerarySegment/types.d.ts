@@ -23,4 +23,8 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly actionable?: boolean;
   /** Additional information to ItinerarySegment */
   readonly banner?: React.ReactNode;
+  /** onExpand callback that is triggered when Segment is expanded */
+  readonly onExpand?: Common.Event<React.SyntheticEvent<HTMLDivElement>>;
+  /** onCollapse callback that is triggered when Segment is collapsed */
+  readonly onCollapse?: Common.Event<React.SyntheticEvent<HTMLDivElement>>;
 }

@@ -8,7 +8,7 @@ interface Context {
   isBanner: boolean;
   index: number;
   opened: boolean;
-  toggleOpened: () => void;
+  toggleOpened: (ev: React.SyntheticEvent<HTMLDivElement>) => void;
   last: boolean;
   count: number;
 }

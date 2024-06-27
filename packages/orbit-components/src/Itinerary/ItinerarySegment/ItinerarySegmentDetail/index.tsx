@@ -87,7 +87,7 @@ const ItinerarySegmentDetail = ({
             ref={slideRef}
             tabIndex={-1}
             role="button"
-            onClick={toggleOpened}
+            onClick={ev => toggleOpened(ev)}
             onKeyDown={ev => {
               ev.stopPropagation();
             }}

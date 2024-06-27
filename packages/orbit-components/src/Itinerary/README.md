@@ -62,16 +62,19 @@ The ItinerarySegment component serves as a wrapper of atomic unit `ItinerarySegm
 
 ## Props
 
-| Name        | Type              | Required           | Default | Description                                            |
-| ----------- | ----------------- | ------------------ | ------- | ------------------------------------------------------ |
-| label       | `React.ReactNode` |                    |         | Status message of ItinerarySegment                     |
-| children    | `React.ReactNode` | :heavy_check_mark: |         | The content of ItinerarySegment                        |
-| dataTest    | `string`          |                    |         | Optional prop for testing purposes.                    |
-| id          | `string`          |                    |         | Set `id` for `Itinerary`                               |
-| noElevation | `boolean`         |                    |         | Turn off elevation (box-shadow) for a segment.         |
-| spaceAfter  | `enum`            |                    |         | Additional `margin-bottom` after component.            |
-| actionable  | `boolean`         |                    | `true`  | Applies actionable styles for ItinerarySegment wrapper |
-| banner      | `React.Node`      |                    |         | Additional information for `ItinerarySegment`          |
+| Name        | Type                       | Required           | Default | Description                                                    |
+| ----------- | -------------------------- | ------------------ | ------- | -------------------------------------------------------------- |
+| label       | `React.ReactNode`          |                    |         | Status message of ItinerarySegment                             |
+| children    | `React.ReactNode`          | :heavy_check_mark: |         | The content of ItinerarySegment                                |
+| dataTest    | `string`                   |                    |         | Optional prop for testing purposes.                            |
+| id          | `string`                   |                    |         | Set `id` for `Itinerary`                                       |
+| noElevation | `boolean`                  |                    |         | Turn off elevation (box-shadow) for a segment.                 |
+| spaceAfter  | `enum`                     |                    |         | Additional `margin-bottom` after component.                    |
+| actionable  | `boolean`                  |                    | `true`  | Applies actionable styles for ItinerarySegment wrapper         |
+| banner      | `React.Node`               |                    |         | Additional information for `ItinerarySegment`                  |
+| onClick     | `event => void \| Promise` |                    |         | Function for handling `onClick` event.                         |
+| onExpand    | `event => void \| Promise` |                    |         | Function to be triggered when `ItinerarySegment` is expanded.  |
+| onCollapse  | `event => void \| Promise` |                    |         | Function to be triggered when `ItinerarySegment` is collapsed. |
 
 ### enum
 

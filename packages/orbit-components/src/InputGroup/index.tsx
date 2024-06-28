@@ -132,7 +132,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
 
         <div
           className={cx(
-            "text-normal h-form-box-normal duration-fast rounded-large tb:rounded-normal z-[1] w-full transition-shadow ease-in-out",
+            "text-normal h-form-box-normal duration-fast rounded-150 tb:rounded-100 z-[1] w-full transition-shadow ease-in-out",
             active && "outline-blue-normal outline outline-2",
             disabled ? "bg-form-element-disabled-background" : "bg-form-element-background",
             !errorReal && "shadow-form-element",

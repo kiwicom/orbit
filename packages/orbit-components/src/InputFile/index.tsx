@@ -113,7 +113,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           !disabled &&
             (error ? "hover:shadow-form-element-error-hover" : "hover:shadow-form-element-hover"),
           "duration-fast transition-shadow ease-in-out",
-          "rounded-normal",
+          "rounded-100",
           disabled
             ? "bg-form-element-disabled-background cursor-not-allowed"
             : "bg-form-element-background cursor-pointer",

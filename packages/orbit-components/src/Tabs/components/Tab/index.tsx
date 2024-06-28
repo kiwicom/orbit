@@ -33,7 +33,7 @@ const Tab = ({
         "min-w-fit",
         "relative box-border",
         "font-base font-medium",
-        "rounded-t-normal",
+        "rounded-t-100",
         "duration-fast transition-colors ease-in-out",
         "px-md",
         compact ? "text-normal py-[5px] leading-normal" : "text-large leading-large py-[9px]",

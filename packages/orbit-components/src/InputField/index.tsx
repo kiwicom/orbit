@@ -31,7 +31,7 @@ export const FakeInput = ({
       "h-form-box-normal text-form-element-normal z-[1]",
       "absolute left-0 top-0",
       "duration-fast transition-all ease-in-out",
-      "rounded-large tb:rounded-normal box-border w-full",
+      "rounded-150 tb:rounded-100 box-border w-full",
       "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
       error ? "shadow-form-element-error" : "shadow-form-element",
       disabled || readOnly

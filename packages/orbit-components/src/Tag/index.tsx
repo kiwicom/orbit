@@ -41,9 +41,9 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
       <div
         className={cx(
           "orbit-tag",
-          "font-base rounded-large p-xs box-border inline-flex items-center justify-center font-medium",
+          "font-base rounded-150 p-xs box-border inline-flex items-center justify-center font-medium",
           "duration-fast transition-[color,_background-color,_box-shadow] ease-in-out",
-          "tb:rounded-normal",
+          "tb:rounded-100",
           size === SIZES.SMALL && "text-small leading-small",
           size === SIZES.NORMAL && "text-normal leading-normal",
           !!(onClick || onRemove) &&

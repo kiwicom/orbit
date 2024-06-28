@@ -26,7 +26,7 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props) => 
 
   return (
     <div
-      className={cx("rounded-small bg-country-flag-background relative shrink-0 overflow-hidden", {
+      className={cx("rounded-50 bg-country-flag-background relative shrink-0 overflow-hidden", {
         "h-country-flag-small w-country-flag-small": size === SIZES.SMALL,
         "h-country-flag-medium w-country-flag-medium": size === SIZES.MEDIUM,
       })}
@@ -41,7 +41,7 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props) => 
         src={src}
         srcSet={srcSet}
       />
-      <div className="rounded-small shadow-country-flag absolute inset-0 block size-full" />
+      <div className="rounded-50 shadow-country-flag absolute inset-0 block size-full" />
     </div>
   );
 };

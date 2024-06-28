@@ -117,7 +117,17 @@ const typescriptFactory = (allProperties: Dictionary["allProperties"], complete 
 
       return createObjectProperty(name, `boxShadow(${boxShadowValue})`);
     }
-    return createObjectProperty(name, plainValue);
+
+    /**
+     * This ensures tokens like 'foundations.borderRadius.50'
+     * will be correctly written as 'foundations.borderRadius["50"]'
+     * and be correct JavaScript code.
+     */
+    const val =
+      typeof plainValue === "string"
+        ? plainValue.replace(/(\w+)\.(\d+)(?=\.|$)/g, '$1["$2"]')
+        : plainValue;
+    return createObjectProperty(name, val);
   });
 
   const plainTokens = createValue(tokens, "javascript");

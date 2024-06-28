@@ -27,19 +27,18 @@ export const iconColorClasses: Record<ICON_COLORS, string> = {
   [ICON_COLORS.CRITICAL]: "text-icon-critical-foreground",
 };
 
-const OrbitIcon = (props: FactoryProps) => {
-  const {
-    size = ICON_SIZES.MEDIUM,
-    color,
-    customColor,
-    className,
-    children,
-    viewBox,
-    dataTest,
-    ariaHidden,
-    reverseOnRtl,
-    ariaLabel,
-  } = props;
+const OrbitIcon = ({
+  size = ICON_SIZES.MEDIUM,
+  color,
+  customColor,
+  className,
+  children,
+  viewBox,
+  dataTest,
+  ariaHidden,
+  reverseOnRtl,
+  ariaLabel,
+}: FactoryProps) => {
   return (
     <svg
       className={cx(
@@ -62,10 +61,6 @@ const OrbitIcon = (props: FactoryProps) => {
       {children}
     </svg>
   );
-};
-
-OrbitIcon.defaultProps = {
-  size: ICON_SIZES.MEDIUM,
 };
 
 export default OrbitIcon;

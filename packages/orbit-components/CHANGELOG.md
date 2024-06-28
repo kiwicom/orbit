@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.5.0...@kiwicom/orbit-components@15.6.0) (2024-06-28)
+
+
+### Bug Fixes
+
+* **Itinerary:** add type check for key prop in ItinerarySegmentDetail ([fbce4aa](https://github.com/kiwicom/orbit/commit/fbce4aa4c098d9053cd546d2e46e71f4b20b77fb))
+* **ItinerarySegmentStop:** simplify useWidth to only keep max value ([5a95105](https://github.com/kiwicom/orbit/commit/5a9510526218b51cd331292f13ce14f067388da7))
+
+
+### Features
+
+* **icons:** update icons from figma ([cf12467](https://github.com/kiwicom/orbit/commit/cf12467a20a279cc20610ea4e5a4b733f3313d28))
+
+
+
+
+
 # [15.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.4.0...@kiwicom/orbit-components@15.5.0) (2024-06-13)
 
 

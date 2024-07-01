@@ -24,7 +24,7 @@ export default function HorizontalScrollVisualStory() {
     <div
       // eslint-disable-next-line react/no-array-index-key -- okay in constants
       key={key}
-      className="rounded-large h-form-box-normal px-md bg-product-normal text-white-foreground font-base flex items-center justify-center"
+      className="rounded-150 h-form-box-normal px-md bg-product-normal text-white-foreground font-base flex items-center justify-center"
     >
       {txt}
     </div>

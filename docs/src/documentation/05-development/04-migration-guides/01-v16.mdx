@@ -1,0 +1,28 @@
+---
+title: v16
+description: How to migrate to Orbit 16.0.0
+redirect_from:
+  - /migration-guides/v16/
+---
+
+# Orbit Migration Guide v16
+
+This migration guide focuses on the process of migrating from Orbit v15 to v16.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### Token update (WIP -- Update this section as needed to document each change)
+
+A number of new design tokens were introduced.
+
+Here's the mapping:
+
+- `rounded-small` -> `rounded-50`
+- ...
+
+Please use the following command to update all the Tailwind classes to use the new corresponding classes instead:
+
+```bash
+node .../transforms/tokens-v16.mjs
+```

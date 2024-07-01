@@ -130,10 +130,10 @@ const Alert = (props: Props) => {
   return (
     <div
       className={cx(
-        "rounded-large text-ink-dark font-base text-normal p-sm relative box-border flex w-full border border-t-[3px] leading-normal",
+        "rounded-150 text-ink-dark font-base text-normal p-sm relative box-border flex w-full border border-t-[3px] leading-normal",
         closable && "pe-lg",
         "lm:border-s-[3px] lm:border-t",
-        "tb:rounded-normal",
+        "tb:rounded-100",
         suppressed ? "bg-cloud-light border-cloud-normal lm:border-t-cloud-normal" : COLORS[type],
         ACCENT_BORDER[type],
         spaceAfter && spaceAfterClasses[spaceAfter],

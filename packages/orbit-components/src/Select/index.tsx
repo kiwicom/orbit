@@ -162,7 +162,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
               "border-0",
               customValueText && "!text-transparent",
               "duration-fast transition-shadow ease-in-out",
-              "rounded-large tb:rounded-normal",
+              "rounded-150 tb:rounded-100",
               "[&>option]:text-form-element-filled-foreground",
               "disabled:text-form-element-disabled-foreground disabled:cursor-not-allowed",
             )}

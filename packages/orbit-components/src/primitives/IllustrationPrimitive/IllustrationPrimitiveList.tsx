@@ -8,7 +8,7 @@ const IllustrationPrimitiveList = (props: { images: string[]; nameOfComponent: s
       {props.images.map(illustration => {
         return (
           <div
-            className="bg-white-normal mb-lg rounded-large border-cloud-normal p-lg lm:flex-row flex min-h-[80px] w-full flex-col items-center border border-solid"
+            className="bg-white-normal mb-lg rounded-150 border-cloud-normal p-lg lm:flex-row flex min-h-[80px] w-full flex-col items-center border border-solid"
             key={illustration}
           >
             <IllustrationPrimitive name={illustration} />

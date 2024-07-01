@@ -3,22 +3,22 @@
     "palette": {
       "orange": {
         "dark": {
-          "value": "#AD5700",
-          "internal": true,
-          "type": "color"
-        },
-        "dark-active": {
-          "value": "#954A00",
-          "internal": true,
-          "type": "color"
-        },
-        "dark-hover": {
           "value": "#A75400",
           "internal": true,
           "type": "color"
         },
-        "darker": {
+        "dark-active": {
           "value": "#803F00",
+          "internal": true,
+          "type": "color"
+        },
+        "dark-hover": {
+          "value": "#954A00",
+          "internal": true,
+          "type": "color"
+        },
+        "darker": {
+          "value": "#663200",
           "internal": true,
           "type": "color"
         },
@@ -38,17 +38,17 @@
           "type": "color"
         },
         "normal": {
-          "value": "#DF7B00",
+          "value": "#CF6C00",
           "internal": true,
           "type": "color"
         },
         "normal-active": {
-          "value": "#B26200",
+          "value": "#AD5700",
           "internal": true,
           "type": "color"
         },
         "normal-hover": {
-          "value": "#C96F00",
+          "value": "#B86000",
           "internal": true,
           "type": "color"
         }

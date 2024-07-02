@@ -141,13 +141,14 @@ const TooltipContent = ({
       {/* Disabling because the onClick exists to close tooltip when clicking in interactibe elements, which should not happen with keyboard */}
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <div
+        /* eslint-disable-next-line tailwindcss/no-custom-classname */
         className={cx(
           "rounded-normal px-sm shadow-raised z-[10012] box-border block w-auto overflow-visible",
           "duration-fast transition-[visibility,_opacity] ease-in-out",
           "[&_img]:max-w-full]",
           contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal)) ? "py-xs" : "py-sm",
           shown ? "visible opacity-100" : "invisible opacity-0",
-          size === "small" && "max-w-[240px]",
+          size === "small" && "max-w-60",
           size === "medium" && "max-w-[380px]",
           error && "bg-red-normal",
           !error && help && "bg-blue-normal",

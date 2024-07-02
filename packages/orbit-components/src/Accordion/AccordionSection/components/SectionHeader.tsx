@@ -21,10 +21,8 @@ const AccordionSectionHeader = ({
   dataTest,
 }: Props) => (
   <div
-    className={cx(
-      "p-lg bg-white-normal flex items-center",
-      expanded ? "min-h-[19px]" : "min-h-[44px]",
-    )}
+    /* eslint-disable-next-line tailwindcss/no-custom-classname */
+    className={cx("p-lg bg-white-normal flex items-center", expanded ? "min-h-[19px]" : "min-h-11")}
     data-test={dataTest && `${dataTest}Header`}
   >
     <div className="flex grow items-center">{children}</div>

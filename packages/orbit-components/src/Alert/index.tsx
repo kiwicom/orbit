@@ -73,8 +73,9 @@ const ContentWrapper = ({
 }) => {
   return (
     <div
+      /* eslint-disable-next-line tailwindcss/no-custom-classname */
       className={cx(
-        "flex min-h-[20px] items-center",
+        "flex min-h-5 items-center",
         !inlineActions && "w-full",
         "[&_.orbit-list-item]:text-ink-dark [&_.orbit-text]:text-ink-dark [&_.orbit-heading]:text-ink-dark",
         ...alertDescendantClasses[type],
@@ -163,8 +164,9 @@ const Alert = (props: Props) => {
       >
         {title && (
           <div
+            /* eslint-disable-next-line tailwindcss/no-custom-classname */
             className={cx(
-              "text-ink-dark flex min-h-[20px] items-center font-bold",
+              "text-ink-dark flex min-h-5 items-center font-bold",
               !!children && (inlineActions ? "mb-0" : "mb-xxs"),
             )}
           >

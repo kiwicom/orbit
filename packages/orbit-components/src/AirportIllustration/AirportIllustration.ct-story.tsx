@@ -9,7 +9,8 @@ export default function AirportIllustrationStory() {
   return (
     <div className="space-y-sm flex flex-col">
       {NAMES.map(illustration => (
-        <div className="bg-white-normal min-h-[80px] w-full">
+        /* eslint-disable-next-line tailwindcss/no-custom-classname */
+        <div className="bg-white-normal min-h-20 w-full">
           <AirportIllustration key={illustration} name={illustration} />
         </div>
       ))}

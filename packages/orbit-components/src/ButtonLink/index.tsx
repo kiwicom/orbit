@@ -16,20 +16,20 @@ import type { Props, Type } from "./types";
 
 const typeStyles: Record<Type, string> = {
   primary:
-    "bg-button-link-primary-background hover:bg-button-link-primary-background-hover active:bg-button-link-primary-background-active focus:bg-button-link-primary-background-focus text-button-link-primary-foreground focus:text-button-link-primary-foreground-focus active:text-button-link-primary-foreground-active hover:text-button-link-primary-foreground-hover",
+    "bg-button-link-primary-background hover:[@media(hover)_and_(pointer:fine)]:bg-button-link-primary-background-hover active:bg-button-link-primary-background-active focus:bg-button-link-primary-background-focus text-button-link-primary-foreground focus:text-button-link-primary-foreground-focus active:text-button-link-primary-foreground-active hover:[@media(hover)_and_(pointer:fine)]:text-button-link-primary-foreground-hover",
   secondary:
-    "bg-button-link-secondary-background hover:bg-button-link-secondary-background-hover active:bg-button-link-secondary-background-active focus:bg-button-link-secondary-background-focus text-button-link-secondary-foreground focus:text-button-link-secondary-foreground-focus active:text-button-link-secondary-foreground-active hover:text-button-link-secondary-foreground-hover",
+    "bg-button-link-secondary-background hover:[@media(hover)_and_(pointer:fine)]:bg-button-link-secondary-background-hover active:bg-button-link-secondary-background-active focus:bg-button-link-secondary-background-focus text-button-link-secondary-foreground focus:text-button-link-secondary-foreground-focus active:text-button-link-secondary-foreground-active hover:[@media(hover)_and_(pointer:fine)]:text-button-link-secondary-foreground-hover",
   critical:
-    "bg-button-link-critical-background hover:bg-button-link-critical-background-hover active:bg-button-link-critical-background-active focus:bg-button-link-critical-background-focus text-button-link-critical-foreground focus:text-button-link-critical-foreground-focus active:text-button-link-critical-foreground-active hover:text-button-link-critical-foreground-hover",
+    "bg-button-link-critical-background hover:[@media(hover)_and_(pointer:fine)]:bg-button-link-critical-background-hover active:bg-button-link-critical-background-active focus:bg-button-link-critical-background-focus text-button-link-critical-foreground focus:text-button-link-critical-foreground-focus active:text-button-link-critical-foreground-active hover:[@media(hover)_and_(pointer:fine)]:text-button-link-critical-foreground-hover",
 };
 
 const typeCompactStyles: Record<Type, string> = {
   primary:
-    "text-button-link-primary-foreground focus:text-button-link-primary-foreground-focus active:text-button-link-primary-foreground-active hover:text-button-link-primary-foreground-hover",
+    "text-button-link-primary-foreground focus:text-button-link-primary-foreground-focus active:text-button-link-primary-foreground-active hover:[@media(hover)_and_(pointer:fine)]:text-button-link-primary-foreground-hover",
   secondary:
-    "text-button-link-secondary-foreground focus:text-product-normal-hover active:text-product-normal-active hover:text-product-normal-hover",
+    "text-button-link-secondary-foreground focus:text-product-normal-hover active:text-product-normal-active hover:[@media(hover)_and_(pointer:fine)]:text-product-normal-hover",
   critical:
-    "text-button-link-critical-foreground focus:text-button-link-critical-foreground-focus active:text-button-link-critical-foreground-active hover:text-button-link-critical-foreground-hover",
+    "text-button-link-critical-foreground focus:text-button-link-critical-foreground-focus active:text-button-link-critical-foreground-active hover:[@media(hover)_and_(pointer:fine)]:text-button-link-critical-foreground-hover",
 };
 
 const typeDisabledStyles: Record<Type, string> = {

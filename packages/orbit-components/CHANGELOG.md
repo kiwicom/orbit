@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.6.0...@kiwicom/orbit-components@15.7.0) (2024-07-04)
+
+
+### Bug Fixes
+
+* **Icon:** remove defaultProps in favour of default values ([4448925](https://github.com/kiwicom/orbit/commit/44489251d341085955a2288ffacd3ae7ec11e185))
+
+
+### Features
+
+* **Itinerary:** add onExpand and onCollapse props to ItinerarySegment ([df0c31b](https://github.com/kiwicom/orbit/commit/df0c31bff5cad0424925d4ca8c5be6ff0563e16a))
+
+
+
+
+
 # [15.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.5.0...@kiwicom/orbit-components@15.6.0) (2024-06-28)
 
 

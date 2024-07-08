@@ -42,26 +42,28 @@ jobs:
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
-      - uses: actions/checkout@v4
-
       - name: Create PR
-        uses: peter-evans/create-pull-request@v6
-        # uses: actions/github-script@v6
+        # uses: peter-evans/create-pull-request@v6
+        # id: cpr
+        uses: actions/github-script@v6
         if: env.new_files == 'true'
-        with:
-          token: ${{ secrets.PAT }}
-          commit-message: "feat(icons): update icons from Figma"
-          title: "feat(icons): update icons from Figma"
-          body: "- Automatically generated PR on ${process.env.TODAY}.\n- Updates icons from Figma"
-          branch: feat/update-icons-and-svgs
         # with:
-        #   script: |
-        #     github.rest.pulls.create({
-        #       owner: context.repo.owner,
-        #       repo: context.repo.repo,
-        #       head: 'feat/update-icons-and-svgs',
-        #       base: 'master',
-        #       title: 'feat(icons): update icons from Figma',
-        #       body: `- Automatically generated PR on ${process.env.TODAY}.\n- Updates icons from Figma`,
-        #       maintainer_can_modify: true,
-        #     });
+        #   token: ${{ secrets.PAT }}
+        #   commit-message: "feat(icons): update icons from Figma"
+        #   title: "feat(icons): update icons from Figma"
+        #   body: "- Automatically generated PR on ${process.env.TODAY}.\n- Updates icons from Figma"
+        #   branch: feat/update-icons-and-svgs
+        #   # branch: ${{ github.head_ref }}
+        #   base: master
+        with:
+          github_token: ${{ secrets.PAT}}
+          script: |
+            github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: 'feat/update-icons-and-svgs',
+              base: 'master',
+              title: 'feat(icons): update icons from Figma',
+              body: `- Automatically generated PR on ${process.env.TODAY}.\n- Updates icons from Figma`,
+              maintainer_can_modify: true,
+            });

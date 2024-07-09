@@ -46,6 +46,7 @@ jobs:
         uses: actions/github-script@v6
         if: env.new_files == 'true'
         with:
+          github-token: ${{ secrets.PAT }}
           script: |
             github.rest.pulls.create({
               owner: context.repo.owner,

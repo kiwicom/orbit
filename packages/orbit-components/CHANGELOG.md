@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.7.0...@kiwicom/orbit-components@15.8.0) (2024-07-11)
+
+
+### Bug Fixes
+
+* **ButtonLink:** handle hover state on mobile ([f1820c7](https://github.com/kiwicom/orbit/commit/f1820c7e763be25824897319f17417156ae001e7))
+
+
+### Features
+
+* **icons:** update icons from figma ([4f5f6c2](https://github.com/kiwicom/orbit/commit/4f5f6c2cafec104a3a4954488c39537596c97602))
+* update minimum tailwindcss version to 3.4.4 ([e5a34ca](https://github.com/kiwicom/orbit/commit/e5a34ca86e790409b35b3ece2d3f99865899880b))
+
+
+
+
+
 # [15.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.6.0...@kiwicom/orbit-components@15.7.0) (2024-07-04)
 
 

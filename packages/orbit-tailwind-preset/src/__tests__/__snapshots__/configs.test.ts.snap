@@ -187,6 +187,7 @@ exports[`orbitPreset should have preflight disabled 1`] = `
     "transitionDuration",
     "transitionTimingFunction",
     "willChange",
+    "contain",
     "content",
     "forcedColorAdjust",
   ],

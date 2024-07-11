@@ -161,7 +161,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
         disabled={isDisabled}
         className={cx(
           className,
-          "orbit-button-primitive font-base duration-fast group relative max-w-full items-center justify-center border-none text-center leading-none transition-all [&>*]:align-middle [&_.orbit-loading-spinner]:stroke-[currentColor]",
+          "orbit-button-primitive font-base duration-fast group relative max-w-full items-center justify-center border-none text-center leading-none transition-all *:align-middle [&_.orbit-loading-spinner]:stroke-current",
           fullWidth ? "w-full flex-auto" : "flex-none",
           circled !== true && "rounded-large tb:rounded-normal",
           isDisabled

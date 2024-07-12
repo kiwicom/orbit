@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select } from "@storybook/addon-knobs";
 
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import { TYPE_OPTIONS as TEXT_TYPES } from "../Text/consts";
@@ -13,20 +12,13 @@ import TextLink from ".";
 
 const validate = (rel: string) => (rel !== undefined && rel !== "" ? rel : undefined);
 
-const getIcons = (name: string, defaultIcon: string) =>
-  select(name, [null, ...Object.keys(Icons)], defaultIcon);
-
 const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "TextLink",
 };
 
-export const PrimaryLink = () => {
-  const href = text("Href", "https://kiwi.com");
-  const external = boolean("External", false);
-  const children = text("children", "Primary link");
-
+export const PrimaryLink = ({ href, external, children }) => {
   return (
     <TextLink external={external} onClick={action("clicked")} href={href} type="primary">
       {children}
@@ -42,11 +34,13 @@ PrimaryLink.story = {
   },
 };
 
-export const SecondaryLink = () => {
-  const href = text("Href", "https://kiwi.com");
-  const external = boolean("External", false);
-  const children = text("children", "Secondary link");
+PrimaryLink.args = {
+  href: "https://kiwi.com",
+  external: false,
+  children: "Primary link",
+};
 
+export const SecondaryLink = ({ href, external, children }) => {
   return (
     <TextLink external={external} onClick={action("clicked")} href={href} type="secondary">
       {children}
@@ -62,10 +56,14 @@ SecondaryLink.story = {
   },
 };
 
-export const LinkWithLeftIcon = () => {
-  const href = text("Href", "https://kiwi.com");
-  const children = text("children", "TextLink with icon");
-  const Icon = getIcon(getIcons("iconLeft", "ChevronBackward"));
+SecondaryLink.args = {
+  href: "https://kiwi.com",
+  external: false,
+  children: "Secondary link",
+};
+
+export const LinkWithLeftIcon = ({ href, children, icon }) => {
+  const Icon = getIcon(icon);
 
   return (
     <TextLink onClick={action("clicked")} href={href} iconLeft={Icon && <Icon />} standAlone>
@@ -82,10 +80,23 @@ LinkWithLeftIcon.story = {
   },
 };
 
-export const LinkWithRightIcon = () => {
-  const href = text("Href", "https://kiwi.com");
-  const children = text("children", "TextLink with icon");
-  const Icon = getIcon(getIcons("iconRight", "ChevronForward"));
+LinkWithLeftIcon.args = {
+  href: "https://kiwi.com",
+  children: "TextLink with icon",
+  icon: "ChevronBackward",
+};
+
+LinkWithLeftIcon.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const LinkWithRightIcon = ({ href, children, icon }) => {
+  const Icon = getIcon(icon);
 
   return (
     <TextLink onClick={action("clicked")} href={href} iconRight={Icon && <Icon />}>
@@ -102,20 +113,38 @@ LinkWithRightIcon.story = {
   },
 };
 
-export const Playground = () => {
-  const href = text("Href", "https://kiwi.com");
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.SECONDARY);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
-  const external = boolean("External", true);
-  const children = text("Text", "Custom link");
-  const rel = text("Rel", "");
-  const IconRight = getIcon(getIcons("iconRight", "ChevronForward"));
-  const IconLeft = getIcon(getIcons("iconLeft", ""));
-  const dataTest = text("dataTest", "test");
-  const tabIndex = text("tabIndex", "");
-  const stopPropagation = boolean("stopPropagation", false);
-  const standAlone = boolean("standAlone", false);
-  const noUnderline = boolean("noUnderline", false);
+LinkWithRightIcon.args = {
+  href: "https://kiwi.com",
+  children: "TextLink with icon",
+  icon: "ChevronForward",
+};
+
+LinkWithRightIcon.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  href,
+  type,
+  size,
+  external,
+  children,
+  rel,
+  iconRight,
+  iconLeft,
+  dataTest,
+  tabIndex,
+  stopPropagation,
+  standAlone,
+  noUnderline,
+}) => {
+  const IconRight = getIcon(iconRight);
+  const IconLeft = getIcon(iconLeft);
   return (
     <Box
       padding="small"
@@ -143,8 +172,56 @@ export const Playground = () => {
   );
 };
 
-export const TextLinkInText = () => {
-  const type = select("type", Object.values(TEXT_TYPES), TEXT_TYPES.CRITICAL);
+Playground.story = {
+  parameters: {
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Playground.args = {
+  href: "https://kiwi.com",
+  type: TYPE_OPTIONS.SECONDARY,
+  size: SIZE_OPTIONS.SMALL,
+  external: true,
+  children: "Custom link",
+  rel: "",
+  iconRight: "ChevronForward",
+  iconLeft: "",
+  dataTest: "test",
+  tabIndex: "",
+  stopPropagation: false,
+  standAlone: false,
+  noUnderline: false,
+};
+
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  iconRight: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const TextLinkInText = ({ type }) => {
   return (
     <Text type={type}>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dapibus fermentum ipsum. Duis
@@ -166,16 +243,20 @@ TextLinkInText.story = {
   },
 };
 
-Playground.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+TextLinkInText.args = {
+  type: TEXT_TYPES.CRITICAL,
+};
+
+TextLinkInText.argTypes = {
+  type: {
+    options: Object.values(TEXT_TYPES),
+    control: {
+      type: "select",
+    },
   },
 };
 
-export const Accessibility = () => {
-  const children = text("children", "Primary link");
-  const title = text("title", "Clarify purpose of a link for screen readers");
-
+export const Accessibility = ({ children, title }) => {
   return (
     <TextLink title={title} onClick={action("clicked")} type="primary">
       {children}
@@ -187,6 +268,11 @@ Accessibility.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+Accessibility.args = {
+  children: "Primary link",
+  title: "Clarify purpose of a link for screen readers",
 };
 
 export const Rtl = () => (

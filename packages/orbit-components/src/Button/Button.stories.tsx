@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
@@ -10,17 +9,13 @@ import { SPACINGS_AFTER } from "../common/consts";
 
 import Button from ".";
 
-const getIcons = (name: string, defaultIcon: string) =>
-  select(name, ["none", ...Object.keys(Icons)], defaultIcon);
-
 const getIcon = (source: string) => (source in Icons ? Icons[source] : null);
 
 export default {
   title: "Button",
 };
 
-export const Default = () => {
-  const children = text("Children", "Default button");
+export const Default = ({ children }) => {
   return <Button onClick={action("clicked")}>{children}</Button>;
 };
 
@@ -30,12 +25,11 @@ Default.story = {
   },
 };
 
-export const BasicButtons = () => {
-  const children = text("Children", "Button");
-  const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+Default.args = {
+  children: "Default button",
+};
 
+export const BasicButtons = ({ children, fullWidth, type, size }) => {
   return (
     <Button onClick={action("clicked")} fullWidth={fullWidth} type={type} size={size}>
       {children}
@@ -48,6 +42,28 @@ BasicButtons.story = {
 
   parameters: {
     info: "Basic buttons have three sizes (large, normal and small) and can be either primary or secondary type. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+BasicButtons.args = {
+  children: "Button",
+  fullWidth: false,
+  type: TYPE_OPTIONS.PRIMARY,
+  size: SIZE_OPTIONS.NORMAL,
+};
+
+BasicButtons.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
   },
 };
 
@@ -68,13 +84,9 @@ export const MultipleFullWidthButtonsInContainer = () => {
   );
 };
 
-export const ButtonWithIcons = () => {
-  const children = text("Children", "Button");
-  const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
-  const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
+export const ButtonWithIcons = ({ children, fullWidth, type, size, iconLeft, iconRight }) => {
+  const IconLeft = getIcon(iconLeft);
+  const IconRight = getIcon(iconRight);
   return (
     <Button
       onClick={action("clicked")}
@@ -97,12 +109,45 @@ ButtonWithIcons.story = {
   },
 };
 
-export const FullWidthButtons = () => {
-  const children = text("Children", "Button");
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const IconLeft = getIcon(getIcons("iconLeft", "PlusCircle"));
-  const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
+ButtonWithIcons.args = {
+  children: "Button",
+  fullWidth: false,
+  type: TYPE_OPTIONS.PRIMARY,
+  size: SIZE_OPTIONS.NORMAL,
+  iconLeft: "PlusCircle" as string,
+  iconRight: "ChevronDown",
+};
+
+ButtonWithIcons.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  iconRight: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const FullWidthButtons = ({ children, type, size, iconLeft, iconRight }) => {
+  const IconLeft = getIcon(iconLeft);
+  const IconRight = getIcon(iconRight);
 
   return (
     <Stack spacing="small" direction="column">
@@ -139,9 +184,43 @@ FullWidthButtons.story = {
   },
 };
 
-export const SubtleButtons = () => {
-  const children = text("Children", "Button");
-  const IconLeft = getIcon(getIcons("iconLeft", "CloseCircle"));
+FullWidthButtons.args = {
+  children: "Button",
+  type: TYPE_OPTIONS.PRIMARY,
+  size: SIZE_OPTIONS.NORMAL,
+  iconLeft: "PlusCircle",
+  iconRight: "ChevronDown",
+};
+
+FullWidthButtons.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  iconRight: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const SubtleButtons = ({ children, iconLeft }) => {
+  const IconLeft = getIcon(iconLeft);
 
   return (
     <Stack>
@@ -173,10 +252,22 @@ SubtleButtons.story = {
   },
 };
 
-export const CircledButton = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const type = select("Type", [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY], TYPE_OPTIONS.PRIMARY);
-  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
+SubtleButtons.args = {
+  children: "Button",
+  iconLeft: "CloseCircle",
+};
+
+SubtleButtons.argTypes = {
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const CircledButton = ({ size, type, iconLeft }) => {
+  const IconLeft = getIcon(iconLeft);
 
   return (
     <Button
@@ -198,10 +289,35 @@ CircledButton.story = {
   },
 };
 
-export const DestructiveButtons = () => {
-  const children = text("Children", "Destructive button");
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
+CircledButton.args = {
+  size: SIZE_OPTIONS.NORMAL,
+  type: TYPE_OPTIONS.PRIMARY,
+  iconLeft: "Airplane",
+};
+
+CircledButton.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: [TYPE_OPTIONS.PRIMARY, TYPE_OPTIONS.SECONDARY],
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const DestructiveButtons = ({ children, size, iconLeft }) => {
+  const IconLeft = getIcon(iconLeft);
 
   return (
     <Button onClick={action("clicked")} type="critical" size={size} iconLeft={<IconLeft />}>
@@ -218,13 +334,29 @@ DestructiveButtons.story = {
   },
 };
 
-export const ButtonAsALink = () => {
-  const children = text("Children", "I am a link");
-  const href = text("Href", "https://kiwi.com");
-  const external = boolean("External", false);
-  const disabled = boolean("Disabled", false);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
+DestructiveButtons.args = {
+  children: "Destructive button",
+  size: SIZE_OPTIONS.NORMAL,
+  iconLeft: "Airplane",
+};
+
+DestructiveButtons.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const ButtonAsALink = ({ children, href, external, disabled, size, iconLeft }) => {
+  const IconLeft = getIcon(iconLeft);
 
   return (
     <Button
@@ -248,34 +380,57 @@ ButtonAsALink.story = {
   },
 };
 
-export const Playground = () => {
-  const children = text("Children", "Button");
-  const href = text("Href", "");
-  const external = boolean("External", false);
-  const asComponent = text("asComponent", "button");
-  const disabled = boolean("Disabled", false);
-  const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const width = text("Width", "auto");
-  const circled = boolean("Circled", false);
-  const loading = boolean("Loading", false);
-  const submit = boolean("Submit", false);
-  const dataTest = text("dataTest", "test");
-  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
-  const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
-  const ariaExpanded = boolean("Aria expanded", false);
-  const ariaControls = text("Aria controls", "element ID");
-  const tabIndex = text("tabIndex", "0");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
-  const title = text("Title", "Additional information for accessibility");
-  const rel = text("Rel", "nofollow");
-  const contentAlign = select(
-    "contentAlign",
-    ["start", "center", "end", "space-between"],
-    "center",
-  );
-  const contentWidth = text("contentWidth", "100%");
+ButtonAsALink.args = {
+  children: "I am a link",
+  href: "https://kiwi.com",
+  external: false,
+  disabled: false,
+  size: SIZE_OPTIONS.NORMAL,
+  iconLeft: "Airplane",
+};
+
+ButtonAsALink.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  children,
+  href,
+  external,
+  asComponent,
+  disabled,
+  fullWidth,
+  type,
+  size,
+  width,
+  circled,
+  loading,
+  submit,
+  dataTest,
+  iconLeft,
+  iconRight,
+  ariaExpanded,
+  ariaControls,
+  tabIndex,
+  spaceAfter,
+  title,
+  rel,
+  contentAlign,
+  contentWidth,
+}) => {
+  const IconLeft = getIcon(iconLeft);
+  const IconRight = getIcon(iconRight);
 
   return (
     <Button
@@ -314,12 +469,72 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
-  const children = text("Children", "Button");
-  const ariaExpanded = boolean("Aria expanded", false);
-  const ariaControls = text("Aria controls", "element ID");
-  const title = text("Title", "Additional information for accessibility");
+Playground.args = {
+  children: "Button",
+  href: "",
+  external: false,
+  asComponent: "button",
+  disabled: false,
+  fullWidth: false,
+  type: TYPE_OPTIONS.PRIMARY,
+  size: SIZE_OPTIONS.NORMAL,
+  width: "auto",
+  circled: false,
+  loading: false,
+  submit: false,
+  dataTest: "test",
+  iconLeft: "Airplane",
+  iconRight: "ChevronDown",
+  ariaExpanded: false,
+  ariaControls: "element ID",
+  tabIndex: "0",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  title: "Additional information for accessibility",
+  rel: "nofollow",
+  contentAlign: "center",
+  contentWidth: "100%",
+};
 
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  iconRight: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+  contentAlign: {
+    options: ["start", "center", "end", "space-between"],
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Accessibility = ({ children, ariaExpanded, ariaControls, title }) => {
   return (
     <Button
       onClick={action("clicked")}
@@ -338,8 +553,15 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => {
-  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
+Accessibility.args = {
+  children: "Button",
+  ariaExpanded: false,
+  ariaControls: "element ID",
+  title: "Additional information for accessibility",
+};
+
+export const Rtl = ({ iconLeft }) => {
+  const IconLeft = getIcon(iconLeft);
 
   return (
     <RenderInRtl>
@@ -355,5 +577,18 @@ Rtl.story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+  },
+};
+
+Rtl.args = {
+  iconLeft: "Airplane",
+};
+
+Rtl.argTypes = {
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
   },
 };

@@ -1,10 +1,11 @@
 import * as React from "react";
-import { text, select, number } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import type { SpacingToken, ColorTokens } from "./types";
 
 import Box from ".";
+
+Box.displayName = "Box";
 
 const DEFAULT_COLOR = "blueDark";
 
@@ -173,9 +174,7 @@ export default {
   title: "Box",
 };
 
-export const Default = () => {
-  const children = text("Children", "Default box");
-  const as = text("As", "span");
+export const Default = ({ children, as }) => {
   return <Box as={as}>{children}</Box>;
 };
 
@@ -185,9 +184,12 @@ Default.story = {
   },
 };
 
-export const Overflow = () => {
-  const overflow = select("overflow", Object.values(OVERFLOW), OVERFLOW.AUTO);
+Default.args = {
+  children: "Default box",
+  as: "span",
+};
 
+export const Overflow = ({ overflow }) => {
   return (
     <Box
       background={DEFAULT_COLOR}
@@ -201,9 +203,20 @@ export const Overflow = () => {
   );
 };
 
-export const TextAlign = () => {
-  const textAlign = select("textAlign", Object.values(TEXT_ALIGN), TEXT_ALIGN.CENTER);
+Overflow.args = {
+  overflow: OVERFLOW.AUTO,
+};
 
+Overflow.argTypes = {
+  overflow: {
+    options: Object.values(OVERFLOW),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const TextAlign = ({ textAlign }) => {
   return (
     <Box
       background={DEFAULT_COLOR}
@@ -221,13 +234,20 @@ TextAlign.story = {
   name: "TextAlign",
 };
 
-export const Positions = () => {
-  const position = select("position", Object.values(POSITION), POSITION.RELATIVE);
-  const top = text("top", "");
-  const left = text("left", "");
-  const right = text("right", "");
-  const bottom = text("bottom", "");
+TextAlign.args = {
+  textAlign: TEXT_ALIGN.CENTER,
+};
 
+TextAlign.argTypes = {
+  textAlign: {
+    options: Object.values(TEXT_ALIGN),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Positions = ({ position, top, left, right, bottom }) => {
   return (
     <Box
       background={DEFAULT_COLOR}
@@ -250,10 +270,24 @@ export const Positions = () => {
   );
 };
 
-export const PaddingMargin = () => {
-  const margin = select("margin", Object.values(SPACINGS), SPACINGS.SMALL);
-  const padding = select("margin", Object.values(SPACINGS), SPACINGS.SMALL);
+Positions.args = {
+  position: POSITION.RELATIVE,
+  top: "",
+  left: "",
+  right: "",
+  bottom: "",
+};
 
+Positions.argTypes = {
+  position: {
+    options: Object.values(POSITION),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const PaddingMargin = ({ margin, padding }) => {
   return (
     <Box background={DEFAULT_COLOR} maxWidth="300px" margin={margin} padding={padding}>
       <div
@@ -269,11 +303,29 @@ PaddingMargin.story = {
   name: "Padding & Margin",
 };
 
-export const BorderRadius = () => {
-  const radius = select("borderRadius", Object.values(BORDER_RADIUS), BORDER_RADIUS.NORMAL);
+PaddingMargin.args = {
+  margin: SPACINGS.SMALL,
+  padding: SPACINGS.SMALL,
+};
 
+PaddingMargin.argTypes = {
+  margin: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  padding: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const BorderRadius = ({ borderRadius }) => {
   return (
-    <Box background={DEFAULT_COLOR} maxWidth="150px" borderRadius={radius}>
+    <Box background={DEFAULT_COLOR} maxWidth="150px" borderRadius={borderRadius}>
       <div
         style={{
           height: "50px",
@@ -287,10 +339,20 @@ BorderRadius.story = {
   name: "BorderRadius",
 };
 
-export const Colors = () => {
-  const color = select("colors", COLORS, COLORS[10]);
-  const background = select("background", COLORS, DEFAULT_COLOR);
+BorderRadius.args = {
+  borderRadius: BORDER_RADIUS.NORMAL,
+};
 
+BorderRadius.argTypes = {
+  borderRadius: {
+    options: Object.values(BORDER_RADIUS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Colors = ({ color, background }) => {
   return (
     <Box display="flex" justify="center" align="center" background={background} color={color}>
       <div
@@ -308,9 +370,27 @@ export const Colors = () => {
   );
 };
 
-export const Elevation = () => {
-  const elevation = select("elevation", Object.values(ELEVATION), ELEVATION.ACTION);
+Colors.args = {
+  color: COLORS[10],
+  background: DEFAULT_COLOR,
+};
 
+Colors.argTypes = {
+  color: {
+    options: COLORS,
+    control: {
+      type: "select",
+    },
+  },
+  background: {
+    options: COLORS,
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Elevation = ({ elevation }) => {
   return (
     <Box
       display="flex"
@@ -335,15 +415,20 @@ export const Elevation = () => {
   );
 };
 
-export const Flex = () => {
-  const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
-  const display = select("display", Object.values(DISPLAY), DISPLAY.FLEX);
-  const align = select("align", Object.values(ALIGN), ALIGN.START);
-  const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.START);
-  const wrap = select("wrap", Object.values(WRAP), WRAP.NOWRAP);
-  const shrink = number("shrink", 0);
-  const grow = number("grow", 0);
+Elevation.args = {
+  elevation: ELEVATION.ACTION,
+};
 
+Elevation.argTypes = {
+  elevation: {
+    options: Object.values(ELEVATION),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Flex = ({ direction, display, align, justify, wrap, shrink, grow }) => {
   return (
     <Box
       display={display}
@@ -361,32 +446,75 @@ export const Flex = () => {
   );
 };
 
-export const Playground = () => {
-  const children = text("Children", "Box");
-  const display = select("display", Object.values(DISPLAY), DISPLAY.FLEX);
-  const overflow = select("overflow", Object.values(OVERFLOW), OVERFLOW.VISIBLE);
-  const wrap = select("wrap", Object.values(WRAP), WRAP.NOWRAP);
-  const shrink = number("shrink", 0);
-  const grow = number("grow", 0);
-  const align = select("align", Object.values(ALIGN), ALIGN.START);
-  const textAlign = select("text-align", Object.values(TEXT_ALIGN), TEXT_ALIGN.LEFT);
-  const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.CENTER);
-  const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
-  const width = text("width", "full");
-  const minWidth = text("min-width", "");
-  const maxWidth = text("max-width", "300px");
-  const height = text("height", "auto");
-  const maxHeight = text("max-height", "100px");
-  const elevation = select("elevation", Object.values(ELEVATION), ELEVATION.ACTION);
-  const borderRadius = select("border-radius", Object.values(BORDER_RADIUS), BORDER_RADIUS.NORMAL);
-  const position = select("position", Object.values(POSITION), POSITION.RELATIVE);
-  const top = text("top", "10px");
-  const right = text("right", "10px");
-  const bottom = text("left", "10px");
-  const left = text("bottom", "10px");
-  const margin = select("margin", Object.values(SPACINGS), SPACINGS.NONE);
-  const padding = text("padding", "0");
+Flex.args = {
+  direction: DIRECTION.ROW,
+  display: DISPLAY.FLEX,
+  align: ALIGN.START,
+  justify: JUSTIFY.START,
+  wrap: WRAP.NOWRAP,
+  shrink: 0,
+  grow: 0,
+};
 
+Flex.argTypes = {
+  direction: {
+    options: Object.values(DIRECTION),
+    control: {
+      type: "select",
+    },
+  },
+  display: {
+    options: Object.values(DISPLAY),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGN),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  wrap: {
+    options: Object.values(WRAP),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  children,
+  display,
+  wrap,
+  shrink,
+  grow,
+  align,
+  textAlign,
+  direction,
+  justify,
+  width,
+  minWidth,
+  maxWidth,
+  height,
+  maxHeight,
+  elevation,
+  borderRadius,
+  position,
+  top,
+  right,
+  bottom,
+  left,
+  overflow,
+  padding,
+  margin,
+}) => {
   return (
     <Box
       display={display}
@@ -426,16 +554,109 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const right = text("right", "10px");
-  const left = text("bottom", "10px");
-  const margin = select("margin", Object.values(SPACINGS), SPACINGS.SMALL);
-  const padding = text("padding", "");
-  const textAlign = select("text-align", Object.values(TEXT_ALIGN), TEXT_ALIGN.LEFT);
-  const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.CENTER);
-  const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
-  const align = select("align", Object.values(ALIGN), ALIGN.START);
+Playground.args = {
+  children: "Box",
+  display: DISPLAY.FLEX,
+  overflow: OVERFLOW.VISIBLE,
+  wrap: WRAP.NOWRAP,
+  shrink: 0,
+  grow: 0,
+  align: ALIGN.START,
+  textAlign: TEXT_ALIGN.LEFT,
+  justify: JUSTIFY.CENTER,
+  direction: DIRECTION.ROW,
+  width: "full",
+  minWidth: "",
+  maxWidth: "300px",
+  height: "auto",
+  maxHeight: "100px",
+  elevation: ELEVATION.ACTION,
+  borderRadius: BORDER_RADIUS.NORMAL,
+  position: POSITION.RELATIVE,
+  top: "10px",
+  right: "10px",
+  bottom: "10px",
+  left: "10px",
+  margin: SPACINGS.NONE,
+  padding: SPACINGS.NONE,
+};
 
+Playground.argTypes = {
+  display: {
+    options: Object.values(DISPLAY),
+    control: {
+      type: "select",
+    },
+  },
+  overflow: {
+    options: Object.values(OVERFLOW),
+    control: {
+      type: "select",
+    },
+  },
+  wrap: {
+    options: Object.values(WRAP),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGN),
+    control: {
+      type: "select",
+    },
+  },
+  textAlign: {
+    options: Object.values(TEXT_ALIGN),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  direction: {
+    options: Object.values(DIRECTION),
+    control: {
+      type: "select",
+    },
+  },
+  elevation: {
+    options: Object.values(ELEVATION),
+    control: {
+      type: "select",
+    },
+  },
+  borderRadius: {
+    options: Object.values(BORDER_RADIUS),
+    control: {
+      type: "select",
+    },
+  },
+  position: {
+    options: Object.values(POSITION),
+    control: {
+      type: "select",
+    },
+  },
+  margin: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  padding: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ right, left, margin, padding, textAlign, justify, direction, align }) => {
   return (
     <RenderInRtl>
       <Box
@@ -459,5 +680,55 @@ Rtl.story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+  },
+};
+
+Rtl.args = {
+  right: "10px",
+  left: "10px",
+  margin: SPACINGS.SMALL,
+  padding: SPACINGS.NONE,
+  textAlign: TEXT_ALIGN.LEFT,
+  justify: JUSTIFY.CENTER,
+  direction: DIRECTION.ROW,
+  align: ALIGN.START,
+};
+
+Rtl.argTypes = {
+  margin: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  padding: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  textAlign: {
+    options: Object.values(TEXT_ALIGN),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  direction: {
+    options: Object.values(DIRECTION),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGN),
+    control: {
+      type: "select",
+    },
   },
 };

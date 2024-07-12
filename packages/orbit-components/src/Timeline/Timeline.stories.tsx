@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select } from "@storybook/addon-knobs";
 
 import { Type as Types } from "./TimelineStep/consts";
 import Modal, { ModalSection } from "../Modal";
@@ -8,22 +7,13 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Timeline from ".";
 
-const dataTest = text("dataTest", "test");
+const dataTest = "test";
 
 export default {
   title: "Timeline",
 };
 
-export const Default = () => {
-  const type = select("type", Object.values(Types), Types.Success);
-  const label = text("label", "In progress");
-  const time = text("time", "4th May 10:25");
-  const direction = select("direction", ["row", "column"], undefined);
-  const children = text(
-    "children",
-    "We’ll review your request and apply for any available refund from the carrier(s)",
-  );
-
+export const Default = ({ type, label, time, direction, children }) => {
   return (
     <Timeline dataTest={dataTest} direction={direction}>
       <TimelineStep label="Requested" subLabel="3rd May 14:04" type="success">
@@ -43,6 +33,29 @@ export const Default = () => {
       </TimelineStep>
     </Timeline>
   );
+};
+
+Default.args = {
+  type: Types.Success,
+  label: "In progress",
+  time: "4th May 10:25",
+  direction: "row",
+  children: "We’ll review your request and apply for any available refund from the carrier(s)",
+};
+
+Default.argTypes = {
+  type: {
+    options: Object.values(Types),
+    control: {
+      type: "select",
+    },
+  },
+  direction: {
+    options: ["row", "column"],
+    control: {
+      type: "select",
+    },
+  },
 };
 
 export const DefaultWithOptionalChildren = () => {
@@ -84,15 +97,7 @@ Default.story = {
   },
 };
 
-export const WithWarning = () => {
-  const label = text("label", "Action required");
-  const time = text("time", "5th May 15:03");
-  const type = select("type", Object.values(Types), Types.Success);
-  const children = text(
-    "children",
-    "The carrier has sent us a refund. There might be more depending on their policy",
-  );
-
+export const WithWarning = ({ label, time, type, children }) => {
   return (
     <Timeline dataTest={dataTest}>
       <TimelineStep label="Requested" subLabel="3rd May 14:04" type="success">
@@ -119,12 +124,23 @@ WithWarning.story = {
   parameters: { info: "This is example of Timeline with warning type" },
 };
 
-export const WithCritical = () => {
-  const label = text("label", "Non refundable");
-  const type = select("type", Object.values(Types), Types.Success);
-  const time = text("time", "7th May 10:30");
-  const children = text("children", "The carrier rejected the refund");
+WithWarning.args = {
+  label: "Action required",
+  time: "5th May 15:03",
+  type: Types.Success,
+  children: "The carrier has sent us a refund. There might be more depending on their policy",
+};
 
+WithWarning.argTypes = {
+  type: {
+    options: Object.values(Types),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithCritical = ({ label, time, type, children }) => {
   return (
     <Timeline dataTest={dataTest}>
       <TimelineStep label="Requested" subLabel="3rd May 14:04" type="success">
@@ -149,6 +165,22 @@ export const WithCritical = () => {
 WithCritical.story = {
   name: "with critical",
   parameters: { info: "This is example of Timeline with critical type" },
+};
+
+WithCritical.args = {
+  label: "Non refundable",
+  time: "7th May 10:30",
+  type: Types.Critical,
+  children: "The carrier rejected the refund",
+};
+
+WithCritical.argTypes = {
+  type: {
+    options: Object.values(Types),
+    control: {
+      type: "select",
+    },
+  },
 };
 
 export const InsideModal = () => {

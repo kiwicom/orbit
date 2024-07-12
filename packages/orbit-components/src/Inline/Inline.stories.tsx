@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { ALIGNS as ALIGN, JUSTIFY } from "./consts";
@@ -30,8 +29,7 @@ export default {
   title: "Inline",
 };
 
-export const Default = () => {
-  const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
+export const Default = ({ spacing }) => {
   return (
     <Inline spacing={spacing} dataTest={dataTest}>
       <TestChildren />
@@ -45,12 +43,20 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
-  const as = text("As", "div");
-  const align = select("align", Object.values(ALIGN), ALIGN.START);
-  const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.START);
-  const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
+Default.args = {
+  spacing: SPACING.XXXSMALL,
+};
 
+Default.argTypes = {
+  spacing: {
+    options: Object.values(SPACING),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({ as, align, justify, spacing }) => {
   return (
     <Inline as={as} align={align} justify={justify} dataTest={dataTest} spacing={spacing}>
       <TestChildren />
@@ -64,8 +70,35 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const spacing = select("spacing", Object.values(SPACING), SPACING.XXXSMALL);
+Playground.args = {
+  as: "div",
+  align: ALIGN.START,
+  justify: JUSTIFY.START,
+  spacing: SPACING.XXXSMALL,
+};
+
+Playground.argTypes = {
+  align: {
+    options: Object.values(ALIGN),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  spacing: {
+    options: Object.values(SPACING),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ spacing }) => {
   return (
     <RenderInRtl>
       <Inline spacing={spacing} dataTest={dataTest}>
@@ -80,5 +113,18 @@ Rtl.story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+  },
+};
+
+Rtl.args = {
+  spacing: SPACING.XXXSMALL,
+};
+
+Rtl.argTypes = {
+  spacing: {
+    options: Object.values(SPACING),
+    control: {
+      type: "select",
+    },
   },
 };

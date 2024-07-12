@@ -1,5 +1,4 @@
 import * as React from "react";
-import { select, text } from "@storybook/addon-knobs";
 
 import { NAMES } from "./consts.mts";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive";
@@ -12,11 +11,7 @@ export default {
   title: "Illustration",
 };
 
-export const Playground = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const name = select("Name", Object.values(NAMES), "Accommodation") as Name;
-  const dataTest = text("dataTest", "test");
-  const alt = text("alt", "");
+export const Playground = ({ size, name, dataTest, alt }) => {
   return (
     <Illustration size={size} name={name} dataTest={dataTest} margin={{ bottom: 12 }} alt={alt} />
   );
@@ -25,6 +20,28 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "Explore our new set of illustrations for Kiwi.com.",
+  },
+};
+
+Playground.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  name: "Accommodation" as Name,
+  dataTest: "test",
+  alt: "",
+};
+
+Playground.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  name: {
+    options: NAMES,
+    control: {
+      type: "select",
+    },
   },
 };
 

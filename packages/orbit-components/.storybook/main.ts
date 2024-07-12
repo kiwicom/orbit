@@ -12,7 +12,7 @@ const config: StorybookConfig = {
   framework: getAbsolutePath("@storybook/react-webpack5"),
 
   addons: [
-    getAbsolutePath("@storybook/addon-knobs"),
+    getAbsolutePath("@storybook/addon-controls"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("storybook-addon-pseudo-states"),
     {

@@ -1,5 +1,4 @@
 import React from "react";
-import { text } from "@storybook/addon-knobs";
 
 import Text from "../Text";
 import List, { ListItem } from "../List";
@@ -10,8 +9,7 @@ export default {
   title: "Coupon",
 };
 
-export const Default = () => {
-  const content = text("content", "PROMOTIONCODE");
+export const Default = ({ content }) => {
   return (
     <List>
       <ListItem>
@@ -30,11 +28,11 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
-  const dataTest = text("dataTest", "test");
-  const id = text("id", "couponId");
-  const content = text("content", "CODE");
+Default.args = {
+  content: "PROMOTIONCODE",
+};
 
+export const Playground = ({ dataTest, id, content }) => {
   return (
     <Text>
       Lorem ipsum dolor sit amet, consectetuer{" "}
@@ -50,4 +48,10 @@ Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+Playground.args = {
+  dataTest: "test",
+  id: "couponId",
+  content: "CODE",
 };

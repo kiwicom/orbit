@@ -1,5 +1,4 @@
 import React from "react";
-import { text, number, select, object, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import ButtonPrimitiveComponent from "./ButtonPrimitive";
@@ -8,19 +7,14 @@ import { SPACINGS_AFTER } from "../common/consts";
 import BadgePrimitiveComponent from "./BadgePrimitive";
 import IllustrationPrimitiveComponent, { SIZE_OPTIONS } from "./IllustrationPrimitive";
 
-const getIcons = (name, defaultIcon) => select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 export default {
   title: "Primitives",
 };
 
-export const BadgePrimitive = () => {
-  const Icon = getIcon(getIcons("icon", "Airplane"));
-  const className = text(
-    "className",
-    "bg-gradient-to-r from-[#fd1d1d] to-[#ffae28] text-white-normal",
-  );
+export const BadgePrimitive = ({ icon, className }) => {
+  const Icon = getIcon(icon);
 
   return (
     <BadgePrimitiveComponent className={className} icon={Icon && <Icon />}>
@@ -37,15 +31,25 @@ BadgePrimitive.story = {
   },
 };
 
-export const IllustrationPrimitive = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const name = "Accommodation";
-  const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
+BadgePrimitive.args = {
+  icon: "Airplane",
+  className: "bg-gradient-to-r from-[#fd1d1d] to-[#ffae28] text-white-normal",
+};
+
+BadgePrimitive.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const IllustrationPrimitive = ({ size, dataTest, spaceAfter }) => {
   return (
     <IllustrationPrimitiveComponent
       size={size}
-      name={name}
+      name="Accommodation"
       dataTest={dataTest}
       spaceAfter={spaceAfter}
     />
@@ -60,57 +64,69 @@ IllustrationPrimitive.story = {
   },
 };
 
-export const ButtonPrimitive = () => {
-  const asComponent = text("asComponent", "button");
-  const ariaControls = text("ariaControls", "");
-  const ariaExpanded = boolean("ariaExpanded", false);
-  const background = text("background", "#d63737");
-  const backgroundHover = text("backgroundHover", "#da0a0a");
-  const backgroundActive = text("backgroundActive", "#da0a0a");
-  const backgroundFocus = text("backgroundFocus", "#da0a0a");
-  const boxShadow = text("boxShadow", "0 8px 8px -6px rgba(0,0,0,.25)");
-  const boxShadowHover = text("boxShadow", "0 8px 8px -6px rgba(0,0,0,.25)");
-  const boxShadowActive = text("boxShadow", "0 8px 8px -6px rgba(0,0,0,.25)");
-  const boxShadowFocus = text("boxShadow", "0 8px 8px -6px rgba(0,0,0,.25)");
-  const children = text("children", "ButtonPrimitive");
-  const circled = boolean("circled", false);
-  const dataTest = text("dataTest", "test");
-  const disabled = boolean("disabled", false);
-  const external = boolean("external", false);
-  const fontSize = text("fontSize", "14px");
-  const fontWeight = text("fontWeight", "bold");
-  const foreground = text("foreground", "#faf333");
-  const foregroundHover = text("foregroundHover", "#faf333");
-  const foregroundActive = text("foregroundActive", "#faf333");
-  const foregroundFocus = text("foregroundFocus", "#faf333");
-  const fullWidth = boolean("fullWidth", false);
-  const height = text("height", "46px");
-  const href = text("href", "");
-  const IconLeft = getIcon(getIcons("iconLeft", ""));
-  const IconRight = getIcon(getIcons("iconRight", "ChevronForward"));
-  const icons = object("icons", {
-    width: "16px",
-    height: "16px",
-    leftMargin: "2px",
-    rightMargin: "2px",
-    foreground: "#faf333",
-    foregroundHover: "#faf333",
-    foregroundActive: "#faf333",
-  });
-  const loading = boolean("loading", false);
-  const padding = text("padding", "0 10px 0 10px");
-  const role = text("role", "");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
-  const submit = boolean("submit", false);
-  const title = text("title", "");
-  const tabIndex = number("tabIndex", 0);
-  const width = text("width", "");
-  const contentAlign = select(
-    "contentAlign",
-    ["start", "center", "end", "space-between"],
-    "center",
-  );
-  const contentWidth = text("contentWidth", "100%");
+IllustrationPrimitive.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  dataTest: "test",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+};
+
+IllustrationPrimitive.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const ButtonPrimitive = ({
+  asComponent,
+  ariaControls,
+  ariaExpanded,
+  background,
+  backgroundHover,
+  backgroundActive,
+  backgroundFocus,
+  boxShadow,
+  boxShadowHover,
+  boxShadowActive,
+  boxShadowFocus,
+  children,
+  circled,
+  dataTest,
+  disabled,
+  external,
+  fontSize,
+  fontWeight,
+  foreground,
+  foregroundHover,
+  foregroundActive,
+  foregroundFocus,
+  fullWidth,
+  height,
+  href,
+  iconLeft,
+  iconRight,
+  icons,
+  loading,
+  padding,
+  role,
+  spaceAfter,
+  submit,
+  title,
+  tabIndex,
+  width,
+  contentAlign,
+  contentWidth,
+}) => {
+  const IconLeft = getIcon(iconLeft);
+  const IconRight = getIcon(iconRight);
 
   return (
     <ButtonPrimitiveComponent
@@ -160,4 +176,80 @@ export const ButtonPrimitive = () => {
 
 ButtonPrimitive.story = {
   name: "ButtonPrimitive",
+};
+
+ButtonPrimitive.args = {
+  asComponent: "button",
+  ariaControls: "",
+  ariaExpanded: false,
+  background: "#d63737",
+  backgroundHover: "#da0a0a",
+  backgroundActive: "#da0a0a",
+  backgroundFocus: "#da0a0a",
+  boxShadow: "0 8px 8px -6px rgba(0,0,0,.25)",
+  boxShadowHover: "0 8px 8px -6px rgba(0,0,0,.25)",
+  boxShadowActive: "0 8px 8px -6px rgba(0,0,0,.25)",
+  boxShadowFocus: "0 8px 8px -6px rgba(0,0,0,.25)",
+  children: "ButtonPrimitive",
+  circled: false,
+  dataTest: "test",
+  disabled: false,
+  external: false,
+  fontSize: "14px",
+  fontWeight: "bold",
+  foreground: "#faf333",
+  foregroundHover: "#faf333",
+  foregroundActive: "#faf333",
+  foregroundFocus: "#faf333",
+  fullWidth: false,
+  height: "46px",
+  href: "",
+  iconLeft: "",
+  iconRight: "ChevronForward",
+  icons: {
+    width: "16px",
+    height: "16px",
+    leftMargin: "2px",
+    rightMargin: "2px",
+    foreground: "#faf333",
+    foregroundHover: "#faf333",
+    foregroundActive: "#faf333",
+  },
+  loading: false,
+  padding: "0 10px 0 10px",
+  role: "",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  submit: false,
+  title: "",
+  tabIndex: 0,
+  width: "",
+  contentAlign: "center",
+  contentWidth: "100%",
+};
+
+ButtonPrimitive.argTypes = {
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+  contentAlign: {
+    options: ["start", "center", "end", "space-between"],
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  iconRight: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
 };

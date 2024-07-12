@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, boolean, select } from "@storybook/addon-knobs";
 
 import {
   TYPE_OPTIONS,
@@ -19,9 +18,7 @@ export default {
   title: "Text",
 };
 
-export const PrimaryText = () => {
-  const children = text("Text", customText);
-
+export const PrimaryText = ({ children }) => {
   return <Text>{children}</Text>;
 };
 
@@ -33,9 +30,11 @@ PrimaryText.story = {
   },
 };
 
-export const SecondaryText = () => {
-  const children = text("Text", customText);
+PrimaryText.args = {
+  children: customText,
+};
 
+export const SecondaryText = ({ children }) => {
   return <Text type="secondary">{children}</Text>;
 };
 
@@ -47,9 +46,11 @@ SecondaryText.story = {
   },
 };
 
-export const StatusText = () => {
-  const children = text("Text", customText);
+SecondaryText.args = {
+  children: customText,
+};
 
+export const StatusText = ({ children }) => {
   return (
     <div>
       <Text type="info">{children}</Text>
@@ -68,6 +69,10 @@ StatusText.story = {
   },
 };
 
+StatusText.args = {
+  children: customText,
+};
+
 export const LinkInText = () => (
   <Text>
     {customText} <a href="http://kiwi.com">Kiwi.com</a>
@@ -82,9 +87,7 @@ LinkInText.story = {
   },
 };
 
-export const WhiteText = () => {
-  const children = text("Text", customText);
-
+export const WhiteText = ({ children }) => {
   return (
     <div style={{ backgroundColor: "#46515e", padding: "20px" }}>
       <Text type="white">{children}</Text>
@@ -100,20 +103,24 @@ WhiteText.story = {
   },
 };
 
-export const Playground = () => {
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
-  const as = select("As", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.P);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const weight = select("Weight", Object.values(WEIGHT_OPTIONS), WEIGHT_OPTIONS.NORMAL);
-  const align = select("Align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.LEFT);
-  const uppercase = boolean("Uppercase", false);
-  const strikeThrough = boolean("StrikeThrough", false);
-  const italic = boolean("Italic", false);
-  const children = text("Text", customText);
-  const dataTest = text("dataTest", "test");
-  const id = text("id", "ID");
-  const withBackground = boolean("withBackground", false);
+WhiteText.args = {
+  children: customText,
+};
 
+export const Playground = ({
+  type,
+  as,
+  size,
+  weight,
+  align,
+  uppercase,
+  strikeThrough,
+  italic,
+  children,
+  dataTest,
+  id,
+  withBackground,
+}) => {
   return (
     <Text
       id={id}
@@ -139,9 +146,55 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const align = select("Align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.START);
+Playground.args = {
+  type: TYPE_OPTIONS.PRIMARY,
+  as: ELEMENT_OPTIONS.P,
+  size: SIZE_OPTIONS.NORMAL,
+  weight: WEIGHT_OPTIONS.NORMAL,
+  align: ALIGN_OPTIONS.LEFT,
+  uppercase: false,
+  strikeThrough: false,
+  italic: false,
+  children: customText,
+  dataTest: "test",
+  id: "ID",
+  withBackground: false,
+};
 
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  weight: {
+    options: Object.values(WEIGHT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGN_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ align }) => {
   return (
     <RenderInRtl>
       <Text align={align}>Lorem ipsum dolor sit amet</Text>
@@ -154,5 +207,18 @@ Rtl.story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+  },
+};
+
+Rtl.args = {
+  align: ALIGN_OPTIONS.START,
+};
+
+Rtl.argTypes = {
+  align: {
+    options: Object.values(ALIGN_OPTIONS),
+    control: {
+      type: "select",
+    },
   },
 };

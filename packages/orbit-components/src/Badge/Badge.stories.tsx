@@ -1,5 +1,4 @@
 import React from "react";
-import { text, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { TYPE_OPTIONS } from "./consts";
@@ -7,17 +6,14 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Badge from ".";
 
-const getIcons = (defaultIcon: string | null) =>
-  select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "Badge",
 };
 
-export const Default = () => {
-  const content = text("Content", "Badge");
-  const Icon = getIcon(getIcons("Airplane"));
+export const Default = ({ content, icon }: { content: string; icon: string }) => {
+  const Icon = getIcon(icon);
 
   return <Badge icon={Icon && <Icon />}>{content}</Badge>;
 };
@@ -28,8 +24,21 @@ Default.story = {
   },
 };
 
-export const Neutral = () => {
-  const content = text("Content", "Badge");
+Default.args = {
+  content: "Badge",
+  icon: "Airplane",
+};
+
+Default.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Neutral = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.NEUTRAL} icon={<Icons.Sightseeing />}>
       {content}
@@ -43,8 +52,11 @@ Neutral.story = {
   },
 };
 
-export const Info = () => {
-  const content = text("Content", "Badge");
+Neutral.args = {
+  content: "Badge",
+};
+
+export const Info = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.INFO} icon={<Icons.InformationCircle />}>
       {content}
@@ -58,8 +70,11 @@ Info.story = {
   },
 };
 
-export const InfoSubtle = () => {
-  const content = text("Content", "Badge");
+Info.args = {
+  content: "Badge",
+};
+
+export const InfoSubtle = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.INFO_SUBTLE} icon={<Icons.Sightseeing />}>
       {content}
@@ -73,8 +88,11 @@ InfoSubtle.story = {
   },
 };
 
-export const Success = () => {
-  const content = text("Content", "Badge");
+InfoSubtle.args = {
+  content: "Badge",
+};
+
+export const Success = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.SUCCESS} icon={<Icons.CheckCircle />}>
       {content}
@@ -88,8 +106,11 @@ Success.story = {
   },
 };
 
-export const SuccessSubtle = () => {
-  const content = text("Content", "Badge");
+Success.args = {
+  content: "Badge",
+};
+
+export const SuccessSubtle = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.SUCCESS_SUBTLE} icon={<Icons.CheckCircle />}>
       {content}
@@ -103,8 +124,11 @@ SuccessSubtle.story = {
   },
 };
 
-export const Warning = () => {
-  const content = text("Content", "Badge");
+SuccessSubtle.args = {
+  content: "Badge",
+};
+
+export const Warning = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.WARNING} icon={<Icons.Clock />}>
       {content}
@@ -118,8 +142,11 @@ Warning.story = {
   },
 };
 
-export const WarningSubtle = () => {
-  const content = text("Content", "Badge");
+Warning.args = {
+  content: "Badge",
+};
+
+export const WarningSubtle = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.WARNING_SUBTLE} icon={<Icons.Clock />}>
       {content}
@@ -133,8 +160,11 @@ WarningSubtle.story = {
   },
 };
 
-export const Critical = () => {
-  const content = text("Content", "Badge");
+WarningSubtle.args = {
+  content: "Badge",
+};
+
+export const Critical = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.CRITICAL} icon={<Icons.Passport />}>
       {content}
@@ -148,8 +178,11 @@ Critical.story = {
   },
 };
 
-export const CriticalSubtle = () => {
-  const content = text("Content", "Badge");
+Critical.args = {
+  content: "Badge",
+};
+
+export const CriticalSubtle = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.CRITICAL_SUBTLE} icon={<Icons.Sightseeing />}>
       {content}
@@ -163,8 +196,11 @@ CriticalSubtle.story = {
   },
 };
 
-export const Dark = () => {
-  const content = text("Content", "Badge");
+CriticalSubtle.args = {
+  content: "Badge",
+};
+
+export const Dark = ({ content }) => {
   return (
     <Badge type={TYPE_OPTIONS.DARK} icon={<Icons.Sightseeing />}>
       {content}
@@ -178,8 +214,11 @@ Dark.story = {
   },
 };
 
-export const White = () => {
-  const content = text("Content", "Badge");
+Dark.args = {
+  content: "Badge",
+};
+
+export const White = ({ content }) => {
   return (
     <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
       <Badge type={TYPE_OPTIONS.WHITE} icon={<Icons.Sightseeing />}>
@@ -195,6 +234,10 @@ White.story = {
   },
 };
 
+White.args = {
+  content: "Badge",
+};
+
 export const BadgeWithTranslatedNode = () => (
   <Badge icon={<Icons.Airplane />}>
     <span>Content should </span>
@@ -207,13 +250,7 @@ BadgeWithTranslatedNode.story = {
   name: "Badge with translated node",
 };
 
-export const Playground = () => {
-  const content = text("Content", "Badge");
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO_SUBTLE);
-  const dataTest = text("dataTest", "test");
-  const Icon = getIcon(getIcons("Airplane"));
-  const ariaLabel = text("ariaLabel", "test");
-
+export const Playground = ({ content, type, dataTest, Icon, ariaLabel }) => {
   return (
     <Badge type={type} icon={Icon && <Icon />} dataTest={dataTest} ariaLabel={ariaLabel}>
       {content}
@@ -227,10 +264,39 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
-  const content = text("Content", "Badge");
-  const Icon = getIcon(getIcons("Airplane"));
-  const ariaLabel = text("ariaLabel", "test");
+Playground.args = {
+  content: "Badge",
+  type: TYPE_OPTIONS.INFO_SUBTLE,
+  dataTest: "test",
+  ariaLabel: "test",
+  Icon: getIcon("Airplane"),
+};
+
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  Icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Accessibility = ({
+  content,
+  icon,
+  ariaLabel,
+}: {
+  content: string;
+  icon: string;
+  ariaLabel: string;
+}) => {
+  const Icon = getIcon(icon);
 
   return (
     <Badge icon={Icon && <Icon />} ariaLabel={ariaLabel}>
@@ -242,6 +308,21 @@ export const Accessibility = () => {
 Accessibility.story = {
   parameters: {
     info: "This is a preview of component accessibility props",
+  },
+};
+
+Accessibility.args = {
+  content: "Badge",
+  icon: "Airplane",
+  ariaLabel: "test",
+};
+
+Accessibility.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
   },
 };
 

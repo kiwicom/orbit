@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import * as Icons from "../icons";
@@ -63,16 +62,17 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
-  const content = text("Content", "Transport");
-  const size = select("size", Object.values(SIZES), SIZES.NORMAL);
-  const removable = boolean("removable", true);
-  const selected = boolean("selected", true);
-  const dateTag = boolean("dateTag", false);
-  const dataTest = text("dataTest", "test");
-  const type = select("type", Object.values(TYPES), TYPES.NEUTRAL);
-  const iconName = select("iconLeft", [null, ...Object.keys(Icons)], "PlusMinus");
-  const IconLeft = iconName ? Icons[iconName] : null;
+export const Playground = ({
+  content,
+  size,
+  removable,
+  selected,
+  dateTag,
+  dataTest,
+  type,
+  iconLeft,
+}) => {
+  const IconLeft = iconLeft ? Icons[iconLeft] : null;
 
   return (
     <Tag
@@ -93,6 +93,38 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Playground.args = {
+  content: "Transport",
+  size: SIZES.NORMAL,
+  removable: true,
+  selected: true,
+  dateTag: false,
+  dataTest: "test",
+  type: TYPES.NEUTRAL,
+  iconLeft: "PlusMinus",
+};
+
+Playground.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPES),
+    control: {
+      type: "select",
+    },
+  },
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
   },
 };
 

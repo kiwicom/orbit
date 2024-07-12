@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, boolean, number } from "@storybook/addon-knobs";
 
 import Button from "../../Button";
 
@@ -9,15 +8,15 @@ export default {
   title: "MobileDialogPrimitive",
 };
 
-export const Playground = () => {
-  const content = text("content", "Write your text here.");
-  const dataTest = text("dataTest", "test");
-  const tabIndex = number("TabIndex", 0);
-  const enabled = boolean("enabled", true);
-  const stopPropagation = boolean("enabled", true);
-  const removeUnderlinedText = boolean("removeUnderlinedText", false);
-  const labelClose = text("labelClose", "Close");
-
+export const Playground = ({
+  content,
+  dataTest,
+  tabIndex,
+  enabled,
+  stopPropagation,
+  removeUnderlinedText,
+  labelClose,
+}) => {
   return (
     <TooltipPrimitive
       content={content}
@@ -37,4 +36,14 @@ Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+Playground.args = {
+  content: "Write your text here.",
+  dataTest: "test",
+  tabIndex: 0,
+  enabled: true,
+  stopPropagation: true,
+  removeUnderlinedText: false,
+  labelClose: "Close",
 };

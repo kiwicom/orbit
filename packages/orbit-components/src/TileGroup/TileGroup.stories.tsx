@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Stack from "../Stack";
@@ -13,18 +12,13 @@ import Tile from "../Tile";
 
 import TileGroup from ".";
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 export default {
   title: "TileGroup",
 };
 
-export const DefaultJustWrapper = () => {
-  const dataTest = text("dataTest", "test");
-  const as = text("as", "div");
-
-  const content = text("content", "Lorem ipsum dolor sit amet");
+export const DefaultJustWrapper = ({ dataTest, as, content }) => {
   return (
     <TileGroup as={as} dataTest={dataTest}>
       <Tile onClick={action("clicked")}>{content}</Tile>
@@ -43,13 +37,14 @@ DefaultJustWrapper.story = {
   },
 };
 
-export const DefaultWithHeaderProps = () => {
-  const title = text("Title", "Expandable");
-  const description = text(
-    "Description",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  );
-  const Icon = getIcon(getIcons("Airplane"));
+DefaultJustWrapper.args = {
+  dataTest: "test",
+  as: "div",
+  content: "Lorem ipsum dolor sit amet",
+};
+
+export const DefaultWithHeaderProps = ({ title, description, icon }) => {
+  const Icon = getIcon(icon);
   return (
     <TileGroup>
       <Tile
@@ -88,8 +83,24 @@ DefaultWithHeaderProps.story = {
   },
 };
 
-export const ExpandableWithCustomDescription = () => {
-  const Icon = getIcon(getIcons("GenderMan"));
+DefaultWithHeaderProps.args = {
+  title: "Expandable",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+  icon: "Airplane",
+};
+
+DefaultWithHeaderProps.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const ExpandableWithCustomDescription = ({ icon }) => {
+  const Icon = getIcon(icon);
 
   return (
     <TileGroup>
@@ -194,6 +205,19 @@ ExpandableWithCustomDescription.story = {
 
   parameters: {
     info: "This is the playground configuration of this component.",
+  },
+};
+
+ExpandableWithCustomDescription.args = {
+  icon: "GenderMan",
+};
+
+ExpandableWithCustomDescription.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
   },
 };
 

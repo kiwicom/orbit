@@ -1,5 +1,4 @@
 import * as React from "react";
-import { boolean, text, select } from "@storybook/addon-knobs";
 
 import { ALIGN_OPTIONS, ALIGN_V_OPTIONS, WHITE_SPACE } from "./TableCell/consts";
 import { TYPE_OPTIONS } from "./consts";
@@ -160,22 +159,16 @@ WithoutStripes.story = {
   },
 };
 
-export const Playground = () => {
-  const compact = boolean("compact", false);
-  const striped = boolean("striped", true);
-  const children = text("children", "Lorem ipsum dolor sit amet");
-  const dataTest = text("dataTest", "test");
-  const align = select("align", Object.values(ALIGN_OPTIONS), ALIGN_OPTIONS.CENTER);
-  const verticalAlign = select(
-    "vertical align",
-    Object.values(ALIGN_V_OPTIONS).filter(val =>
-      ["top", "bottom", "baseline", "middle"].includes(val),
-    ),
-    ALIGN_V_OPTIONS.BASELINE,
-  ) as VerticalAlign;
-
-  const whiteSpace = select("white space", Object.values(WHITE_SPACE), WHITE_SPACE.NOWRAP);
-  const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PRIMARY);
+export const Playground = ({
+  compact,
+  striped,
+  children,
+  dataTest,
+  align,
+  verticalAlign,
+  whiteSpace,
+  type,
+}) => {
   return (
     <Table striped={striped} type={type} compact={compact} dataTest={dataTest}>
       <TableHead>
@@ -261,6 +254,46 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Playground.args = {
+  compact: false,
+  striped: true,
+  children: "Lorem ipsum dolor sit amet",
+  dataTest: "test",
+  align: ALIGN_OPTIONS.CENTER,
+  verticalAlign: ALIGN_V_OPTIONS.BASELINE as VerticalAlign,
+  whiteSpace: WHITE_SPACE.NOWRAP,
+  type: TYPE_OPTIONS.PRIMARY,
+};
+
+Playground.argTypes = {
+  align: {
+    options: Object.values(ALIGN_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  verticalAlign: {
+    options: Object.values(ALIGN_V_OPTIONS).filter(val =>
+      ["top", "bottom", "baseline", "middle"].includes(val),
+    ),
+    control: {
+      type: "select",
+    },
+  },
+  whiteSpace: {
+    options: Object.values(WHITE_SPACE),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
   },
 };
 

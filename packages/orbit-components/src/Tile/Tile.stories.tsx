@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select, boolean } from "@storybook/addon-knobs";
 
 import TileGroup from "../TileGroup";
 import * as Icons from "../icons";
@@ -13,18 +12,13 @@ import CountryFlag from "../CountryFlag";
 
 import Tile from ".";
 
-const getIcons = defaultIcon => select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = source => Icons[source];
 
 export default {
   title: "Tile",
 };
 
-export const DefaultJustWrapper = () => {
-  const content = text("content", "Lorem ipsum dolor sit amet");
-  const noPadding = boolean("noPadding", false);
-  const as = text("as", "");
-
+export const DefaultJustWrapper = ({ content, noPadding, as }) => {
   return (
     <Tile as={as === "" ? undefined : "div"} onClick={action("clicked")} noPadding={noPadding}>
       {content}
@@ -40,14 +34,14 @@ DefaultJustWrapper.story = {
   },
 };
 
-export const DefaultWithHeaderProps = () => {
-  const title = text("Title", "Expandable");
-  const description = text(
-    "Description",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  );
-  const Icon = getIcon(getIcons("Airplane"));
-  const noHeaderIcon = boolean("noHeaderIcon", false);
+DefaultJustWrapper.args = {
+  content: "Lorem ipsum dolor sit amet",
+  noPadding: false,
+  as: "",
+};
+
+export const DefaultWithHeaderProps = ({ title, description, icon, noHeaderIcon }) => {
+  const Icon = getIcon(icon);
   return (
     <Tile
       onClick={action("clicked")}
@@ -67,15 +61,25 @@ DefaultWithHeaderProps.story = {
   },
 };
 
-export const DefaultWithHeaderPropsAsHref = () => {
-  const title = text("Title", "Expandable");
-  const description = text(
-    "Description",
+DefaultWithHeaderProps.args = {
+  title: "Expandable",
+  description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  );
-  const Icon = getIcon(getIcons("Airplane"));
-  const href = text("href", "#");
-  const external = boolean("external", false);
+  icon: "Airplane",
+  noHeaderIcon: false,
+};
+
+DefaultWithHeaderProps.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const DefaultWithHeaderPropsAsHref = ({ title, description, icon, href, external }) => {
+  const Icon = getIcon(icon);
 
   return (
     <Tile
@@ -96,9 +100,26 @@ DefaultWithHeaderPropsAsHref.story = {
   },
 };
 
-export const ExpandableWithCustomDescription = () => {
-  const showMore = boolean("showMore", false);
-  const Icon = getIcon(getIcons("GenderMan"));
+DefaultWithHeaderPropsAsHref.args = {
+  title: "Expandable",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+  icon: "Airplane",
+  href: "#",
+  external: false,
+};
+
+DefaultWithHeaderPropsAsHref.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const ExpandableWithCustomDescription = ({ showMore, icon }) => {
+  const Icon = getIcon(icon);
 
   return (
     <Tile
@@ -144,6 +165,20 @@ ExpandableWithCustomDescription.story = {
   },
 };
 
+ExpandableWithCustomDescription.args = {
+  showMore: false,
+  icon: "GenderMan",
+};
+
+ExpandableWithCustomDescription.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
 export const Group = () => {
   return (
     <TileGroup as="ul">
@@ -163,24 +198,23 @@ export const Group = () => {
   );
 };
 
-export const Playground = () => {
-  const href = text("Href", "https://www.kiwi.com/");
-  const title = text("Title", "Tile with title");
-  const external = boolean("External", false);
-  const Icon = getIcon(getIcons("Airplane"));
-  const description = text(
-    "Description",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  );
-  const header = text("header", "");
-  const expandable = boolean("expandable", false);
-  const initialExpanded = boolean("initialExpanded", false);
-  const noPadding = boolean("noPadding", false);
-  const dataTest = text("dataTest", "test");
-  const children = text("children", "");
-  const htmlTitle = text("htmlTitle", "Title for more info");
-  const as = text("as", "");
-  const expanded = boolean("expanded", false);
+export const Playground = ({
+  href,
+  title,
+  external,
+  icon,
+  description,
+  header,
+  expandable,
+  initialExpanded,
+  noPadding,
+  dataTest,
+  children,
+  htmlTitle,
+  as,
+  expanded,
+}) => {
+  const Icon = getIcon(icon);
 
   return (
     <Tile
@@ -207,6 +241,33 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "This is the default configuration of this component.",
+  },
+};
+
+Playground.args = {
+  href: "https://www.kiwi.com/",
+  title: "Tile with title",
+  external: false,
+  icon: "Airplane",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+  header: "",
+  expandable: false,
+  initialExpanded: false,
+  noPadding: false,
+  dataTest: "test",
+  children: "",
+  htmlTitle: "Title for more info",
+  as: "",
+  expanded: false,
+};
+
+Playground.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
   },
 };
 

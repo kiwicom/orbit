@@ -1,5 +1,4 @@
 import * as React from "react";
-import { withKnobs, text, select, boolean, object, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Tooltip from "../Tooltip";
@@ -62,10 +61,8 @@ const longContent = (
   </Stack>
 );
 
-const PopoverState = () => {
+const PopoverState = ({ labelClose, placement }) => {
   const [render, setRender] = React.useState(false);
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
-  const labelClose = text("labelClose", "Close");
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -117,13 +114,25 @@ const PopoverState = () => {
   );
 };
 
-export default {
-  title: "Popover",
-  decorators: [withKnobs],
+PopoverState.args = {
+  placement: PLACEMENTS.BOTTOM_START,
+  labelClose: "Close",
 };
 
-export const Default = () => {
-  const labelClose = text("labelClose", "Close");
+PopoverState.argTypes = {
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export default {
+  title: "Popover",
+};
+
+export const Default = ({ labelClose }) => {
   return (
     <Popover content={content} labelClose={labelClose}>
       <Button type="secondary" iconRight={<ChevronDown />}>
@@ -131,6 +140,16 @@ export const Default = () => {
       </Button>
     </Popover>
   );
+};
+
+Default.story = {
+  parameters: {
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Default.args = {
+  labelClose: "Close",
 };
 
 export const InsideCard = () => {
@@ -169,8 +188,7 @@ export const InsideCard = () => {
   );
 };
 
-export const WithTooltip = () => {
-  const labelClose = text("labelClose", "Close");
+export const WithTooltip = ({ labelClose }) => {
   return (
     <Popover content={<Tooltip content="Content">Tooltip</Tooltip>} labelClose={labelClose}>
       <Button type="secondary" iconRight={<ChevronDown />}>
@@ -180,16 +198,11 @@ export const WithTooltip = () => {
   );
 };
 
-Default.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
+WithTooltip.args = {
+  labelClose: "Close",
 };
 
-export const Placement = () => {
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.TOP_START);
-  const labelClose = text("labelClose", "Close");
-
+export const Placement = ({ placement, labelClose }) => {
   return (
     <Stack justify="center">
       <Popover content={content} placement={placement} labelClose={labelClose}>
@@ -207,9 +220,21 @@ Placement.story = {
   },
 };
 
-export const WithListChoice = () => {
-  const width = text("width", "250px");
-  const labelClose = text("labelClose", "Close");
+Placement.args = {
+  placement: PLACEMENTS.TOP_START,
+  labelClose: "Close",
+};
+
+Placement.argTypes = {
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithListChoice = ({ width, labelClose }) => {
   return (
     <Popover
       noPadding
@@ -258,10 +283,12 @@ WithListChoice.story = {
   },
 };
 
-export const OpenedByProp = () => {
-  const opened = boolean("opened", false);
-  const labelClose = text("labelClose", "Close");
+WithListChoice.args = {
+  width: "250px",
+  labelClose: "Close",
+};
 
+export const OpenedByProp = ({ opened, labelClose }) => {
   return (
     <Popover
       opened={opened}
@@ -285,10 +312,12 @@ OpenedByProp.story = {
   },
 };
 
-export const Overlapped = () => {
-  const overlapped = boolean("overlapped", true);
-  const opened = boolean("opened", false);
+OpenedByProp.args = {
+  opened: false,
+  labelClose: "Close",
+};
 
+export const Overlapped = ({ overlapped, opened }) => {
   return (
     <Popover
       overlapped={overlapped}
@@ -308,6 +337,11 @@ Overlapped.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+Overlapped.args = {
+  overlapped: true,
+  opened: false,
 };
 
 export const MultiplePopovers = () => {
@@ -379,8 +413,7 @@ LongContent.story = {
   },
 };
 
-export const ScrollingPage = () => {
-  const labelClose = text("labelClose", "Close");
+export const ScrollingPage = ({ labelClose }) => {
   return (
     <>
       <div className="sticky" style={{ top: "20px" }}>
@@ -412,8 +445,11 @@ ScrollingPage.story = {
   },
 };
 
-export const ScrollingContent = () => {
-  const labelClose = text("labelClose", "Close");
+ScrollingPage.args = {
+  labelClose: "Close",
+};
+
+export const ScrollingContent = ({ labelClose }) => {
   return (
     <div className="bg-cloud-dark overflow-scroll" style={{ height: "50vh" }}>
       <div style={{ height: "2000px", paddingTop: "800px" }}>
@@ -443,21 +479,25 @@ ScrollingContent.story = {
   },
 };
 
-export const Playground = () => {
-  const renderTimeout = number("renderTimeout", 0);
-  const zIndex = number("zIndex", 710);
-  const dataTest = text("dataTest", "test");
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
-  const width = text("width", "350px");
-  const maxHeight = text("maxHeight", "");
-  const footerActions = boolean("footerActions", true);
-  const noPadding = boolean("noPadding", false);
-  const overlapped = boolean("overlapped", false);
-  const opened = boolean("opened", true);
-  const offset = object("offset", { top: 0, left: 0 });
-  const noFlip = boolean("noFlip", false);
-  const allowOverflow = boolean("allowOverflow", false);
+ScrollingContent.args = {
+  labelClose: "Close",
+};
 
+export const Playground = ({
+  renderTimeout,
+  zIndex,
+  dataTest,
+  placement,
+  width,
+  maxHeight,
+  footerActions,
+  noPadding,
+  overlapped,
+  opened,
+  offset,
+  noFlip,
+  allowOverflow,
+}) => {
   return (
     <Stack justify="center">
       <Popover
@@ -501,11 +541,32 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const dataTest = text("dataTest", "test");
-  const labelClose = text("labelClose", "Close");
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
+Playground.args = {
+  renderTimeout: 0,
+  zIndex: 710,
+  dataTest: "test",
+  placement: PLACEMENTS.BOTTOM_START,
+  width: "350px",
+  maxHeight: "",
+  footerActions: true,
+  noPadding: false,
+  overlapped: false,
+  opened: true,
+  offset: { top: 0, left: 0 },
+  noFlip: false,
+  allowOverflow: false,
+};
 
+Playground.argTypes = {
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ dataTest, labelClose, placement }) => {
   return (
     <RenderInRtl>
       <Stack flex>
@@ -532,10 +593,22 @@ Rtl.story = {
   },
 };
 
-export const RtlReverse = () => {
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM_START);
-  const labelClose = text("labelClose", "Close");
+Rtl.args = {
+  dataTest: "test",
+  labelClose: "Close",
+  placement: PLACEMENTS.BOTTOM_START,
+};
 
+Rtl.argTypes = {
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const RtlReverse = ({ placement, labelClose }) => {
   return (
     <RenderInRtl>
       <Stack justify="end">
@@ -557,8 +630,22 @@ RtlReverse.story = {
   },
 };
 
-export const LazyContentSimlulated = () => {
-  return <PopoverState />;
+RtlReverse.args = {
+  placement: PLACEMENTS.BOTTOM_START,
+  labelClose: "Close",
+};
+
+RtlReverse.argTypes = {
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const LazyContentSimlulated = args => {
+  return <PopoverState {...args} />;
 };
 
 LazyContentSimlulated.story = {
@@ -566,5 +653,19 @@ LazyContentSimlulated.story = {
 
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+LazyContentSimlulated.args = {
+  placement: PLACEMENTS.BOTTOM_START,
+  labelClose: "Close",
+};
+
+LazyContentSimlulated.argTypes = {
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
   },
 };

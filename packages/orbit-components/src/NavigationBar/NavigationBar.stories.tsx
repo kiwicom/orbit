@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import ButtonLink from "../ButtonLink";
@@ -18,10 +17,7 @@ export default {
   title: "NavigationBar",
 };
 
-export const NavBarUpToTablet = () => {
-  const dataTest = text("dataTest", "test");
-  const hideOnScroll = boolean("hideOnScroll", true);
-
+export const NavBarUpToTablet = ({ hideOnScroll, dataTest }) => {
   return (
     <div style={{ height: "1000px" }}>
       <NavigationBar
@@ -54,10 +50,12 @@ NavBarUpToTablet.story = {
   },
 };
 
-export const NavBarDesktop = () => {
-  const dataTest = text("dataTest", "test");
-  const hideOnScroll = boolean("hideOnScroll", true);
+NavBarUpToTablet.args = {
+  hideOnScroll: true,
+  dataTest: "test",
+};
 
+export const NavBarDesktop = ({ hideOnScroll, dataTest }) => {
   return (
     <div style={{ height: "1000px" }}>
       <NavigationBar
@@ -85,9 +83,12 @@ export const NavBarDesktop = () => {
   );
 };
 
-export const RTL = () => {
-  const hideOnScroll = boolean("hideOnScroll", true);
+NavBarDesktop.args = {
+  hideOnScroll: true,
+  dataTest: "test",
+};
 
+export const RTL = ({ hideOnScroll }) => {
   return (
     <RenderInRtl>
       <div style={{ height: "1000px" }}>
@@ -114,6 +115,10 @@ export const RTL = () => {
       </div>
     </RenderInRtl>
   );
+};
+
+RTL.args = {
+  hideOnScroll: true,
 };
 
 NavBarDesktop.story = {

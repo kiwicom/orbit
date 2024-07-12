@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Modal, { ModalSection } from "../Modal";
@@ -389,14 +388,7 @@ export const ItinerarySeparatorComponent = () => {
   );
 };
 
-export const Stop = () => {
-  const date = text("date", "Fr, 19.10");
-  const time = text("time", "14:05");
-  const station = text("station", "Václav Havel Airport Prague (PRG)");
-  const city = text("city", "Prague");
-  const type = select("type", [undefined, "warning", "critical", "success", "info"], undefined);
-  const hidden = boolean("hidden", false);
-
+export const Stop = ({ date, time, station, city, type, hidden }) => {
   return (
     <Stack spacing="large">
       <Heading type="title2">Regular stop</Heading>
@@ -514,6 +506,25 @@ export const Stop = () => {
       </Itinerary>
     </Stack>
   );
+};
+
+Stop.args = {
+  date: "Fr, 19.10",
+  time: "14:05",
+  station: "Václav Havel Airport Prague (PRG)",
+  city: "Prague",
+  type: undefined,
+  hidden: false,
+};
+
+Stop.argTypes = {
+  type: {
+    name: "type",
+    options: [undefined, "warning", "critical", "success", "info"],
+    control: {
+      type: "select",
+    },
+  },
 };
 
 export const Detail = () => {

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { SIZES, TYPES } from "./consts";
@@ -10,9 +9,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import TextLink from "../TextLink";
 
 import List, { ListItem } from ".";
-
-const getIcons = (defaultIcon: string) =>
-  select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
 
 const getIcon = (source: string | null) => source && Icons[source];
 
@@ -38,10 +34,7 @@ Default.story = {
   },
 };
 
-export const DifferentTypeAndSize = () => {
-  const size = select("Size", Object.values(SIZES), SIZES.SMALL);
-  const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
-
+export const DifferentTypeAndSize = ({ size, type }) => {
   return (
     <List size={size} type={type}>
       <ListItem>
@@ -61,14 +54,27 @@ DifferentTypeAndSize.story = {
   },
 };
 
-export const WithLabels = () => {
-  const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
-  const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
-  const Icon = getIcon(getIcons("Check"));
-  const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
-  const content = text("Content", "24,000 locations around the globe");
-  const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)], undefined);
-  const dataTest = text("dataTest", "test");
+DifferentTypeAndSize.args = {
+  size: SIZES.SMALL,
+  type: TYPES.SECONDARY,
+};
+
+DifferentTypeAndSize.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPES),
+    control: {
+      type: "select",
+    },
+  },
+};
+export const WithLabels = ({ type, size, icon, iconColor, content, spaceAfter, dataTest }) => {
+  const Icon = getIcon(icon);
 
   return (
     <List size={size} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
@@ -91,10 +97,50 @@ WithLabels.story = {
   },
 };
 
-export const WithCarrier = () => {
-  const size = select("Size", Object.values(SIZES), SIZES.SMALL);
-  const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
+WithLabels.args = {
+  type: TYPES.PRIMARY,
+  size: SIZES.NORMAL,
+  icon: "Check",
+  iconColor: ICON_COLORS.SUCCESS,
+  content: "24,000 locations around the globe",
+  spaceAfter: SPACINGS_AFTER.MEDIUM,
+  dataTest: "test",
+};
 
+WithLabels.argTypes = {
+  type: {
+    options: Object.values(TYPES),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  iconColor: {
+    options: Object.values(ICON_COLORS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithCarrier = ({ size, type }) => {
   return (
     <List size={size} type={type}>
       <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
@@ -115,14 +161,28 @@ WithCarrier.story = {
   },
 };
 
-export const Playground = () => {
-  const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
-  const type = select("Type", Object.values(TYPES), TYPES.PRIMARY);
-  const Icon = getIcon(getIcons("Check"));
-  const iconColor = select("iconColor", Object.values(ICON_COLORS), ICON_COLORS.SUCCESS);
-  const content = text("Content", "24,000 locations around the globe");
-  const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)], undefined);
-  const dataTest = text("dataTest", "test");
+WithCarrier.args = {
+  size: SIZES.SMALL,
+  type: TYPES.SECONDARY,
+};
+
+WithCarrier.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPES),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({ size, type, icon, iconColor, content, spaceAfter, dataTest }) => {
+  const Icon = getIcon(icon);
 
   return (
     <List size={size} type={type} dataTest={dataTest} spaceAfter={spaceAfter}>
@@ -136,6 +196,49 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Playground.args = {
+  size: SIZES.NORMAL,
+  type: TYPES.PRIMARY,
+  icon: "Check",
+  iconColor: ICON_COLORS.SUCCESS,
+  content: "24,000 locations around the globe",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  dataTest: "test",
+};
+
+Playground.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPES),
+    control: {
+      type: "select",
+    },
+  },
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  iconColor: {
+    options: Object.values(ICON_COLORS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
   },
 };
 

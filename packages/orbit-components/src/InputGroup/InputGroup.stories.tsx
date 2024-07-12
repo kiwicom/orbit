@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, array, select } from "@storybook/addon-knobs";
 
 import Stack from "../Stack";
 import InputField from "../InputField";
@@ -16,33 +15,22 @@ export default {
   title: "InputGroup",
 };
 
-export const DateOfBirth = () => {
-  const label = text("Label", "Date of birth");
-  const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
-  const error = text("Error", "");
-  const help = text("Help", "");
+const selectOptionsMonths = [
+  { value: "January", label: "January" },
+  { value: "February", label: "February" },
+  { value: "March", label: "March" },
+  { value: "April", label: "April" },
+  { value: "May", label: "May" },
+  { value: "June", label: "June" },
+  { value: "July", label: "July" },
+  { value: "August", label: "August" },
+  { value: "September", label: "September" },
+  { value: "October", label: "October" },
+  { value: "November", label: "November" },
+  { value: "December", label: "December" },
+];
 
-  const selectOptions = [
-    { value: "January", label: "January" },
-    { value: "February", label: "February" },
-    { value: "March", label: "March" },
-    { value: "April", label: "April" },
-    { value: "May", label: "May" },
-    { value: "June", label: "June" },
-    { value: "July", label: "July" },
-    { value: "August", label: "August" },
-    { value: "September", label: "September" },
-    { value: "October", label: "October" },
-    { value: "November", label: "November" },
-    { value: "December", label: "December" },
-  ];
-
-  const selectValue = select(
-    "Select Value",
-    selectOptions.map(opt => opt.value),
-    selectOptions[0].value,
-  );
-
+export const DateOfBirth = ({ label, flex, error, help, selectValue }) => {
   return (
     <InputGroup
       label={label}
@@ -60,7 +48,7 @@ export const DateOfBirth = () => {
         onFocus={action("onFocusIn")}
         onChange={action("onChangeIn")}
       />
-      <Select options={selectOptions} value={selectValue} placeholder="Month" />
+      <Select options={selectOptionsMonths} value={selectValue} placeholder="Month" />
       <InputField placeholder="YYYY" />
     </InputGroup>
   );
@@ -74,26 +62,38 @@ DateOfBirth.story = {
   },
 };
 
-export const PhoneNumber = () => {
-  const flex = array("Flex", ["0 0 110px", "1 1 100%"]);
-  const error = text("Error", "");
-  const help = text("Help", "");
-  const selectOptions = [
-    { value: 0, label: "Czech Republic (+420)" },
-    { value: 1, label: "Slovak Republic (+421)" },
-    { value: 2, label: "United States (+1)" },
-  ];
+DateOfBirth.args = {
+  label: "Date of birth",
+  flex: ["0 0 60px", "1 1 100%", "0 0 90px"],
+  error: "",
+  help: "",
+  selectValue: selectOptionsMonths[0].value,
+};
 
-  const selectValue = select(
-    "Select Value",
-    selectOptions.map(opt => opt.value),
-    selectOptions[0].value,
-  );
+DateOfBirth.argTypes = {
+  selectValue: {
+    options: selectOptionsMonths.map(opt => opt.value),
+    control: {
+      type: "select",
+    },
+  },
+};
 
-  const customValueText = text("customValueText", "+420");
-  const placeholder = text("Input Placeholder", "e.g. 123 456 789");
-  const inputValue = text("Input Value", "");
+const selectOptionsPhoneNumber = [
+  { value: 0, label: "Czech Republic (+420)" },
+  { value: 1, label: "Slovak Republic (+421)" },
+  { value: 2, label: "United States (+1)" },
+];
 
+export const PhoneNumber = ({
+  flex,
+  error,
+  help,
+  selectValue,
+  customValueText,
+  placeholder,
+  inputValue,
+}) => {
   return (
     <InputGroup
       flex={flex}
@@ -102,7 +102,7 @@ export const PhoneNumber = () => {
       onBlur={action("onBlur")}
     >
       <Select
-        options={selectOptions}
+        options={selectOptionsPhoneNumber}
         value={selectValue}
         customValueText={customValueText}
         prefix={<CountryFlag code="cz" />}
@@ -122,33 +122,40 @@ PhoneNumber.story = {
   },
 };
 
-export const Error = () => {
-  const label = text("Label", "Label");
-  const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
-  const error = text("Error", "Something went wrong on day field");
-  const help = text("Help", "");
+PhoneNumber.args = {
+  flex: ["0 0 110px", "1 1 100%"],
+  error: "",
+  help: "",
+  selectValue: selectOptionsPhoneNumber[0].value,
+  customValueText: "+420",
+  placeholder: "e.g. 123 456 789",
+  inputValue: "",
+};
 
-  const selectOptions = [
-    { value: "January", label: "January" },
-    { value: "February", label: "February" },
-    { value: "March", label: "March" },
-    { value: "April", label: "April" },
-    { value: "May", label: "May" },
-    { value: "June", label: "June" },
-    { value: "July", label: "July" },
-    { value: "August", label: "August" },
-    { value: "September", label: "September" },
-    { value: "October", label: "October" },
-    { value: "November", label: "November" },
-    { value: "December", label: "December" },
-  ];
+PhoneNumber.argTypes = {
+  selectValue: {
+    options: selectOptionsPhoneNumber.map(opt => opt.value),
+    control: {
+      type: "select",
+    },
+  },
+};
 
-  const selectValue = select(
-    "Select Value",
-    selectOptions.map(opt => opt.value),
-    selectOptions[0].value,
-  );
-
+const selectOptionsError = [
+  { value: "January", label: "January" },
+  { value: "February", label: "February" },
+  { value: "March", label: "March" },
+  { value: "April", label: "April" },
+  { value: "May", label: "May" },
+  { value: "June", label: "June" },
+  { value: "July", label: "July" },
+  { value: "August", label: "August" },
+  { value: "September", label: "September" },
+  { value: "October", label: "October" },
+  { value: "November", label: "November" },
+  { value: "December", label: "December" },
+];
+export const Error = ({ label, flex, error, help, selectValue }) => {
   return (
     <InputGroup
       label={label}
@@ -159,7 +166,7 @@ export const Error = () => {
     >
       <InputField placeholder="DD" error={error} help={help} />
       <Select
-        options={selectOptions}
+        options={selectOptionsError}
         value={selectValue}
         placeholder="Month"
         error="Something went wrong on month field"
@@ -170,13 +177,30 @@ export const Error = () => {
   );
 };
 
-export const ValidationApproaches = () => {
-  const inputValue = text("Input Value", "");
-  const errorGroup = text("Error on group", "Something went wrong on day field");
-  const helpGroup = text("Help", "");
-  const errorSingleField = text("Error inside element", "Something went wrong on day field");
-  const helpSingleField = text("Help inside element", "");
+Error.args = {
+  label: "Label",
+  flex: ["0 0 60px", "1 1 100%", "0 0 90px"],
+  error: "Something went wrong on day field",
+  help: "",
+  selectValue: selectOptionsError[0].value,
+};
 
+Error.argTypes = {
+  selectValue: {
+    options: selectOptionsError.map(opt => opt.value),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const ValidationApproaches = ({
+  inputValue,
+  errorGroup,
+  helpGroup,
+  errorSingleField,
+  helpSingleField,
+}) => {
   return (
     <Stack direction="column">
       <InputGroup
@@ -225,9 +249,15 @@ ValidationApproaches.story = {
   },
 };
 
-export const OnChangeBehavior = () => {
-  const inputValue = text("Input Value", "");
+ValidationApproaches.args = {
+  inputValue: "",
+  errorGroup: "Something went wrong on day field",
+  helpGroup: "",
+  errorSingleField: "Something went wrong on day field",
+  helpSingleField: "",
+};
 
+export const OnChangeBehavior = ({ inputValue }) => {
   return (
     <Stack direction="column">
       <InputGroup label="Change in group" onChange={action("onChange a+b")}>
@@ -261,6 +291,10 @@ OnChangeBehavior.story = {
   },
 };
 
+OnChangeBehavior.args = {
+  inputValue: "",
+};
+
 export const Disabled = () => {
   return (
     <InputGroup disabled label="Disabled">
@@ -274,30 +308,23 @@ Disabled.story = {
   name: "Disabled",
 };
 
-export const Playground = () => {
-  const label = text("Label", "Phone number");
-  const flex = array("Flex", ["1 0 200px", "1 1 100%", "1 0 150px", "0 1 50%"]);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
-  const error = text("Error", "");
-  const help = text("Help", "");
+const selectOptionsPlayground = [
+  { value: 1, label: "First item" },
+  { value: 2, label: "Second item" },
+];
 
-  const selectOptions = [
-    { value: 1, label: "First item" },
-    { value: 2, label: "Second item" },
-  ];
-
-  const selectValue = select(
-    "Select Value",
-    selectOptions.map(opt => opt.value),
-    selectOptions[0].value,
-  );
-
-  const placeholder = text("Input Placeholder", "Placeholder");
-  const inputValue = text("Input Value", "");
-  const dataTest = text("dataTest", "test");
-
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.MEDIUM);
-
+export const Playground = ({
+  label,
+  flex,
+  size,
+  error,
+  help,
+  selectValue,
+  placeholder,
+  inputValue,
+  dataTest,
+  spaceAfter,
+}) => {
   return (
     <InputGroup
       label={label}
@@ -309,9 +336,9 @@ export const Playground = () => {
       dataTest={dataTest}
       spaceAfter={spaceAfter}
     >
-      <Select options={selectOptions} value={selectValue} error={error} help={help} />
+      <Select options={selectOptionsPlayground} value={selectValue} error={error} help={help} />
       <InputField placeholder={placeholder} value={inputValue} />
-      <Select options={selectOptions} value={selectValue} />
+      <Select options={selectOptionsPlayground} value={selectValue} />
       <InputField placeholder={placeholder} value={inputValue} />
     </InputGroup>
   );
@@ -323,33 +350,41 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const flex = array("Flex", ["0 0 60px", "1 1 100%", "0 0 90px"]);
-  const selectOptions = [
-    { value: "January", label: "January" },
-    { value: "February", label: "February" },
-    { value: "March", label: "March" },
-    { value: "April", label: "April" },
-    { value: "May", label: "May" },
-    { value: "June", label: "June" },
-    { value: "July", label: "July" },
-    { value: "August", label: "August" },
-    { value: "September", label: "September" },
-    { value: "October", label: "October" },
-    { value: "November", label: "November" },
-    { value: "December", label: "December" },
-  ];
+Playground.args = {
+  label: "Phone number",
+  flex: ["1 0 200px", "1 1 100%", "1 0 150px", "0 1 50%"],
+  size: SIZE_OPTIONS.NORMAL,
+  error: "",
+  help: "",
+  selectValue: selectOptionsPlayground[0].value,
+  placeholder: "Placeholder",
+  inputValue: "",
+  dataTest: "test",
+  spaceAfter: SPACINGS_AFTER.MEDIUM,
+};
 
-  const selectValue = select(
-    "Select Value",
-    selectOptions.map(opt => opt.value),
-    selectOptions[0].value,
-  );
+Playground.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  selectValue: {
+    options: selectOptionsPlayground.map(opt => opt.value),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
 
-  const error = text("Error", "");
-  const help = text("Help", "");
-  const label = text("Label", "Phone number");
-
+export const Rtl = ({ flex, selectValue, error, help, label }) => {
   return (
     <RenderInRtl>
       <InputGroup
@@ -360,7 +395,7 @@ export const Rtl = () => {
         label={label}
       >
         <InputField placeholder="DD" help={help} error={error} />
-        <Select options={selectOptions} value={selectValue} placeholder="Month" />
+        <Select options={selectOptionsMonths} value={selectValue} placeholder="Month" />
         <InputField placeholder="YYYY" />
       </InputGroup>
     </RenderInRtl>
@@ -372,5 +407,22 @@ Rtl.story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+  },
+};
+
+Rtl.args = {
+  flex: ["0 0 60px", "1 1 100%", "0 0 90px"],
+  selectValue: selectOptionsMonths[0].value,
+  error: "",
+  help: "",
+  label: "Phone number",
+};
+
+Rtl.argTypes = {
+  selectValue: {
+    options: selectOptionsMonths.map(opt => opt.value),
+    control: {
+      type: "select",
+    },
   },
 };

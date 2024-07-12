@@ -1,5 +1,4 @@
 import * as React from "react";
-import { select, text, boolean } from "@storybook/addon-knobs";
 
 import IconList from "./IconList";
 import * as Icons from "../icons";
@@ -10,13 +9,7 @@ export default {
   title: "Icon",
 };
 
-export const Default = () => {
-  const size = select("Size", [null, ...Object.values(ICON_SIZES)], ICON_SIZES.MEDIUM);
-  const color = select("Color", [null, ...Object.values(ICON_COLORS)], ICON_COLORS.PRIMARY);
-  const source = select("Icon", Object.keys(Icons), "Airplane");
-  const dataTest = text("dataTest", "test");
-  const ariaLabel = text("ariaLabel", "label");
-  const ariaHidden = boolean("ariaHidden", true);
+export const Default = ({ size, color, source, dataTest, ariaLabel, ariaHidden }) => {
   const Icon = Icons[source];
   return (
     <Icon
@@ -36,10 +29,37 @@ Default.story = {
   },
 };
 
-export const CustomColor = () => {
-  const size = select("Size", [null, ...Object.values(ICON_SIZES)], ICON_SIZES.MEDIUM);
-  const customColor = text("Custom color", "#ABCDEF");
-  const source = select("Icon", Object.keys(Icons), "Airplane");
+Default.args = {
+  size: ICON_SIZES.MEDIUM,
+  color: ICON_COLORS.PRIMARY,
+  source: "Airplane",
+  dataTest: "test",
+  ariaLabel: "label",
+  ariaHidden: true,
+};
+
+Default.argTypes = {
+  size: {
+    options: Object.values(ICON_SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  color: {
+    options: Object.values(ICON_COLORS),
+    control: {
+      type: "select",
+    },
+  },
+  source: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const CustomColor = ({ size, customColor, source }) => {
   const Icon = Icons[source];
 
   return <Icon size={size} customColor={customColor} />;
@@ -52,8 +72,28 @@ CustomColor.story = {
   },
 };
 
-export const ReversedOnRtl = () => {
-  const source = select("Icon", Object.keys(Icons), "ChevronBackward");
+CustomColor.args = {
+  size: ICON_SIZES.MEDIUM,
+  customColor: "#ABCDEF",
+  source: "Airplane",
+};
+
+CustomColor.argTypes = {
+  size: {
+    options: Object.values(ICON_SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  source: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const ReversedOnRtl = ({ source }) => {
   const Icon = Icons[source];
   return (
     <RenderInRtl>
@@ -66,6 +106,19 @@ ReversedOnRtl.story = {
   name: "Reversed on RTL",
   parameters: {
     info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+ReversedOnRtl.args = {
+  source: "ChevronBackward",
+};
+
+ReversedOnRtl.argTypes = {
+  source: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
   },
 };
 

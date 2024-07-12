@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select, number } from "@storybook/addon-knobs";
 
 import { RESIZE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -12,11 +11,7 @@ export default {
   title: "Textarea",
 };
 
-export const Default = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-
+export const Default = ({ label, value, placeholder }) => {
   return (
     <Textarea label={label} placeholder={placeholder} onChange={action("change")} value={value} />
   );
@@ -28,11 +23,13 @@ Default.story = {
   },
 };
 
-export const WithLabel = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
+Default.args = {
+  label: "Label",
+  value: "",
+  placeholder: "Placeholder",
+};
 
+export const WithLabel = ({ label, value, placeholder }) => {
   return (
     <Textarea label={label} placeholder={placeholder} onChange={action("change")} value={value} />
   );
@@ -46,11 +43,13 @@ WithLabel.story = {
   },
 };
 
-export const WithHelp = () => {
-  const value = text("Value", "Something");
-  const placeholder = text("Placeholder", "Placeholder");
-  const help = text("Help", "Everything is fine.");
+WithLabel.args = {
+  label: "Label",
+  value: "",
+  placeholder: "Placeholder",
+};
 
+export const WithHelp = ({ value, placeholder, help }) => {
   return (
     <Textarea placeholder={placeholder} help={help} onChange={action("change")} value={value} />
   );
@@ -64,11 +63,13 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
-  const value = text("Value", "Something");
-  const placeholder = text("Placeholder", "Placeholder");
-  const error = text("Error", "Something went wrong.");
+WithHelp.args = {
+  value: "Something",
+  placeholder: "Placeholder",
+  help: "Everything is fine.",
+};
 
+export const WithError = ({ value, placeholder, error }) => {
   return (
     <Textarea placeholder={placeholder} error={error} onChange={action("change")} value={value} />
   );
@@ -82,22 +83,28 @@ WithError.story = {
   },
 };
 
-export const Playground = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const fullHeight = boolean("fullHeight", true);
-  const placeholder = text("Placeholder", "Placeholder");
-  const help = text("Help", "");
-  const error = text("Error", "Something went wrong.");
-  const disabled = boolean("Disabled", false);
-  const readOnly = boolean("Read-only", false);
-  const resize = select("resize", Object.values(RESIZE_OPTIONS), RESIZE_OPTIONS.VERTICAL);
-  const maxLength = number("maxLength", Infinity);
-  const dataTest = text("dataTest", "test");
-  const rows = number("rows", 3);
-  const required = boolean("required", false);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.MEDIUM);
+WithError.args = {
+  value: "Something",
+  placeholder: "Placeholder",
+  error: "Something went wrong.",
+};
 
+export const Playground = ({
+  label,
+  value,
+  fullHeight,
+  placeholder,
+  help,
+  error,
+  rows,
+  required,
+  disabled,
+  readOnly,
+  maxLength,
+  resize,
+  dataTest,
+  spaceAfter,
+}) => {
   return (
     <Textarea
       label={label}
@@ -127,10 +134,35 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const label = text("Label", "Label");
-  const help = text("Help", "");
-  const error = text("Error", "Something went wrong.");
+Playground.args = {
+  label: "Label",
+  value: "",
+  fullHeight: true,
+  placeholder: "Placeholder",
+  help: "",
+  error: "Something went wrong.",
+  disabled: false,
+  readOnly: false,
+  resize: RESIZE_OPTIONS.VERTICAL,
+  maxLength: Infinity,
+  dataTest: "test",
+  rows: 3,
+  required: false,
+  spaceAfter: SPACINGS_AFTER.MEDIUM,
+};
+
+Playground.argTypes = {
+  resize: {
+    options: Object.values(RESIZE_OPTIONS),
+    control: { type: "select" },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: { type: "select" },
+  },
+};
+
+export const Rtl = ({ label, help, error }) => {
   return (
     <RenderInRtl>
       <Textarea
@@ -150,4 +182,10 @@ Rtl.story = {
   parameters: {
     info: "This is a preview of this component in RTL setup.",
   },
+};
+
+Rtl.args = {
+  label: "Label",
+  help: "",
+  error: "Something went wrong.",
 };

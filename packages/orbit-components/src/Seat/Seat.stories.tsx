@@ -1,5 +1,4 @@
 import * as React from "react";
-import { select, text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import { SIZE_OPTIONS } from "./consts";
@@ -10,10 +9,7 @@ import Seat from ".";
 
 export const Default = () => <Seat type="default" />;
 
-export const Mixed = () => {
-  const label = text("label", "XY");
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-
+export const Mixed = ({ label, size }) => {
   return (
     <Stack direction="column">
       <Stack align="end">
@@ -74,11 +70,21 @@ export const Mixed = () => {
   );
 };
 
-export const Selected = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const dataTest = text("dataTest", "test");
-  const label = text("label", "XY");
+Mixed.args = {
+  label: "XY",
+  size: SIZE_OPTIONS.MEDIUM,
+};
 
+Mixed.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Selected = ({ size, dataTest, label }) => {
   return (
     <Stack direction="row">
       <Seat size={size} onClick={action("onClick")} label={label} selected dataTest={dataTest} />
@@ -95,13 +101,22 @@ export const Selected = () => {
   );
 };
 
-export const Playground = () => {
-  const dataTest = text("dataTest", "test");
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const label = text("label", "XY");
-  const price = text("price", "$12");
-  const selected = boolean("selected", false);
+Selected.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  dataTest: "test",
+  label: "XY",
+};
 
+Selected.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({ dataTest, size, label, price, selected }) => {
   return (
     <Stack direction="row">
       <Seat size={size} label={label} price={price} selected={selected} dataTest={dataTest} />
@@ -127,6 +142,23 @@ export const Playground = () => {
   );
 };
 
+Playground.args = {
+  dataTest: "test",
+  size: SIZE_OPTIONS.MEDIUM,
+  label: "XY",
+  price: "$12",
+  selected: false,
+};
+
+Playground.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
 export const Legend = () => {
   return (
     <Stack direction="column">
@@ -139,7 +171,6 @@ export const Legend = () => {
 
 export default {
   title: "Seat",
-  component: Seat,
   includeStories: ["Default", "Selected", "Mixed", "Legend", "Playground"],
   parameters: {
     info: "Visit Orbit.Kiwi for more detailed guidelines.",

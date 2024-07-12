@@ -1,5 +1,4 @@
 import * as React from "react";
-import { array, text, number, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import type { Value } from "./types";
@@ -11,12 +10,7 @@ export default {
   title: "Slider",
 };
 
-export const Default = () => {
-  const label = text("label", "Depart from Prague");
-  const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-  const minValue = number("minValue", 1);
-  const maxValue = number("maxValue", 100);
-  const dataTest = text("dataTest", "01:00 PM – 11:59 PM");
+export const Default = ({ label, valueDescription, minValue, maxValue, dataTest }) => {
   return (
     <Slider
       onChange={action("onChange")}
@@ -35,20 +29,23 @@ Default.story = {
   },
 };
 
-export const SliderWithHistogram = () => {
-  const label = text("label", "Depart from Prague");
-  const valueDescription = text("valueDescription", "01:00 PM – 11:59 PM");
-  const defaultValue = number("defaultValue", 12);
-  const minValue = number("minValue", 1);
-  const maxValue = number("maxValue", 24);
-  const histogramData = array(
-    "histogramData",
-    [
-      11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2,
-    ].map(v => v.toString()),
-  );
+Default.args = {
+  label: "Depart from Prague",
+  valueDescription: "01:00 PM – 11:59 PM",
+  minValue: 1,
+  maxValue: 100,
+  dataTest: "01:00 PM – 11:59 PM",
+};
 
-  const histogramDescription = text("histogramDescription", "20 of 133 flights");
+export const SliderWithHistogram = ({
+  label,
+  valueDescription,
+  histogramDescription,
+  defaultValue,
+  minValue,
+  maxValue,
+  histogramData,
+}) => {
   return (
     <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
       <Slider
@@ -73,13 +70,19 @@ SliderWithHistogram.story = {
   },
 };
 
-export const RangeSlider = () => {
-  const label = text("label", "Depart from Prague");
-  const defaultValue = array("defaultValue", ["1", "5"]).map(v => parseInt(v, 10));
-  const minValue = number("minValue", 1);
-  const maxValue = number("maxValue", 24);
-  const step = number("step", 1);
+SliderWithHistogram.args = {
+  label: "Depart from Prague",
+  valueDescription: "01:00 PM – 11:59 PM",
+  defaultValue: 12,
+  minValue: 1,
+  maxValue: 24,
+  histogramData: [
+    11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2,
+  ].map(v => v.toString()),
+  histogramDescription: "20 of 133 flights",
+};
 
+export const RangeSlider = ({ label, defaultValue, minValue, maxValue, step }) => {
   const [times, setTimes] = React.useState<Value>(defaultValue);
   const valueDescription = `${times[0]}:00 - ${times[1]}:00`;
 
@@ -106,20 +109,23 @@ RangeSlider.story = {
   },
 };
 
-export const RangeSliderWithHistogram = () => {
-  const label = text("label", "Depart from Prague");
-  const defaultValue = array("defaultValue", ["0", "24"]).map(v => parseInt(v, 10));
-  const minValue = number("minValue", 0);
-  const maxValue = number("maxValue", 48);
-  const step = number("step", 2);
-  const histogramData = array(
-    "histogramData",
-    [
-      11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2,
-      11,
-    ].map(v => v.toString()),
-  );
-  const histogramDescription = text("histogramDescription", "20 of 133 flights");
+RangeSlider.args = {
+  label: "Depart from Prague",
+  defaultValue: ["1", "5"].map(v => parseInt(v, 10)),
+  minValue: 1,
+  maxValue: 24,
+  step: 1,
+};
+
+export const RangeSliderWithHistogram = ({
+  label,
+  defaultValue,
+  histogramData,
+  histogramDescription,
+  minValue,
+  maxValue,
+  step,
+}) => {
   const [times, setTimes] = React.useState<Value>(defaultValue);
   const valueDescription = `${times[0]}:00 - ${times[1]}:00`;
   return (
@@ -150,11 +156,23 @@ RangeSliderWithHistogram.story = {
   },
 };
 
-export const SliderWithLoadingHistogram = () => {
-  const histogramDescription = text("histogramDescription", "20 of 133 flights");
-  const histogramLoading = boolean("histogramLoading", true);
-  const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
+RangeSliderWithHistogram.args = {
+  label: "Depart from Prague",
+  defaultValue: ["0", "24"].map(v => parseInt(v, 10)),
+  minValue: 0,
+  maxValue: 48,
+  step: 2,
+  histogramData: [
+    11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11,
+  ].map(v => v.toString()),
+  histogramDescription: "20 of 133 flights",
+};
 
+export const SliderWithLoadingHistogram = ({
+  histogramDescription,
+  histogramLoading,
+  histogramLoadingText,
+}) => {
   return (
     <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
       <Slider
@@ -180,11 +198,17 @@ SliderWithLoadingHistogram.story = {
   },
 };
 
-export const RangeSliderWithLoadingHistogram = () => {
-  const histogramDescription = text("histogramDescription", "20 of 133 flights");
-  const histogramLoading = boolean("histogramLoading", true);
-  const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
+SliderWithLoadingHistogram.args = {
+  histogramDescription: "20 of 133 flights",
+  histogramLoading: true,
+  histogramLoadingText: "Loading connection data...",
+};
 
+export const RangeSliderWithLoadingHistogram = ({
+  histogramDescription,
+  histogramLoading,
+  histogramLoadingText,
+}) => {
   return (
     <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
       <Slider
@@ -210,16 +234,23 @@ RangeSliderWithLoadingHistogram.story = {
   },
 };
 
-export const SliderPlayground = () => {
-  const ariaLabel = text("ariaLabel", "Label of handle");
-  const ariaValueText = text("ariaValueText", "Text alternative of actual value");
-  const dataTest = text("dataTest", "test");
-  const defaultValue = number("defaultValue", 12);
-  const label = text("label", "Depart from Prague");
-  const maxValue = number("maxValue", 24);
-  const minValue = number("minValue", 1);
-  const step = number("step", 1);
-  const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
+RangeSliderWithLoadingHistogram.args = {
+  histogramDescription: "20 of 133 flights",
+  histogramLoading: true,
+  histogramLoadingText: "Loading connection data...",
+};
+
+export const SliderPlayground = ({
+  ariaLabel,
+  ariaValueText,
+  dataTest,
+  defaultValue,
+  label,
+  maxValue,
+  minValue,
+  step,
+  valueDescription,
+}) => {
   return (
     <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
       <Slider
@@ -248,28 +279,33 @@ SliderPlayground.story = {
   },
 };
 
-export const RangeSliderPlayground = () => {
-  const ariaLabel = array("ariaLabel", ["First handle", "Second handle"]);
-  const ariaValueText = text("ariaValueText", "Text alternative of actual value");
-  const dataTest = text("dataTest", "test");
-  const defaultValue = array(
-    "defaultValue",
-    [1, 12].map(v => v.toString()),
-  );
-  const histogramData = array(
-    "histogramData",
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24].map(v =>
-      v.toString(),
-    ),
-  );
-  const histogramDescription = text("histogramDescription", "28 of 90 flights");
-  const histogramLoading = boolean("histogramLoading", false);
-  const histogramLoadingText = text("histogramLoadingText", "");
-  const label = text("label", "Depart from Prague");
-  const maxValue = number("maxValue", 24);
-  const minValue = number("minValue", 1);
-  const step = number("step", 1);
-  const valueDescription = text("valueDescription", "From midnight to 12:00 pm");
+SliderPlayground.args = {
+  ariaLabel: "Label of handle",
+  ariaValueText: "Text alternative of actual value",
+  dataTest: "test",
+  defaultValue: 12,
+  label: "Depart from Prague",
+  maxValue: 24,
+  minValue: 1,
+  step: 1,
+  valueDescription: "From midnight to 12:00 pm",
+};
+
+export const RangeSliderPlayground = ({
+  ariaLabel,
+  ariaValueText,
+  dataTest,
+  defaultValue,
+  histogramData,
+  histogramDescription,
+  histogramLoading,
+  histogramLoadingText,
+  label,
+  maxValue,
+  minValue,
+  step,
+  valueDescription,
+}) => {
   return (
     <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
       <Slider
@@ -300,6 +336,24 @@ RangeSliderPlayground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+RangeSliderPlayground.args = {
+  ariaLabel: ["First handle", "Second handle"],
+  ariaValueText: "Text alternative of actual value",
+  dataTest: "test",
+  defaultValue: [1, 12].map(v => v.toString()),
+  histogramData: [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+  ].map(v => v.toString()),
+  histogramDescription: "28 of 90 flights",
+  histogramLoading: false,
+  histogramLoadingText: "",
+  label: "Depart from Prague",
+  maxValue: 24,
+  minValue: 1,
+  step: 1,
+  valueDescription: "From midnight to 12:00 pm",
 };
 
 export const RtlDefaultSlider = () => {
@@ -383,11 +437,11 @@ RtlRangeSliderWithHistogram.story = {
   },
 };
 
-export const RtlSliderWithLoadingHistogram = () => {
-  const histogramDescription = text("histogramDescription", "20 of 133 flights");
-  const histogramLoading = boolean("histogramLoading", true);
-  const histogramLoadingText = text("histogramLoadingText", "Loading connection data...");
-
+export const RtlSliderWithLoadingHistogram = ({
+  histogramDescription,
+  histogramLoading,
+  histogramLoadingText,
+}) => {
   return (
     <RenderInRtl>
       <div style={{ backgroundColor: "#f1f5f7", padding: "24px" }}>
@@ -413,4 +467,10 @@ RtlSliderWithLoadingHistogram.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+RtlSliderWithLoadingHistogram.args = {
+  histogramDescription: "20 of 133 flights",
+  histogramLoading: true,
+  histogramLoadingText: "Loading connection data...",
 };

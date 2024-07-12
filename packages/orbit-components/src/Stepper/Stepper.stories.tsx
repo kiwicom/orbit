@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, number, boolean } from "@storybook/addon-knobs";
 
 import StatelessStepper from "./StepperStateless";
 
@@ -10,10 +9,7 @@ export default {
   title: "Stepper",
 };
 
-export const Default = () => {
-  const titleIncrement = text("Title increment", "Add a passenger");
-  const titleDecrement = text("Title decrement", "Remove a passenger");
-
+export const Default = ({ titleIncrement, titleDecrement }) => {
   return (
     <Stepper
       titleIncrement={titleIncrement}
@@ -29,19 +25,24 @@ Default.story = {
   },
 };
 
-export const Stateless = () => {
-  const min = number("minValue", 1);
-  const max = number("maxValue", 10);
-  const value = text("value", "2 adults");
-  const name = text("Name", "name");
-  const disabled = boolean("disabled", false);
-  const dataTest = text("dataTest", "test");
-  const disabledIncrement = boolean("Disabled Increment", false);
-  const disabledDecrement = boolean("Disabled Decrement", false);
-  const titleIncrement = text("Title increment", "Add a passenger");
-  const titleDecrement = text("Title decrement", "Remove a passenger");
-  const active = boolean("active", false);
+Default.args = {
+  titleIncrement: "Add a passenger",
+  titleDecrement: "Remove a passenger",
+};
 
+export const Stateless = ({
+  min,
+  max,
+  value,
+  name,
+  disabled,
+  dataTest,
+  disabledIncrement,
+  disabledDecrement,
+  titleIncrement,
+  titleDecrement,
+  active,
+}) => {
   return (
     <StatelessStepper
       dataTest={dataTest}
@@ -71,18 +72,32 @@ Stateless.story = {
   },
 };
 
-export const Playground = () => {
-  const min = number("minValue", 1);
-  const max = number("maxValue", 10);
-  const step = number("step", 2);
-  const defaultValue = number("defaultValue", 4);
-  const name = text("Name", "name");
-  const disabled = boolean("disabled", false);
-  const dataTest = text("dataTest", "test");
-  const titleIncrement = text("Title increment", "Add a passenger");
-  const titleDecrement = text("Title decrement", "Remove a passenger");
-  const active = boolean("active", false);
+Stateless.args = {
+  min: 1,
+  max: 10,
+  value: "2 adults",
+  name: "name",
+  disabled: false,
+  dataTest: "test",
+  disabledIncrement: false,
+  disabledDecrement: false,
+  titleIncrement: "Add a passenger",
+  titleDecrement: "Remove a passenger",
+  active: false,
+};
 
+export const Playground = ({
+  min,
+  max,
+  step,
+  defaultValue,
+  name,
+  disabled,
+  dataTest,
+  titleIncrement,
+  titleDecrement,
+  active,
+}) => {
   return (
     <Stepper
       defaultValue={defaultValue}
@@ -105,4 +120,17 @@ Playground.story = {
   parameters: {
     info: "Here you can try Stepper component with additional functionality.",
   },
+};
+
+Playground.args = {
+  min: 1,
+  max: 10,
+  step: 2,
+  defaultValue: 4,
+  name: "name",
+  disabled: false,
+  dataTest: "test",
+  titleIncrement: "Add a passenger",
+  titleDecrement: "Remove a passenger",
+  active: false,
 };

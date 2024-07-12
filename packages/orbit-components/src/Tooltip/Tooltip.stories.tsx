@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select, boolean } from "@storybook/addon-knobs";
 
 import { PLACEMENTS } from "../common/consts";
 import * as Icons from "../icons";
@@ -16,17 +15,13 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Tooltip from ".";
 
-const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
 
 export default {
   title: "Tooltip",
 };
 
-export const TooltipOnInlineElement = () => {
-  const content = text("content", "Write your text here.");
-  const removeUnderlinedText = boolean("removeUnderlinedText", false);
-
+export const TooltipOnInlineElement = ({ content, removeUnderlinedText }) => {
   return (
     <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
       <Stack spacing="none">
@@ -66,11 +61,12 @@ TooltipOnInlineElement.story = {
   },
 };
 
-export const TooltipOnBlockElement = () => {
-  const content = text(
-    "content",
-    "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
-  );
+TooltipOnInlineElement.args = {
+  content: "Write your text here.",
+  removeUnderlinedText: false,
+};
+
+export const TooltipOnBlockElement = ({ content }) => {
   return (
     <Tooltip content={content}>
       <Heading>Orbit design system</Heading>
@@ -86,8 +82,12 @@ TooltipOnBlockElement.story = {
   },
 };
 
-export const TooltipOnDisabledElement = () => {
-  const content = text("content", "Write your text here.");
+TooltipOnBlockElement.args = {
+  content:
+    "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
+};
+
+export const TooltipOnDisabledElement = ({ content }) => {
   return (
     <Tooltip content={content}>
       <Button disabled>Disabled</Button>
@@ -103,8 +103,11 @@ TooltipOnDisabledElement.story = {
   },
 };
 
-export const Block = () => {
-  const content = text("content", "Write your text here.");
+TooltipOnDisabledElement.args = {
+  content: "Write your text here.",
+};
+
+export const Block = ({ content }) => {
   return (
     <Tooltip block content={content}>
       <Button fullWidth>Full width</Button>
@@ -112,10 +115,11 @@ export const Block = () => {
   );
 };
 
-export const Placement = () => {
-  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
-  const content = text("content", "Write your text here.");
+Block.args = {
+  content: "Write your text here.",
+};
+
+export const Placement = ({ size, placement, content }) => {
   return (
     <Stack justify="center">
       <Tooltip placement={placement} size={size} content={content}>
@@ -133,9 +137,28 @@ Placement.story = {
   },
 };
 
-export const WithImageInside = () => {
-  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
+Placement.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  placement: PLACEMENTS.BOTTOM,
+  content: "Write your text here.",
+};
+
+Placement.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithImageInside = ({ size, placement }) => {
   return (
     <Tooltip
       placement={placement}
@@ -176,15 +199,37 @@ WithImageInside.story = {
   },
 };
 
-export const Playground = () => {
-  const content = text("content", "Write your text here.");
-  const dataTest = text("dataTest", "test");
-  const Icon = getIcon(getIcons("Airplane"));
-  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
-  const tabIndex = text("TabIndex", "0");
-  const enabled = boolean("enabled", true);
-  const removeUnderlinedText = boolean("removeUnderlinedText", false);
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
+WithImageInside.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  placement: PLACEMENTS.BOTTOM,
+};
+
+WithImageInside.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  content,
+  dataTest,
+  icon,
+  size,
+  tabIndex,
+  enabled,
+  removeUnderlinedText,
+  placement,
+}) => {
+  const Icon = getIcon(icon);
 
   return (
     <Tooltip
@@ -204,6 +249,38 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Playground.args = {
+  content: "Write your text here.",
+  dataTest: "test",
+  icon: "Airplane",
+  size: SIZE_OPTIONS.SMALL,
+  tabIndex: "0",
+  enabled: true,
+  removeUnderlinedText: false,
+  placement: PLACEMENTS.BOTTOM,
+};
+
+Playground.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
   },
 };
 

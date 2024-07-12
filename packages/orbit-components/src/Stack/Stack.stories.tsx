@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, select, object, text } from "@storybook/addon-knobs";
 
 import { DIRECTIONS, ALIGNS, SPACINGS, JUSTIFY } from "../utils/layout/consts";
 import Edit from "../icons/Edit";
@@ -57,18 +56,18 @@ Default.story = {
   },
 };
 
-export const MobileProperties = () => {
-  const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
-  const wrap = boolean("Wrap", false);
-  const grow = boolean("Grow", true);
-  const shrink = boolean("Shrink", false);
-  const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), ALIGNS.START);
-  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
-  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.NONE);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
-
+export const MobileProperties = ({
+  inline,
+  direction,
+  wrap,
+  grow,
+  shrink,
+  basis,
+  align,
+  justify,
+  spacing,
+  spaceAfter,
+}) => {
   return (
     <Stack
       inline={inline}
@@ -98,18 +97,64 @@ MobileProperties.story = {
   },
 };
 
-export const MediumMobileProperties = () => {
-  const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), undefined);
-  const wrap = boolean("Wrap", false);
-  const grow = boolean("Grow", true);
-  const shrink = boolean("Shrink", false);
-  const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
-  const justify = select("Justify", Object.values(JUSTIFY), undefined);
-  const spacing = select("Spacing", Object.values(SPACINGS), undefined);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
+MobileProperties.args = {
+  inline: false,
+  direction: DIRECTIONS.ROW,
+  wrap: false,
+  grow: true,
+  shrink: false,
+  basis: "auto",
+  align: ALIGNS.START,
+  justify: JUSTIFY.START,
+  spacing: SPACINGS.NONE,
+  spaceAfter: undefined,
+};
 
+MobileProperties.argTypes = {
+  direction: {
+    options: Object.values(DIRECTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGNS),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const MediumMobileProperties = ({
+  inline,
+  direction,
+  wrap,
+  grow,
+  shrink,
+  basis,
+  align,
+  justify,
+  spacing,
+  spaceAfter,
+}) => {
   const mediumMobile = {
     inline,
     direction,
@@ -139,18 +184,64 @@ MediumMobileProperties.story = {
   },
 };
 
-export const LargeMobileProperties = () => {
-  const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), undefined);
-  const wrap = boolean("Wrap", false);
-  const grow = boolean("Grow", true);
-  const shrink = boolean("Shrink", false);
-  const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
-  const justify = select("Justify", Object.values(JUSTIFY), undefined);
-  const spacing = select("Spacing", Object.values(SPACINGS), undefined);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
+MediumMobileProperties.args = {
+  inline: false,
+  direction: undefined,
+  wrap: false,
+  grow: true,
+  shrink: false,
+  basis: "auto",
+  align: ALIGNS.END,
+  justify: undefined,
+  spacing: undefined,
+  spaceAfter: undefined,
+};
 
+MediumMobileProperties.argTypes = {
+  direction: {
+    options: Object.values(DIRECTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGNS),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const LargeMobileProperties = ({
+  inline,
+  direction,
+  wrap,
+  grow,
+  shrink,
+  basis,
+  align,
+  justify,
+  spacing,
+  spaceAfter,
+}) => {
   const largeMobile = {
     inline,
     direction,
@@ -180,18 +271,64 @@ LargeMobileProperties.story = {
   },
 };
 
-export const TabletProperties = () => {
-  const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), undefined);
-  const wrap = boolean("Wrap", false);
-  const grow = boolean("Grow", true);
-  const shrink = boolean("Shrink", false);
-  const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
-  const justify = select("Justify", Object.values(JUSTIFY), undefined);
-  const spacing = select("Spacing", Object.values(SPACINGS), undefined);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
+LargeMobileProperties.args = {
+  inline: false,
+  direction: undefined,
+  wrap: false,
+  grow: true,
+  shrink: false,
+  basis: "auto",
+  align: ALIGNS.END,
+  justify: undefined,
+  spacing: undefined,
+  spaceAfter: undefined,
+};
 
+LargeMobileProperties.argTypes = {
+  direction: {
+    options: Object.values(DIRECTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGNS),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const TabletProperties = ({
+  inline,
+  direction,
+  spaceAfter,
+  wrap,
+  grow,
+  shrink,
+  basis,
+  align,
+  justify,
+  spacing,
+}) => {
   const tablet = {
     inline,
     direction,
@@ -221,18 +358,64 @@ TabletProperties.story = {
   },
 };
 
-export const DesktopProperties = () => {
-  const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), undefined);
-  const wrap = boolean("Wrap", false);
-  const grow = boolean("Grow", true);
-  const shrink = boolean("Shrink", false);
-  const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
-  const justify = select("Justify", Object.values(JUSTIFY), undefined);
-  const spacing = select("Spacing", Object.values(SPACINGS), undefined);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
+TabletProperties.args = {
+  inline: false,
+  direction: undefined,
+  wrap: false,
+  grow: true,
+  shrink: false,
+  basis: "auto",
+  align: ALIGNS.END,
+  justify: undefined,
+  spacing: undefined,
+  spaceAfter: undefined,
+};
 
+TabletProperties.argTypes = {
+  direction: {
+    options: Object.values(DIRECTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGNS),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const DesktopProperties = ({
+  inline,
+  direction,
+  wrap,
+  grow,
+  shrink,
+  basis,
+  align,
+  justify,
+  spacing,
+  spaceAfter,
+}) => {
   const desktop = {
     inline,
     direction,
@@ -262,18 +445,64 @@ DesktopProperties.story = {
   },
 };
 
-export const LargeDesktopProperties = () => {
-  const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), undefined);
-  const wrap = boolean("Wrap", false);
-  const grow = boolean("Grow", true);
-  const shrink = boolean("Shrink", false);
-  const basis = text("Basis", "auto");
-  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
-  const justify = select("Justify", Object.values(JUSTIFY), undefined);
-  const spacing = select("Spacing", Object.values(SPACINGS), undefined);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
+DesktopProperties.args = {
+  inline: false,
+  direction: undefined,
+  wrap: false,
+  grow: true,
+  shrink: false,
+  basis: "auto",
+  align: ALIGNS.END,
+  justify: undefined,
+  spacing: undefined,
+  spaceAfter: undefined,
+};
 
+DesktopProperties.argTypes = {
+  direction: {
+    options: Object.values(DIRECTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGNS),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const LargeDesktopProperties = ({
+  inline,
+  direction,
+  wrap,
+  grow,
+  shrink,
+  basis,
+  align,
+  justify,
+  spacing,
+  spaceAfter,
+}) => {
   const largeDesktop = {
     inline,
     direction,
@@ -303,6 +532,52 @@ LargeDesktopProperties.story = {
   },
 };
 
+LargeDesktopProperties.args = {
+  inline: false,
+  direction: undefined,
+  wrap: false,
+  grow: true,
+  shrink: false,
+  basis: "auto",
+  align: ALIGNS.END,
+  justify: undefined,
+  spacing: undefined,
+  spaceAfter: undefined,
+};
+
+LargeDesktopProperties.argTypes = {
+  direction: {
+    options: Object.values(DIRECTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGNS),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
 export const NestedExample = () => (
   <Stack spacing="large" direction="column" align="start">
     <Stack spacing="XSmall" direction="row" inline>
@@ -327,43 +602,26 @@ NestedExample.story = {
   },
 };
 
-export const Playground = () => {
-  const dataTest = text("dataTest", "test");
-  const flex = boolean("flex", true);
-  const inline = boolean("Inline", false);
-  const direction = select("Direction", Object.values(DIRECTIONS), undefined);
-  const wrap = boolean("Wrap", false);
-  const grow = boolean("Grow", true);
-  const shrink = boolean("Shrink", false);
-  const legacy = boolean("legacy", false);
-  const basis = text("Basis", "");
-  const align = select("Align", Object.values(ALIGNS), ALIGNS.START);
-  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
-  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.NONE);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
-
-  const mediumMobile = object("mediumMobile", {
-    direction: DIRECTIONS.COLUMN,
-  });
-
-  const largeMobile = object("largeMobile", {
-    align: ALIGNS.END,
-  });
-
-  const tablet = object("tablet", {
-    spacing: SPACINGS.XSMALL,
-  });
-
-  const desktop = object("desktop", {
-    justify: JUSTIFY.BETWEEN,
-    direction: DIRECTIONS.ROW,
-    align: ALIGNS.START,
-  });
-
-  const largeDesktop = object("largeDesktop", {
-    spacing: SPACINGS.XLARGE,
-  });
-
+export const Playground = ({
+  dataTest,
+  flex,
+  inline,
+  direction,
+  wrap,
+  grow,
+  shrink,
+  basis,
+  align,
+  justify,
+  spacing,
+  spaceAfter,
+  legacy,
+  mediumMobile,
+  largeMobile,
+  tablet,
+  desktop,
+  largeDesktop,
+}) => {
   return (
     <Stack
       dataTest={dataTest}
@@ -394,6 +652,72 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Playground.args = {
+  dataTest: "test",
+  flex: true,
+  inline: false,
+  direction: undefined,
+  wrap: false,
+  grow: true,
+  shrink: false,
+  legacy: false,
+  basis: "",
+  align: ALIGNS.START,
+  justify: JUSTIFY.START,
+  spacing: SPACINGS.NONE,
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  mediumMobile: {
+    direction: DIRECTIONS.COLUMN,
+  },
+  largeMobile: {
+    align: ALIGNS.END,
+  },
+  tablet: {
+    spacing: SPACINGS.XSMALL,
+  },
+  desktop: {
+    justify: JUSTIFY.BETWEEN,
+    direction: DIRECTIONS.ROW,
+    align: ALIGNS.START,
+  },
+  largeDesktop: {
+    spacing: SPACINGS.XLARGE,
+  },
+};
+
+Playground.argTypes = {
+  direction: {
+    options: Object.values(DIRECTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGNS),
+    control: {
+      type: "select",
+    },
+  },
+  justify: {
+    options: Object.values(JUSTIFY),
+    control: {
+      type: "select",
+    },
+  },
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
   },
 };
 

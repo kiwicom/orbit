@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select, boolean, number } from "@storybook/addon-knobs";
 
 import TYPE_OPTIONS from "./consts";
 import Card from "../Card";
@@ -32,11 +31,7 @@ ButtonLoading.story = {
   },
 };
 
-export const CardLoading = () => {
-  const title = text("Title", "Card with title");
-  const description = text("Description", "");
-  const loading = boolean("Loading", true);
-  const loadingText = text("Text", "Please wait, Card content is loading...");
+export const CardLoading = ({ title, description, loading, loadingText }) => {
   return (
     <Card loading={loading} title={title} description={description}>
       <Loading loading={loading} type="boxLoader" text={loadingText}>
@@ -56,8 +51,14 @@ CardLoading.story = {
   },
 };
 
-export const InlineLoader = () => {
-  const loadingText = text("Text", "Please wait, content of the page is loading...");
+CardLoading.args = {
+  title: "Card with title",
+  description: "",
+  loading: true,
+  loadingText: "Please wait, Card content is loading...",
+};
+
+export const InlineLoader = ({ loadingText }) => {
   return <Loading type={TYPE_OPTIONS.INLINE_LOADER} text={loadingText} />;
 };
 
@@ -69,24 +70,41 @@ InlineLoader.story = {
   },
 };
 
-export const CustomLoader = () => {
-  const customSize = number("customSize", 50);
+InlineLoader.args = {
+  loadingText: "Please wait, content of the page is loading...",
+};
 
+export const CustomLoader = ({ customSize }) => {
   return <Loading customSize={customSize} />;
 };
 
-export const Playground = () => {
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.PAGE_LOADER);
-  const loadingText = text("Text", "Please wait, content of the page is loading...");
-  const loading = boolean("Loading", true);
-  const dataTest = text("dataTest", "test");
+CustomLoader.args = {
+  customSize: 50,
+};
 
+export const Playground = ({ type, loadingText, loading, dataTest }) => {
   return <Loading loading={loading} type={type} text={loadingText} dataTest={dataTest} />;
 };
 
 Playground.story = {
   parameters: {
     info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+Playground.args = {
+  type: TYPE_OPTIONS.PAGE_LOADER,
+  loadingText: "Please wait, content of the page is loading...",
+  loading: true,
+  dataTest: "test",
+};
+
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
   },
 };
 

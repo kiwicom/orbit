@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text } from "@storybook/addon-knobs";
 
 import Heading from "../Heading";
 import Text from "../Text";
@@ -42,29 +41,7 @@ export default {
   title: "SkipLink",
 };
 
-export const Playground = () => {
-  const links = [
-    {
-      href: "#guarantee",
-      name: "Go to kiwi guarantee information",
-    },
-    {
-      href: "#cancelation",
-      name: "Go to cancelation information",
-    },
-    {
-      name: "Reguest a refund",
-      onClick: action("Reguest a refund"),
-    },
-  ];
-
-  const buttonLabel = text(
-    "buttonLabel",
-    "Description for screen readers about where the user currently is or describing a more complex component.",
-  );
-  const dataTest = text("dataTest", "test");
-  const id = text("id", "ID");
-
+export const Playground = ({ links, buttonLabel, dataTest, id }) => {
   return (
     <div>
       <SkipLink links={links} buttonLabel={buttonLabel} dataTest={dataTest} id={id} />
@@ -77,6 +54,27 @@ Playground.story = {
   parameters: {
     info: "All possible options for SkipLink. SkipLink is displayed only when focused. Use Tab or Shift + Tab to focus it.",
   },
+};
+
+Playground.args = {
+  links: [
+    {
+      href: "#guarantee",
+      name: "Go to kiwi guarantee information",
+    },
+    {
+      href: "#cancelation",
+      name: "Go to cancelation information",
+    },
+    {
+      name: "Reguest a refund",
+      onClick: action("Reguest a refund"),
+    },
+  ],
+  buttonLabel:
+    "Description for screen readers about where the user currently is or describing a more complex component.",
+  dataTest: "test",
+  id: "ID",
 };
 
 export const WithinModal = () => (

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select } from "@storybook/addon-knobs";
 
 import { TYPE_OPTIONS } from "../Badge/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -7,18 +6,14 @@ import * as Icons from "../icons";
 
 import NotificationBadge from ".";
 
-const getIcons = (defaultIcon: string | null) =>
-  select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
-
 const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "NotificationBadge",
 };
 
-export const Default = () => {
-  const content = text("Content", "10");
-  const Icon = getIcon(getIcons(null));
+export const Default = ({ content, icon }) => {
+  const Icon = getIcon(icon);
   return <NotificationBadge icon={Icon && <Icon />}>{content}</NotificationBadge>;
 };
 
@@ -28,8 +23,21 @@ Default.story = {
   },
 };
 
-export const Neutral = () => {
-  const content = text("Content", "10");
+Default.args = {
+  content: "10",
+  icon: "null",
+};
+
+Default.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Neutral = ({ content }) => {
   return <NotificationBadge type={TYPE_OPTIONS.NEUTRAL}>{content}</NotificationBadge>;
 };
 
@@ -39,8 +47,11 @@ Neutral.story = {
   },
 };
 
-export const Info = () => {
-  const content = text("Content", "10");
+Neutral.args = {
+  content: "10",
+};
+
+export const Info = ({ content }) => {
   return <NotificationBadge type={TYPE_OPTIONS.INFO}>{content}</NotificationBadge>;
 };
 
@@ -50,8 +61,11 @@ Info.story = {
   },
 };
 
-export const InfoSubtle = () => {
-  const content = text("Content", "10");
+Info.args = {
+  content: "10",
+};
+
+export const InfoSubtle = ({ content }) => {
   return <NotificationBadge type={TYPE_OPTIONS.INFO_SUBTLE}>{content}</NotificationBadge>;
 };
 
@@ -61,8 +75,11 @@ InfoSubtle.story = {
   },
 };
 
-export const Success = () => {
-  const content = text("Content", "10");
+InfoSubtle.args = {
+  content: "10",
+};
+
+export const Success = ({ content }) => {
   return <NotificationBadge type={TYPE_OPTIONS.SUCCESS}>{content}</NotificationBadge>;
 };
 
@@ -72,8 +89,11 @@ Success.story = {
   },
 };
 
-export const Warning = () => {
-  const content = text("Content", "10");
+Success.args = {
+  content: "10",
+};
+
+export const Warning = ({ content }) => {
   return <NotificationBadge type={TYPE_OPTIONS.WARNING}>{content}</NotificationBadge>;
 };
 
@@ -83,8 +103,11 @@ Warning.story = {
   },
 };
 
-export const Critical = () => {
-  const content = text("Content", "10");
+Warning.args = {
+  content: "10",
+};
+
+export const Critical = ({ content }) => {
   return <NotificationBadge type={TYPE_OPTIONS.CRITICAL}>{content}</NotificationBadge>;
 };
 
@@ -94,8 +117,11 @@ Critical.story = {
   },
 };
 
-export const CriticalSubtle = () => {
-  const content = text("Content", "10");
+Critical.args = {
+  content: "10",
+};
+
+export const CriticalSubtle = ({ content }) => {
   return <NotificationBadge type={TYPE_OPTIONS.CRITICAL_SUBTLE}>{content}</NotificationBadge>;
 };
 
@@ -105,8 +131,11 @@ CriticalSubtle.story = {
   },
 };
 
-export const Dark = () => {
-  const content = text("Content", "10");
+CriticalSubtle.args = {
+  content: "10",
+};
+
+export const Dark = ({ content }) => {
   return <NotificationBadge type={TYPE_OPTIONS.DARK}>{content}</NotificationBadge>;
 };
 
@@ -116,8 +145,11 @@ Dark.story = {
   },
 };
 
-export const White = () => {
-  const content = text("Content", "10");
+Dark.args = {
+  content: "10",
+};
+
+export const White = ({ content }) => {
   return (
     <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
       <NotificationBadge type={TYPE_OPTIONS.WHITE}>{content}</NotificationBadge>
@@ -131,12 +163,12 @@ White.story = {
   },
 };
 
-export const Playground = () => {
-  const content = text("Content", "10");
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.INFO);
-  const dataTest = text("dataTest", "test");
-  const ariaLabel = text("ariaLabel", "additional information for screen readers");
-  const Icon = getIcon(getIcons("Airplane"));
+White.args = {
+  content: "10",
+};
+
+export const Playground = ({ content, type, icon, dataTest, ariaLabel }) => {
+  const Icon = getIcon(icon);
 
   return (
     <NotificationBadge
@@ -156,10 +188,30 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
-  const content = text("Content", "10");
-  const ariaLabel = text("ariaLabel", "additional information for screen readers");
+Playground.args = {
+  content: "10",
+  type: TYPE_OPTIONS.INFO,
+  dataTest: "test",
+  ariaLabel: "additional information for screen readers",
+  icon: "Airplane",
+};
 
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Accessibility = ({ content, ariaLabel }) => {
   return (
     <NotificationBadge type="info" ariaLabel={ariaLabel}>
       {content}
@@ -171,6 +223,11 @@ Accessibility.story = {
   parameters: {
     info: "This is a preview of component accessibility props",
   },
+};
+
+Accessibility.args = {
+  content: "10",
+  ariaLabel: "additional information for screen readers",
 };
 
 export const Rtl = () => (

@@ -1,5 +1,4 @@
 import React from "react";
-import { text, select } from "@storybook/addon-knobs";
 
 import { CODES, SIZES } from "./consts";
 
@@ -9,9 +8,7 @@ export default {
   title: "CountryFlag",
 };
 
-export const Default = () => {
-  const code = text("Code", CODES.ANYWHERE);
-
+export const Default = ({ code }) => {
   return <CountryFlag code={code} />;
 };
 
@@ -21,16 +18,47 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
-  const code = text("Code", CODES.ANYWHERE);
-  const name = text("Name", "Country");
-  const size = select("Size", Object.values(SIZES), SIZES.SMALL);
-  const dataTest = text("dataTest", "test");
+Default.args = {
+  code: CODES.ANYWHERE,
+};
+
+Default.argTypes = {
+  code: {
+    options: Object.values(CODES),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({ code, name, size, dataTest }) => {
   return <CountryFlag code={code} name={name} dataTest={dataTest} size={size} />;
 };
 
 Playground.story = {
   parameters: {
     info: "Country flag displays one flag of selected country. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+Playground.args = {
+  code: CODES.ANYWHERE,
+  name: "Country",
+  size: SIZES.SMALL,
+  dataTest: "test",
+};
+
+Playground.argTypes = {
+  code: {
+    options: Object.values(CODES),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
   },
 };

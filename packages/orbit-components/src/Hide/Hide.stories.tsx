@@ -1,5 +1,4 @@
 import * as React from "react";
-import { boolean } from "@storybook/addon-knobs";
 
 import Separator from "../Separator";
 import ChevronBackward from "../icons/ChevronBackward";
@@ -11,8 +10,7 @@ export default {
   title: "Hide",
 };
 
-export const WithSeparator = () => {
-  const block = boolean("block", true);
+export const WithSeparator = ({ block }) => {
   return (
     <Hide on={["largeMobile"]} block={block}>
       <Separator />
@@ -26,15 +24,19 @@ WithSeparator.story = {
   },
 };
 
-export const Playground = () => {
-  const largeDesktop = boolean("largeDesktop", false);
-  const desktop = boolean("desktop", false);
-  const tablet = boolean("tablet", false);
-  const largeMobile = boolean("largeMobile", false);
-  const mediumMobile = boolean("mediumMobile", false);
-  const smallMobile = boolean("smallMobile", false);
-  const block = boolean("block", false);
+WithSeparator.args = {
+  block: true,
+};
 
+export const Playground = ({
+  largeDesktop,
+  desktop,
+  tablet,
+  largeMobile,
+  mediumMobile,
+  smallMobile,
+  block,
+}) => {
   const on = [
     largeDesktop && "largeDesktop",
     desktop && "desktop",
@@ -55,4 +57,14 @@ Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+Playground.args = {
+  largeDesktop: false,
+  desktop: false,
+  tablet: false,
+  largeMobile: false,
+  mediumMobile: false,
+  smallMobile: false,
+  block: false,
 };

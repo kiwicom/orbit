@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean } from "@storybook/addon-knobs";
 
 import Stack from "./Stack";
 import RenderInRtl from "./utils/rtl/RenderInRtl";
@@ -32,14 +31,7 @@ export default {
   title: "ErrorForms Kitchensink",
 };
 
-export const Error = () => {
-  const label = text("Label", "Label");
-  const error = text("Error", "Something went wrong.");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const prefix = text("Prefix", "$");
-  const required = boolean("required", true);
-
+export const Error = ({ label, error, value, placeholder, prefix, required }) => {
   return (
     <Stack direction="column">
       <InputField
@@ -151,15 +143,16 @@ Error.story = {
   },
 };
 
-export const Help = () => {
-  const label = text("Label", "Label");
-  const help = text("Help", "Is the spelling correct?");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const prefix = text("Prefix", "$");
-  const required = boolean("required", true);
-  const helpClosable = boolean("helpClosable", true);
+Error.args = {
+  label: "Label",
+  error: "Something went wrong.",
+  value: "",
+  placeholder: "Placeholder",
+  prefix: "$",
+  required: true,
+};
 
+export const Help = ({ label, help, value, placeholder, prefix, required, helpClosable }) => {
   return (
     <Stack>
       <InputField
@@ -286,14 +279,17 @@ Help.story = {
   },
 };
 
-export const RtlError = () => {
-  const label = text("Label", "Label");
-  const error = text("Error", "Something is not quite right");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const prefix = text("Prefix", "$");
-  const required = boolean("required", true);
+Help.args = {
+  label: "Label",
+  help: "Is the spelling correct?",
+  value: "",
+  placeholder: "Placeholder",
+  prefix: "$",
+  required: true,
+  helpClosable: true,
+};
 
+export const RtlError = ({ label, error, value, placeholder, prefix, required }) => {
   return (
     <RenderInRtl>
       <Stack>
@@ -391,11 +387,16 @@ RtlError.story = {
   },
 };
 
-export const withModal = () => {
-  const label = text("Label", "Label");
-  const error = text("Error", "Something is not quite right");
-  const showMore = boolean("required", true);
+RtlError.args = {
+  label: "Label",
+  error: "Something is not quite right",
+  value: "",
+  placeholder: "Placeholder",
+  prefix: "$",
+  required: true,
+};
 
+export const withModal = ({ label, error, showMore }) => {
   return (
     <Modal onClose={action("onClose")} fixedFooter>
       <ModalHeader title="Refund" description="Reservation number: 123456789" />
@@ -443,6 +444,12 @@ export const withModal = () => {
       </ModalFooter>
     </Modal>
   );
+};
+
+withModal.args = {
+  label: "Label",
+  error: "Something is not quite right",
+  showMore: true,
 };
 
 export const AdvancedErrorExample = () => {

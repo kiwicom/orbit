@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text, select } from "@storybook/addon-knobs";
 
 import Stack from "../Stack";
 import Heading from "../Heading";
@@ -24,13 +23,7 @@ export default {
   title: "Drawer",
 };
 
-export const SideNavigation = () => {
-  const shown = boolean("shown", true);
-  const dataTest = text("dataTest", "test");
-  const width = text("width", "320px");
-  const fixedHeader = boolean("fixedHeader", false);
-  const noPadding = boolean("noPadding", false);
-
+export const SideNavigation = ({ shown, dataTest, width, fixedHeader, noPadding }) => {
   return (
     <Drawer
       noPadding={noPadding}
@@ -86,13 +79,15 @@ SideNavigation.story = {
   },
 };
 
-export const SmartFaq = () => {
-  const shown = boolean("shown", true);
-  const dataTest = text("dataTest", "test");
-  const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
-  const width = text("width", "480px");
-  const fixedHeader = boolean("fixedHeader", false);
+SideNavigation.args = {
+  shown: true,
+  dataTest: "test",
+  width: "320px",
+  fixedHeader: false,
+  noPadding: false,
+};
 
+export const SmartFaq = ({ shown, dataTest, position, width, fixedHeader }) => {
   return (
     <Drawer
       shown={shown}
@@ -127,14 +122,24 @@ SmartFaq.story = {
   },
 };
 
-export const Suppressed = () => {
-  const shown = boolean("shown", true);
-  const dataTest = text("dataTest", "test");
-  const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
-  const width = text("width", "480px");
-  const suppressed = boolean("suppressed", true);
-  const fixedHeader = boolean("fixedHeader", false);
+SmartFaq.args = {
+  shown: true,
+  dataTest: "test",
+  position: POSITIONS.RIGHT,
+  width: "480px",
+  fixedHeader: false,
+};
 
+SmartFaq.argTypes = {
+  position: {
+    options: Object.values(POSITIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Suppressed = ({ shown, dataTest, position, width, suppressed, fixedHeader }) => {
   return (
     <Drawer
       shown={shown}
@@ -181,13 +186,25 @@ Suppressed.story = {
   },
 };
 
-export const WithTitle = () => {
-  const shown = boolean("shown", true);
-  const dataTest = text("dataTest", "test");
-  const title = text("Title", "Title");
-  const width = text("width", "320px");
-  const fixedHeader = boolean("fixedHeader", false);
+Suppressed.args = {
+  shown: true,
+  dataTest: "test",
+  position: POSITIONS.RIGHT,
+  width: "480px",
+  suppressed: true,
+  fixedHeader: false,
+};
 
+Suppressed.argTypes = {
+  position: {
+    options: Object.values(POSITIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithTitle = ({ title, dataTest, width, shown, fixedHeader }) => {
   return (
     <Drawer
       title={title}
@@ -236,14 +253,15 @@ WithTitle.story = {
   },
 };
 
-export const SmartFaqSearch = () => {
-  const shown = boolean("shown", true);
-  const dataTest = text("dataTest", "test");
-  const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
-  const width = text("width", "480px");
-  const suppressed = boolean("suppressed", true);
-  const fixedHeader = boolean("fixedHeader", false);
+WithTitle.args = {
+  shown: true,
+  dataTest: "test",
+  title: "Title",
+  width: "320px",
+  fixedHeader: false,
+};
 
+export const SmartFaqSearch = ({ shown, dataTest, position, width, suppressed, fixedHeader }) => {
   return (
     <Drawer
       shown={shown}
@@ -299,12 +317,25 @@ SmartFaqSearch.story = {
   },
 };
 
-export const SideNavigationInRtl = () => {
-  const shown = boolean("shown", true);
-  const dataTest = text("dataTest", "test");
-  const width = text("width", "320px");
-  const fixedHeader = boolean("fixedHeader", false);
+SmartFaqSearch.args = {
+  shown: true,
+  dataTest: "test",
+  position: POSITIONS.RIGHT,
+  width: "480px",
+  suppressed: true,
+  fixedHeader: false,
+};
 
+SmartFaqSearch.argTypes = {
+  position: {
+    options: Object.values(POSITIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const SideNavigationInRtl = ({ shown, dataTest, width, fixedHeader }) => {
   return (
     <RenderInRtl>
       <Drawer
@@ -363,13 +394,14 @@ SideNavigationInRtl.story = {
   },
 };
 
-export const SmartFaqInRtl = () => {
-  const shown = boolean("shown", true);
-  const dataTest = text("dataTest", "test");
-  const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
-  const width = text("width", "480px");
-  const fixedHeader = boolean("fixedHeader", false);
+SideNavigationInRtl.args = {
+  shown: true,
+  dataTest: "test",
+  width: "320px",
+  fixedHeader: false,
+};
 
+export const SmartFaqInRtl = ({ shown, dataTest, position, width, fixedHeader }) => {
   return (
     <RenderInRtl>
       <Drawer
@@ -406,14 +438,31 @@ SmartFaqInRtl.story = {
   },
 };
 
-export const SmartFaqSearchInRtl = () => {
-  const shown = boolean("shown", true);
-  const dataTest = text("dataTest", "test");
-  const position = select("position", Object.values(POSITIONS), POSITIONS.RIGHT);
-  const width = text("width", "480px");
-  const suppressed = boolean("suppressed", true);
-  const fixedHeader = boolean("fixedHeader", false);
+SmartFaqInRtl.args = {
+  shown: true,
+  dataTest: "test",
+  position: POSITIONS.RIGHT,
+  width: "480px",
+  fixedHeader: false,
+};
 
+SmartFaqInRtl.argTypes = {
+  position: {
+    options: Object.values(POSITIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const SmartFaqSearchInRtl = ({
+  shown,
+  dataTest,
+  position,
+  width,
+  suppressed,
+  fixedHeader,
+}) => {
   return (
     <RenderInRtl>
       <Drawer
@@ -468,5 +517,23 @@ SmartFaqSearchInRtl.story = {
 
   parameters: {
     info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+SmartFaqSearchInRtl.args = {
+  shown: true,
+  dataTest: "test",
+  position: POSITIONS.RIGHT,
+  width: "480px",
+  suppressed: true,
+  fixedHeader: false,
+};
+
+SmartFaqSearchInRtl.argTypes = {
+  position: {
+    options: Object.values(POSITIONS),
+    control: {
+      type: "select",
+    },
   },
 };

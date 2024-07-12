@@ -1,14 +1,10 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { select, text, boolean } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import * as Icons from "../icons";
 
 import Switch from ".";
-
-const getIcons = (name: string, defaultIcon: string) =>
-  select(name, [null, ...Object.keys(Icons)], defaultIcon);
 
 const getIcon = (source: string | null) => source && Icons[source];
 
@@ -16,8 +12,7 @@ export default {
   title: "Switch",
 };
 
-export const Default = () => {
-  const checked = boolean("checked", true);
+export const Default = ({ checked }) => {
   return <Switch onChange={action("onChange")} checked={checked} />;
 };
 
@@ -25,9 +20,12 @@ Default.story = {
   name: "Default Switch",
 };
 
-export const CustomIcon = () => {
-  const checked = boolean("checked", true);
-  const Icon = getIcon(getIcons("icon", "Lock"));
+Default.args = {
+  checked: true,
+};
+
+export const CustomIcon = ({ checked, icon }) => {
+  const Icon = getIcon(icon);
   return <Switch onChange={action("onChange")} checked={checked} icon={Icon && <Icon />} />;
 };
 
@@ -38,11 +36,22 @@ CustomIcon.story = {
   },
 };
 
-export const Playground = () => {
-  const checked = boolean("checked", false);
-  const dataTest = text("dataTest", "");
-  const Icon = getIcon(getIcons("icon", "Lock"));
-  const disabled = boolean("disabled", false);
+CustomIcon.args = {
+  checked: true,
+  icon: "Lock",
+};
+
+CustomIcon.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({ checked, dataTest, icon, disabled }) => {
+  const Icon = getIcon(icon);
 
   return (
     <Switch
@@ -61,8 +70,23 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const checked = boolean("checked", true);
+Playground.args = {
+  checked: false,
+  dataTest: "",
+  icon: "Lock",
+  disabled: false,
+};
+
+Playground.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ checked }) => {
   return (
     <RenderInRtl>
       <Switch onChange={action("onChange")} checked={checked} />
@@ -76,4 +100,8 @@ Rtl.story = {
   parameters: {
     info: "This is a preview of this component in RTL setup.",
   },
+};
+
+Rtl.args = {
+  checked: true,
 };

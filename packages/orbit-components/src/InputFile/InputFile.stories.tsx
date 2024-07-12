@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, array, select, boolean } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { SPACINGS_AFTER } from "../common/consts";
@@ -11,8 +10,7 @@ export default {
   title: "InputFile",
 };
 
-export const Default = () => {
-  const label = text("Label", "Label");
+export const Default = ({ label }) => {
   return (
     <InputFile
       label={label}
@@ -30,10 +28,11 @@ Default.story = {
   },
 };
 
-export const FilledWithFile = () => {
-  const label = text("Label", "Label");
-  const fileName = text("fileName", "file.png");
+Default.args = {
+  label: "Label",
+};
 
+export const FilledWithFile = ({ label, fileName }) => {
   return (
     <InputFile
       label={label}
@@ -54,9 +53,12 @@ FilledWithFile.story = {
   },
 };
 
-export const WithHelp = () => {
-  const label = text("Label", "Label");
+FilledWithFile.args = {
+  label: "Label",
+  fileName: "file.png",
+};
 
+export const WithHelp = ({ label }) => {
   return (
     <InputFile
       label={label}
@@ -81,10 +83,11 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
-  const label = text("Label", "Label");
-  const error = text("Error", "Error message (explain how to solve it)");
+WithHelp.args = {
+  label: "Label",
+};
 
+export const WithError = ({ label, error }) => {
   return (
     <InputFile
       label={label}
@@ -105,22 +108,27 @@ WithError.story = {
   },
 };
 
-export const Playground = () => {
-  const label = text("Label", "Label");
-  const multiple = boolean("multiple", false);
-  const disabled = boolean("disabled", false);
-  const buttonLabel = text("buttonLabel", "Please select file");
-  const name = text("Name", "fileInput");
-  const placeholder = text("Placeholder", "No file has been selected yet");
-  const fileName = text("fileName", "");
-  const error = text("Error", "No file has been selected yet");
-  const help = text("Help", "");
-  const allowedFileTypes = array("allowedFileTypes", ["media/*", "image/*"]).join(",");
-  const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
-  const required = boolean("required", false);
-  const width = text("width", "");
+WithError.args = {
+  label: "Label",
+  error: "Error message (explain how to solve it)",
+};
 
+export const Playground = ({
+  label,
+  multiple,
+  disabled,
+  buttonLabel,
+  name,
+  placeholder,
+  fileName,
+  error,
+  help,
+  allowedFileTypes,
+  dataTest,
+  spaceAfter,
+  required,
+  width,
+}) => {
   return (
     <InputFile
       label={label}
@@ -151,11 +159,33 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const label = text("Label", "Label");
-  const error = text("Error", "Error message (explain how to solve it)");
-  const help = text("Help", "");
+Playground.args = {
+  label: "Label",
+  multiple: false,
+  disabled: false,
+  buttonLabel: "Please select file",
+  name: "fileInput",
+  placeholder: "No file has been selected yet",
+  fileName: "",
+  error: "No file has been selected yet",
+  help: "",
+  allowedFileTypes: ["media/*", "image/*"].join(","),
+  dataTest: "test",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  required: false,
+  width: "",
+};
 
+Playground.argTypes = {
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ label, error, help }) => {
   return (
     <RenderInRtl>
       <InputFile label={label} error={error} help={help} />
@@ -169,4 +199,10 @@ Rtl.story = {
   parameters: {
     info: "This is a preview of this component in RTL setup.",
   },
+};
+
+Rtl.args = {
+  label: "Label",
+  error: "Error message (explain how to solve it)",
+  help: "",
 };

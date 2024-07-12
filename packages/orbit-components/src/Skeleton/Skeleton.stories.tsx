@@ -1,5 +1,4 @@
 import * as React from "react";
-import { select, number, text, boolean } from "@storybook/addon-knobs";
 
 import defaultTheme from "../defaultTheme";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -29,24 +28,20 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
-  const animate = boolean("animate", true);
-  const height = text("height", "");
-  const maxHeight = text("maxHeight", "");
-  const rowBorderRadius = number("rowBorderRadius", 3);
-  const rowHeight = number("rowHeight", 21);
-  const rowOffset = number("rowOffset", 30);
-  const rows = number("rows", 10);
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NONE);
-  const viewBox = text("viewBox", "");
-  const width = text("width", "");
-  const title = text("title", "Loading");
-  const color = select(
-    "color",
-    Object.keys(defaultTheme.orbit).filter(t => t.startsWith("palette")),
-    "",
-  );
-
+export const Playground = ({
+  animate,
+  height,
+  maxHeight,
+  rowBorderRadius,
+  rowHeight,
+  rowOffset,
+  rows,
+  spaceAfter,
+  viewBox,
+  width,
+  title,
+  color,
+}) => {
   return (
     <Skeleton
       animate={animate}
@@ -65,6 +60,42 @@ export const Playground = () => {
   );
 };
 
+Playground.story = {
+  parameters: {
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Playground.args = {
+  animate: true,
+  height: "",
+  maxHeight: "",
+  rowBorderRadius: 3,
+  rowHeight: 21,
+  rowOffset: 30,
+  rows: 10,
+  spaceAfter: SPACINGS_AFTER.NONE,
+  viewBox: "",
+  width: "",
+  title: "Loading",
+  color: "",
+};
+
+Playground.argTypes = {
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+  color: {
+    options: Object.keys(defaultTheme.orbit).filter(t => t.startsWith("palette")),
+    control: {
+      type: "select",
+    },
+  },
+};
+
 export const RTL = () => (
   <RenderInRtl>
     <Skeleton height="100px" width="500px" viewBox="0 0 500 100">
@@ -78,11 +109,7 @@ export const RTL = () => (
   </RenderInRtl>
 );
 
-export const Custom = () => {
-  const height = text("height", `100px`);
-  const viewBox = text("viewBox", "0 0 500 100");
-  const width = text("width", `500px`);
-
+export const Custom = ({ height, viewBox, width }) => {
   return (
     <Skeleton height={height} width={width} viewBox={viewBox}>
       <rect x="48" y="8" rx="3" ry="3" width="88" height="6" />
@@ -95,13 +122,25 @@ export const Custom = () => {
   );
 };
 
-export const Presets = () => {
-  const presets = select("preset", PRESETS, PRESETS.List);
+Custom.args = {
+  height: "100px",
+  viewBox: "0 0 500 100",
+  width: "500px",
+};
+
+export const Presets = ({ presets }) => {
   return <Skeleton preset={presets} />;
 };
 
-Playground.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+Presets.args = {
+  preset: PRESETS.List,
+};
+
+Presets.argTypes = {
+  preset: {
+    options: PRESETS,
+    control: {
+      type: "select",
+    },
   },
 };

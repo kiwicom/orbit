@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select } from "@storybook/addon-knobs";
 
 import * as SmartPassIllustrations from ".";
 
@@ -15,16 +14,16 @@ export const Default = () => {
   return <SmartPassIllustrations.SmartPassV1 />;
 };
 
-export const Playground = () => {
-  const size = select("sizes", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const dataTest = text("dataTest", "test");
-  const title = text("title", "title");
-  const description = text("description", "description");
-  const primary = text("primary", "white");
-  const secondary = text("secondary", "black");
-  const ariaLabelledby = text("ariaLabelledby", "id");
-  const illustration = select("illustration", Object.keys(SmartPassIllustrations), "SmartPassV1");
-
+export const Playground = ({
+  size,
+  dataTest,
+  title,
+  description,
+  primary,
+  secondary,
+  ariaLabelledby,
+  illustration,
+}) => {
   const Component = SmartPassIllustrations[illustration];
 
   return (
@@ -38,6 +37,32 @@ export const Playground = () => {
       description={description}
     />
   );
+};
+
+Playground.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  dataTest: "test",
+  title: "title",
+  description: "description",
+  primary: "white",
+  secondary: "black",
+  ariaLabelledby: "id",
+  illustration: "SmartPassV1",
+};
+
+Playground.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  illustration: {
+    options: Object.keys(SmartPassIllustrations),
+    control: {
+      type: "select",
+    },
+  },
 };
 
 export default {

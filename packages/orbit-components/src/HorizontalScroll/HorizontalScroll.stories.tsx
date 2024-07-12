@@ -1,29 +1,20 @@
 import * as React from "react";
-import { select, number, boolean, text } from "@storybook/addon-knobs";
 
 import { SPACINGS } from "../utils/layout/consts";
 import Box from "../Box";
 import Text from "../Text";
 import Stack from "../Stack";
-import type { Spacing } from "../Stack/types";
 
 import HorizontalScroll from ".";
+
+Box.displayName = "Box";
+HorizontalScroll.displayName = "HorizontalScroll";
 
 export default {
   title: "HorizontalScroll",
 };
 
-export const Default = () => {
-  const overflowElevation = boolean("overflowElevation", true);
-  const elevationColor = text("elevationColor", "");
-  const arrows = boolean("arrows", false);
-  const arrowColor = text("arrowColor", "");
-  const spacing = select(
-    "Spacing",
-    [undefined, ...Object.values(SPACINGS)],
-    SPACINGS.XXXSMALL,
-  ) as Spacing;
-
+export const Default = ({ spacing, arrows, overflowElevation, elevationColor, arrowColor }) => {
   return (
     <HorizontalScroll
       spacing={spacing}
@@ -59,13 +50,24 @@ export const Default = () => {
   );
 };
 
-export const NoScroll = () => {
-  const spacing = select(
-    "Spacing",
-    [undefined, ...Object.values(SPACINGS)],
-    SPACINGS.XXXSMALL,
-  ) as Spacing;
+Default.args = {
+  overflowElevation: true,
+  elevationColor: "",
+  arrows: false,
+  arrowColor: "",
+  spacing: SPACINGS.XXXSMALL,
+};
 
+Default.argTypes = {
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const NoScroll = ({ spacing }) => {
   return (
     <Stack>
       <Text>
@@ -100,17 +102,26 @@ export const NoScroll = () => {
   );
 };
 
-export const WithScrollSnap = () => {
-  const scrollSnapAlign = select("scrollSnapAlign", ["none", "start", "end", "center"], "start");
-  const scrollSnap = select(
-    "scrollSnapType",
-    ["none", "inline", "mandatory", "proximity"],
-    "mandatory",
-  );
-  const scrollPadding = number("scrollPadding", 0);
-  const overflowElevation = boolean("overflowElevation", false);
-  const elevationColor = text("elevationColor", "paletteCloudDarker");
+NoScroll.args = {
+  spacing: SPACINGS.XXXSMALL,
+};
 
+NoScroll.argTypes = {
+  spacing: {
+    options: Object.values(SPACINGS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithScrollSnap = ({
+  scrollSnap,
+  scrollPadding,
+  overflowElevation,
+  elevationColor,
+  scrollSnapAlign,
+}) => {
   return (
     <HorizontalScroll
       scrollSnap={scrollSnap}
@@ -144,4 +155,27 @@ export const WithScrollSnap = () => {
       ))}
     </HorizontalScroll>
   );
+};
+
+WithScrollSnap.args = {
+  scrollSnapAlign: "start",
+  scrollSnapType: "mandatory",
+  scrollPadding: 0,
+  overflowElevation: false,
+  elevationColor: "paletteCloudDarker",
+};
+
+WithScrollSnap.argTypes = {
+  scrollSnapAlign: {
+    options: ["none", "start", "end", "center"],
+    control: {
+      type: "select",
+    },
+  },
+  scrollSnapType: {
+    options: ["none", "inline", "mandatory", "proximity"],
+    control: {
+      type: "select",
+    },
+  },
 };

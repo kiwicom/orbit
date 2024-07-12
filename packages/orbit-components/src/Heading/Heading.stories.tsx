@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select, boolean, object } from "@storybook/addon-knobs";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, ALIGN } from "./consts";
 import { SPACINGS_AFTER } from "../common/consts";
@@ -11,8 +10,7 @@ export default {
   title: "Heading",
 };
 
-export const Default = () => {
-  const customTitle = text("Title", "Orbit design system");
+export const Default = ({ customTitle }) => {
   return <Heading>{customTitle}</Heading>;
 };
 
@@ -22,9 +20,11 @@ Default.story = {
   },
 };
 
-export const TitleDisplay = () => {
-  const customTitle = text("Title", "Orbit design system");
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+Default.args = {
+  customTitle: "Orbit design system",
+};
+
+export const TitleDisplay = ({ customTitle, as }) => {
   return (
     <Heading type="display" as={as}>
       {customTitle}
@@ -38,9 +38,21 @@ TitleDisplay.story = {
   },
 };
 
-export const TitleDisplaySubtitle = () => {
-  const customTitle = text("Title", "Orbit design system");
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+TitleDisplay.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H1,
+};
+
+TitleDisplay.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const TitleDisplaySubtitle = ({ customTitle, as }) => {
   return (
     <Heading type="displaySubtitle" as={as}>
       {customTitle}
@@ -56,9 +68,21 @@ TitleDisplaySubtitle.story = {
   },
 };
 
-export const Title1 = () => {
-  const customTitle = text("Title", "Orbit design system");
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
+TitleDisplaySubtitle.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H1,
+};
+
+TitleDisplaySubtitle.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Title1 = ({ customTitle, as }) => {
   return (
     <Heading type="title1" as={as}>
       {customTitle}
@@ -72,9 +96,21 @@ Title1.story = {
   },
 };
 
-export const Title2 = () => {
-  const customTitle = text("Title", "Orbit design system");
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
+Title1.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H1,
+};
+
+Title1.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Title2 = ({ customTitle, as }) => {
   return (
     <Heading type="title2" as={as}>
       {customTitle}
@@ -88,9 +124,21 @@ Title2.story = {
   },
 };
 
-export const Title3 = () => {
-  const customTitle = text("Title", "Orbit design system");
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H3);
+Title2.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H2,
+};
+
+Title2.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Title3 = ({ customTitle, as }) => {
   return (
     <Heading type="title3" as={as}>
       {customTitle}
@@ -104,9 +152,21 @@ Title3.story = {
   },
 };
 
-export const Title4 = () => {
-  const customTitle = text("Title", "Orbit design system");
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H4);
+Title3.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H3,
+};
+
+Title3.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Title4 = ({ customTitle, as }) => {
   return (
     <Heading type="title4" as={as}>
       {customTitle}
@@ -120,9 +180,21 @@ Title4.story = {
   },
 };
 
-export const Title5 = () => {
-  const customTitle = text("Title", "Orbit design system");
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H5);
+Title4.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H4,
+};
+
+Title4.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Title5 = ({ customTitle, as }) => {
   return (
     <Heading type="title5" as={as}>
       {customTitle}
@@ -136,9 +208,21 @@ Title5.story = {
   },
 };
 
-export const Title6 = () => {
-  const customTitle = text("Title", "Orbit design system");
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H6);
+Title5.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H5,
+};
+
+Title5.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Title6 = ({ customTitle, as }) => {
   return (
     <Heading type="title6" as={as}>
       {customTitle}
@@ -152,12 +236,21 @@ Title6.story = {
   },
 };
 
-export const InvertedHeading = () => {
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
-  const inverted = boolean("Inverted", true);
-  const customTitle = text("Title", "Orbit design system");
+Title6.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H6,
+};
 
+Title6.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const InvertedHeading = ({ as, type, inverted, customTitle }) => {
   return (
     <div style={{ padding: 20, backgroundColor: "#46515E" }}>
       <Heading type={type} as={as} inverted={inverted}>
@@ -175,41 +268,43 @@ InvertedHeading.story = {
   },
 };
 
-export const Playground = () => {
-  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DISPLAY);
-  const dataTest = text("dataTest", "test");
-  const id = text("ID", "ID-OF-A-ELEMENT");
-  const customTitle = text("Title", "Orbit design system");
-  const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
-  const spaceAfter = select(
-    "spaceAfter",
-    [undefined, ...Object.values(SPACINGS_AFTER)],
-    SPACINGS_AFTER.SMALL,
-  );
+InvertedHeading.args = {
+  as: ELEMENT_OPTIONS.H1,
+  type: TYPE_OPTIONS.DISPLAY,
+  inverted: true,
+  customTitle: "Orbit design system",
+};
 
-  const align = select("align", [undefined, ...Object.values(ALIGN)], ALIGN.START);
+InvertedHeading.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
 
-  const mediumMobile = object("mediumMobile", {
-    type,
-  });
-
-  const largeMobile = object("largeMobile", {
-    type,
-  });
-
-  const tablet = object("tablet", {
-    type,
-  });
-
-  const desktop = object("desktop", {
-    type,
-  });
-
-  const largeDesktop = object("largeDesktop", {
-    type,
-  });
-
+export const Playground = ({
+  as,
+  type,
+  customTitle,
+  dataA11ySection,
+  align,
+  dataTest,
+  spaceAfter,
+  mediumMobile,
+  largeMobile,
+  tablet,
+  desktop,
+  largeDesktop,
+  id,
+}) => {
   return (
     <Heading
       id={id}
@@ -236,9 +331,60 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
-  const dataA11ySection = text("dataA11ySection", "ID-OF-SECTION");
-  const customTitle = text("Title", "Orbit design system");
+Playground.args = {
+  as: ELEMENT_OPTIONS.H2,
+  type: TYPE_OPTIONS.DISPLAY,
+  dataTest: "test",
+  id: "ID-OF-A-ELEMENT",
+  customTitle: "Orbit design system",
+  dataA11ySection: "ID-OF-SECTION",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  align: ALIGN.START,
+  mediumMobile: {
+    type: TYPE_OPTIONS.DISPLAY,
+  },
+  largeMobile: {
+    type: TYPE_OPTIONS.DISPLAY,
+  },
+  tablet: {
+    type: TYPE_OPTIONS.DISPLAY,
+  },
+  desktop: {
+    type: TYPE_OPTIONS.DISPLAY,
+  },
+  largeDesktop: {
+    type: TYPE_OPTIONS.DISPLAY,
+  },
+};
+
+Playground.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: Object.values(ALIGN),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Accessibility = ({ dataA11ySection, customTitle }) => {
   return <Heading dataA11ySection={dataA11ySection}>{customTitle}</Heading>;
 };
 
@@ -246,6 +392,11 @@ Accessibility.story = {
   parameters: {
     info: "This is a preview of component accessibility props",
   },
+};
+
+Accessibility.args = {
+  dataA11ySection: "ID-OF-SECTION",
+  customTitle: "Orbit design system",
 };
 
 export const Rtl = () => (

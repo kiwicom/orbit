@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean } from "@storybook/addon-knobs";
 
 import Badge from "../Badge";
 import ChoiceGroup from "../ChoiceGroup";
@@ -16,8 +15,7 @@ export default {
   title: "Collapse",
 };
 
-export const Default = () => {
-  const label = text("label", "Duration");
+export const Default = ({ label }) => {
   return (
     <Collapse label={label}>
       <Slider
@@ -39,6 +37,10 @@ Default.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+Default.args = {
+  label: "Duration",
 };
 
 export const WithCustomLabel = () => {
@@ -68,8 +70,7 @@ export const WithCustomLabel = () => {
   );
 };
 
-export const OpenedByDefault = () => {
-  const label = text("label", "Duration");
+export const OpenedByDefault = ({ label }) => {
   return (
     <Collapse label={label} initialExpanded>
       <Slider
@@ -95,8 +96,11 @@ OpenedByDefault.story = {
   },
 };
 
-export const WithActions = () => {
-  const label = text("label", "Transportation");
+OpenedByDefault.args = {
+  label: "Duration",
+};
+
+export const WithActions = ({ label }) => {
   return (
     <Collapse
       label={label}
@@ -123,8 +127,11 @@ WithActions.story = {
   },
 };
 
-export const MultipleCollapses = () => {
-  const label = text("label", "Transportation");
+WithActions.args = {
+  label: "Transportation",
+};
+
+export const MultipleCollapses = ({ label }) => {
   return (
     <Stack spacing="none">
       <Collapse label={label}>
@@ -170,9 +177,11 @@ MultipleCollapses.story = {
   },
 };
 
-export const Uncontrolled = () => {
-  const label = text("label", "Duration");
-  const expanded = boolean("expanded", true);
+MultipleCollapses.args = {
+  label: "Transportation",
+};
+
+export const Uncontrolled = ({ label, expanded }) => {
   return (
     <Collapse label={label} expanded={expanded} onClick={action("onClick")}>
       <Slider
@@ -192,8 +201,12 @@ Uncontrolled.story = {
   },
 };
 
-export const Rtl = () => {
-  const label = text("label", "Transportation");
+Uncontrolled.args = {
+  label: "Duration",
+  expanded: true,
+};
+
+export const Rtl = ({ label }) => {
   return (
     <RenderInRtl>
       <Collapse
@@ -224,4 +237,8 @@ Rtl.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+Rtl.args = {
+  label: "Transportation",
 };

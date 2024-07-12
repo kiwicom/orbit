@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean } from "@storybook/addon-knobs";
 
 import Text from "../Text";
 import TextLink from "../TextLink";
@@ -13,9 +12,7 @@ export default {
   title: "CheckBox",
 };
 
-export const Default = () => {
-  const label = text("Label", "Label");
-  const checked = boolean("Checked", false);
+export const Default = ({ label, checked }) => {
   return <Checkbox label={label} checked={checked} onChange={action("changed")} />;
 };
 
@@ -25,10 +22,12 @@ Default.story = {
   },
 };
 
-export const WithHelp = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "value");
-  const info = text("Info", "Additional information about this choice");
+Default.args = {
+  label: "Label",
+  checked: false,
+};
+
+export const WithHelp = ({ label, value, info }) => {
   return <Checkbox label={label} value={value} info={info} onChange={action("changed")} />;
 };
 
@@ -40,10 +39,13 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
-  const label = text("Label", "Label");
-  const hasError = boolean("hasError", true);
-  const checked = boolean("checked", false);
+WithHelp.args = {
+  label: "Label",
+  value: "value",
+  info: "Additional information about this choice",
+};
+
+export const WithError = ({ label, hasError, checked }) => {
   return (
     <Checkbox label={label} hasError={hasError} checked={checked} onChange={action("changed")} />
   );
@@ -57,8 +59,13 @@ WithError.story = {
   },
 };
 
-export const WithTextLinkInLabel = () => {
-  const checked = boolean("checked", true);
+WithError.args = {
+  label: "Label",
+  hasError: true,
+  checked: false,
+};
+
+export const WithTextLinkInLabel = ({ checked }) => {
   return (
     <Checkbox
       label={
@@ -86,6 +93,10 @@ WithTextLinkInLabel.story = {
   },
 };
 
+WithTextLinkInLabel.args = {
+  checked: true,
+};
+
 export const WithTooltip = () => {
   return (
     <Checkbox
@@ -105,16 +116,17 @@ WithTooltip.story = {
   },
 };
 
-export const Playground = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "value");
-  const checked = boolean("Checked", true);
-  const disabled = boolean("Disabled", false);
-  const hasError = boolean("hasError", false);
-  const readOnly = boolean("readOnly", false);
-  const info = text("Info", "Additional information for this choice");
-  const dataTest = text("dataTest", "test");
-  const name = text("name", "name");
+export const Playground = ({
+  label,
+  value,
+  checked,
+  disabled,
+  hasError,
+  readOnly,
+  info,
+  dataTest,
+  name,
+}) => {
   return (
     <Checkbox
       label={label}
@@ -135,6 +147,18 @@ Playground.story = {
   parameters: {
     info: "Playground of Checkbox",
   },
+};
+
+Playground.args = {
+  label: "Label",
+  value: "value",
+  checked: false,
+  disabled: false,
+  hasError: false,
+  readOnly: false,
+  info: "Additional information for this choice",
+  dataTest: "test",
+  name: "name",
 };
 
 export const Rtl = () => (

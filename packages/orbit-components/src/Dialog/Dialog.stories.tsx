@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Button from "../Button";
@@ -13,10 +12,7 @@ export default {
   title: "Dialog",
 };
 
-export const Default = () => {
-  const title = text("title", "Log out");
-  const description = text("description", "Are you sure you want to log out now?");
-  const dataTest = text("dataTest", "test");
+export const Default = ({ title, description, dataTest }) => {
   return (
     <Dialog
       title={title}
@@ -34,13 +30,13 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
-  const title = text("title", "Log out");
-  const description = text("description", "Are you sure you want to log out now?");
-  const illustration = select("illustration", NAMES, "NoNotification");
-  const dataTest = text("dataTest", "test");
-  const maxWidth = number("maxWidth", NaN);
+Default.args = {
+  title: "Log out",
+  description: "Are you sure you want to log out now?",
+  dataTest: "test",
+};
 
+export const Playground = ({ title, maxWidth, description, illustration, dataTest }) => {
   return (
     <Dialog
       title={title}
@@ -59,5 +55,27 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+Playground.args = {
+  title: "Log out",
+  description: "Are you sure you want to log out now?",
+  illustration: "NoNotification",
+  dataTest: "test",
+  maxWidth: NaN,
+};
+
+Playground.argTypes = {
+  illustration: {
+    options: NAMES,
+    control: {
+      type: "select",
+    },
+  },
+  maxWidth: {
+    control: {
+      type: "number",
+    },
   },
 };

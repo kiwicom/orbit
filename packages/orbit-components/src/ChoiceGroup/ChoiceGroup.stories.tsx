@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select, boolean } from "@storybook/addon-knobs";
 import { FixedSizeList } from "react-window";
 
 import { LABEL_ELEMENTS, LABEL_SIZES } from "./consts";
@@ -9,12 +8,13 @@ import Checkbox from "../Checkbox";
 
 import ChoiceGroup from ".";
 
+ChoiceGroup.displayName = "ChoiceGroup";
+
 export default {
   title: "ChoiceGroup",
 };
 
-export const Default = () => {
-  const label = text("Label", "What was the reason for your cancellation?");
+export const Default = ({ label }) => {
   return (
     <ChoiceGroup label={label} onChange={action("onChange")}>
       <Radio label="Reason one" value="one" />
@@ -30,8 +30,11 @@ Default.story = {
   },
 };
 
-export const Multiple = () => {
-  const label = text("Label", "What was the reason for your cancellation?");
+Default.args = {
+  label: "What was the reason for your cancellation?",
+};
+
+export const Multiple = ({ label }) => {
   return (
     <ChoiceGroup label={label} onChange={action("onChange")}>
       <Checkbox label="Reason one" value="one" />
@@ -47,9 +50,11 @@ Multiple.story = {
   },
 };
 
-export const Filter = () => {
-  const label = text("Label", "What was the reason for your cancellation?");
-  const onlySelectionText = text("onlySelectionText", "Only");
+Multiple.args = {
+  label: "What was the reason for your cancellation?",
+};
+
+export const Filter = ({ label, onlySelectionText }) => {
   return (
     <ChoiceGroup
       label={label}
@@ -71,10 +76,12 @@ Filter.story = {
   },
 };
 
-export const WithError = () => {
-  const label = text("Label", "Label");
-  const error = text("Error", "Error message (explain how to solve it)");
+Filter.args = {
+  label: "What was the reason for your cancellation?",
+  onlySelectionText: "Only",
+};
 
+export const WithError = ({ label, error }) => {
   return (
     <ChoiceGroup label={label} error={error} onChange={action("onChange")}>
       <Radio label="Reason one" value="one" />
@@ -92,8 +99,12 @@ WithError.story = {
   },
 };
 
-export const RenderProp = () => {
-  const boxShadowSize = "3px";
+WithError.args = {
+  label: "Label",
+  error: "Error message (explain how to solve it)",
+};
+
+export const RenderProp = ({ boxShadowSize }) => {
   return (
     <ChoiceGroup label="What was the reason for your cancellation?" onChange={action("onChange")}>
       {({ Container, Item, spacing }) => (
@@ -142,13 +153,11 @@ RenderProp.story = {
   },
 };
 
-export const Playground = () => {
-  const dataTest = text("dataTest", "test");
-  const label = text("Label", "What was the reason for your cancellation?");
-  const labelSize = select("labelSize", Object.values(LABEL_SIZES), LABEL_SIZES.NORMAL);
-  const labelAs = select("labelAs", Object.values(LABEL_ELEMENTS), LABEL_ELEMENTS.H4);
-  const error = text("error", "Something is wrong");
-  const filter = boolean("Filter", false);
+RenderProp.args = {
+  boxShadowSize: "3px",
+};
+
+export const Playground = ({ dataTest, label, labelSize, labelAs, error, filter }) => {
   return (
     <ChoiceGroup
       dataTest={dataTest}
@@ -170,5 +179,29 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "Playground of ChoiceGroup",
+  },
+};
+
+Playground.args = {
+  dataTest: "test",
+  label: "What was the reason for your cancellation?",
+  labelSize: LABEL_SIZES.NORMAL,
+  labelAs: LABEL_ELEMENTS.H4,
+  error: "Something is wrong",
+  filter: false,
+};
+
+Playground.argTypes = {
+  labelSize: {
+    options: Object.values(LABEL_SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  labelAs: {
+    options: Object.values(LABEL_ELEMENTS),
+    control: {
+      type: "select",
+    },
   },
 };

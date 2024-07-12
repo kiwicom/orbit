@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select, array } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 import { SIZES } from "./consts";
@@ -48,18 +47,10 @@ function useModal() {
   };
 }
 
-export const Sizes = () => {
-  const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
-  const title = text("Title", "Orbit design system");
-  const description = text("Title", "I'm lovely description");
-  const mobileHeader = boolean("mobileHeader", true);
+export const Sizes = ({ size, title, description, mobileHeader, content }) => {
   const { Container, onClose } = useModal();
 
   // const onClose = action("onClose");
-  const content = text(
-    "Content",
-    "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  );
   return (
     <Container>
       <Modal size={size} onClose={onClose} mobileHeader={mobileHeader}>
@@ -84,6 +75,24 @@ export const Sizes = () => {
 Sizes.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Sizes.args = {
+  size: SIZES.NORMAL,
+  title: "Orbit design system",
+  description: "I'm lovely description",
+  mobileHeader: true,
+  content:
+    "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+};
+
+Sizes.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
   },
 };
 
@@ -130,9 +139,8 @@ ShortModal.story = {
   },
 };
 
-export const WithoutSection = () => {
+export const WithoutSection = ({ showMore }) => {
   const { Container, onClose } = useModal();
-  const showMore = boolean("showMore", false);
   return (
     <Container>
       <Modal onClose={onClose} fixedFooter>
@@ -165,9 +173,12 @@ WithoutSection.story = {
   },
 };
 
-export const RemovableSections = () => {
+WithoutSection.args = {
+  showMore: false,
+};
+
+export const RemovableSections = ({ showMore }) => {
   const { Container, onClose } = useModal();
-  const showMore = boolean("showMore", false);
   return (
     <Container>
       <Modal onClose={onClose} fixedFooter>
@@ -203,9 +214,12 @@ RemovableSections.story = {
   },
 };
 
-export const WithForm = () => {
+RemovableSections.args = {
+  showMore: false,
+};
+
+export const WithForm = ({ showMore }) => {
   const { Container, onClose } = useModal();
-  const showMore = boolean("showMore", false);
   return (
     <Container>
       <Modal onClose={onClose} fixedFooter autoFocus={false}>
@@ -262,6 +276,10 @@ WithForm.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+WithForm.args = {
+  showMore: false,
 };
 
 export const WithFixedFooter = () => {
@@ -447,26 +465,24 @@ WithFixedFooter.story = {
   },
 };
 
-export const FullPreview = () => {
+export const FullPreview = ({
+  header,
+  footer,
+  size,
+  title,
+  description,
+  illustration,
+  fixed,
+  suppressed,
+  content,
+  flex,
+  dataTest,
+  isMobileFullPage,
+  mobileHeader,
+  showBack,
+  preventOverlayClose,
+}) => {
   const { Container, onClose } = useModal();
-  const header = boolean("header", true);
-  const footer = boolean("footer", true);
-  const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
-  const title = text("Title", "Orbit design system");
-  const description = text("Description", "Lorem ispum dolor sit amet");
-  const illustration = select("Illustration", NAMES, NAMES[0]);
-  const fixed = boolean("fixedFooter", false);
-  const suppressed = boolean("suppressed", false);
-  const content = text(
-    "Text",
-    "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  );
-  const flex = array("Flex", ["0 0 auto", "1 1 100%"]);
-  const dataTest = text("dataTest", "test");
-  const isMobileFullPage = boolean("isMobileFullPage", false);
-  const mobileHeader = boolean("mobileHeader", true);
-  const showBack = boolean("showBackButton", true);
-  const preventOverlayClose = boolean("preventOverlayClose", false);
 
   return (
     <Container>
@@ -521,6 +537,40 @@ FullPreview.story = {
 
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+FullPreview.args = {
+  header: true,
+  footer: true,
+  size: SIZES.NORMAL,
+  title: "Orbit design system",
+  description: "Lorem ispum dolor sit amet",
+  illustration: NAMES[0],
+  fixed: false,
+  suppressed: false,
+  content:
+    "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  flex: ["0 0 auto", "1 1 100%"],
+  dataTest: "test",
+  isMobileFullPage: false,
+  mobileHeader: true,
+  showBack: true,
+  preventOverlayClose: false,
+};
+
+FullPreview.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
+  },
+  illustration: {
+    options: NAMES,
+    control: {
+      type: "select",
+    },
   },
 };
 

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../../icons";
 import Stack from "../../Stack";
@@ -20,17 +19,13 @@ enum SIZE_OPTIONS {
   MEDIUM = "medium",
 }
 
-const getIcons = defaultIcon => select("Icon", Object.keys(Icons), defaultIcon);
 const getIcon = source => Icons[source];
 
 export default {
   title: "TooltipPrimitive",
 };
 
-export const TooltipPrimitiveOnInlineElement = () => {
-  const content = text("content", "Write your text here.");
-  const removeUnderlinedText = boolean("removeUnderlinedText", false);
-
+export const TooltipPrimitiveOnInlineElement = ({ content, removeUnderlinedText }) => {
   return (
     <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate eget
@@ -68,11 +63,12 @@ TooltipPrimitiveOnInlineElement.story = {
   },
 };
 
-export const TooltipPrimitiveOnBlockElement = () => {
-  const content = text(
-    "content",
-    "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
-  );
+TooltipPrimitiveOnInlineElement.args = {
+  content: "Write your text here.",
+  removeUnderlinedText: false,
+};
+
+export const TooltipPrimitiveOnBlockElement = ({ content }) => {
   return (
     <TooltipPrimitive content={content}>
       <Heading>Orbit design system</Heading>
@@ -88,8 +84,12 @@ TooltipPrimitiveOnBlockElement.story = {
   },
 };
 
-export const TooltipPrimitiveOnDisabledElement = () => {
-  const content = text("content", "Write your text here.");
+TooltipPrimitiveOnBlockElement.args = {
+  content:
+    "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
+};
+
+export const TooltipPrimitiveOnDisabledElement = ({ content }) => {
   return (
     <TooltipPrimitive content={content}>
       <Button disabled>Disabled</Button>
@@ -105,31 +105,17 @@ TooltipPrimitiveOnDisabledElement.story = {
   },
 };
 
-export const Placement = () => {
-  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
-  const content = text("content", "Write your text here.");
+TooltipPrimitiveOnDisabledElement.args = {
+  content: "Write your text here.",
+};
+
+export const Placement = ({ size, placement, content }) => {
   return (
     <Stack justify="center">
       <TooltipPrimitive placement={placement} size={size} content={content}>
         <Icons.Airplane />
       </TooltipPrimitive>
     </Stack>
-  );
-};
-
-export const PlacementRtl = () => {
-  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
-  const content = text("content", "Write your text here.");
-  return (
-    <RenderInRtl>
-      <Stack justify="center">
-        <TooltipPrimitive placement={placement} size={size} content={content}>
-          <Icons.Airplane />
-        </TooltipPrimitive>
-      </Stack>
-    </RenderInRtl>
   );
 };
 
@@ -141,9 +127,61 @@ Placement.story = {
   },
 };
 
-export const WithImageInside = () => {
-  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
+Placement.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  placement: PLACEMENTS.BOTTOM,
+  content: "Write your text here.",
+};
+
+Placement.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const PlacementRtl = ({ size, placement, content }) => {
+  return (
+    <RenderInRtl>
+      <Stack justify="center">
+        <TooltipPrimitive placement={placement} size={size} content={content}>
+          <Icons.Airplane />
+        </TooltipPrimitive>
+      </Stack>
+    </RenderInRtl>
+  );
+};
+
+PlacementRtl.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  placement: PLACEMENTS.BOTTOM,
+  content: "Write your text here.",
+};
+
+PlacementRtl.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithImageInside = ({ size, placement }) => {
   return (
     <TooltipPrimitive
       placement={placement}
@@ -184,17 +222,39 @@ WithImageInside.story = {
   },
 };
 
-export const Playground = () => {
-  const content = text("content", "Write your text here.");
-  const dataTest = text("dataTest", "test");
-  const Icon = getIcon(getIcons("Airplane"));
-  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
-  const tabIndex = text("TabIndex", "0");
-  const error = boolean("error", false);
-  const help = boolean("help", false);
-  const enabled = boolean("enabled", true);
-  const removeUnderlinedText = boolean("removeUnderlinedText", false);
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.BOTTOM);
+WithImageInside.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  placement: PLACEMENTS.BOTTOM,
+};
+
+WithImageInside.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  content,
+  dataTest,
+  icon,
+  size,
+  tabIndex,
+  error,
+  help,
+  enabled,
+  removeUnderlinedText,
+  placement,
+}) => {
+  const Icon = getIcon(icon);
 
   return (
     <Stack flex justify="center">
@@ -218,6 +278,40 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+Playground.args = {
+  content: "Write your text here.",
+  dataTest: "test",
+  icon: "Airplane",
+  size: SIZE_OPTIONS.SMALL,
+  tabIndex: "0",
+  error: false,
+  help: false,
+  enabled: true,
+  removeUnderlinedText: false,
+  placement: PLACEMENTS.BOTTOM,
+};
+
+Playground.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
   },
 };
 

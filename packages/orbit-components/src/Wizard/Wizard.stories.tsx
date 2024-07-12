@@ -1,5 +1,4 @@
 import * as React from "react";
-import { number, array, select, text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import Stack from "../Stack";
@@ -11,11 +10,7 @@ export default {
   title: "Wizard",
 };
 
-export const Default = () => {
-  const direction = select("direction", ["row", "column"], "row");
-  const labelClose = text("labelClose", "Close");
-  const labelProgress = text("labelProgress", "of");
-
+export const Default = ({ direction, labelClose, labelProgress }) => {
   return (
     <Wizard
       id="wizard"
@@ -36,9 +31,22 @@ export const Default = () => {
   );
 };
 
-export const Rtl = () => {
-  const direction = select("direction", ["row", "column"], "row");
+Default.args = {
+  direction: "row",
+  labelClose: "Close",
+  labelProgress: "of",
+};
 
+Default.argTypes = {
+  direction: {
+    options: ["row", "column"],
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ direction }) => {
   return (
     <RenderInRtl>
       <Wizard
@@ -69,30 +77,27 @@ Rtl.story = {
   name: "RTL",
 };
 
-export const Playground = () => {
-  const labelClose = text("labelClose", "Close");
-  const labelProgress = text("labelProgress", "of");
-  const steps = array("Steps", [
-    "Search",
-    "Passenger details",
-    "Ticket fare",
-    "Customize your trip",
-    "Overview & payment",
-  ]);
-  const completedSteps = number("completedSteps", 3, {
-    range: true,
-    min: 0,
-    max: steps.length,
-    step: 1,
-  });
-  const activeStep = number("activeStep", 3, {
-    range: true,
-    min: 0,
-    max: Math.min(completedSteps, steps.length - 1),
-    step: 1,
-  });
-  const direction = select("direction", ["row", "column"], "row");
+Rtl.args = {
+  direction: "row",
+};
 
+Rtl.argTypes = {
+  direction: {
+    options: ["row", "column"],
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  labelClose,
+  labelProgress,
+  steps,
+  activeStep,
+  completedSteps,
+  direction,
+}) => {
   return (
     <Wizard
       id="wizard"
@@ -112,4 +117,44 @@ export const Playground = () => {
 
 Playground.story = {
   parameters: { knobs: { escapeHTML: false } },
+};
+
+Playground.args = {
+  labelClose: "Close",
+  labelProgress: "of",
+  steps: [
+    "Search",
+    "Passenger details",
+    "Ticket fare",
+    "Customize your trip",
+    "Overview & payment",
+  ],
+  activeStep: 3,
+  completedSteps: 3,
+  direction: "row",
+};
+
+Playground.argTypes = {
+  direction: {
+    options: ["row", "column"],
+    control: {
+      type: "select",
+    },
+  },
+  activeStep: {
+    control: {
+      type: "range",
+      min: 0,
+      max: Math.min(Playground.args.completedSteps, Playground.args.steps.length - 1),
+      step: 1,
+    },
+  },
+  completedSteps: {
+    control: {
+      type: "range",
+      min: 0,
+      max: Playground.args.steps.length,
+      step: 1,
+    },
+  },
 };

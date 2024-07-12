@@ -1,5 +1,4 @@
 import React from "react";
-import { select, text } from "@storybook/addon-knobs";
 
 import { NAMES } from "./consts.mts";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive";
@@ -12,12 +11,7 @@ export default {
   title: "AirportIllustration",
 };
 
-export const Playground = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
-  const name = select("Name", NAMES, "BGYFastTrack") as Name;
-  const dataTest = text("dataTest", "test");
-  const alt = text("alt", "null");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
+export const Playground = ({ size, name, dataTest, spaceAfter, alt }) => {
   return (
     <AirportIllustration
       size={size}
@@ -32,5 +26,34 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "Explore our new set of Airportillustrations for Kiwi.com.",
+  },
+};
+
+Playground.args = {
+  size: SIZE_OPTIONS.MEDIUM,
+  name: "BGYFastTrack" as Name,
+  dataTest: "test",
+  alt: "null",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+};
+
+Playground.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  name: {
+    options: NAMES,
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
   },
 };

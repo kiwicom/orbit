@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Illustration from "../Illustration";
@@ -15,12 +14,7 @@ export default {
   title: "CallOutBanner",
 };
 
-export const Default = () => {
-  const title = text("title", "Rooms in Warsaw");
-  const description = text(
-    "description",
-    "Select your hotel, hostel, apartment, or B&B from more than a million properties worldwide.",
-  );
+export const Default = ({ title, description }) => {
   return (
     <CallOutBanner
       title={title}
@@ -53,12 +47,13 @@ Default.story = {
   },
 };
 
-export const Actionable = () => {
-  const title = text("title", "Rooms in Warsaw");
-  const description = text(
-    "description",
+Default.args = {
+  title: "Rooms in Warsaw",
+  description:
     "Select your hotel, hostel, apartment, or B&B from more than a million properties worldwide.",
-  );
+};
+
+export const Actionable = ({ title, description }) => {
   return (
     <CallOutBanner
       title={title}
@@ -92,16 +87,13 @@ Actionable.story = {
   },
 };
 
-export const Playground = () => {
-  const title = text("title", "Rooms in Warsaw");
-  const description = text(
-    "description",
+Actionable.args = {
+  title: "Rooms in Warsaw",
+  description:
     "Select your hotel, hostel, apartment, or B&B from more than a million properties worldwide.",
-  );
-  const onClick = boolean("onClick", false);
-  const actions = boolean("actions", false);
-  const dataTest = text("dataTest", "test");
-  const illustration = select("illustration", NAMES, "Accommodation");
+};
+
+export const Playground = ({ title, description, onClick, actions, dataTest, illustration }) => {
   return (
     <CallOutBanner
       title={title}
@@ -135,5 +127,24 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "This is the default configuration of this component.",
+  },
+};
+
+Playground.args = {
+  title: "Rooms in Warsaw",
+  description:
+    "Select your hotel, hostel, apartment, or B&B from more than a million properties worldwide.",
+  onClick: false,
+  actions: false,
+  dataTest: "test",
+  illustration: "Accommodation",
+};
+
+Playground.argTypes = {
+  illustration: {
+    options: NAMES,
+    control: {
+      type: "select",
+    },
   },
 };

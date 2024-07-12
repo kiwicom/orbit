@@ -1,5 +1,4 @@
 import * as React from "react";
-import { select, text } from "@storybook/addon-knobs";
 
 import { NAME_OPTIONS } from "./consts";
 
@@ -9,14 +8,26 @@ export default {
   title: "FeatureIcon",
 };
 
-export const Playground = () => {
-  const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.TICKETFLEXI);
-  const dataTest = text("dataTest", "test");
+export const Playground = ({ name, dataTest }) => {
   return <FeatureIcon name={name} dataTest={dataTest} />;
 };
 
 Playground.story = {
   parameters: {
     info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+Playground.args = {
+  name: NAME_OPTIONS.TICKETFLEXI,
+  dataTest: "test",
+};
+
+Playground.argTypes = {
+  name: {
+    options: Object.values(NAME_OPTIONS),
+    control: {
+      type: "select",
+    },
   },
 };

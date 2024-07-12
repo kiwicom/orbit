@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean } from "@storybook/addon-knobs";
 
 import Text from "../Text";
 import TextLink from "../TextLink";
@@ -15,9 +14,7 @@ export default {
   title: "Radio",
 };
 
-export const Default = () => {
-  const label = text("Label", "Label");
-  const checked = boolean("Checked", false);
+export const Default = ({ label, checked }) => {
   return <Radio label={label} checked={checked} onChange={action("changed")} />;
 };
 
@@ -27,10 +24,12 @@ Default.story = {
   },
 };
 
-export const WithHelp = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "value");
-  const info = text("Info", "Additional information about this choice");
+Default.args = {
+  label: "Label",
+  checked: false,
+};
+
+export const WithHelp = ({ label, value, info }) => {
   return <Radio label={label} value={value} info={info} onChange={action("changed")} />;
 };
 
@@ -42,10 +41,13 @@ WithHelp.story = {
   },
 };
 
-export const WithError = () => {
-  const label = text("Label", "Label");
-  const hasError = boolean("hasError", true);
-  const checked = boolean("checked", false);
+WithHelp.args = {
+  label: "Label",
+  value: "value",
+  info: "Additional information about this choice",
+};
+
+export const WithError = ({ label, hasError, checked }) => {
   return <Radio label={label} hasError={hasError} checked={checked} onChange={action("changed")} />;
 };
 
@@ -57,8 +59,13 @@ WithError.story = {
   },
 };
 
-export const WithTextLinkInLabel = () => {
-  const checked = boolean("checked", true);
+WithError.args = {
+  label: "Label",
+  hasError: true,
+  checked: false,
+};
+
+export const WithTextLinkInLabel = ({ checked }) => {
   return (
     <Radio
       label={
@@ -82,6 +89,10 @@ WithTextLinkInLabel.story = {
   },
 };
 
+WithTextLinkInLabel.args = {
+  checked: true,
+};
+
 export const WithTooltip = () => {
   return (
     <Radio
@@ -101,10 +112,7 @@ WithTooltip.story = {
   },
 };
 
-export const WithStackAndIcon = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "value");
-  const info = text("Info", "Additional information to this choice");
+export const WithStackAndIcon = ({ label, value, info }) => {
   return (
     <Radio
       label={
@@ -130,16 +138,13 @@ WithStackAndIcon.story = {
   },
 };
 
-export const Playground = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "value");
-  const checked = boolean("Checked", true);
-  const disabled = boolean("Disabled", false);
-  const hasError = boolean("hasError", false);
-  const info = text("Info", "Additional information for this choice");
-  const name = text("Name", "name");
-  const dataTest = text("dataTest", "test");
+WithStackAndIcon.args = {
+  label: "Label",
+  value: "value",
+  info: "Additional information to this choice",
+};
 
+export const Playground = ({ label, value, checked, disabled, hasError, info, name, dataTest }) => {
   return (
     <Radio
       label={label}
@@ -159,6 +164,17 @@ Playground.story = {
   parameters: {
     info: "Playground of Radio",
   },
+};
+
+Playground.args = {
+  label: "Label",
+  value: "value",
+  checked: true,
+  disabled: false,
+  hasError: false,
+  info: "Additional information for this choice",
+  name: "name",
+  dataTest: "test",
 };
 
 export const Rtl = () => (

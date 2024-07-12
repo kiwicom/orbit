@@ -1,5 +1,4 @@
 import React from "react";
-import { object, text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import CountryFlag from "../CountryFlag";
@@ -10,8 +9,32 @@ export default {
   title: "InputSelect",
 };
 
-export const Grouped = () => {
-  const currencyOptions = [
+export const Grouped = ({ options, showAll, readOnly }) => {
+  return (
+    <div className="min-h-[1000px]">
+      <InputSelect
+        placeholder="Select currency"
+        options={options}
+        onClose={action("onClose")}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        onOptionSelect={action("onOptionSelect")}
+        showAll={showAll}
+        readOnly={readOnly}
+      />
+    </div>
+  );
+};
+
+Grouped.story = {
+  name: "Grouped",
+  parameters: {
+    info: "By default, grouped options are displayed first and then all options are displayed below. Groups are no longer considered after a search is made. If showAll is false, only the options with no group are displayed after the grouped ones.",
+  },
+};
+
+Grouped.args = {
+  options: [
     {
       title: "Euro",
       value: "EUR",
@@ -45,36 +68,43 @@ export const Grouped = () => {
       value: "CZK",
       prefix: <CountryFlag code="cz" />,
     },
-  ];
+  ],
+  showAll: true,
+  readOnly: false,
+};
 
-  const showAll = boolean("Show all", true);
-  const readOnly = boolean("Read only", false);
-
+export const PreviouslySelected = ({ options, showAll, readOnly, prevSelectedLabel }) => {
   return (
     <div className="min-h-[1000px]">
       <InputSelect
         placeholder="Select currency"
-        options={currencyOptions}
+        options={options}
         onClose={action("onClose")}
         onChange={action("onChange")}
         onFocus={action("onFocus")}
         onOptionSelect={action("onOptionSelect")}
         showAll={showAll}
         readOnly={readOnly}
+        prevSelected={options[2]}
+        prevSelectedLabel={prevSelectedLabel}
+        defaultSelected={options[2]}
       />
     </div>
   );
 };
 
-Grouped.story = {
-  name: "Grouped",
+PreviouslySelected.story = {
+  name: "Previously Selected",
   parameters: {
-    info: "By default, grouped options are displayed first and then all options are displayed below. Groups are no longer considered after a search is made. If showAll is false, only the options with no group are displayed after the grouped ones.",
+    info: "If prevSelected is defined, the option is presented on top of every other options.",
   },
 };
 
-export const PreviouslySelected = () => {
-  const currencyOptions = [
+PreviouslySelected.args = {
+  showAll: true,
+  readOnly: false,
+  prevSelectedLabel: "Previously selected",
+  options: [
     {
       title: "Euro",
       value: "EUR",
@@ -102,39 +132,54 @@ export const PreviouslySelected = () => {
       title: "Czech Koruna",
       value: "CZK",
     },
-  ];
+  ],
+};
 
-  const showAll = boolean("Show all", true);
-  const readOnly = boolean("Read only", false);
-  const prevSelectedLabel = text("prevSelectedLabel", "Previously selected");
-
+export const Playground = ({
+  options,
+  label,
+  placeholder,
+  disabled,
+  emptyState,
+  showAll,
+  showAllLabel,
+  readOnly,
+  required,
+  help,
+  error,
+  width,
+  maxWidth,
+  maxHeight,
+  hasError,
+  hasHelp,
+}) => {
   return (
     <div className="min-h-[1000px]">
       <InputSelect
-        placeholder="Select currency"
-        options={currencyOptions}
+        required={required}
+        placeholder={placeholder}
+        disabled={disabled}
+        label={label}
+        width={width}
+        help={hasHelp && help}
+        error={hasError && error}
+        maxHeight={maxHeight}
+        maxWidth={maxWidth}
+        options={options}
         onClose={action("onClose")}
         onChange={action("onChange")}
         onOptionSelect={action("onOptionSelect")}
+        emptyState={emptyState}
         showAll={showAll}
-        prevSelected={currencyOptions[2]}
-        prevSelectedLabel={prevSelectedLabel}
-        defaultSelected={currencyOptions[2]}
+        showAllLabel={showAllLabel}
         readOnly={readOnly}
       />
     </div>
   );
 };
 
-PreviouslySelected.story = {
-  name: "Previously Selected",
-  parameters: {
-    info: "If prevSelected is defined, the option is presented on top of every other options.",
-  },
-};
-
-export const Playground = () => {
-  const pokemonOptions = [
+Playground.args = {
+  options: [
     {
       title: "Pikachu",
       value: "Pikachu",
@@ -204,46 +249,19 @@ export const Playground = () => {
       description:
         "Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve.",
     },
-  ];
-
-  const label = text("Label", "Choose your pokemon");
-  const placeholder = text("Placeholder", "Search for pokemon");
-  const disabled = boolean("Disabled", false);
-  const options = object("Options", pokemonOptions);
-  const emptyStateMessage = text("Empty state message", "No results found.");
-  const showAll = boolean("Show all", true);
-  const showAllLabel = text("Show all label", "All options");
-  const required = boolean("Required", false);
-  const help = text("Help", "Help message");
-  const error = text("Error", "Error message");
-  const width = text("width", "");
-  const maxWidth = text("maxWidth", "");
-  const maxHeight = text("maxHeight", "400px");
-  const hasError = boolean("hasError", false);
-  const hasHelp = boolean("hasHelp", false);
-  const readOnly = boolean("Read only", false);
-
-  return (
-    <div className="min-h-[1000px]">
-      <InputSelect
-        required={required}
-        placeholder={placeholder}
-        disabled={disabled}
-        label={label}
-        width={width}
-        help={hasHelp && help}
-        error={hasError && error}
-        maxHeight={maxHeight}
-        maxWidth={maxWidth}
-        options={options}
-        onClose={action("onClose")}
-        onChange={action("onChange")}
-        onOptionSelect={action("onOptionSelect")}
-        emptyState={emptyStateMessage}
-        showAll={showAll}
-        showAllLabel={showAllLabel}
-        readOnly={readOnly}
-      />
-    </div>
-  );
+  ],
+  label: "Choose your pokemon",
+  placeholder: "Search for pokemon",
+  disabled: false,
+  emptyState: "No results found.",
+  showAll: true,
+  showAllLabel: "All options",
+  required: false,
+  help: "Help message",
+  error: "Error message",
+  width: "",
+  maxWidth: "",
+  maxHeight: "400px",
+  hasError: false,
+  hasHelp: false,
 };

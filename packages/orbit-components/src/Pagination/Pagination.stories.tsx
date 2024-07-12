@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { number, text, boolean, select } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { SIZES } from "./consts";
@@ -11,13 +10,7 @@ export default {
   title: "Pagination",
 };
 
-export const Default = () => {
-  const selectedPage = number("selectedPage", 1);
-  const pageCount = number("pageCount", 6);
-  const labelPrev = text("labelPrev", "prev");
-  const labelNext = text("labelNext", "next");
-  const labelProgress = text("labelProgress", "of");
-
+export const Default = ({ selectedPage, pageCount, labelPrev, labelNext, labelProgress }) => {
   return (
     <Pagination
       labelPrev={labelPrev}
@@ -29,13 +22,21 @@ export const Default = () => {
   );
 };
 
-export const WithALotOfPages = () => {
-  const selectedPage = number("selectedPage", 44);
-  const pageCount = number("pageCount", 100);
-  const labelPrev = text("labelPrev", "prev");
-  const labelNext = text("labelNext", "next");
-  const labelProgress = text("labelProgress", "of");
+Default.args = {
+  selectedPage: 1,
+  pageCount: 6,
+  labelPrev: "prev",
+  labelNext: "next",
+  labelProgress: "of",
+};
 
+export const WithALotOfPages = ({
+  selectedPage,
+  pageCount,
+  labelPrev,
+  labelNext,
+  labelProgress,
+}) => {
   return (
     <Pagination
       labelPrev={labelPrev}
@@ -52,14 +53,22 @@ WithALotOfPages.story = {
   name: "With a lot of pages",
 };
 
-export const SmallSize = () => {
-  const selectedPage = number("selectedPage", 1);
-  const size = select("size", Object.values(SIZES), SIZES.SMALL);
-  const pageCount = number("pageCount", 100);
-  const labelPrev = text("labelPrev", "prev");
-  const labelNext = text("labelNext", "next");
-  const labelProgress = text("labelProgress", "of");
+WithALotOfPages.args = {
+  selectedPage: 44,
+  pageCount: 100,
+  labelPrev: "prev",
+  labelNext: "next",
+  labelProgress: "of",
+};
 
+export const SmallSize = ({
+  selectedPage,
+  size,
+  pageCount,
+  labelPrev,
+  labelNext,
+  labelProgress,
+}) => {
   return (
     <Pagination
       labelPrev={labelPrev}
@@ -76,16 +85,34 @@ SmallSize.story = {
   name: "Small size",
 };
 
-export const Playground = () => {
-  const dataTest = text("dataTest", "test");
-  const pageCount = number("pageCount", 6);
-  const selectedPage = number("selectedPage", 2);
-  const hideLabels = boolean("hideLabels", false);
-  const size = select("size", Object.values(SIZES), SIZES.NORMAL);
-  const labelPrev = text("labelPrev", "prev");
-  const labelNext = text("labelNext", "next");
-  const labelProgress = text("labelProgress", "of");
+SmallSize.args = {
+  selectedPage: 1,
+  size: SIZES.SMALL,
+  pageCount: 100,
+  labelPrev: "prev",
+  labelNext: "next",
+  labelProgress: "of",
+};
 
+SmallSize.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  dataTest,
+  pageCount,
+  selectedPage,
+  hideLabels,
+  size,
+  labelPrev,
+  labelNext,
+  labelProgress,
+}) => {
   return (
     <Pagination
       labelPrev={labelPrev}
@@ -101,13 +128,27 @@ export const Playground = () => {
   );
 };
 
-export const Rtl = () => {
-  const pageCount = number("pageCount", 6);
-  const selectedPage = number("selectedPage", 2);
-  const hideLabels = boolean("hideLabels", false);
-  const size = select("size", Object.values(SIZES), SIZES.NORMAL);
-  const labelProgress = text("labelProgress", "2 מתוך 6");
+Playground.args = {
+  dataTest: "test",
+  pageCount: 6,
+  selectedPage: 2,
+  hideLabels: false,
+  size: SIZES.NORMAL,
+  labelPrev: "prev",
+  labelNext: "next",
+  labelProgress: "of",
+};
 
+Playground.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ pageCount, selectedPage, hideLabels, size, labelProgress }) => {
   return (
     <RenderInRtl>
       <Pagination
@@ -153,5 +194,22 @@ Rtl.story = {
         </p>
       </div>
     ),
+  },
+};
+
+Rtl.args = {
+  pageCount: 6,
+  selectedPage: 2,
+  hideLabels: false,
+  size: SIZES.NORMAL,
+  labelProgress: "2 מתוך 6",
+};
+
+Rtl.argTypes = {
+  size: {
+    options: Object.values(SIZES),
+    control: {
+      type: "select",
+    },
   },
 };

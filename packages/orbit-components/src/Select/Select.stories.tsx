@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { object, select, text, boolean } from "@storybook/addon-knobs";
 
 import Airplane from "../icons/Airplane";
 import CountryFlag from "../CountryFlag";
@@ -46,8 +45,7 @@ WithPrefix.story = {
   },
 };
 
-export const WithCountryFlagPrefix = () => {
-  const code = select("Code", Object.values(CODES), CODES.ANYWHERE);
+export const WithCountryFlagPrefix = ({ code }) => {
   return (
     <Select
       label="Select box (with prefix)"
@@ -66,8 +64,20 @@ WithCountryFlagPrefix.story = {
   },
 };
 
-export const WithLongLabel = () => {
-  const inlineLabel = boolean("inlineLabel", true);
+WithCountryFlagPrefix.args = {
+  code: CODES.ANYWHERE,
+};
+
+WithCountryFlagPrefix.argTypes = {
+  code: {
+    options: Object.values(CODES),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithLongLabel = ({ inlineLabel }) => {
   return (
     <Select
       label="Select box (with long label)"
@@ -86,8 +96,11 @@ WithLongLabel.story = {
   },
 };
 
-export const WithPlaceholder = () => {
-  const placeholder = text("Placeholder", "Select value from list");
+WithLongLabel.args = {
+  inlineLabel: true,
+};
+
+export const WithPlaceholder = ({ placeholder }) => {
   return (
     <Select
       label="Select box (with placeholder)"
@@ -104,6 +117,10 @@ WithPlaceholder.story = {
   parameters: {
     info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
+};
+
+WithPlaceholder.args = {
+  placeholder: "Select value from list",
 };
 
 export const WithHelpMessage = () => (
@@ -140,28 +157,24 @@ WithErrorMessage.story = {
   },
 };
 
-export const Playground = () => {
-  const placeholder = text("Placeholder", "Select value from list");
-  const disabled = boolean("Disabled", false);
-  const name = text("Name", "name");
-  const customValueText = text("customValueText", "");
-  const option = object("Options", objectOptions);
-  const value = select(
-    "Value",
-    objectOptions.map(opt => opt.value),
-    undefined,
-  );
-  const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
-  const id = text("ID", "select-id");
-  const required = boolean("Required", false);
-  const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
-  const width = text("width", "");
-  const label = text("Label", "Label");
-  const inlineLabel = boolean("inlineLabel", false);
-  const error = text("Error", "");
-  const help = text("Help", "");
-
+export const Playground = ({
+  placeholder,
+  disabled,
+  name,
+  customValueText,
+  option,
+  value,
+  dataTest,
+  spaceAfter,
+  id,
+  required,
+  dataAttrs,
+  width,
+  label,
+  inlineLabel,
+  error,
+  help,
+}) => {
   return (
     <Select
       id={id}
@@ -190,6 +203,37 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+Playground.args = {
+  placeholder: "Select value from list",
+  disabled: false,
+  name: "name",
+  customValueText: "",
+  option: objectOptions,
+  value: undefined,
+  dataTest: "test",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  id: "select-id",
+  required: false,
+  dataAttrs: { "data-recording-ignore": true },
+  width: "",
+  label: "Label",
+  inlineLabel: false,
+  error: "",
+  help: "",
+};
+
+Playground.argTypes = {
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+  value: {
+    options: objectOptions.map(opt => opt.value),
   },
 };
 

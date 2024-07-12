@@ -1,5 +1,4 @@
 import * as React from "react";
-import { select, text, boolean, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -26,10 +25,7 @@ export const Default = () => {
   );
 };
 
-export const FullWidth = () => {
-  const compact = boolean("compact", false);
-  const fullWidth = boolean("fullWidth", true);
-
+export const FullWidth = ({ compact, fullWidth }) => {
   return (
     <Tabs onChange={action("onChange")}>
       <TabList fullWidth={fullWidth} compact={compact}>
@@ -46,6 +42,11 @@ export const FullWidth = () => {
       </TabPanels>
     </Tabs>
   );
+};
+
+FullWidth.args = {
+  compact: false,
+  fullWidth: true,
 };
 
 export const Compact = () => {
@@ -104,17 +105,17 @@ export default {
   title: "Tabs",
 };
 
-export const Playground = () => {
-  const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.DEFAULT);
-  const compact = boolean("compact", false);
-  const disabled = boolean("disabled", false);
-  const defaultSelected = number("defaultSelected", 0);
-  const firstTabLabel = text("first tab label", "Tab 1");
-  const secondTabLabel = text("second tab label", "Tab 2");
-  const firstTabContent = text("first tab content", "Tab 1");
-  const secondTabContent = text("second tab content", "Tab 2");
-  const fullWidth = boolean("fullWidth", false);
-
+export const Playground = ({
+  type,
+  compact,
+  disabled,
+  defaultSelected,
+  firstTabLabel,
+  secondTabLabel,
+  firstTabContent,
+  secondTabContent,
+  fullWidth,
+}) => {
   return (
     <Tabs onChange={action("onChange")} defaultSelected={defaultSelected}>
       <TabList compact={compact} fullWidth={fullWidth}>
@@ -127,6 +128,27 @@ export const Playground = () => {
       </TabPanels>
     </Tabs>
   );
+};
+
+Playground.args = {
+  type: TYPE_OPTIONS.DEFAULT,
+  compact: false,
+  disabled: false,
+  defaultSelected: 0,
+  firstTabLabel: "Tab 1",
+  secondTabLabel: "Tab 2",
+  firstTabContent: "Tab 1",
+  secondTabContent: "Tab 2",
+  fullWidth: false,
+};
+
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
 };
 
 export const RTL = () => {

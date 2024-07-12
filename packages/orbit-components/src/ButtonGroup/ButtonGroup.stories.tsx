@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Button from "../Button";
@@ -12,8 +11,7 @@ export default {
   title: "ButtonGroup",
 };
 
-export const WithButtons = () => {
-  const dataTest = text("dataTest", "test");
+export const WithButtons = ({ dataTest }) => {
   return (
     <ButtonGroup dataTest={dataTest}>
       <Button iconLeft={<Icons.Airplane />}>Button</Button>
@@ -28,8 +26,11 @@ WithButtons.story = {
   },
 };
 
-export const WithButtonLinks = () => {
-  const dataTest = text("dataTest", "test");
+WithButtons.args = {
+  dataTest: "test",
+};
+
+export const WithButtonLinks = ({ dataTest }) => {
   return (
     <ButtonGroup dataTest={dataTest}>
       <ButtonLink type="secondary" iconLeft={<Icons.Airplane />}>
@@ -46,6 +47,10 @@ WithButtonLinks.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+};
+
+WithButtonLinks.args = {
+  dataTest: "test",
 };
 
 export const Rtl = () => (

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 import * as Icons from "../icons";
@@ -8,19 +7,14 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import ListChoice from ".";
 
-const getIcons = (name: string, defaultIcon: string) =>
-  select(name, [null, ...Object.keys(Icons)], defaultIcon);
-
 const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "ListChoice",
 };
 
-export const Default = () => {
-  const title = text("title", "Choice Title");
-  const description = text("description", "Further description");
-  const Icon = getIcon(getIcons("icon", "Accommodation"));
+export const Default = ({ title, description, icon }) => {
+  const Icon = getIcon(icon);
 
   return (
     <ListChoice
@@ -35,6 +29,21 @@ export const Default = () => {
 Default.story = {
   parameters: {
     info: "Some description about this type of ListChoice in general.",
+  },
+};
+
+Default.args = {
+  title: "Choice Title",
+  description: "Further description",
+  icon: "Accommodation",
+};
+
+Default.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
   },
 };
 
@@ -74,12 +83,8 @@ MultipleChoices.story = {
   },
 };
 
-export const WithAction = () => {
-  const title = text("title", "Choice Title");
-  const description = text("description", "Further description");
-  const disabled = boolean("disabled", false);
-  const Icon = getIcon(getIcons("icon", "Accommodation"));
-  const dataTest = text("dataTest", "test");
+export const WithAction = ({ title, description, disabled, icon, dataTest }) => {
+  const Icon = getIcon(icon);
 
   return (
     <ListChoice
@@ -101,14 +106,33 @@ export const WithAction = () => {
   );
 };
 
-export const Playground = () => {
-  const title = text("title", "Choice Title");
-  const description = text("description", "Further description");
-  const selectable = boolean("selectable", true);
-  const selected = boolean("selected", false);
-  const disabled = boolean("disabled", false);
-  const Icon = getIcon(getIcons("icon", "Accommodation"));
-  const dataTest = text("dataTest", "test");
+WithAction.args = {
+  title: "Choice Title",
+  description: "Further description",
+  disabled: false,
+  icon: "Accommodation",
+  dataTest: "test",
+};
+
+WithAction.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  title,
+  description,
+  selectable,
+  selected,
+  disabled,
+  icon,
+  dataTest,
+}) => {
+  const Icon = getIcon(icon);
 
   return (
     <ListChoice
@@ -130,10 +154,29 @@ Playground.story = {
   },
 };
 
-export const Controlled = () => {
+Playground.args = {
+  title: "Choice Title",
+  description: "Further description",
+  selectable: true,
+  selected: false,
+  disabled: false,
+  icon: "Accommodation",
+  dataTest: "test",
+};
+
+Playground.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Controlled = ({ icon }) => {
   const [selected, setSelected] = React.useState(false);
 
-  const Icon = getIcon(getIcons("icon", "Accommodation"));
+  const Icon = getIcon(icon);
 
   return (
     <ListChoice
@@ -148,6 +191,19 @@ export const Controlled = () => {
       }}
     />
   );
+};
+
+Controlled.args = {
+  icon: "Accommodation",
+};
+
+Controlled.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
 };
 
 export const Rtl = () => (

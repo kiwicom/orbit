@@ -1,27 +1,16 @@
 import * as React from "react";
-import { object, select, text } from "@storybook/addon-knobs";
 
 import { SIZE_OPTIONS, CARRIER_TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import type { Carrier } from "./types";
 
 import CarrierLogo from ".";
-
-const carriersLabel = "Carriers";
 
 export default {
   title: "CarrierLogo",
 };
 
-export const OneCarrier = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
-  const dataTest = text("dataTest", "test");
-
-  const carrier = [{ code: "FR", name: "Ryanair" }];
-
-  const carriersObject = object(carriersLabel, carrier);
-
-  return <CarrierLogo size={size} carriers={carriersObject} dataTest={dataTest} />;
+export const OneCarrier = ({ size, dataTest, carriers }) => {
+  return <CarrierLogo size={size} carriers={carriers} dataTest={dataTest} />;
 };
 
 OneCarrier.story = {
@@ -32,15 +21,21 @@ OneCarrier.story = {
   },
 };
 
-export const TwoCarriers = () => {
-  const carrier: Carrier[] = [
-    { code: "FR", name: "Ryanair" },
-    { code: "TO", name: "Transavia France" },
-  ];
+OneCarrier.args = {
+  size: SIZE_OPTIONS.LARGE,
+  dataTest: "test",
+  carriers: [{ code: "FR", name: "Ryanair" }],
+};
 
-  const carriersObject = object(carriersLabel, carrier);
+OneCarrier.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: { type: "select" },
+  },
+};
 
-  return <CarrierLogo carriers={carriersObject} />;
+export const TwoCarriers = ({ carriers }) => {
+  return <CarrierLogo carriers={carriers} />;
 };
 
 TwoCarriers.story = {
@@ -51,17 +46,15 @@ TwoCarriers.story = {
   },
 };
 
-export const FourCarriers = () => {
-  const carrier = [
+TwoCarriers.args = {
+  carriers: [
     { code: "FR", name: "Ryanair" },
     { code: "TO", name: "Transavia France" },
-    { code: "VY", name: "Vueling" },
-    { code: "OK", name: "Czech Airlines" },
-  ];
+  ],
+};
 
-  const carriersObject = object(carriersLabel, carrier);
-
-  return <CarrierLogo carriers={carriersObject} />;
+export const FourCarriers = ({ carriers }) => {
+  return <CarrierLogo carriers={carriers} />;
 };
 
 FourCarriers.story = {
@@ -72,17 +65,17 @@ FourCarriers.story = {
   },
 };
 
-export const InlineStacked = () => {
-  const carrier = [
+FourCarriers.args = {
+  carriers: [
     { code: "FR", name: "Ryanair" },
     { code: "TO", name: "Transavia France" },
     { code: "VY", name: "Vueling" },
     { code: "OK", name: "Czech Airlines" },
-  ];
+  ],
+};
 
-  const carriersObject = object(carriersLabel, carrier);
-
-  return <CarrierLogo carriers={carriersObject} inlineStacked rounded />;
+export const InlineStacked = ({ carriers }) => {
+  return <CarrierLogo carriers={carriers} inlineStacked rounded />;
 };
 
 InlineStacked.story = {
@@ -93,16 +86,17 @@ InlineStacked.story = {
   },
 };
 
-export const NonExistingCarriers = () => {
-  const carrier: Carrier[] = [
-    { code: "LOL", name: "Lorem ipsum", type: "airline" },
-    { code: "KEK", name: "Lorem ipsum", type: "bus" },
-    { code: "BUR", name: "Lorem ipsum", type: "train" },
-  ];
+InlineStacked.args = {
+  carriers: [
+    { code: "FR", name: "Ryanair" },
+    { code: "TO", name: "Transavia France" },
+    { code: "VY", name: "Vueling" },
+    { code: "OK", name: "Czech Airlines" },
+  ],
+};
 
-  const carriersObject = object(carriersLabel, carrier);
-
-  return <CarrierLogo carriers={carriersObject} />;
+export const NonExistingCarriers = ({ carriers }) => {
+  return <CarrierLogo carriers={carriers} />;
 };
 
 NonExistingCarriers.story = {
@@ -113,17 +107,16 @@ NonExistingCarriers.story = {
   },
 };
 
-export const NonExistingCarrier = () => {
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
-  const carrierType = select(
-    "Type",
-    Object.values(CARRIER_TYPE_OPTIONS),
-    CARRIER_TYPE_OPTIONS.AIRLINE,
-  );
-  const carrier = [{ code: "LAL", name: "Lorem ipsum", type: carrierType }];
-  const carriersObject = object(carriersLabel, carrier);
+NonExistingCarriers.args = {
+  carriers: [
+    { code: "LOL", name: "Lorem ipsum", type: "airline" },
+    { code: "KEK", name: "Lorem ipsum", type: "bus" },
+    { code: "BUR", name: "Lorem ipsum", type: "train" },
+  ],
+};
 
-  return <CarrierLogo size={size} carriers={carriersObject} />;
+export const NonExistingCarrier = ({ size, carriers }) => {
+  return <CarrierLogo size={size} carriers={carriers} />;
 };
 
 NonExistingCarrier.story = {
@@ -131,6 +124,18 @@ NonExistingCarrier.story = {
 
   parameters: {
     info: "CarrierLogo can display proper placeholder for non-existing carriers by its type. If not you specify the type of carrier, airline placeholder will be displayed.",
+  },
+};
+
+NonExistingCarrier.args = {
+  size: SIZE_OPTIONS.LARGE,
+  carriers: [{ code: "LAL", name: "Lorem ipsum", type: CARRIER_TYPE_OPTIONS.AIRLINE }],
+};
+
+NonExistingCarrier.argTypes = {
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: { type: "select" },
   },
 };
 

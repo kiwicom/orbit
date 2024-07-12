@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, number, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { TYPES } from "./consts";
@@ -9,9 +8,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { SPACINGS_AFTER } from "../common/consts";
 
 import ButtonLink from ".";
-
-const getIcons = (name: string, defaultIcon: string) =>
-  select(name, [null, ...Object.keys(Icons)], defaultIcon);
 
 const getIcon = (source: string | null) => (source ? Icons[source] : null);
 
@@ -51,17 +47,14 @@ Critical.story = {
   },
 };
 
-export const Circled = () => {
-  const circled = boolean("circled", true);
-  const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
-  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
+export const Circled = ({ type, size, iconLeft, circled }) => {
+  const IconLeft = getIcon(iconLeft);
 
   return (
     <ButtonLink
       type={type}
       size={size}
-      iconLeft={IconLeft && <IconLeft />}
+      iconLeft={iconLeft && <IconLeft />}
       onClick={action("clicked")}
       circled={circled}
       title="Button"
@@ -75,26 +68,57 @@ Circled.story = {
   },
 };
 
-export const Playground = () => {
-  const children = text("Children", "ButtonLink");
-  const disabled = boolean("Disabled", false);
-  const fullWidth = boolean("fullWidth", false);
-  const type = select("Type", Object.values(TYPES), TYPES.SECONDARY);
-  const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.LARGE);
-  const width = number("Width", NaN);
-  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
-  const IconRight = getIcon(getIcons("iconRight", "ChevronDown"));
-  const href = text("Href", "");
-  const dataTest = text("dataTest", "test");
-  const external = boolean("External", false);
-  const compact = boolean("compact", false);
-  const submit = boolean("Submit", false);
-  const ariaExpanded = boolean("Aria expanded", false);
-  const ariaControls = text("Aria controls", "element ID");
-  const tabIndex = text("tabIndex", "0");
-  const spaceAfter = select("spaceAfter", [undefined, ...Object.values(SPACINGS_AFTER)], undefined);
-  const title = text("Title", "Additional information for accessibility");
-  const rel = text("Rel", "nofollow");
+Circled.args = {
+  circled: true,
+  type: TYPES.SECONDARY,
+  size: SIZE_OPTIONS.LARGE,
+  iconLeft: "Airplane",
+};
+
+Circled.argTypes = {
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPES),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  children,
+  disabled,
+  fullWidth,
+  type,
+  size,
+  width,
+  iconLeft,
+  iconRight,
+  href,
+  dataTest,
+  external,
+  compact,
+  submit,
+  ariaExpanded,
+  ariaControls,
+  tabIndex,
+  spaceAfter,
+  title,
+  rel,
+}) => {
+  const IconLeft = getIcon(iconLeft);
+  const IconRight = getIcon(iconRight);
 
   return (
     <ButtonLink
@@ -129,12 +153,62 @@ Playground.story = {
   },
 };
 
-export const Accessibility = () => {
-  const children = text("Children", "ButtonLink");
-  const ariaExpanded = boolean("Aria expanded", false);
-  const ariaControls = text("Aria controls", "element ID");
-  const title = text("Title", "Additional information for accessibility");
+Playground.args = {
+  children: "ButtonLink",
+  disabled: false,
+  fullWidth: false,
+  type: TYPES.SECONDARY,
+  size: SIZE_OPTIONS.LARGE,
+  width: NaN,
+  iconLeft: "Airplane",
+  iconRight: "ChevronDown",
+  href: "",
+  dataTest: "test",
+  external: false,
+  compact: false,
+  submit: false,
+  ariaExpanded: false,
+  ariaControls: "element ID",
+  tabIndex: "0",
+  spaceAfter: undefined,
+  title: "Additional information for accessibility",
+  rel: "nofollow",
+};
 
+Playground.argTypes = {
+  iconLeft: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  iconRight: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: Object.values(TYPES),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Accessibility = ({ children, ariaExpanded, ariaControls, title }) => {
   return (
     <ButtonLink ariaExpanded={ariaExpanded} ariaControls={ariaControls} title={title}>
       {children}
@@ -146,6 +220,13 @@ Accessibility.story = {
   parameters: {
     info: "This is a preview of component accessibility props",
   },
+};
+
+Accessibility.args = {
+  children: "ButtonLink",
+  ariaExpanded: false,
+  ariaControls: "element ID",
+  title: "Additional information for accessibility",
 };
 
 export const Rtl = () => (

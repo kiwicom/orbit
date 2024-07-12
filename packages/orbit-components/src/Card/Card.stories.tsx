@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -17,15 +16,25 @@ export default {
   title: "Card",
 };
 
-export const Default = () => {
-  const title = text("Title", "Card with title");
-  const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
+export const Default = ({ title, titleAs }) => {
   return <Card title={title} titleAs={titleAs} />;
 };
 
-export const CardWithDescription = () => {
-  const title = text("Title", "Card with title");
-  const description = text("Description", "This is description of the card");
+Default.args = {
+  title: "Card with title",
+  titleAs: ELEMENT_OPTIONS.H2,
+};
+
+Default.argTypes = {
+  titleAs: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const CardWithDescription = ({ title, description }) => {
   return <Card onClose={action("onClose")} title={title} description={description} />;
 };
 
@@ -33,9 +42,12 @@ CardWithDescription.story = {
   name: "Card with description",
 };
 
-export const CardWithActions = () => {
-  const title = text("Title", "Card with title");
-  const description = text("Description", "This is description of the card");
+CardWithDescription.args = {
+  title: "Card with title",
+  description: "This is description of the card",
+};
+
+export const CardWithActions = ({ title, description }) => {
   return (
     <Card
       title={title}
@@ -53,6 +65,11 @@ CardWithActions.story = {
   name: "Card with actions",
 };
 
+CardWithActions.args = {
+  title: "Card with title",
+  description: "This is description of the card",
+};
+
 export const CardWithOnlySection = () => {
   return (
     <Card>
@@ -65,10 +82,7 @@ CardWithOnlySection.story = {
   name: "Card with only section",
 };
 
-export const CardWithSections = () => {
-  const titleAs = select("titleAs", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H2);
-  const sectionTitle = text("SectionTitle", "Section Title");
-  const sectionDescription = text("SectionDescription", "Section Description");
+export const CardWithSections = ({ titleAs, sectionTitle, sectionDescription }) => {
   return (
     <Card>
       <CardSection
@@ -87,10 +101,22 @@ CardWithSections.story = {
   name: "Card with sections",
 };
 
-export const CardWithExpandableSections = () => {
-  const title = text("Title", "Card with title");
-  const description = text("Description", "This is description of the card");
-  const sectionTitle = text("SectionTitle", "Section Title");
+CardWithSections.args = {
+  titleAs: ELEMENT_OPTIONS.H2,
+  sectionTitle: "Section Title",
+  sectionDescription: "Section Description",
+};
+
+CardWithSections.argTypes = {
+  titleAs: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const CardWithExpandableSections = ({ title, description, sectionTitle }) => {
   return (
     <Card title={title} onClose={action("onClose")} description={description}>
       <CardSection expandable title={sectionTitle}>
@@ -114,11 +140,18 @@ CardWithExpandableSections.story = {
   },
 };
 
-export const CardWithControlledAndUncontrolled = () => {
-  const expanded = boolean("expanded", true);
-  const title = text("Title", "Card with title");
-  const description = text("Description", "This is description of the card");
-  const sectionTitle = text("SectionTitle", "Section Title");
+CardWithExpandableSections.args = {
+  title: "Card with title",
+  description: "This is description of the card",
+  sectionTitle: "Section Title",
+};
+
+export const CardWithControlledAndUncontrolled = ({
+  expanded,
+  title,
+  description,
+  sectionTitle,
+}) => {
   return (
     <Card title={title} description={description}>
       <CardSection
@@ -150,11 +183,14 @@ CardWithControlledAndUncontrolled.story = {
   },
 };
 
-export const CardWithControlledWithKnobe = () => {
-  const expanded = boolean("expanded", false);
-  const title = text("Title", "Card with title");
-  const description = text("Description", "This is description of the card");
-  const sectionTitle = text("SectionTitle", "Section Title");
+CardWithControlledAndUncontrolled.args = {
+  expanded: true,
+  title: "Card with title",
+  description: "This is description of the card",
+  sectionTitle: "Section Title",
+};
+
+export const CardWithControlledWithControls = ({ expanded, title, description, sectionTitle }) => {
   return (
     <Card title={title} description={description}>
       <CardSection expandable expanded={expanded} title={sectionTitle}>
@@ -164,7 +200,7 @@ export const CardWithControlledWithKnobe = () => {
   );
 };
 
-CardWithControlledWithKnobe.story = {
+CardWithControlledWithControls.story = {
   name: "Card with controlled with knobe",
 
   parameters: {
@@ -172,8 +208,14 @@ CardWithControlledWithKnobe.story = {
   },
 };
 
-export const CardWithDefaultExpanded = () => {
-  const initialExpanded = boolean("initialExpended", true);
+CardWithControlledWithControls.args = {
+  expanded: false,
+  title: "Card with title",
+  description: "This is description of the card",
+  sectionTitle: "Section Title",
+};
+
+export const CardWithDefaultExpanded = ({ initialExpanded }) => {
   return (
     <Card>
       <CardSection
@@ -222,11 +264,11 @@ CardWithDefaultExpanded.story = {
   },
 };
 
-export const CardWithMixedSections = () => {
-  const title = text("Title", "Card with title");
-  const description = text("Description", "This is description of the card");
-  const sectionTitle = text("SectionTitle", "Section Title");
-  const sectionDescription = text("SectionDescription", "Section Description");
+CardWithDefaultExpanded.args = {
+  initialExpanded: true,
+};
+
+export const CardWithMixedSections = ({ title, description, sectionTitle, sectionDescription }) => {
   return (
     <Card
       title={title}
@@ -267,8 +309,14 @@ CardWithMixedSections.story = {
   },
 };
 
-export const LoadingCard = () => {
-  const title = text("Title", "Card with title");
+CardWithMixedSections.args = {
+  title: "Card with title",
+  description: "This is description of the card",
+  sectionTitle: "Section Title",
+  sectionDescription: "Section Description",
+};
+
+export const LoadingCard = ({ title }) => {
   return (
     <Card title={title} loading>
       <CardSection>kek</CardSection>
@@ -280,6 +328,10 @@ LoadingCard.story = {
   parameters: {
     info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
   },
+};
+
+LoadingCard.args = {
+  title: "Card with title",
 };
 
 export const Rtl = () => (
@@ -319,9 +371,7 @@ Rtl.story = {
   },
 };
 
-export const Accessibility = () => {
-  const title = text("Title", "Card with title");
-  const dataA11ySection = text("dataA11ySection", "ID-OF-CARD");
+export const Accessibility = ({ title, dataA11ySection }) => {
   return <Card title={title} dataA11ySection={dataA11ySection} />;
 };
 
@@ -329,4 +379,9 @@ Accessibility.story = {
   parameters: {
     info: "This is a preview of component accessibility props",
   },
+};
+
+Accessibility.args = {
+  title: "Card with title",
+  dataA11ySection: "ID-OF-CARD",
 };

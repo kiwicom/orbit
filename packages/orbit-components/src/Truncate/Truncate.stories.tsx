@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Stack from "../Stack";
@@ -11,11 +10,7 @@ export default {
   title: "Truncate",
 };
 
-export const Default = () => {
-  const content = text(
-    "content",
-    "Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nulla pulvinar eleifend sem. Sed ac dolor sit amet purus malesuada congue. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Pellentesque pretium lectus id turpis. Etiam dictum tincidunt diam.",
-  );
+export const Default = ({ content }) => {
   return <Truncate>{content}</Truncate>;
 };
 
@@ -25,12 +20,12 @@ Default.story = {
   },
 };
 
-export const InStack = () => {
-  const content = text(
-    "content",
+Default.args = {
+  content:
     "Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nulla pulvinar eleifend sem. Sed ac dolor sit amet purus malesuada congue. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Pellentesque pretium lectus id turpis. Etiam dictum tincidunt diam.",
-  );
-  const maxWidth = text("maxWidth", "20%");
+};
+
+export const InStack = ({ content, maxWidth }) => {
   return (
     <Stack direction="row">
       <Truncate maxWidth={maxWidth}>
@@ -49,12 +44,13 @@ InStack.story = {
   },
 };
 
-export const Playground = () => {
-  const content = text(
-    "content",
+InStack.args = {
+  content:
     "Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nulla pulvinar eleifend sem. Sed ac dolor sit amet purus malesuada congue. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Pellentesque pretium lectus id turpis. Etiam dictum tincidunt diam.",
-  );
-  const maxWidth = text("maxWidth", "none");
+  maxWidth: "20%",
+};
+
+export const Playground = ({ content, maxWidth }) => {
   return (
     <Truncate maxWidth={maxWidth}>
       <Text>{content}</Text>
@@ -68,12 +64,13 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const content = text(
-    "content",
+Playground.args = {
+  content:
     "Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nulla pulvinar eleifend sem. Sed ac dolor sit amet purus malesuada congue. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Pellentesque pretium lectus id turpis. Etiam dictum tincidunt diam.",
-  );
-  const maxWidth = text("maxWidth", "20%");
+  maxWidth: "none",
+};
+
+export const Rtl = ({ content, maxWidth }) => {
   return (
     <RenderInRtl>
       <Stack direction="row">
@@ -94,4 +91,10 @@ Rtl.story = {
   parameters: {
     info: "This is a preview of this component in RTL setup.",
   },
+};
+
+Rtl.args = {
+  content:
+    "Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nulla pulvinar eleifend sem. Sed ac dolor sit amet purus malesuada congue. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Pellentesque pretium lectus id turpis. Etiam dictum tincidunt diam.",
+  maxWidth: "20%",
 };

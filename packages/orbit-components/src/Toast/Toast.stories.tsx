@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select, number } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 import Notification from "../icons/Notification";
@@ -20,17 +19,17 @@ enum PLACEMENTS {
   BOTTOM_RIGHT = "bottom-right",
 }
 
-export const Default = () => {
-  const toast = () =>
-    createToast(text("message", "Thank you for feedback"), { icon: <Notification /> });
-
-  const placement = select("placement", Object.values(PLACEMENTS), PLACEMENTS.TOP_CENTER);
-  const topOffset = number("topOffset", 8);
-  const bottomOffset = number("bottomOffset", 8);
-  const leftOffset = number("leftOffset", 8);
-  const rightOffset = number("rightOffset", 8);
-  const dismissTimeout = number("dismissTimeout", 5000);
-  const gutter = number("gutter", 8);
+export const Default = ({
+  message,
+  placement,
+  topOffset,
+  bottomOffset,
+  leftOffset,
+  rightOffset,
+  dismissTimeout,
+  gutter,
+}) => {
+  const toast = () => createToast(message, { icon: <Notification /> });
 
   return (
     <>
@@ -46,6 +45,26 @@ export const Default = () => {
       />
     </>
   );
+};
+
+Default.args = {
+  message: "Thank you for feedback",
+  placement: PLACEMENTS.TOP_CENTER,
+  topOffset: 8,
+  bottomOffset: 8,
+  leftOffset: 8,
+  rightOffset: 8,
+  dismissTimeout: 5000,
+  gutter: 8,
+};
+
+Default.argTypes = {
+  placement: {
+    options: Object.values(PLACEMENTS),
+    control: {
+      type: "select",
+    },
+  },
 };
 
 export const WithPromise = () => {
@@ -77,15 +96,8 @@ export const WithPromise = () => {
   );
 };
 
-export const RTL = () => {
-  const toast = () =>
-    createToast(
-      text(
-        "message",
-        "When the Tooth fairy comes to your house she takes your tooth and gives you money. When Chuck Norris comes to your house he breaks your tooth and takes your money.",
-      ),
-      { icon: <Notification /> },
-    );
+export const RTL = ({ message }) => {
+  const toast = () => createToast(message, { icon: <Notification /> });
 
   return (
     <RenderInRtl>
@@ -95,4 +107,9 @@ export const RTL = () => {
       </>
     </RenderInRtl>
   );
+};
+
+RTL.args = {
+  message:
+    "When the Tooth fairy comes to your house she takes your tooth and gives you money. When Chuck Norris comes to your house he breaks your tooth and takes your money.",
 };

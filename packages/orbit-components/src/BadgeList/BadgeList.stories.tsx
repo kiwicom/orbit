@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select, boolean } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import Tooltip from "../Tooltip";
@@ -59,12 +58,7 @@ export const Sizes = () => (
   </BadgeList>
 );
 
-export const Playground = () => {
-  const dataTest = text("dataTest", "test");
-  const type = select("type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.NEUTRAL);
-  const size = select("size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.SMALL);
-  const strikeThrough = boolean("strikeThrough", false);
-
+export const Playground = ({ dataTest, type, size, strikeThrough }) => {
   return (
     <BadgeList dataTest={dataTest}>
       <BadgeListItem
@@ -104,6 +98,28 @@ export const Playground = () => {
 Playground.story = {
   parameters: {
     info: "Here you can try BadgeList component with additional functionality.",
+  },
+};
+
+Playground.args = {
+  dataTest: "test",
+  type: TYPE_OPTIONS.NEUTRAL,
+  size: SIZE_OPTIONS.SMALL,
+  strikeThrough: false,
+};
+
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  size: {
+    options: Object.values(SIZE_OPTIONS),
+    control: {
+      type: "select",
+    },
   },
 };
 

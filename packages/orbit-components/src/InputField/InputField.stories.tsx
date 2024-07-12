@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select, number, object } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { TYPE_OPTIONS, INPUTMODE } from "./consts";
@@ -14,19 +13,13 @@ import { SPACINGS_AFTER } from "../common/consts";
 
 import InputField from ".";
 
-const getIcons = (name: string, defaultIcon: string) =>
-  select(name, [null, ...Object.keys(Icons)], defaultIcon);
 const getIcon = (source: string | null) => source && Icons[source];
 
 export default {
   title: "InputField",
 };
 
-export const DefaultInput = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-
+export const DefaultInput = ({ label, value, placeholder }) => {
   return (
     <InputField label={label} value={value} placeholder={placeholder} onChange={action("change")} />
   );
@@ -40,13 +33,13 @@ DefaultInput.story = {
   },
 };
 
-export const NumberInput = () => {
-  const label = text("Label", "Number");
-  const value = text("Value", "2");
-  const placeholder = text("Placeholder", "Number");
-  const maxValue = number("maxValue", 3);
-  const minValue = number("minValue", 1);
+DefaultInput.args = {
+  label: "Label",
+  value: "",
+  placeholder: "Placeholder",
+};
 
+export const NumberInput = ({ label, value, placeholder, maxValue, minValue }) => {
   return (
     <InputField
       type="number"
@@ -68,11 +61,15 @@ NumberInput.story = {
   },
 };
 
-export const PasswordInput = () => {
-  const label = text("Label", "Password");
-  const value = text("Value", "p422W0rd");
-  const placeholder = text("Placeholder", "Password");
+NumberInput.args = {
+  label: "Number",
+  value: "2",
+  placeholder: "Number",
+  maxValue: 3,
+  minValue: 1,
+};
 
+export const PasswordInput = ({ label, value, placeholder }) => {
   return (
     <InputField
       type="password"
@@ -92,10 +89,13 @@ PasswordInput.story = {
   },
 };
 
-export const PassportOrIdInput = () => {
-  const label = text("Label", "Passport or ID number");
-  const placeholder = text("Placeholder", "588539238");
+PasswordInput.args = {
+  label: "Password",
+  value: "p422W0rd",
+  placeholder: "Password",
+};
 
+export const PassportOrIdInput = ({ label, placeholder }) => {
   return (
     <InputField
       type="passportid"
@@ -114,11 +114,12 @@ PassportOrIdInput.story = {
   },
 };
 
-export const EmailInput = () => {
-  const label = text("Label", "Email");
-  const value = text("Value", "name@example.co");
-  const placeholder = text("Placeholder", "Email");
+PassportOrIdInput.args = {
+  label: "Passport or ID number",
+  placeholder: "588539238",
+};
 
+export const EmailInput = ({ label, value, placeholder }) => {
   return (
     <InputField
       type="email"
@@ -144,12 +145,13 @@ EmailInput.story = {
   },
 };
 
-export const WithTextPrefix = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const prefix = text("Prefix", "$");
+EmailInput.args = {
+  label: "Email",
+  value: "name@example.co",
+  placeholder: "Email",
+};
 
+export const WithTextPrefix = ({ label, value, placeholder, prefix }) => {
   return (
     <InputField
       label={label}
@@ -169,12 +171,14 @@ WithTextPrefix.story = {
   },
 };
 
-export const WithTextSuffix = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const suffix = text("Suffix", "Some long text");
+WithTextPrefix.args = {
+  label: "Label",
+  value: "",
+  placeholder: "Placeholder",
+  prefix: "$",
+};
 
+export const WithTextSuffix = ({ label, value, placeholder, suffix }) => {
   return (
     <InputField
       label={label}
@@ -194,13 +198,14 @@ WithTextSuffix.story = {
   },
 };
 
-export const CompactInput = () => {
-  const value = text("Value", "");
-  const label = text("Label", "Label");
-  const placeholder = text("Placeholder", "Placeholder");
-  const required = boolean("required", false);
-  const error = text("Error", "");
+WithTextSuffix.args = {
+  label: "Label",
+  value: "",
+  placeholder: "Placeholder",
+  suffix: "Some long text",
+};
 
+export const CompactInput = ({ value, label, placeholder, required, error }) => {
   return (
     <InputField
       label={label}
@@ -222,13 +227,15 @@ CompactInput.story = {
   },
 };
 
-export const CompactInputWithTags = () => {
-  const value = text("Value", "");
-  const label = text("Label", "Label");
-  const placeholder = text("Placeholder", "Placeholder");
-  const required = boolean("required", false);
-  const error = text("Error", "");
+CompactInput.args = {
+  value: "",
+  label: "Label",
+  placeholder: "Placeholder",
+  required: false,
+  error: "",
+};
 
+export const CompactInputWithTags = ({ value, label, placeholder, required, error }) => {
   return (
     <InputField
       label={label}
@@ -276,12 +283,15 @@ CompactInputWithTags.story = {
   },
 };
 
-export const RequiredField = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const required = boolean("required", true);
-  const placeholder = text("Placeholder", "Placeholder");
+CompactInputWithTags.args = {
+  value: "",
+  label: "Label",
+  placeholder: "Placeholder",
+  required: false,
+  error: "",
+};
 
+export const RequiredField = ({ label, value, placeholder, required }) => {
   return (
     <InputField
       label={label}
@@ -301,11 +311,15 @@ RequiredField.story = {
   },
 };
 
-export const WithIconPrefix = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const Prefix = getIcon(getIcons("Prefix", "Search"));
+RequiredField.args = {
+  label: "Label",
+  value: "",
+  required: true,
+  placeholder: "Placeholder",
+};
+
+export const WithIconPrefix = ({ label, value, placeholder, prefixIcon }) => {
+  const Prefix = getIcon(prefixIcon);
 
   return (
     <InputField
@@ -326,11 +340,24 @@ WithIconPrefix.story = {
   },
 };
 
-export const WithButtonLinkSuffix = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const Suffix = getIcon(getIcons("Suffix", "Visibility"));
+WithIconPrefix.args = {
+  label: "Label",
+  value: "",
+  placeholder: "Placeholder",
+  prefixIcon: "Search",
+};
+
+WithIconPrefix.argTypes = {
+  prefixIcon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithButtonLinkSuffix = ({ label, value, placeholder, suffixIcon }) => {
+  const Suffix = getIcon(suffixIcon);
 
   return (
     <InputField
@@ -355,13 +382,23 @@ WithButtonLinkSuffix.story = {
   },
 };
 
-export const WithServiceLogoPrefix = () => {
-  const label = text("Label", "Label");
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const name = select("Type", Object.values(NAME_OPTIONS), NAME_OPTIONS.AIRHELP);
-  const grayScale = boolean("GrayScale", false);
+WithButtonLinkSuffix.args = {
+  label: "Label",
+  value: "",
+  placeholder: "Placeholder",
+  suffixIcon: "Visibility",
+};
 
+WithButtonLinkSuffix.argTypes = {
+  suffixIcon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithServiceLogoSuffix = ({ label, value, placeholder, name, grayScale }) => {
   return (
     <InputField
       label={label}
@@ -373,7 +410,7 @@ export const WithServiceLogoPrefix = () => {
   );
 };
 
-WithServiceLogoPrefix.story = {
+WithServiceLogoSuffix.story = {
   name: "With ServiceLogo prefix",
 
   parameters: {
@@ -381,28 +418,48 @@ WithServiceLogoPrefix.story = {
   },
 };
 
-export const WithError = () => {
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
-  const name = text("Name", "input");
-  const label = text("Label", "");
-  const inlineLabel = boolean("inline label", true);
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const Prefix = getIcon(getIcons("Prefix", "Search"));
-  const Suffix = getIcon(getIcons("Suffix", "Visibility"));
-  const help = text("Help", "");
-  const error = text("Error", "Please fill out as you have on your passport");
-  const disabled = boolean("Disabled", false);
-  const maxValue = number("maxValue", NaN);
-  const minValue = number("minValue", NaN);
-  const required = boolean("required", false);
-  const maxLength = number("maxLength", NaN);
-  const minLength = number("minLength", NaN);
-  const readOnly = boolean("readOnly", false);
-  const autoComplete = text("autoComplete", "off");
-  const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", SPACINGS_AFTER, SPACINGS_AFTER.MEDIUM);
-  const id = text("id", "ID");
+WithServiceLogoSuffix.args = {
+  label: "Label",
+  value: "",
+  placeholder: "Placeholder",
+  name: NAME_OPTIONS.AIRHELP,
+  grayScale: false,
+};
+
+WithServiceLogoSuffix.argTypes = {
+  name: {
+    options: Object.values(NAME_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithError = ({
+  type,
+  name,
+  label,
+  inlineLabel,
+  value,
+  placeholder,
+  prefixIcon,
+  suffixIcon,
+  help,
+  error,
+  disabled,
+  maxValue,
+  minValue,
+  required,
+  maxLength,
+  minLength,
+  readOnly,
+  autoComplete,
+  dataTest,
+  spaceAfter,
+  id,
+}) => {
+  const Prefix = getIcon(prefixIcon);
+  const Suffix = getIcon(suffixIcon);
 
   return (
     <InputField
@@ -452,28 +509,82 @@ WithError.story = {
   },
 };
 
-export const WithHelp = () => {
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
-  const name = text("Name", "input");
-  const label = text("Label", "Label");
-  const inlineLabel = boolean("inline label", true);
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const Prefix = getIcon(getIcons("Prefix", "Search"));
-  const Suffix = getIcon(getIcons("Suffix", "Visibility"));
-  const help = text("Help", "Please fill out as you have on your passport");
-  const error = text("Error", "");
-  const disabled = boolean("Disabled", false);
-  const maxValue = number("maxValue", NaN);
-  const minValue = number("minValue", NaN);
-  const required = boolean("required", false);
-  const maxLength = number("maxLength", NaN);
-  const minLength = number("minLength", NaN);
-  const readOnly = boolean("readOnly", false);
-  const autoComplete = text("autoComplete", "off");
-  const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.MEDIUM);
-  const id = text("id", "ID");
+WithError.args = {
+  type: TYPE_OPTIONS.TEXT,
+  name: "input",
+  label: "",
+  inlineLabel: true,
+  value: "",
+  placeholder: "Placeholder",
+  prefixIcon: "Search",
+  suffixIcon: "Visibility",
+  help: "",
+  error: "Please fill out as you have on your passport",
+  disabled: false,
+  maxValue: NaN,
+  minValue: NaN,
+  required: false,
+  maxLength: NaN,
+  minLength: NaN,
+  readOnly: false,
+  autoComplete: "off",
+  dataTest: "test",
+  spaceAfter: SPACINGS_AFTER.MEDIUM,
+  id: "ID",
+};
+
+WithError.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  prefixIcon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  suffixIcon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithHelp = ({
+  type,
+  name,
+  label,
+  inlineLabel,
+  value,
+  dataTest,
+  placeholder,
+  prefixIcon,
+  suffixIcon,
+  help,
+  error,
+  disabled,
+  maxValue,
+  minValue,
+  required,
+  maxLength,
+  minLength,
+  readOnly,
+  autoComplete,
+  spaceAfter,
+  id,
+}) => {
+  const Prefix = getIcon(prefixIcon);
+  const Suffix = getIcon(suffixIcon);
 
   return (
     <InputField
@@ -523,32 +634,85 @@ WithHelp.story = {
   },
 };
 
-export const Playground = () => {
-  const type = select("Type", Object.values(TYPE_OPTIONS), TYPE_OPTIONS.TEXT);
-  const name = text("Name", "input");
-  const label = text("Label", "Label");
-  const inlineLabel = boolean("inline label", false);
-  const value = text("Value", "");
-  const placeholder = text("Placeholder", "Placeholder");
-  const Prefix = getIcon(getIcons("Prefix", "Search"));
-  const Suffix = getIcon(getIcons("Suffix", "Visibility"));
-  const help = text("Help", "");
-  const error = text("Error", "");
-  const disabled = boolean("Disabled", false);
-  const width = text("width", "");
-  const maxValue = number("maxValue", NaN);
-  const minValue = number("minValue", NaN);
-  const required = boolean("required", false);
-  const maxLength = number("maxLength", NaN);
-  const minLength = number("minLength", NaN);
-  const readOnly = boolean("readOnly", false);
-  const autoComplete = text("autoComplete", "off");
-  const dataTest = text("dataTest", "test");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
-  const id = text("id", "ID");
-  const inputMode = select("inputMode", Object.values(INPUTMODE), INPUTMODE.TEXT);
-  const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
+WithHelp.args = {
+  type: TYPE_OPTIONS.TEXT,
+  name: "input",
+  label: "Label",
+  inlineLabel: true,
+  value: "",
+  placeholder: "Placeholder",
+  prefixIcon: "Search",
+  suffixIcon: "Visibility",
+  help: "Please fill out as you have on your passport",
+  error: "",
+  disabled: false,
+  maxValue: NaN,
+  minValue: NaN,
+  required: false,
+  maxLength: NaN,
+  minLength: NaN,
+  readOnly: false,
+  autoComplete: "off",
+  dataTest: "test",
+  spaceAfter: SPACINGS_AFTER.MEDIUM,
+  id: "ID",
+};
 
+WithHelp.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  prefixIcon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  suffixIcon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  type,
+  name,
+  label,
+  inlineLabel,
+  value,
+  dataTest,
+  placeholder,
+  prefixIcon,
+  suffixIcon,
+  help,
+  error,
+  disabled,
+  width,
+  maxValue,
+  minValue,
+  required,
+  maxLength,
+  minLength,
+  readOnly,
+  autoComplete,
+  spaceAfter,
+  id,
+  inputMode,
+  dataAttrs,
+}) => {
+  const Prefix = getIcon(prefixIcon);
+  const Suffix = getIcon(suffixIcon);
   return (
     <InputField
       type={type}
@@ -603,12 +767,67 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const help = text("Help", "Please fill out as you have on your passport");
-  const error = text("Error", "");
-  const inlineLabel = boolean("inline label", false);
-  const label = text("Label", "");
+Playground.args = {
+  type: TYPE_OPTIONS.TEXT,
+  name: "input",
+  label: "Label",
+  inlineLabel: true,
+  value: "",
+  placeholder: "Placeholder",
+  prefixIcon: "Search",
+  suffixIcon: "Visibility",
+  help: "",
+  error: "",
+  disabled: false,
+  width: "",
+  maxValue: NaN,
+  minValue: NaN,
+  required: false,
+  maxLength: NaN,
+  minLength: NaN,
+  readOnly: false,
+  autoComplete: "off",
+  dataTest: "test",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  id: "ID",
+  inputMode: INPUTMODE.TEXT,
+  dataAttrs: { "data-recording-ignore": true },
+};
 
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  prefixIcon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  suffixIcon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+  inputMode: {
+    options: Object.values(INPUTMODE),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ help, error, inlineLabel, label }) => {
   return (
     <RenderInRtl>
       <InputField
@@ -630,4 +849,11 @@ Rtl.story = {
   parameters: {
     info: "This is a preview of this component in RTL setup.",
   },
+};
+
+Rtl.args = {
+  help: "Please fill out as you have on your passport",
+  error: "",
+  inlineLabel: false,
+  label: "",
 };

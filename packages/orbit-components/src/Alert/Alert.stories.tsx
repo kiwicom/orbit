@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select } from "@storybook/addon-knobs";
 
 import * as Icons from "../icons";
 import { TYPE_OPTIONS } from "./consts";
@@ -17,17 +16,14 @@ import TextLink from "../TextLink";
 
 import Alert, { AlertButton } from ".";
 
-const getIcons = (defaultIcon: string) => select("Icon", ["", ...Object.keys(Icons)], defaultIcon);
-
 const getIcon = (source: string): React.ReactNode => Icons[source];
 
 export default {
   title: "Alert",
 };
 
-export const Default = () => {
-  const message = "The quick, brown fox jumps over a lazy dog.";
-  return <Alert icon title={message} />;
+export const Default = ({ title }) => {
+  return <Alert icon title={title} />;
 };
 
 Default.story = {
@@ -36,20 +32,36 @@ Default.story = {
   },
 };
 
-export const Content = () => {
-  const message = "The quick, brown fox jumps over a lazy dog.";
+Default.args = {
+  title: "The quick, brown fox jumps over a lazy dog.",
+};
+
+export const Content = ({ message }) => {
   return <Alert icon>{message}</Alert>;
 };
 
-export const Button = () => {
-  const type = select("type", Object.values(BUTTON_TYPE_OPTIONS), BUTTON_TYPE_OPTIONS.INFO);
+Content.args = {
+  message: "The quick, brown fox jumps over a lazy dog.",
+};
 
+export const Button = ({ type }) => {
   return <AlertButton type={type}>AlertButton</AlertButton>;
 };
 
-export const InfoAlert = () => {
-  const title = text("Title", "Some additional information");
-  const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
+Button.args = {
+  type: BUTTON_TYPE_OPTIONS.INFO,
+};
+
+Button.argTypes = {
+  type: {
+    options: Object.values(BUTTON_TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const InfoAlert = ({ title, message }) => {
   return (
     <Alert title={title} icon>
       {message}
@@ -65,9 +77,12 @@ InfoAlert.story = {
   },
 };
 
-export const SuccessAlert = () => {
-  const title = text("Title", "You did it!");
-  const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
+InfoAlert.args = {
+  title: "Some additional information",
+  message: "The quick, brown fox jumps over a lazy dog.",
+};
+
+export const SuccessAlert = ({ title, message }) => {
   return (
     <Alert type="success" title={title} icon>
       {message}
@@ -83,9 +98,12 @@ SuccessAlert.story = {
   },
 };
 
-export const WarningAlert = () => {
-  const title = text("Title", "Be careful!");
-  const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
+SuccessAlert.args = {
+  title: "You did it!",
+  message: "The quick, brown fox jumps over a lazy dog.",
+};
+
+export const WarningAlert = ({ title, message }) => {
   return (
     <Alert type="warning" title={title} icon>
       {message}
@@ -101,9 +119,12 @@ WarningAlert.story = {
   },
 };
 
-export const CriticalAlert = () => {
-  const title = text("Title", "Something has gone horribly wrong");
-  const message = text("Message", "The quick, brown fox jumps over a lazy dog.");
+WarningAlert.args = {
+  title: "Be careful!",
+  message: "The quick, brown fox jumps over a lazy dog.",
+};
+
+export const CriticalAlert = ({ title, message }) => {
   return (
     <Alert type="critical" title={title} icon>
       {message}
@@ -119,8 +140,12 @@ CriticalAlert.story = {
   },
 };
 
-export const OnlyTitle = () => {
-  const title = text("Title", "The quick, brown fox jumps over a lazy dog.");
+CriticalAlert.args = {
+  title: "Something has gone horribly wrong",
+  message: "The quick, brown fox jumps over a lazy dog.",
+};
+
+export const OnlyTitle = ({ title }) => {
   return <Alert title={title} closable />;
 };
 
@@ -132,12 +157,12 @@ OnlyTitle.story = {
   },
 };
 
-export const InlineActions = () => {
-  const type = select("Type", Object.values(TYPE_OPTIONS), "info");
-  const title = text("Title", "You can change the title by changing the Title knob");
-  const button = text("Button", "I am a link");
-  const closable = boolean("Closable", false);
-  const Icon = getIcon(getIcons("Airplane"));
+OnlyTitle.args = {
+  title: "The quick, brown fox jumps over a lazy dog.",
+};
+
+export const InlineActions = ({ type, icon, title, closable, button }) => {
+  const Icon = getIcon(icon);
 
   return (
     <Alert
@@ -161,9 +186,30 @@ InlineActions.story = {
   },
 };
 
-export const WithTextLink = () => {
-  const type = select("Type", Object.values(TYPE_OPTIONS), "info");
+InlineActions.args = {
+  type: TYPE_OPTIONS.INFO,
+  title: "You can change the title by changing the Title knob",
+  button: "I am a link",
+  closable: false,
+  icon: "Airplane",
+};
 
+InlineActions.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const WithTextLink = ({ type }) => {
   return (
     <Alert type={type}>
       <p>
@@ -181,17 +227,31 @@ WithTextLink.story = {
   },
 };
 
-export const Playground = () => {
-  const type = select("Type", Object.values(TYPE_OPTIONS), "info");
-  const title = text("Title", "You can change the title by changing the Title knob");
-  const message = text("Message", "Also you can change the message by changing the Message knob");
-  const dataTest = text("dataTest", "test");
-  const button = text("Button", "I am a link");
-  const closable = boolean("Closable", false);
-  const Icon = getIcon(getIcons("Airplane"));
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
-  const suppressed = boolean("suppressed", false);
+WithTextLink.args = {
+  type: TYPE_OPTIONS.INFO,
+};
 
+WithTextLink.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Playground = ({
+  type,
+  title,
+  message,
+  dataTest,
+  button,
+  closable,
+  icon,
+  spaceAfter,
+  suppressed,
+}) => {
+  const Icon = getIcon(icon);
   return (
     <Alert
       type={type}
@@ -217,7 +277,7 @@ export const Playground = () => {
           <AlertButton type={type} href="#">
             {button}
           </AlertButton>
-          <AlertButton type={suppressed ? "secondary" : `${type}Subtle`} href="#">
+          <AlertButton type={suppressed ? "secondary" : undefined} href="#">
             {button}
           </AlertButton>
         </Stack>
@@ -232,8 +292,41 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const Icon = getIcon(getIcons("Airplane"));
+Playground.args = {
+  type: TYPE_OPTIONS.INFO,
+  title: "You can change the title by changing the Title knob",
+  message: "Also you can change the message by changing the Message knob",
+  dataTest: "test",
+  button: "I am a link",
+  closable: false,
+  icon: "Airplane",
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  suppressed: false,
+};
+
+Playground.argTypes = {
+  type: {
+    options: Object.values(TYPE_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+  icon: {
+    options: Object.keys(Icons),
+    control: {
+      type: "select",
+    },
+  },
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ icon }) => {
+  const Icon = getIcon(icon);
 
   return (
     <RenderInRtl>
@@ -269,5 +362,16 @@ Rtl.story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+  },
+};
+
+Rtl.args = {
+  icon: "Airplane",
+};
+
+Rtl.argTypes = {
+  icon: {
+    options: Object.keys(Icons),
+    control: "select",
   },
 };

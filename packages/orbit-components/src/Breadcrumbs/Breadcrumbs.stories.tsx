@@ -1,6 +1,5 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { select, text, boolean } from "@storybook/addon-knobs";
 
 import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -31,11 +30,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
-  const href = text("href", "https://kiwi.com");
-  const withGoBack = boolean("onGoBack", true);
-  const backHref = text("backHref", "");
+export const Playground = ({ spaceAfter, href, withGoBack, backHref }) => {
   return (
     <Breadcrumbs
       backHref={backHref}
@@ -67,8 +62,23 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => {
-  const href = text("href", "https://kiwi.com");
+Playground.args = {
+  spaceAfter: SPACINGS_AFTER.SMALL,
+  href: "https://kiwi.com",
+  withGoBack: true,
+  backHref: "",
+};
+
+Playground.argTypes = {
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = ({ href }) => {
   return (
     <RenderInRtl>
       <Breadcrumbs onGoBack={action("onGoBack")}>
@@ -94,6 +104,10 @@ export const Rtl = () => {
 
 Rtl.story = {
   name: "RTL",
+};
+
+Rtl.args = {
+  href: "https://kiwi.com",
 };
 
 export const BackLink = () => <Breadcrumbs backHref="https://www.kiwi.com">{null}</Breadcrumbs>;

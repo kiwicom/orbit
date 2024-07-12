@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import { LANGUAGE } from "./consts";
@@ -11,10 +10,7 @@ export default {
   title: "ButtonMobileStore",
 };
 
-export const Default = () => {
-  const href = text("href", "#");
-  const lang = select("lang", Object.values(LANGUAGE), LANGUAGE.EN);
-
+export const Default = ({ href, lang }) => {
   return (
     <Stack flex>
       <ButtonMobileStore
@@ -38,5 +34,19 @@ export const Default = () => {
 Default.story = {
   parameters: {
     info: "This is the default configuration of this component.",
+  },
+};
+
+Default.args = {
+  href: "#",
+  lang: LANGUAGE.EN,
+};
+
+Default.argTypes = {
+  lang: {
+    options: Object.values(LANGUAGE),
+    control: {
+      type: "select",
+    },
   },
 };

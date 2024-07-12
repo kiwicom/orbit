@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, boolean, number, object, select } from "@storybook/addon-knobs";
 
 import { SPACINGS_AFTER } from "../../common/consts";
 
@@ -9,39 +8,25 @@ export default {
   title: "Grid",
 };
 
-export const Playground = () => {
-  const inline = boolean("inline", false);
-  const maxWidth = text("maxWidth", "1440px");
-  const width = text("width", "100%");
-  const columns = text("columns", "");
-  const rows = text("rows", "repeat(8, 40px)");
-  const gap = text("gap", "");
-  const columnGap = text("columnGap", "");
-  const rowGap = text("rowGap", "10px");
-  const as = text("as", "div");
-  const dataTest = text("dataTest", "test");
-  const divsCount = number("divsCount", 8);
-  const mediumMobile = object("mediumMobile", {
-    rowGap: "0",
-  });
-  const largeMobile = object("largeMobile", {
-    columns: "repeat(4, 1fr)",
-    rows: "repeat(2, 40px)",
-    gap: "20px",
-  });
-  const tablet = object("tablet", {
-    columnGap: "40px",
-  });
-  const desktop = object("desktop", {
-    columns: "repeat(2, minmax(100px, 1fr))",
-    rows: "repeat(4, 40px)",
-    gap: "40px",
-  });
-  const largeDesktop = object("largeDesktop", {
-    columns: "repeat(8, minmax(10px, 1fr))",
-    rows: "40px",
-  });
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NORMAL);
+export const Playground = ({
+  inline,
+  maxWidth,
+  width,
+  columns,
+  rows,
+  gap,
+  columnGap,
+  rowGap,
+  as,
+  dataTest,
+  divsCount,
+  mediumMobile,
+  largeMobile,
+  tablet,
+  desktop,
+  largeDesktop,
+  spaceAfter,
+}) => {
   return (
     <Grid
       inline={inline}
@@ -67,4 +52,49 @@ export const Playground = () => {
       ))}
     </Grid>
   );
+};
+
+Playground.args = {
+  inline: false,
+  maxWidth: "1440px",
+  width: "100%",
+  columns: "",
+  rows: "repeat(8, 40px)",
+  gap: "",
+  columnGap: "",
+  rowGap: "10px",
+  as: "div",
+  dataTest: "test",
+  divsCount: 8,
+  mediumMobile: {
+    rowGap: "0",
+  },
+  largeMobile: {
+    columns: "repeat(4, 1fr)",
+    rows: "repeat(2, 40px)",
+    gap: "20px",
+  },
+  tablet: {
+    columnGap: "40px",
+  },
+  desktop: {
+    columns: "repeat(2, minmax(100px, 1fr))",
+    rows: "repeat(4, 40px)",
+    gap: "40px",
+  },
+  largeDesktop: {
+    columns: "repeat(8, minmax(10px, 1fr))",
+    rows: "40px",
+  },
+  spaceAfter: SPACINGS_AFTER.NORMAL,
+};
+
+Playground.argTypes = {
+  spaceAfter: {
+    name: "spaceAfter",
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
 };

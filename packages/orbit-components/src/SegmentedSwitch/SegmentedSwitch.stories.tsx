@@ -1,5 +1,4 @@
 import * as React from "react";
-import { text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -10,13 +9,7 @@ export default {
   title: "SegmentedSwitch",
 };
 
-export const Default = () => {
-  const label = text("Label", "Gender");
-  const help = text("Help", "When Chuck Norris plays dodgeball, the balls dodge him.");
-  const error = text("Error", "Chuck Norris makes onions cry.");
-  const maxWidth = text("maxWidth", "");
-  const showTooltip = boolean("showTooltip", false);
-
+export const Default = ({ label, help, error, maxWidth, showTooltip }) => {
   return (
     <SegmentedSwitch
       label={label}
@@ -40,13 +33,15 @@ Default.story = {
   },
 };
 
-export const Rtl = () => {
-  const label = text("Label", "Gender");
-  const help = text("Help", "When Chuck Norris plays dodgeball, the balls dodge him.");
-  const error = text("Error", "Chuck Norris makes onions cry.");
-  const maxWidth = text("maxWidth", "");
-  const showTooltip = boolean("showTooltip", false);
+Default.args = {
+  label: "Gender",
+  help: "When Chuck Norris plays dodgeball, the balls dodge him.",
+  error: "Chuck Norris makes onions cry.",
+  maxWidth: "20%",
+  showTooltip: false,
+};
 
+export const Rtl = ({ label, help, error, maxWidth, showTooltip }) => {
   return (
     <RenderInRtl>
       <SegmentedSwitch

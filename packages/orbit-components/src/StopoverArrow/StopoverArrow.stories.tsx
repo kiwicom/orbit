@@ -1,5 +1,4 @@
 import * as React from "react";
-import { select, text } from "@storybook/addon-knobs";
 
 import STOPS from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -10,11 +9,7 @@ export default {
   title: "StopoverArrow",
 };
 
-export const Playground = () => {
-  const stops = select("stops", Object.values(STOPS), STOPS.ZERO);
-  const dataTest = text("dataTest", "test");
-  const id = text("id", "ID");
-
+export const Playground = ({ stops, dataTest, id }) => {
   return <StopoverArrow stops={stops} dataTest={dataTest} id={id} />;
 };
 
@@ -24,9 +19,22 @@ Playground.story = {
   },
 };
 
-export const InRtl = () => {
-  const stops = select("stops", Object.values(STOPS), STOPS.THREE);
-  const dataTest = text("dataTest", "test");
+Playground.args = {
+  stops: STOPS.ZERO,
+  dataTest: "test",
+  id: "ID",
+};
+
+Playground.argTypes = {
+  stops: {
+    options: Object.values(STOPS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const InRtl = ({ stops, dataTest }) => {
   return (
     <RenderInRtl>
       <StopoverArrow stops={stops} dataTest={dataTest} />
@@ -39,5 +47,19 @@ InRtl.story = {
 
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+InRtl.args = {
+  stops: STOPS.THREE,
+  dataTest: "test",
+};
+
+InRtl.argTypes = {
+  stops: {
+    options: Object.values(STOPS),
+    control: {
+      type: "select",
+    },
   },
 };

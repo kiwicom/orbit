@@ -1,5 +1,4 @@
 import * as React from "react";
-import { select } from "@storybook/addon-knobs";
 
 import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -22,20 +21,7 @@ Default.story = {
   },
 };
 
-export const Playground = () => {
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.LARGEST);
-  const align = select("align", ["left", "right", "center"], "left");
-  const sideOffsetOptions: SideOffset[] = ["none", "small", "medium", "large", "XLarge", "XXLarge"];
-  const type = select("type", ["solid", "dashed", "dotted", "double", "none"], "solid");
-  const color = select(
-    "color",
-    Object.keys(defaultTheme.orbit)
-      .filter(t => t.startsWith("palette"))
-      .map(c => kebabCase(c.replace("palette", "border"))),
-    "",
-  ) as BorderColorClass;
-
-  const sideOffset = select("sideOffset", sideOffsetOptions, "none");
+export const Playground = ({ spaceAfter, align, sideOffset, type, color }) => {
   return (
     <Separator
       color={color}
@@ -53,9 +39,52 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
+Playground.args = {
+  spaceAfter: SPACINGS_AFTER.LARGEST,
+  align: "left",
+  sideOffset: "none" as SideOffset,
+  type: "solid",
+  color: "" as BorderColorClass,
+};
+
+Playground.argTypes = {
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: ["left", "right", "center"],
+    control: {
+      type: "select",
+    },
+  },
+  sideOffset: {
+    options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: ["solid", "dashed", "dotted", "double", "none"],
+    control: {
+      type: "select",
+    },
+  },
+  color: {
+    options: Object.keys(defaultTheme.orbit)
+      .filter(t => t.startsWith("palette"))
+      .map(c => kebabCase(c.replace("palette", "border"))),
+    control: {
+      type: "select",
+    },
+  },
+};
+
+export const Rtl = args => (
   <RenderInRtl>
-    <Playground />
+    <Playground {...args} />
   </RenderInRtl>
 );
 
@@ -64,5 +93,48 @@ Rtl.story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+  },
+};
+
+Rtl.args = {
+  spaceAfter: SPACINGS_AFTER.LARGEST,
+  align: "left",
+  sideOffset: "none" as SideOffset,
+  type: "solid",
+  color: "" as BorderColorClass,
+};
+
+Rtl.argTypes = {
+  spaceAfter: {
+    options: Object.values(SPACINGS_AFTER),
+    control: {
+      type: "select",
+    },
+  },
+  align: {
+    options: ["left", "right", "center"],
+    control: {
+      type: "select",
+    },
+  },
+  sideOffset: {
+    options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
+    control: {
+      type: "select",
+    },
+  },
+  type: {
+    options: ["solid", "dashed", "dotted", "double", "none"],
+    control: {
+      type: "select",
+    },
+  },
+  color: {
+    options: Object.keys(defaultTheme.orbit)
+      .filter(t => t.startsWith("palette"))
+      .map(c => kebabCase(c.replace("palette", "border"))),
+    control: {
+      type: "select",
+    },
   },
 };

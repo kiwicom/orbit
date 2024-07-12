@@ -1,13 +1,17 @@
 import * as React from "react";
+import type { Decorator } from "@storybook/react";
 import jsxToString from "react-element-to-jsx-string";
-import { Source } from "@storybook/blocks";
+import { Highlight, themes } from "prism-react-renderer";
 
 import defaultTheme from "../src/defaultTheme";
 import OrbitProvider from "../src/OrbitProvider";
 import Heading from "../src/Heading";
 import Text from "../src/Text";
+import Tile from "../src/Tile";
 
-const OrbitDecorator = (storyFn, context) => {
+const OrbitDecorator: Decorator = (storyFn, context) => {
+  const [isCopied, setIsCopied] = React.useState(false);
+
   React.useEffect(() => {
     const html = document.querySelector("html");
     if (html && !html.getAttribute("dir")) html.setAttribute("dir", "ltr");
@@ -15,6 +19,16 @@ const OrbitDecorator = (storyFn, context) => {
       if (html) html.removeAttribute("dir");
     };
   }, []);
+
+  const handleCopyCode = (codeToCopy: string) => {
+    navigator.clipboard.writeText(codeToCopy);
+
+    setIsCopied(true);
+
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
 
   const children = storyFn(context);
   const { globals } = context;
@@ -26,6 +40,7 @@ const OrbitDecorator = (storyFn, context) => {
   };
 
   const inverted = globals.backgrounds ? globals.backgrounds.value === "#333333" : undefined;
+  const code = jsxToString(children, options);
 
   return (
     <OrbitProvider useId={React.useId} theme={{ ...defaultTheme }}>
@@ -37,8 +52,33 @@ const OrbitDecorator = (storyFn, context) => {
           {context.parameters?.info}
         </Text>
         {children}
-        <div style={{ marginTop: 20 }} dir="ltr">
-          <Source code={jsxToString(children, options)} language="jsx" format={false} />
+        <div dir="ltr" className="mt-lg relative">
+          <Tile>
+            <Highlight theme={themes.vsLight} code={code} language="tsx">
+              {({ style, tokens, getLineProps, getTokenProps }) => (
+                <pre className="text-small overflow-x-auto" style={style}>
+                  {tokens.map((line, i) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <div key={i} {...getLineProps({ line })}>
+                      {line.map((token, key) => (
+                        // eslint-disable-next-line react/no-array-index-key
+                        <span key={key} {...getTokenProps({ token })} />
+                      ))}
+                    </div>
+                  ))}
+                </pre>
+              )}
+            </Highlight>
+          </Tile>
+          <div className="absolute bottom-0 right-0">
+            <button
+              className="text-small py-xxs px-xs text-ink-dark font-bold"
+              onClick={() => handleCopyCode(code)}
+              type="button"
+            >
+              {isCopied ? "Copied!" : "Copy"}
+            </button>
+          </div>
         </div>
       </div>
     </OrbitProvider>

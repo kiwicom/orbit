@@ -1,22 +1,28 @@
 /* eslint-disable no-param-reassign */
-import path from "path";
+import path, { dirname, join } from "path";
 import type { StorybookConfig } from "@storybook/react-webpack5";
+
+function getAbsolutePath(value: string): string {
+  return dirname(require.resolve(join(value, "package.json")));
+}
 
 const config: StorybookConfig = {
   staticDirs: [path.resolve(__dirname, "../static")],
   stories: ["../src/**/*.stories.*"],
-  framework: "@storybook/react-webpack5",
+  framework: getAbsolutePath("@storybook/react-webpack5"),
+
   addons: [
-    "@storybook/addon-knobs",
-    "@storybook/addon-a11y",
-    "storybook-addon-pseudo-states",
+    getAbsolutePath("@storybook/addon-knobs"),
+    getAbsolutePath("@storybook/addon-a11y"),
+    getAbsolutePath("storybook-addon-pseudo-states"),
     {
-      name: "@storybook/addon-essentials",
+      name: getAbsolutePath("@storybook/addon-essentials"),
       options: {
         controls: false,
       },
     },
     {
+      // eslint-disable-next-line storybook/no-uninstalled-addons
       name: "@storybook/addon-styling",
       options: {
         postCss: true,

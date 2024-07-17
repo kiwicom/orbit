@@ -3788,6 +3788,17 @@
   resolved "https://registry.npmjs.org/@sideway/pinpoint/-/pinpoint-2.0.0.tgz"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
+"@sigmacomputing/babel-plugin-lodash@^3.3.5":
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/@sigmacomputing/babel-plugin-lodash/-/babel-plugin-lodash-3.3.5.tgz#613d98b0cbb51c1836bbc12c8a12d75750ee3510"
+  integrity sha512-VFhaHjlNzWyBtBm3YdqOwP8GbQHK7sWzXKpSUBTLjl2Zz6/9PwCK4qXZXI5CHpDjmvbouHUDbjrZP2KU5h6VQg==
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0"
+    "@babel/types" "^7.0.0"
+    glob "^7.1.1"
+    lodash "^4.17.10"
+    require-package-name "^2.0.1"
+
 "@sigstore/bundle@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@sigstore/bundle/-/bundle-1.1.0.tgz#17f8d813b09348b16eeed66a8cf1c3d6bd3d04f1"
@@ -12822,13 +12833,13 @@ gatsby-plugin-loadable-components-ssr@^4.3.2:
     "@loadable/server" "^5.15.0"
     "@loadable/webpack-plugin" "^5.15.0"
 
-gatsby-plugin-lodash@^5.12.1:
-  version "5.25.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-lodash/-/gatsby-plugin-lodash-5.25.0.tgz"
-  integrity sha512-Jo3Lc9Wen6oLiI89nZ7NJevPUEVYMIYQpTjrDgdV49OO8jqvoiQE/97dycC4mri8gZhKXDGeuBdSk+MAufjqPg==
+gatsby-plugin-lodash@^6.13.1:
+  version "6.13.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-6.13.1.tgz#6892ef69cb1e993f1ff1ae8eae599202be45246d"
+  integrity sha512-PjvHI+D/HakAbRCC17MnCGt97nEKlEyCueYPKdGGa6OCldvaQLmeqssPiZLF4fQH8THIjmDRTAOjPPJcQoVMYA==
   dependencies:
-    "@babel/runtime" "^7.15.4"
-    babel-plugin-lodash "^3.3.4"
+    "@babel/runtime" "^7.20.13"
+    "@sigmacomputing/babel-plugin-lodash" "^3.3.5"
     lodash-webpack-plugin "^0.11.6"
 
 gatsby-plugin-manifest@^4.11.1:

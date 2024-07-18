@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.9.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.8.0...@kiwicom/orbit-components@15.9.0) (2024-07-18)
+
+
+### Features
+
+* **icons:** update twitter icon to 'X' design ([52ae537](https://github.com/kiwicom/orbit/commit/52ae5371bbbc9e17d7cac4a19d33626cd4e9514a))
+
+
+
+
+
 # [15.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.7.0...@kiwicom/orbit-components@15.8.0) (2024-07-11)
 
 

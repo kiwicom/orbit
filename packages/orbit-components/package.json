@@ -113,7 +113,7 @@
     "babel-loader": "^9.1.2",
     "babel-plugin-require-context-hook": "^1.0.0",
     "cypress": "^13.2.0",
-    "eslint-plugin-storybook": "^0.6.12",
+    "eslint-plugin-storybook": "^0.8.0",
     "fs-extra": "^9.0.1",
     "jscodeshift": "^0.13.1",
     "jsdom": "^20.0.3",

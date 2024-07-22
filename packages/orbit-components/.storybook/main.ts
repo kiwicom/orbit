@@ -22,10 +22,25 @@ const config: StorybookConfig = {
       },
     },
     {
-      // eslint-disable-next-line storybook/no-uninstalled-addons
-      name: "@storybook/addon-styling",
+      name: getAbsolutePath("@storybook/addon-styling-webpack"),
       options: {
-        postCss: true,
+        rules: [
+          {
+            test: /\.css$/,
+            sideEffects: true,
+            use: [
+              "style-loader",
+              {
+                loader: "css-loader",
+                options: { importLoaders: 1 },
+              },
+              {
+                loader: "postcss-loader",
+                options: { implementation: require.resolve("postcss") },
+              },
+            ],
+          },
+        ],
       },
     },
   ],

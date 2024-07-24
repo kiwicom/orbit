@@ -8,6 +8,15 @@ import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
 import createRel from "../primitives/ButtonPrimitive/common/createRel";
 import { sizeClasses, typeClasses } from "./helpers/twClasses";
 
+function filterAriaDataProps(props: object) {
+  return Object.keys(props).reduce((acc, key) => {
+    if (key.startsWith("data-") || key.startsWith("aria-")) {
+      acc[key] = props[key];
+    }
+    return acc;
+  }, {});
+}
+
 // eslint-disable-next-line jsx-a11y/anchor-has-content
 const DefaultComponent = props => <a {...props} />;
 
@@ -47,6 +56,7 @@ const TextLink = ({
   title,
   standAlone,
   noUnderline,
+  ...props
 }: Props) => {
   const onClickHandler = (ev: React.SyntheticEvent<HTMLAnchorElement>) => {
     if (stopPropagation) {
@@ -54,6 +64,8 @@ const TextLink = ({
     }
     if (onClick) onClick(ev);
   };
+
+  const filteredAriaDataProps = filterAriaDataProps(props);
 
   return (
     <Component
@@ -76,6 +88,7 @@ const TextLink = ({
         size != null && sizeClasses[size],
         noUnderline ? "no-underline" : "underline",
       )}
+      {...filteredAriaDataProps}
     >
       <IconContainer size={size}>{iconLeft}</IconContainer>
       {children}

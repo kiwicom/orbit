@@ -19,6 +19,7 @@ export default {
           options: [
             "display",
             "displaySubtitle",
+            "title0",
             "title1",
             "title2",
             "title3",

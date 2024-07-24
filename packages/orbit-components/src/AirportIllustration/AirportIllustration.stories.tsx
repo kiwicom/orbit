@@ -1,59 +1,48 @@
-import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { NAMES } from "./consts.mts";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive";
 import { SPACINGS_AFTER } from "../common/consts";
-import type { Name } from "./types";
 
 import AirportIllustration from ".";
 
-export default {
+const meta: Meta<typeof AirportIllustration> = {
   title: "AirportIllustration",
-};
+  component: AirportIllustration,
 
-export const Playground = ({ size, name, dataTest, spaceAfter, alt }) => {
-  return (
-    <AirportIllustration
-      size={size}
-      name={name}
-      dataTest={dataTest}
-      spaceAfter={spaceAfter}
-      alt={alt}
-    />
-  );
-};
-
-Playground.story = {
   parameters: {
-    info: "Explore our new set of Airportillustrations for Kiwi.com.",
+    info: "Explore our new set of Airport Illustrations for Kiwi.com.",
+  },
+
+  args: {
+    size: SIZE_OPTIONS.MEDIUM,
+    name: "BGYFastTrack",
+    spaceAfter: SPACINGS_AFTER.SMALL,
+  },
+
+  argTypes: {
+    size: {
+      options: Object.values(SIZE_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+    name: {
+      options: NAMES,
+      control: {
+        type: "select",
+      },
+    },
+    spaceAfter: {
+      options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
   },
 };
 
-Playground.args = {
-  size: SIZE_OPTIONS.MEDIUM,
-  name: "BGYFastTrack" as Name,
-  dataTest: "test",
-  alt: "null",
-  spaceAfter: SPACINGS_AFTER.SMALL,
-};
+export default meta;
+type Story = StoryObj<typeof AirportIllustration>;
 
-Playground.argTypes = {
-  size: {
-    options: Object.values(SIZE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-  name: {
-    options: NAMES,
-    control: {
-      type: "select",
-    },
-  },
-  spaceAfter: {
-    options: Object.values(SPACINGS_AFTER),
-    control: {
-      type: "select",
-    },
-  },
-};
+export const Playground: Story = {};

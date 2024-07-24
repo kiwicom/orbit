@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import * as Icons from "../icons";
@@ -10,12 +11,19 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import BadgeList, { BadgeListItem } from ".";
 
-export default {
+type BadgeListPropsAndCustomArgs = React.ComponentProps<typeof BadgeList> &
+  React.ComponentProps<typeof BadgeListItem>;
+
+const meta: Meta<BadgeListPropsAndCustomArgs> = {
   title: "BadgeList",
+  component: BadgeList,
 };
 
-export const Default = () => {
-  return (
+export default meta;
+type Story = StoryObj<BadgeListPropsAndCustomArgs>;
+
+export const Default: Story = {
+  render: () => (
     <BadgeList>
       <BadgeListItem icon={<Icons.AlertCircle />}>
         You&apos;re departing from a different place
@@ -24,43 +32,47 @@ export const Default = () => {
         You must collect and recheck your baggage
       </BadgeListItem>
     </BadgeList>
-  );
+  ),
 };
 
-export const Types = () => {
-  const component = type => (
-    <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type}>
-      <TextLink onClick={action("link clicked")} type="secondary">
-        Transfer protected
-      </TextLink>{" "}
-      by the Kiwi.com Guarantee
-    </BadgeListItem>
-  );
-  return (
+export const Types: Story = {
+  render: () => {
+    const component = type => (
+      <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type}>
+        <TextLink onClick={action("link clicked")} type="secondary">
+          Transfer protected
+        </TextLink>{" "}
+        by the Kiwi.com Guarantee
+      </BadgeListItem>
+    );
+    return (
+      <BadgeList>
+        {component(TYPE_OPTIONS.NEUTRAL)}
+        {component(TYPE_OPTIONS.INFO)}
+        {component(TYPE_OPTIONS.SUCCESS)}
+        {component(TYPE_OPTIONS.WARNING)}
+        {component(TYPE_OPTIONS.CRITICAL)}
+      </BadgeList>
+    );
+  },
+};
+
+export const Sizes: Story = {
+  render: () => (
     <BadgeList>
-      {component(TYPE_OPTIONS.NEUTRAL)}
-      {component(TYPE_OPTIONS.INFO)}
-      {component(TYPE_OPTIONS.SUCCESS)}
-      {component(TYPE_OPTIONS.WARNING)}
-      {component(TYPE_OPTIONS.CRITICAL)}
+      <BadgeListItem icon={<Icons.AlertCircle />} size="small">
+        Size small
+      </BadgeListItem>
+      <BadgeListItem icon={<Icons.BaggageCabin />} size="normal">
+        Size normal
+      </BadgeListItem>
     </BadgeList>
-  );
+  ),
 };
 
-export const Sizes = () => (
-  <BadgeList>
-    <BadgeListItem icon={<Icons.AlertCircle />} size="small">
-      Size small
-    </BadgeListItem>
-    <BadgeListItem icon={<Icons.BaggageCabin />} size="normal">
-      Size normal
-    </BadgeListItem>
-  </BadgeList>
-);
-
-export const Playground = ({ dataTest, type, size, strikeThrough }) => {
-  return (
-    <BadgeList dataTest={dataTest}>
+export const Playground: Story = {
+  render: ({ type, size, strikeThrough }) => (
+    <BadgeList>
       <BadgeListItem
         icon={<Icons.AlertCircle />}
         type={type}
@@ -92,39 +104,36 @@ export const Playground = ({ dataTest, type, size, strikeThrough }) => {
         by the Kiwi.com Guarantee
       </BadgeListItem>
     </BadgeList>
-  );
-};
+  ),
 
-Playground.story = {
   parameters: {
     info: "Here you can try BadgeList component with additional functionality.",
   },
-};
 
-Playground.args = {
-  dataTest: "test",
-  type: TYPE_OPTIONS.NEUTRAL,
-  size: SIZE_OPTIONS.SMALL,
-  strikeThrough: false,
-};
+  args: {
+    type: TYPE_OPTIONS.NEUTRAL,
+    size: SIZE_OPTIONS.SMALL,
+    strikeThrough: false,
+  },
 
-Playground.argTypes = {
-  type: {
-    options: Object.values(TYPE_OPTIONS),
-    control: {
-      type: "select",
+  argTypes: {
+    type: {
+      options: Object.values(TYPE_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+    size: {
+      options: Object.values(SIZE_OPTIONS),
+      control: {
+        type: "select",
+      },
     },
   },
-  size: {
-    options: Object.values(SIZE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
 };
 
-export const RTL = () => {
-  return (
+export const RTL: Story = {
+  render: () => (
     <RenderInRtl>
       <BadgeList>
         <BadgeListItem icon={<Icons.AlertCircle />}>
@@ -144,5 +153,5 @@ export const RTL = () => {
         </BadgeListItem>
       </BadgeList>
     </RenderInRtl>
-  );
+  ),
 };

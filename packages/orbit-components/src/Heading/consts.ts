@@ -1,4 +1,5 @@
 export enum ELEMENT_OPTIONS {
+  H0 = "h0",
   H1 = "h1",
   H2 = "h2",
   H3 = "h3",
@@ -11,6 +12,7 @@ export enum ELEMENT_OPTIONS {
 export enum TYPE_OPTIONS {
   DISPLAY = "display",
   DISPLAYSUBTITLE = "displaySubtitle",
+  TITLE0 = "title0",
   TITLE1 = "title1",
   TITLE2 = "title2",
   TITLE3 = "title3",

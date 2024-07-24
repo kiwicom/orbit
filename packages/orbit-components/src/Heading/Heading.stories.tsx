@@ -56,6 +56,22 @@ TitleDisplaySubtitle.story = {
   },
 };
 
+export const Title0 = () => {
+  const customTitle = text("Title", "Orbit design system");
+  const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H0);
+  return (
+    <Heading type="title0" as={as}>
+      {customTitle}
+    </Heading>
+  );
+};
+
+Title0.story = {
+  parameters: {
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
 export const Title1 = () => {
   const customTitle = text("Title", "Orbit design system");
   const as = select("as", Object.values(ELEMENT_OPTIONS), ELEMENT_OPTIONS.H1);

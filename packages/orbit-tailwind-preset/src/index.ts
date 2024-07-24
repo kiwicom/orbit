@@ -102,7 +102,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
         fontSize: {
           "heading-display": tokens.headingDisplayFontSize,
           "heading-display-subtitle": tokens.headingDisplaySubtitleFontSize,
-          "heading-title0": tokens.headingTitle0FontSize,
+          // "heading-title0": tokens.headingTitle0FontSize,
           "heading-title1": tokens.headingTitle1FontSize,
           "heading-title2": tokens.headingTitle2FontSize,
           "heading-title3": tokens.headingTitle3FontSize,
@@ -117,7 +117,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
         fontWeight: {
           "heading-display": tokens.headingDisplayFontWeight,
           "heading-display-subtitle": tokens.headingDisplaySubtitleFontWeight,
-          "heading-title0": tokens.headingTitle0FontWeight,
+          // "heading-title0": tokens.headingTitle0FontWeight,
           "heading-title1": tokens.headingTitle1FontWeight,
           "heading-title2": tokens.headingTitle2FontWeight,
           "heading-title3": tokens.headingTitle3FontWeight,
@@ -131,7 +131,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
           heading: tokens.lineHeightHeading,
           "heading-display": tokens.headingDisplayLineHeight,
           "heading-display-subtitle": tokens.headingDisplaySubtitleLineHeight,
-          "heading-title0": tokens.headingTitle0LineHeight,
+          // "heading-title0": tokens.headingTitle0LineHeight,
           "heading-title1": tokens.headingTitle1LineHeight,
           "heading-title2": tokens.headingTitle2LineHeight,
           "heading-title3": tokens.headingTitle3LineHeight,

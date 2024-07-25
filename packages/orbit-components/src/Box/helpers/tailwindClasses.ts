@@ -100,48 +100,97 @@ export const shadowClasses: {
 };
 
 export enum BORDER_RADIUS {
-  SMALL = "small",
-  NORMAL = "normal",
-  LARGE = "large",
-  CIRCLE = "circle",
+  SMALL = "small", // deprecated
+  NORMAL = "normal", // deprecated
+  LARGE = "large", // deprecated
+  CIRCLE = "circle", // deprecated
+  NONE = "none",
+  FULL = "full",
+  FIFTY = "50",
+  ONE_HUNDRED = "100",
+  ONE_HUNDRED_FIFTY = "150",
+  THREE_HUNDRED = "300",
+  FOUR_HUNDRED = "400",
 }
 
 export const borderRadiusClasses: {
   [K in QUERIES | BORDER_RADIUS]: K extends QUERIES ? Record<BORDER_RADIUS, string> : string;
 } = {
-  [BORDER_RADIUS.SMALL]: "rounded-small",
-  [BORDER_RADIUS.NORMAL]: "rounded-normal",
-  [BORDER_RADIUS.LARGE]: "rounded-large",
-  [BORDER_RADIUS.CIRCLE]: "rounded-full",
+  [BORDER_RADIUS.SMALL]: "rounded-small", // deprecated
+  [BORDER_RADIUS.NORMAL]: "rounded-normal", // deprecated
+  [BORDER_RADIUS.LARGE]: "rounded-large", // deprecated
+  [BORDER_RADIUS.CIRCLE]: "rounded-full", // deprecated
+  [BORDER_RADIUS.NONE]: "rounded-none",
+  [BORDER_RADIUS.FULL]: "rounded-full",
+  [BORDER_RADIUS.FIFTY]: "rounded-50",
+  [BORDER_RADIUS.ONE_HUNDRED]: "rounded-100",
+  [BORDER_RADIUS.ONE_HUNDRED_FIFTY]: "rounded-150",
+  [BORDER_RADIUS.THREE_HUNDRED]: "rounded-300",
+  [BORDER_RADIUS.FOUR_HUNDRED]: "rounded-400",
   [QUERIES.LARGEDESKTOP]: {
-    [BORDER_RADIUS.SMALL]: "ld:rounded-small",
-    [BORDER_RADIUS.NORMAL]: "ld:rounded-normal",
-    [BORDER_RADIUS.LARGE]: "ld:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "ld:rounded-full",
+    [BORDER_RADIUS.SMALL]: "ld:rounded-small", // deprecated
+    [BORDER_RADIUS.NORMAL]: "ld:rounded-normal", // deprecated
+    [BORDER_RADIUS.LARGE]: "ld:rounded-large", // deprecated
+    [BORDER_RADIUS.CIRCLE]: "ld:rounded-full", // deprecated
+    [BORDER_RADIUS.NONE]: "ld:rounded-none",
+    [BORDER_RADIUS.FULL]: "rounded-full",
+    [BORDER_RADIUS.FIFTY]: "ld:rounded-50",
+    [BORDER_RADIUS.ONE_HUNDRED]: "ld:rounded-100",
+    [BORDER_RADIUS.ONE_HUNDRED_FIFTY]: "ld:rounded-150",
+    [BORDER_RADIUS.THREE_HUNDRED]: "ld:rounded-300",
+    [BORDER_RADIUS.FOUR_HUNDRED]: "ld:rounded-400",
   },
   [QUERIES.DESKTOP]: {
-    [BORDER_RADIUS.SMALL]: "de:rounded-small",
-    [BORDER_RADIUS.NORMAL]: "de:rounded-normal",
-    [BORDER_RADIUS.LARGE]: "de:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "de:rounded-full",
+    [BORDER_RADIUS.SMALL]: "de:rounded-small", // deprecated
+    [BORDER_RADIUS.NORMAL]: "de:rounded-normal", // deprecated
+    [BORDER_RADIUS.LARGE]: "de:rounded-large", // deprecated
+    [BORDER_RADIUS.CIRCLE]: "de:rounded-full", // deprecated
+    [BORDER_RADIUS.NONE]: "de:rounded-none",
+    [BORDER_RADIUS.FULL]: "rounded-full",
+    [BORDER_RADIUS.FIFTY]: "de:rounded-50",
+    [BORDER_RADIUS.ONE_HUNDRED]: "de:rounded-100",
+    [BORDER_RADIUS.ONE_HUNDRED_FIFTY]: "de:rounded-150",
+    [BORDER_RADIUS.THREE_HUNDRED]: "de:rounded-300",
+    [BORDER_RADIUS.FOUR_HUNDRED]: "de:rounded-400",
   },
   [QUERIES.TABLET]: {
-    [BORDER_RADIUS.SMALL]: "tb:rounded-small",
-    [BORDER_RADIUS.NORMAL]: "tb:rounded-normal",
-    [BORDER_RADIUS.LARGE]: "tb:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "tb:rounded-full",
+    [BORDER_RADIUS.SMALL]: "tb:rounded-small", // deprecated
+    [BORDER_RADIUS.NORMAL]: "tb:rounded-normal", // deprecated
+    [BORDER_RADIUS.LARGE]: "tb:rounded-large", // deprecated
+    [BORDER_RADIUS.CIRCLE]: "tb:rounded-full", // deprecated
+    [BORDER_RADIUS.NONE]: "tb:rounded-none",
+    [BORDER_RADIUS.FULL]: "rounded-full",
+    [BORDER_RADIUS.FIFTY]: "tb:rounded-50",
+    [BORDER_RADIUS.ONE_HUNDRED]: "tb:rounded-100",
+    [BORDER_RADIUS.ONE_HUNDRED_FIFTY]: "tb:rounded-150",
+    [BORDER_RADIUS.THREE_HUNDRED]: "tb:rounded-300",
+    [BORDER_RADIUS.FOUR_HUNDRED]: "tb:rounded-400",
   },
   [QUERIES.LARGEMOBILE]: {
-    [BORDER_RADIUS.SMALL]: "lm:rounded-small",
-    [BORDER_RADIUS.NORMAL]: "lm:rounded-normal",
-    [BORDER_RADIUS.LARGE]: "lm:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "lm:rounded-full",
+    [BORDER_RADIUS.SMALL]: "lm:rounded-small", // deprecated
+    [BORDER_RADIUS.NORMAL]: "lm:rounded-normal", // deprecated
+    [BORDER_RADIUS.LARGE]: "lm:rounded-large", // deprecated
+    [BORDER_RADIUS.CIRCLE]: "lm:rounded-full", // deprecated
+    [BORDER_RADIUS.NONE]: "lm:rounded-none",
+    [BORDER_RADIUS.FULL]: "rounded-full",
+    [BORDER_RADIUS.FIFTY]: "lm:rounded-50",
+    [BORDER_RADIUS.ONE_HUNDRED]: "lm:rounded-100",
+    [BORDER_RADIUS.ONE_HUNDRED_FIFTY]: "lm:rounded-150",
+    [BORDER_RADIUS.THREE_HUNDRED]: "lm:rounded-300",
+    [BORDER_RADIUS.FOUR_HUNDRED]: "lm:rounded-400",
   },
   [QUERIES.MEDIUMMOBILE]: {
-    [BORDER_RADIUS.SMALL]: "mm:rounded-small",
-    [BORDER_RADIUS.NORMAL]: "mm:rounded-normal",
-    [BORDER_RADIUS.LARGE]: "mm:rounded-large",
-    [BORDER_RADIUS.CIRCLE]: "mm:rounded-full",
+    [BORDER_RADIUS.SMALL]: "mm:rounded-small", // deprecated
+    [BORDER_RADIUS.NORMAL]: "mm:rounded-normal", // deprecated
+    [BORDER_RADIUS.LARGE]: "mm:rounded-large", // deprecated
+    [BORDER_RADIUS.CIRCLE]: "mm:rounded-full", // deprecated
+    [BORDER_RADIUS.NONE]: "mm:rounded-none",
+    [BORDER_RADIUS.FULL]: "rounded-full",
+    [BORDER_RADIUS.FIFTY]: "mm:rounded-50",
+    [BORDER_RADIUS.ONE_HUNDRED]: "mm:rounded-100",
+    [BORDER_RADIUS.ONE_HUNDRED_FIFTY]: "mm:rounded-150",
+    [BORDER_RADIUS.THREE_HUNDRED]: "mm:rounded-300",
+    [BORDER_RADIUS.FOUR_HUNDRED]: "mm:rounded-400",
   },
 };
 

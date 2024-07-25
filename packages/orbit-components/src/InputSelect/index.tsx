@@ -394,7 +394,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     const dropdown = isOpened && (
       <ul
         className={cx(
-          "font-base bg-white-normal lm:absolute lm:inset-x-0 lm:overflow-y-scroll lm:shadow-action lm:rounded-normal z-[3] flex w-full flex-col",
+          "font-base bg-white-normal lm:absolute lm:inset-x-0 lm:overflow-y-scroll lm:shadow-action lm:rounded-100 z-[3] flex w-full flex-col",
           label
             ? "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.xl))]"
             : "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.xs))]",

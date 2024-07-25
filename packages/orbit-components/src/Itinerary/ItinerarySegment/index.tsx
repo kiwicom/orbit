@@ -69,7 +69,7 @@ const ItinerarySegment = ({
   return (
     <div
       className={cx(
-        "rounded-large pb-sm px-0",
+        "rounded-150 pb-sm px-0",
         spaceAfter && spaceAfterClasses[spaceAfter],
         !noElevation && "shadow-fixed",
         actionable && !noElevation && "hover:shadow-action-active focus:shadow-action-active",

@@ -29,7 +29,7 @@ const AccordionSection = ({
 
   return (
     <div
-      className="border-elevation-flat-border-color rounded-normal my-xs bg-elevation-flat relative w-full border border-solid"
+      className="border-elevation-flat-border-color rounded-100 my-xs bg-elevation-flat relative w-full border border-solid"
       data-test={dataTest}
     >
       <Loading loading={loading} type="boxLoader" dataTest={dataTest && `${dataTest}Loading`}>

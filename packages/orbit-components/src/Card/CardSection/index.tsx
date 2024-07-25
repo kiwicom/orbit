@@ -55,7 +55,7 @@ export default function CardSection({
     <div
       className={cx(
         "duration-fast lm:border-x border-b transition-all ease-in-out",
-        opened && "my-xs rounded-normal shadow-action-active [&+*]:border-t",
+        opened && "my-xs rounded-100 shadow-action-active [&+*]:border-t",
         onClick != null && "hover:bg-white-normal-hover cursor-pointer",
       )}
       data-test={dataTest}

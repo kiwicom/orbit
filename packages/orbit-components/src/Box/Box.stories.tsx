@@ -69,10 +69,10 @@ enum ELEVATION {
 }
 
 enum BORDER_RADIUS {
-  SMALL = "small",
-  NORMAL = "normal",
-  LARGE = "large",
-  RADIUSCIRCLE = "circle",
+  FIFTY = "50",
+  ONE_HUNDRED = "100",
+  ONE_HUNDRED_FIFTY = "150",
+  FULL = "full",
 }
 
 enum OVERFLOW {
@@ -340,7 +340,7 @@ BorderRadius.story = {
 };
 
 BorderRadius.args = {
-  borderRadius: BORDER_RADIUS.NORMAL,
+  borderRadius: BORDER_RADIUS.ONE_HUNDRED,
 };
 
 BorderRadius.argTypes = {
@@ -571,7 +571,7 @@ Playground.args = {
   height: "auto",
   maxHeight: "100px",
   elevation: ELEVATION.ACTION,
-  borderRadius: BORDER_RADIUS.NORMAL,
+  borderRadius: BORDER_RADIUS.ONE_HUNDRED,
   position: POSITION.RELATIVE,
   top: "10px",
   right: "10px",

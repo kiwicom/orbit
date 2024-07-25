@@ -148,7 +148,7 @@ export const Playground = ({
   return (
     <Box
       padding="small"
-      borderRadius="normal"
+      borderRadius="100"
       background={type === TYPE_OPTIONS.WHITE ? "inkLight" : "cloudNormal"}
     >
       <TextLink

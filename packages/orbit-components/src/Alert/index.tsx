@@ -74,7 +74,7 @@ const ContentWrapper = ({
   return (
     <div
       className={cx(
-        "flex min-h-[20px] items-center",
+        "min-h-icon-medium flex items-center",
         !inlineActions && "w-full",
         "[&_.orbit-list-item]:text-ink-dark [&_.orbit-text]:text-ink-dark [&_.orbit-heading]:text-ink-dark",
         ...alertDescendantClasses[type],
@@ -130,9 +130,9 @@ const Alert = (props: Props) => {
   return (
     <div
       className={cx(
-        "rounded-large text-ink-dark font-base text-normal p-sm relative box-border flex w-full border border-t-[3px] leading-normal",
+        "rounded-150 text-ink-dark font-base text-normal p-sm relative box-border flex w-full border border-t-[3px] leading-normal",
         "lm:border-s-[3px] lm:border-t",
-        "tb:rounded-normal",
+        "tb:rounded-100",
         inlineActions && "items-center",
         suppressed ? "bg-cloud-light border-cloud-normal lm:border-t-cloud-normal" : COLORS[type],
         ACCENT_BORDER[type],
@@ -164,7 +164,7 @@ const Alert = (props: Props) => {
         {title && (
           <div
             className={cx(
-              "text-ink-dark flex min-h-[20px] items-center font-bold",
+              "text-ink-dark min-h-icon-medium flex items-center font-bold",
               !!children && (inlineActions ? "mb-0" : "mb-xxs"),
               inlineActions && "grow basis-0",
             )}

@@ -142,7 +142,7 @@ const TooltipContent = ({
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <div
         className={cx(
-          "rounded-normal px-sm shadow-raised z-[10012] box-border block w-auto overflow-visible",
+          "rounded-100 px-sm shadow-raised z-[10012] box-border block w-auto overflow-visible",
           "duration-fast transition-[visibility,_opacity] ease-in-out",
           "[&_img]:max-w-full]",
           contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal)) ? "py-xs" : "py-sm",

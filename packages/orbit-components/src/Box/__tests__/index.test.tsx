@@ -17,6 +17,13 @@ import Box from "..";
 const dataTest = "test";
 
 const BORDER_RADIUS: { [K in BORDER_RADIUS_KEYS]: string } = {
+  50: theme.orbit.borderRadius50,
+  100: theme.orbit.borderRadius100,
+  150: theme.orbit.borderRadius150,
+  300: theme.orbit.borderRadius300,
+  400: theme.orbit.borderRadius400,
+  none: theme.orbit.borderRadiusNone,
+  full: theme.orbit.borderRadiusFull,
   small: theme.orbit.borderRadiusSmall,
   normal: theme.orbit.borderRadiusNormal,
   large: theme.orbit.borderRadiusLarge,

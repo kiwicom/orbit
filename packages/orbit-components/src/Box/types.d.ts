@@ -155,7 +155,17 @@ export interface Props extends Common.Globals {
   readonly elevation?: Elevation;
   readonly color?: ColorTokens;
   readonly background?: ColorTokens;
-  readonly borderRadius?: "small" | "normal" | "large" | "circle";
+  readonly borderRadius?:
+    | "small"
+    | "normal"
+    | "large"
+    | "circle"
+    | "full"
+    | "50"
+    | "100"
+    | "150"
+    | "300"
+    | "400";
   readonly overflow?: "auto" | "hidden" | "scroll" | "visible";
   readonly mediumMobile?: MediaQueryObject;
   readonly largeMobile?: MediaQueryObject;

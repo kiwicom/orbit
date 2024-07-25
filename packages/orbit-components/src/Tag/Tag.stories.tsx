@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import * as Icons from "../icons";
@@ -9,12 +10,55 @@ import { SIZES, TYPES } from "./consts";
 
 import Tag from ".";
 
-export default {
-  title: "Tag",
+Tag.displayName = "Tag";
+
+type TagPropsAndCustomArgs = React.ComponentProps<typeof Tag> & {
+  content?: string;
+  removable?: boolean;
 };
 
-export const Default = () => {
-  return (
+const meta: Meta<TagPropsAndCustomArgs> = {
+  title: "Tag",
+  component: Tag,
+
+  args: {
+    content: "Transport",
+    size: SIZES.NORMAL,
+    removable: true,
+    selected: true,
+    dateTag: false,
+    type: TYPES.NEUTRAL,
+    iconLeft: "PlusMinus",
+  },
+
+  argTypes: {
+    size: {
+      options: Object.values(SIZES),
+      control: {
+        type: "select",
+      },
+    },
+    type: {
+      options: Object.values(TYPES),
+      control: {
+        type: "select",
+      },
+    },
+    iconLeft: {
+      options: Object.keys(Icons),
+      control: {
+        type: "select",
+      },
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<TagPropsAndCustomArgs>;
+
+export const Default: Story = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  render: args => (
     <Stack direction="column">
       <Heading type="title2">Neutral</Heading>
       <Stack inline>
@@ -53,89 +97,53 @@ export const Default = () => {
         with dateTag selected color is Ink
       </Tag>
     </Stack>
-  );
-};
+  ),
 
-Default.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: ["content", "size", "removable", "selected", "dateTag", "type", "iconLeft"],
+    },
   },
 };
 
-export const Playground = ({
-  content,
-  size,
-  removable,
-  selected,
-  dateTag,
-  dataTest,
-  type,
-  iconLeft,
-}) => {
-  const IconLeft = iconLeft ? Icons[iconLeft] : null;
+export const Playground: Story = {
+  render: ({ content, removable, iconLeft, ...args }) => {
+    const IconLeft = iconLeft ? Icons[iconLeft as string] : null;
 
-  return (
-    <Tag
-      size={size}
-      type={type}
-      iconLeft={IconLeft && <IconLeft />}
-      dateTag={dateTag}
-      selected={selected}
-      onClick={action("onClick")}
-      onRemove={removable ? action("onRemove") : undefined}
-      dataTest={dataTest}
-    >
-      {content}
-    </Tag>
-  );
-};
+    return (
+      <Tag
+        {...args}
+        iconLeft={IconLeft && <IconLeft />}
+        onClick={action("onClick")}
+        onRemove={removable ? action("onRemove") : undefined}
+      >
+        {content}
+      </Tag>
+    );
+  },
 
-Playground.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
 };
 
-Playground.args = {
-  content: "Transport",
-  size: SIZES.NORMAL,
-  removable: true,
-  selected: true,
-  dateTag: false,
-  dataTest: "test",
-  type: TYPES.NEUTRAL,
-  iconLeft: "PlusMinus",
-};
+export const Rtl: Story = {
+  render: ({ content, removable, iconLeft, ...args }) => {
+    const IconLeft = iconLeft ? Icons[iconLeft as string] : null;
 
-Playground.argTypes = {
-  size: {
-    options: Object.values(SIZES),
-    control: {
-      type: "select",
-    },
+    return (
+      <RenderInRtl>
+        <Tag
+          {...args}
+          onRemove={removable ? action("onRemove") : undefined}
+          iconLeft={IconLeft && <IconLeft />}
+        >
+          {content}
+        </Tag>
+      </RenderInRtl>
+    );
   },
-  type: {
-    options: Object.values(TYPES),
-    control: {
-      type: "select",
-    },
-  },
-  iconLeft: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Rtl = () => (
-  <RenderInRtl>
-    <Tag onRemove={action("onRemove")}>Transport</Tag>
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",

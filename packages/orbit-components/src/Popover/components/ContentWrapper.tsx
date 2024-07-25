@@ -176,8 +176,8 @@ const PopoverContentWrapper = ({
           "lm:bottom-[var(--popper-bottom)]",
           "lm:[position:var(--popper-position)]",
           "lm:[transform:var(--popper-transform)]",
-          "lm:transition-[opacity] lm:duration-fast lm:ease-in-out",
-          "lm:rounded-normal",
+          "lm:transition-opacity lm:duration-fast lm:ease-in-out",
+          "lm:rounded-100",
           "lm:shadow-raised",
           "lm:max-h-none",
           isInsideModal ? "lm:z-[1000]" : "lm:z-[var(--popover-zIndex)]",
@@ -210,7 +210,7 @@ const PopoverContentWrapper = ({
                 "max-h-[calc(var(--window-height)-var(--actions-height)-32px)]",
               noPadding ? "p-0" : "p-md",
               "lm:max-h-[var(--max-height)]",
-              "lm:rounded-normal",
+              "lm:rounded-100",
               "lm:bottom-auto",
               "lm:left-auto",
               "lm:relative",
@@ -238,7 +238,7 @@ const PopoverContentWrapper = ({
                 "[&_.orbit-button-primitive]:w-full [&_.orbit-button-primitive]:flex-auto",
                 "lm:relative",
                 "lm:bottom-auto lm:left-auto",
-                "lm:rounded-b-normal",
+                "lm:rounded-b-100",
                 "lm:[&_.orbit-button-primitive]:w-auto lm:[&_.orbit-button-primitive]:grow-0",
               )}
             >

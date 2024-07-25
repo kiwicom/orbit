@@ -62,7 +62,7 @@ const ItineraryStatus = ({
   return (
     <div
       className={cx(
-        "rounded-large shadow-fixed box-border flex w-full flex-col border-0 border-s-[3px] border-solid",
+        "rounded-150 shadow-fixed box-border flex w-full flex-col border-0 border-s-[3px] border-solid",
         type && borderColorClasses[type],
         spaceAfter && spaceAfterClasses[spaceAfter],
         actionable && "hover:shadow-action-active",
@@ -70,7 +70,7 @@ const ItineraryStatus = ({
     >
       <div
         className={cx(
-          "px-xs min-h-xl rounded-tl-normal rounded-tr-large flex items-center rounded-b-none py-0",
+          "px-xs min-h-xl rounded-tl-100 rounded-tr-150 flex items-center rounded-b-none py-0",
           type && backgroundColor[type],
         )}
       >

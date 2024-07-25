@@ -3,7 +3,7 @@ import * as React from "react";
 import * as Icons from "../icons";
 
 const IconList = () => (
-  <div className="rounded-large flex flex-row flex-wrap justify-between">
+  <div className="rounded-150 flex flex-row flex-wrap justify-between">
     {Object.keys(Icons)
       .filter(n => n !== "__namedExportsOrder")
       .map(icon => {
@@ -12,7 +12,7 @@ const IconList = () => (
         const iconName = `${icon}`;
         return (
           <div
-            className="gap-lg bg-white-normal mb-lg rounded-large border-cloud-normal px-lg flex w-full flex-row content-center items-center justify-start border border-solid"
+            className="gap-lg bg-white-normal mb-lg rounded-150 border-cloud-normal px-lg flex w-full flex-row content-center items-center justify-start border border-solid"
             style={{ minHeight: "80px" }}
             key={icon}
           >

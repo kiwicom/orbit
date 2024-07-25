@@ -69,7 +69,7 @@ const WizardStep = ({ dataTest, title, onClick, isCompleted }: WizardStepProps) 
           )}
         </ButtonLink>
         {isActive && (
-          <div className="w-xxxs bg-product-normal rounded-e-normal absolute inset-y-px ltr:left-0 rtl:right-0" />
+          <div className="w-xxxs bg-product-normal rounded-e-100 absolute inset-y-px ltr:left-0 rtl:right-0" />
         )}
         {status !== "disabled" && (
           <div className="border-cloud-normal ms-xxl absolute inset-x-0 bottom-0 border-t border-solid" />

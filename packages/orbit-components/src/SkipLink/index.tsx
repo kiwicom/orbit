@@ -12,7 +12,7 @@ const SkipLink = ({ links, buttonLabel, dataTest, id }: Props) => {
         links.map(({ href, name, onClick }, index) => {
           return (
             <a
-              className="orbit-skip-link ltr:left-md rtl:right-md top-md p-md bg-white-normal z-onTop font-base text-large rounded-normal text-ink-dark absolute underline [&:not(:focus)]:sr-only"
+              className="orbit-skip-link ltr:left-md rtl:right-md top-md p-md bg-white-normal z-onTop font-base text-large rounded-100 text-ink-dark absolute underline [&:not(:focus)]:sr-only"
               key={encodeURIComponent(name + index)}
               href={href}
               tabIndex={onClick && 0}

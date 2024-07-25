@@ -83,7 +83,7 @@ const Handle = ({
   return (
     <div
       className={cx(
-        "size-lg rounded-circle shadow-action bg-white-normal duration-fast tap-color-none hover:shadow-action-active active:shadow-action-active absolute bottom-0 flex cursor-pointer select-none items-center justify-center transition-shadow ease-in-out",
+        "size-lg shadow-action bg-white-normal duration-fast tap-color-none hover:shadow-action-active active:shadow-action-active absolute bottom-0 flex cursor-pointer select-none items-center justify-center rounded-full transition-shadow ease-in-out",
         onTop && "z-20",
       )}
       style={{
@@ -102,7 +102,7 @@ const Handle = ({
       aria-label={Array.isArray(ariaLabel) ? ariaLabel[index] : ariaLabel}
       aria-valuetext={ariaValueText}
     >
-      <div className="size-xs bg-blue-normal rounded-circle" />
+      <div className="size-xs bg-blue-normal rounded-full" />
     </div>
   );
 };

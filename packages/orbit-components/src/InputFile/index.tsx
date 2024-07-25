@@ -106,14 +106,14 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       )}
       <div
         className={cx(
-          "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-[2px]",
+          "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
           "box-border flex items-center",
           "h-form-box-normal ps-[6px]",
           error ? "shadow-form-element-error" : "shadow-form-element",
           !disabled &&
             (error ? "hover:shadow-form-element-error-hover" : "hover:shadow-form-element-hover"),
           "duration-fast transition-shadow ease-in-out",
-          "rounded-normal",
+          "rounded-100",
           disabled
             ? "bg-form-element-disabled-background cursor-not-allowed"
             : "bg-form-element-background cursor-pointer",

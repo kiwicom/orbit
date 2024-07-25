@@ -50,7 +50,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       )}
     >
       <input
-        className="peer absolute z-[-1] opacity-0"
+        className="-z-default peer absolute opacity-0"
         data-test={dataTest}
         id={id}
         data-state={getFieldDataState(!!hasError)}
@@ -74,7 +74,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "border border-solid",
             "flex shrink-0 grow-0 basis-auto items-center justify-center",
             "size-icon-medium",
-            "rounded-large de:rounded-normal",
+            "rounded-150 de:rounded-100",
             "duration-fast transition-all ease-in-out",
             "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
             "[&>svg]:size-icon-small [&>svg]:invisible peer-checked:[&>svg]:visible",

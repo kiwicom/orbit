@@ -2032,6 +2032,21 @@
     "category": "Border radius",
     "version": "8.0.0"
   },
+  "borderRadiusSmall": {
+    "replacement": "borderRadius50",
+    "category": "Border radius",
+    "version": "9.0.0"
+  },
+  "borderRadiusNormal": {
+    "replacement": "borderRadius100",
+    "category": "Border radius",
+    "version": "9.0.0"
+  },
+  "borderRadiusLarge": {
+    "replacement": "borderRadius150",
+    "category": "Border radius",
+    "version": "9.0.0"
+  },
   "widthBreakpointMediumMobile": {
     "replacement": "breakpointMediumMobile",
     "category": "Breakpoints",

@@ -726,10 +726,16 @@ export interface Tokens {
   textWhiteBackground: string;
   textWhiteForeground: string;
   backgroundIllustration: string;
+  borderRadius50: string;
+  borderRadius100: string;
+  borderRadius150: string;
+  borderRadius300: string;
+  borderRadius400: string;
   borderRadiusCircle: string;
   borderRadiusSmall: string;
   borderRadiusNormal: string;
   borderRadiusLarge: string;
+  borderRadiusNone: string;
   borderRadiusFull: string;
   breakpointMediumMobile: number;
   breakpointLargeMobile: number;
@@ -1654,10 +1660,16 @@ const createTokens: CreateTokens = foundation => ({
   textWhiteBackground: transparentColor(foundation.palette.white.normal, 10),
   textWhiteForeground: foundation.palette.white.normal,
   backgroundIllustration: "transparent",
+  borderRadius50: foundation.borderRadius["50"],
+  borderRadius100: foundation.borderRadius["100"],
+  borderRadius150: foundation.borderRadius["150"],
+  borderRadius300: foundation.borderRadius["300"],
+  borderRadius400: foundation.borderRadius["400"],
   borderRadiusCircle: foundation.borderRadius.circle,
   borderRadiusSmall: foundation.borderRadius.small,
   borderRadiusNormal: foundation.borderRadius.normal,
   borderRadiusLarge: foundation.borderRadius.large,
+  borderRadiusNone: foundation.borderRadius.none,
   borderRadiusFull: foundation.borderRadius.full,
   breakpointMediumMobile: foundation.breakpoint.mediumMobile,
   breakpointLargeMobile: foundation.breakpoint.largeMobile,

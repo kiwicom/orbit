@@ -16,6 +16,8 @@ on:
 jobs:
   prose:
     runs-on: ubuntu-latest
+    # https://github.com/reviewdog/reviewdog/issues/1696
+    if: ${{ github.event.pull_request.changed_files < 301 }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

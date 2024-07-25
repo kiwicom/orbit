@@ -15,7 +15,7 @@ export const StyledContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
     border: 1px solid ${theme.orbit.paletteCloudNormal};
-    border-radius: ${theme.orbit.borderRadiusLarge};
+    border-radius: ${theme.orbit.borderRadius150};
     overflow: hidden;
   `};
 `;

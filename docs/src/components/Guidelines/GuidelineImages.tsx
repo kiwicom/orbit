@@ -12,7 +12,7 @@ const GuidelineContainer = styled.div<{ type: "do" | "dont"; coloredBorder: bool
     width: 100%;
     ${resolveBorders};
     background: ${theme.orbit.paletteCloudLight};
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadius100};
   `}
 `;
 
@@ -24,7 +24,7 @@ const ImageContainer = styled.div<ImageContainerProps>`
   ${({ theme }) => css`
     width: 100%;
     background: ${theme.orbit.paletteWhite};
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadius100};
     padding: ${theme.orbit.spaceXLarge};
   `}
 `;

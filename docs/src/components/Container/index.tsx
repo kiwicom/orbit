@@ -8,14 +8,14 @@ const StyledContainer = styled.div`
     justify-content: space-between;
     gap: ${theme.orbit.spaceSmall};
     padding: ${theme.orbit.spaceXLarge};
-    border-radius: ${theme.orbit.borderRadiusLarge};
+    border-radius: ${theme.orbit.borderRadius150};
     background: ${theme.orbit.paletteCloudLight};
 
     & > img {
       max-width: 100%;
       justify-self: center;
       background: ${theme.orbit.paletteWhite};
-      border-radius: ${theme.orbit.borderRadiusLarge};
+      border-radius: ${theme.orbit.borderRadius150};
       padding: ${theme.orbit.spaceXLarge};
     }
   `};

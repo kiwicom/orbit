@@ -16413,6 +16413,116 @@
       "value": "transparent"
     }
   },
+  "borderRadius50": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "border-radius",
+      "variant": "50"
+    },
+    "javascript": {
+      "name": "borderRadius50",
+      "value": "2px"
+    },
+    "foundation": {
+      "name": "borderRadius50",
+      "value": "foundation.borderRadius.50"
+    },
+    "scss": {
+      "name": "borderRadius50",
+      "value": "2px"
+    }
+  },
+  "borderRadius100": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "border-radius",
+      "variant": "100"
+    },
+    "javascript": {
+      "name": "borderRadius100",
+      "value": "4px"
+    },
+    "foundation": {
+      "name": "borderRadius100",
+      "value": "foundation.borderRadius.100"
+    },
+    "scss": {
+      "name": "borderRadius100",
+      "value": "4px"
+    }
+  },
+  "borderRadius150": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "border-radius",
+      "variant": "150"
+    },
+    "javascript": {
+      "name": "borderRadius150",
+      "value": "6px"
+    },
+    "foundation": {
+      "name": "borderRadius150",
+      "value": "foundation.borderRadius.150"
+    },
+    "scss": {
+      "name": "borderRadius150",
+      "value": "6px"
+    }
+  },
+  "borderRadius300": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "border-radius",
+      "variant": "300"
+    },
+    "javascript": {
+      "name": "borderRadius300",
+      "value": "12px"
+    },
+    "foundation": {
+      "name": "borderRadius300",
+      "value": "foundation.borderRadius.300"
+    },
+    "scss": {
+      "name": "borderRadius300",
+      "value": "12px"
+    }
+  },
+  "borderRadius400": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "border-radius",
+      "variant": "400"
+    },
+    "javascript": {
+      "name": "borderRadius400",
+      "value": "16px"
+    },
+    "foundation": {
+      "name": "borderRadius400",
+      "value": "foundation.borderRadius.400"
+    },
+    "scss": {
+      "name": "borderRadius400",
+      "value": "16px"
+    }
+  },
   "borderRadiusCircle": {
     "type": "border-radius",
     "deprecated": true,
@@ -16437,8 +16547,8 @@
   },
   "borderRadiusSmall": {
     "type": "border-radius",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "borderRadius50",
     "schema": {
       "namespace": "global",
       "object": "border-radius",
@@ -16459,8 +16569,8 @@
   },
   "borderRadiusNormal": {
     "type": "border-radius",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "borderRadius100",
     "schema": {
       "namespace": "global",
       "object": "border-radius",
@@ -16481,8 +16591,8 @@
   },
   "borderRadiusLarge": {
     "type": "border-radius",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "borderRadius150",
     "schema": {
       "namespace": "global",
       "object": "border-radius",
@@ -16499,6 +16609,28 @@
     "scss": {
       "name": "borderRadiusLarge",
       "value": "6px"
+    }
+  },
+  "borderRadiusNone": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "border-radius",
+      "variant": "none"
+    },
+    "javascript": {
+      "name": "borderRadiusNone",
+      "value": "0"
+    },
+    "foundation": {
+      "name": "borderRadiusNone",
+      "value": "foundation.borderRadius.none"
+    },
+    "scss": {
+      "name": "borderRadiusNone",
+      "value": "0"
     }
   },
   "borderRadiusFull": {

@@ -35,7 +35,7 @@ export const StyledIcon = styled.span<{ type: Type }>`
     background: ${type === "primary"
       ? theme.orbit.paletteProductLightActive
       : theme.orbit.paletteCloudNormal};
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadius100};
   `}
 `;
 

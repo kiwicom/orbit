@@ -32,8 +32,8 @@ const StyledTab = styled.button<{ active: boolean }>`
   ${({ theme, active }) => css`
     padding: 14px ${theme.orbit.spaceMedium};
     margin-bottom: -1px;
-    border-top-left-radius: ${theme.orbit.borderRadiusLarge};
-    border-top-right-radius: ${theme.orbit.borderRadiusLarge};
+    border-top-left-radius: ${theme.orbit.borderRadius150};
+    border-top-right-radius: ${theme.orbit.borderRadius150};
     border: 1px solid transparent;
     border-bottom: none;
     ${active &&
@@ -48,7 +48,7 @@ StyledTab.defaultProps = { theme: docsTheme };
 const StyledPanel = styled.div`
   ${({ theme }) => css`
     border: 1px solid ${theme.orbit.paletteCloudNormal};
-    border-radius: ${theme.orbit.borderRadiusLarge};
+    border-radius: ${theme.orbit.borderRadius150};
   `};
 `;
 StyledPanel.defaultProps = { theme: docsTheme };

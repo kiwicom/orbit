@@ -36,7 +36,7 @@ export const isLight = (hex: string) => {
 export const resolveBorders =
   ({ order, isFull, isMiddle, isLeft, isFullBottom, isRight, isExpanded }: BorderProps) =>
   ({ theme }) => {
-    const radius = theme.orbit.borderRadiusLarge;
+    const radius = theme.orbit.borderRadius150;
 
     if (order === "only") {
       if (isExpanded) {

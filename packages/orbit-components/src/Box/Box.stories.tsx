@@ -68,10 +68,10 @@ enum ELEVATION {
 }
 
 enum BORDER_RADIUS {
-  SMALL = "small",
-  NORMAL = "normal",
-  LARGE = "large",
-  RADIUSCIRCLE = "circle",
+  FIFTY = "50",
+  ONE_HUNDRED = "100",
+  ONE_HUNDRED_FIFTY = "150",
+  FULL = "full",
 }
 
 enum OVERFLOW {
@@ -270,7 +270,7 @@ PaddingMargin.story = {
 };
 
 export const BorderRadius = () => {
-  const radius = select("borderRadius", Object.values(BORDER_RADIUS), BORDER_RADIUS.NORMAL);
+  const radius = select("borderRadius", Object.values(BORDER_RADIUS), BORDER_RADIUS.ONE_HUNDRED);
 
   return (
     <Box background={DEFAULT_COLOR} maxWidth="150px" borderRadius={radius}>
@@ -378,7 +378,11 @@ export const Playground = () => {
   const height = text("height", "auto");
   const maxHeight = text("max-height", "100px");
   const elevation = select("elevation", Object.values(ELEVATION), ELEVATION.ACTION);
-  const borderRadius = select("border-radius", Object.values(BORDER_RADIUS), BORDER_RADIUS.NORMAL);
+  const borderRadius = select(
+    "border-radius",
+    Object.values(BORDER_RADIUS),
+    BORDER_RADIUS.ONE_HUNDRED,
+  );
   const position = select("position", Object.values(POSITION), POSITION.RELATIVE);
   const top = text("top", "10px");
   const right = text("right", "10px");

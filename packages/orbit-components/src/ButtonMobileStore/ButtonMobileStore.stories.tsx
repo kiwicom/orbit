@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import { LANGUAGE } from "./consts";
@@ -6,47 +7,51 @@ import Stack from "../Stack";
 
 import ButtonMobileStore from ".";
 
-export default {
+const meta: Meta<typeof ButtonMobileStore> = {
   title: "ButtonMobileStore",
+  component: ButtonMobileStore,
+
+  args: {
+    lang: LANGUAGE.EN,
+  },
+
+  argTypes: {
+    lang: {
+      options: Object.values(LANGUAGE),
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 
-export const Default = ({ href, lang }) => {
-  return (
+export default meta;
+type Story = StoryObj<typeof ButtonMobileStore>;
+
+export const Default: Story = {
+  render: ({ lang }) => (
     <Stack flex>
       <ButtonMobileStore
         onClick={action("clicked")}
-        href={href}
+        href="#"
         lang={lang}
         type="appStore"
         alt="Download on the App Store"
       />
       <ButtonMobileStore
         onClick={action("clicked")}
-        href={href}
+        href="#"
         lang={lang}
         type="googlePlay"
         alt="Download on the Google Play"
       />
     </Stack>
-  );
-};
+  ),
 
-Default.story = {
   parameters: {
     info: "This is the default configuration of this component.",
-  },
-};
-
-Default.args = {
-  href: "#",
-  lang: LANGUAGE.EN,
-};
-
-Default.argTypes = {
-  lang: {
-    options: Object.values(LANGUAGE),
-    control: {
-      type: "select",
+    controls: {
+      exclude: ["type", "alt", "stopPropagation"],
     },
   },
 };

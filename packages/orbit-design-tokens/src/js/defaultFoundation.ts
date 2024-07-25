@@ -106,7 +106,13 @@ export interface White {
   normalHover: string;
 }
 export interface BorderRadius {
+  50: string;
+  100: string;
+  150: string;
+  300: string;
+  400: string;
   circle: string;
+  none: string;
   small: string;
   normal: string;
   large: string;
@@ -288,7 +294,19 @@ const red = {
 };
 const social = { facebook: "#3B5998", facebookHover: "#385490", facebookActive: "#354F88" };
 const white = { normal: "#FFFFFF", normalActive: "#E7ECF1", normalHover: "#F1F4F7" };
-const borderRadius = { circle: "50%", small: "2px", normal: "3px", large: "6px", full: "9999px" };
+const borderRadius = {
+  50: "2px",
+  100: "4px",
+  150: "6px",
+  300: "12px",
+  400: "16px",
+  circle: "50%",
+  none: "0",
+  small: "2px",
+  normal: "3px",
+  large: "6px",
+  full: "9999px",
+};
 const breakpoint = {
   smallMobile: 320,
   mediumMobile: 414,

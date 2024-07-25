@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import * as Icons from "../icons";
@@ -9,234 +10,218 @@ import { SPACINGS_AFTER } from "../common/consts";
 
 import ButtonLink from ".";
 
+const meta: Meta<typeof ButtonLink> = {
+  title: "ButtonLink",
+  component: ButtonLink,
+
+  parameters: {
+    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+  },
+
+  args: {
+    children: "ButtonLink",
+    disabled: false,
+    fullWidth: false,
+    type: TYPES.PRIMARY,
+    size: SIZE_OPTIONS.NORMAL,
+    width: "",
+    href: "https://kiwi.com",
+    external: false,
+    compact: false,
+    circled: false,
+    submit: false,
+    spaceAfter: SPACINGS_AFTER.NORMAL,
+  },
+
+  argTypes: {
+    iconLeft: {
+      options: Object.keys(Icons),
+      control: {
+        type: "select",
+      },
+    },
+    iconRight: {
+      options: Object.keys(Icons),
+      control: {
+        type: "select",
+      },
+    },
+    type: {
+      options: Object.values(TYPES),
+      control: {
+        type: "select",
+      },
+    },
+    size: {
+      options: Object.values(SIZE_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+    spaceAfter: {
+      options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof ButtonLink>;
+
 const getIcon = (source: string | null) => (source ? Icons[source] : null);
 
-export default {
-  title: "ButtonLink",
-};
+export const Default: Story = {
+  render: ({ children, iconLeft, iconRight, ...args }) => {
+    const IconLeft = getIcon(iconLeft as string);
+    const IconRight = getIcon(iconRight as string);
 
-export const Default = () => <ButtonLink href="https://kiwi.com">ButtonLink</ButtonLink>;
-
-Default.story = {
-  parameters: {
-    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    return (
+      <ButtonLink
+        {...args}
+        iconLeft={iconLeft && <IconLeft />}
+        iconRight={iconRight && <IconRight />}
+      >
+        {children}
+      </ButtonLink>
+    );
   },
 };
 
-export const Secondary = () => (
-  <ButtonLink href="https://kiwi.com" type="secondary">
-    ButtonLink
-  </ButtonLink>
-);
+export const Secondary: Story = {
+  render: ({ children, iconLeft, iconRight, ...args }) => {
+    const IconLeft = getIcon(iconLeft as string);
+    const IconRight = getIcon(iconRight as string);
 
-Secondary.story = {
-  parameters: {
-    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    return (
+      <ButtonLink
+        {...args}
+        iconLeft={iconLeft && <IconLeft />}
+        iconRight={iconRight && <IconRight />}
+      >
+        {children}
+      </ButtonLink>
+    );
+  },
+
+  args: { type: TYPES.SECONDARY },
+};
+
+export const Critical: Story = {
+  render: ({ children, iconLeft, iconRight, ...args }) => {
+    const IconLeft = getIcon(iconLeft as string);
+    const IconRight = getIcon(iconRight as string);
+
+    return (
+      <ButtonLink
+        {...args}
+        iconLeft={iconLeft && <IconLeft />}
+        iconRight={iconRight && <IconRight />}
+        onClick={action("onClick")}
+      >
+        {children}
+      </ButtonLink>
+    );
+  },
+
+  args: { type: TYPES.CRITICAL },
+};
+
+export const Circled: Story = {
+  render: ({ iconLeft, iconRight, ...args }) => {
+    const IconLeft = getIcon(iconLeft as string);
+    const IconRight = getIcon(iconLeft as string);
+
+    return (
+      <ButtonLink
+        {...args}
+        iconLeft={iconLeft && <IconLeft />}
+        iconRight={iconRight && <IconRight />}
+        onClick={action("clicked")}
+      />
+    );
+  },
+
+  parameters: { controls: { exclude: ["iconRight", "children"] } },
+
+  args: {
+    children: undefined,
+    circled: true,
+    type: TYPES.SECONDARY,
+    size: SIZE_OPTIONS.LARGE,
+    iconLeft: "Airplane",
   },
 };
 
-export const Critical = () => (
-  <ButtonLink onClick={action("onClick")} type="critical">
-    ButtonLink
-  </ButtonLink>
-);
+export const Playground: Story = {
+  render: ({ children, iconLeft, iconRight, ...args }) => {
+    const IconLeft = getIcon(iconLeft as string);
+    const IconRight = getIcon(iconRight as string);
 
-Critical.story = {
-  parameters: {
-    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+    return (
+      <ButtonLink
+        {...args}
+        iconLeft={IconLeft && <IconLeft />}
+        iconRight={IconRight && <IconRight />}
+        onClick={action("clicked")}
+      >
+        {children}
+      </ButtonLink>
+    );
+  },
+
+  args: {
+    type: TYPES.SECONDARY,
+    size: SIZE_OPTIONS.LARGE,
+    iconLeft: "Airplane",
+    iconRight: "ChevronDown",
+    ariaExpanded: false,
+    ariaControls: "element ID",
+    tabIndex: "0",
+    title: "Additional information for accessibility",
+    rel: "nofollow",
   },
 };
 
-export const Circled = ({ type, size, iconLeft, circled }) => {
-  const IconLeft = getIcon(iconLeft);
-
-  return (
-    <ButtonLink
-      type={type}
-      size={size}
-      iconLeft={iconLeft && <IconLeft />}
-      onClick={action("clicked")}
-      circled={circled}
-      title="Button"
-    />
-  );
-};
-
-Circled.story = {
-  parameters: {
-    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
+export const Accessibility: Story = {
+  render: ({ children, ariaExpanded, ariaControls, title }) => {
+    return (
+      <ButtonLink ariaExpanded={ariaExpanded} ariaControls={ariaControls} title={title}>
+        {children}
+      </ButtonLink>
+    );
   },
-};
 
-Circled.args = {
-  circled: true,
-  type: TYPES.SECONDARY,
-  size: SIZE_OPTIONS.LARGE,
-  iconLeft: "Airplane",
-};
-
-Circled.argTypes = {
-  iconLeft: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
-  type: {
-    options: Object.values(TYPES),
-    control: {
-      type: "select",
-    },
-  },
-  size: {
-    options: Object.values(SIZE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Playground = ({
-  children,
-  disabled,
-  fullWidth,
-  type,
-  size,
-  width,
-  iconLeft,
-  iconRight,
-  href,
-  dataTest,
-  external,
-  compact,
-  submit,
-  ariaExpanded,
-  ariaControls,
-  tabIndex,
-  spaceAfter,
-  title,
-  rel,
-}) => {
-  const IconLeft = getIcon(iconLeft);
-  const IconRight = getIcon(iconRight);
-
-  return (
-    <ButtonLink
-      disabled={disabled}
-      fullWidth={fullWidth}
-      type={type}
-      size={size}
-      href={href}
-      dataTest={dataTest}
-      iconLeft={IconLeft && <IconLeft />}
-      iconRight={IconRight && <IconRight />}
-      width={String(width)}
-      external={external}
-      onClick={action("clicked")}
-      compact={compact}
-      submit={submit}
-      ariaExpanded={ariaExpanded}
-      ariaControls={ariaControls}
-      tabIndex={tabIndex}
-      spaceAfter={spaceAfter}
-      title={title}
-      rel={rel}
-    >
-      {children}
-    </ButtonLink>
-  );
-};
-
-Playground.story = {
-  parameters: {
-    info: "Link buttons have a similar look as classic links, but the area surrounding them is clickable. That makes them great to use outside of paragraphs or for less important actions in the interface. We use Link buttons only in a small and normal version.",
-  },
-};
-
-Playground.args = {
-  children: "ButtonLink",
-  disabled: false,
-  fullWidth: false,
-  type: TYPES.SECONDARY,
-  size: SIZE_OPTIONS.LARGE,
-  width: NaN,
-  iconLeft: "Airplane",
-  iconRight: "ChevronDown",
-  href: "",
-  dataTest: "test",
-  external: false,
-  compact: false,
-  submit: false,
-  ariaExpanded: false,
-  ariaControls: "element ID",
-  tabIndex: "0",
-  spaceAfter: undefined,
-  title: "Additional information for accessibility",
-  rel: "nofollow",
-};
-
-Playground.argTypes = {
-  iconLeft: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
-  iconRight: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
-  type: {
-    options: Object.values(TYPES),
-    control: {
-      type: "select",
-    },
-  },
-  size: {
-    options: Object.values(SIZE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-  spaceAfter: {
-    options: Object.values(SPACINGS_AFTER),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Accessibility = ({ children, ariaExpanded, ariaControls, title }) => {
-  return (
-    <ButtonLink ariaExpanded={ariaExpanded} ariaControls={ariaControls} title={title}>
-      {children}
-    </ButtonLink>
-  );
-};
-
-Accessibility.story = {
   parameters: {
     info: "This is a preview of component accessibility props",
   },
+
+  args: {
+    children: "ButtonLink",
+    ariaExpanded: false,
+    ariaControls: "element ID",
+    title: "Additional information for accessibility",
+  },
 };
 
-Accessibility.args = {
-  children: "ButtonLink",
-  ariaExpanded: false,
-  ariaControls: "element ID",
-  title: "Additional information for accessibility",
-};
+export const Rtl: Story = {
+  render: ({ children, iconLeft, iconRight, ...args }) => {
+    const IconLeft = getIcon(iconLeft as string);
+    const IconRight = getIcon(iconRight as string);
 
-export const Rtl = () => (
-  <RenderInRtl>
-    <ButtonLink iconLeft={<Icons.Airplane />}>ButtonLink</ButtonLink>
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+    return (
+      <RenderInRtl>
+        <ButtonLink
+          {...args}
+          iconLeft={IconLeft && <IconLeft />}
+          iconRight={IconRight && <IconRight />}
+        >
+          {children}
+        </ButtonLink>
+      </RenderInRtl>
+    );
+  },
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",

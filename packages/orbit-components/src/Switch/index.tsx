@@ -13,7 +13,7 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
       <label className="inline-block">
         <div
           className={cx(
-            "duration-fast relative flex h-[20px] w-[40px] items-center justify-between rounded-[100px] transition-colors",
+            "duration-fast w-xxl h-icon-medium relative flex items-center justify-between rounded-full transition-colors",
             disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer",
             checked ? "bg-blue-normal" : "bg-cloud-dark",
           )}

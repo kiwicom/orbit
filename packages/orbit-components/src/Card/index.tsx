@@ -46,7 +46,7 @@ export default function Card({
     <div
       id={id}
       className={cx(
-        "orbit-card font-base bg-white-normal *:border-elevation-flat-border-color lm:first:*:rounded-t-normal lm:last:*:rounded-b-normal w-full first:*:border-t",
+        "orbit-card font-base bg-white-normal *:border-elevation-flat-border-color lm:first:*:rounded-t-100 lm:last:*:rounded-b-100 w-full first:*:border-t",
         spaceAfter != null && spaceAfterClasses[spaceAfter],
       )}
       data-test={dataTest}

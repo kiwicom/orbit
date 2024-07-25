@@ -84,7 +84,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         className={cx(
           "w-full appearance-none",
           "font-base text-normal p-sm leading-normal",
-          "rounded-normal relative box-border block overflow-auto",
+          "rounded-100 relative box-border block overflow-auto",
           "min-h-form-box-normal",
           "duration-fast transition-shadow ease-in-out",
           "border border-transparent",

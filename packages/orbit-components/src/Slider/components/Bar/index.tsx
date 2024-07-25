@@ -27,7 +27,7 @@ export const calculateBarPosition = (
 const BarPart = ({ className, style }: { className: string; style?: React.CSSProperties }) => {
   return (
     <div
-      className={cx("h-xxs rounded-normal absolute top-1/2 -translate-y-1/2", className)}
+      className={cx("h-xxs rounded-100 absolute top-1/2 -translate-y-1/2", className)}
       style={style}
     />
   );

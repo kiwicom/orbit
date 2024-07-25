@@ -113,13 +113,13 @@ const ErrorFormTooltip = ({
       data-test={dataTest}
       className={cx(
         "flex justify-between overflow-visible",
-        "rounded-large py-xs px-sm z-10 box-border",
+        "rounded-150 py-xs px-sm z-10 box-border",
         "max-h-none w-[min(calc(100%-20px),_100vw)]",
         isHelp ? "pe-sm bg-blue-normal" : "bg-red-normal",
         shown ? "visible opacity-100" : "invisible opacity-0",
         "duration-fast transition-[opacity,visibility] ease-in-out",
         "bottom-[var(--error-form-tooltip-bottom)] left-[var(--error-form-tooltip-left)] right-[var(--error-form-tooltip-right)] top-[var(--error-form-tooltip-top)] [position:var(--error-form-tooltip-position)] [transform:var(--error-form-tooltip-transform)]",
-        "lm:w-auto tb:rounded-normal",
+        "lm:w-auto tb:rounded-100",
         "[&>img]:max-w-full",
       )}
       style={cssVars as React.CSSProperties}

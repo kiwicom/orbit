@@ -2848,6 +2848,26 @@
     <value>transparent</value>
   </token>
   <token>
+    <name>borderRadius50</name>
+    <value>2</value>
+  </token>
+  <token>
+    <name>borderRadius100</name>
+    <value>4</value>
+  </token>
+  <token>
+    <name>borderRadius150</name>
+    <value>6</value>
+  </token>
+  <token>
+    <name>borderRadius300</name>
+    <value>12</value>
+  </token>
+  <token>
+    <name>borderRadius400</name>
+    <value>16</value>
+  </token>
+  <token>
     <name>borderRadiusCircle</name>
     <value>50%</value>
   </token>
@@ -2862,6 +2882,10 @@
   <token>
     <name>borderRadiusLarge</name>
     <value>6</value>
+  </token>
+  <token>
+    <name>borderRadiusNone</name>
+    <value>0</value>
   </token>
   <token>
     <name>borderRadiusFull</name>

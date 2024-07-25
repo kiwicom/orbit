@@ -10,15 +10,48 @@
       },
       "small": {
         "type": "border-radius",
-        "value": "{foundation.border-radius.small}"
+        "value": "{foundation.border-radius.small}",
+        "deprecated": true,
+        "deprecated-replace": "{global.border-radius.50}",
+        "deprecated-version": "9.0.0"
       },
       "normal": {
         "type": "border-radius",
-        "value": "{foundation.border-radius.normal}"
+        "value": "{foundation.border-radius.normal}",
+        "deprecated": true,
+        "deprecated-replace": "{global.border-radius.100}",
+        "deprecated-version": "9.0.0"
       },
       "large": {
         "type": "border-radius",
-        "value": "{foundation.border-radius.large}"
+        "value": "{foundation.border-radius.large}",
+        "deprecated": true,
+        "deprecated-replace": "{global.border-radius.150}",
+        "deprecated-version": "9.0.0"
+      },
+      "none": {
+        "type": "border-radius",
+        "value": "{foundation.border-radius.none}"
+      },
+      "50": {
+        "type": "border-radius",
+        "value": "{foundation.border-radius.50}"
+      },
+      "100": {
+        "type": "border-radius",
+        "value": "{foundation.border-radius.100}"
+      },
+      "150": {
+        "type": "border-radius",
+        "value": "{foundation.border-radius.150}"
+      },
+      "300": {
+        "type": "border-radius",
+        "value": "{foundation.border-radius.300}"
+      },
+      "400": {
+        "type": "border-radius",
+        "value": "{foundation.border-radius.400}"
       },
       "full": {
         "type": "border-radius",

@@ -6,7 +6,17 @@
         "value": "50%",
         "internal": true
       },
+      "none": {
+        "type": "border-radius",
+        "value": 0,
+        "internal": true
+      },
       "small": {
+        "type": "border-radius",
+        "value": 2,
+        "internal": true
+      },
+      "50": {
         "type": "border-radius",
         "value": 2,
         "internal": true
@@ -16,9 +26,29 @@
         "value": 3,
         "internal": true
       },
+      "100": {
+        "type": "border-radius",
+        "value": 4,
+        "internal": true
+      },
       "large": {
         "type": "border-radius",
         "value": 6,
+        "internal": true
+      },
+      "150": {
+        "type": "border-radius",
+        "value": 6,
+        "internal": true
+      },
+      "300": {
+        "type": "border-radius",
+        "value": 12,
+        "internal": true
+      },
+      "400": {
+        "type": "border-radius",
+        "value": 16,
         "internal": true
       },
       "full": {

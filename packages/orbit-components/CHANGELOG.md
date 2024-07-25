@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.10.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.9.0...@kiwicom/orbit-components@15.10.0) (2024-07-25)
+
+
+### Bug Fixes
+
+* **SegmentedSwitch:** use blue normal text when selected ([e7f9158](https://github.com/kiwicom/orbit/commit/e7f9158f699b4ac0cf913e00b5f346fa0075b99c))
+
+
+### Features
+
+* **TextLink:** add support for data and aria attributes ([b22b858](https://github.com/kiwicom/orbit/commit/b22b8586fe7fca057f5848b567e4ac892195482e))
+
+
+
+
+
 # [15.9.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.8.0...@kiwicom/orbit-components@15.9.0) (2024-07-18)
 
 

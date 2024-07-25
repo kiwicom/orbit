@@ -16,7 +16,7 @@ const StyledAnchor = styled.a`
     padding: ${theme.orbit.paddingButtonSmallWithLeftIcon};
     padding-top: ${theme.orbit.spaceXXSmall};
     height: ${theme.orbit.heightButtonSmall};
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadius100};
     transition: all ${theme.orbit.durationFast} ease-in;
 
     &:hover,
@@ -42,7 +42,7 @@ const ImageWrap = styled.div<ImageWrapProps>`
   ${({ theme, width }) => css`
     padding: ${theme.orbit.spaceSmall};
     border: 1px solid ${theme.orbit.borderColorCard};
-    border-radius: ${theme.orbit.borderRadiusNormal};
+    border-radius: ${theme.orbit.borderRadius100};
     margin-top: ${theme.orbit.spaceMedium};
     width: ${width};
     margin-right: 2%;

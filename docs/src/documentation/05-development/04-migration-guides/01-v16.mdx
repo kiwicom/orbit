@@ -1,0 +1,71 @@
+---
+title: v16
+description: How to migrate to Orbit 16.0.0
+redirect_from:
+  - /migration-guides/v16/
+---
+
+# Orbit Migration Guide v16
+
+This migration guide focuses on the process of migrating from Orbit v15 to v16.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+This version addresses especially a change in the design tokens, and tailwind classes.
+
+## Token and tailwind classes
+
+A number of new design tokens were introduced and others were removed. This means that some of the tailwind classes have been updated to reflect these changes.
+
+### Border Radius
+
+Four border radius tokens were removed and six new ones were added.
+
+Here's the mapping for the new tokens:
+
+- `borderRadiusSmall` -> `borderRadius50`
+- `borderRadiusNormal` -> `borderRadius100` (value change from 3px to 4px)
+- `borderRadiusLarge` -> `borderRadius150`
+- `borderRadiusCircle` -> `borderRadiusFull`
+- `borderRadius300` (new value of 12px)
+- `borderRadius400` (new value of 16px)
+
+And their respective tailwind classes:
+
+- `rounded-small` -> `rounded-50`
+- `rounded-normal` -> `rounded-100` (value change from 3px to 4px)
+- `rounded-large` -> `rounded-150`
+- `rounded-circle` -> `rounded-full`
+- `rounded-300`
+- `rounded-400`
+
+## Box component
+
+Because the Box component props rely heavily on design tokens and their values, some of the prop values have been updated to reflect the changes in the design tokens.
+
+**Before:**
+
+```jsx
+<Box borderRadius="small">"small" borderRadius</Box>
+<Box borderRadius="normal">"normal" borderRadius</Box>
+<Box borderRadius="large">"large" borderRadius</Box>
+<Box borderRadius="circle">"circle" borderRadius</Box>
+```
+
+**Now:**
+
+```jsx
+<Box borderRadius="50">"50" borderRadius</Box>
+<Box borderRadius="100">"100" borderRadius</Box>
+<Box borderRadius="150">"150" borderRadius</Box>
+<Box borderRadius="full">"full" borderRadius</Box>
+```
+
+## Codemod
+
+A codemod was made available to help with the migration. It should target all the tokens and tailwind classes that were updated and correctly migrate them.
+
+Please ensure the changes are expected and there is no change missing. Please note that the codemod **does not** cover the Box component changes.
+
+```bash
+node .../transforms/tokens-v16.mjs
+```

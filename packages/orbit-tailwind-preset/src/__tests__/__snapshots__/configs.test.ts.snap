@@ -210,6 +210,11 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       },
       "theme": {
         "borderRadius": {
+          "100": "4px",
+          "150": "6px",
+          "300": "12px",
+          "400": "16px",
+          "50": "2px",
           "circle": "50%",
           "full": "9999px",
           "large": "6px",
@@ -1054,6 +1059,11 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "95": "0.95",
     },
     "borderRadius": {
+      "100": "4px",
+      "150": "6px",
+      "300": "12px",
+      "400": "16px",
+      "50": "2px",
       "badge": "12px",
       "circle": "50%",
       "dialog-desktop": "9px",

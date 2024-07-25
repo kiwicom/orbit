@@ -141,12 +141,18 @@ const getTailwindTheme = (theme: typeof defaultTokens) => {
       xxxl: defaultFoundation.space.XXXLarge,
     },
     borderRadius: {
-      none: "0",
+      50: defaultFoundation.borderRadius["50"],
+      100: defaultFoundation.borderRadius["100"],
+      150: defaultFoundation.borderRadius["150"],
+      300: defaultFoundation.borderRadius["300"],
+      400: defaultFoundation.borderRadius["400"],
+      none: defaultFoundation.borderRadius.none,
+      full: defaultFoundation.borderRadius.full,
+      /* Deprecated values */
       small: defaultFoundation.borderRadius.small,
       normal: defaultFoundation.borderRadius.normal,
       large: defaultFoundation.borderRadius.large,
       circle: defaultFoundation.borderRadius.circle,
-      full: defaultFoundation.borderRadius.full,
     },
     screens: {
       sm: toPx(defaultFoundation.breakpoint.smallMobile),

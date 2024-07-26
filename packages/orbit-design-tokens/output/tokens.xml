@@ -2232,8 +2232,20 @@
     <value>28</value>
   </token>
   <token>
-    <name>headingTitle1FontSize</name>
+    <name>headingTitle0FontSize</name>
     <value>28</value>
+  </token>
+  <token>
+    <name>headingTitle0FontWeight</name>
+    <value>700</value>
+  </token>
+  <token>
+    <name>headingTitle0LineHeight</name>
+    <value>36</value>
+  </token>
+  <token>
+    <name>headingTitle1FontSize</name>
+    <value>24</value>
   </token>
   <token>
     <name>headingTitle1FontWeight</name>
@@ -2245,11 +2257,11 @@
   </token>
   <token>
     <name>headingTitle2FontSize</name>
-    <value>22</value>
+    <value>20</value>
   </token>
   <token>
     <name>headingTitle2FontWeight</name>
-    <value>500</value>
+    <value>700</value>
   </token>
   <token>
     <name>headingTitle2LineHeight</name>
@@ -2261,7 +2273,7 @@
   </token>
   <token>
     <name>headingTitle3FontWeight</name>
-    <value>500</value>
+    <value>700</value>
   </token>
   <token>
     <name>headingTitle3LineHeight</name>
@@ -2277,7 +2289,7 @@
   </token>
   <token>
     <name>headingTitle4LineHeight</name>
-    <value>20</value>
+    <value>22</value>
   </token>
   <token>
     <name>headingTitle5FontSize</name>
@@ -2301,7 +2313,7 @@
   </token>
   <token>
     <name>headingTitle6LineHeight</name>
-    <value>16</value>
+    <value>18</value>
   </token>
   <token>
     <name>headingForeground</name>

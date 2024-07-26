@@ -13,16 +13,22 @@
           "value": 22
         }
       },
-      "title-1": {
+      "title-0": {
         "font-size": {
           "type": "size",
           "value": 28
         }
       },
+      "title-1": {
+        "font-size": {
+          "type": "size",
+          "value": 24
+        }
+      },
       "title-2": {
         "font-size": {
           "type": "size",
-          "value": 22
+          "value": 20
         }
       },
       "title-3": {

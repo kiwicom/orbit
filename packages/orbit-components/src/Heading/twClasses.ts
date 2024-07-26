@@ -7,6 +7,7 @@ export const typeClasses: {
   [TYPE_OPTIONS.DISPLAY]: "text-heading-display leading-heading-display font-heading-display",
   [TYPE_OPTIONS.DISPLAYSUBTITLE]:
     "text-heading-display-subtitle leading-heading-display-subtitle font-heading-display-subtitle",
+  [TYPE_OPTIONS.TITLE0]: "text-heading-title0 leading-heading-title0 font-heading-title0",
   [TYPE_OPTIONS.TITLE1]: "text-heading-title1 leading-heading-title1 font-heading-title1",
   [TYPE_OPTIONS.TITLE2]: "text-heading-title2 leading-heading-title2 font-heading-title2",
   [TYPE_OPTIONS.TITLE3]: "text-heading-title3 leading-heading-title3 font-heading-title3",
@@ -18,6 +19,8 @@ export const typeClasses: {
       "mm:text-heading-display mm:leading-heading-display mm:font-heading-display",
     [TYPE_OPTIONS.DISPLAYSUBTITLE]:
       "mm:text-heading-display-subtitle mm:leading-heading-display-subtitle mm:font-heading-display-subtitle",
+    [TYPE_OPTIONS.TITLE0]:
+      "mm:text-heading-title0 mm:leading-heading-title0 mm:font-heading-title0",
     [TYPE_OPTIONS.TITLE1]:
       "mm:text-heading-title1 mm:leading-heading-title1 mm:font-heading-title1",
     [TYPE_OPTIONS.TITLE2]:
@@ -36,6 +39,8 @@ export const typeClasses: {
       "lm:text-heading-display lm:leading-heading-display lm:font-heading-display",
     [TYPE_OPTIONS.DISPLAYSUBTITLE]:
       "lm:text-heading-display-subtitle lm:leading-heading-display-subtitle lm:font-heading-display-subtitle",
+    [TYPE_OPTIONS.TITLE0]:
+      "lm:text-heading-title0 lm:leading-heading-title0 lm:font-heading-title0",
     [TYPE_OPTIONS.TITLE1]:
       "lm:text-heading-title1 lm:leading-heading-title1 lm:font-heading-title1",
     [TYPE_OPTIONS.TITLE2]:
@@ -54,6 +59,8 @@ export const typeClasses: {
       "tb:text-heading-display tb:leading-heading-display tb:font-heading-display",
     [TYPE_OPTIONS.DISPLAYSUBTITLE]:
       "tb:text-heading-display-subtitle tb:leading-heading-display-subtitle tb:font-heading-display-subtitle",
+    [TYPE_OPTIONS.TITLE0]:
+      "tb:text-heading-title0 tb:leading-heading-title0 tb:font-heading-title0",
     [TYPE_OPTIONS.TITLE1]:
       "tb:text-heading-title1 tb:leading-heading-title1 tb:font-heading-title1",
     [TYPE_OPTIONS.TITLE2]:
@@ -72,6 +79,8 @@ export const typeClasses: {
       "de:text-heading-display de:leading-heading-display de:font-heading-display",
     [TYPE_OPTIONS.DISPLAYSUBTITLE]:
       "de:text-heading-display-subtitle de:leading-heading-display-subtitle de:font-heading-display-subtitle",
+    [TYPE_OPTIONS.TITLE0]:
+      "de:text-heading-title0 de:leading-heading-title0 de:font-heading-title0",
     [TYPE_OPTIONS.TITLE1]:
       "de:text-heading-title1 de:leading-heading-title1 de:font-heading-title1",
     [TYPE_OPTIONS.TITLE2]:
@@ -90,6 +99,8 @@ export const typeClasses: {
       "ld:text-heading-display ld:leading-heading-display ld:font-heading-display",
     [TYPE_OPTIONS.DISPLAYSUBTITLE]:
       "ld:text-heading-display-subtitle ld:leading-heading-display-subtitle ld:font-heading-display-subtitle",
+    [TYPE_OPTIONS.TITLE0]:
+      "ld:text-heading-title0 ld:leading-heading-title0 ld:font-heading-title0",
     [TYPE_OPTIONS.TITLE1]:
       "ld:text-heading-title1 ld:leading-heading-title1 ld:font-heading-title1",
     [TYPE_OPTIONS.TITLE2]:

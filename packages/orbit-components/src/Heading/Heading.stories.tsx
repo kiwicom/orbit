@@ -82,6 +82,34 @@ TitleDisplaySubtitle.argTypes = {
   },
 };
 
+export const Title0 = ({ customTitle, as }) => {
+  return (
+    <Heading type="title0" as={as}>
+      {customTitle}
+    </Heading>
+  );
+};
+
+Title0.story = {
+  parameters: {
+    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+Title0.args = {
+  customTitle: "Orbit design system",
+  as: ELEMENT_OPTIONS.H1,
+};
+
+Title0.argTypes = {
+  as: {
+    options: Object.values(ELEMENT_OPTIONS),
+    control: {
+      type: "select",
+    },
+  },
+};
+
 export const Title1 = ({ customTitle, as }) => {
   return (
     <Heading type="title1" as={as}>

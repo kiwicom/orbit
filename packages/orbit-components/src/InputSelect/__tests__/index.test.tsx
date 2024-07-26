@@ -216,6 +216,49 @@ describe("InputSelect", () => {
     expect(screen.getAllByRole("option")).toHaveLength(1 + 2 + 1 + 4); // (1 previously selected, 2 asian, 1 american, 4 all)
   });
 
+  it("can be readOnly", async () => {
+    const onFocus = jest.fn();
+
+    render(
+      <InputSelect
+        id={id}
+        label={label}
+        options={options}
+        name={name}
+        defaultSelected={jetLiOption}
+        onFocus={onFocus}
+        readOnly
+      />,
+    );
+
+    const input = screen.getByRole("textbox");
+    const dropdown = screen.queryByRole("listbox");
+
+    expect(input).toHaveValue(jetLiOption.title);
+
+    await user.tab();
+    expect(onFocus).toHaveBeenCalledTimes(1);
+    expect(dropdown).not.toBeInTheDocument();
+
+    // Prevent component to not be in focus state
+    input.blur();
+
+    // Check if dropdown is not shown on a click
+    await user.click(input);
+    expect(onFocus).toHaveBeenCalledTimes(2);
+    expect(dropdown).not.toBeInTheDocument();
+
+    // Check if dropdown is not shown on a focus
+    fireEvent.focus(input);
+    expect(onFocus).toHaveBeenCalledTimes(3);
+    expect(dropdown).not.toBeInTheDocument();
+
+    // Assert that input field still includes the same value
+    await user.type(input, "Arnold");
+    expect(onFocus).toHaveBeenCalledTimes(3);
+    expect(input).toHaveValue(jetLiOption.title);
+  });
+
   describe("when showAll is false", () => {
     it("should not render repeated options", async () => {
       const showAllLabel = "Those without a group";

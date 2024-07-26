@@ -48,6 +48,7 @@ export const Grouped = () => {
   ];
 
   const showAll = boolean("Show all", true);
+  const readOnly = boolean("Read only", false);
 
   return (
     <div className="min-h-[1000px]">
@@ -56,8 +57,10 @@ export const Grouped = () => {
         options={currencyOptions}
         onClose={action("onClose")}
         onChange={action("onChange")}
+        onFocus={action("onFocus")}
         onOptionSelect={action("onOptionSelect")}
         showAll={showAll}
+        readOnly={readOnly}
       />
     </div>
   );
@@ -102,6 +105,7 @@ export const PreviouslySelected = () => {
   ];
 
   const showAll = boolean("Show all", true);
+  const readOnly = boolean("Read only", false);
   const prevSelectedLabel = text("prevSelectedLabel", "Previously selected");
 
   return (
@@ -116,6 +120,7 @@ export const PreviouslySelected = () => {
         prevSelected={currencyOptions[2]}
         prevSelectedLabel={prevSelectedLabel}
         defaultSelected={currencyOptions[2]}
+        readOnly={readOnly}
       />
     </div>
   );
@@ -216,6 +221,7 @@ export const Playground = () => {
   const maxHeight = text("maxHeight", "400px");
   const hasError = boolean("hasError", false);
   const hasHelp = boolean("hasHelp", false);
+  const readOnly = boolean("Read only", false);
 
   return (
     <div className="min-h-[1000px]">
@@ -236,6 +242,7 @@ export const Playground = () => {
         emptyState={emptyStateMessage}
         showAll={showAll}
         showAllLabel={showAllLabel}
+        readOnly={readOnly}
       />
     </div>
   );

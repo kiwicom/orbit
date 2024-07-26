@@ -68,6 +68,12 @@ export function InputSelectStory() {
         placeholder="Custom Placeholder"
         disabled
       />
+      <InputSelect
+        options={simpleOptions}
+        label="Custom label (readOnly)"
+        defaultSelected={simpleOptions[0]}
+        readOnly
+      />
       <InputSelect options={simpleOptions} label="Custom label" required />
       <InputSelect options={simpleOptions} defaultSelected={simpleOptions[0]} />
       <InputSelect

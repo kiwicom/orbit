@@ -12,13 +12,63 @@ With this guide, we aim to walk through all the breaking changes and how they ca
 
 This version addresses especially a change in the design tokens, and tailwind classes.
 
-## Token and tailwind classes
+## Breaking changes
+
+### Heading component & Tailwind classes
+
+A new heading token was added: `title0`. This token is similar to the previously existing `title1` token. Therefore, `title1` token was updated to have new font size and line height values.
+
+With that, the `Heading` component now accepts a new value for the `type` prop: `"title0"`.
+
+Because of that, all occurrences of `Heading` with `type="title1"` **must be replaced** with `type="title0"`, to avoid the visual breaking change.
+
+**Before:**
+
+```jsx
+<Heading type="title1">Title 1</Heading>
+```
+
+**Now:**
+
+```jsx
+<Heading type="title0">Title 0</Heading>
+```
+
+The Tailwind classes should also be updated. So if you are using tailwind classes that refer to `title1` in your components, be sure to update them to use `title0` in order to keep the same styles.
+
+**Before:**
+
+```jsx
+<p className="leading-heading-title1 text-heading-title1 font-heading-title1">Title 1</p>
+```
+
+**Now:**
+
+```jsx
+<p className="leading-heading-title0 text-heading-title0 font-heading-title0">Title 0</p>
+```
+
+### Tokens
 
 A number of new design tokens were introduced and others were removed. This means that some of the tailwind classes have been updated to reflect these changes.
 
-### Border Radius
+#### Heading
 
-Four border radius tokens were removed and six new ones were added.
+Some deprecated Heading tokens were removed. They have been deprecated since the first Tailwind release and were now finally removed. The equivalent new tokens are:
+
+- `fontSizeHeading<TYPE>` -> `heading<TYPE>FontSize`
+- `lineHeightHeading<TYPE>` -> `heading<TYPE>LineHeight`
+- `fontWeightHeading<TYPE>` -> `heading<TYPE>FontWeight`
+
+Where `<TYPE>` can be `Display`, `DisplaySubtitle`, `Title1`, `Title2`, `Title3`, `Title4`, `Title5`, or `Title6`.
+
+## Deprecations
+
+### Tokens and Tailwind classes
+
+#### Border Radius
+
+Four border radius tokens were deprecated (to be released in the next major version) and six new ones were added.
 
 Here's the mapping for the new tokens:
 
@@ -37,6 +87,8 @@ And their respective tailwind classes:
 - `rounded-circle` -> `rounded-full`
 - `rounded-300`
 - `rounded-400`
+
+We recommend to start adopting the new tokens and classes as soon as possible.
 
 ## Box component
 

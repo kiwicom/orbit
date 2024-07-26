@@ -8,6 +8,7 @@ import type * as Common from "../common/types";
 export type Type =
   | "display"
   | "displaySubtitle"
+  | "title0"
   | "title1"
   | "title2"
   | "title3"

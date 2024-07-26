@@ -39,11 +39,12 @@ The table below contains all types of props available in the Heading component.
 | :------ | :------------------ | :-------- | :----------- |
 | `"h1"`  | `"display"`         | `start`   | `"none"`     |
 | `"h2"`  | `"displaySubtitle"` | `end`     | `"smallest"` |
-| `"h3"`  | `"title1"`          | `center`  | `"small"`    |
-| `"h4"`  | `"title2"`          | `justify` | `"normal"`   |
-| `"h5"`  | `"title3"`          |           | `"medium"`   |
-| `"h6"`  | `"title4"`          |           | `"large"`    |
-| `"div"` | `"title5"`          |           | `"largest"`  |
+| `"h3"`  | `"title0"`          | `center`  | `"small"`    |
+| `"h4"`  | `"title1"`          | `justify` | `"normal"`   |
+| `"h5"`  | `"title2"`          |           | `"medium"`   |
+| `"h6"`  | `"title3"`          |           | `"large"`    |
+| `"div"` | `"title4"`          |           | `"largest"`  |
+|         | `"title5"`          |           |
 |         | `"title6"`          |           |
 
 ### Media Queries

@@ -3,6 +3,7 @@ import React from "react";
 const Headings = () => {
   return (
     <div>
+      <h1 className="text-heading-title0 leading-heading-title0 font-heading-title0">title0</h1>
       <h1 className="text-heading-title1 leading-heading-title1 font-heading-title1">title1</h1>
       <h2 className="text-heading-title2 leading-heading-title2 font-heading-title2">title2</h2>
       <h3 className="text-heading-title3 leading-heading-title3 font-heading-title3">title3</h3>

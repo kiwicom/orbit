@@ -6,6 +6,7 @@ import { render, screen } from "../testUtils";
 import firstToUpper from "../utils/firstToUpper";
 
 const HEADINGS = [
+  "title0",
   "title1",
   "title2",
   "title3",

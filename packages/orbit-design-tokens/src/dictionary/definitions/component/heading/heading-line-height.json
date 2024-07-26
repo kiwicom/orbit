@@ -13,6 +13,12 @@
           "value": 28
         }
       },
+      "title-0": {
+        "line-height": {
+          "type": "size",
+          "value": 36
+        }
+      },
       "title-1": {
         "line-height": {
           "type": "size",
@@ -34,7 +40,7 @@
       "title-4": {
         "line-height": {
           "type": "size",
-          "value": 20
+          "value": 22
         }
       },
       "title-5": {
@@ -46,7 +52,7 @@
       "title-6": {
         "line-height": {
           "type": "size",
-          "value": 16
+          "value": 18
         }
       }
     },

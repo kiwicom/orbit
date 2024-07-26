@@ -12890,6 +12890,75 @@
       "value": "28px"
     }
   },
+  "headingTitle0FontSize": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "heading",
+      "variant": "title-0",
+      "subVariant": "font-size"
+    },
+    "javascript": {
+      "name": "headingTitle0FontSize",
+      "value": "28px"
+    },
+    "foundation": {
+      "name": "headingTitle0FontSize",
+      "value": "none"
+    },
+    "scss": {
+      "name": "headingTitle0FontSize",
+      "value": "28px"
+    }
+  },
+  "headingTitle0FontWeight": {
+    "type": "font-weight",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "heading",
+      "variant": "title-0",
+      "subVariant": "font-weight"
+    },
+    "javascript": {
+      "name": "headingTitle0FontWeight",
+      "value": 700
+    },
+    "foundation": {
+      "name": "headingTitle0FontWeight",
+      "value": "foundation.fontWeight.bold"
+    },
+    "scss": {
+      "name": "headingTitle0FontWeight",
+      "value": 700
+    }
+  },
+  "headingTitle0LineHeight": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "heading",
+      "variant": "title-0",
+      "subVariant": "line-height"
+    },
+    "javascript": {
+      "name": "headingTitle0LineHeight",
+      "value": "36px"
+    },
+    "foundation": {
+      "name": "headingTitle0LineHeight",
+      "value": "none"
+    },
+    "scss": {
+      "name": "headingTitle0LineHeight",
+      "value": "36px"
+    }
+  },
   "headingTitle1FontSize": {
     "type": "size",
     "deprecated": false,
@@ -12902,7 +12971,7 @@
     },
     "javascript": {
       "name": "headingTitle1FontSize",
-      "value": "28px"
+      "value": "24px"
     },
     "foundation": {
       "name": "headingTitle1FontSize",
@@ -12910,7 +12979,7 @@
     },
     "scss": {
       "name": "headingTitle1FontSize",
-      "value": "28px"
+      "value": "24px"
     }
   },
   "headingTitle1FontWeight": {
@@ -12971,7 +13040,7 @@
     },
     "javascript": {
       "name": "headingTitle2FontSize",
-      "value": "22px"
+      "value": "20px"
     },
     "foundation": {
       "name": "headingTitle2FontSize",
@@ -12979,7 +13048,7 @@
     },
     "scss": {
       "name": "headingTitle2FontSize",
-      "value": "22px"
+      "value": "20px"
     }
   },
   "headingTitle2FontWeight": {
@@ -12994,15 +13063,15 @@
     },
     "javascript": {
       "name": "headingTitle2FontWeight",
-      "value": 500
+      "value": 700
     },
     "foundation": {
       "name": "headingTitle2FontWeight",
-      "value": "foundation.fontWeight.medium"
+      "value": "foundation.fontWeight.bold"
     },
     "scss": {
       "name": "headingTitle2FontWeight",
-      "value": 500
+      "value": 700
     }
   },
   "headingTitle2LineHeight": {
@@ -13063,15 +13132,15 @@
     },
     "javascript": {
       "name": "headingTitle3FontWeight",
-      "value": 500
+      "value": 700
     },
     "foundation": {
       "name": "headingTitle3FontWeight",
-      "value": "foundation.fontWeight.medium"
+      "value": "foundation.fontWeight.bold"
     },
     "scss": {
       "name": "headingTitle3FontWeight",
-      "value": 500
+      "value": 700
     }
   },
   "headingTitle3LineHeight": {
@@ -13155,7 +13224,7 @@
     },
     "javascript": {
       "name": "headingTitle4LineHeight",
-      "value": "20px"
+      "value": "22px"
     },
     "foundation": {
       "name": "headingTitle4LineHeight",
@@ -13163,7 +13232,7 @@
     },
     "scss": {
       "name": "headingTitle4LineHeight",
-      "value": "20px"
+      "value": "22px"
     }
   },
   "headingTitle5FontSize": {
@@ -13293,7 +13362,7 @@
     },
     "javascript": {
       "name": "headingTitle6LineHeight",
-      "value": "16px"
+      "value": "18px"
     },
     "foundation": {
       "name": "headingTitle6LineHeight",
@@ -13301,7 +13370,7 @@
     },
     "scss": {
       "name": "headingTitle6LineHeight",
-      "value": "16px"
+      "value": "18px"
     }
   },
   "headingForeground": {

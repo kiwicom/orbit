@@ -12,7 +12,7 @@ import { typeClasses } from "./twClasses";
 
 const Heading = ({
   children,
-  type = TYPE_OPTIONS.TITLE1,
+  type = TYPE_OPTIONS.TITLE0,
   align = ALIGN.START,
   as: Component = ELEMENT_OPTIONS.DIV,
   dataTest,

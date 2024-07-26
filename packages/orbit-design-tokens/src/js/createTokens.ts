@@ -572,6 +572,9 @@ export interface Tokens {
   headingDisplaySubtitleFontSize: string;
   headingDisplaySubtitleFontWeight: string;
   headingDisplaySubtitleLineHeight: string;
+  headingTitle0FontSize: string;
+  headingTitle0FontWeight: string;
+  headingTitle0LineHeight: string;
   headingTitle1FontSize: string;
   headingTitle1FontWeight: string;
   headingTitle1LineHeight: string;
@@ -1506,24 +1509,27 @@ const createTokens: CreateTokens = foundation => ({
   headingDisplaySubtitleFontSize: "22px",
   headingDisplaySubtitleFontWeight: foundation.fontWeight.normal,
   headingDisplaySubtitleLineHeight: "28px",
-  headingTitle1FontSize: "28px",
+  headingTitle0FontSize: "28px",
+  headingTitle0FontWeight: foundation.fontWeight.bold,
+  headingTitle0LineHeight: "36px",
+  headingTitle1FontSize: "24px",
   headingTitle1FontWeight: foundation.fontWeight.bold,
   headingTitle1LineHeight: "32px",
-  headingTitle2FontSize: "22px",
-  headingTitle2FontWeight: foundation.fontWeight.medium,
+  headingTitle2FontSize: "20px",
+  headingTitle2FontWeight: foundation.fontWeight.bold,
   headingTitle2LineHeight: "28px",
   headingTitle3FontSize: foundation.fontSize.extraLarge,
-  headingTitle3FontWeight: foundation.fontWeight.medium,
+  headingTitle3FontWeight: foundation.fontWeight.bold,
   headingTitle3LineHeight: "24px",
   headingTitle4FontSize: foundation.fontSize.large,
   headingTitle4FontWeight: foundation.fontWeight.bold,
-  headingTitle4LineHeight: "20px",
+  headingTitle4LineHeight: "22px",
   headingTitle5FontSize: foundation.fontSize.normal,
   headingTitle5FontWeight: foundation.fontWeight.bold,
   headingTitle5LineHeight: "20px",
   headingTitle6FontSize: foundation.fontSize.small,
   headingTitle6FontWeight: foundation.fontWeight.bold,
-  headingTitle6LineHeight: "16px",
+  headingTitle6LineHeight: "18px",
   headingForeground: foundation.palette.ink.dark,
   headingForegroundInverted: foundation.palette.white.normal,
   fontWeightHeadingDisplay: foundation.fontWeight.bold,

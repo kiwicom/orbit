@@ -49,6 +49,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       maxWidth,
       onKeyDown,
       spaceAfter,
+      readOnly,
       ...props
     },
     ref,
@@ -129,8 +130,10 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
 
     const handleFocus = (ev: React.FocusEvent<HTMLInputElement>) => {
       if (onFocus) onFocus(ev);
-      setIsOpened(true);
-      setResults(results || groupedOptions);
+      if (!readOnly) {
+        setIsOpened(true);
+        setResults(results || groupedOptions);
+      }
     };
 
     const handleBlur = (ev: React.FocusEvent<HTMLInputElement>) => {
@@ -212,10 +215,14 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         autoFocus={!isLargeMobile}
         role="combobox"
         value={inputValue}
-        onKeyDown={ev => {
-          if (onKeyDown) onKeyDown(ev);
-          handleDropdownKey(ev);
-        }}
+        onKeyDown={
+          !readOnly
+            ? ev => {
+                if (onKeyDown) onKeyDown(ev);
+                handleDropdownKey(ev);
+              }
+            : undefined
+        }
         ariaHasPopup={isOpened}
         ariaExpanded={isOpened}
         ariaAutocomplete="list"
@@ -223,8 +230,10 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         ariaControls={isOpened ? dropdownId : undefined}
         autoComplete="off"
         ref={ref}
+        readOnly={readOnly}
         prefix={selectedOption && selectedOption.prefix}
         suffix={
+          !readOnly &&
           String(inputValue).length > 1 && (
             <button
               className={cx(
@@ -436,7 +445,9 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
               label={label}
               help={help}
               error={error}
-              onFocus={() => setIsOpened(true)}
+              onFocus={
+                !readOnly ? () => setIsOpened(true) : ev => (onFocus ? onFocus(ev) : undefined)
+              }
               readOnly
               role="textbox"
               placeholder={placeholder}

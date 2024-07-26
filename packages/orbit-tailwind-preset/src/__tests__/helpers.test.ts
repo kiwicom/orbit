@@ -6,8 +6,9 @@ describe("orbit-tailwind-preset", () => {
       {
         "heading-display-font-size": "40px",
         "heading-display-subtitle-font-size": "22px",
-        "heading-title1font-size": "28px",
-        "heading-title2font-size": "22px",
+        "heading-title0font-size": "28px",
+        "heading-title1font-size": "24px",
+        "heading-title2font-size": "20px",
         "heading-title3font-size": "18px",
         "heading-title4font-size": "16px",
         "heading-title5font-size": "15px",
@@ -19,12 +20,13 @@ describe("orbit-tailwind-preset", () => {
       {
         "heading-display-line-height": "44px",
         "heading-display-subtitle-line-height": "28px",
+        "heading-title0line-height": "36px",
         "heading-title1line-height": "32px",
         "heading-title2line-height": "28px",
         "heading-title3line-height": "24px",
-        "heading-title4line-height": "20px",
+        "heading-title4line-height": "22px",
         "heading-title5line-height": "20px",
-        "heading-title6line-height": "16px",
+        "heading-title6line-height": "18px",
       }
     `);
 
@@ -32,9 +34,10 @@ describe("orbit-tailwind-preset", () => {
       {
         "heading-display-font-weight": "700",
         "heading-display-subtitle-font-weight": "400",
+        "heading-title0font-weight": "700",
         "heading-title1font-weight": "700",
-        "heading-title2font-weight": "500",
-        "heading-title3font-weight": "500",
+        "heading-title2font-weight": "700",
+        "heading-title3font-weight": "700",
         "heading-title4font-weight": "700",
         "heading-title5font-weight": "700",
         "heading-title6font-weight": "700",

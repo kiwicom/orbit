@@ -13,6 +13,12 @@
           "value": "{foundation.font-weight.normal}"
         }
       },
+      "title-0": {
+        "font-weight": {
+          "type": "font-weight",
+          "value": "{foundation.font-weight.bold}"
+        }
+      },
       "title-1": {
         "font-weight": {
           "type": "font-weight",
@@ -22,13 +28,13 @@
       "title-2": {
         "font-weight": {
           "type": "font-weight",
-          "value": "{foundation.font-weight.medium}"
+          "value": "{foundation.font-weight.bold}"
         }
       },
       "title-3": {
         "font-weight": {
           "type": "font-weight",
-          "value": "{foundation.font-weight.medium}"
+          "value": "{foundation.font-weight.bold}"
         }
       },
       "title-4": {

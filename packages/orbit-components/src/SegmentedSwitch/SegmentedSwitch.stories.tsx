@@ -2,6 +2,8 @@ import * as React from "react";
 import { text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
+import RenderInRtl from "../utils/rtl/RenderInRtl";
+
 import SegmentedSwitch from ".";
 
 export default {
@@ -35,5 +37,39 @@ export const Default = () => {
 Default.story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export const Rtl = () => {
+  const label = text("Label", "Gender");
+  const help = text("Help", "When Chuck Norris plays dodgeball, the balls dodge him.");
+  const error = text("Error", "Chuck Norris makes onions cry.");
+  const maxWidth = text("maxWidth", "");
+  const showTooltip = boolean("showTooltip", false);
+
+  return (
+    <RenderInRtl>
+      <SegmentedSwitch
+        label={label}
+        onChange={action("onChange")}
+        onFocus={action("onFocus")}
+        showTooltip={showTooltip}
+        help={help}
+        error={error}
+        maxWidth={maxWidth}
+        options={[
+          { label: "Male", value: "Male" },
+          { label: "Female", value: "Female" },
+        ]}
+      />
+    </RenderInRtl>
+  );
+};
+
+Rtl.story = {
+  name: "RTL",
+
+  parameters: {
+    info: "This is a preview of this component in RTL setup.",
   },
 };

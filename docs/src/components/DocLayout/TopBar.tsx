@@ -91,7 +91,7 @@ const TopBar = ({
                 top: 1px;
               `}
             >
-              <Heading as="h1" type="title1">
+              <Heading as="h1" type="title0">
                 {title}
               </Heading>
             </div>

@@ -54,7 +54,7 @@ function createHeadingComponent(
   return HeadingComponent;
 }
 
-export const h1 = createHeadingComponent("h1", { type: "title1", spaceAfter: "small" });
+export const h1 = createHeadingComponent("h1", { type: "title0", spaceAfter: "small" });
 export const h2 = createHeadingComponent("h2", { type: "title2", spaceAfter: "small" });
 export const h3 = createHeadingComponent("h3", { type: "title3", spaceAfter: "normal" });
 export const h4 = createHeadingComponent("h4", { type: "title4", spaceAfter: "smallest" });

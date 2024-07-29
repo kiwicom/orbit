@@ -128,7 +128,6 @@ export default function orbitTailwindPreset(options?: Options): Config {
         lineHeight: {
           none: "1",
           text: tokens.lineHeightText,
-          heading: tokens.lineHeightHeading,
           "heading-display": tokens.headingDisplayLineHeight,
           "heading-display-subtitle": tokens.headingDisplaySubtitleLineHeight,
           "heading-title0": tokens.headingTitle0LineHeight,

@@ -42,8 +42,8 @@ const SegmentedSwitch = ({
       className={cx(
         "gap-xxxs relative flex w-full flex-col",
         spaceAfter && spaceAfterClasses[spaceAfter],
-        "[&_.orbit-switch-segment-label:nth-child(odd)_.orbit-switch-segment-text]:rounded-[5px_0_0_5px]",
-        "[&_.orbit-switch-segment-label:nth-child(even)_.orbit-switch-segment-text]:rounded-[0_5px_5px_0]",
+        "[&_.orbit-switch-segment-label:nth-child(odd)_.orbit-switch-segment-text]:rounded-s-[5px]",
+        "[&_.orbit-switch-segment-label:nth-child(even)_.orbit-switch-segment-text]:rounded-e-[5px]",
       )}
       style={{ maxWidth }}
     >

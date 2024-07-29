@@ -476,14 +476,6 @@ export interface Tokens {
   fontSizeFormFeedback: string;
   fontSizeFormLabel: string;
   fontSizeMessage: string;
-  fontSizeHeadingDisplay: string;
-  fontSizeHeadingDisplaySubtitle: string;
-  fontSizeHeadingTitle1: string;
-  fontSizeHeadingTitle2: string;
-  fontSizeHeadingTitle3: string;
-  fontSizeHeadingTitle4: string;
-  fontSizeHeadingTitle5: string;
-  fontSizeHeadingTitle6: string;
   borderStyleCard: string;
   borderStyleInput: string;
   borderWidthCard: string;
@@ -595,25 +587,6 @@ export interface Tokens {
   headingTitle6LineHeight: string;
   headingForeground: string;
   headingForegroundInverted: string;
-  fontWeightHeadingDisplay: string;
-  fontWeightHeadingDisplaySubtitle: string;
-  fontWeightHeadingTitle1: string;
-  fontWeightHeadingTitle2: string;
-  fontWeightHeadingTitle3: string;
-  fontWeightHeadingTitle4: string;
-  fontWeightHeadingTitle5: string;
-  fontWeightHeadingTitle6: string;
-  fontWeightTableHead: string;
-  fontWeightLinks: string;
-  lineHeightHeading: string;
-  lineHeightHeadingDisplay: string;
-  lineHeightHeadingDisplaySubtitle: string;
-  lineHeightHeadingTitle1: string;
-  lineHeightHeadingTitle2: string;
-  lineHeightHeadingTitle3: string;
-  lineHeightHeadingTitle4: string;
-  lineHeightHeadingTitle5: string;
-  lineHeightHeadingTitle6: string;
   iconPrimaryForeground: string;
   iconSecondaryForeground: string;
   iconTertiaryForeground: string;
@@ -681,6 +654,8 @@ export interface Tokens {
   tabBundleTopBackground: string;
   tabBundleTopBackgroundHover: string;
   tabBundleTopForeground: string;
+  fontWeightTableHead: string;
+  fontWeightLinks: string;
   tagColoredBackground: string;
   tagColoredBackgroundHover: string;
   tagColoredBackgroundActive: string;
@@ -1361,14 +1336,6 @@ const createTokens: CreateTokens = foundation => ({
   fontSizeFormFeedback: foundation.fontSize.small,
   fontSizeFormLabel: foundation.fontSize.normal,
   fontSizeMessage: foundation.fontSize.normal,
-  fontSizeHeadingDisplay: "40px",
-  fontSizeHeadingDisplaySubtitle: "22px",
-  fontSizeHeadingTitle1: "28px",
-  fontSizeHeadingTitle2: "22px",
-  fontSizeHeadingTitle3: foundation.fontSize.extraLarge,
-  fontSizeHeadingTitle4: foundation.fontSize.large,
-  fontSizeHeadingTitle5: foundation.fontSize.normal,
-  fontSizeHeadingTitle6: foundation.fontSize.small,
   borderStyleCard: "solid",
   borderStyleInput: "solid",
   borderWidthCard: "1px",
@@ -1532,25 +1499,6 @@ const createTokens: CreateTokens = foundation => ({
   headingTitle6LineHeight: "18px",
   headingForeground: foundation.palette.ink.dark,
   headingForegroundInverted: foundation.palette.white.normal,
-  fontWeightHeadingDisplay: foundation.fontWeight.bold,
-  fontWeightHeadingDisplaySubtitle: foundation.fontWeight.normal,
-  fontWeightHeadingTitle1: foundation.fontWeight.bold,
-  fontWeightHeadingTitle2: foundation.fontWeight.medium,
-  fontWeightHeadingTitle3: foundation.fontWeight.medium,
-  fontWeightHeadingTitle4: foundation.fontWeight.bold,
-  fontWeightHeadingTitle5: foundation.fontWeight.bold,
-  fontWeightHeadingTitle6: foundation.fontWeight.bold,
-  fontWeightTableHead: foundation.fontWeight.bold,
-  fontWeightLinks: foundation.fontWeight.medium,
-  lineHeightHeading: "1.2",
-  lineHeightHeadingDisplay: "44px",
-  lineHeightHeadingDisplaySubtitle: "28px",
-  lineHeightHeadingTitle1: "32px",
-  lineHeightHeadingTitle2: "28px",
-  lineHeightHeadingTitle3: "24px",
-  lineHeightHeadingTitle4: "20px",
-  lineHeightHeadingTitle5: "20px",
-  lineHeightHeadingTitle6: "16px",
   iconPrimaryForeground: foundation.palette.ink.dark,
   iconSecondaryForeground: foundation.palette.ink.normal,
   iconTertiaryForeground: foundation.palette.cloud.dark,
@@ -1618,6 +1566,8 @@ const createTokens: CreateTokens = foundation => ({
   tabBundleTopBackground: foundation.palette.white.normal,
   tabBundleTopBackgroundHover: foundation.palette.white.normalHover,
   tabBundleTopForeground: "linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)",
+  fontWeightTableHead: foundation.fontWeight.bold,
+  fontWeightLinks: foundation.fontWeight.medium,
   tagColoredBackground: foundation.palette.blue.light,
   tagColoredBackgroundHover: foundation.palette.blue.lightHover,
   tagColoredBackgroundActive: foundation.palette.blue.lightActive,

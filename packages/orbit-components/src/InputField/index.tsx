@@ -20,21 +20,17 @@ const getDOMType = (type: Lowercase<keyof typeof TYPE_OPTIONS>) => {
   return type;
 };
 
-export const FakeInput = ({
-  error,
-  disabled,
-  readOnly,
-}: Pick<Props, "error" | "disabled" | "readOnly">) => (
+export const FakeInput = ({ error, disabled }: Pick<Props, "error" | "disabled">) => (
   <div
     className={cx(
       "orbit-input-field-fake-input",
-      "h-form-box-normal text-form-element-normal z-[1]",
+      "h-form-box-normal text-form-element-normal z-default",
       "absolute left-0 top-0",
       "duration-fast transition-all ease-in-out",
       "rounded-large tb:rounded-normal box-border w-full",
       "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
       error ? "shadow-form-element-error" : "shadow-form-element",
-      disabled || readOnly
+      disabled
         ? "bg-form-element-disabled-background"
         : [
             "bg-form-element-background",
@@ -300,7 +296,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           {...dataAttrs}
         />
         {suffix && <Suffix disabled={disabled}>{suffix}</Suffix>}
-        <FakeInput error={error} disabled={disabled} readOnly={readOnly} />
+        <FakeInput error={error} disabled={disabled} />
       </div>
       {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip

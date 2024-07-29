@@ -2417,7 +2417,6 @@ exports[`orbitPreset should have preflight disabled 1`] = `
     },
     "lineHeight": {
       "extra-large": "24px",
-      "heading": "1.2",
       "heading-display": "44px",
       "heading-display-subtitle": "28px",
       "heading-title0": "36px",

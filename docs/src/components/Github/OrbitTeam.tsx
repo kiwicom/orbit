@@ -43,7 +43,7 @@ const OrbitTeam = ({ currentContributors, previousContributors }: Props) => {
 
   return (
     <Stack direction="column" spacing="large" spaceAfter="large">
-      <Heading type="title1" as="h3">
+      <Heading type="title0" as="h3">
         Core team
       </Heading>
       {currentContributors.map(({ id, username, ...info }) => {
@@ -66,7 +66,7 @@ const OrbitTeam = ({ currentContributors, previousContributors }: Props) => {
           />
         );
       })}
-      <Heading type="title1" as="h3">
+      <Heading type="title0" as="h3">
         Former members
       </Heading>
       {previousContributors.map(({ id, username, ...info }) => {

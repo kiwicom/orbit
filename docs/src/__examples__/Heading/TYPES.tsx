@@ -9,6 +9,7 @@ export default {
       name: "DisplaySubtitle",
       code: `() => <Heading type="displaySubtitle">DisplaySubtitle title</Heading>`,
     },
+    { name: "Title0", code: `() => <Heading type="title0">Title0 title</Heading>` },
     { name: "Title1", code: `() => <Heading type="title1">Title1 title</Heading>` },
     { name: "Title2", code: `() => <Heading type="title2">Title2 title</Heading>` },
     { name: "Title3", code: `() => <Heading type="title3">Title3 title</Heading>` },

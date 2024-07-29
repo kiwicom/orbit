@@ -5798,11 +5798,12 @@
   resolved "https://registry.yarnpkg.com/@types/doctrine/-/doctrine-0.0.9.tgz#d86a5f452a15e3e3113b99e39616a9baa0f9863f"
   integrity sha512-eOIHzCUSH7SMfonMG1LsC2f8vxBFtho6NGBznK41R84YzPuvSBzrhEps33IsQiOW9+VL6NQ9DbjQJznk/S4uRA==
 
-"@types/dotenv-safe@^8.1.2":
-  version "8.1.2"
-  resolved "https://registry.npmjs.org/@types/dotenv-safe/-/dotenv-safe-8.1.2.tgz"
-  integrity sha512-R/B/wIMda6lRE2P1H0vwSoJsV78IOkhccE4vIvmKZQNXOIjiU0QyJsUXwSotBxOPZFZ/oOnjCa3+kK5kVJwGyw==
+"@types/dotenv-safe@^8.1.6":
+  version "8.1.6"
+  resolved "https://registry.yarnpkg.com/@types/dotenv-safe/-/dotenv-safe-8.1.6.tgz#256e4af77e1f1371dccc31688b1b6d40e2672dea"
+  integrity sha512-ftZXu3WGT6ALq+f98IX2gWriGMPds+0ku5h8kZewNpY47ua+Z+XNcin9apZ2kVd4B9LV1vMfUOyDf1/hhreR0Q==
   dependencies:
+    "@types/node" "*"
     dotenv "^8.2.0"
 
 "@types/emscripten@^1.39.6":

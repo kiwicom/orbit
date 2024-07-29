@@ -68,7 +68,7 @@
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.5.1",
     "@types/dedent": "^0.7.0",
-    "@types/dotenv-safe": "^8.1.2",
+    "@types/dotenv-safe": "^8.1.6",
     "@types/jest": "^29.5.5",
     "@types/lodash": "^4.14.194",
     "@types/pngjs": "^6.0.2",

@@ -369,14 +369,6 @@ const oldTokens = () => {
     backgroundTooltipLargeMobile: theme.palette.blue.dark,
     // category:Font size
     // description:Use these sizing tokens for font sizes.
-    fontSizeHeadingDisplay: "40px",
-    fontSizeHeadingDisplaySubtitle: "22px",
-    fontSizeHeadingTitle1: "28px",
-    fontSizeHeadingTitle2: "22px",
-    fontSizeHeadingTitle3: "18px",
-    fontSizeHeadingTitle4: theme.base.fontSizeLg,
-    fontSizeHeadingTitle5: theme.base.fontSizeMd,
-    fontSizeHeadingTitle6: theme.base.fontSizeSm,
     fontSizeTextNormal: theme.base.fontSizeMd,
     fontSizeTextLarge: theme.base.fontSizeLg,
     fontSizeTextSmall: theme.base.fontSizeSm,
@@ -517,14 +509,6 @@ const oldTokens = () => {
     fontWeightMedium: theme.base.fontWeightMedium,
     fontWeightBold: theme.base.fontWeightBold,
     fontWeightLinks: theme.base.fontWeightMedium,
-    fontWeightHeadingDisplay: theme.base.fontWeightBold,
-    fontWeightHeadingDisplaySubtitle: theme.base.fontWeightNormal,
-    fontWeightHeadingTitle1: theme.base.fontWeightBold,
-    fontWeightHeadingTitle2: theme.base.fontWeightMedium,
-    fontWeightHeadingTitle3: theme.base.fontWeightMedium,
-    fontWeightHeadingTitle4: theme.base.fontWeightMedium,
-    fontWeightHeadingTitle5: theme.base.fontWeightBold,
-    fontWeightHeadingTitle6: theme.base.fontWeightBold,
     fontWeightTableHead: theme.base.fontWeightBold,
     // category:Spacing
     // description:Use this for setting spacings for elements.
@@ -570,15 +554,6 @@ const oldTokens = () => {
     lineHeightTextSmall: "16px",
     lineHeightTextNormal: "20px",
     lineHeightTextLarge: "24px",
-    lineHeightHeading: "1.2",
-    lineHeightHeadingDisplay: "44px",
-    lineHeightHeadingDisplaySubtitle: "28px",
-    lineHeightHeadingTitle1: "32px",
-    lineHeightHeadingTitle2: "28px",
-    lineHeightHeadingTitle3: "24px",
-    lineHeightHeadingTitle4: "20px",
-    lineHeightHeadingTitle5: "20px",
-    lineHeightHeadingTitle6: "16px",
   };
 };
 

@@ -1848,38 +1848,6 @@
     <value>15</value>
   </token>
   <token>
-    <name>fontSizeHeadingDisplay</name>
-    <value>40</value>
-  </token>
-  <token>
-    <name>fontSizeHeadingDisplaySubtitle</name>
-    <value>22</value>
-  </token>
-  <token>
-    <name>fontSizeHeadingTitle1</name>
-    <value>28</value>
-  </token>
-  <token>
-    <name>fontSizeHeadingTitle2</name>
-    <value>22</value>
-  </token>
-  <token>
-    <name>fontSizeHeadingTitle3</name>
-    <value>18</value>
-  </token>
-  <token>
-    <name>fontSizeHeadingTitle4</name>
-    <value>16</value>
-  </token>
-  <token>
-    <name>fontSizeHeadingTitle5</name>
-    <value>15</value>
-  </token>
-  <token>
-    <name>fontSizeHeadingTitle6</name>
-    <value>13</value>
-  </token>
-  <token>
     <name>borderStyleCard</name>
     <value>solid</value>
   </token>
@@ -2324,82 +2292,6 @@
     <value>#FFFFFF</value>
   </token>
   <token>
-    <name>fontWeightHeadingDisplay</name>
-    <value>700</value>
-  </token>
-  <token>
-    <name>fontWeightHeadingDisplaySubtitle</name>
-    <value>400</value>
-  </token>
-  <token>
-    <name>fontWeightHeadingTitle1</name>
-    <value>700</value>
-  </token>
-  <token>
-    <name>fontWeightHeadingTitle2</name>
-    <value>500</value>
-  </token>
-  <token>
-    <name>fontWeightHeadingTitle3</name>
-    <value>500</value>
-  </token>
-  <token>
-    <name>fontWeightHeadingTitle4</name>
-    <value>700</value>
-  </token>
-  <token>
-    <name>fontWeightHeadingTitle5</name>
-    <value>700</value>
-  </token>
-  <token>
-    <name>fontWeightHeadingTitle6</name>
-    <value>700</value>
-  </token>
-  <token>
-    <name>fontWeightTableHead</name>
-    <value>700</value>
-  </token>
-  <token>
-    <name>fontWeightLinks</name>
-    <value>500</value>
-  </token>
-  <token>
-    <name>lineHeightHeading</name>
-    <value>1.2</value>
-  </token>
-  <token>
-    <name>lineHeightHeadingDisplay</name>
-    <value>44</value>
-  </token>
-  <token>
-    <name>lineHeightHeadingDisplaySubtitle</name>
-    <value>28</value>
-  </token>
-  <token>
-    <name>lineHeightHeadingTitle1</name>
-    <value>32</value>
-  </token>
-  <token>
-    <name>lineHeightHeadingTitle2</name>
-    <value>28</value>
-  </token>
-  <token>
-    <name>lineHeightHeadingTitle3</name>
-    <value>24</value>
-  </token>
-  <token>
-    <name>lineHeightHeadingTitle4</name>
-    <value>20</value>
-  </token>
-  <token>
-    <name>lineHeightHeadingTitle5</name>
-    <value>20</value>
-  </token>
-  <token>
-    <name>lineHeightHeadingTitle6</name>
-    <value>16</value>
-  </token>
-  <token>
     <name>iconPrimaryForeground</name>
     <value>#252A31</value>
   </token>
@@ -2666,6 +2558,14 @@
   <token>
     <name>tabBundleTopForeground</name>
     <value>linear-gradient(80.91deg, #2D2D2E 0%, #696E73 100%)</value>
+  </token>
+  <token>
+    <name>fontWeightTableHead</name>
+    <value>700</value>
+  </token>
+  <token>
+    <name>fontWeightLinks</name>
+    <value>500</value>
   </token>
   <token>
     <name>tagColoredBackground</name>

@@ -1632,46 +1632,6 @@
     "category": "Size (width, height)",
     "version": "6.0.0"
   },
-  "fontSizeHeadingDisplay": {
-    "replacement": "headingDisplayFontSize",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "fontSizeHeadingDisplaySubtitle": {
-    "replacement": "headingDisplaySubtitleFontSize",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "fontSizeHeadingTitle1": {
-    "replacement": "headingTitle1FontSize",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "fontSizeHeadingTitle2": {
-    "replacement": "headingTitle2FontSize",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "fontSizeHeadingTitle3": {
-    "replacement": "headingTitle3FontSize",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "fontSizeHeadingTitle4": {
-    "replacement": "headingTitle4FontSize",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "fontSizeHeadingTitle5": {
-    "replacement": "headingTitle5FontSize",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "fontSizeHeadingTitle6": {
-    "replacement": "headingTitle6FontSize",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
   "borderStyleCard": {
     "replacement": null,
     "category": null,
@@ -1892,101 +1852,6 @@
     "category": "Opacity",
     "version": "6.0.0"
   },
-  "fontWeightHeadingDisplay": {
-    "replacement": "headingDisplayFontWeight",
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightHeadingDisplaySubtitle": {
-    "replacement": "headingDisplaySubtitleFontWeight",
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightHeadingTitle1": {
-    "replacement": "headingTitle1FontWeight",
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightHeadingTitle2": {
-    "replacement": "headingTitle2FontWeight",
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightHeadingTitle3": {
-    "replacement": "headingTitle3FontWeight",
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightHeadingTitle4": {
-    "replacement": "headingTitle4FontWeight",
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightHeadingTitle5": {
-    "replacement": "headingTitle5FontWeight",
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightHeadingTitle6": {
-    "replacement": "headingTitle6FontWeight",
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightTableHead": {
-    "replacement": null,
-    "category": null,
-    "version": "6.0.0"
-  },
-  "fontWeightLinks": {
-    "replacement": null,
-    "category": null,
-    "version": "6.0.0"
-  },
-  "lineHeightHeading": {
-    "replacement": null,
-    "category": null,
-    "version": "6.0.0"
-  },
-  "lineHeightHeadingDisplay": {
-    "replacement": "headingDisplayLineHeight",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "lineHeightHeadingDisplaySubtitle": {
-    "replacement": "headingDisplaySubtitleLineHeight",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "lineHeightHeadingTitle1": {
-    "replacement": "headingTitle1LineHeight",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "lineHeightHeadingTitle2": {
-    "replacement": "headingTitle2LineHeight",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "lineHeightHeadingTitle3": {
-    "replacement": "headingTitle3LineHeight",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "lineHeightHeadingTitle4": {
-    "replacement": "headingTitle4LineHeight",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "lineHeightHeadingTitle5": {
-    "replacement": "headingTitle5LineHeight",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
-  "lineHeightHeadingTitle6": {
-    "replacement": "headingTitle6LineHeight",
-    "category": "Size (width, height)",
-    "version": "6.0.0"
-  },
   "modalBorderRadiusMobile": {
     "replacement": "modalBorderRadius",
     "category": "Border radius",
@@ -2000,6 +1865,16 @@
   "paddingLeftSelectPrefix": {
     "replacement": null,
     "category": "Size (width, height)",
+    "version": "6.0.0"
+  },
+  "fontWeightTableHead": {
+    "replacement": null,
+    "category": null,
+    "version": "6.0.0"
+  },
+  "fontWeightLinks": {
+    "replacement": null,
+    "category": null,
     "version": "6.0.0"
   },
   "textDecorationTextLinkPrimary": {

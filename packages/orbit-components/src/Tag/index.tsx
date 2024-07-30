@@ -89,7 +89,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
         onKeyDown={ev => buttonClickEmulation(ev, onClick)}
       >
         {iconLeft && (
-          <div className="pr-xs [&_svg]:size-icon-small flex flex-row items-center justify-center">
+          <div className="pe-xs [&_svg]:size-icon-small flex flex-row items-center justify-center">
             {iconLeft}
           </div>
         )}

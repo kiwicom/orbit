@@ -28,6 +28,9 @@ export function DefaultTestStory() {
         <Tag selected onRemove={() => {}} onClick={() => {}}>
           Selected Removable
         </Tag>
+        <Tag onRemove={() => {}} iconLeft={<Icons.PlusMinus />}>
+          Removable with icon
+        </Tag>
       </div>
       <h2>Colored</h2>
       <div className="gap-sm flex flex-wrap">
@@ -46,6 +49,9 @@ export function DefaultTestStory() {
         </Tag>
         <Tag type="colored" selected onRemove={() => {}} onClick={() => {}}>
           Selected Removable
+        </Tag>
+        <Tag type="colored" onRemove={() => {}} iconLeft={<Icons.PlusMinus />}>
+          Removable with icon
         </Tag>
       </div>
       <h2>dateTag</h2>
@@ -75,6 +81,9 @@ export function DefaultTestStory() {
         </Tag>
         <Tag size="small" onRemove={() => {}}>
           Small removable
+        </Tag>
+        <Tag size="small" onRemove={() => {}} iconLeft={<Icons.PlusMinus />}>
+          Small removable with icon
         </Tag>
       </div>
     </div>

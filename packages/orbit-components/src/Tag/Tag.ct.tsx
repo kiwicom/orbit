@@ -2,6 +2,7 @@ import * as React from "react";
 import { test, expect } from "@playwright/experimental-ct-react";
 
 import { TestTag, DefaultTestStory } from "./Tag.ct-story";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 const NON_INTERACTABLE_TAGS = [
   {
@@ -86,5 +87,15 @@ test.describe("visual Tag", () => {
       await component.getByRole("button", { name: "close", exact: true }).focus();
       await expect(component).toHaveScreenshot();
     });
+  });
+
+  test("screenshot rtl general", async ({ mount }) => {
+    const component = await mount(
+      <RenderInRtl>
+        <DefaultTestStory />
+      </RenderInRtl>,
+    );
+
+    await expect(component).toHaveScreenshot();
   });
 });

@@ -2,7 +2,8 @@ import * as React from "react";
 import { test, expect } from "@playwright/experimental-ct-react";
 
 import { TYPE_OPTIONS } from "./consts";
-import { TestLeftIcon } from "./Alert.ct-story";
+import { TestLeftIcon, TestAlert } from "./Alert.ct-story";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 test.describe("visual AlertButton", () => {
   Object.values(TYPE_OPTIONS).forEach(type => {
@@ -32,5 +33,23 @@ test.describe("visual AlertButton", () => {
 
       await expect(component).toHaveScreenshot();
     });
+  });
+});
+
+test.describe("visual Alert", () => {
+  test("Alert component", async ({ mount }) => {
+    const component = await mount(<TestAlert />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("Alert component RTL", async ({ mount }) => {
+    const component = await mount(
+      <RenderInRtl>
+        <TestAlert />
+      </RenderInRtl>,
+    );
+
+    await expect(component).toHaveScreenshot();
   });
 });

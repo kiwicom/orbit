@@ -99,7 +99,7 @@ const AlertCloseButton = ({
   icon: React.ReactNode;
 }) => {
   return (
-    <div className={cx("absolute end-0", hasChildren ? "top-0" : "me-xs top-1/2 -translate-y-1/2")}>
+    <div className={cx("end-0", hasChildren && "top-0")}>
       <ButtonLink
         dataTest={dataTest}
         onClick={onClick}
@@ -131,9 +131,9 @@ const Alert = (props: Props) => {
     <div
       className={cx(
         "rounded-large text-ink-dark font-base text-normal p-sm relative box-border flex w-full border border-t-[3px] leading-normal",
-        closable && "pe-lg",
         "lm:border-s-[3px] lm:border-t",
         "tb:rounded-normal",
+        inlineActions && "items-center",
         suppressed ? "bg-cloud-light border-cloud-normal lm:border-t-cloud-normal" : COLORS[type],
         ACCENT_BORDER[type],
         spaceAfter && spaceAfterClasses[spaceAfter],
@@ -145,7 +145,7 @@ const Alert = (props: Props) => {
         <div
           className={cx(
             "me-xs m-0 shrink-0 leading-none",
-            inlineActions && "flex items-center",
+            inlineActions && "lm:mt-[6px] flex items-center self-baseline", // TODO: [6px] can be replaced by space tokens
             ICON_COLOR[type],
             "tb:me-xs tb:[&_svg]:size-icon-medium",
           )}
@@ -166,6 +166,7 @@ const Alert = (props: Props) => {
             className={cx(
               "text-ink-dark flex min-h-[20px] items-center font-bold",
               !!children && (inlineActions ? "mb-0" : "mb-xxs"),
+              inlineActions && "grow basis-0",
             )}
           >
             {title}

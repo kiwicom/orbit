@@ -74,7 +74,7 @@ const ModalHeader = ({
         >
           {title && (
             <h2
-              className="orbit-modal-heading text-heading-title2 font-heading-title2 leading-heading-title2 text-heading-foreground lm:text-heading-title1 lm:font-heading-title1 lm:leading-heading-title1 m-0"
+              className="orbit-modal-heading text-heading-title2 font-heading-title2 leading-heading-title2 text-heading-foreground lm:text-heading-title0 lm:font-heading-title0 lm:leading-heading-title0 m-0"
               id={titleID}
             >
               {title}
@@ -100,7 +100,7 @@ const ModalHeader = ({
             "orbit-modal-mobile-header bg-white-normal",
             "font-base font-heading-display text-extra-large text-heading-foreground ps-lg z-overlay invisible fixed end-[48px] start-0 box-border inline-block h-[52px] truncate py-0 pe-0 leading-[52px] opacity-0",
             "lm:start-auto lm:end-auto lm:p-0",
-            isMobileFullPage ? "top-0" : "top-[16px]",
+            isMobileFullPage ? "top-0" : "top-md",
           )}
           role="presentation"
         >

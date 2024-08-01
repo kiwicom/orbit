@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.10.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.10.0...@kiwicom/orbit-components@15.10.1) (2024-08-01)
+
+
+### Bug Fixes
+
+* **InputField:** adjust styles when readOnly is true ([af858b2](https://github.com/kiwicom/orbit/commit/af858b29645a68d4b0f2814cc0a41cdf2555c339))
+* **InputSelect:** adjust styles and functionality when readOnly is true ([f84e257](https://github.com/kiwicom/orbit/commit/f84e257fb4e80cc394d3fd66229632065a035946))
+* **SegmentedSwitch:** fix border radius in RTL ([f10068c](https://github.com/kiwicom/orbit/commit/f10068c098be77e3042cbcf3c9743f54baab6a89))
+* **Tag:** fix padding for iconLeft on RTL ([e901a03](https://github.com/kiwicom/orbit/commit/e901a03c2a5e00793eecc33fe47887d610e3cc06))
+
+
+
+
+
 # [15.10.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.9.0...@kiwicom/orbit-components@15.10.0) (2024-07-25)
 
 

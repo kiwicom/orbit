@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-components",
-  "version": "15.10.0",
+  "version": "15.10.1",
   "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
   "sideEffects": false,
   "author": "Kiwi.com",
@@ -112,8 +112,8 @@
     "@vitejs/plugin-react": "^4.0.0",
     "babel-loader": "^9.1.2",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "cypress": "^13.2.0",
     "css-loader": "^7.1.2",
+    "cypress": "^13.2.0",
     "eslint-plugin-storybook": "^0.8.0",
     "fs-extra": "^9.0.1",
     "jscodeshift": "^0.13.1",

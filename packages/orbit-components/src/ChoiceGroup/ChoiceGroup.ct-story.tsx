@@ -8,13 +8,13 @@ import ChoiceGroup from ".";
 
 export default function ChoiceGroupStory() {
   return (
-    <div className="space-y-xl flex flex-col">
+    <div className="space-y-800 flex flex-col">
       <ChoiceGroup onChange={() => {}}>
         <Checkbox label="Lol" value="lol" />
         <Checkbox label="Kek" value="kek" />
         <Checkbox label="Bur" value="bur" disabled />
       </ChoiceGroup>
-      <div className="space-y-xs flex flex-col">
+      <div className="space-y-200 flex flex-col">
         {Object.values(LABEL_SIZES).map(size => (
           <ChoiceGroup onChange={() => {}} label="Some choices lmao" labelSize={size}>
             <Radio label="Lol" value="lol" />

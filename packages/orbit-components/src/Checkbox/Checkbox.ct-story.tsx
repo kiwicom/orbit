@@ -6,7 +6,7 @@ import Checkbox from ".";
 
 export default function CheckboxStory() {
   return (
-    <div className="space-y-xs flex flex-col">
+    <div className="space-y-200 flex flex-col">
       <Checkbox label="Check this box" />
       <Checkbox label="Check this box" info="I will find you and will tick you" />
       <Checkbox label="Check this box" checked />

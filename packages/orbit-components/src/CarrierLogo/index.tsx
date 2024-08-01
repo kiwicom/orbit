@@ -97,9 +97,9 @@ export const CarrierLogoWrapper: React.FC<WrapperProps> = ({
           ? "w-min"
           : [
               carriers.length > 2 && "flex-wrap",
-              carriers.length > 1 ? "w-[32px] flex-col" : ["flex-row", WIDTH[size]],
+              carriers.length > 1 ? "w-800 flex-col" : ["flex-row", WIDTH[size]],
             ],
-        !inlineStacked && carriers.length > 1 ? "h-[32px]" : HEIGHT[size],
+        !inlineStacked && carriers.length > 1 ? "h-800" : HEIGHT[size],
         className,
       )}
       {...props}
@@ -132,7 +132,7 @@ const CarrierLogo = ({
           className={cx(
             "max-w-none bg-transparent",
             rounded ? "rounded-full" : "rounded-100",
-            inlineStacked ? "not-first:-ms-xs border border-solid border-white" : "last:self-end",
+            inlineStacked ? "not-first:-ms-200 border border-solid border-white" : "last:self-end",
             carriers.length > 1 && !inlineStacked
               ? [
                   carriers.length > 2

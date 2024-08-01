@@ -33,7 +33,7 @@ export const SideNavigation = ({ shown, dataTest, width, fixedHeader, noPadding 
       fixedHeader={fixedHeader}
       onClose={action("onClose")}
       actions={
-        <Stack direction="row" justify="between" spacing="XSmall">
+        <Stack direction="row" justify="between" spacing="200">
           <Button type="secondary" size="small">
             Manage my bookings
           </Button>
@@ -345,7 +345,7 @@ export const SideNavigationInRtl = ({ shown, dataTest, width, fixedHeader }) => 
         fixedHeader={fixedHeader}
         onClose={action("onClose")}
         actions={
-          <Stack direction="row" justify="between" spacing="XSmall">
+          <Stack direction="row" justify="between" spacing="200">
             <Button type="secondary" size="small">
               Manage my bookings
             </Button>

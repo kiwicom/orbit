@@ -63,7 +63,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
         disabled={disabled}
         {...props}
         className={cx(
-          "space-x-xs rtl:space-x-reverse",
+          "space-x-200 rtl:space-x-reverse",
           sizeStyles[size],
           children == null && iconOnlyStyles[size],
           disabled === true ? typeDisabledStyled[type] : typeStyles[type],

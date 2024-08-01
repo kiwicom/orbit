@@ -31,11 +31,11 @@ const Seat = ({
   const clickable = type !== TYPES.UNAVAILABLE;
 
   return (
-    <Stack inline grow={false} spacing="XXXSmall" direction="column" align="center">
+    <Stack inline grow={false} spacing="50" direction="column" align="center">
       <button
         className={cx(
           "orbit-seat font-base group relative",
-          size === SIZE_OPTIONS.SMALL ? "w-xl h-[36px]" : "size-[46px]",
+          size === SIZE_OPTIONS.SMALL ? "w-800 h-[36px]" : "size-[46px]",
         )}
         data-test={dataTest}
         id={id}

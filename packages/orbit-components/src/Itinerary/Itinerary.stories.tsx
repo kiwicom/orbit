@@ -43,7 +43,7 @@ const BadgeGroup = () => {
   const carriers = [{ code: "REGIOJETT", name: "Regiojet" }];
 
   return (
-    <Stack flex align="center" spacing="XSmall">
+    <Stack flex align="center" spacing="200">
       <Badge carriers={carriers} border={false}>
         Regiojet
       </Badge>
@@ -165,7 +165,7 @@ const content = [
 
 export const Segment = () => {
   return (
-    <div className="space-y-xl">
+    <div className="space-y-800">
       <Itinerary>
         <ItinerarySegment
           onClick={action("clicked")}
@@ -390,7 +390,7 @@ export const ItinerarySeparatorComponent = () => {
 
 export const Stop = ({ date, time, station, city, type, hidden }) => {
   return (
-    <Stack spacing="large">
+    <Stack spacing="600">
       <Heading type="title2">Regular stop</Heading>
       <Itinerary>
         <ItinerarySegmentStop
@@ -453,7 +453,7 @@ export const Stop = ({ date, time, station, city, type, hidden }) => {
           <ItinerarySegmentStop
             city={<Text type="secondary">New York JFK</Text>}
             station={
-              <Stack flex align="center" spacing="XSmall">
+              <Stack flex align="center" spacing="200">
                 <CountryFlag code="US" size="small" />
                 <Text type="secondary" size="small">
                   United states
@@ -685,7 +685,7 @@ export const MultipleBanners = () => {
         <ItineraryStatus type="success" label="This part is new">
           <ItinerarySegment
             banner={
-              <Stack direction="column" align="stretch" spacing="XSmall">
+              <Stack direction="column" align="stretch" spacing="200">
                 <ItinerarySegmentBanner onClick={() => setIsOpenedModal(true)}>
                   <ItineraryBadgeList>
                     <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
@@ -699,7 +699,7 @@ export const MultipleBanners = () => {
                 <Separator />
                 <ItinerarySegmentBanner>
                   <ItineraryBadgeList>
-                    <Stack spacing="XSmall">
+                    <Stack spacing="200">
                       <ItineraryBadgeListItem icon={<Location color="secondary" />}>
                         You’ll depart from a different place in New York: John F. Kennedy
                         International.

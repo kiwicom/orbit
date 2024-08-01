@@ -6,9 +6,9 @@ describe("Heading media query", () => {
     cy.viewport(defaultTokens.widthBreakpointMediumMobile - 10, 600);
 
     const element = cy.findByRole("heading");
-    element.should("have.css", "font-size", defaultTokens.headingTitle1FontSize);
-    element.should("have.css", "line-height", defaultTokens.headingTitle1LineHeight);
-    element.should("have.css", "font-weight", defaultTokens.headingTitle1FontWeight);
+    element.should("have.css", "font-size", defaultTokens.headingTitle0FontSize);
+    element.should("have.css", "line-height", defaultTokens.headingTitle0LineHeight);
+    element.should("have.css", "font-weight", defaultTokens.headingTitle0FontWeight);
 
     // Assertion of next media query style
     element.should("not.have.css", "font-size", defaultTokens.headingDisplayFontSize);
@@ -24,7 +24,7 @@ describe("Heading media query", () => {
 
     // Assertion of next media query style
     element.should("not.have.css", "font-size", defaultTokens.headingTitle2FontSize);
-    element.should("not.have.css", "margin-bottom", defaultTokens.spaceSmall);
+    element.should("not.have.css", "margin-bottom", defaultTokens.space300);
   });
 
   it("should have correct styles for large mobile", () => {
@@ -35,7 +35,7 @@ describe("Heading media query", () => {
     element.should("have.css", "font-size", defaultTokens.headingTitle2FontSize);
     element.should("have.css", "line-height", defaultTokens.headingTitle2LineHeight);
     element.should("have.css", "font-weight", defaultTokens.headingTitle2FontWeight);
-    element.should("have.css", "margin", `0px 0px ${defaultTokens.spaceXSmall}`);
+    element.should("have.css", "margin", `0px 0px ${defaultTokens.space200}`);
 
     // Assertion of next media query style
     element.should("not.have.css", "font-size", defaultTokens.headingTitle4FontSize);

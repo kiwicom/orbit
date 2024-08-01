@@ -6,7 +6,7 @@ import Tile from ".";
 
 export default function TileStory() {
   return (
-    <div className="space-y-xs">
+    <div className="space-y-200">
       <Tile>Tile child</Tile>
       <Tile noPadding>Tile child</Tile>
       <Tile title="Tile" />

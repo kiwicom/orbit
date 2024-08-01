@@ -9,11 +9,11 @@ import type { Props } from "./types";
 import useTheme from "../../../hooks/useTheme";
 
 const arrowPlacementClasses = {
-  top: "bottom-0 left-[-6px] rtl:left-[6px]",
-  left: "top-[-6px] rtl:right-[-6px] right-px",
-  right: "top-[-6px] rtl:left-0 left-[-6px]",
-  bottom: "top-[-6px] rtl:left-[6px] left-[-6px]",
-  auto: "top-[-6px] rtl:left-[6px] left-[-6px]",
+  top: "bottom-0 -left-150 rtl:left-150",
+  left: "-top-150 rtl:-right-150 right-px",
+  right: "-top-150 rtl:left-0 -left-150",
+  bottom: "-top-150 rtl:left-150 -left-150",
+  auto: "-top-150 rtl:left-150 -left-150",
 };
 
 const arrowBorderClasses = {
@@ -142,10 +142,12 @@ const TooltipContent = ({
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <div
         className={cx(
-          "rounded-100 px-sm shadow-level3 z-[10012] box-border block w-auto overflow-visible",
+          "rounded-100 px-300 shadow-level3 z-[10012] box-border block w-auto overflow-visible",
           "duration-fast transition-[visibility,_opacity] ease-in-out",
           "[&_img]:max-w-full]",
-          contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal)) ? "py-xs" : "py-sm",
+          contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal))
+            ? "py-200"
+            : "py-300",
           shown ? "visible opacity-100" : "invisible opacity-0",
           size === "small" && "max-w-[240px]",
           size === "medium" && "max-w-[380px]",

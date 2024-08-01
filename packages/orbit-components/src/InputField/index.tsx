@@ -46,7 +46,7 @@ const Prefix = ({ children }: { children: React.ReactNode }) => (
   <div
     className={cx(
       "text-form-element-prefix-foreground",
-      "ps-sm pointer-events-none z-[3] flex h-full items-center justify-center",
+      "ps-300 pointer-events-none z-[3] flex h-full items-center justify-center",
       "[&>svg]:text-icon-tertiary-foreground",
       "[&_svg]:size-icon-medium",
       "[&_.orbit-button-primitive-icon]:text-icon-secondary-foreground",
@@ -68,7 +68,7 @@ const Suffix = ({
       "h-form-box-normal text-form-element-prefix-foreground",
       "z-[3] flex shrink-0 items-center justify-center",
       "[&_.orbit-button-primitive-icon]:text-icon-secondary-foreground",
-      "[&_.orbit-service-logo]:pe-sm [&_.orbit-service-logo]:h-md",
+      "[&_.orbit-service-logo]:pe-300 [&_.orbit-service-logo]:h-400",
       disabled && "pointer-events-none",
     )}
   >
@@ -208,7 +208,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
               "[&>.orbit-form-label]:mb-0",
               "[&>.orbit-form-label]:text-form-element-normal [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
               "[&>.orbit-form-label]:z-[3]",
-              !tags && (error || help) ? "ps-xxs" : "ps-sm",
+              !tags && (error || help) ? "ps-100" : "ps-300",
             )}
             ref={labelRef}
           >

@@ -4,7 +4,7 @@ import SkipNavigation from ".";
 
 export default function SkipNavigationStory() {
   return (
-    <div className="p-md">
+    <div className="p-400">
       <div className="border border-solid">
         <SkipNavigation
           dataTest="SkipNavigation"

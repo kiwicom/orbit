@@ -62,19 +62,19 @@ const DialogContent = ({
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <div
         className={cx(
-          "bg-ink-dark shadow-level3-reverse p-md bottom-md inset-x-md rounded-300 fixed z-[10012] box-border max-h-[calc(100%-theme(spacing.xl))] w-[calc(100%-theme(spacing.xl))] overflow-y-scroll",
+          "bg-ink-dark shadow-level3-reverse p-400 bottom-400 inset-x-400 rounded-300 fixed z-[10012] box-border max-h-[calc(100%-theme(spacing.800))] w-[calc(100%-theme(spacing.800))] overflow-y-scroll",
           "[transition:transform_theme(transitionDuration.normal)_ease-in-out,_visibility_theme(transitionDuration.fast)_linear]",
           "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&_img]:max-w-full",
           shown
             ? "visible translate-y-0 opacity-100"
-            : "duration-normal invisible translate-y-[calc(100%+theme(spacing.md))] opacity-0",
+            : "duration-normal invisible translate-y-[calc(100%+theme(spacing.400))] opacity-0",
         )}
         ref={dialog}
         role="tooltip"
         aria-hidden={!shown}
         onClick={handleInnerClick}
       >
-        <div className="font-base text-normal text-white-normal mb-md [&_.orbit-text]:text-normal [&_.orbit-list-item]:text-normal [&_.orbit-text]:text-white-normal [&_.orbit-list-item]:text-white-normal [&_.orbit-text-link]:text-white-normal font-normal leading-normal [&_.orbit-list-item]:font-normal [&_.orbit-text]:font-normal">
+        <div className="font-base text-normal text-white-normal mb-400 [&_.orbit-text]:text-normal [&_.orbit-list-item]:text-normal [&_.orbit-text]:text-white-normal [&_.orbit-list-item]:text-white-normal [&_.orbit-text-link]:text-white-normal font-normal leading-normal [&_.orbit-list-item]:font-normal [&_.orbit-text]:font-normal">
           {children}
         </div>
         <Button type="secondary" fullWidth onClick={onClose}>

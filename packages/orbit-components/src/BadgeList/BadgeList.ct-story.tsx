@@ -8,8 +8,8 @@ import BadgeList from ".";
 
 export default function BadgeListVisualStory() {
   return (
-    <div className="space-y-md">
-      <div className="space-y-xs">
+    <div className="space-y-400">
+      <div className="space-y-200">
         {Object.values(TYPE_OPTIONS).map(type => (
           <BadgeList>
             <BadgeListItem icon={<KiwicomGuarantee />} type={type}>

@@ -9,7 +9,7 @@ import Alert, { AlertButton } from ".";
 
 export function TestLeftIcon({ type }: { type: Type }) {
   return (
-    <div className="p-xxs inline-block">
+    <div className="p-100 inline-block">
       <AlertButton iconLeft={<Icons.Airplane />} type={type} dataTest="button">
         Button
       </AlertButton>
@@ -19,9 +19,9 @@ export function TestLeftIcon({ type }: { type: Type }) {
 
 export function TestAlert() {
   return (
-    <div className="gap-md p-xxs flex flex-col items-stretch">
+    <div className="gap-400 p-100 flex flex-col items-stretch">
       <h2>Only title, icon and inline button</h2>
-      <div className="gap-md flex flex-col items-stretch">
+      <div className="gap-400 flex flex-col items-stretch">
         {Object.values(TYPE_OPTIONS).map(type => {
           const Icon = typeof type === "string" && Icons[type];
 
@@ -40,7 +40,7 @@ export function TestAlert() {
         })}
       </div>
       <h2>Title and text, closable and inline button</h2>
-      <div className="gap-md flex flex-col items-stretch">
+      <div className="gap-400 flex flex-col items-stretch">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Alert
             title="You can change the title by changing the Title control"
@@ -58,7 +58,7 @@ export function TestAlert() {
         ))}
       </div>
       <h2>Title and text, icon, closable and inline button</h2>
-      <div className="gap-md flex flex-col items-stretch">
+      <div className="gap-400 flex flex-col items-stretch">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Alert
             title="You can change the title by changing the Title control"
@@ -76,7 +76,7 @@ export function TestAlert() {
         ))}
       </div>
       <h2>With custom icon</h2>
-      <div className="gap-md flex flex-col items-stretch">
+      <div className="gap-400 flex flex-col items-stretch">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Alert
             title="You can change the title by changing the Title control"
@@ -88,7 +88,7 @@ export function TestAlert() {
         ))}
       </div>
       <h2>With multiline text, closable, without icon</h2>
-      <div className="gap-md flex flex-col items-stretch">
+      <div className="gap-400 flex flex-col items-stretch">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Alert type={type} closable icon={false}>
             <p>
@@ -100,7 +100,7 @@ export function TestAlert() {
         ))}
       </div>
       <h2>Suppressed</h2>
-      <div className="gap-md flex flex-col items-stretch">
+      <div className="gap-400 flex flex-col items-stretch">
         <Alert
           title="You can change the title by changing the Title control"
           type="info"

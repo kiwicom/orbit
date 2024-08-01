@@ -40,7 +40,7 @@ const SegmentedSwitch = ({
       data-test={dataTest}
       ref={labelRef}
       className={cx(
-        "gap-xxxs relative flex w-full flex-col",
+        "gap-50 relative flex w-full flex-col",
         spaceAfter && spaceAfterClasses[spaceAfter],
         "[&_.orbit-switch-segment-label:nth-child(odd)_.orbit-switch-segment-text]:rounded-s-[5px]",
         "[&_.orbit-switch-segment-label:nth-child(even)_.orbit-switch-segment-text]:rounded-e-[5px]",

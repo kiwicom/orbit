@@ -56,7 +56,7 @@ export const Rtl = ({ direction }) => {
         activeStep={3}
         onChangeStep={action("onChangeStep")}
         labelProgress={
-          <Stack flex spacing="XXSmall">
+          <Stack flex spacing="100">
             <div>3</div>
             <div>of</div>
             <div>3</div>

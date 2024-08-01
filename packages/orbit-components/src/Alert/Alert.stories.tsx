@@ -284,8 +284,8 @@ export const Playground: Story = {
         suppressed={suppressed}
         onClose={action("Close")}
       >
-        <Stack spacing="small">
-          <Stack spacing="XXSmall">
+        <Stack spacing="300">
+          <Stack spacing="100">
             <div>{message}</div>
             <List>
               <ListItem>
@@ -294,7 +294,7 @@ export const Playground: Story = {
               <ListItem>623 Kč will be refunded by your payment card</ListItem>
             </List>
           </Stack>
-          <Stack direction="row" spacing="XSmall">
+          <Stack direction="row" spacing="200">
             <AlertButton type={type} href="#">
               {button}
             </AlertButton>
@@ -330,8 +330,8 @@ export const Rtl: Story = {
     return (
       <RenderInRtl>
         <Alert {...args} icon={Icon ? <Icon /> : true} onClose={action("Close")}>
-          <Stack spacing="XSmall">
-            <Stack spacing="XXSmall">
+          <Stack spacing="200">
+            <Stack spacing="100">
               <Text>
                 Requirements found here are for reference purposes only. Contact the embassy or your
                 foreign ministry for more information.

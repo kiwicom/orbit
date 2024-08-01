@@ -55,7 +55,7 @@ export default function CardSection({
     <div
       className={cx(
         "duration-fast lm:border-x border-b transition-all ease-in-out",
-        opened && "my-xs rounded-100 shadow-level2 [&+*]:border-t",
+        opened && "my-200 rounded-100 shadow-level2 [&+*]:border-t",
         onClick != null && "hover:bg-white-normal-hover cursor-pointer",
       )}
       data-test={dataTest}
@@ -70,7 +70,7 @@ export default function CardSection({
       {(title != null || header != null) && expandable && (
         <button
           type="button"
-          className="p-md lm:p-lg hover:bg-white-normal-hover w-full"
+          className="p-400 lm:p-600 hover:bg-white-normal-hover w-full"
           aria-expanded={opened}
           aria-controls={slideID}
           onClick={handleClick}
@@ -89,7 +89,7 @@ export default function CardSection({
       )}
 
       {(title != null || header != null) && !expandable && (
-        <div className="p-md lm:p-lg w-full">
+        <div className="p-400 lm:p-600 w-full">
           <Header
             title={title}
             titleAs={titleAs}
@@ -105,8 +105,8 @@ export default function CardSection({
 
       {children && expandable && (
         <Expandable expanded={opened} slideID={slideID} labelID={slideID}>
-          <div className="font-base text-normal text-primary-foreground px-md lm:px-lg w-full leading-normal">
-            <div className="py-md lm:py-lg border-elevation-flat-border-color border-t">
+          <div className="font-base text-normal text-primary-foreground px-400 lm:px-600 w-full leading-normal">
+            <div className="py-400 lm:py-600 border-elevation-flat-border-color border-t">
               {children}
             </div>
           </div>
@@ -116,8 +116,8 @@ export default function CardSection({
       {children && !expandable && (
         <div
           className={cx(
-            "font-base text-normal text-primary-foreground px-md lm:px-lg pb-md lm:pb-lg w-full leading-normal",
-            title == null && header == null && "pt-md lm:pt-lg",
+            "font-base text-normal text-primary-foreground px-400 lm:px-600 pb-400 lm:pb-600 w-full leading-normal",
+            title == null && header == null && "pt-400 lm:pt-600",
           )}
         >
           {children}

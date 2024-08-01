@@ -19,7 +19,7 @@ const FilterWrapper = ({ child, children, onOnlySelection, onlySelectionText }: 
   return (
     <div
       className={cx(
-        "h-form-box-small pl-xxs rounded-100 box-border flex w-full items-center",
+        "h-form-box-small pl-100 rounded-100 box-border flex w-full items-center",
         !disabled &&
           "hover:[@media(hover)_and_(pointer:fine)]:bg-blue-light focus-within:[@media(hover)_and_(pointer:fine)]:bg-blue-light group",
       )}

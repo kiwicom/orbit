@@ -9,7 +9,7 @@ import CallOutBanner from ".";
 
 export default function CallOutBannerStory() {
   return (
-    <div className="gap-md p-md flex flex-col">
+    <div className="gap-400 p-400 flex flex-col">
       <CallOutBanner
         title="Call out banner"
         description="Description worth testing"

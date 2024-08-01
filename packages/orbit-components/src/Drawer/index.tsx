@@ -134,13 +134,13 @@ const Drawer = ({
             className={cx(
               "flex",
               "items-center",
-              "h-[64px]",
+              "h-1600",
               "box-border",
               suppressed && !bordered ? "bg-cloud-light" : "bg-white-normal",
               fixedHeader && "z-sticky sticky top-0",
               onlyIcon ? "justify-end" : "justify-between",
               bordered && "border-cloud-normal border-x-0 border-b border-t-0 border-solid",
-              "px-md lm:ps-xl lm:pe-lg py-0",
+              "px-400 lm:ps-800 lm:pe-600 py-0",
             )}
           >
             {title && <Heading type="title2">{title}</Heading>}
@@ -154,9 +154,9 @@ const Drawer = ({
         )}
         <div
           className={cx(
-            !onClose && noPadding && "mt-lg",
-            noPadding && "mb-lg",
-            !noPadding && (bordered ? "p-md lm:p-xl" : "px-md pb-md lm:px-xl lm:pb-xl"),
+            !onClose && noPadding && "mt-600",
+            noPadding && "mb-600",
+            !noPadding && (bordered ? "p-400 lm:p-800" : "px-400 pb-400 lm:px-800 lm:pb-800"),
           )}
         >
           {children}

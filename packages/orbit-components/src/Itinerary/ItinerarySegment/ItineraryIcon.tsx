@@ -45,7 +45,7 @@ const ItinerarySegmentStopIcon = ({ type, children }: Props) => {
         last || index === 0 ? "[&_svg]:bg-transparent" : "[&_svg]:bg-white-normal",
         index > 0 &&
           !last && [
-            "py-xxs px-0",
+            "py-100 px-0",
             "bg-[radial-gradient(farthest-side,theme(colors.white.normal),theme(colors.white.normal),theme(colors.white.normal),transparent)]",
           ],
         index > 0 &&
@@ -58,7 +58,7 @@ const ItinerarySegmentStopIcon = ({ type, children }: Props) => {
           count > 0 && [
             "after:-z-default after:border-cloud-normal-active after:absolute after:h-[calc(50%+9px)] after:border",
             isHidden
-              ? "after:bottom-[4px] after:border-dashed"
+              ? "after:bottom-100 after:border-dashed"
               : "after:bottom-[-9px] after:border-solid",
           ],
       )}

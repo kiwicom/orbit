@@ -35,7 +35,7 @@ const ItinerarySegment = ({
 
   const parts = (
     <div
-      className="pt-sm"
+      className="pt-300"
       role="button"
       tabIndex={0}
       onClick={handleClick}
@@ -69,7 +69,7 @@ const ItinerarySegment = ({
   return (
     <div
       className={cx(
-        "rounded-150 pb-sm px-0",
+        "rounded-150 pb-300 px-0",
         spaceAfter && spaceAfterClasses[spaceAfter],
         !noElevation && "shadow-fixed",
         actionable && !noElevation && "hover:shadow-level2 focus:shadow-level2",

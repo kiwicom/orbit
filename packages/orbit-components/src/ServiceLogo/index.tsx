@@ -7,9 +7,9 @@ import { SIZE_OPTIONS, baseURL } from "./consts";
 import type { Props, Size } from "./types";
 
 const heightClasses = {
-  [SIZE_OPTIONS.SMALL]: "h-sm",
-  [SIZE_OPTIONS.MEDIUM]: "h-lg",
-  [SIZE_OPTIONS.LARGE]: "h-[48px]",
+  [SIZE_OPTIONS.SMALL]: "h-300",
+  [SIZE_OPTIONS.MEDIUM]: "h-600",
+  [SIZE_OPTIONS.LARGE]: "h-1200",
 } as const;
 
 const getColorUrlParam = (greyScale: boolean) => (greyScale ? "logos-grayscale" : "logos");

@@ -6,8 +6,8 @@ export default function TestLockScrolling() {
   const [openNested, setOpenNested] = React.useState(false);
 
   return (
-    <Box padding="medium">
-      <Stack direction="column" spacing="small">
+    <Box padding="400">
+      <Stack direction="column" spacing="300">
         <Heading type="display">Background content</Heading>
         <Text>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nihil odit cumque fuga
@@ -52,8 +52,8 @@ export default function TestLockScrolling() {
         <Popover
           opened={open}
           content={
-            <Stack direction="column" spacing="small">
-              <Heading type="title1">Popover content</Heading>
+            <Stack direction="column" spacing="300">
+              <Heading type="title0">Popover content</Heading>
               <Text>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis soluta tempora
                 natus ab recusandae, non fugiat sit, possimus molestias qui voluptatum laboriosam
@@ -97,8 +97,8 @@ export default function TestLockScrolling() {
               <Popover
                 opened={openNested}
                 content={
-                  <Stack direction="column" spacing="small">
-                    <Heading type="title1">Popover content</Heading>
+                  <Stack direction="column" spacing="300">
+                    <Heading type="title0">Popover content</Heading>
                     <Text>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi doloremque,
                       perspiciatis quas rerum voluptate est facere dolorem accusantium eligendi

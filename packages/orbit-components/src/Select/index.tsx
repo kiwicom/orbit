@@ -104,7 +104,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           <div
             className={cx(
               "pointer-events-none z-[3] flex h-full items-center justify-center",
-              error || help ? "ps-xxs" : "ps-sm",
+              error || help ? "ps-100" : "ps-300",
               "[&_.orbit-form-label]:text-normal [&_.orbit-form-label]:mb-0 [&_.orbit-form-label]:inline-block [&_.orbit-form-label]:max-w-[20ch] [&_.orbit-form-label]:truncate [&_.orbit-form-label]:leading-normal",
             )}
             ref={labelRef}
@@ -133,7 +133,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
 
         <div className="relative z-[3] size-full">
           {prefix && (
-            <div className="px-sm pointer-events-none absolute top-0 z-[3] flex h-full items-center">
+            <div className="px-300 pointer-events-none absolute top-0 z-[3] flex h-full items-center">
               {prefix}
             </div>
           )}
@@ -144,7 +144,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                   ? "text-form-element-filled-foreground"
                   : "text-form-element-foreground",
                 "text-form-element-normal font-base pointer-events-none absolute inset-y-0 z-[3] flex items-center",
-                prefix ? "ps-[48px]" : "ps-sm",
+                prefix ? "ps-1200" : "ps-300",
               )}
             >
               {customValueText}
@@ -155,8 +155,8 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
               "cursor-pointer appearance-none bg-transparent outline-none",
               filled ? "text-form-element-filled-foreground" : "text-form-element-foreground",
               "font-base text-form-element-normal",
-              "pe-xxl",
-              prefix ? "ps-[48px]" : "ps-sm",
+              "pe-1000",
+              prefix ? "ps-1200" : "ps-300",
               "shrink grow basis-1/5",
               "size-full",
               "border-0",
@@ -200,7 +200,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
         </div>
         <div
           className={cx(
-            "end-xs pointer-events-none absolute top-0 z-[3] flex h-full items-center justify-center",
+            "end-200 pointer-events-none absolute top-0 z-[3] flex h-full items-center justify-center",
             disabled
               ? "text-form-element-disabled-foreground"
               : "text-form-element-filled-foreground",

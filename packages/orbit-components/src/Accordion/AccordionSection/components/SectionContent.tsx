@@ -7,7 +7,7 @@ interface Props extends Common.Globals {
 }
 
 const AccordionSectionContent = ({ children, dataTest }: Props) => (
-  <div className="px-lg pb-lg" data-test={dataTest && `${dataTest}Content`}>
+  <div className="px-600 pb-600" data-test={dataTest && `${dataTest}Content`}>
     {children}
   </div>
 );

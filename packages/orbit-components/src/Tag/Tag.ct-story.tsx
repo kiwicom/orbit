@@ -7,7 +7,7 @@ import Tag from ".";
 
 export function TestTag(props: Props) {
   return (
-    <div className="p-xxs inline-block">
+    <div className="p-100 inline-block">
       <Tag {...props} />
     </div>
   );
@@ -15,9 +15,9 @@ export function TestTag(props: Props) {
 
 export function DefaultTestStory() {
   return (
-    <div className="gap-md p-xxs flex flex-col items-start">
+    <div className="gap-400 p-100 flex flex-col items-start">
       <h2>Neutral</h2>
-      <div className="gap-sm flex flex-wrap">
+      <div className="gap-300 flex flex-wrap">
         <Tag>Non actionable</Tag>
         <Tag iconLeft={<Icons.PlusMinus />}>With icon</Tag>
         <Tag onClick={() => {}}>Default</Tag>
@@ -33,7 +33,7 @@ export function DefaultTestStory() {
         </Tag>
       </div>
       <h2>Colored</h2>
-      <div className="gap-sm flex flex-wrap">
+      <div className="gap-300 flex flex-wrap">
         <Tag type="colored">Non actionable</Tag>
         <Tag type="colored" iconLeft={<Icons.PlusMinus />}>
           With icon
@@ -55,7 +55,7 @@ export function DefaultTestStory() {
         </Tag>
       </div>
       <h2>dateTag</h2>
-      <div className="gap-sm flex flex-wrap">
+      <div className="gap-300 flex flex-wrap">
         <Tag dateTag>Neutral dateTag</Tag>
         <Tag dateTag onClick={() => {}}>
           Clickable dateTag
@@ -74,7 +74,7 @@ export function DefaultTestStory() {
         </Tag>
       </div>
       <h2>Size small</h2>
-      <div className="gap-sm flex flex-wrap">
+      <div className="gap-300 flex flex-wrap">
         <Tag size="small">Neutral small</Tag>
         <Tag size="small" iconLeft={<Icons.PlusMinus />}>
           Small w/ icon

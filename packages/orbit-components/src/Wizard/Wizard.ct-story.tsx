@@ -5,7 +5,7 @@ import Wizard, { WizardStep } from ".";
 export function WizardStory() {
   return (["row", "column"] as const).map(direction => (
     <>
-      <div className="p-md">
+      <div className="p-400">
         <Wizard
           id={`wizard-single-${direction}`}
           dataTest={`wizard-single-${direction}`}
@@ -16,7 +16,7 @@ export function WizardStory() {
           <WizardStep title="Search" />
         </Wizard>
       </div>
-      <div className="p-md">
+      <div className="p-400">
         <Wizard
           id={`wizard-completed-0-${direction}`}
           direction={direction}
@@ -30,7 +30,7 @@ export function WizardStory() {
           <WizardStep title="Overview & Payment" />
         </Wizard>
       </div>
-      <div className="p-md">
+      <div className="p-400">
         <Wizard
           id={`wizard-completed-2-${direction}`}
           direction={direction}
@@ -44,7 +44,7 @@ export function WizardStory() {
           <WizardStep title="Overview & Payment" />
         </Wizard>
       </div>
-      <div className="p-md">
+      <div className="p-400">
         <Wizard
           id={`wizard-completed-5-${direction}`}
           direction={direction}
@@ -66,7 +66,7 @@ export function WizardStory() {
 
 export function WizardStoryHover({ direction }: { direction: "row" | "column" }) {
   return (
-    <div className="p-md">
+    <div className="p-400">
       <Wizard id={React.useId()} direction={direction} activeStep={1} completedSteps={2}>
         <WizardStep title="Search" />
         <WizardStep title="Passenger details" />

@@ -19,15 +19,15 @@ enum QUERIES_BACKGROUNDS {
 
 const DUMMY_CHILDREN = (
   <>
-    <div className="size-xxxs bg-blue-normal" />
-    <div className="size-xxs bg-blue-normal" />
-    <div className="size-xs bg-blue-normal" />
-    <div className="size-sm bg-blue-normal" />
-    <div className="size-md bg-blue-normal" />
-    <div className="size-lg bg-blue-normal" />
-    <div className="size-xl bg-blue-normal" />
-    <div className="size-xxl bg-blue-normal" />
-    <div className="size-xxxl bg-blue-normal" />
+    <div className="size-50 bg-blue-normal" />
+    <div className="size-100 bg-blue-normal" />
+    <div className="size-200 bg-blue-normal" />
+    <div className="size-300 bg-blue-normal" />
+    <div className="size-400 bg-blue-normal" />
+    <div className="size-600 bg-blue-normal" />
+    <div className="size-800 bg-blue-normal" />
+    <div className="size-1000 bg-blue-normal" />
+    <div className="bg-blue-normal size-[52px]" />
   </>
 );
 

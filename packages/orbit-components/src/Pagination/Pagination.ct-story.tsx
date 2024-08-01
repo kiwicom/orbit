@@ -4,7 +4,7 @@ import Pagination from ".";
 
 export default function PaginationStory() {
   return (
-    <div className="p-md">
+    <div className="p-400">
       <Pagination
         labelNext="Previous"
         labelPrev="Next"

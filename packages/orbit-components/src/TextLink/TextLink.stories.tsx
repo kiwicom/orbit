@@ -147,7 +147,7 @@ export const Playground = ({
   const IconLeft = getIcon(iconLeft);
   return (
     <Box
-      padding="small"
+      padding="300"
       borderRadius="100"
       background={type === TYPE_OPTIONS.WHITE ? "inkLight" : "cloudNormal"}
     >

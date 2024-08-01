@@ -111,7 +111,7 @@ export const ExpandableWithCustomDescription = ({ icon }) => {
         header={
           <Stack justify="between" align="center" direction="row" shrink>
             <Stack spacing="none" direction="column" shrink>
-              <Stack direction="row" align="center" spacing="XSmall">
+              <Stack direction="row" align="center" spacing="200">
                 <Heading type="title4" as="h4">
                   Mr. Hot potato
                 </Heading>
@@ -134,7 +134,7 @@ export const ExpandableWithCustomDescription = ({ icon }) => {
         header={
           <Stack justify="between" align="center" direction="row" shrink>
             <Stack spacing="none" direction="column" shrink>
-              <Stack direction="row" align="center" spacing="XSmall">
+              <Stack direction="row" align="center" spacing="200">
                 <Heading type="title4" as="h4">
                   Mr. Hot potato
                 </Heading>
@@ -157,7 +157,7 @@ export const ExpandableWithCustomDescription = ({ icon }) => {
         header={
           <Stack justify="between" align="center" direction="row" shrink>
             <Stack spacing="none" direction="column" shrink>
-              <Stack direction="row" align="center" spacing="XSmall">
+              <Stack direction="row" align="center" spacing="200">
                 <Heading type="title4" as="h4">
                   Mr. Hot potato
                 </Heading>
@@ -180,7 +180,7 @@ export const ExpandableWithCustomDescription = ({ icon }) => {
         header={
           <Stack justify="between" align="center" direction="row" shrink>
             <Stack spacing="none" direction="column" shrink>
-              <Stack direction="row" align="center" spacing="XSmall">
+              <Stack direction="row" align="center" spacing="200">
                 <Heading type="title4" as="h4">
                   Mr. Hot potato
                 </Heading>

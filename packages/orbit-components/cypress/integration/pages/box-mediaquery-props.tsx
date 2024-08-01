@@ -34,8 +34,8 @@ export default function BoxMediaProps() {
       }}
       largeDesktop={{
         background: "redLight",
-        padding: "large",
-        margin: { top: "small", left: "none", right: "XSmall" },
+        padding: "600",
+        margin: { top: "300", left: "none", right: "200" },
         align: "end",
         maxHeight: "24px",
       }}

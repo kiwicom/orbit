@@ -160,14 +160,14 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
         {arrows && (
           <>
             <ArrowButton
-              className="left-xxs"
+              className="left-100"
               isHidden={reachedStart || !isOverflowing}
               onClick={() => handleClick("left")}
             >
               <ChevronBackward customColor={arrowColor} />
             </ArrowButton>
             <ArrowButton
-              className="right-xxs"
+              className="right-100"
               isHidden={reachedEnd || !isOverflowing}
               onClick={() => handleClick("right")}
             >

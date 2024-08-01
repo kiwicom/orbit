@@ -42,7 +42,7 @@ const SwitchSegment = ({
           "orbit-switch-segment-text",
           "peer-checked:text-blue-normal peer-checked:outline-blue-normal peer-checked:z-10 peer-checked:!rounded-[5px] peer-checked:outline peer-checked:outline-2 ",
           "peer-focus:peer-[:not(:checked)]:text-form-element-label-filled-foreground peer-focus:outline-blue-normal peer-focus:z-10 peer-focus:!rounded-[5px] peer-focus:outline peer-focus:outline-2 ",
-          "p-sm font-base text-normal duration-fast box-border flex w-full max-w-full cursor-pointer items-center justify-center border-0 text-center font-medium leading-normal transition-colors ease-in-out",
+          "p-300 font-base text-normal duration-fast box-border flex w-full max-w-full cursor-pointer items-center justify-center border-0 text-center font-medium leading-normal transition-colors ease-in-out",
           "bg-form-element-background text-form-element-foreground hover:text-form-element-label-filled-foreground",
         )}
         style={{ boxShadow: `0 0 0 1px ${theme.orbit.paletteCloudDark}` }}

@@ -192,7 +192,7 @@ export const FullWidthButtons: Story = {
     const IconRight = getIcon(iconRight as string);
 
     return (
-      <Stack spacing="small" direction="column">
+      <Stack spacing="300" direction="column">
         <Button
           {...args}
           onClick={action("clicked")}

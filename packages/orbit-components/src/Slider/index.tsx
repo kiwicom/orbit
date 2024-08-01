@@ -362,7 +362,7 @@ const Slider = ({
           </Hide>
           <div
             className={cx(
-              "pb-xs tb:w-[calc(100%+48px)] tb:absolute tb:-bottom-md tb:-inset-x-lg tb:pt-sm tb:px-lg tb:pb-[48px] tb:rounded-100 tb:transition-opacity tb:ease-in-out tb:duration-fast tb:bg-white-normal tb:shadow-level3",
+              "pb-200 tb:w-[calc(100%+48px)] tb:absolute tb:-bottom-400 tb:-inset-x-600 tb:pt-300 tb:px-600 tb:pb-1200 tb:rounded-100 tb:transition-opacity tb:ease-in-out tb:duration-fast tb:bg-white-normal tb:shadow-level3",
               focused ? "tb:visible tb:opacity-100" : "tb:invisible tb:opacity-0",
             )}
           >
@@ -380,7 +380,7 @@ const Slider = ({
       ) : (
         renderSliderTexts(true)
       )}
-      <div className="h-lg flex w-full items-center">
+      <div className="h-600 flex w-full items-center">
         <Bar
           ref={bar}
           onMouseDown={handleBarMouseDown}

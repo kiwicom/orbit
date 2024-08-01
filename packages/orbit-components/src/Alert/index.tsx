@@ -130,7 +130,7 @@ const Alert = (props: Props) => {
   return (
     <div
       className={cx(
-        "rounded-150 text-ink-dark font-base text-normal p-sm relative box-border flex w-full border border-t-[3px] leading-normal",
+        "rounded-150 text-ink-dark font-base text-normal p-300 relative box-border flex w-full border border-t-[3px] leading-normal",
         "lm:border-s-[3px] lm:border-t",
         "tb:rounded-100",
         inlineActions && "items-center",
@@ -144,10 +144,10 @@ const Alert = (props: Props) => {
       {icon && (
         <div
           className={cx(
-            "me-xs m-0 shrink-0 leading-none",
-            inlineActions && "lm:mt-[6px] flex items-center self-baseline", // TODO: [6px] can be replaced by space tokens
+            "me-200 m-0 shrink-0 leading-none",
+            inlineActions && "lm:mt-150 flex items-center self-baseline",
             ICON_COLOR[type],
-            "tb:me-xs tb:[&_svg]:size-icon-medium",
+            "tb:me-200 tb:[&_svg]:size-icon-medium",
           )}
         >
           <StyledIcon type={type} icon={icon} />
@@ -165,7 +165,7 @@ const Alert = (props: Props) => {
           <div
             className={cx(
               "text-ink-dark min-h-icon-medium flex items-center font-bold",
-              !!children && (inlineActions ? "mb-0" : "mb-xxs"),
+              !!children && (inlineActions ? "mb-0" : "mb-100"),
               inlineActions && "grow basis-0",
             )}
           >

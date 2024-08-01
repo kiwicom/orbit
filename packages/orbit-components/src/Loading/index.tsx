@@ -10,7 +10,7 @@ import useTheme from "../hooks/useTheme";
 const CircleLoader = ({ animationDelay }: { animationDelay?: string }) => {
   return (
     <div
-      className="animate-loader bg-cloud-dark size-xs me-[6px] rounded-full [&:nth-child(3)]:m-0"
+      className="animate-loader bg-cloud-dark size-200 me-150 rounded-full [&:nth-child(3)]:m-0"
       style={{ animationDelay }}
     />
   );
@@ -58,7 +58,7 @@ const Loader = ({ type, customSize }) => {
   return (
     <svg
       viewBox="0 0 40 40"
-      className="orbit-loading-spinner animate-spinner size-xxl"
+      className="orbit-loading-spinner animate-spinner size-1000"
       stroke={type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteCloudDark}
     >
       <circle
@@ -96,7 +96,7 @@ const Loading = ({
             "box-border",
             type === TYPE_OPTIONS.BUTTON_LOADER &&
               "[&_.orbit-loading-spinner]:size-icon-medium absolute start-0 top-0 size-full justify-center",
-            type === TYPE_OPTIONS.SEARCH_LOADER && "h-[40px] justify-start",
+            type === TYPE_OPTIONS.SEARCH_LOADER && "h-1000 justify-start",
             type === TYPE_OPTIONS.INLINE_LOADER && "inline-flex min-h-[19px] justify-center",
             type !== TYPE_OPTIONS.INLINE_LOADER && "flex",
             type === TYPE_OPTIONS.BOX_LOADER && "h-[80px] justify-center",
@@ -111,7 +111,7 @@ const Loading = ({
             <div
               className={cx([
                 "font-base text-normal text-cloud-dark leading-normal",
-                type === TYPE_OPTIONS.PAGE_LOADER ? "mt-md" : "ms-sm",
+                type === TYPE_OPTIONS.PAGE_LOADER ? "mt-400" : "ms-300",
               ])}
             >
               {text}

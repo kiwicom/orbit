@@ -7,7 +7,7 @@ import Card, { CardSection } from ".";
 
 export default function CardVisualStory() {
   return (
-    <div className="space-y-xs bg-ink-light flex flex-col">
+    <div className="space-y-200 bg-ink-light flex flex-col">
       <Card title="Somebody once" />
       <Card title="Somebody once" description="Told me the world is gonna roll me" />
       <Card

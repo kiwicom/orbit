@@ -47,12 +47,12 @@ const ItinerarySegmentStop = ({
   return (
     <div
       className={cx(
-        "px-sm relative box-border flex py-0",
-        ((!last && index !== 0) || (index !== 0 && isBanner)) && "mb-sm",
+        "px-300 relative box-border flex py-0",
+        ((!last && index !== 0) || (index !== 0 && isBanner)) && "mb-300",
       )}
       data-test="SegmentStop"
     >
-      <Stack flex align="center" spacing="small">
+      <Stack flex align="center" spacing="300">
         <div
           className="whitespace-nowrap"
           ref={setDateWidth}

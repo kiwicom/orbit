@@ -170,12 +170,12 @@ Rtl.story = {
   parameters: {
     info: (
       <div dir="ltr">
-        <p className="mb-md">
+        <p className="mb-400">
           Note that when you use bidirectional text (including both RTL and LTR words) for{" "}
           <code>labelProgress</code> prop, it may not render properly due to how in-browser unicode
           bidirectional algorithm works.
         </p>
-        <p className="mb-md">
+        <p className="mb-400">
           If that’s the case, you should wrap every given word properly to ensure correct rendering.
           Eg.{" "}
           <code>

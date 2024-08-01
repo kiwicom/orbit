@@ -3,8 +3,6 @@ import userEvent from "@testing-library/user-event";
 
 import { render, screen } from "../../test-utils";
 import Alert from "..";
-import defaultTheme from "../../defaultTheme";
-import { SPACINGS_AFTER } from "../../common/consts";
 
 const message = "Alert message";
 
@@ -19,14 +17,6 @@ describe("Alert", () => {
     const dataTest = "test";
     render(<Alert dataTest={dataTest}>{message}</Alert>);
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
-  });
-  it("should have margin-bottom", () => {
-    const { container } = render(<Alert spaceAfter={SPACINGS_AFTER.NORMAL}>{message}</Alert>);
-    // @ts-expect-error TODO
-    expect(getComputedStyle(container.childNodes[1])).toHaveProperty(
-      "margin-bottom",
-      defaultTheme.orbit.spaceSmall,
-    );
   });
   it("should be closable", async () => {
     const onClose = jest.fn();

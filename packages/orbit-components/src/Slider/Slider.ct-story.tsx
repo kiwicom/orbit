@@ -6,7 +6,7 @@ import Slider from ".";
 
 export default function SliderStory(props: Props) {
   return (
-    <div className="py-md px-lg">
+    <div className="py-400 px-600">
       <Slider {...props} />
     </div>
   );

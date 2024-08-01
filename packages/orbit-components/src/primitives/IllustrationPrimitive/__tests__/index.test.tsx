@@ -28,7 +28,7 @@ describe("IllustrationPrimitive", () => {
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(img).toHaveAttribute("src", URL);
     expect(img).toHaveAttribute("srcset", expect.stringContaining(URL_RETINA));
-    expect(img).toHaveStyle({ marginBottom: defaultTheme.orbit.spaceSmall });
+    expect(img).toHaveStyle({ marginBottom: defaultTheme.orbit.space300 });
   });
 
   it("should have empty alt", () => {

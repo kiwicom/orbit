@@ -34,7 +34,7 @@ const Pagination = ({
   const { isTablet } = useMediaQuery();
 
   return (
-    <Stack spacing="XXSmall" align="center" grow={false} shrink dataTest={dataTest} basis="auto">
+    <Stack spacing="100" align="center" grow={false} shrink dataTest={dataTest} basis="auto">
       {!isTablet ? (
         <>
           <ButtonLink
@@ -69,7 +69,7 @@ const Pagination = ({
           >
             {!hideLabels && labelPrev}
           </ButtonLink>
-          <Stack inline grow={false} spacing="XXSmall" align="center">
+          <Stack inline grow={false} spacing="100" align="center">
             {pageCount <= MAXIMUM_PAGES ? (
               <Pages
                 pageCount={pageCount}

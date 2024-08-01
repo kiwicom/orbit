@@ -8,7 +8,7 @@ interface Props extends Common.Globals {
 
 const AccordionSectionFooter = ({ children, dataTest }: Props) => (
   <div
-    className="p-lg bg-white-normal shadow-level2 sticky bottom-0 flex"
+    className="p-600 bg-white-normal shadow-level2 sticky bottom-0 flex"
     data-test={dataTest && `${dataTest}Footer`}
   >
     {children}

@@ -168,7 +168,7 @@ const PopoverContentWrapper = ({
           "box-border",
           "shadow-level3-reverse",
           "bg-white-normal",
-          "max-h-[calc(100%_-_theme(spacing.xl))]",
+          "max-h-[calc(100%_-_theme(spacing.800))]",
           "focus:outline-none",
           "lm:top-[var(--popper-top)]",
           "lm:left-[var(--popper-left)]",
@@ -208,7 +208,7 @@ const PopoverContentWrapper = ({
               windowHeight &&
                 actionsHeight &&
                 "max-h-[calc(var(--window-height)-var(--actions-height)-32px)]",
-              noPadding ? "p-0" : "p-md",
+              noPadding ? "p-0" : "p-400",
               "lm:max-h-[var(--max-height)]",
               "lm:rounded-100",
               "lm:bottom-auto",
@@ -233,7 +233,7 @@ const PopoverContentWrapper = ({
                 "bottom-0 left-0",
                 "w-full",
                 "box-border",
-                "p-md pt-sm",
+                "p-400 pt-300",
                 "bg-white-normal",
                 "[&_.orbit-button-primitive]:w-full [&_.orbit-button-primitive]:flex-auto",
                 "lm:relative",
@@ -245,7 +245,7 @@ const PopoverContentWrapper = ({
               {actions}
             </div>
           ) : (
-            <div ref={actionsRef} className="p-md lm:hidden lm:pb-0">
+            <div ref={actionsRef} className="p-400 lm:hidden lm:pb-0">
               <Button type="secondary" fullWidth onClick={onClose}>
                 {labelClose}
               </Button>

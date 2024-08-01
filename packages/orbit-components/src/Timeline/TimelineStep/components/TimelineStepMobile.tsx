@@ -23,8 +23,8 @@ const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active,
       >
         <TypeIcon type={type} active={!!active} mobile />
         {!last && <ProgressLine status={nextType} prevStatus={type} />}
-        <Stack flex shrink direction="column" spacing="XXSmall">
-          <Stack flex direction="column" spacing="XXSmall">
+        <Stack flex shrink direction="column" spacing="100">
+          <Stack flex direction="column" spacing="100">
             <TextWrapper active={active || (last && type === "success")}>
               <Text weight="bold">{label}</Text>
             </TextWrapper>

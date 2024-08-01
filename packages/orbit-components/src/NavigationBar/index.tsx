@@ -63,13 +63,13 @@ const NavigationBar = ({
       data-test={dataTest}
       id={id}
       className={cx(
-        "bg-white-normal shadow-fixed p-sm z-navigation-bar fixed inset-x-0 top-0 box-border flex w-full translate-x-0 items-center",
+        "bg-white-normal shadow-fixed p-300 z-navigation-bar fixed inset-x-0 top-0 box-border flex w-full translate-x-0 items-center",
         "duration-normal transform-gpu transition-transform ease-in-out",
-        "tb:h-[64px] h-[52px]", // As defined on the const above
-        shown ? "translate-y-0" : "tb:translate-y-[-64px] translate-y-[-52px]", // As defined on the const above
+        "tb:h-1600 h-[52px]", // As defined on the const above
+        shown ? "translate-y-0" : "tb:-translate-y-1600 translate-y-[-52px]", // As defined on the const above
       )}
     >
-      <div className="me-xs block w-full">{children}</div>
+      <div className="me-200 block w-full">{children}</div>
       {onMenuOpen && (
         <ButtonLink
           type="secondary"

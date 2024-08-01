@@ -7,7 +7,7 @@ type Props = React.PropsWithChildren<{
 
 const TextWrapper = ({ active, children }: Props) => {
   return (
-    <div className={cx("de:min-h-md", active ? "[&>p]:text-ink-dark" : "[&>p]:text-ink-light")}>
+    <div className={cx("de:min-h-400", active ? "[&>p]:text-ink-dark" : "[&>p]:text-ink-light")}>
       {children}
     </div>
   );

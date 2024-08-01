@@ -237,7 +237,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
           String(inputValue).length > 1 && (
             <button
               className={cx(
-                "me-xs appearance-none border-0 bg-transparent p-0",
+                "me-200 appearance-none border-0 bg-transparent p-0",
                 disabled && "pointer-events-none cursor-not-allowed",
               )}
               type="button"
@@ -305,7 +305,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
 
             return (
               <React.Fragment key={groupId}>
-                <Box padding="small">
+                <Box padding="300">
                   <Text type="secondary">
                     {prevSelectedOption ? prevSelectedLabel : groupTitle}
                   </Text>
@@ -348,7 +348,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
               </React.Fragment>
             );
           })}
-          <Box padding="small">
+          <Box padding="300">
             <Text type="secondary">{showAllLabel}</Text>
           </Box>
           {results.all.map(option => {
@@ -393,7 +393,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
 
     const noResults =
       typeof emptyState === "string" ? (
-        <Box padding="medium">
+        <Box padding="400">
           <Text>{emptyState}</Text>
         </Box>
       ) : (
@@ -405,8 +405,8 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         className={cx(
           "font-base bg-white-normal lm:absolute lm:inset-x-0 lm:overflow-y-scroll lm:shadow-level1 lm:rounded-100 z-[3] flex w-full flex-col",
           label
-            ? "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.xl))]"
-            : "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.xs))]",
+            ? "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.800))]"
+            : "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.200))]",
         )}
         style={
           isLargeMobile
@@ -458,10 +458,10 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
             {isOpened && (
               <div
                 className={cx(
-                  "[&_.orbit-input-field-field]:mt-xs [&_.orbit-modal-footer]:shadow-none [&_.orbit-modal-header-container]:sticky [&_.orbit-modal-header-container]:top-0 [&_.orbit-modal-wrapper-content]:h-full",
+                  "[&_.orbit-input-field-field]:mt-200 [&_.orbit-modal-footer]:shadow-none [&_.orbit-modal-header-container]:sticky [&_.orbit-modal-header-container]:top-0 [&_.orbit-modal-wrapper-content]:h-full",
                   isScrolled &&
                     topOffset > 50 &&
-                    "[&_.orbit-modal-header-container]:pb-md [&_.orbit-modal-header-container]:shadow-fixed",
+                    "[&_.orbit-modal-header-container]:pb-400 [&_.orbit-modal-header-container]:shadow-fixed",
                 )}
               >
                 <Modal
@@ -478,7 +478,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                   mobileHeader={false}
                   autoFocus
                 >
-                  <ModalHeader className="!p-md !mb-0">
+                  <ModalHeader className="!p-400 !mb-0">
                     {label && (
                       <Stack align="center" justify="between">
                         <Box>

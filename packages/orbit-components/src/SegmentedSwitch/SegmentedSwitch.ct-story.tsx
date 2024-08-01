@@ -16,7 +16,7 @@ const optionsWithDefaultChecked: Option[] = [
 
 export function SegmentedSwitchStory() {
   return (
-    <div className="gap-md p-md flex flex-col">
+    <div className="gap-400 p-400 flex flex-col">
       <SegmentedSwitch options={options} onChange={() => {}} />
       <SegmentedSwitch options={options} label="Custom label" onChange={() => {}} />
       <SegmentedSwitch
@@ -36,7 +36,7 @@ export function SegmentedSwitchStory() {
         error="You shall not pass!"
         onChange={() => {}}
       />
-      <div className="mt-xl">
+      <div className="mt-800">
         <SegmentedSwitch
           options={options}
           label="Custom label"
@@ -45,7 +45,7 @@ export function SegmentedSwitchStory() {
           onChange={() => {}}
         />
       </div>
-      <div className="mt-xl">
+      <div className="mt-800">
         <SegmentedSwitch
           options={options}
           label="Custom label"
@@ -61,7 +61,7 @@ export function SegmentedSwitchStory() {
 
 export function SegmentedSwitchErrorStory() {
   return (
-    <div className="p-md">
+    <div className="p-400">
       <SegmentedSwitch
         options={options}
         label="Custom label"
@@ -75,7 +75,7 @@ export function SegmentedSwitchErrorStory() {
 
 export function SegmentedSwitchSelectedStory() {
   return (
-    <div className="p-md">
+    <div className="p-400">
       <SegmentedSwitch
         options={optionsWithDefaultChecked}
         label="Custom label"

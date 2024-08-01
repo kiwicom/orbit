@@ -35,7 +35,7 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
       <div
         className={cx(
           "orbit-list-choice",
-          "py-sm px-md box-border flex w-full items-center",
+          "py-300 px-400 box-border flex w-full items-center",
           "border-b-cloud-normal bg-white-normal border-b border-solid",
           "duration-fast transition-[background-color] ease-in-out",
           disabled ? "cursor-not-allowed" : "hover:bg-cloud-light cursor-pointer",
@@ -57,7 +57,7 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
         {icon && (
           <div
             className={cx(
-              "me-xs h-icon-medium flex flex-none items-center self-start",
+              "me-200 h-icon-medium flex flex-none items-center self-start",
               "[&_svg]:size-icon-medium [&_svg]:text-icon-primary-foreground [&_svg]:self-center",
               "[&_svg]:duration-fast [&_svg]:transition-[color] [&_svg]:ease-in-out",
             )}
@@ -65,7 +65,7 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
             {icon}
           </div>
         )}
-        <div className="pe-sm flex w-full flex-col justify-center">
+        <div className="pe-300 flex w-full flex-col justify-center">
           <Heading type="title4">{title}</Heading>
           {description && (
             <Text type="secondary" size="small">

@@ -9,7 +9,7 @@ const TYPES = ["success", "warning", "critical", "info", undefined] as const;
 
 export default function TimelineStory() {
   return (
-    <div className="p-md">
+    <div className="p-400">
       {Object.values(SPACINGS_AFTER).map(spaceAfter => (
         <Timeline spaceAfter={spaceAfter}>
           <TimelineStep label="Only one step" />

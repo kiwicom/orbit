@@ -89,7 +89,7 @@ const Dialog = ({
       className={cx([
         "font-base",
         "size-full",
-        "p-md z-overlay box-border overflow-x-hidden bg-[rgba(0,0,0,0.5)]",
+        "p-400 z-overlay box-border overflow-x-hidden bg-[rgba(0,0,0,0.5)]",
         "fixed inset-0",
         "duration-fast transition-opacity ease-in-out",
         "lm:opacity-100 lm:flex lm:items-center lm:justify-center",
@@ -101,13 +101,13 @@ const Dialog = ({
           ref={ref}
           style={{ maxWidth }}
           className={cx([
-            "shadow-level4 pt-lg px-md pb-md bg-white-normal rounded-dialog-mobile box-border block w-full",
+            "shadow-level4 pt-600 px-400 pb-400 bg-white-normal rounded-dialog-mobile box-border block w-full",
             shown ? "bottom-0" : "-bottom-full",
-            "lm:min-w-dialog-width lm:p-lg lm:rounded-dialog-desktop",
+            "lm:min-w-dialog-width lm:p-600 lm:rounded-dialog-desktop",
           ])}
         >
-          {illustration && <div className="mb-md lm:text-start text-center">{illustration}</div>}
-          <div className="mb-md gap-xs lm:text-start lm:[&>.orbit-text]:text-start flex flex-col text-center [&>.orbit-text]:text-center">
+          {illustration && <div className="mb-400 lm:text-start text-center">{illustration}</div>}
+          <div className="mb-400 gap-200 lm:text-start lm:[&>.orbit-text]:text-start flex flex-col text-center [&>.orbit-text]:text-center">
             {title && (
               <Heading type="title3" align="center" largeMobile={{ align: "start" }}>
                 {title}
@@ -121,7 +121,7 @@ const Dialog = ({
           </div>
           <Stack
             direction="column-reverse"
-            spacing="XSmall"
+            spacing="200"
             largeMobile={{ direction: "row", justify: "end" }}
           >
             {secondaryAction && <ActionButtonWrapper>{secondaryAction}</ActionButtonWrapper>}

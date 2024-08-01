@@ -31,7 +31,7 @@ export const getIconColor = (type: Type) => {
 };
 
 export const ItemWrapper = ({ children, dataTest }) => (
-  <li className="[&_+_&]:mt-xxs flex w-full flex-row" data-test={dataTest}>
+  <li className="[&_+_&]:mt-100 flex w-full flex-row" data-test={dataTest}>
     {children}
   </li>
 );
@@ -40,7 +40,7 @@ export const VerticalBadge = ({ icon, type }: { icon: React.ReactNode; type: Pro
   return (
     <div
       className={cx(
-        "me-xs size-icon-large flex shrink-0 items-center justify-center rounded-full",
+        "me-200 size-icon-large flex shrink-0 items-center justify-center rounded-full",
         "[&_svg]:size-icon-small",
         type && [BACKGROUND[type], ICON_COLOR[type]],
       )}

@@ -10,7 +10,7 @@ const SELECTED = [true, false] as const;
 
 export default function SeatStory() {
   return (
-    <div className="p-md gap-xs flex flex-wrap">
+    <div className="p-400 gap-200 flex flex-wrap">
       {LABELS.map(label =>
         Object.values(TYPES).map(type =>
           Object.values(SIZE_OPTIONS).map(size =>

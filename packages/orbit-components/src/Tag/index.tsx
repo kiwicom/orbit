@@ -41,7 +41,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
       <div
         className={cx(
           "orbit-tag",
-          "font-base rounded-150 p-xs box-border inline-flex items-center justify-center font-medium",
+          "font-base rounded-150 p-200 box-border inline-flex items-center justify-center font-medium",
           "duration-fast transition-[color,_background-color,_box-shadow] ease-in-out",
           "tb:rounded-100",
           size === SIZES.SMALL && "text-small leading-small",
@@ -89,7 +89,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
         onKeyDown={ev => buttonClickEmulation(ev, onClick)}
       >
         {iconLeft && (
-          <div className="pe-xs [&_svg]:size-icon-small flex flex-row items-center justify-center">
+          <div className="pe-200 [&_svg]:size-icon-small flex flex-row items-center justify-center">
             {iconLeft}
           </div>
         )}
@@ -98,7 +98,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
           <div
             className={cx(
               "orbit-tag-close-container",
-              "ms-xs flex rounded-full",
+              "ms-200 flex rounded-full",
               "duration-fast transition-[color,_opacity] ease-in-out",
               "focus:opacity-100",
               !selected &&

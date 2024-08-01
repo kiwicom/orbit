@@ -47,7 +47,7 @@ export const WithCustomLabel = () => {
   return (
     <Collapse
       customLabel={
-        <Stack inline spacing="large" align="center">
+        <Stack inline spacing="600" align="center">
           <Badge>Custom label </Badge>
           <Badge>Custom label </Badge>
           <Badge>Custom label </Badge>

@@ -28,10 +28,10 @@ export const ModalHeaderWrapper = ({
         "lm:[&_~_.orbit-modal-section]:rounded-t-none",
         suppressed
           ? [
-              "bg-cloud-light py-xl px-md lm:p-xl",
+              "bg-cloud-light py-800 px-400 lm:p-800",
               "[&_~_.orbit-modal-section:first-of-type]:border-t-elevation-flat-border-color [&_~_.orbit-modal-section:first-of-type]:!mt-0 [&_~_.orbit-modal-section:first-of-type]:border-t [&_~_.orbit-modal-section:first-of-type]:border-solid",
             ]
-          : ["bg-white-normal pt-lg px-md lm:pt-xl lm:px-xl lm:pb-0 pb-0"],
+          : ["bg-white-normal pt-600 px-400 lm:pt-800 lm:px-800 lm:pb-0 pb-0"],
       )}
       data-test={dataTest}
     >
@@ -68,8 +68,8 @@ const ModalHeader = ({
       {hasHeader && (
         <div
           className={cx(
-            !!illustration && "mt-md",
-            "[&_.orbit-modal-heading]:pe-xl de:[&_.orbit-modal-heading]:p-0",
+            !!illustration && "mt-400",
+            "[&_.orbit-modal-heading]:pe-800 de:[&_.orbit-modal-heading]:p-0",
           )}
         >
           {title && (
@@ -81,7 +81,7 @@ const ModalHeader = ({
             </h2>
           )}
           {description && (
-            <div className="mt-xs">
+            <div className="mt-200">
               <Text size="large" as="div">
                 {description}
               </Text>
@@ -90,7 +90,9 @@ const ModalHeader = ({
         </div>
       )}
       {children && (
-        <div className={cx(!hasHeader && !!children ? "mt-0" : [description ? "mt-xl" : "mt-md"])}>
+        <div
+          className={cx(!hasHeader && !!children ? "mt-0" : [description ? "mt-800" : "mt-400"])}
+        >
           {children}
         </div>
       )}
@@ -98,9 +100,9 @@ const ModalHeader = ({
         <div
           className={cx(
             "orbit-modal-mobile-header bg-white-normal",
-            "font-base font-heading-display text-extra-large text-heading-foreground ps-lg z-overlay invisible fixed end-[48px] start-0 box-border inline-block h-[52px] truncate py-0 pe-0 leading-[52px] opacity-0",
+            "font-base font-heading-display text-extra-large text-heading-foreground ps-600 z-overlay end-1200 invisible fixed start-0 box-border inline-block h-[52px] truncate py-0 pe-0 leading-[52px] opacity-0",
             "lm:start-auto lm:end-auto lm:p-0",
-            isMobileFullPage ? "top-0" : "top-md",
+            isMobileFullPage ? "top-0" : "top-400",
           )}
           role="presentation"
         >

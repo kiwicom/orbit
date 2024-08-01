@@ -70,15 +70,15 @@ const ItineraryStatus = ({
     >
       <div
         className={cx(
-          "px-xs min-h-xl rounded-tl-100 rounded-tr-150 flex items-center rounded-b-none py-0",
+          "px-200 min-h-800 rounded-tl-100 rounded-tr-150 flex items-center rounded-b-none py-0",
           type && backgroundColor[type],
         )}
       >
         <div
           className="z-[2]"
-          style={{ marginInlineStart: `${parseInt(theme.orbit.spaceSmall, 10) + offset}px` }}
+          style={{ marginInlineStart: `${parseInt(theme.orbit.space300, 10) + offset}px` }}
         >
-          <Stack flex spacing="XSmall" align="center">
+          <Stack flex spacing="200" align="center">
             <StatusIcon type={type} theme={theme} />
             {label && (
               <Text as="div" type={type === "neutral" ? "primary" : type} weight="medium">

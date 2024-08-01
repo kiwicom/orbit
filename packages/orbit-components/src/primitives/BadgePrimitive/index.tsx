@@ -25,7 +25,7 @@ const BadgePrimitive = ({
         "font-base text-small font-medium leading-[14px]",
         "inline-flex shrink-0 grow-0 basis-auto items-center justify-center",
         "rounded-badge min-h-icon-large relative box-border",
-        "px-xs py-0",
+        "px-200 py-0",
         "[&>.orbit-carrier-logo]:absolute [&>.orbit-carrier-logo]:start-0",
       )}
       id={id}
@@ -34,11 +34,11 @@ const BadgePrimitive = ({
     >
       {carriers && <CarrierLogo carriers={carriers} rounded size="medium" />}
       {icon && (
-        <div className={cx("[&>svg]:size-icon-small flex shrink-0", Boolean(children) && "me-xxs")}>
+        <div className={cx("[&>svg]:size-icon-small flex shrink-0", Boolean(children) && "me-100")}>
           {icon}
         </div>
       )}
-      <div className={cx("py-xxs px-0 leading-none", isCarrier && "ms-md")}>{children}</div>
+      <div className={cx("py-100 px-0 leading-none", isCarrier && "ms-400")}>{children}</div>
     </div>
   );
 };

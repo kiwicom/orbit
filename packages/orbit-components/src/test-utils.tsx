@@ -25,12 +25,12 @@ const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, "wra
 
 export const spaceAfterTokens = {
   none: "0",
-  smallest: theme.orbit.spaceXXSmall,
-  small: theme.orbit.spaceXSmall,
-  normal: theme.orbit.spaceSmall,
-  medium: theme.orbit.spaceMedium,
-  large: theme.orbit.spaceLarge,
-  largest: theme.orbit.spaceXLarge,
+  smallest: theme.orbit.space100,
+  small: theme.orbit.space200,
+  normal: theme.orbit.space300,
+  medium: theme.orbit.space400,
+  large: theme.orbit.space600,
+  largest: theme.orbit.space800,
 };
 
 export * from "@testing-library/react";

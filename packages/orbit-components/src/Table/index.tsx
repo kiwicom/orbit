@@ -50,9 +50,9 @@ const Table = ({
     <div
       className={cx(
         "relative w-full max-w-full",
-        "before:duration-normal before:bg-table-shadow-left before:absolute before:left-0 before:top-0 before:h-full before:w-[16px] before:transition-opacity before:ease-in-out",
+        "before:duration-normal before:bg-table-shadow-left before:w-400 before:absolute before:left-0 before:top-0 before:h-full before:transition-opacity before:ease-in-out",
         !left && "before:opacity-0",
-        "after:duration-normal after:bg-table-shadow-right after:absolute after:right-0 after:top-0 after:h-full after:w-[16px] after:transition-opacity after:ease-in-out",
+        "after:duration-normal after:bg-table-shadow-right after:w-400 after:absolute after:right-0 after:top-0 after:h-full after:transition-opacity after:ease-in-out",
         !right && "after:opacity-0",
         shadows ? "before:block after:block" : "before:hidden after:hidden",
       )}
@@ -70,11 +70,11 @@ const Table = ({
             "w-full border-collapse border-spacing-0 whitespace-nowrap",
             "[&_tbody>tr]:bg-white-normal hover:[&_tbody>tr]:bg-cloud-light [&_tbody>tr]:border-b-cloud-normal [&_tbody>tr]:duration-fast [&_tbody>tr]:border-b [&_tbody>tr]:transition-colors [&_tbody>tr]:ease-in-out last:[&_tbody>tr]:border-b-0",
             striped === true && "type-even:[&_tbody>tr]:bg-cloud-normal",
-            "[&_td]:px-sm [&_th]:px-sm [&_td]:leading-normal [&_th]:leading-normal",
+            "[&_td]:px-300 [&_th]:px-300 [&_td]:leading-normal [&_th]:leading-normal",
             compact === true
               ? // TODO: remove 10px and 6px with new tokens
-                "[&_th]:h-xl [&_td]:h-xl [&_td]:py-[6px] [&_th]:py-[6px]"
-              : "[&_th]:h-xxl [&_td]:h-xxl [&_td]:py-[10px] [&_th]:py-[10px]",
+                "[&_th]:h-800 [&_td]:h-800 [&_td]:py-150 [&_th]:py-150"
+              : "[&_th]:h-1000 [&_td]:h-1000 [&_td]:py-[10px] [&_th]:py-[10px]",
             type === TYPE_OPTIONS.SECONDARY && "[&_td]:text-ink-normal [&_th]:text-ink-normal",
           )}
           ref={table}

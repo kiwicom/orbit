@@ -47,7 +47,7 @@ export const Default: Story = {
         <AccordionSection
           id="0X0"
           header={
-            <Stack spacing="small">
+            <Stack spacing="300">
               <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
@@ -58,7 +58,7 @@ export const Default: Story = {
         <AccordionSection
           id="0X1"
           header={
-            <Stack spacing="small">
+            <Stack spacing="300">
               <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
@@ -69,7 +69,7 @@ export const Default: Story = {
         <AccordionSection
           id="0X2"
           header={
-            <Stack spacing="small">
+            <Stack spacing="300">
               <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
@@ -213,7 +213,7 @@ export const AccordionWithStickyFooter: Story = {
         <AccordionSection
           id="0X1"
           header={
-            <Stack spacing="small">
+            <Stack spacing="300">
               <Text type="primary">This is a header label</Text>
               <Text size="small">This is a header label</Text>
             </Stack>
@@ -240,7 +240,7 @@ export const AccordionWithStickyFooter: Story = {
         <AccordionSection
           id="0X2"
           header={
-            <Stack spacing="small">
+            <Stack spacing="300">
               <Text type="primary">This is a content text</Text>
               <Text size="small">This is a content text</Text>
             </Stack>

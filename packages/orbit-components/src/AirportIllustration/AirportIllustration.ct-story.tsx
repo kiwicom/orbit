@@ -7,7 +7,7 @@ import AirportIllustration from ".";
 
 export default function AirportIllustrationStory() {
   return (
-    <div className="space-y-sm flex flex-col">
+    <div className="space-y-300 flex flex-col">
       {NAMES.map(illustration => (
         <div className="bg-white-normal min-h-[80px] w-full">
           <AirportIllustration key={illustration} name={illustration} />

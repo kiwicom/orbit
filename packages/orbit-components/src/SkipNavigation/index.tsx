@@ -85,7 +85,7 @@ const SkipNavigation = ({
 
   return (
     <div
-      className={cx("orbit-skip-navigation bg-cloud-light p-md w-full", !show && "sr-only")}
+      className={cx("orbit-skip-navigation bg-cloud-light p-400 w-full", !show && "sr-only")}
       tabIndex={-1}
       onFocus={handleFocus}
       onBlur={() => setShow(false)}

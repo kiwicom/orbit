@@ -10,7 +10,7 @@ import type { Props } from "./types";
 
 const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest }: Props) => {
   return (
-    <Stack inline align="center" spacing="XSmall">
+    <Stack inline align="center" spacing="200">
       <svg width="16" height="20" viewBox="0 0 16 20" fill="none" data-test={dataTest}>
         <path
           className={cx(

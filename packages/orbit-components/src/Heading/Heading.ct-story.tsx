@@ -6,7 +6,7 @@ import Heading from ".";
 
 export default function HeadingVisualStory() {
   return (
-    <div className="space-y-xs flex flex-col">
+    <div className="space-y-200 flex flex-col">
       {Object.values(TYPE_OPTIONS).map(type => (
         <Heading type={type}>Type {type}</Heading>
       ))}

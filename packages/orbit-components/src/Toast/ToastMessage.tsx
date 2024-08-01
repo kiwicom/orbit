@@ -57,8 +57,8 @@ const ToastMessage = ({
     >
       <div
         className={cx(
-          "rounded-150 bg-ink-dark p-xs relative w-full overflow-hidden will-change-transform",
-          "lm:max-w-[360px] lm:w-auto lm:p-sm [&_svg]:min-h-icon-medium",
+          "rounded-150 bg-ink-dark p-200 relative w-full overflow-hidden will-change-transform",
+          "lm:max-w-modal-extra-small lm:w-auto lm:p-300 [&_svg]:min-h-icon-medium",
           visible &&
             "pointer-events-auto animate-[toast-fade-in_theme(transitionDuration.normal)_forwards]",
           !visible &&
@@ -91,7 +91,7 @@ const ToastMessage = ({
           }
         />
 
-        <Stack flex shrink spacing="XSmall">
+        <Stack flex shrink spacing="200">
           {icon &&
             React.isValidElement(icon) &&
             // @ts-expect-error TODO: fix this

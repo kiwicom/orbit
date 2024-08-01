@@ -132,7 +132,7 @@ const CarrierLogo = ({
           className={cx(
             "max-w-none bg-transparent",
             rounded ? "rounded-full" : "rounded-100",
-            inlineStacked ? "not-first:-ms-xs border border-solid border-white" : "last:self-end",
+            inlineStacked ? "not-first:-ms-200 border border-solid border-white" : "last:self-end",
             carriers.length > 1 && !inlineStacked
               ? [
                   carriers.length > 2

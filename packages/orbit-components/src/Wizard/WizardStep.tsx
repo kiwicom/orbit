@@ -16,8 +16,8 @@ const ProgressBarPart = ({ isColumn, className }: { isColumn: boolean; className
       className={cx(
         "absolute",
         isColumn
-          ? "w-xxxs h-xxl top-[calc(theme(size.icon-small)+1px)] ltr:left-[calc(theme(size.icon-small)+1px)] rtl:right-[calc(theme(size.icon-small)+1px)]"
-          : "h-xxxs top-[calc(theme(size.icon-small)/2-1px)] w-1/2",
+          ? "w-50 h-1000 top-[calc(theme(size.icon-small)+1px)] ltr:left-[calc(theme(size.icon-small)+1px)] rtl:right-[calc(theme(size.icon-small)+1px)]"
+          : "h-50 top-[calc(theme(size.icon-small)/2-1px)] w-1/2",
         className,
       )}
     />
@@ -69,10 +69,10 @@ const WizardStep = ({ dataTest, title, onClick, isCompleted }: WizardStepProps) 
           )}
         </ButtonLink>
         {isActive && (
-          <div className="w-xxxs bg-product-normal rounded-e-100 absolute inset-y-px ltr:left-0 rtl:right-0" />
+          <div className="w-50 bg-product-normal rounded-e-100 absolute inset-y-px ltr:left-0 rtl:right-0" />
         )}
         {status !== "disabled" && (
-          <div className="border-cloud-normal ms-xxl absolute inset-x-0 bottom-0 border-t border-solid" />
+          <div className="border-cloud-normal ms-1000 absolute inset-x-0 bottom-0 border-t border-solid" />
         )}
       </li>
     );
@@ -83,11 +83,11 @@ const WizardStep = ({ dataTest, title, onClick, isCompleted }: WizardStepProps) 
       flex
       direction={isColumnOnDesktop ? "row" : "column"}
       align={isColumnOnDesktop ? "start" : "center"}
-      spacing="XSmall"
+      spacing="200"
       spaceAfter={isColumnOnDesktop ? "large" : "none"}
     >
       <WizardStepIcon isCompleted={isCompleted} />
-      <div className="px-xs">
+      <div className="px-200">
         {status === "disabled" ? (
           <Text as="div" type="secondary" size="small" align="center">
             {title}
@@ -138,10 +138,10 @@ const WizardStep = ({ dataTest, title, onClick, isCompleted }: WizardStepProps) 
       <div className="relative">
         <Stack flex direction="column" align={isColumnOnDesktop ? "start" : "center"}>
           {status === "disabled" ? (
-            <span className="px-xs">{step}</span>
+            <span className="px-200">{step}</span>
           ) : (
             <div
-              className="group/button px-xs cursor-pointer"
+              className="group/button px-200 cursor-pointer"
               role="button"
               tabIndex={0}
               aria-current={isActive ? "step" : "false"}

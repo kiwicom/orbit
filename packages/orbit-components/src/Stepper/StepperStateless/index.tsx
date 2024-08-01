@@ -16,7 +16,7 @@ const getMaxWidth = ({ maxWidth }: { maxWidth: string | number }) => {
 
 const stepperButtonMixin = ({ disabled, active }: { disabled: boolean; active?: boolean }) =>
   cx(
-    "[&_svg]:p-xxxs",
+    "[&_svg]:p-50",
     "de:[&_svg]:size-icon-medium [&_svg]:size-icon-large",
     "[&_svg]:rounded-full",
     "focus:outline-0",

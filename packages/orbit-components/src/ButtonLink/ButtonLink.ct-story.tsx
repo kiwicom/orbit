@@ -9,8 +9,8 @@ import ButtonLink from ".";
 
 export default function ButtonLinkVisualStory() {
   return (
-    <div className="gap-sm flex flex-col">
-      <div className="gap-sm flex flex-wrap">
+    <div className="gap-300 flex flex-col">
+      <div className="gap-300 flex flex-wrap">
         {Object.values(TYPES).map(type => (
           <ButtonLink iconLeft={<Airplane />} iconRight={<ChevronDown />} key={type} type={type}>
             {type}
@@ -18,7 +18,7 @@ export default function ButtonLinkVisualStory() {
         ))}
       </div>
 
-      <div className="gap-sm flex flex-wrap">
+      <div className="gap-300 flex flex-wrap">
         {Object.values(SIZE_OPTIONS).map(size => (
           <ButtonLink iconLeft={<Airplane />} iconRight={<ChevronDown />} key={size} size={size}>
             {size}
@@ -26,7 +26,7 @@ export default function ButtonLinkVisualStory() {
         ))}
       </div>
 
-      <div className="gap-sm flex flex-wrap">
+      <div className="gap-300 flex flex-wrap">
         <ButtonLink iconLeft={<Airplane />}>Button link</ButtonLink>
         <ButtonLink iconRight={<ChevronDown />}>Button link</ButtonLink>
         <ButtonLink iconLeft={<Airplane />} iconRight={<ChevronDown />}>
@@ -35,7 +35,7 @@ export default function ButtonLinkVisualStory() {
         <ButtonLink iconLeft={<Airplane />} />
       </div>
 
-      <div className="gap-sm flex flex-wrap">
+      <div className="gap-300 flex flex-wrap">
         <ButtonLink circled iconLeft={<Airplane />}>
           Button link
         </ButtonLink>

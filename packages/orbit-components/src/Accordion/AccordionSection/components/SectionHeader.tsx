@@ -22,14 +22,14 @@ const AccordionSectionHeader = ({
 }: Props) => (
   <div
     className={cx(
-      "p-lg bg-white-normal flex items-center",
+      "p-600 bg-white-normal flex items-center",
       expanded ? "min-h-[19px]" : "min-h-[44px]",
     )}
     data-test={dataTest && `${dataTest}Header`}
   >
     <div className="flex grow items-center">{children}</div>
     {!expanded && (
-      <div className="ms-lg flex">
+      <div className="ms-600 flex">
         {expandable &&
           (actions || (
             <Button onClick={onExpand} type="secondary">

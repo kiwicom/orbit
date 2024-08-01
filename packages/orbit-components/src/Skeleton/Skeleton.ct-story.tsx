@@ -12,7 +12,7 @@ enum PRESETS {
 
 export default function SkeletonVisualStory() {
   return (
-    <div className="space-y-xs flex flex-col">
+    <div className="space-y-200 flex flex-col">
       <label>Button</label>
       <Skeleton preset={PRESETS.Button} animate={false} />
       <label>Card</label>

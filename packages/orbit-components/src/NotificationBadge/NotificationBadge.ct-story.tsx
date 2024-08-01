@@ -9,7 +9,7 @@ export default function NotificationBadgeVisualStory() {
   const types = Object.values(TYPE_OPTIONS);
 
   return (
-    <div className="gap-sm flex flex-wrap">
+    <div className="gap-300 flex flex-wrap">
       {types.map(type => (
         <React.Fragment key={type}>
           <NotificationBadge type={type}>1</NotificationBadge>

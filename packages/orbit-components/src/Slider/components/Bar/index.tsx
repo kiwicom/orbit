@@ -27,7 +27,7 @@ export const calculateBarPosition = (
 const BarPart = ({ className, style }: { className: string; style?: React.CSSProperties }) => {
   return (
     <div
-      className={cx("h-xxs rounded-100 absolute top-1/2 -translate-y-1/2", className)}
+      className={cx("h-100 rounded-100 absolute top-1/2 -translate-y-1/2", className)}
       style={style}
     />
   );
@@ -48,7 +48,7 @@ const Bar = React.forwardRef<HTMLDivElement, Props>(
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
-        className="h-lg tap-color-none relative w-full cursor-pointer select-none"
+        className="h-600 tap-color-none relative w-full cursor-pointer select-none"
         ref={ref}
         onMouseDown={onMouseDown}
       >

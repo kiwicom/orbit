@@ -8,7 +8,7 @@ export default function ButtonMobileStoreVisualStory() {
   const languages = Object.values(LANGUAGE);
 
   return (
-    <div className="gap-sm flex flex-wrap">
+    <div className="gap-300 flex flex-wrap">
       {languages.map(lang => (
         <React.Fragment key={lang}>
           <ButtonMobileStore lang={lang} href="#" type="appStore" alt="Download on the App Store" />

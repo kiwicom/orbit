@@ -18,7 +18,7 @@ describe("#Timeline", () => {
     const { container } = render(<Timeline spaceAfter={SPACINGS_AFTER.NORMAL}>kek</Timeline>);
     expect(getComputedStyle(container.childNodes[1] as HTMLElement)).toHaveProperty(
       "margin-bottom",
-      defaultTheme.orbit.spaceSmall,
+      defaultTheme.orbit.space300,
     );
   });
 

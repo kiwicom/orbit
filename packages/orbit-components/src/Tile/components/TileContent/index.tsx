@@ -17,8 +17,8 @@ const TileContent = React.forwardRef<HTMLDivElement, React.PropsWithChildren<Pro
           "text-normal leading-normal",
           withPointer === true && "cursor-pointer",
           withBorder === true && "border-cloud-normal border-t",
-          !noPadding && !useMargins && "p-md lm:p-lg",
-          !noPadding && useMargins && "py-md mx-md lm:py-lg lm:mx-lg",
+          !noPadding && !useMargins && "p-400 lm:p-600",
+          !noPadding && useMargins && "py-400 mx-400 lm:py-600 lm:mx-600",
         )}
       >
         {children}

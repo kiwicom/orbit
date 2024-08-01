@@ -9,7 +9,7 @@ import InputField from ".";
 
 export function Test(props: Props) {
   return (
-    <div className="p-xxs bg-[#CFC]">
+    <div className="p-100 bg-[#CFC]">
       <InputField label="Label" dataTest="input" {...props} />
     </div>
   );
@@ -17,7 +17,7 @@ export function Test(props: Props) {
 
 export function TestError(props: Props) {
   return (
-    <div className="px-xxs py-xxl bg-[#CFC]">
+    <div className="px-100 py-1000 bg-[#CFC]">
       <InputField label="Label" error="Error" dataTest="input" {...props} />
     </div>
   );
@@ -25,7 +25,7 @@ export function TestError(props: Props) {
 
 export function TestHelp(props: Props) {
   return (
-    <div className="px-xxs py-xxl bg-[#CFC]">
+    <div className="px-100 py-1000 bg-[#CFC]">
       <InputField label="Label" help="Help" dataTest="input" {...props} />
     </div>
   );
@@ -33,15 +33,15 @@ export function TestHelp(props: Props) {
 
 export function TestSuffix() {
   return (
-    <div className="p-xxs bg-[#CFC]">
-      <InputField label="Label" suffix={<span className="pe-sm">kg</span>} />
+    <div className="p-100 bg-[#CFC]">
+      <InputField label="Label" suffix={<span className="pe-300">kg</span>} />
     </div>
   );
 }
 
 export function TestTags() {
   return (
-    <div className="p-xxs bg-[#CFC]">
+    <div className="p-100 bg-[#CFC]">
       <InputField
         label="Label"
         tags={[

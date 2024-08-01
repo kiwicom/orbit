@@ -22,7 +22,7 @@ const Layout = ({ children, type, dataTest }: Props) => {
   return (
     <Grid
       {...props}
-      className="px-md de:p-lg mx-auto my-0 box-border w-full py-0"
+      className="px-400 de:p-600 mx-auto my-0 box-border w-full py-0"
       dataTest={dataTest}
     >
       {React.Children.map(children as React.ReactElement<LayoutColumnProps>, (item, key) => {

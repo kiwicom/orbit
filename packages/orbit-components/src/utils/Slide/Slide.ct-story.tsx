@@ -6,7 +6,7 @@ import Slide from ".";
 
 export function SlideStory(props: Omit<Props, "children">) {
   return (
-    <div className="p-md">
+    <div className="p-400">
       <Slide {...props}>
         Some
         <br />

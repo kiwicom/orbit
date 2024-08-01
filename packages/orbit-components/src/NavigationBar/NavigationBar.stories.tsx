@@ -31,7 +31,7 @@ export const NavBarUpToTablet = ({ hideOnScroll, dataTest }) => {
           <ButtonLink iconRight={<ChevronDown />} type="secondary">
             Flights
           </ButtonLink>
-          <Stack direction="row" spacing="XXSmall" justify="end" shrink>
+          <Stack direction="row" spacing="100" justify="end" shrink>
             <ButtonLink iconLeft={<StarFull />} type="secondary" />
             <ButtonLink iconLeft={<QuestionCircle />} type="secondary" />
             <ButtonLink iconLeft={<AccountCircle />} type="secondary" />
@@ -72,7 +72,7 @@ export const NavBarDesktop = ({ hideOnScroll, dataTest }) => {
             <TextLink type="secondary">Flights</TextLink>
             <TextLink type="secondary">Flights</TextLink>
           </LinkList>
-          <Stack direction="row" spacing="XXSmall" justify="end" shrink>
+          <Stack direction="row" spacing="100" justify="end" shrink>
             <ButtonLink type="secondary">Starred</ButtonLink>
             <ButtonLink type="secondary">Help</ButtonLink>
             <ButtonLink type="secondary">Account</ButtonLink>
@@ -105,7 +105,7 @@ export const RTL = ({ hideOnScroll }) => {
               <TextLink type="secondary">Flights</TextLink>
               <TextLink type="secondary">Flights</TextLink>
             </LinkList>
-            <Stack direction="row" spacing="XXSmall" justify="end" shrink>
+            <Stack direction="row" spacing="100" justify="end" shrink>
               <ButtonLink type="secondary">Starred</ButtonLink>
               <ButtonLink type="secondary">Help</ButtonLink>
               <ButtonLink type="secondary">Account</ButtonLink>

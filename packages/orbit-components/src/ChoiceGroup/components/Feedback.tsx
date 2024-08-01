@@ -15,7 +15,7 @@ const FormFeedback = (props: Props) => {
       className={cx(
         "orbit-choice-group-feedback",
         "text-critical-foreground font-base leading-small text-small font-medium",
-        "mt-xxxs relative top-full max-h-[--max-height] w-full truncate",
+        "mt-50 relative top-full max-h-[--max-height] w-full truncate",
         "[&_a]:cursor-pointer [&_a]:underline",
         "[&_strong]:text-ink-dark [&_b]:text-ink-dark [&_b]:font-medium [&_strong]:font-medium",
       )}

@@ -37,8 +37,8 @@ const ItinerarySegmentDetail = ({
 
   return (
     <div className="relative box-border w-full px-0 py-[10px]">
-      <div className="px-sm py-0">
-        <Stack align="center" spacing="small">
+      <div className="px-300 py-0">
+        <Stack align="center" spacing="300">
           <div
             className="flex justify-end"
             style={{ minWidth: `${itinerarySegmentMinimalColumnWidth || 60}px` }}
@@ -83,7 +83,7 @@ const ItinerarySegmentDetail = ({
           ariaLabelledBy={randomId("slide")}
         >
           <div
-            className="pt-sm overflow-hidden"
+            className="pt-300 overflow-hidden"
             ref={slideRef}
             tabIndex={-1}
             role="button"
@@ -93,17 +93,17 @@ const ItinerarySegmentDetail = ({
             }}
           >
             <div
-              className="px-sm z-default relative py-0"
+              className="px-300 z-default relative py-0"
               style={{
                 insetInlineStart: `${
-                  parseInt(theme.orbit.spaceXSmall, 10) + itinerarySegmentMinimalColumnWidth
+                  parseInt(theme.orbit.space200, 10) + itinerarySegmentMinimalColumnWidth
                 }px`,
               }}
             >
               {content.map(({ title, items }, idx) => {
                 return (
                   <React.Fragment key={typeof title === "string" ? title : idx}>
-                    <div className="ms-xl">
+                    <div className="ms-800">
                       <ItineraryText as="div" size="small" weight="medium" spaceAfter="small">
                         {title}
                       </ItineraryText>
@@ -117,7 +117,7 @@ const ItinerarySegmentDetail = ({
                       )}
                       style={{
                         width: `calc(100% - ${
-                          parseInt(theme.orbit.spaceXSmall, 10) + itinerarySegmentMinimalColumnWidth
+                          parseInt(theme.orbit.space200, 10) + itinerarySegmentMinimalColumnWidth
                         }px)`,
                       }}
                     >
@@ -132,13 +132,13 @@ const ItinerarySegmentDetail = ({
                           <Stack flex grow={false} align="center" key={key}>
                             <div
                               className={cx(
-                                "px-xxs relative z-[3] box-border flex items-center self-stretch",
+                                "px-100 relative z-[3] box-border flex items-center self-stretch",
                                 "after:-z-default after:bg-white-normal after:border-x-cloud-normal-active after:absolute after:left-0 after:box-border after:size-full after:border-x after:border-solid",
-                                isFirst || isLast ? "py-0" : "py-xxs",
+                                isFirst || isLast ? "py-0" : "py-100",
                                 isFirst &&
-                                  "[&_svg]:mt-xs [&_svg]:mb-xxs after:border-t-cloud-normal-active after:rounded-b-none after:rounded-t-full after:border after:border-b-0",
+                                  "[&_svg]:mt-200 [&_svg]:mb-100 after:border-t-cloud-normal-active after:rounded-b-none after:rounded-t-full after:border after:border-b-0",
                                 isLast &&
-                                  "[&_svg]:mt-xxs [&_svg]:mb-xs after:border-b-cloud-normal-active after:rounded-b-full after:rounded-t-none after:border after:border-t-0",
+                                  "[&_svg]:mt-100 [&_svg]:mb-200 after:border-b-cloud-normal-active after:rounded-b-full after:rounded-t-none after:border after:border-t-0",
                               )}
                             >
                               {itemIcon}

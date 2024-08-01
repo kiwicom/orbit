@@ -4,8 +4,8 @@ import SkipLink from ".";
 
 export default function SkipLinkStory() {
   return (
-    <div className="p-md bg-cloud-light">
-      <div className="h-xxxl">
+    <div className="p-400 bg-cloud-light">
+      <div className="h-[52px]">
         <SkipLink
           dataTest="SkipLink"
           links={[

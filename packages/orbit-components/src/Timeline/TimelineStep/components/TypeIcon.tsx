@@ -53,14 +53,14 @@ const TypeIcon = ({ type, active, mobile }: Props) => {
     <div
       className={cx(
         "z-default h-icon-medium relative flex items-center justify-center",
-        mobile && "min-w-lg",
+        mobile && "min-w-600",
       )}
     >
       {getTypeIcon({ type, active })}
       <div
         className={cx(
           "size-icon-medium absolute top-0 rounded-full opacity-10",
-          mobile ? "left-xxxs" : "-left-xxxs",
+          mobile ? "left-50" : "-left-50",
           type && getBackgroundClassName(type),
           active && "animate-[pulse-zero_2.5s_ease-in-out_infinite]",
         )}

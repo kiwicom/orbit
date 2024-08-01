@@ -8431,7 +8431,7 @@
     },
     "foundation": {
       "name": "buttonPaddingXSmall",
-      "value": "foundation.space.xSmall"
+      "value": "foundation.space.200"
     },
     "scss": {
       "name": "buttonPaddingXSmall",
@@ -8454,7 +8454,7 @@
     },
     "foundation": {
       "name": "buttonPaddingSmall",
-      "value": "foundation.space.small"
+      "value": "foundation.space.300"
     },
     "scss": {
       "name": "buttonPaddingSmall",
@@ -8477,7 +8477,7 @@
     },
     "foundation": {
       "name": "buttonPaddingNormal",
-      "value": "foundation.space.medium"
+      "value": "foundation.space.400"
     },
     "scss": {
       "name": "buttonPaddingNormal",
@@ -18961,10 +18961,274 @@
       "value": "rgb(231, 236, 241)"
     }
   },
-  "spaceXXXSmall": {
+  "space50": {
     "type": "size",
     "deprecated": false,
     "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "50"
+    },
+    "javascript": {
+      "name": "space50",
+      "value": "2px"
+    },
+    "foundation": {
+      "name": "space50",
+      "value": "foundation.space.50"
+    },
+    "scss": {
+      "name": "space50",
+      "value": "2px"
+    }
+  },
+  "space100": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "100"
+    },
+    "javascript": {
+      "name": "space100",
+      "value": "4px"
+    },
+    "foundation": {
+      "name": "space100",
+      "value": "foundation.space.100"
+    },
+    "scss": {
+      "name": "space100",
+      "value": "4px"
+    }
+  },
+  "space150": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "150"
+    },
+    "javascript": {
+      "name": "space150",
+      "value": "6px"
+    },
+    "foundation": {
+      "name": "space150",
+      "value": "foundation.space.150"
+    },
+    "scss": {
+      "name": "space150",
+      "value": "6px"
+    }
+  },
+  "space200": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "200"
+    },
+    "javascript": {
+      "name": "space200",
+      "value": "8px"
+    },
+    "foundation": {
+      "name": "space200",
+      "value": "foundation.space.200"
+    },
+    "scss": {
+      "name": "space200",
+      "value": "8px"
+    }
+  },
+  "space300": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "300"
+    },
+    "javascript": {
+      "name": "space300",
+      "value": "12px"
+    },
+    "foundation": {
+      "name": "space300",
+      "value": "foundation.space.300"
+    },
+    "scss": {
+      "name": "space300",
+      "value": "12px"
+    }
+  },
+  "space400": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "400"
+    },
+    "javascript": {
+      "name": "space400",
+      "value": "16px"
+    },
+    "foundation": {
+      "name": "space400",
+      "value": "foundation.space.400"
+    },
+    "scss": {
+      "name": "space400",
+      "value": "16px"
+    }
+  },
+  "space500": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "500"
+    },
+    "javascript": {
+      "name": "space500",
+      "value": "20px"
+    },
+    "foundation": {
+      "name": "space500",
+      "value": "foundation.space.500"
+    },
+    "scss": {
+      "name": "space500",
+      "value": "20px"
+    }
+  },
+  "space600": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "600"
+    },
+    "javascript": {
+      "name": "space600",
+      "value": "24px"
+    },
+    "foundation": {
+      "name": "space600",
+      "value": "foundation.space.600"
+    },
+    "scss": {
+      "name": "space600",
+      "value": "24px"
+    }
+  },
+  "space800": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "800"
+    },
+    "javascript": {
+      "name": "space800",
+      "value": "32px"
+    },
+    "foundation": {
+      "name": "space800",
+      "value": "foundation.space.800"
+    },
+    "scss": {
+      "name": "space800",
+      "value": "32px"
+    }
+  },
+  "space1000": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "1000"
+    },
+    "javascript": {
+      "name": "space1000",
+      "value": "40px"
+    },
+    "foundation": {
+      "name": "space1000",
+      "value": "foundation.space.1000"
+    },
+    "scss": {
+      "name": "space1000",
+      "value": "40px"
+    }
+  },
+  "space1200": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "1200"
+    },
+    "javascript": {
+      "name": "space1200",
+      "value": "48px"
+    },
+    "foundation": {
+      "name": "space1200",
+      "value": "foundation.space.1200"
+    },
+    "scss": {
+      "name": "space1200",
+      "value": "48px"
+    }
+  },
+  "space1600": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "1600"
+    },
+    "javascript": {
+      "name": "space1600",
+      "value": "64px"
+    },
+    "foundation": {
+      "name": "space1600",
+      "value": "foundation.space.1600"
+    },
+    "scss": {
+      "name": "space1600",
+      "value": "64px"
+    }
+  },
+  "spaceXXXSmall": {
+    "type": "size",
+    "deprecated": true,
+    "replacement": "space50",
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -18985,8 +19249,8 @@
   },
   "spaceXXSmall": {
     "type": "size",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "space100",
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -19007,8 +19271,8 @@
   },
   "spaceXSmall": {
     "type": "size",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "space200",
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -19029,8 +19293,8 @@
   },
   "spaceSmall": {
     "type": "size",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "space300",
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -19051,8 +19315,8 @@
   },
   "spaceMedium": {
     "type": "size",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "space400",
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -19073,8 +19337,8 @@
   },
   "spaceLarge": {
     "type": "size",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "space600",
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -19095,8 +19359,8 @@
   },
   "spaceXLarge": {
     "type": "size",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "space800",
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -19117,8 +19381,8 @@
   },
   "spaceXXLarge": {
     "type": "size",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "space1000",
     "schema": {
       "namespace": "global",
       "object": "space",
@@ -19139,7 +19403,7 @@
   },
   "spaceXXXLarge": {
     "type": "size",
-    "deprecated": false,
+    "deprecated": true,
     "replacement": null,
     "schema": {
       "namespace": "global",

@@ -1,6 +1,66 @@
 {
   "foundation": {
     "space": {
+      "50": {
+        "type": "size",
+        "value": 2,
+        "internal": true
+      },
+      "100": {
+        "type": "size",
+        "value": 4,
+        "internal": true
+      },
+      "150": {
+        "type": "size",
+        "value": 6,
+        "internal": true
+      },
+      "200": {
+        "type": "size",
+        "value": 8,
+        "internal": true
+      },
+      "300": {
+        "type": "size",
+        "value": 12,
+        "internal": true
+      },
+      "400": {
+        "type": "size",
+        "value": 16,
+        "internal": true
+      },
+      "500": {
+        "type": "size",
+        "value": 20,
+        "internal": true
+      },
+      "600": {
+        "type": "size",
+        "value": 24,
+        "internal": true
+      },
+      "800": {
+        "type": "size",
+        "value": 32,
+        "internal": true
+      },
+      "1000": {
+        "type": "size",
+        "value": 40,
+        "internal": true
+      },
+      "1200": {
+        "type": "size",
+        "value": 48,
+        "internal": true
+      },
+      "1600": {
+        "type": "size",
+        "value": 64,
+        "internal": true
+      },
       "x-x-x-small": {
         "type": "size",
         "value": 2,

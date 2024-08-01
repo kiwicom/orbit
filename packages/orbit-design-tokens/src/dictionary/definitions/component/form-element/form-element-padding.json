@@ -9,7 +9,7 @@
           "attributes": {
             "spacing": {
               "top-bottom": 0,
-              "left-right": "{foundation.space.small}"
+              "left-right": "{foundation.space.300}"
             }
           }
         }
@@ -22,7 +22,7 @@
           "attributes": {
             "spacing": {
               "top-bottom": 0,
-              "left-right": "{foundation.space.small}"
+              "left-right": "{foundation.space.300}"
             }
           }
         }

@@ -2042,6 +2042,51 @@
     "category": "Opacity",
     "version": "6.0.0"
   },
+  "spaceXXXSmall": {
+    "replacement": "space50",
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
+  "spaceXXSmall": {
+    "replacement": "space100",
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
+  "spaceXSmall": {
+    "replacement": "space200",
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
+  "spaceSmall": {
+    "replacement": "space300",
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
+  "spaceMedium": {
+    "replacement": "space400",
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
+  "spaceLarge": {
+    "replacement": "space600",
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
+  "spaceXLarge": {
+    "replacement": "space800",
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
+  "spaceXXLarge": {
+    "replacement": "space1000",
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
+  "spaceXXXLarge": {
+    "replacement": null,
+    "category": "Size (width, height)",
+    "version": "9.0.0"
+  },
   "lineHeightTextSmall": {
     "replacement": "lineHeightSmall",
     "category": "Font size"

@@ -10,15 +10,15 @@
       "padding": {
         "x-small": {
           "type": "size",
-          "value": "{foundation.space.x-small}"
+          "value": "{foundation.space.200}"
         },
         "small": {
           "type": "size",
-          "value": "{foundation.space.small}"
+          "value": "{foundation.space.300}"
         },
         "normal": {
           "type": "size",
-          "value": "{foundation.space.medium}"
+          "value": "{foundation.space.400}"
         },
         "large": {
           "type": "size",

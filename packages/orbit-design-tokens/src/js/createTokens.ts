@@ -837,6 +837,18 @@ export interface Tokens {
   paletteWhiteNormal: string;
   paletteWhiteHover: string;
   paletteWhiteActive: string;
+  space50: string;
+  space100: string;
+  space150: string;
+  space200: string;
+  space300: string;
+  space400: string;
+  space500: string;
+  space600: string;
+  space800: string;
+  space1000: string;
+  space1200: string;
+  space1600: string;
   spaceXXXSmall: string;
   spaceXXSmall: string;
   spaceXSmall: string;
@@ -1236,9 +1248,9 @@ const createTokens: CreateTokens = foundation => ({
   buttonInfoForegroundHover: foundation.palette.white.normal,
   buttonInfoForegroundActive: foundation.palette.white.normal,
   buttonWithoutTextPadding: "0",
-  buttonPaddingXSmall: foundation.space.XSmall,
-  buttonPaddingSmall: foundation.space.small,
-  buttonPaddingNormal: foundation.space.medium,
+  buttonPaddingXSmall: foundation.space["200"],
+  buttonPaddingSmall: foundation.space["300"],
+  buttonPaddingNormal: foundation.space["400"],
   buttonPaddingLarge: "28px",
   buttonPrimarySubtleBackground: foundation.palette.product.light,
   buttonPrimarySubtleBackgroundHover: foundation.palette.product.lightHover,
@@ -1465,13 +1477,13 @@ const createTokens: CreateTokens = foundation => ({
     },
   ]),
   formElementNormalFontSize: foundation.fontSize.normal,
-  formElementNormalPadding: `0 ${foundation.space.small}`,
+  formElementNormalPadding: `0 ${foundation.space["300"]}`,
   formElementForeground: foundation.palette.ink.light,
   formElementFilledForeground: foundation.palette.ink.dark,
   formElementLabelForeground: foundation.palette.ink.dark,
   formElementLabelFilledForeground: foundation.palette.ink.normal,
   formElementPrefixForeground: foundation.palette.ink.normal,
-  formElementSmallPadding: `0 ${foundation.space.small}`,
+  formElementSmallPadding: `0 ${foundation.space["300"]}`,
   marginTopFormFeedback: foundation.space.XXXSmall,
   opacityCheckboxDisabled: "0.5",
   opacityRadioButtonDisabled: "0.5",
@@ -1963,6 +1975,18 @@ const createTokens: CreateTokens = foundation => ({
   paletteWhiteNormal: foundation.palette.white.normal,
   paletteWhiteHover: foundation.palette.white.normalHover,
   paletteWhiteActive: foundation.palette.white.normalActive,
+  space50: foundation.space["50"],
+  space100: foundation.space["100"],
+  space150: foundation.space["150"],
+  space200: foundation.space["200"],
+  space300: foundation.space["300"],
+  space400: foundation.space["400"],
+  space500: foundation.space["500"],
+  space600: foundation.space["600"],
+  space800: foundation.space["800"],
+  space1000: foundation.space["1000"],
+  space1200: foundation.space["1200"],
+  space1600: foundation.space["1600"],
   spaceXXXSmall: foundation.space.XXXSmall,
   spaceXXSmall: foundation.space.XXSmall,
   spaceXSmall: foundation.space.XSmall,

@@ -822,6 +822,18 @@
   --palette-white-normal: rgb(255, 255, 255);
   --palette-white-hover: rgb(241, 244, 247);
   --palette-white-active: rgb(231, 236, 241);
+  --space-50: 2;
+  --space-100: 4;
+  --space-150: 6;
+  --space-200: 8;
+  --space-300: 12;
+  --space-400: 16;
+  --space-500: 20;
+  --space-600: 24;
+  --space-800: 32;
+  --space-1000: 40;
+  --space-1200: 48;
+  --space-1600: 64;
   --space-x-x-x-small: 2;
   --space-x-x-small: 4;
   --space-x-small: 8;

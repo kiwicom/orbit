@@ -1,5 +1,6 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Badge from "../Badge";
 import ChoiceGroup from "../ChoiceGroup";
@@ -11,13 +12,32 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Collapse from ".";
 
-export default {
-  title: "Collapse",
+type CollapsePropsAndCustomArgs = React.ComponentProps<typeof Collapse> & {
+  label?: string;
+  expanded?: boolean;
 };
 
-export const Default = ({ label }) => {
-  return (
-    <Collapse label={label}>
+const meta: Meta<CollapsePropsAndCustomArgs> = {
+  title: "Collapse",
+  component: Collapse,
+
+  args: {
+    label: "Duration",
+    expanded: false,
+    initialExpanded: false,
+  },
+
+  parameters: {
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export default meta;
+type Story = StoryObj<CollapsePropsAndCustomArgs>;
+
+export const Default: Story = {
+  render: args => (
+    <Collapse {...args}>
       <Slider
         label="Max travel time"
         valueDescription="00:00 - 24:00"
@@ -30,21 +50,11 @@ export const Default = ({ label }) => {
         maxValue={24}
       />
     </Collapse>
-  );
+  ),
 };
 
-Default.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-Default.args = {
-  label: "Duration",
-};
-
-export const WithCustomLabel = () => {
-  return (
+export const WithCustomLabel: Story = {
+  render: () => (
     <Collapse
       customLabel={
         <Stack inline spacing="large" align="center">
@@ -67,12 +77,18 @@ export const WithCustomLabel = () => {
         maxValue={24}
       />
     </Collapse>
-  );
+  ),
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };
 
-export const OpenedByDefault = ({ label }) => {
-  return (
-    <Collapse label={label} initialExpanded>
+export const OpenedByDefault: Story = {
+  render: args => (
+    <Collapse {...args}>
       <Slider
         label="Max travel time"
         valueDescription="00:00 - 24:00"
@@ -85,25 +101,18 @@ export const OpenedByDefault = ({ label }) => {
         maxValue={24}
       />
     </Collapse>
-  );
-};
+  ),
 
-OpenedByDefault.story = {
-  name: "Opened by default",
-
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  args: {
+    expanded: true,
+    initialExpanded: true,
   },
 };
 
-OpenedByDefault.args = {
-  label: "Duration",
-};
-
-export const WithActions = ({ label }) => {
-  return (
+export const WithActions: Story = {
+  render: args => (
     <Collapse
-      label={label}
+      {...args}
       actions={
         <TextLink type="secondary" size="small" onClick={action("clear")}>
           Clear
@@ -116,25 +125,17 @@ export const WithActions = ({ label }) => {
         <Checkbox label="Train" value="three" />
       </ChoiceGroup>
     </Collapse>
-  );
-};
+  ),
 
-WithActions.story = {
-  name: "With actions",
-
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  args: {
+    label: "Transportation",
   },
 };
 
-WithActions.args = {
-  label: "Transportation",
-};
-
-export const MultipleCollapses = ({ label }) => {
-  return (
+export const MultipleCollapses: Story = {
+  render: args => (
     <Stack spacing="none">
-      <Collapse label={label}>
+      <Collapse {...args}>
         <ChoiceGroup
           filter
           onChange={action("onChange")}
@@ -145,7 +146,7 @@ export const MultipleCollapses = ({ label }) => {
           <Checkbox label="Train" value="three" />
         </ChoiceGroup>
       </Collapse>
-      <Collapse label={label} initialExpanded>
+      <Collapse {...args}>
         <ChoiceGroup
           filter
           onChange={action("onChange")}
@@ -156,7 +157,7 @@ export const MultipleCollapses = ({ label }) => {
           <Checkbox label="Train" value="three" />
         </ChoiceGroup>
       </Collapse>
-      <Collapse label={label}>
+      <Collapse {...args}>
         <ChoiceGroup
           filter
           onChange={action("onChange")}
@@ -168,22 +169,16 @@ export const MultipleCollapses = ({ label }) => {
         </ChoiceGroup>
       </Collapse>
     </Stack>
-  );
-};
+  ),
 
-MultipleCollapses.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  args: {
+    ...WithActions.args,
   },
 };
 
-MultipleCollapses.args = {
-  label: "Transportation",
-};
-
-export const Uncontrolled = ({ label, expanded }) => {
-  return (
-    <Collapse label={label} expanded={expanded} onClick={action("onClick")}>
+export const Uncontrolled: Story = {
+  render: args => (
+    <Collapse {...args} onClick={action("onClick")}>
       <Slider
         label="Max travel time"
         valueDescription="00:00 - 24:00"
@@ -192,25 +187,18 @@ export const Uncontrolled = ({ label, expanded }) => {
         maxValue={24}
       />
     </Collapse>
-  );
-};
+  ),
 
-Uncontrolled.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  args: {
+    expanded: true,
   },
 };
 
-Uncontrolled.args = {
-  label: "Duration",
-  expanded: true,
-};
-
-export const Rtl = ({ label }) => {
-  return (
+export const Rtl: Story = {
+  render: args => (
     <RenderInRtl>
       <Collapse
-        label={label}
+        {...args}
         actions={
           <TextLink type="secondary" size="small" onClick={action("clear")}>
             Clear
@@ -228,17 +216,27 @@ export const Rtl = ({ label }) => {
         </ChoiceGroup>
       </Collapse>
     </RenderInRtl>
-  );
-};
+  ),
 
-Rtl.story = {
-  name: "RTL",
-
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  args: {
+    ...WithActions.args,
   },
 };
 
-Rtl.args = {
-  label: "Transportation",
+export const Playground: Story = {
+  render: args => (
+    <Collapse {...args}>
+      <Slider
+        label="Max travel time"
+        valueDescription="00:00 - 24:00"
+        defaultValue={[1, 12]}
+        histogramData={[
+          11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22, 2, 11, 25, 37, 5, 21, 27, 24, 33, 16, 21, 22,
+          2,
+        ]}
+        minValue={1}
+        maxValue={24}
+      />
+    </Collapse>
+  ),
 };

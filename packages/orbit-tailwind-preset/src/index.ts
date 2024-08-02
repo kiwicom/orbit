@@ -61,14 +61,14 @@ const getBackgroundColors = (tokens: typeof defaultTokens) => {
     {
       "elevation-flat": tokens.elevationFlatBackground,
       "elevation-suppressed": tokens.elevationSuppressedBackground,
-      "elevation-action": tokens.elevationActionBackground,
-      "elevation-action-active": tokens.elevationActionActiveBackground,
+      "elevation-action": tokens.elevationActionBackground, // deprecated
+      "elevation-action-active": tokens.elevationActionActiveBackground, // deprecated
       "elevation-fixed": tokens.elevationFixedBackground,
       "elevation-fixed-reverse": tokens.elevationFixedReverseBackground,
       "elevation-flat-border-color": tokens.elevationFlatBorderColor,
-      "elevation-raised": tokens.elevationRaisedBackground,
-      "elevation-raised-reverse": tokens.elevationRaisedReverseBackground,
-      "elevation-overlay": tokens.elevationOverlayBackground,
+      "elevation-raised": tokens.elevationRaisedBackground, // deprecated
+      "elevation-raised-reverse": tokens.elevationRaisedReverseBackground, // deprecated
+      "elevation-overlay": tokens.elevationOverlayBackground, // deprecated
     },
   );
 };
@@ -248,9 +248,9 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "form-element-error-hover": tokens.formElementBoxShadowErrorHover,
           "form-element-hover": tokens.formElementBoxShadowHover,
           "form-element-focus": tokens.formElementFocusBoxShadow,
-          switch: `inset 0 0 1px 0 rgba(7, 64, 92, 0.1),${tokens.boxShadowAction}`,
-          "modal-scrolled": `inset 0 1px 0 ${tokens.paletteCloudNormal}, ${tokens.boxShadowFixedReverse}`,
-          modal: `inset 0 0 0 transparent, ${tokens.boxShadowFixedReverse}`,
+          switch: `inset 0 0 1px 0 rgba(7, 64, 92, 0.1),${tokens.elevationLevel1BoxShadow}`,
+          "modal-scrolled": `inset 0 1px 0 ${tokens.paletteCloudNormal}, ${tokens.elevationFixedReverseBoxShadow}`,
+          modal: `inset 0 0 0 transparent, ${tokens.elevationFixedReverseBoxShadow}`,
           "wizard-step-icon-hover": `0 0 0 6px ${convertHexToRgba(
             tokens.paletteProductNormal,
             20,

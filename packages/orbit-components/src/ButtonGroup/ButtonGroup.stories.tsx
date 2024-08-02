@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import * as Icons from "../icons";
 import Button from "../Button";
@@ -7,63 +8,57 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import ButtonGroup from ".";
 
-export default {
+const meta: Meta<typeof ButtonGroup> = {
   title: "ButtonGroup",
-};
+  component: ButtonGroup,
 
-export const WithButtons = ({ dataTest }) => {
-  return (
-    <ButtonGroup dataTest={dataTest}>
-      <Button iconLeft={<Icons.Airplane />}>Button</Button>
-      <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
-    </ButtonGroup>
-  );
-};
-
-WithButtons.story = {
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      disable: true,
+    },
   },
 };
 
-WithButtons.args = {
-  dataTest: "test",
+export default meta;
+type Story = StoryObj<typeof ButtonGroup>;
+
+export const WithButtons: Story = {
+  render: () => (
+    <ButtonGroup>
+      <Button iconLeft={<Icons.Airplane />}>Button</Button>
+      <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
+    </ButtonGroup>
+  ),
+
+  parameters: {
+    info: "Preview of ButtonGroup.",
+  },
 };
 
-export const WithButtonLinks = ({ dataTest }) => {
-  return (
-    <ButtonGroup dataTest={dataTest}>
+export const WithButtonLinks: Story = {
+  render: () => (
+    <ButtonGroup>
       <ButtonLink type="secondary" iconLeft={<Icons.Airplane />}>
         Button
       </ButtonLink>
       <ButtonLink type="secondary" iconLeft={<Icons.ChevronDown />} title="Show more" />
     </ButtonGroup>
-  );
-};
-
-WithButtonLinks.story = {
-  name: "With ButtonLinks",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "Preview of ButtonGroup with ButtonLinks.",
   },
 };
 
-WithButtonLinks.args = {
-  dataTest: "test",
-};
-
-export const Rtl = () => (
-  <RenderInRtl>
-    <ButtonGroup>
-      <Button iconLeft={<Icons.Airplane />}>Button</Button>
-      <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
-    </ButtonGroup>
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+export const Rtl: Story = {
+  render: () => (
+    <RenderInRtl>
+      <ButtonGroup>
+        <Button iconLeft={<Icons.Airplane />}>Button</Button>
+        <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
+      </ButtonGroup>
+    </RenderInRtl>
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",

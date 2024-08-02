@@ -1,64 +1,41 @@
-import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { CODES, SIZES } from "./consts";
 
 import CountryFlag from ".";
 
-export default {
+const meta: Meta<typeof CountryFlag> = {
   title: "CountryFlag",
-};
+  component: CountryFlag,
 
-export const Default = ({ code }) => {
-  return <CountryFlag code={code} />;
-};
-
-Default.story = {
   parameters: {
     info: "Country flag displays one flag of selected country. Visit Orbit.Kiwi for more detailed guidelines.",
   },
-};
 
-Default.args = {
-  code: CODES.ANYWHERE,
-};
+  args: {
+    name: "Country",
+    code: CODES.ANYWHERE,
+    size: SIZES.SMALL,
+  },
 
-Default.argTypes = {
-  code: {
-    options: Object.values(CODES),
-    control: {
-      type: "select",
+  argTypes: {
+    code: {
+      options: Object.values(CODES),
+      control: {
+        type: "select",
+      },
+    },
+    size: {
+      options: Object.values(SIZES),
+      control: {
+        type: "select",
+      },
     },
   },
 };
 
-export const Playground = ({ code, name, size, dataTest }) => {
-  return <CountryFlag code={code} name={name} dataTest={dataTest} size={size} />;
-};
+export default meta;
 
-Playground.story = {
-  parameters: {
-    info: "Country flag displays one flag of selected country. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
+type Story = StoryObj<typeof CountryFlag>;
 
-Playground.args = {
-  code: CODES.ANYWHERE,
-  name: "Country",
-  size: SIZES.SMALL,
-  dataTest: "test",
-};
-
-Playground.argTypes = {
-  code: {
-    options: Object.values(CODES),
-    control: {
-      type: "select",
-    },
-  },
-  size: {
-    options: Object.values(SIZES),
-    control: {
-      type: "select",
-    },
-  },
-};
+export const Playground: Story = {};

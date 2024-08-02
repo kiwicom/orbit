@@ -1947,6 +1947,56 @@
     "category": "Breakpoints",
     "version": "6.0.0"
   },
+  "elevationActionBackground": {
+    "replacement": "paletteWhiteNormal",
+    "category": "Colors",
+    "version": "9.0.0"
+  },
+  "elevationActionBoxShadow": {
+    "replacement": "elevationLevel1BoxShadow",
+    "category": "Box shadow",
+    "version": "9.0.0"
+  },
+  "elevationActionActiveBackground": {
+    "replacement": "paletteWhiteNormal",
+    "category": "Colors",
+    "version": "9.0.0"
+  },
+  "elevationActionActiveBoxShadow": {
+    "replacement": "elevationLevel2BoxShadow",
+    "category": "Box shadow",
+    "version": "9.0.0"
+  },
+  "elevationRaisedBackground": {
+    "replacement": "paletteWhiteNormal",
+    "category": "Colors",
+    "version": "9.0.0"
+  },
+  "elevationRaisedBoxShadow": {
+    "replacement": "elevationLevel3BoxShadow",
+    "category": "Box shadow",
+    "version": "9.0.0"
+  },
+  "elevationRaisedReverseBackground": {
+    "replacement": "paletteWhiteNormal",
+    "category": "Colors",
+    "version": "9.0.0"
+  },
+  "elevationRaisedReverseBoxShadow": {
+    "replacement": "elevationLevel3ReverseBoxShadow",
+    "category": "Box shadow",
+    "version": "9.0.0"
+  },
+  "elevationOverlayBackground": {
+    "replacement": "paletteWhiteNormal",
+    "category": "Colors",
+    "version": "9.0.0"
+  },
+  "elevationOverlayBoxShadow": {
+    "replacement": "elevationLevel4BoxShadow",
+    "category": "Box shadow",
+    "version": "9.0.0"
+  },
   "backgroundBody": {
     "replacement": "elevationSuppressedBackground",
     "category": "Background colors",

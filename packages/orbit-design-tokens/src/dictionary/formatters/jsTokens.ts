@@ -21,9 +21,21 @@ import { falsyString, flattenSpacing } from "../utils/string.js";
 
 const functionName = "createTokens";
 
+/**
+ * This ensures tokens like 'foundations.borderRadius.50'
+ * will be correctly written as 'foundations.borderRadius["50"]'
+ * as it is the correct JavaScript code.
+ */
+const transformObjectReference = (value: string) => {
+  return value.replace(/(\w+)\.(\d+)(?=\.|$)/g, '$1["$2"]');
+};
+
 const createSpacingValue = (values: string[]) => {
   // wrap up the value into interpolation only if the value is not pixelized or zero
-  const value = values.map(v => (!/[\d]+px/g.test(v) && String(v) !== "0" ? `\${${v}}` : v));
+  // transform .spacing.50 to .spacing["50"] for correct javascript syntax when interpolating
+  const value = values.map(v =>
+    !/[\d]+px/g.test(v) && String(v) !== "0" ? `\${${transformObjectReference(v)}}` : v,
+  );
   return `\`${value.join(" ")}\``;
 };
 
@@ -118,15 +130,7 @@ const typescriptFactory = (allProperties: Dictionary["allProperties"], complete 
       return createObjectProperty(name, `boxShadow(${boxShadowValue})`);
     }
 
-    /**
-     * This ensures tokens like 'foundations.borderRadius.50'
-     * will be correctly written as 'foundations.borderRadius["50"]'
-     * and be correct JavaScript code.
-     */
-    const val =
-      typeof plainValue === "string"
-        ? plainValue.replace(/(\w+)\.(\d+)(?=\.|$)/g, '$1["$2"]')
-        : plainValue;
+    const val = typeof plainValue === "string" ? transformObjectReference(plainValue) : plainValue;
     return createObjectProperty(name, val);
   });
 

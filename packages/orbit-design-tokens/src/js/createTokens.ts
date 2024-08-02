@@ -734,18 +734,23 @@ export interface Tokens {
   elevationFlatBorderSize: string;
   elevationActionBackground: string;
   elevationActionBoxShadow: string;
+  elevationLevel1BoxShadow: string;
   elevationActionActiveBackground: string;
   elevationActionActiveBoxShadow: string;
+  elevationLevel2BoxShadow: string;
   elevationFixedBackground: string;
   elevationFixedBoxShadow: string;
   elevationFixedReverseBackground: string;
   elevationFixedReverseBoxShadow: string;
   elevationRaisedBackground: string;
   elevationRaisedBoxShadow: string;
+  elevationLevel3BoxShadow: string;
   elevationRaisedReverseBackground: string;
   elevationRaisedReverseBoxShadow: string;
+  elevationLevel3ReverseBoxShadow: string;
   elevationOverlayBackground: string;
   elevationOverlayBoxShadow: string;
+  elevationLevel4BoxShadow: string;
   backgroundBody: string;
   boxShadowAction: string;
   boxShadowActionActive: string;
@@ -1657,8 +1662,32 @@ const createTokens: CreateTokens = foundation => ({
       inset: false,
     },
   ]),
+  elevationLevel1BoxShadow: boxShadow([
+    {
+      def: ["0", "0", "2px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 16),
+      inset: false,
+    },
+    {
+      def: ["0", "1px", "4px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 12),
+      inset: false,
+    },
+  ]),
   elevationActionActiveBackground: foundation.palette.white.normal,
   elevationActionActiveBoxShadow: boxShadow([
+    {
+      def: ["0", "1px", "4px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 16),
+      inset: false,
+    },
+    {
+      def: ["0", "4px", "8px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 12),
+      inset: false,
+    },
+  ]),
+  elevationLevel2BoxShadow: boxShadow([
     {
       def: ["0", "1px", "4px", "0"],
       color: transparentColor(foundation.palette.ink.dark, 16),
@@ -1709,6 +1738,18 @@ const createTokens: CreateTokens = foundation => ({
       inset: false,
     },
   ]),
+  elevationLevel3BoxShadow: boxShadow([
+    {
+      def: ["0", "4px", "8px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 16),
+      inset: false,
+    },
+    {
+      def: ["0", "8px", "24px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 24),
+      inset: false,
+    },
+  ]),
   elevationRaisedReverseBackground: foundation.palette.white.normal,
   elevationRaisedReverseBoxShadow: boxShadow([
     {
@@ -1722,8 +1763,32 @@ const createTokens: CreateTokens = foundation => ({
       inset: false,
     },
   ]),
+  elevationLevel3ReverseBoxShadow: boxShadow([
+    {
+      def: ["0", "-4px", "8px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 16),
+      inset: false,
+    },
+    {
+      def: ["0", "-8px", "24px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 24),
+      inset: false,
+    },
+  ]),
   elevationOverlayBackground: foundation.palette.white.normal,
   elevationOverlayBoxShadow: boxShadow([
+    {
+      def: ["0", "12px", "24px", "-4px"],
+      color: transparentColor(foundation.palette.ink.dark, 24),
+      inset: false,
+    },
+    {
+      def: ["0", "8px", "60px", "0"],
+      color: transparentColor(foundation.palette.ink.dark, 32),
+      inset: false,
+    },
+  ]),
+  elevationLevel4BoxShadow: boxShadow([
     {
       def: ["0", "12px", "24px", "-4px"],
       color: transparentColor(foundation.palette.ink.dark, 24),

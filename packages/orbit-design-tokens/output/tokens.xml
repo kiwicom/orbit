@@ -2880,11 +2880,19 @@
     <value>#252A31</value>
   </token>
   <token>
+    <name>elevationLevel1BoxShadow</name>
+    <value>#252A31</value>
+  </token>
+  <token>
     <name>elevationActionActiveBackground</name>
     <value>#FFFFFF</value>
   </token>
   <token>
     <name>elevationActionActiveBoxShadow</name>
+    <value>#252A31</value>
+  </token>
+  <token>
+    <name>elevationLevel2BoxShadow</name>
     <value>#252A31</value>
   </token>
   <token>
@@ -2912,6 +2920,10 @@
     <value>#252A31</value>
   </token>
   <token>
+    <name>elevationLevel3BoxShadow</name>
+    <value>#252A31</value>
+  </token>
+  <token>
     <name>elevationRaisedReverseBackground</name>
     <value>#FFFFFF</value>
   </token>
@@ -2920,11 +2932,19 @@
     <value>#252A31</value>
   </token>
   <token>
+    <name>elevationLevel3ReverseBoxShadow</name>
+    <value>#252A31</value>
+  </token>
+  <token>
     <name>elevationOverlayBackground</name>
     <value>#FFFFFF</value>
   </token>
   <token>
     <name>elevationOverlayBoxShadow</name>
+    <value>#252A31</value>
+  </token>
+  <token>
+    <name>elevationLevel4BoxShadow</name>
     <value>#252A31</value>
   </token>
   <token>

@@ -16543,8 +16543,8 @@
   "elevationActionBackground": {
     "type": "color",
     "category": "elevation",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "paletteWhiteNormal",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16567,8 +16567,8 @@
   "elevationActionBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "elevationLevel1BoxShadow",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16588,11 +16588,35 @@
       "value": "0 0 2px 0 rgba(37, 42, 49, 0.16), 0 1px 4px 0 rgba(37, 42, 49, 0.12)"
     }
   },
-  "elevationActionActiveBackground": {
-    "type": "color",
+  "elevationLevel1BoxShadow": {
+    "type": "box-shadow",
     "category": "elevation",
     "deprecated": false,
     "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "elevation",
+      "variant": "level1",
+      "subVariant": "box-shadow"
+    },
+    "javascript": {
+      "name": "elevationLevel1BoxShadow",
+      "value": "0 0 2px 0 rgba(37, 42, 49, 0.16), 0 1px 4px 0 rgba(37, 42, 49, 0.12)"
+    },
+    "foundation": {
+      "name": "elevationLevel1BoxShadow",
+      "value": "0 0 2px 0 color(#252A31, opacity: 16), 0 1px 4px 0 color(#252A31, opacity: 12)"
+    },
+    "scss": {
+      "name": "elevationLevel1BoxShadow",
+      "value": "0 0 2px 0 rgba(37, 42, 49, 0.16), 0 1px 4px 0 rgba(37, 42, 49, 0.12)"
+    }
+  },
+  "elevationActionActiveBackground": {
+    "type": "color",
+    "category": "elevation",
+    "deprecated": true,
+    "replacement": "paletteWhiteNormal",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16615,8 +16639,8 @@
   "elevationActionActiveBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "elevationLevel2BoxShadow",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16633,6 +16657,30 @@
     },
     "scss": {
       "name": "elevationActionActiveBoxShadow",
+      "value": "0 1px 4px 0 rgba(37, 42, 49, 0.16), 0 4px 8px 0 rgba(37, 42, 49, 0.12)"
+    }
+  },
+  "elevationLevel2BoxShadow": {
+    "type": "box-shadow",
+    "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "elevation",
+      "variant": "level2",
+      "subVariant": "box-shadow"
+    },
+    "javascript": {
+      "name": "elevationLevel2BoxShadow",
+      "value": "0 1px 4px 0 rgba(37, 42, 49, 0.16), 0 4px 8px 0 rgba(37, 42, 49, 0.12)"
+    },
+    "foundation": {
+      "name": "elevationLevel2BoxShadow",
+      "value": "0 1px 4px 0 color(#252A31, opacity: 16), 0 4px 8px 0 color(#252A31, opacity: 12)"
+    },
+    "scss": {
+      "name": "elevationLevel2BoxShadow",
       "value": "0 1px 4px 0 rgba(37, 42, 49, 0.16), 0 4px 8px 0 rgba(37, 42, 49, 0.12)"
     }
   },
@@ -16735,8 +16783,8 @@
   "elevationRaisedBackground": {
     "type": "color",
     "category": "elevation",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "paletteWhiteNormal",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16759,8 +16807,8 @@
   "elevationRaisedBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "elevationLevel3BoxShadow",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16780,11 +16828,35 @@
       "value": "0 4px 8px 0 rgba(37, 42, 49, 0.16), 0 8px 24px 0 rgba(37, 42, 49, 0.24)"
     }
   },
-  "elevationRaisedReverseBackground": {
-    "type": "color",
+  "elevationLevel3BoxShadow": {
+    "type": "box-shadow",
     "category": "elevation",
     "deprecated": false,
     "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "elevation",
+      "variant": "level3",
+      "subVariant": "box-shadow"
+    },
+    "javascript": {
+      "name": "elevationLevel3BoxShadow",
+      "value": "0 4px 8px 0 rgba(37, 42, 49, 0.16), 0 8px 24px 0 rgba(37, 42, 49, 0.24)"
+    },
+    "foundation": {
+      "name": "elevationLevel3BoxShadow",
+      "value": "0 4px 8px 0 color(#252A31, opacity: 16), 0 8px 24px 0 color(#252A31, opacity: 24)"
+    },
+    "scss": {
+      "name": "elevationLevel3BoxShadow",
+      "value": "0 4px 8px 0 rgba(37, 42, 49, 0.16), 0 8px 24px 0 rgba(37, 42, 49, 0.24)"
+    }
+  },
+  "elevationRaisedReverseBackground": {
+    "type": "color",
+    "category": "elevation",
+    "deprecated": true,
+    "replacement": "paletteWhiteNormal",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16807,8 +16879,8 @@
   "elevationRaisedReverseBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "elevationLevel3ReverseBoxShadow",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16828,11 +16900,35 @@
       "value": "0 -4px 8px 0 rgba(37, 42, 49, 0.16), 0 -8px 24px 0 rgba(37, 42, 49, 0.24)"
     }
   },
-  "elevationOverlayBackground": {
-    "type": "color",
+  "elevationLevel3ReverseBoxShadow": {
+    "type": "box-shadow",
     "category": "elevation",
     "deprecated": false,
     "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "elevation",
+      "variant": "level3-reverse",
+      "subVariant": "box-shadow"
+    },
+    "javascript": {
+      "name": "elevationLevel3ReverseBoxShadow",
+      "value": "0 -4px 8px 0 rgba(37, 42, 49, 0.16), 0 -8px 24px 0 rgba(37, 42, 49, 0.24)"
+    },
+    "foundation": {
+      "name": "elevationLevel3ReverseBoxShadow",
+      "value": "0 -4px 8px 0 color(#252A31, opacity: 16), 0 -8px 24px 0 color(#252A31, opacity: 24)"
+    },
+    "scss": {
+      "name": "elevationLevel3ReverseBoxShadow",
+      "value": "0 -4px 8px 0 rgba(37, 42, 49, 0.16), 0 -8px 24px 0 rgba(37, 42, 49, 0.24)"
+    }
+  },
+  "elevationOverlayBackground": {
+    "type": "color",
+    "category": "elevation",
+    "deprecated": true,
+    "replacement": "paletteWhiteNormal",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16855,8 +16951,8 @@
   "elevationOverlayBoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
-    "deprecated": false,
-    "replacement": null,
+    "deprecated": true,
+    "replacement": "elevationLevel4BoxShadow",
     "schema": {
       "namespace": "global",
       "object": "elevation",
@@ -16873,6 +16969,30 @@
     },
     "scss": {
       "name": "elevationOverlayBoxShadow",
+      "value": "0 12px 24px -4px rgba(37, 42, 49, 0.24), 0 8px 60px 0 rgba(37, 42, 49, 0.32)"
+    }
+  },
+  "elevationLevel4BoxShadow": {
+    "type": "box-shadow",
+    "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "elevation",
+      "variant": "level4",
+      "subVariant": "box-shadow"
+    },
+    "javascript": {
+      "name": "elevationLevel4BoxShadow",
+      "value": "0 12px 24px -4px rgba(37, 42, 49, 0.24), 0 8px 60px 0 rgba(37, 42, 49, 0.32)"
+    },
+    "foundation": {
+      "name": "elevationLevel4BoxShadow",
+      "value": "0 12px 24px -4px color(#252A31, opacity: 24), 0 8px 60px 0 color(#252A31, opacity: 32)"
+    },
+    "scss": {
+      "name": "elevationLevel4BoxShadow",
       "value": "0 12px 24px -4px rgba(37, 42, 49, 0.24), 0 8px 60px 0 rgba(37, 42, 49, 0.32)"
     }
   },

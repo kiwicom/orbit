@@ -44,7 +44,7 @@ export const KeyboardShortcuts = ({ type = "primary" }: { type: Type }) => {
 
   return (
     <StyledWrapper type={type}>
-      <Stack inline spacing="XXSmall" align="center">
+      <Stack inline spacing="100" align="center">
         <StyledIcon type={type}>
           {os === "mac" ? <>&#8984;</> : "Alt"} <span>+</span>
           <span> Shift</span>
@@ -61,7 +61,7 @@ const SearchButton = ({ onClick }: Props) => {
   return (
     <StyledSearchButtonWrapper>
       <Button size="large" type="primarySubtle" circled iconLeft={<SearchIcon />} onClick={onClick}>
-        <Stack inline align="center" spacing="XSmall">
+        <Stack inline align="center" spacing="200">
           <p>Search</p>
           <KeyboardShortcuts type="primary" />
         </Stack>

@@ -16,7 +16,7 @@ export default {
     <OrbitProvider theme={defaultTheme} useId={React.useId}>
       <SkipNavigation />
       <Stack>
-        <Stack spacing="small">
+        <Stack spacing="300">
           <Heading dataA11ySection="how-to">How to see the links</Heading>
           <Text>
             To see the links, click in this container. Then use Tab or Shift+Tab to focus on the
@@ -45,7 +45,7 @@ export default {
             <TextLink href="https://orbit.kiwi/accessibility/skiplink/">skip link</TextLink>.
           </CardSection>
         </Card>
-        <Stack spacing="small">
+        <Stack spacing="300">
           <Heading dataA11ySection="WCAG">Web Content Accessibility Guidelines</Heading>
           <Text>
             The Web Content Accessibility Guidelines (WCAG) offer advice and information on making

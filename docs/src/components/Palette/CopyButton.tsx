@@ -17,7 +17,7 @@ const StyledButton = styled.button<{ colorValue?: string }>`
     background: ${colorValue && isLight(colorValue)
       ? theme.orbit.paletteInkDark
       : theme.orbit.paletteWhite};
-    padding: 0 ${theme.orbit.spaceXSmall};
+    padding: 0 ${theme.orbit.space200};
     border-radius: ${theme.orbit.borderRadiusBadge};
     text-transform: uppercase;
     transition: transform ${theme.orbit.durationFast} ease-in;
@@ -42,7 +42,7 @@ const CopyButton = ({ buttonText, colorValue, textToCopy }: CopyButtonProps) => 
       type="button"
       onClick={() => textToCopy && copy(textToCopy)}
     >
-      <Stack direction="row" spacing="XXSmall" align="center">
+      <Stack direction="row" spacing="100" align="center">
         <Text type={colorValue && isLight(colorValue) ? "white" : "primary"}>
           {copied ? "copied" : buttonText}
         </Text>

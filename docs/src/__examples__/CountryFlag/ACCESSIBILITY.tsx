@@ -5,7 +5,7 @@ export default {
   Example: () => (
     <Stack direction="column">
       <CountryFlag code="cz" name="Czech Republic" />
-      <Stack direction="row" spacing="XXSmall" align="center">
+      <Stack direction="row" spacing="100" align="center">
         <CountryFlag name="" code="cz" />
         <Text>Czech Republic</Text>
       </Stack>

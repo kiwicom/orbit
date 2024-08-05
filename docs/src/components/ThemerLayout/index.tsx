@@ -110,7 +110,7 @@ export default function ThemerLayout({
               </TopBar>
               <StyledMain>
                 <StyledMobileOutdent>
-                  <StyledProse padding={{ top: "none", bottom: "XLarge" }}>
+                  <StyledProse padding={{ top: "none", bottom: "800" }}>
                     <MDXProvider
                       components={{
                         ...components,

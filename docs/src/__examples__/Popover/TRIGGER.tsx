@@ -15,7 +15,7 @@ export default {
       <Popover
         renderInPortal={false}
         content={
-          <Stack spacing="small">
+          <Stack spacing="300">
             <ButtonLink
               external
               type="secondary"

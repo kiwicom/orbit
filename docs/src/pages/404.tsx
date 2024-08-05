@@ -12,15 +12,15 @@ export default function PageNotFound({ location }: PageProps) {
   return (
     <DocLayout custom noElevation title="Page not found" location={location} path="/" noTopBar>
       <Stack flex>
-        <Stack spacing="XLarge">
-          <Stack spacing="small">
+        <Stack spacing="800">
+          <Stack spacing="300">
             <Heading as="h1" type="display">
               Page wasn&apos;t found. It probably doesn&apos;t exist.
             </Heading>
             <p>Try our search to find the content you&apos;re looking for.</p>
           </Stack>
           <Illustration name="Error404" size="large" />
-          <Stack flex spacing="XSmall">
+          <Stack flex spacing="200">
             <Button circled type="primary" iconRight={<TripIcon />} asComponent={Link} href="/">
               Return home
             </Button>

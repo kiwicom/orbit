@@ -23,7 +23,7 @@ const StyledInner = styled.div<{ thick?: boolean }>`
     box-sizing: content-box;
     max-width: ${MAX_CONTENT_WIDTH};
     margin: 0 auto;
-    padding: ${thick ? `28px 2rem` : `${theme.orbit.spaceSmall} ${CONTENT_PADDING}`};
+    padding: ${thick ? `28px 2rem` : `${theme.orbit.space300} ${CONTENT_PADDING}`};
   `}
 `;
 
@@ -33,8 +33,8 @@ const StyledIconLink = styled.a.attrs(() => ({
 }))`
   ${({ theme }) => css`
     display: block;
-    padding: ${theme.orbit.spaceXSmall};
-    margin-right: -${theme.orbit.spaceXSmall};
+    padding: ${theme.orbit.space200};
+    margin-right: -${theme.orbit.space200};
     border-radius: ${theme.orbit.borderRadiusFull};
     color: ${theme.orbit.paletteInkDark};
     &:hover,
@@ -44,7 +44,7 @@ const StyledIconLink = styled.a.attrs(() => ({
     ${mediaQueries.tablet(css`
       margin-right: 0;
       &:last-child {
-        margin-right: -${theme.orbit.spaceXSmall};
+        margin-right: -${theme.orbit.space200};
       }
     `)}
   `}
@@ -53,7 +53,7 @@ const StyledIconLink = styled.a.attrs(() => ({
 const StyledFooterLink = styled(Link)`
   ${({ theme }) => css`
     display: block;
-    padding: ${theme.orbit.spaceMedium} 0;
+    padding: ${theme.orbit.space400} 0;
     &:hover,
     &:focus {
       color: ${theme.orbit.paletteProductNormalHover};
@@ -105,7 +105,7 @@ export default function Footer() {
               inline
               direction="column"
               spacing="none"
-              tablet={{ direction: "row", align: "center", spacing: "XXLarge" }}
+              tablet={{ direction: "row", align: "center", spacing: "1000" }}
             >
               <StyledFooterLink to="/component-status/">Component status</StyledFooterLink>
               {/* <Dot /> */}
@@ -147,7 +147,7 @@ export default function Footer() {
             <Stack
               inline
               direction="column"
-              tablet={{ direction: "row", align: "center", spacing: "XXLarge" }}
+              tablet={{ direction: "row", align: "center", spacing: "1000" }}
             >
               <Stack inline grow={false} direction="column" spacing="none">
                 <Text as="div" weight="bold">
@@ -167,7 +167,7 @@ export default function Footer() {
                 </Text>
               </Stack>
               <Dot />
-              <Stack flex shrink spacing="medium" align="center">
+              <Stack flex shrink spacing="400" align="center">
                 <Stack flex shrink direction="column" spacing="none">
                   <Text as="div" weight="bold">
                     Developer mode

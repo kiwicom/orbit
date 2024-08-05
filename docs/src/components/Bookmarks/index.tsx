@@ -28,11 +28,11 @@ const tileMixin = css`
     cursor: pointer;
     border-radius: 16px;
     box-sizing: border-box;
-    padding: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.space800};
     box-shadow: ${theme.orbit.elevationLevel1BoxShadow};
     > div {
       height: 100%;
-      margin-right: ${theme.orbit.spaceXSmall};
+      margin-right: ${theme.orbit.space200};
     }
 
     label {
@@ -56,9 +56,9 @@ const StyledNowrap = styled.span`
 `;
 
 const BookmarkContent = ({ title, description, slug }) => (
-  <Stack flex shrink direction="column" spacing="XXSmall">
+  <Stack flex shrink direction="column" spacing="100">
     <Heading type="title3">{title}</Heading>
-    <Stack direction="column" spacing="small">
+    <Stack direction="column" spacing="300">
       <Text size="small" type="secondary">
         {slug}
       </Text>

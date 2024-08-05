@@ -100,7 +100,7 @@ const DesignTokensTable = ({
           <TableHead>
             <TableRow>
               <TableCell as="th" scope="col">
-                <Stack direction="row" spacing="XSmall" align="center">
+                <Stack direction="row" spacing="200" align="center">
                   <StyledDesignTokenBase size="medium" />
                   <span>Name</span>
                 </Stack>
@@ -136,7 +136,7 @@ const DesignTokensTable = ({
               return (
                 <TableRow>
                   <TableCell verticalAlign="middle">
-                    <Stack direction="row" spacing="XSmall" align="center">
+                    <Stack direction="row" spacing="200" align="center">
                       <DesignTokenIcon
                         value={platform === "foundation" ? value.javascript.value : tokenValue}
                         type={showedTyped}

@@ -36,11 +36,11 @@ export default {
               <Card>
                 <CardSection
                   title={
-                    <Stack direction="row" spacing="XSmall" align="center">
+                    <Stack direction="row" spacing="200" align="center">
                       <Box>
                         <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
                       </Box>
-                      <Stack direction="row" spacing="XXSmall" align="center">
+                      <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Cairo CAI</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Dubai SHJ</Text>
@@ -55,11 +55,11 @@ export default {
                 />
                 <CardSection
                   title={
-                    <Stack direction="row" spacing="XSmall" align="center">
+                    <Stack direction="row" spacing="200" align="center">
                       <Box>
                         <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
                       </Box>
-                      <Stack direction="row" spacing="XXSmall" align="center">
+                      <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Dubai SHJ</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Mumbai BOM</Text>
@@ -74,11 +74,11 @@ export default {
                 />
                 <CardSection
                   title={
-                    <Stack direction="row" spacing="XSmall" align="center">
+                    <Stack direction="row" spacing="200" align="center">
                       <Box>
                         <CarrierLogo carriers={[{ code: "G8", name: "Go Air" }]} size="large" />
                       </Box>
-                      <Stack direction="row" spacing="XXSmall" align="center">
+                      <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Mumbai BOM</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Malé MLE</Text>
@@ -102,11 +102,11 @@ export default {
               <Card>
                 <CardSection
                   title={
-                    <Stack direction="row" spacing="XSmall" align="center">
+                    <Stack direction="row" spacing="200" align="center">
                       <Box>
                         <CarrierLogo carriers={[{ code: "G8", name: "Go Air" }]} size="large" />
                       </Box>
-                      <Stack direction="row" spacing="XXSmall" align="center">
+                      <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Malé MLE</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Mumbai BOM</Text>
@@ -121,11 +121,11 @@ export default {
                 />
                 <CardSection
                   title={
-                    <Stack direction="row" spacing="XSmall" align="center">
+                    <Stack direction="row" spacing="200" align="center">
                       <Box>
                         <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
                       </Box>
-                      <Stack direction="row" spacing="XXSmall" align="center">
+                      <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Mumbai BOM</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Dubai SHJ</Text>
@@ -140,11 +140,11 @@ export default {
                 />
                 <CardSection
                   title={
-                    <Stack direction="row" spacing="XSmall" align="center">
+                    <Stack direction="row" spacing="200" align="center">
                       <Box>
                         <CarrierLogo carriers={[{ code: "G9", name: "Air Arabia" }]} size="large" />
                       </Box>
-                      <Stack direction="row" spacing="XXSmall" align="center">
+                      <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Dubai SHJ</Text>
                         <FlightDirect size="small" />
                         <Text weight="bold">Cairo CAI</Text>

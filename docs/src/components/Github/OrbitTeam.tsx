@@ -42,7 +42,7 @@ const OrbitTeam = ({ currentContributors, previousContributors }: Props) => {
       .find(n => n.originalName.includes(id));
 
   return (
-    <Stack direction="column" spacing="large" spaceAfter="large">
+    <Stack direction="column" spacing="600" spaceAfter="large">
       <Heading type="title0" as="h3">
         Core team
       </Heading>

@@ -93,7 +93,7 @@ const CategoryDescriptions = ({ category }: { category: Category }) => {
         `To be used as a Tailwind prefix for defining media queries (eg: "sm:opacity-1",
         "tb:hidden", etc).`}
       {category === "Spacing" &&
-        `To be used as a Tailwind prefix for defining margin and padding (eg: "m-sm", "p-xl", etc).`}
+        `To be used as a Tailwind prefix for defining margin and padding (eg: "m-300", "p-800", etc).`}
       {category === "ZIndex" && "Default Tailwind zIndex classes are also available"}
     </Text>
   );
@@ -126,8 +126,8 @@ const TailwindClassnames = () => {
   const [selectedCategory, setSelectedCategory] = React.useState<string>();
 
   return (
-    <Stack direction="column" shrink spacing="XLarge">
-      <Stack inline spacing="small" wrap>
+    <Stack direction="column" shrink spacing="800">
+      <Stack inline spacing="300" wrap>
         {Object.keys(transformedConfig).map(cat => {
           return (
             <Button

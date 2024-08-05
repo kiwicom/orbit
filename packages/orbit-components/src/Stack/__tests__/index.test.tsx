@@ -53,7 +53,7 @@ describe("Stack", () => {
 
   it("should be block with spacing", () => {
     render(
-      <Stack spacing="XLarge" dataTest="test">
+      <Stack spacing="800" dataTest="test">
         <div>1</div>
         <div>2</div>
       </Stack>,

@@ -21,13 +21,16 @@ const DUMMY_CHILDREN = (
   <>
     <div className="size-50 bg-blue-normal" />
     <div className="size-100 bg-blue-normal" />
+    <div className="size-150 bg-blue-normal" />
     <div className="size-200 bg-blue-normal" />
     <div className="size-300 bg-blue-normal" />
     <div className="size-400 bg-blue-normal" />
+    <div className="size-500 bg-blue-normal" />
     <div className="size-600 bg-blue-normal" />
     <div className="size-800 bg-blue-normal" />
     <div className="size-1000 bg-blue-normal" />
-    <div className="bg-blue-normal size-[52px]" />
+    <div className="size-1200 bg-blue-normal" />
+    <div className="size-1600 bg-blue-normal" />
   </>
 );
 

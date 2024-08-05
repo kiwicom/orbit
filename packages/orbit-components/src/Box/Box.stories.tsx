@@ -160,15 +160,18 @@ const COLORS: ColorTokens[] = [
 
 enum SPACINGS {
   NONE = "none",
-  XXXSmall = "XXXSmall",
-  XXSmall = "XXSmall",
-  XSmall = "XSmall",
-  SMALL = "small",
-  MEDIUM = "medium",
-  LARGE = "large",
-  XLARGE = "XLarge",
-  XXLarge = "XXLarge",
-  XXXLarge = "XXXLarge",
+  FIFTY = "50",
+  ONE_HUNDRED = "100",
+  ONE_HUNDRED_FIFTY = "150",
+  TWO_HUNDRED = "200",
+  THREE_HUNDRED = "300",
+  FOUR_HUNDRED = "400",
+  FIVE_HUNDRED = "500",
+  SIX_HUNDRED = "600",
+  EIGHT_HUNDRED = "800",
+  ONE_THOUSAND = "1000",
+  ONE_THOUSAND_TWO_HUNDRED = "1200",
+  ONE_THOUSAND_SIX_HUNDRED = "1600",
 }
 
 export default {
@@ -196,7 +199,7 @@ export const Overflow = ({ overflow }) => {
       background={DEFAULT_COLOR}
       overflow={overflow}
       color="cloudLight"
-      padding="large"
+      padding="600"
       maxWidth="300px"
     >
       Text
@@ -223,7 +226,7 @@ export const TextAlign = ({ textAlign }) => {
       background={DEFAULT_COLOR}
       textAlign={textAlign}
       color="cloudLight"
-      padding="large"
+      padding="600"
       maxWidth="300px"
     >
       Text
@@ -305,8 +308,8 @@ PaddingMargin.story = {
 };
 
 PaddingMargin.args = {
-  margin: SPACINGS.SMALL,
-  padding: SPACINGS.SMALL,
+  margin: SPACINGS.THREE_HUNDRED,
+  padding: SPACINGS.THREE_HUNDRED,
 };
 
 PaddingMargin.argTypes = {
@@ -687,7 +690,7 @@ Rtl.story = {
 Rtl.args = {
   right: "10px",
   left: "10px",
-  margin: SPACINGS.SMALL,
+  margin: SPACINGS.THREE_HUNDRED,
   padding: SPACINGS.NONE,
   textAlign: TEXT_ALIGN.LEFT,
   justify: JUSTIFY.CENTER,

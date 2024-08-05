@@ -98,6 +98,18 @@ export type ColorTokens =
 
 export type SpacingToken =
   | "none"
+  | "50"
+  | "100"
+  | "150"
+  | "200"
+  | "300"
+  | "400"
+  | "500"
+  | "600"
+  | "800"
+  | "1000"
+  | "1200"
+  | "1600"
   | "XXXSmall"
   | "XXSmall"
   | "XSmall"

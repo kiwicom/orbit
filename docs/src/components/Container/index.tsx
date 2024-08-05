@@ -6,8 +6,8 @@ const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: ${theme.orbit.spaceSmall};
-    padding: ${theme.orbit.spaceXLarge};
+    gap: ${theme.orbit.space300};
+    padding: ${theme.orbit.space800};
     border-radius: ${theme.orbit.borderRadius150};
     background: ${theme.orbit.paletteCloudLight};
 
@@ -16,7 +16,7 @@ const StyledContainer = styled.div`
       justify-self: center;
       background: ${theme.orbit.paletteWhite};
       border-radius: ${theme.orbit.borderRadius150};
-      padding: ${theme.orbit.spaceXLarge};
+      padding: ${theme.orbit.space800};
     }
   `};
 `;

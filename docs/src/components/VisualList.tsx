@@ -20,7 +20,7 @@ import useCopyToClipboard from "../hooks/useCopyToClipboard";
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
+  grid-gap: ${({ theme }) => theme.orbit.space200};
 `;
 
 interface StyledRatioContainerProps {
@@ -113,7 +113,7 @@ const VisualList = ({ actions, exampleCode, getImgSource, list, smallVisual }: V
   const filteredVisualNames = allVisualNames.filter(name => filterRe.test(name));
 
   return (
-    <Stack spacing="large">
+    <Stack spacing="600">
       <InputField
         prefix={<Search />}
         placeholder="Find a visual"

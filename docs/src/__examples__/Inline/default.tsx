@@ -9,7 +9,7 @@ export default {
     };
 
     return (
-      <Inline spacing="medium">
+      <Inline spacing="400">
         <div style={{ ...height, width: "140px", background: defaultTheme.orbit.paletteInkDark }} />
         <div
           style={{
@@ -52,19 +52,8 @@ export default {
         {
           name: "spacing",
           type: "select",
-          options: [
-            "none",
-            "XXXSmall",
-            "XXSmall",
-            "XSmall",
-            "small",
-            "medium",
-            "large",
-            "XLarge",
-            "XXLarge",
-            "XXXLarge",
-          ],
-          defaultValue: "medium",
+          options: ["none", "50", "100", "200", "300", "400", "600", "800", "1000"],
+          defaultValue: "400",
         },
       ],
     },

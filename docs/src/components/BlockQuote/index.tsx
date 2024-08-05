@@ -6,14 +6,14 @@ import { StyledAnchor } from "../HeadingWithLink";
 const StyledWrapper = styled.div`
   ${({ theme }) => css`
     border-left: 3px solid ${theme.orbit.paletteInkDark};
-    padding: ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.space400};
     background: ${theme.orbit.paletteCloudLight};
     border-radius: ${theme.orbit.borderRadius100};
     ${StyledAnchor} + & {
-      margin-top: ${theme.orbit.spaceXXSmall} !important;
+      margin-top: ${theme.orbit.space100} !important;
     }
     & + p {
-      margin-top: ${theme.orbit.spaceLarge} !important;
+      margin-top: ${theme.orbit.space600} !important;
     }
   `};
 `;
@@ -27,7 +27,7 @@ const StyledContent = styled.div`
     }
     blockquote > * + *,
     figcaption {
-      margin-top: ${theme.orbit.spaceXSmall};
+      margin-top: ${theme.orbit.space200};
     }
   `};
 `;

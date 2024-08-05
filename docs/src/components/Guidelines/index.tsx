@@ -35,13 +35,13 @@ const StyledComponent = styled.div<GuidelineComponent>`
   ${({ theme }) => css`
     background: ${theme.orbit.paletteCloudLight};
     border-radius: ${theme.orbit.borderRadius100};
-    padding: ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.space400};
     ${resolveBorders};
     p + & {
-      margin-top: ${theme.orbit.spaceLarge};
+      margin-top: ${theme.orbit.space600};
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge};
+      margin-top: ${theme.orbit.space800};
     }
     li {
       list-style: inside none disc;
@@ -60,7 +60,7 @@ const StyledImageContainer = styled.div<ImageContainerProps>`
     padding: 20px;
     height: 100%;
     ${mq.desktop(css`
-      padding: ${theme.orbit.spaceMedium};
+      padding: ${theme.orbit.space400};
     `)};
   `}
 `;
@@ -83,7 +83,7 @@ const StyledImage = styled.div`
 export const DoDontHeader = ({ type }: GuidelineType) => (
   <Stack
     flex
-    spacing="XSmall"
+    spacing="200"
     justify="between"
     direction="row-reverse"
     tablet={{ direction: "row", justify: "start" }}
@@ -113,13 +113,13 @@ export default function Guideline({ type = "do", title, svgs = [], children }: P
       <Grid
         columns="1fr"
         desktop={{ columns: `repeat(${allImages.length + 1}, 1fr)` }}
-        gap={theme.orbit.spaceXLarge}
+        gap={theme.orbit.space800}
       >
         <Stack flex shrink direction="column">
           <Stack
             justify="between"
             direction="row-reverse"
-            spacing="XSmall"
+            spacing="200"
             tablet={{ direction: "row", justify: "start" }}
           >
             {allImages.length < 2 &&
@@ -141,13 +141,13 @@ export default function Guideline({ type = "do", title, svgs = [], children }: P
         )}
         {allImages.length > 1 && (
           <>
-            <Stack shrink align="stretch" direction="column" spacing="XSmall">
+            <Stack shrink align="stretch" direction="column" spacing="200">
               <DoDontHeader type={type} />
               <StyledImageContainer type={type}>
                 <StyledImage>{allImages[0]}</StyledImage>
               </StyledImageContainer>
             </Stack>
-            <Stack shrink align="stretch" direction="column" spacing="XSmall">
+            <Stack shrink align="stretch" direction="column" spacing="200">
               <DoDontHeader type={typeOpposite} />
               <StyledImageContainer type={typeOpposite}>
                 <StyledImage>{allImages[1]}</StyledImage>

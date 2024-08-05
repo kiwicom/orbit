@@ -35,8 +35,8 @@ const StyledTocList = styled.ul`
 
 const StyledTocListItem = styled.li<{ level: number; active?: boolean }>`
   ${({ theme, active }) => css`
-    margin-left: ${theme.orbit.spaceMedium};
-    margin-bottom: ${theme.orbit.spaceXSmall};
+    margin-left: ${theme.orbit.space400};
+    margin-bottom: ${theme.orbit.space200};
 
     ${mq.desktop(css`
       &:before {

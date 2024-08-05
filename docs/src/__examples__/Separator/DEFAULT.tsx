@@ -55,7 +55,7 @@ export default {
           name: "sideOffset",
           type: "select",
           defaultValue: "none",
-          options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
+          options: ["none", "300", "400", "600", "800", "1000"],
         },
         {
           name: "align",

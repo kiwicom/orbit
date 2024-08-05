@@ -26,7 +26,7 @@ const Contributor = ({
       direction="column"
       largeMobile={{ direction: "row", shrink: true }}
       spaceAfter="large"
-      spacing="large"
+      spacing="600"
       align="stretch"
     >
       <StyledImageWrapper url={github}>

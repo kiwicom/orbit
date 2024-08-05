@@ -131,7 +131,7 @@ export default function BrandedTile({
           direction="column"
           align="center"
           justify="between"
-          spacing="small"
+          spacing="300"
           mediumMobile={{ direction: "row" }}
         >
           <Button

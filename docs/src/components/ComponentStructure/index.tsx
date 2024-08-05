@@ -13,10 +13,10 @@ import docsTheme from "../../theme";
 const StyledContainer = styled.div`
   ${({ theme }) => css`
     ${StyledAnchor} + & {
-      margin-top: ${theme.orbit.spaceXSmall} !important;
+      margin-top: ${theme.orbit.space200} !important;
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge} !important;
+      margin-top: ${theme.orbit.space800} !important;
     }
   `}
 `;
@@ -30,7 +30,7 @@ const StyledTabList = styled.div`
 
 const StyledTab = styled.button<{ active: boolean }>`
   ${({ theme, active }) => css`
-    padding: 14px ${theme.orbit.spaceMedium};
+    padding: 14px ${theme.orbit.space400};
     margin-bottom: -1px;
     border-top-left-radius: ${theme.orbit.borderRadius150};
     border-top-right-radius: ${theme.orbit.borderRadius150};
@@ -57,7 +57,7 @@ const StyledImageContainer = styled.div`
   ${({ theme }) => css`
     display: grid;
     place-content: center;
-    padding: ${theme.orbit.spaceXXLarge};
+    padding: ${theme.orbit.space1000};
   `};
 `;
 StyledImageContainer.defaultProps = { theme: docsTheme };
@@ -66,7 +66,7 @@ const StyledComponentParts = styled.div<{ vertical?: boolean }>`
   ${({ theme, vertical }) => css`
     display: grid;
     align-content: center;
-    padding: ${theme.orbit.spaceXLarge};
+    padding: ${theme.orbit.space800};
     border-top: 1px solid ${theme.orbit.paletteCloudNormal};
 
     ${mq.largeDesktop(css`
@@ -79,12 +79,12 @@ const StyledComponentParts = styled.div<{ vertical?: boolean }>`
       counter-reset: component-parts;
       display: flex;
       flex-direction: column;
-      gap: ${theme.orbit.spaceXSmall};
+      gap: ${theme.orbit.space200};
 
       li {
         counter-increment: component-parts;
         display: flex;
-        gap: ${theme.orbit.spaceSmall};
+        gap: ${theme.orbit.space300};
 
         &::before {
           flex-shrink: 0;

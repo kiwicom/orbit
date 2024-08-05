@@ -579,8 +579,8 @@ LargeDesktopProperties.argTypes = {
 };
 
 export const NestedExample = () => (
-  <Stack spacing="large" direction="column" align="start">
-    <Stack spacing="XSmall" direction="row" inline>
+  <Stack spacing="600" direction="column" align="start">
+    <Stack spacing="200" direction="row" inline>
       <Text weight="bold">email@gmail.com</Text>
       <Edit size="small" color="success" />
     </Stack>
@@ -676,7 +676,7 @@ Playground.args = {
     align: ALIGNS.END,
   },
   tablet: {
-    spacing: SPACINGS.XSMALL,
+    spacing: SPACINGS.TWO_HUNDRED,
   },
   desktop: {
     justify: JUSTIFY.BETWEEN,
@@ -684,7 +684,7 @@ Playground.args = {
     align: ALIGNS.START,
   },
   largeDesktop: {
-    spacing: SPACINGS.XLARGE,
+    spacing: SPACINGS.EIGHT_HUNDRED,
   },
 };
 
@@ -1141,8 +1141,8 @@ ComponentsPreview.story = {
 
 export const Rtl = () => (
   <RenderInRtl>
-    <Stack spacing="large" direction="column" align="start">
-      <Stack spacing="XSmall" direction="row" inline>
+    <Stack spacing="600" direction="column" align="start">
+      <Stack spacing="200" direction="row" inline>
         <Text weight="bold">email@gmail.com</Text>
         <Edit size="small" color="success" />
       </Stack>

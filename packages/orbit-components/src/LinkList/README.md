@@ -28,7 +28,7 @@ Table below contains all types of the props available in LinkList component.
 | id           | `string`              |            | Set `id` for `LinkList`                                            |
 | direction    | [`enum`](#enum)       | `"column"` | The size of the LinkList.                                          |
 | indent       | `boolean`             |            | Indenting LinkList item                                            |
-| spacing      | [`spacing`](#spacing) | `"medium"` | The spacing between LinkList children.                             |
+| spacing      | [`spacing`](#spacing) | `"400"`    | The spacing between LinkList children.                             |
 | legacy       | `boolean`             | `false`    | If `true` will use `margin` for spacing, if `false` will use `gap` |
 
 ### enum
@@ -40,14 +40,26 @@ Table below contains all types of the props available in LinkList component.
 
 ### spacing
 
-| name         | size on `992px - ∞` |
-| :----------- | :------------------ |
-| `"none"`     | `null`              |
-| `"XXXSmall"` | `2px`               |
-| `"XXSmall"`  | `4px`               |
-| `"XSmall"`   | `8px`               |
-| `"small"`    | `12px`              |
-| `"medium"`   | `16px`              |
-| `"large"`    | `24px`              |
-| `"XLarge"`   | `32px`              |
-| `"XXLarge"`  | `40px`              |
+| name                                        | size on `992px - ∞` |
+| :------------------------------------------ | :------------------ |
+| `"none"`                                    | `null`              |
+| `"XXXSmall"` - **deprecated (use `"50"`)**  | `2px`               |
+| `"XXSmall"` - **deprecated (use `"100"`)**  | `4px`               |
+| `"XSmall"` - **deprecated (use `"200"`)**   | `8px`               |
+| `"small"` - **deprecated (use `"300"`)**    | `12px`              |
+| `"medium"` - **deprecated (use `"400"`)**   | `16px`              |
+| `"large"` - **deprecated (use `"600"`)**    | `24px`              |
+| `"XLarge"` - **deprecated (use `"800"`)**   | `32px`              |
+| `"XXLarge"` - **deprecated (use `"1000"`)** | `40px`              |
+| `"50"`                                      | `2px`               |
+| `"100"`                                     | `4px`               |
+| `"150"`                                     | `6px`               |
+| `"200"`                                     | `8px`               |
+| `"300"`                                     | `12px`              |
+| `"400"`                                     | `16px`              |
+| `"500"`                                     | `20px`              |
+| `"600"`                                     | `24px`              |
+| `"800"`                                     | `32px`              |
+| `"1000"`                                    | `40px`              |
+| `"1200"`                                    | `48px`              |
+| `"1600"`                                    | `64px`              |

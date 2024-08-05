@@ -22,7 +22,7 @@ export const Default = ({ direction, spacing, legacy, indent }) => {
 
 Default.args = {
   direction: DIRECTIONS.ROW,
-  spacing: SPACINGS.MEDIUM,
+  spacing: SPACINGS.FOUR_HUNDRED,
   legacy: false,
   indent: false,
 };

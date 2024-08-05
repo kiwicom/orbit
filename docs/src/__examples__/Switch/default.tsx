@@ -11,7 +11,7 @@ export default {
     return (
       <div
         style={{
-          padding: defaultTheme.orbit.spaceMedium,
+          padding: defaultTheme.orbit.space400,
           backgroundColor: darkMode
             ? defaultTheme.orbit.paletteInkDark
             : defaultTheme.orbit.paletteCloudLight,

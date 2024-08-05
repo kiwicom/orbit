@@ -16,8 +16,8 @@ const commonStyle = css`
   ${({ theme }) => css`
     font-size: ${theme.orbit.fontSizeTextLarge};
     font-weight: ${theme.orbit.fontWeightMedium};
-    padding: ${theme.orbit.spaceSmall} ${theme.orbit.spaceMedium} ${theme.orbit.spaceXSmall}
-      ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.space300} ${theme.orbit.space400} ${theme.orbit.space200}
+      ${theme.orbit.space400};
   `}
 `;
 
@@ -55,7 +55,7 @@ const StyledTab = styled.span<{ fullWidth?: boolean }>`
     color: ${theme.orbit.paletteInkDark};
     width: ${fullWidth && "100%"};
     > * + * {
-      margin-left: ${theme.orbit.spaceSmall};
+      margin-left: ${theme.orbit.space300};
     }
   `};
 `;

@@ -39,13 +39,13 @@ const StyledWrapper = styled.div<{ isFullScreen: boolean }>`
     ${isFullScreen && fullScreenMixin};
 
     ${StyledAnchor} + & {
-      margin-top: ${theme.orbit.spaceMedium} !important;
+      margin-top: ${theme.orbit.space400} !important;
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge} !important;
+      margin-top: ${theme.orbit.space800} !important;
     }
     & + :not(${StyledAnchor}) {
-      margin-top: ${theme.orbit.spaceLarge} !important;
+      margin-top: ${theme.orbit.space600} !important;
     }
 
     &[style*="height"] ${StyledFrame} {

@@ -116,12 +116,7 @@ const InputSwitch = ({
   const ContentContainer = hideLabel ? ScreenReaderText : StyledContent;
   return (
     <StyledLabel>
-      <Stack
-        inline
-        direction={reverseLabel ? "row-reverse" : "row"}
-        align="center"
-        spacing="medium"
-      >
+      <Stack inline direction={reverseLabel ? "row-reverse" : "row"} align="center" spacing="400">
         <StyledSwitchContainer>
           <StyledInput
             name={name}

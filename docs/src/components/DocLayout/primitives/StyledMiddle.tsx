@@ -12,7 +12,7 @@ const StyledMiddle = styled.div`
     border-left: 1px solid ${theme.orbit.paletteCloudNormal};
     ${mediaQueries.largeDesktop(css`
       > * + * {
-        margin-left: ${theme.orbit.spaceLarge};
+        margin-left: ${theme.orbit.space600};
       }
     `)};
   `}

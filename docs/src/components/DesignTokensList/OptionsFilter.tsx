@@ -24,7 +24,7 @@ const OptionsFilter = ({
           {label}
         </Text>
       )}
-      <Inline spacing="XSmall">
+      <Inline spacing="200">
         {options.map(({ key, name }) => {
           return (
             <Button

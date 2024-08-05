@@ -7,7 +7,7 @@ import Contributor from "./Contributor";
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  grid-gap: ${({ theme }) => theme.orbit.spaceXSmall};
+  grid-gap: ${({ theme }) => theme.orbit.space200};
 `;
 
 const AllContributors = () => {

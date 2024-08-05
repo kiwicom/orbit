@@ -38,8 +38,8 @@ const ComponentDesignTokens = () => {
   const debouncedFilter = useDebounce(filter, 300);
 
   return (
-    <Stack spacing="large">
-      <Stack spacing="medium" direction="row">
+    <Stack spacing="600">
+      <Stack spacing="400" direction="row">
         <InputField
           prefix={<Search />}
           placeholder="Filter design tokens from categories..."

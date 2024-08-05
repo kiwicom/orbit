@@ -35,7 +35,7 @@ const StyledTopWrapper = styled.div<{ $hasTabs: boolean }>`
     ${$hasTabs &&
     // maintain alignment of tabs with the content
     css`
-      padding-left: calc(${theme.orbit.spaceXLarge} - ${getTabShadowReachLeft});
+      padding-left: calc(${theme.orbit.space800} - ${getTabShadowReachLeft});
     `};
   `}
 `;
@@ -63,8 +63,8 @@ const TopBar = ({
     <StyledProse
       padding={
         noElevation
-          ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
-          : { top: "XLarge", bottom: "XXLarge", left: "XLarge", right: "XLarge" }
+          ? { top: "none", bottom: "800", left: "800", right: "800" }
+          : { top: "800", bottom: "1000", left: "800", right: "800" }
       }
       elevation={noElevation ? undefined : "level3"}
     >
@@ -74,10 +74,10 @@ const TopBar = ({
     <StyledWrapper>
       <Box
         padding={{
-          top: "XXLarge",
-          left: "XXLarge",
-          right: "XXLarge",
-          bottom: hasLowerLayer ? "none" : "XXLarge",
+          top: "1000",
+          left: "1000",
+          right: "1000",
+          bottom: hasLowerLayer ? "none" : "1000",
         }}
       >
         {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
@@ -97,7 +97,7 @@ const TopBar = ({
             </div>
           </Stack>
           {description && (
-            <Box padding={{ left: "XXLarge" }}>
+            <Box padding={{ left: "1000" }}>
               <Text>
                 <StyledDescription>{description}</StyledDescription>
               </Text>
@@ -114,7 +114,7 @@ const TopBar = ({
             <StyledTopWrapper $hasTabs={Boolean(tabs)}>
               {hasTabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
               <Hide on={["smallMobile", "mediumMobile"]}>
-                <Stack flex spacing="XXSmall">
+                <Stack flex spacing="100">
                   {hasHeaderLink && headerLink && <HeaderButtonLink href={headerLink} />}
                   {hasStorybook && (storybookLink || title) && (
                     <ButtonLink

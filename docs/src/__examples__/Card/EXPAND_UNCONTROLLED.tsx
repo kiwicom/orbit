@@ -13,7 +13,7 @@ export default {
     <OrbitProvider theme={defaultTheme} useId={React.useId}>
       <Card title="Passenger info">
         <CardSection expandable title="Yasmin Karenth">
-          <Stack direction="column" spacing="XSmall">
+          <Stack direction="column" spacing="200">
             <Text type="secondary">January 20, 1978</Text>
             <Text type="secondary">yas.karenth@example.com</Text>
           </Stack>

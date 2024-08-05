@@ -7,7 +7,7 @@ export default {
     const [statementName, setStatementName] = React.useState("");
     const fileTypes = ".png,.jpg,.jpeg,.webp";
     return (
-      <Stack spacing="XLarge">
+      <Stack spacing="800">
         <InputFile
           buttonLabel="Select photo"
           label="Profile photo"

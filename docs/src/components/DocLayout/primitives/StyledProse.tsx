@@ -8,7 +8,7 @@ const StyledProse = styled(Box)`
   ${({ theme }) => css`
     font-size: ${theme.orbit.fontSizeTextNormal};
     ${mediaQueries.tablet(css`
-      border-radius: ${theme.orbit.spaceMedium};
+      border-radius: ${theme.orbit.space400};
     `)};
     > * + * {
       margin-top: 16px;
@@ -38,7 +38,7 @@ const StyledProse = styled(Box)`
       margin-top: 12px;
     }
     > ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceLarge};
+      margin-top: ${theme.orbit.space600};
 
       /* Handle spacing after headings through the heading,
         rather than the generic margin-top for all elements in the layout */

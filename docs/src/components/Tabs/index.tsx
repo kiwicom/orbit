@@ -28,7 +28,7 @@ const StyledContainer = styled.div<{ collapsed: boolean }>`
     /* prevents box shadow and tabs stack from overflowing at the bottom in order to */
     /* achieve the effect of attached tabs, also prevents wrapped tabs from showing */
     overflow: hidden;
-    gap: ${theme.orbit.spaceLarge};
+    gap: ${theme.orbit.space600};
 
     ${collapsed &&
     css`
@@ -47,7 +47,7 @@ const StyledContainer = styled.div<{ collapsed: boolean }>`
 const StyledPopoverContent = styled.div`
   ${({ theme }) => css`
     /* close gap between content and Close button on mobile */
-    margin-bottom: -${theme.orbit.spaceMedium};
+    margin-bottom: -${theme.orbit.space400};
     ${mediaQueries.largeMobile(css`
       margin-bottom: 0;
     `)};
@@ -75,7 +75,7 @@ const StyledPopoverTab = styled(Link)<{ $active: boolean }>`
     };
 
     > * + * {
-      margin-left: ${theme.orbit.spaceMedium};
+      margin-left: ${theme.orbit.space400};
     }
   `};
 `;

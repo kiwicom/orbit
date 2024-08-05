@@ -17,14 +17,14 @@ export default {
         ]}
       />
       <Stack>
-        <Stack spacing="small">
+        <Stack spacing="300">
           <Heading id="how-to">How to see the links</Heading>
           <Text>
             To see the links, click in this container. Then use Tab or Shift+Tab to focus on the
             links.
           </Text>
         </Stack>
-        <Stack spacing="small">
+        <Stack spacing="300">
           <Heading id="skiplink">SkipLink</Heading>
           <Text>
             When designing with accessibility in mind, it&apos;s important to remember that not
@@ -44,7 +44,7 @@ export default {
             at the start, consider a SkipNavigation component.
           </Text>
         </Stack>
-        <Stack spacing="small">
+        <Stack spacing="300">
           <Heading id="WCAG">Web Content Accessibility Guidelines</Heading>
           <Text>
             The Web Content Accessibility Guidelines (WCAG) offer advice and information on making

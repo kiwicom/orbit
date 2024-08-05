@@ -35,17 +35,17 @@ export default {
       checked.plane === false || checked.train === false || checked.bus === false;
     return (
       <Stack>
-        <Stack direction="row" spacing="small">
+        <Stack direction="row" spacing="300">
           <Text>Amsterdam</Text>
           <FlightDirect ariaLabel="to" />
           <Text>Barcelona</Text>
         </Stack>
-        <Stack direction="row" spacing="small">
+        <Stack direction="row" spacing="300">
           <Badge>Fri May 17</Badge>
           <Text>to</Text>
           <Badge>No return</Badge>
         </Stack>
-        <Stack direction="row" spacing="small">
+        <Stack direction="row" spacing="300">
           <Popover
             renderInPortal={false}
             content={

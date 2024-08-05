@@ -28,12 +28,12 @@ export const StyledAnchor = styled.a<{ $level: number }>`
       margin-top: 0;
     }
     & + & {
-      margin-top: ${theme.orbit.spaceSmall} !important;
+      margin-top: ${theme.orbit.space300} !important;
     }
     ${$level === 1 &&
     css`
       p + & {
-        margin-top: ${theme.orbit.spaceXLarge};
+        margin-top: ${theme.orbit.space800};
       }
     `};
   `}
@@ -56,7 +56,7 @@ const HeadingWithLink = ({ level, children, noId, spaceAfter = "none" }: Props) 
       href={`#${slug}`}
       title={`Link to heading: ${headingText}`}
     >
-      <Stack inline spacing="XSmall" align="center" spaceAfter={spaceAfter}>
+      <Stack inline spacing="200" align="center" spaceAfter={spaceAfter}>
         {children}
         <StyledLinkIcon>
           <LinkIcon />

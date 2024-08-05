@@ -45,17 +45,17 @@ const TeamMember = ({ position, image, info, twitter, website, dribbble, github,
     <Stack
       inline
       direction="column"
-      spacing="large"
+      spacing="600"
       align="center"
       largeMobile={{ direction: "row", align: "stretch" }}
     >
       {image}
-      <Stack flex shrink direction="column" spacing="medium">
+      <Stack flex shrink direction="column" spacing="400">
         <StyledHeading>
           {name}, {position}
         </StyledHeading>
         <StyledInfo>{info}</StyledInfo>
-        <Stack inline spacing="medium" align="center">
+        <Stack inline spacing="400" align="center">
           {links.map(({ icon, url }) => {
             return (
               url && (

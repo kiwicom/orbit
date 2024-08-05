@@ -162,12 +162,12 @@ export default function DocLayout({
                     <StyledProse
                       padding={
                         noElevation
-                          ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
+                          ? { top: "none", bottom: "800", left: "800", right: "800" }
                           : {
-                              top: "XXLarge",
-                              bottom: "XXLarge",
-                              left: "XLarge",
-                              right: "XLarge",
+                              top: "1000",
+                              bottom: "1000",
+                              left: "800",
+                              right: "800",
                             }
                       }
                     >

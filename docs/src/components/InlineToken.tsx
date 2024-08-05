@@ -28,7 +28,7 @@ const StyledInlineToken = styled.span<{ size?: "medium" | "large" }>`
       padding-right: 8px;
 
       > * + * {
-        margin-left: ${theme.orbit.spaceXSmall};
+        margin-left: ${theme.orbit.space200};
       }
     `};
     ${size === "large" &&
@@ -39,7 +39,7 @@ const StyledInlineToken = styled.span<{ size?: "medium" | "large" }>`
       padding-right: 18px;
 
       > * + * {
-        margin-left: ${theme.orbit.spaceXXSmall};
+        margin-left: ${theme.orbit.space100};
       }
     `};
   `}

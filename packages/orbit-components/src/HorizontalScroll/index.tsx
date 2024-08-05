@@ -53,7 +53,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
   (
     {
       children,
-      spacing = "small",
+      spacing = "300",
       arrows,
       scrollSnap = "none",
       onOverflow,

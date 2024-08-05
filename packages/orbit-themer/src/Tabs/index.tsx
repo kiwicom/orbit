@@ -9,8 +9,8 @@ import ModalExport from "./ModalExport";
 
 const StyledTabs = styled.div`
   ${({ theme }) => css`
-    padding: ${theme.orbit.spaceXLarge} 0;
-    padding-right: ${theme.orbit.spaceMedium};
+    padding: ${theme.orbit.space800} 0;
+    padding-right: ${theme.orbit.space400};
     box-sizing: border-box;
     flex: 0 280px;
     min-width: 280px;

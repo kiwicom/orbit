@@ -115,10 +115,6 @@ export const Playground = ({
   );
 };
 
-Playground.story = {
-  parameters: { knobs: { escapeHTML: false } },
-};
-
 Playground.args = {
   labelClose: "Close",
   labelProgress: "of",

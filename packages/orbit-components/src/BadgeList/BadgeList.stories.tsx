@@ -33,6 +33,12 @@ export const Default: Story = {
       </BadgeListItem>
     </BadgeList>
   ),
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };
 
 export const Types: Story = {
@@ -55,6 +61,12 @@ export const Types: Story = {
       </BadgeList>
     );
   },
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };
 
 export const Sizes: Story = {
@@ -68,6 +80,12 @@ export const Sizes: Story = {
       </BadgeListItem>
     </BadgeList>
   ),
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };
 
 export const Playground: Story = {
@@ -154,4 +172,10 @@ export const RTL: Story = {
       </BadgeList>
     </RenderInRtl>
   ),
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };

@@ -102,7 +102,7 @@ export const Default: Story = {
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
     controls: {
-      exclude: ["content", "size", "removable", "selected", "dateTag", "type", "iconLeft"],
+      disable: true,
     },
   },
 };

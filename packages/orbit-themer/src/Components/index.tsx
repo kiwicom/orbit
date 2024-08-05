@@ -15,10 +15,10 @@ import ButtonLinks from "./ButtonLink";
 const StyledComponentsOuter = styled.div`
   ${({ theme }) => css`
     background: ${theme.orbit.paletteCloudLight};
-    padding: ${theme.orbit.spaceLarge} ${theme.orbit.spaceXXLarge};
+    padding: ${theme.orbit.space600} ${theme.orbit.space1000};
     max-height: 100vh;
     flex: 1 auto;
-    gap: ${theme.orbit.spaceXXXLarge};
+    gap: 52px;
     display: flex;
     flex-direction: column;
     overflow: auto;

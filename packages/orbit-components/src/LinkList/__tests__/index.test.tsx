@@ -6,7 +6,7 @@ import LinkList from "..";
 describe("LinkList", () => {
   it("should have spacing based on gap", () => {
     render(
-      <LinkList dataTest="kek" spacing="XXLarge">
+      <LinkList dataTest="kek" spacing="1000">
         <div>link 1</div>
         <div>link 2</div>
         <div>link 3</div>

@@ -11,7 +11,7 @@ const LinkList = ({
   direction = "column",
   indent,
   legacy = false,
-  spacing = SPACINGS.MEDIUM,
+  spacing = SPACINGS.FOUR_HUNDRED,
   children,
   dataTest,
 }: Props) => (

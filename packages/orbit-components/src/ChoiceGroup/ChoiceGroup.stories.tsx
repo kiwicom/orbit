@@ -1,7 +1,9 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react/";
 import { FixedSizeList } from "react-window";
 
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { LABEL_ELEMENTS, LABEL_SIZES } from "./consts";
 import Radio from "../Radio";
 import Checkbox from "../Checkbox";
@@ -10,103 +12,118 @@ import ChoiceGroup from ".";
 
 ChoiceGroup.displayName = "ChoiceGroup";
 
-export default {
-  title: "ChoiceGroup",
+type ChoiceGroupPropsAndCustomArgs = React.ComponentProps<typeof ChoiceGroup> & {
+  boxShadowSize: string;
 };
 
-export const Default = ({ label }) => {
-  return (
-    <ChoiceGroup label={label} onChange={action("onChange")}>
+const meta: Meta<ChoiceGroupPropsAndCustomArgs> = {
+  title: "ChoiceGroup",
+  component: ChoiceGroup,
+
+  parameters: {
+    controls: {
+      exclude: ["onChange", "onOnlySelection"],
+    },
+  },
+
+  args: {
+    label: "What was the reason for your cancellation?",
+    onlySelectionText: "Only",
+    labelSize: LABEL_SIZES.NORMAL,
+    labelAs: LABEL_ELEMENTS.H4,
+    error: "",
+    filter: false,
+    onChange: action("onChange"),
+    onOnlySelection: action("onOnlySelection"),
+  },
+
+  argTypes: {
+    labelSize: {
+      options: Object.values(LABEL_SIZES),
+      control: {
+        type: "select",
+      },
+    },
+    labelAs: {
+      options: Object.values(LABEL_ELEMENTS),
+      control: {
+        type: "select",
+      },
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<ChoiceGroupPropsAndCustomArgs>;
+
+export const Default: Story = {
+  render: args => (
+    <ChoiceGroup {...args}>
       <Radio label="Reason one" value="one" />
       <Radio label="Reason two" value="two" />
       <Radio label="Reason three" value="three" />
     </ChoiceGroup>
-  );
-};
+  ),
 
-Default.story = {
   parameters: {
-    info: "Playground of ChoiceGroup",
+    controls: {
+      exclude: ["onChange", "onOnlySelection", "onlySelectionText", "filter", "error"],
+    },
+  },
+
+  args: {
+    onlySelectionText: undefined,
+    error: undefined,
   },
 };
 
-Default.args = {
-  label: "What was the reason for your cancellation?",
-};
-
-export const Multiple = ({ label }) => {
-  return (
-    <ChoiceGroup label={label} onChange={action("onChange")}>
+export const Multiple: Story = {
+  render: args => (
+    <ChoiceGroup {...args}>
       <Checkbox label="Reason one" value="one" />
       <Checkbox label="Reason two" value="two" />
       <Checkbox label="Reason three" value="three" />
     </ChoiceGroup>
-  );
+  ),
 };
 
-Multiple.story = {
-  parameters: {
-    info: "Playground of ChoiceGroup",
-  },
-};
-
-Multiple.args = {
-  label: "What was the reason for your cancellation?",
-};
-
-export const Filter = ({ label, onlySelectionText }) => {
-  return (
-    <ChoiceGroup
-      label={label}
-      filter
-      onChange={action("onChange")}
-      onOnlySelection={action("onOnlySelection")}
-      onlySelectionText={onlySelectionText}
-    >
+export const Filter: Story = {
+  render: args => (
+    <ChoiceGroup {...args}>
       <Checkbox label="Reason one" value="one" disabled />
       <Checkbox label="Reason two" value="two" />
       <Checkbox label="Reason three" value="three" />
     </ChoiceGroup>
-  );
-};
+  ),
 
-Filter.story = {
-  parameters: {
-    info: "Playground of ChoiceGroup",
+  args: {
+    filter: true,
   },
 };
 
-Filter.args = {
-  label: "What was the reason for your cancellation?",
-  onlySelectionText: "Only",
-};
-
-export const WithError = ({ label, error }) => {
-  return (
-    <ChoiceGroup label={label} error={error} onChange={action("onChange")}>
+export const WithError: Story = {
+  render: args => (
+    <ChoiceGroup {...args}>
       <Radio label="Reason one" value="one" />
       <Radio label="Reason two" value="two" />
       <Radio label="Reason three" value="three" />
     </ChoiceGroup>
-  );
-};
-
-WithError.story = {
-  name: "With error",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: ["onChange", "onOnlySelection", "onlySelectionText", "filter"],
+    },
+  },
+
+  args: {
+    error: "Error message (explain how to solve it)",
   },
 };
 
-WithError.args = {
-  label: "Label",
-  error: "Error message (explain how to solve it)",
-};
-
-export const RenderProp = ({ boxShadowSize }) => {
-  return (
-    <ChoiceGroup label="What was the reason for your cancellation?" onChange={action("onChange")}>
+export const RenderProp: Story = {
+  render: ({ boxShadowSize, ...args }) => (
+    <ChoiceGroup {...args} label="What was the reason for your cancellation?">
       {({ Container, Item, spacing }) => (
         <FixedSizeList
           outerElementType={({ style, ...props }) => (
@@ -143,65 +160,48 @@ export const RenderProp = ({ boxShadowSize }) => {
         </FixedSizeList>
       )}
     </ChoiceGroup>
-  );
-};
+  ),
 
-RenderProp.story = {
-  name: "Render prop",
+  args: {
+    boxShadowSize: "3px",
+  },
+
   parameters: {
-    info: "A virtual list, demonstrating a use case for passing function as children",
+    controls: {
+      exclude: ["onChange", "onOnlySelection", "onlySelectionText", "filter"],
+    },
   },
 };
 
-RenderProp.args = {
-  boxShadowSize: "3px",
-};
-
-export const Playground = ({ dataTest, label, labelSize, labelAs, error, filter }) => {
-  return (
-    <ChoiceGroup
-      dataTest={dataTest}
-      label={label}
-      labelSize={labelSize}
-      labelAs={labelAs}
-      error={error}
-      filter={filter}
-      onOnlySelection={action("onOnlySelection")}
-      onChange={action("onChange")}
-    >
+export const Playground: Story = {
+  render: args => (
+    <ChoiceGroup {...args}>
       <Radio label="Reason one" value="one" />
       <Radio label="Reason two" value="two" />
       <Radio label="Reason three" value="three" />
     </ChoiceGroup>
-  );
-};
+  ),
 
-Playground.story = {
   parameters: {
     info: "Playground of ChoiceGroup",
   },
 };
 
-Playground.args = {
-  dataTest: "test",
-  label: "What was the reason for your cancellation?",
-  labelSize: LABEL_SIZES.NORMAL,
-  labelAs: LABEL_ELEMENTS.H4,
-  error: "Something is wrong",
-  filter: false,
-};
+export const Rtl: Story = {
+  render: args => (
+    <RenderInRtl>
+      <ChoiceGroup {...args}>
+        <Radio label="Reason one" value="one" />
+        <Radio label="Reason two" value="two" />
+        <Radio label="Reason three" value="three" />
+      </ChoiceGroup>
+    </RenderInRtl>
+  ),
 
-Playground.argTypes = {
-  labelSize: {
-    options: Object.values(LABEL_SIZES),
-    control: {
-      type: "select",
-    },
-  },
-  labelAs: {
-    options: Object.values(LABEL_ELEMENTS),
-    control: {
-      type: "select",
+  parameters: {
+    info: "This is a preview of this component in RTL setup.",
+    controls: {
+      disable: true,
     },
   },
 };

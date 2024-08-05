@@ -145,15 +145,10 @@ export const WithActions: Story = {
 };
 
 export const MultipleCollapses: Story = {
-  render: function Render(args) {
-    const [{ expanded }, updateArgs] = useArgs();
-    const onClick = () => {
-      updateArgs({ expanded: !expanded });
-    };
-
+  render: args => {
     return (
       <Stack spacing="none">
-        <Collapse {...args} onClick={onClick}>
+        <Collapse {...args}>
           <ChoiceGroup
             filter
             onChange={action("onChange")}
@@ -164,7 +159,7 @@ export const MultipleCollapses: Story = {
             <Checkbox label="Train" value="three" />
           </ChoiceGroup>
         </Collapse>
-        <Collapse {...args} onClick={onClick}>
+        <Collapse {...args}>
           <ChoiceGroup
             filter
             onChange={action("onChange")}
@@ -175,7 +170,7 @@ export const MultipleCollapses: Story = {
             <Checkbox label="Train" value="three" />
           </ChoiceGroup>
         </Collapse>
-        <Collapse {...args} onClick={onClick}>
+        <Collapse {...args}>
           <ChoiceGroup
             filter
             onChange={action("onChange")}
@@ -190,8 +185,15 @@ export const MultipleCollapses: Story = {
     );
   },
 
+  parameters: {
+    controls: {
+      exclude: ["expanded", "initialExpanded"],
+    },
+  },
+
   args: {
     ...WithActions.args,
+    expanded: undefined,
   },
 };
 

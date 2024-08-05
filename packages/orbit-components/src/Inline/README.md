@@ -56,15 +56,26 @@ All this properties - objects have the some own properties and none is required.
 
 ### spacingToken
 
-| spacingToken |
-| :----------- |
-| `"none"`     |
-| `"XXXSmall"` |
-| `"XXSmall"`  |
-| `"XSmall"`   |
-| `"small"`    |
-| `"medium"`   |
-| `"large"`    |
-| `"XLarge"`   |
-| `"XXLarge"`  |
-| `"XXXLarge"` |
+| spacingToken                                |
+| :------------------------------------------ |
+| `"none"`                                    |
+| `"XXXSmall"` - **deprecated (use `"50"`)**  |
+| `"XXSmall"` - **deprecated (use `"100"`)**  |
+| `"XSmall"` - **deprecated (use `"200"`)**   |
+| `"small"` - **deprecated (use `"300"`)**    |
+| `"medium"` - **deprecated (use `"400"`)**   |
+| `"large"` - **deprecated (use `"600"`)**    |
+| `"XLarge"` - **deprecated (use `"800"`)**   |
+| `"XXLarge"` - **deprecated (use `"1000"`)** |
+| `"50"`                                      |
+| `"100"`                                     |
+| `"150"`                                     |
+| `"200"`                                     |
+| `"300"`                                     |
+| `"400"`                                     |
+| `"500"`                                     |
+| `"600"`                                     |
+| `"800"`                                     |
+| `"1000"`                                    |
+| `"1200"`                                    |
+| `"1600"`                                    |

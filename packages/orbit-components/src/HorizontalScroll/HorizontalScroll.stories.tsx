@@ -55,7 +55,7 @@ Default.args = {
   elevationColor: "",
   arrows: false,
   arrowColor: "",
-  spacing: SPACINGS.XXXSMALL,
+  spacing: SPACINGS.FIFTY,
 };
 
 Default.argTypes = {
@@ -103,7 +103,7 @@ export const NoScroll = ({ spacing }) => {
 };
 
 NoScroll.args = {
-  spacing: SPACINGS.XXXSMALL,
+  spacing: SPACINGS.FIFTY,
 };
 
 NoScroll.argTypes = {

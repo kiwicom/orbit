@@ -68,3 +68,11 @@ Rtl.story = {
     info: "This is a preview of this component in RTL setup.",
   },
 };
+
+Rtl.args = {
+  label: "Gender",
+  help: "When Chuck Norris plays dodgeball, the balls dodge him.",
+  error: "Chuck Norris makes onions cry.",
+  maxWidth: "",
+  showTooltip: false,
+};

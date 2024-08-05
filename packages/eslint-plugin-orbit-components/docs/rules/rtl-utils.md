@@ -34,7 +34,7 @@ const StyledWrapper = styled.div`
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
-  padding: ${({ theme }) => (theme.rtl ? `0 ${theme.orbit.spaceXLarge}px 0 0` : `0 0 0 ${theme.orbit.spaceXLarge}px)};
+  padding: ${({ theme }) => (theme.rtl ? `0 ${theme.orbit.space800}px 0 0` : `0 0 0 ${theme.orbit.space800}px)};
 `;
 ```
 
@@ -54,7 +54,7 @@ import styled from "styled-components";
 import { right } from "@kiwicom/orbit-components/lib/utils/rtl";
 
 const StyledWrapper = styled.div`
-  margin-${right}: ${({ theme }) => theme.orbit.spaceSmall};
+  margin-${right}: ${({ theme }) => theme.orbit.space300};
 `;
 ```
 
@@ -63,6 +63,6 @@ import styled from "styled-components";
 import { rtlSpacing } from "@kiwicom/orbit-components/lib/utils/rtl";
 
 const StyledWrapper = styled.div`
-  padding: ${({ theme }) => rtlSpacing(`${theme.orbit.spaceSmall} 0 ${theme.orbit.spaceSmall})};
+  padding: ${({ theme }) => rtlSpacing(`${theme.orbit.space300} 0 ${theme.orbit.space300})};
 `;
 ```

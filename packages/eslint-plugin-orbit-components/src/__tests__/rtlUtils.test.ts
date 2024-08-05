@@ -30,7 +30,7 @@ describe("rtl-utils", () => {
           import { right } from "@kiwicom/orbit-components/lib/utils/rtl";
 
             const StyledWrapper = styled.div\`
-              margin-\${right}: \${({ theme }) => theme.orbit.spaceSmall};
+              margin-\${right}: \${({ theme }) => theme.orbit.space300};
             \`
           `,
       },
@@ -40,7 +40,7 @@ describe("rtl-utils", () => {
           import { right } from "@kiwicom/orbit-components/lib/utils/rtl";
 
             const StyledWrapper = styled.div\`
-              margin-\${right}: \${({ theme }) => theme.orbit.spaceSmall};
+              margin-\${right}: \${({ theme }) => theme.orbit.space300};
             \`
           `,
       },
@@ -50,7 +50,7 @@ describe("rtl-utils", () => {
           import { right } from "@kiwicom/orbit-components/lib/utils/rtl";
 
             const StyledWrapper = styled.div\`
-              padding: \${({ theme }) => rtlSpacing(\`\${theme.orbit.spaceSmall} 0 \${theme.orbit.spaceSmall}\`)};
+              padding: \${({ theme }) => rtlSpacing(\`\${theme.orbit.space300} 0 \${theme.orbit.space300}\`)};
             \`
           `,
       },
@@ -105,7 +105,7 @@ describe("rtl-utils", () => {
         code: `
           import styled from 'styled-components';
             const StyledWrapper = styled.div\`
-              padding: \${({ theme }) => (theme.rtl ? "0 10px 0 0" : \`\${theme.orbit.spaceLarge} 0 0 0\`)};
+              padding: \${({ theme }) => (theme.rtl ? "0 10px 0 0" : \`\${theme.orbit.space600} 0 0 0\`)};
           \`
           `,
         errors: [
@@ -119,7 +119,7 @@ describe("rtl-utils", () => {
           import styled from 'styled-components';
 
             const StyledWrapper = styled.div\`
-              padding: \${({ theme }) => theme.rtl ? \`\${theme.orbit.spaceXLarge} 0 0 0px\` : "0 0 10px 0"};
+              padding: \${({ theme }) => theme.rtl ? \`\${theme.orbit.space800} 0 0 0px\` : "0 0 10px 0"};
             \`;
           `,
         errors: [

@@ -55,7 +55,7 @@ const Stack = (props: Props) => {
     const isFlex = shouldUseFlex(props);
 
     const {
-      spacing = SPACING.medium,
+      spacing = SPACING.FOUR_HUNDRED,
       spaceAfter,
       direction = isFlex ? DIRECTION.ROW : DIRECTION.COLUMN,
       grow = true,

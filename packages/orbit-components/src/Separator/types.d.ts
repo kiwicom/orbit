@@ -2,7 +2,18 @@
 // Project: http://github.com/kiwicom/orbit
 import type * as Common from "../common/types";
 
-export type SideOffset = "none" | "small" | "medium" | "large" | "XLarge" | "XXLarge";
+export type SideOffset =
+  | "none"
+  | "small"
+  | "medium"
+  | "large"
+  | "XLarge"
+  | "XXLarge"
+  | "300"
+  | "400"
+  | "600"
+  | "800"
+  | "1000";
 export type Align = "left" | "center" | "right";
 
 export type BorderColorClass =

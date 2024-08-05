@@ -27,13 +27,19 @@ const Footer = () => {
 const meta: Meta<typeof Accordion> = {
   title: "Accordion",
   component: Accordion,
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Accordion>;
 
 export const Default: Story = {
-  render: () => {
+  render: function Render() {
     const [expandedSection, setExpandedSection] = React.useState("0X1");
 
     return (
@@ -77,7 +83,7 @@ export const Default: Story = {
 };
 
 export const AccordionWithDisabledSections: Story = {
-  render: () => {
+  render: function Render() {
     const [expandedSection, setExpandedSection] = React.useState("0X1");
 
     return (
@@ -134,7 +140,7 @@ export const AccordionWithDisabledSections: Story = {
 };
 
 export const AccordionWithCustomActions: Story = {
-  render: () => {
+  render: function Render() {
     const [expandedSection, setExpandedSection] = React.useState("0X1");
 
     return (
@@ -188,7 +194,7 @@ export const AccordionWithCustomActions: Story = {
 };
 
 export const AccordionWithStickyFooter: Story = {
-  render: () => {
+  render: function Render() {
     const [expandedSection, setExpandedSection] = React.useState("0X1");
 
     return (

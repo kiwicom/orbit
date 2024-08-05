@@ -38,6 +38,12 @@ export const Default = {
       <BreadcrumbsItem>4. Level</BreadcrumbsItem>
     </Breadcrumbs>
   ),
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };
 
 export const Playground: Story = {
@@ -104,6 +110,12 @@ export const Rtl: Story = {
       </Breadcrumbs>
     </RenderInRtl>
   ),
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };
 
 export const BackLink: Story = {
@@ -115,5 +127,8 @@ export const BackLink: Story = {
 
   parameters: {
     info: "Render the back button as a link.",
+    controls: {
+      disable: true,
+    },
   },
 };

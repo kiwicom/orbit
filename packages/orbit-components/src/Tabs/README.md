@@ -47,7 +47,7 @@ Table below contains all types of the props available in TabList component.
 | dataTest  | `string`        |         | Optional prop for testing purposes.                                                  |
 | children  | `React.node`    |         | Required prop that should contain the `Tab` components.                              |
 | compact   | `boolean`       | `false` | Optional prop that responsible for `Tab`size, if provided, the Tabs will be smaller. |
-| spacing   | [`enum`](#enum) | `none`  | Optional prop to set gap between `Tab` elements                                      |
+| spacing   | [`enum`](#enum) | `none`  | Optional prop to set gap between `Tab` elements.                                     |
 | fullWidth | `boolean`       | `false` | Optional prop to set `TabList` to full width.                                        |
 
 ### Tab
@@ -91,14 +91,26 @@ Table below contains all types of the props available in TabPanel component.
 
 #### enum
 
-| type      | spacing    |
-| :-------- | ---------- |
-| `default` | `none`     |
-| `basic`   | `XXXSmall` |
-| `medium`  | `XXSmall`  |
-| `top`     | `XSmall`   |
-|           | `small`    |
-|           | `medium`   |
-|           | `large`    |
-|           | `XLarge`   |
-|           | `XXLarge`  |
+| type      | spacing                                   |
+| :-------- | ----------------------------------------- |
+| `default` | `none`                                    |
+| `basic`   | `XXXSmall`- **deprecated (use `"50"`)**   |
+| `medium`  | `XXSmall` - **deprecated (use `"100"`)**  |
+| `top`     | `XSmall` - **deprecated (use `"200"`)**   |
+|           | `small` - **deprecated (use `"300"`)**    |
+|           | `medium` - **deprecated (use `"400"`)**   |
+|           | `large` - **deprecated (use `"600"`)**    |
+|           | `XLarge` - **deprecated (use `"800"`)**   |
+|           | `XXLarge` - **deprecated (use `"1000"`)** |
+|           | `50`                                      |
+|           | `100`                                     |
+|           | `150`                                     |
+|           | `200`                                     |
+|           | `300`                                     |
+|           | `400`                                     |
+|           | `500`                                     |
+|           | `600`                                     |
+|           | `800`                                     |
+|           | `1000`                                    |
+|           | `1200`                                    |
+|           | `1600`                                    |

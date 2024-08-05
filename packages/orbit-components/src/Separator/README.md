@@ -27,12 +27,16 @@ The table below contains all types of props available in the Separator component
 
 ### enum
 
-| indent      | align      | type       | spaceAfter   |
-| :---------- | :--------- | :--------- | :----------- |
-| `"none"`    | `"left"`   | `"solid"`  | `"none"`     |
-| `"small"`   | `"right"`  | `"dashed"` | `"smallest"` |
-| `"medium"`  | `"center"` | `"dotted"` | `"small"`    |
-| `"large"`   |            | `"double"` | `"normal"`   |
-| `"XLarge"`  |            | `"none"`   | `"medium"`   |
-| `"XXLarge"` |            |            | `"large"`    |
-|             |            |            | `"largest"`  |
+| sideOffset                                 | align      | type       | spaceAfter   |
+| :----------------------------------------- | :--------- | :--------- | :----------- |
+| `"none"`                                   | `"left"`   | `"solid"`  | `"none"`     |
+| `"small"` - **deprecated (use `"300"`)**   | `"right"`  | `"dashed"` | `"smallest"` |
+| `"medium"` - **deprecated (use `"400"`)**  | `"center"` | `"dotted"` | `"small"`    |
+| `"large"` - **deprecated (use `"600"`)**   |            | `"double"` | `"normal"`   |
+| `"XLarge"` - **deprecated (use `"800"`)**  |            | `"none"`   | `"medium"`   |
+| `"XXLarge"` - **deprecated (use`"1000"`)** |            |            | `"large"`    |
+| `"300"`                                    |            |            | `"largest"`  |
+| `"400"`                                    |            |            |              |
+| `"600"`                                    |            |            |              |
+| `"800"`                                    |            |            |              |
+| `"1000"`                                   |            |            |              |

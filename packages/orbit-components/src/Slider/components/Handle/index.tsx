@@ -83,7 +83,7 @@ const Handle = ({
   return (
     <div
       className={cx(
-        "size-lg shadow-action bg-white-normal duration-fast tap-color-none hover:shadow-action-active active:shadow-action-active absolute bottom-0 flex cursor-pointer select-none items-center justify-center rounded-full transition-shadow ease-in-out",
+        "size-lg shadow-level1 bg-white-normal duration-fast tap-color-none hover:shadow-level2 active:shadow-level2 absolute bottom-0 flex cursor-pointer select-none items-center justify-center rounded-full transition-shadow ease-in-out",
         onTop && "z-20",
       )}
       style={{

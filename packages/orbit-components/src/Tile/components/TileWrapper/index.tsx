@@ -37,7 +37,7 @@ const TileWrapper = ({
 
   return (
     <WrapperComponent
-      className="orbit-tile-wrapper [&_.orbit-tile-header-icon-right]:hover:text-ink-light-hover font-base text-ink-dark shadow-action duration-fast hover:shadow-action-active rounded-150 bg-white-normal de:rounded-100 box-border block w-full no-underline transition-shadow ease-in-out"
+      className="orbit-tile-wrapper [&_.orbit-tile-header-icon-right]:hover:text-ink-light-hover font-base text-ink-dark shadow-level1 duration-fast hover:shadow-level2 rounded-150 bg-white-normal de:rounded-100 box-border block w-full no-underline transition-shadow ease-in-out"
       data-test={dataTest}
       onClick={onClick}
       onKeyDown={onKeyDown}

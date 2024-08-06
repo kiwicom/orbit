@@ -72,7 +72,7 @@ const ItinerarySegment = ({
         "rounded-150 pb-sm px-0",
         spaceAfter && spaceAfterClasses[spaceAfter],
         !noElevation && "shadow-fixed",
-        actionable && !noElevation && "hover:shadow-action-active focus:shadow-action-active",
+        actionable && !noElevation && "hover:shadow-level2 focus:shadow-level2",
       )}
       data-test={dataTest}
     >

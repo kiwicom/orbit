@@ -42,7 +42,7 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
               "bg-white-normal duration-fast shadow-switch absolute box-border inline-flex size-[24px] items-center justify-center rounded-full",
               "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
               "[&_svg]:size-icon-small",
-              !disabled && "active:shadow-action-active",
+              !disabled && "active:shadow-level2",
               !checked && (icon ? "[&_svg]:text-ink-normal" : "[&_svg]:text-cloud-dark"),
               checked
                 ? "[&_svg]:text-blue-normal left-[calc(100%+2px)] -translate-x-full"

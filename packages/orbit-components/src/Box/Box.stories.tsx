@@ -60,12 +60,13 @@ enum TEXT_ALIGN {
 }
 
 enum ELEVATION {
-  ACTION = "action",
   FIXED = "fixed",
-  RAISED = "raised",
-  OVERLAY = "overlay",
   FIXEDREVERSE = "fixedReverse",
-  RAISEDREVERSE = "raisedReverse",
+  LEVEL_1 = "level1",
+  LEVEL_2 = "level2",
+  LEVEL_3 = "level3",
+  LEVEL_3REVERSE = "level3Reverse",
+  LEVEL_4 = "level4",
 }
 
 enum BORDER_RADIUS {
@@ -416,7 +417,7 @@ export const Elevation = ({ elevation }) => {
 };
 
 Elevation.args = {
-  elevation: ELEVATION.ACTION,
+  elevation: ELEVATION.LEVEL_1,
 };
 
 Elevation.argTypes = {
@@ -570,7 +571,7 @@ Playground.args = {
   maxWidth: "300px",
   height: "auto",
   maxHeight: "100px",
-  elevation: ELEVATION.ACTION,
+  elevation: ELEVATION.LEVEL_1,
   borderRadius: BORDER_RADIUS.ONE_HUNDRED,
   position: POSITION.RELATIVE,
   top: "10px",

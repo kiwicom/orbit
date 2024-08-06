@@ -10,7 +10,12 @@ export type Elevation =
   | "raised"
   | "overlay"
   | "fixedReverse"
-  | "raisedReverse";
+  | "raisedReverse"
+  | "level1"
+  | "level2"
+  | "level3"
+  | "level3Reverse"
+  | "level4";
 
 export type ColorTokens =
   | "blueLight"

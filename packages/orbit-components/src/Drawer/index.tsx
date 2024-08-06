@@ -118,7 +118,7 @@ const Drawer = ({
           "font-base",
           "overflow-y-auto",
           "overflow-x-hidden",
-          "shadow-raised",
+          "shadow-level3",
           "duration-normal transform-gpu transition-transform ease-in-out",
           getTransitionClasses(shown, position),
           suppressed ? "bg-cloud-light" : "bg-white-normal",

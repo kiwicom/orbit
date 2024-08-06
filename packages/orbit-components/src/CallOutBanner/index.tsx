@@ -24,7 +24,7 @@ const CallOutBanner = ({
     className={cx(
       "orbit-call-out-banner bg-white-normal rounded-50 p-md lm:flex-row lm:p-lg flex flex-col items-start justify-start border border-solid text-start",
       onClick
-        ? "shadow-action duration-fast hover:shadow-action-active active:shadow-action-active cursor-pointer border-transparent transition-shadow ease-in-out hover:outline-none active:outline-none"
+        ? "shadow-level1 duration-fast hover:shadow-level2 active:shadow-level2 cursor-pointer border-transparent transition-shadow ease-in-out hover:outline-none active:outline-none"
         : "border-cloud-normal",
     )}
     role="button"

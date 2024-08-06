@@ -101,7 +101,7 @@ const Dialog = ({
           ref={ref}
           style={{ maxWidth }}
           className={cx([
-            "shadow-overlay pt-lg px-md pb-md bg-white-normal rounded-dialog-mobile box-border block w-full",
+            "shadow-level4 pt-lg px-md pb-md bg-white-normal rounded-dialog-mobile box-border block w-full",
             shown ? "bottom-0" : "-bottom-full",
             "lm:min-w-dialog-width lm:p-lg lm:rounded-dialog-desktop",
           ])}

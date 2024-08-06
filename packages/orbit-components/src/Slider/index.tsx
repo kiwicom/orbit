@@ -362,7 +362,7 @@ const Slider = ({
           </Hide>
           <div
             className={cx(
-              "pb-xs tb:w-[calc(100%+48px)] tb:absolute tb:-bottom-md tb:-inset-x-lg tb:pt-sm tb:px-lg tb:pb-[48px] tb:rounded-100 tb:transition-opacity tb:ease-in-out tb:duration-fast tb:bg-white-normal tb:shadow-raised",
+              "pb-xs tb:w-[calc(100%+48px)] tb:absolute tb:-bottom-md tb:-inset-x-lg tb:pt-sm tb:px-lg tb:pb-[48px] tb:rounded-100 tb:transition-opacity tb:ease-in-out tb:duration-fast tb:bg-white-normal tb:shadow-level3",
               focused ? "tb:visible tb:opacity-100" : "tb:invisible tb:opacity-0",
             )}
           >

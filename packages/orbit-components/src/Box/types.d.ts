@@ -5,12 +5,17 @@ import type * as React from "react";
 import type * as Common from "../common/types";
 
 export type Elevation =
-  | "action"
+  | "action" // deprecated
   | "fixed"
-  | "raised"
-  | "overlay"
+  | "raised" // deprecated
+  | "overlay" // deprecated
   | "fixedReverse"
-  | "raisedReverse";
+  | "raisedReverse" // deprecated
+  | "level1"
+  | "level2"
+  | "level3"
+  | "level3Reverse"
+  | "level4";
 
 export type ColorTokens =
   | "blueLight"

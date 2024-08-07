@@ -208,12 +208,13 @@ Based on our [elevation system](https://orbit.kiwi/foundation/elevation-hierarch
 
 – suppressed
 – flat
-– action
+– level 1
+– level 2
+– level 3
+– level 3 reverse
+– level 4
 – fixed
 – fixedReverse
-– raised
-– raisedReverse
-– overlay
 
 ### Viewports
 

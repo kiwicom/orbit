@@ -1,57 +1,34 @@
 import React from "react";
+import type { Meta, StoryObj } from "@storybook/react/";
 
 import Text from "../Text";
-import List, { ListItem } from "../List";
 
 import Coupon from ".";
 
-export default {
+type CouponPropsAndCustomArgs = React.ComponentProps<typeof Coupon> & { content: string };
+
+const meta: Meta<CouponPropsAndCustomArgs> = {
   title: "Coupon",
-};
+  component: Coupon,
 
-export const Default = ({ content }) => {
-  return (
-    <List>
-      <ListItem>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetuer <Coupon>{content}</Coupon> elit. Proin pede
-          metus, vulputate nec, fermentum fringilla, vehicula vitae, justo.
-        </Text>
-      </ListItem>
-    </List>
-  );
-};
-
-Default.story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+
+  args: {
+    id: "couponId",
+    content: "CODE",
+  },
 };
 
-Default.args = {
-  content: "PROMOTIONCODE",
-};
+export default meta;
+type Story = StoryObj<CouponPropsAndCustomArgs>;
 
-export const Playground = ({ dataTest, id, content }) => {
-  return (
+export const Playground: Story = {
+  render: ({ content }) => (
     <Text>
-      Lorem ipsum dolor sit amet, consectetuer{" "}
-      <Coupon dataTest={dataTest} id={id}>
-        {content}
-      </Coupon>{" "}
-      elit. Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo.
+      Lorem ipsum dolor sit amet, consectetuer <Coupon>{content}</Coupon> elit. Proin pede metus,
+      vulputate nec, fermentum fringilla, vehicula vitae, justo.
     </Text>
-  );
-};
-
-Playground.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-Playground.args = {
-  dataTest: "test",
-  id: "couponId",
-  content: "CODE",
+  ),
 };

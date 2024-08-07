@@ -29,7 +29,7 @@ const tileMixin = css`
     border-radius: 16px;
     box-sizing: border-box;
     padding: ${theme.orbit.spaceXLarge};
-    box-shadow: ${theme.orbit.boxShadowAction};
+    box-shadow: ${theme.orbit.elevationLevel1BoxShadow};
     > div {
       height: 100%;
       margin-right: ${theme.orbit.spaceXSmall};

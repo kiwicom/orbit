@@ -65,7 +65,7 @@ const ItineraryStatus = ({
         "rounded-150 shadow-fixed box-border flex w-full flex-col border-0 border-s-[3px] border-solid",
         type && borderColorClasses[type],
         spaceAfter && spaceAfterClasses[spaceAfter],
-        actionable && "hover:shadow-action-active",
+        actionable && "hover:shadow-level2",
       )}
     >
       <div

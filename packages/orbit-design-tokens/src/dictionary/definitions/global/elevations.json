@@ -29,6 +29,44 @@
         "background": {
           "type": "color",
           "category": "elevation",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{foundation.palette.white.normal}",
+          "deprecated-version": "9.0.0"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "category": "elevation",
+          "value": "{foundation.palette.ink.dark}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 0,
+                "blur": 2,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": 1,
+                "blur": 4,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 12
+              }
+            ]
+          },
+          "deprecated": true,
+          "deprecated-replace": "{global.elevation.level1.box-shadow}",
+          "deprecated-version": "9.0.0"
+        }
+      },
+      "level1": {
+        "background": {
+          "type": "color",
+          "category": "elevation",
           "value": "{foundation.palette.white.normal}"
         },
         "box-shadow": {
@@ -58,6 +96,44 @@
         }
       },
       "action-active": {
+        "background": {
+          "type": "color",
+          "category": "elevation",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{foundation.palette.white.normal}",
+          "deprecated-version": "9.0.0"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "category": "elevation",
+          "value": "{foundation.palette.ink.dark}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 1,
+                "blur": 4,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": 4,
+                "blur": 8,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 12
+              }
+            ]
+          },
+          "deprecated": true,
+          "deprecated-replace": "{global.elevation.level2.box-shadow}",
+          "deprecated-version": "9.0.0"
+        }
+      },
+      "level2": {
         "background": {
           "type": "color",
           "category": "elevation",
@@ -157,6 +233,44 @@
         "background": {
           "type": "color",
           "category": "elevation",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{foundation.palette.white.normal}",
+          "deprecated-version": "9.0.0"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "category": "elevation",
+          "value": "{foundation.palette.ink.dark}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 4,
+                "blur": 8,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": 8,
+                "blur": 24,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 24
+              }
+            ]
+          },
+          "deprecated": true,
+          "deprecated-replace": "{global.elevation.level3.box-shadow}",
+          "deprecated-version": "9.0.0"
+        }
+      },
+      "level3": {
+        "background": {
+          "type": "color",
+          "category": "elevation",
           "value": "{foundation.palette.white.normal}"
         },
         "box-shadow": {
@@ -189,6 +303,44 @@
         "background": {
           "type": "color",
           "category": "elevation",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{foundation.palette.white.normal}",
+          "deprecated-version": "9.0.0"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "category": "elevation",
+          "value": "{foundation.palette.ink.dark}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": -4,
+                "blur": 8,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 16
+              },
+              {
+                "x": 0,
+                "y": -8,
+                "blur": 24,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 24
+              }
+            ]
+          },
+          "deprecated": true,
+          "deprecated-replace": "{global.elevation.level3-reverse.box-shadow}",
+          "deprecated-version": "9.0.0"
+        }
+      },
+      "level3-reverse": {
+        "background": {
+          "type": "color",
+          "category": "elevation",
           "value": "{foundation.palette.white.normal}"
         },
         "box-shadow": {
@@ -218,6 +370,44 @@
         }
       },
       "overlay": {
+        "background": {
+          "type": "color",
+          "category": "elevation",
+          "value": "{foundation.palette.white.normal}",
+          "deprecated": true,
+          "deprecated-replace": "{foundation.palette.white.normal}",
+          "deprecated-version": "9.0.0"
+        },
+        "box-shadow": {
+          "type": "box-shadow",
+          "category": "elevation",
+          "value": "{foundation.palette.ink.dark}",
+          "attributes": {
+            "box-shadow": [
+              {
+                "x": 0,
+                "y": 12,
+                "blur": 24,
+                "spread": -4,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 24
+              },
+              {
+                "x": 0,
+                "y": 8,
+                "blur": 60,
+                "spread": 0,
+                "color": "{foundation.palette.ink.dark}",
+                "opacity": 32
+              }
+            ]
+          },
+          "deprecated": true,
+          "deprecated-replace": "{global.elevation.level4.box-shadow}",
+          "deprecated-version": "9.0.0"
+        }
+      },
+      "level4": {
         "background": {
           "type": "color",
           "category": "elevation",

@@ -61,14 +61,19 @@ const getBackgroundColors = (tokens: typeof defaultTokens) => {
     {
       "elevation-flat": tokens.elevationFlatBackground,
       "elevation-suppressed": tokens.elevationSuppressedBackground,
-      "elevation-action": tokens.elevationActionBackground,
-      "elevation-action-active": tokens.elevationActionActiveBackground,
+      "elevation-action": tokens.elevationActionBackground, // deprecated
+      "elevation-action-active": tokens.elevationActionActiveBackground, // deprecated
       "elevation-fixed": tokens.elevationFixedBackground,
       "elevation-fixed-reverse": tokens.elevationFixedReverseBackground,
       "elevation-flat-border-color": tokens.elevationFlatBorderColor,
-      "elevation-raised": tokens.elevationRaisedBackground,
-      "elevation-raised-reverse": tokens.elevationRaisedReverseBackground,
-      "elevation-overlay": tokens.elevationOverlayBackground,
+      "elevation-raised": tokens.elevationRaisedBackground, // deprecated
+      "elevation-raised-reverse": tokens.elevationRaisedReverseBackground, // deprecated
+      "elevation-overlay": tokens.elevationOverlayBackground, // deprecated
+      "elevation-level1": tokens.elevationLevel1Background,
+      "elevation-level2": tokens.elevationLevel2Background,
+      "elevation-level3": tokens.elevationLevel3Background,
+      "elevation-level3-reverse": tokens.elevationLevel3ReverseBackground,
+      "elevation-level4": tokens.elevationLevel4Background,
     },
   );
 };

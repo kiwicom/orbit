@@ -44,7 +44,33 @@ const headingTransformations = [
   { from: "font-heading-title1", to: "font-heading-title0" },
 ];
 
-const transformations = [...borderRadiusTransformations, ...headingTransformations];
+const elevationTransformations = [
+  // old deprecated tokens
+  { from: "boxShadowAction", to: "elevationActionBoxShadow" },
+  { from: "boxShadowActionActive", to: "elevationActionActiveBoxShadow" },
+  { from: "boxShadowFixed", to: "elevationFixedBoxShadow" },
+  { from: "boxShadowFixedReverse", to: "elevationFixedReverseBoxShadow" },
+  { from: "boxShadowOverlay", to: "elevationOverlayBoxShadow" },
+  { from: "boxShadowRaised", to: "elevationRaisedBoxShadow" },
+  { from: "boxShadowRaisedReverse", to: "elevationRaisedReverseBoxShadow" },
+  // new tokens
+  { from: "elevationActionBoxShadow", to: "elevationLevel1BoxShadow" },
+  { from: "elevationActionActiveBoxShadow", to: "elevationLevel2BoxShadow" },
+  { from: "elevationRaisedBoxShadow", to: "elevationLevel3BoxShadow" },
+  { from: "elevationRaisedReverseBoxShadow", to: "elevationLevel3ReverseBoxShadow" },
+  { from: "elevationOverlayBoxShadow", to: "elevationLevel4BoxShadow" },
+  { from: "shadow-action-active", to: "shadow-level2" },
+  { from: "shadow-action", to: "shadow-level1" },
+  { from: "shadow-raised-reverse", to: "shadow-level3-reverse" },
+  { from: "shadow-raised", to: "shadow-level3" },
+  { from: "shadow-overlay", to: "shadow-level4" },
+];
+
+const transformations = [
+  ...borderRadiusTransformations,
+  ...headingTransformations,
+  ...elevationTransformations,
+];
 
 const ignoredFiles = [
   "/orbit-components/src/Heading/*",

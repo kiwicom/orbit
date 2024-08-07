@@ -62,7 +62,7 @@ const DialogContent = ({
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <div
         className={cx(
-          "bg-ink-dark shadow-raised-reverse p-md bottom-md inset-x-md rounded-300 fixed z-[10012] box-border max-h-[calc(100%-theme(spacing.xl))] w-[calc(100%-theme(spacing.xl))] overflow-y-scroll",
+          "bg-ink-dark shadow-level3-reverse p-md bottom-md inset-x-md rounded-300 fixed z-[10012] box-border max-h-[calc(100%-theme(spacing.xl))] w-[calc(100%-theme(spacing.xl))] overflow-y-scroll",
           "[transition:transform_theme(transitionDuration.normal)_ease-in-out,_visibility_theme(transitionDuration.fast)_linear]",
           "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&_img]:max-w-full",
           shown

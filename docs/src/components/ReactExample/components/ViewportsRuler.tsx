@@ -46,7 +46,7 @@ const StyledCell = styled.button.attrs({ type: "button" })<{
     }
     &:focus {
       outline: none;
-      box-shadow: ${theme.orbit.boxShadowFixed};
+      box-shadow: ${theme.orbit.elevationFixedBoxShadow};
     }
   `}
 `;

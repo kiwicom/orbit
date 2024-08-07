@@ -63,7 +63,7 @@ export const StyledColorContainerWrapper = styled(({ className, children }) => (
     :focus,
     :active {
       transform: scale(1.01);
-      box-shadow: ${theme.orbit.boxShadowRaised};
+      box-shadow: ${theme.orbit.elevationLevel3BoxShadow};
 
       ${StyledCopyWrapper} {
         visibility: visible;

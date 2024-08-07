@@ -422,10 +422,10 @@ const Modal = React.forwardRef<Instance, Props>(
             "orbit-modal-wrapper",
             "fixed mx-auto my-0 box-border flex min-h-full w-full items-start",
             disableAnimation
-              ? !isMobileFullPage && "top-[32px]"
+              ? !isMobileFullPage && "top-xl"
               : [
                   "duration-normal transition-[top] ease-in-out",
-                  loaded ? !isMobileFullPage && "top-[32px]" : "top-full",
+                  loaded ? !isMobileFullPage && "top-xl" : "top-full",
                 ],
             "lm:relative lm:top-0 lm:items-center",
             maxWidthClasses.largeMobile[size],
@@ -436,7 +436,7 @@ const Modal = React.forwardRef<Instance, Props>(
             className={cx(
               "orbit-modal-wrapper-content",
               "lm:rounded-modal lm:overflow-visible overflow-y-auto overflow-x-hidden",
-              "font-base bg-elevation-flat shadow-overlay absolute box-border w-full",
+              "font-base bg-elevation-flat shadow-level4 absolute box-border w-full",
               "lm:relative lm:bottom-auto lm:pb-0",
               "lm:[&_.orbit-modal-section:last-of-type]:pb-xxl lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
               "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-theme(spacing.xxl))]",
@@ -489,7 +489,7 @@ const Modal = React.forwardRef<Instance, Props>(
                   "duration-fast transition-[shadow,_background-color] ease-in-out",
                   "lm:rounded-none",
                   fixedClose || scrolled ? "lm:top-0 lm:right-auto fixed" : "absolute",
-                  !isMobileFullPage && (fixedClose || scrolled) ? "top-[32px]" : "top-0",
+                  !isMobileFullPage && (fixedClose || scrolled) ? "top-xl" : "top-0",
                   !isMobileFullPage && "rounded-t-modal",
                   modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
                   scrolled && "shadow-fixed bg-white-normal",

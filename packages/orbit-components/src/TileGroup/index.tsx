@@ -11,7 +11,7 @@ const TileGroup = ({ children, dataTest, id, as }: Props) => {
   return (
     <Component
       className={cx(
-        "shadow-action rounded-100 [&_.orbit-slide]:bg-white-normal m-0 w-full p-0",
+        "shadow-level1 rounded-100 [&_.orbit-slide]:bg-white-normal m-0 w-full p-0",
         "first:[&_.orbit-tile-wrapper]:rounded-t-100 last:[&_.orbit-tile-wrapper]:rounded-b-100 not-last:[&_.orbit-tile-wrapper]:border-b not-last:[&_.orbit-tile-wrapper]:border-cloud-normal",
         "[&_.orbit-tile-wrapper]:duration-fast hover:[&_.orbit-tile-wrapper]:bg-cloud-normal focus:[&_.orbit-tile-wrapper]:bg-cloud-normal [&_.orbit-tile-wrapper]:rounded-none [&_.orbit-tile-wrapper]:shadow-none [&_.orbit-tile-wrapper]:transition-colors [&_.orbit-tile-wrapper]:ease-in-out",
       )}

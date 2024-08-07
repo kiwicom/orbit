@@ -66,7 +66,7 @@ const TopBar = ({
           ? { top: "none", bottom: "XLarge", left: "XLarge", right: "XLarge" }
           : { top: "XLarge", bottom: "XXLarge", left: "XLarge", right: "XLarge" }
       }
-      elevation={noElevation ? undefined : "raised"}
+      elevation={noElevation ? undefined : "level3"}
     >
       {children}
     </StyledProse>

@@ -90,6 +90,28 @@ And their respective tailwind classes:
 
 We recommend to start adopting the new tokens and classes as soon as possible.
 
+### Elevation
+
+Five elevation (box shadow) tokens were deprecated (to be released in the next major version) and five new ones were added.
+
+Here's the mapping for the new tokens:
+
+- `elevationActionBoxShadow` -> `elevationLevel1BoxShadow`
+- `elevationActionActiveBoxShadow` -> `elevationLevel2BoxShadow`
+- `elevationRaisedBoxShadow` -> `elevationLevel3BoxShadow`
+- `elevationRaisedReverseBoxShadow` -> `elevationLevel3ReverseBoxShadow`
+- `elevationOverlayBoxShadow` -> `elevationLevel4BoxShadow`
+
+And their respective tailwind classes:
+
+- `shadow-action` -> `shadow-level1`
+- `shadow-action-active` -> `shadow-level2`
+- `shadow-raised` -> `shadow-level3`
+- `shadow-raised-reverse` -> `shadow-level3-reverse`
+- `shadow-overlay` -> `shadow-level4`
+
+We recommend to start adopting the new tokens and classes as soon as possible.
+
 ## Box component
 
 Because the Box component props rely heavily on design tokens and their values, some of the prop values have been updated to reflect the changes in the design tokens.
@@ -97,19 +119,19 @@ Because the Box component props rely heavily on design tokens and their values, 
 **Before:**
 
 ```jsx
-<Box borderRadius="small">"small" borderRadius</Box>
-<Box borderRadius="normal">"normal" borderRadius</Box>
-<Box borderRadius="large">"large" borderRadius</Box>
-<Box borderRadius="circle">"circle" borderRadius</Box>
+<Box borderRadius="small" elevation="action">…</Box>
+<Box borderRadius="normal" elevation="raised">…</Box>
+<Box borderRadius="large" elevation="raisedReverse">…</Box>
+<Box borderRadius="circle" elevation="overlay">…</Box>
 ```
 
 **Now:**
 
 ```jsx
-<Box borderRadius="50">"50" borderRadius</Box>
-<Box borderRadius="100">"100" borderRadius</Box>
-<Box borderRadius="150">"150" borderRadius</Box>
-<Box borderRadius="full">"full" borderRadius</Box>
+<Box borderRadius="50" elevation="level1">…</Box>
+<Box borderRadius="100" elevation="level3">…</Box>
+<Box borderRadius="150" elevation="level3Reverse">…</Box>
+<Box borderRadius="full" elevation="level4">…</Box>
 ```
 
 ## Codemod

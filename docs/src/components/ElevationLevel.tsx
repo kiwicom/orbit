@@ -22,7 +22,7 @@ export const LevelDiv = styled.div<LevelDivProps>`
 `;
 
 interface ElevationLevelProps {
-  level: 1 | 2 | 3 | 3.5 | 4 | 4.5 | 5 | 5.5 | 6;
+  level: "suppressed" | "flat" | 1 | 2 | 3 | "3Reverse" | 4 | "fixed" | "fixedReverse";
 }
 
 export default ({ level }: ElevationLevelProps) => {
@@ -30,32 +30,29 @@ export default ({ level }: ElevationLevelProps) => {
   let border = "none";
   let boxShadow = "none";
   switch (level) {
-    case 1:
+    case "suppressed":
       backgroundColor = theme.orbit.paletteCloudLight;
       break;
-    case 2:
+    case "flat":
       border = `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
       break;
-    case 3:
-      boxShadow = theme.orbit.boxShadowAction;
+    case 1:
+      boxShadow = theme.orbit.elevationLevel1BoxShadow;
       break;
-    case 3.5:
-      boxShadow = theme.orbit.boxShadowActionActive;
+    case 2:
+      boxShadow = theme.orbit.elevationLevel2BoxShadow;
+      break;
+    case 3:
+      boxShadow = theme.orbit.elevationLevel3BoxShadow;
       break;
     case 4:
-      boxShadow = theme.orbit.boxShadowFixed;
+      boxShadow = theme.orbit.elevationLevel4BoxShadow;
       break;
-    case 4.5:
-      boxShadow = theme.orbit.boxShadowFixedReverse;
+    case "fixed":
+      boxShadow = theme.orbit.elevationFixedBoxShadow;
       break;
-    case 5:
-      boxShadow = theme.orbit.boxShadowRaised;
-      break;
-    case 5.5:
-      boxShadow = theme.orbit.boxShadowRaisedReverse;
-      break;
-    case 6:
-      boxShadow = theme.orbit.boxShadowOverlay;
+    case "fixedReverse":
+      boxShadow = theme.orbit.elevationFixedReverseBoxShadow;
       break;
     default:
       break;

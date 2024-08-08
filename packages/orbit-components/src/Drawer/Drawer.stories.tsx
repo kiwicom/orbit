@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react/";
 import { action } from "@storybook/addon-actions";
 
 import Stack from "../Stack";
@@ -19,19 +20,43 @@ import LinkList from "../LinkList";
 
 import Drawer from ".";
 
-export default {
+const meta: Meta<typeof Drawer> = {
   title: "Drawer",
+  component: Drawer,
+
+  parameters: {
+    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+
+  args: {
+    shown: true,
+    position: POSITIONS.RIGHT,
+    width: "480px",
+    suppressed: false,
+    fixedHeader: false,
+    noPadding: false,
+    onClose: action("onClose"),
+    labelHide: "Hide",
+    lockScrolling: true,
+  },
+
+  argTypes: {
+    position: {
+      options: Object.values(POSITIONS),
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 
-export const SideNavigation = ({ shown, dataTest, width, fixedHeader, noPadding }) => {
-  return (
+export default meta;
+type Story = StoryObj<typeof Drawer>;
+
+export const SideNavigation: Story = {
+  render: args => (
     <Drawer
-      noPadding={noPadding}
-      dataTest={dataTest}
-      width={width}
-      shown={shown}
-      fixedHeader={fixedHeader}
-      onClose={action("onClose")}
+      {...args}
       actions={
         <Stack direction="row" justify="between" spacing="XSmall">
           <Button type="secondary" size="small">
@@ -70,33 +95,12 @@ export const SideNavigation = ({ shown, dataTest, width, fixedHeader, noPadding 
         <TextLink type="secondary">Sign out</TextLink>
       </LinkList>
     </Drawer>
-  );
+  ),
 };
 
-SideNavigation.story = {
-  parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-SideNavigation.args = {
-  shown: true,
-  dataTest: "test",
-  width: "320px",
-  fixedHeader: false,
-  noPadding: false,
-};
-
-export const SmartFaq = ({ shown, dataTest, position, width, fixedHeader }) => {
-  return (
-    <Drawer
-      shown={shown}
-      width={width}
-      position={position}
-      fixedHeader={fixedHeader}
-      dataTest={dataTest}
-      onClose={action("onClose")}
-    >
+export const SmartFaq: Story = {
+  render: args => (
+    <Drawer {...args}>
       <Stack>
         <Illustration name="Accommodation" />
         <Heading as="h2">Need help?</Heading>
@@ -111,45 +115,12 @@ export const SmartFaq = ({ shown, dataTest, position, width, fixedHeader }) => {
         </Text>
       </Stack>
     </Drawer>
-  );
+  ),
 };
 
-SmartFaq.story = {
-  name: "SmartFAQ",
-
-  parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-SmartFaq.args = {
-  shown: true,
-  dataTest: "test",
-  position: POSITIONS.RIGHT,
-  width: "480px",
-  fixedHeader: false,
-};
-
-SmartFaq.argTypes = {
-  position: {
-    options: Object.values(POSITIONS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Suppressed = ({ shown, dataTest, position, width, suppressed, fixedHeader }) => {
-  return (
-    <Drawer
-      shown={shown}
-      width={width}
-      position={position}
-      dataTest={dataTest}
-      fixedHeader={fixedHeader}
-      onClose={action("onClose")}
-      suppressed={suppressed}
-    >
+export const Suppressed: Story = {
+  render: args => (
+    <Drawer {...args}>
       <Stack>
         <Tile
           title="Cabin baggage"
@@ -177,43 +148,16 @@ export const Suppressed = ({ shown, dataTest, position, width, suppressed, fixed
         />
       </Stack>
     </Drawer>
-  );
-};
+  ),
 
-Suppressed.story = {
-  parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    suppressed: true,
   },
 };
 
-Suppressed.args = {
-  shown: true,
-  dataTest: "test",
-  position: POSITIONS.RIGHT,
-  width: "480px",
-  suppressed: true,
-  fixedHeader: false,
-};
-
-Suppressed.argTypes = {
-  position: {
-    options: Object.values(POSITIONS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const WithTitle = ({ title, dataTest, width, shown, fixedHeader }) => {
-  return (
-    <Drawer
-      title={title}
-      dataTest={dataTest}
-      width={width}
-      shown={shown}
-      fixedHeader={fixedHeader}
-      onClose={action("onClose")}
-    >
+export const WithTitle: Story = {
+  render: args => (
+    <Drawer {...args}>
       <Collapse label="Discover" initialExpanded>
         <LinkList indent>
           <TextLink type="secondary">Refer a Friend</TextLink>
@@ -244,33 +188,18 @@ export const WithTitle = ({ title, dataTest, width, shown, fixedHeader }) => {
         <TextLink type="secondary">Sign out</TextLink>
       </LinkList>
     </Drawer>
-  );
-};
+  ),
 
-WithTitle.story = {
-  parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    title: "Drawer title",
+    width: "320px",
   },
 };
 
-WithTitle.args = {
-  shown: true,
-  dataTest: "test",
-  title: "Title",
-  width: "320px",
-  fixedHeader: false,
-};
-
-export const SmartFaqSearch = ({ shown, dataTest, position, width, suppressed, fixedHeader }) => {
-  return (
+export const SmartFaqSearch: Story = {
+  render: args => (
     <Drawer
-      shown={shown}
-      width={width}
-      position={position}
-      dataTest={dataTest}
-      onClose={action("onClose")}
-      suppressed={suppressed}
-      fixedHeader={fixedHeader}
+      {...args}
       title="Help"
       actions={
         <Button type="secondary" size="small">
@@ -306,44 +235,18 @@ export const SmartFaqSearch = ({ shown, dataTest, position, width, suppressed, f
         />
       </Stack>
     </Drawer>
-  );
-};
+  ),
 
-SmartFaqSearch.story = {
-  name: "SmartFAQ Search",
-
-  parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    suppressed: true,
   },
 };
 
-SmartFaqSearch.args = {
-  shown: true,
-  dataTest: "test",
-  position: POSITIONS.RIGHT,
-  width: "480px",
-  suppressed: true,
-  fixedHeader: false,
-};
-
-SmartFaqSearch.argTypes = {
-  position: {
-    options: Object.values(POSITIONS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const SideNavigationInRtl = ({ shown, dataTest, width, fixedHeader }) => {
-  return (
+export const SideNavigationInRtl: Story = {
+  render: args => (
     <RenderInRtl>
       <Drawer
-        dataTest={dataTest}
-        width={width}
-        shown={shown}
-        fixedHeader={fixedHeader}
-        onClose={action("onClose")}
+        {...args}
         actions={
           <Stack direction="row" justify="between" spacing="XSmall">
             <Button type="secondary" size="small">
@@ -383,35 +286,17 @@ export const SideNavigationInRtl = ({ shown, dataTest, width, fixedHeader }) => 
         </LinkList>
       </Drawer>
     </RenderInRtl>
-  );
-};
+  ),
 
-SideNavigationInRtl.story = {
-  name: "Side Navigation in RTL",
-
-  parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    width: "320px",
   },
 };
 
-SideNavigationInRtl.args = {
-  shown: true,
-  dataTest: "test",
-  width: "320px",
-  fixedHeader: false,
-};
-
-export const SmartFaqInRtl = ({ shown, dataTest, position, width, fixedHeader }) => {
-  return (
+export const SmartFaqInRtl: Story = {
+  render: args => (
     <RenderInRtl>
-      <Drawer
-        shown={shown}
-        width={width}
-        position={position}
-        dataTest={dataTest}
-        fixedHeader={fixedHeader}
-        onClose={action("onClose")}
-      >
+      <Drawer {...args}>
         <Stack>
           <Illustration name="Accommodation" />
           <Heading as="h2">Need help?</Heading>
@@ -427,52 +312,14 @@ export const SmartFaqInRtl = ({ shown, dataTest, position, width, fixedHeader })
         </Stack>
       </Drawer>
     </RenderInRtl>
-  );
+  ),
 };
 
-SmartFaqInRtl.story = {
-  name: "SmartFAQ in RTL",
-
-  parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-SmartFaqInRtl.args = {
-  shown: true,
-  dataTest: "test",
-  position: POSITIONS.RIGHT,
-  width: "480px",
-  fixedHeader: false,
-};
-
-SmartFaqInRtl.argTypes = {
-  position: {
-    options: Object.values(POSITIONS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const SmartFaqSearchInRtl = ({
-  shown,
-  dataTest,
-  position,
-  width,
-  suppressed,
-  fixedHeader,
-}) => {
-  return (
+export const SmartFaqSearchInRtl: Story = {
+  render: args => (
     <RenderInRtl>
       <Drawer
-        shown={shown}
-        width={width}
-        position={position}
-        dataTest={dataTest}
-        onClose={action("onClose")}
-        suppressed={suppressed}
-        fixedHeader={fixedHeader}
+        {...args}
         title="Help"
         actions={
           <Button type="secondary" size="small">
@@ -509,31 +356,30 @@ export const SmartFaqSearchInRtl = ({
         </Stack>
       </Drawer>
     </RenderInRtl>
-  );
-};
+  ),
 
-SmartFaqSearchInRtl.story = {
-  name: "SmartFAQ Search in RTL",
-
-  parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    fixedHeader: false,
   },
 };
 
-SmartFaqSearchInRtl.args = {
-  shown: true,
-  dataTest: "test",
-  position: POSITIONS.RIGHT,
-  width: "480px",
-  suppressed: true,
-  fixedHeader: false,
-};
+export const Playground: Story = {
+  render: ({ children, ...args }) => (
+    <Drawer
+      {...args}
+      actions={
+        <Stack direction="row" justify="between" spacing="XSmall">
+          <Button type="secondary" size="small">
+            Manage my bookings
+          </Button>
+        </Stack>
+      }
+    >
+      {children}
+    </Drawer>
+  ),
 
-SmartFaqSearchInRtl.argTypes = {
-  position: {
-    options: Object.values(POSITIONS),
-    control: {
-      type: "select",
-    },
+  args: {
+    children: "Default children",
   },
 };

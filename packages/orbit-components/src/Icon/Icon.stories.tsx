@@ -1,129 +1,119 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import IconList from "./IconList";
 import * as Icons from "../icons";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-export default {
+import type OrbitIcon from ".";
+
+const getIcon = source => Icons[source];
+
+type IconPropsAndCustomArgs = React.ComponentProps<typeof OrbitIcon> & { source: string };
+
+const meta: Meta<IconPropsAndCustomArgs> = {
   title: "Icon",
-};
 
-export const Default = ({ size, color, source, dataTest, ariaLabel, ariaHidden }) => {
-  const Icon = Icons[source];
-  return (
-    <Icon
-      size={size}
-      color={color}
-      dataTest={dataTest}
-      ariaLabel={ariaLabel}
-      ariaHidden={ariaHidden}
-    />
-  );
-};
-
-Default.story = {
-  name: "Default",
   parameters: {
     info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
   },
-};
 
-Default.args = {
-  size: ICON_SIZES.MEDIUM,
-  color: ICON_COLORS.PRIMARY,
-  source: "Airplane",
-  dataTest: "test",
-  ariaLabel: "label",
-  ariaHidden: true,
-};
+  args: {
+    size: ICON_SIZES.MEDIUM,
+    color: ICON_COLORS.PRIMARY,
+    source: "Airplane",
+    ariaLabel: "label",
+    ariaHidden: true,
+    customColor: "#e30606",
+    reverseOnRtl: false,
+  },
 
-Default.argTypes = {
-  size: {
-    options: Object.values(ICON_SIZES),
-    control: {
-      type: "select",
+  argTypes: {
+    size: {
+      options: Object.values(ICON_SIZES),
+      control: {
+        type: "select",
+      },
+    },
+    color: {
+      options: Object.values(ICON_COLORS),
+      control: {
+        type: "select",
+      },
+    },
+    source: {
+      options: Object.keys(Icons),
+      control: {
+        type: "select",
+      },
     },
   },
-  color: {
-    options: Object.values(ICON_COLORS),
-    control: {
-      type: "select",
-    },
-  },
-  source: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
 };
 
-export const CustomColor = ({ size, customColor, source }) => {
-  const Icon = Icons[source];
+export default meta;
+type Story = StoryObj<IconPropsAndCustomArgs>;
 
-  return <Icon size={size} customColor={customColor} />;
-};
+export const Default: Story = {
+  render: ({ source, ...args }) => {
+    const Icon = getIcon(source);
+    return <Icon {...args} />;
+  },
 
-CustomColor.story = {
-  name: "Custom Color",
+  args: {
+    customColor: undefined,
+  },
+
   parameters: {
-    info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-CustomColor.args = {
-  size: ICON_SIZES.MEDIUM,
-  customColor: "#ABCDEF",
-  source: "Airplane",
-};
-
-CustomColor.argTypes = {
-  size: {
-    options: Object.values(ICON_SIZES),
-    control: {
-      type: "select",
-    },
-  },
-  source: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+    controls: {
+      exclude: ["customColor", "reverseOnRtl"],
     },
   },
 };
 
-export const ReversedOnRtl = ({ source }) => {
-  const Icon = Icons[source];
-  return (
-    <RenderInRtl>
-      <Icon reverseOnRtl />
-    </RenderInRtl>
-  );
-};
+export const CustomColor: Story = {
+  render: ({ source, ...args }) => {
+    const Icon = getIcon(source);
 
-ReversedOnRtl.story = {
-  name: "Reversed on RTL",
+    return <Icon {...args} />;
+  },
+
   parameters: {
-    info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-ReversedOnRtl.args = {
-  source: "ChevronBackward",
-};
-
-ReversedOnRtl.argTypes = {
-  source: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+    controls: {
+      exclude: ["color", "reverseOnRtl"],
     },
   },
 };
 
-export const ListOfAllIcons = () => <IconList />;
+export const ReversedOnRtl: Story = {
+  render: ({ source, reverseOnRtl }) => {
+    const Icon = getIcon(source);
 
-ListOfAllIcons.story = {
-  name: "List of all icons",
+    return (
+      <RenderInRtl>
+        <Icon reverseOnRtl={reverseOnRtl} />
+      </RenderInRtl>
+    );
+  },
+
+  args: {
+    source: "ChevronBackward",
+    reverseOnRtl: true,
+  },
+
+  parameters: {
+    controls: {
+      exclude: ["size", "color", "ariaLabel", "ariaHidden", "customColor"],
+    },
+  },
+};
+
+export const ListOfAllIcons: Story = {
+  render: () => <IconList />,
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
 };

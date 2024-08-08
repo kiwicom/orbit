@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { SPACINGS } from "../utils/layout/consts";
 import Box from "../Box";
@@ -10,19 +11,47 @@ import HorizontalScroll from ".";
 Box.displayName = "Box";
 HorizontalScroll.displayName = "HorizontalScroll";
 
-export default {
-  title: "HorizontalScroll",
+type HorizontalScrollPropsAndCustomArgs = React.ComponentProps<typeof HorizontalScroll> & {
+  scrollSnapAlign: "none" | "start" | "end" | "center";
+  scrollSnapType: "none" | "inline" | "mandatory" | "proximity";
 };
 
-export const Default = ({ spacing, arrows, overflowElevation, elevationColor, arrowColor }) => {
-  return (
-    <HorizontalScroll
-      spacing={spacing}
-      arrows={arrows}
-      overflowElevation={overflowElevation}
-      elevationColor={elevationColor}
-      arrowColor={arrowColor}
-    >
+const meta: Meta<HorizontalScrollPropsAndCustomArgs> = {
+  title: "HorizontalScroll",
+  component: HorizontalScroll,
+
+  args: {
+    overflowElevation: true,
+    elevationColor: "",
+    arrows: false,
+    arrowColor: "",
+    spacing: SPACINGS.XXXSMALL,
+    scrollPadding: 0,
+    scrollSnap: "mandatory",
+  },
+
+  argTypes: {
+    spacing: {
+      options: Object.values(SPACINGS),
+      control: {
+        type: "select",
+      },
+    },
+    scrollSnap: {
+      options: ["none", "inline", "mandatory", "proximity"],
+      control: {
+        type: "select",
+      },
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<HorizontalScrollPropsAndCustomArgs>;
+
+export const Default: Story = {
+  render: args => (
+    <HorizontalScroll {...args}>
       {Array(...Array(10)).map((_, key) => (
         <Box
           // eslint-disable-next-line react/no-array-index-key
@@ -47,33 +76,16 @@ export const Default = ({ spacing, arrows, overflowElevation, elevationColor, ar
         </Box>
       ))}
     </HorizontalScroll>
-  );
+  ),
 };
 
-Default.args = {
-  overflowElevation: true,
-  elevationColor: "",
-  arrows: false,
-  arrowColor: "",
-  spacing: SPACINGS.XXXSMALL,
-};
-
-Default.argTypes = {
-  spacing: {
-    options: Object.values(SPACINGS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const NoScroll = ({ spacing }) => {
-  return (
+export const NoScroll = {
+  render: args => (
     <Stack>
       <Text>
         Horizontal scroll turns on only if elements inside are wider than parent container
       </Text>
-      <HorizontalScroll spacing={spacing}>
+      <HorizontalScroll {...args}>
         {Array(...Array(5)).map((_, key) => (
           <Box
             // eslint-disable-next-line react/no-array-index-key
@@ -99,36 +111,16 @@ export const NoScroll = ({ spacing }) => {
         ))}
       </HorizontalScroll>
     </Stack>
-  );
-};
+  ),
 
-NoScroll.args = {
-  spacing: SPACINGS.XXXSMALL,
-};
-
-NoScroll.argTypes = {
-  spacing: {
-    options: Object.values(SPACINGS),
-    control: {
-      type: "select",
-    },
+  args: {
+    spacing: SPACINGS.XXXSMALL,
   },
 };
 
-export const WithScrollSnap = ({
-  scrollSnap,
-  scrollPadding,
-  overflowElevation,
-  elevationColor,
-  scrollSnapAlign,
-}) => {
-  return (
-    <HorizontalScroll
-      scrollSnap={scrollSnap}
-      scrollPadding={scrollPadding}
-      overflowElevation={overflowElevation}
-      elevationColor={elevationColor}
-    >
+export const WithScrollSnap: Story = {
+  render: ({ scrollSnapAlign, ...args }) => (
+    <HorizontalScroll {...args}>
       {Array(...Array(10)).map((_, key) => (
         <div
           style={{
@@ -154,28 +146,18 @@ export const WithScrollSnap = ({
         </div>
       ))}
     </HorizontalScroll>
-  );
-};
+  ),
 
-WithScrollSnap.args = {
-  scrollSnapAlign: "start",
-  scrollSnapType: "mandatory",
-  scrollPadding: 0,
-  overflowElevation: false,
-  elevationColor: "paletteCloudDarker",
-};
-
-WithScrollSnap.argTypes = {
-  scrollSnapAlign: {
-    options: ["none", "start", "end", "center"],
-    control: {
-      type: "select",
-    },
+  args: {
+    scrollSnapAlign: "start",
   },
-  scrollSnapType: {
-    options: ["none", "inline", "mandatory", "proximity"],
-    control: {
-      type: "select",
+
+  argTypes: {
+    scrollSnapAlign: {
+      options: ["none", "start", "end", "center"],
+      control: {
+        type: "select",
+      },
     },
   },
 };

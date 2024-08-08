@@ -66,7 +66,7 @@ export default {
           <WizardStep title="Customize your trip" />
           <WizardStep title="Overview and payment" />
         </Wizard>
-        <Box padding={{ top: "XLarge" }}>
+        <Box padding={{ top: "800" }}>
           <Stack>
             <Heading>{headingAndText.heading}</Heading>
             <Text>{headingAndText.text}</Text>

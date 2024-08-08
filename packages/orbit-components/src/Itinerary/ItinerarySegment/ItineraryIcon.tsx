@@ -45,7 +45,7 @@ const ItinerarySegmentStopIcon = ({ type, children }: Props) => {
         last || index === 0 ? "[&_svg]:bg-transparent" : "[&_svg]:bg-white-normal",
         index > 0 &&
           !last && [
-            "py-xxs px-0",
+            "py-100 px-0",
             "bg-[radial-gradient(farthest-side,theme(colors.white.normal),theme(colors.white.normal),theme(colors.white.normal),transparent)]",
           ],
         index > 0 &&

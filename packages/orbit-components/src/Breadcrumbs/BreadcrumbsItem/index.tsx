@@ -96,7 +96,7 @@ const BreadcrumbsItem = ({
           reverseOnRtl
           size="small"
           color="tertiary"
-          className="mx-xxs my-0"
+          className="mx-100 my-0"
         />
       )}
     </li>

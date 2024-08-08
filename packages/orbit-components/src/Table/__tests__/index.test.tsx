@@ -47,6 +47,6 @@ describe("Table", () => {
     expect(screen.getByTestId("table-cell")).toBeInTheDocument();
     expect(screen.getByTestId("table-row")).toBeInTheDocument();
     expect(screen.getByTestId("table-body")).toBeInTheDocument();
-    expect(screen.getByText("kek")).toHaveStyle({ height: defaultTheme.orbit.spaceXLarge });
+    expect(screen.getByText("kek")).toHaveStyle({ height: defaultTheme.orbit.space800 });
   });
 });

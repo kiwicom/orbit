@@ -25,7 +25,7 @@ const FormLabel = ({
     className={cx(
       className,
       "orbit-form-label",
-      "font-base text-normal mb-xxs ms-xxs de:ms-0 inline-flex font-medium leading-normal",
+      "font-base text-normal mb-100 ms-100 de:ms-0 inline-flex font-medium leading-normal",
       !filled || disabled
         ? "text-form-element-label-foreground"
         : "text-form-element-label-filled-foreground",
@@ -37,7 +37,7 @@ const FormLabel = ({
     onMouseLeave={onMouseLeave}
   >
     {!inlineLabel && (error || help) && (
-      <span className="me-xxs inline-flex items-center" ref={iconRef}>
+      <span className="me-100 inline-flex items-center" ref={iconRef}>
         {error && <AlertCircle ariaLabel="error" color="critical" size="small" />}
         {!error && help && <InformationCircle ariaLabel="help" color="info" size="small" />}
       </span>

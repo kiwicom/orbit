@@ -83,7 +83,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       {(label || info) && (
         <div
           className={cx(
-            "ms-xs flex flex-1 flex-col font-medium",
+            "ms-200 flex flex-1 flex-col font-medium",
             disabled ? "opacity-50" : "opacity-100",
           )}
         >

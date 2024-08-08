@@ -22,7 +22,7 @@ const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
     if (!React.isValidElement(child)) return null;
     return (
       <div
-        className="orbit-modal-footer-child pe-xs box-border p-0"
+        className="orbit-modal-footer-child pe-200 box-border p-0"
         style={{ flex: getChildFlex(flex, key) }}
         data-test="footer-el-wrapper"
       >
@@ -70,7 +70,7 @@ const ModalFooter = ({ dataTest, children, flex = "0 1 auto" }: Props) => {
     <div
       className={cx(
         "orbit-modal-footer",
-        "z-overlay bg-white-normal px-md pb-md box-border flex w-full pt-0",
+        "z-overlay bg-white-normal px-400 pb-400 box-border flex w-full pt-0",
         "duration-fast transition-shadow ease-in-out",
         "sm:max-lm:[&_.orbit-button-primitive]:h-form-box-normal sm:max-lm:[&_.orbit-button-primitive]:text-button-normal",
         "lm:rounded-b-modal",

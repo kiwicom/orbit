@@ -43,7 +43,7 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
   const theme = useTheme();
   const firstRenderRef = React.useRef<boolean>(true);
   const itemName = item.status ? (
-    <Stack flex align="center" spacing="XSmall">
+    <Stack flex align="center" spacing="200">
       <div>{item.name}</div>
       <Badge type={getBadgeType(item.status)}>{item.status.toUpperCase()}</Badge>
     </Stack>

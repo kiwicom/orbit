@@ -22,7 +22,7 @@ const StyledBoard = styled.div<{ isOpened: boolean; isFullScreen: boolean }>`
   ${({ theme, isOpened, isFullScreen }) => css`
     margin-top: 0;
     border-radius: ${!isFullScreen && !isOpened && `0 0 12px 12px`};
-    padding: ${theme.orbit.spaceXSmall};
+    padding: ${theme.orbit.space200};
     border-top: 1px solid ${theme.orbit.paletteCloudNormal};
     background: ${theme.orbit.paletteCloudLight};
     overflow-x: auto;

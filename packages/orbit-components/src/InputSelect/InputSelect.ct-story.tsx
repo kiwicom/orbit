@@ -59,7 +59,7 @@ const advancedOptions = [
 
 export function InputSelectStory() {
   return (
-    <div className="gap-md p-md flex flex-col">
+    <div className="gap-400 p-400 flex flex-col">
       <InputSelect options={simpleOptions} />
       <InputSelect options={simpleOptions} label="Custom label" placeholder="Custom placeholder" />
       <InputSelect
@@ -89,7 +89,7 @@ export function InputSelectStory() {
 
 export function InputSelectDropdownStory() {
   return (
-    <div className="p-md min-h-[600px]">
+    <div className="p-400 min-h-[600px]">
       <InputSelect options={simpleOptions} dataTest="Dropdown" />
     </div>
   );
@@ -97,7 +97,7 @@ export function InputSelectDropdownStory() {
 
 export function InputSelectDropdownSizesStory() {
   return (
-    <div className="p-md min-h-[600px]">
+    <div className="p-400 min-h-[600px]">
       <InputSelect options={simpleOptions} dataTest="Dropdown" maxWidth="200px" maxHeight="200px" />
     </div>
   );
@@ -105,7 +105,7 @@ export function InputSelectDropdownSizesStory() {
 
 export function InputSelectDropdownEmptyStory() {
   return (
-    <div className="p-md min-h-[600px]">
+    <div className="p-400 min-h-[600px]">
       <InputSelect options={[]} dataTest="Dropdown" emptyState="I ain't no Pokémon" />
     </div>
   );
@@ -113,7 +113,7 @@ export function InputSelectDropdownEmptyStory() {
 
 export function InputSelectDropdownGroupsStory() {
   return (
-    <div className="p-md min-h-[600px]">
+    <div className="p-400 min-h-[600px]">
       <InputSelect options={advancedOptions} dataTest="Dropdown" />
     </div>
   );

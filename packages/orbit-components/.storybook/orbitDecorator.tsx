@@ -52,7 +52,7 @@ const OrbitDecorator: Decorator = (storyFn, context) => {
           {context.parameters?.info}
         </Text>
         {children}
-        <div dir="ltr" className="mt-lg relative">
+        <div dir="ltr" className="mt-600 relative">
           <Tile>
             <Highlight theme={themes.vsLight} code={code} language="tsx">
               {({ style, tokens, getLineProps, getTokenProps }) => (
@@ -72,7 +72,7 @@ const OrbitDecorator: Decorator = (storyFn, context) => {
           </Tile>
           <div className="absolute bottom-0 right-0">
             <button
-              className="text-small py-xxs px-xs text-ink-dark font-bold"
+              className="text-small py-100 px-200 text-ink-dark font-bold"
               onClick={() => handleCopyCode(code)}
               type="button"
             >

@@ -24,7 +24,7 @@ const ItineraryBadgeListItem = ({
           marginTop: cancelledValue ? `4px` : "",
         }}
       >
-        <Stack direction="column" spacing="XXSmall">
+        <Stack direction="column" spacing="100">
           <ItineraryText
             withBackground={withBackground}
             type={withBackground && type !== "neutral" ? type : "secondary"}

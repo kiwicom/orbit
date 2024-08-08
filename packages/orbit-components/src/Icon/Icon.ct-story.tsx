@@ -5,7 +5,7 @@ import * as Icons from "../icons";
 
 export default function IconVisualStory() {
   return (
-    <div className="gap-y-lg p-xs">
+    <div className="gap-y-lg p-200">
       <div className="gap-x-xs">
         {Object.values(ICON_COLORS).map(color => (
           <Icons.Airplane color={color} />

@@ -62,7 +62,7 @@ const ProgressLine = ({ desktop, status, nextStatus, last, prevStatus }: Props) 
         status ? "border-solid" : "border-dashed",
         desktop
           ? "w-1/2"
-          : "absolute top-[15px] h-[calc(100%+theme(spacing.xxxs))] ltr:left-[11px] rtl:right-[11px]",
+          : "absolute top-[15px] h-[calc(100%+theme(spacing.50))] ltr:left-[11px] rtl:right-[11px]",
       )}
       style={getBorderStyle()}
     />

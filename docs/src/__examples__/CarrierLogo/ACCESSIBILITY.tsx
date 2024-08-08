@@ -14,7 +14,7 @@ export default {
             },
           ]}
         />
-        <Stack direction="row" spacing="XXSmall" align="center">
+        <Stack direction="row" spacing="100" align="center">
           <CarrierLogo
             carriers={[
               {

@@ -67,11 +67,11 @@ export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
   <ol
     css={css`
       list-style: decimal none outside;
-      margin-left: ${({ theme }) => theme.orbit.spaceMedium};
+      margin-left: ${({ theme }) => theme.orbit.space400};
 
       ol,
       ul {
-        margin: ${({ theme }) => theme.orbit.spaceSmall};
+        margin: ${({ theme }) => theme.orbit.space300};
       }
     `}
   >
@@ -116,11 +116,11 @@ export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
   <ul
     css={css`
       list-style: disc none outside;
-      margin-left: ${({ theme }) => theme.orbit.spaceMedium};
+      margin-left: ${({ theme }) => theme.orbit.space400};
 
       ol,
       ul {
-        margin: ${({ theme }) => theme.orbit.spaceSmall};
+        margin: ${({ theme }) => theme.orbit.space300};
       }
     `}
   >

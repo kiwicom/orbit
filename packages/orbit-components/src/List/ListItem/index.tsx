@@ -9,10 +9,10 @@ const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) 
   return (
     <li
       data-test={dataTest}
-      className="orbit-list-item font-base mb-xxs flex last:m-0 last-of-type:m-0"
+      className="orbit-list-item font-base mb-100 flex last:m-0 last-of-type:m-0"
     >
       {icon && (
-        <div className="orbit-list-item-icon me-xs [&>.orbit-carrier-logo]:size-icon-small [&>.orbit-carrier-logo>img]:size-icon-small flex flex-none">
+        <div className="orbit-list-item-icon me-200 [&>.orbit-carrier-logo]:size-icon-small [&>.orbit-carrier-logo>img]:size-icon-small flex flex-none">
           {icon}
         </div>
       )}

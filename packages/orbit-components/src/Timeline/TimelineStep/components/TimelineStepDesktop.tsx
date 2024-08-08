@@ -31,7 +31,7 @@ const TimelineStepDesktop = ({
 
   return (
     <Stack inline shrink direction="column" align="center">
-      <div className={cx("relative flex w-[calc(100%+theme(spacing.md))] items-center")}>
+      <div className={cx("relative flex w-[calc(100%+theme(spacing.400))] items-center")}>
         <ProgressLine desktop status={type} prevStatus={prevType} nextStatus={nextType} />
         <TypeIcon type={type} active={!!active} />
         <ProgressLine
@@ -42,7 +42,7 @@ const TimelineStepDesktop = ({
           last={last}
         />
       </div>
-      <Stack flex align="center" spacing="XSmall" direction="column">
+      <Stack flex align="center" spacing="200" direction="column">
         {subLabel && (
           <TextWrapper>
             <Text align="center" size="small">
@@ -54,7 +54,7 @@ const TimelineStepDesktop = ({
           <Text
             align="center"
             weight="bold"
-            margin={{ top: !subLabel && hasSubLabelMargin ? theme.orbit.spaceLarge : 0 }}
+            margin={{ top: !subLabel && hasSubLabelMargin ? theme.orbit.space600 : 0 }}
           >
             {label}
           </Text>

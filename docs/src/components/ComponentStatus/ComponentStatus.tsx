@@ -39,7 +39,7 @@ export const StyledTableHead = styled.thead`
 export const StyledPlatform = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: ${theme.orbit.spaceXSmall};
+    gap: ${theme.orbit.space200};
     align-items: center;
     justify-content: center;
   `};
@@ -73,24 +73,24 @@ export const StyledTableCell = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    gap: ${theme.orbit.spaceXSmall};
+    gap: ${theme.orbit.space200};
     align-items: center;
     justify-content: center;
     ${mq.tablet(css`
       flex-direction: column;
-      gap: ${theme.orbit.spaceXSmall};
+      gap: ${theme.orbit.space200};
     `)};
     ${mq.desktop(css`
       flex-direction: row;
-      gap: ${theme.orbit.spaceSmall};
+      gap: ${theme.orbit.space300};
     `)};
   `};
 `;
 
 export const StyledStatusDot = styled.div<{ status: Status }>`
   ${({ theme, status }) => css`
-    width: ${theme.orbit.spaceXSmall};
-    height: ${theme.orbit.spaceXSmall};
+    width: ${theme.orbit.space200};
+    height: ${theme.orbit.space200};
     border-radius: ${theme.orbit.borderRadiusFull};
     background: ${theme.orbit[STATUS_COLOR[status]]};
   `};

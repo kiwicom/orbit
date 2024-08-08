@@ -109,7 +109,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
   return (
     <StyledWrapper>
       <StyledInner>
-        <Stack inline shrink align="center" spacing="small">
+        <Stack inline shrink align="center" spacing="300">
           <Link to="/" aria-label="Back to home page">
             <StyledLogo width={192} height={44} />
             <StyledLogoGlyph width={44} height={44} />
@@ -137,7 +137,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
         </Stack>
 
         <StyledRight>
-          <Stack inline spacing="XXSmall" align="center">
+          <Stack inline spacing="100" align="center">
             {shouldHaveNavLinks ? (
               <NavigationLinks />
             ) : (
@@ -212,7 +212,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                         title={
                           <>
                             <Hide block on={["largeDesktop"]}>
-                              <Stack flex direction="column" align="stretch" spacing="large">
+                              <Stack flex direction="column" align="stretch" spacing="600">
                                 {/* TODO: ensure that tabs are accessible, code below is just guesswork */}
                                 <StyledTabList role="tablist">
                                   <StyledTab

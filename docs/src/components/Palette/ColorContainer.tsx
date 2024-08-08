@@ -26,8 +26,8 @@ const StyledCopyWrapper = styled.div<{ colorValue: string }>`
     background: linear-gradient(90deg, transparent, ${colorValue} 27%);
     position: absolute;
     bottom: 20px;
-    right: ${theme.orbit.spaceLarge};
-    padding-left: ${theme.orbit.spaceXLarge};
+    right: ${theme.orbit.space600};
+    padding-left: ${theme.orbit.space800};
   `}
 `;
 
@@ -41,7 +41,7 @@ export const StyledColorContainerWrapper = styled(({ className, children }) => (
     color: ${colorValue && isLight(colorValue)
       ? theme.orbit.colorTextPrimary
       : theme.orbit.paletteWhite};
-    padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
+    padding: ${theme.orbit.space400} ${theme.orbit.space600};
     transition: transform ${theme.orbit.durationFast} ease-in;
     position: relative;
     min-width: 0;
@@ -77,19 +77,19 @@ const StyledColorNameHolder = styled.div<{ isMain?: boolean }>`
     font-weight: ${theme.orbit.fontWeightBold};
     height: 100%;
     font-size: ${theme.orbit.fontSizeTextLarge};
-    padding-bottom: ${isMain ? theme.orbit.spaceLarge : theme.orbit.spaceXSmall};
+    padding-bottom: ${isMain ? theme.orbit.space600 : theme.orbit.space200};
   `}
 `;
 
 const StyledColorHexHolder = styled.div`
   ${({ theme }) => css`
     font-weight: ${theme.orbit.fontWeightMedium};
-    padding-bottom: ${theme.orbit.spaceXXSmall};
+    padding-bottom: ${theme.orbit.space100};
   `}
 `;
 
 const StyledColorOtherTextHolder = styled.div`
-  padding-bottom: ${({ theme }) => theme.orbit.spaceXXSmall};
+  padding-bottom: ${({ theme }) => theme.orbit.space100};
 `;
 
 const ColorContainer = ({ color, ...props }: Props) => {
@@ -104,7 +104,7 @@ const ColorContainer = ({ color, ...props }: Props) => {
       <StyledColorOtherTextHolder>{convertHexToRgba(color.value, 100)}</StyledColorOtherTextHolder>
       <StyledColorOtherTextHolder>{color.tokenName}</StyledColorOtherTextHolder>
       <StyledCopyWrapper colorValue={color.value}>
-        <Stack direction="column" spacing="XXSmall" align="end">
+        <Stack direction="column" spacing="100" align="end">
           <CopyButton textToCopy={color.value} colorValue={color.value} buttonText="Hex" />
           <CopyButton
             textToCopy={convertHexToRgba(color.value, 100)}

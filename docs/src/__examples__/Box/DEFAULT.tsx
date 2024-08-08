@@ -3,7 +3,7 @@ import { Box } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Box background="blueDark" textAlign="center" color="white" padding="large" maxWidth="300px">
+    <Box background="blueDark" textAlign="center" color="white" padding="600" maxWidth="300px">
       Text
     </Box>
   ),
@@ -19,18 +19,8 @@ export default {
         {
           name: "padding",
           type: "select",
-          defaultValue: "large",
-          options: [
-            "none",
-            "XXXSmall",
-            "XXSmall",
-            "small",
-            "medium",
-            "large",
-            "XLarge",
-            "XXLarge",
-            "XXXLarge",
-          ],
+          defaultValue: "600",
+          options: ["none", "50", "100", "200", "300", "400", "600", "800", "1000"],
         },
         {
           name: "display",
@@ -307,17 +297,7 @@ export default {
         {
           name: "spacing",
           type: "select",
-          options: [
-            "none",
-            "XXXSmall",
-            "XXSmall",
-            "small",
-            "medium",
-            "large",
-            "XLarge",
-            "XXLarge",
-            "XXXLarge",
-          ],
+          options: ["none", "50", "100", "200", "300", "400", "600", "800", "1000"],
           defaultValue: "",
         },
       ],

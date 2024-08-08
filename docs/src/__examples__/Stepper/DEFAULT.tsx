@@ -4,7 +4,7 @@ import { Passengers } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <Stack align="center" spacing="medium" desktop={{ spacing: "large" }}>
+    <Stack align="center" spacing="400" desktop={{ spacing: "600" }}>
       <Heading type="title4">
         <Stack align="center">
           <Passengers />

@@ -60,7 +60,7 @@ const Collapse = ({
 
   return (
     <div
-      className="border-b-cloud-normal pb-sm mb-md block w-full border-b border-solid last:m-0 last:border-none"
+      className="border-b-cloud-normal pb-300 mb-400 block w-full border-b border-solid last:m-0 last:border-none"
       data-test={dataTest}
       id={id}
     >
@@ -75,7 +75,7 @@ const Collapse = ({
         <Stack justify="between" align="center">
           {label && !customLabel && <Heading type="title4">{label}</Heading>}
           {customLabel}
-          <Stack inline grow={false} align="center" spacing="small">
+          <Stack inline grow={false} align="center" spacing="300">
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
               className="flex items-center"
@@ -97,7 +97,7 @@ const Collapse = ({
         </Stack>
       </div>
       <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
-        <div className="my-sm mx-0" ref={node}>
+        <div className="my-300 mx-0" ref={node}>
           {children}
         </div>
       </Slide>

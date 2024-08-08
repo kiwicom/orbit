@@ -37,16 +37,16 @@ const Header = ({
   expandable,
   expanded,
 }: Props) => (
-  <Stack align="center" spacing="small">
+  <Stack align="center" spacing="300">
     {(title || description) && !header && (
       <Stack
         flex
         shrink={!!actions || expandable}
         align="stretch"
         direction="column"
-        spacing={isSection ? "none" : "XXSmall"}
+        spacing={isSection ? "none" : "100"}
       >
-        <Stack inline spacing="small" align="center">
+        <Stack inline spacing="300" align="center">
           {title && (
             <Heading
               type={isSection ? "title4" : "title3"}

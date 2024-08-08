@@ -44,7 +44,7 @@ Default.story = {
 };
 
 Default.args = {
-  spacing: SPACING.XXXSMALL,
+  spacing: SPACING.FIFTY,
 };
 
 Default.argTypes = {
@@ -74,7 +74,7 @@ Playground.args = {
   as: "div",
   align: ALIGN.START,
   justify: JUSTIFY.START,
-  spacing: SPACING.XXXSMALL,
+  spacing: SPACING.FIFTY,
 };
 
 Playground.argTypes = {
@@ -117,7 +117,7 @@ Rtl.story = {
 };
 
 Rtl.args = {
-  spacing: SPACING.XXXSMALL,
+  spacing: SPACING.FIFTY,
 };
 
 Rtl.argTypes = {

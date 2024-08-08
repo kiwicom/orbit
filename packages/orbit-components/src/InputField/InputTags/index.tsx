@@ -45,7 +45,7 @@ const InputTags = ({ children }: { children: React.ReactNode }) => {
     <div
       className={cx(
         "relative",
-        "ms-sm",
+        "ms-300",
         "flex flex-initial items-center",
         "h-full min-w-[50px]",
         "overflow-hidden",
@@ -56,7 +56,7 @@ const InputTags = ({ children }: { children: React.ReactNode }) => {
       <div
         className={cx(
           "overflow-x-scroll whitespace-nowrap",
-          "space-x-xs flex items-center rtl:space-x-reverse",
+          "space-x-200 flex items-center rtl:space-x-reverse",
           "scrollbar-none",
         )}
         ref={tagsRef}

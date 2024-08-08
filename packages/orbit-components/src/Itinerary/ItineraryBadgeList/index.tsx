@@ -16,7 +16,7 @@ const ItineraryBadgeList = ({ children, spaceAfter, ...props }: Props) => {
   return (
     <div
       className={cx("orbit-itinerary-badge-list", spaceAfter && spaceAfterClasses[spaceAfter])}
-      style={{ marginInlineStart: `${2 * parseInt(theme.orbit.spaceSmall, 10) + offset}px` }}
+      style={{ marginInlineStart: `${2 * parseInt(theme.orbit.space300, 10) + offset}px` }}
     >
       <BadgeList {...props}>{children}</BadgeList>
     </div>

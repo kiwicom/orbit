@@ -53,14 +53,14 @@ describe("Stack", () => {
 
   it("should be block with spacing", () => {
     render(
-      <Stack spacing="XLarge" dataTest="test">
+      <Stack spacing="800" dataTest="test">
         <div>1</div>
         <div>2</div>
       </Stack>,
     );
 
     expect(screen.getByTestId("test")).toHaveStyle(`display: block`);
-    expect(screen.getByTestId("test")).toHaveClass("space-y-xl space-x-none block w-full");
+    expect(screen.getByTestId("test")).toHaveClass("space-y-800 space-x-none block w-full");
   });
 
   it("should turn on shrink", () => {

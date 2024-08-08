@@ -64,7 +64,7 @@ const TileHeader = ({
 }: React.PropsWithChildren<Props>) => (
   // eslint-disable-next-line jsx-a11y/no-static-element-interactions -- has been like this before
   <div
-    className="p-md text-normal duration-fast lm:p-lg w-full cursor-pointer leading-normal transition-colors ease-in-out"
+    className="p-400 text-normal duration-fast lm:p-600 w-full cursor-pointer leading-normal transition-colors ease-in-out"
     onClick={onClick}
     onKeyDown={onKeyDown}
     role={role}
@@ -75,7 +75,7 @@ const TileHeader = ({
   >
     <Stack align="center" justify="between" shrink spacing="none">
       {icon && (
-        <div className="text-icon-primary-foreground me-xs shrink-0 items-center self-start">
+        <div className="text-icon-primary-foreground me-200 shrink-0 items-center self-start">
           {icon}
         </div>
       )}
@@ -93,7 +93,7 @@ const TileHeader = ({
               <div
                 className={cx(
                   "font-base text-normal text-primary-foreground w-full font-normal leading-normal",
-                  title != null && "mt-xxs",
+                  title != null && "mt-100",
                 )}
               >
                 {description}
@@ -104,7 +104,7 @@ const TileHeader = ({
       {!noHeaderIcon && (
         <IconRight
           className={cx(
-            "orbit-tile-header-icon-right text-icon-secondary-foreground ms-sm duration-fast transition-all ease-in-out",
+            "orbit-tile-header-icon-right text-icon-secondary-foreground ms-300 duration-fast transition-all ease-in-out",
             expanded === true && "-rotate-180",
           )}
           external={external}

@@ -22,10 +22,10 @@ const StyledSearchButton = styled.button`
       padding: 10px 24px;
       border-radius: 22px;
       overflow: hidden;
-      margin-right: ${theme.orbit.spaceXSmall};
+      margin-right: ${theme.orbit.space200};
       transition: background ${theme.orbit.durationFast} ease-in;
       svg {
-        margin-right: ${theme.orbit.spaceXSmall};
+        margin-right: ${theme.orbit.space200};
       }
       &:hover {
         background: ${theme.orbit.paletteCloudLightHover};
@@ -47,7 +47,7 @@ const SearchNavbarButton = ({ onClick }: Props) => {
   return (
     <StyledSearchButton onClick={onClick}>
       <SearchIcon />
-      <Stack align="center" spacing="XSmall">
+      <Stack align="center" spacing="200">
         {isTablet ? (
           <>
             <p>Hit</p>

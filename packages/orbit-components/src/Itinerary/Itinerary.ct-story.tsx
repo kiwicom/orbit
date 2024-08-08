@@ -101,7 +101,7 @@ export function ItineraryBadgeListVisualStory() {
 
 export function ItinerarySeparatorVisualStory() {
   return (
-    <div className="p-xs gap-md flex w-full flex-col">
+    <div className="p-200 gap-400 flex w-full flex-col">
       <ItinerarySeparator>
         <p>Default</p>
       </ItinerarySeparator>
@@ -125,7 +125,7 @@ export function ItinerarySegmentVisualStory({
   ...props
 }: Omit<Props, "children"> & { noContent?: boolean }) {
   return (
-    <div className="p-xs">
+    <div className="p-200">
       <Itinerary>
         <ItinerarySegment dataTest="segment" {...props}>
           <ItinerarySegmentStop
@@ -153,7 +153,7 @@ export function ItinerarySegmentVisualStory({
 
 export function ItinerarySegmentStatusVisualStory() {
   return (
-    <div className="p-xs">
+    <div className="p-200">
       <Itinerary>
         <ItineraryStatus type="info" label="ItineraryStatus">
           <ItinerarySegment>
@@ -213,7 +213,7 @@ export function ItinerarySegmentStatusVisualStory() {
 
 export function ItineraryBannerHiddenCityVisualStory() {
   return (
-    <div className="p-xs">
+    <div className="p-200">
       <Itinerary>
         <ItinerarySegment
           banner={

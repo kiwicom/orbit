@@ -1,5 +1,3 @@
-import type { Theme } from "../../defaultTheme";
-
 export enum DIRECTIONS {
   ROW = "row",
   COLUMN = "column",
@@ -25,6 +23,21 @@ export enum JUSTIFY {
 
 export enum SPACINGS {
   NONE = "none",
+  FIFTY = "50",
+  ONE_HUNDRED = "100",
+  ONE_HUNDRED_FIFTY = "150",
+  TWO_HUNDRED = "200",
+  THREE_HUNDRED = "300",
+  FOUR_HUNDRED = "400",
+  FIVE_HUNDRED = "500",
+  SIX_HUNDRED = "600",
+  EIGHT_HUNDRED = "800",
+  ONE_THOUSAND = "1000",
+  ONE_THOUSAND_TWO_HUNDRED = "1200",
+  ONE_THOUSAND_SIX_HUNDRED = "1600",
+}
+
+export enum DEPRECATED_SPACINGS {
   XXXSMALL = "XXXSmall",
   XXSMALL = "XXSmall",
   XSMALL = "XSmall",
@@ -35,19 +48,3 @@ export enum SPACINGS {
   XXLARGE = "XXLarge",
   XXXLARGE = "XXXLarge",
 }
-
-const TokenNames = Object.values(SPACINGS);
-type Tokens = (typeof TokenNames)[number];
-
-export const TOKENS = (theme: Theme): Record<Tokens, string> => ({
-  none: "",
-  XXXSmall: theme.orbit.spaceXXXSmall,
-  XXSmall: theme.orbit.spaceXXSmall,
-  XSmall: theme.orbit.spaceXSmall,
-  small: theme.orbit.spaceSmall,
-  medium: theme.orbit.spaceMedium,
-  large: theme.orbit.spaceLarge,
-  XLarge: theme.orbit.spaceXLarge,
-  XXLarge: theme.orbit.spaceXXLarge,
-  XXXLarge: theme.orbit.spaceXXXLarge,
-});

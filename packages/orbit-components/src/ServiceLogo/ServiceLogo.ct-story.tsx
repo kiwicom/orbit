@@ -8,7 +8,7 @@ const GRAYSCALE_OPTIONS = [false, true];
 
 export default function ServiceLogoStory() {
   return (
-    <div className="p-md gap-md flex flex-wrap items-center [&_img]:shrink-0">
+    <div className="p-400 gap-400 flex flex-wrap items-center [&_img]:shrink-0">
       {GRAYSCALE_OPTIONS.map(grayScale => (
         <ServiceLogo name="Alipay" grayScale={grayScale} />
       ))}

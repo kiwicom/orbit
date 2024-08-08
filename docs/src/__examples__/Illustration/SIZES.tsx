@@ -5,7 +5,7 @@ import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 export default {
   Example: () => (
     <Stack>
-      <Stack spacing="XXSmall">
+      <Stack spacing="100">
         <Heading as="h3" type="title3">
           Extra small
         </Heading>
@@ -16,7 +16,7 @@ export default {
           name="PriorityBoarding"
         />
       </Stack>
-      <Stack spacing="XXSmall">
+      <Stack spacing="100">
         <Heading as="h3" type="title3">
           Small
         </Heading>
@@ -27,7 +27,7 @@ export default {
           name="PriorityBoarding"
         />
       </Stack>
-      <Stack spacing="XXSmall">
+      <Stack spacing="100">
         <Heading as="h3" type="title3">
           Medium
         </Heading>
@@ -38,7 +38,7 @@ export default {
           name="PriorityBoarding"
         />
       </Stack>
-      <Stack spacing="XXSmall">
+      <Stack spacing="100">
         <Heading as="h3" type="title3">
           Large
         </Heading>
@@ -49,7 +49,7 @@ export default {
           name="PriorityBoarding"
         />
       </Stack>
-      <Stack spacing="XXSmall">
+      <Stack spacing="100">
         <Heading as="h3" type="title3">
           Display
         </Heading>

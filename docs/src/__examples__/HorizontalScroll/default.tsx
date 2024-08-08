@@ -78,17 +78,7 @@ export default {
         {
           name: "spacing",
           type: "select",
-          options: [
-            "none",
-            "XXXSmall",
-            "XXSmall",
-            "XSmall",
-            "small",
-            "medium",
-            "large",
-            "XLarge",
-            "XXLarge",
-          ],
+          options: ["none", "50", "100", "200", "300", "400", "600", "800", "1000"],
           defaultValue: "none",
         },
       ],

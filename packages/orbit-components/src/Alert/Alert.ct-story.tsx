@@ -9,7 +9,7 @@ import Alert, { AlertButton } from ".";
 
 export function TestLeftIcon({ type }: { type: Type }) {
   return (
-    <div className="p-xxs inline-block">
+    <div className="p-100 inline-block">
       <AlertButton iconLeft={<Icons.Airplane />} type={type} dataTest="button">
         Button
       </AlertButton>

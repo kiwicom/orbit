@@ -10,7 +10,7 @@ const LayoutColumn = ({ as: Component = "div", children, dataTest, spanEntireRow
     // @ts-expect-error allow any component passed as string (TODO change the prop type to React.ElementType to fix this error)
     <Component
       className={cx(
-        "max-lm:[&_.orbit-card]:-mx-md max-lm:[&_.orbit-card]:w-auto",
+        "max-lm:[&_.orbit-card]:-mx-400 max-lm:[&_.orbit-card]:w-auto",
         spanEntireRow && "col-span-full",
       )}
       data-test={dataTest}

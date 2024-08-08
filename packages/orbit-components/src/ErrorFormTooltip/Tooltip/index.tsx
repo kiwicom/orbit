@@ -113,9 +113,9 @@ const ErrorFormTooltip = ({
       data-test={dataTest}
       className={cx(
         "flex justify-between overflow-visible",
-        "rounded-150 py-xs px-sm z-10 box-border",
+        "rounded-150 py-200 px-300 z-10 box-border",
         "max-h-none w-[min(calc(100%-20px),_100vw)]",
-        isHelp ? "pe-sm bg-blue-normal" : "bg-red-normal",
+        isHelp ? "pe-300 bg-blue-normal" : "bg-red-normal",
         shown ? "visible opacity-100" : "invisible opacity-0",
         "duration-fast transition-[opacity,visibility] ease-in-out",
         "bottom-[var(--error-form-tooltip-bottom)] left-[var(--error-form-tooltip-left)] right-[var(--error-form-tooltip-right)] top-[var(--error-form-tooltip-top)] [position:var(--error-form-tooltip-position)] [transform:var(--error-form-tooltip-transform)]",
@@ -126,11 +126,11 @@ const ErrorFormTooltip = ({
     >
       <div
         className={cx(
-          "start-xs rtl:de:start-0 absolute",
-          isVertical ? "bottom-xxxs" : "top-xxxs",
+          "start-200 rtl:de:start-0 absolute",
+          isVertical ? "bottom-50" : "top-50",
           inlineLabel && "rtl:start-0",
           isHelp ? "before:bg-blue-normal" : "before:bg-red-normal",
-          "before:size-xs before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45",
+          "before:size-200 before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45",
         )}
         ref={setArrowRef}
       />
@@ -148,7 +148,7 @@ const ErrorFormTooltip = ({
       {isHelp && helpClosable && (
         <button
           type="button"
-          className="text-white-normal ms-sm flex cursor-pointer"
+          className="text-white-normal ms-300 flex cursor-pointer"
           tabIndex={0}
           // @ts-expect-error TODO
           onKeyDown={handleKeyDown<HTMLAnchorElement>(onShown)}

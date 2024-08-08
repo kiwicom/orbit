@@ -23,10 +23,10 @@ export default function CarrierLogoStory() {
   ];
 
   return (
-    <div className="space-y-xs flex flex-col">
-      <div className="space-x-lg flex">
+    <div className="space-y-200 flex flex-col">
+      <div className="space-x-600 flex">
         {Object.values(SIZE_OPTIONS).map(size => (
-          <div className="space-y-xs flex flex-col">
+          <div className="space-y-200 flex flex-col">
             <CarrierLogo size={size} carriers={single} />
             <CarrierLogo rounded size={size} carriers={single} />
             <CarrierLogo inlineStacked size={size} carriers={single} />
@@ -34,21 +34,21 @@ export default function CarrierLogoStory() {
         ))}
       </div>
 
-      <div className="space-y-xs flex flex-col">
+      <div className="space-y-200 flex flex-col">
         <CarrierLogo carriers={two} />
         <CarrierLogo rounded carriers={two} />
         <CarrierLogo inlineStacked carriers={two} />
         <CarrierLogo inlineStacked rounded carriers={two} />
       </div>
 
-      <div className="space-y-xs flex flex-col">
+      <div className="space-y-200 flex flex-col">
         <CarrierLogo carriers={three} />
         <CarrierLogo rounded carriers={three} />
         <CarrierLogo inlineStacked carriers={three} />
         <CarrierLogo inlineStacked rounded carriers={three} />
       </div>
 
-      <div className="space-y-xs flex flex-col">
+      <div className="space-y-200 flex flex-col">
         <CarrierLogo carriers={four} />
         <CarrierLogo rounded carriers={four} />
         <CarrierLogo inlineStacked carriers={four} />

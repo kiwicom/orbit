@@ -14,7 +14,7 @@ interface GuidelineItemProps extends GuidelineType {
 
 const StyledWrapper = styled.div`
   ${({ theme }) => css`
-    padding-top: ${theme.orbit.spaceLarge};
+    padding-top: ${theme.orbit.space600};
   `};
 `;
 
@@ -22,14 +22,14 @@ const StyledWrapper = styled.div`
 // So otherwise adjacent p elements are right next to each other
 const StyledContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean }>`
   ${({ theme }) => css`
-    padding: ${theme.orbit.spaceMedium} ${theme.orbit.spaceLarge};
+    padding: ${theme.orbit.space400} ${theme.orbit.space600};
     background: ${theme.orbit.paletteCloudLight};
     border-radius: ${theme.orbit.borderRadius100};
     width: 100%;
     ${resolveBorders};
 
     p + p {
-      margin-top: ${theme.orbit.spaceSmall};
+      margin-top: ${theme.orbit.space300};
     }
   `}
 `;
@@ -49,7 +49,7 @@ const GuidelineItemIcons = ({ type }) =>
   );
 
 const GuidelineItem = ({ children, type }: GuidelineItemProps) => (
-  <Stack flex spacing="XSmall" spaceAfter="small">
+  <Stack flex spacing="200" spaceAfter="small">
     <GuidelineItemIcons type={type} />
     <div>{children}</div>
   </Stack>
@@ -62,7 +62,7 @@ const GuidelineContainer = ({ children, type }) => {
         flex
         direction="row-reverse"
         tablet={{ direction: "row", justify: "start" }}
-        spacing="XSmall"
+        spacing="200"
         justify="between"
         align="center"
       >

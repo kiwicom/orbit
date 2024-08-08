@@ -38,7 +38,7 @@ describe(`AirportIllustration of ${name}`, () => {
   it("should have margin-bottom", () => {
     expect(getComputedStyle(screen.getByRole("img"))).toHaveProperty(
       "margin-bottom",
-      defaultTheme.orbit.spaceSmall,
+      defaultTheme.orbit.space300,
     );
   });
 });

@@ -20,16 +20,16 @@ interface Props {
 const StyledContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: ${theme.orbit.spaceLarge};
+    gap: ${theme.orbit.space600};
     flex-direction: column;
     ${mq.desktop(css`
       flex-direction: row;
     `)};
     ${StyledAnchor} + & {
-      margin-top: ${theme.orbit.spaceXSmall} !important;
+      margin-top: ${theme.orbit.space200} !important;
     }
     & + ${StyledAnchor} {
-      margin-top: ${theme.orbit.spaceXLarge} !important;
+      margin-top: ${theme.orbit.space800} !important;
     }
   `};
 `;
@@ -58,7 +58,7 @@ const StyledSection = styled.div`
     }
 
     li + li {
-      margin-top: ${theme.orbit.spaceXXSmall};
+      margin-top: ${theme.orbit.space100};
     }
   `};
 `;
@@ -103,7 +103,7 @@ function ListWithIcon({ children, icon }) {
 export function UsageUse({ children }: Props) {
   return (
     <StyledSection>
-      <Stack inline spacing="XSmall">
+      <Stack inline spacing="200">
         <StyledHeadingIcon $color={docsTheme.orbit.paletteGreenLight}>
           <Check color="success" />
         </StyledHeadingIcon>
@@ -117,7 +117,7 @@ export function UsageUse({ children }: Props) {
 export function UsageDontUse({ children }: Props) {
   return (
     <StyledSection>
-      <Stack inline spacing="XSmall">
+      <Stack inline spacing="200">
         <StyledHeadingIcon $color={docsTheme.orbit.paletteRedLight}>
           <Close color="critical" />
         </StyledHeadingIcon>

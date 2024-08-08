@@ -34,7 +34,7 @@ export interface Props extends Common.Globals {
   /** prop for testing purposes */
   readonly dataTest?: string;
   /** The spacing between children elements */
-  /** default: "small" */
+  /** default: "300" */
   readonly spacing?: Spacing;
   /** content of HorizontalScroll */
   readonly children: React.ReactNode;

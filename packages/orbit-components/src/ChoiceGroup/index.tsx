@@ -78,7 +78,7 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
         id={id}
         className={cx(
           "flex w-full flex-col",
-          "[&_.orbit-choice-group-feedback]:mt-xs [&_.orbit-choice-group-feedback]:relative [&_.orbit-choice-group-feedback]:top-[initial]",
+          "[&_.orbit-choice-group-feedback]:mt-200 [&_.orbit-choice-group-feedback]:relative [&_.orbit-choice-group-feedback]:top-[initial]",
         )}
       >
         {label && (
@@ -92,10 +92,10 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
             // in case we'll need something more in the future
             Container: "div",
             Item: ItemContainer({ filter, onOnlySelection, onlySelectionText, itemProps }),
-            spacing: filter ? "0px" : theme.orbit.spaceXSmall,
+            spacing: filter ? "0px" : theme.orbit.space200,
           })
         ) : (
-          <Stack direction="column" spacing={filter ? "none" : "XSmall"}>
+          <Stack direction="column" spacing={filter ? "none" : "200"}>
             {React.Children.map(children, child => {
               return !filter ? (
                 // @ts-expect-error TODO

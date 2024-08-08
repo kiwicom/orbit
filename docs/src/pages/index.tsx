@@ -73,7 +73,7 @@ export default function Home({ location, path }: Props) {
               }
             `}
           >
-            <Inline spacing="small">
+            <Inline spacing="300">
               <Button
                 size="large"
                 type="primary"

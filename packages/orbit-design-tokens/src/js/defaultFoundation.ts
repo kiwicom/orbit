@@ -134,6 +134,18 @@ export interface Size {
   extraExtraLarge: string;
 }
 export interface Space {
+  50: string;
+  100: string;
+  150: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  800: string;
+  1000: string;
+  1200: string;
+  1600: string;
   XXXSmall: string;
   XXSmall: string;
   XSmall: string;
@@ -323,6 +335,18 @@ const size = {
   extraExtraLarge: "52px",
 };
 const space = {
+  50: "2px",
+  100: "4px",
+  150: "6px",
+  200: "8px",
+  300: "12px",
+  400: "16px",
+  500: "20px",
+  600: "24px",
+  800: "32px",
+  1000: "40px",
+  1200: "48px",
+  1600: "64px",
   XXXSmall: "2px",
   XXSmall: "4px",
   XSmall: "8px",

@@ -4,7 +4,6 @@ import { screen, render } from "../../test-utils";
 import { getJustify, getAlign } from "../../utils/layout";
 import theme from "../../defaultTheme";
 import type { Props } from "../types";
-import { TOKENS } from "../../utils/layout/consts";
 import { ALIGN } from "../../common/tailwind/alignItems";
 import { DISPLAY } from "../../common/tailwind/display";
 import { JUSTIFY } from "../../common/tailwind/justify";
@@ -35,8 +34,6 @@ describe("#Box", () => {
     render(
       <Box
         dataTest={dataTest}
-        padding="medium"
-        margin="medium"
         width="100%"
         minWidth="100px"
         maxWidth="300px"
@@ -53,8 +50,6 @@ describe("#Box", () => {
     expect(el.tagName).toBe("DIV");
     expect(el).toHaveStyle({ "box-sizing": "border-box" });
     expect(el).toHaveStyle({ "font-family": theme.orbit.fontFamily });
-    expect(el).toHaveStyle({ padding: TOKENS(theme).medium });
-    expect(el).toHaveStyle({ margin: TOKENS(theme).medium });
     expect(el).toHaveStyle({ "--box-width": "100%", width: "var(--box-width)" });
     expect(el).toHaveStyle({ "--box-min-width": "100px", "min-width": "var(--box-min-width)" });
     expect(el).toHaveStyle({ "--box-max-width": "300px", "max-width": "var(--box-max-width)" });
@@ -238,22 +233,22 @@ describe("#Box", () => {
     render(
       <Box
         dataTest="kek"
-        margin={{ top: "XSmall", left: "XXXSmall", bottom: "none", right: "medium" }}
-        padding={{ top: "XXLarge", left: "XXSmall", bottom: "XXXLarge", right: "large" }}
+        margin={{ top: "200", left: "50", bottom: "none", right: "400" }}
+        padding={{ top: "1000", left: "100", bottom: "1200", right: "600" }}
       >
         kek
       </Box>,
     );
 
     expect(screen.getByTestId("kek")).toHaveStyle({
-      padding: "40px 24px 52px 4px",
+      padding: "40px 24px 48px 4px",
       margin: "8px 16px 0 2px",
     });
   });
 
   it("should have padding and margin string props", () => {
     render(
-      <Box dataTest="kek" margin="small" padding="XLarge">
+      <Box dataTest="kek" margin="300" padding="800">
         kek
       </Box>,
     );

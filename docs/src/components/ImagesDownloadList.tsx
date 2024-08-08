@@ -14,7 +14,7 @@ const StyledAnchor = styled.a`
     background-color: ${theme.orbit.paletteProductLight};
     color: ${theme.orbit.paletteProductNormal};
     padding: ${theme.orbit.paddingButtonSmallWithLeftIcon};
-    padding-top: ${theme.orbit.spaceXXSmall};
+    padding-top: ${theme.orbit.space100};
     height: ${theme.orbit.heightButtonSmall};
     border-radius: ${theme.orbit.borderRadius100};
     transition: all ${theme.orbit.durationFast} ease-in;
@@ -40,10 +40,10 @@ interface ImageWrapProps {
 
 const ImageWrap = styled.div<ImageWrapProps>`
   ${({ theme, width }) => css`
-    padding: ${theme.orbit.spaceSmall};
+    padding: ${theme.orbit.space300};
     border: 1px solid ${theme.orbit.borderColorCard};
     border-radius: ${theme.orbit.borderRadius100};
-    margin-top: ${theme.orbit.spaceMedium};
+    margin-top: ${theme.orbit.space400};
     width: ${width};
     margin-right: 2%;
   `};
@@ -131,7 +131,7 @@ const ImagesDownloadList = ({ listName }: ImagesDownloadListProps) => {
               <Img {...imageProp} alt="" />
             </ImageCenterer>
             <Stack
-              spacing="small"
+              spacing="300"
               direction={imageWrapWidth() === "100%" && isMediumMobile ? "row" : "column"}
               justify="between"
               align={imageWrapWidth() === "100%" ? "center" : "start"}
@@ -145,7 +145,7 @@ const ImagesDownloadList = ({ listName }: ImagesDownloadListProps) => {
                 basis="content"
               >
                 <StyledAnchor href={assetData.publicURL} download>
-                  <Stack spacing="XXSmall" align="center">
+                  <Stack spacing="100" align="center">
                     <Download size="small" />
                     <div>Download</div>
                   </Stack>

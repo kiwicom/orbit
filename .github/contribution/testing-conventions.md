@@ -136,7 +136,7 @@ import { Component } from ".";
 
 export function TestComponentStory() {
   return (
-    <div className="p-xss inline-block">
+    <div className="p-100 inline-block">
       <Component
         icon={<Icons.Airplane />}
         title="Lorem ipsum dolor"

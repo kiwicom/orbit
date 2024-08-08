@@ -7,8 +7,8 @@ import Button from ".";
 
 export default function ButtonVisualStory() {
   return (
-    <div className="space-y-sm flex-col items-start">
-      <div className="gap-sm flex flex-wrap items-center">
+    <div className="space-y-300 flex-col items-start">
+      <div className="gap-300 flex flex-wrap items-center">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Button
             iconLeft={<Icons.Airplane />}
@@ -21,7 +21,7 @@ export default function ButtonVisualStory() {
         ))}
       </div>
 
-      <div className="gap-sm flex flex-wrap items-center">
+      <div className="gap-300 flex flex-wrap items-center">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Button
             iconLeft={<Icons.Airplane />}
@@ -35,7 +35,7 @@ export default function ButtonVisualStory() {
         ))}
       </div>
 
-      <div className="gap-sm flex flex-wrap items-center">
+      <div className="gap-300 flex flex-wrap items-center">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Button
             iconLeft={<Icons.Airplane />}
@@ -49,7 +49,7 @@ export default function ButtonVisualStory() {
         ))}
       </div>
 
-      <div className="gap-sm flex flex-wrap">
+      <div className="gap-300 flex flex-wrap">
         {Object.values(SIZE_OPTIONS).map(size => (
           <Button
             iconLeft={<Icons.Airplane />}
@@ -62,7 +62,7 @@ export default function ButtonVisualStory() {
         ))}
       </div>
 
-      <div className="gap-sm flex flex-wrap items-start">
+      <div className="gap-300 flex flex-wrap items-start">
         {Object.values(SIZE_OPTIONS).map(size => (
           <Button
             iconLeft={<Icons.Airplane />}
@@ -76,7 +76,7 @@ export default function ButtonVisualStory() {
         ))}
       </div>
 
-      <div className="gap-sm flex flex-wrap items-center">
+      <div className="gap-300 flex flex-wrap items-center">
         <Button iconLeft={<Icons.Airplane />}>Button</Button>
         <Button iconRight={<Icons.ChevronDown />}>Button</Button>
         <Button iconLeft={<Icons.Airplane />} iconRight={<Icons.ChevronDown />}>
@@ -85,7 +85,7 @@ export default function ButtonVisualStory() {
         <Button iconLeft={<Icons.Airplane />} />
       </div>
 
-      <div className="gap-sm flex flex-wrap items-center">
+      <div className="gap-300 flex flex-wrap items-center">
         <Button circled iconLeft={<Icons.Airplane />}>
           Button
         </Button>

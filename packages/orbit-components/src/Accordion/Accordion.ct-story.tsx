@@ -9,7 +9,7 @@ import Accordion, { AccordionSection } from ".";
 
 export default function AccordionVisualTest() {
   return (
-    <div className="space-y-md">
+    <div className="space-y-400">
       <Accordion>
         <AccordionSection id="0X0" header={<Text type="primary">Expandable</Text>}>
           <Text type="primary">This is a content text</Text>

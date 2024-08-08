@@ -18,7 +18,7 @@ describe("Box media query", () => {
     cy.viewport(defaultTokens.widthBreakpointLargeMobile, 600);
     const element = cy.findByText("Box Content");
     element.should("have.css", "text-align", "center");
-    element.should("have.css", "border-radius", defaultTokens.borderRadiusLarge);
+    element.should("have.css", "border-radius", defaultTokens.borderRadius150);
     element.should("have.css", "overflow", "scroll");
     element.should("have.css", "flex-shrink", "0");
     element.should(
@@ -58,10 +58,10 @@ describe("Box media query", () => {
       "background-color",
       color(defaultTokens.paletteRedLight).css().replaceAll(",", ", "),
     );
-    element.should("have.css", "padding", defaultTokens.spaceLarge);
-    element.should("have.css", "margin-top", defaultTokens.spaceSmall);
+    element.should("have.css", "padding", defaultTokens.space600);
+    element.should("have.css", "margin-top", defaultTokens.space300);
     element.should("have.css", "margin-left", "0px");
-    element.should("have.css", "margin-right", defaultTokens.spaceXSmall);
+    element.should("have.css", "margin-right", defaultTokens.space200);
     element.should("have.css", "align-items", "flex-end");
     element.should("have.css", "max-height", "24px");
   });

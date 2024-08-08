@@ -83,12 +83,12 @@ const Handle = ({
   return (
     <div
       className={cx(
-        "size-lg shadow-action bg-white-normal duration-fast tap-color-none hover:shadow-action-active active:shadow-action-active absolute bottom-0 flex cursor-pointer select-none items-center justify-center rounded-full transition-shadow ease-in-out",
+        "size-600 shadow-action bg-white-normal duration-fast tap-color-none hover:shadow-action-active active:shadow-action-active absolute bottom-0 flex cursor-pointer select-none items-center justify-center rounded-full transition-shadow ease-in-out",
         onTop && "z-20",
       )}
       style={{
         // TODO use inset-inline-start once we don’t support ios_safari 14
-        [leftRight({ theme })]: `calc(${left}% - ${theme.orbit.spaceSmall})`,
+        [leftRight({ theme })]: `calc(${left}% - ${theme.orbit.space300})`,
       }}
       data-test={dataTest}
       tabIndex={0}
@@ -102,7 +102,7 @@ const Handle = ({
       aria-label={Array.isArray(ariaLabel) ? ariaLabel[index] : ariaLabel}
       aria-valuetext={ariaValueText}
     >
-      <div className="size-xs bg-blue-normal rounded-full" />
+      <div className="size-200 bg-blue-normal rounded-full" />
     </div>
   );
 };

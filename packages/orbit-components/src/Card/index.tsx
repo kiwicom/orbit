@@ -53,7 +53,7 @@ export default function Card({
       style={marginStyles}
     >
       {(title != null || header != null) && !loading && (
-        <div className="p-md lm:p-lg lm:border-x relative border-b">
+        <div className="p-400 lm:p-600 lm:border-x relative border-b">
           <Header
             description={description}
             dataA11ySection={dataA11ySection}

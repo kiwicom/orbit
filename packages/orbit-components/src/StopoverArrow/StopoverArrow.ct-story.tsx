@@ -6,7 +6,7 @@ import StopoverArrow from ".";
 
 export default function StopoverArrowStory() {
   return (
-    <div className="p-md">
+    <div className="p-400">
       {Object.values(STOPS).map(stops => (
         <StopoverArrow stops={stops} />
       ))}

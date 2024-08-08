@@ -5,7 +5,7 @@ import mediaQueries from "../../MediaQueries";
 const StyledTocWrapper = styled.div`
   ${({ theme }) => css`
     ${mediaQueries.tablet(css`
-      padding-top: ${theme.orbit.spaceXXLarge};
+      padding-top: ${theme.orbit.space1000};
       order: 2;
     `)}
 

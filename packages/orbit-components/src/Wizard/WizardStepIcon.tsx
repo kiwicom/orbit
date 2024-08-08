@@ -13,7 +13,7 @@ const WizardStepIcon = ({ isCompleted }: { isCompleted?: boolean }) => {
   return (
     <div
       className={cx(
-        "-top-xxxs duration-fast relative flex size-[20px] items-center justify-center rounded-full transition-shadow ease-in",
+        "-top-50 duration-fast size-500 relative flex items-center justify-center rounded-full transition-shadow ease-in",
         status === "disabled"
           ? "bg-cloud-normal-hover"
           : "bg-product-normal group-hover/container:shadow-wizard-step-icon-hover",

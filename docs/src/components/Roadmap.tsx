@@ -22,7 +22,7 @@ const RoadmapItem = ({ description, estimate, jiraNumber, title }: RoadmapItemPr
       {(estimate || jiraNumber) && (
         <Stack direction="row">
           {estimate && (
-            <Stack spacing="XXXSmall">
+            <Stack spacing="50">
               <Text size="small" type="secondary">
                 Estimated completion
               </Text>
@@ -30,7 +30,7 @@ const RoadmapItem = ({ description, estimate, jiraNumber, title }: RoadmapItemPr
             </Stack>
           )}
           {jiraNumber && (
-            <Stack spacing="XXXSmall">
+            <Stack spacing="50">
               <Text size="small" type="secondary">
                 Connected Jira epic
               </Text>

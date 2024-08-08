@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -12,113 +13,107 @@ import { ELEMENT_OPTIONS } from "../Heading/consts";
 
 import Card from ".";
 
-export default {
+type CardPropsAndCustomArgs = React.ComponentProps<typeof Card> & {
+  expanded: boolean;
+  sectionTitle: string;
+  sectionDescription: string;
+  initialExpanded?: boolean;
+};
+
+const meta: Meta<CardPropsAndCustomArgs> = {
   title: "Card",
-};
+  component: Card,
 
-export const Default = ({ title, titleAs }) => {
-  return <Card title={title} titleAs={titleAs} />;
-};
+  args: {
+    description: "This is description of the card",
+    title: "Card with title",
+    titleAs: ELEMENT_OPTIONS.H2,
+    sectionTitle: "Section Title",
+    sectionDescription: "Section Description",
+    expanded: false,
+    initialExpanded: false,
+    dataA11ySection: "",
+    loading: false,
+  },
 
-Default.args = {
-  title: "Card with title",
-  titleAs: ELEMENT_OPTIONS.H2,
-};
+  argTypes: {
+    titleAs: {
+      options: Object.values(ELEMENT_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+  },
 
-Default.argTypes = {
-  titleAs: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["labelClose"],
     },
   },
 };
 
-export const CardWithDescription = ({ title, description }) => {
-  return <Card onClose={action("onClose")} title={title} description={description} />;
+export default meta;
+
+type Story = StoryObj<CardPropsAndCustomArgs>;
+
+export const Default: Story = {};
+
+export const CardWithDescription: Story = {
+  render: args => <Card {...args} onClose={action("onClose")} />,
 };
 
-CardWithDescription.story = {
-  name: "Card with description",
-};
-
-CardWithDescription.args = {
-  title: "Card with title",
-  description: "This is description of the card",
-};
-
-export const CardWithActions = ({ title, description }) => {
-  return (
+export const CardWithActions: Story = {
+  render: args => (
     <Card
-      title={title}
-      description={description}
+      {...args}
       actions={
         <ButtonLink compact size="small">
           Button
         </ButtonLink>
       }
     />
-  );
-};
+  ),
 
-CardWithActions.story = {
-  name: "Card with actions",
-};
-
-CardWithActions.args = {
-  title: "Card with title",
-  description: "This is description of the card",
-};
-
-export const CardWithOnlySection = () => {
-  return (
-    <Card>
-      <CardSection>This is content of card</CardSection>
-    </Card>
-  );
-};
-
-CardWithOnlySection.story = {
-  name: "Card with only section",
-};
-
-export const CardWithSections = ({ titleAs, sectionTitle, sectionDescription }) => {
-  return (
-    <Card>
-      <CardSection
-        onClick={action("onClick")}
-        title={sectionTitle}
-        description={sectionDescription}
-        titleAs={titleAs}
-      />
-      <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
-      <CardSection title={sectionTitle} description={sectionDescription} titleAs={titleAs} />
-    </Card>
-  );
-};
-
-CardWithSections.story = {
-  name: "Card with sections",
-};
-
-CardWithSections.args = {
-  titleAs: ELEMENT_OPTIONS.H2,
-  sectionTitle: "Section Title",
-  sectionDescription: "Section Description",
-};
-
-CardWithSections.argTypes = {
-  titleAs: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["expanded", "initialExpanded", "labelClose"],
     },
   },
 };
 
-export const CardWithExpandableSections = ({ title, description, sectionTitle }) => {
-  return (
-    <Card title={title} onClose={action("onClose")} description={description}>
+export const CardWithOnlySection: Story = {
+  render: () => (
+    <Card>
+      <CardSection>This is content of card</CardSection>
+    </Card>
+  ),
+
+  parameters: {
+    controls: {
+      disable: true,
+    },
+  },
+};
+
+export const CardWithSections: Story = {
+  render: ({ sectionTitle, sectionDescription, ...args }) => (
+    <Card {...args}>
+      <CardSection title={sectionTitle} description={sectionDescription} />
+      <CardSection title={sectionTitle} description={sectionDescription} />
+      <CardSection title={sectionTitle} description={sectionDescription} />
+    </Card>
+  ),
+
+  parameters: {
+    controls: {
+      exclude: ["expanded", "initialExpanded", "labelClose"],
+    },
+  },
+};
+
+export const CardWithExpandableSections: Story = {
+  render: ({ sectionTitle, ...args }) => (
+    <Card {...args} onClose={action("onClose")}>
       <CardSection expandable title={sectionTitle}>
         This is a section content
       </CardSection>
@@ -129,31 +124,18 @@ export const CardWithExpandableSections = ({ title, description, sectionTitle })
         This is a section content
       </CardSection>
     </Card>
-  );
-};
-
-CardWithExpandableSections.story = {
-  name: "Card with expandable sections",
+  ),
 
   parameters: {
-    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["expanded", "initialExpanded", "labelClose"],
+    },
   },
 };
 
-CardWithExpandableSections.args = {
-  title: "Card with title",
-  description: "This is description of the card",
-  sectionTitle: "Section Title",
-};
-
-export const CardWithControlledAndUncontrolled = ({
-  expanded,
-  title,
-  description,
-  sectionTitle,
-}) => {
-  return (
-    <Card title={title} description={description}>
+export const CardWithControlledAndUncontrolled: Story = {
+  render: ({ expanded, sectionTitle, ...args }) => (
+    <Card {...args}>
       <CardSection
         expandable
         expanded={expanded}
@@ -172,51 +154,25 @@ export const CardWithControlledAndUncontrolled = ({
         This is a section content
       </CardSection>
     </Card>
-  );
-};
+  ),
 
-CardWithControlledAndUncontrolled.story = {
-  name: "Card with controlled and uncontrolled",
-
-  parameters: {
-    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    expanded: true,
   },
 };
 
-CardWithControlledAndUncontrolled.args = {
-  expanded: true,
-  title: "Card with title",
-  description: "This is description of the card",
-  sectionTitle: "Section Title",
-};
-
-export const CardWithControlledWithControls = ({ expanded, title, description, sectionTitle }) => {
-  return (
-    <Card title={title} description={description}>
+export const CardWithControlledWithControls: Story = {
+  render: ({ expanded, sectionTitle, ...args }) => (
+    <Card {...args}>
       <CardSection expandable expanded={expanded} title={sectionTitle}>
         This is a section content
       </CardSection>
     </Card>
-  );
+  ),
 };
 
-CardWithControlledWithControls.story = {
-  name: "Card with controlled with knobe",
-
-  parameters: {
-    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-CardWithControlledWithControls.args = {
-  expanded: false,
-  title: "Card with title",
-  description: "This is description of the card",
-  sectionTitle: "Section Title",
-};
-
-export const CardWithDefaultExpanded = ({ initialExpanded }) => {
-  return (
+export const CardWithDefaultExpanded: Story = {
+  render: ({ initialExpanded }) => (
     <Card>
       <CardSection
         expandable
@@ -253,26 +209,23 @@ export const CardWithDefaultExpanded = ({ initialExpanded }) => {
         By default visible content
       </CardSection>
     </Card>
-  );
-};
+  ),
 
-CardWithDefaultExpanded.story = {
-  name: "Card with default expanded",
+  args: {
+    initialExpanded: true,
+  },
 
   parameters: {
-    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["expanded", "labelClose"],
+    },
   },
 };
 
-CardWithDefaultExpanded.args = {
-  initialExpanded: true,
-};
-
-export const CardWithMixedSections = ({ title, description, sectionTitle, sectionDescription }) => {
-  return (
+export const CardWithMixedSections: Story = {
+  render: ({ sectionTitle, sectionDescription, ...args }) => (
     <Card
-      title={title}
-      description={description}
+      {...args}
       actions={
         <ButtonLink compact size="small">
           Button
@@ -298,90 +251,57 @@ export const CardWithMixedSections = ({ title, description, sectionTitle, sectio
         Section Content
       </CardSection>
     </Card>
-  );
+  ),
 };
-
-CardWithMixedSections.story = {
-  name: "Card with mixed sections",
-
-  parameters: {
-    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-CardWithMixedSections.args = {
-  title: "Card with title",
-  description: "This is description of the card",
-  sectionTitle: "Section Title",
-  sectionDescription: "Section Description",
-};
-
-export const LoadingCard = ({ title }) => {
-  return (
-    <Card title={title} loading>
+export const LoadingCard: Story = {
+  render: args => (
+    <Card {...args}>
       <CardSection>kek</CardSection>
     </Card>
-  );
-};
+  ),
 
-LoadingCard.story = {
-  parameters: {
-    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    loading: true,
   },
 };
 
-LoadingCard.args = {
-  title: "Card with title",
-};
+export const Rtl: Story = {
+  render: () => (
+    <RenderInRtl>
+      <Card title="Title of the CardHeader" description="Description of the CardHeader">
+        <CardSection title="Content with Heading and text">
+          <Text>Text in content</Text>
+        </CardSection>
+        <CardSection title="Content with Heading and text">
+          <Text>Text in content</Text>
+        </CardSection>
+        <CardSection title="Content with Heading and text" expandable>
+          Text in content
+        </CardSection>
 
-export const Rtl = () => (
-  <RenderInRtl>
-    <Card title="Title of the CardHeader" description="Description of the CardHeader">
-      <CardSection title="Content with Heading and text">
-        <Text>Text in content</Text>
-      </CardSection>
-      <CardSection title="Content with Heading and text">
-        <Text>Text in content</Text>
-      </CardSection>
-      <CardSection title="Content with Heading and text" expandable>
-        Text in content
-      </CardSection>
-
-      <CardSection
-        expandable
-        title="Content with Heading and text"
-        initialExpanded
-        actions={
-          <ButtonLink compact size="small">
-            Action
-          </ButtonLink>
-        }
-      >
-        <Text>Text in content</Text>
-      </CardSection>
-    </Card>
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+        <CardSection
+          expandable
+          title="Content with Heading and text"
+          initialExpanded
+          actions={
+            <ButtonLink compact size="small">
+              Action
+            </ButtonLink>
+          }
+        >
+          <Text>Text in content</Text>
+        </CardSection>
+      </Card>
+    </RenderInRtl>
+  ),
 
   parameters: {
-    info: "Card sections allow you to create separate sections in every card when you need to create more advanced content structure. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
   },
 };
 
-export const Accessibility = ({ title, dataA11ySection }) => {
-  return <Card title={title} dataA11ySection={dataA11ySection} />;
-};
+export const Accessibility: Story = {};
 
-Accessibility.story = {
-  parameters: {
-    info: "This is a preview of component accessibility props",
-  },
-};
-
-Accessibility.args = {
-  title: "Card with title",
-  dataA11ySection: "ID-OF-CARD",
-};
+export const Playground: Story = {};

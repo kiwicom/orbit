@@ -1,181 +1,126 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { SPACINGS } from "../utils/layout/consts";
 import Box from "../Box";
 import Text from "../Text";
-import Stack from "../Stack";
 
 import HorizontalScroll from ".";
 
 Box.displayName = "Box";
 HorizontalScroll.displayName = "HorizontalScroll";
 
-export default {
+interface ScrollSnapTypes {
+  scrollSnapAlign: "none" | "start" | "end" | "center";
+  scrollSnapType: "none" | "inline" | "mandatory" | "proximity";
+}
+
+type HorizontalScrollPropsAndCustomArgs = React.ComponentProps<typeof HorizontalScroll> &
+  ScrollSnapTypes;
+
+const meta: Meta<HorizontalScrollPropsAndCustomArgs> = {
   title: "HorizontalScroll",
+  component: HorizontalScroll,
+
+  parameters: {
+    info: "Horizontal scroll component. Check Orbit.Kiwi for more detailed design guidelines.",
+  },
+
+  args: {
+    overflowElevation: false,
+    elevationColor: "paletteGreenLight",
+    arrows: false,
+    arrowColor: "#000000",
+    spacing: SPACINGS.FIFTY,
+    scrollPadding: 0,
+    scrollSnap: "mandatory",
+    minHeight: 120,
+  },
+
+  argTypes: {
+    spacing: {
+      options: Object.values(SPACINGS),
+      control: {
+        type: "select",
+      },
+    },
+    scrollSnap: {
+      options: ["none", "inline", "mandatory", "proximity"],
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 
-export const Default = ({ spacing, arrows, overflowElevation, elevationColor, arrowColor }) => {
-  return (
-    <HorizontalScroll
-      spacing={spacing}
-      arrows={arrows}
-      overflowElevation={overflowElevation}
-      elevationColor={elevationColor}
-      arrowColor={arrowColor}
-    >
-      {Array(...Array(10)).map((_, key) => (
-        <Box
-          // eslint-disable-next-line react/no-array-index-key
-          key={key}
-          display="flex"
-          justify="center"
-          minWidth="150px"
-          background="cloudLight"
-          height="full"
-        >
-          <Text size="large" weight="bold" as="div">
-            <div
-              style={{
-                height: "50px",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              {key}
-            </div>
-          </Text>
-        </Box>
-      ))}
+export default meta;
+type Story = StoryObj<HorizontalScrollPropsAndCustomArgs>;
+
+const ScrollTile = ({ title }: { title: number }) => (
+  <Box
+    key={title}
+    display="flex"
+    justify="center"
+    minWidth="150px"
+    background="cloudLight"
+    height="full"
+  >
+    <Text size="large" weight="bold" as="div">
+      <div
+        style={{
+          height: "50px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {title}
+      </div>
+    </Text>
+  </Box>
+);
+
+export const Default: Story = {
+  render: args => (
+    <HorizontalScroll {...args}>
+      {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        Array(...Array(10)).map((_, key) => {
+          return <ScrollTile title={key} />;
+        })
+      }
     </HorizontalScroll>
-  );
-};
+  ),
 
-Default.args = {
-  overflowElevation: true,
-  elevationColor: "",
-  arrows: false,
-  arrowColor: "",
-  spacing: SPACINGS.FIFTY,
-};
-
-Default.argTypes = {
-  spacing: {
-    options: Object.values(SPACINGS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      disable: true,
     },
+  },
+
+  args: {
+    spacing: undefined,
+    scrollPadding: undefined,
+    scrollSnap: undefined,
+    overflowElevation: false,
+    arrowColor: undefined,
+    elevationColor: undefined,
+    minHeight: undefined,
   },
 };
 
-export const NoScroll = ({ spacing }) => {
-  return (
-    <Stack>
-      <Text>
-        Horizontal scroll turns on only if elements inside are wider than parent container
-      </Text>
-      <HorizontalScroll spacing={spacing}>
-        {Array(...Array(5)).map((_, key) => (
-          <Box
-            // eslint-disable-next-line react/no-array-index-key
-            key={key}
-            display="flex"
-            justify="center"
-            minWidth="150px"
-            background="cloudLight"
-            height="full"
-          >
-            <Text size="large" weight="bold" as="div">
-              <div
-                style={{
-                  height: "50px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                {key}
-              </div>
-            </Text>
-          </Box>
-        ))}
-      </HorizontalScroll>
-    </Stack>
-  );
-};
-
-NoScroll.args = {
-  spacing: SPACINGS.FIFTY,
-};
-
-NoScroll.argTypes = {
-  spacing: {
-    options: Object.values(SPACINGS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const WithScrollSnap = ({
-  scrollSnap,
-  scrollPadding,
-  overflowElevation,
-  elevationColor,
-  scrollSnapAlign,
-}) => {
-  return (
-    <HorizontalScroll
-      scrollSnap={scrollSnap}
-      scrollPadding={scrollPadding}
-      overflowElevation={overflowElevation}
-      elevationColor={elevationColor}
-    >
-      {Array(...Array(10)).map((_, key) => (
-        <div
-          style={{
-            scrollSnapAlign,
-            width: "150px",
-            display: "flex",
-            justifyContent: "center",
-            height: "50px",
-            background: "#ccc",
-          }}
-        >
-          <Text size="large" weight="bold" as="div">
-            <div
-              style={{
-                height: "50px",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              {key}
-            </div>
-          </Text>
-        </div>
-      ))}
+export const Playground: Story = {
+  render: args => (
+    <HorizontalScroll {...args}>
+      {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        Array(...Array(10)).map((_, key) => (
+          <ScrollTile title={key} />
+        ))
+      }
     </HorizontalScroll>
-  );
-};
+  ),
 
-WithScrollSnap.args = {
-  scrollSnapAlign: "start",
-  scrollSnapType: "mandatory",
-  scrollPadding: 0,
-  overflowElevation: false,
-  elevationColor: "paletteCloudDarker",
-};
-
-WithScrollSnap.argTypes = {
-  scrollSnapAlign: {
-    options: ["none", "start", "end", "center"],
-    control: {
-      type: "select",
-    },
-  },
-  scrollSnapType: {
-    options: ["none", "inline", "mandatory", "proximity"],
-    control: {
-      type: "select",
-    },
+  parameters: {
+    info: "Horizontal scroll playground. Check Orbit.Kiwi for more detailed design guidelines.",
   },
 };

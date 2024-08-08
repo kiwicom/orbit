@@ -54,7 +54,7 @@
     "@types/sade": "^1.7.4"
   },
   "dependencies": {
-    "dotenv": "^16.0.1",
+    "dotenv": "^16.4.5",
     "execa": "^6.1.0",
     "filedirname": "^2.7.0",
     "react-scanner-orbit": "^3.0.1",

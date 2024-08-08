@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.11.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.10.1...@kiwicom/orbit-components@15.11.0) (2024-08-08)
+
+
+### Bug Fixes
+
+* **Alert:** adjust styles when closable is true and inlineActions is set ([2a9e765](https://github.com/kiwicom/orbit/commit/2a9e765829f49716dbaeacf03947dc9b778066b2))
+
+
+### Features
+
+* **icons:** add MenuCircle icon ([5427052](https://github.com/kiwicom/orbit/commit/5427052fdfcbfdd970db65e489fcce2b59e39909))
+
+
+
+
+
 ## [15.10.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.10.0...@kiwicom/orbit-components@15.10.1) (2024-08-01)
 
 

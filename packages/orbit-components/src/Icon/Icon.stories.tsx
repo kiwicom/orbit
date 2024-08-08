@@ -1,129 +1,93 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import IconList from "./IconList";
 import * as Icons from "../icons";
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-export default {
+import OrbitIcon from ".";
+
+const getIcon = source => Icons[source];
+
+type IconPropsAndCustomArgs = React.ComponentProps<typeof OrbitIcon> & { source: string };
+
+const meta: Meta<IconPropsAndCustomArgs> = {
   title: "Icon",
-};
+  component: OrbitIcon,
 
-export const Default = ({ size, color, source, dataTest, ariaLabel, ariaHidden }) => {
-  const Icon = Icons[source];
-  return (
-    <Icon
-      size={size}
-      color={color}
-      dataTest={dataTest}
-      ariaLabel={ariaLabel}
-      ariaHidden={ariaHidden}
-    />
-  );
-};
-
-Default.story = {
-  name: "Default",
   parameters: {
     info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
   },
-};
 
-Default.args = {
-  size: ICON_SIZES.MEDIUM,
-  color: ICON_COLORS.PRIMARY,
-  source: "Airplane",
-  dataTest: "test",
-  ariaLabel: "label",
-  ariaHidden: true,
-};
+  args: {
+    size: ICON_SIZES.MEDIUM,
+    color: ICON_COLORS.PRIMARY,
+    source: "Airplane",
+    dataTest: "test",
+    ariaLabel: "label",
+    ariaHidden: true,
+    customColor: "#ABCDEF",
+  },
 
-Default.argTypes = {
-  size: {
-    options: Object.values(ICON_SIZES),
-    control: {
-      type: "select",
+  argTypes: {
+    size: {
+      options: Object.values(ICON_SIZES),
+      control: {
+        type: "select",
+      },
     },
-  },
-  color: {
-    options: Object.values(ICON_COLORS),
-    control: {
-      type: "select",
+    color: {
+      options: Object.values(ICON_COLORS),
+      control: {
+        type: "select",
+      },
     },
-  },
-  source: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const CustomColor = ({ size, customColor, source }) => {
-  const Icon = Icons[source];
-
-  return <Icon size={size} customColor={customColor} />;
-};
-
-CustomColor.story = {
-  name: "Custom Color",
-  parameters: {
-    info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-CustomColor.args = {
-  size: ICON_SIZES.MEDIUM,
-  customColor: "#ABCDEF",
-  source: "Airplane",
-};
-
-CustomColor.argTypes = {
-  size: {
-    options: Object.values(ICON_SIZES),
-    control: {
-      type: "select",
-    },
-  },
-  source: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+    source: {
+      options: Object.keys(Icons),
+      control: {
+        type: "select",
+      },
     },
   },
 };
 
-export const ReversedOnRtl = ({ source }) => {
-  const Icon = Icons[source];
-  return (
-    <RenderInRtl>
-      <Icon reverseOnRtl />
-    </RenderInRtl>
-  );
-};
+export default meta;
+type Story = StoryObj<IconPropsAndCustomArgs>;
 
-ReversedOnRtl.story = {
-  name: "Reversed on RTL",
-  parameters: {
-    info: "We use icons to draw attention to specific actions in our products. Visit Orbit.Kiwi for more detailed guidelines.",
+export const Default: Story = {
+  render: ({ source, ...args }) => {
+    const Icon = getIcon(source);
+    return <Icon {...args} />;
   },
 };
 
-ReversedOnRtl.args = {
-  source: "ChevronBackward",
+export const CustomColor: Story = {
+  render: ({ source, ...args }) => {
+    const Icon = getIcon(source);
+
+    return <Icon {...args} />;
+  },
+
+  args: {
+    customColor: "#ff0000",
+  },
 };
 
-ReversedOnRtl.argTypes = {
-  source: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
+export const ReversedOnRtl: Story = {
+  render: ({ source, ...args }) => {
+    const Icon = getIcon(source);
+
+    return (
+      <RenderInRtl>
+        <Icon reverseOnRtl {...args} />
+      </RenderInRtl>
+    );
+  },
+
+  args: {
+    source: "ChevronBackward",
   },
 };
 
 export const ListOfAllIcons = () => <IconList />;
-
-ListOfAllIcons.story = {
-  name: "List of all icons",
-};

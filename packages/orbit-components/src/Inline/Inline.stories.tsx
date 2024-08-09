@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { ALIGNS as ALIGN, JUSTIFY } from "./consts";
@@ -9,8 +10,6 @@ import Inline from ".";
 const PlaceHolder = ({ height = 50 }) => {
   return <div style={{ width: "50px", height: `${height}px`, background: "grey" }} />;
 };
-
-const dataTest = "test";
 
 const TestChildren = () => {
   return (
@@ -25,106 +24,83 @@ const TestChildren = () => {
   );
 };
 
-export default {
+const meta: Meta<typeof Inline> = {
   title: "Inline",
+  component: Inline,
+
+  argTypes: {
+    align: {
+      options: Object.values(ALIGN),
+      control: {
+        type: "select",
+      },
+    },
+    justify: {
+      options: Object.values(JUSTIFY),
+      control: {
+        type: "select",
+      },
+    },
+    spacing: {
+      options: Object.values(SPACING),
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 
-export const Default = ({ spacing }) => {
-  return (
-    <Inline spacing={spacing} dataTest={dataTest}>
+export default meta;
+type Story = StoryObj<typeof Inline>;
+
+export const Default: Story = {
+  render: args => (
+    <Inline {...args}>
       <TestChildren />
     </Inline>
-  );
-};
+  ),
 
-Default.story = {
   parameters: {
     info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-Default.args = {
-  spacing: SPACING.FIFTY,
-};
-
-Default.argTypes = {
-  spacing: {
-    options: Object.values(SPACING),
-    control: {
-      type: "select",
+    controls: {
+      disable: true,
     },
   },
 };
 
-export const Playground = ({ as, align, justify, spacing }) => {
-  return (
-    <Inline as={as} align={align} justify={justify} dataTest={dataTest} spacing={spacing}>
+export const Playground: Story = {
+  render: args => (
+    <Inline {...args}>
       <TestChildren />
     </Inline>
-  );
-};
+  ),
 
-Playground.story = {
   parameters: {
-    info: "info: You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+
+  args: {
+    as: "div",
+    spacing: SPACING.FIFTY,
+    align: ALIGN.START,
+    justify: JUSTIFY.START,
   },
 };
 
-Playground.args = {
-  as: "div",
-  align: ALIGN.START,
-  justify: JUSTIFY.START,
-  spacing: SPACING.FIFTY,
-};
-
-Playground.argTypes = {
-  align: {
-    options: Object.values(ALIGN),
-    control: {
-      type: "select",
-    },
-  },
-  justify: {
-    options: Object.values(JUSTIFY),
-    control: {
-      type: "select",
-    },
-  },
-  spacing: {
-    options: Object.values(SPACING),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Rtl = ({ spacing }) => {
-  return (
+export const Rtl: Story = {
+  render: args => (
     <RenderInRtl>
-      <Inline spacing={spacing} dataTest={dataTest}>
+      <Inline {...args}>
         <TestChildren />
       </Inline>
     </RenderInRtl>
-  );
-};
-
-Rtl.story = {
-  name: "RTL",
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
   },
-};
 
-Rtl.args = {
-  spacing: SPACING.FIFTY,
-};
-
-Rtl.argTypes = {
-  spacing: {
-    options: Object.values(SPACING),
-    control: {
-      type: "select",
-    },
+  args: {
+    ...Playground.args,
   },
 };

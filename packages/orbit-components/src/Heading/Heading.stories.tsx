@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { ELEMENT_OPTIONS, TYPE_OPTIONS, ALIGN } from "./consts";
 import { SPACINGS_AFTER } from "../common/consts";
@@ -6,437 +7,234 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Heading from ".";
 
-export default {
+const meta: Meta<typeof Heading> = {
   title: "Heading",
-};
+  component: Heading,
 
-export const Default = ({ customTitle }) => {
-  return <Heading>{customTitle}</Heading>;
-};
-
-Default.story = {
   parameters: {
     info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
   },
-};
 
-Default.args = {
-  customTitle: "Orbit design system",
-};
-
-export const TitleDisplay = ({ customTitle, as }) => {
-  return (
-    <Heading type="display" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
-
-TitleDisplay.story = {
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    children: "Orbit design system",
   },
-};
 
-TitleDisplay.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H1,
-};
-
-TitleDisplay.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  argTypes: {
+    as: {
+      options: Object.values(ELEMENT_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+    type: {
+      options: Object.values(TYPE_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+    spaceAfter: {
+      options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+    align: {
+      options: Object.values(ALIGN),
+      control: {
+        type: "select",
+      },
     },
   },
 };
 
-export const TitleDisplaySubtitle = ({ customTitle, as }) => {
-  return (
-    <Heading type="displaySubtitle" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
+export default meta;
+type Story = StoryObj<typeof Heading>;
 
-TitleDisplaySubtitle.story = {
-  name: "Title displaySubtitle",
-
+export const Default: Story = {
   parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-TitleDisplaySubtitle.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H1,
-};
-
-TitleDisplaySubtitle.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+    controls: {
+      exclude: ["type", "as", "inverted", "align", "spaceAfter"],
     },
   },
 };
 
-export const Title0 = ({ customTitle, as }) => {
-  return (
-    <Heading type="title0" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
-
-Title0.story = {
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+export const TitleDisplay: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H1,
+    type: TYPE_OPTIONS.DISPLAY,
   },
-};
 
-Title0.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H1,
-};
-
-Title0.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
     },
   },
 };
 
-export const Title1 = ({ customTitle, as }) => {
-  return (
-    <Heading type="title1" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
-
-Title1.story = {
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+export const TitleDisplaySubtitle: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H1,
+    type: TYPE_OPTIONS.DISPLAYSUBTITLE,
   },
-};
 
-Title1.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H1,
-};
-
-Title1.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
     },
   },
 };
 
-export const Title2 = ({ customTitle, as }) => {
-  return (
-    <Heading type="title2" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
-
-Title2.story = {
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+export const Title0: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H1,
+    type: TYPE_OPTIONS.TITLE0,
   },
-};
 
-Title2.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H2,
-};
-
-Title2.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
     },
   },
 };
 
-export const Title3 = ({ customTitle, as }) => {
-  return (
-    <Heading type="title3" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
-
-Title3.story = {
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+export const Title1: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H1,
+    type: TYPE_OPTIONS.TITLE1,
   },
-};
 
-Title3.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H3,
-};
-
-Title3.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
     },
   },
 };
 
-export const Title4 = ({ customTitle, as }) => {
-  return (
-    <Heading type="title4" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
-
-Title4.story = {
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+export const Title2: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H2,
+    type: TYPE_OPTIONS.TITLE2,
   },
-};
 
-Title4.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H4,
-};
-
-Title4.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
     },
   },
 };
 
-export const Title5 = ({ customTitle, as }) => {
-  return (
-    <Heading type="title5" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
-
-Title5.story = {
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+export const Title3: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H3,
+    type: TYPE_OPTIONS.TITLE3,
   },
-};
 
-Title5.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H5,
-};
-
-Title5.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
     },
   },
 };
 
-export const Title6 = ({ customTitle, as }) => {
-  return (
-    <Heading type="title6" as={as}>
-      {customTitle}
-    </Heading>
-  );
-};
-
-Title6.story = {
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+export const Title4: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H4,
+    type: TYPE_OPTIONS.TITLE4,
   },
-};
 
-Title6.args = {
-  customTitle: "Orbit design system",
-  as: ELEMENT_OPTIONS.H6,
-};
-
-Title6.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
     },
   },
 };
 
-export const InvertedHeading = ({ as, type, inverted, customTitle }) => {
-  return (
+export const Title5: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H5,
+    type: TYPE_OPTIONS.TITLE5,
+  },
+
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
+    },
+  },
+};
+
+export const Title6: Story = {
+  args: {
+    as: ELEMENT_OPTIONS.H6,
+    type: TYPE_OPTIONS.TITLE6,
+  },
+
+  parameters: {
+    controls: {
+      exclude: ["inverted"],
+    },
+  },
+};
+
+export const InvertedHeading: Story = {
+  render: ({ children, ...args }) => (
     <div style={{ padding: 20, backgroundColor: "#46515E" }}>
-      <Heading type={type} as={as} inverted={inverted}>
-        {customTitle}
-      </Heading>
+      <Heading {...args}>{children}</Heading>
     </div>
-  );
-};
+  ),
 
-InvertedHeading.story = {
-  name: "Inverted heading",
-
-  parameters: {
-    info: "Headings are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-InvertedHeading.args = {
-  as: ELEMENT_OPTIONS.H1,
-  type: TYPE_OPTIONS.DISPLAY,
-  inverted: true,
-  customTitle: "Orbit design system",
-};
-
-InvertedHeading.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-  type: {
-    options: Object.values(TYPE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Playground = ({
-  as,
-  type,
-  customTitle,
-  dataA11ySection,
-  align,
-  dataTest,
-  spaceAfter,
-  mediumMobile,
-  largeMobile,
-  tablet,
-  desktop,
-  largeDesktop,
-  id,
-}) => {
-  return (
-    <Heading
-      id={id}
-      as={as}
-      dataA11ySection={dataA11ySection}
-      type={type}
-      align={align}
-      dataTest={dataTest}
-      spaceAfter={spaceAfter}
-      mediumMobile={mediumMobile}
-      largeMobile={largeMobile}
-      tablet={tablet}
-      desktop={desktop}
-      largeDesktop={largeDesktop}
-    >
-      {customTitle}
-    </Heading>
-  );
-};
-
-Playground.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-Playground.args = {
-  as: ELEMENT_OPTIONS.H2,
-  type: TYPE_OPTIONS.DISPLAY,
-  dataTest: "test",
-  id: "ID-OF-A-ELEMENT",
-  customTitle: "Orbit design system",
-  dataA11ySection: "ID-OF-SECTION",
-  spaceAfter: SPACINGS_AFTER.SMALL,
-  align: ALIGN.START,
-  mediumMobile: {
+  args: {
+    as: ELEMENT_OPTIONS.H1,
     type: TYPE_OPTIONS.DISPLAY,
-  },
-  largeMobile: {
-    type: TYPE_OPTIONS.DISPLAY,
-  },
-  tablet: {
-    type: TYPE_OPTIONS.DISPLAY,
-  },
-  desktop: {
-    type: TYPE_OPTIONS.DISPLAY,
-  },
-  largeDesktop: {
-    type: TYPE_OPTIONS.DISPLAY,
+    inverted: true,
   },
 };
 
-Playground.argTypes = {
-  as: {
-    options: Object.values(ELEMENT_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-  type: {
-    options: Object.values(TYPE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-  spaceAfter: {
-    options: Object.values(SPACINGS_AFTER),
-    control: {
-      type: "select",
-    },
-  },
-  align: {
-    options: Object.values(ALIGN),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Accessibility = ({ dataA11ySection, customTitle }) => {
-  return <Heading dataA11ySection={dataA11ySection}>{customTitle}</Heading>;
-};
-
-Accessibility.story = {
-  parameters: {
-    info: "This is a preview of component accessibility props",
-  },
-};
-
-Accessibility.args = {
-  dataA11ySection: "ID-OF-SECTION",
-  customTitle: "Orbit design system",
-};
-
-export const Rtl = () => (
-  <RenderInRtl>
-    <Heading type="display">Orbit design system</Heading>
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+export const Rtl: Story = {
+  render: ({ children, ...args }) => (
+    <RenderInRtl>
+      <Heading {...args}>{children}</Heading>
+    </RenderInRtl>
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+    controls: {
+      exclude: ["inverted"],
+    },
+  },
+
+  args: {
+    type: TYPE_OPTIONS.DISPLAY,
+  },
+};
+
+export const Playground: Story = {
+  parameters: {
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
+
+  args: {
+    type: TYPE_OPTIONS.DISPLAY,
+    align: ALIGN.START,
+    as: ELEMENT_OPTIONS.H2,
+    inverted: false,
+    spaceAfter: SPACINGS_AFTER.SMALL,
+    dataA11ySection: "ID-OF-SECTION",
+    id: "ID-OF-A-ELEMENT",
+    mediumMobile: {
+      type: TYPE_OPTIONS.DISPLAY,
+    },
+    largeMobile: {
+      type: TYPE_OPTIONS.DISPLAY,
+    },
+    tablet: {
+      type: TYPE_OPTIONS.DISPLAY,
+    },
+    desktop: {
+      type: TYPE_OPTIONS.DISPLAY,
+    },
+    largeDesktop: {
+      type: TYPE_OPTIONS.DISPLAY,
+    },
   },
 };

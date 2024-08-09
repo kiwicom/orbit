@@ -88,6 +88,12 @@ function generatePath(targetDir: string) {
     });
 
     await Promise.all(promises);
+
+    // Copy svg files to the destination
+    await fs.copyFile("./orbit-svgs.zip", `${DIR}/orbit-svgs.zip`);
+
+    // Copy font files to the destination
+    await fs.copyFile("./orbit-icons-font.zip", `${DIR}/orbit-icons-font.zip`);
   } catch (error) {
     console.error(error);
   }

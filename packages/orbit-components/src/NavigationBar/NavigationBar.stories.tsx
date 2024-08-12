@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -13,58 +14,52 @@ import TextLink from "../TextLink";
 
 import NavigationBar from ".";
 
-export default {
+const meta: Meta<typeof NavigationBar> = {
   title: "NavigationBar",
-};
-
-export const NavBarUpToTablet = ({ hideOnScroll, dataTest }) => {
-  return (
-    <div style={{ height: "1000px" }}>
-      <NavigationBar
-        onMenuOpen={action("onMenuOpen")}
-        onShow={action("onShow")}
-        hideOnScroll={hideOnScroll}
-        onHide={action("onHide")}
-        dataTest={dataTest}
-      >
-        <Stack justify="between" spacing="none">
-          <ButtonLink iconRight={<ChevronDown />} type="secondary">
-            Flights
-          </ButtonLink>
-          <Stack direction="row" spacing="100" justify="end" shrink>
-            <ButtonLink iconLeft={<StarFull />} type="secondary" />
-            <ButtonLink iconLeft={<QuestionCircle />} type="secondary" />
-            <ButtonLink iconLeft={<AccountCircle />} type="secondary" />
-          </Stack>
-        </Stack>
-      </NavigationBar>
-    </div>
-  );
-};
-
-NavBarUpToTablet.story = {
-  name: "NavBar up to tablet",
+  component: NavigationBar,
 
   parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: ["onMenuOpen", "onShow", "onHide"],
+    },
+  },
+
+  args: {
+    hideOnScroll: true,
+    openTitle: "Open navigation menu",
+    id: "navigation-menu-id",
+    onMenuOpen: action("onMenuOpen"),
+    onShow: action("onShow"),
+    onHide: action("onHide"),
   },
 };
 
-NavBarUpToTablet.args = {
-  hideOnScroll: true,
-  dataTest: "test",
+export default meta;
+
+type Story = StoryObj<typeof NavigationBar>;
+
+export const NavigationBarComponent: Story = {
+  render: args => (
+    <NavigationBar {...args}>
+      <Stack justify="between" spacing="none">
+        <ButtonLink iconRight={<ChevronDown />} type="secondary">
+          Flights
+        </ButtonLink>
+        <Stack direction="row" spacing="100" justify="end" shrink>
+          <ButtonLink iconLeft={<StarFull />} type="secondary" />
+          <ButtonLink iconLeft={<QuestionCircle />} type="secondary" />
+          <ButtonLink iconLeft={<AccountCircle />} type="secondary" />
+        </Stack>
+      </Stack>
+    </NavigationBar>
+  ),
 };
 
-export const NavBarDesktop = ({ hideOnScroll, dataTest }) => {
-  return (
-    <div style={{ height: "1000px" }}>
-      <NavigationBar
-        onMenuOpen={action("onMenuOpen")}
-        onShow={action("onShow")}
-        onHide={action("onHide")}
-        hideOnScroll={hideOnScroll}
-        dataTest={dataTest}
-      >
+export const RTL: Story = {
+  render: args => (
+    <RenderInRtl>
+      <NavigationBar {...args}>
         <Stack flex align="center" justify="between" spacing="none">
           <LinkList direction="row">
             <TextLink type="secondary">Flights</TextLink>
@@ -79,52 +74,13 @@ export const NavBarDesktop = ({ hideOnScroll, dataTest }) => {
           </Stack>
         </Stack>
       </NavigationBar>
-    </div>
-  );
-};
-
-NavBarDesktop.args = {
-  hideOnScroll: true,
-  dataTest: "test",
-};
-
-export const RTL = ({ hideOnScroll }) => {
-  return (
-    <RenderInRtl>
-      <div style={{ height: "1000px" }}>
-        <NavigationBar
-          onMenuOpen={action("onMenuOpen")}
-          onShow={action("onShow")}
-          onHide={action("onHide")}
-          hideOnScroll={hideOnScroll}
-        >
-          <Stack flex align="center" justify="between" spacing="none">
-            <LinkList direction="row">
-              <TextLink type="secondary">Flights</TextLink>
-              <TextLink type="secondary">Flights</TextLink>
-              <TextLink type="secondary">Flights</TextLink>
-              <TextLink type="secondary">Flights</TextLink>
-            </LinkList>
-            <Stack direction="row" spacing="100" justify="end" shrink>
-              <ButtonLink type="secondary">Starred</ButtonLink>
-              <ButtonLink type="secondary">Help</ButtonLink>
-              <ButtonLink type="secondary">Account</ButtonLink>
-            </Stack>
-          </Stack>
-        </NavigationBar>
-      </div>
     </RenderInRtl>
-  );
-};
-
-RTL.args = {
-  hideOnScroll: true,
-};
-
-NavBarDesktop.story = {
-  name: "NavBar desktop",
+  ),
 
   parameters: {
-    info: "Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "This is a preview of this component in RTL setup.",
+    controls: {
+      disable: true,
+    },
   },
 };

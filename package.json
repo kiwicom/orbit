@@ -70,7 +70,7 @@
     "@types/dedent": "^0.7.0",
     "@types/dotenv-safe": "^8.1.6",
     "@types/jest": "^29.5.5",
-    "@types/lodash": "^4.14.194",
+    "@types/lodash": "^4.17.7",
     "@types/pngjs": "^6.0.2",
     "@types/prettier": "^2.7.2",
     "@types/react": ">=17.0.26",

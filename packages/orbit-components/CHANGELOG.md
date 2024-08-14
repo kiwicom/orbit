@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [16.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.11.0...@kiwicom/orbit-components@16.0.0) (2024-08-14)
+
+
+### Features
+
+* add shadow transformations to codemod ([5779fcf](https://github.com/kiwicom/orbit/commit/5779fcfb563f1e58baf253244d3bfd1384e85771))
+* **Box:** add new values for borderRadius prop and deprecate others ([3afe158](https://github.com/kiwicom/orbit/commit/3afe158d9ac902408eb5a64a5413fe3a1d98499a))
+* **Box:** add new values for elevation prop and deprecate others ([6102a6d](https://github.com/kiwicom/orbit/commit/6102a6ddf0f00f998d6935c58005bb40c34bf85e))
+* **Box:** add new values to margin and padding props, and deprecate old ones ([5b3b418](https://github.com/kiwicom/orbit/commit/5b3b41881c87a8eb541823c7985732e60eea9294))
+* create codemod for new tokens and tailwind classes ([643dcc5](https://github.com/kiwicom/orbit/commit/643dcc50ae169840dee6c13c3c2a9e915e167055))
+* **Heading:** add title0 type ([1f79dd7](https://github.com/kiwicom/orbit/commit/1f79dd7c8ad3c85f2ecd5b20f050f53c8d761f91))
+* **HorizontalScroll:** add new values to spacing prop and deprecate old ones ([8cb2d2e](https://github.com/kiwicom/orbit/commit/8cb2d2ee7547a5f6e2e064f2eccd30155b167e43))
+* **icons:** add 3 new seat light icons ([67cd7a8](https://github.com/kiwicom/orbit/commit/67cd7a8e1709de1fcbf2611dca80d601c1510fd8))
+* **Inline:** add new values to spacing prop and deprecate old ones ([cb8d86d](https://github.com/kiwicom/orbit/commit/cb8d86d13d3764e0441b5ec3f3ac09bb9b745cd8))
+* **LinkList:** add new values to spacing prop and deprecate old ones ([0a60262](https://github.com/kiwicom/orbit/commit/0a60262760b2e5a8f19a6fab70c86b8ebd2b96f3))
+* **Separator:** add new values to sideOffset prop and deprecate old ones ([008317b](https://github.com/kiwicom/orbit/commit/008317beb222e2c08961b9e0971052a46540e62d))
+* **Stack:** add new values to spacing prop and deprecate old ones ([a2a207a](https://github.com/kiwicom/orbit/commit/a2a207ae9a1c26a7b81d90916c2a8c1afd00cf35))
+* **Tabs:** add new values to spacing prop and deprecate old ones ([528aa68](https://github.com/kiwicom/orbit/commit/528aa68e196808950adccac279f8e4cae07f32cf))
+
+
+### BREAKING CHANGES
+
+* **Heading:** `type="title1"` should be replaced by `type="title0"` to avoid visual breaking change.
+
+
+
+
+
 # [15.11.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.10.1...@kiwicom/orbit-components@15.11.0) (2024-08-08)
 
 

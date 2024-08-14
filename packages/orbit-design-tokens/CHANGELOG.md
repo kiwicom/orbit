@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@7.2.1...@kiwicom/orbit-design-tokens@8.0.0) (2024-08-14)
+
+
+### Features
+
+* **tokens:** add new borderRadius tokens and deprecate others ([9d0d714](https://github.com/kiwicom/orbit/commit/9d0d714ac7a878794cf959c99695dc4b9f27bbb4))
+* **tokens:** add new elevation tokens and deprecate others ([1584846](https://github.com/kiwicom/orbit/commit/15848465c3e234d6a41200071e8d7d4e057fad3a))
+* **tokens:** add new spacing tokens and deprecate old ones ([83b5ce9](https://github.com/kiwicom/orbit/commit/83b5ce9c669a9a086f616ac1cf183a4a7a387546))
+* **tokens:** add title0 and adjust other title sizes ([129ca93](https://github.com/kiwicom/orbit/commit/129ca937c793780aa0eb64b207b9889db68176b5))
+* **tokens:** remove deprecated heading tokens ([c94eda2](https://github.com/kiwicom/orbit/commit/c94eda2758a84f166abe6ae57fe52e669d261860))
+
+
+### BREAKING CHANGES
+
+* **tokens:** deprecated fontSize, lineHeight and textWeight tokens for Heading were removed.
+The replacement tokens can be used. Check the migration guide for more information.
+
+
+
+
+
 ## [7.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@7.2.0...@kiwicom/orbit-design-tokens@7.2.1) (2024-06-13)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

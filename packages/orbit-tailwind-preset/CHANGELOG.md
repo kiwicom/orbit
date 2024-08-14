@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@4.4.0...@kiwicom/orbit-tailwind-preset@5.0.0) (2024-08-14)
+
+
+### Features
+
+* **tailwind:** add new rounded- classes and deprecate some others ([d8371b7](https://github.com/kiwicom/orbit/commit/d8371b7f0f28b9311dac3afa1324c2c1c1b6375a))
+* **tailwind:** add new shadow- classes and deprecate some others ([e56a359](https://github.com/kiwicom/orbit/commit/e56a3598b3bec9abf69609a390736ae4d43d6122))
+* **tailwind:** add new spacing classes ([e2f3bfd](https://github.com/kiwicom/orbit/commit/e2f3bfddd36c50f2fce12fd2107d9152ef91af80))
+* **tailwind:** add title0 classes ([1b1df8e](https://github.com/kiwicom/orbit/commit/1b1df8e53b254c23a31b5661ee96ddf6957f2d12))
+* **tailwind:** remove leading-heading class ([12aa15e](https://github.com/kiwicom/orbit/commit/12aa15eb29a0d8d428e2d41b7e598ecc3b7f4980))
+
+
+### BREAKING CHANGES
+
+* **tailwind:** deprecated leading-heading class was removed.
+
+
+
+
+
 # [4.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@4.3.2...@kiwicom/orbit-tailwind-preset@4.4.0) (2024-07-11)
 
 

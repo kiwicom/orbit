@@ -262,7 +262,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       if (results.groups.length === 0) {
         return results.all.map((option, idx) => {
           const { title, description, prefix, value: optValue } = option;
-          const optionId = randomId(title);
+          const optionId = randomId(`${title}_${optValue}`);
           const isSelected = optValue === selectedOption?.value;
           const optionRef = React.createRef() as React.RefObject<HTMLDivElement>;
           refs[idx] = optionRef;
@@ -317,7 +317,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                   refs[optionIdx] = optionRef;
 
                   const { title, description, prefix, value: optValue } = option;
-                  const optionId = randomId(title);
+                  const optionId = randomId(`${title}_${optValue}`);
                   const isSelected = optValue === selectedOption?.value;
 
                   return (
@@ -359,7 +359,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
             const optionIdx = idx;
             refs[optionIdx] = optionRef;
 
-            const optionId = randomId(`all_${title}`);
+            const optionId = randomId(`all_${title}_${optValue}`);
             const isSelected = optValue === selectedOption?.value;
 
             return (

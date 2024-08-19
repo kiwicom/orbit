@@ -84,7 +84,7 @@
     "gatsby-redirect-from": "^0.5.0",
     "gatsby-remark-copy-linked-files": "^5.11.0",
     "gatsby-remark-images": "^7.13.1",
-    "gatsby-remark-smartypants": "^5.9.0",
+    "gatsby-remark-smartypants": "^6.13.1",
     "gatsby-source-filesystem": "^4.11.1",
     "gatsby-transformer-sharp": "^4.11.0",
     "globby": "^11.0.2",

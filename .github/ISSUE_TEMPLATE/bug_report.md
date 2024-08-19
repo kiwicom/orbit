@@ -21,7 +21,7 @@ about: Create a report to help us improve orbit-components
 
 ## Steps to Reproduce
 
-<!--- Provide a link to a live example - use CodeSandox https://codesandbox.io/s/github/designkiwicom/orbit-sandbox -->
+<!--- Provide a link to a live example - for example, CodeSandox https://codesandbox.io/ -->
 <!--- or provide an unambiguous set of steps to reproduce this bug -->
 
 1. 2. 3. 4.

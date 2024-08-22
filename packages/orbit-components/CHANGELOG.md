@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@16.0.0...@kiwicom/orbit-components@16.0.1) (2024-08-22)
+
+
+### Bug Fixes
+
+* **InputSelect:** ensure consistent options when titles are repeated ([6eb0d75](https://github.com/kiwicom/orbit/commit/6eb0d75f65bd98a66e71c456e607e04e312ed83c))
+
+
+
+
+
 # [16.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@15.11.0...@kiwicom/orbit-components@16.0.0) (2024-08-14)
 
 

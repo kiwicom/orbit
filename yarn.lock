@@ -13348,14 +13348,14 @@ gatsby-redirect-from@^0.5.0:
   resolved "https://registry.npmjs.org/gatsby-redirect-from/-/gatsby-redirect-from-0.5.0.tgz"
   integrity sha512-OOGFdfDJPPdaWHgD5OA6JGanaAfCzij0wJ4XffxnemcFJsVZoOfKhLXxwFSXQ/+YW9S0NchGfpM4ycZ4Z517pw==
 
-gatsby-remark-copy-linked-files@^5.11.0:
-  version "5.25.0"
-  resolved "https://registry.npmjs.org/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-5.25.0.tgz"
-  integrity sha512-kF068dZ0U920xNrlKM5BIR1MvgFdVvgR281AJfvn1xOvv/ES3elPj2bqlokbcs1f72dYcNnaJhv3UhYoIdV6Fg==
+gatsby-remark-copy-linked-files@^6.13.1:
+  version "6.13.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-6.13.1.tgz#b623eba410fdbe4ee2059cf10d4f8cef655684e2"
+  integrity sha512-KBf+1NDdsKxD2144pgurTdWaQVLET19h1Wru4kWcq3oL1aahpWOMTw1+Zam+p3BMANu4joGgHY9yoYcdef1DSw==
   dependencies:
-    "@babel/runtime" "^7.15.4"
+    "@babel/runtime" "^7.20.13"
     cheerio "^1.0.0-rc.10"
-    fs-extra "^10.1.0"
+    fs-extra "^11.1.1"
     is-relative-url "^3.0.0"
     lodash "^4.17.21"
     path-is-inside "^1.0.2"

@@ -136,7 +136,7 @@ const ErrorFormTooltip = ({
       />
       <div
         className={cx(
-          "font-base text-normal leading-small text-white-normal flex h-full items-center font-normal",
+          "font-base text-normal text-white-normal flex h-full items-center font-normal leading-normal",
           "[&_.orbit-text]:text-white-normal [&_.orbit-text]:text-normal hover:[&_.orbit-text]:text-white-normal focus:[&_.orbit-text]:text-white-normal [&_.orbit-text]:font-normal",
           "[&_.orbit-list-item]:text-white-normal [&_.orbit-list-item]:text-normal hover:[&_.orbit-list-item]:text-white-normal focus:[&_.orbit-list-item]:text-white-normal [&_.orbit-list-item]:font-normal",
           "[&_a]:text-white-normal [&_a]:text-normal hover:[&_a]:text-white-normal focus:[&_a]:text-white-normal [&_a]:font-normal",

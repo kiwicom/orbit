@@ -18,6 +18,7 @@ export default {
           label="Allow notifications"
           checked={checked}
           onChange={() => setChecked(!checked)}
+          disabled={saving}
         />
         <Button disabled={saving} onClick={() => setSaving(true)}>
           {saving ? "Saving" : "Save settings"}

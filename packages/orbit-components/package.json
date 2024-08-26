@@ -98,6 +98,7 @@
     "@storybook/addon-styling-webpack": "^1.0.0",
     "@storybook/blocks": "^8.2.4",
     "@storybook/manager-api": "^8.2.4",
+    "@storybook/preview-api": "^8.2.4",
     "@storybook/react": "^8.2.4",
     "@storybook/react-webpack5": "^8.2.4",
     "@storybook/storybook-deployer": "^2.8.16",

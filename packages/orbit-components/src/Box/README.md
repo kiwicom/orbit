@@ -129,6 +129,7 @@ All this properties - objects have the some own properties and none is required.
 | `"50"`                                     |
 | `"100"`                                    |
 | `"150"`                                    |
+| `"200"`                                    |
 | `"300"`                                    |
 | `"400"`                                    |
 

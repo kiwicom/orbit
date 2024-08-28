@@ -2772,6 +2772,10 @@
     <value>6</value>
   </token>
   <token>
+    <name>borderRadius200</name>
+    <value>8</value>
+  </token>
+  <token>
     <name>borderRadius300</name>
     <value>12</value>
   </token>

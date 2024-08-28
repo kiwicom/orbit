@@ -707,6 +707,7 @@ export interface Tokens {
   borderRadius50: string;
   borderRadius100: string;
   borderRadius150: string;
+  borderRadius200: string;
   borderRadius300: string;
   borderRadius400: string;
   borderRadiusCircle: string;
@@ -1636,6 +1637,7 @@ const createTokens: CreateTokens = foundation => ({
   borderRadius50: foundation.borderRadius["50"],
   borderRadius100: foundation.borderRadius["100"],
   borderRadius150: foundation.borderRadius["150"],
+  borderRadius200: foundation.borderRadius["200"],
   borderRadius300: foundation.borderRadius["300"],
   borderRadius400: foundation.borderRadius["400"],
   borderRadiusCircle: foundation.borderRadius.circle,

@@ -15982,6 +15982,28 @@
       "value": "6px"
     }
   },
+  "borderRadius200": {
+    "type": "border-radius",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "border-radius",
+      "variant": "200"
+    },
+    "javascript": {
+      "name": "borderRadius200",
+      "value": "8px"
+    },
+    "foundation": {
+      "name": "borderRadius200",
+      "value": "foundation.borderRadius.200"
+    },
+    "scss": {
+      "name": "borderRadius200",
+      "value": "8px"
+    }
+  },
   "borderRadius300": {
     "type": "border-radius",
     "deprecated": false,

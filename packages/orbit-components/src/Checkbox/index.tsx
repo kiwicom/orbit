@@ -77,9 +77,10 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "rounded-150 de:rounded-100",
             "duration-fast transition-all ease-in-out",
             "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
-            "[&>svg]:size-icon-small [&>svg]:invisible peer-checked:[&>svg]:visible",
+            "[&>svg]:size-icon-small",
             "[&>svg]:flex [&>svg]:items-center [&>svg]:justify-center",
             "active:scale-95",
+            checked ? "[&>svg]:visible" : "[&>svg]:invisible",
             disabled && [
               "border-cloud-dark",
               checked && "bg-cloud-dark",

@@ -212,6 +212,7 @@ exports[`orbitPreset should have preflight disabled 1`] = `
         "borderRadius": {
           "100": "4px",
           "150": "6px",
+          "200": "8px",
           "300": "12px",
           "400": "16px",
           "50": "2px",
@@ -1078,6 +1079,7 @@ exports[`orbitPreset should have preflight disabled 1`] = `
     "borderRadius": {
       "100": "4px",
       "150": "6px",
+      "200": "8px",
       "300": "12px",
       "400": "16px",
       "50": "2px",

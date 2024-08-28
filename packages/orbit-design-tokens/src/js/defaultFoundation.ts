@@ -109,6 +109,7 @@ export interface BorderRadius {
   50: string;
   100: string;
   150: string;
+  200: string;
   300: string;
   400: string;
   circle: string;
@@ -310,6 +311,7 @@ const borderRadius = {
   50: "2px",
   100: "4px",
   150: "6px",
+  200: "8px",
   300: "12px",
   400: "16px",
   circle: "50%",

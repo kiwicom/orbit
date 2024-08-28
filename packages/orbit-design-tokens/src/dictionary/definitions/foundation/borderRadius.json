@@ -41,6 +41,11 @@
         "value": 6,
         "internal": true
       },
+      "200": {
+        "type": "border-radius",
+        "value": 8,
+        "internal": true
+      },
       "300": {
         "type": "border-radius",
         "value": 12,

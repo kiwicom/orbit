@@ -45,6 +45,10 @@
         "type": "border-radius",
         "value": "{foundation.border-radius.150}"
       },
+      "200": {
+        "type": "border-radius",
+        "value": "{foundation.border-radius.200}"
+      },
       "300": {
         "type": "border-radius",
         "value": "{foundation.border-radius.300}"

@@ -156,6 +156,7 @@ const getTailwindTheme = (theme: typeof defaultTokens) => {
       50: defaultFoundation.borderRadius["50"],
       100: defaultFoundation.borderRadius["100"],
       150: defaultFoundation.borderRadius["150"],
+      200: defaultFoundation.borderRadius["200"],
       300: defaultFoundation.borderRadius["300"],
       400: defaultFoundation.borderRadius["400"],
       none: defaultFoundation.borderRadius.none,

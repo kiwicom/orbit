@@ -181,6 +181,7 @@ export interface Props extends Common.Globals {
     | "50"
     | "100"
     | "150"
+    | "200"
     | "300"
     | "400";
   readonly overflow?: "auto" | "hidden" | "scroll" | "visible";

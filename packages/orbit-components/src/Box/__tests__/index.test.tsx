@@ -19,6 +19,7 @@ const BORDER_RADIUS: { [K in BORDER_RADIUS_KEYS]: string } = {
   50: theme.orbit.borderRadius50,
   100: theme.orbit.borderRadius100,
   150: theme.orbit.borderRadius150,
+  200: theme.orbit.borderRadius200,
   300: theme.orbit.borderRadius300,
   400: theme.orbit.borderRadius400,
   none: theme.orbit.borderRadiusNone,

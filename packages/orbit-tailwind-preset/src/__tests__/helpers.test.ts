@@ -48,15 +48,15 @@ describe("orbit-tailwind-preset", () => {
       {
         "button-critical-background": "#D21C1C",
         "button-critical-subtle-background": "#FAEAEA",
-        "button-info-background": "#0172CB",
+        "button-info-background": "#0070C8",
         "button-link-critical-background": "transparent",
         "button-link-primary-background": "transparent",
         "button-link-secondary-background": "transparent",
         "button-primary-background": "#00A58E",
         "button-primary-subtle-background": "#E1F4F3",
         "button-secondary-background": "#E8EDF1",
-        "button-success-background": "#28A138",
-        "button-warning-background": "#DF7B00",
+        "button-success-background": "#0A932B",
+        "button-warning-background": "#CF6C00",
         "button-white-background": "#FFFFFF",
       }
     `);
@@ -73,7 +73,7 @@ describe("orbit-tailwind-preset", () => {
         "button-primary-subtle-background-hover": "#D6F0EC",
         "button-secondary-background-hover": "#DCE3E9",
         "button-success-background-hover": "#238B31",
-        "button-warning-background-hover": "#C96F00",
+        "button-warning-background-hover": "#B86000",
         "button-white-background-hover": "#F5F7F9",
       }
     `);

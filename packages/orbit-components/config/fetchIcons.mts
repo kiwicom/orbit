@@ -144,10 +144,12 @@ async function saveOrbitIcons(data: { name: string; svg: string; id: string }[])
   const savedIds: string[] = [];
 
   for (const { name, svg, id } of data) {
+    // id is of format XXXX:XXXX, we want the second part only.
+    const formattedId = id.split(":")[1];
     const parsedName = parseName(name);
-    const content = setSvgContent(parsedName, svg, id);
+    const content = setSvgContent(parsedName, svg, formattedId);
     const filePath = path.join(SVG_FOLDER, `${parsedName}.svg`);
-    let currentId = id;
+    let currentId = formattedId;
 
     if (!fs.existsSync(filePath)) {
       await fs.writeFile(filePath, content, "utf-8").then(() => {
@@ -168,7 +170,6 @@ async function saveOrbitIcons(data: { name: string; svg: string; id: string }[])
         height,
         { threshold: 0.1 },
       );
-
       // update the content only if the diff is bigger than 0
       if (numDiffPixels > 0) {
         currentId = match;

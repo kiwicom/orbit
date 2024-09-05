@@ -119,6 +119,6 @@
     "use-resize-observer": "^8.0.0",
     "uuid": "^8.3.2",
     "vfile-reporter": "^7.0.5",
-    "webpack": "^5.76.0"
+    "webpack": "^5.94.0"
   }
 }

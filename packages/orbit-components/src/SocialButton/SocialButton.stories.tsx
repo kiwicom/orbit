@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import { TYPE_OPTIONS } from "./consts";
@@ -6,58 +7,57 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import SocialButton from ".";
 
-export default {
+const meta: Meta<typeof SocialButton> = {
   title: "SocialButton",
+  component: SocialButton,
+
+  args: {
+    type: TYPE_OPTIONS.APPLE,
+    size: "normal",
+    fullWidth: false,
+    disabled: false,
+    onClick: action("clicked"),
+  },
+
+  argTypes: {
+    type: {
+      options: Object.values(TYPE_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+    size: {
+      options: ["small", "normal", "large"],
+      control: {
+        type: "select",
+      },
+    },
+  },
+
+  parameters: {
+    controls: { exclude: ["onClick"] },
+  },
 };
 
-export const Apple = () => {
-  return (
-    <SocialButton type={TYPE_OPTIONS.APPLE} onClick={action("clicked")} fullWidth>
-      Sign in with Apple{" "}
-    </SocialButton>
-  );
+export default meta;
+type Story = StoryObj<typeof SocialButton>;
+
+export const Playground: Story = {
+  render: ({ type, ...args }) => (
+    <SocialButton type={type} {...args}>{`Sign in with ${type}`}</SocialButton>
+  ),
+
+  parameters: {
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  },
 };
 
-export const Facebook = () => {
-  return (
-    <SocialButton type={TYPE_OPTIONS.FACEBOOK} onClick={action("clicked")} fullWidth>
-      Sign in with Facebook{" "}
-    </SocialButton>
-  );
-};
-
-export const Google = () => {
-  return (
-    <SocialButton type={TYPE_OPTIONS.GOOGLE} onClick={action("clicked")}>
-      Sign in with Google
-    </SocialButton>
-  );
-};
-
-export const Twitter = () => {
-  return (
-    <SocialButton type={TYPE_OPTIONS.TWITTER} onClick={action("clicked")}>
-      Sign in with Twitter{" "}
-    </SocialButton>
-  );
-};
-
-export const Email = () => {
-  return (
-    <SocialButton type={TYPE_OPTIONS.EMAIL} onClick={action("clicked")}>
-      Sign in with Email
-    </SocialButton>
-  );
-};
-
-export const Rtl = () => (
-  <RenderInRtl>
-    <SocialButton type={TYPE_OPTIONS.APPLE}>Button</SocialButton>
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+export const Rtl: Story = {
+  render: args => (
+    <RenderInRtl>
+      <SocialButton {...args}>Button</SocialButton>
+    </RenderInRtl>
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",

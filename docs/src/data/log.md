@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@16.0.1...@kiwicom/orbit-components@16.1.0) (2024-09-05)
+
+#### Bug Fixes
+
+*   **ErrorFormTooltip:** align text and close button ([aa0f4fa](https://github.com/kiwicom/orbit/commit/aa0f4fae2bdba933b0caf361f8657726a6452960))
+
+#### Features
+
+*   **Box:** add new value for borderRadius 200 prop ([09a409e](https://github.com/kiwicom/orbit/commit/09a409e51579ee8daa796a4b7d645efe56a7fe01))
+*   **icons:** update icons from figma ([e7e27d5](https://github.com/kiwicom/orbit/commit/e7e27d523092705a05b3720e84874147cc05f3e0))
+
 ### [16.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@16.0.0...@kiwicom/orbit-components@16.0.1) (2024-08-22)
 
 #### Bug Fixes

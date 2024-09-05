@@ -93,7 +93,7 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-orbit-components": "*",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.33.2",

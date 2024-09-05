@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@5.0.0...@kiwicom/orbit-tailwind-preset@5.1.0) (2024-09-05)
+
+
+### Features
+
+* **tailwind:** add new rounded-200 class ([9035430](https://github.com/kiwicom/orbit/commit/9035430a76ef383a6dc501bb1ccaa61c1b7f8df2))
+
+
+
+
+
 # [5.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@4.4.0...@kiwicom/orbit-tailwind-preset@5.0.0) (2024-08-14)
 
 

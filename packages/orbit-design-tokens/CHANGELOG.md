@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@8.0.0...@kiwicom/orbit-design-tokens@8.1.0) (2024-09-05)
+
+
+### Features
+
+* **tokens:** add new borderRadius200 token ([824ab1b](https://github.com/kiwicom/orbit/commit/824ab1b5d49be797e6ddc8ea515f974e387de2ff))
+* **tokens:** update palette with new color tokens ([875c712](https://github.com/kiwicom/orbit/commit/875c712f6248534b2f4fd828fd8490862206d238))
+
+
+
+
+
 # [8.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@7.2.1...@kiwicom/orbit-design-tokens@8.0.0) (2024-08-14)
 
 

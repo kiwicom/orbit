@@ -1,140 +1,101 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import type { BorderColorClass, SideOffset } from "./types";
 import defaultTheme from "../defaultTheme";
 
 import Separator from ".";
 
-export default {
-  title: "Separator",
-};
-
-export const Default = () => <Separator />;
-
 const kebabCase = (str: string) => str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 
-Default.story = {
+const meta: Meta<typeof Separator> = {
+  title: "Separator",
+  component: Separator,
+
   parameters: {
-    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Separator component. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
-export const Playground = ({ spaceAfter, align, sideOffset, type, color }) => {
-  return (
-    <Separator
-      color={color}
-      align={align}
-      sideOffset={sideOffset}
-      spaceAfter={spaceAfter}
-      type={type}
-    />
-  );
+export default meta;
+
+type Story = StoryObj<typeof Separator>;
+
+export const Default: Story = {
+  parameters: {
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
+  },
 };
 
-Playground.story = {
+export const Playground: Story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
+
+  args: {
+    align: "left",
+    sideOffset: "none",
+    type: "solid",
+    spaceAfter: "none",
+    color: "border-cloud-normal",
+  },
+
+  argTypes: {
+    spaceAfter: {
+      options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+    align: {
+      options: ["left", "right", "center"],
+      control: {
+        type: "select",
+      },
+    },
+    sideOffset: {
+      options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
+      control: {
+        type: "select",
+      },
+    },
+    type: {
+      options: ["solid", "dashed", "dotted", "double", "none"],
+      control: {
+        type: "select",
+      },
+    },
+    color: {
+      options: Object.keys(defaultTheme.orbit)
+        .filter(t => t.startsWith("palette"))
+        .map(c => kebabCase(c.replace("palette", "border"))),
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 
-Playground.args = {
-  spaceAfter: SPACINGS_AFTER.LARGEST,
-  align: "left",
-  sideOffset: "none" as SideOffset,
-  type: "solid",
-  color: "" as BorderColorClass,
-};
-
-Playground.argTypes = {
-  spaceAfter: {
-    options: Object.values(SPACINGS_AFTER),
-    control: {
-      type: "select",
-    },
-  },
-  align: {
-    options: ["left", "right", "center"],
-    control: {
-      type: "select",
-    },
-  },
-  sideOffset: {
-    options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
-    control: {
-      type: "select",
-    },
-  },
-  type: {
-    options: ["solid", "dashed", "dotted", "double", "none"],
-    control: {
-      type: "select",
-    },
-  },
-  color: {
-    options: Object.keys(defaultTheme.orbit)
-      .filter(t => t.startsWith("palette"))
-      .map(c => kebabCase(c.replace("palette", "border"))),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Rtl = args => (
-  <RenderInRtl>
-    <Playground {...args} />
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+export const Rtl: Story = {
+  render: args => (
+    <RenderInRtl>
+      <Separator {...args} />
+    </RenderInRtl>
+  ),
 
   parameters: {
-    info: "This is a preview of this component in RTL setup.",
+    info: "This is a preview of this component in RTL setup. Check Orbit.Kiwi for more detailed guidelines.",
   },
-};
 
-Rtl.args = {
-  spaceAfter: SPACINGS_AFTER.LARGEST,
-  align: "left",
-  sideOffset: "none" as SideOffset,
-  type: "solid",
-  color: "" as BorderColorClass,
-};
+  args: {
+    ...Playground.args,
+  },
 
-Rtl.argTypes = {
-  spaceAfter: {
-    options: Object.values(SPACINGS_AFTER),
-    control: {
-      type: "select",
-    },
-  },
-  align: {
-    options: ["left", "right", "center"],
-    control: {
-      type: "select",
-    },
-  },
-  sideOffset: {
-    options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
-    control: {
-      type: "select",
-    },
-  },
-  type: {
-    options: ["solid", "dashed", "dotted", "double", "none"],
-    control: {
-      type: "select",
-    },
-  },
-  color: {
-    options: Object.keys(defaultTheme.orbit)
-      .filter(t => t.startsWith("palette"))
-      .map(c => kebabCase(c.replace("palette", "border"))),
-    control: {
-      type: "select",
-    },
+  argTypes: {
+    ...Playground.argTypes,
   },
 };

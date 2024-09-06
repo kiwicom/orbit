@@ -1,202 +1,147 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Text from "../Text";
 import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Stack from "../Stack";
 import Tooltip from "../Tooltip";
-import Airplane from "../icons/Airplane";
 
 import Radio from ".";
 
-export default {
+const meta: Meta<typeof Radio> = {
   title: "Radio",
-};
+  component: Radio,
 
-export const Default = ({ label, checked }) => {
-  return <Radio label={label} checked={checked} onChange={action("changed")} />;
-};
-
-Default.story = {
   parameters: {
-    info: "Radio needs only label and onChange by default.",
+    info: "Radio component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange"],
+    },
+  },
+
+  args: {
+    name: "Name",
+    label: "Label",
+    value: "value",
+    info: "Additional information about this choice",
+    checked: false,
+    disabled: false,
+    hasError: false,
+    readOnly: false,
+    tabIndex: 0,
+    onChange: action("changed"),
   },
 };
 
-Default.args = {
-  label: "Label",
-  checked: false,
-};
+export default meta;
 
-export const WithHelp = ({ label, value, info }) => {
-  return <Radio label={label} value={value} info={info} onChange={action("changed")} />;
-};
+type Story = StoryObj<typeof Radio>;
 
-WithHelp.story = {
-  name: "With help",
-
+export const Default: Story = {
   parameters: {
-    info: "Additionally you can add info to this component.",
+    info: "Default settings of component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["info", "hasError", "disabled", "readOnly", "onChange", "tabIndex"],
+    },
+  },
+
+  args: {
+    info: undefined,
   },
 };
 
-WithHelp.args = {
-  label: "Label",
-  value: "value",
-  info: "Additional information about this choice",
-};
-
-export const WithError = ({ label, hasError, checked }) => {
-  return <Radio label={label} hasError={hasError} checked={checked} onChange={action("changed")} />;
-};
-
-WithError.story = {
-  name: "With error",
+export const WithError: Story = {
+  args: {
+    hasError: true,
+  },
 
   parameters: {
-    info: "Show there is an error with the hasError prop. Only displays when checked and disabled are false.",
+    info: "Error state of Radio component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["disabled", "readOnly", "onChange", "tabIndex"],
+    },
   },
 };
 
-WithError.args = {
-  label: "Label",
-  hasError: true,
-  checked: false,
-};
-
-export const WithTextLinkInLabel = ({ checked }) => {
-  return (
+export const WithTextLinkInLabel: Story = {
+  render: args => (
     <Radio
+      {...args}
       label={
         <Text>
           Lorem ipsum dolor sit&nbsp;
           <TextLink>amet</TextLink>.
         </Text>
       }
-      checked={checked}
-      value="value"
-      onChange={action("changed")}
     />
-  );
-};
-
-WithTextLinkInLabel.story = {
-  name: "With TextLink in label",
+  ),
 
   parameters: {
-    info: "Additionally you can add info to this component.",
+    controls: {
+      exclude: ["onChange", "hasError", "disabled", "label", "readOnly", "tabIndex"],
+    },
   },
 };
 
-WithTextLinkInLabel.args = {
-  checked: true,
-};
-
-export const WithTooltip = () => {
-  return (
+export const WithTooltip: Story = {
+  render: args => (
     <Radio
-      label="Direct"
-      value="one"
-      disabled
+      {...args}
       tooltip={
         <Tooltip content="There are no results available with this option" placement="top" />
       }
     />
-  );
-};
+  ),
 
-WithTooltip.story = {
   parameters: {
-    info: "Additionally you can add tooltip to this component.",
+    controls: {
+      exclude: ["onChange", "hasError", "disabled", "readOnly", "tabIndex"],
+    },
   },
 };
 
-export const WithStackAndIcon = ({ label, value, info }) => {
-  return (
-    <Radio
-      label={
-        <Stack align="center">
-          <Text size="small">{label}</Text>
-          <Tooltip content="Tooltip content">
-            <Airplane size="small" />
-          </Tooltip>
-        </Stack>
-      }
-      value={value}
-      info={info}
-      onChange={action("changed")}
-    />
-  );
-};
-
-WithStackAndIcon.story = {
-  name: "With stack and icon",
+export const ReadOnly: Story = {
+  args: {
+    readOnly: true,
+  },
 
   parameters: {
-    info: "Additionally you can add info to this component.",
+    controls: {
+      exclude: ["onChange", "hasError", "disabled", "tabIndex"],
+    },
   },
 };
 
-WithStackAndIcon.args = {
-  label: "Label",
-  value: "value",
-  info: "Additional information to this choice",
-};
-
-export const Playground = ({ label, value, checked, disabled, hasError, info, name, dataTest }) => {
-  return (
-    <Radio
-      label={label}
-      value={value}
-      checked={checked}
-      disabled={disabled}
-      hasError={hasError}
-      name={name}
-      info={info}
-      dataTest={dataTest}
-      onChange={action("changed")}
-    />
-  );
-};
-
-Playground.story = {
+export const Playground: Story = {
   parameters: {
-    info: "Playground of Radio",
+    info: "Playground of Radio button component.",
+  },
+
+  args: {
+    id: "radio-id",
   },
 };
 
-Playground.args = {
-  label: "Label",
-  value: "value",
-  checked: true,
-  disabled: false,
-  hasError: false,
-  info: "Additional information for this choice",
-  name: "name",
-  dataTest: "test",
-};
-
-export const Rtl = () => (
-  <RenderInRtl>
-    <Radio
-      label={
-        <Text>
-          Lorem ipsum dolor sit&nbsp;
-          <TextLink>amet</TextLink>.
-        </Text>
-      }
-      checked
-      value="value"
-      onChange={action("changed")}
-    />
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+export const Rtl: Story = {
+  render: args => (
+    <RenderInRtl>
+      <Radio
+        {...args}
+        label={
+          <Text>
+            Lorem ipsum dolor sit&nbsp;
+            <TextLink>amet</TextLink>.
+          </Text>
+        }
+      />
+    </RenderInRtl>
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+    controls: {
+      disable: true,
+    },
   },
 };

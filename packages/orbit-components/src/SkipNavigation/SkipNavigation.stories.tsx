@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import Heading from "../Heading";
@@ -55,55 +56,61 @@ const Content = (
   </Stack>
 );
 
-export default {
+const meta: Meta<typeof SkipNavigation> = {
   title: "SkipNavigation",
+  component: SkipNavigation,
 };
 
-export const Default = () => {
-  return (
-    <div>
+export default meta;
+type Story = StoryObj<typeof SkipNavigation>;
+
+export const Default: Story = {
+  render: () => (
+    <>
       <SkipNavigation />
       {Content}
-    </div>
-  );
-};
+    </>
+  ),
 
-Default.story = {
   parameters: {
     info: "Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+    controls: {
+      disable: true,
+    },
   },
 };
 
-export const Playground = () => {
-  const feedbackLabel = "Send feedback";
-  return (
-    <div>
-      <SkipNavigation
-        actions={[
-          {
-            link: "https://www.kiwi.com/cz/pages/content/terms",
-            name: "Go to terms and conditions",
-          },
-          {
-            name: "Add baggage",
-            onClick: action("Add baggage"),
-          },
-          {
-            name: "Request refund",
-            onClick: action("Request refund"),
-          },
-        ]}
-        feedbackUrl="#"
-        feedbackLabel={feedbackLabel}
-      />
-
+export const Playground: Story = {
+  render: args => (
+    <>
+      <SkipNavigation {...args} />
       {Content}
-    </div>
-  );
-};
+    </>
+  ),
 
-Playground.story = {
   parameters: {
     info: "All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+  },
+
+  args: {
+    actions: [
+      {
+        link: "https://www.kiwi.com/cz/pages/content/terms",
+        name: "Go to terms and conditions",
+      },
+      {
+        name: "Add baggage",
+        onClick: action("Add baggage"),
+      },
+      {
+        name: "Request refund",
+        onClick: action("Request refund"),
+      },
+    ],
+    feedbackUrl: "#",
+    feedbackLabel: "Send feedback",
+    firstSectionLabel: "Jump to section",
+    firstActionLabel: "Common actions",
+    id: "ID",
   },
 };

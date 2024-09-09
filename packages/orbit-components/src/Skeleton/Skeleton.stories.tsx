@@ -1,14 +1,11 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import defaultTheme from "../defaultTheme";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { SPACINGS_AFTER } from "../common/consts";
 
 import Skeleton from ".";
-
-export default {
-  title: "Skeleton",
-};
 
 enum PRESETS {
   List = "List",
@@ -18,129 +15,110 @@ enum PRESETS {
   Text = "Text",
 }
 
-export const Default = () => {
-  return <Skeleton height="150px" width="500px" />;
+const meta: Meta<typeof Skeleton> = {
+  title: "Skeleton",
+  component: Skeleton,
 };
 
-Default.story = {
+export default meta;
+type Story = StoryObj<typeof Skeleton>;
+
+export const Default: Story = {
   parameters: {
     info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
   },
 };
 
-export const Playground = ({
-  animate,
-  height,
-  maxHeight,
-  rowBorderRadius,
-  rowHeight,
-  rowOffset,
-  rows,
-  spaceAfter,
-  viewBox,
-  width,
-  title,
-  color,
-}) => {
-  return (
-    <Skeleton
-      animate={animate}
-      color={color}
-      height={height}
-      maxHeight={maxHeight}
-      title={title}
-      rowBorderRadius={rowBorderRadius}
-      rowHeight={rowHeight}
-      rowOffset={rowOffset}
-      rows={rows}
-      spaceAfter={spaceAfter}
-      viewBox={viewBox}
-      width={width}
-    />
-  );
+export const Custom: Story = {
+  render: args => (
+    <Skeleton {...args}>
+      <rect x="48" y="8" rx="3" ry="3" width="88" height="6" />
+      <rect x="48" y="26" rx="3" ry="3" width="52" height="6" />
+      <rect x="0" y="56" rx="3" ry="3" width="410" height="6" />
+      <rect x="0" y="72" rx="3" ry="3" width="380" height="6" />
+      <rect x="0" y="88" rx="3" ry="3" width="178" height="6" />
+      <circle cx="20" cy="20" r="20" />
+    </Skeleton>
+  ),
+
+  args: {
+    height: "100px",
+    viewBox: "0 0 500 100",
+    width: "500px",
+  },
 };
 
-Playground.story = {
+export const Presets: Story = {
+  args: {
+    preset: PRESETS.List,
+  },
+
+  argTypes: {
+    preset: {
+      options: Object.values(PRESETS),
+      control: {
+        type: "select",
+      },
+    },
+  },
+};
+
+export const Playground: Story = {
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
-};
 
-Playground.args = {
-  animate: true,
-  height: "",
-  maxHeight: "",
-  rowBorderRadius: 3,
-  rowHeight: 21,
-  rowOffset: 30,
-  rows: 10,
-  spaceAfter: SPACINGS_AFTER.NONE,
-  viewBox: "",
-  width: "",
-  title: "Loading",
-  color: "",
-};
+  args: {
+    ...Custom.args,
+    animate: true,
+    rowBorderRadius: 3,
+    rowHeight: 21,
+    rowOffset: 30,
+    rows: 10,
+    title: "Loading",
+    maxHeight: "",
+    color: "",
+    spaceAfter: SPACINGS_AFTER.NONE,
+    id: "ID",
+  },
 
-Playground.argTypes = {
-  spaceAfter: {
-    options: Object.values(SPACINGS_AFTER),
-    control: {
-      type: "select",
+  argTypes: {
+    spaceAfter: {
+      options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+    color: {
+      options: Object.keys(defaultTheme.orbit).filter(t => t.startsWith("palette")),
+      control: {
+        type: "select",
+      },
     },
   },
-  color: {
-    options: Object.keys(defaultTheme.orbit).filter(t => t.startsWith("palette")),
-    control: {
-      type: "select",
-    },
-  },
 };
 
-export const RTL = () => (
-  <RenderInRtl>
-    <Skeleton height="100px" width="500px" viewBox="0 0 500 100">
-      <rect x="48" y="8" rx="3" ry="3" width="88" height="6" />
-      <rect x="48" y="26" rx="3" ry="3" width="52" height="6" />
-      <rect x="0" y="56" rx="3" ry="3" width="410" height="6" />
-      <rect x="0" y="72" rx="3" ry="3" width="380" height="6" />
-      <rect x="0" y="88" rx="3" ry="3" width="178" height="6" />
-      <circle cx="20" cy="20" r="20" />
-    </Skeleton>
-  </RenderInRtl>
-);
+export const RTL: Story = {
+  render: () => (
+    <RenderInRtl>
+      <Skeleton height="100px" width="500px" viewBox="0 0 500 100">
+        <rect x="48" y="8" rx="3" ry="3" width="88" height="6" />
+        <rect x="48" y="26" rx="3" ry="3" width="52" height="6" />
+        <rect x="0" y="56" rx="3" ry="3" width="410" height="6" />
+        <rect x="0" y="72" rx="3" ry="3" width="380" height="6" />
+        <rect x="0" y="88" rx="3" ry="3" width="178" height="6" />
+        <circle cx="20" cy="20" r="20" />
+      </Skeleton>
+    </RenderInRtl>
+  ),
 
-export const Custom = ({ height, viewBox, width }) => {
-  return (
-    <Skeleton height={height} width={width} viewBox={viewBox}>
-      <rect x="48" y="8" rx="3" ry="3" width="88" height="6" />
-      <rect x="48" y="26" rx="3" ry="3" width="52" height="6" />
-      <rect x="0" y="56" rx="3" ry="3" width="410" height="6" />
-      <rect x="0" y="72" rx="3" ry="3" width="380" height="6" />
-      <rect x="0" y="88" rx="3" ry="3" width="178" height="6" />
-      <circle cx="20" cy="20" r="20" />
-    </Skeleton>
-  );
-};
-
-Custom.args = {
-  height: "100px",
-  viewBox: "0 0 500 100",
-  width: "500px",
-};
-
-export const Presets = ({ presets }) => {
-  return <Skeleton preset={presets} />;
-};
-
-Presets.args = {
-  preset: PRESETS.List,
-};
-
-Presets.argTypes = {
-  preset: {
-    options: PRESETS,
-    control: {
-      type: "select",
+  parameters: {
+    info: "This is a preview of this component in RTL setup.",
+    controls: {
+      disable: true,
     },
   },
 };

@@ -1,7 +1,8 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import Airplane from "../icons/Airplane";
+import * as Icons from "../icons";
 import CountryFlag from "../CountryFlag";
 import { CODES } from "../CountryFlag/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -16,237 +17,229 @@ const objectOptions = [
   { value: 3, label: "Third item" },
 ];
 
-export default {
+type SelectPropsAndCustomArgs = React.ComponentProps<typeof Select> & {
+  code: string;
+  icon: string;
+};
+
+const meta: Meta<SelectPropsAndCustomArgs> = {
   title: "Select",
-};
+  component: Select,
 
-export const Default = () => <Select options={objectOptions} onChange={action("onChange")} />;
-
-Default.story = {
-  parameters: {
-    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    options: objectOptions,
+    onChange: action("onChange"),
+    onBlur: action("onBlur"),
+    onFocus: action("onFocus"),
   },
-};
-
-export const WithPrefix = () => (
-  <Select
-    label="Select box (with prefix)"
-    options={objectOptions}
-    onChange={action("onChange")}
-    prefix={<Airplane color="secondary" />}
-  />
-);
-
-WithPrefix.story = {
-  name: "With prefix",
 
   parameters: {
-    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-export const WithCountryFlagPrefix = ({ code }) => {
-  return (
-    <Select
-      label="Select box (with prefix)"
-      options={objectOptions}
-      onChange={action("onChange")}
-      prefix={<CountryFlag code={code} />}
-    />
-  );
-};
-
-WithCountryFlagPrefix.story = {
-  name: "With CountryFlag prefix",
-
-  parameters: {
-    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-WithCountryFlagPrefix.args = {
-  code: CODES.ANYWHERE,
-};
-
-WithCountryFlagPrefix.argTypes = {
-  code: {
-    options: Object.values(CODES),
-    control: {
-      type: "select",
+    info: "Select component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: [
+        "onChange",
+        "onBlur",
+        "onFocus",
+        "help",
+        "error",
+        "placeholder",
+        "inlineLabel",
+        "disabled",
+        "name",
+        "prefix",
+        "label",
+      ],
     },
   },
 };
 
-export const WithLongLabel = ({ inlineLabel }) => {
-  return (
-    <Select
-      label="Select box (with long label)"
-      options={objectOptions}
-      onChange={action("onChange")}
-      inlineLabel={inlineLabel}
-    />
-  );
-};
+export default meta;
 
-WithLongLabel.story = {
-  name: "With long label",
+type Story = StoryObj<SelectPropsAndCustomArgs>;
 
+const getIcon = (source: string | null) => source && Icons[source];
+
+export const Default: Story = {
   parameters: {
-    info: "Long labels truncate automatically when inline.",
+    info: "Default setup of Select component. Check Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
-WithLongLabel.args = {
-  inlineLabel: true,
-};
+export const WithPrefixAndLabel: Story = {
+  render: ({ icon, ...args }) => {
+    const Icon = typeof icon === "string" && getIcon(icon);
 
-export const WithPlaceholder = ({ placeholder }) => {
-  return (
-    <Select
-      label="Select box (with placeholder)"
-      placeholder={placeholder}
-      options={objectOptions}
-      onChange={action("onChange")}
-    />
-  );
-};
-
-WithPlaceholder.story = {
-  name: "With placeholder",
-
-  parameters: {
-    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+    return <Select {...args} prefix={<Icon />} />;
   },
-};
 
-WithPlaceholder.args = {
-  placeholder: "Select value from list",
-};
-
-export const WithHelpMessage = () => (
-  <Select
-    label="Select box (with help text)"
-    options={objectOptions}
-    help="Most common choice is Booking cancellation"
-    onChange={action("onChange")}
-  />
-);
-
-WithHelpMessage.story = {
-  name: "With help message",
-
-  parameters: {
-    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
+  args: {
+    icon: "Airplane",
+    label: "Select box",
   },
-};
 
-export const WithErrorMessage = () => (
-  <Select
-    label="Select box (with error text)"
-    options={objectOptions}
-    error={<div>You need to select some value.</div>}
-    onChange={action("onChange")}
-  />
-);
-
-WithErrorMessage.story = {
-  name: "With error message",
-
-  parameters: {
-    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-export const Playground = ({
-  placeholder,
-  disabled,
-  name,
-  customValueText,
-  option,
-  value,
-  dataTest,
-  spaceAfter,
-  id,
-  required,
-  dataAttrs,
-  width,
-  label,
-  inlineLabel,
-  error,
-  help,
-}) => {
-  return (
-    <Select
-      id={id}
-      required={required}
-      placeholder={placeholder}
-      width={width}
-      options={option}
-      disabled={disabled}
-      name={name}
-      label={label}
-      inlineLabel={inlineLabel}
-      onChange={action("onChange")}
-      onBlur={action("onBlur")}
-      onFocus={action("onFocus")}
-      dataTest={dataTest}
-      value={value}
-      customValueText={customValueText}
-      spaceAfter={spaceAfter}
-      dataAttrs={dataAttrs}
-      error={error}
-      help={help}
-    />
-  );
-};
-
-Playground.story = {
-  parameters: {
-    info: "Selects are used for showing content hierarchy and are important for improving the reading experience for our users. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-Playground.args = {
-  placeholder: "Select value from list",
-  disabled: false,
-  name: "name",
-  customValueText: "",
-  option: objectOptions,
-  value: undefined,
-  dataTest: "test",
-  spaceAfter: SPACINGS_AFTER.SMALL,
-  id: "select-id",
-  required: false,
-  dataAttrs: { "data-recording-ignore": true },
-  width: "",
-  label: "Label",
-  inlineLabel: false,
-  error: "",
-  help: "",
-};
-
-Playground.argTypes = {
-  spaceAfter: {
-    options: Object.values(SPACINGS_AFTER),
-    control: {
-      type: "select",
+  argTypes: {
+    icon: {
+      options: Object.keys(Icons),
+      control: {
+        type: "select",
+      },
     },
   },
-  value: {
-    options: objectOptions.map(opt => opt.value),
+
+  parameters: {
+    info: "Select component with prefix icon and label. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange", "onBlur", "onFocus", "help", "error", "placeholder", "inlineLabel"],
+    },
   },
 };
 
-export const Rtl = () => (
-  <RenderInRtl>
-    <Select placeholder="My placeholder" options={objectOptions} label="My label" />
-  </RenderInRtl>
-);
+export const WithCountryFlagPrefix: Story = {
+  render: ({ code, ...args }) => {
+    const Icon = <CountryFlag code={code} />;
 
-Rtl.story = {
-  name: "RTL",
+    return <Select {...args} prefix={Icon} />;
+  },
+
+  args: {
+    code: CODES.ANYWHERE,
+  },
+
+  argTypes: {
+    code: {
+      options: Object.values(CODES),
+      control: {
+        type: "select",
+      },
+    },
+  },
+
+  parameters: {
+    info: "Select component with country flag icon as a prefix. Check Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+export const WithLongLabel: Story = {
+  args: {
+    label: "Select box (very long label)",
+    inlineLabel: true,
+  },
+
+  parameters: {
+    info: "Select component with a long label truncate automatically when inline. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange", "onBlur", "onFocus", "help", "error", "placeholder"],
+    },
+  },
+};
+
+export const WithPlaceholder: Story = {
+  args: {
+    placeholder: "Select value from list",
+  },
+
+  parameters: {
+    info: "Select component with placeholder set up. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange", "onBlur", "onFocus", "help", "error", "inlineLabel"],
+    },
+  },
+};
+
+export const WithHelpMessage: Story = {
+  args: {
+    label: "Select with help message",
+    help: "Most common choice is Booking cancellation",
+    helpClosable: true,
+  },
+
+  parameters: {
+    info: "Select component with help message tooltip. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange", "onBlur", "onFocus", "placeholder", "error", "inlineLabel"],
+    },
+  },
+};
+
+export const WithErrorMessage: Story = {
+  args: {
+    label: "Select with error message",
+    error: "You need to select some value.",
+  },
+
+  parameters: {
+    info: "Select component with error message tooltip. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange", "onBlur", "onFocus", "placeholder", "help", "inlineLabel"],
+    },
+  },
+};
+
+export const Playground: Story = {
+  render: ({ icon, ...args }) => {
+    const Icon = typeof icon === "string" && getIcon(icon);
+
+    return <Select {...args} prefix={<Icon />} />;
+  },
+
+  args: {
+    ...WithPrefixAndLabel.args,
+    inlineLabel: false,
+    placeholder: "Select value from list",
+    value: undefined,
+    disabled: false,
+    error: "",
+    help: "",
+    name: "name",
+    width: "50%",
+    tabIndex: 0,
+    required: false,
+    helpClosable: true,
+    spaceAfter: SPACINGS_AFTER.SMALL,
+    customValueText: "",
+    insideInputGroup: false,
+    id: "select-id",
+    dataAttrs: {
+      "data-story-example": "Storybook-playground",
+    },
+  },
+
+  argTypes: {
+    ...WithPrefixAndLabel.argTypes,
+    spaceAfter: {
+      options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+
+    value: {
+      options: objectOptions.map(opt => opt.value),
+      control: {
+        type: "select",
+      },
+    },
+  },
+
+  parameters: {
+    info: "Playground of select component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange", "onBlur", "onFocus"],
+    },
+  },
+};
+
+export const Rtl: Story = {
+  render: () => (
+    <RenderInRtl>
+      <Select placeholder="My placeholder" options={objectOptions} label="My label" />
+    </RenderInRtl>
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+    controls: {
+      disable: true,
+    },
   },
 };

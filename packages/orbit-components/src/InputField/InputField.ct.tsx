@@ -54,6 +54,12 @@ test.describe("visual InputField", () => {
     await expect(component).toHaveScreenshot();
   });
 
+  test("screenshot required value", async ({ mount }) => {
+    const component = await mount(<Test required value="Value" />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
   test("screenshot help", async ({ mount }) => {
     const component = await mount(<TestHelp />);
 
@@ -63,6 +69,12 @@ test.describe("visual InputField", () => {
   test("screenshot help focus", async ({ mount }) => {
     const component = await mount(<TestHelp />);
     component.getByTestId("input").focus();
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("screenshot help required", async ({ mount }) => {
+    const component = await mount(<TestHelp required />);
 
     await expect(component).toHaveScreenshot();
   });
@@ -83,6 +95,12 @@ test.describe("visual InputField", () => {
   test("screenshot error focus", async ({ mount }) => {
     const component = await mount(<TestError />);
     component.getByTestId("input").focus();
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("screenshot error required", async ({ mount }) => {
+    const component = await mount(<TestError required />);
 
     await expect(component).toHaveScreenshot();
   });

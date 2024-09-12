@@ -81,7 +81,19 @@ export function InputSelectStory() {
         label="Custom label"
         help="Do or do not. There is no try."
       />
+      <InputSelect
+        options={simpleOptions}
+        label="Custom label"
+        help="Do or do not. There is no try."
+        required
+      />
       <InputSelect options={simpleOptions} label="Custom label" error="You shall not pass!" />
+      <InputSelect
+        options={simpleOptions}
+        label="Custom label"
+        error="You shall not pass!"
+        required
+      />
       <InputSelect options={simpleOptions} width="100px" />
     </div>
   );

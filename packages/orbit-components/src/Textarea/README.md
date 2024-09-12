@@ -59,8 +59,6 @@ Table below contains all types of the props available in Textarea component.
 
 - The `error` prop overwrites the `help` prop, due to higher priority.
 
-- The color of the label will turn into cloud shade when the Textarea has some filled value.
-
 - `ref` can be used for example auto-focus the elements immediately after render.
 
 ```jsx

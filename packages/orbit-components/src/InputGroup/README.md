@@ -60,8 +60,6 @@ Table below contains all types of the props available in InputGroup component.
 
 - You can set up different `flex` attribute for every children, or use one for all. See [flex property docs](https://www.w3schools.com/cssref/css3_pr_flex.asp) for more information.
 
-- The color of the label will turn into cloud shade when all children have some filled value.
-
 - If the passed children into the InputGroup won't have any callbacks - either `onChange`, `onFocus` or `onBlur`, the passed callback of the InputGroup will be used.
 
 - Define `size` only for the **InputGroup**, it will set up the proper styling for everything automatically.

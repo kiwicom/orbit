@@ -159,7 +159,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       {label && !inlineLabel && (
         <FormLabel
           inlineLabel={inlineLabel}
-          filled={!!value}
           required={required}
           error={!!error}
           help={!!help}
@@ -212,13 +211,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             )}
             ref={labelRef}
           >
-            <FormLabel
-              filled={!!value}
-              required={required}
-              error={!!error}
-              help={!!help}
-              inlineLabel={inlineLabel}
-            >
+            <FormLabel required={required} error={!!error} help={!!help} inlineLabel={inlineLabel}>
               {label}
             </FormLabel>
           </div>

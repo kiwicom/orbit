@@ -92,7 +92,6 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       />
       {label && (
         <FormLabel
-          filled={!!fileName}
           required={required}
           error={!!error}
           help={!!help}

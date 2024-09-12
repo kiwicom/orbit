@@ -39,7 +39,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
     ref,
   ) => {
     const [active, setActive] = React.useState(false);
-    const [filled, setFilled] = React.useState(false);
     const inputID = useRandomId();
     const [tooltipShown, setTooltipShown] = React.useState(false);
     const [tooltipShownHover, setTooltipShownHover] = React.useState(false);
@@ -53,15 +52,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
     const helpReal = help || (foundHelp.length > 0 && foundHelp[0]);
     const randomId = useRandomIdSeed();
 
-    const isFilled = React.useCallback(
-      () => setFilled(findPropInChild("value", children).length > 0),
-      [children],
-    );
-
-    React.useEffect(() => {
-      isFilled();
-    }, [isFilled, label]);
-
     const handleFocus =
       callBack =>
       (ev: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -74,7 +64,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
     const handleBlur =
       callBack =>
       (ev: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-        isFilled();
         setActive(false);
         if (onBlur) onBlur(ev);
         if (callBack) callBack(ev);
@@ -83,7 +72,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
     const handleChange =
       callBack =>
       (ev: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-        isFilled();
         if (onChange) onChange(ev);
         if (callBack) callBack(ev);
       };
@@ -117,7 +105,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
       >
         {label && (
           <FormLabel
-            filled={filled}
             id={inputID}
             labelRef={labelRef}
             error={!!errorReal}

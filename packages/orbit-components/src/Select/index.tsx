@@ -70,10 +70,8 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     >
       {label && !inlineLabel && (
         <FormLabel
-          filled={!!filled}
           error={!!error}
           help={!!help}
-          disabled={disabled}
           labelRef={labelRef}
           iconRef={iconRef}
           onMouseEnter={() => setTooltipShownHover(true)}
@@ -119,13 +117,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                 <AlertCircle color="critical" size="small" />
               </span>
             )}
-            <FormLabel
-              filled={!!value}
-              required={required}
-              error={!!error}
-              help={!!help}
-              inlineLabel={inlineLabel}
-            >
+            <FormLabel required={required} error={!!error} help={!!help} inlineLabel={inlineLabel}>
               {label}
             </FormLabel>
           </div>

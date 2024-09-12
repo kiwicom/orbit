@@ -6,7 +6,7 @@ import FormLabel from "..";
 describe("FormLabel", () => {
   it("should have expected DOM output", () => {
     render(
-      <FormLabel filled={false} dataTest="test" required>
+      <FormLabel dataTest="test" required>
         FormLabel
       </FormLabel>,
     );

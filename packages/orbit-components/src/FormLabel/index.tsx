@@ -9,7 +9,6 @@ const FormLabel = ({
   className,
   children,
   required,
-  filled,
   dataTest,
   id,
   error,
@@ -19,16 +18,15 @@ const FormLabel = ({
   iconRef,
   inlineLabel,
   labelRef,
-  disabled,
 }: Props) => (
   <span
     className={cx(
       className,
       "orbit-form-label",
       "font-base text-normal mb-100 ms-100 de:ms-0 inline-flex font-medium leading-normal",
-      !filled || disabled
-        ? "text-form-element-label-foreground"
-        : "text-form-element-label-filled-foreground",
+      inlineLabel
+        ? "text-form-element-label-filled-foreground"
+        : "text-form-element-label-foreground",
     )}
     data-test={dataTest}
     id={id}
@@ -43,14 +41,8 @@ const FormLabel = ({
       </span>
     )}
 
-    {required && !error && (
-      <span
-        className={cx(
-          "text-normal align-top font-bold",
-          filled ? "text-form-element-label-filled-foreground" : "text-critical-foreground",
-        )}
-        aria-hidden="true"
-      >
+    {required && (
+      <span className="text-normal text-critical-foreground align-top font-bold" aria-hidden="true">
         *
       </span>
     )}

@@ -81,8 +81,6 @@ The table below contains all types of props available in the InputField componen
 
 - The `error` prop overwrites the `help` prop, due to higher priority.
 
-- The color of the label will turn into cloud shade when the InputField has some filled value.
-
 - You can use `string` for currency InputField, or `React.Node` for InputField with icon.
 
 - If you want to use `ButtonLink` as suffix for the `InputField`, use `transparent` prop for the `ButtonLink`, e.g.:

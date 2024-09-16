@@ -7,9 +7,9 @@ import type { Props as IconProps } from "../Icon/types";
 import type * as Common from "../common/types";
 import type { Type, Props } from "./types";
 import InformationCircle from "../icons/InformationCircle";
-import Check from "../icons/Check";
-import AlertTriangle from "../icons/Alert";
 import AlertCircle from "../icons/AlertCircle";
+import AlertOctagon from "../icons/AlertOctagon";
+import CheckCircle from "../icons/CheckCircle";
 import Close from "../icons/Close";
 import ButtonLink from "../ButtonLink";
 import { TYPE_OPTIONS, CLOSE_BUTTON_DATA_TEST } from "./consts";
@@ -44,13 +44,13 @@ const StyledIcon = ({ icon, type }: Pick<Props, "icon" | "type">) => {
       return <InformationCircle size="small" />;
     }
     if (type === TYPE_OPTIONS.SUCCESS) {
-      return <Check size="small" />;
+      return <CheckCircle size="small" />;
     }
     if (type === TYPE_OPTIONS.WARNING) {
-      return <AlertTriangle size="small" />;
+      return <AlertCircle size="small" />;
     }
     if (type === TYPE_OPTIONS.CRITICAL) {
-      return <AlertCircle size="small" />;
+      return <AlertOctagon size="small" />;
     }
   }
 

@@ -77,7 +77,8 @@ const Tab = ({
     >
       <span
         className={cx(
-          "text-ink-dark w-full",
+          "w-full",
+          isSelected ? "text-ink-dark" : "text-ink-normal",
           type !== TYPE_OPTIONS.DEFAULT && [
             "bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]",
             type === TYPE_OPTIONS.BASIC && "bg-tab-bundle-basic-foreground",

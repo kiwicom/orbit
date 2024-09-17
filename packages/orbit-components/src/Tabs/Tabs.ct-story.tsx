@@ -13,12 +13,14 @@ export function TabsComponentStory({ compact, fullWidth }: Partial<TabListProps>
         <Tab type="basic">Tab 2</Tab>
         <Tab type="medium">Tab 3</Tab>
         <Tab type="top">Tab 4</Tab>
+        <Tab>Tab 5</Tab>
       </TabList>
       <TabPanels>
         <TabPanel>Tab 1 content</TabPanel>
         <TabPanel>Tab 2 content</TabPanel>
         <TabPanel>Tab 3 content</TabPanel>
         <TabPanel>Tab 4 content</TabPanel>
+        <TabPanel>Tab 5 content</TabPanel>
       </TabPanels>
     </Tabs>
   );

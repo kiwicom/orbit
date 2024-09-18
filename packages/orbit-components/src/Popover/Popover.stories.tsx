@@ -1,5 +1,6 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Tooltip from "../Tooltip";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -17,7 +18,18 @@ import Modal from "../Modal";
 
 import Popover from ".";
 
-const Content = () => <div style={{ height: "2000px" }} />;
+const Content = () => <div style={{ height: "700px" }} />;
+
+const listChoiceContent = Array.from({ length: 3 }, (_, idx) => (
+  <ListChoice
+    key={idx}
+    title="Choice Title"
+    description="Further description"
+    selectable
+    icon={<Icons.Accommodation />}
+    onClick={action("onClick")}
+  />
+));
 
 const selects = (
   <Stack direction="column">
@@ -49,338 +61,172 @@ const actions = (
   </Stack>
 );
 
-const longContent = (
-  <Stack>
-    {selects}
-    {selects}
-    {selects}
-    {selects}
-    {selects}
-    {selects}
-    {selects}
-  </Stack>
-);
+const longContent = <Stack>{Array(8).fill(selects)}</Stack>;
 
-const PopoverState = ({ labelClose, placement }) => {
-  const [render, setRender] = React.useState(false);
+const meta: Meta<typeof Popover> = {
+  title: "Popover",
+  component: Popover,
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      if (!render) {
-        setRender(true);
-      }
-    }, 2000);
-  }, [render]);
+  args: {
+    onOpen: action("open"),
+    onClose: action("close"),
+  },
 
-  return (
-    <Stack justify="start">
-      <Popover
-        labelClose={labelClose}
-        placement={placement}
-        content={
-          render ? (
-            <div>
-              <ListChoice
-                title="Choice Title"
-                description="Further description"
-                selectable
-                icon={<Icons.Accommodation />}
-                onClick={action("onClick")}
-              />
-              <ListChoice
-                title="Choice Title"
-                description="Further description"
-                selectable
-                selected
-                icon={<Icons.Accommodation />}
-                onClick={action("onClick")}
-              />
-              <ListChoice
-                title="Choice Title"
-                description="Further description"
-                selectable
-                icon={<Icons.Accommodation />}
-                onClick={action("onClick")}
-              />
-            </div>
-          ) : (
-            <Loading />
-          )
-        }
-      >
-        <Button>Test</Button>
-      </Popover>
-    </Stack>
-  );
+  parameters: {
+    info: "Popover component. Check Orbit.Kiwi for more detailed guidelines.",
+  },
 };
 
-PopoverState.args = {
-  placement: PLACEMENTS.BOTTOM_START,
-  labelClose: "Close",
-};
+export default meta;
 
-PopoverState.argTypes = {
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
+type Story = StoryObj<typeof Popover>;
+
+export const Default: Story = {
+  render: args => (
+    <Popover {...args} content={content}>
+      <Button type="secondary" iconRight={<ChevronDown />}>
+        Open popover
+      </Button>
+    </Popover>
+  ),
+
+  args: {
+    onClose: undefined,
+    onOpen: undefined,
+  },
+
+  parameters: {
+    info: "Default setup of Popover component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
     },
   },
 };
 
-export default {
-  title: "Popover",
-};
-
-export const Default = ({ labelClose }) => {
-  return (
-    <Popover content={content} labelClose={labelClose}>
-      <Button type="secondary" iconRight={<ChevronDown />}>
-        Open popover
-      </Button>
-    </Popover>
-  );
-};
-
-Default.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-Default.args = {
-  labelClose: "Close",
-};
-
-export const InsideCard = () => {
-  const [isOpened, setIsOpened] = React.useState(false);
-  const [isOpenedPopover, setIsOpenedPopover] = React.useState(false);
-
-  return (
-    <>
-      <Card>
-        <CardSection
-          onClick={() => {
-            setIsOpened(true);
-          }}
-          onClose={() => setIsOpened(false)}
-        >
-          <Popover
-            opened={isOpenedPopover}
-            onClose={() => {
-              setIsOpenedPopover(false);
-            }}
-            content={<div>Content</div>}
-          >
-            <Button
-              onClick={ev => {
-                ev.stopPropagation();
-                setIsOpenedPopover(true);
-              }}
-            >
-              Open Popover
-            </Button>
-          </Popover>
-        </CardSection>
-      </Card>
-      {isOpened && <Modal onClose={() => setIsOpened(false)}>kek</Modal>}
-    </>
-  );
-};
-
-export const WithTooltip = ({ labelClose }) => {
-  return (
-    <Popover content={<Tooltip content="Content">Tooltip</Tooltip>} labelClose={labelClose}>
-      <Button type="secondary" iconRight={<ChevronDown />}>
-        Open popover
-      </Button>
-    </Popover>
-  );
-};
-
-WithTooltip.args = {
-  labelClose: "Close",
-};
-
-export const Placement = ({ placement, labelClose }) => {
-  return (
+export const Placement: Story = {
+  render: args => (
     <Stack justify="center">
-      <Popover content={content} placement={placement} labelClose={labelClose}>
+      <Popover {...args} content={content}>
         <Button type="secondary" iconRight={<ChevronDown />}>
           Open popover
         </Button>
       </Popover>
     </Stack>
-  );
-};
+  ),
 
-Placement.story = {
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: [
+        "labelClose",
+        "renderInPortal",
+        "lockScrolling",
+        "renderTimeout",
+        "onOpen",
+        "onClose",
+      ],
+    },
   },
-};
 
-Placement.args = {
-  placement: PLACEMENTS.TOP_START,
-  labelClose: "Close",
-};
+  args: {
+    placement: PLACEMENTS.BOTTOM_START,
+  },
 
-Placement.argTypes = {
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
+  argTypes: {
+    placement: {
+      options: Object.values(PLACEMENTS),
+      control: {
+        type: "select",
+      },
     },
   },
 };
 
-export const WithListChoice = ({ width, labelClose }) => {
-  return (
-    <Popover
-      noPadding
-      width={width}
-      labelClose={labelClose}
-      content={
-        <div>
-          <ListChoice
-            title="Choice Title"
-            description="Further description"
-            selectable
-            icon={<Icons.Accommodation />}
-            onClick={action("onClick")}
-          />
-          <ListChoice
-            title="Choice Title"
-            description="Further description"
-            selectable
-            selected
-            icon={<Icons.Accommodation />}
-            onClick={action("onClick")}
-          />
-          <ListChoice
-            title="Choice Title"
-            description="Further description"
-            selectable
-            icon={<Icons.Accommodation />}
-            onClick={action("onClick")}
-          />
-        </div>
-      }
-      placement="bottom-start"
-    >
+export const OpenedByProp: Story = {
+  render: args => (
+    <Popover {...args} content={content}>
       <Button type="secondary" iconRight={<ChevronDown />}>
         Open popover
       </Button>
     </Popover>
-  );
-};
-
-WithListChoice.story = {
-  name: "With ListChoice",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: [
+        "labelClose",
+        "renderInPortal",
+        "placement",
+        "lockScrolling",
+        "renderTimeout",
+        "onOpen",
+        "onClose",
+      ],
+    },
+  },
+
+  args: {
+    opened: false,
   },
 };
 
-WithListChoice.args = {
-  width: "250px",
-  labelClose: "Close",
-};
-
-export const OpenedByProp = ({ opened, labelClose }) => {
-  return (
-    <Popover
-      opened={opened}
-      content={content}
-      onOpen={action("open")}
-      onClose={action("close")}
-      labelClose={labelClose}
-    >
-      <Button type="secondary" iconRight={<ChevronDown />}>
-        Open popover
-      </Button>
-    </Popover>
-  );
-};
-
-OpenedByProp.story = {
-  name: "Opened by prop",
-
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-OpenedByProp.args = {
-  opened: false,
-  labelClose: "Close",
-};
-
-export const Overlapped = ({ overlapped, opened }) => {
-  return (
-    <Popover
-      overlapped={overlapped}
-      content={content}
-      actions={actions}
-      onOpen={action("open")}
-      onClose={action("close")}
-    >
+export const Overlapped: Story = {
+  render: ({ opened, ...args }) => (
+    <Popover {...args} content={content} actions={actions} opened={opened}>
       <Button type="secondary" ariaExpanded={opened} iconRight={<ChevronDown />}>
         Open popover
       </Button>
     </Popover>
-  );
-};
+  ),
 
-Overlapped.story = {
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: [
+        "labelClose",
+        "renderInPortal",
+        "placement",
+        "lockScrolling",
+        "renderTimeout",
+        "onOpen",
+        "onClose",
+      ],
+    },
+  },
+
+  args: {
+    ...OpenedByProp.args,
+    overlapped: true,
   },
 };
 
-Overlapped.args = {
-  overlapped: true,
-  opened: false,
-};
-
-export const MultiplePopovers = () => {
-  return (
+export const MultiplePopovers: Story = {
+  render: args => (
     <Stack flex>
-      <Popover
-        content={content}
-        onOpen={action("open")}
-        onClose={action("close")}
-        placement="bottom-start"
-      >
+      <Popover {...args} content={content}>
         <Button type="secondary" iconRight={<ChevronDown />}>
           Open popover
         </Button>
       </Popover>
-      <Popover
-        content={content}
-        actions={actions}
-        onOpen={action("open")}
-        onClose={action("close")}
-      >
+      <Popover {...args} content={content} actions={actions}>
         <Button type="secondary" iconRight={<ChevronDown />}>
           Open popover
         </Button>
       </Popover>
     </Stack>
-  );
-};
+  ),
 
-MultiplePopovers.story = {
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "Example of multiple Popovers. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
   },
 };
 
-export const LongContent = () => {
-  return (
+export const LongContent: Story = {
+  render: args => (
     <>
       <Popover
+        {...args}
         content={longContent}
         actions={
           <Stack direction="row" justify="between">
@@ -388,131 +234,206 @@ export const LongContent = () => {
             <Button>Done</Button>
           </Stack>
         }
-        onOpen={action("open")}
-        onClose={action("close")}
       >
         <Button type="secondary" iconRight={<ChevronDown />}>
           Open popover
         </Button>
       </Popover>
       <Content />
-      <Popover content={longContent} onOpen={action("open")} onClose={action("close")}>
+      <Popover {...args} content={longContent}>
         <Button type="secondary" iconRight={<ChevronDown />}>
           Open popover
         </Button>
       </Popover>
     </>
-  );
-};
-
-LongContent.story = {
-  name: "Long content",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "Example of Popover with long content. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
   },
 };
 
-export const ScrollingPage = ({ labelClose }) => {
-  return (
+export const ScrollingPage: Story = {
+  render: args => (
     <>
       <div className="sticky" style={{ top: "20px" }}>
         <Card>
-          <Popover
-            fixed
-            content={content}
-            onOpen={action("open")}
-            labelClose={labelClose}
-            onClose={action("close")}
-          >
+          <Popover {...args} content={content}>
             <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
               Open popover
             </Button>
           </Popover>
         </Card>
       </div>
-
       <Content />
     </>
-  );
-};
-
-ScrollingPage.story = {
-  name: "Scrolling page",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "Example of Popover placed in scrolling element. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: [
+        "renderInPortal",
+        "placement",
+        "lockScrolling",
+        "renderTimeout",
+        "onOpen",
+        "onClose",
+        "labelClose",
+      ],
+    },
+  },
+
+  args: {
+    fixed: true,
   },
 };
 
-ScrollingPage.args = {
-  labelClose: "Close",
-};
-
-export const ScrollingContent = ({ labelClose }) => {
-  return (
+export const ScrollingContent: Story = {
+  render: args => (
     <div className="bg-cloud-dark overflow-scroll" style={{ height: "50vh" }}>
-      <div style={{ height: "2000px", paddingTop: "800px" }}>
-        <Card>
-          <Popover
-            content={content}
-            onOpen={action("open")}
-            labelClose={labelClose}
-            onClose={action("close")}
-          >
-            <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
-              Open popover
-            </Button>
-          </Popover>
-        </Card>
-        <Content />
+      <Content />
+      <div className="bg-cloud-light">
+        <Popover {...args} content={content}>
+          <Button type="secondary" iconRight={<ChevronDown />} fullWidth>
+            Open popover
+          </Button>
+        </Popover>
       </div>
+      <Content />
     </div>
-  );
-};
-
-ScrollingContent.story = {
-  name: "Scrolling content",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "Example of Popover placed in scrolling element. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
   },
 };
 
-ScrollingContent.args = {
-  labelClose: "Close",
+export const LazyContentSimulated: Story = {
+  render: args => {
+    const [render, setRender] = React.useState(false);
+
+    React.useEffect(() => {
+      setTimeout(() => {
+        if (!render) {
+          setRender(true);
+        }
+      }, 2000);
+    }, [render]);
+
+    return (
+      <Stack justify="start">
+        <Popover {...args} content={render ? listChoiceContent : <Loading />}>
+          <Button>Test</Button>
+        </Popover>
+      </Stack>
+    );
+  },
+
+  parameters: {
+    info: "Example of Popover with lazy loading component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
+  },
 };
 
-export const Playground = ({
-  renderTimeout,
-  zIndex,
-  dataTest,
-  placement,
-  width,
-  maxHeight,
-  footerActions,
-  noPadding,
-  overlapped,
-  opened,
-  offset,
-  noFlip,
-  allowOverflow,
-}) => {
-  return (
+export const InsideCard: Story = {
+  render: args => {
+    const [isOpened, setIsOpened] = React.useState(false);
+    const [isOpenedPopover, setIsOpenedPopover] = React.useState(false);
+
+    return (
+      <>
+        <Card>
+          <CardSection
+            onClick={() => {
+              setIsOpened(true);
+            }}
+            onClose={() => setIsOpened(false)}
+          >
+            <Popover
+              {...args}
+              opened={isOpenedPopover}
+              onClose={() => {
+                setIsOpenedPopover(false);
+              }}
+              content={<div>Content</div>}
+            >
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                  setIsOpenedPopover(true);
+                }}
+              >
+                Open Popover
+              </Button>
+            </Popover>
+          </CardSection>
+        </Card>
+        {isOpened && <Modal onClose={() => setIsOpened(false)}>kek</Modal>}
+      </>
+    );
+  },
+
+  parameters: {
+    info: "Example of Popover placed in card. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
+  },
+};
+
+export const WithTooltip: Story = {
+  render: args => (
+    <Popover {...args} content={<Tooltip content="Content">Tooltip</Tooltip>}>
+      <Button type="secondary" iconRight={<ChevronDown />}>
+        Open popover
+      </Button>
+    </Popover>
+  ),
+
+  parameters: {
+    info: "Example of Popover component with tooltip in content. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
+  },
+};
+
+export const WithListChoice: Story = {
+  render: args => (
+    <Popover {...args} content={listChoiceContent}>
+      <Button type="secondary" iconRight={<ChevronDown />}>
+        Open popover
+      </Button>
+    </Popover>
+  ),
+
+  parameters: {
+    info: "Example of Popover component with ListChoice in content prop. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
+  },
+};
+
+type PlaygroundArgsAndCustomTypes = StoryObj<
+  React.ComponentProps<typeof Popover> & { footerActions: boolean }
+>;
+export const Playground: PlaygroundArgsAndCustomTypes = {
+  render: ({ footerActions, opened, ...args }) => (
     <Stack justify="center">
       <Popover
-        width={width}
-        zIndex={zIndex}
-        maxHeight={maxHeight}
-        renderTimeout={renderTimeout}
-        dataTest={dataTest}
-        offset={offset}
+        {...args}
         content={content}
-        placement={placement}
-        noPadding={noPadding}
-        allowOverflow={allowOverflow}
         opened={opened}
-        noFlip={noFlip}
         actions={
           footerActions && (
             <Stack direction="row" justify="between">
@@ -523,149 +444,63 @@ export const Playground = ({
             </Stack>
           )
         }
-        overlapped={overlapped}
-        onOpen={action("open")}
-        onClose={action("close")}
       >
         <Button type="secondary" ariaExpanded={opened} iconRight={<ChevronDown />}>
           Open popover
         </Button>
       </Popover>
     </Stack>
-  );
-};
+  ),
 
-Playground.story = {
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-Playground.args = {
-  renderTimeout: 0,
-  zIndex: 710,
-  dataTest: "test",
-  placement: PLACEMENTS.BOTTOM_START,
-  width: "350px",
-  maxHeight: "",
-  footerActions: true,
-  noPadding: false,
-  overlapped: false,
-  opened: true,
-  offset: { top: 0, left: 0 },
-  noFlip: false,
-  allowOverflow: false,
-};
-
-Playground.argTypes = {
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
+    info: "You can try all possible configurations of this component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onOpen", "onClose"],
     },
   },
+
+  args: {
+    ...Placement.args,
+    labelClose: "Close",
+    renderInPortal: true,
+    opened: true,
+    zIndex: 710,
+    id: "popover-id",
+    offset: { top: 0, left: 0 },
+    fixed: true,
+    lockScrolling: true,
+    noFlip: false,
+    renderTimeout: 0,
+    allowOverflow: false,
+    noPadding: false,
+    width: "350px",
+    maxHeight: "",
+    overlapped: false,
+    footerActions: true,
+  },
+
+  argTypes: {
+    ...Placement.argTypes,
+  },
 };
 
-export const Rtl = ({ dataTest, labelClose, placement }) => {
-  return (
+export const Rtl: Story = {
+  render: () => (
     <RenderInRtl>
       <Stack flex>
-        <Popover
-          dataTest={dataTest}
-          content={content}
-          labelClose={labelClose}
-          placement={placement}
-        >
+        <Popover content={content}>
           <Button type="secondary" iconRight={<ChevronDown />}>
             Open popover
           </Button>
         </Popover>
       </Stack>
     </RenderInRtl>
-  );
-};
-
-Rtl.story = {
-  name: "RTL",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-Rtl.args = {
-  dataTest: "test",
-  labelClose: "Close",
-  placement: PLACEMENTS.BOTTOM_START,
-};
-
-Rtl.argTypes = {
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const RtlReverse = ({ placement, labelClose }) => {
-  return (
-    <RenderInRtl>
-      <Stack justify="end">
-        <Popover content={content} placement={placement} labelClose={labelClose}>
-          <Button type="secondary" iconRight={<ChevronDown />}>
-            Open popover
-          </Button>
-        </Popover>
-      </Stack>
-    </RenderInRtl>
-  );
-};
-
-RtlReverse.story = {
-  name: "RTL Reverse",
-
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-RtlReverse.args = {
-  placement: PLACEMENTS.BOTTOM_START,
-  labelClose: "Close",
-};
-
-RtlReverse.argTypes = {
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const LazyContentSimlulated = args => {
-  return <PopoverState {...args} />;
-};
-
-LazyContentSimlulated.story = {
-  name: "LazyContent - simlulated",
-
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-LazyContentSimlulated.args = {
-  placement: PLACEMENTS.BOTTOM_START,
-  labelClose: "Close",
-};
-
-LazyContentSimlulated.argTypes = {
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
+    info: "Example of RTL Popover component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
     },
   },
 };

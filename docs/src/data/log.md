@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@16.1.0...@kiwicom/orbit-components@16.2.0) (2024-09-19)
+
+#### Bug Fixes
+
+*   **Alert:** displayed icons for some types were incorrect ([b86b3a6](https://github.com/kiwicom/orbit/commit/b86b3a6c51b8735c5e16f5d7af023ee387c6d810))
+*   **ButtonPrimitive:** make button text non-selectable ([baa1777](https://github.com/kiwicom/orbit/commit/baa177780856a42aa3dd76a2024bd1c5344e1d4e))
+*   **Checkbox:** make checkmark icon always visible for checked state ([3faa9b8](https://github.com/kiwicom/orbit/commit/3faa9b88ec7b1380df351d7981234330f4cd2991))
+*   **FormLabel:** ensure correct color ([21a1ae2](https://github.com/kiwicom/orbit/commit/21a1ae2f4ff9f00db010e5866a56e75b9074b093))
+*   **Tabs:** ensure correct color when not active ([3a5bcd1](https://github.com/kiwicom/orbit/commit/3a5bcd1686a9b6aa739aeb66d8d23f66526f3bc8))
+
+#### Features
+
+*   **icons:** update icons from figma ([82b651f](https://github.com/kiwicom/orbit/commit/82b651ff56efe0508786cd7fdb02fd86bec261fa))
+
 ## [16.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@16.0.1...@kiwicom/orbit-components@16.1.0) (2024-09-05)
 
 #### Bug Fixes

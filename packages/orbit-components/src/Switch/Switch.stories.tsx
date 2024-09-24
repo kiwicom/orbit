@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -6,102 +7,89 @@ import * as Icons from "../icons";
 
 import Switch from ".";
 
-const getIcon = (source: string | null) => source && Icons[source];
+const getIcon = (source: string) => Icons[source];
 
-export default {
+const meta: Meta<typeof Switch> = {
   title: "Switch",
-};
+  component: Switch,
 
-export const Default = ({ checked }) => {
-  return <Switch onChange={action("onChange")} checked={checked} />;
-};
-
-Default.story = {
-  name: "Default Switch",
-};
-
-Default.args = {
-  checked: true,
-};
-
-export const CustomIcon = ({ checked, icon }) => {
-  const Icon = getIcon(icon);
-  return <Switch onChange={action("onChange")} checked={checked} icon={Icon && <Icon />} />;
-};
-
-CustomIcon.story = {
-  name: "Custom icon",
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  args: {
+    checked: false,
+    onChange: action("onChange"),
   },
-};
 
-CustomIcon.args = {
-  checked: true,
-  icon: "Lock",
-};
-
-CustomIcon.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+  parameters: {
+    info: "Explore Switch component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange"],
     },
   },
 };
 
-export const Playground = ({ checked, dataTest, icon, disabled }) => {
-  const Icon = getIcon(icon);
+export default meta;
 
-  return (
-    <Switch
-      onChange={action("onChange")}
-      checked={checked}
-      disabled={disabled}
-      dataTest={dataTest}
-      icon={Icon && <Icon />}
-    />
-  );
-};
+type Story = StoryObj<typeof Switch>;
 
-Playground.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+export const Default: Story = {};
+
+export const CustomIcon: Story = {
+  render: ({ icon, ...args }) => {
+    const Icon = typeof icon === "string" && getIcon(icon);
+
+    return <Switch {...args} icon={Icon && <Icon />} />;
   },
-};
 
-Playground.args = {
-  checked: false,
-  dataTest: "",
-  icon: "Lock",
-  disabled: false,
-};
+  args: {
+    checked: true,
+    icon: "Lock",
+  },
 
-Playground.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+  argTypes: {
+    icon: {
+      options: [undefined, ...Object.keys(Icons)],
+      control: {
+        type: "select",
+      },
     },
   },
 };
 
-export const Rtl = ({ checked }) => {
-  return (
+export const Playground: Story = {
+  render: ({ icon, ...args }) => {
+    const Icon = typeof icon === "string" && getIcon(icon);
+
+    return <Switch {...args} icon={Icon && <Icon />} />;
+  },
+
+  args: {
+    ...CustomIcon.args,
+    id: "switch-id",
+    ariaLabelledby: "aria-labelledby",
+    disabled: false,
+    onFocus: action("onFocus"),
+    onBlur: action("onBlur"),
+  },
+
+  argTypes: {
+    ...CustomIcon.argTypes,
+  },
+
+  parameters: {
+    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: ["onChange", "onFocus", "onBlur"],
+    },
+  },
+};
+
+export const Rtl: Story = {
+  render: args => (
     <RenderInRtl>
-      <Switch onChange={action("onChange")} checked={checked} />
+      <Switch {...args} />
     </RenderInRtl>
-  );
-};
-
-Rtl.story = {
-  name: "RTL",
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
   },
-};
-
-Rtl.args = {
-  checked: true,
 };

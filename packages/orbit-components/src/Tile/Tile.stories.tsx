@@ -1,7 +1,7 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
-import TileGroup from "../TileGroup";
 import * as Icons from "../icons";
 import Stack from "../Stack";
 import Text from "../Text";
@@ -14,284 +14,203 @@ import Tile from ".";
 
 const getIcon = source => Icons[source];
 
-export default {
+const meta: Meta<typeof Tile> = {
   title: "Tile",
-};
+  component: Tile,
 
-export const DefaultJustWrapper = ({ content, noPadding, as }) => {
-  return (
-    <Tile as={as === "" ? undefined : "div"} onClick={action("clicked")} noPadding={noPadding}>
-      {content}
-    </Tile>
-  );
-};
-
-DefaultJustWrapper.story = {
-  name: "Default - just wrapper",
-
-  parameters: {
-    info: "This is the default configuration of this component.",
+  args: {
+    onClick: action("clicked"),
   },
-};
 
-DefaultJustWrapper.args = {
-  content: "Lorem ipsum dolor sit amet",
-  noPadding: false,
-  as: "",
-};
-
-export const DefaultWithHeaderProps = ({ title, description, icon, noHeaderIcon }) => {
-  const Icon = getIcon(icon);
-  return (
-    <Tile
-      onClick={action("clicked")}
-      icon={Icon && <Icon />}
-      title={title}
-      description={description}
-      noHeaderIcon={noHeaderIcon}
-    />
-  );
-};
-
-DefaultWithHeaderProps.story = {
-  name: "Default - with header props",
-
-  parameters: {
-    info: "This is the default configuration of this component.",
-  },
-};
-
-DefaultWithHeaderProps.args = {
-  title: "Expandable",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  icon: "Airplane",
-  noHeaderIcon: false,
-};
-
-DefaultWithHeaderProps.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+  argTypes: {
+    icon: {
+      options: [undefined, ...Object.keys(Icons)],
+      control: {
+        type: "select",
+      },
     },
   },
 };
 
-export const DefaultWithHeaderPropsAsHref = ({ title, description, icon, href, external }) => {
-  const Icon = getIcon(icon);
+export default meta;
+type Story = StoryObj<typeof Tile>;
 
-  return (
-    <Tile
-      icon={Icon && <Icon />}
-      title={title}
-      description={description}
-      href={href}
-      external={external}
-    />
-  );
-};
-
-DefaultWithHeaderPropsAsHref.story = {
-  name: "Default - with header props, as href",
-
+export const DefaultJustWrapper: Story = {
   parameters: {
-    info: "This is the default configuration of this component.",
-  },
-};
-
-DefaultWithHeaderPropsAsHref.args = {
-  title: "Expandable",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  icon: "Airplane",
-  href: "#",
-  external: false,
-};
-
-DefaultWithHeaderPropsAsHref.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: [
+        "icon",
+        "onClick",
+        "external",
+        "noPadding",
+        "expandable",
+        "initialExpanded",
+        "noHeaderIcon",
+      ],
     },
   },
+
+  args: {
+    children: "Lorem ipsum dolor sit amet",
+  },
 };
 
-export const ExpandableWithCustomDescription = ({ showMore, icon }) => {
-  const Icon = getIcon(icon);
+export const DefaultWithHeaderProps: Story = {
+  render: ({ icon, ...args }) => {
+    const Icon = getIcon(icon);
 
-  return (
-    <Tile
-      icon={Icon && <Icon />}
-      onClick={action("clicked")}
-      expandable
-      header={
-        <Stack justify="between" align="center" direction="row" shrink>
-          <Stack spacing="none" direction="column" shrink>
-            <Stack direction="row" align="center" spacing="200">
-              <Heading type="title4" as="h4">
-                Mr. Hot potato
-              </Heading>
-              <CountryFlag code="cz" />
+    return <Tile {...args} icon={Icon && <Icon />} />;
+  },
+
+  parameters: {
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onClick", "external", "noPadding", "expandable", "initialExpanded"],
+    },
+  },
+
+  args: {
+    title: "Title",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+    icon: "Airplane",
+    noHeaderIcon: false,
+  },
+};
+
+export const DefaultWithHeaderPropsAsHref: Story = {
+  render: ({ icon, ...args }) => {
+    const Icon = getIcon(icon);
+
+    return <Tile {...args} icon={Icon && <Icon />} />;
+  },
+
+  parameters: {
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onClick", "noPadding", "expandable", "initialExpanded"],
+    },
+  },
+
+  args: {
+    ...DefaultWithHeaderProps.args,
+    href: "https://www.kiwi.com/",
+    external: true,
+  },
+};
+
+export const ExpandableWithCustomDescription: StoryObj<
+  React.ComponentProps<typeof Tile> & { showMore: boolean }
+> = {
+  render: ({ children, showMore, icon, ...args }) => {
+    const Icon = getIcon(icon);
+
+    return (
+      <Tile
+        {...args}
+        icon={Icon && <Icon />}
+        header={
+          <Stack justify="between" align="center" direction="row" shrink>
+            <Stack spacing="none" direction="column" shrink>
+              <Stack direction="row" align="center" spacing="200">
+                <Heading type="title4" as="h4">
+                  Mr. Hot potato
+                </Heading>
+                <CountryFlag code="cz" />
+              </Stack>
+              <Text>13/37/1337</Text>
             </Stack>
-            <Text>13/37/1337</Text>
+            <Stack align="center" basis="0%">
+              <Badge type="infoSubtle">You</Badge>
+            </Stack>
           </Stack>
-          <Stack align="center" basis="0%">
-            <Badge type="infoSubtle">You</Badge>
-          </Stack>
-        </Stack>
-      }
-    >
-      This is example of expanded content
-      {showMore && (
-        <Text>
-          Etiam posuere lacus quis dolor. Mauris elementum mauris vitae tortor. Class aptent taciti
-          sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Class aptent
-          taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean id
-          metus id velit ullamcorper pulvinar. Mauris metus. Cum sociis natoque penatibus et magnis
-          dis parturient montes, nascetur ridiculus mus.
-        </Text>
-      )}
-    </Tile>
-  );
-};
-
-ExpandableWithCustomDescription.story = {
-  name: "Expandable with custom description",
+        }
+      >
+        {children}
+        {showMore && (
+          <Text>
+            Etiam posuere lacus quis dolor. Mauris elementum mauris vitae tortor. Class aptent
+            taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.
+            Aenean id metus id velit ullamcorper pulvinar. Mauris metus. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </Text>
+        )}
+      </Tile>
+    );
+  },
 
   parameters: {
-    info: "This is the playground configuration of this component.",
-  },
-};
-
-ExpandableWithCustomDescription.args = {
-  showMore: false,
-  icon: "GenderMan",
-};
-
-ExpandableWithCustomDescription.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+    controls: {
+      exclude: ["onClick", "external", "noPadding", "initialExpanded", "noHeaderIcon"],
     },
   },
+
+  args: {
+    showMore: false,
+    icon: "GenderMan",
+    expandable: true,
+    children: "This is example of expanded content",
+  },
 };
 
-export const Group = () => {
-  return (
-    <TileGroup as="ul">
-      <Tile as="li" href="#">
-        List Item
-      </Tile>
-      <Tile as="li" href="#">
-        List Item
-      </Tile>
-      <Tile as="li" href="#">
-        List Item
-      </Tile>
-      <Tile as="li" href="#">
-        List Item
-      </Tile>
-    </TileGroup>
-  );
-};
+export const Playground: Story = {
+  render: ({ icon, children, ...args }) => {
+    const Icon = getIcon(icon);
 
-export const Playground = ({
-  href,
-  title,
-  external,
-  icon,
-  description,
-  header,
-  expandable,
-  initialExpanded,
-  noPadding,
-  dataTest,
-  children,
-  htmlTitle,
-  as,
-  expanded,
-}) => {
-  const Icon = getIcon(icon);
+    return (
+      <Tile {...args} icon={Icon && <Icon />}>
+        {children}
+      </Tile>
+    );
+  },
 
-  return (
-    <Tile
-      href={href}
-      as={as === "" ? undefined : "div"}
-      onClick={action("clicked")}
-      icon={Icon && <Icon />}
-      expanded={expanded}
-      title={title}
-      description={description}
-      header={header}
-      external={external}
-      expandable={expandable}
-      initialExpanded={initialExpanded}
-      noPadding={noPadding}
-      dataTest={dataTest}
-      htmlTitle={htmlTitle}
-    >
-      {children}
-    </Tile>
-  );
-};
-
-Playground.story = {
   parameters: {
-    info: "This is the default configuration of this component.",
-  },
-};
-
-Playground.args = {
-  href: "https://www.kiwi.com/",
-  title: "Tile with title",
-  external: false,
-  icon: "Airplane",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  header: "",
-  expandable: false,
-  initialExpanded: false,
-  noPadding: false,
-  dataTest: "test",
-  children: "",
-  htmlTitle: "Title for more info",
-  as: "",
-  expanded: false,
-};
-
-Playground.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+    info: "This is the playground configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onClick"],
     },
   },
+
+  args: {
+    ...DefaultWithHeaderPropsAsHref.args,
+    id: "ID",
+    expanded: false,
+    header: "",
+    children: "",
+    noPadding: false,
+    expandable: false,
+    initialExpanded: false,
+    htmlTitle: "Title for more info",
+    as: "div",
+  },
 };
 
-export const Rtl = () => (
-  <RenderInRtl>
-    <Tile
-      onClick={action("clicked")}
-      description={
-        <Stack justify="between" direction="row">
-          <Text>Mr. John Smith</Text>
-          <Text>20 kg</Text>
-        </Stack>
-      }
-      expandable
-    >
-      This is example of expanded content
-    </Tile>
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+export const Rtl: Story = {
+  render: args => (
+    <RenderInRtl>
+      <Tile
+        {...args}
+        description={
+          <Stack justify="between" direction="row">
+            <Text>Mr. John Smith</Text>
+            <Text>20 kg</Text>
+          </Stack>
+        }
+      />
+    </RenderInRtl>
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+    controls: {
+      disable: true,
+    },
+  },
+
+  args: {
+    expandable: true,
+    children: "This is example of expanded content",
   },
 };

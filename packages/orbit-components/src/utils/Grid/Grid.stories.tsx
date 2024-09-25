@@ -1,100 +1,78 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { SPACINGS_AFTER } from "../../common/consts";
 
 import Grid from ".";
 
-export default {
+type GridPropsAndCustomArgs = React.ComponentProps<typeof Grid> & { divsCount: number };
+
+const meta: Meta<GridPropsAndCustomArgs> = {
   title: "Grid",
+  component: Grid,
+
+  args: {
+    divsCount: 14,
+    className: "",
+    as: "div",
+    width: "100%",
+    columns: "repeat(4, 1fr)",
+    rows: "repeat(4, 40px)",
+    columnGap: "5px",
+    rowGap: "10px",
+    gap: "",
+    maxWidth: "1440px",
+    inline: false,
+    spaceAfter: SPACINGS_AFTER.NORMAL,
+    mediumMobile: {},
+    largeMobile: {},
+    tablet: {},
+    desktop: {},
+    largeDesktop: {
+      inline: false,
+      rows: "repeat(4, 40px)",
+      columns: "repeat(5, minmax(10px, 1fr))",
+      gap: "15px",
+      rowGap: "20px",
+      columnGap: "20px",
+      maxWidth: "1440px",
+      width: "100%",
+    },
+  },
+
+  argTypes: {
+    spaceAfter: {
+      name: "spaceAfter",
+      options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 
-export const Playground = ({
-  inline,
-  maxWidth,
-  width,
-  columns,
-  rows,
-  gap,
-  columnGap,
-  rowGap,
-  as,
-  dataTest,
-  divsCount,
-  mediumMobile,
-  largeMobile,
-  tablet,
-  desktop,
-  largeDesktop,
-  spaceAfter,
-}) => {
-  return (
+export default meta;
+type Story = StoryObj<GridPropsAndCustomArgs>;
+
+export const Playground: Story = {
+  render: ({ as, divsCount, columns, rows, columnGap, rowGap, gap, width, ...args }) => (
     <Grid
-      inline={inline}
-      spaceAfter={spaceAfter}
-      maxWidth={maxWidth}
-      width={width}
-      columns={columns}
-      rows={rows}
-      gap={gap}
-      columnGap={columnGap}
-      rowGap={rowGap}
-      as={as}
-      dataTest={dataTest}
-      mediumMobile={mediumMobile}
-      largeMobile={largeMobile}
-      tablet={tablet}
-      desktop={desktop}
-      largeDesktop={largeDesktop}
+      as={as || "div"}
+      columns={columns || undefined}
+      rows={rows || undefined}
+      columnGap={columnGap || undefined}
+      rowGap={rowGap || undefined}
+      gap={gap || undefined}
+      width={width || undefined}
+      {...args}
     >
-      {Array(...Array(divsCount)).map((_, key) => (
-        // eslint-disable-next-line
-        <div key={key} style={{ background: "rgba(0, 169, 145, 0.2)" }} />
+      {Array.from({ length: divsCount }, (_, idx) => (
+        <div key={idx} style={{ background: "rgba(0, 169, 145, 0.2)" }} />
       ))}
     </Grid>
-  );
-};
+  ),
 
-Playground.args = {
-  inline: false,
-  maxWidth: "1440px",
-  width: "100%",
-  columns: "",
-  rows: "repeat(8, 40px)",
-  gap: "",
-  columnGap: "",
-  rowGap: "10px",
-  as: "div",
-  dataTest: "test",
-  divsCount: 8,
-  mediumMobile: {
-    rowGap: "0",
-  },
-  largeMobile: {
-    columns: "repeat(4, 1fr)",
-    rows: "repeat(2, 40px)",
-    gap: "20px",
-  },
-  tablet: {
-    columnGap: "40px",
-  },
-  desktop: {
-    columns: "repeat(2, minmax(100px, 1fr))",
-    rows: "repeat(4, 40px)",
-    gap: "40px",
-  },
-  largeDesktop: {
-    columns: "repeat(8, minmax(10px, 1fr))",
-    rows: "40px",
-  },
-  spaceAfter: SPACINGS_AFTER.NORMAL,
-};
-
-Playground.argTypes = {
-  spaceAfter: {
-    name: "spaceAfter",
-    options: Object.values(SPACINGS_AFTER),
-    control: {
-      type: "select",
-    },
+  parameters: {
+    info: "You can try all possible configurations of this component. When changing the values of rows, columns, or divsCount, ensure that the sum of allowed rows and columns is higher than divsCount. Be aware of each viewport breakpoint and its corresponding screen minimum width value. Visit Orbit.Kiwi for more detailed guidelines.",
   },
 };

@@ -1,60 +1,123 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Stack from "../Stack";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Wizard, { WizardStep } from ".";
 
-export default {
+type WizardPropsAndCustomArgs = React.ComponentProps<typeof Wizard> & {
+  steps: string[];
+};
+
+const meta: Meta<WizardPropsAndCustomArgs> = {
   title: "Wizard",
-};
+  component: Wizard,
 
-export const Default = ({ direction, labelClose, labelProgress }) => {
-  return (
-    <Wizard
-      id="wizard"
-      direction={direction}
-      completedSteps={2}
-      activeStep={1}
-      labelClose={labelClose}
-      labelProgress={`2 ${labelProgress} 6`}
-      onChangeStep={action("onChangeStep")}
-    >
-      <WizardStep title="Search" />
-      <WizardStep title="Passenger details" />
-      <WizardStep title="Ticket fare" />
-      <WizardStep title="Kiwi.com guarantee" isCompleted />
-      <WizardStep title="Seating" />
-      <WizardStep title="Overview & Payment" />
-    </Wizard>
-  );
-};
+  parameters: {
+    controls: {
+      exclude: ["steps", "onChangeStep", "direction", "lockScrolling", "labelClose"],
+    },
+  },
 
-Default.args = {
-  direction: "row",
-  labelClose: "Close",
-  labelProgress: "of",
-};
+  args: {
+    id: "wizard",
+    completedSteps: 2,
+    activeStep: 2,
+    steps: [
+      "Search",
+      "Passenger details",
+      "Ticket fare",
+      "Customize your trip",
+      "Kiwi.com guarantee",
+      "Seating",
+      "Overview & payment",
+    ],
+    onChangeStep: action("onChangeStep"),
+  },
 
-Default.argTypes = {
-  direction: {
-    options: ["row", "column"],
-    control: {
-      type: "select",
+  argTypes: {
+    direction: {
+      options: ["row", "column"],
+      control: {
+        type: "select",
+      },
+    },
+    completedSteps: {
+      control: {
+        type: "range",
+        min: 0,
+        max: 7,
+        step: 1,
+      },
+    },
+    activeStep: {
+      control: {
+        type: "range",
+        min: 0,
+        max: 6,
+        step: 1,
+      },
     },
   },
 };
 
-export const Rtl = ({ direction }) => {
-  return (
+export default meta;
+type Story = StoryObj<WizardPropsAndCustomArgs>;
+
+export const Default: Story = {
+  render: ({ activeStep, completedSteps, steps, ...args }) => (
+    <Wizard
+      {...args}
+      activeStep={activeStep > completedSteps ? completedSteps : activeStep}
+      completedSteps={completedSteps}
+    >
+      {steps.map(step => (
+        <WizardStep key={step} title={step} />
+      ))}
+    </Wizard>
+  ),
+
+  parameters: {
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+};
+
+export const Playground: Story = {
+  render: ({ activeStep, completedSteps, labelProgress, steps, ...args }) => (
+    <Wizard
+      {...args}
+      labelProgress={`${completedSteps} ${labelProgress} ${steps.length}`}
+      activeStep={activeStep > completedSteps ? completedSteps : activeStep}
+      completedSteps={completedSteps}
+    >
+      {steps.map(step => (
+        <WizardStep key={step} title={step} />
+      ))}
+    </Wizard>
+  ),
+
+  parameters: {
+    info: "You can try all possible configurations of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["steps", "onChangeStep"],
+    },
+  },
+
+  args: {
+    direction: "row",
+    labelClose: "Close",
+    labelProgress: "of",
+    lockScrolling: true,
+  },
+};
+
+export const Rtl: Story = {
+  render: ({ activeStep, completedSteps, steps, ...args }) => (
     <RenderInRtl>
       <Wizard
-        id="wizard"
-        direction={direction}
-        completedSteps={3}
-        activeStep={3}
-        onChangeStep={action("onChangeStep")}
+        {...args}
         labelProgress={
           <Stack flex spacing="100">
             <div>3</div>
@@ -62,95 +125,28 @@ export const Rtl = ({ direction }) => {
             <div>3</div>
           </Stack>
         }
+        activeStep={activeStep > completedSteps ? completedSteps : activeStep}
+        completedSteps={completedSteps}
       >
-        <WizardStep title="Search" />
-        <WizardStep title="Passenger details" />
-        <WizardStep title="Ticket fare" />
-        <WizardStep title="Customize your trip" />
-        <WizardStep title="Overview & Payment" />
+        {steps.map(step => (
+          <WizardStep key={step} title={step} />
+        ))}
       </Wizard>
     </RenderInRtl>
-  );
-};
+  ),
 
-Rtl.story = {
-  name: "RTL",
-};
-
-Rtl.args = {
-  direction: "row",
-};
-
-Rtl.argTypes = {
-  direction: {
-    options: ["row", "column"],
-    control: {
-      type: "select",
+  parameters: {
+    info: "This is a preview of this component in RTL setup.",
+    controls: {
+      exclude: ["steps", "onChangeStep", "labelProgress"],
     },
   },
-};
 
-export const Playground = ({
-  labelClose,
-  labelProgress,
-  steps,
-  activeStep,
-  completedSteps,
-  direction,
-}) => {
-  return (
-    <Wizard
-      id="wizard"
-      labelClose={labelClose}
-      labelProgress={`${activeStep} ${labelProgress} ${steps.length}`}
-      completedSteps={completedSteps}
-      activeStep={activeStep}
-      onChangeStep={action("onChangeStep")}
-      direction={direction}
-    >
-      {steps.map(step => (
-        <WizardStep key={step} title={step} />
-      ))}
-    </Wizard>
-  );
-};
-
-Playground.args = {
-  labelClose: "Close",
-  labelProgress: "of",
-  steps: [
-    "Search",
-    "Passenger details",
-    "Ticket fare",
-    "Customize your trip",
-    "Overview & payment",
-  ],
-  activeStep: 3,
-  completedSteps: 3,
-  direction: "row",
-};
-
-Playground.argTypes = {
-  direction: {
-    options: ["row", "column"],
-    control: {
-      type: "select",
-    },
+  args: {
+    ...Playground.args,
   },
-  activeStep: {
-    control: {
-      type: "range",
-      min: 0,
-      max: Math.min(Playground.args.completedSteps, Playground.args.steps.length - 1),
-      step: 1,
-    },
-  },
-  completedSteps: {
-    control: {
-      type: "range",
-      min: 0,
-      max: Playground.args.steps.length,
-      step: 1,
-    },
+
+  argTypes: {
+    ...Playground.argTypes,
   },
 };

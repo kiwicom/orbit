@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import { RESIZE_OPTIONS } from "./consts";
@@ -7,185 +8,118 @@ import { SPACINGS_AFTER } from "../common/consts";
 
 import Textarea from ".";
 
-export default {
+const meta: Meta<typeof Textarea> = {
   title: "Textarea",
-};
-
-export const Default = ({ label, value, placeholder }) => {
-  return (
-    <Textarea label={label} placeholder={placeholder} onChange={action("change")} value={value} />
-  );
-};
-
-Default.story = {
-  parameters: {
-    info: "Some description about this type of textarea in general.",
-  },
-};
-
-Default.args = {
-  label: "Label",
-  value: "",
-  placeholder: "Placeholder",
-};
-
-export const WithLabel = ({ label, value, placeholder }) => {
-  return (
-    <Textarea label={label} placeholder={placeholder} onChange={action("change")} value={value} />
-  );
-};
-
-WithLabel.story = {
-  name: "With label",
+  component: Textarea,
 
   parameters: {
-    info: "Some description about this type of textarea in general.",
+    info: "Textarea component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange"],
+    },
+  },
+
+  args: {
+    label: "Label",
+    name: "Textarea",
+    value: "Textarea",
+    placeholder: "Placeholder",
+    onChange: action("onChange"),
   },
 };
 
-WithLabel.args = {
-  label: "Label",
-  value: "",
-  placeholder: "Placeholder",
+type Story = StoryObj<typeof Textarea>;
+
+export default meta;
+
+export const Default: Story = {};
+
+export const WithHelp: Story = {
+  args: {
+    help: "Everything is fine.",
+    helpClosable: false,
+  },
 };
 
-export const WithHelp = ({ value, placeholder, help }) => {
-  return (
-    <Textarea placeholder={placeholder} help={help} onChange={action("change")} value={value} />
-  );
+export const WithError: Story = {
+  args: {
+    error: "Something went wrong.",
+  },
 };
 
-WithHelp.story = {
-  name: "With help",
+export const Uncontrolled: Story = {
+  args: {
+    defaultValue: "defaultValue",
+    value: undefined,
+  },
 
   parameters: {
-    info: "Some description about this type of textarea in general.",
+    info: "Uncontrolled version of Textarea component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onChange", "value"],
+    },
   },
 };
 
-WithHelp.args = {
-  value: "Something",
-  placeholder: "Placeholder",
-  help: "Everything is fine.",
-};
-
-export const WithError = ({ value, placeholder, error }) => {
-  return (
-    <Textarea placeholder={placeholder} error={error} onChange={action("change")} value={value} />
-  );
-};
-
-WithError.story = {
-  name: "With error",
-
+export const Playground: Story = {
   parameters: {
-    info: "Some description about this type of textarea in general.",
+    info: "Playground of Textarea component. Check Orbit.Kiwi for more detailed guidelines. In case you want try uncontrolled variant of the component, feel free to check Uncontrolled story.",
+    controls: {
+      exclude: ["onChange", "onFocus", "onBlur"],
+    },
+  },
+
+  args: {
+    ...WithHelp.args,
+    ...WithError.args,
+    id: "textarea-id",
+    fullHeight: true,
+    disabled: false,
+    readOnly: false,
+    resize: RESIZE_OPTIONS.VERTICAL,
+    maxLength: Infinity,
+    rows: 3,
+    required: false,
+    spaceAfter: SPACINGS_AFTER.MEDIUM,
+    tabIndex: 0,
+    dataAttrs: {
+      "data-story-example": "Storybook-playground",
+    },
+    onFocus: action("onFocus"),
+    onBlur: action("onBlur"),
+  },
+
+  argTypes: {
+    resize: {
+      options: Object.values(RESIZE_OPTIONS),
+      control: { type: "select" },
+    },
+    spaceAfter: {
+      options: Object.values(SPACINGS_AFTER),
+      control: { type: "select" },
+    },
   },
 };
 
-WithError.args = {
-  value: "Something",
-  placeholder: "Placeholder",
-  error: "Something went wrong.",
-};
-
-export const Playground = ({
-  label,
-  value,
-  fullHeight,
-  placeholder,
-  help,
-  error,
-  rows,
-  required,
-  disabled,
-  readOnly,
-  maxLength,
-  resize,
-  dataTest,
-  spaceAfter,
-}) => {
-  return (
-    <Textarea
-      label={label}
-      value={value}
-      fullHeight={fullHeight}
-      placeholder={placeholder}
-      help={help}
-      error={error}
-      rows={rows}
-      required={required}
-      disabled={disabled}
-      readOnly={readOnly}
-      maxLength={maxLength}
-      resize={resize}
-      onChange={action("change")}
-      onFocus={action("focus")}
-      onBlur={action("blur")}
-      dataTest={dataTest}
-      spaceAfter={spaceAfter}
-    />
-  );
-};
-
-Playground.story = {
-  parameters: {
-    info: "Some description about this type of textarea in general.",
-  },
-};
-
-Playground.args = {
-  label: "Label",
-  value: "",
-  fullHeight: true,
-  placeholder: "Placeholder",
-  help: "",
-  error: "Something went wrong.",
-  disabled: false,
-  readOnly: false,
-  resize: RESIZE_OPTIONS.VERTICAL,
-  maxLength: Infinity,
-  dataTest: "test",
-  rows: 3,
-  required: false,
-  spaceAfter: SPACINGS_AFTER.MEDIUM,
-};
-
-Playground.argTypes = {
-  resize: {
-    options: Object.values(RESIZE_OPTIONS),
-    control: { type: "select" },
-  },
-  spaceAfter: {
-    options: Object.values(SPACINGS_AFTER),
-    control: { type: "select" },
-  },
-};
-
-export const Rtl = ({ label, help, error }) => {
-  return (
+export const Rtl: Story = {
+  render: args => (
     <RenderInRtl>
-      <Textarea
-        label={label}
-        help={help}
-        error={error}
-        placeholder="My placeholder"
-        value="Content of the Textarea"
-      />
+      <Textarea {...args} />
     </RenderInRtl>
-  );
-};
-
-Rtl.story = {
-  name: "RTL",
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+    controls: {
+      exclude: ["onChange", "onFocus", "onBlur"],
+    },
   },
-};
 
-Rtl.args = {
-  label: "Label",
-  help: "",
-  error: "Something went wrong.",
+  args: {
+    ...Playground.args,
+  },
+
+  argTypes: {
+    ...Playground.argTypes,
+  },
 };

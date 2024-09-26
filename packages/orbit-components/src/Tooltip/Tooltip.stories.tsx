@@ -1,4 +1,6 @@
 import * as React from "react";
+import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { PLACEMENTS } from "../common/consts";
 import * as Icons from "../icons";
@@ -15,160 +17,121 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Tooltip from ".";
 
-const getIcon = source => Icons[source];
-
-export default {
+const meta: Meta<typeof Tooltip> = {
   title: "Tooltip",
-};
-
-export const TooltipOnInlineElement = ({ content, removeUnderlinedText }) => {
-  return (
-    <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
-      <Stack spacing="none">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
-        eget mollis sed, tempor sed magna.
-        <Tooltip
-          content={
-            <div>
-              <div>Write your text here.</div>
-              <TextLink>Clickable element.</TextLink>
-            </div>
-          }
-          placement="left"
-        >
-          <TextLink>Cras elementum.</TextLink>
-        </Tooltip>
-        Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-        officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
-        Sed vel lectus.
-        <Tooltip content={content} removeUnderlinedText={removeUnderlinedText}>
-          <Text>
-            Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada
-            congue. Sed vel lectus.
-          </Text>
-        </Tooltip>
-      </Stack>
-    </Alert>
-  );
-};
-
-TooltipOnInlineElement.story = {
-  name: "Tooltip on inline element",
+  component: Tooltip,
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: [
+        "onShow",
+        "enabled",
+        "tabIndex",
+        "size",
+        "labelClose",
+        "renderInPortal",
+        "stopPropagation",
+      ],
+    },
+  },
+
+  args: {
+    onShow: action("onShow"),
   },
 };
 
-TooltipOnInlineElement.args = {
-  content: "Write your text here.",
-  removeUnderlinedText: false,
-};
+export default meta;
+type Story = StoryObj<typeof Tooltip>;
 
-export const TooltipOnBlockElement = ({ content }) => {
-  return (
-    <Tooltip content={content}>
-      <Heading>Orbit design system</Heading>
-    </Tooltip>
-  );
-};
-
-TooltipOnBlockElement.story = {
-  name: "Tooltip on block element",
-
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-TooltipOnBlockElement.args = {
-  content:
-    "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
-};
-
-export const TooltipOnDisabledElement = ({ content }) => {
-  return (
-    <Tooltip content={content}>
-      <Button disabled>Disabled</Button>
-    </Tooltip>
-  );
-};
-
-TooltipOnDisabledElement.story = {
-  name: "Tooltip on disabled element",
-
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-TooltipOnDisabledElement.args = {
-  content: "Write your text here.",
-};
-
-export const Block = ({ content }) => {
-  return (
-    <Tooltip block content={content}>
-      <Button fullWidth>Full width</Button>
-    </Tooltip>
-  );
-};
-
-Block.args = {
-  content: "Write your text here.",
-};
-
-export const Placement = ({ size, placement, content }) => {
-  return (
+export const Default: Story = {
+  render: args => (
     <Stack justify="center">
-      <Tooltip placement={placement} size={size} content={content}>
+      <Tooltip {...args}>
         <Icons.Airplane />
       </Tooltip>
     </Stack>
-  );
-};
-
-Placement.story = {
-  name: "Placement",
+  ),
 
   parameters: {
-    info: "If you want to, you can specify one preferred placement. If it won't be possible to use it, the defaults will be used.",
-  },
-};
-
-Placement.args = {
-  size: SIZE_OPTIONS.MEDIUM,
-  placement: PLACEMENTS.BOTTOM,
-  content: "Write your text here.",
-};
-
-Placement.argTypes = {
-  size: {
-    options: Object.values(SIZE_OPTIONS),
-    control: {
-      type: "select",
+    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: [
+        "onShow",
+        "enabled",
+        "tabIndex",
+        "size",
+        "labelClose",
+        "renderInPortal",
+        "stopPropagation",
+        "block",
+      ],
     },
   },
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
-    },
+
+  args: {
+    content: "Write your text here.",
   },
 };
 
-export const WithImageInside = ({ size, placement }) => {
-  return (
+export const TooltipOnInlineElement: Story = {
+  render: args => (
+    <Alert icon title="Lorem ipsum dolor sit amet" type="critical">
+      <Stack spacing="none">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
+        eget mollis sed, tempor sed magna.{" "}
+        <Tooltip {...args}>
+          <TextLink>Cras elementum.</TextLink>
+        </Tooltip>{" "}
+        Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
+        Sed vel lectus.
+      </Stack>
+    </Alert>
+  ),
+
+  args: {
+    content: "Write your text here.",
+    block: false,
+  },
+};
+
+export const TooltipOnBlockElements: Story = {
+  render: args => (
+    <>
+      <Tooltip {...args}>
+        <Heading>Orbit design system</Heading>
+      </Tooltip>
+      <div className="mt-lg">
+        <Tooltip {...args}>
+          <Button fullWidth disabled>
+            Full width & Disabled
+          </Button>
+        </Tooltip>
+      </div>
+    </>
+  ),
+
+  parameters: {
+    info: "Block prop defines whether the children wrapper is inline or block. Useful when children need to take up the entire container width. Visit Orbit.Kiwi for more detailed guidelines.",
+  },
+
+  args: {
+    content:
+      "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
+    block: true,
+  },
+};
+
+export const WithImageInside: Story = {
+  render: args => (
     <Tooltip
-      placement={placement}
-      size={size}
+      {...args}
       content={
         <Stack>
           <img
             src="https://images.kiwi.com/illustrations/0x200/Rating-Q85.png"
             alt="Preview
-            of card help in Tooltip component"
+              of card help in Tooltip component"
           />
           <Text>
             We take security very seriously. Especially when it comes to your personal and sensitive
@@ -188,127 +151,131 @@ export const WithImageInside = ({ size, placement }) => {
     >
       <Icons.Airplane />
     </Tooltip>
-  );
-};
-
-WithImageInside.story = {
-  name: "With image inside",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-WithImageInside.args = {
-  size: SIZE_OPTIONS.MEDIUM,
-  placement: PLACEMENTS.BOTTOM,
-};
-
-WithImageInside.argTypes = {
-  size: {
-    options: Object.values(SIZE_OPTIONS),
-    control: {
-      type: "select",
+    info: "If you want to, you can specify one preferred placement. If it won't be possible to use it, the defaults will be used. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: [
+        "onShow",
+        "enabled",
+        "tabIndex",
+        "labelClose",
+        "renderInPortal",
+        "stopPropagation",
+        "block",
+      ],
     },
   },
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
+
+  args: {
+    size: SIZE_OPTIONS.MEDIUM,
+    placement: PLACEMENTS.BOTTOM,
+  },
+
+  argTypes: {
+    size: {
+      options: Object.values(SIZE_OPTIONS),
+      control: {
+        type: "select",
+      },
     },
-  },
-};
-
-export const Playground = ({
-  content,
-  dataTest,
-  icon,
-  size,
-  tabIndex,
-  enabled,
-  removeUnderlinedText,
-  placement,
-}) => {
-  const Icon = getIcon(icon);
-
-  return (
-    <Tooltip
-      placement={placement}
-      size={size}
-      content={content}
-      dataTest={dataTest}
-      tabIndex={tabIndex}
-      enabled={enabled}
-      removeUnderlinedText={removeUnderlinedText}
-    >
-      <Icon />
-    </Tooltip>
-  );
-};
-
-Playground.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-  },
-};
-
-Playground.args = {
-  content: "Write your text here.",
-  dataTest: "test",
-  icon: "Airplane",
-  size: SIZE_OPTIONS.SMALL,
-  tabIndex: "0",
-  enabled: true,
-  removeUnderlinedText: false,
-  placement: PLACEMENTS.BOTTOM,
-};
-
-Playground.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
-  size: {
-    options: Object.values(SIZE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-  placement: {
-    options: Object.values(PLACEMENTS),
-    control: {
-      type: "select",
+    placement: {
+      options: Object.values(PLACEMENTS),
+      control: {
+        type: "select",
+      },
     },
   },
 };
 
-export const Rtl = () => {
-  return (
-    <RenderInRtl>
-      <Alert icon={<Icons.Airplane />} title="Lorem ipsum dolor sit amet">
+export const Playground: Story = {
+  render: ({ children, content, ...args }) => (
+    <Alert icon title="Lorem ipsum dolor sit amet" type="success">
+      <Stack spacing="none">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
-        eget mollis sed, tempor sed magna.
-        <Tooltip content="Write your text here." placement="left">
-          <TextLink>Cras elementum.</TextLink>
-        </Tooltip>{" "}
-        Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-        officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
-        Sed vel lectus.{" "}
-        <Tooltip content="Write your text here.">
-          <Text>Another Tooltip.</Text>
-        </Tooltip>{" "}
-        Donec odio tempus molestie, porttitor ut, iaculis quis, sem.
+        eget mollis sed, tempor sed magna. Cras elementum. Aliquam erat volutpat. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum. Sed ac dolor sit amet purus malesuada congue. Sed vel lectus.{" "}
+        <Tooltip
+          content={
+            <div>
+              <div>{content}</div>
+              <TextLink>Clickable element.</TextLink>
+            </div>
+          }
+          {...args}
+        >
+          <Text>{children}</Text>
+        </Tooltip>
+      </Stack>
+    </Alert>
+  ),
+
+  parameters: {
+    info: "You can try all possible configurations of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onShow"],
+    },
+  },
+
+  args: {
+    children: "Aliquam erat volutpat.",
+    enabled: true,
+    tabIndex: "0",
+    content:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue. Sed vel lectus.",
+    id: "ID",
+    labelClose: "Close",
+    lockScrolling: false,
+    renderInPortal: true,
+    stopPropagation: false,
+    removeUnderlinedText: false,
+    block: false,
+    ...WithImageInside.args,
+  },
+
+  argTypes: {
+    ...WithImageInside.argTypes,
+  },
+};
+
+export const Rtl: Story = {
+  render: ({ content, ...args }) => (
+    <RenderInRtl>
+      <Alert icon title="Lorem ipsum dolor sit amet" type="success">
+        <Stack spacing="none">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
+          eget mollis sed, tempor sed magna. Cras elementum. Aliquam erat volutpat. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum. Sed ac dolor sit amet purus malesuada congue. Sed vel lectus.{" "}
+          <Tooltip
+            content={
+              <div>
+                <div>{content}</div>
+                <TextLink>Clickable element.</TextLink>
+              </div>
+            }
+            {...args}
+          >
+            <Text>Aliquam erat volutpat.</Text>
+          </Tooltip>
+        </Stack>
       </Alert>
     </RenderInRtl>
-  );
-};
-
-Rtl.story = {
-  name: "RTL ",
+  ),
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "This is a preview of this component in RTL setup.",
+  },
+
+  args: {
+    content: "Write your text here.",
+    block: false,
+    ...WithImageInside.args,
+  },
+
+  argTypes: {
+    ...WithImageInside.argTypes,
   },
 };

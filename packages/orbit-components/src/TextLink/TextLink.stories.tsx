@@ -1,8 +1,8 @@
 import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
-import { TYPE_OPTIONS as TEXT_TYPES } from "../Text/consts";
 import * as Icons from "../icons";
 import Text from "../Text";
 import Box from "../Box";
@@ -10,283 +10,193 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import TextLink from ".";
 
-const validate = (rel: string) => (rel !== undefined && rel !== "" ? rel : undefined);
+const validate = (rel: string) => (rel !== "" ? rel : undefined);
 
-const getIcon = (source: string | null) => source && Icons[source];
+const getIcon = (source: string) => Icons[source];
 
-export default {
+Box.displayName = "Box";
+
+const meta: Meta<typeof TextLink> = {
   title: "TextLink",
-};
+  component: TextLink,
 
-export const PrimaryLink = ({ href, external, children }) => {
-  return (
-    <TextLink external={external} onClick={action("clicked")} href={href} type="primary">
-      {children}
-    </TextLink>
-  );
-};
-
-PrimaryLink.story = {
-  name: "Primary link",
+  args: {
+    children: "Link text",
+    href: "https://kiwi.com",
+    onClick: action("onClick"),
+  },
 
   parameters: {
-    info: "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-PrimaryLink.args = {
-  href: "https://kiwi.com",
-  external: false,
-  children: "Primary link",
-};
-
-export const SecondaryLink = ({ href, external, children }) => {
-  return (
-    <TextLink external={external} onClick={action("clicked")} href={href} type="secondary">
-      {children}
-    </TextLink>
-  );
-};
-
-SecondaryLink.story = {
-  name: "Secondary link",
-
-  parameters: {
-    info: "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-SecondaryLink.args = {
-  href: "https://kiwi.com",
-  external: false,
-  children: "Secondary link",
-};
-
-export const LinkWithLeftIcon = ({ href, children, icon }) => {
-  const Icon = getIcon(icon);
-
-  return (
-    <TextLink onClick={action("clicked")} href={href} iconLeft={Icon && <Icon />} standAlone>
-      {children}
-    </TextLink>
-  );
-};
-
-LinkWithLeftIcon.story = {
-  name: "Link with left icon",
-
-  parameters: {
-    info: "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
-  },
-};
-
-LinkWithLeftIcon.args = {
-  href: "https://kiwi.com",
-  children: "TextLink with icon",
-  icon: "ChevronBackward",
-};
-
-LinkWithLeftIcon.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+    info: "TextLink component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onClick", "type", "external", "asComponent", "stopPropagation"],
     },
   },
 };
 
-export const LinkWithRightIcon = ({ href, children, icon }) => {
-  const Icon = getIcon(icon);
+export default meta;
 
-  return (
-    <TextLink onClick={action("clicked")} href={href} iconRight={Icon && <Icon />}>
-      {children}
-    </TextLink>
-  );
-};
+type Story = StoryObj<typeof TextLink>;
 
-LinkWithRightIcon.story = {
-  name: "Link with right icon",
+export const Default: Story = {
+  render: ({ children, ...args }) => <TextLink {...args}>{children}</TextLink>,
 
   parameters: {
-    info: "Text links are used in paragraphs when part of the text needs to be actionable. It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+    info: "Default configuration of TextLink component. Check Orbit.Kiwi for more detailed guidelines.",
   },
 };
 
-LinkWithRightIcon.args = {
-  href: "https://kiwi.com",
-  children: "TextLink with icon",
-  icon: "ChevronForward",
-};
+export const LinkWithLeftIcon: Story = {
+  render: ({ children, iconLeft, ...args }) => {
+    const Icon = typeof iconLeft === "string" && getIcon(iconLeft);
 
-LinkWithRightIcon.argTypes = {
-  icon: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
-};
-
-export const Playground = ({
-  href,
-  type,
-  size,
-  external,
-  children,
-  rel,
-  iconRight,
-  iconLeft,
-  dataTest,
-  tabIndex,
-  stopPropagation,
-  standAlone,
-  noUnderline,
-}) => {
-  const IconRight = getIcon(iconRight);
-  const IconLeft = getIcon(iconLeft);
-  return (
-    <Box
-      padding="300"
-      borderRadius="100"
-      background={type === TYPE_OPTIONS.WHITE ? "inkLight" : "cloudNormal"}
-    >
-      <TextLink
-        external={external}
-        onClick={action("clicked")}
-        href={href}
-        type={type}
-        size={size}
-        rel={validate(rel)}
-        iconRight={IconRight && <IconRight />}
-        iconLeft={IconLeft && <IconLeft />}
-        dataTest={dataTest}
-        tabIndex={tabIndex}
-        stopPropagation={stopPropagation}
-        standAlone={standAlone}
-        noUnderline={noUnderline}
-      >
+    return (
+      <TextLink {...args} iconLeft={Icon && <Icon />}>
         {children}
       </TextLink>
-    </Box>
-  );
-};
+    );
+  },
 
-Playground.story = {
-  parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+  args: {
+    iconLeft: "ChevronBackward",
   },
-};
 
-Playground.args = {
-  href: "https://kiwi.com",
-  type: TYPE_OPTIONS.SECONDARY,
-  size: SIZE_OPTIONS.SMALL,
-  external: true,
-  children: "Custom link",
-  rel: "",
-  iconRight: "ChevronForward",
-  iconLeft: "",
-  dataTest: "test",
-  tabIndex: "",
-  stopPropagation: false,
-  standAlone: false,
-  noUnderline: false,
-};
-
-Playground.argTypes = {
-  type: {
-    options: Object.values(TYPE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-  size: {
-    options: Object.values(SIZE_OPTIONS),
-    control: {
-      type: "select",
-    },
-  },
-  iconRight: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
-    },
-  },
-  iconLeft: {
-    options: Object.keys(Icons),
-    control: {
-      type: "select",
+  argTypes: {
+    iconLeft: {
+      options: [undefined, ...Object.keys(Icons)],
+      control: {
+        type: "select",
+      },
     },
   },
 };
 
-export const TextLinkInText = ({ type }) => {
-  return (
-    <Text type={type}>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dapibus fermentum ipsum. Duis
-      ante orci, molestie vitae vehicula venenatis, tincidunt ac pede.{" "}
-      <TextLink onClick={action("onClick")} type={type}>
-        Etiam dui sem
+export const LinkWithRightIcon: Story = {
+  render: ({ children, iconRight, ...args }) => {
+    const Icon = typeof iconRight === "string" && getIcon(iconRight);
+
+    return (
+      <TextLink {...args} iconRight={Icon && <Icon />}>
+        {children}
       </TextLink>
-      , fermentum vitae, sagittis id, malesuada in, quam. Vivamus luctus egestas leo. Integer
-      imperdiet lectus quis justo. Duis condimentum augue id magna semper rutrum. Quisque porta. Sed
-      elit dui, pellentesque a, faucibus vel, interdum nec, diam.
-    </Text>
-  );
-};
-
-TextLinkInText.story = {
-  name: "TextLink inside paragraph",
-  parameters: {
-    info: "It inherits the visual style of the parent paragraph. Visit Orbit.Kiwi for more detailed guidelines.",
+    );
   },
-};
 
-TextLinkInText.args = {
-  type: TEXT_TYPES.CRITICAL,
-};
+  args: {
+    iconRight: "ChevronForward",
+  },
 
-TextLinkInText.argTypes = {
-  type: {
-    options: Object.values(TEXT_TYPES),
-    control: {
-      type: "select",
+  argTypes: {
+    iconRight: {
+      ...LinkWithLeftIcon.argTypes?.iconLeft,
     },
   },
 };
 
-export const Accessibility = ({ children, title }) => {
-  return (
-    <TextLink title={title} onClick={action("clicked")} type="primary">
-      {children}
-    </TextLink>
-  );
-};
+export const TextLinkInText: Story = {
+  render: ({ children, ...args }) => {
+    return (
+      <Text>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dapibus fermentum ipsum.
+        Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede.{" "}
+        <TextLink {...args}>{children}</TextLink>, fermentum vitae, sagittis id, malesuada in, quam.
+        Vivamus luctus egestas leo. Integer imperdiet lectus quis justo. Duis condimentum augue id
+        magna semper rutrum. Quisque porta. Sed elit dui, pellentesque a, faucibus vel, interdum
+        nec, diam.
+      </Text>
+    );
+  },
 
-Accessibility.story = {
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    info: "An example of usage of TextLink in Text component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onClick", "external", "asComponent", "stopPropagation"],
+    },
+  },
+
+  args: {
+    type: TYPE_OPTIONS.SUCCESS,
+    size: SIZE_OPTIONS.NORMAL,
+    standAlone: false,
+    noUnderline: false,
+  },
+
+  argTypes: {
+    type: {
+      options: Object.values(TYPE_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+    size: {
+      options: [undefined, ...Object.values(SIZE_OPTIONS)],
+      control: {
+        type: "select",
+      },
+    },
   },
 };
 
-Accessibility.args = {
-  children: "Primary link",
-  title: "Clarify purpose of a link for screen readers",
+export const Playground: Story = {
+  render: ({ rel, type, children, iconRight, iconLeft, ...args }) => {
+    const IconRight = typeof iconRight === "string" && getIcon(iconRight);
+    const IconLeft = typeof iconLeft === "string" && getIcon(iconLeft);
+
+    return (
+      <Box padding="300" background={type === TYPE_OPTIONS.WHITE ? "inkLight" : "cloudLight"}>
+        <TextLink
+          {...args}
+          type={type}
+          rel={validate(rel!)}
+          iconRight={IconRight && <IconRight />}
+          iconLeft={IconLeft && <IconLeft />}
+        >
+          {children}
+        </TextLink>
+      </Box>
+    );
+  },
+
+  args: {
+    ...LinkWithLeftIcon.args,
+    ...LinkWithRightIcon.args,
+    ...TextLinkInText.args,
+    external: true,
+    rel: "",
+    tabIndex: "",
+    stopPropagation: false,
+    title: "link title",
+    ariaCurrent: "text-link",
+    id: "link-id",
+  },
+
+  argTypes: {
+    ...LinkWithLeftIcon.argTypes,
+    ...LinkWithRightIcon.argTypes,
+    ...TextLinkInText.argTypes,
+  },
+
+  parameters: {
+    info: "Playground of TextLink component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: ["onClick", "asComponent"],
+    },
+  },
 };
 
-export const Rtl = () => (
-  <RenderInRtl>
-    <TextLink onClick={action("clicked")} href="#" iconRight={<Icons.ChevronForward />}>
-      Link
-    </TextLink>
-  </RenderInRtl>
-);
-
-Rtl.story = {
-  name: "RTL",
+export const Rtl: Story = {
+  render: args => (
+    <RenderInRtl>
+      <TextLink {...args} iconRight={<Icons.ChevronForward reverseOnRtl />}>
+        Link
+      </TextLink>
+    </RenderInRtl>
+  ),
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
+    controls: {
+      disable: true,
+    },
   },
 };

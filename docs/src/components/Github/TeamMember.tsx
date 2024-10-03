@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack } from "@kiwicom/orbit-components";
 import styled from "styled-components";
-import { Twitter, Link as LinkIcon } from "@kiwicom/orbit-components/icons";
+import { X, Link as LinkIcon } from "@kiwicom/orbit-components/icons";
 import { SiDribbble as Dribbble, SiGithub as Github } from "@icons-pack/react-simple-icons";
 
 import { Contributor } from ".";
@@ -35,7 +35,7 @@ interface Props extends Contributor {
 
 const TeamMember = ({ position, image, info, twitter, website, dribbble, github, name }: Props) => {
   const links = [
-    { url: twitter, icon: <Twitter /> },
+    { url: twitter, icon: <X /> },
     { url: website, icon: <LinkIcon /> },
     { url: dribbble, icon: <Dribbble /> },
     { url: github, icon: <Github /> },

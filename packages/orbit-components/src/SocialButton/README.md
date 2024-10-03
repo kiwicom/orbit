@@ -47,7 +47,7 @@ Table below contains all types of the props available in SocialButton component.
 | `"apple"`    | `"small"`  | `"none"`     |
 | `"facebook"` | `"normal"` | `"smallest"` |
 | `"google"`   | `"large"`  | `"small"`    |
-| `"twitter"`  |            | `"normal"`   |
+| `"X"`        |            | `"normal"`   |
 | `"email"`    |            | `"medium"`   |
 |              |            | `"large"`    |
 |              |            | `"largest"`  |

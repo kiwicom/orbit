@@ -3,7 +3,7 @@
 
 import type { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/types";
 
-export type Type = "apple" | "facebook" | "google" | "twitter" | "email";
+export type Type = "apple" | "facebook" | "google" | "X" | "email";
 
 type OmittedButtonCommonProps = Omit<ButtonCommonProps, "iconLeft" | "iconRight" | "circled">;
 

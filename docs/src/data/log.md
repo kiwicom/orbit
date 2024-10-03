@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@16.2.0...@kiwicom/orbit-components@17.0.0) (2024-10-03)
+
+#### Bug Fixes
+
+*   **Accordion:** spacing with no actions was wrong ([255b322](https://github.com/kiwicom/orbit/commit/255b3223125ee0e4e62eb6f05ed09a3f1c7f2ba3))
+
+#### Features
+
+*   **icons:** add X icon ([21a8cba](https://github.com/kiwicom/orbit/commit/21a8cbaba1d4d6c5fec9ea21253933b6cac95e21))
+*   **icons:** remove ColoredTwitter icon ([d039f15](https://github.com/kiwicom/orbit/commit/d039f15549f13da336ee65839642d84af9e600f0))
+*   **icons:** remove Twitter icon ([879cb0c](https://github.com/kiwicom/orbit/commit/879cb0cc7cf2b783b972364d03da96d64a3a434c))
+*   **SocialButton:** replace twitter type by X ([dbeca13](https://github.com/kiwicom/orbit/commit/dbeca13f0c584277b7cde2ae16431dd8a2e51bf7))
+
+#### BREAKING CHANGES
+
+*   **SocialButton:** SocialButton's type prop no longer accepts "twitter".
+    "X" type is now accepted.
+*   **icons:** Twitter icon was removed. X icon should be used instead.
+*   **icons:** The `ColoredTwitter` icon was removed.
+    Use the `Twitter` icon instead.
+
 ## [16.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@16.1.0...@kiwicom/orbit-components@16.2.0) (2024-09-19)
 
 #### Bug Fixes

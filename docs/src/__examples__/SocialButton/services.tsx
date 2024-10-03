@@ -14,8 +14,8 @@ export default {
       code: `() => <SocialButton type="google">Sign in with Google</SocialButton>`,
     },
     {
-      name: "twitter",
-      code: `() => <SocialButton type="twitter">Sign in with Twitter</SocialButton>`,
+      name: "X",
+      code: `() => <SocialButton type="X">Sign in with X</SocialButton>`,
     },
   ],
 };

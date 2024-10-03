@@ -7,7 +7,6 @@ import { WindowLocation } from "@reach/router";
 
 import { RecentBookmarks } from "../components/Bookmarks";
 // temporarily extract images from @streamlinehq/streamlinehq until they fix the install script
-import LoveBirdIcon from "../images/streamline-light/love-bird.svg";
 import StartupLaunchIcon from "../images/streamline-light/startup-launch-1.svg";
 import ReadArt from "../images/streamline-light/read-art.svg";
 import SearchButton from "../components/Search/SearchButton";
@@ -22,7 +21,6 @@ import HeaderBox from "../components/HeaderBox";
 import BrandedTile from "../components/BrandedTile";
 import GitHubLogo from "../images/github-full.svg";
 import FigmaLogo from "../images/figma-logo.svg";
-import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
 import ScreenReaderText from "../components/ScreenReaderText";
@@ -271,20 +269,6 @@ export default function Home({ location, path }: Props) {
               >
                 Visit our community profile and download all of our libraries and resources for
                 free.
-              </BrandedTile>
-              <BrandedTile
-                title="Follow us on Twitter"
-                icon={<LoveBirdIcon />}
-                href="https://twitter.com/OrbitKiwi"
-                linkContent="Follow Orbit on Twitter"
-                logo={<TwitterLogo />}
-                color={{
-                  primary: "#0989CF",
-                  secondary: "#179CE3",
-                }}
-              >
-                Twitter is one of our main platforms for sharing. Everything important that is
-                happening around Orbit is published on Twitter.
               </BrandedTile>
               <BrandedTile
                 title="Connect Orbit to Tequila"

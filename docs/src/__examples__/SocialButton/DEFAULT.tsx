@@ -11,7 +11,7 @@ export default {
           name: "type",
           type: "select",
           defaultValue: "apple",
-          options: ["apple", "facebook", "twitter", "google"],
+          options: ["apple", "facebook", "X", "google"],
         },
         {
           name: "fullWidth",

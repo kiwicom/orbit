@@ -40,8 +40,8 @@ export default function Head({ title, hasSiteName, description, path }: Props) {
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      {/* Twitter Card */}
-      {/* https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary */}
+      {/* X Card */}
+      {/* https://developer.x.com/en/docs/x-for-websites/cards/overview/summary */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@OrbitKiwi" />
       <meta name="twitter:title" content={pageTitle} />

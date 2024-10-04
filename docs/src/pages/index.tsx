@@ -7,7 +7,6 @@ import { WindowLocation } from "@reach/router";
 
 import { RecentBookmarks } from "../components/Bookmarks";
 // temporarily extract images from @streamlinehq/streamlinehq until they fix the install script
-import StartupLaunchIcon from "../images/streamline-light/startup-launch-1.svg";
 import ReadArt from "../images/streamline-light/read-art.svg";
 import SearchButton from "../components/Search/SearchButton";
 import FigmaIcon from "../components/icons/Figma";
@@ -21,7 +20,6 @@ import HeaderBox from "../components/HeaderBox";
 import BrandedTile from "../components/BrandedTile";
 import GitHubLogo from "../images/github-full.svg";
 import FigmaLogo from "../images/figma-logo.svg";
-import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
 import ScreenReaderText from "../components/ScreenReaderText";
 import { useKeyboard } from "../services/KeyboardProvider";
@@ -269,17 +267,6 @@ export default function Home({ location, path }: Props) {
               >
                 Visit our community profile and download all of our libraries and resources for
                 free.
-              </BrandedTile>
-              <BrandedTile
-                title="Connect Orbit to Tequila"
-                icon={<StartupLaunchIcon />}
-                href="https://partners.kiwi.com"
-                linkContent="Explore Tequila possibilities"
-                logo={<img alt="Tequila logo" src={srcTequila} width={144} height={64} />}
-                color="product"
-              >
-                Tequila is an online B2B platform powered by Kiwi.com that allows anyone to access
-                our content, technology, and services.
               </BrandedTile>
             </Grid>
           </div>

@@ -2,8 +2,6 @@ import * as React from "react";
 import cx from "clsx";
 
 import type { Value } from "../../types";
-import { left as leftRight } from "../../../utils/rtl";
-import useTheme from "../../../hooks/useTheme";
 
 export const calculateBarPosition = (
   value: Value,
@@ -43,7 +41,6 @@ interface Props {
 
 const Bar = React.forwardRef<HTMLDivElement, Props>(
   ({ onMouseDown, value, max, min, hasHistogram }, ref) => {
-    const theme = useTheme();
     const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -55,7 +52,7 @@ const Bar = React.forwardRef<HTMLDivElement, Props>(
         <BarPart className="bg-cloud-normal left-0 w-full" />
         <BarPart
           className="bg-blue-normal"
-          style={{ [leftRight({ theme })]: `${left}%`, width: `${width}%` }}
+          style={{ insetInlineStart: `${left}%`, width: `${width}%` }}
         />
       </div>
     );

@@ -41,12 +41,7 @@ const useMediaQuery = () => {
             return next;
           });
         };
-        if (typeof mqList.addEventListener === "function") {
-          mqList.addEventListener("change", listenerMap[query]);
-        } else {
-          // for browsers like Safari 13
-          mqList.addListener(listenerMap[query]);
-        }
+        mqList.addEventListener("change", listenerMap[query]);
         return mqList;
       };
 
@@ -75,12 +70,7 @@ const useMediaQuery = () => {
     return () => {
       if (mqListMap) {
         QUERIES.forEach(query => {
-          if (typeof mqListMap[query].removeEventListener === "function") {
-            mqListMap[query].removeEventListener("change", listenerMap[query]);
-          } else {
-            // for browsers like Safari 13
-            mqListMap[query].removeListener(listenerMap[query]);
-          }
+          mqListMap[query].removeEventListener("change", listenerMap[query]);
         });
       }
     };

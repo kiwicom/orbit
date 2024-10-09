@@ -339,10 +339,6 @@ export default function orbitTailwindPreset(options?: Options): Config {
           addVariant("type-even", "&:nth-of-type(even)"),
           addVariant("type-odd", "&:nth-of-type(odd)"),
           addVariant("target-blank", "&[target='_blank']"),
-          addVariant(
-            "safari",
-            "@supports (-webkit-touch-callout: none) and (not (translate: none))",
-          ),
           addUtilities({
             ".scrollbar-none": {
               "-ms-overflow-style": "none",

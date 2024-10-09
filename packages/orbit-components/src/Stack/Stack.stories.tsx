@@ -651,7 +651,7 @@ export const Playground: Story = {
   args: {
     as: "div",
     flex: true,
-    legacy: false,
+    useMargin: false,
     basis: "",
     align: ALIGNS.START,
     justify: JUSTIFY.START,

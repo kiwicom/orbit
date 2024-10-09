@@ -40,7 +40,7 @@ The table below contains all types of props available in the Stack component.
 | spaceAfter   | `enum`                     |            | Additional `padding` to bottom of the Stack.                                                        |
 | tablet       | [`Object`](#media-queries) |            | Object for setting up properties for the tablet viewport. [See Media queries](#media-queries)       |
 | wrap         | `boolean`                  | `false`    | If `true`, the Stack will have `flex-wrap` set to `wrap`, otherwise it will be `nowrap`.            |
-| legacy       | `boolean`                  | `false`    | If `true`, the Stack will be using margins instead of gap                                           |
+| useMargin    | `boolean`                  | `false`    | If `true`, the Stack will be using margins instead of gap                                           |
 
 ### Media Queries
 

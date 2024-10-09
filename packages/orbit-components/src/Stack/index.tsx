@@ -29,9 +29,9 @@ const shouldUseFlex = (props: CommonProps & Common.SpaceAfter) =>
     .map(prop => ["spacing", "spaceAfter", "dataTest", "children"].includes(prop))
     .includes(false);
 
-// use margins instead of gap, works with block
-const shouldUseLegacy = (props: CommonProps & Common.SpaceAfter) => {
-  if (props.legacy) return true;
+// use margins instead of gap to work with display:block
+const shouldUseMargin = (props: CommonProps & Common.SpaceAfter) => {
+  if (props.useMargin || props.legacy) return true;
   if (!shouldUseFlex(props) && Boolean(props.spacing)) return true;
   return false;
 };
@@ -63,14 +63,14 @@ const Stack = (props: Props) => {
       shrink = false,
       wrap = false,
       flex,
-      legacy = shouldUseLegacy({ ...props, spacing }),
+      useMargin = shouldUseMargin({ ...props, spacing }),
       align = ALIGN.START,
       inline = false,
     } = props;
 
     return {
       flex: flex || isFlex,
-      legacy,
+      useMargin,
       direction,
       spacing,
       grow,
@@ -134,7 +134,7 @@ const Stack = (props: Props) => {
       spacing,
       inline,
       flex,
-      legacy,
+      useMargin,
     } = opts;
 
     return cx(
@@ -149,7 +149,7 @@ const Stack = (props: Props) => {
         getDirectionClasses(direction, viewport),
       ],
       flex || inline ? getDisplayClasses(inline ? "inline-flex" : "flex", viewport) : "block",
-      getSpacingClasses(spacing, viewport, direction, legacy),
+      getSpacingClasses(spacing, viewport, direction, useMargin),
       inline === false && "w-full",
     );
   };
@@ -170,7 +170,7 @@ const Stack = (props: Props) => {
               flex: getProperty("flex", viewports, index),
               direction: getProperty("direction", viewports, index),
               spacing: getProperty("spacing", viewports, index),
-              legacy: getProperty("legacy", viewports, index),
+              useMargin: getProperty("useMargin", viewports, index),
             },
             viewport,
           );

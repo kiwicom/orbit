@@ -17,7 +17,7 @@ const meta: Meta<typeof LinkList> = {
   args: {
     direction: DIRECTIONS.ROW,
     spacing: SPACINGS.FOUR_HUNDRED,
-    legacy: false,
+    useMargin: false,
     indent: false,
   },
 

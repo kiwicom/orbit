@@ -10,7 +10,8 @@ import { getDirectionClasses, getSpacingClasses } from "../common/tailwind";
 const LinkList = ({
   direction = "column",
   indent,
-  legacy = false,
+  legacy,
+  useMargin = legacy,
   spacing = SPACINGS.FOUR_HUNDRED,
   children,
   dataTest,
@@ -25,7 +26,7 @@ const LinkList = ({
       "text-normal",
       indent && "ps-100 p-0",
       direction && getDirectionClasses(direction),
-      spacing && getSpacingClasses(spacing, undefined, direction, legacy),
+      spacing && getSpacingClasses(spacing, undefined, direction, useMargin),
     )}
   >
     {React.Children.map(children, item => {

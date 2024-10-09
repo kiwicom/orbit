@@ -29,7 +29,7 @@ Table below contains all types of the props available in LinkList component.
 | direction    | [`enum`](#enum)       | `"column"` | The size of the LinkList.                                          |
 | indent       | `boolean`             |            | Indenting LinkList item                                            |
 | spacing      | [`spacing`](#spacing) | `"400"`    | The spacing between LinkList children.                             |
-| legacy       | `boolean`             | `false`    | If `true` will use `margin` for spacing, if `false` will use `gap` |
+| useMargin    | `boolean`             | `false`    | If `true` will use `margin` for spacing, if `false` will use `gap` |
 
 ### enum
 

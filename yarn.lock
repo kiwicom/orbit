@@ -3586,10 +3586,10 @@
   resolved "https://registry.npmjs.org/@kiwicom/babel-plugin-orbit-components/-/babel-plugin-orbit-components-3.6.6.tgz"
   integrity sha512-t278JTrEmwVoutWHBNpAjebmRAkvZuDx6Yq857lL68KU/tc3w91VgDhY+FY8yM1X1FURCcyyhdun0YOIkQPUgQ==
 
-"@kiwicom/browserslist-config@^4.0.3":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-4.0.3.tgz#38e2429b20df4c5efccda83190bac441aaa8b4d9"
-  integrity sha512-/ojOUmU8P+rR2y61VMfOkUQNyxBwpMMno29tICCy4jheBbvAg6hnKzFN7qhzZ98SZEgB2ObDrhFWYdWj9tyVGA==
+"@kiwicom/browserslist-config@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/browserslist-config/-/browserslist-config-4.1.0.tgz#fcacddfa356b34703e92d404fdb4b0a15c452b95"
+  integrity sha512-K/Jmmtly4IMTBk2r0DGUovAKAXMJX5753TyH6w3NslRPq9PtZtt6csbBEygRWtg9wSPzKthaOxJesJUfowBk+g==
 
 "@kwsites/file-exists@^1.1.1":
   version "1.1.1"

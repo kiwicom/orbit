@@ -58,7 +58,7 @@
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^17.0.3",
     "@floating-ui/react": "^0.26.24",
-    "@kiwicom/browserslist-config": "^4.0.3",
+    "@kiwicom/browserslist-config": "^4.1.0",
     "@octokit/rest": "^19.0.5",
     "@size-limit/file": "^8.0.0",
     "@size-limit/webpack": "^8.0.0",

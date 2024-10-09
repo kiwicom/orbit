@@ -46,7 +46,11 @@ export interface CommonProps extends Common.SpaceAfter {
   readonly align?: Align;
   readonly justify?: Justify;
   readonly spacing?: Spacing;
+  /**
+   * @deprecated This prop is deprecated. Use `useMargin` instead.
+   */
   readonly legacy?: boolean;
+  readonly useMargin?: boolean;
 }
 
 export interface Props extends CommonProps, Common.Globals {

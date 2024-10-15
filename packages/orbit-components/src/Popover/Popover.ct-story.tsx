@@ -1,10 +1,10 @@
 import React from "react";
-import type { Placement } from "@popperjs/core/lib/enums";
 
 import Text from "../Text";
 import Button from "../Button";
 import Stepper from "../Stepper";
 import Stack from "../Stack";
+import type { Props } from "./types";
 
 import Popover from ".";
 
@@ -49,7 +49,7 @@ export function PopoverWithCustomWidth() {
   );
 }
 
-export const PopoverPlacements = ({ placement }: { placement: Placement }) => (
+export const PopoverPlacements = ({ placement }: { placement: Props["placement"] }) => (
   <div className="flex h-screen items-center justify-center">
     <Popover opened content={content} placement={placement}>
       <Button>open popover</Button>

@@ -9,7 +9,7 @@ import {
   PopoverOverlapped,
   PopoverLongContent,
 } from "./Popover.ct-story";
-import { PLACEMENTS } from "../common/consts";
+import { PLACEMENTS, AUTO_PLACEMENTS } from "../common/placements";
 
 test.describe("visual Popover", () => {
   test(`screenshot for default`, async ({ mount }, { project }) => {
@@ -20,7 +20,7 @@ test.describe("visual Popover", () => {
     }
   });
 
-  Object.values(PLACEMENTS).forEach(placement => {
+  [...Object.values(AUTO_PLACEMENTS), ...Object.values(PLACEMENTS)].forEach(placement => {
     test(`screenshot for placement ${placement}`, async ({ mount }, { project }) => {
       if (project.name === "Desktop") {
         const component = await mount(<PopoverPlacements placement={placement} />);

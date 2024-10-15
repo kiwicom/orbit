@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Tooltip from "../Tooltip";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import { PLACEMENTS } from "../common/consts";
+import { AUTO_PLACEMENTS, PLACEMENTS } from "../common/placements";
 import Stack from "../Stack";
 import Button from "../Button";
 import Stepper from "../Stepper";
@@ -133,7 +133,7 @@ export const Placement: Story = {
 
   argTypes: {
     placement: {
-      options: Object.values(PLACEMENTS),
+      options: [...Object.values(AUTO_PLACEMENTS), ...Object.values(PLACEMENTS)],
       control: {
         type: "select",
       },

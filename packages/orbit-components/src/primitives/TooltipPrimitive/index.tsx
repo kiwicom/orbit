@@ -1,7 +1,7 @@
 import * as React from "react";
 import cx from "clsx";
+import { FloatingPortal } from "@floating-ui/react";
 
-import Portal from "../../Portal";
 import useRandomId from "../../hooks/useRandomId";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
@@ -49,7 +49,9 @@ const TooltipPrimitive = ({
   stopPropagation = false,
   removeUnderlinedText,
   block = false,
-  ...popper
+  placement,
+  noFlip,
+  offset,
 }: Props) => {
   const [shown, setShown] = React.useState(false);
   const [referenceElement, setReferenceElement] = React.useState<HTMLSpanElement | null>(null);
@@ -108,7 +110,9 @@ const TooltipPrimitive = ({
       onClose={handleOut}
       onCloseMobile={handleOutMobile}
       onEnter={handleIn}
-      {...popper}
+      placement={placement}
+      noFlip={noFlip}
+      offset={offset}
       referenceElement={referenceElement}
     >
       {content}
@@ -134,7 +138,8 @@ const TooltipPrimitive = ({
       </TooltipWrapper>
       {enabled &&
         render &&
-        (renderInPortal ? <Portal renderInto="tooltips">{tooltip}</Portal> : tooltip)}
+        // eslint-disable-next-line orbit-components/unique-id
+        (renderInPortal ? <FloatingPortal id="tooltips">{tooltip}</FloatingPortal> : tooltip)}
     </>
   );
 };

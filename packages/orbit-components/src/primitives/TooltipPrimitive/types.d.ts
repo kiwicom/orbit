@@ -2,18 +2,13 @@
 // Project: http://github.com/kiwicom/orbit
 
 import type * as React from "react";
-import type { Placement } from "@popperjs/core/lib/enums";
 
 import type * as Common from "../../common/types";
+import type { Placement } from "../../common/placements";
 
 export type Size = "small" | "medium";
 
-export interface Popper {
-  readonly placement?: Placement;
-  readonly noFlip?: boolean;
-  readonly offset?: [number, number];
-}
-export interface Props extends Common.Globals, Popper {
+export interface Props extends Common.Globals {
   readonly children?: React.ReactNode;
   readonly content: React.ReactNode;
   readonly size?: Size;
@@ -27,4 +22,7 @@ export interface Props extends Common.Globals, Popper {
   readonly removeUnderlinedText?: boolean;
   readonly block?: boolean;
   readonly renderInPortal?: boolean;
+  readonly placement?: Placement;
+  readonly noFlip?: boolean;
+  readonly offset?: [number, number];
 }

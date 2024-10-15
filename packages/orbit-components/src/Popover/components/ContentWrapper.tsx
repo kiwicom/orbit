@@ -1,9 +1,16 @@
 "use client";
 
 import * as React from "react";
-import { usePopper } from "react-popper";
-import type { Placement } from "@popperjs/core/lib/enums";
 import cx from "clsx";
+import {
+  useFloating,
+  offset,
+  flip,
+  shift,
+  autoUpdate,
+  autoPlacement,
+  FloatingFocusManager,
+} from "@floating-ui/react";
 
 import type * as Common from "../../common/types";
 import Button from "../../Button";
@@ -11,9 +18,14 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import useClickOutside from "../../hooks/useClickOutside";
 import useLockScrolling from "../../hooks/useLockScrolling";
 import { ModalContext } from "../../Modal/ModalContext";
-import { PLACEMENTS } from "../../common/consts";
 import boundingClientRect from "../../utils/boundingClientRect";
 import type { Offset } from "../types";
+import {
+  type Placement,
+  getAutoAlignment,
+  isFixedPlacement,
+  PLACEMENTS,
+} from "../../common/placements";
 
 export interface Props extends Common.Globals {
   children: React.ReactNode;
@@ -43,7 +55,7 @@ const PopoverContentWrapper = ({
   width,
   maxHeight,
   noFlip,
-  offset = { top: 4, left: 0 },
+  offset: offsetProp = { top: 4, left: 0 },
   referenceElement,
   dataTest,
   id,
@@ -64,38 +76,38 @@ const PopoverContentWrapper = ({
   const scrollingElementRef = React.useRef<HTMLDivElement | null>(null);
   useLockScrolling(scrollingElementRef, lockScrolling && !isLargeMobile);
 
-  const popoverRef = React.useRef<HTMLDivElement | null>(null);
   const windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
-  const { styles, update } = usePopper(referenceElement, popoverRef.current, {
-    placement,
+  const isAutoPlacement = !isFixedPlacement(placement);
+
+  const { refs, floatingStyles, context, elements } = useFloating({
+    placement: isAutoPlacement ? undefined : placement,
     strategy: fixed ? "fixed" : "absolute",
-    modifiers: [
-      {
-        name: "offset",
-        enabled: !!offset,
-        options: {
-          offset: [offset.left, overlapped ? -Number(referenceElement?.offsetHeight) : offset.top],
-        },
-      },
-      {
-        name: "flip",
-        enabled: !noFlip,
-      },
-      { name: "preventOverflow", enabled: !allowOverflow },
+    whileElementsMounted: autoUpdate,
+    elements: {
+      reference: referenceElement,
+    },
+    middleware: [
+      offset({
+        mainAxis: overlapped ? -Number(referenceElement?.offsetHeight) : offsetProp.top,
+        crossAxis: offsetProp.left,
+      }),
+      isAutoPlacement &&
+        autoPlacement({
+          alignment: getAutoAlignment(placement),
+          autoAlignment: !noFlip,
+        }),
+      !noFlip && !isAutoPlacement && flip(),
+      !allowOverflow && shift(),
     ],
   });
 
-  const { popper } = styles;
-
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      if (popoverRef.current) {
-        popoverRef.current.focus();
+      if (elements.floating) {
+        elements.floating.focus();
       }
     }, 100);
-
-    if (update) update();
 
     if (actionsRef.current) {
       const { height } = boundingClientRect({ current: actionsRef.current });
@@ -114,7 +126,7 @@ const PopoverContentWrapper = ({
       clearTimeout(timer);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [update, actions, setActionsHeight, onClose]);
+  }, [actions, setActionsHeight, onClose, elements.floating]);
 
   useClickOutside(
     content,
@@ -125,12 +137,12 @@ const PopoverContentWrapper = ({
   );
 
   const cssVars = {
-    "--popper-top": popper.top,
-    "--popper-left": popper.left,
-    "--popper-right": popper.right,
-    "--popper-bottom": popper.bottom,
-    "--popper-transform": popper.transform,
-    "--popper-position": popper.position,
+    "--popover-top": floatingStyles.top ?? 0,
+    "--popover-left": floatingStyles.left ?? 0,
+    "--popover-right": floatingStyles.right ?? "auto",
+    "--popover-bottom": floatingStyles.bottom ?? "auto",
+    "--popover-transform": floatingStyles.transform,
+    "--popover-position": floatingStyles.position,
     "--popover-zIndex": zIndex,
     "--popover-width": width,
   } as React.CSSProperties;
@@ -152,107 +164,109 @@ const PopoverContentWrapper = ({
         )}
         onClick={onClose}
       />
-      <div
-        role="dialog"
-        // @ts-expect-error expected
-        // eslint-disable-next-line react/no-unknown-property
-        popover
-        ref={popoverRef}
-        data-test={dataTest}
-        id={id}
-        className={cx(
-          "fixed",
-          "inset-x-0 bottom-0",
-          "h-auto w-full",
-          "z-[1000]",
-          "box-border",
-          "shadow-level3-reverse",
-          "bg-white-normal",
-          "max-h-[calc(100%_-_theme(spacing.800))]",
-          "focus:outline-none",
-          "lm:top-[var(--popper-top)]",
-          "lm:left-[var(--popper-left)]",
-          "lm:right-[var(--popper-right)]",
-          "lm:bottom-[var(--popper-bottom)]",
-          "lm:[position:var(--popper-position)]",
-          "lm:[transform:var(--popper-transform)]",
-          "lm:transition-opacity lm:duration-fast lm:ease-in-out",
-          "lm:rounded-100",
-          "lm:shadow-level3",
-          "lm:max-h-none",
-          isInsideModal ? "lm:z-[1000]" : "lm:z-[var(--popover-zIndex)]",
-          width ? "lm:w-[var(--popover-width)]" : "lm:w-auto",
-          shown ? "lm:opacity-100" : "lm:opacity-0",
-        )}
-        style={cssVars}
-      >
+      <FloatingFocusManager context={context}>
         <div
-          ref={content}
+          role="dialog"
+          // @ts-expect-error expected
+          // eslint-disable-next-line react/no-unknown-property
+          popover
+          ref={refs.setFloating}
+          data-test={dataTest}
+          id={id}
           className={cx(
-            shown ? "translate-y-0" : "translate-y-full",
-            "will-change-transform",
-            "duration-fast transition-[opacity,transform] ease-in-out",
-            "lm:transform-none",
-            "lm:transition-none",
+            "fixed",
+            "inset-x-0 bottom-0",
+            "h-auto w-full",
+            "z-[1000]",
+            "box-border",
+            "shadow-level3-reverse",
+            "bg-white-normal",
+            "max-h-[calc(100%_-_theme(spacing.800))]",
+            "focus:outline-none",
+            "lm:top-[var(--popover-top)]",
+            "lm:left-[var(--popover-left)]",
+            "lm:right-[var(--popover-right)]",
+            "lm:bottom-[var(--popover-bottom)]",
+            "lm:[position:var(--popover-position)]",
+            "lm:[transform:var(--popover-transform)]",
+            "lm:transition-opacity lm:duration-fast lm:ease-in-out",
+            "lm:rounded-100",
+            "lm:shadow-level3",
+            "lm:max-h-none",
+            isInsideModal ? "lm:z-[1000]" : "lm:z-[var(--popover-zIndex)]",
+            width ? "lm:w-[var(--popover-width)]" : "lm:w-auto",
+            shown ? "lm:opacity-100" : "lm:opacity-0",
           )}
+          style={cssVars}
         >
           <div
-            ref={scrollingElementRef}
+            ref={content}
             className={cx(
-              "overflow-auto",
-              "rounded-t-modal",
-              "absolute left-0",
-              "w-full",
-              "bg-white-normal",
-              "bottom-[var(--actions-height)]",
-              windowHeight &&
-                actionsHeight &&
-                "max-h-[calc(var(--window-height)-var(--actions-height)-32px)]",
-              noPadding ? "p-0" : "p-400",
-              "lm:max-h-[var(--max-height)]",
-              "lm:rounded-100",
-              "lm:bottom-auto",
-              "lm:left-auto",
-              "lm:relative",
+              shown ? "translate-y-0" : "translate-y-full",
+              "will-change-transform",
+              "duration-fast transition-[opacity,transform] ease-in-out",
+              "lm:transform-none",
+              "lm:transition-none",
             )}
-            style={
-              {
-                "--actions-height": actionsHeight != null && `${actionsHeight}px`,
-                "--window-height": windowHeight != null && `${windowHeight}px`,
-                "--max-height": maxHeight != null ? `${maxHeight}px` : "100%",
-              } as React.CSSProperties
-            }
           >
-            {children}
-          </div>
-          {actions ? (
             <div
-              ref={actionsRef}
+              ref={scrollingElementRef}
               className={cx(
-                "fixed",
-                "bottom-0 left-0",
+                "overflow-auto",
+                "rounded-t-modal",
+                "absolute left-0",
                 "w-full",
-                "box-border",
-                "p-400 pt-300",
                 "bg-white-normal",
-                "[&_.orbit-button-primitive]:w-full [&_.orbit-button-primitive]:flex-auto",
+                "bottom-[var(--actions-height)]",
+                windowHeight &&
+                  actionsHeight &&
+                  "max-h-[calc(var(--window-height)-var(--actions-height)-32px)]",
+                noPadding ? "p-0" : "p-400",
+                "lm:max-h-[var(--max-height)]",
+                "lm:rounded-100",
+                "lm:bottom-auto",
+                "lm:left-auto",
                 "lm:relative",
-                "lm:bottom-auto lm:left-auto",
-                "lm:rounded-b-100",
-                "lm:[&_.orbit-button-primitive]:w-auto lm:[&_.orbit-button-primitive]:grow-0",
               )}
+              style={
+                {
+                  "--actions-height": actionsHeight != null && `${actionsHeight}px`,
+                  "--window-height": windowHeight != null && `${windowHeight}px`,
+                  "--max-height": maxHeight != null ? `${maxHeight}px` : "100%",
+                } as React.CSSProperties
+              }
             >
-              {actions}
+              {children}
             </div>
-          ) : (
-            <div ref={actionsRef} className="p-400 lm:hidden lm:pb-0">
-              <Button type="secondary" fullWidth onClick={onClose}>
-                {labelClose}
-              </Button>
-            </div>
-          )}
+            {actions ? (
+              <div
+                ref={actionsRef}
+                className={cx(
+                  "fixed",
+                  "bottom-0 left-0",
+                  "w-full",
+                  "box-border",
+                  "p-400 pt-300",
+                  "bg-white-normal",
+                  "[&_.orbit-button-primitive]:w-full [&_.orbit-button-primitive]:flex-auto",
+                  "lm:relative",
+                  "lm:bottom-auto lm:left-auto",
+                  "lm:rounded-b-100",
+                  "lm:[&_.orbit-button-primitive]:w-auto lm:[&_.orbit-button-primitive]:grow-0",
+                )}
+              >
+                {actions}
+              </div>
+            ) : (
+              <div ref={actionsRef} className="p-400 lm:hidden lm:pb-0">
+                <Button type="secondary" fullWidth onClick={onClose}>
+                  {labelClose}
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </FloatingFocusManager>
     </>
   );
 };

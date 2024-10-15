@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
+import { FloatingPortal } from "@floating-ui/react";
 
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
-import { PLACEMENTS } from "../common/consts";
+import { PLACEMENTS } from "../common/placements";
 import PopoverContent from "./components/ContentWrapper";
 import useRandomId from "../hooks/useRandomId";
-import Portal from "../Portal";
 import handleKeyDown from "../utils/handleKeyDown";
 import type { Props } from "./types";
 
@@ -165,7 +165,9 @@ const Popover = ({
       >
         {children}
       </div>
-      {render && (renderInPortal ? <Portal renderInto="popovers">{popover}</Portal> : popover)}
+      {render &&
+        // eslint-disable-next-line orbit-components/unique-id
+        (renderInPortal ? <FloatingPortal id="popovers">{popover}</FloatingPortal> : popover)}
     </>
   );
 };

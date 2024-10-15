@@ -2,7 +2,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { PLACEMENTS } from "../common/consts";
+import { PLACEMENTS, AUTO_PLACEMENTS } from "../common/placements";
 import * as Icons from "../icons";
 import { SIZE_OPTIONS } from "./consts";
 import Stack from "../Stack";
@@ -181,7 +181,7 @@ export const WithImageInside: Story = {
       },
     },
     placement: {
-      options: Object.values(PLACEMENTS),
+      options: [...Object.values(AUTO_PLACEMENTS), ...Object.values(PLACEMENTS)],
       control: {
         type: "select",
       },

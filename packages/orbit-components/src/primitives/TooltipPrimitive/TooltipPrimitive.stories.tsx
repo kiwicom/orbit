@@ -12,7 +12,7 @@ import ListItem from "../../List/ListItem";
 import Heading from "../../Heading";
 import Button from "../../Button";
 import RenderInRtl from "../../utils/rtl/RenderInRtl";
-import { PLACEMENTS } from "../../common/consts";
+import { PLACEMENTS, AUTO_PLACEMENTS } from "../../common/placements";
 
 import TooltipPrimitive from ".";
 
@@ -179,7 +179,7 @@ export const WithImageInside: Story = {
       },
     },
     placement: {
-      options: Object.values(PLACEMENTS),
+      options: [...Object.values(AUTO_PLACEMENTS), ...Object.values(PLACEMENTS)],
       control: {
         type: "select",
       },
@@ -231,7 +231,7 @@ export const Playground: Story = {
     removeUnderlinedText: false,
     block: false,
     noFlip: false,
-    offset: [0, 0],
+    offset: [0, 5],
     ...WithImageInside.args,
   },
 

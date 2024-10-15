@@ -1,12 +1,11 @@
 import * as React from "react";
 import cx from "clsx";
-import { usePopper } from "react-popper";
+import { autoUpdate, useFloating, offset } from "@floating-ui/react";
 
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
 import CloseIcon from "../../icons/Close";
-import useTheme from "../../hooks/useTheme";
 import type { Props } from "./types";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
@@ -22,55 +21,29 @@ const ErrorFormTooltip = ({
   id,
 }: Props) => {
   const contentRef = React.useRef<HTMLDivElement | null>(null);
-  const tooltipRef = React.useRef<HTMLDivElement | null>(null);
-  const [arrowRef, setArrowRef] = React.useState<HTMLDivElement | null>(null);
-  const { rtl } = useTheme();
   const { isDesktop } = useMediaQuery();
 
-  const {
-    styles,
-    attributes: attrs,
-    update,
-  } = usePopper(referenceElement?.current, tooltipRef.current, {
-    placement: rtl ? "top-end" : "top-start",
-    modifiers: [
-      {
-        name: "offset",
-        options: {
-          offset: [inlineLabel || isDesktop ? 0 : 4, 3],
-        },
-      },
-      {
-        name: "flip",
-        enabled: false,
-      },
-      {
-        name: "arrow",
-        options: {
-          element: arrowRef,
-        },
-      },
-      {
-        name: "eventListeners",
-        options: {
-          scroll: false,
-        },
-      },
+  const { refs, floatingStyles, elements } = useFloating({
+    placement: "top-start",
+    whileElementsMounted: autoUpdate,
+    onOpenChange: onShown,
+    elements: {
+      reference: referenceElement?.current,
+    },
+    middleware: [
+      offset({
+        mainAxis: 3,
+        crossAxis: inlineLabel || isDesktop ? 0 : 4,
+      }),
     ],
   });
 
-  const { popper } = styles;
-
-  useClickOutside(tooltipRef, () => {
+  useClickOutside(refs.floating, () => {
     onShown(false);
   });
 
   React.useEffect(() => {
-    if (update) update();
-  }, [update, shown]);
-
-  React.useEffect(() => {
-    const link = tooltipRef.current?.querySelector("a");
+    const link = elements.floating?.querySelector("a");
     const handleTab = ev => {
       if (isHelp) return;
       if (ev.keyCode === KEY_CODE_MAP.TAB && link) {
@@ -87,28 +60,21 @@ const ErrorFormTooltip = ({
     return () => {
       window.removeEventListener("keydown", handleTab);
     };
-  }, [onShown, isHelp, helpClosable]);
-
-  const isVertical =
-    attrs.popper &&
-    (attrs.popper["data-popper-placement"] === "top-start" ||
-      attrs.popper["data-popper-placement"] === "top-end")
-      ? "bottom"
-      : "top";
+  }, [onShown, isHelp, helpClosable, elements.floating]);
 
   const cssVars = {
-    "--error-form-tooltip-position": popper.position,
-    "--error-form-tooltip-top": popper.top,
-    "--error-form-tooltip-left": popper.left,
-    "--error-form-tooltip-right": popper.right,
-    "--error-form-tooltip-bottom": popper.bottom,
-    "--error-form-tooltip-transform": popper.transform,
+    "--error-form-tooltip-position": floatingStyles.position,
+    "--error-form-tooltip-top": floatingStyles.top,
+    "--error-form-tooltip-left": floatingStyles.left,
+    "--error-form-tooltip-right": floatingStyles.right,
+    "--error-form-tooltip-bottom": floatingStyles.bottom,
+    "--error-form-tooltip-transform": floatingStyles.transform,
   };
 
   return (
     <div
       id={id}
-      ref={tooltipRef}
+      ref={refs.setFloating}
       aria-live="polite"
       data-test={dataTest}
       className={cx(
@@ -126,13 +92,11 @@ const ErrorFormTooltip = ({
     >
       <div
         className={cx(
-          "start-200 rtl:de:start-0 absolute",
-          isVertical ? "bottom-50" : "top-50",
+          "start-200 bottom-50 absolute rtl:start-0",
           inlineLabel && "rtl:start-0",
           isHelp ? "before:bg-blue-normal" : "before:bg-red-normal",
           "before:size-200 before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45",
         )}
-        ref={setArrowRef}
       />
       <div
         className={cx(

@@ -14,5 +14,12 @@ export const rtlSpacing: RtlSpacing =
     return parts.length === 4 ? [parts[0], parts[3], parts[2], parts[1]].join(" ") : value;
   };
 
+/**
+ * @deprecated This function is deprecated. Use `start` properties instead.
+ */
 export const left = leftToRight("left", "right");
+
+/**
+ * @deprecated This function is deprecated. Use `end` properties instead.
+ */
 export const right = leftToRight("right", "left");

@@ -1,7 +1,6 @@
 import * as React from "react";
 import cx from "clsx";
 
-import { left as leftRight } from "../../../utils/rtl";
 import type { Value } from "../../types";
 import useTheme from "../../../hooks/useTheme";
 
@@ -87,8 +86,7 @@ const Handle = ({
         onTop && "z-20",
       )}
       style={{
-        // TODO use inset-inline-start once we don’t support ios_safari 14
-        [leftRight({ theme })]: `calc(${left}% - ${theme.orbit.space300})`,
+        insetInlineStart: `calc(${left}% - ${theme.orbit.space300})`,
       }}
       data-test={dataTest}
       tabIndex={0}

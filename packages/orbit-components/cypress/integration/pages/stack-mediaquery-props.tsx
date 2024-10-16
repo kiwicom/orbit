@@ -13,13 +13,13 @@ export default function StackMediaProps() {
   return (
     <Stack
       spacing="none"
-      legacy
+      useMargin
       dataTest="test"
       mediumMobile={{ spacing: "50" }}
       largeMobile={{ spacing: "100", direction: "column" }}
       tablet={{ spacing: "200", direction: "row" }}
       desktop={{ spacing: "300" }}
-      largeDesktop={{ spacing: "400", legacy: false }}
+      largeDesktop={{ spacing: "400", useMargin: false }}
     >
       <div style={{ background: "blue", ...commonStyles }}>1</div>
       <div style={{ background: "red", ...commonStyles }}>2</div>

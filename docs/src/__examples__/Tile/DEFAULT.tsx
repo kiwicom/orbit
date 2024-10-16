@@ -1,14 +1,16 @@
 import React from "react";
-import { Tile, Text } from "@kiwicom/orbit-components";
+import { Tile, Text, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Tile
-      href="https://orbit.kiwi/design-patterns/progressive-disclosure/"
-      title="Read more about progressive disclosure"
-    >
-      <Text>Content</Text>
-    </Tile>
+    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <Tile
+        href="https://orbit.kiwi/design-patterns/progressive-disclosure/"
+        title="Read more about progressive disclosure"
+      >
+        <Text>Content</Text>
+      </Tile>
+    </OrbitProvider>
   ),
   exampleKnobs: [
     {

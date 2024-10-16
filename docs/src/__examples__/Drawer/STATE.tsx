@@ -1,5 +1,14 @@
 import React from "react";
-import { ButtonLink, Heading, Stack, Text, Drawer, Tile } from "@kiwicom/orbit-components";
+import {
+  ButtonLink,
+  Heading,
+  Stack,
+  Text,
+  Drawer,
+  Tile,
+  OrbitProvider,
+  defaultTheme,
+} from "@kiwicom/orbit-components";
 import { QuestionCircle } from "@kiwicom/orbit-components/icons";
 
 export default {
@@ -64,7 +73,7 @@ export default {
         );
     }
     return (
-      <>
+      <OrbitProvider theme={defaultTheme} useId={React.useId}>
         {showDrawer && (
           <Drawer
             title="Help"
@@ -98,7 +107,7 @@ export default {
             }}
           />
         </Stack>
-      </>
+      </OrbitProvider>
     );
   },
 };

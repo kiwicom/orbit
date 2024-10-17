@@ -86,7 +86,7 @@
     "gatsby-remark-images": "^7.13.1",
     "gatsby-remark-smartypants": "^5.9.0",
     "gatsby-source-filesystem": "^4.11.1",
-    "gatsby-transformer-sharp": "^4.11.0",
+    "gatsby-transformer-sharp": "^5.13.1",
     "globby": "^11.0.2",
     "gray-matter": "^4.0.2",
     "js-yaml": "^4.0.0",

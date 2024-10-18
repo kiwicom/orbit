@@ -35,6 +35,7 @@ describe(`Radio`, () => {
     expect(radio).toHaveAttribute("name", name);
     expect(radio).toHaveAttribute("readonly");
     expect(radio).toHaveAttribute("data-state", "ok");
+    expect(radio).not.toHaveAttribute("checked");
     expect(screen.getByDisplayValue(value)).toBeInTheDocument();
     await user.click(radio);
     expect(onChange).toHaveBeenCalled();
@@ -48,5 +49,35 @@ describe(`Radio`, () => {
   it("should have error state", () => {
     render(<Radio hasError onChange={() => {}} />);
     expect(screen.getByRole("radio")).toHaveAttribute("data-state", "error");
+  });
+
+  it("can be uncontrolled", async () => {
+    const onChange = jest.fn();
+    render(<Radio label="Radio" onChange={onChange} value="option" dataTest="test" name="name" />);
+
+    const radio = screen.getByRole("radio") as HTMLInputElement;
+    expect(radio.checked).toBeFalsy();
+    await user.click(radio);
+    expect(onChange).toHaveBeenCalled();
+    expect(radio.checked).toBeTruthy();
+  });
+
+  it("can be uncontrolled and checked by default", async () => {
+    const onChange = jest.fn();
+    render(
+      <Radio
+        label="Radio"
+        onChange={onChange}
+        value="option"
+        dataTest="test"
+        name="name"
+        defaultChecked
+      />,
+    );
+
+    const radio = screen.getByRole("radio") as HTMLInputElement;
+    expect(radio.checked).toBeTruthy();
+    await user.click(radio);
+    expect(onChange).not.toHaveBeenCalled();
   });
 });

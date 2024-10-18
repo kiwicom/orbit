@@ -13,6 +13,7 @@ export interface Props extends Common.Globals {
   readonly disabled?: boolean;
   readonly name?: string;
   readonly checked?: boolean;
+  readonly defaultChecked?: boolean;
   readonly info?: React.ReactNode;
   readonly tooltip?: React.ReactElement<typeof Tooltip>;
   readonly readOnly?: boolean;

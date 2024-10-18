@@ -14,7 +14,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     value,
     hasError = false,
     disabled = false,
-    checked = false,
+    checked,
+    defaultChecked,
     name,
     onChange,
     dataTest,
@@ -33,24 +34,31 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         "flex flex-row",
         "relative w-full",
         "[&_.orbit-checkbox-icon-container]:hover:shadow-none",
+        "[&_.orbit-checkbox-icon-container]:has-[:checked]:bg-blue-normal [&_.orbit-checkbox-icon-container]:has-[:checked]:hover:bg-blue-dark",
+        "[&_.orbit-checkbox-icon-container]:has-[:focus]:outline-blue-normal [&_.orbit-checkbox-icon-container]:has-[:focus]:outline [&_.orbit-checkbox-icon-container]:has-[:focus]:outline-2",
+        "[&_.orbit-checkbox-icon-container>svg]:has-[:checked]:visible",
         disabled
-          ? "cursor-not-allowed"
+          ? [
+              "cursor-not-allowed",
+              "[&_.orbit-checkbox-icon-container]:bg-form-element-disabled-background",
+              "[&_.orbit-checkbox-icon-container]:has-[:checked]:bg-cloud-dark",
+              checked && "[&_.orbit-checkbox-icon-container]:bg-cloud-dark",
+            ]
           : [
               "cursor-pointer",
+              "[&_.orbit-checkbox-icon-container]:has-[:checked]:border-blue-normal [&_.orbit-checkbox-icon-container]:has-[:checked]:hover:border-blue-dark",
               checked &&
+                !hasError &&
                 "[&_.orbit-checkbox-icon-container]:bg-blue-normal [&_.orbit-checkbox-icon-container]:border-blue-normal [&_.orbit-checkbox-icon-container]:hover:bg-blue-dark [&_.orbit-checkbox-icon-container]:hover:border-blue-dark",
               !checked && "[&_.orbit-checkbox-icon-container]:bg-form-element-background",
-              !checked &&
-                hasError &&
-                "[&_.orbit-checkbox-icon-container]:border-form-element-error",
-              !checked &&
-                !hasError &&
-                "[&_.orbit-checkbox-icon-container]:border-form-element-border-color [&_.orbit-checkbox-icon-container]:hover:border-blue-light-active [&_.orbit-checkbox-icon-container]:active:border-form-element-focus",
+              !checked && hasError
+                ? "[&_.orbit-checkbox-icon-container]:border-form-element-error"
+                : "[&_.orbit-checkbox-icon-container]:border-form-element-border-color [&_.orbit-checkbox-icon-container]:hover:border-blue-light-active [&_.orbit-checkbox-icon-container]:active:border-form-element-focus",
             ],
       )}
     >
       <input
-        className="-z-default peer absolute opacity-0"
+        className="-z-default absolute opacity-0"
         data-test={dataTest}
         id={id}
         data-state={getFieldDataState(!!hasError)}
@@ -60,6 +68,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         name={name}
         tabIndex={tabIndex ? Number(tabIndex) : undefined}
         checked={checked}
+        defaultChecked={defaultChecked}
         onChange={!readOnly ? onChange : undefined}
         onClick={e => readOnly && e.stopPropagation()}
         ref={ref}
@@ -76,16 +85,11 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "size-icon-medium",
             "rounded-150 de:rounded-100",
             "duration-fast transition-all ease-in-out",
-            "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
             "[&>svg]:size-icon-small",
             "[&>svg]:flex [&>svg]:items-center [&>svg]:justify-center",
             "active:scale-95",
             checked ? "[&>svg]:visible" : "[&>svg]:invisible",
-            disabled && [
-              "border-cloud-dark",
-              checked && "bg-cloud-dark",
-              !checked && "bg-form-element-disabled-background",
-            ],
+            disabled && ["border-cloud-dark"],
           )}
         >
           <Check customColor="white" />

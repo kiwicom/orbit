@@ -11,6 +11,7 @@ export interface Props extends Common.Globals {
   readonly hasError?: boolean;
   readonly disabled?: boolean;
   readonly checked?: boolean;
+  readonly defaultChecked?: boolean;
   readonly name?: string;
   readonly info?: React.ReactNode;
   readonly tabIndex?: string | number;

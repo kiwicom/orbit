@@ -10,13 +10,13 @@ import Tooltip from "../Tooltip";
 import Checkbox from ".";
 
 const meta: Meta<typeof Checkbox> = {
-  title: "CheckBox",
+  title: "Checkbox",
   component: Checkbox,
 
   parameters: {
     info: "Additionally you can add tooltip to this component.",
     controls: {
-      exclude: ["onChange"],
+      exclude: ["onChange", "defaultChecked", "readOnly", "value", "name"],
     },
   },
 
@@ -46,6 +46,20 @@ export const Default: Story = {
   },
 
   args: {
+    info: undefined,
+  },
+};
+
+export const Uncontrolled: Story = {
+  parameters: {
+    info: `Uncontrolled Checkbox. It doesn't require "checked" prop. Can be used with "defaultChecked" prop.`,
+    controls: {
+      exclude: ["checked", "info", "hasError", "disabled", "name", "value", "onChange"],
+    },
+  },
+
+  args: {
+    checked: undefined,
     info: undefined,
   },
 };

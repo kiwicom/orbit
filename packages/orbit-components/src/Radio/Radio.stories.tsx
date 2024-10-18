@@ -16,7 +16,7 @@ const meta: Meta<typeof Radio> = {
   parameters: {
     info: "Radio component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onChange"],
+      exclude: ["onChange", "defaultChecked", "readOnly", "value", "name"],
     },
   },
 
@@ -42,11 +42,25 @@ export const Default: Story = {
   parameters: {
     info: "Default settings of component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["info", "hasError", "disabled", "readOnly", "onChange", "tabIndex"],
+      exclude: ["info", "hasError", "disabled", "onChange", "tabIndex", "value", "name"],
     },
   },
 
   args: {
+    info: undefined,
+  },
+};
+
+export const Uncontrolled: Story = {
+  parameters: {
+    info: `Uncontrolled Radio. It doesn't require "checked" prop. Can be used with "defaultChecked" prop.`,
+    controls: {
+      exclude: ["checked", "info", "hasError", "disabled", "onChange", "tabIndex", "value", "name"],
+    },
+  },
+
+  args: {
+    checked: undefined,
     info: undefined,
   },
 };

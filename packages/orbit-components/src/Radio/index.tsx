@@ -13,7 +13,8 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     value,
     hasError = false,
     disabled = false,
-    checked = false,
+    checked,
+    defaultChecked,
     onChange,
     name,
     info,
@@ -29,25 +30,36 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       htmlFor={id}
       className={cx(
         "font-base text-form-element-label-foreground relative flex w-full [align-items:self-start]",
-        disabled ? "cursor-not-allowed" : "cursor-pointer",
-        !disabled && [
-          !checked &&
-            (hasError
-              ? "[&>.orbit-radio-icon-container]:border-form-element-error [&>.orbit-radio-icon-container]:hover:border-form-element-error-hover [&>.orbit-radio-icon-container]:active:border-form-element-error"
-              : "[&>.orbit-radio-icon-container]:border-form-element [&>.orbit-radio-icon-container]:hover:border-form-element-hover [&>.orbit-radio-icon-container]:active:border-form-element-active"),
-          checked &&
-            "[&>.orbit-radio-icon-container]:border-form-element-focus active:border-form-element-focus [&>.orbit-radio-icon-container]:bg-white-normal",
-        ],
+        "[&_.orbit-radio-icon-container]:has-[:checked]:border-2 [&_.orbit-radio-icon-container_span]:has-[:checked]:visible",
+        "[&_.orbit-radio-icon-container]:has-[:focus]:outline-blue-normal [&_.orbit-radio-icon-container]:has-[:focus]:outline [&_.orbit-radio-icon-container]:has-[:focus]:outline-2",
+        disabled
+          ? [
+              "cursor-not-allowed",
+              "[&_.orbit-radio-icon-container]:bg-cloud-light [&_.orbit-radio-icon-container]:border-cloud-dark",
+            ]
+          : [
+              "cursor-pointer",
+              "[&_.orbit-radio-icon-container]:has-[:checked]:border-form-element-focus [&_.orbit-radio-icon-container]:has-[:checked]:active:border-form-element-focus [&_.orbit-radio-icon-container]:has-[:checked]:bg-white-normal [&_.orbit-radio-icon-container]:bg-form-element-background",
+              !checked &&
+                hasError &&
+                "[&_.orbit-radio-icon-container]:border-form-element-error [&_.orbit-radio-icon-container]:hover:border-form-element-error-hover [&_.orbit-radio-icon-container]:active:border-form-element-error",
+              !hasError &&
+                "[&_.orbit-radio-icon-container]:border-form-element [&_.orbit-radio-icon-container]:hover:border-form-element-hover [&_.orbit-radio-icon-container]:active:border-form-element-active",
+              checked &&
+                !hasError &&
+                "[&_.orbit-radio-icon-container]:border-form-element-focus active:border-form-element-focus [&_.orbit-radio-icon-container]:bg-white-normal",
+            ],
       )}
     >
       <input
         data-test={dataTest}
         data-state={getFieldDataState(hasError)}
-        className="peer absolute opacity-0"
+        className="absolute opacity-0"
         value={value}
         type="radio"
         disabled={disabled}
         checked={checked}
+        defaultChecked={defaultChecked}
         id={id}
         onChange={onChange}
         name={name}
@@ -67,8 +79,6 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "border-solid",
             checked ? "border-2" : "border",
             "active:scale-95",
-            "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
-            disabled ? "bg-cloud-light border-cloud-dark" : "bg-form-element-background",
           )}
         >
           <span

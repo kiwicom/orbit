@@ -3,7 +3,7 @@ message: "Try to use meaningful text for links."
 link: "https://orbit.kiwi/content/technical-content/language/#creating-links"
 level: warning
 nonword: true
-scope: link
+scope: raw
 tokens:
   - (?<!t)here
   - click here

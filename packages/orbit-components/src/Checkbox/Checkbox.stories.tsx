@@ -27,7 +27,6 @@ const meta: Meta<typeof Checkbox> = {
     checked: false,
     hasError: false,
     disabled: false,
-    readOnly: false,
     name: "name",
     onChange: action("onChange"),
   },
@@ -41,7 +40,7 @@ export const Default: Story = {
   parameters: {
     info: "Checkbox needs only label and onChange by default.",
     controls: {
-      exclude: ["info", "hasError", "disabled", "readOnly", "name", "value", "onChange"],
+      exclude: ["info", "hasError", "disabled", "name", "value", "onChange"],
     },
   },
 
@@ -123,16 +122,6 @@ export const WithTooltip: Story = {
 
   args: {
     disabled: true,
-  },
-};
-
-export const ReadOnly: Story = {
-  args: {
-    readOnly: true,
-  },
-
-  parameters: {
-    info: "This is a preview of this component in read-only state.",
   },
 };
 

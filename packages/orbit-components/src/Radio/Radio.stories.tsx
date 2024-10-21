@@ -28,7 +28,6 @@ const meta: Meta<typeof Radio> = {
     checked: false,
     disabled: false,
     hasError: false,
-    readOnly: false,
     tabIndex: 0,
     onChange: action("changed"),
   },
@@ -73,7 +72,7 @@ export const WithError: Story = {
   parameters: {
     info: "Error state of Radio component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["disabled", "readOnly", "onChange", "tabIndex"],
+      exclude: ["disabled", "onChange", "tabIndex"],
     },
   },
 };
@@ -93,7 +92,7 @@ export const WithTextLinkInLabel: Story = {
 
   parameters: {
     controls: {
-      exclude: ["onChange", "hasError", "disabled", "label", "readOnly", "tabIndex"],
+      exclude: ["onChange", "hasError", "disabled", "label", "tabIndex"],
     },
   },
 };
@@ -107,18 +106,6 @@ export const WithTooltip: Story = {
       }
     />
   ),
-
-  parameters: {
-    controls: {
-      exclude: ["onChange", "hasError", "disabled", "readOnly", "tabIndex"],
-    },
-  },
-};
-
-export const ReadOnly: Story = {
-  args: {
-    readOnly: true,
-  },
 
   parameters: {
     controls: {

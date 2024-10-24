@@ -29,6 +29,29 @@ const preview: Preview = {
   decorators: [orbitDecorator],
   parameters: {
     viewport: { viewports },
+    a11y: {
+      element: "#storybook-root",
+      config: {
+        rules: [
+          {
+            id: "aria-required-attr",
+            selector: '*:not(div.text-heading-title0[role="heading"])',
+          },
+          {
+            id: "color-contrast",
+            selector: "*:not(pre .attr-name.tag.token)",
+          },
+          {
+            id: "color-contrast-enhanced",
+            selector: "*:not(pre .attr-name.tag.token)",
+          },
+          {
+            id: "scrollable-region-focusable",
+            selector: "*not(pre.overflow-x-auto)",
+          },
+        ],
+      },
+    },
   },
 };
 

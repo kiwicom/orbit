@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [17.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@17.0.0...@kiwicom/orbit-components@17.1.0) (2024-10-24)
+
+
+### Features
+
+* **Checkbox:** add defaultSelected prop and uncontrolled behavior ([b4e6f66](https://github.com/kiwicom/orbit/commit/b4e6f66b498ff3dca0d41df42d2164b172411be5))
+* **Checkbox:** deprecate readOnly prop. Use disabled instead ([1101cf2](https://github.com/kiwicom/orbit/commit/1101cf280c25e82eee764912d47a39925f2e5929))
+* deprecate `left`and `right` rtl utils functions ([5b97a63](https://github.com/kiwicom/orbit/commit/5b97a63d28779ee58098be4f9218e768ec046f36))
+* **LinkList:** add useMargin prop and deprecate legacy ([3ac05de](https://github.com/kiwicom/orbit/commit/3ac05de42c9eed69900da37c971822eed154535f))
+* **Radio:** add defaultSelected prop and uncontrolled behavior ([221a5a0](https://github.com/kiwicom/orbit/commit/221a5a02a0a79b7dfb94cd62d74a0888fdfaab15))
+* **Radio:** deprecate readOnly prop. Use disabled instead ([e9327f4](https://github.com/kiwicom/orbit/commit/e9327f465f6cb88cc6b3ebf456fc3dd0526a5058))
+* replace react-popper by floating-ui ([de07d43](https://github.com/kiwicom/orbit/commit/de07d436061256edf6000591113ce6098520d5fd))
+* **Stack:** add useMargin prop and deprecate legacy ([4202c01](https://github.com/kiwicom/orbit/commit/4202c01bd5a88cbee2718a14dee12cb5b1d777c4))
+
+
+
+
+
 # [17.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@16.2.0...@kiwicom/orbit-components@17.0.0) (2024-10-03)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@5.1.0...@kiwicom/orbit-tailwind-preset@6.0.0) (2024-10-24)
+
+
+### Features
+
+* **tailwind:** remove safari variant ([6a0b77f](https://github.com/kiwicom/orbit/commit/6a0b77fbb1f881fd82a9ebf5ad870080a3fc9823))
+
+
+### BREAKING CHANGES
+
+* **tailwind:** safari selector variant no longer supported
+
+
+
+
+
 # [5.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@5.0.0...@kiwicom/orbit-tailwind-preset@5.1.0) (2024-09-05)
 
 

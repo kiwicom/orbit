@@ -64,11 +64,11 @@ const Collapse = ({
       data-test={dataTest}
       id={id}
     >
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <div
         className="block w-full cursor-pointer"
         onClick={handleClick}
-        role="button"
+        role="group"
         tabIndex={-1}
         id={labelID}
       >

@@ -118,7 +118,7 @@
     "unist-util-visit": "^2.0.3",
     "use-resize-observer": "^8.0.0",
     "uuid": "^8.3.2",
-    "vfile-reporter": "^7.0.5",
+    "vfile-reporter": "^8.1.1",
     "webpack": "^5.94.0"
   }
 }

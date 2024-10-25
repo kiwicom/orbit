@@ -30,7 +30,15 @@ export default {
   exampleKnobs: [
     {
       component: "NavigationBar",
-      knobs: [{ name: "hideOnScroll", type: "boolean", defaultValue: true }],
+      knobs: [
+        { name: "hideOnScroll", type: "boolean", defaultValue: true },
+        {
+          name: "bottomStyle",
+          type: "select",
+          options: ["shadow", "border"],
+          defaultValue: "shadow",
+        },
+      ],
     },
   ],
 };

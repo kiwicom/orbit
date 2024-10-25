@@ -32,6 +32,14 @@ const meta: Meta<typeof NavigationBar> = {
     onMenuOpen: action("onMenuOpen"),
     onShow: action("onShow"),
     onHide: action("onHide"),
+    bottomStyle: "shadow",
+  },
+
+  argTypes: {
+    bottomStyle: {
+      options: ["shadow", "border"],
+      control: { type: "select" },
+    },
   },
 };
 

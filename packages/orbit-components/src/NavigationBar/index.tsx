@@ -19,6 +19,7 @@ const NavigationBar = ({
   onShow,
   onHide,
   hideOnScroll = true,
+  bottomStyle = "shadow",
 }: Props) => {
   const resolveCallback = React.useCallback(
     state => {
@@ -63,10 +64,12 @@ const NavigationBar = ({
       data-test={dataTest}
       id={id}
       className={cx(
-        "bg-white-normal shadow-fixed p-300 z-navigation-bar fixed inset-x-0 top-0 box-border flex w-full translate-x-0 items-center",
+        "bg-white-normal p-300 z-navigation-bar fixed inset-x-0 top-0 box-border flex w-full translate-x-0 items-center",
         "duration-normal transform-gpu transition-transform ease-in-out",
         "tb:h-1600 h-[52px]", // As defined on the const above
         shown ? "translate-y-0" : "tb:-translate-y-1600 translate-y-[-52px]", // As defined on the const above
+        bottomStyle === "shadow" && "shadow-fixed",
+        bottomStyle === "border" && "border-cloud-normal border-b",
       )}
     >
       <div className="me-200 block w-full">{children}</div>

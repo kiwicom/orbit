@@ -11,4 +11,5 @@ export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
   readonly openTitle?: string;
   readonly hideOnScroll?: boolean;
+  readonly bottomStyle?: "shadow" | "border";
 }

@@ -1,5 +1,6 @@
 export enum NAME_OPTIONS {
   AIRHELP = "AirHelp",
+  AIRHELPNEW = "AirHelpNew",
   AIRHELPPLUS = "AirHelpPlus",
   ALIPAY = "Alipay",
   AMEX = "Amex",

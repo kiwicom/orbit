@@ -29,8 +29,10 @@ Table below contains all types of the props available in ServiceLogo component.
 | code                    | size       |
 | :---------------------- | :--------- |
 | `"AirHelp"`             | `"small"`  |
-| `"Alipay"`              | `"medium"` |
-| `"Amex"`                | `"large"`  |
+| `"AirHelpNew"`          | `"medium"` |
+| `"AirHelpPlus"`         | `"large"`  |
+| `"Alipay"`              |
+| `"Amex"`                |
 | `"Axa"`                 |
 | `"AxaAssistance"`       |
 | `"AxaWhite"`            |
@@ -53,6 +55,7 @@ Table below contains all types of the props available in ServiceLogo component.
 | `"PayPal"`              |
 | `"RentalCars"`          |
 | `"Sherpa"`              |
+| `"Simtex"`              |
 | `"Sofort"`              |
 | `"TravelPulse"`         |
 | `"Trustly"`             |

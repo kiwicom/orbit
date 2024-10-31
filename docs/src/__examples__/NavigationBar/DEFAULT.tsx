@@ -7,7 +7,7 @@ export default {
       <Stack direction="row" align="center" justify="center">
         <ButtonLink href="https://orbit.kiwi">
           <img
-            src="https://orbit.kiwi/files/2019/08/cropped-OrbitLogo-1.png"
+            src="https://images.kiwi.com/common/orbit-logo-full.png"
             alt="Orbit by Kiwi.com"
             height="40px"
           />

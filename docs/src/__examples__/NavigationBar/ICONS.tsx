@@ -15,7 +15,7 @@ export default {
         <ButtonLink href="https://orbit.kiwi">
           <div style={{ maxWidth: "40px", overflow: "hidden" }}>
             <img
-              src="https://orbit.kiwi/files/2019/08/cropped-OrbitLogo-1.png"
+              src="https://images.kiwi.com/common/orbit-logo-full.png"
               alt="Orbit by Kiwi.com"
               height="40px"
             />

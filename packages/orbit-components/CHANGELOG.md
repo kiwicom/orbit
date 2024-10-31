@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [17.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@17.1.0...@kiwicom/orbit-components@17.2.0) (2024-10-31)
+
+
+### Features
+
+* **icons:** update icons from figma ([46debcd](https://github.com/kiwicom/orbit/commit/46debcd13496feefdfbde8eff7a909841b84bb6f))
+* **icons:** update icons from figma ([506b8a1](https://github.com/kiwicom/orbit/commit/506b8a1cdbfd5c7a6921c2eba02a7dca60349461))
+* **NavigationBar:** add bottomStyle prop with shadow as default ([e38078a](https://github.com/kiwicom/orbit/commit/e38078a705f25b8d2d334ffa50853f6474a2d028))
+* **ServiceLogo:** add AirHelpNew ([ba05de0](https://github.com/kiwicom/orbit/commit/ba05de0b5c11800b542803f3d33dbbf8d17664c8))
+
+
+
+
+
 # [17.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@17.0.0...@kiwicom/orbit-components@17.1.0) (2024-10-24)
 
 

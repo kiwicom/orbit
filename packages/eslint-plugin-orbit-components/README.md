@@ -1,5 +1,8 @@
 # @kiwicom/eslint-plugin-orbit-components
 
+> [!WARNING]
+> This package is deprecated and will no longer be maintained.
+
 Collection of ESLint rules to enforce the best usage practices of [`@kiwicom/orbit-components`](https://github.com/kiwicom/orbit-components/).
 
 ## Installation

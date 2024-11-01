@@ -2,6 +2,7 @@ import * as React from "react";
 import type { Decorator } from "@storybook/react";
 import jsxToString from "react-element-to-jsx-string";
 import { Highlight, themes } from "prism-react-renderer";
+import { addons } from "@storybook/preview-api";
 
 import defaultTheme from "../src/defaultTheme";
 import OrbitProvider from "../src/OrbitProvider";
@@ -15,8 +16,18 @@ const OrbitDecorator: Decorator = (storyFn, context) => {
   React.useEffect(() => {
     const html = document.querySelector("html");
     if (html && !html.getAttribute("dir")) html.setAttribute("dir", "ltr");
+    const componentForceRerender = () => {
+      // Invokes Storybook's addon API method event to trigger a UI refresh.
+      // Ensures that a11y addons is refreshed and shows the correct list of component accessibility issues.
+      console.log("Component is being rerendered.");
+      addons.getChannel().emit("forceReRender");
+    };
+
+    componentForceRerender();
     return () => {
-      if (html) html.removeAttribute("dir");
+      if (html) {
+        html.removeAttribute("dir");
+      }
     };
   }, []);
 

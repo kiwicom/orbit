@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/kiwicom/orbit/compare/@kiwicom/eslint-plugin-orbit-components@0.8.3...@kiwicom/eslint-plugin-orbit-components@0.9.0) (2024-11-04)
+
+
+### Features
+
+* **eslint-plugin:** deprecate package ([27683f4](https://github.com/kiwicom/orbit/commit/27683f41bd721612c1676dd5c18eea0d9aaf938f))
+
+
+
+
+
 ## [0.8.3](https://github.com/kiwicom/orbit/compare/@kiwicom/eslint-plugin-orbit-components@0.8.2...@kiwicom/eslint-plugin-orbit-components@0.8.3) (2024-08-14)
 
 **Note:** Version bump only for package @kiwicom/eslint-plugin-orbit-components

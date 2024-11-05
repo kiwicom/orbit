@@ -30,7 +30,6 @@
     "@icons-pack/react-simple-icons": "^8.0.1",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@kiwicom/babel-plugin-orbit-components": "*",
-    "@kiwicom/eslint-plugin-orbit-components": "*",
     "@kiwicom/orbit-components": "*",
     "@kiwicom/orbit-design-tokens": "*",
     "@kiwicom/orbit-tailwind-preset": "*",

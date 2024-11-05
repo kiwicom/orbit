@@ -99,7 +99,6 @@ module.exports = {
       files: "**/__examples__/**/*.*",
       rules: {
         "import/no-useless-path-segments": ["error", { noUselessIndex: false }],
-        "orbit-components/unique-id": "off",
         "react/no-unstable-nested-components": "off",
       },
     },

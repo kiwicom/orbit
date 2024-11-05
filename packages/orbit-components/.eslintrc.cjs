@@ -37,7 +37,6 @@ module.exports = {
     {
       files: "*.stories.*",
       rules: {
-        "orbit-components/unique-id": "off",
         "react/no-unstable-nested-components": "off",
         // TODO: remove after migration to a new actions
         "import/no-extraneous-dependencies": "off",
@@ -59,7 +58,6 @@ module.exports = {
     {
       files: ["src/**/*.test.ts?(x)", "src/test-utils.tsx"],
       rules: {
-        "orbit-components/unique-id": "off",
         "import/no-extraneous-dependencies": [
           "error",
           {

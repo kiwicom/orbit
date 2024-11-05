@@ -166,7 +166,6 @@ const Popover = ({
         {children}
       </div>
       {render &&
-        // eslint-disable-next-line orbit-components/unique-id
         (renderInPortal ? <FloatingPortal id="popovers">{popover}</FloatingPortal> : popover)}
     </>
   );

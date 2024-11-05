@@ -138,7 +138,6 @@ const TooltipPrimitive = ({
       </TooltipWrapper>
       {enabled &&
         render &&
-        // eslint-disable-next-line orbit-components/unique-id
         (renderInPortal ? <FloatingPortal id="tooltips">{tooltip}</FloatingPortal> : tooltip)}
     </>
   );

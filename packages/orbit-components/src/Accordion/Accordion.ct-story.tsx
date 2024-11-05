@@ -5,8 +5,6 @@ import Text from "../Text";
 
 import Accordion, { AccordionSection } from ".";
 
-/* eslint-disable orbit-components/unique-id */
-
 export default function AccordionVisualTest() {
   return (
     <div className="space-y-400">

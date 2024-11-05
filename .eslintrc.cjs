@@ -5,7 +5,6 @@ const CONFIGS = [
   "plugin:react-hooks/recommended",
   "plugin:prettier/recommended",
   "plugin:tailwindcss/recommended",
-  "plugin:orbit-components/internal",
 ];
 
 module.exports = {

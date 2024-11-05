@@ -538,7 +538,7 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-string-parser/-/helper-string-parser-7.24.8.tgz#5b3329c9a58803d5df425e5785865881a81ca48d"
   integrity sha512-pO9KhhRcuUyGnJWwyEgnRJTSIZHiT+vMD0kPeD+so0l7mxkMT19g3pjY9GTnHySck/hDzq+dtW/4VgnMkippsQ==
 
-"@babel/helper-validator-identifier@^7.10.4", "@babel/helper-validator-identifier@^7.22.5", "@babel/helper-validator-identifier@^7.24.5":
+"@babel/helper-validator-identifier@^7.22.5", "@babel/helper-validator-identifier@^7.24.5":
   version "7.24.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.24.5.tgz#918b1a7fa23056603506370089bd990d8720db62"
   integrity sha512-3q93SSKX2TWCG30M2G2kwaKeTYgEUp5Snjuj8qm729SObL6nbtUldAi37qbxkD5gg3xnBio+f9nqpSepGZMvxA==
@@ -2145,15 +2145,6 @@
     "@babel/types" "^7.24.8"
     debug "^4.3.1"
     globals "^11.1.0"
-
-"@babel/types@=7.12.10":
-  version "7.12.10"
-  resolved "https://registry.npmjs.org/@babel/types/-/types-7.12.10.tgz"
-  integrity sha512-sf6wboJV5mGyip2hIpDSKsr80RszPinEFjsHTalMxZAZkoQ2/2yQzxlcFN52SJqsyPfLtPmenL4g2KB3KJXPDw==
-  dependencies:
-    "@babel/helper-validator-identifier" "^7.10.4"
-    lodash "^4.17.19"
-    to-fast-properties "^2.0.0"
 
 "@babel/types@^7.0.0", "@babel/types@^7.0.0-beta.49", "@babel/types@^7.12.7", "@babel/types@^7.15.4", "@babel/types@^7.16.7", "@babel/types@^7.16.8", "@babel/types@^7.20.0", "@babel/types@^7.20.7", "@babel/types@^7.21.4", "@babel/types@^7.22.5", "@babel/types@^7.23.0", "@babel/types@^7.24.0", "@babel/types@^7.24.5", "@babel/types@^7.3.3", "@babel/types@^7.4.4":
   version "7.24.5"
@@ -11802,13 +11793,6 @@ eslint-plugin-mdx@^1.17.0:
     synckit "^0.4.1"
     tslib "^2.3.1"
     vfile "^4.2.1"
-
-eslint-plugin-orbit-components@*:
-  version "0.6.10"
-  resolved "https://registry.npmjs.org/eslint-plugin-orbit-components/-/eslint-plugin-orbit-components-0.6.10.tgz"
-  integrity sha512-14wKnl/awCZZaFHv3sq3IPmF/9Zhc0M/myoQRIa+7ysRWeZP1frtIaI8U+nUbsXLa0MGU8vJrfV4Z5hDgVrpuA==
-  dependencies:
-    "@babel/types" "=7.12.10"
 
 eslint-plugin-prettier@^4.2.1:
   version "4.2.1"

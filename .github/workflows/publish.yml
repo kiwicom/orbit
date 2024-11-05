@@ -42,7 +42,6 @@ jobs:
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
-          yarn workspace @kiwicom/eslint-plugin-orbit-components build
 
       - name: Dry run
         if: ${{ github.event.inputs.dryrun == 'true' }}

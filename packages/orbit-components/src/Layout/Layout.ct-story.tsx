@@ -54,7 +54,6 @@ export function LayoutStoryWizard() {
     <Layout type="Booking">
       <LayoutColumn>
         <Fill>
-          {/* eslint-disable-next-line orbit-components/unique-id */}
           <Wizard activeStep={3} completedSteps={3} id="wizard">
             <WizardStep title="Search" />
             <WizardStep title="Passenger details" />

@@ -78,7 +78,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "duration-fast scale-100 transition-all ease-in-out",
             "border-solid",
             checked ? "border-2" : "border",
-            "active:scale-95",
+            !disabled && "active:scale-95",
           )}
         >
           <span

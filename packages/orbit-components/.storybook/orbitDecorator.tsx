@@ -51,7 +51,8 @@ const OrbitDecorator: Decorator = (storyFn, context) => {
         <Text spaceAfter="largest" type={inverted ? "white" : "primary"}>
           {context.parameters?.info}
         </Text>
-        {children}
+        {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+        <div className="story-content">{children}</div>
         <div dir="ltr" className="mt-600 relative">
           <Tile>
             <Highlight theme={themes.vsLight} code={code} language="tsx">

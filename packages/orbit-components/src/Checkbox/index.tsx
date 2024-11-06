@@ -34,7 +34,6 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         "flex flex-row",
         "relative w-full",
         "[&_.orbit-checkbox-icon-container]:hover:shadow-none",
-        "[&_.orbit-checkbox-icon-container]:has-[:checked]:bg-blue-normal [&_.orbit-checkbox-icon-container]:has-[:checked]:hover:bg-blue-dark",
         "[&_.orbit-checkbox-icon-container]:has-[:focus]:outline-blue-normal [&_.orbit-checkbox-icon-container]:has-[:focus]:outline [&_.orbit-checkbox-icon-container]:has-[:focus]:outline-2",
         "[&_.orbit-checkbox-icon-container>svg]:has-[:checked]:visible",
         disabled
@@ -46,7 +45,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             ]
           : [
               "cursor-pointer",
-              "[&_.orbit-checkbox-icon-container]:has-[:checked]:border-blue-normal [&_.orbit-checkbox-icon-container]:has-[:checked]:hover:border-blue-dark",
+              "[&_.orbit-checkbox-icon-container]:has-[:checked]:border-blue-normal [&_.orbit-checkbox-icon-container]:has-[:checked]:bg-blue-normal [&_.orbit-checkbox-icon-container]:has-[:checked]:hover:border-blue-dark [&_.orbit-checkbox-icon-container]:has-[:checked]:hover:bg-blue-dark",
               checked &&
                 !hasError &&
                 "[&_.orbit-checkbox-icon-container]:bg-blue-normal [&_.orbit-checkbox-icon-container]:border-blue-normal [&_.orbit-checkbox-icon-container]:hover:bg-blue-dark [&_.orbit-checkbox-icon-container]:hover:border-blue-dark",
@@ -87,9 +86,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "duration-fast transition-all ease-in-out",
             "[&>svg]:size-icon-small",
             "[&>svg]:flex [&>svg]:items-center [&>svg]:justify-center",
-            "active:scale-95",
             checked ? "[&>svg]:visible" : "[&>svg]:invisible",
-            disabled && ["border-cloud-dark"],
+            disabled ? ["border-cloud-dark"] : "active:scale-95",
           )}
         >
           <Check customColor="white" />

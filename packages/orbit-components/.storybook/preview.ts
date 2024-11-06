@@ -29,6 +29,9 @@ const preview: Preview = {
   decorators: [orbitDecorator],
   parameters: {
     viewport: { viewports },
+    a11y: {
+      element: ".story-content",
+    },
   },
 };
 

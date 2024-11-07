@@ -24,10 +24,11 @@ const Seat = ({
   label,
   title,
   description,
+  "aria-labelledby": ariaLabelledBy = "",
 }: Props) => {
   const randomId = useRandomIdSeed();
-  const titleId = randomId("title");
-  const descrId = randomId("descr");
+  const titleId = title ? randomId("title") : "";
+  const descrId = description ? randomId("descr") : "";
   const clickable = type !== TYPES.UNAVAILABLE;
 
   return (
@@ -46,12 +47,12 @@ const Seat = ({
       >
         <svg
           viewBox={size === SIZE_OPTIONS.SMALL ? "0 0 32 36" : "0 0 46 46"}
-          aria-labelledby={`${titleId} ${descrId}`}
+          aria-labelledby={`${[ariaLabelledBy, titleId, descrId].join(" ").trim()}` || undefined}
           fill="none"
           role="img"
         >
-          <title id={titleId}>{title}</title>
-          <desc id={descrId}>{description}</desc>
+          {title && <title id={titleId}>{title}</title>}
+          {description && <desc id={descrId}>{description}</desc>}
 
           {size === SIZE_OPTIONS.SMALL ? (
             <SeatSmall type={type} selected={selected} label={label} />

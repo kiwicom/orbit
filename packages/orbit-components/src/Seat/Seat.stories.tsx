@@ -14,7 +14,7 @@ const meta: Meta<typeof Seat> = {
   parameters: {
     info: "Seat components stories. Visit Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onClick"],
+      exclude: ["onClick", "aria-labelledby"],
     },
   },
 
@@ -40,7 +40,7 @@ type Story = StoryObj<typeof Seat>;
 export const Default: Story = {
   parameters: {
     controls: {
-      exclude: ["type", "size", "title", "description", "selected", "onClick"],
+      exclude: ["aria-labelledby", "type", "size", "selected"],
     },
   },
 };
@@ -72,7 +72,7 @@ export const Legend: Story = {
   parameters: {
     info: "SeatLegend component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["size", "title", "description", "selected", "onClick"],
+      exclude: ["size", "selected", "aria-labelledby"],
     },
   },
 

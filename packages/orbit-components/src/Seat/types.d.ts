@@ -19,6 +19,7 @@ export interface Props extends Common.Globals {
   readonly size?: Size;
   readonly title?: string;
   readonly description?: string;
+  readonly "aria-labelledby"?: string;
   readonly onClick?: Common.Callback;
   readonly selected?: boolean;
   readonly label?: React.ReactNode;

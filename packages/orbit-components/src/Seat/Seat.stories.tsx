@@ -66,7 +66,7 @@ export const Playground: Story = {
   },
 };
 
-export const Legend: Story = {
+export const Legend: StoryObj<typeof SeatLegend> = {
   render: args => <SeatLegend {...args} />,
 
   parameters: {
@@ -78,5 +78,6 @@ export const Legend: Story = {
 
   args: {
     label: "Extra legroom ($ 5.99 – $ 12.98)",
+    "aria-label": "Available seat",
   },
 };

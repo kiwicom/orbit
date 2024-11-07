@@ -10,4 +10,5 @@ type Type = "default" | "legroom" | "unavailable";
 export interface Props extends Common.Globals {
   readonly type?: Type;
   readonly label?: React.ReactNode;
+  readonly "aria-label"?: string;
 }

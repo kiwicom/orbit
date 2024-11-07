@@ -8,10 +8,17 @@ import Text from "../../../Text";
 import { TYPES } from "../../consts";
 import type { Props } from "./types";
 
-const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest }: Props) => {
+const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest, "aria-label": ariaLabel }: Props) => {
   return (
     <Stack inline align="center" spacing="200">
-      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" data-test={dataTest}>
+      <svg
+        width="16"
+        height="20"
+        viewBox="0 0 16 20"
+        fill="none"
+        data-test={dataTest}
+        aria-label={ariaLabel}
+      >
         <path
           className={cx(
             type === TYPES.LEGROOM && "fill-blue-light-active",

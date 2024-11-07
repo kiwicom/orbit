@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [17.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@17.2.0...@kiwicom/orbit-components@17.2.1) (2024-11-07)
+
+#### Bug Fixes
+
+*   **Checkbox:** hover styles were not correct ([871825f](https://github.com/kiwicom/orbit/commit/871825f8dab6523581bb1448f1df11c194e4dd2e))
+*   **Radio:** disabled style was incorrect ([b33121d](https://github.com/kiwicom/orbit/commit/b33121d910a9efb68ff3cd8bdfe985cc816f23b4))
+
 ## [17.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@17.1.0...@kiwicom/orbit-components@17.2.0) (2024-10-31)
 
 #### Features

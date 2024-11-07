@@ -22,8 +22,8 @@ const Seat = ({
   id,
   price,
   label,
-  title = "Seat",
-  description = "Presents options for seating",
+  title,
+  description,
 }: Props) => {
   const randomId = useRandomIdSeed();
   const titleId = randomId("title");

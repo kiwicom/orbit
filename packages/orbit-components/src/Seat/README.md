@@ -34,11 +34,13 @@ Table below contains all types of the props available in Seat component.
 
 Table below contains all types of the props available in Seat/SeatLegend component.
 
-| Name     | Type                  | Default   | Description                         |
-| :------- | :-------------------- | :-------- | :---------------------------------- |
-| dataTest | `string`              |           | Optional prop for testing purposes. |
-| type     | [`enum`](#modal-enum) | `default` | Visual type of SeatLegend           |
-| label    | `string`              |           | Label text inside of a SeatLegend   |
+| Name       | Type                  | Default   | Description                                                                           |
+| :--------- | :-------------------- | :-------- | :------------------------------------------------------------------------------------ |
+| dataTest   | `string`              |           | Optional prop for testing purposes.                                                   |
+| id         | `string`              |           | `id` of the element.                                                                  |
+| type       | [`enum`](#modal-enum) | `default` | Visual type of the rendered seat icon.                                                |
+| label      | `string`              |           | Label text to be displayed next to the seat icon.                                     |
+| aria-label | `string`              |           | Adds `aria-label` attribute to the rendered SVG element. Announced by screen readers. |
 
 ### enum
 

@@ -22,6 +22,6 @@ export interface Props extends Common.Globals {
   readonly "aria-labelledby"?: string;
   readonly onClick?: Common.Callback;
   readonly selected?: boolean;
-  readonly label?: React.ReactNode;
-  readonly price?: React.ReactNode;
+  readonly label?: string;
+  readonly price?: string;
 }

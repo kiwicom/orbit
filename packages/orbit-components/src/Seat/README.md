@@ -23,7 +23,7 @@ Table below contains all types of the props available in Seat component.
 | size            | [`enum`](#modal-enum)   | `medium`  | Size of Seat component.                                              |
 | type            | [`enum`](#modal-enum)   | `default` | Visual type of Seat. If `unavailable`, the element becomes disabled. |
 | price           | `string`                |           | Price of Seat. Displayed as text underneath the svg.                 |
-| label           | `string`                |           | Label text inside of a Seat. Not announced by **screen readers**.    |
+| label           | `string`                |           | Label text inside of a Seat. Not announced by screen readers.        |
 | selected        | `boolean`               |           | Displays Seat as selected.                                           |
 | onClick         | `() => void \| Promise` |           | Function for handling onClick event.                                 |
 | aria-labelledby | `string`                |           | Id(s) of elements that announce the component to screen readers.     |

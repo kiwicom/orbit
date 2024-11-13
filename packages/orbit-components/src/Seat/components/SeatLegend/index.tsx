@@ -8,10 +8,17 @@ import Text from "../../../Text";
 import { TYPES } from "../../consts";
 import type { Props } from "./types";
 
-const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest, "aria-label": ariaLabel }: Props) => {
+const SeatLegend = ({
+  type = TYPES.DEFAULT,
+  label,
+  dataTest,
+  "aria-label": ariaLabel,
+  id,
+}: Props) => {
   return (
     <Stack inline align="center" spacing="200">
       <svg
+        id={id}
         width="16"
         height="20"
         viewBox="0 0 16 20"

@@ -51,6 +51,7 @@ const Header = ({
             <Heading
               type={isSection ? "title4" : "title3"}
               as={titleAs}
+              role={undefined} // To avoid requiring the `level` prop
               dataA11ySection={dataA11ySection}
             >
               {title}

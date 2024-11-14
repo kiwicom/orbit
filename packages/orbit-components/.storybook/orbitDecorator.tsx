@@ -45,7 +45,7 @@ const OrbitDecorator: Decorator = (storyFn, context) => {
   return (
     <OrbitProvider useId={React.useId} theme={{ ...defaultTheme }}>
       <div style={{ padding: "20px" }}>
-        <Heading spaceAfter="medium" inverted={inverted}>
+        <Heading as="h1" spaceAfter="medium" inverted={inverted}>
           {context.kind}
         </Heading>
         <Text spaceAfter="largest" type={inverted ? "white" : "primary"}>

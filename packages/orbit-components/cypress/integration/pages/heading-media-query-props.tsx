@@ -4,6 +4,8 @@ import { Heading } from "@kiwicom/orbit-components";
 export default function HeadingMediaProps() {
   return (
     <Heading
+      role="heading"
+      level={1}
       type="title0"
       mediumMobile={{ type: "display" }}
       largeMobile={{ spaceAfter: "small", type: "title2" }}

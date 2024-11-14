@@ -103,23 +103,6 @@ and not formatting.
 This style is known as ventilated prose.
 Read [more about the reasons to use it](https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line).
 
-## Prose style
-
-In addition to the linting for code style in our docs,
-we also lint to ensure the docs follow our [style guide](https://orbit.kiwi/content/voice-tone/)
-as much as possible.
-
-For this, we use [Vale](https://docs.errata.ai/vale/about).
-Our specifics can be found in the [styles directory](../styles),
-with rules in the `Kiwi` folder and accepted spellings in [accept.txt](../styles/Vocab/Kiwi/accept.txt).
-
-To check your prose yourself, [install Vale](https://docs.errata.ai/vale/install).
-Or you can create a pull request
-and the Vale GitHub Action adds comments pointing out places that could be improved.
-
-The rules aren't perfect at detecting problems,
-so feel free to ignore any suggestions that seem wrong.
-
 ## Checking links
 
 It's important for working documentation to have working links.

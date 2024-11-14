@@ -15,6 +15,8 @@ const Heading = ({
   type = TYPE_OPTIONS.TITLE0,
   align = ALIGN.START,
   as: Component = ELEMENT_OPTIONS.DIV,
+  level,
+  role,
   dataTest,
   inverted = false,
   spaceAfter,
@@ -44,9 +46,10 @@ const Heading = ({
 
   return (
     <Component
+      aria-level={Component === "div" ? level : undefined}
       id={id}
       data-test={dataTest}
-      role={Component === "div" ? "heading" : undefined}
+      role={Component === "div" ? role : undefined}
       data-a11y-section={dataA11ySection}
       className={cx(
         "orbit-heading font-base m-0",

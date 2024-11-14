@@ -18,6 +18,15 @@ describe("Heading", () => {
     expect(heading).toHaveAttribute("id", "id");
   });
 
+  it("renders correct aria-level", () => {
+    render(
+      <Heading role="heading" level={2}>
+        Title
+      </Heading>,
+    );
+    expect(screen.getByRole("heading")).toHaveAttribute("aria-level", "2");
+  });
+
   it.each(Object.values(ALIGN))("should have expected styles from align %s", align => {
     render(
       <Heading dataTest={align} align={align}>

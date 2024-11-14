@@ -16,22 +16,24 @@ After adding import to your project you can use it simply like:
 
 The table below contains all types of props available in the Heading component.
 
-| Name            | Type                       | Default    | Description                                                                                         |
-| :-------------- | :------------------------- | :--------- | :-------------------------------------------------------------------------------------------------- |
-| as              | [`enum`](#enum)            | `"div"`    | The element used for the root node.                                                                 |
-| children        | `React.Node`               |            | The content of the Heading.                                                                         |
-| dataTest        | `string`                   |            | Optional prop for testing purposes.                                                                 |
-| align           | [`enum`](#enum)            | `left`     | `text-align` of `Heading` component                                                                 |
-| dataA11ySection | `string`                   |            | ID for a `<SkipNavigation>` component.                                                              |
-| id              | `string`                   |            | Adds `id` HTML attribute to an element. Expects a unique ID.                                        |
-| inverted        | `boolean`                  |            | The `true`, the Heading color will be white.                                                        |
-| spaceAfter      | `enum`                     |            | Additional `margin-bottom` after component.                                                         |
-| **type**        | [`enum`](#enum)            | `"title1"` | The size type of Heading.                                                                           |
-| mediumMobile    | [`Object`](#media-queries) |            | Object for setting up properties for the mediumMobile viewport. [See Media queries](#media-queries) |
-| largeMobile     | [`Object`](#media-queries) |            | Object for setting up properties for the largeMobile viewport. [See Media queries](#media-queries)  |
-| tablet          | [`Object`](#media-queries) |            | Object for setting up properties for the tablet viewport. [See Media queries](#media-queries)       |
-| desktop         | [`Object`](#media-queries) |            | Object for setting up properties for the desktop viewport. [See Media queries](#media-queries)      |
-| largeDesktop    | [`Object`](#media-queries) |            | Object for setting up properties for the largeDesktop viewport. [See Media queries](#media-queries) |
+| Name            | Type                       | Default    | Description                                                                                                |
+| :-------------- | :------------------------- | :--------- | :--------------------------------------------------------------------------------------------------------- |
+| as              | [`enum`](#enum)            | `"div"`    | The element used for the root node.                                                                        |
+| role            | `"heading"`                |            | The role attribute of the element. Can only be defined if `as="div"`. If defined, `level` must be defined. |
+| level           | `number`                   |            | The level of the Heading. Required if `role` is defined as `"heading"`.                                    |
+| children        | `React.Node`               |            | The content of the Heading.                                                                                |
+| dataTest        | `string`                   |            | Optional prop for testing purposes.                                                                        |
+| align           | [`enum`](#enum)            | `left`     | `text-align` of `Heading` component.                                                                       |
+| dataA11ySection | `string`                   |            | ID for a `<SkipNavigation>` component.                                                                     |
+| id              | `string`                   |            | Adds `id` HTML attribute to an element. Expects a unique ID.                                               |
+| inverted        | `boolean`                  |            | The `true`, the Heading color will be white.                                                               |
+| spaceAfter      | `enum`                     |            | Additional `margin-bottom` after component.                                                                |
+| **type**        | [`enum`](#enum)            | `"title1"` | The size type of Heading.                                                                                  |
+| mediumMobile    | [`Object`](#media-queries) |            | Object for setting up properties for the mediumMobile viewport. [See Media queries](#media-queries)        |
+| largeMobile     | [`Object`](#media-queries) |            | Object for setting up properties for the largeMobile viewport. [See Media queries](#media-queries)         |
+| tablet          | [`Object`](#media-queries) |            | Object for setting up properties for the tablet viewport. [See Media queries](#media-queries)              |
+| desktop         | [`Object`](#media-queries) |            | Object for setting up properties for the desktop viewport. [See Media queries](#media-queries)             |
+| largeDesktop    | [`Object`](#media-queries) |            | Object for setting up properties for the largeDesktop viewport. [See Media queries](#media-queries)        |
 
 ### enum
 

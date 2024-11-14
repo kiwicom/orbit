@@ -2,7 +2,11 @@ import React from "react";
 import { Heading } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <Heading>Orbit components</Heading>,
+  Example: () => (
+    <Heading role="heading" level={1}>
+      Orbit components
+    </Heading>
+  ),
   exampleKnobs: [
     {
       component: "Heading",
@@ -26,7 +30,7 @@ export default {
             "title5",
             "title6",
           ],
-          defaultValue: "div",
+          defaultValue: "title1",
         },
       ],
     },

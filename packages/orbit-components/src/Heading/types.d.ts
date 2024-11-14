@@ -20,13 +20,28 @@ export type As = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
 type Align = "start" | "center" | "end" | "justify";
 
+type LevelProps =
+  | {
+      as: Exclude<As, "div">;
+      role?: never;
+      level?: never;
+    }
+  | {
+      as?: "div";
+      role: "heading";
+      level: number;
+    }
+  | {
+      as?: "div";
+      role?: undefined;
+      level?: never;
+    };
+
 interface MediaQuery extends Common.SpaceAfter {
   readonly type?: Type;
   readonly align?: Align;
 }
-
-export interface Props extends Common.Globals, Common.SpaceAfter {
-  readonly as?: As;
+export interface BaseProps extends Common.Globals, Common.SpaceAfter {
   readonly type?: Type;
   readonly align?: Align;
   readonly children: React.ReactNode;
@@ -39,3 +54,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly desktop?: MediaQuery;
   readonly largeDesktop?: MediaQuery;
 }
+
+export type Props = BaseProps & LevelProps;

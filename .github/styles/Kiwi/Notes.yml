@@ -1,8 +1,0 @@
-message: "'%s' left in text"
-extends: existence
-ignorecase: false
-level: warning
-tokens:
-  - XXX
-  - FIXME
-  - TODO

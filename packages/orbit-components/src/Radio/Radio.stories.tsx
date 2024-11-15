@@ -16,7 +16,7 @@ const meta: Meta<typeof Radio> = {
   parameters: {
     info: "Radio component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onChange", "defaultChecked", "readOnly", "value", "name"],
+      exclude: ["onChange", "defaultChecked", "value", "name"],
     },
   },
 

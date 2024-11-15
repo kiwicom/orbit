@@ -2395,14 +2395,15 @@
     tunnel-agent "^0.6.0"
     uuid "^8.3.2"
 
-"@cypress/vite-dev-server@^4.0.0":
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/@cypress/vite-dev-server/-/vite-dev-server-4.0.1.tgz"
-  integrity sha512-nfIC62Rip3Zd6Nb422qD+afSgaNVp6ovzcAAgWebiglxruBVrOGz38YL3r8zeOqwp0B1sNNrp/WE12gGd3eYVQ==
+"@cypress/vite-dev-server@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@cypress/vite-dev-server/-/vite-dev-server-5.2.0.tgz#f32df3052267107c6cd7292abdc7d05ddd7ca520"
+  integrity sha512-7HuB1vaVri5wnsdZcIkcUd0SB1t5Sh7FT+dteL8A9Hpp+8ACeWjLUJQCZZaRHmuFTnw+bz496bJmFYgBR2Yz3A==
   dependencies:
     debug "^4.3.4"
     find-up "6.3.0"
     node-html-parser "5.3.3"
+    semver "^7.5.3"
 
 "@cypress/xvfb@^1.2.4":
   version "1.2.4"

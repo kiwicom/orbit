@@ -21,7 +21,6 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     dataTest,
     id,
     info,
-    readOnly,
     tabIndex,
     tooltip,
   } = props;
@@ -68,10 +67,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         tabIndex={tabIndex ? Number(tabIndex) : undefined}
         checked={checked}
         defaultChecked={defaultChecked}
-        onChange={!readOnly ? onChange : undefined}
-        onClick={e => readOnly && e.stopPropagation()}
+        onChange={onChange}
         ref={ref}
-        readOnly={readOnly}
       />
       {cloneWithTooltip(
         tooltip,

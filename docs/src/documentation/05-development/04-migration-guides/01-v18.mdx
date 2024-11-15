@@ -19,3 +19,19 @@ This prop was deprecated since Orbit 17.1 and is now removed.
 The prop was semantically incorrect, since `input` elements with `type="radio"` and `type="checkbox"` cannot be read-only.
 
 A possible alternative is to use the `disabled` prop.
+
+### Seat component
+
+#### `title` and `description` props no longer have default values
+
+These props are used to give additional context to the rendered SVG element that visually represents the seat. They are not rendered on the screen, but are announced by screen readers.
+
+The previous default values were not meaningful and could lead to wrong or misleading information.
+
+As they are announced by screen readers, they should have meaningful and translated text.
+
+#### `label` and `price` props now only accept string
+
+These props used to accept React nodes as well, but this could result in some unexpected or wrong HTML structure.
+
+Therefore, these props now only accept strings.

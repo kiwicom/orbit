@@ -8,12 +8,12 @@ const Radios = () => {
   return (
     <Stack>
       <Stack direction="row">
-        <Radio label={label} info={info} readOnly />
-        <Radio label={label} info={info} checked readOnly />
+        <Radio label={label} info={info} />
+        <Radio label={label} info={info} checked />
       </Stack>
       <Stack direction="row">
-        <Radio label={label} info={info} hasError readOnly />
-        <Radio label={label} info={info} disabled readOnly />
+        <Radio label={label} info={info} hasError />
+        <Radio label={label} info={info} disabled />
       </Stack>
     </Stack>
   );

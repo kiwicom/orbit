@@ -8,12 +8,12 @@ const Checkboxes = () => {
   return (
     <Stack>
       <Stack direction="row">
-        <Checkbox label={label} info={info} readOnly />
-        <Checkbox label={label} info={info} checked readOnly />
+        <Checkbox label={label} info={info} />
+        <Checkbox label={label} info={info} checked />
       </Stack>
       <Stack direction="row">
-        <Checkbox label={label} info={info} hasError readOnly />
-        <Checkbox label={label} info={info} disabled readOnly />
+        <Checkbox label={label} info={info} hasError />
+        <Checkbox label={label} info={info} disabled />
       </Stack>
     </Stack>
   );

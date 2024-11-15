@@ -18,7 +18,6 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     onChange,
     name,
     info,
-    readOnly,
     id,
     tabIndex = 0,
     dataTest,
@@ -65,7 +64,6 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         name={name}
         tabIndex={Number(tabIndex)}
         ref={ref}
-        readOnly={readOnly}
       />
       {cloneWithTooltip(
         tooltip,

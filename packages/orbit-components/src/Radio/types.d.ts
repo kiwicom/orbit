@@ -16,10 +16,6 @@ export interface Props extends Common.Globals {
   readonly defaultChecked?: boolean;
   readonly info?: React.ReactNode;
   readonly tooltip?: React.ReactElement<typeof Tooltip>;
-  /**
-   * @deprecated Radio does not support `readOnly` prop. Use `disabled` instead.
-   */
-  readonly readOnly?: boolean;
   readonly tabIndex?: string | number;
   // InputEvent
   readonly onChange?: Common.Event<React.ChangeEvent<HTMLInputElement>>;

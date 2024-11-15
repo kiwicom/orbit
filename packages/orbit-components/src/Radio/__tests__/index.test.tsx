@@ -22,7 +22,6 @@ describe(`Radio`, () => {
         value={value}
         dataTest={dataTest}
         name={name}
-        readOnly
         tabIndex={tabIndex}
       />,
     );
@@ -33,7 +32,6 @@ describe(`Radio`, () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
     expect(radio).toHaveAttribute("tabindex", "-1");
     expect(radio).toHaveAttribute("name", name);
-    expect(radio).toHaveAttribute("readonly");
     expect(radio).toHaveAttribute("data-state", "ok");
     expect(radio).not.toHaveAttribute("checked");
     expect(screen.getByDisplayValue(value)).toBeInTheDocument();

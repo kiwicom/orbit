@@ -73,7 +73,7 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
             </Text>
           )}
         </div>
-        {selectable && <Checkbox checked={selected} readOnly disabled={disabled} tabIndex={-1} />}
+        {selectable && <Checkbox checked={selected} disabled={disabled} tabIndex={-1} />}
         {!selectable && action}
       </div>
     );

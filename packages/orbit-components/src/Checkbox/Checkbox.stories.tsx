@@ -16,7 +16,7 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     info: "Additionally you can add tooltip to this component.",
     controls: {
-      exclude: ["onChange", "defaultChecked", "readOnly", "value", "name"],
+      exclude: ["onChange", "defaultChecked", "value", "name"],
     },
   },
 

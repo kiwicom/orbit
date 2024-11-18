@@ -51,7 +51,6 @@ const checkForDeadUrls = async () => {
 
   const processor = await unified()
     .use(parse)
-    // @ts-expect-error TODO
     .use(inspectUrls, {
       inspectEach({ file, node, url }) {
         const properties = node.properties as { rel: string[] };

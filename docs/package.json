@@ -56,7 +56,7 @@
     "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-plugin-styled-components": "^2.0.7",
     "babel-preset-gatsby": "^2.17.0",
-    "browser-sync": "^2.27.9",
+    "browser-sync": "^3.0.3",
     "check-links": "^2.1.2",
     "copy-to-clipboard": "^3.3.1",
     "downshift": "^6.1.7",

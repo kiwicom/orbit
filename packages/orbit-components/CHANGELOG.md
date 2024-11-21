@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [18.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@17.2.1...@kiwicom/orbit-components@18.0.0) (2024-11-21)
+
+
+### Bug Fixes
+
+* **Seat:** id was not being applied to SeatLegend ([cebf4c6](https://github.com/kiwicom/orbit/commit/cebf4c61b53495c484ff370caed0ee9736a2068a))
+
+
+### Features
+
+* **Checkbox:** remove readOnly prop ([47706f1](https://github.com/kiwicom/orbit/commit/47706f19584c7443ab0a180a668595b3c0e2e1fb))
+* **Heading:** add role and level conditional props ([995ceca](https://github.com/kiwicom/orbit/commit/995cecad5bbd7f553df2707a6c7b890fbc8a0f28))
+* **Radio:** remove readOnly prop ([6d6b95c](https://github.com/kiwicom/orbit/commit/6d6b95cb455f3a71289bc67b5491ddc5c65b8495))
+* **Seat:** add aria-labelledby string prop ([1483f4c](https://github.com/kiwicom/orbit/commit/1483f4cdbda399390a6ec477659a61651fa28fb7))
+* **Seat:** change type of label and price props to string ([cee5c2a](https://github.com/kiwicom/orbit/commit/cee5c2a23c5480a0d97ab64bc4ece79d1451f14c))
+* **SeatLegend:** add aria-label string prop ([3f7da74](https://github.com/kiwicom/orbit/commit/3f7da74e702847d80eb486632ad08bc0c5f3fb5c))
+* **Seat:** remove default values from title and description props ([290bf21](https://github.com/kiwicom/orbit/commit/290bf2100be4686f499c0bfa173e89aea2bba96d))
+
+
+### BREAKING CHANGES
+
+* **Seat:** `label` and `price` props now only accept string.
+They no longer accept ReactNode
+* **Seat:** `title` and `description` props no longer have default values.
+They can be manually set with text to be announced by screen readers.
+* **Checkbox:** readOnly prop no longer available.
+Use disabled instead.
+* **Radio:** readOnly prop no longer available.
+Use disabled instead.
+
+
+
+
+
 ## [17.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@17.2.0...@kiwicom/orbit-components@17.2.1) (2024-11-07)
 
 

@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import remark from "remark";
+import { remark } from "remark";
 import mdx from "remark-mdx";
 import visit from "unist-util-visit";
 import { fs, path } from "zx";

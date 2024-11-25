@@ -31,43 +31,43 @@ const enum Indent {
 function getSideOffsetAmount(indent: SideOffset, align: Align) {
   const classes = {
     left: {
-      [Indent.none]: "pe-0",
-      [Indent.THREE_HUNDRED]: "pe-300",
-      [Indent.small]: "pe-300", // deprecated
-      [Indent.FOUR_HUNDRED]: "pe-400",
-      [Indent.medium]: "pe-400", // deprecated
-      [Indent.SIX_HUNDRED]: "pe-600",
-      [Indent.large]: "pe-600", // deprecated
-      [Indent.EIGHT_HUNDRED]: "pe-800",
-      [Indent.XLarge]: "pe-800", // deprecated
-      [Indent.ONE_THOUSAND]: "pe-1000",
-      [Indent.XXLarge]: "pe-1000", // deprecated
+      [Indent.none]: "w-full",
+      [Indent.THREE_HUNDRED]: "w-[calc(100%_-_theme(spacing.300))]",
+      [Indent.small]: "w-[calc(100%_-_theme(spacing.300))]", // deprecated
+      [Indent.FOUR_HUNDRED]: "w-[calc(100%_-_theme(spacing.400))]",
+      [Indent.medium]: "w-[calc(100%_-_theme(spacing.400))]", // deprecated
+      [Indent.SIX_HUNDRED]: "w-[calc(100%_-_theme(spacing.600))]",
+      [Indent.large]: "w-[calc(100%_-_theme(spacing.600))]", // deprecated
+      [Indent.EIGHT_HUNDRED]: "w-[calc(100%_-_theme(spacing.800))]",
+      [Indent.XLarge]: "w-[calc(100%_-_theme(spacing.800))]", // deprecated
+      [Indent.ONE_THOUSAND]: "w-[calc(100%_-_theme(spacing.1000))]",
+      [Indent.XXLarge]: "w-[calc(100%_-_theme(spacing.1000))]", // deprecated
     },
     right: {
-      [Indent.none]: "ps-0",
-      [Indent.THREE_HUNDRED]: "ps-300",
-      [Indent.small]: "ps-300", // deprecated
-      [Indent.FOUR_HUNDRED]: "ps-400",
-      [Indent.medium]: "ps-400", // deprecated
-      [Indent.SIX_HUNDRED]: "ps-600",
-      [Indent.large]: "ps-600", // deprecated
-      [Indent.EIGHT_HUNDRED]: "ps-800",
-      [Indent.XLarge]: "ps-800", // deprecated
-      [Indent.ONE_THOUSAND]: "ps-1000",
-      [Indent.XXLarge]: "ps-1000", // deprecated
+      [Indent.none]: "w-full",
+      [Indent.THREE_HUNDRED]: "ms-300 w-[calc(100%_-_theme(spacing.300))]",
+      [Indent.small]: "ms-300 w-[calc(100%_-_theme(spacing.300))]", // deprecated
+      [Indent.FOUR_HUNDRED]: "ms-400 w-[calc(100%_-_theme(spacing.400))]",
+      [Indent.medium]: "ms-400 w-[calc(100%_-_theme(spacing.400))]", // deprecated
+      [Indent.SIX_HUNDRED]: "ms-600 w-[calc(100%_-_theme(spacing.600))]",
+      [Indent.large]: "ms-600 w-[calc(100%_-_theme(spacing.600))]", // deprecated
+      [Indent.EIGHT_HUNDRED]: "ms-800 w-[calc(100%_-_theme(spacing.800))]",
+      [Indent.XLarge]: "ms-800 w-[calc(100%_-_theme(spacing.800))]", // deprecated
+      [Indent.ONE_THOUSAND]: "ms-1000 w-[calc(100%_-_theme(spacing.1000))]",
+      [Indent.XXLarge]: "ms-1000 w-[calc(100%_-_theme(spacing.1000))]", // deprecated
     },
     center: {
-      [Indent.none]: "px-0",
-      [Indent.THREE_HUNDRED]: "px-300",
-      [Indent.small]: "px-300", // deprecated
-      [Indent.FOUR_HUNDRED]: "px-400",
-      [Indent.medium]: "px-400", // deprecated
-      [Indent.SIX_HUNDRED]: "px-600",
-      [Indent.large]: "px-600", // deprecated
-      [Indent.EIGHT_HUNDRED]: "px-800",
-      [Indent.XLarge]: "px-800", // deprecated
-      [Indent.ONE_THOUSAND]: "px-1000",
-      [Indent.XXLarge]: "px-1000", // deprecated
+      [Indent.none]: "w-full",
+      [Indent.THREE_HUNDRED]: "ms-300 w-[calc(100%_-_theme(spacing.300)*2)]",
+      [Indent.small]: "ms-300 w-[calc(100%_-_theme(spacing.300)*2)]", // deprecated
+      [Indent.FOUR_HUNDRED]: "ms-400 w-[calc(100%_-_theme(spacing.400)*2)]",
+      [Indent.medium]: "ms-400 w-[calc(100%_-_theme(spacing.400)*2)]", // deprecated
+      [Indent.SIX_HUNDRED]: "ms-600 w-[calc(100%_-_theme(spacing.600)*2)]",
+      [Indent.large]: "ms-600 w-[calc(100%_-_theme(spacing.600)*2)]", // deprecated
+      [Indent.EIGHT_HUNDRED]: "ms-800 w-[calc(100%_-_theme(spacing.800)*2)]",
+      [Indent.XLarge]: "ms-800 w-[calc(100%_-_theme(spacing.800)*2)]", // deprecated
+      [Indent.ONE_THOUSAND]: "ms-1000 w-[calc(100%_-_theme(spacing.1000)*2)]",
+      [Indent.XXLarge]: "ms-1000 w-[calc(100%_-_theme(spacing.1000)*2)]", // deprecated
     },
   };
 
@@ -80,18 +80,24 @@ const Separator = ({
   spaceAfter,
   type = "solid",
   color,
+  label,
 }: Props) => {
   return (
-    <div className={cx("box-border w-full", getSideOffsetAmount(sideOffset, align))}>
+    <div className={cx("relative min-h-px", spaceAfter && getSpaceAfterClasses(spaceAfter))}>
       <hr
         className={cx(
           "orbit-separator",
-          "mt-0 box-border h-0 border-t",
+          "absolute start-0 top-1/2 mt-0 box-border -translate-y-1/2 border-t",
           color || "border-elevation-flat-border-color",
+          getSideOffsetAmount(sideOffset, align),
           BORDER_TYPE_CLASSES[type],
-          spaceAfter && getSpaceAfterClasses(spaceAfter),
         )}
       />
+      {label && (
+        <span className="bg-white-normal px-100 absolute left-1/2 top-1/2 min-w-max -translate-x-1/2 -translate-y-1/2">
+          {label}
+        </span>
+      )}
     </div>
   );
 };

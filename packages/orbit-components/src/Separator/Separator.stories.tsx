@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import defaultTheme from "../defaultTheme";
+import Text from "../Text";
 
 import Separator from ".";
 
@@ -32,6 +33,8 @@ export const Default: Story = {
 };
 
 export const Playground: Story = {
+  render: args => <Separator {...args} label={<Text>{args.label}</Text>} />,
+
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
   },
@@ -42,6 +45,7 @@ export const Playground: Story = {
     type: "solid",
     spaceAfter: "none",
     color: "border-cloud-normal",
+    label: "",
   },
 
   argTypes: {
@@ -58,7 +62,7 @@ export const Playground: Story = {
       },
     },
     sideOffset: {
-      options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
+      options: ["none", "300", "400", "600", "800", "1000"],
       control: {
         type: "select",
       },
@@ -77,13 +81,18 @@ export const Playground: Story = {
         type: "select",
       },
     },
+    label: {
+      control: {
+        type: "text",
+      },
+    },
   },
 };
 
 export const Rtl: Story = {
   render: args => (
     <RenderInRtl>
-      <Separator {...args} />
+      <Separator {...args} label={args.label ? <Text>{args.label}</Text> : undefined} />
     </RenderInRtl>
   ),
 

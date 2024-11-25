@@ -1,5 +1,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
+import type { ReactNode } from "react";
+
 import type * as Common from "../common/types";
 
 export type SideOffset =
@@ -100,4 +102,5 @@ export interface Props extends Common.SpaceAfter {
   readonly align?: Align;
   readonly color?: BorderColorClass;
   readonly type?: "solid" | "dashed" | "dotted" | "double" | "none";
+  readonly label?: ReactNode;
 }

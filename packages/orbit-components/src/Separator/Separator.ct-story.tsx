@@ -4,8 +4,9 @@ import Separator from ".";
 
 export default function NotificationBadgeVisualStory() {
   return (
-    <div className="space-y-400 flex flex-col">
+    <div className="gap-400 flex flex-col">
       <Separator />
+      <Separator label="label" />
       <Separator type="dotted" />
       <Separator type="dashed" />
       <Separator type="double" />

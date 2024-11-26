@@ -62,7 +62,7 @@
     "downshift": "^6.1.7",
     "eslint-plugin-mdx": "^1.17.0",
     "fontfaceobserver": "^2.1.0",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^11.2.0",
     "fuzzaldrin-plus": "^0.6.0",
     "gatsby": "^4.11.1",
     "gatsby-image": "^3.11.0",

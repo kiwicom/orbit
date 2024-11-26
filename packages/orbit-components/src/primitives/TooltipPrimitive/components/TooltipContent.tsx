@@ -105,54 +105,55 @@ const TooltipContent = ({
     [onClose, onCloseMobile, elements.floating],
   );
 
+  const handleCombinedClick = (ev: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    handleInnerClick(ev);
+    onClick(ev);
+  };
+
   return (
-    // Disabling because the onClick exists just to stop propagation of events
+    // Disabling because the onClick exists to close tooltip when clicking in interactive elements, which should not happen with keyboard.
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-    <div className="w-full" role="tooltip" id={tooltipId} data-test={dataTest} onClick={onClick}>
-      {/* Disabling because the onClick exists to close tooltip when clicking in interactibe elements, which should not happen with keyboard */}
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+    <div
+      className={cx(
+        "rounded-100 px-300 shadow-level3 z-[10012] box-border block w-auto overflow-visible",
+        "duration-fast transition-[visibility,_opacity] ease-in-out",
+        "[&_img]:max-w-full]",
+        contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal)) ? "py-200" : "py-300",
+        shown ? "visible opacity-100" : "invisible opacity-0",
+        size === "small" && "max-w-[240px]",
+        size === "medium" && "max-w-[380px]",
+        error && "bg-red-normal",
+        !error && help && "bg-blue-normal",
+        !error && !help && "bg-ink-dark",
+      )}
+      ref={refs.setFloating}
+      role="tooltip"
+      id={tooltipId}
+      aria-hidden={!shown}
+      onMouseEnter={onEnter}
+      onMouseLeave={onClose}
+      onClick={handleCombinedClick}
+      style={floatingStyles}
+      data-test={dataTest}
+    >
       <div
         className={cx(
-          "rounded-100 px-300 shadow-level3 z-[10012] box-border block w-auto overflow-visible",
-          "duration-fast transition-[visibility,_opacity] ease-in-out",
-          "[&_img]:max-w-full]",
-          contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal))
-            ? "py-200"
-            : "py-300",
-          shown ? "visible opacity-100" : "invisible opacity-0",
-          size === "small" && "max-w-[240px]",
-          size === "medium" && "max-w-[380px]",
-          error && "bg-red-normal",
-          !error && help && "bg-blue-normal",
-          !error && !help && "bg-ink-dark",
+          "font-base text-small text-white-normal mb-0 font-medium leading-normal",
+          "[&_.orbit-text]:text-small [&_.orbit-text]:text-white-normal [&_.orbit-text]:font-medium",
+          "[&_.orbit-list-item]:text-small [&_.orbit-list-item]:text-white-normal [&_.orbit-list-item]:font-medium",
+          "[&_.orbit-text-link]:text-white-normal",
         )}
-        ref={refs.setFloating}
-        role="tooltip"
-        aria-hidden={!shown}
-        onMouseEnter={onEnter}
-        onMouseLeave={onClose}
-        onClick={handleInnerClick}
-        style={floatingStyles}
+        ref={content}
       >
-        <div
-          className={cx(
-            "font-base text-small text-white-normal mb-0 font-medium leading-normal",
-            "[&_.orbit-text]:text-small [&_.orbit-text]:text-white-normal [&_.orbit-text]:font-medium",
-            "[&_.orbit-list-item]:text-small [&_.orbit-list-item]:text-white-normal [&_.orbit-list-item]:font-medium",
-            "[&_.orbit-text-link]:text-white-normal",
-          )}
-          ref={content}
-        >
-          {children}
-        </div>
-        <FloatingArrow
-          ref={arrowRef}
-          context={context}
-          height={ARROW_SIZE}
-          width={ARROW_SIZE * 2}
-          fill={arrowColor}
-        />
+        {children}
       </div>
+      <FloatingArrow
+        ref={arrowRef}
+        context={context}
+        height={ARROW_SIZE}
+        width={ARROW_SIZE * 2}
+        fill={arrowColor}
+      />
     </div>
   );
 };

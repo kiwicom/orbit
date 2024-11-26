@@ -59,7 +59,7 @@
     "browser-sync": "^3.0.3",
     "check-links": "^2.1.2",
     "copy-to-clipboard": "^3.3.1",
-    "downshift": "^6.1.7",
+    "downshift": "^9.0.8",
     "eslint-plugin-mdx": "^1.17.0",
     "fontfaceobserver": "^2.1.0",
     "fs-extra": "^11.2.0",

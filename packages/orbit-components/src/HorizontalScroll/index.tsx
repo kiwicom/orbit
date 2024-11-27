@@ -10,42 +10,12 @@ import useScrollBox from "./useScroll";
 import ChevronBackward from "../icons/ChevronBackward";
 import ChevronForward from "../icons/ChevronForward";
 import type { Props, ScrollSnap } from "./types";
-import { DEPRECATED_SPACINGS, SPACINGS } from "../utils/layout/consts";
 
 const getSnap = (scrollSnap: ScrollSnap) => {
   if (scrollSnap === "mandatory") return "x mandatory";
   if (scrollSnap === "proximity") return "x proximity";
 
   return scrollSnap;
-};
-
-const getTriggerOffset = (spacing: string) => {
-  const spacingValues = {
-    [SPACINGS.NONE]: 0,
-    [SPACINGS.FIFTY]: 2,
-    [SPACINGS.ONE_HUNDRED]: 4,
-    [SPACINGS.ONE_HUNDRED_FIFTY]: 6,
-    [SPACINGS.TWO_HUNDRED]: 8,
-    [SPACINGS.THREE_HUNDRED]: 12,
-    [SPACINGS.FOUR_HUNDRED]: 16,
-    [SPACINGS.FIVE_HUNDRED]: 20,
-    [SPACINGS.SIX_HUNDRED]: 24,
-    [SPACINGS.EIGHT_HUNDRED]: 32,
-    [SPACINGS.ONE_THOUSAND]: 40,
-    [SPACINGS.ONE_THOUSAND_TWO_HUNDRED]: 48,
-    [SPACINGS.ONE_THOUSAND_SIX_HUNDRED]: 64,
-    [DEPRECATED_SPACINGS.XXXSMALL]: 2, // DEPRECATED
-    [DEPRECATED_SPACINGS.XXSMALL]: 4, // DEPRECATED
-    [DEPRECATED_SPACINGS.XSMALL]: 8, // DEPRECATED
-    [DEPRECATED_SPACINGS.SMALL]: 12, // DEPRECATED
-    [DEPRECATED_SPACINGS.MEDIUM]: 16, // DEPRECATED
-    [DEPRECATED_SPACINGS.LARGE]: 24, // DEPRECATED
-    [DEPRECATED_SPACINGS.XLARGE]: 32, // DEPRECATED
-    [DEPRECATED_SPACINGS.XXLARGE]: 40, // DEPRECATED
-    [DEPRECATED_SPACINGS.XXXLARGE]: 52, // DEPRECATED
-  };
-
-  return spacingValues[spacing];
 };
 
 const ArrowButton = ({
@@ -104,8 +74,6 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
     const theme = useTheme();
     const scrollEl = scrollWrapperRef.current;
 
-    const TRIGGER_OFFSET = getTriggerOffset(spacing);
-
     const handleOverflow = React.useCallback(() => {
       if (scrollWrapperRef.current?.scrollWidth && containerRef.current?.offsetWidth) {
         const { scrollWidth: containerScrollWidth } = scrollWrapperRef.current;
@@ -136,13 +104,14 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
       if (scrollEl) {
         const scrollWidth = scrollEl.scrollWidth - scrollEl.clientWidth;
         const { scrollLeft } = scrollEl;
-        if (scrollLeft - TRIGGER_OFFSET <= 0) {
+
+        if (scrollLeft === 0) {
           setReachedStart(true);
         } else {
           setReachedStart(false);
         }
 
-        if (scrollLeft + TRIGGER_OFFSET >= scrollWidth) {
+        if (scrollLeft >= scrollWidth) {
           setReachedEnd(true);
         } else {
           setReachedEnd(false);
@@ -162,7 +131,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
       return () => {
         window.removeEventListener("resize", handleResize);
       };
-    }, [handleOverflow, handleResize]);
+    }, [handleOverflow, handleResize, scrollWrapperRef.current?.scrollWidth]);
 
     return (
       <div

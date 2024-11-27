@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { PLACEMENTS, AUTO_PLACEMENTS } from "../common/placements";
-import * as Icons from "../icons";
+import Airplane from "../icons/Airplane";
 import { SIZE_OPTIONS } from "./consts";
 import Stack from "../Stack";
 import Alert from "../Alert";
@@ -47,7 +47,7 @@ export const Default: Story = {
   render: args => (
     <Stack justify="center">
       <Tooltip {...args}>
-        <Icons.Airplane />
+        <Airplane ariaLabel="More information" />
       </Tooltip>
     </Stack>
   ),
@@ -149,7 +149,7 @@ export const WithImageInside: Story = {
         </Stack>
       }
     >
-      <Icons.Airplane />
+      <Airplane ariaLabel="More information" />
     </Tooltip>
   ),
 

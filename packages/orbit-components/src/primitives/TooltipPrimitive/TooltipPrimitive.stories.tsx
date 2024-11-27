@@ -2,7 +2,7 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import * as Icons from "../../icons";
+import Airplane from "../../icons/Airplane";
 import Stack from "../../Stack";
 import Alert from "../../Alert";
 import Text from "../../Text";
@@ -43,7 +43,7 @@ export const Default: Story = {
   render: args => (
     <Stack justify="center">
       <TooltipPrimitive {...args}>
-        <Icons.Airplane />
+        <Airplane ariaLabel="More information" />
       </TooltipPrimitive>
     </Stack>
   ),
@@ -147,7 +147,7 @@ export const WithImageInside: Story = {
         </Stack>
       }
     >
-      <Icons.Airplane />
+      <Airplane ariaLabel="More information" />
     </TooltipPrimitive>
   ),
 

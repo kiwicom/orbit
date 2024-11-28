@@ -1,8 +1,9 @@
 name: Update icons
 
 on:
-  schedule:
-    - cron: "0 10 * * *"
+  # automation currently disabled while there are some fast-moving changes. Only manual triggers
+  # schedule:
+  #   - cron: "0 10 * * *"
   workflow_dispatch:
 
 env:

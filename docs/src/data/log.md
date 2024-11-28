@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@18.0.0...@kiwicom/orbit-components@18.1.0) (2024-11-28)
+
+#### Bug Fixes
+
+* **TooltipPrimitive:** remove redundant role attribute ([0322d91](https://github.com/kiwicom/orbit/commit/0322d91e87bb10f4c3dc3a3af7402a5c05a66fdb))
+
+#### Features
+
+* **Separator:** add label prop ([09ea7fe](https://github.com/kiwicom/orbit/commit/09ea7fec2ccacbfbcb38b7e09fb4686fc744fed7))
+
 ## [18.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@17.2.1...@kiwicom/orbit-components@18.0.0) (2024-11-21)
 
 #### Bug Fixes

@@ -1,0 +1,27 @@
+---
+title: v19
+description: How to migrate to Orbit 19.0.0
+redirect_from:
+  - /migration-guides/v19/
+---
+
+# Orbit Migration Guide v19
+
+This migration guide focuses on the process of migrating from Orbit v18 to v19.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### Renaming of `UserSingle` icon
+
+The `UserSingle` icon has been renamed to `UserSingleLight`. No changes have been made to the icon itself, only the name has been changed to better suit its visual aspect.
+
+```diff
+- import UserSingle from "@kiwicom/orbit-components/lib/icons/UserSingle";
++ import UserSingleLight from "@kiwicom/orbit-components/lib/icons/UserSingleLight";
+
+...
+
+- <UserSingle />
++ <UserSingleLight />
+```

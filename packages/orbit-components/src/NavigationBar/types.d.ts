@@ -12,4 +12,5 @@ export interface Props extends Common.Globals {
   readonly openTitle?: string;
   readonly hideOnScroll?: boolean;
   readonly bottomStyle?: "shadow" | "border";
+  readonly ariaLabel?: string;
 }

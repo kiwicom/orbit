@@ -20,6 +20,7 @@ const NavigationBar = ({
   onHide,
   hideOnScroll = true,
   bottomStyle = "shadow",
+  ariaLabel = "navigation",
 }: Props) => {
   const resolveCallback = React.useCallback(
     state => {
@@ -71,6 +72,7 @@ const NavigationBar = ({
         bottomStyle === "shadow" && "shadow-fixed",
         bottomStyle === "border" && "border-cloud-normal border-b",
       )}
+      aria-label={ariaLabel}
     >
       <div className="me-200 block w-full">{children}</div>
       {onMenuOpen && (

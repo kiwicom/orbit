@@ -55,9 +55,13 @@ export const NavigationBarComponent: Story = {
           Flights
         </ButtonLink>
         <Stack direction="row" spacing="100" justify="end" shrink>
-          <ButtonLink iconLeft={<StarFull />} type="secondary" />
-          <ButtonLink iconLeft={<QuestionCircle />} type="secondary" />
-          <ButtonLink iconLeft={<AccountCircle />} type="secondary" />
+          <ButtonLink aria-label="Favourites" iconLeft={<StarFull />} type="secondary" />
+          <ButtonLink
+            aria-label="Questions and Answers"
+            iconLeft={<QuestionCircle />}
+            type="secondary"
+          />
+          <ButtonLink aria-label="Account" iconLeft={<AccountCircle />} type="secondary" />
         </Stack>
       </Stack>
     </NavigationBar>

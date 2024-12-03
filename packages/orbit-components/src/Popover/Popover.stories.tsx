@@ -33,6 +33,9 @@ const listChoiceContent = Array.from({ length: 3 }, (_, idx) => (
 
 const selects = (
   <Stack direction="column">
+    <h2 id="passengers" className="sr-only">
+      Passengers
+    </h2>
     <Stack flex shrink align="center" justify="between">
       <Stack inline direction="column" spacing="none">
         <Text>Adult</Text>
@@ -70,6 +73,8 @@ const meta: Meta<typeof Popover> = {
   args: {
     onOpen: action("open"),
     onClose: action("close"),
+    ariaLabel: "Passengers select",
+    ariaLabelledby: "passengers",
   },
 
   parameters: {
@@ -123,6 +128,8 @@ export const Placement: Story = {
         "renderTimeout",
         "onOpen",
         "onClose",
+        "ariaLabel",
+        "ariaLabelledby",
       ],
     },
   },
@@ -160,6 +167,8 @@ export const OpenedByProp: Story = {
         "renderTimeout",
         "onOpen",
         "onClose",
+        "ariaLabel",
+        "ariaLabelledby",
       ],
     },
   },
@@ -188,6 +197,8 @@ export const Overlapped: Story = {
         "renderTimeout",
         "onOpen",
         "onClose",
+        "ariaLabel",
+        "ariaLabelledby",
       ],
     },
   },
@@ -283,6 +294,8 @@ export const ScrollingPage: Story = {
         "onOpen",
         "onClose",
         "labelClose",
+        "ariaLabel",
+        "ariaLabelledby",
       ],
     },
   },

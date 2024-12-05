@@ -42,6 +42,8 @@ The table below contains all types of props available in the Popover component.
 | labelClose     | `React.Node`             | `Close`             | The label for close button.                                                                                                                      |
 | renderTimeout  | `number`                 | `0`                 | The timeout for rendering the Popover.                                                                                                           |
 | zIndex         | `number`                 | `710`               | The zIndex value of the Popover component.                                                                                                       |
+| ariaLabel      | `string`                 |                     | Optional prop for `aria-label` value.                                                                                                            |
+| ariaLabelledby | `string`                 |                     | Optional prop for `aria-labelledby` value.                                                                                                       |
 
 ## enum
 
@@ -110,3 +112,11 @@ The table below contains all types of props available in the Popover component.
   <Button>Open Popover</Button>
 </Popover>
 ```
+
+## Accessibility
+
+- The `Button` component inside the `Popover` component is the most common trigger component for the opening and closing of the popover. The Popover component includes the `role="button"` attribute. Ensure that the `Button` is set as a non-interactive component (for example, using the `asComponent` prop) to avoid the accessibility violation of nesting interactive controls (`Interactive controls must not be nested`).
+
+- The `ariaLabelledby` prop allows you to specify an `aria-labelledby` attribute for the popover content component. This attribute provides a reference to one or more elements that label the popover content. By using `ariaLabelledby`, the accessibility of popover component is improved and easier for users with assistive technologies to understand the context and purpose of the content.
+
+- The `ariaLabel` prop allows you to specify an `aria-label` attribute for the popover content component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.

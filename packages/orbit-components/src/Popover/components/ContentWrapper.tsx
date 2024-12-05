@@ -45,6 +45,8 @@ export interface Props extends Common.Globals {
   actions?: React.ReactNode;
   offset?: Offset;
   onClose: (ev?: MouseEvent | React.SyntheticEvent<HTMLElement>) => void;
+  ariaLabel?: string;
+  ariaLabelledby?: string;
 }
 
 const PopoverContentWrapper = ({
@@ -67,6 +69,8 @@ const PopoverContentWrapper = ({
   allowOverflow,
   lockScrolling = true,
   actions,
+  ariaLabelledby,
+  ariaLabel,
 }: Props) => {
   const [actionsHeight, setActionsHeight] = React.useState<number | null>(null);
   const { isInsideModal } = React.useContext(ModalContext);
@@ -198,6 +202,8 @@ const PopoverContentWrapper = ({
             shown ? "lm:opacity-100" : "lm:opacity-0",
           )}
           style={cssVars}
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledby}
         >
           <div
             ref={content}

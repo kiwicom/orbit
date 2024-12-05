@@ -33,6 +33,7 @@ const meta: Meta<typeof NavigationBar> = {
     onShow: action("onShow"),
     onHide: action("onHide"),
     bottomStyle: "shadow",
+    transparentBgAtTop: false,
   },
 
   argTypes: {

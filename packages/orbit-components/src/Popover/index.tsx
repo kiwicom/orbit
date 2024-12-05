@@ -33,6 +33,8 @@ const Popover = ({
   actions,
   overlapped,
   dataTest,
+  ariaLabel,
+  ariaLabelledby,
 }: Props) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const popoverId = useRandomId();
@@ -142,6 +144,8 @@ const Popover = ({
       referenceElement={ref.current}
       onClose={handleOut}
       placement={placement}
+      ariaLabel={ariaLabel}
+      ariaLabelledby={ariaLabelledby}
     >
       {content}
     </PopoverContent>
@@ -157,9 +161,7 @@ const Popover = ({
         // @ts-expect-error expected
         // eslint-disable-next-line react/no-unknown-property
         popovertarget={id || popoverId}
-        // according to our docs button should be used for opening popover inside children (uncontrolled behavior),
-        // that's why this div shouldn't be focusable in order to avoid double focus
-        tabIndex={-1}
+        tabIndex={0}
         onClick={handleClick}
         onKeyDown={handleKeyDown<HTMLDivElement>(handleClick)}
       >

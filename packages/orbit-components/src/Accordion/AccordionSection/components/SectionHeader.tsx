@@ -21,10 +21,7 @@ const AccordionSectionHeader = ({
   dataTest,
 }: Props) => (
   <div
-    className={cx(
-      "p-600 bg-white-normal flex items-center",
-      expanded ? "min-h-[19px]" : "min-h-form-box-normal",
-    )}
+    className={cx("p-600 flex items-center", expanded ? "min-h-[19px]" : "min-h-form-box-normal")}
     data-test={dataTest && `${dataTest}Header`}
   >
     <div className="flex grow items-center">{children}</div>

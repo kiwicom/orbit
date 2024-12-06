@@ -41,6 +41,7 @@ Table below contains all types of the props available in the Select component.
 | width           | `string`                   | `100%`  | Specifies width of the Select                                                                                  |
 | helpClosable    | `boolean`                  | `true`  | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error. |
 | customValueText | `string`                   |         | The custom text alternative of current value. [See Functional specs](#functional-specs).                       |
+| ariaLabel       | `string`                   |         | Optional prop for `aria-label` value. [See Accessibility](#accessibility).                                     |
 
 ### enum
 
@@ -88,3 +89,8 @@ class Component extends React.PureComponent<Props> {
   }
 }
 ```
+
+## Accessibility
+
+- The `ariaLabel` prop allows you to specify an `aria-label` attribute for the select component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.
+- If the `label` prop is not provided, the `ariaLabel` prop must be specified to ensure component accessibility.

@@ -35,4 +35,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly insideInputGroup?: boolean;
   readonly inlineLabel?: boolean;
   readonly customValueText?: Common.Translation;
+  readonly ariaLabel?: string;
 }

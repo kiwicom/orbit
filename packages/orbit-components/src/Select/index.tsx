@@ -40,6 +40,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     customValueText,
     insideInputGroup,
     dataAttrs,
+    ariaLabel,
   } = props;
   const filled = !(value == null || value === "");
 
@@ -158,6 +159,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
               "[&>option]:text-form-element-filled-foreground",
               "disabled:text-form-element-disabled-foreground disabled:cursor-not-allowed",
             )}
+            id={selectId}
             data-test={dataTest}
             data-state={getFieldDataState(!!error)}
             disabled={disabled}
@@ -167,11 +169,11 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             onBlur={onBlur}
             onChange={onChange}
             tabIndex={tabIndex ? Number(tabIndex) : undefined}
-            id={selectId}
             required={required}
             ref={ref}
             aria-describedby={shown ? `${selectId}-feedback` : undefined}
             aria-invalid={error ? true : undefined}
+            aria-label={ariaLabel}
             {...dataAttrs}
           >
             {placeholder && (

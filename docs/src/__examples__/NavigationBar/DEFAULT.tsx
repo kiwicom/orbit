@@ -38,6 +38,7 @@ export default {
           options: ["shadow", "border"],
           defaultValue: "shadow",
         },
+        { name: "ariaLabel", type: "text", defaultValue: "" },
       ],
     },
   ],

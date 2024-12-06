@@ -73,6 +73,8 @@ export default {
             "bottom-end",
           ],
         },
+        { name: "ariaLabel", type: "text", defaultValue: "" },
+        { name: "ariaLabelledby", type: "text", defaultValue: "" },
       ],
     },
   ],

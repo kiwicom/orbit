@@ -184,6 +184,7 @@ export const Playground: Story = {
 
   args: {
     ...WithPrefixAndLabel.args,
+    ariaLabel: "Select box",
     inlineLabel: false,
     placeholder: "Select value from list",
     value: undefined,

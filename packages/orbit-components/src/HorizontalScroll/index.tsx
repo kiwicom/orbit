@@ -11,8 +11,6 @@ import ChevronBackward from "../icons/ChevronBackward";
 import ChevronForward from "../icons/ChevronForward";
 import type { Props, ScrollSnap } from "./types";
 
-const TRIGGER_OFFSET = 20;
-
 const getSnap = (scrollSnap: ScrollSnap) => {
   if (scrollSnap === "mandatory") return "x mandatory";
   if (scrollSnap === "proximity") return "x proximity";
@@ -106,13 +104,14 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
       if (scrollEl) {
         const scrollWidth = scrollEl.scrollWidth - scrollEl.clientWidth;
         const { scrollLeft } = scrollEl;
-        if (scrollLeft - TRIGGER_OFFSET <= 0) {
+
+        if (scrollLeft === 0) {
           setReachedStart(true);
         } else {
           setReachedStart(false);
         }
 
-        if (scrollLeft + TRIGGER_OFFSET >= scrollWidth) {
+        if (scrollLeft >= scrollWidth) {
           setReachedEnd(true);
         } else {
           setReachedEnd(false);
@@ -132,7 +131,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
       return () => {
         window.removeEventListener("resize", handleResize);
       };
-    }, [handleOverflow, handleResize]);
+    }, [handleOverflow, handleResize, scrollWrapperRef.current?.scrollWidth]);
 
     return (
       <div

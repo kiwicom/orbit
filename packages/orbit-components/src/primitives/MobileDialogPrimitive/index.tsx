@@ -3,7 +3,7 @@ import * as React from "react";
 import useRandomId from "../../hooks/useRandomId";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import Portal from "../../Portal";
-import { TooltipWrapper } from "../TooltipPrimitive";
+import TooltipWrapper from "../TooltipPrimitive/components/TooltipWrapper";
 import DialogContent from "./components/DialogContent";
 import type { Props } from "./types";
 

@@ -181,6 +181,19 @@ export interface Palette {
   blue: Blue;
   bundle: Bundle;
   cloud: Cloud;
+  darkMode: {
+    background: string;
+    backgroundHover: string;
+    backgroundActive: string;
+    surface: string;
+    surfaceHover: string;
+    surfaceActive: string;
+    text: string;
+    textSecondary: string;
+    border: string;
+    borderHover: string;
+    borderActive: string;
+  };
   green: Green;
   ink: Ink;
   orange: Orange;
@@ -307,6 +320,19 @@ const red = {
 };
 const social = { facebook: "#3B5998", facebookHover: "#385490", facebookActive: "#354F88" };
 const white = { normal: "#FFFFFF", normalActive: "#E7ECF1", normalHover: "#F1F4F7" };
+const darkMode = {
+  background: "#252A31",
+  backgroundHover: "#181B20",
+  backgroundActive: "#0B0C0F",
+  surface: "#4F5E71",
+  surfaceHover: "#3E4E63",
+  surfaceActive: "#324256",
+  text: "#FFFFFF",
+  textSecondary: "#BAC7D5",
+  border: "#4F5E71",
+  borderHover: "#3E4E63",
+  borderActive: "#324256",
+};
 const borderRadius = {
   50: "2px",
   100: "4px",
@@ -365,7 +391,7 @@ const fontFamily = {
 const fontSize = { small: "13px", normal: "15px", large: "16px", extraLarge: "18px" };
 const lineHeight = { small: "16px", normal: "20px", large: "24px", extraLarge: "24px" };
 const fontWeight = { normal: "400", medium: "500", bold: "700" };
-const palette = { blue, bundle, cloud, green, ink, orange, product, red, social, white };
+const palette = { blue, bundle, cloud, darkMode, green, ink, orange, product, red, social, white };
 const foundation = {
   palette,
   borderRadius,

@@ -6,6 +6,7 @@ export interface Theme {
   readonly lockScrolling?: boolean;
   readonly lockScrollingBarGap?: boolean;
   readonly rtl?: boolean;
+  readonly colorScheme?: "light" | "dark" | "system";
 }
 
 const defaultTheme: Theme = {
@@ -14,6 +15,7 @@ const defaultTheme: Theme = {
   lockScrolling: true,
   lockScrollingBarGap: false,
   rtl: false,
+  colorScheme: "light",
 };
 
 export interface ThemeProps {

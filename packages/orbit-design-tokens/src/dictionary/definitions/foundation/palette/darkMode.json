@@ -1,0 +1,63 @@
+{
+  "foundation": {
+    "palette": {
+      "darkMode": {
+        "background": {
+          "value": "#252A31",
+          "internal": true,
+          "type": "color"
+        },
+        "background-hover": {
+          "value": "#181B20",
+          "internal": true,
+          "type": "color"
+        },
+        "background-active": {
+          "value": "#0B0C0F",
+          "internal": true,
+          "type": "color"
+        },
+        "surface": {
+          "value": "#4F5E71",
+          "internal": true,
+          "type": "color"
+        },
+        "surface-hover": {
+          "value": "#3E4E63",
+          "internal": true,
+          "type": "color"
+        },
+        "surface-active": {
+          "value": "#324256",
+          "internal": true,
+          "type": "color"
+        },
+        "text": {
+          "value": "#FFFFFF",
+          "internal": true,
+          "type": "color"
+        },
+        "text-secondary": {
+          "value": "#BAC7D5",
+          "internal": true,
+          "type": "color"
+        },
+        "border": {
+          "value": "#4F5E71",
+          "internal": true,
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "#3E4E63",
+          "internal": true,
+          "type": "color"
+        },
+        "border-active": {
+          "value": "#324256",
+          "internal": true,
+          "type": "color"
+        }
+      }
+    }
+  }
+}

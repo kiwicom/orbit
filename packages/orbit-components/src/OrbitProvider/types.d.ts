@@ -9,4 +9,5 @@ export interface Props {
   readonly theme: Theme;
   readonly children: React.ReactNode;
   readonly useId: () => string;
+  readonly colorScheme?: "light" | "dark" | "system";
 }

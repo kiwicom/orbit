@@ -44,13 +44,18 @@ const getCssVarsForWL = (theme: typeof defaultTokens) =>
  *
  */
 
-const OrbitProvider = ({ theme, children, useId }: Props) => {
+const OrbitProvider = ({ theme, children, useId, colorScheme = "light" }: Props) => {
+  const effectiveTheme = {
+    ...theme,
+    colorScheme: colorScheme || theme.colorScheme || "light",
+  };
+
   return (
     <RandomIdProvider useId={useId}>
       <style id="orbit-theme-css-vars">
-        {tokensToCssVars({ tokens: getCssVarsForWL(theme.orbit), cssClass: ":root" })}
+        {tokensToCssVars({ tokens: getCssVarsForWL(effectiveTheme.orbit), cssClass: ":root" })}
       </style>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={effectiveTheme}>
         <QueryContextProvider>{children}</QueryContextProvider>
       </ThemeProvider>
     </RandomIdProvider>

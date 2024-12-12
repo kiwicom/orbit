@@ -63,6 +63,7 @@ The table below contains all types of props available in the InputField componen
 | ariaHasPopup         | `boolean`                          |           | The aria-haspopup attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-haspopup).                             |
 | ariaExpanded         | `boolean`                          |           | The aria-expanded attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded).                             |
 | ariaControls         | `string`                           |           | The aria-controls attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls).                             |
+| ariaLabel            | `string`                           |           | Optional prop for `aria-label` value. [See Accessibility](#accessibility).                                                                                                       |
 
 ### enum
 
@@ -134,3 +135,6 @@ class Component extends React.PureComponent<Props> {
   id="NICEID"
 />
 ```
+
+- The `ariaLabel` prop allows you to specify an `aria-label` attribute for the InputField component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.
+- If the `label` prop is not provided, the `ariaLabel` prop must be specified to ensure component accessibility.

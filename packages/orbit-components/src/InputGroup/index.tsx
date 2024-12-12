@@ -3,7 +3,6 @@
 import * as React from "react";
 import cx from "clsx";
 
-import { SIZE_OPTIONS } from "./consts";
 import type { Props } from "./types";
 import FormLabel from "../FormLabel";
 import ErrorFormTooltip from "../ErrorFormTooltip";
@@ -23,7 +22,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
       children,
       label,
       flex,
-      size = SIZE_OPTIONS.NORMAL,
       help,
       id,
       error,
@@ -156,7 +154,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
                 >
                   {React.cloneElement(item, {
                     disabled: item.props.disabled || disabled,
-                    size,
                     label: undefined,
                     onChange: handleChange(item.props.onChange),
                     onBlur: handleBlur(item.props.onBlur),
@@ -173,7 +170,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
           help={helpReal}
           error={errorReal}
           helpClosable={helpClosable}
-          inputSize={size}
           onShown={setTooltipShown}
           shown={tooltipShown || tooltipShownHover}
           referenceElement={labelRef}

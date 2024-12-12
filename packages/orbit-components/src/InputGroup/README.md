@@ -34,21 +34,20 @@ Table below contains all types of the props available in InputGroup component.
 | onFocus      | `event => void \| Promise`  |              | Function for handling onFocus event. [See Functional specs](#functional-specs)                                      |
 | onBlur       | `event => void \| Promise`  |              | Function for handling onBlur event between different InputGroup children. [See Functional specs](#functional-specs) |
 | onBlurGroup  | `event => void \| Promise`  |              | Function for handling onBlur event for the whole InputGroup. [See Functional specs](#functional-specs)              |
-| size         | [`enum`](#enum)             | `"normal"`   | The size of the InputField. [See Functional specs](#functional-specs)                                               |
 | spaceAfter   | `enum`                      |              | Additional `margin-bottom` after component.                                                                         |
 | helpClosable | `boolean`                   | `true`       | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.      |
 
 ### enum
 
-| size       | spaceAfter   |
-| :--------- | :----------- |
-| `"small"`  | `"none"`     |
-| `"normal"` | `"smallest"` |
-|            | `"small"`    |
-|            | `"normal"`   |
-|            | `"medium"`   |
-|            | `"large"`    |
-|            | `"largest"`  |
+| spaceAfter   |
+| :----------- |
+| `"none"`     |
+| `"smallest"` |
+| `"small"`    |
+| `"normal"`   |
+| `"medium"`   |
+| `"large"`    |
+| `"largest"`  |
 
 ## Functional specs
 
@@ -61,7 +60,5 @@ Table below contains all types of the props available in InputGroup component.
 - You can set up different `flex` attribute for every children, or use one for all. See [flex property docs](https://www.w3schools.com/cssref/css3_pr_flex.asp) for more information.
 
 - If the passed children into the InputGroup won't have any callbacks - either `onChange`, `onFocus` or `onBlur`, the passed callback of the InputGroup will be used.
-
-- Define `size` only for the **InputGroup**, it will set up the proper styling for everything automatically.
 
 - `onBlurGroup`: In comparison to onBlur, which is triggered by every blur event of InputGroup's children, onBlurGroup treats children as a single field, and fires only when a child loses focus and no child gains focus, for example clicking out of InputGroup.

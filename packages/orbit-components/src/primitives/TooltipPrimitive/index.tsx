@@ -35,17 +35,30 @@ const TooltipPrimitive = ({
 
   const tooltipId = useRandomId();
 
+  const handleEsc = React.useCallback(
+    (ev: { key: string }) => {
+      if (ev.key === "Escape") {
+        setShown(false);
+        setRenderWithTimeout(false);
+        document.removeEventListener("keydown", handleEsc);
+      }
+    },
+    [setRenderWithTimeout],
+  );
+
+  const handleOut = React.useCallback(() => {
+    setShown(false);
+    setRenderWithTimeout(false);
+    document.removeEventListener("keydown", handleEsc);
+  }, [handleEsc, setRenderWithTimeout]);
+
   const handleIn = React.useCallback(() => {
     setRender(true);
     setShown(true);
     if (onShow) onShow();
     clearRenderTimeout();
-  }, [clearRenderTimeout, setRender, onShow]);
-
-  const handleOut = React.useCallback(() => {
-    setShown(false);
-    setRenderWithTimeout(false);
-  }, [setRenderWithTimeout]);
+    document.addEventListener("keydown", handleEsc);
+  }, [setRender, onShow, clearRenderTimeout, handleEsc]);
 
   const handleClick = React.useCallback(
     (ev: React.MouseEvent<HTMLSpanElement | HTMLDivElement>) => {

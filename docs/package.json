@@ -94,7 +94,7 @@
     "prism-react-renderer": "^2.3.1",
     "react-github-btn": "^1.2.0",
     "react-helmet": "^6.1.0",
-    "react-live": "^4.0.0",
+    "react-live": "^4.1.8",
     "react-polymorphic-types": "^1.0.3",
     "react-scrollspy": "^3.4.3",
     "recharts": "^2.1.6",

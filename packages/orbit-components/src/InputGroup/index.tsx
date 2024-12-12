@@ -4,6 +4,8 @@ import * as React from "react";
 import cx from "clsx";
 
 import type { Props } from "./types";
+import type { Props as InputFieldProps } from "../InputField/types";
+import type { Props as SelectProps } from "../Select/types";
 import FormLabel from "../FormLabel";
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import useRandomId, { useRandomIdSeed } from "../hooks/useRandomId";
@@ -135,7 +137,8 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
                 Array.isArray(flex) && flex.length !== 1 ? flex[key] ?? flex[0] : flex
               ) as string | undefined;
 
-              const item = child as React.ReactElement<Props>;
+              const item = child as React.ReactElement<InputFieldProps | SelectProps>;
+
               return (
                 <div
                   key={randomId(String(key))}
@@ -158,7 +161,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
                     onChange: handleChange(item.props.onChange),
                     onBlur: handleBlur(item.props.onBlur),
                     onFocus: handleFocus(item.props.onFocus),
-                    // @ts-expect-error custom prop
+                    ariaLabel: item.props.label as string,
                     insideInputGroup: true,
                   })}
                 </div>

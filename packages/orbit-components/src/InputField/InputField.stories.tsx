@@ -489,6 +489,7 @@ export const Playground: Story = {
     autoComplete: "off",
     id: "ID",
     spaceAfter: SPACINGS_AFTER.MEDIUM,
+    ariaLabel: "Input field",
   },
 
   argTypes: {
@@ -497,6 +498,20 @@ export const Playground: Story = {
       control: {
         type: "select",
       },
+    },
+  },
+
+  parameters: {
+    controls: {
+      exclude: [
+        "onChange",
+        "onFocus",
+        "onBlur",
+        "onMouseUp",
+        "onMouseDown",
+        "onSelect",
+        "onKeyDown",
+      ],
     },
   },
 };

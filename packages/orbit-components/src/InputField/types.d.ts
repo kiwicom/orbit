@@ -50,6 +50,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly onMouseDown?: React.MouseEventHandler<HTMLInputElement>;
   readonly onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
   readonly onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
+  readonly ariaLabel?: string;
   readonly ariaAutocomplete?: AriaAutoComplete;
   readonly ariaActiveDescendant?: string;
   readonly ariaHasPopup?: boolean;

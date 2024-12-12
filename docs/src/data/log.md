@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [18.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@18.1.0...@kiwicom/orbit-components@18.1.1) (2024-12-12)
+
+#### Bug Fixes
+
+* **Accordion:** remove white background for Header and Footer ([29957bc](https://github.com/kiwicom/orbit/commit/29957bc4addfd6618b0332ee95fdf6e1538f8d97))
+* **HorizontalScroll:** adjust arrows visibility when component is overflowing ([1d998e9](https://github.com/kiwicom/orbit/commit/1d998e9d4b2a08786a63e8a0aefaee288722e909))
+
 ## [18.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@18.0.0...@kiwicom/orbit-components@18.1.0) (2024-11-28)
 
 #### Bug Fixes

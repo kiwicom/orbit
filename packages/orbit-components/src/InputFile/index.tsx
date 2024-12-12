@@ -157,7 +157,6 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           help={help}
           error={error}
           helpClosable={helpClosable}
-          inputSize="normal"
           referenceElement={labelRef}
           shown={shown}
           onShown={setTooltipShown}

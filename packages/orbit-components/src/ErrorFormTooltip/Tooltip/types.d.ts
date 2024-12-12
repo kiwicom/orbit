@@ -9,7 +9,6 @@ export interface Props extends Common.Globals {
   readonly helpClosable: boolean;
   readonly isHelp?: boolean;
   readonly referenceElement?: { current: HTMLElement | null };
-  readonly inputSize?: Common.InputSize;
   readonly inlineLabel?: boolean;
   readonly onShown: (arg: boolean) => void;
 }

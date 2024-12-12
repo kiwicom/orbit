@@ -70,20 +70,33 @@ const selectOptionsMonths = [
 ];
 
 export const DateOfBirth: Story = {
-  render: ({ error, help, selectValue, ...args }) => (
-    <InputGroup {...args}>
-      <InputField
-        placeholder="DD"
-        error={error}
-        help={help}
-        onBlur={action("onBlurIn")}
-        onFocus={action("onFocusIn")}
-        onChange={action("onChangeIn")}
-      />
-      <Select options={selectOptionsMonths} value={selectValue} placeholder="Month" />
-      <InputField placeholder="YYYY" />
-    </InputGroup>
-  ),
+  render: ({ error, help, selectValue, ...args }) => {
+    const [value, setValue] = React.useState(selectValue);
+    React.useEffect(() => {
+      setValue(selectValue);
+    }, [selectValue]);
+
+    return (
+      <InputGroup {...args}>
+        <InputField
+          placeholder="DD"
+          error={error}
+          help={help}
+          onBlur={action("onBlurIn")}
+          onFocus={action("onFocusIn")}
+          onChange={action("onChangeIn")}
+        />
+        <Select
+          label="Month of birth"
+          options={selectOptionsMonths}
+          onChange={e => setValue(e.target.value)}
+          value={value}
+          placeholder="Month"
+        />
+        <InputField placeholder="YYYY" />
+      </InputGroup>
+    );
+  },
 
   args: {
     label: "Date of birth",
@@ -109,16 +122,17 @@ const selectOptionsPhoneNumber = [
 
 export const PhoneNumber: Story = {
   render: ({ error, help, selectValue, placeholder, inputValue, ...args }) => {
-    const countryFlagCode = selectOptionsPhoneNumber.filter(
+    const { code, label } = selectOptionsPhoneNumber.filter(
       option => option.value === selectValue,
-    )[0].code;
+    )[0];
 
     return (
       <InputGroup {...args}>
         <Select
+          label="Country"
           options={selectOptionsPhoneNumber}
           value={selectValue}
-          prefix={<CountryFlag code={countryFlagCode} />}
+          prefix={<CountryFlag code={code} name={label} />}
           error={error}
           help={help}
         />
@@ -160,18 +174,28 @@ const selectOptionsError = [
 ];
 
 export const Error: Story = {
-  render: ({ error, selectValue, ...args }) => (
-    <InputGroup {...args}>
-      <InputField placeholder="DD" error={error} />
-      <Select
-        options={selectOptionsError}
-        value={selectValue}
-        placeholder="Month"
-        error="Something went wrong on month field"
-      />
-      <InputField placeholder="YYYY" />
-    </InputGroup>
-  ),
+  render: ({ error, selectValue, ...args }) => {
+    const [value, setValue] = React.useState(selectValue);
+
+    React.useEffect(() => {
+      setValue(selectValue);
+    }, [selectValue]);
+
+    return (
+      <InputGroup {...args}>
+        <InputField placeholder="DD" error={error} />
+        <Select
+          label="Month of birth"
+          options={selectOptionsError}
+          value={value}
+          placeholder="Month"
+          error="Something went wrong on month field"
+          onChange={e => setValue(e.target.value)}
+        />
+        <InputField placeholder="YYYY" />
+      </InputGroup>
+    );
+  },
 
   parameters: {
     controls: {
@@ -327,14 +351,31 @@ const selectOptionsPlayground = [
 ];
 
 export const Playground: Story = {
-  render: ({ error, help, selectValue, placeholder, inputValue, ...args }) => (
-    <InputGroup {...args}>
-      <Select options={selectOptionsPlayground} value={selectValue} error={error} help={help} />
-      <InputField placeholder={placeholder} value={inputValue} />
-      <Select options={selectOptionsPlayground} value={selectValue} />
-      <InputField placeholder={placeholder} value={inputValue} />
-    </InputGroup>
-  ),
+  render: ({ error, help, selectValue, placeholder, inputValue, ...args }) => {
+    const [primaryValue, setPrimaryValue] = React.useState(selectValue);
+    const [secondaryValue, setSecondaryValue] = React.useState(selectValue);
+
+    return (
+      <InputGroup {...args}>
+        <Select
+          label="Primary item"
+          options={selectOptionsPlayground}
+          value={primaryValue}
+          onChange={e => setPrimaryValue(e.target.value)}
+          error={error}
+          help={help}
+        />
+        <InputField placeholder={placeholder} value={inputValue} />
+        <Select
+          label="Secondary item"
+          options={selectOptionsPlayground}
+          value={secondaryValue}
+          onChange={e => setSecondaryValue(e.target.value)}
+        />
+        <InputField placeholder={placeholder} value={inputValue} />
+      </InputGroup>
+    );
+  },
 
   args: {
     label: "Label",
@@ -357,15 +398,29 @@ export const Playground: Story = {
 };
 
 export const Rtl: Story = {
-  render: ({ selectValue, error, help, ...args }) => (
-    <RenderInRtl>
-      <InputGroup {...args}>
-        <InputField placeholder="DD" help={help} error={error} />
-        <Select options={selectOptionsMonths} value={selectValue} placeholder="Month" />
-        <InputField placeholder="YYYY" />
-      </InputGroup>
-    </RenderInRtl>
-  ),
+  render: ({ selectValue, error, help, ...args }) => {
+    const [value, setValue] = React.useState(selectValue);
+
+    React.useEffect(() => {
+      setValue(selectValue);
+    }, [selectValue]);
+
+    return (
+      <RenderInRtl>
+        <InputGroup {...args}>
+          <InputField placeholder="DD" help={help} error={error} />
+          <Select
+            options={selectOptionsMonths}
+            onChange={e => setValue(e.target.value)}
+            value={value}
+            placeholder="Month"
+            label="Month of birth"
+          />
+          <InputField placeholder="YYYY" />
+        </InputGroup>
+      </RenderInRtl>
+    );
+  },
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",

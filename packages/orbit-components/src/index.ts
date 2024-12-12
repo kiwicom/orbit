@@ -124,6 +124,7 @@ export { default as useLockScrolling } from "./hooks/useLockScrolling";
 export { default as useRandomId, useRandomIdSeed } from "./hooks/useRandomId";
 export { default as useFocusTrap } from "./hooks/useFocusTrap";
 export { default as useInterval } from "./hooks/useInterval";
+export { default as useColorScheme } from "./hooks/useColorScheme";
 
 // primitives
 export { default as BadgePrimitive } from "./primitives/BadgePrimitive";

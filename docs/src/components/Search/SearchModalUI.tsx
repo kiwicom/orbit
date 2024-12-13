@@ -1,5 +1,4 @@
 import React from "react";
-import styled, { css } from "styled-components";
 import {
   Heading,
   Portal,
@@ -18,11 +17,12 @@ import type {
   GetPropsCommonOptions,
 } from "downshift";
 
-import mediaQueries from "../MediaQueries";
-import StyledInputContainer from "./primitives/StyledInputContainer";
-import StyledPrefix from "./primitives/StyledPrefix";
-import StyledInput from "./primitives/StyledInput";
-import { StyledMenu, StyledMenuItem, StyledMenuItemTitle } from "./primitives/StyledMenu";
+import Input from "./primitives/Input";
+import InputContainer from "./primitives/InputContainer";
+import Prefix from "./primitives/Prefix";
+import Menu from "./primitives/Menu";
+import MenuItem from "./primitives/MenuItem";
+import MenuItemTitle from "./primitives/MenuItemTitle";
 import type { SearchResult } from "./types";
 import Tile from "../Tile";
 import { ICON_MAP, getIconFromItem } from "../icons/consts";
@@ -38,41 +38,17 @@ interface Props {
   onComboboxProps: (
     opts?: UseComboboxGetComboboxPropsOptions,
     otherOpts?: GetPropsCommonOptions,
-  ) => any;
-  onGetItemProps: (opts: UseComboboxGetItemPropsOptions<SearchResult>) => any;
-  onGetInputProps: <T>(
+  ) => Record<string, unknown>;
+  onGetItemProps: (opts: UseComboboxGetItemPropsOptions<SearchResult>) => Record<string, unknown>;
+  onGetInputProps: (
     opts?: UseComboboxGetInputPropsOptions,
     otherOpts?: GetPropsCommonOptions,
-  ) => T;
+  ) => Record<string, unknown>;
   onGetMenuProps: (
     opts?: UseComboboxGetInputPropsOptions,
     otherOpts?: GetPropsCommonOptions,
-  ) => any;
+  ) => Record<string, unknown>;
 }
-
-export const StyledModalWrapper = styled.div`
-  /* align modal to the top */
-  > div:nth-child(2) {
-    max-width: 1180px;
-  }
-
-  > * > * > * {
-    height: 100%;
-  }
-  ${mediaQueries.largeMobile(css`
-    > * > * {
-      align-items: flex-start;
-    }
-    > * > * > * {
-      height: auto;
-    }
-  `)}
-`;
-
-const StyledSearchWrapper = styled.div`
-  margin-bottom: 1rem;
-  font-size: 1rem;
-`;
 
 function getItemName({ item, short = false }: { item: SearchResult; short?: boolean }) {
   const isComponent = item.breadcrumbs && item.breadcrumbs[0] === "Components";
@@ -101,7 +77,6 @@ export default function SearchModalUI({
   onGetInputProps,
   onGetMenuProps,
 }: Props) {
-  // autofocus
   const inputRef = React.useRef<HTMLInputElement | null>(null);
 
   React.useEffect(() => {
@@ -124,43 +99,26 @@ export default function SearchModalUI({
 
   return (
     <Portal>
-      <StyledModalWrapper>
-        <Modal
-          size="extraLarge"
-          // the search field will be auto focused
-          autoFocus={false}
-          onClose={onClose}
-        >
+      <div className="tablet:[&>*>*]:items-start tablet:[&>*>*>*]:h-auto [&>*>*>*]:h-full [&>div:nth-child(2)]:max-w-[1180px]">
+        <Modal size="extraLarge" autoFocus={false} onClose={onClose}>
           <ModalHeader title={title} />
           <ModalSection>
-            <StyledSearchWrapper>
-              <StyledInputContainer {...onComboboxProps()}>
-                <StyledPrefix>
+            <div className="mb-4 text-base">
+              <InputContainer {...onComboboxProps()}>
+                <Prefix>
                   <SearchIcon />
-                </StyledPrefix>
-                <StyledInput
+                </Prefix>
+                <Input
                   {...onGetInputProps({
                     ref: inputRef,
                     type: "search",
                     placeholder,
                   })}
                 />
-              </StyledInputContainer>
-            </StyledSearchWrapper>
-            <div
-              css={css`
-                position: relative;
-                margin-left: 1.5rem;
-              `}
-            >
-              <div
-                css={css`
-                  position: absolute;
-                  top: -0.5rem;
-                  right: 0;
-                  left: 0;
-                `}
-              >
+              </InputContainer>
+            </div>
+            <div className="relative ml-6">
+              <div className="absolute inset-x-0 -top-2">
                 {data && data.length > 0 && (
                   <Text as="p">
                     We found <b>{data.length} results</b> matching your search
@@ -171,7 +129,7 @@ export default function SearchModalUI({
             {hasRecentSearches && (
               <>
                 {data.length === 0 && recentSearches.length > 0 && (
-                  <StyledMenu {...onGetMenuProps()} hasResults={recentSearches.length > 0}>
+                  <Menu {...onGetMenuProps()} visible={recentSearches.length > 0}>
                     <Heading type="title2" spaceAfter="large">
                       Recent searches
                     </Heading>
@@ -185,11 +143,7 @@ export default function SearchModalUI({
                         const itemName = getItemName({ item, short: true });
 
                         return (
-                          <StyledMenuItem
-                            key={item.id}
-                            tile
-                            {...onGetItemProps({ item, index: idx })}
-                          >
+                          <MenuItem key={item.id} tile {...onGetItemProps({ item, index: idx })}>
                             <Tile
                               title={itemName}
                               linkContent={<ChevronForward size="medium" />}
@@ -197,15 +151,15 @@ export default function SearchModalUI({
                               onClick={onClose}
                               icon={getIconFromItem(item)}
                             />
-                          </StyledMenuItem>
+                          </MenuItem>
                         );
                       })}
                     </Grid>
-                  </StyledMenu>
+                  </Menu>
                 )}
                 <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
                   {data.length > 0 && (
-                    <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
+                    <Menu {...onGetMenuProps()} visible={data.length > 0}>
                       <Heading type="title2" spaceAfter="large">
                         Components
                       </Heading>
@@ -215,12 +169,11 @@ export default function SearchModalUI({
                         gap="1rem"
                       >
                         {data
-                          // filter doubled results (left only the Tiles with Guidelines tab)
                           .filter(({ breadcrumbs }) => breadcrumbs && breadcrumbs.length === 3)
                           .map(item => {
                             const itemName = getItemName({ item, short: true });
                             return (
-                              <StyledMenuItem key={item.id} tile {...onGetItemProps({ item })}>
+                              <MenuItem key={item.id} tile {...onGetItemProps({ item })}>
                                 <div>
                                   <Tile
                                     title={itemName}
@@ -233,17 +186,17 @@ export default function SearchModalUI({
                                     {item.description && <div>{item.description}</div>}
                                   </Tile>
                                 </div>
-                              </StyledMenuItem>
+                              </MenuItem>
                             );
                           })}
                       </Grid>
-                    </StyledMenu>
+                    </Menu>
                   )}
                 </Hide>
               </>
             )}
             {data.length > 0 && (
-              <StyledMenu {...onGetMenuProps()} hasResults={data.length > 0}>
+              <Menu {...onGetMenuProps()} visible={data.length > 0}>
                 <Heading type="title2" spaceAfter="large">
                   All search results
                 </Heading>
@@ -251,21 +204,21 @@ export default function SearchModalUI({
                   {data.map((item, idx) => {
                     const itemName = getItemName({ item });
                     return (
-                      <StyledMenuItem key={item.id} {...onGetItemProps({ item, index: idx })}>
+                      <MenuItem key={item.id} {...onGetItemProps({ item, index: idx })}>
                         <div>
-                          <StyledMenuItemTitle>{itemName}</StyledMenuItemTitle>
+                          <MenuItemTitle>{itemName}</MenuItemTitle>
                           {hasDescription && <div>{item.description}</div>}
                         </div>
                         <ChevronForward size="medium" />
-                      </StyledMenuItem>
+                      </MenuItem>
                     );
                   })}
                 </Grid>
-              </StyledMenu>
+              </Menu>
             )}
           </ModalSection>
         </Modal>
-      </StyledModalWrapper>
+      </div>
     </Portal>
   );
 }

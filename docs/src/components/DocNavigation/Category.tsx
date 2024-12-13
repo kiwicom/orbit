@@ -1,7 +1,5 @@
 import React from "react";
 
-import { StyledCategoryContainer, StyledCategoryName } from "./primitives/StyledCategory";
-
 interface Props {
   name: React.ReactNode;
   children: React.ReactNode;
@@ -9,9 +7,9 @@ interface Props {
 
 export default function Category({ name, children }: Props) {
   return (
-    <StyledCategoryContainer>
-      <StyledCategoryName>{name}</StyledCategoryName>
-      {children}
-    </StyledCategoryContainer>
+    <div className="mb-4">
+      <div className="text-ink-dark px-4 py-2 text-sm font-bold">{name}</div>
+      <div className="pl-4">{children}</div>
+    </div>
   );
 }

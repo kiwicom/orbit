@@ -1,5 +1,4 @@
 import React from "react";
-import { css } from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
@@ -21,11 +20,11 @@ import ComponentStructure from "../ComponentStructure";
 import ReactExample from "../ReactExample";
 import FigmaIframe from "../FigmaIframe";
 import Footer from "../Footer";
-import StyledWrapper from "../DocLayout/primitives/StyledWrapper";
-import StyledMiddle from "../DocLayout/primitives/StyledMiddle";
-import StyledMain from "../DocLayout/primitives/StyledMain";
-import StyledMobileOutdent from "../DocLayout/primitives/StyledMobileOutdent";
-import StyledProse from "../DocLayout/primitives/StyledProse";
+import Wrapper from "../DocLayout/primitives/Wrapper";
+import Middle from "../DocLayout/primitives/Middle";
+import Main from "../DocLayout/primitives/Main";
+import MobileOutdent from "../DocLayout/primitives/MobileOutdent";
+import Prose from "../DocLayout/primitives/Prose";
 import TopBar from "../DocLayout/TopBar";
 import { getDocumentPageTitle } from "../../utils/document";
 
@@ -66,7 +65,7 @@ export default function ThemerLayout({
       />
       <BookmarkProvider page={path} location={location}>
         <BaseStyles />
-        <StyledWrapper>
+        <Wrapper>
           <Navbar
             location={location}
             docNavigation={
@@ -83,15 +82,8 @@ export default function ThemerLayout({
               />
             }
           />
-          <div
-            css={css`
-              display: flex;
-              margin: 0 auto;
-              width: 100%;
-              max-width: 90rem;
-            `}
-          >
-            <StyledMiddle>
+          <div className="mx-auto flex w-full max-w-[90rem]">
+            <Middle>
               <TopBar
                 breadcrumbs={breadcrumbs}
                 location={location}
@@ -102,15 +94,15 @@ export default function ThemerLayout({
                 tocHasItems={false}
                 custom={false}
                 hasStorybook={false}
-                headerLink={null}
-                tabs={null}
-                storybookLink={null}
+                headerLink={undefined}
+                tabs={undefined}
+                storybookLink={undefined}
               >
                 {children}
               </TopBar>
-              <StyledMain>
-                <StyledMobileOutdent>
-                  <StyledProse padding={{ top: "none", bottom: "800" }}>
+              <Main>
+                <MobileOutdent>
+                  <Prose padding={{ top: "none", bottom: "800" }}>
                     <MDXProvider
                       components={{
                         ...components,
@@ -135,13 +127,13 @@ export default function ThemerLayout({
                     >
                       {children}
                     </MDXProvider>
-                  </StyledProse>
-                </StyledMobileOutdent>
-              </StyledMain>
-            </StyledMiddle>
+                  </Prose>
+                </MobileOutdent>
+              </Main>
+            </Middle>
           </div>
           <Footer />
-        </StyledWrapper>
+        </Wrapper>
       </BookmarkProvider>
     </>
   );

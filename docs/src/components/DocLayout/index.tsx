@@ -1,11 +1,9 @@
 import React from "react";
-import styled, { css } from "styled-components";
 import { Collapse, Grid, Hide } from "@kiwicom/orbit-components";
 import { MDXProvider } from "@mdx-js/react";
 import { WindowLocation } from "@reach/router";
 
 import * as components from "../../mdx-components";
-import mq from "../MediaQueries";
 import Head from "../Head";
 import BaseStyles from "../BaseStyles";
 import FancyLink from "../FancyLink";
@@ -28,29 +26,25 @@ import ReactExample from "../ReactExample";
 import Container from "../Container";
 import FigmaIframe from "../FigmaIframe";
 import Footer from "../Footer";
-import StyledWrapper from "./primitives/StyledWrapper";
-import StyledMiddle from "./primitives/StyledMiddle";
-import StyledMain from "./primitives/StyledMain";
-import StyledMobileOutdent from "./primitives/StyledMobileOutdent";
-import StyledDocNavigationWidth from "./primitives/StyledDocNavigationWidth";
-import StyledDocNavigationWrapper from "./primitives/StyledDocNavigationWrapper";
-import StyledTocWrapper from "./primitives/StyledTocWrapper";
-import StyledProse from "./primitives/StyledProse";
-import StyledMobileTocWrapper from "./primitives/StyledMobileTocWrapper";
+import Wrapper from "./primitives/Wrapper";
+import Main from "./primitives/Main";
+import Middle from "./primitives/Middle";
+import MobileOutdent from "./primitives/MobileOutdent";
+import DocNavigationWidth from "./primitives/DocNavigationWidth";
+import DocNavigationWrapper from "./primitives/DocNavigationWrapper";
+import TocWrapper from "./primitives/TocWrapper";
+import Prose from "./primitives/Prose";
+import MobileTocWrapper from "./primitives/MobileTocWrapper";
 import { getDocumentPageTitle } from "../../utils/document";
 import TopBar from "./TopBar";
-import { MAX_CONTENT_WIDTH } from "../../consts";
 
-const StyledInnerWrapper = styled.div`
-  display: flex;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: ${MAX_CONTENT_WIDTH};
-  ${mq.largeDesktop(css`
-    padding: 0 2rem;
-  `)};
-`;
+interface InnerWrapperProps {
+  children: React.ReactNode;
+}
+
+const InnerWrapper = ({ children }: InnerWrapperProps) => (
+  <div className="largeDesktop:px-8 mx-auto box-border flex w-full max-w-[90rem]">{children}</div>
+);
 
 interface Props {
   children: React.ReactNode;
@@ -105,32 +99,29 @@ export default function DocLayout({
       />
       <BookmarkProvider page={path} location={location}>
         <BaseStyles />
-        <StyledWrapper>
+        <Wrapper>
           <Navbar
             location={location}
             docNavigation={
               <DocNavigation
                 currentUrl={path}
                 onCollapse={() => {
-                  // hack for when collapsing an overflowing DocNavigationItem in Modal
-                  // causes the fixed ModalFooter to be stuck at the bottom of the screen
                   setTimeout(() => {
-                    // causing Modal to reposition ModalFooter
                     window.dispatchEvent(new Event("resize"));
-                  }, 70); // not sure why, but this delay is necessary (the exact threshold is 62)
+                  }, 70);
                 }}
               />
             }
           />
-          <StyledInnerWrapper>
+          <InnerWrapper>
             <Hide on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
-              <StyledDocNavigationWidth>
-                <StyledDocNavigationWrapper>
+              <DocNavigationWidth>
+                <DocNavigationWrapper>
                   <DocNavigation currentUrl={path} />
-                </StyledDocNavigationWrapper>
-              </StyledDocNavigationWidth>
+                </DocNavigationWrapper>
+              </DocNavigationWidth>
             </Hide>
-            <StyledMiddle>
+            <Middle>
               {!noTopBar && (
                 <TopBar
                   breadcrumbs={breadcrumbs}
@@ -149,17 +140,17 @@ export default function DocLayout({
                   {children}
                 </TopBar>
               )}
-              <StyledMain>
-                <StyledMobileOutdent>
+              <Main>
+                <MobileOutdent>
                   <Grid columns="100%" tablet={{ columns: `${tocHasItems ? "80% 20%" : "100%"}` }}>
                     {tocHasItems && (
-                      <StyledTocWrapper>
+                      <TocWrapper>
                         <Hide on={["smallMobile", "mediumMobile", "largeMobile"]}>
                           <TableOfContents />
                         </Hide>
-                      </StyledTocWrapper>
+                      </TocWrapper>
                     )}
-                    <StyledProse
+                    <Prose
                       padding={
                         noElevation
                           ? { top: "none", bottom: "800", left: "800", right: "800" }
@@ -177,13 +168,13 @@ export default function DocLayout({
                         </Hide>
                       )}
                       {tocHasItems && (
-                        <StyledMobileTocWrapper>
+                        <MobileTocWrapper>
                           <Hide on={["tablet", "desktop", "largeDesktop"]}>
                             <Collapse label="Table of contents">
                               <TableOfContents />
                             </Collapse>
                           </Hide>
-                        </StyledMobileTocWrapper>
+                        </MobileTocWrapper>
                       )}
                       <MDXProvider
                         components={{
@@ -210,14 +201,14 @@ export default function DocLayout({
                       >
                         {children}
                       </MDXProvider>
-                    </StyledProse>
+                    </Prose>
                   </Grid>
-                </StyledMobileOutdent>
-              </StyledMain>
-            </StyledMiddle>
-          </StyledInnerWrapper>
+                </MobileOutdent>
+              </Main>
+            </Middle>
+          </InnerWrapper>
           <Footer />
-        </StyledWrapper>
+        </Wrapper>
       </BookmarkProvider>
     </>
   );

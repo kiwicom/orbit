@@ -75,9 +75,6 @@ const config: GatsbyConfig = {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
-              // The base for generating different image widths
-              // Content max width is 80rem (about 809px with no zoom)
-              // Minus paddings on each side
               maxWidth: 745,
               showCaptions: ["title"],
             },
@@ -133,7 +130,6 @@ const config: GatsbyConfig = {
         query: "allMdx",
       },
     },
-    "gatsby-plugin-styled-components",
     "gatsby-plugin-postcss",
     "gatsby-plugin-loadable-components-ssr",
     "gatsby-plugin-meta-redirect",

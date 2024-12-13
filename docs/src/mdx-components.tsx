@@ -14,7 +14,6 @@ import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { SpaceAfter } from "@kiwicom/orbit-components/lib/common/types";
 import { Type } from "@kiwicom/orbit-components/lib/Heading/types";
 import { Link } from "gatsby";
-import { css } from "styled-components";
 
 import BlockQuote from "./components/BlockQuote";
 import HeadingWithLink from "./components/HeadingWithLink";
@@ -64,19 +63,7 @@ export const h6 = createHeadingComponent("h6", { type: "title5" });
 export const hr = () => <Separator spaceAfter="largest" />;
 
 export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
-  <ol
-    css={css`
-      list-style: decimal none outside;
-      margin-left: ${({ theme }) => theme.orbit.space400};
-
-      ol,
-      ul {
-        margin: ${({ theme }) => theme.orbit.space300};
-      }
-    `}
-  >
-    {children}
-  </ol>
+  <ol className="ml-4 list-outside list-decimal [&_ol]:ml-3 [&_ul]:ml-3">{children}</ol>
 );
 
 export const blockquote = BlockQuote;
@@ -113,19 +100,7 @@ export const th = ({ children }: React.ThHTMLAttributes<HTMLTableCellElement>) =
 );
 
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
-  <ul
-    css={css`
-      list-style: disc none outside;
-      margin-left: ${({ theme }) => theme.orbit.space400};
-
-      ol,
-      ul {
-        margin: ${({ theme }) => theme.orbit.space300};
-      }
-    `}
-  >
-    {children}
-  </ul>
+  <ul className="ml-4 list-outside list-disc [&_ol]:ml-3 [&_ul]:ml-3">{children}</ul>
 );
 
 export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
@@ -139,11 +114,7 @@ export const figcaption = ({ children }: React.HTMLAttributes<HTMLElement>) => (
 export const code = CodeBlock;
 
 export const dd = ({ children }: React.HTMLAttributes<HTMLElement>) => (
-  <dd
-    css={css`
-      margin-left: 2em;
-    `}
-  >
+  <dd className="ml-8">
     <Text>{children}</Text>
   </dd>
 );

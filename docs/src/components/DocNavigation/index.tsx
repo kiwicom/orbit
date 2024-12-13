@@ -2,10 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import * as _ from "lodash";
 
-import StyledWrapper, {
-  StyledWrapperDesktop,
-  StyledWrapperMobile,
-} from "./primitives/StyledWrapper";
+import Wrapper from "./primitives/Wrapper";
 import DocNavigationItem, { getItemKey } from "./DocNavigationItem";
 import useDevMode from "../../hooks/useDevMode";
 import { Navigation, NavigationItem } from "./types";
@@ -35,7 +32,6 @@ export function groupBreadcrumbs(breadcrumbs: {
   components: Breadcrumbs;
   content: Breadcrumbs[];
 }): Navigation {
-  // https://stackoverflow.com/a/57344801/1247274
   const result: Navigation = [];
   const level = { result };
 
@@ -146,9 +142,9 @@ export default function DocNavigation({ currentUrl, onCollapse }: Props) {
   );
 
   return (
-    <StyledWrapper>
-      <StyledWrapperMobile>{navigation}</StyledWrapperMobile>
-      <StyledWrapperDesktop>{navigation}</StyledWrapperDesktop>
-    </StyledWrapper>
+    <Wrapper>
+      <div className="tablet:hidden block">{navigation}</div>
+      <div className="tablet:block hidden">{navigation}</div>
+    </Wrapper>
   );
 }

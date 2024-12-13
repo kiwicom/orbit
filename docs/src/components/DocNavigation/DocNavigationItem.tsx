@@ -1,9 +1,8 @@
 import React from "react";
 import { Stack, Badge } from "@kiwicom/orbit-components";
-import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 
-import Category from "./Category";
-import StyledLink from "./primitives/StyledLink";
+import Category from "./primitives/Category";
+import Link from "./primitives/Link";
 import Collapse from "./Collapse";
 import { NavigationItem, NavigationItemStatus } from "./types";
 
@@ -40,8 +39,6 @@ interface Props {
 export default function DocNavigationItem({ devMode, currentUrl, level, item, onCollapse }: Props) {
   const initialExpanded = level === 1 && item.type === "branch" && currentUrl.startsWith(item.url);
   const [expanded, setExpanded] = React.useState(initialExpanded);
-  const theme = useTheme();
-  const firstRenderRef = React.useRef<boolean>(true);
   const itemName = item.status ? (
     <Stack flex align="center" spacing="200">
       <div>{item.name}</div>
@@ -52,18 +49,10 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
   );
 
   React.useEffect(() => {
-    if (firstRenderRef.current) {
-      firstRenderRef.current = false;
-      return;
+    if (!expanded && level === 1 && onCollapse) {
+      setTimeout(onCollapse, 200); // 200ms for transition
     }
-    if (!expanded && level === 1) {
-      if (onCollapse) {
-        setTimeout(() => {
-          onCollapse();
-        }, parseFloat(theme.orbit.durationFast) * 1000); // the duration of Slide transition
-      }
-    }
-  }, [expanded, level, theme.orbit.durationFast, onCollapse]);
+  }, [expanded, level, onCollapse]);
 
   if (item.type === "branch") {
     const hasCategories = item.items[0].type === "branch";
@@ -74,6 +63,7 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
         item={it}
         level={level + 1}
         currentUrl={currentUrl}
+        onCollapse={onCollapse}
       />
     ));
 
@@ -91,16 +81,17 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
     }
 
     if (level === 2) {
-      return <Category name={itemName}>{navigationItems}</Category>;
+      return <Category title={itemName}>{navigationItems}</Category>;
     }
   } else {
     return (
-      <StyledLink
+      <Link
         to={devMode && item.hasReactTab ? `${item.url}react/` : item.url}
-        $active={currentUrl.startsWith(item.url)}
+        isActive={currentUrl.startsWith(item.url)}
+        onClick={onCollapse}
       >
         {item.name}
-      </StyledLink>
+      </Link>
     );
   }
 

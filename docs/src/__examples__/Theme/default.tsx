@@ -1,33 +1,26 @@
 import React from "react";
 import { Button, Stack } from "@kiwicom/orbit-components";
-import getTokens from "@kiwicom/orbit-components/lib/getTokens";
-import OrbitProvider from "@kiwicom/orbit-components/lib/OrbitProvider";
 
 export default {
   Example: () => {
-    const customTokens = getTokens({
-      palette: {
-        product: {
-          light: "#fdf0ff",
-          lightHover: "#fbdfff",
-          lightActive: "#f9ceff",
-          normal: "#5b0068",
-          normalHover: "#4c0057",
-          normalActive: "#3d0046",
-          dark: "#110013",
-          darker: "#0d0010",
-          darkHover: "#0f0011",
-          darkActive: "#0d000f",
-        },
-      },
-    });
-
     return (
       <Stack>
-        <Button type="primary">Primary Button</Button>
-        <OrbitProvider useId={React.useId} theme={{ orbit: customTokens }}>
-          <Button type="primary">Primary Button (themed)</Button>
-        </OrbitProvider>
+        {/* Default Orbit styling using Tailwind classes */}
+        <div className="bg-white-normal rounded-large p-4">
+          <Button type="primary">Default Theme Button</Button>
+        </div>
+
+        {/* Custom themed section using Tailwind classes */}
+        <div className="bg-product-light rounded-large p-4">
+          <p className="text-product-dark mb-2">Using Orbit Tailwind preset colors</p>
+          <Button type="primary">Themed Button</Button>
+        </div>
+
+        {/* Responsive design example */}
+        <div className="bg-white-normal sm:bg-product-light md:bg-blue-light rounded-large p-4">
+          <p className="text-product-dark mb-2">Responsive theming with Tailwind</p>
+          <Button type="primary">Responsive Theme</Button>
+        </div>
       </Stack>
     );
   },

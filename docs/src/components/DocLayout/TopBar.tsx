@@ -1,44 +1,35 @@
 import React from "react";
 import { Box, Heading, Stack, Text, ButtonLink, Hide } from "@kiwicom/orbit-components";
-import styled, { css } from "styled-components";
 
-import Tabs, { getTabShadowReachLeft } from "../Tabs";
+import Tabs from "../Tabs";
 import { HeaderButtonLink } from "../HeaderLink";
 import { AddBookmark } from "../Bookmarks";
-import StyledProse from "./primitives/StyledProse";
+import Prose from "./primitives/Prose";
+import Description from "./primitives/Description";
+import Wrapper from "./primitives/Wrapper";
+import TopWrapper from "./primitives/TopWrapper";
 import Breadcrumbs from "../Breadcrumbs";
 import StorybookLogo from "../../images/storybook-logo.svg";
 
-const StyledDescription = styled.span`
-  display: flex;
-  line-height: 22px;
-`;
-
-const StyledWrapper = styled.div`
-  ${({ theme }) => css`
-    position: relative;
-    background: ${`linear-gradient(
-      85.39deg,
-      ${theme.orbit.paletteWhiteHover} 3.73%,
-      ${theme.orbit.paletteCloudLight} 53.77%
-    )`};
-    width: 100%;
-  `};
-`;
-
-const StyledTopWrapper = styled.div<{ $hasTabs: boolean }>`
-  ${({ theme, $hasTabs }) => css`
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: end;
-    ${$hasTabs &&
-    // maintain alignment of tabs with the content
-    css`
-      padding-left: calc(${theme.orbit.space800} - ${getTabShadowReachLeft});
-    `};
-  `}
-`;
+interface Props {
+  custom?: boolean;
+  title?: string;
+  noElevation?: boolean;
+  children?: React.ReactNode;
+  tabs?: Array<{
+    slug: string;
+    title: string;
+    tabCollection: string | null;
+  }>;
+  location: { pathname: string };
+  tocHasItems?: boolean;
+  hasHeaderLink?: boolean;
+  headerLink?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  description?: string;
+  hasStorybook?: boolean;
+  storybookLink?: string;
+}
 
 const TopBar = ({
   custom,
@@ -54,13 +45,12 @@ const TopBar = ({
   description,
   hasStorybook,
   storybookLink,
-}) => {
+}: Props) => {
   const hasTabs = tabs && tabs.length > 0;
-
   const hasLowerLayer = hasTabs || hasHeaderLink || hasStorybook;
 
   return custom ? (
-    <StyledProse
+    <Prose
       padding={
         noElevation
           ? { top: "none", bottom: "800", left: "800", right: "800" }
@@ -69,9 +59,9 @@ const TopBar = ({
       elevation={noElevation ? undefined : "level3"}
     >
       {children}
-    </StyledProse>
+    </Prose>
   ) : (
-    <StyledWrapper>
+    <Wrapper>
       <Box
         padding={{
           top: "1000",
@@ -80,17 +70,18 @@ const TopBar = ({
           bottom: hasLowerLayer ? "none" : "1000",
         }}
       >
-        {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <Breadcrumbs
+            breadcrumbs={breadcrumbs.map(({ name, url }) => ({
+              name,
+              url,
+            }))}
+          />
+        )}
         <Box padding={{ bottom: hasLowerLayer ? "medium" : "none" }}>
           <Stack inline align="center" spaceAfter="small">
             <AddBookmark title={title} description={description} />
-            <div
-              css={css`
-                /* align with the bookmark icon */
-                position: relative;
-                top: 1px;
-              `}
-            >
+            <div className="relative top-px">
               <Heading as="h1" type="title0">
                 {title}
               </Heading>
@@ -99,7 +90,7 @@ const TopBar = ({
           {description && (
             <Box padding={{ left: "1000" }}>
               <Text>
-                <StyledDescription>{description}</StyledDescription>
+                <Description>{description}</Description>
               </Text>
             </Box>
           )}
@@ -111,7 +102,7 @@ const TopBar = ({
             justify={hasTabs ? "between" : "end"}
             tablet={{ maxWidth: tocHasItems ? "80%" : "100%" }}
           >
-            <StyledTopWrapper $hasTabs={Boolean(tabs)}>
+            <TopWrapper hasTabs={Boolean(tabs)}>
               {hasTabs && <Tabs activeTab={location.pathname} tabs={tabs} />}
               <Hide on={["smallMobile", "mediumMobile"]}>
                 <Stack flex spacing="100">
@@ -123,17 +114,17 @@ const TopBar = ({
                       iconLeft={<StorybookLogo />}
                       external
                       href={`https://kiwicom.github.io/orbit/?path=/story/${
-                        storybookLink ?? title.toLowerCase()
+                        storybookLink ?? title?.toLowerCase() ?? ""
                       }`}
                     />
                   )}
                 </Stack>
               </Hide>
-            </StyledTopWrapper>
+            </TopWrapper>
           </Box>
         )}
       </Box>
-    </StyledWrapper>
+    </Wrapper>
   );
 };
 

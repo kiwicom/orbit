@@ -56,68 +56,6 @@
       "1600": {
         "type": "size",
         "value": "{foundation.space.1600}"
-      },
-      "x-x-x-small": {
-        "type": "size",
-        "value": "{foundation.space.x-x-x-small}",
-        "deprecated": true,
-        "deprecated-replace": "{global.space.50}",
-        "deprecated-version": "9.0.0"
-      },
-      "x-x-small": {
-        "type": "size",
-        "value": "{foundation.space.x-x-small}",
-        "deprecated": true,
-        "deprecated-replace": "{global.space.100}",
-        "deprecated-version": "9.0.0"
-      },
-      "x-small": {
-        "type": "size",
-        "value": "{foundation.space.x-small}",
-        "deprecated": true,
-        "deprecated-replace": "{global.space.200}",
-        "deprecated-version": "9.0.0"
-      },
-      "small": {
-        "type": "size",
-        "value": "{foundation.space.small}",
-        "deprecated": true,
-        "deprecated-replace": "{global.space.300}",
-        "deprecated-version": "9.0.0"
-      },
-      "medium": {
-        "type": "size",
-        "value": "{foundation.space.medium}",
-        "deprecated": true,
-        "deprecated-replace": "{global.space.400}",
-        "deprecated-version": "9.0.0"
-      },
-      "large": {
-        "type": "size",
-        "value": "{foundation.space.large}",
-        "deprecated": true,
-        "deprecated-replace": "{global.space.600}",
-        "deprecated-version": "9.0.0"
-      },
-      "x-large": {
-        "type": "size",
-        "value": "{foundation.space.x-large}",
-        "deprecated": true,
-        "deprecated-replace": "{global.space.800}",
-        "deprecated-version": "9.0.0"
-      },
-      "x-x-large": {
-        "type": "size",
-        "value": "{foundation.space.x-x-large}",
-        "deprecated": true,
-        "deprecated-replace": "{global.space.1000}",
-        "deprecated-version": "9.0.0"
-      },
-      "x-x-x-large": {
-        "type": "size",
-        "value": "{foundation.space.x-x-x-large}",
-        "deprecated": true,
-        "deprecated-version": "9.0.0"
       }
     }
   }

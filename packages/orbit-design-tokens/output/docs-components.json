@@ -1,6 +1,5 @@
 {
   "categories": [
-    "background",
     "alert",
     "badge",
     "button-link",
@@ -13,10 +12,9 @@
     "heading",
     "icon",
     "illustration",
-    "loading",
     "modal",
-    "social-button",
     "tab",
+    "background",
     "tag",
     "text-link",
     "text"

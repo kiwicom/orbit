@@ -1,0 +1,16 @@
+{
+  "component": {
+    "background": {
+      "table-shadow": {
+        "left": {
+          "type": "color",
+          "value": "linear-gradient(to left, transparent, rgba(186, 199, 213, 23))"
+        },
+        "right": {
+          "type": "color",
+          "value": "linear-gradient(to right, transparent, rgba(186, 199, 213, 23))"
+        }
+      }
+    }
+  }
+}

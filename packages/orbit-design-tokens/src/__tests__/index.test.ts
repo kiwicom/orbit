@@ -31,11 +31,7 @@ describe("getTokens should accept some palette and base foundation", () => {
   const theme = getTokens(brand);
 
   it("tokens should have those colors", () => {
-    expect(theme.backgroundButtonPrimary).toBe(brand.palette.product.normal);
-    expect(theme.colorTextLinkPrimary).toBe(brand.palette.product.dark);
-    expect(theme.colorTextButtonPrimaryBordered).toBe(brand.palette.product.normal);
-    expect(theme.colorTextButtonPrimaryBorderedHover).toBe(brand.palette.product.normalHover);
-    expect(theme.colorTextButtonPrimaryBorderedActive).toBe(brand.palette.product.normalActive);
+    expect(theme.textLinkPrimaryForeground).toBe(brand.palette.product.dark);
     expect(theme.paletteProductDarkHover).toBe(brand.palette.product.darkHover);
     expect(theme.paletteProductDarkActive).toBe(brand.palette.product.darkActive);
   });
@@ -77,11 +73,7 @@ describe("fromPlainObject should create full theme", () => {
   };
   const theme = fromPlainObject(palette);
   it("tokens should have those colors", () => {
-    expect(theme.backgroundButtonPrimary).toBe(palette.productNormal);
-    expect(theme.colorTextLinkPrimary).toBe(palette.productDark);
-    expect(theme.colorTextButtonPrimaryBordered).toBe(palette.productNormal);
-    expect(theme.colorTextButtonPrimaryBorderedHover).toBe(palette.productNormalHover);
-    expect(theme.colorTextButtonPrimaryBorderedActive).toBe(palette.productNormalActive);
+    expect(theme.textLinkPrimaryForeground).toBe(palette.productDark);
   });
   it("tokens should have default darkHover and darkActive", () => {
     expect(theme.paletteProductDarkHover).toBe(foundation.palette.product.darkHover);

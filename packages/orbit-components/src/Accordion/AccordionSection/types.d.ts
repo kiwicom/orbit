@@ -10,6 +10,7 @@ export interface Props extends Common.Globals {
   readonly actions?: React.ReactNode;
   readonly expanded?: boolean;
   readonly expandable?: boolean;
+  readonly expandOnTileClick?: boolean; // Mobile-first interaction
   readonly onExpand?: Common.Callback;
   readonly header?: React.ReactNode;
   readonly footer?: React.ReactNode;

@@ -19,6 +19,7 @@ const AccordionSection = ({
   actions,
   dataTest,
   expandable = true,
+  expandOnTileClick = false,
 }: Props) => {
   const { expanded, onExpand, loading } = useAccordion();
 
@@ -40,6 +41,7 @@ const AccordionSection = ({
             expanded={Boolean(isExpanded)}
             onExpand={onExpand}
             expandable={expandable}
+            expandOnTileClick={expandOnTileClick}
             dataTest={dataTest}
           >
             {header}

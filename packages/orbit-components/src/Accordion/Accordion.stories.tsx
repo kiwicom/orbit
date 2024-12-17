@@ -264,3 +264,58 @@ export const LoadingAccordion: Story = {
     </Accordion>
   ),
 };
+
+export const MobileFirstInteraction: Story = {
+  render: function Render() {
+    const [expandedSection, setExpandedSection] = React.useState("");
+
+    return (
+      <Stack>
+        <Text>Traditional button-based expansion:</Text>
+        <Accordion
+          expandedSection={expandedSection}
+          onExpand={id => setExpandedSection(String(id))}
+        >
+          <AccordionSection
+            id="traditional"
+            header={
+              <Stack spacing="300">
+                <Text type="primary">Click the button to expand</Text>
+                <Text size="small">Uses traditional button-based expansion</Text>
+              </Stack>
+            }
+          >
+            <Text type="primary">This section uses the traditional button-based expansion.</Text>
+          </AccordionSection>
+        </Accordion>
+
+        <Text spaceAfter="large">Mobile-first tile click expansion:</Text>
+        <Accordion
+          expandedSection={expandedSection}
+          onExpand={id => setExpandedSection(String(id))}
+        >
+          <AccordionSection
+            id="mobile"
+            expandOnTileClick
+            header={
+              <Stack spacing="300">
+                <Text type="primary">Click anywhere on the header to expand</Text>
+                <Text size="small">Uses mobile-first tile click interaction</Text>
+              </Stack>
+            }
+          >
+            <Text type="primary">
+              This section uses the mobile-first expandOnTileClick interaction.
+            </Text>
+            <Text type="primary">
+              The entire header area is clickable for better mobile usability.
+            </Text>
+            <Text type="primary">
+              Keyboard users can still use Enter or Space to expand/collapse.
+            </Text>
+          </AccordionSection>
+        </Accordion>
+      </Stack>
+    );
+  },
+};

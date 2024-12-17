@@ -30,17 +30,18 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-| Name       | Type               | Required | Default | Description |
-| ---------- | ------------------ | -------- | ------- | ----------- |
-| id         | `string \| number` |          |         |             |
-| children   | `React.ReactNode`  |          |         |             |
-| actions    | `React.ReactNode`  |          |         |             |
-| expanded   | `boolean`          |          |         |             |
-| expandable | `boolean`          |          |         |             |
-| onExpand   | `Common.Callback`  |          |         |             |
-| header     | `React.ReactNode`  |          |         |             |
-| footer     | `React.ReactNode`  |          |         |             |
-| dataTest   | `string`           |          |         |             |
+| Name              | Type               | Required | Default | Description                                                                                             |
+| ----------------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------- |
+| id                | `string \| number` |          |         |                                                                                                         |
+| children          | `React.ReactNode`  |          |         |                                                                                                         |
+| actions           | `React.ReactNode`  |          |         |                                                                                                         |
+| expanded          | `boolean`          |          |         |                                                                                                         |
+| expandable        | `boolean`          |          |         |                                                                                                         |
+| expandOnTileClick | `boolean`          |          | `false` | If true, enables mobile-first interaction where the entire header area becomes clickable for expansion. |
+| onExpand          | `Common.Callback`  |          |         |                                                                                                         |
+| header            | `React.ReactNode`  |          |         |                                                                                                         |
+| footer            | `React.ReactNode`  |          |         |                                                                                                         |
+| dataTest          | `string`           |          |         |                                                                                                         |
 
 ### Callback
 

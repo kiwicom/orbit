@@ -3,7 +3,7 @@ import { Heading, Stack } from "@kiwicom/orbit-components";
 
 const ComponentSection = ({ name, children }) => {
   return (
-    <Stack spacing="large">
+    <Stack spacing="600">
       <Heading as="h1" type="title2" spaceAfter="largest">
         {name}
       </Heading>

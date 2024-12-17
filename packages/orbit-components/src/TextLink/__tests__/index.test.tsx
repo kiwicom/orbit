@@ -24,10 +24,10 @@ const SIZE_STYLES: { [K in SIZE_OPTIONS]: Record<"font-size", string> } = {
 };
 
 const ICON_SIZES: { [K in SIZE_OPTIONS]: Record<"height" | "width", string> } = {
-  small: { width: theme.orbit.widthIconSmall, height: theme.orbit.heightIconSmall },
-  normal: { width: theme.orbit.widthIconMedium, height: theme.orbit.heightIconMedium },
-  large: { width: theme.orbit.widthIconLarge, height: theme.orbit.heightIconLarge },
-  extraLarge: { width: theme.orbit.widthIconMedium, height: theme.orbit.heightIconMedium },
+  small: { width: theme.orbit.iconSmallSize, height: theme.orbit.iconSmallSize },
+  normal: { width: theme.orbit.iconMediumSize, height: theme.orbit.iconMediumSize },
+  large: { width: theme.orbit.iconLargeSize, height: theme.orbit.iconLargeSize },
+  extraLarge: { width: theme.orbit.iconMediumSize, height: theme.orbit.iconMediumSize },
 };
 
 const title = "My text link";
@@ -136,7 +136,7 @@ describe("TextLink", () => {
     const element = screen.getByText(title);
 
     expect(element).toHaveStyle({
-      height: theme.orbit.heightButtonNormal,
+      height: theme.orbit.formBoxNormalHeight,
     });
   });
 

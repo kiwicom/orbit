@@ -6,7 +6,7 @@ const InputFields = () => {
   const placeholder = "e.g. John Doe";
 
   return (
-    <Stack direction="column" spacing="XXLarge">
+    <Stack direction="column" spacing="1000">
       <Stack direction="row">
         <InputField label={label} placeholder={placeholder} />
       </Stack>

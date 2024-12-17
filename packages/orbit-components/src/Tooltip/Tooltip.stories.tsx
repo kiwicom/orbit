@@ -101,7 +101,7 @@ export const TooltipOnBlockElements: Story = {
       <Tooltip {...args}>
         <Heading>Orbit design system</Heading>
       </Tooltip>
-      <div className="mt-lg">
+      <div className="mt-600">
         <Tooltip {...args}>
           <Button fullWidth disabled>
             Full width & Disabled

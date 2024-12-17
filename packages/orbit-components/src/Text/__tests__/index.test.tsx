@@ -10,19 +10,19 @@ import Text from "..";
 const SIZE_STYLES: { [K in SIZE_OPTIONS]: Record<"font-size" | "line-height", string> } = {
   small: {
     "font-size": theme.orbit.fontSizeTextSmall,
-    "line-height": theme.orbit.lineHeightTextSmall,
+    "line-height": theme.orbit.lineHeightSmall,
   },
   normal: {
     "font-size": theme.orbit.fontSizeTextNormal,
-    "line-height": theme.orbit.lineHeightTextNormal,
+    "line-height": theme.orbit.lineHeightNormal,
   },
   large: {
     "font-size": theme.orbit.fontSizeTextLarge,
-    "line-height": theme.orbit.lineHeightTextLarge,
+    "line-height": theme.orbit.lineHeightLarge,
   },
   extraLarge: {
     "font-size": theme.orbit.fontSizeTextExtraLarge,
-    "line-height": theme.orbit.lineHeightTextExtraLarge,
+    "line-height": theme.orbit.lineHeightExtraLarge,
   },
 };
 
@@ -60,7 +60,7 @@ describe("Text", () => {
       margin: 0,
       "font-family": theme.orbit.fontFamily,
       "font-size": theme.orbit.fontSizeTextNormal,
-      "line-height": theme.orbit.lineHeightTextNormal,
+      "line-height": theme.orbit.lineHeightNormal,
       "text-align": "start",
     });
   });

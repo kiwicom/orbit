@@ -31,7 +31,7 @@ const ButtonMobileStore = ({
 
   return (
     <a
-      className="inline-block h-[40px]"
+      className="h-1000 inline-block"
       href={href}
       target="_blank"
       rel="noopener noreferrer"

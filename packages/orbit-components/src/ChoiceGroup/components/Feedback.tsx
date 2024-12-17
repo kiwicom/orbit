@@ -23,7 +23,7 @@ const FormFeedback = (props: Props) => {
         {
           "--max-height": Math.floor(
             parseFloat(defaultTheme.orbit.lineHeightText) *
-              parseInt(defaultTheme.orbit.fontSizeFormFeedback, 10),
+              parseInt(defaultTheme.orbit.fontSizeTextSmall, 10),
           ),
         } as React.CSSProperties
       }

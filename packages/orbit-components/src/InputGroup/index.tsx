@@ -149,8 +149,8 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
                     // Select:after
                     "[&_.orbit-select-container]:after:duration-fast [&_.orbit-select-container]:after:h-600 [&_.orbit-select-container]:bg-transparent [&_.orbit-select-container]:after:absolute [&_.orbit-select-container]:after:end-0 [&_.orbit-select-container]:after:top-1/2 [&_.orbit-select-container]:after:z-[2] [&_.orbit-select-container]:after:block [&_.orbit-select-container]:after:-translate-y-1/2 [&_.orbit-select-container]:after:border-r [&_.orbit-select-container]:after:transition-colors [&_.orbit-select-container]:after:ease-in-out [&_.orbit-select-container]:last-of-type:after:content-none",
                     Boolean(errorReal) && !active
-                      ? "[&_.orbit-select-container]:after:border-input-error [&_.orbit-input-field-input-container]:after:border-input-error"
-                      : "[&_.orbit-select-container]:after:border-input [&_.orbit-input-field-input-container]:after:border-input",
+                      ? "[&_.orbit-select-container]:after:border-form-element-error [&_.orbit-input-field-input-container]:after:border-form-element-error"
+                      : "[&_.orbit-select-container]:after:border-form-element [&_.orbit-input-field-input-container]:after:border-form-element",
                     label != null && "[&_.orbit-form-label]:hidden",
                   )}
                   style={{ flex: childFlex }}

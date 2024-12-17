@@ -20,7 +20,7 @@ const Histogram = ({ data, value, min, loading = false, loadingText, step }: Pro
   const highlightTo = Array.isArray(value) ? value[value.length - 1] : value;
   return (
     <div
-      className="flex h-[52px] items-end justify-start gap-px overflow-hidden pb-[3px]"
+      className="h-1300 flex items-end justify-start gap-px overflow-hidden pb-[3px]"
       role="presentation"
     >
       {loading ? (

@@ -25,9 +25,9 @@ const getButtonLinkIconForeground: getButtonLinkIconForegroundType = ({ type, th
   if (compact && type === TYPES.SECONDARY) {
     return {
       foreground: getButtonLinkTypeToken(TOKENS.foreground, type, theme),
-      foregroundHover: theme.orbit.colorTextButtonLinkSecondaryCompactHover,
-      foregroundActive: theme.orbit.colorTextButtonLinkSecondaryCompactHover,
-      foregroundFocus: theme.orbit.colorTextButtonLinkSecondaryCompactActive,
+      foregroundHover: theme.orbit.paletteProductNormalHover,
+      foregroundActive: theme.orbit.paletteProductNormalHover,
+      foregroundFocus: theme.orbit.paletteProductNormalActive,
     };
   }
 

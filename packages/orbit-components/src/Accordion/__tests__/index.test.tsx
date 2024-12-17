@@ -1,9 +1,9 @@
 import React from "react";
 
-import { render, screen } from "../../test-utils";
+import { render, screen, fireEvent, waitFor } from "../../test-utils";
 import Accordion, { AccordionSection } from "..";
 
-describe(`Accordion`, () => {
+describe("Accordion", () => {
   const expandedSection = "0X1";
   const dataTest = "Accordion";
   const id = "accordionId";
@@ -35,7 +35,7 @@ describe(`Accordion`, () => {
     expect(screen.getByTestId(`${sectionDataTest}Loading`)).toBeInTheDocument();
   });
 
-  describe(`AccordionSection`, () => {
+  describe("AccordionSection", () => {
     it("should render passed components", () => {
       render(
         <AccordionSection
@@ -52,6 +52,83 @@ describe(`Accordion`, () => {
       expect(screen.getByTestId(`${sectionDataTest}Header`)).toBeInTheDocument();
       expect(screen.getByTestId(`${sectionDataTest}Content`)).toBeInTheDocument();
       expect(screen.getByTestId(`${sectionDataTest}Footer`)).toBeInTheDocument();
+    });
+
+    describe("expandOnTileClick functionality", () => {
+      const sectionId = "test";
+
+      beforeEach(() => {
+        onExpand.mockClear();
+      });
+
+      it("should expand when header is clicked and expandOnTileClick is true", async () => {
+        const clickTestId = `${sectionDataTest}-click`;
+        const expandHandler = onExpand;
+        render(
+          <Accordion onExpand={expandHandler} expandedSection={undefined}>
+            <AccordionSection
+              id={sectionId}
+              header="Clickable Header"
+              expandOnTileClick
+              dataTest={clickTestId}
+            />
+          </Accordion>,
+        );
+
+        const header = screen.getByTestId(`${clickTestId}Header`);
+        expect(header).toHaveClass("cursor-pointer");
+
+        await waitFor(() => {
+          fireEvent.click(header);
+        });
+
+        expect(expandHandler).toHaveBeenCalledWith(sectionId);
+      });
+
+      it("should not expand when header is clicked and expandOnTileClick is false", async () => {
+        const noClickTestId = `${sectionDataTest}-no-click`;
+        const expandHandler = onExpand;
+        render(
+          <Accordion onExpand={expandHandler} expandedSection={undefined}>
+            <AccordionSection
+              id={sectionId}
+              header="Non-Clickable Header"
+              dataTest={noClickTestId}
+            />
+          </Accordion>,
+        );
+
+        const header = screen.getByTestId(`${noClickTestId}Header`);
+
+        await waitFor(() => {
+          fireEvent.click(header);
+        });
+
+        expect(expandHandler).not.toHaveBeenCalled();
+      });
+
+      it("should maintain button click functionality with expandOnTileClick", async () => {
+        const buttonTestId = `${sectionDataTest}-button`;
+        const expandHandler = onExpand;
+        render(
+          <Accordion onExpand={expandHandler} expandedSection={undefined}>
+            <AccordionSection
+              id={sectionId}
+              header="Header with Both"
+              expandOnTileClick
+              dataTest={buttonTestId}
+            />
+          </Accordion>,
+        );
+
+        const button = screen.getByRole("button", { name: "Open" });
+
+        await waitFor(() => {
+          fireEvent.click(button);
+        });
+
+        expect(expandHandler).toHaveBeenCalledWith(sectionId);
+      });
     });
   });
 });

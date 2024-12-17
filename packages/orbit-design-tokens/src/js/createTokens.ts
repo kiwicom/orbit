@@ -846,9 +846,11 @@ export interface Tokens {
   space400: string;
   space500: string;
   space600: string;
+  space700: string;
   space800: string;
   space1000: string;
   space1200: string;
+  space1300: string;
   space1600: string;
   spaceXXXSmall: string;
   spaceXXSmall: string;

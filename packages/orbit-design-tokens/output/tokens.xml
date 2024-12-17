@@ -3328,6 +3328,10 @@
     <value>24</value>
   </token>
   <token>
+    <name>space700</name>
+    <value>28</value>
+  </token>
+  <token>
     <name>space800</name>
     <value>32</value>
   </token>
@@ -3338,6 +3342,10 @@
   <token>
     <name>space1200</name>
     <value>48</value>
+  </token>
+  <token>
+    <name>space1300</name>
+    <value>52</value>
   </token>
   <token>
     <name>space1600</name>

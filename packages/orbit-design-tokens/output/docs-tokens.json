@@ -19159,6 +19159,28 @@
       "value": "24px"
     }
   },
+  "space700": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "700"
+    },
+    "javascript": {
+      "name": "space700",
+      "value": "28px"
+    },
+    "foundation": {
+      "name": "space700",
+      "value": "foundation.space.700"
+    },
+    "scss": {
+      "name": "space700",
+      "value": "28px"
+    }
+  },
   "space800": {
     "type": "size",
     "deprecated": false,
@@ -19223,6 +19245,28 @@
     "scss": {
       "name": "space1200",
       "value": "48px"
+    }
+  },
+  "space1300": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "space",
+      "variant": "1300"
+    },
+    "javascript": {
+      "name": "space1300",
+      "value": "52px"
+    },
+    "foundation": {
+      "name": "space1300",
+      "value": "foundation.space.1300"
+    },
+    "scss": {
+      "name": "space1300",
+      "value": "52px"
     }
   },
   "space1600": {

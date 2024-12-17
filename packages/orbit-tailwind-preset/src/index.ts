@@ -239,7 +239,6 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "tab-bundle-top-foreground": tokens.tabBundleTopForeground,
         },
         boxShadow: {
-          "button-focus": tokens.boxShadowButtonFocus,
           "button-active": `inset 0 0 6px 3px ${convertHexToRgba(tokens.paletteInkDark, 15)}`,
           "button-active-pale": `inset 0 0 6px 3px ${convertHexToRgba(tokens.paletteInkDark, 8)}`,
           "country-flag": tokens.countryFlagShadow,

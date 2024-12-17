@@ -33,6 +33,10 @@
         "type": "size",
         "value": "{foundation.space.600}"
       },
+      "700": {
+        "type": "size",
+        "value": "{foundation.space.700}"
+      },
       "800": {
         "type": "size",
         "value": "{foundation.space.800}"
@@ -44,6 +48,10 @@
       "1200": {
         "type": "size",
         "value": "{foundation.space.1200}"
+      },
+      "1300": {
+        "type": "size",
+        "value": "{foundation.space.1300}"
       },
       "1600": {
         "type": "size",

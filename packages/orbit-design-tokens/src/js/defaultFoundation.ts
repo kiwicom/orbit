@@ -143,9 +143,11 @@ export interface Space {
   400: string;
   500: string;
   600: string;
+  700: string;
   800: string;
   1000: string;
   1200: string;
+  1300: string;
   1600: string;
   XXXSmall: string;
   XXSmall: string;
@@ -345,9 +347,11 @@ const space = {
   400: "16px",
   500: "20px",
   600: "24px",
+  700: "28px",
   800: "32px",
   1000: "40px",
   1200: "48px",
+  1300: "52px",
   1600: "64px",
   XXXSmall: "2px",
   XXSmall: "4px",

@@ -41,6 +41,11 @@
         "value": 24,
         "internal": true
       },
+      "700": {
+        "type": "size",
+        "value": 28,
+        "internal": true
+      },
       "800": {
         "type": "size",
         "value": 32,
@@ -54,6 +59,11 @@
       "1200": {
         "type": "size",
         "value": 48,
+        "internal": true
+      },
+      "1300": {
+        "type": "size",
+        "value": 52,
         "internal": true
       },
       "1600": {

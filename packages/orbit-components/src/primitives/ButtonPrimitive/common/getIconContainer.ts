@@ -25,8 +25,8 @@ const getIconSpacing = (onlyIcon: boolean, theme: Theme) => {
   if (onlyIcon) return null;
 
   return {
-    leftMargin: rtlSpacing(`0 ${theme.orbit.marginButtonIcon} 0 0`)({ theme }),
-    rightMargin: rtlSpacing(`0 0 0 ${theme.orbit.marginButtonIcon}`)({ theme }),
+    leftMargin: rtlSpacing(`0 ${theme.orbit.space200} 0 0`)({ theme }),
+    rightMargin: rtlSpacing(`0 0 0 ${theme.orbit.space200}`)({ theme }),
   };
 };
 

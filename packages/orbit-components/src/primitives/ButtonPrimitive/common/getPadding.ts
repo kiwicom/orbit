@@ -13,27 +13,27 @@ const getSpacing = (
   theme: Theme,
 ): string => {
   const wrappedRtl = (value: string) => rtlSpacing(value)({ theme });
-  if (onlyIcon) return wrappedRtl(theme.orbit.paddingButtonWithoutText);
+  if (onlyIcon) return wrappedRtl(theme.orbit.buttonWithoutTextPadding);
   const tokens = {
     [TOKENS.paddingButton]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLarge,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormal,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmall,
+      [SIZE_OPTIONS.LARGE]: `0 ${theme.orbit.space700}`,
+      [SIZE_OPTIONS.NORMAL]: `0 ${theme.orbit.space400}`,
+      [SIZE_OPTIONS.SMALL]: `0 ${theme.orbit.space300}`,
     },
     [TOKENS.paddingButtonWithIcons]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithIcons,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithIcons,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithIcons,
+      [SIZE_OPTIONS.LARGE]: `0 ${theme.orbit.space400}`,
+      [SIZE_OPTIONS.NORMAL]: `0 ${theme.orbit.space300}`,
+      [SIZE_OPTIONS.SMALL]: `0 ${theme.orbit.space200}`,
     },
     [TOKENS.paddingButtonWithLeftIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithLeftIcon,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithLeftIcon,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithLeftIcon,
+      [SIZE_OPTIONS.LARGE]: `0 ${theme.orbit.space700} 0 ${theme.orbit.space400}`,
+      [SIZE_OPTIONS.NORMAL]: `0 ${theme.orbit.space400} 0 ${theme.orbit.space300}`,
+      [SIZE_OPTIONS.SMALL]: `0 ${theme.orbit.space300} 0 ${theme.orbit.space200}`,
     },
     [TOKENS.paddingButtonWithRightIcon]: {
-      [SIZE_OPTIONS.LARGE]: theme.orbit.paddingButtonLargeWithRightIcon,
-      [SIZE_OPTIONS.NORMAL]: theme.orbit.paddingButtonNormalWithRightIcon,
-      [SIZE_OPTIONS.SMALL]: theme.orbit.paddingButtonSmallWithRightIcon,
+      [SIZE_OPTIONS.LARGE]: `0 ${theme.orbit.space400} 0 ${theme.orbit.space700}`,
+      [SIZE_OPTIONS.NORMAL]: `0 ${theme.orbit.space300} 0 ${theme.orbit.space400}`,
+      [SIZE_OPTIONS.SMALL]: `0 ${theme.orbit.space200} 0 ${theme.orbit.space300}`,
     },
   };
   if (iconLeft && iconRight) return wrappedRtl(tokens[TOKENS.paddingButtonWithIcons][size]);

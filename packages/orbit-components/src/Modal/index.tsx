@@ -493,7 +493,7 @@ const Modal = React.forwardRef<Instance, Props>(
                   !isMobileFullPage && "rounded-t-modal",
                   modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
                   scrolled && "shadow-fixed bg-white-normal",
-                  "[&_+_.orbit-modal-section:first-of-type]:m-0 [&_+_.orbit-modal-section:first-of-type]:border-t-0 [&_+_.orbit-modal-section:first-of-type]:pt-[52px]",
+                  "[&_+_.orbit-modal-section:first-of-type]:pt-1300 [&_+_.orbit-modal-section:first-of-type]:m-0 [&_+_.orbit-modal-section:first-of-type]:border-t-0",
                   "[&_.orbit-button-primitive]:me-100 [&_.orbit-button-primitive]:pointer-events-auto",
                   "[&_.orbit-button-primitive_svg]:duration-fast [&_.orbit-button-primitive_svg]:text-ink-normal [&_.orbit-button-primitive_svg]:transition-[color] [&_.orbit-button-primitive_svg]:ease-in-out",
                   "[&_.orbit-button-primitive:hover_svg]:text-ink-light-hover [&_.orbit-button-primitive:active_svg]:text-ink-light-active",

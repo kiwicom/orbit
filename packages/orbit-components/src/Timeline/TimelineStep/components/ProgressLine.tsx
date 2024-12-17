@@ -7,10 +7,10 @@ import type { Theme } from "../../../defaultTheme";
 
 export const getStatusColor = (theme: Theme, type?: Type): string => {
   const colors = {
-    success: theme.orbit.colorTextSuccess,
-    warning: theme.orbit.colorTextWarning,
-    critical: theme.orbit.colorTextCritical,
-    info: theme.orbit.colorTextInfo,
+    success: theme.orbit.textSuccessForeground,
+    warning: theme.orbit.textWarningForeground,
+    critical: theme.orbit.textCriticalForeground,
+    info: theme.orbit.textInfoForeground,
   };
 
   return type ? colors[type] : theme.orbit.paletteCloudNormalHover;

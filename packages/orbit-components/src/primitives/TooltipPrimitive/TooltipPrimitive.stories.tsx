@@ -99,7 +99,7 @@ export const TooltipPrimitiveOnBlockElements: Story = {
       <TooltipPrimitive {...args}>
         <Heading>Orbit design system</Heading>
       </TooltipPrimitive>
-      <div className="mt-lg">
+      <div className="mt-600">
         <TooltipPrimitive {...args}>
           <Button fullWidth disabled>
             Full width & Disabled

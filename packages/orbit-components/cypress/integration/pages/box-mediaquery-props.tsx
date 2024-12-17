@@ -13,7 +13,7 @@ export default function BoxMediaProps() {
       }}
       largeMobile={{
         textAlign: "center",
-        borderRadius: "large",
+        borderRadius: "150",
         overflow: "scroll",
         shrink: 0,
         color: "orangeDark",

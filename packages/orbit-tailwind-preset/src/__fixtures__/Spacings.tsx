@@ -14,9 +14,11 @@ const Spacings = () => {
       <div className="px-400">space400</div>
       <div className="px-500">space500</div>
       <div className="px-600">space600</div>
+      <div className="px-700">space700</div>
       <div className="px-800">space800</div>
       <div className="px-1000">space1000</div>
       <div className="px-1200">space1200</div>
+      <div className="px-1300">space1300</div>
       <div className="px-1600">space1600</div>
       <div className="px-xxxs">spaceXXXSmall</div>
       <div className="px-xxs">spaceXXSmall</div>

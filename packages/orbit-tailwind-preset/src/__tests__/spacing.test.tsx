@@ -13,9 +13,11 @@ const SPACINGS = [
   "space400",
   "space500",
   "space600",
+  "space700",
   "space800",
   "space1000",
   "space1200",
+  "space1300",
   "space1600",
   // Deprecated
   "spaceXXXSmall",

@@ -30,63 +30,6 @@
           "value": "{foundation.palette.product.dark-active}"
         }
       }
-    },
-    "background": {
-      "button": {
-        "primary-subtle": {
-          "type": "color",
-          "value": "{foundation.palette.product.light}",
-          "deprecated": true,
-          "deprecated-version": "6.0.0",
-          "deprecated-replace": "{component.button.primary-subtle.background}"
-        },
-        "primary-subtle-hover": {
-          "type": "color",
-          "value": "{foundation.palette.product.light-hover}",
-          "deprecated": true,
-          "deprecated-version": "6.0.0",
-          "deprecated-replace": "{component.button.primary-subtle.background-hover}"
-        },
-        "primary-subtle-active": {
-          "type": "color",
-          "value": "{foundation.palette.product.light-active}",
-          "deprecated": true,
-          "deprecated-version": "6.0.0",
-          "deprecated-replace": "{component.button.primary-subtle.background-active}"
-        },
-        "primary-subtle-focus": {
-          "type": "color",
-          "value": "{foundation.palette.product.light}",
-          "deprecated": true,
-          "deprecated-version": "6.0.0",
-          "deprecated-replace": "{component.button.primary-subtle.background}"
-        }
-      }
-    },
-    "color-text": {
-      "button": {
-        "primary-subtle": {
-          "type": "color",
-          "value": "{foundation.palette.product.dark}",
-          "deprecated": true,
-          "deprecated-version": "6.0.0",
-          "deprecated-replace": "{component.button.primary-subtle.foreground}"
-        },
-        "primary-subtle-hover": {
-          "type": "color",
-          "value": "{foundation.palette.product.dark-hover}",
-          "deprecated": true,
-          "deprecated-version": "6.0.0",
-          "deprecated-replace": "{component.button.primary-subtle.foreground-hover}"
-        },
-        "primary-subtle-active": {
-          "type": "color",
-          "value": "{foundation.palette.product.dark-active}",
-          "deprecated": true,
-          "deprecated-version": "6.0.0",
-          "deprecated-replace": "{component.button.primary-subtle.foreground-active}"
-        }
-      }
     }
   }
 }

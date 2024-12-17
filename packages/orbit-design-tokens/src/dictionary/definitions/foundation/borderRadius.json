@@ -1,19 +1,9 @@
 {
   "foundation": {
     "border-radius": {
-      "circle": {
-        "type": "border-radius",
-        "value": "50%",
-        "internal": true
-      },
       "none": {
         "type": "border-radius",
         "value": 0,
-        "internal": true
-      },
-      "small": {
-        "type": "border-radius",
-        "value": 2,
         "internal": true
       },
       "50": {
@@ -21,19 +11,9 @@
         "value": 2,
         "internal": true
       },
-      "normal": {
-        "type": "border-radius",
-        "value": 3,
-        "internal": true
-      },
       "100": {
         "type": "border-radius",
         "value": 4,
-        "internal": true
-      },
-      "large": {
-        "type": "border-radius",
-        "value": 6,
         "internal": true
       },
       "150": {

@@ -11,22 +11,6 @@
           "value": "{foundation.palette.cloud.normal}"
         }
       }
-    },
-    "background": {
-      "input": {
-        "type": "color",
-        "value": "{foundation.palette.white.normal}",
-        "deprecated": true,
-        "deprecated-replace": "{component.form-element.background}",
-        "deprecated-version": "6.0.0"
-      },
-      "input-disabled": {
-        "type": "color",
-        "value": "{foundation.palette.cloud.normal}",
-        "deprecated": true,
-        "deprecated-replace": "{component.form-element.disabled.background}",
-        "deprecated-version": "6.0.0"
-      }
     }
   }
 }

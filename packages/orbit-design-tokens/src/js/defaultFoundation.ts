@@ -112,11 +112,7 @@ export interface BorderRadius {
   200: string;
   300: string;
   400: string;
-  circle: string;
   none: string;
-  small: string;
-  normal: string;
-  large: string;
   full: string;
 }
 export interface Breakpoint {
@@ -149,15 +145,6 @@ export interface Space {
   1200: string;
   1300: string;
   1600: string;
-  XXXSmall: string;
-  XXSmall: string;
-  XSmall: string;
-  small: string;
-  medium: string;
-  large: string;
-  XLarge: string;
-  XXLarge: string;
-  XXXLarge: string;
 }
 export interface FontFamily {
   base: string;
@@ -316,11 +303,7 @@ const borderRadius = {
   200: "8px",
   300: "12px",
   400: "16px",
-  circle: "50%",
   none: "0",
-  small: "2px",
-  normal: "3px",
-  large: "6px",
   full: "9999px",
 };
 const breakpoint = {
@@ -353,15 +336,6 @@ const space = {
   1200: "48px",
   1300: "52px",
   1600: "64px",
-  XXXSmall: "2px",
-  XXSmall: "4px",
-  XSmall: "8px",
-  small: "12px",
-  medium: "16px",
-  large: "24px",
-  XLarge: "32px",
-  XXLarge: "40px",
-  XXXLarge: "52px",
 };
 const fontFamily = {
   base: "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",

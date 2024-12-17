@@ -1,6 +1,6 @@
 {
   "component": {
-    "modal": {
+    "badge": {
       "border-radius": {
         "type": "border-radius",
         "value": 12

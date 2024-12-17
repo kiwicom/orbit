@@ -1,34 +1,6 @@
 {
   "global": {
     "border-radius": {
-      "circle": {
-        "type": "border-radius",
-        "value": "{foundation.border-radius.circle}",
-        "deprecated": true,
-        "deprecated-replace": "{global.border-radius.full}",
-        "deprecated-version": "8.0.0"
-      },
-      "small": {
-        "type": "border-radius",
-        "value": "{foundation.border-radius.small}",
-        "deprecated": true,
-        "deprecated-replace": "{global.border-radius.50}",
-        "deprecated-version": "9.0.0"
-      },
-      "normal": {
-        "type": "border-radius",
-        "value": "{foundation.border-radius.normal}",
-        "deprecated": true,
-        "deprecated-replace": "{global.border-radius.100}",
-        "deprecated-version": "9.0.0"
-      },
-      "large": {
-        "type": "border-radius",
-        "value": "{foundation.border-radius.large}",
-        "deprecated": true,
-        "deprecated-replace": "{global.border-radius.150}",
-        "deprecated-version": "9.0.0"
-      },
       "none": {
         "type": "border-radius",
         "value": "{foundation.border-radius.none}"

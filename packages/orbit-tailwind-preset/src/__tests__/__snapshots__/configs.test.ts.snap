@@ -977,7 +977,6 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "input-error-hover": "rgba(var(--palette-red-normal-hover, 185, 25, 25), <alpha-value>)",
       "input-focus": "rgba(var(--palette-blue-normal, 0, 112, 200), <alpha-value>)",
       "input-hover": "rgba(var(--palette-cloud-dark-hover, 166, 182, 200), <alpha-value>)",
-      "modal": "rgba(var(--palette-cloud-normal, 232, 237, 241), <alpha-value>)",
       "orange": {
         "dark": "rgba(var(--palette-orange-dark, 167, 84, 0), <alpha-value>)",
         "dark-active": "rgba(var(--palette-orange-dark-active, 128, 63, 0), <alpha-value>)",
@@ -1605,7 +1604,6 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "input-error-hover": "rgba(var(--palette-red-normal-hover, 185, 25, 25), <alpha-value>)",
       "input-focus": "rgba(var(--palette-blue-normal, 0, 112, 200), <alpha-value>)",
       "input-hover": "rgba(var(--palette-cloud-dark-hover, 166, 182, 200), <alpha-value>)",
-      "modal": "rgba(var(--palette-cloud-normal, 232, 237, 241), <alpha-value>)",
       "orange": {
         "dark": "rgba(var(--palette-orange-dark, 167, 84, 0), <alpha-value>)",
         "dark-active": "rgba(var(--palette-orange-dark-active, 128, 63, 0), <alpha-value>)",

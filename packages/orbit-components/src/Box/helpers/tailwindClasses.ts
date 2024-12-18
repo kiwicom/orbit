@@ -107,10 +107,6 @@ export const shadowClasses: {
 };
 
 export enum BORDER_RADIUS {
-  SMALL = "small", // deprecated
-  NORMAL = "normal", // deprecated
-  LARGE = "large", // deprecated
-  CIRCLE = "circle", // deprecated
   NONE = "none",
   FULL = "full",
   FIFTY = "50",
@@ -124,10 +120,6 @@ export enum BORDER_RADIUS {
 export const borderRadiusClasses: {
   [K in QUERIES | BORDER_RADIUS]: K extends QUERIES ? Record<BORDER_RADIUS, string> : string;
 } = {
-  [BORDER_RADIUS.SMALL]: "rounded-small", // deprecated
-  [BORDER_RADIUS.NORMAL]: "rounded-normal", // deprecated
-  [BORDER_RADIUS.LARGE]: "rounded-large", // deprecated
-  [BORDER_RADIUS.CIRCLE]: "rounded-full", // deprecated
   [BORDER_RADIUS.NONE]: "rounded-none",
   [BORDER_RADIUS.FULL]: "rounded-full",
   [BORDER_RADIUS.FIFTY]: "rounded-50",
@@ -137,10 +129,6 @@ export const borderRadiusClasses: {
   [BORDER_RADIUS.THREE_HUNDRED]: "rounded-300",
   [BORDER_RADIUS.FOUR_HUNDRED]: "rounded-400",
   [QUERIES.LARGEDESKTOP]: {
-    [BORDER_RADIUS.SMALL]: "ld:rounded-small", // deprecated
-    [BORDER_RADIUS.NORMAL]: "ld:rounded-normal", // deprecated
-    [BORDER_RADIUS.LARGE]: "ld:rounded-large", // deprecated
-    [BORDER_RADIUS.CIRCLE]: "ld:rounded-full", // deprecated
     [BORDER_RADIUS.NONE]: "ld:rounded-none",
     [BORDER_RADIUS.FULL]: "rounded-full",
     [BORDER_RADIUS.FIFTY]: "ld:rounded-50",
@@ -151,10 +139,6 @@ export const borderRadiusClasses: {
     [BORDER_RADIUS.FOUR_HUNDRED]: "ld:rounded-400",
   },
   [QUERIES.DESKTOP]: {
-    [BORDER_RADIUS.SMALL]: "de:rounded-small", // deprecated
-    [BORDER_RADIUS.NORMAL]: "de:rounded-normal", // deprecated
-    [BORDER_RADIUS.LARGE]: "de:rounded-large", // deprecated
-    [BORDER_RADIUS.CIRCLE]: "de:rounded-full", // deprecated
     [BORDER_RADIUS.NONE]: "de:rounded-none",
     [BORDER_RADIUS.FULL]: "rounded-full",
     [BORDER_RADIUS.FIFTY]: "de:rounded-50",
@@ -165,10 +149,6 @@ export const borderRadiusClasses: {
     [BORDER_RADIUS.FOUR_HUNDRED]: "de:rounded-400",
   },
   [QUERIES.TABLET]: {
-    [BORDER_RADIUS.SMALL]: "tb:rounded-small", // deprecated
-    [BORDER_RADIUS.NORMAL]: "tb:rounded-normal", // deprecated
-    [BORDER_RADIUS.LARGE]: "tb:rounded-large", // deprecated
-    [BORDER_RADIUS.CIRCLE]: "tb:rounded-full", // deprecated
     [BORDER_RADIUS.NONE]: "tb:rounded-none",
     [BORDER_RADIUS.FULL]: "rounded-full",
     [BORDER_RADIUS.FIFTY]: "tb:rounded-50",
@@ -179,10 +159,6 @@ export const borderRadiusClasses: {
     [BORDER_RADIUS.FOUR_HUNDRED]: "tb:rounded-400",
   },
   [QUERIES.LARGEMOBILE]: {
-    [BORDER_RADIUS.SMALL]: "lm:rounded-small", // deprecated
-    [BORDER_RADIUS.NORMAL]: "lm:rounded-normal", // deprecated
-    [BORDER_RADIUS.LARGE]: "lm:rounded-large", // deprecated
-    [BORDER_RADIUS.CIRCLE]: "lm:rounded-full", // deprecated
     [BORDER_RADIUS.NONE]: "lm:rounded-none",
     [BORDER_RADIUS.FULL]: "rounded-full",
     [BORDER_RADIUS.FIFTY]: "lm:rounded-50",
@@ -193,10 +169,6 @@ export const borderRadiusClasses: {
     [BORDER_RADIUS.FOUR_HUNDRED]: "lm:rounded-400",
   },
   [QUERIES.MEDIUMMOBILE]: {
-    [BORDER_RADIUS.SMALL]: "mm:rounded-small", // deprecated
-    [BORDER_RADIUS.NORMAL]: "mm:rounded-normal", // deprecated
-    [BORDER_RADIUS.LARGE]: "mm:rounded-large", // deprecated
-    [BORDER_RADIUS.CIRCLE]: "mm:rounded-full", // deprecated
     [BORDER_RADIUS.NONE]: "mm:rounded-none",
     [BORDER_RADIUS.FULL]: "rounded-full",
     [BORDER_RADIUS.FIFTY]: "mm:rounded-50",

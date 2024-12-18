@@ -119,19 +119,15 @@ All this properties - objects have the some own properties and none is required.
 
 ### borderRadius
 
-| borderRadius                               |
-| :----------------------------------------- |
-| `"small"` – **deprecated (use `"50"`)**    |
-| `"normal"` – **deprecated (use `"100"`)**  |
-| `"large"` – **deprecated (use `"150"`)**   |
-| `"circle"` – **deprecated (use `"full"`)** |
-| `"full"`                                   |
-| `"50"`                                     |
-| `"100"`                                    |
-| `"150"`                                    |
-| `"200"`                                    |
-| `"300"`                                    |
-| `"400"`                                    |
+| borderRadius |
+| :----------- |
+| `"full"`     |
+| `"50"`       |
+| `"100"`      |
+| `"150"`      |
+| `"200"`      |
+| `"300"`      |
+| `"400"`      |
 
 ### overflow
 

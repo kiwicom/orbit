@@ -40,12 +40,8 @@ export const positionClasses: {
 };
 
 export enum SHADOWS {
-  ACTION = "action", // deprecated
   FIXED = "fixed",
-  RAISED = "raised", // deprecated
-  OVERLAY = "overlay", // deprecated
   FIXED_REVERSE = "fixedReverse",
-  RAISED_REVERSE = "raisedReverse", // deprecated
   LEVEL1 = "level1",
   LEVEL2 = "level2",
   LEVEL3 = "level3",
@@ -56,24 +52,16 @@ export enum SHADOWS {
 export const shadowClasses: {
   [K in QUERIES | SHADOWS]: K extends QUERIES ? Record<SHADOWS, string> : string;
 } = {
-  [SHADOWS.ACTION]: "shadow-action", // deprecated
   [SHADOWS.FIXED]: "shadow-fixed",
-  [SHADOWS.RAISED]: "shadow-raised", // deprecated
-  [SHADOWS.OVERLAY]: "shadow-overlay", // deprecated
   [SHADOWS.FIXED_REVERSE]: "shadow-fixed-reverse",
-  [SHADOWS.RAISED_REVERSE]: "shadow-raised-reverse", // deprecated
   [SHADOWS.LEVEL1]: "shadow-level1",
   [SHADOWS.LEVEL2]: "shadow-level2",
   [SHADOWS.LEVEL3]: "shadow-level3",
   [SHADOWS.LEVEL3_REVERSE]: "shadow-level3-reverse",
   [SHADOWS.LEVEL4]: "shadow-level4",
   [QUERIES.LARGEDESKTOP]: {
-    [SHADOWS.ACTION]: "ld:shadow-action", // deprecated
     [SHADOWS.FIXED]: "ld:shadow-fixed",
-    [SHADOWS.RAISED]: "ld:shadow-raised", // deprecated
-    [SHADOWS.OVERLAY]: "ld:shadow-overlay", // deprecated
     [SHADOWS.FIXED_REVERSE]: "ld:shadow-fixed-reverse",
-    [SHADOWS.RAISED_REVERSE]: "ld:shadow-raised-reverse", // deprecated
     [SHADOWS.LEVEL1]: "ld:shadow-level1",
     [SHADOWS.LEVEL2]: "ld:shadow-level2",
     [SHADOWS.LEVEL3]: "ld:shadow-level3",
@@ -81,12 +69,8 @@ export const shadowClasses: {
     [SHADOWS.LEVEL4]: "ld:shadow-level4",
   },
   [QUERIES.DESKTOP]: {
-    [SHADOWS.ACTION]: "de:shadow-action", // deprecated
     [SHADOWS.FIXED]: "de:shadow-fixed",
-    [SHADOWS.RAISED]: "de:shadow-raised", // deprecated
-    [SHADOWS.OVERLAY]: "de:shadow-overlay", // deprecated
     [SHADOWS.FIXED_REVERSE]: "de:shadow-fixed-reverse",
-    [SHADOWS.RAISED_REVERSE]: "de:shadow-raised-reverse", // deprecated
     [SHADOWS.LEVEL1]: "de:shadow-level1",
     [SHADOWS.LEVEL2]: "de:shadow-level2",
     [SHADOWS.LEVEL3]: "de:shadow-level3",
@@ -94,12 +78,8 @@ export const shadowClasses: {
     [SHADOWS.LEVEL4]: "de:shadow-level4",
   },
   [QUERIES.TABLET]: {
-    [SHADOWS.ACTION]: "tb:shadow-action", // deprecated
     [SHADOWS.FIXED]: "tb:shadow-fixed",
-    [SHADOWS.RAISED]: "tb:shadow-raised", // deprecated
-    [SHADOWS.OVERLAY]: "tb:shadow-overlay", // deprecated
     [SHADOWS.FIXED_REVERSE]: "tb:shadow-fixed-reverse",
-    [SHADOWS.RAISED_REVERSE]: "tb:shadow-raised-reverse", // deprecated
     [SHADOWS.LEVEL1]: "tb:shadow-level1",
     [SHADOWS.LEVEL2]: "tb:shadow-level2",
     [SHADOWS.LEVEL3]: "tb:shadow-level3",
@@ -107,12 +87,8 @@ export const shadowClasses: {
     [SHADOWS.LEVEL4]: "tb:shadow-level4",
   },
   [QUERIES.LARGEMOBILE]: {
-    [SHADOWS.ACTION]: "lm:shadow-action", // deprecated
     [SHADOWS.FIXED]: "lm:shadow-fixed",
-    [SHADOWS.RAISED]: "lm:shadow-raised", // deprecated
-    [SHADOWS.OVERLAY]: "lm:shadow-overlay", // deprecated
     [SHADOWS.FIXED_REVERSE]: "lm:shadow-fixed-reverse",
-    [SHADOWS.RAISED_REVERSE]: "lm:shadow-raised-reverse", // deprecated
     [SHADOWS.LEVEL1]: "lm:shadow-level1",
     [SHADOWS.LEVEL2]: "lm:shadow-level2",
     [SHADOWS.LEVEL3]: "lm:shadow-level3",
@@ -120,12 +96,8 @@ export const shadowClasses: {
     [SHADOWS.LEVEL4]: "lm:shadow-level4",
   },
   [QUERIES.MEDIUMMOBILE]: {
-    [SHADOWS.ACTION]: "mm:shadow-action", // deprecated
     [SHADOWS.FIXED]: "mm:shadow-fixed",
-    [SHADOWS.RAISED]: "mm:shadow-raised", // deprecated
-    [SHADOWS.OVERLAY]: "mm:shadow-overlay", // deprecated
     [SHADOWS.FIXED_REVERSE]: "mm:shadow-fixed-reverse",
-    [SHADOWS.RAISED_REVERSE]: "mm:shadow-raised-reverse", // deprecated
     [SHADOWS.LEVEL1]: "mm:shadow-level1",
     [SHADOWS.LEVEL2]: "mm:shadow-level2",
     [SHADOWS.LEVEL3]: "mm:shadow-level3",

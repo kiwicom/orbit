@@ -5,12 +5,8 @@ import type * as React from "react";
 import type * as Common from "../common/types";
 
 export type Elevation =
-  | "action"
   | "fixed"
-  | "raised"
-  | "overlay"
   | "fixedReverse"
-  | "raisedReverse"
   | "level1"
   | "level2"
   | "level3"

@@ -3722,7 +3722,6 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "link-white-foreground": "rgba(var(--palette-white-normal, 255, 255, 255), <alpha-value>)",
       "link-white-foreground-active": "rgba(var(--palette-product-light, 225, 244, 243), <alpha-value>)",
       "link-white-foreground-hover": "rgba(var(--palette-product-light, 225, 244, 243), <alpha-value>)",
-      "loading-foreground": "rgba(var(--palette-cloud-dark, 186, 199, 213), <alpha-value>)",
       "orange": {
         "dark": "rgba(var(--palette-orange-dark, 167, 84, 0), <alpha-value>)",
         "dark-active": "rgba(var(--palette-orange-dark-active, 128, 63, 0), <alpha-value>)",

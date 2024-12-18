@@ -179,7 +179,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
         padding: {
           ...componentTokens("button", "padding"),
           ...componentTokens("formElement", "padding"),
-          table: tokens.paddingTable,
+          table: `${tokens.space300} ${tokens.space400}`,
           "button-padding-xs": tokens.buttonPaddingXSmall,
           "button-padding-sm": tokens.buttonPaddingSmall,
           "button-padding-md": tokens.buttonPaddingNormal,

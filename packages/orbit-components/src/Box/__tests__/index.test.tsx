@@ -24,10 +24,6 @@ const BORDER_RADIUS: { [K in BORDER_RADIUS_KEYS]: string } = {
   400: theme.orbit.borderRadius400,
   none: theme.orbit.borderRadiusNone,
   full: theme.orbit.borderRadiusFull,
-  small: theme.orbit.borderRadiusSmall,
-  normal: theme.orbit.borderRadiusNormal,
-  large: theme.orbit.borderRadiusLarge,
-  circle: theme.orbit.borderRadiusFull,
 };
 
 describe("#Box", () => {

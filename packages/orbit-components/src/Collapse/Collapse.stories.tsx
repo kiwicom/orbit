@@ -213,6 +213,12 @@ export const Uncontrolled: Story = {
   args: {
     expanded: undefined,
   },
+
+  parameters: {
+    controls: {
+      exclude: "expanded",
+    },
+  },
 };
 
 export const Rtl: Story = {

@@ -64,36 +64,35 @@ const Collapse = ({
       data-test={dataTest}
       id={id}
     >
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-      <div
-        className="block w-full cursor-pointer"
-        onClick={handleClick}
-        role="button"
-        tabIndex={-1}
-        id={labelID}
-      >
-        <Stack justify="between" align="center">
-          {label && !customLabel && <Heading type="title4">{label}</Heading>}
-          {customLabel}
-          <Stack inline grow={false} align="center" spacing="300">
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-            <div
-              className="flex items-center"
-              onClick={ev => {
-                ev.stopPropagation();
-              }}
-            >
-              {actions}
-            </div>
-            <ButtonLink
-              iconLeft={<AnimatedIcon expanded={expanded} />}
-              size="small"
-              type="secondary"
-              ariaLabelledby={labelID}
-              ariaExpanded={expanded}
-              ariaControls={slideID}
-            />
+      <div className="flex items-center justify-between">
+        <div
+          className="flex w-full self-stretch"
+          id={labelID}
+          role="button"
+          tabIndex={0}
+          onClick={handleClick}
+          onKeyDown={e => {
+            if (e.key === "Enter" || e.key === " ") {
+              handleClick(e);
+            }
+          }}
+        >
+          <Stack justify="between" align="center">
+            {label && !customLabel && <Heading type="title4">{label}</Heading>}
+            {customLabel}
           </Stack>
+        </div>
+        <Stack inline grow={false} align="center" spacing="none">
+          {actions && <div className="mx-300 flex items-center">{actions}</div>}
+          <ButtonLink
+            iconLeft={<AnimatedIcon expanded={expanded} />}
+            size="small"
+            type="secondary"
+            onClick={handleClick}
+            ariaLabelledby={labelID}
+            ariaExpanded={expanded}
+            ariaControls={slideID}
+          />
         </Stack>
       </div>
       <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>

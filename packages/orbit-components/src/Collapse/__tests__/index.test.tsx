@@ -4,10 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { render, screen } from "../../test-utils";
 import Collapse from "..";
 
-const toggleButtons = [
-  [0, "label"],
-  [1, "icon button"],
-];
+const toggleButtons = ["label", "icon button"];
 
 describe("Collapse", () => {
   const user = userEvent.setup();
@@ -31,32 +28,41 @@ describe("Collapse", () => {
     expect(screen.getByText("customLabel")).toBeInTheDocument();
   });
 
-  it.each(toggleButtons)("should trigger click handler when clicking on %s", async buttonIndex => {
-    const onClick = jest.fn();
-    render(
-      <Collapse label="Collapse" onClick={onClick}>
-        <div>children</div>
-      </Collapse>,
-    );
-    const toggleButton = screen.getAllByRole("button", { name: "Collapse" })[buttonIndex];
-    await user.click(toggleButton);
-    expect(onClick).toHaveBeenCalled();
-  });
+  it.each(toggleButtons)(
+    "should trigger click handler when clicking on %s",
+    async triggerButton => {
+      const onClick = jest.fn();
+      render(
+        <Collapse label="Collapse" onClick={onClick}>
+          <div>children</div>
+        </Collapse>,
+      );
+
+      const toggleButton =
+        triggerButton === "label"
+          ? screen.getByText("Collapse")
+          : screen.getByRole("button", { expanded: false });
+
+      await user.click(toggleButton);
+      expect(onClick).toHaveBeenCalled();
+    },
+  );
 
   describe("uncontrolled", () => {
-    it.each(toggleButtons)("should expand/collapse when clicking on %s", async buttonIndex => {
+    it("should expand/collapse when clicking on button", async () => {
       render(
         <Collapse label="Collapse">
           <article>children</article>
         </Collapse>,
       );
-      const toggleButton = screen.getAllByRole("button", { name: "Collapse" })[buttonIndex];
-      // with ByRole we can test whether the content is visible because of aria-hidden
-      expect(screen.queryByRole("article")).not.toBeInTheDocument();
-      await user.click(toggleButton);
-      expect(screen.getByRole("article")).toBeInTheDocument();
-      await user.click(toggleButton);
-      expect(screen.queryByRole("article")).not.toBeInTheDocument();
+
+      await screen.getAllByRole("button").forEach(async toggleButton => {
+        expect(screen.queryByRole("article")).not.toBeInTheDocument();
+        await user.click(toggleButton);
+        expect(screen.getByRole("article")).toBeInTheDocument();
+        await user.click(toggleButton);
+        expect(screen.queryByRole("article")).not.toBeInTheDocument();
+      });
     });
   });
 

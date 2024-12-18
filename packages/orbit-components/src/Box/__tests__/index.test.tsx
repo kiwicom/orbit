@@ -269,18 +269,12 @@ describe("#Box", () => {
 
     const testEl = (idx: number) => render(test[idx]).getByTestId(`${dataTest}-${idx}`);
 
-    expect(testEl(0)).toHaveStyle({
-      "--tw-shadow": theme.orbit.elevationActionBoxShadow,
-    });
-    expect(testEl(1)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationFixedBoxShadow });
-    expect(testEl(2)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationRaisedBoxShadow });
-    expect(testEl(3)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationOverlayBoxShadow });
-    expect(testEl(4)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationFixedReverseBoxShadow });
-    expect(testEl(5)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationRaisedReverseBoxShadow });
-    expect(testEl(6)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel1BoxShadow });
-    expect(testEl(7)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel2BoxShadow });
-    expect(testEl(8)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel3BoxShadow });
-    expect(testEl(9)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel3ReverseBoxShadow });
-    expect(testEl(10)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel4BoxShadow });
+    expect(testEl(0)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationFixedBoxShadow });
+    expect(testEl(1)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationFixedReverseBoxShadow });
+    expect(testEl(2)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel1BoxShadow });
+    expect(testEl(3)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel2BoxShadow });
+    expect(testEl(4)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel3BoxShadow });
+    expect(testEl(5)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel3ReverseBoxShadow });
+    expect(testEl(6)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel4BoxShadow });
   });
 });

@@ -144,19 +144,15 @@ All this properties - objects have the some own properties and none is required.
 
 ### elevation
 
-| elevation                                                  |
-| :--------------------------------------------------------- |
-| `"action"` – **deprecated (use `"level1"`)**               |
-| `"fixed"`                                                  |
-| `"fixedReverse"`                                           |
-| `"overlay"` – **deprecated (use `"level4"`)**              |
-| `"raised"` – **deprecated (use `"level3"`)**               |
-| `"raisedReverse"` – **deprecated (use `"level3Reverse"`)** |
-| `"level1"`                                                 |
-| `"level2"`                                                 |
-| `"level3"`                                                 |
-| `"level3Reverse"`                                          |
-| `"level4"`                                                 |
+| elevation         |
+| :---------------- |
+| `"fixed"`         |
+| `"fixedReverse"`  |
+| `"level1"`        |
+| `"level2"`        |
+| `"level3"`        |
+| `"level3Reverse"` |
+| `"level4"`        |
 
 ### spacingObject
 

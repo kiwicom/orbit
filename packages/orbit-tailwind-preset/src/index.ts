@@ -83,7 +83,6 @@ export default function orbitTailwindPreset(options?: Options): Config {
     "icon-small": tokens.iconSmallSize,
     "icon-medium": tokens.iconMediumSize,
     "icon-large": tokens.iconLargeSize,
-    separator: tokens.heightSeparator,
     "form-box-small": tokens.formBoxSmallHeight,
     "form-box-normal": tokens.formBoxNormalHeight,
     "form-box-large": tokens.formBoxLargeHeight,

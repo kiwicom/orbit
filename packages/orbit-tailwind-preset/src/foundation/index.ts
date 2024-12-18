@@ -17,11 +17,6 @@ const config = (tokens: typeof defaultTokens): Config => {
         none: "none",
         fixed: tokens.elevationFixedBoxShadow,
         "fixed-reverse": tokens.elevationFixedReverseBoxShadow,
-        raised: tokens.elevationRaisedBoxShadow, // deprecated
-        "raised-reverse": tokens.elevationRaisedReverseBoxShadow, // deprecated
-        action: tokens.elevationActionBoxShadow, // deprecated
-        "action-active": tokens.elevationActionActiveBoxShadow, // deprecated
-        overlay: tokens.elevationOverlayBoxShadow, // deprecated
         level1: tokens.elevationLevel1BoxShadow,
         level2: tokens.elevationLevel2BoxShadow,
         level3: tokens.elevationLevel3BoxShadow,

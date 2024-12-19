@@ -4,18 +4,7 @@ import type { ReactNode } from "react";
 
 import type * as Common from "../common/types";
 
-export type SideOffset =
-  | "none"
-  | "small"
-  | "medium"
-  | "large"
-  | "XLarge"
-  | "XXLarge"
-  | "300"
-  | "400"
-  | "600"
-  | "800"
-  | "1000";
+export type SideOffset = "none" | "300" | "400" | "600" | "800" | "1000";
 export type Align = "left" | "center" | "right";
 
 export type BorderColorClass =

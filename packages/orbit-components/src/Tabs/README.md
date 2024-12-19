@@ -91,26 +91,18 @@ Table below contains all types of the props available in TabPanel component.
 
 #### enum
 
-| type      | spacing                                   |
-| :-------- | ----------------------------------------- |
-| `default` | `none`                                    |
-| `basic`   | `XXXSmall`- **deprecated (use `"50"`)**   |
-| `medium`  | `XXSmall` - **deprecated (use `"100"`)**  |
-| `top`     | `XSmall` - **deprecated (use `"200"`)**   |
-|           | `small` - **deprecated (use `"300"`)**    |
-|           | `medium` - **deprecated (use `"400"`)**   |
-|           | `large` - **deprecated (use `"600"`)**    |
-|           | `XLarge` - **deprecated (use `"800"`)**   |
-|           | `XXLarge` - **deprecated (use `"1000"`)** |
-|           | `50`                                      |
-|           | `100`                                     |
-|           | `150`                                     |
-|           | `200`                                     |
-|           | `300`                                     |
-|           | `400`                                     |
-|           | `500`                                     |
-|           | `600`                                     |
-|           | `800`                                     |
-|           | `1000`                                    |
-|           | `1200`                                    |
-|           | `1600`                                    |
+| type      | spacing |
+| :-------- | ------- |
+| `default` | `none`  |
+| `basic`   | `50`    |
+| `medium`  | `100`   |
+| `top`     | `150`   |
+|           | `200`   |
+|           | `300`   |
+|           | `400`   |
+|           | `500`   |
+|           | `600`   |
+|           | `800`   |
+|           | `1000`  |
+|           | `1200`  |
+|           | `1600`  |

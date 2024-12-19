@@ -24,16 +24,7 @@ export type Spacing =
   | "800"
   | "1000"
   | "1200"
-  | "1600"
-  | "XXXSmall"
-  | "XXSmall"
-  | "XSmall"
-  | "small"
-  | "medium"
-  | "large"
-  | "XLarge"
-  | "XXLarge"
-  | "XXXLarge";
+  | "1600";
 
 export interface CommonProps extends Common.SpaceAfter {
   readonly inline?: boolean;

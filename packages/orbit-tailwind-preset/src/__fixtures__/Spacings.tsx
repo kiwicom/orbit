@@ -20,15 +20,6 @@ const Spacings = () => {
       <div className="px-1200">space1200</div>
       <div className="px-1300">space1300</div>
       <div className="px-1600">space1600</div>
-      <div className="px-xxxs">spaceXXXSmall</div>
-      <div className="px-xxs">spaceXXSmall</div>
-      <div className="px-xs">spaceXSmall</div>
-      <div className="px-sm">spaceSmall</div>
-      <div className="px-md">spaceMedium</div>
-      <div className="px-lg">spaceLarge</div>
-      <div className="px-xl">spaceXLarge</div>
-      <div className="px-xxl">spaceXXLarge</div>
-      <div className="px-xxxl">spaceXXXLarge</div>
     </div>
   );
 };

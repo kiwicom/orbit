@@ -17,7 +17,7 @@ function getCountryProps(code?: string, name?: string) {
   return { code: countryCode, name: countryName };
 }
 
-const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props) => {
+const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, role = "img", ...props }: Props) => {
   const { code, name } = getCountryProps(props.code, props.name);
 
   const width = SIZE_WIDTHS[size];
@@ -40,6 +40,7 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, ...props }: Props) => 
         data-test={dataTest}
         src={src}
         srcSet={srcSet}
+        role={role}
       />
       <div className="rounded-50 shadow-country-flag absolute inset-0 block size-full" />
     </div>

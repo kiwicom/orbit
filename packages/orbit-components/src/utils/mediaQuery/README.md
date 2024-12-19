@@ -32,11 +32,11 @@ The `TOKEN` object contains the breakpoints as keys, associated with the corresp
 
 ```ts
 export const TOKEN = {
-  mediumMobile: "widthBreakpointMediumMobile",
-  largeMobile: "widthBreakpointLargeMobile",
-  tablet: "widthBreakpointTablet",
-  desktop: "widthBreakpointDesktop",
-  largeDesktop: "widthBreakpointLargeDesktop",
+  mediumMobile: "breakpointMediumMobile",
+  largeMobile: "breakpointLargeMobile",
+  tablet: "breakpointTablet",
+  desktop: "breakpointDesktop",
+  largeDesktop: "breakpointLargeDesktop",
 } as const;
 ```
 

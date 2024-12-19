@@ -17,11 +17,11 @@ export enum QUERIES {
 }
 
 export const TOKEN = {
-  mediumMobile: "widthBreakpointMediumMobile",
-  largeMobile: "widthBreakpointLargeMobile",
-  tablet: "widthBreakpointTablet",
-  desktop: "widthBreakpointDesktop",
-  largeDesktop: "widthBreakpointLargeDesktop",
+  mediumMobile: "breakpointMediumMobile",
+  largeMobile: "breakpointLargeMobile",
+  tablet: "breakpointTablet",
+  desktop: "breakpointDesktop",
+  largeDesktop: "breakpointLargeDesktop",
 } as const;
 
 export function getBreakpointWidth(name: keyof typeof TOKEN, theme: Theme): string;

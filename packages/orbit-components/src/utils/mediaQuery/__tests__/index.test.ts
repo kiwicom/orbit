@@ -6,35 +6,33 @@ describe("getBreakpointWidth", () => {
 
   it("should return correct value as string for each query", () => {
     expect(getBreakpointWidth(QUERIES.MEDIUMMOBILE, theme)).toBe(
-      `(min-width: ${theme.orbit.widthBreakpointMediumMobile}px)`,
+      `(min-width: ${theme.orbit.breakpointMediumMobile}px)`,
     );
     expect(getBreakpointWidth(QUERIES.LARGEMOBILE, theme)).toBe(
-      `(min-width: ${theme.orbit.widthBreakpointLargeMobile}px)`,
+      `(min-width: ${theme.orbit.breakpointLargeMobile}px)`,
     );
     expect(getBreakpointWidth(QUERIES.TABLET, theme)).toBe(
-      `(min-width: ${theme.orbit.widthBreakpointTablet}px)`,
+      `(min-width: ${theme.orbit.breakpointTablet}px)`,
     );
     expect(getBreakpointWidth(QUERIES.DESKTOP, theme)).toBe(
-      `(min-width: ${theme.orbit.widthBreakpointDesktop}px)`,
+      `(min-width: ${theme.orbit.breakpointDesktop}px)`,
     );
     expect(getBreakpointWidth(QUERIES.LARGEDESKTOP, theme)).toBe(
-      `(min-width: ${theme.orbit.widthBreakpointLargeDesktop}px)`,
+      `(min-width: ${theme.orbit.breakpointLargeDesktop}px)`,
     );
   });
 
   it("should return correct value for each query when pure is true", () => {
     expect(getBreakpointWidth(QUERIES.MEDIUMMOBILE, theme, true)).toBe(
-      theme.orbit.widthBreakpointMediumMobile,
+      theme.orbit.breakpointMediumMobile,
     );
     expect(getBreakpointWidth(QUERIES.LARGEMOBILE, theme, true)).toBe(
-      theme.orbit.widthBreakpointLargeMobile,
+      theme.orbit.breakpointLargeMobile,
     );
-    expect(getBreakpointWidth(QUERIES.TABLET, theme, true)).toBe(theme.orbit.widthBreakpointTablet);
-    expect(getBreakpointWidth(QUERIES.DESKTOP, theme, true)).toBe(
-      theme.orbit.widthBreakpointDesktop,
-    );
+    expect(getBreakpointWidth(QUERIES.TABLET, theme, true)).toBe(theme.orbit.breakpointTablet);
+    expect(getBreakpointWidth(QUERIES.DESKTOP, theme, true)).toBe(theme.orbit.breakpointDesktop);
     expect(getBreakpointWidth(QUERIES.LARGEDESKTOP, theme, true)).toBe(
-      theme.orbit.widthBreakpointLargeDesktop,
+      theme.orbit.breakpointLargeDesktop,
     );
   });
 });

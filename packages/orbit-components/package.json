@@ -105,7 +105,7 @@
     "@svgr/core": "^6.3.1",
     "@svgr/plugin-jsx": "^6.3.1",
     "@svgr/plugin-prettier": "^6.3.1",
-    "@svgr/plugin-svgo": "^6.3.1",
+    "@svgr/plugin-svgo": "^8.1.0",
     "@types/capitalize": "^2.0.0",
     "@types/pixelmatch": "^5.2.4",
     "@types/readable-stream": "^2.3.13",

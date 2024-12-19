@@ -81,4 +81,9 @@ describe("CountryFlag", () => {
     );
     expect(wrapper).toHaveStyle({ width: "16px", height: "9px" });
   });
+
+  it("should support custom role", () => {
+    render(<CountryFlag code="us" name="United States" role="presentation" />);
+    expect(screen.getByRole("presentation")).toBeInTheDocument();
+  });
 });

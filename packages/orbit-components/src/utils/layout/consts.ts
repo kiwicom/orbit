@@ -36,15 +36,3 @@ export enum SPACINGS {
   ONE_THOUSAND_TWO_HUNDRED = "1200",
   ONE_THOUSAND_SIX_HUNDRED = "1600",
 }
-
-export enum DEPRECATED_SPACINGS {
-  XXXSMALL = "XXXSmall",
-  XXSMALL = "XXSmall",
-  XSMALL = "XSmall",
-  SMALL = "small",
-  MEDIUM = "medium",
-  LARGE = "large",
-  XLARGE = "XLarge",
-  XXLARGE = "XXLarge",
-  XXXLARGE = "XXXLarge",
-}

@@ -1,6 +1,6 @@
 import { defaultTheme } from "../../..";
 
-const breakpoint = defaultTheme.orbit.widthBreakpointLargeMobile;
+const breakpoint = defaultTheme.orbit.breakpointLargeMobile;
 
 describe("useLockScrolling", () => {
   it("should listen for viewport resize", () => {

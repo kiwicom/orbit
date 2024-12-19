@@ -3,7 +3,7 @@ import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 describe("Heading media query", () => {
   it("should have correct styles for small mobile", () => {
     cy.visit("/heading-media-props");
-    cy.viewport(defaultTokens.widthBreakpointMediumMobile - 10, 600);
+    cy.viewport(defaultTokens.breakpointMediumMobile - 10, 600);
 
     const element = cy.findByRole("heading");
     element.should("have.css", "font-size", defaultTokens.headingTitle0FontSize);
@@ -15,7 +15,7 @@ describe("Heading media query", () => {
   });
   it("should have correct styles for medium mobile", () => {
     cy.visit("/heading-media-props");
-    cy.viewport(defaultTokens.widthBreakpointMediumMobile, 600);
+    cy.viewport(defaultTokens.breakpointMediumMobile, 600);
 
     const element = cy.findByRole("heading");
     element.should("have.css", "font-size", defaultTokens.headingDisplayFontSize);
@@ -29,7 +29,7 @@ describe("Heading media query", () => {
 
   it("should have correct styles for large mobile", () => {
     cy.visit("/heading-media-props");
-    cy.viewport(defaultTokens.widthBreakpointLargeMobile, 600);
+    cy.viewport(defaultTokens.breakpointLargeMobile, 600);
 
     const element = cy.findByRole("heading");
     element.should("have.css", "font-size", defaultTokens.headingTitle2FontSize);
@@ -44,7 +44,7 @@ describe("Heading media query", () => {
 
   it("should have correct styles for tablet", () => {
     cy.visit("/heading-media-props");
-    cy.viewport(defaultTokens.widthBreakpointTablet, 600);
+    cy.viewport(defaultTokens.breakpointTablet, 600);
 
     const element = cy.findByRole("heading");
     element.should("have.css", "font-size", defaultTokens.headingTitle4FontSize);
@@ -58,7 +58,7 @@ describe("Heading media query", () => {
 
   it("should have correct styles for desktop", () => {
     cy.visit("/heading-media-props");
-    cy.viewport(defaultTokens.widthBreakpointDesktop, 600);
+    cy.viewport(defaultTokens.breakpointDesktop, 600);
 
     const element = cy.findByRole("heading");
     element.should("have.css", "font-size", defaultTokens.headingTitle5FontSize);
@@ -71,7 +71,7 @@ describe("Heading media query", () => {
 
   it("should have correct styles for large desktop", () => {
     cy.visit("/heading-media-props");
-    cy.viewport(defaultTokens.widthBreakpointLargeDesktop, 600);
+    cy.viewport(defaultTokens.breakpointLargeDesktop, 600);
 
     const element = cy.findByRole("heading");
     element.should("have.css", "font-size", defaultTokens.headingTitle6FontSize);

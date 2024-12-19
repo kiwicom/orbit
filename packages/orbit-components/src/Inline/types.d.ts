@@ -18,16 +18,7 @@ export type SpacingToken =
   | "800"
   | "1000"
   | "1200"
-  | "1600"
-  | "XXXSmall"
-  | "XXSmall"
-  | "XSmall"
-  | "small"
-  | "medium"
-  | "large"
-  | "XLarge"
-  | "XXLarge"
-  | "XXXLarge";
+  | "1600";
 
 export type Align = "start" | "end" | "center";
 export type Justify = "start" | "end" | "center" | "between" | "around";

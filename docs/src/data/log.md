@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@18.1.1...@kiwicom/orbit-components@18.2.0) (2024-12-19)
+
+#### Bug Fixes
+
+* **TooltipPrimitive:** tooltip now closes on pressing ESC key ([d7243e5](https://github.com/kiwicom/orbit/commit/d7243e561ed8ebe1092348ea243c1675f4343f91))
+
+#### Features
+
+* **AccordionSection:** add expandOnTileClick for mobile-first ([160ba28](https://github.com/kiwicom/orbit/commit/160ba28d3f6a1706d6b57b1da1bcb49c2a6e205c))
+* **NavigationBar:** add ariaLabel prop ([934d5d5](https://github.com/kiwicom/orbit/commit/934d5d57cdae5f6f0674a302acc1c52177f28106))
+* **Popover:** add ariaLabel, ariaLabelledby props and focus state ([e815138](https://github.com/kiwicom/orbit/commit/e815138aed5aed009f9d4e4b0dddb61444fa3978))
+
 ### [18.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@18.1.0...@kiwicom/orbit-components@18.1.1) (2024-12-12)
 
 #### Bug Fixes

@@ -26,21 +26,3 @@ describe("rtlSpacing", () => {
     expect(rtl.rtlSpacing("10px 20px 30px")(enabledRTL)).toBe("10px 20px 30px");
   });
 });
-
-describe("right", () => {
-  it("should return right when rtl false", () => {
-    expect(rtl.right(disabledRTL)).toBe("right");
-  });
-  it("should return left when rtl true", () => {
-    expect(rtl.right(enabledRTL)).toBe("left");
-  });
-});
-
-describe("left", () => {
-  it("should return left when rtl false", () => {
-    expect(rtl.left(disabledRTL)).toBe("left");
-  });
-  it("should return right when rtl true", () => {
-    expect(rtl.left(enabledRTL)).toBe("right");
-  });
-});

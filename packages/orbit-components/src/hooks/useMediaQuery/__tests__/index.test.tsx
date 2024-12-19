@@ -15,7 +15,7 @@ import useMediaQuery from "..";
 
 const theme = { ...defaultTheme };
 
-const mediumMobileQuery = `(min-width: ${theme.orbit.widthBreakpointMediumMobile}px)`;
+const mediumMobileQuery = `(min-width: ${theme.orbit.breakpointMediumMobile}px)`;
 
 function MediaQuery({ onChange }) {
   const query = useMediaQuery();
@@ -102,11 +102,11 @@ describe("useMediaQuery", () => {
   it("should support custom breakpoint", () => {
     let result;
 
-    const widthBreakpointMediumMobile = theme.orbit.widthBreakpointMediumMobile - 100;
+    const breakpointMediumMobile = theme.orbit.breakpointMediumMobile - 100;
 
     const matchMedia = new MatchMediaMock();
 
-    matchMedia.useMediaQuery(`(min-width: ${widthBreakpointMediumMobile}px)`);
+    matchMedia.useMediaQuery(`(min-width: ${breakpointMediumMobile}px)`);
 
     render(
       <OrbitProvider
@@ -114,7 +114,7 @@ describe("useMediaQuery", () => {
           ...theme,
           orbit: {
             ...theme.orbit,
-            widthBreakpointMediumMobile,
+            breakpointMediumMobile,
           },
         }}
         useId={React.useId}
@@ -213,7 +213,7 @@ describe("useMediaQuery", () => {
             ...theme,
             orbit: {
               ...theme.orbit,
-              widthBreakpointMediumMobile: theme.orbit.widthBreakpointMediumMobile + 1,
+              breakpointMediumMobile: theme.orbit.breakpointMediumMobile + 1,
             },
           }}
           useId={React.useId}

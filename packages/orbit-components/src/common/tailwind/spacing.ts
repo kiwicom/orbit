@@ -4,15 +4,6 @@ import { QUERIES } from "../../utils/mediaQuery";
 import type { Direction } from "../../Stack/types";
 
 export enum SPACING {
-  XXXSMALL = "XXXSmall", // deprecated
-  XXSMALL = "XXSmall", // deprecated
-  XSMALL = "XSmall", // deprecated
-  SMALL = "small", // deprecated
-  MEDIUM = "medium", // deprecated
-  LARGE = "large", // deprecated
-  XLARGE = "XLarge", // deprecated
-  XXLARGE = "XXLarge", // deprecated
-  XXXLARGE = "XXXLarge", // deprecated
   NONE = "none",
   REVERSE = "reverse",
   FIFTY = "50",
@@ -46,15 +37,6 @@ export const horizontalTokens: {
   [SPACING.ONE_THOUSAND]: "space-x-1000",
   [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "space-x-1200",
   [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "space-x-1600",
-  [SPACING.XXXSMALL]: "space-x-50", // deprecated
-  [SPACING.XXSMALL]: "space-x-100", // deprecated
-  [SPACING.XSMALL]: "space-x-200", // deprecated
-  [SPACING.SMALL]: "space-x-300", // depcrecated
-  [SPACING.MEDIUM]: "space-x-400", // deprecated
-  [SPACING.LARGE]: "space-x-600", // deprecated
-  [SPACING.XLARGE]: "space-x-800", // deprecated
-  [SPACING.XXLARGE]: "space-x-1000", // deprecated
-  [SPACING.XXXLARGE]: "space-x-[52px]", // deprecated
   [QUERIES.MEDIUMMOBILE]: {
     [SPACING.REVERSE]: "mm:space-x-reverse",
     [SPACING.NONE]: "mm:space-x-none",
@@ -70,15 +52,6 @@ export const horizontalTokens: {
     [SPACING.ONE_THOUSAND]: "mm:space-x-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "mm:space-x-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "mm:space-x-1600",
-    [SPACING.XXXSMALL]: "mm:space-x-50", // deprecated
-    [SPACING.XXSMALL]: "mm:space-x-100", // deprecated
-    [SPACING.XSMALL]: "mm:space-x-200", // deprecated
-    [SPACING.SMALL]: "mm:space-x-300", // depcrecated
-    [SPACING.MEDIUM]: "mm:space-x-400", // deprecated
-    [SPACING.LARGE]: "mm:space-x-600", // deprecated
-    [SPACING.XLARGE]: "mm:space-x-800", // deprecated
-    [SPACING.XXLARGE]: "mm:space-x-1000", // deprecated
-    [SPACING.XXXLARGE]: "mm:space-x-[52px]", // deprecated
   },
   [QUERIES.LARGEMOBILE]: {
     [SPACING.REVERSE]: "lm:space-x-reverse",
@@ -95,15 +68,6 @@ export const horizontalTokens: {
     [SPACING.ONE_THOUSAND]: "lm:space-x-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "lm:space-x-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "lm:space-x-1600",
-    [SPACING.XXXSMALL]: "lm:space-x-50", // deprecated
-    [SPACING.XXSMALL]: "lm:space-x-100", // deprecated
-    [SPACING.XSMALL]: "lm:space-x-200", // deprecated
-    [SPACING.SMALL]: "lm:space-x-300", // depcrecated
-    [SPACING.MEDIUM]: "lm:space-x-400", // deprecated
-    [SPACING.LARGE]: "lm:space-x-600", // deprecated
-    [SPACING.XLARGE]: "lm:space-x-800", // deprecated
-    [SPACING.XXLARGE]: "lm:space-x-1000", // deprecated
-    [SPACING.XXXLARGE]: "lm:space-x-[52px]", // deprecated
   },
   [QUERIES.TABLET]: {
     [SPACING.REVERSE]: "tb:space-x-reverse",
@@ -120,15 +84,6 @@ export const horizontalTokens: {
     [SPACING.ONE_THOUSAND]: "tb:space-x-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "tb:space-x-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "tb:space-x-1600",
-    [SPACING.XXXSMALL]: "tb:space-x-50", // deprecated
-    [SPACING.XXSMALL]: "tb:space-x-100", // deprecated
-    [SPACING.XSMALL]: "tb:space-x-200", // deprecated
-    [SPACING.SMALL]: "tb:space-x-300", // depcrecated
-    [SPACING.MEDIUM]: "tb:space-x-400", // deprecated
-    [SPACING.LARGE]: "tb:space-x-600", // deprecated
-    [SPACING.XLARGE]: "tb:space-x-800", // deprecated
-    [SPACING.XXLARGE]: "tb:space-x-1000", // deprecated
-    [SPACING.XXXLARGE]: "tb:space-x-[52px]", // deprecated
   },
   [QUERIES.DESKTOP]: {
     [SPACING.REVERSE]: "de:space-x-reverse",
@@ -145,15 +100,6 @@ export const horizontalTokens: {
     [SPACING.ONE_THOUSAND]: "de:space-x-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "de:space-x-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "de:space-x-1600",
-    [SPACING.XXXSMALL]: "de:space-x-50", // deprecated
-    [SPACING.XXSMALL]: "de:space-x-100", // deprecated
-    [SPACING.XSMALL]: "de:space-x-200", // deprecated
-    [SPACING.SMALL]: "de:space-x-300", // depcrecated
-    [SPACING.MEDIUM]: "de:space-x-400", // deprecated
-    [SPACING.LARGE]: "de:space-x-600", // deprecated
-    [SPACING.XLARGE]: "de:space-x-800", // deprecated
-    [SPACING.XXLARGE]: "de:space-x-1000", // deprecated
-    [SPACING.XXXLARGE]: "de:space-x-[52px]", // deprecated
   },
   [QUERIES.LARGEDESKTOP]: {
     [SPACING.REVERSE]: "ld:space-x-reverse",
@@ -170,15 +116,6 @@ export const horizontalTokens: {
     [SPACING.ONE_THOUSAND]: "ld:space-x-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "ld:space-x-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "ld:space-x-1600",
-    [SPACING.XXXSMALL]: "ld:space-x-50", // deprecated
-    [SPACING.XXSMALL]: "ld:space-x-100", // deprecated
-    [SPACING.XSMALL]: "ld:space-x-200", // deprecated
-    [SPACING.SMALL]: "ld:space-x-300", // depcrecated
-    [SPACING.MEDIUM]: "ld:space-x-400", // deprecated
-    [SPACING.LARGE]: "ld:space-x-600", // deprecated
-    [SPACING.XLARGE]: "ld:space-x-800", // deprecated
-    [SPACING.XXLARGE]: "ld:space-x-1000", // deprecated
-    [SPACING.XXXLARGE]: "ld:space-x-[52px]", // deprecated
   },
 };
 
@@ -197,27 +134,9 @@ export const verticalTokens = {
   [SPACING.ONE_THOUSAND]: "space-y-1000",
   [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "space-y-1200",
   [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "space-y-1600",
-  [SPACING.XXXSMALL]: "space-y-50", // deprecated
-  [SPACING.XXSMALL]: "space-y-100", // deprecated
-  [SPACING.XSMALL]: "space-y-200", // deprecated
-  [SPACING.SMALL]: "space-y-300", // depcrecated
-  [SPACING.MEDIUM]: "space-y-400", // deprecated
-  [SPACING.LARGE]: "space-y-600", // deprecated
-  [SPACING.XLARGE]: "space-y-800", // deprecated
-  [SPACING.XXLARGE]: "space-y-1000", // deprecated
-  [SPACING.XXXLARGE]: "space-y-[52px]", // deprecated
   [QUERIES.MEDIUMMOBILE]: {
     [SPACING.REVERSE]: "mm:space-y-reverse",
     [SPACING.NONE]: "mm:space-y-none",
-    [SPACING.XXXSMALL]: "mm:space-y-50", // deprecated
-    [SPACING.XXSMALL]: "mm:space-y-100", // deprecated
-    [SPACING.XSMALL]: "mm:space-y-200", // deprecated
-    [SPACING.SMALL]: "mm:space-y-300", // depcrecated
-    [SPACING.MEDIUM]: "mm:space-y-400", // deprecated
-    [SPACING.LARGE]: "mm:space-y-600", // deprecated
-    [SPACING.XLARGE]: "mm:space-y-800", // deprecated
-    [SPACING.XXLARGE]: "mm:space-y-1000", // deprecated
-    [SPACING.XXXLARGE]: "mm:space-y-[52px]", // deprecated
   },
   [QUERIES.LARGEMOBILE]: {
     [SPACING.REVERSE]: "lm:space-y-reverse",
@@ -234,15 +153,6 @@ export const verticalTokens = {
     [SPACING.ONE_THOUSAND]: "lm:space-y-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "lm:space-y-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "lm:space-y-1600",
-    [SPACING.XXXSMALL]: "lm:space-y-50", // deprecated
-    [SPACING.XXSMALL]: "lm:space-y-100", // deprecated
-    [SPACING.XSMALL]: "lm:space-y-200", // deprecated
-    [SPACING.SMALL]: "lm:space-y-300", // depcrecated
-    [SPACING.MEDIUM]: "lm:space-y-400", // deprecated
-    [SPACING.LARGE]: "lm:space-y-600", // deprecated
-    [SPACING.XLARGE]: "lm:space-y-800", // deprecated
-    [SPACING.XXLARGE]: "lm:space-y-1000", // deprecated
-    [SPACING.XXXLARGE]: "lm:space-y-[52px]", // deprecated
   },
   [QUERIES.TABLET]: {
     [SPACING.REVERSE]: "tb:space-y-reverse",
@@ -259,15 +169,6 @@ export const verticalTokens = {
     [SPACING.ONE_THOUSAND]: "tb:space-y-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "tb:space-y-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "tb:space-y-1600",
-    [SPACING.XXXSMALL]: "tb:space-y-50", // deprecated
-    [SPACING.XXSMALL]: "tb:space-y-100", // deprecated
-    [SPACING.XSMALL]: "tb:space-y-200", // deprecated
-    [SPACING.SMALL]: "tb:space-y-300", // depcrecated
-    [SPACING.MEDIUM]: "tb:space-y-400", // deprecated
-    [SPACING.LARGE]: "tb:space-y-600", // deprecated
-    [SPACING.XLARGE]: "tb:space-y-800", // deprecated
-    [SPACING.XXLARGE]: "tb:space-y-1000", // deprecated
-    [SPACING.XXXLARGE]: "tb:space-y-[52px]", // deprecated
   },
   [QUERIES.DESKTOP]: {
     [SPACING.REVERSE]: "de:space-y-reverse",
@@ -284,15 +185,6 @@ export const verticalTokens = {
     [SPACING.ONE_THOUSAND]: "de:space-y-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "de:space-y-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "de:space-y-1600",
-    [SPACING.XXXSMALL]: "de:space-y-50", // deprecated
-    [SPACING.XXSMALL]: "de:space-y-100", // deprecated
-    [SPACING.XSMALL]: "de:space-y-200", // deprecated
-    [SPACING.SMALL]: "de:space-y-300", // depcrecated
-    [SPACING.MEDIUM]: "de:space-y-400", // deprecated
-    [SPACING.LARGE]: "de:space-y-600", // deprecated
-    [SPACING.XLARGE]: "de:space-y-800", // deprecated
-    [SPACING.XXLARGE]: "de:space-y-1000", // deprecated
-    [SPACING.XXXLARGE]: "de:space-y-[52px]", // deprecated
   },
   [QUERIES.LARGEDESKTOP]: {
     [SPACING.REVERSE]: "ld:space-y-reverse",
@@ -309,15 +201,6 @@ export const verticalTokens = {
     [SPACING.ONE_THOUSAND]: "ld:space-y-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "ld:space-y-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "ld:space-y-1600",
-    [SPACING.XXXSMALL]: "ld:space-y-50", // deprecated
-    [SPACING.XXSMALL]: "ld:space-y-100", // deprecated
-    [SPACING.XSMALL]: "ld:space-y-200", // deprecated
-    [SPACING.SMALL]: "ld:space-y-300", // depcrecated
-    [SPACING.MEDIUM]: "ld:space-y-400", // deprecated
-    [SPACING.LARGE]: "ld:space-y-600", // deprecated
-    [SPACING.XLARGE]: "ld:space-y-800", // deprecated
-    [SPACING.XXLARGE]: "ld:space-y-1000", // deprecated
-    [SPACING.XXXLARGE]: "ld:space-y-[52px]", // deprecated
   },
 };
 
@@ -335,15 +218,6 @@ export const gapTokens = {
   [SPACING.ONE_THOUSAND]: "gap-1000",
   [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "gap-1200",
   [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "gap-1600",
-  [SPACING.XXXSMALL]: "gap-50", // deprecated
-  [SPACING.XXSMALL]: "gap-100", // deprecated
-  [SPACING.XSMALL]: "gap-200", // deprecated
-  [SPACING.SMALL]: "gap-300", // depcrecated
-  [SPACING.MEDIUM]: "gap-400", // deprecated
-  [SPACING.LARGE]: "gap-600", // deprecated
-  [SPACING.XLARGE]: "gap-800", // deprecated
-  [SPACING.XXLARGE]: "gap-1000", // deprecated
-  [SPACING.XXXLARGE]: "gap-[52px]", // deprecated
   [QUERIES.MEDIUMMOBILE]: {
     [SPACING.NONE]: "mm:gap-none",
     [SPACING.FIFTY]: "mm:gap-50",
@@ -358,15 +232,6 @@ export const gapTokens = {
     [SPACING.ONE_THOUSAND]: "mm:gap-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "mm:gap-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "mm:gap-1600",
-    [SPACING.XXXSMALL]: "mm:gap-50", // deprecated
-    [SPACING.XXSMALL]: "mm:gap-100", // deprecated
-    [SPACING.XSMALL]: "mm:gap-200", // deprecated
-    [SPACING.SMALL]: "mm:gap-300", // depcrecated
-    [SPACING.MEDIUM]: "mm:gap-400", // deprecated
-    [SPACING.LARGE]: "mm:gap-600", // deprecated
-    [SPACING.XLARGE]: "mm:gap-800", // deprecated
-    [SPACING.XXLARGE]: "mm:gap-1000", // deprecated
-    [SPACING.XXXLARGE]: "mm:gap-[52px]", // deprecated
   },
   [QUERIES.LARGEMOBILE]: {
     [SPACING.NONE]: "lm:gap-none",
@@ -382,15 +247,6 @@ export const gapTokens = {
     [SPACING.ONE_THOUSAND]: "lm:gap-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "lm:gap-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "lm:gap-1600",
-    [SPACING.XXXSMALL]: "lm:gap-50", // deprecated
-    [SPACING.XXSMALL]: "lm:gap-100", // deprecated
-    [SPACING.XSMALL]: "lm:gap-200", // deprecated
-    [SPACING.SMALL]: "lm:gap-300", // depcrecated
-    [SPACING.MEDIUM]: "lm:gap-400", // deprecated
-    [SPACING.LARGE]: "lm:gap-600", // deprecated
-    [SPACING.XLARGE]: "lm:gap-800", // deprecated
-    [SPACING.XXLARGE]: "lm:gap-1000", // deprecated
-    [SPACING.XXXLARGE]: "lm:gap-[52px]", // deprecated
   },
   [QUERIES.TABLET]: {
     [SPACING.NONE]: "tb:gap-none",
@@ -406,15 +262,6 @@ export const gapTokens = {
     [SPACING.ONE_THOUSAND]: "tb:gap-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "tb:gap-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "tb:gap-1600",
-    [SPACING.XXXSMALL]: "tb:gap-50", // deprecated
-    [SPACING.XXSMALL]: "tb:gap-100", // deprecated
-    [SPACING.XSMALL]: "tb:gap-200", // deprecated
-    [SPACING.SMALL]: "tb:gap-300", // depcrecated
-    [SPACING.MEDIUM]: "tb:gap-400", // deprecated
-    [SPACING.LARGE]: "tb:gap-600", // deprecated
-    [SPACING.XLARGE]: "tb:gap-800", // deprecated
-    [SPACING.XXLARGE]: "tb:gap-1000", // deprecated
-    [SPACING.XXXLARGE]: "tb:gap-[52px]", // deprecated
   },
   [QUERIES.DESKTOP]: {
     [SPACING.NONE]: "de:gap-none",
@@ -430,15 +277,6 @@ export const gapTokens = {
     [SPACING.ONE_THOUSAND]: "de:gap-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "de:gap-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "de:gap-1600",
-    [SPACING.XXXSMALL]: "de:gap-50", // deprecated
-    [SPACING.XXSMALL]: "de:gap-100", // deprecated
-    [SPACING.XSMALL]: "de:gap-200", // deprecated
-    [SPACING.SMALL]: "de:gap-300", // depcrecated
-    [SPACING.MEDIUM]: "de:gap-400", // deprecated
-    [SPACING.LARGE]: "de:gap-600", // deprecated
-    [SPACING.XLARGE]: "de:gap-800", // deprecated
-    [SPACING.XXLARGE]: "de:gap-1000", // deprecated
-    [SPACING.XXXLARGE]: "de:gap-[52px]", // deprecated
   },
   [QUERIES.LARGEDESKTOP]: {
     [SPACING.NONE]: "ld:gap-none",
@@ -454,15 +292,6 @@ export const gapTokens = {
     [SPACING.ONE_THOUSAND]: "ld:gap-1000",
     [SPACING.ONE_THOUSAND_TWO_HUNDRED]: "ld:gap-1200",
     [SPACING.ONE_THOUSAND_SIX_HUNDRED]: "ld:gap-1600",
-    [SPACING.XXXSMALL]: "ld:gap-50", // deprecated
-    [SPACING.XXSMALL]: "ld:gap-100", // deprecated
-    [SPACING.XSMALL]: "ld:gap-200", // deprecated
-    [SPACING.SMALL]: "ld:gap-300", // depcrecated
-    [SPACING.MEDIUM]: "ld:gap-400", // deprecated
-    [SPACING.LARGE]: "ld:gap-600", // deprecated
-    [SPACING.XLARGE]: "ld:gap-800", // deprecated
-    [SPACING.XXLARGE]: "ld:gap-1000", // deprecated
-    [SPACING.XXXLARGE]: "ld:gap-[52px]", // deprecated
   },
 };
 

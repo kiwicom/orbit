@@ -28,16 +28,12 @@ The table below contains all types of props available in the Separator component
 
 ### enum
 
-| sideOffset                                 | align      | type       | spaceAfter   |
-| :----------------------------------------- | :--------- | :--------- | :----------- |
-| `"none"`                                   | `"left"`   | `"solid"`  | `"none"`     |
-| `"small"` - **deprecated (use `"300"`)**   | `"right"`  | `"dashed"` | `"smallest"` |
-| `"medium"` - **deprecated (use `"400"`)**  | `"center"` | `"dotted"` | `"small"`    |
-| `"large"` - **deprecated (use `"600"`)**   |            | `"double"` | `"normal"`   |
-| `"XLarge"` - **deprecated (use `"800"`)**  |            | `"none"`   | `"medium"`   |
-| `"XXLarge"` - **deprecated (use`"1000"`)** |            |            | `"large"`    |
-| `"300"`                                    |            |            | `"largest"`  |
-| `"400"`                                    |            |            |              |
-| `"600"`                                    |            |            |              |
-| `"800"`                                    |            |            |              |
-| `"1000"`                                   |            |            |              |
+| sideOffset | align      | type       | spaceAfter   |
+| :--------- | :--------- | :--------- | :----------- |
+| `"none"`   | `"left"`   | `"solid"`  | `"none"`     |
+| `"300"`    | `"right"`  | `"dashed"` | `"smallest"` |
+| `"400"`    | `"center"` | `"dotted"` | `"small"`    |
+| `"600"`    |            | `"double"` | `"normal"`   |
+| `"800"`    |            | `"none"`   | `"medium"`   |
+| `"1000"`   |            |            | `"large"`    |
+|            |            |            | `"largest"`  |

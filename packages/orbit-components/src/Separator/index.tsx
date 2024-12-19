@@ -33,41 +33,26 @@ function getSideOffsetAmount(indent: SideOffset, align: Align) {
     left: {
       [Indent.none]: "w-full",
       [Indent.THREE_HUNDRED]: "w-[calc(100%_-_theme(spacing.300))]",
-      [Indent.small]: "w-[calc(100%_-_theme(spacing.300))]", // deprecated
       [Indent.FOUR_HUNDRED]: "w-[calc(100%_-_theme(spacing.400))]",
-      [Indent.medium]: "w-[calc(100%_-_theme(spacing.400))]", // deprecated
       [Indent.SIX_HUNDRED]: "w-[calc(100%_-_theme(spacing.600))]",
-      [Indent.large]: "w-[calc(100%_-_theme(spacing.600))]", // deprecated
       [Indent.EIGHT_HUNDRED]: "w-[calc(100%_-_theme(spacing.800))]",
-      [Indent.XLarge]: "w-[calc(100%_-_theme(spacing.800))]", // deprecated
       [Indent.ONE_THOUSAND]: "w-[calc(100%_-_theme(spacing.1000))]",
-      [Indent.XXLarge]: "w-[calc(100%_-_theme(spacing.1000))]", // deprecated
     },
     right: {
       [Indent.none]: "w-full",
       [Indent.THREE_HUNDRED]: "ms-300 w-[calc(100%_-_theme(spacing.300))]",
-      [Indent.small]: "ms-300 w-[calc(100%_-_theme(spacing.300))]", // deprecated
       [Indent.FOUR_HUNDRED]: "ms-400 w-[calc(100%_-_theme(spacing.400))]",
-      [Indent.medium]: "ms-400 w-[calc(100%_-_theme(spacing.400))]", // deprecated
       [Indent.SIX_HUNDRED]: "ms-600 w-[calc(100%_-_theme(spacing.600))]",
-      [Indent.large]: "ms-600 w-[calc(100%_-_theme(spacing.600))]", // deprecated
       [Indent.EIGHT_HUNDRED]: "ms-800 w-[calc(100%_-_theme(spacing.800))]",
-      [Indent.XLarge]: "ms-800 w-[calc(100%_-_theme(spacing.800))]", // deprecated
       [Indent.ONE_THOUSAND]: "ms-1000 w-[calc(100%_-_theme(spacing.1000))]",
-      [Indent.XXLarge]: "ms-1000 w-[calc(100%_-_theme(spacing.1000))]", // deprecated
     },
     center: {
       [Indent.none]: "w-full",
       [Indent.THREE_HUNDRED]: "ms-300 w-[calc(100%_-_theme(spacing.300)*2)]",
-      [Indent.small]: "ms-300 w-[calc(100%_-_theme(spacing.300)*2)]", // deprecated
       [Indent.FOUR_HUNDRED]: "ms-400 w-[calc(100%_-_theme(spacing.400)*2)]",
-      [Indent.medium]: "ms-400 w-[calc(100%_-_theme(spacing.400)*2)]", // deprecated
       [Indent.SIX_HUNDRED]: "ms-600 w-[calc(100%_-_theme(spacing.600)*2)]",
-      [Indent.large]: "ms-600 w-[calc(100%_-_theme(spacing.600)*2)]", // deprecated
       [Indent.EIGHT_HUNDRED]: "ms-800 w-[calc(100%_-_theme(spacing.800)*2)]",
-      [Indent.XLarge]: "ms-800 w-[calc(100%_-_theme(spacing.800)*2)]", // deprecated
       [Indent.ONE_THOUSAND]: "ms-1000 w-[calc(100%_-_theme(spacing.1000)*2)]",
-      [Indent.XXLarge]: "ms-1000 w-[calc(100%_-_theme(spacing.1000)*2)]", // deprecated
     },
   };
 

@@ -19,16 +19,6 @@ const SPACINGS = [
   "space1200",
   "space1300",
   "space1600",
-  // Deprecated
-  "spaceXXXSmall",
-  "spaceXXSmall",
-  "spaceXSmall",
-  "spaceSmall",
-  "spaceMedium",
-  "spaceLarge",
-  "spaceXLarge",
-  "spaceXXLarge",
-  "spaceXXXLarge",
 ];
 
 describe("Spacings", () => {

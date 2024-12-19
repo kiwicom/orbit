@@ -40,7 +40,7 @@ const TableWrap = styled.div`
       }
 
       thead {
-        box-shadow: 0 0 0 1px ${theme.orbit.borderColorTable};
+        box-shadow: 0 0 0 1px ${theme.orbit.paletteCloudDark};
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
         border: none;
@@ -57,7 +57,7 @@ const TableWrap = styled.div`
       }
 
       tbody {
-        box-shadow: 0 0 0 1px ${theme.orbit.borderColorTable};
+        box-shadow: 0 0 0 1px ${theme.orbit.paletteCloudDark};
         border-bottom-left-radius: 6px;
         border-bottom-right-radius: 6px;
         border: none;
@@ -72,7 +72,7 @@ const TableWrap = styled.div`
               border-radius: 6px;
               transform: scale(1.025);
               box-shadow: 0px 4px 8px 0px #252a311f, 0px 1px 4px 0px #252a3129,
-                0 0 0 1px ${theme.orbit.borderColorTable};
+                0 0 0 1px ${theme.orbit.paletteCloudDark};
 
               td {
                 &:first-child {

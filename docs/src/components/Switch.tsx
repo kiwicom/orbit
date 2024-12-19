@@ -83,7 +83,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledContent = styled.span`
-  color: ${({ theme }) => theme.orbit.colorTextSecondary};
+  color: ${({ theme }) => theme.orbit.textSecondaryForeground};
 `;
 
 interface Props {

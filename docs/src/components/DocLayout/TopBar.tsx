@@ -81,7 +81,7 @@ const TopBar = ({
         }}
       >
         {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
-        <Box padding={{ bottom: hasLowerLayer ? "medium" : "none" }}>
+        <Box padding={{ bottom: hasLowerLayer ? "400" : "none" }}>
           <Stack inline align="center" spaceAfter="small">
             <AddBookmark title={title} description={description} />
             <div

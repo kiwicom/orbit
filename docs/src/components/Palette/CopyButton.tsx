@@ -18,7 +18,7 @@ const StyledButton = styled.button<{ colorValue?: string }>`
       ? theme.orbit.paletteInkDark
       : theme.orbit.paletteWhite};
     padding: 0 ${theme.orbit.space200};
-    border-radius: ${theme.orbit.borderRadiusBadge};
+    border-radius: ${theme.orbit.badgeBorderRadius};
     text-transform: uppercase;
     transition: transform ${theme.orbit.durationFast} ease-in;
 

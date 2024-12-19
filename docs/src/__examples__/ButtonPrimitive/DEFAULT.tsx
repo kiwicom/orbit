@@ -6,8 +6,8 @@ export default {
   Example: () => (
     <ButtonPrimitive
       background="linear-gradient(264.15deg, #FC8D3E 0%, #F16E5B 100%)"
-      foreground={defaultTheme.orbit.colorTextWhite}
-      padding={defaultTheme.orbit.paddingButtonNormal}
+      foreground={defaultTheme.orbit.textWhiteForeground}
+      padding={`0 ${defaultTheme.orbit.space400}`}
     >
       Click me
     </ButtonPrimitive>

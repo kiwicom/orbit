@@ -34,7 +34,7 @@ export default ({ level }: ElevationLevelProps) => {
       backgroundColor = theme.orbit.paletteCloudLight;
       break;
     case "flat":
-      border = `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`;
+      border = `${theme.orbit.elevationFlatBorderSize} solid ${theme.orbit.elevationFlatBorderColor}`;
       break;
     case 1:
       boxShadow = theme.orbit.elevationLevel1BoxShadow;

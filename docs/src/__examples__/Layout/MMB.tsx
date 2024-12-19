@@ -5,8 +5,8 @@ import { Layout, LayoutColumn, Text } from "@kiwicom/orbit-components";
 export default {
   Example: () => {
     const style = {
-      minHeight: defaultTheme.orbit.heightIllustrationMedium,
-      background: defaultTheme.orbit.backgroundBody,
+      minHeight: defaultTheme.orbit.illustrationMediumHeight,
+      background: defaultTheme.orbit.elevationSuppressedBackground,
     };
     return (
       <Layout type="MMB">

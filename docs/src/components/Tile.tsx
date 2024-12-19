@@ -124,8 +124,8 @@ const StyledEndLinkWrapper = styled.span`
 
 const StyledTextLink = styled.span`
   ${({ theme }) => `
-    font-weight: ${theme.orbit.fontWeightLinks};
-    color: ${theme.orbit.colorTextLinkPrimary};
+    font-weight: ${theme.orbit.fontWeightMedium};
+    color: ${theme.orbit.textLinkPrimaryForeground};
     text-decoration: underline;
     ${StyledWrapper}:hover & {
       color: ${theme.orbit.paletteProductNormalHover};
@@ -148,9 +148,9 @@ const StyledLinkText = styled(StyledTextLink)`
 
 const StyledLinkNode = styled.span`
   ${({ theme }) => `
-    color: ${theme.orbit.colorTextLinkPrimary};
+    color: ${theme.orbit.textLinkPrimaryForeground};
     ${StyledWrapper}:hover & {
-      color: ${theme.orbit.colorTextLinkPrimaryHover};
+      color: ${theme.orbit.textLinkPrimaryForegroundHover};
     }
   `};
 `;

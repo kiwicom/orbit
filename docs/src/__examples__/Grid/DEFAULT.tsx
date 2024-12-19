@@ -8,7 +8,7 @@ export default {
       background: `${defaultTheme.orbit.paletteCloudNormal}`,
       border: `1px solid ${defaultTheme.orbit.paletteProductDark}`,
       "box-sizing": "border-box",
-      padding: `${defaultTheme.orbit.paddingButtonSmall}`,
+      padding: `0 ${defaultTheme.orbit.space300}`,
     };
 
     return (

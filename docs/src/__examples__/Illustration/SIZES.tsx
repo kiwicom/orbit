@@ -9,7 +9,7 @@ export default {
         <Heading as="h3" type="title3">
           Extra small
         </Heading>
-        <Text>Height: {defaultTheme.orbit.heightIllustrationSmall}</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationExtraSmallHeight}</Text>
         <Illustration
           size="extraSmall"
           alt="Jump to the front of the line when boarding"
@@ -31,7 +31,7 @@ export default {
         <Heading as="h3" type="title3">
           Medium
         </Heading>
-        <Text>Height: {defaultTheme.orbit.heightIllustrationMedium}</Text>
+        <Text>Height: {defaultTheme.orbit.illustrationMediumHeight}</Text>
         <Illustration
           size="medium"
           alt="Jump to the front of the line when boarding"

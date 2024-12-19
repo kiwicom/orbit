@@ -3,7 +3,7 @@ import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 export default {
   orbit: {
     ...defaultTokens,
-    widthBreakpointDesktop: 1024,
+    breakpointDesktop: 1024,
     fontFamily: '"DM Sans", sans-serif',
     fontSizeTextLarge: "18px",
     fontSizeTextNormal: "16px",

@@ -67,8 +67,8 @@ const StyledHeadingIcon = styled.div<{ $color: string }>`
   ${({ theme, $color }) => css`
     display: grid;
     place-content: center;
-    width: ${theme.orbit.widthIconMedium};
-    height: ${theme.orbit.heightIconMedium};
+    width: ${theme.orbit.iconMediumSize};
+    height: ${theme.orbit.iconMediumSize};
     background-color: ${$color};
     border-radius: ${theme.orbit.borderRadiusFull};
     padding: 2px;

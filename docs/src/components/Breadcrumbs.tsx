@@ -15,7 +15,9 @@ const StyledListItem = styled.li<{ current: boolean }>`
   ${({ theme, current }) => css`
     a,
     span {
-      color: ${current ? theme.orbit.colorTextLinkPrimary : theme.orbit.colorTextSecondary};
+      color: ${current
+        ? theme.orbit.textLinkPrimaryForeground
+        : theme.orbit.textLinkSecondaryForeground};
       margin-right: ${theme.orbit.space200};
     }
   `}

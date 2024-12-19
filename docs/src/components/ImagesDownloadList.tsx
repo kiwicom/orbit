@@ -13,9 +13,9 @@ const StyledAnchor = styled.a`
   ${({ theme }) => css`
     background-color: ${theme.orbit.paletteProductLight};
     color: ${theme.orbit.paletteProductNormal};
-    padding: ${theme.orbit.paddingButtonSmallWithLeftIcon};
+    padding: 0 ${theme.orbit.space300} 0 ${theme.orbit.space200};
     padding-top: ${theme.orbit.space100};
-    height: ${theme.orbit.heightButtonSmall};
+    height: ${theme.orbit.formBoxSmallHeight};
     border-radius: ${theme.orbit.borderRadius100};
     transition: all ${theme.orbit.durationFast} ease-in;
 
@@ -41,7 +41,7 @@ interface ImageWrapProps {
 const ImageWrap = styled.div<ImageWrapProps>`
   ${({ theme, width }) => css`
     padding: ${theme.orbit.space300};
-    border: 1px solid ${theme.orbit.borderColorCard};
+    border: 1px solid ${theme.orbit.elevationFlatBorderColor};
     border-radius: ${theme.orbit.borderRadius100};
     margin-top: ${theme.orbit.space400};
     width: ${width};

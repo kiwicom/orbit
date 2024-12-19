@@ -5,8 +5,8 @@ import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 export default {
   Example: () => {
     const divStyle = {
-      minHeight: `${defaultTheme.orbit.heightIllustrationMedium}`,
-      background: `${defaultTheme.orbit.backgroundBody}`,
+      minHeight: `${defaultTheme.orbit.illustrationMediumHeight}`,
+      background: `${defaultTheme.orbit.elevationSuppressedBackground}`,
     };
     return (
       <Layout type="Search">

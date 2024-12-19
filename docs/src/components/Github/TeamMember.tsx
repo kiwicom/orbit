@@ -7,7 +7,7 @@ import { SiDribbble as Dribbble, SiGithub as Github } from "@icons-pack/react-si
 import { Contributor } from ".";
 
 const StyledHeading = styled.h4`
-  color: ${({ theme }) => theme.orbit.colorHeading};
+  color: ${({ theme }) => theme.orbit.headingForeground};
   font-size: calc(1em + 2px);
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold};
   width: 100%;
@@ -26,7 +26,7 @@ const StyledLink = styled.a.attrs(() => ({
 
 const StyledInfo = styled.div`
   height: 100%;
-  color: ${({ theme }) => theme.orbit.colorTextPrimary};
+  color: ${({ theme }) => theme.orbit.textPrimaryForeground};
 `;
 
 interface Props extends Contributor {

@@ -25,3 +25,22 @@ The `UserSingle` icon has been renamed to `UserSingleLight`. No changes have bee
 - <UserSingle />
 + <UserSingleLight />
 ```
+
+### Removal of `size` prop in InputGroup
+
+Following the removal of the `size` prop from the `InputField` and `Select` components in version 7, the `size` prop in the `InputGroup` component was having no effect at all.
+Therefore, it has now been removed.
+
+```diff
+- <InputGroup size="small">
++ <InputGroup>
+```
+
+### Removal of `inputSize` prop in ErrorFormTooltip
+
+The `inputSize` prop in the `ErrorFormTooltip` component has been removed as it was not being used at all, for the same reason mentioned above.
+
+```diff
+- <ErrorFormTooltip inputSize="small" />
++ <ErrorFormTooltip />
+```

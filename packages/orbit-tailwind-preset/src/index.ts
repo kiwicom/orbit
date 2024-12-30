@@ -8,21 +8,19 @@ import getComponentLevelTokens, { ExportedComponentLevelTokens } from "./getComp
 import cssVarsFoundation from "./foundation/cssVarsFoundation";
 
 const COLORS: Partial<ExportedComponentLevelTokens>[] = [
+  "alert",
+  "badge",
   "button",
   "buttonLink",
-  "drawer",
-  "socialButton",
-  "alert",
-  "icon",
-  "formElement",
-  "badge",
-  "tag",
-  "tab",
-  "textLink",
-  "text",
-  "loading",
-  "heading",
   "countryFlag",
+  "drawer",
+  "formElement",
+  "heading",
+  "icon",
+  "tab",
+  "tag",
+  "text",
+  "textLink",
 ];
 
 interface Options {

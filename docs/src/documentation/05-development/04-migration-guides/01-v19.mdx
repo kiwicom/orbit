@@ -16,14 +16,20 @@ With this guide, we aim to walk through all the breaking changes and how they ca
 
 The `UserSingle` icon has been renamed to `UserSingleLight`. No changes have been made to the icon itself, only the name has been changed to better suit its visual aspect.
 
-```diff
-- import UserSingle from "@kiwicom/orbit-components/lib/icons/UserSingle";
-+ import UserSingleLight from "@kiwicom/orbit-components/lib/icons/UserSingleLight";
+**Before:**
 
-...
+```jsx
+import UserSingle from "@kiwicom/orbit-components/lib/icons/UserSingle";
 
-- <UserSingle />
-+ <UserSingleLight />
+<UserSingle />;
+```
+
+**Now:**
+
+```jsx
+import UserSingleLight from "@kiwicom/orbit-components/lib/icons/UserSingleLight";
+
+<UserSingleLight />;
 ```
 
 ### Removal of `size` prop in InputGroup
@@ -31,16 +37,42 @@ The `UserSingle` icon has been renamed to `UserSingleLight`. No changes have bee
 Following the removal of the `size` prop from the `InputField` and `Select` components in version 7, the `size` prop in the `InputGroup` component was having no effect at all.
 Therefore, it has now been removed.
 
-```diff
-- <InputGroup size="small">
-+ <InputGroup>
-```
-
 ### Removal of `inputSize` prop in ErrorFormTooltip
 
 The `inputSize` prop in the `ErrorFormTooltip` component has been removed as it was not being used at all, for the same reason mentioned above.
 
-```diff
-- <ErrorFormTooltip inputSize="small" />
-+ <ErrorFormTooltip />
-```
+### Removal of `left` and `right` functions from RTL utils
+
+Deprecated since version 17.1.0, the `left` and `right` functions from the RTL utils have now been removed.
+
+### Removal of deprecated props and tokens
+
+Component props, tokens and tailwind classes deprecated in version 16 have been removed.
+
+Refer to the [migration guide for version 16](/migration-guides/v16/) for an extensive list of removed tokens and classes and their replacements.
+
+Besides the ones mentioned, some other tokens (and classes) were affected, namely component-specific tokens and breakpoint tokens.
+
+The component-specific tokens and classes were not documented and were not expected to be used.
+Therefore, the full set of removed tokens and classes is not listed in this migration guide.
+The full diff, available on the repository, can provide insights on the replacements for these tokens and classes.
+
+#### Breakpoint tokens renaming
+
+The breakpoint tokens, exported via the `mediaQuery` util and from the `theme` object, have been renamed.
+The prefix `width` was removed from their names. Their values did not change.
+
+- `widthBreakpointMediumMobile` -> `breakpointMediumMobile`
+- `widthBreakpointLargeMobile` -> `breakpointLargeMobile`
+- `widthBreakpointTablet` -> `breakpointTablet`
+- `widthBreakpointDesktop` -> `breakpointDesktop`
+- `widthBreakpointLargeDesktop` -> `breakpointLargeDesktop`
+
+#### New spacing tokens
+
+Two new spacing tokens were added. One replaces the deprecated `spaceXXXLarge` and the other introduces a new value.
+These tokens are available in the `theme` object and the corresponding tailwind classes are also available.
+For now, no component props are available for these tokens.
+
+- _(new token)_ -> `space700` (28px)
+- `spaceXXXLarge` -> `space1300` (52px)

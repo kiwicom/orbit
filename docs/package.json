@@ -116,7 +116,7 @@
     "unified": "^11.0.5",
     "unist-util-visit": "^2.0.3",
     "use-resize-observer": "^8.0.0",
-    "uuid": "^8.3.2",
+    "uuid": "^11.0.3",
     "vfile-reporter": "^7.0.5",
     "webpack": "^5.94.0"
   }

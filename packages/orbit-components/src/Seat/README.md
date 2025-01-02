@@ -24,7 +24,8 @@ Table below contains all types of the props available in Seat component.
 | type            | [`enum`](#modal-enum)   | `default` | Visual type of Seat. If `unavailable`, the element becomes disabled. |
 | price           | `string`                |           | Price of Seat. Displayed as text underneath the svg.                 |
 | label           | `string`                |           | Label text inside of a Seat. Not announced by screen readers.        |
-| selected        | `boolean`               |           | Displays Seat as selected.                                           |
+| selected        | `boolean`               |           | **Deprecated.** Use `status="selected"` instead.                     |
+| status          | [`enum`](#status-enum)  | `default` | Visual status of the seat (default, selected, processing, done).     |
 | onClick         | `() => void \| Promise` |           | Function for handling onClick event.                                 |
 | aria-labelledby | `string`                |           | Id(s) of elements that announce the component to screen readers.     |
 | title           | `string`                |           | Adds title title to svg element. Announced by screen readers.        |
@@ -44,8 +45,40 @@ Table below contains all types of the props available in Seat/SeatLegend compone
 
 ### enum
 
-| size       | type            |
-| :--------- | :-------------- |
-| `"small"`  | `"default"`     |
-| `"medium"` | `"legroom"`     |
-|            | `"unavailable"` |
+| size       | type            | status         |
+| :--------- | :-------------- | :------------- |
+| `"small"`  | `"default"`     | `"default"`    |
+| `"medium"` | `"legroom"`     | `"selected"`   |
+|            | `"unavailable"` | `"processing"` |
+|            |                 | `"done"`       |
+
+### Status States
+
+The `status` prop determines the visual appearance of the seat:
+
+- `default`: Default state of the seat
+- `selected`: Shows the seat as selected (replaces the deprecated `selected` prop)
+- `processing`: Shows a processing state with:
+  - Background color: product light active
+  - Label: bold text in product darker color
+  - Icon: Reload icon in the top-right corner
+- `done`: Shows a completed state with:
+  - Background color: product light active
+  - Label: bold text in product darker color
+  - Icon: Check icon in the top-right corner
+
+Example usage:
+
+```jsx
+// Processing state
+<Seat status="processing" label="12A" />
+
+// Done state
+<Seat status="done" label="12A" />
+
+// Selected state (new way)
+<Seat status="selected" label="12A" />
+
+// Selected state (deprecated way)
+<Seat selected label="12A" />
+```

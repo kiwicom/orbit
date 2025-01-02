@@ -7,9 +7,11 @@ import type * as Common from "../common/types";
 
 export type Size = "small" | "medium";
 export type Type = "default" | "legroom" | "unavailable";
+export type SeatStatus = "default" | "selected" | "processing" | "done";
 
 export interface SeatVariantProps {
-  selected: boolean;
+  selected?: boolean;
+  status?: SeatStatus;
   type: Type;
   label?: React.ReactNode;
 }
@@ -21,7 +23,11 @@ export interface Props extends Common.Globals {
   readonly description?: string;
   readonly "aria-labelledby"?: string;
   readonly onClick?: Common.Callback;
+  /**
+   * @deprecated Use `status="selected"` instead.
+   */
   readonly selected?: boolean;
+  readonly status?: SeatStatus;
   readonly label?: string;
   readonly price?: string;
 }

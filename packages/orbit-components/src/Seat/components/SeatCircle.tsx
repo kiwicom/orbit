@@ -3,7 +3,9 @@ import cx from "clsx";
 
 import { useRandomIdSeed } from "../../hooks/useRandomId";
 import { SIZE_OPTIONS, TYPES } from "../consts";
-import type { Type, Size } from "../types";
+import type { Type, Size, SeatStatus } from "../types";
+import Icon from "../../Icon";
+import { ICON_SIZES, ICON_COLORS } from "../../Icon/consts";
 
 const defaultClasses = {
   [TYPES.LEGROOM]: "fill-blue-dark-hover",
@@ -20,15 +22,48 @@ const hoverClasses = {
 interface Props {
   type: Type;
   size: Size;
+  /**
+   * @deprecated Use `status="selected"` instead
+   */
+  selected?: boolean;
+  status?: SeatStatus;
 }
 
-const SeatCircle = ({ size, type }: Props) => {
+const SeatCircle = ({ size, type, selected, status }: Props) => {
+  const effectiveStatus = status ?? (selected ? "selected" : "default");
+  const renderIcon = () => {
+    switch (effectiveStatus) {
+      case "processing":
+        return (
+          <Icon 
+            size={ICON_SIZES.SMALL} 
+            color={ICON_COLORS.PRIMARY}
+            viewBox="0 0 24 24"
+            className="absolute right-1 top-1"
+            children={<path d="M15.3079 4.56755C14.2643 4.09674 13.1286 3.85 11.9598 3.85C7.45865 3.85 3.80977 7.49888 3.80977 12C3.80977 12.4774 3.85092 12.9493 3.93174 13.4117L2.20322 14.2924C1.87781 14.4582 1.77113 14.7851 1.93721 15.1111C2.02011 15.2738 2.12961 15.3546 2.29281 15.4081L6.22308 16.6846C6.49605 16.8181 6.82146 16.6523 6.92814 16.3254L8.20499 12.3957C8.31139 12.0682 8.14559 11.7428 7.81811 11.6364L7.72275 11.6112C7.59886 11.5869 7.48572 11.6008 7.35556 11.6671L5.63277 12.545C5.61748 12.3647 5.60977 12.1829 5.60977 12C5.60977 8.493 8.45276 5.65 11.9598 5.65C12.8721 5.65 13.7556 5.84196 14.5678 6.20833C15.0209 6.41272 15.5539 6.21111 15.7582 5.75802C15.9626 5.30494 15.761 4.77194 15.3079 4.56755ZM21.6938 8.49822L17.7635 7.22165C17.4905 7.08815 17.1651 7.25396 17.0585 7.58089L15.7816 11.5106C15.6752 11.8381 15.841 12.1635 16.1685 12.2699L16.2638 12.2951C16.3877 12.3194 16.5009 12.3055 16.631 12.2392L18.2817 11.3987C18.3004 11.5974 18.3098 11.798 18.3098 12C18.3098 15.507 15.4668 18.35 11.9598 18.35C11.0517 18.35 10.172 18.1598 9.3629 17.7967C8.90942 17.5932 8.37682 17.7958 8.1733 18.2493C7.96979 18.7028 8.17243 19.2354 8.62592 19.4389C9.66571 19.9055 10.7964 20.15 11.9598 20.15C16.4609 20.15 20.1098 16.5011 20.1098 12C20.1098 11.5037 20.0653 11.0132 19.978 10.5332L21.7834 9.61393C22.1088 9.44813 22.2155 9.12119 22.0494 8.79524C21.9665 8.63253 21.857 8.5517 21.6938 8.49822Z" />}
+          />
+        );
+      case "done":
+        return (
+          <Icon 
+            size={ICON_SIZES.SMALL} 
+            color={ICON_COLORS.PRIMARY}
+            viewBox="0 0 24 24"
+            className="absolute right-1 top-1"
+            children={<path d="M6.44495 12.6675C6.10185 12.3078 5.53216 12.2944 5.17251 12.6375C4.81286 12.9806 4.79945 13.5503 5.14255 13.91L8.71513 17.6548C9.08299 18.0404 9.70349 18.0237 10.05 17.6188L18.6412 7.58219C18.9644 7.20458 18.9203 6.63644 18.5427 6.31321C18.1651 5.98998 17.5969 6.03407 17.2737 6.41168L9.67551 15.2883C9.49068 15.5043 9.15975 15.5132 8.96355 15.3075L6.44495 12.6675Z" />}
+          />
+        );
+      default:
+        return null;
+    }
+  };
   const randomId = useRandomIdSeed();
   const circleSmallId = randomId("circleSmallId");
   const circleNormalId = randomId("circleNormalId");
 
   return (
     <div className="absolute right-[-10px] top-[-10px]">
+      {renderIcon()}
       {size === SIZE_OPTIONS.SMALL ? (
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
           <mask

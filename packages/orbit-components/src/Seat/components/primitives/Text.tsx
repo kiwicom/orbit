@@ -2,19 +2,23 @@ import * as React from "react";
 import cx from "clsx";
 
 import { TYPES } from "../../consts";
-import type { SeatVariantProps } from "../../types";
+import type { SeatVariantProps, SeatStatus } from "../../types";
 
 type Props = {
   fontSize: number;
 } & SeatVariantProps;
 
-const Text = ({ selected, type, label, fontSize }: Props) => {
+const Text = ({ selected, status, type, label, fontSize }: Props) => {
+  const effectiveStatus = status ?? (selected ? "selected" : "default");
+  const isSelected = effectiveStatus === "selected";
+  const isProcessingOrDone = effectiveStatus === "processing" || effectiveStatus === "done";
+  
   return (
     <text
       className={cx(
-        selected && "fill-white-normal",
-        !selected && type === TYPES.LEGROOM && "fill-blue-dark",
-        !selected && type === TYPES.DEFAULT && "fill-product-dark",
+        (isSelected || isProcessingOrDone) && "fill-product-darker font-bold",
+        !isSelected && !isProcessingOrDone && type === TYPES.LEGROOM && "fill-blue-dark",
+        !isSelected && !isProcessingOrDone && type === TYPES.DEFAULT && "fill-product-dark",
       )}
       xmlSpace="preserve"
       fontSize={fontSize}

@@ -11,11 +11,12 @@ import SeatNormal from "./components/SeatNormal";
 import SeatSmall from "./components/SeatSmall";
 import SeatCircle from "./components/SeatCircle";
 import { SIZE_OPTIONS, TYPES } from "./consts";
-import type { Props } from "./types";
+import type { Props, SeatStatus } from "./types";
 
 const Seat = ({
   type = TYPES.DEFAULT,
   selected = false,
+  status,
   onClick,
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
@@ -26,6 +27,7 @@ const Seat = ({
   description,
   "aria-labelledby": ariaLabelledBy = "",
 }: Props) => {
+  const effectiveStatus = status ?? (selected ? "selected" : "default");
   const randomId = useRandomIdSeed();
   const titleId = title ? randomId("title") : "";
   const descrId = description ? randomId("descr") : "";
@@ -55,12 +57,12 @@ const Seat = ({
           {description && <desc id={descrId}>{description}</desc>}
 
           {size === SIZE_OPTIONS.SMALL ? (
-            <SeatSmall type={type} selected={selected} label={label} />
+            <SeatSmall type={type} selected={effectiveStatus === "selected"} status={effectiveStatus} label={label} />
           ) : (
-            <SeatNormal type={type} selected={selected} label={label} />
+            <SeatNormal type={type} selected={effectiveStatus === "selected"} status={effectiveStatus} label={label} />
           )}
         </svg>
-        {selected && clickable && <SeatCircle size={size} type={type} />}
+        {effectiveStatus !== "default" && clickable && <SeatCircle size={size} type={type} status={effectiveStatus} />}
       </button>
       {price && !(selected && type === TYPES.UNAVAILABLE) && (
         <Text size="small" type="secondary">

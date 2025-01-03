@@ -68,7 +68,7 @@ const Separator = ({
   label,
 }: Props) => {
   return (
-    <div className={cx("relative min-h-px", spaceAfter && getSpaceAfterClasses(spaceAfter))}>
+    <div className={cx("relative min-h-px w-full", spaceAfter && getSpaceAfterClasses(spaceAfter))}>
       <hr
         className={cx(
           "orbit-separator",

@@ -5,12 +5,10 @@
   "packages": ["packages/*", "docs"],
   "command": {
     "version": {
-      "allowBranch": "master",
       "message": "chore: publish",
       "conventionalCommits": true
     },
     "publish": {
-      "allowBranch": "master",
       "conventionalCommits": true,
       "ignoreChanges": [
         "packages/orbit-design-tokens/scripts/**",

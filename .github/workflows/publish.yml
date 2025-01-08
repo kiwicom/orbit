@@ -71,4 +71,3 @@ jobs:
           fi
           yarn docs changelog
           git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push
-          yarn zx scripts/post-changelog.mjs

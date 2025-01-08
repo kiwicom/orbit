@@ -65,7 +65,7 @@ const NavigationBar = ({
       data-test={dataTest}
       id={id}
       className={cx(
-        "bg-white-normal p-300 z-navigation-bar fixed inset-x-0 top-0 box-border flex w-full translate-x-0 items-center",
+        "bg-white-normal px-400 py-300 tb:p-300 z-navigation-bar fixed inset-x-0 top-0 box-border flex w-full translate-x-0 items-center",
         "duration-normal transform-gpu transition-transform ease-in-out",
         "tb:h-1600 h-1300", // As defined on the const above
         shown ? "translate-y-0" : "tb:-translate-y-1600 -translate-y-1300", // As defined on the const above
@@ -74,7 +74,7 @@ const NavigationBar = ({
       )}
       aria-label={ariaLabel}
     >
-      <div className="me-200 block w-full">{children}</div>
+      <div className={cx("block w-full", onMenuOpen && "me-200")}>{children}</div>
       {onMenuOpen && (
         <ButtonLink
           type="secondary"

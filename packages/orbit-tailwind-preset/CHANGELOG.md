@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@6.0.0...@kiwicom/orbit-tailwind-preset@7.0.0-alpha.0) (2025-01-08)
+
+
+### Features
+
+* **tailwind:** add space700 and space1300 classes ([c11297b](https://github.com/kiwicom/orbit/commit/c11297b458ad76308c4e6843e4008651226ee78a))
+* **tailwind:** remove deprecated border radius classes ([c38c62e](https://github.com/kiwicom/orbit/commit/c38c62efa0fe962c23da3f77f2cd5862e7c03d05))
+* **tailwind:** remove deprecated button classes ([b75fb2e](https://github.com/kiwicom/orbit/commit/b75fb2e73fbd9e0da9cf15565e11d3247d40c5ba))
+* **tailwind:** remove deprecated card classes ([b1c4966](https://github.com/kiwicom/orbit/commit/b1c49668ca86498db8470e6a425943bcc8341335))
+* **tailwind:** remove deprecated form classes ([512b0a9](https://github.com/kiwicom/orbit/commit/512b0a9e69b99aa511f60668300da05ba76d6dba))
+* **tailwind:** remove deprecated separator size classes ([d06dcb8](https://github.com/kiwicom/orbit/commit/d06dcb8b449f9ec468abc8043133f929c139bf1c))
+* **tailwind:** remove deprecated shadow classes ([e34d389](https://github.com/kiwicom/orbit/commit/e34d38998182e2a87c207af6c3ba0c6de21148e8))
+* **tailwind:** remove deprecated spacing classes ([e98ce58](https://github.com/kiwicom/orbit/commit/e98ce587debb7ba1b90beeb3868c57bcb577cda7))
+* **tailwind:** remove deprecated table classes ([94f559f](https://github.com/kiwicom/orbit/commit/94f559f36b44cdaa482c2e64c7550eb1d993f4c7))
+* **tailwind:** remove deprecated tag classes ([9f762f5](https://github.com/kiwicom/orbit/commit/9f762f558d8ca53bb1f92f40fabf25c35acecf57))
+* **tailwind:** remove loading-foreground class ([fec7369](https://github.com/kiwicom/orbit/commit/fec7369135c866f6e4bbe6c0ab10ab5fc1d32353))
+* **tailwind:** remove modal color classes ([78139b1](https://github.com/kiwicom/orbit/commit/78139b1edab3540cb9faa58cc44dcd24f5dc9aeb))
+* **tailwind:** remove social-button color classes ([c616c4b](https://github.com/kiwicom/orbit/commit/c616c4bd2c503426e07224c0d7e426de38f371d6))
+
+
+### BREAKING CHANGES
+
+* **tailwind:** these classes were deprecated. New number level classes can be used.
+* **tailwind:** these classes were deprecated and are not meant to be used.
+* **tailwind:** these classes were deprecated and are not meant to be used.
+* **tailwind:** these classes were deprecated and are not meant to be used.
+* **tailwind:** these classes were deprecated and not meant to be used.
+* **tailwind:** these classes were deprecated and not meant to be used.
+* **tailwind:** these classes were not meant to be used.
+* **tailwind:** these classes were deprecated and not meant to be used.
+* **tailwind:** this class was not meant to be used.
+* **tailwind:** the separator size classes were deprecated and not meant to be used.
+* **tailwind:** these classes were deprecated and not meant to be used.
+* **tailwind:** these classes were deprecated and not meant to be used.
+
+
+
+
+
 # [6.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@5.1.0...@kiwicom/orbit-tailwind-preset@6.0.0) (2024-10-24)
 
 

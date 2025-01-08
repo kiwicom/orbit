@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.0.0-alpha.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@8.1.0...@kiwicom/orbit-design-tokens@9.0.0-alpha.0) (2025-01-08)
+
+
+### Features
+
+* **tokens:** add space700 and space1300 tokens ([0daa94b](https://github.com/kiwicom/orbit/commit/0daa94bcb991c15b3f63e3c73ac91426064f7da2))
+* **tokens:** remove deprecated tokens ([a8ce914](https://github.com/kiwicom/orbit/commit/a8ce9145035409bea1a4e4f1af204b3f44fb177d))
+
+
+### BREAKING CHANGES
+
+* **tokens:** deprecated tokens were removed.
+They were not expected to be used anywhere by now.
+Check the diff for the full list and possible alternatives.
+
+
+
+
+
 # [8.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@8.0.0...@kiwicom/orbit-design-tokens@8.1.0) (2024-09-05)
 
 

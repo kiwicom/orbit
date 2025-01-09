@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@18.2.0...@kiwicom/orbit-components@19.0.0) (2025-01-09)
+
+#### Bug Fixes
+
+* **InputGroup:** propagate the label prop as an aria-label attribute to child components ([f051373](https://github.com/kiwicom/orbit/commit/f05137347613df79a1ceeb75d9265ef73a1d7bb6))
+* **Separator:** ensure width doesn't collapse to 0 in flex containers ([9c4e6b2](https://github.com/kiwicom/orbit/commit/9c4e6b2e88e38b8af316a1e7f60e425cb74a3ecf))
+
+#### Features
+
+* **Box:** remove deprecated borderRadius values ([6d76a67](https://github.com/kiwicom/orbit/commit/6d76a677e1724063cd7a6a1ce136537506b349e1))
+* **Box:** remove deprecated elevation values ([6ff4962](https://github.com/kiwicom/orbit/commit/6ff49621b5a882b60c6117127a55e6feed87c1ea))
+* **Box:** remove deprecated spacing values ([50f080e](https://github.com/kiwicom/orbit/commit/50f080ee9cda9fad79d6c7304058931c3d39c293))
+* **CountryFlag:** add role prop for accessibility customization ([96d57b0](https://github.com/kiwicom/orbit/commit/96d57b0da419aadd253d9ef8988c2a071dfb9a61))
+* **ErrorFormTooltip:** remove inputSize prop ([032b223](https://github.com/kiwicom/orbit/commit/032b223f8f019d4786be3c1d18809c01745d0d90))
+* **HorizontalScroll:** remove deprecated spacing values ([b1913ce](https://github.com/kiwicom/orbit/commit/b1913ced8bf2af4d332b8f2ab6f2c08dd0404958))
+* **Icon:** rename UserSingle to UserSingleLight ([e4d0abc](https://github.com/kiwicom/orbit/commit/e4d0abc93fd7e6d43fb0151d26c1122017f542e4))
+* **icons:** update icons from figma ([98a83e8](https://github.com/kiwicom/orbit/commit/98a83e8490b135238d33e4e141f2da9702edfc20))
+* **Inline:** remove deprecated spacing values ([e1c2c33](https://github.com/kiwicom/orbit/commit/e1c2c33d66f331b6c83977538229b0fcd4c0f47a))
+* **InputField:** add ariaLabel prop ([1bf0bb9](https://github.com/kiwicom/orbit/commit/1bf0bb907015cbb9e7b0bf02e9fef235f3ce23ff))
+* **InputGroup:** remove unused size prop ([3382797](https://github.com/kiwicom/orbit/commit/3382797366b6da9f866eedd8c647aaa070467b39))
+* **LinkList:** remove deprecated spacing values ([b436acb](https://github.com/kiwicom/orbit/commit/b436acb9caf19e5aa7418ffa300fdadad393063d))
+* remove deprecated left and right util functions ([68bb285](https://github.com/kiwicom/orbit/commit/68bb28590d0a05fcea2490f942359f5d504d2c7e))
+* rename exported breakpoint tokens in mediaQuery util ([3bdabb4](https://github.com/kiwicom/orbit/commit/3bdabb40866634a1ccdbd51abaf23fb4c0424d44))
+* **Select:** add ariaLabel prop ([7a81bed](https://github.com/kiwicom/orbit/commit/7a81bed86fbcdc4eddd4749c846e5d9004206cc1))
+* **Separator:** remove deprecated spacing values ([c48162a](https://github.com/kiwicom/orbit/commit/c48162acee5908fea926e05a1a1029e34d1a35d6))
+* **Stack:** remove deprecated spacing values ([7c01c8b](https://github.com/kiwicom/orbit/commit/7c01c8bd618586404b3b980b00887a331aa3f21a))
+* **Tabs:** remove deprecated spacing values ([c2198a5](https://github.com/kiwicom/orbit/commit/c2198a54fbe87cff0cf16efd18e110092d75cdfd))
+
+#### BREAKING CHANGES
+
+* these functions were deprecated and are now removed.
+* tokens no longer start with `widthBreakpoint-`.
+  They're now simply `breakpoint-`
+* **Stack:** deprecated spacing prop values were removed.
+* **Tabs:** deprecated spacing prop values were removed.
+* **HorizontalScroll:** deprecated spacing prop values were removed.
+* **Separator:** deprecated sideOffset prop values were removed.
+* **Inline:** deprecated spacing prop values were removed.
+* **LinkList:** deprecated spacing prop values were removed.
+* **Box:** deprecated margin and padding prop values were removed.
+* **Box:** deprecated borderRadius prop values were removed.
+* **Box:** deprecated elevation prop values were removed.
+* **Icon:** UserSingle icon is now named UserSingleLight, with no visual changes
+* **ErrorFormTooltip:** This prop was effectless and it is no longer available.
+* **InputGroup:** This prop was effectless and now is no longer meant
+  to be used.
+
 ## [18.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@18.1.1...@kiwicom/orbit-components@18.2.0) (2024-12-19)
 
 #### Bug Fixes

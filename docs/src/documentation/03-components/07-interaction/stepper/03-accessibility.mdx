@@ -1,0 +1,55 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/stepper/accessibility/
+---
+
+## Accessibility
+
+The Stepper component has been designed with accessibility in mind. It can be used with keyboard navigation and includes properties that enhance the experience for users of assistive technologies.
+
+The following props provide additional information to screen readers:
+
+- The `ariaLabelValue` prop allows you to specify an `aria-label` attribute for the input element (stepper value) in the Stepper (StepperStateless) component.
+
+- The `titleDecrement` prop allows you to specify an `aria-label` attribute for the decrement icon button in the Stepper (StepperStateless) component.
+
+- The `titleIncrement` prop allows you to specify an `aria-label` attribute for the increment icon button in the Stepper (StepperStateless) component.
+
+- The `ariaLabelledBy` prop allows you to specify an `aria-labelledby` attribute for the Stepper component. This attribute references the ID of the element that labels the Stepper (StepperStateless), ensuring that screen readers announce the label correctly.
+
+Although these props are optional for the Stepper (StepperStateless) component itself, it is recommended to fill them in.
+
+### Example
+
+```jsx
+<Stepper
+  step={1}
+  minValue={0}
+  minValue={10}
+  ariaLabelValue="Number of passengers"
+  titleDecrement="Remove a passenger"
+  titleIncrement="Add a passenger"
+/>
+```
+
+The screen reader will announce the value title (`Number of passengers`) and buttons title (`Add a passenger`, `Remove a passenger`) once they are focused by the screen reader.
+
+```jsx
+<Stack>
+  <Stack>
+    <Text id="passengers">Passengers</Text>
+  </Stack>
+  <Stepper
+    step={1}
+    minValue={0}
+    minValue={10}
+    ariaLabelValue="Number of passengers"
+    ariaLabelledby="passengers"
+    titleDecrement="Remove a passenger"
+    titleIncrement="Add a passenger"
+  />
+</Stack>
+```
+
+This example includes `ariaLabelledby` prop. In this case, `ariaLabelledBy` prop is prioritized over `ariaLabelValue`, so the screen reader will announce the value title (`Passengers`) and buttons title (`Add a passenger`, `Remove a passenger`) once they are focused by the screen reader.

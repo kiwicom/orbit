@@ -172,7 +172,10 @@ describe("#Box", () => {
     );
 
     expect(screen.getByTestId(`${dataTest}-${radius}`)).toHaveStyle({
-      "border-radius": BORDER_RADIUS[radius],
+      "border-radius":
+        radius === "100"
+          ? `var(--border-radius-100, ${BORDER_RADIUS[radius]})`
+          : BORDER_RADIUS[radius],
     });
   });
 

@@ -260,6 +260,24 @@ export const CardWithDefaultExpanded: Story = {
       </CardSection>
       <CardSection
         expandable
+        header={
+          <Stack inline align="center" justify="end">
+            <Text type="secondary">Trip length: 1h55m</Text>
+            <Badge icon={<Clock />} type="warningSubtle">
+              Unavailable
+            </Badge>
+          </Stack>
+        }
+        actions={
+          <ButtonLink compact type="secondary" size="small">
+            Open
+          </ButtonLink>
+        }
+      >
+        Hidden content
+      </CardSection>
+      <CardSection
+        expandable
         initialExpanded={initialExpanded}
         onExpand={action("onExpand")}
         actions={
@@ -269,7 +287,7 @@ export const CardWithDefaultExpanded: Story = {
         }
         onClose={action("onClose")}
         header={
-          <Stack inline justify="end">
+          <Stack inline align="center" justify="end">
             <Text type="secondary">Trip length: 1h55m</Text>
             <Badge icon={<Clock />} type="warningSubtle">
               Unavailable

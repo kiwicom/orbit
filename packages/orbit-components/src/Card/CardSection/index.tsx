@@ -9,6 +9,13 @@ import type { Props } from "./types";
 import Header from "../components/Header";
 import Expandable from "./components/Expandable";
 import handleKeyDown from "../../utils/handleKeyDown";
+import Stack from "../../Stack";
+
+const Actions = ({ actions }) => (
+  <Stack inline grow={false} justify="end">
+    {actions}
+  </Stack>
+);
 
 export default function CardSection({
   title,
@@ -68,24 +75,35 @@ export default function CardSection({
       onKeyDown={onClick == null ? undefined : handleKeyDown(onClick)}
     >
       {(title != null || header != null) && expandable && (
-        <button
-          type="button"
-          className="p-400 lm:p-600 hover:bg-white-normal-hover w-full"
-          aria-expanded={opened}
-          aria-controls={slideID}
-          onClick={handleClick}
+        <div
+          className={cx(
+            "hover:bg-white-normal-hover p-400 lm:p-600 gap-300 relative z-10 flex cursor-pointer items-center",
+            "has-[.orbit-card-header-button:focus]:focus-within:rounded-100 has-[.orbit-card-header-button:focus]:focus-within:outline-blue-normal has-[.orbit-card-header-button:focus]:focus-within:outline has-[.orbit-card-header-button:focus]:focus-within:outline-2",
+          )}
         >
-          <Header
-            title={title}
-            titleAs={titleAs}
-            description={description}
-            expandable={expandable}
-            header={header}
-            expanded={opened}
-            actions={actions}
-            isSection
-          />
-        </button>
+          <button
+            type="button"
+            className={cx(
+              "orbit-card-header-button w-full focus:outline-none",
+              "before:absolute before:inset-0",
+            )}
+            aria-expanded={opened}
+            aria-controls={slideID}
+            onClick={handleClick}
+          >
+            <Header
+              title={title}
+              titleAs={titleAs}
+              description={description}
+              expandable={expandable}
+              header={header}
+              expanded={opened}
+              actions={Boolean(actions)}
+              isSection
+            />
+          </button>
+          {actions && <Actions actions={actions} />}
+        </div>
       )}
 
       {(title != null || header != null) && !expandable && (
@@ -100,6 +118,7 @@ export default function CardSection({
             actions={actions}
             isSection
           />
+          {actions && <Actions actions={actions} />}
         </div>
       )}
 

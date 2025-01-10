@@ -9,14 +9,18 @@ import RandomIdProvider from "./RandomId/Provider";
 import type { Props } from "./types";
 import ThemeProvider from "./ThemeProvider/Provider";
 
-// we need only palette tokens for whitelables
-const getCssVarsForWL = (theme: typeof defaultTokens) =>
+export const getCssVarsForWL = (theme: typeof defaultTokens) =>
   Object.keys(theme).reduce((acc, key) => {
-    if (key.startsWith("palette")) {
+    if (key.startsWith("palette") || key.startsWith("buttonPrimary") || key === "borderRadius100") {
       try {
-        acc[key] = parseToRgba(theme[key] as string)
-          .slice(0, -1)
-          .join(", ");
+        if (key === "borderRadius100") {
+          acc[key] = theme[key];
+        } else {
+          // the token is a color
+          acc[key] = parseToRgba(theme[key] as string)
+            .slice(0, -1)
+            .join(", ");
+        }
       } catch (e) {
         console.error(
           "OrbitProvider-getCssVarsForWL: couldn't parse palette color, using fallback value from defaultTheme",

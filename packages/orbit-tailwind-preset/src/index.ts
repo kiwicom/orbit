@@ -5,7 +5,7 @@ import type { Config } from "tailwindcss";
 import orbitFoundationPreset from "./foundation";
 import kebabCase from "./utils/kebabCase";
 import getComponentLevelTokens, { ExportedComponentLevelTokens } from "./getComponentLevelTokens";
-import cssVarsFoundation from "./foundation/cssVarsFoundation";
+import cssVarsFoundation, { generateRgba } from "./foundation/cssVarsFoundation";
 
 const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "alert",
@@ -186,6 +186,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "form-box-large": tokens.formBoxLargeHeight,
           badge: tokens.badgeBorderRadius,
           modal: tokens.modalBorderRadius,
+          "100": `var(--border-radius-100, ${tokens.borderRadius100})`, // Needed because it is customizable in brands
         },
         borderColor: {
           ...Object.keys(tokens).reduce((acc, token) => {
@@ -306,19 +307,46 @@ export default function orbitTailwindPreset(options?: Options): Config {
             return { ...acc, [name]: value };
           }, {}),
           // overrides for specific WL
-          "button-primary-foreground": `var(--button-primary-foreground, ${tokens.buttonPrimaryForeground})`,
-          "button-primary-foreground-hover": `var(--button-primary-foreground-hover, ${tokens.buttonPrimaryForegroundHover})`,
-          "button-primary-foreground-active": `var(--button-primary-foreground-active, ${tokens.buttonPrimaryForegroundActive})`,
-          "button-primary-subtle-foreground": `var(--button-primary-subtle-foreground, ${tokens.buttonPrimarySubtleForeground})`,
-          "button-primary-subtle-foreground-hover": `var(--button-primary-subtle-foreground-hover, ${tokens.buttonPrimarySubtleForegroundHover})`,
-          "button-primary-subtle-foreground-active": `var(--button-primary-subtle-foreground-active, ${tokens.buttonPrimarySubtleForegroundActive})`,
+          "button-primary-foreground": generateRgba(
+            "button-primary-foreground",
+            defaultTokens.buttonPrimaryForeground,
+          ),
+          "button-primary-foreground-hover": generateRgba(
+            "button-primary-foreground-hover",
+            defaultTokens.buttonPrimaryForegroundHover,
+          ),
+          "button-primary-foreground-active": generateRgba(
+            "button-primary-foreground-active",
+            defaultTokens.buttonPrimaryForegroundActive,
+          ),
+          "button-primary-subtle-foreground": generateRgba(
+            "button-primary-subtle-foreground",
+            defaultTokens.buttonPrimarySubtleForeground,
+          ),
+          "button-primary-subtle-foreground-hover": generateRgba(
+            "button-primary-subtle-foreground-hover",
+            defaultTokens.buttonPrimarySubtleForegroundHover,
+          ),
+          "button-primary-subtle-foreground-active": generateRgba(
+            "button-primary-subtle-foreground-active",
+            defaultTokens.buttonPrimarySubtleForegroundActive,
+          ),
         },
         backgroundColor: {
           ...getBackgroundColors(tokens),
           // overrides for specific WL
-          "button-primary-background": `var(--button-primary-background, ${tokens.buttonPrimaryBackground})`,
-          "button-primary-background-hover": `var(--button-primary-background-hover, ${tokens.buttonPrimaryBackgroundHover})`,
-          "button-primary-background-active": `var(--button-primary-background-active, ${tokens.buttonPrimaryBackgroundActive})`,
+          "button-primary-background": generateRgba(
+            "button-primary-background",
+            defaultTokens.buttonPrimaryBackground,
+          ),
+          "button-primary-background-hover": generateRgba(
+            "button-primary-background-hover",
+            defaultTokens.buttonPrimaryBackgroundHover,
+          ),
+          "button-primary-background-active": generateRgba(
+            "button-primary-background-active",
+            defaultTokens.buttonPrimaryBackgroundActive,
+          ),
         },
       },
     },

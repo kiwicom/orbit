@@ -1,4 +1,4 @@
-const kebabCase = (str: string) => str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+const kebabCase = (str: string) => str.replace(/([a-z])([A-Z0-9])/g, "$1-$2").toLowerCase();
 
 type TokensObject = Record<string, string | Record<string, string>>;
 

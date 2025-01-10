@@ -68,7 +68,7 @@ const Header = ({
         color="secondary"
       />
     )}
-    {actions && (
+    {React.isValidElement(actions) && (
       <Stack inline grow={false} justify="end">
         {actions}
       </Stack>

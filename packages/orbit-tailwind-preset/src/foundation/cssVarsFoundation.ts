@@ -2,7 +2,7 @@ import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 import { parseToRgba } from "color2k";
 
 const getChannels = (color: string) => parseToRgba(color).slice(0, -1).join(", ");
-const generateRgba = (color: string, fallback: string) =>
+export const generateRgba = (color: string, fallback: string) =>
   `rgba(var(--${color}, ${getChannels(fallback)}), <alpha-value>)`;
 
 const cssVarsFoundation = {

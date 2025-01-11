@@ -120,6 +120,21 @@
     "github": "https://github.com/jakubzaba"
   },
   {
+    "id": 179061,
+    "name": "Jan Panschab",
+    "username": "janpanschab",
+    "error": "",
+    "twitter": null,
+    "website": "https://webtones.dev",
+    "info": null,
+    "core": false,
+    "active": false,
+    "dribble": "",
+    "avatar_url": "https://avatars.githubusercontent.com/u/179061?v=4",
+    "position": "",
+    "github": "https://github.com/janpanschab"
+  },
+  {
     "id": 2174629,
     "name": "Jaroslav Kubíček",
     "username": "jaroslav-kubicek",
@@ -163,21 +178,6 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/8863238?v=4",
     "position": "",
     "github": "https://github.com/mvidalgarcia"
-  },
-  {
-    "id": 6270809,
-    "name": "Martin Pravda",
-    "username": "SOULPWRD",
-    "error": "",
-    "twitter": null,
-    "website": "",
-    "info": null,
-    "core": false,
-    "active": false,
-    "dribble": "",
-    "avatar_url": "https://avatars.githubusercontent.com/u/6270809?v=4",
-    "position": "",
-    "github": "https://github.com/SOULPWRD"
   },
   {
     "id": 978368,

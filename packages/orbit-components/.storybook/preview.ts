@@ -32,6 +32,9 @@ const preview: Preview = {
     a11y: {
       element: ".story-content",
     },
+    playroom: {
+      url: "http://localhost:9000",
+    },
   },
 };
 

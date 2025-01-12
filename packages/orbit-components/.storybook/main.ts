@@ -8,7 +8,7 @@ function getAbsolutePath(value: string): string {
 
 const config: StorybookConfig = {
   staticDirs: [path.resolve(__dirname, "../static")],
-  stories: ["../src/**/*.stories.*"],
+  stories: ["../src/**/*.@(mdx|stories.*)"],
   framework: getAbsolutePath("@storybook/react-webpack5"),
 
   addons: [
@@ -44,6 +44,7 @@ const config: StorybookConfig = {
       },
     },
   ],
+
   webpackFinal(cfg) {
     if (cfg) {
       // resolve to .js rather than .mjs to avoid webpack failing because of ambiguous imports
@@ -59,6 +60,10 @@ const config: StorybookConfig = {
       return cfg;
     }
     return undefined;
+  },
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
   },
 };
 

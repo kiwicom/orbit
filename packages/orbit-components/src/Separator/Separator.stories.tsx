@@ -5,6 +5,7 @@ import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import defaultTheme from "../defaultTheme";
 import Text from "../Text";
+import { FlightDirect } from "../icons";
 
 import Separator from ".";
 
@@ -26,6 +27,16 @@ type Story = StoryObj<typeof Separator>;
 export const Default: Story = {
   parameters: {
     info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
+  },
+};
+
+export const WithIcon: Story = {
+  render: args => <Separator {...args} label={<FlightDirect />} />,
+  parameters: {
+    info: "This is an example of using an Orbit icon as a label for this component. Visit Orbit.Kiwi for more detailed guidelines.",
     controls: {
       disable: true,
     },

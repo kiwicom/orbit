@@ -79,7 +79,7 @@ const Separator = ({
         )}
       />
       {label && (
-        <span className="bg-white-normal px-100 absolute left-1/2 top-1/2 min-w-max -translate-x-1/2 -translate-y-1/2">
+        <span className="bg-white-normal px-100 absolute left-1/2 top-1/2 flex min-w-max -translate-x-1/2 -translate-y-1/2 items-center justify-center">
           {label}
         </span>
       )}

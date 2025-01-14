@@ -1,5 +1,7 @@
 import React from "react";
 
+import { FlightDirect } from "../icons";
+
 import Separator from ".";
 
 export default function NotificationBadgeVisualStory() {
@@ -7,6 +9,7 @@ export default function NotificationBadgeVisualStory() {
     <div className="gap-400 flex flex-col">
       <Separator />
       <Separator label="label" />
+      <Separator label={<FlightDirect />} />
       <Separator type="dotted" />
       <Separator type="dashed" />
       <Separator type="double" />

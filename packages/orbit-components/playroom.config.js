@@ -63,6 +63,10 @@ module.exports = {
       ],
     },
   }),
+  reactDocgenTypescriptConfig: {
+    // TODO: Disabling prop intellisense until we can fix the issue with correctly getting the props
+    propFilter: () => false,
+  },
   exampleCode: `
   <div className="bg-white-normal p-300 h-screen">
     <Button type="primary">Hello World</Button>

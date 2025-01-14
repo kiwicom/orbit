@@ -1,15 +1,16 @@
 import * as React from "react";
+import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
+
 import "./index.css";
 
-import { OrbitProvider } from "../src";
-import defaultTheme from "../src/defaultTheme";
-
-// Wrap all examples in OrbitProvider for proper theming
 const FrameComponent = ({ children }) => {
   return (
     <OrbitProvider theme={defaultTheme} useId={React.useId}>
-      <div style={{ padding: "20px" }}>{children}</div>
+      <div id="playroom-frame" dir="ltr">
+        {children}
+      </div>
     </OrbitProvider>
   );
 };
+
 export default FrameComponent;

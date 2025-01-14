@@ -7,9 +7,14 @@ module.exports = {
   outputPath: "./.playroom",
   frameComponent: "./playroom/FrameComponent.tsx",
   snippets: "./playroom/snippets.ts",
+  scope: "./playroom/scope.ts",
   port: 9000,
   openBrowser: false,
   widths: Object.values(defaultFoundation.breakpoint),
+  defaultVisibleWidths: [
+    defaultFoundation.breakpoint.mediumMobile,
+    defaultFoundation.breakpoint.desktop,
+  ],
   baseUrl: "/",
   webpackConfig: () => ({
     resolve: {
@@ -58,4 +63,9 @@ module.exports = {
       ],
     },
   }),
+  exampleCode: `
+  <div className="bg-white-normal p-300 h-screen">
+    <Button type="primary">Hello World</Button>
+  </div>
+`,
 };

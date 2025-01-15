@@ -7,7 +7,7 @@ function getAbsolutePath(value: string): string {
 }
 
 const config: StorybookConfig = {
-  staticDirs: [path.resolve(__dirname, "../static")],
+  staticDirs: [path.resolve(__dirname, "../static"), path.resolve(__dirname, "../.playroom")],
   stories: ["../src/**/*.@(mdx|stories.*)"],
   framework: getAbsolutePath("@storybook/react-webpack5"),
 
@@ -15,16 +15,7 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-controls"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("storybook-addon-pseudo-states"),
-    {
-      name: getAbsolutePath("storybook-addon-playroom"),
-      options: {
-        playroom: {
-          url: "http://localhost:9000",
-          codeUrl: "http://localhost:9000/code",
-          baseUrl: "http://localhost:9000",
-        },
-      },
-    },
+    getAbsolutePath("storybook-addon-playroom"),
     {
       name: getAbsolutePath("@storybook/addon-essentials"),
       options: {

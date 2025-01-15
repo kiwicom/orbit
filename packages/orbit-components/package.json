@@ -11,7 +11,7 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6007 -c .storybook --ci",
-    "playroom:start": "playroom start",
+    "playroom": "playroom start",
     "cy:dev": "vite cypress/integration --logLevel silent",
     "cy:run": "start-server-and-test cy:dev http-get://localhost:3000 'cypress run'",
     "cy:open": "start-server-and-test cy:dev http-get://localhost:3000 'cypress open'",
@@ -28,6 +28,7 @@
     "build:iconsFont": "node --loader ts-node/esm config/createSVGFont.mts",
     "build:emailIcons": "yarn build:icons && yarn build:iconsFont && node --loader ts-node/esm config/generateEmailIcons.mts",
     "build:storybook": "yarn build:icons && storybook build -c .storybook -o .out",
+    "build:playroom": "playroom build",
     "eslint:check": "eslint . --report-unused-disable-directives",
     "test-ct": "playwright test -c playwright-ct.config.ts",
     "deploy:storybook": "yarn storybook-to-ghpages -e ./.out",

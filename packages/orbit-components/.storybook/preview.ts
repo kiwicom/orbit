@@ -33,7 +33,7 @@ const preview: Preview = {
       element: ".story-content",
     },
     playroom: {
-      url: "http://localhost:9000",
+      url: "/playroom/",
     },
   },
 };

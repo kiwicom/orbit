@@ -52,6 +52,10 @@ jobs:
         if: github.ref != 'refs/heads/master'
         run: echo "DOMAIN=https://kiwicom-orbit-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
 
+      - name: Get Playroom DOMAIN
+        if: github.ref != 'refs/heads/master'
+        run: echo "DOMAIN_PLAYROOM=${DOMAIN}/playroom" >> $GITHUB_ENV
+
       - name: Deploy to staging
         if: github.ref != 'refs/heads/master'
         run: yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
@@ -61,7 +65,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const commentBody = `Storybook staging is available at ${process.env.DOMAIN}`;
+            const commentBody = `Storybook staging is available at ${process.env.DOMAIN}\n Playroom staging is available at ${process.env.DOMAIN_PLAYROOM}`;
 
             const commentsList = await github.rest.issues.listComments({
               issue_number: context.issue.number,

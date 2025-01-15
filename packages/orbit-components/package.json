@@ -136,7 +136,6 @@
     "sharp": "^0.32.6",
     "start-server-and-test": "^1.13.1",
     "storybook": "^8.4.7",
-    "storybook-addon-playroom": "^6.0.0",
     "storybook-addon-pseudo-states": "^4.0.2",
     "style-loader": "^4.0.0",
     "surge": "^0.23.0",

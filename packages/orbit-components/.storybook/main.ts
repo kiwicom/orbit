@@ -15,7 +15,6 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-controls"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("storybook-addon-pseudo-states"),
-    getAbsolutePath("storybook-addon-playroom"),
     {
       name: getAbsolutePath("@storybook/addon-essentials"),
       options: {

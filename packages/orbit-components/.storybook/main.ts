@@ -7,7 +7,7 @@ function getAbsolutePath(value: string): string {
 }
 
 const config: StorybookConfig = {
-  staticDirs: [path.resolve(__dirname, "../static")],
+  staticDirs: [path.resolve(__dirname, "../static"), path.resolve(__dirname, "../.playroom")],
   stories: ["../src/**/*.@(mdx|stories.*)"],
   framework: getAbsolutePath("@storybook/react-webpack5"),
 

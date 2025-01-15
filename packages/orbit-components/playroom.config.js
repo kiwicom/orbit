@@ -4,7 +4,7 @@ const { defaultFoundation } = require("@kiwicom/orbit-design-tokens");
 module.exports = {
   title: "Orbit Playroom",
   components: require.resolve("./playroomComponents.tsx"),
-  outputPath: "./.playroom",
+  outputPath: "./.playroom/playroom",
   frameComponent: "./playroom/FrameComponent.tsx",
   snippets: "./playroom/snippets.ts",
   scope: "./playroom/scope.ts",
@@ -15,7 +15,7 @@ module.exports = {
     defaultFoundation.breakpoint.mediumMobile,
     defaultFoundation.breakpoint.desktop,
   ],
-  baseUrl: "/",
+  baseUrl: "/playroom/",
   webpackConfig: () => ({
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx", ".css"],

@@ -32,6 +32,12 @@ jobs:
       - name: Build tailwind
         run: yarn tailwind-preset build
 
+      - name: Build Orbit components
+        run: yarn components build
+
+      - name: Build Playroom
+        run: yarn components build:playroom
+
       - name: Build Storybook
         run: yarn components build:storybook
 

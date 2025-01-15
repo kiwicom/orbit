@@ -42,6 +42,8 @@ jobs:
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
+          yarn components build:playroom
+          yarn components build:storybook
 
       - name: Dry run
         if: ${{ github.event.inputs.dryrun == 'true' }}
@@ -72,3 +74,13 @@ jobs:
           yarn docs changelog
           git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push
           yarn zx scripts/post-changelog.mjs
+
+      - name: Get tag version
+        run: |
+          git fetch --tags --quiet
+          echo "VERSION_TAG=$(git tag --list '@kiwicom/orbit-components@*' --sort=creatordate | sed '$!d' | sed -n '$ s|.*@||; s/\./-/gp')" >> $GITHUB_ENV
+
+      - name: Get Storybook domain
+        run: |
+          echo "DOMAIN=https://kiwicom-orbit-v${VERSION_TAG}.surge.sh" >> $GITHUB_ENV
+          yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}

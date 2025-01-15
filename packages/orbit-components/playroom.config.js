@@ -69,7 +69,20 @@ module.exports = {
   },
   exampleCode: `
   <div className="bg-white-normal p-300 h-screen">
-    <Button type="primary">Hello World</Button>
+    <Context>
+      {() => {
+        const [hasError, setHasError] = React.useState(false);
+
+        return (
+          <Button
+            onClick={() => setHasError(!hasError)}
+            type={hasError ? "critical" : "primary"}
+          >
+            {hasError ? "Ups, click again" : "Click Me"}
+          </Button>
+        );
+      }}
+    </Context>
   </div>
 `,
 };

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [19.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.0.0...@kiwicom/orbit-components@19.1.0) (2025-01-16)
+
+
+### Bug Fixes
+
+* **NavigationBar:** adjust padding size for mobile ([4c47213](https://github.com/kiwicom/orbit/commit/4c472138d330842a84504b8b7af82d0533f3c6b5))
+* **Separator:** ensure label is centered vertically and horizontally ([3a1ea96](https://github.com/kiwicom/orbit/commit/3a1ea96436fee849daed9ff2715af23634ee8885))
+
+
+### Features
+
+* **Collapse:** set a11y attributes and props ([20cce9b](https://github.com/kiwicom/orbit/commit/20cce9b359d65f9f3c7dba1c0f4f35859f1344e9))
+
+
+
+
+
 # [19.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@18.2.0...@kiwicom/orbit-components@19.0.0) (2025-01-09)
 
 

@@ -63,7 +63,7 @@ If you want to use custom theme inside your project, it's necessary to wrap your
 
 For live preview check out [Storybook](https://kiwicom.github.io/orbit/) or [orbit.kiwi](https://orbit.kiwi).
 
-You can also try `orbit-components` directly on our [Playground](https://orbit.kiwi/playground/).
+You can also try `orbit-components` directly on our [Playroom](https://kiwicom.github.io/orbit/playroom).
 
 ## Documentation
 

@@ -9,7 +9,7 @@ import ReadArt from "../../images/streamline-light/read-art.svg";
 import IrisScanIcon from "../../images/streamline-light/iris-scan.svg";
 import ScriptIcon from "../../images/streamline-light/script.svg";
 
-type Link = "Components" | "Guides" | "Tokens" | "Accessibility" | "Foundation" | "Playground";
+type Link = "Components" | "Guides" | "Tokens" | "Accessibility" | "Foundation" | "Playroom";
 
 interface Props {
   links?: Link[];
@@ -31,7 +31,7 @@ const LinkIcon = ({ name }: { name?: string }) => {
       return <ColorBrushIcon {...iconStyles} />;
     case "Accessibility":
       return <IrisScanIcon {...iconStyles} />;
-    case "Playground":
+    case "Playroom":
       return <Code size="medium" />;
     default:
       return <ScriptIcon {...iconStyles} />;
@@ -59,6 +59,7 @@ const getLinkPath = (link: Link) => {
   if (link === "Tokens") return "/foundation/design-tokens/";
   if (link === "Guides") return "/development/guides/";
   if (link === "Accessibility") return "/foundation/accessibility/";
+  if (link === "Playroom") return "https://kiwicom.github.io/orbit/playroom";
 
   return link.toLowerCase();
 };
@@ -82,7 +83,7 @@ const LinkList = ({ isDesktop, links }: { isDesktop?: boolean; links: Props["lin
 );
 
 const Links = ({
-  links = ["Foundation", "Components", "Tokens", "Guides", "Accessibility", "Playground"],
+  links = ["Foundation", "Components", "Tokens", "Guides", "Accessibility", "Playroom"],
 }: Props) => {
   return (
     <>

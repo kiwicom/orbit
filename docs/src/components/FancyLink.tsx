@@ -6,7 +6,14 @@ import {
   SiStorybook as Storybook,
   SiReact as ReactJs,
 } from "@icons-pack/react-simple-icons";
-import { ColorPicker, Download, FlightDirect, Google, Tips } from "@kiwicom/orbit-components/icons";
+import {
+  ColorPicker,
+  Download,
+  FlightDirect,
+  Google,
+  Tips,
+  Code,
+} from "@kiwicom/orbit-components/icons";
 import { Tile } from "@kiwicom/orbit-components";
 
 import useIsUrlExternal from "../hooks/useIsUrlExternal";
@@ -19,7 +26,8 @@ type IconNames =
   | "google"
   | "lightbulb"
   | "react"
-  | "storybook";
+  | "storybook"
+  | "playroom";
 
 interface Props {
   download?: boolean;
@@ -54,6 +62,8 @@ const FancyLink = ({ download, href, icon, title }: Props) => {
             return <ReactJs />;
           case "storybook":
             return <Storybook />;
+          case "playroom":
+            return <Code />;
           case "lightbulb":
             return <Tips />;
           default:

@@ -6,7 +6,7 @@ module.exports = {
   components: require.resolve("./playroomComponents.tsx"),
   outputPath: "./.playroom/playroom",
   frameComponent: "./playroom/FrameComponent.tsx",
-  snippets: "./playroom/snippets.ts",
+  snippets: "./playroom/snippets/index.ts",
   scope: "./playroom/scope.ts",
   port: 9000,
   openBrowser: false,

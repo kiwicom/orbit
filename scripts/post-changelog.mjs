@@ -102,13 +102,22 @@ async function publishChangelog(package_) {
     const tags = await simpleGit().tags({ "--sort": "-taggerdate" });
     const diff = await getDiff(tags.latest ?? "", changelogPath(package_));
     const files = gitDiffParser.parse(diff);
+    let playroomLink;
+    
     if (files.length === 0) {
       console.log(`No changes in ${package_}`);
       return;
     }
+
+    if (package_ === "orbit-components") {
+      const latestTag = tags.all.find(tag => tag.includes("@kiwicom/orbit-components@"));
+      const releaseVersion = latestTag.split("@").pop().replace(".", "-");
+      playroomLink = `**Playroom for ${releaseVersion} is available [here](https://kiwicom-orbit-v${releaseVersion}.surge.sh)** 🕹️ \n`
+    }
+
     const changelog = getChangelogFromDiff(files);
     const formattedChangelog = format(changelog, package_);
-    const slackifiedChangelog = slackifyMarkdown(formattedChangelog);
+    const slackifiedChangelog = slackifyMarkdown(playroomLink || '' + formattedChangelog);
 
     if (argv.dry) {
       console.info(formattedChangelog);

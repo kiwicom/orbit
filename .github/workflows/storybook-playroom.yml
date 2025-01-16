@@ -65,7 +65,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const commentBody = `Storybook staging is available at ${process.env.DOMAIN}\n Playroom staging is available at ${process.env.DOMAIN_PLAYROOM}`;
+            const commentBody = `Storybook staging is available at ${process.env.DOMAIN}\n\nPlayroom staging is available at ${process.env.DOMAIN_PLAYROOM}`;
 
             const commentsList = await github.rest.issues.listComments({
               issue_number: context.issue.number,

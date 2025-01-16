@@ -96,19 +96,31 @@ async function configureWebhookURL() {
   }
 }
 
+const getPlayroomLink = (package_, tags) => {
+  if (package_ !== "orbit-components") return "";
+
+  const latestTag = tags.all.find(tag => tag.includes("@kiwicom/orbit-components@"));
+  const releaseVersion = latestTag.split("@").pop().replace(".", "-");
+  return `**Playroom for ${releaseVersion} is available [here](https://kiwicom-orbit-v${releaseVersion}.surge.sh)** 🕹️ \n`;
+};
+
 async function publishChangelog(package_) {
   try {
     await simpleGit().fetch(["origin", "master", "--tags"]);
     const tags = await simpleGit().tags({ "--sort": "-taggerdate" });
     const diff = await getDiff(tags.latest ?? "", changelogPath(package_));
     const files = gitDiffParser.parse(diff);
+
     if (files.length === 0) {
       console.log(`No changes in ${package_}`);
       return;
     }
+
     const changelog = getChangelogFromDiff(files);
     const formattedChangelog = format(changelog, package_);
-    const slackifiedChangelog = slackifyMarkdown(formattedChangelog);
+    const slackifiedChangelog = slackifyMarkdown(
+      getPlayroomLink(package_, tags) + formattedChangelog,
+    );
 
     if (argv.dry) {
       console.info(formattedChangelog);

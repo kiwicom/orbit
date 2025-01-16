@@ -112,6 +112,10 @@ export default function Footer() {
               <Dot />
               <StyledFooterLink to="https://kiwicom.github.io/orbit/">Storybook</StyledFooterLink>
               <Dot />
+              <StyledFooterLink to="https://kiwicom.github.io/orbit/playroom">
+                Playroom
+              </StyledFooterLink>
+              <Dot />
               <StyledFooterLink to="/changelog/">Changelog</StyledFooterLink>
               <Dot />
               <StyledFooterLink to="/themer/">Themer</StyledFooterLink>

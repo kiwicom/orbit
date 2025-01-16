@@ -53,6 +53,12 @@ All components should have stories that display their different variations and b
 Stories should be written in the file `Component.stories.tsx`.
 For more information about using Storybook check the [official documentation](https://storybook.js.org/basics/guide-react/).
 
+## Playroom
+
+For the vast majority of the components, it is valuable to have at least one snippet in the Playroom.
+This allows users to quickly access the component in Playroom and craft with it.
+The snippet should be written in the file `playroom/snippets` folder, in the most adequate file (if needed, a new file can be created).
+
 ## Testing
 
 All components should have unit tests and visual tests. We use [Jest](https://jestjs.io/) for unit testing and their tests should be written in the file `__tests__/index.test.tsx`.

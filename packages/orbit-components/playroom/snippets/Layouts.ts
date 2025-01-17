@@ -323,6 +323,36 @@ const modal = `
 </Modal>
 `;
 
+const navigationBar = `<NavigationBar>
+  <Stack
+    justify="between"
+    spacing="none"
+  >
+    <ButtonLink
+      iconRight={<Icons.ChevronDown />}
+      type="secondary"
+    >
+      Flights
+    </ButtonLink>
+    <Stack
+      direction="row"
+      justify="end"
+      shrink
+      spacing="100"
+    >
+      <ButtonLink
+        iconLeft={<Icons.StarFull />}
+        type="secondary"
+      />
+      <ButtonLink
+        iconLeft={<Icons.AccountCircle />}
+        type="secondary"
+      />
+    </Stack>
+  </Stack>
+</NavigationBar>
+`;
+
 export default [
   {
     group: "CalloutBanner",
@@ -343,5 +373,9 @@ export default [
   {
     group: "Modal",
     code: modal,
+  },
+  {
+    group: "NavigationBar",
+    code: navigationBar,
   },
 ];

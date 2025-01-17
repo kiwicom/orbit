@@ -54,6 +54,82 @@ const dialog = `
 
 const heading = `<Heading as="h1" type="title1">Heading</Heading>`;
 
+const linkList = `
+<LinkList>
+  <TextLink type="secondary">
+    Flight 1
+  </TextLink>
+  <TextLink type="secondary">
+    Flight 2
+  </TextLink>
+  <TextLink type="secondary">
+    Flight 3
+  </TextLink>
+</LinkList>
+`;
+
+const list = `
+<List>
+  <ListItem>
+    24,000 locations around the globe
+  </ListItem>
+  <ListItem>
+    Lowest price car rental in Warsaw
+  </ListItem>
+  <ListItem>
+    From 3 star budget to 5 star luxury
+  </ListItem>
+</List>
+`;
+
+const listChoice = `
+<>
+  <ListChoice
+    title="Choice Title"
+    description="Further description"
+    icon={<Icons.Accommodation />}
+    selectable
+  />
+  <ListChoice
+    title="Choice Title"
+    description="Further description"
+    icon={<Icons.Accommodation />}
+    selectable
+  />
+</>
+`;
+
+const loading = `<Loading loading text="Please wait, content is loading..." type="pageLoader" />`;
+
+const notificationBadge = `<NotificationBadge type="info">10</NotificationBadge>`;
+
+const pagination = `
+<Pagination
+  labelProgress="Numbers of pages: 6"
+  pageCount={6}
+/>
+`;
+
+const popover = `
+<Popover
+  content={
+  <Stack>
+    <Text>Lorem ipsum</Text>
+  </Stack>
+}
+>
+  <Button
+    iconRight={<Icons.ChevronDown />}
+  >
+    Open popover
+  </Button>
+</Popover>
+`;
+
+const radio = `<Radio label="Label" name="Name" value="value" />`;
+
+const seat = `<Seat label="XY" type="default" />`;
+
 export default [
   {
     group: "Alert",
@@ -106,5 +182,41 @@ export default [
   {
     group: "Heading",
     code: heading,
+  },
+  {
+    group: "LinkList",
+    code: linkList,
+  },
+  {
+    group: "List",
+    code: list,
+  },
+  {
+    group: "ListChoice",
+    code: listChoice,
+  },
+  {
+    group: "Loading",
+    code: loading,
+  },
+  {
+    group: "NotificationBadge",
+    code: notificationBadge,
+  },
+  {
+    group: "Pagination",
+    code: pagination,
+  },
+  {
+    group: "Popover",
+    code: popover,
+  },
+  {
+    group: "Radio",
+    code: radio,
+  },
+  {
+    group: "Seat",
+    code: seat,
   },
 ];

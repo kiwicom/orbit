@@ -440,6 +440,7 @@ const Modal = React.forwardRef<Instance, Props>(
               "lm:relative lm:bottom-auto lm:pb-0",
               "lm:[&_.orbit-modal-section:last-of-type]:pb-1000 lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
               "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-theme(spacing.1000))]",
+              "lm:[&:has(.orbit-modal-header-container:last-child)]:pb-1000",
               footerHeight && "lm:[&_.orbit-modal-section]:rounded-b-none",
               !hasModalSection &&
                 "[&_.orbit-modal-header-container]:mb-800 lm:[&_.orbit-modal-header-container]:mb-[var(--orbit-modal-footer-height,0px)]",

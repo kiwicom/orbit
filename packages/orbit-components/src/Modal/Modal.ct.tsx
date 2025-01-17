@@ -5,6 +5,7 @@ import {
   ModalVisualDefaultStory,
   ModalVisualMobileHeader,
   ModalVisualNoHeaderNoFooter,
+  ModalVisualHeaderOnly,
 } from "./Modal.ct-story";
 import { SIZES } from "./consts";
 
@@ -40,6 +41,18 @@ test.describe("visual Modal", () => {
 
   test("ModalVisualNoHeaderNoFooter isMobileFullPage", async ({ mount }) => {
     const component = await mount(<ModalVisualNoHeaderNoFooter isMobileFullPage />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("ModalVisualHeaderOnly", async ({ mount }) => {
+    const component = await mount(<ModalVisualHeaderOnly />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("ModalVisualHeaderOnly isMobileFullPage", async ({ mount }) => {
+    const component = await mount(<ModalVisualHeaderOnly isMobileFullPage />);
 
     await expect(component).toHaveScreenshot();
   });

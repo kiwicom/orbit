@@ -459,6 +459,45 @@ export const WithItinerary: Story = {
   },
 };
 
+export const WithModalHeaderOnly: Story = {
+  render: args => {
+    const { Container, onClose } = useModal();
+    return (
+      <Container>
+        <Modal onClose={onClose} {...args}>
+          <ModalHeader
+            title="Enjoy something to eat while you fly"
+            illustration={<Illustration name="BaggageDrop" size="small" />}
+            description="Select a flight below to see the menu (where available)"
+          />
+        </Modal>
+      </Container>
+    );
+  },
+
+  args: {
+    mobileHeader: true,
+  },
+
+  parameters: {
+    info: "An example of a modal with a header only. Check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: [
+        "size",
+        "fixedFooter",
+        "title",
+        "autoFocus",
+        "isMobileFullPage",
+        "preventOverlayClose",
+        "hasCloseButton",
+        "disableAnimation",
+        "labelClose",
+        "lockScrolling",
+      ],
+    },
+  },
+};
+
 type PlaygroundStoryProps = ModalPropsAndCustomArgs & { header: boolean; footer: boolean };
 export const Playground: StoryObj<PlaygroundStoryProps> = {
   render: ({

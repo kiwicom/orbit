@@ -66,3 +66,15 @@ export function ModalVisualNoHeaderNoFooter({ isMobileFullPage = false }) {
     </Modal>
   );
 }
+
+export function ModalVisualHeaderOnly({ isMobileFullPage = false }) {
+  return (
+    <Modal onClose={() => {}} size={SIZES.NORMAL} isMobileFullPage={isMobileFullPage}>
+      <ModalHeader
+        title="Normal header"
+        illustration={<Illustration name="AppKiwi" size="small" />}
+        description="Lorem ispum dolor sit amet"
+      />
+    </Modal>
+  );
+}

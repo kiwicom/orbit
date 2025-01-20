@@ -19,18 +19,13 @@ import Alert, { AlertButton } from ".";
 
 const getIcon = (source: string | null) => (source ? Icons[source] : null);
 
-type AlertPropsAndCustomArgs = React.ComponentProps<typeof Alert> & {
-  message?: string;
-  button?: string;
-};
-
-const meta: Meta<AlertPropsAndCustomArgs> = {
+const meta: Meta<typeof Alert> = {
   title: "Alert",
   component: Alert,
 
   args: {
     title: "Some additional information",
-    message: "The quick, brown fox jumps over a lazy dog.",
+    children: "The quick, brown fox jumps over a lazy dog.",
     type: TYPE_OPTIONS.INFO,
     icon: true,
     closable: false,
@@ -61,7 +56,7 @@ const meta: Meta<AlertPropsAndCustomArgs> = {
 };
 
 export default meta;
-type Story = StoryObj<AlertPropsAndCustomArgs>;
+type Story = StoryObj<typeof Alert>;
 
 export const Default: Story = {
   render: ({ icon, ...args }) => {
@@ -72,19 +67,19 @@ export const Default: Story = {
 
   parameters: {
     info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
-    controls: { exclude: ["message"] },
+    controls: { exclude: ["children"] },
+  },
+
+  args: {
+    children: undefined,
   },
 };
 
 export const Content: Story = {
-  render: ({ message, icon, ...args }) => {
+  render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return (
-      <Alert {...args} icon={Icon ? <Icon /> : true}>
-        {message}
-      </Alert>
-    );
+    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
   },
 
   parameters: {
@@ -102,7 +97,7 @@ export const Button: Story = {
   },
 
   parameters: {
-    controls: { exclude: ["title", "message", "icon", "closable", "spaceAfter", "suppressed"] },
+    controls: { exclude: ["title", "children", "icon", "closable", "spaceAfter", "suppressed"] },
   },
 
   args: {
@@ -120,14 +115,10 @@ export const Button: Story = {
 };
 
 export const InfoAlert: Story = {
-  render: ({ message, icon, ...args }) => {
+  render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return (
-      <Alert {...args} icon={Icon ? <Icon /> : true}>
-        {message}
-      </Alert>
-    );
+    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
   },
 
   parameters: {
@@ -136,14 +127,10 @@ export const InfoAlert: Story = {
 };
 
 export const SuccessAlert: Story = {
-  render: ({ message, icon, ...args }) => {
+  render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return (
-      <Alert {...args} icon={Icon ? <Icon /> : true}>
-        {message}
-      </Alert>
-    );
+    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
   },
 
   parameters: {
@@ -152,20 +139,15 @@ export const SuccessAlert: Story = {
 
   args: {
     title: "You did it!",
-    message: "The quick, brown fox jumps over a lazy dog.",
     type: TYPE_OPTIONS.SUCCESS,
   },
 };
 
 export const WarningAlert: Story = {
-  render: ({ message, icon, ...args }) => {
+  render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return (
-      <Alert {...args} icon={Icon ? <Icon /> : true}>
-        {message}
-      </Alert>
-    );
+    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
   },
 
   parameters: {
@@ -174,20 +156,15 @@ export const WarningAlert: Story = {
 
   args: {
     title: "Be careful!",
-    message: "The quick, brown fox jumps over a lazy dog.",
     type: TYPE_OPTIONS.WARNING,
   },
 };
 
 export const CriticalAlert: Story = {
-  render: ({ message, icon, ...args }) => {
+  render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return (
-      <Alert {...args} icon={Icon ? <Icon /> : true}>
-        {message}
-      </Alert>
-    );
+    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
   },
 
   parameters: {
@@ -196,30 +173,12 @@ export const CriticalAlert: Story = {
 
   args: {
     title: "Something has gone horribly wrong",
-    message: "The quick, brown fox jumps over a lazy dog.",
     type: TYPE_OPTIONS.CRITICAL,
   },
 };
 
-export const OnlyTitle: Story = {
-  render: ({ icon, ...args }) => {
-    const Icon = typeof icon === "string" && getIcon(icon);
-
-    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
-  },
-
-  parameters: {
-    info: "This is the default configuration of this component. Visit Orbit.Kiwi for more detailed guidelines.",
-    controls: { exclude: ["message"] },
-  },
-
-  args: {
-    title: "The quick, brown fox jumps over a lazy dog.",
-  },
-};
-
 export const InlineActions: Story = {
-  render: ({ type, icon, button, ...args }) => {
+  render: ({ type, icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
     return (
@@ -229,7 +188,7 @@ export const InlineActions: Story = {
         onClose={action("Close")}
         inlineActions={
           <AlertButton type={type} href="#">
-            {button}
+            I am a button
           </AlertButton>
         }
       />
@@ -237,13 +196,12 @@ export const InlineActions: Story = {
   },
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    controls: { exclude: ["message"] },
+    controls: { exclude: ["children"] },
   },
 
   args: {
-    title: "You can change the title by changing the Title control",
-    button: "I am a link",
+    title: "The quick, brown fox jumps over a lazy dog.",
+    children: undefined,
     icon: "Ai",
   },
 };
@@ -262,18 +220,17 @@ export const WithTextLink: Story = {
   },
 
   parameters: {
-    info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
-    controls: { exclude: ["title", "message", "icon"] },
+    controls: { exclude: ["title", "children", "icon"] },
   },
 
   args: {
-    title: "",
+    title: undefined,
     icon: false,
   },
 };
 
 export const Playground: Story = {
-  render: ({ message, button, type, icon, suppressed, ...args }) => {
+  render: ({ type, icon, suppressed, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
     return (
@@ -286,7 +243,6 @@ export const Playground: Story = {
       >
         <Stack spacing="300">
           <Stack spacing="100">
-            <div>{message}</div>
             <List>
               <ListItem>
                 <Text type={type}>623 Kč will be refunded by your payment card</Text>
@@ -296,13 +252,13 @@ export const Playground: Story = {
           </Stack>
           <Stack direction="row" spacing="200">
             <AlertButton type={type} href="#">
-              {button}
+              I am a button
             </AlertButton>
             <AlertButton
               type={suppressed ? "secondary" : (`${type}Subtle` as BUTTON_TYPE_OPTIONS)}
               href="#"
             >
-              {button}
+              I am also a button
             </AlertButton>
           </Stack>
         </Stack>
@@ -312,13 +268,12 @@ export const Playground: Story = {
 
   parameters: {
     info: "You can try all possible configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: { exclude: ["children"] },
   },
 
   args: {
     type: TYPE_OPTIONS.INFO,
-    title: "You can change the title by changing the Title control",
-    message: "Also you can change the message by changing the Message control",
-    button: "I am a link",
+    title: "The quick, brown fox jumps over a lazy dog.",
     icon: "Airplane",
   },
 };
@@ -352,7 +307,7 @@ export const Rtl: Story = {
 
   parameters: {
     info: "This is a preview of this component in RTL setup.",
-    controls: { exclude: ["message"] },
+    controls: { exclude: ["children"] },
   },
 
   args: {

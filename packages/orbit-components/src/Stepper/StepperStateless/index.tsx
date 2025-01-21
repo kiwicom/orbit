@@ -8,6 +8,7 @@ import Plus from "../../icons/Plus";
 import ButtonPrimitive from "../../primitives/ButtonPrimitive";
 import useTheme from "../../hooks/useTheme";
 import type { Props } from "./types";
+import useRandomId from "../../hooks/useRandomId";
 
 const getMaxWidth = ({ maxWidth }: { maxWidth: string | number }) => {
   if (typeof maxWidth === "string") return maxWidth;
@@ -48,6 +49,8 @@ const StepperStateless = ({
   titleDecrement,
   disabledIncrement,
   disabledDecrement,
+  ariaLabelValue,
+  ariaLabelledBy,
 }: Props) => {
   const theme = useTheme();
 
@@ -59,6 +62,8 @@ const StepperStateless = ({
     disabled || disabledDecrement || (typeof value === "number" && value <= +minValue);
   const isPlusDisabled =
     disabled || disabledIncrement || (typeof value === "number" && value >= +maxValue);
+
+  const inputId = useRandomId();
 
   return (
     <div
@@ -77,8 +82,9 @@ const StepperStateless = ({
             onDecrement(ev);
           }
         }}
-        title={titleDecrement}
         icons={iconStyles}
+        title={titleDecrement}
+        aria-controls={inputId}
       />
       <input
         className={cx(
@@ -103,6 +109,9 @@ const StepperStateless = ({
         }}
         onBlur={onBlur}
         onFocus={onFocus}
+        aria-label={ariaLabelValue}
+        aria-labelledby={ariaLabelledBy}
+        id={inputId}
         readOnly
       />
       <ButtonPrimitive
@@ -115,8 +124,9 @@ const StepperStateless = ({
             onIncrement(ev);
           }
         }}
-        title={titleIncrement}
         icons={iconStyles}
+        title={titleIncrement}
+        aria-controls={inputId}
       />
     </div>
   );

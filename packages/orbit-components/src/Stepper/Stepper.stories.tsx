@@ -23,12 +23,19 @@ export const Default: Story = {
       disable: true,
     },
   },
+
+  args: {
+    ariaLabelValue: "Number of passengers",
+    titleIncrement: "Add a passenger",
+    titleDecrement: "Remove a passenger",
+  },
 };
 
 export const Playground: Story = {
   args: {
+    ...Default.args,
     id: "stepper-ID",
-    name: "Passengers number",
+    name: "Number of passengers",
     step: 1,
     minValue: 0,
     maxValue: 20,
@@ -36,8 +43,6 @@ export const Playground: Story = {
     active: false,
     disabled: false,
     maxWidth: 120,
-    titleIncrement: "Add a passenger",
-    titleDecrement: "Remove a passenger",
     onChange: action("onChange"),
     onFocus: action("onFocus"),
     onBlur: action("onBlur"),
@@ -83,9 +88,9 @@ export const Stateless: Story & StoryObj<typeof StatelessStepper> = {
 };
 
 export const Rtl: Story = {
-  render: () => (
+  render: args => (
     <RenderInRtl>
-      <Stepper />
+      <Stepper {...args} />
     </RenderInRtl>
   ),
 
@@ -94,5 +99,9 @@ export const Rtl: Story = {
     controls: {
       disable: true,
     },
+  },
+
+  args: {
+    ...Default.args,
   },
 };

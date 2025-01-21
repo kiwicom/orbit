@@ -31,15 +31,10 @@ Table below contains all types of the props available in Stepper component.
 | onChange       | `number => void \| Promise` |         | Function for handling onClick event.                                          |
 | onFocus        | `event => void \| Promise`  |         | Function for handling onFocus event.                                          |
 | step           | `number`                    | `1`     | Specifies the value of step to increment and decrement.                       |
-| titleDecrement | `string \| (any => string)` |         | Specifies `title` property on decrement `Button`.                             |
-| titleIncrement | `string \| (any => string)` |         | Specifies `title` property on increment `Button`.                             |
-
-### size
-
-| size       |
-| :--------- |
-| `"small"`  |
-| `"normal"` |
+| titleDecrement | `string \| (any => string)` |         | Specifies `aria-label` property on decrement `Button`.                        |
+| titleIncrement | `string \| (any => string)` |         | Specifies `aria-label` property on increment `Button`.                        |
+| ariaLabelValue | `string`                    |         | Optional prop for `aria-label` value.                                         |
+| ariaLabelledBy | `string`                    |         | Optional prop for `aria-labelledby` value.                                    |
 
 ## Functional specs
 
@@ -77,9 +72,11 @@ Table below contains all types of the props available in `StepperStateless` comp
 | onIncrement       | `event => void \| Promise`  |         | Function for handling increment event.                  |
 | onKeyDown         | `event => void \| Promise`  |         | Function for handling onKeyDown event present on input. |
 | step              | `number`                    | `1`     | Specifies the value of step to increment and decrement. |
-| titleDecrement    | `string \| (any => string)` |         | Specifies `title` property on decrement `Button`.       |
-| titleIncrement    | `string \| (any => string)` |         | Specifies `title` property on increment `Button`.       |
+| titleDecrement    | `string \| (any => string)` |         | Specifies `aria-label` property on decrement `Button`.  |
+| titleIncrement    | `string \| (any => string)` |         | Specifies `aria-label` property on increment `Button`.  |
 | value             | `number \| string`          |         | Specifies the value of the StepperStateless.            |
+| ariaLabelValue    | `string`                    |         | Optional prop for `aria-label` value.                   |
+| ariaLabelledBy    | `string`                    |         | Optional prop for `aria-labelledby` value.              |
 
 ### Usage:
 

@@ -46,6 +46,8 @@ const Stepper = ({ onChange, defaultValue = 0, maxWidth = 108, ...props }: Props
     titleIncrement,
     titleDecrement,
     active,
+    ariaLabelValue,
+    ariaLabelledBy,
   } = props;
   return (
     <StepperStateless
@@ -63,6 +65,8 @@ const Stepper = ({ onChange, defaultValue = 0, maxWidth = 108, ...props }: Props
       id={id}
       value={value}
       name={name}
+      ariaLabelValue={ariaLabelValue}
+      ariaLabelledBy={ariaLabelledBy}
       titleIncrement={titleIncrement}
       titleDecrement={titleDecrement}
     />

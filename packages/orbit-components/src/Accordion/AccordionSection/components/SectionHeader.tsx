@@ -67,8 +67,10 @@ const AccordionSectionHeader = ({
 
   return (
     <div
+      // the border-radius is calculated based on the border-radius and border-width of the AccordionSection component
+      // outer border-radius is 4px, border-width is 1px so inner border-radius is 4px - 1px = 3px
       className={cx(
-        "p-600 flex w-full items-center",
+        "p-600 bg-white-normal flex w-full items-center rounded-[3px]",
         expanded ? "min-h-[19px]" : "min-h-form-box-normal",
         isInteractive && "hover:bg-cloud-light cursor-pointer border-0 bg-transparent text-left",
       )}

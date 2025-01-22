@@ -30,7 +30,7 @@ const AccordionSection = ({
 
   return (
     <div
-      // Note: update SectionFooter's border-radius in case border-width or border-radius of this component changes
+      // Note: update SectionHeader's and SectionFooter's border-radius in case border-width or border-radius of this component changes
       className="border-elevation-flat-border-color rounded-100 my-200 bg-elevation-flat relative w-full border border-solid"
       data-test={dataTest}
     >

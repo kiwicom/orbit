@@ -8,7 +8,7 @@ function getAbsolutePath(value: string): string {
 
 const config: StorybookConfig = {
   staticDirs: [path.resolve(__dirname, "../static"), path.resolve(__dirname, "../.playroom")],
-  stories: ["../src/**/*.@(mdx|stories.*)"],
+  stories: ["../src/**/*.stories.*"],
   framework: getAbsolutePath("@storybook/react-webpack5"),
 
   addons: [
@@ -60,10 +60,6 @@ const config: StorybookConfig = {
       return cfg;
     }
     return undefined;
-  },
-
-  typescript: {
-    reactDocgen: "react-docgen-typescript",
   },
 };
 

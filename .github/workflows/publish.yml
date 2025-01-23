@@ -42,8 +42,6 @@ jobs:
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
-          yarn components build:playroom
-          yarn components build:storybook
 
       - name: Dry run
         if: ${{ github.event.inputs.dryrun == 'true' }}
@@ -74,6 +72,12 @@ jobs:
           yarn docs changelog
           git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push
           yarn zx scripts/post-changelog.mjs
+
+      - name: Build Playroom
+        run: yarn components build:playroom
+
+      - name: Build Storybook
+        run: yarn components build:storybook
 
       - name: Get tag version
         run: |

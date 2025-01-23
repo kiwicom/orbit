@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@7.0.0...@kiwicom/orbit-tailwind-preset@7.0.1) (2025-01-23)
+
+
+### Bug Fixes
+
+* **tailwind:** correctly use CSS vars in themeable tokens ([79105b3](https://github.com/kiwicom/orbit/commit/79105b38ce5f16acd36bbc0e2953213257f31426))
+
+
+
+
+
 # [7.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@6.0.0...@kiwicom/orbit-tailwind-preset@7.0.0) (2025-01-09)
 
 

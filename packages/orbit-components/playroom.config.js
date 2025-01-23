@@ -15,7 +15,7 @@ module.exports = {
     defaultFoundation.breakpoint.mediumMobile,
     defaultFoundation.breakpoint.desktop,
   ],
-  baseUrl: "/playroom/",
+  baseUrl: process.env.IS_MASTER_BRANCH === "true" ? "/orbit/playroom" : "/playroom/",
   webpackConfig: () => ({
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx", ".css"],

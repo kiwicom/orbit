@@ -12,6 +12,7 @@ env: # Set environment variables for every job and step in this workflow
   CLICOLOR: "1" # Enable colors for *NIX commands
   PY_COLORS: "1" # Enable colors for Python-based utilities
   FORCE_COLOR: "1" # Force colors in the terminal
+  IS_MASTER_BRANCH: ${{ github.ref == 'refs/heads/master' }}
 
 jobs:
   deploy:
@@ -42,26 +43,24 @@ jobs:
         run: yarn components build:storybook
 
       - name: Get BRANCH_URL
-        # do not run on master branch
-        if: github.ref != 'refs/heads/master'
+        if: ${{ env.IS_MASTER_BRANCH != 'true' }}
         env:
           BRANCH_NAME: ${{ github.head_ref }}
         run: echo "BRANCH_URL=$(sed -e 's/[^a-zA-Z0-9]/-/g' <<< ${BRANCH_NAME})" >> $GITHUB_ENV
 
-      - name: Get DOMAIN
-        if: github.ref != 'refs/heads/master'
-        run: echo "DOMAIN=https://kiwicom-orbit-${BRANCH_URL}.surge.sh" >> $GITHUB_ENV
-
-      - name: Get Playroom DOMAIN
-        if: github.ref != 'refs/heads/master'
-        run: echo "DOMAIN_PLAYROOM=${DOMAIN}/playroom" >> $GITHUB_ENV
+      - name: Get DOMAINS
+        if: ${{ env.IS_MASTER_BRANCH != 'true' }}
+        run: |
+          DOMAIN="https://kiwicom-orbit-${BRANCH_URL}.surge.sh"
+          echo "DOMAIN=$DOMAIN" >> $GITHUB_ENV
+          echo "DOMAIN_PLAYROOM=$DOMAIN/playroom" >> $GITHUB_ENV
 
       - name: Deploy to staging
-        if: github.ref != 'refs/heads/master'
+        if: ${{ env.IS_MASTER_BRANCH != 'true' }}
         run: yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
 
       - name: Add comment to PR
-        if: github.ref != 'refs/heads/master'
+        if: ${{ env.IS_MASTER_BRANCH != 'true' }}
         uses: actions/github-script@v6
         with:
           script: |
@@ -93,7 +92,7 @@ jobs:
 
       - name: Deploy to production
         # run on master branch
-        if: github.ref == 'refs/heads/master'
+        if: ${{ env.IS_MASTER_BRANCH == 'true' }}
         run: yarn components deploy:storybook --ci
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

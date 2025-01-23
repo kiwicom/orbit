@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.1.0...@kiwicom/orbit-components@19.2.0) (2025-01-23)
+
+#### Bug Fixes
+
+* **Accordion:** inherit border-radius to prevent overflow ([3675529](https://github.com/kiwicom/orbit/commit/3675529170f128bb81752d50ae8a1ad343e2776a))
+* **Accordion:** make SectionFooter's border radius 3px ([8ff85ba](https://github.com/kiwicom/orbit/commit/8ff85ba956671eafe989d35079f8f5f5e662b928))
+* **Accordion:** restore white background ([d2d5638](https://github.com/kiwicom/orbit/commit/d2d5638814d2b062d4d75d11fb7ca17a82ace1ac))
+* **Modal:** ensure Modal has rounded bottom corners on larger viewports ([92a01ef](https://github.com/kiwicom/orbit/commit/92a01ef1794c4908fb587027835ec0627c9e9838))
+* **OrbitProvider:** some whitelabel tokens were not being applied correctly ([d1f5682](https://github.com/kiwicom/orbit/commit/d1f56823239376ae3c550562d7da878885241ac6))
+
+#### Features
+
+* **Card:** refactor component for improved accessibility ([a693640](https://github.com/kiwicom/orbit/commit/a693640a4c089a7b39b525585da06f312ba040f9))
+* **NavigationBar:** allow for transparent background when at the top of the screen ([df64db1](https://github.com/kiwicom/orbit/commit/df64db13bda0c66dec0ede803da11d4d1350c18c))
+
 ## [19.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.0.0...@kiwicom/orbit-components@19.1.0) (2025-01-16)
 
 #### Bug Fixes

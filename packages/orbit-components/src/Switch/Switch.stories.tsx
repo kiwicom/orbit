@@ -16,6 +16,7 @@ const meta: Meta<typeof Switch> = {
   args: {
     checked: false,
     onChange: action("onChange"),
+    ariaLabel: "Set up price alerts",
   },
 
   parameters: {
@@ -42,6 +43,7 @@ export const CustomIcon: Story = {
   args: {
     checked: true,
     icon: "Lock",
+    ariaLabel: "Lock the price",
   },
 
   argTypes: {
@@ -64,7 +66,6 @@ export const Playground: Story = {
   args: {
     ...CustomIcon.args,
     id: "switch-id",
-    ariaLabelledby: "aria-labelledby",
     disabled: false,
     onFocus: action("onFocus"),
     onBlur: action("onBlur"),

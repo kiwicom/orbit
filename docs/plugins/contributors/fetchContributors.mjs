@@ -38,6 +38,7 @@ async function fetchUsers() {
             n.data;
 
           if (company === "@actions") return null;
+          if (login === "devin-ai-integration[bot]") return null;
 
           return {
             id,

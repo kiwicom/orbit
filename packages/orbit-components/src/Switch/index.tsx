@@ -8,7 +8,22 @@ import handleKeyDown from "../utils/handleKeyDown";
 import type { Props } from "./types";
 
 const Switch = React.forwardRef<HTMLInputElement, Props>(
-  ({ onChange, checked, dataTest, id, icon, onBlur, onFocus, disabled, ariaLabelledby }, ref) => {
+  (
+    {
+      onChange,
+      checked,
+      dataTest,
+      id,
+      icon,
+      onBlur,
+      onFocus,
+      disabled,
+      ariaControls,
+      ariaLabel,
+      ariaLabelledby,
+    },
+    ref,
+  ) => {
     return (
       <label className="inline-block">
         <div
@@ -28,7 +43,6 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
             disabled={disabled}
             aria-checked={checked}
             role="switch"
-            aria-labelledby={ariaLabelledby}
             onKeyDown={!disabled ? handleKeyDown<HTMLInputElement>(undefined, onChange) : undefined}
             onBlur={!disabled ? onBlur : undefined}
             onChange={!disabled ? onChange : undefined}
@@ -36,6 +50,9 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
             type="checkbox"
             data-test={dataTest}
             id={id}
+            aria-controls={ariaControls}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledby}
           />
           <div
             className={cx(

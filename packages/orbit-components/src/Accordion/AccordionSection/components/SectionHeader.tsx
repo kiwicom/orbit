@@ -68,7 +68,7 @@ const AccordionSectionHeader = ({
   return (
     <div
       className={cx(
-        "p-600 bg-white-normal flex w-full items-center",
+        "p-600 bg-white-normal flex w-full items-center rounded-[inherit]",
         expanded ? "min-h-[19px]" : "min-h-form-box-normal",
         isInteractive && "hover:bg-cloud-light cursor-pointer border-0 bg-transparent text-left",
       )}

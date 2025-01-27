@@ -63,7 +63,6 @@ const horizontalScroll = `
       </Text>
     </Box>
   ))}
-  )}
 </HorizontalScroll>
 `;
 

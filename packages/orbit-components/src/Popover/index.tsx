@@ -55,20 +55,34 @@ const Popover = ({
     [onClose, onOpen],
   );
 
-  const handleOut = React.useCallback(
-    (ev?: MouseEvent | React.SyntheticEvent<HTMLElement>) => {
-      // If open prop is present ignore custom handler
-      ev?.stopPropagation();
-      if (ev && ref.current && !ref.current.contains(ev.target as Node)) {
-        if (typeof opened === "undefined") {
-          setShown(false);
-          clearShownTimeout();
-          setRenderWithTimeout(false);
-          resolveCallback(false);
-        } else if (onClose) onClose();
+  const closePopover = React.useCallback(() => {
+    // If open prop is present ignore custom handler
+    if (typeof opened === "undefined") {
+      setShown(false);
+      clearShownTimeout();
+      resolveCallback(false);
+      setRenderWithTimeout(false);
+    } else if (onClose) onClose();
+  }, [setShown, clearShownTimeout, onClose, opened, resolveCallback, setRenderWithTimeout]);
+
+  const handleEsc = React.useCallback(
+    (ev: { key: string }) => {
+      if (ev.key === "Escape") {
+        closePopover();
       }
     },
-    [clearShownTimeout, onClose, opened, resolveCallback, setRenderWithTimeout, setShown],
+    [closePopover],
+  );
+
+  const handleOut = React.useCallback(
+    (ev?: MouseEvent | React.SyntheticEvent<HTMLElement>) => {
+      ev?.stopPropagation();
+
+      if (ev && ref.current && !ref.current.contains(ev.target as Node)) {
+        closePopover();
+      }
+    },
+    [closePopover],
   );
 
   const handleClick = React.useCallback(() => {
@@ -103,6 +117,10 @@ const Popover = ({
   ]);
 
   React.useEffect(() => {
+    if (opened || shown) {
+      document.addEventListener("keydown", handleEsc);
+    }
+
     if (typeof opened !== "undefined") {
       if (opened) {
         setRender(true);
@@ -114,7 +132,13 @@ const Popover = ({
         setRenderWithTimeout(false);
       }
     }
+
+    return () => {
+      document.removeEventListener("keydown", handleEsc);
+    };
   }, [
+    shown,
+    handleEsc,
     opened,
     clearRenderTimeout,
     clearShownTimeout,

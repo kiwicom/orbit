@@ -30,7 +30,6 @@ jobs:
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
-          yarn tracking build
           yarn themer build
 
       - name: Type checks
@@ -52,7 +51,6 @@ jobs:
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
-          yarn tracking build
           yarn themer build
 
       - name: Lint
@@ -77,7 +75,6 @@ jobs:
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
-          yarn tracking build
           yarn themer build
 
       - name: Unit tests

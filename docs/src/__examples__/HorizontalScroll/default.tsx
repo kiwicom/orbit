@@ -72,6 +72,8 @@ export default {
           defaultValue: false,
         },
         { name: "arrowColor", type: "text", defaultValue: "" },
+        { name: "arrowLeftAriaLabel", type: "text", defaultValue: "" },
+        { name: "arrowRightAriaLabel", type: "text", defaultValue: "" },
         { name: "overflowElevation", type: "boolean", defaultValue: false },
         { name: "elevationColor", type: "string", defaultValue: "paletteCloudDark" },
         {

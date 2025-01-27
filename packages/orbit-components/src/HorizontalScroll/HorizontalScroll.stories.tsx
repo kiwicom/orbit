@@ -31,6 +31,8 @@ const meta: Meta<HorizontalScrollPropsAndCustomArgs> = {
     elevationColor: "paletteGreenLight",
     arrows: false,
     arrowColor: "#000000",
+    arrowLeftAriaLabel: "scroll left",
+    arrowRightAriaLabel: "scroll right",
     spacing: SPACINGS.FIFTY,
     scrollPadding: 0,
     scrollSnap: "mandatory",

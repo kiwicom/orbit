@@ -28,7 +28,7 @@ import type * as Common from "../common/types";
 
 export type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
 
-export interface Props extends Common.Globals {
+export type Props = Common.Globals & {
   /** set minimal height */
   readonly minHeight?: number;
   /** prop for testing purposes */
@@ -38,11 +38,26 @@ export interface Props extends Common.Globals {
   readonly spacing?: Spacing;
   /** content of HorizontalScroll */
   readonly children: React.ReactNode;
-  readonly arrows?: boolean;
   readonly arrowColor?: string;
   readonly scrollSnap?: ScrollSnap;
   readonly scrollPadding?: number;
   readonly overflowElevation?: boolean;
   readonly elevationColor?: string;
   readonly onOverflow?: () => void;
-}
+  /**
+   * When arrows is true, arrowLeftAriaLabel and arrowRightAriaLabel are required for accessibility.
+   * These labels are used as ARIA labels for the scroll buttons.
+   * When arrows is false or undefined, these properties should not be provided.
+   */
+} & (
+    | {
+        readonly arrows: true;
+        readonly arrowLeftAriaLabel: string;
+        readonly arrowRightAriaLabel: string;
+      }
+    | {
+        readonly arrows?: false;
+        readonly arrowLeftAriaLabel?: string;
+        readonly arrowRightAriaLabel?: string;
+      }
+  );

@@ -40,11 +40,23 @@ export default function HorizontalScrollVisualStory() {
         {children}
       </HorizontalScroll>
 
-      <HorizontalScroll arrows arrowColor="black">
+      <HorizontalScroll
+        arrows
+        arrowColor="black"
+        arrowLeftAriaLabel="Scroll left"
+        arrowRightAriaLabel="Scroll right"
+      >
         {children}
       </HorizontalScroll>
 
-      <HorizontalScroll overflowElevation elevationColor="paletteWhite" arrows arrowColor="magenta">
+      <HorizontalScroll
+        overflowElevation
+        elevationColor="paletteWhite"
+        arrows
+        arrowColor="magenta"
+        arrowLeftAriaLabel="Scroll left"
+        arrowRightAriaLabel="Scroll right"
+      >
         {children}
       </HorizontalScroll>
     </div>

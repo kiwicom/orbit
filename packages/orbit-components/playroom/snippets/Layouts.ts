@@ -40,7 +40,7 @@ const drawer = `
 `;
 
 const horizontalScroll = `
-<HorizontalScroll arrows>
+<HorizontalScroll arrows arrowLeftAriaLabel="scroll left" arrowRightAriaLabel="scroll right">
   {Array(...Array(10)).map((_, key) => (
     <Box
       key={key}

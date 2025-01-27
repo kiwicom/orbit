@@ -136,7 +136,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
     return (
       <div
         className={cx(
-          "relative inline-flex w-full items-center overflow-hidden",
+          "orbit-horizontal-scroll relative inline-flex w-full items-center overflow-hidden",
           isOverflowing && (isDragging ? "cursor-grabbing" : "cursor-grab"),
         )}
         data-test={dataTest}
@@ -157,22 +157,13 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
           </>
         )}
         {arrows && (
-          <>
-            <ArrowButton
-              className="left-100"
-              isHidden={reachedStart || !isOverflowing}
-              onClick={() => handleClick("left")}
-            >
-              <ChevronBackward customColor={arrowColor} />
-            </ArrowButton>
-            <ArrowButton
-              className="right-100"
-              isHidden={reachedEnd || !isOverflowing}
-              onClick={() => handleClick("right")}
-            >
-              <ChevronForward customColor={arrowColor} />
-            </ArrowButton>
-          </>
+          <ArrowButton
+            className="left-100"
+            isHidden={reachedStart || !isOverflowing}
+            onClick={() => handleClick("left")}
+          >
+            <ChevronBackward customColor={arrowColor} />
+          </ArrowButton>
         )}
         <div
           className="scrollbar-none size-full overflow-x-auto overflow-y-hidden"
@@ -185,12 +176,23 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
         >
           <div
             className={cx("relative inline-flex size-full", isDragging && "pointer-events-none")}
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+            tabIndex={0}
           >
             <Stack inline spacing={spacing}>
               {children}
             </Stack>
           </div>
         </div>
+        {arrows && (
+          <ArrowButton
+            className="right-100"
+            isHidden={reachedEnd || !isOverflowing}
+            onClick={() => handleClick("right")}
+          >
+            <ChevronForward customColor={arrowColor} />
+          </ArrowButton>
+        )}
       </div>
     );
   },

@@ -23,10 +23,12 @@ const ArrowButton = ({
   className,
   isHidden,
   onClick,
+  ariaLabel,
 }: React.PropsWithChildren<{
   className: string;
   isHidden: boolean;
   onClick: () => void;
+  ariaLabel: string;
 }>) => {
   return (
     <button
@@ -37,6 +39,7 @@ const ArrowButton = ({
       )}
       onClick={onClick}
       type="button"
+      aria-label={ariaLabel}
     >
       {children}
     </button>
@@ -53,10 +56,12 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
       children,
       spacing = "300",
       arrows,
+      arrowColor,
+      arrowLeftAriaLabel,
+      arrowRightAriaLabel,
       scrollSnap = "none",
       onOverflow,
       elevationColor = "paletteCloudDark",
-      arrowColor,
       overflowElevation,
       scrollPadding,
       dataTest,
@@ -161,6 +166,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
             className="left-100"
             isHidden={reachedStart || !isOverflowing}
             onClick={() => handleClick("left")}
+            ariaLabel={arrowLeftAriaLabel}
           >
             <ChevronBackward customColor={arrowColor} />
           </ArrowButton>
@@ -189,6 +195,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
             className="right-100"
             isHidden={reachedEnd || !isOverflowing}
             onClick={() => handleClick("right")}
+            ariaLabel={arrowRightAriaLabel}
           >
             <ChevronForward customColor={arrowColor} />
           </ArrowButton>

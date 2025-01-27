@@ -360,7 +360,6 @@ export const LazyContentSimulated: Story = {
 export const InsideCard: Story = {
   render: args => {
     const [isOpened, setIsOpened] = React.useState(false);
-    const [isOpenedPopover, setIsOpenedPopover] = React.useState(false);
 
     return (
       <>
@@ -370,25 +369,15 @@ export const InsideCard: Story = {
               setIsOpened(true);
             }}
             onClose={() => setIsOpened(false)}
-          >
-            <Popover
-              {...args}
-              opened={isOpenedPopover}
-              onClose={() => {
-                setIsOpenedPopover(false);
-              }}
-              content={<div>Content</div>}
-            >
-              <Button
-                onClick={ev => {
-                  ev.stopPropagation();
-                  setIsOpenedPopover(true);
-                }}
-              >
-                Open Popover
-              </Button>
-            </Popover>
-          </CardSection>
+            title={<Text>Card title</Text>}
+            actions={
+              <Popover {...args} content={<div>Content</div>}>
+                <Button asComponent="div" type="secondary">
+                  Open Popover
+                </Button>
+              </Popover>
+            }
+          />
         </Card>
         {isOpened && <Modal onClose={() => setIsOpened(false)}>kek</Modal>}
       </>

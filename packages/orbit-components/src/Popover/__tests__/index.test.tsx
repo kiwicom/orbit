@@ -142,4 +142,36 @@ describe("Popover", () => {
     await user.click(screen.getByTestId("content-button"));
     expect(contentOnClick).toHaveBeenCalled();
   });
+
+  it("should open on Enter and close on Esc", async () => {
+    render(
+      <Popover content={<div>kek</div>}>
+        <Button dataTest="popover-trigger">Open popover</Button>
+      </Popover>,
+    );
+
+    screen.getByTestId("popover-trigger").focus();
+
+    await user.keyboard("{Enter}");
+    expect(screen.queryByText("kek")).toBeInTheDocument();
+
+    await user.keyboard("{Escape}");
+    expect(screen.queryByText("kek")).not.toBeInTheDocument();
+  });
+
+  it("should open on Click and close on Esc", async () => {
+    render(
+      <Popover content={<div>kek</div>}>
+        <Button dataTest="popover-trigger">Open popover</Button>
+      </Popover>,
+    );
+
+    const popoverTrigger = screen.getByTestId("popover-trigger");
+
+    await user.click(popoverTrigger);
+    expect(screen.queryByText("kek")).toBeInTheDocument();
+
+    await user.keyboard("{Escape}");
+    expect(screen.queryByText("kek")).not.toBeInTheDocument();
+  });
 });

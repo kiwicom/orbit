@@ -39,7 +39,6 @@ function fetchComponentDirs() {
     "themer",
     "examples",
     "icons",
-    "tracking",
     "tailwind",
   ];
 

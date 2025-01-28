@@ -131,7 +131,7 @@ class Slide extends React.Component<Props, State> {
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
       <div
         className={cx(
-          "orbit-slide relative w-full",
+          "orbit-slide relative w-full cursor-default",
           transitionDuration && "transition-[max-height] ease-linear",
           transitionDuration && getTransitionDurationClass(transitionDuration),
           !transitionFinished && "overflow-hidden",

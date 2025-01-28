@@ -84,9 +84,7 @@ const TileHeader = ({
           <Stack spacing="none" direction="column" shrink>
             {title && (
               <div className="flex w-full items-center">
-                <Heading type="title4" as="h3">
-                  {title}
-                </Heading>
+                <Heading type="title4">{title}</Heading>
               </div>
             )}
             {description && (

@@ -31,7 +31,7 @@ const Tab = ({
         "flex flex-1 flex-row items-center justify-between",
         "appearance-none border-0",
         "min-w-fit",
-        "relative box-border",
+        "box-border",
         "font-base font-medium",
         "rounded-t-100",
         "duration-fast transition-colors ease-in-out",

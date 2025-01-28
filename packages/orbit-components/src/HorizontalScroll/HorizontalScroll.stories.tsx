@@ -2,6 +2,7 @@ import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { SPACINGS } from "../utils/layout/consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Box from "../Box";
 import Text from "../Text";
 
@@ -124,5 +125,23 @@ export const Playground: Story = {
 
   parameters: {
     info: "Horizontal scroll playground. Check Orbit.Kiwi for more detailed design guidelines.",
+  },
+};
+
+export const Rtl: Story = {
+  ...Default,
+  render: args => {
+    return (
+      <RenderInRtl>
+        <HorizontalScroll {...args} arrows>
+          {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            Array(...Array(10)).map((_, key) => {
+              return <ScrollTile title={key} />;
+            })
+          }
+        </HorizontalScroll>
+      </RenderInRtl>
+    );
   },
 };

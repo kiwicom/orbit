@@ -98,7 +98,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-tailwindcss": "^3.17.4",
+    "eslint-plugin-tailwindcss": "^3.18.0",
     "fast-glob": "^3.2.12",
     "filedirname": "^2.7.0",
     "gitdiff-parser": "^0.3.1",

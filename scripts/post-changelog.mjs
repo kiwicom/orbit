@@ -101,7 +101,10 @@ const getPlayroomLink = (package_, tags) => {
 
   const latestTag = tags.all.find(tag => tag.includes("@kiwicom/orbit-components@"));
   const releaseVersion = latestTag.split("@").pop();
-  return `**Playroom for ${releaseVersion} is available [here](https://kiwicom-orbit-v${releaseVersion.replaceAll(".", "-")}.surge.sh)** 🕹️ \n`;
+  return `**Playroom for ${releaseVersion} is available [here](https://kiwicom-orbit-v${releaseVersion.replaceAll(
+    ".",
+    "-",
+  )}.surge.sh/playroom/)** 🕹️ \n`;
 };
 
 async function publishChangelog(package_) {

@@ -74,17 +74,19 @@ jobs:
           yarn zx scripts/post-changelog.mjs
 
       - name: Build Playroom
+        if: ${{ github.event.inputs.dryrun == 'false' }}
         run: yarn components build:playroom
 
       - name: Build Storybook
+        if: ${{ github.event.inputs.dryrun == 'false' }}
         run: yarn components build:storybook
 
       - name: Get tag version
+        if: ${{ github.event.inputs.dryrun == 'false' }}
         run: |
           git fetch --tags --quiet
           echo "VERSION_TAG=$(git tag --list '@kiwicom/orbit-components@*' --sort=creatordate | sed '$!d' | sed -n '$ s|.*@||; s/\./-/gp')" >> $GITHUB_ENV
 
-      - name: Get Storybook domain
-        run: |
-          echo "DOMAIN=https://kiwicom-orbit-v${VERSION_TAG}.surge.sh" >> $GITHUB_ENV
-          yarn components deploy:surge ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
+      - name: Publish Storybook and Playroom
+        if: ${{ github.event.inputs.dryrun == 'false' }}
+        run: yarn components deploy:surge https://kiwicom-orbit-v${VERSION_TAG}.surge.sh --token ${{ secrets.SURGE_TOKEN }}

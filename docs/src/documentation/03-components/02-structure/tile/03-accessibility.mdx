@@ -1,0 +1,36 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/tile/accessibility/
+---
+
+# Accessibility
+
+## Tile
+
+The Tile component has been designed with accessibility in mind.
+
+The component offers flexibility in terms of the HTML element used for the root node. By default, it will render a `div` element.
+
+### Expandable / Clickable
+
+The prop `expandable` makes the Tile clickable. In that case, assistive props like `aria-expanded` are handled automatically.
+
+The component will render, by default, a `div` element with `role="button"` and `tabindex={0}`.
+
+This also happens when the `onClick` prop is defined.
+
+For that reason, one should refrain from using other interactive elements inside the Tile, like buttons or links, including on the `header` prop.
+
+### Href
+
+When the `href` prop is defined, the Tile will render an `a` element inside of the `div`.
+For the same reason as above, one should refrain from using other interactive elements inside the Tile.
+
+### HTML Title
+
+The `htmlTitle` prop can be used to add extra information to the Tile.
+
+It will be added as the `title` attribute to the `a` element when the `href` prop is defined.
+
+Defining `htmlTitle` without defining `href` will produce no effect on the component.

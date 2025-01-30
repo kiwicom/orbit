@@ -1,0 +1,24 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/tilegroup/accessibility/
+---
+
+# Accessibility
+
+## TileGroup
+
+The TileGroup component has been designed with accessibility in mind.
+
+The component offers flexibility in terms of the HTML element used for the root node. By default, it will render a `div` element.
+
+If needed, it can be rendered as a list by passing the `as` prop with the value `"ul"`.
+
+In that case, the `Tile` elements used as `children` should be rendered as `li`.
+
+```jsx
+<TileGroup as="ul">
+  <Tile title="Title" as="li" />
+  <Tile title="Title" as="li" />
+</TileGroup>
+```

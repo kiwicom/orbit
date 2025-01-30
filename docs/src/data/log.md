@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.2.0...@kiwicom/orbit-components@19.3.0) (2025-01-30)
+
+#### Bug Fixes
+
+* **Popover:** popover content closes on ESC key press ([868a501](https://github.com/kiwicom/orbit/commit/868a501301d1e75dee8467067de0cc286af94485))
+
+#### Features
+
+* **Stepper:** add ariaLabel, ariaLabelledBy props ([137e5b0](https://github.com/kiwicom/orbit/commit/137e5b0c9c5e1805c4fe2d9ad3f39f79f45ef0d1))
+* **StepperStateless:** add ariaLabel, ariaLabelledBy props ([741087e](https://github.com/kiwicom/orbit/commit/741087e5abe75a09c49eb2755775a84ea87fddf3))
+* **Switch:** add aria-label and aria-controls props ([332114b](https://github.com/kiwicom/orbit/commit/332114bccb33b29765915d05f3b8877cc5da2b90))
+
 ## [19.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.1.0...@kiwicom/orbit-components@19.2.0) (2025-01-23)
 
 #### Bug Fixes

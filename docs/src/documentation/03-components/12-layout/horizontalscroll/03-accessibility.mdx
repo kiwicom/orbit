@@ -1,0 +1,31 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/horizontalscroll/accessibility/
+---
+
+## Accessibility
+
+The HorizontalScroll component comes with built-in accessibility features for screen reader users through ARIA labels.
+
+### ARIA labels
+
+When using arrows (`arrows`), you must provide accessibility labels for both arrow buttons using the `arrowLeftAriaLabel` and `arrowRightAriaLabel` props. These labels should be properly translated strings, as they will be read by screen readers to users in their preferred language.
+
+```jsx
+<HorizontalScroll
+  arrows
+  arrowLeftAriaLabel="Scroll left" // Should be a translated string
+  arrowRightAriaLabel="Scroll right" // Should be a translated string
+>
+  {/* content */}
+</HorizontalScroll>
+```
+
+The labels should clearly describe the action that will occur when the button is pressed. For example:
+
+- "See previous items"
+- "Scroll to previous cards"
+- "Show previous products"
+
+Remember that these strings must be translated to provide an accessible experience for screen reader users across different languages.

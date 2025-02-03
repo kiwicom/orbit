@@ -321,6 +321,7 @@ export const CardWithMixedSections: Story = {
       <CardSection title={sectionTitle} description={sectionDescription}>
         Section Content
       </CardSection>
+      <CardSection title={sectionTitle} actions={<ButtonLink>Button</ButtonLink>} />
     </Card>
   ),
 

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [19.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.3.0...@kiwicom/orbit-components@19.3.1) (2025-02-04)
+
+#### Bug Fixes
+
+* **Tile:** heading level is no longer enforced in TileHeader ([b8c0f81](https://github.com/kiwicom/orbit/commit/b8c0f810e12bbe93ca998766f4a9389a1ce4c6ab))
+
+#### Reverts
+
+* Revert "feat(Card): refactor component for improved accessibility" ([f81b569](https://github.com/kiwicom/orbit/commit/f81b569b806a367f15968c870ba4f534b09407e7))
+
 ## [19.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.2.0...@kiwicom/orbit-components@19.3.0) (2025-01-30)
 
 #### Bug Fixes

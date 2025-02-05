@@ -60,21 +60,29 @@ type Story = StoryObj<SelectPropsAndCustomArgs>;
 const getIcon = (source: string | null) => source && Icons[source];
 
 export const Default: Story = {
+  args: {
+    label: "Select item",
+  },
+
   parameters: {
     info: "Default setup of Select component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      disable: true,
+    },
   },
 };
 
 export const WithPrefixAndLabel: Story = {
   render: ({ icon, ...args }) => {
-    const Icon = typeof icon === "string" && getIcon(icon);
+    const Icon = getIcon(icon);
 
     return <Select {...args} prefix={<Icon />} />;
   },
 
   args: {
     icon: "Airplane",
-    label: "Select box",
+    label: "Select value from list",
+    inlineLabel: false,
   },
 
   argTypes: {
@@ -89,20 +97,21 @@ export const WithPrefixAndLabel: Story = {
   parameters: {
     info: "Select component with prefix icon and label. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onChange", "onBlur", "onFocus", "help", "error", "placeholder", "inlineLabel"],
+      exclude: ["onChange", "onBlur", "onFocus", "help", "error", "placeholder"],
     },
   },
 };
 
 export const WithCountryFlagPrefix: Story = {
   render: ({ code, ...args }) => {
-    const Icon = <CountryFlag code={code} />;
+    const Icon = <CountryFlag code={code} name="Country flag" />;
 
     return <Select {...args} prefix={Icon} />;
   },
 
   args: {
     code: CODES.ANYWHERE,
+    label: "Select country",
   },
 
   argTypes: {
@@ -121,7 +130,7 @@ export const WithCountryFlagPrefix: Story = {
 
 export const WithLongLabel: Story = {
   args: {
-    label: "Select box (very long label)",
+    label: "Select value from list (very long label)",
     inlineLabel: true,
   },
 
@@ -135,7 +144,8 @@ export const WithLongLabel: Story = {
 
 export const WithPlaceholder: Story = {
   args: {
-    placeholder: "Select value from list",
+    placeholder: "Placeholder value",
+    label: "Select value from list",
   },
 
   parameters: {
@@ -177,14 +187,14 @@ export const WithErrorMessage: Story = {
 
 export const Playground: Story = {
   render: ({ icon, ...args }) => {
-    const Icon = typeof icon === "string" && getIcon(icon);
+    const Icon = getIcon(icon);
 
     return <Select {...args} prefix={<Icon />} />;
   },
 
   args: {
     ...WithPrefixAndLabel.args,
-    ariaLabel: "Select box",
+    ariaLabel: "",
     inlineLabel: false,
     placeholder: "Select value from list",
     value: undefined,

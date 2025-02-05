@@ -77,7 +77,7 @@ describe("Select", () => {
   it("should have passed width", () => {
     const width = "100px";
     render(<Select width={width} label="label" options={[{ value: "1", label: "One" }]} />);
-    expect(document.querySelector("label")).toHaveStyle({ width });
+    expect(document.querySelector(".orbit-select-label-container")).toHaveStyle({ width });
   });
 
   it("should have error message", async () => {

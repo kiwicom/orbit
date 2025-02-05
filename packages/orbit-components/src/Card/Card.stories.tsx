@@ -18,6 +18,8 @@ type CardPropsAndCustomArgs = React.ComponentProps<typeof Card> & {
   sectionTitle: string;
   sectionDescription: string;
   initialExpanded?: boolean;
+  onClick: () => void;
+  buttonClick: () => void;
 };
 
 const meta: Meta<CardPropsAndCustomArgs> = {
@@ -96,7 +98,7 @@ export const CardWithActions: Story = {
     <Card
       {...args}
       actions={
-        <ButtonLink compact size="small">
+        <ButtonLink onClick={action("onClick")} compact size="small">
           Button
         </ButtonLink>
       }
@@ -263,7 +265,7 @@ export const CardWithDefaultExpanded: Story = {
         initialExpanded={initialExpanded}
         onExpand={action("onExpand")}
         actions={
-          <ButtonLink compact type="secondary" size="small">
+          <ButtonLink onClick={action("onClose")} compact type="secondary" size="small">
             Close
           </ButtonLink>
         }
@@ -294,11 +296,11 @@ export const CardWithDefaultExpanded: Story = {
 };
 
 export const CardWithMixedSections: Story = {
-  render: ({ sectionTitle, sectionDescription, ...args }) => (
+  render: ({ sectionTitle, sectionDescription, onClick, buttonClick, ...args }) => (
     <Card
       {...args}
       actions={
-        <ButtonLink compact size="small">
+        <ButtonLink onClick={buttonClick} compact size="small">
           Button
         </ButtonLink>
       }
@@ -307,7 +309,7 @@ export const CardWithMixedSections: Story = {
         expandable
         title={sectionTitle}
         actions={
-          <ButtonLink compact size="small" type="secondary">
+          <ButtonLink onClick={buttonClick} compact size="small" type="secondary">
             Button
           </ButtonLink>
         }
@@ -321,16 +323,53 @@ export const CardWithMixedSections: Story = {
       <CardSection title={sectionTitle} description={sectionDescription}>
         Section Content
       </CardSection>
-      <CardSection title={sectionTitle} actions={<ButtonLink>Button</ButtonLink>} />
+      <CardSection
+        title={sectionTitle}
+        actions={<ButtonLink onClick={buttonClick}>Button</ButtonLink>}
+      />
+      <CardSection onClick={onClick} title={sectionTitle} description={sectionDescription}>
+        Section Content with onClick
+      </CardSection>
+      <CardSection
+        expandable
+        onClick={onClick}
+        actions={
+          <ButtonLink onClick={buttonClick} compact size="small">
+            Button
+          </ButtonLink>
+        }
+        title={sectionTitle}
+        description={sectionDescription}
+      >
+        Expandable section Content with onClick and actions
+      </CardSection>
+      <CardSection
+        onClick={onClick}
+        actions={
+          <ButtonLink onClick={buttonClick} compact size="small">
+            Button
+          </ButtonLink>
+        }
+        title={sectionTitle}
+        description={sectionDescription}
+      >
+        Non-expandable section Content with onClick and actions
+      </CardSection>
     </Card>
   ),
 
+  args: {
+    onClick: action("onClick"),
+    buttonClick: action("buttonClick"),
+  },
+
   parameters: {
     controls: {
-      exclude: ["labelClose", "initialExpanded", "expanded"],
+      exclude: ["labelClose", "initialExpanded", "expanded", "onClick", "buttonClick"],
     },
   },
 };
+
 export const LoadingCard: Story = {
   render: args => (
     <Card {...args}>

@@ -4,6 +4,7 @@ export interface Props {
   readonly setDimensions?: () => void;
   readonly decideFixedFooter?: () => void;
   readonly setHasModalTitle?: React.Dispatch<React.SetStateAction<boolean>>;
+  readonly setHasModalDescription?: React.Dispatch<React.SetStateAction<boolean>>;
   readonly setHasModalSection?: () => void;
   readonly removeHasModalSection?: () => void;
   readonly callContextFunctions?: () => void;
@@ -15,10 +16,12 @@ export interface Props {
   readonly isInsideModal?: boolean;
   readonly closable?: boolean;
   readonly titleID?: string;
+  readonly descriptionID?: string;
 }
 
 export const ModalContext = React.createContext<Props>({
   setHasModalTitle: () => {},
+  setHasModalDescription: () => {},
   setHasModalSection: () => {},
   removeHasModalSection: () => {},
   setFooterHeight: () => {},

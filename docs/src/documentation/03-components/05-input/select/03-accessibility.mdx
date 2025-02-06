@@ -1,0 +1,86 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/select/accessibility/
+---
+
+## Accessibility
+
+The Select component has been designed with accessibility in mind.
+
+It supports keyboard navigation and includes the following properties that provide additional information to screen readers:
+
+| Name           | Type     | Description                                                            |
+| :------------- | :------- | :--------------------------------------------------------------------- |
+| ariaLabel      | `string` | Allows you to specify an `aria-label` attribute of the component.      |
+| ariaLabelledby | `string` | Allows you to specify an `aria-labelledby` attribute of the component. |
+
+While these props are optional, we recommend including them to ensure proper accessibility of the component, especially if the `label` prop is not provided.
+
+These attributes help users better understand the component's purpose and context, improving the overall experience with assistive technologies.
+
+### Examples
+
+The following code snippets show different ways to use these properties:
+
+```jsx
+<Select options={options} value={categoryValue} onChange={onChange} label="Category" />
+```
+
+```jsx
+<Select
+  options={options}
+  value={categoryValue}
+  onChange={onChange}
+  ariaLabel="Select passenger category"
+/>
+```
+
+```jsx
+<Stack>
+  <p id="passengers-category-label" style={{ display: "none", visibility: "hidden" }}>
+    Select passenger category
+  </p>
+
+  <Select
+    options={options}
+    value={categoryValue}
+    onChange={onChange}
+    ariaLabelledby="passengers-category-label"
+  />
+</Stack>
+```
+
+Using the `ariaLabel` prop enables screen readers to properly announce the Select component if the `label` prop is not provided.
+
+Alternatively, you can use the `ariaLabelledby` prop to reference another element that serves as a label for the Select component. The `ariaLabelledby` prop can reference multiple ids, separated by a space. The elements with those ids can be hidden, so that their text is only announced by screen readers.
+
+Note that if both `ariaLabel` and `ariaLabelledby` props are provided, `ariaLabelledby` takes precedence.
+
+For better screen reader experience, you can always complement the `label` prop with `ariaLabel` or `ariaLabelledby`:
+
+```jsx
+<Select
+  options={options}
+  value={languageValue}
+  onChange={onChange}
+  label="Language"
+  ariaLabel="Select your language"
+/>
+```
+
+For enhanced accessibility, it is recommended to have these label strings translated.
+
+When using the `help` or `error` props, their content is set as `aria-describedby` on the element. Screen readers will announce this additional information after reading the component's label (whether provided via `label`, `ariaLabel`, or `ariaLabelledby` props).
+
+```jsx
+<Select
+  options={options}
+  value={nationalityValue}
+  onChange={onChange}
+  label="Nationality"
+  error="Required field"
+/>
+```
+
+It would have the screen reader announce: “Nationality. Required field.”.

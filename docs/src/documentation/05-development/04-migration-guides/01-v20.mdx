@@ -1,0 +1,61 @@
+---
+title: v20
+description: How to migrate to Orbit 20.0.0
+redirect_from:
+  - /migration-guides/v20/
+---
+
+# Orbit Migration Guide v20
+
+This migration guide focuses on the process of migrating from Orbit v19 to v20.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### Required props in HorizontalScroll if `arrows` is true
+
+The `HorizontalScroll` component now requires `arrowLeftAriaLabel` and `arrowRightAriaLabel` props if `arrows` is true.
+
+**Before:**
+
+```jsx
+import HorizontalScroll from "@kiwicom/orbit-components/lib/HorizontalScroll";
+
+<HorizontalScroll arrows />;
+```
+
+**Now:**
+
+```jsx
+import HorizontalScroll from "@kiwicom/orbit-components/lib/HorizontalScroll";
+
+<HorizontalScroll arrows arrowLeftAriaLabel="Scroll left" arrowRightAriaLabel="Scroll right" />;
+```
+
+Make sure to provide translated strings for the `arrowLeftAriaLabel` and `arrowRightAriaLabel` props.
+
+To ease the migration, we provide a codemod to help you out, with some default generic translations.
+The codemod will inject `intl.formatMessage` calls with the default translations, in this case:
+
+```jsx
+// left arrow
+intl.formatMessage({
+  id: "common.screenreader.arrow.scroll_left",
+  defaultMessage: "Scroll left",
+});
+// right arrow
+intl.formatMessage({
+  id: "common.screenreader.arrow.scroll_right",
+  defaultMessage: "Scroll right",
+});
+```
+
+To run the codemod, use the following command:
+
+```bash
+npx jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/horizontalscroll-aria-labels.js --parser=tsx --extensions=ts,tsx <pathToYourCode>
+```
+
+Make sure to run prettier after running the codemod, as it might introduce some formatting changes.
+
+Feel free to customize the translations according to your needs, but please maintain the same translation key structure (`common.screenreader.*`) when requesting translations.

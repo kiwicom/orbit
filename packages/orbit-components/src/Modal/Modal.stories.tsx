@@ -415,7 +415,7 @@ export const WithItinerary: Story = {
 
     return (
       <Container>
-        <Modal onClose={onClose}>
+        <Modal ariaLabel="Itinerary from Prague to Frankfurt" onClose={onClose}>
           <ModalSection>
             <Itinerary>
               <ItineraryStatus type="success" label="This part is new">

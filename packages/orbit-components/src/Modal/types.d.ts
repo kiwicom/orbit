@@ -25,6 +25,9 @@ export interface Props extends Common.Globals {
   readonly hasCloseButton?: boolean;
   readonly disableAnimation?: boolean;
   readonly labelClose?: string;
+  readonly ariaLabel?: string;
+  readonly ariaLabelledby?: string;
+  readonly ariaDescribedby?: string;
 }
 
 export interface Instance {

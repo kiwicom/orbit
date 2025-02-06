@@ -40,6 +40,9 @@ Table below contains all types of the props available in the Modal component.
 | mobileHeader        | `boolean`                  | `true`     | If `false` the ModalHeader will not have MobileHeader and CloseContainer.                                                                                                                             |
 | labelClose          | `string`                   | `Close`    | The label for the close button.                                                                                                                                                                       |
 | onScroll            | `event => void \| Promise` |            | Function for handling `onScroll` event. [See Functional specs](#functional-specs).                                                                                                                    |
+| ariaLabelledby      | `string`                   |            | The `aria-labelledby` attribute of the Modal. It should be used if `title` is not defined on the ModalHeader.                                                                                         |
+| ariaDescribedby     | `string`                   |            | The `aria-describedby` attribute of the Modal. It should be used if `description` is not defined on the ModalHeader.                                                                                  |
+| ariaLabel           | `string`                   |            | The `aria-label` attribute of the Modal. It should be used if `title` is not defined on the ModalHeader and `ariaLabelledby` is undefined.                                                            |
 
 ### Modal enum
 

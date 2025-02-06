@@ -48,8 +48,14 @@ const ModalHeader = ({
   title,
   dataTest,
 }: Props) => {
-  const { setHasModalTitle, hasMobileHeader, isMobileFullPage, titleID } =
-    React.useContext(ModalContext);
+  const {
+    setHasModalTitle,
+    setHasModalDescription,
+    hasMobileHeader,
+    isMobileFullPage,
+    titleID,
+    descriptionID,
+  } = React.useContext(ModalContext);
 
   useModalContextFunctions();
 
@@ -59,6 +65,13 @@ const ModalHeader = ({
       setHasModalTitle?.(false);
     };
   }, [title, setHasModalTitle]);
+
+  React.useEffect(() => {
+    if (description) setHasModalDescription?.(true);
+    return () => {
+      setHasModalDescription?.(false);
+    };
+  }, [description, setHasModalDescription]);
 
   const hasHeader = Boolean(title || description);
 
@@ -82,7 +95,7 @@ const ModalHeader = ({
           )}
           {description && (
             <div className="mt-200">
-              <Text size="large" as="div">
+              <Text size="large" as="div" id={descriptionID}>
                 {description}
               </Text>
             </div>

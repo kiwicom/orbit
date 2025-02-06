@@ -60,6 +60,9 @@ const Modal = React.forwardRef<Instance, Props>(
       id,
       labelClose = "Close",
       lockScrolling = true,
+      ariaLabel,
+      ariaLabelledby,
+      ariaDescribedby,
     }: Props,
     ref,
   ) => {
@@ -67,6 +70,7 @@ const Modal = React.forwardRef<Instance, Props>(
     const [scrolled, setScrolled] = React.useState<boolean>(false);
     const [fullyScrolled, setFullyScrolled] = React.useState<boolean>(false);
     const [hasModalTitle, setHasModalTitle] = React.useState<boolean>(false);
+    const [hasModalDescription, setHasModalDescription] = React.useState<boolean>(false);
     const [hasModalSection, setHasModalSection] = React.useState<boolean>(false);
     const [clickedModalBody, setClickedModalBody] = React.useState<boolean>(false);
     const [fixedClose, setFixedClose] = React.useState<boolean>(false);
@@ -79,6 +83,7 @@ const Modal = React.forwardRef<Instance, Props>(
     const modalContent = React.useRef<HTMLElement | null>(null);
     const modalBody = React.useRef<HTMLElement | null>(null);
     const modalTitleID = useRandomId();
+    const modalDescriptionID = useRandomId();
     const theme = useTheme();
 
     const { isLargeMobile } = useMediaQuery();
@@ -354,6 +359,7 @@ const Modal = React.forwardRef<Instance, Props>(
     const value = React.useMemo(
       () => ({
         setHasModalTitle,
+        setHasModalDescription,
         setHasModalSection: () => setHasModalSection(true),
         removeHasModalSection: () => setHasModalSection(false),
         callContextFunctions,
@@ -364,6 +370,7 @@ const Modal = React.forwardRef<Instance, Props>(
         closable: Boolean(onClose),
         isInsideModal: true,
         titleID: modalTitleID,
+        descriptionID: modalDescriptionID,
       }),
       [
         callContextFunctions,
@@ -372,6 +379,7 @@ const Modal = React.forwardRef<Instance, Props>(
         mobileHeader,
         onClose,
         modalTitleID,
+        modalDescriptionID,
       ],
     );
 
@@ -403,8 +411,7 @@ const Modal = React.forwardRef<Instance, Props>(
           !isMobileFullPage && "bg-[black]/50",
           "lm:overflow-y-auto lm:p-1000 lm:bg-[black]/50",
         )}
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        tabIndex={0}
+        tabIndex={-1}
         onKeyDown={handleKeyDown}
         onScroll={handleScroll}
         onClick={handleClickOutside}
@@ -412,10 +419,10 @@ const Modal = React.forwardRef<Instance, Props>(
         id={id}
         ref={modalBodyRef}
         role="dialog"
-        // eslint-disable-next-line jsx-a11y/no-autofocus
-        autoFocus={autoFocus}
         aria-modal="true"
-        aria-labelledby={hasModalTitle ? modalTitleID : ""}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledby || (hasModalTitle ? modalTitleID : undefined)}
+        aria-describedby={ariaDescribedby || (hasModalDescription ? modalDescriptionID : undefined)}
       >
         <div
           className={cx(

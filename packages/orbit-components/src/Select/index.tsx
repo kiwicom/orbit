@@ -13,7 +13,7 @@ import ErrorFormTooltip from "../ErrorFormTooltip";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import useRandomId from "../hooks/useRandomId";
 import type { Props } from "./types";
-import { spaceAfterClasses } from "../common/tailwind/spaceAfter";
+import { spaceAfterClasses } from "../common/tailwind";
 
 const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
   const {
@@ -41,6 +41,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     insideInputGroup,
     dataAttrs,
     ariaLabel,
+    ariaLabelledby,
   } = props;
   const filled = !(value == null || value === "");
 
@@ -182,6 +183,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
               aria-describedby={shown ? `${selectId}-feedback` : undefined}
               aria-invalid={error ? true : undefined}
               aria-label={ariaLabel}
+              aria-labelledby={ariaLabelledby}
               {...dataAttrs}
             >
               {placeholder && (

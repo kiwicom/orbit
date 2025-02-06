@@ -41,7 +41,8 @@ Table below contains all types of the props available in the Select component.
 | width           | `string`                   | `100%`  | Specifies width of the Select                                                                                  |
 | helpClosable    | `boolean`                  | `true`  | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error. |
 | customValueText | `string`                   |         | The custom text alternative of current value. [See Functional specs](#functional-specs).                       |
-| ariaLabel       | `string`                   |         | Optional prop for `aria-label` value. [See Accessibility](#accessibility).                                     |
+| ariaLabel       | `string`                   |         | Optional prop for `aria-label` value. See Accessibility tab.                                                   |
+| ariaLabelledby  | `string`                   |         | Optional prop for `aria-labelledby` value. See Accessibility tab.                                              |
 
 ### enum
 
@@ -70,7 +71,7 @@ Table below contains all types of the props available for object in Option array
 
 - The `error` prop overwrites the `help` prop, due to higher priority.
 
-- When you have limited space of `Select`, you can use `customValueText` property where you can pass text alternative of the current value. For instance, when label of selected option has `Czech Republic (+420)`, you can pass only `+420` into this property and the original label will be visually hidden.
+- When you have limited space for the `Select`, you can use `customValueText` property to pass an alternative text for the current value. For instance, when the label of the selected option is `Czech Republic (+420)`, you can pass only `+420` to this property and the original label will be visually hidden.
 
 - The `prefix` prop can accept any element. However, it is not recommended to pass it more than an icon (or flag).
 
@@ -89,8 +90,3 @@ class Component extends React.PureComponent<Props> {
   }
 }
 ```
-
-## Accessibility
-
-- The `ariaLabel` prop allows you to specify an `aria-label` attribute for the select component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.
-- If the `label` prop is not provided, the `ariaLabel` prop must be specified to ensure component accessibility.

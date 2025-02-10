@@ -10,9 +10,9 @@ type Size = "extraSmall" | "small" | "normal" | "large" | "extraLarge";
 export interface Props extends Common.Globals {
   readonly size?: Size;
   readonly children: React.ReactNode;
+  readonly triggerRef?: React.RefObject<HTMLElement>;
   readonly lockScrolling?: boolean;
   readonly scrollingElementRef?: React.Ref<HTMLElement>;
-  readonly autoFocus?: boolean;
   readonly onClose?: Common.Event<
     | React.KeyboardEvent<HTMLDivElement>
     | React.SyntheticEvent<HTMLButtonElement | HTMLDivElement | HTMLAnchorElement>
@@ -25,6 +25,9 @@ export interface Props extends Common.Globals {
   readonly hasCloseButton?: boolean;
   readonly disableAnimation?: boolean;
   readonly labelClose?: string;
+  readonly ariaLabel?: string;
+  readonly ariaLabelledby?: string;
+  readonly ariaDescribedby?: string;
 }
 
 export interface Instance {

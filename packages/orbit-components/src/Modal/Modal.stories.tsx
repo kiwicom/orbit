@@ -212,26 +212,31 @@ export default meta;
 
 function useModal() {
   const [open, toggle] = React.useState(true);
+  const ref = React.useRef(null);
+
   return {
     Container: ({ children }) => (
       <>
         {open && children}
-        <Button onClick={() => toggle(true)}>Open</Button>
+        <Button ref={ref} onClick={() => toggle(true)}>
+          Open
+        </Button>
       </>
     ),
     onClose: () => {
       toggle(false);
       action("onClose")();
     },
+    triggerRef: ref,
   };
 }
 
 export const RemovableSections: Story = {
   render: ({ showSection, children }) => {
-    const { Container, onClose } = useModal();
+    const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
-        <Modal onClose={onClose}>
+        <Modal triggerRef={triggerRef} onClose={onClose}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="Meal" size="small" />}
@@ -269,7 +274,6 @@ export const RemovableSections: Story = {
         "size",
         "title",
         "mobileHeader",
-        "autoFocus",
         "isMobileFullPage",
         "preventOverlayClose",
         "hasCloseButton",
@@ -277,6 +281,7 @@ export const RemovableSections: Story = {
         "labelClose",
         "lockScrolling",
         "fixedFooter",
+        "triggerRef",
       ],
     },
   },
@@ -284,10 +289,10 @@ export const RemovableSections: Story = {
 
 export const WithFixedFooter: Story = {
   render: args => {
-    const { Container, onClose } = useModal();
+    const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
-        <Modal onClose={onClose} {...args}>
+        <Modal triggerRef={triggerRef} onClose={onClose} {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="BaggageDrop" size="small" />}
@@ -317,12 +322,12 @@ export const WithFixedFooter: Story = {
         "size",
         "title",
         "mobileHeader",
-        "autoFocus",
         "isMobileFullPage",
         "preventOverlayClose",
         "hasCloseButton",
         "disableAnimation",
         "labelClose",
+        "triggerRef",
         "lockScrolling",
       ],
     },
@@ -331,11 +336,11 @@ export const WithFixedFooter: Story = {
 
 export const WithForm: Story = {
   render: ({ showSection }) => {
-    const { Container, onClose } = useModal();
+    const { Container, onClose, triggerRef } = useModal();
 
     return (
       <Container>
-        <Modal onClose={onClose} fixedFooter>
+        <Modal triggerRef={triggerRef} onClose={onClose} fixedFooter>
           <ModalHeader title="Refund" description="Reservation number: 123456789" />
           <ModalSection>
             <Stack>
@@ -396,12 +401,12 @@ export const WithForm: Story = {
         "size",
         "title",
         "mobileHeader",
-        "autoFocus",
         "isMobileFullPage",
         "preventOverlayClose",
         "hasCloseButton",
         "disableAnimation",
         "labelClose",
+        "triggerRef",
         "lockScrolling",
         "fixedFooter",
       ],
@@ -411,11 +416,15 @@ export const WithForm: Story = {
 
 export const WithItinerary: Story = {
   render: () => {
-    const { Container, onClose } = useModal();
+    const { Container, onClose, triggerRef } = useModal();
 
     return (
       <Container>
-        <Modal onClose={onClose}>
+        <Modal
+          triggerRef={triggerRef}
+          ariaLabel="Itinerary from Prague to Frankfurt"
+          onClose={onClose}
+        >
           <ModalSection>
             <Itinerary>
               <ItineraryStatus type="success" label="This part is new">
@@ -461,10 +470,10 @@ export const WithItinerary: Story = {
 
 export const WithModalHeaderOnly: Story = {
   render: args => {
-    const { Container, onClose } = useModal();
+    const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
-        <Modal onClose={onClose} {...args}>
+        <Modal triggerRef={triggerRef} onClose={onClose} {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="BaggageDrop" size="small" />}
@@ -486,12 +495,12 @@ export const WithModalHeaderOnly: Story = {
         "size",
         "fixedFooter",
         "title",
-        "autoFocus",
         "isMobileFullPage",
         "preventOverlayClose",
         "hasCloseButton",
         "disableAnimation",
         "labelClose",
+        "triggerRef",
         "lockScrolling",
       ],
     },
@@ -512,11 +521,11 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
     showSection,
     ...args
   }) => {
-    const { Container, onClose } = useModal();
+    const { Container, onClose, triggerRef } = useModal();
 
     return (
       <Container>
-        <Modal onClose={onClose} {...args}>
+        <Modal triggerRef={triggerRef} onClose={onClose} {...args}>
           {header && (
             <ModalHeader
               title={title}
@@ -560,7 +569,7 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
     illustration: NAMES[0],
     showSection: false,
     fixedFooter: false,
-    mobileHeader: false,
+    mobileHeader: true,
     size: SIZES.NORMAL,
     title: "Orbit design system",
     description: "I'm lovely description",
@@ -568,7 +577,6 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
     hasCloseButton: true,
     disableAnimation: false,
     labelClose: "Close",
-    autoFocus: true,
     header: true,
     footer: true,
     id: "modal-id",
@@ -592,18 +600,18 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
   parameters: {
     info: "Playground of Modal component. Check Orbit.Kiwi for more detailed design guidelines.",
     controls: {
-      exclude: ["children"],
+      exclude: ["children", "triggerRef"],
     },
   },
 };
 
 export const Rtl: Story = {
   render: () => {
-    const { Container, onClose } = useModal();
+    const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
         <RenderInRtl>
-          <Modal onClose={onClose}>
+          <Modal triggerRef={triggerRef} onClose={onClose}>
             <ModalHeader
               title="The title of the ModalHeader"
               illustration={<Illustration name="Accommodation" size="small" />}

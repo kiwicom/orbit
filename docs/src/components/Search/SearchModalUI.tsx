@@ -125,12 +125,7 @@ export default function SearchModalUI({
   return (
     <Portal>
       <StyledModalWrapper>
-        <Modal
-          size="extraLarge"
-          // the search field will be auto focused
-          autoFocus={false}
-          onClose={onClose}
-        >
+        <Modal size="extraLarge" onClose={onClose}>
           <ModalHeader title={title} />
           <ModalSection>
             <StyledSearchWrapper>

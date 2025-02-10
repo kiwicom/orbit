@@ -77,6 +77,7 @@ const Loader = ({ type, customSize }) => {
 };
 const Loading = ({
   loading = false,
+  asComponent: Element = "div",
   type = TYPE_OPTIONS.PAGE_LOADER,
   text,
   children,
@@ -89,7 +90,7 @@ const Loading = ({
       {Boolean(children) && !loading ? (
         children
       ) : (
-        <div
+        <Element
           className={cx([
             "items-center",
             "overflow-hidden",
@@ -117,7 +118,7 @@ const Loading = ({
               {text}
             </div>
           )}
-        </div>
+        </Element>
       )}
     </>
   );

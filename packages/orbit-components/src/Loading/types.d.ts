@@ -13,4 +13,5 @@ export interface Props extends Common.Globals {
   readonly type?: Type;
   readonly customSize?: number;
   readonly text?: Common.Translation;
+  readonly asComponent?: Common.Component;
 }

@@ -1,0 +1,89 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/button/accessibility/
+---
+
+# Accessibility
+
+## Button
+
+The Button component has been designed with accessibility in mind.
+
+The following props provide additional information to screen readers:
+
+- Use `ariaControls` prop to add `aria-controls` attribute to establish the relationship between button and element which is controlled by it. `aria-controls` works only with a unique `id` of an element.
+
+- Use `ariaExpands` prop to add `aria-expands` to indicate screenreaders, that element controlled by button through `ariaControls` is expanded or not.
+
+- Use `disabled` prop to indicate users that button is inactive and they can't interact with it.
+
+- Use `role` and `tabIndex` when you are rendering `Button` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
+
+- Use `title` to add `aria-label` when you need to add extra informations to screen readers or there is no `children` presented to be used as label.
+
+Also, the component offers flexibility in terms of the HTML element used for the root node.
+
+- The prop `asComponent` can be used to define the HTML element to be rendered. This prop is optional and if it is not provided, the component will render a default (button) element.
+
+- When `href` prop is defined, the component will render an `a` element.
+
+## Examples
+
+### Example 1:
+
+Component renders `button` element by default.
+
+```jsx
+<Button>Hello World!</Button>
+```
+
+renders:
+
+```html
+<button>Hello World!</button>
+```
+
+### Example 2:
+
+Component renders a `div` element as the `asComponent` prop is set to `"div"`.
+
+```jsx
+<Button asComponent="div">Hello World!</Button>
+```
+
+renders:
+
+```html
+<div>Hello World!</div>
+```
+
+### Example 3:
+
+When `onClick` prop is defined, the component will render a div element with `role="button"` by default.
+
+```jsx
+<Button asComponent="div" onClick={() => {}}>
+  Hello World!
+</Button>
+```
+
+renders:
+
+```html
+<div role="button">Hello World!</div>
+```
+
+### Example 4:
+
+A prop `href` is set, so the component renders an `a` element.
+
+```jsx
+<Button href="#">Hello World!</Button>
+```
+
+renders:
+
+```html
+<a href="#">Hello World!</a>
+```

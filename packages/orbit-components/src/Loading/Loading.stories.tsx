@@ -20,6 +20,7 @@ const meta: Meta<typeof Loading> = {
   args: {
     loading: true,
     type: TYPE_OPTIONS.PAGE_LOADER,
+    asComponent: "div",
   },
 
   argTypes: {
@@ -27,6 +28,11 @@ const meta: Meta<typeof Loading> = {
       options: Object.values(TYPE_OPTIONS),
       control: {
         type: "select",
+      },
+    },
+    asComponent: {
+      control: {
+        type: "text",
       },
     },
   },

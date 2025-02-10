@@ -569,7 +569,7 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
     illustration: NAMES[0],
     showSection: false,
     fixedFooter: false,
-    mobileHeader: false,
+    mobileHeader: true,
     size: SIZES.NORMAL,
     title: "Orbit design system",
     description: "I'm lovely description",

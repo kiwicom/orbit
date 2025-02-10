@@ -13,7 +13,6 @@ export interface Props extends Common.Globals {
   readonly triggerRef?: React.RefObject<HTMLElement>;
   readonly lockScrolling?: boolean;
   readonly scrollingElementRef?: React.Ref<HTMLElement>;
-  readonly autoFocus?: boolean;
   readonly onClose?: Common.Event<
     | React.KeyboardEvent<HTMLDivElement>
     | React.SyntheticEvent<HTMLButtonElement | HTMLDivElement | HTMLAnchorElement>

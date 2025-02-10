@@ -6,7 +6,6 @@ import cx from "clsx";
 import { ModalContext } from "./ModalContext";
 import ModalCloseButton from "./ModalCloseButton";
 import { SIZES, CLOSE_BUTTON_DATA_TEST } from "./consts";
-import KEY_CODE_MAP from "../common/keyMaps";
 import useRandomId from "../hooks/useRandomId";
 import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
@@ -49,7 +48,6 @@ const Modal = React.forwardRef<Instance, Props>(
       children,
       onClose,
       triggerRef,
-      autoFocus = true,
       fixedFooter = false,
       isMobileFullPage = false,
       preventOverlayClose = false,
@@ -75,11 +73,9 @@ const Modal = React.forwardRef<Instance, Props>(
     const [hasModalSection, setHasModalSection] = React.useState<boolean>(false);
     const [clickedModalBody, setClickedModalBody] = React.useState<boolean>(false);
     const [fixedClose, setFixedClose] = React.useState<boolean>(false);
-    const [focusTriggered, setFocusTriggered] = React.useState<boolean>(false);
     const [modalWidth, setModalWidth] = React.useState<number>(0);
     const [footerHeight, setFooterHeight] = React.useState<number>(0);
-    const [firstFocusableEl, setFirstFocusableEl] = React.useState<HTMLElement | null>(null);
-    const [lastFocusableEl, setLastFocusableEl] = React.useState<HTMLElement | null>(null);
+    const focusableElements = React.useRef<HTMLElement[]>([]);
 
     const modalContent = React.useRef<HTMLElement | null>(null);
     const modalBody = React.useRef<HTMLElement | null>(null);
@@ -139,12 +135,6 @@ const Modal = React.forwardRef<Instance, Props>(
       }
     };
 
-    const setFirstFocus = () => {
-      if (modalBody.current && autoFocus) {
-        modalBody.current.focus();
-      }
-    };
-
     const decideFixedFooter = () => {
       if (!modalContent.current || !modalBody.current) return;
       // if the content height is smaller than window height, we need to explicitly set fullyScrolled to true
@@ -159,39 +149,15 @@ const Modal = React.forwardRef<Instance, Props>(
       setFullyScrolled(contentHeight + OFFSET - body.scrollTop <= window.innerHeight);
     };
 
-    const manageFocus = React.useCallback(() => {
-      if (!focusTriggered || !modalContent.current) return;
-
-      const focusableElements = modalContent.current.querySelectorAll<HTMLElement>(
-        FOCUSABLE_ELEMENT_SELECTORS,
+    React.useEffect(() => {
+      focusableElements.current = Array.from(
+        modalContent.current?.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENT_SELECTORS) || [],
       );
 
-      if (focusableElements.length > 0) {
-        setFirstFocusableEl(focusableElements[0]);
-        setLastFocusableEl(focusableElements[focusableElements.length - 1]);
+      if (focusableElements.current.length) {
+        focusableElements.current[0].focus();
       }
-    }, [focusTriggered]);
-
-    const keyboardHandler = (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (event.keyCode !== KEY_CODE_MAP.TAB) return;
-
-      if (!focusTriggered) {
-        setFocusTriggered(true);
-        manageFocus();
-      }
-
-      if (
-        event.shiftKey &&
-        (document.activeElement === firstFocusableEl ||
-          document.activeElement === modalBody.current)
-      ) {
-        event.preventDefault();
-        lastFocusableEl?.focus();
-      } else if (!event.shiftKey && document.activeElement === lastFocusableEl) {
-        event.preventDefault();
-        firstFocusableEl?.focus();
-      }
-    };
+    }, []);
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (onClose && event.key === "Escape") {
@@ -199,7 +165,20 @@ const Modal = React.forwardRef<Instance, Props>(
         onClose(event);
       }
 
-      keyboardHandler(event);
+      const firstElement = focusableElements.current[0];
+      const lastElement = focusableElements.current[focusableElements.current.length - 1];
+
+      if (event.key === "Tab") {
+        if (event.shiftKey) {
+          if (document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+          }
+        } else if (document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
+      }
     };
 
     const handleClickOutside = (event: React.SyntheticEvent<HTMLDivElement>) => {
@@ -292,8 +271,7 @@ const Modal = React.forwardRef<Instance, Props>(
     const callContextFunctions = React.useCallback(() => {
       setDimensions();
       decideFixedFooter();
-      manageFocus();
-    }, [manageFocus]);
+    }, []);
 
     const getScrollPosition = () => {
       if (scrollingElement.current) {
@@ -320,13 +298,11 @@ const Modal = React.forwardRef<Instance, Props>(
       if (disableAnimation) {
         decideFixedFooter();
         setDimensions();
-        setFirstFocus();
       } else {
         const timer: NodeJS.Timeout = setTimeout(() => {
           setLoaded(true);
           decideFixedFooter();
           setDimensions();
-          setFirstFocus();
         }, 15);
 
         return () => {

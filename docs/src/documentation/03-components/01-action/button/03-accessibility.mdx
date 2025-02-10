@@ -10,19 +10,23 @@ redirect_from:
 
 The Button component has been designed with accessibility in mind.
 
-The component offers flexibility in terms of the HTML element used for the root node. By default, it will render a `button` element.
+The following props provide additional information to screen readers:
 
-### As component
+- Use `ariaControls` prop to add `aria-controls` attribute to establish the relationship between button and element which is controlled by it. `aria-controls` works only with a unique `id` of an element.
 
-The prop `asComponent` can be used to define the HTML element to be rendered.
+- Use `ariaExpands` prop to add `aria-expands` to indicate screenreaders, that element controlled by button through `ariaControls` is expanded or not.
 
-This prop is optional and if it is not provided, the component will render a default (button) element.
+- Use `disabled` prop to indicate users that button is inactive and they can't interact with it.
 
-If the `asComponent` prop is set to `"div"`, then the `onClick` prop is not expected (and not recommended to fill in) as it doesn't match the accessibility rules.
+- Use `role` and `tabIndex` when you are rendering `Button` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
 
-### Href
+- Use `title` to add `aria-label` when you need to add extra informations to screen readers or there is no `children` presented to be used as label.
 
-When the `href` prop is defined, the component will render an `a` element by default, no matter what is set to `asComponent`.
+Also, the component offers flexibility in terms of the HTML element used for the root node.
+
+- The prop `asComponent` can be used to define the HTML element to be rendered. This prop is optional and if it is not provided, the component will render a default (button) element.
+
+- When `href` prop is defined, the component will render an `a` element.
 
 ## Examples
 
@@ -42,7 +46,7 @@ renders:
 
 ### Example 2:
 
-If the `asComponent` prop is set to `"div"`, it is not a good practice to include `onClick` nor `href` attributes.
+Component renders a `div` element as the `asComponent` prop is set to `"div"`.
 
 ```jsx
 <Button asComponent="div">Hello World!</Button>
@@ -56,7 +60,23 @@ renders:
 
 ### Example 3:
 
-A prop `href` is set, so the component renders an `a` element. In this case, rendering this element is prioritized over the others.
+When `onClick` prop is defined, the component will render a div element with `role="button"` by default.
+
+```jsx
+<Button asComponent="div" onClick={() => {}}>
+  Hello World!
+</Button>
+```
+
+renders:
+
+```html
+<div role="button">Hello World!</div>
+```
+
+### Example 4:
+
+A prop `href` is set, so the component renders an `a` element.
 
 ```jsx
 <Button href="#">Hello World!</Button>

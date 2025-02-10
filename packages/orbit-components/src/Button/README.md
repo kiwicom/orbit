@@ -83,17 +83,3 @@ Table below contains all types of the props available in Button component.
   ```
 
 - By default, a full width Button renders with the children centered. However, if `iconLeft` and/or `iconRight` are defined, the content will align to the left by default. In such scenario, the `centered` prop can be used to center everything.
-
-## Accessibility
-
-A button is mainly used for indicating an action, submitting a data, opening a modal etc. If you want to use Button for navigation consider using a `<TextLink>` for that.
-
-- Use `ariaControls` prop to add `aria-controls` attribute to establish the relationship between button and element which is controlled by it. `aria-controls` works only with a unique `id` of an element.
-
-- Use `ariaExpands` prop to add `aria-expands` to indicate screenreaders, that element controlled by button through `ariaControls` is expanded or not.
-
-- Use `disabled` prop to indicate users that button is inactive and they can't interact with it.
-
-- Use `role` and `tabIndex` when you are rendering `Button` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
-
-- Use `title` to add `aria-label` when you need to add extra informations to screen readers or there is no `children` presented to be used as label.

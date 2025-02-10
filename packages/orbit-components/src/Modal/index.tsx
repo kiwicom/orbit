@@ -48,6 +48,7 @@ const Modal = React.forwardRef<Instance, Props>(
       scrollingElementRef,
       children,
       onClose,
+      triggerRef,
       autoFocus = true,
       fixedFooter = false,
       isMobileFullPage = false,
@@ -353,6 +354,13 @@ const Modal = React.forwardRef<Instance, Props>(
         setDimensions();
       }
     }, [children, prevChildren]);
+
+    React.useEffect(() => {
+      return () => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        triggerRef?.current?.focus();
+      };
+    }, [triggerRef]);
 
     const hasCloseContainer = mobileHeader && (hasModalTitle || (onClose && hasCloseButton));
 

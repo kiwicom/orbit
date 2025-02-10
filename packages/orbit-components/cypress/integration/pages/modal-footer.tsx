@@ -4,7 +4,7 @@ import { Modal, ModalSection, ModalFooter, Button } from "@kiwicom/orbit-compone
 export default function TestModalFooter() {
   const [height, setHeight] = React.useState<"tall" | "short">("tall");
   return (
-    <Modal fixedFooter autoFocus={false}>
+    <Modal fixedFooter>
       <ModalSection dataTest="section">Content</ModalSection>
       <ModalFooter dataTest="footer">
         <div

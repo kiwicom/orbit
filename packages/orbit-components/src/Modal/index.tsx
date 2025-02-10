@@ -49,7 +49,6 @@ const Modal = React.forwardRef<Instance, Props>(
       children,
       onClose,
       triggerRef,
-      autoFocus = true,
       fixedFooter = false,
       isMobileFullPage = false,
       preventOverlayClose = false,
@@ -140,8 +139,12 @@ const Modal = React.forwardRef<Instance, Props>(
     };
 
     const setFirstFocus = () => {
-      if (modalBody.current && autoFocus) {
-        modalBody.current.focus();
+      if (modalBody.current) {
+        const firstFocus = modalBody.current.querySelector<HTMLElement>(
+          FOCUSABLE_ELEMENT_SELECTORS,
+        );
+        if (firstFocus) firstFocus.focus();
+        else modalBody.current.focus();
       }
     };
 

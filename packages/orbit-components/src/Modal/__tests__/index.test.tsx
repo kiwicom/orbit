@@ -1,7 +1,6 @@
 import * as React from "react";
-import userEvent from "@testing-library/user-event";
 
-import { render, screen, act, fireEvent } from "../../test-utils";
+import { render, screen, act, fireEvent, waitFor } from "../../test-utils";
 import Modal from "..";
 import { CLOSE_BUTTON_DATA_TEST } from "../consts";
 import ModalHeader from "../ModalHeader";
@@ -49,8 +48,7 @@ describe("Modal", () => {
     expect(screen.getByText("footer content")).toBeInTheDocument();
   });
 
-  it("should be able to focus content", async () => {
-    const user = userEvent.setup();
+  it("should be able to focus first focusable element automatically", async () => {
     jest.useFakeTimers();
 
     render(
@@ -62,10 +60,6 @@ describe("Modal", () => {
     act(() => {
       jest.runOnlyPendingTimers();
     });
-    expect(screen.getByRole("dialog")).toHaveFocus();
-    jest.useRealTimers();
-
-    await user.tab();
     expect(screen.getByRole("textbox")).toHaveFocus();
   });
 
@@ -126,8 +120,6 @@ describe("Modal", () => {
   });
 
   it("should call callback function when clicking on close button", async () => {
-    // Needed the pointerEventsCheck to be 0 because of JestDOM not being able to detect pointer events definition on ModalCloseButton
-    const user = userEvent.setup({ pointerEventsCheck: 0 });
     const onClose = jest.fn();
 
     render(
@@ -136,7 +128,10 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    await user.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
+    await waitFor(() => {
+      fireEvent.click(screen.getByTestId(CLOSE_BUTTON_DATA_TEST));
+    });
+
     expect(onClose).toBeCalled();
   });
 

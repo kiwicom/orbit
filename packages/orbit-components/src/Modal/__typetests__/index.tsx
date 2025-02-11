@@ -18,7 +18,7 @@ export default function Test() {
     });
   }, []);
   return (
-    <Modal ref={modalRef} scrollingElementRef={scrollingElementRef}>
+    <Modal ref={modalRef} scrollingElementRef={scrollingElementRef} labelClose="Close">
       content
     </Modal>
   );

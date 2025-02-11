@@ -62,7 +62,7 @@ export const InsideModal: Story = {
 
     return (
       <Container>
-        <Modal onClose={onClose} lockScrolling={false}>
+        <Modal onClose={onClose} labelClose="Close" lockScrolling={false}>
           <ModalSection>
             <Timeline>
               <TimelineStep label="Requested" subLabel="3rd May 14:04" type="success">

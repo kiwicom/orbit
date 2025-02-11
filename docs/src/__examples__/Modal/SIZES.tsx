@@ -24,6 +24,7 @@ export default {
             onClose={() => {
               setShowModalExtraSmall(false);
             }}
+            labelClose="Close"
           >
             <ModalSection>
               Orbit is an open source design system for your next travel project.
@@ -36,6 +37,7 @@ export default {
             onClose={() => {
               setShowModalSmall(false);
             }}
+            labelClose="Close"
           >
             <ModalSection>
               Orbit is an open source design system for your next travel project.
@@ -47,6 +49,7 @@ export default {
             onClose={() => {
               setShowModalNormal(false);
             }}
+            labelClose="Close"
           >
             <ModalSection>
               Orbit is an open source design system for your next travel project.
@@ -59,6 +62,7 @@ export default {
             onClose={() => {
               setShowModalLarge(false);
             }}
+            labelClose="Close"
           >
             <ModalSection>
               Orbit is an open source design system for your next travel project.
@@ -71,6 +75,7 @@ export default {
             onClose={() => {
               setShowModalExtraLarge(false);
             }}
+            labelClose="Close"
           >
             <ModalSection>
               Orbit is an open source design system for your next travel project.

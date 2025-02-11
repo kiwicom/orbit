@@ -379,7 +379,11 @@ export const InsideCard: Story = {
             }
           />
         </Card>
-        {isOpened && <Modal onClose={() => setIsOpened(false)}>kek</Modal>}
+        {isOpened && (
+          <Modal onClose={() => setIsOpened(false)} labelClose="Close">
+            kek
+          </Modal>
+        )}
       </>
     );
   },

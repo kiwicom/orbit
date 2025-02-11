@@ -125,7 +125,7 @@ export default function SearchModalUI({
   return (
     <Portal>
       <StyledModalWrapper>
-        <Modal size="extraLarge" onClose={onClose}>
+        <Modal size="extraLarge" onClose={onClose} labelClose="Close">
           <ModalHeader title={title} />
           <ModalSection>
             <StyledSearchWrapper>

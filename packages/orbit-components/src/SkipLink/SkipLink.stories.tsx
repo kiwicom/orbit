@@ -68,7 +68,7 @@ export const WithinModal: Story = {
 
     return (
       <Container>
-        <Modal onClose={onClose} fixedFooter lockScrolling={false}>
+        <Modal onClose={onClose} labelClose="Close" fixedFooter lockScrolling={false}>
           <SkipLink {...args} />
           <ModalHeader
             title="Enjoy something to eat while you fly"

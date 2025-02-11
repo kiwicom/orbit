@@ -754,6 +754,7 @@ export const InsideModal: Story = {
               ev.stopPropagation();
               setIsOpenedModal(false);
             }}
+            labelClose="Close"
           >
             <ModalSection>Hidden city info</ModalSection>
           </Modal>
@@ -904,6 +905,7 @@ export const MultipleBanners: Story = {
               ev.stopPropagation();
               setIsOpenedModal(false);
             }}
+            labelClose="Close"
           >
             <ModalSection>Throwaway ticketing info</ModalSection>
           </Modal>

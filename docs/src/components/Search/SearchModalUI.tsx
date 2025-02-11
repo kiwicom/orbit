@@ -130,6 +130,7 @@ export default function SearchModalUI({
           // the search field will be auto focused
           autoFocus={false}
           onClose={onClose}
+          labelClose="Close"
         >
           <ModalHeader title={title} />
           <ModalSection>

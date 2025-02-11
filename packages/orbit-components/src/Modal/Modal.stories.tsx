@@ -287,7 +287,7 @@ export const WithFixedFooter: Story = {
     const { Container, onClose } = useModal();
     return (
       <Container>
-        <Modal onClose={onClose} {...args}>
+        <Modal onClose={onClose} labelClose="Close" {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="BaggageDrop" size="small" />}
@@ -460,7 +460,7 @@ export const WithModalHeaderOnly: Story = {
     const { Container, onClose } = useModal();
     return (
       <Container>
-        <Modal onClose={onClose} {...args}>
+        <Modal onClose={onClose} labelClose="Close" {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="BaggageDrop" size="small" />}

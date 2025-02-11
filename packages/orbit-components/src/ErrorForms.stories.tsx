@@ -392,7 +392,7 @@ export const RtlError: Story = {
 
 export const WithModal: Story = {
   render: ({ label, error, showMore }) => (
-    <Modal onClose={action("onClose")} fixedFooter>
+    <Modal onClose={action("onClose")} labelClose="Close" fixedFooter>
       <ModalHeader title="Refund" description="Reservation number: 123456789" />
       <ModalSection>
         <Stack>

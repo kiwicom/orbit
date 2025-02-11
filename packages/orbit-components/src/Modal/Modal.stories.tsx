@@ -292,7 +292,7 @@ export const WithFixedFooter: Story = {
     const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
-        <Modal triggerRef={triggerRef} onClose={onClose} {...args}>
+        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close" {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="BaggageDrop" size="small" />}
@@ -470,7 +470,7 @@ export const WithModalHeaderOnly: Story = {
     const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
-        <Modal triggerRef={triggerRef} onClose={onClose} {...args}>
+        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close" {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="BaggageDrop" size="small" />}
@@ -506,23 +506,24 @@ export const WithModalHeaderOnly: Story = {
 
 type PlaygroundStoryProps = ModalPropsAndCustomArgs & { header: boolean; footer: boolean };
 export const Playground: StoryObj<PlaygroundStoryProps> = {
-  render: ({
-    header,
-    footer,
-    title,
-    description,
-    illustration,
-    suppressed,
-    flex,
-    showBack,
-    showSection,
-    ...args
-  }) => {
+  render: (props: PlaygroundStoryProps) => {
+    const {
+      header,
+      footer,
+      title,
+      description,
+      illustration,
+      suppressed,
+      flex,
+      showBack,
+      showSection,
+      ...args
+    } = props;
     const { Container, onClose, triggerRef } = useModal();
 
     return (
       <Container>
-        <Modal triggerRef={triggerRef} onClose={onClose} {...args}>
+        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close" {...args}>
           {header && (
             <ModalHeader
               title={title}

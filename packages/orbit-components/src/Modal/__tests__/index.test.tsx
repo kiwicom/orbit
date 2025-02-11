@@ -18,7 +18,7 @@ const mockUseMediaQuery = useMediaQuery;
 describe("Modal", () => {
   it("should have expected DOM output", () => {
     render(
-      <Modal dataTest="container">
+      <Modal dataTest="container" labelClose="Close">
         <ModalHeader
           dataTest="header"
           title="modal title"
@@ -52,7 +52,7 @@ describe("Modal", () => {
     jest.useFakeTimers();
 
     render(
-      <Modal>
+      <Modal labelClose="Close">
         <input />
       </Modal>,
     );
@@ -66,7 +66,7 @@ describe("Modal", () => {
   it("should expose ref scrolling API", () => {
     const ref = React.createRef<React.ElementRef<typeof Modal>>();
     render(
-      <Modal ref={ref} dataTest="test">
+      <Modal ref={ref} dataTest="test" labelClose="Close">
         content
       </Modal>,
     );
@@ -80,7 +80,7 @@ describe("Modal", () => {
     const onScroll = jest.fn();
 
     render(
-      <Modal onScroll={onScroll}>
+      <Modal onScroll={onScroll} labelClose="Close">
         <ModalSection>
           <div style={{ height: 500 }}>kek</div>
         </ModalSection>
@@ -101,7 +101,7 @@ describe("Modal", () => {
     // @ts-expect-error jest
     mockUseMediaQuery.mockImplementation(() => ({ isLargeMobile: true }));
     const { rerender } = render(
-      <Modal ref={modalRef} scrollingElementRef={scrollingElementRef}>
+      <Modal ref={modalRef} scrollingElementRef={scrollingElementRef} labelClose="Close">
         content
       </Modal>,
     );
@@ -109,7 +109,7 @@ describe("Modal", () => {
     // @ts-expect-error jest
     mockUseMediaQuery.mockImplementation(() => ({ isLargeMobile: false }));
     rerender(
-      <Modal ref={modalRef} scrollingElementRef={scrollingElementRef}>
+      <Modal ref={modalRef} scrollingElementRef={scrollingElementRef} labelClose="Close">
         content
       </Modal>,
     );
@@ -123,7 +123,7 @@ describe("Modal", () => {
     const onClose = jest.fn();
 
     render(
-      <Modal hasCloseButton onClose={onClose}>
+      <Modal hasCloseButton onClose={onClose} labelClose="Close">
         content
       </Modal>,
     );
@@ -137,13 +137,13 @@ describe("Modal", () => {
 
   it("should have fixed header background overlay when needed", () => {
     const { rerender } = render(
-      <Modal hasCloseButton onClose={() => {}}>
+      <Modal onClose={() => {}} labelClose="Close">
         content
       </Modal>,
     );
     screen.getByTestId("CloseContainer");
     rerender(
-      <Modal>
+      <Modal labelClose="Close">
         <ModalHeader title="title" />
       </Modal>,
     );

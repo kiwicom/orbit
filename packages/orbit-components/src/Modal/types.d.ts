@@ -7,28 +7,38 @@ import type * as Common from "../common/types";
 
 type Size = "extraSmall" | "small" | "normal" | "large" | "extraLarge";
 
-export interface Props extends Common.Globals {
-  readonly size?: Size;
-  readonly children: React.ReactNode;
-  readonly triggerRef?: React.RefObject<HTMLElement>;
-  readonly lockScrolling?: boolean;
-  readonly scrollingElementRef?: React.Ref<HTMLElement>;
-  readonly onClose?: Common.Event<
-    | React.KeyboardEvent<HTMLDivElement>
-    | React.SyntheticEvent<HTMLButtonElement | HTMLDivElement | HTMLAnchorElement>
-  >;
-  readonly fixedFooter?: boolean;
-  readonly onScroll?: Common.Event<React.UIEvent<HTMLDivElement>>;
-  readonly mobileHeader?: boolean;
-  readonly isMobileFullPage?: boolean;
-  readonly preventOverlayClose?: boolean;
-  readonly hasCloseButton?: boolean;
-  readonly disableAnimation?: boolean;
-  readonly labelClose?: string;
-  readonly ariaLabel?: string;
-  readonly ariaLabelledby?: string;
-  readonly ariaDescribedby?: string;
-}
+export type closable =
+  | {
+      readonly hasCloseButton?: true;
+      readonly labelClose: string;
+    }
+  | {
+      readonly hasCloseButton: false;
+      readonly labelClose?: string;
+    };
+
+export type Props = Common.Globals &
+  closable & {
+    readonly size?: Size;
+    readonly children: React.ReactNode;
+    readonly triggerRef?: React.RefObject<HTMLElement>;
+    readonly lockScrolling?: boolean;
+    readonly scrollingElementRef?: React.Ref<HTMLElement>;
+    readonly onClose?: Common.Event<
+      | React.KeyboardEvent<HTMLDivElement>
+      | React.SyntheticEvent<HTMLButtonElement | HTMLDivElement | HTMLAnchorElement>
+    >;
+    readonly fixedFooter?: boolean;
+    readonly onScroll?: Common.Event<React.UIEvent<HTMLDivElement>>;
+    readonly mobileHeader?: boolean;
+    readonly isMobileFullPage?: boolean;
+    readonly preventOverlayClose?: boolean;
+    readonly disableAnimation?: boolean;
+    readonly labelClose?: string;
+    readonly ariaLabel?: string;
+    readonly ariaLabelledby?: string;
+    readonly ariaDescribedby?: string;
+  };
 
 export interface Instance {
   getScrollPosition: () => number | null;

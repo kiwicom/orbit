@@ -236,7 +236,7 @@ export const RemovableSections: Story = {
     const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
-        <Modal triggerRef={triggerRef} onClose={onClose}>
+        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close">
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="Meal" size="small" />}
@@ -340,7 +340,7 @@ export const WithForm: Story = {
 
     return (
       <Container>
-        <Modal triggerRef={triggerRef} onClose={onClose} fixedFooter>
+        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close" fixedFooter>
           <ModalHeader title="Refund" description="Reservation number: 123456789" />
           <ModalSection>
             <Stack>
@@ -424,6 +424,7 @@ export const WithItinerary: Story = {
           triggerRef={triggerRef}
           ariaLabel="Itinerary from Prague to Frankfurt"
           onClose={onClose}
+          labelClose="Close"
         >
           <ModalSection>
             <Itinerary>
@@ -607,7 +608,7 @@ export const Rtl: Story = {
     return (
       <Container>
         <RenderInRtl>
-          <Modal triggerRef={triggerRef} onClose={onClose}>
+          <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close">
             <ModalHeader
               title="The title of the ModalHeader"
               illustration={<Illustration name="Accommodation" size="small" />}

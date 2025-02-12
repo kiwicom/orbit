@@ -1,0 +1,36 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/badge/accessibility/
+---
+
+## Accessibility
+
+The Badge component has been designed with accessibility in mind.
+
+### Screen reader support
+
+The Badge component supports screen readers through the `ariaLabel` prop. This prop is especially important when:
+
+- The badge contains only an icon
+- The content is not sufficient to convey the full meaning
+- Additional context would help understand the badge's purpose
+
+For example:
+
+```jsx
+<Badge ariaLabel="4 passengers" icon={<Icons.Passenger />}>
+  4
+</Badge>
+```
+
+In this example, while sighted users see the number "4" with a passengers icon, screen reader users hear "4 passengers" which provides the complete context.
+
+As it is announced by screen readers, the content should have meaningful and translated text.
+
+### Icons
+
+When using icons in badges:
+
+- Provide an `ariaLabel` if the icon has a meaning by itself that is not obvious to screen readers, regardless of the existence of text
+- If the icon is decorative and the badge contains text, the icon should be marked as `aria-hidden="true"`

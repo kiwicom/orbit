@@ -136,7 +136,7 @@ export function ItinerarySegmentVisualStory({
           />
           <ItinerarySegmentDetail
             duration="2h 30m"
-            summary={<Badge border={false}>Carrier</Badge>}
+            summary={<Badge>Carrier</Badge>}
             content={noContent ? undefined : content}
           />
           <ItinerarySegmentStop
@@ -167,7 +167,7 @@ export function ItinerarySegmentStatusVisualStory() {
             />
             <ItinerarySegmentDetail
               duration="2h 30m"
-              summary={<Badge border={false}>Carrier</Badge>}
+              summary={<Badge>Carrier</Badge>}
               content={[]}
             />
             <ItinerarySegmentStop
@@ -180,7 +180,7 @@ export function ItinerarySegmentStatusVisualStory() {
             />
             <ItinerarySegmentDetail
               duration="2h 30m"
-              summary={<Badge border={false}>Carrier</Badge>}
+              summary={<Badge>Carrier</Badge>}
               content={[]}
             />
             <ItinerarySegmentStop
@@ -193,7 +193,7 @@ export function ItinerarySegmentStatusVisualStory() {
             />
             <ItinerarySegmentDetail
               duration="2h 30m"
-              summary={<Badge border={false}>Carrier</Badge>}
+              summary={<Badge>Carrier</Badge>}
               content={[]}
             />
             <ItinerarySegmentStop
@@ -235,7 +235,7 @@ export function ItineraryBannerHiddenCityVisualStory() {
           />
           <ItinerarySegmentDetail
             duration="2h 10m"
-            summary={<Badge border={false}>Carrier</Badge>}
+            summary={<Badge>Carrier</Badge>}
             content={content}
           />
           <ItinerarySegmentStop

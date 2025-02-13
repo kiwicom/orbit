@@ -428,11 +428,7 @@ export const WithItinerary: Story = {
                   />
                   <ItinerarySegmentDetail
                     duration="2h 10m"
-                    summary={
-                      <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                        Ryanair
-                      </Badge>
-                    }
+                    summary={<Badge carriers={[{ code: "FR", name: "Ryanair" }]}>Ryanair</Badge>}
                   />
                   <ItinerarySegmentStop
                     hidden

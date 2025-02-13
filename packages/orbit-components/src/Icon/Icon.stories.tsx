@@ -8,9 +8,9 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import type OrbitIcon from ".";
 
-const getIcon = source => Icons[source];
+const getIcon = (icon: string) => Icons[icon];
 
-type IconPropsAndCustomArgs = React.ComponentProps<typeof OrbitIcon> & { source: string };
+type IconPropsAndCustomArgs = React.ComponentProps<typeof OrbitIcon> & { icon: string };
 
 const meta: Meta<IconPropsAndCustomArgs> = {
   title: "Icon",
@@ -22,14 +22,18 @@ const meta: Meta<IconPropsAndCustomArgs> = {
   args: {
     size: ICON_SIZES.MEDIUM,
     color: ICON_COLORS.PRIMARY,
-    source: "Airplane",
-    ariaLabel: "label",
-    ariaHidden: true,
+    icon: "Airplane",
+    ariaHidden: false,
     customColor: "#e30606",
     reverseOnRtl: false,
   },
 
   argTypes: {
+    ariaLabel: {
+      control: {
+        type: "text",
+      },
+    },
     size: {
       options: Object.values(ICON_SIZES),
       control: {
@@ -42,7 +46,7 @@ const meta: Meta<IconPropsAndCustomArgs> = {
         type: "select",
       },
     },
-    source: {
+    icon: {
       options: Object.keys(Icons),
       control: {
         type: "select",
@@ -55,9 +59,9 @@ export default meta;
 type Story = StoryObj<IconPropsAndCustomArgs>;
 
 export const Default: Story = {
-  render: ({ source, ...args }) => {
-    const Icon = getIcon(source);
-    return <Icon {...args} />;
+  render: ({ icon, ...args }) => {
+    const Icon = getIcon(icon);
+    return <Icon ariaLabel={icon} {...args} />;
   },
 
   args: {
@@ -72,10 +76,10 @@ export const Default: Story = {
 };
 
 export const CustomColor: Story = {
-  render: ({ source, ...args }) => {
-    const Icon = getIcon(source);
+  render: ({ icon, ...args }) => {
+    const Icon = getIcon(icon);
 
-    return <Icon {...args} />;
+    return <Icon ariaLabel={icon} {...args} />;
   },
 
   parameters: {
@@ -86,8 +90,8 @@ export const CustomColor: Story = {
 };
 
 export const ReversedOnRtl: Story = {
-  render: ({ source, reverseOnRtl }) => {
-    const Icon = getIcon(source);
+  render: ({ icon, reverseOnRtl }) => {
+    const Icon = getIcon(icon);
 
     return (
       <RenderInRtl>
@@ -97,7 +101,7 @@ export const ReversedOnRtl: Story = {
   },
 
   args: {
-    source: "ChevronBackward",
+    icon: "ChevronBackward",
     reverseOnRtl: true,
   },
 

@@ -22,10 +22,10 @@ Table below contains all types of the props available for icons in general.
 | color        | [`enum`](#enum) | `currentColor` | The color of the Icon.                                                                     |
 | customColor  | `string`        |                | The customColor of the Icon, as valid CSS value. [See Functional specs](#functional-specs) |
 | dataTest     | `string`        |                | Optional prop for testing purposes.                                                        |
-| **size**     | [`enum`](#enum) | `"medium"`     | The size of the Icon.                                                                      |
+| size         | [`enum`](#enum) | `"medium"`     | The size of the Icon.                                                                      |
 | reverseOnRtl | `boolean`       | `false`        | If `true`, the icon will be reversed if `theme.rtl` is set to `true`.                      |
-| ariaHidden   | `boolean`       |                | Adds prop `aria-hidden` to an element, useful for screenreaders.                           |
-| ariaLabel    | `string`        |                | Adds prop `aria-label` to an element, useful for screenreaders.                            |
+| ariaHidden   | `boolean`       |                | Adds prop `aria-hidden` to the icon. See Accessibility tab.                                |
+| ariaLabel    | `string`        |                | Adds prop `aria-label` to the icon. See Accessibility tab.                                 |
 
 ### enum
 
@@ -42,11 +42,6 @@ Table below contains all types of the props available for icons in general.
 ## Functional specs
 
 - If you don't pass `customColor` or `color` prop to Icon, it will inherit color from parent container with `currentColor` by default.
-
-## Accessibility
-
-- If an icon is used standalone meaning it conveys information by itself use `ariaLabel` to help screen readers understand the content.
-- If an icon is marked or already labeled by surrounding content, use `ariaHidden`to hide icon from screen readers.
 
 ## iconFont
 

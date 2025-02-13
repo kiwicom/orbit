@@ -16,7 +16,7 @@ const IconList = () => (
             style={{ minHeight: "80px" }}
             key={icon}
           >
-            <Icon size="large" color="primary" />
+            <Icon size="large" color="primary" ariaLabel={iconName} />
             <div
               className="leading-small text-ink-dark bg-cloud-light border-cloud-normal py-100 ps-200 border border-solid"
               style={{

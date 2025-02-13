@@ -24,7 +24,6 @@ export type Type =
 export interface Props extends Common.Globals {
   readonly children?: React.ReactNode;
   readonly type?: Type;
-  readonly border?: boolean;
   readonly carriers?: Carrier[];
   readonly icon?: React.ReactNode;
   readonly ariaLabel?: string;

@@ -75,12 +75,12 @@ const BadgeGroup = () => {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         Array(...Array(8)).map((_, key) => (
           // eslint-disable-next-line react/no-array-index-key
-          <Badge key={key} carriers={carriers} border={false}>
+          <Badge key={key} carriers={carriers}>
             {carriers[0].name}
           </Badge>
         ))
       }
-      <Badge border={false}>1 stop</Badge>
+      <Badge>1 stop</Badge>
     </Stack>
   );
 };
@@ -416,11 +416,7 @@ export const SegmentStop: StoryObj<typeof ItinerarySegmentStop> = {
             />
             <ItinerarySegmentDetail
               duration="1h 35m"
-              summary={
-                <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                  Ryanair
-                </Badge>
-              }
+              summary={<Badge carriers={[{ code: "FR", name: "Ryanair" }]}>Ryanair</Badge>}
               content={content}
             />
             <ItinerarySegmentStop
@@ -469,11 +465,7 @@ export const SegmentStop: StoryObj<typeof ItinerarySegmentStop> = {
             />
             <ItinerarySegmentDetail
               duration="2h 30m"
-              summary={
-                <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                  Ryanair
-                </Badge>
-              }
+              summary={<Badge carriers={[{ code: "FR", name: "Ryanair" }]}>Ryanair</Badge>}
               content={content}
             />
             <ItinerarySegmentStop
@@ -740,11 +732,7 @@ export const InsideModal: Story = {
               />
               <ItinerarySegmentDetail
                 duration="2h 10m"
-                summary={
-                  <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                    Ryanair
-                  </Badge>
-                }
+                summary={<Badge carriers={[{ code: "FR", name: "Ryanair" }]}>Ryanair</Badge>}
                 content={content}
               />
               <ItinerarySegmentStop
@@ -835,11 +823,7 @@ export const MultipleBanners: Story = {
               />
               <ItinerarySegmentDetail
                 duration="2h 30m"
-                summary={
-                  <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                    Ryanair
-                  </Badge>
-                }
+                summary={<Badge carriers={[{ code: "FR", name: "Ryanair" }]}>Ryanair</Badge>}
                 content={content}
               />
               <ItinerarySegmentStop
@@ -899,11 +883,7 @@ export const MultipleBanners: Story = {
               />
               <ItinerarySegmentDetail
                 duration="2h 10m"
-                summary={
-                  <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                    Ryanair
-                  </Badge>
-                }
+                summary={<Badge carriers={[{ code: "FR", name: "Ryanair" }]}>Ryanair</Badge>}
                 content={content}
               />
               <ItinerarySegmentStop
@@ -1014,11 +994,7 @@ export const RTL: Story = {
             />
             <ItinerarySegmentDetail
               duration="2h 30m"
-              summary={
-                <Badge carriers={[{ code: "FR", name: "Ryanair" }]} border={false}>
-                  Ryanair
-                </Badge>
-              }
+              summary={<Badge carriers={[{ code: "FR", name: "Ryanair" }]}>Ryanair</Badge>}
               content={content}
             />
             <ItinerarySegmentStop

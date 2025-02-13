@@ -59,3 +59,25 @@ npx jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packag
 Make sure to run prettier after running the codemod, as it might introduce some formatting changes.
 
 Feel free to customize the translations according to your needs, but please maintain the same translation key structure (`common.screenreader.*`) when requesting translations.
+
+### Badge component removed the `border` prop
+
+The `Badge` component removed the `border` prop, as it was not being used internally.
+
+Please adapt your code to remove the `border` prop. No visual changes are expected.
+
+**Before:**
+
+```jsx
+import Badge from "@kiwicom/orbit-components/lib/Badge";
+
+<Badge border={false} />;
+```
+
+**Now:**
+
+```jsx
+import Badge from "@kiwicom/orbit-components/lib/Badge";
+
+<Badge />;
+```

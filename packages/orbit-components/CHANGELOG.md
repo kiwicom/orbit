@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [19.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.3.1...@kiwicom/orbit-components@19.4.0) (2025-02-13)
+
+
+### Bug Fixes
+
+* **Select:** remove duplicate label content for better accessibility ([b3d9dcd](https://github.com/kiwicom/orbit/commit/b3d9dcda7a29e0b7133e38d34926bdc4ea2a245c))
+
+
+### Features
+
+* **icons:** update icons from figma ([b84a40c](https://github.com/kiwicom/orbit/commit/b84a40cd2c8a69728708814e4ec546bd1386bc22))
+* **Select:** add ariaLabelledby attribute ([c0275a2](https://github.com/kiwicom/orbit/commit/c0275a2aa02fb4d0d1ac739e70bcdff6c8029c9e))
+
+
+
+
+
 ## [19.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.3.0...@kiwicom/orbit-components@19.3.1) (2025-02-04)
 
 

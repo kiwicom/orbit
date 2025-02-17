@@ -12,5 +12,7 @@ export interface Props extends Common.Globals {
   readonly loading?: boolean;
   readonly type?: Type;
   readonly customSize?: number;
+  readonly title?: string;
   readonly text?: Common.Translation;
+  readonly asComponent?: Common.Component;
 }

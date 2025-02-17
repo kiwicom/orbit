@@ -16,7 +16,7 @@ const CircleLoader = ({ animationDelay }: { animationDelay?: string }) => {
   );
 };
 
-const Loader = ({ type, customSize }) => {
+const Loader = ({ type, customSize, title }) => {
   const theme = useTheme();
   const isCircledIcon =
     type === TYPE_OPTIONS.BOX_LOADER ||
@@ -29,7 +29,9 @@ const Loader = ({ type, customSize }) => {
         viewBox={`0 0 ${customSize} ${customSize}`}
         className="orbit-loading-spinner animate-spinner"
         style={{ height: `${customSize}px`, width: `${customSize}px` }}
+        role="img"
       >
+        <title>{title}</title>
         <circle
           cx="50%"
           cy="50%"
@@ -60,7 +62,9 @@ const Loader = ({ type, customSize }) => {
       viewBox="0 0 40 40"
       className="orbit-loading-spinner animate-spinner size-1000"
       stroke={type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteCloudDark}
+      role="img"
     >
+      <title>{title}</title>
       <circle
         cx="50%"
         cy="50%"
@@ -77,19 +81,23 @@ const Loader = ({ type, customSize }) => {
 };
 const Loading = ({
   loading = false,
+  asComponent = "div",
   type = TYPE_OPTIONS.PAGE_LOADER,
   text,
   children,
   dataTest,
   customSize,
+  title,
   id,
 }: Props) => {
+  const Element = text ? "div" : asComponent;
+
   return (
     <>
       {Boolean(children) && !loading ? (
         children
       ) : (
-        <div
+        <Element
           className={cx([
             "items-center",
             "overflow-hidden",
@@ -106,7 +114,7 @@ const Loading = ({
           data-test={dataTest}
           id={id}
         >
-          <Loader type={type} customSize={customSize} />
+          <Loader title={title} type={type} customSize={customSize} />
           {type !== TYPE_OPTIONS.BUTTON_LOADER && Boolean(text) && (
             <div
               className={cx([
@@ -117,7 +125,7 @@ const Loading = ({
               {text}
             </div>
           )}
-        </div>
+        </Element>
       )}
     </>
   );

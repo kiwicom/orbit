@@ -31,10 +31,8 @@ const meta: Meta<typeof Button> = {
     submit: false,
     iconLeft: "Airplane",
     iconRight: "ChevronDown",
-    ariaExpanded: false,
     tabIndex: "0",
     spaceAfter: SPACINGS_AFTER.SMALL,
-    title: "",
     rel: "nofollow",
     contentAlign: "center",
     contentWidth: "100%",
@@ -393,7 +391,10 @@ export const Accessibility: Story = {
 
   args: {
     title: "Additional information for accessibility",
-    ariaControls: "element ID",
+    ariaLabelledby: "labelledby-id",
+    ariaExpanded: false,
+    ariaCurrent: "false",
+    ariaControls: "element-id",
   },
 };
 

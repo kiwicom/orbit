@@ -26,10 +26,14 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, role = "img", ...props
 
   return (
     <div
-      className={cx("rounded-50 bg-country-flag-background relative shrink-0 overflow-hidden", {
-        "h-country-flag-small w-country-flag-small": size === SIZES.SMALL,
-        "h-country-flag-medium w-country-flag-medium": size === SIZES.MEDIUM,
-      })}
+      className={cx(
+        "orbit-country-flag",
+        "rounded-50 bg-country-flag-background relative shrink-0 overflow-hidden",
+        {
+          "h-country-flag-small w-country-flag-small": size === SIZES.SMALL,
+          "h-country-flag-medium w-country-flag-medium": size === SIZES.MEDIUM,
+        },
+      )}
     >
       <img
         className="block size-full shrink-0"

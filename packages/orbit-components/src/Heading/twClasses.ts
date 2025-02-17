@@ -12,8 +12,8 @@ export const typeClasses: {
   [TYPE_OPTIONS.TITLE2]: "text-heading-title2 leading-heading-title2 font-heading-title2",
   [TYPE_OPTIONS.TITLE3]: "text-heading-title3 leading-heading-title3 font-heading-title3",
   [TYPE_OPTIONS.TITLE4]: "text-heading-title4 leading-heading-title4 font-heading-title4",
-  [TYPE_OPTIONS.TITLE5]: "text-heading-title5 leading-heading-title5 font-heading-title5 uppercase",
-  [TYPE_OPTIONS.TITLE6]: "text-heading-title6 leading-heading-title6 font-heading-title6",
+  [TYPE_OPTIONS.TITLE5]: "text-heading-title5 leading-heading-title5 font-heading-title5",
+  [TYPE_OPTIONS.TITLE6]: "text-heading-title6 leading-heading-title6 font-heading-title6 uppercase",
   [QUERIES.MEDIUMMOBILE]: {
     [TYPE_OPTIONS.DISPLAY]:
       "mm:text-heading-display mm:leading-heading-display mm:font-heading-display",
@@ -30,9 +30,9 @@ export const typeClasses: {
     [TYPE_OPTIONS.TITLE4]:
       "mm:text-heading-title4 mm:leading-heading-title4 mm:font-heading-title4",
     [TYPE_OPTIONS.TITLE5]:
-      "mm:text-heading-title5 mm:leading-heading-title5 mm:font-heading-title5 mm:uppercase",
+      "mm:text-heading-title5 mm:leading-heading-title5 mm:font-heading-title5",
     [TYPE_OPTIONS.TITLE6]:
-      "mm:text-heading-title6 mm:leading-heading-title6 mm:font-heading-title6",
+      "mm:text-heading-title6 mm:leading-heading-title6 mm:font-heading-title6 mm:uppercase",
   },
   [QUERIES.LARGEMOBILE]: {
     [TYPE_OPTIONS.DISPLAY]:
@@ -50,9 +50,9 @@ export const typeClasses: {
     [TYPE_OPTIONS.TITLE4]:
       "lm:text-heading-title4 lm:leading-heading-title4 lm:font-heading-title4",
     [TYPE_OPTIONS.TITLE5]:
-      "lm:text-heading-title5 lm:leading-heading-title5 lm:font-heading-title5 lm:uppercase",
+      "lm:text-heading-title5 lm:leading-heading-title5 lm:font-heading-title5",
     [TYPE_OPTIONS.TITLE6]:
-      "lm:text-heading-title6 lm:leading-heading-title6 lm:font-heading-title6",
+      "lm:text-heading-title6 lm:leading-heading-title6 lm:font-heading-title6 lm:uppercase",
   },
   [QUERIES.TABLET]: {
     [TYPE_OPTIONS.DISPLAY]:
@@ -70,9 +70,9 @@ export const typeClasses: {
     [TYPE_OPTIONS.TITLE4]:
       "tb:text-heading-title4 tb:leading-heading-title4 tb:font-heading-title4",
     [TYPE_OPTIONS.TITLE5]:
-      "tb:text-heading-title5 tb:leading-heading-title5 tb:font-heading-title5 tb:uppercase",
+      "tb:text-heading-title5 tb:leading-heading-title5 tb:font-heading-title5",
     [TYPE_OPTIONS.TITLE6]:
-      "tb:text-heading-title6 tb:leading-heading-title6 tb:font-heading-title6",
+      "tb:text-heading-title6 tb:leading-heading-title6 tb:font-heading-title6 tb:uppercase",
   },
   [QUERIES.DESKTOP]: {
     [TYPE_OPTIONS.DISPLAY]:
@@ -90,9 +90,9 @@ export const typeClasses: {
     [TYPE_OPTIONS.TITLE4]:
       "de:text-heading-title4 de:leading-heading-title4 de:font-heading-title4",
     [TYPE_OPTIONS.TITLE5]:
-      "de:text-heading-title5 de:leading-heading-title5 de:font-heading-title5 de:uppercase",
+      "de:text-heading-title5 de:leading-heading-title5 de:font-heading-title5",
     [TYPE_OPTIONS.TITLE6]:
-      "de:text-heading-title6 de:leading-heading-title6 de:font-heading-title6",
+      "de:text-heading-title6 de:leading-heading-title6 de:font-heading-title6 de:uppercase",
   },
   [QUERIES.LARGEDESKTOP]: {
     [TYPE_OPTIONS.DISPLAY]:
@@ -110,8 +110,8 @@ export const typeClasses: {
     [TYPE_OPTIONS.TITLE4]:
       "ld:text-heading-title4 ld:leading-heading-title4 ld:font-heading-title4",
     [TYPE_OPTIONS.TITLE5]:
-      "ld:text-heading-title5 ld:leading-heading-title5 ld:font-heading-title5 ld:uppercase",
+      "ld:text-heading-title5 ld:leading-heading-title5 ld:font-heading-title5",
     [TYPE_OPTIONS.TITLE6]:
-      "ld:text-heading-title6 ld:leading-heading-title6 ld:font-heading-title6",
+      "ld:text-heading-title6 ld:leading-heading-title6 ld:font-heading-title6 ld:uppercase",
   },
 };

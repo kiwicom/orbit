@@ -31,6 +31,7 @@ const BadgePrimitive = ({
       id={id}
       data-test={dataTest}
       aria-label={ariaLabel}
+      role="status"
     >
       {carriers && <CarrierLogo carriers={carriers} rounded size="medium" />}
       {icon && (

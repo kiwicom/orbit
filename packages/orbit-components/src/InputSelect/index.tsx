@@ -476,7 +476,6 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                     }
                   }}
                   mobileHeader={false}
-                  autoFocus
                 >
                   <ModalHeader className="!p-400 !mb-0">
                     {label && (

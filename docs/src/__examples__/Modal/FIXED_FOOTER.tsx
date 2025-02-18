@@ -178,7 +178,6 @@ export default {
         { name: "hasCloseButton", type: "boolean", defaultValue: true },
         { name: "mobileHeader", type: "boolean", defaultValue: true },
         { name: "disableAnimation", type: "boolean", defaultValue: false },
-        { name: "autoFocus", type: "boolean", defaultValue: true },
         { name: "preventOverlayClose", type: "boolean", defaultValue: false },
         {
           name: "size",

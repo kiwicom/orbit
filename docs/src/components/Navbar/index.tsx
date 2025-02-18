@@ -205,7 +205,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                   `)}
                 `}
               >
-                <Modal fixedFooter onClose={() => setMenuOpen(false)}>
+                <Modal fixedFooter onClose={() => setMenuOpen(false)} labelClose="Close">
                   {docNavigation ? (
                     <>
                       <ModalHeader

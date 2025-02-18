@@ -19,6 +19,7 @@ export default {
             onClose={() => {
               setShowModal(false);
             }}
+            labelClose="Close"
           >
             <ModalHeader
               title="Priority boarding"

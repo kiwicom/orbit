@@ -13,7 +13,7 @@ const content = "Lorem ispum dolor sit amet.";
 
 export function ModalVisualDefaultStory({ size = SIZES.NORMAL, isMobileFullPage = false }) {
   return (
-    <Modal onClose={() => {}} size={size} isMobileFullPage={isMobileFullPage}>
+    <Modal onClose={() => {}} size={size} isMobileFullPage={isMobileFullPage} labelClose="Close">
       <ModalHeader
         title="Normal header"
         illustration={<Illustration name="AppKiwi" size="small" />}
@@ -36,7 +36,7 @@ export function ModalVisualDefaultStory({ size = SIZES.NORMAL, isMobileFullPage 
 
 export function ModalVisualMobileHeader() {
   return (
-    <Modal onClose={() => {}} size={SIZES.NORMAL} mobileHeader>
+    <Modal onClose={() => {}} size={SIZES.NORMAL} mobileHeader labelClose="Close">
       <ModalHeader
         title="Suppressed header"
         illustration={<Illustration name="AppKiwi" size="small" />}
@@ -59,7 +59,12 @@ export function ModalVisualMobileHeader() {
 
 export function ModalVisualNoHeaderNoFooter({ isMobileFullPage = false }) {
   return (
-    <Modal onClose={() => {}} size={SIZES.NORMAL} isMobileFullPage={isMobileFullPage}>
+    <Modal
+      onClose={() => {}}
+      size={SIZES.NORMAL}
+      isMobileFullPage={isMobileFullPage}
+      labelClose="Close"
+    >
       <ModalSection>
         <Text>No Header nor Footer modal</Text>
       </ModalSection>
@@ -69,7 +74,12 @@ export function ModalVisualNoHeaderNoFooter({ isMobileFullPage = false }) {
 
 export function ModalVisualHeaderOnly({ isMobileFullPage = false }) {
   return (
-    <Modal onClose={() => {}} size={SIZES.NORMAL} isMobileFullPage={isMobileFullPage}>
+    <Modal
+      onClose={() => {}}
+      size={SIZES.NORMAL}
+      isMobileFullPage={isMobileFullPage}
+      labelClose="Close"
+    >
       <ModalHeader
         title="Normal header"
         illustration={<Illustration name="AppKiwi" size="small" />}

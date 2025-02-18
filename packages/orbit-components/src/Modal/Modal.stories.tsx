@@ -231,7 +231,7 @@ export const RemovableSections: Story = {
     const { Container, onClose } = useModal();
     return (
       <Container>
-        <Modal onClose={onClose}>
+        <Modal onClose={onClose} labelClose="Close">
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="Meal" size="small" />}
@@ -287,7 +287,7 @@ export const WithFixedFooter: Story = {
     const { Container, onClose } = useModal();
     return (
       <Container>
-        <Modal onClose={onClose} {...args}>
+        <Modal onClose={onClose} labelClose="Close" {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="BaggageDrop" size="small" />}
@@ -335,7 +335,7 @@ export const WithForm: Story = {
 
     return (
       <Container>
-        <Modal onClose={onClose} fixedFooter>
+        <Modal onClose={onClose} labelClose="Close" fixedFooter>
           <ModalHeader title="Refund" description="Reservation number: 123456789" />
           <ModalSection>
             <Stack>
@@ -415,7 +415,7 @@ export const WithItinerary: Story = {
 
     return (
       <Container>
-        <Modal onClose={onClose}>
+        <Modal onClose={onClose} labelClose="Close">
           <ModalSection>
             <Itinerary>
               <ItineraryStatus type="success" label="This part is new">
@@ -460,7 +460,7 @@ export const WithModalHeaderOnly: Story = {
     const { Container, onClose } = useModal();
     return (
       <Container>
-        <Modal onClose={onClose} {...args}>
+        <Modal onClose={onClose} labelClose="Close" {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="BaggageDrop" size="small" />}
@@ -496,23 +496,25 @@ export const WithModalHeaderOnly: Story = {
 
 type PlaygroundStoryProps = ModalPropsAndCustomArgs & { header: boolean; footer: boolean };
 export const Playground: StoryObj<PlaygroundStoryProps> = {
-  render: ({
-    header,
-    footer,
-    title,
-    description,
-    illustration,
-    suppressed,
-    flex,
-    showBack,
-    showSection,
-    ...args
-  }) => {
+  render: (props: PlaygroundStoryProps) => {
+    const {
+      header,
+      footer,
+      title,
+      description,
+      illustration,
+      suppressed,
+      flex,
+      showBack,
+      showSection,
+      ...args
+    } = props;
+
     const { Container, onClose } = useModal();
 
     return (
       <Container>
-        <Modal onClose={onClose} {...args}>
+        <Modal onClose={onClose} labelClose={args.labelClose} {...args}>
           {header && (
             <ModalHeader
               title={title}
@@ -599,7 +601,7 @@ export const Rtl: Story = {
     return (
       <Container>
         <RenderInRtl>
-          <Modal onClose={onClose}>
+          <Modal onClose={onClose} labelClose="Close">
             <ModalHeader
               title="The title of the ModalHeader"
               illustration={<Illustration name="Accommodation" size="small" />}

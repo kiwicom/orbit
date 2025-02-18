@@ -38,7 +38,7 @@ Table below contains all types of the props available in the Modal component.
 | autoFocus           | `boolean`                  | `true`     | The autofocus attribute of the Modal, see [this docs](https://www.w3schools.com/tags/att_autofocus.asp).                                                                                              |
 | disableAnimation    | `boolean`                  | `false`    | Defines whether the Modal performs the slide in animation on mobile. If you want to improve your [CLS](https://web.dev/cls/) score, you might want to set this to `true`.                             |
 | mobileHeader        | `boolean`                  | `true`     | If `false` the ModalHeader will not have MobileHeader and CloseContainer.                                                                                                                             |
-| labelClose          | `string`                   | `Close`    | The label for the close button.                                                                                                                                                                       |
+| labelClose          | `string`                   |            | The label for the close button. It is required all the time, unless `hasCloseButton` is explicitly set to `false`.                                                                                    |
 | onScroll            | `event => void \| Promise` |            | Function for handling `onScroll` event. [See Functional specs](#functional-specs).                                                                                                                    |
 
 ### Modal enum

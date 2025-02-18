@@ -22,7 +22,7 @@ export default {
   Example: () => {
     return (
       <OrbitProvider theme={defaultTheme} useId={React.useId}>
-        <Modal fixedFooter>
+        <Modal hasCloseButton={false} fixedFooter>
           <ModalHeader
             title="Enjoy a meal while you travel"
             illustration={<Illustration name="Meal" size="small" />}

@@ -53,7 +53,7 @@ export const DefaultWithChildren: Story = {
 
   parameters: {
     controls: {
-      exclude: ["children", "customSize", "type"],
+      exclude: ["children", "customSize", "type", "asComponent", "title"],
     },
   },
 
@@ -86,7 +86,7 @@ export const CardLoading: Story = {
   parameters: {
     info: "Example of usage of Loading component inside Card. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["children", "customSize", "text", "type"],
+      exclude: ["children", "customSize", "text", "type", "asComponent", "title"],
     },
   },
 };
@@ -100,12 +100,19 @@ export const Playground: Story = {
 
   args: {
     ...DefaultWithChildren.args,
+    asComponent: "div",
     customSize: 50,
     id: "loader-id",
+    title: "Content is loading",
   },
 
   argTypes: {
     ...DefaultWithChildren.argTypes,
+    asComponent: {
+      control: {
+        type: "text",
+      },
+    },
   },
 
   parameters: {

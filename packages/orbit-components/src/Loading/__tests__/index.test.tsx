@@ -34,4 +34,19 @@ describe("Loading", () => {
     expect(screen.getByTestId("kek").firstChild).toHaveStyle({ width: "40px", height: "40px" });
     expect(screen.getByTestId("kek").querySelector("svg")).toBeInTheDocument();
   });
+
+  it("should always render element as a div when text is defined", () => {
+    render(<Loading asComponent="span" dataTest="kek" text="Loading..." />);
+    expect(screen.getByTestId("kek").tagName).toBe("DIV");
+  });
+
+  it("should render element as a span", () => {
+    render(<Loading asComponent="span" dataTest="kek" />);
+    expect(screen.getByTestId("kek").tagName).toBe("SPAN");
+  });
+
+  it("should render a title element inside svg", () => {
+    render(<Loading title="Content is loading..." />);
+    expect(screen.getByText("Content is loading...")).toBeInTheDocument();
+  });
 });

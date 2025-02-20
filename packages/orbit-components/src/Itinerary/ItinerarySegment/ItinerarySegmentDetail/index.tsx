@@ -55,9 +55,7 @@ const ItinerarySegmentDetail = ({
             className="flex w-full items-center overflow-hidden"
             tabIndex={-1}
             role="button"
-            onKeyDown={ev => {
-              ev.stopPropagation();
-            }}
+            onKeyDown={() => {}}
             onClick={ev => {
               if (isOverflowed && opened) ev.stopPropagation();
             }}

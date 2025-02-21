@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [20.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.4.0...@kiwicom/orbit-components@20.0.0) (2025-02-21)
+
+
+### Bug Fixes
+
+* **Badge:** add missing status role ([2eb62e8](https://github.com/kiwicom/orbit/commit/2eb62e8e05046bc208f9c13a9fe668131388d405))
+* **Badge:** remove ununsed border prop ([f1d010d](https://github.com/kiwicom/orbit/commit/f1d010dbea98dd888dfe5dbe0d8f4caa133874f1))
+* **Heading:** fix uppercase text transform in h5 and h6 ([144bf6e](https://github.com/kiwicom/orbit/commit/144bf6e2e8650c4d93bd9f315919a313da204831))
+* **HorizontalScroll:** make scrollable area focusable ([140d96d](https://github.com/kiwicom/orbit/commit/140d96d8871e88ed69f1cfcf4fa3f22da3a9ce39))
+* **Modal:** first focusable element now focus automatically ([ff991d2](https://github.com/kiwicom/orbit/commit/ff991d2c03e826fa7a5afd14b6de7b5a223c6cdb))
+
+
+### Features
+
+* **HorizontalScroll:** add aria-label to arrow buttons ([f3aa20a](https://github.com/kiwicom/orbit/commit/f3aa20a31a384e7694d3c16cf84683c3a3e669f4))
+* **Loading:** add asComponent and title props to improve the accessibility ([15fe8dc](https://github.com/kiwicom/orbit/commit/15fe8dc649ffc07c65815280b768624db69ccace))
+* **Modal:** add ariaLabel, ariaLabelledby and ariaDescribedby ([45ce1e6](https://github.com/kiwicom/orbit/commit/45ce1e63128b2f5f962a1e779098eaddd9dbb1d0))
+* **Modal:** add triggerRef prop to restore focus after close ([52c664f](https://github.com/kiwicom/orbit/commit/52c664f6c47423c0415a160f4bf3c8e899a791c8))
+* **Modal:** labelClose prop is now required when onClose is defined ([ef7f010](https://github.com/kiwicom/orbit/commit/ef7f01055bb5078933a2c59203e199f90d2297e5))
+* **Modal:** remove autoFocus prop ([069ad4f](https://github.com/kiwicom/orbit/commit/069ad4fd726e3215a3459ddff11c6759e8ac9629))
+
+
+### BREAKING CHANGES
+
+* **Modal:** the labelClose prop no longer has a default value.
+It is now required whenever onClose is defined and
+hasCloseButton is not explicitly set to false (default value is true).
+* **Modal:** The modal now focuses the first focusable element by default.
+Therefore, the autoFocus prop is no longer needed
+* **Badge:** The Bagde component removed its border prop as
+it was never utilized in the codebase. Migration steps are to remove
+this prop from your Badge components, no visual change will occur.
+* **HorizontalScroll:** HorizontalScroll component now requires `arrowLeftAriaLabel`
+and `arrowRightArialLabel` props if you have the `arrows` prop enabled. These will
+be converted into button aria-label attributes, make sure the passed value is
+properly translated.
+
+
+
+
+
 # [19.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.3.1...@kiwicom/orbit-components@19.4.0) (2025-02-13)
 
 

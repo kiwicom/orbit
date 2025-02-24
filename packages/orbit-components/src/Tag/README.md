@@ -29,6 +29,7 @@ Table below contains all types of the props available in the Tag component.
 | selected     | `boolean`               | `false`   | If `true`, the Tag will have selected styles.                                                        |
 | size         | [`enum`](#enum)         | `small`   | Size of the Tag.                                                                                     |
 | ref          | `func`                  |           | Prop for forwarded ref of the Tag.                                                                   |
+| labelDismiss | `string`                |           | Optional prop for `aria-label` attribute of dismiss button (available when `onRemove` is not null).  |
 
 ### enum
 

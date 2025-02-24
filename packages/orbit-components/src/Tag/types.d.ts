@@ -16,4 +16,5 @@ export interface Props extends Common.Globals {
   readonly size?: Common.InputSize;
   readonly onRemove?: Common.Callback;
   readonly onClick?: Common.Callback;
+  readonly labelDismiss?: string;
 }

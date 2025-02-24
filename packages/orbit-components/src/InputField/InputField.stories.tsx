@@ -316,7 +316,13 @@ export const WithButtonLinkSuffix: Story = {
       <InputField
         suffix={
           Suffix && (
-            <ButtonLink type="primary" compact iconLeft={<Suffix />} onClick={action("clicked")} />
+            <ButtonLink
+              aria-label="Show text"
+              type="primary"
+              compact
+              iconLeft={<Suffix />}
+              onClick={action("clicked")}
+            />
           )
         }
         {...args}
@@ -393,6 +399,7 @@ export const WithError: Story = {
               compact
               size="normal"
               onClick={action("clicked")}
+              aria-label="Show text"
               disabled={disabled}
             />
           )
@@ -427,6 +434,7 @@ export const WithHelp: Story = {
               size="normal"
               onClick={action("clicked")}
               disabled={disabled}
+              aria-label="Show text"
             />
           )
         }
@@ -460,6 +468,7 @@ export const Playground: Story = {
               onClick={action("clicked")}
               disabled={disabled}
               compact
+              aria-label="Show text"
             />
           )
         }
@@ -522,7 +531,10 @@ export const Rtl: Story = {
 
     return (
       <RenderInRtl>
-        <InputField suffix={<ButtonLink iconLeft={<Suffix />} compact />} {...args} />
+        <InputField
+          suffix={<ButtonLink iconLeft={<Suffix />} aria-label="Show text" compact />}
+          {...args}
+        />
       </RenderInRtl>
     );
   },

@@ -18,4 +18,5 @@ export interface Props {
   readonly ariaLabelledBy?: string;
   readonly id?: string;
   readonly transitionDuration?: TransitionDuration;
+  readonly stopClickPropagation?: boolean;
 }

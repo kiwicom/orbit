@@ -31,6 +31,7 @@ const meta: Meta<typeof Alert> = {
     closable: false,
     spaceAfter: SPACINGS_AFTER.SMALL,
     suppressed: false,
+    labelClose: "Close",
   },
 
   argTypes: {

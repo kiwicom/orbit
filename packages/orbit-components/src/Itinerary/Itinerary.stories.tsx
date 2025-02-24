@@ -430,7 +430,7 @@ export const SegmentStop: StoryObj<typeof ItinerarySegmentStop> = {
               city={<Text type="secondary">New York JFK</Text>}
               station={
                 <Stack flex align="center" spacing="200">
-                  <CountryFlag code="US" size="small" />
+                  <CountryFlag code="US" size="small" name="USA" />
                   <Text type="secondary" size="small">
                     United states
                   </Text>

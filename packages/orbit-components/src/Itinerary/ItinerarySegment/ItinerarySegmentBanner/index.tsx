@@ -13,6 +13,7 @@ const ItinerarySegmentBanner = React.forwardRef<HTMLDivElement, Props>(
       <div
         ref={ref}
         className={cx(
+          "orbit-itinerary-segment-banner",
           "px-400 box-border flex w-full items-center justify-between overflow-hidden py-0",
           onClick ? "cursor-pointer" : "cursor-default",
           "[&_.orbit-itinerary-badge-list]:!ms-0",

@@ -685,6 +685,7 @@ export const ItinerarySeparatorComponent: StoryObj<typeof ItinerarySeparator> = 
 export const InsideModal: Story = {
   render: function Render() {
     const [isOpenedModal, setIsOpenedModal] = React.useState(false);
+    const ref = React.useRef(null);
 
     return (
       <div>
@@ -695,9 +696,10 @@ export const InsideModal: Story = {
                 <Stack>
                   <ItinerarySegmentBanner
                     onClick={ev => {
-                      ev.stopPropagation();
+                      ev.preventDefault();
                       setIsOpenedModal(true);
                     }}
+                    ref={ref}
                   >
                     <ItineraryBadgeList>
                       <ItineraryBadgeListItem icon={<StarFull />} type="warning">
@@ -755,6 +757,7 @@ export const InsideModal: Story = {
               setIsOpenedModal(false);
             }}
             labelClose="Close"
+            triggerRef={ref}
           >
             <ModalSection>Hidden city info</ModalSection>
           </Modal>
@@ -774,6 +777,7 @@ export const InsideModal: Story = {
 export const MultipleBanners: Story = {
   render: function Render() {
     const [isOpenedModal, setIsOpenedModal] = React.useState(false);
+    const ref = React.useRef(null);
 
     return (
       <>
@@ -783,7 +787,7 @@ export const MultipleBanners: Story = {
             <ItinerarySegment
               banner={
                 <Stack direction="column" align="stretch" spacing="200">
-                  <ItinerarySegmentBanner onClick={() => setIsOpenedModal(true)}>
+                  <ItinerarySegmentBanner ref={ref} onClick={() => setIsOpenedModal(true)}>
                     <ItineraryBadgeList>
                       <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
                         <Text as="span" type="info" weight="bold">
@@ -906,6 +910,7 @@ export const MultipleBanners: Story = {
               setIsOpenedModal(false);
             }}
             labelClose="Close"
+            triggerRef={ref}
           >
             <ModalSection>Throwaway ticketing info</ModalSection>
           </Modal>

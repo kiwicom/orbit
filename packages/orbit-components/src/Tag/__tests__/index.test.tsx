@@ -19,6 +19,7 @@ describe("Tag", () => {
         selected
         dataTest={dataTest}
         iconLeft={<PlusMinus dataTest="icon" />}
+        labelDismiss="Dismiss"
         onRemove={onRemove}
         onClick={onClick}
       >
@@ -31,7 +32,7 @@ describe("Tag", () => {
     const tag = screen.getByRole("button", { name: content });
     await user.click(tag);
     expect(onClick).toHaveBeenCalled();
-    await user.click(screen.getByRole("button", { name: "close" }));
+    await user.click(screen.getByRole("button", { name: "Dismiss" }));
     expect(onRemove).toHaveBeenCalled();
     expect(screen.getByText(content)).toBeInTheDocument();
   });

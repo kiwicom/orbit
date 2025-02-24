@@ -29,6 +29,9 @@ const meta: Meta<TagPropsAndCustomArgs> = {
     dateTag: false,
     type: TYPES.NEUTRAL,
     iconLeft: "PlusMinus",
+    labelDismiss: "Dismiss",
+    onClick: action("onClick"),
+    onRemove: action("onRemove"),
   },
 
   argTypes: {
@@ -51,25 +54,32 @@ const meta: Meta<TagPropsAndCustomArgs> = {
       },
     },
   },
+
+  parameters: {
+    controls: {
+      exclude: ["onRemove", "onClick"],
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<TagPropsAndCustomArgs>;
 
 export const Default: Story = {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  render: args => (
+  render: ({ onClick, onRemove, labelDismiss }) => (
     <Stack direction="column">
       <Heading type="title2">Neutral</Heading>
       <Stack inline>
         <Tag>Non actionable</Tag>
         <Tag iconLeft={<Icons.PlusMinus />}>With icon</Tag>
-        <Tag onClick={action("onClick")}>Default</Tag>
-        <Tag selected onClick={action("onClick")}>
+        <Tag onClick={onClick}>Default</Tag>
+        <Tag selected onClick={onClick}>
           Selected
         </Tag>
-        <Tag onRemove={action("onRemove")}>Removable</Tag>
-        <Tag selected onRemove={action("onRemove")} onClick={action("onClick")}>
+        <Tag onRemove={onRemove} labelDismiss={labelDismiss}>
+          Removable
+        </Tag>
+        <Tag selected onRemove={onRemove} onClick={onClick} labelDismiss={labelDismiss}>
           Selected Removable
         </Tag>
       </Stack>
@@ -79,21 +89,27 @@ export const Default: Story = {
         <Tag type="colored" iconLeft={<Icons.PlusMinus />}>
           With icon
         </Tag>
-        <Tag type="colored" onClick={action("onClick")}>
+        <Tag type="colored" onClick={onClick}>
           Default
         </Tag>
-        <Tag type="colored" selected onClick={action("onClick")}>
+        <Tag type="colored" selected onClick={onClick}>
           Selected
         </Tag>
-        <Tag type="colored" onRemove={action("onRemove")}>
+        <Tag type="colored" onRemove={onRemove} labelDismiss={labelDismiss}>
           Removable
         </Tag>
-        <Tag type="colored" selected onRemove={action("onRemove")} onClick={action("onClick")}>
+        <Tag
+          type="colored"
+          selected
+          onRemove={onRemove}
+          onClick={onClick}
+          labelDismiss={labelDismiss}
+        >
           Selected Removable
         </Tag>
       </Stack>
       <Heading>dateTag</Heading>
-      <Tag type="colored" dateTag selected onClick={action("onClick")}>
+      <Tag type="colored" dateTag selected onClick={onClick}>
         with dateTag selected color is Ink
       </Tag>
     </Stack>
@@ -108,15 +124,14 @@ export const Default: Story = {
 };
 
 export const Playground: Story = {
-  render: ({ content, removable, iconLeft, ...args }) => {
+  render: ({ content, removable, iconLeft, onRemove, ...args }) => {
     const IconLeft = iconLeft ? Icons[iconLeft as string] : null;
 
     return (
       <Tag
         {...args}
         iconLeft={IconLeft && <IconLeft />}
-        onClick={action("onClick")}
-        onRemove={removable ? action("onRemove") : undefined}
+        onRemove={removable ? onRemove : undefined}
       >
         {content}
       </Tag>
@@ -129,14 +144,14 @@ export const Playground: Story = {
 };
 
 export const Rtl: Story = {
-  render: ({ content, removable, iconLeft, ...args }) => {
+  render: ({ content, removable, iconLeft, onRemove, ...args }) => {
     const IconLeft = iconLeft ? Icons[iconLeft as string] : null;
 
     return (
       <RenderInRtl>
         <Tag
           {...args}
-          onRemove={removable ? action("onRemove") : undefined}
+          onRemove={removable ? onRemove : undefined}
           iconLeft={IconLeft && <IconLeft />}
         >
           {content}

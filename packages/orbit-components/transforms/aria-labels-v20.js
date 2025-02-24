@@ -43,7 +43,8 @@ export default function transformer(file, api) {
             // Check if arrows is explicitly set to true
             return (
               attr.value === null || // <HorizontalScroll arrows />
-              (attr.value.type === "JSXExpressionContainer" && attr.value.expression.value === true) // <HorizontalScroll arrows={true} />
+              (attr.value.type === "JSXExpressionContainer" &&
+                attr.value.expression.value !== false) // <HorizontalScroll arrows={true} /> or <HorizontalScroll arrows={variable} />
             );
           }
           return false;

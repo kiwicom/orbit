@@ -23,6 +23,7 @@ class Slide extends React.Component<Props, State> {
 
   static defaultProps = {
     transitionDuration: "fast",
+    stopClickPropagation: true,
   };
 
   expandTimeout: NodeJS.Timeout | null = null;
@@ -141,9 +142,13 @@ class Slide extends React.Component<Props, State> {
         aria-hidden={!expanded}
         id={id}
         aria-labelledby={ariaLabelledBy}
-        onClick={ev => {
-          ev.stopPropagation();
-        }}
+        onClick={
+          this.props.stopClickPropagation
+            ? ev => {
+                ev.stopPropagation();
+              }
+            : undefined
+        }
       >
         {children}
       </div>

@@ -98,7 +98,7 @@ describe("ButtonPrimitive", () => {
     const button = screen.getByRole("button");
 
     await user.tab();
-    fireEvent.keyDown(button, { keyCode: 13 });
+    fireEvent.keyDown(button, { code: "Enter" });
     expect(onClick).toHaveBeenCalledTimes(1);
     expect(button).toHaveFocus();
   });

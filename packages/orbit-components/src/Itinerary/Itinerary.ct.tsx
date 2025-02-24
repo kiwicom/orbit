@@ -59,7 +59,7 @@ test.describe("visual Itinerary", () => {
   test("ItinerarySegment open", async ({ mount }) => {
     const component = await mount(<ItinerarySegmentVisualStory />);
 
-    await component.getByTestId("segment").click();
+    await component.getByText("PRG").click();
 
     await expect(component).toHaveScreenshot();
   });

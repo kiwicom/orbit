@@ -37,13 +37,13 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
     ref,
   ) => {
     return (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         className={cx(
-          "orbit-tag",
-          "font-base rounded-150 p-200 box-border inline-flex items-center justify-center font-medium",
+          "font-base rounded-150 box-border inline-flex items-center justify-center font-medium",
           "duration-fast transition-[color,_background-color,_box-shadow] ease-in-out",
           "tb:rounded-100",
+          "has-[.orbit-tag:focus]:focus-within:outline-ink-dark-active has-[.orbit-tag:focus]:focus-within:outline has-[.orbit-tag:focus]:focus-within:outline-2 has-[.orbit-tag:focus]:focus-within:outline-offset-1",
+          onRemove && "pe-200",
           size === SIZES.SMALL && "text-small leading-small",
           size === SIZES.NORMAL && "text-normal leading-normal",
           !!(onClick || onRemove) &&
@@ -80,20 +80,28 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
           ],
         )}
         data-test={dataTest}
-        id={id}
-        ref={ref}
-        onClick={onClick}
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        tabIndex={(onClick || onRemove) && 0}
-        role={onClick || onRemove ? "button" : undefined}
-        onKeyDown={ev => buttonClickEmulation(ev, onClick)}
       >
-        {iconLeft && (
-          <div className="pe-200 [&_svg]:size-icon-small flex flex-row items-center justify-center">
-            {iconLeft}
-          </div>
-        )}
-        {children}
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+        <div
+          className={cx(
+            "p-200 orbit-tag flex items-center focus:outline-none",
+            onRemove ? "rounded-l-150" : "rounded-150",
+          )}
+          id={id}
+          ref={ref}
+          onClick={onClick}
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+          tabIndex={(onClick || onRemove) && 0}
+          role={onClick || onRemove ? "button" : undefined}
+          onKeyDown={ev => buttonClickEmulation(ev, onClick)}
+        >
+          {iconLeft && (
+            <div className="pe-200 [&_svg]:size-icon-small flex flex-row items-center justify-center">
+              {iconLeft}
+            </div>
+          )}
+          {children}
+        </div>
         {onRemove && (
           <div
             className={cx(

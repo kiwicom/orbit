@@ -43,7 +43,7 @@ export const FakeInput = ({ error, disabled }: Pick<Props, "error" | "disabled">
 );
 
 const Prefix = ({ children }: { children: React.ReactNode }) => (
-  <div
+  <span
     className={cx(
       "text-form-element-prefix-foreground",
       "ps-300 pointer-events-none z-[3] flex h-full items-center justify-center",
@@ -53,7 +53,7 @@ const Prefix = ({ children }: { children: React.ReactNode }) => (
     )}
   >
     {children}
-  </div>
+  </span>
 );
 
 const Suffix = ({
@@ -143,33 +143,32 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 
   const shown = tooltipShown || tooltipShownHover;
   const fieldRef = React.useRef(null);
-  const Component = label ? "label" : "div";
 
   return (
-    <Component
+    <div
       className={cx(
         "orbit-input-field-field font-base relative block flex-1 basis-full",
         spaceAfter && spaceAfterClasses[spaceAfter],
       )}
-      style={{ width }}
       ref={fieldRef}
-      htmlFor={label ? inputId : undefined}
+      style={{ width }}
       onMouseEnter={() => (disabled && inlineLabel ? setTooltipShownHover(true) : undefined)}
       onMouseLeave={() => (disabled && inlineLabel ? setTooltipShownHover(false) : undefined)}
     >
-      {label && !inlineLabel && (
-        <FormLabel
-          inlineLabel={inlineLabel}
-          required={required}
-          error={!!error}
-          help={!!help}
-          labelRef={labelRef}
-          iconRef={iconRef}
-          onMouseEnter={() => setTooltipShownHover(true)}
-          onMouseLeave={() => setTooltipShownHover(false)}
-        >
-          {label}
-        </FormLabel>
+      {!inlineLabel && label && (
+        <label className="block" ref={fieldRef} htmlFor={inputId}>
+          <FormLabel
+            required={required}
+            error={!!error}
+            help={!!help}
+            labelRef={labelRef}
+            iconRef={iconRef}
+            onMouseEnter={() => setTooltipShownHover(true)}
+            onMouseLeave={() => setTooltipShownHover(false)}
+          >
+            {label}
+          </FormLabel>
+        </label>
       )}
       <div
         className={cx(
@@ -182,41 +181,47 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             ? "text-form-element-disabled-foreground"
             : "text-form-element-filled-foreground",
         )}
-        ref={label ? null : labelRef}
       >
-        {inlineLabel && !tags && (error || help) ? (
-          <Prefix>
-            {help && !error && (
-              <div className="flex" ref={iconRef}>
-                <InformationCircle color="info" size="small" />
-              </div>
-            )}
-            {error && (
-              <div className="flex" ref={iconRef}>
-                <AlertCircle color="critical" size="small" />
-              </div>
-            )}
-          </Prefix>
-        ) : (
-          prefix && <Prefix>{prefix}</Prefix>
-        )}
-        {label && inlineLabel && (
-          <div
-            className={cx(
-              "flex items-center justify-center",
-              "pointer-events-none h-full",
-              "[&>.orbit-form-label]:mb-0",
-              "[&>.orbit-form-label]:text-form-element-normal [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
-              "[&>.orbit-form-label]:z-[3]",
-              !tags && (error || help) ? "ps-100" : "ps-300",
-            )}
-            ref={labelRef}
-          >
-            <FormLabel required={required} error={!!error} help={!!help} inlineLabel={inlineLabel}>
-              {label}
-            </FormLabel>
-          </div>
-        )}
+        <label className="relative z-[2] flex items-center" ref={fieldRef} htmlFor={inputId}>
+          {inlineLabel && !tags && (error || help) ? (
+            <Prefix>
+              {help && !error && (
+                <span className="flex" ref={iconRef}>
+                  <InformationCircle color="info" size="small" />
+                </span>
+              )}
+              {error && (
+                <span className="flex" ref={iconRef}>
+                  <AlertCircle color="critical" size="small" />
+                </span>
+              )}
+            </Prefix>
+          ) : (
+            prefix && <Prefix>{prefix}</Prefix>
+          )}
+          {label && inlineLabel && (
+            <span
+              className={cx(
+                "flex items-center justify-center",
+                "pointer-events-none h-full",
+                "[&>.orbit-form-label]:mb-0",
+                "[&>.orbit-form-label]:text-form-element-normal [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
+                "[&>.orbit-form-label]:z-[3]",
+                !tags && (error || help) ? "ps-100" : "ps-300",
+              )}
+            >
+              <FormLabel
+                required={required}
+                error={!!error}
+                help={!!help}
+                labelRef={labelRef}
+                inlineLabel
+              >
+                {label}
+              </FormLabel>
+            </span>
+          )}
+        </label>
         {tags && <InputTags>{tags}</InputTags>}
         {/* the rule is working weird, it passes only if the value is number, eg not even prop including number } */}
         {/* eslint-disable-next-line jsx-a11y/aria-activedescendant-has-tabindex */}
@@ -304,7 +309,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           referenceElement={inlineLabel && !tags ? iconRef : fieldRef}
         />
       )}
-    </Component>
+    </div>
   );
 });
 

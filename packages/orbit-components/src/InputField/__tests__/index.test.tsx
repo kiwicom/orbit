@@ -107,7 +107,7 @@ describe("InputField", () => {
   it("should have passed width", () => {
     const width = "100px";
     render(<InputField width={width} label="label" />);
-    expect(document.querySelector("label")).toHaveStyle({ width });
+    expect(document.querySelector(".orbit-input-field-field")).toHaveStyle({ width });
   });
 
   describe("compact", () => {

@@ -64,6 +64,8 @@ const Table = ({
         className={cx("w-full", shadows && "overflow-x-auto")}
         onScroll={handleScroll}
         ref={inner}
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        tabIndex={shadows ? 0 : undefined}
       >
         <table
           className={cx(

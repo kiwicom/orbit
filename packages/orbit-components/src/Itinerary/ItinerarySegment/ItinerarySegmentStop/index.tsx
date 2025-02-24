@@ -47,6 +47,7 @@ const ItinerarySegmentStop = ({
   return (
     <div
       className={cx(
+        "orbit-itinerary-segment-stop",
         "px-300 relative box-border flex py-0",
         ((!last && index !== 0) || (index !== 0 && isBanner)) && "mb-300",
       )}

@@ -26,17 +26,16 @@ const ItinerarySegmentDetail = ({
   content,
   icon = <AirplaneDown size="small" />,
 }: Props) => {
-  const { opened, toggleOpened } = usePart();
+  const { opened } = usePart();
   const { itinerarySegmentMinimalColumnWidth } = useItinerarySegmentMinimalColumnWidth();
   const theme = useTheme();
   const [{ height: slideHeight }, slideRef] = useBoundingRect<HTMLDivElement>({
     height: opened ? null : 0,
   });
   const randomId = useRandomIdSeed();
-  const [isOverflowed, setOverflowed] = React.useState(false);
 
   return (
-    <div className="relative box-border w-full px-0 py-[10px]">
+    <div className="orbit-itinerary-segment-detail relative box-border w-full px-0 py-[10px]">
       <div className="px-300 py-0">
         <Stack align="center" spacing="300">
           <div
@@ -51,18 +50,9 @@ const ItinerarySegmentDetail = ({
             <ItineraryIcon>{icon}</ItineraryIcon>
           </div>
 
-          <div
-            className="flex w-full items-center overflow-hidden"
-            tabIndex={-1}
-            role="button"
-            onKeyDown={() => {}}
-            onClick={ev => {
-              if (isOverflowed && opened) ev.stopPropagation();
-            }}
-          >
+          <div className="flex w-full cursor-default items-center overflow-hidden">
             <HorizontalScroll
               overflowElevation
-              onOverflow={() => setOverflowed(true)}
               elevationColor="paletteWhite"
               scrollSnap="mandatory"
             >
@@ -79,17 +69,9 @@ const ItinerarySegmentDetail = ({
           expanded={opened}
           id={randomId("slide")}
           ariaLabelledBy={randomId("slide")}
+          stopClickPropagation={false}
         >
-          <div
-            className="pt-300 overflow-hidden"
-            ref={slideRef}
-            tabIndex={-1}
-            role="button"
-            onClick={ev => toggleOpened(ev)}
-            onKeyDown={ev => {
-              ev.stopPropagation();
-            }}
-          >
+          <div className="pt-300 cursor-pointer overflow-hidden" ref={slideRef}>
             <div
               className="px-300 z-default relative py-0"
               style={{

@@ -25,6 +25,10 @@ const ItinerarySegment = ({
   const [opened, setOpened] = React.useState(false);
 
   const handleClick = (ev: React.SyntheticEvent<HTMLDivElement>) => {
+    const target = ev.target as HTMLElement;
+    const isHorizontalScroll = target.closest(".orbit-horizontal-scroll");
+    if (isHorizontalScroll || (document && document.getSelection()?.type === "Range")) return;
+
     ev.stopPropagation();
     if (onClick) onClick(ev);
     if (!opened && onExpand) onExpand(ev);
@@ -48,9 +52,6 @@ const ItinerarySegment = ({
           <ItinerarySegmentProvider
             index={i}
             opened={opened}
-            toggleOpened={ev => {
-              if (document && document.getSelection()?.type !== "Range") handleClick(ev);
-            }}
             last={i === content.length - 1}
             isNextHidden={Boolean(content[i + 1]?.props?.hidden)}
             isPrevHidden={Boolean(content[i - 1]?.props?.hidden)}
@@ -69,6 +70,7 @@ const ItinerarySegment = ({
   return (
     <div
       className={cx(
+        "orbit-itinerary-segment",
         "rounded-150 pb-300 px-0",
         spaceAfter && spaceAfterClasses[spaceAfter],
         !noElevation && "shadow-fixed",

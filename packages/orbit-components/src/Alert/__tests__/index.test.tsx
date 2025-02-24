@@ -21,7 +21,7 @@ describe("Alert", () => {
   it("should be closable", async () => {
     const onClose = jest.fn();
     render(
-      <Alert onClose={onClose} closable>
+      <Alert onClose={onClose} closable labelClose="Close">
         {message}
       </Alert>,
     );

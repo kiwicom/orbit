@@ -2,7 +2,6 @@ import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
 import { screen, render, fireEvent } from "../../test-utils";
-import KEY_CODE_MAP from "../../common/keyMaps";
 import Switch from "..";
 
 describe("Switch", () => {
@@ -18,8 +17,8 @@ describe("Switch", () => {
     await user.click(screen.getByRole("switch"));
     expect(onChange).toHaveBeenCalled();
 
-    fireEvent.keyDown(screen.getByTestId("test"), { keyCode: KEY_CODE_MAP.SPACE });
-    fireEvent.keyDown(screen.getByTestId("test"), { keyCode: KEY_CODE_MAP.ENTER });
+    fireEvent.keyDown(screen.getByTestId("test"), { code: "Space" });
+    fireEvent.keyDown(screen.getByTestId("test"), { code: "Enter" });
     expect(onChange).toHaveBeenCalledTimes(3);
 
     await user.tab();

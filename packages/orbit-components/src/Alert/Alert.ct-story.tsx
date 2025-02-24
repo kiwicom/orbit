@@ -47,6 +47,7 @@ export function TestAlert() {
             type={type}
             icon={false}
             closable
+            labelClose="Close"
             inlineActions={
               <AlertButton type={type} href="#">
                 Link
@@ -65,6 +66,7 @@ export function TestAlert() {
             type={type}
             icon={<Icons.Ai />}
             closable
+            labelClose="Close"
             inlineActions={
               <AlertButton type={type} href="#">
                 Link
@@ -90,7 +92,7 @@ export function TestAlert() {
       <h2>With multiline text, closable, without icon</h2>
       <div className="gap-400 flex flex-col items-stretch">
         {Object.values(TYPE_OPTIONS).map(type => (
-          <Alert type={type} closable icon={false}>
+          <Alert type={type} closable icon={false} labelClose="Close">
             <p>
               <TextLink type="primary">This is</TextLink> a primary textlink.
               <br />

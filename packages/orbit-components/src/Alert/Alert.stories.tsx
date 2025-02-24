@@ -31,6 +31,7 @@ const meta: Meta<typeof Alert> = {
     closable: false,
     spaceAfter: SPACINGS_AFTER.SMALL,
     suppressed: false,
+    labelClose: "Close",
   },
 
   argTypes: {
@@ -295,7 +296,7 @@ export const Rtl: Story = {
                 Make sure you know your visa requirements for these countries:
               </Heading>
               <List>
-                <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
+                <ListItem icon={<CountryFlag code="pl" />}>Poland</ListItem>
               </List>
             </Stack>
             <AlertButton type="info">Check Visa Requirements</AlertButton>

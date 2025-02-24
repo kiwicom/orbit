@@ -26,7 +26,7 @@ The table below contains all types of the props available in Alert component.
 | inlineActions | `React.Node`                    |          | Renders action to a right side of a Alert. [See Functional specs](#functional-specs)   |
 | onClose       | `() => void \| Promise`         |          | Function for handling Alert onClose.                                                   |
 | spaceAfter    | `enum`                          |          | Additional `margin-bottom` after component.                                            |
-| title         | `Translation`                   |          | The title of the Alert.                                                                |
+| title         | `string`                        |          | The title of the Alert.                                                                |
 | **type**      | [`enum`](#enum)                 | `"info"` | The type of Alert.                                                                     |
 | suppressed    | `boolean`                       |          | If `suppressed` is on, Alert will not have colored background                          |
 | labelClose    | `string`                        |          | The label of the close button.                                                         |

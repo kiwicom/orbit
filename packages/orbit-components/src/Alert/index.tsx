@@ -130,6 +130,7 @@ const Alert = (props: Props) => {
   return (
     <div
       className={cx(
+        "orbit-alert",
         "rounded-150 text-ink-dark font-base text-normal p-300 relative box-border flex w-full border border-t-[3px] leading-normal",
         "lm:border-s-[3px] lm:border-t",
         "tb:rounded-100",

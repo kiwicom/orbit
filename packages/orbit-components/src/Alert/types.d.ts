@@ -6,14 +6,22 @@ import type * as React from "react";
 import type * as Common from "../common/types";
 
 export type Type = "info" | "success" | "warning" | "critical";
-export interface Props extends Common.Globals, Common.SpaceAfter {
-  readonly type?: Type;
-  readonly children?: React.ReactNode;
-  readonly title?: Common.Translation;
-  readonly icon?: React.ReactNode;
-  readonly closable?: boolean;
-  readonly inlineActions?: React.ReactNode;
-  readonly labelClose?: string;
-  readonly onClose?: Common.Callback;
-  readonly suppressed?: boolean;
-}
+export type Props = Common.Globals &
+  Common.SpaceAfter & {
+    readonly type?: Type;
+    readonly children?: React.ReactNode;
+    readonly title?: Common.Translation;
+    readonly icon?: React.ReactNode;
+    readonly inlineActions?: React.ReactNode;
+    readonly onClose?: Common.Callback;
+    readonly suppressed?: boolean;
+    /**
+     * When closable is true, labelClose is required.
+     */
+  } & (
+    | {
+        readonly closable: true;
+        readonly labelClose: string;
+      }
+    | { readonly closable?: false; readonly labelClose?: string }
+  );

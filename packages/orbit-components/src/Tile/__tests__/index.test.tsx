@@ -2,7 +2,6 @@ import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
 import { render, screen, fireEvent } from "../../test-utils";
-import KEY_CODE_MAP from "../../common/keyMaps";
 import Tile from "..";
 import Airplane from "../../icons/Airplane";
 
@@ -35,8 +34,8 @@ describe("Tile", () => {
     expect(screen.getByText("kek")).toHaveStyle({ padding: "16px" });
 
     await user.click(screen.getByRole("button"));
-    fireEvent.keyDown(screen.getByRole("button"), { keyCode: KEY_CODE_MAP.ENTER });
-    fireEvent.keyDown(screen.getByRole("button"), { keyCode: KEY_CODE_MAP.SPACE });
+    fireEvent.keyDown(screen.getByRole("button"), { code: "Enter" });
+    fireEvent.keyDown(screen.getByRole("button"), { code: "Space" });
 
     expect(onClick).toHaveBeenCalledTimes(3);
   });

@@ -8,7 +8,6 @@ interface Context {
   isBanner: boolean;
   index: number;
   opened: boolean;
-  toggleOpened: (ev: React.SyntheticEvent<HTMLDivElement>) => void;
   last: boolean;
   count: number;
 }
@@ -20,7 +19,6 @@ export const ItinerarySegmentContext = React.createContext<Context>({
   isHidden: false,
   noElevation: false,
   opened: false,
-  toggleOpened: () => {},
   index: 0,
   count: 0,
   last: false,
@@ -37,7 +35,6 @@ export const ItinerarySegmentProvider = ({
   children,
   index,
   opened,
-  toggleOpened,
   last,
   count,
 }: React.PropsWithChildren<Context>) => {
@@ -50,22 +47,10 @@ export const ItinerarySegmentProvider = ({
       isBanner,
       index,
       opened,
-      toggleOpened,
       last,
       count,
     }),
-    [
-      isNextHidden,
-      isPrevHidden,
-      noElevation,
-      isHidden,
-      isBanner,
-      index,
-      opened,
-      toggleOpened,
-      last,
-      count,
-    ],
+    [isNextHidden, isPrevHidden, noElevation, isHidden, isBanner, index, opened, last, count],
   );
   return (
     <ItinerarySegmentContext.Provider value={value}>{children}</ItinerarySegmentContext.Provider>

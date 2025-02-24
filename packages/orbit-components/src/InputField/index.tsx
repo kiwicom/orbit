@@ -143,34 +143,33 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 
   const shown = tooltipShown || tooltipShownHover;
   const fieldRef = React.useRef(null);
-  const Component = label ? "label" : "div";
 
   return (
-    <Component
+    <div
       className={cx(
         "orbit-input-field-field font-base relative block flex-1 basis-full",
         spaceAfter && spaceAfterClasses[spaceAfter],
       )}
       style={{ width }}
-      ref={fieldRef}
-      htmlFor={label ? inputId : undefined}
       onMouseEnter={() => (disabled && inlineLabel ? setTooltipShownHover(true) : undefined)}
       onMouseLeave={() => (disabled && inlineLabel ? setTooltipShownHover(false) : undefined)}
     >
-      {label && !inlineLabel && (
-        <FormLabel
-          inlineLabel={inlineLabel}
-          required={required}
-          error={!!error}
-          help={!!help}
-          labelRef={labelRef}
-          iconRef={iconRef}
-          onMouseEnter={() => setTooltipShownHover(true)}
-          onMouseLeave={() => setTooltipShownHover(false)}
-        >
-          {label}
-        </FormLabel>
-      )}
+      <label ref={fieldRef} htmlFor={inputId}>
+        {label && !inlineLabel && (
+          <FormLabel
+            inlineLabel={inlineLabel}
+            required={required}
+            error={!!error}
+            help={!!help}
+            labelRef={labelRef}
+            iconRef={iconRef}
+            onMouseEnter={() => setTooltipShownHover(true)}
+            onMouseLeave={() => setTooltipShownHover(false)}
+          >
+            {label}
+          </FormLabel>
+        )}
+      </label>
       <div
         className={cx(
           "orbit-input-field-input-container",
@@ -304,7 +303,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           referenceElement={inlineLabel && !tags ? iconRef : fieldRef}
         />
       )}
-    </Component>
+    </div>
   );
 });
 

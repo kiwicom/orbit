@@ -1,0 +1,19 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/inputfield/accessibility/
+---
+
+### Accessibility
+
+- For special cases you can use your own, detached `label`. Simply like this:
+
+```jsx
+<label for="NICEID">Content</label>
+<InputField
+  id="NICEID"
+/>
+```
+
+- The `ariaLabel` prop allows you to specify an `aria-label` attribute for the InputField component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.
+- If the `label` prop is not provided, the `ariaLabel` prop must be specified to ensure component accessibility.

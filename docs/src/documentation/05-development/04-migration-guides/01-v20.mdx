@@ -137,6 +137,14 @@ intl.formatMessage({
 
 Feel free to customize the translations according to your needs, by eventually providing more context to the modal it refers to.
 
+## Fixes
+
+### `scope` prop in the `TableCell` can now be set only for the `th` element (from version 20.1.0)
+
+Previously, it was possible to set the `scope` prop on the `TableCell` component when rendered as `td` element, but this was incorrect.
+
+As a result, the `scope` prop can now only be set when the `TableCell` is rendered as a `th` element.
+
 ## Codemod
 
 A codemod is available to help with the migration. It should target the new props that require (translated) strings.

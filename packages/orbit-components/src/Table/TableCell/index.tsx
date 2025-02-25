@@ -20,15 +20,16 @@ const whitespaceStyles: Record<WhiteSpace, string> = {
   "pre-wrap": "whitespace-pre-wrap",
 };
 
-const TableCell = ({
-  align = ALIGN_OPTIONS.LEFT,
-  scope,
-  as: Component = TYPE_AS.TD,
-  verticalAlign,
-  whiteSpace,
-  dataTest,
-  children,
-}: Props) => {
+const TableCell = (props: Props) => {
+  const {
+    align = ALIGN_OPTIONS.LEFT,
+    as: Component = TYPE_AS.TD,
+    verticalAlign,
+    whiteSpace,
+    dataTest,
+    children,
+  } = props;
+
   return (
     <Component
       className={cx(
@@ -40,7 +41,7 @@ const TableCell = ({
         (align === ALIGN_OPTIONS.END || align === ALIGN_OPTIONS.RIGHT) && "text-end",
       )}
       data-test={dataTest}
-      scope={scope}
+      scope={props.as === TYPE_AS.TH ? props.scope : undefined}
     >
       {children}
     </Component>

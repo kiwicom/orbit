@@ -40,10 +40,10 @@ Table below contains all types of the props available in the Table component.
 
 | Name         | Type            | Default     | Description                                                                                |
 | :----------- | :-------------- | :---------- | :----------------------------------------------------------------------------------------- |
-| **children** | `React.Node`    |             | The content of the Table, normally [`TableHead`](#tablehead) or [`TableHead`](#TableHead). |
+| **children** | `React.Node`    |             | The content of the Table, normally [`TableHead`](#tablehead) or [`TableBody`](#tablebody). |
 | compact      | `boolean`       | `false`     | If `true`, the Table will have more compact styles.                                        |
 | dataTest     | `string`        |             | Optional prop for testing purposes.                                                        |
-| id           | `string`        |             | Set `id` for `Table`                                                                       |
+| id           | `string`        |             | Set `id` for Table.                                                                        |
 | striped      | `boolean`       | `true`      | Functionality of table where every second line is grey                                     |
 | type         | [`enum`](#enum) | `"primary"` | The type of Table.                                                                         |
 
@@ -113,15 +113,15 @@ import TableCell from "@kiwicom/orbit-components/lib/Table/TableCell";
 
 Table below contains all types of the props in TableCell component.
 
-| Name          | Type            | Default  | Description                                                                                                                                                         |
-| :------------ | :-------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| align         | [`enum`](#enum) | `"left"` | The align of text in the TableCell.                                                                                                                                 |
-| as            | [`enum`](#enum) | `"td"`   | possibility to render TableCell in different HTML                                                                                                                   |
-| children      | `React.Node`    |          | The content of the TableCell.                                                                                                                                       |
-| dataTest      | `string`        |          | Optional prop for testing purposes.                                                                                                                                 |
-| scope         | [`enum`](#enum) |          | The scope attribute identifies whether a table header is a column header or a row header. More about a11y reasons [here](https://webaim.org/techniques/tables/data) |
-| verticalAlign | [`enum`](#enum) |          | The vertical align of the content in the TableCell.                                                                                                                 |
-| whiteSpace    | [`enum`](#enum) |          | The white-space setting of text in the TableCell.                                                                                                                   |
+| Name          | Type            | Default  | Description                                                                                                                      |
+| :------------ | :-------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| align         | [`enum`](#enum) | `"left"` | The align of text in the TableCell.                                                                                              |
+| as            | [`enum`](#enum) | `"td"`   | Possibility to render TableCell in different HTML.                                                                               |
+| children      | `React.Node`    |          | The content of the TableCell.                                                                                                    |
+| dataTest      | `string`        |          | Optional prop for testing purposes.                                                                                              |
+| scope         | [`enum`](#enum) |          | Can be set only when `as="th"`. Identifies whether a table header is a column header or a row header. See the Accessibility tab. |
+| verticalAlign | [`enum`](#enum) |          | The vertical align of the content in the TableCell.                                                                              |
+| whiteSpace    | [`enum`](#enum) |          | The white-space setting of text in the TableCell.                                                                                |
 
 #### enum
 

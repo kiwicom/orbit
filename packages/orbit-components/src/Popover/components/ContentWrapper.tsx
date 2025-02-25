@@ -47,6 +47,7 @@ export interface Props extends Common.Globals {
   onClose: (ev?: MouseEvent | React.SyntheticEvent<HTMLElement>) => void;
   ariaLabel?: string;
   ariaLabelledby?: string;
+  role?: "dialog" | "menu" | "grid" | "listbox" | "tree";
 }
 
 const PopoverContentWrapper = ({
@@ -71,6 +72,7 @@ const PopoverContentWrapper = ({
   actions,
   ariaLabelledby,
   ariaLabel,
+  role,
 }: Props) => {
   const [actionsHeight, setActionsHeight] = React.useState<number | null>(null);
   const { isInsideModal } = React.useContext(ModalContext);
@@ -170,10 +172,7 @@ const PopoverContentWrapper = ({
       />
       <FloatingFocusManager context={context}>
         <div
-          role="dialog"
-          // @ts-expect-error expected
-          // eslint-disable-next-line react/no-unknown-property
-          popover
+          role={role}
           ref={refs.setFloating}
           data-test={dataTest}
           id={id}

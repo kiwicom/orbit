@@ -35,6 +35,7 @@ const Popover = ({
   dataTest,
   ariaLabel,
   ariaLabelledby,
+  role = "dialog",
 }: Props) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const popoverId = useRandomId();
@@ -170,6 +171,7 @@ const Popover = ({
       placement={placement}
       ariaLabel={ariaLabel}
       ariaLabelledby={ariaLabelledby}
+      role={role}
     >
       {content}
     </PopoverContent>

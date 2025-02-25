@@ -39,6 +39,7 @@ const Popover = ({
 }: Props) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const popoverId = useRandomId();
+  const overlayId = useRandomId();
 
   const [shown, setShown, setShownWithTimeout, clearShownTimeout] = useStateWithTimeout<boolean>(
     false,
@@ -153,6 +154,7 @@ const Popover = ({
     <PopoverContent
       shown={shown}
       id={id || popoverId}
+      overlayId={overlayId}
       labelClose={labelClose}
       dataTest={dataTest}
       zIndex={zIndex}
@@ -180,16 +182,15 @@ const Popover = ({
   return (
     <>
       <div
-        className="relative inline-block"
+        className="relative inline-block focus:outline-offset-1"
         ref={ref}
         role="button"
-        // https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using
-        // @ts-expect-error expected
-        // eslint-disable-next-line react/no-unknown-property
-        popovertarget={id || popoverId}
         tabIndex={0}
         onClick={handleClick}
         onKeyDown={handleKeyDown<HTMLDivElement>(handleClick)}
+        aria-controls={overlayId}
+        aria-haspopup={role}
+        aria-expanded={shown}
       >
         {children}
       </div>

@@ -48,6 +48,7 @@ export interface Props extends Common.Globals {
   ariaLabel?: string;
   ariaLabelledby?: string;
   role?: "dialog" | "menu" | "grid" | "listbox" | "tree";
+  overlayId?: string;
 }
 
 const PopoverContentWrapper = ({
@@ -73,6 +74,7 @@ const PopoverContentWrapper = ({
   ariaLabelledby,
   ariaLabel,
   role,
+  overlayId,
 }: Props) => {
   const [actionsHeight, setActionsHeight] = React.useState<number | null>(null);
   const { isInsideModal } = React.useContext(ModalContext);
@@ -157,6 +159,7 @@ const PopoverContentWrapper = ({
     <>
       <div
         role="presentation"
+        id={overlayId}
         className={cx(
           "block",
           "fixed",

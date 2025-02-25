@@ -2,8 +2,9 @@ import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ALIGN_OPTIONS, WHITE_SPACE } from "./TableCell/consts";
-import { TYPE_OPTIONS, TYPE_AS } from "./consts";
+import { TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
+import type { Props } from "./TableCell/types";
 
 import Table, { TableFooter, TableHead, TableBody, TableRow, TableCell } from ".";
 
@@ -15,8 +16,7 @@ const tableRow = (
   </TableRow>
 );
 
-type TablePropsAndCustomArgs = React.ComponentProps<typeof Table> &
-  React.ComponentProps<typeof TableCell>;
+type TablePropsAndCustomArgs = React.ComponentProps<typeof Table> & Omit<Props, "as" | "scope">;
 
 const meta: Meta<TablePropsAndCustomArgs> = {
   title: "Table",
@@ -50,7 +50,7 @@ export const Playground: Story = {
         <TableHead>
           <TableRow>
             {Array.from({ length: 4 }, (_, idx) => (
-              <TableCell key={idx} {...args}>
+              <TableCell as="th" scope="col" key={idx} {...args}>
                 {children}
               </TableCell>
             ))}
@@ -93,8 +93,6 @@ export const Playground: Story = {
     verticalAlign: "middle",
     whiteSpace: WHITE_SPACE.NOWRAP,
     children: "Lorem ipsum dolor sit amet",
-    as: TYPE_AS.TD,
-    scope: "col",
   },
 
   argTypes: {
@@ -111,13 +109,6 @@ export const Playground: Story = {
     },
     // TableCell category
     children: { table: { category: "TableCell" } },
-    scope: {
-      options: ["col", "row", "colgroup", "rowgroup"],
-      control: {
-        type: "select",
-      },
-      table: { category: "TableCell" },
-    },
     align: {
       options: Object.values(ALIGN_OPTIONS),
       control: {
@@ -134,13 +125,6 @@ export const Playground: Story = {
     },
     whiteSpace: {
       options: Object.values(WHITE_SPACE),
-      control: {
-        type: "select",
-      },
-      table: { category: "TableCell" },
-    },
-    as: {
-      options: Object.values(TYPE_AS),
       control: {
         type: "select",
       },

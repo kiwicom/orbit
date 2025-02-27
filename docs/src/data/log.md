@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@20.0.0...@kiwicom/orbit-components@20.1.0) (2025-02-27)
+
+#### Bug Fixes
+
+* **Table:** allow scope prop only for table header ([6910869](https://github.com/kiwicom/orbit/commit/6910869b14531b39306e19cda5184168c4897058))
+* **Table:** make scrollable area focusable ([2cfdf1e](https://github.com/kiwicom/orbit/commit/2cfdf1e7b832197d5146c1cd75b44de7a1afe646))
+
+#### Features
+
+* **Itinerary:** ref can now be passed to ItinerarySegmentBanner ([f861483](https://github.com/kiwicom/orbit/commit/f861483235ceabba7ff57793549af9c6c30e13c3))
+* **Itinerary:** refactor component for improved accessibility ([77360b8](https://github.com/kiwicom/orbit/commit/77360b8761a394c351bfa9e7bf19aa70fce59685))
+* **Popover:** add role prop ([7d0f7c6](https://github.com/kiwicom/orbit/commit/7d0f7c67b160b316a3a038ae1d55e91cf8d3969f))
+* **Popover:** refactor component for improved accessibility ([879fe71](https://github.com/kiwicom/orbit/commit/879fe71cbfc818867757c1eebac5d1229ee1fac8))
+* **Slide:** stopClickPropagation bool prop is now accepted ([a29c362](https://github.com/kiwicom/orbit/commit/a29c3628bba1936757c2038cb88014236b3061a7))
+
 ## [20.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@19.4.0...@kiwicom/orbit-components@20.0.0) (2025-02-21)
 
 #### Bug Fixes

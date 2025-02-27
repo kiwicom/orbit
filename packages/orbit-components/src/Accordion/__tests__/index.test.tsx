@@ -107,17 +107,12 @@ describe("Accordion", () => {
         expect(expandHandler).not.toHaveBeenCalled();
       });
 
-      it("should maintain button click functionality with expandOnTileClick", async () => {
+      it("should maintain button click functionality and expandOnTileClick is false", async () => {
         const buttonTestId = `${sectionDataTest}-button`;
         const expandHandler = onExpand;
         render(
           <Accordion onExpand={expandHandler} expandedSection={undefined}>
-            <AccordionSection
-              id={sectionId}
-              header="Header with Both"
-              expandOnTileClick
-              dataTest={buttonTestId}
-            />
+            <AccordionSection id={sectionId} header="Header with Both" dataTest={buttonTestId} />
           </Accordion>,
         );
 

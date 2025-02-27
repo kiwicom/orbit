@@ -111,6 +111,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     list,
     autoComplete,
     ariaLabel,
+    ariaLabelledby,
     ariaAutocomplete,
     ariaActiveDescendant,
     ariaHasPopup,
@@ -276,6 +277,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           tabIndex={tabIndex !== undefined ? Number(tabIndex) : undefined}
           list={list}
           aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledby}
           aria-describedby={shown ? `${inputId}-feedback` : undefined}
           aria-invalid={error ? true : undefined}
           aria-autocomplete={ariaAutocomplete}

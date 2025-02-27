@@ -30,7 +30,6 @@ const meta: Meta<ChoiceGroupPropsAndCustomArgs> = {
     label: "What was the reason for your cancellation?",
     onlySelectionText: "Only",
     labelSize: LABEL_SIZES.NORMAL,
-    labelAs: LABEL_ELEMENTS.H4,
     error: "",
     filter: false,
     onChange: action("onChange"),
@@ -45,7 +44,7 @@ const meta: Meta<ChoiceGroupPropsAndCustomArgs> = {
       },
     },
     labelAs: {
-      options: Object.values(LABEL_ELEMENTS),
+      options: ["div", ...Object.values(LABEL_ELEMENTS)],
       control: {
         type: "select",
       },
@@ -59,9 +58,9 @@ type Story = StoryObj<ChoiceGroupPropsAndCustomArgs>;
 export const Default: Story = {
   render: args => (
     <ChoiceGroup {...args}>
-      <Radio label="Reason one" value="one" />
-      <Radio label="Reason two" value="two" />
-      <Radio label="Reason three" value="three" />
+      <Radio name="reason" label="Reason one" value="one" />
+      <Radio name="reason" label="Reason two" value="two" />
+      <Radio name="reason" label="Reason three" value="three" />
     </ChoiceGroup>
   ),
 
@@ -104,9 +103,9 @@ export const Filter: Story = {
 export const WithError: Story = {
   render: args => (
     <ChoiceGroup {...args}>
-      <Radio label="Reason one" value="one" />
-      <Radio label="Reason two" value="two" />
-      <Radio label="Reason three" value="three" />
+      <Radio name="reason" label="Reason one" value="one" />
+      <Radio name="reason" label="Reason two" value="two" />
+      <Radio name="reason" label="Reason three" value="three" />
     </ChoiceGroup>
   ),
 
@@ -153,7 +152,7 @@ export const RenderProp: Story = {
               }}
             >
               <Item>
-                <Radio label={`Option ${index}`} value={index} />
+                <Radio name="reason" label={`Option ${index}`} value={index} />
               </Item>
             </div>
           )}
@@ -176,9 +175,9 @@ export const RenderProp: Story = {
 export const Playground: Story = {
   render: args => (
     <ChoiceGroup {...args}>
-      <Radio label="Reason one" value="one" />
-      <Radio label="Reason two" value="two" />
-      <Radio label="Reason three" value="three" />
+      <Radio name="reason" label="Reason one" value="one" />
+      <Radio name="reason" label="Reason two" value="two" />
+      <Radio name="reason" label="Reason three" value="three" />
     </ChoiceGroup>
   ),
 
@@ -191,9 +190,9 @@ export const Rtl: Story = {
   render: args => (
     <RenderInRtl>
       <ChoiceGroup {...args}>
-        <Radio label="Reason one" value="one" />
-        <Radio label="Reason two" value="two" />
-        <Radio label="Reason three" value="three" />
+        <Radio name="reason" label="Reason one" value="one" />
+        <Radio name="reason" label="Reason two" value="two" />
+        <Radio name="reason" label="Reason three" value="three" />
       </ChoiceGroup>
     </RenderInRtl>
   ),

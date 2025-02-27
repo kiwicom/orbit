@@ -6,7 +6,7 @@ import cx from "clsx";
 import Heading from "../Heading";
 import type { Type } from "../Heading/types";
 import Stack from "../Stack";
-import { LABEL_SIZES, LABEL_ELEMENTS } from "./consts";
+import { LABEL_SIZES } from "./consts";
 import Feedback from "./components/Feedback";
 import FilterWrapper from "./components/FilterWrapper";
 import useRandomId from "../hooks/useRandomId";
@@ -45,7 +45,7 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
       id,
       label,
       labelSize = LABEL_SIZES.NORMAL,
-      labelAs = LABEL_ELEMENTS.H4,
+      labelAs = "div",
       error,
       children,
       filter,
@@ -82,14 +82,18 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
         )}
       >
         {label && (
-          <Heading id={groupID} type={getHeadingSize(labelSize)} as={labelAs} spaceAfter="medium">
+          <Heading
+            id={groupID}
+            type={getHeadingSize(labelSize)}
+            as={labelAs}
+            role={undefined}
+            spaceAfter="medium"
+          >
             {label}
           </Heading>
         )}
         {typeof children === "function" ? (
           children({
-            // for now a plain <div> is all we need, but we're reserving this space in the API
-            // in case we'll need something more in the future
             Container: "div",
             Item: ItemContainer({ filter, onOnlySelection, onlySelectionText, itemProps }),
             spacing: filter ? "0px" : theme.orbit.space200,

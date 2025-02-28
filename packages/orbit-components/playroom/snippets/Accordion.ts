@@ -7,6 +7,7 @@ const code = `
   <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
     <AccordionSection
       id="accordion-section-0"
+      actions={<Button onClick={() => setExpandedSection("accordion-section-0")}>Open</Button>}
       header={
         <Stack spacing="300">
           <Text type="primary">This is a header label</Text>
@@ -18,6 +19,7 @@ const code = `
     </AccordionSection>
     <AccordionSection
       id="accordion-section-1"
+      actions={<Button onClick={() => setExpandedSection("accordion-section-1")}>Open</Button>}
       header={
         <Stack spacing="300">
           <Text type="primary">This is a header label</Text>
@@ -29,6 +31,7 @@ const code = `
     </AccordionSection>
     <AccordionSection
       id="accordion-section-2"
+      actions={<Button onClick={() => setExpandedSection("accordion-section-2")}>Open</Button>}
       header={
         <Stack spacing="300">
           <Text type="primary">This is a header label</Text>

@@ -106,29 +106,6 @@ describe("Accordion", () => {
 
         expect(expandHandler).not.toHaveBeenCalled();
       });
-
-      it("should maintain button click functionality with expandOnTileClick", async () => {
-        const buttonTestId = `${sectionDataTest}-button`;
-        const expandHandler = onExpand;
-        render(
-          <Accordion onExpand={expandHandler} expandedSection={undefined}>
-            <AccordionSection
-              id={sectionId}
-              header="Header with Both"
-              expandOnTileClick
-              dataTest={buttonTestId}
-            />
-          </Accordion>,
-        );
-
-        const button = screen.getByRole("button", { name: "Open" });
-
-        await waitFor(() => {
-          fireEvent.click(button);
-        });
-
-        expect(expandHandler).toHaveBeenCalledWith(sectionId);
-      });
     });
   });
 });

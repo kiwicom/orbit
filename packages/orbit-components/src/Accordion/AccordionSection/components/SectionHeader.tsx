@@ -1,7 +1,6 @@
 import React from "react";
 import cx from "clsx";
 
-import Button from "../../../Button";
 import type * as Common from "../../../common/types";
 
 interface Props extends Common.Globals {
@@ -48,28 +47,12 @@ const AccordionSectionHeader = ({
     [onExpand],
   );
 
-  const handleButtonClick = React.useCallback(
-    (e: React.SyntheticEvent<HTMLButtonElement | HTMLAnchorElement>) => {
-      e.stopPropagation();
-      onExpand?.();
-    },
-    [onExpand],
-  );
-
   const content = (
     <>
       <div className="flex grow items-center" id={id}>
         {children}
       </div>
-      {!expanded && expandable && (
-        <div className="ms-600 flex">
-          {actions || (
-            <Button onClick={handleButtonClick} type="secondary">
-              Open
-            </Button>
-          )}
-        </div>
-      )}
+      {!expanded && expandable && actions && <div className="ms-600 flex">{actions}</div>}
     </>
   );
 

@@ -30,7 +30,14 @@ type Story = StoryObj<ToastPropsAndCustomArgs>;
 
 export const Default: Story = {
   render: ({ message }) => {
-    const toast = () => createToast(message, { icon: <Notification /> });
+    const toast = () =>
+      createToast(message, {
+        icon: <Notification />,
+        ariaProps: {
+          role: "alert",
+          "aria-live": "assertive",
+        },
+      });
 
     return (
       <>

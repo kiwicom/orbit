@@ -11,6 +11,9 @@ interface Props extends Common.Globals {
   readonly expandOnTileClick?: boolean;
   readonly onExpand?: Common.Callback;
   readonly actions?: React.ReactNode;
+  readonly ariaControls?: string;
+  readonly id?: string;
+  readonly ariaLabelledby?: string;
 }
 
 const AccordionSectionHeader = ({
@@ -21,6 +24,9 @@ const AccordionSectionHeader = ({
   onExpand,
   expandable,
   dataTest,
+  ariaControls,
+  id,
+  ariaLabelledby,
 }: Props) => {
   const isInteractive = expandOnTileClick && !expanded && expandable;
 
@@ -52,7 +58,9 @@ const AccordionSectionHeader = ({
 
   const content = (
     <>
-      <div className="flex grow items-center">{children}</div>
+      <div className="flex grow items-center" id={id}>
+        {children}
+      </div>
       {!expanded && expandable && (
         <div className="ms-600 flex">
           {actions || (
@@ -73,12 +81,14 @@ const AccordionSectionHeader = ({
         isInteractive && "hover:bg-cloud-light cursor-pointer border-0 bg-transparent text-left",
       )}
       data-test={dataTest && `${dataTest}Header`}
-      aria-expanded={expanded}
+      aria-labelledby={ariaLabelledby}
       {...(isInteractive && {
         role: "button",
         onClick: handleClick,
         onKeyDown: handleKeyDown,
         tabIndex: 0,
+        "aria-controls": ariaControls,
+        "aria-expanded": expanded || undefined,
       })}
     >
       {content}

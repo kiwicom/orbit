@@ -24,6 +24,7 @@ const AccordionSection = ({
   const { expanded, onExpand, loading } = useAccordion();
 
   const slideId = useRandomId();
+  const headerId = useRandomId();
   const isExpanded = expandable && expanded;
 
   const [{ height }, ref] = useBoundingRect<HTMLDivElement>({ height: isExpanded ? null : 0 });
@@ -43,12 +44,19 @@ const AccordionSection = ({
             expandable={expandable}
             expandOnTileClick={expandOnTileClick}
             dataTest={dataTest}
+            ariaControls={slideId}
+            id={headerId}
           >
             {header}
           </SectionHeader>
         )}
 
-        <Slide maxHeight={height} expanded={isExpanded} id={slideId} ariaLabelledBy={slideId}>
+        <Slide
+          maxHeight={height}
+          expanded={isExpanded}
+          id={slideId}
+          ariaLabelledBy={expandOnTileClick ? headerId : undefined}
+        >
           <div ref={ref}>
             {children && <SectionContent dataTest={dataTest}>{children}</SectionContent>}
             {footer && <SectionFooter dataTest={dataTest}>{footer}</SectionFooter>}

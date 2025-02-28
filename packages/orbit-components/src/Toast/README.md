@@ -6,15 +6,21 @@ The Toast component consists of `ToastRoot` and `createToast`/`createToastPromis
 import { ToastRoot, createToast } from "@kiwicom/orbit-components/lib/Toast";
 ```
 
-It's better to use ToastRoot once at the root of your application with your other context providers and you can use `createToast` from anywhere after. The `createToast` function accepts two arguments. The first is required and is the message to be displayed on the toast. The second is an object with an `icon` key that receives the icon to be rendered on the toast.
+It's better to use ToastRoot once at the root of your application with your other context providers and you can use `createToast` from anywhere after. The `createToast` function accepts two arguments. The first is required and is the message to be displayed on the toast. The second is an object. This object contains the `icon` key that receives the icon to be rendered on the toast as well as the `ariaProps` key that receives another object, with the `role` and `aria-live` keys and corresponding attributes as values.
 
 ```jsx
 import React from "react";
 import { ToastRoot, createToast } from "@kiwicom/orbit-components/lib/Toast";
 import Notification from "@kiwicom/orbit-components/lib/icons/Notification";
 
-const notify = () => createToast("Here is your toast", { icon: <Notification /> });
-
+const notify = () =>
+  createToast("Here is your toast", {
+    icon: <Notification />,
+    ariaProps: {
+      role: "alert",
+      "aria-live": "assertive",
+    },
+  });
 const App = () => {
   return (
     <div>

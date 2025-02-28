@@ -64,18 +64,7 @@ export const Default: Story = {
             </Stack>
           }
         >
-          <Text type="primary">This is a content text</Text>
-        </AccordionSection>
-        <AccordionSection
-          id="0X2"
-          header={
-            <Stack spacing="300">
-              <Text type="primary">This is a header label</Text>
-              <Text size="small">This is a header label</Text>
-            </Stack>
-          }
-        >
-          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is an expanded content</Text>
         </AccordionSection>
       </Accordion>
     );
@@ -98,7 +87,7 @@ export const AccordionWithDisabledSections: Story = {
             </Stack>
           }
         >
-          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is an expanded content</Text>
         </AccordionSection>
         <AccordionSection
           id="0X1"
@@ -109,30 +98,7 @@ export const AccordionWithDisabledSections: Story = {
             </Stack>
           }
         >
-          <Text type="primary">This is a content text</Text>
-        </AccordionSection>
-        <AccordionSection
-          id="0X2"
-          expandable={false}
-          header={
-            <Stack>
-              <Text type="primary">This is a header label</Text>
-              <Text size="small">This is a header label</Text>
-            </Stack>
-          }
-        >
-          <Text type="primary">This is a content text</Text>
-        </AccordionSection>
-        <AccordionSection
-          id="0X3"
-          header={
-            <Stack>
-              <Text type="primary">This is a header label</Text>
-              <Text size="small">This is a header label</Text>
-            </Stack>
-          }
-        >
-          <Text type="primary">This is a content text</Text>
+          <Text type="primary">This is an expanded content</Text>
         </AccordionSection>
       </Accordion>
     );
@@ -153,7 +119,7 @@ export const AccordionWithCustomActions: Story = {
               <Text size="small">This is a header label</Text>
             </Stack>
           }
-          actions={<Button onClick={action("Open onClick")}>Open</Button>}
+          actions={<Button onClick={() => setExpandedSection("0X0")}>Open</Button>}
         >
           <Text type="primary">This is a content text</Text>
         </AccordionSection>
@@ -165,24 +131,12 @@ export const AccordionWithCustomActions: Story = {
               <Text size="small">This is a header label</Text>
             </Stack>
           }
-          actions={<Button>Open</Button>}
-        >
-          <Text type="primary">This is a content text</Text>
-        </AccordionSection>
-        <AccordionSection
-          id="0X2"
-          header={
-            <Stack>
-              <Text type="primary">This is a header label</Text>
-              <Text size="small">This is a header label</Text>
-            </Stack>
-          }
           actions={
             <Stack direction="row">
               <Button onClick={action("Edit onClick")} type="secondary">
                 Edit
               </Button>
-              <Button onClick={action("Close onClick")}>Custom close</Button>
+              <Button onClick={() => setExpandedSection("0X1")}>Open</Button>
             </Stack>
           }
         >
@@ -199,17 +153,6 @@ export const AccordionWithStickyFooter: Story = {
 
     return (
       <Accordion expandedSection={expandedSection} onExpand={id => setExpandedSection(String(id))}>
-        <AccordionSection
-          id="0X0"
-          header={
-            <Stack>
-              <Text type="primary">This is a header label</Text>
-              <Text size="small">This is a header label</Text>
-            </Stack>
-          }
-        >
-          <Text type="primary">This is a content text</Text>
-        </AccordionSection>
         <AccordionSection
           id="0X1"
           header={
@@ -271,25 +214,6 @@ export const MobileFirstInteraction: Story = {
 
     return (
       <Stack>
-        <Text>Traditional button-based expansion:</Text>
-        <Accordion
-          expandedSection={expandedSection}
-          onExpand={id => setExpandedSection(String(id))}
-        >
-          <AccordionSection
-            id="traditional"
-            header={
-              <Stack spacing="300">
-                <Text type="primary">Click the button to expand</Text>
-                <Text size="small">Uses traditional button-based expansion</Text>
-              </Stack>
-            }
-          >
-            <Text type="primary">This section uses the traditional button-based expansion.</Text>
-          </AccordionSection>
-        </Accordion>
-
-        <Text spaceAfter="large">Mobile-first tile click expansion:</Text>
         <Accordion
           expandedSection={expandedSection}
           onExpand={id => setExpandedSection(String(id))}

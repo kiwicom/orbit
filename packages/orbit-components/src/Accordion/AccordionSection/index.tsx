@@ -43,12 +43,13 @@ const AccordionSection = ({
             expandable={expandable}
             expandOnTileClick={expandOnTileClick}
             dataTest={dataTest}
+            ariaControls={slideId}
           >
             {header}
           </SectionHeader>
         )}
 
-        <Slide maxHeight={height} expanded={isExpanded} id={slideId} ariaLabelledBy={slideId}>
+        <Slide maxHeight={height} expanded={isExpanded} id={slideId}>
           <div ref={ref}>
             {children && <SectionContent dataTest={dataTest}>{children}</SectionContent>}
             {footer && <SectionFooter dataTest={dataTest}>{footer}</SectionFooter>}

@@ -54,9 +54,14 @@ describe("ListChoice", () => {
     expect(onClick).toHaveBeenCalled();
   });
 
-  it("should have role button when not selectable", () => {
+  it("should have role button when not selectable and without action", () => {
     render(<ListChoice title={title} onClick={onClick} />);
     expect(screen.getByRole("button")).toBeInTheDocument();
+  });
+
+  it("should NOT have role button when it has action", () => {
+    render(<ListChoice dataTest={dataTest} title={title} action="some action" />);
+    expect(screen.getByTestId(dataTest)).not.toHaveAttribute("role");
   });
 
   it("should have role checkbox when selectable", () => {
@@ -70,7 +75,7 @@ describe("ListChoice", () => {
     expect(screen.getByTestId(dataTest)).toHaveFocus();
   });
 
-  it("should not have focus", async () => {
+  it("should not have focus when disabled", async () => {
     render(<ListChoice title={title} disabled selectable dataTest={dataTest} />);
     await user.tab();
     expect(screen.getByTestId(dataTest)).not.toHaveFocus();

@@ -4,7 +4,7 @@ import * as React from "react";
 import cx from "clsx";
 
 import Heading from "../Heading";
-import Checkbox from "../Checkbox";
+import { FakeCheckbox } from "../Checkbox";
 import Text from "../Text";
 import handleKeyDown from "../utils/handleKeyDown";
 import type { Props } from "./types";
@@ -22,15 +22,11 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
       role,
       onClick,
       tabIndex = 0,
-      selected,
+      selected = false,
       disabled,
     },
     ref,
   ) => {
-    const conditionalProps = {
-      ...(selectable ? { "aria-checked": selected } : null),
-    };
-
     return (
       <div
         className={cx(
@@ -50,9 +46,8 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
         tabIndex={tabIndex || disabled ? -1 : 0}
         data-title={title}
         aria-disabled={disabled}
-        aria-selected={selected}
-        role={role || (selectable ? "checkbox" : "button")}
-        {...conditionalProps}
+        aria-checked={selectable ? selected : undefined}
+        role={role || (selectable && "checkbox") || (!action && "button") || undefined}
       >
         {icon && (
           <div
@@ -73,7 +68,7 @@ const ListChoice = React.forwardRef<HTMLDivElement, Props>(
             </Text>
           )}
         </div>
-        {selectable && <Checkbox checked={selected} disabled={disabled} tabIndex={-1} />}
+        {selectable && <FakeCheckbox checked={selected} disabled={disabled} />}
         {!selectable && action}
       </div>
     );

@@ -35,7 +35,7 @@ export const Default: Story = {
   parameters: {
     info: "Minimal setup with title, uncontrolled, not selectable. Check Orbit.Kiwi for more detailed design guidelines.",
     controls: {
-      exclude: ["tabIndex"],
+      exclude: ["tabIndex", "selected"],
     },
   },
 };
@@ -50,7 +50,7 @@ export const MultipleChoices: Story = {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           Array(...Array(3)).map((_, idx) => (
             // eslint-disable-next-line react/no-array-index-key
-            <ListChoice key={idx} {...args} icon={<Icon />} />
+            <ListChoice key={idx} {...args} icon={<Icon ariaHidden />} />
           ))
         }
       </>
@@ -64,7 +64,6 @@ export const MultipleChoices: Story = {
     selected: false,
     disabled: false,
     tabIndex: 0,
-    role: "list",
     onClick: action("onClick"),
   },
 
@@ -92,11 +91,11 @@ export const WithAction: Story = {
     return (
       <ListChoice
         {...args}
-        icon={<Icon />}
+        icon={<Icon ariaHidden />}
         action={
           <Button
             onClick={action("onClick")}
-            iconLeft={<IconButton />}
+            iconLeft={<IconButton ariaLabel="Add" />}
             size="small"
             type="primarySubtle"
           />
@@ -131,7 +130,7 @@ export const Playground: Story = {
 
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <ListChoice {...args} onClick={() => onClick()} icon={<Icon />} />;
+    return <ListChoice {...args} onClick={() => onClick()} icon={<Icon ariaHidden />} />;
   },
 
   args: {
@@ -157,9 +156,9 @@ export const Rtl: Story = {
     return (
       <RenderInRtl>
         <>
-          <ListChoice {...args} icon={<Icon />} />
-          <ListChoice {...args} icon={<Icon />} selected disabled />
-          <ListChoice {...args} icon={<Icon />} />
+          <ListChoice {...args} icon={<Icon ariaHidden />} />
+          <ListChoice {...args} icon={<Icon ariaHidden />} selected disabled />
+          <ListChoice {...args} icon={<Icon ariaHidden />} />
         </>
       </RenderInRtl>
     );

@@ -41,6 +41,7 @@ interface ToastProps {
   readonly placement: Placement;
   readonly offset?: number;
   readonly ariaLive: "polite" | "assertive" | "off";
+  readonly role: "status" | "alert";
 }
 
 export interface Options<T> {
@@ -49,14 +50,17 @@ export interface Options<T> {
   readonly error: ValueOrFunction<Renderable, any>;
 }
 
-export type IconType = Pick<DefaultToastOptions, "icon">;
+export type ToastOptions = Pick<DefaultToastOptions, "icon" | "ariaProps">;
 
-export type createToast = (message: ValueOrFunction<Renderable, Toast>, options?: IconType) => void;
+export type createToast = (
+  message: ValueOrFunction<Renderable, Toast>,
+  options?: ToastOptions,
+) => void;
 
 export type createToastPromise = <T>(
   promise: Promise<T>,
   messages: Options<T>,
-  options?: IconType & Partial<Record<ToastType, IconType>>,
+  options?: ToastOptions & Partial<Record<ToastType, ToastOptions>>,
 ) => Promise<T>;
 
 export { ToastProps as Toast };

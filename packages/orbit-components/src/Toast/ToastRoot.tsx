@@ -61,6 +61,7 @@ const ToastRoot = ({
             placement={placement}
             onDismiss={notify.dismiss}
             ariaLive={ariaProps["aria-live"]}
+            role={ariaProps.role}
           >
             {message as React.ReactNode}
           </ToastMessage>

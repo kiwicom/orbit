@@ -27,6 +27,7 @@ const ToastMessage = ({
   children,
   offset,
   ariaLive,
+  role,
 }: Props) => {
   const theme = useTheme();
   const ref = React.useRef(null);
@@ -41,7 +42,7 @@ const ToastMessage = ({
   return (
     <div
       aria-live={ariaLive}
-      role="status"
+      role={role}
       className={cx(
         "z-onTop duration-normal absolute inset-x-0 flex cursor-grab transition-all ease-in-out will-change-transform",
         "translate-x-[var(--toast-message-offset-x)] translate-y-[var(--toast-message-offset-y)] opacity-[var(--toast-message-opacity)]",

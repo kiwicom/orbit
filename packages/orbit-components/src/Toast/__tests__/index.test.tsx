@@ -35,6 +35,7 @@ describe("Toast", () => {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         ariaLive="polite"
+        role="status"
         visible
         onDismiss={onDismiss}
         placement="bottom-center"

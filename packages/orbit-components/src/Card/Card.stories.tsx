@@ -27,7 +27,7 @@ const meta: Meta<CardPropsAndCustomArgs> = {
   args: {
     description: "This is description of the card",
     title: "Card with title",
-    titleAs: ELEMENT_OPTIONS.H2,
+    titleAs: ELEMENT_OPTIONS.DIV,
     sectionTitle: "Section Title",
     sectionDescription: "Section Description",
     expanded: false,

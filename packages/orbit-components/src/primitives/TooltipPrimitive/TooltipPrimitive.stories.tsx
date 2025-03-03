@@ -6,7 +6,6 @@ import Airplane from "../../icons/Airplane";
 import Stack from "../../Stack";
 import Alert from "../../Alert";
 import Text from "../../Text";
-import TextLink from "../../TextLink";
 import List from "../../List";
 import ListItem from "../../List/ListItem";
 import Heading from "../../Heading";
@@ -101,7 +100,7 @@ export const TooltipPrimitiveOnBlockElements: Story = {
       </TooltipPrimitive>
       <div className="mt-600">
         <TooltipPrimitive {...args}>
-          <Button fullWidth disabled>
+          <Button fullWidth disabled asComponent="div">
             Full width & Disabled
           </Button>
         </TooltipPrimitive>
@@ -140,8 +139,7 @@ export const WithImageInside: Story = {
               A common variant, especially in older software, is displaying a description.
             </ListItem>
             <ListItem>
-              A common variant, especially in older software, is displaying a description.{" "}
-              <TextLink href="#">More info.</TextLink>
+              A common variant, especially in older software, is displaying a description.
             </ListItem>
           </List>
         </Stack>
@@ -195,15 +193,7 @@ export const Playground: Story = {
         eget mollis sed, tempor sed magna. Cras elementum. Aliquam erat volutpat. Excepteur sint
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum. Sed ac dolor sit amet purus malesuada congue. Sed vel lectus.{" "}
-        <TooltipPrimitive
-          content={
-            <div>
-              <div>{content}</div>
-              <TextLink>Clickable element.</TextLink>
-            </div>
-          }
-          {...args}
-        >
+        <TooltipPrimitive content={<div>{content}</div>} {...args}>
           <Text>{children}</Text>
         </TooltipPrimitive>
       </Stack>
@@ -249,15 +239,7 @@ export const Rtl: Story = {
           eget mollis sed, tempor sed magna. Cras elementum. Aliquam erat volutpat. Excepteur sint
           occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
           laborum. Sed ac dolor sit amet purus malesuada congue. Sed vel lectus.{" "}
-          <TooltipPrimitive
-            content={
-              <div>
-                <div>{content}</div>
-                <TextLink>Clickable element.</TextLink>
-              </div>
-            }
-            {...args}
-          >
+          <TooltipPrimitive content={<div>{content}</div>} {...args}>
             <Text>Aliquam erat volutpat.</Text>
           </TooltipPrimitive>
         </Stack>

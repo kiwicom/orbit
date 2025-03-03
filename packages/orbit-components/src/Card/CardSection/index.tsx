@@ -28,6 +28,7 @@ export default function CardSection({
   const [opened, setOpened] = React.useState(initialExpanded);
 
   const isControlled = expanded != null;
+  const isRoleButton = onClick && !expandable;
 
   React.useEffect(() => {
     if (isControlled) {
@@ -36,6 +37,10 @@ export default function CardSection({
   }, [isControlled, expanded]);
 
   function handleClick() {
+    if (onClick) {
+      onClick();
+    }
+
     if (!isControlled) {
       setOpened(state => !state);
     }
@@ -54,26 +59,29 @@ export default function CardSection({
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className={cx(
+        "orbit-card-section",
         "duration-fast lm:border-x border-b transition-all ease-in-out",
         opened && "my-200 rounded-100 shadow-level2 [&+*]:border-t",
         onClick != null && "hover:bg-white-normal-hover cursor-pointer",
       )}
       data-test={dataTest}
-      role={onClick == null ? undefined : "button"}
+      role={isRoleButton ? "button" : undefined}
       // See comment above
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={onClick == null ? undefined : 0}
-      onClick={onClick}
+      tabIndex={isRoleButton ? 0 : undefined}
+      onClick={isRoleButton ? onClick : undefined}
       // Not needed once we can use <button> or <a> like we should
-      onKeyDown={onClick == null ? undefined : handleKeyDown(onClick)}
+      onKeyDown={isRoleButton ? handleKeyDown(onClick) : undefined}
     >
       {(title != null || header != null) && expandable && (
-        <button
-          type="button"
+        <div
+          role="button"
           className="p-400 lm:p-600 hover:bg-white-normal-hover w-full"
           aria-expanded={opened}
           aria-controls={slideID}
           onClick={handleClick}
+          onKeyDown={handleKeyDown(handleClick)}
+          tabIndex={0}
         >
           <Header
             title={title}
@@ -85,7 +93,7 @@ export default function CardSection({
             actions={actions}
             isSection
           />
-        </button>
+        </div>
       )}
 
       {(title != null || header != null) && !expandable && (
@@ -104,7 +112,7 @@ export default function CardSection({
       )}
 
       {children && expandable && (
-        <Expandable expanded={opened} slideID={slideID} labelID={slideID}>
+        <Expandable expanded={opened} slideID={slideID}>
           <div className="font-base text-normal text-primary-foreground px-400 lm:px-600 w-full leading-normal">
             <div className="py-400 lm:py-600 border-elevation-flat-border-color border-t">
               {children}

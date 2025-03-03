@@ -7,14 +7,13 @@ interface Props {
   expanded?: boolean;
   children?: React.ReactNode;
   slideID: string;
-  labelID: string;
 }
 
-export default function Expandable({ expanded, children, slideID, labelID }: Props) {
+export default function Expandable({ expanded, children, slideID }: Props) {
   const [{ height }, ref] = useBoundingRect<HTMLDivElement>({ height: expanded ? null : 0 });
 
   return (
-    <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
+    <Slide maxHeight={height} expanded={expanded} id={slideID}>
       <div ref={ref}>{children}</div>
     </Slide>
   );

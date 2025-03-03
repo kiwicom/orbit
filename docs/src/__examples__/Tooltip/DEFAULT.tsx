@@ -5,7 +5,7 @@ export default {
   Example: () => (
     <OrbitProvider theme={defaultTheme} useId={React.useId}>
       <Tooltip content={<Text>Select a flight before continuing.</Text>}>
-        <Button>Book</Button>
+        <Button asComponent="div">Book</Button>
       </Tooltip>
     </OrbitProvider>
   ),

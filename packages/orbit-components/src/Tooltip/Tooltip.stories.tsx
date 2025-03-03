@@ -8,7 +8,6 @@ import { SIZE_OPTIONS } from "./consts";
 import Stack from "../Stack";
 import Alert from "../Alert";
 import Text from "../Text";
-import TextLink from "../TextLink";
 import List from "../List";
 import ListItem from "../List/ListItem";
 import Heading from "../Heading";
@@ -80,7 +79,7 @@ export const TooltipOnInlineElement: Story = {
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam lectus justo, vulputate
         eget mollis sed, tempor sed magna.{" "}
         <Tooltip {...args}>
-          <TextLink>Cras elementum.</TextLink>
+          <Text>Cras elementum.</Text>
         </Tooltip>{" "}
         Aliquam erat volutpat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
         officia deserunt mollit anim id est laborum. Sed ac dolor sit amet purus malesuada congue.
@@ -103,7 +102,7 @@ export const TooltipOnBlockElements: Story = {
       </Tooltip>
       <div className="mt-600">
         <Tooltip {...args}>
-          <Button fullWidth disabled>
+          <Button fullWidth disabled asComponent="div">
             Full width & Disabled
           </Button>
         </Tooltip>
@@ -142,8 +141,7 @@ export const WithImageInside: Story = {
               A common variant, especially in older software, is displaying a description.
             </ListItem>
             <ListItem>
-              A common variant, especially in older software, is displaying a description.{" "}
-              <TextLink href="#">More info.</TextLink>
+              A common variant, especially in older software, is displaying a description.
             </ListItem>
           </List>
         </Stack>
@@ -197,15 +195,7 @@ export const Playground: Story = {
         eget mollis sed, tempor sed magna. Cras elementum. Aliquam erat volutpat. Excepteur sint
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum. Sed ac dolor sit amet purus malesuada congue. Sed vel lectus.{" "}
-        <Tooltip
-          content={
-            <div>
-              <div>{content}</div>
-              <TextLink>Clickable element.</TextLink>
-            </div>
-          }
-          {...args}
-        >
+        <Tooltip content={<div>{content}</div>} {...args}>
           <Text>{children}</Text>
         </Tooltip>
       </Stack>
@@ -249,15 +239,7 @@ export const Rtl: Story = {
           eget mollis sed, tempor sed magna. Cras elementum. Aliquam erat volutpat. Excepteur sint
           occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
           laborum. Sed ac dolor sit amet purus malesuada congue. Sed vel lectus.{" "}
-          <Tooltip
-            content={
-              <div>
-                <div>{content}</div>
-                <TextLink>Clickable element.</TextLink>
-              </div>
-            }
-            {...args}
-          >
+          <Tooltip content={<div>{content}</div>} {...args}>
             <Text>Aliquam erat volutpat.</Text>
           </Tooltip>
         </Stack>

@@ -29,7 +29,7 @@ Table below contains all types of the props available in the Card component.
 | loading     | `boolean`                    |         | If `true`, a loading animation will be rendered.                                                                        |
 | onClose     | `() => void \| Promise`      |         | Callback that is triggered when Card is closing.                                                                        |
 | title       | `React.Node`                 |         | The title of the Card.                                                                                                  |
-| titleAs     | [`enum`](#enum)              | `"h2"`  | The element used for the root node of the title of Card. It **does not** impact the visual style of the title.          |
+| titleAs     | [`enum`](#enum)              | `"div"` | The element used for the root node of the title of Card. It **does not** impact the visual style of the title.          |
 | margin      | `string \| number \| Object` |         | Utility prop to set margin.                                                                                             |
 | labelClose  | `string`                     | `Close` | Property for passing translation string to close Button.                                                                |
 

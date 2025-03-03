@@ -47,3 +47,5 @@ The children element is an icon component. To achieve the accessibility of the T
 ```
 
 Once the icon is focused by the screen reader, it will announce: "More information", followed by announcing the content of the tooltip: "Lorem ipsum dolor sit amet.".
+
+The `Tooltip` component renders a wrapping `span` with the `role="button"` attribute by default. Ensure that the trigger component is set as a non-interactive component (for example, using the `asComponent` prop) to avoid the accessibility violation of nesting interactive controls (`Interactive controls must not be nested`).

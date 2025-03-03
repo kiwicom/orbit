@@ -76,7 +76,7 @@ export const Default: Story = {
   },
 };
 
-export const CardWithDescription: Story = {
+export const CardClosable: Story = {
   render: args => <Card {...args} onClose={action("onClose")} />,
 
   args: {
@@ -146,11 +146,10 @@ export const CardWithSections: Story = {
 };
 
 export const CardWithExpandableSections: Story = {
-  render: ({ sectionTitle, sectionDescription, expanded, initialExpanded, ...args }) => (
+  render: ({ sectionTitle, sectionDescription, initialExpanded, ...args }) => (
     <Card {...args} onClose={action("onClose")}>
       <CardSection
         expandable
-        expanded={expanded}
         initialExpanded={initialExpanded}
         title={sectionTitle}
         description={sectionDescription}
@@ -159,7 +158,6 @@ export const CardWithExpandableSections: Story = {
       </CardSection>
       <CardSection
         expandable
-        expanded={expanded}
         initialExpanded={initialExpanded}
         title={sectionTitle}
         description={sectionDescription}
@@ -168,7 +166,6 @@ export const CardWithExpandableSections: Story = {
       </CardSection>
       <CardSection
         expandable
-        expanded={expanded}
         initialExpanded={initialExpanded}
         title={sectionTitle}
         description={sectionDescription}
@@ -180,7 +177,7 @@ export const CardWithExpandableSections: Story = {
 
   parameters: {
     controls: {
-      exclude: ["labelClose"],
+      exclude: ["labelClose", "expanded"],
     },
   },
 };
@@ -262,11 +259,6 @@ export const CardWithDefaultExpanded: Story = {
         expandable
         initialExpanded={initialExpanded}
         onExpand={action("onExpand")}
-        actions={
-          <ButtonLink compact type="secondary" size="small">
-            Close
-          </ButtonLink>
-        }
         onClose={action("onClose")}
         header={
           <Stack inline justify="end">
@@ -303,16 +295,7 @@ export const CardWithMixedSections: Story = {
         </ButtonLink>
       }
     >
-      <CardSection
-        expandable
-        title={sectionTitle}
-        actions={
-          <ButtonLink compact size="small" type="secondary">
-            Button
-          </ButtonLink>
-        }
-        description={sectionDescription}
-      >
+      <CardSection expandable title={sectionTitle} description={sectionDescription}>
         Section Content
       </CardSection>
       <CardSection expandable title={sectionTitle} description={sectionDescription}>
@@ -363,16 +346,7 @@ export const Rtl: Story = {
           Text in content
         </CardSection>
 
-        <CardSection
-          expandable
-          title="Content with Heading and text"
-          initialExpanded
-          actions={
-            <ButtonLink compact size="small">
-              Action
-            </ButtonLink>
-          }
-        >
+        <CardSection expandable title="Content with Heading and text" initialExpanded>
           <Text>Text in content</Text>
         </CardSection>
       </Card>

@@ -42,6 +42,7 @@ const meta: Meta<typeof Drawer> = {
     onClose: action("onClose"),
     labelHide: "Hide",
     lockScrolling: true,
+    ariaLabel: "",
   },
 
   argTypes: {

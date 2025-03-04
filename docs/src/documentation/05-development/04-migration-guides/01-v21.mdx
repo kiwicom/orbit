@@ -36,6 +36,14 @@ Feel free to pass an action component in the `actions` prop. Alternatively, by s
 </Accordion>
 ```
 
+### Title prop in Drawer component
+
+The `title` prop in the `Drawer` component now only accepts a string.
+
+It used to accept a React node for translations, but this could lead to some unexpected or wrong HTML structure.
+
+This change also allows for the `aria-label` attribute to have the same value as the `title` prop, if `ariaLabel` is not provided.
+
 ### Required prop in Alert component when is `closable`
 
 The `Alert` component now requires the prop `labelClose` when `closable` is `true`.

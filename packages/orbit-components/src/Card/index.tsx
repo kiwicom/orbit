@@ -13,7 +13,7 @@ export { default as CardSection } from "./CardSection";
 
 export default function Card({
   title,
-  titleAs = ELEMENT_OPTIONS.H2,
+  titleAs = ELEMENT_OPTIONS.DIV,
   actions,
   description,
   children,

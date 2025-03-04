@@ -32,6 +32,7 @@ Table below contains all types of the props available in the Drawer component.
 | lockScrolling | `boolean`               | `true`    | Whether to prevent scrolling of the rest of the page while Drawer is open. This is on by default to provide a better user experience. |
 | fixedHeader   | `boolean`               |           | If `true` the DrawerHeader will be fixed to the top.                                                                                  |
 | labelHide     | `string`                | `Hide`    | Label for the close button.                                                                                                           |
+| ariaLabel     | `string`                |           | Optional prop for `aria-label`.                                                                                                       |
 
 ### enum
 

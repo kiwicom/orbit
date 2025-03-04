@@ -37,6 +37,7 @@ const Drawer = ({
   suppressed,
   title,
   actions,
+  ariaLabel,
 }: Props) => {
   const overlayRef = React.useRef(null);
   const closeButtonRef = React.useRef<HTMLButtonElement | null>(null);
@@ -127,7 +128,7 @@ const Drawer = ({
         )}
         style={vars as React.CSSProperties}
         ref={scrollableRef}
-        role="navigation"
+        aria-label={ariaLabel || title}
       >
         {(title || actions || onClose) && (
           <div

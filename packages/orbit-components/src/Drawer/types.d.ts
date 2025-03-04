@@ -20,4 +20,5 @@ export interface Props extends Common.Globals {
   readonly suppressed?: boolean;
   readonly title?: string;
   readonly width?: string;
+  readonly ariaLabel?: string;
 }

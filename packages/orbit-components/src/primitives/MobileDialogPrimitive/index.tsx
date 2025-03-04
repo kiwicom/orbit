@@ -71,7 +71,7 @@ const MobileDialog = ({
     <>
       <TooltipWrapper
         onClick={handleInMobile}
-        aria-describedby={enabled ? mobileDialogID : undefined}
+        aria-describedby={shown ? mobileDialogID : undefined}
         tabIndex={enabled ? Number(tabIndex) : undefined}
         enabled={enabled}
         removeUnderlinedText={removeUnderlinedText}

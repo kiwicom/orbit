@@ -15,8 +15,8 @@ const TooltipWrapper = React.forwardRef<
     <span
       className={cx(
         "orbit-tooltip-wrapper",
-        "max-w-full cursor-auto",
-        "focus:outline-none active:outline-none [&_:disabled]:pointer-events-none",
+        "h-fit max-w-full cursor-auto",
+        "focus:outline-offset-1 active:outline-offset-1 [&_:disabled]:pointer-events-none",
         block ? "flex" : "inline-flex",
         enabled &&
           !removeUnderlinedText &&

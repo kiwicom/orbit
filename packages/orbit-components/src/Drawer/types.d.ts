@@ -18,6 +18,6 @@ export interface Props extends Common.Globals {
   readonly shown: boolean;
   readonly labelHide?: string;
   readonly suppressed?: boolean;
-  readonly title?: Common.Translation;
+  readonly title?: string;
   readonly width?: string;
 }

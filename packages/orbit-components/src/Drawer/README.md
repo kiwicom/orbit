@@ -27,7 +27,7 @@ Table below contains all types of the props available in the Drawer component.
 | position      | [`enum`](#enum)         | `"right"` | The position on which side the Drawer should appear.                                                                                  |
 | shown         | `boolean`               | `"true"`  | If `true` the Drawer will be visible, otherwise visually hidden, but it will stay in the DOM.                                         |
 | suppressed    | `boolean`               | `false`   | If `true`, the Drawer will have cloudy background.                                                                                    |
-| title         | `Translation`           |           | Title of the Drawer that will be rendered in the Drawer's header.                                                                     |
+| title         | `string`                |           | Title of the Drawer that will be rendered in the Drawer's header. If `ariaLabel` is undefined, this will be used as `aria-label`.     |
 | width         | `string`                | `"320px"` | The width of the Drawer.                                                                                                              |
 | lockScrolling | `boolean`               | `true`    | Whether to prevent scrolling of the rest of the page while Drawer is open. This is on by default to provide a better user experience. |
 | fixedHeader   | `boolean`               |           | If `true` the DrawerHeader will be fixed to the top.                                                                                  |

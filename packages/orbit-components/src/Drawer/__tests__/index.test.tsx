@@ -54,4 +54,14 @@ describe("Drawer", () => {
     await user.click(screen.getByTestId("container"));
     expect(onClose).toHaveBeenCalled();
   });
+  it("should trigger close when pressed escape key", async () => {
+    const onClose = jest.fn();
+    render(
+      <Drawer onClose={onClose} shown>
+        <div data-test="content" />
+      </Drawer>,
+    );
+    await user.keyboard("{Escape}");
+    expect(onClose).toHaveBeenCalled();
+  });
 });

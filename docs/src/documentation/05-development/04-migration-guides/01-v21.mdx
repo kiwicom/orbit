@@ -12,6 +12,30 @@ With this guide, we aim to walk through all the breaking changes and how they ca
 
 ## Breaking changes
 
+### Removal of default Open button in Accordion component
+
+The default `Open` button, which was rendered in the `AccordionSection` component when no `actions` were provided, has been removed.
+Feel free to pass an action component in the `actions` prop. Alternatively, by setting `expandOnTileClick` prop to `true` the whole element expands on click.
+
+**Before:**
+
+```jsx
+<Accordion>
+  <AccordionSection header={<Text>Accordion header</Text>}>
+</Accordion>
+```
+
+**After:**
+
+```jsx
+<Accordion>
+  <AccordionSection
+    header={<Text>Accordion header</Text>}
+    actions={<Button onClick={() => {}}>Open</Button>}
+  >
+</Accordion>
+```
+
 ### Required prop in Alert component when is `closable`
 
 The `Alert` component now requires the prop `labelClose` when `closable` is `true`.

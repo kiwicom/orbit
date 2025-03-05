@@ -84,6 +84,8 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
           expanded={expanded}
           hasCategories={hasCategories}
           onClick={() => setExpanded(prev => !prev)}
+          expandButtonLabel="Expand"
+          collapseButtonLabel="Collapse"
         >
           {navigationItems}
         </Collapse>

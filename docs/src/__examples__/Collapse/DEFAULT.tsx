@@ -4,7 +4,11 @@ import { Collapse, OrbitProvider, Text, TextLink, defaultTheme } from "@kiwicom/
 export default {
   Example: () => (
     <OrbitProvider theme={defaultTheme} useId={React.useId}>
-      <Collapse label="Principle for collapses">
+      <Collapse
+        label="Principle for collapses"
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
+      >
         <Text>
           Collapse components help with{" "}
           <TextLink external href="https://orbit.kiwi/guides/progressive-disclosure/">

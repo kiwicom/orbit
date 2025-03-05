@@ -62,14 +62,18 @@ const Drawer = ({
 
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && onClose) {
+      if (shown && event.key === "Escape" && onClose) {
         onClose();
       }
     };
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+  }, [onClose, shown]);
+
+  const handleClickOutside = React.useCallback(() => {
+    if (shown && onClose) onClose();
+  }, [shown, onClose]);
 
   const vars = {
     "--lm-drawer-width": width,
@@ -80,7 +84,7 @@ const Drawer = ({
   const onlyIcon = !title && !actions;
   const bordered = !!(title || actions);
 
-  useClickOutside(drawerRef, () => onClose?.());
+  useClickOutside(drawerRef, handleClickOutside);
 
   return (
     <>

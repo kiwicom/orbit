@@ -43,26 +43,48 @@ export default function transformer(file, api) {
     .filter(path => {
       const { openingElement } = path.node;
       // Combine conditions for more efficient filtering
-      return openingElement.name.type === "JSXIdentifier" && openingElement.name.name === "Alert";
+      return openingElement.name.type === "JSXIdentifier";
     })
     .forEach(path => {
-      const { attributes } = path.node.openingElement;
+      const { attributes, name } = path.node.openingElement;
 
       if (!Array.isArray(attributes)) {
         // Handle malformed JSX
         return;
       }
 
-      const hasClosable = attributes.some(isClosableAttribute);
-      const hasLabelClose = hasAttribute(attributes, "labelClose");
+      if (name.name === "Alert") {
+        const hasClosable = attributes.some(isClosableAttribute);
+        const hasLabelClose = hasAttribute(attributes, "labelClose");
 
-      if (hasClosable && !hasLabelClose) {
-        attributes.push(
-          j.jsxAttribute(
-            j.jsxIdentifier("labelClose"),
-            createIntlMessageContainer(j, "orbit.button_close", "Close"),
-          ),
-        );
+        if (hasClosable && !hasLabelClose) {
+          attributes.push(
+            j.jsxAttribute(
+              j.jsxIdentifier("labelClose"),
+              createIntlMessageContainer(j, "orbit.button_close", "Close"),
+            ),
+          );
+        }
+      } else if (name.name === "Collapse") {
+        const hasExpandButtonLabel = hasAttribute(attributes, "expandButtonLabel");
+        if (!hasExpandButtonLabel) {
+          attributes.push(
+            j.jsxAttribute(
+              j.jsxIdentifier("expandButtonLabel"),
+              createIntlMessageContainer(j, "orbit.collapse_expand", "Expand"),
+            ),
+          );
+        }
+
+        const hasCollapseButtonLabel = hasAttribute(attributes, "collapseButtonLabel");
+        if (!hasCollapseButtonLabel) {
+          attributes.push(
+            j.jsxAttribute(
+              j.jsxIdentifier("collapseButtonLabel"),
+              createIntlMessageContainer(j, "orbit.collapse_collapse", "Collapse"),
+            ),
+          );
+        }
       }
     });
 

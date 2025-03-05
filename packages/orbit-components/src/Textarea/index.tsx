@@ -37,6 +37,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     readOnly,
     required,
     dataAttrs,
+    ariaLabel,
+    ariaLabelledby,
   }: Props = props;
 
   const forID = useRandomId();
@@ -121,6 +123,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
           ref={ref}
           aria-describedby={shown ? `${inputId}-feedback` : undefined}
           aria-invalid={error ? true : undefined}
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledby}
           {...dataAttrs}
         />
       </label>

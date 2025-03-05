@@ -18,7 +18,7 @@ const calloutBanner = `
 
 const drawer = `
 <Drawer title="Drawer title" position="right" width="320px">
-  <Collapse label="Links list" initialExpanded>
+  <Collapse label="Links list" initialExpanded expandButtonLabel="Expand" collapseButtonLabel="Collapse">
     <LinkList indent>
       <TextLink type="secondary">
         Link 1

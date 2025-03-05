@@ -70,14 +70,19 @@ export const SideNavigation: Story = {
         </Stack>
       }
     >
-      <Collapse label="Discover" initialExpanded>
+      <Collapse
+        label="Discover"
+        initialExpanded
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
+      >
         <LinkList indent>
           <TextLink type="secondary">Refer a Friend</TextLink>
           <TextLink type="secondary">Subscribe to newsletter</TextLink>
           <TextLink type="secondary">Kiwi.com Stories</TextLink>
         </LinkList>
       </Collapse>
-      <Collapse label="Guidelines">
+      <Collapse label="Guidelines" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
         <LinkList indent>
           <TextLink type="secondary">Terms & Conditions</TextLink>
           <TextLink type="secondary">Terms of Use</TextLink>
@@ -86,7 +91,7 @@ export const SideNavigation: Story = {
           <TextLink type="secondary">Cookies settings</TextLink>
         </LinkList>
       </Collapse>
-      <Collapse label="Company">
+      <Collapse label="Company" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
         <LinkList indent>
           <TextLink type="secondary">About Kiwi.com</TextLink>
           <TextLink type="secondary">Careers</TextLink>
@@ -183,14 +188,19 @@ export const Suppressed: Story = {
 export const WithTitle: Story = {
   render: args => (
     <Drawer {...args}>
-      <Collapse label="Discover" initialExpanded>
+      <Collapse
+        label="Discover"
+        initialExpanded
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
+      >
         <LinkList indent>
           <TextLink type="secondary">Refer a Friend</TextLink>
           <TextLink type="secondary">Subscribe to newsletter</TextLink>
           <TextLink type="secondary">Kiwi.com Stories</TextLink>
         </LinkList>
       </Collapse>
-      <Collapse label="Guidelines">
+      <Collapse label="Guidelines" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
         <LinkList indent>
           <TextLink type="secondary">Terms & Conditions</TextLink>
           <TextLink type="secondary">Terms of Use</TextLink>
@@ -199,7 +209,7 @@ export const WithTitle: Story = {
           <TextLink type="secondary">Cookies settings</TextLink>
         </LinkList>
       </Collapse>
-      <Collapse label="Company">
+      <Collapse label="Company" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
         <LinkList indent>
           <TextLink type="secondary">About Kiwi.com</TextLink>
           <TextLink type="secondary">Careers</TextLink>
@@ -280,14 +290,19 @@ export const SideNavigationInRtl: Story = {
           </Stack>
         }
       >
-        <Collapse label="Discover" initialExpanded>
+        <Collapse
+          label="Discover"
+          initialExpanded
+          expandButtonLabel="Expand"
+          collapseButtonLabel="Collapse"
+        >
           <LinkList>
             <TextLink type="secondary">Refer a Friend</TextLink>
             <TextLink type="secondary">Subscribe to newsletter</TextLink>
             <TextLink type="secondary">Kiwi.com Stories</TextLink>
           </LinkList>
         </Collapse>
-        <Collapse label="Guidelines">
+        <Collapse label="Guidelines" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
           <LinkList>
             <TextLink type="secondary">Terms & Conditions</TextLink>
             <TextLink type="secondary">Terms of Use</TextLink>
@@ -296,7 +311,7 @@ export const SideNavigationInRtl: Story = {
             <TextLink type="secondary">Cookies settings</TextLink>
           </LinkList>
         </Collapse>
-        <Collapse label="Company">
+        <Collapse label="Company" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
           <LinkList>
             <TextLink type="secondary">About Kiwi.com</TextLink>
             <TextLink type="secondary">Careers</TextLink>

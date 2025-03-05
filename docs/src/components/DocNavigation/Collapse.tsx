@@ -18,6 +18,8 @@ export default function Collapse({ expanded, label, hasCategories, children, onC
         expanded={expanded}
         label={<StyledCollapseLabel>{label}</StyledCollapseLabel>}
         onClick={onClick}
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
       >
         <StyledCollapseContent hasCategories={hasCategories}>{children}</StyledCollapseContent>
       </OrbitCollapse>

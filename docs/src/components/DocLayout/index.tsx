@@ -179,7 +179,11 @@ export default function DocLayout({
                       {tocHasItems && (
                         <StyledMobileTocWrapper>
                           <Hide on={["tablet", "desktop", "largeDesktop"]}>
-                            <Collapse label="Table of contents">
+                            <Collapse
+                              label="Table of contents"
+                              expandButtonLabel="Expand"
+                              collapseButtonLabel="Collapse"
+                            >
                               <TableOfContents />
                             </Collapse>
                           </Hide>

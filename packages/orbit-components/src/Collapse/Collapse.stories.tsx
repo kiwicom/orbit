@@ -22,6 +22,8 @@ const meta: Meta<typeof Collapse> = {
     customLabel: "",
     expanded: false,
     initialExpanded: false,
+    expandButtonLabel: "Expand",
+    collapseButtonLabel: "Collapse",
   },
 
   parameters: {
@@ -35,6 +37,7 @@ type Story = StoryObj<typeof Collapse>;
 const SliderHistogramData = () => (
   <Slider
     label="Max travel time"
+    ariaLabel={["Adjust min", "Adjust max"]}
     valueDescription="00:00 - 24:00"
     defaultValue={[1, 12]}
     histogramData={[
@@ -53,7 +56,12 @@ export const Default: Story = {
     };
 
     return (
-      <Collapse {...args} onClick={onClick}>
+      <Collapse
+        {...args}
+        onClick={onClick}
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
+      >
         <SliderHistogramData />
       </Collapse>
     );
@@ -61,7 +69,7 @@ export const Default: Story = {
 
   parameters: {
     controls: {
-      exclude: ["customLabel"],
+      exclude: ["customLabel", "expandButtonLabel", "collapseButtonLabel"],
     },
   },
 };
@@ -77,6 +85,8 @@ export const WithCustomLabel: Story = {
           <Badge>Custom label </Badge>
         </Stack>
       }
+      expandButtonLabel="Expand"
+      collapseButtonLabel="Collapse"
     >
       <SliderHistogramData />
     </Collapse>
@@ -97,7 +107,12 @@ export const OpenedByDefault: Story = {
     };
 
     return (
-      <Collapse {...args} onClick={onClick}>
+      <Collapse
+        {...args}
+        onClick={onClick}
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
+      >
         <SliderHistogramData />
       </Collapse>
     );
@@ -125,12 +140,10 @@ export const WithActions: Story = {
             Clear
           </TextLink>
         }
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
       >
-        <ChoiceGroup
-          filter
-          onChange={action("onChange")}
-          onOnlySelection={action("onOnlySelection")}
-        >
+        <ChoiceGroup onChange={action("onChange")} onOnlySelection={action("onOnlySelection")}>
           <Checkbox label="Flight" value="one" />
           <Checkbox label="Bus" value="two" />
           <Checkbox label="Train" value="three" />
@@ -148,34 +161,22 @@ export const MultipleCollapses: Story = {
   render: args => {
     return (
       <Stack spacing="none">
-        <Collapse {...args}>
-          <ChoiceGroup
-            filter
-            onChange={action("onChange")}
-            onOnlySelection={action("onOnlySelection")}
-          >
+        <Collapse {...args} expandButtonLabel="Expand" collapseButtonLabel="Collapse">
+          <ChoiceGroup onChange={action("onChange")} onOnlySelection={action("onOnlySelection")}>
             <Checkbox label="Flight" value="one" />
             <Checkbox label="Bus" value="two" />
             <Checkbox label="Train" value="three" />
           </ChoiceGroup>
         </Collapse>
-        <Collapse {...args}>
-          <ChoiceGroup
-            filter
-            onChange={action("onChange")}
-            onOnlySelection={action("onOnlySelection")}
-          >
+        <Collapse {...args} expandButtonLabel="Expand" collapseButtonLabel="Collapse">
+          <ChoiceGroup onChange={action("onChange")} onOnlySelection={action("onOnlySelection")}>
             <Checkbox label="Flight" value="one" />
             <Checkbox label="Bus" value="two" />
             <Checkbox label="Train" value="three" />
           </ChoiceGroup>
         </Collapse>
-        <Collapse {...args}>
-          <ChoiceGroup
-            filter
-            onChange={action("onChange")}
-            onOnlySelection={action("onOnlySelection")}
-          >
+        <Collapse {...args} expandButtonLabel="Expand" collapseButtonLabel="Collapse">
+          <ChoiceGroup onChange={action("onChange")} onOnlySelection={action("onOnlySelection")}>
             <Checkbox label="Flight" value="one" />
             <Checkbox label="Bus" value="two" />
             <Checkbox label="Train" value="three" />
@@ -187,7 +188,7 @@ export const MultipleCollapses: Story = {
 
   parameters: {
     controls: {
-      exclude: ["expanded", "initialExpanded"],
+      exclude: ["expanded", "initialExpanded", "expandButtonLabel", "collapseButtonLabel"],
     },
   },
 
@@ -199,7 +200,12 @@ export const MultipleCollapses: Story = {
 
 export const Uncontrolled: Story = {
   render: args => (
-    <Collapse {...args} onClick={action("onClick")}>
+    <Collapse
+      {...args}
+      onClick={action("onClick")}
+      expandButtonLabel="Expand"
+      collapseButtonLabel="Collapse"
+    >
       <Slider
         label="Max travel time"
         valueDescription="00:00 - 24:00"
@@ -216,7 +222,7 @@ export const Uncontrolled: Story = {
 
   parameters: {
     controls: {
-      exclude: "expanded",
+      exclude: ["expanded", "expandButtonLabel", "collapseButtonLabel"],
     },
   },
 };
@@ -238,12 +244,10 @@ export const Rtl: Story = {
               Clear
             </TextLink>
           }
+          expandButtonLabel="Expand"
+          collapseButtonLabel="Collapse"
         >
-          <ChoiceGroup
-            filter
-            onChange={action("onChange")}
-            onOnlySelection={action("onOnlySelection")}
-          >
+          <ChoiceGroup onChange={action("onChange")} onOnlySelection={action("onOnlySelection")}>
             <Checkbox label="Flight" value="one" />
             <Checkbox label="Bus" value="two" />
             <Checkbox label="Train" value="three" />
@@ -266,7 +270,12 @@ export const Playground: Story = {
     };
 
     return (
-      <Collapse {...args} onClick={onClick}>
+      <Collapse
+        {...args}
+        onClick={onClick}
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
+      >
         <SliderHistogramData />
       </Collapse>
     );

@@ -11,7 +11,12 @@ describe("Collapse", () => {
 
   it("should have expected parts of DOM output", () => {
     render(
-      <Collapse dataTest="test" label="Collapse">
+      <Collapse
+        dataTest="test"
+        label="Collapse"
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
+      >
         <div>children</div>
       </Collapse>,
     );
@@ -21,7 +26,7 @@ describe("Collapse", () => {
 
   it("should have customLabel", () => {
     render(
-      <Collapse customLabel="customLabel">
+      <Collapse customLabel="customLabel" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
         <div>children</div>
       </Collapse>,
     );
@@ -33,7 +38,12 @@ describe("Collapse", () => {
     async triggerButton => {
       const onClick = jest.fn();
       render(
-        <Collapse label="Collapse" onClick={onClick}>
+        <Collapse
+          label="Collapse"
+          onClick={onClick}
+          expandButtonLabel="Expand"
+          collapseButtonLabel="Collapse"
+        >
           <div>children</div>
         </Collapse>,
       );
@@ -51,7 +61,7 @@ describe("Collapse", () => {
   describe("uncontrolled", () => {
     it("should expand/collapse when clicking on button", async () => {
       render(
-        <Collapse label="Collapse">
+        <Collapse label="Collapse" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
           <article>children</article>
         </Collapse>,
       );
@@ -69,13 +79,23 @@ describe("Collapse", () => {
   describe("controlled", () => {
     it("should expand/collapse with prop", () => {
       const { rerender } = render(
-        <Collapse label="Collapse" expanded={false}>
+        <Collapse
+          label="Collapse"
+          expanded={false}
+          expandButtonLabel="Expand"
+          collapseButtonLabel="Collapse"
+        >
           <article>children</article>
         </Collapse>,
       );
       expect(screen.queryByRole("article")).not.toBeInTheDocument();
       rerender(
-        <Collapse label="Collapse" expanded>
+        <Collapse
+          label="Collapse"
+          expanded
+          expandButtonLabel="Expand"
+          collapseButtonLabel="Collapse"
+        >
           <article>children</article>
         </Collapse>,
       );

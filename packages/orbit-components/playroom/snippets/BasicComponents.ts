@@ -42,7 +42,7 @@ const choiceGroup = `
   <Radio label="Option three" value="three" />
 </ChoiceGroup>`;
 
-const collapse = `<Collapse label="Title"><Text>Collapsed content</Text></Collapse>`;
+const collapse = `<Collapse label="Title" expandButtonLabel="Expand" collapseButtonLabel="Collapse"><Text>Collapsed content</Text></Collapse>`;
 
 const coupon = `<Coupon>CODE</Coupon>`;
 

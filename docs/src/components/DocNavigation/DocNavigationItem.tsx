@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, Badge } from "@kiwicom/orbit-components";
+import { Stack, Badge, Heading } from "@kiwicom/orbit-components";
 import useTheme from "@kiwicom/orbit-components/lib/hooks/useTheme";
 
 import Category from "./Category";
@@ -48,7 +48,7 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
       <Badge type={getBadgeType(item.status)}>{item.status.toUpperCase()}</Badge>
     </Stack>
   ) : (
-    item.name
+    <Heading type="title4">{item.name}</Heading>
   );
 
   React.useEffect(() => {
@@ -80,10 +80,12 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
     if (level === 1) {
       return (
         <Collapse
-          label={itemName}
+          customLabel={itemName}
           expanded={expanded}
           hasCategories={hasCategories}
           onClick={() => setExpanded(prev => !prev)}
+          expandButtonLabel="Expand"
+          collapseButtonLabel="Collapse"
         >
           {navigationItems}
         </Collapse>

@@ -17,6 +17,7 @@ const AnimatedIcon = ({ expanded }: { expanded?: boolean }) => {
     <ChevronDown
       className={cx("duration-fast transition-transform ease-in-out", expanded && "rotate-180	")}
       color="secondary"
+      ariaHidden
     />
   );
 };
@@ -31,6 +32,8 @@ const Collapse = ({
   id,
   onClick,
   actions,
+  expandButtonLabel,
+  collapseButtonLabel,
 }: Props) => {
   const isControlledComponent = expandedProp != null;
   const [expandedState, setExpandedState] = React.useState(
@@ -70,6 +73,8 @@ const Collapse = ({
           id={labelID}
           role="button"
           tabIndex={0}
+          aria-expanded={expanded}
+          aria-controls={slideID}
           onClick={handleClick}
           onKeyDown={e => {
             if (e.key === "Enter" || e.key === " ") {
@@ -88,14 +93,13 @@ const Collapse = ({
             iconLeft={<AnimatedIcon expanded={expanded} />}
             size="small"
             type="secondary"
+            title={expanded ? collapseButtonLabel : expandButtonLabel}
             onClick={handleClick}
-            ariaLabelledby={labelID}
-            ariaExpanded={expanded}
             ariaControls={slideID}
           />
         </Stack>
       </div>
-      <Slide maxHeight={height} expanded={expanded} id={slideID} ariaLabelledBy={labelID}>
+      <Slide maxHeight={height} expanded={expanded} id={slideID}>
         <div className="my-300 mx-0" ref={node}>
           {children}
         </div>

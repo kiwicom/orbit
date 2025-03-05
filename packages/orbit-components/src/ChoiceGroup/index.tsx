@@ -74,7 +74,7 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
         ref={ref}
         data-test={dataTest}
         role="group"
-        aria-labelledby={groupID}
+        aria-labelledby={label ? groupID : undefined}
         id={id}
         className={cx(
           "flex w-full flex-col",

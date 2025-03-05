@@ -12,6 +12,8 @@ export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
   readonly actions?: React.ReactNode;
   readonly customLabel?: React.ReactNode;
+  readonly expandButtonLabel: string;
+  readonly collapseButtonLabel: string;
   readonly onClick?: (
     e: React.SyntheticEvent<HTMLDivElement>,
     state: boolean,

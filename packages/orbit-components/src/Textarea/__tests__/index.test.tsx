@@ -49,8 +49,8 @@ describe("Textarea", () => {
     expect(textarea).toHaveAttribute("name", name);
     expect(textarea).toHaveAttribute("data-sample", "Sample");
     expect(textarea).not.toBeInvalid();
-    expect(textarea.parentElement).toHaveStyle({ marginBottom: "12px" });
     expect(textarea).toHaveStyle({ padding: "12px" });
+    expect(document.querySelector(".orbit-textarea")).toHaveStyle({ marginBottom: "12px" });
   });
 
   it("should trigger event handlers", async () => {

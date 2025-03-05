@@ -16,10 +16,17 @@ export default function CollapseStory() {
             Action
           </TextLink>
         }
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
       >
         <p>Collapsed content</p>
       </Collapse>
-      <Collapse label="Expanded" initialExpanded>
+      <Collapse
+        label="Expanded"
+        initialExpanded
+        expandButtonLabel="Expand"
+        collapseButtonLabel="Collapse"
+      >
         <p>Expanded content</p>
       </Collapse>
     </>

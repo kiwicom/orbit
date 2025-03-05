@@ -28,4 +28,6 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
   readonly onFocus?: React.FocusEventHandler<HTMLTextAreaElement>;
   readonly onBlur?: React.FocusEventHandler<HTMLTextAreaElement>;
+  readonly ariaLabel?: string;
+  readonly ariaLabelledby?: string;
 }

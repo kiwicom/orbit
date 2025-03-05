@@ -1,0 +1,116 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/drawer/accessibility/
+---
+
+# Accessibility
+
+## Drawer
+
+The Drawer component has been designed with accessibility in mind. It follows best practices for modal dialogs and sliding panels, ensuring a good experience for users of assistive technologies.
+
+### Focus Management
+
+The Drawer implements partial focus management:
+
+1. When opened, focus is automatically moved to the first focusable element inside the drawer
+2. While open, focus is trapped within the drawer (users can't focus elements outside)
+
+#### Implementing Focus Return
+
+The Drawer does not automatically return focus to the trigger element when closed. To ensure a proper accessible experience, you should implement this behavior in your application:
+
+```jsx
+const triggerRef = React.useRef(null);
+const [isOpen, setIsOpen] = React.useState(false);
+
+const handleClose = () => {
+  setIsOpen(false);
+  // Ensure focus returns to the trigger element
+  setTimeout(() => {
+    triggerRef.current?.focus();
+  }, 0);
+};
+
+return (
+  <>
+    <Button ref={triggerRef} onClick={() => setIsOpen(true)} aria-expanded={isOpen}>
+      Open Drawer
+    </Button>
+    <Drawer shown={isOpen} onClose={handleClose}>
+      Content
+    </Drawer>
+  </>
+);
+```
+
+### ARIA Attributes
+
+The component supports several accessibility-enhancing props:
+
+| Name      | Type     | Description                                                                               |
+| :-------- | :------- | :---------------------------------------------------------------------------------------- |
+| ariaLabel | `string` | Provides an accessible name for the drawer when a visible title isn't present             |
+| labelHide | `string` | Sets the accessible label for the close button. This should be translated and descriptive |
+
+### Toggle Element
+
+The element that toggles the drawer (usually a button) should use `aria-expanded` to indicate the drawer's state. This needs to be implemented on your trigger element:
+
+```jsx
+<Button
+  onClick={() => setIsOpen(!isOpen)}
+  aria-expanded={isOpen} // You must add this attribute to your trigger
+>
+  Toggle Drawer
+</Button>
+```
+
+### Keyboard Interaction
+
+The Drawer supports standard keyboard interactions:
+
+- `Escape` key closes the drawer
+- `Tab` cycles through focusable elements within the drawer
+- `Shift + Tab` cycles backwards through focusable elements
+
+### Screen Reader Considerations
+
+1. Use meaningful and translated strings for:
+
+- The drawer's title or `ariaLabel`
+- The close button's `labelHide`
+- Any action buttons within the drawer
+
+2. When the drawer contains sections or important content, consider using proper heading hierarchy
+
+```jsx
+<Drawer
+  shown={isOpen}
+  onClose={handleClose}
+  labelHide="Close navigation menu" // Translated, descriptive label
+  ariaLabel="Main navigation" // When no visible title is present
+>
+  <Heading type="title2">Navigation</Heading>
+  <Stack>{/* drawer content */}</Stack>
+</Drawer>
+```
+
+### Best Practices
+
+1. Always provide a clear and accessible way to close the drawer:
+
+- Through the close button (with proper `labelHide`)
+- By pressing the Escape key
+- By clicking outside the drawer
+
+2. Ensure sufficient color contrast for all content within the drawer
+
+3. If the drawer contains a form or interactive elements, ensure they are properly labeled and have appropriate ARIA attributes
+
+4. Consider the drawer's content structure and ensure it follows a logical reading order for screen readers
+
+5. **Important**: Implement focus return behavior in your application to ensure the trigger element regains focus when the drawer is closed
+
+6. **Important**: Add `aria-expanded` to your trigger element to indicate the drawer's state to assistive technologies

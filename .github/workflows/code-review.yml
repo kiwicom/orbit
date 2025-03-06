@@ -1,10 +1,15 @@
 name: Analyze PR Diff with LLM
 
 on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Pull request number to analyze"
+        required: true
+        type: number
   pull_request:
-    types: [opened, synchronize, reopened]
     branches:
-      - rcsl/code-review
+      - "**"
 
 # Add permissions needed to comment on PRs
 permissions:
@@ -204,8 +209,7 @@ jobs:
 
       - name: Analyze diff with LLM
         env:
-          PORTKEY_API_KEY: ${{ secrets.PORTKEY_API_KEY }}
-          PORTKEY_VIRTUAL_KEY_GOOGLE: ${{ secrets.PORTKEY_VIRTUAL_KEY_GOOGLE }}
+          CODE_REVIEW_GEMINI_API_KEY: ${{ secrets.CODE_REVIEW_GEMINI_API_KEY }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           PR_TITLE: ${{ github.event.pull_request.title }}
@@ -219,8 +223,11 @@ jobs:
             const fs = require('fs');
             const analysis = fs.readFileSync('llm_analysis.md', 'utf8');
 
+            // Use the PR number from the event or from the input parameter
+            const prNumber = ${{ github.event.pull_request.number || github.event.inputs.pr_number }};
+
             github.rest.issues.createComment({
-              issue_number: context.issue.number,
+              issue_number: prNumber,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: `## LLM Analysis of PR Changes\n\n${analysis}`

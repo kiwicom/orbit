@@ -11,6 +11,7 @@ export interface Props extends Common.Globals {
   readonly stopPropagation?: boolean;
   readonly href?: string;
   readonly alt?: string;
+  readonly title?: string;
   readonly lang?: string;
   readonly onClick?: (ev: React.MouseEvent<HTMLAnchorElement>) => void;
 }

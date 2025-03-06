@@ -18,7 +18,8 @@ const ButtonMobileStore = ({
   onClick,
   dataTest,
   id,
-  alt = "",
+  alt,
+  title,
   stopPropagation = false,
 }: Props) => {
   const onClickHandler = (ev: React.MouseEvent<HTMLAnchorElement>) => {
@@ -39,7 +40,7 @@ const ButtonMobileStore = ({
       data-test={dataTest}
       id={id}
     >
-      <img srcSet={getSrc(type, lang)} height="40px" alt={alt} />
+      <img srcSet={getSrc(type, lang)} height="40px" alt={alt} title={title} />
     </a>
   );
 };

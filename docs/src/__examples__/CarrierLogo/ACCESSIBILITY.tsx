@@ -16,11 +16,12 @@ export default {
         />
         <Stack direction="row" spacing="100" align="center">
           <CarrierLogo
+            ariaHidden
             carriers={[
               {
                 code: "OK",
                 type: "airline",
-                name: "",
+                name: "Czech Airlines",
               },
             ]}
           />

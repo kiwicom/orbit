@@ -135,12 +135,12 @@ export const WithLabelAndIcon: Story = {
 export const WithCarrier: Story = {
   render: args => (
     <List {...args}>
-      <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+      <ListItem icon={<CarrierLogo ariaHidden carriers={[{ code: "FR", name: "Ryanair" }]} />}>
         Airline: Ryanair
       </ListItem>
-      <ListItem icon={<Icons.InformationCircle />}>Flight no: FR 1337</ListItem>
-      <ListItem icon={<Icons.Trip />}>PNR: TEST0X0</ListItem>
-      <ListItem icon={<Icons.Airplane />}>Airbus A320 (320)</ListItem>
+      <ListItem icon={<Icons.InformationCircle ariaHidden />}>Flight no: FR 1337</ListItem>
+      <ListItem icon={<Icons.Trip ariaHidden />}>PNR: TEST0X0</ListItem>
+      <ListItem icon={<Icons.Airplane ariaHidden />}>Airbus A320 (320)</ListItem>
     </List>
   ),
 

@@ -1,0 +1,227 @@
+name: Analyze PR Diff with LLM
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - rcsl/code-review
+
+# Add permissions needed to comment on PRs
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  analyze-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Add requirements.txt file
+        run: |
+          echo "google-generativeai==0.8.4" > requirements.txt
+          echo "code2prompt==0.8.1" >> requirements.txt
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Cache Python dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Get PR diff
+        id: get-diff
+        run: |
+          # Get the PR diff and save it to a file
+          git diff ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} > pr_diff.txt
+          echo "diff_size=$(stat -c%s pr_diff.txt)" >> $GITHUB_OUTPUT
+
+      - name: Create Python analysis script
+        run: |
+          cat > analyze_pr.py << 'EOFPY'
+          import sys
+          import os
+          import google.generativeai as genai
+          import code2prompt
+          from pathlib import Path
+          import tempfile
+          from typing import Optional, List
+
+          def get_codebase(
+              path: str,
+              exclude_patterns: Optional[List[str]] = None,
+              filter_patterns: Optional[List[str]] = None,
+              respect_gitignore: bool = True,
+              suppress_comments: bool = False,
+              add_line_numbers: bool = True
+          ) -> str:
+              """
+              Generate a comprehensive prompt from a codebase using Code2Prompt functionality.
+
+              Args:
+                  path: Path to the directory or file to process
+                  exclude_patterns: List of patterns to exclude (e.g. ["**/node_modules/**", "**/.git/**"])
+                  filter_patterns: List of patterns to include (e.g. ["**.py", "**.js"])
+                  respect_gitignore: Whether to respect .gitignore rules
+                  suppress_comments: Whether to strip comments from the code
+                  add_line_numbers: Whether to add line numbers to source code blocks
+
+              Returns:
+                  String representation of the codebase in Markdown format
+              """
+              from code2prompt.core.processor import CodebaseProcessor
+              from code2prompt.core.file_handler import FileHandler
+              from code2prompt.utils.token_counter import count_tokens
+
+              # Set default exclude patterns if none provided
+              if exclude_patterns is None:
+                  exclude_patterns = ["**/node_modules/**", "**/.git/**", "**/__pycache__/**", "**/.venv/**"]
+
+              # Convert string path to Path object
+              path_obj = Path(path).resolve()
+
+              # Determine gitignore path if respecting gitignore
+              gitignore_path = None
+              if respect_gitignore:
+                  gitignore_file = path_obj / ".gitignore" if path_obj.is_dir() else path_obj.parent / ".gitignore"
+                  if gitignore_file.exists():
+                      gitignore_path = str(gitignore_file)
+
+              # Initialize file handler with the given configurations
+              file_handler = FileHandler(
+                  paths=[str(path_obj)],
+                  gitignore_path=gitignore_path,
+                  filter_patterns=filter_patterns,
+                  exclude_patterns=exclude_patterns,
+                  case_sensitive=False
+              )
+
+              # Process the codebase
+              processor = CodebaseProcessor(
+                  file_handler=file_handler,
+                  suppress_comments=suppress_comments,
+                  add_line_numbers=add_line_numbers,
+                  wrap_code_blocks=True
+              )
+
+              # Generate the prompt
+              codebase_representation = processor.generate_prompt()
+
+              return codebase_representation
+
+          # Set up Gemini API with your API key
+          GEMINI_API_KEY = os.environ.get("CODE_REVIEW_GEMINI_API_KEY")
+          if not GEMINI_API_KEY:
+              print("Error: GEMINI_API_KEY environment variable not set")
+              sys.exit(1)
+
+          # Configure the Gemini API
+          genai.configure(api_key=GEMINI_API_KEY)
+
+          # Function to call Gemini directly
+          def query_gemini(prompt, model="gemini-2.0-flash-thinking-exp-01-21"):
+              """Send a prompt to Gemini and get a response"""
+              try:
+                  model = genai.GenerativeModel(model)
+                  response = model.generate_content(prompt)
+                  return response.text
+              except Exception as e:
+                  print(f"Error calling Gemini API: {str(e)}")
+                  return f"Error generating analysis: {str(e)}"
+
+          # Read the diff file
+          with open('pr_diff.txt', 'r') as f:
+              diff_content = f.read()
+
+          # Get the entire codebase
+          try:
+              print("Gathering codebase content...")
+              codebase_content = get_codebase(".")
+              print("Codebase content gathered successfully.")
+          except Exception as e:
+              print(f"Error gathering codebase: {str(e)}")
+              codebase_content = "Error: Could not retrieve codebase content."
+
+          # Get environment variables for PR info
+          github_repo = os.environ.get('GITHUB_REPOSITORY', 'Unknown repository')
+          pr_number = os.environ.get('PR_NUMBER', 'Unknown PR')
+          pr_title = os.environ.get('PR_TITLE', 'Unknown title')
+
+          # Prepare prompt for the LLM
+          prompt = f"""
+          Please analyze the following Git diff from a pull request and provide feedback.
+          You will be provided with both the diff and the entire codebase for context.
+
+          Pull Request: {github_repo}/pull/{pr_number}
+          Title: {pr_title}
+
+          DIFF:
+          ```
+          {diff_content}
+          ```
+
+          CODEBASE:
+          {codebase_content}
+
+          Please provide:
+          1. A summary of the changes
+          2. Potential issues or bugs you notice
+          3. Suggestions for improvements
+          4. Any security concerns
+          5. Code quality observations
+
+          Consider how the changes fit into the existing codebase and if they maintain consistency with the existing code patterns.
+          """
+
+          # Send to LLM and get analysis
+          print("Sending to LLM for analysis...")
+          analysis = query_gemini(prompt)
+
+          # Print the analysis
+          print("\n--- LLM ANALYSIS OF PR DIFF ---\n")
+          print(analysis)
+          print("\n--- END OF ANALYSIS ---\n")
+
+          # Save analysis to a file for GitHub comment creation
+          with open('llm_analysis.md', 'w') as f:
+              f.write(analysis)
+          EOFPY
+
+      - name: Analyze diff with LLM
+        env:
+          PORTKEY_API_KEY: ${{ secrets.PORTKEY_API_KEY }}
+          PORTKEY_VIRTUAL_KEY_GOOGLE: ${{ secrets.PORTKEY_VIRTUAL_KEY_GOOGLE }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: python analyze_pr.py
+
+      - name: Add LLM analysis as PR comment
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const analysis = fs.readFileSync('llm_analysis.md', 'utf8');
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## LLM Analysis of PR Changes\n\n${analysis}`
+            })

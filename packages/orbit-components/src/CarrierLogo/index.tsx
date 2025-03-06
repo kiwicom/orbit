@@ -92,7 +92,7 @@ export const CarrierLogoWrapper: React.FC<WrapperProps> = ({
     <div
       className={cx(
         "orbit-carrier-logo",
-        "flex content-between justify-between bg-transparent",
+        "flex place-content-between bg-transparent",
         inlineStacked
           ? "w-min"
           : [
@@ -116,6 +116,7 @@ const CarrierLogo = ({
   id,
   rounded,
   inlineStacked = false,
+  ariaHidden = false,
 }: Props) => {
   const randomId = useRandomIdSeed();
 
@@ -126,6 +127,7 @@ const CarrierLogo = ({
       data-test={dataTest}
       id={id}
       inlineStacked={inlineStacked}
+      aria-hidden={ariaHidden}
     >
       {carriers.slice(0, 4).map((carrierImage, idx) => (
         <img

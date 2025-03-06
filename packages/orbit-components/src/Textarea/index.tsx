@@ -74,8 +74,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
             help={!!help}
             required={required}
             iconRef={iconRef}
-            onMouseEnter={() => setTooltipShownHover(true)}
-            onMouseLeave={() => setTooltipShownHover(false)}
+            onMouseEnter={() => (hasTooltip ? setTooltipShownHover(true) : undefined)}
+            onMouseLeave={() => (hasTooltip ? setTooltipShownHover(false) : undefined)}
           >
             {label}
           </FormLabel>

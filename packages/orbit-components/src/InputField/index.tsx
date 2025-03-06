@@ -145,6 +145,8 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const shown = tooltipShown || tooltipShownHover;
   const fieldRef = React.useRef(null);
 
+  const InlineLabelElement = inlineLabel && (error || help || label) ? "label" : "div";
+
   return (
     <div
       className={cx(
@@ -156,7 +158,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       onMouseEnter={() => (disabled && inlineLabel ? setTooltipShownHover(true) : undefined)}
       onMouseLeave={() => (disabled && inlineLabel ? setTooltipShownHover(false) : undefined)}
     >
-      {!inlineLabel && label && (
+      {!inlineLabel && (error || help || label) && (
         <label className="block" ref={fieldRef} htmlFor={inputId}>
           <FormLabel
             required={required}
@@ -183,7 +185,11 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             : "text-form-element-filled-foreground",
         )}
       >
-        <label className="relative z-[2] flex items-center" ref={fieldRef} htmlFor={inputId}>
+        <InlineLabelElement
+          className="relative z-[2] flex items-center"
+          ref={fieldRef}
+          htmlFor={InlineLabelElement === "label" ? inputId : undefined}
+        >
           {inlineLabel && !tags && (error || help) ? (
             <Prefix>
               {help && !error && (
@@ -222,7 +228,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
               </FormLabel>
             </span>
           )}
-        </label>
+        </InlineLabelElement>
         {tags && <InputTags>{tags}</InputTags>}
         {/* the rule is working weird, it passes only if the value is number, eg not even prop including number } */}
         {/* eslint-disable-next-line jsx-a11y/aria-activedescendant-has-tabindex */}

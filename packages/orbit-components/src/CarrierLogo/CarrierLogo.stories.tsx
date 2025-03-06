@@ -17,6 +17,7 @@ const meta: Meta<typeof CarrierLogo> = {
   args: {
     rounded: false,
     inlineStacked: false,
+    ariaHidden: false,
     size: SIZE_OPTIONS.LARGE,
     carriers: [
       { code: "FR", name: "Ryanair" },

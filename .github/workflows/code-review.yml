@@ -209,8 +209,7 @@ jobs:
 
       - name: Analyze diff with LLM
         env:
-          PORTKEY_API_KEY: ${{ secrets.PORTKEY_API_KEY }}
-          PORTKEY_VIRTUAL_KEY_GOOGLE: ${{ secrets.PORTKEY_VIRTUAL_KEY_GOOGLE }}
+          CODE_REVIEW_GEMINI_API_KEY: ${{ secrets.CODE_REVIEW_GEMINI_API_KEY }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           PR_TITLE: ${{ github.event.pull_request.title }}

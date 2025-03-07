@@ -4,15 +4,12 @@ import { autoUpdate, useFloating, offset } from "@floating-ui/react";
 
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
-import handleKeyDown from "../../utils/handleKeyDown";
-import CloseIcon from "../../icons/Close";
 import type { Props } from "./types";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 const ErrorFormTooltip = ({
   onShown,
   dataTest,
-  helpClosable,
   children,
   shown,
   referenceElement,
@@ -60,7 +57,7 @@ const ErrorFormTooltip = ({
     return () => {
       window.removeEventListener("keydown", handleTab);
     };
-  }, [onShown, isHelp, helpClosable, elements.floating]);
+  }, [onShown, isHelp, elements.floating]);
 
   const cssVars = {
     "--error-form-tooltip-position": floatingStyles.position,
@@ -109,21 +106,6 @@ const ErrorFormTooltip = ({
       >
         {children}
       </div>
-      {isHelp && helpClosable && (
-        <button
-          type="button"
-          className="text-white-normal ms-300 flex cursor-pointer"
-          tabIndex={0}
-          // @ts-expect-error TODO
-          onKeyDown={handleKeyDown<HTMLAnchorElement>(onShown)}
-          onClick={ev => {
-            ev.preventDefault();
-            if (shown) onShown(false);
-          }}
-        >
-          <CloseIcon ariaLabel="close" />
-        </button>
-      )}
     </div>
   );
 };

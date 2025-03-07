@@ -102,7 +102,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     maxLength,
     suffix,
     help,
-    helpClosable = true,
     value,
     defaultValue,
     tags,
@@ -310,7 +309,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           help={help}
           id={`${inputId}-feedback`}
           shown={shown}
-          helpClosable={helpClosable}
           onShown={setTooltipShown}
           error={error}
           inlineLabel={inlineLabel}

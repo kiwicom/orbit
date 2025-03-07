@@ -4,9 +4,9 @@ import { ButtonMobileStore } from "@kiwicom/orbit-components";
 export default {
   Example: () => (
     <ButtonMobileStore
-      alt="Get it on Google Play"
       href="https://play.google.com/store/apps/details?id=com.skypicker.main"
       type="googlePlay"
+      alt="Get it on Google Play"
     />
   ),
   exampleKnobs: [

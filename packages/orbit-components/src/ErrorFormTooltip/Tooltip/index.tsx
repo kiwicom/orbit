@@ -73,6 +73,7 @@ const ErrorFormTooltip = ({
       id={id}
       ref={refs.setFloating}
       aria-live="polite"
+      aria-hidden={!shown}
       data-test={dataTest}
       className={cx(
         "flex justify-between overflow-visible",

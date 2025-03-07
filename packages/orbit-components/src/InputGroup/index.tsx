@@ -30,7 +30,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
       disabled,
       dataTest,
       spaceAfter,
-      helpClosable = true,
       onFocus,
       onBlur,
       onChange,
@@ -172,7 +171,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
         <ErrorFormTooltip
           help={helpReal}
           error={errorReal}
-          helpClosable={helpClosable}
           onShown={setTooltipShown}
           shown={tooltipShown || tooltipShownHover}
           referenceElement={labelRef}

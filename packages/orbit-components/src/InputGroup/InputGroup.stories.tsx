@@ -34,7 +34,6 @@ const meta: Meta<InputGroupPropsAndCustomArgs> = {
   args: {
     error: "",
     help: "",
-    helpClosable: true,
     onChange: action("onChange"),
     onFocus: action("onFocus"),
     onBlur: action("onBlur"),
@@ -199,7 +198,7 @@ export const Error: Story = {
 
   parameters: {
     controls: {
-      exclude: ["onChange", "onFocus", "onBlur", "onBlurGroup", "size", "help", "helpClosable"],
+      exclude: ["onChange", "onFocus", "onBlur", "onBlurGroup", "size", "help"],
     },
   },
 
@@ -269,7 +268,6 @@ export const ValidationApproaches: Story = {
         "onBlurGroup",
         "error",
         "help",
-        "helpClosable",
         "size",
         "spaceAfter",
       ],
@@ -319,7 +317,6 @@ export const OnChangeBehavior: Story = {
         "onBlurGroup",
         "error",
         "help",
-        "helpClosable",
         "size",
         "spaceAfter",
       ],

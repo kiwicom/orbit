@@ -160,7 +160,6 @@ export const WithHelpMessage: Story = {
   args: {
     label: "Select with help message",
     help: "Most common choice is Booking cancellation",
-    helpClosable: true,
   },
 
   parameters: {
@@ -205,7 +204,6 @@ export const Playground: Story = {
     width: "50%",
     tabIndex: 0,
     required: false,
-    helpClosable: true,
     spaceAfter: SPACINGS_AFTER.SMALL,
     customValueText: "",
     insideInputGroup: false,

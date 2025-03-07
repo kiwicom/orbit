@@ -33,7 +33,6 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     tabIndex,
     id,
     required,
-    helpClosable = true,
     dataTest,
     prefix,
     spaceAfter,
@@ -220,7 +219,6 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           id={`${selectId}-feedback`}
           help={help}
           error={error}
-          helpClosable={helpClosable}
           shown={shown}
           onShown={setTooltipShown}
           inlineLabel={inlineLabel}

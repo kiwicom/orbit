@@ -14,13 +14,14 @@ const meta: Meta<typeof Seat> = {
   parameters: {
     info: "Seat components stories. Visit Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onClick", "aria-labelledby"],
+      exclude: ["aria-labelledby"],
     },
   },
 
   args: {
     label: "XY",
     type: TYPES.DEFAULT,
+    title: "25D",
   },
 
   argTypes: {
@@ -62,6 +63,15 @@ export const Playground: Story = {
       control: {
         type: "select",
       },
+    },
+    onClick: {
+      control: "boolean",
+      description: "Toggle onClick handler",
+      mapping: {
+        true: action("onClick"),
+        false: undefined,
+      },
+      defaultValue: true,
     },
   },
 };

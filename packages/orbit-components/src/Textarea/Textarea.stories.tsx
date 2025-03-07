@@ -37,7 +37,6 @@ export const Default: Story = {};
 export const WithHelp: Story = {
   args: {
     help: "Everything is fine.",
-    helpClosable: false,
   },
 };
 

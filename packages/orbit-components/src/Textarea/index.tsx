@@ -26,7 +26,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     name,
     error,
     placeholder,
-    helpClosable = true,
     maxLength,
     onChange,
     onFocus,
@@ -132,7 +131,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         <ErrorFormTooltip
           id={`${inputId}-feedback`}
           help={help}
-          helpClosable={helpClosable}
           error={error}
           onShown={setTooltipShown}
           shown={shown}

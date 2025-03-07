@@ -1,0 +1,44 @@
+---
+title: v22
+description: How to migrate to Orbit 22.0.0
+redirect_from:
+  - /migration-guides/v22/
+---
+
+# Orbit Migration Guide v22
+
+This migration guide focuses on the process of migrating from Orbit v21 to v22.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### Removal of `helpClosable` prop in ErrorFormTooltip
+
+The `helpClosable` prop in the `ErrorFormTooltip` component has been removed.
+
+Because of that, the `helpClosable` prop was also removed from the components using the `ErrorFormTooltip` component internally, namely:
+
+- `InputField`
+- `InputFile`
+- `InputGroup`
+- `InputSelect`
+- `Select`
+- `Textarea`
+
+Please adapt your code to remove the `helpClosable` prop from these components. Note that tooltip will still be closable on the outside click or when the associated input element loses focus.
+
+**Before:**
+
+```jsx
+import InputField from "@kiwicom/orbit-components/lib/InputField";
+
+<InputField helpClosable={false} />;
+```
+
+**Now:**
+
+```jsx
+import InputField from "@kiwicom/orbit-components/lib/InputField";
+
+<InputField />;
+```

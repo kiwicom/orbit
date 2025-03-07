@@ -31,7 +31,6 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly onBlur?: React.FocusEventHandler<HTMLSelectElement>;
   readonly options: Option[];
   readonly prefix?: React.ReactNode;
-  readonly helpClosable?: boolean;
   readonly insideInputGroup?: boolean;
   readonly inlineLabel?: boolean;
   readonly customValueText?: Common.Translation;

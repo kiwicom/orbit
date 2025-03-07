@@ -68,25 +68,29 @@ const Collapse = ({
       id={id}
     >
       <div className="flex items-center justify-between">
-        <div
-          className="flex w-full self-stretch"
-          id={labelID}
-          role="button"
-          tabIndex={0}
-          aria-expanded={expanded}
-          aria-controls={slideID}
-          onClick={handleClick}
-          onKeyDown={e => {
-            if (e.key === "Enter" || e.key === " ") {
-              handleClick(e);
-            }
-          }}
-        >
-          <Stack justify="between" align="center">
-            {label && !customLabel && <Heading type="title4">{label}</Heading>}
-            {customLabel}
-          </Stack>
-        </div>
+        {label || customLabel ? (
+          <div
+            className="flex w-full self-stretch"
+            id={labelID}
+            role="button"
+            tabIndex={0}
+            aria-expanded={expanded}
+            aria-controls={slideID}
+            onClick={handleClick}
+            onKeyDown={e => {
+              if (e.key === "Enter" || e.key === " ") {
+                handleClick(e);
+              }
+            }}
+          >
+            <Stack justify="between" align="center">
+              {label && !customLabel && <Heading type="title4">{label}</Heading>}
+              {customLabel}
+            </Stack>
+          </div>
+        ) : (
+          <div className="flex w-full self-stretch" />
+        )}
         <Stack inline grow={false} align="center" spacing="none">
           {actions && <div className="mx-300 flex items-center">{actions}</div>}
           <ButtonLink
@@ -96,6 +100,7 @@ const Collapse = ({
             title={expanded ? collapseButtonLabel : expandButtonLabel}
             onClick={handleClick}
             ariaControls={slideID}
+            ariaExpanded={expanded}
           />
         </Stack>
       </div>

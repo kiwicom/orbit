@@ -9,7 +9,7 @@ import ButtonMobileStore from "@kiwicom/orbit-components/lib/ButtonMobileStore";
 After adding import into your project you can use it simply like:
 
 ```jsx
-<ButtonMobileStore type="appStore" />
+<ButtonMobileStore alt="Download on the App Store" type="appStore" />
 ```
 
 ## Props
@@ -18,7 +18,7 @@ Table below contains all types of the props available in the ButtonMobileStore c
 
 | Name            | Type                       | Default      | Description                                                                   |
 | :-------------- | :------------------------- | :----------- | :---------------------------------------------------------------------------- |
-| alt             | `string`                   |              | Optional property for passing own `alt` attribute to the DOM image element.   |
+| **alt**         | `string`                   |              | Required property for passing `alt` attribute to the DOM image element.       |
 | title           | `string`                   |              | Optional property for passing own `title` attribute to the DOM image element. |
 | dataTest        | `string`                   |              | Optional prop for testing purposes.                                           |
 | id              | `string`                   |              | Set `id` for `ButtonMobileStore`.                                             |

@@ -11,7 +11,13 @@ describe("ButtonMobileStore", () => {
   it("default", async () => {
     const onClick = jest.fn();
     render(
-      <ButtonMobileStore onClick={onClick} dataTest="test" type={TYPE_OPTIONS.APPSTORE} href="#" />,
+      <ButtonMobileStore
+        onClick={onClick}
+        dataTest="test"
+        type={TYPE_OPTIONS.APPSTORE}
+        href="#"
+        alt="Download on the App Store"
+      />,
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
     const link = screen.getByRole("link");

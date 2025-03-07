@@ -44,7 +44,6 @@ const meta: Meta<InputFieldPropsAndCustomArgs> = {
     type: TYPE_OPTIONS.TEXT,
     disabled: false,
     readOnly: false,
-    helpClosable: true,
   },
 
   argTypes: {
@@ -93,7 +92,6 @@ export const DefaultInput: Story = {
         "spaceAfter",
         "prefix",
         "suffix",
-        "helpClosable",
       ],
     },
   },

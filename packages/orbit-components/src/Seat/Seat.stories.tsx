@@ -71,7 +71,6 @@ export const Playground: Story = {
         true: action("onClick"),
         false: undefined,
       },
-      defaultValue: true,
     },
   },
 };

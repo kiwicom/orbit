@@ -56,7 +56,6 @@ export default function transformer(file, api) {
       if (name.name === "Alert") {
         const hasClosable = attributes.some(isClosableAttribute);
         const hasLabelClose = hasAttribute(attributes, "labelClose");
-
         if (hasClosable && !hasLabelClose) {
           attributes.push(
             j.jsxAttribute(
@@ -75,7 +74,6 @@ export default function transformer(file, api) {
             ),
           );
         }
-
         const hasCollapseButtonLabel = hasAttribute(attributes, "collapseButtonLabel");
         if (!hasCollapseButtonLabel) {
           attributes.push(
@@ -84,6 +82,28 @@ export default function transformer(file, api) {
               createIntlMessageContainer(j, "orbit.collapse_collapse", "Collapse"),
             ),
           );
+        }
+      } else if (name.name === "ButtonMobileStore") {
+        const hasAlt = hasAttribute(attributes, "alt");
+
+        if (!hasAlt) {
+          const typeAttr = attributes.find(
+            attr => attr.type === "JSXAttribute" && attr.name.name === "type",
+          );
+          const altText =
+            typeAttr.value.value === "googlePlay"
+              ? createIntlMessageContainer(
+                  j,
+                  "common.screenreader.google_play_button",
+                  "Get it on Google Play",
+                )
+              : createIntlMessageContainer(
+                  j,
+                  "common.screenreader.app_store_button",
+                  "Download on the App Store",
+                );
+
+          attributes.push(j.jsxAttribute(j.jsxIdentifier("alt"), altText));
         }
       }
     });

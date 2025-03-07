@@ -2,15 +2,15 @@ import React from "react";
 import { ButtonMobileStore } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <ButtonMobileStore type="appStore" />,
+  Example: () => <ButtonMobileStore alt="Download on the App Store" type="appStore" />,
   exampleVariants: [
     {
       name: "appStore",
-      code: `() => <ButtonMobileStore type="appStore">appStore</ButtonMobileStore>`,
+      code: `() => <ButtonMobileStore alt="Download on the App Store" type="appStore">appStore</ButtonMobileStore>`,
     },
     {
       name: "googlePlay",
-      code: `() => <ButtonMobileStore type="googlePlay">googlePlay</ButtonMobileStore>`,
+      code: `() => <ButtonMobileStore alt="Download on the Google Play" type="googlePlay">googlePlay</ButtonMobileStore>`,
     },
   ],
 };

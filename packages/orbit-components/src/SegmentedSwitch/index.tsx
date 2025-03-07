@@ -74,7 +74,6 @@ const SegmentedSwitch = ({
         <ErrorFormTooltip
           help={help}
           error={error}
-          helpClosable={false}
           shown={tooltipShown || tooltipShownHover}
           onShown={prev => setTooltipShown(!prev)}
           referenceElement={labelRef}

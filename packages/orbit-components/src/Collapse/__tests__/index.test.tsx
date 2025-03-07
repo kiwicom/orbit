@@ -22,6 +22,16 @@ describe("Collapse", () => {
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();
     expect(screen.getByText("Collapse")).toBeInTheDocument();
+    expect(screen.getAllByRole("button")).toHaveLength(2);
+  });
+
+  it("should not render a div with role button if label is not provided", () => {
+    render(
+      <Collapse expandButtonLabel="Expand" collapseButtonLabel="Collapse">
+        <div>children</div>
+      </Collapse>,
+    );
+    expect(screen.getAllByRole("button")).toHaveLength(1);
   });
 
   it("should have customLabel", () => {
@@ -39,7 +49,7 @@ describe("Collapse", () => {
       const onClick = jest.fn();
       render(
         <Collapse
-          label="Collapse"
+          label="Label"
           onClick={onClick}
           expandButtonLabel="Expand"
           collapseButtonLabel="Collapse"
@@ -50,8 +60,8 @@ describe("Collapse", () => {
 
       const toggleButton =
         triggerButton === "label"
-          ? screen.getByText("Collapse")
-          : screen.getByRole("button", { expanded: false });
+          ? screen.getByText("Label")
+          : screen.getByRole("button", { name: "Expand" });
 
       await user.click(toggleButton);
       expect(onClick).toHaveBeenCalled();

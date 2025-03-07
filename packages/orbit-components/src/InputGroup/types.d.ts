@@ -10,7 +10,6 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly flex?: string | string[];
   readonly help?: React.ReactNode;
   readonly children: React.ReactNode;
-  readonly helpClosable?: boolean;
   readonly onBlurGroup?: React.FocusEventHandler<HTMLDivElement>;
   readonly error?: React.ReactNode;
   readonly disabled?: boolean;

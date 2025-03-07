@@ -35,7 +35,6 @@ Table below contains all types of the props available in InputGroup component.
 | onBlur       | `event => void \| Promise`  |              | Function for handling onBlur event between different InputGroup children. [See Functional specs](#functional-specs) |
 | onBlurGroup  | `event => void \| Promise`  |              | Function for handling onBlur event for the whole InputGroup. [See Functional specs](#functional-specs)              |
 | spaceAfter   | `enum`                      |              | Additional `margin-bottom` after component.                                                                         |
-| helpClosable | `boolean`                   | `true`       | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.      |
 
 ### enum
 

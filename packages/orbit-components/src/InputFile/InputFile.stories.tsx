@@ -87,7 +87,6 @@ export const Playground: Story = {
     spaceAfter: SPACINGS_AFTER.SMALL,
     required: false,
     width: "",
-    helpClosable: true,
     tabIndex: "",
     insideInputGroup: false,
     id: "",

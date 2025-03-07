@@ -22,7 +22,6 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     onRemoveFile,
     dataTest,
     id,
-    helpClosable = true,
     spaceAfter,
     width = "100%",
     help,
@@ -156,7 +155,6 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         <ErrorFormTooltip
           help={help}
           error={error}
-          helpClosable={helpClosable}
           referenceElement={labelRef}
           shown={shown}
           onShown={setTooltipShown}

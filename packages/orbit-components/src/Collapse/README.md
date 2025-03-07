@@ -18,16 +18,16 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the Collapse component.
 
-| Name                | Type                                | Default | Description                                                                                                                                |
-| :------------------ | :---------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| actions             | `React.Node`                        |         | Actions which will be render next to arrow.                                                                                                |
-| **children**        | `React.Node`                        |         | The children that should be collapsed.                                                                                                     |
-| id                  | `string`                            |         | Set `id` for `Collapse`.                                                                                                                   |
-| dataTest            | `string`                            |         | Optional prop for testing purposes.                                                                                                        |
-| expanded            | `boolean`                           |         | If you pass either `true` or `false` the Collapse component will controlled component and you will have to manage the state via `onClick`. |
-| initialExpanded     | `boolean`                           | `false` | If `true` the Collapse component will be expanded on the initial render.                                                                   |
-| **label**           | `Translation`                       |         | The rendered label of the Collapse.                                                                                                        |
-| **customLabel**     | `React.Node`                        |         | The rendered custom label of the Collapse.                                                                                                 |
-| onClick             | `(event, state) => void \| Promise` |         | Callback for handling onClick event.                                                                                                       |
-| expandButtonLabel   | `string`                            |         | The accessible label of the button when the content is collapsed.                                                                          |
-| collapseButtonLabel | `string`                            |         | The accessible label of the button when the content is expanded.                                                                           |
+| Name                | Type                                | Default | Description                                                                                                             |
+| :------------------ | :---------------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------- |
+| actions             | `React.Node`                        |         | Actions which will be render next to arrow.                                                                             |
+| **children**        | `React.Node`                        |         | The children that should be collapsed.                                                                                  |
+| id                  | `string`                            |         | Set `id` for `Collapse`.                                                                                                |
+| dataTest            | `string`                            |         | Optional prop for testing purposes.                                                                                     |
+| expanded            | `boolean`                           |         | Passing `true` or `false` makes Collapse a controlled component, requiring you to manage its state via `onClick`.       |
+| initialExpanded     | `boolean`                           | `false` | If `true` the Collapse component will be expanded on the initial render. To be used when the component is uncontrolled. |
+| label               | `string`                            |         | The rendered label of the Collapse.                                                                                     |
+| customLabel         | `React.Node`                        |         | Allows for rendering any component as a label.                                                                          |
+| onClick             | `(event, state) => void \| Promise` |         | Callback for handling onClick event.                                                                                    |
+| expandButtonLabel   | `string`                            |         | The accessible label of the button when the content is collapsed.                                                       |
+| collapseButtonLabel | `string`                            |         | The accessible label of the button when the content is expanded.                                                        |

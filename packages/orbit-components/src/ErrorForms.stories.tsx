@@ -42,7 +42,6 @@ const meta: Meta<ErrorFormsPropsAndCustomArgs> = {
     placeholder: "Placeholder",
     prefix: "$",
     required: true,
-    helpClosable: true,
   },
 
   tags: ["dev", "!autodocs", "!test"],
@@ -56,7 +55,7 @@ export const Error: Story = {
   render: ({ error, label, value, placeholder, prefix, required }) => (
     <Stack direction="column">
       <InputField
-        error={<TextLink tabIndex={0}>{error}</TextLink>}
+        error={error}
         label={label}
         value={value}
         placeholder={placeholder}
@@ -65,7 +64,7 @@ export const Error: Story = {
       <InputField
         disabled
         inlineLabel
-        error={<TextLink tabIndex={0}>{error}</TextLink>}
+        error={error}
         label={label}
         value={value}
         placeholder={placeholder}
@@ -160,34 +159,26 @@ export const Error: Story = {
   parameters: {
     info: "Some description about this type of InputField in general.",
     controls: {
-      exclude: ["help", "helpClosable"],
+      exclude: ["help"],
     },
   },
 };
 
 export const Help: Story = {
-  render: ({ label, help, value, placeholder, prefix, required, helpClosable }) => (
+  render: ({ label, help, value, placeholder, prefix, required }) => (
     <Stack>
       <InputField
-        help={<TextLink>{help}</TextLink>}
-        label={label}
-        helpClosable={helpClosable}
-        value={value}
-        placeholder={placeholder}
-        onChange={action("change")}
-      />
-      <InputField
         help={help}
+        label={label}
         value={value}
-        helpClosable={helpClosable}
         placeholder={placeholder}
         onChange={action("change")}
       />
+      <InputField help={help} value={value} placeholder={placeholder} onChange={action("change")} />
       <InputField
         help={help}
         inlineLabel
         label={label}
-        helpClosable={helpClosable}
         value={value}
         placeholder={placeholder}
         onChange={action("change")}
@@ -196,7 +187,6 @@ export const Help: Story = {
         help={help}
         inlineLabel
         prefix={prefix}
-        helpClosable={helpClosable}
         label={label}
         value={value}
         placeholder={placeholder}
@@ -205,7 +195,6 @@ export const Help: Story = {
       <InputField
         label={label}
         inlineLabel
-        helpClosable={helpClosable}
         readOnly
         tags={
           <div>
@@ -230,54 +219,28 @@ export const Help: Story = {
         label={label}
         readOnly
         value={value}
-        helpClosable={helpClosable}
         placeholder={placeholder}
         required={required}
         help={help}
       />
-      <Textarea
-        helpClosable={helpClosable}
-        readOnly
-        label={label}
-        placeholder={placeholder}
-        help={help}
-        value={value}
-      />
-      <Textarea
-        helpClosable={helpClosable}
-        placeholder={placeholder}
-        help={help}
-        value={value}
-        readOnly
-      />
+      <Textarea readOnly label={label} placeholder={placeholder} help={help} value={value} />
+      <Textarea placeholder={placeholder} help={help} value={value} readOnly />
       <Select
         label={label}
         options={objectOptions}
         value={1}
-        helpClosable={helpClosable}
         help={help}
         onChange={action("onChange")}
       />
-      <Select
-        helpClosable={helpClosable}
-        options={objectOptions}
-        help={help}
-        value={1}
-        onChange={action("onChange")}
-      />
-      <InputFile
-        helpClosable={helpClosable}
-        label={label}
-        help={help}
-        onRemoveFile={action("removeFile")}
-      />
-      <InputFile helpClosable={helpClosable} help={help} onRemoveFile={action("removeFile")} />
-      <InputGroup helpClosable={helpClosable} label={label}>
+      <Select options={objectOptions} help={help} value={1} onChange={action("onChange")} />
+      <InputFile label={label} help={help} onRemoveFile={action("removeFile")} />
+      <InputFile help={help} onRemoveFile={action("removeFile")} />
+      <InputGroup label={label}>
         <InputField help={help} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
         <InputField placeholder="YYYY" readOnly />
       </InputGroup>
-      <InputGroup helpClosable={helpClosable}>
+      <InputGroup>
         <InputField help={help} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
         <InputField placeholder="YYYY" readOnly />
@@ -442,7 +405,7 @@ export const WithModal: Story = {
   parameters: {
     info: "Some description about this type of InputField in general.",
     controls: {
-      exclude: ["help", "helpClosable", "prefix", "required", "placeholder", "value"],
+      exclude: ["help", "prefix", "required", "placeholder", "value"],
     },
   },
 

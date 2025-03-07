@@ -22,7 +22,6 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly error?: React.ReactNode;
   readonly resize?: Resize;
   readonly disabled?: boolean;
-  readonly helpClosable?: boolean;
   readonly maxLength?: number;
   readonly tabIndex?: string | number;
   readonly onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;

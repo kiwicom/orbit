@@ -46,7 +46,7 @@ const options = [
     title: "Option 2",
     value: 2,
     description: "Description for option 2",
-    group: "Group name"
+    group: "Group name",
   },
   ...
 ];
@@ -89,7 +89,6 @@ The table below contains all types of props available in the InputSelect compone
 | maxHeight         | `string`                                                                          | `400px`                            | Specifies max height of the dropdown with results for InputSelect.                                                                                                                |
 | onOptionSelect    | `(opt: Option \| null) => void`                                                   |                                    | Callback that fires when an option is selected.                                                                                                                                   |
 | onClose           | `(opt: Option \| null) => void`                                                   |                                    | Callback that fires when the list of options is closed by other means than selecting an option. It is called with the value of the selected or null, if nothing is selected.      |
-| helpClosable      | `boolean`                                                                         | `true`                             | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                                    |
 | emptyState        | `React.Node`                                                                      | `"No results found."`              | Message to display when no options are available. If a string is passed, paddings are automatically applied.                                                                      |
 | labelClose        | `string`                                                                          | `Close`                            | The label for the close button in the dropdown.                                                                                                                                   |
 | showAll           | `boolean`                                                                         | `true`                             | If set to true, it will display all options at the end of the list. If set to false, it will display only the options without a group at the end of the list.                     |

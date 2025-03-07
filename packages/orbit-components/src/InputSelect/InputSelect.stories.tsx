@@ -220,6 +220,5 @@ export const Playground: Story = {
     tabIndex: "",
     id: "",
     insideInputGroup: false,
-    helpClosable: false,
   },
 };

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [21.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@21.0.0...@kiwicom/orbit-components@21.0.1) (2025-03-10)
+
+#### Bug Fixes
+
+* **InputField:** remove tooltip icon when label is null ([44baebb](https://github.com/kiwicom/orbit/commit/44baebb683db964269f2fc675a45fa7c140a8600))
+
 ## [21.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@20.1.0...@kiwicom/orbit-components@21.0.0) (2025-03-10)
 
 #### Bug Fixes

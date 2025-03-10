@@ -58,7 +58,7 @@ test.describe("visual Tag", () => {
         </TestTag>,
       );
 
-      await component.getByTestId("tag").focus();
+      await component.getByText(testTitle).focus();
       await expect(component).toHaveScreenshot();
     });
   });
@@ -79,12 +79,12 @@ test.describe("visual Tag", () => {
   INTERECTABLE_TAGS.forEach(({ testTitle, ...props }) => {
     test(`screenshot ${testTitle} focus remove button`, async ({ mount }) => {
       const component = await mount(
-        <TestTag onClick={() => {}} onRemove={() => {}} {...props}>
+        <TestTag onClick={() => {}} onRemove={() => {}} labelDismiss="Dismiss" {...props}>
           {testTitle}
         </TestTag>,
       );
 
-      await component.getByRole("button", { name: "close", exact: true }).focus();
+      await component.getByRole("button", { name: "Dismiss", exact: true }).focus();
       await expect(component).toHaveScreenshot();
     });
   });

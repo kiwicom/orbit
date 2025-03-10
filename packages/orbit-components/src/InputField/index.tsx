@@ -158,7 +158,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       onMouseEnter={() => (disabled && inlineLabel ? setTooltipShownHover(true) : undefined)}
       onMouseLeave={() => (disabled && inlineLabel ? setTooltipShownHover(false) : undefined)}
     >
-      {!inlineLabel && (error || help || label) && (
+      {!inlineLabel && label && (
         <label className="block" ref={fieldRef} htmlFor={inputId}>
           <FormLabel
             required={required}

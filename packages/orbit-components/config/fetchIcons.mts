@@ -113,9 +113,6 @@ const api = <T>(url: string) =>
 
 // just to avoid unnecessary breaking change
 const parseName = (name: string) => {
-  if (name === "no-guarantee") return "kiwicom-no-guarantee";
-  if (name === "guarantee") return "kiwicom-guarantee";
-  if (name === "care-kiwi.com") return "kiwicom-care";
   if (name === "kiwi.com") return "kiwicom";
   if (name === "google-colored") return "google";
 

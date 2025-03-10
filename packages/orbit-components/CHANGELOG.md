@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [21.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@20.1.0...@kiwicom/orbit-components@21.0.0) (2025-03-10)
+
+
+### Bug Fixes
+
+* **Card:** titles now render as DIV by default ([f44908a](https://github.com/kiwicom/orbit/commit/f44908a7cfdda81405c92202472740da19016330))
+* **ChoiceGroup:** aria-labelledby was incorrectly set without label ([11997ea](https://github.com/kiwicom/orbit/commit/11997eacd6d1e49ac32f14bdf1f80f7b891af837))
+* **ChoiceGroup:** the label now renders as a div by default ([72e0b4c](https://github.com/kiwicom/orbit/commit/72e0b4c8b7e5e5c07a6f6c39426afd8d78a7d0ae))
+* **Collapse:** not render empty button if label is empty ([16f957b](https://github.com/kiwicom/orbit/commit/16f957b9b971ba37f8323f1e2bfb940213b1da6e))
+* **Drawer:** onClose was being called even when not shown ([cd5a14c](https://github.com/kiwicom/orbit/commit/cd5a14c966f2948e176da46140e24eeca67bd557))
+* **InputField:** render label element once, show block tooltip icon ([f5d10cf](https://github.com/kiwicom/orbit/commit/f5d10cf380e559b91b67f4d30cc01dc461780047))
+* **Textarea:** remove duplicate label content for better accessibility ([48cc721](https://github.com/kiwicom/orbit/commit/48cc721db9226af1b82967c1d7e1ff2509bad142))
+* **Textarea:** set mouse events only when tooltip is present ([187fcad](https://github.com/kiwicom/orbit/commit/187fcadbe2604b38fe204b7c32ebcb571d5fa433))
+
+
+### Features
+
+* **Accordion:** add ariaControls prop to improve a11y ([a39180f](https://github.com/kiwicom/orbit/commit/a39180f508a1773e6be4cf53f64b7421ed4fa037))
+* **Accordion:** remove default Open button ([e8b5c8e](https://github.com/kiwicom/orbit/commit/e8b5c8e0d7ef41f851d537b625910ebb5784e00a))
+* **Alert:** require labelClose when closable is true ([1ae0845](https://github.com/kiwicom/orbit/commit/1ae0845678fb2c394e2d7739984720becdaf2cfd))
+* **ButtonMobileStore:** add title prop ([9287100](https://github.com/kiwicom/orbit/commit/928710015d093abb41b00bf1b13b3432cd7e1472))
+* **ButtonMobileStore:** make alt prop required ([6f423ba](https://github.com/kiwicom/orbit/commit/6f423ba2c34600ac781fcd9deb13b801b23ecd4c))
+* **Card:** refactor component for improved accessibility ([a9b21b3](https://github.com/kiwicom/orbit/commit/a9b21b33cca580f0605c1919d34e5ecca3f2f60c))
+* **CarrierLogo:** add ariaHidden prop ([62fcac5](https://github.com/kiwicom/orbit/commit/62fcac5c642878a6e4460303483565203e5421d4))
+* **Collapse:** add required expandButtonLabel and collapseButtonLabel props ([ae6154e](https://github.com/kiwicom/orbit/commit/ae6154eb49410d215c7b42809d9d664ec2437c80))
+* **Collapse:** label prop now only accepts string ([867a61f](https://github.com/kiwicom/orbit/commit/867a61fb3b1a512c4fc023124964d370f876182e))
+* **Drawer:** add ariaLabel prop ([7ca1211](https://github.com/kiwicom/orbit/commit/7ca121124fdecc6de1ef7cae281e4729444eec41))
+* **Drawer:** refactor component for improved accessibility ([00f5d80](https://github.com/kiwicom/orbit/commit/00f5d8038a0286ccda902cd6f130b4dbeb633301))
+* **Drawer:** title prop now only accepts string ([4c988dc](https://github.com/kiwicom/orbit/commit/4c988dcdd786260108bafeb533fa257dd4e5ab48))
+* **icons:** update icons from figma ([77a0059](https://github.com/kiwicom/orbit/commit/77a00591b662fcfdc91299a8ea3258a2a5eaa744))
+* **InputField:** add ariaLabelledby prop to improve the accessibility ([ab88ee9](https://github.com/kiwicom/orbit/commit/ab88ee9d07412fac38e3b193efb2b004aa46b6b7))
+* **InputField:** remove duplicated VoiceOver content to improve a11y ([8bbf728](https://github.com/kiwicom/orbit/commit/8bbf72816be09d3a98b745cd018c320297bf2558))
+* **ListChoice:** refactor component for improved accessibility ([f80e710](https://github.com/kiwicom/orbit/commit/f80e710803acd153762cf3a3373c86d4ecfc407a))
+* **Textarea:** add ariaLabel and ariaLabelledby attributes ([2b36bad](https://github.com/kiwicom/orbit/commit/2b36bad8fce15a314b89ff30f25a439547841ec3))
+* **Toast:** the createToast function now accepts ariaProps ([329fe14](https://github.com/kiwicom/orbit/commit/329fe1462a760066edc560e399458f1d8b7d9e25))
+
+
+### BREAKING CHANGES
+
+* **icons:** some icon names were changed.
+Refer to the migration guide for a complete list of changes.
+* **ButtonMobileStore:** Because of accessibility,
+the alt prop is now required on the ButtonMobileStore component.
+This will be used as the alt attribute of the image.
+Make sure the passed value is properly translated.
+* **Collapse:** the label prop in Collapse only accepts string.
+It no longer accepts any React element.
+Make sure to replace translation components by strings.
+* **Collapse:** Collapse now requires two new props:
+`collapseButtonLabel` & `expandButtonLabel`
+They are used as accessible labels
+to the button that toggles the collapsed content
+* **Drawer:** the title prop in Drawer only accepts string.
+It no longer accepts any React element.
+Make sure to replace translation components by strings.
+* **Accordion:** The Accordion component no longer renders an Open
+button by default. If it is needed, you should pass it via actions prop.
+* **Alert:** Alert component now requires `labelClose` prop
+if `closable` is enabled. This will be converted into button aria-label
+attribute, make sure the passed value is properly translated.
+
+
+
+
+
 # [20.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@20.0.0...@kiwicom/orbit-components@20.1.0) (2025-02-27)
 
 

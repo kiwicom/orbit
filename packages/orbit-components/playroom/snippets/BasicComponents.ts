@@ -8,10 +8,10 @@ const buttonLink = `<ButtonLink type="primary">ButtonLink</ButtonLink>`;
 
 const badgeList = `
 <BadgeList>
-  <BadgeListItem icon={<Icons.KiwicomGuarantee />}>
+  <BadgeListItem icon={<Icons.KiwiComGuarantee />}>
     You're departing from a different place
   </BadgeListItem>
-  <BadgeListItem icon={<Icons.KiwicomGuarantee />} type="info" size="normal">
+  <BadgeListItem icon={<Icons.KiwiComGuarantee />} type="info" size="normal">
     You must collect and recheck your baggage
   </BadgeListItem>
 </BadgeList>

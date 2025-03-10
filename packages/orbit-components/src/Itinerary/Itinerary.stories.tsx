@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import defaultTheme from "../defaultTheme";
 import Modal, { ModalSection } from "../Modal";
 import {
-  KiwicomGuarantee as Guarantee,
+  KiwiComGuarantee,
   Airplane,
   BaggageCheckedNone,
   Clock,
@@ -162,7 +162,7 @@ export const Default: Story = {
         />
       </ItinerarySegment>
       <ItineraryBadgeList spaceAfter="medium">
-        <ItineraryBadgeListItem icon={<Guarantee />}>
+        <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
           Connection protected by the Kiwi.com Guarantee
         </ItineraryBadgeListItem>
       </ItineraryBadgeList>
@@ -209,7 +209,7 @@ export const BadgeList: StoryObj<typeof ItineraryBadgeList> = {
         <ItineraryBadgeListItem icon={<BaggageSet />}>
           You must collect and recheck your baggage
         </ItineraryBadgeListItem>
-        <ItineraryBadgeListItem icon={<Guarantee />}>
+        <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
           Connection protected by the Kiwi.com Guarantee
         </ItineraryBadgeListItem>
         <ItineraryBadgeListItem icon={<Info />} type="info">
@@ -311,7 +311,7 @@ export const Segment: StoryObj<typeof ItinerarySegment> = {
                     <ItineraryBadgeListItem icon={<BaggageCheckedNone />}>
                       You can’t bring checked or cabin baggage.
                     </ItineraryBadgeListItem>
-                    <ItineraryBadgeListItem icon={<Guarantee />}>
+                    <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
                       Connection protected by the Kiwi.com Guarantee
                     </ItineraryBadgeListItem>
                   </ItineraryBadgeList>
@@ -953,7 +953,7 @@ export const RTL: Story = {
             />
           </ItinerarySegment>
           <ItineraryBadgeList>
-            <ItineraryBadgeListItem icon={<Guarantee />}>
+            <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
               Connection protected by the Kiwi.com Guarantee
             </ItineraryBadgeListItem>
           </ItineraryBadgeList>

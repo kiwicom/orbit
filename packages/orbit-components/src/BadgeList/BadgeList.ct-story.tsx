@@ -2,7 +2,7 @@ import React from "react";
 
 import BadgeListItem from "./BadgeListItem";
 import { TYPE_OPTIONS, SIZE_OPTIONS } from "./consts";
-import KiwicomGuarantee from "../icons/KiwicomGuarantee";
+import Guarantee from "../icons/Guarantee";
 
 import BadgeList from ".";
 
@@ -12,10 +12,10 @@ export default function BadgeListVisualStory() {
       <div className="space-y-200">
         {Object.values(TYPE_OPTIONS).map(type => (
           <BadgeList>
-            <BadgeListItem icon={<KiwicomGuarantee />} type={type}>
+            <BadgeListItem icon={<Guarantee />} type={type}>
               List type {type} item #1
             </BadgeListItem>
-            <BadgeListItem icon={<KiwicomGuarantee />} type={type}>
+            <BadgeListItem icon={<Guarantee />} type={type}>
               List type {type} item #2
             </BadgeListItem>
           </BadgeList>
@@ -24,10 +24,10 @@ export default function BadgeListVisualStory() {
 
       {Object.values(SIZE_OPTIONS).map(size => (
         <BadgeList>
-          <BadgeListItem icon={<KiwicomGuarantee />} size={size}>
+          <BadgeListItem icon={<Guarantee />} size={size}>
             List size {size} item #1
           </BadgeListItem>
-          <BadgeListItem icon={<KiwicomGuarantee />} size={size}>
+          <BadgeListItem icon={<Guarantee />} size={size}>
             List size {size} item #2
           </BadgeListItem>
         </BadgeList>

@@ -44,7 +44,7 @@ export const Default: Story = {
 export const Types: Story = {
   render: () => {
     const component = type => (
-      <BadgeListItem icon={<Icons.KiwicomGuarantee />} type={type}>
+      <BadgeListItem icon={<Icons.KiwiComGuarantee />} type={type}>
         <TextLink onClick={action("link clicked")} type="secondary">
           Transfer protected
         </TextLink>{" "}
@@ -111,7 +111,7 @@ export const Playground: Story = {
         is your responsibility
       </BadgeListItem>
       <BadgeListItem
-        icon={<Icons.KiwicomGuarantee />}
+        icon={<Icons.KiwiComGuarantee />}
         type={type}
         strikeThrough={strikeThrough}
         size={size}
@@ -163,7 +163,7 @@ export const RTL: Story = {
           </Tooltip>{" "}
           is your responsibility
         </BadgeListItem>
-        <BadgeListItem icon={<Icons.KiwicomGuarantee />}>
+        <BadgeListItem icon={<Icons.KiwiComGuarantee />}>
           <TextLink onClick={action("link clicked")} type="secondary">
             Transfer protected
           </TextLink>{" "}

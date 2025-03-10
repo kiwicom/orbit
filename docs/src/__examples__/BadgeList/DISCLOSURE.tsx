@@ -1,5 +1,5 @@
 import React from "react";
-import { BaggageSet, KiwicomGuarantee } from "@kiwicom/orbit-components/icons";
+import { BaggageSet, KiwiComGuarantee } from "@kiwicom/orbit-components/icons";
 import {
   BadgeList,
   BadgeListItem,
@@ -38,7 +38,7 @@ export default {
           </Drawer>
         )}
         <BadgeList>
-          <BadgeListItem type="success" icon={<KiwicomGuarantee />}>
+          <BadgeListItem type="success" icon={<KiwiComGuarantee />}>
             <TextLink onClick={() => setShowDrawer(true)} type="secondary">
               Transfer protected
             </TextLink>{" "}

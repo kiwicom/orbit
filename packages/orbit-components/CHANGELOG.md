@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@21.0.1...@kiwicom/orbit-components@21.0.2) (2025-03-11)
+
+
+### Bug Fixes
+
+* **Drawer:** data-test was not applied on drawer ([644e2cd](https://github.com/kiwicom/orbit/commit/644e2cd5246d297e040b730ff1fb43deefaaa1b9))
+
+
+
+
+
 ## [21.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@21.0.0...@kiwicom/orbit-components@21.0.1) (2025-03-10)
 
 

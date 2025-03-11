@@ -8,6 +8,7 @@ import defaultTheme from "../../defaultTheme";
 
 const name = "BGYFastTrack";
 const dataTest = "test";
+const alt = "Fast Track at Bergamo Airport";
 
 describe(`AirportIllustration of ${name}`, () => {
   beforeEach(() => {
@@ -15,14 +16,15 @@ describe(`AirportIllustration of ${name}`, () => {
       <AirportIllustration
         size={SIZE_OPTIONS.EXTRASMALL}
         name={name}
-        dataTest="test"
+        alt={alt}
+        dataTest={dataTest}
         spaceAfter={SPACINGS_AFTER.NORMAL}
       />,
     );
   });
 
   it("should have passed props", () => {
-    expect(screen.getByRole("img")).toHaveAttribute("alt", name);
+    expect(screen.getByRole("img")).toHaveAttribute("alt", alt);
     expect(screen.getByRole("img")).toHaveAttribute("data-test", dataTest);
   });
 

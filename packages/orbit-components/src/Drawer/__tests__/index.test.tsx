@@ -42,16 +42,20 @@ describe("Drawer", () => {
     await user.click(screen.getByRole("button", { name: "Hide" }));
     expect(onClose).toHaveBeenCalled();
   });
-  it("should trigger close handler when clicked on backdrop", async () => {
+  it("should trigger close handler when clicked outside", async () => {
     const onClose = jest.fn();
     render(
-      <Drawer dataTest="container" onClose={onClose} shown>
-        <div data-test="content" />
-      </Drawer>,
+      <div data-test="outside">
+        <Drawer dataTest="container" onClose={onClose} shown>
+          <div data-test="content" />
+        </Drawer>
+      </div>,
     );
     await user.click(screen.getByTestId("content"));
     expect(onClose).not.toHaveBeenCalled();
     await user.click(screen.getByTestId("container"));
+    expect(onClose).not.toHaveBeenCalled();
+    await user.click(screen.getByTestId("outside"));
     expect(onClose).toHaveBeenCalled();
   });
   it("should trigger close when pressed escape key", async () => {

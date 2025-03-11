@@ -99,7 +99,6 @@ const Drawer = ({
           overlayShown ? "visible" : "invisible",
           shown ? "bg-drawer-overlay-background" : "bg-transparent",
         )}
-        data-test={dataTest}
         id={id}
         ref={overlayRef}
       />
@@ -122,6 +121,7 @@ const Drawer = ({
         style={vars as React.CSSProperties}
         ref={drawerRef}
         aria-label={ariaLabel || title}
+        data-test={dataTest}
       >
         {(title || actions || onClose) && (
           <div

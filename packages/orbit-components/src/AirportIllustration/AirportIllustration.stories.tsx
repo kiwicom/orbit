@@ -18,6 +18,7 @@ const meta: Meta<typeof AirportIllustration> = {
     size: SIZE_OPTIONS.MEDIUM,
     name: "BGYFastTrack",
     spaceAfter: SPACINGS_AFTER.SMALL,
+    alt: "Airport illustration",
   },
 
   argTypes: {

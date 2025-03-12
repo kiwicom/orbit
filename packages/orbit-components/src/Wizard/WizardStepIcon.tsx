@@ -19,6 +19,7 @@ const WizardStepIcon = ({ isCompleted }: { isCompleted?: boolean }) => {
           : "bg-product-normal group-hover/container:shadow-wizard-step-icon-hover",
         isActive && !isCompact && "shadow-wizard-step-icon-active",
       )}
+      aria-hidden
     >
       {isCompleted || status === "completed" ? (
         <Check

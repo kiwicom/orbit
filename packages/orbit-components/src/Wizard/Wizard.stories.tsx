@@ -2,7 +2,6 @@ import * as React from "react";
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Stack from "../Stack";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import Wizard, { WizardStep } from ".";
@@ -118,13 +117,7 @@ export const Rtl: Story = {
     <RenderInRtl>
       <Wizard
         {...args}
-        labelProgress={
-          <Stack flex spacing="100">
-            <div>3</div>
-            <div>of</div>
-            <div>3</div>
-          </Stack>
-        }
+        labelProgress={`${completedSteps} من ${steps.length}`}
         activeStep={activeStep > completedSteps ? completedSteps : activeStep}
         completedSteps={completedSteps}
       >

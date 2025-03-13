@@ -55,6 +55,7 @@ const TypeIcon = ({ type, active, mobile }: Props) => {
         "z-default h-icon-medium relative flex items-center justify-center",
         mobile && "min-w-600",
       )}
+      aria-hidden
     >
       {getTypeIcon({ type, active })}
       <div

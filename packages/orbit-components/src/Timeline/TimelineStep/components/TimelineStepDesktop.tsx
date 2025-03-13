@@ -31,7 +31,10 @@ const TimelineStepDesktop = ({
 
   return (
     <Stack inline shrink direction="column" align="center">
-      <div className={cx("relative flex w-[calc(100%+theme(spacing.400))] items-center")}>
+      <div
+        className={cx("relative flex w-[calc(100%+theme(spacing.400))] items-center")}
+        aria-hidden
+      >
         <ProgressLine desktop status={type} prevStatus={prevType} nextStatus={nextType} />
         <TypeIcon type={type} active={!!active} />
         <ProgressLine

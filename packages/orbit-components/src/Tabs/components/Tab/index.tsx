@@ -35,7 +35,7 @@ const Tab = ({
         "font-base font-medium",
         "rounded-t-100",
         "duration-fast transition-colors ease-in-out",
-        "px-400",
+        "px-400 focus:z-default",
         compact ? "text-normal py-[5px] leading-normal" : "text-large leading-large py-[9px]",
         disabled && "cursor-not-allowed opacity-50",
         !disabled && [
@@ -68,6 +68,7 @@ const Tab = ({
           onClick(ev);
         } else setSelected(index);
       }}
+      id={`tab-${index}`}
       type="button"
       disabled={disabled}
       role="tab"

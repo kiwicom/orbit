@@ -102,6 +102,7 @@ The table below contains all types of props available in the Illustration compon
 | `"PlaceholderTours"`            |
 | `"PlaneAndMoney"`               |
 | `"PlaneDelayed"`                |
+| `"PriceChange"`                 |
 | `"PriorityBoarding"`            |
 | `"Rating"`                      |
 | `"ReferAFriend"`                |

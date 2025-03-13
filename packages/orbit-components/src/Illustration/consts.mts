@@ -77,6 +77,7 @@ export const NAMES: Name[] = [
   "PlaceholderTours",
   "PlaneAndMoney",
   "PlaneDelayed",
+  "PriceChange",
   "PriorityBoarding",
   "Rating",
   "ReferAFriend",

@@ -81,6 +81,7 @@ export default {
             "PlaceholderHotel",
             "PlaceholderTours",
             "PlaneAndMoney",
+            "PriceChange",
             "PriorityBoarding",
             "Rating",
             "ReferAFriend",

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [21.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@21.0.2...@kiwicom/orbit-components@21.1.0) (2025-03-13)
+
+
+### Bug Fixes
+
+* **Seat:** display as div when non-clickable ([58a5d9e](https://github.com/kiwicom/orbit/commit/58a5d9e0f0e9720c8b45d8a18cd3626f7d06352c))
+* **Tooltip:** display focus indicator when focused ([e1a80d7](https://github.com/kiwicom/orbit/commit/e1a80d7b2263fdf93db80e5ed927e855a8f6b164))
+* **Tooltip:** set aria-describedby only when shown ([7c20a49](https://github.com/kiwicom/orbit/commit/7c20a4914ec3e79f0f767b46c916d20e97561962))
+
+
+### Features
+
+* **AirportIllustration:** set empty string for alt when a value is not provided ([156abc2](https://github.com/kiwicom/orbit/commit/156abc2bddc21c0657be208cba7e9175503c2454))
+* **icons:** update icons from figma ([fe658b7](https://github.com/kiwicom/orbit/commit/fe658b76f1e8a812fcdc260ba9608c4ef2fec783))
+* **Illustration:** add PriceChange illustration ([123ef30](https://github.com/kiwicom/orbit/commit/123ef30011aa63bb45f0516f258df8dbc91f39e7))
+* **Tag:** improve the accessibility of the Tag component ([dcecbcc](https://github.com/kiwicom/orbit/commit/dcecbccd153bc4d1bcaaa4117dd8d193cdd6402d))
+
+
+
+
+
 ## [21.0.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@21.0.1...@kiwicom/orbit-components@21.0.2) (2025-03-11)
 
 

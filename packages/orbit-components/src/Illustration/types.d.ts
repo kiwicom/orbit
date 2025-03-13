@@ -82,6 +82,7 @@ export type Name =
   | "PlaceholderTours"
   | "PlaneAndMoney"
   | "PlaneDelayed"
+  | "PriceChange"
   | "PriorityBoarding"
   | "Rating"
   | "ReferAFriend"

@@ -89,13 +89,14 @@ export const Sizes: Story = {
 };
 
 export const Playground: Story = {
-  render: ({ type, size, strikeThrough }) => (
-    <BadgeList>
+  render: ({ type, size, strikeThrough, ariaLabel, iconLabel }) => (
+    <BadgeList ariaLabel={ariaLabel}>
       <BadgeListItem
         icon={<Icons.AlertCircle />}
         type={type}
         strikeThrough={strikeThrough}
         size={size}
+        iconLabel={iconLabel}
       >
         You&apos;re departing from a different place
       </BadgeListItem>
@@ -104,6 +105,7 @@ export const Playground: Story = {
         type={type}
         strikeThrough={strikeThrough}
         size={size}
+        iconLabel={iconLabel}
       >
         <Tooltip content="Additional information">
           <Text>Self transfer at Vienna</Text>
@@ -115,6 +117,7 @@ export const Playground: Story = {
         type={type}
         strikeThrough={strikeThrough}
         size={size}
+        iconLabel={iconLabel}
       >
         <TextLink onClick={action("link clicked")} type="secondary">
           Transfer protected
@@ -132,6 +135,8 @@ export const Playground: Story = {
     type: TYPE_OPTIONS.NEUTRAL,
     size: SIZE_OPTIONS.SMALL,
     strikeThrough: false,
+    ariaLabel: "This is the BadgeList aria label",
+    iconLabel: "This is the icon aria label",
   },
 
   argTypes: {

@@ -13,4 +13,5 @@ export interface Props extends Common.Globals {
   readonly size?: Size;
   readonly strikeThrough?: boolean;
   readonly icon: React.ReactNode;
+  readonly iconLabel?: string;
 }

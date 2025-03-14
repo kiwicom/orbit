@@ -39,6 +39,8 @@ const TabPanel = ({ children, margin, padding, dataTest, active = false }: Props
       style={cssVars}
       id={`panel-${index}`}
       data-test={dataTest}
+      role="tabpanel"
+      aria-labelledby={`tab-${index}`}
     >
       {children}
     </div>

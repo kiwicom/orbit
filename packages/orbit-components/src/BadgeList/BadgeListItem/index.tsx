@@ -36,7 +36,15 @@ export const ItemWrapper = ({ children, dataTest }) => (
   </li>
 );
 
-export const VerticalBadge = ({ icon, type }: { icon: React.ReactNode; type: Props["type"] }) => {
+export const VerticalBadge = ({
+  icon,
+  type,
+  iconLabel,
+}: {
+  icon: React.ReactNode;
+  type: Props["type"];
+  iconLabel?: string;
+}) => {
   return (
     <div
       className={cx(
@@ -44,7 +52,9 @@ export const VerticalBadge = ({ icon, type }: { icon: React.ReactNode; type: Pro
         "[&_svg]:size-icon-small",
         type && [BACKGROUND[type], ICON_COLOR[type]],
       )}
-      aria-hidden
+      aria-hidden={!iconLabel}
+      aria-label={iconLabel}
+      role={iconLabel ? "img" : undefined}
     >
       {icon}
     </div>
@@ -73,10 +83,11 @@ const BadgeListItem = ({
   size = SIZE_OPTIONS.SMALL,
   dataTest,
   children,
+  iconLabel,
 }: Props) => {
   return (
     <ItemWrapper dataTest={dataTest}>
-      <VerticalBadge type={type} icon={icon} />
+      <VerticalBadge type={type} icon={icon} iconLabel={iconLabel} />
       <BadgeContent>
         <Text type="secondary" size={size} as="span" strikeThrough={strikeThrough}>
           {children}

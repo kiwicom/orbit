@@ -221,7 +221,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, 
         )}
         style={varsButton}
       >
-        {loading && <Loading type="buttonLoader" />}
+        {loading && <Loading ariaHidden type="buttonLoader" />}
 
         {iconLeft != null && (
           <div

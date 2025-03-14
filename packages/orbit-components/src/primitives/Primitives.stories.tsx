@@ -153,7 +153,7 @@ export const ButtonPrimitive: Story = {
     role: "",
     spaceAfter: SPACINGS_AFTER.SMALL,
     submit: false,
-    title: "",
+    title: "Button title",
     tabIndex: 0,
     width: "",
     contentAlign: "center",

@@ -42,6 +42,8 @@ Also, the component offers flexibility in terms of the HTML element used for the
 
 - Use `role` and `tabIndex` when you are rendering `Button` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
 
+- When a `Button` is loading, the loading indicator is hidden from screen readers. For this reason, you should use the `title` prop (or any alternative available) to provide additional information about the button and its loading state.
+
 ## Example
 
 ### Example 1:

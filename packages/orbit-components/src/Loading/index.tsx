@@ -89,6 +89,7 @@ const Loading = ({
   customSize,
   title,
   id,
+  ariaHidden,
 }: Props) => {
   const Element = text ? "div" : asComponent;
 
@@ -113,6 +114,7 @@ const Loading = ({
           style={{ height: customSize }}
           data-test={dataTest}
           id={id}
+          aria-hidden={ariaHidden}
         >
           <Loader title={title} type={type} customSize={customSize} />
           {type !== TYPE_OPTIONS.BUTTON_LOADER && Boolean(text) && (

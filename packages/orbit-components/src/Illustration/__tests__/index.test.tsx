@@ -11,12 +11,14 @@ describe("Illustration", () => {
       <Illustration
         size={SIZE_OPTIONS.EXTRASMALL}
         name="Accommodation"
+        alt="Accommodation illustration"
         dataTest="test"
+        role="img"
         spaceAfter={SPACINGS_AFTER.NORMAL}
       />,
     );
     expect(screen.getByTestId("test"));
-    const img = screen.getByRole("img", { name: "Accommodation" });
+    const img = screen.getByRole("img", { name: "Accommodation illustration" });
     expect(img.getAttribute("src")).toMatchInlineSnapshot(
       `"//images.kiwi.com/illustrations/0x90/Accommodation-Q85.png"`,
     );

@@ -16,14 +16,15 @@ After adding import into your project you can use it simply like:
 
 The table below contains all types of props available in the Illustration component.
 
-| Name       | Type            | Default    | Description                                                                                                                  |
-| :--------- | :-------------- | :--------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| alt        | `string`        |            | Optional property for passing own `alt` attribute to the DOM image element. Bby default, the `name` of illustration is used. |
-| dataTest   | `string`        |            | Optional prop for testing purposes.                                                                                          |
-| id         | `string`        |            | Set `id` for `Illustration`                                                                                                  |
-| **name**   | [`enum`](#enum) |            | Name for the displayed illustration.                                                                                         |
-| size       | [`enum`](#enum) | `"medium"` | The size of the Illustration.                                                                                                |
-| spaceAfter | `enum`          |            | Additional `margin-bottom` after component.                                                                                  |
+| Name       | Type                | Default          | Description                                                                                                      |
+| :--------- | :------------------ | :--------------- | :--------------------------------------------------------------------------------------------------------------- |
+| alt        | `string`            |                  | Optional property for passing own `alt` attribute to the DOM image element. By default, an empty string is used. |
+| dataTest   | `string`            |                  | Optional prop for testing purposes.                                                                              |
+| id         | `string`            |                  | Set `id` for `Illustration`                                                                                      |
+| **name**   | [`enum`](#enum)     |                  | Name for the displayed illustration.                                                                             |
+| size       | [`enum`](#enum)     | `"medium"`       | The size of the Illustration.                                                                                    |
+| spaceAfter | `enum`              |                  | Additional `margin-bottom` after component.                                                                      |
+| role       | `img\|presentation` | `"presentation"` | Optional property for a role attribute.                                                                          |
 
 ### enum
 

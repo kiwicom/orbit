@@ -3,7 +3,7 @@ import { useRef, useState, useCallback } from "react";
 
 import type { Event } from "../../common/types";
 
-const useErrorTooltip = <T = HTMLInputElement, K = HTMLLabelElement>({
+const useErrorTooltip = <T = HTMLInputElement, K = HTMLLabelElement & HTMLDivElement>({
   onFocus,
   hasTooltip = true,
 }: {

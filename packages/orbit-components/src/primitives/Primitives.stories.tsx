@@ -64,6 +64,8 @@ export const IllustrationPrimitive: Story = {
     size: SIZE_OPTIONS.MEDIUM,
     spaceAfter: SPACINGS_AFTER.SMALL,
     name: "Accommodation",
+    alt: "Accommodation illustration",
+    role: "presentation",
   },
 
   argTypes: {
@@ -81,6 +83,12 @@ export const IllustrationPrimitive: Story = {
     },
     spaceAfter: {
       options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+    role: {
+      options: ["img", "presentation"],
       control: {
         type: "select",
       },
@@ -150,7 +158,6 @@ export const ButtonPrimitive: Story = {
     },
     loading: false,
     padding: "0 10px 0 10px",
-    role: "",
     spaceAfter: SPACINGS_AFTER.SMALL,
     submit: false,
     title: "Button title",

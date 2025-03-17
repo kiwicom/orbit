@@ -21,7 +21,7 @@ describe("IllustrationPrimitive", () => {
       />,
     );
 
-    const img = screen.getByRole("img");
+    const img = screen.getByRole("presentation");
 
     expect(img).toHaveStyle({ maxHeight: "90px" });
     expect(screen.getByAltText("Alternative text")).toBeInTheDocument();
@@ -36,8 +36,8 @@ describe("IllustrationPrimitive", () => {
     screen.getByAltText("");
   });
 
-  it("should have name in alt", () => {
-    render(<IllustrationPrimitive name="Accommodation" />);
-    screen.getByAltText("Accommodation");
+  it("should have alt filled in", () => {
+    render(<IllustrationPrimitive name="Accommodation" alt="Accommodation illustration" />);
+    screen.getByAltText("Accommodation illustration");
   });
 });

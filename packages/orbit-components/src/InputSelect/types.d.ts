@@ -19,7 +19,7 @@ type KeyboardEvent = Common.Event<React.KeyboardEvent<HTMLInputElement>>;
 
 export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAttrs {
   readonly name?: string;
-  readonly label?: Common.Translation;
+  readonly label?: string;
   readonly placeholder?: string;
   readonly help?: React.ReactNode;
   readonly error?: React.ReactNode;

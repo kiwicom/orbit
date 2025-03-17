@@ -20,6 +20,6 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly error?: React.ReactNode;
   readonly maxWidth?: string;
   readonly help?: React.ReactNode;
-  readonly label?: React.ReactNode;
+  readonly label?: string;
   readonly options: Option[];
 }

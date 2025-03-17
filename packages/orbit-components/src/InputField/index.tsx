@@ -274,8 +274,8 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           defaultValue={defaultValue}
           placeholder={placeholder}
           disabled={disabled}
-          min={minValue}
-          max={maxValue}
+          min={type === TYPE_OPTIONS.NUMBER ? minValue : undefined}
+          max={type === TYPE_OPTIONS.NUMBER ? maxValue : undefined}
           minLength={minLength}
           maxLength={maxLength}
           ref={ref}

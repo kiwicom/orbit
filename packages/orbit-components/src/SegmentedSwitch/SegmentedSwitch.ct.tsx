@@ -17,7 +17,7 @@ test.describe("visual SegmentedSwitch", () => {
 
   test("error focused", async ({ mount }) => {
     const component = await mount(<SegmentedSwitchErrorStory />);
-    await component.getByTestId("switch-error").focus();
+    await component.getByLabel("Male", { exact: true }).focus();
 
     await expect(component).toHaveScreenshot();
   });

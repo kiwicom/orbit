@@ -36,16 +36,18 @@ const SegmentedSwitch = ({
   }, [showTooltip, hasTooltip, setTooltipShown]);
 
   return (
-    <label
+    <div
       data-test={dataTest}
       ref={labelRef}
       className={cx(
         "gap-50 relative flex w-full flex-col",
         spaceAfter && spaceAfterClasses[spaceAfter],
-        "[&_.orbit-switch-segment-label:nth-child(odd)_.orbit-switch-segment-text]:rounded-s-[5px]",
-        "[&_.orbit-switch-segment-label:nth-child(even)_.orbit-switch-segment-text]:rounded-e-[5px]",
+        "[&_.orbit-switch-segment-label:first-child_.orbit-switch-segment-text]:rounded-s-[5px]",
+        "[&_.orbit-switch-segment-label:last-child_.orbit-switch-segment-text]:rounded-e-[5px]",
       )}
       style={{ maxWidth }}
+      role="group"
+      aria-label={label}
     >
       {label && (
         <FormLabel
@@ -79,7 +81,7 @@ const SegmentedSwitch = ({
           referenceElement={labelRef}
         />
       )}
-    </label>
+    </div>
   );
 };
 

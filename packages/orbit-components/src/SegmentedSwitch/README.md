@@ -38,7 +38,7 @@ _Table below contains all types of the props available in the SegmentedSwitch co
 | options     | [`Option[]`](#option)                         |         | Array of options.                   |
 | onChange    | `(ev: ChangeEvent<HTMLInputElement>) => void` |         | Function for handling change event. |
 | onFocus     | `(ev: FocusEvent<HTMLInputElement>) => void`  |         | Function for handling focus event.  |
-| label       | `React.Node`                                  |         | Label of the component.             |
+| label       | `string`                                      |         | Label of the component.             |
 | showTooltip | `boolean`                                     | `false` | Show tooltip.                       |
 
 ## Option

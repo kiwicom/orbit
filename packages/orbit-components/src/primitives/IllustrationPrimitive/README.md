@@ -20,14 +20,15 @@ As with every primitive, you should have a good reason to use `IllustrationPrimi
 
 Table below contains all types of the props available in IllustrationPrimitive component.
 
-| Name     | Type                         | Default    | Description                                                                                                                 |
-| :------- | :--------------------------- | :--------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| alt      | `string`                     |            | Optional property for passing own `alt` attribute to the DOM image element. By default, the `name` of illustration is used. |
-| dataTest | `string`                     |            | Optional prop for testing purposes.                                                                                         |
-| id       | `string`                     |            | Set `id` for IllustrationPrimitive                                                                                          |
-| **name** | `string`                     |            | Name for the displayed illustrationPrimitive.                                                                               |
-| size     | [`enum`](#enum)              | `"medium"` | The size of the IllustrationPrimitive.                                                                                      |
-| margin   | `string \| number \| Object` |            | Utility property to set margin.                                                                                             |
+| Name     | Type                         | Default          | Description                                                                                                      |
+| :------- | :--------------------------- | :--------------- | :--------------------------------------------------------------------------------------------------------------- |
+| alt      | `string`                     |                  | Optional property for passing own `alt` attribute to the DOM image element. By default, an empty string is used. |
+| dataTest | `string`                     |                  | Optional prop for testing purposes.                                                                              |
+| id       | `string`                     |                  | Set `id` for IllustrationPrimitive                                                                               |
+| **name** | `string`                     |                  | Name for the displayed illustrationPrimitive.                                                                    |
+| size     | [`enum`](#enum)              | `"medium"`       | The size of the IllustrationPrimitive.                                                                           |
+| margin   | `string \| number \| Object` |                  | Utility property to set margin.                                                                                  |
+| role     | `img\|presentation`          | `"presentation"` | Optional property for a role attribute.                                                                          |
 
 ### enum
 

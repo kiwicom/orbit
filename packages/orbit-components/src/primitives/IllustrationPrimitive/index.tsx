@@ -39,6 +39,7 @@ const baseURL = "//images.kiwi.com";
 const IllustrationPrimitive = ({
   name,
   alt,
+  role = "presentation",
   margin,
   size = SIZE_OPTIONS.MEDIUM,
   dataTest,
@@ -63,10 +64,11 @@ const IllustrationPrimitive = ({
       srcSet={`${baseURL}/illustrations/0x${
         height * 2
       }/${illustrationPath} 2x, ${baseURL}/illustrations/0x${height * 3}/${illustrationPath} 3x`}
-      alt={typeof alt === "string" ? alt : name}
+      alt={alt}
       data-test={dataTest}
       id={id}
       style={cssVars}
+      role={role}
     />
   );
 };

@@ -10,7 +10,6 @@ import CloseCircle from "../icons/CloseCircle";
 import InputField from "../InputField";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import useClickOutside from "../hooks/useClickOutside";
-import KEY_CODE from "../common/keyMaps";
 import Box from "../Box";
 import Text from "../Text";
 import Stack from "../Stack";
@@ -150,19 +149,14 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     };
 
     const handleDropdownKey = (ev: React.KeyboardEvent<HTMLInputElement>) => {
-      if (
-        !isOpened &&
-        (ev.keyCode === KEY_CODE.ENTER ||
-          ev.keyCode === KEY_CODE.ARROW_DOWN ||
-          ev.keyCode === KEY_CODE.ARROW_UP)
-      ) {
+      if (!isOpened && (ev.code === "Enter" || ev.code === "ArrowDown" || ev.code === "ArrowUp")) {
         setIsOpened(true);
         return;
       }
 
-      if (isOpened && ev.keyCode === KEY_CODE.ESC) handleClose();
+      if (isOpened && ev.code === "Escape") handleClose();
 
-      if (isOpened && ev.keyCode === KEY_CODE.ENTER) {
+      if (isOpened && ev.code === "Enter") {
         ev.preventDefault();
 
         if (results.all.length !== 0) {
@@ -175,7 +169,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         }
       }
 
-      if (ev.keyCode === KEY_CODE.ARROW_DOWN) {
+      if (ev.code === "ArrowDown") {
         if (results.flattened.length - 1 > activeIdx) {
           const nextIdx = activeIdx + 1;
           setActiveIdx(nextIdx);
@@ -187,7 +181,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         }
       }
 
-      if (ev.keyCode === KEY_CODE.ARROW_UP) {
+      if (ev.code === "ArrowUp") {
         if (activeIdx > 0) {
           const prevIdx = activeIdx - 1;
 

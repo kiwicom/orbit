@@ -164,7 +164,7 @@ jobs:
 
           # Prepare prompt for the LLM
           prompt = f"""
-          Please analyze the following Git diff from a pull request and provide feedback.
+          You are a code reviewer analyzing a pull request. Provide a concise, actionable review that helps developers quickly understand the key points to consider.
           You will be provided with both the diff and the entire codebase for context.
 
           Pull Request: {github_repo}/pull/{pr_number}
@@ -178,14 +178,21 @@ jobs:
           CODEBASE:
           {codebase_content}
 
-          Please provide:
-          1. A summary of the changes
-          2. Potential issues or bugs you notice
-          3. Suggestions for improvements
-          4. Any security concerns
-          5. Code quality observations
+          Please provide a brief review in the following format:
 
-          Consider how the changes fit into the existing codebase and if they maintain consistency with the existing code patterns.
+          ## Summary
+          [2-3 sentences maximum describing the main changes]
+
+          ## Key Points to Review
+          - List 2-3 specific areas that need careful attention
+          - Focus on potential issues that could impact functionality or maintainability, and suggest improvements for each issue identified
+          - Include any security considerations (only if there are any)
+
+          ## Style & Consistency
+          - Only include this section if there are notable deviations from the existing codebase style
+          - List specific suggestions for maintaining consistency
+
+          Keep the review concise and actionable. Focus on the most important points that would benefit from human review.
           """
 
           # Send to LLM and get analysis

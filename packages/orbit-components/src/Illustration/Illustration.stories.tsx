@@ -20,6 +20,7 @@ const meta: Meta<typeof Illustration> = {
     name: "Accommodation",
     margin: { bottom: 12 },
     alt: "",
+    role: "presentation",
   },
 
   argTypes: {
@@ -31,6 +32,12 @@ const meta: Meta<typeof Illustration> = {
     },
     name: {
       options: NAMES,
+      control: {
+        type: "select",
+      },
+    },
+    role: {
+      options: ["img", "presentation"],
       control: {
         type: "select",
       },

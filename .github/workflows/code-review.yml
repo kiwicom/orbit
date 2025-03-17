@@ -221,9 +221,33 @@ jobs:
             // Get the PR number from the event
             const prNumber = ${{ github.event.pull_request.number }};
 
-            github.rest.issues.createComment({
+            // Search for existing comments from our bot
+            const comments = await github.rest.issues.listComments({
               issue_number: prNumber,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## LLM Analysis of PR Changes\n\n${analysis}`
-            })
+              per_page: 100
+            });
+
+            // Find our bot's comment by looking for the specific header
+            const botComment = comments.data.find(comment => 
+              comment.body.startsWith('## LLM Analysis of PR Changes')
+            );
+
+            if (botComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                comment_id: botComment.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## LLM Analysis of PR Changes\n\n${analysis}`
+              });
+            } else {
+              // Create new comment if none exists
+              await github.rest.issues.createComment({
+                issue_number: prNumber,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## LLM Analysis of PR Changes\n\n${analysis}`
+              });
+            }

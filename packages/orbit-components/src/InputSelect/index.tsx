@@ -54,10 +54,10 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     ref,
   ) => {
     const randomId = useRandomIdSeed();
-    const labelRef = React.useRef<HTMLLabelElement | null>(null);
+    const labelRef = React.useRef<HTMLDivElement | null>(null);
     const inputId = id || randomId("input");
     const dropdownId = randomId("dropdown");
-    const dropdownRef = React.useRef<HTMLUListElement | null>(null);
+    const dropdownRef = React.useRef<HTMLDivElement | null>(null);
 
     const [isOpened, setIsOpened] = React.useState(false);
     const [inputValue, setInputValue] = React.useState(
@@ -71,11 +71,13 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
     );
 
     const [activeIdx, setActiveIdx] = React.useState(0);
-    const [activeDescendant, setActiveDescendant] = React.useState("");
+    const [activeDescendant, setActiveDescendant] = React.useState<string | undefined>(undefined);
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [topOffset, setTopOffset] = React.useState(0);
 
-    const refs = {};
+    const refs = React.useMemo(() => {
+      return {};
+    }, []);
 
     const { isLargeMobile } = useMediaQuery();
 
@@ -104,6 +106,10 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         });
       }
     }, [inputValue, options, groupedOptions]);
+
+    React.useEffect(() => {
+      setActiveDescendant((refs[activeIdx]?.current?.id as string) || undefined);
+    }, [activeIdx, refs]);
 
     const handleClose = (selection?: Option | null) => {
       if (!selection) {
@@ -173,7 +179,6 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         if (results.flattened.length - 1 > activeIdx) {
           const nextIdx = activeIdx + 1;
           setActiveIdx(nextIdx);
-          setActiveDescendant(refs[nextIdx].current?.id);
 
           if (dropdownRef && dropdownRef.current) {
             dropdownRef.current.scrollTop = refs[nextIdx].current?.offsetTop;
@@ -186,7 +191,6 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
           const prevIdx = activeIdx - 1;
 
           setActiveIdx(prevIdx);
-          setActiveDescendant(refs[prevIdx].current?.id);
 
           if (dropdownRef && dropdownRef.current) {
             dropdownRef.current.scrollTop = refs[prevIdx].current?.offsetTop;
@@ -395,7 +399,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       );
 
     const dropdown = isOpened && (
-      <ul
+      <div
         className={cx(
           "font-base bg-white-normal lm:absolute lm:inset-x-0 lm:overflow-y-scroll lm:shadow-level1 lm:rounded-100 z-[3] flex w-full flex-col",
           label
@@ -416,16 +420,15 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
         ref={dropdownRef}
       >
         {results.all.length === 0 ? noResults : renderOptions()}
-      </ul>
+      </div>
     );
 
     return (
-      <label
+      <div
         className={cx(
           "orbit-input-select relative block",
           spaceAfter && spaceAfterClasses[spaceAfter],
         )}
-        htmlFor={inputId}
         ref={labelRef}
       >
         {isLargeMobile ? (
@@ -470,6 +473,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                     }
                   }}
                   mobileHeader={false}
+                  ariaLabel={label}
                 >
                   <ModalHeader className="!p-400 !mb-0">
                     {label && (
@@ -493,7 +497,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
             )}
           </>
         )}
-      </label>
+      </div>
     );
   },
 );

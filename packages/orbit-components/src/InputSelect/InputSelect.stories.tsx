@@ -11,34 +11,34 @@ const options = [
     title: "Euro",
     value: "EUR",
     group: "Popular",
-    prefix: <CountryFlag code="eu" />,
+    prefix: <CountryFlag role="presentation" code="eu" />,
   },
   {
     title: "US Dollar",
     value: "USD",
     group: "Popular",
-    prefix: <CountryFlag code="us" />,
+    prefix: <CountryFlag role="presentation" code="us" />,
   },
   {
     title: "Pound Sterling",
     value: "GBP",
     group: "Popular",
-    prefix: <CountryFlag code="gb" />,
+    prefix: <CountryFlag role="presentation" code="gb" />,
   },
   {
     title: "Australian Dollar",
     value: "AUD",
-    prefix: <CountryFlag code="au" />,
+    prefix: <CountryFlag role="presentation" code="au" />,
   },
   {
     title: "Brazilian Real",
     value: "BRL",
-    prefix: <CountryFlag code="br" />,
+    prefix: <CountryFlag role="presentation" code="br" />,
   },
   {
     title: "Czech Koruna",
     value: "CZK",
-    prefix: <CountryFlag code="cz" />,
+    prefix: <CountryFlag role="presentation" code="cz" />,
   },
 ];
 
@@ -132,13 +132,14 @@ const meta: Meta<typeof InputSelect> = {
     onClose: action("onClose"),
     onBlur: action("onBlur"),
     onSelect: action("onSelect"),
-    placeholder: "Select currency",
+    placeholder: "Start typing to search",
     prevSelectedLabel: "Previously selected",
     showAll: true,
     maxHeight: "400px",
     readOnly: false,
     emptyState: "No results found.",
     labelClose: "Close",
+    label: "Select currency",
   },
 };
 

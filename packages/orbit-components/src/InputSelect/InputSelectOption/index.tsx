@@ -18,20 +18,20 @@ interface InputSelectOptionProps {
 const InputSelectOption = React.forwardRef<HTMLDivElement, InputSelectOptionProps>(
   ({ active, id, onClick, isSelected, title, description, prefix }, ref) => {
     return (
-      <li className={cx(active && "[&_.orbit-list-choice]:bg-cloud-light")}>
+      <div className={cx(active && "[&_.orbit-list-choice]:bg-cloud-light")}>
         <ListChoice
           id={id}
           onClick={onClick}
           ref={ref}
           tabIndex={-1}
           selected={isSelected}
-          action={isSelected && <CheckCircle color="info" />}
+          action={isSelected && <CheckCircle ariaHidden color="info" />}
           role="option"
           title={title}
           description={description}
           icon={prefix}
         />
-      </li>
+      </div>
     );
   },
 );

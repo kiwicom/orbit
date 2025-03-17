@@ -84,7 +84,7 @@ describe("InputSelect", () => {
 
     expect(input).toBeInTheDocument();
     expect(dropdown).toBeInTheDocument();
-    expect(screen.getByLabelText(label)).toBeInTheDocument();
+    expect(screen.getByRole("dialog", { name: label })).toBeInTheDocument();
     expect(input).toHaveAttribute("name", name);
     expect(input).toHaveAttribute("id", id);
     expect(input).toHaveAttribute("data-test", dataTest);

@@ -20,6 +20,14 @@ It used to accept a React node for translations, but this could lead to some une
 
 This change also allows for the `aria-label` attribute of the wrapper `div` to have the same value as the `label` prop.
 
+### Label prop in InputSelect component
+
+The `label` prop in the `InputSelect` component now only accepts a string.
+
+It used to accept a React node for translations, but this could lead to some unexpected or wrong HTML structure.
+
+This change also allows for the `aria-label` attribute of the Modal Dialog rendered on Mobile to have the same value as the `label` prop.
+
 ### Removal of `helpClosable` prop in ErrorFormTooltip
 
 The `helpClosable` prop in the `ErrorFormTooltip` component has been removed.

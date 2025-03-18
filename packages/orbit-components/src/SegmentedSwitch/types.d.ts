@@ -22,4 +22,6 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly help?: React.ReactNode;
   readonly label?: string;
   readonly options: Option[];
+  readonly ariaLabel?: string;
+  readonly ariaLabelledby?: string;
 }

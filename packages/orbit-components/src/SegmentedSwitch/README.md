@@ -30,16 +30,18 @@ const Component = () => {
 
 _Table below contains all types of the props available in the SegmentedSwitch component._
 
-| Name        | Type                                          | Default | Description                         |
-| :---------- | :-------------------------------------------- | :------ | :---------------------------------- |
-| dataTest    | `string`                                      |         | Optional prop for testing purposes. |
-| help        | `React.Node`                                  |         | Optional help message.              |
-| error       | `React.Node`                                  |         | Optional error message.             |
-| options     | [`Option[]`](#option)                         |         | Array of options.                   |
-| onChange    | `(ev: ChangeEvent<HTMLInputElement>) => void` |         | Function for handling change event. |
-| onFocus     | `(ev: FocusEvent<HTMLInputElement>) => void`  |         | Function for handling focus event.  |
-| label       | `string`                                      |         | Label of the component.             |
-| showTooltip | `boolean`                                     | `false` | Show tooltip.                       |
+| Name           | Type                                          | Default | Description                                                                                    |
+| :------------- | :-------------------------------------------- | :------ | :--------------------------------------------------------------------------------------------- |
+| dataTest       | `string`                                      |         | Optional prop for testing purposes.                                                            |
+| help           | `React.Node`                                  |         | Optional help message.                                                                         |
+| error          | `React.Node`                                  |         | Optional error message.                                                                        |
+| options        | [`Option[]`](#option)                         |         | Array of options.                                                                              |
+| onChange       | `(ev: ChangeEvent<HTMLInputElement>) => void` |         | Function for handling change event.                                                            |
+| onFocus        | `(ev: FocusEvent<HTMLInputElement>) => void`  |         | Function for handling focus event.                                                             |
+| label          | `string`                                      |         | Label of the component.                                                                        |
+| ariaLabel      | `string`                                      |         | Optional `aria-label` attribute.                                                               |
+| ariaLabelledby | `string`                                      |         | Optional `aria-labelledby` attribute. Receives an id of the element that labels the component. |
+| showTooltip    | `boolean`                                     | `false` | Show tooltip.                                                                                  |
 
 ## Option
 

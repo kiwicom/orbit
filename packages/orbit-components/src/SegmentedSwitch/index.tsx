@@ -22,6 +22,8 @@ const SegmentedSwitch = ({
   help,
   error,
   label,
+  ariaLabel,
+  ariaLabelledby,
 }: Props) => {
   const hasTooltip = Boolean(error || help);
 
@@ -47,7 +49,8 @@ const SegmentedSwitch = ({
       )}
       style={{ maxWidth }}
       role="group"
-      aria-label={label}
+      aria-label={ariaLabel || label}
+      aria-labelledby={ariaLabelledby}
     >
       {label && (
         <FormLabel

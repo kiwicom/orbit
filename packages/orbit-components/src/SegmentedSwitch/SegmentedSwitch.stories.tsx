@@ -14,7 +14,7 @@ const meta: Meta<typeof SegmentedSwitch> = {
   parameters: {
     info: "SegmentedSwitch component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onChange", "onFocus"],
+      exclude: ["onChange", "onFocus", "ariaLabel", "ariaLabelledby"],
     },
   },
 

@@ -18,6 +18,7 @@ describe(`AirportIllustration of ${name}`, () => {
         name={name}
         alt={alt}
         dataTest={dataTest}
+        role="img"
         spaceAfter={SPACINGS_AFTER.NORMAL}
       />,
     );

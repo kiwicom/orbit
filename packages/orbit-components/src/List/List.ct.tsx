@@ -1,7 +1,7 @@
 import * as React from "react";
 import { test, expect } from "@playwright/experimental-ct-react";
 
-import ListStory, { ListStoryWithIconAndLabel } from "./List.ct-story";
+import ListStory, { ListStoryWithSpacing, ListStoryWithIconAndLabel } from "./List.ct-story";
 import { SIZES, TYPES } from "./consts";
 
 test.describe("visual List", () => {
@@ -17,6 +17,11 @@ test.describe("visual List", () => {
       const component = await mount(<ListStory type={type} />);
       await expect(component).toHaveScreenshot();
     });
+  });
+
+  test("List with various spacing", async ({ mount }) => {
+    const component = await mount(<ListStoryWithSpacing />);
+    await expect(component).toHaveScreenshot();
   });
 
   test("List with icon and label", async ({ mount }) => {

@@ -160,6 +160,7 @@ const Stack = (props: Props) => {
       data-test={dataTest}
       style={vars}
       className={cx(
+        "orbit-stack",
         getTailwindTokensForMedia(defaultMediaProps),
         ...varClasses,
         Object.values(QUERIES).map((viewport, index, viewports) => {

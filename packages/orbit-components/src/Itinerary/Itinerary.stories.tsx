@@ -31,6 +31,7 @@ import Separator from "../Separator";
 import { SPACINGS_AFTER } from "../common/consts";
 import { TYPE_OPTIONS } from "../BadgeList/consts";
 import { Icons } from "..";
+import { SPACINGS } from "../utils/layout/consts";
 
 import Itinerary, {
   ItinerarySeparator,
@@ -231,11 +232,18 @@ export const BadgeList: StoryObj<typeof ItineraryBadgeList> = {
 
   args: {
     spaceAfter: SPACINGS_AFTER.MEDIUM,
+    spacing: SPACINGS.NONE,
   },
 
   argTypes: {
     spaceAfter: {
       options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+    spacing: {
+      options: Object.values(SPACINGS),
       control: {
         type: "select",
       },
@@ -799,22 +807,20 @@ export const MultipleBanners: Story = {
                   </ItinerarySegmentBanner>
                   <Separator />
                   <ItinerarySegmentBanner>
-                    <ItineraryBadgeList>
-                      <Stack spacing="200">
-                        <ItineraryBadgeListItem icon={<Location color="secondary" />}>
-                          You’ll depart from a different place in New York: John F. Kennedy
-                          International.
-                        </ItineraryBadgeListItem>
-                        <ItineraryBadgeListItem icon={<Location color="secondary" />}>
-                          You’ll depart from a different place in New York: John F. Kennedy
-                          International.
-                        </ItineraryBadgeListItem>
-                        <ItineraryBadgeListItem icon={<Accommodation color="secondary" />}>
-                          We won’t cover your overnight stay. Hotel coverage is only available if
-                          the disruption happens during the trip. If you want to avoid extra hotel
-                          costs please choose a different alternative or a refund.
-                        </ItineraryBadgeListItem>
-                      </Stack>
+                    <ItineraryBadgeList spacing={SPACINGS.ONE_HUNDRED}>
+                      <ItineraryBadgeListItem icon={<Location color="secondary" />}>
+                        You’ll depart from a different place in New York: John F. Kennedy
+                        International.
+                      </ItineraryBadgeListItem>
+                      <ItineraryBadgeListItem icon={<Location color="secondary" />}>
+                        You’ll depart from a different place in New York: John F. Kennedy
+                        International.
+                      </ItineraryBadgeListItem>
+                      <ItineraryBadgeListItem icon={<Accommodation color="secondary" />}>
+                        We won’t cover your overnight stay. Hotel coverage is only available if the
+                        disruption happens during the trip. If you want to avoid extra hotel costs
+                        please choose a different alternative or a refund.
+                      </ItineraryBadgeListItem>
                     </ItineraryBadgeList>
                   </ItinerarySegmentBanner>
                 </Stack>

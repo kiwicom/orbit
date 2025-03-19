@@ -7,6 +7,7 @@ import Tooltip from "../Tooltip";
 import TextLink from "../TextLink";
 import { SIZE_OPTIONS, TYPE_OPTIONS } from "./consts";
 import Text from "../Text";
+import { SPACINGS } from "../utils/layout/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import BadgeList, { BadgeListItem } from ".";
@@ -89,8 +90,8 @@ export const Sizes: Story = {
 };
 
 export const Playground: Story = {
-  render: ({ type, size, strikeThrough, ariaLabel, iconLabel }) => (
-    <BadgeList ariaLabel={ariaLabel}>
+  render: ({ type, size, strikeThrough, ariaLabel, iconLabel, spacing }) => (
+    <BadgeList ariaLabel={ariaLabel} spacing={spacing}>
       <BadgeListItem
         icon={<Icons.AlertCircle />}
         type={type}
@@ -137,6 +138,7 @@ export const Playground: Story = {
     strikeThrough: false,
     ariaLabel: "This is the BadgeList aria label",
     iconLabel: "This is the icon aria label",
+    spacing: SPACINGS.ONE_HUNDRED,
   },
 
   argTypes: {
@@ -148,6 +150,12 @@ export const Playground: Story = {
     },
     size: {
       options: Object.values(SIZE_OPTIONS),
+      control: {
+        type: "select",
+      },
+    },
+    spacing: {
+      options: Object.values(SPACINGS),
       control: {
         type: "select",
       },

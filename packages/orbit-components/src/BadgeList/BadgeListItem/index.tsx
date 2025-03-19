@@ -31,7 +31,7 @@ export const getIconColor = (type: Type) => {
 };
 
 export const ItemWrapper = ({ children, dataTest }) => (
-  <li className="[&_+_&]:mt-100 flex w-full flex-row" data-test={dataTest}>
+  <li className="orbit-badge-list-item [&_+_&]:mt-100 flex w-full flex-row" data-test={dataTest}>
     {children}
   </li>
 );

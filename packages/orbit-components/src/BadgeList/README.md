@@ -24,6 +24,7 @@ Table below contains all types of the props available in BadgeList component.
 | dataTest  | `string`              |         | Optional prop for testing purposes.                                |
 | id        | `string`              |         | Set `id` for `BadgeList`                                           |
 | ariaLabel | `string`              |         | Adds aria-label to the BadgeList's `ul` element for accessibility. |
+| spacing   | [`spacing`](#spacing) |         | The size of the spacing between BadgeListItems.                    |
 
 ### BadgeListItem
 
@@ -46,3 +47,22 @@ Table below contains all types of the props available in BadgeList component.
 | `"success"`  |            |
 | `"warning"`  |            |
 | `"critical"` |            |
+
+### spacing
+
+| spacing values |
+| :------------- |
+| `"none"`       |
+| `"reverse"`    |
+| `"50"`         |
+| `"100"`        |
+| `"150"`        |
+| `"200"`        |
+| `"300"`        |
+| `"400"`        |
+| `"500"`        |
+| `"600"`        |
+| `"800"`        |
+| `"1000"`       |
+| `"1200"`       |
+| `"1600"`       |

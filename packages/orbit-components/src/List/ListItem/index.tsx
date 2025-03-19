@@ -5,7 +5,7 @@ import * as React from "react";
 import CircleSmall from "../../icons/CircleSmall";
 import type { Props } from "./types";
 
-const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) => {
+const ListItem = ({ label, children, icon = <CircleSmall ariaHidden />, dataTest }: Props) => {
   return (
     <li
       data-test={dataTest}

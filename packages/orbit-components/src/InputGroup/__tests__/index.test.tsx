@@ -72,7 +72,7 @@ describe("InputGroup", () => {
   });
 
   it("should have ref", () => {
-    const ref = React.createRef<HTMLDivElement>();
+    const ref = React.createRef<HTMLFieldSetElement>();
 
     render(
       <InputGroup ref={ref}>

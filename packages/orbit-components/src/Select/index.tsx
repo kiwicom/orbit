@@ -159,7 +159,10 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             )}
             <select
               className={cx(
-                "cursor-pointer appearance-none bg-transparent outline-none",
+                "cursor-pointer appearance-none bg-transparent",
+                insideInputGroup
+                  ? "focus:outline-blue-normal focus:rounded-150 focus:tb:rounded-100 focus:outline-2 focus:outline-offset-0"
+                  : "outline-none",
                 filled ? "text-form-element-filled-foreground" : "text-form-element-foreground",
                 "font-base text-form-element-normal",
                 "pe-1000",

@@ -41,6 +41,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     dataAttrs,
     ariaLabel,
     ariaLabelledby,
+    ariaDescribedby,
   } = props;
   const filled = !(value == null || value === "");
 
@@ -62,6 +63,11 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
   const inputRef = React.useRef<HTMLLabelElement | null>(null);
 
   const shown = tooltipShown || tooltipShownHover;
+  const tooltipId = shown ? `${selectId}-feedback` : undefined;
+
+  const ariaDescribedbyValue = insideInputGroup
+    ? ariaDescribedby
+    : [ariaDescribedby, tooltipId].filter(Boolean).join(" ") || undefined;
 
   return (
     <div
@@ -78,8 +84,8 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             help={!!help}
             labelRef={labelRef}
             iconRef={iconRef}
-            onMouseEnter={() => setTooltipShownHover(true)}
-            onMouseLeave={() => setTooltipShownHover(false)}
+            onMouseEnter={() => (hasTooltip ? setTooltipShownHover(true) : undefined)}
+            onMouseLeave={() => (hasTooltip ? setTooltipShownHover(false) : undefined)}
             required={required}
           >
             {label}
@@ -179,7 +185,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
               tabIndex={tabIndex ? Number(tabIndex) : undefined}
               required={required}
               ref={ref}
-              aria-describedby={shown ? `${selectId}-feedback` : undefined}
+              aria-describedby={ariaDescribedbyValue}
               aria-invalid={error ? true : undefined}
               aria-label={ariaLabel}
               aria-labelledby={ariaLabelledby}
@@ -216,7 +222,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
       </label>
       {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip
-          id={`${selectId}-feedback`}
+          id={tooltipId}
           help={help}
           error={error}
           shown={shown}

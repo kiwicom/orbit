@@ -64,6 +64,7 @@ The table below contains all types of props available in the InputField componen
 | ariaControls         | `string`                           |           | The aria-controls attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls).                              |
 | ariaLabel            | `string`                           |           | Optional prop for `aria-label` value. See `Accessibility` tab.                                                                                                                    |
 | ariaLabelledby       | `string`                           |           | Optional prop for `aria-labelledby` value. See `Accessibility` tab.                                                                                                               |
+| ariaDescribedby      | `string`                           |           | Optional prop for `aria-describedby` value. See `Accessibility` tab.                                                                                                              |
 
 ### enum
 

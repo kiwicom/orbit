@@ -129,7 +129,6 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
           <div
             className={cx(
               "text-normal h-form-box-normal duration-fast rounded-150 tb:rounded-100 z-default w-full transition-shadow ease-in-out",
-              active && "outline-blue-normal outline outline-2",
               disabled ? "bg-form-element-disabled-background" : "bg-form-element-background",
               !errorReal && "shadow-form-element",
               !errorReal && !disabled && "hover:shadow-form-element-hover",
@@ -152,7 +151,7 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
                   <div
                     key={randomId(String(key))}
                     className={cx(
-                      "orbit-input-group-child pe-200 last:p-0 [&_.orbit-input-field-fake-input]:hidden [&_.orbit-input-field-fake-input]:bg-transparent [&_.orbit-input-field-input~.orbit-input-field-fake-input]:shadow-none [&_.orbit-select-container_select]:bg-transparent [&_.orbit-select-container_select]:shadow-none [&_.orbit-select-container_select]:focus:outline-none",
+                      "orbit-input-group-child last:p-0 [&_.orbit-input-field-fake-input]:hidden [&_.orbit-input-field-fake-input]:bg-transparent [&_.orbit-input-field-input~.orbit-input-field-fake-input]:shadow-none [&_.orbit-select-container_select]:bg-transparent [&_.orbit-select-container_select]:shadow-none [&_.orbit-select-container_select]:focus:outline-none",
                       // InputField:after
                       "[&_.orbit-input-field-input-container]:after:duration-fast [&_.orbit-input-field-input-container]:after:z-default [&_.orbit-input-field-input-container]:after:h-600 [&_.orbit-input-field-input-container]:after:absolute [&_.orbit-input-field-input-container]:after:end-0 [&_.orbit-input-field-input-container]:after:top-1/2 [&_.orbit-input-field-input-container]:after:block [&_.orbit-input-field-input-container]:after:-translate-y-1/2 [&_.orbit-input-field-input-container]:after:border-r [&_.orbit-input-field-input-container]:after:transition-colors [&_.orbit-input-field-input-container]:after:ease-in-out [&_.orbit-input-field-input-container]:last-of-type:after:content-none",
                       // Select:after

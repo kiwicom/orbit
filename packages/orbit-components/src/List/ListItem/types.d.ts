@@ -9,4 +9,5 @@ export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
   readonly label?: Common.Translation;
   readonly icon?: React.ReactNode;
+  readonly ariaHidden?: boolean;
 }

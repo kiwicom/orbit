@@ -5,7 +5,7 @@ import * as React from "react";
 import CircleSmall from "../../icons/CircleSmall";
 import type { Props } from "./types";
 
-const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) => {
+const ListItem = ({ label, children, icon = <CircleSmall />, dataTest, ariaHidden }: Props) => {
   return (
     <li
       data-test={dataTest}
@@ -14,7 +14,7 @@ const ListItem = ({ label, children, icon = <CircleSmall />, dataTest }: Props) 
       {icon && (
         <div
           className="orbit-list-item-icon me-200 [&>.orbit-carrier-logo]:size-icon-small [&>.orbit-carrier-logo>img]:size-icon-small flex flex-none"
-          aria-hidden
+          aria-hidden={ariaHidden}
         >
           {icon}
         </div>

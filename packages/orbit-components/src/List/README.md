@@ -27,6 +27,7 @@ Table below contains all types of the props available in List component.
 | spaceAfter   | `enum`                |             | Additional `margin-bottom` after component.                      |
 | type         | [`enum`](#enum)       | `"primary"` | The color type of the List.                                      |
 | spacing      | [`spacing`](#spacing) | `"none"`    | The spacing between List children.                               |
+| ariaHidden   | `boolean`             | `false`     | Adds prop `aria-label` to the icon. See Accessibility tab.       |
 
 ### enum
 

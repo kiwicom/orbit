@@ -129,7 +129,6 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
           <div
             className={cx(
               "text-normal h-form-box-normal duration-fast rounded-150 tb:rounded-100 z-default w-full transition-shadow ease-in-out",
-              active && "outline-blue-normal outline outline-2",
               disabled ? "bg-form-element-disabled-background" : "bg-form-element-background",
               !errorReal && "shadow-form-element",
               !errorReal && !disabled && "hover:shadow-form-element-hover",
@@ -142,9 +141,14 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
                 // TODO: next cleanup iteration just remove this whole `flex` prop thing
                 // and cloning elements, and make children take care of their sizing themselves
 
-                const childFlex = (
-                  Array.isArray(flex) && flex.length !== 1 ? flex[key] ?? flex[0] : flex
-                ) as string | undefined;
+                const childrenCount = React.Children.count(children);
+                const isLastChild = key === childrenCount - 1;
+                const flexArray = Array.isArray(flex) ? flex : [flex];
+
+                let childFlex = flex ? flexArray[key] || flexArray[0] : undefined;
+                if (isLastChild && flexArray.length !== childrenCount) {
+                  childFlex = "1 1 100%";
+                }
 
                 const item = child as React.ReactElement<InputFieldProps | SelectProps>;
 
@@ -152,7 +156,7 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
                   <div
                     key={randomId(String(key))}
                     className={cx(
-                      "orbit-input-group-child pe-200 last:p-0 [&_.orbit-input-field-fake-input]:hidden [&_.orbit-input-field-fake-input]:bg-transparent [&_.orbit-input-field-input~.orbit-input-field-fake-input]:shadow-none [&_.orbit-select-container_select]:bg-transparent [&_.orbit-select-container_select]:shadow-none [&_.orbit-select-container_select]:focus:outline-none",
+                      "orbit-input-group-child [&_.orbit-input-field-fake-input]:hidden [&_.orbit-input-field-fake-input]:bg-transparent [&_.orbit-input-field-input~.orbit-input-field-fake-input]:shadow-none [&_.orbit-select-container_select]:bg-transparent [&_.orbit-select-container_select]:shadow-none [&_.orbit-select-container_select]:focus:outline-none",
                       // InputField:after
                       "[&_.orbit-input-field-input-container]:after:duration-fast [&_.orbit-input-field-input-container]:after:z-default [&_.orbit-input-field-input-container]:after:h-600 [&_.orbit-input-field-input-container]:after:absolute [&_.orbit-input-field-input-container]:after:end-0 [&_.orbit-input-field-input-container]:after:top-1/2 [&_.orbit-input-field-input-container]:after:block [&_.orbit-input-field-input-container]:after:-translate-y-1/2 [&_.orbit-input-field-input-container]:after:border-r [&_.orbit-input-field-input-container]:after:transition-colors [&_.orbit-input-field-input-container]:after:ease-in-out [&_.orbit-input-field-input-container]:last-of-type:after:content-none",
                       // Select:after

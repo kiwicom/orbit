@@ -78,6 +78,7 @@ export const DateOfBirth: Story = {
     return (
       <InputGroup {...args}>
         <InputField
+          label="Day of birth"
           placeholder="DD"
           error={error}
           help={help}
@@ -92,7 +93,7 @@ export const DateOfBirth: Story = {
           value={value}
           placeholder="Month"
         />
-        <InputField placeholder="YYYY" />
+        <InputField label="Year of birth" placeholder="YYYY" />
       </InputGroup>
     );
   },
@@ -128,19 +129,25 @@ export const PhoneNumber: Story = {
     return (
       <InputGroup {...args}>
         <Select
-          label="Country"
+          label="Country prefix"
           options={selectOptionsPhoneNumber}
           value={selectValue}
           prefix={<CountryFlag code={code} name={label} />}
           error={error}
           help={help}
         />
-        <InputField placeholder={placeholder} maxLength={11} value={inputValue} />
+        <InputField
+          label="Phone number"
+          placeholder={placeholder}
+          maxLength={11}
+          value={inputValue}
+        />
       </InputGroup>
     );
   },
 
   args: {
+    label: "Phone number",
     flex: ["0 0 250px", "1 1 100%"],
     selectValue: selectOptionsPhoneNumber[0].value,
     placeholder: "e.g. 123 456 789",
@@ -182,7 +189,7 @@ export const Error: Story = {
 
     return (
       <InputGroup {...args}>
-        <InputField placeholder="DD" error={error} />
+        <InputField placeholder="DD" label="Day of birth" error={error} />
         <Select
           label="Month of birth"
           options={selectOptionsError}
@@ -191,7 +198,7 @@ export const Error: Story = {
           error="Something went wrong on month field"
           onChange={e => setValue(e.target.value)}
         />
-        <InputField placeholder="YYYY" />
+        <InputField placeholder="YYYY" label="Year of birth" />
       </InputGroup>
     );
   },
@@ -203,7 +210,7 @@ export const Error: Story = {
   },
 
   args: {
-    label: "Label",
+    label: "Date of birth",
     flex: ["0 0 60px", "1 1 100%", "0 0 90px"],
     selectValue: selectOptionsError[0].value,
     error: "Something went wrong on day field",
@@ -234,7 +241,7 @@ export const ValidationApproaches: Story = {
         <InputField placeholder="b" maxLength={11} value={inputValue} />
       </InputGroup>
 
-      <InputGroup label="Events and states on children" error={errorGroup} help={helpGroup}>
+      <InputGroup label="Events and states on children">
         <InputField
           placeholder="c"
           maxLength={11}
@@ -405,7 +412,7 @@ export const Rtl: Story = {
     return (
       <RenderInRtl>
         <InputGroup {...args}>
-          <InputField placeholder="DD" help={help} error={error} />
+          <InputField label="Day of birth" placeholder="DD" help={help} error={error} />
           <Select
             options={selectOptionsMonths}
             onChange={e => setValue(e.target.value)}
@@ -413,7 +420,7 @@ export const Rtl: Story = {
             placeholder="Month"
             label="Month of birth"
           />
-          <InputField placeholder="YYYY" />
+          <InputField label="Year of birth" placeholder="YYYY" />
         </InputGroup>
       </RenderInRtl>
     );

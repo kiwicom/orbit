@@ -50,8 +50,10 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
     const errorReal = error || (foundErrors.length > 0 && foundErrors[0]);
     const helpReal = help || (foundHelp.length > 0 && foundHelp[0]);
     const randomId = useRandomIdSeed();
+    const feedbackId = useRandomId();
 
     const hasTooltip = errorReal || helpReal;
+    const shown = tooltipShown || tooltipShownHover;
 
     const handleFocus =
       callBack =>
@@ -166,6 +168,10 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
                       onFocus: handleFocus(item.props.onFocus),
                       ariaLabel: item.props.label as string,
                       insideInputGroup: true,
+                      ariaDescribedby:
+                        (error || help || item.props.error || item.props.help) && shown
+                          ? feedbackId
+                          : undefined,
                     })}
                   </div>
                 );
@@ -174,10 +180,11 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
           </div>
         </fieldset>
         <ErrorFormTooltip
+          id={feedbackId}
           help={helpReal}
           error={errorReal}
           onShown={setTooltipShown}
-          shown={tooltipShown || tooltipShownHover}
+          shown={shown}
           referenceElement={labelRef}
         />
       </div>

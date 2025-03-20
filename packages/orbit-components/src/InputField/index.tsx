@@ -249,7 +249,10 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             "[&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",
             "[&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:m-0",
             "[&[data-com-onepassword-filled]]:!bg-inherit",
-            "peer focus:outline-none",
+            "peer",
+            insideInputGroup
+              ? "focus:outline-blue-normal focus:rounded-150 focus:tb:rounded-100 duration-fast transition-all ease-in-out focus:outline-2 focus:-outline-offset-1"
+              : "focus:outline-none",
             "[&::placeholder]:opacity-100",
             "[&::placeholder]:text-form-element-foreground",
             "[&::-ms-input-placeholder]:text-form-element-foreground",

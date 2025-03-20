@@ -42,6 +42,7 @@ Table below contains all types of the props available in the Select component.
 | customValueText | `string`                   |         | The custom text alternative of current value. [See Functional specs](#functional-specs). |
 | ariaLabel       | `string`                   |         | Optional prop for `aria-label` value. See Accessibility tab.                             |
 | ariaLabelledby  | `string`                   |         | Optional prop for `aria-labelledby` value. See Accessibility tab.                        |
+| ariaDescribedby | `string`                   |         | Optional prop for `aria-describedby` value. See Accessibility tab.                       |
 
 ### enum
 

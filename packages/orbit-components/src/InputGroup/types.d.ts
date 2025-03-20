@@ -22,4 +22,6 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly onBlur?: React.FocusEventHandler<
     HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
   >;
+  readonly ariaLabel?: string;
+  readonly ariaLabelledby?: string;
 }

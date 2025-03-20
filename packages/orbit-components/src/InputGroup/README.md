@@ -21,20 +21,22 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in InputGroup component.
 
-| Name         | Type                        | Default      | Description                                                                                                         |
-| :----------- | :-------------------------- | :----------- | :------------------------------------------------------------------------------------------------------------------ |
-| **children** | `React.Node`                |              | The content of the InputGroup, normally **InputField** or **Select**.                                               |
-| dataTest     | `string`                    |              | Optional prop for testing purposes.                                                                                 |
-| id           | `string`                    |              | Set `id` for `InputGroup`                                                                                           |
-| error        | `React.Node`                |              | The error to display beneath the InputGroup. [See Functional specs](#functional-specs)                              |
-| disabled     | `boolean`                   |              | Whether to disable all nested fields.                                                                               |
-| flex         | `string` or `Array<string>` | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)                     |
-| label        | `Translation`               |              | The label for the InputGroup. [See Functional specs](#functional-specs)                                             |
-| onChange     | `event => void \| Promise`  |              | Function for handling onClick event. [See Functional specs](#functional-specs)                                      |
-| onFocus      | `event => void \| Promise`  |              | Function for handling onFocus event. [See Functional specs](#functional-specs)                                      |
-| onBlur       | `event => void \| Promise`  |              | Function for handling onBlur event between different InputGroup children. [See Functional specs](#functional-specs) |
-| onBlurGroup  | `event => void \| Promise`  |              | Function for handling onBlur event for the whole InputGroup. [See Functional specs](#functional-specs)              |
-| spaceAfter   | `enum`                      |              | Additional `margin-bottom` after component.                                                                         |
+| Name           | Type                        | Default      | Description                                                                                                         |
+| :------------- | :-------------------------- | :----------- | :------------------------------------------------------------------------------------------------------------------ |
+| **children**   | `React.Node`                |              | The content of the InputGroup, normally **InputField** or **Select**.                                               |
+| dataTest       | `string`                    |              | Optional prop for testing purposes.                                                                                 |
+| id             | `string`                    |              | Set `id` for `InputGroup`                                                                                           |
+| error          | `React.Node`                |              | The error to display beneath the InputGroup. [See Functional specs](#functional-specs)                              |
+| disabled       | `boolean`                   |              | Whether to disable all nested fields.                                                                               |
+| flex           | `string` or `Array<string>` | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)                     |
+| label          | `Translation`               |              | The label for the InputGroup. [See Functional specs](#functional-specs)                                             |
+| onChange       | `event => void \| Promise`  |              | Function for handling onClick event. [See Functional specs](#functional-specs)                                      |
+| onFocus        | `event => void \| Promise`  |              | Function for handling onFocus event. [See Functional specs](#functional-specs)                                      |
+| onBlur         | `event => void \| Promise`  |              | Function for handling onBlur event between different InputGroup children. [See Functional specs](#functional-specs) |
+| onBlurGroup    | `event => void \| Promise`  |              | Function for handling onBlur event for the whole InputGroup. [See Functional specs](#functional-specs)              |
+| spaceAfter     | `enum`                      |              | Additional `margin-bottom` after component.                                                                         |
+| ariaLabel      | `string`                    |              | Optional prop for `aria-label` value.                                                                               |
+| ariaLabelledby | `string`                    |              | Optional prop for `aria-labelledby` value.                                                                          |
 
 ### enum
 

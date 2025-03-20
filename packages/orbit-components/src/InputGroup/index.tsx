@@ -34,6 +34,8 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
       onBlur,
       onChange,
       onBlurGroup,
+      ariaLabel,
+      ariaLabelledby,
     },
     ref,
   ) => {
@@ -105,6 +107,8 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
           id={id}
           data-test={dataTest}
           data-state={getFieldDataState(!!errorReal)}
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledby}
         >
           {label && (
             <legend>

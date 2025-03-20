@@ -56,4 +56,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly ariaHasPopup?: boolean;
   readonly ariaExpanded?: boolean;
   readonly ariaControls?: string;
+  readonly ariaDescribedby?: string;
 }

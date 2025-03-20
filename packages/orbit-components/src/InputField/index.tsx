@@ -116,6 +116,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     ariaHasPopup,
     ariaExpanded,
     ariaControls,
+    ariaDescribedby,
     autoFocus,
     spaceAfter,
     id,
@@ -146,6 +147,12 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 
   const InlineLabelElement = inlineLabel && (error || help || label) ? "label" : "div";
 
+  const tooltipId = shown ? `${inputId}-feedback` : undefined;
+
+  const ariaDescribedbyValue = insideInputGroup
+    ? ariaDescribedby
+    : [ariaDescribedby, tooltipId].filter(Boolean).join(" ") || undefined;
+
   return (
     <div
       className={cx(
@@ -165,8 +172,8 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             help={!!help}
             labelRef={labelRef}
             iconRef={iconRef}
-            onMouseEnter={() => setTooltipShownHover(true)}
-            onMouseLeave={() => setTooltipShownHover(false)}
+            onMouseEnter={() => (hasTooltip ? setTooltipShownHover(true) : undefined)}
+            onMouseLeave={() => (hasTooltip ? setTooltipShownHover(false) : undefined)}
           >
             {label}
           </FormLabel>
@@ -283,7 +290,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           list={list}
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}
-          aria-describedby={shown ? `${inputId}-feedback` : undefined}
+          aria-describedby={ariaDescribedbyValue}
           aria-invalid={error ? true : undefined}
           aria-autocomplete={ariaAutocomplete}
           aria-haspopup={ariaHasPopup}
@@ -307,7 +314,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip
           help={help}
-          id={`${inputId}-feedback`}
+          id={tooltipId}
           shown={shown}
           onShown={setTooltipShown}
           error={error}

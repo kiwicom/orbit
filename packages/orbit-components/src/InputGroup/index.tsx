@@ -18,7 +18,7 @@ const findPropInChild = (propToFind, children) =>
     return null;
   }).filter(el => el != null);
 
-const InputGroup = React.forwardRef<HTMLDivElement, Props>(
+const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
   (
     {
       children,
@@ -50,6 +50,8 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
     const errorReal = error || (foundErrors.length > 0 && foundErrors[0]);
     const helpReal = help || (foundHelp.length > 0 && foundHelp[0]);
     const randomId = useRandomIdSeed();
+
+    const hasTooltip = errorReal || helpReal;
 
     const handleFocus =
       callBack =>
@@ -91,83 +93,86 @@ const InputGroup = React.forwardRef<HTMLDivElement, Props>(
 
     return (
       <div
-        ref={ref}
-        id={id}
-        data-test={dataTest}
-        data-state={getFieldDataState(!!errorReal)}
-        aria-labelledby={label != null ? inputID : undefined}
-        role="group"
         className={cx(
           "relative flex w-full flex-col",
           spaceAfter != null && getSpaceAfterClasses(spaceAfter),
         )}
       >
-        {label && (
-          <FormLabel
-            id={inputID}
-            labelRef={labelRef}
-            error={!!errorReal}
-            help={!!helpReal}
-            iconRef={iconRef}
-            onMouseEnter={() => setTooltipShownHover(true)}
-            onMouseLeave={() => setTooltipShownHover(false)}
-          >
-            {label}
-          </FormLabel>
-        )}
-
-        <div
-          className={cx(
-            "text-normal h-form-box-normal duration-fast rounded-150 tb:rounded-100 z-default w-full transition-shadow ease-in-out",
-            active && "outline-blue-normal outline outline-2",
-            disabled ? "bg-form-element-disabled-background" : "bg-form-element-background",
-            !errorReal && "shadow-form-element",
-            !errorReal && !disabled && "hover:shadow-form-element-hover",
-            Boolean(errorReal) && "shadow-form-element-error",
-            Boolean(errorReal) && !disabled && "hover:shadow-form-element-error-hover",
-          )}
+        <fieldset
+          ref={ref}
+          id={id}
+          data-test={dataTest}
+          data-state={getFieldDataState(!!errorReal)}
         >
-          <div className="relative flex" onBlur={handleBlurGroup}>
-            {React.Children.toArray(children).map((child, key) => {
-              // TODO: next cleanup iteration just remove this whole `flex` prop thing
-              // and cloning elements, and make children take care of their sizing themselves
+          {label && (
+            <legend>
+              <FormLabel
+                id={inputID}
+                labelRef={labelRef}
+                error={!!errorReal}
+                help={!!helpReal}
+                iconRef={iconRef}
+                onMouseEnter={() => (hasTooltip ? setTooltipShownHover(true) : undefined)}
+                onMouseLeave={() => (hasTooltip ? setTooltipShownHover(false) : undefined)}
+              >
+                {label}
+              </FormLabel>
+            </legend>
+          )}
 
-              const childFlex = (
-                Array.isArray(flex) && flex.length !== 1 ? flex[key] ?? flex[0] : flex
-              ) as string | undefined;
+          <div
+            className={cx(
+              "text-normal h-form-box-normal duration-fast rounded-150 tb:rounded-100 z-default w-full transition-shadow ease-in-out",
+              active && "outline-blue-normal outline outline-2",
+              disabled ? "bg-form-element-disabled-background" : "bg-form-element-background",
+              !errorReal && "shadow-form-element",
+              !errorReal && !disabled && "hover:shadow-form-element-hover",
+              Boolean(errorReal) && "shadow-form-element-error",
+              Boolean(errorReal) && !disabled && "hover:shadow-form-element-error-hover",
+            )}
+          >
+            <div className="relative flex" onBlur={handleBlurGroup}>
+              {React.Children.toArray(children).map((child, key) => {
+                // TODO: next cleanup iteration just remove this whole `flex` prop thing
+                // and cloning elements, and make children take care of their sizing themselves
 
-              const item = child as React.ReactElement<InputFieldProps | SelectProps>;
+                const childFlex = (
+                  Array.isArray(flex) && flex.length !== 1 ? flex[key] ?? flex[0] : flex
+                ) as string | undefined;
 
-              return (
-                <div
-                  key={randomId(String(key))}
-                  className={cx(
-                    "orbit-input-group-child pe-200 last:p-0 [&_.orbit-input-field-fake-input]:hidden [&_.orbit-input-field-fake-input]:bg-transparent [&_.orbit-input-field-input~.orbit-input-field-fake-input]:shadow-none [&_.orbit-select-container_select]:bg-transparent [&_.orbit-select-container_select]:shadow-none [&_.orbit-select-container_select]:focus:outline-none",
-                    // InputField:after
-                    "[&_.orbit-input-field-input-container]:after:duration-fast [&_.orbit-input-field-input-container]:after:z-default [&_.orbit-input-field-input-container]:after:h-600 [&_.orbit-input-field-input-container]:after:absolute [&_.orbit-input-field-input-container]:after:end-0 [&_.orbit-input-field-input-container]:after:top-1/2 [&_.orbit-input-field-input-container]:after:block [&_.orbit-input-field-input-container]:after:-translate-y-1/2 [&_.orbit-input-field-input-container]:after:border-r [&_.orbit-input-field-input-container]:after:transition-colors [&_.orbit-input-field-input-container]:after:ease-in-out [&_.orbit-input-field-input-container]:last-of-type:after:content-none",
-                    // Select:after
-                    "[&_.orbit-select-container]:after:duration-fast [&_.orbit-select-container]:after:h-600 [&_.orbit-select-container]:bg-transparent [&_.orbit-select-container]:after:absolute [&_.orbit-select-container]:after:end-0 [&_.orbit-select-container]:after:top-1/2 [&_.orbit-select-container]:after:z-[2] [&_.orbit-select-container]:after:block [&_.orbit-select-container]:after:-translate-y-1/2 [&_.orbit-select-container]:after:border-r [&_.orbit-select-container]:after:transition-colors [&_.orbit-select-container]:after:ease-in-out [&_.orbit-select-container]:last-of-type:after:content-none",
-                    Boolean(errorReal) && !active
-                      ? "[&_.orbit-select-container]:after:border-form-element-error [&_.orbit-input-field-input-container]:after:border-form-element-error"
-                      : "[&_.orbit-select-container]:after:border-form-element [&_.orbit-input-field-input-container]:after:border-form-element",
-                    label != null && "[&_.orbit-form-label]:hidden",
-                  )}
-                  style={{ flex: childFlex }}
-                >
-                  {React.cloneElement(item, {
-                    disabled: item.props.disabled || disabled,
-                    label: undefined,
-                    onChange: handleChange(item.props.onChange),
-                    onBlur: handleBlur(item.props.onBlur),
-                    onFocus: handleFocus(item.props.onFocus),
-                    ariaLabel: item.props.label as string,
-                    insideInputGroup: true,
-                  })}
-                </div>
-              );
-            })}
+                const item = child as React.ReactElement<InputFieldProps | SelectProps>;
+
+                return (
+                  <div
+                    key={randomId(String(key))}
+                    className={cx(
+                      "orbit-input-group-child pe-200 last:p-0 [&_.orbit-input-field-fake-input]:hidden [&_.orbit-input-field-fake-input]:bg-transparent [&_.orbit-input-field-input~.orbit-input-field-fake-input]:shadow-none [&_.orbit-select-container_select]:bg-transparent [&_.orbit-select-container_select]:shadow-none [&_.orbit-select-container_select]:focus:outline-none",
+                      // InputField:after
+                      "[&_.orbit-input-field-input-container]:after:duration-fast [&_.orbit-input-field-input-container]:after:z-default [&_.orbit-input-field-input-container]:after:h-600 [&_.orbit-input-field-input-container]:after:absolute [&_.orbit-input-field-input-container]:after:end-0 [&_.orbit-input-field-input-container]:after:top-1/2 [&_.orbit-input-field-input-container]:after:block [&_.orbit-input-field-input-container]:after:-translate-y-1/2 [&_.orbit-input-field-input-container]:after:border-r [&_.orbit-input-field-input-container]:after:transition-colors [&_.orbit-input-field-input-container]:after:ease-in-out [&_.orbit-input-field-input-container]:last-of-type:after:content-none",
+                      // Select:after
+                      "[&_.orbit-select-container]:after:duration-fast [&_.orbit-select-container]:after:h-600 [&_.orbit-select-container]:bg-transparent [&_.orbit-select-container]:after:absolute [&_.orbit-select-container]:after:end-0 [&_.orbit-select-container]:after:top-1/2 [&_.orbit-select-container]:after:z-[2] [&_.orbit-select-container]:after:block [&_.orbit-select-container]:after:-translate-y-1/2 [&_.orbit-select-container]:after:border-r [&_.orbit-select-container]:after:transition-colors [&_.orbit-select-container]:after:ease-in-out [&_.orbit-select-container]:last-of-type:after:content-none",
+                      Boolean(errorReal) && !active
+                        ? "[&_.orbit-select-container]:after:border-form-element-error [&_.orbit-input-field-input-container]:after:border-form-element-error"
+                        : "[&_.orbit-select-container]:after:border-form-element [&_.orbit-input-field-input-container]:after:border-form-element",
+                      label != null && "[&_.orbit-form-label]:hidden",
+                    )}
+                    style={{ flex: childFlex }}
+                  >
+                    {React.cloneElement(item, {
+                      disabled: item.props.disabled || disabled,
+                      label: undefined,
+                      onChange: handleChange(item.props.onChange),
+                      onBlur: handleBlur(item.props.onBlur),
+                      onFocus: handleFocus(item.props.onFocus),
+                      ariaLabel: item.props.label as string,
+                      insideInputGroup: true,
+                    })}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </fieldset>
         <ErrorFormTooltip
           help={helpReal}
           error={errorReal}

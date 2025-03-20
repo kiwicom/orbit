@@ -116,6 +116,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     ariaHasPopup,
     ariaExpanded,
     ariaControls,
+    ariaDescribedby,
     autoFocus,
     spaceAfter,
     id,
@@ -145,6 +146,8 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const fieldRef = React.useRef(null);
 
   const InlineLabelElement = inlineLabel && (error || help || label) ? "label" : "div";
+
+  const ariaDescribedbyInternal = shown ? `${inputId}-feedback` : undefined;
 
   return (
     <div
@@ -283,7 +286,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           list={list}
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}
-          aria-describedby={shown ? `${inputId}-feedback` : undefined}
+          aria-describedby={ariaDescribedby || ariaDescribedbyInternal}
           aria-invalid={error ? true : undefined}
           aria-autocomplete={ariaAutocomplete}
           aria-haspopup={ariaHasPopup}

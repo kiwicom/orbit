@@ -3,6 +3,67 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [22.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@21.1.0...@kiwicom/orbit-components@22.0.0) (2025-03-21)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** loading glyph is hidden from screen readers ([cf82360](https://github.com/kiwicom/orbit/commit/cf82360adf7c2c77dd58e718822fffef8c53af6c))
+* **InputField:** min and max attrs only apply on type number ([47ebf2a](https://github.com/kiwicom/orbit/commit/47ebf2ad7029cd606b5a7c46793f01d85c81c1f1))
+* **Tab:** add id attribute, polish outline when focus ([33a2845](https://github.com/kiwicom/orbit/commit/33a284524c55fbd74ee48e567b515833757e9439))
+* **TabPanel:** add role and aria-labelledby attributes ([4b73fa9](https://github.com/kiwicom/orbit/commit/4b73fa95868cc58a365783f851dfec2d4373ddb8))
+
+
+### Features
+
+* **AirportIllustration:** add role prop to improve accessibility ([8a1dedb](https://github.com/kiwicom/orbit/commit/8a1dedbdbe014bbdbd036d31e7936518c3f20dd4))
+* **BadgeList:** add aria labels to list and icons ([f5470af](https://github.com/kiwicom/orbit/commit/f5470af24c7c98670184e31e7fb899dff81bd2ee))
+* **BadgeList:** add spacing prop ([34f1336](https://github.com/kiwicom/orbit/commit/34f1336073f0b172e4c035ac9f6cc37f16927c4d))
+* **ErrorFormTooltip:** remove helpClosable prop ([c0b7ef6](https://github.com/kiwicom/orbit/commit/c0b7ef6e57584e7f15452b3b2dcdef8ef091e192))
+* **Illustration:** add role prop to improve accessibility ([31325bd](https://github.com/kiwicom/orbit/commit/31325bdfcc542abae0f3aa0c9a1f930d77339dd5))
+* **IllustrationPrimitive:** add role prop to improve accessibility ([a2afb8b](https://github.com/kiwicom/orbit/commit/a2afb8b7d46414c07d0d584b04fa7908e2830f10))
+* **InputField:** remove helpClosable prop ([2526c13](https://github.com/kiwicom/orbit/commit/2526c134951e4d209991069f52d6b803c738edcc))
+* **InputFile:** remove helpClosable prop ([e21f46a](https://github.com/kiwicom/orbit/commit/e21f46a241056ea7b3000885fb09ec1d12af9d27))
+* **InputGroup:** remove helpClosable prop ([4a4b529](https://github.com/kiwicom/orbit/commit/4a4b529dd34cd9c32c4d4a648633d58e879ce71b))
+* **InputSelect:** label prop now only accepts string ([a392ea9](https://github.com/kiwicom/orbit/commit/a392ea9fda69beaa559f6771540f0c2112ec24bd))
+* **InputSelect:** refactor component for improved accessibility ([48b5a86](https://github.com/kiwicom/orbit/commit/48b5a86fd7f9b48c1b84e51d73fcdb76aea0ce64))
+* **InputSelect:** remove helpClosable prop ([695f452](https://github.com/kiwicom/orbit/commit/695f452c6fdf77c7746d9e68c6a14aa8b839e5d3))
+* **Loading:** add ariaHidden prop ([3436f97](https://github.com/kiwicom/orbit/commit/3436f974968293fa4bd0b710c13a488f7d0ad8b2))
+* **SegmentedSwitch:** add ariaLabel and ariaLabelledby props ([a24ecd3](https://github.com/kiwicom/orbit/commit/a24ecd321b1d53472adfb95339b76848546aaec2))
+* **SegmentedSwitch:** label prop now only accepts string ([1c0a31a](https://github.com/kiwicom/orbit/commit/1c0a31a9fda6840fc3c18418552f315e93708cce))
+* **SegmentedSwitch:** refactor component for improved accessibility ([967c9fa](https://github.com/kiwicom/orbit/commit/967c9faf6fc59776ec9da49724c3cc4c5e6048db))
+* **Select:** remove helpClosable prop ([0509852](https://github.com/kiwicom/orbit/commit/05098527fca2f722ff54ef398f5b554675e62f35))
+* **Textarea:** remove helpClosable prop ([81fb46b](https://github.com/kiwicom/orbit/commit/81fb46b6c6cd890615d34de69261efcfeca26ecf))
+* **Timeline:** improve component accessibility ([3c0a212](https://github.com/kiwicom/orbit/commit/3c0a212874b6d4cda271dd0aa7958058693841bd))
+
+
+### BREAKING CHANGES
+
+* **InputSelect:** The label prop in InputSelect only accepts string.
+It no longer accepts any React element.
+Make sure to replace translation components by strings.
+* **SegmentedSwitch:** The label prop in SegmentedSwitch only accepts string.
+It no longer accepts any React element.
+Make sure to replace translation components by strings.
+* **Textarea:** The Textarea component no longer accepts the helpClosable prop,
+since the help tooltip no longer renders the Close button.
+* **Select:** The Select component no longer accepts the helpClosable prop,
+since the help tooltip no longer renders the Close button.
+* **InputSelect:** The InputSelect component no longer accepts the helpClosable prop,
+since the help tooltip no longer renders the Close button.
+* **InputGroup:** The InputGroup component no longer accepts the helpClosable prop,
+since the help tooltip no longer renders the Close button.
+* **InputFile:** The InputFile component no longer accepts the helpClosable prop,
+since the help tooltip no longer renders the Close button.
+* **InputField:** The InputField component no longer accepts the helpClosable prop,
+since the help tooltip no longer renders the Close button.
+* **ErrorFormTooltip:** The ErrorFormTooltip no longer renders the Close button
+as tooltip can not contain interactive elements.
+
+
+
+
+
 # [21.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@21.0.2...@kiwicom/orbit-components@21.1.0) (2025-03-13)
 
 

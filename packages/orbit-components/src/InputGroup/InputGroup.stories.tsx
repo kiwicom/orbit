@@ -78,6 +78,7 @@ export const DateOfBirth: Story = {
     return (
       <InputGroup {...args}>
         <InputField
+          label="Day of birth"
           placeholder="DD"
           error={error}
           help={help}
@@ -92,7 +93,7 @@ export const DateOfBirth: Story = {
           value={value}
           placeholder="Month"
         />
-        <InputField placeholder="YYYY" />
+        <InputField label="Year of birth" placeholder="YYYY" />
       </InputGroup>
     );
   },
@@ -182,7 +183,7 @@ export const Error: Story = {
 
     return (
       <InputGroup {...args}>
-        <InputField placeholder="DD" error={error} />
+        <InputField placeholder="DD" label="Day of birth" error={error} />
         <Select
           label="Month of birth"
           options={selectOptionsError}
@@ -191,7 +192,7 @@ export const Error: Story = {
           error="Something went wrong on month field"
           onChange={e => setValue(e.target.value)}
         />
-        <InputField placeholder="YYYY" />
+        <InputField placeholder="YYYY" label="Year of birth" />
       </InputGroup>
     );
   },

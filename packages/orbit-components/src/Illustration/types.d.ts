@@ -107,7 +107,7 @@ export type Name =
 // TODO: remove spaceAfter in the next major version
 /** SpaceAfter is deprecated, use margin instead */
 
-// Interface content is fetched from /src/Illustration/TYPESCRIPT_TEMPLATE.template.
+// Interface content is fetched from /src/Illustration/TYPESCRIPT_TEMPLATE.template
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: Name;

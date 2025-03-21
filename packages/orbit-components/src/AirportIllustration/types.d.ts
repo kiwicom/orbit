@@ -11,6 +11,7 @@ type Name =
   | "PRGSmartPass"
   | "VCESmartPass";
 
+// Interface content is fetched from /src/Illustration/TYPESCRIPT_TEMPLATE.template
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";
   readonly name: Name;

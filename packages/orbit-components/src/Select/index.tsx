@@ -218,7 +218,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                 : "text-form-element-filled-foreground",
             )}
           >
-            <ChevronDown color="secondary" />
+            <ChevronDown color="secondary" ariaHidden />
           </div>
           <FakeInput disabled={disabled} error={error} />
         </div>

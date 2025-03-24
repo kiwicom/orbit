@@ -56,27 +56,31 @@ import StepperStateless from "@kiwicom/orbit-components/lib/Stepper/StepperState
 
 Table below contains all types of the props available in `StepperStateless` component.
 
-| Name              | Type                        | Default | Description                                             |
-| :---------------- | :-------------------------- | :------ | :------------------------------------------------------ |
-| dataTest          | `string`                    |         | Optional prop for testing purposes.                     |
-| disabled          | `boolean`                   | `false` | If `true`, the Stepper will be disabled.                |
-| disabledIncrement | `boolean`                   |         | If `true`, the increment `Button` will be disabled.     |
-| disabledDecrement | `boolean`                   |         | If `true`, the decrement `Button` will be disabled.     |
-| maxValue          | `number`                    | `∞`     | Specifies the maximum value for the Stepper.            |
-| minValue          | `number`                    | `-∞`    | Specifies the minimum value for the Stepper.            |
-| name              | `string`                    |         | The name for the Stepper.                               |
-| onBlur            | `event => void \| Promise`  |         | Function for handling onBlur event.                     |
-| onChange          | `number => void \| Promise` |         | Function for handling onClick event.                    |
-| onDecrement       | `event => void \| Promise`  |         | Function for handling decrement event.l                 |
-| onFocus           | `event => void \| Promise`  |         | Function for handling onFocus event.                    |
-| onIncrement       | `event => void \| Promise`  |         | Function for handling increment event.                  |
-| onKeyDown         | `event => void \| Promise`  |         | Function for handling onKeyDown event present on input. |
-| step              | `number`                    | `1`     | Specifies the value of step to increment and decrement. |
-| titleDecrement    | `string \| (any => string)` |         | Specifies `aria-label` property on decrement `Button`.  |
-| titleIncrement    | `string \| (any => string)` |         | Specifies `aria-label` property on increment `Button`.  |
-| value             | `number \| string`          |         | Specifies the value of the StepperStateless.            |
-| ariaLabelValue    | `string`                    |         | Optional prop for `aria-label` value.                   |
-| ariaLabelledBy    | `string`                    |         | Optional prop for `aria-labelledby` value.              |
+| Name                 | Type                        | Default | Description                                                                               |
+| :------------------- | :-------------------------- | :------ | :---------------------------------------------------------------------------------------- |
+| dataTest             | `string`                    |         | Optional prop for testing purposes.                                                       |
+| disabled             | `boolean`                   | `false` | If `true`, the Stepper will be disabled.                                                  |
+| disabledIncrement    | `boolean`                   |         | If `true`, the increment `Button` will be disabled.                                       |
+| disabledDecrement    | `boolean`                   |         | If `true`, the decrement `Button` will be disabled.                                       |
+| maxValue             | `number`                    | `∞`     | Specifies the maximum value for the Stepper.                                              |
+| minValue             | `number`                    | `-∞`    | Specifies the minimum value for the Stepper.                                              |
+| name                 | `string`                    |         | The name for the Stepper.                                                                 |
+| onBlur               | `event => void \| Promise`  |         | Function for handling onBlur event.                                                       |
+| onChange             | `number => void \| Promise` |         | Function for handling onClick event.                                                      |
+| onDecrement          | `event => void \| Promise`  |         | Function for handling decrement event.l                                                   |
+| onFocus              | `event => void \| Promise`  |         | Function for handling onFocus event.                                                      |
+| onIncrement          | `event => void \| Promise`  |         | Function for handling increment event.                                                    |
+| onKeyDown            | `event => void \| Promise`  |         | Function for handling onKeyDown event present on input.                                   |
+| step                 | `number`                    | `1`     | Specifies the value of step to increment and decrement.                                   |
+| titleDecrement       | `string`                    |         | Specifies `aria-label` property on decrement `Button`. See accessibility tab.             |
+| titleIncrement       | `string`                    |         | Specifies `aria-label` property on increment `Button`. See accessibility tab.             |
+| value                | `number \| string`          |         | Specifies the value of the StepperStateless. See accessibility tab.                       |
+| ariaLabelValue       | `string`                    |         | Optional prop for `aria-label` value for input field. See accessibility tab.              |
+| ariaLabelledby       | `string`                    |         | Optional prop for `aria-labelledby` value for input field. See accessibility tab.         |
+| ariaDescribedby      | `string`                    |         | Optional prop for `aria-describedby` value for input field. See accessibility tab.        |
+| descriptionDecrement | `string`                    |         | Optional prop for `aria-describedby` value for decrement `Button`. See accessibility tab. |
+| descriptionIncrement | `string`                    |         | Optional prop for `aria-describedby` value for increment `Button`. See accessibility tab. |
+| ariaDescribedby      | `string`                    |         | Optional prop for `aria-describedby` value for input field. See accessibility tab.        |
 
 ### Usage:
 

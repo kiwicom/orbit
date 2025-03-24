@@ -3,10 +3,10 @@
 import * as React from "react";
 import cx from "clsx";
 
-import { SPACINGS } from "../utils/layout/consts";
 import { SIZES, TYPES } from "./consts";
 import type { Props } from "./types";
 import { getSpacingClasses, spaceAfterClasses } from "../common/tailwind";
+import type { SPACINGS } from "../utils/layout/consts";
 
 const sizeTokens = {
   [SIZES.SMALL]:
@@ -28,7 +28,7 @@ const List = ({
   id,
   size = SIZES.NORMAL,
   type = TYPES.PRIMARY,
-  spacing = SPACINGS.NONE,
+  spacing,
   spaceAfter,
 }: Props) => {
   return (

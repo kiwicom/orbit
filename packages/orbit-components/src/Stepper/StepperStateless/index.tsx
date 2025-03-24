@@ -50,7 +50,7 @@ const StepperStateless = ({
   disabledIncrement,
   disabledDecrement,
   ariaLabelValue,
-  ariaLabelledBy,
+  ariaDescribedby,
 }: Props) => {
   const theme = useTheme();
 
@@ -85,6 +85,7 @@ const StepperStateless = ({
         icons={iconStyles}
         title={titleDecrement}
         aria-controls={inputId}
+        aria-describedby={ariaDescribedby}
       />
       <input
         className={cx(
@@ -110,7 +111,7 @@ const StepperStateless = ({
         onBlur={onBlur}
         onFocus={onFocus}
         aria-label={ariaLabelValue}
-        aria-labelledby={ariaLabelledBy}
+        aria-describedby={ariaDescribedby}
         id={inputId}
         readOnly
       />
@@ -127,6 +128,7 @@ const StepperStateless = ({
         icons={iconStyles}
         title={titleIncrement}
         aria-controls={inputId}
+        aria-describedby={ariaDescribedby}
       />
     </div>
   );

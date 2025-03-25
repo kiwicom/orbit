@@ -18,6 +18,7 @@ const Breadcrumbs = ({
   spaceAfter,
   backHref,
   id,
+  ariaLabel = "Breadcrumb",
 }: Props) => {
   const childEls = React.Children.toArray(children) as React.ReactElement<BreadcrumbsItemProps>[];
 
@@ -26,7 +27,7 @@ const Breadcrumbs = ({
       <Hide on={["smallMobile", "mediumMobile"]}>
         <nav
           className={cx("font-base text-small", spaceAfter && spaceAfterClasses[spaceAfter])}
-          aria-label="Breadcrumb"
+          aria-label={ariaLabel}
           id={id}
           data-test={dataTest}
         >

@@ -10,4 +10,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly goBackTitle?: React.ReactNode;
   readonly onGoBack?: Common.Event<React.SyntheticEvent<HTMLAnchorElement>>;
   readonly backHref?: string;
+  readonly ariaLabel?: string;
 }

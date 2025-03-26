@@ -35,9 +35,4 @@ Table below contains all types of the props available in the NavigationBar compo
 | hideOnScroll       | `boolean`               | `true`                   | Turn on or off hiding navigation bar on scroll                                                              |
 | openTitle          | `string`                | `"Open navigation menu"` | Property for passing translation string to open Button.                                                     |
 | bottomStyle        | `"shadow" \| "border"`  | `"shadow"`               | Property for setting bottom style of NavigationBar.                                                         |
-| ariaLabel          | `string`                | `"navigation"`           | Optional prop for `aria-label` value (accessibility).                                                       |
 | transparentBgAtTop | `boolean`               | `false`                  | Property for setting the background to be transparent when the NavigationBar is at the top of the viewport. |
-
-## Accessibility
-
-- The `ariaLabel` prop allows you to specify an `aria-label` attribute for the component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.

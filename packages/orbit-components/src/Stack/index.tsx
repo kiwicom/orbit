@@ -47,6 +47,7 @@ const Stack = (props: Props) => {
     tablet,
     desktop,
     largeDesktop,
+    ariaLabel,
   } = props;
 
   const viewportProps = { mediumMobile, largeMobile, tablet, desktop, largeDesktop };
@@ -177,6 +178,7 @@ const Stack = (props: Props) => {
           );
         }),
       )}
+      aria-label={ariaLabel}
     >
       {children}
     </ComponentTag>

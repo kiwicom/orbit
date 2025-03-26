@@ -84,7 +84,7 @@ const NavigationBar = ({
   }, [hideOnScroll, setShown]);
 
   return (
-    <nav
+    <header
       data-test={dataTest}
       id={id}
       className={cx(
@@ -110,7 +110,7 @@ const NavigationBar = ({
           title={openTitle}
         />
       )}
-    </nav>
+    </header>
   );
 };
 

@@ -75,7 +75,6 @@ For enhanced accessibility, it is recommended to have these label strings transl
 The `ariaDescribedby` prop allows you to associate additional descriptive text with the Select component. This is useful for providing supplementary information that screen readers will announce after reading the component's label.
 
 ```jsx
-<div>
   <Select
     options={countryOptions}
     value={countryValue}
@@ -83,8 +82,9 @@ The `ariaDescribedby` prop allows you to associate additional descriptive text w
     label="Country"
     ariaDescribedby="country-info"
   />
-  <p id="country-info">Select the country where you currently reside.</p>
-</div>
+  <p id="country-info" style={{ display: "none", visibility: "hidden" }}>
+    Select the country where you currently reside.
+  </p>
 ```
 
 When using the `help` or `error` props, their content is set as `aria-describedby` on the element. Screen readers will announce this additional information after reading the component's label (whether provided via `label`, `ariaLabel`, or `ariaLabelledby` props).
@@ -104,8 +104,9 @@ It would have the screen reader announce: "Nationality. Required field."
 If you provide both an `ariaDescribedby` prop and use `error` or `help`, the component automatically combines them, ensuring all descriptive content is properly announced:
 
 ```jsx
-<div>
-  <p id="terms-info">Please review our terms and conditions.</p>
+  <p id="terms-info" style={{ display: "none", visibility: "hidden" }}>
+    Please review our terms and conditions.
+  </p>
   <Select
     options={termsOptions}
     value={termsValue}
@@ -114,10 +115,9 @@ If you provide both an `ariaDescribedby` prop and use `error` or `help`, the com
     error="This field is required"
     ariaDescribedby="terms-info"
   />
-</div>
 ```
 
-In this example, both the "terms-info" text and the error message will be announced by screen readers.
+In this example, both the "terms-info" text and the error message will be announced by screen readers. The text from `ariaDescribedby` will be announced first, followed by the text from `error`.
 
 ### InputGroup Integration
 
@@ -149,4 +149,22 @@ If individual Select components have their own `error`/`help` messages (and the 
 
 In this example, only the second Select will have its error message "This field is required" announced.
 
-Avoid setting `ariaDescribedby` directly on Select components when inside an InputGroup, as these values will be overwritten by the InputGroup's internal accessibility logic.
+#### Example 3
+
+Avoid setting `ariaDescribedby` directly on Select components when inside an InputGroup, as these values will be overwritten by the InputGroup's internal accessibility logic:
+
+```jsx
+<InputGroup label="Contact information">
+  <Select
+    options={countryOptions}
+    label="Country"
+    ariaDescribedby="country-hint" // This will be overwritten
+  />
+  <InputField label="Phone number" />
+  <p id="country-hint" style={{ display: "none", visibility: "hidden" }}>
+    Select the country prefix of your phone number
+  </p>
+</InputGroup>
+```
+
+In this example, the `ariaDescribedby` value "country-hint" will be ignored because the InputGroup manages the accessibility associations internally. Instead, rely on the InputGroup's `error`/`help` props or the component's own `error`/`help` props.

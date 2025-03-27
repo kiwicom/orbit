@@ -9,11 +9,11 @@ import Email from "../../icons/Email";
 import type { Type } from "../types";
 
 const getSocialButtonIcon = (type: Type): React.ReactNode | null => {
-  if (type === TYPE_OPTIONS.APPLE) return <Apple />;
-  if (type === TYPE_OPTIONS.FACEBOOK) return <Facebook />;
-  if (type === TYPE_OPTIONS.GOOGLE) return <Google />;
-  if (type === TYPE_OPTIONS.X) return <X />;
-  if (type === TYPE_OPTIONS.EMAIL) return <Email />;
+  if (type === TYPE_OPTIONS.APPLE) return <Apple ariaHidden />;
+  if (type === TYPE_OPTIONS.FACEBOOK) return <Facebook ariaHidden />;
+  if (type === TYPE_OPTIONS.GOOGLE) return <Google ariaHidden />;
+  if (type === TYPE_OPTIONS.X) return <X ariaHidden />;
+  if (type === TYPE_OPTIONS.EMAIL) return <Email ariaHidden />;
 
   return null;
 };

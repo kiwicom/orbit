@@ -38,6 +38,7 @@ const SocialButton = React.forwardRef<HTMLButtonElement, Props>(
             customColor={type === TYPE_OPTIONS.APPLE ? "#FFF" : ""}
             color="primary"
             ariaHidden
+            reverseOnRtl
           />
         }
         circled={false}

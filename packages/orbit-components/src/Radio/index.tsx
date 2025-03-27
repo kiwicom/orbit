@@ -24,6 +24,8 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     tooltip,
   } = props;
 
+  const radioTooltipId = React.useId();
+
   return (
     <label
       htmlFor={id}
@@ -64,9 +66,13 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         name={name}
         tabIndex={Number(tabIndex)}
         ref={ref}
+        aria-describedby={tooltip ? radioTooltipId : undefined}
       />
       {cloneWithTooltip(
-        tooltip,
+        tooltip &&
+          React.cloneElement(tooltip as React.ReactElement, {
+            id: radioTooltipId,
+          }),
         <div
           className={cx(
             "orbit-radio-icon-container",

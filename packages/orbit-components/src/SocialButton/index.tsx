@@ -37,6 +37,7 @@ const SocialButton = React.forwardRef<HTMLButtonElement, Props>(
           <ChevronForwardIcon
             customColor={type === TYPE_OPTIONS.APPLE ? "#FFF" : ""}
             color="primary"
+            ariaHidden
           />
         }
         circled={false}

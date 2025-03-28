@@ -8,6 +8,7 @@ import CarrierLogo from "../CarrierLogo";
 import { SPACINGS_AFTER } from "../common/consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import TextLink from "../TextLink";
+import { SPACINGS } from "../utils/layout/consts";
 
 import List, { ListItem } from ".";
 
@@ -28,6 +29,7 @@ const meta: Meta<ListPropsAndCustomArgs> = {
     type: TYPES.PRIMARY,
     size: SIZES.NORMAL,
     spaceAfter: SPACINGS_AFTER.MEDIUM,
+    spacing: SPACINGS.FOUR_HUNDRED,
   },
 
   argTypes: {
@@ -45,6 +47,12 @@ const meta: Meta<ListPropsAndCustomArgs> = {
     },
     spaceAfter: {
       options: Object.values(SPACINGS_AFTER),
+      control: {
+        type: "select",
+      },
+    },
+    spacing: {
+      options: Object.values(SPACINGS),
       control: {
         type: "select",
       },

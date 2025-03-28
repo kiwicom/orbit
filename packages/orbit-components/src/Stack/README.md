@@ -41,6 +41,7 @@ The table below contains all types of props available in the Stack component.
 | tablet       | [`Object`](#media-queries) |            | Object for setting up properties for the tablet viewport. [See Media queries](#media-queries)       |
 | wrap         | `boolean`                  | `false`    | If `true`, the Stack will have `flex-wrap` set to `wrap`, otherwise it will be `nowrap`.            |
 | useMargin    | `boolean`                  | `false`    | If `true`, the Stack will be using margins instead of gap                                           |
+| ariaLabel    | `string`                   |            | Optional prop for setting `aria-label` attribute.                                                   |
 
 ### Media Queries
 

@@ -52,4 +52,5 @@ export interface Props extends CommonProps, Common.Globals {
   readonly as?: string;
   readonly largeDesktop?: CommonProps;
   readonly children: React.ReactNode;
+  readonly ariaLabel?: string;
 }

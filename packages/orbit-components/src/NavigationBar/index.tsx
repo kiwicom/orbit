@@ -20,7 +20,6 @@ const NavigationBar = ({
   onHide,
   hideOnScroll = true,
   bottomStyle = "shadow",
-  ariaLabel = "navigation",
   transparentBgAtTop = false,
 }: Props) => {
   const resolveCallback = React.useCallback(
@@ -85,7 +84,7 @@ const NavigationBar = ({
   }, [hideOnScroll, setShown]);
 
   return (
-    <nav
+    <header
       data-test={dataTest}
       id={id}
       className={cx(
@@ -101,7 +100,6 @@ const NavigationBar = ({
         !isTransparentBg && bottomStyle === "border" && "border-cloud-normal border-b",
         isTransparentBg ? "bg-transparent" : "bg-white-normal",
       )}
-      aria-label={ariaLabel}
     >
       <div className={cx("block w-full", onMenuOpen && "me-200")}>{children}</div>
       {onMenuOpen && (
@@ -112,7 +110,7 @@ const NavigationBar = ({
           title={openTitle}
         />
       )}
-    </nav>
+    </header>
   );
 };
 

@@ -1,0 +1,19 @@
+---
+title: v23
+description: How to migrate to Orbit 23.0.0
+redirect_from:
+  - /migration-guides/v23/
+---
+
+# Orbit Migration Guide v23
+
+This migration guide focuses on the process of migrating from Orbit v22 to v23.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### Removal of `ariaLabel` prop in NavigationBar
+
+The `NavigationBar` component now renders a `header` element instead of a `nav` element, and the `ariaLabel` prop has been removed.
+
+If you're using `NavigationBar` with `ariaLabel`, you now need to set the `aria-label` attribute on the `nav` element(s) passed as children to `NavigationBar`.

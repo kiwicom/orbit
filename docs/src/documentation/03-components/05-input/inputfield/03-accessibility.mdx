@@ -16,4 +16,82 @@ redirect_from:
 ```
 
 - The `ariaLabel` prop allows you to specify an `aria-label` attribute for the InputField component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.
+
 - If the `label` prop is not provided, the `ariaLabel` prop must be specified to ensure component accessibility.
+
+- The `ariaDescribedby` prop allows you to specify an `aria-describedby` attribute for the InputField component. This attribute links the component to additional descriptive text, enhancing accessibility by providing supplementary information to screen readers.
+
+```jsx
+  <InputField label="Password" type="password" ariaDescribedby="password-requirements" />
+  <p id="password-requirements" style={{ display: "none", visibility: "hidden" }}>
+    Password must be at least 8 characters long and include at least one uppercase letter and one number.
+  </p>
+```
+
+When using the `error` or `help` props, the component automatically manages the `aria-describedby` attribute:
+
+```jsx
+<InputField label="Username" error="This username is already taken" />
+```
+
+In this example, the error message is automatically associated with the input field via `aria-describedby`.
+
+If you provide both an `ariaDescribedby` prop and use `error` or `help`, the component automatically combines them, ensuring that screen readers announce all descriptive content:
+
+```jsx
+  <p id="email-hint" style={{ display: "none", visibility: "hidden" }}>
+    We'll never share your email with anyone else.
+  </p>
+  <InputField label="Email" error="Invalid email format" ariaDescribedby="email-hint" />
+```
+
+In this example, both the "email-hint" text and the error message will be announced by screen readers. The text from `ariaDescribedby` will be announced first, followed by the text from `error`.
+
+### InputGroup Integration
+
+When using InputField within an InputGroup, the `aria-describedby` association follows these rules:
+
+#### Example 1
+
+If the InputGroup has `error`/`help` messages, these will be properly associated with all child components:
+
+```jsx
+<InputGroup label="Passenger details" error="Incomplete information">
+  <InputField label="First name" />
+  <InputField label="Last name" />
+</InputGroup>
+```
+
+In this example, all InputField components will have the InputGroup's error message "Incomplete information" announced by screen readers.
+
+#### Example 2
+
+If individual InputField components have their own `error`/`help` messages (and the InputGroup doesn't), only those specific components will have `aria-describedby` set:
+
+```jsx
+<InputGroup label="Passenger details">
+  <InputField label="First name" />
+  <InputField label="Last name" error="Last name is required" />
+</InputGroup>
+```
+
+In this example, only the second InputField will have its error message "Last name is required" announced.
+
+#### Example 3
+
+Avoid setting `ariaDescribedby` directly on InputField components when inside an InputGroup, as these values will be overwritten by the InputGroup's internal accessibility logic:
+
+```jsx
+<InputGroup label="Contact information">
+  <Select options={countryOptions} label="Country" />
+  <InputField
+    label="Phone number"
+    ariaDescribedby="phone-hint" // This will be overwritten
+  />
+  <p id="phone-hint" style={{ display: "none", visibility: "hidden" }}>
+    Enter your phone number
+  </p>
+</InputGroup>
+```
+
+In this example, the `ariaDescribedby` value "phone-hint" will be ignored because the InputGroup manages the accessibility associations internally. Instead, rely on the InputGroup's `error`/`help` props or the component's own `error`/`help` props.

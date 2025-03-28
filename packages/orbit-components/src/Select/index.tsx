@@ -41,6 +41,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     dataAttrs,
     ariaLabel,
     ariaLabelledby,
+    ariaDescribedby,
   } = props;
   const filled = !(value == null || value === "");
 
@@ -62,6 +63,11 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
   const inputRef = React.useRef<HTMLLabelElement | null>(null);
 
   const shown = tooltipShown || tooltipShownHover;
+  const tooltipId = shown ? `${selectId}-feedback` : undefined;
+
+  const ariaDescribedbyValue = insideInputGroup
+    ? ariaDescribedby
+    : [ariaDescribedby, tooltipId].filter(Boolean).join(" ") || undefined;
 
   return (
     <div
@@ -78,8 +84,8 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             help={!!help}
             labelRef={labelRef}
             iconRef={iconRef}
-            onMouseEnter={() => setTooltipShownHover(true)}
-            onMouseLeave={() => setTooltipShownHover(false)}
+            onMouseEnter={() => (hasTooltip ? setTooltipShownHover(true) : undefined)}
+            onMouseLeave={() => (hasTooltip ? setTooltipShownHover(false) : undefined)}
             required={required}
           >
             {label}
@@ -153,7 +159,10 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             )}
             <select
               className={cx(
-                "cursor-pointer appearance-none bg-transparent outline-none",
+                "cursor-pointer appearance-none bg-transparent",
+                insideInputGroup
+                  ? "focus:outline-blue-normal focus:rounded-150 focus:tb:rounded-100 focus:outline-2 focus:outline-offset-[0]"
+                  : "outline-none",
                 filled ? "text-form-element-filled-foreground" : "text-form-element-foreground",
                 "font-base text-form-element-normal",
                 "pe-1000",
@@ -179,7 +188,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
               tabIndex={tabIndex ? Number(tabIndex) : undefined}
               required={required}
               ref={ref}
-              aria-describedby={shown ? `${selectId}-feedback` : undefined}
+              aria-describedby={ariaDescribedbyValue}
               aria-invalid={error ? true : undefined}
               aria-label={ariaLabel}
               aria-labelledby={ariaLabelledby}
@@ -209,14 +218,14 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                 : "text-form-element-filled-foreground",
             )}
           >
-            <ChevronDown color="secondary" />
+            <ChevronDown color="secondary" ariaHidden />
           </div>
           <FakeInput disabled={disabled} error={error} />
         </div>
       </label>
       {!insideInputGroup && hasTooltip && (
         <ErrorFormTooltip
-          id={`${selectId}-feedback`}
+          id={tooltipId}
           help={help}
           error={error}
           shown={shown}

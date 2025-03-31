@@ -16,25 +16,19 @@ describe("CountryFlag", () => {
       "srcset",
       `${baseURL}/flags/${SIZE_WIDTHS.medium * 2}x0/flag-anywhere.jpg 2x`,
     );
-    expect(screen.getByTitle("Anywhere")).toBeInTheDocument();
     expect(screen.getByAltText("Anywhere")).toBeInTheDocument();
     expect(screen.getByTestId("test")).toBeInTheDocument();
   });
   it("should support omitting code and name", () => {
     let flag;
     render(<CountryFlag />);
-    flag = screen.getByRole("img", { name: "Undefined" });
+    flag = screen.getByRole("img");
     expect(flag).toHaveAttribute("src", expect.stringContaining("undefined"));
+    expect(flag).toHaveAttribute("alt", "");
     cleanup();
     render(<CountryFlag name="Country" />);
     flag = screen.getByRole("img", { name: "Country" });
     expect(flag).toHaveAttribute("src", expect.stringContaining("undefined"));
-    cleanup();
-    render(<CountryFlag code="us" />);
-    flag = screen.getByRole("img");
-    expect(flag).toHaveAttribute("src", expect.stringContaining("us"));
-    expect(flag).not.toHaveAttribute("alt");
-    expect(flag).not.toHaveAttribute("title");
   });
   it("should warn and fallback on unknown code", () => {
     const consoleSpy = jest.spyOn(console, "warn").mockImplementation(() => {});

@@ -16,18 +16,18 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in CountryFlag component.
 
-| Name     | Type                                             | Default       | Description                          |
-| :------- | :----------------------------------------------- | :------------ | :----------------------------------- |
-| code     | [`enum`](#enum)                                  | `"undefined"` | Code for the displayed country flag. |
-| dataTest | `string`                                         |               | Optional prop for testing purposes.  |
-| id       | `string`                                         |               | Set `id` for `CountryFlag`           |
-| name     | `string`                                         |               | The name for the flag.               |
-| role     | `React.HTMLAttributes<HTMLImageElement>["role"]` | `"img"`       | ARIA role for the flag image.        |
-| size     | [`enum`](#enum)                                  | `"medium"`    | The size of the CountryFlag.         |
+| Name     | Type                                             | Default       | Description                                |
+| :------- | :----------------------------------------------- | :------------ | :----------------------------------------- |
+| code     | [`enum`](#enum)                                  | `"undefined"` | Code for the displayed country flag.       |
+| dataTest | `string`                                         |               | Optional prop for testing purposes.        |
+| id       | `string`                                         |               | Set `id` for `CountryFlag`.                |
+| name     | `string`                                         | `""`          | Defines the `alt` attribute for the image. |
+| role     | `React.HTMLAttributes<HTMLImageElement>["role"]` |               | ARIA role for the flag image.              |
+| size     | [`enum`](#enum)                                  | `"medium"`    | The size of the CountryFlag.               |
 
 ### enum
 
-If code doesn't exist "undefined" will be used
+If code doesn't exist "undefined" will be used.
 
 | code          | size       |
 | :------------ | :--------- |

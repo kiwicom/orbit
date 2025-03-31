@@ -13,10 +13,9 @@ const meta: Meta<typeof CountryFlag> = {
   },
 
   args: {
-    name: "Country",
+    name: "",
     code: CODES.ANYWHERE,
     size: SIZES.SMALL,
-    role: "img",
   },
 
   argTypes: {
@@ -32,10 +31,9 @@ const meta: Meta<typeof CountryFlag> = {
         type: "select",
       },
     },
-    role: {
-      options: ["img", "presentation", "none"],
+    name: {
       control: {
-        type: "select",
+        type: "text",
       },
     },
   },

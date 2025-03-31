@@ -52,7 +52,7 @@ export interface Props extends Common.SpaceAfter, Common.Globals {
   readonly rowOffset?: number;
   /** Number of rect elements */
   readonly rows?: number;
-  /** Add text for svg accessible name element  */
+  /** Accessible text for screen readers */
   readonly title?: string;
   /** You can pick one of predefined presets  */
   readonly preset?: Preset;

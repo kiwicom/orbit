@@ -49,7 +49,7 @@ or you can pick one from our predefined presets:
 | rowHeight       | `number`              | `21px`             | Set height for rect elements                     |
 | rowOffset       | `number`              | `20px`             | Set offset between rect elements                 |
 | rows            | `number`              |                    | Number of rect elements                          |
-| title           | `string`              | `loading`          | Add text for svg accessible name element         |
+| title           | `string`              |                    | Accessible text for screen readers               |
 | preset          | [`Preset`](###Preset) |                    | You can pick one of predefined presets           |
 | viewBox         | `string`              |                    | Set viewBox for Svg element                      |
 | width           | `number \| string`    | `100%`             | Width of Svg element                             |

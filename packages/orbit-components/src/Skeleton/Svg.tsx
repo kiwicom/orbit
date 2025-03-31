@@ -39,7 +39,7 @@ const Svg = ({
   rowOffset = 20,
   rows,
   color = "paletteCloudNormal",
-  title = "loading",
+  title,
   viewBox,
   height = "100%",
   maxHeight,
@@ -53,64 +53,63 @@ const Svg = ({
   const { orbit } = useTheme();
   const randomId = useRandomIdSeed();
   const idClip = `${randomId("clip")}-clip`;
-  const titleId = randomId("title");
 
   React.useEffect(() => {
     if (!children && rows && rowOffset) setCalculatedRowsHeight(rows * rowOffset);
   }, [rowOffset, rows, setCalculatedRowsHeight, maxHeight]);
 
   return (
-    <svg
-      aria-labelledby={titleId}
-      data-test={dataTest}
-      id={id}
-      className={cx(
-        animate && "animate-pulse-slow",
-        "rtl:-scale-x-100",
-        spaceAfter && spaceAfterClasses[spaceAfter],
-      )}
-      role="img"
-      viewBox={viewBox}
-      style={{
-        height: calculatedRowsHeight > 0 ? `${setCalculatedRowsHeight}px` : resolveValue(height),
-        maxHeight: resolveValue(maxHeight),
-        width: resolveValue(width),
-      }}
-      {...props}
-    >
-      <title id={titleId}>{title}</title>
-      <rect
-        role="presentation"
-        x="0"
-        y="0"
-        width="100%"
-        height="100%"
-        clipPath={`url(#${idClip})`}
-        style={{ fill: orbit[color] }}
-      />
-      <defs>
-        <clipPath id={idClip}>
-          {children ||
-            (rows ? (
-              <Rows
-                count={rows}
-                height={rowHeight}
-                offset={rowOffset}
-                rowBorderRadius={rowBorderRadius}
-              />
-            ) : (
-              <rect
-                x="0"
-                y="0"
-                rx={rowBorderRadius}
-                ry={rowBorderRadius}
-                height="100%"
-                width="100%"
-              />
-            ))}
-        </clipPath>
-      </defs>
-    </svg>
+    <>
+      <svg
+        data-test={dataTest}
+        id={id}
+        className={cx(
+          animate && "motion-safe:animate-pulse-slow",
+          "rtl:-scale-x-100",
+          spaceAfter && spaceAfterClasses[spaceAfter],
+        )}
+        viewBox={viewBox}
+        style={{
+          height: calculatedRowsHeight > 0 ? `${setCalculatedRowsHeight}px` : resolveValue(height),
+          maxHeight: resolveValue(maxHeight),
+          width: resolveValue(width),
+        }}
+        aria-hidden
+        {...props}
+      >
+        <rect
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          clipPath={`url(#${idClip})`}
+          style={{ fill: orbit[color] }}
+        />
+        <defs>
+          <clipPath id={idClip}>
+            {children ||
+              (rows ? (
+                <Rows
+                  count={rows}
+                  height={rowHeight}
+                  offset={rowOffset}
+                  rowBorderRadius={rowBorderRadius}
+                />
+              ) : (
+                <rect
+                  x="0"
+                  y="0"
+                  rx={rowBorderRadius}
+                  ry={rowBorderRadius}
+                  height="100%"
+                  width="100%"
+                />
+              ))}
+          </clipPath>
+        </defs>
+      </svg>
+      {title && <span className="sr-only">{title}</span>}
+    </>
   );
 };
 

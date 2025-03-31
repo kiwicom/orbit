@@ -21,18 +21,18 @@ describe("Skeleton", () => {
 
   it("should have custom width and height", () => {
     render(
-      <Skeleton height="400px" width="300px" viewBox="0 0 300 400">
+      <Skeleton height="400px" width="300px" viewBox="0 0 300 400" dataTest="Loading">
         <rect x="48" y="8" rx="3" ry="3" width="88" height="6" />
         <rect x="48" y="26" rx="3" ry="3" width="52" height="6" />
       </Skeleton>,
     );
 
-    expect(screen.getByRole("img")).toHaveStyle({ height: "400px", width: "300px" });
+    expect(screen.getByTestId("Loading")).toHaveStyle({ height: "400px", width: "300px" });
   });
 
   it("should have rows", () => {
     render(<Skeleton dataTest="test" rows={6} width="50%" />);
     expect(document.querySelector("clipPath")?.childElementCount).toBe(6);
-    expect(screen.getByRole("img")).toHaveStyle({ width: "50%" });
+    expect(screen.getByTestId("test")).toHaveStyle({ width: "50%" });
   });
 });

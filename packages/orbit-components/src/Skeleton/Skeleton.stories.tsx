@@ -18,6 +18,10 @@ enum PRESETS {
 const meta: Meta<typeof Skeleton> = {
   title: "Skeleton",
   component: Skeleton,
+
+  args: {
+    title: "Loading",
+  },
 };
 
 export default meta;
@@ -78,7 +82,6 @@ export const Playground: Story = {
     rowHeight: 21,
     rowOffset: 30,
     rows: 10,
-    title: "Loading",
     maxHeight: "",
     color: "",
     spaceAfter: SPACINGS_AFTER.NONE,

@@ -6,19 +6,18 @@ import cx from "clsx";
 import { baseURL, CODES, SIZE_WIDTHS, SIZES } from "./consts";
 import type { Props } from "./types";
 
-function getCountryProps(code?: string, name?: string) {
+function getCountryProps(code?: string) {
   const codeNormalized = code ? code.toUpperCase().replace("-", "_") : "UNDEFINED";
   const countryCodeExists = codeNormalized in CODES;
 
   if (!countryCodeExists) console.warn(`Country code not supported: ${code}`);
 
   const countryCode = countryCodeExists ? CODES[codeNormalized] : CODES.UNDEFINED;
-  const countryName = countryCode === CODES.UNDEFINED && !name ? "Undefined" : name;
-  return { code: countryCode, name: countryName };
+  return { code: countryCode };
 }
 
-const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, role = "img", ...props }: Props) => {
-  const { code, name } = getCountryProps(props.code, props.name);
+const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, role, name = "", ...props }: Props) => {
+  const { code } = getCountryProps(props.code);
 
   const width = SIZE_WIDTHS[size];
   const src = `${baseURL}/flags/${width}x0/flag-${code.toLowerCase()}.jpg`;
@@ -39,7 +38,6 @@ const CountryFlag = ({ dataTest, size = SIZES.MEDIUM, id, role = "img", ...props
         className="block size-full shrink-0"
         key={code}
         alt={name}
-        title={name}
         id={id}
         data-test={dataTest}
         src={src}

@@ -46,6 +46,7 @@ const Box = React.forwardRef<HTMLDivElement, Props>(
       background,
       padding,
       margin,
+      ariaLabel,
     },
     ref,
   ) => {
@@ -248,6 +249,7 @@ const Box = React.forwardRef<HTMLDivElement, Props>(
         id={id}
         data-test={dataTest}
         style={vars}
+        aria-label={ariaLabel}
       >
         {children}
       </Component>

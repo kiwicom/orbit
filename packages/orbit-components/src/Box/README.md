@@ -54,6 +54,7 @@ Table below contains all types of the props available in the Box component.
 | tablet       | [`MediaQueries`](#media-queries)                                     |         | Object for setting up properties for the tablet viewport.       |
 | largeMobile  | [`MediaQueries`](#media-queries)                                     |         | Object for setting up properties for the largeMobile viewport.  |
 | mediumMobile | [`MediaQueries`](#media-queries)                                     |         | Object for setting up properties for the mediumMobile viewport. |
+| ariaLabel    | `string`                                                             |         | Optional prop for setting `aria-label` attribute.               |
 
 ### Media Queries
 

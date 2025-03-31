@@ -168,4 +168,5 @@ export interface Props extends Common.Globals {
   readonly largeDesktop?: MediaQueryObject;
   readonly children?: React.ReactNode;
   readonly className?: string; // Box is a only component where extending make sense
+  readonly ariaLabel?: string;
 }

@@ -13,6 +13,7 @@ import useLockScrolling from "../hooks/useLockScrolling";
 import useClickOutside from "../hooks/useClickOutside";
 import useRandomId from "../hooks/useRandomId";
 import type { Props } from "./types";
+import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 
 const ActionButtonWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -71,6 +72,17 @@ const Dialog = ({
       triggerRef?.current?.focus();
     };
   }, [triggerRef]);
+
+  React.useEffect(() => {
+    if (ref.current) {
+      const focusableElements = ref.current.querySelectorAll<HTMLElement>(
+        FOCUSABLE_ELEMENT_SELECTORS,
+      );
+      if (focusableElements.length > 0) {
+        focusableElements[0].focus();
+      }
+    }
+  }, []);
 
   const handleClose = (ev: MouseEvent) => {
     if (ref && ref.current && onClose) {

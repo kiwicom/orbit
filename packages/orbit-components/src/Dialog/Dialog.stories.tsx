@@ -26,6 +26,7 @@ const meta: Meta<typeof Dialog> = {
     renderInPortal: false,
     lockScrolling: false,
     onClose: action("onClose"),
+    titleAs: "div",
   },
 
   argTypes: {
@@ -38,6 +39,12 @@ const meta: Meta<typeof Dialog> = {
     maxWidth: {
       control: {
         type: "number",
+      },
+    },
+    titleAs: {
+      options: ["h1", "h2", "h3", "h4", "h5", "h6", "div"],
+      control: {
+        type: "select",
       },
     },
   },

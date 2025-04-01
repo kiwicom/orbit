@@ -26,6 +26,7 @@ const Dialog = ({
   dataTest,
   id,
   title,
+  titleAs,
   description,
   primaryAction,
   secondaryAction,
@@ -113,7 +114,7 @@ const Dialog = ({
           {illustration && <div className="mb-400 lm:text-start text-center">{illustration}</div>}
           <div className="mb-400 gap-200 lm:text-start lm:[&>.orbit-text]:text-start flex flex-col text-center [&>.orbit-text]:text-center">
             {title && (
-              <Heading type="title3" align="center" largeMobile={{ align: "start" }}>
+              <Heading type="title3" align="center" largeMobile={{ align: "start" }} as={titleAs}>
                 {title}
               </Heading>
             )}

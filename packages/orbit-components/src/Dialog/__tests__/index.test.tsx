@@ -21,4 +21,16 @@ describe("Dialog", () => {
     expect(screen.getByRole("button", { name: "Log out" }));
     expect(screen.getByRole("button", { name: "Close" }));
   });
+
+  it("should render title as h1", () => {
+    render(
+      <Dialog
+        title="Logging out"
+        titleAs="h1"
+        primaryAction={<Button type="critical">Log out</Button>}
+      />,
+    );
+    expect(screen.getByText("Logging out")).toBeInTheDocument();
+    expect(screen.getByText("Logging out").tagName).toBe("H1");
+  });
 });

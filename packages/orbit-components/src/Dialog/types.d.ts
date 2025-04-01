@@ -4,9 +4,11 @@
 import type * as React from "react";
 
 import type * as Common from "../common/types";
+import type { HeadingProps } from "../Heading/types";
 
 export interface Props extends Common.Globals {
   readonly title: React.ReactNode;
+  readonly titleAs?: HeadingProps["as"];
   readonly description?: React.ReactNode;
   readonly renderInPortal?: boolean;
   readonly maxWidth?: number;

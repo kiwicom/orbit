@@ -48,23 +48,27 @@ type Story = StoryObj<typeof Dialog>;
 
 function useDialog() {
   const [open, toggle] = React.useState(true);
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
   return {
     Container: ({ children }) => (
       <>
         {open && <div>{children}</div>}
-        <Button onClick={() => toggle(true)}>Open</Button>
+        <Button ref={triggerRef} onClick={() => toggle(true)}>
+          Open
+        </Button>
       </>
     ),
     onClose: () => {
       toggle(false);
       action("onClose")();
     },
+    triggerRef,
   };
 }
 
 export const Default: Story = {
   render: args => {
-    const { Container, onClose } = useDialog();
+    const { Container, onClose, triggerRef } = useDialog();
 
     return (
       <Container>
@@ -72,6 +76,7 @@ export const Default: Story = {
           {...args}
           primaryAction={<Button type="critical">Log out</Button>}
           onClose={onClose}
+          triggerRef={triggerRef}
         />
       </Container>
     );
@@ -101,7 +106,7 @@ export const Default: Story = {
 
 export const Playground: Story = {
   render: ({ illustration, ...args }) => {
-    const { Container, onClose } = useDialog();
+    const { Container, onClose, triggerRef } = useDialog();
 
     return (
       <Container>
@@ -111,6 +116,7 @@ export const Playground: Story = {
           secondaryAction={<ButtonLink type="secondary">Cancel</ButtonLink>}
           illustration={<Illustration name={illustration as Name} size="small" />}
           onClose={onClose}
+          triggerRef={triggerRef}
         />
       </Container>
     );

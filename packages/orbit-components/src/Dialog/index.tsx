@@ -35,6 +35,7 @@ const Dialog = ({
   renderInPortal = true,
   illustration,
   lockScrolling = true,
+  triggerRef,
 }: Props) => {
   const wrapperRef = React.useRef<HTMLDivElement | null>(null);
   useLockScrolling(wrapperRef, lockScrolling);
@@ -65,6 +66,13 @@ const Dialog = ({
       clearTimeout(timer);
     };
   }, [theme.orbit.durationFast, onClose]);
+
+  React.useEffect(() => {
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      triggerRef?.current?.focus();
+    };
+  }, [triggerRef]);
 
   const handleClose = (ev: MouseEvent) => {
     if (ref && ref.current && onClose) {

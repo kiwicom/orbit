@@ -15,4 +15,5 @@ export interface Props extends Common.Globals {
   readonly secondaryAction?: React.ReactNode;
   readonly lockScrolling?: boolean;
   readonly onClose?: Common.Callback;
+  readonly triggerRef?: React.RefObject<HTMLElement>;
 }

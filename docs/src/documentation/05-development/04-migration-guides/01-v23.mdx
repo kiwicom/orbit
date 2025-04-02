@@ -54,6 +54,26 @@ intl.formatMessage({
 
 Feel free to customize the translations according to your needs, by providing more specific context to the object it refers to.
 
+### Prop name change in Stepper and StepperStateless
+
+The prop name has been changed from `ariaLabelledBy` to `ariaLabelledby` in the Stepper and StepperStateless components to align with the correct ARIA attribute naming convention.
+
+**Before:**
+
+```jsx
+<Stepper ariaLabelledBy="label-id" />
+<StepperStateless ariaLabelledBy="label-id" />
+```
+
+**Now:**
+
+```jsx
+<Stepper ariaLabelledby="label-id" />
+<StepperStateless ariaLabelledby="label-id" />
+```
+
+Feel free to use the codemod to update the prop name in your code.
+
 ## Codemod
 
 A codemod is available to help with the migration. Please note that the codemod **does not** guarantee a full migration, nor its complete correctness.
@@ -62,7 +82,7 @@ Manual checks are still necessary, especially if some props are being calculated
 To run the codemod, use the following command:
 
 ```bash
-npx jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/skeleton-loading-v23.js --parser=tsx --extensions=ts,tsx <pathToYourCode>
+npx jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/transforms-v23.js --parser=tsx --extensions=ts,tsx <pathToYourCode>
 ```
 
 Make sure to run prettier after running the codemod, as it might introduce some formatting changes.

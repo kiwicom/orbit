@@ -17,7 +17,7 @@ function createIntlMessageContainer(j, messageId, defaultMessage) {
 }
 
 /**
- * Transforms the given file to add loading labels to Skeleton components.
+ * Transforms the given file to replace ariaLabelledBy to ariaLabelledby, and add loading labels to Skeleton components.
  *
  * @param {Object} file - The file object containing the source code.
  * @param {Object} api - The jscodeshift API object.
@@ -25,6 +25,33 @@ function createIntlMessageContainer(j, messageId, defaultMessage) {
 export default function transformer(file, api) {
   const j = api.jscodeshift;
   const root = j(file.source);
+
+  // Find all Stepper or StepperStateless components
+  root
+    .find(j.JSXElement)
+    .filter(path => {
+      const { openingElement } = path.node;
+
+      // Combine conditions for more efficient filtering
+      return openingElement.name.type === "JSXIdentifier";
+    })
+    .forEach(path => {
+      const { attributes, name } = path.node.openingElement;
+
+      if (!Array.isArray(attributes)) {
+        // Handle malformed JSX
+        return;
+      }
+
+      if (name.name === "Stepper" || name.name === "StepperStateless") {
+        attributes.forEach(attr => {
+          if (attr.type === "JSXAttribute" && attr.name.name === "ariaLabelledBy") {
+            // eslint-disable-next-line no-param-reassign
+            attr.name.name = "ariaLabelledby";
+          }
+        });
+      }
+    });
 
   // Find all Skeleton components
   root

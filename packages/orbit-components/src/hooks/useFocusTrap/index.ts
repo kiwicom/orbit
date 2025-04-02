@@ -1,14 +1,16 @@
 import * as React from "react";
 
 import FOCUSABLE_ELEMENT_SELECTORS from "./consts";
-import KEY_CODE_MAP from "../../common/keyMaps";
 
 interface FocusElements {
   first: HTMLElement | null;
   last: HTMLElement | null;
 }
 
-type UseFocusTrap = <T extends HTMLElement>(ref: React.RefObject<T>) => void;
+type UseFocusTrap = <T extends HTMLElement>(
+  ref: React.RefObject<T>,
+  triggeredDefault?: boolean,
+) => void;
 
 const manageFocus = (ref, triggered): FocusElements => {
   if (triggered && ref.current) {
@@ -25,12 +27,12 @@ const manageFocus = (ref, triggered): FocusElements => {
   return { first: null, last: null };
 };
 
-const useFocusTrap: UseFocusTrap = ref => {
-  const [triggered, setTriggered] = React.useState(false);
+const useFocusTrap: UseFocusTrap = (ref, triggeredDefault = false) => {
+  const [triggered, setTriggered] = React.useState(triggeredDefault);
 
   React.useEffect(() => {
     const handleKeyDown = (ev: KeyboardEvent) => {
-      if (ev.keyCode === KEY_CODE_MAP.TAB) {
+      if (ev.key === "Tab") {
         if (!triggered) {
           setTriggered(true);
         }

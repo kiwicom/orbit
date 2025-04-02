@@ -43,7 +43,7 @@ const Dialog = ({
   const ref = React.useRef<HTMLDivElement | null>(null);
   const theme = useTheme();
 
-  useFocusTrap(ref);
+  useFocusTrap(ref, true);
 
   React.useEffect(() => {
     const transitionLength = parseFloat(theme.orbit.durationFast) * 1000;

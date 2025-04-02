@@ -21,6 +21,7 @@ const Component = (props: Props) => {
 
 The table below contains all parameters available to the `useFocusTrap` hook.
 
-| Name | Type   | Description         |
-| :--- | :----- | :------------------ |
-| ref  | `func` | Component reference |
+| Name             | Type      | Description                                   |
+| :--------------- | :-------- | :-------------------------------------------- |
+| ref              | `func`    | Component reference                           |
+| triggeredDefault | `boolean` | Whether to trigger the focus trap by default. |

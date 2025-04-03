@@ -15,6 +15,8 @@ const TabList = ({
   margin,
   dataTest,
   fullWidth,
+  ariaLabel,
+  ariaLabelledby,
 }: Props) => {
   const cssVars = {
     "--tab-list-padding": typeof padding === "string" ? padding : undefined,
@@ -45,7 +47,8 @@ const TabList = ({
         cssVars["--tab-list-margin-left"] && "ms-[var(--tab-list-margin-left)]",
       )}
       role="tablist"
-      aria-label="tabs"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
       data-test={dataTest}
       style={cssVars}
     >

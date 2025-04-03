@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Text from "../Text";
 import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Tooltip from "../Tooltip";
 
 import Checkbox from ".";
 
@@ -14,7 +13,6 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
 
   parameters: {
-    info: "Additionally you can add tooltip to this component.",
     controls: {
       exclude: ["onChange", "defaultChecked", "value", "name"],
     },
@@ -105,23 +103,6 @@ export const WithTextLinkInLabel: Story = {
 
   args: {
     checked: true,
-  },
-};
-
-export const WithTooltip: Story = {
-  render: args => {
-    return (
-      <Checkbox
-        {...args}
-        tooltip={
-          <Tooltip content="There are no results available with this option" placement="top" />
-        }
-      />
-    );
-  },
-
-  args: {
-    disabled: true,
   },
 };
 

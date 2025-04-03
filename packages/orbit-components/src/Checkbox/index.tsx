@@ -5,7 +5,6 @@ import cx from "clsx";
 
 import Check from "../icons/Check";
 import getFieldDataState from "../common/getFieldDataState";
-import cloneWithTooltip from "../utils/cloneWithTooltip";
 import type { Props } from "./types";
 
 export const FakeCheckbox = ({
@@ -58,7 +57,6 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     id,
     info,
     tabIndex,
-    tooltip,
   } = props;
 
   return (
@@ -106,26 +104,23 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         onChange={onChange}
         ref={ref}
       />
-      {cloneWithTooltip(
-        tooltip,
-        <div
-          className={cx(
-            "orbit-checkbox-icon-container",
-            "relative box-border",
-            "border border-solid",
-            "flex shrink-0 grow-0 basis-auto items-center justify-center",
-            "size-icon-medium",
-            "rounded-150 de:rounded-100",
-            "duration-fast transition-all ease-in-out",
-            "[&>svg]:size-icon-small",
-            "[&>svg]:flex [&>svg]:items-center [&>svg]:justify-center",
-            checked ? "[&>svg]:visible" : "[&>svg]:invisible",
-            disabled ? ["border-cloud-dark"] : "active:scale-95",
-          )}
-        >
-          <Check customColor="white" />
-        </div>,
-      )}
+      <div
+        className={cx(
+          "orbit-checkbox-icon-container",
+          "relative box-border",
+          "border border-solid",
+          "flex shrink-0 grow-0 basis-auto items-center justify-center",
+          "size-icon-medium",
+          "rounded-150 de:rounded-100",
+          "duration-fast transition-all ease-in-out",
+          "[&>svg]:size-icon-small",
+          "[&>svg]:flex [&>svg]:items-center [&>svg]:justify-center",
+          checked ? "[&>svg]:visible" : "[&>svg]:invisible",
+          disabled ? ["border-cloud-dark"] : "active:scale-95",
+        )}
+      >
+        <Check customColor="white" />
+      </div>
       {(label || info) && (
         <div className={cx("ms-200 flex flex-1 flex-col", disabled ? "opacity-50" : "opacity-100")}>
           {label && (

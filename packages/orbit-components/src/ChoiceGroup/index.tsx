@@ -73,8 +73,6 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
       <div
         ref={ref}
         data-test={dataTest}
-        role="group"
-        aria-labelledby={label ? groupID : undefined}
         id={id}
         className={cx(
           "flex w-full flex-col",
@@ -92,32 +90,34 @@ const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
             {label}
           </Heading>
         )}
-        {typeof children === "function" ? (
-          children({
-            Container: "div",
-            Item: ItemContainer({ filter, onOnlySelection, onlySelectionText, itemProps }),
-            spacing: filter ? "0px" : theme.orbit.space200,
-          })
-        ) : (
-          <Stack direction="column" spacing={filter ? "none" : "200"}>
-            {React.Children.map(children, child => {
-              return !filter ? (
-                // @ts-expect-error TODO
-                React.cloneElement(child, itemProps)
-              ) : (
-                <FilterWrapper
+        <div aria-labelledby={label ? groupID : undefined} role="group">
+          {typeof children === "function" ? (
+            children({
+              Container: "div",
+              Item: ItemContainer({ filter, onOnlySelection, onlySelectionText, itemProps }),
+              spacing: filter ? "0px" : theme.orbit.space200,
+            })
+          ) : (
+            <Stack direction="column" spacing={filter ? "none" : "200"}>
+              {React.Children.map(children, child => {
+                return !filter ? (
                   // @ts-expect-error TODO
-                  child={child}
-                  onOnlySelection={onOnlySelection}
-                  onlySelectionText={onlySelectionText}
-                >
-                  {/* @ts-expect-error TODO */}
-                  {React.cloneElement(child, itemProps)}
-                </FilterWrapper>
-              );
-            })}
-          </Stack>
-        )}
+                  React.cloneElement(child, itemProps)
+                ) : (
+                  <FilterWrapper
+                    // @ts-expect-error TODO
+                    child={child}
+                    onOnlySelection={onOnlySelection}
+                    onlySelectionText={onlySelectionText}
+                  >
+                    {/* @ts-expect-error TODO */}
+                    {React.cloneElement(child, itemProps)}
+                  </FilterWrapper>
+                );
+              })}
+            </Stack>
+          )}
+        </div>
         {error && <Feedback>{error}</Feedback>}
       </div>
     );

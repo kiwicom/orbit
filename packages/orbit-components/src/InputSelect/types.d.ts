@@ -50,4 +50,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
   readonly onOptionSelect?: (opt: Option | null) => void;
   readonly onClose?: (opt: Option | null) => void;
+  readonly labelClear: string;
 }

@@ -18,6 +18,12 @@ The `NavigationBar` component now renders a `header` element instead of a `nav` 
 
 If you're using `NavigationBar` with `ariaLabel`, you now need to set the `aria-label` attribute on the `nav` element(s) passed as children to `NavigationBar`.
 
+### Removal of Tooltip prop in Checkbox and Radio
+
+The `tooltip` prop in `Checkbox` and `Radio` components has been removed.
+
+It was not being used in our product and is not supported by the design system anymore.
+
 ### Title prop for Skeleton component
 
 The `Skeleton` component used to have a default value for the prop `title`. We have removed this default value.

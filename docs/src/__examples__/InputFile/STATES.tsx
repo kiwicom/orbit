@@ -11,6 +11,7 @@ export default {
         placeholder="No photo selected"
         buttonLabel="Select photo"
         allowedFileTypes={[".png", ".jpg", ".jpeg", ".webp"]}
+        labelRemove="Remove file"
       />
     );
   },
@@ -24,6 +25,7 @@ export default {
     placeholder="No photo selected"
     buttonLabel="Select photo"
     allowedFileTypes={[".png", ".jpg", ".jpeg", ".webp"]}
+    labelRemove="Remove file"
   />)`,
     },
     {
@@ -35,6 +37,7 @@ export default {
     placeholder="No photo selected"
     buttonLabel="Select photo"
     allowedFileTypes={[".png", ".jpg", ".jpeg", ".webp"]}
+    labelRemove="Remove file"
   />)`,
     },
   ],

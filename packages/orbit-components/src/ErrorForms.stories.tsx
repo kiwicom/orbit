@@ -141,8 +141,13 @@ export const Error: Story = {
         onChange={action("onChange")}
       />
       <Select options={objectOptions} error={error} value={1} onChange={action("onChange")} />
-      <InputFile label={label} error={error} onRemoveFile={action("removeFile")} />
-      <InputFile error={error} onRemoveFile={action("removeFile")} />
+      <InputFile
+        label={label}
+        error={error}
+        onRemoveFile={action("removeFile")}
+        labelRemove="Remove file"
+      />
+      <InputFile error={error} onRemoveFile={action("removeFile")} labelRemove="Remove file" />
       <InputGroup label={label}>
         <InputField error={error} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
@@ -233,8 +238,13 @@ export const Help: Story = {
         onChange={action("onChange")}
       />
       <Select options={objectOptions} help={help} value={1} onChange={action("onChange")} />
-      <InputFile label={label} help={help} onRemoveFile={action("removeFile")} />
-      <InputFile help={help} onRemoveFile={action("removeFile")} />
+      <InputFile
+        label={label}
+        help={help}
+        onRemoveFile={action("removeFile")}
+        labelRemove="Remove file"
+      />
+      <InputFile help={help} onRemoveFile={action("removeFile")} labelRemove="Remove file" />
       <InputGroup label={label}>
         <InputField help={help} placeholder="DD" readOnly />
         <Select options={objectOptions} value={1} placeholder="Month" />
@@ -329,8 +339,13 @@ export const RtlError: Story = {
           onChange={action("onChange")}
         />
         <Select options={objectOptions} error={error} value={1} onChange={action("onChange")} />
-        <InputFile label={label} error={error} onRemoveFile={action("removeFile")} />
-        <InputFile error={error} onRemoveFile={action("removeFile")} />
+        <InputFile
+          label={label}
+          error={error}
+          onRemoveFile={action("removeFile")}
+          labelRemove="Remove file"
+        />
+        <InputFile error={error} onRemoveFile={action("removeFile")} labelRemove="Remove file" />
         <InputGroup label={label}>
           <InputField error={error} placeholder="DD" />
           <Select options={objectOptions} value={1} placeholder="Month" />

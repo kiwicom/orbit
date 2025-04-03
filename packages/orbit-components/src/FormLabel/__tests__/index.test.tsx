@@ -16,11 +16,11 @@ describe("FormLabel", () => {
 
   it("should have error", () => {
     render(<FormLabel error>FormLabel</FormLabel>);
-    expect(screen.getByLabelText("error")).toBeInTheDocument();
+    expect(screen.getByTestId("ErrorIcon")).toBeInTheDocument();
   });
 
   it("should have help", () => {
     render(<FormLabel help>FormLabel</FormLabel>);
-    expect(screen.getByLabelText("help")).toBeInTheDocument();
+    expect(screen.getByTestId("HelpIcon")).toBeInTheDocument();
   });
 });

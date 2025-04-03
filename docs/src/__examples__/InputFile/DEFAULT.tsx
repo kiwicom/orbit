@@ -16,6 +16,7 @@ export default {
         // @ts-expect-error todo
         onChange={event => setFileName(event.currentTarget.files[0].name)}
         onRemoveFile={() => setFileName("")}
+        labelRemove="Remove file"
       />
     );
   },

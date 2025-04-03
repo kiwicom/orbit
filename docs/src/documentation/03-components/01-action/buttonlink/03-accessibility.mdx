@@ -1,0 +1,80 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/buttonlink/accessibility/
+---
+
+# Accessibility
+
+## ButtonLink
+
+The ButtonLink component has been designed with accessibility in mind.
+
+The following props provide additional information to screen readers:
+
+| Name           | Type      | Description                                                            |
+| :------------- | :-------- | :--------------------------------------------------------------------- |
+| title          | `string`  | Allows you to specify an `aria-label` attribute of the component.      |
+| ariaLabelledby | `string`  | Allows you to specify an `aria-labelledby` attribute of the component. |
+| ariaControls   | `string`  | Allows you to specify an `aria-controls` attribute of the component.   |
+| ariaExpanded   | `boolean` | Allows you to specify an `aria-expanded` attribute of the component.   |
+| ariaCurrent    | `string`  | Allows you to specify an `aria-current` attribute of the component.    |
+
+While these props are optional, we recommend including them in a correct usage to ensure proper functionality with assistive technologies.
+
+- Use `title` when you need to add extra information to screen readers or there is no `children` presented to be used as label.
+
+- Prop `ariaLabelledby` references the id(s) of element(s) that label(s) the ButtonLink, separated by a space. The elements with those ids can be hidden, so that their text is only announced by screen readers to describe the ButtonLink.
+
+- Use `ariaControls` prop to establish a connection between a ButtonLink and an element it controls. The prop accepts a unique `id` of an element.
+
+- The `ariaExpanded` prop is useful to indicate if a related control is expanded or collapsed. This attribute is commonly used in combination with `ariaControls`.
+
+- Use `ariaCurrent` prop to indicate that the ButtonLink represents the current item within a set of related ButtonLinks. This prop helps assistive technologies convey the current state of the ButtonLink to users.
+
+- Use `disabled` prop to indicate users that ButtonLink is inactive and they can't interact with it. When `disabled` prop is set to `true`, the ButtonLink is ignored by a screen reader and not focusable by Tab key.
+
+Also, the component offers flexibility in terms of the HTML element used for the root node:
+
+- The prop `asComponent` can be used to define the HTML element to be rendered. This prop is optional and if it is not provided, the component will render a default (button) element.
+
+- When `href` prop is defined, the component will render as an `a` element. In this case, attributes like `ariaControls` and `ariaExpanded` are generally less relevant since the element behaves as a link rather than a button.
+
+- Use `role` and `tabIndex` when you are rendering `ButtonLink` to non-actionable HTML element as `div` or `span`. However, this should be done only in edge-cases as it is anti-pattern behavior.
+
+- If `external` prop is true, a `noopener` value will be automatically added to the `rel` attribute for security reasons.
+
+## Example
+
+### Example 1:
+
+```jsx
+<ButtonLink title="Visit our website" href="https://example.com">
+  Visit us
+</ButtonLink>
+```
+
+In this example, the screen reader will announce the title of the button (`Visit our website`). This is prioritized over text content (`Visit us`) inside the ButtonLink.
+
+### Example 2:
+
+```jsx
+<div>
+  <h2 id="section-title">User Profile</h2>
+  <ButtonLink
+    title="Edit user profile"
+    ariaLabelledby="section-title"
+    ariaControls="profile-editor"
+    ariaExpanded={isEditorOpen}
+  >
+    Edit
+  </ButtonLink>
+  <div id="profile-editor">
+    <p>This is the profile editor.</p>
+  </div>
+</div>
+```
+
+In this example, the screen reader will announce the title of the section (`User Profile`) and whether the profile editor is expanded or collapsed.
+
+Note that the `title` prop is **not** announced by screen readers.

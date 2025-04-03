@@ -60,41 +60,60 @@ const advancedOptions = [
 export function InputSelectStory() {
   return (
     <div className="gap-400 p-400 flex flex-col">
-      <InputSelect options={simpleOptions} />
-      <InputSelect options={simpleOptions} label="Custom label" placeholder="Custom placeholder" />
+      <InputSelect options={simpleOptions} labelClear="Clear value" />
+      <InputSelect
+        options={simpleOptions}
+        label="Custom label"
+        placeholder="Custom placeholder"
+        labelClear="Clear value"
+      />
       <InputSelect
         options={simpleOptions}
         label="Custom label"
         placeholder="Custom Placeholder"
+        labelClear="Clear value"
         disabled
       />
       <InputSelect
         options={simpleOptions}
         label="Custom label (readOnly)"
         defaultSelected={simpleOptions[0]}
+        labelClear="Clear value"
         readOnly
       />
-      <InputSelect options={simpleOptions} label="Custom label" required />
-      <InputSelect options={simpleOptions} defaultSelected={simpleOptions[0]} />
+      <InputSelect options={simpleOptions} label="Custom label" labelClear="Clear value" required />
       <InputSelect
         options={simpleOptions}
-        label="Custom label"
-        help="Do or do not. There is no try."
+        defaultSelected={simpleOptions[0]}
+        labelClear="Clear value"
       />
       <InputSelect
         options={simpleOptions}
         label="Custom label"
         help="Do or do not. There is no try."
+        labelClear="Clear value"
+      />
+      <InputSelect
+        options={simpleOptions}
+        label="Custom label"
+        help="Do or do not. There is no try."
+        labelClear="Clear value"
         required
       />
-      <InputSelect options={simpleOptions} label="Custom label" error="You shall not pass!" />
       <InputSelect
         options={simpleOptions}
         label="Custom label"
         error="You shall not pass!"
+        labelClear="Clear value"
+      />
+      <InputSelect
+        options={simpleOptions}
+        label="Custom label"
+        error="You shall not pass!"
+        labelClear="Clear value"
         required
       />
-      <InputSelect options={simpleOptions} width="100px" />
+      <InputSelect options={simpleOptions} width="100px" labelClear="Clear value" />
     </div>
   );
 }
@@ -102,7 +121,7 @@ export function InputSelectStory() {
 export function InputSelectDropdownStory() {
   return (
     <div className="p-400 min-h-[600px]">
-      <InputSelect options={simpleOptions} dataTest="Dropdown" />
+      <InputSelect options={simpleOptions} dataTest="Dropdown" labelClear="Clear value" />
     </div>
   );
 }
@@ -110,7 +129,13 @@ export function InputSelectDropdownStory() {
 export function InputSelectDropdownSizesStory() {
   return (
     <div className="p-400 min-h-[600px]">
-      <InputSelect options={simpleOptions} dataTest="Dropdown" maxWidth="200px" maxHeight="200px" />
+      <InputSelect
+        options={simpleOptions}
+        dataTest="Dropdown"
+        maxWidth="200px"
+        maxHeight="200px"
+        labelClear="Clear value"
+      />
     </div>
   );
 }
@@ -118,7 +143,12 @@ export function InputSelectDropdownSizesStory() {
 export function InputSelectDropdownEmptyStory() {
   return (
     <div className="p-400 min-h-[600px]">
-      <InputSelect options={[]} dataTest="Dropdown" emptyState="I ain't no Pokémon" />
+      <InputSelect
+        options={[]}
+        dataTest="Dropdown"
+        emptyState="I ain't no Pokémon"
+        labelClear="Clear value"
+      />
     </div>
   );
 }
@@ -126,7 +156,7 @@ export function InputSelectDropdownEmptyStory() {
 export function InputSelectDropdownGroupsStory() {
   return (
     <div className="p-400 min-h-[600px]">
-      <InputSelect options={advancedOptions} dataTest="Dropdown" />
+      <InputSelect options={advancedOptions} dataTest="Dropdown" labelClear="Clear value" />
     </div>
   );
 }

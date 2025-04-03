@@ -18,6 +18,7 @@ export default {
           placeholder="No photo selected"
           allowedFileTypes={fileTypes}
           help={`Select a photo in one of the following types: ${fileTypes}`}
+          labelRemove="Remove file"
         />
         <InputFile
           buttonLabel="Select statement"
@@ -29,6 +30,7 @@ export default {
           // @ts-expect-error TODO
           onChange={event => setStatementName(event.target.files[0].name)}
           onRemoveFile={() => setStatementName("")}
+          labelRemove="Remove file"
         />
       </Stack>
     );

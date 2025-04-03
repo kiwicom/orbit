@@ -16,6 +16,7 @@ export default {
         placeholder="No photo selected"
         buttonLabel="Select photo"
         allowedFileTypes={fileTypes}
+        labelRemove="Remove file"
       />
     );
   },

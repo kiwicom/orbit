@@ -13,7 +13,7 @@ const withError = `
 
 const inputFile = `
 <div className="pt-500">
-  <InputFile help="Supported files: PNG, JPG, PDF" label="Label" />
+  <InputFile help="Supported files: PNG, JPG, PDF" label="Label" labelRemove="Remove file" />
 </div>`;
 
 const inputGroup = `
@@ -127,6 +127,7 @@ const inputSelect = `
     }
   ]}
   placeholder="Select currency"
+  labelClear="Clear value"
   showAll
 />
 `;

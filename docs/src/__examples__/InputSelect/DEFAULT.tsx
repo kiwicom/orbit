@@ -39,6 +39,7 @@ export default {
           placeholder="Search currency"
           options={currencyOptions}
           emptyState="No results found"
+          labelClear="Clear value"
         />
       </OrbitProvider>
     );

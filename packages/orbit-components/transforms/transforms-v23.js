@@ -17,7 +17,8 @@ function createIntlMessageContainer(j, messageId, defaultMessage) {
 }
 
 /**
- * Transforms the given file to replace ariaLabelledBy to ariaLabelledby, and add loading labels to Skeleton components.
+ * Transforms the given file to replace ariaLabelledBy to ariaLabelledby,
+ * add loading labels to Skeleton components, and add remove labels to InputFile and InputSelect components.
  *
  * @param {Object} file - The file object containing the source code.
  * @param {Object} api - The jscodeshift API object.
@@ -26,12 +27,11 @@ export default function transformer(file, api) {
   const j = api.jscodeshift;
   const root = j(file.source);
 
-  // Find all Stepper or StepperStateless components
+  // Find all relevant JSX elements in a single pass
   root
     .find(j.JSXElement)
     .filter(path => {
       const { openingElement } = path.node;
-
       // Combine conditions for more efficient filtering
       return openingElement.name.type === "JSXIdentifier";
     })
@@ -43,6 +43,7 @@ export default function transformer(file, api) {
         return;
       }
 
+      // Handle Stepper and StepperStateless components
       if (name.name === "Stepper" || name.name === "StepperStateless") {
         attributes.forEach(attr => {
           if (attr.type === "JSXAttribute" && attr.name.name === "ariaLabelledBy") {
@@ -51,36 +52,43 @@ export default function transformer(file, api) {
           }
         });
       }
-    });
 
-  // Find all Skeleton components
-  root
-    .find(j.JSXElement)
-    .filter(path => {
-      const { openingElement } = path.node;
-      return (
-        openingElement.name.type === "JSXIdentifier" && openingElement.name.name === "Skeleton"
-      );
-    })
-    .forEach(path => {
-      const { attributes } = path.node.openingElement;
+      // Handle Skeleton components
+      else if (name.name === "Skeleton") {
+        // Check if title prop already exists
+        const hasTitle = attributes.some(
+          attr => attr.type === "JSXAttribute" && attr.name.name === "title",
+        );
 
-      if (!Array.isArray(attributes)) {
-        // Handle malformed JSX
-        return;
+        // Add title prop with intl.formatMessage if it doesn't exist
+        if (!hasTitle) {
+          attributes.push(
+            j.jsxAttribute(
+              j.jsxIdentifier("title"),
+              createIntlMessageContainer(j, "common.loading", "Loading"),
+            ),
+          );
+        }
       }
 
-      // Check if title prop already exists
-      const hasTitle = attributes.some(
-        attr => attr.type === "JSXAttribute" && attr.name.name === "title",
-      );
-
-      // Add title prop with intl.formatMessage if it doesn't exist
-      if (!hasTitle) {
+      // Handle InputFile components
+      else if (name.name === "InputFile") {
+        // Add labelRemove prop with intl.formatMessage
         attributes.push(
           j.jsxAttribute(
-            j.jsxIdentifier("title"),
-            createIntlMessageContainer(j, "common.loading", "Loading"),
+            j.jsxIdentifier("labelRemove"),
+            createIntlMessageContainer(j, "common.screenreader.remove_file.button", "Remove file"),
+          ),
+        );
+      }
+
+      // Handle InputSelect components
+      else if (name.name === "InputSelect") {
+        // Add labelClear prop with intl.formatMessage
+        attributes.push(
+          j.jsxAttribute(
+            j.jsxIdentifier("labelClear"),
+            createIntlMessageContainer(j, "common.screenreader.clear_value.button", "Clear value"),
           ),
         );
       }

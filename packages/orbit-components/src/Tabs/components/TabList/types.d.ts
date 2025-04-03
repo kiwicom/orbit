@@ -10,4 +10,6 @@ export interface Props extends Globals {
   compact?: boolean;
   margin?: React.CSSProperties["margin"] | ObjectProperty;
   padding?: React.CSSProperties["padding"] | ObjectProperty;
+  ariaLabel?: string;
+  ariaLabelledby?: string;
 }

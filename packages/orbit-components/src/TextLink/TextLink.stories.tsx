@@ -166,7 +166,6 @@ export const Playground: Story = {
     tabIndex: "",
     stopPropagation: false,
     title: "link title",
-    ariaCurrent: "text-link",
     id: "link-id",
   },
 
@@ -179,7 +178,7 @@ export const Playground: Story = {
   parameters: {
     info: "Playground of TextLink component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onClick", "asComponent"],
+      exclude: ["onClick", "asComponent", "ariaCurrent"],
     },
   },
 };

@@ -1,0 +1,81 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/textlink/accessibility/
+---
+
+# Accessibility
+
+## TextLink
+
+The TextLink component has been designed with accessibility in mind.
+
+The following props provide additional information to screen readers:
+
+| Name        | Type     | Description                                                                                 |
+| :---------- | :------- | :------------------------------------------------------------------------------------------ |
+| ariaCurrent | `string` | Indicates whether the element represents the current item within a set of related elements. |
+
+The TextLink component also accepts all `aria-*` and `data-*` attributes which are passed directly to the underlying element. The most relevant ones include:
+
+| Aria Attribute | Description                                                                  |
+| :------------- | :--------------------------------------------------------------------------- |
+| aria-label     | Provides an accessible name for the link when visible text isn't sufficient. |
+
+While these props are optional, we recommend including them in a correct usage to ensure proper functionality with assistive technologies.
+
+- Use `aria-label` when you need to add extra information to screen readers or provide additional clarification about the link's purpose, especially when the TextLink contains only an icon.
+
+- Use `ariaCurrent` prop to indicate that the TextLink represents the current item within a set of related TextLinks. Values can be "page", "step", "location", "date", "time", "true", or "false". This prop helps assistive technologies convey the current state of the TextLink to users.
+
+Also, the component offers flexibility in terms of the HTML element used for the root node:
+
+- The prop `asComponent` can be used to define the HTML element to be rendered. This prop is optional and if it is not provided, the component will render as an anchor (`a`) element. When changing the underlying element, make sure to maintain accessibility by using appropriate ARIA attributes.
+
+- The `href` prop defines the URL to navigate to when the TextLink is clicked. When this prop is not provided, the component will apply appropriate ARIA roles to make it behave like a button for accessibility purposes, setting `role="button"` and ensuring keyboard accessibility with `tabIndex={0}`.
+
+- When `external` prop is true, the link will open in a new tab and a `noopener` value will be automatically added to the `rel` attribute for security reasons.
+
+- The `standAlone` prop is important for accessibility. Setting it to `true` creates a safe clickable area around the link, making it more accessible, particularly when used outside of a block of text.
+
+- The `stopPropagation` prop, when set to `true`, prevents click events from bubbling up the DOM tree, which can be useful when the TextLink is nested inside another clickable element to avoid triggering multiple actions.
+
+- When using TextLink with only an icon and no text, it's essential to add an `aria-label` to provide context to screen reader users about the link's purpose.
+
+## Example
+
+### Example 1:
+
+```jsx
+<TextLink href="https://example.com" aria-label="Visit our website homepage">
+  Visit our website
+</TextLink>
+```
+
+In this example, screen readers will announce "Visit our website homepage" as the link's accessible name, providing more context about the link's destination.
+
+### Example 2:
+
+```jsx
+<nav aria-label="Breadcrumb">
+  <TextLink href="/home">Home</TextLink> &gt;
+  <TextLink href="/products">Products</TextLink> &gt;
+  <TextLink href="/products/shoes" ariaCurrent="page">
+    Shoes
+  </TextLink>
+</nav>
+```
+
+In this example, the screen reader will announce that "Shoes" represents the current page, helping users understand their current location in the navigation hierarchy.
+
+### Example 3: Icon-only TextLink
+
+```jsx
+<TextLink
+  href="https://example.com/search"
+  aria-label="Search products"
+  iconLeft={<Icon type="search" />}
+/>
+```
+
+In this example, no visible text is provided, only a search icon. The `aria-label` ensures that screen reader users understand the purpose of the link as "Search products" even though there's no visible text.

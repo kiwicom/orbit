@@ -49,6 +49,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
       onKeyDown,
       spaceAfter,
       readOnly,
+      labelClear,
       ...props
     },
     ref,
@@ -248,7 +249,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                 setActiveIdx(0);
               }}
             >
-              <CloseCircle color="primary" ariaLabel="Clear" />
+              <CloseCircle color="primary" ariaLabel={labelClear} />
             </button>
           )
         }

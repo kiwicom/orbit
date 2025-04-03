@@ -3,7 +3,6 @@
 import cx from "clsx";
 import React from "react";
 
-import cloneWithTooltip from "../utils/cloneWithTooltip";
 import getFieldDataState from "../common/getFieldDataState";
 import type { Props } from "./types";
 
@@ -21,7 +20,6 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     id,
     tabIndex = 0,
     dataTest,
-    tooltip,
   } = props;
 
   return (
@@ -65,29 +63,26 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         tabIndex={Number(tabIndex)}
         ref={ref}
       />
-      {cloneWithTooltip(
-        tooltip,
-        <div
+      <div
+        className={cx(
+          "orbit-radio-icon-container",
+          "relative box-border",
+          "flex flex-none items-center justify-center",
+          "size-icon-medium rounded-full",
+          "duration-fast scale-100 transition-all ease-in-out",
+          "border-solid",
+          checked ? "border-2" : "border",
+          !disabled && "active:scale-95",
+        )}
+      >
+        <span
           className={cx(
-            "orbit-radio-icon-container",
-            "relative box-border",
-            "flex flex-none items-center justify-center",
-            "size-icon-medium rounded-full",
-            "duration-fast scale-100 transition-all ease-in-out",
-            "border-solid",
-            checked ? "border-2" : "border",
-            !disabled && "active:scale-95",
+            "size-[10px] rounded-full",
+            disabled ? "bg-cloud-dark" : "bg-blue-normal",
+            checked ? "visible" : "invisible",
           )}
-        >
-          <span
-            className={cx(
-              "size-[10px] rounded-full",
-              disabled ? "bg-cloud-dark" : "bg-blue-normal",
-              checked ? "visible" : "invisible",
-            )}
-          />
-        </div>,
-      )}
+        />
+      </div>
       {(label || info) && (
         <div
           className={cx(

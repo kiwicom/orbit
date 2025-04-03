@@ -3,7 +3,6 @@
 
 import type * as React from "react";
 
-import type Tooltip from "../Tooltip";
 import type * as Common from "../common/types";
 
 export interface Props extends Common.Globals {
@@ -15,7 +14,6 @@ export interface Props extends Common.Globals {
   readonly checked?: boolean;
   readonly defaultChecked?: boolean;
   readonly info?: React.ReactNode;
-  readonly tooltip?: React.ReactElement<typeof Tooltip>;
   readonly tabIndex?: string | number;
   // InputEvent
   readonly onChange?: Common.Event<React.ChangeEvent<HTMLInputElement>>;

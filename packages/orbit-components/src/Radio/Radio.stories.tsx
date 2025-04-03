@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Text from "../Text";
 import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
-import Tooltip from "../Tooltip";
 
 import Radio from ".";
 
@@ -93,23 +92,6 @@ export const WithTextLinkInLabel: Story = {
   parameters: {
     controls: {
       exclude: ["onChange", "hasError", "disabled", "label", "tabIndex"],
-    },
-  },
-};
-
-export const WithTooltip: Story = {
-  render: args => (
-    <Radio
-      {...args}
-      tooltip={
-        <Tooltip content="There are no results available with this option" placement="top" />
-      }
-    />
-  ),
-
-  parameters: {
-    controls: {
-      exclude: ["onChange", "hasError", "disabled", "tabIndex"],
     },
   },
 };

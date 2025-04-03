@@ -24,4 +24,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly insideInputGroup?: boolean;
   readonly onRemoveFile?: Common.Callback;
   readonly multiple?: boolean;
+  readonly labelRemove: string;
 }

@@ -37,6 +37,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     tabIndex,
     fileName,
     insideInputGroup,
+    labelRemove,
   } = props;
 
   const hasTooltip = Boolean(error || help);
@@ -141,7 +142,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
             type="primary"
             disabled={disabled}
             compact
-            iconLeft={<CloseCircle ariaLabel="remove" color="secondary" />}
+            iconLeft={<CloseCircle ariaLabel={labelRemove} color="secondary" />}
             onClick={ev => {
               ev.preventDefault();
               if (onRemoveFile) {

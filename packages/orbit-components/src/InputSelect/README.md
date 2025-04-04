@@ -23,7 +23,7 @@ const options = [
   ...
 ];
 
-<InputSelect options={options} />;
+<InputSelect options={options} labelClear="Clear value" />;
 ```
 
 By using the `onOptionSelect` prop you can have access to the selected option to update your app state based on that. This is called with `null` when the input value is cleared or there is no selected option.
@@ -95,6 +95,7 @@ The table below contains all types of props available in the InputSelect compone
 | showAllLabel      | `string`                                                                          | `"All options" \| "Other options"` | The label displayed before showing the last group of options. If `showAll` is true, the default value is `"All options"`. If it is false, the default value is `"Other options"`. |
 | insideInputGroup  | `boolean`                                                                         | `false`                            | If true, the InputSelect will be rendered inside InputGroup.                                                                                                                      |
 | spaceAfter        | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |                                    | Additional `margin-bottom` after component.                                                                                                                                       |
+| labelClear        | `string`                                                                          |                                    | Required label for the clear value button.                                                                                                                                        |
 
 ### enum
 

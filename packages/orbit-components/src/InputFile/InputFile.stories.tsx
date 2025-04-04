@@ -34,6 +34,7 @@ export const Default: Story = {};
 export const FilledWithFile: Story = {
   args: {
     fileName: "file.png",
+    labelRemove: "Remove file",
   },
 };
 

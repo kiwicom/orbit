@@ -140,6 +140,7 @@ const meta: Meta<typeof InputSelect> = {
     emptyState: "No results found.",
     labelClose: "Close",
     label: "Select currency",
+    labelClear: "Clear value",
   },
 };
 
@@ -167,6 +168,7 @@ export const Grouped: Story = {
         "showAllLabel",
         "labelClose",
         "emptyState",
+        "labelClear",
       ],
     },
   },
@@ -192,6 +194,7 @@ export const PreviouslySelected: Story = {
         "showAllLabel",
         "labelClose",
         "emptyState",
+        "labelClear",
       ],
     },
   },

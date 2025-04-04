@@ -9,7 +9,7 @@ import InputFile from "@kiwicom/orbit-components/lib/InputFile";
 After adding import into your project you can use it simply like:
 
 ```jsx
-<InputFile />
+<InputFile labelRemove="Remove file" />
 ```
 
 ## Props
@@ -40,6 +40,7 @@ Table below contains all types of the props available in the InputFile component
 | insideInputGroup | `boolean`                  | `false`              | Set to `true` if InputFile is inside InputGroup                                                                                               |
 | multiple         | `boolean`                  |                      | If set to `true` will allow to upload multiple files                                                                                          |
 | disabled         | `boolean`                  |                      | If set to `true` will allow to upload multiple files                                                                                          |
+| labelRemove      | `string`                   |                      | Required label for the remove file button.                                                                                                    |
 
 ### enum
 

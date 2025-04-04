@@ -36,8 +36,10 @@ const FormLabel = ({
   >
     {!inlineLabel && (error || help) && (
       <span className="me-100 inline-flex items-center" ref={iconRef}>
-        {error && <AlertCircle ariaLabel="error" color="critical" size="small" />}
-        {!error && help && <InformationCircle ariaLabel="help" color="info" size="small" />}
+        {error && <AlertCircle ariaHidden color="critical" size="small" dataTest="ErrorIcon" />}
+        {!error && help && (
+          <InformationCircle ariaHidden color="info" size="small" dataTest="HelpIcon" />
+        )}
       </span>
     )}
 

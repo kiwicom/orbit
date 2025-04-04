@@ -11,6 +11,7 @@ describe("InputFile", () => {
   it("should have expected DOM output", async () => {
     const label = "Select file";
     const buttonLabel = "Click on me";
+    const labelRemove = "Remove file";
     const name = "name";
     const placeholder = "Not file has been selected";
     const dataTest = "test";
@@ -34,6 +35,7 @@ describe("InputFile", () => {
         tabIndex={tabIndex}
         onChange={onChange}
         onFocus={onFocus}
+        labelRemove={labelRemove}
       />,
     );
 
@@ -55,7 +57,15 @@ describe("InputFile", () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
 
-    render(<InputFile dataTest="test" disabled onChange={onChange} onFocus={onFocus} />);
+    render(
+      <InputFile
+        dataTest="test"
+        disabled
+        onChange={onChange}
+        onFocus={onFocus}
+        labelRemove="Remove file"
+      />,
+    );
 
     const input = screen.getByTestId("test");
     expect(input).toBeDisabled();
@@ -66,16 +76,16 @@ describe("InputFile", () => {
 
   it("should have passed width", () => {
     const width = "100px";
-    render(<InputFile width={width} label="label" />);
+    render(<InputFile width={width} label="label" labelRemove="Remove file" />);
     expect(document.querySelector("label")).toHaveStyle({ width });
   });
 
   it("should have filename, onRemoveFile", async () => {
     const onRemoveFile = jest.fn();
 
-    render(<InputFile fileName="bur" onRemoveFile={onRemoveFile} />);
+    render(<InputFile fileName="bur" onRemoveFile={onRemoveFile} labelRemove="Remove file" />);
 
-    const button = screen.getByRole("button", { name: "remove" });
+    const button = screen.getByRole("button", { name: "Remove file" });
     await user.click(button);
     expect(onRemoveFile).toHaveBeenCalled();
   });
@@ -89,6 +99,7 @@ describe("InputFile", () => {
         onFocus={onFocus}
         onBlur={onBlur}
         error="chuck norris counted to infinity twice"
+        labelRemove="Remove file"
       />,
     );
 

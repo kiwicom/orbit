@@ -43,6 +43,7 @@ describe("InputSelect", () => {
   const id = "kek";
   const dataTest = "TEST";
   const emptyMessage = "D'oh! No results found.";
+  const labelClear = "Clear value";
 
   it("should render expected DOM output", async () => {
     const onChange = jest.fn();
@@ -62,6 +63,7 @@ describe("InputSelect", () => {
         onOptionSelect={onOptionSelect}
         onChange={onChange}
         onClose={onClose}
+        labelClear={labelClear}
       />,
     );
 
@@ -129,7 +131,7 @@ describe("InputSelect", () => {
 
     // test clear of the input by button and reset of filtered options
     await user.tab();
-    await user.click(screen.getByLabelText("Clear"));
+    await user.click(screen.getByLabelText("Clear value"));
     expect(onOptionSelect).toBeCalledWith(null);
     expect(screen.getByRole("textbox")).toHaveValue("");
     expect(screen.getAllByRole("option")).toHaveLength(totalOptions);
@@ -148,6 +150,7 @@ describe("InputSelect", () => {
         defaultSelected={jetLiOption}
         onClose={onClose}
         onOptionSelect={onOptionSelect}
+        labelClear={labelClear}
       />,
     );
 
@@ -182,6 +185,7 @@ describe("InputSelect", () => {
         defaultSelected={jetLiOption}
         onClose={onClose}
         onOptionSelect={onOptionSelect}
+        labelClear={labelClear}
       />,
     );
 
@@ -206,6 +210,7 @@ describe("InputSelect", () => {
         name={name}
         prevSelected={jetLiOption}
         prevSelectedLabel={prevSelectedLabel}
+        labelClear={labelClear}
       />,
     );
 
@@ -228,6 +233,7 @@ describe("InputSelect", () => {
         defaultSelected={jetLiOption}
         onFocus={onFocus}
         readOnly
+        labelClear={labelClear}
       />,
     );
 
@@ -262,7 +268,14 @@ describe("InputSelect", () => {
   describe("when showAll is false", () => {
     it("should not render repeated options", async () => {
       const showAllLabel = "Those without a group";
-      render(<InputSelect options={options} showAll={false} showAllLabel={showAllLabel} />);
+      render(
+        <InputSelect
+          options={options}
+          showAll={false}
+          showAllLabel={showAllLabel}
+          labelClear={labelClear}
+        />,
+      );
       await user.tab();
 
       // after focus dropdown should have all options grouped and then show only the ones without a group

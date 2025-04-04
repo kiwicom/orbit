@@ -6399,6 +6399,11 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
+"@types/hosted-git-info@^3.0.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@types/hosted-git-info/-/hosted-git-info-3.0.5.tgz#658e80083026a0574fbfd256abb5cbfb6ecd2218"
+  integrity sha512-Dmngh7U003cOHPhKGyA7LWqrnvcTyILNgNPmNCxlx7j8MIi54iBliiT8XqVLIQ3GchoOjVAyBzNJVyuaJjqokg==
+
 "@types/html-minifier-terser@^6.0.0":
   version "6.1.0"
   resolved "https://registry.npmjs.org/@types/html-minifier-terser/-/html-minifier-terser-6.1.0.tgz"
@@ -15096,10 +15101,15 @@ github-from-package@0.0.0:
   resolved "https://registry.npmjs.org/github-from-package/-/github-from-package-0.0.0.tgz"
   integrity sha512-SyHy3T1v2NUXn29OsWdxmK6RwHD+vkj3v8en8AOBZ1wBQ/hCAQ5bAQTD02kW4W9tUp/3Qh6J8r9EvntiyCmOOw==
 
-github-slugger@^1.0.0, github-slugger@^1.2.1:
+github-slugger@^1.2.1:
   version "1.5.0"
   resolved "https://registry.npmjs.org/github-slugger/-/github-slugger-1.5.0.tgz"
   integrity sha512-wIh+gKBI9Nshz2o46B0B3f5k/W+WI9ZAv6y5Dn5WJ5SK1t0TnDimB4WE5rmTD05ZAIn8HALCZVmCsvj0w0v0lw==
+
+github-slugger@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-2.0.0.tgz#52cf2f9279a21eb6c59dd385b410f0c0adda8f1a"
+  integrity sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==
 
 glob-parent@6.0.2, glob-parent@^6.0.2:
   version "6.0.2"
@@ -15848,7 +15858,7 @@ hosted-git-info@^2.1.4, hosted-git-info@^2.7.1:
   resolved "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.9.tgz"
   integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
-hosted-git-info@^3.0.0, hosted-git-info@^3.0.8:
+hosted-git-info@^3.0.8:
   version "3.0.8"
   resolved "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.8.tgz"
   integrity sha512-aXpmwoOhRBrw6X3j0h5RloK4x1OzsxMPyxqIHyNfSe2pypkVTZFpEiRoSipPEPlMrh0HW/XsjkJ5WgnCirpNUw==
@@ -19352,7 +19362,7 @@ mdast-util-to-nlcst@^3.2.0:
     unist-util-position "^3.0.0"
     vfile-location "^2.0.0"
 
-mdast-util-to-string@^1.0.0, mdast-util-to-string@^1.0.2, mdast-util-to-string@^1.0.5, mdast-util-to-string@^1.1.0:
+mdast-util-to-string@^1.0.2, mdast-util-to-string@^1.0.5, mdast-util-to-string@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/mdast-util-to-string/-/mdast-util-to-string-1.1.0.tgz"
   integrity sha512-jVU0Nr2B9X3MU4tSK7JP1CMkSvOj7X5l/GboG1tKRw52lLF1x2Ju92Ms9tNetCcbfX3hzlM73zYo2NKkWSfF/A==
@@ -24408,18 +24418,22 @@ remark-stringify@^9.0.1:
   dependencies:
     mdast-util-to-markdown "^0.6.0"
 
-remark-validate-links@^10.0.2:
-  version "10.0.4"
-  resolved "https://registry.npmjs.org/remark-validate-links/-/remark-validate-links-10.0.4.tgz"
-  integrity sha512-oNGRcsoQkL35WoZKLMMBugDwvHfyu0JPA5vSYkEcvR6YBsFKBo4RedpecuokTK1wgD9l01rPxaQ9dPmRQYFhyg==
+remark-validate-links@^13.1.0:
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/remark-validate-links/-/remark-validate-links-13.1.0.tgz#855eefe553d6d38ac0ae1028522fd8c6585c5ba5"
+  integrity sha512-z+glZ4zoRyrWimQHtoqJEFJdPoIR1R1SDr/JoWjmS6EsYlyhxNuCHtIt165gmV7ltOSFJ+rGsipqRGfBPInd7A==
   dependencies:
-    github-slugger "^1.0.0"
-    hosted-git-info "^3.0.0"
-    mdast-util-to-string "^1.0.0"
+    "@types/hosted-git-info" "^3.0.0"
+    "@types/mdast" "^4.0.0"
+    github-slugger "^2.0.0"
+    hosted-git-info "^7.0.0"
+    mdast-util-to-hast "^13.0.0"
+    mdast-util-to-string "^4.0.0"
     propose "0.0.5"
-    to-vfile "^6.0.0"
-    trough "^1.0.0"
-    unist-util-visit "^2.0.0"
+    trough "^2.0.0"
+    unified-engine "^11.0.0"
+    unist-util-visit "^5.0.0"
+    vfile "^6.0.0"
 
 remark@^10.0.1:
   version "10.0.1"
@@ -27153,14 +27167,6 @@ to-vfile@8.0.0:
   integrity sha512-IcmH1xB5576MJc9qcfEC/m/nQCFt3fzMHz45sSlgJyTWjRbKW1HAkJpuf3DgE57YzIlZcwcBZA5ENQbBo4aLkg==
   dependencies:
     vfile "^6.0.0"
-
-to-vfile@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.npmjs.org/to-vfile/-/to-vfile-6.1.0.tgz"
-  integrity sha512-BxX8EkCxOAZe+D/ToHdDsJcVI4HqQfmw0tCkp31zf3dNP/XWIAjU4CmeuSwsSoOzOTqHPOL0KUzyZqJplkD0Qw==
-  dependencies:
-    is-buffer "^2.0.0"
-    vfile "^4.0.0"
 
 toggle-selection@^1.0.6:
   version "1.0.6"

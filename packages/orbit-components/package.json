@@ -1,13 +1,13 @@
 {
   "name": "@kiwicom/orbit-components",
   "version": "22.0.0",
-  "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.",
+  "description": "Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com's products.",
   "sideEffects": false,
   "author": "Kiwi.com",
   "main": "lib/index.js",
   "module": "es/index.js",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "storybook": "storybook dev -p 6007 -c .storybook --ci",
@@ -69,7 +69,7 @@
   ],
   "license": "MIT",
   "resolutions": {
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.2"
   },
   "peerDependencies": {
     "@babel/runtime": "^7.21.0",

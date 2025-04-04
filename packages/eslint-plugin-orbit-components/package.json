@@ -23,7 +23,7 @@
     "directory": "packages/eslint-plugin-orbit-components"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "gitHead": "5e7d8f283e39532de0393f7f42cea2f7d33f6ac7",
   "files": [

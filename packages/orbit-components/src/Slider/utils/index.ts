@@ -132,7 +132,7 @@ export const calculateValueFromPosition = ({
   maxValue: number;
   minValue: number;
   handleIndex: number | null;
-  bar: React.RefObject<HTMLDivElement>;
+  bar: React.RefObject<HTMLDivElement | null>;
   rtl?: boolean;
   value: Value;
   pageX: number;

@@ -8,7 +8,7 @@ interface FocusElements {
 }
 
 type UseFocusTrap = <T extends HTMLElement>(
-  ref: React.RefObject<T>,
+  ref: React.RefObject<T | null>,
   triggeredDefault?: boolean,
 ) => void;
 
@@ -27,7 +27,10 @@ const manageFocus = (ref, triggered): FocusElements => {
   return { first: null, last: null };
 };
 
-const useFocusTrap: UseFocusTrap = (ref, triggeredDefault = false) => {
+const useFocusTrap: UseFocusTrap = (
+  ref: React.RefObject<HTMLElement | null>,
+  triggeredDefault: boolean = false,
+) => {
   const [triggered, setTriggered] = React.useState(triggeredDefault);
 
   React.useEffect(() => {

@@ -6,7 +6,7 @@ const timing = (1 / 60) * 1000;
 // eslint-disable-next-line no-bitwise
 const decay = (v: number) => -0.1 * ((1 / timing) ^ 4) + v;
 
-type UseScroll = (ref: React.RefObject<HTMLElement>) => {
+type UseScroll = (ref: React.RefObject<HTMLElement | null>) => {
   isDragging: boolean;
   clickStartX: number | undefined;
   scrollStartX: number | undefined;

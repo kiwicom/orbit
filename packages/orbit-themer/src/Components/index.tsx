@@ -12,7 +12,7 @@ import Radios from "./Radio";
 import ListChoices from "./ListChoice";
 import ButtonLinks from "./ButtonLink";
 
-const StyledComponentsOuter = styled.div`
+const StyledComponentsOuter = styled.div<{ theme: typeof defaultTheme }>`
   ${({ theme }) => css`
     background: ${theme.orbit.paletteCloudLight};
     padding: ${theme.orbit.space600} ${theme.orbit.space1000};
@@ -24,10 +24,6 @@ const StyledComponentsOuter = styled.div`
     overflow: auto;
   `}
 `;
-
-StyledComponentsOuter.defaultProps = {
-  theme: defaultTheme,
-};
 
 const Components = () => (
   <StyledComponentsOuter>

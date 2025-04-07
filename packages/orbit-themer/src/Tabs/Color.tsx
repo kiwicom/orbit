@@ -23,7 +23,9 @@ const StyledColorNameExtra = styled.span`
   color: #7f91a8;
 `;
 
-const StyledChoosedColor = styled.div<{ isAdjusted?: boolean }>`
+const StyledChoosedColor = styled.div.attrs({
+  onClick: (e: React.MouseEvent) => e.stopPropagation(),
+})<{ isAdjusted?: boolean; color?: string }>`
   float: right;
   width: 16px;
   height: 16px;
@@ -34,7 +36,9 @@ const StyledChoosedColor = styled.div<{ isAdjusted?: boolean }>`
   background: ${({ color }) => color};
 `;
 
-const StyledColorPickerOuter = styled.div`
+const StyledColorPickerOuter = styled.div.attrs({
+  onClick: (e: React.MouseEvent) => e.stopPropagation(),
+})`
   position: fixed;
   top: 0;
   right: 0;

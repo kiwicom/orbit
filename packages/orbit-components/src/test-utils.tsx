@@ -13,7 +13,7 @@ const wrapper: React.ComponentType = ({ children }: React.PropsWithChildren) => 
   </OrbitProvider>
 );
 
-const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, "wrapper">) => {
+const customRender = (ui: React.ReactElement<any>, options?: Omit<RenderOptions, "wrapper">) => {
   const view = render(ui, { wrapper, ...options });
 
   const style = document.createElement("style");

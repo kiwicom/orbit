@@ -19,7 +19,11 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
   };
 
   const hasSubLabelMargin = React.useMemo(
-    () => childrenArr.some(child => React.isValidElement(child) && child.props.subLabel),
+    () =>
+      childrenArr.some(
+        child =>
+          React.isValidElement<{ subLabel?: React.ReactNode }>(child) && child.props.subLabel,
+      ),
     [childrenArr],
   );
 

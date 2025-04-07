@@ -21,9 +21,9 @@ export type Props = Common.Globals &
   closable & {
     readonly size?: Size;
     readonly children: React.ReactNode;
-    readonly triggerRef?: React.RefObject<HTMLElement>;
+    readonly triggerRef?: React.RefObject<HTMLElement | null>;
     readonly lockScrolling?: boolean;
-    readonly scrollingElementRef?: React.Ref<HTMLElement>;
+    readonly scrollingElementRef?: React.Ref<HTMLElement | null>;
     readonly onClose?: Common.Event<
       | React.KeyboardEvent<HTMLDivElement>
       | React.SyntheticEvent<HTMLButtonElement | HTMLDivElement | HTMLAnchorElement>
@@ -42,6 +42,6 @@ export type Props = Common.Globals &
 export interface Instance {
   getScrollPosition: () => number | null;
   setScrollPosition: (value: number) => void;
-  modalBody: React.RefObject<HTMLElement>;
-  modalContent: React.RefObject<HTMLElement>;
+  modalBody: React.RefObject<HTMLElement | null>;
+  modalContent: React.RefObject<HTMLElement | null>;
 }

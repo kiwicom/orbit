@@ -4,7 +4,7 @@ import RandomIdProvider from "../../OrbitProvider/RandomId/Provider";
 
 import MobileDialog from ".";
 
-export function MobileDialogDefault(): JSX.Element {
+export function MobileDialogDefault(): React.ReactNode {
   return (
     <RandomIdProvider useId={React.useId}>
       <div className="h-screen">
@@ -18,7 +18,7 @@ export function MobileDialogDefault(): JSX.Element {
   );
 }
 
-export function MobileDialogDisabled(): JSX.Element {
+export function MobileDialogDisabled(): React.ReactNode {
   return (
     <RandomIdProvider useId={React.useId}>
       <div className="h-screen">

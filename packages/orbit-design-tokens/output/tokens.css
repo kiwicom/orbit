@@ -5,12 +5,12 @@
   --alert-background-warning: rgb(254, 242, 230);
   --alert-icon-critical: rgb(210, 28, 28);
   --alert-icon-info: rgb(0, 112, 200);
-  --alert-icon-success: rgb(10, 147, 43);
-  --alert-icon-warning: rgb(207, 108, 0);
+  --alert-icon-success: rgb(5, 138, 37);
+  --alert-icon-warning: rgb(179, 98, 0);
   --alert-color-text-critical: rgb(151, 12, 12);
   --alert-color-text-info: rgb(0, 90, 163);
-  --alert-color-text-success: rgb(45, 119, 56);
-  --alert-color-text-warning: rgb(167, 84, 0);
+  --alert-color-text-success: rgb(41, 107, 51);
+  --alert-color-text-warning: rgb(138, 69, 0);
   --alert-color-text-link: rgb(79, 94, 113);
   --badge-border-radius: 12;
   --badge-bundle-basic-background: linear-gradient(to top right, #E13E3B 0%, #E87E09 100%);
@@ -31,14 +31,14 @@
   --badge-info-subtle-foreground: rgb(0, 90, 163);
   --badge-neutral-background: rgb(245, 247, 249);
   --badge-neutral-foreground: rgb(37, 42, 49);
-  --badge-success-background: rgb(10, 147, 43);
+  --badge-success-background: rgb(5, 138, 37);
   --badge-success-foreground: rgb(255, 255, 255);
   --badge-success-subtle-background: rgb(234, 245, 234);
-  --badge-success-subtle-foreground: rgb(45, 119, 56);
-  --badge-warning-background: rgb(207, 108, 0);
+  --badge-success-subtle-foreground: rgb(41, 107, 51);
+  --badge-warning-background: rgb(179, 98, 0);
   --badge-warning-foreground: rgb(255, 255, 255);
   --badge-warning-subtle-background: rgb(254, 242, 230);
-  --badge-warning-subtle-foreground: rgb(167, 84, 0);
+  --badge-warning-subtle-foreground: rgb(138, 69, 0);
   --badge-white-background: rgb(255, 255, 255);
   --badge-white-foreground: rgb(37, 42, 49);
   --button-link-critical-background: transparent; /* Used for the background of critical ButtonLink in the default state. */
@@ -50,9 +50,9 @@
   --button-link-primary-background: transparent; /* Used for the background of primary ButtonLink in the default state. */
   --button-link-primary-background-hover: rgb(214, 240, 236); /* Used for the background of primary ButtonLink in the hover state. */
   --button-link-primary-background-active: rgb(191, 232, 226); /* Used for the background of primary ButtonLink in the active and the focus state. */
-  --button-link-primary-foreground: rgb(0, 165, 142); /* Used for the text of primary ButtonLink in the default state. */
-  --button-link-primary-foreground-hover: rgb(0, 112, 96); /* Used for the text of primary ButtonLink in the hover state. */
-  --button-link-primary-foreground-active: rgb(0, 102, 87); /* Used for the text of primary ButtonLink in the active and the focus state. */
+  --button-link-primary-foreground: rgb(0, 143, 123); /* Used for the text of primary ButtonLink in the default state. */
+  --button-link-primary-foreground-hover: rgb(0, 92, 79); /* Used for the text of primary ButtonLink in the hover state. */
+  --button-link-primary-foreground-active: rgb(0, 66, 57); /* Used for the text of primary ButtonLink in the active and the focus state. */
   --button-link-secondary-background: transparent; /* Used for the background of secondary ButtonLink in the default state. */
   --button-link-secondary-background-hover: rgb(229, 234, 239); /* Used for the background of secondary ButtonLink in the hover state. */
   --button-link-secondary-background-active: rgb(214, 222, 230); /* Used for the background of secondary ButtonLink in the active and the focus state. */
@@ -97,31 +97,31 @@
   --button-primary-subtle-background: rgb(225, 244, 243);
   --button-primary-subtle-background-hover: rgb(214, 240, 236);
   --button-primary-subtle-background-active: rgb(191, 232, 226);
-  --button-primary-subtle-foreground: rgb(0, 122, 105);
-  --button-primary-subtle-foreground-hover: rgb(0, 112, 96);
-  --button-primary-subtle-foreground-active: rgb(0, 102, 87);
-  --button-primary-background: rgb(0, 165, 142);
-  --button-primary-background-hover: rgb(0, 149, 128);
-  --button-primary-background-active: rgb(0, 132, 114);
+  --button-primary-subtle-foreground: rgb(0, 112, 97);
+  --button-primary-subtle-foreground-hover: rgb(0, 92, 79);
+  --button-primary-subtle-foreground-active: rgb(0, 66, 57);
+  --button-primary-background: rgb(0, 143, 123);
+  --button-primary-background-hover: rgb(0, 117, 101);
+  --button-primary-background-active: rgb(0, 97, 83);
   --button-primary-foreground: rgb(255, 255, 255);
   --button-primary-foreground-hover: rgb(255, 255, 255);
   --button-primary-foreground-active: rgb(255, 255, 255);
-  --button-primary-border-color-focus: rgba(0, 165, 142, 0.5);
+  --button-primary-border-color-focus: rgba(0, 143, 123, 0.5);
   --button-secondary-background: rgb(232, 237, 241);
   --button-secondary-background-hover: rgb(220, 227, 233);
   --button-secondary-background-active: rgb(202, 212, 222);
   --button-secondary-foreground: rgb(37, 42, 49);
   --button-secondary-foreground-hover: rgb(24, 27, 32);
   --button-secondary-foreground-active: rgb(11, 12, 15);
-  --button-success-background: rgb(10, 147, 43);
-  --button-success-background-hover: rgb(35, 139, 49);
-  --button-success-background-active: rgb(29, 114, 40);
+  --button-success-background: rgb(5, 138, 37);
+  --button-success-background-hover: rgb(4, 118, 32);
+  --button-success-background-active: rgb(3, 99, 27);
   --button-success-foreground: rgb(255, 255, 255);
   --button-success-foreground-hover: rgb(255, 255, 255);
   --button-success-foreground-active: rgb(255, 255, 255);
-  --button-warning-background: rgb(207, 108, 0);
-  --button-warning-background-hover: rgb(184, 96, 0);
-  --button-warning-background-active: rgb(173, 87, 0);
+  --button-warning-background: rgb(179, 98, 0);
+  --button-warning-background-hover: rgb(153, 84, 0);
+  --button-warning-background-active: rgb(128, 70, 0);
   --button-warning-foreground: rgb(255, 255, 255);
   --button-warning-foreground-hover: rgb(255, 255, 255);
   --button-warning-foreground-active: rgb(255, 255, 255);
@@ -164,7 +164,7 @@
   --form-element-error-focus-box-shadow: rgb(210, 28, 28);
   --form-element-normal-font-size: 15;
   --form-element-normal-padding: null;
-  --form-element-foreground: rgb(105, 125, 149); /* Should be used for the text when the value is not filled. */
+  --form-element-foreground: rgb(101, 120, 144); /* Should be used for the text when the value is not filled. */
   --form-element-filled-foreground: rgb(37, 42, 49);
   --form-element-label-foreground: rgb(37, 42, 49);
   --form-element-label-filled: rgb(79, 94, 113);
@@ -203,8 +203,8 @@
   --icon-secondary-foreground: rgb(79, 94, 113);
   --icon-tertiary-foreground: rgb(186, 199, 213);
   --icon-info-foreground: rgb(0, 112, 200);
-  --icon-success-foreground: rgb(10, 147, 43);
-  --icon-warning-foreground: rgb(207, 108, 0);
+  --icon-success-foreground: rgb(5, 138, 37);
+  --icon-warning-foreground: rgb(179, 98, 0);
   --icon-critical-foreground: rgb(210, 28, 28);
   --icon-small-size: 16;
   --icon-medium-size: 20;
@@ -242,21 +242,21 @@
   --tag-neutral-background-hover: rgb(220, 227, 233);
   --tag-neutral-background-active: rgb(202, 212, 222);
   --tag-neutral-foreground: rgb(37, 42, 49);
-  --text-link-primary-foreground: rgb(0, 122, 105);
-  --text-link-primary-foreground-hover: rgb(0, 112, 96);
-  --text-link-primary-foreground-active: rgb(0, 102, 87);
+  --text-link-primary-foreground: rgb(0, 112, 97);
+  --text-link-primary-foreground-hover: rgb(0, 92, 79);
+  --text-link-primary-foreground-active: rgb(0, 66, 57);
   --text-link-secondary-foreground: rgb(37, 42, 49);
-  --text-link-secondary-foreground-hover: rgb(0, 112, 96);
-  --text-link-secondary-foreground-active: rgb(0, 102, 87);
-  --text-link-success-foreground: rgb(45, 119, 56);
-  --text-link-success-foreground-hover: rgb(39, 104, 49);
-  --text-link-success-foreground-active: rgb(28, 74, 35);
+  --text-link-secondary-foreground-hover: rgb(0, 92, 79);
+  --text-link-secondary-foreground-active: rgb(0, 66, 57);
+  --text-link-success-foreground: rgb(41, 107, 51);
+  --text-link-success-foreground-hover: rgb(33, 89, 42);
+  --text-link-success-foreground-active: rgb(22, 59, 28);
   --text-link-info-foreground: rgb(0, 90, 163);
   --text-link-info-foreground-hover: rgb(0, 79, 143);
   --text-link-info-foreground-active: rgb(0, 56, 102);
-  --text-link-warning-foreground: rgb(167, 84, 0);
-  --text-link-warning-foreground-hover: rgb(149, 74, 0);
-  --text-link-warning-foreground-active: rgb(102, 50, 0);
+  --text-link-warning-foreground: rgb(138, 69, 0);
+  --text-link-warning-foreground-hover: rgb(112, 56, 0);
+  --text-link-warning-foreground-active: rgb(77, 38, 0);
   --text-link-critical-foreground: rgb(151, 12, 12);
   --text-link-critical-foreground-hover: rgb(137, 11, 11);
   --text-link-critical-foreground-active: rgb(99, 8, 8);
@@ -269,10 +269,10 @@
   --text-secondary-foreground: rgb(79, 94, 113);
   --text-info-background: rgba(0, 112, 200, 0.1);
   --text-info-foreground: rgb(0, 112, 200);
-  --text-success-background: rgba(10, 147, 43, 0.1);
-  --text-success-foreground: rgb(10, 147, 43);
-  --text-warning-background: rgba(207, 108, 0, 0.1);
-  --text-warning-foreground: rgb(207, 108, 0);
+  --text-success-background: rgba(5, 138, 37, 0.1);
+  --text-success-foreground: rgb(5, 138, 37);
+  --text-warning-background: rgba(179, 98, 0, 0.1);
+  --text-warning-foreground: rgb(179, 98, 0);
   --text-critical-background: rgba(210, 28, 28, 0.1);
   --text-critical-foreground: rgb(210, 28, 28);
   --text-white-background: rgba(255, 255, 255, 0.1);
@@ -330,42 +330,42 @@
   --palette-green-light: rgb(234, 245, 234);
   --palette-green-light-hover: rgb(225, 239, 226);
   --palette-green-light-active: rgb(205, 228, 207);
-  --palette-green-normal: rgb(10, 147, 43);
-  --palette-green-normal-hover: rgb(35, 139, 49);
-  --palette-green-normal-active: rgb(29, 114, 40);
-  --palette-green-dark: rgb(45, 119, 56);
-  --palette-green-dark-hover: rgb(39, 104, 49);
-  --palette-green-dark-active: rgb(31, 81, 38);
-  --palette-green-darker: rgb(28, 74, 35);
+  --palette-green-normal: rgb(5, 138, 37);
+  --palette-green-normal-hover: rgb(4, 118, 32);
+  --palette-green-normal-active: rgb(3, 99, 27);
+  --palette-green-dark: rgb(41, 107, 51);
+  --palette-green-dark-hover: rgb(33, 89, 42);
+  --palette-green-dark-active: rgb(28, 74, 35);
+  --palette-green-darker: rgb(22, 59, 28);
   --palette-ink-dark: rgb(37, 42, 49);
   --palette-ink-dark-hover: rgb(24, 27, 32);
   --palette-ink-dark-active: rgb(11, 12, 15);
-  --palette-ink-light: rgb(105, 125, 149);
-  --palette-ink-light-hover: rgb(93, 115, 142);
-  --palette-ink-light-active: rgb(74, 97, 124);
+  --palette-ink-light: rgb(101, 120, 144);
+  --palette-ink-light-hover: rgb(88, 105, 126);
+  --palette-ink-light-active: rgb(78, 92, 111);
   --palette-ink-normal: rgb(79, 94, 113);
   --palette-ink-normal-hover: rgb(62, 78, 99);
   --palette-ink-normal-active: rgb(50, 66, 86);
   --palette-orange-light: rgb(254, 242, 230);
   --palette-orange-light-hover: rgb(252, 236, 218);
   --palette-orange-light-active: rgb(250, 226, 198);
-  --palette-orange-normal: rgb(207, 108, 0);
-  --palette-orange-normal-hover: rgb(184, 96, 0);
-  --palette-orange-normal-active: rgb(173, 87, 0);
-  --palette-orange-dark: rgb(167, 84, 0);
-  --palette-orange-dark-hover: rgb(149, 74, 0);
-  --palette-orange-dark-active: rgb(128, 63, 0);
-  --palette-orange-darker: rgb(102, 50, 0);
+  --palette-orange-normal: rgb(179, 98, 0);
+  --palette-orange-normal-hover: rgb(153, 84, 0);
+  --palette-orange-normal-active: rgb(128, 70, 0);
+  --palette-orange-dark: rgb(138, 69, 0);
+  --palette-orange-dark-hover: rgb(112, 56, 0);
+  --palette-orange-dark-active: rgb(87, 44, 0);
+  --palette-orange-darker: rgb(77, 38, 0);
   --palette-product-light: rgb(225, 244, 243);
   --palette-product-light-hover: rgb(214, 240, 236);
   --palette-product-light-active: rgb(191, 232, 226);
-  --palette-product-normal: rgb(0, 165, 142);
-  --palette-product-normal-hover: rgb(0, 149, 128);
-  --palette-product-normal-active: rgb(0, 132, 114);
-  --palette-product-dark: rgb(0, 122, 105);
-  --palette-product-dark-hover: rgb(0, 112, 96);
-  --palette-product-dark-active: rgb(0, 102, 87);
-  --palette-product-darker: rgb(0, 77, 65);
+  --palette-product-normal: rgb(0, 143, 123);
+  --palette-product-normal-hover: rgb(0, 117, 101);
+  --palette-product-normal-active: rgb(0, 97, 83);
+  --palette-product-dark: rgb(0, 112, 97);
+  --palette-product-dark-hover: rgb(0, 92, 79);
+  --palette-product-dark-active: rgb(0, 66, 57);
+  --palette-product-darker: rgb(0, 61, 53);
   --palette-red-light: rgb(250, 234, 234);
   --palette-red-light-hover: rgb(248, 226, 226);
   --palette-red-light-active: rgb(243, 206, 206);

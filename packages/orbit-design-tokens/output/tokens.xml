@@ -25,11 +25,11 @@
   </token>
   <token>
     <name>alertIconSuccess</name>
-    <value>#0A932B</value>
+    <value>#058A25</value>
   </token>
   <token>
     <name>alertIconWarning</name>
-    <value>#CF6C00</value>
+    <value>#B36200</value>
   </token>
   <token>
     <name>alertColorTextCritical</name>
@@ -41,11 +41,11 @@
   </token>
   <token>
     <name>alertColorTextSuccess</name>
-    <value>#2D7738</value>
+    <value>#296B33</value>
   </token>
   <token>
     <name>alertColorTextWarning</name>
-    <value>#A75400</value>
+    <value>#8A4500</value>
   </token>
   <token>
     <name>alertColorTextLink</name>
@@ -129,7 +129,7 @@
   </token>
   <token>
     <name>badgeSuccessBackground</name>
-    <value>#0A932B</value>
+    <value>#058A25</value>
   </token>
   <token>
     <name>badgeSuccessForeground</name>
@@ -141,11 +141,11 @@
   </token>
   <token>
     <name>badgeSuccessSubtleForeground</name>
-    <value>#2D7738</value>
+    <value>#296B33</value>
   </token>
   <token>
     <name>badgeWarningBackground</name>
-    <value>#CF6C00</value>
+    <value>#B36200</value>
   </token>
   <token>
     <name>badgeWarningForeground</name>
@@ -157,7 +157,7 @@
   </token>
   <token>
     <name>badgeWarningSubtleForeground</name>
-    <value>#A75400</value>
+    <value>#8A4500</value>
   </token>
   <token>
     <name>badgeWhiteBackground</name>
@@ -205,15 +205,15 @@
   </token>
   <token>
     <name>buttonLinkPrimaryForeground</name>
-    <value>#00A58E</value>
+    <value>#008F7B</value>
   </token>
   <token>
     <name>buttonLinkPrimaryForegroundHover</name>
-    <value>#007060</value>
+    <value>#005C4F</value>
   </token>
   <token>
     <name>buttonLinkPrimaryForegroundActive</name>
-    <value>#006657</value>
+    <value>#004239</value>
   </token>
   <token>
     <name>buttonLinkSecondaryBackground</name>
@@ -393,27 +393,27 @@
   </token>
   <token>
     <name>buttonPrimarySubtleForeground</name>
-    <value>#007A69</value>
+    <value>#007061</value>
   </token>
   <token>
     <name>buttonPrimarySubtleForegroundHover</name>
-    <value>#007060</value>
+    <value>#005C4F</value>
   </token>
   <token>
     <name>buttonPrimarySubtleForegroundActive</name>
-    <value>#006657</value>
+    <value>#004239</value>
   </token>
   <token>
     <name>buttonPrimaryBackground</name>
-    <value>#00A58E</value>
+    <value>#008F7B</value>
   </token>
   <token>
     <name>buttonPrimaryBackgroundHover</name>
-    <value>#009580</value>
+    <value>#007565</value>
   </token>
   <token>
     <name>buttonPrimaryBackgroundActive</name>
-    <value>#008472</value>
+    <value>#006153</value>
   </token>
   <token>
     <name>buttonPrimaryForeground</name>
@@ -429,7 +429,7 @@
   </token>
   <token>
     <name>buttonPrimaryBorderColorFocus</name>
-    <value>#00A58E80</value>
+    <value>#008F7B80</value>
   </token>
   <token>
     <name>buttonSecondaryBackground</name>
@@ -457,15 +457,15 @@
   </token>
   <token>
     <name>buttonSuccessBackground</name>
-    <value>#0A932B</value>
+    <value>#058A25</value>
   </token>
   <token>
     <name>buttonSuccessBackgroundHover</name>
-    <value>#238B31</value>
+    <value>#047620</value>
   </token>
   <token>
     <name>buttonSuccessBackgroundActive</name>
-    <value>#1D7228</value>
+    <value>#03631B</value>
   </token>
   <token>
     <name>buttonSuccessForeground</name>
@@ -481,15 +481,15 @@
   </token>
   <token>
     <name>buttonWarningBackground</name>
-    <value>#CF6C00</value>
+    <value>#B36200</value>
   </token>
   <token>
     <name>buttonWarningBackgroundHover</name>
-    <value>#B86000</value>
+    <value>#995400</value>
   </token>
   <token>
     <name>buttonWarningBackgroundActive</name>
-    <value>#AD5700</value>
+    <value>#804600</value>
   </token>
   <token>
     <name>buttonWarningForeground</name>
@@ -661,7 +661,7 @@
   </token>
   <token>
     <name>formElementForeground</name>
-    <value>#697D95</value>
+    <value>#657890</value>
   </token>
   <token>
     <name>formElementFilledForeground</name>
@@ -817,11 +817,11 @@
   </token>
   <token>
     <name>iconSuccessForeground</name>
-    <value>#0A932B</value>
+    <value>#058A25</value>
   </token>
   <token>
     <name>iconWarningForeground</name>
-    <value>#CF6C00</value>
+    <value>#B36200</value>
   </token>
   <token>
     <name>iconCriticalForeground</name>
@@ -973,15 +973,15 @@
   </token>
   <token>
     <name>textLinkPrimaryForeground</name>
-    <value>#007A69</value>
+    <value>#007061</value>
   </token>
   <token>
     <name>textLinkPrimaryForegroundHover</name>
-    <value>#007060</value>
+    <value>#005C4F</value>
   </token>
   <token>
     <name>textLinkPrimaryForegroundActive</name>
-    <value>#006657</value>
+    <value>#004239</value>
   </token>
   <token>
     <name>textLinkSecondaryForeground</name>
@@ -989,23 +989,23 @@
   </token>
   <token>
     <name>textLinkSecondaryForegroundHover</name>
-    <value>#007060</value>
+    <value>#005C4F</value>
   </token>
   <token>
     <name>textLinkSecondaryForegroundActive</name>
-    <value>#006657</value>
+    <value>#004239</value>
   </token>
   <token>
     <name>textLinkSuccessForeground</name>
-    <value>#2D7738</value>
+    <value>#296B33</value>
   </token>
   <token>
     <name>textLinkSuccessForegroundHover</name>
-    <value>#276831</value>
+    <value>#21592A</value>
   </token>
   <token>
     <name>textLinkSuccessForegroundActive</name>
-    <value>#1C4A23</value>
+    <value>#163B1C</value>
   </token>
   <token>
     <name>textLinkInfoForeground</name>
@@ -1021,15 +1021,15 @@
   </token>
   <token>
     <name>textLinkWarningForeground</name>
-    <value>#A75400</value>
+    <value>#8A4500</value>
   </token>
   <token>
     <name>textLinkWarningForegroundHover</name>
-    <value>#954A00</value>
+    <value>#703800</value>
   </token>
   <token>
     <name>textLinkWarningForegroundActive</name>
-    <value>#663200</value>
+    <value>#4D2600</value>
   </token>
   <token>
     <name>textLinkCriticalForeground</name>
@@ -1081,19 +1081,19 @@
   </token>
   <token>
     <name>textSuccessBackground</name>
-    <value>#0A932B1A</value>
+    <value>#058A251A</value>
   </token>
   <token>
     <name>textSuccessForeground</name>
-    <value>#0A932B</value>
+    <value>#058A25</value>
   </token>
   <token>
     <name>textWarningBackground</name>
-    <value>#CF6C001A</value>
+    <value>#B362001A</value>
   </token>
   <token>
     <name>textWarningForeground</name>
-    <value>#CF6C00</value>
+    <value>#B36200</value>
   </token>
   <token>
     <name>textCriticalBackground</name>
@@ -1325,31 +1325,31 @@
   </token>
   <token>
     <name>paletteGreenNormal</name>
-    <value>#0A932B</value>
+    <value>#058A25</value>
   </token>
   <token>
     <name>paletteGreenNormalHover</name>
-    <value>#238B31</value>
+    <value>#047620</value>
   </token>
   <token>
     <name>paletteGreenNormalActive</name>
-    <value>#1D7228</value>
+    <value>#03631B</value>
   </token>
   <token>
     <name>paletteGreenDark</name>
-    <value>#2D7738</value>
+    <value>#296B33</value>
   </token>
   <token>
     <name>paletteGreenDarkHover</name>
-    <value>#276831</value>
+    <value>#21592A</value>
   </token>
   <token>
     <name>paletteGreenDarkActive</name>
-    <value>#1F5126</value>
+    <value>#1C4A23</value>
   </token>
   <token>
     <name>paletteGreenDarker</name>
-    <value>#1C4A23</value>
+    <value>#163B1C</value>
   </token>
   <token>
     <name>paletteInkDark</name>
@@ -1365,15 +1365,15 @@
   </token>
   <token>
     <name>paletteInkLight</name>
-    <value>#697D95</value>
+    <value>#657890</value>
   </token>
   <token>
     <name>paletteInkLightHover</name>
-    <value>#5D738E</value>
+    <value>#58697E</value>
   </token>
   <token>
     <name>paletteInkLightActive</name>
-    <value>#4A617C</value>
+    <value>#4E5C6F</value>
   </token>
   <token>
     <name>paletteInkNormal</name>
@@ -1401,31 +1401,31 @@
   </token>
   <token>
     <name>paletteOrangeNormal</name>
-    <value>#CF6C00</value>
+    <value>#B36200</value>
   </token>
   <token>
     <name>paletteOrangeNormalHover</name>
-    <value>#B86000</value>
+    <value>#995400</value>
   </token>
   <token>
     <name>paletteOrangeNormalActive</name>
-    <value>#AD5700</value>
+    <value>#804600</value>
   </token>
   <token>
     <name>paletteOrangeDark</name>
-    <value>#A75400</value>
+    <value>#8A4500</value>
   </token>
   <token>
     <name>paletteOrangeDarkHover</name>
-    <value>#954A00</value>
+    <value>#703800</value>
   </token>
   <token>
     <name>paletteOrangeDarkActive</name>
-    <value>#803F00</value>
+    <value>#572C00</value>
   </token>
   <token>
     <name>paletteOrangeDarker</name>
-    <value>#663200</value>
+    <value>#4D2600</value>
   </token>
   <token>
     <name>paletteProductLight</name>
@@ -1441,31 +1441,31 @@
   </token>
   <token>
     <name>paletteProductNormal</name>
-    <value>#00A58E</value>
+    <value>#008F7B</value>
   </token>
   <token>
     <name>paletteProductNormalHover</name>
-    <value>#009580</value>
+    <value>#007565</value>
   </token>
   <token>
     <name>paletteProductNormalActive</name>
-    <value>#008472</value>
+    <value>#006153</value>
   </token>
   <token>
     <name>paletteProductDark</name>
-    <value>#007A69</value>
+    <value>#007061</value>
   </token>
   <token>
     <name>paletteProductDarkHover</name>
-    <value>#007060</value>
+    <value>#005C4F</value>
   </token>
   <token>
     <name>paletteProductDarkActive</name>
-    <value>#006657</value>
+    <value>#004239</value>
   </token>
   <token>
     <name>paletteProductDarker</name>
-    <value>#004D41</value>
+    <value>#003D35</value>
   </token>
   <token>
     <name>paletteRedLight</name>

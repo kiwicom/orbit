@@ -149,7 +149,7 @@
     },
     "javascript": {
       "name": "alertIconSuccess",
-      "value": "#0A932B"
+      "value": "#058A25"
     },
     "foundation": {
       "name": "alertIconSuccess",
@@ -157,7 +157,7 @@
     },
     "scss": {
       "name": "alertIconSuccess",
-      "value": "rgb(10, 147, 43)"
+      "value": "rgb(5, 138, 37)"
     }
   },
   "alertIconWarning": {
@@ -172,7 +172,7 @@
     },
     "javascript": {
       "name": "alertIconWarning",
-      "value": "#CF6C00"
+      "value": "#B36200"
     },
     "foundation": {
       "name": "alertIconWarning",
@@ -180,7 +180,7 @@
     },
     "scss": {
       "name": "alertIconWarning",
-      "value": "rgb(207, 108, 0)"
+      "value": "rgb(179, 98, 0)"
     }
   },
   "alertColorTextCritical": {
@@ -241,7 +241,7 @@
     },
     "javascript": {
       "name": "alertColorTextSuccess",
-      "value": "#2D7738"
+      "value": "#296B33"
     },
     "foundation": {
       "name": "alertColorTextSuccess",
@@ -249,7 +249,7 @@
     },
     "scss": {
       "name": "alertColorTextSuccess",
-      "value": "rgb(45, 119, 56)"
+      "value": "rgb(41, 107, 51)"
     }
   },
   "alertColorTextWarning": {
@@ -264,7 +264,7 @@
     },
     "javascript": {
       "name": "alertColorTextWarning",
-      "value": "#A75400"
+      "value": "#8A4500"
     },
     "foundation": {
       "name": "alertColorTextWarning",
@@ -272,7 +272,7 @@
     },
     "scss": {
       "name": "alertColorTextWarning",
-      "value": "rgb(167, 84, 0)"
+      "value": "rgb(138, 69, 0)"
     }
   },
   "alertColorTextLink": {
@@ -746,7 +746,7 @@
     },
     "javascript": {
       "name": "badgeSuccessBackground",
-      "value": "#0A932B"
+      "value": "#058A25"
     },
     "foundation": {
       "name": "badgeSuccessBackground",
@@ -754,7 +754,7 @@
     },
     "scss": {
       "name": "badgeSuccessBackground",
-      "value": "rgb(10, 147, 43)"
+      "value": "rgb(5, 138, 37)"
     }
   },
   "badgeSuccessForeground": {
@@ -815,7 +815,7 @@
     },
     "javascript": {
       "name": "badgeSuccessSubtleForeground",
-      "value": "#2D7738"
+      "value": "#296B33"
     },
     "foundation": {
       "name": "badgeSuccessSubtleForeground",
@@ -823,7 +823,7 @@
     },
     "scss": {
       "name": "badgeSuccessSubtleForeground",
-      "value": "rgb(45, 119, 56)"
+      "value": "rgb(41, 107, 51)"
     }
   },
   "badgeWarningBackground": {
@@ -838,7 +838,7 @@
     },
     "javascript": {
       "name": "badgeWarningBackground",
-      "value": "#CF6C00"
+      "value": "#B36200"
     },
     "foundation": {
       "name": "badgeWarningBackground",
@@ -846,7 +846,7 @@
     },
     "scss": {
       "name": "badgeWarningBackground",
-      "value": "rgb(207, 108, 0)"
+      "value": "rgb(179, 98, 0)"
     }
   },
   "badgeWarningForeground": {
@@ -907,7 +907,7 @@
     },
     "javascript": {
       "name": "badgeWarningSubtleForeground",
-      "value": "#A75400"
+      "value": "#8A4500"
     },
     "foundation": {
       "name": "badgeWarningSubtleForeground",
@@ -915,7 +915,7 @@
     },
     "scss": {
       "name": "badgeWarningSubtleForeground",
-      "value": "rgb(167, 84, 0)"
+      "value": "rgb(138, 69, 0)"
     }
   },
   "badgeWhiteBackground": {
@@ -1197,7 +1197,7 @@
     },
     "javascript": {
       "name": "buttonLinkPrimaryForeground",
-      "value": "#00A58E"
+      "value": "#008F7B"
     },
     "foundation": {
       "name": "buttonLinkPrimaryForeground",
@@ -1205,7 +1205,7 @@
     },
     "scss": {
       "name": "buttonLinkPrimaryForeground",
-      "value": "rgb(0, 165, 142)"
+      "value": "rgb(0, 143, 123)"
     }
   },
   "buttonLinkPrimaryForegroundHover": {
@@ -1222,7 +1222,7 @@
     },
     "javascript": {
       "name": "buttonLinkPrimaryForegroundHover",
-      "value": "#007060"
+      "value": "#005C4F"
     },
     "foundation": {
       "name": "buttonLinkPrimaryForegroundHover",
@@ -1230,7 +1230,7 @@
     },
     "scss": {
       "name": "buttonLinkPrimaryForegroundHover",
-      "value": "rgb(0, 112, 96)"
+      "value": "rgb(0, 92, 79)"
     }
   },
   "buttonLinkPrimaryForegroundActive": {
@@ -1247,7 +1247,7 @@
     },
     "javascript": {
       "name": "buttonLinkPrimaryForegroundActive",
-      "value": "#006657"
+      "value": "#004239"
     },
     "foundation": {
       "name": "buttonLinkPrimaryForegroundActive",
@@ -1255,7 +1255,7 @@
     },
     "scss": {
       "name": "buttonLinkPrimaryForegroundActive",
-      "value": "rgb(0, 102, 87)"
+      "value": "rgb(0, 66, 57)"
     }
   },
   "buttonLinkSecondaryBackground": {
@@ -2301,7 +2301,7 @@
     },
     "javascript": {
       "name": "buttonPrimarySubtleForeground",
-      "value": "#007A69"
+      "value": "#007061"
     },
     "foundation": {
       "name": "buttonPrimarySubtleForeground",
@@ -2309,7 +2309,7 @@
     },
     "scss": {
       "name": "buttonPrimarySubtleForeground",
-      "value": "rgb(0, 122, 105)"
+      "value": "rgb(0, 112, 97)"
     }
   },
   "buttonPrimarySubtleForegroundHover": {
@@ -2325,7 +2325,7 @@
     },
     "javascript": {
       "name": "buttonPrimarySubtleForegroundHover",
-      "value": "#007060"
+      "value": "#005C4F"
     },
     "foundation": {
       "name": "buttonPrimarySubtleForegroundHover",
@@ -2333,7 +2333,7 @@
     },
     "scss": {
       "name": "buttonPrimarySubtleForegroundHover",
-      "value": "rgb(0, 112, 96)"
+      "value": "rgb(0, 92, 79)"
     }
   },
   "buttonPrimarySubtleForegroundActive": {
@@ -2349,7 +2349,7 @@
     },
     "javascript": {
       "name": "buttonPrimarySubtleForegroundActive",
-      "value": "#006657"
+      "value": "#004239"
     },
     "foundation": {
       "name": "buttonPrimarySubtleForegroundActive",
@@ -2357,7 +2357,7 @@
     },
     "scss": {
       "name": "buttonPrimarySubtleForegroundActive",
-      "value": "rgb(0, 102, 87)"
+      "value": "rgb(0, 66, 57)"
     }
   },
   "buttonPrimaryBackground": {
@@ -2372,7 +2372,7 @@
     },
     "javascript": {
       "name": "buttonPrimaryBackground",
-      "value": "#00A58E"
+      "value": "#008F7B"
     },
     "foundation": {
       "name": "buttonPrimaryBackground",
@@ -2380,7 +2380,7 @@
     },
     "scss": {
       "name": "buttonPrimaryBackground",
-      "value": "rgb(0, 165, 142)"
+      "value": "rgb(0, 143, 123)"
     }
   },
   "buttonPrimaryBackgroundHover": {
@@ -2395,7 +2395,7 @@
     },
     "javascript": {
       "name": "buttonPrimaryBackgroundHover",
-      "value": "#009580"
+      "value": "#007565"
     },
     "foundation": {
       "name": "buttonPrimaryBackgroundHover",
@@ -2403,7 +2403,7 @@
     },
     "scss": {
       "name": "buttonPrimaryBackgroundHover",
-      "value": "rgb(0, 149, 128)"
+      "value": "rgb(0, 117, 101)"
     }
   },
   "buttonPrimaryBackgroundActive": {
@@ -2418,7 +2418,7 @@
     },
     "javascript": {
       "name": "buttonPrimaryBackgroundActive",
-      "value": "#008472"
+      "value": "#006153"
     },
     "foundation": {
       "name": "buttonPrimaryBackgroundActive",
@@ -2426,7 +2426,7 @@
     },
     "scss": {
       "name": "buttonPrimaryBackgroundActive",
-      "value": "rgb(0, 132, 114)"
+      "value": "rgb(0, 97, 83)"
     }
   },
   "buttonPrimaryForeground": {
@@ -2514,7 +2514,7 @@
     },
     "javascript": {
       "name": "buttonPrimaryBorderColorFocus",
-      "value": "#00A58E80"
+      "value": "#008F7B80"
     },
     "foundation": {
       "name": "buttonPrimaryBorderColorFocus",
@@ -2522,7 +2522,7 @@
     },
     "scss": {
       "name": "buttonPrimaryBorderColorFocus",
-      "value": "rgba(0, 165, 142, 0.5)"
+      "value": "rgba(0, 143, 123, 0.5)"
     }
   },
   "buttonSecondaryBackground": {
@@ -2678,7 +2678,7 @@
     },
     "javascript": {
       "name": "buttonSuccessBackground",
-      "value": "#0A932B"
+      "value": "#058A25"
     },
     "foundation": {
       "name": "buttonSuccessBackground",
@@ -2686,7 +2686,7 @@
     },
     "scss": {
       "name": "buttonSuccessBackground",
-      "value": "rgb(10, 147, 43)"
+      "value": "rgb(5, 138, 37)"
     }
   },
   "buttonSuccessBackgroundHover": {
@@ -2701,7 +2701,7 @@
     },
     "javascript": {
       "name": "buttonSuccessBackgroundHover",
-      "value": "#238B31"
+      "value": "#047620"
     },
     "foundation": {
       "name": "buttonSuccessBackgroundHover",
@@ -2709,7 +2709,7 @@
     },
     "scss": {
       "name": "buttonSuccessBackgroundHover",
-      "value": "rgb(35, 139, 49)"
+      "value": "rgb(4, 118, 32)"
     }
   },
   "buttonSuccessBackgroundActive": {
@@ -2724,7 +2724,7 @@
     },
     "javascript": {
       "name": "buttonSuccessBackgroundActive",
-      "value": "#1D7228"
+      "value": "#03631B"
     },
     "foundation": {
       "name": "buttonSuccessBackgroundActive",
@@ -2732,7 +2732,7 @@
     },
     "scss": {
       "name": "buttonSuccessBackgroundActive",
-      "value": "rgb(29, 114, 40)"
+      "value": "rgb(3, 99, 27)"
     }
   },
   "buttonSuccessForeground": {
@@ -2819,7 +2819,7 @@
     },
     "javascript": {
       "name": "buttonWarningBackground",
-      "value": "#CF6C00"
+      "value": "#B36200"
     },
     "foundation": {
       "name": "buttonWarningBackground",
@@ -2827,7 +2827,7 @@
     },
     "scss": {
       "name": "buttonWarningBackground",
-      "value": "rgb(207, 108, 0)"
+      "value": "rgb(179, 98, 0)"
     }
   },
   "buttonWarningBackgroundHover": {
@@ -2842,7 +2842,7 @@
     },
     "javascript": {
       "name": "buttonWarningBackgroundHover",
-      "value": "#B86000"
+      "value": "#995400"
     },
     "foundation": {
       "name": "buttonWarningBackgroundHover",
@@ -2850,7 +2850,7 @@
     },
     "scss": {
       "name": "buttonWarningBackgroundHover",
-      "value": "rgb(184, 96, 0)"
+      "value": "rgb(153, 84, 0)"
     }
   },
   "buttonWarningBackgroundActive": {
@@ -2865,7 +2865,7 @@
     },
     "javascript": {
       "name": "buttonWarningBackgroundActive",
-      "value": "#AD5700"
+      "value": "#804600"
     },
     "foundation": {
       "name": "buttonWarningBackgroundActive",
@@ -2873,7 +2873,7 @@
     },
     "scss": {
       "name": "buttonWarningBackgroundActive",
-      "value": "rgb(173, 87, 0)"
+      "value": "rgb(128, 70, 0)"
     }
   },
   "buttonWarningForeground": {
@@ -3846,7 +3846,7 @@
     },
     "javascript": {
       "name": "formElementForeground",
-      "value": "#697D95"
+      "value": "#657890"
     },
     "foundation": {
       "name": "formElementForeground",
@@ -3854,7 +3854,7 @@
     },
     "scss": {
       "name": "formElementForeground",
-      "value": "rgb(105, 125, 149)"
+      "value": "rgb(101, 120, 144)"
     }
   },
   "formElementFilledForeground": {
@@ -4742,7 +4742,7 @@
     },
     "javascript": {
       "name": "iconSuccessForeground",
-      "value": "#0A932B"
+      "value": "#058A25"
     },
     "foundation": {
       "name": "iconSuccessForeground",
@@ -4750,7 +4750,7 @@
     },
     "scss": {
       "name": "iconSuccessForeground",
-      "value": "rgb(10, 147, 43)"
+      "value": "rgb(5, 138, 37)"
     }
   },
   "iconWarningForeground": {
@@ -4765,7 +4765,7 @@
     },
     "javascript": {
       "name": "iconWarningForeground",
-      "value": "#CF6C00"
+      "value": "#B36200"
     },
     "foundation": {
       "name": "iconWarningForeground",
@@ -4773,7 +4773,7 @@
     },
     "scss": {
       "name": "iconWarningForeground",
-      "value": "rgb(207, 108, 0)"
+      "value": "rgb(179, 98, 0)"
     }
   },
   "iconCriticalForeground": {
@@ -5638,7 +5638,7 @@
     },
     "javascript": {
       "name": "textLinkPrimaryForeground",
-      "value": "#007A69"
+      "value": "#007061"
     },
     "foundation": {
       "name": "textLinkPrimaryForeground",
@@ -5646,7 +5646,7 @@
     },
     "scss": {
       "name": "textLinkPrimaryForeground",
-      "value": "rgb(0, 122, 105)"
+      "value": "rgb(0, 112, 97)"
     }
   },
   "textLinkPrimaryForegroundHover": {
@@ -5661,7 +5661,7 @@
     },
     "javascript": {
       "name": "textLinkPrimaryForegroundHover",
-      "value": "#007060"
+      "value": "#005C4F"
     },
     "foundation": {
       "name": "textLinkPrimaryForegroundHover",
@@ -5669,7 +5669,7 @@
     },
     "scss": {
       "name": "textLinkPrimaryForegroundHover",
-      "value": "rgb(0, 112, 96)"
+      "value": "rgb(0, 92, 79)"
     }
   },
   "textLinkPrimaryForegroundActive": {
@@ -5684,7 +5684,7 @@
     },
     "javascript": {
       "name": "textLinkPrimaryForegroundActive",
-      "value": "#006657"
+      "value": "#004239"
     },
     "foundation": {
       "name": "textLinkPrimaryForegroundActive",
@@ -5692,7 +5692,7 @@
     },
     "scss": {
       "name": "textLinkPrimaryForegroundActive",
-      "value": "rgb(0, 102, 87)"
+      "value": "rgb(0, 66, 57)"
     }
   },
   "textLinkSecondaryForeground": {
@@ -5730,7 +5730,7 @@
     },
     "javascript": {
       "name": "textLinkSecondaryForegroundHover",
-      "value": "#007060"
+      "value": "#005C4F"
     },
     "foundation": {
       "name": "textLinkSecondaryForegroundHover",
@@ -5738,7 +5738,7 @@
     },
     "scss": {
       "name": "textLinkSecondaryForegroundHover",
-      "value": "rgb(0, 112, 96)"
+      "value": "rgb(0, 92, 79)"
     }
   },
   "textLinkSecondaryForegroundActive": {
@@ -5753,7 +5753,7 @@
     },
     "javascript": {
       "name": "textLinkSecondaryForegroundActive",
-      "value": "#006657"
+      "value": "#004239"
     },
     "foundation": {
       "name": "textLinkSecondaryForegroundActive",
@@ -5761,7 +5761,7 @@
     },
     "scss": {
       "name": "textLinkSecondaryForegroundActive",
-      "value": "rgb(0, 102, 87)"
+      "value": "rgb(0, 66, 57)"
     }
   },
   "textLinkSuccessForeground": {
@@ -5776,7 +5776,7 @@
     },
     "javascript": {
       "name": "textLinkSuccessForeground",
-      "value": "#2D7738"
+      "value": "#296B33"
     },
     "foundation": {
       "name": "textLinkSuccessForeground",
@@ -5784,7 +5784,7 @@
     },
     "scss": {
       "name": "textLinkSuccessForeground",
-      "value": "rgb(45, 119, 56)"
+      "value": "rgb(41, 107, 51)"
     }
   },
   "textLinkSuccessForegroundHover": {
@@ -5799,7 +5799,7 @@
     },
     "javascript": {
       "name": "textLinkSuccessForegroundHover",
-      "value": "#276831"
+      "value": "#21592A"
     },
     "foundation": {
       "name": "textLinkSuccessForegroundHover",
@@ -5807,7 +5807,7 @@
     },
     "scss": {
       "name": "textLinkSuccessForegroundHover",
-      "value": "rgb(39, 104, 49)"
+      "value": "rgb(33, 89, 42)"
     }
   },
   "textLinkSuccessForegroundActive": {
@@ -5822,7 +5822,7 @@
     },
     "javascript": {
       "name": "textLinkSuccessForegroundActive",
-      "value": "#1C4A23"
+      "value": "#163B1C"
     },
     "foundation": {
       "name": "textLinkSuccessForegroundActive",
@@ -5830,7 +5830,7 @@
     },
     "scss": {
       "name": "textLinkSuccessForegroundActive",
-      "value": "rgb(28, 74, 35)"
+      "value": "rgb(22, 59, 28)"
     }
   },
   "textLinkInfoForeground": {
@@ -5914,7 +5914,7 @@
     },
     "javascript": {
       "name": "textLinkWarningForeground",
-      "value": "#A75400"
+      "value": "#8A4500"
     },
     "foundation": {
       "name": "textLinkWarningForeground",
@@ -5922,7 +5922,7 @@
     },
     "scss": {
       "name": "textLinkWarningForeground",
-      "value": "rgb(167, 84, 0)"
+      "value": "rgb(138, 69, 0)"
     }
   },
   "textLinkWarningForegroundHover": {
@@ -5937,7 +5937,7 @@
     },
     "javascript": {
       "name": "textLinkWarningForegroundHover",
-      "value": "#954A00"
+      "value": "#703800"
     },
     "foundation": {
       "name": "textLinkWarningForegroundHover",
@@ -5945,7 +5945,7 @@
     },
     "scss": {
       "name": "textLinkWarningForegroundHover",
-      "value": "rgb(149, 74, 0)"
+      "value": "rgb(112, 56, 0)"
     }
   },
   "textLinkWarningForegroundActive": {
@@ -5960,7 +5960,7 @@
     },
     "javascript": {
       "name": "textLinkWarningForegroundActive",
-      "value": "#663200"
+      "value": "#4D2600"
     },
     "foundation": {
       "name": "textLinkWarningForegroundActive",
@@ -5968,7 +5968,7 @@
     },
     "scss": {
       "name": "textLinkWarningForegroundActive",
-      "value": "rgb(102, 50, 0)"
+      "value": "rgb(77, 38, 0)"
     }
   },
   "textLinkCriticalForeground": {
@@ -6259,7 +6259,7 @@
     },
     "javascript": {
       "name": "textSuccessBackground",
-      "value": "#0A932B1A"
+      "value": "#058A251A"
     },
     "foundation": {
       "name": "textSuccessBackground",
@@ -6267,7 +6267,7 @@
     },
     "scss": {
       "name": "textSuccessBackground",
-      "value": "rgba(10, 147, 43, 0.1)"
+      "value": "rgba(5, 138, 37, 0.1)"
     }
   },
   "textSuccessForeground": {
@@ -6282,7 +6282,7 @@
     },
     "javascript": {
       "name": "textSuccessForeground",
-      "value": "#0A932B"
+      "value": "#058A25"
     },
     "foundation": {
       "name": "textSuccessForeground",
@@ -6290,7 +6290,7 @@
     },
     "scss": {
       "name": "textSuccessForeground",
-      "value": "rgb(10, 147, 43)"
+      "value": "rgb(5, 138, 37)"
     }
   },
   "textWarningBackground": {
@@ -6305,7 +6305,7 @@
     },
     "javascript": {
       "name": "textWarningBackground",
-      "value": "#CF6C001A"
+      "value": "#B362001A"
     },
     "foundation": {
       "name": "textWarningBackground",
@@ -6313,7 +6313,7 @@
     },
     "scss": {
       "name": "textWarningBackground",
-      "value": "rgba(207, 108, 0, 0.1)"
+      "value": "rgba(179, 98, 0, 0.1)"
     }
   },
   "textWarningForeground": {
@@ -6328,7 +6328,7 @@
     },
     "javascript": {
       "name": "textWarningForeground",
-      "value": "#CF6C00"
+      "value": "#B36200"
     },
     "foundation": {
       "name": "textWarningForeground",
@@ -6336,7 +6336,7 @@
     },
     "scss": {
       "name": "textWarningForeground",
-      "value": "rgb(207, 108, 0)"
+      "value": "rgb(179, 98, 0)"
     }
   },
   "textCriticalBackground": {
@@ -7659,7 +7659,7 @@
     },
     "javascript": {
       "name": "paletteGreenNormal",
-      "value": "#0A932B"
+      "value": "#058A25"
     },
     "foundation": {
       "name": "paletteGreenNormal",
@@ -7667,7 +7667,7 @@
     },
     "scss": {
       "name": "paletteGreenNormal",
-      "value": "rgb(10, 147, 43)"
+      "value": "rgb(5, 138, 37)"
     }
   },
   "paletteGreenNormalHover": {
@@ -7682,7 +7682,7 @@
     },
     "javascript": {
       "name": "paletteGreenNormalHover",
-      "value": "#238B31"
+      "value": "#047620"
     },
     "foundation": {
       "name": "paletteGreenNormalHover",
@@ -7690,7 +7690,7 @@
     },
     "scss": {
       "name": "paletteGreenNormalHover",
-      "value": "rgb(35, 139, 49)"
+      "value": "rgb(4, 118, 32)"
     }
   },
   "paletteGreenNormalActive": {
@@ -7705,7 +7705,7 @@
     },
     "javascript": {
       "name": "paletteGreenNormalActive",
-      "value": "#1D7228"
+      "value": "#03631B"
     },
     "foundation": {
       "name": "paletteGreenNormalActive",
@@ -7713,7 +7713,7 @@
     },
     "scss": {
       "name": "paletteGreenNormalActive",
-      "value": "rgb(29, 114, 40)"
+      "value": "rgb(3, 99, 27)"
     }
   },
   "paletteGreenDark": {
@@ -7728,7 +7728,7 @@
     },
     "javascript": {
       "name": "paletteGreenDark",
-      "value": "#2D7738"
+      "value": "#296B33"
     },
     "foundation": {
       "name": "paletteGreenDark",
@@ -7736,7 +7736,7 @@
     },
     "scss": {
       "name": "paletteGreenDark",
-      "value": "rgb(45, 119, 56)"
+      "value": "rgb(41, 107, 51)"
     }
   },
   "paletteGreenDarkHover": {
@@ -7751,7 +7751,7 @@
     },
     "javascript": {
       "name": "paletteGreenDarkHover",
-      "value": "#276831"
+      "value": "#21592A"
     },
     "foundation": {
       "name": "paletteGreenDarkHover",
@@ -7759,7 +7759,7 @@
     },
     "scss": {
       "name": "paletteGreenDarkHover",
-      "value": "rgb(39, 104, 49)"
+      "value": "rgb(33, 89, 42)"
     }
   },
   "paletteGreenDarkActive": {
@@ -7774,7 +7774,7 @@
     },
     "javascript": {
       "name": "paletteGreenDarkActive",
-      "value": "#1F5126"
+      "value": "#1C4A23"
     },
     "foundation": {
       "name": "paletteGreenDarkActive",
@@ -7782,7 +7782,7 @@
     },
     "scss": {
       "name": "paletteGreenDarkActive",
-      "value": "rgb(31, 81, 38)"
+      "value": "rgb(28, 74, 35)"
     }
   },
   "paletteGreenDarker": {
@@ -7797,7 +7797,7 @@
     },
     "javascript": {
       "name": "paletteGreenDarker",
-      "value": "#1C4A23"
+      "value": "#163B1C"
     },
     "foundation": {
       "name": "paletteGreenDarker",
@@ -7805,7 +7805,7 @@
     },
     "scss": {
       "name": "paletteGreenDarker",
-      "value": "rgb(28, 74, 35)"
+      "value": "rgb(22, 59, 28)"
     }
   },
   "paletteInkDark": {
@@ -7889,7 +7889,7 @@
     },
     "javascript": {
       "name": "paletteInkLight",
-      "value": "#697D95"
+      "value": "#657890"
     },
     "foundation": {
       "name": "paletteInkLight",
@@ -7897,7 +7897,7 @@
     },
     "scss": {
       "name": "paletteInkLight",
-      "value": "rgb(105, 125, 149)"
+      "value": "rgb(101, 120, 144)"
     }
   },
   "paletteInkLightHover": {
@@ -7912,7 +7912,7 @@
     },
     "javascript": {
       "name": "paletteInkLightHover",
-      "value": "#5D738E"
+      "value": "#58697E"
     },
     "foundation": {
       "name": "paletteInkLightHover",
@@ -7920,7 +7920,7 @@
     },
     "scss": {
       "name": "paletteInkLightHover",
-      "value": "rgb(93, 115, 142)"
+      "value": "rgb(88, 105, 126)"
     }
   },
   "paletteInkLightActive": {
@@ -7935,7 +7935,7 @@
     },
     "javascript": {
       "name": "paletteInkLightActive",
-      "value": "#4A617C"
+      "value": "#4E5C6F"
     },
     "foundation": {
       "name": "paletteInkLightActive",
@@ -7943,7 +7943,7 @@
     },
     "scss": {
       "name": "paletteInkLightActive",
-      "value": "rgb(74, 97, 124)"
+      "value": "rgb(78, 92, 111)"
     }
   },
   "paletteInkNormal": {
@@ -8096,7 +8096,7 @@
     },
     "javascript": {
       "name": "paletteOrangeNormal",
-      "value": "#CF6C00"
+      "value": "#B36200"
     },
     "foundation": {
       "name": "paletteOrangeNormal",
@@ -8104,7 +8104,7 @@
     },
     "scss": {
       "name": "paletteOrangeNormal",
-      "value": "rgb(207, 108, 0)"
+      "value": "rgb(179, 98, 0)"
     }
   },
   "paletteOrangeNormalHover": {
@@ -8119,7 +8119,7 @@
     },
     "javascript": {
       "name": "paletteOrangeNormalHover",
-      "value": "#B86000"
+      "value": "#995400"
     },
     "foundation": {
       "name": "paletteOrangeNormalHover",
@@ -8127,7 +8127,7 @@
     },
     "scss": {
       "name": "paletteOrangeNormalHover",
-      "value": "rgb(184, 96, 0)"
+      "value": "rgb(153, 84, 0)"
     }
   },
   "paletteOrangeNormalActive": {
@@ -8142,7 +8142,7 @@
     },
     "javascript": {
       "name": "paletteOrangeNormalActive",
-      "value": "#AD5700"
+      "value": "#804600"
     },
     "foundation": {
       "name": "paletteOrangeNormalActive",
@@ -8150,7 +8150,7 @@
     },
     "scss": {
       "name": "paletteOrangeNormalActive",
-      "value": "rgb(173, 87, 0)"
+      "value": "rgb(128, 70, 0)"
     }
   },
   "paletteOrangeDark": {
@@ -8165,7 +8165,7 @@
     },
     "javascript": {
       "name": "paletteOrangeDark",
-      "value": "#A75400"
+      "value": "#8A4500"
     },
     "foundation": {
       "name": "paletteOrangeDark",
@@ -8173,7 +8173,7 @@
     },
     "scss": {
       "name": "paletteOrangeDark",
-      "value": "rgb(167, 84, 0)"
+      "value": "rgb(138, 69, 0)"
     }
   },
   "paletteOrangeDarkHover": {
@@ -8188,7 +8188,7 @@
     },
     "javascript": {
       "name": "paletteOrangeDarkHover",
-      "value": "#954A00"
+      "value": "#703800"
     },
     "foundation": {
       "name": "paletteOrangeDarkHover",
@@ -8196,7 +8196,7 @@
     },
     "scss": {
       "name": "paletteOrangeDarkHover",
-      "value": "rgb(149, 74, 0)"
+      "value": "rgb(112, 56, 0)"
     }
   },
   "paletteOrangeDarkActive": {
@@ -8211,7 +8211,7 @@
     },
     "javascript": {
       "name": "paletteOrangeDarkActive",
-      "value": "#803F00"
+      "value": "#572C00"
     },
     "foundation": {
       "name": "paletteOrangeDarkActive",
@@ -8219,7 +8219,7 @@
     },
     "scss": {
       "name": "paletteOrangeDarkActive",
-      "value": "rgb(128, 63, 0)"
+      "value": "rgb(87, 44, 0)"
     }
   },
   "paletteOrangeDarker": {
@@ -8234,7 +8234,7 @@
     },
     "javascript": {
       "name": "paletteOrangeDarker",
-      "value": "#663200"
+      "value": "#4D2600"
     },
     "foundation": {
       "name": "paletteOrangeDarker",
@@ -8242,7 +8242,7 @@
     },
     "scss": {
       "name": "paletteOrangeDarker",
-      "value": "rgb(102, 50, 0)"
+      "value": "rgb(77, 38, 0)"
     }
   },
   "paletteProductLight": {
@@ -8326,7 +8326,7 @@
     },
     "javascript": {
       "name": "paletteProductNormal",
-      "value": "#00A58E"
+      "value": "#008F7B"
     },
     "foundation": {
       "name": "paletteProductNormal",
@@ -8334,7 +8334,7 @@
     },
     "scss": {
       "name": "paletteProductNormal",
-      "value": "rgb(0, 165, 142)"
+      "value": "rgb(0, 143, 123)"
     }
   },
   "paletteProductNormalHover": {
@@ -8349,7 +8349,7 @@
     },
     "javascript": {
       "name": "paletteProductNormalHover",
-      "value": "#009580"
+      "value": "#007565"
     },
     "foundation": {
       "name": "paletteProductNormalHover",
@@ -8357,7 +8357,7 @@
     },
     "scss": {
       "name": "paletteProductNormalHover",
-      "value": "rgb(0, 149, 128)"
+      "value": "rgb(0, 117, 101)"
     }
   },
   "paletteProductNormalActive": {
@@ -8372,7 +8372,7 @@
     },
     "javascript": {
       "name": "paletteProductNormalActive",
-      "value": "#008472"
+      "value": "#006153"
     },
     "foundation": {
       "name": "paletteProductNormalActive",
@@ -8380,7 +8380,7 @@
     },
     "scss": {
       "name": "paletteProductNormalActive",
-      "value": "rgb(0, 132, 114)"
+      "value": "rgb(0, 97, 83)"
     }
   },
   "paletteProductDark": {
@@ -8395,7 +8395,7 @@
     },
     "javascript": {
       "name": "paletteProductDark",
-      "value": "#007A69"
+      "value": "#007061"
     },
     "foundation": {
       "name": "paletteProductDark",
@@ -8403,7 +8403,7 @@
     },
     "scss": {
       "name": "paletteProductDark",
-      "value": "rgb(0, 122, 105)"
+      "value": "rgb(0, 112, 97)"
     }
   },
   "paletteProductDarkHover": {
@@ -8418,7 +8418,7 @@
     },
     "javascript": {
       "name": "paletteProductDarkHover",
-      "value": "#007060"
+      "value": "#005C4F"
     },
     "foundation": {
       "name": "paletteProductDarkHover",
@@ -8426,7 +8426,7 @@
     },
     "scss": {
       "name": "paletteProductDarkHover",
-      "value": "rgb(0, 112, 96)"
+      "value": "rgb(0, 92, 79)"
     }
   },
   "paletteProductDarkActive": {
@@ -8441,7 +8441,7 @@
     },
     "javascript": {
       "name": "paletteProductDarkActive",
-      "value": "#006657"
+      "value": "#004239"
     },
     "foundation": {
       "name": "paletteProductDarkActive",
@@ -8449,7 +8449,7 @@
     },
     "scss": {
       "name": "paletteProductDarkActive",
-      "value": "rgb(0, 102, 87)"
+      "value": "rgb(0, 66, 57)"
     }
   },
   "paletteProductDarker": {
@@ -8464,7 +8464,7 @@
     },
     "javascript": {
       "name": "paletteProductDarker",
-      "value": "#004D41"
+      "value": "#003D35"
     },
     "foundation": {
       "name": "paletteProductDarker",
@@ -8472,7 +8472,7 @@
     },
     "scss": {
       "name": "paletteProductDarker",
-      "value": "rgb(0, 77, 65)"
+      "value": "rgb(0, 61, 53)"
     }
   },
   "paletteRedLight": {

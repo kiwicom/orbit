@@ -3,9 +3,9 @@
 
 import type {
   ButtonCommonProps,
-  Size,
   DownloadWithHrefConditionalProps,
   FullWidthConditionalProps,
+  Size,
 } from "../primitives/ButtonPrimitive/types";
 
 export type Type =
@@ -20,8 +20,9 @@ export type Type =
   | "bundleTop";
 
 export type ButtonStates = "default" | "hover" | "active" | "focus";
+type OmittedButtonCommonProps = Omit<ButtonCommonProps, "className">;
 
-interface ButtonProps extends ButtonCommonProps {
+interface ButtonProps extends OmittedButtonCommonProps {
   readonly type?: Type;
   readonly size?: Size;
 }

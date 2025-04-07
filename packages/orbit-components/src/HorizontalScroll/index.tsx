@@ -70,11 +70,11 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
     },
     ref,
   ) => {
-    const scrollWrapperRef = React.useRef<HTMLDivElement>(null);
+    const scrollWrapperRef = React.useRef<HTMLDivElement | null>(null);
     const [isOverflowing, setOverflowing] = React.useState(false);
     const [reachedStart, setReachedStart] = React.useState(true);
     const [reachedEnd, setReachedEnd] = React.useState(false);
-    const containerRef = React.useRef<HTMLDivElement>(null);
+    const containerRef = React.useRef<HTMLDivElement | null>(null);
     const { isDragging } = useScrollBox(scrollWrapperRef);
     const theme = useTheme();
     const scrollEl = scrollWrapperRef.current;

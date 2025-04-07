@@ -9,6 +9,6 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly shown: boolean;
   readonly help?: React.ReactNode;
   readonly inlineLabel?: boolean;
-  readonly referenceElement?: React.RefObject<HTMLElement>;
+  readonly referenceElement?: React.RefObject<HTMLElement | null>;
   readonly onShown: React.Dispatch<React.SetStateAction<boolean>>;
 }

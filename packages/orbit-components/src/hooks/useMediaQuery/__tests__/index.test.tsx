@@ -1,6 +1,5 @@
 import * as React from "react";
 import { render, act } from "@testing-library/react";
-import { renderToString } from "react-dom/server";
 import MatchMediaMock from "jest-matchmedia-mock";
 
 import OrbitProvider from "../../../OrbitProvider";
@@ -49,9 +48,7 @@ describe("useMediaQuery", () => {
       );
     }
 
-    const container = document.createElement("div");
-    document.body?.appendChild(container);
-    container.innerHTML = renderToString(<App />);
+    render(<App />);
 
     expect(result).toMatchInlineSnapshot(`
       Array [
@@ -75,7 +72,7 @@ describe("useMediaQuery", () => {
 
     matchMedia.useMediaQuery(mediumMobileQuery);
 
-    const { unmount } = render(<App />, { container, hydrate: true });
+    const { unmount } = render(<App />);
 
     expect(result).toMatchInlineSnapshot(`
       Array [

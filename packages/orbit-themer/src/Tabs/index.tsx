@@ -7,7 +7,7 @@ import ColorTab from "./ColorTab";
 import ColorContext from "../ColorContext";
 import ModalExport from "./ModalExport";
 
-const StyledTabs = styled.div`
+const StyledTabs = styled.div<{ theme: typeof defaultTheme }>`
   ${({ theme }) => css`
     padding: ${theme.orbit.space800} 0;
     padding-right: ${theme.orbit.space400};
@@ -18,10 +18,6 @@ const StyledTabs = styled.div`
     position: relative;
   `}
 `;
-
-StyledTabs.defaultProps = {
-  theme: defaultTheme,
-};
 
 const ColorsPanel = styled.div``;
 

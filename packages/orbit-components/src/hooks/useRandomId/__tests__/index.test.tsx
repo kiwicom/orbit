@@ -1,5 +1,4 @@
 import * as React from "react";
-import { renderToString } from "react-dom/server";
 import MatchMediaMock from "jest-matchmedia-mock";
 
 import { render } from "../../../test-utils";
@@ -31,7 +30,7 @@ describe("useRandomId", () => {
     const consoleSpy = jest.spyOn(console, "warn").mockImplementation(() => {});
     const container = document.createElement("div");
 
-    container.innerHTML = renderToString(
+    render(
       <OrbitProvider theme={{ ...theme }} useId={React.useId}>
         <Component />
       </OrbitProvider>,
@@ -43,7 +42,7 @@ describe("useRandomId", () => {
       <OrbitProvider theme={{ ...theme }} useId={React.useId}>
         <Component />
       </OrbitProvider>,
-      { container, hydrate: true },
+      { container, hydrate: false },
     );
 
     expect(consoleSpy).not.toHaveBeenCalled();

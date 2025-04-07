@@ -18,7 +18,7 @@ function useEventListener<
 >(
   eventName: K,
   handler: (event: HTMLElementEventMap[K]) => void,
-  element: RefObject<T>,
+  element: RefObject<T | null>,
   options?: boolean | AddEventListenerOptions,
 ): void;
 
@@ -26,7 +26,7 @@ function useEventListener<
 function useEventListener<K extends keyof DocumentEventMap>(
   eventName: K,
   handler: (event: DocumentEventMap[K]) => void,
-  element: RefObject<Document>,
+  element: RefObject<Document | null>,
   options?: boolean | AddEventListenerOptions,
 ): void;
 
@@ -37,7 +37,7 @@ function useEventListener<
 >(
   eventName: KW | KH,
   handler: (event: WindowEventMap[KW] | HTMLElementEventMap[KH] | Event) => void,
-  element?: RefObject<T>,
+  element?: RefObject<T | null>,
   options?: boolean | AddEventListenerOptions,
 ): void {
   // Create a ref that stores handler

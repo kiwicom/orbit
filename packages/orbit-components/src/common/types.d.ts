@@ -14,10 +14,7 @@ export type Callback = () => void | Promise<void>;
 // Parameter event is not optional
 // @see https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#optional-parameters-in-callbacks
 export type Event<T> = (event: T) => void | Promise<void>;
-export type Component =
-  | string
-  | React.ComponentType<any>
-  | React.ForwardRefRenderFunction<HTMLElement, any>;
+export type Component = string | React.ComponentType<any> | React.ElementType;
 export type Size = "small" | "normal" | "large" | "extraLarge";
 export type InputSize = "small" | "normal";
 

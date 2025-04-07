@@ -91,7 +91,7 @@ const Loading = ({
   id,
   ariaHidden,
 }: Props) => {
-  const Element = text ? "div" : asComponent;
+  const Element = (text ? "div" : asComponent) as React.ElementType;
 
   return (
     <>

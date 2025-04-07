@@ -170,7 +170,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                 "shrink grow basis-1/5",
                 "size-full",
                 "border-0",
-                customValueText && "!text-transparent",
+                Boolean(customValueText) && "!text-transparent",
                 "duration-fast transition-shadow ease-in-out",
                 "rounded-150 tb:rounded-100",
                 "[&>option]:text-form-element-filled-foreground",

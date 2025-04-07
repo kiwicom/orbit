@@ -134,7 +134,7 @@ const Alert = (props: Props) => {
         "rounded-150 text-ink-dark font-base text-normal p-300 relative box-border flex w-full border border-t-[3px] leading-normal",
         "lm:border-s-[3px] lm:border-t",
         "tb:rounded-100",
-        inlineActions && "items-center",
+        Boolean(inlineActions) && "items-center",
         suppressed ? "bg-cloud-light border-cloud-normal lm:border-t-cloud-normal" : COLORS[type],
         ACCENT_BORDER[type],
         spaceAfter && spaceAfterClasses[spaceAfter],
@@ -146,7 +146,7 @@ const Alert = (props: Props) => {
         <div
           className={cx(
             "me-200 m-0 shrink-0 leading-none",
-            inlineActions && "lm:mt-150 flex items-center self-baseline",
+            Boolean(inlineActions) && "lm:mt-150 flex items-center self-baseline",
             ICON_COLOR[type],
             "tb:me-200 tb:[&_svg]:size-icon-medium",
           )}
@@ -159,7 +159,7 @@ const Alert = (props: Props) => {
           "flex flex-1",
           title && inlineActions ? "flex-row" : "flex-col",
           !title && "items-center",
-          inlineActions && "justify-between",
+          Boolean(inlineActions) && "justify-between",
         )}
       >
         {title && (
@@ -167,7 +167,7 @@ const Alert = (props: Props) => {
             className={cx(
               "text-ink-dark min-h-icon-medium flex items-center font-bold",
               !!children && (inlineActions ? "mb-0" : "mb-100"),
-              inlineActions && "grow basis-0",
+              Boolean(inlineActions) && "grow basis-0",
             )}
           >
             {title}

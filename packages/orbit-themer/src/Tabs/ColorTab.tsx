@@ -9,11 +9,15 @@ import { DEFAULT_COLORS } from "../consts";
 import ColorContext from "../ColorContext";
 import { isDeepEqual, get } from "../helpers";
 
-const StyledColorTab = styled.div`
-  font-size: 14px;
-`;
+interface StyledProps extends React.PropsWithChildren {
+  opened?: boolean;
+  theme: typeof defaultTheme;
+  onClick?: () => void;
+}
 
-const StyledColorTabHeader = styled.div<{ opened?: boolean }>`
+const StyledColorTab = styled.div``;
+
+const StyledColorTabHeader = styled.div<StyledProps>`
   ${({ opened, theme }) => css`
     cursor: pointer;
     padding: 14px 12px;
@@ -27,11 +31,7 @@ const StyledColorTabHeader = styled.div<{ opened?: boolean }>`
   `}
 `;
 
-StyledColorTabHeader.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledColorTabIcon = styled.div`
+const StyledColorTabIcon = styled.div<{ theme: typeof defaultTheme }>`
   position: absolute;
   top: 50%;
   margin-top: -8px;
@@ -39,11 +39,7 @@ const StyledColorTabIcon = styled.div`
   color: ${({ theme }) => theme.orbit.paletteCloudDark};
 `;
 
-StyledColorTabIcon.defaultProps = {
-  theme: defaultTheme,
-};
-
-const StyledColorTabChildren = styled.div<{ opened?: boolean }>`
+const StyledColorTabChildren = styled.div<StyledProps>`
   ${({ opened, theme }) => css`
     max-height: ${opened ? 100 : 0};
     overflow: hidden;
@@ -52,10 +48,6 @@ const StyledColorTabChildren = styled.div<{ opened?: boolean }>`
     margin-top: -6px;
   `}
 `;
-
-StyledColorTabChildren.defaultProps = {
-  theme: defaultTheme,
-};
 
 const StyledAdjusted = styled.div`
   position: absolute;

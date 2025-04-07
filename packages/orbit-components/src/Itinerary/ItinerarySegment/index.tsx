@@ -20,7 +20,7 @@ const ItinerarySegment = ({
   onExpand,
   onCollapse,
 }: Props) => {
-  const content = React.Children.toArray(children) as React.ReactElement[];
+  const content = React.Children.toArray(children) as React.ReactElement<{ hidden?: boolean }>[];
 
   const [opened, setOpened] = React.useState(false);
 
@@ -46,7 +46,7 @@ const ItinerarySegment = ({
       onKeyDown={handleKeyDown(() => setOpened(prev => !prev))}
     >
       {React.Children.map(children, (el, i) => {
-        if (!React.isValidElement(el)) return null;
+        if (!React.isValidElement<{ hidden?: boolean }>(el)) return null;
 
         return (
           <ItinerarySegmentProvider

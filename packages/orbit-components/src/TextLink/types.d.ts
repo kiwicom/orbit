@@ -10,7 +10,7 @@ export type Type = "primary" | "secondary" | "info" | "success" | "warning" | "c
 
 interface BaseProps extends Common.Globals {
   readonly ariaCurrent?: string;
-  readonly asComponent?: Common.Component;
+  readonly asComponent?: React.ElementType;
   readonly children: React.ReactNode;
   readonly external?: boolean;
   readonly href?: string;

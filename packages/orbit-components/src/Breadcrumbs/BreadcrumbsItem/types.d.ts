@@ -7,7 +7,7 @@ import type * as Common from "../../common/types";
 
 export interface Props extends Common.Globals {
   readonly active?: boolean;
-  readonly component?: Common.Component;
+  readonly component?: React.ElementType;
   readonly children: React.ReactNode;
   readonly href?: string;
   readonly id?: string;

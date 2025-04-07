@@ -24,7 +24,7 @@ export type DownloadWithHrefConditionalProps =
   | { readonly href?: undefined; readonly download?: never };
 
 export interface ButtonCommonProps extends Common.Globals, Common.SpaceAfter {
-  readonly asComponent?: Common.Component;
+  readonly asComponent?: React.ElementType;
   readonly ariaControls?: string;
   readonly ariaCurrent?: string;
   readonly ariaExpanded?: boolean;

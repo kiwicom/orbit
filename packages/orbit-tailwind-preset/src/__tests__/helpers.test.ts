@@ -52,11 +52,11 @@ describe("orbit-tailwind-preset", () => {
         "button-link-critical-background": "transparent",
         "button-link-primary-background": "transparent",
         "button-link-secondary-background": "transparent",
-        "button-primary-background": "#00A58E",
+        "button-primary-background": "#008F7B",
         "button-primary-subtle-background": "#E1F4F3",
         "button-secondary-background": "#E8EDF1",
-        "button-success-background": "#0A932B",
-        "button-warning-background": "#CF6C00",
+        "button-success-background": "#058A25",
+        "button-warning-background": "#B36200",
         "button-white-background": "#FFFFFF",
       }
     `);
@@ -69,11 +69,11 @@ describe("orbit-tailwind-preset", () => {
         "button-link-critical-background-hover": "#F8E2E2",
         "button-link-primary-background-hover": "#D6F0EC",
         "button-link-secondary-background-hover": "#E5EAEF",
-        "button-primary-background-hover": "#009580",
+        "button-primary-background-hover": "#007565",
         "button-primary-subtle-background-hover": "#D6F0EC",
         "button-secondary-background-hover": "#DCE3E9",
-        "button-success-background-hover": "#238B31",
-        "button-warning-background-hover": "#B86000",
+        "button-success-background-hover": "#047620",
+        "button-warning-background-hover": "#995400",
         "button-white-background-hover": "#F5F7F9",
       }
     `);

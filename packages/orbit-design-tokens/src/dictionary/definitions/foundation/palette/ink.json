@@ -18,17 +18,17 @@
           "type": "color"
         },
         "light": {
-          "value": "#697D95",
+          "value": "#657890",
           "internal": true,
           "type": "color"
         },
         "light-active": {
-          "value": "#4A617C",
+          "value": "#4E5C6F",
           "internal": true,
           "type": "color"
         },
         "light-hover": {
-          "value": "#5D738E",
+          "value": "#58697E",
           "internal": true,
           "type": "color"
         },

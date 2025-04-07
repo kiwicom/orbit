@@ -3,22 +3,22 @@
     "palette": {
       "green": {
         "dark": {
-          "value": "#2D7738",
+          "value": "#296B33",
           "internal": true,
           "type": "color"
         },
         "dark-active": {
-          "value": "#1F5126",
+          "value": "#1C4A23",
           "internal": true,
           "type": "color"
         },
         "dark-hover": {
-          "value": "#276831",
+          "value": "#21592A",
           "internal": true,
           "type": "color"
         },
         "darker": {
-          "value": "#1C4A23",
+          "value": "#163B1C",
           "internal": true,
           "type": "color"
         },
@@ -38,17 +38,17 @@
           "type": "color"
         },
         "normal": {
-          "value": "#0A932B",
+          "value": "#058A25",
           "internal": true,
           "type": "color"
         },
         "normal-active": {
-          "value": "#1D7228",
+          "value": "#03631B",
           "internal": true,
           "type": "color"
         },
         "normal-hover": {
-          "value": "#238B31",
+          "value": "#047620",
           "internal": true,
           "type": "color"
         }

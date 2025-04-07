@@ -3,22 +3,22 @@
     "palette": {
       "product": {
         "dark": {
-          "value": "#007A69",
+          "value": "#007061",
           "internal": true,
           "type": "color"
         },
         "dark-active": {
-          "value": "#006657",
+          "value": "#004239",
           "internal": true,
           "type": "color"
         },
         "dark-hover": {
-          "value": "#007060",
+          "value": "#005C4F",
           "internal": true,
           "type": "color"
         },
         "darker": {
-          "value": "#004D41",
+          "value": "#003D35",
           "internal": true,
           "type": "color"
         },
@@ -38,17 +38,17 @@
           "type": "color"
         },
         "normal": {
-          "value": "#00A58E",
+          "value": "#008F7B",
           "internal": true,
           "type": "color"
         },
         "normal-active": {
-          "value": "#008472",
+          "value": "#006153",
           "internal": true,
           "type": "color"
         },
         "normal-hover": {
-          "value": "#009580",
+          "value": "#007565",
           "internal": true,
           "type": "color"
         }

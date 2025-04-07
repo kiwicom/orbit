@@ -348,6 +348,12 @@ export default function orbitTailwindPreset(options?: Options): Config {
             defaultTokens.buttonPrimaryBackgroundActive,
           ),
         },
+        spacing: {
+          "safe-top": "var(--safe-area-inset-top, env(safe-area-inset-top))",
+          "safe-right": "var(--safe-area-inset-right, env(safe-area-inset-right))",
+          "safe-bottom": "var(--safe-area-inset-bottom, env(safe-area-inset-bottom))",
+          "safe-left": "var(--safe-area-inset-left, env(safe-area-inset-left))",
+        },
       },
     },
     plugins: [

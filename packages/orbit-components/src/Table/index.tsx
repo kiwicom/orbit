@@ -18,8 +18,8 @@ const Table = ({
   const [right, setRight] = React.useState(false);
   const [left, setLeft] = React.useState(false);
 
-  const outer = React.useRef<HTMLDivElement>(null);
-  const inner = React.useRef<HTMLDivElement>(null);
+  const outer = React.useRef<HTMLDivElement | null>(null);
+  const inner = React.useRef<HTMLDivElement | null>(null);
   const table = React.useRef<HTMLTableElement>(null);
 
   const handleScroll = () => {

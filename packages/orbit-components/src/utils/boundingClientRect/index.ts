@@ -13,7 +13,7 @@ export interface Dimensions {
   pureBottom: number;
 }
 
-const boundingClientRect = (ref: React.RefObject<HTMLElement>): Dimensions => {
+const boundingClientRect = (ref: React.RefObject<HTMLElement | null>): Dimensions => {
   if (
     ref &&
     ref.current &&

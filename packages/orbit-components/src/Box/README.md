@@ -150,6 +150,7 @@ All this properties - objects have the some own properties and none is required.
 | `"level3"`        |
 | `"level3Reverse"` |
 | `"level4"`        |
+| `"navBar"`        |
 
 ### spacingObject
 

@@ -275,5 +275,6 @@ describe("#Box", () => {
     expect(testEl(4)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel3BoxShadow });
     expect(testEl(5)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel3ReverseBoxShadow });
     expect(testEl(6)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationLevel4BoxShadow });
+    expect(testEl(7)).toHaveStyle({ "--tw-shadow": theme.orbit.elevationNavBarBoxShadow });
   });
 });

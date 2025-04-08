@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Link } from "gatsby";
 
-const StyledList = styled.ul`
+const StyledList = styled.ul<{ role: string } & React.PropsWithChildren>`
   ${({ theme }) => css`
     display: flex;
     flex-wrap: wrap;
@@ -11,7 +11,7 @@ const StyledList = styled.ul`
   `}
 `;
 
-const StyledListItem = styled.li<{ current: boolean }>`
+const StyledListItem = styled.li<{ current: boolean } & React.PropsWithChildren>`
   ${({ theme, current }) => css`
     a,
     span {

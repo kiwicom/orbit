@@ -10,13 +10,13 @@ import orbitHeart from "../images/orbit-heart.png";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 import useDevMode from "../hooks/useDevMode";
 
-const StyledContainer = styled.div<{ color: string }>`
+const StyledContainer = styled.div<{ color: string } & React.PropsWithChildren>`
   ${({ theme, color }) => `
     background: ${theme.orbit[color]};
   `};
 `;
 
-const StyledInner = styled.div<{ thick?: boolean }>`
+const StyledInner = styled.div<{ thick?: boolean } & React.PropsWithChildren>`
   ${({ theme, thick }) => `
     overflow: hidden;
     box-sizing: content-box;
@@ -29,7 +29,7 @@ const StyledInner = styled.div<{ thick?: boolean }>`
 const StyledIconLink = styled.a.attrs(() => ({
   target: "_blank",
   rel: "noopener noreferrer",
-}))`
+}))<{ href: string } & React.PropsWithChildren>`
   ${({ theme }) => css`
     display: block;
     padding: ${theme.orbit.space200};
@@ -49,7 +49,7 @@ const StyledIconLink = styled.a.attrs(() => ({
   `}
 `;
 
-const StyledFooterLink = styled(Link)`
+const StyledFooterLink = styled(Link)<React.PropsWithChildren>`
   ${({ theme }) => css`
     display: block;
     padding: ${theme.orbit.space400} 0;

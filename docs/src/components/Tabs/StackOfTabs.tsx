@@ -8,7 +8,7 @@ type ThemeShape = React.ComponentProps<typeof OrbitProvider>["theme"];
 
 export const getStackOffset = (theme: ThemeShape) => theme.orbit.space400;
 
-export const StyledWrapper = styled.button.attrs({ type: "button" })`
+export const StyledWrapper = styled.button.attrs({ type: "button" })<React.PropsWithChildren>`
   ${({ theme }) => css`
     position: relative;
     display: block;

@@ -53,7 +53,11 @@ interface StyledProps extends Partial<Props> {
   $height: number | string;
 }
 
-export const StyledFrame = styled.iframe<Partial<StyledProps>>`
+export const StyledFrame = styled.iframe<
+  Partial<StyledProps> &
+    React.IframeHTMLAttributes<HTMLIFrameElement> &
+    React.RefAttributes<HTMLIFrameElement>
+>`
   ${({ background, isFullScreen, $height }) => css`
     width: 100%;
     min-height: 120px;

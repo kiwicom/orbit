@@ -23,10 +23,12 @@ const StyledViewports = styled.div`
   `}
 `;
 
-const StyledCell = styled.button.attrs({ type: "button" })<{
-  $active: boolean;
-  $width: number | string;
-}>`
+const StyledCell = styled.button.attrs({ type: "button" })<
+  {
+    $active: boolean;
+    $width: number | string;
+  } & React.ButtonHTMLAttributes<HTMLButtonElement>
+>`
   ${({ theme, $active, $width }) => css`
     position: absolute;
     margin-left: auto;

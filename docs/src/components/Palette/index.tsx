@@ -9,7 +9,9 @@ import ColorContainer from "./ColorContainer";
 
 export type tokenString = keyof typeof defaultTokens;
 
-const Grid = styled.div<{ isTablet?: boolean | null; hasAdditional: boolean }>`
+const Grid = styled.div<
+  { isTablet?: boolean | null; hasAdditional: boolean } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ isTablet, hasAdditional }) => css`
     display: grid;
     grid-auto-flow: row dense;

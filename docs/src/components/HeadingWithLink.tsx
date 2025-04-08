@@ -8,7 +8,9 @@ import { getTextFromChildren, slugify } from "../utils/common";
 
 const StyledLinkIcon = styled.div``;
 
-export const StyledAnchor = styled.a<{ $level: number }>`
+export const StyledAnchor = styled.a<
+  { $level: number; id: string; title: string } & React.AnchorHTMLAttributes<HTMLAnchorElement>
+>`
   ${({ theme, $level }) => css`
     display: block;
     ${StyledLinkIcon} svg {
@@ -48,7 +50,6 @@ interface Props extends Common.SpaceAfter {
 const HeadingWithLink = ({ level, children, noId, spaceAfter = "none" }: Props) => {
   const headingText = getTextFromChildren(children);
   const slug = slugify(headingText);
-
   return (
     <StyledAnchor
       $level={level}

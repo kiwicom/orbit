@@ -6,7 +6,11 @@ import { Check } from "@kiwicom/orbit-components/icons";
 import CopyIcon from "../../../images/icons/CopyIcon.svg";
 import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
 
-const StyledCopyButton = styled.button<{ $isCopied: boolean }>`
+const StyledCopyButton = styled.button<
+  {
+    $isCopied: boolean;
+  } & React.ButtonHTMLAttributes<HTMLButtonElement>
+>`
   ${({ $isCopied }) => css`
     height: 24px;
     width: 24px;
@@ -17,7 +21,7 @@ const StyledCopyButton = styled.button<{ $isCopied: boolean }>`
   `}
 `;
 
-const StyledTokenValue = styled.span`
+const StyledTokenValue = styled.span<React.HTMLAttributes<HTMLSpanElement>>`
   display: inline-flex;
   align-items: center;
 
@@ -28,7 +32,9 @@ const StyledTokenValue = styled.span`
   }
 `;
 
-const StyledStrikeThrough = styled.span<{ $hasStrikeThrough?: boolean }>`
+const StyledStrikeThrough = styled.span<
+  { $hasStrikeThrough?: boolean } & React.HTMLAttributes<HTMLSpanElement>
+>`
   ${({ $hasStrikeThrough }) => css`
     ${$hasStrikeThrough && "text-decoration: line-through"};
     opacity: 0.5;

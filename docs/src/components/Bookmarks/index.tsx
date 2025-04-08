@@ -42,7 +42,7 @@ const tileMixin = css`
   `}
 `;
 
-const StyledTile = styled.div`
+const StyledTile = styled.div<React.HTMLAttributes<HTMLDivElement>>`
   ${tileMixin};
 `;
 

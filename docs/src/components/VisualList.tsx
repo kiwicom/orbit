@@ -27,14 +27,16 @@ interface StyledRatioContainerProps {
   smallVisual?: boolean;
 }
 
-const StyledRatioContainer = styled.div<StyledRatioContainerProps>`
+const StyledRatioContainer = styled.div<
+  StyledRatioContainerProps & React.HTMLAttributes<HTMLDivElement>
+>`
   position: relative;
   padding-bottom: calc(
     400 / 677 * ${({ smallVisual }) => (smallVisual ? "25" : "100")}%
   ); /* height / width = ratio */
 `;
 
-const StyledImage = styled.img`
+const StyledImage = styled.img<React.ImgHTMLAttributes<HTMLImageElement>>`
   position: absolute;
   width: 100%;
   height: 100%;

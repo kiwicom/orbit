@@ -31,7 +31,7 @@ interface ImageContainerProps extends GuidelineType {
   middleAlign?: boolean;
 }
 
-const StyledComponent = styled.div<GuidelineComponent>`
+const StyledComponent = styled.div<GuidelineComponent & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme }) => css`
     background: ${theme.orbit.paletteCloudLight};
     border-radius: ${theme.orbit.borderRadius100};
@@ -49,7 +49,7 @@ const StyledComponent = styled.div<GuidelineComponent>`
   `}
 `;
 
-const StyledImageContainer = styled.div<ImageContainerProps>`
+const StyledImageContainer = styled.div<ImageContainerProps & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme, type }) => css`
     background: ${theme.orbit.paletteWhite};
     border-radius: ${theme.orbit.borderRadius100};

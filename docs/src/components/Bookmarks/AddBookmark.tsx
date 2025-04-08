@@ -8,7 +8,7 @@ import { useBookmarks } from "../../services/bookmarks";
 const StyledButton = styled.button.attrs(() => ({
   "aria-label": "bookmark",
   type: "button",
-}))<{ $filled: boolean }>`
+}))<{ $filled: boolean } & React.ButtonHTMLAttributes<HTMLButtonElement>>`
   ${({ theme, $filled }) => css`
     display: flex;
     align-items: center;

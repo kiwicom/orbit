@@ -6,7 +6,7 @@ interface MasonryItemObject {
   gap?: number;
 }
 
-const MasonryItem = styled.div<MasonryItemObject>`
+const MasonryItem = styled.div<MasonryItemObject & React.HTMLAttributes<HTMLDivElement>>`
   margin-bottom: ${({ gap }) => gap}px;
 `;
 
@@ -14,7 +14,7 @@ interface MasonryColumnObject extends MasonryItemObject {
   columnNumber: number;
 }
 
-const MasonryColumn = styled.div<MasonryColumnObject>`
+const MasonryColumn = styled.div<MasonryColumnObject & React.HTMLAttributes<HTMLDivElement>>`
   margin-left: ${({ columnNumber, gap }) => (columnNumber > 0 ? gap : 0)}px;
   flex: 1;
 `;

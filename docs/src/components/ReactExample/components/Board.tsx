@@ -18,7 +18,9 @@ import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
 import { BgType } from "..";
 import { Variant } from "../Example";
 
-const StyledBoard = styled.div<{ isOpened: boolean; isFullScreen: boolean }>`
+const StyledBoard = styled.div<
+  { isOpened: boolean; isFullScreen: boolean } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ theme, isOpened, isFullScreen }) => css`
     margin-top: 0;
     border-radius: ${!isFullScreen && !isOpened && `0 0 12px 12px`};

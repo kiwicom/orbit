@@ -6,7 +6,9 @@ import { resolveBorders } from "./helpers";
 
 import { DoDontHeader, GuidelineType } from ".";
 
-const GuidelineContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean }>`
+const GuidelineContainer = styled.div<
+  { type: "do" | "dont"; coloredBorder: boolean } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ theme }) => css`
     padding: ${theme.orbit.space400} ${theme.orbit.space800};
     width: 100%;
@@ -20,7 +22,7 @@ interface ImageContainerProps {
   leftPadding?: boolean;
 }
 
-const ImageContainer = styled.div<ImageContainerProps>`
+const ImageContainer = styled.div<ImageContainerProps & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme }) => css`
     width: 100%;
     background: ${theme.orbit.paletteWhite};

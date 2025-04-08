@@ -25,7 +25,7 @@ const fullScreenMixin = css`
   margin-top: 0 !important;
 `;
 
-const StyledWrapper = styled.div<{ isFullScreen: boolean }>`
+const StyledWrapper = styled.div<{ isFullScreen: boolean } & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme, isFullScreen }) => css`
     resize: vertical;
     display: grid;
@@ -54,7 +54,9 @@ const StyledWrapper = styled.div<{ isFullScreen: boolean }>`
   `};
 `;
 
-const StyledWrapperFrame = styled.div<{ width: number | string; responsive: boolean }>`
+const StyledWrapperFrame = styled.div<
+  { width: number | string; responsive: boolean } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ width, responsive }) => css`
     margin: 0 auto;
     width: 100%;

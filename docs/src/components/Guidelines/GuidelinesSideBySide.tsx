@@ -20,7 +20,9 @@ const StyledWrapper = styled.div`
 
 // Guidelines don't inherit spacing from Prose
 // So otherwise adjacent p elements are right next to each other
-const StyledContainer = styled.div<{ type: "do" | "dont"; coloredBorder: boolean }>`
+const StyledContainer = styled.div<
+  { type: "do" | "dont"; coloredBorder: boolean } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ theme }) => css`
     padding: ${theme.orbit.space400} ${theme.orbit.space600};
     background: ${theme.orbit.paletteCloudLight};

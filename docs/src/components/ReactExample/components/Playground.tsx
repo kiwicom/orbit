@@ -18,7 +18,7 @@ interface Props {
   onChange: (val: Record<string, Record<string, string | number | boolean>>) => void;
 }
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<React.HTMLAttributes<HTMLDivElement>>`
   padding: 20px;
 `;
 

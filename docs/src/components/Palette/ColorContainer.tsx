@@ -21,7 +21,7 @@ interface Props extends BorderProps {
   color?: PaletteToken;
 }
 
-const StyledCopyWrapper = styled.div<{ colorValue: string }>`
+const StyledCopyWrapper = styled.div<{ colorValue: string } & React.HTMLAttributes<HTMLDivElement>>`
   ${({ colorValue, theme }) => css`
     background: linear-gradient(90deg, transparent, ${colorValue} 27%);
     position: absolute;
@@ -72,7 +72,9 @@ export const StyledColorContainerWrapper = styled(({ className, children }) => (
   `}
 `;
 
-const StyledColorNameHolder = styled.div<{ isMain?: boolean }>`
+const StyledColorNameHolder = styled.div<
+  { isMain?: boolean } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ isMain, theme }) => css`
     font-weight: ${theme.orbit.fontWeightBold};
     height: 100%;

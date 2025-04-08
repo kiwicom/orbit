@@ -10,7 +10,7 @@ interface Props {
   onClick: () => void;
 }
 
-const StyledSearchButton = styled.button`
+const StyledSearchButton = styled.button<React.ButtonHTMLAttributes<HTMLButtonElement>>`
   ${({ theme }) => css`
     padding: 10px;
     display: flex;
@@ -43,7 +43,6 @@ const StyledSearchButton = styled.button`
 
 const SearchNavbarButton = ({ onClick }: Props) => {
   const { isTablet } = useMediaQuery();
-
   return (
     <StyledSearchButton onClick={onClick}>
       <SearchIcon />

@@ -9,7 +9,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import bizdevAssets from "../data/bizdev-assets.yaml";
 import useCopyToClipboard from "../hooks/useCopyToClipboard";
 
-const StyledAnchor = styled.a`
+const StyledAnchor = styled.a<React.AnchorHTMLAttributes<HTMLAnchorElement>>`
   ${({ theme }) => css`
     background-color: ${theme.orbit.paletteProductLight};
     color: ${theme.orbit.paletteProductNormal};
@@ -38,7 +38,7 @@ interface ImageWrapProps {
   width: string;
 }
 
-const ImageWrap = styled.div<ImageWrapProps>`
+const ImageWrap = styled.div<ImageWrapProps & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme, width }) => css`
     padding: ${theme.orbit.space300};
     border: 1px solid ${theme.orbit.elevationFlatBorderColor};

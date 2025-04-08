@@ -11,7 +11,9 @@ export const StyledCollapseLabel = styled.div`
   font-size: 16px;
 `;
 
-export const StyledCollapseContent = styled.div<{ hasCategories: boolean }>`
+export const StyledCollapseContent = styled.div<
+  { hasCategories: boolean } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ hasCategories }) => css`
     margin: -10px 0;
     ${hasCategories

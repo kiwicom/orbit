@@ -22,7 +22,7 @@ export const LevelDiv = styled.div<LevelDivProps>`
 `;
 
 interface ElevationLevelProps {
-  level: "suppressed" | "flat" | 1 | 2 | 3 | "3Reverse" | 4 | "fixed" | "fixedReverse";
+  level: "suppressed" | "flat" | 1 | 2 | 3 | "3Reverse" | 4 | "fixed" | "fixedReverse" | "navBar";
 }
 
 export default ({ level }: ElevationLevelProps) => {
@@ -53,6 +53,9 @@ export default ({ level }: ElevationLevelProps) => {
       break;
     case "fixedReverse":
       boxShadow = theme.orbit.elevationFixedReverseBoxShadow;
+      break;
+    case "navBar":
+      boxShadow = theme.orbit.elevationNavBarBoxShadow;
       break;
     default:
       break;

@@ -47,6 +47,7 @@ export enum SHADOWS {
   LEVEL3 = "level3",
   LEVEL3_REVERSE = "level3Reverse",
   LEVEL4 = "level4",
+  NAVBAR = "navBar",
 }
 
 export const shadowClasses: {
@@ -59,6 +60,7 @@ export const shadowClasses: {
   [SHADOWS.LEVEL3]: "shadow-level3",
   [SHADOWS.LEVEL3_REVERSE]: "shadow-level3-reverse",
   [SHADOWS.LEVEL4]: "shadow-level4",
+  [SHADOWS.NAVBAR]: "shadow-navbar",
   [QUERIES.LARGEDESKTOP]: {
     [SHADOWS.FIXED]: "ld:shadow-fixed",
     [SHADOWS.FIXED_REVERSE]: "ld:shadow-fixed-reverse",
@@ -67,6 +69,7 @@ export const shadowClasses: {
     [SHADOWS.LEVEL3]: "ld:shadow-level3",
     [SHADOWS.LEVEL3_REVERSE]: "ld:shadow-level3-reverse",
     [SHADOWS.LEVEL4]: "ld:shadow-level4",
+    [SHADOWS.NAVBAR]: "ld:shadow-navbar",
   },
   [QUERIES.DESKTOP]: {
     [SHADOWS.FIXED]: "de:shadow-fixed",
@@ -76,6 +79,7 @@ export const shadowClasses: {
     [SHADOWS.LEVEL3]: "de:shadow-level3",
     [SHADOWS.LEVEL3_REVERSE]: "de:shadow-level3-reverse",
     [SHADOWS.LEVEL4]: "de:shadow-level4",
+    [SHADOWS.NAVBAR]: "de:shadow-navbar",
   },
   [QUERIES.TABLET]: {
     [SHADOWS.FIXED]: "tb:shadow-fixed",
@@ -85,6 +89,7 @@ export const shadowClasses: {
     [SHADOWS.LEVEL3]: "tb:shadow-level3",
     [SHADOWS.LEVEL3_REVERSE]: "tb:shadow-level3-reverse",
     [SHADOWS.LEVEL4]: "tb:shadow-level4",
+    [SHADOWS.NAVBAR]: "tb:shadow-navbar",
   },
   [QUERIES.LARGEMOBILE]: {
     [SHADOWS.FIXED]: "lm:shadow-fixed",
@@ -94,6 +99,7 @@ export const shadowClasses: {
     [SHADOWS.LEVEL3]: "lm:shadow-level3",
     [SHADOWS.LEVEL3_REVERSE]: "lm:shadow-level3-reverse",
     [SHADOWS.LEVEL4]: "lm:shadow-level4",
+    [SHADOWS.NAVBAR]: "lm:shadow-navbar",
   },
   [QUERIES.MEDIUMMOBILE]: {
     [SHADOWS.FIXED]: "mm:shadow-fixed",
@@ -103,6 +109,7 @@ export const shadowClasses: {
     [SHADOWS.LEVEL3]: "mm:shadow-level3",
     [SHADOWS.LEVEL3_REVERSE]: "mm:shadow-level3-reverse",
     [SHADOWS.LEVEL4]: "mm:shadow-level4",
+    [SHADOWS.NAVBAR]: "mm:shadow-navbar",
   },
 };
 

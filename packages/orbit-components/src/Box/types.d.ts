@@ -11,7 +11,8 @@ export type Elevation =
   | "level2"
   | "level3"
   | "level3Reverse"
-  | "level4";
+  | "level4"
+  | "navBar";
 
 export type ColorTokens =
   | "blueLight"

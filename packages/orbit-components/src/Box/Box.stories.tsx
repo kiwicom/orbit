@@ -66,6 +66,7 @@ enum ELEVATION {
   LEVEL_3 = "level3",
   LEVEL_3REVERSE = "level3Reverse",
   LEVEL_4 = "level4",
+  NAVBAR = "navBar",
 }
 
 enum BORDER_RADIUS {

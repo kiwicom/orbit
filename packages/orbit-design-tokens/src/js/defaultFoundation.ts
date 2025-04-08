@@ -123,6 +123,10 @@ export interface Breakpoint {
   desktop: number;
   largeDesktop: number;
 }
+export interface Elevations {
+  base: string;
+  navbar: string;
+}
 export interface Size {
   small: string;
   medium: string;
@@ -182,6 +186,7 @@ export interface Foundation {
   palette: Palette;
   borderRadius: BorderRadius;
   breakpoint: Breakpoint;
+  elevations: Elevations;
   size: Size;
   space: Space;
   fontFamily: FontFamily;
@@ -204,6 +209,7 @@ export interface CustomFoundation {
   }>;
   borderRadius?: Partial<BorderRadius>;
   breakpoint?: Partial<Breakpoint>;
+  elevations?: Partial<Elevations>;
   size?: Partial<Size>;
   space?: Partial<Space>;
   fontFamily?: Partial<FontFamily>;
@@ -314,6 +320,7 @@ const breakpoint = {
   desktop: 992,
   largeDesktop: 1200,
 };
+const elevations = { base: "#292F37", navbar: "#1B3249" };
 const size = {
   small: "16px",
   medium: "24px",
@@ -348,6 +355,7 @@ const foundation = {
   palette,
   borderRadius,
   breakpoint,
+  elevations,
   size,
   space,
   fontFamily,

@@ -312,6 +312,7 @@ export interface Tokens {
   elevationFlatBackground: string;
   elevationFlatBorderColor: string;
   elevationFlatBorderSize: string;
+  elevationNavBarBoxShadow: string;
   elevationLevel1BoxShadow: string;
   elevationLevel2BoxShadow: string;
   elevationFixedBackground: string;
@@ -785,27 +786,49 @@ const createTokens: CreateTokens = foundation => ({
   elevationFlatBackground: foundation.palette.white.normal,
   elevationFlatBorderColor: foundation.palette.cloud.normal,
   elevationFlatBorderSize: "1px",
+  elevationNavBarBoxShadow: boxShadow([
+    {
+      def: ["0", "2px", "12px", "0"],
+      color: transparentColor(foundation.elevations.navbar, 8),
+      inset: false,
+    },
+  ]),
   elevationLevel1BoxShadow: boxShadow([
     {
-      def: ["0", "0", "2px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 16),
+      def: ["0", "2px", "6px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 8),
       inset: false,
     },
     {
-      def: ["0", "1px", "4px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 12),
+      def: ["0", "0", "2px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 12),
+      inset: false,
+    },
+    {
+      def: ["0", "0", "1px", "0"],
+      color: transparentColor(foundation.elevations.base, 30),
       inset: false,
     },
   ]),
   elevationLevel2BoxShadow: boxShadow([
     {
-      def: ["0", "1px", "4px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 16),
+      def: ["0", "8px", "24px", "-5px"],
+      color: transparentColor(foundation.palette.ink.normal, 10),
       inset: false,
     },
     {
-      def: ["0", "4px", "8px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 12),
+      def: ["0", "5px", "16px", "-3px"],
+      color: transparentColor(foundation.palette.ink.normal, 12),
+      inset: false,
+    },
+    {
+      def: ["0", "1px", "4px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 12),
+      inset: false,
+    },
+    {
+      def: ["0", "0", "1px", "0"],
+      color: transparentColor(foundation.elevations.base, 30),
       inset: false,
     },
   ]),
@@ -826,48 +849,113 @@ const createTokens: CreateTokens = foundation => ({
   elevationFixedReverseBoxShadow: boxShadow([
     {
       def: ["0", "0", "2px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 16),
+      color: transparentColor(foundation.palette.ink.normal, 12),
       inset: false,
     },
     {
-      def: ["0", "-2px", "4px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 12),
+      def: ["0", "-2px", "6px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 12),
+      inset: false,
+    },
+    {
+      def: ["0", "0", "1px", "0"],
+      color: transparentColor(foundation.elevations.base, 15),
       inset: false,
     },
   ]),
   elevationLevel3BoxShadow: boxShadow([
     {
-      def: ["0", "4px", "8px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 16),
+      def: ["0", "2px", "16px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 4),
       inset: false,
     },
     {
-      def: ["0", "8px", "24px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 24),
+      def: ["0", "34px", "20px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 5),
+      inset: false,
+    },
+    {
+      def: ["0", "15px", "15px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 10),
+      inset: false,
+    },
+    {
+      def: ["0", "5px", "16px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 15),
+      inset: false,
+    },
+    {
+      def: ["0", "2px", "6px", "-1px"],
+      color: transparentColor(foundation.palette.ink.normal, 14),
+      inset: false,
+    },
+    {
+      def: ["0", "-1px", "2px", "-1px"],
+      color: transparentColor(foundation.palette.ink.normal, 15),
       inset: false,
     },
   ]),
   elevationLevel3ReverseBoxShadow: boxShadow([
     {
-      def: ["0", "-4px", "8px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 16),
+      def: ["0", "-2px", "16px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 4),
       inset: false,
     },
     {
-      def: ["0", "-8px", "24px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 24),
+      def: ["0", "-34px", "20px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 5),
+      inset: false,
+    },
+    {
+      def: ["0", "-15px", "15px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 10),
+      inset: false,
+    },
+    {
+      def: ["0", "-5px", "16px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 15),
+      inset: false,
+    },
+    {
+      def: ["0", "-2px", "6px", "-1px"],
+      color: transparentColor(foundation.palette.ink.normal, 14),
+      inset: false,
+    },
+    {
+      def: ["0", "1px", "2px", "-1px"],
+      color: transparentColor(foundation.palette.ink.normal, 15),
       inset: false,
     },
   ]),
   elevationLevel4BoxShadow: boxShadow([
     {
-      def: ["0", "12px", "24px", "-4px"],
-      color: transparentColor(foundation.palette.ink.dark, 24),
+      def: ["0", "60px", "40px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 5),
       inset: false,
     },
     {
-      def: ["0", "8px", "60px", "0"],
-      color: transparentColor(foundation.palette.ink.dark, 32),
+      def: ["0", "40px", "30px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 8),
+      inset: false,
+    },
+    {
+      def: ["0", "24px", "24px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 14),
+      inset: false,
+    },
+    {
+      def: ["0", "5px", "16px", "0"],
+      color: transparentColor(foundation.palette.ink.normal, 15),
+      inset: false,
+    },
+    {
+      def: ["0", "2px", "6px", "-1px"],
+      color: transparentColor(foundation.palette.ink.normal, 14),
+      inset: false,
+    },
+    {
+      def: ["0", "-1px", "2px", "-1px"],
+      color: transparentColor(foundation.palette.ink.normal, 15),
       inset: false,
     },
   ]),

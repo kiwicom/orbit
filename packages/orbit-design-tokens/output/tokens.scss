@@ -309,20 +309,29 @@ $elevation-suppressed-background: rgb(245, 247, 249);
 $elevation-flat-background: rgb(255, 255, 255);
 $elevation-flat-border-color: rgb(232, 237, 241);
 $elevation-flat-border-size: 1px;
-$elevation-level-1-box-shadow: 0 0 2px 0 rgba(37, 42, 49, 0.16), 0 1px 4px 0 rgba(37, 42, 49, 0.12);
-$elevation-level-2-box-shadow: 0 1px 4px 0 rgba(37, 42, 49, 0.16),
-  0 4px 8px 0 rgba(37, 42, 49, 0.12);
+$elevation-nav-bar-box-shadow: 0 2px 12px 0 rgba(27, 50, 73, 0.08);
+$elevation-level-1-box-shadow: 0 2px 6px 0 rgba(79, 94, 113, 0.08),
+  0 0 2px 0 rgba(79, 94, 113, 0.12), 0 0 1px 0 rgba(41, 47, 55, 0.3);
+$elevation-level-2-box-shadow: 0 8px 24px -5px rgba(79, 94, 113, 0.1),
+  0 5px 16px -3px rgba(79, 94, 113, 0.12), 0 1px 4px 0 rgba(79, 94, 113, 0.12),
+  0 0 1px 0 rgba(41, 47, 55, 0.3);
 $elevation-fixed-background: rgb(255, 255, 255);
 $elevation-fixed-box-shadow: 0 0 2px 0 rgba(37, 42, 49, 0.16), 0 2px 4px 0 rgba(37, 42, 49, 0.12);
 $elevation-fixed-reverse-background: rgb(255, 255, 255);
-$elevation-fixed-reverse-box-shadow: 0 0 2px 0 rgba(37, 42, 49, 0.16),
-  0 -2px 4px 0 rgba(37, 42, 49, 0.12);
-$elevation-level-3-box-shadow: 0 4px 8px 0 rgba(37, 42, 49, 0.16),
-  0 8px 24px 0 rgba(37, 42, 49, 0.24);
-$elevation-level-3-reverse-box-shadow: 0 -4px 8px 0 rgba(37, 42, 49, 0.16),
-  0 -8px 24px 0 rgba(37, 42, 49, 0.24);
-$elevation-level-4-box-shadow: 0 12px 24px -4px rgba(37, 42, 49, 0.24),
-  0 8px 60px 0 rgba(37, 42, 49, 0.32);
+$elevation-fixed-reverse-box-shadow: 0 0 2px 0 rgba(79, 94, 113, 0.12),
+  0 -2px 6px 0 rgba(79, 94, 113, 0.12), 0 0 1px 0 rgba(41, 47, 55, 0.15);
+$elevation-level-3-box-shadow: 0 2px 16px 0 rgba(79, 94, 113, 0.04),
+  0 34px 20px 0 rgba(79, 94, 113, 0.05), 0 15px 15px 0 rgba(79, 94, 113, 0.1),
+  0 5px 16px 0 rgba(79, 94, 113, 0.15), 0 2px 6px -1px rgba(79, 94, 113, 0.14),
+  0 -1px 2px -1px rgba(79, 94, 113, 0.15);
+$elevation-level-3-reverse-box-shadow: 0 -2px 16px 0 rgba(79, 94, 113, 0.04),
+  0 -34px 20px 0 rgba(79, 94, 113, 0.05), 0 -15px 15px 0 rgba(79, 94, 113, 0.1),
+  0 -5px 16px 0 rgba(79, 94, 113, 0.15), 0 -2px 6px -1px rgba(79, 94, 113, 0.14),
+  0 1px 2px -1px rgba(79, 94, 113, 0.15);
+$elevation-level-4-box-shadow: 0 60px 40px 0 rgba(79, 94, 113, 0.05),
+  0 40px 30px 0 rgba(79, 94, 113, 0.08), 0 24px 24px 0 rgba(79, 94, 113, 0.14),
+  0 5px 16px 0 rgba(79, 94, 113, 0.15), 0 2px 6px -1px rgba(79, 94, 113, 0.14),
+  0 -1px 2px -1px rgba(79, 94, 113, 0.15);
 $palette-blue-light: rgb(232, 244, 253);
 $palette-blue-light-hover: rgb(222, 240, 252);
 $palette-blue-light-active: rgb(199, 228, 250);

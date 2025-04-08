@@ -22,6 +22,7 @@ const config = (tokens: typeof defaultTokens): Config => {
         level3: tokens.elevationLevel3BoxShadow,
         "level3-reverse": tokens.elevationLevel3ReverseBoxShadow,
         level4: tokens.elevationLevel4BoxShadow,
+        navbar: tokens.elevationNavBarBoxShadow,
       },
       transitionDuration: {
         fast: tokens.durationFast,

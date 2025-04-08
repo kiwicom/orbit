@@ -17,7 +17,7 @@ const StyledHeading = styled.h4`
 const StyledLink = styled.a.attrs(() => ({
   rel: "noopener noreferrer",
   target: "_blank",
-}))`
+}))<React.AnchorHTMLAttributes<HTMLAnchorElement>>`
   svg {
     height: 16px;
     width: 16px;

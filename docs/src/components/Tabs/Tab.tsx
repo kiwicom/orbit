@@ -45,7 +45,7 @@ export const commonTabStyle = css`
 `;
 
 // needs to be a <span> to be a valid child of <StackOfTabs>
-const StyledTab = styled.span<{ fullWidth?: boolean }>`
+const StyledTab = styled.span<{ fullWidth?: boolean } & React.HTMLAttributes<HTMLSpanElement>>`
   ${commonStyle};
   ${commonTabStyle};
   ${({ theme, fullWidth }) => css`

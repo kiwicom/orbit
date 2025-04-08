@@ -4,7 +4,7 @@ import Stack from "@kiwicom/orbit-components/lib/Stack";
 
 import ScreenReaderText from "./ScreenReaderText";
 
-const StyledLabel = styled.label`
+const StyledLabel = styled.label<React.HTMLAttributes<HTMLLabelElement>>`
   cursor: pointer;
   display: inline-flex;
 `;
@@ -55,7 +55,7 @@ const StyledCircle = styled.div`
   `}
 `;
 
-const StyledInput = styled.input`
+const StyledInput = styled.input<React.InputHTMLAttributes<HTMLInputElement>>`
   ${({ theme }) => `
     position: absolute;
     width: 1px;

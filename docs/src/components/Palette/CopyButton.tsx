@@ -12,7 +12,9 @@ interface CopyButtonProps {
   textToCopy?: string;
 }
 
-const StyledButton = styled.button<{ colorValue?: string }>`
+const StyledButton = styled.button<
+  { colorValue?: string } & React.ButtonHTMLAttributes<HTMLButtonElement>
+>`
   ${({ colorValue, theme }) => css`
     background: ${colorValue && isLight(colorValue)
       ? theme.orbit.paletteInkDark
@@ -35,13 +37,8 @@ const StyledButton = styled.button<{ colorValue?: string }>`
 
 const CopyButton = ({ buttonText, colorValue, textToCopy }: CopyButtonProps) => {
   const [copied, copy] = useCopyToClipboard();
-
   return (
-    <StyledButton
-      colorValue={colorValue}
-      type="button"
-      onClick={() => textToCopy && copy(textToCopy)}
-    >
+    <StyledButton colorValue={colorValue} onClick={() => textToCopy && copy(textToCopy)}>
       <Stack direction="row" spacing="100" align="center">
         <Text type={colorValue && isLight(colorValue) ? "white" : "primary"}>
           {copied ? "copied" : buttonText}

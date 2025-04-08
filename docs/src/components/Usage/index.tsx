@@ -63,7 +63,7 @@ const StyledSection = styled.div`
   `};
 `;
 
-const StyledHeadingIcon = styled.div<{ $color: string }>`
+const StyledHeadingIcon = styled.div<{ $color: string } & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme, $color }) => css`
     display: grid;
     place-content: center;

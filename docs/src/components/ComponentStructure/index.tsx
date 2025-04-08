@@ -20,15 +20,19 @@ const StyledContainer = styled.div`
     }
   `}
 `;
-StyledContainer.defaultProps = { theme: docsTheme };
 
-const StyledTabList = styled.div`
+const StyledTabList = styled.div<React.HTMLAttributes<HTMLDivElement>>`
   display: flex;
   gap: 4px;
   padding: 0 20px;
 `;
 
-const StyledTab = styled.button<{ active: boolean }>`
+const StyledTab = styled.button.attrs({ type: "button" })<
+  {
+    active: boolean;
+    ref?: React.Ref<HTMLButtonElement>;
+  } & React.ButtonHTMLAttributes<HTMLButtonElement>
+>`
   ${({ theme, active }) => css`
     padding: 14px ${theme.orbit.space400};
     margin-bottom: -1px;
@@ -43,26 +47,27 @@ const StyledTab = styled.button<{ active: boolean }>`
     `};
   `};
 `;
-StyledTab.defaultProps = { theme: docsTheme };
 
-const StyledPanel = styled.div`
+const StyledPanel = styled.div<{ theme: typeof docsTheme } & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme }) => css`
     border: 1px solid ${theme.orbit.paletteCloudNormal};
     border-radius: ${theme.orbit.borderRadius150};
   `};
 `;
-StyledPanel.defaultProps = { theme: docsTheme };
 
-const StyledImageContainer = styled.div`
+const StyledImageContainer = styled.div<
+  { theme: typeof docsTheme } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ theme }) => css`
     display: grid;
     place-content: center;
     padding: ${theme.orbit.space1000};
   `};
 `;
-StyledImageContainer.defaultProps = { theme: docsTheme };
 
-const StyledComponentParts = styled.div<{ vertical?: boolean }>`
+const StyledComponentParts = styled.div<
+  { vertical?: boolean; theme: typeof docsTheme } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ theme, vertical }) => css`
     display: grid;
     align-content: center;
@@ -107,7 +112,6 @@ const StyledComponentParts = styled.div<{ vertical?: boolean }>`
     }
   `}
 `;
-StyledComponentParts.defaultProps = { theme: docsTheme };
 
 const StyledDescription = styled.span`
   font-size: 12px;

@@ -23,7 +23,13 @@ interface Props {
   children: React.ReactNode;
 }
 
-const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"; color?: string }>`
+const StyledWrapper = styled.a<
+  {
+    primary: string;
+    type?: "primary" | "secondary";
+    color?: string;
+  } & React.AnchorHTMLAttributes<HTMLAnchorElement>
+>`
   ${({ theme, primary, type, color }) => `
     display: block;
     padding: 2rem;
@@ -57,7 +63,7 @@ const StyledWrapper = styled.a<{ primary: string; type?: "primary" | "secondary"
   `};
 `;
 
-const StyledIcon = styled.div<{ secondary: string }>`
+const StyledIcon = styled.div<{ secondary: string } & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme, secondary }) => css`
     align-self: start;
     flex-shrink: 0;
@@ -106,7 +112,6 @@ export default function BrandedTile({
   const content = typeof children !== "string" ? <Stack>{children}</Stack> : <p>{children}</p>;
   const colorPrimary = color === "product" ? theme.orbit.paletteProductDark : color.primary;
   const colorSecondary = color === "product" ? theme.orbit.paletteProductNormal : color.secondary;
-
   return (
     <StyledWrapper
       href={href}

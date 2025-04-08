@@ -9,7 +9,7 @@ interface Props {
   maxWidth: number;
 }
 
-const StyledIframe = styled.iframe<Props>`
+const StyledIframe = styled.iframe<Props & { allowFullScreen?: boolean; loading: string }>`
   ${({ theme, border, height, maxWidth }) => css`
     width: 100%;
     border: none;

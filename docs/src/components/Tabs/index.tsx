@@ -11,7 +11,7 @@ import useFontLoaded from "../../hooks/useFontLoaded";
 import { TAB_HEIGHT, FULL_WIDTH_BREAKPOINT } from "./consts";
 import { getTabShadowReachTop, getTabShadowReachLeft } from "./helpers";
 
-const StyledContainer = styled.div<{ collapsed: boolean }>`
+const StyledContainer = styled.div<{ collapsed: boolean } & React.ComponentPropsWithRef<"div">>`
   ${({ theme, collapsed }) => css`
     .js & {
       /* lock height to avoid layout shift, but only if JavaScript is enabled */

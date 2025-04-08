@@ -6879,6 +6879,30 @@
       "value": "1px"
     }
   },
+  "elevationNavBarBoxShadow": {
+    "type": "box-shadow",
+    "category": "elevation",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "global",
+      "object": "elevation",
+      "variant": "navBar",
+      "subVariant": "box-shadow"
+    },
+    "javascript": {
+      "name": "elevationNavBarBoxShadow",
+      "value": "0 2px 12px 0 rgba(27, 50, 73, 0.08)"
+    },
+    "foundation": {
+      "name": "elevationNavBarBoxShadow",
+      "value": "0 2px 12px 0 color(#1B3249, opacity: 8)"
+    },
+    "scss": {
+      "name": "elevationNavBarBoxShadow",
+      "value": "0 2px 12px 0 rgba(27, 50, 73, 0.08)"
+    }
+  },
   "elevationLevel1BoxShadow": {
     "type": "box-shadow",
     "category": "elevation",
@@ -6892,15 +6916,15 @@
     },
     "javascript": {
       "name": "elevationLevel1BoxShadow",
-      "value": "0 0 2px 0 rgba(37, 42, 49, 0.16), 0 1px 4px 0 rgba(37, 42, 49, 0.12)"
+      "value": "0 2px 6px 0 rgba(79, 94, 113, 0.08), 0 0 2px 0 rgba(79, 94, 113, 0.12), 0 0 1px 0 rgba(41, 47, 55, 0.3)"
     },
     "foundation": {
       "name": "elevationLevel1BoxShadow",
-      "value": "0 0 2px 0 color(#252A31, opacity: 16), 0 1px 4px 0 color(#252A31, opacity: 12)"
+      "value": "0 2px 6px 0 color(#4F5E71, opacity: 8), 0 0 2px 0 color(#4F5E71, opacity: 12), 0 0 1px 0 color(#292F37, opacity: 30)"
     },
     "scss": {
       "name": "elevationLevel1BoxShadow",
-      "value": "0 0 2px 0 rgba(37, 42, 49, 0.16), 0 1px 4px 0 rgba(37, 42, 49, 0.12)"
+      "value": "0 2px 6px 0 rgba(79, 94, 113, 0.08), 0 0 2px 0 rgba(79, 94, 113, 0.12), 0 0 1px 0 rgba(41, 47, 55, 0.3)"
     }
   },
   "elevationLevel2BoxShadow": {
@@ -6916,15 +6940,15 @@
     },
     "javascript": {
       "name": "elevationLevel2BoxShadow",
-      "value": "0 1px 4px 0 rgba(37, 42, 49, 0.16), 0 4px 8px 0 rgba(37, 42, 49, 0.12)"
+      "value": "0 8px 24px -5px rgba(79, 94, 113, 0.1), 0 5px 16px -3px rgba(79, 94, 113, 0.12), 0 1px 4px 0 rgba(79, 94, 113, 0.12), 0 0 1px 0 rgba(41, 47, 55, 0.3)"
     },
     "foundation": {
       "name": "elevationLevel2BoxShadow",
-      "value": "0 1px 4px 0 color(#252A31, opacity: 16), 0 4px 8px 0 color(#252A31, opacity: 12)"
+      "value": "0 8px 24px -5px color(#4F5E71, opacity: 10), 0 5px 16px -3px color(#4F5E71, opacity: 12), 0 1px 4px 0 color(#4F5E71, opacity: 12), 0 0 1px 0 color(#292F37, opacity: 30)"
     },
     "scss": {
       "name": "elevationLevel2BoxShadow",
-      "value": "0 1px 4px 0 rgba(37, 42, 49, 0.16), 0 4px 8px 0 rgba(37, 42, 49, 0.12)"
+      "value": "0 8px 24px -5px rgba(79, 94, 113, 0.1), 0 5px 16px -3px rgba(79, 94, 113, 0.12), 0 1px 4px 0 rgba(79, 94, 113, 0.12), 0 0 1px 0 rgba(41, 47, 55, 0.3)"
     }
   },
   "elevationFixedBackground": {
@@ -7012,15 +7036,15 @@
     },
     "javascript": {
       "name": "elevationFixedReverseBoxShadow",
-      "value": "0 0 2px 0 rgba(37, 42, 49, 0.16), 0 -2px 4px 0 rgba(37, 42, 49, 0.12)"
+      "value": "0 0 2px 0 rgba(79, 94, 113, 0.12), 0 -2px 6px 0 rgba(79, 94, 113, 0.12), 0 0 1px 0 rgba(41, 47, 55, 0.15)"
     },
     "foundation": {
       "name": "elevationFixedReverseBoxShadow",
-      "value": "0 0 2px 0 color(#252A31, opacity: 16), 0 -2px 4px 0 color(#252A31, opacity: 12)"
+      "value": "0 0 2px 0 color(#4F5E71, opacity: 12), 0 -2px 6px 0 color(#4F5E71, opacity: 12), 0 0 1px 0 color(#292F37, opacity: 15)"
     },
     "scss": {
       "name": "elevationFixedReverseBoxShadow",
-      "value": "0 0 2px 0 rgba(37, 42, 49, 0.16), 0 -2px 4px 0 rgba(37, 42, 49, 0.12)"
+      "value": "0 0 2px 0 rgba(79, 94, 113, 0.12), 0 -2px 6px 0 rgba(79, 94, 113, 0.12), 0 0 1px 0 rgba(41, 47, 55, 0.15)"
     }
   },
   "elevationLevel3BoxShadow": {
@@ -7036,15 +7060,15 @@
     },
     "javascript": {
       "name": "elevationLevel3BoxShadow",
-      "value": "0 4px 8px 0 rgba(37, 42, 49, 0.16), 0 8px 24px 0 rgba(37, 42, 49, 0.24)"
+      "value": "0 2px 16px 0 rgba(79, 94, 113, 0.04), 0 34px 20px 0 rgba(79, 94, 113, 0.05), 0 15px 15px 0 rgba(79, 94, 113, 0.1), 0 5px 16px 0 rgba(79, 94, 113, 0.15), 0 2px 6px -1px rgba(79, 94, 113, 0.14), 0 -1px 2px -1px rgba(79, 94, 113, 0.15)"
     },
     "foundation": {
       "name": "elevationLevel3BoxShadow",
-      "value": "0 4px 8px 0 color(#252A31, opacity: 16), 0 8px 24px 0 color(#252A31, opacity: 24)"
+      "value": "0 2px 16px 0 color(#4F5E71, opacity: 4), 0 34px 20px 0 color(#4F5E71, opacity: 5), 0 15px 15px 0 color(#4F5E71, opacity: 10), 0 5px 16px 0 color(#4F5E71, opacity: 15), 0 2px 6px -1px color(#4F5E71, opacity: 14), 0 -1px 2px -1px color(#4F5E71, opacity: 15)"
     },
     "scss": {
       "name": "elevationLevel3BoxShadow",
-      "value": "0 4px 8px 0 rgba(37, 42, 49, 0.16), 0 8px 24px 0 rgba(37, 42, 49, 0.24)"
+      "value": "0 2px 16px 0 rgba(79, 94, 113, 0.04), 0 34px 20px 0 rgba(79, 94, 113, 0.05), 0 15px 15px 0 rgba(79, 94, 113, 0.1), 0 5px 16px 0 rgba(79, 94, 113, 0.15), 0 2px 6px -1px rgba(79, 94, 113, 0.14), 0 -1px 2px -1px rgba(79, 94, 113, 0.15)"
     }
   },
   "elevationLevel3ReverseBoxShadow": {
@@ -7060,15 +7084,15 @@
     },
     "javascript": {
       "name": "elevationLevel3ReverseBoxShadow",
-      "value": "0 -4px 8px 0 rgba(37, 42, 49, 0.16), 0 -8px 24px 0 rgba(37, 42, 49, 0.24)"
+      "value": "0 -2px 16px 0 rgba(79, 94, 113, 0.04), 0 -34px 20px 0 rgba(79, 94, 113, 0.05), 0 -15px 15px 0 rgba(79, 94, 113, 0.1), 0 -5px 16px 0 rgba(79, 94, 113, 0.15), 0 -2px 6px -1px rgba(79, 94, 113, 0.14), 0 1px 2px -1px rgba(79, 94, 113, 0.15)"
     },
     "foundation": {
       "name": "elevationLevel3ReverseBoxShadow",
-      "value": "0 -4px 8px 0 color(#252A31, opacity: 16), 0 -8px 24px 0 color(#252A31, opacity: 24)"
+      "value": "0 -2px 16px 0 color(#4F5E71, opacity: 4), 0 -34px 20px 0 color(#4F5E71, opacity: 5), 0 -15px 15px 0 color(#4F5E71, opacity: 10), 0 -5px 16px 0 color(#4F5E71, opacity: 15), 0 -2px 6px -1px color(#4F5E71, opacity: 14), 0 1px 2px -1px color(#4F5E71, opacity: 15)"
     },
     "scss": {
       "name": "elevationLevel3ReverseBoxShadow",
-      "value": "0 -4px 8px 0 rgba(37, 42, 49, 0.16), 0 -8px 24px 0 rgba(37, 42, 49, 0.24)"
+      "value": "0 -2px 16px 0 rgba(79, 94, 113, 0.04), 0 -34px 20px 0 rgba(79, 94, 113, 0.05), 0 -15px 15px 0 rgba(79, 94, 113, 0.1), 0 -5px 16px 0 rgba(79, 94, 113, 0.15), 0 -2px 6px -1px rgba(79, 94, 113, 0.14), 0 1px 2px -1px rgba(79, 94, 113, 0.15)"
     }
   },
   "elevationLevel4BoxShadow": {
@@ -7084,15 +7108,15 @@
     },
     "javascript": {
       "name": "elevationLevel4BoxShadow",
-      "value": "0 12px 24px -4px rgba(37, 42, 49, 0.24), 0 8px 60px 0 rgba(37, 42, 49, 0.32)"
+      "value": "0 60px 40px 0 rgba(79, 94, 113, 0.05), 0 40px 30px 0 rgba(79, 94, 113, 0.08), 0 24px 24px 0 rgba(79, 94, 113, 0.14), 0 5px 16px 0 rgba(79, 94, 113, 0.15), 0 2px 6px -1px rgba(79, 94, 113, 0.14), 0 -1px 2px -1px rgba(79, 94, 113, 0.15)"
     },
     "foundation": {
       "name": "elevationLevel4BoxShadow",
-      "value": "0 12px 24px -4px color(#252A31, opacity: 24), 0 8px 60px 0 color(#252A31, opacity: 32)"
+      "value": "0 60px 40px 0 color(#4F5E71, opacity: 5), 0 40px 30px 0 color(#4F5E71, opacity: 8), 0 24px 24px 0 color(#4F5E71, opacity: 14), 0 5px 16px 0 color(#4F5E71, opacity: 15), 0 2px 6px -1px color(#4F5E71, opacity: 14), 0 -1px 2px -1px color(#4F5E71, opacity: 15)"
     },
     "scss": {
       "name": "elevationLevel4BoxShadow",
-      "value": "0 12px 24px -4px rgba(37, 42, 49, 0.24), 0 8px 60px 0 rgba(37, 42, 49, 0.32)"
+      "value": "0 60px 40px 0 rgba(79, 94, 113, 0.05), 0 40px 30px 0 rgba(79, 94, 113, 0.08), 0 24px 24px 0 rgba(79, 94, 113, 0.14), 0 5px 16px 0 rgba(79, 94, 113, 0.15), 0 2px 6px -1px rgba(79, 94, 113, 0.14), 0 -1px 2px -1px rgba(79, 94, 113, 0.15)"
     }
   },
   "paletteBlueLight": {

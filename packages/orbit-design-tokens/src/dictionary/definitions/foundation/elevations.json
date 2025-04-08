@@ -1,0 +1,16 @@
+{
+  "foundation": {
+    "elevations": {
+      "base": {
+        "value": "#292F37",
+        "internal": true,
+        "type": "color"
+      },
+      "navbar": {
+        "value": "#1B3249",
+        "internal": true,
+        "type": "color"
+      }
+    }
+  }
+}

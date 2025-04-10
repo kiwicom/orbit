@@ -336,6 +336,7 @@ Based on our [elevation system](https://orbit.kiwi/foundation/elevation-hierarch
 – level 3 reverse
 – fixed
 – fixedReverse
+– navBar
 
 ### Viewports
 

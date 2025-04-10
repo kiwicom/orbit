@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [23.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@23.0.0...@kiwicom/orbit-components@23.0.1) (2025-04-10)
+
+
+### Bug Fixes
+
+* **Dialog:** fix prop type import ([968f870](https://github.com/kiwicom/orbit/commit/968f8707a4c68f3c1bb0d0681f8e82655aea0dfd))
+
+
+
+
+
 # [23.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@22.0.0...@kiwicom/orbit-components@23.0.0) (2025-04-10)
 
 

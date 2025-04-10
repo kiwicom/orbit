@@ -95,7 +95,7 @@ const NavigationBar = ({
         transparentBgAtTop
           ? "transition-[transform,background-color,border-color]"
           : "transition-transform",
-        !isTransparentBg && bottomStyle === "shadow" && "shadow-fixed",
+        !isTransparentBg && bottomStyle === "shadow" && "shadow-navbar",
         isTransparentBg && bottomStyle === "border" && "border-transparent", // important for the transition to work well
         !isTransparentBg && bottomStyle === "border" && "border-cloud-normal border-b",
         isTransparentBg ? "bg-transparent" : "bg-white-normal",

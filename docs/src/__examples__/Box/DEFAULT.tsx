@@ -109,6 +109,7 @@ export default {
             "level3",
             "level3Reverse",
             "level4",
+            "navBar",
           ],
           defaultValue: "",
         },

@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [23.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@22.0.0...@kiwicom/orbit-components@23.0.0) (2025-04-10)
+
+
+### Bug Fixes
+
+* **Button:** remove invalid className prop type ([48a61b8](https://github.com/kiwicom/orbit/commit/48a61b88df5635d9642fea9860f7e6c33e369872))
+* **CountryFlag:** role and alt attributes are now correct ([ca27afd](https://github.com/kiwicom/orbit/commit/ca27afd39f3b4c80ac3a2d6ea2e197db3fc99b63))
+* **Dialog:** component now respects reduced motion preferences ([5524f78](https://github.com/kiwicom/orbit/commit/5524f789acaab50cac828ae5d41fbb2832b4489e))
+* **Dialog:** it now focuses the first element automatically ([e0fa849](https://github.com/kiwicom/orbit/commit/e0fa849cb8a849228e1aaf5c74a7f835dfe1fe78))
+* **InputGroup:** display focus indicator on child elements only ([f77fb94](https://github.com/kiwicom/orbit/commit/f77fb94cb010a03c8f06a4fe5ef83e55bdde799e))
+* **SocialButton:** reverse chevron icon for RTL ([30412ee](https://github.com/kiwicom/orbit/commit/30412eed963aaf0e1e5f2c94e98315bf316be49b))
+
+
+### Features
+
+* **Box:** add ariaLabel prop to improve accessibility ([a75c05a](https://github.com/kiwicom/orbit/commit/a75c05a0b80d29cd0b4800e67aff589b126ee5f9))
+* **Box:** add new navBar elevation type ([4ac42f3](https://github.com/kiwicom/orbit/commit/4ac42f39d64f91db4b57c8786e5c43a7c9224fce))
+* **Breadcrumbs:** add ariaLabel to improve accessibility ([ff11e79](https://github.com/kiwicom/orbit/commit/ff11e791f30a00ddd872b3870ab8d6e854fefb46))
+* **Checkbox:** remove tooltip prop ([e2758f6](https://github.com/kiwicom/orbit/commit/e2758f675bf632f44ebcbef8a15183827eccc258))
+* **ChoiceGroup:** refactor component for improved accessibility ([fe8ae8c](https://github.com/kiwicom/orbit/commit/fe8ae8ce8403a52e04b62b3640e6af77767a4f05))
+* **Dialog:** add titleAs prop ([b5416dc](https://github.com/kiwicom/orbit/commit/b5416dc34a18e3e4eb53100e53268ec1233e975d))
+* **Dialog:** add triggerRef prop ([0f86381](https://github.com/kiwicom/orbit/commit/0f863815c3794ac3de0b9a06b41c71103cb5f3dd))
+* **InputField:** add ariaDescribedby prop ([af324c5](https://github.com/kiwicom/orbit/commit/af324c54019dc9d26b3b2d82f0bdd8758b1ad71e))
+* **InputFile:** add required labelRemove prop ([d3072fc](https://github.com/kiwicom/orbit/commit/d3072fcc86c676c41eb1e707c9c38a9fd6c57afb))
+* **InputGroup:** add ariaLabel and ariaLabelledby props ([07329e0](https://github.com/kiwicom/orbit/commit/07329e0d40c90df97f2b85383ee59fd305b138ee))
+* **InputGroup:** refactor component for better accessibility ([992e835](https://github.com/kiwicom/orbit/commit/992e83582af91a71d6185fb13f450ccf47b24c49))
+* **InputSelect:** add required labelRemove prop ([0c2b43c](https://github.com/kiwicom/orbit/commit/0c2b43cf651a90b7f9abd4410d7a6b6568fd9934))
+* **List:** add spacing prop ([da27e6b](https://github.com/kiwicom/orbit/commit/da27e6ba07f4d5cf892cd24c3e5aaa692db486e6))
+* **NavigationBar:** refactor component for improved accessibility ([27886c9](https://github.com/kiwicom/orbit/commit/27886c942e1b5fc322551c4b4ace3ad29fa1d026))
+* **NavigationBar:** remove ariaLabel prop ([d1f51f6](https://github.com/kiwicom/orbit/commit/d1f51f65429c42ab60d46db460d245adb63c2775))
+* **NavigationBar:** replace shadow-fixed with shadow-navbar ([7ee42dd](https://github.com/kiwicom/orbit/commit/7ee42dd3d0dadd12d4a95d50393e97ba774879d2))
+* **Radio:** remove tooltip prop ([3c6eaa3](https://github.com/kiwicom/orbit/commit/3c6eaa36a0018e967eecefe4d0bb17aedbc7628e))
+* **Select:** add ariaDescribedby prop ([fdad002](https://github.com/kiwicom/orbit/commit/fdad002509be1781165cb45bf613ee6deac93c14))
+* **Skeleton:** refactor component for improved accessibility ([840e044](https://github.com/kiwicom/orbit/commit/840e044fcbe2f8840164e85c6de0447fd6986b32))
+* **SocialButton:** refactor component for improved accessibility ([528e7a3](https://github.com/kiwicom/orbit/commit/528e7a37a89fe72b13d595850dce8c1cd3674456))
+* **Stack:** add ariaLabel prop to improve accessibility ([76277b1](https://github.com/kiwicom/orbit/commit/76277b1983268681aaf4a08d599acb649441c7d3))
+* **Stepper:** add ariaDescribedby prop and rename ariaLabelledBy to improve a11y ([cca86fb](https://github.com/kiwicom/orbit/commit/cca86fb00e1f6534aaa53af6c297e177afff617f))
+* **StepperStateless:** add ariaDescribedby and rename ariaLabelledBy prop to improve a11y ([019514a](https://github.com/kiwicom/orbit/commit/019514aa390c66d5fdd61abfddad35d2dabc00c9))
+* **Tabs:** add ariaLabel and ariaLabelledby to improve accessibility ([152a0f7](https://github.com/kiwicom/orbit/commit/152a0f7ad2075f8d3c4a859932094d1ad68030d9))
+* update to node 22 ([023bb1e](https://github.com/kiwicom/orbit/commit/023bb1ef322c8249cb64019fce2ff250114bbe40))
+* **useFocusTrap:** add triggeredDefault prop ([904c07d](https://github.com/kiwicom/orbit/commit/904c07d1d239818f3e562569ae6acd0149cd5f90))
+
+
+### BREAKING CHANGES
+
+* **InputSelect:** The InputSelect component now has a required labelRemove prop.
+* **InputFile:** The InputFile component now has a required labelRemove prop.
+* **Tabs:** TabList component no longer sets the default aria-label value.
+You can provide the value via ariaLabel or ariaLabelledby prop.
+* version 22 of Node.js is now required for this package.
+* **Checkbox:** Checkbox component no longer supports tooltip prop.
+This use case is no longer valid in Orbit.
+* **Radio:** Radio component no longer supports tooltip prop.
+This use case is no longer valid in Orbit.
+* **Stepper:** Prop ariaLabelledBy was changed to ariaLabelledby in the Stepper
+component.
+* **StepperStateless:** Prop ariaLabelledBy was changed to ariaLabelledby in the
+StepperStateless component.
+* **NavigationBar:** AriaLabel prop was removed from the NavigationBar component.
+Aria-label attribute should be set on the children passed to the NavigationBar.
+* **Skeleton:** `title` prop in Skeleton component no longer have default value.
+
+
+
+
+
 # [22.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@21.1.0...@kiwicom/orbit-components@22.0.0) (2025-03-21)
 
 

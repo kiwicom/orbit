@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@9.0.1...@kiwicom/orbit-design-tokens@10.0.0) (2025-04-10)
+
+
+### Features
+
+* **tokens:** update elevations tokens box shadow ([024948c](https://github.com/kiwicom/orbit/commit/024948c6efb423c522a5527b9d333fa7746e6cbc))
+* **tokens:** update green, ink, orange and product colors ([a46ac38](https://github.com/kiwicom/orbit/commit/a46ac38970ae01470c2001b32bbd231024a095ee))
+* update to node 22 ([023bb1e](https://github.com/kiwicom/orbit/commit/023bb1ef322c8249cb64019fce2ff250114bbe40))
+
+
+### BREAKING CHANGES
+
+* **tokens:** Majority of elevation tokens were updated - this impacts all components using shadows.
+* **tokens:** Colors were updated for better accessibility.
+* version 22 of Node.js is now required for this package.
+
+
+
+
+
 ## [9.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@9.0.0...@kiwicom/orbit-design-tokens@9.0.1) (2025-01-23)
 
 **Note:** Version bump only for package @kiwicom/orbit-design-tokens

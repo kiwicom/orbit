@@ -4,7 +4,7 @@
 import type * as React from "react";
 
 import type * as Common from "../common/types";
-import type { HeadingProps } from "../Heading/types";
+import type { Props as HeadingProps } from "../Heading/types";
 
 export interface Props extends Common.Globals {
   readonly title: React.ReactNode;

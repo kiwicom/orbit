@@ -1,11 +1,15 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
+import { ThemeProvider } from "styled-components";
+import { defaultTheme } from "@kiwicom/orbit-components";
 
 import { render, screen } from "../../../test-utils";
 import ComponentStructure from "..";
 
 const structure = (platform: string) => ({
-  Image: (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => <svg {...props} />,
+  Image: (props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => (
+    <svg {...props} />
+  ),
   imageWidth: 124,
   parts: [
     {
@@ -22,8 +26,12 @@ const structure = (platform: string) => ({
 describe("ComponentStructure", () => {
   const user = userEvent.setup();
 
+  const renderWithTheme = (component: React.ReactElement) => {
+    return render(<ThemeProvider theme={defaultTheme}>{component}</ThemeProvider>);
+  };
+
   it("should have expected DOM", async () => {
-    render(
+    renderWithTheme(
       <ComponentStructure
         component="Test"
         web={structure("Web")}
@@ -48,7 +56,7 @@ describe("ComponentStructure", () => {
   });
 
   it("should open tab on click", async () => {
-    render(
+    renderWithTheme(
       <ComponentStructure
         component="Test"
         web={structure("Web")}
@@ -62,7 +70,7 @@ describe("ComponentStructure", () => {
   });
 
   it("should move focus along tabs when pressing arrow keys", async () => {
-    render(
+    renderWithTheme(
       <ComponentStructure
         component="Test"
         web={structure("Web")}
@@ -108,7 +116,7 @@ describe("ComponentStructure", () => {
   });
 
   it("should not have tabs if there's only one platform", () => {
-    render(<ComponentStructure component="Test" web={structure("Web")} />);
+    renderWithTheme(<ComponentStructure component="Test" web={structure("Web")} />);
 
     expect(screen.queryByRole("tablist")).not.toBeInTheDocument();
     expect(screen.queryByRole("tabpanel")).not.toBeInTheDocument();

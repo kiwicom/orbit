@@ -11,7 +11,7 @@ const StyledInlineTokenWrapper = styled.span`
   line-height: 1.2;
 `;
 
-const StyledInlineToken = styled.span<{ size?: "medium" | "large" }>`
+const StyledInlineToken = styled.span<{ size?: "medium" | "large" } & React.PropsWithChildren>`
   ${({ theme, size = "medium" }) => css`
     display: inline-flex;
     font-size: 14px;
@@ -45,7 +45,7 @@ const StyledInlineToken = styled.span<{ size?: "medium" | "large" }>`
   `}
 `;
 
-const StyledLabel = styled.span<{ size: "medium" | "large" }>`
+const StyledLabel = styled.span<{ size: "medium" | "large" } & React.PropsWithChildren>`
   ${({ size }) => `
     display: inline-flex;
     ${
@@ -64,7 +64,7 @@ const StyledLabel = styled.span<{ size: "medium" | "large" }>`
     };
   `}
 `;
-const StyledLabelVariant = styled.span<{ size: "medium" | "large" }>`
+const StyledLabelVariant = styled.span<{ size: "medium" | "large" } & React.PropsWithChildren>`
   ${({ theme, size }) => `
     font-weight: normal;
     color: ${theme.orbit.paletteInkLight};

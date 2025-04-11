@@ -1,7 +1,22 @@
 module.exports = {
-  presets: [require.resolve("babel-preset-gatsby"), require.resolve("@babel/preset-typescript")],
+  presets: [
+    [
+      require.resolve("babel-preset-gatsby"),
+      {
+        reactRuntime: "automatic",
+        jsxRuntime: "automatic",
+      },
+    ],
+    [
+      require.resolve("@babel/preset-typescript"),
+      {
+        isTSX: true,
+        allExtensions: true,
+      },
+    ],
+  ],
   plugins: [
-    "@kiwicom/orbit-components",
+    "@kiwicom/babel-plugin-orbit-components",
     require.resolve("babel-plugin-styled-components"),
     [
       require.resolve("babel-plugin-inline-react-svg"),

@@ -43,7 +43,9 @@ interface Props {
 }
 
 export default function BlockQuote({ children }: Props) {
-  const lastChild = React.Children.toArray(children)[React.Children.count(children) - 1];
+  const lastChild = React.Children.toArray(children)[
+    React.Children.count(children) - 1
+  ] as React.ReactElement<{ children: string }>;
 
   // if quote ends with author
   if (

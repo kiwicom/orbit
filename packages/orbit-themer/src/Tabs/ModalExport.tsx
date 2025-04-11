@@ -8,7 +8,12 @@ import { Modal, ModalHeader, ModalSection, ModalFooter, Button } from "@kiwicom/
 import { DEFAULT_COLORS } from "../consts";
 import ColorContext from "../ColorContext";
 
-export const Pre = styled.pre`
+interface PreProps extends React.PropsWithChildren {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export const Pre = styled.pre<PreProps>`
   text-align: left;
   margin: 1em 0;
   padding: 0.5em;

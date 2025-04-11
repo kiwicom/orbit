@@ -50,7 +50,9 @@ export const StyledDesignTokenBase = styled.span<SizeProps>`
   `}
 `;
 
-const StyledDesignTokenCircleShape = styled(StyledDesignTokenBase)<ColorProps>`
+const StyledDesignTokenCircleShape = styled(StyledDesignTokenBase)<
+  ColorProps & React.PropsWithChildren
+>`
   ${({ theme }) =>
     css`
       display: flex;

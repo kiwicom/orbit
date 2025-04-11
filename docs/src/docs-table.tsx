@@ -14,7 +14,7 @@ enum SORTING_ORDER {
 }
 
 interface TableData {
-  [x: string]: ReactElement | string;
+  [x: string]: React.ReactNode;
 }
 
 const SORTABLE_COLUMNS = ["Name"];
@@ -31,7 +31,9 @@ const sortingIcon = (sortingStatus: SORTING_ORDER) => {
   }
 };
 
-const TableWrap = styled.div`
+const TableWrap = styled.div<
+  React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>
+>`
   ${({ theme }) => css`
     table {
       th {
@@ -142,11 +144,14 @@ const PropsTableBody = ({ tableHeaders, tableData }) => {
   );
 };
 
-const StyledTableOuter = styled.div<{
-  showShadows: boolean;
-  showRight: boolean;
-  showLeft: boolean;
-}>`
+const StyledTableOuter = styled.div<
+  {
+    showShadows: boolean;
+    showRight: boolean;
+    showLeft: boolean;
+  } & React.HTMLAttributes<HTMLDivElement> &
+    React.RefAttributes<HTMLDivElement>
+>`
   ${({ theme, showShadows, showLeft, showRight }) => css`
     max-width: 100%;
     width: 100%;
@@ -177,7 +182,10 @@ const StyledTableOuter = styled.div<{
   `}
 `;
 
-const StyledTableInner = styled.div<{ showShadows: boolean }>`
+const StyledTableInner = styled.div<
+  { showShadows: boolean } & React.HTMLAttributes<HTMLDivElement> &
+    React.RefAttributes<HTMLDivElement>
+>`
   ${({ showShadows }) =>
     css`
       width: 100%;
@@ -187,10 +195,21 @@ const StyledTableInner = styled.div<{ showShadows: boolean }>`
     `};
 `;
 
-function getChildString(element: ReactElement | string): string {
+interface TableElementProps {
+  children: React.ReactNode;
+}
+
+function getChildString(element: ReactElement<TableElementProps> | string | null): string {
   if (typeof element === "string") return element;
   if (element === null) return "";
-  return getChildString(element.props.children);
+  if (!element?.props || !element?.props?.children) return "";
+
+  const children = element?.props.children;
+  if (Array.isArray(children)) {
+    return children.map(child => getChildString(child)).join(" ");
+  }
+
+  return getChildString(children as ReactElement<TableElementProps> | string | null);
 }
 
 function sortTableData({
@@ -205,9 +224,12 @@ function sortTableData({
   return order === SORTING_ORDER.DEFAULT
     ? data
     : data.sort((a, b) => {
-        const first = getChildString(a[property]);
-        const second = getChildString(b[property]);
-
+        const first = getChildString(
+          a[property] as ReactElement<TableElementProps> | string | null,
+        );
+        const second = getChildString(
+          b[property] as ReactElement<TableElementProps> | string | null,
+        );
         return first.localeCompare(second) * (order === SORTING_ORDER.ASCENDING ? 1 : -1);
       });
 }
@@ -217,25 +239,34 @@ function extractTableData({
   sortOrder,
   sortProperty,
 }: {
-  children: [ReactElement, ReactElement];
+  children: [ReactElement<TableElementProps>, ReactElement<TableElementProps>];
   sortOrder: SORTING_ORDER;
   sortProperty: string;
 }) {
   const [tableHead, tableBody] = children;
-  const tableHeadRow = React.Children.toArray(tableHead.props.children) as ReactElement[];
-  const tableHeadCells = React.Children.toArray(tableHeadRow[0].props.children) as ReactElement[];
-  const tableHeaders = tableHeadCells.map(th => th.props.children);
+  const tableHeadRow = React.Children.toArray(
+    tableHead?.props?.children || [],
+  ) as ReactElement<TableElementProps>[];
+  const tableHeadCells = React.Children.toArray(
+    tableHeadRow[0]?.props?.children || [],
+  ) as ReactElement<TableElementProps>[];
+  const tableHeaders = tableHeadCells.map(th => th?.props?.children);
 
-  const tableRows = React.Children.toArray(tableBody.props.children) as ReactElement[];
+  const tableRows = React.Children.toArray(
+    tableBody?.props?.children || [],
+  ) as ReactElement<TableElementProps>[];
 
   const tableData: Array<TableData> = tableRows.reduce((tmpData: Array<TableData>, row) => {
-    const newData = {};
-    const rowData = (React.Children.toArray(row.props.children) as ReactElement[]).map(
-      td => td.props.children,
-    );
+    const newData: TableData = {};
+    const rowData = (
+      React.Children.toArray(row?.props?.children || []) as ReactElement<TableElementProps>[]
+    ).map(td => td?.props?.children);
 
     rowData.forEach((value, index) => {
-      newData[tableHeaders[index]] = value;
+      const header = getChildString(
+        tableHeaders[index] as ReactElement<TableElementProps> | string | null,
+      );
+      newData[header] = value;
     });
 
     return [...tmpData, newData];

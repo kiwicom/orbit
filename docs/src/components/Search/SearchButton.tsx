@@ -20,13 +20,13 @@ const StyledSearchButtonWrapper = styled.div`
   `}
 `;
 
-const StyledWrapper = styled.div<{ type: Type }>`
+const StyledWrapper = styled.div<{ type: Type } & React.PropsWithChildren>`
   ${({ theme, type }) => css`
     color: ${type === "primary" ? theme.orbit.paletteProductNormal : theme.orbit.paletteInkDark};
   `}
 `;
 
-export const StyledIcon = styled.span<{ type: Type }>`
+export const StyledIcon = styled.span<{ type: Type } & React.PropsWithChildren>`
   ${({ theme, type }) => css`
     padding: 3px 5px;
     display: flex;

@@ -26,7 +26,7 @@ const StyledWrapper = styled.div`
   `};
 `;
 
-const StyledTopWrapper = styled.div<{ $hasTabs: boolean }>`
+const StyledTopWrapper = styled.div<{ $hasTabs: boolean } & React.PropsWithChildren>`
   ${({ theme, $hasTabs }) => css`
     display: flex;
     width: 100%;

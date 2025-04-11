@@ -36,7 +36,7 @@ interface Props {
   href: string;
 }
 
-const StyledAnchor = styled.a`
+const StyledAnchor = styled.a<{ href?: string; download?: boolean } & React.PropsWithChildren>`
   margin-top: 12px;
   display: block;
 `;

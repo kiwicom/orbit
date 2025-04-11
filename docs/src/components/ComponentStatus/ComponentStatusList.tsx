@@ -26,7 +26,7 @@ import componentStatusData from "../../data/component-status.yaml";
 
 const DEFAULT_COMPONENT_COL_WIDTH = 200;
 
-const StyledScrollable = styled.div<{ $componentColWidth?: number }>`
+const StyledScrollable = styled.div<{ $componentColWidth?: number } & React.PropsWithChildren>`
   ${({ $componentColWidth = DEFAULT_COMPONENT_COL_WIDTH }) => css`
     overflow-x: auto;
     margin-left: ${$componentColWidth}px;
@@ -46,7 +46,7 @@ const StyledColGroup = styled.colgroup`
   }
 `;
 
-const StyledComponentHead = styled.th<{ $width?: number }>`
+const StyledComponentHead = styled.th<{ $width?: number } & React.PropsWithChildren>`
   ${({ theme, $width = DEFAULT_COMPONENT_COL_WIDTH }) => css`
     position: absolute;
     left: 0;
@@ -61,7 +61,7 @@ const StyledComponentHead = styled.th<{ $width?: number }>`
   `};
 `;
 
-const StyledTableRow = styled.tr`
+const StyledTableRow = styled.tr<React.PropsWithChildren>`
   ${({ theme }) => css`
     &:not(:last-child) {
       border-bottom: 1px solid ${theme.orbit.paletteCloudNormal};
@@ -69,7 +69,7 @@ const StyledTableRow = styled.tr`
   `};
 `;
 
-const StyledComponentName = styled.th<{ $width?: number }>`
+const StyledComponentName = styled.th<{ $width?: number } & React.PropsWithChildren>`
   ${({ theme, $width = DEFAULT_COMPONENT_COL_WIDTH }) => css`
     position: absolute;
     left: 0;
@@ -87,7 +87,7 @@ const StyledComponentName = styled.th<{ $width?: number }>`
   `};
 `;
 
-const StyledComponentText = styled.div`
+const StyledComponentText = styled.div<React.PropsWithChildren>`
   ${({ theme }) => css`
     padding: 0 ${theme.orbit.space600};
     font-weight: ${theme.orbit.fontWeightMedium};

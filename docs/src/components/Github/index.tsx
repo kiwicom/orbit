@@ -25,34 +25,36 @@ const ContributorsComponent = () => {
     graphql`
       query CollaboratorsQuery {
         allContributor(filter: { core: { eq: true } }) {
-          group(field: active) {
-            nodes {
-              id
-              name
-              username
-              info
-              active
-              core
-              position
-              error
-              dribbble
-              avatar_url
-              github
-              twitter
-              website
-            }
+          nodes {
+            id
+            name
+            username
+            info
+            active
+            core
+            position
+            error
+            dribbble
+            avatar_url
+            github
+            twitter
+            website
           }
         }
       }
     `,
   );
 
-  const { group } = allContributor;
-  const [previous, current] = group;
+  const { nodes } = allContributor;
+  const currentContributors = nodes.filter(node => node.active);
+  const previousContributors = nodes.filter(node => !node.active);
 
   return (
     <>
-      <OrbitTeam currentContributors={current.nodes} previousContributors={previous.nodes} />
+      <OrbitTeam
+        currentContributors={currentContributors}
+        previousContributors={previousContributors}
+      />
       <Heading type="title2" as="h2">
         All contributors
       </Heading>

@@ -252,6 +252,75 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 }) => {
   const typeDefs = [
     `
+    type Contributor implements Node @dontInfer {
+      id: ID!
+      name: String
+      info: String
+      error: String
+      username: String
+      position: String
+      dribbble: String
+      github: String
+      avatar_url: String
+      twitter: String
+      website: String
+      active: Boolean
+      core: Boolean
+    }
+
+    type ContributorConnection {
+      nodes: [Contributor]!
+      group(field: String!): [ContributorGroup]!
+    }
+
+    type ContributorGroup {
+      field: String!
+      fieldValue: String
+      nodes: [Contributor]!
+      totalCount: Int!
+    }
+
+    type Query {
+      allContributor(filter: ContributorFilter): ContributorConnection!
+    }
+
+    input ContributorFilter {
+      core: Boolean
+      active: Boolean
+    }
+
+    type Example implements Node @dontInfer {
+        example: String!
+        example_id: String!
+        absolutePath: String!
+        scope: [ExampleScope]
+        exampleKnobs: [ExampleKnobs]
+        exampleVariants: [Variant]
+      }
+
+      type Variant {
+        name: String
+        code: String
+      }
+
+      type Knob {
+        name: String!
+        type: String!
+        defaultValue: String!
+        options: [String]
+      }
+
+      type ExampleKnobs {
+        component: String!
+        knobs: [Knob]
+      }
+
+      type ExampleScope {
+        name: String!
+        default: String!
+        path: String!
+      }
+
     type Mdx implements Node {
       frontmatter: MdxFrontmatter!
       fields: MdxFields
@@ -286,5 +355,6 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       },
     }),
   ];
+
   actions.createTypes(typeDefs);
 };

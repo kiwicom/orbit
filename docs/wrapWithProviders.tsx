@@ -7,7 +7,11 @@ import { TableOfContentsProvider } from "./src/services/table-of-contents";
 import theme from "./src/theme";
 import { KeyboardContextProvider } from "./src/services/KeyboardProvider";
 
-export const wrapWithProviders = ({ element }) => {
+interface WrapRootElementProps {
+  element: React.ReactNode;
+}
+
+const wrapWithProviders = ({ element }: WrapRootElementProps) => {
   return (
     <ThemeProvider theme={theme}>
       <OrbitProvider useId={React.useId} theme={theme}>

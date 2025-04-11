@@ -23,6 +23,10 @@
       "current node"
     ]
   },
+  "resolutions": {
+    "@types/react": "18.0.0",
+    "@types/react-dom": "18.0.0"
+  },
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/standalone": "^7.18.9",
@@ -52,6 +56,8 @@
     "@types/resize-observer-browser": "^0.1.7",
     "@types/styled-components": "^5.1.15",
     "@types/uuid": "^8.3.1",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "axios": "^1.8.2",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-plugin-styled-components": "^2.0.7",
@@ -92,8 +98,8 @@
     "jsondiffpatch": "^0.4.1",
     "memfs": "^3.2.0",
     "prism-react-renderer": "^2.3.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.0.2",
+    "react-dom": "^18.0.2",
     "react-github-btn": "^1.2.0",
     "react-helmet": "^6.1.0",
     "react-live": "^4.1.8",

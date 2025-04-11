@@ -98,6 +98,12 @@ const config: GatsbyConfig = {
         ],
         remarkPlugins: [deflist],
         rehypePlugins: [],
+        mdxOptions: {
+          remarkPlugins: [deflist],
+          rehypePlugins: [],
+          jsxImportSource: "react",
+          jsxRuntime: "automatic",
+        },
       },
     },
     "gatsby-plugin-image",
@@ -142,6 +148,21 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-root-import",
       options: {
         snippets: path.resolve("src/snippets"),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        allExtensions: true,
+        jsxPragma: "React",
+        jsxPragmaFrag: "React.Fragment",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-helmet",
+      options: {
+        reactVersion: "18",
       },
     },
     ...innerPlugins,

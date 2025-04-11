@@ -19,6 +19,7 @@ export const sourceNodes = async ({ actions, createContentDigest, createNodeId }
         avatar_url: u.avatar_url || "",
         ...u,
         core: u.core || false,
+        // active: u.active || true,
         username: u.username || u.id,
         id: createNodeId(u.id),
         parent: null,
@@ -41,8 +42,29 @@ export const sourceNodes = async ({ actions, createContentDigest, createNodeId }
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
   const { createTypes } = actions;
 
+  // type ContributorConnection {
+  //   nodes: [Contributor]!
+  //   group(field: String!): [ContributorGroup]!
+  // }
+
+  // type ContributorGroup {
+  //   field: String!
+  //   fieldValue: String
+  //   nodes: [Contributor]!
+  //   totalCount: Int!
+  // }
+
+  // type Query {
+  //   allContributor(filter: ContributorFilter): ContributorConnection!
+  // }
+
+  // input ContributorFilter {
+  //   core: Boolean
+  //   active: Boolean
+  // }
+
   const typeDefs = `
-    type Contributor implements Node {
+    type Contributor implements Node @dontInfer {
       id: ID!
       name: String
       info: String

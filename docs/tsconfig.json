@@ -7,7 +7,9 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "useUnknownInCatchVariables": false
+    "useUnknownInCatchVariables": false,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "exclude": ["**/scripts/**/*"]
 }

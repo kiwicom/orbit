@@ -26,7 +26,7 @@ Table below contains all types of the props available in List component.
 | size         | [`enum`](#enum)       | `"normal"`  | The size of the List.                                            |
 | spaceAfter   | `enum`                |             | Additional `margin-bottom` after component.                      |
 | type         | [`enum`](#enum)       | `"primary"` | The color type of the List.                                      |
-| spacing      | [`spacing`](#spacing) |             | The spacing between List children.                               |
+| spacing      | [`spacing`](#spacing) | `"100"`     | The spacing between List children.                               |
 
 ### enum
 

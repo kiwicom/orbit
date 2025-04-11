@@ -42,7 +42,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
   const { createTypes } = actions;
 
   const typeDefs = `
-    type Contributor implements Node {
+    type Contributor implements Node @dontInfer {
       id: ID!
       name: String
       info: String

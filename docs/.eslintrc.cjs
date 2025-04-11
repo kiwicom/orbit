@@ -12,6 +12,8 @@ module.exports = {
     "no-console": ["error", { allow: ["warn", "error", "info", "table"] }],
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-duplicate-enum-values": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
   overrides: [
     {

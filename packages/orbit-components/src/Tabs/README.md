@@ -31,26 +31,28 @@ Once you have imported the Tabs component, you can use it in your React applicat
 
 Table below contains all types of the props available in Tabs component.
 
-| Name            | Type                                               | Default | Description                                                                                                  |
-| :-------------- | :------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------- |
-| dataTest        | `string`                                           |         | Optional prop for testing purposes.                                                                          |
-| defaultSelected | `number`                                           | `0`     | Optional prop to set the initial active tab index. Use only if you do not want to control state on your side |
-| children        | `React.node`                                       |         | Required prop that should contain the `TabList`, `TabPanels` components.                                     |
-| onChange        | `(selectedIndex: number) => void \| Promise<void>` |         | Function for handling onChange. Use only if you do not want to control state on your side.                   |
+| Name            | Type                                               | Default | Description                                                                                                   |
+| :-------------- | :------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------ |
+| dataTest        | `string`                                           |         | Optional prop for testing purposes.                                                                           |
+| defaultSelected | `number`                                           | `0`     | Optional prop to set the initial active tab index. Use only if you do not want to control state on your side. |
+| children        | `React.node`                                       |         | Required prop that should contain the `TabList`, `TabPanels` components.                                      |
+| onChange        | `(selectedIndex: number) => void \| Promise<void>` |         | Function for handling onChange. Use only if you do not want to control state on your side.                    |
 
 ### TabList
 
 Table below contains all types of the props available in TabList component.
 
-| Name           | Type            | Default | Description                                                                          |
-| :------------- | :-------------- | :------ | :----------------------------------------------------------------------------------- |
-| dataTest       | `string`        |         | Optional prop for testing purposes.                                                  |
-| children       | `React.node`    |         | Required prop that should contain the `Tab` components.                              |
-| compact        | `boolean`       | `false` | Optional prop that responsible for `Tab`size, if provided, the Tabs will be smaller. |
-| spacing        | [`enum`](#enum) | `none`  | Optional prop to set gap between `Tab` elements.                                     |
-| fullWidth      | `boolean`       | `false` | Optional prop to set `TabList` to full width.                                        |
-| ariaLabel      | `string`        |         | Optional prop for `aria-label`.                                                      |
-| ariaLabelledBy | `string`        |         | Optional prop for `aria-labelledby`.                                                 |
+| Name           | Type                         | Default | Description                                                                          |
+| :------------- | :--------------------------- | :------ | :----------------------------------------------------------------------------------- |
+| dataTest       | `string`                     |         | Optional prop for testing purposes.                                                  |
+| children       | `React.node`                 |         | Required prop that should contain the `Tab` components.                              |
+| compact        | `boolean`                    | `false` | Optional prop that responsible for `Tab`size, if provided, the Tabs will be smaller. |
+| spacing        | [`enum`](#enum)              | `none`  | Optional prop to set gap between `Tab` elements.                                     |
+| fullWidth      | `boolean`                    | `false` | Optional prop to set `TabList` to full width.                                        |
+| margin         | `string \| number \| Object` | `"0"`   | Utility property to set margin.                                                      |
+| padding        | `string \| number \| Object` | `"0"`   | Utility property to set padding.                                                     |
+| ariaLabel      | `string`                     |         | Optional prop for `aria-label`.                                                      |
+| ariaLabelledby | `string`                     |         | Optional prop for `aria-labelledby`.                                                 |
 
 ### Tab
 

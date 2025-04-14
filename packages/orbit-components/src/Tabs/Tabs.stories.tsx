@@ -28,6 +28,7 @@ interface CustomProps {
   tabPanelChildrenFirst: string;
   tabPanelChildrenSecond: string;
   spacingTabList: SPACINGS;
+  ariaLabelTabList: string;
 }
 
 type TabsPropsAndCustomArgs = React.ComponentProps<typeof Tabs> &
@@ -88,7 +89,7 @@ export const Controlled: Story = {
 
     return (
       <Tabs>
-        <TabList>
+        <TabList ariaLabel="Controlled tabs example">
           <Tab onClick={() => setSelected(0)} active={selected === 0}>
             Tab 1
           </Tab>
@@ -137,11 +138,18 @@ export const Playground: Story = {
     tabChildrenSecond,
     tabPanelChildrenFirst,
     tabPanelChildrenSecond,
+    ariaLabelTabList,
     ...args
   }) => (
     <Box background="cloudLight">
       <Tabs defaultSelected={defaultSelected} spacing={spacing}>
-        <TabList spacing={spacingTabList} margin={marginTabList} padding={paddingTabList} {...args}>
+        <TabList
+          spacing={spacingTabList}
+          margin={marginTabList}
+          padding={paddingTabList}
+          ariaLabel={ariaLabelTabList}
+          {...args}
+        >
           <Tab type={typeFirstTab} disabled={disabledFirstTab}>
             {tabChildrenFirst}
           </Tab>
@@ -179,6 +187,7 @@ export const Playground: Story = {
     tabPanelChildrenSecond: "Tab content 2",
     marginTabPanel: "10px",
     paddingTabPanel: "20px",
+    ariaLabelTabList: "Playground tabs example",
   },
 
   argTypes: {
@@ -213,6 +222,7 @@ export const Playground: Story = {
     fullWidth: { table: { category: "TabList" } },
     marginTabList: { name: "margin", table: { category: "TabList" } },
     paddingTabList: { name: "padding", table: { category: "TabList" } },
+    ariaLabelTabList: { name: "ariaLabel", table: { category: "TabList" } },
     spacingTabList: {
       name: "spacing",
       options: Object.values(SPACINGS),
@@ -235,7 +245,7 @@ export const RTL: Story = {
   render: () => (
     <RenderInRtl>
       <Tabs>
-        <TabList>
+        <TabList ariaLabel="RTL tabs example">
           <Tab>Tab 1</Tab>
           <Tab type="basic">Tab 2</Tab>
           <Tab type="medium">Tab 3</Tab>

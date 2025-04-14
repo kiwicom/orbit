@@ -249,7 +249,7 @@ const green = {
   light: "#EAF5EA",
   lightActive: "#CDE4CF",
   lightHover: "#E1EFE2",
-  normal: "#058A25",
+  normal: "#048724",
   normalActive: "#03631B",
   normalHover: "#047620",
 };

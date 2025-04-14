@@ -25,7 +25,7 @@
   </token>
   <token>
     <name>alertIconSuccess</name>
-    <value>#058A25</value>
+    <value>#048724</value>
   </token>
   <token>
     <name>alertIconWarning</name>
@@ -129,7 +129,7 @@
   </token>
   <token>
     <name>badgeSuccessBackground</name>
-    <value>#058A25</value>
+    <value>#048724</value>
   </token>
   <token>
     <name>badgeSuccessForeground</name>
@@ -457,7 +457,7 @@
   </token>
   <token>
     <name>buttonSuccessBackground</name>
-    <value>#058A25</value>
+    <value>#048724</value>
   </token>
   <token>
     <name>buttonSuccessBackgroundHover</name>
@@ -817,7 +817,7 @@
   </token>
   <token>
     <name>iconSuccessForeground</name>
-    <value>#058A25</value>
+    <value>#048724</value>
   </token>
   <token>
     <name>iconWarningForeground</name>
@@ -1081,11 +1081,11 @@
   </token>
   <token>
     <name>textSuccessBackground</name>
-    <value>#058A251A</value>
+    <value>#0487241A</value>
   </token>
   <token>
     <name>textSuccessForeground</name>
-    <value>#058A25</value>
+    <value>#048724</value>
   </token>
   <token>
     <name>textWarningBackground</name>
@@ -1329,7 +1329,7 @@
   </token>
   <token>
     <name>paletteGreenNormal</name>
-    <value>#058A25</value>
+    <value>#048724</value>
   </token>
   <token>
     <name>paletteGreenNormalHover</name>

@@ -149,7 +149,7 @@
     },
     "javascript": {
       "name": "alertIconSuccess",
-      "value": "#058A25"
+      "value": "#048724"
     },
     "foundation": {
       "name": "alertIconSuccess",
@@ -157,7 +157,7 @@
     },
     "scss": {
       "name": "alertIconSuccess",
-      "value": "rgb(5, 138, 37)"
+      "value": "rgb(4, 135, 36)"
     }
   },
   "alertIconWarning": {
@@ -746,7 +746,7 @@
     },
     "javascript": {
       "name": "badgeSuccessBackground",
-      "value": "#058A25"
+      "value": "#048724"
     },
     "foundation": {
       "name": "badgeSuccessBackground",
@@ -754,7 +754,7 @@
     },
     "scss": {
       "name": "badgeSuccessBackground",
-      "value": "rgb(5, 138, 37)"
+      "value": "rgb(4, 135, 36)"
     }
   },
   "badgeSuccessForeground": {
@@ -2678,7 +2678,7 @@
     },
     "javascript": {
       "name": "buttonSuccessBackground",
-      "value": "#058A25"
+      "value": "#048724"
     },
     "foundation": {
       "name": "buttonSuccessBackground",
@@ -2686,7 +2686,7 @@
     },
     "scss": {
       "name": "buttonSuccessBackground",
-      "value": "rgb(5, 138, 37)"
+      "value": "rgb(4, 135, 36)"
     }
   },
   "buttonSuccessBackgroundHover": {
@@ -4742,7 +4742,7 @@
     },
     "javascript": {
       "name": "iconSuccessForeground",
-      "value": "#058A25"
+      "value": "#048724"
     },
     "foundation": {
       "name": "iconSuccessForeground",
@@ -4750,7 +4750,7 @@
     },
     "scss": {
       "name": "iconSuccessForeground",
-      "value": "rgb(5, 138, 37)"
+      "value": "rgb(4, 135, 36)"
     }
   },
   "iconWarningForeground": {
@@ -6259,7 +6259,7 @@
     },
     "javascript": {
       "name": "textSuccessBackground",
-      "value": "#058A251A"
+      "value": "#0487241A"
     },
     "foundation": {
       "name": "textSuccessBackground",
@@ -6267,7 +6267,7 @@
     },
     "scss": {
       "name": "textSuccessBackground",
-      "value": "rgba(5, 138, 37, 0.1)"
+      "value": "rgba(4, 135, 36, 0.1)"
     }
   },
   "textSuccessForeground": {
@@ -6282,7 +6282,7 @@
     },
     "javascript": {
       "name": "textSuccessForeground",
-      "value": "#058A25"
+      "value": "#048724"
     },
     "foundation": {
       "name": "textSuccessForeground",
@@ -6290,7 +6290,7 @@
     },
     "scss": {
       "name": "textSuccessForeground",
-      "value": "rgb(5, 138, 37)"
+      "value": "rgb(4, 135, 36)"
     }
   },
   "textWarningBackground": {
@@ -7683,7 +7683,7 @@
     },
     "javascript": {
       "name": "paletteGreenNormal",
-      "value": "#058A25"
+      "value": "#048724"
     },
     "foundation": {
       "name": "paletteGreenNormal",
@@ -7691,7 +7691,7 @@
     },
     "scss": {
       "name": "paletteGreenNormal",
-      "value": "rgb(5, 138, 37)"
+      "value": "rgb(4, 135, 36)"
     }
   },
   "paletteGreenNormalHover": {

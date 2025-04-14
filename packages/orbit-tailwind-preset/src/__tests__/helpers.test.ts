@@ -55,7 +55,7 @@ describe("orbit-tailwind-preset", () => {
         "button-primary-background": "#008F7B",
         "button-primary-subtle-background": "#E1F4F3",
         "button-secondary-background": "#E8EDF1",
-        "button-success-background": "#058A25",
+        "button-success-background": "#048724",
         "button-warning-background": "#B36200",
         "button-white-background": "#FFFFFF",
       }

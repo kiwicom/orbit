@@ -25,7 +25,6 @@ const TooltipWrapper = React.forwardRef<
           "[&_.orbit-text]:inline-block [&_.orbit-text]:underline [&_.orbit-text]:decoration-current [&_.orbit-text]:decoration-dotted",
       )}
       ref={ref}
-      role="button"
       {...props}
     />
   );

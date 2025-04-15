@@ -71,6 +71,7 @@ const MobileDialog = ({
     <>
       <TooltipWrapper
         onClick={handleInMobile}
+        role="button"
         aria-describedby={shown ? mobileDialogID : undefined}
         tabIndex={enabled ? Number(tabIndex) : undefined}
         enabled={enabled}

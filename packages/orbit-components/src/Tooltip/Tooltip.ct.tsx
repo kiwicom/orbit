@@ -24,7 +24,7 @@ test.describe("Tooltip visual tests", () => {
 
     const component = await mount(<TooltipVisualDefaultStory />);
 
-    await component.getByRole("button").hover();
+    await component.getByText("Tooltip.").hover();
     await expect(component).toHaveScreenshot();
   });
 
@@ -39,7 +39,7 @@ test.describe("Tooltip visual tests", () => {
 
     const tooltip = await page.getByRole("tooltip");
 
-    await component.getByRole("button").click();
+    await component.getByText("Tooltip.").click();
 
     await expect(tooltip).toBeVisible();
     await expect(component).toHaveScreenshot();

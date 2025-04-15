@@ -20,7 +20,6 @@ const TooltipPrimitive = ({
   content,
   error,
   help,
-  stopPropagation = false,
   removeUnderlinedText,
   block = false,
   placement,
@@ -60,15 +59,6 @@ const TooltipPrimitive = ({
     document.addEventListener("keydown", handleEsc);
   }, [setRender, onShow, clearRenderTimeout, handleEsc]);
 
-  const handleClick = React.useCallback(
-    (ev: React.MouseEvent<HTMLSpanElement | HTMLDivElement>) => {
-      if (stopPropagation) {
-        ev.stopPropagation();
-      }
-    },
-    [stopPropagation],
-  );
-
   React.useEffect(() => {
     if (tooltipShown) {
       handleIn();
@@ -76,10 +66,6 @@ const TooltipPrimitive = ({
       handleOut();
     }
   }, [tooltipShown, handleIn, handleOut]);
-
-  const handleOutMobile = React.useCallback(() => {
-    setRenderWithTimeout(false);
-  }, [setRenderWithTimeout]);
 
   if (!enabled) return <>{children}</>;
 
@@ -93,9 +79,7 @@ const TooltipPrimitive = ({
       error={error}
       help={help}
       tooltipId={id || tooltipId}
-      onClick={handleClick}
       onClose={handleOut}
-      onCloseMobile={handleOutMobile}
       onEnter={handleIn}
       placement={placement}
       noFlip={noFlip}
@@ -111,7 +95,6 @@ const TooltipPrimitive = ({
       <TooltipWrapper
         onMouseEnter={handleIn}
         onMouseLeave={handleOut}
-        onClick={handleClick}
         onFocus={handleIn}
         onBlur={handleOut}
         ref={setReferenceElement}

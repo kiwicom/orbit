@@ -217,7 +217,6 @@ export const Playground: Story = {
     content: "Write your text here.",
     error: false,
     help: false,
-    stopPropagation: false,
     removeUnderlinedText: false,
     block: false,
     noFlip: false,

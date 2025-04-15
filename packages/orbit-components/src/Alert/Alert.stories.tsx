@@ -98,7 +98,9 @@ export const Button: Story = {
   },
 
   parameters: {
-    controls: { exclude: ["title", "children", "icon", "closable", "spaceAfter", "suppressed"] },
+    controls: {
+      exclude: ["title", "children", "icon", "closable", "spaceAfter", "suppressed", "labelClose"],
+    },
   },
 
   args: {

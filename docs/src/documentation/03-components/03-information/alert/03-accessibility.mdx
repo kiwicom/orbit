@@ -1,0 +1,101 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/alert/accessibility/
+---
+
+# Accessibility
+
+## Alert
+
+The Alert component has been designed with accessibility in mind.
+
+### Accessibility props
+
+The following props are available to improve the accessibility of your Alert component:
+
+| Prop       | Type     | Description                                                              |
+| :--------- | :------- | :----------------------------------------------------------------------- |
+| labelClose | `string` | Defines accessible text for the close button when the alert is closable. |
+
+When the `closable` prop is set to `true`, the `labelClose` prop is required. It provides the text that screen readers will announce when focusing on the close button, helping users understand its purpose.
+
+The `labelClose` text should be properly translated.
+
+### Best practices
+
+- When using the `icon` prop, follow the accessibility guidelines documented in the Icon component's accessibility documentation to ensure that the icon is properly accessible or visually hidden from screen readers when it is purely decorative.
+
+### Code examples
+
+#### Using labelClose with closable alert
+
+```jsx
+<Alert
+  type="info"
+  title="Notification"
+  closable
+  labelClose="Close notification" // Should be a translated string
+  onClose={() => {
+    // handle close action
+  }}
+>
+  This is an important update for your upcoming flight.
+</Alert>
+```
+
+In this example, screen readers would announce "Close notification" when focusing on the close button.
+
+#### Non-closable alert (no accessibility props required)
+
+```jsx
+<Alert type="success" title="Success">
+  Your booking has been confirmed.
+</Alert>
+```
+
+In this example, the alert doesn't require additional accessibility props as it doesn't have interactive elements that need labels.
+
+## AlertButton
+
+The AlertButton component also includes several accessibility features:
+
+### Accessibility props
+
+| Prop           | Type      | Description                                                                                      |
+| :------------- | :-------- | :----------------------------------------------------------------------------------------------- |
+| title          | `string`  | Adds `aria-label` to the button, providing a description for screen readers.                     |
+| ariaControls   | `string`  | Identifies the element controlled by the button, establishing a relationship for screen readers. |
+| ariaExpanded   | `boolean` | Indicates to screen readers whether the controlled element is expanded.                          |
+| ariaLabelledby | `string`  | References the ID of an element that labels the button.                                          |
+
+### Best practices
+
+- The `title` prop should be used when the button's purpose isn't clear from its content alone or when additional context would help screen reader users.
+- When the AlertButton controls the visibility of another element (like a collapsible section), use `ariaControls` with the ID of that element and `ariaExpanded` to indicate its state.
+- Always translate accessibility-related text to match the user's language.
+- Use the `asComponent` prop to change the rendered element when the AlertButton is used inside another interactive element (like another button or a link). This helps avoid accessibility violations from nesting interactive elements, which can confuse screen readers and keyboard navigation.
+- When using `iconLeft` or `iconRight` props, follow the accessibility guidelines documented in the Icon component's accessibility documentation to ensure that icons are properly accessible or visually hidden from screen readers when they are purely decorative.
+
+You can find additional accessibility guidance in the Button accessibility documentation.
+
+### Code example
+
+```jsx
+<Alert type="warning" title="Flight delay information">
+  <p>Your flight has been delayed by 2 hours.</p>
+  <AlertButton
+    type="warning"
+    ariaControls="details-panel"
+    ariaExpanded={detailsVisible}
+    onClick={() => setDetailsVisible(!detailsVisible)}
+  >
+    {detailsVisible ? "Hide details" : "Show details"}
+  </AlertButton>
+  <div id="details-panel" style={{ display: detailsVisible ? "block" : "none" }}>
+    Detailed information about the delay...
+  </div>
+</Alert>
+```
+
+In this example, screen readers would announce the button text along with information about what element it controls and whether that element is currently expanded.

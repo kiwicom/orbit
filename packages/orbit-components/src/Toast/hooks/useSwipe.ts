@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { SWIPE_DISMISS_DELAY } from "../consts";
 
 export default function useSwipeToDismiss(
-  ref: React.RefObject<HTMLElement>,
+  ref: React.RefObject<HTMLElement | null>,
   onDismiss: () => void,
   distanceBeforeDismiss: number,
   direction: "left" | "right",

@@ -46,7 +46,7 @@ interface StyledContainerProps {
   $inline?: boolean;
 }
 
-const StyledWrapper = styled.div<StyledContainerProps>`
+const StyledWrapper = styled.div<StyledContainerProps & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme, $fullWidth, href, to, $hasContent: hasContent, $inline }) => css`
     padding: 2rem;
     border-radius: 1rem;
@@ -95,7 +95,7 @@ function TileWrapper({ href, ...props }: TileWrapperProps) {
   return <StyledWrapper {...props} />;
 }
 
-const StyledIcon = styled.div<{ isBookmark?: boolean }>`
+const StyledIcon = styled.div<{ isBookmark?: boolean } & React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme, isBookmark }) => `
     align-self: start;
     flex-shrink: 0;
@@ -113,8 +113,6 @@ const StyledIcon = styled.div<{ isBookmark?: boolean }>`
       height: 20px;
       stroke: currentColor;
     }
-
-
   `}
 `;
 

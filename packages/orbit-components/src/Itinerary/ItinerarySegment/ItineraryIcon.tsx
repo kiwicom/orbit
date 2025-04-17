@@ -25,7 +25,7 @@ const RenderedIcon = ({
   isLast: boolean;
   children: React.ReactNode;
   type: Props["type"];
-}): JSX.Element => {
+}): React.ReactNode => {
   if (type && children !== null)
     return <AlertCircle size="small" color={type === "neutral" ? "primary" : type} />;
   if (isHidden) return <StarFull color="warning" size="small" />;

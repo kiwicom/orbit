@@ -45,7 +45,9 @@ export const StyledPlatform = styled.div`
   `};
 `;
 
-export const StyledPlatformLabel = styled.div<{ $hidden?: boolean }>`
+export const StyledPlatformLabel = styled.div<
+  { $hidden?: boolean } & React.HTMLAttributes<HTMLDivElement>
+>`
   ${({ $hidden }) => css`
     ${srOnly};
     ${!$hidden &&

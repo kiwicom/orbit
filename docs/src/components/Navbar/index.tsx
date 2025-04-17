@@ -68,7 +68,7 @@ const StyledRight = styled.div`
   align-items: center;
 `;
 
-const StyledTabList = styled.div`
+const StyledTabList = styled.div<React.HTMLAttributes<HTMLDivElement>>`
   ${({ theme }) => `
     font-size: 1rem; /* hack back to regular size because it's in ModalHeader title */
     display: flex;
@@ -79,7 +79,8 @@ const StyledTabList = styled.div`
     box-shadow: 0px 1px 4px 0px #252A311F inset, 0px 0px 2px 0px #252A3129 inset;
   `}
 `;
-const StyledTab = styled.button`
+
+const StyledTab = styled.button<React.ButtonHTMLAttributes<HTMLButtonElement>>`
   ${({ theme }) => `
     flex: 1;
     display: block;

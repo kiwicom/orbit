@@ -46,7 +46,7 @@ const Slider = ({
   id,
   dataTest,
 }: Props) => {
-  const bar = React.useRef<HTMLDivElement>(null);
+  const bar = React.useRef<HTMLDivElement | null>(null);
   const [value, setValue] = React.useState(defaultValue);
   const valueRef = React.useRef(value);
   const defaultRef = React.useRef(defaultValue);

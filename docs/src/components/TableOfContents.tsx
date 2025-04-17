@@ -16,7 +16,7 @@ const getColor = (active: boolean, level: number, theme) => {
   return theme.orbit.paletteInkNormal;
 };
 
-const StyledAnchor = styled.a<StyledAnchorProps>`
+const StyledAnchor = styled.a<StyledAnchorProps & React.AnchorHTMLAttributes<HTMLAnchorElement>>`
   ${({ active, level, theme }) => css`
     color: ${getColor(active, level, theme)};
     font-size: 14px;
@@ -33,7 +33,9 @@ const StyledTocList = styled.ul`
   flex-direction: column;
 `;
 
-const StyledTocListItem = styled.li<{ level: number; active?: boolean }>`
+const StyledTocListItem = styled.li<
+  { level: number; active?: boolean } & React.HTMLAttributes<HTMLLIElement>
+>`
   ${({ theme, active }) => css`
     margin-left: ${theme.orbit.space400};
     margin-bottom: ${theme.orbit.space200};

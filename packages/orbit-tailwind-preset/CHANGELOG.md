@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@7.1.0...@kiwicom/orbit-tailwind-preset@7.2.0) (2025-04-17)
+
+
+### Features
+
+* **tailwind:** add new safe- classes ([766f017](https://github.com/kiwicom/orbit/commit/766f017349822e8fbe8c304f910ef5dfa9a057de))
+
+
+
+
+
 # [7.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@7.0.1...@kiwicom/orbit-tailwind-preset@7.1.0) (2025-04-10)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@10.0.0...@kiwicom/orbit-design-tokens@10.0.1) (2025-04-17)
+
+
+### Bug Fixes
+
+* **tokens:** small update to greenNormal color ([e0b5f86](https://github.com/kiwicom/orbit/commit/e0b5f86676d81046a02e771bf4b50baf07227cf0))
+
+
+
+
+
 # [10.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@9.0.1...@kiwicom/orbit-design-tokens@10.0.0) (2025-04-10)
 
 

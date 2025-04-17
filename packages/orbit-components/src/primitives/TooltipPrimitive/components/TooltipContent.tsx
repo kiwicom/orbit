@@ -12,7 +12,6 @@ import {
 } from "@floating-ui/react";
 
 import { AUTO_PLACEMENTS, getAutoAlignment, isFixedPlacement } from "../../../common/placements";
-import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
 import type { Props } from "./types";
 import useTheme from "../../../hooks/useTheme";
 import type { Theme } from "../../../defaultTheme";
@@ -41,9 +40,7 @@ const TooltipContent = ({
   error,
   help,
   children,
-  onClick,
   onClose,
-  onCloseMobile,
   onEnter,
   placement = AUTO_PLACEMENTS.AUTO,
   noFlip,
@@ -56,7 +53,7 @@ const TooltipContent = ({
 
   const isAutoPlacement = !isFixedPlacement(placement);
 
-  const { refs, floatingStyles, context, elements } = useFloating({
+  const { refs, floatingStyles, context } = useFloating({
     placement: isAutoPlacement ? undefined : placement,
     elements: {
       reference: referenceElement,
@@ -92,27 +89,7 @@ const TooltipContent = ({
   const theme = useTheme();
   const arrowColor = getArrowColor({ error, help, theme });
 
-  const handleInnerClick = React.useCallback(
-    ev => {
-      if (elements.floating) {
-        const focusableElements = elements.floating.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS);
-        if (Object.values(focusableElements).some(v => v === ev.target)) {
-          onClose();
-          onCloseMobile();
-        }
-      }
-    },
-    [onClose, onCloseMobile, elements.floating],
-  );
-
-  const handleCombinedClick = (ev: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    handleInnerClick(ev);
-    onClick(ev);
-  };
-
   return (
-    // Disabling because the onClick exists to close tooltip when clicking in interactive elements, which should not happen with keyboard.
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <div
       className={cx(
         "rounded-100 px-300 shadow-level3 z-[10012] box-border block w-auto overflow-visible",
@@ -132,7 +109,6 @@ const TooltipContent = ({
       aria-hidden={!shown}
       onMouseEnter={onEnter}
       onMouseLeave={onClose}
-      onClick={handleCombinedClick}
       style={floatingStyles}
       data-test={dataTest}
     >

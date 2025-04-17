@@ -15,7 +15,6 @@ export interface Props extends Common.Globals {
   readonly onShow?: Common.Callback;
   readonly error?: boolean;
   readonly help?: boolean;
-  readonly stopPropagation?: boolean;
   readonly enabled?: boolean;
   readonly tabIndex?: string | number;
   readonly tooltipShown?: boolean;

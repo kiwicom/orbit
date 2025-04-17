@@ -14,6 +14,7 @@ export default {
     <OrbitProvider theme={defaultTheme} useId={React.useId}>
       <Popover
         renderInPortal={false}
+        ariaLabel="Help and documentation links"
         content={
           <Stack spacing="300">
             <ButtonLink
@@ -35,7 +36,7 @@ export default {
           </Stack>
         }
       >
-        <Button circled title="Help" iconLeft={<QuestionCircle />} />
+        <Button asComponent="div" circled title="Help" iconLeft={<QuestionCircle />} />
       </Popover>
     </OrbitProvider>
   ),
@@ -73,7 +74,7 @@ export default {
             "bottom-end",
           ],
         },
-        { name: "ariaLabel", type: "text", defaultValue: "" },
+        { name: "ariaLabel", type: "text", defaultValue: "Help and documentation links" },
         { name: "ariaLabelledby", type: "text", defaultValue: "" },
       ],
     },

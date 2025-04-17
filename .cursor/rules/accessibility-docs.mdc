@@ -104,7 +104,7 @@ The ComponentTwo component has been designed with accessibility in mind.
 
 6. Code examples and screen reader behavior:
 ```mdx
-#### Code examples
+#### Examples
 
 Basic usage:
 ```jsx

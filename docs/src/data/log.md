@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [23.0.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@23.0.1...@kiwicom/orbit-components@23.0.2) (2025-04-17)
+
+#### Bug Fixes
+
+* **BadgeList:** remove margin values, set default spacing ([eb77d62](https://github.com/kiwicom/orbit/commit/eb77d624e618fe25504c3a337fcdc3b33127ffbe))
+* **List:** remove margin values, set default spacing ([fed92d3](https://github.com/kiwicom/orbit/commit/fed92d317636d3f58e729876e8081d7ed981de33))
+
 ### [23.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@23.0.0...@kiwicom/orbit-components@23.0.1) (2025-04-10)
 
 #### Bug Fixes

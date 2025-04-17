@@ -14,6 +14,7 @@ export default {
     <OrbitProvider theme={defaultTheme} useId={React.useId}>
       <Popover
         renderInPortal={false}
+        ariaLabel="Documentation resources"
         content={
           <Stack spacing="300">
             <ButtonLink
@@ -35,7 +36,7 @@ export default {
           </Stack>
         }
       >
-        <Button iconRight={<ChevronDown />} type="secondary">
+        <Button asComponent="div" iconRight={<ChevronDown />} type="secondary">
           Learn more
         </Button>
       </Popover>

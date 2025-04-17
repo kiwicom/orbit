@@ -188,7 +188,7 @@ const Popover = ({
         tabIndex={0}
         onClick={handleClick}
         onKeyDown={handleKeyDown<HTMLDivElement>(handleClick)}
-        aria-controls={overlayId}
+        aria-controls={shown ? id || popoverId : undefined}
         aria-haspopup={role}
         aria-expanded={shown}
       >

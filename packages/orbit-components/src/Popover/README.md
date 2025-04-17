@@ -20,7 +20,7 @@ The table below contains all types of props available in the Popover component.
 
 | Name           | Type                                                  | Default             | Description                                                                                                                                          |
 | :------------- | :---------------------------------------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
-| actions        | `React.Node`                                          |                     | Actions to display at the bottom of the Popover [See Functional specs](#functional-specs).                                                           |
+| actions        | `React.Node`                                          |                     | Actions to display at the bottom of the Popover. [See Functional specs](#functional-specs)                                                           |
 | **content**    | `React.Node`                                          |                     | The content to display in the Popover.                                                                                                               |
 | **children**   | `React.Node`                                          |                     | The reference element where the Popover will appear.                                                                                                 |
 | dataTest       | `string`                                              |                     | Optional prop for testing purposes.                                                                                                                  |
@@ -35,7 +35,7 @@ The table below contains all types of props available in the Popover component.
 | maxHeight      | `string`                                              |                     | The maximum height of the content of the popover, if undefined, it is set to `100%`.                                                                 |
 | onClose        | `() => void \| Promise`                               |                     | Function for handling onClose.                                                                                                                       |
 | onOpen         | `() => void \| Promise`                               |                     | Function for handling onOpen.                                                                                                                        |
-| placement      | [`placement`](#placement)                             | `bottom-start`      | 12 different placements to choose from.                                                                                                              |
+| placement      | [`placement`](#placement)                             | `bottom-start`      | 15 different placements to choose from.                                                                                                              |
 | lockScrolling  | `boolean`                                             | `true`              | Whether to prevent scrolling of the rest of the page while Popover is open on mobile. This is `true` by default to provide a better user experience. |
 | noFlip         | `boolean`                                             | `false`             | Turns off automatic flipping of the Popover when there is not enough space.                                                                          |
 | allowOverflow  | `boolean`                                             | `false`             | Allows the Popover to be cut off instead of moving it while scrolling to keep it visible.                                                            |
@@ -109,11 +109,3 @@ The table below contains all types of props available in the Popover component.
   <Button>Open Popover</Button>
 </Popover>
 ```
-
-## Accessibility
-
-- `Button` is the most common trigger component for opening and closing the popover. The `Popover` component renders a wrapping `div` with the `role="button"` attribute by default. Ensure that the trigger component is set as a non-interactive component (for example, using the `asComponent` prop) to avoid the accessibility violation of nesting interactive controls (`Interactive controls must not be nested`).
-
-- The `ariaLabelledby` prop allows you to specify an `aria-labelledby` attribute for the popover content component. This attribute provides a reference to one or more elements that label the popover content. By using `ariaLabelledby`, the accessibility of popover component is improved and it is easier for users with assistive technologies to understand the context and purpose of the content.
-
-- The `ariaLabel` prop allows you to specify an `aria-label` attribute for the popover content component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.

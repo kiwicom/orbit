@@ -5,6 +5,19 @@ alwaysApply: false
 ---
 # Accessibility Documentation Rules
 
+## Purpose and Scope
+
+The accessibility documentation should:
+- Focus on how OUR components implement and handle accessibility
+- Document built-in/automatic accessibility features
+- Explain component-specific configuration options
+- Provide practical usage examples specific to our components
+
+The documentation should NOT:
+- Explain general ARIA concepts or accessibility guidelines
+- Provide general education about what roles or attributes mean
+- Include generic accessibility best practices not specific to our components
+
 ## Before Starting
 
 1. Ask for any specific requirements or notes for the component

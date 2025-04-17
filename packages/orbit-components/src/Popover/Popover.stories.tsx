@@ -80,7 +80,6 @@ const meta: Meta<typeof Popover> = {
     onOpen: action("open"),
     onClose: action("close"),
     ariaLabel: "Passengers select",
-    ariaLabelledby: "passengers",
     role: "dialog",
   },
 

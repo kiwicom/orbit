@@ -1,9 +1,15 @@
 ---
 description: Revision, creation and modification of accessibility documentation files
-globs:
+globs: 
 alwaysApply: false
 ---
 # Accessibility Documentation Rules
+
+## Before Starting
+
+1. Ask for any specific requirements or notes for the component
+2. Review existing JIRA task notes for additional context
+3. Check if component has special accessibility considerations
 
 ## File Structure and Location
 
@@ -26,50 +32,102 @@ redirect_from:
 
 ### Document Structure
 
-#### 1. Main Heading
+#### Required Section Names
 
+Documentation must use these exact section names and structure:
+
+1. Main heading and introduction:
 ```mdx
 ## Accessibility
+
+The [ComponentName] component has been designed with accessibility in mind.
 ```
 
-#### 2. Introduction Statement
-
-- Start with: "The [ComponentName] component has been designed with accessibility in mind."
-- Add any specific context about keyboard navigation or special features
-
-#### 3. Props Documentation
-
-When applicable, document props in tables:
-
+2. For multiple components:
 ```mdx
+## Accessibility
+
+### ComponentOne
+The ComponentOne component has been designed with accessibility in mind.
+[ComponentOne documentation...]
+
+### ComponentTwo
+The ComponentTwo component has been designed with accessibility in mind.
+[ComponentTwo documentation...]
+```
+
+3. Props documentation:
+```mdx
+#### Accessibility Props
+
 | Name | Type | Description |
 | :--- | :--- | :---------- |
 ```
 
-#### 4. Special Features/Considerations
+4. For components with multiple elements:
+```mdx
+#### Accessibility Props
 
-- Document any specific accessibility features
-- Include information about screen reader behavior
-- Document any automatic ARIA attribute handling
+**Input field props:**
 
-#### 5. Examples Section
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| ariaLabel | string | Specifies aria-label for the input field |
 
-Provide examples with proper JSX syntax highlighting:
+**Button props:**
 
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| titleDecrement | string | Specifies aria-label for the decrement button |
+```
+
+5. Best practices (if applicable):
+```mdx
+#### Best practices
+
+- Guideline 1
+- Guideline 2
+```
+
+6. Code examples and screen reader behavior:
+```mdx
+#### Code examples
+
+Basic usage:
 ```jsx
-<Component prop="value">
-  Content
-</Component>
+<Component />
+```
+
+Screen reader announces: "Component description"
+
+With ARIA labels:
+```jsx
+<Component ariaLabel="Custom label" />
+```
+
+Screen reader announces: "Custom label"
 ```
 
 ### Content Requirements
 
 #### Accessibility Props
 
-- Document standard aria props specific to the component
+- Document all accessibility-related props:
+  - Standard aria-* props specific to the component
+  - Other accessibility attributes (role, disabled, tabIndex, etc.)
+  - Native HTML attributes that affect accessibility
 - Document if component accepts all aria-* and data-* props (exceptional cases)
-- Use kebab-case for aria attribute documentation (e.g., aria-label)
 - Include prop descriptions in the component's props table if missing
+
+#### Automatic Accessibility Features
+
+- Document any automatically handled accessibility features:
+  - Focus management (e.g., Modal/Drawer auto-focusing first element)
+  - Internal ARIA attributes (e.g., aria-controls, aria-expanded)
+  - Keyboard navigation handling
+  - Screen reader announcements
+- Explain when and how these automatic features work
+- Note any conditions or props that might affect automatic behavior
 
 #### Screen Reader Behavior
 
@@ -80,7 +138,7 @@ Provide examples with proper JSX syntax highlighting:
 #### Special Cases
 
 - Document asComponent prop if available
-- For components with icons, document aria-label requirements
+- For components using icons, reference the Icon component's accessibility documentation
 - Specify when certain aria props are required vs optional
 
 ### Storybook Integration
@@ -104,20 +162,11 @@ Each component documentation should include:
 2. Screen reader announcement examples
 3. Common use cases with accessibility considerations
 4. Edge cases and their proper handling
-
-## Reference Components
-
-Use these components as models for documentation:
-
-- ButtonLink
-- TextLink
-
-These components demonstrate:
-
-- Special cases for aria props
-- Icon-only scenarios
-- Component-specific accessibility requirements
-- Prop documentation patterns
+5. Component composition examples:
+   - How to maintain accessibility when components are used together
+   - Best practices for common combinations (e.g., InputField inside InputGroup)
+   - How ARIA attributes and roles interact between nested components
+   - Screen reader behavior in component combinations
 
 ## Writing Style Guidelines
 
@@ -138,6 +187,30 @@ These components demonstrate:
 2. No accessibility sections should remain in README.md files
 3. Each component must have its own accessibility documentation page
 4. Documentation must be created only after explicit approval for each component
+
+### README.md Updates
+
+When creating accessibility documentation:
+1. Review and update the props table in README.md:
+   - Add any missing accessibility-related props
+   - Correct any inaccurate prop descriptions
+   - Ensure prop types are correct
+   - Fix any typos or formatting issues
+   - Ensure kebab-case is used for aria-* props
+   - Check that all props match the actual implementation
+   - Verify default values are correctly documented
+2. Remove any accessibility-related content
+3. Add a link to the new accessibility documentation
+
+Example of props table corrections:
+```diff
+| Name | Type | Default | Description |
+| :-- | :-- | :-- | :-- |
+- | ariaLabel | string | - | Label for screen readers
++ | aria-label | string | - | Specifies the accessible name of the element
+- | ariaCurrent | string | false | Indicates current item
++ | aria-current | string | - | Indicates whether element represents current item within a set
+```
 
 ### Content Validation
 

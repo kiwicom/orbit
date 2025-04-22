@@ -1,0 +1,54 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/accordion/accessibility/
+---
+
+## Accessibility
+
+The Accordion component has been designed with accessibility in mind, providing collapsible sections that are fully keyboard navigable and screen reader compatible.
+
+### Accessibility Props
+
+**AccordionSection props:**
+
+| Name              | Type      | Default | Description                                                                                                                           |
+| :---------------- | :-------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------ |
+| expandOnTileClick | `boolean` | `false` | When `true`, makes the entire header area clickable to expand/collapse the section, improving the touch target size for mobile users. |
+
+### Automatic Accessibility Features
+
+- The component automatically manages ARIA attributes when a section is expandable AND `expandOnTileClick` is true:
+  - `role="button"` is applied to the header
+  - `aria-expanded` is set to `true` or `false` based on the section's expanded state
+  - `aria-controls` associates the header with its controlled content section
+  - `tabIndex` is set to 0 to include the header in the tab order
+
+### Keyboard Navigation
+
+The Accordion component supports the following keyboard interactions:
+
+- **Enter/Space:** When focus is on a section header with `expandOnTileClick` enabled, pressing Enter or Space will toggle the expansion state
+- **Tab:** Moves focus to the next focusable element (header or interactive elements within expanded sections)
+- **Shift + Tab:** Moves focus to the previous focusable element
+
+### Best Practices
+
+- Provide descriptive headers that clearly indicate the content of each section
+- Consider enabling `expandOnTileClick` for interfaces primarily used on mobile devices
+- Interactive elements in the main content area should only be accessible when their section is expanded
+
+### Example
+
+```jsx
+<Accordion id="faq-accordion">
+  <AccordionSection id="section-1" header="What is Orbit?" expandOnTileClick>
+    Orbit is Kiwi.com's design system for creating consistent user experiences across products.
+  </AccordionSection>
+  <AccordionSection id="section-2" header="How do I use Accordion?" expandOnTileClick>
+    Import the Accordion and AccordionSection components and nest the sections within the accordion.
+  </AccordionSection>
+</Accordion>
+```
+
+Screen reader announces: "What is Orbit?, button, collapsed" when focusing on the first section header.

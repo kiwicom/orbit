@@ -20,31 +20,27 @@ After adding import into your project you can use it simply like:
 | --------------- | --------------------------------------------------------------------------------- | -------- | ------- | --------------------------------------------------------------------------- |
 | children        | `React.ReactNode`                                                                 |          |         | The content of the Accordion. You can use only AccordionSection             |
 | expandedSection | `string \| number`                                                                |          |         | Optional prop to control which AccordionSection (by id) is expanded         |
-| loading         | `boolean`                                                                         |          |         | If true it will render the Loading component                                |
+| loading         | `boolean`                                                                         |          | `false` | If true it will render the Loading component                                |
 | onExpand        | `(sectionId: string \| number) => void \| Promise<any>`                           |          |         | Callback (along with sectionId) that is triggered when section is expanding |
-| dataTest        | `string`                                                                          |          |         |                                                                             |
+| dataTest        | `string`                                                                          |          |         | Optional prop for testing purposes                                          |
 | id              | `string`                                                                          |          |         | Set `id` for `Accordion`                                                    |
-| spaceAfter      | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |          |         |                                                                             |
+| spaceAfter      | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |          |         | Additional space after the component                                        |
 
 ## AccordionSection
 
 ## Props
 
-| Name              | Type               | Required | Default | Description                                                                                             |
-| ----------------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------- |
-| id                | `string \| number` |          |         |                                                                                                         |
-| children          | `React.ReactNode`  |          |         |                                                                                                         |
-| actions           | `React.ReactNode`  |          |         |                                                                                                         |
-| expanded          | `boolean`          |          |         |                                                                                                         |
-| expandable        | `boolean`          |          |         |                                                                                                         |
-| expandOnTileClick | `boolean`          |          | `false` | If true, enables mobile-first interaction where the entire header area becomes clickable for expansion. |
-| onExpand          | `Common.Callback`  |          |         |                                                                                                         |
-| header            | `React.ReactNode`  |          |         |                                                                                                         |
-| footer            | `React.ReactNode`  |          |         |                                                                                                         |
-| dataTest          | `string`           |          |         |                                                                                                         |
+| Name              | Type              | Required | Default | Description                                                                                   |
+| ----------------- | ----------------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| id                | `string`          |          |         | Unique identifier for the section, used by `expandedSection`                                  |
+| children          | `React.ReactNode` |          |         | The content of the AccordionSection                                                           |
+| actions           | `React.ReactNode` |          |         | Additional actions to be displayed in the header                                              |
+| expandable        | `boolean`         |          | `true`  | Whether the section can be expanded                                                           |
+| expandOnTileClick | `boolean`         |          | `false` | Enables mobile-first interaction where the entire header area becomes clickable for expansion |
+| header            | `React.ReactNode` |          |         | The content of the section header                                                             |
+| footer            | `React.ReactNode` |          |         | Additional content to display at the bottom of an expanded section                            |
+| dataTest          | `string`          |          |         | Optional prop for testing purposes                                                            |
 
-### Callback
+## Functional specs
 
-| Callback                      |
-| ----------------------------- |
-| `() => void \| Promise<void>` |
+- By default, the Accordion component operates in an uncontrolled mode. For programmatic control, use the `expandedSection` and `onExpand` props together.

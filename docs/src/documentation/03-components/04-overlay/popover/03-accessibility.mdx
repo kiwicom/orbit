@@ -1,0 +1,87 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/popover/accessibility/
+---
+
+## Accessibility
+
+Popover is a component that displays content in an overlay when its trigger element is activated. Ensuring it's accessible is essential for users of assistive technology.
+
+### Accessibility-related props
+
+| Name           | Type                                                  | Default    | Description                                                                                                                                                                                            |
+| :------------- | :---------------------------------------------------- | :--------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ariaLabel      | `string`                                              |            | Provides an accessible name for the popover content through the `aria-label` attribute. Use this when there isn't visible text that can serve as a label.                                              |
+| ariaLabelledby | `string`                                              |            | References the ID of an element that labels the popover content via the `aria-labelledby` attribute. Preferred over `ariaLabel` when visible text exists that can label the popover.                   |
+| role           | `"dialog" \| "menu" \| "grid" \| "listbox" \| "tree"` | `"dialog"` | Defines the semantic role of the popover for screen readers. Choose based on the content type—for example, use `"menu"` when presenting a list of actions, or `"dialog"` for forms or complex content. |
+| labelClose     | `React.Node`                                          | `"Close"`  | Label text for the close button on mobile devices, important for screen reader users to understand the button's purpose.                                                                               |
+
+### Automatic ARIA attributes
+
+The Popover component automatically manages several ARIA attributes on the trigger element:
+
+- `aria-controls`: References the popover content's ID, establishing the relationship between trigger and content
+- `aria-haspopup`: Indicates that activating the trigger will display a popover
+- `aria-expanded`: Dynamically updates to reflect whether the popover is open or closed
+
+These attributes are handled internally by the component, so you don't need to add them manually.
+
+### Trigger element accessibility
+
+The trigger element for Popover must not be an interactive element itself. This is because:
+
+1. It avoids nesting interactive elements (an accessibility violation)
+2. It prevents conflicts in keyboard navigation and focus management
+
+```jsx
+// CORRECT: Using a non-interactive component as trigger
+<Popover content="Your content">
+  <Button asComponent="div">Open Popover</Button>
+</Popover>
+
+// INCORRECT: Using an interactive element directly
+<Popover content="Your content">
+  <Button>Open Popover</Button> {/* This creates nested interactive elements */}
+</Popover>
+```
+
+### Keyboard navigation
+
+Popover supports keyboard accessibility:
+
+- The trigger can be focused and activated with Enter or Space
+- When open, pressing Escape closes the popover
+- Focus remains trapped within the popover on mobile to ensure keyboard users can navigate content
+
+### Screen reader experience
+
+When a screen reader user encounters a Popover:
+
+1. They'll hear the trigger announced with its role and expanded state
+2. When opened, the popover content is announced according to its role (e.g., "dialog", "menu")
+3. The content is identified by its accessible name (via `ariaLabel` or `ariaLabelledby`)
+
+```jsx
+<Popover
+  content={<Stack>Your popover content here</Stack>}
+  ariaLabel="Additional information"
+  role="dialog"
+>
+  <TextLink asComponent="div">More information</TextLink>
+</Popover>
+```
+
+A screen reader would announce: "More information, button, has popup dialog" when focusing the trigger, and "Additional information, dialog" when the popover opens.
+
+### Role selection guidelines
+
+Choose the appropriate `role` based on your popover's content:
+
+- `dialog`: For general content, forms, or complex information (default)
+- `menu`: For a list of actions or commands
+- `listbox`: For a list of options where one or more can be selected
+- `grid`: For tabular data arranged in rows and columns
+- `tree`: For hierarchical data with parent-child relationships
+
+Using the correct role ensures screen reader users understand the purpose and structure of the popover content.

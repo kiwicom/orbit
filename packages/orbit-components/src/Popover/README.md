@@ -117,3 +117,12 @@ The table below contains all types of props available in the Popover component.
 - The `ariaLabelledby` prop allows you to specify an `aria-labelledby` attribute for the popover content component. This attribute provides a reference to one or more elements that label the popover content. By using `ariaLabelledby`, the accessibility of popover component is improved and it is easier for users with assistive technologies to understand the context and purpose of the content.
 
 - The `ariaLabel` prop allows you to specify an `aria-label` attribute for the popover content component. This attribute provides additional information to screen readers, enhancing the accessibility of the component. By using `ariaLabel`, you can ensure that users who rely on assistive technologies receive the necessary context and information about the component's purpose and functionality.
+
+- The `role` prop defines the semantic role of the popover (defaults to `"dialog"`). Choose the appropriate role based on your content type—for example, use `"menu"` for action lists or `"dialog"` for complex content.
+
+- The component automatically handles several ARIA attributes on the trigger element:
+  - `aria-controls`: References the popover content's ID
+  - `aria-haspopup`: Indicates that activating the trigger will display a popover
+  - `aria-expanded`: Dynamically reflects whether the popover is open or closed
+
+For more comprehensive accessibility guidelines, refer to the dedicated [Accessibility documentation](https://orbit.kiwi/components/popover/accessibility/).

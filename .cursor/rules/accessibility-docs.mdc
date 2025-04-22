@@ -1,6 +1,6 @@
 ---
 description: Revision, creation and modification of accessibility documentation files
-globs: 
+globs:
 alwaysApply: false
 ---
 # Accessibility Documentation Rules
@@ -12,6 +12,8 @@ The accessibility documentation should:
 - Document built-in/automatic accessibility features
 - Explain component-specific configuration options
 - Provide practical usage examples specific to our components
+- Document all ARIA attributes and roles, both automatic and prop-controlled
+- Include mobile and touch-specific accessibility considerations
 
 The documentation should NOT:
 - Explain general ARIA concepts or accessibility guidelines
@@ -23,6 +25,9 @@ The documentation should NOT:
 1. Ask for any specific requirements or notes for the component
 2. Review existing JIRA task notes for additional context
 3. Check if component has special accessibility considerations
+4. Review the component's implementation to identify all ARIA attributes and roles
+5. Test with a screen reader to verify announcements
+6. Check for mobile-specific interaction patterns
 
 ## File Structure and Location
 
@@ -53,14 +58,14 @@ Documentation must use these exact section names and heading levels:
 ```mdx
 ## Accessibility
 
-The [ComponentName] component has been designed with accessibility in mind, providing an expandable and collapsible interface for organizing content.
+The [ComponentName] component has been designed with accessibility in mind, providing [primary accessibility feature/pattern].
 ```
 
 2. Required sections in order (all using ### level):
 ```mdx
 ### Accessibility Props
 ### Automatic Accessibility Features
-### Best practices
+### Best Practices
 ### Keyboard Navigation
 ### Examples
 ```
@@ -78,21 +83,38 @@ Props must be documented with component-specific tables:
 | :--- | :--- | :---- |
 ```
 
+For components with child components, document each separately:
+
+```mdx
+**[ParentComponent] props:**
+[table]
+
+**[ChildComponent] props:**
+[table]
+```
+
 - Include all accessibility-related props
 - Group props by component (parent and child components)
 - Use descriptive, complete sentences in descriptions
 - Include information about default values in descriptions
 - Document all ARIA attributes, even automatic ones
+- Include mobile/touch-specific props and their accessibility impact
+- Document props that affect focus management
 
 ### Automatic Features Section
 
 Structure as a bulleted list with clear categories:
 ```mdx
 - The component automatically manages ARIA attributes:
-  - [specific feature details]
-  - [specific feature details]
+  - [specific ARIA role details]
+  - [specific ARIA attribute details]
+  - [specific ARIA state details]
 - Focus management is handled automatically:
   - [specific feature details]
+- State management is handled automatically:
+  - [specific state management details]
+  - [loading state handling]
+  - [mobile interaction details]
 ```
 
 ### Best Practices Section
@@ -101,7 +123,13 @@ Structure as a bulleted list with clear categories:
 - Include guidance for common use cases
 - Explain accessibility implications of props
 - List items should be complete sentences
-- Include recommendations for content structure
+- Include recommendations for:
+  - Content structure
+  - Mobile/touch interactions
+  - Focus management
+  - Loading states
+  - Error states
+  - Interactive elements
 
 ### Keyboard Navigation Section
 
@@ -110,6 +138,8 @@ Format keyboard interactions consistently:
 - Group related interactions
 - Explain the outcome of each interaction
 - Include any mode-specific behaviors
+- Document focus movement patterns
+- Include mobile keyboard behavior differences
 
 ### Examples Section
 
@@ -120,6 +150,8 @@ Each example must:
 4. Show screen reader announcements after each example
 5. Demonstrate different component states
 6. Include common use cases
+7. Include mobile-specific examples when relevant
+8. Show loading state examples when applicable
 
 Example format:
 ```mdx
@@ -137,6 +169,8 @@ Screen reader announces: "[Exact announcement]"
 3. Maintain consistent terminology
 4. Use active voice
 5. Explain the "why" behind accessibility features
+6. Include mobile-specific considerations
+7. Document exact screen reader announcements
 
 ### Content Requirements
 
@@ -147,6 +181,9 @@ Screen reader announces: "[Exact announcement]"
 5. Show loading state handling
 6. Explain mobile accessibility features
 7. Document any special cases or modes
+8. Include focus management details
+9. Document state management behavior
+10. Include touch interaction patterns
 
 ## Documentation Guidelines
 
@@ -156,6 +193,8 @@ Screen reader announces: "[Exact announcement]"
 2. No accessibility sections should remain in README.md files
 3. Each component must have its own accessibility documentation page
 4. Documentation must be created only after explicit approval for each component
+5. Screen reader announcements must be verified and documented exactly
+6. Mobile and touch interactions must be documented when relevant
 
 ### README.md Updates
 
@@ -186,13 +225,15 @@ Example of props table corrections:
    - Standard aria props specific to the component
    - Document if component accepts all aria-* and data-* props (exceptional cases)
    - Include prop descriptions in the component's props table if missing
+   - Document mobile/touch-specific props
 
 2. Screen Reader Behavior:
    - Document how screen readers announce the component
    - Provide examples with different prop combinations
    - Validate and correct any claims about screen reader announcements
+   - Include mobile screen reader behavior differences
 
 3. Special Cases:
    - Document asComponent prop if available
    - For components with icons, document aria-label requirements
-   - Specify when certain aria props are required vs optional
+   - Specify when certain aria props are required vs optionald vs optional

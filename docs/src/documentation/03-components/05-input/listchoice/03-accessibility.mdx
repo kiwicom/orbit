@@ -1,0 +1,111 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/listchoice/accessibility/
+---
+
+## Accessibility
+
+The ListChoice component has been designed with accessibility in mind, providing interactive list options that can function as buttons or selectable items.
+
+### Accessibility Props
+
+The following props are available to improve the accessibility of your ListChoice component:
+
+| Name     | Type     | Description                                                                                        |
+| :------- | :------- | :------------------------------------------------------------------------------------------------- |
+| role     | `string` | Specifies the ARIA role of the component. If not provided, the role is set automatically.          |
+| tabIndex | `number` | Specifies the tab order of the component. Default is `0`, automatically set to `-1` when disabled. |
+
+### Automatic Accessibility Features
+
+The ListChoice component handles several important ARIA attributes automatically:
+
+- `aria-disabled` is automatically set to match the `disabled` prop value
+- `aria-checked` is automatically set to the value of the `selected` prop when `selectable` is true
+- Role is automatically determined in this order:
+  - If a `role` prop is explicitly provided, it will use that value
+  - Otherwise, if `selectable` is true, it uses "checkbox"
+  - Otherwise, if `action` is not provided, it uses "button"
+  - If none of these conditions are met, the role will be undefined
+
+### Keyboard Navigation
+
+- **Enter** or **Space** keys trigger the `onClick` action when the component is focused
+- **Tab** key moves focus to and from the component following the document's tab order
+
+### Best practices
+
+- Provide a descriptive `title` that clearly explains the purpose of the list item
+- Use `description` to provide additional context when the action isn't self-explanatory
+- When using `icon`, ensure it visually reinforces the action and is marked as decorative
+- When using a custom `role`, ensure it matches the component's behavior (e.g., use "link" only if it navigates to another page)
+- When using the `selectable` prop, group related options together and ensure your implementation correctly updates the selected state
+
+### Examples
+
+#### Navigation Option
+
+In this example, the ListChoice functions like a navigation link:
+
+```jsx
+<ListChoice
+  title="Flight details"
+  description="View your booking information"
+  icon={<Airplane ariaHidden />}
+  role="link"
+  onClick={() => navigate("/booking-details")}
+/>
+```
+
+Screen reader announces: "Flight details, View your booking information, link"
+
+#### Selectable Option in a Group
+
+```jsx
+<Stack>
+  <ListChoice
+    title="Window seat"
+    selectable
+    selected={selectedSeat === "window"}
+    onClick={() => setSelectedSeat("window")}
+  />
+  <ListChoice
+    title="Aisle seat"
+    selectable
+    selected={selectedSeat === "aisle"}
+    onClick={() => setSelectedSeat("aisle")}
+  />
+</Stack>
+```
+
+Screen reader announces: "Window seat, checkbox, checked" (when selected)
+
+#### Disabled Option
+
+```jsx
+<ListChoice
+  title="Unavailable flight"
+  description="This flight is fully booked"
+  disabled
+  icon={<CloseCircle ariaHidden />}
+/>
+```
+
+Screen reader announces: "Unavailable flight, This flight is fully booked, button, disabled"
+
+#### Option with Action Component
+
+```jsx
+<ListChoice
+  title="Priority boarding"
+  description="Board the plane first"
+  action={
+    <Button size="small" type="secondary">
+      Add €10
+    </Button>
+  }
+/>
+```
+
+Screen reader announces: "Priority boarding, Board the plane first" for the ListChoice content and then "Add €10, button" when navigating to the action button.

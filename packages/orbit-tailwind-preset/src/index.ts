@@ -105,6 +105,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "button-normal": tokens.buttonNormalFontSize,
           "button-small": tokens.buttonSmallFontSize,
           "form-element-normal": tokens.formElementNormalFontSize,
+          "form-element-large": tokens.formElementLargeFontSize,
         },
         fontWeight: {
           "heading-display": tokens.headingDisplayFontWeight,

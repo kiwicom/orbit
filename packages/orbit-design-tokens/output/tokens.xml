@@ -660,6 +660,10 @@
     <value>0 12</value>
   </token>
   <token>
+    <name>formElementLargeFontSize</name>
+    <value>16</value>
+  </token>
+  <token>
     <name>formElementForeground</name>
     <value>#657890</value>
   </token>

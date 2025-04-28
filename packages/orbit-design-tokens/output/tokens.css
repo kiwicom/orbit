@@ -164,6 +164,7 @@
   --form-element-error-focus-box-shadow: rgb(210, 28, 28);
   --form-element-normal-font-size: 15;
   --form-element-normal-padding: null;
+  --form-element-large-font-size: 16;
   --form-element-foreground: rgb(101, 120, 144); /* Should be used for the text when the value is not filled. */
   --form-element-filled-foreground: rgb(37, 42, 49);
   --form-element-label-foreground: rgb(37, 42, 49);

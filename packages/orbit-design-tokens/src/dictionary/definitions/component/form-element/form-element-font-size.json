@@ -6,6 +6,12 @@
           "type": "size",
           "value": "{foundation.font-size.normal}"
         }
+      },
+      "large": {
+        "font-size": {
+          "type": "size",
+          "value": "{foundation.font-size.large}"
+        }
       }
     }
   }

@@ -3834,6 +3834,29 @@
       "value": "0 12px"
     }
   },
+  "formElementLargeFontSize": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "form-element",
+      "variant": "large",
+      "subVariant": "font-size"
+    },
+    "javascript": {
+      "name": "formElementLargeFontSize",
+      "value": "16px"
+    },
+    "foundation": {
+      "name": "formElementLargeFontSize",
+      "value": "foundation.fontSize.large"
+    },
+    "scss": {
+      "name": "formElementLargeFontSize",
+      "value": "16px"
+    }
+  },
   "formElementForeground": {
     "type": "color",
     "comment": "Should be used for the text when the value is not filled.",

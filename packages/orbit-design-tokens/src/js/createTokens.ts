@@ -179,6 +179,7 @@ export interface Tokens {
   formElementErrorFocusBoxShadow: string;
   formElementNormalFontSize: string;
   formElementNormalPadding: string;
+  formElementLargeFontSize: string;
   formElementForeground: string;
   formElementFilledForeground: string;
   formElementLabelForeground: string;
@@ -653,6 +654,7 @@ const createTokens: CreateTokens = foundation => ({
   ]),
   formElementNormalFontSize: foundation.fontSize.normal,
   formElementNormalPadding: `0 ${foundation.space["300"]}`,
+  formElementLargeFontSize: foundation.fontSize.large,
   formElementForeground: foundation.palette.ink.light,
   formElementFilledForeground: foundation.palette.ink.dark,
   formElementLabelForeground: foundation.palette.ink.dark,

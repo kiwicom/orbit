@@ -209,6 +209,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "formElementForeground": "#657890",
   "formElementLabelFilledForeground": "#4F5E71",
   "formElementLabelForeground": "#252A31",
+  "formElementLargeFontSize": "16px",
   "formElementNormalFontSize": "15px",
   "formElementNormalPadding": "0 12px",
   "formElementPrefixForeground": "#4F5E71",

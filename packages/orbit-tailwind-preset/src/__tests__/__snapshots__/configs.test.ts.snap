@@ -1798,6 +1798,7 @@ exports[`orbitPreset should have preflight disabled 1`] = `
       "button-normal": "15px",
       "button-small": "13px",
       "extra-large": "18px",
+      "form-element-large": "16px",
       "form-element-normal": "15px",
       "heading-display": "40px",
       "heading-display-subtitle": "22px",

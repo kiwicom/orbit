@@ -24,7 +24,7 @@ export const FakeInput = ({ error, disabled }: Pick<Props, "error" | "disabled">
   <div
     className={cx(
       "orbit-input-field-fake-input",
-      "h-form-box-normal text-form-element-normal z-default",
+      "h-form-box-normal text-form-element-large z-default",
       "absolute left-0 top-0",
       "duration-fast transition-all ease-in-out",
       "rounded-150 tb:rounded-100 box-border w-full",
@@ -184,7 +184,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           "orbit-input-field-input-container",
           "flex flex-row items-center justify-between",
           "relative box-border",
-          "h-form-box-normal text-form-element-normal",
+          "h-form-box-normal text-form-element-large",
           disabled ? "cursor-not-allowed" : "cursor-text",
           disabled || readOnly
             ? "text-form-element-disabled-foreground"
@@ -218,7 +218,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
                 "flex items-center justify-center",
                 "pointer-events-none h-full",
                 "[&>.orbit-form-label]:mb-0",
-                "[&>.orbit-form-label]:text-form-element-normal [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
+                "[&>.orbit-form-label]:text-form-element-large [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
                 "[&>.orbit-form-label]:z-[3]",
                 !tags && (error || help) ? "ps-100" : "ps-300",
               )}

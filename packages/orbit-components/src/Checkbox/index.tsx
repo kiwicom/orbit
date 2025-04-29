@@ -57,6 +57,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     id,
     info,
     tabIndex,
+    ariaControls,
+    ariaDescribedby,
   } = props;
 
   return (
@@ -103,6 +105,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         defaultChecked={defaultChecked}
         onChange={onChange}
         ref={ref}
+        aria-controls={ariaControls}
+        aria-describedby={ariaDescribedby}
       />
       <div
         className={cx(

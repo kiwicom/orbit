@@ -15,6 +15,8 @@ export interface Props extends Common.Globals {
   readonly name?: string;
   readonly info?: React.ReactNode;
   readonly tabIndex?: string | number;
+  readonly ariaControls?: string;
+  readonly ariaDescribedby?: string;
   // Should be InputEvent type
   // There is missing support for this event type in Typescript ATM
   // @see https://fettblog.eu/typescript-react/events/#wheres-inputevent

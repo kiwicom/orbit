@@ -4,7 +4,7 @@ import { BaggageChecked30, Child, Meal } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <TileGroup>
         <Tile
           icon={<BaggageChecked30 />}

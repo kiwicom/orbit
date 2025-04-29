@@ -13,7 +13,7 @@ export default {
     const [checked, setChecked] = React.useState({ plane: false, train: false, auto: false });
     const [radio, setRadio] = React.useState("");
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Stack>
           <ChoiceGroup
             label="Transport to search"

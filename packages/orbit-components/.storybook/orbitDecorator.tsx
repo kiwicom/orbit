@@ -43,7 +43,7 @@ const OrbitDecorator: Decorator = (storyFn, context) => {
   const code = jsxToString(children, options);
 
   return (
-    <OrbitProvider useId={React.useId} theme={{ ...defaultTheme }}>
+    <OrbitProvider theme={{ ...defaultTheme }}>
       <div style={{ padding: "20px" }}>
         <Heading as="h1" spaceAfter="medium" inverted={inverted}>
           {context.kind}

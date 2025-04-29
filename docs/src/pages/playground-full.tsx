@@ -27,11 +27,11 @@ const GlobalStyle = createGlobalStyle`
 const PlaygroundIframe = () => {
   const { code } = useSandbox(
     "playground",
-    "() => <OrbitProvider theme={defaultTheme} useId={React.useId}><Button>Hello world!</Button></OrbitProvider>",
+    "() => <OrbitProvider theme={defaultTheme}><Button>Hello world!</Button></OrbitProvider>",
   );
 
   return (
-    <OrbitProvider useId={React.useId} theme={defaultTheme}>
+    <OrbitProvider theme={defaultTheme}>
       <Orbit>
         {orbit => {
           const { Icons, ...components } = orbit;

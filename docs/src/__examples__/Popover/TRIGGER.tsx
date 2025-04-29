@@ -11,7 +11,7 @@ import { ChevronDown } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Popover
         renderInPortal={false}
         ariaLabel="Documentation resources"

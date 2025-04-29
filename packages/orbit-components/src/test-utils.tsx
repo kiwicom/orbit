@@ -8,9 +8,7 @@ import theme from "./defaultTheme";
 import OrbitProvider from "./OrbitProvider";
 
 const wrapper: React.ComponentType = ({ children }: React.PropsWithChildren) => (
-  <OrbitProvider useId={React.useId} theme={theme}>
-    {children}
-  </OrbitProvider>
+  <OrbitProvider theme={theme}>{children}</OrbitProvider>
 );
 
 const customRender = (ui: React.ReactElement<any>, options?: Omit<RenderOptions, "wrapper">) => {

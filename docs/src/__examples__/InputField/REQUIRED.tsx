@@ -4,7 +4,7 @@ import { InputField, OrbitProvider, defaultTheme } from "@kiwicom/orbit-componen
 export default {
   Example: () => {
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <InputField
           required
           placeholder="your@email.com"

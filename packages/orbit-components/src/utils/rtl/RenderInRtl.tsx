@@ -20,11 +20,7 @@ const RenderInRtl = ({ children }: Props) => {
     };
   }, []);
 
-  return (
-    <OrbitProvider theme={{ orbit: defaultTokens, rtl: true }} useId={React.useId}>
-      {children}
-    </OrbitProvider>
-  );
+  return <OrbitProvider theme={{ orbit: defaultTokens, rtl: true }}>{children}</OrbitProvider>;
 };
 
 export default RenderInRtl;

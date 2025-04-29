@@ -44,7 +44,7 @@ const customTokens = getTokens({
 });
  
 const App = () => 
-<OrbitProvider useId={React.useId} theme={{ orbit: customTokens }}>
+<OrbitProvider theme={{ orbit: customTokens }}>
   <Button type="secondary" size="large">Button</Button>
 </OrbitProvider>;`;
 

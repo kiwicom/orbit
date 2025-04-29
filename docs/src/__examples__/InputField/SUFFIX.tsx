@@ -12,7 +12,7 @@ export default {
   Example: () => {
     const [showPassword, setShowPassword] = React.useState(false);
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Stack direction="column">
           <InputField
             label="Maximum price"

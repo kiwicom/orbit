@@ -54,7 +54,6 @@ function App() {
 
   return (
     <OrbitProvider
-      useId={React.useId}
       theme={{
         ...defaultTheme,
         lockScrollingBarGap: page.route === "lockScrolling",

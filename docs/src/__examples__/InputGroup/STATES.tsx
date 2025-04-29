@@ -10,7 +10,7 @@ import {
 export default {
   Example: () => {
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <InputGroup flex={["8 8 15em", "1 1 4em", "2 2 6em"]} label="Departure">
           <Select
             value="May"

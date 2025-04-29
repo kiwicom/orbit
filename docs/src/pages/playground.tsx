@@ -65,7 +65,7 @@ const StyledFloatingBanner = styled.div`
   margin-bottom: 1rem;
 `;
 
-const DEFAULT_CODE = `() => <OrbitProvider theme={defaultTheme} useId={React.useId}><Button>Hello world!</Button></OrbitProvider>`;
+const DEFAULT_CODE = `() => <OrbitProvider theme={defaultTheme}><Button>Hello world!</Button></OrbitProvider>`;
 
 const getDirection = (layout: Layout) => {
   if (layout === "top") return "column-reverse";

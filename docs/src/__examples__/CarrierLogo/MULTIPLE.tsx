@@ -3,7 +3,7 @@ import { CarrierLogo, OrbitProvider, Stack, defaultTheme } from "@kiwicom/orbit-
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Stack direction="column">
         <CarrierLogo
           carriers={[

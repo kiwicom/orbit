@@ -10,7 +10,7 @@ import {
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Card title="Passenger info">
         <CardSection expandable title="Yasmin Karenth">
           <Stack direction="column" spacing="200">

@@ -81,7 +81,7 @@ export default {
       </Stack>
     );
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Accordion
           expandedSection={expandedSection}
           onExpand={id => setExpandedSection(String(id))}

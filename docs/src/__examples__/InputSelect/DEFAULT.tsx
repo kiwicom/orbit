@@ -34,7 +34,7 @@ export default {
     ];
 
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <InputSelect
           placeholder="Search currency"
           options={currencyOptions}

@@ -17,7 +17,7 @@ export default {
     const [showModalExtraLarge, setShowModalExtraLarge] = React.useState(false);
 
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         {showModalExtraSmall && (
           <Modal
             size="extraSmall"

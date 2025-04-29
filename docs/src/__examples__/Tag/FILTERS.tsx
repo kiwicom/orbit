@@ -36,7 +36,7 @@ export default {
     const isTransportFiltered =
       checked.plane === false || checked.train === false || checked.bus === false;
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Stack>
           <Stack direction="row" spacing="300">
             <Text>Amsterdam</Text>

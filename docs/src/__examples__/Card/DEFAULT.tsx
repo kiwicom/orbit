@@ -3,7 +3,7 @@ import { Card, CardSection, OrbitProvider, defaultTheme } from "@kiwicom/orbit-c
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Card title="Passenger info" description="All passengers in this itinerary">
         <CardSection title="Yasmin Karenth" expandable description="1st class" />
       </Card>

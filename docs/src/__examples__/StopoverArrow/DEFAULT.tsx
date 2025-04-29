@@ -3,7 +3,7 @@ import { OrbitProvider, StopoverArrow, defaultTheme } from "@kiwicom/orbit-compo
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <StopoverArrow stops="2" />
     </OrbitProvider>
   ),

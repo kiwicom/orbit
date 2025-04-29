@@ -12,7 +12,7 @@ export default {
   Example: () => {
     const [choice, setChoice] = React.useState("");
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Popover
           renderInPortal={false}
           content={

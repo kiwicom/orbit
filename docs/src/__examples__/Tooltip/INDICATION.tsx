@@ -12,7 +12,7 @@ import { CheckCircle, Visa } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Stack flex direction="column">
         <Text>
           If you&apos;re building a travel app, you should give{" "}

@@ -6,7 +6,7 @@ export default {
     const [showDialog, setShowDialog] = React.useState(false);
 
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         {showDialog && (
           <Dialog
             title="Accept notifications?"

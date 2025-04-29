@@ -94,7 +94,7 @@ describe("useLockScrolling", () => {
     expect(document.body).toHaveStyle({ overflow: "hidden" });
 
     rerender(
-      <OrbitProvider theme={{ ...defaultTheme, lockScrolling: false }} useId={React.useId}>
+      <OrbitProvider theme={{ ...defaultTheme, lockScrolling: false }}>
         <>
           <LockFoo>
             <LockBar lock={false} />
@@ -107,10 +107,7 @@ describe("useLockScrolling", () => {
     expect(document.body).not.toHaveStyle({ overflow: "hidden" });
 
     rerender(
-      <OrbitProvider
-        theme={{ ...defaultTheme, lockScrolling: true, lockScrollingBarGap: true }}
-        useId={React.useId}
-      >
+      <OrbitProvider theme={{ ...defaultTheme, lockScrolling: true, lockScrollingBarGap: true }}>
         <LockBaz switchRefs />
       </OrbitProvider>,
     );

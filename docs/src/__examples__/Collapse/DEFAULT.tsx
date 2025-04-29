@@ -3,7 +3,7 @@ import { Collapse, OrbitProvider, Text, TextLink, defaultTheme } from "@kiwicom/
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Collapse
         label="Principle for collapses"
         expandButtonLabel="Expand"

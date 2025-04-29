@@ -6,7 +6,7 @@ export default {
   Example: () => {
     const { isTablet } = useMediaQuery();
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Stack direction="column">
           <Seat type="default" size={isTablet ? "medium" : "small"} />
           <SeatLegend type="default" label="Standard ($ 5.99 – $ 12.98)" />

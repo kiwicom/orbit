@@ -107,6 +107,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         ref={ref}
         aria-controls={ariaControls}
         aria-describedby={ariaDescribedby}
+        aria-invalid={hasError ? true : undefined}
       />
       <div
         className={cx(

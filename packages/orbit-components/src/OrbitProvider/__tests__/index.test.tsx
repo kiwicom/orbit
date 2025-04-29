@@ -24,11 +24,7 @@ const orbitTheme = {
 describe("OrbitProvider", () => {
   const ID = "orbit-theme-css-vars";
   it("should add css variables to the head", () => {
-    render(
-      <OrbitProvider theme={{ orbit: { ...getTokens(orbitTheme) } }} useId={React.useId}>
-        kek
-      </OrbitProvider>,
-    );
+    render(<OrbitProvider theme={{ orbit: { ...getTokens(orbitTheme) } }}>kek</OrbitProvider>);
 
     expect(document.getElementById(ID)).toBeInTheDocument();
     expect(document.getElementById(ID)?.innerText).toMatchInlineSnapshot(`undefined`);

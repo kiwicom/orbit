@@ -58,10 +58,7 @@ export default meta;
 
 export const Default: Story = {
   render: ({ orbitTheme, customTheme }) => (
-    <OrbitProvider
-      theme={{ orbit: { ...getTokens(orbitTheme), ...customTheme } }}
-      useId={React.useId}
-    >
+    <OrbitProvider theme={{ orbit: { ...getTokens(orbitTheme), ...customTheme } }}>
       <Button onClick={action("onClick")}>Hello World!</Button>
     </OrbitProvider>
   ),

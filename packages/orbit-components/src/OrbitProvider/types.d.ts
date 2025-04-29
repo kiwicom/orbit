@@ -8,5 +8,4 @@ import type { Theme } from "../defaultTheme";
 export interface Props {
   readonly theme: Theme;
   readonly children: React.ReactNode;
-  readonly useId: () => string;
 }

@@ -34,23 +34,12 @@ export const getCssVarsForWL = (theme: typeof defaultTokens) =>
   }, {});
 
 /**
- *
- * Use OrbitProvider with useId prop as follows to still use `react-uid`:
- * ```jsx
-    <UIDReset>
-      <UIDFork>
-        <OrbitProvider theme={theme} useId={useUID}>
-          {children}
-        </OrbitProvider>
-      </UIDFork>
-    </UIDReset>
- * ```
- *
+ * The OrbitProvider component provides theming and other Orbit features to the application.
  */
 
-const OrbitProvider = ({ theme, children, useId }: Props) => {
+const OrbitProvider = ({ theme, children }: Props) => {
   return (
-    <RandomIdProvider useId={useId}>
+    <RandomIdProvider>
       <style id="orbit-theme-css-vars">
         {tokensToCssVars({ tokens: getCssVarsForWL(theme.orbit), cssClass: ":root" })}
       </style>

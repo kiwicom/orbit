@@ -11,7 +11,7 @@ import { Check, Close } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <List type="secondary">
         <ListItem icon={<Check color="success" size="small" />} label="Kiwi.com services">
           <Tooltip content="Extra info about basic services" stopPropagation>

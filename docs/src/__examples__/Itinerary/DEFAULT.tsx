@@ -12,7 +12,7 @@ import * as Icons from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Itinerary>
         <ItinerarySegment spaceAfter="medium">
           <ItinerarySegmentStop

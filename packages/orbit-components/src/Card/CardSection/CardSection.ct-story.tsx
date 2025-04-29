@@ -6,7 +6,7 @@ import CardSection from ".";
 
 export function CardSectionInput() {
   return (
-    <RandomIdProvider useId={React.useId}>
+    <RandomIdProvider>
       <CardSection>
         <input type="text" data-test="input" />
       </CardSection>

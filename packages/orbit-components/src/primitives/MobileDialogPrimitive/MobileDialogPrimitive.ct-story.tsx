@@ -6,7 +6,7 @@ import MobileDialog from ".";
 
 export function MobileDialogDefault(): React.ReactNode {
   return (
-    <RandomIdProvider useId={React.useId}>
+    <RandomIdProvider>
       <div className="h-screen">
         <MobileDialog content={<div>Content</div>}>
           <button type="button" data-test="button">
@@ -20,7 +20,7 @@ export function MobileDialogDefault(): React.ReactNode {
 
 export function MobileDialogDisabled(): React.ReactNode {
   return (
-    <RandomIdProvider useId={React.useId}>
+    <RandomIdProvider>
       <div className="h-screen">
         <MobileDialog content={<div>Content</div>} enabled={false}>
           <button type="button">Click me</button>

@@ -17,7 +17,7 @@ export default {
   Example: () => {
     const [showDrawer, setShowDrawer] = React.useState(false);
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         {showDrawer && (
           <Drawer
             onClose={() => {

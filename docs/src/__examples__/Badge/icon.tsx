@@ -4,7 +4,7 @@ import { InformationCircle } from "@kiwicom/orbit-components/icons";
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Tooltip renderInPortal={false} content="Get more points by traveling more">
         <Badge type="neutral">
           2,435 pts <InformationCircle size="small" ariaLabel="More information" />

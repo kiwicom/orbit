@@ -5,7 +5,7 @@ export default {
   Example: () => {
     const [country, setCountry] = React.useState("");
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Select
           value={country}
           placeholder="Choose your country"

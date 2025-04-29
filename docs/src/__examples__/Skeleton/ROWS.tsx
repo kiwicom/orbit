@@ -3,7 +3,7 @@ import { Skeleton, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Skeleton rows={6} rowOffset={30} rowHeight={21} />
     </OrbitProvider>
   ),

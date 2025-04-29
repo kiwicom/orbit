@@ -3,7 +3,7 @@ import { OrbitProvider, Seat, defaultTheme } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Seat />
     </OrbitProvider>
   ),

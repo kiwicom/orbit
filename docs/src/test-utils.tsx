@@ -4,9 +4,7 @@ import type { RenderOptions } from "@testing-library/react";
 import { render } from "@testing-library/react";
 
 const wrapper: React.ComponentType = ({ children }: React.PropsWithChildren) => (
-  <OrbitProvider useId={React.useId} theme={theme}>
-    {children}
-  </OrbitProvider>
+  <OrbitProvider theme={theme}>{children}</OrbitProvider>
 );
 
 const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, "wrapper">) => {

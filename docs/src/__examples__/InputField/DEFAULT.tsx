@@ -3,7 +3,7 @@ import { InputField, OrbitProvider, defaultTheme } from "@kiwicom/orbit-componen
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <InputField label="Given names" placeholder="Sofia Cruz" />
     </OrbitProvider>
   ),

@@ -10,7 +10,7 @@ import { KeyboardContextProvider } from "./src/services/KeyboardProvider";
 export const wrapWithProviders = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
-      <OrbitProvider useId={React.useId} theme={theme}>
+      <OrbitProvider theme={theme}>
         <KeyboardContextProvider>
           <DevModeProvider>
             <TableOfContentsProvider>{element}</TableOfContentsProvider>

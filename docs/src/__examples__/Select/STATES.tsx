@@ -4,7 +4,7 @@ import { Select, OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 export default {
   Example: () => {
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Select
           value=""
           placeholder="Choose your country"

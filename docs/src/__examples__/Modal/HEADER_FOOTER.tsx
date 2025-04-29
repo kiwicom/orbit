@@ -13,7 +13,7 @@ export default {
   Example: () => {
     const [showModal, setShowModal] = React.useState(false);
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         {showModal && (
           <Modal
             onClose={() => {

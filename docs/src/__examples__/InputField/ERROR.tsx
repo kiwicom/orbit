@@ -5,7 +5,7 @@ export default {
   Example: () => {
     const [value, setValue] = React.useState("");
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <InputField
           error={!value && "Please enter your email"}
           help="Enter your email in the format name@example.com"

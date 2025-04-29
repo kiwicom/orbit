@@ -3,7 +3,7 @@ import { OrbitProvider, defaultTheme, Textarea } from "@kiwicom/orbit-components
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Textarea
         label="Your feedback"
         placeholder="What I liked about booking with Kiwi.com was ..."

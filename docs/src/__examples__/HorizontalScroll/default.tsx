@@ -12,7 +12,7 @@ import { BaggageCabin, BaggageChecked30, BaggagePersonal } from "@kiwicom/orbit-
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <HorizontalScroll>
         <Tile title="Complete baggage bundle">
           <Stack>

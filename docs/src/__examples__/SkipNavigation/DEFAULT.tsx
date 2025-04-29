@@ -13,7 +13,7 @@ import {
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <SkipNavigation />
       <Stack>
         <Stack spacing="300">

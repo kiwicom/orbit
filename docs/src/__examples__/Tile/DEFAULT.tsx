@@ -3,7 +3,7 @@ import { Tile, Text, OrbitProvider, defaultTheme } from "@kiwicom/orbit-componen
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Tile
         href="https://orbit.kiwi/design-patterns/progressive-disclosure/"
         title="Read more about progressive disclosure"

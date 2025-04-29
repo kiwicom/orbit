@@ -21,7 +21,7 @@ import {
 export default {
   Example: () => {
     return (
-      <OrbitProvider theme={defaultTheme} useId={React.useId}>
+      <OrbitProvider theme={defaultTheme}>
         <Modal hasCloseButton={false} fixedFooter>
           <ModalHeader
             title="Enjoy a meal while you travel"

@@ -3,7 +3,7 @@ import { Button, OrbitProvider, Text, Tooltip, defaultTheme } from "@kiwicom/orb
 
 export default {
   Example: () => (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
+    <OrbitProvider theme={defaultTheme}>
       <Tooltip content={<Text>Select a flight before continuing.</Text>}>
         <Button asComponent="div">Book</Button>
       </Tooltip>

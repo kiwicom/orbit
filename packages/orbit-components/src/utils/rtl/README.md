@@ -7,7 +7,7 @@ If you need to enable `rtl` inside `orbit-components`, it can be done with `Orbi
 ```jsx
 import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 
-<OrbitProvider useId={React.useId} theme={{ ...defaultTheme, rtl: true }}>
+<OrbitProvider theme={{ ...defaultTheme, rtl: true }}>
   <App />
 </OrbitProvider>;
 ```

@@ -20,7 +20,7 @@ beforeMount(async ({ App }) => {
   head.appendChild(style);
 
   return (
-    <RandomIdProvider useId={React.useId}>
+    <RandomIdProvider>
       <App />
     </RandomIdProvider>
   );

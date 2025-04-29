@@ -31,7 +31,7 @@ describe("useRandomId", () => {
     const container = document.createElement("div");
 
     render(
-      <OrbitProvider theme={{ ...theme }} useId={React.useId}>
+      <OrbitProvider theme={{ ...theme }}>
         <Component />
       </OrbitProvider>,
     );
@@ -39,7 +39,7 @@ describe("useRandomId", () => {
     document.body?.appendChild(container);
 
     const { container: clientContainer } = render(
-      <OrbitProvider theme={{ ...theme }} useId={React.useId}>
+      <OrbitProvider theme={{ ...theme }}>
         <Component />
       </OrbitProvider>,
       { container, hydrate: false },

@@ -14,7 +14,7 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import type { Props } from "./types";
 import { spaceAfterClasses } from "../common/tailwind";
 
-const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+const InputFile = (props: Props, ref?: React.Ref<HTMLDivElement>) => {
   const {
     placeholder = "No file selected",
     buttonLabel = "Select file",
@@ -163,8 +163,6 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       )}
     </label>
   );
-});
-
-InputFile.displayName = "InputFile";
+};
 
 export default InputFile;

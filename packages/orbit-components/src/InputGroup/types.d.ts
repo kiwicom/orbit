@@ -6,6 +6,7 @@ import type React from "react";
 import type * as Common from "../common/types";
 
 export interface Props extends Common.Globals, Common.SpaceAfter {
+  readonly ref?: React.Ref<HTMLFieldSetElement>;
   readonly label?: Common.Translation;
   readonly flex?: string | string[];
   readonly help?: React.ReactNode;

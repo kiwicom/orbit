@@ -57,4 +57,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly ariaExpanded?: boolean;
   readonly ariaControls?: string;
   readonly ariaDescribedby?: string;
+  readonly ref?: React.Ref<HTMLInputElement>;
 }

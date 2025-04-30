@@ -44,51 +44,45 @@ const typeCompactDisabledStyles: Record<Type, string> = {
   critical: "text-button-link-critical-foreground",
 };
 
-const ButtonLink = React.forwardRef<HTMLButtonElement, Props>(
-  (
-    {
-      type = "primary",
-      size = "normal",
-      compact,
-      disabled,
-      children,
-      iconLeft,
-      iconRight,
-      ...props
-    },
-    ref,
-  ) => {
-    return (
-      <ButtonPrimitive
-        ref={ref}
-        iconLeft={iconLeft}
-        iconRight={iconRight}
-        disabled={disabled}
-        {...props}
-        className={cx(
-          "space-x-200 rtl:space-x-reverse",
-          sizeStyles[size],
-          children == null && iconOnlyStyles[size],
-          compact !== true && disabled !== true && typeStyles[type],
-          compact === true && disabled !== true && typeCompactStyles[type],
-          compact !== true && disabled === true && typeDisabledStyles[type],
-          compact === true && disabled === true && typeCompactDisabledStyles[type],
-          compact !== true &&
-            children != null && [
-              iconLeft == null && iconRight == null && paddingNoIconsStyles[size],
-              iconLeft != null && iconRight == null && paddingLeftIconStyles[size],
-              iconLeft == null && iconRight != null && paddingRightIconStyles[size],
-              iconLeft != null && iconRight != null && paddingBothIconsStyles[size],
-            ],
-          props.circled === true && "rounded-full",
-        )}
-      >
-        {children}
-      </ButtonPrimitive>
-    );
-  },
-);
-
-ButtonLink.displayName = "ButtonLink";
+const ButtonLink = ({
+  ref,
+  type = "primary",
+  size = "normal",
+  compact,
+  disabled,
+  children,
+  iconLeft,
+  iconRight,
+  ...props
+}: Props) => {
+  return (
+    <ButtonPrimitive
+      ref={ref}
+      iconLeft={iconLeft}
+      iconRight={iconRight}
+      disabled={disabled}
+      {...props}
+      className={cx(
+        "space-x-200 rtl:space-x-reverse",
+        sizeStyles[size],
+        children == null && iconOnlyStyles[size],
+        compact !== true && disabled !== true && typeStyles[type],
+        compact === true && disabled !== true && typeCompactStyles[type],
+        compact !== true && disabled === true && typeDisabledStyles[type],
+        compact === true && disabled === true && typeCompactDisabledStyles[type],
+        compact !== true &&
+          children != null && [
+            iconLeft == null && iconRight == null && paddingNoIconsStyles[size],
+            iconLeft != null && iconRight == null && paddingLeftIconStyles[size],
+            iconLeft == null && iconRight != null && paddingRightIconStyles[size],
+            iconLeft != null && iconRight != null && paddingBothIconsStyles[size],
+          ],
+        props.circled === true && "rounded-full",
+      )}
+    >
+      {children}
+    </ButtonPrimitive>
+  );
+};
 
 export default ButtonLink;

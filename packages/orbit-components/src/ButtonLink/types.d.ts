@@ -1,5 +1,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
+import type { Ref } from "react";
+
 import type * as Common from "../common/types";
 import type {
   ButtonCommonProps,
@@ -14,6 +16,7 @@ export type Props = {
   readonly compact?: boolean;
   readonly type?: Type;
   readonly size?: Size;
+  readonly ref?: Ref<HTMLButtonElement>;
 } & Common.Globals &
   Common.SpaceAfter &
   ButtonCommonProps &

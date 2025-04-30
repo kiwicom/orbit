@@ -76,8 +76,9 @@ const Suffix = ({
   </div>
 );
 
-const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+const InputField = (props: Props) => {
   const {
+    ref,
     disabled,
     type = TYPE_OPTIONS.TEXT,
     label,
@@ -327,8 +328,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       )}
     </div>
   );
-});
-
-InputField.displayName = "InputField";
+};
 
 export default InputField;

@@ -8,6 +8,7 @@ import type * as Common from "../common/types";
 export type Type = "colored" | "neutral";
 
 export interface Props extends Common.Globals {
+  readonly ref?: React.Ref<HTMLDivElement>;
   readonly children: React.ReactNode;
   readonly iconLeft?: React.ReactNode;
   readonly type?: "colored" | "neutral";

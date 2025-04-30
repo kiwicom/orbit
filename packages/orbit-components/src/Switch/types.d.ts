@@ -6,6 +6,7 @@ import type * as React from "react";
 import type * as Common from "../common/types";
 
 export interface Props extends Common.Globals {
+  readonly ref?: React.Ref<HTMLInputElement>;
   readonly icon?: React.ReactNode;
   readonly checked: boolean;
   readonly disabled?: boolean;

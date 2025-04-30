@@ -19,6 +19,7 @@ export type closable =
 
 export type Props = Common.Globals &
   closable & {
+    readonly ref?: React.Ref<Instance>;
     readonly size?: Size;
     readonly children: React.ReactNode;
     readonly triggerRef?: React.RefObject<HTMLElement | null>;

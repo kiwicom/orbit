@@ -272,7 +272,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
               id={optionId}
               active={activeIdx === idx}
               isSelected={isSelected}
-              ref={optionRef}
+              ref={optionRef as React.RefObject<HTMLDivElement>}
               title={title}
               description={description}
               prefix={prefix}
@@ -325,7 +325,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                       id={optionId}
                       active={!!isLargeMobile && activeIdx === optionIdx}
                       isSelected={isSelected}
-                      ref={optionRef}
+                      ref={optionRef as React.RefObject<HTMLDivElement>}
                       title={title}
                       description={description}
                       prefix={prefix}
@@ -367,7 +367,7 @@ const InputSelect = React.forwardRef<HTMLInputElement, Props>(
                 id={optionId}
                 active={activeIdx === optionIdx}
                 isSelected={isSelected}
-                ref={optionRef}
+                ref={optionRef as React.RefObject<HTMLDivElement>}
                 title={title}
                 description={description}
                 prefix={prefix}

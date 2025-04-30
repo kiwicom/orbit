@@ -71,7 +71,10 @@ const ItinerarySegmentDetail = ({
           ariaLabelledBy={randomId("slide")}
           stopClickPropagation={false}
         >
-          <div className="pt-300 cursor-pointer overflow-hidden" ref={slideRef}>
+          <div
+            className="pt-300 cursor-pointer overflow-hidden"
+            ref={slideRef as React.RefObject<HTMLDivElement>}
+          >
             <div
               className="px-300 z-default relative py-0"
               style={{

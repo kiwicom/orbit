@@ -21,7 +21,7 @@ export type Props = Common.Globals &
   closable & {
     readonly size?: Size;
     readonly children: React.ReactNode;
-    readonly triggerRef?: React.RefObject<HTMLElement | null>;
+    readonly triggerRef?: React.RefObject<HTMLElement>;
     readonly lockScrolling?: boolean;
     readonly scrollingElementRef?: React.Ref<HTMLElement | null>;
     readonly onClose?: Common.Event<

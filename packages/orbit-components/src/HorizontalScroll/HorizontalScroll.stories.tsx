@@ -8,9 +8,6 @@ import Text from "../Text";
 
 import HorizontalScroll from ".";
 
-Box.displayName = "Box";
-HorizontalScroll.displayName = "HorizontalScroll";
-
 interface ScrollSnapTypes {
   scrollSnapAlign: "none" | "start" | "end" | "center";
   scrollSnapType: "none" | "inline" | "mandatory" | "proximity";

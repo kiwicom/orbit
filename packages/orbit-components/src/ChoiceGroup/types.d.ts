@@ -9,6 +9,7 @@ export type Size = "normal" | "large";
 type Element = "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
 export interface Props extends Common.Globals {
+  readonly ref?: React.Ref<HTMLDivElement>;
   readonly children:
     | React.ReactNode
     | ((args: {

@@ -43,8 +43,9 @@ export const FakeCheckbox = ({
   </div>
 );
 
-const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+const Checkbox = (props: Props) => {
   const {
+    ref,
     label,
     value,
     hasError = false,
@@ -135,8 +136,6 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       )}
     </label>
   );
-});
-
-Checkbox.displayName = "Checkbox";
+};
 
 export default Checkbox;

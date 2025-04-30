@@ -15,6 +15,7 @@ interface Option {
 }
 
 export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAttrs {
+  readonly ref?: React.Ref<HTMLSelectElement>;
   readonly id?: string;
   readonly required?: boolean;
   readonly label?: Common.Translation;

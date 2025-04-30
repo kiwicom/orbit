@@ -1,5 +1,6 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
+import type { Ref } from "react";
 
 import type {
   ButtonCommonProps,
@@ -25,6 +26,7 @@ type OmittedButtonCommonProps = Omit<ButtonCommonProps, "className">;
 interface ButtonProps extends OmittedButtonCommonProps {
   readonly type?: Type;
   readonly size?: Size;
+  readonly ref?: Ref<HTMLButtonElement>;
 }
 
 export type Props = ButtonProps & FullWidthConditionalProps & DownloadWithHrefConditionalProps;

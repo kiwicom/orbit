@@ -38,90 +38,86 @@ const ItemContainer =
     );
   };
 
-const ChoiceGroup = React.forwardRef<HTMLDivElement, Props>(
-  (
-    {
-      dataTest,
-      id,
-      label,
-      labelSize = LABEL_SIZES.NORMAL,
-      labelAs = "div",
-      error,
-      children,
-      filter,
-      onOnlySelection,
-      onlySelectionText,
-      onChange,
-    },
-    ref,
-  ) => {
-    const groupID = useRandomId();
-    const theme = useTheme();
+const ChoiceGroup = ({
+  ref,
+  dataTest,
+  id,
+  label,
+  labelSize = LABEL_SIZES.NORMAL,
+  labelAs = "div",
+  error,
+  children,
+  filter,
+  onOnlySelection,
+  onlySelectionText,
+  onChange,
+}: Props) => {
+  const groupID = useRandomId();
+  const theme = useTheme();
 
-    const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
-      if (onChange) {
-        onChange(ev);
-      }
-    };
+  const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(ev);
+    }
+  };
 
-    const itemProps = {
-      onChange: handleChange,
-      hasError: Boolean(error),
-    };
+  const itemProps = {
+    onChange: handleChange,
+    hasError: Boolean(error),
+  };
 
-    return (
-      <div
-        ref={ref}
-        data-test={dataTest}
-        id={id}
-        className={cx(
-          "flex w-full flex-col",
-          "[&_.orbit-choice-group-feedback]:mt-200 [&_.orbit-choice-group-feedback]:relative [&_.orbit-choice-group-feedback]:top-[initial]",
-        )}
-      >
-        {label && (
-          <Heading
-            id={groupID}
-            type={getHeadingSize(labelSize)}
-            as={labelAs}
-            role={undefined}
-            spaceAfter="medium"
-          >
-            {label}
-          </Heading>
-        )}
-        <div aria-labelledby={label ? groupID : undefined} role="group">
-          {typeof children === "function" ? (
-            children({
-              Container: "div",
-              Item: ItemContainer({ filter, onOnlySelection, onlySelectionText, itemProps }),
-              spacing: filter ? "0px" : theme.orbit.space200,
-            })
-          ) : (
-            <Stack direction="column" spacing={filter ? "none" : "200"}>
-              {React.Children.map(children, child => {
-                return !filter ? (
+  return (
+    <div
+      ref={ref}
+      data-test={dataTest}
+      id={id}
+      className={cx(
+        "flex w-full flex-col",
+        "[&_.orbit-choice-group-feedback]:mt-200 [&_.orbit-choice-group-feedback]:relative [&_.orbit-choice-group-feedback]:top-[initial]",
+      )}
+    >
+      {label && (
+        <Heading
+          id={groupID}
+          type={getHeadingSize(labelSize)}
+          as={labelAs}
+          role={undefined}
+          spaceAfter="medium"
+        >
+          {label}
+        </Heading>
+      )}
+      <div aria-labelledby={label ? groupID : undefined} role="group">
+        {typeof children === "function" ? (
+          children({
+            Container: "div",
+            Item: ItemContainer({ filter, onOnlySelection, onlySelectionText, itemProps }),
+            spacing: filter ? "0px" : theme.orbit.space200,
+          })
+        ) : (
+          <Stack direction="column" spacing={filter ? "none" : "200"}>
+            {React.Children.map(children, child => {
+              return !filter ? (
+                // @ts-expect-error TODO
+                React.cloneElement(child, itemProps)
+              ) : (
+                <FilterWrapper
                   // @ts-expect-error TODO
-                  React.cloneElement(child, itemProps)
-                ) : (
-                  <FilterWrapper
-                    // @ts-expect-error TODO
-                    child={child}
-                    onOnlySelection={onOnlySelection}
-                    onlySelectionText={onlySelectionText}
-                  >
-                    {/* @ts-expect-error TODO */}
-                    {React.cloneElement(child, itemProps)}
-                  </FilterWrapper>
-                );
-              })}
-            </Stack>
-          )}
-        </div>
-        {error && <Feedback>{error}</Feedback>}
+                  child={child}
+                  onOnlySelection={onOnlySelection}
+                  onlySelectionText={onlySelectionText}
+                >
+                  {/* @ts-expect-error TODO */}
+                  {React.cloneElement(child, itemProps)}
+                </FilterWrapper>
+              );
+            })}
+          </Stack>
+        )}
       </div>
-    );
-  },
-);
+      {error && <Feedback>{error}</Feedback>}
+    </div>
+  );
+};
 
 export default ChoiceGroup;

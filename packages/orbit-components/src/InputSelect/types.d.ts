@@ -51,4 +51,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly onOptionSelect?: (opt: Option | null) => void;
   readonly onClose?: (opt: Option | null) => void;
   readonly labelClear: string;
+  readonly ref?: React.Ref<HTMLInputElement>;
 }

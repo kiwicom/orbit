@@ -6,8 +6,9 @@ import React from "react";
 import getFieldDataState from "../common/getFieldDataState";
 import type { Props } from "./types";
 
-const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+const Radio = (props: Props) => {
   const {
+    ref,
     label,
     value,
     hasError = false,
@@ -104,8 +105,6 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       )}
     </label>
   );
-});
-
-Radio.displayName = "Radio";
+};
 
 export default Radio;

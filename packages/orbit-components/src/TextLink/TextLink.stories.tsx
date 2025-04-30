@@ -14,8 +14,6 @@ const validate = (rel: string) => (rel !== "" ? rel : undefined);
 
 const getIcon = (source: string) => Icons[source];
 
-Box.displayName = "Box";
-
 const meta: Meta<typeof TextLink> = {
   title: "TextLink",
   component: TextLink,

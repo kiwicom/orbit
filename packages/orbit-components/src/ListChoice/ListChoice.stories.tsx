@@ -9,9 +9,6 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 
 import ListChoice from ".";
 
-Button.displayName = "Button";
-ListChoice.displayName = "ListChoice";
-
 const getIcon = (source: string | null) => source && Icons[source];
 
 const meta: Meta<typeof ListChoice> = {

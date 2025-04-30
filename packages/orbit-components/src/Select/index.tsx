@@ -15,8 +15,9 @@ import useRandomId from "../hooks/useRandomId";
 import type { Props } from "./types";
 import { spaceAfterClasses } from "../common/tailwind";
 
-const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
+const Select = (props: Props) => {
   const {
+    ref,
     label,
     inlineLabel,
     placeholder,
@@ -236,9 +237,6 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
       )}
     </div>
   );
-});
-
-// otherwise Unknown in storybook
-Select.displayName = "Select";
+};
 
 export default Select;

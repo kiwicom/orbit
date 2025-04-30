@@ -50,159 +50,154 @@ const ElevationHaze = ({ className, style }: { className: string; style: React.C
   return <div className={cx("z-default absolute top-0 h-full", className)} style={style} />;
 };
 
-const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
-  (
-    {
-      children,
-      spacing = "300",
-      arrows,
-      arrowColor,
-      arrowLeftAriaLabel,
-      arrowRightAriaLabel,
-      scrollSnap = "none",
-      onOverflow,
-      elevationColor = "paletteCloudDark",
-      overflowElevation,
-      scrollPadding,
-      dataTest,
-      id,
-      minHeight,
-    },
-    ref,
-  ) => {
-    const scrollWrapperRef = React.useRef<HTMLDivElement | null>(null);
-    const [isOverflowing, setOverflowing] = React.useState(false);
-    const [reachedStart, setReachedStart] = React.useState(true);
-    const [reachedEnd, setReachedEnd] = React.useState(false);
-    const containerRef = React.useRef<HTMLDivElement | null>(null);
-    const { isDragging } = useScrollBox(scrollWrapperRef);
-    const theme = useTheme();
-    const scrollEl = scrollWrapperRef.current;
+const HorizontalScroll = ({
+  ref,
+  children,
+  spacing = "300",
+  arrows,
+  arrowColor,
+  arrowLeftAriaLabel,
+  arrowRightAriaLabel,
+  scrollSnap = "none",
+  onOverflow,
+  elevationColor = "paletteCloudDark",
+  overflowElevation,
+  scrollPadding,
+  dataTest,
+  id,
+  minHeight,
+}: Props) => {
+  const scrollWrapperRef = React.useRef<HTMLDivElement | null>(null);
+  const [isOverflowing, setOverflowing] = React.useState(false);
+  const [reachedStart, setReachedStart] = React.useState(true);
+  const [reachedEnd, setReachedEnd] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const { isDragging } = useScrollBox(scrollWrapperRef);
+  const theme = useTheme();
+  const scrollEl = scrollWrapperRef.current;
 
-    const handleOverflow = React.useCallback(() => {
-      if (scrollWrapperRef.current?.scrollWidth && containerRef.current?.offsetWidth) {
-        const { scrollWidth: containerScrollWidth } = scrollWrapperRef.current;
-        const { offsetWidth } = containerRef.current;
+  const handleOverflow = React.useCallback(() => {
+    if (scrollWrapperRef.current?.scrollWidth && containerRef.current?.offsetWidth) {
+      const { scrollWidth: containerScrollWidth } = scrollWrapperRef.current;
+      const { offsetWidth } = containerRef.current;
 
-        if (containerScrollWidth > offsetWidth) {
-          setOverflowing(true);
-          if (onOverflow) onOverflow();
-        } else {
-          setOverflowing(false);
-        }
+      if (containerScrollWidth > offsetWidth) {
+        setOverflowing(true);
+        if (onOverflow) onOverflow();
+      } else {
+        setOverflowing(false);
       }
-    }, [onOverflow]);
+    }
+  }, [onOverflow]);
 
-    const handleClick = (direction: "left" | "right") => {
-      if (scrollEl) {
-        const { scrollLeft, offsetWidth } = scrollEl;
-        const scrollAmount =
-          scrollLeft + (direction === "left" ? -offsetWidth / 2 : offsetWidth / 2);
-        scrollEl.scrollTo({
-          left: scrollAmount,
-          behavior: "smooth",
-        });
+  const handleClick = (direction: "left" | "right") => {
+    if (scrollEl) {
+      const { scrollLeft, offsetWidth } = scrollEl;
+      const scrollAmount = scrollLeft + (direction === "left" ? -offsetWidth / 2 : offsetWidth / 2);
+      scrollEl.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleScroll = React.useCallback(() => {
+    if (scrollEl) {
+      const scrollWidth = scrollEl.scrollWidth - scrollEl.clientWidth;
+      const { scrollLeft } = scrollEl;
+
+      if (scrollLeft === 0) {
+        setReachedStart(true);
+      } else {
+        setReachedStart(false);
       }
+
+      if (scrollLeft >= scrollWidth) {
+        setReachedEnd(true);
+      } else {
+        setReachedEnd(false);
+      }
+    }
+  }, [scrollEl]);
+
+  const handleResize = React.useCallback(() => {
+    handleOverflow();
+    handleScroll();
+  }, [handleOverflow, handleScroll]);
+
+  React.useEffect(() => {
+    handleOverflow();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
     };
+  }, [handleOverflow, handleResize, scrollWrapperRef.current?.scrollWidth]);
 
-    const handleScroll = React.useCallback(() => {
-      if (scrollEl) {
-        const scrollWidth = scrollEl.scrollWidth - scrollEl.clientWidth;
-        const { scrollLeft } = scrollEl;
-
-        if (scrollLeft === 0) {
-          setReachedStart(true);
-        } else {
-          setReachedStart(false);
-        }
-
-        if (scrollLeft >= scrollWidth) {
-          setReachedEnd(true);
-        } else {
-          setReachedEnd(false);
-        }
-      }
-    }, [scrollEl]);
-
-    const handleResize = React.useCallback(() => {
-      handleOverflow();
-      handleScroll();
-    }, [handleOverflow, handleScroll]);
-
-    React.useEffect(() => {
-      handleOverflow();
-
-      window.addEventListener("resize", handleResize);
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, [handleOverflow, handleResize, scrollWrapperRef.current?.scrollWidth]);
-
-    return (
-      <div
-        className={cx(
-          "orbit-horizontal-scroll relative inline-flex w-full items-center overflow-hidden",
-          isOverflowing && (isDragging ? "cursor-grabbing" : "cursor-grab"),
-        )}
-        data-test={dataTest}
-        id={id}
-        ref={mergeRefs<HTMLDivElement>([ref, containerRef])}
-        style={{ minHeight }}
-      >
-        {overflowElevation && (
-          <>
-            <ElevationHaze
-              className={cx("left-0", (!isOverflowing || reachedStart) && "invisible")}
-              style={{ boxShadow: `5px 0px 20px 20px ${theme.orbit[elevationColor]}` }}
-            />
-            <ElevationHaze
-              className={cx("right-0", (!isOverflowing || reachedEnd) && "invisible")}
-              style={{ boxShadow: `-5px 0px 20px 20px ${theme.orbit[elevationColor]}` }}
-            />
-          </>
-        )}
-        {arrows && (
-          <ArrowButton
-            className="left-100"
-            isHidden={reachedStart || !isOverflowing}
-            onClick={() => handleClick("left")}
-            ariaLabel={arrowLeftAriaLabel}
-          >
-            <ChevronBackward customColor={arrowColor} />
-          </ArrowButton>
-        )}
-        <div
-          className="scrollbar-none size-full overflow-x-auto overflow-y-hidden"
-          ref={scrollWrapperRef}
-          onScroll={handleScroll}
-          style={{
-            scrollPadding,
-            scrollSnapType: isDragging ? "none" : getSnap(scrollSnap),
-          }}
+  return (
+    <div
+      className={cx(
+        "orbit-horizontal-scroll relative inline-flex w-full items-center overflow-hidden",
+        isOverflowing && (isDragging ? "cursor-grabbing" : "cursor-grab"),
+      )}
+      data-test={dataTest}
+      id={id}
+      ref={mergeRefs<HTMLDivElement>([ref || null, containerRef])}
+      style={{ minHeight }}
+    >
+      {overflowElevation && (
+        <>
+          <ElevationHaze
+            className={cx("left-0", (!isOverflowing || reachedStart) && "invisible")}
+            style={{ boxShadow: `5px 0px 20px 20px ${theme.orbit[elevationColor]}` }}
+          />
+          <ElevationHaze
+            className={cx("right-0", (!isOverflowing || reachedEnd) && "invisible")}
+            style={{ boxShadow: `-5px 0px 20px 20px ${theme.orbit[elevationColor]}` }}
+          />
+        </>
+      )}
+      {arrows && (
+        <ArrowButton
+          className="left-100"
+          isHidden={reachedStart || !isOverflowing}
+          onClick={() => handleClick("left")}
+          ariaLabel={arrowLeftAriaLabel}
         >
-          <div
-            className={cx("relative inline-flex size-full", isDragging && "pointer-events-none")}
-            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-            tabIndex={0}
-          >
-            <Stack inline spacing={spacing}>
-              {children}
-            </Stack>
-          </div>
+          <ChevronBackward customColor={arrowColor} />
+        </ArrowButton>
+      )}
+      <div
+        className="scrollbar-none size-full overflow-x-auto overflow-y-hidden"
+        ref={scrollWrapperRef}
+        onScroll={handleScroll}
+        style={{
+          scrollPadding,
+          scrollSnapType: isDragging ? "none" : getSnap(scrollSnap),
+        }}
+      >
+        <div
+          className={cx("relative inline-flex size-full", isDragging && "pointer-events-none")}
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+          tabIndex={0}
+        >
+          <Stack inline spacing={spacing}>
+            {children}
+          </Stack>
         </div>
-        {arrows && (
-          <ArrowButton
-            className="right-100"
-            isHidden={reachedEnd || !isOverflowing}
-            onClick={() => handleClick("right")}
-            ariaLabel={arrowRightAriaLabel}
-          >
-            <ChevronForward customColor={arrowColor} />
-          </ArrowButton>
-        )}
       </div>
-    );
-  },
-);
+      {arrows && (
+        <ArrowButton
+          className="right-100"
+          isHidden={reachedEnd || !isOverflowing}
+          onClick={() => handleClick("right")}
+          ariaLabel={arrowRightAriaLabel}
+        >
+          <ChevronForward customColor={arrowColor} />
+        </ArrowButton>
+      )}
+    </div>
+  );
+};
 
 export default HorizontalScroll;

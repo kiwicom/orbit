@@ -50,36 +50,38 @@ const typeDisabledStyled: Record<Type, string> = {
   bundleTop: "bg-button-bundle-top-background text-white-foreground",
 };
 
-const Button = React.forwardRef<HTMLButtonElement, Props>(
-  (
-    { type = "primary", size = "normal", children, iconLeft, iconRight, disabled, ...props },
-    ref,
-  ) => {
-    return (
-      <ButtonPrimitive
-        ref={ref}
-        iconLeft={iconLeft}
-        iconRight={iconRight}
-        disabled={disabled}
-        {...props}
-        className={cx(
-          "space-x-200 rtl:space-x-reverse",
-          sizeStyles[size],
-          children == null && iconOnlyStyles[size],
-          disabled === true ? typeDisabledStyled[type] : typeStyles[type],
-          children != null && iconLeft == null && iconRight == null && paddingNoIconsStyles[size],
-          children != null && iconLeft != null && iconRight == null && paddingLeftIconStyles[size],
-          children != null && iconLeft == null && iconRight != null && paddingRightIconStyles[size],
-          children != null && iconLeft != null && iconRight != null && paddingBothIconsStyles[size],
-          props.circled === true && "rounded-full",
-        )}
-      >
-        {children}
-      </ButtonPrimitive>
-    );
-  },
-);
-
-Button.displayName = "Button";
+const Button = ({
+  ref,
+  type = "primary",
+  size = "normal",
+  children,
+  iconLeft,
+  iconRight,
+  disabled,
+  ...props
+}: Props) => {
+  return (
+    <ButtonPrimitive
+      ref={ref}
+      iconLeft={iconLeft}
+      iconRight={iconRight}
+      disabled={disabled}
+      {...props}
+      className={cx(
+        "space-x-200 rtl:space-x-reverse",
+        sizeStyles[size],
+        children == null && iconOnlyStyles[size],
+        disabled === true ? typeDisabledStyled[type] : typeStyles[type],
+        children != null && iconLeft == null && iconRight == null && paddingNoIconsStyles[size],
+        children != null && iconLeft != null && iconRight == null && paddingLeftIconStyles[size],
+        children != null && iconLeft == null && iconRight != null && paddingRightIconStyles[size],
+        children != null && iconLeft != null && iconRight != null && paddingBothIconsStyles[size],
+        props.circled === true && "rounded-full",
+      )}
+    >
+      {children}
+    </ButtonPrimitive>
+  );
+};
 
 export default Button;

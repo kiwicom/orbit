@@ -1,14 +1,14 @@
 # Skeleton
 
-Skeleton component display a placeholder preview before the data gets loaded.
+Skeleton component displays a placeholder preview while data is loading.
 
-To implement Separator component into your project you'll need to add the import:
+To implement the Skeleton component into your project, you'll need to add the import:
 
 ```jsx
 import Skeleton from "@kiwicom/orbit-components/lib/Skeleton";
 ```
 
-After adding import into your project you can use it simply like:
+After adding the import into your project, you can use it simply like:
 
 ```jsx
 <Skeleton height={100} width={300} />
@@ -24,7 +24,7 @@ or
 </Skeleton>
 ```
 
-or if you need to render only rect, you can use the `row` property like:
+or if you need to render only rect elements, you can use the `rows` property like:
 
 ```jsx
 <Skeleton rows={3} rowOffset={15} rowHeight={10} />
@@ -38,25 +38,24 @@ or you can pick one from our predefined presets:
 
 ## Props
 
-| Name            | Type                  | Default            | Description                                      |
-| --------------- | --------------------- | ------------------ | ------------------------------------------------ |
-| animate         | `boolean`             | `true`             | Turn off/on animation                            |
-| children        | `React.ReactNode`     |                    |                                                  |
-| height          | `number \| string`    | `100%`             | Set height for Svg element                       |
-| height          | `number \| string`    | `100%`             | Set height for Svg element                       |
-| maxHeight       | `number \| string`    |                    | Set maxHeight for Svg element                    |
-| rowBorderRadius | `number`              | `3`                | Border-radius for row rect elements              |
-| rowHeight       | `number`              | `21px`             | Set height for rect elements                     |
-| rowOffset       | `number`              | `20px`             | Set offset between rect elements                 |
-| rows            | `number`              |                    | Number of rect elements                          |
-| title           | `string`              |                    | Accessible text for screen readers               |
-| preset          | [`Preset`](###Preset) |                    | You can pick one of predefined presets           |
-| viewBox         | `string`              |                    | Set viewBox for Svg element                      |
-| width           | `number \| string`    | `100%`             | Width of Svg element                             |
-| spaceAfter      | `enum`                |                    | Additional `margin-bottom` after component.      |
-| dataTest        | `string`              |                    | Optional prop for testing purposes               |
-| id              | `string`              |                    | Set `id` for `Skeleton`                          |
-| color           | `string`              | `paletteCloudDark` | Set color for svg rect element from orbit tokens |
+| Name            | Type                | Default            | Description                                        |
+| :-------------- | :------------------ | :----------------- | :------------------------------------------------- |
+| animate         | `boolean`           | `true`             | Turns animation on/off                             |
+| children        | `React.ReactNode`   |                    | Custom skeleton shapes                             |
+| color           | `string`            | `paletteCloudDark` | Sets color for SVG rect elements from Orbit tokens |
+| dataTest        | `string`            |                    | Optional prop for testing purposes                 |
+| height          | `number \| string`  | `100%`             | Sets height for SVG element                        |
+| id              | `string`            |                    | Sets `id` attribute for the Skeleton component     |
+| maxHeight       | `number \| string`  |                    | Sets maximum height for SVG element                |
+| preset          | [`Preset`](#preset) |                    | Predefined skeleton layouts                        |
+| rowBorderRadius | `number`            | `3`                | Sets border-radius for row rect elements           |
+| rowHeight       | `number`            | `21px`             | Sets height for rect elements                      |
+| rowOffset       | `number`            | `20px`             | Sets offset between rect elements                  |
+| rows            | `number`            |                    | Number of rect elements to display                 |
+| spaceAfter      | `enum`              |                    | Additional `margin-bottom` after component         |
+| title           | `string`            |                    | Provides text for screen readers                   |
+| viewBox         | `string`            |                    | Sets viewBox attribute for SVG element             |
+| width           | `number \| string`  | `100%`             | Width of SVG element                               |
 
 ### enum
 

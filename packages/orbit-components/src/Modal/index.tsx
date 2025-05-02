@@ -89,6 +89,7 @@ const Modal = ({
         if (typeof scrollingElementRef === "function") {
           scrollingElementRef(node);
         } else {
+          // @ts-expect-error TODO
           // eslint-disable-next-line no-param-reassign
           scrollingElementRef.current = node;
         }

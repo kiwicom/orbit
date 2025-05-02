@@ -28,7 +28,7 @@ const useBoundingRect = <T extends HTMLElement>(
     ...initialValue,
   }));
 
-  const ref = React.useRef<T | null>(null);
+  const ref = React.useRef<T>(null) as React.RefObject<T>;
 
   React.useEffect(() => {
     const calculate = () => {

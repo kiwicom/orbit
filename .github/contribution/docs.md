@@ -52,7 +52,7 @@ yarn
 And start the site.
 
 ```shell
-yarn dev:docs
+yarn docs dev
 ```
 
 Your site is now running at `http://localhost:8000`.

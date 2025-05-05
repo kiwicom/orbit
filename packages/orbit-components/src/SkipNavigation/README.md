@@ -18,15 +18,16 @@ After adding an import to your project you can use it simply like:
 
 The table below contains all types of props available in the SkipNavigation component.
 
-| Name              | Type                    | Default           | Description                                  |
-| :---------------- | :---------------------- | :---------------- | -------------------------------------------- |
-| feedbackUrl       | `string`                |                   | Url to a feedback form.                      |
-| feedbackLabel     | `React.Node`            | `Send feedback`   | Text for a feedback form.                    |
-| **actions**       | [`Actions[]`](#actions) |                   | An array specifying common actions on a page |
-| dataTest          | `string`                |                   | Optional prop for testing purposes           |
-| id                | `string`                |                   | Optional id attribute                        |
-| firstSectionLabel | `React.Node`            | `Jump to section` | Label for a first section link.              |
-| firstActionLabel  | `React.Node`            | `Jump to action`  | Label for a first action link.               |
+| Name              | Type                    | Default           | Description                                                                           |
+| :---------------- | :---------------------- | :---------------- | ------------------------------------------------------------------------------------- |
+| feedbackUrl       | `string`                |                   | Url to a feedback form.                                                               |
+| feedbackLabel     | `React.Node`            | `Send feedback`   | Text for a feedback form.                                                             |
+| **actions**       | [`Actions[]`](#actions) |                   | An array specifying common actions on a page                                          |
+| dataTest          | `string`                |                   | Optional prop for testing purposes                                                    |
+| id                | `string`                |                   | Optional id attribute                                                                 |
+| firstSectionLabel | `React.Node`            | `Jump to section` | Label for a first section link.                                                       |
+| firstActionLabel  | `React.Node`            | `Jump to action`  | Label for a first action link.                                                        |
+| isInNav           | `boolean`               |                   | Use when placed inside a navigation component. Adjusts styling and width constraints. |
 
 ## actions
 

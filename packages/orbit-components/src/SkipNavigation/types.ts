@@ -17,6 +17,7 @@ export interface Props extends Common.Globals {
   readonly firstSectionLabel?: string;
   readonly firstActionLabel?: string;
   readonly feedbackLabel?: string;
+  readonly isInNav?: boolean;
 }
 
 export interface MappedOptions {

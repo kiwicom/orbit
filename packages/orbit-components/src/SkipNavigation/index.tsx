@@ -100,8 +100,18 @@ const SkipNavigation = ({
       <Stack justify="between">
         <div className={isInNav ? "max-w-[250px]" : "max-w-[800px]"}>
           <Stack align="center">
-            <Select options={mappedLinks} onChange={handleLinksClick} />
-            {innerPages.length > 0 && <Select options={innerPages} onChange={handlePageClick} />}
+            <Select
+              options={mappedLinks}
+              onChange={handleLinksClick}
+              ariaLabel={firstSectionLabel}
+            />
+            {innerPages.length > 0 && (
+              <Select
+                options={innerPages}
+                onChange={handlePageClick}
+                ariaLabel={firstActionLabel}
+              />
+            )}
           </Stack>
         </div>
         {feedbackUrl && (

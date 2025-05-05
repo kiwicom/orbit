@@ -112,7 +112,7 @@
     "@types/pixelmatch": "^5.2.4",
     "@types/readable-stream": "^2.3.13",
     "@types/svgicons2svgfont": "^10.0.1",
-    "@types/webpack": "^5.28.0",
+    "@types/webpack": "^5.28.5",
     "@vitejs/plugin-react": "^4.0.0",
     "babel-loader": "^9.1.2",
     "babel-plugin-require-context-hook": "^1.0.0",
@@ -144,7 +144,7 @@
     "tailwindcss": "^3.4.4",
     "ttf2woff2": "^4.0.1",
     "vite": "^4.5.13",
-    "webpack": "^5.94.0",
+    "webpack": "^5.99.7",
     "webpack-cli": "^5.1.4"
   }
 }

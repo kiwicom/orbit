@@ -7,8 +7,18 @@ import Text from "../Text";
 import TextLink from "../TextLink";
 import Card, { CardSection } from "../Card";
 import Stack from "../Stack";
+import NavigationBar from "../NavigationBar";
+import ButtonLink from "../ButtonLink";
+import AccountCircle from "../icons/AccountCircle";
 
 import SkipNavigation from ".";
+
+// Define a custom story type that includes both component props
+type CombinedProps = React.ComponentProps<typeof SkipNavigation> &
+  Pick<React.ComponentProps<typeof NavigationBar>, "transparentBgAtTop" | "hideOnScroll">;
+
+type Story = StoryObj<typeof SkipNavigation>;
+type CombinedStory = StoryObj<CombinedProps>;
 
 const Content = (
   <Stack>
@@ -59,38 +69,6 @@ const Content = (
 const meta: Meta<typeof SkipNavigation> = {
   title: "SkipNavigation",
   component: SkipNavigation,
-};
-
-export default meta;
-type Story = StoryObj<typeof SkipNavigation>;
-
-export const Default: Story = {
-  render: () => (
-    <>
-      <SkipNavigation />
-      {Content}
-    </>
-  ),
-
-  parameters: {
-    info: "Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
-    controls: {
-      disable: true,
-    },
-  },
-};
-
-export const Playground: Story = {
-  render: args => (
-    <>
-      <SkipNavigation {...args} />
-      {Content}
-    </>
-  ),
-
-  parameters: {
-    info: "All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
-  },
 
   args: {
     actions: [
@@ -112,5 +90,122 @@ export const Playground: Story = {
     firstSectionLabel: "Jump to section",
     firstActionLabel: "Common actions",
     id: "ID",
+    isInNav: false,
+  },
+
+  argTypes: {
+    id: {
+      table: {
+        category: "SkipNavigation",
+      },
+    },
+    isInNav: {
+      table: {
+        category: "SkipNavigation",
+      },
+    },
+    feedbackUrl: {
+      table: {
+        category: "SkipNavigation",
+      },
+    },
+    feedbackLabel: {
+      table: {
+        category: "SkipNavigation",
+      },
+    },
+    firstSectionLabel: {
+      table: {
+        category: "SkipNavigation",
+      },
+    },
+    firstActionLabel: {
+      table: {
+        category: "SkipNavigation",
+      },
+    },
+    actions: {
+      table: {
+        category: "SkipNavigation",
+      },
+    },
+  },
+};
+
+export default meta;
+
+export const Default: Story = {
+  render: args => (
+    <>
+      <SkipNavigation {...args} />
+      {Content}
+    </>
+  ),
+
+  parameters: {
+    info: "Default configuration of SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+  },
+};
+
+export const InNavigationBar: CombinedStory = {
+  render: args => {
+    const { transparentBgAtTop, hideOnScroll, ...skipNavigationProps } = args;
+
+    return (
+      <>
+        <NavigationBar transparentBgAtTop={transparentBgAtTop} hideOnScroll={hideOnScroll}>
+          <Stack justify="between" spacing="none">
+            <SkipNavigation {...skipNavigationProps} />
+            <ButtonLink type="secondary">Flights</ButtonLink>
+            <Stack direction="row" spacing="100" justify="end" shrink as="nav">
+              <ButtonLink aria-label="Account" iconLeft={<AccountCircle />} type="secondary" />
+            </Stack>
+          </Stack>
+        </NavigationBar>
+        <div className="mt-100">{Content}</div>
+      </>
+    );
+  },
+
+  parameters: {
+    info: "Styling for SkipNavigation when used in navigation bar. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
+  },
+
+  args: {
+    isInNav: true,
+    feedbackUrl: "",
+    feedbackLabel: "",
+    firstSectionLabel: "Section",
+    firstActionLabel: "",
+    actions: undefined,
+    // NavigationBar props
+    transparentBgAtTop: false,
+    hideOnScroll: true,
+  },
+
+  argTypes: {
+    transparentBgAtTop: {
+      table: {
+        category: "NavigationBar",
+      },
+    },
+    hideOnScroll: {
+      table: {
+        category: "NavigationBar",
+      },
+    },
+  },
+};
+
+export const Playground: Story = {
+  render: args => (
+    <>
+      <SkipNavigation {...args} />
+      {Content}
+    </>
+  ),
+
+  parameters: {
+    info: "All possible options for SkipNavigation. SkipNavigation is displayed only when focused. Use Tab or Shift + Tab to focus it.",
   },
 };

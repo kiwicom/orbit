@@ -16,6 +16,7 @@ const SkipNavigation = ({
   firstActionLabel = "Common actions",
   dataTest,
   id,
+  isInNav,
 }: Props) => {
   const [links, setLinks] = React.useState<HTMLAnchorElement[]>([]);
   const [mappedLinks, setMappedLinks] = React.useState<MappedOptions[]>([]);
@@ -85,7 +86,11 @@ const SkipNavigation = ({
 
   return (
     <div
-      className={cx("orbit-skip-navigation bg-cloud-light p-400 w-full", !show && "sr-only")}
+      className={cx(
+        "orbit-skip-navigation",
+        isInNav ? "bg-inherit p-0" : "bg-cloud-light p-400",
+        !show && "sr-only",
+      )}
       tabIndex={-1}
       onFocus={handleFocus}
       onBlur={() => setShow(false)}
@@ -93,7 +98,7 @@ const SkipNavigation = ({
       id={id}
     >
       <Stack justify="between">
-        <div className="max-w-[800px]">
+        <div className={isInNav ? "max-w-[250px]" : "max-w-[800px]"}>
           <Stack align="center">
             <Select options={mappedLinks} onChange={handleLinksClick} />
             {innerPages.length > 0 && <Select options={innerPages} onChange={handlePageClick} />}

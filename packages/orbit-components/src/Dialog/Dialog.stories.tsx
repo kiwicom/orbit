@@ -60,7 +60,12 @@ function useDialog() {
     Container: ({ children }) => (
       <>
         {open && <div>{children}</div>}
-        <Button ref={triggerRef} onClick={() => toggle(true)}>
+        <Button
+          ref={triggerRef}
+          onClick={() => toggle(true)}
+          aria-expanded={open}
+          aria-controls="dialog-id"
+        >
           Open
         </Button>
       </>
@@ -84,6 +89,7 @@ export const Default: Story = {
           primaryAction={<Button type="critical">Log out</Button>}
           onClose={onClose}
           triggerRef={triggerRef}
+          id="dialog-id"
         />
       </Container>
     );
@@ -124,6 +130,7 @@ export const Playground: Story = {
           illustration={<Illustration name={illustration as Name} size="small" />}
           onClose={onClose}
           triggerRef={triggerRef}
+          id="dialog-id"
         />
       </Container>
     );

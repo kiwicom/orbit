@@ -2,12 +2,19 @@ import * as React from "react";
 
 import SkipNavigation from ".";
 
-export default function SkipNavigationStory() {
+interface Props {
+  isInNav?: boolean;
+}
+
+export default function SkipNavigationStory({ isInNav }: Props) {
   return (
     <div className="p-400">
-      <div className="border border-solid">
+      <div className={`border border-solid ${isInNav ? "bg-white-normal" : ""}`}>
         <SkipNavigation
           dataTest="SkipNavigation"
+          isInNav={isInNav}
+          firstSectionLabel={isInNav ? "Section" : "Jump to section"}
+          firstActionLabel={isInNav ? "Action" : "Common actions"}
           actions={[
             {
               name: "Go to terms and conditions",

@@ -34,4 +34,28 @@ test.describe("visual SkipNavigation", () => {
 
     await expect(component).toHaveScreenshot();
   });
+
+  test("in-nav", async ({ mount }) => {
+    const component = await mount(<SkipNavigationStory isInNav />);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("in-nav focus", async ({ mount }) => {
+    const component = await mount(<SkipNavigationStory isInNav />);
+    await component.evaluate(forceShow);
+
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("in-nav rtl", async ({ mount }) => {
+    const component = await mount(
+      <RenderInRtl>
+        <SkipNavigationStory isInNav />
+      </RenderInRtl>,
+    );
+    await component.evaluate(forceShow);
+
+    await expect(component).toHaveScreenshot();
+  });
 });

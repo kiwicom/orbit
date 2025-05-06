@@ -1,0 +1,53 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/navigationbar/accessibility/
+---
+
+## Accessibility
+
+The NavigationBar component has been designed with accessibility in mind.
+
+### Automatic Accessibility Features
+
+- Renders as a semantic `<header>` element, creating a native landmark
+- Menu button includes title text via the `openTitle` prop
+
+### Keyboard Navigation
+
+- **Tab:** Moves focus to interactive elements within the navigation bar
+- **Enter/Space:** Activates buttons or links when focused
+
+### Best Practices
+
+- Set `openTitle` to clearly describe the button navigationmenu's purpose
+- When using `transparentBgAtTop`, ensure sufficient contrast with background content
+- Use a `<nav>` element with `aria-label` inside NavigationBar to create a more descriptive navigation region
+- When using `onMenuOpen` to implement a drawer/menu:
+  - Implement complete focus management in your drawer component
+  - Programmatically move focus to the menu/drawer when opened
+  - Trap focus within the opened menu for keyboard users
+  - Return focus to the menu button when the drawer closes
+
+### Example
+
+```jsx
+<NavigationBar id="main-navigation" onMenuOpen={handleDrawerOpen} openTitle="Open site navigation">
+  <Stack as="nav" aria-label="Main site navigation">
+    <LinkList direction="row">
+      <TextLink href="/flights" iconLeft={<Airplane />} title="Flights">
+        Flights
+      </TextLink>
+      <TextLink href="/about">About</TextLink>
+      <TextLink href="/contact">Contact</TextLink>
+    </LinkList>
+  </Stack>
+</NavigationBar>
+```
+
+Screen reader announcements:
+
+- "Banner landmark" when encountering the navigation bar
+- "Main site navigation, navigation" when encountering the nav element
+- "Open site navigation, button" when focusing on the menu button
+- "Flights, link" when focusing on the first link

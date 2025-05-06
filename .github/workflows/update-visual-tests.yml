@@ -9,7 +9,7 @@ on:
         default: "chore: update visual tests"
 
 jobs:
-  update-visual-tests:
+  update-visual-tests-ubuntu:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.44.1-jammy
@@ -23,12 +23,6 @@ jobs:
       - name: Install
         uses: ./.github/actions/node
 
-      - name: Setup git config
-        run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git config user.name "kiwicom-orbit-bot"
-          git config user.email "frontend-platform@kiwi.com"
-
       - name: Build
         run: |
           apt-get update
@@ -38,8 +32,74 @@ jobs:
           yarn components build
 
       - name: Update Visual Tests
+        run: yarn components test-ct --update-snapshots
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu-snapshots
+          path: "**/*.png"
+          retention-days: 1
+
+  update-visual-tests-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          ref: ${{ github.head_ref }}
+
+      - name: Install Node.js
+        uses: ./.github/actions/node
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Build
         run: |
-          yarn components test-ct --update-snapshots
+          yarn tokens build
+          yarn tailwind-preset build
+          yarn components build
+
+      - name: Update Visual Tests
+        run: yarn components test-ct --update-snapshots
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-snapshots
+          path: "**/*.png"
+          retention-days: 1
+
+  commit-changes:
+    needs: [update-visual-tests-ubuntu, update-visual-tests-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          ref: ${{ github.head_ref }}
+
+      - name: Download Ubuntu snapshots
+        uses: actions/download-artifact@v4
+        with:
+          name: ubuntu-snapshots
+
+      - name: Download macOS snapshots
+        uses: actions/download-artifact@v4
+        with:
+          name: macos-snapshots
+
+      - name: Setup git config
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name "kiwicom-orbit-bot"
+          git config user.email "frontend-platform@kiwi.com"
+
+      - name: Commit changes
+        run: |
           git add \*.png
           if git diff-index --quiet HEAD; then
             echo "No changes to visual tests. Exiting."

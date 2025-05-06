@@ -50,7 +50,7 @@ const AccordionSection = ({
         )}
 
         <Slide maxHeight={height} expanded={isExpanded} id={slideId}>
-          <div ref={ref}>
+          <div ref={ref as React.RefObject<HTMLDivElement>}>
             {children && <SectionContent dataTest={dataTest}>{children}</SectionContent>}
             {footer && <SectionFooter dataTest={dataTest}>{footer}</SectionFooter>}
           </div>

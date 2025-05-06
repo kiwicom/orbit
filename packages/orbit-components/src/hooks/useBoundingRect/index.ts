@@ -15,7 +15,7 @@ export interface Dimensions {
 
 const useBoundingRect = <T extends HTMLElement>(
   initialValue: Partial<Dimensions> | undefined | null,
-): [Dimensions, React.RefObject<T | null>] => {
+): [Dimensions, React.RefObject<T>] => {
   const [state, setState] = React.useState<Dimensions>(() => ({
     x: 0,
     y: 0,
@@ -28,7 +28,7 @@ const useBoundingRect = <T extends HTMLElement>(
     ...initialValue,
   }));
 
-  const ref = React.useRef<T | null>(null);
+  const ref = React.useRef<T>(null) as React.RefObject<T>;
 
   React.useEffect(() => {
     const calculate = () => {

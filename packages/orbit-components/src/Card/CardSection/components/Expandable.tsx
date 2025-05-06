@@ -14,7 +14,7 @@ export default function Expandable({ expanded, children, slideID }: Props) {
 
   return (
     <Slide maxHeight={height} expanded={expanded} id={slideID}>
-      <div ref={ref}>{children}</div>
+      <div ref={ref as React.RefObject<HTMLDivElement>}>{children}</div>
     </Slide>
   );
 }

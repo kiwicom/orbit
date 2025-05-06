@@ -92,15 +92,15 @@ const Dialog = ({
 
   useClickOutside(ref, handleClose);
 
-  const dialogID = useRandomId();
+  const titleId = useRandomId();
   const descriptionId = useRandomId();
 
   const dialog = (
     <div
       role="dialog"
       aria-modal="true"
-      aria-labelledby={dialogID}
-      aria-describedby={descriptionId}
+      aria-labelledby={titleId}
+      aria-describedby={description ? descriptionId : undefined}
       ref={wrapperRef}
       data-test={dataTest}
       id={id}
@@ -115,7 +115,6 @@ const Dialog = ({
     >
       <div className="flex min-h-full items-center">
         <div
-          id={dialogID}
           ref={ref}
           style={{ maxWidth }}
           className={cx([
@@ -132,6 +131,7 @@ const Dialog = ({
                 largeMobile={{ align: "start" }}
                 role={undefined}
                 as={titleAs}
+                id={titleId}
               >
                 {title}
               </Heading>

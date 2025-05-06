@@ -24,15 +24,15 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the NavigationBar component.
 
-| Name               | Type                    | Default                  | Description                                                                                                 |
-| :----------------- | :---------------------- | :----------------------- | :---------------------------------------------------------------------------------------------------------- |
-| **children**       | `React.Node`            |                          | The content of the NavigationBar.                                                                           |
-| dataTest           | `string`                |                          | Optional prop for testing purposes.                                                                         |
-| id                 | `string`                |                          | Set `id` for `NavigationBar`.                                                                               |
-| onMenuOpen         | `() => void \| Promise` |                          | Function for handling onClick event on HamburgerMenu icon. If `null`, the HamburgerMenu won't appear.       |
-| onHide             | `() => void \| Promise` |                          | Function for handling event when the NavigationBar disappears.                                              |
-| onShow             | `() => void \| Promise` |                          | Function for handling event when the NavigationBar appears.                                                 |
-| hideOnScroll       | `boolean`               | `true`                   | Turn on or off hiding navigation bar on scroll                                                              |
-| openTitle          | `string`                | `"Open navigation menu"` | Property for passing translation string to open Button.                                                     |
-| bottomStyle        | `"shadow" \| "border"`  | `"shadow"`               | Property for setting bottom style of NavigationBar.                                                         |
-| transparentBgAtTop | `boolean`               | `false`                  | Property for setting the background to be transparent when the NavigationBar is at the top of the viewport. |
+| Name               | Type                       | Default                  | Description                                                                                                 |
+| :----------------- | :------------------------- | :----------------------- | :---------------------------------------------------------------------------------------------------------- |
+| **children**       | `React.Node`               |                          | The content of the NavigationBar.                                                                           |
+| dataTest           | `string`                   |                          | Optional prop for testing purposes.                                                                         |
+| id                 | `string`                   |                          | Unique identifier for the `NavigationBar`.                                                                  |
+| onMenuOpen         | `event => void \| Promise` |                          | Function for handling onClick event on HamburgerMenu icon. If `null`, the HamburgerMenu won't appear.       |
+| onHide             | `() => void \| Promise`    |                          | Function for handling event when the NavigationBar disappears.                                              |
+| onShow             | `() => void \| Promise`    |                          | Function for handling event when the NavigationBar appears.                                                 |
+| hideOnScroll       | `boolean`                  | `true`                   | Turn on or off hiding navigation bar on scroll                                                              |
+| openTitle          | `string`                   | `"Open navigation menu"` | Property for passing translation string to open Button.                                                     |
+| bottomStyle        | `"shadow" \| "border"`     | `"shadow"`               | Property for setting bottom style of NavigationBar.                                                         |
+| transparentBgAtTop | `boolean`                  | `false`                  | Property for setting the background to be transparent when the NavigationBar is at the top of the viewport. |

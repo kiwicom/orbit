@@ -4,6 +4,7 @@
     "rootDir": "src",
     "outDir": "lib",
     "declaration": true,
+    "declarationMap": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
     "importsNotUsedAsValues": "error",
@@ -15,6 +16,8 @@
     "**/__tests__/**/*",
     "**/__typetests__/**/*",
     "**/*.stories.*",
+    "**/*.ct-story.*",
+    "**/*.ct.*",
     "**/RenderInRtl.tsx"
   ]
 }

@@ -11,14 +11,14 @@ import ServiceLogo from "../ServiceLogo";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Tag from "../Tag";
 import { SPACINGS_AFTER } from "../common/consts";
-import type { Name } from "../ServiceLogo/types";
+import type { Props } from "../ServiceLogo/types";
 
 import InputField from ".";
 
 const getIcon = (source: string | null) => source && Icons[source];
 
 type InputFieldPropsAndCustomArgs = React.ComponentProps<typeof InputField> & {
-  serviceLogoName?: Name;
+  serviceLogoName: Props["name"];
   grayScale?: boolean;
 };
 
@@ -354,10 +354,7 @@ export const WithButtonLinkSuffix: Story = {
 
 export const WithServiceLogoSuffix: Story = {
   render: ({ serviceLogoName, grayScale, ...args }) => (
-    <InputField
-      suffix={<ServiceLogo name={serviceLogoName as Name} grayScale={grayScale} />}
-      {...args}
-    />
+    <InputField suffix={<ServiceLogo name={serviceLogoName} grayScale={grayScale} />} {...args} />
   ),
 
   parameters: {

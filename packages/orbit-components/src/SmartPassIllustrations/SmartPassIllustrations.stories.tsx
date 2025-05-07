@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import type { Props, Sizes } from "./types";
+import type { Props } from "./types";
 
 import * as SmartPassIllustrations from ".";
 
@@ -19,7 +19,7 @@ const meta: Meta<SmartPassPropsAndCustomArgs> = {
   title: "SmartPassIllustration",
 
   args: {
-    size: SIZE_OPTIONS.MEDIUM as Sizes,
+    size: SIZE_OPTIONS.MEDIUM as Props["size"],
     title: "title",
     description: "description",
     primary: "white",

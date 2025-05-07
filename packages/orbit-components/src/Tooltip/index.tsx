@@ -37,7 +37,6 @@ const Tooltip = ({
       size={size}
       renderInPortal={renderInPortal}
       placement={placement}
-      stopPropagation={stopPropagation}
       removeUnderlinedText={removeUnderlinedText}
       block={block}
     >

@@ -13,8 +13,6 @@ export interface Props extends Common.Globals {
   error?: boolean;
   help?: boolean;
   onClose: () => void;
-  onClick: (ev: React.MouseEvent<HTMLDivElement>) => void;
-  onCloseMobile: () => void;
   onEnter: () => void;
   referenceElement: HTMLElement | null;
   placement?: Placement;

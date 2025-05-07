@@ -21,6 +21,9 @@ const NavigationBar = ({
   hideOnScroll = true,
   bottomStyle = "shadow",
   transparentBgAtTop = false,
+  menuButtonRef,
+  menuId,
+  menuExpanded,
 }: Props) => {
   const resolveCallback = React.useCallback(
     state => {
@@ -104,10 +107,14 @@ const NavigationBar = ({
       <div className={cx("block w-full", onMenuOpen && "me-200")}>{children}</div>
       {onMenuOpen && (
         <ButtonLink
+          ref={menuButtonRef}
           type="secondary"
           onClick={onMenuOpen}
           iconLeft={<MenuHamburger />}
           title={openTitle}
+          aria-haspopup="true"
+          aria-controls={menuId}
+          aria-expanded={menuExpanded}
         />
       )}
     </header>

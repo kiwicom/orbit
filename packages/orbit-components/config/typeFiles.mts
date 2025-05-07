@@ -24,7 +24,7 @@ const generateTypeFile = async (templatePath: string, replacements: Record<strin
     TEMPLATE,
   );
 
-  fs.writeFileSync(path.join(path.dirname(templatePath), "types.d.ts"), replacedTemplate);
+  fs.writeFileSync(path.join(path.dirname(templatePath), "types.ts"), replacedTemplate);
 };
 
 const templateIllustrationFiles = [

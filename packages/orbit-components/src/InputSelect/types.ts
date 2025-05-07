@@ -5,42 +5,40 @@ import type * as React from "react";
 
 import type * as Common from "../common/types";
 
-type Type = "text" | "number" | "email" | "password" | "passportid";
-type InputMode = "numeric" | "tel" | "decimal" | "email" | "url" | "search" | "text" | "none";
-type AriaAutoComplete = "inline" | "list" | "both" | "none";
+export interface Option {
+  readonly group?: string;
+  readonly title: string;
+  readonly value: string | number;
+  readonly description?: string;
+  readonly prefix?: React.ReactNode;
+}
+
 // InputEvent
 type InputEvent = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
-type KeyboardEvent = Common.Event<React.KeyboardEvent<HTMLInputElement>>;
 
 export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAttrs {
-  readonly type?: Type;
-  readonly inputMode?: InputMode;
   readonly name?: string;
-  readonly label?: Common.Translation;
-  readonly inlineLabel?: boolean;
-  readonly value?: string | number;
-  readonly defaultValue?: string | number;
+  readonly label?: string;
   readonly placeholder?: string;
-  readonly prefix?: React.ReactNode;
-  readonly suffix?: React.ReactNode;
   readonly help?: React.ReactNode;
   readonly error?: React.ReactNode;
-  readonly tags?: React.ReactNode;
+  readonly showAll?: boolean;
+  readonly showAllLabel?: string;
   readonly disabled?: boolean;
-  readonly maxValue?: number;
-  readonly minValue?: number;
-  readonly maxLength?: number;
-  readonly minLength?: number;
+  readonly maxHeight?: string;
+  readonly maxWidth?: string;
   readonly width?: string;
+  readonly options: Option[];
+  readonly defaultSelected?: Option;
+  readonly prevSelected?: Option;
+  readonly prevSelectedLabel?: string;
   readonly required?: boolean;
   readonly tabIndex?: string | number;
   readonly readOnly?: boolean;
-  readonly list?: string;
-  readonly role?: string;
-  readonly autoComplete?: string;
-  readonly autoFocus?: boolean;
   readonly id?: string;
   readonly insideInputGroup?: boolean;
+  readonly emptyState?: React.ReactNode;
+  readonly labelClose?: string;
   readonly onChange?: React.ChangeEventHandler<HTMLInputElement>;
   readonly onFocus?: React.FocusEventHandler<HTMLInputElement>;
   readonly onBlur?: React.FocusEventHandler<HTMLInputElement>;
@@ -49,12 +47,7 @@ export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAtt
   readonly onMouseDown?: React.MouseEventHandler<HTMLInputElement>;
   readonly onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
   readonly onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
-  readonly ariaLabel?: string;
-  readonly ariaLabelledby?: string;
-  readonly ariaAutocomplete?: AriaAutoComplete;
-  readonly ariaActiveDescendant?: string;
-  readonly ariaHasPopup?: boolean;
-  readonly ariaExpanded?: boolean;
-  readonly ariaControls?: string;
-  readonly ariaDescribedby?: string;
+  readonly onOptionSelect?: (opt: Option | null) => void;
+  readonly onClose?: (opt: Option | null) => void;
+  readonly labelClear: string;
 }

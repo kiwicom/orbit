@@ -3,7 +3,7 @@
 import * as React from "react";
 import cx from "clsx";
 
-import type { Props } from "./types.d";
+import type { Props } from "./types";
 import TYPE_OPTIONS from "./consts";
 import useTheme from "../hooks/useTheme";
 

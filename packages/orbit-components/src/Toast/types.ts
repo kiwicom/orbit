@@ -4,7 +4,7 @@ import type * as React from "react";
 import type {
   ValueOrFunction,
   Renderable,
-  Toast,
+  Toast as HotToast,
   ToastType,
   DefaultToastOptions,
 } from "react-hot-toast";
@@ -53,7 +53,7 @@ export interface Options<T> {
 export type ToastOptions = Pick<DefaultToastOptions, "icon" | "ariaProps">;
 
 export type createToast = (
-  message: ValueOrFunction<Renderable, Toast>,
+  message: ValueOrFunction<Renderable, HotToast>,
   options?: ToastOptions,
 ) => void;
 
@@ -63,4 +63,4 @@ export type createToastPromise = <T>(
   options?: ToastOptions & Partial<Record<ToastType, ToastOptions>>,
 ) => Promise<T>;
 
-export { ToastProps as Toast };
+export type Toast = ToastProps;

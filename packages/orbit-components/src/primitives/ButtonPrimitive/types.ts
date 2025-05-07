@@ -2,8 +2,6 @@ import type * as React from "react";
 
 import type * as Common from "../../common/types";
 
-type functionReturningString = () => string;
-
 export type Size = "small" | "normal" | "large";
 
 export type FullWidthConditionalProps =

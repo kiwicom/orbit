@@ -12,6 +12,7 @@ export const OUTPUT_PATTERNS = [
 export const COMPILE_IGNORE_PATTERNS = [
   "**/RenderInRtl.tsx",
   "**/*.d.ts",
+  "**/types.ts",
   "**/*.stories.*",
   "**/*.ct.*",
   "**/*.ct-story.*",

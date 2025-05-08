@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [24.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@23.0.2...@kiwicom/orbit-components@24.0.0) (2025-05-08)
+
+#### Bug Fixes
+
+* **Dialog:** set aria-labelledby and aria-describedby values correctly ([f7ec6be](https://github.com/kiwicom/orbit/commit/f7ec6bef853e7711132947f1197bb12a194d3d27))
+
+#### Features
+
+* **Checkbox:** add aria controls and describedby props ([adbf938](https://github.com/kiwicom/orbit/commit/adbf93892e189dc6bef717e782af8b925f3beff3))
+* **InputField:** change font size to 16px ([28bdc81](https://github.com/kiwicom/orbit/commit/28bdc813dae727c5cc1777e3f7bd566014c1033f))
+* **OrbitProvider:** remove useId prop ([a44c58a](https://github.com/kiwicom/orbit/commit/a44c58ac06b6e3f5e8685d50187f54793d46a308))
+* **Textarea:** change font size to 16px ([ac5cfe2](https://github.com/kiwicom/orbit/commit/ac5cfe2fab23a9d6521dfe0656f99639af28e2b8))
+* upgrade to React 18.3 ([3264c98](https://github.com/kiwicom/orbit/commit/3264c98db07be4ef366cc918a16cc444edb202fc))
+
+#### BREAKING CHANGES
+
+* **OrbitProvider:** OrbitProvider no longer accepts useId prop.
+  React.useId is used automatically.
+* version 18.3 of React is now required for Orbit
+  package.
+
 ### [23.0.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@23.0.1...@kiwicom/orbit-components@23.0.2) (2025-04-17)
 
 #### Bug Fixes

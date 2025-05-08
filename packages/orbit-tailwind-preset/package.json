@@ -1,6 +1,6 @@
 {
   "name": "@kiwicom/orbit-tailwind-preset",
-  "version": "7.2.0",
+  "version": "7.3.0",
   "description": "Orbit tailwind preset which is based on orbit-design-tokens",
   "author": "Kiwi.com",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "tailwindcss": ">=3.4.4"
   },
   "dependencies": {
-    "@kiwicom/orbit-design-tokens": "^10.0.1",
+    "@kiwicom/orbit-design-tokens": "^10.1.0",
     "color2k": "^2.0.3"
   },
   "devDependencies": {

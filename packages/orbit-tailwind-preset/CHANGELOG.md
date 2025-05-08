@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@7.2.0...@kiwicom/orbit-tailwind-preset@7.3.0) (2025-05-08)
+
+
+### Features
+
+* **tailwind:** add large form element class ([0ce3a2a](https://github.com/kiwicom/orbit/commit/0ce3a2a74f07379ec37f787b151b7e9d8f6a74cf))
+
+
+
+
+
 # [7.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@7.1.0...@kiwicom/orbit-tailwind-preset@7.2.0) (2025-04-17)
 
 

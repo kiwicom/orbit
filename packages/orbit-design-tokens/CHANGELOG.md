@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@10.0.1...@kiwicom/orbit-design-tokens@10.1.0) (2025-05-08)
+
+
+### Features
+
+* **tokens:** add formElementLargeFontSize token ([cb86e56](https://github.com/kiwicom/orbit/commit/cb86e563a7ebbf0c0f82ee8a107d3f5d9f4487d2))
+
+
+
+
+
 ## [10.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@10.0.0...@kiwicom/orbit-design-tokens@10.0.1) (2025-04-17)
 
 

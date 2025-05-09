@@ -46,14 +46,7 @@ The NavigationBar component has been designed with accessibility in mind, provid
 #### Basic Example
 
 ```jsx
-<NavigationBar
-  id="main-navigation"
-  onMenuOpen={handleDrawerOpen}
-  openTitle="Open site navigation"
-  menuButtonRef={buttonRef}
-  menuId="site-navigation-drawer"
-  menuExpanded={isDrawerOpen}
->
+<NavigationBar id="main-navigation" openTitle="Open navigation menu">
   <Stack as="nav" aria-label="Main site navigation">
     <LinkList direction="row">
       <TextLink href="/flights" iconLeft={<Airplane />}>
@@ -70,7 +63,7 @@ Screen reader announcements:
 
 - "Banner landmark" when encountering the navigation bar
 - "Main site navigation, navigation" for the nav element
-- "Open site navigation, button" for the menu button
+- "Open navigation menu, button" for the menu button
 - "Flights, link" for the first link
 
 #### Focus Management Example

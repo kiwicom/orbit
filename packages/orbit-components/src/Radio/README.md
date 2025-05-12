@@ -31,6 +31,7 @@ Table below contains all types of the props available in Radio component.
 | ref            | `func`                     |         | Prop for forwarded ref of the Radio. [See Functional specs](#functional-specs)              |
 | tabIndex       | `string \| number`         |         | Specifies the tab order of an element                                                       |
 | value          | `string`                   |         | The value of the Radio.                                                                     |
+| ariaLabelledby | `string`                   |         | Id of the element that labels the Radio button.                                             |
 
 ## Functional specs
 

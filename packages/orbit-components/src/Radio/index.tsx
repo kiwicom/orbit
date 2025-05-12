@@ -20,11 +20,14 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     id,
     tabIndex = 0,
     dataTest,
+    ariaLabelledby,
   } = props;
 
+  const Component = label ? "label" : "div";
+
   return (
-    <label
-      htmlFor={id}
+    <Component
+      htmlFor={label ? id : undefined}
       className={cx(
         "font-base text-form-element-label-foreground relative flex w-full [align-items:self-start]",
         "[&_.orbit-radio-icon-container]:has-[:checked]:border-2 [&_.orbit-radio-icon-container_span]:has-[:checked]:visible",
@@ -62,6 +65,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         name={name}
         tabIndex={Number(tabIndex)}
         ref={ref}
+        aria-labelledby={ariaLabelledby}
       />
       <div
         className={cx(
@@ -102,7 +106,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           )}
         </div>
       )}
-    </label>
+    </Component>
   );
 });
 

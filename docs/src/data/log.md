@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [24.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.0.0...@kiwicom/orbit-components@24.1.0) (2025-05-12)
+
+#### Bug Fixes
+
+* **SkipNavigation:** add ARIA labels to Select components ([549182d](https://github.com/kiwicom/orbit/commit/549182dc19b64f6347b5f10b861c1b41343ef47b))
+
+#### Features
+
+* **NavigationBar:** add a11y for menu btn focus management ([4015ada](https://github.com/kiwicom/orbit/commit/4015ada7620418d4fb1795a0e6479c7ca959a60a))
+* **SkipNavigation:** add isInNav prop for styling in navigation ([46cb571](https://github.com/kiwicom/orbit/commit/46cb571e238ad71c2ad654183af3a8bf6dfaa514))
+
 ## [24.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@23.0.2...@kiwicom/orbit-components@24.0.0) (2025-05-08)
 
 #### Bug Fixes

@@ -95,6 +95,10 @@ const Dialog = ({
   const titleId = useRandomId();
   const descriptionId = useRandomId();
 
+  const vars = {
+    "--dialog-max-width": `${maxWidth}px`,
+  } as React.CSSProperties;
+
   const dialog = (
     <div
       role="dialog"
@@ -116,10 +120,11 @@ const Dialog = ({
       <div className="flex min-h-full items-center">
         <div
           ref={ref}
-          style={{ maxWidth }}
+          style={vars}
           className={cx([
             "shadow-level4 pt-600 px-400 pb-400 bg-white-normal rounded-dialog-mobile box-border block w-full",
             "lm:min-w-dialog-width lm:p-600 lm:rounded-dialog-desktop",
+            maxWidth != null && "lm:max-w-[var(--dialog-max-width)]",
           ])}
         >
           {illustration && <div className="mb-400 lm:text-start text-center">{illustration}</div>}

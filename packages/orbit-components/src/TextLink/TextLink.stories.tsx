@@ -26,11 +26,16 @@ const meta: Meta<typeof TextLink> = {
     onClick: action("onClick"),
   },
 
+  argTypes: {
+    children: {
+      control: {
+        type: "text",
+      },
+    },
+  },
+
   parameters: {
     info: "TextLink component. Check Orbit.Kiwi for more detailed guidelines.",
-    controls: {
-      exclude: ["onClick", "type", "external", "asComponent", "stopPropagation"],
-    },
   },
 };
 
@@ -43,6 +48,24 @@ export const Default: Story = {
 
   parameters: {
     info: "Default configuration of TextLink component. Check Orbit.Kiwi for more detailed guidelines.",
+    controls: {
+      exclude: [
+        "onClick",
+        "type",
+        "external",
+        "asComponent",
+        "stopPropagation",
+        "ariaCurrent",
+        "iconLeft",
+        "iconRight",
+        "noUnderline",
+        "rel",
+        "size",
+        "standAlone",
+        "tabIndex",
+        "title",
+      ],
+    },
   },
 };
 
@@ -69,6 +92,26 @@ export const LinkWithLeftIcon: Story = {
       },
     },
   },
+
+  parameters: {
+    controls: {
+      exclude: [
+        "onClick",
+        "type",
+        "external",
+        "asComponent",
+        "stopPropagation",
+        "ariaCurrent",
+        "iconRight",
+        "noUnderline",
+        "rel",
+        "size",
+        "standAlone",
+        "tabIndex",
+        "title",
+      ],
+    },
+  },
 };
 
 export const LinkWithRightIcon: Story = {
@@ -91,6 +134,26 @@ export const LinkWithRightIcon: Story = {
       ...LinkWithLeftIcon.argTypes?.iconLeft,
     },
   },
+
+  parameters: {
+    controls: {
+      exclude: [
+        "onClick",
+        "type",
+        "external",
+        "asComponent",
+        "stopPropagation",
+        "ariaCurrent",
+        "iconLeft",
+        "noUnderline",
+        "rel",
+        "size",
+        "standAlone",
+        "tabIndex",
+        "title",
+      ],
+    },
+  },
 };
 
 export const TextLinkInText: Story = {
@@ -110,7 +173,18 @@ export const TextLinkInText: Story = {
   parameters: {
     info: "An example of usage of TextLink in Text component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onClick", "external", "asComponent", "stopPropagation"],
+      exclude: [
+        "onClick",
+        "external",
+        "asComponent",
+        "stopPropagation",
+        "iconLeft",
+        "iconRight",
+        "ariaCurrent",
+        "rel",
+        "tabIndex",
+        "title",
+      ],
     },
   },
 
@@ -162,12 +236,8 @@ export const Playground: Story = {
     ...LinkWithRightIcon.args,
     ...TextLinkInText.args,
     external: true,
-    rel: "",
     tabIndex: "",
     stopPropagation: false,
-    title: "link title",
-    ariaCurrent: "text-link",
-    id: "link-id",
   },
 
   argTypes: {
@@ -179,7 +249,7 @@ export const Playground: Story = {
   parameters: {
     info: "Playground of TextLink component. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["onClick", "asComponent"],
+      exclude: ["onClick", "ariaCurrent", "rel", "asComponent", "id", "title", "stopPropagation"],
     },
   },
 };

@@ -1,0 +1,128 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/collapse/accessibility/
+---
+
+## Accessibility
+
+The Collapse component has been designed with accessibility in mind, providing collapsible content that is fully keyboard accessible and screen reader compatible.
+
+### Accessibility Props
+
+**Collapse props:**
+
+| Name                | Type       | Description                                                                                                                                 |
+| :------------------ | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| expandButtonLabel   | string     | Specifies the accessible label of the button when the content is collapsed. This should clearly indicate the action to expand the content.  |
+| collapseButtonLabel | string     | Specifies the accessible label of the button when the content is expanded. This should clearly indicate the action to collapse the content. |
+| label               | string     | Defines the visible text label that also serves as the accessible name for the collapsible section.                                         |
+| customLabel         | React.Node | Allows replacing the default heading with custom content while maintaining the click target for keyboard accessibility.                     |
+
+### Automatic Accessibility Features
+
+- The component automatically manages ARIA attributes:
+  - `aria-expanded` is automatically set to `true` or `false` based on the current state
+  - `aria-controls` is automatically set to reference the collapsible content
+  - Unique IDs are automatically generated for the label and content using `useRandomIdSeed`
+- Focus management is handled automatically:
+  - Both the label and button are interactive and can receive keyboard focus
+  - Click and keyboard events are properly managed
+- State management is handled automatically:
+  - Animation is managed by the Slide component to ensure smooth transitions
+  - Hidden content is properly indicated to screen readers with `aria-hidden`
+
+### Best Practices
+
+- Always provide descriptive `expandButtonLabel` and `collapseButtonLabel` that clearly indicate the action
+- Use clear and concise labels that describe the content being collapsed
+- Ensure the content inside the Collapse component is logically grouped
+- Include only related content within a single Collapse component
+- When using multiple Collapse components in a sequence, ensure they're organized logically
+- When using `customLabel`, ensure it includes text that can be announced by screen readers
+- If the collapsed content includes interactive elements, make sure they're not focusable when collapsed
+
+### Keyboard Navigation
+
+- **Tab**: Moves focus to the collapse header or expand/collapse button
+- **Enter** or **Space**: When focus is on the header, toggles the collapsed state
+- **Enter** or **Space**: When focus is on the button, toggles the collapsed state
+- Focus order: Focus moves from the header to the button to the content inside (when expanded)
+- When collapsed, focus will skip over any focusable elements inside the collapsed content
+
+### Examples
+
+#### Basic Usage with Required Accessibility Labels
+
+```jsx
+<Collapse
+  label="Flight Information"
+  expandButtonLabel="Show flight details"
+  collapseButtonLabel="Hide flight details"
+>
+  <p>Flight number: KL1234</p>
+  <p>Departure: 10:00</p>
+  <p>Arrival: 12:30</p>
+</Collapse>
+```
+
+Screen reader announces: "Flight Information, button, collapsed" when focused on the header and "Show flight details, button" when focused on the button.
+
+#### Expanded State
+
+```jsx
+<Collapse
+  label="Passenger Details"
+  expandButtonLabel="Show passenger details"
+  collapseButtonLabel="Hide passenger details"
+  expanded={true}
+>
+  <p>Name: John Smith</p>
+  <p>Passport: AB123456</p>
+</Collapse>
+```
+
+Screen reader announces: "Passenger Details, button, expanded" when focused on the header and "Hide passenger details, button" when focused on the button.
+
+#### With Custom Label
+
+```jsx
+import Stack from "@kiwicom/orbit-components/lib/Stack";
+import Badge from "@kiwicom/orbit-components/lib/Badge";
+
+<Collapse
+  customLabel={
+    <Stack inline spacing="XS" align="center">
+      <Badge>New</Badge>
+      <span>Travel Options</span>
+    </Stack>
+  }
+  expandButtonLabel="Show travel options"
+  collapseButtonLabel="Hide travel options"
+>
+  <p>Various travel options content...</p>
+</Collapse>;
+```
+
+Screen reader announces: "New Travel Options, button, collapsed" when focused on the header and "Show travel options, button" when focused on the button.
+
+#### With Actions
+
+```jsx
+import TextLink from "@kiwicom/orbit-components/lib/TextLink";
+
+<Collapse
+  label="Filter Options"
+  expandButtonLabel="Show filters"
+  collapseButtonLabel="Hide filters"
+  actions={
+    <TextLink type="secondary" size="small">
+      Reset
+    </TextLink>
+  }
+>
+  <p>Filter controls...</p>
+</Collapse>;
+```
+
+Screen reader announces: "Filter Options, button, collapsed" when focused on the header, "Reset, link" when focused on the reset link, and "Show filters, button" when focused on the button.

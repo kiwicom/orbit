@@ -18,6 +18,64 @@ const TabList = ({
   ariaLabel,
   ariaLabelledby,
 }: Props) => {
+  const tabListRef = React.useRef<HTMLDivElement>(null);
+
+  const handleKeyDown = React.useCallback((event: React.KeyboardEvent<HTMLDivElement>) => {
+    // Only handle keyboard navigation if we have a reference to the tab list
+    if (!tabListRef.current) return;
+
+    // Return early if not a navigation key
+    if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+
+    // Get all non-disabled tab elements
+    const tabs = Array.from(
+      tabListRef.current.querySelectorAll<HTMLButtonElement>('button[role="tab"]:not([disabled])'),
+    );
+
+    if (tabs.length === 0) return;
+
+    const currentIndex = tabs.findIndex(tab => tab === document.activeElement);
+    let newIndex: number | null = null;
+
+    // Check if we're in RTL mode
+    const isRTL = document.dir === "rtl";
+
+    // Handle keyboard navigation
+    switch (event.key) {
+      case "ArrowRight":
+        event.preventDefault();
+        if (isRTL) {
+          newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        } else {
+          newIndex = (currentIndex + 1) % tabs.length;
+        }
+        break;
+      case "ArrowLeft":
+        event.preventDefault();
+        if (isRTL) {
+          newIndex = (currentIndex + 1) % tabs.length;
+        } else {
+          newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        }
+        break;
+      case "Home":
+        event.preventDefault();
+        newIndex = 0;
+        break;
+      case "End":
+        event.preventDefault();
+        newIndex = tabs.length - 1;
+        break;
+      default:
+        return;
+    }
+
+    // Focus the new tab if index was set
+    if (newIndex !== null) {
+      (tabs[newIndex] as HTMLElement).focus();
+    }
+  }, []);
+
   const cssVars = {
     "--tab-list-padding": typeof padding === "string" ? padding : undefined,
     "--tab-list-margin": typeof margin === "string" ? margin : undefined,
@@ -33,6 +91,7 @@ const TabList = ({
 
   return (
     <div
+      ref={tabListRef}
       className={cx(
         fullWidth ? "w-full" : "w-auto",
         cssVars["--tab-list-padding"] && "p-[var(--tab-list-padding)]",
@@ -51,10 +110,13 @@ const TabList = ({
       aria-labelledby={ariaLabelledby}
       data-test={dataTest}
       style={cssVars}
+      onKeyDown={handleKeyDown}
+      tabIndex={-1}
     >
       <Stack flex={fullWidth} spacing={spacing}>
         {React.Children.map(children, (child, idx) => {
           if (!React.isValidElement(child)) return null;
+
           return (
             // eslint-disable-next-line react/no-array-index-key
             <TabProvider index={idx} key={idx} compact={compact}>

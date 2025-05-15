@@ -87,12 +87,36 @@ describe("TextLink", () => {
     expect(element).toHaveAttribute("target", "_blank");
   });
 
-  it("should be focusable and have button role", () => {
+  it("should not be focusable and not have button role when no href or no onClick is provided", () => {
     render(<TextLink>{title}</TextLink>);
 
     const element = screen.getByText(title);
 
+    expect(element).not.toHaveAttribute("tabIndex", "0");
+    expect(element).not.toHaveAttribute("role", "button");
+  });
+
+  it("should have button role and be focusable when onClick is provided without href", () => {
+    const onClick = jest.fn();
+    render(<TextLink onClick={onClick}>{title}</TextLink>);
+
+    const element = screen.getByText(title);
+
     expect(element).toHaveAttribute("tabIndex", "0");
+    expect(element).toHaveAttribute("role", "button");
+  });
+
+  it("should respect custom tabIndex when provided", () => {
+    const onClick = jest.fn();
+    render(
+      <TextLink onClick={onClick} tabIndex={-1}>
+        {title}
+      </TextLink>,
+    );
+
+    const element = screen.getByText(title);
+
+    expect(element).toHaveAttribute("tabIndex", "-1");
     expect(element).toHaveAttribute("role", "button");
   });
 

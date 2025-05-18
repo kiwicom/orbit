@@ -26,8 +26,8 @@ Table below contains all types of the props available in the Collapse component.
 | dataTest            | `string`                            |         | Optional prop for testing purposes.                                                                                     |
 | expanded            | `boolean`                           |         | Passing `true` or `false` makes Collapse a controlled component, requiring you to manage its state via `onClick`.       |
 | initialExpanded     | `boolean`                           | `false` | If `true` the Collapse component will be expanded on the initial render. To be used when the component is uncontrolled. |
-| label               | `string`                            |         | The rendered label of the Collapse.                                                                                     |
-| customLabel         | `React.Node`                        |         | Allows for rendering any component as a label.                                                                          |
+| label               | `string`                            |         | The rendered label of the Collapse. See accessibility tab.                                                              |
+| customLabel         | `React.Node`                        |         | Allows for rendering any component as a label. See accessibility tab.                                                   |
 | onClick             | `(event, state) => void \| Promise` |         | Callback for handling onClick event.                                                                                    |
-| expandButtonLabel   | `string`                            |         | The accessible label of the button when the content is collapsed.                                                       |
-| collapseButtonLabel | `string`                            |         | The accessible label of the button when the content is expanded.                                                        |
+| expandButtonLabel   | `string`                            |         | Required prop for accessible label of the button when the content is collapsed. See accessibility tab.                  |
+| collapseButtonLabel | `string`                            |         | Required prop for accessible label of the button when the content is expanded. See accessibility tab.                   |

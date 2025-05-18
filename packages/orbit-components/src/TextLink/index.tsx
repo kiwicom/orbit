@@ -17,8 +17,11 @@ function filterAriaDataProps(props: object) {
   }, {});
 }
 
-// eslint-disable-next-line jsx-a11y/anchor-has-content
-const DefaultComponent = props => <a {...props} />;
+const getComponent = (href: string | undefined, asComponent: Props["asComponent"]) => {
+  if (asComponent) return asComponent;
+  if (href) return "a";
+  return "button";
+};
 
 const IconContainer = ({ children, size }) => {
   if (!children) return null;
@@ -51,14 +54,14 @@ const TextLink = ({
   download,
   id,
   tabIndex,
-  asComponent: Component = DefaultComponent,
+  asComponent,
   stopPropagation = false,
   title,
   standAlone,
   noUnderline,
   ...props
 }: Props) => {
-  const onClickHandler = (ev: React.SyntheticEvent<HTMLAnchorElement>) => {
+  const onClickHandler = (ev: React.SyntheticEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     if (stopPropagation) {
       ev.stopPropagation();
     }
@@ -66,6 +69,7 @@ const TextLink = ({
   };
 
   const filteredAriaDataProps = filterAriaDataProps(props);
+  const Component = getComponent(href, asComponent);
 
   return (
     <Component
@@ -76,8 +80,9 @@ const TextLink = ({
       rel={createRel({ href, external, rel })}
       onClick={onClickHandler}
       data-test={dataTest}
-      tabIndex={tabIndex || (!href ? 0 : undefined)}
-      role={!href ? "button" : undefined}
+      tabIndex={tabIndex}
+      type={Component === "button" ? "button" : undefined}
+      role={!href && onClick ? "button" : undefined}
       title={title}
       download={download}
       className={cx(

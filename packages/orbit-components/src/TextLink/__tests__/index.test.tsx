@@ -87,13 +87,17 @@ describe("TextLink", () => {
     expect(element).toHaveAttribute("target", "_blank");
   });
 
-  it("should be focusable and have button role", () => {
-    render(<TextLink>{title}</TextLink>);
+  it("should respect custom tabIndex when provided", () => {
+    const onClick = jest.fn();
+    render(
+      <TextLink onClick={onClick} tabIndex={-1}>
+        {title}
+      </TextLink>,
+    );
 
     const element = screen.getByText(title);
 
-    expect(element).toHaveAttribute("tabIndex", "0");
-    expect(element).toHaveAttribute("role", "button");
+    expect(element).toHaveAttribute("tabIndex", "-1");
   });
 
   it("should render as the given component", () => {
@@ -172,5 +176,32 @@ describe("TextLink", () => {
       const icon = screen.getByTestId("icon");
       expect(icon).toHaveStyle(ICON_SIZES[size]);
     });
+  });
+
+  it("should render as button when no href is provided", () => {
+    const onClick = jest.fn();
+    render(<TextLink onClick={onClick}>{title}</TextLink>);
+
+    const element = screen.getByText(title);
+
+    expect(element.tagName).toBe("BUTTON");
+    expect(element).toHaveAttribute("type", "button");
+    expect(element).toHaveAttribute("role", "button");
+  });
+
+  it("should render as anchor when href is provided", () => {
+    const onClick = jest.fn();
+    render(
+      <TextLink href="https://example.com" onClick={onClick}>
+        {title}
+      </TextLink>,
+    );
+
+    const element = screen.getByText(title);
+
+    expect(element.tagName).toBe("A");
+    expect(element).toHaveAttribute("href", "https://example.com");
+    expect(element).not.toHaveAttribute("type");
+    expect(element).not.toHaveAttribute("role");
   });
 });

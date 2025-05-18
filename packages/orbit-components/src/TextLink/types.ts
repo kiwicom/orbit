@@ -17,7 +17,7 @@ interface BaseProps extends Common.Globals {
   readonly iconLeft?: React.ReactNode;
   readonly iconRight?: React.ReactNode;
   readonly noUnderline?: boolean;
-  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLAnchorElement>>;
+  readonly onClick?: Common.Event<React.SyntheticEvent<HTMLAnchorElement | HTMLButtonElement>>;
   readonly rel?: string;
   readonly size?: Common.Size;
   readonly standAlone?: boolean;

@@ -24,10 +24,14 @@ const meta: Meta<typeof Collapse> = {
     initialExpanded: false,
     expandButtonLabel: "Expand",
     collapseButtonLabel: "Collapse",
+    onClick: action("onClick"),
   },
 
   parameters: {
     info: "You can try various configurations of this component. However, check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: ["children", "actions", "onClick", "customLabel"],
+    },
   },
 };
 
@@ -69,7 +73,14 @@ export const Default: Story = {
 
   parameters: {
     controls: {
-      exclude: ["customLabel", "expandButtonLabel", "collapseButtonLabel"],
+      exclude: [
+        "customLabel",
+        "expandButtonLabel",
+        "collapseButtonLabel",
+        "children",
+        "actions",
+        "onClick",
+      ],
     },
   },
 };
@@ -188,7 +199,16 @@ export const MultipleCollapses: Story = {
 
   parameters: {
     controls: {
-      exclude: ["expanded", "initialExpanded", "expandButtonLabel", "collapseButtonLabel"],
+      exclude: [
+        "expanded",
+        "initialExpanded",
+        "expandButtonLabel",
+        "collapseButtonLabel",
+        "children",
+        "actions",
+        "onClick",
+        "customLabel",
+      ],
     },
   },
 
@@ -222,7 +242,15 @@ export const Uncontrolled: Story = {
 
   parameters: {
     controls: {
-      exclude: ["expanded", "expandButtonLabel", "collapseButtonLabel"],
+      exclude: [
+        "expanded",
+        "expandButtonLabel",
+        "collapseButtonLabel",
+        "children",
+        "actions",
+        "onClick",
+        "customLabel",
+      ],
     },
   },
 };

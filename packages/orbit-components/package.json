@@ -91,7 +91,7 @@
     "@emotion/core": "^11.0.0",
     "@nanostores/react": "^0.2.0",
     "@nanostores/router": "^0.3.1",
-    "@playwright/experimental-ct-react": "^1.44.1",
+    "@playwright/experimental-ct-react": "^1.52.0",
     "@size-limit/webpack-why": "^11.1.4",
     "@storybook/addon-a11y": "^8.4.7",
     "@storybook/addon-controls": "^8.4.7",

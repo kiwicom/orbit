@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [24.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.2.0...@kiwicom/orbit-components@24.2.1) (2025-05-22)
+
+#### Bug Fixes
+
+* **TextLink:** onClick prop type was incorrectly set ([a778377](https://github.com/kiwicom/orbit/commit/a7783774da65c018b5ca6e1b97c9067927f87db8))
+
 ## [24.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.1.0...@kiwicom/orbit-components@24.2.0) (2025-05-22)
 
 #### Bug Fixes

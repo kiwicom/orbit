@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [24.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.1.0...@kiwicom/orbit-components@24.2.0) (2025-05-22)
+
+#### Bug Fixes
+
+* **Dialog:** apply maxWidth on larger screens only ([d520662](https://github.com/kiwicom/orbit/commit/d52066200326895a13f09bce07c11565cd93fd7d))
+* **TextLink:** render as button when no href is provided ([1e04dba](https://github.com/kiwicom/orbit/commit/1e04dba81e923484b84710f9621ffaf5527b9850))
+
+#### Features
+
+* **Radio:** add ariaLabelledby prop and render label element conditionally ([1d494bb](https://github.com/kiwicom/orbit/commit/1d494bbe86388133eed6e4707a60d9a566a4e649))
+
 ## [24.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.0.0...@kiwicom/orbit-components@24.1.0) (2025-05-12)
 
 #### Bug Fixes

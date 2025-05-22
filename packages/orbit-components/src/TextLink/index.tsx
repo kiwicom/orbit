@@ -61,11 +61,15 @@ const TextLink = ({
   noUnderline,
   ...props
 }: Props) => {
-  const onClickHandler = (ev: React.SyntheticEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+  const onClickHandler = (ev: React.SyntheticEvent<HTMLAnchorElement | HTMLElement>) => {
     if (stopPropagation) {
       ev.stopPropagation();
     }
-    if (onClick) onClick(ev);
+
+    if (onClick) {
+      // @ts-expect-error We can't infer the correct event type here, but it works at runtime
+      onClick(ev);
+    }
   };
 
   const filteredAriaDataProps = filterAriaDataProps(props);

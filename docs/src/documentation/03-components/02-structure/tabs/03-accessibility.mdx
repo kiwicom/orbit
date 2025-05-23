@@ -42,6 +42,18 @@ The Tabs component automatically implements proper accessibility features includ
 - `aria-controls`: Applied to each tab to reference its associated panel
 - `aria-labelledby`: Applied to each panel to reference its associated tab (this is different from the `ariaLabelledby` prop on TabList)
 
+### Keyboard navigation
+
+The Tabs component supports keyboard navigation for accessibility:
+
+- **Tab**: Moves focus to the active tab panel
+- **Arrow Right**: Moves focus to the next tab in the list. When focus is on the last tab, it wraps to the first tab
+- **Arrow Left**: Moves focus to the previous tab in the list. When focus is on the first tab, it wraps to the last tab
+- **Home**: Moves focus to the first tab in the list
+- **End**: Moves focus to the last tab in the list
+
+All keyboard interactions consider the presence of disabled tabs, automatically skipping them when navigating.
+
 ### Best practices
 
 - Use the `ariaLabel` or `ariaLabelledby` props on the `TabList` component to provide a descriptive label for the set of tabs, especially when there are multiple tab sets on a page.

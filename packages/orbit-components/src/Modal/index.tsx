@@ -150,13 +150,34 @@ const Modal = React.forwardRef<Instance, Props>(
     };
 
     React.useEffect(() => {
-      focusableElements.current = Array.from(
-        modalContent.current?.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENT_SELECTORS) || [],
-      );
+      const findFocusableElements = () => {
+        return Array.from(
+          modalContent.current?.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENT_SELECTORS) || [],
+        );
+      };
+
+      // Find all focusable elements within the modal
+      focusableElements.current = findFocusableElements();
 
       if (focusableElements.current.length) {
         focusableElements.current[0].focus();
       }
+
+      if (!modalContent.current) return undefined;
+
+      const observer = new MutationObserver(() => {
+        focusableElements.current = findFocusableElements();
+      });
+
+      // Start observing the modal content for DOM changes
+      observer.observe(modalContent.current, {
+        childList: true, // Watch for added/removed nodes
+        subtree: true, // Watch all descendants, not just direct children
+      });
+
+      return () => {
+        observer.disconnect();
+      };
     }, []);
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {

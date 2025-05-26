@@ -13,6 +13,7 @@ const meta: Meta<typeof ButtonMobileStore> = {
 
   args: {
     lang: LANGUAGE.EN,
+    title: "",
   },
 
   argTypes: {
@@ -22,6 +23,11 @@ const meta: Meta<typeof ButtonMobileStore> = {
         type: "select",
       },
     },
+    title: {
+      control: {
+        type: "text",
+      },
+    },
   },
 };
 
@@ -29,7 +35,7 @@ export default meta;
 type Story = StoryObj<typeof ButtonMobileStore>;
 
 export const Default: Story = {
-  render: ({ lang }) => (
+  render: ({ lang, title }) => (
     <Stack flex>
       <ButtonMobileStore
         onClick={action("clicked")}
@@ -37,6 +43,7 @@ export const Default: Story = {
         lang={lang}
         type="appStore"
         alt="Download on the App Store"
+        title={title}
       />
       <ButtonMobileStore
         onClick={action("clicked")}
@@ -44,6 +51,7 @@ export const Default: Story = {
         lang={lang}
         type="googlePlay"
         alt="Download on the Google Play"
+        title={title}
       />
     </Stack>
   ),
@@ -51,7 +59,7 @@ export const Default: Story = {
   parameters: {
     info: "This is the default configuration of this component.",
     controls: {
-      exclude: ["type", "alt", "stopPropagation"],
+      exclude: ["type", "alt", "onClick", "href", "stopPropagation"],
     },
   },
 };

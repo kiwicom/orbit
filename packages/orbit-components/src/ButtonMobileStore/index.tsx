@@ -32,7 +32,7 @@ const ButtonMobileStore = ({
 
   return (
     <a
-      className="h-1000 inline-block"
+      className="orbit-button-mobile-store h-1000 inline-block"
       href={href}
       target="_blank"
       rel="noopener noreferrer"

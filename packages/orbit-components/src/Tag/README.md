@@ -22,12 +22,12 @@ Table below contains all types of the props available in the Tag component.
 | dataTest     | `string`                |           | Optional prop for testing purposes.                                                                  |
 | iconLeft     | `React.Node`            |           | The displayed icon on the left.                                                                      |
 | id           | `string`                |           | Set `id` for `Tag`.                                                                                  |
-| dateTag      | `string`                |           | Optional prop, if it's true, selected color has a different background.                              |
+| dateTag      | `boolean`               |           | Optional prop, if it's true, selected color has a different background.                              |
 | type         | [`enum`](#enum)         | `neutral` | The color type of the Tag.                                                                           |
 | onClick      | `() => void \| Promise` |           | Function for handling the onClick event.                                                             |
 | onRemove     | `() => void \| Promise` |           | Function for handling the onClick event of the close icon. [See Functional specs](#functional-specs) |
 | selected     | `boolean`               | `false`   | If `true`, the Tag will have selected styles.                                                        |
-| size         | [`enum`](#enum)         | `small`   | Size of the Tag.                                                                                     |
+| size         | [`enum`](#enum)         | `normal`  | Size of the Tag.                                                                                     |
 | ref          | `func`                  |           | Prop for forwarded ref of the Tag.                                                                   |
 | labelDismiss | `string`                |           | Optional prop for `aria-label` attribute of dismiss button (available when `onRemove` is not null).  |
 

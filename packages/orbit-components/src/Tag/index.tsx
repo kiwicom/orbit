@@ -40,6 +40,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
     return (
       <div
         className={cx(
+          "orbit-tag",
           "font-base rounded-150 box-border inline-flex items-stretch justify-center font-medium",
           "duration-fast transition-[color,_background-color,_box-shadow] ease-in-out",
           "tb:rounded-100",
@@ -81,7 +82,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
       >
         <div
           className={cx(
-            "orbit-tag flex items-center",
+            "flex items-center",
             "focus:rounded-150 focus:z-default",
             onRemove ? "ps-200 py-200 pe-100 rounded-l-150" : "p-200 rounded-150",
             selected && [

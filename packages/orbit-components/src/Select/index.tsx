@@ -150,7 +150,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                   (disabled && "text-form-element-disabled-foreground") || filled
                     ? "text-form-element-filled-foreground"
                     : "text-form-element-foreground",
-                  "text-form-element-normal font-base pointer-events-none absolute inset-y-0 z-[3] flex items-center",
+                  "text-form-element-large font-base pointer-events-none absolute inset-y-0 z-[3] flex items-center",
                   prefix ? "ps-1200" : "ps-300",
                 )}
               >
@@ -164,7 +164,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
                   ? "focus:outline-blue-normal focus:rounded-150 focus:tb:rounded-100 focus:outline-2 focus:outline-offset-0"
                   : "outline-none",
                 filled ? "text-form-element-filled-foreground" : "text-form-element-foreground",
-                "font-base text-form-element-normal",
+                "font-base text-form-element-large",
                 "pe-1000",
                 prefix ? "ps-1200" : "ps-300",
                 "shrink grow basis-1/5",

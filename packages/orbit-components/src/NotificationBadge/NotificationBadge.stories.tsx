@@ -21,7 +21,7 @@ const meta: Meta<typeof NotificationBadge> = {
     children: "10",
     icon: undefined,
     type: TYPE_OPTIONS.INFO,
-    ariaLabel: "additional information for screen readers",
+    ariaLabel: "10 unread notifications",
   },
 
   argTypes: {

@@ -31,25 +31,27 @@ const PureSandbox = ({ data }) => {
   const modules = getModules(scope);
 
   return (
-    <OrbitProvider theme={defaultTheme}>
-      <LiveProvider
-        code={code || example}
-        scope={{ ...modules, styled, Icons, css }}
-        language="jsx"
-        theme={themes.dracula}
-      >
-        <LiveError />
-        <GlobalStyle />
-        <section
-          id={PREVIEW_ID}
-          css={css`
-            padding: 30px 10px;
-          `}
+    <div dir="ltr">
+      <OrbitProvider theme={defaultTheme}>
+        <LiveProvider
+          code={code || example}
+          scope={{ ...modules, styled, Icons, css }}
+          language="jsx"
+          theme={themes.dracula}
         >
-          <LivePreview />
-        </section>
-      </LiveProvider>
-    </OrbitProvider>
+          <LiveError />
+          <GlobalStyle />
+          <section
+            id={PREVIEW_ID}
+            css={css`
+              padding: 30px 10px;
+            `}
+          >
+            <LivePreview />
+          </section>
+        </LiveProvider>
+      </OrbitProvider>
+    </div>
   );
 };
 

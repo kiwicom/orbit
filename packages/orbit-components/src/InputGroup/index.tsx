@@ -36,6 +36,7 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
       onBlurGroup,
       ariaLabel,
       ariaLabelledby,
+      required,
     },
     ref,
   ) => {
@@ -109,6 +110,7 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
           data-state={getFieldDataState(!!errorReal)}
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}
+          aria-required={required}
         >
           {label && (
             <legend>
@@ -120,6 +122,7 @@ const InputGroup = React.forwardRef<HTMLFieldSetElement, Props>(
                 iconRef={iconRef}
                 onMouseEnter={() => (hasTooltip ? setTooltipShownHover(true) : undefined)}
                 onMouseLeave={() => (hasTooltip ? setTooltipShownHover(false) : undefined)}
+                required={required}
               >
                 {label}
               </FormLabel>

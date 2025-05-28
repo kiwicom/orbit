@@ -125,7 +125,7 @@ jobs:
   test-ct:
     name: Visual Regression Tests
     runs-on: ${{ matrix.os }}
-    container: ${{ matrix.os == 'ubuntu-latest' && fromJSON('{"image":"mcr.microsoft.com/playwright:v1.44.1-jammy"}') || null }}
+    container: ${{ matrix.os == 'ubuntu-latest' && fromJSON('{"image":"mcr.microsoft.com/playwright:v1.52.0-jammy"}') || null }}
     strategy:
       fail-fast: false
       matrix:

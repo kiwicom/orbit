@@ -12,7 +12,7 @@ jobs:
   update-visual-tests-ubuntu:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.44.1-jammy
+      image: mcr.microsoft.com/playwright:v1.52.0-jammy
     steps:
       - name: Checkout
         uses: actions/checkout@v4

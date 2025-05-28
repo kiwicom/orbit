@@ -153,7 +153,7 @@ Snapshots are OS-specific. Our CI runs tests on both Linux and macOS platforms t
 
 1. For Linux snapshots: Run the tests in Docker
 
-   - `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.44.1-jammy /bin/bash`
+   - `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.52.0-jammy /bin/bash`
    - `yarn run docker:reset`
    - `yarn components test-ct --update-snapshots`
 

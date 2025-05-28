@@ -22,26 +22,34 @@ const ButtonMobileStore = ({
   title,
   stopPropagation = false,
 }: Props) => {
-  const onClickHandler = (ev: React.MouseEvent<HTMLAnchorElement>) => {
+  const onClickHandler = (ev: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     if (stopPropagation) {
       ev.stopPropagation();
-      if (onClick) onClick(ev);
     }
-    if (onClick) onClick(ev);
+    if (onClick) onClick(ev as React.MouseEvent<HTMLAnchorElement>);
   };
 
+  const commonProps = {
+    className: "orbit-button-mobile-store h-1000 inline-block",
+    onClick: onClickHandler,
+    "data-test": dataTest,
+    id,
+  };
+
+  const imageElement = <img srcSet={getSrc(type, lang)} height="40px" alt={alt} title={title} />;
+
+  if (href) {
+    return (
+      <a {...commonProps} href={href} target="_blank" rel="noopener noreferrer">
+        {imageElement}
+      </a>
+    );
+  }
+
   return (
-    <a
-      className="orbit-button-mobile-store h-1000 inline-block"
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={onClickHandler}
-      data-test={dataTest}
-      id={id}
-    >
-      <img srcSet={getSrc(type, lang)} height="40px" alt={alt} title={title} />
-    </a>
+    <button {...commonProps} type="button">
+      {imageElement}
+    </button>
   );
 };
 

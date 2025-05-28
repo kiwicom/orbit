@@ -389,6 +389,7 @@ export const Playground: Story = {
     inputValue: "",
     spaceAfter: SPACINGS_AFTER.MEDIUM,
     disabled: false,
+    required: false,
   },
 
   argTypes: {

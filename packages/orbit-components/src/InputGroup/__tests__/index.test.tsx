@@ -82,4 +82,17 @@ describe("InputGroup", () => {
 
     expect(ref.current).toBeDefined();
   });
+
+  it("should render required indicator when required prop is true", () => {
+    render(
+      <InputGroup label="Required Field" required>
+        <InputField />
+      </InputGroup>,
+    );
+
+    // Check that the required asterisk is rendered and aria-required is true
+    expect(screen.getByText("*")).toBeInTheDocument();
+    expect(screen.getByText("*")).toHaveAttribute("aria-hidden", "true");
+    expect(screen.getByRole("group")).toHaveAttribute("aria-required", "true");
+  });
 });

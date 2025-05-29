@@ -1,12 +1,15 @@
 name: Update Visual Tests
 
 on:
-  workflow_dispatch:
-    inputs:
-      commitMessage:
-        description: "Commit message for the update"
-        required: true
-        default: "chore: update visual tests"
+  pull_request:
+    branches:
+      - "**"
+  # workflow_dispatch:
+  #   inputs:
+  #     commitMessage:
+  #       description: "Commit message for the update"
+  #       required: true
+  #       default: "chore: update visual tests"
 
 jobs:
   update-visual-tests-ubuntu:
@@ -34,7 +37,7 @@ jobs:
           yarn components build
 
       - name: Update Visual Tests
-        run: yarn components test-ct --update-snapshots
+        run: yarn components test-ct Badge --update-snapshots
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -68,7 +71,7 @@ jobs:
           yarn components build
 
       - name: Update Visual Tests
-        run: yarn components test-ct --update-snapshots
+        run: yarn components test-ct Badge --update-snapshots
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

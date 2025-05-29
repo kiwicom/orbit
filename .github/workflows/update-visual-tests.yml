@@ -6,7 +6,7 @@ on:
       commitMessage:
         description: "Commit message for the update"
         required: true
-        default: "chore: update visual tests"
+        default:
 
 jobs:
   update-visual-tests-ubuntu:
@@ -34,12 +34,25 @@ jobs:
       - name: Update Visual Tests
         run: yarn components test-ct --update-snapshots
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: ubuntu-snapshots
-          path: "**/*.png"
-          retention-days: 1
+      - name: Setup git config
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name "kiwicom-orbit-bot"
+          git config user.email "frontend-platform@kiwi.com"
+
+      - name: Commit changes
+        run: |
+          git fetch
+          git add **/*.png
+          if git diff-index --quiet HEAD; then
+            echo "No changes to linux visual tests. Exiting."
+            exit 0
+          else
+            echo "Commiting changes to linux visual tests"
+            git commit -m "${{ github.event.inputs.commitMessage || 'chore: update visual tests (linux)' }}"
+            git pull --rebase
+            git push
+          fi
 
   update-visual-tests-macos:
     runs-on: macos-latest
@@ -65,33 +78,6 @@ jobs:
       - name: Update Visual Tests
         run: yarn components test-ct --update-snapshots
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: macos-snapshots
-          path: "**/*.png"
-          retention-days: 1
-
-  commit-changes:
-    needs: [update-visual-tests-ubuntu, update-visual-tests-macos]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT }}
-          ref: ${{ github.head_ref }}
-
-      - name: Download Ubuntu snapshots
-        uses: actions/download-artifact@v4
-        with:
-          name: ubuntu-snapshots
-
-      - name: Download macOS snapshots
-        uses: actions/download-artifact@v4
-        with:
-          name: macos-snapshots
-
       - name: Setup git config
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
@@ -100,12 +86,14 @@ jobs:
 
       - name: Commit changes
         run: |
-          git add \*.png
+          git fetch
+          git add **/*.png
           if git diff-index --quiet HEAD; then
-            echo "No changes to visual tests. Exiting."
+            echo "No changes to macos visual tests. Exiting."
             exit 0
           else
-            echo "Commiting changes to visual tests"
-            git commit -m "${{ github.event.inputs.commitMessage || 'chore: update visual tests' }}"
+            echo "Commiting changes to macos visual tests"
+            git commit -m "${{ github.event.inputs.commitMessage || 'chore: update visual tests (macos)' }}"
+            git pull --rebase
             git push
           fi

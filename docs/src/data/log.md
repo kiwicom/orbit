@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [24.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.2.1...@kiwicom/orbit-components@24.3.0) (2025-05-29)
+
+#### Bug Fixes
+
+* **Modal:** focus trap was not reacting to DOM changes ([b5e2d61](https://github.com/kiwicom/orbit/commit/b5e2d61761270aa92cce998e5554fac2e48ad862))
+* **Tabs:** keyboard navigation now works correctly ([19d1601](https://github.com/kiwicom/orbit/commit/19d16017dec1262b913de2c34a17da96ff03609f))
+
+#### Features
+
+* **ButtonMobileStore:** render as button when no href provided ([5e9d49c](https://github.com/kiwicom/orbit/commit/5e9d49c9eb68485d5ccf069914046ca54f89d2d8))
+* **icons:** update icons from figma ([5fc5816](https://github.com/kiwicom/orbit/commit/5fc5816270bddd29fc06c401aaffe149a7185656))
+* **InputGroup:** add required prop to display visual indicator ([94ba6fa](https://github.com/kiwicom/orbit/commit/94ba6fa0cc653807cd1efacd807ced32f7b6a288))
+* **Select:** change font size to 16px ([ca7f90a](https://github.com/kiwicom/orbit/commit/ca7f90a41bbeb4fd9640238ed70156fe33239843))
+
 ### [24.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.2.0...@kiwicom/orbit-components@24.2.1) (2025-05-22)
 
 #### Bug Fixes

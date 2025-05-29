@@ -11,6 +11,8 @@ on:
 jobs:
   update-visual-tests-ubuntu:
     runs-on: ubuntu-latest
+    outputs:
+      artifact-id: ${{ steps.upload-ubuntu.outputs.artifact-id }}
     container:
       image: mcr.microsoft.com/playwright:v1.52.0-jammy
     steps:
@@ -36,6 +38,7 @@ jobs:
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
+        id: upload-ubuntu
         with:
           name: ubuntu-snapshots
           path: "**/*.png"
@@ -43,6 +46,8 @@ jobs:
 
   update-visual-tests-macos:
     runs-on: macos-latest
+    outputs:
+      artifact-id: ${{ steps.upload-macos.outputs.artifact-id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -67,6 +72,7 @@ jobs:
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
+        id: upload-macos
         with:
           name: macos-snapshots
           path: "**/*.png"
@@ -82,15 +88,15 @@ jobs:
           token: ${{ secrets.PAT }}
           ref: ${{ github.head_ref }}
 
-      - name: Download Ubuntu snapshots
+      - name: Download all snapshots
         uses: actions/download-artifact@v4
         with:
-          name: ubuntu-snapshots
+          artifact-ids: ${{ needs.update-visual-tests-ubuntu.outputs.artifact-id }},${{ needs.update-visual-tests-macos.outputs.artifact-id }}
+          path: .
+          merge-multiple: true
 
-      - name: Download macOS snapshots
-        uses: actions/download-artifact@v4
-        with:
-          name: macos-snapshots
+      - name: Display structure of downloaded files
+        run: ls -R .
 
       - name: Setup git config
         run: |

@@ -41,7 +41,7 @@ jobs:
         id: upload-ubuntu
         with:
           name: ubuntu-snapshots
-          path: "**/*.png"
+          path: "**/*-linux.png"
           retention-days: 1
 
   update-visual-tests-macos:
@@ -75,7 +75,7 @@ jobs:
         id: upload-macos
         with:
           name: macos-snapshots
-          path: "**/*.png"
+          path: "**/*-darwin.png"
           retention-days: 1
 
   commit-changes:

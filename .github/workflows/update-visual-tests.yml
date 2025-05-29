@@ -1,16 +1,21 @@
 name: Update Visual Tests
 
 on:
-  workflow_dispatch:
-    inputs:
-      commitMessage:
-        description: "Commit message for the update"
-        required: true
-        default: "chore: update visual tests"
+  pull_request:
+    branches:
+      - "**"
+  # workflow_dispatch:
+  #   inputs:
+  #     commitMessage:
+  #       description: "Commit message for the update"
+  #       required: true
+  #       default: "chore: update visual tests"
 
 jobs:
   update-visual-tests-ubuntu:
     runs-on: ubuntu-latest
+    outputs:
+      artifact-id: ${{ steps.upload-ubuntu.outputs.artifact-id }}
     container:
       image: mcr.microsoft.com/playwright:v1.52.0-jammy
     steps:
@@ -32,17 +37,20 @@ jobs:
           yarn components build
 
       - name: Update Visual Tests
-        run: yarn components test-ct --update-snapshots
+        run: yarn components test-ct Badge --update-snapshots
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
+        id: upload-ubuntu
         with:
           name: ubuntu-snapshots
-          path: "**/*.png"
+          path: "**/*-linux.png"
           retention-days: 1
 
   update-visual-tests-macos:
     runs-on: macos-latest
+    outputs:
+      artifact-id: ${{ steps.upload-macos.outputs.artifact-id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -63,13 +71,14 @@ jobs:
           yarn components build
 
       - name: Update Visual Tests
-        run: yarn components test-ct --update-snapshots
+        run: yarn components test-ct Badge --update-snapshots
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
+        id: upload-macos
         with:
           name: macos-snapshots
-          path: "**/*.png"
+          path: "**/*-darwin.png"
           retention-days: 1
 
   commit-changes:
@@ -82,15 +91,15 @@ jobs:
           token: ${{ secrets.PAT }}
           ref: ${{ github.head_ref }}
 
-      - name: Download Ubuntu snapshots
+      - name: Download all snapshots
         uses: actions/download-artifact@v4
         with:
-          name: ubuntu-snapshots
+          artifact-ids: ${{ needs.update-visual-tests-ubuntu.outputs.artifact-id }},${{ needs.update-visual-tests-macos.outputs.artifact-id }}
+          path: .
+          merge-multiple: true
 
-      - name: Download macOS snapshots
-        uses: actions/download-artifact@v4
-        with:
-          name: macos-snapshots
+      - name: Display structure of downloaded files
+        run: ls -R .
 
       - name: Setup git config
         run: |

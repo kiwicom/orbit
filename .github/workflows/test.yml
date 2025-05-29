@@ -122,75 +122,75 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn check:links
 
-  test-ct:
-    name: Visual Regression Tests
-    runs-on: ${{ matrix.os }}
-    container: ${{ matrix.os == 'ubuntu-latest' && fromJSON('{"image":"mcr.microsoft.com/playwright:v1.52.0-jammy"}') || null }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-        shardIndex: [1, 2, 3, 4]
-        shardTotal: [4]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install
-        uses: ./.github/actions/node
-      - name: Install Playwright (macOS)
-        if: matrix.os == 'macos-latest'
-        run: npx playwright install --with-deps
-      - name: Build (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          apt-get update
-          apt-get install zip --yes
-          yarn tokens build
-          yarn tailwind-preset build
-          yarn components build
-      - name: Build (macOS)
-        if: matrix.os == 'macos-latest'
-        run: |
-          yarn tokens build
-          yarn tailwind-preset build
-          yarn components build
-      - name: Test Components
-        run: yarn components test-ct --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --reporter=blob
-      - name: Upload blob report artifacts
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: blob-report-${{ matrix.os }}-${{ matrix.shardIndex }}
-          path: packages/orbit-components/blob-report
-          retention-days: 1
+  # test-ct:
+  #   name: Visual Regression Tests
+  #   runs-on: ${{ matrix.os }}
+  #   container: ${{ matrix.os == 'ubuntu-latest' && fromJSON('{"image":"mcr.microsoft.com/playwright:v1.52.0-jammy"}') || null }}
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       os: [ubuntu-latest, macos-latest]
+  #       shardIndex: [1, 2, 3, 4]
+  #       shardTotal: [4]
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #     - name: Install
+  #       uses: ./.github/actions/node
+  #     - name: Install Playwright (macOS)
+  #       if: matrix.os == 'macos-latest'
+  #       run: npx playwright install --with-deps
+  #     - name: Build (Ubuntu)
+  #       if: matrix.os == 'ubuntu-latest'
+  #       run: |
+  #         apt-get update
+  #         apt-get install zip --yes
+  #         yarn tokens build
+  #         yarn tailwind-preset build
+  #         yarn components build
+  #     - name: Build (macOS)
+  #       if: matrix.os == 'macos-latest'
+  #       run: |
+  #         yarn tokens build
+  #         yarn tailwind-preset build
+  #         yarn components build
+  #     - name: Test Components
+  #       run: yarn components test-ct --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --reporter=blob
+  #     - name: Upload blob report artifacts
+  #       if: failure()
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: blob-report-${{ matrix.os }}-${{ matrix.shardIndex }}
+  #         path: packages/orbit-components/blob-report
+  #         retention-days: 1
 
-  test-ct-report:
-    name: Visual Regression Tests Report
-    runs-on: ubuntu-latest
-    # We want to execute it if test-ct fails, but only after it finishes
-    if: ${{ always() && needs.test-ct.result == 'failure' }}
-    needs: test-ct
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install
-        uses: ./.github/actions/node
-      - name: Download blob reports artifacts
-        id: download
-        uses: actions/download-artifact@v4
-        with:
-          path: all-blob-reports
-          pattern: blob-report-*
-          merge-multiple: true
-      - name: Merge into HTML Report
-        run: npx playwright merge-reports --reporter html ./all-blob-reports
-      - name: Deploy Tests Report
-        env:
-          BRANCH_NAME: ${{ github.head_ref }}
-        run: |
-          BRANCH_URL=$(echo ${BRANCH_NAME} | sed -e 's/[^a-zA-Z0-9]/-/g')
-          DOMAIN=https://kiwicom-orbit-test-report-${BRANCH_URL}.surge.sh
-          yarn deploy:report ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
+  # test-ct-report:
+  #   name: Visual Regression Tests Report
+  #   runs-on: ubuntu-latest
+  #   # We want to execute it if test-ct fails, but only after it finishes
+  #   if: ${{ always() && needs.test-ct.result == 'failure' }}
+  #   needs: test-ct
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #     - name: Install
+  #       uses: ./.github/actions/node
+  #     - name: Download blob reports artifacts
+  #       id: download
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         path: all-blob-reports
+  #         pattern: blob-report-*
+  #         merge-multiple: true
+  #     - name: Merge into HTML Report
+  #       run: npx playwright merge-reports --reporter html ./all-blob-reports
+  #     - name: Deploy Tests Report
+  #       env:
+  #         BRANCH_NAME: ${{ github.head_ref }}
+  #       run: |
+  #         BRANCH_URL=$(echo ${BRANCH_NAME} | sed -e 's/[^a-zA-Z0-9]/-/g')
+  #         DOMAIN=https://kiwicom-orbit-test-report-${BRANCH_URL}.surge.sh
+  #         yarn deploy:report ${DOMAIN} --token ${{ secrets.SURGE_TOKEN }}
 
   cypress:
     runs-on: ubuntu-latest

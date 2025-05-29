@@ -7,7 +7,7 @@ import Badge from ".";
 
 export default function BadgeVisualTest() {
   return (
-    <div className="gap-300 flex flex-wrap">
+    <div className="gap-500 flex flex-wrap">
       {Object.values(TYPE_OPTIONS).map(type => (
         <Badge type={type} icon={<Airplane />}>
           Badge

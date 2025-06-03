@@ -34,19 +34,19 @@ const TabsProvider = ({
   const [selected, setSelected] = React.useState<number | undefined>(defaultSelected);
   const value = React.useMemo(() => ({ selected, onChange, setSelected }), [onChange, selected]);
 
-  return <TabsContext.Provider value={value}>{children}</TabsContext.Provider>;
+  return <TabsContext value={value}>{children}</TabsContext>;
 };
 
 export const TabProvider = ({ children, index, compact }) => {
   const value = React.useMemo(() => ({ index, compact }), [index, compact]);
 
-  return <TabContext.Provider value={value}>{children}</TabContext.Provider>;
+  return <TabContext value={value}>{children}</TabContext>;
 };
 
 export const TabPanelProvider = ({ children, isActive, index }) => {
   const value = React.useMemo(() => ({ isActive, index }), [isActive, index]);
 
-  return <TabPanelContext.Provider value={value}>{children}</TabPanelContext.Provider>;
+  return <TabPanelContext value={value}>{children}</TabPanelContext>;
 };
 
 export default TabsProvider;

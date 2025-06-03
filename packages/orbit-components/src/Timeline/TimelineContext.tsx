@@ -36,7 +36,7 @@ export const TimelineStatusProvider = ({ children, direction }) => {
     [types, setTypes, direction],
   );
 
-  return <TimelineStatusContext.Provider value={value}>{children}</TimelineStatusContext.Provider>;
+  return <TimelineStatusContext value={value}>{children}</TimelineStatusContext>;
 };
 
 export const TimelineStepProvider = ({ children, index, last, hasSubLabelMargin }) => {
@@ -44,7 +44,7 @@ export const TimelineStepProvider = ({ children, index, last, hasSubLabelMargin 
     () => ({ index, last, hasSubLabelMargin }),
     [index, last, hasSubLabelMargin],
   );
-  return <TimelineStepContext.Provider value={value}>{children}</TimelineStepContext.Provider>;
+  return <TimelineStepContext value={value}>{children}</TimelineStepContext>;
 };
 
 export const useStep = () => React.useContext(TimelineStepContext);

@@ -39,20 +39,6 @@ Table below contains all types of the props available in Radio component.
 
 - `ref` can be used, for example, to control focus or to get the status (checked) of the element.
 
-```jsx
-class Component extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.ref.current && this.ref.current.focus();
-  }
-
-  ref: { current: React.ElementRef<*> | null } = React.createRef();
-
-  render() {
-    return <Radio ref={this.ref} />;
-  }
-}
-```
-
 ## FakeRadio
 
 The FakeRadio component was created for accessibility reasons and offers only a visual presentation of the Radio component. It does not have any functionality and accepts only state props.

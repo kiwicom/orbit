@@ -28,7 +28,7 @@ const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
       >
         {React.cloneElement(child, {
           // @ts-expect-error React.cloneElement  issue
-          ref: child.ref
+          ref: child.props.ref
             ? node => {
                 // Call the original ref, if any
                 // @ts-expect-error React.cloneElement  issue

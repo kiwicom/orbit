@@ -39,19 +39,3 @@ Table below contains all types of the props available in Checkbox component.
 - The `hasError` prop will be visible only when the Checkbox is not checked nor disabled.
 
 - `ref` can be used, for example, to control focus or to get the status (checked) of the element.
-
-```jsx
-import * as React from "react";
-
-class Component extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.ref.current && this.ref.current.focus();
-  }
-
-  ref: { current: React.ElementRef<*> | null } = React.createRef();
-
-  render() {
-    return <Checkbox ref={this.ref} />;
-  }
-}
-```

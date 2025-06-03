@@ -32,7 +32,7 @@ export const ItineraryProvider = ({
     [setItinerarySegmentMinimalColumnWidth, minWidth],
   );
 
-  return <ItineraryContext.Provider value={value}>{children}</ItineraryContext.Provider>;
+  return <ItineraryContext value={value}>{children}</ItineraryContext>;
 };
 
 export const useItinerarySegmentMinimalColumnWidth = (): Context =>

@@ -52,7 +52,5 @@ export const ItinerarySegmentProvider = ({
     }),
     [isNextHidden, isPrevHidden, noElevation, isHidden, isBanner, index, opened, last, count],
   );
-  return (
-    <ItinerarySegmentContext.Provider value={value}>{children}</ItinerarySegmentContext.Provider>
-  );
+  return <ItinerarySegmentContext value={value}>{children}</ItinerarySegmentContext>;
 };

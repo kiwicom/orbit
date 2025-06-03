@@ -521,7 +521,7 @@ const Modal = React.forwardRef<Instance, Props>(
                 )}
               </div>
             )}
-            <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
+            <ModalContext value={value}>{children}</ModalContext>
           </div>
         </div>
       </div>

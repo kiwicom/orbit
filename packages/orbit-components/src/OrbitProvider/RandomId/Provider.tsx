@@ -8,7 +8,7 @@ const RandomIdContext = React.createContext<() => string>(() => {
 
 const RandomIdProvider = ({ children }: { children: React.ReactNode }) => {
   const generateId = React.useId;
-  return <RandomIdContext.Provider value={generateId}>{children}</RandomIdContext.Provider>;
+  return <RandomIdContext value={generateId}>{children}</RandomIdContext>;
 };
 
 export const useRandomId = () => React.useContext(RandomIdContext);

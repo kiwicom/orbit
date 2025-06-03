@@ -63,5 +63,5 @@ export const WizardStepContextProvider = ({
     ],
   );
 
-  return <WizardStepContext.Provider value={value}>{children}</WizardStepContext.Provider>;
+  return <WizardStepContext value={value}>{children}</WizardStepContext>;
 };

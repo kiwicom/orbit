@@ -12,7 +12,7 @@ import useRandomId from "../hooks/useRandomId";
 import { getSpaceAfterClasses } from "../common/tailwind";
 import type { Props } from "./types";
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
+const Textarea = (props: Props) => {
   const {
     disabled,
     resize = RESIZE_OPTIONS.VERTICAL,
@@ -38,7 +38,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     dataAttrs,
     ariaLabel,
     ariaLabelledby,
-  }: Props = props;
+    ref,
+  } = props;
 
   const forID = useRandomId();
   const inputId = id || forID;
@@ -139,8 +140,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
       )}
     </div>
   );
-});
-
-Textarea.displayName = "Textarea";
+};
 
 export default Textarea;

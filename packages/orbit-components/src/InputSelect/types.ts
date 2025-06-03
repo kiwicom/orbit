@@ -16,7 +16,10 @@ export interface Option {
 // InputEvent
 type InputEvent = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
 
-export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAttrs {
+export interface Props
+  extends Common.Globals<HTMLInputElement>,
+    Common.SpaceAfter,
+    Common.DataAttrs {
   readonly name?: string;
   readonly label?: string;
   readonly placeholder?: string;

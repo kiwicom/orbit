@@ -6,4 +6,5 @@ import type * as Common from "../../common/types";
 export interface Props {
   readonly onClick?: Common.Callback;
   readonly title?: string;
+  readonly ref?: React.Ref<HTMLButtonElement>;
 }

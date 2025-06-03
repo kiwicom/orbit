@@ -43,7 +43,7 @@ export const FakeCheckbox = ({
   </div>
 );
 
-const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+const Checkbox = (props: Props) => {
   const {
     label,
     value,
@@ -59,6 +59,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     tabIndex,
     ariaControls,
     ariaDescribedby,
+    ref,
   } = props;
 
   return (
@@ -140,8 +141,6 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       )}
     </label>
   );
-});
-
-Checkbox.displayName = "Checkbox";
+};
 
 export default Checkbox;

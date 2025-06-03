@@ -21,7 +21,9 @@ export type DownloadWithHrefConditionalProps =
     }
   | { readonly href?: undefined; readonly download?: never };
 
-export interface ButtonCommonProps extends Common.Globals, Common.SpaceAfter {
+export interface ButtonCommonProps
+  extends Common.Globals<HTMLButtonElement | HTMLAnchorElement | HTMLDivElement>,
+    Common.SpaceAfter {
   readonly asComponent?: Common.Component;
   readonly ariaControls?: string;
   readonly ariaCurrent?: string;

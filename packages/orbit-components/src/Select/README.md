@@ -76,17 +76,3 @@ Table below contains all types of the props available for object in Option array
 - The `prefix` prop can accept any element. However, it is not recommended to pass it more than an icon (or flag).
 
 - `ref` can be used for example auto-focus the elements immediately after render.
-
-```jsx
-class Component extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.ref.current && this.ref.current.focus();
-  }
-
-  ref: { current: React.ElementRef<*> | null } = React.createRef();
-
-  render() {
-    return <Select ref={this.ref} />;
-  }
-}
-```

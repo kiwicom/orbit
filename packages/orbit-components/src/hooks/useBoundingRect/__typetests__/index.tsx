@@ -4,5 +4,5 @@ import useBoundingRect from "..";
 
 export default function Test() {
   const [, ref] = useBoundingRect<HTMLDivElement>({ height: null });
-  return <div ref={ref as React.RefObject<HTMLDivElement>} />;
+  return <div ref={ref as React.RefObject<HTMLDivElement | null>} />;
 }

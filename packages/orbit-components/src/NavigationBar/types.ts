@@ -13,7 +13,7 @@ export interface Props extends Common.Globals {
   readonly hideOnScroll?: boolean;
   readonly bottomStyle?: "shadow" | "border";
   readonly transparentBgAtTop?: boolean;
-  readonly menuButtonRef?: React.RefObject<HTMLButtonElement>;
+  readonly menuButtonRef?: React.RefObject<HTMLButtonElement | null>;
   readonly menuId?: string;
   readonly menuExpanded?: boolean;
 }

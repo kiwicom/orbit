@@ -86,7 +86,7 @@ const TileExpandable = ({
       <Slide maxHeight={height} expanded={isExpanded} id={slideID} ariaLabelledBy={labelID}>
         <TileContent
           noPadding={noPadding}
-          ref={node as React.RefObject<HTMLDivElement>}
+          ref={node as React.RefObject<HTMLDivElement | null>}
           withBorder={hasHeader}
         >
           {children}

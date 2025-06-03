@@ -105,7 +105,7 @@ const Collapse = ({
         </Stack>
       </div>
       <Slide maxHeight={height} expanded={expanded} id={slideID}>
-        <div className="my-300 mx-0" ref={node as React.RefObject<HTMLDivElement>}>
+        <div className="my-300 mx-0" ref={node as React.RefObject<HTMLDivElement | null>}>
           {children}
         </div>
       </Slide>

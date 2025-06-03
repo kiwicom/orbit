@@ -63,17 +63,3 @@ Table below contains all types of the props available in the InputFile component
 - If you pass some `string` into **buttonLabel** it will be used for button content.
 
 - `ref` can be used for example auto-focus the elements immediately after render.
-
-```jsx
-class Component extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.ref.current && this.ref.current.focus();
-  }
-
-  ref: { current: React.ElementRef<*> | null } = React.createRef();
-
-  render() {
-    return <InputFile ref={this.ref} />;
-  }
-}
-```

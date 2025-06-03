@@ -12,30 +12,19 @@ import getAlertButtonIconForeground from "./helpers/getAlertButtonIconForeground
 import { SIZE_OPTIONS } from "../../primitives/ButtonPrimitive/common/consts";
 import type { Props } from "./types";
 
-const AlertButton = React.forwardRef<HTMLButtonElement, Props>(
-  ({ type = TYPE_OPTIONS.INFO, disabled = false, ...props }, ref) => {
-    const theme = useTheme();
-    const propsWithTheme = { theme, ...props };
-    const commonProps = getCommonProps({ ...propsWithTheme, size: SIZE_OPTIONS.SMALL });
-    const buttonStyles = getAlertButtonStyles({ type, theme, disabled });
-    const icons = getIconContainer({
-      ...propsWithTheme,
-      iconForeground: getAlertButtonIconForeground({ type, theme }),
-    });
+const AlertButton = ({ type = TYPE_OPTIONS.INFO, disabled = false, ...props }: Props) => {
+  const theme = useTheme();
+  const propsWithTheme = { theme, ...props };
+  const commonProps = getCommonProps({ ...propsWithTheme, size: SIZE_OPTIONS.SMALL });
+  const buttonStyles = getAlertButtonStyles({ type, theme, disabled });
+  const icons = getIconContainer({
+    ...propsWithTheme,
+    iconForeground: getAlertButtonIconForeground({ type, theme }),
+  });
 
-    return (
-      <ButtonPrimitive
-        ref={ref}
-        disabled={disabled}
-        {...props}
-        {...buttonStyles}
-        {...commonProps}
-        {...icons}
-      />
-    );
-  },
-);
-
-AlertButton.displayName = "AlertButton";
+  return (
+    <ButtonPrimitive disabled={disabled} {...props} {...buttonStyles} {...commonProps} {...icons} />
+  );
+};
 
 export default AlertButton;

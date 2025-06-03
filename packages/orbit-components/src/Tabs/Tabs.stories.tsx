@@ -9,8 +9,6 @@ import { TYPE_OPTIONS } from "./components/Tab/consts";
 
 import Tabs, { TabList, TabPanel, Tab, TabPanels } from ".";
 
-Box.displayName = "Box";
-
 /* In the Playground story, we grouped the args of multiple components.
 These components include props with the same name, so we must create custom
 props to distinguish them. */

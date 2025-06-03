@@ -7,7 +7,10 @@ import type * as Common from "../common/types";
 
 type Resize = "vertical" | "none";
 
-export interface Props extends Common.Globals, Common.SpaceAfter, Common.DataAttrs {
+export interface Props
+  extends Common.Globals<HTMLTextAreaElement>,
+    Common.SpaceAfter,
+    Common.DataAttrs {
   readonly ref?: React.ForwardedRef<HTMLTextAreaElement>;
   readonly name?: string;
   readonly rows?: number;

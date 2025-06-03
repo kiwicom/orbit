@@ -4,7 +4,7 @@ import ButtonLink from "../../ButtonLink";
 import Close from "../../icons/Close";
 import type { Props } from "./types";
 
-const DrawerClose = React.forwardRef<HTMLButtonElement, Props>(({ onClick, title }, ref) => {
+const DrawerClose = ({ onClick, title, ref }: Props) => {
   return (
     <div className="ms-400">
       <ButtonLink
@@ -16,6 +16,6 @@ const DrawerClose = React.forwardRef<HTMLButtonElement, Props>(({ onClick, title
       />
     </div>
   );
-});
+};
 
 export default DrawerClose;

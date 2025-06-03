@@ -13,40 +13,42 @@ import getSocialButtonIcon from "./helpers/getSocialButtonIcon";
 import { TYPE_OPTIONS } from "./consts";
 import type { Props } from "./types";
 
-const SocialButton = React.forwardRef<HTMLButtonElement, Props>(
-  ({ type = TYPE_OPTIONS.APPLE, disabled = false, size, ...props }, ref) => {
-    const theme = useTheme();
-    const propsWithTheme = { theme, size, ...props };
-    const commonProps = getCommonProps(propsWithTheme);
-    const buttonStyles = getSocialButtonStyles({ type, disabled, theme });
-    const icons = getIconContainer({
-      ...propsWithTheme,
-      iconForeground: getSocialButtonIconForeground({ type, theme }),
-    });
-    const iconLeft = getSocialButtonIcon(type);
-    return (
-      <ButtonPrimitive
-        ref={ref}
-        {...props}
-        {...commonProps}
-        {...buttonStyles}
-        {...icons}
-        disabled={disabled}
-        iconLeft={iconLeft}
-        iconRight={
-          <ChevronForwardIcon
-            customColor={type === TYPE_OPTIONS.APPLE ? "#FFF" : ""}
-            color="primary"
-            ariaHidden
-            reverseOnRtl
-          />
-        }
-        circled={false}
-      />
-    );
-  },
-);
-
-SocialButton.displayName = "SocialButton";
+const SocialButton = ({
+  type = TYPE_OPTIONS.APPLE,
+  disabled = false,
+  size,
+  ref,
+  ...props
+}: Props) => {
+  const theme = useTheme();
+  const propsWithTheme = { theme, size, ...props };
+  const commonProps = getCommonProps(propsWithTheme);
+  const buttonStyles = getSocialButtonStyles({ type, disabled, theme });
+  const icons = getIconContainer({
+    ...propsWithTheme,
+    iconForeground: getSocialButtonIconForeground({ type, theme }),
+  });
+  const iconLeft = getSocialButtonIcon(type);
+  return (
+    <ButtonPrimitive
+      ref={ref}
+      {...props}
+      {...commonProps}
+      {...buttonStyles}
+      {...icons}
+      disabled={disabled}
+      iconLeft={iconLeft}
+      iconRight={
+        <ChevronForwardIcon
+          customColor={type === TYPE_OPTIONS.APPLE ? "#FFF" : ""}
+          color="primary"
+          ariaHidden
+          reverseOnRtl
+        />
+      }
+      circled={false}
+    />
+  );
+};
 
 export default SocialButton;

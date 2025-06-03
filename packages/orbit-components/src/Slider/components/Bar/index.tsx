@@ -37,28 +37,25 @@ interface Props {
   min: number;
   onMouseDown: React.MouseEventHandler<HTMLDivElement>;
   hasHistogram: boolean;
+  ref?: React.Ref<HTMLDivElement>;
 }
 
-const Bar = React.forwardRef<HTMLDivElement, Props>(
-  ({ onMouseDown, value, max, min, hasHistogram }, ref) => {
-    const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
-    return (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-      <div
-        className="h-600 tap-color-none relative w-full cursor-pointer select-none"
-        ref={ref}
-        onMouseDown={onMouseDown}
-      >
-        <BarPart className="bg-cloud-normal left-0 w-full" />
-        <BarPart
-          className="bg-blue-normal"
-          style={{ insetInlineStart: `${left}%`, width: `${width}%` }}
-        />
-      </div>
-    );
-  },
-);
-
-Bar.displayName = "Bar";
+const Bar = ({ onMouseDown, value, max, min, hasHistogram, ref }: Props) => {
+  const { left, width } = calculateBarPosition(value, max, min, hasHistogram);
+  return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div
+      className="h-600 tap-color-none relative w-full cursor-pointer select-none"
+      ref={ref}
+      onMouseDown={onMouseDown}
+    >
+      <BarPart className="bg-cloud-normal left-0 w-full" />
+      <BarPart
+        className="bg-blue-normal"
+        style={{ insetInlineStart: `${left}%`, width: `${width}%` }}
+      />
+    </div>
+  );
+};
 
 export default Bar;

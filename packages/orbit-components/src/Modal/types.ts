@@ -17,7 +17,14 @@ export type closable =
       readonly labelClose?: string;
     };
 
-export type Props = Common.Globals &
+export interface Instance {
+  getScrollPosition: () => number | null;
+  setScrollPosition: (value: number) => void;
+  modalBody: React.RefObject<HTMLElement | null>;
+  modalContent: React.RefObject<HTMLElement | null>;
+}
+
+export type Props = Common.Globals<Instance> &
   closable & {
     readonly size?: Size;
     readonly children: React.ReactNode;
@@ -38,10 +45,3 @@ export type Props = Common.Globals &
     readonly ariaLabelledby?: string;
     readonly ariaDescribedby?: string;
   };
-
-export interface Instance {
-  getScrollPosition: () => number | null;
-  setScrollPosition: (value: number) => void;
-  modalBody: React.RefObject<HTMLElement | null>;
-  modalContent: React.RefObject<HTMLElement | null>;
-}

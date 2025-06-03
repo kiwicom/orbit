@@ -10,8 +10,6 @@ import Checkbox from "../Checkbox";
 
 import ChoiceGroup from ".";
 
-ChoiceGroup.displayName = "ChoiceGroup";
-
 type ChoiceGroupPropsAndCustomArgs = React.ComponentProps<typeof ChoiceGroup> & {
   boxShadowSize: string;
 };

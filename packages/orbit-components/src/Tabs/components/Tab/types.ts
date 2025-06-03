@@ -5,7 +5,7 @@ import type { TYPE_OPTIONS } from "./consts";
 
 export type Type = `${TYPE_OPTIONS}`;
 
-export interface Props extends Globals {
+export interface Props extends Globals<HTMLButtonElement> {
   children: React.ReactNode;
   type?: Type;
   active?: boolean;

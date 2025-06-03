@@ -8,7 +8,7 @@ import type { DownloadWithHrefConditionalProps } from "../primitives/ButtonPrimi
 
 export type Type = "primary" | "secondary" | "info" | "success" | "warning" | "critical" | "white";
 
-interface BaseProps extends Common.Globals {
+interface BaseProps extends Common.Globals<HTMLAnchorElement | HTMLButtonElement> {
   readonly ariaCurrent?: string;
   readonly asComponent?: Common.Component;
   readonly children: React.ReactNode;

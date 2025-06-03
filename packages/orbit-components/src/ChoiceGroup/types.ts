@@ -8,7 +8,7 @@ import type * as Common from "../common/types";
 export type Size = "normal" | "large";
 type Element = "h2" | "h3" | "h4" | "h5" | "h6" | "div";
 
-export interface Props extends Common.Globals {
+export interface Props extends Common.Globals<HTMLDivElement> {
   readonly children:
     | React.ReactNode
     | ((args: {

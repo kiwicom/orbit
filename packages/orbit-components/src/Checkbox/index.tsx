@@ -7,7 +7,7 @@ import Check from "../icons/Check";
 import getFieldDataState from "../common/getFieldDataState";
 import type { Props } from "./types";
 
-const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+const Checkbox = (props: Props) => {
   const {
     label,
     value,
@@ -23,6 +23,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     tabIndex,
     ariaControls,
     ariaDescribedby,
+    ref,
   } = props;
 
   const Component = label ? "label" : "div";
@@ -107,9 +108,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       )}
     </Component>
   );
-});
-
-Checkbox.displayName = "Checkbox";
+};
 
 export default Checkbox;
 

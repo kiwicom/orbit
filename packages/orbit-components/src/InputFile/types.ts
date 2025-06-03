@@ -5,7 +5,7 @@ import type * as React from "react";
 
 import type * as Common from "../common/types";
 
-export interface Props extends Common.Globals, Common.SpaceAfter {
+export interface Props extends Common.Globals<HTMLDivElement>, Common.SpaceAfter {
   readonly label?: Common.Translation;
   readonly buttonLabel?: React.ReactNode;
   readonly name?: string;

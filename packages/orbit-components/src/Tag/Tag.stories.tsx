@@ -10,8 +10,6 @@ import { SIZES, TYPES } from "./consts";
 
 import Tag from ".";
 
-Tag.displayName = "Tag";
-
 type TagPropsAndCustomArgs = React.ComponentProps<typeof Tag> & {
   content?: string;
   removable?: boolean;

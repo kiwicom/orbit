@@ -40,22 +40,6 @@ Table below contains all types of the props available in Checkbox component.
 
 - `ref` can be used, for example, to control focus or to get the status (checked) of the element.
 
-```jsx
-import * as React from "react";
-
-class Component extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.ref.current && this.ref.current.focus();
-  }
-
-  ref: { current: React.ElementRef<*> | null } = React.createRef();
-
-  render() {
-    return <Checkbox ref={this.ref} />;
-  }
-}
-```
-
 # FakeCheckbox
 
 The FakeCheckbox component was created for accessibility reasons and offers only a visual presentation of the Checkbox component. It does not have any functionality and accepts only state props - `disabled`, `checked`, `hasError`.

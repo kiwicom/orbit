@@ -313,6 +313,8 @@ export const WithFixedFooter: Story = {
 
   args: {
     fixedFooter: true,
+    useTopSafeAreaInset: false,
+    isMobileFullPage: false,
   },
 
   parameters: {
@@ -322,7 +324,6 @@ export const WithFixedFooter: Story = {
         "size",
         "title",
         "mobileHeader",
-        "isMobileFullPage",
         "preventOverlayClose",
         "hasCloseButton",
         "disableAnimation",
@@ -562,6 +563,7 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
     lockScrolling: false,
     preventOverlayClose: false,
     isMobileFullPage: false,
+    useTopSafeAreaInset: false,
     suppressed: false,
     showBack: false,
     illustration: NAMES[0],

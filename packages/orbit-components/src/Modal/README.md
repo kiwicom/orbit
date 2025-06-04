@@ -43,6 +43,7 @@ Table below contains all types of the props available in the Modal component.
 | ariaLabelledby      | `string`                   |            | The `aria-labelledby` attribute of the Modal. It should be used if `title` is not defined on the ModalHeader.                                                                                         |
 | ariaDescribedby     | `string`                   |            | The `aria-describedby` attribute of the Modal. It should be used if `description` is not defined on the ModalHeader.                                                                                  |
 | ariaLabel           | `string`                   |            | The `aria-label` attribute of the Modal. It should be used if `title` is not defined on the ModalHeader and `ariaLabelledby` is undefined.                                                            |
+| useTopSafeAreaInset | `boolean`                  | `false`    | When enabled, the Modal will respect mobile device top safe area to prevent content from being obscured by system UI elements like the notch or status bar.                                           |
 
 ### Modal enum
 

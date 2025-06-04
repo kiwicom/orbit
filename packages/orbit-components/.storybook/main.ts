@@ -49,6 +49,16 @@ const config: StorybookConfig = {
     if (cfg) {
       // resolve to .js rather than .mjs to avoid webpack failing because of ambiguous imports
       cfg.resolve.extensions = cfg.resolve.extensions.filter(ext => ext !== ".mjs");
+
+      // Add Node.js polyfills for browser compatibility
+      // These modules are used by Storybook's testing infrastructure but aren't available in browsers
+      cfg.resolve.fallback = {
+        ...cfg.resolve.fallback,
+        // Use proper polyfills for Node.js modules
+        tty: require.resolve("tty-browserify"),
+        os: require.resolve("os-browserify/browser"),
+      };
+
       cfg.module.rules.push({
         test: /\.(ts|tsx|mts)$/,
         loader: require.resolve("babel-loader"),

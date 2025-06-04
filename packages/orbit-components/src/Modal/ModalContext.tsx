@@ -17,6 +17,7 @@ export interface Props {
   readonly closable?: boolean;
   readonly titleID?: string;
   readonly descriptionID?: string;
+  readonly useTopSafeAreaInset?: boolean;
 }
 
 export const ModalContext = React.createContext<Props>({
@@ -31,6 +32,7 @@ export const ModalContext = React.createContext<Props>({
   isMobileFullPage: false,
   isInsideModal: false,
   closable: false,
+  useTopSafeAreaInset: false,
 });
 ModalContext.displayName = "ModalOrbitContext";
 

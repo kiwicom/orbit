@@ -62,6 +62,7 @@ const Modal = React.forwardRef<Instance, Props>(
       ariaLabel,
       ariaLabelledby,
       ariaDescribedby,
+      useTopSafeAreaInset = false,
     }: Props,
     ref,
   ) => {
@@ -376,6 +377,7 @@ const Modal = React.forwardRef<Instance, Props>(
         isInsideModal: true,
         titleID: modalTitleID,
         descriptionID: modalDescriptionID,
+        useTopSafeAreaInset,
       }),
       [
         callContextFunctions,
@@ -385,6 +387,7 @@ const Modal = React.forwardRef<Instance, Props>(
         onClose,
         modalTitleID,
         modalDescriptionID,
+        useTopSafeAreaInset,
       ],
     );
 
@@ -415,6 +418,7 @@ const Modal = React.forwardRef<Instance, Props>(
           "z-overlay font-base fixed inset-0 box-border size-full overflow-x-hidden outline-none",
           !isMobileFullPage && "bg-[black]/50",
           "lm:overflow-y-auto lm:p-1000 lm:bg-[black]/50",
+          isMobileFullPage && useTopSafeAreaInset && "bg-white-normal",
         )}
         tabIndex={-1}
         onKeyDown={handleKeyDown}
@@ -448,7 +452,9 @@ const Modal = React.forwardRef<Instance, Props>(
             className={cx(
               "orbit-modal-wrapper-content",
               "lm:rounded-modal lm:overflow-visible overflow-y-auto overflow-x-hidden",
-              "font-base bg-elevation-flat shadow-level4 absolute box-border w-full",
+              "font-base bg-elevation-flat absolute box-border w-full",
+              isMobileFullPage && useTopSafeAreaInset && "mt-safe-top",
+              !useTopSafeAreaInset && "shadow-level4",
               "lm:relative lm:bottom-auto lm:pb-0",
               "lm:[&_.orbit-modal-section:last-of-type]:pb-1000 lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
               "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-theme(spacing.1000))]",
@@ -501,11 +507,22 @@ const Modal = React.forwardRef<Instance, Props>(
                   "z-overlay h-form-box-large pointer-events-none right-0 box-border flex w-full items-center justify-end",
                   "duration-fast transition-[shadow,_background-color] ease-in-out",
                   "lm:rounded-none",
-                  fixedClose || scrolled ? "lm:top-0 lm:right-auto fixed" : "absolute",
+                  fixedClose || scrolled
+                    ? [
+                        "lm:right-auto fixed",
+                        isMobileFullPage && useTopSafeAreaInset && "top-safe-top",
+                        "lm:top-0",
+                      ]
+                    : "absolute",
                   !isMobileFullPage && (fixedClose || scrolled) ? "top-800" : "top-0",
                   !isMobileFullPage && "rounded-t-modal",
                   modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
-                  scrolled && "shadow-fixed bg-white-normal",
+                  scrolled && [
+                    "bg-white-normal",
+                    useTopSafeAreaInset
+                      ? "shadow-[0_2px_2px_0_rgba(37,42,49,0.16),_0_4px_4px_0_rgba(37,42,49,0.12)]"
+                      : "shadow-fixed",
+                  ],
                   "[&_+_.orbit-modal-section:first-of-type]:pt-1300 [&_+_.orbit-modal-section:first-of-type]:m-0 [&_+_.orbit-modal-section:first-of-type]:border-t-0",
                   "[&_.orbit-button-primitive]:me-100 [&_.orbit-button-primitive]:pointer-events-auto",
                   "[&_.orbit-button-primitive_svg]:duration-fast [&_.orbit-button-primitive_svg]:text-ink-normal [&_.orbit-button-primitive_svg]:transition-[color] [&_.orbit-button-primitive_svg]:ease-in-out",

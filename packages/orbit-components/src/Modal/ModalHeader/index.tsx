@@ -55,6 +55,7 @@ const ModalHeader = ({
     isMobileFullPage,
     titleID,
     descriptionID,
+    useTopSafeAreaInset,
   } = React.useContext(ModalContext);
 
   useModalContextFunctions();
@@ -115,7 +116,9 @@ const ModalHeader = ({
             "orbit-modal-mobile-header bg-white-normal",
             "font-base font-heading-display text-extra-large text-heading-foreground ps-600 z-overlay end-1200 h-1300 invisible fixed start-0 box-border inline-block truncate py-0 pe-0 leading-[52px] opacity-0",
             "lm:start-auto lm:end-auto lm:p-0",
-            isMobileFullPage ? "top-0" : "top-400",
+            isMobileFullPage && !useTopSafeAreaInset && "top-0",
+            isMobileFullPage && useTopSafeAreaInset && "top-safe-top",
+            !isMobileFullPage && "top-400",
           )}
           role="presentation"
         >

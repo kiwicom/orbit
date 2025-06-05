@@ -1,0 +1,63 @@
+---
+title: Guidelines
+redirect_from:
+  - /components/buttonlink/
+---
+
+import ActionableTextSnippet from "snippets/actionable-text.mdx";
+import ButtonSizeSnippet from "snippets/button-size.mdx";
+
+<ReactExample exampleId="ButtonLink-default" />
+
+## When to use
+
+If you're unsure what component or type to use for actions, check out our [interactive guide on action components](/guides/using-button-type-components/).
+
+- To offer less important actions users can take.
+- To show many possible actions at once.
+- When the action is navigation inside the current app.
+- If it involves an interaction (like opening a modal or submitting a form).
+- With short action text.
+
+## When not to use
+
+- When you have a single action you want to draw attention to---use a [button](/components/action/button/).
+- To make text inside paragraphs or lists actionable---use a [text link](/components/action/textlink/).
+- For navigation to external sites and services---use a [text link](/components/action/textlink/).
+- With a long call to action---use a [text link](/components/action/textlink/).
+- So users can sign in using a social service---use a [SocialButton](/components/action/socialbutton/).
+
+## Component status
+
+<ComponentStatus component="ButtonLink" />
+
+## Content structure
+
+![IconLeft: visually supports button visibility; label: describes the main action and works best when short; icon right: shows additional options for the button (expandable, link, etc.).](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:0%3A100)
+
+## Behavior
+
+### Use apart from text
+
+Button links have extra spacing built into them so that they present a large enough
+[target size](/foundation/accessibility/#target-sizes) to be usable on smaller screens.
+So they have different heights than text and using them in a paragraph would cause visual misalignment.
+
+Use button links only as stand-alone elements.
+The extra space around them also helps show they're connected to an action.
+If you need links aligned with text, use [text links](/components/action/textlink/).
+
+## Content
+
+<ActionableTextSnippet />
+
+## Look & feel
+
+<ButtonSizeSnippet />
+
+## ButtonLink types
+
+Button links come in the **three types** (primary, secondary, and critical)
+and **three sizes** (large, normal, and small).
+
+<ReactExample exampleId="ButtonLink-types" />

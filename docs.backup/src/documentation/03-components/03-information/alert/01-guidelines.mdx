@@ -1,0 +1,198 @@
+---
+title: Guidelines
+redirect_from:
+  - /components/alert/
+---
+
+import { Grid } from "@kiwicom/orbit-components";
+
+import AlertWebImage from "../../../../images/component-structure/web/alert.svg";
+import AlertInfoActions from "../../../../images/alert-info-w-actions.svg";
+import AlertUseIconsDo from "../../../../images/alert-use-icons_do.svg";
+import AlertUseIconsDont from "../../../../images/alert-use-icons_dont.svg";
+
+## Overview
+
+Alert is used to communicate important information or feedback to the user. It is designed to grab the user's attention and convey a specific message in a clear and concise manner.
+
+<FigmaIframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D98684%253A898%26t%3DghvgAbaL1kqUSQGb-1" />
+
+<Usage>
+
+<UsageUse>
+
+- When you want to interrupt a user's journey with relevant information.
+
+- For things like status messages and additional explanations.
+
+</UsageUse>
+<UsageDontUse>
+
+- When there are already many on the screen. Don't overwhelm the user.
+
+- For messages that shouldn't interrupt the flow---consider [heading](/components/text/heading/)
+  and [text](/components/text/text/).
+
+- For temporary messages that don't draw much attention---use a [toast](/components/information/toast/).
+
+- When no results match a user query---use an [empty state](/components/progress-indicators/emptystate/).
+
+- When a user has to solve an issue **as soon as possible**---use a [modal](/components/overlay/modal/).
+
+</UsageDontUse>
+
+</Usage>
+
+## Component playground
+
+<ReactExample exampleId="Alert-default" />
+
+## Look & feel
+
+### Component structure
+
+<ComponentStructure
+  component="Alert"
+  vertical
+  web={{
+    Image: AlertWebImage,
+    parts: [
+      {
+        name: "Title",
+        description: "Works best with 5 to 8 words (in English).",
+      },
+      {
+        name: "Icon",
+        description: "Optionally supports the message.",
+      },
+      {
+        name: "Description",
+        description:
+          "Optionally provides more context for the message, usually when the message is long.",
+      },
+      {
+        name: "Actions",
+        description: "Optionally adds related actions for users to take.",
+      },
+    ],
+  }}
+/>
+
+### Alert types
+
+There are four types of alerts: **informational**, **success**, **warning**, and **critical**.
+
+<Grid columns="1fr" desktop={{ columns: "1fr 1fr" }} gap="16px">
+
+<Container>
+
+<div>
+
+#### Informational alert
+
+Informational alerts are the most common alerts.
+Use them to **guide a user’s attention to relevant details**, but keep it focused and related to the topic on the screen.
+
+</div>
+
+![Informational alert](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1544-5720)
+
+</Container>
+
+<Container>
+
+<div>
+
+#### Success alert
+
+Success alerts confirm that an instruction from the user, such as to make a payment or request a refund, was processed successfully.
+Usually used without an action button.
+
+</div>
+
+![Success alert](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1544-5717)
+
+</Container>
+
+<Container>
+
+<div>
+
+#### Warning alert
+
+Use warning alerts when you need to inform users about a **potentially unfavorable situation** that requires eventual action from them.
+If the issue requires immediate attention, use a critical alert.
+
+</div>
+
+![Warning alert](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1544-5714)
+
+</Container>
+
+<Container>
+
+<div>
+
+#### Critical alert
+
+Use critical alerts when something is **blocking users from continuing** or an issue needs to be **resolved immediately**.
+The alert should offer a solution to the problem.
+
+</div>
+
+![Critical alert](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1544-5711)
+
+</Container>
+
+</Grid>
+
+## Guidelines
+
+### Explain the alert
+
+Explain why the user was interrupted—confirm the action that will happen or describe what just happened.
+
+Keep it clear, short, and simple. Alerts break the user flow, so you want to explain why with as few details as possible.
+
+For longer messages, use a title for quick info. The user sees the title first when scanning the message. You can also provide additional context for the alert by adding a description. For more complex messages, let users access more information through an action button.
+
+<Guideline title="Provide context">
+
+While using Alerts it is important to provide context, so the user know directly from the title what is the message about.
+
+![Context provided.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:681-5225)
+
+![Context is not provided.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:681-5226)
+
+</Guideline>
+
+### Follow up with actions
+
+There are times when just simple information isn't enough
+and the user needs to take additional steps to resolve the problem or get additional details.
+
+In such cases, provide additional actions for your message.
+Alerts use special status buttons to match the button color with the alert color.
+If you need to provide specific contextual links, insert [text links](/components/action/textlink/) directly intro alert description.
+
+<Guideline type="do" title="Use actions where needed" svgs={[AlertInfoActions]}>
+
+Use at most two actions in each Alert: one primary and one subtle.
+Always align both actions to the left.
+Primary action goes first.
+
+</Guideline>
+
+### Use more than just color
+
+To maximize [accessibility](/foundation/accessibility/), make sure the message is clear from the content.
+Icons can also support the message.
+
+Color alone doesn't always distinguish different alert types.
+
+<Guideline title="Use icons" svgs={[AlertUseIconsDo, AlertUseIconsDont]}>
+
+Without icons, people with color blindness might see success and critical alerts as the same.
+Add icons especially for warning and critical alerts.
+
+</Guideline>

@@ -1,0 +1,94 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/checkbox/accessibility/
+---
+
+## Accessibility
+
+The Checkbox component has been designed with accessibility in mind, providing standard checkbox functionality with keyboard navigation and screen reader support.
+
+### Accessibility Props
+
+**Checkbox props:**
+
+| Name            | Type             | Description                                                                                                                                                                               |
+| :-------------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ariaControls    | string           | Identifies the element whose contents or presence are controlled by the Checkbox. Use this to connect the Checkbox to related elements that are shown/hidden based on the Checkbox state. |
+| ariaDescribedby | string           | Identifies the element that describes the Checkbox. Typically used to connect error messages or additional information to the Checkbox.                                                   |
+| hasError        | boolean          | When true, applies a visual error state and sets aria-invalid="true" to indicate an error to screen readers.                                                                              |
+| label           | React.Node       | Provides an accessible name for the Checkbox through its label content.                                                                                                                   |
+| disabled        | boolean          | When true, prevents interaction with the Checkbox and communicates this state to assistive technology.                                                                                    |
+| tabIndex        | string \| number | Controls the tab order of the checkbox within the page.                                                                                                                                   |
+
+### Automatic Accessibility Features
+
+- The component automatically manages ARIA attributes:
+  - Uses native HTML `<input type="checkbox">` element which has an implicit `role="checkbox"` for screen readers
+  - Automatically announces checked/unchecked states for screen readers
+  - Provides visual feedback for error states that is also communicated to screen readers
+  - Supports keyboard focus management with visible focus indicators
+  - Disabled state is properly communicated to screen readers
+
+### Best Practices
+
+- Always provide a descriptive label for the Checkbox to ensure screen reader users understand its purpose
+- Use `ariaControls` to establish relationships between a Checkbox and the content it shows/hides or controls
+- Use `ariaDescribedby` to connect supplementary information to the Checkbox, such as error messages, help text, or additional context for better screen reader communication
+- Group related Checkboxes with appropriate heading elements or fieldsets with legends
+- Ensure sufficient color contrast between the checkbox, its label, and the background
+- When using the hasError state, make sure to provide an accessible error message using ariaDescribedby
+- Use the Checkbox's native state management rather than creating custom checkbox-like components
+
+### Keyboard Navigation
+
+- **Tab**: Moves focus to the Checkbox
+- **Space**: Toggles the checked state of the Checkbox
+- When focused, the Checkbox has a visible focus indicator
+
+### Examples
+
+#### Basic Checkbox with Label
+
+```jsx
+<Checkbox label="I agree to the terms and conditions" />
+```
+
+Screen reader announces: "I agree to the terms and conditions, checkbox, not checked"
+
+#### Checkbox with Error State
+
+```jsx
+<div>
+  <Checkbox
+    label="I agree to the terms and conditions"
+    hasError={true}
+    ariaDescribedby="checkbox-error"
+  />
+  <div id="checkbox-error">You must accept the terms to continue</div>
+</div>
+```
+
+Screen reader announces: "I agree to the terms and conditions, You must accept the terms to continue, invalid, not checked, checkbox"
+
+#### Checkbox Controlling Content Display
+
+```jsx
+<div>
+  <Checkbox label="Show advanced options" ariaControls="advanced-options" />
+  <div id="advanced-options">{/* Advanced options content */}</div>
+</div>
+```
+
+Screen reader announces: "Show advanced options, checkbox, not checked" and indicates that the checkbox controls other content.
+
+#### Checkbox with Additional Information
+
+```jsx
+<Checkbox
+  label="Subscribe to newsletter"
+  info="Receive weekly updates about our products and services"
+/>
+```
+
+Screen reader announces: "Subscribe to newsletter, Receive weekly updates about our products and services, checkbox, not checked"

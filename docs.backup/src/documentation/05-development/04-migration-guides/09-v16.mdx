@@ -1,0 +1,353 @@
+---
+title: v16
+description: How to migrate to Orbit 16.0.0
+redirect_from:
+  - /migration-guides/v16/
+---
+
+# Orbit Migration Guide v16
+
+This migration guide focuses on the process of migrating from Orbit v15 to v16.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+This version addresses especially a change in the design tokens, and tailwind classes.
+
+## Breaking changes
+
+### Heading component & Tailwind classes
+
+A new heading token was added: `title0`. This token is similar to the previously existing `title1` token. Therefore, `title1` token was updated to have new font size and line height values.
+
+With that, the `Heading` component now accepts a new value for the `type` prop: `"title0"`.
+
+Because of that, all occurrences of `Heading` with `type="title1"` **must be replaced** with `type="title0"`, to avoid the visual breaking change.
+
+**Before:**
+
+```jsx
+<Heading type="title1">Title 1</Heading>
+```
+
+**Now:**
+
+```jsx
+<Heading type="title0">Title 0</Heading>
+```
+
+The Tailwind classes should also be updated. So if you are using tailwind classes that refer to `title1` in your components, be sure to update them to use `title0` in order to keep the same styles.
+
+**Before:**
+
+```jsx
+<p className="leading-heading-title1 text-heading-title1 font-heading-title1">Title 1</p>
+```
+
+**Now:**
+
+```jsx
+<p className="leading-heading-title0 text-heading-title0 font-heading-title0">Title 0</p>
+```
+
+### Tokens
+
+A number of new design tokens were introduced and others were removed. This means that some of the tailwind classes have been updated to reflect these changes.
+
+#### Heading
+
+Some deprecated Heading tokens were removed. They have been deprecated since the first Tailwind release and were now finally removed. The equivalent new tokens are:
+
+- `fontSizeHeading<TYPE>` -> `heading<TYPE>FontSize`
+- `lineHeightHeading<TYPE>` -> `heading<TYPE>LineHeight`
+- `fontWeightHeading<TYPE>` -> `heading<TYPE>FontWeight`
+
+Where `<TYPE>` can be `Display`, `DisplaySubtitle`, `Title1`, `Title2`, `Title3`, `Title4`, `Title5`, or `Title6`.
+
+#### Colors (Visual Breaking Change Only — from version 16.1.0)
+
+Some color tokens were updated to new values. While this does not affect the tokens usage nor the tailwind classes, it affects the visual appearance of the components.
+
+Those changes are expected and should be accepted. Nonetheless, we document them as visual breaking changes, so they are highlighted and clear for you.
+
+The updated colors are:
+
+- `productDarker` (from `#005C4E` to `#004D41`)
+- `blueNormal` (from `#0172CB` to `#0070C8`)
+- `blueDarker` (from `#004680` to `#003866`)
+- `greenNormal` (from `#28A138` to `#0A932B`)
+- `greenDarker` (from `#235C2B` to `#1C4A23`)
+- `orangeNormal` (from `#DF7B00` to `#CF6C00`)
+- `orangeNormalHover` (from `#C96F00` to `#B86000`)
+- `orangeNormalActive` (from `#B26200` to `#AD5700`)
+- `orangeDark` (from `#AD5700` to `#A75400`)
+- `orangeDarkHover` (from `#A75400` to `#954A00`)
+- `orangeDarkActive` (from `#954A00` to `#803F00`)
+- `orangeDarker` (from `#803F00` to `#663200`)
+- `redDarker` (from `#760909` to `#630808`)
+
+## Deprecations
+
+To minimize the impact of this release, the new tokens were added and the old ones were deprecated.
+This means that the old tokens and respective tailwind classes still work in this version, but they are deprecated and will be removed in a future version.
+
+We recommend to start adopting the new tokens and classes as soon as possible.
+
+As some components have their props relying on these tokens, the props were also updated to reflect the changes in the design tokens.
+The old values of the props also still work in this version, but they are deprecated and will be removed in a future version.
+
+We recommend to start adopting the new values as soon as possible.
+
+### Tokens and Tailwind classes
+
+#### Border Radius
+
+Four border radius tokens were deprecated (to be released in the next major version) and six new ones were added.
+
+Here's the mapping for the new tokens:
+
+- `borderRadiusSmall` -> `borderRadius50`
+- `borderRadiusNormal` -> `borderRadius100` (value change from 3px to 4px)
+- `borderRadiusLarge` -> `borderRadius150`
+- `borderRadiusCircle` -> `borderRadiusFull`
+- `borderRadius200` (new value of 8px, **available from version 16.1.0**)
+- `borderRadius300` (new value of 12px)
+- `borderRadius400` (new value of 16px)
+
+And their respective tailwind classes:
+
+- `rounded-small` -> `rounded-50`
+- `rounded-normal` -> `rounded-100` (value change from 3px to 4px)
+- `rounded-large` -> `rounded-150`
+- `rounded-circle` -> `rounded-full`
+- `rounded-200` (new value of 8px, **available from version 16.1.0**)
+- `rounded-300`
+- `rounded-400`
+
+#### Elevation
+
+Five elevation (box shadow) tokens were deprecated (to be removed in the next major version) and five new ones were added.
+
+Here's the mapping for the new tokens:
+
+- `elevationActionBoxShadow` -> `elevationLevel1BoxShadow`
+- `elevationActionActiveBoxShadow` -> `elevationLevel2BoxShadow`
+- `elevationRaisedBoxShadow` -> `elevationLevel3BoxShadow`
+- `elevationRaisedReverseBoxShadow` -> `elevationLevel3ReverseBoxShadow`
+- `elevationOverlayBoxShadow` -> `elevationLevel4BoxShadow`
+
+And their respective tailwind classes:
+
+- `shadow-action` -> `shadow-level1`
+- `shadow-action-active` -> `shadow-level2`
+- `shadow-raised` -> `shadow-level3`
+- `shadow-raised-reverse` -> `shadow-level3-reverse`
+- `shadow-overlay` -> `shadow-level4`
+
+#### Spacing
+
+The spacing tokens were also updated, allowing for more flexibility in the spacing values. The new tokens and their corresponding mapping are:
+
+- `spaceXXXSmall` -> `space50` (2px)
+- `spaceXXSmall` -> `space100` (4px)
+- _(new token)_ -> `space150` (6px)
+- `spaceXSmall` -> `space200` (8px)
+- `spaceSmall` -> `space300` (12px)
+- `spaceMedium` -> `space400` (16px)
+- _(new token)_ -> `space500` (20px)
+- `spaceLarge` -> `space600` (24px)
+- `spaceXLarge` -> `space800` (32px)
+- `spaceXXLarge` -> `space1000` (40px)
+- _(new token)_ -> `space1200` (48px)
+- `spaceXXXLarge` -> **DEPRECATED** (52px)
+- _(new token)_ -> `space1600` (64px)
+
+This means that a vast number of tailwind classes were also updated to reflect these changes. Below, some examples of the updated classes, although we are not listing them all, as there are too many:
+
+- `p-xxxs` -> `p-50`
+- `m-xxs` -> `m-100`
+- `h-xs`-> `h-200`
+- `w-sm` -> `w-300`
+- `size-md` -> `size-400`
+- `top-lg` -> `top-600`
+- `space-x-xl` -> `space-x-800`
+- `space-y-xxl` -> `space-y-1000`
+- `left-xxxl` -> `left-[52px]` (custom hardcoded value)
+
+The `spaceXXXLarge` token is deprecated and will be removed in a future version, as well as all tailwind classes associated to it.
+If you are using it or any tailwind class associated to its value, please replace it with a custom hardcoded value, or check with your designer for the best alternative solution.
+
+### Box component
+
+#### borderRadius & elevation props
+
+The `borderRadius` and `elevation` props were updated to reflect the changes in the design tokens.
+
+**Before:**
+
+```jsx
+<Box borderRadius="small" elevation="action">…</Box>
+<Box borderRadius="normal" elevation="raised">…</Box>
+<Box borderRadius="large" elevation="raisedReverse">…</Box>
+<Box borderRadius="circle" elevation="overlay">…</Box>
+```
+
+**Now:**
+
+```jsx
+<Box borderRadius="50" elevation="level1">…</Box>
+<Box borderRadius="100" elevation="level3">…</Box>
+<Box borderRadius="150" elevation="level3Reverse">…</Box>
+<Box borderRadius="full" elevation="level4">…</Box>
+```
+
+#### spacing props
+
+Both `padding` and `margin` props were updated to reflect the changes in the design tokens. The change also applies when using the object notation and inside media queries props.
+
+The code snippets below show some examples of the changes.
+
+**Before:**
+
+```jsx
+<Box padding="XXXSmall">"XXXSmall" padding</Box>
+<Box margin="XXSmall">"XXSmall" margin</Box>
+<Box padding={{ top: "XSmall", left: "small" }}>padding-top="XSmall"; padding-left="small"</Box>
+<Box margin={{ bottom: "medium", right: "large" }}>margin-bottom="medium"; margin-right="large"</Box>
+<Box tablet={{ padding: "XLarge", margin: "XXLarge" }}>padding="XLarge"; margin="XXLarge" (tablet and bigger)</Box>
+```
+
+**Now:**
+
+```jsx
+<Box padding="50">"50" padding</Box>
+<Box margin="100">"100" margin</Box>
+<Box padding={{ top: "200", left: "300" }}>padding-top="200"; padding-left="300"</Box>
+<Box margin={{ bottom: "400", right: "600" }}>margin-bottom="400"; margin-right="600"</Box>
+<Box tablet={{ padding: "800", margin: "1000" }}>padding="800"; margin="1000" (tablet and bigger)</Box>
+```
+
+### Stack component
+
+The `spacing` prop in `Stack` was updated to accept the new values associated with the new design tokens.
+Similarly to the `Box` component, the media queries props also accept the new values for spacing.
+
+**Before:**
+
+```jsx
+<Stack spacing="XXSmall">"XXSmall" spacing</Stack>
+<Stack tablet={{ spacing: "small" }}>"small" spacing (tablet and bigger)</Stack>
+// ...
+```
+
+**Now:**
+
+```jsx
+<Stack spacing="100">"100" spacing</Stack>
+<Stack tablet={{ spacing: "300" }}>"300" spacing (tablet and bigger)</Stack>
+// ...
+```
+
+### HorizontalScroll component
+
+The `spacing` prop in `HorizontalScroll` inherits its values from the `Stack` component.
+Therefore, it was also updated to accept new values associated with the new design tokens.
+
+**Before:**
+
+```jsx
+<HorizontalScroll spacing="XXSmall">"XXSmall" spacing</HorizontalScroll>
+// ...
+```
+
+**Now:**
+
+```jsx
+<HorizontalScroll spacing="100">"100" spacing</HorizontalScroll>
+// ...
+```
+
+### LinkList component
+
+The `spacing` prop in `LinkList` inherits its values from the `Stack` component.
+Therefore, it was also updated to accept new values associated with the new design tokens.
+
+**Before:**
+
+```jsx
+<LinkList spacing="XXSmall">"XXSmall" spacing</LinkList>
+// ...
+```
+
+**Now:**
+
+```jsx
+<LinkList spacing="100">"100" spacing</LinkList>
+// ...
+```
+
+### Tabs component
+
+The `spacing` prop in `Tabs` inherits its values from the `Stack` component.
+Therefore, it was also updated to accept new values associated with the new design tokens.
+
+**Before:**
+
+```jsx
+<Tabs spacing="XXSmall">"XXSmall" spacing</Tabs>
+// ...
+```
+
+**Now:**
+
+```jsx
+<Tabs spacing="100">"100" spacing</Tabs>
+// ...
+```
+
+### Inline component
+
+The `spacing` prop in `Inline` was also updated to accept the new values from the tokens.
+
+**Before:**
+
+```jsx
+<Inline spacing="XXSmall">"XXSmall" spacing</Inline>
+// ...
+```
+
+**Now:**
+
+```jsx
+<Inline spacing="100">"100" spacing</Inline>
+// ...
+```
+
+### Separator component
+
+The `sideOffset` prop in `Separator` was also updated to accept the new values from the tokens.
+
+**Before:**
+
+```jsx
+<Separator spacing="small">"small" spacing</Separator>
+// ...
+```
+
+**Now:**
+
+```jsx
+<Separator spacing="300">"300" spacing</Separator>
+// ...
+```
+
+## Codemod
+
+A codemod is available to help with the migration. It should target the tokens and tailwind classes that were updated and correctly migrate them.
+
+Please ensure the changes are expected and there is no change missing. Please note that the codemod **does not** guarantee a full migration, nor its complete correcteness.
+Manual checks are still necessary, especially if prop values are being calculated conditionally.
+
+The codemod should be executed from your code directory. It will look for all files with the extensions `.js`, `.jsx`, `.ts`, and `.tsx` in the current directory and all its subfolders. To execute, run the following command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/tokens-v16.mjs | node --input-type=module
+```

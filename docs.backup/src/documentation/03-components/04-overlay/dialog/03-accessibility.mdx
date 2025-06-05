@@ -1,0 +1,120 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/dialog/accessibility/
+---
+
+## Accessibility
+
+The Dialog component has been designed with accessibility in mind, providing features that enhance the experience for users of assistive technologies.
+
+### Accessibility props
+
+The following props are available to improve the accessibility of your Dialog component:
+
+| Name        | Type                                                    | Description                                                                                                                     |
+| :---------- | :------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| title       | `React.Node`                                            | Provides a visible title that is associated with the dialog as its accessible name.                                             |
+| titleAs     | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6" \| "div"` | Defines the semantic HTML element for the title while maintaining its visual appearance.                                        |
+| description | `React.Node`                                            | Provides additional context about the dialog's purpose, which is automatically associated with the dialog via aria-describedby. |
+| triggerRef  | `React.RefObject<HTMLElement>`                          | References the element that triggered the dialog, allowing focus to return to it when the dialog closes.                        |
+
+### Automatic Accessibility Features
+
+The Dialog component automatically implements the following accessibility features:
+
+- `role="dialog"`: Identifies the element as a dialog to assistive technologies.
+
+- `aria-modal="true"`: Indicates that the dialog is modal, meaning it blocks interaction with page content.
+
+- `aria-labelledby`: Automatically associates the dialog with its title for screen readers using a generated ID.
+
+- `aria-describedby`: When a description is provided, it's automatically associated with the dialog using a generated ID.
+
+- The Dialog's animations respect the user's reduced motion preferences.
+
+### Focus Management
+
+- When opened, focus is automatically moved to the first focusable element within the dialog.
+
+- When closed, focus returns to the element that triggered the dialog (when `triggerRef` is provided).
+
+### Best practices
+
+- Always provide a descriptive `title` that clearly indicates the purpose of the dialog.
+
+- Use the `description` prop to provide additional context when needed, especially for complex interactions.
+
+- Ensure that primary and secondary actions have clear, descriptive labels that indicate their purpose.
+
+- Use semantic heading levels (`titleAs` prop) that fit within your page's heading hierarchy. For example, if your dialog appears within a page section that uses `h2`, consider using `titleAs="h3"` for proper document structure.
+
+- Test keyboard navigation within the dialog to ensure all interactive elements are accessible.
+
+- When creating a dialog trigger, help screen reader users understand the relationship between the trigger and the dialog:
+  1. Apply `aria-expanded="true"` to the trigger element when the dialog is open and `aria-expanded="false"` when it's closed.
+  2. Use `aria-controls` on the trigger element to associate it with the dialog via Dialog component's `id`.
+
+### Keyboard Navigation
+
+The Dialog component supports the following keyboard interactions:
+
+- **Escape** key closes the dialog
+- **Tab** key navigates through focusable elements within the dialog, with focus being contained within the dialog while it's open
+- **Enter/Space** keys activate buttons and other interactive elements within the dialog
+
+### Examples
+
+#### Basic Dialog with accessible title and semantic heading level
+
+```jsx
+<Dialog
+  title="Edit your profile information"
+  titleAs="h2"
+  description="Update your personal details to keep your account information current."
+  primaryAction={<Button type="critical">Save changes</Button>}
+  secondaryAction={<Button type="secondary">Cancel</Button>}
+  onClose={() => handleClose()}
+/>
+```
+
+#### Dialog with proper trigger
+
+```jsx
+function ExampleComponent() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const buttonRef = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={buttonRef} onClick={() => setIsOpen(true)} aria-expanded={isOpen}>
+        Change email preferences
+      </Button>
+
+      {isOpen && (
+        <Dialog
+          title="Email notification settings"
+          description="Choose which email notifications you'd like to receive from us."
+          primaryAction={
+            <Button
+              onClick={() => {
+                savePreferences();
+                setIsOpen(false);
+              }}
+            >
+              Save preferences
+            </Button>
+          }
+          secondaryAction={
+            <Button type="secondary" onClick={() => setIsOpen(false)}>
+              Cancel
+            </Button>
+          }
+          onClose={() => setIsOpen(false)}
+          triggerRef={buttonRef}
+        />
+      )}
+    </>
+  );
+}
+```

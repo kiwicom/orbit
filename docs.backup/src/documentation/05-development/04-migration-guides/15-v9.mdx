@@ -1,0 +1,107 @@
+---
+title: v9
+description: How to migrate to Orbit 9.0.0
+redirect_from:
+  - /migration-guides/v9/
+---
+
+# Orbit Migration Guide v9
+
+This migration guide focuses on the process of migrating from Orbit v8.1.2 to v9.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+This version of Orbit is **still** compatible with React 17 and doesn't make use of new features only available in React 18.
+
+That being said, because v9 now recommends using React 18, some changes are required to allow for this transition.
+
+## Breaking changes
+
+### `react-uid` vs React.useId
+
+React 18 introduces this new hook to generate stable random ids called `useId`, while Orbit used to rely on `react-uid` for that purpose.
+
+`react-uid` is not compatible with React 18 (especially when Strict or Concurrent modes are enabled) and as a result was removed from Orbit's dependencies.
+
+The need to generate random ids is still present, however.
+
+Orbit v9 introduces a new prop on `OrbitProvider` called `useId`.
+
+- **React 18**: if you are using React 18, please pass in `React.useId`, e.g.
+
+  ```tsx
+  import * as React from "react";
+
+  export const Root = (props: Props) => {
+    return (
+      <OrbitProvider theme={theme} useId={React.useId}>
+        {children}
+      </OrbitProvider>
+    );
+  };
+  ```
+
+- **React 17**: if you are using React 17, you will need to:
+
+  - install `react-uid` in your dependencies (`yarn add react-uid`)
+  - pass `react-uid`'s `useUID` export in the `useId` prop, as well as mounting two providers (`UIDReset` and `UIDFork`), like so
+
+  ```tsx
+  import { useUID, UIDReset, UIDFork } from "react-uid";
+
+  export const Root = (props: Props) => {
+    return (
+      <UIDReset>
+        <UIDFork>
+          <OrbitProvider theme={theme} useId={useUID}>
+            {children}
+          </OrbitProvider>
+        </UIDFork>
+      </UIDReset>
+    );
+  };
+  ```
+
+One more note: the underlying implementation for how ids are generated is slightly different now. In particular, Orbit's `useRandomIdSeed` no longer relies on `react-uid`'s `useUIDSeed`.
+
+## Deprecations
+
+### ClickOutside
+
+The ClickOutside component is now deprecated and its usage should be replaced by the `useClickOutside` hook, already available in Orbit and documented [here](/utilities/useClickOutside/).
+
+**Before:**
+
+```jsx
+<ClickOutside onClickOuside={...}>
+  <div>
+    Some content
+  </div>
+</ClickOutside>
+```
+
+**Now:**
+
+```jsx
+useClickOutside(ref, ev => ...);
+
+<div ref={ref}>
+  Some content
+</div>
+```
+
+### Flow types
+
+Flow types are being deprecated in favor of TypeScript types. The Flow types definitions will be removed in a future version of Orbit.
+
+### Removed previously deprecated components
+
+The following deprecated components were removed in this version:
+
+- FormFeedback
+- InputField
+- InputFile
+- InputGroup
+- Select
+- Textarea
+
+Notice that for most of them there are already replacements available in Orbit, with the same name. The removed components were only the deprecated versions.

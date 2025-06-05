@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "esnext",
+    "noEmit": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "useUnknownInCatchVariables": false
+  },
+  "exclude": ["**/scripts/**/*"]
+}

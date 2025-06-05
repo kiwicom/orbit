@@ -1,0 +1,170 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/select/accessibility/
+---
+
+## Accessibility
+
+The Select component has been designed with accessibility in mind.
+
+It supports keyboard navigation and includes the following properties that provide additional information to screen readers:
+
+| Name            | Type     | Description                                                             |
+| :-------------- | :------- | :---------------------------------------------------------------------- |
+| ariaLabel       | `string` | Allows you to specify an `aria-label` attribute of the component.       |
+| ariaLabelledby  | `string` | Allows you to specify an `aria-labelledby` attribute of the component.  |
+| ariaDescribedby | `string` | Allows you to specify an `aria-describedby` attribute of the component. |
+
+While these props are optional, we recommend including them to ensure proper accessibility of the component, especially if the `label` prop is not provided.
+
+These attributes help users better understand the component's purpose and context, improving the overall experience with assistive technologies.
+
+### Examples
+
+The following code snippets show different ways to use these properties:
+
+```jsx
+<Select options={options} value={categoryValue} onChange={onChange} label="Category" />
+```
+
+```jsx
+<Select
+  options={options}
+  value={categoryValue}
+  onChange={onChange}
+  ariaLabel="Select passenger category"
+/>
+```
+
+```jsx
+<Stack>
+  <p id="passengers-category-label" style={{ display: "none", visibility: "hidden" }}>
+    Select passenger category
+  </p>
+
+  <Select
+    options={options}
+    value={categoryValue}
+    onChange={onChange}
+    ariaLabelledby="passengers-category-label"
+  />
+</Stack>
+```
+
+Using the `ariaLabel` prop enables screen readers to properly announce the Select component if the `label` prop is not provided.
+
+Alternatively, you can use the `ariaLabelledby` prop to reference another element that serves as a label for the Select component. The `ariaLabelledby` prop can reference multiple ids, separated by a space. The elements with those ids can be hidden, so that their text is only announced by screen readers.
+
+Note that if both `ariaLabel` and `ariaLabelledby` props are provided, `ariaLabelledby` takes precedence.
+
+For better screen reader experience, you can always complement the `label` prop with `ariaLabel` or `ariaLabelledby`:
+
+```jsx
+<Select
+  options={options}
+  value={languageValue}
+  onChange={onChange}
+  label="Language"
+  ariaLabel="Select your language"
+/>
+```
+
+For enhanced accessibility, it is recommended to have these label strings translated.
+
+The `ariaDescribedby` prop allows you to associate additional descriptive text with the Select component. This is useful for providing supplementary information that screen readers will announce after reading the component's label.
+
+```jsx
+  <Select
+    options={countryOptions}
+    value={countryValue}
+    onChange={onChange}
+    label="Country"
+    ariaDescribedby="country-info"
+  />
+  <p id="country-info" style={{ display: "none", visibility: "hidden" }}>
+    Select the country where you currently reside.
+  </p>
+```
+
+When using the `help` or `error` props, their content is set as `aria-describedby` on the element. Screen readers will announce this additional information after reading the component's label (whether provided via `label`, `ariaLabel`, or `ariaLabelledby` props).
+
+```jsx
+<Select
+  options={options}
+  value={nationalityValue}
+  onChange={onChange}
+  label="Nationality"
+  error="Required field"
+/>
+```
+
+It would have the screen reader announce: "Nationality. Required field."
+
+If you provide both an `ariaDescribedby` prop and use `error` or `help`, the component automatically combines them, ensuring all descriptive content is properly announced:
+
+```jsx
+  <p id="terms-info" style={{ display: "none", visibility: "hidden" }}>
+    Please review our terms and conditions.
+  </p>
+  <Select
+    options={termsOptions}
+    value={termsValue}
+    onChange={onChange}
+    label="Accept Terms"
+    error="This field is required"
+    ariaDescribedby="terms-info"
+  />
+```
+
+In this example, both the "terms-info" text and the error message will be announced by screen readers. The text from `ariaDescribedby` will be announced first, followed by the text from `error`.
+
+### InputGroup Integration
+
+When using Select within an InputGroup, the `aria-describedby` association follows these rules:
+
+#### Example 1
+
+If the InputGroup has `error`/`help` messages, these will be properly associated with all child components:
+
+```jsx
+<InputGroup label="Travel preferences" error="Please complete all fields">
+  <Select options={countryOptions} label="Departure country" />
+  <Select options={countryOptions} label="Destination country" />
+</InputGroup>
+```
+
+In this example, all Select components will have the InputGroup's error message "Please complete all fields" announced by screen readers.
+
+#### Example 2
+
+If individual Select components have their own `error`/`help` messages (and the InputGroup doesn't), only those specific components will have `aria-describedby` set:
+
+```jsx
+<InputGroup label="Travel preferences">
+  <Select options={countryOptions} label="Departure country" />
+  <Select options={countryOptions} label="Destination country" error="This field is required" />
+</InputGroup>
+```
+
+In this example, only the second Select will have its error message "This field is required" announced.
+
+#### Example 3
+
+Avoid setting `ariaDescribedby` directly on Select components when inside an InputGroup, as these values will be overwritten by the InputGroup's internal accessibility logic:
+
+```jsx
+<InputGroup label="Contact information">
+  <Select
+    options={countryOptions}
+    label="Country"
+    ariaDescribedby="country-hint" // This will be overwritten
+  />
+  <InputField label="Phone number" />
+  <p id="country-hint" style={{ display: "none", visibility: "hidden" }}>
+    Select the country prefix of your phone number
+  </p>
+</InputGroup>
+```
+
+In this example, the `ariaDescribedby` value "country-hint" will be ignored because the InputGroup manages the accessibility associations internally. Instead, rely on the InputGroup's `error`/`help` props or the component's own `error`/`help` props.

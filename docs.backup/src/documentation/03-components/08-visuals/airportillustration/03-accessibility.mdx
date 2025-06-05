@@ -1,0 +1,67 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/airportillustration/accessibility/
+---
+
+## Accessibility
+
+The AirportIllustration component has been designed with accessibility in mind, providing appropriate ARIA roles and alt text options for screen reader users.
+
+### Accessibility Props
+
+The following props are available to improve the accessibility of your AirportIllustration component:
+
+| Name | Type                      | Description                                                                                                                                                                                                                                      |
+| :--- | :------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| alt  | `string`                  | Provides alternative text description of the illustration for screen readers when using `role="img"`. Should be used when the illustration conveys important information.                                                                        |
+| role | `"img" \| "presentation"` | Defines the ARIA role of the illustration. Default is `"presentation"`, which hides the illustration from screen readers. Use `"img"` when the illustration conveys important information and be sure to include a meaningful `alt` description. |
+
+### Automatic Accessibility Features
+
+- The component automatically manages ARIA attributes:
+  - Default role is set to `"presentation"` to hide the illustration from screen readers.
+  - When using `role="img"`, the alt text is announced to screen readers.
+
+### Best Practices
+
+- Use `role="presentation"` (default) for illustrations that are purely decorative and do not convey important information.
+- Use `role="img"` with a descriptive `alt` text when the AirportIllustration conveys important information that users need to understand.
+- Keep `alt` text descriptions concise but descriptive when the illustration has informational value.
+- The `alt` text should always be translated to the user's language.
+- Do not use empty alt text (`alt=""`) with `role="img"` as this creates confusion for screen reader users.
+- Consider providing text alternatives in the surrounding content for complex illustrations.
+
+### Examples
+
+#### Decorative Illustration (Default)
+
+```jsx
+<AirportIllustration name="PRGSmartPass" />
+```
+
+Nothing is announced by a screen reader (illustration is skipped as it has `role="presentation"` by default).
+
+#### Informational Illustration
+
+```jsx
+<AirportIllustration
+  name="PRGSmartPass"
+  role="img"
+  alt="Prague Airport SmartPass illustration showing fast track entrance"
+/>
+```
+
+Screen reader announces: "Prague Airport SmartPass illustration showing fast track entrance".
+
+#### Illustration within Content Context
+
+```jsx
+<div>
+  <Heading>Prague Fast Track</Heading>
+  <AirportIllustration name="PRGSmartPass" role="presentation" />
+  <Text>Skip the regular security lines with our SmartPass option at Prague Airport.</Text>
+</div>
+```
+
+Screen reader announces the heading content (`Prague Fast Track`) and text content (`Skip the regular security lines with our SmartPass option at Prague Airport.`), but skips the illustration.

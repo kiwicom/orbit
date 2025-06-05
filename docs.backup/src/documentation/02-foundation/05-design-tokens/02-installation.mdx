@@ -1,0 +1,83 @@
+---
+title: Installation
+description: How to install and use our design tokens package
+---
+
+If you're already using `@kiwicom/orbit-components`,
+you don't need to install the tokens
+because they're included as a dependency to ensure compatibility,
+see [usage with `@kiwicom/orbit-components`](#usage-with-kiwicomorbit-components).
+
+If not, you can install the package on its own.
+
+```shell
+# Using npm
+npm install --save @kiwicom/orbit-design-tokens
+
+# Using yarn
+yarn add @kiwicom/orbit-design-tokens
+```
+
+## Usage without @kiwicom/orbit-components
+
+Once installed in your codebase,
+you can use our design tokens in JavaScript environment
+by simply importing them.
+
+```js
+import { defaultTheme } from "@kiwicom/orbit-design-tokens";
+```
+
+The `defaultTheme` object contains all design tokens
+that are available for every usage.
+
+```js
+/*
+  The content of defaultTheme object
+*/
+{
+  ...,
+  fontFamily: "Roboto",
+  fontSizeSmall: "12px",
+  fontSizeNormal: "14px",
+  fontSizeLarge: "16px",
+  ...
+}
+```
+
+Use this only in cases when you don't need to also work with `@kiwicom/orbit-components`.
+
+## Usage with @kiwicom/orbit-components
+
+To be able to use our design tokens together with Orbit React components,
+we highly recommend using import from the components package,
+instead of from design tokens.
+
+```js
+import { defaultTheme } from "@kiwicom/orbit-components";
+```
+
+There is one minor difference:
+`defaultTheme` contains a few more things
+that we use for creating more advanced and scalable user interfaces.
+
+```js
+/*
+  The content of defaultTheme object
+*/
+{
+  rtl: true,
+  transitions: true,
+  lockScrolling: true,
+  lockScrollingBarGap: true,
+  orbit: {
+    ...,
+    fontFamily: "Roboto",
+    fontSizeSmall: "12px",
+    fontSizeNormal: "14px",
+    ...
+  }
+}
+```
+
+> You can read more about the [support of right-to-left languages](/development/utilities/rtl-languages).

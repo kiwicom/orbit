@@ -1,0 +1,34 @@
+---
+title: Guidelines
+redirect_from:
+  - /components/stepper/
+---
+
+import StepperTitlesSnippet from "snippets/stepper-titles.mdx";
+
+<ReactExample exampleId="Stepper-default" />
+
+## When to use
+
+- To let users change small amounts of something in a separate context.
+
+## Component status
+
+<ComponentStatus component="Stepper" />
+
+## Content structure
+
+![Value: displays the current value; decrement controller: decreases the value and to improve accessibility it's best to add a title describing the action; increment controller: increases the value and to improve accessibility it's best to add a title describing the action.](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:194%3A0)
+
+## Content
+
+### Make the value clear
+
+A stepper by itself only presents a number.
+Make sure it's clear from context what the value refers to
+and what users are changing by incrementing in either direction.
+
+You can do this with [text](/components/text/text/), [icons](/components/visuals/icon/),
+or other clues nearby to show the full context of the number.
+
+<StepperTitlesSnippet />

@@ -1,0 +1,160 @@
+---
+title: v20
+description: How to migrate to Orbit 20.0.0
+redirect_from:
+  - /migration-guides/v20/
+---
+
+# Orbit Migration Guide v20
+
+This migration guide focuses on the process of migrating from Orbit v19 to v20.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### Badge component removed the `border` prop
+
+The `Badge` component removed the `border` prop, as it was not being used internally.
+
+Please adapt your code to remove the `border` prop. No visual changes are expected.
+
+**Before:**
+
+```jsx
+import Badge from "@kiwicom/orbit-components/lib/Badge";
+
+<Badge border={false} />;
+```
+
+**Now:**
+
+```jsx
+import Badge from "@kiwicom/orbit-components/lib/Badge";
+
+<Badge />;
+```
+
+### Modal component removed `autoFocus` prop
+
+The `Modal` component removed the `autoFocus` prop, as the focus management is now handled automatically to comply with accessibility.
+
+Therefore, this prop has no effect now. The first focusable element within the modal will be focused automatically when the modal is opened.
+
+This prop had a default value of `true`, therefore, the default behavior remains the same.
+
+**Before:**
+
+```jsx
+import Modal from "@kiwicom/orbit-components/lib/Modal";
+
+<Modal autoFocus={false} />;
+```
+
+**Now:**
+
+```jsx
+import Modal from "@kiwicom/orbit-components/lib/Modal";
+
+<Modal />;
+```
+
+### Required props in HorizontalScroll if `arrows` is true
+
+The `HorizontalScroll` component now requires `arrowLeftAriaLabel` and `arrowRightAriaLabel` props if `arrows` is true.
+
+**Before:**
+
+```jsx
+import HorizontalScroll from "@kiwicom/orbit-components/lib/HorizontalScroll";
+
+<HorizontalScroll arrows />;
+```
+
+**Now:**
+
+```jsx
+import HorizontalScroll from "@kiwicom/orbit-components/lib/HorizontalScroll";
+
+<HorizontalScroll arrows arrowLeftAriaLabel="Scroll left" arrowRightAriaLabel="Scroll right" />;
+```
+
+Make sure to provide translated strings for the `arrowLeftAriaLabel` and `arrowRightAriaLabel` props.
+
+To ease the migration, we provide a codemod to help you out, with some default generic translations.
+The codemod will inject `intl.formatMessage` calls with the default translations, in this case:
+
+```jsx
+// left arrow
+intl.formatMessage({
+  id: "common.screenreader.arrow.scroll_left",
+  defaultMessage: "Scroll left",
+});
+// right arrow
+intl.formatMessage({
+  id: "common.screenreader.arrow.scroll_right",
+  defaultMessage: "Scroll right",
+});
+```
+
+Feel free to customize the translations according to your needs, but please maintain the same translation key structure (`common.screenreader.*`) when requesting translations.
+
+### Required prop in Modal if `onClose` is defined and `hasCloseButton` is explicitly false
+
+The `Modal` component used to have a default value for the prop `labelClose`. We removed this default value, so now you need to provide it.
+This prop is also now required if `onClose` is defined and `hasCloseButton` is **not** explicitly set to `false` (the default value of `hasCloseButton` prop is still `true`, as it has been).
+
+This `labelClose` prop provides the label for the close button that is applied to the `Modal` so that assistive technologies can announce it correctly, given that it renders a button with just an icon.
+
+**Before:**
+
+```jsx
+import Modal from "@kiwicom/orbit-components/lib/Modal";
+
+<Modal onClose={handleClose} />;
+```
+
+The `labelClose` prop has a default value of `"Close"`. Notice that the `hasCloseButton` prop is undefined, so by default it is set to `true`.
+
+**Now:**
+
+```jsx
+import Modal from "@kiwicom/orbit-components/lib/Modal";
+
+<Modal onClose={handleClose} labelClose="Close" />;
+```
+
+Make sure to provide translated strings for the `labelClose` prop.
+
+To ease the migration, we provide a codemod to help you out, with some default generic translations.
+The codemod will inject `intl.formatMessage` calls with the default translations, in this case:
+
+```jsx
+intl.formatMessage({
+  id: "orbit.button_close",
+  defaultMessage: "Close",
+});
+```
+
+Feel free to customize the translations according to your needs, by eventually providing more context to the modal it refers to.
+
+## Fixes
+
+### `scope` prop in the `TableCell` can now be set only for the `th` element (from version 20.1.0)
+
+Previously, it was possible to set the `scope` prop on the `TableCell` component when rendered as `td` element, but this was incorrect.
+
+As a result, the `scope` prop can now only be set when the `TableCell` is rendered as a `th` element.
+
+## Codemod
+
+A codemod is available to help with the migration. It should target the new props that require (translated) strings.
+Please note that the codemod **does not** guarantee a full migration, nor its complete correctness.
+Manual checks are still necessary, especially if some props are being calculated conditionally or the components are imported with different names.
+
+To run the codemod, use the following command:
+
+```bash
+npx jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/aria-labels-v20.js --parser=tsx --extensions=ts,tsx <pathToYourCode>
+```
+
+Make sure to run prettier after running the codemod, as it might introduce some formatting changes.

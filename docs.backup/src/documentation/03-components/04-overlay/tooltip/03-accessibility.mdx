@@ -1,0 +1,51 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/tooltip/accessibility/
+---
+
+## Accessibility
+
+### Tooltip
+
+The Tooltip component has been designed with accessibility in mind. It can be used with keyboard navigation and includes properties that enhance the experience for users of assistive technologies.
+
+While the `aria-label` and `aria-labelledby` attributes are not needed for the Tooltip component itself, it is important to ensure that the components passed as children can be perceived by assistive technologies. This ensures that the Tooltip component is accessible.
+
+#### Example 1
+
+The content of children component is text, so it is read by screen reader.
+
+```jsx
+<Tooltip
+  content={
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  }
+>
+  <Text>Learn more.</Text>
+</Tooltip>
+```
+
+The screen reader will announce: "Learn more. Lorem ipsum dolor sit amet.".
+
+#### Example 2
+
+The children element is an icon component. To achieve the accessibility of the Tooltip, adding an `aria-label` to the icon component is necessary.
+
+```jsx
+<Tooltip
+  content={
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  }
+>
+  <Airplane ariaLabel="More information" />
+</Tooltip>
+```
+
+Once the icon is focused by the screen reader, it will announce: "More information", followed by announcing the content of the tooltip: "Lorem ipsum dolor sit amet.".
+
+The `Tooltip` component renders a wrapping `span` with the `role="button"` attribute by default. Ensure that the trigger component is set as a non-interactive component (for example, using the `asComponent` prop) to avoid the accessibility violation of nesting interactive controls (`Interactive controls must not be nested`).

@@ -1,0 +1,307 @@
+---
+title: Design
+redirect_from:
+  - /components/button/
+---
+
+import { Grid } from "@kiwicom/orbit-components";
+
+import ButtonWebImage from "../../../../images/component-structure/web/button.svg";
+import ButtonPrimaryActionDo from "../../../../images/button-primary-action-do.svg";
+import ButtonPrimaryActionDont from "../../../../images/button-primary-action-dont.svg";
+import ButtonShowHierarchyDo from "../../../../images/button-show-hierarchy-do.svg";
+import ButtonShowHierarchyDont from "../../../../images/button-show-hierarchy-dont.svg";
+import ButtonSameImportanceDo from "../../../../images/button-same-importance-do.svg";
+import ButtonSameImportanceDont from "../../../../images/button-same-importance-dont.svg";
+import ButtonManipulationDo from "../../../../images/button-manipulation-do.svg";
+import ButtonManipulationDont from "../../../../images/button-manipulation-dont.svg";
+
+## Overview
+
+Buttons communicate actions that users can take.
+They are typically placed throughout your UI, in places like: Dialogs, Forms, Toolbars, etc.
+Buttons help users to perform tasks or trigger processes.
+
+<FigmaIframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D69210%253A822%26t%3DwzMeXm9NIz9hkfqK-1" />
+
+<Usage>
+
+<UsageUse>
+
+- To indicate primary action.
+
+- When you need to make the action look distinct enough.
+
+- When you need to fill up the space to match the rest of UI.
+
+</UsageUse>
+<UsageDontUse>
+
+- You want to offer a less important action or save some space --- use a [button link](/components/action/buttonlink/).
+
+- To make text inside paragraphs or lists actionable --- use a [text link](/components/action/textlink/).
+
+- So users can sign in using a social service --- use a [SocialButton](/components/action/socialbutton/).
+
+</UsageDontUse>
+
+</Usage>
+
+## Component playground
+
+<ReactExample exampleId="Button-default" />
+
+## Look & feel
+
+### Component structure
+
+<ComponentStructure
+  component="Button"
+  web={{
+    Image: ButtonWebImage,
+    imageWidth: 124,
+    parts: [
+      {
+        name: "IconLeft",
+        description: "Optionally visually supports button visibility.",
+      },
+      {
+        name: "Label",
+        description: "Describes main action. Works best when short. All labels use sentence case.",
+      },
+      {
+        name: "IconRight",
+        description: "Optionally shows the action for the button (expandable, link, etc.).",
+      },
+    ],
+  }}
+/>
+
+### Button types
+
+Buttons come in **three sizes** (large, normal, small) and **three types** (primary, secondary, critical).
+Two of these types (primary and critical) also have **subtle** versions in lighter shades to show actions that don’t draw as much attention.
+
+<Grid columns="1fr" desktop={{ columns: "1fr 1fr" }} gap="16px">
+
+<Container>
+
+#### Primary button
+
+Primary buttons are the most important buttons and should be used for the main
+call to action on the page.
+
+![Primary button](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1520-5732)
+
+</Container>
+
+<Container>
+
+#### Primary subtle button
+
+Primary subtle buttons are less prominent than primary buttons and can
+be used for less important or repeating actions.
+
+![Primary subtle button](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1520-5729)
+
+</Container>
+
+<Container>
+
+#### Critical button
+
+Critical buttons are used for urgent or important actions, such as confirming a destructive action.
+
+![Critical button](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1520-5726)
+
+</Container>
+
+<Container>
+
+#### Critical subtle button
+
+Critical subtle buttons are less prominent versions of critical buttons and can be used for less important actions like initiating a destructive flow.
+
+![Critical subtle button](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1520-5723)
+
+</Container>
+
+<Container>
+
+#### Secondary button
+
+Secondary buttons can be used for actions that are not the primary focus of the page.
+
+![Secondary button](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1520-5735)
+
+</Container>
+
+<Container>
+
+#### White button
+
+White buttons should be used on dark backgrounds.
+
+![White button](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1520-5738)
+
+</Container>
+
+</Grid>
+
+### Button hierarchy
+
+Every screen needs a clear visual hierarchy of buttons and other interactive components.
+**Primary buttons** are best for the [single primary action](#identify-the-most-important-actions) on the screen.
+**Critical buttons** work for destructive actions — actions users can’t take back.
+All remaining actions can be **Primary subtle buttons**, **Secondary buttons** or **Tertiary buttons** --- mostly [ButtonLink](/components/action/buttonlink/) or [TextLink](/components/action/textlink).
+
+You don’t have to use every step of the hierarchy - you can skip a level if there’s no use for it in the context of a screen.
+
+<FigmaIframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D72927%253A1354%26t%3Dvdtdw6iaMxlvNP6C-1" />
+
+## Guidelines
+
+### Order actions by their importance
+
+> If everything looks important, then nothing is important.
+>
+> ---Patrick Lencioni
+
+Users need to be certain of what action to take next.
+Once you’ve identified which actions are the most important at the moment, you can indicate importance through type, size and variation.
+
+<Guideline type="do" title="Have one primary action" svgs={[ButtonPrimaryActionDo, ButtonPrimaryActionDont]}>
+
+Every screen should have only one button that represents the most important action.
+It leads the user to the next step.
+
+</Guideline>
+
+<Guideline type="do" title="Show importance hierarchy" svgs={[ButtonShowHierarchyDo, ButtonShowHierarchyDont]}>
+
+If you have multiple actions on one screen,
+use different button types and sizes to show different levels of importance.
+
+</Guideline>
+
+<Guideline type="do" title="Use subtle buttons for items in loop" svgs={[ButtonSameImportanceDo, ButtonSameImportanceDont]}>
+
+If you have a set of repeating components, use the primary subtle button for their main action.
+Alternatively, you can use the secondary button, but it’s not recommended for more prominent actions.
+
+</Guideline>
+
+<Guideline type="do" title="Don't use primary buttons to manipulate users" svgs={[ButtonManipulationDo, ButtonManipulationDont]}>
+
+Primary buttons should be used for expected actions.
+Do not deliberately switch the order to make user choose unwanted action.
+
+</Guideline>
+
+### Use ButtonLinks in native design
+
+Smaller screens mean less space and using too many subtle or secondary buttons would make the screen look heavy and cluttered.
+Use [ButtonLinks](/components/action/buttonlink/) instead - they occupy less space but still look actionable.
+If you need to align the ButtonLink with content, use **compact variant** (it has no padding on left and right).
+
+<FigmaIframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D69892%253A1163%26t%3Dvdtdw6iaMxlvNP6C-1" />
+
+### Avoid disabled buttons
+
+Many designers want to show users that actions will be possible in the future, so they end up using disabled buttons to show potential actions.
+Or they disable actions based on current context, but such buttons often end up confusing users about what’s possible.
+
+Instead, try to focus on using [progressive disclosure](/design-patterns/progressive-disclosure/)
+to show them only the actions they should take right at the moment.
+Then when it's possible for them to take action, you can show them more buttons,
+or let them take the action and show error message to explain why it failed (such as sending incomplete form).
+
+If you need to use a disabled button,
+always make it clear how users can activate it,
+such as with a [tooltip](/components/overlay/tooltip/).
+
+<GuidelineImages>
+
+<DoImage>
+
+![Do: Showing error states on input fields after hitting submit button.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1195%3A6452)
+
+Let the user send incomplete form and use error messages to explain what is wrong.
+
+</DoImage>
+
+<DontImage>
+
+![Don't: Show disabled button](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1195%3A6458)
+
+Avoid using disabled button as it doesn’t provide proper explanation to the user.
+
+</DontImage>
+
+</GuidelineImages>
+
+### Use actionable text
+
+It should be clear from the button text exactly what happens when the user interacts with it.
+The labels should be actionable, such as “Add passenger” and “Book for (price)“.
+
+Avoid long explanations in the button text.
+The text should be short and clear.
+If additional explanation is needed, add it above the button as text.
+
+See [examples for how to make actions clear](/kiwi-use/content/voice-and-tone/straightforward/#make-every-action-clear/).
+
+<GuidelineImages>
+
+<DoImage>
+
+![Do: Short labels.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1183-6439)
+
+User short and clear labels.
+
+</DoImage>
+
+<DontImage>
+
+![Don't: unnecessary long labels](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:1183-6444)
+
+Buttons shouldn’t contain more than 1-3 words.
+
+</DontImage>
+
+</GuidelineImages>
+
+### Buttons with icons
+
+Buttons with icons are great when you need to draw more attention to the action.
+Icons add additional context and makes the buttons more easy to scan.
+
+But it's essential to not overuse these buttons.
+If everything is grabbing attention, things usually get messy.
+
+<Guideline type="do" title="Use a left icon when the button adds another item">
+
+For cases like this, it's great to use an icon with a plus to represent the addition,
+such as PlusCircle or PassengerAdd.
+
+</Guideline>
+
+<Guideline type="do" title="Right icons should only be directional">
+
+They can help explain what happens when the user interacts with the button.
+An icon (with an aria-label) makes it easier to know if the user is taken elsewhere.
+
+</Guideline>
+
+<Guideline type="do" title="Add a label when using icon-only buttons">
+
+Even the simplest icons like plus can be understood in many different ways.
+To make sure your icon is accessible,
+add a proper label to communicate the purpose.
+
+</Guideline>
+
+<FigmaIframe
+  title="Button states"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTnS9DSwI8Om2bpkTL9ZMFz%2FDocumentation-frames%3Fnode-id%3D69210%253A820%26t%3DwzMeXm9NIz9hkfqK-1"
+/>

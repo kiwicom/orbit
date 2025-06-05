@@ -1,0 +1,196 @@
+---
+title: v21
+description: How to migrate to Orbit 21.0.0
+redirect_from:
+  - /migration-guides/v21/
+---
+
+# Orbit Migration Guide v21
+
+This migration guide focuses on the process of migrating from Orbit v20 to v21.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### Icon changes
+
+Some icon names have been changed to better align with our icon library in Figma.
+
+The following icons have been renamed:
+
+- `KiwicomGuarantee` -> `Guarantee`
+- `KiwicomNoGuarantee` -> `NoGuarantee`
+- `KiwicomCare` -> `CareKiwiCom`
+
+Also notice that there is a new icon: `KiwiComGuarantee`. This icon is used for the new `Kiwi.com Guarantee` badge.
+The name is fairly similar to the old `KiwicomGuarantee` icon (now renamed to `Guarantee`), but they are different icons. Please check with your designer for the correct icon to use.
+
+### Removal of default Open button in Accordion component
+
+The default `Open` button, which was rendered in the `AccordionSection` component when no `actions` were provided, has been removed.
+Feel free to pass an action component in the `actions` prop. Alternatively, by setting `expandOnTileClick` prop to `true` the whole element expands on click.
+
+**Before:**
+
+```jsx
+<Accordion>
+  <AccordionSection header={<Text>Accordion header</Text>}>
+</Accordion>
+```
+
+**After:**
+
+```jsx
+<Accordion>
+  <AccordionSection
+    header={<Text>Accordion header</Text>}
+    actions={<Button onClick={() => {}}>Open</Button>}
+  >
+</Accordion>
+```
+
+### Title prop in Drawer component
+
+The `title` prop in the `Drawer` component now only accepts a string.
+
+It used to accept a React node for translations, but this could lead to some unexpected or wrong HTML structure.
+
+This change also allows for the `aria-label` attribute to have the same value as the `title` prop, if `ariaLabel` is not provided.
+
+### Label prop in Collapse component
+
+The `label` prop in the `Collapse` component now only accepts a string.
+
+It used to accept a React node for translations, but this could lead to some unexpected or wrong HTML structure.
+
+### Required prop in Alert component when is `closable`
+
+The `Alert` component now requires the prop `labelClose` when `closable` is `true`.
+
+This prop provides the label for the close button that is applied to the `Alert` so that assistive technologies can announce it correctly, given that it renders a button with just an icon.
+
+**Before:**
+
+```jsx
+import Alert from "@kiwicom/orbit-components/lib/Alert";
+
+<Alert closable />;
+```
+
+**Now:**
+
+```jsx
+import Alert from "@kiwicom/orbit-components/lib/Alert";
+
+<Alert closable labelClose="Close" />;
+```
+
+Make sure to provide translated strings for the `labelClose` prop.
+
+To ease the migration, we provide a codemod to help you out, with some default generic translations.
+The codemod will inject `intl.formatMessage` calls with the default translations, in this case:
+
+```jsx
+intl.formatMessage({
+  id: "orbit.button_close",
+  defaultMessage: "Close",
+});
+```
+
+Feel free to customize the translations according to your needs, by eventually providing more context to the alert it refers to.
+
+### Required props in Collapse component
+
+The `Collapse` component now requires the props `expandButtonLabel` and `collapseButtonLabel`.
+
+They are used to provide accessible labels to the button that toggles the collapse state.
+
+**Before:**
+
+```jsx
+<Collapse label="Collapse">
+  <Text>Collapse content</Text>
+</Collapse>
+```
+
+**After:**
+
+```jsx
+<Collapse label="Collapse" expandButtonLabel="Expand" collapseButtonLabel="Collapse">
+  <Text>Collapse content</Text>
+</Collapse>
+```
+
+Make sure to provide translated strings for the `expandButtonLabel` and `collapseButtonLabel` props.
+
+To ease the migration, we provide a codemod to help you out, with some default generic translations.
+The codemod will inject `intl.formatMessage` calls with the default translations, in this case:
+
+```jsx
+intl.formatMessage({
+  id: "orbit.collapse_expand",
+  defaultMessage: "Expand",
+});
+intl.formatMessage({
+  id: "orbit.collapse_collapse",
+  defaultMessage: "Collapse",
+});
+```
+
+Feel free to customize the translations according to your needs, by eventually providing more context.
+
+### Required prop in ButtonMobileStore component
+
+The `ButtonMobileStore` component now requires the prop `alt`.
+
+This prop provides the alt text for the image that is displayed in the `ButtonMobileStore` component.
+
+This allows assistive technologies to announce the button correctly, given that it renders an image.
+
+**Before:**
+
+```jsx
+<ButtonMobileStore type="appStore" />
+<ButtonMobileStore type="googlePlay" />
+```
+
+**After:**
+
+```jsx
+<ButtonMobileStore type="appStore" alt="Download on the App Store" />
+<ButtonMobileStore type="googlePlay" alt="Get it on Google Play" />
+```
+
+Make sure to provide translated strings for the `alt` prop.
+
+To ease the migration, we provide a codemod to help you out, with some default generic translations.
+The codemod will inject `intl.formatMessage` calls with the default translations, in this case:
+
+```jsx
+intl.formatMessage({
+  id: "common.screenreader.google_play_button",
+  defaultMessage: "Get it on Google Play",
+});
+intl.formatMessage({
+  id: "common.screenreader.app_store_button",
+  defaultMessage: "Download on the App Store",
+});
+```
+
+Remember that the component also expects a `lang` prop, which is used to determine the language version of the image.
+
+Feel free to customize the translations according to your needs, by eventually providing more context.
+
+## Codemod
+
+A codemod is available to help with the migration. It should target the new props that require (translated) strings.
+Please note that the codemod **does not** guarantee a full migration, nor its complete correctness.
+Manual checks are still necessary, especially if some props are being calculated conditionally or the components are imported with different names.
+
+To run the codemod, use the following command:
+
+```bash
+npx jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/aria-labels-v21.js --parser=tsx --extensions=ts,tsx <pathToYourCode>
+```
+
+Make sure to run prettier after running the codemod, as it might introduce some formatting changes.

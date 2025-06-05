@@ -1,0 +1,34 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/modal/accessibility/
+---
+
+# Accessibility
+
+## Modal
+
+The Modal component has been designed with accessibility in mind.
+
+To ease the keyboard navigation, when opening a modal, the focus is moved to the first focusable element inside the modal. It is also impossible to focus anything outside of the modal while it is open.
+When closing the modal, the focus can be moved back to the element that triggered the modal automatically, if the prop `triggerRef` is defined with a ref to that element.
+
+Besides that, assistive ARIA attributes are applied automatically to the modal and its children, to ensure that screen readers can announce the modal and its content correctly.
+
+If you prefer, you can also provide those attributes manually, as described in the table below:
+
+| Name            | Type     | Description                                                                                                                                                                 |
+| :-------------- | :------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ariaLabelledby  | `string` | The `id` of an element that serves as a label (title) for the modal.                                                                                                        |
+| ariaDescribedby | `string` | The `id` of an element that serves as a description for the modal.                                                                                                          |
+| ariaLabel       | `string` | Text that labels the modal content. Think of it as the title of the modal. This should be used if `title` is not passed to `ModalHeader` and `ariaLabelledby` is undefined. |
+
+All the props above are optional, but recommended to use to ensure the best experience for all users.
+
+If you use a ModalHeader with `title` and `description` props defined, they are automatically assigned as `aria-labelledby` and `aria-describedby`, respectively.
+However, if needed, you can overwrite the values by passing the corresponding props.
+
+The `ariaLabelledby` and `ariaDescribedby` props can reference multiple ids, separated by a space.
+The elements with those ids can be hidden, so that their text is only announced by screen readers.
+
+Be mindful that all descriptive texts, even if invisible on the screen, should be translated and provide context for users of assistive technologies.

@@ -1,13 +1,8 @@
 {
-  "extends": "../tsconfig.base.json",
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "esnext",
-    "noEmit": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "useUnknownInCatchVariables": false
+    "baseUrl": "."
   },
-  "exclude": ["**/scripts/**/*"]
+  "exclude": [".docusaurus", "build"]
 }

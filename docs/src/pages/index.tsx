@@ -1,314 +1,44 @@
-import React from "react";
-import { Link } from "gatsby";
-import { Heading, Inline, Stack, Grid, Button } from "@kiwicom/orbit-components";
-import { NewWindow } from "@kiwicom/orbit-components/icons";
-import { css } from "styled-components";
-import { WindowLocation } from "@reach/router";
+import type {ReactNode} from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Heading from '@theme/Heading';
 
-import { RecentBookmarks } from "../components/Bookmarks";
-// temporarily extract images from @streamlinehq/streamlinehq until they fix the install script
-import ReadArt from "../images/streamline-light/read-art.svg";
-import SearchButton from "../components/Search/SearchButton";
-import FigmaIcon from "../components/icons/Figma";
-import GitHubIcon from "../components/icons/GitHub";
-import Search from "../components/Search";
-import ArrowRight from "../components/ArrowRight";
-import Layout from "../components/Layout";
-import RocketImage from "../components/RocketImage";
-import Tile from "../components/Tile";
-import HeaderBox from "../components/HeaderBox";
-import BrandedTile from "../components/BrandedTile";
-import GitHubLogo from "../images/github-full.svg";
-import FigmaLogo from "../images/figma-logo.svg";
-import { MAX_CONTENT_WIDTH } from "../consts";
-import ScreenReaderText from "../components/ScreenReaderText";
-import { useKeyboard } from "../services/KeyboardProvider";
-import { BookmarkProvider } from "../services/bookmarks";
-import { ICON_MAP } from "../components/icons/consts";
+import styles from './index.module.css';
 
-interface Props {
-  location: WindowLocation;
-  path: string;
-}
-
-function GatsbyLinkToButton({ href, ...props }: { href: string }) {
-  return <Link to={href} {...props} />;
-}
-
-export default function Home({ location, path }: Props) {
-  const [isSearchOpen, setSearchOpen] = useKeyboard();
-
+function HomepageHeader() {
+  const {siteConfig} = useDocusaurusContext();
   return (
-    <BookmarkProvider page={path} location={location}>
-      <Layout
-        location={location}
-        title="Orbit design system"
-        description="An open source design system for your next travel project."
-        path="/"
-        isHome
-      >
-        <HeaderBox>
-          <RocketImage />
-          <Heading type="display">
-            <div
-              css={css`
-                max-width: 43rem;
-                font-size: 3rem;
-                line-height: 1.3;
-              `}
-            >
-              Open source design system for your next travel project.
-            </div>
-          </Heading>
-          <div
-            css={css`
-              margin-top: 3rem;
-              button,
-              a {
-                height: 64px;
-              }
-            `}
-          >
-            <Inline spacing="300">
-              <Button
-                size="large"
-                type="primary"
-                circled
-                iconRight={<ArrowRight />}
-                asComponent={GatsbyLinkToButton}
-                href="/getting-started/"
-              >
-                Get started
-              </Button>
-              <SearchButton onClick={() => setSearchOpen(true)} />
-              {isSearchOpen && <Search onClose={() => setSearchOpen(false)} />}
-            </Inline>
-          </div>
-        </HeaderBox>
-        <div
-          css={css`
-            /* so that the rest of the content has a higher z-order than the image */
-
-            top: 100px;
-            width: 100%;
-            max-width: calc(${MAX_CONTENT_WIDTH} - 10rem);
-            margin: 0 auto;
-            z-index: 1;
-
-            > * + * {
-              margin-top: 5.25rem;
-            }
-          `}
-        >
-          <RecentBookmarks />
-          <Stack
-            flex
-            direction="column"
-            justify="between"
-            largeMobile={{ direction: "row", align: "stretch" }}
-          >
-            <Tile
-              title="Components"
-              linkContent="See our components"
-              href="/components/"
-              icon={ICON_MAP.Components}
-            >
-              Our components are a collection of interface elements that can be reused across the
-              Orbit design system.
-            </Tile>
-            <Tile
-              title="Patterns"
-              linkContent="See our patterns"
-              href="/design-patterns/"
-              icon={ICON_MAP["Design patterns"]}
-            >
-              Make the most of our components by using our design patterns to address common design
-              problems.
-            </Tile>
-          </Stack>
-
-          <div
-            css={css`
-              > * + * {
-                margin-top: 2rem;
-              }
-            `}
-          >
-            <Heading as="h2">Foundation</Heading>
-            <Grid
-              columns="1fr"
-              tablet={{ columns: "repeat(2, 1fr)" }}
-              desktop={{ columns: "repeat(3, 1fr)" }}
-              gap="1rem"
-            >
-              <Tile
-                title="Colors"
-                linkContent="See our colors"
-                href="/foundation/color/"
-                icon={ICON_MAP.Colors}
-              >
-                Color is used to signal structure, highlight importance, and display different
-                states.
-              </Tile>
-              <Tile
-                title="Typography"
-                linkContent="See our typography"
-                href="foundation/typography/"
-                icon={ICON_MAP.Typography}
-              >
-                Typography is critical for communicating the hierarchy of a page.
-              </Tile>
-              <Tile
-                title="Spacing"
-                linkContent="See our spacing"
-                href="foundation/spacing/"
-                icon={ICON_MAP.Spacing}
-              >
-                Consistent spacing makes an interface more clear and easy to scan.
-              </Tile>
-            </Grid>
-            <div
-              css={css`
-                display: flex;
-                justify-content: flex-end;
-              `}
-            >
-              <Button size="large" circled type="primarySubtle">
-                <Link to="/foundation/">See all items</Link>
-              </Button>
-            </div>
-          </div>
-          <div
-            css={css`
-              margin-top: 0;
-              > * + * {
-                margin-top: 2rem;
-              }
-            `}
-          >
-            <Heading as="h2">Content</Heading>
-            <Grid
-              columns="1fr"
-              tablet={{ columns: "repeat(2, 1fr)" }}
-              desktop={{ columns: "repeat(3, 1fr)" }}
-              gap="1rem"
-            >
-              <Tile
-                title="Voice & tone"
-                linkContent="See our voice"
-                href="/kiwi-use/content/voice-and-tone/"
-                icon={ICON_MAP["Voice & tone"]}
-              >
-                How we write at Kiwi.com.
-              </Tile>
-              <Tile
-                title="Grammar & mechanics"
-                linkContent="See our standards"
-                href="/kiwi-use/content/grammar-and-mechanics/"
-                icon={ICON_MAP["Grammar & mechanics"]}
-              >
-                Basic grammar guidelines for writing with Orbit.
-              </Tile>
-              <Tile
-                title="Glossary"
-                linkContent="See our terms"
-                href="/kiwi-use/content/glossary/"
-                icon={ICON_MAP.Glossary}
-              >
-                A list of commonly used words and phrases in Kiwi.com products.
-              </Tile>
-            </Grid>
-            <div
-              css={css`
-                display: flex;
-                justify-content: flex-end;
-              `}
-            >
-              <Button href="/kiwi-use/content/" size="large" circled type="primarySubtle">
-                See all items
-              </Button>
-            </div>
-          </div>
-
-          <div
-            css={css`
-              margin-top: 0;
-              > * + * {
-                margin-top: 2rem;
-              }
-            `}
-          >
-            <Heading as="h2">Support</Heading>
-            <Grid columns="1fr" gap="1rem" desktop={{ columns: "1fr 1fr" }}>
-              <BrandedTile
-                title="Report a bug"
-                icon={ICON_MAP["Report a bug"]}
-                href="https://github.com/kiwicom/orbit/issues/new/choose"
-                linkContent="Report bug on GitHub"
-                logo={<GitHubLogo />}
-                color={{
-                  primary: "#252A31",
-                  secondary: "#515C6C",
-                }}
-              >
-                If you find any bugs in our components, report them on Github and we’ll fix them as
-                soon as possible. It’s our highest priority to have Orbit working as expected.
-              </BrandedTile>
-              <BrandedTile
-                title="Get the Figma library"
-                icon={<ReadArt />}
-                href="https://www.figma.com/@orbitbykiwi"
-                linkContent="Go to Figma profile"
-                logo={<FigmaLogo />}
-                color={{
-                  primary: "#D1431A",
-                  secondary: "#EC685A",
-                }}
-              >
-                Visit our community profile and download all of our libraries and resources for
-                free.
-              </BrandedTile>
-            </Grid>
-          </div>
-
-          <div
-            css={css`
-              margin-bottom: 4rem;
-              > * + * {
-                margin-top: 2rem;
-              }
-            `}
-          >
-            <Heading as="h2">Resources</Heading>
-            <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
-              <Tile
-                title="Figma library"
-                linkContent={
-                  <>
-                    <ScreenReaderText>
-                      Open Orbit&apost;s public Figma library in a new window
-                    </ScreenReaderText>
-                    <NewWindow />
-                  </>
-                }
-                href="https://www.figma.com/@orbitbykiwi"
-                icon={<FigmaIcon />}
-              />
-              <Tile
-                title="Orbit repository"
-                linkContent={
-                  <>
-                    <ScreenReaderText>Open GitHub repository in a new window</ScreenReaderText>
-                    <NewWindow />
-                  </>
-                }
-                href="https://github.com/kiwicom/orbit"
-                icon={<GitHubIcon />}
-              />
-            </Stack>
-          </div>
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <div className="container">
+        <Heading as="h1" className="hero__title">
+          {siteConfig.title}
+        </Heading>
+        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/intro">
+            Docusaurus Tutorial - 5min ⏱️
+          </Link>
         </div>
-      </Layout>
-    </BookmarkProvider>
+      </div>
+    </header>
+  );
+}
+
+export default function Home(): ReactNode {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />">
+      <HomepageHeader />
+      <main>
+        <HomepageFeatures />
+      </main>
+    </Layout>
   );
 }

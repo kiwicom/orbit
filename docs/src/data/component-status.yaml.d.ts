@@ -1,4 +1,4 @@
-import { ComponentStatus } from "../components/ComponentStatus/consts";
+import { ComponentStatus } from "../../ignore/ComponentStatus/consts";
 
 declare const componentStatusData: ComponentStatus[];
 

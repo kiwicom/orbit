@@ -1,0 +1,69 @@
+import ButtonReadMe from "@kiwicom/orbit-components/src/Button/README.md";
+
+# Orbit Migration Guide v7
+
+This migration guide focuses on the process of migrating from Orbit v6.4 to v7.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+<code>
+  <span className="text-red-500">console.log("Hello, world!");</span>
+</code>
+
+```tsx
+<span className="text-red-500">console.log("Hello, world!");</span>
+```
+
+`<span className="text-red-500">console.log("Hello, world!");</span>`
+
+<Callout type="warning">
+  Currently, Figma doesn't provide notifications when our public files are updated. To make sure you
+  stay up to date, check the _Last updated_ date on the files at our community profile and [follow
+  us on Twitter](https://twitter.com/OrbitKiwi).
+</Callout>
+
+## More docs
+
+<FigmaIframe
+  height={300}
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F4QJZqvBvRrLu6t9mwObCkA%2FOrbit-Component-Content-Structure%3Fnode-id%3D286%253A46"
+/>
+
+<Usage>
+
+<UsageUse>
+
+- To indicate primary action.
+
+- When you need to make the action look distinct enough.
+
+- When you
+  need to fill up the space to match the rest of UI.
+
+</UsageUse>
+
+<UsageDontUse>
+
+- You want to offer a less important action or save some space --- use a [button
+  link](/components/action/buttonlink/).
+
+- To make text inside paragraphs or lists actionable ---
+  use a [text link](/components/action/textlink/).
+
+- So users can sign in using a social service ---
+  use a [SocialButton](/components/action/socialbutton/).
+
+</UsageDontUse>
+  
+</Usage>
+
+<Guideline type="do" title="Keep badges short">
+
+Use progressive disclosure for other information.
+
+![A badge with an icon of passengers and the number 4 and a tooltip saying 2 adults and 2 children.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:29%3A574)
+
+![A badge with an icon of passengers and the number 4 and the text 2 adults and 2 children.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:29%3A559)
+
+</Guideline>
+
+<ButtonReadMe />

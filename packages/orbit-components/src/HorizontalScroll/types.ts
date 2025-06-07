@@ -28,7 +28,7 @@ import type * as Common from "../common/types";
 
 export type ScrollSnap = "mandatory" | "proximity" | "inline" | "none";
 
-export type Props = Common.Globals & {
+export type Props = Common.Globals<HTMLDivElement> & {
   /** set minimal height */
   readonly minHeight?: number;
   /** prop for testing purposes */

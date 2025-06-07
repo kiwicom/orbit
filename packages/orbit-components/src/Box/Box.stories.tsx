@@ -174,8 +174,6 @@ enum SPACINGS {
   ONE_THOUSAND_SIX_HUNDRED = "1600",
 }
 
-Box.displayName = "Box";
-
 const meta: Meta<typeof Box> = {
   title: "Box",
   component: Box,

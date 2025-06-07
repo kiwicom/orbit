@@ -73,7 +73,7 @@ const ItinerarySegmentDetail = ({
         >
           <div
             className="pt-300 cursor-pointer overflow-hidden"
-            ref={slideRef as React.RefObject<HTMLDivElement>}
+            ref={slideRef as React.RefObject<HTMLDivElement | null>}
           >
             <div
               className="px-300 z-default relative py-0"

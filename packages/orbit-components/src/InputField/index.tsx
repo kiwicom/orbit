@@ -76,7 +76,7 @@ const Suffix = ({
   </div>
 );
 
-const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+const InputField = (props: Props) => {
   const {
     disabled,
     type = TYPE_OPTIONS.TEXT,
@@ -125,6 +125,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     insideInputGroup,
     dataAttrs,
     role,
+    ref,
   }: Props = props;
 
   const forID = useRandomId();
@@ -327,8 +328,6 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
       )}
     </div>
   );
-});
-
-InputField.displayName = "InputField";
+};
 
 export default InputField;

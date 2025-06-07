@@ -14,7 +14,7 @@ interface Props {
 
 const QueryContextProvider: React.FC<Props> = ({ children }) => {
   const value = useMediaQuery();
-  return <QueryContext.Provider value={value}>{children}</QueryContext.Provider>;
+  return <QueryContext value={value}>{children}</QueryContext>;
 };
 
 export default QueryContextProvider;

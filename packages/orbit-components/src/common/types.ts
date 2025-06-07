@@ -34,9 +34,10 @@ export interface Translations {
   [key: string]: string;
 }
 
-export interface Globals {
+export interface Globals<T = any> {
   readonly dataTest?: string;
   readonly id?: string;
+  readonly ref?: React.Ref<T>;
 }
 
 export type RefType<T = HTMLElement> = { current: T | null } | ((instance: T | null) => void);

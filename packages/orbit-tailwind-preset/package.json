@@ -38,6 +38,6 @@
     "color2k": "^2.0.3"
   },
   "devDependencies": {
-    "@testing-library/react": "^13.4.0"
+    "@testing-library/react": "^16.0.0"
   }
 }

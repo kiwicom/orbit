@@ -37,7 +37,7 @@ export const CustomIcon: Story = {
   render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <Switch {...args} icon={Icon && <Icon />} />;
+    return <Switch {...args} icon={Icon && <Icon ariaHidden />} />;
   },
 
   args: {
@@ -60,7 +60,7 @@ export const Playground: Story = {
   render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <Switch {...args} icon={Icon && <Icon />} />;
+    return <Switch {...args} icon={Icon && <Icon ariaHidden />} />;
   },
 
   args: {

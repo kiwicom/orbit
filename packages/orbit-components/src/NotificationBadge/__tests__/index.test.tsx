@@ -23,7 +23,7 @@ describe("NotificationBadge", () => {
   });
 
   it("should have icon", () => {
-    render(<NotificationBadge icon={<Sightseeing dataTest="icon" />} />);
+    render(<NotificationBadge icon={<Sightseeing dataTest="icon" ariaHidden />} />);
     expect(screen.getByTestId("icon")).toBeInTheDocument();
   });
 });

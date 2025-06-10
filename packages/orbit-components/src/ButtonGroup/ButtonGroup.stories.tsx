@@ -25,8 +25,8 @@ type Story = StoryObj<typeof ButtonGroup>;
 export const WithButtons: Story = {
   render: () => (
     <ButtonGroup>
-      <Button iconLeft={<Icons.Airplane />}>Button</Button>
-      <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
+      <Button iconLeft={<Icons.Airplane ariaHidden />}>Button</Button>
+      <Button iconLeft={<Icons.ChevronDown ariaHidden />} title="Show more" />
     </ButtonGroup>
   ),
 
@@ -38,10 +38,10 @@ export const WithButtons: Story = {
 export const WithButtonLinks: Story = {
   render: () => (
     <ButtonGroup>
-      <ButtonLink type="secondary" iconLeft={<Icons.Airplane />}>
+      <ButtonLink type="secondary" iconLeft={<Icons.Airplane ariaHidden />}>
         Button
       </ButtonLink>
-      <ButtonLink type="secondary" iconLeft={<Icons.ChevronDown />} title="Show more" />
+      <ButtonLink type="secondary" iconLeft={<Icons.ChevronDown ariaHidden />} title="Show more" />
     </ButtonGroup>
   ),
 
@@ -54,8 +54,8 @@ export const Rtl: Story = {
   render: () => (
     <RenderInRtl>
       <ButtonGroup>
-        <Button iconLeft={<Icons.Airplane />}>Button</Button>
-        <Button iconLeft={<Icons.ChevronDown />} title="Show more" />
+        <Button iconLeft={<Icons.Airplane ariaHidden />}>Button</Button>
+        <Button iconLeft={<Icons.ChevronDown ariaHidden />} title="Show more" />
       </ButtonGroup>
     </RenderInRtl>
   ),

@@ -77,7 +77,7 @@ describe("Card", () => {
           </CardSection>
         </Card>,
       );
-      const content = document.querySelector("[aria-hidden]");
+      const content = document.querySelector("[aria-hidden]:not(svg)");
       expect(content).toHaveAttribute("aria-hidden", "true");
       await user.click(screen.getByText("kek"));
       expect(content).toHaveAttribute("aria-hidden", "true");
@@ -101,7 +101,7 @@ describe("Card", () => {
           </CardSection>
         </Card>,
       );
-      const content = document.querySelector("[aria-hidden]");
+      const content = document.querySelector("[aria-hidden]:not(svg)");
       expect(content).toHaveAttribute("aria-hidden", "true");
       await user.click(screen.getByText("kek"));
       expect(content).toHaveAttribute("aria-hidden", "false");

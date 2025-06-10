@@ -63,7 +63,7 @@ export const Default: Story = {
   render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
+    return <Alert {...args} icon={Icon ? <Icon ariaHidden /> : true} />;
   },
 
   parameters: {
@@ -80,7 +80,7 @@ export const Content: Story = {
   render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
+    return <Alert {...args} icon={Icon ? <Icon ariaHidden /> : true} />;
   },
 
   parameters: {
@@ -121,7 +121,7 @@ export const InfoAlert: Story = {
   render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
+    return <Alert {...args} icon={Icon ? <Icon ariaHidden /> : true} />;
   },
 
   parameters: {
@@ -133,7 +133,7 @@ export const SuccessAlert: Story = {
   render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
+    return <Alert {...args} icon={Icon ? <Icon ariaHidden /> : true} />;
   },
 
   parameters: {
@@ -150,7 +150,7 @@ export const WarningAlert: Story = {
   render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
+    return <Alert {...args} icon={Icon ? <Icon ariaHidden /> : true} />;
   },
 
   parameters: {
@@ -167,7 +167,7 @@ export const CriticalAlert: Story = {
   render: ({ icon, ...args }) => {
     const Icon = typeof icon === "string" && getIcon(icon);
 
-    return <Alert {...args} icon={Icon ? <Icon /> : true} />;
+    return <Alert {...args} icon={Icon ? <Icon ariaHidden /> : true} />;
   },
 
   parameters: {
@@ -187,7 +187,7 @@ export const InlineActions: Story = {
     return (
       <Alert
         {...args}
-        icon={Icon ? <Icon /> : true}
+        icon={Icon ? <Icon ariaHidden /> : true}
         onClose={action("Close")}
         inlineActions={
           <AlertButton type={type} href="#">
@@ -240,7 +240,7 @@ export const Playground: Story = {
       <Alert
         type={type}
         {...args}
-        icon={Icon ? <Icon /> : true}
+        icon={Icon ? <Icon ariaHidden /> : true}
         suppressed={suppressed}
         onClose={action("Close")}
       >
@@ -287,7 +287,7 @@ export const Rtl: Story = {
 
     return (
       <RenderInRtl>
-        <Alert {...args} icon={Icon ? <Icon /> : true} onClose={action("Close")}>
+        <Alert {...args} icon={Icon ? <Icon ariaHidden /> : true} onClose={action("Close")}>
           <Stack spacing="200">
             <Stack spacing="100">
               <Text>

@@ -252,7 +252,7 @@ export const CardWithDefaultExpanded: Story = {
         header={
           <Stack inline align="center" justify="end">
             <Text type="secondary">Trip length: 1h55m</Text>
-            <Badge icon={<Clock />} type="warningSubtle">
+            <Badge icon={<Clock ariaHidden />} type="warningSubtle">
               Unavailable
             </Badge>
           </Stack>
@@ -268,7 +268,7 @@ export const CardWithDefaultExpanded: Story = {
         header={
           <Stack inline justify="end">
             <Text type="secondary">Trip length: 1h55m</Text>
-            <Badge icon={<Clock />} type="warningSubtle">
+            <Badge icon={<Clock ariaHidden />} type="warningSubtle">
               Unavailable
             </Badge>
           </Stack>

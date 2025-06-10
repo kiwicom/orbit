@@ -66,7 +66,7 @@ const Wizard = ({
           ariaExpanded={open}
           type="secondary"
           fullWidth
-          iconRight={<ChevronDown />}
+          iconRight={<ChevronDown ariaHidden />}
           onClick={() => {
             setOpen(true);
           }}

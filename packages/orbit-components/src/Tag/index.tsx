@@ -139,7 +139,7 @@ const Tag = React.forwardRef<HTMLDivElement, Props>(
               onRemove();
             }}
           >
-            <CloseCircle size="small" />
+            <CloseCircle size="small" ariaHidden />
           </div>
         )}
       </div>

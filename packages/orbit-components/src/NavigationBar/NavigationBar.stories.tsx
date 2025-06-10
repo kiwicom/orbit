@@ -52,17 +52,21 @@ export const NavigationBarComponent: Story = {
   render: args => (
     <NavigationBar {...args}>
       <Stack justify="between" spacing="none">
-        <ButtonLink iconRight={<ChevronDown />} type="secondary">
+        <ButtonLink iconRight={<ChevronDown ariaHidden />} type="secondary">
           Flights
         </ButtonLink>
         <Stack direction="row" spacing="100" justify="end" shrink>
-          <ButtonLink aria-label="Favourites" iconLeft={<StarFull />} type="secondary" />
+          <ButtonLink aria-label="Favourites" iconLeft={<StarFull ariaHidden />} type="secondary" />
           <ButtonLink
             aria-label="Questions and Answers"
-            iconLeft={<QuestionCircle />}
+            iconLeft={<QuestionCircle ariaHidden />}
             type="secondary"
           />
-          <ButtonLink aria-label="Account" iconLeft={<AccountCircle />} type="secondary" />
+          <ButtonLink
+            aria-label="Account"
+            iconLeft={<AccountCircle ariaHidden />}
+            type="secondary"
+          />
         </Stack>
       </Stack>
     </NavigationBar>

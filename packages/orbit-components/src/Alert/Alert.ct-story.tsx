@@ -10,7 +10,7 @@ import Alert, { AlertButton } from ".";
 export function TestLeftIcon({ type }: { type: Type }) {
   return (
     <div className="p-100 inline-block">
-      <AlertButton iconLeft={<Icons.Airplane />} type={type} dataTest="button">
+      <AlertButton iconLeft={<Icons.Airplane ariaHidden />} type={type} dataTest="button">
         Button
       </AlertButton>
     </div>
@@ -29,7 +29,7 @@ export function TestAlert() {
             <Alert
               title="You can change the title by changing the Title control"
               type={type}
-              icon={Icon ? <Icon /> : true}
+              icon={Icon ? <Icon ariaHidden /> : true}
               inlineActions={
                 <AlertButton type={type} href="#">
                   Link
@@ -64,7 +64,7 @@ export function TestAlert() {
           <Alert
             title="You can change the title by changing the Title control"
             type={type}
-            icon={<Icons.Ai />}
+            icon={<Icons.Ai ariaHidden />}
             closable
             labelClose="Close"
             inlineActions={
@@ -83,7 +83,7 @@ export function TestAlert() {
           <Alert
             title="You can change the title by changing the Title control"
             type={type}
-            icon={<Icons.Ai />}
+            icon={<Icons.Ai ariaHidden />}
           >
             The quick, brown fox jumps over a lazy dog.
           </Alert>

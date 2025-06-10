@@ -90,12 +90,13 @@ export const CustomColor: Story = {
 };
 
 export const ReversedOnRtl: Story = {
-  render: ({ icon, reverseOnRtl }) => {
+  render: args => {
+    const { icon, reverseOnRtl } = args;
     const Icon = getIcon(icon);
 
     return (
       <RenderInRtl>
-        <Icon reverseOnRtl={reverseOnRtl} />
+        <Icon reverseOnRtl={reverseOnRtl} ariaHidden />
       </RenderInRtl>
     );
   },

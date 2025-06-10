@@ -30,7 +30,7 @@ const carrierLogo = `
 
 const featureIcon = `<FeatureIcon name="TicketFlexi" />`;
 
-const icon = `<Icons.Airplane />`;
+const icon = `<Icons.Airplane ariaHidden />`;
 
 const illustration = `<Illustration name="Accommodation" size="small"/>`;
 

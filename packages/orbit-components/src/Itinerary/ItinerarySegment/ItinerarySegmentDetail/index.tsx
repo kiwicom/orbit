@@ -24,7 +24,7 @@ const ItinerarySegmentDetail = ({
   duration,
   summary,
   content,
-  icon = <AirplaneDown size="small" />,
+  icon = <AirplaneDown size="small" ariaHidden />,
 }: Props) => {
   const { opened } = usePart();
   const { itinerarySegmentMinimalColumnWidth } = useItinerarySegmentMinimalColumnWidth();
@@ -60,7 +60,11 @@ const ItinerarySegmentDetail = ({
             </HorizontalScroll>
           </div>
           {content &&
-            (opened ? <ChevronUp color="secondary" /> : <ChevronDown color="secondary" />)}
+            (opened ? (
+              <ChevronUp color="secondary" ariaHidden />
+            ) : (
+              <ChevronDown color="secondary" ariaHidden />
+            ))}
         </Stack>
       </div>
       {content && (

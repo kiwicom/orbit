@@ -12,7 +12,7 @@ describe("ButtonGroup", () => {
     render(
       <ButtonGroup dataTest="test">
         <Button type="secondary">{children}</Button>
-        <Button iconLeft={<Airplane />}>{children}</Button>
+        <Button iconLeft={<Airplane ariaHidden />}>{children}</Button>
       </ButtonGroup>,
     );
     expect(screen.getByTestId("test")).toBeInTheDocument();

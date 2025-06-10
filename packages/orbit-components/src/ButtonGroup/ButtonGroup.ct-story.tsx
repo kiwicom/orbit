@@ -9,8 +9,8 @@ import ButtonGroup from ".";
 export default function ButtonGroupVisualStory() {
   return (
     <ButtonGroup>
-      <Button iconLeft={<Airplane />}>Button</Button>
-      <Button iconLeft={<ChevronDown />} title="Show more" />
+      <Button iconLeft={<Airplane ariaHidden />}>Button</Button>
+      <Button iconLeft={<ChevronDown ariaHidden />} title="Show more" />
     </ButtonGroup>
   );
 }

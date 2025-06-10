@@ -79,7 +79,7 @@ const StepperStateless = ({
         width="44px"
         className={stepperButtonMixin({ disabled: isMinusDisabled, active })}
         disabled={isMinusDisabled}
-        iconLeft={<Minus size="small" />}
+        iconLeft={<Minus size="small" ariaHidden />}
         onClick={ev => {
           if (onDecrement && !disabled) {
             onDecrement(ev);
@@ -123,7 +123,7 @@ const StepperStateless = ({
         width="44px"
         className={stepperButtonMixin({ disabled: isPlusDisabled, active })}
         disabled={isPlusDisabled}
-        iconLeft={<Plus size="small" />}
+        iconLeft={<Plus size="small" ariaHidden />}
         onClick={ev => {
           if (onIncrement && !disabled) {
             onIncrement(ev);

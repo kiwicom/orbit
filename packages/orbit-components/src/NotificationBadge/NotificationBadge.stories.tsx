@@ -59,7 +59,7 @@ export const Playground: Story = {
     const Icon = typeof icon === "string" && getIcon(icon);
 
     return (
-      <NotificationBadge {...args} icon={Icon && <Icon />}>
+      <NotificationBadge {...args} icon={Icon && <Icon ariaHidden />}>
         {children}
       </NotificationBadge>
     );

@@ -23,6 +23,7 @@ const WizardStepIcon = ({ isCompleted }: { isCompleted?: boolean }) => {
     >
       {isCompleted || status === "completed" ? (
         <Check
+          ariaHidden
           size="small"
           customColor={
             isCompleted && status !== "completed" && status !== "available"

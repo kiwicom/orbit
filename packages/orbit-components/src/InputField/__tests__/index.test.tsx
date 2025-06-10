@@ -33,8 +33,15 @@ describe("InputField", () => {
         autoComplete="off"
         spaceAfter={SPACINGS_AFTER.NORMAL}
         inputMode={INPUTMODE.NUMERIC}
-        prefix={<Search dataTest="prefix" />}
-        suffix={<ButtonLink dataTest="suffix" type="primary" compact iconLeft={<Visibility />} />}
+        prefix={<Search dataTest="prefix" ariaHidden />}
+        suffix={
+          <ButtonLink
+            dataTest="suffix"
+            type="primary"
+            compact
+            iconLeft={<Visibility ariaHidden />}
+          />
+        }
         help={
           <div data-test="help">
             Did you mean <TextLink>something</TextLink>?

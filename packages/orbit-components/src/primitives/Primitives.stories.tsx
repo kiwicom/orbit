@@ -28,7 +28,7 @@ export const BadgePrimitive: Story = {
     const Icon = getIcon(icon);
 
     return (
-      <BadgePrimitiveComponent className={className} icon={Icon && <Icon />}>
+      <BadgePrimitiveComponent className={className} icon={Icon && <Icon ariaHidden />}>
         BadgePrimitive
       </BadgePrimitiveComponent>
     );

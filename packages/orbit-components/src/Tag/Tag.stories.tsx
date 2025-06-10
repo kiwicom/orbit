@@ -71,7 +71,7 @@ export const Default: Story = {
       <Heading type="title2">Neutral</Heading>
       <Stack inline>
         <Tag>Non actionable</Tag>
-        <Tag iconLeft={<Icons.PlusMinus />}>With icon</Tag>
+        <Tag iconLeft={<Icons.PlusMinus ariaHidden />}>With icon</Tag>
         <Tag onClick={onClick}>Default</Tag>
         <Tag selected onClick={onClick}>
           Selected
@@ -86,7 +86,7 @@ export const Default: Story = {
       <Heading type="title2">Colored</Heading>
       <Stack inline>
         <Tag type="colored">Non actionable</Tag>
-        <Tag type="colored" iconLeft={<Icons.PlusMinus />}>
+        <Tag type="colored" iconLeft={<Icons.PlusMinus ariaHidden />}>
           With icon
         </Tag>
         <Tag type="colored" onClick={onClick}>

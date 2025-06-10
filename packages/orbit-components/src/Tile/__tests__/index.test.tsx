@@ -17,7 +17,7 @@ describe("Tile", () => {
     render(
       <Tile
         dataTest={dataTest}
-        icon={<Airplane />}
+        icon={<Airplane ariaHidden />}
         title={title}
         description={description}
         onClick={onClick}

@@ -32,7 +32,7 @@ export const Default: Story = {
   render: ({ message }) => {
     const toast = () =>
       createToast(message, {
-        icon: <Notification />,
+        icon: <Notification ariaHidden />,
         ariaProps: {
           role: "alert",
           "aria-live": "assertive",
@@ -83,7 +83,7 @@ export const WithPromise: Story = {
         },
         {
           success: {
-            icon: <Notification />,
+            icon: <Notification ariaHidden />,
           },
         },
       );
@@ -106,7 +106,7 @@ export const WithPromise: Story = {
 
 export const Playground: Story = {
   render: ({ message, ...args }) => {
-    const toast = () => createToast(message, { icon: <Notification /> });
+    const toast = () => createToast(message, { icon: <Notification ariaHidden /> });
 
     return (
       <>
@@ -144,7 +144,7 @@ export const Playground: Story = {
 
 export const RTL: Story = {
   render: ({ message }) => {
-    const toast = () => createToast(message, { icon: <Notification /> });
+    const toast = () => createToast(message, { icon: <Notification ariaHidden /> });
 
     return (
       <RenderInRtl>

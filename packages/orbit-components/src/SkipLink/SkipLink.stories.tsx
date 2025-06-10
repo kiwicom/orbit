@@ -99,7 +99,7 @@ export const WithinModal: Story = {
                         </Text>
                         <Stack direction="row" spacing="100" align="center">
                           <Text weight="bold">London LHR</Text>
-                          <FlightDirect size="small" />
+                          <FlightDirect size="small" ariaHidden />
                           <Text weight="bold">Prague PRG</Text>
                         </Stack>
                       </Stack>
@@ -122,7 +122,7 @@ export const WithinModal: Story = {
                         </Text>
                         <Stack direction="row" spacing="100" align="center">
                           <Text weight="bold">London LHR</Text>
-                          <FlightDirect size="small" />
+                          <FlightDirect size="small" ariaHidden />
                           <Text weight="bold">Prague PRG</Text>
                         </Stack>
                       </Stack>
@@ -146,7 +146,7 @@ export const WithinModal: Story = {
                         </Text>
                         <Stack direction="row" spacing="100" align="center">
                           <Text weight="bold">London LHR</Text>
-                          <FlightDirect size="small" />
+                          <FlightDirect size="small" ariaHidden />
                           <Text weight="bold">Prague PRG</Text>
                         </Stack>
                       </Stack>
@@ -178,7 +178,7 @@ export const WithinModal: Story = {
                         </Text>
                         <Stack direction="row" spacing="100" align="center">
                           <Text weight="bold">London LHR</Text>
-                          <FlightDirect size="small" />
+                          <FlightDirect size="small" ariaHidden />
                           <Text weight="bold">Prague PRG</Text>
                         </Stack>
                       </Stack>
@@ -201,7 +201,7 @@ export const WithinModal: Story = {
                         </Text>
                         <Stack direction="row" spacing="100" align="center">
                           <Text weight="bold">London LHR</Text>
-                          <FlightDirect size="small" />
+                          <FlightDirect size="small" ariaHidden />
                           <Text weight="bold">Prague PRG</Text>
                         </Stack>
                       </Stack>
@@ -225,7 +225,7 @@ export const WithinModal: Story = {
                         </Text>
                         <Stack direction="row" spacing="100" align="center">
                           <Text weight="bold">London LHR</Text>
-                          <FlightDirect size="small" />
+                          <FlightDirect size="small" ariaHidden />
                           <Text weight="bold">Prague PRG</Text>
                         </Stack>
                       </Stack>
@@ -236,7 +236,7 @@ export const WithinModal: Story = {
             </Stack>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button iconLeft={<ChevronBackward />} type="secondary">
+            <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
               Back
             </Button>
             <Box display="flex" justify="end">

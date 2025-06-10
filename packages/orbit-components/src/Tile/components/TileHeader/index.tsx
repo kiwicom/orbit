@@ -39,10 +39,10 @@ const IconRight = ({
   expandable?: Props["expandable"];
   className?: string;
 }) => {
-  if (expandable) return <ChevronDown color="secondary" className={className} />;
-  if (external) return <NewWindow className={className} />;
+  if (expandable) return <ChevronDown color="secondary" className={className} ariaHidden />;
+  if (external) return <NewWindow className={className} ariaHidden />;
 
-  return <ChevronForward color="secondary" className={className} reverseOnRtl />;
+  return <ChevronForward color="secondary" className={className} reverseOnRtl ariaHidden />;
 };
 
 const TileHeader = ({

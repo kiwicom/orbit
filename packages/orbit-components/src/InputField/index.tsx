@@ -200,12 +200,12 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             <Prefix>
               {help && !error && (
                 <span className="flex" ref={iconRef}>
-                  <InformationCircle color="info" size="small" />
+                  <InformationCircle color="info" size="small" ariaHidden />
                 </span>
               )}
               {error && (
                 <span className="flex" ref={iconRef}>
-                  <AlertCircle color="critical" size="small" />
+                  <AlertCircle color="critical" size="small" ariaHidden />
                 </span>
               )}
             </Prefix>

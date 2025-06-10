@@ -11,8 +11,8 @@ export default function ButtonVisualStory() {
       <div className="gap-300 flex flex-wrap items-center">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Button
-            iconLeft={<Icons.Airplane />}
-            iconRight={<Icons.ChevronDown />}
+            iconLeft={<Icons.Airplane ariaHidden />}
+            iconRight={<Icons.ChevronDown ariaHidden />}
             key={type}
             type={type}
           >
@@ -24,8 +24,8 @@ export default function ButtonVisualStory() {
       <div className="gap-300 flex flex-wrap items-center">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Button
-            iconLeft={<Icons.Airplane />}
-            iconRight={<Icons.ChevronDown />}
+            iconLeft={<Icons.Airplane ariaHidden />}
+            iconRight={<Icons.ChevronDown ariaHidden />}
             key={type}
             type={type}
             loading
@@ -38,8 +38,8 @@ export default function ButtonVisualStory() {
       <div className="gap-300 flex flex-wrap items-center">
         {Object.values(TYPE_OPTIONS).map(type => (
           <Button
-            iconLeft={<Icons.Airplane />}
-            iconRight={<Icons.ChevronDown />}
+            iconLeft={<Icons.Airplane ariaHidden />}
+            iconRight={<Icons.ChevronDown ariaHidden />}
             key={type}
             type={type}
             disabled
@@ -52,8 +52,8 @@ export default function ButtonVisualStory() {
       <div className="gap-300 flex flex-wrap">
         {Object.values(SIZE_OPTIONS).map(size => (
           <Button
-            iconLeft={<Icons.Airplane />}
-            iconRight={<Icons.ChevronDown />}
+            iconLeft={<Icons.Airplane ariaHidden />}
+            iconRight={<Icons.ChevronDown ariaHidden />}
             key={size}
             size={size}
           >
@@ -65,8 +65,8 @@ export default function ButtonVisualStory() {
       <div className="gap-300 flex flex-wrap items-start">
         {Object.values(SIZE_OPTIONS).map(size => (
           <Button
-            iconLeft={<Icons.Airplane />}
-            iconRight={<Icons.ChevronDown />}
+            iconLeft={<Icons.Airplane ariaHidden />}
+            iconRight={<Icons.ChevronDown ariaHidden />}
             key={size}
             size={size}
             loading
@@ -77,31 +77,43 @@ export default function ButtonVisualStory() {
       </div>
 
       <div className="gap-300 flex flex-wrap items-center">
-        <Button iconLeft={<Icons.Airplane />}>Button</Button>
-        <Button iconRight={<Icons.ChevronDown />}>Button</Button>
-        <Button iconLeft={<Icons.Airplane />} iconRight={<Icons.ChevronDown />}>
+        <Button iconLeft={<Icons.Airplane ariaHidden />}>Button</Button>
+        <Button iconRight={<Icons.ChevronDown ariaHidden />}>Button</Button>
+        <Button
+          iconLeft={<Icons.Airplane ariaHidden />}
+          iconRight={<Icons.ChevronDown ariaHidden />}
+        >
           Button
         </Button>
-        <Button iconLeft={<Icons.Airplane />} />
+        <Button iconLeft={<Icons.Airplane ariaHidden />} />
       </div>
 
       <div className="gap-300 flex flex-wrap items-center">
-        <Button circled iconLeft={<Icons.Airplane />}>
+        <Button circled iconLeft={<Icons.Airplane ariaHidden />}>
           Button
         </Button>
-        <Button circled iconLeft={<Icons.Airplane />} />
+        <Button circled iconLeft={<Icons.Airplane ariaHidden />} />
       </div>
 
-      <Button fullWidth iconLeft={<Icons.Airplane />}>
+      <Button fullWidth iconLeft={<Icons.Airplane ariaHidden />}>
         Button
       </Button>
-      <Button fullWidth iconRight={<Icons.ChevronDown />}>
+      <Button fullWidth iconRight={<Icons.ChevronDown ariaHidden />}>
         Button
       </Button>
-      <Button fullWidth iconLeft={<Icons.Airplane />} iconRight={<Icons.ChevronDown />}>
+      <Button
+        fullWidth
+        iconLeft={<Icons.Airplane ariaHidden />}
+        iconRight={<Icons.ChevronDown ariaHidden />}
+      >
         Button
       </Button>
-      <Button fullWidth centered iconLeft={<Icons.Airplane />} iconRight={<Icons.ChevronDown />}>
+      <Button
+        fullWidth
+        centered
+        iconLeft={<Icons.Airplane ariaHidden />}
+        iconRight={<Icons.ChevronDown ariaHidden />}
+      >
         Button
       </Button>
     </div>

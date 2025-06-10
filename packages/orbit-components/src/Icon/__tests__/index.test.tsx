@@ -5,10 +5,10 @@ import Accommodation from "../../icons/Accommodation";
 
 describe("Icon", () => {
   it("should have expected DOM output", () => {
-    render(<Accommodation dataTest="test" ariaHidden ariaLabel="Accommodation" />);
+    render(<Accommodation dataTest="test" ariaHidden />);
 
     expect(screen.getByTestId("test")).toBeInTheDocument();
-    const icon = screen.getByLabelText("Accommodation");
+    const icon = screen.getByTestId("test");
     expect(icon.tagName.toLowerCase()).toBe("svg");
     expect(icon).toHaveAttribute("aria-hidden", "true");
   });

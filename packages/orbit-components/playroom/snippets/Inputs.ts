@@ -6,8 +6,8 @@ const withError = `
     inlineLabel
     error="Please fill out as you have on your passport"
     placeholder="Placeholder"
-    prefix={<Icons.Search />}
-    suffix={<ButtonLink compact iconLeft={<Icons.Visibility />} size="normal"/>}
+    prefix={<Icons.Search ariaHidden />}
+    suffix={<ButtonLink compact iconLeft={<Icons.Visibility ariaHidden />} size="normal"/>}
   />
 </div>`;
 
@@ -153,7 +153,7 @@ const select = `
       value: 3
     }
   ]}
-  prefix={<Icons.Airplane />}
+  prefix={<Icons.Airplane ariaHidden />}
 />
 `;
 

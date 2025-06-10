@@ -76,7 +76,7 @@ export const WithPrefixAndLabel: Story = {
   render: ({ icon, ...args }) => {
     const Icon = getIcon(icon);
 
-    return <Select {...args} prefix={<Icon />} />;
+    return <Select {...args} prefix={<Icon ariaHidden />} />;
   },
 
   args: {
@@ -188,7 +188,7 @@ export const Playground: Story = {
   render: ({ icon, ...args }) => {
     const Icon = getIcon(icon);
 
-    return <Select {...args} prefix={<Icon />} />;
+    return <Select {...args} prefix={<Icon ariaHidden />} />;
   },
 
   args: {

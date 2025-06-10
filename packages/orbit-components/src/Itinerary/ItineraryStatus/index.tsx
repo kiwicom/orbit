@@ -37,15 +37,15 @@ const backgroundColor: Record<STATUS, string> = {
 const StatusIcon = ({ type, theme }: { type: Status; theme: Theme }) => {
   switch (type) {
     case "info":
-      return <Info size="small" customColor={theme.orbit.paletteBlueDark} />;
+      return <Info size="small" customColor={theme.orbit.paletteBlueDark} ariaHidden />;
     case "critical":
-      return <AlertOctagon size="small" customColor={theme.orbit.paletteRedDark} />;
+      return <AlertOctagon size="small" customColor={theme.orbit.paletteRedDark} ariaHidden />;
     case "success":
-      return <Check size="small" customColor={theme.orbit.paletteGreenDark} />;
+      return <Check size="small" customColor={theme.orbit.paletteGreenDark} ariaHidden />;
     case "neutral":
-      return <Info size="small" customColor="primary" />;
+      return <Info size="small" customColor="primary" ariaHidden />;
     default:
-      return <Warning size="small" customColor={theme.orbit.paletteOrangeDark} />;
+      return <Warning size="small" customColor={theme.orbit.paletteOrangeDark} ariaHidden />;
   }
 };
 

@@ -66,7 +66,7 @@ const Switch = React.forwardRef<HTMLInputElement, Props>(
                 : "left-[-3px]",
             )}
           >
-            {icon || <Circle size="small" />}
+            {icon || <Circle size="small" ariaHidden />}
           </div>
         </div>
       </label>

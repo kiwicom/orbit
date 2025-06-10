@@ -107,13 +107,13 @@ export const WithLabelAndIcon: Story = {
 
     return (
       <List {...args}>
-        <ListItem label="Kiwi.com services" icon={<Icon color={iconColor} />}>
+        <ListItem label="Kiwi.com services" icon={<Icon color={iconColor} ariaHidden />}>
           {children}
         </ListItem>
-        <ListItem label="Kiwi.com services" icon={<Icon color={iconColor} />}>
+        <ListItem label="Kiwi.com services" icon={<Icon color={iconColor} ariaHidden />}>
           {children}
         </ListItem>
-        <ListItem icon={<Icon color={iconColor} />}>{children}</ListItem>
+        <ListItem icon={<Icon color={iconColor} ariaHidden />}>{children}</ListItem>
       </List>
     );
   },
@@ -168,7 +168,7 @@ export const Playground: Story = {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           Array(...Array(3)).map((_, idx) => (
             // eslint-disable-next-line react/no-array-index-key
-            <ListItem key={idx} icon={<Icon color={iconColor} />}>
+            <ListItem key={idx} icon={<Icon color={iconColor} ariaHidden />}>
               {children}
             </ListItem>
           ))
@@ -191,12 +191,12 @@ export const Rtl: Story = {
   render: () => (
     <RenderInRtl>
       <List size="small" type="secondary">
-        <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} />}>
+        <ListItem icon={<CarrierLogo carriers={[{ code: "FR", name: "Ryanair" }]} ariaHidden />}>
           Airline: Ryanair
         </ListItem>
-        <ListItem icon={<Icons.InformationCircle />}>Flight no: FR 1337</ListItem>
-        <ListItem icon={<Icons.Trip />}>PNR: TEST0X0</ListItem>
-        <ListItem icon={<Icons.Airplane />}>Airbus A320 (320)</ListItem>
+        <ListItem icon={<Icons.InformationCircle ariaHidden />}>Flight no: FR 1337</ListItem>
+        <ListItem icon={<Icons.Trip ariaHidden />}>PNR: TEST0X0</ListItem>
+        <ListItem icon={<Icons.Airplane ariaHidden />}>Airbus A320 (320)</ListItem>
       </List>
     </RenderInRtl>
   ),

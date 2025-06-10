@@ -10,7 +10,7 @@ export default function TileStory() {
       <Tile>Tile child</Tile>
       <Tile noPadding>Tile child</Tile>
       <Tile title="Tile" />
-      <Tile title="Tile" icon={<Airplane />} />
+      <Tile title="Tile" icon={<Airplane ariaHidden />} />
       <Tile title="Tile" description="Tile description" />
       <Tile title="Tile">Tile child</Tile>
       <Tile header="Tile header" />

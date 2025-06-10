@@ -27,13 +27,13 @@ export const ListStoryWithIconAndLabel = ({
 }: Omit<Props, "children">) => {
   return (
     <List size={size} type={type}>
-      <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
+      <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" ariaHidden />}>
         24,000 locations around the globe
       </ListItem>
-      <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" />}>
+      <ListItem label="Kiwi.com services" icon={<Check size="small" color="success" ariaHidden />}>
         24,000 locations around the globe
       </ListItem>
-      <ListItem icon={<Check size="small" color="success" />}>
+      <ListItem icon={<Check size="small" color="success" ariaHidden />}>
         24,000 locations around the globe
       </ListItem>
     </List>

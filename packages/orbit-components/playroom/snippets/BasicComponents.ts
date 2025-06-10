@@ -8,10 +8,10 @@ const buttonLink = `<ButtonLink type="primary">ButtonLink</ButtonLink>`;
 
 const badgeList = `
 <BadgeList>
-  <BadgeListItem icon={<Icons.KiwiComGuarantee />}>
+  <BadgeListItem icon={<Icons.KiwiComGuarantee ariaHidden />}>
     You're departing from a different place
   </BadgeListItem>
-  <BadgeListItem icon={<Icons.KiwiComGuarantee />} type="info" size="normal">
+  <BadgeListItem icon={<Icons.KiwiComGuarantee ariaHidden />} type="info" size="normal">
     You must collect and recheck your baggage
   </BadgeListItem>
 </BadgeList>
@@ -29,7 +29,7 @@ const breadcrumbs = `
 const buttonGroup = `
 <ButtonGroup>
   <Button>Button</Button>
-  <Button iconLeft={<Icons.ChevronDown />}/>
+  <Button iconLeft={<Icons.ChevronDown ariaHidden />}/>
 </ButtonGroup>
 `;
 
@@ -87,13 +87,13 @@ const listChoice = `
   <ListChoice
     title="Choice Title"
     description="Further description"
-    icon={<Icons.Accommodation />}
+    icon={<Icons.Accommodation ariaHidden />}
     selectable
   />
   <ListChoice
     title="Choice Title"
     description="Further description"
-    icon={<Icons.Accommodation />}
+    icon={<Icons.Accommodation ariaHidden />}
     selectable
   />
 </>
@@ -119,7 +119,7 @@ const popover = `
 }
 >
   <Button
-    iconRight={<Icons.ChevronDown />}
+    iconRight={<Icons.ChevronDown ariaHidden />}
   >
     Open popover
   </Button>
@@ -161,11 +161,11 @@ const stepper = `<Stepper />`;
 
 const stopoverArrow = `<StopoverArrow stops="2" />`;
 
-const switchComponent = `<Switch checked icon={<Icons.Lock />} />`;
+const switchComponent = `<Switch checked icon={<Icons.Lock ariaHidden />} />`;
 
 const tag = `
 <Tag
-  iconLeft={<Icons.PlusMinus />}
+  iconLeft={<Icons.PlusMinus ariaHidden />}
   type="colored"
   onRemove={() => {}}
 >
@@ -178,7 +178,7 @@ const text = `<Text>Text</Text>`;
 const textLink = `
 <TextLink
   href={undefined}
-  iconRight={<Icons.ChevronForward />}
+  iconRight={<Icons.ChevronForward ariaHidden />}
   onClick={() => {}}
 >
   Link text

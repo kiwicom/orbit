@@ -60,7 +60,7 @@ export const DefaultWithHeaderProps: Story = {
   render: ({ icon, ...args }) => {
     const Icon = getIcon(icon);
 
-    return <Tile {...args} icon={Icon && <Icon />} />;
+    return <Tile {...args} icon={Icon && <Icon ariaHidden />} />;
   },
 
   parameters: {
@@ -83,7 +83,7 @@ export const DefaultWithHeaderPropsAsHref: Story = {
   render: ({ icon, ...args }) => {
     const Icon = getIcon(icon);
 
-    return <Tile {...args} icon={Icon && <Icon />} />;
+    return <Tile {...args} icon={Icon && <Icon ariaHidden />} />;
   },
 
   parameters: {
@@ -110,7 +110,7 @@ export const ExpandableWithCustomDescription: StoryObj<
     return (
       <Tile
         {...args}
-        icon={Icon && <Icon />}
+        icon={Icon && <Icon ariaHidden />}
         header={
           <Stack justify="between" align="center" direction="row" shrink>
             <Stack spacing="none" direction="column" shrink>
@@ -159,7 +159,7 @@ export const Playground: Story = {
     const Icon = getIcon(icon);
 
     return (
-      <Tile {...args} icon={Icon && <Icon />}>
+      <Tile {...args} icon={Icon && <Icon ariaHidden />}>
         {children}
       </Tile>
     );

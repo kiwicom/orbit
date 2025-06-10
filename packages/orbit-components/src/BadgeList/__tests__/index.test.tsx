@@ -11,7 +11,7 @@ describe("BadgeList", () => {
     const childrenText = "Lorem ipsum dolor sit amet";
     render(
       <BadgeList dataTest={dataTest}>
-        <BadgeListItem icon={<Airplane />} dataTest={childrenDataTest}>
+        <BadgeListItem icon={<Airplane ariaHidden />} dataTest={childrenDataTest}>
           {childrenText}
         </BadgeListItem>
       </BadgeList>,

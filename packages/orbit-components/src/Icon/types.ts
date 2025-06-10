@@ -17,17 +17,27 @@ export type Color =
   | "warning"
   | "critical";
 
-export interface Props extends Common.Globals {
+export type LabelOrHidden =
+  | {
+      ariaLabel?: never;
+      ariaHidden: true;
+    }
+  | {
+      ariaLabel: string;
+      ariaHidden?: false;
+    };
+
+interface IconProps extends Common.Globals {
   readonly size?: Size;
   readonly color?: Color;
   readonly className?: string;
   readonly customColor?: string;
   readonly reverseOnRtl?: boolean;
-  readonly ariaLabel?: string;
-  readonly ariaHidden?: boolean;
 }
 
-export interface FactoryProps extends Props {
+export type Props = IconProps & LabelOrHidden;
+
+export interface FactoryProps {
   readonly children: React.ReactNode;
   readonly viewBox: string;
 }

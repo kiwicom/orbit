@@ -4,7 +4,7 @@ import * as React from "react";
 import cx from "clsx";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
-import type { GetSize, FactoryProps } from "./types";
+import type { GetSize, FactoryProps, Props } from "./types";
 
 export const getSize: GetSize =
   size =>
@@ -38,7 +38,7 @@ const OrbitIcon = ({
   ariaHidden,
   reverseOnRtl,
   ariaLabel,
-}: FactoryProps) => {
+}: FactoryProps & Props) => {
   return (
     <svg
       className={cx(

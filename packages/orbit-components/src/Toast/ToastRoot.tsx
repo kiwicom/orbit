@@ -17,6 +17,7 @@ const ToastRoot = ({
   gutter = 8,
   dismissTimeout = 5000,
   placement = "top-center",
+  useTopSafeAreaInset = false,
 }: Props) => {
   const { toasts, handlers } = useToaster({
     duration: dismissTimeout,
@@ -34,7 +35,9 @@ const ToastRoot = ({
       )}
       style={
         {
-          "--toast-root-top": `${topOffset}px`,
+          "--toast-root-top": useTopSafeAreaInset
+            ? `calc(${topOffset}px + var(--safe-area-inset-top, env(safe-area-inset-top)))`
+            : `${topOffset}px`,
           "--toast-root-bottom": `${bottomOffset}px`,
           "--toast-root-start": `${leftOffset}px`,
           "--toast-root-end": `${rightOffset}px`,

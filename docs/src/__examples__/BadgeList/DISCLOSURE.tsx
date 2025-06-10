@@ -38,13 +38,13 @@ export default {
           </Drawer>
         )}
         <BadgeList>
-          <BadgeListItem type="success" icon={<KiwiComGuarantee />}>
+          <BadgeListItem type="success" icon={<KiwiComGuarantee ariaHidden />}>
             <TextLink onClick={() => setShowDrawer(true)} type="secondary">
               Transfer protected
             </TextLink>{" "}
             by the Kiwi.com Guarantee
           </BadgeListItem>
-          <BadgeListItem icon={<BaggageSet />}>
+          <BadgeListItem icon={<BaggageSet ariaHidden />}>
             You must collect and recheck{" "}
             <Tooltip content="This applies to checked baggage" renderInPortal={false}>
               <Text>your baggage</Text>

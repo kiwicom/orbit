@@ -170,7 +170,7 @@ function EndLink({ href, children }: EndLinkProps) {
       <StyledLinkTextWrapper>
         <StyledLinkText>
           <span>{children}</span>
-          <ArrowRight />
+          <ArrowRight ariaHidden />
         </StyledLinkText>
       </StyledLinkTextWrapper>
     );

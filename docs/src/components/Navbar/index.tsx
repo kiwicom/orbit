@@ -153,7 +153,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                     type="white"
                     circled
                     title="Menu"
-                    iconLeft={<MenuHamburger />}
+                    iconLeft={<MenuHamburger ariaHidden />}
                     onClick={() => setMenuOpen(true)}
                   />
                 </Hide>
@@ -163,7 +163,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                 >
                   <Button
                     type="white"
-                    iconLeft={<StarEmpty />}
+                    iconLeft={<StarEmpty ariaHidden />}
                     circled
                     title="Open bookmarks"
                     onClick={() => setMenuOpen(true)}
@@ -173,7 +173,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
             ) : (
               <Button
                 type="white"
-                iconLeft={<StarEmpty />}
+                iconLeft={<StarEmpty ariaHidden />}
                 circled
                 title="Open bookmarks"
                 onClick={() => setMenuOpen(true)}

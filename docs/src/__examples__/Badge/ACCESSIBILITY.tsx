@@ -4,7 +4,7 @@ import { Badge } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Badge ariaLabel="4 passengers" icon={<Passengers />}>
+    <Badge ariaLabel="4 passengers" icon={<Passengers ariaHidden />}>
       4
     </Badge>
   ),

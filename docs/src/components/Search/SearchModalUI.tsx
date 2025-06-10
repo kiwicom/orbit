@@ -131,7 +131,7 @@ export default function SearchModalUI({
             <StyledSearchWrapper>
               <StyledInputContainer {...onComboboxProps()}>
                 <StyledPrefix>
-                  <SearchIcon />
+                  <SearchIcon ariaHidden />
                 </StyledPrefix>
                 <StyledInput
                   {...onGetInputProps({
@@ -187,7 +187,7 @@ export default function SearchModalUI({
                           >
                             <Tile
                               title={itemName}
-                              linkContent={<ChevronForward size="medium" />}
+                              linkContent={<ChevronForward size="medium" ariaHidden />}
                               href={item.path}
                               onClick={onClose}
                               icon={getIconFromItem(item)}
@@ -219,7 +219,7 @@ export default function SearchModalUI({
                                 <div>
                                   <Tile
                                     title={itemName}
-                                    linkContent={<ChevronForward size="medium" />}
+                                    linkContent={<ChevronForward size="medium" ariaHidden />}
                                     href={item.path}
                                     onClick={() => handleComponentTileClick(item)}
                                     icon={ICON_MAP.Components}
@@ -251,7 +251,7 @@ export default function SearchModalUI({
                           <StyledMenuItemTitle>{itemName}</StyledMenuItemTitle>
                           {hasDescription && <div>{item.description}</div>}
                         </div>
-                        <ChevronForward size="medium" />
+                        <ChevronForward size="medium" ariaHidden />
                       </StyledMenuItem>
                     );
                   })}

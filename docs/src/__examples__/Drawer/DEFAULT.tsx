@@ -40,7 +40,7 @@ export default {
           </Drawer>
         )}
         <Button
-          iconLeft={<MenuHamburger />}
+          iconLeft={<MenuHamburger ariaHidden />}
           title="Open menu"
           onClick={() => {
             setShowDrawer(true);

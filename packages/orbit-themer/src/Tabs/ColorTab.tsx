@@ -75,13 +75,17 @@ const ColorTab = ({ title, children, colorPath }) => {
         <Heading type="title4">{title}</Heading>
         {isAdjusted && (
           <StyledAdjusted>
-            <Badge type="infoSubtle" icon={<InformationCircle />}>
+            <Badge type="infoSubtle" icon={<InformationCircle ariaHidden />}>
               Adjusted
             </Badge>
           </StyledAdjusted>
         )}
         <StyledColorTabIcon>
-          {opened ? <ChevronDown size="small" /> : <ChevronForward size="small" />}
+          {opened ? (
+            <ChevronDown size="small" ariaHidden />
+          ) : (
+            <ChevronForward size="small" ariaHidden />
+          )}
         </StyledColorTabIcon>
       </StyledColorTabHeader>
       <StyledColorTabChildren opened={opened}>{children}</StyledColorTabChildren>

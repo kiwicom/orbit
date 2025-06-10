@@ -13,17 +13,20 @@ export default {
   Example: () => (
     <OrbitProvider theme={defaultTheme}>
       <List type="secondary">
-        <ListItem icon={<Check color="success" size="small" />} label="Kiwi.com services">
+        <ListItem
+          icon={<Check color="success" size="small" ariaHidden />}
+          label="Kiwi.com services"
+        >
           <Tooltip content="Extra info about basic services" stopPropagation>
             <Text>Basic</Text>
           </Tooltip>
         </ListItem>
-        <ListItem icon={<Close color="critical" size="small" />} label="Rebooking">
+        <ListItem icon={<Close color="critical" size="small" ariaHidden />} label="Rebooking">
           <Tooltip content="Extra info about rebooking" stopPropagation>
             <Text>New ticket</Text>
           </Tooltip>
         </ListItem>
-        <ListItem icon={<Close color="critical" size="small" />} label="Cancelation">
+        <ListItem icon={<Close color="critical" size="small" ariaHidden />} label="Cancelation">
           <Text>$10 refund</Text>
         </ListItem>
       </List>

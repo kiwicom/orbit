@@ -21,13 +21,13 @@ export default {
             />
           </div>
         </ButtonLink>
-        <ButtonLink type="secondary" iconLeft={<AirplaneTakeoff />} title="Travel" />
-        <ButtonLink type="secondary" iconLeft={<Accommodation />} title="Rooms" />
-        <ButtonLink type="secondary" iconLeft={<Partners />} title="Careers" />
+        <ButtonLink type="secondary" iconLeft={<AirplaneTakeoff ariaHidden />} title="Travel" />
+        <ButtonLink type="secondary" iconLeft={<Accommodation ariaHidden />} title="Rooms" />
+        <ButtonLink type="secondary" iconLeft={<Partners ariaHidden />} title="Careers" />
         <Stack justify="end" inline>
           <ButtonLink type="secondary" iconLeft={<CountryFlag code="gb" />} title="English" />
-          <ButtonLink type="secondary" iconLeft={<QuestionCircle />} title="Help" />
-          <ButtonLink type="secondary" iconLeft={<AccountCircle />} title="My account" />
+          <ButtonLink type="secondary" iconLeft={<QuestionCircle ariaHidden />} title="Help" />
+          <ButtonLink type="secondary" iconLeft={<AccountCircle ariaHidden />} title="My account" />
         </Stack>
       </Stack>
     </NavigationBar>

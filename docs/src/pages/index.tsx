@@ -74,7 +74,7 @@ export default function Home({ location, path }: Props) {
                 size="large"
                 type="primary"
                 circled
-                iconRight={<ArrowRight />}
+                iconRight={<ArrowRight ariaHidden />}
                 asComponent={GatsbyLinkToButton}
                 href="/getting-started/"
               >
@@ -288,7 +288,7 @@ export default function Home({ location, path }: Props) {
                     <ScreenReaderText>
                       Open Orbit&apost;s public Figma library in a new window
                     </ScreenReaderText>
-                    <NewWindow />
+                    <NewWindow ariaHidden />
                   </>
                 }
                 href="https://www.figma.com/@orbitbykiwi"
@@ -299,7 +299,7 @@ export default function Home({ location, path }: Props) {
                 linkContent={
                   <>
                     <ScreenReaderText>Open GitHub repository in a new window</ScreenReaderText>
-                    <NewWindow />
+                    <NewWindow ariaHidden />
                   </>
                 }
                 href="https://github.com/kiwicom/orbit"

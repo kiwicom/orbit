@@ -89,9 +89,9 @@ export const DoDontHeader = ({ type }: GuidelineType) => (
     tablet={{ direction: "row", justify: "start" }}
   >
     {type === "do" ? (
-      <CheckCircle color="success" size="large" />
+      <CheckCircle color="success" size="large" ariaHidden />
     ) : (
-      <CloseCircle color="critical" size="large" />
+      <CloseCircle color="critical" size="large" ariaHidden />
     )}
     <Text weight="bold" type={type === "do" ? "success" : "critical"}>
       {type === "do" ? "Do" : "Don't"}

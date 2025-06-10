@@ -17,15 +17,15 @@ export default {
         <Tile title="Complete baggage bundle">
           <Stack>
             <Inline>
-              <BaggageChecked30 />
+              <BaggageChecked30 ariaHidden />
               <Text>30 kg checked baggage</Text>
             </Inline>
             <Inline>
-              <BaggageCabin />
+              <BaggageCabin ariaHidden />
               <Text>10 kg cabin baggage</Text>
             </Inline>
             <Inline>
-              <BaggagePersonal />
+              <BaggagePersonal ariaHidden />
               <Text>8 kg personal item</Text>
             </Inline>
           </Stack>
@@ -33,24 +33,24 @@ export default {
         <Tile title="Basic baggage bundle">
           <Stack>
             <Inline>
-              <BaggageCabin />
+              <BaggageCabin ariaHidden />
               <Text>10 kg cabin baggage</Text>
             </Inline>
             <Inline>
-              <BaggagePersonal />
+              <BaggagePersonal ariaHidden />
               <Text>8 kg personal item</Text>
             </Inline>
           </Stack>
         </Tile>
         <Tile title="Personal item only">
           <Inline>
-            <BaggagePersonal />
+            <BaggagePersonal ariaHidden />
             <Text>8 kg personal item</Text>
           </Inline>
         </Tile>
         <Tile title="Extended baggage bundle">
           <Inline>
-            <BaggagePersonal />
+            <BaggagePersonal ariaHidden />
             <Text>Up to 40kg personal item</Text>
           </Inline>
         </Tile>

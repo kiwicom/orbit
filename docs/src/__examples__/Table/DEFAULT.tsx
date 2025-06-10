@@ -22,7 +22,7 @@ export default {
         <TableRow>
           <TableCell>
             <Inline align="center">
-              <BaggageCabin /> Cabin baggage
+              <BaggageCabin ariaHidden /> Cabin baggage
             </Inline>
           </TableCell>
           <TableCell>Free</TableCell>
@@ -30,7 +30,7 @@ export default {
         <TableRow>
           <TableCell>
             <Inline align="center">
-              <BaggageChecked30 /> Checked baggage
+              <BaggageChecked30 ariaHidden /> Checked baggage
             </Inline>
           </TableCell>
           <TableCell>Paid-for option</TableCell>

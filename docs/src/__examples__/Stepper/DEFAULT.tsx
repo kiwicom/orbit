@@ -8,7 +8,7 @@ export default {
       <Stack align="center" spacing="400" desktop={{ spacing: "600" }}>
         <Heading type="title4">
           <Stack align="center">
-            <Passengers />
+            <Passengers ariaHidden />
             Travelers
           </Stack>
         </Heading>

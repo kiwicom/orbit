@@ -7,7 +7,7 @@ export default {
   Example: () => (
     <Stack direction="column">
       <BadgePrimitive
-        icon={<AirplaneTakeoff />}
+        icon={<AirplaneTakeoff ariaHidden />}
         className="text-white-normal bg-gradient-to-r from-[#fd1d1d] to-[#ffae28]"
       >
         Orbit

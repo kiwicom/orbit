@@ -5,7 +5,7 @@ import { ListChoice } from "@kiwicom/orbit-components";
 const ListChoices = () => {
   const title = "Choice Title";
   const description = "Further description";
-  const icon = <Gps />;
+  const icon = <Gps ariaHidden />;
 
   return (
     <>

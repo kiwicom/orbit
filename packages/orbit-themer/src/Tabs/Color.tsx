@@ -81,7 +81,7 @@ const Color = ({ name, extra, objectKey }: { name: string; extra?: string; objec
             {isAdjustedColor && (
               <StyledAdjustedColor>
                 <Tooltip content="The color has been changed">
-                  <AlertCircle size="small" color="info" />
+                  <AlertCircle size="small" color="info" ariaHidden />
                 </Tooltip>
               </StyledAdjustedColor>
             )}

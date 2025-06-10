@@ -99,7 +99,7 @@ export default {
         )}
         <Stack flex>
           <ButtonLink
-            iconLeft={<QuestionCircle />}
+            iconLeft={<QuestionCircle ariaHidden />}
             title="Open help"
             circled
             onClick={() => {

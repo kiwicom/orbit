@@ -3,7 +3,7 @@ import { Button } from "@kiwicom/orbit-components";
 import { ChevronForward } from "@kiwicom/orbit-components/icons";
 
 export default {
-  Example: () => <Button iconRight={<ChevronForward />}>Add item</Button>,
+  Example: () => <Button iconRight={<ChevronForward ariaHidden />}>Add item</Button>,
   exampleVariants: [
     {
       name: "With right icon",

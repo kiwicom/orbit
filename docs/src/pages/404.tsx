@@ -21,13 +21,19 @@ export default function PageNotFound({ location }: PageProps) {
           </Stack>
           <Illustration name="Error404" size="large" />
           <Stack flex spacing="200">
-            <Button circled type="primary" iconRight={<TripIcon />} asComponent={Link} href="/">
+            <Button
+              circled
+              type="primary"
+              iconRight={<TripIcon ariaHidden />}
+              asComponent={Link}
+              href="/"
+            >
               Return home
             </Button>
             <Button
               circled
               type="primarySubtle"
-              iconLeft={<SearchIcon />}
+              iconLeft={<SearchIcon ariaHidden />}
               onClick={() => setSearchOpen(true)}
             >
               Search

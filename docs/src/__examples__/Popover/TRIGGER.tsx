@@ -36,7 +36,7 @@ export default {
           </Stack>
         }
       >
-        <Button asComponent="div" iconRight={<ChevronDown />} type="secondary">
+        <Button asComponent="div" iconRight={<ChevronDown ariaHidden />} type="secondary">
           Learn more
         </Button>
       </Popover>

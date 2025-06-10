@@ -80,7 +80,7 @@ const DesignTokenValue = ({
           onClick={() => copy(String(value))}
           title={String(value)}
         >
-          {isCopied ? <Check /> : <CopyIcon />}
+          {isCopied ? <Check ariaHidden /> : <CopyIcon ariaHidden />}
         </StyledCopyButton>
       )}
     </StyledTokenValue>

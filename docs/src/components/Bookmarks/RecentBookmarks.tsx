@@ -15,7 +15,7 @@ const RecentBookmarks = () => {
         Object.entries(bookmarks)
           .slice(0, 2)
           .map(([key, { title, description }]) => (
-            <Tile isBookmark key={key} title={title} href={key} icon={<StarFull />}>
+            <Tile isBookmark key={key} title={title} href={key} icon={<StarFull ariaHidden />}>
               {description}
             </Tile>
           ))}

@@ -103,7 +103,13 @@ const Bookmarks = () => {
           : Object.entries(bookmarks).map(
               ([slug, props]) =>
                 props.title && (
-                  <Tile isBookmark key={slug} href={slug} title={props.title} icon={<StarFull />}>
+                  <Tile
+                    isBookmark
+                    key={slug}
+                    href={slug}
+                    title={props.title}
+                    icon={<StarFull ariaHidden />}
+                  >
                     {props.description}
                   </Tile>
                 ),
@@ -135,7 +141,7 @@ const Bookmarks = () => {
       No bookmarks yet. You can can bookmark pages by clicking on{" "}
       <StyledNowrap>
         &ldquo;
-        <StarIcon size="small" />
+        <StarIcon size="small" ariaHidden />
         &rdquo;
       </StyledNowrap>{" "}
       next to the page title.

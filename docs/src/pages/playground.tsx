@@ -129,15 +129,15 @@ const Playground = ({ location }: Props) => {
               copy(code);
               createToast("Code copied to clipboard");
             }}
-            iconLeft={isCopied ? <Check /> : <Copy />}
+            iconLeft={isCopied ? <Check ariaHidden /> : <Copy ariaHidden />}
             circled
           />
         </Tooltip>
         <Tooltip content="Search from examples">
-          <Button onClick={() => setSearchOpen(true)} iconLeft={<Search />} circled />
+          <Button onClick={() => setSearchOpen(true)} iconLeft={<Search ariaHidden />} circled />
         </Tooltip>
         <Tooltip content="Restore to default">
-          <Button onClick={() => restoreLocalStorage()} iconLeft={<Reload />} circled />
+          <Button onClick={() => restoreLocalStorage()} iconLeft={<Reload ariaHidden />} circled />
         </Tooltip>
         <Popover
           content={
@@ -160,7 +160,7 @@ const Playground = ({ location }: Props) => {
             </Stack>
           }
         >
-          <Button iconLeft={<GridIcon />} circled />
+          <Button iconLeft={<GridIcon ariaHidden />} circled />
         </Popover>
         <Popover
           content={
@@ -186,7 +186,7 @@ const Playground = ({ location }: Props) => {
             </Stack>
           }
         >
-          <Button iconLeft={<Sun />} circled />
+          <Button iconLeft={<Sun ariaHidden />} circled />
         </Popover>
       </StyledFloatingBanner>
     </StyledCustomMainWrapper>

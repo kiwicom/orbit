@@ -6,7 +6,7 @@ export default {
   Example: () => {
     return (
       <BadgeList>
-        <BadgeListItem type="success" icon={<CheckCircle />}>
+        <BadgeListItem type="success" icon={<CheckCircle ariaHidden />}>
           Transfer protected
         </BadgeListItem>
       </BadgeList>

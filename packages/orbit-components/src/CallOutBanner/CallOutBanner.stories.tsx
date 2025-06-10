@@ -52,15 +52,15 @@ export const Default: Story = {
           type="secondary"
           size="small"
           onClick={action("onClick")}
-          iconRight={<Icons.NewWindow />}
+          iconRight={<Icons.NewWindow ariaHidden />}
         >
           Find a Room
         </Button>
       }
     >
       <List type="secondary">
-        <ListItem icon={<Icons.Check color="success" />}>Up to 50% off.</ListItem>
-        <ListItem icon={<Icons.Check color="success" />}>
+        <ListItem icon={<Icons.Check color="success" ariaHidden />}>Up to 50% off.</ListItem>
+        <ListItem icon={<Icons.Check color="success" ariaHidden />}>
           From 3-star budget to 5-star luxury.
         </ListItem>
       </List>
@@ -87,7 +87,7 @@ export const Actionable: Story = {
               type="secondary"
               size="small"
               onClick={action("onClick")}
-              iconRight={<Icons.NewWindow />}
+              iconRight={<Icons.NewWindow ariaHidden />}
             >
               Find a Room
             </Button>
@@ -95,8 +95,8 @@ export const Actionable: Story = {
         }
       >
         <List type="secondary">
-          <ListItem icon={<Icons.Check color="success" />}>Up to 50% off.</ListItem>
-          <ListItem icon={<Icons.Check color="success" />}>
+          <ListItem icon={<Icons.Check color="success" ariaHidden />}>Up to 50% off.</ListItem>
+          <ListItem icon={<Icons.Check color="success" ariaHidden />}>
             From 3-star budget to 5-star luxury.
           </ListItem>
         </List>
@@ -124,7 +124,7 @@ export const Playground: Story = {
               type="secondary"
               size="small"
               onClick={action("onClick")}
-              iconRight={<Icons.NewWindow />}
+              iconRight={<Icons.NewWindow ariaHidden />}
             >
               Find a Room
             </Button>
@@ -132,8 +132,8 @@ export const Playground: Story = {
         }
       >
         <List type="secondary">
-          <ListItem icon={<Icons.Check color="success" />}>Up to 50% off.</ListItem>
-          <ListItem icon={<Icons.Check color="success" />}>
+          <ListItem icon={<Icons.Check color="success" ariaHidden />}>Up to 50% off.</ListItem>
+          <ListItem icon={<Icons.Check color="success" ariaHidden />}>
             From 3-star budget to 5-star luxury.
           </ListItem>
         </List>

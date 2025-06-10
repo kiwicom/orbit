@@ -27,11 +27,11 @@ const RenderedIcon = ({
   type: Props["type"];
 }): React.ReactNode => {
   if (type && children !== null)
-    return <AlertCircle size="small" color={type === "neutral" ? "primary" : type} />;
-  if (isHidden) return <StarFull color="warning" size="small" />;
-  if (isPrevHidden && isLast) return <CircleEmpty size="small" color="tertiary" />;
+    return <AlertCircle size="small" color={type === "neutral" ? "primary" : type} ariaHidden />;
+  if (isHidden) return <StarFull color="warning" size="small" ariaHidden />;
+  if (isPrevHidden && isLast) return <CircleEmpty size="small" color="tertiary" ariaHidden />;
 
-  return <>{children || <CircleSmall size="small" color="secondary" />}</>;
+  return <>{children || <CircleSmall size="small" color="secondary" ariaHidden />}</>;
 };
 
 const ItinerarySegmentStopIcon = ({ type, children }: Props) => {

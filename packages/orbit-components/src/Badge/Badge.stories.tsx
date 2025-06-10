@@ -50,7 +50,7 @@ export const Default: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -62,7 +62,7 @@ export const Neutral: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -75,7 +75,7 @@ export const Info: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -88,7 +88,7 @@ export const InfoSubtle: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -102,7 +102,7 @@ export const Success: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -115,7 +115,7 @@ export const SuccessSubtle: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -129,7 +129,7 @@ export const Warning: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -143,7 +143,7 @@ export const WarningSubtle: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -157,7 +157,7 @@ export const Critical: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -171,7 +171,7 @@ export const CriticalSubtle: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -185,7 +185,7 @@ export const Dark: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -200,7 +200,7 @@ export const White: Story = {
 
     return (
       <div style={{ backgroundColor: "#46515e", padding: "10px" }}>
-        <Badge {...args} icon={Icon && <Icon />}>
+        <Badge {...args} icon={Icon && <Icon ariaHidden />}>
           {content}
         </Badge>
       </div>
@@ -215,7 +215,7 @@ export const BadgeWithTranslatedNode: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         <span>Content should </span>
         <span>be</span>
         <span> with space</span>
@@ -231,7 +231,7 @@ export const Playground: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -252,7 +252,7 @@ export const Accessibility: Story = {
     const Icon = getIcon(icon as string);
 
     return (
-      <Badge {...args} icon={Icon && <Icon />}>
+      <Badge {...args} icon={Icon && <Icon ariaHidden />}>
         {content}
       </Badge>
     );
@@ -273,7 +273,7 @@ export const Rtl: Story = {
 
     return (
       <RenderInRtl>
-        <Badge {...args} icon={Icon && <Icon />}>
+        <Badge {...args} icon={Icon && <Icon ariaHidden />}>
           {content}
         </Badge>
       </RenderInRtl>

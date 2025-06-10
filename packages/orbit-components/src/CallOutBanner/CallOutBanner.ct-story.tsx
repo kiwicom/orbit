@@ -15,7 +15,7 @@ export default function CallOutBannerStory() {
         description="Description worth testing"
         illustration={<Illustration size="small" name="Money" />}
         actions={
-          <Button type="secondary" size="small" iconRight={<NewWindow />}>
+          <Button type="secondary" size="small" iconRight={<NewWindow ariaHidden />}>
             Find a Room
           </Button>
         }
@@ -26,7 +26,7 @@ export default function CallOutBannerStory() {
         title="Actionable"
         description="Description worth testing"
         actions={
-          <Button type="secondary" size="small" iconRight={<NewWindow />}>
+          <Button type="secondary" size="small" iconRight={<NewWindow ariaHidden />}>
             Find a Room
           </Button>
         }

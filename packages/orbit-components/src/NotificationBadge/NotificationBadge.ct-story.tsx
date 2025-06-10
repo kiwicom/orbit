@@ -14,7 +14,7 @@ export default function NotificationBadgeVisualStory() {
         <React.Fragment key={type}>
           <NotificationBadge type={type}>1</NotificationBadge>
           <NotificationBadge type={type}>10</NotificationBadge>
-          <NotificationBadge type={type} icon={<Airplane />}>
+          <NotificationBadge type={type} icon={<Airplane ariaHidden />}>
             10
           </NotificationBadge>
         </React.Fragment>

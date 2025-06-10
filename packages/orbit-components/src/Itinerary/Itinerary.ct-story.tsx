@@ -20,12 +20,12 @@ const content = [
     title: "Connection Info",
     items: [
       {
-        icon: <Airplane size="small" />,
+        icon: <Airplane size="small" ariaHidden />,
         name: "Carrier",
         value: "Ariline",
       },
       {
-        icon: <Seat size="small" />,
+        icon: <Seat size="small" ariaHidden />,
         name: "Connection number",
         value: "AC 1234",
       },
@@ -35,17 +35,17 @@ const content = [
     title: "Seating Info",
     items: [
       {
-        icon: <Seat size="small" />,
+        icon: <Seat size="small" ariaHidden />,
         name: "Seat pitch",
         value: "76cm",
       },
       {
-        icon: <Seat size="small" />,
+        icon: <Seat size="small" ariaHidden />,
         name: "Seat width",
         value: "43cm",
       },
       {
-        icon: <Seat size="small" />,
+        icon: <Seat size="small" ariaHidden />,
         name: "Seat recline",
         value: "7cm",
       },
@@ -56,43 +56,47 @@ const content = [
 export function ItineraryBadgeListVisualStory() {
   return (
     <ItineraryBadgeList>
-      <ItineraryBadgeListItem strikeThrough icon={<Airplane />}>
+      <ItineraryBadgeListItem strikeThrough icon={<Airplane ariaHidden />}>
         strikeThrough
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem cancelledValue="cancelledValue" withBackground icon={<Airplane />}>
+      <ItineraryBadgeListItem
+        cancelledValue="cancelledValue"
+        withBackground
+        icon={<Airplane ariaHidden />}
+      >
         newValue with background
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem cancelledValue="cancelledValue" icon={<Airplane />}>
+      <ItineraryBadgeListItem cancelledValue="cancelledValue" icon={<Airplane ariaHidden />}>
         newValue
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="neutral" icon={<Airplane />}>
+      <ItineraryBadgeListItem type="neutral" icon={<Airplane ariaHidden />}>
         neutral
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="neutral" withBackground icon={<Airplane />}>
+      <ItineraryBadgeListItem type="neutral" withBackground icon={<Airplane ariaHidden />}>
         neutral withBackground
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="success" icon={<Airplane />}>
+      <ItineraryBadgeListItem type="success" icon={<Airplane ariaHidden />}>
         success
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="success" withBackground icon={<Airplane />}>
+      <ItineraryBadgeListItem type="success" withBackground icon={<Airplane ariaHidden />}>
         success withBackground
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="info" icon={<Airplane />}>
+      <ItineraryBadgeListItem type="info" icon={<Airplane ariaHidden />}>
         info
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="info" withBackground icon={<Airplane />}>
+      <ItineraryBadgeListItem type="info" withBackground icon={<Airplane ariaHidden />}>
         info withBackground
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="warning" icon={<Airplane />}>
+      <ItineraryBadgeListItem type="warning" icon={<Airplane ariaHidden />}>
         warning
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="warning" withBackground icon={<Airplane />}>
+      <ItineraryBadgeListItem type="warning" withBackground icon={<Airplane ariaHidden />}>
         warning withBackground
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="critical" icon={<Airplane />}>
+      <ItineraryBadgeListItem type="critical" icon={<Airplane ariaHidden />}>
         critical
       </ItineraryBadgeListItem>
-      <ItineraryBadgeListItem type="critical" withBackground icon={<Airplane />}>
+      <ItineraryBadgeListItem type="critical" withBackground icon={<Airplane ariaHidden />}>
         critical withBackground
       </ItineraryBadgeListItem>
     </ItineraryBadgeList>
@@ -219,7 +223,7 @@ export function ItineraryBannerHiddenCityVisualStory() {
           banner={
             <ItinerarySegmentBanner>
               <ItineraryBadgeList>
-                <ItineraryBadgeListItem icon={<StarFull />} type="warning">
+                <ItineraryBadgeListItem icon={<StarFull ariaHidden />} type="warning">
                   Hidden city hack: This itinerary finishes in New York (United States), but you’ll
                   get off during the layover.
                 </ItineraryBadgeListItem>

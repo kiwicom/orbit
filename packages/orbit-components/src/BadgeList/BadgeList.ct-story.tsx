@@ -12,10 +12,10 @@ export default function BadgeListVisualStory() {
       <div className="space-y-200">
         {Object.values(TYPE_OPTIONS).map(type => (
           <BadgeList>
-            <BadgeListItem icon={<Guarantee />} type={type}>
+            <BadgeListItem icon={<Guarantee ariaHidden />} type={type}>
               List type {type} item #1
             </BadgeListItem>
-            <BadgeListItem icon={<Guarantee />} type={type}>
+            <BadgeListItem icon={<Guarantee ariaHidden />} type={type}>
               List type {type} item #2
             </BadgeListItem>
           </BadgeList>
@@ -24,10 +24,10 @@ export default function BadgeListVisualStory() {
 
       {Object.values(SIZE_OPTIONS).map(size => (
         <BadgeList>
-          <BadgeListItem icon={<Guarantee />} size={size}>
+          <BadgeListItem icon={<Guarantee ariaHidden />} size={size}>
             List size {size} item #1
           </BadgeListItem>
-          <BadgeListItem icon={<Guarantee />} size={size}>
+          <BadgeListItem icon={<Guarantee ariaHidden />} size={size}>
             List size {size} item #2
           </BadgeListItem>
         </BadgeList>

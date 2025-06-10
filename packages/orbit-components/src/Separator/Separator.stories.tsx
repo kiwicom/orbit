@@ -34,7 +34,7 @@ export const Default: Story = {
 };
 
 export const WithIcon: Story = {
-  render: args => <Separator {...args} label={<FlightDirect />} />,
+  render: args => <Separator {...args} label={<FlightDirect ariaHidden />} />,
   parameters: {
     info: "This is an example of using an Orbit icon as a label for this component. Visit Orbit.Kiwi for more detailed guidelines.",
     controls: {

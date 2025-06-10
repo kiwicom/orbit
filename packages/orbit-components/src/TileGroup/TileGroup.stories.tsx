@@ -35,7 +35,7 @@ export const Playground: Story = {
         {Array.from({ length: 4 }, (_, idx) => (
           <Tile
             key={idx}
-            icon={Icon && <Icon />}
+            icon={Icon && <Icon ariaHidden />}
             onClick={action("clicked")}
             expandable
             header={

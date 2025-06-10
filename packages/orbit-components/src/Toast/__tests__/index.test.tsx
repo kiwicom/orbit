@@ -31,7 +31,7 @@ describe("Toast", () => {
     render(
       <Toast
         id="1"
-        icon={<Airplane dataTest="airplane" />}
+        icon={<Airplane dataTest="airplane" ariaHidden />}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         ariaLive="polite"
@@ -80,7 +80,7 @@ describe("Toast", () => {
         />
         <Button
           onClick={() => {
-            createToast("kek", { icon: <Airplane /> });
+            createToast("kek", { icon: <Airplane ariaHidden /> });
           }}
         >
           Add toast
@@ -96,7 +96,7 @@ describe("Toast", () => {
   it("should be removed from DOM on dismiss", () => {
     const dismissTimeout = 300;
     render(<ToastRoot dismissTimeout={dismissTimeout} />);
-    act(() => createToast("kek", { icon: <Airplane /> }));
+    act(() => createToast("kek", { icon: <Airplane ariaHidden /> }));
     // TODO: find out why it needs an additional millisecond
     act(() => jest.advanceTimersByTime(dismissTimeout + EXPIRE_DISMISS_DELAY + 1));
     expect(screen.queryByRole("status")).not.toBeInTheDocument();

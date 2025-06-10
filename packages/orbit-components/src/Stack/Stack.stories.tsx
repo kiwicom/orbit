@@ -95,7 +95,7 @@ type Story = StoryObj<typeof Stack>;
 export const Default: Story = {
   render: () => (
     <Stack>
-      <Button type="primary" iconLeft={<Airplane />}>
+      <Button type="primary" iconLeft={<Airplane ariaHidden />}>
         Button
       </Button>
       <Button type="secondary">Button</Button>
@@ -113,7 +113,7 @@ export const Default: Story = {
 export const MobileProperties: Story = {
   render: args => (
     <Stack {...args}>
-      <Button type="primary" iconLeft={<Airplane />}>
+      <Button type="primary" iconLeft={<Airplane ariaHidden />}>
         Button
       </Button>
       <Button type="secondary">Button</Button>
@@ -196,7 +196,7 @@ export const NestedExample: Story = {
     <Stack spacing="600" direction="column" align="start">
       <Stack spacing="200" direction="row" inline>
         <Text weight="bold">email@gmail.com</Text>
-        <Edit size="small" color="success" />
+        <Edit size="small" color="success" ariaHidden />
       </Stack>
       <Stack direction="row" spaceAfter="large" align="end">
         <InputField type="password" label="Password" error="You need some help!" />
@@ -352,7 +352,7 @@ export const ComponentsPreview: Story = {
         <Heading type="title2">Hola Amigo</Heading>
       </Stack>
       <Stack direction="row" justify="start" align="center">
-        <Airplane />
+        <Airplane ariaHidden />
         <Text>Hola Amigo</Text>
       </Stack>
       <Stack>
@@ -599,22 +599,22 @@ export const ComponentsPreview: Story = {
       <Stack direction="row">
         <Tile
           href="https://kiwi.com"
-          icon={<Airplane />}
+          icon={<Airplane ariaHidden />}
           title="My title"
           description="Some description"
         />
         <Tile
           href="https://kiwi.com"
-          icon={<Airplane />}
+          icon={<Airplane ariaHidden />}
           title="My title"
           description="Some description"
         />
       </Stack>
       <Stack>
-        <Tile icon={<Airplane />} title="My title" description="Some description">
+        <Tile icon={<Airplane ariaHidden />} title="My title" description="Some description">
           Some children
         </Tile>
-        <Tile icon={<Airplane />} title="My title" description="Some description">
+        <Tile icon={<Airplane ariaHidden />} title="My title" description="Some description">
           Some children
         </Tile>
       </Stack>
@@ -667,7 +667,7 @@ export const Rtl: Story = {
       <Stack spacing="600" direction="column" align="start">
         <Stack spacing="200" direction="row" inline>
           <Text weight="bold">email@gmail.com</Text>
-          <Edit size="small" color="success" />
+          <Edit size="small" color="success" ariaHidden />
         </Stack>
         <Stack direction="row" spaceAfter="large" align="end">
           <InputField type="password" label="Password" error="You need some help!" />

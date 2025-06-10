@@ -407,7 +407,7 @@ export const WithModal: Story = {
         </Stack>
       </ModalSection>
       <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-        <Button iconLeft={<ChevronBackward />} type="secondary">
+        <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
           Back
         </Button>
         <Box display="flex" justify="end">

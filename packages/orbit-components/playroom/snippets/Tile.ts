@@ -2,7 +2,7 @@ const basic = `
 <Tile
   title="Title"
   description="Some description."
-  icon={<Icons.Airplane />}
+  icon={<Icons.Airplane ariaHidden />}
   onClick={() => {}}
 />
 `;
@@ -10,7 +10,7 @@ const basic = `
 const expandable = `
 <Tile
   expandable
-  icon={<Icons.GenderMan />}
+  icon={<Icons.GenderMan ariaHidden />}
   header={
     <Stack align="center" direction="row" justify="between" shrink>
       <Stack direction="column" shrink spacing="none">
@@ -36,28 +36,28 @@ const tileGroup = `
   <Tile
     expandable
     title="Some Title"
-    icon={<Icons.GenderMan />}
+    icon={<Icons.GenderMan ariaHidden />}
   >
     Expanded content
   </Tile>
   <Tile
     expandable
     title="Some Title"
-    icon={<Icons.GenderMan />}
+    icon={<Icons.GenderMan ariaHidden />}
   >
     Expanded content
   </Tile>
   <Tile
     expandable
     title="Some Title"
-    icon={<Icons.GenderMan />}
+    icon={<Icons.GenderMan ariaHidden />}
   >
     Expanded content
   </Tile>
   <Tile
     expandable
     title="Some Title"
-    icon={<Icons.GenderMan />}
+    icon={<Icons.GenderMan ariaHidden />}
   >
     Expanded content
   </Tile>

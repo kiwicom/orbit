@@ -36,7 +36,7 @@ const ItinerarySegmentBanner = React.forwardRef<HTMLDivElement, Props>(
         }}
       >
         <div>{children}</div>
-        {onClick && <ChevronForward color="secondary" />}
+        {onClick && <ChevronForward color="secondary" ariaHidden />}
       </div>
     );
   },

@@ -52,7 +52,7 @@ const Breadcrumbs = ({
             standAlone
             type="secondary"
             id={id}
-            iconLeft={<ChevronBackward reverseOnRtl />}
+            iconLeft={<ChevronBackward ariaHidden reverseOnRtl />}
             dataTest="BreadcrumbsBack"
             onClick={onGoBack}
             href={backHref}

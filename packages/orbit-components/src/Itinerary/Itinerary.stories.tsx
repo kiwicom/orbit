@@ -91,12 +91,12 @@ const content = [
     title: "Connection Info",
     items: [
       {
-        icon: <Airplane size="small" />,
+        icon: <Airplane size="small" ariaHidden />,
         name: "Carrier",
         value: "Ryanair",
       },
       {
-        icon: <Info size="small" />,
+        icon: <Info size="small" ariaHidden />,
         name: "Connection number",
         value: "RA 8345",
       },
@@ -106,32 +106,32 @@ const content = [
     title: "Seating Info",
     items: [
       {
-        icon: <Seat size="small" />,
+        icon: <Seat size="small" ariaHidden />,
         name: "Seat pitch",
         value: "76cm",
       },
       {
-        icon: <Seat size="small" />,
+        icon: <Seat size="small" ariaHidden />,
         name: "Seat width",
         value: "43cm",
       },
       {
-        icon: <Seat size="small" />,
+        icon: <Seat size="small" ariaHidden />,
         name: "Seat recline",
         value: "7cm",
       },
       {
-        icon: <Entertainment size="small" />,
+        icon: <Entertainment size="small" ariaHidden />,
         name: "Audio & video on demand",
         value: "No",
       },
       {
-        icon: <PowerPlug size="small" />,
+        icon: <PowerPlug size="small" ariaHidden />,
         name: "In-seat power",
         value: "No",
       },
       {
-        icon: <Wifi size="small" />,
+        icon: <Wifi size="small" ariaHidden />,
         name: "Wi-Fi on board",
         value: "No",
       },
@@ -150,7 +150,7 @@ export const Default: Story = {
           time="14:05"
         />
         <ItinerarySegmentDetail
-          icon={<Airplane size="small" />}
+          icon={<Airplane size="small" ariaHidden />}
           duration="2h 30m"
           summary={<BadgeGroup />}
           content={content}
@@ -163,7 +163,7 @@ export const Default: Story = {
         />
       </ItinerarySegment>
       <ItineraryBadgeList spaceAfter="medium">
-        <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
+        <ItineraryBadgeListItem icon={<KiwiComGuarantee ariaHidden />}>
           Connection protected by the Kiwi.com Guarantee
         </ItineraryBadgeListItem>
       </ItineraryBadgeList>
@@ -198,29 +198,29 @@ export const BadgeList: StoryObj<typeof ItineraryBadgeList> = {
   render: args => (
     <Stack flex direction="column">
       <ItineraryBadgeList {...args}>
-        <ItineraryBadgeListItem type="warning" icon={<SelfTransfer />}>
+        <ItineraryBadgeListItem type="warning" icon={<SelfTransfer ariaHidden />}>
           You’re departing from a different place
         </ItineraryBadgeListItem>
-        <ItineraryBadgeListItem type="warning" icon={<SelfTransfer />}>
+        <ItineraryBadgeListItem type="warning" icon={<SelfTransfer ariaHidden />}>
           Self transfer at Vienna is your responsibility
         </ItineraryBadgeListItem>
-        <ItineraryBadgeListItem type="warning" icon={<Clock />}>
+        <ItineraryBadgeListItem type="warning" icon={<Clock ariaHidden />}>
           1h 20m layover
         </ItineraryBadgeListItem>
-        <ItineraryBadgeListItem icon={<BaggageSet />}>
+        <ItineraryBadgeListItem icon={<BaggageSet ariaHidden />}>
           You must collect and recheck your baggage
         </ItineraryBadgeListItem>
-        <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
+        <ItineraryBadgeListItem icon={<KiwiComGuarantee ariaHidden />}>
           Connection protected by the Kiwi.com Guarantee
         </ItineraryBadgeListItem>
-        <ItineraryBadgeListItem icon={<Info />} type="info">
+        <ItineraryBadgeListItem icon={<Info ariaHidden />} type="info">
           Rooms from 35 € by Booking.com
         </ItineraryBadgeListItem>
       </ItineraryBadgeList>
       <ItineraryBadgeList {...args}>
         <ItineraryBadgeListItem
           type="info"
-          icon={<Clock />}
+          icon={<Clock ariaHidden />}
           withBackground
           cancelledValue="1h 40m layover"
         >
@@ -265,7 +265,7 @@ export const BadgeListItem: StoryObj<typeof ItineraryBadgeListItem> = {
     return (
       <Stack flex direction="column">
         <ItineraryBadgeList>
-          <ItineraryBadgeListItem {...args} icon={<Icon />}>
+          <ItineraryBadgeListItem {...args} icon={<Icon ariaHidden />}>
             {children}
           </ItineraryBadgeListItem>
         </ItineraryBadgeList>
@@ -316,10 +316,10 @@ export const Segment: StoryObj<typeof ItinerarySegment> = {
               <Stack inline align="stretch">
                 <ItinerarySegmentBanner>
                   <ItineraryBadgeList>
-                    <ItineraryBadgeListItem icon={<BaggageCheckedNone />}>
+                    <ItineraryBadgeListItem icon={<BaggageCheckedNone ariaHidden />}>
                       You can’t bring checked or cabin baggage.
                     </ItineraryBadgeListItem>
-                    <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
+                    <ItineraryBadgeListItem icon={<KiwiComGuarantee ariaHidden />}>
                       Connection protected by the Kiwi.com Guarantee
                     </ItineraryBadgeListItem>
                   </ItineraryBadgeList>
@@ -374,7 +374,7 @@ export const SegmentStop: StoryObj<typeof ItinerarySegmentStop> = {
       <Stack spacing="600">
         <Heading type="title2">Regular stop</Heading>
         <Itinerary>
-          <ItinerarySegmentStop {...args} icon={<Icon />} />
+          <ItinerarySegmentStop {...args} icon={<Icon ariaHidden />} />
         </Itinerary>
         <Heading type="title2">Examples</Heading>
         <Heading type="title2">Cancelled date and time, changed city and station</Heading>
@@ -382,7 +382,7 @@ export const SegmentStop: StoryObj<typeof ItinerarySegmentStop> = {
           <ItinerarySegment>
             <ItinerarySegmentStop
               {...args}
-              icon={<Icon />}
+              icon={<Icon ariaHidden />}
               cancelledDate="Mon, 30.1"
               cancelledCity="Bratislava"
               cancelledStation="M. R. Štefánik Airport"
@@ -397,18 +397,21 @@ export const SegmentStop: StoryObj<typeof ItinerarySegmentStop> = {
               <Stack inline align="stretch">
                 <ItinerarySegmentBanner>
                   <ItineraryBadgeList>
-                    <ItineraryBadgeListItem type="warning" icon={<StarFull color="warning" />}>
+                    <ItineraryBadgeListItem
+                      type="warning"
+                      icon={<StarFull color="warning" ariaHidden />}
+                    >
                       <Text as="span" type="warning" weight="bold" size="small">
                         Hidden city hack:{" "}
                       </Text>{" "}
                       This itinerary finishes in New York (United States), but you’ll get off during
                       the layover
                     </ItineraryBadgeListItem>
-                    <ItineraryBadgeListItem icon={<Visa />}>
+                    <ItineraryBadgeListItem icon={<Visa ariaHidden />}>
                       Check travel document requirements for all destinations, including passport,
                       visa and COVID-19 documents.
                     </ItineraryBadgeListItem>
-                    <ItineraryBadgeListItem icon={<BaggageCheckedNone />}>
+                    <ItineraryBadgeListItem icon={<BaggageCheckedNone ariaHidden />}>
                       You can’t bring checked or cabin baggage.
                     </ItineraryBadgeListItem>
                   </ItineraryBadgeList>
@@ -454,7 +457,7 @@ export const SegmentStop: StoryObj<typeof ItinerarySegmentStop> = {
               <Stack inline align="stretch">
                 <ItinerarySegmentBanner>
                   <ItineraryBadgeList>
-                    <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
+                    <ItineraryBadgeListItem type="info" icon={<StarFull color="info" ariaHidden />}>
                       <Text as="span" type="info" weight="bold">
                         Throwaway ticketing hack:{" "}
                       </Text>{" "}
@@ -535,7 +538,7 @@ export const SegmentDetail: StoryObj<typeof ItinerarySegmentDetail> = {
         >
           <ItinerarySegmentDetail
             {...args}
-            icon={<Icon />}
+            icon={<Icon ariaHidden />}
             summary={<BadgeGroup />}
             content={content}
           />
@@ -565,7 +568,7 @@ export const SegmentBanner: StoryObj<typeof ItinerarySegmentBanner> = {
       <Itinerary>
         <ItinerarySegmentBanner {...args}>
           <ItineraryBadgeList>
-            <ItineraryBadgeListItem icon={<BaggageCheckedNone />}>
+            <ItineraryBadgeListItem icon={<BaggageCheckedNone ariaHidden />}>
               You can’t bring checked or cabin baggage.
             </ItineraryBadgeListItem>
           </ItineraryBadgeList>
@@ -710,15 +713,15 @@ export const InsideModal: Story = {
                     ref={ref}
                   >
                     <ItineraryBadgeList>
-                      <ItineraryBadgeListItem icon={<StarFull />} type="warning">
+                      <ItineraryBadgeListItem icon={<StarFull ariaHidden />} type="warning">
                         Hidden city hack: This itinerary finishes in New York (United States), but
                         you’ll get off during the layover.
                       </ItineraryBadgeListItem>
-                      <ItineraryBadgeListItem icon={<Visa />}>
+                      <ItineraryBadgeListItem icon={<Visa ariaHidden />}>
                         Check travel document requirements for all destinations, including passport,
                         visa and COVID-19 documents.
                       </ItineraryBadgeListItem>
-                      <ItineraryBadgeListItem icon={<BaggageCheckedNone />}>
+                      <ItineraryBadgeListItem icon={<BaggageCheckedNone ariaHidden />}>
                         You can’t bring checked or cabin baggage.
                       </ItineraryBadgeListItem>
                     </ItineraryBadgeList>
@@ -726,7 +729,7 @@ export const InsideModal: Story = {
                   <Separator />
                   <ItinerarySegmentBanner>
                     <ItineraryBadgeList>
-                      <ItineraryBadgeListItem icon={<Location />} type="warning">
+                      <ItineraryBadgeListItem icon={<Location ariaHidden />} type="warning">
                         You’ll depart from a different place in Prague: Václav Havel Airport Prague
                       </ItineraryBadgeListItem>
                     </ItineraryBadgeList>
@@ -797,7 +800,10 @@ export const MultipleBanners: Story = {
                 <Stack direction="column" align="stretch" spacing="200">
                   <ItinerarySegmentBanner ref={ref} onClick={() => setIsOpenedModal(true)}>
                     <ItineraryBadgeList>
-                      <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
+                      <ItineraryBadgeListItem
+                        type="info"
+                        icon={<StarFull color="info" ariaHidden />}
+                      >
                         <Text as="span" type="info" weight="bold">
                           Throwaway ticketing hack:{" "}
                         </Text>{" "}
@@ -808,15 +814,15 @@ export const MultipleBanners: Story = {
                   <Separator />
                   <ItinerarySegmentBanner>
                     <ItineraryBadgeList spacing={SPACINGS.ONE_HUNDRED}>
-                      <ItineraryBadgeListItem icon={<Location color="secondary" />}>
+                      <ItineraryBadgeListItem icon={<Location color="secondary" ariaHidden />}>
                         You’ll depart from a different place in New York: John F. Kennedy
                         International.
                       </ItineraryBadgeListItem>
-                      <ItineraryBadgeListItem icon={<Location color="secondary" />}>
+                      <ItineraryBadgeListItem icon={<Location color="secondary" ariaHidden />}>
                         You’ll depart from a different place in New York: John F. Kennedy
                         International.
                       </ItineraryBadgeListItem>
-                      <ItineraryBadgeListItem icon={<Accommodation color="secondary" />}>
+                      <ItineraryBadgeListItem icon={<Accommodation color="secondary" ariaHidden />}>
                         We won’t cover your overnight stay. Hotel coverage is only available if the
                         disruption happens during the trip. If you want to avoid extra hotel costs
                         please choose a different alternative or a refund.
@@ -846,13 +852,16 @@ export const MultipleBanners: Story = {
             </ItinerarySegment>
           </ItineraryStatus>
           <ItineraryBadgeList>
-            <ItineraryBadgeListItem type="warning" icon={<Info color="warning" />}>
+            <ItineraryBadgeListItem type="warning" icon={<Info color="warning" ariaHidden />}>
               Changing stations is your responsibility.
             </ItineraryBadgeListItem>
-            <ItineraryBadgeListItem type="warning" icon={<Clock />}>
+            <ItineraryBadgeListItem type="warning" icon={<Clock color="warning" ariaHidden />}>
               10h 20m layover
             </ItineraryBadgeListItem>
-            <ItineraryBadgeListItem type="warning" icon={<SelfTransfer color="warning" />}>
+            <ItineraryBadgeListItem
+              type="warning"
+              icon={<SelfTransfer color="warning" ariaHidden />}
+            >
               You need to do a self-transfer in Prague.
             </ItineraryBadgeListItem>
           </ItineraryBadgeList>
@@ -862,15 +871,15 @@ export const MultipleBanners: Story = {
                 <Stack>
                   <ItinerarySegmentBanner>
                     <ItineraryBadgeList>
-                      <ItineraryBadgeListItem icon={<StarFull />} type="warning">
+                      <ItineraryBadgeListItem icon={<StarFull ariaHidden />} type="warning">
                         Hidden city hack: This itinerary finishes in New York (United States), but
                         you’ll get off during the layover.
                       </ItineraryBadgeListItem>
-                      <ItineraryBadgeListItem icon={<Visa />}>
+                      <ItineraryBadgeListItem icon={<Visa ariaHidden />}>
                         Check travel document requirements for all destinations, including passport,
                         visa and COVID-19 documents.
                       </ItineraryBadgeListItem>
-                      <ItineraryBadgeListItem icon={<BaggageCheckedNone />}>
+                      <ItineraryBadgeListItem icon={<BaggageCheckedNone ariaHidden />}>
                         You can’t bring checked or cabin baggage.
                       </ItineraryBadgeListItem>
                     </ItineraryBadgeList>
@@ -878,7 +887,7 @@ export const MultipleBanners: Story = {
                   <Separator />
                   <ItinerarySegmentBanner>
                     <ItineraryBadgeList>
-                      <ItineraryBadgeListItem icon={<Location />} type="warning">
+                      <ItineraryBadgeListItem icon={<Location ariaHidden />} type="warning">
                         You’ll depart from a different place in Prague: Václav Havel Airport Prague
                       </ItineraryBadgeListItem>
                     </ItineraryBadgeList>
@@ -946,7 +955,7 @@ export const RTL: Story = {
               time="14:05"
             />
             <ItinerarySegmentDetail
-              icon={<Airplane size="small" />}
+              icon={<Airplane size="small" ariaHidden />}
               duration="2h 30m"
               summary={<BadgeGroup />}
               content={content}
@@ -959,7 +968,7 @@ export const RTL: Story = {
             />
           </ItinerarySegment>
           <ItineraryBadgeList>
-            <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
+            <ItineraryBadgeListItem icon={<KiwiComGuarantee ariaHidden />}>
               Connection protected by the Kiwi.com Guarantee
             </ItineraryBadgeListItem>
           </ItineraryBadgeList>
@@ -988,7 +997,7 @@ export const RTL: Story = {
               <Stack inline align="stretch">
                 <ItinerarySegmentBanner onClick={action("onClick")}>
                   <ItineraryBadgeList>
-                    <ItineraryBadgeListItem type="info" icon={<StarFull color="info" />}>
+                    <ItineraryBadgeListItem type="info" icon={<StarFull color="info" ariaHidden />}>
                       <Text as="span" type="info" weight="bold">
                         Throwaway ticketing hack:{" "}
                       </Text>{" "}

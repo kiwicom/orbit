@@ -9,7 +9,7 @@ describe("BadgePrimitive", () => {
     render(
       <BadgePrimitive
         className="orbit-kek"
-        icon={<Sightseeing dataTest="icon" />}
+        icon={<Sightseeing dataTest="icon" ariaHidden />}
         dataTest="test"
         ariaLabel="label"
       >

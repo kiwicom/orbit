@@ -168,7 +168,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
             onClick={() => handleClick("left")}
             ariaLabel={arrowLeftAriaLabel}
           >
-            <ChevronBackward customColor={arrowColor} />
+            <ChevronBackward ariaHidden customColor={arrowColor} />
           </ArrowButton>
         )}
         <div
@@ -197,7 +197,7 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
             onClick={() => handleClick("right")}
             ariaLabel={arrowRightAriaLabel}
           >
-            <ChevronForward customColor={arrowColor} />
+            <ChevronForward ariaHidden customColor={arrowColor} />
           </ArrowButton>
         )}
       </div>

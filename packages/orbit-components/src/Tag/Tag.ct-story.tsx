@@ -19,7 +19,7 @@ export function DefaultTestStory() {
       <h2>Neutral</h2>
       <div className="gap-300 flex flex-wrap">
         <Tag>Non actionable</Tag>
-        <Tag iconLeft={<Icons.PlusMinus />}>With icon</Tag>
+        <Tag iconLeft={<Icons.PlusMinus ariaHidden />}>With icon</Tag>
         <Tag onClick={() => {}}>Default</Tag>
         <Tag selected onClick={() => {}}>
           Selected
@@ -28,14 +28,14 @@ export function DefaultTestStory() {
         <Tag selected onRemove={() => {}} onClick={() => {}}>
           Selected Removable
         </Tag>
-        <Tag onRemove={() => {}} iconLeft={<Icons.PlusMinus />}>
+        <Tag onRemove={() => {}} iconLeft={<Icons.PlusMinus ariaHidden />}>
           Removable with icon
         </Tag>
       </div>
       <h2>Colored</h2>
       <div className="gap-300 flex flex-wrap">
         <Tag type="colored">Non actionable</Tag>
-        <Tag type="colored" iconLeft={<Icons.PlusMinus />}>
+        <Tag type="colored" iconLeft={<Icons.PlusMinus ariaHidden />}>
           With icon
         </Tag>
         <Tag type="colored" onClick={() => {}}>
@@ -50,7 +50,7 @@ export function DefaultTestStory() {
         <Tag type="colored" selected onRemove={() => {}} onClick={() => {}}>
           Selected Removable
         </Tag>
-        <Tag type="colored" onRemove={() => {}} iconLeft={<Icons.PlusMinus />}>
+        <Tag type="colored" onRemove={() => {}} iconLeft={<Icons.PlusMinus ariaHidden />}>
           Removable with icon
         </Tag>
       </div>
@@ -76,13 +76,13 @@ export function DefaultTestStory() {
       <h2>Size small</h2>
       <div className="gap-300 flex flex-wrap">
         <Tag size="small">Neutral small</Tag>
-        <Tag size="small" iconLeft={<Icons.PlusMinus />}>
+        <Tag size="small" iconLeft={<Icons.PlusMinus ariaHidden />}>
           Small w/ icon
         </Tag>
         <Tag size="small" onRemove={() => {}}>
           Small removable
         </Tag>
-        <Tag size="small" onRemove={() => {}} iconLeft={<Icons.PlusMinus />}>
+        <Tag size="small" onRemove={() => {}} iconLeft={<Icons.PlusMinus ariaHidden />}>
           Small removable with icon
         </Tag>
       </div>

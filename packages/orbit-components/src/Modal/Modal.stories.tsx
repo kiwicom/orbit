@@ -53,7 +53,7 @@ const modalOutboundSection = (
               </Text>
               <Stack direction="row" spacing="100" align="center">
                 <Text weight="bold">London LHR</Text>
-                <FlightDirect size="small" />
+                <FlightDirect size="small" ariaHidden />
                 <Text weight="bold">Prague PRG</Text>
               </Stack>
             </Stack>
@@ -76,7 +76,7 @@ const modalOutboundSection = (
               </Text>
               <Stack direction="row" spacing="100" align="center">
                 <Text weight="bold">London LHR</Text>
-                <FlightDirect size="small" />
+                <FlightDirect size="small" ariaHidden />
                 <Text weight="bold">Prague PRG</Text>
               </Stack>
             </Stack>
@@ -98,7 +98,7 @@ const modalOutboundSection = (
               </Text>
               <Stack direction="row" spacing="100" align="center">
                 <Text weight="bold">London LHR</Text>
-                <FlightDirect size="small" />
+                <FlightDirect size="small" ariaHidden />
                 <Text weight="bold">Prague PRG</Text>
               </Stack>
             </Stack>
@@ -129,7 +129,7 @@ const modalInboundSection = (
               </Text>
               <Stack direction="row" spacing="100" align="center">
                 <Text weight="bold">London LHR</Text>
-                <FlightDirect size="small" />
+                <FlightDirect size="small" ariaHidden />
                 <Text weight="bold">Prague PRG</Text>
               </Stack>
             </Stack>
@@ -152,7 +152,7 @@ const modalInboundSection = (
               </Text>
               <Stack direction="row" spacing="100" align="center">
                 <Text weight="bold">London LHR</Text>
-                <FlightDirect size="small" />
+                <FlightDirect size="small" ariaHidden />
                 <Text weight="bold">Prague PRG</Text>
               </Stack>
             </Stack>
@@ -174,7 +174,7 @@ const modalInboundSection = (
               </Text>
               <Stack direction="row" spacing="100" align="center">
                 <Text weight="bold">London LHR</Text>
-                <FlightDirect size="small" />
+                <FlightDirect size="small" ariaHidden />
                 <Text weight="bold">Prague PRG</Text>
               </Stack>
             </Stack>
@@ -251,7 +251,7 @@ export const RemovableSections: Story = {
             <Text>Lorem ipsum dolor sit amet</Text>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button iconLeft={<ChevronBackward />} type="secondary">
+            <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -301,7 +301,7 @@ export const WithFixedFooter: Story = {
           <ModalSection suppressed>{modalOutboundSection}</ModalSection>
           <ModalSection>{modalInboundSection}</ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button iconLeft={<ChevronBackward />} type="secondary">
+            <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -380,7 +380,7 @@ export const WithForm: Story = {
             </Stack>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button iconLeft={<ChevronBackward />} type="secondary">
+            <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
               Back
             </Button>
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -542,7 +542,7 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
             <ModalFooter flex={flex}>
               {showBack && (
                 <Stack direction="row">
-                  <Button type="secondary" iconLeft={<ChevronBackward />}>
+                  <Button type="secondary" iconLeft={<ChevronBackward ariaHidden />}>
                     Back
                   </Button>
                   <ButtonLink type="secondary">Button</ButtonLink>
@@ -628,7 +628,7 @@ export const Rtl: Story = {
               </Text>
             </ModalSection>
             <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-              <Button type="secondary" iconLeft={<ChevronBackward />}>
+              <Button type="secondary" iconLeft={<ChevronBackward ariaHidden />}>
                 Back
               </Button>
               <Button fullWidth>Continue to Payment</Button>

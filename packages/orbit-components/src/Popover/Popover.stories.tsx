@@ -25,7 +25,7 @@ const listChoiceContent = Array.from({ length: 3 }, (_, idx) => (
     title="Choice Title"
     description="Further description"
     selectable
-    icon={<Icons.Accommodation />}
+    icon={<Icons.Accommodation ariaHidden />}
     onClick={action("onClick")}
   />
 ));
@@ -95,7 +95,7 @@ type Story = StoryObj<typeof Popover>;
 export const Default: Story = {
   render: args => (
     <Popover {...args} content={content}>
-      <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+      <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
         Open popover
       </Button>
     </Popover>
@@ -118,7 +118,7 @@ export const Placement: Story = {
   render: args => (
     <Stack justify="center">
       <Popover {...args} content={content}>
-        <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+        <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
           Open popover
         </Button>
       </Popover>
@@ -158,7 +158,7 @@ export const Placement: Story = {
 export const OpenedByProp: Story = {
   render: args => (
     <Popover {...args} content={content}>
-      <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+      <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
         Open popover
       </Button>
     </Popover>
@@ -189,7 +189,12 @@ export const OpenedByProp: Story = {
 export const Overlapped: Story = {
   render: ({ opened, ...args }) => (
     <Popover {...args} content={content} actions={actions} opened={opened}>
-      <Button asComponent="div" type="secondary" ariaExpanded={opened} iconRight={<ChevronDown />}>
+      <Button
+        asComponent="div"
+        type="secondary"
+        ariaExpanded={opened}
+        iconRight={<ChevronDown ariaHidden />}
+      >
         Open popover
       </Button>
     </Popover>
@@ -221,12 +226,12 @@ export const MultiplePopovers: Story = {
   render: args => (
     <Stack flex>
       <Popover {...args} content={content}>
-        <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+        <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
           Open popover
         </Button>
       </Popover>
       <Popover {...args} content={content} actions={actions}>
-        <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+        <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
           Open popover
         </Button>
       </Popover>
@@ -254,13 +259,13 @@ export const LongContent: Story = {
           </Stack>
         }
       >
-        <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+        <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
           Open popover
         </Button>
       </Popover>
       <Content />
       <Popover {...args} content={longContent}>
-        <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+        <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
           Open popover
         </Button>
       </Popover>
@@ -281,7 +286,12 @@ export const ScrollingPage: Story = {
       <div className="sticky" style={{ top: "20px" }}>
         <Card>
           <Popover {...args} content={content}>
-            <Button asComponent="div" type="secondary" iconRight={<ChevronDown />} fullWidth>
+            <Button
+              asComponent="div"
+              type="secondary"
+              iconRight={<ChevronDown ariaHidden />}
+              fullWidth
+            >
               Open popover
             </Button>
           </Popover>
@@ -320,7 +330,12 @@ export const ScrollingContent: Story = {
       <Content />
       <div className="bg-cloud-light">
         <Popover {...args} content={content}>
-          <Button asComponent="div" type="secondary" iconRight={<ChevronDown />} fullWidth>
+          <Button
+            asComponent="div"
+            type="secondary"
+            iconRight={<ChevronDown ariaHidden />}
+            fullWidth
+          >
             Open popover
           </Button>
         </Popover>
@@ -397,7 +412,7 @@ export const InsideCard: Story = {
 export const WithTooltip: Story = {
   render: args => (
     <Popover {...args} content={<Tooltip content="Content">Tooltip</Tooltip>}>
-      <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+      <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
         Open popover
       </Button>
     </Popover>
@@ -414,7 +429,7 @@ export const WithTooltip: Story = {
 export const WithListChoice: Story = {
   render: args => (
     <Popover {...args} content={listChoiceContent}>
-      <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+      <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
         Open popover
       </Button>
     </Popover>
@@ -453,7 +468,7 @@ export const Playground: PlaygroundArgsAndCustomTypes = {
           asComponent="div"
           type="secondary"
           ariaExpanded={opened}
-          iconRight={<ChevronDown />}
+          iconRight={<ChevronDown ariaHidden />}
         >
           Open popover
         </Button>
@@ -504,7 +519,7 @@ export const Rtl: Story = {
     <RenderInRtl>
       <Stack flex>
         <Popover content={content}>
-          <Button asComponent="div" type="secondary" iconRight={<ChevronDown />}>
+          <Button asComponent="div" type="secondary" iconRight={<ChevronDown ariaHidden />}>
             Open popover
           </Button>
         </Popover>

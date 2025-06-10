@@ -1,15 +1,15 @@
 const calloutBanner = `
 <CallOutBanner
-  actions={<Button iconRight={<Icons.NewWindow />} size="small" type="secondary">Find a Room</Button>}
+  actions={<Button iconRight={<Icons.NewWindow ariaHidden />} size="small" type="secondary">Find a Room</Button>}
   description="Select your accommodation from more than a million properties worldwide."
   illustration={<Illustration name="Accommodation" size="small"/>}
   title="Rooms in Warsaw"
 >
   <List type="secondary">
-    <ListItem icon={<Icons.Check color="success" />}>
+    <ListItem icon={<Icons.Check color="success" ariaHidden />}>
       Up to 50% off.
     </ListItem>
-    <ListItem icon={<Icons.Check color="success" />}>
+    <ListItem icon={<Icons.Check color="success" ariaHidden />}>
       From 3-star budget to 5-star luxury.
     </ListItem>
   </List>
@@ -75,20 +75,20 @@ const itinerary = `
           <ItinerarySegmentBanner>
             <ItineraryBadgeList>
               <ItineraryBadgeListItem
-                icon={<Icons.StarFull />}
+                icon={<Icons.StarFull ariaHidden />}
                 type="warning"
               >
                 Hidden city hack: This itinerary finishes in New York
                 (United States), but you’ll get off during the
                 layover.
               </ItineraryBadgeListItem>
-              <ItineraryBadgeListItem icon={<Icons.Visa />}>
+              <ItineraryBadgeListItem icon={<Icons.Visa ariaHidden />}>
                 Check travel document requirements for all
                 destinations, including passport, visa and COVID-19
                 documents.
               </ItineraryBadgeListItem>
               <ItineraryBadgeListItem
-                icon={<Icons.BaggageCheckedNone />}
+                icon={<Icons.BaggageCheckedNone ariaHidden />}
               >
                 You can’t bring checked baggage.
               </ItineraryBadgeListItem>
@@ -108,12 +108,12 @@ const itinerary = `
           {
             items: [
               {
-                icon: <Icons.Airplane size="small" />,
+                icon: <Icons.Airplane size="small" ariaHidden />,
                 name: "Carrier",
                 value: "HiFly",
               },
               {
-                icon: <Icons.InformationCircle size="small" />,
+                icon: <Icons.InformationCircle size="small" ariaHidden />,
                 name: "Connection number",
                 value: "TP 8345",
               },
@@ -123,32 +123,32 @@ const itinerary = `
           {
             items: [
               {
-                icon: <Icons.Seat size="small" />,
+                icon: <Icons.Seat size="small" ariaHidden />,
                 name: "Seat pitch",
                 value: "76cm",
               },
               {
-                icon: <Icons.Seat size="small" />,
+                icon: <Icons.Seat size="small" ariaHidden />,
                 name: "Seat width",
                 value: "43cm",
               },
               {
-                icon: <Icons.Seat size="small" />,
+                icon: <Icons.Seat size="small" ariaHidden />,
                 name: "Seat recline",
                 value: "7cm",
               },
               {
-                icon: <Icons.Entertainment size="small" />,
+                icon: <Icons.Entertainment size="small" ariaHidden />,
                 name: "Audio & video on demand",
                 value: "No",
               },
               {
-                icon: <Icons.PowerPlug size="small" />,
+                icon: <Icons.PowerPlug size="small" ariaHidden />,
                 name: "In-seat power",
                 value: "No",
               },
               {
-                icon: <Icons.Wifi size="small" />,
+                icon: <Icons.Wifi size="small" ariaHidden />,
                 name: "Wi-Fi on board",
                 value: "No",
               },
@@ -213,7 +213,7 @@ const modal = `
                 </Text>
                 <Stack align="center" direction="row" spacing="100">
                   <Text weight="bold">London LHR</Text>
-                  <Icons.FlightDirect size="small" />
+                  <Icons.FlightDirect size="small" ariaHidden />
                   <Text weight="bold">Prague PRG</Text>
                 </Stack>
               </Stack>
@@ -240,7 +240,7 @@ const modal = `
                 </Text>
                 <Stack align="center" direction="row" spacing="100">
                   <Text weight="bold">London LHR</Text>
-                  <Icons.FlightDirect size="small" />
+                  <Icons.FlightDirect size="small" ariaHidden />
                   <Text weight="bold">Prague PRG</Text>
                 </Stack>
               </Stack>
@@ -276,7 +276,7 @@ const modal = `
                 </Text>
                 <Stack align="center" direction="row" spacing="100">
                   <Text weight="bold">London LHR</Text>
-                  <Icons.FlightDirect size="small" />
+                  <Icons.FlightDirect size="small" ariaHidden />
                   <Text weight="bold">Prague PRG</Text>
                 </Stack>
               </Stack>
@@ -303,7 +303,7 @@ const modal = `
                 </Text>
                 <Stack align="center" direction="row" spacing="100">
                   <Text weight="bold">London LHR</Text>
-                  <Icons.FlightDirect size="small" />
+                  <Icons.FlightDirect size="small" ariaHidden />
                   <Text weight="bold">Prague PRG</Text>
                 </Stack>
               </Stack>
@@ -314,7 +314,7 @@ const modal = `
     </Stack>
   </ModalSection>
   <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-    <Button iconLeft={<Icons.ChevronBackward />} type="secondary">
+    <Button iconLeft={<Icons.ChevronBackward ariaHidden />} type="secondary">
       Back
     </Button>
     <Button fullWidth>Proceed to Payment (23.98€)</Button>
@@ -328,7 +328,7 @@ const navigationBar = `<NavigationBar>
     spacing="none"
   >
     <ButtonLink
-      iconRight={<Icons.ChevronDown />}
+      iconRight={<Icons.ChevronDown ariaHidden />}
       type="secondary"
     >
       Flights
@@ -340,11 +340,11 @@ const navigationBar = `<NavigationBar>
       spacing="100"
     >
       <ButtonLink
-        iconLeft={<Icons.StarFull />}
+        iconLeft={<Icons.StarFull ariaHidden />}
         type="secondary"
       />
       <ButtonLink
-        iconLeft={<Icons.AccountCircle />}
+        iconLeft={<Icons.AccountCircle ariaHidden />}
         type="secondary"
       />
     </Stack>

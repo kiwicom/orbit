@@ -1,4 +1,4 @@
-const utils = `const toast = () => createToast("Toast message", { icon: <Icons.Notification /> });`;
+const utils = `const toast = () => createToast("Toast message", { icon: <Icons.Notification ariaHidden /> });`;
 
 const code = `
 <>

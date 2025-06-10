@@ -79,7 +79,7 @@ export const LinkWithLeftIcon: Story = {
     const Icon = typeof iconLeft === "string" && getIcon(iconLeft);
 
     return (
-      <TextLink {...args} iconLeft={Icon && <Icon />}>
+      <TextLink {...args} iconLeft={Icon && <Icon ariaHidden />}>
         {children}
       </TextLink>
     );
@@ -124,7 +124,7 @@ export const LinkWithRightIcon: Story = {
     const Icon = typeof iconRight === "string" && getIcon(iconRight);
 
     return (
-      <TextLink {...args} iconRight={Icon && <Icon />}>
+      <TextLink {...args} iconRight={Icon && <Icon ariaHidden />}>
         {children}
       </TextLink>
     );
@@ -261,7 +261,7 @@ export const Playground: Story = {
 export const Rtl: Story = {
   render: args => (
     <RenderInRtl>
-      <TextLink {...args} iconRight={<Icons.ChevronForward reverseOnRtl />}>
+      <TextLink {...args} iconRight={<Icons.ChevronForward reverseOnRtl ariaHidden />}>
         Link
       </TextLink>
     </RenderInRtl>

@@ -129,7 +129,7 @@ export const SmartFaq: Story = {
         <Button type="secondary">I do not have booking</Button>
         <Separator />
         <Text align="center">
-          <TextLink iconRight={<NewWindow />} type="secondary">
+          <TextLink iconRight={<NewWindow ariaHidden />} type="secondary">
             Full FAQ site
           </TextLink>
         </Text>
@@ -242,7 +242,7 @@ export const SmartFaqSearch: Story = {
       }
     >
       <Stack>
-        <InputField placeholder="Search" prefix={<Search />} />
+        <InputField placeholder="Search" prefix={<Search ariaHidden />} />
         <Tile
           title="Cabin baggage"
           description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."
@@ -352,7 +352,7 @@ export const SmartFaqInRtl: Story = {
           <Button type="secondary">I do not have booking</Button>
           <Separator />
           <Text align="center">
-            <TextLink iconRight={<NewWindow />} type="secondary">
+            <TextLink iconRight={<NewWindow ariaHidden />} type="secondary">
               Full FAQ site
             </TextLink>
           </Text>
@@ -384,7 +384,7 @@ export const SmartFaqSearchInRtl: Story = {
         }
       >
         <Stack>
-          <InputField placeholder="Search" prefix={<Search />} />
+          <InputField placeholder="Search" prefix={<Search ariaHidden />} />
           <Tile
             title="Cabin baggage"
             description="Cabin baggage allowances vary by airline and ticket type. Check your e-ticket for more info."

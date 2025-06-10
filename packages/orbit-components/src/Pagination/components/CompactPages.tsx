@@ -13,7 +13,7 @@ interface Props {
   size: Common.InputSize;
 }
 
-const MeatBalls = () => <MenuMeatballs size="small" color="primary" />;
+const MeatBalls = () => <MenuMeatballs size="small" color="primary" ariaHidden />;
 
 const CompactPages = ({ pageCount, selectedPage, onPageChange, size }: Props) => {
   if (selectedPage > pageCount - 4) {

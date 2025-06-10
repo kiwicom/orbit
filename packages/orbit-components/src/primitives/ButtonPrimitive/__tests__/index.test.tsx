@@ -22,8 +22,8 @@ describe("ButtonPrimitive", () => {
         title="title"
         tabIndex="0"
         asComponent="span"
-        iconLeft={<Airplane dataTest="airplane" />}
-        iconRight={<ChevronDown dataTest="chevron" />}
+        iconLeft={<Airplane dataTest="airplane" ariaHidden />}
+        iconRight={<ChevronDown dataTest="chevron" ariaHidden />}
         onClick={onClick}
       >
         {children}

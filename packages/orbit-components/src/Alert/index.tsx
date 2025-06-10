@@ -41,16 +41,16 @@ const StyledIcon = ({ icon, type }: Pick<Props, "icon" | "type">) => {
   // Icon should be boolean and TRUE
   if (typeof icon === "boolean" && icon) {
     if (type === TYPE_OPTIONS.INFO) {
-      return <InformationCircle size="small" />;
+      return <InformationCircle size="small" ariaHidden />;
     }
     if (type === TYPE_OPTIONS.SUCCESS) {
-      return <CheckCircle size="small" />;
+      return <CheckCircle size="small" ariaHidden />;
     }
     if (type === TYPE_OPTIONS.WARNING) {
-      return <AlertCircle size="small" />;
+      return <AlertCircle size="small" ariaHidden />;
     }
     if (type === TYPE_OPTIONS.CRITICAL) {
-      return <AlertOctagon size="small" />;
+      return <AlertOctagon size="small" ariaHidden />;
     }
   }
 
@@ -186,7 +186,7 @@ const Alert = (props: Props) => {
           dataTest={CLOSE_BUTTON_DATA_TEST}
           onClick={onClose}
           labelClose={labelClose}
-          icon={<Close size="small" color={type} />}
+          icon={<Close size="small" color={type} ariaHidden />}
         />
       )}
     </div>

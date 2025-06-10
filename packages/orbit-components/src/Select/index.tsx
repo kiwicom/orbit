@@ -119,12 +119,12 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
             >
               {help && !error && (
                 <span className="flex" ref={iconRef}>
-                  <InformationCircle color="info" size="small" />
+                  <InformationCircle color="info" size="small" ariaHidden />
                 </span>
               )}
               {error && (
                 <span className="flex" ref={iconRef}>
-                  <AlertCircle color="critical" size="small" />
+                  <AlertCircle color="critical" size="small" ariaHidden />
                 </span>
               )}
               <FormLabel

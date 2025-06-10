@@ -14,13 +14,18 @@ export default function ListChoiceVisualStory() {
     <>
       <ListChoice title="Selectable no icon" description="Further description" selectable />
       <ListChoice title="Title only and disabled, no icon" disabled />
-      <ListChoice title="Selectable" description="Further description" selectable icon={<Bus />} />
+      <ListChoice
+        title="Selectable"
+        description="Further description"
+        selectable
+        icon={<Bus ariaHidden />}
+      />
       <ListChoice
         title="Selected"
         description="Further description"
         selectable
         selected
-        icon={<Airplane />}
+        icon={<Airplane ariaHidden />}
       />
       <ListChoice
         title="Selected and disabled"
@@ -28,20 +33,20 @@ export default function ListChoiceVisualStory() {
         selectable
         selected
         disabled
-        icon={<Train />}
+        icon={<Train ariaHidden />}
       />
       <ListChoice
         title="Non-selected and disabled"
         description="Further description"
         selectable
         disabled
-        icon={<Train />}
+        icon={<Train ariaHidden />}
       />
       <ListChoice
         title="Action"
         description="Further description"
-        icon={<Boat />}
-        action={<Button iconLeft={<Plus />} size="small" type="primarySubtle" />}
+        icon={<Boat ariaHidden />}
+        action={<Button iconLeft={<Plus ariaHidden />} size="small" type="primarySubtle" />}
       />
     </>
   );

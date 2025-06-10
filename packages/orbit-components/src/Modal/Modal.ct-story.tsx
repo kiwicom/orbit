@@ -23,7 +23,7 @@ export function ModalVisualDefaultStory({ size = SIZES.NORMAL, isMobileFullPage 
         <Text>{content}</Text>
       </ModalSection>
       <ModalFooter flex={["0 auto", "1 100%"]}>
-        <Button type="secondary" iconLeft={<ChevronBackward />}>
+        <Button type="secondary" iconLeft={<ChevronBackward ariaHidden />}>
           Back
         </Button>
         <Box justify="end" display="flex">
@@ -46,7 +46,7 @@ export function ModalVisualMobileHeader() {
         <Text>{content}</Text>
       </ModalSection>
       <ModalFooter flex={["0 auto", "1 100%"]}>
-        <Button type="secondary" iconLeft={<ChevronBackward />}>
+        <Button type="secondary" iconLeft={<ChevronBackward ariaHidden />}>
           Back
         </Button>
         <Box justify="end" display="flex">

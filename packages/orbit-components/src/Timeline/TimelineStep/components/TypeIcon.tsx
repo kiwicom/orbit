@@ -24,11 +24,11 @@ const getTypeIcon = ({ type, active }: { type?: Type; active: boolean }) => {
       </svg>
     );
 
-  if (type === "success") return <CheckCircle color="success" size="small" />;
-  if (type === "warning") return <AlertCircle color="warning" size="small" />;
-  if (type === "critical") return <CloseCircle color="critical" size="small" />;
+  if (type === "success") return <CheckCircle color="success" size="small" ariaHidden />;
+  if (type === "warning") return <AlertCircle color="warning" size="small" ariaHidden />;
+  if (type === "critical") return <CloseCircle color="critical" size="small" ariaHidden />;
 
-  return <Circle color="tertiary" size="small" />;
+  return <Circle color="tertiary" size="small" ariaHidden />;
 };
 
 const getBackgroundClassName = (type: Type): string => {

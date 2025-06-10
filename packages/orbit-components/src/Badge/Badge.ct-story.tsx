@@ -9,7 +9,7 @@ export default function BadgeVisualTest() {
   return (
     <div className="gap-300 flex flex-wrap">
       {Object.values(TYPE_OPTIONS).map(type => (
-        <Badge type={type} icon={<Airplane />}>
+        <Badge type={type} icon={<Airplane ariaHidden />}>
           Badge
         </Badge>
       ))}

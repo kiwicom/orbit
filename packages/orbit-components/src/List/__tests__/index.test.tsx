@@ -15,7 +15,7 @@ describe("List", () => {
 
     render(
       <List size={size} type={type} dataTest={dataTest} spaceAfter={SPACINGS_AFTER.NORMAL}>
-        <ListItem icon={<Check color="success" />}>{content}</ListItem>
+        <ListItem icon={<Check color="success" ariaHidden />}>{content}</ListItem>
       </List>,
     );
 

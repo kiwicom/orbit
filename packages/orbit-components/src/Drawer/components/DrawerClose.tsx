@@ -7,7 +7,13 @@ import type { Props } from "./types";
 const DrawerClose = React.forwardRef<HTMLButtonElement, Props>(({ onClick, title }, ref) => {
   return (
     <div className="ms-400">
-      <ButtonLink onClick={onClick} iconLeft={<Close />} ref={ref} type="secondary" title={title} />
+      <ButtonLink
+        onClick={onClick}
+        iconLeft={<Close ariaHidden />}
+        ref={ref}
+        type="secondary"
+        title={title}
+      />
     </div>
   );
 });

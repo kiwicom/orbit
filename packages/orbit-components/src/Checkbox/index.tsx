@@ -124,7 +124,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           disabled ? ["border-cloud-dark"] : "active:scale-95",
         )}
       >
-        <Check customColor="white" />
+        <Check customColor="white" ariaHidden />
       </div>
       {(label || info) && (
         <div className={cx("ms-200 flex flex-1 flex-col", disabled ? "opacity-50" : "opacity-100")}>

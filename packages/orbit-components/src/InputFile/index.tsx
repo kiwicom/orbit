@@ -122,7 +122,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           type="secondary"
           disabled={disabled}
           size="small"
-          iconLeft={<Attachment />}
+          iconLeft={<Attachment ariaHidden />}
           asComponent="div"
           role="button"
         >

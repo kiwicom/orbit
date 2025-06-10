@@ -148,7 +148,7 @@ describe("TextLink", () => {
     it.each(Object.keys(ICON_SIZES))("should have size %s", size => {
       render(
         <TextLink
-          iconLeft={<ChevronForward dataTest="icon" />}
+          iconLeft={<ChevronForward dataTest="icon" ariaHidden />}
           size={size as Props["size"]}
           href="http://#"
         >
@@ -165,7 +165,7 @@ describe("TextLink", () => {
     it.each(Object.keys(ICON_SIZES))("should have size %s", size => {
       render(
         <TextLink
-          iconRight={<ChevronForward dataTest="icon" />}
+          iconRight={<ChevronForward dataTest="icon" ariaHidden />}
           size={size as Props["size"]}
           href="http://#"
         >

@@ -9,7 +9,7 @@ const ModalCloseButton = ({ onClick, dataTest, title }: Props) => {
     <ButtonLink
       onClick={onClick}
       size="normal"
-      iconLeft={<Close />}
+      iconLeft={<Close ariaHidden />}
       dataTest={dataTest}
       type="secondary"
       title={title}

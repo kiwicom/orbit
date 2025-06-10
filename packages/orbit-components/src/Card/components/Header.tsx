@@ -66,6 +66,7 @@ const Header = ({
       <ChevronDown
         className={cx("duration-fast transition-transform ease-in-out", expanded && "-rotate-180")}
         color="secondary"
+        ariaHidden
       />
     )}
     {actions && (
@@ -78,7 +79,7 @@ const Header = ({
         <ButtonLink
           type="secondary"
           size="small"
-          iconLeft={<Close />}
+          iconLeft={<Close ariaHidden />}
           onClick={onClose}
           title={labelClose}
         />

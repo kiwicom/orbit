@@ -12,7 +12,12 @@ export default function ButtonLinkVisualStory() {
     <div className="gap-300 flex flex-col">
       <div className="gap-300 flex flex-wrap">
         {Object.values(TYPES).map(type => (
-          <ButtonLink iconLeft={<Airplane />} iconRight={<ChevronDown />} key={type} type={type}>
+          <ButtonLink
+            iconLeft={<Airplane ariaHidden />}
+            iconRight={<ChevronDown ariaHidden />}
+            key={type}
+            type={type}
+          >
             {type}
           </ButtonLink>
         ))}
@@ -20,38 +25,52 @@ export default function ButtonLinkVisualStory() {
 
       <div className="gap-300 flex flex-wrap">
         {Object.values(SIZE_OPTIONS).map(size => (
-          <ButtonLink iconLeft={<Airplane />} iconRight={<ChevronDown />} key={size} size={size}>
+          <ButtonLink
+            iconLeft={<Airplane ariaHidden />}
+            iconRight={<ChevronDown ariaHidden />}
+            key={size}
+            size={size}
+          >
             {size}
           </ButtonLink>
         ))}
       </div>
 
       <div className="gap-300 flex flex-wrap">
-        <ButtonLink iconLeft={<Airplane />}>Button link</ButtonLink>
-        <ButtonLink iconRight={<ChevronDown />}>Button link</ButtonLink>
-        <ButtonLink iconLeft={<Airplane />} iconRight={<ChevronDown />}>
+        <ButtonLink iconLeft={<Airplane ariaHidden />}>Button link</ButtonLink>
+        <ButtonLink iconRight={<ChevronDown ariaHidden />}>Button link</ButtonLink>
+        <ButtonLink iconLeft={<Airplane ariaHidden />} iconRight={<ChevronDown ariaHidden />}>
           Button link
         </ButtonLink>
-        <ButtonLink iconLeft={<Airplane />} />
+        <ButtonLink iconLeft={<Airplane ariaHidden />} />
       </div>
 
       <div className="gap-300 flex flex-wrap">
-        <ButtonLink circled iconLeft={<Airplane />}>
+        <ButtonLink circled iconLeft={<Airplane ariaHidden />}>
           Button link
         </ButtonLink>
-        <ButtonLink circled iconLeft={<Airplane />} />
+        <ButtonLink circled iconLeft={<Airplane ariaHidden />} />
       </div>
 
-      <ButtonLink fullWidth iconLeft={<Airplane />}>
+      <ButtonLink fullWidth iconLeft={<Airplane ariaHidden />}>
         Button link
       </ButtonLink>
-      <ButtonLink fullWidth iconRight={<ChevronDown />}>
+      <ButtonLink fullWidth iconRight={<ChevronDown ariaHidden />}>
         Button link
       </ButtonLink>
-      <ButtonLink fullWidth iconLeft={<Airplane />} iconRight={<ChevronDown />}>
+      <ButtonLink
+        fullWidth
+        iconLeft={<Airplane ariaHidden />}
+        iconRight={<ChevronDown ariaHidden />}
+      >
         Button link
       </ButtonLink>
-      <ButtonLink fullWidth centered iconLeft={<Airplane />} iconRight={<ChevronDown />}>
+      <ButtonLink
+        fullWidth
+        centered
+        iconLeft={<Airplane ariaHidden />}
+        iconRight={<ChevronDown ariaHidden />}
+      >
         Button link
       </ButtonLink>
     </div>

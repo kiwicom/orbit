@@ -158,7 +158,11 @@ export const InNavigationBar: CombinedStory = {
             <SkipNavigation {...skipNavigationProps} />
             <ButtonLink type="secondary">Flights</ButtonLink>
             <Stack direction="row" spacing="100" justify="end" shrink as="nav">
-              <ButtonLink aria-label="Account" iconLeft={<AccountCircle />} type="secondary" />
+              <ButtonLink
+                aria-label="Account"
+                iconLeft={<AccountCircle ariaHidden />}
+                type="secondary"
+              />
             </Stack>
           </Stack>
         </NavigationBar>

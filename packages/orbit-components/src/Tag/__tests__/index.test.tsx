@@ -18,7 +18,7 @@ describe("Tag", () => {
       <Tag
         selected
         dataTest={dataTest}
-        iconLeft={<PlusMinus dataTest="icon" />}
+        iconLeft={<PlusMinus dataTest="icon" ariaHidden />}
         labelDismiss="Dismiss"
         onRemove={onRemove}
         onClick={onClick}

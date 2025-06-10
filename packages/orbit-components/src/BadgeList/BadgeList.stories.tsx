@@ -26,10 +26,10 @@ type Story = StoryObj<BadgeListPropsAndCustomArgs>;
 export const Default: Story = {
   render: () => (
     <BadgeList>
-      <BadgeListItem icon={<Icons.AlertCircle />}>
+      <BadgeListItem icon={<Icons.AlertCircle ariaHidden />}>
         You&apos;re departing from a different place
       </BadgeListItem>
-      <BadgeListItem icon={<Icons.BaggageCabin />}>
+      <BadgeListItem icon={<Icons.BaggageCabin ariaHidden />}>
         You must collect and recheck your baggage
       </BadgeListItem>
     </BadgeList>
@@ -45,7 +45,7 @@ export const Default: Story = {
 export const Types: Story = {
   render: () => {
     const component = type => (
-      <BadgeListItem icon={<Icons.KiwiComGuarantee />} type={type}>
+      <BadgeListItem icon={<Icons.KiwiComGuarantee ariaHidden />} type={type}>
         <TextLink onClick={action("link clicked")} type="secondary">
           Transfer protected
         </TextLink>{" "}
@@ -73,10 +73,10 @@ export const Types: Story = {
 export const Sizes: Story = {
   render: () => (
     <BadgeList>
-      <BadgeListItem icon={<Icons.AlertCircle />} size="small">
+      <BadgeListItem icon={<Icons.AlertCircle ariaHidden />} size="small">
         Size small
       </BadgeListItem>
-      <BadgeListItem icon={<Icons.BaggageCabin />} size="normal">
+      <BadgeListItem icon={<Icons.BaggageCabin ariaHidden />} size="normal">
         Size normal
       </BadgeListItem>
     </BadgeList>
@@ -93,7 +93,7 @@ export const Playground: Story = {
   render: ({ type, size, strikeThrough, ariaLabel, iconLabel, spacing }) => (
     <BadgeList ariaLabel={ariaLabel} spacing={spacing}>
       <BadgeListItem
-        icon={<Icons.AlertCircle />}
+        icon={<Icons.AlertCircle ariaHidden />}
         type={type}
         strikeThrough={strikeThrough}
         size={size}
@@ -102,7 +102,7 @@ export const Playground: Story = {
         You&apos;re departing from a different place
       </BadgeListItem>
       <BadgeListItem
-        icon={<Icons.SelfTransfer />}
+        icon={<Icons.SelfTransfer ariaHidden />}
         type={type}
         strikeThrough={strikeThrough}
         size={size}
@@ -114,7 +114,7 @@ export const Playground: Story = {
         is your responsibility
       </BadgeListItem>
       <BadgeListItem
-        icon={<Icons.KiwiComGuarantee />}
+        icon={<Icons.KiwiComGuarantee ariaHidden />}
         type={type}
         strikeThrough={strikeThrough}
         size={size}
@@ -167,16 +167,16 @@ export const RTL: Story = {
   render: () => (
     <RenderInRtl>
       <BadgeList>
-        <BadgeListItem icon={<Icons.AlertCircle />}>
+        <BadgeListItem icon={<Icons.AlertCircle ariaHidden />}>
           You&apos;re departing from a different place
         </BadgeListItem>
-        <BadgeListItem icon={<Icons.SelfTransfer />}>
+        <BadgeListItem icon={<Icons.SelfTransfer ariaHidden />}>
           <Tooltip content="Additional information">
             <Text>Self transfer at Vienna</Text>
           </Tooltip>{" "}
           is your responsibility
         </BadgeListItem>
-        <BadgeListItem icon={<Icons.KiwiComGuarantee />}>
+        <BadgeListItem icon={<Icons.KiwiComGuarantee ariaHidden />}>
           <TextLink onClick={action("link clicked")} type="secondary">
             Transfer protected
           </TextLink>{" "}

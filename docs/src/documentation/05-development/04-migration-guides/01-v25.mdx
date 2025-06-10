@@ -1,0 +1,37 @@
+---
+title: v25
+description: How to migrate to Orbit 25.0.0
+redirect_from:
+  - /migration-guides/v25/
+---
+
+# Orbit Migration Guide v25
+
+This migration guide focuses on the process of migrating from Orbit v24 to v25.0, as some breaking changes were introduced.
+With this guide, we aim to walk through all the breaking changes and how they can be addressed, allowing the migration to be smoother and effortlessly.
+
+## Breaking changes
+
+### Required prop in Icon component
+
+The `Icon` component now requires you to pass either the `ariaLabel` or `ariaHidden` prop.
+
+With this, we enforce accessibility by requiring all icons to have either a label or be hidden from screen readers.
+
+**Before:**
+
+```jsx
+<Icon />
+```
+
+**Now:**
+
+```diff
+<Icon ariaLabel="Close" />
+
+// Or
+
+<Icon ariaHidden />
+```
+
+Refer to the [Icon accessibility documentation](/components/icon/accessibility/) for more information.

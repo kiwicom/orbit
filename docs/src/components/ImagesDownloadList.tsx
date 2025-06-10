@@ -146,7 +146,7 @@ const ImagesDownloadList = ({ listName }: ImagesDownloadListProps) => {
               >
                 <StyledAnchor href={assetData.publicURL} download>
                   <Stack spacing="100" align="center">
-                    <Download size="small" />
+                    <Download size="small" ariaHidden />
                     <div>Download</div>
                   </Stack>
                 </StyledAnchor>

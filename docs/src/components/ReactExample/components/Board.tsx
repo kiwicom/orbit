@@ -99,7 +99,7 @@ const Board = ({
             onClick={onOpenEditor}
             type="secondary"
             ariaExpanded={isEditorOpened}
-            iconRight={isEditorOpened ? <ChevronUp /> : <ChevronDown />}
+            iconRight={isEditorOpened ? <ChevronUp ariaHidden /> : <ChevronDown ariaHidden />}
           >
             Code editor
           </ButtonLink>
@@ -108,7 +108,7 @@ const Board = ({
               onClick={onOpenPlayground}
               type="secondary"
               ariaExpanded={isPlaygroundOpened}
-              iconRight={isPlaygroundOpened ? <ChevronUp /> : <ChevronDown />}
+              iconRight={isPlaygroundOpened ? <ChevronUp ariaHidden /> : <ChevronDown ariaHidden />}
             >
               Playground
             </ButtonLink>
@@ -130,7 +130,7 @@ const Board = ({
                 type="secondary"
                 asComponent="button"
                 ariaExpanded={isVariantsOpened}
-                iconRight={isVariantsOpened ? <ChevronUp /> : <ChevronDown />}
+                iconRight={isVariantsOpened ? <ChevronUp ariaHidden /> : <ChevronDown ariaHidden />}
               >
                 Variants
               </ButtonLink>
@@ -140,7 +140,7 @@ const Board = ({
         <Stack inline justify="end" align="center" spacing="none">
           <Tooltip content="Restore to default">
             <ButtonLink type="secondary" title="Restore to default" onClick={onRestoreToDefault}>
-              <Reload size="large" />
+              <Reload size="large" ariaHidden />
             </ButtonLink>
           </Tooltip>
           <Tooltip content={isCopied ? "copied" : "Copy to clipboard"}>
@@ -149,7 +149,7 @@ const Board = ({
               type="secondary"
               title="Copy to clipboard"
             >
-              <Copy />
+              <Copy ariaHidden />
             </ButtonLink>
           </Tooltip>
           <Popover
@@ -180,7 +180,7 @@ const Board = ({
             }
           >
             <ButtonLink type="secondary">
-              <DarkMode />
+              <DarkMode ariaHidden />
             </ButtonLink>
           </Popover>
           {isLargeMobile ? (
@@ -189,12 +189,12 @@ const Board = ({
               content={isFullScreen ? "Exit from full screen" : "Open in full screen"}
             >
               <ButtonLink type="secondary" external onClick={onOpenFullScreen}>
-                {isFullScreen ? <Close /> : <NewWindow />}
+                {isFullScreen ? <Close ariaHidden /> : <NewWindow ariaHidden />}
               </ButtonLink>
             </Tooltip>
           ) : (
             <ButtonLink type="secondary" external onClick={onOpenFullScreen}>
-              {isFullScreen ? <Close /> : <NewWindow />}
+              {isFullScreen ? <Close ariaHidden /> : <NewWindow ariaHidden />}
             </ButtonLink>
           )}
         </Stack>

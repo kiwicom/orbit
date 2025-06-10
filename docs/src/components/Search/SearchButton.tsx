@@ -60,7 +60,13 @@ export const KeyboardShortcuts = ({ type = "primary" }: { type: Type }) => {
 const SearchButton = ({ onClick }: Props) => {
   return (
     <StyledSearchButtonWrapper>
-      <Button size="large" type="primarySubtle" circled iconLeft={<SearchIcon />} onClick={onClick}>
+      <Button
+        size="large"
+        type="primarySubtle"
+        circled
+        iconLeft={<SearchIcon ariaHidden />}
+        onClick={onClick}
+      >
         <Stack inline align="center" spacing="200">
           <p>Search</p>
           <KeyboardShortcuts type="primary" />

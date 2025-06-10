@@ -62,7 +62,7 @@ const GlobalDesignTokens = () => {
     <Stack spacing="600">
       <Stack spacing="400" direction="row">
         <InputField
-          prefix={<Search />}
+          prefix={<Search ariaHidden />}
           placeholder="Filter design tokens from categories..."
           value={filter}
           onChange={event => setFilter(event.currentTarget.value)}

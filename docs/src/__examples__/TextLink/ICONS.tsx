@@ -12,7 +12,7 @@ export default {
       >
         Orbit design system
       </TextLink>
-      <TextLink iconRight={<ChevronForward />}>Skip this step</TextLink>
+      <TextLink iconRight={<ChevronForward ariaHidden />}>Skip this step</TextLink>
     </Stack>
   ),
 };

@@ -45,7 +45,7 @@ const SearchNavbarButton = ({ onClick }: Props) => {
   const { isTablet } = useMediaQuery();
   return (
     <StyledSearchButton onClick={onClick}>
-      <SearchIcon />
+      <SearchIcon ariaHidden />
       <Stack align="center" spacing="200">
         {isTablet ? (
           <>

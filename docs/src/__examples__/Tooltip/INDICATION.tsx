@@ -30,7 +30,7 @@ export default {
           </Tooltip>{" "}
           a try.
         </Text>
-        <Alert icon={<CheckCircle />} type="success">
+        <Alert icon={<CheckCircle ariaHidden />} type="success">
           If you&apos;re building a travel app, you should give{" "}
           <Tooltip
             content={
@@ -46,7 +46,7 @@ export default {
           </Tooltip>
           a try.
         </Alert>
-        <Alert icon={<Visa />} type="warning">
+        <Alert icon={<Visa ariaHidden />} type="warning">
           You
           <Tooltip content={<Text>Check with your embassy.</Text>}>
             <Text>may need a visa </Text>

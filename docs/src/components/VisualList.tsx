@@ -117,7 +117,7 @@ const VisualList = ({ actions, exampleCode, getImgSource, list, smallVisual }: V
   return (
     <Stack spacing="600">
       <InputField
-        prefix={<Search />}
+        prefix={<Search ariaHidden />}
         placeholder="Find a visual"
         value={filter}
         onChange={event => setFilter(event.currentTarget.value)}

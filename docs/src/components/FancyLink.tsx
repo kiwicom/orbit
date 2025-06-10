@@ -49,25 +49,25 @@ const FancyLink = ({ download, href, icon, title }: Props) => {
       case "string":
         switch (icon) {
           case "download":
-            return <Download />;
+            return <Download ariaHidden />;
           case "color-picker":
-            return <ColorPicker />;
+            return <ColorPicker ariaHidden />;
           case "figma":
-            return <Figma />;
+            return <Figma ariaHidden />;
           case "github":
-            return <Github />;
+            return <Github ariaHidden />;
           case "google":
-            return <Google />;
+            return <Google ariaHidden />;
           case "react":
-            return <ReactJs />;
+            return <ReactJs ariaHidden />;
           case "storybook":
-            return <Storybook />;
+            return <Storybook ariaHidden />;
           case "playroom":
-            return <Code />;
+            return <Code ariaHidden />;
           case "lightbulb":
-            return <Tips />;
+            return <Tips ariaHidden />;
           default:
-            return <FlightDirect />;
+            return <FlightDirect ariaHidden />;
         }
       default:
         return icon;

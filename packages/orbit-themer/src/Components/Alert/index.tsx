@@ -12,18 +12,18 @@ const Alerts = () => {
   return (
     <>
       <Stack direction="row" spaceAfter="medium" wrap>
-        <Alert type="info" title={title} icon={<InfoCircle />}>
+        <Alert type="info" title={title} icon={<InfoCircle ariaHidden />}>
           {message}
         </Alert>
-        <Alert type="success" title={title} icon={<Check />}>
+        <Alert type="success" title={title} icon={<Check ariaHidden />}>
           {message}
         </Alert>
       </Stack>
       <Stack direction="row" wrap>
-        <Alert type="warning" title={title} icon={<AlertIcon />}>
+        <Alert type="warning" title={title} icon={<AlertIcon ariaHidden />}>
           {message}
         </Alert>
-        <Alert type="critical" title={title} icon={<AlertCircle />}>
+        <Alert type="critical" title={title} icon={<AlertCircle ariaHidden />}>
           {message}
         </Alert>
       </Stack>

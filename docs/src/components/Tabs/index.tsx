@@ -158,7 +158,7 @@ export default function Tabs({ activeTab: activeTabSlug, tabs }: Props) {
                   $active={tab.slug === activeTabSlug}
                 >
                   <span>{tab.title}</span>
-                  <ChevronForward />
+                  <ChevronForward ariaHidden />
                 </StyledPopoverTab>
               ))}
             </StyledPopoverContent>
@@ -168,7 +168,7 @@ export default function Tabs({ activeTab: activeTabSlug, tabs }: Props) {
         >
           <Tab stacked>
             <span>{activeTabTitle}</span>
-            {tabsOpen ? <ChevronUp /> : <ChevronDown />}
+            {tabsOpen ? <ChevronUp ariaHidden /> : <ChevronDown ariaHidden />}
           </Tab>
         </Popover>
       ) : (

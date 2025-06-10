@@ -36,7 +36,7 @@ export default {
           </Stack>
         }
       >
-        <Button asComponent="div" circled title="Help" iconLeft={<QuestionCircle />} />
+        <Button asComponent="div" circled title="Help" iconLeft={<QuestionCircle ariaHidden />} />
       </Popover>
     </OrbitProvider>
   ),

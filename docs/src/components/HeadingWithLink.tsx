@@ -60,7 +60,7 @@ const HeadingWithLink = ({ level, children, noId, spaceAfter = "none" }: Props) 
       <Stack inline spacing="200" align="center" spaceAfter={spaceAfter}>
         {children}
         <StyledLinkIcon>
-          <LinkIcon />
+          <LinkIcon ariaHidden />
         </StyledLinkIcon>
       </Stack>
     </StyledAnchor>

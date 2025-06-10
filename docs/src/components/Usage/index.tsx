@@ -105,11 +105,13 @@ export function UsageUse({ children }: Props) {
     <StyledSection>
       <Stack inline spacing="200">
         <StyledHeadingIcon $color={docsTheme.orbit.paletteGreenLight}>
-          <Check color="success" />
+          <Check color="success" ariaHidden />
         </StyledHeadingIcon>
         <H3>Use</H3>
       </Stack>
-      <ListWithIcon icon={<Check size="small" color="success" />}>{children}</ListWithIcon>
+      <ListWithIcon icon={<Check size="small" color="success" ariaHidden />}>
+        {children}
+      </ListWithIcon>
     </StyledSection>
   );
 }
@@ -119,11 +121,13 @@ export function UsageDontUse({ children }: Props) {
     <StyledSection>
       <Stack inline spacing="200">
         <StyledHeadingIcon $color={docsTheme.orbit.paletteRedLight}>
-          <Close color="critical" />
+          <Close color="critical" ariaHidden />
         </StyledHeadingIcon>
         <H3>Don&apos;t use</H3>
       </Stack>
-      <ListWithIcon icon={<Close size="small" color="critical" />}>{children}</ListWithIcon>
+      <ListWithIcon icon={<Close size="small" color="critical" ariaHidden />}>
+        {children}
+      </ListWithIcon>
     </StyledSection>
   );
 }

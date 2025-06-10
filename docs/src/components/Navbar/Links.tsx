@@ -32,7 +32,7 @@ const LinkIcon = ({ name }: { name?: string }) => {
     case "Accessibility":
       return <IrisScanIcon {...iconStyles} />;
     case "Playroom":
-      return <Code size="medium" />;
+      return <Code size="medium" ariaHidden />;
     default:
       return <ScriptIcon {...iconStyles} />;
   }
@@ -101,7 +101,7 @@ const Links = ({
             </Stack>
           }
         >
-          <Button type="white" circled iconLeft={<MenuHamburger />} />
+          <Button type="white" circled iconLeft={<MenuHamburger ariaHidden />} />
         </Popover>
       </Hide>
     </>

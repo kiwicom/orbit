@@ -42,7 +42,7 @@ export default {
                       </Box>
                       <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Cairo CAI</Text>
-                        <FlightDirect size="small" />
+                        <FlightDirect size="small" ariaHidden />
                         <Text weight="bold">Dubai SHJ</Text>
                       </Stack>
                     </Stack>
@@ -61,7 +61,7 @@ export default {
                       </Box>
                       <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Dubai SHJ</Text>
-                        <FlightDirect size="small" />
+                        <FlightDirect size="small" ariaHidden />
                         <Text weight="bold">Mumbai BOM</Text>
                       </Stack>
                     </Stack>
@@ -80,7 +80,7 @@ export default {
                       </Box>
                       <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Mumbai BOM</Text>
-                        <FlightDirect size="small" />
+                        <FlightDirect size="small" ariaHidden />
                         <Text weight="bold">Malé MLE</Text>
                       </Stack>
                     </Stack>
@@ -108,7 +108,7 @@ export default {
                       </Box>
                       <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Malé MLE</Text>
-                        <FlightDirect size="small" />
+                        <FlightDirect size="small" ariaHidden />
                         <Text weight="bold">Mumbai BOM</Text>
                       </Stack>
                     </Stack>
@@ -127,7 +127,7 @@ export default {
                       </Box>
                       <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Mumbai BOM</Text>
-                        <FlightDirect size="small" />
+                        <FlightDirect size="small" ariaHidden />
                         <Text weight="bold">Dubai SHJ</Text>
                       </Stack>
                     </Stack>
@@ -146,7 +146,7 @@ export default {
                       </Box>
                       <Stack direction="row" spacing="100" align="center">
                         <Text weight="bold">Dubai SHJ</Text>
-                        <FlightDirect size="small" />
+                        <FlightDirect size="small" ariaHidden />
                         <Text weight="bold">Cairo CAI</Text>
                       </Stack>
                     </Stack>

@@ -35,10 +35,10 @@ interface Props extends Contributor {
 
 const TeamMember = ({ position, image, info, twitter, website, dribbble, github, name }: Props) => {
   const links = [
-    { url: twitter, icon: <X /> },
-    { url: website, icon: <LinkIcon /> },
-    { url: dribbble, icon: <Dribbble /> },
-    { url: github, icon: <Github /> },
+    { url: twitter, icon: <X ariaHidden /> },
+    { url: website, icon: <LinkIcon ariaHidden /> },
+    { url: dribbble, icon: <Dribbble ariaHidden /> },
+    { url: github, icon: <Github ariaHidden /> },
   ];
 
   return (

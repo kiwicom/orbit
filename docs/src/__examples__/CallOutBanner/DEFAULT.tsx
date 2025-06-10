@@ -19,7 +19,7 @@ export default {
           >
             Find a room
           </Button>
-          <TextLink iconLeft={<InformationCircle />} size="small" standAlone>
+          <TextLink iconLeft={<InformationCircle ariaHidden />} size="small" standAlone>
             More info
           </TextLink>
         </Stack>

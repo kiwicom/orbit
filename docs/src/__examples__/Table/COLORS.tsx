@@ -30,7 +30,7 @@ export default {
               <TableRow>
                 <TableCell>
                   <Inline>
-                    <BaggageCabin /> Cabin baggage
+                    <BaggageCabin ariaHidden /> Cabin baggage
                   </Inline>
                 </TableCell>
                 <TableCell>Free</TableCell>
@@ -38,7 +38,7 @@ export default {
               <TableRow>
                 <TableCell>
                   <Inline>
-                    <BaggageChecked30 /> Checked baggage
+                    <BaggageChecked30 ariaHidden /> Checked baggage
                   </Inline>
                 </TableCell>
                 <TableCell>Paid-for option</TableCell>
@@ -56,7 +56,7 @@ export default {
               <TableRow>
                 <TableCell>
                   <Inline>
-                    <BaggageCabin /> Cabin baggage
+                    <BaggageCabin ariaHidden /> Cabin baggage
                   </Inline>
                 </TableCell>
                 <TableCell>Free</TableCell>
@@ -64,7 +64,7 @@ export default {
               <TableRow>
                 <TableCell>
                   <Inline>
-                    <BaggageChecked30 /> Checked baggage
+                    <BaggageChecked30 ariaHidden /> Checked baggage
                   </Inline>
                 </TableCell>
                 <TableCell>Paid-for option</TableCell>
@@ -88,7 +88,7 @@ export default {
                 <TableRow>
                   <TableCell>
                     <Inline>
-                      <BaggageCabin /> Cabin baggage
+                      <BaggageCabin ariaHidden /> Cabin baggage
                     </Inline>
                   </TableCell>
                   <TableCell>Free</TableCell>
@@ -96,7 +96,7 @@ export default {
                 <TableRow>
                   <TableCell>
                     <Inline>
-                      <BaggageChecked30 /> Checked baggage
+                      <BaggageChecked30 ariaHidden /> Checked baggage
                     </Inline>
                   </TableCell>
                   <TableCell>Paid-for option</TableCell>
@@ -114,7 +114,7 @@ export default {
                 <TableRow>
                   <TableCell>
                     <Inline>
-                      <BaggageCabin /> Cabin baggage
+                      <BaggageCabin ariaHidden /> Cabin baggage
                     </Inline>
                   </TableCell>
                   <TableCell>Free</TableCell>
@@ -122,7 +122,7 @@ export default {
                 <TableRow>
                   <TableCell>
                     <Inline>
-                      <BaggageChecked30 /> Checked baggage
+                      <BaggageChecked30 ariaHidden /> Checked baggage
                     </Inline>
                   </TableCell>
                   <TableCell>Paid-for option</TableCell>

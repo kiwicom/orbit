@@ -27,6 +27,7 @@ export interface Props extends Common.Globals {
   readonly gutter?: number;
   readonly dismissTimeout?: number;
   readonly placement?: Placement;
+  readonly useTopSafeAreaInset?: boolean;
 }
 
 interface ToastProps {

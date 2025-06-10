@@ -58,6 +58,7 @@ export const Default: Story = {
         "gutter",
         "dismissTimeout",
         "placement",
+        "useTopSafeAreaInset",
       ],
     },
   },
@@ -130,6 +131,7 @@ export const Playground: Story = {
     gutter: 8,
     dismissTimeout: 5000,
     placement: PLACEMENTS.TOP_CENTER,
+    useTopSafeAreaInset: false,
   },
 
   argTypes: {
@@ -167,6 +169,7 @@ export const RTL: Story = {
         "gutter",
         "dismissTimeout",
         "placement",
+        "useTopSafeAreaInset",
       ],
     },
   },

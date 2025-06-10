@@ -54,17 +54,18 @@ const notify = () =>
 
 Table below contains all types of the props available for `ToastRoot` component
 
-| Name           | Type                      | Default | Description                           |
-| :------------- | :------------------------ | :------ | :------------------------------------ |
-| dataTest       | `string`                  |         | optional prop for testing purposes.   |
-| id             | `string`                  |         | Set `id` for `Toast` wrapper          |
-| topOffset      | `number`                  | `8`     | top offset for toast container        |
-| leftOffset     | `number`                  | `8`     | left offset for toast container       |
-| rightOffset    | `number`                  | `8`     | right offset for toast container      |
-| bottomOffset   | `number`                  | `8`     | bottom offset for toast container     |
-| gutter         | `number`                  | `8`     | distance between toast notifications  |
-| dismissTimeout | `number`                  | `5000`  | timeout until toast will be dismissed |
-| placement      | [`Placement`](#Placement) |         | position for toast container          |
+| Name                | Type                      | Default | Description                                                                                                                                                                 |
+| :------------------ | :------------------------ | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dataTest            | `string`                  |         | optional prop for testing purposes.                                                                                                                                         |
+| id                  | `string`                  |         | Set `id` for `Toast` wrapper                                                                                                                                                |
+| topOffset           | `number`                  | `8`     | top offset for toast container                                                                                                                                              |
+| leftOffset          | `number`                  | `8`     | left offset for toast container                                                                                                                                             |
+| rightOffset         | `number`                  | `8`     | right offset for toast container                                                                                                                                            |
+| bottomOffset        | `number`                  | `8`     | bottom offset for toast container                                                                                                                                           |
+| gutter              | `number`                  | `8`     | distance between toast notifications                                                                                                                                        |
+| dismissTimeout      | `number`                  | `5000`  | timeout until toast will be dismissed                                                                                                                                       |
+| placement           | [`Placement`](#Placement) |         | position for toast container                                                                                                                                                |
+| useTopSafeAreaInset | `boolean`                 | `false` | When enabled, the Toast container will respect mobile device top safe area to prevent notifications from being obscured by system UI elements like the notch or status bar. |
 
 ### Placement
 

@@ -103,8 +103,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const [activeTab, setActiveTab] = React.useState<"navigation" | "bookmarks">("navigation");
   const isHome = location && location.pathname === "/";
-  const isThemer = location && location.pathname === "/themer/";
-  const shouldHaveNavLinks = isHome || isThemer;
+  const shouldHaveNavLinks = isHome;
   const { bookmarks } = useBookmarks();
 
   return (

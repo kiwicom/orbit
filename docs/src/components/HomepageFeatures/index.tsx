@@ -1,6 +1,6 @@
 import React, { type ReactNode } from "react";
 import clsx from "clsx";
-import Heading from "@theme/Heading";
+import { Heading } from "@kiwicom/orbit-components";
 
 import styles from "./styles.module.css";
 import TailwindTest from "../TailwindTest";

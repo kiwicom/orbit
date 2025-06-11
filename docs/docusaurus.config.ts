@@ -100,10 +100,10 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "My Site",
+      title: "Orbit",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: "Orbit Logo",
+        src: "img/orbit.svg",
       },
       items: [
         {

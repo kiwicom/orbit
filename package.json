@@ -2,8 +2,7 @@
   "name": "@kiwicom/orbit",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "docs"
+    "packages/*"
   ],
   "scripts": {
     "build-ci": "yarn size:build",

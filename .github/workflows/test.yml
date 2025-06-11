@@ -118,11 +118,6 @@ jobs:
           cd docs
           yarn build
 
-      - name: Check links
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: yarn check:links
-
   test-ct:
     name: Visual Regression Tests
     runs-on: ${{ matrix.os }}

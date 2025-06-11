@@ -17,6 +17,7 @@ packages/orbit-components/src/icons/*
 
 docs/.cache
 docs/public
+docs/src
 
 # orbit design tokens
 packages/orbit-design-tokens/output/

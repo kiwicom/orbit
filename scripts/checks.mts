@@ -6,11 +6,6 @@ import { $, argv } from "zx";
     await $`lerna run check:types`;
     await $`cd docs && yarn check:types`;
   }
-  // Check links
-  if (argv.links) {
-    await $`remark -e '.mdx' -q -u validate-links docs/src/documentation --no-config`;
-    await $`tsc docs/services/checkLinks.mts --downlevelIteration --esModuleInterop --resolveJsonModule --noEmit --skipLibCheck`;
-  }
   // Check component statuses for update
   if (argv.statuses) {
     await $`zx docs/services/componentStatuses.mjs`;

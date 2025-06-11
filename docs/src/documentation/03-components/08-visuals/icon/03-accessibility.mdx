@@ -19,10 +19,8 @@ The following props can be used:
 | ariaLabel  | `string`  | The text that describes the icon, announced by screen readers.    |
 | ariaHidden | `boolean` | If set to `true`, screen readers will completely ignore the icon. |
 
-All the props above are optional, but important to use to ensure the best experience for all users.
+The props above are required and mutually exclusive. This means that you must use one of them, and you cannot use both at the same time.
 
 The `ariaLabel` prop should ideally be translated and be more than just the name of the icon. It is especially important when the icon is used alone and conveys information by itself.
 
 The `ariaHidden` prop is useful when the icon is already labeled by surrounding content, and it would be redundant to announce it again.
-
-Not using `ariaLabel` nor `ariaHidden` will have screen readers announce the icon as just an image, without any more context, which can be confusing for users of assistive technologies.

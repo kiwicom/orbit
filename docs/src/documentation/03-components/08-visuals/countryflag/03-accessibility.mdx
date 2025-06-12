@@ -1,0 +1,80 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/countryflag/accessibility/
+---
+
+## Accessibility
+
+The CountryFlag component has been designed with accessibility in mind, providing flexible options for screen reader support depending on the context in which the flag is used.
+
+### Accessibility Props
+
+**CountryFlag props:**
+
+| Name | Type                                             | Description                                                                                                                                                      |
+| :--- | :----------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name | `string`                                         | Defines the `alt` attribute for the flag image. Defaults to an empty string `""`, making the flag invisible to screen readers when no accessible name is needed. |
+| role | `React.HTMLAttributes<HTMLImageElement>["role"]` | ARIA role for the flag image. The `name` prop should be used instead as it provides better screen reader support.                                                |
+
+### Automatic Accessibility Features
+
+- The component automatically applies the `name` prop value as the `alt` attribute on the flag image.
+- When `name` is empty (default), the flag is treated as decorative and is not announced by screen readers.
+- Focus management is not applicable as the component is not interactive.
+
+### Best Practices
+
+- Use the `name` prop to provide an accessible name when the flag conveys important information.
+- Leave `name` empty when the flag is purely decorative or when country information is provided by adjacent text.
+- Avoid providing a `name` value that duplicates text content placed immediately next to the flag, as this creates redundant announcements for screen reader users.
+- Prefer using the `name` prop over the `role` prop for better cross-platform screen reader support.
+- When displaying multiple flags in a list or grid, ensure each flag has a meaningful and unique accessible name when necessary.
+- Always localize country names in the `name` prop to match the user's language preferences for proper screen reader pronunciation and comprehension.
+
+### Keyboard Navigation
+
+The CountryFlag component is not interactive and does not receive keyboard focus. No keyboard navigation is applicable.
+
+### Examples
+
+_Note: Country names in examples are shown in English for demonstration purposes. In production, always use localized country names appropriate for your user's language._
+
+#### Flag with accessible name
+
+```jsx
+<CountryFlag code="cz" name="Czech Republic" />
+```
+
+Screen reader announces: "Czech Republic, image"
+
+#### Decorative flag next to text label
+
+```jsx
+<Stack direction="row" spacing="100" align="center">
+  <CountryFlag code="cz" />
+  <Text>Czech Republic</Text>
+</Stack>
+```
+
+Screen reader announces: "Czech Republic" (only the text is announced)
+
+#### Flag in a list context
+
+```jsx
+<Stack direction="column">
+  <CountryFlag code="us" name="United States" />
+  <CountryFlag code="ca" name="Canada" />
+  <CountryFlag code="mx" name="Mexico" />
+</Stack>
+```
+
+Screen reader announces: "United States, image", "Canada, image", "Mexico, image"
+
+#### Flag without accessible name (decorative)
+
+```jsx
+<CountryFlag code="gb" />
+```
+
+Screen reader announces: (nothing - flag is treated as decorative)

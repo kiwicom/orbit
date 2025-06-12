@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [25.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.3.0...@kiwicom/orbit-components@25.0.0) (2025-06-12)
+
+#### Features
+
+* **Icon:** make accessibility props required ([646d186](https://github.com/kiwicom/orbit/commit/646d186696ef7236ba96b7180b932b33c01b35e3))
+* **icons:** update icons from figma ([c498f48](https://github.com/kiwicom/orbit/commit/c498f488f313f2c64ce8e9e8306e102a7c9cf0ea))
+* **Toast:** add new useTopSafeAreaInset prop ([8fb2ea5](https://github.com/kiwicom/orbit/commit/8fb2ea5cd4505637ca0c85b5d6cbe36b6569a984))
+
+#### BREAKING CHANGES
+
+* **Icon:** the Icon component now requires accessibility props.
+  When using an icon you must now use either ariaHidden or ariaLabel
+
 ## [24.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.2.1...@kiwicom/orbit-components@24.3.0) (2025-05-29)
 
 #### Bug Fixes

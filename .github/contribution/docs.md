@@ -102,14 +102,3 @@ and not formatting.
 
 This style is known as ventilated prose.
 Read [more about the reasons to use it](https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line).
-
-## Checking links
-
-It's important for working documentation to have working links.
-
-To achieve this, after building the site, we check all built HTML for working links.
-Any broken link prevents a pull request from being merged.
-
-To check for yourself,
-run `yarn check-links` from a terminal at the root of this repository.
-Note that you need to have built the site first (run `yarn docs build`).

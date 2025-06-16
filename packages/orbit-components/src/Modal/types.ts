@@ -37,7 +37,7 @@ export type Props = Common.Globals &
     readonly ariaLabel?: string;
     readonly ariaLabelledby?: string;
     readonly ariaDescribedby?: string;
-    readonly useTopSafeAreaInset?: boolean;
+    readonly useSafeAreaInset?: boolean;
   };
 
 export interface Instance {

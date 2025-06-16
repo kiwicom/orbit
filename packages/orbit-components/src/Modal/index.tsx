@@ -62,7 +62,7 @@ const Modal = React.forwardRef<Instance, Props>(
       ariaLabel,
       ariaLabelledby,
       ariaDescribedby,
-      useTopSafeAreaInset = false,
+      useSafeAreaInset = false,
     }: Props,
     ref,
   ) => {
@@ -377,7 +377,7 @@ const Modal = React.forwardRef<Instance, Props>(
         isInsideModal: true,
         titleID: modalTitleID,
         descriptionID: modalDescriptionID,
-        useTopSafeAreaInset,
+        useSafeAreaInset,
       }),
       [
         callContextFunctions,
@@ -387,7 +387,7 @@ const Modal = React.forwardRef<Instance, Props>(
         onClose,
         modalTitleID,
         modalDescriptionID,
-        useTopSafeAreaInset,
+        useSafeAreaInset,
       ],
     );
 
@@ -395,14 +395,26 @@ const Modal = React.forwardRef<Instance, Props>(
       ...(!isLargeMobile
         ? {
             maxHeight: isMobileFullPage
-              ? "100%"
+              ? [
+                  useSafeAreaInset
+                    ? "calc(100% - var(--safe-area-inset-top, env(safe-area-inset-top, 0px)))"
+                    : "100%",
+                ]
               : `calc(100% - ${theme.orbit.space800} - ${
                   fixedFooter && Boolean(footerHeight) ? footerHeight : 0
                 }px)`,
-            bottom: `${
-              (!isMobileFullPage ? parseInt(theme.orbit.space800, 10) : 0) +
-              (fixedFooter && Boolean(footerHeight) ? footerHeight : 0)
-            }px`,
+            bottom: useSafeAreaInset
+              ? `calc(${!isMobileFullPage ? parseInt(theme.orbit.space800, 10) : 0}px + ${
+                  fixedFooter && Boolean(footerHeight) ? footerHeight : 0
+                }px + ${
+                  fixedFooter
+                    ? "var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px))"
+                    : "0px"
+                })`
+              : `${
+                  (!isMobileFullPage ? parseInt(theme.orbit.space800, 10) : 0) +
+                  (fixedFooter && Boolean(footerHeight) ? footerHeight : 0)
+                }px`,
           }
         : {
             "--orbit-modal-footer-height": fixedFooter ? `${footerHeight}px` : "0",
@@ -418,7 +430,7 @@ const Modal = React.forwardRef<Instance, Props>(
           "z-overlay font-base fixed inset-0 box-border size-full overflow-x-hidden outline-none",
           !isMobileFullPage && "bg-[black]/50",
           "lm:overflow-y-auto lm:p-1000 lm:bg-[black]/50",
-          isMobileFullPage && useTopSafeAreaInset && "bg-white-normal",
+          isMobileFullPage && useSafeAreaInset && "bg-white-normal",
         )}
         tabIndex={-1}
         onKeyDown={handleKeyDown}
@@ -453,8 +465,12 @@ const Modal = React.forwardRef<Instance, Props>(
               "orbit-modal-wrapper-content",
               "lm:rounded-modal lm:overflow-visible overflow-y-auto overflow-x-hidden",
               "font-base bg-elevation-flat absolute box-border w-full",
-              isMobileFullPage && useTopSafeAreaInset && "mt-safe-top",
-              !useTopSafeAreaInset && "shadow-level4",
+              isMobileFullPage && useSafeAreaInset && "mt-safe-top",
+              !useSafeAreaInset && "shadow-level4",
+              useSafeAreaInset &&
+                (fixedFooter
+                  ? "after:h-safe-bottom after:bg-elevation-flat after:z-modal lm:after:content-none after:fixed after:inset-x-0 after:bottom-0 after:mx-auto after:w-full after:content-['']"
+                  : "pb-safe-bottom"),
               "lm:relative lm:bottom-auto lm:pb-0",
               "lm:[&_.orbit-modal-section:last-of-type]:pb-1000 lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
               "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-theme(spacing.1000))]",
@@ -478,6 +494,8 @@ const Modal = React.forwardRef<Instance, Props>(
                     ? "[&_.orbit-modal-footer]:shadow-modal-scrolled"
                     : "[&_.orbit-modal-footer]:shadow-modal lm:[&_.orbit-modal-footer]:rounded-b-none",
                   "[&_.orbit-modal-section:last-of-type]:pb-600 [&_.orbit-modal-section:last-of-type]:mb-0",
+                  useSafeAreaInset &&
+                    "[&_.orbit-modal-footer]:bottom-safe-bottom lm:[&_.orbit-modal-footer]:bottom-0",
                 ],
               fixedFooter
                 ? [
@@ -510,7 +528,7 @@ const Modal = React.forwardRef<Instance, Props>(
                   fixedClose || scrolled
                     ? [
                         "lm:right-auto fixed",
-                        isMobileFullPage && useTopSafeAreaInset && "top-safe-top",
+                        isMobileFullPage && useSafeAreaInset && "top-safe-top",
                         "lm:top-0",
                       ]
                     : "absolute",
@@ -519,7 +537,7 @@ const Modal = React.forwardRef<Instance, Props>(
                   modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
                   scrolled && [
                     "bg-white-normal",
-                    useTopSafeAreaInset
+                    useSafeAreaInset
                       ? // Modified shadow-fixed values to remove top shadow effect for a seamless appearance on mobile
                         "shadow-[0_2px_2px_0_rgba(37,42,49,0.16),_0_4px_4px_0_rgba(37,42,49,0.12)]"
                       : "shadow-fixed",

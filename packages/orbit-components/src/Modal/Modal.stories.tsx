@@ -11,7 +11,6 @@ import { NAMES } from "../Illustration/consts.mts";
 import ChevronBackward from "../icons/ChevronBackward";
 import FlightDirect from "../icons/FlightDirect";
 import Stack from "../Stack";
-import ButtonLink from "../ButtonLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Card from "../Card";
 import CardSection from "../Card/CardSection";
@@ -201,8 +200,33 @@ const meta: Meta<ModalPropsAndCustomArgs> = {
   title: "Modal",
   component: Modal,
 
+  args: {
+    lockScrolling: true,
+    preventOverlayClose: false,
+    isMobileFullPage: false,
+    useSafeAreaInset: false,
+    fixedFooter: false,
+    showBack: false,
+    mobileHeader: true,
+    size: SIZES.NORMAL,
+    hasCloseButton: true,
+    disableAnimation: false,
+  },
+
   parameters: {
     info: "Check Orbit.Kiwi for more detailed design guidelines.",
+    controls: {
+      exclude: [
+        "scrollingElementRef",
+        "labelClose",
+        "triggerRef",
+        "onClose",
+        "onScroll",
+        "ariaLabel",
+        "ariaLabelledby",
+        "ariaDescribedby",
+      ],
+    },
   },
 };
 
@@ -232,11 +256,11 @@ function useModal() {
 }
 
 export const RemovableSections: Story = {
-  render: ({ showSection, children }) => {
+  render: ({ showSection, children, showBack, ...args }) => {
     const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
-        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close">
+        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close" {...args}>
           <ModalHeader
             title="Enjoy something to eat while you fly"
             illustration={<Illustration name="Meal" size="small" />}
@@ -251,9 +275,11 @@ export const RemovableSections: Story = {
             <Text>Lorem ipsum dolor sit amet</Text>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
-              Back
-            </Button>
+            {showBack && (
+              <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
+                Back
+              </Button>
+            )}
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
           </ModalFooter>
         </Modal>
@@ -269,26 +295,11 @@ export const RemovableSections: Story = {
 
   parameters: {
     info: "An example of a modal with a removable section. Check Orbit.Kiwi for more detailed design guidelines.",
-    controls: {
-      exclude: [
-        "size",
-        "title",
-        "mobileHeader",
-        "isMobileFullPage",
-        "preventOverlayClose",
-        "hasCloseButton",
-        "disableAnimation",
-        "labelClose",
-        "lockScrolling",
-        "fixedFooter",
-        "triggerRef",
-      ],
-    },
   },
 };
 
 export const WithFixedFooter: Story = {
-  render: args => {
+  render: ({ showBack, ...args }) => {
     const { Container, onClose, triggerRef } = useModal();
     return (
       <Container>
@@ -301,9 +312,11 @@ export const WithFixedFooter: Story = {
           <ModalSection suppressed>{modalOutboundSection}</ModalSection>
           <ModalSection>{modalInboundSection}</ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
-              Back
-            </Button>
+            {showBack && (
+              <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
+                Back
+              </Button>
+            )}
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
           </ModalFooter>
         </Modal>
@@ -313,7 +326,6 @@ export const WithFixedFooter: Story = {
 
   args: {
     fixedFooter: true,
-    useTopSafeAreaInset: false,
     isMobileFullPage: false,
   },
 
@@ -321,27 +333,27 @@ export const WithFixedFooter: Story = {
     info: "An example of a modal with a fixed footer. Check Orbit.Kiwi for more detailed design guidelines.",
     controls: {
       exclude: [
-        "size",
-        "title",
-        "mobileHeader",
-        "preventOverlayClose",
-        "hasCloseButton",
-        "disableAnimation",
+        "children",
+        "scrollingElementRef",
         "labelClose",
         "triggerRef",
-        "lockScrolling",
+        "onClose",
+        "onScroll",
+        "ariaLabel",
+        "ariaLabelledby",
+        "ariaDescribedby",
       ],
     },
   },
 };
 
 export const WithForm: Story = {
-  render: ({ showSection }) => {
+  render: ({ showSection, showBack, ...args }) => {
     const { Container, onClose, triggerRef } = useModal();
 
     return (
       <Container>
-        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close" fixedFooter>
+        <Modal triggerRef={triggerRef} onClose={onClose} labelClose="Close" {...args}>
           <ModalHeader title="Refund" description="Reservation number: 123456789" />
           <ModalSection>
             <Stack>
@@ -381,9 +393,11 @@ export const WithForm: Story = {
             </Stack>
           </ModalSection>
           <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-            <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
-              Back
-            </Button>
+            {showBack && (
+              <Button iconLeft={<ChevronBackward ariaHidden />} type="secondary">
+                Back
+              </Button>
+            )}
             <Button fullWidth>Proceed to Payment (23.98€)</Button>
           </ModalFooter>
         </Modal>
@@ -399,24 +413,22 @@ export const WithForm: Story = {
     info: "An example of a modal with a form. Check Orbit.Kiwi for more detailed design guidelines.",
     controls: {
       exclude: [
-        "size",
-        "title",
-        "mobileHeader",
-        "isMobileFullPage",
-        "preventOverlayClose",
-        "hasCloseButton",
-        "disableAnimation",
+        "children",
+        "scrollingElementRef",
         "labelClose",
         "triggerRef",
-        "lockScrolling",
-        "fixedFooter",
+        "onClose",
+        "onScroll",
+        "ariaLabel",
+        "ariaLabelledby",
+        "ariaDescribedby",
       ],
     },
   },
 };
 
 export const WithItinerary: Story = {
-  render: () => {
+  render: args => {
     const { Container, onClose, triggerRef } = useModal();
 
     return (
@@ -426,6 +438,7 @@ export const WithItinerary: Story = {
           ariaLabel="Itinerary from Prague to Frankfurt"
           onClose={onClose}
           labelClose="Close"
+          {...args}
         >
           <ModalSection>
             <Itinerary>
@@ -461,7 +474,18 @@ export const WithItinerary: Story = {
   parameters: {
     info: "An example of a modal with an Itinerary component. Check Orbit.Kiwi for more detailed design guidelines.",
     controls: {
-      disable: true,
+      exclude: [
+        "children",
+        "scrollingElementRef",
+        "labelClose",
+        "triggerRef",
+        "onClose",
+        "onScroll",
+        "ariaLabel",
+        "ariaLabelledby",
+        "ariaDescribedby",
+        "showBack",
+      ],
     },
   },
 };
@@ -482,24 +506,21 @@ export const WithModalHeaderOnly: Story = {
     );
   },
 
-  args: {
-    mobileHeader: true,
-  },
-
   parameters: {
     info: "An example of a modal with a header only. Check Orbit.Kiwi for more detailed design guidelines.",
     controls: {
       exclude: [
-        "size",
-        "fixedFooter",
-        "title",
-        "isMobileFullPage",
-        "preventOverlayClose",
-        "hasCloseButton",
-        "disableAnimation",
+        "children",
+        "scrollingElementRef",
         "labelClose",
         "triggerRef",
-        "lockScrolling",
+        "onClose",
+        "onScroll",
+        "ariaLabel",
+        "ariaLabelledby",
+        "ariaDescribedby",
+        "showBack",
+        "fixedFooter",
       ],
     },
   },
@@ -546,7 +567,6 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
                   <Button type="secondary" iconLeft={<ChevronBackward ariaHidden />}>
                     Back
                   </Button>
-                  <ButtonLink type="secondary">Button</ButtonLink>
                 </Stack>
               )}
               <Box justify="end" display="flex">
@@ -563,7 +583,6 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
     lockScrolling: false,
     preventOverlayClose: false,
     isMobileFullPage: false,
-    useTopSafeAreaInset: false,
     suppressed: false,
     showBack: false,
     illustration: NAMES[0],
@@ -600,7 +619,17 @@ export const Playground: StoryObj<PlaygroundStoryProps> = {
   parameters: {
     info: "Playground of Modal component. Check Orbit.Kiwi for more detailed design guidelines.",
     controls: {
-      exclude: ["children", "triggerRef"],
+      exclude: [
+        "children",
+        "triggerRef",
+        "onClose",
+        "onScroll",
+        "scrollingElementRef",
+        "ariaLabel",
+        "ariaLabelledby",
+        "ariaDescribedby",
+        "id",
+      ],
     },
   },
 };
@@ -630,7 +659,7 @@ export const Rtl: Story = {
               </Text>
             </ModalSection>
             <ModalFooter flex={["0 0 auto", "1 1 100%"]}>
-              <Button type="secondary" iconLeft={<ChevronBackward ariaHidden />}>
+              <Button type="secondary" iconLeft={<ChevronBackward ariaHidden reverseOnRtl />}>
                 Back
               </Button>
               <Button fullWidth>Continue to Payment</Button>

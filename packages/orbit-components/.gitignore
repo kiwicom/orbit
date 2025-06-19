@@ -5,7 +5,8 @@
 .out
 .cache
 .DS_STORE
-.playroom
+.playroom/
+!.playroom/.gitkeep
 src/data/airportIllustrations.json
 src/data/illustrations.json
 src/data/icons.json

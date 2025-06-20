@@ -9,7 +9,6 @@ import Stack from "../Stack";
 import Hide from "../Hide";
 import Handle from "./components/Handle";
 import Bar from "./components/Bar";
-import KEY_CODE_MAP from "../common/keyMaps";
 import DEFAULT_VALUES from "./consts";
 import Histogram from "./components/Histogram";
 import type { Props, Value } from "./types";
@@ -73,68 +72,123 @@ const Slider = ({
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.ctrlKey || event.shiftKey || event.altKey) return;
-    const eventCode = Number(event.code);
-    if (eventCode === KEY_CODE_MAP.ARROW_UP) {
-      pauseEvent(event);
-      if (onChange) {
-        injectCallbackAndSetState(
-          updateValue,
-          onChange,
-          moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, step),
-        );
-      }
-    }
-    if (eventCode === KEY_CODE_MAP.ARROW_DOWN) {
-      pauseEvent(event);
-      if (onChange) {
-        injectCallbackAndSetState(
-          updateValue,
-          onChange,
-          moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, -step),
-        );
-      }
-    }
-    if (eventCode === KEY_CODE_MAP.ARROW_RIGHT) {
-      const switchStep = rtl ? -step : step;
-      pauseEvent(event);
-      if (onChange) {
-        injectCallbackAndSetState(
-          updateValue,
-          onChange,
-          moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, switchStep),
-        );
-      }
-    }
-    if (eventCode === KEY_CODE_MAP.ARROW_LEFT) {
-      const switchStep = rtl ? step : -step;
-      pauseEvent(event);
-      if (onChange) {
-        injectCallbackAndSetState(
-          updateValue,
-          onChange,
-          moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, switchStep),
-        );
-      }
-    }
-    if (eventCode === KEY_CODE_MAP.HOME) {
-      pauseEvent(event);
-      if (onChange) {
-        injectCallbackAndSetState(
-          updateValue,
-          onChange,
-          moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, 0, minValue),
-        );
-      }
-    }
-    if (eventCode === KEY_CODE_MAP.END) {
-      pauseEvent(event);
-      if (onChange) {
-        injectCallbackAndSetState(
-          updateValue,
-          onChange,
-          moveValueByExtraStep(value, maxValue, minValue, step, handleIndex.current, 0, maxValue),
-        );
-      }
+
+    // Return early if not a navigation key
+    if (!["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
+      return;
+
+    switch (event.key) {
+      case "ArrowUp":
+        pauseEvent(event);
+        if (onChange) {
+          injectCallbackAndSetState(
+            updateValue,
+            onChange,
+            moveValueByExtraStep(
+              valueRef.current,
+              maxValue,
+              minValue,
+              step,
+              handleIndex.current,
+              step,
+            ),
+          );
+        }
+        break;
+      case "ArrowDown":
+        pauseEvent(event);
+        if (onChange) {
+          injectCallbackAndSetState(
+            updateValue,
+            onChange,
+            moveValueByExtraStep(
+              valueRef.current,
+              maxValue,
+              minValue,
+              step,
+              handleIndex.current,
+              -step,
+            ),
+          );
+        }
+        break;
+      case "ArrowRight":
+        {
+          const switchStep = rtl ? -step : step;
+          pauseEvent(event);
+          if (onChange) {
+            injectCallbackAndSetState(
+              updateValue,
+              onChange,
+              moveValueByExtraStep(
+                valueRef.current,
+                maxValue,
+                minValue,
+                step,
+                handleIndex.current,
+                switchStep,
+              ),
+            );
+          }
+        }
+        break;
+      case "ArrowLeft":
+        {
+          const switchStep = rtl ? step : -step;
+          pauseEvent(event);
+          if (onChange) {
+            injectCallbackAndSetState(
+              updateValue,
+              onChange,
+              moveValueByExtraStep(
+                valueRef.current,
+                maxValue,
+                minValue,
+                step,
+                handleIndex.current,
+                switchStep,
+              ),
+            );
+          }
+        }
+        break;
+      case "Home":
+        pauseEvent(event);
+        if (onChange) {
+          injectCallbackAndSetState(
+            updateValue,
+            onChange,
+            moveValueByExtraStep(
+              valueRef.current,
+              maxValue,
+              minValue,
+              step,
+              handleIndex.current,
+              0,
+              minValue,
+            ),
+          );
+        }
+        break;
+      case "End":
+        pauseEvent(event);
+        if (onChange) {
+          injectCallbackAndSetState(
+            updateValue,
+            onChange,
+            moveValueByExtraStep(
+              valueRef.current,
+              maxValue,
+              minValue,
+              step,
+              handleIndex.current,
+              0,
+              maxValue,
+            ),
+          );
+        }
+        break;
+      default:
     }
   };
 
@@ -143,7 +197,7 @@ const Slider = ({
     window.removeEventListener("keydown", handleKeyDown);
     window.removeEventListener("focusout", handleBlur);
     if (onChangeAfter) {
-      injectCallbackAndSetState(updateValue, onChangeAfter, value);
+      injectCallbackAndSetState(updateValue, onChangeAfter, valueRef.current);
     }
   };
 

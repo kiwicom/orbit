@@ -18,6 +18,7 @@ const meta: Meta<typeof Slider> = {
     maxValue: 100,
     step: 1,
     defaultValue: 1,
+    ariaLabel: "Departure time selection",
     onChange: action("onChange"),
     onChangeAfter: action("onChangeAfter"),
     onChangeBefore: action("onChangeBefore"),
@@ -83,6 +84,7 @@ export const RangeSlider: Story = {
   args: {
     defaultValue: [1, 5],
     maxValue: 24,
+    ariaLabel: ["From time", "To time"],
   },
 };
 

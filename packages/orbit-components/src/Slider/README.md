@@ -19,7 +19,7 @@ Table below contains all types of the props available in the Slider component.
 | Name                 | Type                       | Default | Description                                                                                                                                            |
 | :------------------- | :------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ariaLabel            | `string or string[]`       |         | `aria-label` attribute or attributes for handles. See [functional specs](#functional-specs).                                                           |
-| ariaValueText        | `string`                   |         | Readable text alternative of current value. See [accessibility](#accessibility).                                                                       |
+| ariaValueText        | `string`                   |         | Readable text alternative of current value. See [Accessibility](/components/slider/accessibility/).                                                    |
 | dataTest             | `string`                   |         | Optional prop for testing purposes.                                                                                                                    |
 | id                   | `string`                   |         | Set `id` for `Slider`                                                                                                                                  |
 | defaultValue         | [`Value`](#value)          | `1`     | Initial value of the Slider when it mounts. See [value type](#value) for advanced usage.                                                               |
@@ -76,26 +76,6 @@ const MobileSlider = () => {
     >
       <Tag selected={!!value}>Time of departure</Tag>
     </Popover>
-  );
-};
-```
-
-## Accessibility
-
-- You should use `ariaValueText` only for cases when the value cannot be accurately represented as a number. For instance, when you use the Slider for selection of time range, you should dynamically change the `ariaValueText` to current selection e.g. `00:00 to 13:00` every time when `onChange` triggers.
-
-```jsx
-const SliderExample = () => {
-  const [value, setValue] = React.useState(12);
-  const ariaValueText = `from midnight to ${value}`;
-  return (
-    <Slider
-      defaultValue={12}
-      minValue={1}
-      maxValue={24}
-      onChange={val => setValue(val)}
-      ariaValueText={ariaValueText}
-    />
   );
 };
 ```

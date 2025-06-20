@@ -16,7 +16,7 @@ const CircleLoader = ({ animationDelay }: { animationDelay?: string }) => {
   );
 };
 
-const Loader = ({ type, customSize, title }) => {
+const Loader = ({ type, customSize, title, ariaHidden }) => {
   const theme = useTheme();
   const isCircledIcon =
     type === TYPE_OPTIONS.BOX_LOADER ||
@@ -30,6 +30,7 @@ const Loader = ({ type, customSize, title }) => {
         className="orbit-loading-spinner animate-spinner"
         style={{ height: `${customSize}px`, width: `${customSize}px` }}
         role="img"
+        aria-hidden={ariaHidden}
       >
         <title>{title}</title>
         <circle
@@ -49,7 +50,12 @@ const Loader = ({ type, customSize, title }) => {
 
   if (isCircledIcon) {
     return (
-      <div className="flex items-center justify-center">
+      <div
+        className="flex items-center justify-center"
+        aria-hidden={ariaHidden}
+        role="img"
+        aria-label={title}
+      >
         <CircleLoader />
         <CircleLoader animationDelay="0.1s" />
         <CircleLoader animationDelay="0.2s" />
@@ -63,6 +69,7 @@ const Loader = ({ type, customSize, title }) => {
       className="orbit-loading-spinner animate-spinner size-1000"
       stroke={type === TYPE_OPTIONS.BUTTON_LOADER ? "currentColor" : theme.orbit.paletteCloudDark}
       role="img"
+      aria-hidden={ariaHidden}
     >
       <title>{title}</title>
       <circle
@@ -79,6 +86,7 @@ const Loader = ({ type, customSize, title }) => {
     </svg>
   );
 };
+
 const Loading = ({
   loading = false,
   asComponent = "div",
@@ -114,9 +122,14 @@ const Loading = ({
           style={{ height: customSize }}
           data-test={dataTest}
           id={id}
-          aria-hidden={ariaHidden}
+          aria-hidden={!text && ariaHidden}
         >
-          <Loader title={title} type={type} customSize={customSize} />
+          <Loader
+            title={title}
+            type={type}
+            customSize={customSize}
+            ariaHidden={Boolean(text) ?? undefined}
+          />
           {type !== TYPE_OPTIONS.BUTTON_LOADER && Boolean(text) && (
             <div
               className={cx([

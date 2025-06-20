@@ -27,6 +27,7 @@ Table below contains all types of the props available for icons in general.
 | customSize  | `number`                  |         | Allows you to define custom size for circle loader.                                                                                        |
 | asComponent | `string \| React.Element` | `div`   | The component used for the root node.                                                                                                      |
 | title       | `string`                  |         | Optional prop for loader image title. This title is not visible, but announced by a screen reader. See Accessibility tab.                  |
+| ariaHidden  | `boolean`                 |         | Optional prop to hide the loading indicator from screen readers. See Accessibility tab.                                                    |
 
 ### enum
 

@@ -4,35 +4,85 @@ redirect_from:
   - /components/loading/accessibility/
 ---
 
-# Accessibility
+## Accessibility
 
-## Loading
+The Loading component has been designed with accessibility in mind, providing features that enhance the experience for users of assistive technologies.
 
-The Loading component has been designed with accessibility in mind.
+### Accessibility Props
 
-The component offers flexibility in terms of the HTML element used for the root node. By default, it will render a `div` element.
+The following props are available to improve the accessibility of your Loading component:
 
-### Title
+| Name        | Type                      | Description                                                                                                             |
+| :---------- | :------------------------ | :---------------------------------------------------------------------------------------------------------------------- |
+| title       | `string`                  | Provides an accessible name for the loading indicator that is announced by screen readers but not visually displayed.   |
+| ariaHidden  | `boolean`                 | When `true`, hides the entire component from screen readers. Useful when loading state is conveyed through other means. |
+| text        | `Translation`             | Text displayed below the loader image. When provided, this text is announced by screen readers instead of the `title`.  |
+| asComponent | `string \| React.Element` | Allows rendering the loading indicator with a different HTML element to maintain semantic structure.                    |
 
-Optional prop `title` allows you to specify a `title` value of the loader (svg) image. This value is announced by a screen reader. This prop should ideally be translated.
+One of these props must be provided: `text`, `title`, or `ariaHidden={true}`. They are mutually exclusive and cannot be used together.
 
-When `text` prop is filled in, then providing value for `title` prop is not needed and it could be redundant as the `text` prop will be announced by the screen reader.
+### Automatic Accessibility Features
 
-### AsComponent
+The Loading component automatically implements the following accessibility features:
 
-The prop `asComponent` is optional and it is set to a `div` by default.
-This can be used when the `Loading` component is wrapped by another component which requires a [phrasing element](https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories) as a children.
+- Uses semantic SVG elements with proper ARIA attributes for the loading indicator
+- Automatically adjusts announcements based on the presence of `text` or `title` props:
+  - When `text` is provided, the visual loading indicator is hidden from screen readers and only the text is announced
+  - When `title` is provided, it serves as an accessible name for the loading indicator
+  - When `ariaHidden` is `true`, the entire component is hidden from screen readers
+- Always renders as a `div` when `text` is provided to ensure proper structure
 
-Be aware that `Loading` component is **always** rendered as a `div` element when the prop `text` is filled in.
+### Best Practices
 
-### Example
+- Always provide either `text`, `title`, or `ariaHidden={true}` to ensure proper accessibility:
+
+  - Use `text` when you want both visible and announced text
+  - Use `title` for loading indicators without visible text
+  - Use `ariaHidden={true}` when:
+    - Loading state is conveyed through other visible text on the page
+    - Multiple loading indicators are present and only one should be announced
+  - Always ensure both `title` and `text` are properly translated
+
+- When using `asComponent`:
+
+  - By default, Loading renders as a `div` element
+  - Use `asComponent` when the Loading component is wrapped by another component that requires a [phrasing element](https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories) as children
+  - Ensure the chosen element maintains proper semantic structure:
+
+  ```jsx
+  <Button>
+    <Loading title="Title of the button is loading" asComponent="span" />
+  </Button>
+  ```
+
+### Examples
+
+#### Basic loading with accessible name
 
 ```jsx
-<Button>
-  <Loading title="Title of the button is loading" asComponent="span" />
-</Button>
+<Loading title="Loading page content" type="pageLoader" />
 ```
 
-We have a `Loading` component inside a `Button` component (which requires phrasing element as a children). In this case, we can use the `asComponent` prop to specify the root node of the `Loading` component.
+Screen reader announces: "Loading page content, image"
 
-The screen reader will announce the value title (`Title of the button is loading`).
+#### Loading with visible text
+
+```jsx
+<Loading text="Please wait while we process your request" type="boxLoader" />
+```
+
+Screen reader announces: "Please wait while we process your request"
+
+#### Multiple loaders with controlled announcements
+
+```jsx
+<Stack>
+  <Loading type="searchLoader" title="Loading search results" />
+  <Loading
+    type="inlineLoader"
+    ariaHidden={true} // This loader won't be announced
+  />
+</Stack>
+```
+
+Screen reader only announces: "Loading search results, image"

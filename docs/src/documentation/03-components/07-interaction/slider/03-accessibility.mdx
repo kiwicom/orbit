@@ -1,0 +1,87 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/slider/accessibility/
+---
+
+## Accessibility
+
+The Slider component has been designed with accessibility in mind, providing range selection functionality that is fully keyboard accessible and screen reader compatible. It automatically implements proper ARIA attributes and supports both single value and range selections.
+
+### Accessibility Props
+
+**Slider props:**
+
+| Name          | Type                   | Description                                                                                                                                                               |
+| :------------ | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ariaLabel     | `string` or `string[]` | Specifies the accessible name for slider handles. For single sliders, use a string. For range sliders, use an array with labels for each handle (e.g., `["From", "To"]`). |
+| ariaValueText | `string`               | Provides readable text alternative of current value. Use when the numeric value doesn't accurately represent the meaning (e.g., time ranges like "00:00 to 13:00").       |
+
+### Automatic Accessibility Features
+
+- The component automatically manages ARIA attributes:
+  - `aria-valuemax` is automatically set to the `maxValue` prop
+  - `aria-valuemin` is automatically set to the `minValue` prop
+  - `aria-valuenow` is automatically set to the current slider value
+  - `role="slider"` is applied to each handle
+- Focus management is handled automatically:
+  - Each handle is keyboard focusable with `tabIndex={0}`
+  - Focus indicators are clearly visible
+- State management is handled automatically:
+  - Current value is announced to screen readers when changed
+  - Range boundaries are communicated through ARIA attributes
+
+### Keyboard Navigation
+
+The Slider component supports the following keyboard interactions:
+
+- **Arrow Up/Right:** Increases the value by one step
+- **Arrow Down/Left:** Decreases the value by one step
+- **Home:** Sets the handle to the minimum value
+- **End:** Sets the handle to the maximum value
+- **Tab:** Moves focus to the next handle (in range sliders) or next focusable element
+- **Shift + Tab:** Moves focus to the previous handle or focusable element
+
+### Best Practices
+
+- Always provide `ariaLabel` to ensure handles have accessible names, especially important for Storybook accessibility compliance
+- For range sliders, use descriptive labels like `["Departure time", "Arrival time"]` rather than generic terms
+- Use `ariaValueText` when the numeric value doesn't represent the actual meaning:
+  - Time ranges: `"00:00 to 13:00"`
+  - Price ranges: `"$50 to $200"`
+  - Percentage ranges: `"25% to 75%"`
+- When using histograms, ensure the visual information is also available through `histogramDescription` for screen reader users
+
+### Examples
+
+#### Basic Slider with Accessibility
+
+```jsx
+<Slider
+  label="Departure time"
+  defaultValue={12}
+  minValue={0}
+  maxValue={24}
+  ariaLabel="Select departure time"
+  ariaValueText={`Departure at ${value}:00`}
+  onChange={handleChange}
+/>
+```
+
+Screen reader announces: "Departure at 12:00, Select departure time, slider"
+
+#### Range Slider with Accessibility
+
+```jsx
+<Slider
+  label="Flight duration"
+  defaultValue={[2, 8]}
+  minValue={0}
+  maxValue={12}
+  ariaLabel={["Minimum duration", "Maximum duration"]}
+  ariaValueText={`${values[0]} to ${values[1]} hours`}
+  onChange={handleChange}
+/>
+```
+
+Screen reader announces: "2 to 8 hours, Minimum duration, slider" and "2 to 8 hours, Maximum duration, slider"

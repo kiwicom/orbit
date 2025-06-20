@@ -119,4 +119,44 @@ describe("Slider", () => {
     render(<Slider defaultValue={[1, 10]} maxValue={24} minValue={1} />);
     expect(screen.getAllByRole("slider")).toHaveLength(2);
   });
+
+  it("should work with keyboard navigation", async () => {
+    const onChangeKeyboard = jest.fn();
+    render(
+      <Slider
+        defaultValue={5}
+        minValue={0}
+        maxValue={10}
+        step={1}
+        onChange={onChangeKeyboard}
+        ariaLabel="Test slider"
+      />,
+    );
+
+    const sliderHandle = screen.getByRole("slider");
+
+    // Focus the slider handle and clear any initial calls
+    sliderHandle.focus();
+    onChangeKeyboard.mockClear();
+
+    // Test all keyboard navigation keys
+    fireEvent.keyDown(window, { key: "ArrowRight" });
+    fireEvent.keyDown(window, { key: "ArrowLeft" });
+    fireEvent.keyDown(window, { key: "ArrowUp" });
+    fireEvent.keyDown(window, { key: "ArrowDown" });
+    fireEvent.keyDown(window, { key: "Home" });
+    fireEvent.keyDown(window, { key: "End" });
+
+    // Verify that all keyboard events triggered onChange
+    expect(onChangeKeyboard).toHaveBeenCalledTimes(6);
+
+    // Test that non-navigation keys don't trigger onChange
+    onChangeKeyboard.mockClear();
+    fireEvent.keyDown(window, { key: "Space" });
+    fireEvent.keyDown(window, { key: "Enter" });
+    fireEvent.keyDown(window, { key: "Escape" });
+
+    // Should not have triggered onChange for non-navigation keys
+    expect(onChangeKeyboard).not.toHaveBeenCalled();
+  });
 });

@@ -42,6 +42,10 @@ export const Default: Story = {
       disable: true,
     },
   },
+
+  args: {
+    title: "Please wait, page is loading...",
+  },
 };
 
 export const DefaultWithChildren: Story = {
@@ -53,7 +57,7 @@ export const DefaultWithChildren: Story = {
 
   parameters: {
     controls: {
-      exclude: ["children", "customSize", "type", "asComponent", "title"],
+      exclude: ["children", "customSize", "type", "asComponent", "title", "ariaHidden"],
     },
   },
 
@@ -86,7 +90,7 @@ export const CardLoading: Story = {
   parameters: {
     info: "Example of usage of Loading component inside Card. Check Orbit.Kiwi for more detailed guidelines.",
     controls: {
-      exclude: ["children", "customSize", "text", "type", "asComponent", "title"],
+      exclude: ["children", "customSize", "text", "type", "asComponent", "title", "ariaHidden"],
     },
   },
 };
@@ -104,6 +108,7 @@ export const Playground: Story = {
     customSize: 50,
     id: "loader-id",
     title: "Content is loading",
+    ariaHidden: false,
   },
 
   argTypes: {

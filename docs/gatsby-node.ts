@@ -289,3 +289,12 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 
   actions.createTypes(typeDefs);
 };
+
+export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      // this is necessary for the symlinked packages to be resolved correctly
+      symlinks: false,
+    },
+  });
+};

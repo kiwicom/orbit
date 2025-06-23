@@ -4,7 +4,7 @@ import { $, argv } from "zx";
   // Check types
   if (argv.types) {
     await $`lerna run check:types`;
-    await $`yarn docs check:types`;
+    await $`yarn docs:check:types`;
   }
   // Check links
   if (argv.links) {
@@ -18,6 +18,6 @@ import { $, argv } from "zx";
 
   if (argv.css) {
     await $`yarn workspace @kiwicom/orbit-components stylelint "./src/**/*.tsx"`;
-    await $`yarn workspace @kiwicom/orbit.kiwi stylelint "./src/**/*.tsx"`;
+    await $`yarn stylelint "./docs/src/**/*.tsx"`;
   }
 })();

@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  root: true,
   extends: ["../.eslintrc.cjs"],
   rules: {
     "import/no-extraneous-dependencies": [

@@ -61,8 +61,11 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     ariaDescribedby,
   } = props;
 
+  const Component = label ? "label" : "div";
+
   return (
-    <label
+    <Component
+      htmlFor={label ? id : undefined}
       className={cx(
         "orbit-checkbox-label",
         "font-base",
@@ -138,7 +141,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           )}
         </div>
       )}
-    </label>
+    </Component>
   );
 });
 

@@ -41,6 +41,7 @@ const Stack = (props: Props) => {
     children,
     as: ComponentTag = "div",
     dataTest,
+    id,
     basis,
     mediumMobile,
     largeMobile,
@@ -158,6 +159,7 @@ const Stack = (props: Props) => {
   return (
     // @ts-expect-error orbit string as
     <ComponentTag
+      id={id}
       data-test={dataTest}
       style={vars}
       className={cx(

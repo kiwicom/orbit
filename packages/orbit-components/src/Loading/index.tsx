@@ -122,13 +122,13 @@ const Loading = ({
           style={{ height: customSize }}
           data-test={dataTest}
           id={id}
-          aria-hidden={!text && ariaHidden}
+          aria-hidden={ariaHidden ? "true" : undefined}
         >
           <Loader
             title={title}
             type={type}
             customSize={customSize}
-            ariaHidden={Boolean(text) ?? undefined}
+            ariaHidden={text ? "true" : undefined}
           />
           {type !== TYPE_OPTIONS.BUTTON_LOADER && Boolean(text) && (
             <div

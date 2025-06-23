@@ -14,14 +14,14 @@ describe("Loading", () => {
     expect(screen.getByText(text)).toBeInTheDocument();
   });
   it("should have children", () => {
-    render(<Loading>kek</Loading>);
+    render(<Loading title="Loading">kek</Loading>);
     expect(screen.getByText("kek")).toBeInTheDocument();
   });
 
   it.each(Object.values({ BOX_LOADER, SEARCH_LOADER, INLINE_LOADER }))(
     "should have circled icons %s",
     type => {
-      render(<Loading type={type} dataTest="kek" />);
+      render(<Loading type={type} dataTest="kek" title="Loading" />);
       expect(screen.getByTestId("kek").firstChild).toHaveStyle({
         display: "flex",
         justifyContent: "center",
@@ -30,7 +30,7 @@ describe("Loading", () => {
   );
 
   it("should have spinner icon", () => {
-    render(<Loading dataTest="kek" type={TYPE_OPTIONS.PAGE_LOADER} />);
+    render(<Loading dataTest="kek" type={TYPE_OPTIONS.PAGE_LOADER} title="Loading" />);
     expect(screen.getByTestId("kek").firstChild).toHaveStyle({ width: "40px", height: "40px" });
     expect(screen.getByTestId("kek").querySelector("svg")).toBeInTheDocument();
   });
@@ -41,7 +41,7 @@ describe("Loading", () => {
   });
 
   it("should render element as a span", () => {
-    render(<Loading asComponent="span" dataTest="kek" />);
+    render(<Loading asComponent="span" dataTest="kek" title="Loading" />);
     expect(screen.getByTestId("kek").tagName).toBe("SPAN");
   });
 

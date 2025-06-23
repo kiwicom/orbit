@@ -30,6 +30,7 @@ The table below contains all types of props available in the Stack component.
 | direction    | [`enum`](#enum)            |            | The `flex-direction` of the Stack. [See Functional specs](#functional-specs)                        |
 | flex         | `boolean`                  | `false`    | If `true` or you specify some flex attribute, the Stack will use flex attributes.                   |
 | grow         | `boolean`                  | `true`     | If `true`, the Stack will have `flex-grow` set to `1`, otherwise it will be `0`.                    |
+| id           | `string`                   |            | Optional, sets the id for `Stack`.                                                                  |
 | inline       | `boolean`                  | `false`    | If `true`, the Stack will have `display` set to `inline-flex`.                                      |
 | justify      | [`enum`](#enum)            | `"start"`  | The `justify-content` of the Stack.                                                                 |
 | largeDesktop | [`Object`](#media-queries) |            | Object for setting up properties for the largeDesktop viewport. [See Media queries](#media-queries) |

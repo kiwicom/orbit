@@ -69,7 +69,7 @@ jobs:
           else
             yarn lerna publish --no-private --conventional-commits --create-release github --ignore-prepublish --yes
           fi
-          yarn docs changelog
+          yarn docs:changelog
           git add docs/src/data/log.md && git commit -m "docs: update changelog" && git push
           yarn zx scripts/post-changelog.mjs
 

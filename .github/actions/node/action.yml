@@ -21,3 +21,7 @@ runs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile
       shell: bash
+
+    - name: Install docs dependencies
+      run: cd docs && yarn install --frozen-lockfile
+      shell: bash

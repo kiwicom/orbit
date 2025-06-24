@@ -48,7 +48,7 @@ describe("Card", () => {
 
   it("loading", () => {
     render(
-      <Card loading>
+      <Card loading loadingHidden>
         <CardSection>section</CardSection>
       </Card>,
     );

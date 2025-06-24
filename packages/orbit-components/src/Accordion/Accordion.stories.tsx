@@ -202,7 +202,7 @@ export const AccordionWithStickyFooter: Story = {
 
 export const LoadingAccordion: Story = {
   render: () => (
-    <Accordion loading>
+    <Accordion loading loadingTitle="Loading">
       <AccordionSection>This is a section content</AccordionSection>
     </Accordion>
   ),

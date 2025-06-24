@@ -27,7 +27,7 @@ describe("Accordion", () => {
 
   it("should render loading", () => {
     render(
-      <Accordion loading>
+      <Accordion loading loadingHidden>
         <AccordionSection dataTest={sectionDataTest} />
       </Accordion>,
     );

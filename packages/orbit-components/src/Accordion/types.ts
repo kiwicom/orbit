@@ -21,13 +21,31 @@ import type * as Common from "../common/types";
   ```
 */
 
-export interface Props extends Common.Globals, Common.SpaceAfter {
+/** If loading is true it will render the Loading component */
+type LoadingProps =
+  | {
+      loading?: false;
+      loadingTitle?: never;
+      loadingHidden?: never;
+    }
+  | {
+      loading: true;
+      loadingTitle: string;
+      loadingHidden?: false;
+    }
+  | {
+      loading: true;
+      loadingTitle?: never;
+      loadingHidden: true;
+    };
+
+interface BaseProps extends Common.Globals, Common.SpaceAfter {
   /** The content of the Accordion. You can use only AccordionSection */
   readonly children?: React.ReactNode;
   /** Optional prop to control which AccordionSection (by id) is expanded */
   readonly expandedSection?: string | number;
-  /** If true it will render the Loading component */
-  readonly loading?: boolean;
   /** Callback (along with sectionId) that is triggered when section is expanding */
   readonly onExpand?: (sectionId: string | number) => void | Promise<void>;
 }
+
+export type Props = BaseProps & LoadingProps;

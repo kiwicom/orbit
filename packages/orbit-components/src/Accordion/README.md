@@ -16,15 +16,17 @@ After adding import into your project you can use it simply like:
 
 ## Props
 
-| Name            | Type                                                                              | Required | Default | Description                                                                 |
-| --------------- | --------------------------------------------------------------------------------- | -------- | ------- | --------------------------------------------------------------------------- |
-| children        | `React.ReactNode`                                                                 |          |         | The content of the Accordion. You can use only AccordionSection             |
-| expandedSection | `string \| number`                                                                |          |         | Optional prop to control which AccordionSection (by id) is expanded         |
-| loading         | `boolean`                                                                         |          | `false` | If true it will render the Loading component                                |
-| onExpand        | `(sectionId: string \| number) => void \| Promise<any>`                           |          |         | Callback (along with sectionId) that is triggered when section is expanding |
-| dataTest        | `string`                                                                          |          |         | Optional prop for testing purposes                                          |
-| id              | `string`                                                                          |          |         | Set `id` for `Accordion`                                                    |
-| spaceAfter      | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |          |         | Additional space after the component                                        |
+| Name            | Type                                                                              | Required | Default | Description                                                                                                                                        |
+| --------------- | --------------------------------------------------------------------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children        | `React.ReactNode`                                                                 |          |         | The content of the Accordion. You can use only AccordionSection                                                                                    |
+| expandedSection | `string \| number`                                                                |          |         | Optional prop to control which AccordionSection (by id) is expanded                                                                                |
+| loading         | `boolean`                                                                         |          | `false` | If true it will render the Loading component. When `true`, either `loadingTitle` or `loadingHidden` must be provided.                              |
+| loadingTitle    | `string`                                                                          |          |         | The title announced by screen readers when the accordion is in loading state. Required when `loading` is `true` and `loadingHidden` is not `true`. |
+| loadingHidden   | `boolean`                                                                         |          |         | If `true`, the loading state will be hidden from screen readers. Required when `loading` is `true` and `loadingTitle` is not provided.             |
+| onExpand        | `(sectionId: string \| number) => void \| Promise<any>`                           |          |         | Callback (along with sectionId) that is triggered when section is expanding                                                                        |
+| dataTest        | `string`                                                                          |          |         | Optional prop for testing purposes                                                                                                                 |
+| id              | `string`                                                                          |          |         | Set `id` for `Accordion`                                                                                                                           |
+| spaceAfter      | `"none" \| "smallest" \| "small" \| "normal" \| "medium" \| "large" \| "largest"` |          |         | Additional space after the component                                                                                                               |
 
 ## AccordionSection
 

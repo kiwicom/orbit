@@ -21,7 +21,7 @@ const AccordionSection = ({
   expandable = true,
   expandOnTileClick = false,
 }: Props) => {
-  const { expanded, onExpand, loading } = useAccordion();
+  const { expanded, onExpand, loading, loadingTitle, loadingHidden } = useAccordion();
 
   const slideId = useRandomId();
   const isExpanded = expandable && expanded;
@@ -34,7 +34,12 @@ const AccordionSection = ({
       className="border-elevation-flat-border-color rounded-100 my-200 bg-elevation-flat relative w-full border border-solid"
       data-test={dataTest}
     >
-      <Loading loading={loading} type="boxLoader" dataTest={dataTest && `${dataTest}Loading`}>
+      <Loading
+        loading={loading}
+        type="boxLoader"
+        dataTest={dataTest && `${dataTest}Loading`}
+        {...(loadingHidden ? { ariaHidden: true } : { title: loadingTitle as string })}
+      >
         {header && (
           <SectionHeader
             actions={actions}

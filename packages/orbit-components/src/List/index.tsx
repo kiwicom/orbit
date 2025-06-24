@@ -30,11 +30,13 @@ const List = ({
   type = TYPES.PRIMARY,
   spacing = SPACINGS.ONE_HUNDRED,
   spaceAfter,
+  ariaLabelledby,
 }: Props) => {
   return (
     <ul
       data-test={dataTest}
       id={id}
+      aria-labelledby={ariaLabelledby}
       className={cx(
         "orbit-list font-base m-0 flex w-full list-none flex-col p-0",
         sizeTokens[size],

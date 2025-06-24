@@ -2,7 +2,7 @@ import React from "react";
 import { Loading } from "@kiwicom/orbit-components";
 
 export default {
-  Example: () => <Loading type="pageLoader" />,
+  Example: () => <Loading type="pageLoader" title="Loading" />,
   exampleKnobs: [
     {
       component: "Loading",

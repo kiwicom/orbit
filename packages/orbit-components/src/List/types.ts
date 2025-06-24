@@ -13,4 +13,5 @@ export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: Common.Size;
   readonly type?: Type;
   readonly spacing?: Spacing;
+  readonly ariaLabelledby?: string;
 }

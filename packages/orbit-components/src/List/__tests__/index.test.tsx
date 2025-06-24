@@ -22,4 +22,18 @@ describe("List", () => {
     expect(screen.getByTestId(dataTest)).toBeInTheDocument();
     expect(screen.getByText(content)).toBeInTheDocument();
   });
+
+  it("should render with ariaLabelledby attribute", () => {
+    const ariaLabelledby = "heading-id";
+    const dataTest = "list-with-aria-labelledby";
+
+    render(
+      <List dataTest={dataTest} ariaLabelledby={ariaLabelledby}>
+        <ListItem>Test item</ListItem>
+      </List>,
+    );
+
+    const listElement = screen.getByTestId(dataTest);
+    expect(listElement).toHaveAttribute("aria-labelledby", ariaLabelledby);
+  });
 });

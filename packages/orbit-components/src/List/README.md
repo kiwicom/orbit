@@ -14,19 +14,30 @@ After adding import into your project you can use it simply like:
 </List>
 ```
 
+For accessibility, you can associate the List with a heading using `ariaLabelledby`:
+
+```jsx
+<Heading id="flights-heading">Affected flights</Heading>
+<List ariaLabelledby="flights-heading">
+  <ListItem>Flight ABC123</ListItem>
+  <ListItem>Flight DEF456</ListItem>
+</List>
+```
+
 ## Props
 
 Table below contains all types of the props available in List component.
 
-| Name         | Type                  | Default     | Description                                                      |
-| :----------- | :-------------------- | :---------- | :--------------------------------------------------------------- |
-| **children** | `React.Node`          |             | The content of the List, normally [`ListItem`](#listitem-props). |
-| dataTest     | `string`              |             | Optional prop for testing purposes.                              |
-| id           | `string`              |             | Set `id` for `List`.                                             |
-| size         | [`enum`](#enum)       | `"normal"`  | The size of the List.                                            |
-| spaceAfter   | `enum`                |             | Additional `margin-bottom` after component.                      |
-| type         | [`enum`](#enum)       | `"primary"` | The color type of the List.                                      |
-| spacing      | [`spacing`](#spacing) | `"100"`     | The spacing between List children.                               |
+| Name           | Type                  | Default     | Description                                                      |
+| :------------- | :-------------------- | :---------- | :--------------------------------------------------------------- |
+| **children**   | `React.Node`          |             | The content of the List, normally [`ListItem`](#listitem-props). |
+| ariaLabelledby | `string`              |             | Optional prop for setting `aria-labelledby` attribute.           |
+| dataTest       | `string`              |             | Optional prop for testing purposes.                              |
+| id             | `string`              |             | Set `id` for `List`.                                             |
+| size           | [`enum`](#enum)       | `"normal"`  | The size of the List.                                            |
+| spaceAfter     | `enum`                |             | Additional `margin-bottom` after component.                      |
+| type           | [`enum`](#enum)       | `"primary"` | The color type of the List.                                      |
+| spacing        | [`spacing`](#spacing) | `"100"`     | The spacing between List children.                               |
 
 ### enum
 

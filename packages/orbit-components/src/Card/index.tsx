@@ -26,6 +26,8 @@ export default function Card({
   header,
   spaceAfter,
   dataA11ySection,
+  loadingTitle,
+  loadingHidden,
 }: Props) {
   const marginStyles = (() => {
     if (margin == null) {
@@ -71,7 +73,11 @@ export default function Card({
 
       {loading && (
         <div className="lm:border-x border-b">
-          <Loading loading={loading} type="boxLoader" />
+          <Loading
+            loading={loading}
+            type="boxLoader"
+            {...(loadingHidden ? { ariaHidden: true } : { title: loadingTitle })}
+          />
         </div>
       )}
     </div>

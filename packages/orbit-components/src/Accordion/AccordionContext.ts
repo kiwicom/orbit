@@ -6,6 +6,8 @@ interface Context {
   readonly onExpand?: Common.Callback;
   readonly expanded: boolean;
   readonly loading?: boolean;
+  readonly loadingTitle?: string;
+  readonly loadingHidden?: boolean;
 }
 
 export const accordionDefault: Context = {
@@ -14,7 +16,7 @@ export const accordionDefault: Context = {
   loading: false,
 };
 
-const context: React.Context<Context> = React.createContext(accordionDefault);
+const context = React.createContext<Context>(accordionDefault);
 context.displayName = "AccordionOrbitContext";
 
 export const useAccordion = (): Context => React.useContext(context);

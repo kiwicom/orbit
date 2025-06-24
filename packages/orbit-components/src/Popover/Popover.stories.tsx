@@ -366,7 +366,7 @@ export const LazyContentSimulated: Story = {
 
     return (
       <Stack justify="start">
-        <Popover {...args} content={render ? listChoiceContent : <Loading />}>
+        <Popover {...args} content={render ? listChoiceContent : <Loading title="Loading" />}>
           <Button asComponent="div" type="secondary">
             Test
           </Button>

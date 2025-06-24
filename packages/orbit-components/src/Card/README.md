@@ -18,21 +18,23 @@ After adding import into your project you can use it simply like:
 
 Table below contains all types of the props available in the Card component.
 
-| Name            | Type                         | Default | Description                                                                                                             |
-| :-------------- | :--------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------- |
-| actions         | `React.Node`                 |         | Optional prop for Action components in header of Card.                                                                  |
-| children        | `React.Node`                 |         | The content of the Card. You can use only [CardSection](#cardsection).                                                  |
-| dataTest        | `string`                     |         | Optional prop for testing purposes.                                                                                     |
-| id              | `string`                     |         | Set `id` for `Card`.                                                                                                    |
-| dataA11ySection | `string`                     |         | Optional prop to link the Card to a `SkipNavigation` component.                                                         |
-| description     | `React.Node`                 |         | The description of the Card.                                                                                            |
-| header          | `React.Node`                 |         | The header of the Card. Useful when you need a different layout than the combination of e.g. `title` and `description`. |
-| loading         | `boolean`                    |         | If `true`, a loading animation will be rendered.                                                                        |
-| onClose         | `() => void \| Promise`      |         | Callback that is triggered when Card is closing.                                                                        |
-| title           | `React.Node`                 |         | The title of the Card.                                                                                                  |
-| titleAs         | [`enum`](#enum)              | `"div"` | The element used for the root node of the title of Card. It **does not** impact the visual style of the title.          |
-| margin          | `string \| number \| Object` |         | Utility prop to set margin.                                                                                             |
-| labelClose      | `string`                     | `Close` | Property for passing translation string to close Button.                                                                |
+| Name            | Type                         | Default   | Description                                                                                                                                   |
+| :-------------- | :--------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| actions         | `React.Node`                 |           | Optional prop for Action components in header of Card.                                                                                        |
+| children        | `React.Node`                 |           | The content of the Card. You can use only [CardSection](#cardsection).                                                                        |
+| dataTest        | `string`                     |           | Optional prop for testing purposes.                                                                                                           |
+| id              | `string`                     |           | Set `id` for `Card`.                                                                                                                          |
+| dataA11ySection | `string`                     |           | Optional prop to link the Card to a `SkipNavigation` component.                                                                               |
+| description     | `React.Node`                 |           | The description of the Card.                                                                                                                  |
+| header          | `React.Node`                 |           | The header of the Card. Useful when you need a different layout than the combination of e.g. `title` and `description`.                       |
+| loading         | `boolean`                    | `false`   | If `true`, a loading animation will be rendered. When `true`, either `loadingTitle` or `loadingHidden` must be provided.                      |
+| loadingTitle    | `string`                     |           | The title announced by screen readers when the card is in loading state. Required when `loading` is `true` and `loadingHidden` is not `true`. |
+| loadingHidden   | `boolean`                    |           | If `true`, the loading state will be hidden from screen readers. Required when `loading` is `true` and `loadingTitle` is not provided.        |
+| onClose         | `() => void \| Promise`      |           | Callback that is triggered when Card is closing.                                                                                              |
+| title           | `React.Node`                 |           | The title of the Card.                                                                                                                        |
+| titleAs         | [`enum`](#enum)              | `"div"`   | The element used for the root node of the title of Card. It **does not** impact the visual style of the title.                                |
+| margin          | `string \| number \| Object` |           | Utility prop to set margin.                                                                                                                   |
+| labelClose      | `string`                     | `"Close"` | Property for passing translation string to close Button.                                                                                      |
 
 ### CardSection
 

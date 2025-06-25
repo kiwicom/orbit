@@ -25,7 +25,6 @@ The following props are available to improve the accessibility of your SocialBut
 ### Automatic Accessibility Features
 
 - The component automatically manages HTML semantics and ARIA attributes:
-
   - Renders as a semantic `<button>` element by default, ensuring proper keyboard focusability and button behavior
   - Renders as a semantic `<a>` element when `href` is provided, creating a proper link that assistive technologies can identify
   - Sets `type="button"` or `type="submit"` based on the `submit` prop when rendered as a button
@@ -33,13 +32,11 @@ The following props are available to improve the accessibility of your SocialBut
   - Properly handles the `disabled` state by preventing interaction and removing from tab order
 
 - Focus management is handled automatically:
-
   - Native focus behavior is preserved based on the rendered element
   - Visible focus indicators are provided for keyboard users
   - Disabled and loading states are properly excluded from tab navigation
 
 - Icon accessibility is managed automatically:
-
   - Icons are rendered with appropriate semantic structure
   - The chevron forward icon is automatically hidden from screen readers with `ariaHidden` attribute
   - Icons receive proper color contrast and sizing for accessibility
@@ -64,7 +61,6 @@ The following props are available to improve the accessibility of your SocialBut
 SocialButton components are fully navigable with keyboard:
 
 - **When rendered as button (default):**
-
   - Users can focus on the button using the **Tab** key
   - Users can activate the button using both **Enter** and **Space** keys
   - When `disabled` or `loading`, the button is skipped in tab navigation

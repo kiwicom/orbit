@@ -204,4 +204,29 @@ describe("TextLink", () => {
     expect(element).not.toHaveAttribute("type");
     expect(element).not.toHaveAttribute("role");
   });
+
+  it("should forward ref to the underlying element", () => {
+    const ref = React.createRef<HTMLAnchorElement>();
+    render(
+      <TextLink ref={ref} href="https://example.com">
+        {title}
+      </TextLink>,
+    );
+
+    expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
+    expect(ref.current?.textContent).toBe(title);
+  });
+
+  it("should forward ref to button element when no href is provided", () => {
+    const ref = React.createRef<HTMLButtonElement>();
+    const onClick = jest.fn();
+    render(
+      <TextLink ref={ref} onClick={onClick}>
+        {title}
+      </TextLink>,
+    );
+
+    expect(ref.current).toBeInstanceOf(HTMLButtonElement);
+    expect(ref.current?.textContent).toBe(title);
+  });
 });

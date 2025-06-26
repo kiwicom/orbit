@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [25.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@25.0.0...@kiwicom/orbit-components@25.1.0) (2025-06-26)
+
+
+### Bug Fixes
+
+* **List:** add ariaLabelledBy prop ([26b17d0](https://github.com/kiwicom/orbit/commit/26b17d0819c7591498e453a764acccfff0aa7d33))
+* **Stack:** use 'id' prop on Stack's rendered tag ([1c6a7a8](https://github.com/kiwicom/orbit/commit/1c6a7a8970c0eab0633fa2bdfb1db6b89bdb429b))
+
+
+### Features
+
+* **TextLink:** add forwardRef ([527bb36](https://github.com/kiwicom/orbit/commit/527bb362ff3354e5fc1a5d41626209e2544f5a51))
+
+
+
+
+
 # [25.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@24.3.0...@kiwicom/orbit-components@25.0.0) (2025-06-12)
 
 

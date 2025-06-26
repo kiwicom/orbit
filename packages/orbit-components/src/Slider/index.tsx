@@ -17,7 +17,7 @@ import {
   findClosestKey,
   pauseEvent,
   stopPropagation,
-  replaceValue,
+  constrainRangeValue,
   alignValue,
   injectCallbackAndSetState,
   moveValueByExtraStep,
@@ -215,7 +215,7 @@ const Slider = ({
   const handleMove = (newValue: number | null) => {
     if (newValue != null) {
       if (Array.isArray(value)) {
-        return replaceValue(
+        return constrainRangeValue(
           valueRef.current,
           alignValue(maxValue, minValue, step, newValue),
           Number(handleIndex.current),
@@ -243,7 +243,7 @@ const Slider = ({
     if (newValue) {
       if (Array.isArray(value)) {
         const index = findClosestKey(newValue, value);
-        const replacedValue = replaceValue(
+        const replacedValue = constrainRangeValue(
           value,
           alignValue(maxValue, minValue, step, newValue),
           index || 0,

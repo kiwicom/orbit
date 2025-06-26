@@ -53,9 +53,26 @@ export const calculateValue = (
   );
 };
 
-export const replaceValue = (value: Value, newValue: number, index: number): Value => {
-  if (index == null || !Array.isArray(value)) return newValue;
-  return value.map((item, key) => (key === index ? newValue : item));
+export const constrainRangeValue = (value: Value, newValue: number, index: number): Value => {
+  if (index == null || !Array.isArray(value)) return value;
+
+  const updatedValue = value.map((item, i) => (i === index ? Math.min(newValue, item) : item));
+
+  // For range sliders (2 handles), ensure left handle <= right handle
+  if (updatedValue.length === 2) {
+    const [leftValue, rightValue] = updatedValue;
+
+    if (index === 0) {
+      // Moving left handle - it cannot exceed right handle
+      return [Math.min(newValue, rightValue), rightValue];
+    }
+    if (index === 1) {
+      // Moving right handle - it cannot go below left handle
+      return [leftValue, Math.max(newValue, leftValue)];
+    }
+  }
+
+  return updatedValue;
 };
 
 export const alignValue = (
@@ -106,7 +123,7 @@ export const moveValueByExtraStep = (
   forcedValue?: number,
 ): Value => {
   if (Array.isArray(value)) {
-    return replaceValue(
+    return constrainRangeValue(
       value,
       forcedValue || alignValue(maxValue, minValue, step, value[Number(handleIndex)] + extraStep),
       Number(handleIndex),

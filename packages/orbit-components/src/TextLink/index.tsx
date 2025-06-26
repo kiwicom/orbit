@@ -39,71 +39,79 @@ const IconContainer = ({ children, size }) => {
   );
 };
 
-const TextLink = ({
-  ariaCurrent,
-  type = TYPE_OPTIONS.PRIMARY,
-  size,
-  children,
-  href,
-  external = false,
-  rel,
-  iconLeft,
-  iconRight,
-  onClick,
-  dataTest,
-  download,
-  id,
-  tabIndex,
-  asComponent,
-  stopPropagation = false,
-  title,
-  standAlone,
-  noUnderline,
-  ...props
-}: Props) => {
-  const onClickHandler = (ev: React.SyntheticEvent<HTMLAnchorElement | HTMLElement>) => {
-    if (stopPropagation) {
-      ev.stopPropagation();
-    }
+const TextLink = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, Props>(
+  (
+    {
+      ariaCurrent,
+      type = TYPE_OPTIONS.PRIMARY,
+      size,
+      children,
+      href,
+      external = false,
+      rel,
+      iconLeft,
+      iconRight,
+      onClick,
+      dataTest,
+      download,
+      id,
+      tabIndex,
+      asComponent,
+      stopPropagation = false,
+      title,
+      standAlone,
+      noUnderline,
+      ...props
+    },
+    ref,
+  ) => {
+    const onClickHandler = (ev: React.SyntheticEvent<HTMLAnchorElement | HTMLElement>) => {
+      if (stopPropagation) {
+        ev.stopPropagation();
+      }
 
-    if (onClick) {
-      // @ts-expect-error We can't infer the correct event type here, but it works at runtime
-      onClick(ev);
-    }
-  };
+      if (onClick) {
+        // @ts-expect-error We can't infer the correct event type here, but it works at runtime
+        onClick(ev);
+      }
+    };
 
-  const filteredAriaDataProps = filterAriaDataProps(props);
-  const Component = getComponent(href, asComponent);
+    const filteredAriaDataProps = filterAriaDataProps(props);
+    const Component = getComponent(href, asComponent);
 
-  return (
-    <Component
-      aria-current={ariaCurrent}
-      id={id}
-      href={href}
-      target={external ? "_blank" : undefined}
-      rel={createRel({ href, external, rel })}
-      onClick={onClickHandler}
-      data-test={dataTest}
-      tabIndex={tabIndex}
-      type={Component === "button" ? "button" : undefined}
-      role={!href && onClick ? "button" : undefined}
-      title={title}
-      download={download}
-      className={cx(
-        "orbit-text-link font-base duration-fast inline-flex cursor-pointer items-center font-medium transition-colors delay-0 ease-in-out hover:no-underline hover:outline-none active:no-underline active:outline-none",
-        type === "secondary" && "orbit-text-link--secondary",
-        standAlone && "h-form-box-normal",
-        typeClasses[type],
-        size != null && sizeClasses[size],
-        noUnderline ? "no-underline" : "underline",
-      )}
-      {...filteredAriaDataProps}
-    >
-      <IconContainer size={size}>{iconLeft}</IconContainer>
-      {children}
-      <IconContainer size={size}>{iconRight}</IconContainer>
-    </Component>
-  );
-};
+    return (
+      <Component
+        ref={ref}
+        aria-current={ariaCurrent}
+        id={id}
+        href={href}
+        target={external ? "_blank" : undefined}
+        rel={createRel({ href, external, rel })}
+        onClick={onClickHandler}
+        data-test={dataTest}
+        tabIndex={tabIndex}
+        type={Component === "button" ? "button" : undefined}
+        role={!href && onClick ? "button" : undefined}
+        title={title}
+        download={download}
+        className={cx(
+          "orbit-text-link font-base duration-fast inline-flex cursor-pointer items-center font-medium transition-colors delay-0 ease-in-out hover:no-underline hover:outline-none active:no-underline active:outline-none",
+          type === "secondary" && "orbit-text-link--secondary",
+          standAlone && "h-form-box-normal",
+          typeClasses[type],
+          size != null && sizeClasses[size],
+          noUnderline ? "no-underline" : "underline",
+        )}
+        {...filteredAriaDataProps}
+      >
+        <IconContainer size={size}>{iconLeft}</IconContainer>
+        {children}
+        <IconContainer size={size}>{iconRight}</IconContainer>
+      </Component>
+    );
+  },
+);
+
+TextLink.displayName = "TextLink";
 
 export default TextLink;

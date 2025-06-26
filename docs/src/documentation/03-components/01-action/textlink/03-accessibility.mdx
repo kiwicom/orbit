@@ -18,6 +18,7 @@ The following props are available to improve the accessibility of your TextLink 
 | ariaCurrent   | `string`                        | Indicates if the component represents the current item within a set of related elements.            |
 | aria-label    | `string`                        | Defines accessible text for the component, replacing the visible text for screen readers.           |
 | aria-controls | `string`                        | Identifies the element controlled by the component, establishing a relationship for screen readers. |
+| ref           | `React.Ref`                     | A ref to the underlying DOM element. Useful for focus management and modal accessibility.           |
 | title         | `string`                        | HTML attribute providing additional information.                                                    |
 
 The TextLink component accepts all standard HTML attributes including ARIA attributes. While `ariaCurrent` is implemented as a specific prop, other ARIA attributes (like `aria-controls`, `aria-label`, etc.) can be passed directly as HTML attributes.
@@ -57,9 +58,23 @@ The TextLink component automatically manages several accessibility features:
 - For TextLinks with only icons (no text content), always provide an `aria-label` to ensure screen reader users understand the link's purpose.
 
 - The `title` attribute is not reliably announced by screen readers and should not be used as the primary method for providing additional information to screen reader users. Instead:
+
   - Use descriptive link text
   - Use `aria-label` for links with unclear text or icon-only links
   - For additional descriptive information, consider using visible text or alternative ARIA attributes
+
+- When using the `ref` prop for focus management:
+
+  - **Modal triggers**: Always pass the trigger ref to modals so focus can return properly when closed
+  - **Dynamic content**: Use refs to announce content changes to screen readers with `aria-live` regions
+  - **Form validation**: Focus invalid fields or error messages using refs after form submission
+  - **Progressive disclosure**: Manage focus when revealing or hiding content to maintain user context
+  - **Skip links**: Use refs to implement skip navigation functionality for keyboard users
+
+- The `ref` will reference different element types based on component configuration:
+  - `HTMLAnchorElement` when `href` is provided
+  - `HTMLButtonElement` when no `href` is provided
+  - The custom element type when `asComponent` is used
 
 ### Keyboard Navigation
 
@@ -189,3 +204,86 @@ function ExpandableContent() {
 In this example, the TextLink controls the visibility of content with ID "expandable-content". The `aria-controls` attribute creates a programmatic relationship between the TextLink and the content it controls, while `aria-expanded` indicates the current state.
 
 When the TextLink is focused, screen readers will announce its text content ('Show details'), its role ('button'), and its expanded state ('collapsed'). Depending on the screen reader, it may also indicate the control relationship with the content it manages.
+
+#### Using ref for Modal Accessibility
+
+The `ref` prop is particularly useful for modal accessibility, allowing proper focus management when modals are triggered by TextLinks:
+
+```jsx
+import React, { useRef, useState } from "react";
+import { Stack, TextLink, Modal, ModalSection, Button } from "@kiwicom/orbit-components";
+
+function ModalExample() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const triggerRef = useRef(null);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  return (
+    <Stack>
+      <TextLink ref={triggerRef} onClick={openModal}>
+        Open user settings
+      </TextLink>
+
+      {isModalOpen && (
+        <Modal
+          onClose={closeModal}
+          triggerRef={triggerRef} // Focus returns to this element when modal closes
+        >
+          <ModalSection>
+            <Stack>
+              <h2>User Settings</h2>
+              <p>Configure your account preferences here.</p>
+              <Button onClick={closeModal}>Close</Button>
+            </Stack>
+          </ModalSection>
+        </Modal>
+      )}
+    </Stack>
+  );
+}
+```
+
+This pattern ensures that:
+
+- When the modal opens, focus moves to the modal content
+- When the modal closes, focus returns to the TextLink that triggered it
+- Screen reader users maintain their place in the document flow
+
+Screen reader announces: "Open user settings, button" when focused on the TextLink.
+
+#### Using ref for Focus Management
+
+You can also use the `ref` for custom focus management scenarios:
+
+```jsx
+import React, { useRef } from "react";
+import { Stack, TextLink, Button } from "@kiwicom/orbit-components";
+
+function FocusManagementExample() {
+  const linkRef = useRef(null);
+
+  const focusLink = () => {
+    if (linkRef.current) {
+      linkRef.current.focus();
+    }
+  };
+
+  const handleLinkClick = () => {
+    // Perform some action, then programmatically focus another element
+    console.log("Action performed");
+  };
+
+  return (
+    <Stack>
+      <TextLink ref={linkRef} onClick={handleLinkClick}>
+        Perform action
+      </TextLink>
+      <Button onClick={focusLink}>Focus the link above</Button>
+    </Stack>
+  );
+}
+```
+
+Screen reader announces: "Perform action, button" when focused on the TextLink.

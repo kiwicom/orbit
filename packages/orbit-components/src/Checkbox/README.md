@@ -55,3 +55,32 @@ class Component extends React.PureComponent<Props> {
   }
 }
 ```
+
+# FakeCheckbox
+
+FakeCheckbox component was created for accessibility reasons and offers only a visual presentation of the Checkbox component. It does not have any functionality and accepts only state props - `disabled`, `checked`, `hasError`.
+
+## Props
+
+Table below contains all types of the props available in FakeCheckbox component.
+
+| Name     | Type      | Default | Description                                                                                    |
+| :------- | :-------- | :------ | :--------------------------------------------------------------------------------------------- | --- |
+| checked  | `boolean` | `false` | If `true`, the Checkbox will be checked.                                                       |
+| disabled | `boolean` | `false` | If `true`, the Checkbox will be set up as disabled.                                            |
+| hasError | `boolean` | `false` | If `true`, the border of the Checkbox will turn red. [See Functional specs](#functional-specs) |     |
+
+## Functional specs
+
+- The `hasError` prop will be visible only when the Checkbox is not checked nor disabled.
+
+## Example
+
+```jsx
+import * as React from "react";
+
+<div role="checkbox" onChange={() => {}}>
+  <Text>Item title</Text>
+  <FakeCheckbox checked={selected} disabled={disabled} />
+</div>;
+```

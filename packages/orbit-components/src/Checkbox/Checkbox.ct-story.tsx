@@ -1,6 +1,6 @@
 import React from "react";
 
-import Checkbox from ".";
+import Checkbox, { FakeCheckbox } from ".";
 
 export function CheckboxStory() {
   return (
@@ -11,6 +11,12 @@ export function CheckboxStory() {
       <Checkbox label="Check this box" disabled />
       <Checkbox label="Check this box" disabled checked />
       <Checkbox label="Check this box" hasError />
+      <p>FakeCheckbox</p>
+      <FakeCheckbox />
+      <FakeCheckbox checked />
+      <FakeCheckbox disabled />
+      <FakeCheckbox disabled checked />
+      <FakeCheckbox hasError />
     </div>
   );
 }

@@ -4,8 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import TYPE_OPTIONS from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import Text from "../Text";
-import Card, { CardSection } from "../Card";
-import Illustration from "../Illustration";
+import type { Props } from "./types";
 
 import Loading from ".";
 
@@ -42,6 +41,10 @@ export const Default: Story = {
       disable: true,
     },
   },
+
+  args: {
+    title: "Please wait, page is loading...",
+  },
 };
 
 export const DefaultWithChildren: Story = {
@@ -53,7 +56,7 @@ export const DefaultWithChildren: Story = {
 
   parameters: {
     controls: {
-      exclude: ["children", "customSize", "type", "asComponent", "title"],
+      exclude: ["children", "customSize", "type", "asComponent", "title", "ariaHidden"],
     },
   },
 
@@ -70,48 +73,58 @@ export const DefaultWithChildren: Story = {
   },
 };
 
-export const CardLoading: Story = {
-  render: ({ loading }) => {
+type PlaygroundProps = Omit<Props, "text" | "title" | "ariaHidden"> & {
+  accessibilityMode: "text" | "title" | "ariaHidden";
+  textValue: string;
+  titleValue: string;
+};
+
+export const Playground: StoryObj<PlaygroundProps> = {
+  render: ({ customSize, accessibilityMode, textValue, titleValue, ...args }) => {
+    const accessibilityProps = {
+      text: { text: textValue },
+      title: { title: titleValue },
+      ariaHidden: { ariaHidden: true as const },
+    }[accessibilityMode];
+
     return (
-      <Card loading={loading} title="Card title" description="Card description">
-        <Loading loading={loading} type="boxLoader">
-          <CardSection>
-            <Illustration name="EnjoyApp" size="medium" />
-          </CardSection>
-        </Loading>
-      </Card>
+      <div className="stroke-blue-dark">
+        <Loading
+          {...args}
+          {...accessibilityProps}
+          customSize={customSize === 0 ? undefined : customSize}
+        />
+      </div>
     );
   },
 
-  parameters: {
-    info: "Example of usage of Loading component inside Card. Check Orbit.Kiwi for more detailed guidelines.",
-    controls: {
-      exclude: ["children", "customSize", "text", "type", "asComponent", "title"],
-    },
-  },
-};
-
-export const Playground: Story = {
-  render: ({ customSize, ...args }) => (
-    <div className="stroke-blue-dark">
-      <Loading {...args} customSize={customSize === 0 ? undefined : customSize} />
-    </div>
-  ),
-
   args: {
-    ...DefaultWithChildren.args,
     asComponent: "div",
     customSize: 50,
     id: "loader-id",
-    title: "Content is loading",
+    accessibilityMode: "title",
+    textValue: "Loading content...",
+    titleValue: "Content is loading",
   },
 
   argTypes: {
-    ...DefaultWithChildren.argTypes,
     asComponent: {
       control: {
         type: "text",
       },
+    },
+    accessibilityMode: {
+      control: "radio",
+      options: ["text", "title", "ariaHidden"],
+      description: "Select how to handle accessibility",
+    },
+    textValue: {
+      control: "text",
+      if: { arg: "accessibilityMode", eq: "text" },
+    },
+    titleValue: {
+      control: "text",
+      if: { arg: "accessibilityMode", eq: "title" },
     },
   },
 
@@ -132,6 +145,7 @@ export const Rtl: Story = {
 
   args: {
     type: TYPE_OPTIONS.INLINE_LOADER,
+    title: "Loading in RTL",
   },
 
   parameters: {

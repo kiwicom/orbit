@@ -42,6 +42,16 @@ const meta: Meta<CardPropsAndCustomArgs> = {
         type: "select",
       },
     },
+    title: {
+      control: {
+        type: "text",
+      },
+    },
+    description: {
+      control: {
+        type: "text",
+      },
+    },
   },
 
   parameters: {
@@ -71,6 +81,12 @@ export const Default: Story = {
         "initialExpanded",
         "loading",
         "titleAs",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
       ],
     },
   },
@@ -86,7 +102,21 @@ export const CardClosable: Story = {
 
   parameters: {
     controls: {
-      exclude: ["sectionTitle", "sectionDescription", "expanded", "initialExpanded", "labelClose"],
+      exclude: [
+        "sectionTitle",
+        "sectionDescription",
+        "expanded",
+        "initialExpanded",
+        "labelClose",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "titleAs",
+        "loading",
+      ],
     },
   },
 };
@@ -110,7 +140,21 @@ export const CardWithActions: Story = {
 
   parameters: {
     controls: {
-      exclude: ["sectionTitle", "sectionDescription", "expanded", "initialExpanded", "labelClose"],
+      exclude: [
+        "sectionTitle",
+        "sectionDescription",
+        "expanded",
+        "initialExpanded",
+        "labelClose",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "titleAs",
+        "loading",
+      ],
     },
   },
 };
@@ -145,13 +189,25 @@ export const CardWithSections: Story = {
 
   parameters: {
     controls: {
-      exclude: ["expanded", "initialExpanded", "labelClose"],
+      exclude: [
+        "expanded",
+        "initialExpanded",
+        "labelClose",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "titleAs",
+        "loading",
+      ],
     },
   },
 };
 
 export const CardWithExpandableSections: Story = {
-  render: ({ sectionTitle, sectionDescription, initialExpanded, ...args }) => (
+  render: ({ sectionTitle, sectionDescription, initialExpanded = false, ...args }) => (
     <Card {...args} onClose={action("onClose")}>
       <CardSection
         expandable
@@ -182,7 +238,18 @@ export const CardWithExpandableSections: Story = {
 
   parameters: {
     controls: {
-      exclude: ["labelClose", "expanded"],
+      exclude: [
+        "labelClose",
+        "expanded",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "titleAs",
+        "loading",
+      ],
     },
   },
 };
@@ -214,7 +281,17 @@ export const CardWithControlledAndUncontrolled: Story = {
 
   parameters: {
     controls: {
-      exclude: ["labelClose"],
+      exclude: [
+        "labelClose",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "titleAs",
+        "loading",
+      ],
     },
   },
 
@@ -239,13 +316,23 @@ export const CardWithControlledWithControls: Story = {
 
   parameters: {
     controls: {
-      exclude: ["labelClose"],
+      exclude: [
+        "labelClose",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "titleAs",
+        "loading",
+      ],
     },
   },
 };
 
 export const CardWithDefaultExpanded: Story = {
-  render: ({ initialExpanded }) => (
+  render: ({ initialExpanded = false }) => (
     <Card>
       <CardSection
         expandable
@@ -315,20 +402,45 @@ export const CardWithMixedSections: Story = {
 
   parameters: {
     controls: {
-      exclude: ["labelClose", "initialExpanded", "expanded"],
+      exclude: [
+        "expanded",
+        "initialExpanded",
+        "labelClose",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "titleAs",
+        "loading",
+      ],
     },
   },
 };
 export const LoadingCard: Story = {
-  render: args => (
-    <Card {...args}>
+  render: ({ loading, ...args }) => (
+    <Card loading={loading} {...args} {...(loading && { loadingTitle: "Loading" })}>
       <CardSection>kek</CardSection>
     </Card>
   ),
 
   parameters: {
     controls: {
-      exclude: ["sectionTitle", "sectionDescription", "expanded", "initialExpanded", "labelClose"],
+      exclude: [
+        "sectionTitle",
+        "sectionDescription",
+        "expanded",
+        "initialExpanded",
+        "labelClose",
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "titleAs",
+      ],
     },
   },
 
@@ -366,7 +478,7 @@ export const Rtl: Story = {
 };
 
 export const Playground: Story = {
-  render: ({ sectionTitle, sectionDescription, expanded, initialExpanded, ...args }) => (
+  render: ({ sectionTitle, sectionDescription, expanded, initialExpanded = false, ...args }) => (
     <Card {...args}>
       <CardSection
         expandable
@@ -379,4 +491,19 @@ export const Playground: Story = {
       </CardSection>
     </Card>
   ),
+
+  parameters: {
+    controls: {
+      exclude: [
+        "children",
+        "margin",
+        "actions",
+        "onClose",
+        "header",
+        "dataA11ySection",
+        "labelClose",
+        "initialExpanded",
+      ],
+    },
+  },
 };

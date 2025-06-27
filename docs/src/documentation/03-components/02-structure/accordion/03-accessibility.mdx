@@ -10,6 +10,13 @@ The Accordion component has been designed with accessibility in mind, providing 
 
 ### Accessibility Props
 
+**Accordion props:**
+
+| Name          | Type      | Default | Description                                                                                                                                        |
+| :------------ | :-------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| loadingTitle  | `string`  |         | The title announced by screen readers when the accordion is in loading state. Required when `loading` is `true` and `loadingHidden` is not `true`. |
+| loadingHidden | `boolean` |         | If `true`, the loading state will be hidden from screen readers. Use when loading state is conveyed through other visible text on the page.        |
+
 **AccordionSection props:**
 
 | Name              | Type      | Default | Description                                                                                                                           |
@@ -31,6 +38,34 @@ The Accordion component supports the following keyboard interactions:
 - **Enter/Space:** When focus is on a section header with `expandOnTileClick` enabled, pressing Enter or Space will toggle the expansion state
 - **Tab:** Moves focus to the next focusable element (header or interactive elements within expanded sections)
 - **Shift + Tab:** Moves focus to the previous focusable element
+
+### Loading state accessibility
+
+When using the Accordion's loading state, you must provide either a descriptive loading message or explicitly hide it from screen readers:
+
+- Use `loadingTitle` to provide a descriptive message that will be announced to screen readers
+- Use `loadingHidden` to hide the loading state from screen readers when the loading state is conveyed through other visible text on the page
+
+```jsx
+// Accessible loading state with descriptive message
+<Accordion
+  loading
+  loadingTitle="Loading accordion content"
+>
+  <AccordionSection header="Section 1">Content 1</AccordionSection>
+  <AccordionSection header="Section 2">Content 2</AccordionSection>
+</Accordion>
+
+// Loading state hidden from screen readers because loading state
+// is conveyed through other visible text on the page
+<Accordion
+  loading
+  loadingHidden
+>
+  <AccordionSection header="Section 1">Content 1</AccordionSection>
+  <AccordionSection header="Section 2">Content 2</AccordionSection>
+</Accordion>
+```
 
 ### Best Practices
 

@@ -14,6 +14,8 @@ const Accordion = ({
   spaceAfter,
   expandedSection,
   loading,
+  loadingTitle,
+  loadingHidden,
   onExpand,
 }: Props) => (
   <div
@@ -37,7 +39,15 @@ const Accordion = ({
           const handleExpand = () => onExpand && onExpand(innerId);
 
           return (
-            <SectionProvider value={{ expanded: isExpanded, onExpand: handleExpand, loading }}>
+            <SectionProvider
+              value={{
+                expanded: isExpanded,
+                onExpand: handleExpand,
+                loading,
+                loadingTitle,
+                loadingHidden,
+              }}
+            >
               {item}
             </SectionProvider>
           );

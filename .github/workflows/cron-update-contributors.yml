@@ -28,7 +28,7 @@ jobs:
 
       - name: Update contributors
         run: |
-          yarn docs fetch:contributors
+          yarn docs:fetch:contributors
           git add --all
           if git diff-index --quiet HEAD; then
             echo "No changes to contributors. Exiting."

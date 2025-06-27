@@ -15,8 +15,7 @@ packages/eslint-plugin-orbit-components/dist
 # from gitignore
 packages/orbit-components/src/icons/*
 
-docs/.cache
-docs/public
+docs
 
 # orbit design tokens
 packages/orbit-design-tokens/output/

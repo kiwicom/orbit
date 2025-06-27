@@ -35,6 +35,8 @@ const buttonGroup = `
 
 const checkbox = `<Checkbox label="Checkbox label" info="Additional information" />`;
 
+const fakeCheckbox = `<FakeCheckbox />`;
+
 const choiceGroup = `
 <ChoiceGroup label="Choice group">
   <Radio label="Option one" value="one" />
@@ -236,6 +238,10 @@ export default [
   {
     group: "Checkbox",
     code: checkbox,
+  },
+  {
+    group: "FakeCheckbox",
+    code: fakeCheckbox,
   },
   {
     group: "ChoiceGroup",

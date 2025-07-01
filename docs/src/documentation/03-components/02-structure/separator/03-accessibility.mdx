@@ -1,0 +1,19 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/separator/accessibility/
+---
+
+## Accessibility
+
+The separator component uses a semantic `<hr>` element for visual separation.
+The separator itself is not announced by screen readers and cannot be selected or focused.
+When a `label` is provided, any text content within the label is announced by screen readers as it's visible content within the separator.
+
+### Examples
+
+```jsx
+<Separator label="Account Details" />
+```
+
+Screen reader announces: "Account Details".

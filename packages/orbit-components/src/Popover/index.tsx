@@ -36,6 +36,8 @@ const Popover = ({
   ariaLabel,
   ariaLabelledby,
   role = "dialog",
+  tabIndex,
+  triggerRole,
 }: Props) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const popoverId = useRandomId();
@@ -181,11 +183,12 @@ const Popover = ({
 
   return (
     <>
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
         className="relative inline-block focus:outline-offset-1"
         ref={ref}
-        role="button"
-        tabIndex={0}
+        role={triggerRole || "button"}
+        tabIndex={tabIndex ? Number(tabIndex) : 0}
         onClick={handleClick}
         onKeyDown={handleKeyDown<HTMLDivElement>(handleClick)}
         aria-controls={shown ? id || popoverId : undefined}

@@ -12,12 +12,14 @@ The Popover component has been designed with accessibility in mind, providing fe
 
 The following props are available to improve the accessibility of your Popover component:
 
-| Prop           | Type                                                  | Default    | Description                                                                           |
-| :------------- | :---------------------------------------------------- | :--------- | :------------------------------------------------------------------------------------ |
-| ariaLabel      | `string`                                              |            | Adds `aria-label` to the popover content, providing a description for screen readers. |
-| ariaLabelledby | `string`                                              |            | References the ID of an element that labels the popover content for screen readers.   |
-| role           | `"dialog" \| "menu" \| "grid" \| "listbox" \| "tree"` | `"dialog"` | Defines the ARIA role of the popover component.                                       |
-| labelClose     | `React.Node`                                          | `"Close"`  | The label for the close button displayed on mobile devices.                           |
+| Prop           | Type                                                  | Default    | Description                                                                                                                      |
+| :------------- | :---------------------------------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| ariaLabel      | `string`                                              |            | Adds `aria-label` to the popover content, providing a description for screen readers.                                            |
+| ariaLabelledby | `string`                                              |            | References the ID of an element that labels the popover content for screen readers.                                              |
+| role           | `"dialog" \| "menu" \| "grid" \| "listbox" \| "tree"` | `"dialog"` | Defines the ARIA role of the popover component.                                                                                  |
+| labelClose     | `React.Node`                                          | `"Close"`  | The label for the close button displayed on mobile devices.                                                                      |
+| tabIndex       | `number`                                              |            | Controls the tab order of the trigger element. Useful when placing popover in controlled focus contexts like grids.              |
+| triggerRole    | `string`                                              |            | Sets the ARIA role of the trigger element. Useful for specialized contexts like `"gridcell"` when using popover in tables/grids. |
 
 ### Automatic Accessibility Features
 
@@ -28,6 +30,10 @@ The Popover component automatically handles several important ARIA attributes on
 - `aria-expanded`: Indicates whether the popover is currently visible or hidden.
 
 These attributes are managed by the component and do not need to be manually added to your code.
+
+The trigger element is rendered with `role="button"` by default, but this can be customized using the `triggerRole` prop for specialized contexts.
+
+The trigger element has `tabIndex="0"` by default, making it focusable and following the natural tab order. You can set `tabIndex="-1"` to make it non-focusable when needed, but ensure focus is still properly handled for keyboard accessibility.
 
 ### Best practices
 

@@ -45,6 +45,8 @@ The table below contains all types of props available in the Popover component.
 | ariaLabel      | `string`                                              |                     | Optional prop for `aria-label` attribute.                                                                                                            |
 | ariaLabelledby | `string`                                              |                     | Optional prop for `aria-labelledby` attribute.                                                                                                       |
 | role           | `"dialog" \| "menu" \| "grid" \| "listbox" \| "tree"` | `"dialog"`          | Optional prop for `role` attribute on the popover.                                                                                                   |
+| tabIndex       | `number`                                              |                     | Optional prop for `tabIndex` attribute on the trigger element.                                                                                       |
+| triggerRole    | `string`                                              |                     | Optional prop for `role` attribute on the trigger element.                                                                                           |
 
 ## placement
 

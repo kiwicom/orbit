@@ -35,4 +35,6 @@ export interface Props extends Common.Globals {
   readonly ariaLabel?: string;
   readonly ariaLabelledby?: string;
   readonly role?: "dialog" | "menu" | "grid" | "listbox" | "tree";
+  readonly tabIndex?: string | number;
+  readonly triggerRole?: string;
 }

@@ -10,8 +10,8 @@ After adding import to your project you can use it simply like:
 
 ```jsx
 <Timeline>
-  <TimelineStep label="In Progress" time="20.05.2020" type="success">
-    We’ll wait for the carrier(s) to send us the refund and contact them again if necessary.
+  <TimelineStep label="In Progress" type="success">
+    We'll wait for the carrier(s) to send us the refund and contact them again if necessary.
   </TimelineStep>
 </Timeline>
 ```
@@ -25,7 +25,7 @@ The table below contains all types of props available in the **Timeline** compon
 | **children** | `React.Node`        |         | List of [`TimelineStep`](#TimelineStep) components.                                       |
 | dataTest     | `string`            |         | Optional prop for testing purposes.                                                       |
 | id           | `string`            |         | Set `id` for `Timeline`.                                                                  |
-| spaceAfter   | `enum`              |         | Additional `margin-bottom` after component.                                               |
+| spaceAfter   | [`enum`](#enum)     |         | Additional `margin-bottom` after component.                                               |
 | direction    | `"column" \| "row"` |         | Allows to set direction, by default on desktop is `row` and on mobile is set to `column`. |
 
 ### enum
@@ -59,8 +59,9 @@ The table below contains all types of the props in **TimelineStep** component.
 | subLabel     | `React.Node`    |         | Text for `subLabel` component inside.       |
 | type         | [`enum`](#enum) |         | Type of current process step.               |
 | active       | `boolean`       |         | Controlled state of the step.               |
+| spaceAfter   | [`enum`](#enum) |         | Additional `margin-bottom` after component. |
 
-### enum
+#### enum
 
 | type       |
 | :--------- |

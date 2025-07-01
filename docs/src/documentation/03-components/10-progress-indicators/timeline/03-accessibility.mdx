@@ -1,0 +1,44 @@
+---
+title: Accessibility
+redirect_from:
+  - /components/timeline/accessibility/
+---
+
+## Accessibility
+
+The Timeline component has been designed with accessibility in mind, providing visual progress indication that communicates the current state to screen readers.
+
+### Accessibility Props
+
+**TimelineStep props:**
+
+| Name   | Type      | Description                                                                         |
+| :----- | :-------- | :---------------------------------------------------------------------------------- |
+| active | `boolean` | Controls whether the step is marked as the current step with `aria-current="step"`. |
+
+### Automatic Accessibility Features
+
+- **aria-current="step"**: Automatically applied to active timeline steps based on the `active` prop
+- **aria-hidden**: Applied to decorative visual elements (icons, progress lines) that don't convey meaning to screen readers
+- Content is announced in document order, providing logical progression through the timeline
+
+### Best Practices
+
+- Use descriptive labels that clearly indicate the purpose of each timeline step
+- Only mark one step as active at a time to avoid confusion for screen reader users
+- Ensure timeline content follows a logical sequence that makes sense when read linearly
+
+### Examples
+
+#### Basic Timeline with Active Step
+
+```jsx
+<Timeline>
+  <TimelineStep label="Processing check-in" type="success" />
+  <TimelineStep label="Boarding pass ready" type="info" active>
+    You can now print your boarding pass.
+  </TimelineStep>
+</Timeline>
+```
+
+Screen reader announces: "Processing check-in. Boarding pass ready, current step. You can now print your boarding pass."

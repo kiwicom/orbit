@@ -66,6 +66,7 @@ const Separator = ({
   type = "solid",
   color,
   label,
+  ariaHidden,
 }: Props) => {
   return (
     <div className={cx("relative min-h-px w-full", spaceAfter && getSpaceAfterClasses(spaceAfter))}>
@@ -77,6 +78,7 @@ const Separator = ({
           getSideOffsetAmount(sideOffset, align),
           BORDER_TYPE_CLASSES[type],
         )}
+        aria-hidden={ariaHidden}
       />
       {label && (
         <span className="bg-white-normal px-100 absolute left-1/2 top-1/2 flex min-w-max -translate-x-1/2 -translate-y-1/2 items-center justify-center">

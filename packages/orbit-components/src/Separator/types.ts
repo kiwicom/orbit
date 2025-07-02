@@ -92,4 +92,5 @@ export interface Props extends Common.SpaceAfter {
   readonly color?: BorderColorClass;
   readonly type?: "solid" | "dashed" | "dotted" | "double" | "none";
   readonly label?: ReactNode;
+  readonly ariaHidden?: boolean;
 }

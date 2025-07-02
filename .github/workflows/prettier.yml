@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: Prettify documentation
-        uses: creyD/prettier_action@v4.5
+        uses: creyD/prettier_action@v4.6
         with:
           prettier_options: --write **/*.{md,mdx}
           prettier_version: 3.5.3

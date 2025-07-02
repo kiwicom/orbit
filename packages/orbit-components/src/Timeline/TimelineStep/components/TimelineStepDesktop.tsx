@@ -30,7 +30,7 @@ const TimelineStepDesktop = ({
   const theme = useTheme();
 
   return (
-    <Stack inline shrink direction="column" align="center">
+    <Stack inline shrink direction="column" align="center" as="li">
       <div
         className={cx("relative flex w-[calc(100%+theme(spacing.400))] items-center")}
         aria-hidden

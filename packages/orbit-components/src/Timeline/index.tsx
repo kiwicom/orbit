@@ -36,7 +36,7 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
       data-test={dataTest}
       id={id}
     >
-      <Stack flex shrink direction={getDirection()}>
+      <Stack flex shrink direction={getDirection()} as="ol">
         <TimelineStatusProvider direction={direction}>
           {React.Children.map(childrenArr, (child, i) => {
             if (React.isValidElement(child)) {

@@ -14,7 +14,7 @@ interface Props extends StepProps {
 
 const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active, last }: Props) => {
   return (
-    <div className="relative">
+    <li className="relative">
       <Stack
         flex
         spaceAfter={last ? undefined : "large"}
@@ -41,7 +41,7 @@ const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active,
           )}
         </Stack>
       </Stack>
-    </div>
+    </li>
   );
 };
 

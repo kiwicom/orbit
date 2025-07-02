@@ -6,14 +6,46 @@ redirect_from:
 
 ## Accessibility
 
-The separator component uses a semantic `<hr>` element for visual separation.
-The separator itself is not announced by screen readers and cannot be selected or focused.
-When a `label` is provided, any text content within the label is announced by screen readers as it's visible content within the separator.
+The Separator component has been designed with accessibility in mind, providing semantic separation using a semantic element.
+
+### Accessibility Props
+
+| Name       | Type    | Description                                        |
+| :--------- | :------ | :------------------------------------------------- |
+| ariaHidden | boolean | If `true`, hides the separator from screen readers |
+
+### Automatic Accessibility Features
+
+- The component automatically renders as a semantic `<hr>` element
+- When a `label` is provided, the label text is announced by screen readers
+
+### Best Practices
+
+- Set `ariaHidden={true}` when the separator is purely decorative and doesn't provide meaningful content structure
+- When using a `label`, ensure the text is descriptive and helpful for understanding content structure
 
 ### Examples
 
+#### Semantic separator for content organization
+
 ```jsx
-<Separator label="Account Details" />
+<Separator />
 ```
 
-Screen reader announces: "Account Details".
+Screen reader announces: "Separator".
+
+#### Decorative separator
+
+```jsx
+<Separator ariaHidden />
+```
+
+Screen reader announces: Nothing.
+
+#### Separator with descriptive label
+
+```jsx
+<Separator label="Contact Information" />
+```
+
+Screen reader announces: "Separator. Contact Information."

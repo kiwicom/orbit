@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Portal } from "@kiwicom/orbit-components";
 import { format } from "prettier/standalone";
 import parserBabel from "prettier/parser-babel";
 
@@ -12,6 +11,7 @@ import Playground from "./components/Playground";
 import ViewportsRuler from "./components/ViewportsRuler";
 import { transform } from "./transform";
 import useSandbox from "../../hooks/useSandbox";
+import PortalWrapper from "../PortalWrapper";
 
 import { BgType, Props as InitialProps } from ".";
 
@@ -207,7 +207,7 @@ const Example = ({
     </StyledWrapper>
   );
 
-  return isFullScreen ? <Portal>{content}</Portal> : content;
+  return isFullScreen ? <PortalWrapper>{content}</PortalWrapper> : content;
 };
 
 export default Example;

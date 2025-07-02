@@ -98,6 +98,11 @@ interface Props {
   docNavigation?: React.ReactNode;
 }
 
+const PortalWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  // @ts-expect-error
+  <Portal>{children}</Portal>
+);
+
 const Navbar = ({ location, docNavigation }: Props) => {
   const [isSearchOpen, setSearchOpen] = useKeyboard();
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
@@ -181,7 +186,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
             )}
           </Stack>
           {menuOpen && (
-            <Portal>
+            <PortalWrapper>
               <div
                 css={css`
                   > * > * > * {
@@ -305,7 +310,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                   )}
                 </Modal>
               </div>
-            </Portal>
+            </PortalWrapper>
           )}
         </StyledRight>
       </StyledInner>

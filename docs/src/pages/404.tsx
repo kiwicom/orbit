@@ -25,7 +25,7 @@ export default function PageNotFound({ location }: PageProps) {
               circled
               type="primary"
               iconRight={<TripIcon ariaHidden />}
-              asComponent={Link}
+              asComponent={Link as any}
               href="/"
             >
               Return home

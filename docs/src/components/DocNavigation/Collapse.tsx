@@ -22,12 +22,14 @@ export default function Collapse({
     <StyledCollapseWrapper>
       <OrbitCollapse
         expanded={expanded}
-        customLabel={<StyledCollapseLabel>{customLabel}</StyledCollapseLabel>}
+        customLabel={<StyledCollapseLabel>{customLabel as React.ReactNode}</StyledCollapseLabel>}
         onClick={onClick}
         expandButtonLabel="Expand"
         collapseButtonLabel="Collapse"
       >
-        <StyledCollapseContent hasCategories={hasCategories}>{children}</StyledCollapseContent>
+        <StyledCollapseContent hasCategories={hasCategories}>
+          {children as React.ReactNode}
+        </StyledCollapseContent>
       </OrbitCollapse>
     </StyledCollapseWrapper>
   );

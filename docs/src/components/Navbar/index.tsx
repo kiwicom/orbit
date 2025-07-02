@@ -6,7 +6,6 @@ import {
   Stack,
   Button,
   Hide,
-  Portal,
   ModalHeader,
   ModalSection,
   Badge,
@@ -20,6 +19,7 @@ import Logo from "../../images/orbit-logo.svg";
 import Glyph from "../../images/orbit-glyph.svg";
 import Bookmarks from "../Bookmarks";
 import Search from "../Search";
+import PortalWrapper from "../PortalWrapper";
 import { useBookmarks } from "../../services/bookmarks";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../../consts";
 import { useKeyboard } from "../../services/KeyboardProvider";
@@ -181,7 +181,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
             )}
           </Stack>
           {menuOpen && (
-            <Portal>
+            <PortalWrapper>
               <div
                 css={css`
                   > * > * > * {
@@ -305,7 +305,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                   )}
                 </Modal>
               </div>
-            </Portal>
+            </PortalWrapper>
           )}
         </StyledRight>
       </StyledInner>

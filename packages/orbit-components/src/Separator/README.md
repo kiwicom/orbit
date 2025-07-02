@@ -24,6 +24,7 @@ The table below contains all types of props available in the Separator component
 | type       | [`enum`](#enum)   | `"solid"` | The type of the separator.                                                                                                                       |
 | color      | [`enum`](#enum)   |           | The color of the separator. The value should be a string with the value of a Tailwind border color class valid in Orbit.                         |
 | label      | `React.ReactNode` |           | Optional text or content displayed within the separator line                                                                                     |
+| ariaHidden | `boolean`         |           | If `true`, hides the separator from screen readers. Use when the separator is purely decorative.                                                 |
 
 ### enum
 

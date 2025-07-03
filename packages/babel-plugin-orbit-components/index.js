@@ -19,6 +19,7 @@ const pathOverwrites = {
   ButtonPrimitive: "primitives/ButtonPrimitive",
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
+  FakeCheckbox: "Checkbox/FakeCheckbox",
   ToastRoot: "Toast",
   createToast: "Toast",
   createToastPromise: "Toast",

@@ -54,6 +54,8 @@ const dialog = `
 
 const fakeCheckbox = `<FakeCheckbox />`;
 
+const fakeRadio = `<FakeRadio />`;
+
 const heading = `<Heading as="h1" type="title1">Heading</Heading>`;
 
 const linkList = `
@@ -258,6 +260,10 @@ export default [
   {
     group: "FakeCheckbox",
     code: fakeCheckbox,
+  },
+  {
+    group: "FakeRadio",
+    code: fakeRadio,
   },
   {
     group: "Heading",

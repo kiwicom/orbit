@@ -77,7 +77,7 @@ export { default as ListChoice } from "./ListChoice";
 export { default as Loading } from "./Loading";
 export { default as Pagination } from "./Pagination";
 export { default as Popover } from "./Popover";
-export { default as Radio } from "./Radio";
+export { default as Radio, FakeRadio } from "./Radio";
 export { default as Seat, SeatLegend } from "./Seat";
 export { default as Select } from "./Select";
 export { default as Skeleton } from "./Skeleton";

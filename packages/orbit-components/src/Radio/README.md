@@ -55,7 +55,7 @@ class Component extends React.PureComponent<Props> {
 
 ## FakeRadio
 
-The FakeRadio component was created for accessibility reasons and offers only a visual presentation of the Radio component. It does not have any functionality and accepts only state props - `disabled`, `checked`, `hasError`.
+The FakeRadio component was created for accessibility reasons and offers only a visual presentation of the Radio component. It does not have any functionality and accepts only state props.
 
 ## Props
 

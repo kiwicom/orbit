@@ -20,6 +20,7 @@ const pathOverwrites = {
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
   FakeCheckbox: "Checkbox/FakeCheckbox",
+  FakeRadio: "Radio/FakeRadio",
   ToastRoot: "Toast",
   createToast: "Toast",
   createToastPromise: "Toast",

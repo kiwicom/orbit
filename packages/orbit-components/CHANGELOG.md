@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [26.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@25.1.0...@kiwicom/orbit-components@26.0.0) (2025-07-03)
+
+
+### Bug Fixes
+
+* **Loading:** hide loading indicator when text is provided ([76e3584](https://github.com/kiwicom/orbit/commit/76e3584c5e4f9a49f93ca0ab308e3132e2321b50))
+* **Slider:** keyboard support ([8c9944e](https://github.com/kiwicom/orbit/commit/8c9944e52640ce7ce04c1f20cf67f254c77cb6ef))
+* **Slider:** prevent range slider handles from crossing over ([16fd360](https://github.com/kiwicom/orbit/commit/16fd360545bc2c5ff15e53a794bb4425d106c5ee))
+
+
+### Features
+
+* **Accordion:** make accessibility props required ([c277dde](https://github.com/kiwicom/orbit/commit/c277dde3ed8ab4db59a6fc7ca37ec8bfe6c57dde))
+* **babel-plugin:** add FakeRadio export ([db812e7](https://github.com/kiwicom/orbit/commit/db812e713918fc7b1ab76648c942d1590143d8b9))
+* **Card:** make accessibility props required ([4db7689](https://github.com/kiwicom/orbit/commit/4db7689a68a4d3685289d55b534c32d8eaeb4c7f))
+* **Checkbox:** make FakeCheckbox component public ([2b10fae](https://github.com/kiwicom/orbit/commit/2b10fae2c13d0382d97900cac4421c9b55240c27))
+* **Checkbox:** render label element conditionally ([acba47a](https://github.com/kiwicom/orbit/commit/acba47aac27e4b302f4d6bfaf47ed0e2f7009375))
+* **Loading:** make accessibility props required ([31c1e5a](https://github.com/kiwicom/orbit/commit/31c1e5a1e5fd2809c6d6e3c9f65392a99480bb96))
+* **Popover:** add new props to improve accessibility ([3179c1a](https://github.com/kiwicom/orbit/commit/3179c1af9d6d88637c26838048c34e595c92393f))
+* **Radio:** create FakeRadio component ([0871165](https://github.com/kiwicom/orbit/commit/0871165e4dba9ef526d27452406bfd6f7ef438c5))
+* **Separator:** add possibility to hide component from screen readers ([6a2bf8a](https://github.com/kiwicom/orbit/commit/6a2bf8a2641cec9b994e009a0ebf586c1c00b8a5))
+
+
+### BREAKING CHANGES
+
+* **Accordion:** The Accordion component now requires accessibility props.
+If loading is true, you must now use either loadingTitle or loadingHidden.
+* **Card:** The Card component now requires accessibility props.
+If loading is 'true', you must now use either loadingTitle or loadingHidden.
+* **Loading:** The Loading component now requires accessibility props.
+If text prop is not provided, you must now use either ariaHidden or title.
+
+
+
+
+
 # [25.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@25.0.0...@kiwicom/orbit-components@25.1.0) (2025-06-26)
 
 

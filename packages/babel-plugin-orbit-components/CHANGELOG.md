@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@5.1.49...@kiwicom/babel-plugin-orbit-components@5.2.0) (2025-07-03)
+
+
+### Features
+
+* **babel-plugin:** add FakeCheckbox export ([86250eb](https://github.com/kiwicom/orbit/commit/86250eb60b407f7b4e02976dffb239a118fd8058))
+* **babel-plugin:** add FakeRadio export ([db812e7](https://github.com/kiwicom/orbit/commit/db812e713918fc7b1ab76648c942d1590143d8b9))
+
+
+
+
+
 ## [5.1.49](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@5.1.48...@kiwicom/babel-plugin-orbit-components@5.1.49) (2025-06-26)
 
 **Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components

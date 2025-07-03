@@ -52,6 +52,8 @@ const dialog = `
   description="Are you sure you want to log out now?" 
   primaryAction={<Button type="critical">Log out</Button>}/>`;
 
+const fakeCheckbox = `<FakeCheckbox />`;
+
 const heading = `<Heading as="h1" type="title1">Heading</Heading>`;
 
 const linkList = `
@@ -252,6 +254,10 @@ export default [
   {
     group: "Dialog",
     code: dialog,
+  },
+  {
+    group: "FakeCheckbox",
+    code: fakeCheckbox,
   },
   {
     group: "Heading",

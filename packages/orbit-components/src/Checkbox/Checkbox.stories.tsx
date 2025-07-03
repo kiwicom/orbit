@@ -6,7 +6,7 @@ import Text from "../Text";
 import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Checkbox from ".";
+import Checkbox, { FakeCheckbox as FakeCheckboxComponent } from ".";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Checkbox",
@@ -133,5 +133,37 @@ export const Rtl: Story = {
 export const Playground: Story = {
   parameters: {
     info: "Playground of Checkbox",
+  },
+};
+
+export const FakeCheckbox: Story = {
+  render: args => <FakeCheckboxComponent {...args} />,
+
+  parameters: {
+    info: "This checkbox does not have any functionality, it is only for visual purposes.",
+    controls: {
+      exclude: [
+        "info",
+        "label",
+        "onChange",
+        "id",
+        "dataTest",
+        "ariaControls",
+        "ariaDescribedby",
+        "ariaInvalid",
+        "tabIndex",
+        "value",
+        "name",
+        "defaultChecked",
+      ],
+    },
+  },
+
+  args: {
+    onChange: undefined,
+    value: undefined,
+    name: undefined,
+    info: undefined,
+    label: undefined,
   },
 };

@@ -15,7 +15,7 @@ export { default as ButtonLink } from "./ButtonLink";
 export { default as ButtonMobileStore } from "./ButtonMobileStore";
 export { default as CallOutBanner } from "./CallOutBanner";
 export { default as CarrierLogo } from "./CarrierLogo";
-export { default as Checkbox } from "./Checkbox";
+export { default as Checkbox, FakeCheckbox } from "./Checkbox";
 export { default as ChoiceGroup } from "./ChoiceGroup";
 export { default as Collapse } from "./Collapse";
 export { default as CountryFlag } from "./CountryFlag";

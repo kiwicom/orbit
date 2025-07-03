@@ -3,31 +3,15 @@
 import cx from "clsx";
 import React from "react";
 
-import getFieldDataState from "../common/getFieldDataState";
-import type { Props } from "./types";
+import type { Props } from "../types";
 
-const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
-  const {
-    label,
-    value,
-    hasError = false,
-    disabled = false,
-    checked,
-    defaultChecked,
-    onChange,
-    name,
-    info,
-    id,
-    tabIndex = 0,
-    dataTest,
-    ariaLabelledby,
-  } = props;
-
-  const Component = label ? "label" : "div";
-
+const FakeRadio = ({
+  checked,
+  disabled,
+  hasError,
+}: Pick<Props, "checked" | "disabled" | "hasError">) => {
   return (
-    <Component
-      htmlFor={label ? id : undefined}
+    <div
       className={cx(
         "font-base text-form-element-label-foreground relative flex w-full [align-items:self-start]",
         "[&_.orbit-radio-icon-container]:has-[:checked]:border-2 [&_.orbit-radio-icon-container_span]:has-[:checked]:visible",
@@ -51,22 +35,6 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
             ],
       )}
     >
-      <input
-        data-test={dataTest}
-        data-state={getFieldDataState(hasError)}
-        className="absolute opacity-0"
-        value={value}
-        type="radio"
-        disabled={disabled}
-        checked={checked}
-        defaultChecked={defaultChecked}
-        id={id}
-        onChange={onChange}
-        name={name}
-        tabIndex={Number(tabIndex)}
-        ref={ref}
-        aria-labelledby={ariaLabelledby}
-      />
       <div
         className={cx(
           "orbit-radio-icon-container",
@@ -77,6 +45,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           "border-solid",
           checked ? "border-2" : "border",
           !disabled && "active:scale-95",
+          hasError && "border-blue-normal",
         )}
       >
         <span
@@ -87,31 +56,8 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
           )}
         />
       </div>
-      {(label || info) && (
-        <div
-          className={cx(
-            "ms-200 flex flex-1 flex-col font-medium",
-            disabled ? "opacity-50" : "opacity-100",
-          )}
-        >
-          {label && (
-            <span className="text-normal text-primary-foreground [&_.orbit-text]:text-normal font-medium leading-normal [&_.orbit-text]:font-medium [&_.orbit-text]:leading-normal">
-              {label}
-            </span>
-          )}
-          {info && (
-            <span className="text-small leading-small text-form-element-label-filled-foreground">
-              {info}
-            </span>
-          )}
-        </div>
-      )}
-    </Component>
+    </div>
   );
-});
+};
 
-Radio.displayName = "Radio";
-
-export default Radio;
-
-export { default as FakeRadio } from "./FakeRadio";
+export default FakeRadio;

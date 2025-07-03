@@ -6,7 +6,7 @@ import Text from "../Text";
 import TextLink from "../TextLink";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
-import Radio from ".";
+import Radio, { FakeRadio as FakeRadioComponent } from ".";
 
 const meta: Meta<typeof Radio> = {
   title: "Radio",
@@ -126,5 +126,38 @@ export const Rtl: Story = {
     controls: {
       disable: true,
     },
+  },
+};
+
+export const FakeRadio: Story = {
+  render: args => <FakeRadioComponent {...args} />,
+
+  parameters: {
+    info: "This checkbox does not have any functionality, it is only for visual purposes.",
+    controls: {
+      exclude: [
+        "info",
+        "label",
+        "onChange",
+        "id",
+        "dataTest",
+        "ariaControls",
+        "ariaDescribedby",
+        "ariaInvalid",
+        "tabIndex",
+        "value",
+        "name",
+        "defaultChecked",
+      ],
+    },
+  },
+
+  args: {
+    onChange: undefined,
+    value: undefined,
+    name: undefined,
+    info: undefined,
+    label: undefined,
+    tabIndex: undefined,
   },
 };

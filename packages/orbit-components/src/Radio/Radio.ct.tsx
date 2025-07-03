@@ -1,7 +1,7 @@
 import * as React from "react";
 import { test, expect } from "@playwright/experimental-ct-react";
 
-import { Test } from "./Radio.ct-story";
+import { Test, TestFakeRadio } from "./Radio.ct-story";
 
 test.describe("visual Radio", () => {
   test("screenshot", async ({ mount }) => {
@@ -59,6 +59,11 @@ test.describe("visual Radio", () => {
     const component = await mount(<Test hasError />);
     await component.getByText("Label").focus();
 
+    await expect(component).toHaveScreenshot();
+  });
+
+  test("screenshot fake radio", async ({ mount }) => {
+    const component = await mount(<TestFakeRadio />);
     await expect(component).toHaveScreenshot();
   });
 });

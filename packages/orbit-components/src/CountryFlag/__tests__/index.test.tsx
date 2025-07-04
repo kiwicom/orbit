@@ -22,7 +22,7 @@ describe("CountryFlag", () => {
   it("should support omitting code and name", () => {
     let flag;
     render(<CountryFlag />);
-    flag = screen.getByRole("img");
+    flag = screen.getByRole("presentation");
     expect(flag).toHaveAttribute("src", expect.stringContaining("undefined"));
     expect(flag).toHaveAttribute("alt", "");
     cleanup();
@@ -39,13 +39,13 @@ describe("CountryFlag", () => {
     consoleSpy.mockRestore();
   });
   it("should support case insensitive code", () => {
-    render(<CountryFlag code="US" />);
+    render(<CountryFlag code="US" name="United States" />);
     const flag = screen.getByRole("img");
     expect(flag).toHaveAttribute("src", expect.stringContaining("us"));
   });
 
   it("should have the correct styles", () => {
-    render(<CountryFlag code="us" />);
+    render(<CountryFlag code="us" name="United States" />);
     const flag = screen.getByRole("img");
     const wrapper = flag.parentElement;
 
@@ -63,7 +63,7 @@ describe("CountryFlag", () => {
   });
 
   it("should have the correct size", () => {
-    render(<CountryFlag code="us" size="small" />);
+    render(<CountryFlag code="us" size="small" name="United States" />);
 
     const flag = screen.getByRole("img");
     const wrapper = flag.parentElement;

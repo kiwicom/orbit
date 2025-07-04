@@ -3,14 +3,14 @@ import cx from "clsx";
 
 import type { Props } from "../types";
 
-const TooltipWrapper = React.forwardRef<
-  HTMLSpanElement,
-  React.HTMLProps<HTMLSpanElement> & {
-    block?: Props["block"];
-    enabled?: Props["enabled"];
-    removeUnderlinedText?: Props["removeUnderlinedText"];
-  }
->(({ block, enabled, removeUnderlinedText, ...props }, ref) => {
+interface WrapperProps extends React.HTMLProps<HTMLSpanElement> {
+  block?: Props["block"];
+  enabled?: Props["enabled"];
+  removeUnderlinedText?: Props["removeUnderlinedText"];
+  ref?: React.Ref<HTMLSpanElement>;
+}
+
+const TooltipWrapper = ({ block, enabled, removeUnderlinedText, ref, ...props }: WrapperProps) => {
   return (
     <span
       className={cx(
@@ -29,6 +29,6 @@ const TooltipWrapper = React.forwardRef<
       {...props}
     />
   );
-});
+};
 
 export default TooltipWrapper;

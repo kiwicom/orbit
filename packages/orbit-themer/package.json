@@ -33,6 +33,6 @@
     "styled-components": "^5.3.5",
     "prism-react-renderer": "^2.3.1",
     "copy-to-clipboard": "^3.3.1",
-    "@types/react": ">=17.0.26"
+    "@types/react": ">=19.1.0"
   }
 }

@@ -17,7 +17,7 @@ const LazyImage = ({ src, placeholder, threshold }) => {
     }
   }, [src, entry]);
 
-  return <img alt="" src={source} ref={ref} />;
+  return <img alt="alt" src={source} ref={ref} />;
 };
 
 describe("useIntersect", () => {

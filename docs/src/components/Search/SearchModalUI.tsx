@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import {
   Heading,
-  Portal,
   Modal,
   Grid,
   ModalHeader,
@@ -27,6 +26,7 @@ import type { SearchResult } from "./types";
 import Tile from "../Tile";
 import { ICON_MAP, getIconFromItem } from "../icons/consts";
 import { load, update } from "../../utils/storage";
+import PortalWrapper from "../PortalWrapper";
 
 interface Props {
   onClose: () => void;
@@ -123,7 +123,7 @@ export default function SearchModalUI({
   );
 
   return (
-    <Portal>
+    <PortalWrapper>
       <StyledModalWrapper>
         <Modal size="extraLarge" onClose={onClose} labelClose="Close">
           <ModalHeader title={title} />
@@ -261,6 +261,6 @@ export default function SearchModalUI({
           </ModalSection>
         </Modal>
       </StyledModalWrapper>
-    </Portal>
+    </PortalWrapper>
   );
 }

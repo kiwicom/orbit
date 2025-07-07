@@ -27,6 +27,8 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
     [childrenArr],
   );
 
+  const timelineDirection = getDirection();
+
   return childrenArr && childrenArr.length > 0 ? (
     <div
       className={cx(
@@ -36,7 +38,7 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
       data-test={dataTest}
       id={id}
     >
-      <Stack flex shrink direction={getDirection()} as="ol">
+      <Stack flex shrink direction={timelineDirection} as="ol">
         <TimelineStatusProvider direction={direction}>
           {React.Children.map(childrenArr, (child, i) => {
             if (React.isValidElement(child)) {
@@ -45,6 +47,7 @@ const Timeline = ({ children, spaceAfter, direction, dataTest, id }: Props) => {
                   index={i}
                   last={i + 1 === childrenArr.length}
                   hasSubLabelMargin={hasSubLabelMargin}
+                  direction={timelineDirection}
                 >
                   {child}
                 </TimelineStepProvider>

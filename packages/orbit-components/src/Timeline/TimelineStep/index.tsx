@@ -27,7 +27,7 @@ const getActiveState = ({
 
 const TimelineStep = ({ children, label, subLabel, type, active }: Props) => {
   const { types, setTypes, isColumnOnDesktop } = useStatuses();
-  const { index, last, hasSubLabelMargin } = useStep();
+  const { index, last, hasSubLabelMargin, direction } = useStep();
   const { isDesktop } = useMediaQuery();
 
   const nextType = types[index + 1];
@@ -76,6 +76,7 @@ const TimelineStep = ({ children, label, subLabel, type, active }: Props) => {
       active={isActive}
       subLabel={subLabel}
       last={last}
+      direction={direction}
     >
       {children}
     </TimelineStepMobile>

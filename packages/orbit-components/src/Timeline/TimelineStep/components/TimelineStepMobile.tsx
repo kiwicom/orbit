@@ -10,9 +10,19 @@ import type { Props as StepProps, Type } from "../types";
 interface Props extends StepProps {
   last: boolean;
   nextType: Type;
+  direction?: "column" | "row";
 }
 
-const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active, last }: Props) => {
+const TimelineStepMobile = ({
+  type,
+  subLabel,
+  label,
+  nextType,
+  children,
+  active,
+  last,
+  direction,
+}: Props) => {
   return (
     <li className="relative">
       <Stack
@@ -22,7 +32,9 @@ const TimelineStepMobile = ({ type, subLabel, label, nextType, children, active,
         desktop={{ align: "start" }}
       >
         <TypeIcon type={type} active={!!active} mobile />
-        {!last && <ProgressLine status={nextType} prevStatus={type} />}
+        {(!last || direction === "row") && (
+          <ProgressLine status={last ? type : nextType} prevStatus={type} />
+        )}
         <Stack flex shrink direction="column" spacing="100">
           <Stack flex direction="column" spacing="100">
             <TextWrapper active={active || (last && type === "success")}>

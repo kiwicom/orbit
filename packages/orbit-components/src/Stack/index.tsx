@@ -26,7 +26,7 @@ import { JUSTIFY } from "../common/tailwind/justify";
 const shouldUseFlex = (props: CommonProps & Common.SpaceAfter) =>
   props.flex ||
   Object.keys(props)
-    .map(prop => ["spacing", "spaceAfter", "dataTest", "children"].includes(prop))
+    .map(prop => ["spacing", "spaceAfter", "dataTest", "children", "ariaLabel"].includes(prop))
     .includes(false);
 
 // use margins instead of gap to work with display:block

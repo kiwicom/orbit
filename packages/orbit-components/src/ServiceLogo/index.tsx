@@ -32,6 +32,7 @@ const ServiceLogo = ({
   size = SIZE_OPTIONS.MEDIUM,
   grayScale = false,
   dataTest,
+  alt = "",
   id,
 }: Props) => {
   const color = getColorUrlParam(grayScale);
@@ -42,7 +43,7 @@ const ServiceLogo = ({
       className={cx("orbit-service-logo w-auto bg-transparent", heightClasses[size])}
       src={`${baseURL}/${color}/${lowRes}/${name}.png`}
       srcSet={`${baseURL}/${color}/${highRes}/${name}.png 2x`}
-      alt={name}
+      alt={alt}
       id={id}
       data-test={dataTest}
     />

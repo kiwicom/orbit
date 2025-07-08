@@ -17,6 +17,7 @@ const meta: Meta<typeof ServiceLogo> = {
     size: SIZE_OPTIONS.MEDIUM,
     grayScale: false,
     id: "ID",
+    alt: "Service logo",
   },
 
   argTypes: {

@@ -52,5 +52,6 @@ type Name =
 export interface Props extends Common.Globals {
   readonly name: Name;
   readonly size?: Size;
+  readonly alt?: string;
   readonly grayScale?: boolean;
 }

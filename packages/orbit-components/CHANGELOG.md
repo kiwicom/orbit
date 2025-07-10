@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [26.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@26.0.0...@kiwicom/orbit-components@26.1.0) (2025-07-10)
+
+
+### Bug Fixes
+
+* import of Check icon in FakeCheckbox to reduce bundle size ([0e27feb](https://github.com/kiwicom/orbit/commit/0e27feb4be8a0c196bbeaf2d146bb926516da84e))
+* **Stack:** incorrectly rendered as flex when ariaLabel was  provided ([0a8e49d](https://github.com/kiwicom/orbit/commit/0a8e49da512d7261906b8ecbda28dc9ac101f10c))
+
+
+### Features
+
+* **Timeline:** improve accessibility by using semantic html ol and li for elements ([af3ca05](https://github.com/kiwicom/orbit/commit/af3ca05c18da1ca66392b31d0879d881cbe61700))
+
+
+
+
+
 # [26.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@25.1.0...@kiwicom/orbit-components@26.0.0) (2025-07-03)
 
 

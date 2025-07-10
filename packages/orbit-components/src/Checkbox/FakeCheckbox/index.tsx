@@ -4,7 +4,7 @@ import React from "react";
 import cx from "clsx";
 
 import type { Props } from "../types";
-import { Check } from "../../icons";
+import Check from "../../icons/Check";
 
 const FakeCheckbox = ({
   checked,

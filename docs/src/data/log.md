@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [27.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@26.1.0...@kiwicom/orbit-components@27.0.0) (2025-07-11)
+
+#### Features
+
+* update react to v19 ([93e7a73](https://github.com/kiwicom/orbit/commit/93e7a7306a418786429904bf7fa3fa1ff0009bdc))
+
+#### BREAKING CHANGES
+
+* orbit-components now requires React 19.1 or above
+
 ## [26.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@26.0.0...@kiwicom/orbit-components@26.1.0) (2025-07-10)
 
 #### Bug Fixes

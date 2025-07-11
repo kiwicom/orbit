@@ -111,7 +111,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-matchmedia-mock": "^1.1.0",
     "lerna": "8.1.9",
-    "lint-staged": "^15.2.5",
+    "lint-staged": "^16.1.2",
     "lodash": "^4.17.21",
     "markdown-magic": "^2.6.0",
     "os-browserify": "^0.3.0",

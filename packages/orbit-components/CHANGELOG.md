@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [27.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.0.0...@kiwicom/orbit-components@27.1.0) (2025-07-17)
+
+
+### Features
+
+* **ServiceLogo:** add alt and role props to improve accessibility ([17eb321](https://github.com/kiwicom/orbit/commit/17eb321a8f6d53cee37d02e68032fce11bda143d))
+
+
+
+
+
 # [27.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@26.1.0...@kiwicom/orbit-components@27.0.0) (2025-07-11)
 
 

@@ -26,8 +26,13 @@ const ItinerarySegment = ({
 
   const handleClick = (ev: React.SyntheticEvent<HTMLDivElement>) => {
     const target = ev.target as HTMLElement;
-    const isHorizontalScroll = target.closest(".orbit-horizontal-scroll");
-    if (isHorizontalScroll || (document && document.getSelection()?.type === "Range")) return;
+
+    const isHorizontalScrollOverflowing = target.closest(
+      ".orbit-horizontal-scroll[data-overflowing]",
+    );
+
+    if (isHorizontalScrollOverflowing || (document && document.getSelection()?.type === "Range"))
+      return;
 
     ev.stopPropagation();
     if (onClick) onClick(ev);

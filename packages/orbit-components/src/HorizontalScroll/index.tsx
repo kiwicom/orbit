@@ -141,6 +141,7 @@ const HorizontalScroll = ({
         isOverflowing && (isDragging ? "cursor-grabbing" : "cursor-grab"),
       )}
       data-test={dataTest}
+      data-overflowing={isOverflowing || undefined}
       id={id}
       ref={mergeRefs<HTMLDivElement>([ref, containerRef])}
       style={{ minHeight }}

@@ -50,7 +50,7 @@ const ItinerarySegmentDetail = ({
             <ItineraryIcon>{icon}</ItineraryIcon>
           </div>
 
-          <div className="flex w-full cursor-default items-center overflow-hidden">
+          <div className="flex w-full items-center overflow-hidden">
             <HorizontalScroll
               overflowElevation
               elevationColor="paletteWhite"

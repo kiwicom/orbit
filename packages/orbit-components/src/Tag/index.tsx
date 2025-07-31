@@ -20,6 +20,132 @@ const buttonClickEmulation = (
   }
 };
 
+/**
+ * @orbit-doc-start
+ * README
+ * ----------
+ * # Tag
+ *
+ * To implement Tag component into your project you'll need to add the import:
+ *
+ * ```jsx
+ * import Tag from "@kiwicom/orbit-components/lib/Tag";
+ * ```
+ *
+ * After adding import into your project you can use it simply like:
+ *
+ * ```jsx
+ * <Tag>Hello!</Tag>
+ * ```
+ *
+ * ## Props
+ *
+ * Table below contains all types of the props available in the Tag component.
+ *
+ * | Name         | Type                    | Default   | Description                                                                                          |
+ * | :----------- | :---------------------- | :-------- | :--------------------------------------------------------------------------------------------------- |
+ * | **children** | `React.Node`            |           | The content of the Tag.                                                                              |
+ * | dataTest     | `string`                |           | Optional prop for testing purposes.                                                                  |
+ * | iconLeft     | `React.Node`            |           | The displayed icon on the left.                                                                      |
+ * | id           | `string`                |           | Set `id` for `Tag`.                                                                                  |
+ * | dateTag      | `boolean`               |           | Optional prop, if it's true, selected color has a different background.                              |
+ * | type         | [`enum`](#enum)         | `neutral` | The color type of the Tag.                                                                           |
+ * | onClick      | `() => void \| Promise` |           | Function for handling the onClick event.                                                             |
+ * | onRemove     | `() => void \| Promise` |           | Function for handling the onClick event of the close icon. [See Functional specs](#functional-specs) |
+ * | selected     | `boolean`               | `false`   | If `true`, the Tag will have selected styles.                                                        |
+ * | size         | [`enum`](#enum)         | `normal`  | Size of the Tag.                                                                                     |
+ * | ref          | `func`                  |           | Prop for forwarded ref of the Tag.                                                                   |
+ * | labelDismiss | `string`                |           | Optional prop for `aria-label` attribute of dismiss button (available when `onRemove` is not null).  |
+ *
+ * ### enum
+ *
+ * | size       | type        |
+ * | :--------- | :---------- |
+ * | `"small"`  | `"neutral"` |
+ * | `"normal"` | `"colored"` |
+ *
+ * ## Functional specs
+ *
+ * - By passing the `onRemove` the close icon will appear on the right side of the Tag.
+ *
+ *
+ * Accessibility
+ * -------------
+ * ## Accessibility
+ *
+ * The Tag component has been designed with accessibility in mind, providing proper semantic structure and keyboard navigation for interactive labels that can be selected, clicked, or removed.
+ *
+ * ### Accessibility Props
+ *
+ * **Tag props:**
+ *
+ * | Name         | Type   | Description                                                                                                                                                        |
+ * | :----------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ * | labelDismiss | string | Specifies the accessible name for the dismiss button when `onRemove` is provided. Required for screen reader users to understand the purpose of the remove action. |
+ *
+ * ### Automatic Accessibility Features
+ *
+ * - The component automatically manages ARIA attributes:
+ *   - When `onClick` is provided, the tag receives `role="button"` and `tabIndex="0"` to make it keyboard accessible
+ *   - When `onRemove` is provided, the dismiss button receives `role="button"`, `tabIndex="0"`, and `aria-label` from the `labelDismiss` prop
+ *   - The dismiss button is properly isolated from the main tag interaction to prevent nested interactive elements
+ * - Focus management is handled automatically:
+ *   - Interactive tags are included in the tab order with proper focus indicators
+ *   - The dismiss button can be focused independently from the main tag when both are present
+ * - Keyboard navigation is fully supported:
+ *   - **Space** and **Enter** keys activate both the main tag and dismiss button
+ *   - Event propagation is properly managed to prevent conflicts between tag and dismiss actions
+ *
+ * ### Best Practices
+ *
+ * - Always provide a `labelDismiss` prop when using `onRemove` to ensure screen reader users understand the purpose of the dismiss button.
+ * - Use clear, descriptive text content for tags to help users understand their meaning and purpose.
+ * - Use the `selected` prop to indicate which tags are currently active or applied, providing clear visual feedback through enhanced contrast and styling.
+ *
+ * ### Icons
+ *
+ * When using icons in tags:
+ *
+ * - Provide an `ariaLabel` if the icon has a meaning by itself that is not obvious to screen readers, regardless of the existence of text
+ * - If the icon is decorative and the badge contains text, the icon should be marked as `aria-hidden="true"`
+ *
+ * ### Examples
+ *
+ * #### Basic Interactive Tag
+ *
+ * ```jsx
+ * <Tag onClick={() => console.log("Tag clicked")}>Transport</Tag>
+ * ```
+ *
+ * Screen reader announces: "Transport, button"
+ *
+ * #### Tag with Both Click and Remove Actions
+ *
+ * ```jsx
+ * <Tag
+ *   onClick={() => console.log("Tag clicked")}
+ *   onRemove={() => console.log("Tag removed")}
+ *   labelDismiss="Remove transport filter"
+ * >
+ *   Transport
+ * </Tag>
+ * ```
+ *
+ * Screen reader announces: "Transport, button" for the main tag, then "Remove transport filter, button" for the dismiss button
+ *
+ * #### Tag with Icon
+ *
+ * ```jsx
+ * <Tag iconLeft={<Icons.PlusMinus ariaHidden />} onClick={() => console.log("Tag clicked")}>
+ *   Add Filter
+ * </Tag>
+ * ```
+ *
+ * Screen reader announces: "Add Filter, button"
+ *
+ *
+ * @orbit-doc-end
+ */
 const Tag = ({
   selected,
   children,

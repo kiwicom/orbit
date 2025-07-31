@@ -33,6 +33,107 @@ const getTypeToken = (type: Type) => {
   return tokens[type];
 };
 
+/**
+ * @orbit-doc-start
+ * README
+ * ----------
+ * # Badge
+ *
+ * To implement Badge component into your project you'll need to add the import:
+ *
+ * ```jsx
+ * import Badge from "@kiwicom/orbit-components/lib/Badge";
+ * ```
+ *
+ * After adding import into your project you can use it simply like:
+ *
+ * ```jsx
+ * <Badge>Hello!</Badge>
+ * ```
+ *
+ * ## Props
+ *
+ * Table below contains all types of the props available in Badge component.
+ *
+ * | Name         | Type                    | Default     | Description                                                          |
+ * | :----------- | :---------------------- | :---------- | :------------------------------------------------------------------- |
+ * | children     | `React.Node`            |             | The content of the Badge.                                            |
+ * | dataTest     | `string`                |             | Optional prop for testing purposes.                                  |
+ * | id           | `string`                |             | Set `id` for `Badge`                                                 |
+ * | icon         | `React.Node`            |             | The displayed icon on the left.                                      |
+ * | type         | [`enum`](#enum)         | `"neutral"` | The color type of the Badge.                                         |
+ * | ariaLabel    | `string`                |             | Adds prop adds `aria-label` to an element, useful for screenreaders. |
+ * | **carriers** | [`Carrier[]`](#carrier) |             | The content of the CarrierLogo, passed as array of objects.          |
+ *
+ * ### Carrier
+ *
+ * Table below contains all types of the props available for object in Carrier array.
+ *
+ * | Name     | Type            | Description                                                                                   |
+ * | :------- | :-------------- | :-------------------------------------------------------------------------------------------- |
+ * | **code** | `string`        | The IATA code of the Carrier, defines which logo will be rendered.                            |
+ * | name     | `string`        | The name of the Carrier, mainly for information.                                              |
+ * | type     | [`enum`](#enum) | The preferred placeholder for non-existing carrier. [See Functional specs](#functional-specs) |
+ *
+ * ### enum
+ *
+ * | type               |
+ * | :----------------- |
+ * | `"neutral"`        |
+ * | `"dark"`           |
+ * | `"info"`           |
+ * | `"success"`        |
+ * | `"warning"`        |
+ * | `"critical"`       |
+ * | `"infoSubtle"`     |
+ * | `"criticalSubtle"` |
+ * | `"successSubtle"`  |
+ * | `"warningSubtle"`  |
+ * | `"bundleBasic"`    |
+ * | `"bundleMedium"`   |
+ * | `"bundleTop"`      |
+ *
+ * ## Functional specs
+ *
+ * - If you want to use `circled` badge, please take a look on **NotificationBadge**.
+ *
+ *
+ * Accessibility
+ * -------------
+ * ## Accessibility
+ *
+ * The Badge component has been designed with accessibility in mind.
+ *
+ * ### Screen reader support
+ *
+ * The Badge component supports screen readers through the `ariaLabel` prop. This prop is especially important when:
+ *
+ * - The badge contains only an icon
+ * - The content is not sufficient to convey the full meaning
+ * - Additional context would help understand the badge's purpose
+ *
+ * For example:
+ *
+ * ```jsx
+ * <Badge ariaLabel="4 passengers" icon={<Icons.Passenger />}>
+ *   4
+ * </Badge>
+ * ```
+ *
+ * In this example, while sighted users see the number "4" with a passengers icon, screen reader users hear "4 passengers" which provides the complete context.
+ *
+ * As it is announced by screen readers, the content should have meaningful and translated text.
+ *
+ * ### Icons
+ *
+ * When using icons in badges:
+ *
+ * - Provide an `ariaLabel` if the icon has a meaning by itself that is not obvious to screen readers, regardless of the existence of text
+ * - If the icon is decorative and the badge contains text, the icon should be marked as `aria-hidden="true"`
+ *
+ *
+ * @orbit-doc-end
+ */
 const Badge = ({
   type = TYPE_OPTIONS.NEUTRAL,
   icon,

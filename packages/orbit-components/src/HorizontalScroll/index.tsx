@@ -50,6 +50,107 @@ const ElevationHaze = ({ className, style }: { className: string; style: React.C
   return <div className={cx("z-default absolute top-0 h-full", className)} style={style} />;
 };
 
+/**
+ * @orbit-doc-start
+ * README
+ * ----------
+ * # HorizontalScroll
+ *
+ * To implement HorizontalScroll component into your project you'll need to add the import:
+ *
+ * ```jsx
+ * import HorizontalScroll from "@kiwicom/orbit-components/lib/HorizontalScroll";
+ * ```
+ *
+ * After adding import into your project you can use it simply like:
+ *
+ * ```jsx
+ * <HorizontalScroll>
+ *   <FirstComponent />
+ *   <SecondComponent />
+ *   <ThirdComponent />
+ *   ...etc
+ * </HorizontalScroll>
+ * ```
+ *
+ * ## Props
+ *
+ * | Name                | Type                        | Required | Default            | Description                                                                   |
+ * | ------------------- | --------------------------- | -------- | ------------------ | ----------------------------------------------------------------------------- |
+ * | minHeight           | `number`                    |          |                    | set minimal height                                                            |
+ * | dataTest            | `string`                    |          |                    | prop for testing purposes                                                     |
+ * | id                  | `string`                    |          |                    | Set `id` for `HorizontalScroll`                                               |
+ * | spacing             | [`Spacing`](#spacing)       |          | "300"              | the spacing between children elements                                         |
+ * | children            | `React.ReactNode`           | ✔️       |                    | content of HorizontalScroll                                                   |
+ * | scrollSnap          | [`ScrollSnap`](#scrollsnap) |          | "none"             | set value for `scroll-snap-type` property                                     |
+ * | scrollPadding       | `number`                    |          |                    | set value for `scroll-padding` property                                       |
+ * | overflowElevation   | `boolean`                   |          |                    | set box-shadow on sides during scroll                                         |
+ * | elevationColor      | `string`                    |          | `paletteCloudDark` | set box-shadow color. Value must be the name of a color token from the theme. |
+ * | onOverflow          | `() => void`                |          |                    | callback function, fires, if content is overflowed                            |
+ * | arrows              | `boolean`                   |          |                    | show arrows                                                                   |
+ * | arrowColor          | `string`                    |          |                    | set arrows color                                                              |
+ * | arrowLeftAriaLabel  | `string`                    |          |                    | set aria-label for left arrow                                                 |
+ * | arrowRightAriaLabel | `string`                    |          |                    | set aria-label for right arrow                                                |
+ *
+ * ## ScrollSnap
+ *
+ * | ScrollSnap    |
+ * | ------------- |
+ * | `"mandatory"` |
+ * | `"proximity"` |
+ * | `"inline"`    |
+ * | `"none"`      |
+ *
+ * ## Spacing
+ *
+ * | Spacing  |
+ * | -------- |
+ * | `"none"` |
+ * | `"50"`   |
+ * | `"100"`  |
+ * | `"150"`  |
+ * | `"200"`  |
+ * | `"300"`  |
+ * | `"400"`  |
+ * | `"500"`  |
+ * | `"600"`  |
+ * | `"800"`  |
+ * | `"1000"` |
+ * | `"1200"` |
+ * | `"1600"` |
+ *
+ *
+ * Accessibility
+ * -------------
+ * ## Accessibility
+ *
+ * The HorizontalScroll component comes with built-in accessibility features for screen reader users through ARIA labels.
+ *
+ * ### ARIA labels
+ *
+ * When using arrows (`arrows`), you must provide accessibility labels for both arrow buttons using the `arrowLeftAriaLabel` and `arrowRightAriaLabel` props. These labels should be properly translated strings, as they will be read by screen readers to users in their preferred language.
+ *
+ * ```jsx
+ * <HorizontalScroll
+ *   arrows
+ *   arrowLeftAriaLabel="Scroll left" // Should be a translated string
+ *   arrowRightAriaLabel="Scroll right" // Should be a translated string
+ * >
+ *   {/* content *\/}
+ * </HorizontalScroll>
+ * ```
+ *
+ * The labels should clearly describe the action that will occur when the button is pressed. For example:
+ *
+ * - "See previous items"
+ * - "Scroll to previous cards"
+ * - "Show previous products"
+ *
+ * Remember that these strings must be translated to provide an accessible experience for screen reader users across different languages.
+ *
+ *
+ * @orbit-doc-end
+ */
 const HorizontalScroll = ({
   children,
   spacing = "300",

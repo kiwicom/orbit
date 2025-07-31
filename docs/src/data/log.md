@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [27.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.1.0...@kiwicom/orbit-components@27.1.1) (2025-07-31)
+
+#### Bug Fixes
+
+* **ItinerarySegment:** enable click when horizontal scroll is absent ([23b4850](https://github.com/kiwicom/orbit/commit/23b4850dd48eebfbf9cd112f91397ea4be8765df))
+* **Radio:** remove fullwidth property for FakeRadio ([fd6920b](https://github.com/kiwicom/orbit/commit/fd6920b726647e32a38c8093fe60c61ca1bc5e62))
+
 ## [27.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.0.0...@kiwicom/orbit-components@27.1.0) (2025-07-17)
 
 #### Features

@@ -85,7 +85,7 @@ const Textarea = (props: Props) => {
           className={cx(
             "w-full appearance-none",
             "font-base text-large p-300 leading-normal",
-            "rounded-100 relative box-border block overflow-auto",
+            "rounded-200 relative box-border block overflow-auto",
             "min-h-form-box-normal",
             "duration-fast transition-shadow ease-in-out",
             "border border-transparent",

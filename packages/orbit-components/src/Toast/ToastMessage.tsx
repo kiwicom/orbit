@@ -58,7 +58,7 @@ const ToastMessage = ({
     >
       <div
         className={cx(
-          "rounded-150 bg-ink-dark p-200 relative w-full overflow-hidden will-change-transform",
+          "rounded-300 bg-ink-dark p-200 relative w-full overflow-hidden will-change-transform",
           "lm:max-w-modal-extra-small lm:w-auto lm:p-300 [&_svg]:min-h-icon-medium",
           visible &&
             "pointer-events-auto animate-[toast-fade-in_theme(transitionDuration.normal)_forwards]",
@@ -82,7 +82,7 @@ const ToastMessage = ({
         }}
       >
         <div
-          className="rounded-150 bg-white-normal z-default absolute left-0 top-0 size-full animate-[toast-light_var(--toast-message-duration)_linear] opacity-10 will-change-transform rtl:animate-[toast-light-rtl_var(--toast-message-duration)_linear]"
+          className="rounded-300 bg-white-normal z-default absolute left-0 top-0 size-full animate-[toast-light_var(--toast-message-duration)_linear] opacity-10 will-change-transform rtl:animate-[toast-light-rtl_var(--toast-message-duration)_linear]"
           style={
             {
               "--toast-message-duration": `${dismissTimeout}ms`,

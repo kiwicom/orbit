@@ -36,7 +36,7 @@ const Tab = (props: Props) => {
         "min-w-fit",
         "box-border",
         "font-base font-medium",
-        "rounded-t-100",
+        "rounded-t-200",
         "duration-fast transition-colors ease-in-out",
         "px-400 focus:z-default",
         compact ? "text-normal py-[5px] leading-normal" : "text-large leading-large py-[9px]",

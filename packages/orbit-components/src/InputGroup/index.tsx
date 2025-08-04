@@ -128,7 +128,7 @@ const InputGroup = ({
 
         <div
           className={cx(
-            "text-normal h-form-box-normal duration-fast rounded-150 tb:rounded-100 z-default w-full transition-shadow ease-in-out",
+            "text-normal h-form-box-normal duration-fast rounded-200 z-default w-full transition-shadow ease-in-out",
             disabled ? "bg-form-element-disabled-background" : "bg-form-element-background",
             !errorReal && "shadow-form-element",
             !errorReal && !disabled && "hover:shadow-form-element-hover",

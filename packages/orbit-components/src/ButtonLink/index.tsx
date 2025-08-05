@@ -11,6 +11,7 @@ import {
   paddingNoIconsStyles,
   paddingRightIconStyles,
   sizeStyles,
+  radiusStyles,
 } from "../primitives/ButtonPrimitive/sizes";
 import type { Props, Type } from "./types";
 
@@ -61,6 +62,7 @@ const ButtonLink = ({
       iconLeft={iconLeft}
       iconRight={iconRight}
       disabled={disabled}
+      borderRadius={radiusStyles[size]}
       {...props}
       className={cx(
         "space-x-200 rtl:space-x-reverse",

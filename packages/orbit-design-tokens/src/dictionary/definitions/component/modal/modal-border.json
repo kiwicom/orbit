@@ -3,7 +3,7 @@
     "modal": {
       "border-radius": {
         "type": "border-radius",
-        "value": 12
+        "value": 16
       }
     }
   }

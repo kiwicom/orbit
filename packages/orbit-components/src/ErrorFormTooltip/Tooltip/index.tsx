@@ -7,6 +7,12 @@ import KEY_CODE_MAP from "../../common/keyMaps";
 import type { Props } from "./types";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
+const getCrossAxis = (inlineLabel: boolean | undefined, isDesktop: boolean | null) => {
+  if (inlineLabel) return -6;
+  if (isDesktop) return -8;
+  return -4;
+};
+
 const ErrorFormTooltip = ({
   onShown,
   dataTest,
@@ -30,7 +36,7 @@ const ErrorFormTooltip = ({
     middleware: [
       offset({
         mainAxis: 3,
-        crossAxis: inlineLabel || isDesktop ? 0 : 4,
+        crossAxis: getCrossAxis(inlineLabel, isDesktop),
       }),
     ],
   });
@@ -77,13 +83,13 @@ const ErrorFormTooltip = ({
       data-test={dataTest}
       className={cx(
         "flex justify-between overflow-visible",
-        "rounded-150 py-200 px-300 z-10 box-border",
+        "rounded-300 py-200 px-300 z-10 box-border",
         "max-h-none w-[min(calc(100%-20px),_100vw)]",
         isHelp ? "pe-300 bg-blue-normal" : "bg-red-normal",
         shown ? "visible opacity-100" : "invisible opacity-0",
         "duration-fast transition-[opacity,visibility] ease-in-out",
         "bottom-[var(--error-form-tooltip-bottom)] left-[var(--error-form-tooltip-left)] right-[var(--error-form-tooltip-right)] top-[var(--error-form-tooltip-top)] [position:var(--error-form-tooltip-position)] [transform:var(--error-form-tooltip-transform)]",
-        "lm:w-auto tb:rounded-100",
+        "lm:w-auto",
         "[&>img]:max-w-full",
       )}
       style={cssVars as React.CSSProperties}
@@ -93,7 +99,9 @@ const ErrorFormTooltip = ({
           "start-200 bottom-50 absolute rtl:start-0",
           inlineLabel && "rtl:start-0",
           isHelp ? "before:bg-blue-normal" : "before:bg-red-normal",
-          "before:size-200 before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45",
+          "before:size-200 before:absolute before:rotate-45",
+          "before:-translate-y-1/2 before:translate-x-1/2",
+          "rtl:before:-translate-x-300",
         )}
       />
       <div

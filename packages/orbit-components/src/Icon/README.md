@@ -29,15 +29,15 @@ Table below contains all types of the props available for icons in general.
 
 ### enum
 
-| color         | size       |
-| :------------ | :--------- |
-| `"primary"`   | `"small"`  |
-| `"secondary"` | `"medium"` |
-| `"tertiary"`  | `"large"`  |
-| `"info"`      |            |
-| `"success"`   |            |
-| `"warning"`   |            |
-| `"critical"`  |            |
+| color         | size           |
+| :------------ | :------------- |
+| `"primary"`   | `"small"`      |
+| `"secondary"` | `"medium"`     |
+| `"tertiary"`  | `"large"`      |
+| `"info"`      | `"extraLarge"` |
+| `"success"`   |                |
+| `"warning"`   |                |
+| `"critical"`  |                |
 
 ## Functional specs
 

@@ -128,6 +128,7 @@ export const ButtonPrimitive: Story = {
     backgroundHover: "#da0a0a",
     backgroundActive: "#da0a0a",
     backgroundFocus: "#da0a0a",
+    borderRadius: "rounded-200",
     boxShadow: "0 8px 8px -6px rgba(0,0,0,.25)",
     boxShadowHover: "0 8px 8px -6px rgba(0,0,0,.25)",
     boxShadowActive: "0 8px 8px -6px rgba(0,0,0,.25)",

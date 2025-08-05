@@ -18,6 +18,7 @@ import useTheme from "../../../hooks/useTheme";
 import type { Theme } from "../../../defaultTheme";
 
 const ARROW_SIZE = 6;
+const BORDER_RADIUS = 12;
 
 const getArrowColor = ({
   error,
@@ -81,6 +82,7 @@ const TooltipContent = ({
       shift(),
       arrow({
         element: arrowRef,
+        padding: BORDER_RADIUS,
       }),
     ],
   });
@@ -115,7 +117,7 @@ const TooltipContent = ({
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <div
       className={cx(
-        "rounded-100 px-300 shadow-level3 z-[10012] box-border block w-auto overflow-visible",
+        "rounded-300 px-300 shadow-level3 z-[10012] box-border block w-auto overflow-visible",
         "duration-fast transition-[visibility,_opacity] ease-in-out",
         "[&_img]:max-w-full]",
         contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal)) ? "py-200" : "py-300",

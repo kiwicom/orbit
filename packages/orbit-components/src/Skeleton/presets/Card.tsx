@@ -9,7 +9,7 @@ const Card = ({ height = 98, rowHeight = 98, ...props }: Props) => {
       {...props}
       rows={1}
       height={height}
-      rowBorderRadius={3}
+      rowBorderRadius={12}
       rowHeight={rowHeight}
       rowOffset={0}
     />

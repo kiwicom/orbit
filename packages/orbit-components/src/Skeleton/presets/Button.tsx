@@ -10,7 +10,7 @@ const Button = ({ height = 44, rowHeight = 44, width = 150, ...props }: Props) =
       height={height}
       width={width}
       rowHeight={rowHeight}
-      rowBorderRadius={6}
+      rowBorderRadius={8}
       rowOffset={0}
       {...props}
     />

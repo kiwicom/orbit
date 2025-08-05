@@ -4,7 +4,6 @@ import * as React from "react";
 import cx from "clsx";
 
 import FormLabel from "../FormLabel";
-import Stack from "../Stack";
 import SwitchSegment from "./SwitchSegment";
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
@@ -42,10 +41,10 @@ const SegmentedSwitch = ({
       data-test={dataTest}
       ref={labelRef}
       className={cx(
-        "gap-50 relative flex w-full flex-col",
+        "gap-50 relative flex w-full min-w-fit flex-col",
         spaceAfter && spaceAfterClasses[spaceAfter],
-        "[&_.orbit-switch-segment-label:first-child_.orbit-switch-segment-text]:rounded-s-[5px]",
-        "[&_.orbit-switch-segment-label:last-child_.orbit-switch-segment-text]:rounded-e-[5px]",
+        "[&_.orbit-switch-segment-label:first-child_.orbit-switch-segment-text]:rounded-s-300",
+        "[&_.orbit-switch-segment-label:last-child_.orbit-switch-segment-text]:rounded-e-300",
       )}
       style={{ maxWidth }}
       role="group"
@@ -62,7 +61,19 @@ const SegmentedSwitch = ({
           {label}
         </FormLabel>
       )}
-      <Stack flex spacing="none">
+      <div
+        className={cx(
+          "rounded-300 border-cloud-dark flex border",
+          "[&>label]:border-cloud-dark [&>label]:border-s",
+          "[&>label:has(input:checked)]:border-s-0",
+          "[&>label:has(input:focus)]:border-s-0",
+          "[&>label:not(:has(input:checked)):nth-of-type(1)]:border-s-0",
+          "[&>label:has(input:checked):not(:nth-of-type(0))_+_label:not(:has(input:checked))]:border-s-0",
+          "[&>label:has(input:checked):not(:nth-of-type(0))_+_label:has(input:checked)_+_label:not(:has(input:checked))]:border-s-0",
+          "[&>label:has(input:focus):not(:nth-of-type(0))_+_label:not(:has(input:checked))]:border-s-0",
+          "[&>label:has(input:focus):not(:nth-of-type(0))_+_label:has(input:focus)_+_label:not(:has(input:checked))]:border-s-0",
+        )}
+      >
         {options.map(({ value, label: optionLabel, ...props }) => (
           <SwitchSegment
             key={value}
@@ -74,7 +85,7 @@ const SegmentedSwitch = ({
             {...props}
           />
         ))}
-      </Stack>
+      </div>
       {hasTooltip && (
         <ErrorFormTooltip
           help={help}

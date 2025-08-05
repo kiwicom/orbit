@@ -124,7 +124,7 @@ const Alert = (props: Props) => {
     <div
       className={cx(
         "orbit-alert",
-        "rounded-150 tb:rounded-100 text-ink-dark font-base text-normal p-300 relative box-border flex w-full leading-normal",
+        "rounded-300 text-ink-dark font-base text-normal p-300 relative box-border flex w-full leading-normal",
         Boolean(inlineActions) && "items-center",
         suppressed ? "bg-cloud-light" : COLORS[type],
         spaceAfter && spaceAfterClasses[spaceAfter],

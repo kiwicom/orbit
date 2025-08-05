@@ -7,6 +7,12 @@ import KEY_CODE_MAP from "../../common/keyMaps";
 import type { Props } from "./types";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
+const getCrossAxis = (inlineLabel: boolean | undefined, isDesktop: boolean | null) => {
+  if (inlineLabel) return -6;
+  if (isDesktop) return -8;
+  return -4;
+};
+
 const ErrorFormTooltip = ({
   onShown,
   dataTest,
@@ -30,7 +36,7 @@ const ErrorFormTooltip = ({
     middleware: [
       offset({
         mainAxis: 3,
-        crossAxis: inlineLabel || isDesktop ? -6 : -4,
+        crossAxis: getCrossAxis(inlineLabel, isDesktop),
       }),
     ],
   });

@@ -244,7 +244,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "headingTitle6FontWeight": "700",
   "headingTitle6LineHeight": "18px",
   "iconCriticalForeground": "#D21C1C",
-  "iconExtraLargeSize": "32px",
+  "iconExtraLargeSize": "28px",
   "iconInfoForeground": "#0070C8",
   "iconLargeSize": "24px",
   "iconMediumSize": "20px",

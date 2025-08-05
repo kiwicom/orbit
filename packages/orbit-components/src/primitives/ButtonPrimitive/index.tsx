@@ -7,6 +7,7 @@ import Loading from "../../Loading";
 import createRel from "./common/createRel";
 import onKeyDown from "../../utils/handleKeyDown";
 import { getSpaceAfterClasses } from "../../common/tailwind";
+import { radiusStyles } from "./sizes";
 import type { Props } from "./types";
 
 interface ComponentProps extends Props {
@@ -87,6 +88,7 @@ const ButtonPrimitive = ({
   boxShadowHover,
   boxShadowFocus,
   boxShadowActive,
+  borderRadius,
   // Content vars
   contentWidth,
   // Icon vars
@@ -156,7 +158,7 @@ const ButtonPrimitive = ({
         className,
         "orbit-button-primitive font-base duration-fast group relative max-w-full select-none items-center justify-center border-none text-center leading-none transition-all *:align-middle [&_.orbit-loading-spinner]:stroke-current",
         fullWidth ? "w-full flex-auto" : "flex-none",
-        circled !== true && "rounded-150 tb:rounded-100",
+        circled !== true && (borderRadius || radiusStyles.normal),
         isDisabled
           ? "cursor-not-allowed opacity-30"
           : "cursor-pointer hover:no-underline focus:no-underline active:no-underline",

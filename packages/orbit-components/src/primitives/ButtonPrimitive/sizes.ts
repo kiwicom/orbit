@@ -6,6 +6,12 @@ export const sizeStyles: Record<Size, string> = {
   large: "h-form-box-large text-large",
 };
 
+export const radiusStyles: Record<Size, string> = {
+  small: "rounded-200",
+  normal: "rounded-200",
+  large: "rounded-300",
+};
+
 export const paddingNoIconsStyles: Record<Size, string> = {
   small: "px-button-padding-sm",
   normal: "px-button-padding-md",

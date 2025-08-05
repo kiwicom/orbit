@@ -2,6 +2,7 @@ export enum ICON_SIZES {
   SMALL = "small",
   MEDIUM = "medium",
   LARGE = "large",
+  EXTRA_LARGE = "extraLarge",
 }
 
 export enum ICON_COLORS {

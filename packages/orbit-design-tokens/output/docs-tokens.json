@@ -4903,7 +4903,7 @@
     },
     "javascript": {
       "name": "iconExtraLargeSize",
-      "value": "32px"
+      "value": "28px"
     },
     "foundation": {
       "name": "iconExtraLargeSize",
@@ -4911,7 +4911,7 @@
     },
     "scss": {
       "name": "iconExtraLargeSize",
-      "value": "32px"
+      "value": "28px"
     }
   },
   "illustrationExtraSmallHeight": {

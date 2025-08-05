@@ -33,6 +33,25 @@ const meta: Meta<typeof TooltipPrimitive> = {
   args: {
     onShow: action("onShow"),
   },
+
+  argTypes: {
+    placement: {
+      options: [...Object.values(AUTO_PLACEMENTS), ...Object.values(PLACEMENTS)],
+      control: {
+        type: "select",
+      },
+    },
+    children: {
+      control: {
+        type: "text",
+      },
+    },
+    content: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 };
 
 export default meta;
@@ -116,6 +135,7 @@ export const TooltipPrimitiveOnBlockElements: Story = {
     content:
       "Write your text here. If it’s longer than three lines though, consider format your content in some more structured way.",
     block: true,
+    placement: PLACEMENTS.BOTTOM,
   },
 };
 

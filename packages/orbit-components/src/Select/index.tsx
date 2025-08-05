@@ -162,7 +162,7 @@ const Select = (props: Props) => {
               className={cx(
                 "cursor-pointer appearance-none bg-transparent",
                 insideInputGroup
-                  ? "focus:outline-blue-normal focus:rounded-150 focus:tb:rounded-100 focus:outline-2 focus:outline-offset-0"
+                  ? "focus:outline-blue-normal focus:rounded-200 focus:outline-2 focus:outline-offset-0"
                   : "outline-none",
                 filled ? "text-form-element-filled-foreground" : "text-form-element-foreground",
                 "font-base text-form-element-large",
@@ -173,7 +173,7 @@ const Select = (props: Props) => {
                 "border-0",
                 Boolean(customValueText) && "!text-transparent",
                 "duration-fast transition-shadow ease-in-out",
-                "rounded-150 tb:rounded-100",
+                "rounded-200",
                 "[&>option]:text-form-element-filled-foreground",
                 "disabled:text-form-element-disabled-foreground disabled:cursor-not-allowed",
               )}

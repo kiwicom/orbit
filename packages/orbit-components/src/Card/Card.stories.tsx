@@ -184,6 +184,12 @@ export const CardWithSections: Story = {
       />
       <CardSection title={sectionTitle} description={sectionDescription} />
       <CardSection title={sectionTitle} description={sectionDescription} />
+      <CardSection
+        title={sectionTitle}
+        description={sectionDescription}
+        onClick={action("onClick")}
+        actions={<ButtonLink asComponent="div">Button</ButtonLink>}
+      />
     </Card>
   ),
 

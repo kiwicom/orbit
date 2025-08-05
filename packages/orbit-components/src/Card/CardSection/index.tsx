@@ -61,8 +61,9 @@ export default function CardSection({
       className={cx(
         "orbit-card-section",
         "duration-fast lm:border-x border-b transition-all ease-in-out",
-        opened && "my-200 rounded-100 shadow-level2 [&+*]:border-t",
-        onClick != null && "hover:bg-white-normal-hover cursor-pointer",
+        opened && "my-200 rounded-300 shadow-level2 [&+*]:border-t",
+        (onClick != null || (expandable && !opened)) &&
+          "hover:bg-white-normal-hover cursor-pointer",
       )}
       data-test={dataTest}
       role={isRoleButton ? "button" : undefined}
@@ -76,7 +77,10 @@ export default function CardSection({
       {(title != null || header != null) && expandable && (
         <div
           role="button"
-          className="p-400 lm:p-600 hover:bg-white-normal-hover w-full"
+          className={cx(
+            "p-400 lm:p-600 w-full",
+            opened && "hover:bg-white-normal-hover hover:rounded-t-300",
+          )}
           aria-expanded={opened}
           aria-controls={slideID}
           onClick={handleClick}

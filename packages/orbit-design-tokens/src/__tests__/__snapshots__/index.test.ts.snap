@@ -264,7 +264,7 @@ exports[`defaultTokens should match snapshot 1`] = `
   "lineHeightNormal": "20px",
   "lineHeightSmall": "16px",
   "lineHeightText": "1.4",
-  "modalBorderRadius": "12px",
+  "modalBorderRadius": "16px",
   "modalExtraLargeWidth": "1280px",
   "modalExtraSmallWidth": "360px",
   "modalLargeWidth": "900px",

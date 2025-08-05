@@ -706,7 +706,7 @@ const createTokens: CreateTokens = foundation => ({
   illustrationMediumHeight: "200px",
   illustrationLargeHeight: "280px",
   illustrationDisplayHeight: "460px",
-  modalBorderRadius: "12px",
+  modalBorderRadius: "16px",
   modalExtraSmallWidth: "360px",
   modalSmallWidth: "540px",
   modalNormalWidth: "740px",

@@ -24,7 +24,7 @@ export const ModalHeaderWrapper = ({
       className={cx(
         className,
         "orbit-modal-header-container",
-        "rounded-t-modal box-border block w-full",
+        "rounded-t-400 box-border block w-full",
         "lm:[&_~_.orbit-modal-section]:rounded-t-none",
         suppressed
           ? [

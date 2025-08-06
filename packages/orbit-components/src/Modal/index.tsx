@@ -443,7 +443,7 @@ const Modal = ({
         <div
           className={cx(
             "orbit-modal-wrapper-content",
-            "lm:rounded-modal lm:overflow-visible overflow-y-auto overflow-x-hidden",
+            "lm:rounded-400 lm:overflow-visible overflow-y-auto overflow-x-hidden",
             "font-base bg-elevation-flat shadow-level4 absolute box-border w-full",
             "lm:relative lm:bottom-auto lm:pb-0",
             "lm:[&_.orbit-modal-section:last-of-type]:pb-1000 lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
@@ -455,8 +455,8 @@ const Modal = ({
             isMobileFullPage
               ? "top-0 max-h-full"
               : [
-                  "rounded-t-modal",
-                  scrolled && "[&_.orbit-modal-mobile-header]:rounded-tl-modal",
+                  "rounded-t-400",
+                  scrolled && "[&_.orbit-modal-mobile-header]:rounded-tl-400",
                   scrolled && "[&_.orbit-modal-mobile-header]:top-800",
                 ],
 
@@ -499,7 +499,7 @@ const Modal = ({
                 "lm:rounded-none",
                 fixedClose || scrolled ? "lm:top-0 lm:right-auto fixed" : "absolute",
                 !isMobileFullPage && (fixedClose || scrolled) ? "top-800" : "top-0",
-                !isMobileFullPage && "rounded-t-modal",
+                !isMobileFullPage && "rounded-t-400",
                 modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
                 scrolled && "shadow-fixed bg-white-normal",
                 "[&_+_.orbit-modal-section:first-of-type]:pt-1300 [&_+_.orbit-modal-section:first-of-type]:m-0 [&_+_.orbit-modal-section:first-of-type]:border-t-0",

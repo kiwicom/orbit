@@ -204,6 +204,10 @@ export default function orbitTailwindPreset(options?: Options): Config {
             return acc;
           }, {}),
           white: tokens.paletteWhite,
+          "alert-critical": convertHexToRgba(tokens.paletteRedNormal, 10),
+          "alert-info": convertHexToRgba(tokens.paletteBlueNormal, 10),
+          "alert-success": convertHexToRgba(tokens.paletteGreenNormal, 10),
+          "alert-warning": convertHexToRgba(tokens.paletteOrangeNormal, 10),
           "form-element": tokens.formElementBorderColor,
           "form-element-disabled": tokens.formElementBorderColorDisabled,
           "form-element-hover": tokens.formElementBorderColorHover,

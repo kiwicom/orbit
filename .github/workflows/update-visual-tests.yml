@@ -27,6 +27,7 @@ jobs:
         run: |
           apt-get update
           apt-get install zip --yes
+          rm -rf packages/orbit-design-tokens/output packages/orbit-tailwind-preset/dist packages/orbit-components/lib
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
@@ -71,6 +72,7 @@ jobs:
 
       - name: Build
         run: |
+          rm -rf packages/orbit-design-tokens/output packages/orbit-tailwind-preset/dist packages/orbit-components/lib
           yarn tokens build
           yarn tailwind-preset build
           yarn components build

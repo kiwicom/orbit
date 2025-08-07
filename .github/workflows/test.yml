@@ -27,6 +27,7 @@ jobs:
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
+          rm -rf packages/orbit-design-tokens/output packages/orbit-tailwind-preset/dist packages/orbit-components/lib
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
@@ -49,6 +50,7 @@ jobs:
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
+          rm -rf packages/orbit-design-tokens/output packages/orbit-tailwind-preset/dist packages/orbit-components/lib
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
@@ -84,6 +86,7 @@ jobs:
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
         run: |
+          rm -rf packages/orbit-design-tokens/output packages/orbit-tailwind-preset/dist packages/orbit-components/lib
           yarn tailwind-preset pretest
           yarn test-ci
 
@@ -102,9 +105,9 @@ jobs:
           path: |
             docs/.cache
             docs/public
-          key: gatsby-${{ github.ref}}-${{ hashFiles('docs/gatsby-config.js', 'docs/gatsby-node.js') }}
+          key: gatsby-${{ github.sha }}-${{ hashFiles('docs/gatsby-config.js', 'docs/gatsby-node.js') }}
           restore-keys: |
-            gatsby-${{ github.ref}}-
+            gatsby-${{ github.sha }}-
             gatsby-
 
       - name: Build
@@ -145,12 +148,14 @@ jobs:
         run: |
           apt-get update
           apt-get install zip --yes
+          rm -rf packages/orbit-design-tokens/output packages/orbit-tailwind-preset/dist packages/orbit-components/lib
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
       - name: Build (macOS)
         if: matrix.os == 'macos-latest'
         run: |
+          rm -rf packages/orbit-design-tokens/output packages/orbit-tailwind-preset/dist packages/orbit-components/lib
           yarn tokens build
           yarn tailwind-preset build
           yarn components build
@@ -203,6 +208,7 @@ jobs:
 
       - name: Build
         run: |
+          rm -rf packages/orbit-design-tokens/output packages/orbit-tailwind-preset/dist packages/orbit-components/lib
           yarn tokens build
           yarn tailwind-preset build
           yarn components build

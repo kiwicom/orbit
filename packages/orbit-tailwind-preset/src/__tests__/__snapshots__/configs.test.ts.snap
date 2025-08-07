@@ -870,6 +870,10 @@ exports[`orbitPreset should have preflight disabled 1`] = `
     },
     "borderColor": {
       "DEFAULT": "currentColor",
+      "alert-critical": "rgba(210, 28, 28, 0.1)",
+      "alert-info": "rgba(0, 112, 200, 0.1)",
+      "alert-success": "rgba(4, 135, 36, 0.1)",
+      "alert-warning": "rgba(179, 98, 0, 0.1)",
       "blue": {
         "dark": "rgba(var(--palette-blue-dark, 0, 90, 163), <alpha-value>)",
         "dark-active": "rgba(var(--palette-blue-dark-active, 0, 62, 112), <alpha-value>)",
@@ -1467,6 +1471,10 @@ exports[`orbitPreset should have preflight disabled 1`] = `
     "data": {},
     "divideColor": {
       "DEFAULT": "currentColor",
+      "alert-critical": "rgba(210, 28, 28, 0.1)",
+      "alert-info": "rgba(0, 112, 200, 0.1)",
+      "alert-success": "rgba(4, 135, 36, 0.1)",
+      "alert-warning": "rgba(179, 98, 0, 0.1)",
       "blue": {
         "dark": "rgba(var(--palette-blue-dark, 0, 90, 163), <alpha-value>)",
         "dark-active": "rgba(var(--palette-blue-dark-active, 0, 62, 112), <alpha-value>)",

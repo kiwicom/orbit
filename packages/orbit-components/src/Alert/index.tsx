@@ -17,17 +17,10 @@ import { spaceAfterClasses } from "../common/tailwind";
 import { alertDescendantClasses } from "../TextLink/helpers/twClasses";
 
 const COLORS: Record<Type, string> = {
-  info: "bg-blue-light border-blue-light-hover lm:border-t-blue-light-hover",
-  success: "bg-green-light border-green-light-hover lm:border-t-green-light-hover",
-  warning: "bg-orange-light border-orange-light-hover lm:border-t-orange-light-hover",
-  critical: "bg-red-light border-red-light-hover lm:border-t-red-light-hover",
-};
-
-const ACCENT_BORDER: Record<Type, string> = {
-  info: "border-t-blue-normal lm:border-s-blue-normal",
-  success: "border-t-green-normal lm:border-s-green-normal",
-  warning: "border-t-orange-normal lm:border-s-orange-normal",
-  critical: "border-t-red-normal lm:border-s-red-normal",
+  info: "bg-blue-light border border-alert-info",
+  success: "bg-green-light border border-alert-success",
+  warning: "bg-orange-light border border-alert-warning",
+  critical: "bg-red-light border border-alert-critical",
 };
 
 const ICON_COLOR: Record<Type, string> = {
@@ -131,12 +124,9 @@ const Alert = (props: Props) => {
     <div
       className={cx(
         "orbit-alert",
-        "rounded-150 text-ink-dark font-base text-normal p-300 relative box-border flex w-full border border-t-[3px] leading-normal",
-        "lm:border-s-[3px] lm:border-t",
-        "tb:rounded-100",
+        "rounded-150 tb:rounded-100 text-ink-dark font-base text-normal p-300 relative box-border flex w-full leading-normal",
         Boolean(inlineActions) && "items-center",
-        suppressed ? "bg-cloud-light border-cloud-normal lm:border-t-cloud-normal" : COLORS[type],
-        ACCENT_BORDER[type],
+        suppressed ? "bg-cloud-light" : COLORS[type],
         spaceAfter && spaceAfterClasses[spaceAfter],
       )}
       id={id}

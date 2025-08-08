@@ -700,7 +700,7 @@ const createTokens: CreateTokens = foundation => ({
   iconSmallSize: "16px",
   iconMediumSize: "20px",
   iconLargeSize: "24px",
-  iconExtraLargeSize: "32px",
+  iconExtraLargeSize: "28px",
   illustrationExtraSmallHeight: "90px",
   illustrationSmallHeight: "120px",
   illustrationMediumHeight: "200px",

@@ -6,7 +6,7 @@ import type * as React from "react";
 import type defaultTheme from "../defaultTheme";
 import type * as Common from "../common/types";
 
-export type Size = "small" | "medium" | "large";
+export type Size = "small" | "medium" | "large" | "extraLarge";
 
 export type Color =
   | "primary"

@@ -76,6 +76,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
     "icon-small": tokens.iconSmallSize,
     "icon-medium": tokens.iconMediumSize,
     "icon-large": tokens.iconLargeSize,
+    "icon-extra-large": tokens.iconExtraLargeSize,
     "form-box-small": tokens.formBoxSmallHeight,
     "form-box-normal": tokens.formBoxNormalHeight,
     "form-box-large": tokens.formBoxLargeHeight,
@@ -141,6 +142,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "icon-small": tokens.iconSmallSize,
           "icon-medium": tokens.iconMediumSize,
           "icon-large": tokens.iconLargeSize,
+          "icon-extra-large": tokens.iconExtraLargeSize,
           "form-box-small": tokens.formBoxSmallHeight,
           "form-box-normal": tokens.formBoxNormalHeight,
           "form-box-large": tokens.formBoxLargeHeight,
@@ -161,6 +163,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "icon-small": tokens.iconSmallSize,
           "icon-medium": tokens.iconMediumSize,
           "icon-large": tokens.iconLargeSize,
+          "icon-extra-large": tokens.iconExtraLargeSize,
           "dialog-width": tokens.dialogWidth,
         },
         maxWidth: {

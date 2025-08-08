@@ -26,7 +26,16 @@ jobs:
       - name: Node
         uses: ./.github/actions/node
 
-      - uses: actions/checkout@v4
+      - name: Build
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          yarn tokens build
+          yarn tailwind-preset build
+          yarn components build
+          yarn tracking build
+          yarn themer build
+
       - uses: preactjs/compressed-size-action@v2
         with:
           build-script: build-ci

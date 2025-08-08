@@ -42,13 +42,17 @@ const ItinerarySegment = ({
     setOpened(prev => !prev);
   };
 
+  const isInteractive = actionable || onClick || onExpand || onCollapse;
+
   const parts = (
     <div
       className="pt-300"
-      role="button"
-      tabIndex={0}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown(() => setOpened(prev => !prev))}
+      {...(isInteractive && {
+        role: "button",
+        tabIndex: 0,
+        onClick: handleClick,
+        onKeyDown: handleKeyDown(() => setOpened(prev => !prev)),
+      })}
     >
       {React.Children.map(children, (el, i) => {
         if (!React.isValidElement<{ hidden?: boolean }>(el)) return null;

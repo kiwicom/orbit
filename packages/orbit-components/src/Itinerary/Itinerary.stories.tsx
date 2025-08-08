@@ -379,7 +379,7 @@ export const SegmentStop: StoryObj<typeof ItinerarySegmentStop> = {
         <Heading type="title2">Examples</Heading>
         <Heading type="title2">Cancelled date and time, changed city and station</Heading>
         <Itinerary>
-          <ItinerarySegment>
+          <ItinerarySegment actionable={false}>
             <ItinerarySegmentStop
               {...args}
               icon={<Icon ariaHidden />}

@@ -180,7 +180,7 @@ const HorizontalScroll = ({
         <div
           className={cx("relative inline-flex size-full", isDragging && "pointer-events-none")}
           // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-          tabIndex={0}
+          tabIndex={isOverflowing ? 0 : undefined}
         >
           <Stack inline spacing={spacing}>
             {children}

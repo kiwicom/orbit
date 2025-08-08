@@ -40,7 +40,6 @@ const Tag = ({
         "orbit-tag",
         "font-base rounded-150 box-border inline-flex items-stretch justify-center font-medium",
         "duration-fast transition-[color,_background-color,_box-shadow] ease-in-out",
-        "tb:rounded-100",
         size === SIZES.SMALL && "text-small leading-small",
         size === SIZES.NORMAL && "text-normal leading-normal",
         !!onRemove && !onClick && "pointer-events-none",

@@ -29,7 +29,7 @@ export const ModalSectionWrapper = ({
         "orbit-modal-section",
         "py-600 px-400 lm:p-800 box-border w-full",
         "border-b-elevation-flat-border-color border-b border-solid",
-        "lm:last-of-type:rounded-b-modal lm:first-of-type:rounded-t-modal",
+        "lm:last-of-type:rounded-b-400 lm:first-of-type:rounded-t-400",
         suppressed
           ? [
               "bg-cloud-light",

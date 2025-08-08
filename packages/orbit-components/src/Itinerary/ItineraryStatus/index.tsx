@@ -63,7 +63,7 @@ const ItineraryStatus = ({
     <div
       className={cx(
         "orbit-itinerary-status",
-        "rounded-150 shadow-fixed box-border flex w-full flex-col border-0 border-s-[3px] border-solid",
+        "rounded-300 shadow-fixed box-border flex w-full flex-col border-0 border-s-[3px] border-solid",
         type && borderColorClasses[type],
         spaceAfter && spaceAfterClasses[spaceAfter],
         actionable && "hover:shadow-level2",
@@ -71,7 +71,7 @@ const ItineraryStatus = ({
     >
       <div
         className={cx(
-          "px-200 min-h-800 rounded-tl-100 rounded-tr-150 flex items-center rounded-b-none py-0",
+          "px-200 min-h-800 rounded-t-300 flex items-center rounded-b-none py-0",
           type && backgroundColor[type],
         )}
       >

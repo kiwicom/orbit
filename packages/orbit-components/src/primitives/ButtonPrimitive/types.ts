@@ -101,6 +101,7 @@ export interface PrimitiveTypes extends HeightProps, Foreground, Background, Box
   readonly padding?: string;
   readonly fontWeight?: string | null;
   readonly icons?: IconProps;
+  readonly borderRadius?: string;
 }
 
 export type Props = ButtonCommonProps & PrimitiveTypes;

@@ -5040,7 +5040,7 @@
     },
     "javascript": {
       "name": "modalBorderRadius",
-      "value": "12px"
+      "value": "16px"
     },
     "foundation": {
       "name": "modalBorderRadius",
@@ -5048,7 +5048,7 @@
     },
     "scss": {
       "name": "modalBorderRadius",
-      "value": "12px"
+      "value": "16px"
     }
   },
   "modalExtraSmallWidth": {

@@ -703,6 +703,7 @@ export const InsideModal: Story = {
         <Itinerary>
           <ItineraryStatus type="success" label="This part is new">
             <ItinerarySegment
+              noElevation
               banner={
                 <Stack>
                   <ItinerarySegmentBanner
@@ -796,6 +797,7 @@ export const MultipleBanners: Story = {
         <Itinerary>
           <ItineraryStatus type="success" label="This part is new">
             <ItinerarySegment
+              noElevation
               banner={
                 <Stack direction="column" align="stretch" spacing="200">
                   <ItinerarySegmentBanner ref={ref} onClick={() => setIsOpenedModal(true)}>
@@ -867,6 +869,7 @@ export const MultipleBanners: Story = {
           </ItineraryBadgeList>
           <ItineraryStatus type="success" label="This part is new">
             <ItinerarySegment
+              noElevation
               banner={
                 <Stack>
                   <ItinerarySegmentBanner>

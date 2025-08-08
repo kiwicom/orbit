@@ -80,7 +80,7 @@ const ItinerarySegment = ({
     <div
       className={cx(
         "orbit-itinerary-segment",
-        "rounded-150 pb-300 px-0",
+        "rounded-300 pb-300 px-0",
         spaceAfter && spaceAfterClasses[spaceAfter],
         !noElevation && "shadow-fixed",
         actionable && !noElevation && "hover:shadow-level2 focus:shadow-level2",

@@ -27,7 +27,7 @@ export const FakeInput = ({ error, disabled }: Pick<Props, "error" | "disabled">
       "h-form-box-normal text-form-element-large z-default",
       "absolute left-0 top-0",
       "duration-fast transition-all ease-in-out",
-      "rounded-150 tb:rounded-100 box-border w-full",
+      "rounded-200 box-border w-full",
       "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
       error ? "shadow-form-element-error" : "shadow-form-element",
       disabled
@@ -252,7 +252,7 @@ const InputField = (props: Props) => {
             "[&[data-com-onepassword-filled]]:!bg-inherit",
             "peer",
             insideInputGroup
-              ? "focus:outline-blue-normal focus:rounded-150 focus:tb:rounded-100 duration-fast transition-all ease-in-out focus:outline-2 focus:-outline-offset-1"
+              ? "focus:outline-blue-normal focus:rounded-200 duration-fast transition-all ease-in-out focus:outline-2 focus:-outline-offset-1"
               : "focus:outline-none",
             "[&::placeholder]:opacity-100",
             "[&::placeholder]:text-form-element-foreground",

@@ -26,7 +26,6 @@ jobs:
       - name: Node
         uses: ./.github/actions/node
 
-      - uses: actions/checkout@v4
       - uses: preactjs/compressed-size-action@v2
         with:
           build-script: build-ci

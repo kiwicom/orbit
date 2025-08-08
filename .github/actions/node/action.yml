@@ -17,7 +17,6 @@ runs:
         key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
         restore-keys: |
           node-modules-${{ github.ref}}-
-          node-modules-
 
     - name: Install dependencies
       run: yarn install --frozen-lockfile

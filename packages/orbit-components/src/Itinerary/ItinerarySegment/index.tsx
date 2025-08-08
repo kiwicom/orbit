@@ -79,10 +79,10 @@ const ItinerarySegment = ({
   return (
     <div
       className={cx(
-        "orbit-itinerary-segment",
+        "orbit-itinerary-segment duration-fast transition ease-in-out",
         "rounded-150 pb-300 px-0",
         spaceAfter && spaceAfterClasses[spaceAfter],
-        !noElevation && "shadow-fixed",
+        !noElevation && "shadow-level1",
         actionable && !noElevation && "hover:shadow-level2 focus:shadow-level2",
       )}
       data-test={dataTest}

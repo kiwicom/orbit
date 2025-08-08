@@ -845,6 +845,10 @@
   </token>
   <token>
     <name>iconExtraLargeSize</name>
+    <value>32</value>
+  </token>
+  <token>
+    <name>iconXxlSize</name>
     <value>28</value>
   </token>
   <token>

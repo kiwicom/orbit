@@ -226,6 +226,7 @@ export interface Tokens {
   iconMediumSize: string;
   iconLargeSize: string;
   iconExtraLargeSize: string;
+  iconXxlSize: string;
   illustrationExtraSmallHeight: string;
   illustrationSmallHeight: string;
   illustrationMediumHeight: string;
@@ -700,7 +701,8 @@ const createTokens: CreateTokens = foundation => ({
   iconSmallSize: "16px",
   iconMediumSize: "20px",
   iconLargeSize: "24px",
-  iconExtraLargeSize: "28px",
+  iconExtraLargeSize: "32px",
+  iconXxlSize: "28px",
   illustrationExtraSmallHeight: "90px",
   illustrationSmallHeight: "120px",
   illustrationMediumHeight: "200px",

@@ -13,7 +13,7 @@ export const getSize: GetSize =
       [ICON_SIZES.SMALL]: theme.orbit.iconSmallSize,
       [ICON_SIZES.MEDIUM]: theme.orbit.iconMediumSize,
       [ICON_SIZES.LARGE]: theme.orbit.iconLargeSize,
-      [ICON_SIZES.EXTRA_LARGE]: theme.orbit.iconExtraLargeSize,
+      [ICON_SIZES.EXTRA_LARGE]: theme.orbit.iconXxlSize,
     };
     return tokens[size] || tokens[ICON_SIZES.MEDIUM];
   };
@@ -50,7 +50,7 @@ const OrbitIcon = ({
         size === ICON_SIZES.SMALL && "size-icon-small",
         size === ICON_SIZES.MEDIUM && "size-icon-medium",
         size === ICON_SIZES.LARGE && "size-icon-large",
-        size === ICON_SIZES.EXTRA_LARGE && "size-icon-extra-large",
+        size === ICON_SIZES.EXTRA_LARGE && "size-icon-xxl",
         !customColor && color && iconColorClasses[color],
       )}
       viewBox={viewBox}

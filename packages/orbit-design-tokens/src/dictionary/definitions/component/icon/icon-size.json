@@ -22,6 +22,12 @@
       "extra-large": {
         "size": {
           "type": "size",
+          "value": 32
+        }
+      },
+      "xxl": {
+        "size": {
+          "type": "size",
           "value": 28
         }
       }

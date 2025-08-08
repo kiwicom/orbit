@@ -4903,7 +4903,7 @@
     },
     "javascript": {
       "name": "iconExtraLargeSize",
-      "value": "28px"
+      "value": "32px"
     },
     "foundation": {
       "name": "iconExtraLargeSize",
@@ -4911,6 +4911,29 @@
     },
     "scss": {
       "name": "iconExtraLargeSize",
+      "value": "32px"
+    }
+  },
+  "iconXxlSize": {
+    "type": "size",
+    "deprecated": false,
+    "replacement": null,
+    "schema": {
+      "namespace": "component",
+      "object": "icon",
+      "variant": "xxl",
+      "subVariant": "size"
+    },
+    "javascript": {
+      "name": "iconXxlSize",
+      "value": "28px"
+    },
+    "foundation": {
+      "name": "iconXxlSize",
+      "value": "none"
+    },
+    "scss": {
+      "name": "iconXxlSize",
       "value": "28px"
     }
   },

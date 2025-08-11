@@ -15,7 +15,7 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.52.0-jammy
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.PAT }}
           ref: ${{ github.head_ref }}
@@ -58,7 +58,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.PAT }}
           ref: ${{ github.head_ref }}

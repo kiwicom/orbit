@@ -21,12 +21,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Node
         uses: ./.github/actions/node
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: preactjs/compressed-size-action@v2
         with:
           build-script: build-ci

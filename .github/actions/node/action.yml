@@ -12,6 +12,7 @@ runs:
       with:
         path: |
           **/node_modules
+          !**/node_modules/@kiwicom/**
           ~/.cache/Cypress
         key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
         restore-keys: |

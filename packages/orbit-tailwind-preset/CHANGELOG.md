@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@7.3.1...@kiwicom/orbit-tailwind-preset@7.4.0) (2025-08-14)
+
+
+### Features
+
+* **tailwind:** add alert border color classes ([505a7d6](https://github.com/kiwicom/orbit/commit/505a7d681a8c9a061727bce70232fb293b35de39))
+* **tailwind:** add classes for extra large icon ([d7b462a](https://github.com/kiwicom/orbit/commit/d7b462ae080bc9cb3c1e737c267bb86d159e6776))
+
+
+
+
+
 ## [7.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-tailwind-preset@7.3.0...@kiwicom/orbit-tailwind-preset@7.3.1) (2025-07-11)
 
 **Note:** Version bump only for package @kiwicom/orbit-tailwind-preset

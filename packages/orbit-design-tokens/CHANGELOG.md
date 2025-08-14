@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@10.1.0...@kiwicom/orbit-design-tokens@11.0.0) (2025-08-14)
+
+
+### Features
+
+* **tokens:** update iconExtraLargeSize to use 28px ([18f2870](https://github.com/kiwicom/orbit/commit/18f28707bba64733d89af28cf5c3c553229aca3c))
+* **tokens:** update modalBorderRadius to 16px ([6a56b3e](https://github.com/kiwicom/orbit/commit/6a56b3efa45d64ab81d6bc983ba61fc7fda2e820))
+
+
+### BREAKING CHANGES
+
+* **tokens:** iconExtraLargeSize was updated from 32px to 28px to match Figma
+
+
+
+
+
 # [10.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-design-tokens@10.0.1...@kiwicom/orbit-design-tokens@10.1.0) (2025-05-08)
 
 

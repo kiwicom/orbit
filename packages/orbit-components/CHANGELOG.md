@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [27.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.1.1...@kiwicom/orbit-components@27.2.0) (2025-08-14)
+
+
+### Bug Fixes
+
+* **HorizontalScroll:** now it is focusable only if there is overflow ([dfc51c3](https://github.com/kiwicom/orbit/commit/dfc51c3ad2b942cb83899103027121284b1ed5fc))
+* **Itinerary:** change elevation level and its animation ([c5e02e7](https://github.com/kiwicom/orbit/commit/c5e02e73f14ac45c4e972518260d29c1ba2f7253))
+* **Itinerary:** segments are now focusable only if they're interactive ([be7fc61](https://github.com/kiwicom/orbit/commit/be7fc61421fcadc8a4cb500c6bea547c605bcd3a))
+
+
+### Features
+
+* **Alert:** adjust border colors ([30b755c](https://github.com/kiwicom/orbit/commit/30b755ce11e2a1d0ae74ef13f1e0923d6e78eb41))
+* **Alert:** update border radius to 12px ([50db821](https://github.com/kiwicom/orbit/commit/50db821dfcd89ebaea8b2b88c90cae206487d631))
+* **ButtonLink:** update border radius ([46dc935](https://github.com/kiwicom/orbit/commit/46dc935035b80e67dce7405bcf20871c790c8ef3))
+* **ButtonPrimitive:** add new borderRadius prop ([35e53ef](https://github.com/kiwicom/orbit/commit/35e53ef4e4a43d290c38f4fc8e1f48f9a0a34fad))
+* **Button:** update border radius ([e87bc4d](https://github.com/kiwicom/orbit/commit/e87bc4d7d0368c650116e07912a4b7c1bb5c8955))
+* **Card:** update border radius to 12px ([a2acf37](https://github.com/kiwicom/orbit/commit/a2acf37f16ce82bdbe637d59db11c88972e5f0ac))
+* **ErrorFormTooltip:** update border radius to 12px ([c0f781f](https://github.com/kiwicom/orbit/commit/c0f781fbe6aa515cb2566ccad120ec958effedb8))
+* **Icon:** add extraLarge size ([e8280c7](https://github.com/kiwicom/orbit/commit/e8280c783b405c86e4e5a740052a65d6ef7669e7))
+* **InputField:** update border radius to 8px ([d3a9785](https://github.com/kiwicom/orbit/commit/d3a9785c7ac189356fc440fc71c4125456ab9b55))
+* **InputFile:** update border radius to 8px ([c0536a4](https://github.com/kiwicom/orbit/commit/c0536a451e2294c21207176a4a99fa25a40ab5dc))
+* **InputGroup:** update border radius to 8px ([5e19b3a](https://github.com/kiwicom/orbit/commit/5e19b3ad77fc5f90ffc8e463589ef2ad827b8ca9))
+* **Itinerary:** update border radius to 12px ([dbccc67](https://github.com/kiwicom/orbit/commit/dbccc6714587fda4bfdf1f7434a075cf94d7114c))
+* **Popover:** update border radius to 16px ([74916ce](https://github.com/kiwicom/orbit/commit/74916ce3f15a6678eceac012892e3dc84d484451))
+* **SegmentedSwitch:** update border radius to 12px ([a0a7771](https://github.com/kiwicom/orbit/commit/a0a77712b4602b82fc5f38c4d2be8303d4fd6c49))
+* **Select:** update border radius to 8px ([34bd7d8](https://github.com/kiwicom/orbit/commit/34bd7d8961c617a16baa90525caac3fd1196d721))
+* **Skeleton:** update border radius ([1abf01c](https://github.com/kiwicom/orbit/commit/1abf01c3f28d64008741e326a41afc077bcca2c3))
+* **Tabs:** update top border radius to 8px ([7b1c9c6](https://github.com/kiwicom/orbit/commit/7b1c9c6f407dfe6bc59fbd2ad9e36b99994f6e1c))
+* **Tag:** update border radius to 6px ([311675c](https://github.com/kiwicom/orbit/commit/311675ca6358c32a541fbfec9a58683837e653c3))
+* **Textarea:** update border radius to 8px ([32386c2](https://github.com/kiwicom/orbit/commit/32386c2d159f9ebc0e8b8f9fd8414572b7e6f744))
+* **TileGroup:** update border radius to 12px ([f0b39cb](https://github.com/kiwicom/orbit/commit/f0b39cbb06a9749632cc1c64847977ef75c7e714))
+* **Tile:** update border radius to 12px ([47abe01](https://github.com/kiwicom/orbit/commit/47abe018d39088b253aa4f24acd9ef53ec23bdee))
+* **Toast:** update border radius to 12px ([6d7802b](https://github.com/kiwicom/orbit/commit/6d7802b1f3d7b59464c47e01e922db586aeab9fb))
+* **TooltipPrimitive:** update border radius to 12px ([08a130d](https://github.com/kiwicom/orbit/commit/08a130da436d3a6e8033e29e41b2f469a6c3008d))
+
+
+
+
+
 ## [27.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.1.0...@kiwicom/orbit-components@27.1.1) (2025-07-31)
 
 

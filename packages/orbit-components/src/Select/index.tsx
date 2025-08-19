@@ -15,6 +15,260 @@ import useRandomId from "../hooks/useRandomId";
 import type { Props } from "./types";
 import { spaceAfterClasses } from "../common/tailwind";
 
+/**
+ * @orbit-doc-start
+ * README
+ * ----------
+ * # Select
+ *
+ * To implement Select component into your project you'll need to add the import:
+ *
+ * ```jsx
+ * import Select from "@kiwicom/orbit-components/lib/Select";
+ * ```
+ *
+ * After adding import into your project you can use it simply like:
+ *
+ * ```jsx
+ * <Select options={Option} />
+ * ```
+ *
+ * ## Props
+ *
+ * Table below contains all types of the props available in the Select component.
+ *
+ * | Name            | Type                       | Default | Description                                                                              |
+ * | :-------------- | :------------------------- | :------ | :--------------------------------------------------------------------------------------- |
+ * | dataAttrs       | `Object`                   |         | Optional prop for passing `data-*` attributes to the `input` DOM element.                |
+ * | dataTest        | `string`                   |         | Optional prop for testing purposes.                                                      |
+ * | disabled        | `boolean`                  | `false` | If `true`, the Select will be disabled.                                                  |
+ * | error           | `React.Node`               |         | The error message for the Select. [See Functional specs](#functional-specs)              |
+ * | help            | `React.Node`               |         | The help message for the Select.                                                         |
+ * | id              | `string`                   |         | Adds `id` HTML attribute to an element.                                                  |
+ * | label           | `Translation`              |         | The label for the Select.                                                                |
+ * | inlineLabel     | `boolean`                  |         | If true the label renders on the left side of the Select.                                |
+ * | name            | `string`                   |         | The name for the Select.                                                                 |
+ * | onBlur          | `event => void \| Promise` |         | Function for handling onBlur event.                                                      |
+ * | onChange        | `event => void \| Promise` |         | Function for handling onChange event.                                                    |
+ * | onFocus         | `event => void \| Promise` |         | Function for handling onFocus event.                                                     |
+ * | **options**     | [`Option[]`](#option)      |         | The content of the Select, passed as array of objects.                                   |
+ * | placeholder     | `TranslationString`        |         | The placeholder for the Select.                                                          |
+ * | prefix          | `React.Node`               |         | The prefix component for the Select. [See Functional specs](#functional-specs)           |
+ * | ref             | `func`                     |         | Prop for forwarded ref of the Select. [See Functional specs](#functional-specs)          |
+ * | required        | `boolean`                  | `false` | If true, the label is displayed as required.                                             |
+ * | spaceAfter      | `enum`                     |         | Additional `margin-bottom` after component.                                              |
+ * | tabIndex        | `string \| number`         |         | Specifies the tab order of an element                                                    |
+ * | value           | `string`                   | `""`    | The value of the Select.                                                                 |
+ * | width           | `string`                   | `100%`  | Specifies width of the Select                                                            |
+ * | customValueText | `string`                   |         | The custom text alternative of current value. [See Functional specs](#functional-specs). |
+ * | ariaLabel       | `string`                   |         | Optional prop for `aria-label` value. See Accessibility tab.                             |
+ * | ariaLabelledby  | `string`                   |         | Optional prop for `aria-labelledby` value. See Accessibility tab.                        |
+ * | ariaDescribedby | `string`                   |         | Optional prop for `aria-describedby` value. See Accessibility tab.                       |
+ *
+ * ### enum
+ *
+ * | spaceAfter   |
+ * | :----------- |
+ * | `"none"`     |
+ * | `"smallest"` |
+ * | `"small"`    |
+ * | `"normal"`   |
+ * | `"medium"`   |
+ * | `"large"`    |
+ * | `"largest"`  |
+ *
+ * ## Option
+ *
+ * Table below contains all types of the props available for object in Option array.
+ *
+ * | Name      | Type               | Description                             |
+ * | :-------- | :----------------- | :-------------------------------------- |
+ * | **value** | `string \| number` | The value of the Option.                |
+ * | label     | `string`           | The label for the Option.               |
+ * | key       | `string`           | The key of the Option.                  |
+ * | disabled  | `boolean`          | If `true`, the Option will be disabled. |
+ *
+ * ## Functional specs
+ *
+ * - The `error` prop overwrites the `help` prop, due to higher priority.
+ *
+ * - When you have limited space for the `Select`, you can use `customValueText` property to pass an alternative text for the current value. For instance, when the label of the selected option is `Czech Republic (+420)`, you can pass only `+420` to this property and the original label will be visually hidden.
+ *
+ * - The `prefix` prop can accept any element. However, it is not recommended to pass it more than an icon (or flag).
+ *
+ * - `ref` can be used for example auto-focus the elements immediately after render.
+ *
+ *
+ * Accessibility
+ * -------------
+ * ## Accessibility
+ *
+ * The Select component has been designed with accessibility in mind.
+ *
+ * It supports keyboard navigation and includes the following properties that provide additional information to screen readers:
+ *
+ * | Name            | Type     | Description                                                             |
+ * | :-------------- | :------- | :---------------------------------------------------------------------- |
+ * | ariaLabel       | `string` | Allows you to specify an `aria-label` attribute of the component.       |
+ * | ariaLabelledby  | `string` | Allows you to specify an `aria-labelledby` attribute of the component.  |
+ * | ariaDescribedby | `string` | Allows you to specify an `aria-describedby` attribute of the component. |
+ *
+ * While these props are optional, we recommend including them to ensure proper accessibility of the component, especially if the `label` prop is not provided.
+ *
+ * These attributes help users better understand the component's purpose and context, improving the overall experience with assistive technologies.
+ *
+ * ### Examples
+ *
+ * The following code snippets show different ways to use these properties:
+ *
+ * ```jsx
+ * <Select options={options} value={categoryValue} onChange={onChange} label="Category" />
+ * ```
+ *
+ * ```jsx
+ * <Select
+ *   options={options}
+ *   value={categoryValue}
+ *   onChange={onChange}
+ *   ariaLabel="Select passenger category"
+ * />
+ * ```
+ *
+ * ```jsx
+ * <Stack>
+ *   <p id="passengers-category-label" style={{ display: "none", visibility: "hidden" }}>
+ *     Select passenger category
+ *   </p>
+ *
+ *   <Select
+ *     options={options}
+ *     value={categoryValue}
+ *     onChange={onChange}
+ *     ariaLabelledby="passengers-category-label"
+ *   />
+ * </Stack>
+ * ```
+ *
+ * Using the `ariaLabel` prop enables screen readers to properly announce the Select component if the `label` prop is not provided.
+ *
+ * Alternatively, you can use the `ariaLabelledby` prop to reference another element that serves as a label for the Select component. The `ariaLabelledby` prop can reference multiple ids, separated by a space. The elements with those ids can be hidden, so that their text is only announced by screen readers.
+ *
+ * Note that if both `ariaLabel` and `ariaLabelledby` props are provided, `ariaLabelledby` takes precedence.
+ *
+ * For better screen reader experience, you can always complement the `label` prop with `ariaLabel` or `ariaLabelledby`:
+ *
+ * ```jsx
+ * <Select
+ *   options={options}
+ *   value={languageValue}
+ *   onChange={onChange}
+ *   label="Language"
+ *   ariaLabel="Select your language"
+ * />
+ * ```
+ *
+ * For enhanced accessibility, it is recommended to have these label strings translated.
+ *
+ * The `ariaDescribedby` prop allows you to associate additional descriptive text with the Select component. This is useful for providing supplementary information that screen readers will announce after reading the component's label.
+ *
+ * ```jsx
+ *   <Select
+ *     options={countryOptions}
+ *     value={countryValue}
+ *     onChange={onChange}
+ *     label="Country"
+ *     ariaDescribedby="country-info"
+ *   />
+ *   <p id="country-info" style={{ display: "none", visibility: "hidden" }}>
+ *     Select the country where you currently reside.
+ *   </p>
+ * ```
+ *
+ * When using the `help` or `error` props, their content is set as `aria-describedby` on the element. Screen readers will announce this additional information after reading the component's label (whether provided via `label`, `ariaLabel`, or `ariaLabelledby` props).
+ *
+ * ```jsx
+ * <Select
+ *   options={options}
+ *   value={nationalityValue}
+ *   onChange={onChange}
+ *   label="Nationality"
+ *   error="Required field"
+ * />
+ * ```
+ *
+ * It would have the screen reader announce: "Nationality. Required field."
+ *
+ * If you provide both an `ariaDescribedby` prop and use `error` or `help`, the component automatically combines them, ensuring all descriptive content is properly announced:
+ *
+ * ```jsx
+ *   <p id="terms-info" style={{ display: "none", visibility: "hidden" }}>
+ *     Please review our terms and conditions.
+ *   </p>
+ *   <Select
+ *     options={termsOptions}
+ *     value={termsValue}
+ *     onChange={onChange}
+ *     label="Accept Terms"
+ *     error="This field is required"
+ *     ariaDescribedby="terms-info"
+ *   />
+ * ```
+ *
+ * In this example, both the "terms-info" text and the error message will be announced by screen readers. The text from `ariaDescribedby` will be announced first, followed by the text from `error`.
+ *
+ * ### InputGroup Integration
+ *
+ * When using Select within an InputGroup, the `aria-describedby` association follows these rules:
+ *
+ * #### Example 1
+ *
+ * If the InputGroup has `error`/`help` messages, these will be properly associated with all child components:
+ *
+ * ```jsx
+ * <InputGroup label="Travel preferences" error="Please complete all fields">
+ *   <Select options={countryOptions} label="Departure country" />
+ *   <Select options={countryOptions} label="Destination country" />
+ * </InputGroup>
+ * ```
+ *
+ * In this example, all Select components will have the InputGroup's error message "Please complete all fields" announced by screen readers.
+ *
+ * #### Example 2
+ *
+ * If individual Select components have their own `error`/`help` messages (and the InputGroup doesn't), only those specific components will have `aria-describedby` set:
+ *
+ * ```jsx
+ * <InputGroup label="Travel preferences">
+ *   <Select options={countryOptions} label="Departure country" />
+ *   <Select options={countryOptions} label="Destination country" error="This field is required" />
+ * </InputGroup>
+ * ```
+ *
+ * In this example, only the second Select will have its error message "This field is required" announced.
+ *
+ * #### Example 3
+ *
+ * Avoid setting `ariaDescribedby` directly on Select components when inside an InputGroup, as these values will be overwritten by the InputGroup's internal accessibility logic:
+ *
+ * ```jsx
+ * <InputGroup label="Contact information">
+ *   <Select
+ *     options={countryOptions}
+ *     label="Country"
+ *     ariaDescribedby="country-hint" // This will be overwritten
+ *   />
+ *   <InputField label="Phone number" />
+ *   <p id="country-hint" style={{ display: "none", visibility: "hidden" }}>
+ *     Select the country prefix of your phone number
+ *   </p>
+ * </InputGroup>
+ * ```
+ *
+ * In this example, the `ariaDescribedby` value "country-hint" will be ignored because the InputGroup manages the accessibility associations internally. Instead, rely on the InputGroup's `error`/`help` props or the component's own `error`/`help` props.
+ *
+ *
+ * @orbit-doc-end
+ */
 const Select = (props: Props) => {
   const {
     label,

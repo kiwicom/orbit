@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [27.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.2.0...@kiwicom/orbit-components@27.3.0) (2025-08-22)
+
+#### Features
+
+* **Switch:** new design ([fbda99d](https://github.com/kiwicom/orbit/commit/fbda99dd1391af8665d3b2e12a927d66bb313811))
+
 ## [27.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.1.1...@kiwicom/orbit-components@27.2.0) (2025-08-14)
 
 #### Bug Fixes

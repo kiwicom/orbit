@@ -1,4 +1,4 @@
-import plugin from "tailwindcss/plugin";
+import { plugin } from "tailwindcss";
 import { convertHexToRgba, defaultTokens, getTokens } from "@kiwicom/orbit-design-tokens";
 import type { Config } from "tailwindcss";
 
@@ -91,8 +91,7 @@ export default function orbitTailwindPreset(options?: Options): Config {
       preflight: !disablePreflight,
     },
     theme: {
-      extend: {
-        fontSize: {
+      fontSize: {
           "heading-display": tokens.headingDisplayFontSize,
           "heading-display-subtitle": tokens.headingDisplaySubtitleFontSize,
           "heading-title0": tokens.headingTitle0FontSize,
@@ -362,30 +361,27 @@ export default function orbitTailwindPreset(options?: Options): Config {
           "safe-bottom": "var(--safe-area-inset-bottom, env(safe-area-inset-bottom))",
           "safe-left": "var(--safe-area-inset-left, env(safe-area-inset-left))",
         },
-      },
     },
     plugins: [
       plugin(({ addVariant, addUtilities }) => {
-        return (
-          addVariant("not-last", "&:not(:last-child)"),
-          addVariant("not-first", "&:not(:first-child)"),
-          addVariant("type-even", "&:nth-of-type(even)"),
-          addVariant("type-odd", "&:nth-of-type(odd)"),
-          addVariant("target-blank", "&[target='_blank']"),
-          addUtilities({
-            ".scrollbar-none": {
-              "-ms-overflow-style": "none",
-              "scrollbar-width": "none",
-              "&::-webkit-scrollbar": {
-                display: "none",
-              },
+        addVariant("not-last", "&:not(:last-child)");
+        addVariant("not-first", "&:not(:first-child)");
+        addVariant("type-even", "&:nth-of-type(even)");
+        addVariant("type-odd", "&:nth-of-type(odd)");
+        addVariant("target-blank", "&[target='_blank']");
+        addUtilities({
+          ".scrollbar-none": {
+            "-ms-overflow-style": "none",
+            "scrollbar-width": "none",
+            "&::-webkit-scrollbar": {
+              display: "none",
             },
-            ".tap-color-none": {
-              "-webkit-tap-highlight-color": "transparent",
-              "-webkit-touch-callout": "none",
-            },
-          })
-        );
+          },
+          ".tap-color-none": {
+            "-webkit-tap-highlight-color": "transparent",
+            "-webkit-touch-callout": "none",
+          },
+        });
       }),
     ],
   };

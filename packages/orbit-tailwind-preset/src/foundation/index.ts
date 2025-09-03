@@ -29,16 +29,14 @@ const config = (tokens: typeof defaultTokens): Config => {
         normal: tokens.durationNormal,
         slow: tokens.durationSlow,
       },
-      extend: {
-        zIndex: {
-          default: String(tokens.zIndexDefault),
-          sticky: String(tokens.zIndexSticky),
-          "navigation-bar": String(tokens.zIndexNavigationBar),
-          modal: String(tokens.zIndexModal),
-          overlay: String(tokens.zIndexModalOverlay),
-          drawer: String(tokens.zIndexDrawer),
-          onTop: String(tokens.zIndexOnTheTop),
-        },
+      zIndex: {
+        default: String(tokens.zIndexDefault),
+        sticky: String(tokens.zIndexSticky),
+        "navigation-bar": String(tokens.zIndexNavigationBar),
+        modal: String(tokens.zIndexModal),
+        overlay: String(tokens.zIndexModalOverlay),
+        drawer: String(tokens.zIndexDrawer),
+        onTop: String(tokens.zIndexOnTheTop),
       },
     },
   };

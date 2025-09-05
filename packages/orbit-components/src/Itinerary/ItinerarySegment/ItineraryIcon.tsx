@@ -46,7 +46,7 @@ const ItinerarySegmentStopIcon = ({ type, children }: Props) => {
         index > 0 &&
           !last && [
             "py-100 px-0",
-            "bg-[radial-gradient(farthest-side,theme(colors.white.normal),theme(colors.white.normal),theme(colors.white.normal),transparent)]",
+            "bg-[radial-gradient(farthest-side,var(--color-white-normal),var(--color-white-normal),var(--color-white-normal),transparent)]",
           ],
         index > 0 &&
           count > 0 && [

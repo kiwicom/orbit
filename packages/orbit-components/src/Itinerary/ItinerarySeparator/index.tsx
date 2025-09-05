@@ -19,7 +19,7 @@ const ItinerarySeparator = ({ children, type, color }: Props) => {
           )}
           style={{ borderStyle: type, borderColor: color && theme.orbit[color] }}
         />
-        <div className="px-50 bg-white-normal relative z-[11] py-0">{children}</div>
+        <div className="px-50 bg-white-normal z-11 relative py-0">{children}</div>
       </div>
     );
 

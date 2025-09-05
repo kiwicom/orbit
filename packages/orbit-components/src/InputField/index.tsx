@@ -46,7 +46,7 @@ const Prefix = ({ children }: { children: React.ReactNode }) => (
   <span
     className={cx(
       "text-form-element-prefix-foreground",
-      "ps-300 pointer-events-none z-[3] flex h-full items-center justify-center",
+      "ps-300 z-3 pointer-events-none flex h-full items-center justify-center",
       "[&>svg]:text-icon-tertiary-foreground",
       "[&_svg]:size-icon-medium",
       "[&_.orbit-button-primitive-icon]:text-icon-secondary-foreground",
@@ -66,7 +66,7 @@ const Suffix = ({
   <div
     className={cx(
       "h-form-box-normal text-form-element-prefix-foreground",
-      "z-[3] flex shrink-0 items-center justify-center",
+      "z-3 flex shrink-0 items-center justify-center",
       "[&_.orbit-button-primitive-icon]:text-icon-secondary-foreground",
       "[&_.orbit-service-logo]:pe-300 [&_.orbit-service-logo]:h-400",
       disabled && "pointer-events-none",
@@ -193,7 +193,7 @@ const InputField = (props: Props) => {
         )}
       >
         <InlineLabelElement
-          className="relative z-[2] flex items-center"
+          className="z-2 relative flex items-center"
           ref={fieldRef}
           htmlFor={InlineLabelElement === "label" ? inputId : undefined}
         >
@@ -220,7 +220,7 @@ const InputField = (props: Props) => {
                 "pointer-events-none h-full",
                 "[&>.orbit-form-label]:mb-0",
                 "[&>.orbit-form-label]:text-form-element-large [&>.orbit-form-label]:whitespace-nowrap [&>.orbit-form-label]:leading-normal",
-                "[&>.orbit-form-label]:z-[3]",
+                "[&>.orbit-form-label]:z-3",
                 !tags && (error || help) ? "ps-100" : "ps-300",
               )}
             >
@@ -243,24 +243,24 @@ const InputField = (props: Props) => {
           className={cx(
             "orbit-input-field-input",
             "font-base p-form-element-normal-padding",
-            "z-[2] appearance-none border-none shadow-none",
-            "box-border size-full min-w-0",
+            "z-2 appearance-none border-none shadow-none",
+            "size-full box-border min-w-0",
             "bg-transparent",
             "flex-1 basis-1/5",
             "[&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",
             "[&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:m-0",
-            "[&[data-com-onepassword-filled]]:!bg-inherit",
+            "data-com-onepassword-filled:bg-inherit!",
             "peer",
             insideInputGroup
               ? "focus:outline-blue-normal focus:rounded-200 duration-fast transition-all ease-in-out focus:outline-2 focus:-outline-offset-1"
               : "focus:outline-none",
-            "[&::placeholder]:opacity-100",
-            "[&::placeholder]:text-form-element-foreground",
+            "placeholder:opacity-100",
+            "placeholder:text-form-element-foreground",
             "[&::-ms-input-placeholder]:text-form-element-foreground",
             "[&::-ms-clear]:hidden [&::-ms-reveal]:hidden",
             disabled && "cursor-not-allowed",
             (disabled || readOnly) &&
-              "[-webkit-text-fill-color:theme(textColor.form-element-disabled-foreground)]",
+              "[-webkit-text-fill-color:var(--text-color-form-element-disabled-foreground)]",
             inlineLabel ? "font-medium" : "font-normal",
             type === TYPE_OPTIONS.PASSPORTID && "tabular-nums tracking-[2px]",
           )}

@@ -45,7 +45,7 @@ const ToastMessage = ({
       role={role}
       className={cx(
         "z-onTop duration-normal absolute inset-x-0 flex cursor-grab transition-all ease-in-out will-change-transform",
-        "translate-x-[var(--toast-message-offset-x)] translate-y-[var(--toast-message-offset-y)] opacity-[var(--toast-message-opacity)]",
+        "translate-x-(--toast-message-offset-x) translate-y-(--toast-message-offset-y) opacity-(--toast-message-opacity)",
         placements[placement],
       )}
       style={
@@ -61,9 +61,9 @@ const ToastMessage = ({
           "rounded-300 bg-ink-dark p-200 relative w-full overflow-hidden will-change-transform",
           "lm:max-w-modal-extra-small lm:w-auto lm:p-300 [&_svg]:min-h-icon-medium",
           visible &&
-            "pointer-events-auto animate-[toast-fade-in_theme(transitionDuration.normal)_forwards]",
+            "pointer-events-auto animate-[toast-fade-in_var(--transition-duration-normal)_forwards]",
           !visible &&
-            "pointer-events-none animate-[toast-fade-out_theme(transitionDuration.normal)_forwards]",
+            "pointer-events-none animate-[toast-fade-out_var(--transition-duration-normal)_forwards]",
         )}
         style={
           {
@@ -82,7 +82,7 @@ const ToastMessage = ({
         }}
       >
         <div
-          className="rounded-300 bg-white-normal z-default absolute left-0 top-0 size-full animate-[toast-light_var(--toast-message-duration)_linear] opacity-10 will-change-transform rtl:animate-[toast-light-rtl_var(--toast-message-duration)_linear]"
+          className="rounded-300 bg-white-normal z-default size-full absolute left-0 top-0 animate-[toast-light_var(--toast-message-duration)_linear] opacity-10 will-change-transform rtl:animate-[toast-light-rtl_var(--toast-message-duration)_linear]"
           style={
             {
               "--toast-message-duration": `${dismissTimeout}ms`,

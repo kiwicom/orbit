@@ -49,7 +49,7 @@ const InputTags = ({ children }: { children: React.ReactNode }) => {
         "flex flex-initial items-center",
         "h-full min-w-[50px]",
         "overflow-hidden",
-        "z-[2]",
+        "z-2",
       )}
     >
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}

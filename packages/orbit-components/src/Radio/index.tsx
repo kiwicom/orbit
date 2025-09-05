@@ -31,8 +31,8 @@ const Radio = (props: Props) => {
       htmlFor={label ? id : undefined}
       className={cx(
         "font-base text-form-element-label-foreground relative flex w-full [align-items:self-start]",
-        "[&_.orbit-radio-icon-container]:has-[:checked]:border-2 [&_.orbit-radio-icon-container_span]:has-[:checked]:visible",
-        "[&_.orbit-radio-icon-container]:has-[:focus]:outline-blue-normal [&_.orbit-radio-icon-container]:has-[:focus]:outline [&_.orbit-radio-icon-container]:has-[:focus]:outline-2",
+        "[&_.orbit-radio-icon-container]:has-checked:border-2 [&_.orbit-radio-icon-container_span]:has-checked:visible",
+        "[&_.orbit-radio-icon-container]:has-focus:outline-blue-normal [&_.orbit-radio-icon-container]:has-focus:outline-solid [&_.orbit-radio-icon-container]:has-focus:outline-2",
         disabled
           ? [
               "cursor-not-allowed",
@@ -40,7 +40,7 @@ const Radio = (props: Props) => {
             ]
           : [
               "cursor-pointer",
-              "[&_.orbit-radio-icon-container]:has-[:checked]:border-form-element-focus [&_.orbit-radio-icon-container]:has-[:checked]:active:border-form-element-focus [&_.orbit-radio-icon-container]:has-[:checked]:bg-white-normal [&_.orbit-radio-icon-container]:bg-form-element-background",
+              "[&_.orbit-radio-icon-container]:has-checked:border-form-element-focus [&_.orbit-radio-icon-container]:has-checked:active:border-form-element-focus [&_.orbit-radio-icon-container]:has-checked:bg-white-normal [&_.orbit-radio-icon-container]:bg-form-element-background",
               !checked &&
                 hasError &&
                 "[&_.orbit-radio-icon-container]:border-form-element-error [&_.orbit-radio-icon-container]:hover:border-form-element-error-hover [&_.orbit-radio-icon-container]:active:border-form-element-error",

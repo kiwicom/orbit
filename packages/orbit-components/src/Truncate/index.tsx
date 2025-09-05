@@ -9,8 +9,8 @@ const Truncate = ({ children, maxWidth = "100%", dataTest }: Props) => (
   <div
     data-test={dataTest}
     className={cx(
-      "min-w-0 max-w-[--truncate-max-width] shrink grow-0",
-      maxWidth === "none" ? "basis-full" : "basis-[--truncate-max-width]",
+      "max-w-(--truncate-max-width) min-w-0 shrink grow-0",
+      maxWidth === "none" ? "basis-full" : "basis-(--truncate-max-width)",
     )}
     style={{ "--truncate-max-width": maxWidth } as React.CSSProperties}
   >

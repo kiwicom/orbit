@@ -102,7 +102,7 @@ const Textarea = (props: Props) => {
                     ? "hover:shadow-form-element-error-hover"
                     : "hover:shadow-form-element-hover",
                 ],
-            "[&::placeholder]:text-form-element-foreground",
+            "placeholder:text-form-element-foreground",
           )}
           data-state={getFieldDataState(!!error)}
           data-test={dataTest}

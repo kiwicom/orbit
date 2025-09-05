@@ -408,7 +408,7 @@ const Modal = ({
     <div
       className={cx(
         "orbit-modal-body",
-        "z-overlay font-base fixed inset-0 box-border size-full overflow-x-hidden outline-none",
+        "z-overlay font-base size-full fixed inset-0 box-border overflow-x-hidden outline-none",
         !isMobileFullPage && "bg-[black]/50",
         "lm:overflow-y-auto lm:p-1000 lm:bg-[black]/50",
       )}
@@ -446,12 +446,12 @@ const Modal = ({
             "lm:rounded-modal lm:overflow-visible overflow-y-auto overflow-x-hidden",
             "font-base bg-elevation-flat shadow-level4 absolute box-border w-full",
             "lm:relative lm:bottom-auto lm:pb-0",
-            "lm:[&_.orbit-modal-section:last-of-type]:pb-1000 lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-[var(--orbit-modal-footer-height,0px)]",
-            "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-theme(spacing.1000))]",
+            "lm:[&_.orbit-modal-section:last-of-type]:pb-1000 lm:[&_.orbit-modal-section:last-of-type:after]:content-none lm:[&_.orbit-modal-section:last-of-type]:mb-(--orbit-modal-footer-height,0px)",
+            "lm:[&_.orbit-modal-mobile-header]:w-[calc(var(--orbit-modal-width)-48px-(var(--spacing-1000)))]",
             "lm:[&:has(.orbit-modal-header-container:last-child)]:pb-1000",
             footerHeight && "lm:[&_.orbit-modal-section]:rounded-b-none",
             !hasModalSection &&
-              "[&_.orbit-modal-header-container]:mb-800 lm:[&_.orbit-modal-header-container]:mb-[var(--orbit-modal-footer-height,0px)]",
+              "[&_.orbit-modal-header-container]:mb-800 lm:[&_.orbit-modal-header-container]:mb-(--orbit-modal-footer-height,0px)",
             isMobileFullPage
               ? "top-0 max-h-full"
               : [
@@ -471,7 +471,7 @@ const Modal = ({
               ],
             fixedFooter
               ? [
-                  "lm:[&_.orbit-modal-footer]:!p-800",
+                  "lm:[&_.orbit-modal-footer]:p-800!",
                   fullyScrolled && "lm:[&_.orbit-modal-footer]:absolute",
                 ]
               : "lm:[&_.orbit-modal-footer]:p-800",
@@ -483,7 +483,7 @@ const Modal = ({
                 ]
               : "lm:[&_.orbit-modal-mobile-header]:-top-1000",
             modalWidth
-              ? "lm:[&_.orbit-modal-footer]:max-w-[var(--orbit-modal-width)]"
+              ? "lm:[&_.orbit-modal-footer]:max-w-(--orbit-modal-width)"
               : maxWidthClasses.footer[size],
           )}
           style={cssVars as React.CSSProperties}
@@ -495,14 +495,14 @@ const Modal = ({
             <div
               className={cx(
                 "z-overlay h-form-box-large pointer-events-none right-0 box-border flex w-full items-center justify-end",
-                "duration-fast transition-[shadow,_background-color] ease-in-out",
+                "duration-fast transition-[shadow,background-color] ease-in-out",
                 "lm:rounded-none",
                 fixedClose || scrolled ? "lm:top-0 lm:right-auto fixed" : "absolute",
                 !isMobileFullPage && (fixedClose || scrolled) ? "top-800" : "top-0",
                 !isMobileFullPage && "rounded-t-modal",
-                modalWidth ? "max-w-[var(--orbit-modal-width)]" : maxWidthClasses[size],
+                modalWidth ? "max-w-(--orbit-modal-width)" : maxWidthClasses[size],
                 scrolled && "shadow-fixed bg-white-normal",
-                "[&_+_.orbit-modal-section:first-of-type]:pt-1300 [&_+_.orbit-modal-section:first-of-type]:m-0 [&_+_.orbit-modal-section:first-of-type]:border-t-0",
+                "[&+.orbit-modal-section:first-of-type]:pt-1300 [&+.orbit-modal-section:first-of-type]:m-0 [&+.orbit-modal-section:first-of-type]:border-t-0",
                 "[&_.orbit-button-primitive]:me-100 [&_.orbit-button-primitive]:pointer-events-auto",
                 "[&_.orbit-button-primitive_svg]:duration-fast [&_.orbit-button-primitive_svg]:text-ink-normal [&_.orbit-button-primitive_svg]:transition-[color] [&_.orbit-button-primitive_svg]:ease-in-out",
                 "[&_.orbit-button-primitive:hover_svg]:text-ink-light-hover [&_.orbit-button-primitive:active_svg]:text-ink-light-active",

@@ -156,7 +156,7 @@ const ButtonPrimitive = ({
       disabled={isDisabled}
       className={cx(
         className,
-        "orbit-button-primitive font-base duration-fast group relative max-w-full select-none items-center justify-center border-none text-center leading-none transition-all *:align-middle [&_.orbit-loading-spinner]:stroke-current",
+        "orbit-button-primitive font-base duration-fast *:align-middle group relative max-w-full select-none items-center justify-center border-none text-center leading-none transition-all [&_.orbit-loading-spinner]:stroke-current",
         fullWidth ? "w-full flex-auto" : "flex-none",
         circled !== true && (borderRadius || radiusStyles.normal),
         isDisabled
@@ -168,41 +168,37 @@ const ButtonPrimitive = ({
         spaceAfter != null && getSpaceAfterClasses(spaceAfter),
         // loader
         varsButton["--button-icon-height"] != null &&
-          "[&_.orbit-loading-spinner]:h-[var(--button-icon-height)]",
+          "[&_.orbit-loading-spinner]:h-(--button-icon-height)",
         varsButton["--button-icon-width"] != null &&
-          "[&_.orbit-loading-spinner]:w-[var(--button-icon-width)]",
+          "[&_.orbit-loading-spinner]:w-(--button-icon-width)",
         // button vars
-        varsButton["--button-width"] != null && "w-[var(--button-width)]",
-        varsButton["--button-height"] != null && "h-[var(--button-height)]",
-        varsButton["--button-height"] != null &&
-          circled === true &&
-          "rounded-[var(--button-height)]",
-        varsButton["--button-height"] != null && children == null && "w-[var(--button-height)]",
-        varsButton["--button-padding"] != null && "p-[var(--button-padding)]",
-        varsButton["--button-font-weight"] == null
-          ? "font-medium"
-          : "font-[var(--button-font-weight)]",
-        varsButton["--button-font-size"] != null && "text-[length:var(--button-font-size)]",
-        varsButton["--button-foreground"] != null && "text-[color:var(--button-foreground)]",
+        varsButton["--button-width"] != null && "w-(--button-width)",
+        varsButton["--button-height"] != null && "h-(--button-height)",
+        varsButton["--button-height"] != null && circled === true && "rounded-(--button-height)",
+        varsButton["--button-height"] != null && children == null && "w-(--button-height)",
+        varsButton["--button-padding"] != null && "p-(--button-padding)",
+        varsButton["--button-font-weight"] == null ? "font-medium" : "font-(--button-font-weight)",
+        varsButton["--button-font-size"] != null && "text-(length:--button-font-size)",
+        varsButton["--button-foreground"] != null && "text-(--button-foreground)",
         varsButton["--button-foreground-hover"] != null &&
           !isDisabled &&
-          "hover:text-[color:var(--button-foreground-hover)]",
+          "hover:text-(--button-foreground-hover)",
         varsButton["--button-foreground-active"] != null &&
           !isDisabled &&
-          "active:text-[color:var(--button-foreground-active)] active:focus:text-[color:var(--button-foreground-active)]",
+          "active:text-(--button-foreground-active) active:focus:text-(--button-foreground-active)",
         varsButton["--button-foreground-focus"] != null &&
           !isDisabled &&
-          "focus:text-[color:var(--button-foreground-focus)]",
-        varsButton["--button-background"] != null && "bg-[var(--button-background)]",
+          "focus:text-(--button-foreground-focus)",
+        varsButton["--button-background"] != null && "bg-(--button-background)",
         varsButton["--button-background-hover"] != null &&
           !isDisabled &&
-          "hover:bg-[var(--button-background-hover)] hover:focus:bg-[var(--button-background-hover)]",
+          "hover:bg-(--button-background-hover) hover:focus:bg-(--button-background-hover)",
         varsButton["--button-background-active"] != null &&
           !isDisabled &&
-          "active:bg-[var(--button-background-active)] active:focus:bg-[var(--button-background-active)]",
+          "active:bg-(--button-background-active) active:focus:bg-(--button-background-active)",
         varsButton["--button-background-focus"] != null &&
           !isDisabled &&
-          "focus:bg-[var(--button-background-focus)]",
+          "focus:bg-(--button-background-focus)",
         varsButton["--button-box-shadow"] != null && "[box-shadow:var(--button-box-shadow)]",
         varsButton["--button-box-shadow-hover"] != null &&
           !isDisabled &&
@@ -224,22 +220,21 @@ const ButtonPrimitive = ({
             "orbit-button-primitive-icon flex items-center justify-center",
             loading === true && "invisible",
             // icon vars
-            varsIcons["--button-icon-height"] != null && "[&>svg]:h-[var(--button-icon-height)]",
-            varsIcons["--button-icon-width"] != null && "[&>svg]:w-[var(--button-icon-width)]",
+            varsIcons["--button-icon-height"] != null && "[&>svg]:h-(--button-icon-height)",
+            varsIcons["--button-icon-width"] != null && "[&>svg]:w-(--button-icon-width)",
             varsIcons["--button-icon-left-margin"] != null &&
               children != null &&
-              "m-[var(--button-icon-left-margin)]",
-            varsIcons["--button-icon-foreground"] != null &&
-              "text-[color:var(--button-icon-foreground)]",
+              "m-(--button-icon-left-margin)",
+            varsIcons["--button-icon-foreground"] != null && "text-(--button-icon-foreground)",
             varsIcons["--button-icon-foreground-hover"] != null &&
               !isDisabled &&
-              "group-hover:text-[color:var(--button-icon-foreground-hover)]",
+              "group-hover:text-(--button-icon-foreground-hover)",
             varsIcons["--button-icon-foreground-focus"] != null &&
               !isDisabled &&
-              "group-focus:text-[color:var(--button-icon-foreground-focus)]",
+              "group-focus:text-(--button-icon-foreground-focus)",
             varsIcons["--button-icon-foreground-active"] != null &&
               !isDisabled &&
-              "group-active:text-[color:var(--button-icon-foreground-active)] group-active:group-focus:text-[color:var(--button-icon-foreground-active)]",
+              "group-active:text-(--button-icon-foreground-active) group-active:group-focus:text-(--button-icon-foreground-active)",
           )}
           style={varsIcons}
         >
@@ -254,7 +249,7 @@ const ButtonPrimitive = ({
             loading === true && "invisible",
             centered !== true && "flex-1",
             // content vars
-            varsContent["--button-content-width"] != null && "w-[var(--button-content-width)]",
+            varsContent["--button-content-width"] != null && "w-(--button-content-width)",
           )}
           style={varsContent}
         >
@@ -267,21 +262,19 @@ const ButtonPrimitive = ({
             "orbit-button-primitive-icon flex items-center justify-center",
             loading === true && "invisible",
             // icon vars
-            varsIcons["--button-icon-height"] != null && "[&>svg]:h-[var(--button-icon-height)]",
-            varsIcons["--button-icon-width"] != null && "[&>svg]:w-[var(--button-icon-width)]",
-            varsIcons["--button-icon-right-margin"] != null &&
-              "m-[var(--button-icon-right-margin)]",
-            varsIcons["--button-icon-foreground"] != null &&
-              "text-[color:var(--button-icon-foreground)]",
+            varsIcons["--button-icon-height"] != null && "[&>svg]:h-(--button-icon-height)",
+            varsIcons["--button-icon-width"] != null && "[&>svg]:w-(--button-icon-width)",
+            varsIcons["--button-icon-right-margin"] != null && "m-(--button-icon-right-margin)",
+            varsIcons["--button-icon-foreground"] != null && "text-(--button-icon-foreground)",
             varsIcons["--button-icon-foreground-hover"] != null &&
               !isDisabled &&
-              "group-hover:text-[color:var(--button-icon-foreground-hover)]",
+              "group-hover:text-(--button-icon-foreground-hover)",
             varsIcons["--button-icon-foreground-focus"] != null &&
               !isDisabled &&
-              "group-focus:text-[color:var(--button-icon-foreground-focus)]",
+              "group-focus:text-(--button-icon-foreground-focus)",
             varsIcons["--button-icon-foreground-active"] != null &&
               !isDisabled &&
-              "group-active:text-[color:var(--button-icon-foreground-active)] group-active:group-focus:text-[color:var(--button-icon-foreground-active)]",
+              "group-active:text-(--button-icon-foreground-active) group-active:group-focus:text-(--button-icon-foreground-active)",
           )}
           style={varsIcons}
         >

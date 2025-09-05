@@ -119,8 +119,8 @@ const ItinerarySegmentDetail = ({
                           <Stack flex grow={false} align="center" key={key}>
                             <div
                               className={cx(
-                                "px-100 relative z-[3] box-border flex items-center self-stretch",
-                                "after:-z-default after:bg-white-normal after:border-x-cloud-normal-active after:absolute after:left-0 after:box-border after:size-full after:border-x after:border-solid",
+                                "px-100 z-3 relative box-border flex items-center self-stretch",
+                                "after:-z-default after:bg-white-normal after:border-x-cloud-normal-active after:size-full after:absolute after:left-0 after:box-border after:border-x after:border-solid",
                                 isFirst || isLast ? "py-0" : "py-100",
                                 isFirst &&
                                   "[&_svg]:mt-200 [&_svg]:mb-100 after:border-t-cloud-normal-active after:rounded-b-none after:rounded-t-full after:border after:border-b-0",
@@ -130,10 +130,10 @@ const ItinerarySegmentDetail = ({
                             >
                               {itemIcon}
                             </div>
-                            <div className="flex-1 text-wrap break-words">
+                            <div className="text-wrap flex-1 break-words">
                               <Text size="small">{name}</Text>
                             </div>
-                            <div className="grow-0 text-wrap break-all">
+                            <div className="text-wrap grow-0 break-all">
                               <ItineraryText as="div" size="small" weight="medium" align="end">
                                 {value}
                               </ItineraryText>

@@ -43,7 +43,7 @@ const ItineraryText = ({
   return (
     <Component
       className={cx(
-        "orbit-text font-base m-0 text-wrap",
+        "orbit-text font-base text-wrap m-0",
         alternativeTextTypeColors[type],
         withBackground && backgroundClasses[type],
         sizeClasses[size],

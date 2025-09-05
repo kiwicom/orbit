@@ -8,9 +8,6 @@ const config = (tokens: typeof defaultTokens): Config => {
 
   return {
     content: ["auto"],
-    corePlugins: {
-      preflight: false,
-    },
     theme: {
       ...theme,
       boxShadow: {

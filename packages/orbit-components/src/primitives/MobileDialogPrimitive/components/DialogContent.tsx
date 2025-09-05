@@ -52,8 +52,8 @@ const DialogContent = ({
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
       <div
         className={cx(
-          "fixed inset-0 z-[10011] size-full bg-[rgba(23,27,30,0.6)]",
-          "[transition:opacity_theme(transitionDuration.normal)_ease-in-out,_visibility_theme(transitionDuration.fast)_linear]",
+          "z-10011 size-full fixed inset-0 bg-[rgba(23,27,30,0.6)]",
+          "[transition:opacity_var(--transition-duration-normal)_ease-in-out,visibility_var(--transition-duration-fast)_linear]",
           shown ? "visible opacity-100" : "duration-normal invisible opacity-0",
         )}
         ref={overlay}
@@ -62,12 +62,12 @@ const DialogContent = ({
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <div
         className={cx(
-          "bg-ink-dark shadow-level3-reverse p-400 bottom-400 inset-x-400 rounded-300 fixed z-[10012] box-border max-h-[calc(100%-theme(spacing.800))] w-[calc(100%-theme(spacing.800))] overflow-y-scroll",
-          "[transition:transform_theme(transitionDuration.normal)_ease-in-out,_visibility_theme(transitionDuration.fast)_linear]",
+          "bg-ink-dark shadow-level3-reverse p-400 bottom-400 inset-x-400 rounded-300 z-10012 fixed box-border max-h-[calc(100%-(var(--spacing-800)))] w-[calc(100%-(var(--spacing-800)))] overflow-y-scroll",
+          "[transition:transform_var(--transition-duration-normal)_ease-in-out,visibility_var(--transition-duration-fast)_linear]",
           "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&_img]:max-w-full",
           shown
             ? "visible translate-y-0 opacity-100"
-            : "duration-normal invisible translate-y-[calc(100%+theme(spacing.400))] opacity-0",
+            : "duration-normal invisible translate-y-[calc(100%+(var(--spacing-400)))] opacity-0",
         )}
         ref={dialog}
         role="tooltip"

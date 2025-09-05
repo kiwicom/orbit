@@ -16,8 +16,8 @@ const ProgressBarPart = ({ isColumn, className }: { isColumn: boolean; className
       className={cx(
         "absolute",
         isColumn
-          ? "w-50 h-1000 top-[calc(theme(size.icon-small)+1px)] ltr:left-[calc(theme(size.icon-small)+1px)] rtl:right-[calc(theme(size.icon-small)+1px)]"
-          : "h-50 top-[calc(theme(size.icon-small)/2-1px)] w-1/2",
+          ? "w-50 h-1000 top-[calc(var(--size-icon-small)+1px)] ltr:left-[calc(var(--size-icon-small)+1px)] rtl:right-[calc(var(--size-icon-small)+1px)]"
+          : "h-50 top-[calc(var(--size-icon-small)/2-1px)] w-1/2",
         className,
       )}
     />

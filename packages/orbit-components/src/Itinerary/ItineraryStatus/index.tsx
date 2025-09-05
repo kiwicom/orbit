@@ -76,7 +76,7 @@ const ItineraryStatus = ({
         )}
       >
         <div
-          className="z-[2]"
+          className="z-2"
           style={{ marginInlineStart: `${parseInt(theme.orbit.space300, 10) + offset}px` }}
         >
           <Stack flex spacing="200" align="center">

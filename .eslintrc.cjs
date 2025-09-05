@@ -4,7 +4,7 @@ const CONFIGS = [
   "airbnb",
   "plugin:react-hooks/recommended",
   "plugin:prettier/recommended",
-  "plugin:tailwindcss/recommended",
+  // "plugin:tailwindcss/recommended",
 ];
 
 module.exports = {
@@ -12,11 +12,11 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   extends: CONFIGS,
   plugins: ["@babel"],
-  settings: {
-    tailwindcss: {
-      callees: ["cx", "clsx"],
-    },
-  },
+  // settings: {
+  //   tailwindcss: {
+  //     callees: ["cx", "clsx"],
+  //   },
+  // },
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-unused-expressions": "off",
@@ -51,8 +51,8 @@ module.exports = {
     "react/no-access-state-in-setstate": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "no-await-in-loop": "off",
-    "tailwindcss/classnames-order": "off",
-    "tailwindcss/no-custom-classname": ["warn", { whitelist: ["(orbit\\-).*"] }],
+    // "tailwindcss/classnames-order": "off",
+    // "tailwindcss/no-custom-classname": ["warn", { whitelist: ["(orbit\\-).*"] }],
     // to improve performance locally
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#my-linting-feels-really-slow
     ...(!process.env.CI

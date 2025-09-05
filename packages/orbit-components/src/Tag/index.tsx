@@ -39,7 +39,7 @@ const Tag = ({
       className={cx(
         "orbit-tag",
         "font-base rounded-150 box-border inline-flex items-stretch justify-center font-medium",
-        "duration-fast transition-[color,_background-color,_box-shadow] ease-in-out",
+        "duration-fast transition-[color,background-color,box-shadow] ease-in-out",
         size === SIZES.SMALL && "text-small leading-small",
         size === SIZES.NORMAL && "text-normal leading-normal",
         !!onRemove && !onClick && "pointer-events-none",
@@ -109,7 +109,7 @@ const Tag = ({
           className={cx(
             "orbit-tag-close-container",
             "pe-200 ps-100 rounded-r-150 flex items-center justify-center",
-            "duration-fast transition-[color,_opacity] ease-in-out",
+            "duration-fast transition-[color,opacity] ease-in-out",
             "focus:rounded-150 focus:z-default focus:opacity-100 active:opacity-100",
             !onClick && "pointer-events-auto",
             !selected &&

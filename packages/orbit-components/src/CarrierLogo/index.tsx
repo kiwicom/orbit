@@ -12,9 +12,9 @@ const WIDTH = {
   [SIZE_OPTIONS.MEDIUM]: "w-icon-medium",
   [SIZE_OPTIONS.LARGE]: "w-icon-large",
   reduced: {
-    [SIZE_OPTIONS.SMALL]: "w-[calc(theme(width.icon-small)-1px)]",
-    [SIZE_OPTIONS.MEDIUM]: "w-[calc(theme(width.icon-medium)-1px)]",
-    [SIZE_OPTIONS.LARGE]: "w-[calc(theme(width.icon-large)-1px)]",
+    [SIZE_OPTIONS.SMALL]: "w-[calc(var(--width-icon-small)-1px)]",
+    [SIZE_OPTIONS.MEDIUM]: "w-[calc(var(--width-icon-medium)-1px)]",
+    [SIZE_OPTIONS.LARGE]: "w-[calc(var(--width-icon-large)-1px)]",
   },
 };
 
@@ -23,9 +23,9 @@ const HEIGHT = {
   [SIZE_OPTIONS.MEDIUM]: "h-icon-medium",
   [SIZE_OPTIONS.LARGE]: "h-icon-large",
   reduced: {
-    [SIZE_OPTIONS.SMALL]: "h-[calc(theme(height.icon-small)-1px)]",
-    [SIZE_OPTIONS.MEDIUM]: "h-[calc(theme(height.icon-medium)-1px)]",
-    [SIZE_OPTIONS.LARGE]: "h-[calc(theme(height.icon-large)-1px)]",
+    [SIZE_OPTIONS.SMALL]: "h-[calc(var(--height-icon-small)-1px)]",
+    [SIZE_OPTIONS.MEDIUM]: "h-[calc(var(--height-icon-medium)-1px)]",
+    [SIZE_OPTIONS.LARGE]: "h-[calc(var(--height-icon-large)-1px)]",
   },
 };
 

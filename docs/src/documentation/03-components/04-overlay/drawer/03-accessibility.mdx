@@ -10,12 +10,9 @@ redirect_from:
 
 The Drawer component has been designed with accessibility in mind.
 
-To ease keyboard navigation, when opening a drawer, the focus is moved to the drawer.
+To ease keyboard navigation, when opening a drawer, the focus is moved to the first focusable element inside the drawer. It is also impossible to focus anything outside of the drawer while it is open, ensuring a focused user experience.
 
-It should not be possible to focus anything outside of the drawer while it is open, ensuring a focused user experience.
-
-When closing the drawer, **the focus should be moved back to the element that triggered the drawer**.
-This is not handled automatically, so make sure to implement this behavior in your application by managing focus properly.
+When closing the drawer, the focus can be moved back to the element that triggered the drawer automatically, if the prop `triggerRef` is defined with a ref to that element.
 
 ### Keyboard interaction
 
@@ -25,9 +22,23 @@ The Drawer component handles the following keyboard interactions:
 - **Tab** key cycles through focusable elements within the drawer
 - **Shift+Tab** navigates backward through focusable elements
 
+Focus is trapped within the drawer, meaning that when you reach the last focusable element and press Tab, focus will move to the first focusable element. Similarly, when you're on the first focusable element and press Shift+Tab, focus will move to the last focusable element.
+
 ### ARIA attributes
 
-The Drawer component accepts ARIA attributes to ensure it's accessible to users of assistive technologies. You can provide these attributes as described below:
+The Drawer component automatically applies essential ARIA attributes and accepts additional ones to ensure it's accessible to users of assistive technologies:
+
+#### Automatically applied attributes
+
+The Drawer component automatically includes the following ARIA attributes:
+
+- `role="dialog"` - Identifies the drawer as a dialog
+- `aria-modal="true"` - Indicates that the drawer is modal and blocks interaction with other page content
+- `aria-label` - Automatically set to the `title` prop value, or can be overridden with the `ariaLabel` prop
+
+#### Optional attributes
+
+You can provide additional ARIA attributes as described below:
 
 | Name      | Type     | Description                                                                                                                 |
 | :-------- | :------- | :-------------------------------------------------------------------------------------------------------------------------- |
@@ -44,8 +55,63 @@ The default value is "Hide", but you should consider providing a more descriptiv
 
 ### Toggle element
 
-When implementing a toggle element to open and close the drawer, it's essential that the element uses the `aria-expanded` attribute to indicate whether the drawer is open (`true`) or closed (`false`).
-This informs assistive technologies about the current state of the drawer.
+When implementing a toggle element (button or link) to open and close the drawer, it's essential to provide the proper ARIA attributes:
 
-Additionally, the toggle element should use the `aria-controls` attribute with the value matching the drawer's ID.
-This creates a programmatic association between the toggle and the drawer it controls, helping assistive technologies understand this relationship.
+- `aria-haspopup="dialog"` - Indicates that the element triggers a dialog
+- `aria-expanded` - Indicates whether the drawer is open (`true`) or closed (`false`)
+- `aria-controls` - The ID of the drawer element
+
+#### Example implementation
+
+```jsx
+const [drawerOpen, setDrawerOpen] = React.useState(false);
+const drawerId = "my-drawer";
+
+return (
+  <>
+    <Button
+      onClick={() => setDrawerOpen(true)}
+      aria-haspopup="dialog"
+      aria-expanded={drawerOpen}
+      aria-controls={drawerOpen ? drawerId : undefined}
+    >
+      Open Settings
+    </Button>
+    <Drawer
+      id={drawerId}
+      shown={drawerOpen}
+      onClose={() => setDrawerOpen(false)}
+      title="Settings"
+    >
+      {/* Drawer content */}
+    </Drawer>
+  </>
+);
+```
+
+These attributes inform assistive technologies about the relationship between the trigger element and the drawer it controls, providing users with important context about what will happen when they interact with the trigger.
+
+### Focus management with triggerRef
+
+For optimal accessibility, use the `triggerRef` prop to automatically return focus to the element that opened the drawer when it's closed:
+
+```jsx
+const triggerButtonRef = React.useRef(null);
+
+return (
+  <>
+    <Button ref={triggerButtonRef} onClick={() => setDrawerOpen(true)}>
+      Open Drawer
+    </Button>
+    <Drawer
+      shown={drawerOpen}
+      triggerRef={triggerButtonRef}
+      onClose={() => setDrawerOpen(false)}
+    >
+      {/* Drawer content */}
+    </Drawer>
+  </>
+);
+```
+
+This ensures that when users close the drawer (either by pressing Escape, clicking the close button, or clicking outside), focus automatically returns to the trigger element, maintaining a logical focus flow for keyboard and screen reader users.

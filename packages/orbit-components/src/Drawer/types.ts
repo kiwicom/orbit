@@ -21,4 +21,5 @@ export interface Props extends Common.Globals {
   readonly title?: string;
   readonly width?: string;
   readonly ariaLabel?: string;
+  readonly triggerRef?: React.RefObject<HTMLElement | null>;
 }

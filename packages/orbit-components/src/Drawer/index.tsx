@@ -13,6 +13,7 @@ import type { Props } from "./types";
 import theme from "../defaultTheme";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import useClickOutside from "../hooks/useClickOutside";
+import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 
 const getTransitionClasses = (shown: boolean, position: string) => {
   if (shown) return "translate-x-0 visible";
@@ -38,16 +39,18 @@ const Drawer = ({
   title,
   actions,
   ariaLabel,
+  triggerRef,
 }: Props) => {
   const overlayRef = React.useRef(null);
-  const drawerRef = React.useRef<HTMLElement | null>(null);
+  const drawerRef = React.useRef<HTMLDivElement | null>(null);
+  const focusableElements = React.useRef<HTMLElement[]>([]);
 
   const [overlayShown, setOverlayShown, setOverlayShownWithTimeout] = useStateWithTimeout<boolean>(
     shown,
     parseFloat(theme.orbit.durationNormal) * 1000,
   );
 
-  useFocusTrap(drawerRef);
+  useFocusTrap(drawerRef, true);
   useLockScrolling(drawerRef, lockScrolling && overlayShown);
 
   React.useEffect(() => {
@@ -59,6 +62,37 @@ const Drawer = ({
       }
     }
   }, [overlayShown, setOverlayShown, shown, setOverlayShownWithTimeout]);
+
+  React.useEffect(() => {
+    const findFocusableElements = () => {
+      return Array.from(
+        drawerRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENT_SELECTORS) || [],
+      );
+    };
+
+    if (!shown || !drawerRef.current) return undefined;
+
+    // Find all focusable elements within the drawer
+    focusableElements.current = findFocusableElements();
+
+    if (focusableElements.current.length) {
+      focusableElements.current[0].focus();
+    }
+
+    const observer = new MutationObserver(() => {
+      focusableElements.current = findFocusableElements();
+    });
+
+    // Start observing the drawer content for DOM changes
+    observer.observe(drawerRef.current, {
+      childList: true, // Watch for added/removed nodes
+      subtree: true, // Watch all descendants, not just direct children
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [shown]);
 
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -86,6 +120,13 @@ const Drawer = ({
 
   useClickOutside(drawerRef, handleClickOutside);
 
+  React.useEffect(() => {
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      triggerRef?.current?.focus();
+    };
+  }, [triggerRef]);
+
   return (
     <>
       <div
@@ -101,8 +142,9 @@ const Drawer = ({
         )}
         id={id}
         ref={overlayRef}
+        aria-hidden="true"
       />
-      <aside
+      <div
         className={cx(
           "box-border block",
           "fixed inset-y-0",
@@ -120,6 +162,8 @@ const Drawer = ({
         )}
         style={vars as React.CSSProperties}
         ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
         aria-label={ariaLabel || title}
         data-test={dataTest}
       >
@@ -155,7 +199,7 @@ const Drawer = ({
         >
           {children}
         </div>
-      </aside>
+      </div>
     </>
   );
 };

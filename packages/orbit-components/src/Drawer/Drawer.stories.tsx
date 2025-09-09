@@ -42,7 +42,7 @@ const meta: Meta<typeof Drawer> = {
     onClose: action("onClose"),
     labelHide: "Hide",
     lockScrolling: true,
-    ariaLabel: "",
+    ariaLabel: "Side navigation",
   },
 
   argTypes: {
@@ -417,5 +417,75 @@ export const SmartFaqSearchInRtl: Story = {
   args: {
     title: "Help",
     fixedHeader: false,
+  },
+};
+
+function useDrawer() {
+  const [open, toggle] = React.useState(false);
+  const ref = React.useRef(null);
+
+  return {
+    Container: ({ children }) => (
+      <>
+        {open && children}
+        <Button
+          ref={ref}
+          onClick={() => toggle(true)}
+          aria-haspopup="dialog"
+          aria-controls={open ? "drawer-id" : undefined}
+          aria-expanded={open}
+        >
+          Open Drawer
+        </Button>
+      </>
+    ),
+    onClose: () => {
+      toggle(false);
+      action("onClose")();
+    },
+    triggerRef: ref,
+    shown: open,
+  };
+}
+
+export const WithTriggerRef: Story = {
+  render: args => {
+    const { Container, onClose, triggerRef, shown } = useDrawer();
+    return (
+      <Container>
+        <Drawer {...args} triggerRef={triggerRef} onClose={onClose} shown={shown} id="drawer-id">
+          <Stack>
+            <Text>
+              This drawer demonstrates focus management. When opened, focus moves to the first
+              focusable element. When closed, focus returns to the trigger button.
+            </Text>
+            <InputField
+              label="First input"
+              placeholder="This should be focused when drawer opens"
+            />
+            <InputField label="Second input" placeholder="Tab to navigate between fields" />
+            <Button type="secondary">Some button</Button>
+            <TextLink href="#">A link</TextLink>
+            <Button>Last focusable element</Button>
+            <Text type="secondary" size="small">
+              Try tabbing through the elements - focus should stay trapped within the drawer. Press
+              Escape or click the close button to return focus to the trigger.
+            </Text>
+          </Stack>
+        </Drawer>
+      </Container>
+    );
+  },
+
+  args: {
+    title: "Focus Management Demo",
+    width: "400px",
+  },
+
+  parameters: {
+    info: "Demonstrates the focus management functionality with triggerRef. Focus moves to the first focusable element when opened and returns to the trigger when closed.",
+    controls: {
+      exclude: ["onClose", "triggerRef", "shown"],
+    },
   },
 };

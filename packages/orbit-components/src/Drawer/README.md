@@ -28,6 +28,7 @@ Table below contains all types of the props available in the Drawer component.
 | shown         | `boolean`               | `"true"`  | If `true`, the Drawer will be visible; otherwise, it will be visually hidden but will stay in the DOM.                                |
 | suppressed    | `boolean`               | `false`   | If `true`, the Drawer will have a cloudy background.                                                                                  |
 | title         | `string`                |           | Title of the Drawer that will be rendered in the Drawer's header. If `ariaLabel` is undefined, this will be used as `aria-label`.     |
+| triggerRef    | `React.RefObject`       |           | The ref to the element which triggers the Drawer. When the Drawer is closed, focus will return to this element.                       |
 | width         | `string`                | `"320px"` | The width of the Drawer.                                                                                                              |
 | lockScrolling | `boolean`               | `true`    | Whether to prevent scrolling of the rest of the page while Drawer is open. This is on by default to provide a better user experience. |
 | fixedHeader   | `boolean`               |           | If `true`, the DrawerHeader will be fixed to the top.                                                                                 |

@@ -2204,15 +2204,17 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@blazediff/core@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@blazediff/core/-/core-0.5.0.tgz#44b0ef3eca39d79c999267a4b07298a8c44d4a36"
-  integrity sha512-gN2AkgiY9hQdEZgvr01+eysOz0wzWnodaho7VeDOMlZwSvItPxX7rb16xvAI3ymCUPf0QVbdFRL+qwdNsiTuGQ==
+"@blazediff/core@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@blazediff/core/-/core-0.7.1.tgz#e18fa38b63ea98138b0bd076db0ea38814b9a3bf"
+  integrity sha512-/r+qHoNqlrDoY2/895ZxRVeU6MWVn2KyrdQEGcZTS0dgx1ouupHZTXAKEsNDpIUJVYdTeq7WQ3dIzmLev5QW+Q==
+  dependencies:
+    "@blazediff/types" "0.7.1"
 
-"@blazediff/types@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@blazediff/types/-/types-0.5.0.tgz#89e4392be0e2eec89cd0aa7c22359c922f1c78c0"
-  integrity sha512-IBkBlVf2zz1jDzwf2pQMR2R1ZGq5JwQnLcOFBQK1jvlVStECQavAEmwNsgAxV/jbFJMyKMNHtrmKYfrepQXE8A==
+"@blazediff/types@0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@blazediff/types/-/types-0.7.1.tgz#ea91478762c397595d9a5231fa276a4161e3ff51"
+  integrity sha512-bG9xy9SksbYjNG4LdhzSbp3M2V6XqxM9Ob/iW5xm+yaOLOc7B26w5QSrozh+cpVRsRz2G6BtF6x+Og5YZPStgw==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -5329,7 +5331,7 @@
     "@types/eslint" "*"
     "@types/estree" "*"
 
-"@types/eslint@*":
+"@types/eslint@*", "@types/eslint@^8.37.0":
   version "8.56.12"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.56.12.tgz#1657c814ffeba4d2f84c0d4ba0f44ca7ea1ca53a"
   integrity sha512-03ruubjWyOHlmljCVoxSuNDdmfZDzsrrz0P2LeJsOXr+ZwFQ+0yQIwNCwt/GYhV7Z31fgtXJTAEs+FYlEL851g==
@@ -5666,15 +5668,15 @@
   resolved "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
-"@types/react-dom@^18.0.0 || ^19.0.0":
-  version "19.1.6"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-19.1.6.tgz#4af629da0e9f9c0f506fc4d1caa610399c595d64"
-  integrity sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw==
+"@types/react-dom@^18.0.0 || ^19.0.0", "@types/react-dom@^19.1.0":
+  version "19.1.9"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-19.1.9.tgz#5ab695fce1e804184767932365ae6569c11b4b4b"
+  integrity sha512-qXRuZaOsAdXKFyOhRBg6Lqqc0yay13vN7KrIg4L7N4aaHN68ma9OK3NE1BoDFgFOTfM7zg+3/8+2n8rLUH3OKQ==
 
-"@types/react@>=19.1.0", "@types/react@^18.0.0 || ^19.0.0":
-  version "19.1.6"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.1.6.tgz#dee39f3e1e9a7d693f156a5840570b6d57f325ea"
-  integrity sha512-JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==
+"@types/react@>=19.1.0", "@types/react@^18.0.0 || ^19.0.0", "@types/react@^19.1.0":
+  version "19.1.12"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.1.12.tgz#7bfaa76aabbb0b4fe0493c21a3a7a93d33e8937b"
+  integrity sha512-cMoR+FoAf/Jyq6+Df2/Z41jISvGZZ2eTlnsaJRptmZ76Caldwy1odD4xTr/gNV9VLj0AWgg/nmkevIyUfIIq5w==
   dependencies:
     csstype "^3.0.2"
 

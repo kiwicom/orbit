@@ -82,7 +82,14 @@ const isCorrectSize = (name: string) => {
   return name === `size=${size}`;
 };
 
-const removeCommentId = (str: string) => str.replace(/<!--.*-->/g, "");
+const removeCommentId = (str: string) => {
+  let previous;
+  do {
+    previous = str;
+    str = str.replace(/<!--.*?-->/g, "");
+  } while (str !== previous);
+  return str;
+};
 
 try {
   dotenv.config({

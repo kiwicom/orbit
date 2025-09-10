@@ -76,6 +76,272 @@ const Suffix = ({
   </div>
 );
 
+/**
+ * @orbit-doc-start
+ * README
+ * ----------
+ * # InputField
+ *
+ * To implement the InputField component into your project you'll need to add the import:
+ *
+ * ```jsx
+ * import InputField from "@kiwicom/orbit-components/lib/InputField";
+ * ```
+ *
+ * After adding import to your project you can use it simply like:
+ *
+ * ```jsx
+ * <InputField />
+ * ```
+ *
+ * ## Props
+ *
+ * The table below contains all types of props available in the InputField component.
+ *
+ * | Name                 | Type                               | Default   | Description                                                                                                                                                                       |
+ * | :------------------- | :--------------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ * | autoComplete         | `string`                           |           | The autocomplete attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete).                                              |
+ * | autoFocus            | `boolean`                          |           | The autofocus attribute of the input, see [this docs](https://www.w3schools.com/tags/att_autofocus.asp). Keep in mind that autofocus works only when Input is initially rendered. |
+ * | defaultValue         | `string \| number`                 |           | Specifies the default value of the InputField. To be used with uncontrolled usage.                                                                                                |
+ * | disabled             | `boolean`                          |           | If `true`, the InputField will be disabled.                                                                                                                                       |
+ * | dataAttrs            | `Object`                           |           | Optional prop for passing `data-*` attributes to the `input` DOM element.                                                                                                         |
+ * | dataTest             | `string`                           |           | Optional prop for testing purposes.                                                                                                                                               |
+ * | error                | `React.Node`                       |           | The error to display beneath the InputField. [See Functional specs](#functional-specs)                                                                                            |
+ * | tags                 | `React.Node`                       |           | Optional prop to display rendered Tag component. [See Functional specs](#functional-specs)                                                                                        |
+ * | help                 | `React.Node`                       |           | The help to display beneath the InputField.                                                                                                                                       |
+ * | label                | `Translation`                      |           | The label for the InputField. [See Functional specs](#functional-specs)                                                                                                           |
+ * | id                   | `string`                           |           | Set `id` attribute for input.                                                                                                                                                     |
+ * | inlineLabel          | `boolean`                          |           | If `true`, the label renders on the left side of input.                                                                                                                           |
+ * | inputMode            | [`enum`](#enum)                    |           | The type of data that might be entered by the user. [See more here](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).                               |
+ * | minValue             | `number`                           |           | Specifies the minimum value for the InputField.                                                                                                                                   |
+ * | maxValue             | `number`                           |           | Specifies the maximum value for the InputField.                                                                                                                                   |
+ * | maxLength            | `number`                           |           | Specifies the maximum number of characters allowed.                                                                                                                               |
+ * | minLength            | `number`                           |           | Specifies the minimum number of characters allowed.                                                                                                                               |
+ * | width                | `string`                           | `"100%"`  | Specifies the width of the InputField.                                                                                                                                            |
+ * | required             | `boolean`                          |           | If `true`, the label is displayed as required.                                                                                                                                    |
+ * | name                 | `string`                           |           | The name for the InputField.                                                                                                                                                      |
+ * | onBlur               | `event => void \| Promise`         |           | Function for handling onBlur event.                                                                                                                                               |
+ * | onChange             | `event => void \| Promise`         |           | Function for handling onChange event.                                                                                                                                             |
+ * | onFocus              | `event => void \| Promise`         |           | Function for handling onFocus event.                                                                                                                                              |
+ * | onKeyDown            | `event => void \| Promise`         |           | Function for handling onKeyDown event.                                                                                                                                            |
+ * | onKeyUp              | `event => void \| Promise`         |           | Function for handling onKeyUp event.                                                                                                                                              |
+ * | onMouseDown          | `event => void \| Promise`         |           | Function for handling onMouseDown event.                                                                                                                                          |
+ * | onMouseUp            | `event => void \| Promise`         |           | Function for handling onMouseUp event.                                                                                                                                            |
+ * | onSelect             | `event => void \| Promise`         |           | Function for handling onSelect event.                                                                                                                                             |
+ * | placeholder          | `string \| (() => string))`        |           | The placeholder of the InputField.                                                                                                                                                |
+ * | **prefix**           | `React.Node`                       |           | The prefix component for the InputField.                                                                                                                                          |
+ * | readOnly             | `boolean`                          | `false`   | If `true`, the InputField is readOnly.                                                                                                                                            |
+ * | ref                  | `func`                             |           | Prop for forwarded ref of the InputField. [See Functional specs](#functional-specs)                                                                                               |
+ * | spaceAfter           | `enum`                             |           | Additional `margin-bottom` after component.                                                                                                                                       |
+ * | suffix               | `React.Node`                       |           | The suffix component for the InputField.                                                                                                                                          |
+ * | tabIndex             | `string \| number`                 |           | Specifies the tab order of an element.                                                                                                                                            |
+ * | **type**             | [`enum`](#enum)                    | `"text"`  | The type of the InputField.                                                                                                                                                       |
+ * | value                | `string \| number`                 |           | Specifies the value of the InputField. To be used with controlled usage.                                                                                                          |
+ * | list                 | `string`                           |           | The id of the datalist element.                                                                                                                                                   |
+ * | ariaAutocomplete     | `inline \| list \| both`           |           | The aria-autocomplete attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-autocomplete).                      |
+ * | role                 | `textbox \| combobox \| searchbox` | `textbox` | The role attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/textbox_role).                                             |
+ * | ariaActiveDescendant | `string`                           |           | The aria-activedescendant attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-activedescendant).              |
+ * | ariaHasPopup         | `boolean`                          |           | The aria-haspopup attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-haspopup).                              |
+ * | ariaExpanded         | `boolean`                          |           | The aria-expanded attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded).                              |
+ * | ariaControls         | `string`                           |           | The aria-controls attribute of the input, see [this docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls).                              |
+ * | ariaLabel            | `string`                           |           | Optional prop for `aria-label` value. See `Accessibility` tab.                                                                                                                    |
+ * | ariaLabelledby       | `string`                           |           | Optional prop for `aria-labelledby` value. See `Accessibility` tab.                                                                                                               |
+ * | ariaDescribedby      | `string`                           |           | Optional prop for `aria-describedby` value. See `Accessibility` tab.                                                                                                              |
+ *
+ * ### enum
+ *
+ * | inputMode   | type           | spaceAfter   |
+ * | :---------- | :------------- | :----------- |
+ * | `"numeric"` | `"text"`       | `"none"`     |
+ * | `"tel"`     | `"number"`     | `"smallest"` |
+ * | `"decimal"` | `"email"`      | `"small"`    |
+ * | `"email"`   | `"password"`   | `"normal"`   |
+ * | `"url"`     | `"passportid"` | `"medium"`   |
+ * | `"search"`  |                | `"large"`    |
+ * | `"text"`    |                | `"largest"`  |
+ * | `"none"`    |
+ *
+ * ## Functional specs
+ *
+ * - The `error` prop overwrites the `help` prop, due to higher priority.
+ *
+ * - The `help` and `error` icons overwrite the prefix when `inlineLabel` is `true`.
+ *
+ * ### Examples
+ *
+ * - Usage of `Tag` in `InputField`
+ *
+ * ```jsx
+ * import Tag from "@kiwicom/orbit-components/lib/Tag";
+ *
+ * <InputField
+ *   placeholder="My placeholder"
+ *   tags={
+ *     <div>
+ *       <Tag>Brno</Tag>
+ *       <Tag>Praha</Tag>
+ *     </div>
+ *   }
+ * />;
+ * ```
+ *
+ *
+ * Accessibility
+ * -------------
+ * ## Accessibility
+ *
+ * The InputField component has been designed with accessibility in mind, providing features that enhance the experience for users of assistive technologies.
+ *
+ * ### Accessibility props
+ *
+ * The following props are available to improve the accessibility of your InputField component:
+ *
+ * | Name                 | Type                             | Description                                                                                                                 |
+ * | :------------------- | :------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
+ * | label                | `Translation`                    | Provides a visible label that is associated with the input field.                                                           |
+ * | role                 | `string`                         | Defines the role of the input element, which helps screen readers understand its purpose and behavior.                      |
+ * | ariaLabel            | `string`                         | Adds an `aria-label` to the input, providing a description for screen readers when no visible label is present.             |
+ * | ariaLabelledby       | `string`                         | References the ID of an element that labels the input, establishing a relationship for screen readers.                      |
+ * | ariaDescribedby      | `string`                         | References the ID of an element that describes the input, useful for associating additional information with the field.     |
+ * | ariaAutocomplete     | `inline \| list \| both \| none` | Indicates to screen readers whether and how the input provides autocomplete suggestions.                                    |
+ * | ariaActiveDescendant | `string`                         | Identifies the currently active descendant in a composite widget, such as when navigating through autocomplete suggestions. |
+ * | ariaHasPopup         | `boolean`                        | Indicates to screen readers that the input can trigger a popup, like a dropdown menu or dialog.                             |
+ * | ariaExpanded         | `boolean`                        | Indicates to screen readers whether the associated popup or dropdown is currently expanded.                                 |
+ * | ariaControls         | `string`                         | Identifies the element controlled by the input, establishing a relationship for screen readers.                             |
+ *
+ * ### Automatic Accessibility Features
+ *
+ * The InputField component automatically handles several important ARIA attributes:
+ *
+ * - `aria-invalid`: When the `error` prop is provided, the input is automatically marked as invalid (`aria-invalid="true"`). This helps screen readers announce to users that the input contains an error.
+ *
+ * - `aria-describedby`: This attribute is automatically managed to associate `error` or `help` text with the input field:
+ *   - When the component is not inside an InputGroup and has `error` or `help` text, a unique ID is generated (based on the input's ID) and is combined with the `ariaDescribedby` prop to ensure all descriptions are announced by screen readers.
+ *   - When the component is inside an InputGroup, the InputGroup completely overrides any `ariaDescribedby` value that was set on the InputField. The InputGroup sets its own feedback ID as the `aria-describedby` value if there are any `error` or `help` values and the tooltip is shown.
+ *
+ * These automatic features ensure that the InputField remains accessible even without explicitly setting every ARIA attribute, while still allowing for customization when needed. See the [Examples section](#using-ariadescribedby-for-enhanced-accessibility) for detailed usage examples of `ariaDescribedby`.
+ *
+ * ### Best practices
+ *
+ * - When no visible `label` is provided, use `ariaLabel` to provide an accessible name for the input field to ensure the input's purpose is clear to screen reader users. Alternatively, you can use `ariaLabelledby` to reference the ID of an existing element that labels the input.
+ *
+ * - Always ensure that `ariaLabel` text and any text in elements referenced by `ariaLabelledby` are properly translated to match the user's language.
+ *
+ * - Don't rely solely on `placeholder` for providing instructions or label of the input.
+ *
+ * - For inputs that trigger autocomplete behavior or control other elements, use the appropriate ARIA attributes (`ariaAutocomplete`, `ariaActiveDescendant`, `ariaHasPopup`, `ariaExpanded`, `ariaControls`) to make the functionality accessible.
+ *
+ * - When using `prefix` or `suffix` elements, ensure they don't interfere with the accessibility of the input field and are properly labeled if they are interactive.
+ *
+ * ### Examples
+ *
+ * #### Basic InputField with label
+ *
+ * ```jsx
+ * <InputField label="Email address" placeholder="your@email.com" type="email" name="email" required />
+ * ```
+ *
+ * In this example, screen readers would announce "Email address, required, edit, email" when focusing on the input field.
+ *
+ * #### InputField with autocomplete
+ *
+ * ```jsx
+ * <InputField
+ *   label="City"
+ *   placeholder="Start typing..."
+ *   role="combobox"
+ *   ariaHasPopup={true}
+ *   ariaExpanded={suggestionsVisible}
+ *   ariaControls="city-suggestions"
+ *   ariaAutocomplete="list"
+ *   ariaActiveDescendant={activeItemId}
+ * />
+ * ```
+ *
+ * In this example, the InputField is configured as a combobox with autocomplete features. Screen readers would announce information about the combobox state, including whether suggestions are available and which suggestion is currently active.
+ *
+ * #### Using ariaDescribedby for enhanced accessibility
+ *
+ * The `ariaDescribedby` prop allows you to specify an `aria-describedby` attribute for the InputField component. This attribute links the component to additional descriptive text, enhancing accessibility by providing supplementary information to screen readers.
+ *
+ * ```jsx
+ * <InputField label="Password" type="password" ariaDescribedby="password-requirements" />
+ * <p id="password-requirements" style={{ display: "none", visibility: "hidden" }}>
+ *   Password must be at least 8 characters long and include at least one uppercase letter and one number.
+ * </p>
+ * ```
+ *
+ * When using the `error` or `help` props, the component automatically manages the `aria-describedby` attribute:
+ *
+ * ```jsx
+ * <InputField label="Username" error="This username is already taken" />
+ * ```
+ *
+ * In this example, the error message is automatically associated with the input field via `aria-describedby`.
+ *
+ * If you provide both an `ariaDescribedby` prop and use `error` or `help`, the component automatically combines them, ensuring that screen readers announce all descriptive content:
+ *
+ * ```jsx
+ * <InputField label="Email" error="Invalid email format" ariaDescribedby="email-hint" />
+ * <p id="email-hint" style={{ display: "none", visibility: "hidden" }}>
+ *   We'll never share your email with anyone else.
+ * </p>
+ * ```
+ *
+ * In this example, both the "email-hint" text and the error message will be announced by screen readers. The text from `ariaDescribedby` will be announced first, followed by the text from `error`.
+ *
+ * ### InputGroup Integration
+ *
+ * When using InputField within an InputGroup, the `aria-describedby` association follows these rules:
+ *
+ * #### Group-level error/help messages
+ *
+ * If the InputGroup has `error`/`help` messages, all child components will have `aria-describedby` set to these values **by default:**
+ *
+ * ```jsx
+ * <InputGroup label="Passenger details" error="Incomplete information">
+ *   <InputField label="First name" />
+ *   <InputField label="Last name" />
+ * </InputGroup>
+ * ```
+ *
+ * In this example, all InputField components will have the InputGroup's error message "Incomplete information" announced by screen readers.
+ *
+ * #### Component-level error/help messages
+ *
+ * If individual InputField components have their own `error`/`help` messages (and the InputGroup doesn't), only those specific components will have `aria-describedby` set:
+ *
+ * ```jsx
+ * <InputGroup label="Passenger details">
+ *   <InputField label="First name" />
+ *   <InputField label="Last name" error="Last name is required" />
+ * </InputGroup>
+ * ```
+ *
+ * In this example, only the second InputField will have its error message "Last name is required" announced.
+ *
+ * #### Component-level ariaDescribedby value
+ *
+ * Avoid setting `ariaDescribedby` directly on InputField components when inside an InputGroup, as these values will be overwritten by the InputGroup's internal accessibility logic:
+ *
+ * ```jsx
+ * <InputGroup label="Contact information">
+ *   <Select options={countryOptions} label="Country" />
+ *   <InputField
+ *     label="Phone number"
+ *     ariaDescribedby="phone-hint" // This will be overwritten
+ *   />
+ *   <p id="phone-hint" style={{ display: "none", visibility: "hidden" }}>
+ *     Enter your phone number
+ *   </p>
+ * </InputGroup>
+ * ```
+ *
+ * In this example, the `ariaDescribedby` value "phone-hint" will be ignored because the InputGroup manages the accessibility associations internally. Instead, rely on the InputGroup's `error`/`help` props or the component's own `error`/`help` props.
+ *
+ *
+ * @orbit-doc-end
+ */
 const InputField = (props: Props) => {
   const {
     disabled,

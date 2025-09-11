@@ -40,7 +40,7 @@ export const BadgePrimitive: Story = {
 
   args: {
     icon: "Airplane",
-    className: "bg-gradient-to-r from-[#fd1d1d] to-[#ffae28] text-white-normal",
+    className: "bg-linear-to-r from-[#fd1d1d] to-[#ffae28] text-white-normal",
   },
 
   argTypes: {

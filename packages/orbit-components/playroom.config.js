@@ -44,7 +44,10 @@ module.exports = {
               loader: require.resolve("postcss-loader"),
               options: {
                 postcssOptions: {
-                  plugins: [require.resolve("tailwindcss"), require.resolve("autoprefixer")],
+                  plugins: [
+                    require.resolve("@tailwindcss/postcss"),
+                    require.resolve("autoprefixer"),
+                  ],
                 },
               },
             },

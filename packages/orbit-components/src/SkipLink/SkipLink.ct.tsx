@@ -7,7 +7,7 @@ import RenderInRtl from "../utils/rtl/RenderInRtl";
 test.describe("visual SkipLink", () => {
   const forceShow = () => {
     const link = document.querySelector("[data-test=SkipLink]>a");
-    link?.classList.remove("[&:not(:focus)]:sr-only");
+    link?.classList.remove("not-focus:sr-only");
   };
 
   test("default", async ({ mount }) => {

@@ -1,5 +1,5 @@
 import orbitComponentsPreset from "@kiwicom/orbit-tailwind-preset";
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss/dist/lib.d.mts";
 import path from "path";
 
 export default {
@@ -14,9 +14,5 @@ export default {
       },
     },
   },
-  presets: [
-    orbitComponentsPreset({
-      disablePreflight: false,
-    }),
-  ],
+  presets: [orbitComponentsPreset()],
 } satisfies Config;

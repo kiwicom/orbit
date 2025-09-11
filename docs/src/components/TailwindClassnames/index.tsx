@@ -109,9 +109,9 @@ const TailwindClassnames = () => {
       },
       (r, v, k) => {
         if (k === "colors") {
-          // @ts-expect-error lodash
           r[upperFirst(k)] = transformColors(v);
         } else {
+          // @ts-expect-error lodash
           r[upperFirst(k)] = v;
         }
         return r;

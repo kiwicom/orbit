@@ -117,8 +117,8 @@ const TooltipContent = ({
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <div
       className={cx(
-        "rounded-300 px-300 shadow-level3 z-[10012] box-border block w-auto overflow-visible",
-        "duration-fast transition-[visibility,_opacity] ease-in-out",
+        "rounded-300 px-300 shadow-level3 z-10012 box-border block w-auto overflow-visible",
+        "duration-fast transition-[visibility,opacity] ease-in-out",
         "[&_img]:max-w-full]",
         contentHeight <= Math.floor(parseFloat(theme.orbit.lineHeightNormal)) ? "py-200" : "py-300",
         shown ? "visible opacity-100" : "invisible opacity-0",

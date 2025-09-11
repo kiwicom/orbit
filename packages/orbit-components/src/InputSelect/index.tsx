@@ -397,10 +397,10 @@ const InputSelect = ({
   const dropdown = isOpened && (
     <div
       className={cx(
-        "font-base bg-white-normal lm:absolute lm:inset-x-0 lm:overflow-y-scroll lm:shadow-level1 lm:rounded-100 z-[3] flex w-full flex-col",
+        "font-base bg-white-normal lm:absolute lm:inset-x-0 lm:overflow-y-scroll lm:shadow-level1 lm:rounded-100 z-3 flex w-full flex-col",
         label
-          ? "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.800))]"
-          : "lm:top-[calc(theme(height.form-box-normal)+theme(spacing.200))]",
+          ? "lm:top-[calc(var(--height-form-box-normal)+(var(--spacing-800)))]"
+          : "lm:top-[calc(var(--height-form-box-normal)+(var(--spacing-200)))]",
       )}
       style={
         isLargeMobile
@@ -471,7 +471,7 @@ const InputSelect = ({
                 mobileHeader={false}
                 ariaLabel={label}
               >
-                <ModalHeader className="!p-400 !mb-0">
+                <ModalHeader className="p-400! mb-0!">
                   {label && (
                     <Stack align="center" justify="between">
                       <Box>
@@ -482,7 +482,7 @@ const InputSelect = ({
                   )}
                   {input}
                 </ModalHeader>
-                <ModalSection className="!p-0">{dropdown}</ModalSection>
+                <ModalSection className="p-0!">{dropdown}</ModalSection>
                 <ModalFooter flex="100%">
                   <Button type="secondary" fullWidth onClick={handleCloseClick}>
                     {labelClose}

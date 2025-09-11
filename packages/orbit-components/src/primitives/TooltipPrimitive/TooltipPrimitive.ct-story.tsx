@@ -37,7 +37,7 @@ export function TooltipPrimitiveVariousPlacementsStory() {
   return (
     <div className="lm:grid-cols-3 mm:grid-cols-2 lm:grid-rows-4 mm:grid-rows-6 lm:min-h-[800px] grid min-h-[1300px] grid-cols-1">
       {Object.values(PLACEMENTS).map(placement => (
-        <div className="p-200 relative flex size-full items-center">
+        <div className="p-200 size-full relative flex items-center">
           <Stack
             justify={
               // eslint-disable-next-line no-nested-ternary

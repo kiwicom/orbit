@@ -8,7 +8,6 @@ describe("#Inline", () => {
     const dataTest = "test";
 
     render(
-      // eslint-disable-next-line tailwindcss/no-custom-classname
       <Inline align="center" justify="start" dataTest={dataTest} id="ID" className="CLASS">
         <div>kek</div>
         <div>bur</div>

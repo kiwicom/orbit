@@ -24,7 +24,7 @@ const Histogram = ({ data, value, min, loading = false, loadingText, step }: Pro
       role="presentation"
     >
       {loading ? (
-        <div className="flex size-full items-center justify-center">
+        <div className="size-full flex items-center justify-center">
           <Loading type="inlineLoader" text={loadingText} />
         </div>
       ) : (

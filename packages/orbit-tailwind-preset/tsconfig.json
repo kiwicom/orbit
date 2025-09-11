@@ -4,8 +4,9 @@
     "rootDir": "./src",
     "outDir": "dist",
     "noEmit": true,
-    "moduleResolution": "node",
-    "importsNotUsedAsValues": "error"
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true
   },
   "include": ["src/**/*.ts"]
 }

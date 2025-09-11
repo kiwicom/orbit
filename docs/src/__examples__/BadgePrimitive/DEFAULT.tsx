@@ -8,7 +8,7 @@ export default {
     <Stack direction="column">
       <BadgePrimitive
         icon={<AirplaneTakeoff ariaHidden />}
-        className="text-white-normal bg-gradient-to-r from-[#fd1d1d] to-[#ffae28]"
+        className="text-white-normal bg-linear-to-r from-[#fd1d1d] to-[#ffae28]"
       >
         Orbit
       </BadgePrimitive>

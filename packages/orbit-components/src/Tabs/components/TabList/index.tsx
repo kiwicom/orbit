@@ -94,16 +94,16 @@ const TabList = ({
       ref={tabListRef}
       className={cx(
         fullWidth ? "w-full" : "w-auto",
-        cssVars["--tab-list-padding"] && "p-[var(--tab-list-padding)]",
-        cssVars["--tab-list-margin"] && "m-[var(--tab-list-margin)]",
-        cssVars["--tab-list-padding-top"] && "pt-[var(--tab-list-padding-top)]",
-        cssVars["--tab-list-padding-right"] && "pe-[var(--tab-list-padding-right)]",
-        cssVars["--tab-list-padding-bottom"] && "pb-[var(--tab-list-padding-bottom)]",
-        cssVars["--tab-list-padding-left"] && "ps-[var(--tab-list-padding-left)]",
-        cssVars["--tab-list-margin-top"] && "mt-[var(--tab-list-margin-top)]",
-        cssVars["--tab-list-margin-right"] && "me-[var(--tab-list-margin-right)]",
-        cssVars["--tab-list-margin-bottom"] && "mb-[var(--tab-list-margin-bottom)]",
-        cssVars["--tab-list-margin-left"] && "ms-[var(--tab-list-margin-left)]",
+        cssVars["--tab-list-padding"] && "p-(--tab-list-padding)",
+        cssVars["--tab-list-margin"] && "m-(--tab-list-margin)",
+        cssVars["--tab-list-padding-top"] && "pt-(--tab-list-padding-top)",
+        cssVars["--tab-list-padding-right"] && "pe-(--tab-list-padding-right)",
+        cssVars["--tab-list-padding-bottom"] && "pb-(--tab-list-padding-bottom)",
+        cssVars["--tab-list-padding-left"] && "ps-(--tab-list-padding-left)",
+        cssVars["--tab-list-margin-top"] && "mt-(--tab-list-margin-top)",
+        cssVars["--tab-list-margin-right"] && "me-(--tab-list-margin-right)",
+        cssVars["--tab-list-margin-bottom"] && "mb-(--tab-list-margin-bottom)",
+        cssVars["--tab-list-margin-left"] && "ms-(--tab-list-margin-left)",
       )}
       role="tablist"
       aria-label={ariaLabel}

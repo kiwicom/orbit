@@ -84,11 +84,11 @@ const ErrorFormTooltip = ({
       className={cx(
         "flex justify-between overflow-visible",
         "rounded-300 py-200 px-300 z-10 box-border",
-        "max-h-none w-[min(calc(100%-20px),_100vw)]",
+        "max-h-none w-[min(calc(100%-20px),100vw)]",
         isHelp ? "pe-300 bg-blue-normal" : "bg-red-normal",
         shown ? "visible opacity-100" : "invisible opacity-0",
         "duration-fast transition-[opacity,visibility] ease-in-out",
-        "bottom-[var(--error-form-tooltip-bottom)] left-[var(--error-form-tooltip-left)] right-[var(--error-form-tooltip-right)] top-[var(--error-form-tooltip-top)] [position:var(--error-form-tooltip-position)] [transform:var(--error-form-tooltip-transform)]",
+        "bottom-(--error-form-tooltip-bottom) left-(--error-form-tooltip-left) right-(--error-form-tooltip-right) top-(--error-form-tooltip-top) [position:var(--error-form-tooltip-position)] [transform:var(--error-form-tooltip-transform)]",
         "lm:w-auto",
         "[&>img]:max-w-full",
       )}

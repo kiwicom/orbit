@@ -31,7 +31,7 @@ const Switch = ({
       >
         <input
           className={cx(
-            "peer absolute inset-0 m-0 size-full p-0 opacity-0",
+            "size-full peer absolute inset-0 m-0 p-0 opacity-0",
             !disabled && "cursor-pointer",
           )}
           ref={ref}
@@ -53,7 +53,7 @@ const Switch = ({
         <div
           className={cx(
             "bg-white-normal duration-fast shadow-switch size-500 absolute box-border inline-flex items-center justify-center rounded-full",
-            "peer-focus:outline-blue-normal peer-focus:outline peer-focus:outline-2",
+            "peer-focus:outline-blue-normal peer-focus:outline-solid peer-focus:outline-2",
             "[&_svg]:size-300",
             !disabled && "active:shadow-level2",
             !checked && (icon ? "[&_svg]:text-ink-normal" : "[&_svg]:text-cloud-dark"),

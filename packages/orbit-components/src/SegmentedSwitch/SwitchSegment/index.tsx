@@ -21,7 +21,7 @@ const SwitchSegment = ({
     <label className="orbit-switch-segment-label relative flex w-full">
       <input
         className={cx(
-          "sr-only absolute -m-px size-px overflow-hidden whitespace-nowrap border-0 p-0 focus:outline-none",
+          "size-px sr-only absolute -m-px overflow-hidden whitespace-nowrap border-0 p-0 focus:outline-none",
           "peer",
         )}
         name={name || "switch-segment"}
@@ -36,8 +36,8 @@ const SwitchSegment = ({
       <div
         className={cx(
           "orbit-switch-segment-text",
-          "peer-checked:text-blue-normal peer-checked:outline-blue-normal peer-checked:!rounded-300 peer-checked:z-10 peer-checked:outline peer-checked:outline-2 ",
-          "peer-focus:peer-[:not(:checked)]:text-form-element-label-filled-foreground peer-focus:outline-blue-normal peer-focus:!rounded-300 peer-focus:z-10 peer-focus:outline peer-focus:outline-2 ",
+          "peer-checked:text-blue-normal peer-checked:outline-blue-normal peer-checked:rounded-300! peer-checked:outline-solid peer-checked:z-10 peer-checked:outline-2 ",
+          "peer-focus:peer-not-checked:text-form-element-label-filled-foreground peer-focus:outline-blue-normal peer-focus:rounded-300! peer-focus:outline-solid peer-focus:z-10 peer-focus:outline-2 ",
           "p-300 font-base text-normal duration-fast box-border flex w-full max-w-full cursor-pointer items-center justify-center border-0 text-center font-medium leading-normal transition-colors ease-in-out",
           "bg-form-element-background text-form-element-foreground hover:text-form-element-label-filled-foreground",
         )}

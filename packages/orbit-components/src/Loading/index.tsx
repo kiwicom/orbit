@@ -10,7 +10,7 @@ import useTheme from "../hooks/useTheme";
 const CircleLoader = ({ animationDelay }: { animationDelay?: string }) => {
   return (
     <div
-      className="animate-loader bg-cloud-dark size-200 me-150 rounded-full [&:nth-child(3)]:m-0"
+      className="animate-loader bg-cloud-dark size-200 me-150 nth-3:m-0 rounded-full"
       style={{ animationDelay }}
     />
   );
@@ -112,7 +112,7 @@ const Loading = ({
             "overflow-hidden",
             "box-border",
             type === TYPE_OPTIONS.BUTTON_LOADER &&
-              "[&_.orbit-loading-spinner]:size-icon-medium absolute start-0 top-0 size-full justify-center",
+              "[&_.orbit-loading-spinner]:size-icon-medium size-full absolute start-0 top-0 justify-center",
             type === TYPE_OPTIONS.SEARCH_LOADER && "h-1000 justify-start",
             type === TYPE_OPTIONS.INLINE_LOADER && "inline-flex min-h-[19px] justify-center",
             type !== TYPE_OPTIONS.INLINE_LOADER && "flex",

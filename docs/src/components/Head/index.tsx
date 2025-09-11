@@ -20,7 +20,6 @@ export default function Head({ title, hasSiteName, description, path }: Props) {
 
   return (
     <Helmet>
-      {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
       <html lang="en" className={hasJs ? "js" : "no-js"} />
       <script
         // eslint-disable-next-line react/no-danger

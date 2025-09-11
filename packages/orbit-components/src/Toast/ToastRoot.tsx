@@ -31,7 +31,7 @@ const ToastRoot = ({
       id={wrapperId}
       className={cx(
         "z-onTop pointer-events-none fixed",
-        "bottom-[var(--toast-root-bottom)] end-[var(--toast-root-end)] start-[var(--toast-root-start)] top-[var(--toast-root-top)]",
+        "bottom-(--toast-root-bottom) end-(--toast-root-end) start-(--toast-root-start) top-(--toast-root-top)",
       )}
       style={
         {

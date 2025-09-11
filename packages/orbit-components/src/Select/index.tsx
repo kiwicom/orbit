@@ -112,7 +112,7 @@ const Select = (props: Props) => {
           {label && inlineLabel && (
             <div
               className={cx(
-                "pointer-events-none z-[3] flex h-full items-center justify-center",
+                "z-3 pointer-events-none flex h-full items-center justify-center",
                 error || help ? "ps-100" : "ps-300",
                 "[&_.orbit-form-label]:text-normal [&_.orbit-form-label]:mb-0 [&_.orbit-form-label]:inline-block [&_.orbit-form-label]:max-w-[20ch] [&_.orbit-form-label]:truncate [&_.orbit-form-label]:leading-normal",
               )}
@@ -139,9 +139,9 @@ const Select = (props: Props) => {
             </div>
           )}
 
-          <div className="relative z-[3] size-full">
+          <div className="z-3 size-full relative">
             {prefix && (
-              <div className="px-300 pointer-events-none absolute top-0 z-[3] flex h-full items-center">
+              <div className="px-300 z-3 pointer-events-none absolute top-0 flex h-full items-center">
                 {prefix}
               </div>
             )}
@@ -151,7 +151,7 @@ const Select = (props: Props) => {
                   (disabled && "text-form-element-disabled-foreground") || filled
                     ? "text-form-element-filled-foreground"
                     : "text-form-element-foreground",
-                  "text-form-element-large font-base pointer-events-none absolute inset-y-0 z-[3] flex items-center",
+                  "text-form-element-large font-base z-3 pointer-events-none absolute inset-y-0 flex items-center",
                   prefix ? "ps-1200" : "ps-300",
                 )}
               >
@@ -171,7 +171,7 @@ const Select = (props: Props) => {
                 "shrink grow basis-1/5",
                 "size-full",
                 "border-0",
-                Boolean(customValueText) && "!text-transparent",
+                Boolean(customValueText) && "text-transparent!",
                 "duration-fast transition-shadow ease-in-out",
                 "rounded-200",
                 "[&>option]:text-form-element-filled-foreground",
@@ -213,7 +213,7 @@ const Select = (props: Props) => {
           </div>
           <div
             className={cx(
-              "end-200 pointer-events-none absolute top-0 z-[3] flex h-full items-center justify-center",
+              "end-200 z-3 pointer-events-none absolute top-0 flex h-full items-center justify-center",
               disabled
                 ? "text-form-element-disabled-foreground"
                 : "text-form-element-filled-foreground",

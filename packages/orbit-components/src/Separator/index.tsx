@@ -32,27 +32,27 @@ function getSideOffsetAmount(indent: SideOffset, align: Align) {
   const classes = {
     left: {
       [Indent.none]: "w-full",
-      [Indent.THREE_HUNDRED]: "w-[calc(100%_-_theme(spacing.300))]",
-      [Indent.FOUR_HUNDRED]: "w-[calc(100%_-_theme(spacing.400))]",
-      [Indent.SIX_HUNDRED]: "w-[calc(100%_-_theme(spacing.600))]",
-      [Indent.EIGHT_HUNDRED]: "w-[calc(100%_-_theme(spacing.800))]",
-      [Indent.ONE_THOUSAND]: "w-[calc(100%_-_theme(spacing.1000))]",
+      [Indent.THREE_HUNDRED]: "w-[calc(100%-(var(--spacing-300)))]",
+      [Indent.FOUR_HUNDRED]: "w-[calc(100%-(var(--spacing-400)))]",
+      [Indent.SIX_HUNDRED]: "w-[calc(100%-(var(--spacing-600)))]",
+      [Indent.EIGHT_HUNDRED]: "w-[calc(100%-(var(--spacing-800)))]",
+      [Indent.ONE_THOUSAND]: "w-[calc(100%-(var(--spacing-1000)))]",
     },
     right: {
       [Indent.none]: "w-full",
-      [Indent.THREE_HUNDRED]: "ms-300 w-[calc(100%_-_theme(spacing.300))]",
-      [Indent.FOUR_HUNDRED]: "ms-400 w-[calc(100%_-_theme(spacing.400))]",
-      [Indent.SIX_HUNDRED]: "ms-600 w-[calc(100%_-_theme(spacing.600))]",
-      [Indent.EIGHT_HUNDRED]: "ms-800 w-[calc(100%_-_theme(spacing.800))]",
-      [Indent.ONE_THOUSAND]: "ms-1000 w-[calc(100%_-_theme(spacing.1000))]",
+      [Indent.THREE_HUNDRED]: "ms-300 w-[calc(100%-(var(--spacing-300)))]",
+      [Indent.FOUR_HUNDRED]: "ms-400 w-[calc(100%-(var(--spacing-400)))]",
+      [Indent.SIX_HUNDRED]: "ms-600 w-[calc(100%-(var(--spacing-600)))]",
+      [Indent.EIGHT_HUNDRED]: "ms-800 w-[calc(100%-(var(--spacing-800)))]",
+      [Indent.ONE_THOUSAND]: "ms-1000 w-[calc(100%-(var(--spacing-1000)))]",
     },
     center: {
       [Indent.none]: "w-full",
-      [Indent.THREE_HUNDRED]: "ms-300 w-[calc(100%_-_theme(spacing.300)*2)]",
-      [Indent.FOUR_HUNDRED]: "ms-400 w-[calc(100%_-_theme(spacing.400)*2)]",
-      [Indent.SIX_HUNDRED]: "ms-600 w-[calc(100%_-_theme(spacing.600)*2)]",
-      [Indent.EIGHT_HUNDRED]: "ms-800 w-[calc(100%_-_theme(spacing.800)*2)]",
-      [Indent.ONE_THOUSAND]: "ms-1000 w-[calc(100%_-_theme(spacing.1000)*2)]",
+      [Indent.THREE_HUNDRED]: "ms-300 w-[calc(100%-(var(--spacing-300))*2)]",
+      [Indent.FOUR_HUNDRED]: "ms-400 w-[calc(100%-(var(--spacing-400))*2)]",
+      [Indent.SIX_HUNDRED]: "ms-600 w-[calc(100%-(var(--spacing-600))*2)]",
+      [Indent.EIGHT_HUNDRED]: "ms-800 w-[calc(100%-(var(--spacing-800))*2)]",
+      [Indent.ONE_THOUSAND]: "ms-1000 w-[calc(100%-(var(--spacing-1000))*2)]",
     },
   };
 
@@ -69,7 +69,7 @@ const Separator = ({
   ariaHidden,
 }: Props) => {
   return (
-    <div className={cx("relative min-h-px w-full", spaceAfter && getSpaceAfterClasses(spaceAfter))}>
+    <div className={cx("min-h-px relative w-full", spaceAfter && getSpaceAfterClasses(spaceAfter))}>
       <hr
         className={cx(
           "orbit-separator",

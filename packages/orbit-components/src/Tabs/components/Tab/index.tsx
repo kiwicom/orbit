@@ -48,15 +48,15 @@ const Tab = (props: Props) => {
           isSelected &&
             type !== TYPE_OPTIONS.DEFAULT &&
             type === TYPE_OPTIONS.BASIC &&
-            "border-b-2 [border-image-slice:1] [border-image-source:theme(backgroundImage.tab-bundle-basic-foreground)]",
+            "border-b-2 [border-image-slice:1] [border-image-source:var(--background-image-tab-bundle-basic-foreground)]",
           isSelected &&
             type !== TYPE_OPTIONS.DEFAULT &&
             type === TYPE_OPTIONS.MEDIUM &&
-            "border-b-2 [border-image-slice:1] [border-image-source:theme(backgroundImage.tab-bundle-medium-foreground)]",
+            "border-b-2 [border-image-slice:1] [border-image-source:var(--background-image-tab-bundle-medium-foreground)]",
           isSelected &&
             type !== TYPE_OPTIONS.DEFAULT &&
             type === TYPE_OPTIONS.TOP &&
-            "border-b-2 [border-image-slice:1] [border-image-source:theme(backgroundImage.tab-bundle-top-foreground)]",
+            "border-b-2 [border-image-slice:1] [border-image-source:var(--background-image-tab-bundle-top-foreground)]",
         ],
         type === TYPE_OPTIONS.DEFAULT && "bg-white-normal hover:bg-white-normal-hover ",
         type === TYPE_OPTIONS.BASIC &&

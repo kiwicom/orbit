@@ -32,7 +32,7 @@ const TimelineStepDesktop = ({
   return (
     <Stack inline shrink direction="column" align="center" as="li">
       <div
-        className={cx("relative flex w-[calc(100%+theme(spacing.400))] items-center")}
+        className={cx("relative flex w-[calc(100%+(var(--spacing-400)))] items-center")}
         aria-hidden
       >
         <ProgressLine desktop status={type} prevStatus={prevType} nextStatus={nextType} />

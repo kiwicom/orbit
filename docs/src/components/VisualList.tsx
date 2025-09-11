@@ -87,7 +87,6 @@ const Visual = ({
           <CardSection>
             <Stack>
               <H3 noId>{visualName}</H3>
-              {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
               <CodeBlock className="language-jsx">{exampleCode(visualName)}</CodeBlock>
               {actions(visualObject, copied, copy)}
             </Stack>

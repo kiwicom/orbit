@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [27.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.3.0...@kiwicom/orbit-components@27.4.0) (2025-09-11)
+
+
+### Features
+
+* **Drawer:** add triggerRef prop and fix focus management ([27a6232](https://github.com/kiwicom/orbit/commit/27a62327ba773723016fc81e7eca2404d34cb9a0))
+* **icons:** update icons from figma ([dc440f4](https://github.com/kiwicom/orbit/commit/dc440f4bf032c9bc72fd3ad6ffb3bacaf061cee4))
+
+
+
+
+
 # [27.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.2.0...@kiwicom/orbit-components@27.3.0) (2025-08-22)
 
 

@@ -87,7 +87,7 @@
   "devDependencies": {
     "@babel/helper-get-function-arity": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.21.4",
-    "@blazediff/core": "^0.7.1",
+    "@blazediff/core": "^1.0.0",
     "@cypress/vite-dev-server": "^5.2.1",
     "@emotion/core": "^11.0.0",
     "@nanostores/react": "^0.2.0",

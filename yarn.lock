@@ -2204,17 +2204,17 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@blazediff/core@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@blazediff/core/-/core-0.7.1.tgz#e18fa38b63ea98138b0bd076db0ea38814b9a3bf"
-  integrity sha512-/r+qHoNqlrDoY2/895ZxRVeU6MWVn2KyrdQEGcZTS0dgx1ouupHZTXAKEsNDpIUJVYdTeq7WQ3dIzmLev5QW+Q==
+"@blazediff/core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@blazediff/core/-/core-1.0.0.tgz#d36756f65dcc9bcb40146ad41da3101fc8beae5e"
+  integrity sha512-k+SQhaWhf6NiTTDHkIM1OaWu2HhN8/1LsGv6G7a18CKmPrLHEG9qRJzKrMq3MlqlwtzzIQcQNB4VfNbnAoEPpw==
   dependencies:
-    "@blazediff/types" "0.7.1"
+    "@blazediff/types" "1.0.0"
 
-"@blazediff/types@0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@blazediff/types/-/types-0.7.1.tgz#ea91478762c397595d9a5231fa276a4161e3ff51"
-  integrity sha512-bG9xy9SksbYjNG4LdhzSbp3M2V6XqxM9Ob/iW5xm+yaOLOc7B26w5QSrozh+cpVRsRz2G6BtF6x+Og5YZPStgw==
+"@blazediff/types@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@blazediff/types/-/types-1.0.0.tgz#3838f35a9a3e157015398d5f1e50fcf4cebc660c"
+  integrity sha512-uV3SnRogVgXeSgFY9PVDOneHI6/jmx/KSXkzPYBTwLOpb94YTm7aVWkJMoIDasCXShu9B3JBOVF7l/+JsMqVJg==
 
 "@colors/colors@1.5.0":
   version "1.5.0"

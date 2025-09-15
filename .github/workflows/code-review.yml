@@ -218,7 +218,7 @@ jobs:
         run: python analyze_pr.py
 
       - name: Add LLM analysis as PR comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

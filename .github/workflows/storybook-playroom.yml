@@ -61,7 +61,7 @@ jobs:
 
       - name: Add comment to PR
         if: ${{ env.IS_MASTER_BRANCH != 'true' }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             const commentBody = `Storybook staging is available at ${process.env.DOMAIN}\n\nPlayroom staging is available at ${process.env.DOMAIN_PLAYROOM}`;

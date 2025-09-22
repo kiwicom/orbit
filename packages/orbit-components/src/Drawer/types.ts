@@ -15,7 +15,7 @@ export interface Props extends Common.Globals {
   readonly onClose?: Common.Callback;
   readonly fixedHeader?: boolean;
   readonly position?: Position;
-  readonly shown: boolean;
+  readonly shown?: boolean;
   readonly labelHide?: string;
   readonly suppressed?: boolean;
   readonly title?: string;

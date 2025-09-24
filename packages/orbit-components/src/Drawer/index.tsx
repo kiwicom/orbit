@@ -23,6 +23,105 @@ const getTransitionClasses = (shown: boolean, position: string) => {
     : "ltr:lm:-translate-x-[var(--lm-drawer-width)] rtl:lm:translate-x-[var(--lm-drawer-width)] ltr:-translate-x-full rtl:translate-x-full invisible w-0";
 };
 
+/**
+ * @orbit-doc-start
+ * README
+ * ----------
+ * # Drawer
+ *
+ * To implement Drawer component into your project you'll need to add the import:
+ *
+ * ```jsx
+ * import Drawer from "@kiwicom/orbit-components/lib/Drawer";
+ * ```
+ *
+ * After adding import into your project you can use it simply like:
+ *
+ * ```jsx
+ * <Drawer shown>Content to show</Drawer>
+ * ```
+ *
+ * ## Props
+ *
+ * Table below contains all types of the props available in the Drawer component.
+ *
+ * | Name          | Type                    | Default   | Description                                                                                                                           |
+ * | :------------ | :---------------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+ * | actions       | `React.Node`            |           | Actions, especially Buttons, that will be rendered in the Drawer's header.                                                            |
+ * | **children**  | `React.Node`            |           | The content of the Drawer.                                                                                                            |
+ * | dataTest      | `string`                |           | Optional prop for testing purposes.                                                                                                   |
+ * | id            | `string`                |           | Sets the `id` attribute for the `Drawer`.                                                                                             |
+ * | noPadding     | `boolean`               | `false`   | If `true`, the wrapper won't have any inner padding.                                                                                  |
+ * | onClose       | `() => void \| Promise` |           | Function for handling the onClose event.                                                                                              |
+ * | position      | [`enum`](#enum)         | `"right"` | The side on which the Drawer should appear.                                                                                           |
+ * | shown         | `boolean`               | `"true"`  | If `true`, the Drawer will be visible; otherwise, it will be visually hidden but will stay in the DOM.                                |
+ * | suppressed    | `boolean`               | `false`   | If `true`, the Drawer will have a cloudy background.                                                                                  |
+ * | title         | `string`                |           | Title of the Drawer that will be rendered in the Drawer's header. If `ariaLabel` is undefined, this will be used as `aria-label`.     |
+ * | width         | `string`                | `"320px"` | The width of the Drawer.                                                                                                              |
+ * | lockScrolling | `boolean`               | `true`    | Whether to prevent scrolling of the rest of the page while Drawer is open. This is on by default to provide a better user experience. |
+ * | fixedHeader   | `boolean`               |           | If `true`, the DrawerHeader will be fixed to the top.                                                                                 |
+ * | labelHide     | `string`                | `Hide`    | Label for the close button.                                                                                                           |
+ * | ariaLabel     | `string`                |           | Optional prop for `aria-label`.                                                                                                       |
+ *
+ * ### enum
+ *
+ * | position  |
+ * | :-------- |
+ * | `"right"` |
+ * | `"left"`  |
+ *
+ *
+ * Accessibility
+ * -------------
+ * ## Accessibility
+ *
+ * ## Drawer
+ *
+ * The Drawer component has been designed with accessibility in mind.
+ *
+ * To ease keyboard navigation, when opening a drawer, the focus is moved to the drawer.
+ *
+ * It should not be possible to focus anything outside of the drawer while it is open, ensuring a focused user experience.
+ *
+ * When closing the drawer, **the focus should be moved back to the element that triggered the drawer**.
+ * This is not handled automatically, so make sure to implement this behavior in your application by managing focus properly.
+ *
+ * ### Keyboard interaction
+ *
+ * The Drawer component handles the following keyboard interactions:
+ *
+ * - **Escape** key closes the drawer
+ * - **Tab** key cycles through focusable elements within the drawer
+ * - **Shift+Tab** navigates backward through focusable elements
+ *
+ * ### ARIA attributes
+ *
+ * The Drawer component accepts ARIA attributes to ensure it's accessible to users of assistive technologies. You can provide these attributes as described below:
+ *
+ * | Name      | Type     | Description                                                                                                                 |
+ * | :-------- | :------- | :-------------------------------------------------------------------------------------------------------------------------- |
+ * | ariaLabel | `string` | Text that labels the drawer content. Think of it as the title of the drawer. This should be used if `title` is not defined. |
+ *
+ * If you provide a `title` prop, it is automatically used as the drawer's `aria-label`.
+ * However, if you also provide a `ariaLabel` prop, it will take precedence over the `title` prop.
+ *
+ * ### Close button
+ *
+ * The Drawer component includes a close button that can be displayed in the header. It's important to use the `labelHide` prop to provide an accessible label for this button.
+ *
+ * The default value is "Hide", but you should consider providing a more descriptive label, especially for internationalization purposes.
+ *
+ * ### Toggle element
+ *
+ * When implementing a toggle element to open and close the drawer, it's essential that the element uses the `aria-expanded` attribute to indicate whether the drawer is open (`true`) or closed (`false`).
+ * This informs assistive technologies about the current state of the drawer.
+ *
+ * Additionally, the toggle element should use the `aria-controls` attribute with the value matching the drawer's ID.
+ * This creates a programmatic association between the toggle and the drawer it controls, helping assistive technologies understand this relationship.
+ *
+ *
+ * @orbit-doc-end
+ */
 const Drawer = ({
   children,
   onClose,

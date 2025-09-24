@@ -19,8 +19,8 @@ const getTransitionClasses = (shown: boolean, position: string) => {
   if (shown) return "translate-x-0 visible";
 
   return position === POSITIONS.RIGHT
-    ? "ltr:lm:translate-x-[var(--lm-drawer-width)] rtl:lm:-translate-x-[var(--lm-drawer-width)] ltr:translate-x-full rtl:-translate-x-full invisible w-0"
-    : "ltr:lm:-translate-x-[var(--lm-drawer-width)] rtl:lm:translate-x-[var(--lm-drawer-width)] ltr:-translate-x-full rtl:translate-x-full invisible w-0";
+    ? "ltr:lm:translate-x-(--lm-drawer-width) rtl:lm:-translate-x-(--lm-drawer-width) ltr:translate-x-full rtl:-translate-x-full invisible w-0"
+    : "ltr:lm:-translate-x-(--lm-drawer-width) rtl:lm:translate-x-(--lm-drawer-width) ltr:-translate-x-full rtl:translate-x-full invisible w-0";
 };
 
 const Drawer = ({
@@ -113,7 +113,7 @@ const Drawer = ({
     "--lm-drawer-width": width,
   };
 
-  const varClasses = [vars["--lm-drawer-width"] != null && "lm:max-w-[var(--lm-drawer-width)]"];
+  const varClasses = [vars["--lm-drawer-width"] != null && "lm:max-w-(--lm-drawer-width)"];
 
   const onlyIcon = !title && !actions;
   const bordered = !!(title || actions);

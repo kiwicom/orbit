@@ -95,12 +95,12 @@ const Stack = (props: Props) => {
   };
 
   const varClasses = [
-    vars["--basis"] != null && "basis-[var(--basis)]",
-    vars["--mm-basis"] != null && "mm:basis-[var(--mm-basis)]",
-    vars["--lm-basis"] != null && "lm:basis-[var(--lm-basis)]",
-    vars["--tb-basis"] != null && "tb:basis-[var(--tb-basis)]",
-    vars["--de:basis"] != null && "de:basis-[var(--de-basis)]",
-    vars["--ld:basis"] != null && "ld:basis-[var(--ld-basis)]",
+    vars["--basis"] != null && "basis-(--basis)",
+    vars["--mm-basis"] != null && "mm:basis-(--mm-basis)",
+    vars["--lm-basis"] != null && "lm:basis-(--lm-basis)",
+    vars["--tb-basis"] != null && "tb:basis-(--tb-basis)",
+    vars["--de:basis"] != null && "de:basis-(--de-basis)",
+    vars["--ld:basis"] != null && "ld:basis-(--ld-basis)",
   ];
 
   const getProperty = React.useCallback(

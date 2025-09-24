@@ -4,7 +4,9 @@ import type { Config } from "tailwindcss";
 
 import orbitFoundationPreset from "./foundation";
 import kebabCase from "./utils/kebabCase";
-import getComponentLevelTokens, { ExportedComponentLevelTokens } from "./getComponentLevelTokens";
+import getComponentLevelTokens, {
+  type ExportedComponentLevelTokens,
+} from "./getComponentLevelTokens";
 import cssVarsFoundation, { generateRgba } from "./foundation/cssVarsFoundation";
 
 const COLORS: Partial<ExportedComponentLevelTokens>[] = [
@@ -22,11 +24,6 @@ const COLORS: Partial<ExportedComponentLevelTokens>[] = [
   "text",
   "textLink",
 ];
-
-interface Options {
-  /** default: true e.g. does not include default normalize styles */
-  disablePreflight?: boolean;
-}
 
 const getForegroundColors = (tokens: typeof defaultTokens) => {
   const componentTokens = getComponentLevelTokens(tokens);
@@ -66,8 +63,7 @@ const getBackgroundColors = (tokens: typeof defaultTokens) => {
   );
 };
 
-export default function orbitTailwindPreset(options?: Options): Config {
-  const { disablePreflight = false } = options || {};
+export default function orbitTailwindPreset(): Config {
   // make palette colors (foundation colors) defined as css vars and make components tokens inherit it
   const tokens = getTokens(cssVarsFoundation);
   const componentTokens = getComponentLevelTokens(tokens);
@@ -87,9 +83,6 @@ export default function orbitTailwindPreset(options?: Options): Config {
   return {
     content: ["auto"],
     presets: [orbitFoundationPreset(tokens)],
-    corePlugins: {
-      preflight: !disablePreflight,
-    },
     theme: {
       extend: {
         fontSize: {

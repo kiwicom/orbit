@@ -124,7 +124,7 @@ const Dialog = ({
           className={cx([
             "shadow-level4 pt-600 px-400 pb-400 bg-white-normal rounded-dialog-mobile box-border block w-full",
             "lm:min-w-dialog-width lm:p-600 lm:rounded-dialog-desktop",
-            maxWidth != null && "lm:max-w-[var(--dialog-max-width)]",
+            maxWidth != null && "lm:max-w-(--dialog-max-width)",
           ])}
         >
           {illustration && <div className="mb-400 lm:text-start text-center">{illustration}</div>}

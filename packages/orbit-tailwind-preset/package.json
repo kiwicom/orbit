@@ -27,17 +27,19 @@
   "scripts": {
     "build": "yarn tsup",
     "prepublishOnly": "yarn build",
-    "pretest": "yarn workspace @kiwicom/orbit-design-tokens build && yarn build && yarn tailwindcss -o style.css",
+    "pretest": "yarn workspace @kiwicom/orbit-design-tokens build && yarn build && npx @tailwindcss/cli -o style.css",
     "test": "jest"
   },
   "peerDependencies": {
-    "tailwindcss": ">=3.4.4"
+    "tailwindcss": ">=4.1.13"
   },
   "dependencies": {
     "@kiwicom/orbit-design-tokens": "^11.0.0",
-    "color2k": "^2.0.3"
+    "color2k": "^2.0.3",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13",
     "@testing-library/react": "^16.0.0"
   }
 }

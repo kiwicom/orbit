@@ -68,10 +68,10 @@ const SegmentedSwitch = ({
           "[&>label:has(input:checked)]:border-s-0",
           "[&>label:has(input:focus)]:border-s-0",
           "[&>label:not(:has(input:checked)):nth-of-type(1)]:border-s-0",
-          "[&>label:has(input:checked):not(:nth-of-type(0))_+_label:not(:has(input:checked))]:border-s-0",
-          "[&>label:has(input:checked):not(:nth-of-type(0))_+_label:has(input:checked)_+_label:not(:has(input:checked))]:border-s-0",
-          "[&>label:has(input:focus):not(:nth-of-type(0))_+_label:not(:has(input:checked))]:border-s-0",
-          "[&>label:has(input:focus):not(:nth-of-type(0))_+_label:has(input:focus)_+_label:not(:has(input:checked))]:border-s-0",
+          "[&>label:has(input:checked):not(:nth-of-type(0))+label:not(:has(input:checked))]:border-s-0",
+          "[&>label:has(input:checked):not(:nth-of-type(0))+label:has(input:checked)+label:not(:has(input:checked))]:border-s-0",
+          "[&>label:has(input:focus):not(:nth-of-type(0))+label:not(:has(input:checked))]:border-s-0",
+          "[&>label:has(input:focus):not(:nth-of-type(0))+label:has(input:focus)+label:not(:has(input:checked))]:border-s-0",
         )}
       >
         {options.map(({ value, label: optionLabel, ...props }) => (

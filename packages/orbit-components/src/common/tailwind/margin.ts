@@ -493,7 +493,7 @@ export const getMargin = (
   if (typeof margin === "number" || typeof margin === "string")
     return {
       vars: { "--text-margin": getMarginValue(margin) },
-      classes: ["m-[var(--text-margin)]"],
+      classes: ["m-(--text-margin)"],
     };
 
   const { top, bottom, left, right } = margin || {};
@@ -501,19 +501,19 @@ export const getMargin = (
   const classes: string[] = ["m-0"];
 
   if (top) {
-    classes.push("mt-[var(--text-margin-top)]");
+    classes.push("mt-(--text-margin-top)");
     cssVar["--text-margin-top"] = getMarginValue(top);
   }
   if (bottom) {
-    classes.push("mb-[var(--text-margin-bottom)]");
+    classes.push("mb-(--text-margin-bottom)");
     cssVar["--text-margin-bottom"] = getMarginValue(bottom);
   }
   if (left) {
-    classes.push("ml-[var(--text-margin-left)]");
+    classes.push("ml-(--text-margin-left)");
     cssVar["--text-margin-left"] = getMarginValue(left);
   }
   if (right) {
-    classes.push("mr-[var(--text-margin-right)]");
+    classes.push("mr-(--text-margin-right)");
     cssVar["--text-margin-right"] = getMarginValue(right);
   }
 

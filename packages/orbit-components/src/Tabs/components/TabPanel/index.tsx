@@ -25,16 +25,16 @@ const TabPanel = ({ children, margin, padding, dataTest, active = false }: Props
   return active || isActive ? (
     <div
       className={cx(
-        cssVars["--tab-panel-padding"] && "p-[var(--tab-panel-padding)]",
-        cssVars["--tab-panel-margin"] && "m-[var(--tab-panel-margin)]",
-        cssVars["--tab-panel-padding-top"] && "pt-[var(--tab-panel-padding-top)]",
-        cssVars["--tab-panel-padding-right"] && "pe-[var(--tab-panel-padding-right)]",
-        cssVars["--tab-panel-padding-bottom"] && "pb-[var(--tab-panel-padding-bottom)]",
-        cssVars["--tab-panel-padding-left"] && "ps-[var(--tab-panel-padding-left)]",
-        cssVars["--tab-panel-margin-top"] && "mt-[var(--tab-panel-margin-top)]",
-        cssVars["--tab-panel-margin-right"] && "me-[var(--tab-panel-margin-right)]",
-        cssVars["--tab-panel-margin-bottom"] && "mb-[var(--tab-panel-margin-bottom)]",
-        cssVars["--tab-panel-margin-left"] && "ms-[var(--tab-panel-margin-left)]",
+        cssVars["--tab-panel-padding"] && "p-(--tab-panel-padding)",
+        cssVars["--tab-panel-margin"] && "m-(--tab-panel-margin)",
+        cssVars["--tab-panel-padding-top"] && "pt-(--tab-panel-padding-top)",
+        cssVars["--tab-panel-padding-right"] && "pe-(--tab-panel-padding-right)",
+        cssVars["--tab-panel-padding-bottom"] && "pb-(--tab-panel-padding-bottom)",
+        cssVars["--tab-panel-padding-left"] && "ps-(--tab-panel-padding-left)",
+        cssVars["--tab-panel-margin-top"] && "mt-(--tab-panel-margin-top)",
+        cssVars["--tab-panel-margin-right"] && "me-(--tab-panel-margin-right)",
+        cssVars["--tab-panel-margin-bottom"] && "mb-(--tab-panel-margin-bottom)",
+        cssVars["--tab-panel-margin-left"] && "ms-(--tab-panel-margin-left)",
       )}
       style={cssVars}
       id={`panel-${index}`}

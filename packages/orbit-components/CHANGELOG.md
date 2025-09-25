@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [27.4.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.4.0...@kiwicom/orbit-components@27.4.1) (2025-09-25)
+
+
+### Bug Fixes
+
+* **Card:** add border radius to main element ([db9892d](https://github.com/kiwicom/orbit/commit/db9892d8c8a90296b3449f7600204f8f07f6efe2))
+* **Drawer:** make shown prop optional as it has default value ([a683959](https://github.com/kiwicom/orbit/commit/a6839593191382388f134ff0ee1740be4f501b20))
+
+
+
+
+
 # [27.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.3.0...@kiwicom/orbit-components@27.4.0) (2025-09-11)
 
 

@@ -250,6 +250,8 @@ const InputField = (props: Props) => {
             "[&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",
             "[&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:m-0",
             "[&[data-com-onepassword-filled]]:!bg-inherit",
+            "[&:-webkit-autofill]:rounded-200",
+            "[&:autofill]:rounded-200",
             "peer",
             insideInputGroup
               ? "focus:outline-blue-normal focus:rounded-200 duration-fast transition-all ease-in-out focus:outline-2 focus:-outline-offset-1"

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [27.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.4.1...@kiwicom/orbit-components@27.5.0) (2025-10-02)
+
+
+### Bug Fixes
+
+* **InputField:** add autofill rounded styles for better appearance ([89ab25c](https://github.com/kiwicom/orbit/commit/89ab25c3b160ff42e60566485350ee284f350497))
+
+
+### Features
+
+* **icons:** update icons from figma ([f31605c](https://github.com/kiwicom/orbit/commit/f31605c2d3d6557861db7b2f0d08311f27edbf3a))
+
+
+
+
+
 ## [27.4.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.4.0...@kiwicom/orbit-components@27.4.1) (2025-09-25)
 
 

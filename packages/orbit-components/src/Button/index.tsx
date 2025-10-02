@@ -79,6 +79,7 @@ const Button = ({
         children != null && iconLeft == null && iconRight != null && paddingRightIconStyles[size],
         children != null && iconLeft != null && iconRight != null && paddingBothIconsStyles[size],
         props.circled === true && "rounded-full",
+        props.href && "orbit-text-link",
       )}
     >
       {children}

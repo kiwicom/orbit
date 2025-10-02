@@ -1,6 +1,8 @@
 import * as React from "react";
 
 import { SPACINGS_AFTER } from "../common/consts";
+import Button from "../Button";
+import ButtonLink from "../ButtonLink";
 
 import Timeline, { TimelineStep } from ".";
 
@@ -60,6 +62,15 @@ export default function TimelineStory() {
             <TimelineStep label="Label">Children</TimelineStep>
             <TimelineStep label="Label" subLabel="Sublabel">
               Children
+            </TimelineStep>
+            <TimelineStep label="Label">
+              Children with <Button>Button</Button>
+            </TimelineStep>
+            <TimelineStep label="Label">
+              Children with <Button href="https://www.kiwi.com">Button with href</Button>
+            </TimelineStep>
+            <TimelineStep label="Label">
+              Children with <ButtonLink href="https://www.kiwi.com">ButtonLink</ButtonLink>
             </TimelineStep>
           </Timeline>
         </>

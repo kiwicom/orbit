@@ -50,7 +50,7 @@ import TimelineStep from "@kiwicom/orbit-components/lib/Timeline/TimelineStep";
 
 #### Props
 
-The table below contains all types of the props in **TimelineStep** component.
+The table below contains all types of the props in the **TimelineStep** component. Note that the children's content is supposed to be text content only; correct rendering is not guaranteed when passing other elements.
 
 | Name         | Type            | Default | Description                                 |
 | :----------- | :-------------- | :------ | :------------------------------------------ |

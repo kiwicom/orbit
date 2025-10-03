@@ -87,6 +87,7 @@
   "devDependencies": {
     "@babel/helper-get-function-arity": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.21.4",
+    "@blazediff/core": "^1.0.0",
     "@cypress/vite-dev-server": "^5.2.1",
     "@emotion/core": "^11.0.0",
     "@nanostores/react": "^0.2.0",
@@ -109,7 +110,6 @@
     "@svgr/plugin-prettier": "^6.3.1",
     "@svgr/plugin-svgo": "^6.3.1",
     "@types/capitalize": "^2.0.0",
-    "@types/pixelmatch": "^5.2.4",
     "@types/readable-stream": "^2.3.13",
     "@types/svgicons2svgfont": "^10.0.1",
     "@types/webpack": "^5.28.0",
@@ -126,7 +126,6 @@
     "nanostores": "^0.5.12",
     "onecolor": "^4.1.0",
     "ora": "^6.1.0",
-    "pixelmatch": "^5.3.0",
     "playroom": "^0.43.0",
     "pngjs": "^7.0.0",
     "postcss-loader": "8.1.1",

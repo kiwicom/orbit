@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [27.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.5.0...@kiwicom/orbit-components@27.6.0) (2025-10-10)
+
+
+### Features
+
+* **icons:** update icons from figma ([d38b5f8](https://github.com/kiwicom/orbit/commit/d38b5f8c5d27c3b6762e23e6f0e24ab2e8745119))
+
+
+
+
+
 # [27.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.4.1...@kiwicom/orbit-components@27.5.0) (2025-10-02)
 
 

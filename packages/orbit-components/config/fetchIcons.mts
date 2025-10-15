@@ -2,7 +2,7 @@ import dotenv from "dotenv-safe";
 import dedent from "dedent";
 import ora from "ora";
 import { path, argv, fs, globby, chalk, fetch, $ } from "zx";
-import pixelmatch from "pixelmatch";
+import blazediff from "@blazediff/core";
 import { PNG } from "pngjs";
 import sharp from "sharp";
 
@@ -153,13 +153,13 @@ async function saveOrbitIcons(data: { name: string; svg: string; id: string }[])
         console.log(chalk.green.bold(`saved ${parsedName}`));
       });
     } else if (removeCommentId(content) !== removeCommentId(fs.readFileSync(filePath, "utf-8"))) {
-      // convert to PNG and compare via pixelmatch
+      // convert to PNG and compare via blazediff
       const upcomingDiff = await svgToPng(content);
       const existingDiff = await svgToPng(fs.readFileSync(filePath, "utf-8"));
       const { width, height } = upcomingDiff;
       const diff = new PNG({ width, height });
       const match = getId(fs.readFileSync(filePath, "utf-8"));
-      const numDiffPixels = pixelmatch(
+      const numDiffPixels = blazediff(
         upcomingDiff.data,
         existingDiff.data,
         diff.data,

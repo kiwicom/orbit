@@ -13,24 +13,29 @@ const FakeRadio = ({
   return (
     <div
       className={cx(
+        "orbit-radio-icon-container",
         "relative box-border",
         "flex flex-none items-center justify-center",
         "size-icon-medium rounded-full",
         "duration-fast scale-100 transition-all ease-in-out",
         "border-solid",
         checked ? "border-2" : "border",
-        disabled && "bg-cloud-light border-cloud-dark cursor-not-allowed",
-        !disabled && [
-          "bg-form-element-background cursor-pointer active:scale-95",
-          checked &&
-            "border-form-element-focus hover:border-form-element-focus active:border-form-element-focus",
-          !checked &&
-            hasError &&
-            "border-form-element-error hover:border-form-element-error-hover active:border-form-element-error",
-          !checked &&
-            !hasError &&
-            "border-cloud-dark hover:border-cloud-dark-hover active:border-cloud-dark-active",
-        ],
+        disabled
+          ? "bg-cloud-light border-cloud-dark cursor-not-allowed"
+          : [
+              "bg-form-element-background cursor-pointer hover:outline hover:outline-2",
+              hasError
+                ? [
+                    "border-form-element-error hover:outline-red-light hover:border-form-element-error border",
+                    checked &&
+                      "hover:border hover:shadow-[inset_0_0_0_1px_rgba(var(--palette-blue-normal))]",
+                  ]
+                : [
+                    "hover:outline-blue-light hover:border-form-element-focus bg-white-normal",
+                    checked ? "border-form-element-focus" : "border-cloud-dark",
+                  ],
+              !disabled && "active:scale-95",
+            ],
       )}
     >
       <span

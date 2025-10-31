@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [27.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.6.0...@kiwicom/orbit-components@27.7.0) (2025-10-31)
+
+#### Features
+
+* **Accordion:** increase border radius to 12px ([c1f7f8c](https://github.com/kiwicom/orbit/commit/c1f7f8c7750b6b57ae5e032fa55fed361437545e))
+
 ## [27.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@27.5.0...@kiwicom/orbit-components@27.6.0) (2025-10-10)
 
 #### Features

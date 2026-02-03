@@ -109,6 +109,158 @@ export const CarrierLogoWrapper: React.FC<WrapperProps> = ({
   );
 };
 
+/**
+ * @orbit-doc-start
+ * README
+ * ----------
+ * # CarrierLogo
+ *
+ * To implement CarrierLogo component into your project you'll need to add the import:
+ *
+ * ```jsx
+ * import CarrierLogo from "@kiwicom/orbit-components/lib/CarrierLogo";
+ * ```
+ *
+ * After adding import into your project you can use it simply like:
+ *
+ * ```jsx
+ * <CarrierLogo carriers={Carrier} />
+ * ```
+ *
+ * ## Props
+ *
+ * Table below contains all types of the props available in CarrierLogo component.
+ *
+ * | Name          | Type                    | Default   | Description                                                                                                        |
+ * | :------------ | :---------------------- | :-------- | :----------------------------------------------------------------------------------------------------------------- |
+ * | **carriers**  | [`Carrier[]`](#carrier) |           | The content of the CarrierLogo, passed as array of objects.                                                        |
+ * | dataTest      | `string`                |           | Optional prop for testing purposes.                                                                                |
+ * | id            | `string`                |           | Set `id` for `CarrierLogo`.                                                                                        |
+ * | size          | [`enum`](#enum)         | `"large"` | The size of the CarrierLogo. [See Functional specs](#functional-specs).                                            |
+ * | rounded       | `boolean`               |           | Rounded carrier image.                                                                                             |
+ * | inlineStacked | `boolean`               |           | Carrier logos are displayed inline, stacking on top of each other.                                                 |
+ * | ariaHidden    | `boolean`               | `false`   | Hide the CarrierLogo from screen readers. Can be used if the logo is used with the name of the Carrier next to it. |
+ *
+ * ### Carrier
+ *
+ * Table below contains all types of the props available for object in Carrier array.
+ *
+ * | Name     | Type            | Description                                                                                   |
+ * | :------- | :-------------- | :-------------------------------------------------------------------------------------------- |
+ * | **code** | `string`        | The IATA code of the Carrier, defines which logo will be rendered.                            |
+ * | **name** | `string`        | The name of the Carrier, used for `alt` and `title` attributes.                               |
+ * | type     | [`enum`](#enum) | The preferred placeholder for non-existing carrier. [See Functional specs](#functional-specs) |
+ *
+ * ### enum
+ *
+ * | size       | type (Carrier)       |
+ * | :--------- | :------------------- |
+ * | `"small"`  | `"airline"`          |
+ * | `"medium"` | `"bus"`              |
+ * | `"large"`  | `"train"`            |
+ * |            | `"ferry"`            |
+ * |            | `"private_transfer"` |
+ * |            | `"kiwicom"`          |
+ *
+ * ## Functional specs
+ *
+ * - The `size` prop will be applied when `carriers` prop has defined **only one object** in Carrier array.
+ *
+ * - The `type` prop in type Carrier determines which placeholder should be used when logo for the requested carrier doesn't exist.
+ *
+ *
+ * Accessibility
+ * -------------
+ * ## Accessibility
+ *
+ * The CarrierLogo component has been designed with accessibility in mind.
+ *
+ * It renders carrier images that provide visual recognition of transport companies but may not be accessible to all users. For that reason, it is important to ensure the information conveyed by the logos is also available in a text format.
+ *
+ * ### Accessibility props
+ *
+ * The following props are available to improve the accessibility of your CarrierLogo component:
+ *
+ * | Name       | Type      | Description                                                                                                   |
+ * | :--------- | :-------- | :------------------------------------------------------------------------------------------------------------ |
+ * | ariaHidden | `boolean` | When set to `true`, hides the CarrierLogo from screen readers. Use when the carrier name is displayed nearby. |
+ *
+ * Within each carrier object:
+ *
+ * | Name | Type     | Description                                                                                       |
+ * | :--- | :------- | :------------------------------------------------------------------------------------------------ |
+ * | name | `string` | Required. Used as the `alt` and `title` attributes for the carrier image for screen reader users. |
+ *
+ * ### Automatic accessibility features
+ *
+ * The CarrierLogo component automatically implements the following accessibility features:
+ *
+ * - Each carrier logo image automatically receives `alt` and `title` attributes with the carrier's name (the `name` property in each carrier object), ensuring screen readers can announce the carrier.
+ *
+ * ### Best practices
+ *
+ * Logos can create important context for users, but not everyone sees the logo. So make sure everything necessary is presented in a non-visual form.
+ *
+ * By including the name of the carrier, anyone who doesn't see the logo still gets the name. If the logo is presented next to some text with its name, make sure to hide the logo from screen readers by using the `ariaHidden` prop. This avoids duplicating the announcement of the carrier from screen readers.
+ *
+ * ### Examples
+ *
+ * #### Without text
+ *
+ * ```jsx
+ * <CarrierLogo
+ *   carriers={[
+ *     {
+ *       code: "OK",
+ *       type: "airline",
+ *       name: "Czech Airlines", // This name becomes the alt and title text
+ *     },
+ *   ]}
+ * />
+ * ```
+ *
+ * #### With visible text
+ *
+ * ```jsx
+ * <Stack direction="row" spacing="100" align="center">
+ *   <CarrierLogo
+ *     ariaHidden
+ *     carriers={[
+ *       {
+ *         code: "OK",
+ *         type: "airline",
+ *         name: "Czech Airlines",
+ *       },
+ *     ]}
+ *   />
+ *   <Text>Czech Airlines</Text>
+ * </Stack>
+ * ```
+ *
+ * #### Multiple carriers
+ *
+ * ```jsx
+ * <Stack spacing="medium">
+ *   <Stack direction="row" spacing="none">
+ *     <CarrierLogo
+ *       inlineStacked
+ *       carriers={[
+ *         { code: "FR", name: "Ryanair" },
+ *         { code: "TO", name: "Transavia France" },
+ *       ]}
+ *       ariaHidden
+ *     />
+ *     <Stack direction="column">
+ *       <Text>Ryanair</Text>
+ *       <Text>Transavia France</Text>
+ *     </Stack>
+ *   </Stack>
+ * </Stack>
+ * ```
+ *
+ *
+ * @orbit-doc-end
+ */
 const CarrierLogo = ({
   size = SIZE_OPTIONS.LARGE,
   carriers,

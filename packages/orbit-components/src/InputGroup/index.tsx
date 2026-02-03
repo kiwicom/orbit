@@ -18,6 +18,204 @@ const findPropInChild = (propToFind, children) =>
     return null;
   }).filter(el => el != null);
 
+/**
+ * @orbit-doc-start
+ * README
+ * ----------
+ * # InputGroup
+ *
+ * To implement InputGroup component into your project you'll need to add the import:
+ *
+ * ```jsx
+ * import InputGroup from "@kiwicom/orbit-components/lib/InputGroup";
+ * import InputField from "@kiwicom/orbit-components/lib/InputField";
+ * import Select from "@kiwicom/orbit-components/lib/Select";
+ * ```
+ *
+ * After adding import into your project you can use it simply like:
+ *
+ * ```jsx
+ * <InputGroup>
+ *   <InputField />
+ *   <Select />
+ * </InputGroup>
+ * ```
+ *
+ * ## Props
+ *
+ * Table below contains all types of the props available in InputGroup component.
+ *
+ * | Name           | Type                        | Default      | Description                                                                                                         |
+ * | :------------- | :-------------------------- | :----------- | :------------------------------------------------------------------------------------------------------------------ |
+ * | **children**   | `React.Node`                |              | The content of the InputGroup, normally **InputField** or **Select**.                                               |
+ * | dataTest       | `string`                    |              | Optional prop for testing purposes.                                                                                 |
+ * | id             | `string`                    |              | Set `id` for `InputGroup`                                                                                           |
+ * | error          | `React.Node`                |              | The error to display in a tooltip. [See Functional specs](#functional-specs)                                        |
+ * | help           | `React.Node`                |              | The help to display in a tooltip. [See Functional specs](#functional-specs)                                         |
+ * | disabled       | `boolean`                   |              | Whether to disable all nested fields.                                                                               |
+ * | flex           | `string` or `Array<string>` | `"0 1 auto"` | The flex attribute(s) for children of the InputGroup. [See Functional specs](#functional-specs)                     |
+ * | label          | `Translation`               |              | The label for the InputGroup. [See Functional specs](#functional-specs)                                             |
+ * | onChange       | `event => void \| Promise`  |              | Function for handling onClick event. [See Functional specs](#functional-specs)                                      |
+ * | onFocus        | `event => void \| Promise`  |              | Function for handling onFocus event. [See Functional specs](#functional-specs)                                      |
+ * | onBlur         | `event => void \| Promise`  |              | Function for handling onBlur event between different InputGroup children. [See Functional specs](#functional-specs) |
+ * | onBlurGroup    | `event => void \| Promise`  |              | Function for handling onBlur event for the whole InputGroup. [See Functional specs](#functional-specs)              |
+ * | spaceAfter     | `enum`                      |              | Additional `margin-bottom` after component.                                                                         |
+ * | ariaLabel      | `string`                    |              | Optional prop for `aria-label` value.                                                                               |
+ * | ariaLabelledby | `string`                    |              | Optional prop for `aria-labelledby` value.                                                                          |
+ * | required       | `boolean`                   |              | If `true`, displays the label as required and sets `aria-required` on the fieldset.                                 |
+ *
+ * ### enum
+ *
+ * | spaceAfter   |
+ * | :----------- |
+ * | `"none"`     |
+ * | `"smallest"` |
+ * | `"small"`    |
+ * | `"normal"`   |
+ * | `"medium"`   |
+ * | `"large"`    |
+ * | `"largest"`  |
+ *
+ * ## Functional specs
+ *
+ * - `error` or `help` defined on children will be displayed to user from left to right, only one error at a time will be displayed until resolved.
+ *
+ * - The `error` prop overwrites the `help` prop, due to higher priority.
+ *
+ * - Define `error` or `help` only for the **InputGroup**. Any `error` or `help` in InputField or Select won't be displayed.
+ *
+ * - You can set up different `flex` attribute for every children, or use one for all. See [flex property docs](https://www.w3schools.com/cssref/css3_pr_flex.asp) for more information.
+ *
+ * - If the passed children into the InputGroup won't have any callbacks - either `onChange`, `onFocus` or `onBlur`, the passed callback of the InputGroup will be used.
+ *
+ * - `onBlurGroup`: In comparison to onBlur, which is triggered by every blur event of InputGroup's children, onBlurGroup treats children as a single field, and fires only when a child loses focus and no child gains focus, for example clicking out of InputGroup.
+ *
+ *
+ * Accessibility
+ * -------------
+ * ## Accessibility
+ *
+ * The InputGroup component has been designed with accessibility in mind, providing a fieldset structure that groups related form controls with proper semantic markup and screen reader support.
+ *
+ * ### Accessibility Props
+ *
+ * | Name           | Type         | Description                                                                                                                    |
+ * | :------------- | :----------- | :----------------------------------------------------------------------------------------------------------------------------- |
+ * | ariaLabel      | `string`     | Provides an accessible label for the fieldset when no visible `label` is provided.                                             |
+ * | ariaLabelledby | `string`     | References the ID of an element that labels the fieldset.                                                                      |
+ * | label          | `string`     | Provides a visible legend for the fieldset that also serves as the accessible name.                                            |
+ * | error          | `React.Node` | Provides a group-level error message. When displayed, its content is assigned to `aria-describedby` on all child components.   |
+ * | help           | `React.Node` | Provides contextual help for the group. Behaves the same as `error` and is announced to screen readers via `aria-describedby`. |
+ * | required       | `bool`       | When `true`, applies `aria-required="true"` to indicate at least one field must be completed.                                  |
+ *
+ * ### Automatic Accessibility Features
+ *
+ * - The component automatically manages ARIA attributes:
+ *   - `aria-required="true"` when the `required` prop is set
+ *   - `aria-describedby` on all child elements when InputGroup has `error` or `help` content and the tooltip is shown
+ * - The component automatically manages semantic structure:
+ *   - Uses `<fieldset>` element to group related form controls
+ *   - Wraps `label` prop content in `<legend>` element
+ * - Child component integration:
+ *   - InputGroup `error`/`help` takes precedence over individual component messages, i.e child `error`/`help` props are ignored
+ *   - Child component labels are visually hidden but converted to `aria-label` for screen readers
+ *   - Child component `ariaDescribedby` and `ariaLabel` values are overwritten by InputGroup's accessibility logic
+ *
+ * ### Keyboard Navigation
+ *
+ * - **Tab/Shift + Tab**: Standard form navigation through child controls
+ * - Individual keyboard interactions are handled by child components (InputField, Select, etc.)
+ *
+ * ### Best Practices
+ *
+ * - Always provide either `label` or `ariaLabel` to ensure the fieldset has an accessible name
+ * - Use `ariaLabelledby` when referencing an existing heading that describes the group
+ * - Avoid setting `ariaDescribedby` on child components as InputGroup will completely override these values
+ * - Use InputGroup's `error` and `help` props for group-level messages rather than individual component messages
+ * - Ensure all accessibility strings are properly translated
+ * - Group only logically related form controls together
+ *
+ * ### Examples
+ *
+ * #### Basic InputGroup with Label
+ *
+ * ```jsx
+ * <InputGroup label="Passenger details">
+ *   <InputField label="First name" />
+ *   <InputField label="Last name" />
+ * </InputGroup>
+ * ```
+ *
+ * Screen reader announces: "First name, edit, Passenger details, group" when focusing on the first input field.
+ *
+ * #### InputGroup with Error Message
+ *
+ * ```jsx
+ * <InputGroup label="Contact information" error="Please complete all required fields">
+ *   <InputField label="Email" required />
+ *   <InputField label="Phone number" />
+ * </InputGroup>
+ * ```
+ *
+ * Screen reader announces: "Email, required, edit, Please complete all required fields, Contact information, group" when focusing on the first input field.
+ *
+ * #### InputGroup with ariaLabelledby
+ *
+ * ```jsx
+ * <Stack>
+ *   <Heading id="travel-details">Travel Details</Heading>
+ *   <InputGroup ariaLabelledby="travel-details" label="Destinations">
+ *     <Select options={countryOptions} label="Departure country" />
+ *     <Select options={countryOptions} label="Destination country" />
+ *   </InputGroup>
+ * </Stack>
+ * ```
+ *
+ * Screen reader announces: "Departure country, edit, Travel Details, group" when focusing on the first select field.
+ * _Note: The `label` prop is ignored by the screen reader when `ariaLabelledby` is provided._
+ *
+ * #### Required InputGroup
+ *
+ * ```jsx
+ * <InputGroup label="Billing address" required>
+ *   <InputField label="Street address" />
+ *   <InputField label="City" />
+ *   <Select options={countryOptions} label="Country" />
+ * </InputGroup>
+ * ```
+ *
+ * Screen reader announces: "Street address, edit, Billing address, group, required" when focusing on the first input field.
+ *
+ * #### Group-level error/help messages
+ *
+ * If the InputGroup has `error`/`help` messages, these will be properly associated with all child components:
+ *
+ * ```jsx
+ * <InputGroup label="Travel preferences" error="Please complete all fields">
+ *   <Select options={countryOptions} label="Departure country" help="Fill in the origin country" />
+ *   <Select options={countryOptions} label="Destination country" />
+ * </InputGroup>
+ * ```
+ *
+ * Screen reader announces: "Departure country, edit, Please complete all fields, Travel preferences, group" when focusing on the first Select component and "Destination country, edit, Please complete all fields" when focusing on the second Select component.
+ * _Note: Individual component `help`/`error` messages are ignored when the InputGroup has its own message._
+ *
+ * #### Component-level error/help messages
+ *
+ * If individual child components have their own `error`/`help` messages (and the InputGroup doesn't), only those specific components will have `aria-describedby` set:
+ *
+ * ```jsx
+ * <InputGroup label="Travel preferences">
+ *   <Select options={countryOptions} label="Departure country" />
+ *   <Select options={countryOptions} label="Destination country" error="This field is required" />
+ * </InputGroup>
+ * ```
+ *
+ * Screen reader announces: "Departure country, edit, Travel preferences, group" when focusing on the first Select component, and "Destination country, edit, This field is required" when focusing on the second Select component.
+ *
+ *
+ * @orbit-doc-end
+ */
 const InputGroup = ({
   children,
   label,

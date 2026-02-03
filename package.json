@@ -64,7 +64,7 @@
     "@floating-ui/react": "^0.26.24",
     "@kiwicom/browserslist-config": "^4.1.0",
     "@mdx-js/react": "^1.6.21",
-    "@octokit/rest": "^19.0.5",
+    "@octokit/rest": "^22.0.0",
     "@size-limit/file": "^8.0.0",
     "@size-limit/webpack": "^8.0.0",
     "@stylelint/postcss-css-in-js": "^0.38.0",

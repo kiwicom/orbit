@@ -32,20 +32,30 @@ const Radio = (props: Props) => {
       className={cx(
         "font-base text-form-element-label-foreground relative flex w-full [align-items:self-start]",
         "[&_.orbit-radio-icon-container]:has-[:checked]:border-2 [&_.orbit-radio-icon-container_span]:has-[:checked]:visible",
-        "[&_.orbit-radio-icon-container]:has-[:focus]:outline-blue-normal [&_.orbit-radio-icon-container]:has-[:focus]:outline [&_.orbit-radio-icon-container]:has-[:focus]:outline-2",
         disabled
           ? [
               "cursor-not-allowed",
               "[&_.orbit-radio-icon-container]:bg-cloud-light [&_.orbit-radio-icon-container]:border-cloud-dark",
+              "[&_.orbit-radio-icon-container]:has-[:focus]:outline-0 [&_.orbit-radio-icon-container]:has-[:hover]:outline-0",
             ]
           : [
               "cursor-pointer",
-              "[&_.orbit-radio-icon-container]:has-[:checked]:border-form-element-focus [&_.orbit-radio-icon-container]:has-[:checked]:active:border-form-element-focus [&_.orbit-radio-icon-container]:has-[:checked]:bg-white-normal [&_.orbit-radio-icon-container]:bg-form-element-background",
-              !checked &&
-                hasError &&
-                "[&_.orbit-radio-icon-container]:border-form-element-error [&_.orbit-radio-icon-container]:hover:border-form-element-error-hover [&_.orbit-radio-icon-container]:active:border-form-element-error",
-              !hasError &&
-                "[&_.orbit-radio-icon-container]:border-form-element [&_.orbit-radio-icon-container]:hover:border-form-element-hover [&_.orbit-radio-icon-container]:active:border-form-element-active",
+              "[&_.orbit-radio-icon-container]:has-[:focus]:outline [&_.orbit-radio-icon-container]:has-[:focus]:outline-2",
+              "[&_.orbit-radio-icon-container]:has-[:hover]:outline [&_.orbit-radio-icon-container]:has-[:hover]:outline-2",
+              "[&_.orbit-radio-icon-container]:has-[:checked]:bg-white-normal [&_.orbit-radio-icon-container]:bg-form-element-background",
+              hasError
+                ? [
+                    "[&_.orbit-radio-icon-container]:border-form-element-error [&_.orbit-radio-icon-container]:has-[:checked]:border-form-element-error",
+                    "[&_.orbit-radio-icon-container]:has-[:focus]:outline-blue-normal [&_.orbit-radio-icon-container]:has-[:focus]:border-red-normal [&_.orbit-radio-icon-container]:has-[:focus]:border",
+                    "[&_.orbit-radio-icon-container]:has-[:hover]:outline-red-light [&_.orbit-radio-icon-container]:has-[:hover]:border-red-normal [&_.orbit-radio-icon-container]:has-[:hover]:border",
+                    checked &&
+                      "[&_.orbit-radio-icon-container]:border-form-element-error [&_.orbit-radio-icon-container]:has-[:focus]:shadow-[inset_0_0_0_1px_rgba(var(--palette-blue-normal))] [&_.orbit-radio-icon-container]:has-[:hover]:shadow-[inset_0_0_0_1px_rgba(var(--palette-blue-normal))]",
+                  ]
+                : [
+                    "[&_.orbit-radio-icon-container]:border-form-element",
+                    "[&_.orbit-radio-icon-container]:has-[:focus]:outline-blue-light [&_.orbit-radio-icon-container]:has-[:focus]:border-blue-normal",
+                    "[&_.orbit-radio-icon-container]:has-[:hover]:outline-blue-light [&_.orbit-radio-icon-container]:has-[:hover]:border-blue-normal",
+                  ],
               checked &&
                 !hasError &&
                 "[&_.orbit-radio-icon-container]:border-form-element-focus active:border-form-element-focus [&_.orbit-radio-icon-container]:bg-white-normal",

@@ -25,17 +25,18 @@ const FakeCheckbox = ({
       "hover:shadow-none",
       checked ? "[&>svg]:visible" : "[&>svg]:invisible",
       disabled
-        ? ["border-cloud-dark", checked ? "bg-cloud-dark" : "bg-form-element-disabled-background"]
+        ? [
+            "border-cloud-dark cursor-not-allowed hover:outline-0",
+            checked ? "bg-cloud-dark" : "bg-form-element-disabled-background",
+          ]
         : [
-            checked &&
-              !hasError &&
-              "border-blue-normal bg-blue-normal hover:border-blue-dark hover:bg-blue-dark",
-            checked && hasError && "border-blue-normal bg-blue-normal",
-            !checked && "bg-form-element-background ",
-            !checked && hasError && "border-form-element-error",
-            !checked &&
-              !hasError &&
-              "border-form-element-border-color hover:border-blue-light-active",
+            "cursor-pointer hover:outline hover:outline-2",
+            hasError
+              ? "border-form-element-error hover:outline-red-light hover:border-red-normal"
+              : "hover:outline-blue-light hover:border-blue-normal",
+            checked
+              ? "bg-blue-normal border-blue-normal"
+              : "bg-form-element-background border-form-element-border-color",
           ],
     )}
   >

@@ -59,7 +59,7 @@ import Alert from "@kiwicom/orbit-components/lib/Alert";
 <Alert>Hello World!</Alert>;
 ```
 
-If you want to use custom theme inside your project, it's necessary to wrap your app into `<OrbitProvider>`. See [this document](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/OrbitProvider/README.md) for more information.
+If you want to use a custom theme inside your project, it's necessary to wrap your app into `<OrbitProvider>`. See [this document](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/OrbitProvider/README.md) for more information.
 
 For live preview check out [Storybook](https://kiwicom.github.io/orbit/) or [orbit.kiwi](https://orbit.kiwi).
 
